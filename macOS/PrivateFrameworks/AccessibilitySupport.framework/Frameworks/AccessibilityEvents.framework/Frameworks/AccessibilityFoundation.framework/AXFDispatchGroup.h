@@ -13,8 +13,8 @@
     NSObject<OS_dispatch_group> *__group;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_group> *_group; // @synthesize _group=__group;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_group> *_group; // @synthesize _group=__group;
 - (void)notifyWithQueue:(id)arg1 workItem:(id)arg2;
 - (void)notifyWithQueue:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (BOOL)waitWithTimeout:(long long)arg1;

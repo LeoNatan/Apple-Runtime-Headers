@@ -18,10 +18,10 @@
 
 + (_Bool)_haveiCloudKVStoreEntitlement;
 + (id)sharediCloudKVStore;
+- (void).cxx_destruct;
 @property(retain) id <NSObject><NSCopying><NSCoding> ubiquityIdentityToken; // @synthesize ubiquityIdentityToken=_ubiquityIdentityToken;
 @property(retain, nonatomic) NSDate *lastCarConnectionDate; // @synthesize lastCarConnectionDate=_lastCarConnectionDate;
 @property(nonatomic) _Bool hasConnectedToCarBluetooth; // @synthesize hasConnectedToCarBluetooth=_hasConnectedToCarBluetooth;
-- (void).cxx_destruct;
 - (void)_storeDidChange:(id)arg1;
 - (void)_identityChanged:(id)arg1;
 - (void)dealloc;

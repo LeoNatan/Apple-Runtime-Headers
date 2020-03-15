@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _alignmentRectInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *pulseLayer; // @synthesize pulseLayer=_pulseLayer;
 @property(nonatomic) __weak UIView *subviewForBaselineAlignment; // @synthesize subviewForBaselineAlignment=_subviewForBaselineAlignment;
 @property(retain, nonatomic) UIColor *pillColor; // @synthesize pillColor=_pillColor;
 @property(nonatomic) BOOL pulsing; // @synthesize pulsing=_pulsing;
 @property(nonatomic) struct UIEdgeInsets alignmentRectInsets; // @synthesize alignmentRectInsets=_alignmentRectInsets;
-- (void).cxx_destruct;
 - (id)viewForLastBaselineLayout;
 - (void)applyStyleAttributes:(id)arg1;
 - (void)_updateBackgroundColor;

@@ -19,6 +19,7 @@
     UIImage *_icon;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSandboxed) _Bool sandboxed; // @synthesize sandboxed=_sandboxed;
 @property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 @property(copy, nonatomic) NSString *customDescription; // @synthesize customDescription=_customDescription;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *itemID; // @synthesize itemID=_itemID;
-- (void).cxx_destruct;
 
 @end
 

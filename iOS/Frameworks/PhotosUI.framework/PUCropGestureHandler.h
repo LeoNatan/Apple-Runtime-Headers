@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
     struct CGVector _panRubberBandOffset;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long gesture; // @synthesize gesture=_gesture;
 @property(readonly) double zoomOverflow; // @synthesize zoomOverflow=_zoomOverflow;
 @property(readonly) struct CGVector panRubberBandOffset; // @synthesize panRubberBandOffset=_panRubberBandOffset;
@@ -55,7 +56,6 @@ __attribute__((visibility("hidden")))
 @property double maximumZoomScale; // @synthesize maximumZoomScale=_maximumZoomScale;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property __weak id <PUCropGestureHandlerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_stopAnimatedPan;
 - (void)_stopAnimatedPanTimer;
 - (void)_stopAnimatedZoom;

@@ -18,11 +18,11 @@
     CDUnknownBlockType _mocFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType mocFactory; // @synthesize mocFactory=_mocFactory;
 @property(readonly, nonatomic) id <AVTEventCoalescer> eventCoalescer; // @synthesize eventCoalescer=_eventCoalescer;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
-- (void).cxx_destruct;
 - (id)duplicatedIdentifiersInManagedObjectContext:(id)arg1 error:(id *)arg2;
 - (id)fetchDuplicatedRecordsForIdentifiers:(id)arg1 managedObjectContext:(id)arg2 error:(id *)arg3;
 - (_Bool)fixDuplicateRecordIdentifiers:(id)arg1 managedObjectContext:(id)arg2 error:(id *)arg3;

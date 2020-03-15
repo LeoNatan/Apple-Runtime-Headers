@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     TVVideoBorderView *_borderView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVVideoBorderView *borderView; // @synthesize borderView=_borderView;
 @property(retain, nonatomic) UIView *playbackView; // @synthesize playbackView=_playbackView;
 @property(retain, nonatomic) TVPVideoView *videoView; // @synthesize videoView=_videoView;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSObject<TVPAVFPlayback> *player; // @synthesize player=_player;
 @property(nonatomic) _Bool acceptsFocus; // @synthesize acceptsFocus=_acceptsFocus;
 @property(nonatomic) __weak id <TVPMainVideoViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;

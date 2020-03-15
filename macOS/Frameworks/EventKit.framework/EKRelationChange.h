@@ -17,10 +17,10 @@
     EKChangeSet *_changeSet;
 }
 
+- (void).cxx_destruct;
 @property(retain) EKChangeSet *changeSet; // @synthesize changeSet=_changeSet;
 @property(retain) NSString *relationChangeKey; // @synthesize relationChangeKey=_relationChangeKey;
 @property(retain) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

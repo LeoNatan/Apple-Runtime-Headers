@@ -30,6 +30,7 @@
 + (id)referenceImagesInGroupNamed:(id)arg1 catalogName:(id)arg2 bundle:(id)arg3;
 + (id)referenceImagesInGroupNamed:(id)arg1 bundle:(id)arg2;
 + (id)referenceImagesInGroupNamed:(id)arg1 catalog:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) struct __CVBuffer *alphaMask; // @synthesize alphaMask=_alphaMask;
 @property(readonly, nonatomic) struct __CVBuffer *pixelBuffer; // @synthesize pixelBuffer=_pixelBuffer;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) NSString *resourceGroupName; // @synthesize resourceGroupName=_resourceGroupName;
 @property(readonly, nonatomic) struct CGSize physicalSize; // @synthesize physicalSize=_physicalSize;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)estimateQualityWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)validateWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setResourceGroupName:(id)arg1;

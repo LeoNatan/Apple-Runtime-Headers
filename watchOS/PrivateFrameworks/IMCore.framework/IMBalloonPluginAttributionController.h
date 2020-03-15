@@ -16,10 +16,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPerformedFirstAppExtensionLoad; // @synthesize hasPerformedFirstAppExtensionLoad=_hasPerformedFirstAppExtensionLoad;
 @property(retain, nonatomic) NSMutableDictionary *bundleIDsDisplayingAttribution; // @synthesize bundleIDsDisplayingAttribution=_bundleIDsDisplayingAttribution;
 @property(retain, nonatomic) NSMutableDictionary *expiredBundleIDToTimestampMap; // @synthesize expiredBundleIDToTimestampMap=_expiredBundleIDToTimestampMap;
-- (void).cxx_destruct;
 - (void)_handleInstalledPluginsChanged;
 - (void)_purgeLeastRecentlySeenAppBundleIDsIfNecessary;
 - (void)_saveToFile;

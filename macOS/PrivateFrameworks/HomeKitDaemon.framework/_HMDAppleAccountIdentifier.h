@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)supportsSecureCoding;
 + (id)namespace;
-@property(readonly, copy) NSString *identifierString; // @synthesize identifierString=_identifierString;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *identifierString; // @synthesize identifierString=_identifierString;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isAuthenticated;

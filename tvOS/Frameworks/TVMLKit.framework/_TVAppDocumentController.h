@@ -40,6 +40,7 @@
     UIView *_pagePerformanceView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool adoptsContext; // @synthesize adoptsContext=_adoptsContext;
 @property(nonatomic, getter=isPresentedModal) _Bool presentedModal; // @synthesize presentedModal=_presentedModal;
 @property(retain, nonatomic) UIView *pagePerformanceView; // @synthesize pagePerformanceView=_pagePerformanceView;
@@ -55,7 +56,6 @@
 @property(retain, nonatomic) UIViewController *templateViewController; // @synthesize templateViewController=_templateViewController;
 @property(nonatomic) __weak id <_TVAppDocumentControllerDelegate> appDelegate; // @synthesize appDelegate=_appDelegate;
 @property(retain, nonatomic) IKAppDocument *appDocument; // @synthesize appDocument=_appDocument;
-- (void).cxx_destruct;
 - (void)snapshotImpressions;
 - (id)currentImpressionableElements;
 - (id)activeDocument;

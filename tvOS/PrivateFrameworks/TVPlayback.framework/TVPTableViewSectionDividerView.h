@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)heightForDividerType:(long long)arg1;
-@property(nonatomic) long long dividerType; // @synthesize dividerType=_dividerType;
 - (void).cxx_destruct;
+@property(nonatomic) long long dividerType; // @synthesize dividerType=_dividerType;
 - (void)_updatePadding;
 - (void)layoutSubviews;
 - (id)initWithReuseIdentifier:(id)arg1;

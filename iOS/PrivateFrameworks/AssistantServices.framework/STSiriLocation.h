@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long resultType; // @synthesize resultType=_resultType;
 @property(copy, nonatomic) NSData *geoResult; // @synthesize geoResult=_geoResult;
 @property(copy, nonatomic) NSString *contactName; // @synthesize contactName=_contactName;
 @property(copy, nonatomic) NSString *addressLabel; // @synthesize addressLabel=_addressLabel;
 @property(copy, nonatomic) NSURL *addressBookID; // @synthesize addressBookID=_addressBookID;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

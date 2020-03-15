@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSArray *histogramData; // @synthesize histogramData=_histogramData;
 @property(readonly) NSEnumerator *bucketEnumerator; // @synthesize bucketEnumerator=_bucketEnumerator;
 @property(readonly) unsigned long long totalBucketCount; // @synthesize totalBucketCount=_totalBucketCount;
-- (void).cxx_destruct;
 - (id)toDictionary;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

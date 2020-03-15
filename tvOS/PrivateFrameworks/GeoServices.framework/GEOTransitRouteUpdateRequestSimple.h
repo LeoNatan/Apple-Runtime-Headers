@@ -17,8 +17,8 @@
 
 + (Class)replyClass;
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) GEOTransitRouteUpdateRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GEOTransitRouteUpdateRequest *request; // @synthesize request=_request;
 - (_Bool)expectsReply;
 - (_Bool)isValid;
 - (void)encodeWithCoder:(id)arg1;

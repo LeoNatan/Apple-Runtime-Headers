@@ -19,10 +19,10 @@
 }
 
 + (id)defaultOptions;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIVisualEffect *backgroundVisualEffect; // @synthesize backgroundVisualEffect=_backgroundVisualEffect;
 @property(nonatomic) unsigned long long displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(nonatomic) unsigned long long contentColorStyle; // @synthesize contentColorStyle=_contentColorStyle;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 // Remaining properties

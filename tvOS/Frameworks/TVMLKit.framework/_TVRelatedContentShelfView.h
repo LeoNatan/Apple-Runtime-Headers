@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     double _relatedHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double relatedHeight; // @synthesize relatedHeight=_relatedHeight;
 @property(retain, nonatomic) UIView *relatedView; // @synthesize relatedView=_relatedView;
 @property(nonatomic) __weak UIView *shelfView; // @synthesize shelfView=_shelfView;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)_layoutRelatedView;
 - (void)layoutSubviews;

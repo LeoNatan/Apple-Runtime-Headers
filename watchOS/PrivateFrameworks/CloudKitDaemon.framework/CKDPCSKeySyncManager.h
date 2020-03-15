@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *keySyncQueue; // @synthesize keySyncQueue=_keySyncQueue;
 @property(retain, nonatomic) NSMutableDictionary *keySyncTrackerByServiceName; // @synthesize keySyncTrackerByServiceName=_keySyncTrackerByServiceName;
-- (void).cxx_destruct;
 - (void)syncUserKeysForService:(id)arg1 serviceIsManatee:(_Bool)arg2 account:(id)arg3 shouldThrottle:(_Bool)arg4 testOverrideProvider:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)performKeySyncWithSyncTracker:(id)arg1 testableSyncConfig:(unsigned int)arg2 shouldThrottle:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)syncTrackerForService:(id)arg1 manatee:(_Bool)arg2 shortThrottlePeriod:(_Bool)arg3;

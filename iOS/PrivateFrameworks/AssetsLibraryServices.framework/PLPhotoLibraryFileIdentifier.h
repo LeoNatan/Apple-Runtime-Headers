@@ -22,6 +22,7 @@
 
 + (_Bool)isValidOriginalURL:(id)arg1 pathManager:(id)arg2;
 + (id)uuidFromURL:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isData; // @synthesize isData=_isData;
 @property(readonly, nonatomic) unsigned int recipeId; // @synthesize recipeId=_recipeId;
 @property(readonly, nonatomic) unsigned int resourceVersion; // @synthesize resourceVersion=_resourceVersion;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSString *uti; // @synthesize uti=_uti;
 @property(readonly, nonatomic) unsigned char bundleScope; // @synthesize bundleScope=_bundleScope;
 @property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (id)extension;
 - (id)description;
 - (id)initWithAssetUuid:(id)arg1 bundleScope:(unsigned char)arg2 uti:(id)arg3 resourceVersion:(unsigned int)arg4 resourceType:(unsigned int)arg5 recipeID:(unsigned int)arg6 originalFilename:(id)arg7;

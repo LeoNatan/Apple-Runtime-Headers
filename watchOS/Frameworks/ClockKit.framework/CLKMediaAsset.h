@@ -23,11 +23,11 @@
 + (id)mediaAssetWithVideo:(id)arg1 image:(id)arg2 videoDuration:(double)arg3 stillDisplayTime:(double)arg4 forDevice:(id)arg5;
 + (id)mediaAssetWithVideo:(id)arg1 image:(id)arg2 forDevice:(id)arg3;
 + (id)mediaAssetWithImage:(id)arg1 forDevice:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double stillDisplayTime; // @synthesize stillDisplayTime=_stillDisplayTime;
 @property(readonly, nonatomic) double videoDuration; // @synthesize videoDuration=_videoDuration;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) CLKVideo *video; // @synthesize video=_video;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithVideo:(id)arg1 image:(id)arg2 videoDuration:(double)arg3 stillDisplayTime:(double)arg4 forDevice:(id)arg5;

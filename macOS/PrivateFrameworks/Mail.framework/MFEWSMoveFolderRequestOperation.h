@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MFEWSGetFolderResponseOperation *changeKeysResponse; // @synthesize changeKeysResponse=_changeKeysResponse;
 @property(readonly, copy, nonatomic) NSArray *originEWSFolderIdStrings; // @synthesize originEWSFolderIdStrings=_originEWSFolderIdStrings;
 @property(readonly, copy, nonatomic) NSString *destinationEWSFolderIdString; // @synthesize destinationEWSFolderIdString=_destinationEWSFolderIdString;
-- (void).cxx_destruct;
 - (void)setupOfflineResponse;
 - (id)prepareRequest;
 - (BOOL)isFolderRequest;

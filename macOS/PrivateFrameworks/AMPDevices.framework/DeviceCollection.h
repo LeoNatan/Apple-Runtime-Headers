@@ -20,6 +20,7 @@
     NSXPCConnection *_connectionToService;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldReconnectToService; // @synthesize shouldReconnectToService=_shouldReconnectToService;
 @property(nonatomic) int serviceProcessID; // @synthesize serviceProcessID=_serviceProcessID;
 @property(nonatomic) unsigned int clientID; // @synthesize clientID=_clientID;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) NSMutableArray *connections; // @synthesize connections=_connections;
 @property(retain, nonatomic) NSMutableDictionary *devices; // @synthesize devices=_devices;
 @property(nonatomic) __weak id <DeviceCollectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setMode:(id)arg1 forView:(id)arg2;
 - (void)willTerminate;
 - (void)disconnectView:(id)arg1;

@@ -18,13 +18,13 @@
     NSArray *_coalescedSuggestionMessages;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *coalescedSuggestionMessages; // @synthesize coalescedSuggestionMessages=_coalescedSuggestionMessages;
 @property unsigned long long lastDismissedReminderCoalesceCount; // @synthesize lastDismissedReminderCoalesceCount=_lastDismissedReminderCoalesceCount;
 @property unsigned long long lastDismissedCalendarCoalesceCount; // @synthesize lastDismissedCalendarCoalesceCount=_lastDismissedCalendarCoalesceCount;
 @property unsigned long long reminderBadgeCount; // @synthesize reminderBadgeCount=_reminderBadgeCount;
 @property unsigned long long calendarBadgeCount; // @synthesize calendarBadgeCount=_calendarBadgeCount;
 @property(retain) NSMutableDictionary *allMessages; // @synthesize allMessages=_allMessages;
-- (void).cxx_destruct;
 - (void)_performClickingActionForMessage:(id)arg1;
 - (void)_performActionForMessage:(id)arg1;
 - (void)_handleExpirationForIdentifiers:(id)arg1;

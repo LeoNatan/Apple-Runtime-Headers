@@ -27,6 +27,7 @@
     NSMutableArray *_systemActualEventTapEnabledReasons;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *systemActualEventTapEnabledReasons; // @synthesize systemActualEventTapEnabledReasons=_systemActualEventTapEnabledReasons;
 @property(nonatomic, getter=isHandlingSystemEvents) _Bool handlingSystemEvents; // @synthesize handlingSystemEvents=_handlingSystemEvents;
 @property(retain, nonatomic) NSMutableArray *hidActualEventTapEnabledReasons; // @synthesize hidActualEventTapEnabledReasons=_hidActualEventTapEnabledReasons;
@@ -41,7 +42,6 @@
 @property(nonatomic) int HIDEventTapPriority; // @synthesize HIDEventTapPriority=_HIDEventTapPriority;
 @property(retain, nonatomic) NSString *HIDEventTapIdentifier; // @synthesize HIDEventTapIdentifier=_HIDEventTapIdentifier;
 @property(nonatomic) _Bool shouldNotifyUserEventOccurred; // @synthesize shouldNotifyUserEventOccurred=_shouldNotifyUserEventOccurred;
-- (void).cxx_destruct;
 - (void)_uninstallSystemEventFilter;
 - (void)_installSystemEventFilter;
 - (void)_uninstallHIDEventFilter;

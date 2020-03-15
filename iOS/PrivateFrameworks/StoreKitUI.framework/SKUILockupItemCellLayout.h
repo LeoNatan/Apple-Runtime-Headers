@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 + (struct CGSize)videoThumbnailSizeForVideo:(id)arg1 clientContext:(id)arg2;
 + (double)heightForLockupStyle:(struct SKUILockupStyle)arg1 item:(id)arg2 editorial:(id)arg3 clientContext:(id)arg4;
 + (double)heightForLockupComponent:(id)arg1 clientContext:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize videoThumbnailSize; // @synthesize videoThumbnailSize=_videoThumbnailSize;
 @property(nonatomic) long long verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;
 @property(nonatomic) _Bool playsInlineVideo; // @synthesize playsInlineVideo=_playsInlineVideo;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long itemOfferStyle; // @synthesize itemOfferStyle=_itemOfferStyle;
 @property(nonatomic) struct CGSize imageBoundingSize; // @synthesize imageBoundingSize=_imageBoundingSize;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
-- (void).cxx_destruct;
 - (void)_layoutVertical;
 - (struct CGRect)_layoutIconImageView;
 - (void)_layoutHorizontal;

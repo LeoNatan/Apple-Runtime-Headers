@@ -20,6 +20,7 @@
 }
 
 + (id)shareMonitor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableString *logBuffer; // @synthesize logBuffer=_logBuffer;
 @property(retain, nonatomic) NSDictionary *remoteMacroActivities; // @synthesize remoteMacroActivities=_remoteMacroActivities;
 @property(retain, nonatomic) NSDictionary *remoteMilestones; // @synthesize remoteMilestones=_remoteMilestones;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) NSMutableDictionary *macroActivities; // @synthesize macroActivities=_macroActivities;
 @property(readonly, nonatomic) NSMutableDictionary *milestones; // @synthesize milestones=_milestones;
 @property(readonly, nonatomic) NSMutableArray *measurements; // @synthesize measurements=_measurements;
-- (void).cxx_destruct;
 - (double)endMacroActivity:(id)arg1 beginTime:(double)arg2;
 - (void)beginMacroActivity:(id)arg1 beginTime:(double)arg2;
 - (void)addMilestone:(double)arg1 activityType:(id)arg2 activityIdentifier:(id)arg3;

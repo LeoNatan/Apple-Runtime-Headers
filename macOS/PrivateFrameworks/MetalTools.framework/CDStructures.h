@@ -110,7 +110,7 @@ struct MTLSamplerDescriptorHashMap {
 };
 
 struct MTLTargetDeviceArch {
-    unsigned int _field1;
+    unsigned long long _field1;
     unsigned int _field2;
     char *_field3;
 };
@@ -904,10 +904,12 @@ typedef struct {
     unsigned int maxIndirectSamplersPerDevice;
     unsigned int maxViewportCount;
     unsigned int maxCustomSamplePositions;
+    unsigned int maxVertexAmplificationFactor;
+    unsigned int maxVertexAmplificationCount;
     unsigned int maxTextureBufferWidth;
     unsigned int maxComputeAttributes;
     unsigned long long maxBufferLength;
-} CDStruct_ba442ac5;
+} CDStruct_210bae5a;
 
 typedef struct {
     unsigned int _field1;

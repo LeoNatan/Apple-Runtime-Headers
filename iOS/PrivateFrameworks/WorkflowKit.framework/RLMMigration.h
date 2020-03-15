@@ -16,10 +16,10 @@
     RLMRealm *_realm;
 }
 
-@property(retain, nonatomic) RLMRealm *realm; // @synthesize realm=_realm;
-@property(retain, nonatomic) RLMRealm *oldRealm; // @synthesize oldRealm=_oldRealm;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain, nonatomic) RLMRealm *realm; // @synthesize realm=_realm;
+@property(retain, nonatomic) RLMRealm *oldRealm; // @synthesize oldRealm=_oldRealm;
 - (void)renamePropertyForClass:(id)arg1 oldName:(id)arg2 newName:(id)arg3;
 - (_Bool)deleteDataForClassName:(id)arg1;
 - (void)deleteObjectsMarkedForDeletion;

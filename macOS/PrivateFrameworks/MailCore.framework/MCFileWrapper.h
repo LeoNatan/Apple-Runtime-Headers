@@ -28,6 +28,7 @@
 }
 
 + (id)uniquedPathForFile:(id)arg1 inDirectory:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *primitiveEmptyAttachment; // @synthesize primitiveEmptyAttachment=_primitiveEmptyAttachment;
 @property(copy, nonatomic) NSString *savedPath; // @synthesize savedPath=_savedPath;
 @property(nonatomic) unsigned long long imageBytes; // @synthesize imageBytes=_imageBytes;
@@ -43,7 +44,6 @@
 @property(copy, nonatomic) NSArray *whereFroms; // @synthesize whereFroms=_whereFroms;
 @property(copy, nonatomic) NSString *mimeType; // @synthesize mimeType=_mimeType;
 @property(copy, nonatomic) NSString *contentID; // @synthesize contentID=_contentID;
-- (void).cxx_destruct;
 - (unsigned long long)approximateSizeAllowingDiskIO:(BOOL)arg1;
 @property(readonly, nonatomic) BOOL isALargeAttachment;
 @property(readonly, nonatomic) BOOL isPlaceholder;

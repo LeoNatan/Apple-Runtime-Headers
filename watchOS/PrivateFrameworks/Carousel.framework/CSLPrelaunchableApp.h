@@ -15,10 +15,10 @@
     NSDate *_prelaunchDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool firstPrelaunch; // @synthesize firstPrelaunch=_firstPrelaunch;
 @property(readonly, nonatomic) NSDate *prelaunchDate; // @synthesize prelaunchDate=_prelaunchDate;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

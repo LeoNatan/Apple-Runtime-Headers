@@ -22,10 +22,10 @@
 + (id)shared;
 + (id)keyPathsForValuesAffectingMainScreen;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *_localQueue; // @synthesize _localQueue=__localQueue;
 @property(retain, nonatomic) NSPointerArray *_observers; // @synthesize _observers=__observers;
 @property(retain, nonatomic) _AXFScreenSourceHardware *_hardware; // @synthesize _hardware=__hardware;
-- (void).cxx_destruct;
 - (void)_enumerateNonNilObserversOnLocalQueueAndPerform:(CDUnknownBlockType)arg1;
 - (void)_signalMainScreenChanged:(id)arg1;
 - (void)_signalScreensChanged:(id)arg1;

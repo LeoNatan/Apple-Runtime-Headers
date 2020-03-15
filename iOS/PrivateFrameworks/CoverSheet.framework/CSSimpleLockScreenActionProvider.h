@@ -15,8 +15,8 @@
     SBFLockScreenActionContext *_lockScreenActionContext;
 }
 
-@property(retain, nonatomic) SBFLockScreenActionContext *lockScreenActionContext; // @synthesize lockScreenActionContext=_lockScreenActionContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SBFLockScreenActionContext *lockScreenActionContext; // @synthesize lockScreenActionContext=_lockScreenActionContext;
 - (void)invalidateLockScreenActionContext;
 
 // Remaining properties

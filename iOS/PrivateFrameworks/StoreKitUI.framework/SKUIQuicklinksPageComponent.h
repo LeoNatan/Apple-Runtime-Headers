@@ -16,9 +16,9 @@
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSArray *links; // @synthesize links=_links;
-- (void).cxx_destruct;
 - (void)_setLinksWithLinksArray:(id)arg1 context:(id)arg2;
 - (id)valueForMetricsField:(id)arg1;
 - (id)metricsElementName;

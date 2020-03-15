@@ -18,13 +18,13 @@
     NSDate *_timestamp;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, copy) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
 @property(readonly, copy) NSArray *machineIDs; // @synthesize machineIDs=_machineIDs;
 @property(readonly, copy) NSString *machineID; // @synthesize machineID=_machineID;
 @property(readonly) unsigned long long operation; // @synthesize operation=_operation;
 @property(readonly, copy) NSString *altDSID; // @synthesize altDSID=_altDSID;
-- (void).cxx_destruct;
 - (unsigned long long)_convertOperationToEnum:(id)arg1;
 - (id)initWithResponseBody:(id)arg1;
 

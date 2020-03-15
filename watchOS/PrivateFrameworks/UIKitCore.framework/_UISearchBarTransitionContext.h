@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     _UISearchBarLayout *_fromLayout;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) _UISearchBarLayout *fromLayout; // @synthesize fromLayout=_fromLayout;
 @property(copy, nonatomic) _UISearchBarLayout *toLayout; // @synthesize toLayout=_toLayout;
-- (void).cxx_destruct;
 
 @end
 

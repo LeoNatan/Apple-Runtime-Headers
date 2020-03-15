@@ -15,8 +15,8 @@
     BOOL _observableIsEmpty;
 }
 
-@property(retain, nonatomic) id <CNObservable> observable; // @synthesize observable=_observable;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <CNObservable> observable; // @synthesize observable=_observable;
 - (id)subscribeNextObservable:(id)arg1;
 - (BOOL)isObservableEmpty;
 - (void)observableDidSendResult;

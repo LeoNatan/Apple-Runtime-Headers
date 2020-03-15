@@ -18,13 +18,13 @@
     NSSet *_includesRegardlessOfLevel;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *includesRegardlessOfLevel; // @synthesize includesRegardlessOfLevel=_includesRegardlessOfLevel;
 @property(retain, nonatomic) NSArray *excludesAsRegexes; // @synthesize excludesAsRegexes=_excludesAsRegexes;
 @property(retain, nonatomic) NSArray *includesAsRegexes; // @synthesize includesAsRegexes=_includesAsRegexes;
 @property(copy, nonatomic) NSArray *excludes; // @synthesize excludes=_excludes;
 @property(copy, nonatomic) NSArray *includes; // @synthesize includes=_includes;
 @property(nonatomic) int minimumLevel; // @synthesize minimumLevel=_minimumLevel;
-- (void).cxx_destruct;
 - (_Bool)proceedProcessingLogName:(id)arg1;
 - (id)generateRegexesForPatterns:(id)arg1;
 - (id)description;

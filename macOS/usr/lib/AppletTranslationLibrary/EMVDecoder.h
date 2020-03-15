@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)isEMVLegacy:(id)arg1;
++ (_Bool)isLuau:(id)arg1;
 + (_Bool)isXenon:(id)arg1;
 + (_Bool)isNeon:(id)arg1;
 + (_Bool)isHelium:(id)arg1;

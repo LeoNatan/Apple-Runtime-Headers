@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(copy, nonatomic) NSString *authDelegateClassBundlePath; // @synthesize authDelegateClassBundlePath=_authDelegateClassBundlePath;
 @property(copy, nonatomic) NSString *authDelegateClassName; // @synthesize authDelegateClassName=_authDelegateClassName;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property(nonatomic) _Bool confirmationRequired; // @synthesize confirmationRequired=_confirmationRequired;
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 
 @end
 

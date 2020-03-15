@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     double _minDurationBetweenHypotheses;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool discardNextHypothesis; // @synthesize discardNextHypothesis=_discardNextHypothesis;
 @property(nonatomic) double minDurationBetweenHypotheses; // @synthesize minDurationBetweenHypotheses=_minDurationBetweenHypotheses;
 @property(nonatomic) double streamingCharacterInsertionRate; // @synthesize streamingCharacterInsertionRate=_streamingCharacterInsertionRate;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *targetHypothesis; // @synthesize targetHypothesis=_targetHypothesis;
 @property(copy, nonatomic) NSString *lastHypothesis; // @synthesize lastHypothesis=_lastHypothesis;
 @property(copy, nonatomic) NSString *previousHypothesis; // @synthesize previousHypothesis=_previousHypothesis;
-- (void).cxx_destruct;
 - (void)setupToInsertResultForNewHypothesis:(id)arg1;
 - (void)_displayLinkFired:(id)arg1;
 - (void)_startStreamingAnimations;

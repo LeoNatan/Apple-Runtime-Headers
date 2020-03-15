@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIActivityIndicatorView *_indicatorView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIActivityIndicatorView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(retain, nonatomic) VUILabel *loadingLabel; // @synthesize loadingLabel=_loadingLabel;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)startTimer;
 - (id)initWithFrame:(struct CGRect)arg1 loadingString:(id)arg2;

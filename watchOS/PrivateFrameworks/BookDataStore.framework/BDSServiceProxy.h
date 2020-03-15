@@ -19,10 +19,10 @@
     NSXPCConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool connectionHealthy; // @synthesize connectionHealthy=_connectionHealthy;
 @property(readonly, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) id <BDSServiceProtocol><NSXPCProxyCreating> remoteObjectProxy; // @synthesize remoteObjectProxy=_remoteObjectProxy;
-- (void).cxx_destruct;
 - (void)audiobookStoreEnabledWithCompletion:(CDUnknownBlockType)arg1;
 - (void)performInitialUpdateOfAutomaticPinningListsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updateBitrateForItemWithAdamID:(id)arg1 completion:(CDUnknownBlockType)arg2;

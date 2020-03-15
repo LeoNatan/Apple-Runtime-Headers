@@ -24,6 +24,7 @@
     struct CGRect _containerViewFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICDocCamImageQuad *quadForOverlay; // @synthesize quadForOverlay=_quadForOverlay;
 @property(nonatomic) __weak UIView *startView; // @synthesize startView=_startView;
 @property(nonatomic) struct CGRect containerViewFrame; // @synthesize containerViewFrame=_containerViewFrame;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) UIImage *unfilteredImage; // @synthesize unfilteredImage=_unfilteredImage;
 @property(retain, nonatomic) UIImage *filteredImage; // @synthesize filteredImage=_filteredImage;
 @property(nonatomic) BOOL presenting; // @synthesize presenting=_presenting;
-- (void).cxx_destruct;
 -     // Error parsing type: {?=[3]}80@0:8d16d24d32d40d48d56d64d72, name: matrixTransformingToUnitSquareWithPoints:y0:x1:y1:x2:y2:x3:y3:
 - (void)sortPoints:(struct CGPoint *)arg1 sorted:(struct CGPoint *)arg2;
 -     // Error parsing type: {?=[3]}24@0:8^c16, name: matrixTransformingQuadForOverlayToImageView:

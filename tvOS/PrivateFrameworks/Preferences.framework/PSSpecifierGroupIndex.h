@@ -21,8 +21,8 @@
 
 + (_Bool)_wantsDebuggingCallbacks;
 + (id)groupIndexWithSpecifiers:(id)arg1;
-@property(readonly, copy, nonatomic) NSArray *specifiers; // @synthesize specifiers=_specifiers;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *specifiers; // @synthesize specifiers=_specifiers;
 - (id)description;
 - (void)_appendDescriptionOfArray:(id)arg1 toString:(id)arg2 withTabLevel:(unsigned long long)arg3;
 - (id)_tabStringOfDepth:(unsigned long long)arg1;

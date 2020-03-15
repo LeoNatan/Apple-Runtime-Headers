@@ -17,9 +17,9 @@
 }
 
 + (id)sharedFormatter;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLKTextProvider *noDataTextProvider; // @synthesize noDataTextProvider=_noDataTextProvider;
 @property(retain, nonatomic) NWMTemperatureFormatter *temperatureFormatter; // @synthesize temperatureFormatter=_temperatureFormatter;
-- (void).cxx_destruct;
 - (id)_graphicRectangularTemplateWithTextProvider:(id)arg1 hourlyForecastedConditions:(id)arg2 timeZone:(id)arg3;
 - (id)switcherTemplateWithFamily:(long long)arg1;
 - (_Bool)acceptsComplicationFamily:(long long)arg1 forDevice:(id)arg2;

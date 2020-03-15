@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (id)labelsByPropertyKey;
 + (id)new;
-@property(readonly, nonatomic) CNContainer *container; // @synthesize container=_container;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNContainer *container; // @synthesize container=_container;
 - (BOOL)isContactPropertySupported:(id)arg1;
 - (BOOL)shouldRemoveContact:(id)arg1;
 - (BOOL)shouldAddContact:(id)arg1;

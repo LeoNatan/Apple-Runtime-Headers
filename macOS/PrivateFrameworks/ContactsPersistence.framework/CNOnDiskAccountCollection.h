@@ -19,11 +19,11 @@
     NSString *_tag;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *tag; // @synthesize tag=_tag;
 @property BOOL includeLocalAccount; // @synthesize includeLocalAccount=_includeLocalAccount;
 @property(copy) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(copy) NSArray *allAccounts; // @synthesize allAccounts=_allAccounts;
-- (void).cxx_destruct;
 - (BOOL)_URLIsSourceSpecific:(id)arg1;
 - (id)_readAccountsAtURL:(id)arg1;
 - (id)_baseURLForSourceSpecificURL:(id)arg1;

@@ -17,10 +17,10 @@
     NFPromise *_endpointURLPromise;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NFPromise *endpointURLPromise; // @synthesize endpointURLPromise=_endpointURLPromise;
 @property(readonly, nonatomic) NFLazy *requestEncoder; // @synthesize requestEncoder=_requestEncoder;
 @property(readonly, nonatomic) NFLazy *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)_performHTTPRequestWithData:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchWrappingKeysWithIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithConfigurationManager:(id)arg1;

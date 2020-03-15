@@ -37,6 +37,7 @@
 + (id)appSupportPath;
 + (id)cloudStoragePath;
 + (id)homeDirectory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain, nonatomic) Class fpfsSQLRestoreManagerClass; // @synthesize fpfsSQLRestoreManagerClass=_fpfsSQLRestoreManagerClass;
 @property(retain, nonatomic) Class fpfsSQLBackupManagerClass; // @synthesize fpfsSQLBackupManagerClass=_fpfsSQLBackupManagerClass;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic) FPDAppMonitor *appMonitor; // @synthesize appMonitor=_appMonitor;
 @property(readonly, nonatomic) FPDCacheDeleteService *cacheDelete; // @synthesize cacheDelete=_cacheDelete;
 @property(readonly, nonatomic) FPDActionOperationEngine *operationEngine; // @synthesize operationEngine=_operationEngine;
-- (void).cxx_destruct;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)start;
 - (void)localeDidChange;

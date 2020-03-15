@@ -15,10 +15,10 @@
     long long _errorCode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long errorCode; // @synthesize errorCode=_errorCode;
 @property(retain, nonatomic) NSString *errorDomain; // @synthesize errorDomain=_errorDomain;
 @property(retain, nonatomic) NSUUID *playbackSessionID; // @synthesize playbackSessionID=_playbackSessionID;
-- (void).cxx_destruct;
 - (id)payload;
 - (id)initWithData:(id)arg1;
 

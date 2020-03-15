@@ -17,10 +17,10 @@
     _MRPlaybackSessionMigrateRequestProtobuf *_request;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath; // @synthesize playerPath=_playerPath;
 @property(retain, nonatomic) _MRPlaybackSessionMigrateRequestProtobuf *request; // @synthesize request=_request;
 @property(retain, nonatomic) _MRPlaybackSessionProtobuf *playbackSession; // @synthesize playbackSession=_playbackSession;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

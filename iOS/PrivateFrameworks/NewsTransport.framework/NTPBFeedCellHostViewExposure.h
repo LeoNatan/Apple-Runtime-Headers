@@ -28,12 +28,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool pickFavsButtonExposed; // @synthesize pickFavsButtonExposed=_pickFavsButtonExposed;
 @property(retain, nonatomic) NSString *creativeId; // @synthesize creativeId=_creativeId;
 @property(retain, nonatomic) NSString *campaignType; // @synthesize campaignType=_campaignType;
 @property(retain, nonatomic) NSString *campaignId; // @synthesize campaignId=_campaignId;
 @property(retain, nonatomic) NSString *topicFeedId; // @synthesize topicFeedId=_topicFeedId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

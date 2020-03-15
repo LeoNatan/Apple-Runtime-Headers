@@ -16,9 +16,9 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *serviceProvider; // @synthesize serviceProvider=_serviceProvider;
 @property(retain, nonatomic) NSString *tokenPayload; // @synthesize tokenPayload=_tokenPayload;
-- (void).cxx_destruct;
 
 @end
 

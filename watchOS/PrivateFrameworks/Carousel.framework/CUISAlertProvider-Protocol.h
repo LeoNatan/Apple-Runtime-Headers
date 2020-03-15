@@ -15,6 +15,7 @@
 @optional
 - (_Bool)continueUserActivity:(NSUserActivity *)arg1;
 - (_Bool)canContinueUserActivity:(NSUserActivity *)arg1;
+- (_Bool)openURL:(NSURL *)arg1 sourceApplication:(NSString *)arg2;
 - (_Bool)openURL:(NSURL *)arg1;
 - (_Bool)canOpenURL:(NSURL *)arg1;
 - (_Bool)runTest:(NSString *)arg1 options:(NSDictionary *)arg2;

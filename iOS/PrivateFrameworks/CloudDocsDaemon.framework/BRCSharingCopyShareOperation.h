@@ -19,14 +19,13 @@ __attribute__((visibility("hidden")))
     BRCClientZone *_clientZone;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BRCClientZone *clientZone; // @synthesize clientZone=_clientZone;
 @property(retain, nonatomic) BRCItemID *rootItemIDToLookup; // @synthesize rootItemIDToLookup=_rootItemIDToLookup;
 @property(retain, nonatomic) CKRecordID *recordIDNeedingFetch; // @synthesize recordIDNeedingFetch=_recordIDNeedingFetch;
 @property(retain, nonatomic) CKRecordID *shareID; // @synthesize shareID=_shareID;
-- (void).cxx_destruct;
 - (void)main;
 - (void)fetchRootURLIfNecessaryAndFinishWithShare:(id)arg1;
-- (_Bool)shouldRetryForError:(id)arg1;
 - (id)createActivity;
 - (id)initWithItem:(id)arg1;
 

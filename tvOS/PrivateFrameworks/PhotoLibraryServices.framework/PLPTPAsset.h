@@ -44,6 +44,7 @@
     long long _conversionGroup;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *event; // @synthesize event=_event;
 @property(readonly, nonatomic) long long conversionGroup; // @synthesize conversionGroup=_conversionGroup;
 @property(readonly, copy, nonatomic) NSString *relatedUUID; // @synthesize relatedUUID=_relatedUUID;
@@ -73,7 +74,6 @@
 @property(readonly, copy, nonatomic) NSString *createdFilename; // @synthesize createdFilename=_createdFilename;
 @property(readonly, copy, nonatomic) NSString *filename; // @synthesize filename=_filename;
 @property(readonly, copy, nonatomic) PLPTPAssetHandle *assetHandle; // @synthesize assetHandle=_assetHandle;
-- (void).cxx_destruct;
 - (id)_pl_prettyDescriptionWithIndent:(long long)arg1;
 @property(readonly, copy, nonatomic) NSString *cacheKey;
 - (id)description;

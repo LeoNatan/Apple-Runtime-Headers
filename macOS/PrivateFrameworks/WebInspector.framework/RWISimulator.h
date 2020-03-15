@@ -16,8 +16,8 @@
     NSString *_domainSocketPath;
 }
 
-@property(readonly, nonatomic) long long deviceClass; // @synthesize deviceClass=_deviceClass;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long deviceClass; // @synthesize deviceClass=_deviceClass;
 - (id)underlyingSimDevice;
 - (void)refreshSimDeviceState;
 @property(readonly, nonatomic) NSString *connectionSocketPath;

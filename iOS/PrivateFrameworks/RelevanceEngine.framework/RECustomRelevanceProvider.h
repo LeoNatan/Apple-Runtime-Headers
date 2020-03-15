@@ -15,9 +15,9 @@
 }
 
 + (id)relevanceSimulatorID;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long value; // @synthesize value=_value;
 @property(readonly, nonatomic) REFeature *feature; // @synthesize feature=_feature;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)_hash;
 - (_Bool)isEqual:(id)arg1;

@@ -17,10 +17,10 @@
     unsigned int _state;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
 @property float easing; // @synthesize easing=_easing;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
-- (void).cxx_destruct;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

@@ -17,8 +17,8 @@
 + (id)_localizedStringForRoute:(id)arg1;
 + (id)_localizedStringForProperty:(id)arg1;
 + (id)_bundle;
-@property(retain) NSDate *postDate; // @synthesize postDate=_postDate;
 - (void).cxx_destruct;
+@property(retain) NSDate *postDate; // @synthesize postDate=_postDate;
 @property(readonly) double interval;
 @property(readonly) NSString *sharingPrefsAnchor;
 @property(readonly) NSString *verboseText;

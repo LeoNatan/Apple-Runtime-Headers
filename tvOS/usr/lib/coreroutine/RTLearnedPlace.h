@@ -30,8 +30,9 @@
 + (id)createWithLearnedLocationOfInterestMO:(id)arg1;
 + (id)createWithLearnedPlaceMO:(id)arg1;
 + (id)createWithManagedObject:(id)arg1;
-+ (unsigned long long)placeTypeSourceFromTypeSource:(long long)arg1;
++ (unsigned long long)placeTypeSourceFromTypeSource:(unsigned long long)arg1;
 + (unsigned long long)placeTypeFromType:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, nonatomic) NSString *customLabel; // @synthesize customLabel=_customLabel;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) unsigned long long typeSource; // @synthesize typeSource=_typeSource;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;

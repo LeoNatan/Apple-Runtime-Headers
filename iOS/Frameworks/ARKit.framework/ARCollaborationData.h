@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PRPeer *prPeer; // @synthesize prPeer=_prPeer;
 @property(retain, nonatomic) PRCollaborationData *prCollaborationData; // @synthesize prCollaborationData=_prCollaborationData;
 @property(retain, nonatomic) NSSet *anchors; // @synthesize anchors=_anchors;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) long long version; // @synthesize version=_version;
 @property(readonly, nonatomic) long long priority; // @synthesize priority=_priority;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithProximityCollaborationData:(id)arg1 sessionID:(unsigned long long)arg2;

@@ -15,8 +15,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)optionWithDisabledDataSourceIdentifiers:(id)arg1 forDevice:(id)arg2;
-@property(readonly, nonatomic) NSSet *disabledBundleIdentifiers; // @synthesize disabledBundleIdentifiers=_disabledBundleIdentifiers;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *disabledBundleIdentifiers; // @synthesize disabledBundleIdentifiers=_disabledBundleIdentifiers;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isValidOption;

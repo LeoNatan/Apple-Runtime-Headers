@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSArray *_legendViews;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *legendViews; // @synthesize legendViews=_legendViews;
 @property(retain, nonatomic) UIView *dividerView; // @synthesize dividerView=_dividerView;
 @property(retain, nonatomic) _TVImageView *logoImageView; // @synthesize logoImageView=_logoImageView;
 @property(retain, nonatomic) VUIVideoAdvisoryViewLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (void)_configureSubviewsWithDictionary:(id)arg1;
 - (struct UIEdgeInsets)_dividerMargin;
 - (struct UIEdgeInsets)_legendsMargin;

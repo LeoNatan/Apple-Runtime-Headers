@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double horizontalAccuracy; // @synthesize horizontalAccuracy=_horizontalAccuracy;
 @property(readonly, nonatomic) double longitude; // @synthesize longitude=_longitude;
 @property(readonly, nonatomic) double latitude; // @synthesize latitude=_latitude;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) int status; // @synthesize status=_status;
 @property(readonly, copy, nonatomic) NSData *publicKey; // @synthesize publicKey=_publicKey;
 @property(readonly, copy, nonatomic) NSData *hashedPublicKey; // @synthesize hashedPublicKey=_hashedPublicKey;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

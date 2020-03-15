@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPhysicalCardPriceOption *priceOption; // @synthesize priceOption=_priceOption;
 @property(copy, nonatomic) NSString *nameOnCard; // @synthesize nameOnCard=_nameOnCard;
 @property(copy, nonatomic) CNPostalAddress *shippingAddress; // @synthesize shippingAddress=_shippingAddress;
@@ -29,7 +30,6 @@
 @property(nonatomic) unsigned long long reason; // @synthesize reason=_reason;
 @property(copy, nonatomic) NSString *activationCode; // @synthesize activationCode=_activationCode;
 @property(readonly, nonatomic) unsigned long long actionType; // @synthesize actionType=_actionType;
-- (void).cxx_destruct;
 - (id)_shippingAddressJSONRepresentation;
 - (id)jsonRepresentation;
 - (unsigned long long)hash;

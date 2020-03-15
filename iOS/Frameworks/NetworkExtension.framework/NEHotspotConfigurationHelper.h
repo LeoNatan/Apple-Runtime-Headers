@@ -16,8 +16,8 @@
 }
 
 + (id)sharedManager;
-@property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void)sendRequest:(id)arg1 requestType:(long long)arg2 resultHandler:(CDUnknownBlockType)arg3;
 - (id)processQueryNetworksResponse:(id)arg1;
 - (id)createXPCRequest:(id)arg1 requestType:(long long)arg2;

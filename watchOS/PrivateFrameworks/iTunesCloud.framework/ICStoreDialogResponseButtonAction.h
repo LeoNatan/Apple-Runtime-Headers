@@ -15,8 +15,8 @@
     NSDictionary *_actionDictionary;
 }
 
-@property(readonly, copy, nonatomic) NSDictionary *actionDictionary; // @synthesize actionDictionary=_actionDictionary;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *actionDictionary; // @synthesize actionDictionary=_actionDictionary;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy, nonatomic) NSString *kind;
 @property(readonly, copy, nonatomic) NSString *URLString;

@@ -23,9 +23,9 @@
     STKClass0SMSAlertSession *_currentSession;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_queue_setCurrentSession:) STKClass0SMSAlertSession *currentSession; // @synthesize currentSession=_currentSession;
 @property(readonly, nonatomic) STKCarrierSubscriptionMonitor *subscriptionMonitor; // @synthesize subscriptionMonitor=_subscriptionMonitor;
-- (void).cxx_destruct;
 - (void)_queue_enqueueSession:(id)arg1;
 - (void)_queue_handleClass0SMSBody:(id)arg1 address:(id)arg2 responder:(id)arg3 forSlot:(long long)arg4;
 - (void)remoteAlertHandle:(id)arg1 didInvalidateWithError:(id)arg2;

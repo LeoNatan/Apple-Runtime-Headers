@@ -43,6 +43,7 @@
 + (void)applicationDidEnterBackground;
 + (void)applicationDidResume;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NPSDomainAccessorFilePresenter *filePresenter; // @synthesize filePresenter=_filePresenter;
 @property(retain, nonatomic) NSMutableDictionary *map; // @synthesize map=_map;
 @property(retain, nonatomic) NSMutableSet *dirtyKeysForWriting; // @synthesize dirtyKeysForWriting=_dirtyKeysForWriting;
@@ -55,7 +56,6 @@
 @property(retain, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(retain, nonatomic) NSString *pairingStorePath; // @synthesize pairingStorePath=_pairingStorePath;
 @property(retain, nonatomic) NSUUID *pairingID; // @synthesize pairingID=_pairingID;
-- (void).cxx_destruct;
 - (void)filePresenterDidBecomeNonCurrent:(id)arg1;
 - (id)createNanoSettingsDirectory;
 - (id)canSynchronizeForWritingURL:(id)arg1 readFirst:(_Bool)arg2;

@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool useBackground; // @synthesize useBackground=_useBackground;
 @property(readonly, nonatomic) long long limit; // @synthesize limit=_limit;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) NSArray *accessPoints; // @synthesize accessPoints=_accessPoints;
 @property(readonly, nonatomic) NSArray *locations; // @synthesize locations=_locations;
 @property(readonly, nonatomic) unsigned long long fidelityPolicy; // @synthesize fidelityPolicy=_fidelityPolicy;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithinDistance:(double)arg1 location:(id)arg2 startDate:(id)arg3 endDate:(id)arg4;

@@ -25,11 +25,11 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadCredentials; // @synthesize payloadCredentials=_payloadCredentials;
 @property(copy, nonatomic) NSArray *payloadConfiguredAccounts; // @synthesize payloadConfiguredAccounts=_payloadConfiguredAccounts;
 @property(copy, nonatomic) NSString *payloadAccountDescription; // @synthesize payloadAccountDescription=_payloadAccountDescription;
 @property(copy, nonatomic) NSString *payloadHostName; // @synthesize payloadHostName=_payloadHostName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

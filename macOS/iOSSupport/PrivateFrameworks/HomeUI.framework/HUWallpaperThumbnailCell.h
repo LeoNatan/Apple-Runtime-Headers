@@ -22,6 +22,7 @@
     struct CGSize _imageSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIDropInteraction *dropInteraction; // @synthesize dropInteraction=_dropInteraction;
 @property(retain, nonatomic) NSLayoutConstraint *imageHeightConstraint; // @synthesize imageHeightConstraint=_imageHeightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *imageWidthConstraint; // @synthesize imageWidthConstraint=_imageWidthConstraint;
@@ -29,7 +30,6 @@
 @property(nonatomic) __weak id <HUWallpaperThumbnailCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long contentMode; // @synthesize contentMode=_contentMode;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *image;
 - (void)prepareForReuse;
 - (void)dropInteraction:(id)arg1 sessionDidExit:(id)arg2;

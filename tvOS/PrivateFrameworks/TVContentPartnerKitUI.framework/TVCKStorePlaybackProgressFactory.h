@@ -19,12 +19,12 @@
     id _bookmarkPendingUpdateObserver;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id bookmarkPendingUpdateObserver; // @synthesize bookmarkPendingUpdateObserver=_bookmarkPendingUpdateObserver;
 @property(nonatomic) __weak id bookmarkServiceUpdatedObserver; // @synthesize bookmarkServiceUpdatedObserver=_bookmarkServiceUpdatedObserver;
 @property(retain, nonatomic) TVCKStoreFavoritesController *favoritesController; // @synthesize favoritesController=_favoritesController;
 @property(nonatomic) _Bool needsUpdate; // @synthesize needsUpdate=_needsUpdate;
 @property(readonly, nonatomic) TVCKBookmarkService *bookmarkService; // @synthesize bookmarkService=_bookmarkService;
-- (void).cxx_destruct;
 - (void)markItemsAsUnwatched:(id)arg1;
 - (void)markItemsAsWatched:(id)arg1;
 - (void)determineProgressForAdamIDs:(id)arg1 assumePurchased:(_Bool)arg2 respectBookmarkPlayCount:(_Bool)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;

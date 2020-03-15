@@ -9,26 +9,25 @@
 #import <PhotosUICore/PXActionPerformerDelegate-Protocol.h>
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 
-@class NSString, PXActionPerformer, PXAssetActionManager, PXBarAppearance, PXCuratedLibraryViewModel, UILabel;
+@class NSString, PXActionPerformer, PXBarAppearance, PXCuratedLibraryViewModel, UILabel;
 
 @interface PXCuratedLibraryBarsController : PXBarsController <PXChangeObserver, PXActionPerformerDelegate>
 {
-    PXAssetActionManager *_assetActionManager;
     UILabel *_selectModeCaptionLabel;
     PXCuratedLibraryViewModel *_viewModel;
     PXActionPerformer *_activeActionPerformer;
     PXActionPerformer *_lastActionPerformer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXActionPerformer *lastActionPerformer; // @synthesize lastActionPerformer=_lastActionPerformer;
 @property(retain, nonatomic) PXActionPerformer *activeActionPerformer; // @synthesize activeActionPerformer=_activeActionPerformer;
 @property(readonly, nonatomic) PXCuratedLibraryViewModel *viewModel; // @synthesize viewModel=_viewModel;
-- (void).cxx_destruct;
 - (id)_defaultToolbarItemIdentifiers;
 - (void)_invalidateToolbarItems;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
-- (_Bool)actionPerformer:(id)arg1 dismissViewController:(struct NSObject *)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (_Bool)actionPerformer:(id)arg1 presentViewController:(struct NSObject *)arg2;
+- (_Bool)actionPerformer:(id)arg1 dismissViewController:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)actionPerformer:(id)arg1 presentViewController:(id)arg2;
 - (void)actionPerformer:(id)arg1 didChangeState:(unsigned long long)arg2;
 - (void)handleCancelBarButtonItem:(id)arg1;
 - (void)handleSelectBarButtonItem:(id)arg1;
@@ -42,7 +41,6 @@
 - (id)curatedLibraryViewController;
 - (void)_updateSelectModeCaptionLabel;
 @property(readonly, nonatomic) UILabel *selectModeCaptionLabel; // @synthesize selectModeCaptionLabel=_selectModeCaptionLabel;
-@property(readonly, nonatomic) PXAssetActionManager *assetActionManager; // @synthesize assetActionManager=_assetActionManager;
 @property(readonly, nonatomic) PXBarAppearance *barAppearance;
 - (id)createAssetActionManagerForAssetReference:(id)arg1;
 - (id)initWithCuratedLibraryViewController:(id)arg1 viewModel:(id)arg2;

@@ -15,10 +15,10 @@
     unsigned long long _targetNumberOfMatches;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long targetNumberOfMatches; // @synthesize targetNumberOfMatches=_targetNumberOfMatches;
 @property(retain, nonatomic) NSDictionary *thresholdByIdentifier; // @synthesize thresholdByIdentifier=_thresholdByIdentifier;
 @property(readonly, nonatomic) NSIndexSet *indexSet; // @synthesize indexSet=_indexSet;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)niceDescription;
 - (double)thresholdForSceneIdentifier:(unsigned int)arg1;

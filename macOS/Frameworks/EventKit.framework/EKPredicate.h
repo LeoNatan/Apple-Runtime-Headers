@@ -15,10 +15,10 @@
     CDUnknownBlockType _sortComparator;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType sortComparator; // @synthesize sortComparator=_sortComparator;
 @property(nonatomic) BOOL skipSorting; // @synthesize skipSorting=_skipSorting;
 @property(retain, nonatomic) NSSet *calendarIdentifiers; // @synthesize calendarIdentifiers=_calendarIdentifiers;
-- (void).cxx_destruct;
 - (id)fastPathResultWithStore:(id)arg1;
 - (BOOL)hasFastPathWithStore:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

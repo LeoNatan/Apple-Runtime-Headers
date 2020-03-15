@@ -36,6 +36,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *userToken; // @synthesize userToken=_userToken;
 @property(copy, nonatomic) NSNumber *appPlacementPosition; // @synthesize appPlacementPosition=_appPlacementPosition;
 @property(copy, nonatomic) NSString *providerAppArtworkTemplateURL; // @synthesize providerAppArtworkTemplateURL=_providerAppArtworkTemplateURL;
@@ -55,7 +56,6 @@
 @property(retain, nonatomic) VSOptional *providerInfo; // @synthesize providerInfo=_providerInfo;
 @property(retain, nonatomic) VSOptional *providerID; // @synthesize providerID=_providerID;
 @property(retain, nonatomic) VSOptional *uniqueID; // @synthesize uniqueID=_uniqueID;
-- (void).cxx_destruct;
 - (_Bool)isFullySupportedForRequestsExpectingAuthenticationSchemes:(id)arg1;
 - (_Bool)supportsRequestsExpectingAuthenticationSchemes:(id)arg1;
 @property(readonly, nonatomic) _Bool supportsTemplatesSufficientForCurrentPlatform;

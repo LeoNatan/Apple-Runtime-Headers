@@ -27,13 +27,13 @@
     unsigned long long _cpuInstructionsCached;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long timestampIndexWhenTransitionedToSamplingAllThreads; // @synthesize timestampIndexWhenTransitionedToSamplingAllThreads=_timestampIndexWhenTransitionedToSamplingAllThreads;
 @property(readonly) unsigned long long firstTimestampIndex; // @synthesize firstTimestampIndex=_firstTimestampIndex;
 @property(retain) NSDictionary *threadsInPreviousSample; // @synthesize threadsInPreviousSample=_threadsInPreviousSample;
 @property(readonly) unsigned int countTerminated; // @synthesize countTerminated=_countTerminated;
 @property(readonly) unsigned int countSuspended; // @synthesize countSuspended=_countSuspended;
 @property(readonly) NSArray *timestampIndexedTasks; // @synthesize timestampIndexedTasks=_timestampIndexedTasks;
-- (void).cxx_destruct;
 - (void)printToOutputStream:(id)arg1;
 - (BOOL)_shouldDisplayStacks;
 - (void)printStacksToOutputStream:(id)arg1;

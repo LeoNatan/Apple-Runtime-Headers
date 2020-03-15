@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (unsigned int)generateOADDrawableId:(id)arg1;
-@property __weak OADDrawable<OADDrawableContainer> *parent; // @synthesize parent=mParent;
 - (void).cxx_destruct;
+@property __weak OADDrawable<OADDrawableContainer> *parent; // @synthesize parent=mParent;
 - (id)description;
 - (id)createOrientedBoundsWithBounds:(struct CGRect)arg1;
 - (void)removeUnnecessaryOverrides;

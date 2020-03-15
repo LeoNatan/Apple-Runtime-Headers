@@ -22,9 +22,9 @@
 + (id)_allMetricsSafeBundleIdentifiers;
 + (id)_metricsSafeBundleIdentifierByBundleIdentifier;
 + (id)eventTrackerWithAutomaticCollation;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NCNotificationStructuredSectionList *structuredSectionList; // @synthesize structuredSectionList=_structuredSectionList;
 @property(nonatomic) __weak NCNotificationListSection *notificationList; // @synthesize notificationList=_notificationList;
-- (void).cxx_destruct;
 - (void)_queue_collateAndRecordMetrics;
 - (void)collateAndRecordMetrics;
 - (void)_queue_processRequests:(id)arg1 timestamp:(id)arg2;

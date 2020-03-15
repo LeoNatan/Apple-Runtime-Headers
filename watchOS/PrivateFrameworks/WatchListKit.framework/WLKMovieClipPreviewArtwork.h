@@ -20,6 +20,7 @@
     struct CGSize _artworkSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *url; // @synthesize url=_url;
 @property(readonly, copy, nonatomic) NSString *textColor4; // @synthesize textColor4=_textColor4;
 @property(readonly, copy, nonatomic) NSString *textColor3; // @synthesize textColor3=_textColor3;
@@ -28,7 +29,6 @@
 @property(readonly, copy, nonatomic) NSString *bgColor; // @synthesize bgColor=_bgColor;
 @property(readonly, nonatomic) _Bool supportsLayeredImage; // @synthesize supportsLayeredImage=_supportsLayeredImage;
 @property(readonly, nonatomic) struct CGSize artworkSize; // @synthesize artworkSize=_artworkSize;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) WLKArtworkVariant *artworkVariant;
 - (id)init;
 - (id)_init;

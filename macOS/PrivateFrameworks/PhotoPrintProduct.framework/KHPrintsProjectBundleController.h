@@ -30,6 +30,7 @@
 + (id)orderQuantitiesForProjectLayouts:(id)arg1;
 + (id)photos:(id)arg1 mappedToProductsInSubgroup:(id)arg2;
 + (BOOL)canOrderPrintsForPhotos:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) KHProjectDatabaseActivity *databaseActivity; // @synthesize databaseActivity=_databaseActivity;
 @property(readonly, nonatomic) NSMutableDictionary *projectSubgroupsByProductSubgroupIdentifier; // @synthesize projectSubgroupsByProductSubgroupIdentifier=_projectSubgroupsByProductSubgroupIdentifier;
 @property(readonly, nonatomic) NSMutableOrderedSet *photos; // @synthesize photos=_photos;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) KHTheme *theme; // @synthesize theme=_theme;
 @property(readonly, nonatomic) unsigned long long numberOfPrints; // @synthesize numberOfPrints=_numberOfPrints;
 @property(readonly, nonatomic) KHProjectBundle *projectBundle; // @synthesize projectBundle=_projectBundle;
-- (void).cxx_destruct;
 - (void)resetCartIfNecessary;
 - (void)reloadCart;
 - (void)loadProducts:(CDUnknownBlockType)arg1;

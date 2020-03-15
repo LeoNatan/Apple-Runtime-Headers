@@ -17,11 +17,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *configVersion; // @synthesize configVersion=_configVersion;
 @property(nonatomic) long long proxyType; // @synthesize proxyType=_proxyType;
 @property(copy, nonatomic) NSURL *contentProxyURLConnect; // @synthesize contentProxyURLConnect=_contentProxyURLConnect;
 @property(copy, nonatomic) NSURL *contentProxyURL; // @synthesize contentProxyURL=_contentProxyURL;
-- (void).cxx_destruct;
 - (void)configVersionDidChange:(id)arg1;
 - (void)proxyTypeDidChange:(long long)arg1;
 - (void)contentProxyURLConnectDidChange:(id)arg1;

@@ -25,6 +25,7 @@
 
 + (Class)layoutOptionsClass;
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NAFuture *internalExecuteActionSetFuture; // @synthesize internalExecuteActionSetFuture=_internalExecuteActionSetFuture;
 @property(retain, nonatomic) NSArray *actionSetCellConstraints; // @synthesize actionSetCellConstraints=_actionSetCellConstraints;
 @property(retain, nonatomic) HUPieProgressView *progressView; // @synthesize progressView=_progressView;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NAFuture *executeActionSetFuture; // @synthesize executeActionSetFuture=_executeActionSetFuture;
 - (void)setItem:(id)arg1;
 - (id)item;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)_invalidateConstraints;
 - (void)_updateLabelsWithTitle:(id)arg1 description:(id)arg2;

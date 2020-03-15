@@ -13,8 +13,8 @@
     NSOrderedSet *_items;
 }
 
-@property(readonly, nonatomic) NSOrderedSet *items; // @synthesize items=_items;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSOrderedSet *items; // @synthesize items=_items;
 - (id)description;
 - (void)enumerateMediaItemsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)initWithItems:(id)arg1;

@@ -19,10 +19,10 @@
 + (id)powerStatusToString:(unsigned long long)arg1;
 + (BOOL)supportsNotificationName:(id)arg1;
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *accessPoints; // @synthesize accessPoints=_accessPoints;
 @property(readonly, nonatomic) unsigned long long linkStatus; // @synthesize linkStatus=_linkStatus;
 @property(nonatomic) unsigned long long powerStatus; // @synthesize powerStatus=_powerStatus;
-- (void).cxx_destruct;
 - (void)_notifyScanResults:(id)arg1;
 - (void)internalRemoveObserver:(id)arg1 name:(id)arg2;
 - (void)internalAddObserver:(id)arg1 name:(id)arg2;

@@ -40,6 +40,7 @@
 + (id)checkOutViewForAsset:(id)arg1 withPlaybackStyle:(long long)arg2;
 + (id)checkOutViewForAsset:(id)arg1;
 + (id)viewPool;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double loadingProgress; // @synthesize loadingProgress=_loadingProgress;
 @property(readonly, nonatomic) double imageProgress; // @synthesize imageProgress=_imageProgress;
 @property(retain, nonatomic) PXLoadingFailureBadgeView *failureView; // @synthesize failureView=_failureView;
@@ -59,7 +60,6 @@
 @property(retain, nonatomic) PXUIMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(readonly, nonatomic) long long playbackStyle; // @synthesize playbackStyle=_playbackStyle;
 @property(retain, nonatomic) id <PXDisplayAsset> asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)_loadContentView;
 - (void)_updateFailureView;
 - (void)_updateProgressView;

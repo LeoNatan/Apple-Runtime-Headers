@@ -14,8 +14,8 @@
 }
 
 + (id)name;
-@property(nonatomic) __weak CSKStreamTaskOperation *parentOperation; // @synthesize parentOperation=_parentOperation;
 - (void).cxx_destruct;
+@property(nonatomic) __weak CSKStreamTaskOperation *parentOperation; // @synthesize parentOperation=_parentOperation;
 - (CDUnknownBlockType)handler;
 
 @end

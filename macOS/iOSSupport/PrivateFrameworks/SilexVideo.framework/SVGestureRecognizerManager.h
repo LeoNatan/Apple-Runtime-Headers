@@ -18,9 +18,9 @@
     id <SVGestureRecognizerViewProviding> _viewProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVGestureRecognizerViewProviding> viewProvider; // @synthesize viewProvider=_viewProvider;
 @property(readonly, nonatomic) NSMutableSet *gestureRecognizers; // @synthesize gestureRecognizers=_gestureRecognizers;
-- (void).cxx_destruct;
 - (void)setupGestureRecognizers;
 - (void)willTransitionToVideo:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)removeGestureRecognizer:(id)arg1;

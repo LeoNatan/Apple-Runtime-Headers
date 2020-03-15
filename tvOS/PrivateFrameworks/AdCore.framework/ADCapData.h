@@ -17,11 +17,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *downloadData; // @synthesize downloadData=_downloadData;
 @property(retain, nonatomic) NSMutableArray *clickCountData; // @synthesize clickCountData=_clickCountData;
 @property(retain, nonatomic) NSMutableArray *frequencyCapData; // @synthesize frequencyCapData=_frequencyCapData;
 @property(retain, nonatomic) NSString *toroID; // @synthesize toroID=_toroID;
-- (void).cxx_destruct;
 - (void)eraseCapData;
 - (id)downloadObjectForAdamID:(id)arg1;
 - (id)clickCapObjectForAdamID:(id)arg1;

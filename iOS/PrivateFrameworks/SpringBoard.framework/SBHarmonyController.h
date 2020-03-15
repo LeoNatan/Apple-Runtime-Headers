@@ -20,9 +20,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool supportsBlueLightReduction; // @synthesize supportsBlueLightReduction=_supportsBlueLightReduction;
 @property(readonly, nonatomic) _Bool supportsWhitePointAdaptation; // @synthesize supportsWhitePointAdaptation=_supportsWhitePointAdaptation;
-- (void).cxx_destruct;
 - (id)_adaptationClient;
 - (void)transitionFromWhitePointAdaptivityStyleWithStyles:(id)arg1 toWhitePointAdaptivityStyleWithStyles:(id)arg2 fromPercentage:(double)arg3 toPercentage:(double)arg4 animationSettings:(id)arg5;
 - (void)setWhitePointAdaptivityStyleWithStyles:(id)arg1 animationSettings:(id)arg2;

@@ -21,6 +21,7 @@
     UIImage *_selectedPointMarkerImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *selectedPointMarkerImage; // @synthesize selectedPointMarkerImage=_selectedPointMarkerImage;
 @property(nonatomic) double markRadius; // @synthesize markRadius=_markRadius;
 @property(nonatomic) double selectedLineWidth; // @synthesize selectedLineWidth=_selectedLineWidth;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) UIColor *baseColor; // @synthesize baseColor=_baseColor;
 @property(nonatomic) _Bool shouldConnectPoints; // @synthesize shouldConnectPoints=_shouldConnectPoints;
 @property(nonatomic) double topInsetPercentage; // @synthesize topInsetPercentage=_topInsetPercentage;
-- (void).cxx_destruct;
 - (struct CGPoint)renderPositionForLabel:(id)arg1 rect:(struct CGRect)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint)arg4 constantOffset:(double)arg5 isHorizontal:(_Bool)arg6 optionalOffset:(struct CGPoint)arg7;
 - (id)findAxisLabelsInModelRange:(id)arg1 zoomScale:(double)arg2;
 - (_Bool)blockCoordinate:(id)arg1 greaterThan:(id)arg2;

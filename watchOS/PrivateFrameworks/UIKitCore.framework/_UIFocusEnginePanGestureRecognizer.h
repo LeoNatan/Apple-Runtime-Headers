@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <_UIFocusEnginePanGestureTouchObserver> _touchObserver;
 }
 
-@property(nonatomic) __weak id <_UIFocusEnginePanGestureTouchObserver> touchObserver; // @synthesize touchObserver=_touchObserver;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_UIFocusEnginePanGestureTouchObserver> touchObserver; // @synthesize touchObserver=_touchObserver;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

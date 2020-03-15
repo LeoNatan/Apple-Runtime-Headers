@@ -28,6 +28,7 @@
 
 + (id)keyPathsForValuesAffectingReasonText;
 + (id)progressEntryWithSlice:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *finishTimer; // @synthesize finishTimer=_finishTimer;
 @property(nonatomic) unsigned long long unsatisfiedConditions; // @synthesize unsatisfiedConditions=_unsatisfiedConditions;
 @property(nonatomic) double fractionCompleted; // @synthesize fractionCompleted=_fractionCompleted;
@@ -37,7 +38,6 @@
 @property(nonatomic) long long totalUnitCount; // @synthesize totalUnitCount=_totalUnitCount;
 @property(nonatomic) long long completedUnitCount; // @synthesize completedUnitCount=_completedUnitCount;
 @property(nonatomic) __weak id <MCProgressEntryDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL shouldDisplay;
 @property(readonly, nonatomic) BOOL hasSignificantDeferrableWork;
 @property(readonly, nonatomic) double finishDelay;

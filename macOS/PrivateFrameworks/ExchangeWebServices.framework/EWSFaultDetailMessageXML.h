@@ -16,8 +16,8 @@
 }
 
 + (id)definition;
-@property(retain, nonatomic) EWSFaultDetailMessageXMLValue *Value; // @synthesize Value=_Value;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EWSFaultDetailMessageXMLValue *Value; // @synthesize Value=_Value;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

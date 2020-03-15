@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _behaviorChangeBlock;
 }
 
+- (void).cxx_destruct;
 @property BOOL isValid; // @synthesize isValid=_isValid;
 @property(copy, nonatomic) CDUnknownBlockType behaviorChangeBlock; // @synthesize behaviorChangeBlock=_behaviorChangeBlock;
 @property(retain) NSViewController *contentController; // @synthesize contentController=_contentController;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain) id globalEventMonitor; // @synthesize globalEventMonitor=_globalEventMonitor;
 @property(retain) NSWindow *hostingWindow; // @synthesize hostingWindow=_hostingWindow;
 @property __weak id bridge; // @synthesize bridge=_bridge;
-- (void).cxx_destruct;
 - (void)_viewDidDisappear;
 - (void)_viewWillDisappear;
 - (void)_viewDidAppear;

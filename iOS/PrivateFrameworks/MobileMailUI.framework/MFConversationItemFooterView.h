@@ -23,10 +23,13 @@
     double _defaultSeeMoreButtonOriginY;
     UIButton *_trashButton;
     EMCachingContactStore *_contactStore;
+    double _currentYOffset;
 }
 
 + (id)nameFont;
 + (id)prefixFont;
+- (void).cxx_destruct;
+@property(nonatomic) double currentYOffset; // @synthesize currentYOffset=_currentYOffset;
 @property(retain, nonatomic) EMCachingContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) UIButton *trashButton; // @synthesize trashButton=_trashButton;
 @property(nonatomic) double defaultSeeMoreButtonOriginY; // @synthesize defaultSeeMoreButtonOriginY=_defaultSeeMoreButtonOriginY;
@@ -39,7 +42,6 @@
 @property(retain, nonatomic) UIButton *revealActionsButton; // @synthesize revealActionsButton=_revealActionsButton;
 @property(retain, nonatomic) UIButton *seeMoreButton; // @synthesize seeMoreButton=_seeMoreButton;
 @property(retain, nonatomic) UIVisualEffectView *backgroundView; // @synthesize backgroundView=_backgroundView;
-- (void).cxx_destruct;
 - (void)moveOriginYByOffset:(double)arg1;
 - (void)_updateButtonsForTraitCollection:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
@@ -53,6 +55,9 @@
 - (void)hideAttribution;
 - (void)showAttributionWithSenderName:(id)arg1;
 - (void)addTarget:(id)arg1 action:(SEL)arg2 toButton:(long long)arg3;
+- (_Bool)_shouldHideStickyFooter;
+- (void)_updateSeeMoreButton;
+- (void)_updateBackgroundView;
 - (void)setLayoutMargins:(struct UIEdgeInsets)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

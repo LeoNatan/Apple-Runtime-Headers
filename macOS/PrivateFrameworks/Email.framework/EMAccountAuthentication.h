@@ -14,8 +14,8 @@
 }
 
 + (id)log;
-@property(readonly, nonatomic) id <EDAccountFactory> accountFactory; // @synthesize accountFactory=_accountFactory;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <EDAccountFactory> accountFactory; // @synthesize accountFactory=_accountFactory;
 - (BOOL)_hostnamesHaveSameTopLevelDomain:(id)arg1 deliveryAccount:(id)arg2;
 - (BOOL)_shouldAutoUpdateDeliveryAccount:(id)arg1 forChangedReceivingAccount:(id)arg2;
 - (BOOL)_updateDeliveryAccountCredentialIfNecessaryForReceivingAccount:(id)arg1;

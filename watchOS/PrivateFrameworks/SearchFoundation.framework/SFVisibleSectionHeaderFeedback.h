@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int headerType; // @synthesize headerType=_headerType;
 @property(copy, nonatomic) SFResultSection *section; // @synthesize section=_section;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSection:(id)arg1 headerType:(unsigned int)arg2;

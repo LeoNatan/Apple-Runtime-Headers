@@ -21,11 +21,11 @@
 + (id)_imageNamed:(id)arg1 inBundle:(id)arg2 convertToMatchInterfaceStyle:(_Bool)arg3;
 + (id)imageNamed:(id)arg1;
 + (id)imageNamed:(id)arg1 inBundle:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
-- (void).cxx_destruct;
 - (id)_obFlatImageWithColor:(id)arg1;
 - (id)_flatImageWithColor:(id)arg1;
 - (id)imageForUserInterfaceStyle:(long long)arg1;

@@ -18,11 +18,11 @@
     UILabel *__label;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *_label; // @synthesize _label=__label;
 @property(readonly, nonatomic) UIActivityIndicatorView *_activityIndicatorView; // @synthesize _activityIndicatorView=__activityIndicatorView;
 @property(retain, nonatomic) PXPhotoAnalysisStatusController *statusController; // @synthesize statusController=_statusController;
 @property(nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)becomeReusable;
 - (void)didApplyGeometry:(struct PXTileGeometry)arg1 withUserData:(id)arg2;

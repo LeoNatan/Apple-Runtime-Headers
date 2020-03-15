@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     unsigned char _listenUUID[16];
 }
 
-- (BOOL)cancel;
-- (BOOL)resume;
-- (BOOL)suspend;
+- (_Bool)cancel;
+- (_Bool)resume;
+- (_Bool)suspend;
 - (id)initWithParameters:(id)arg1 delegate:(id)arg2 necpUUID:(unsigned char [16])arg3;
 - (id)description;
 - (id)initWithSocket:(int)arg1 parameters:(id)arg2 delegate:(id)arg3;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSSet *_dependentPathStrings;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *dependentPathStrings; // @synthesize dependentPathStrings=_dependentPathStrings;
 @property(readonly, copy, nonatomic) NSArray *mutationRules; // @synthesize mutationRules=_mutationRules;
-- (void).cxx_destruct;
 - (id)initWithMutationRules:(id)arg1;
 
 @end

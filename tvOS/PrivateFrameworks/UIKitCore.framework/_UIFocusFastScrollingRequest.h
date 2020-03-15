@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _velocity;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didEndCallback; // @synthesize didEndCallback=_didEndCallback;
 @property(copy, nonatomic) CDUnknownBlockType didBeginCallback; // @synthesize didBeginCallback=_didBeginCallback;
 @property(nonatomic) unsigned long long allowedHeadings; // @synthesize allowedHeadings=_allowedHeadings;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIPanGestureRecognizer *panGesture; // @synthesize panGesture=_panGesture;
 @property(nonatomic) struct CGPoint velocity; // @synthesize velocity=_velocity;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 
 @end
 

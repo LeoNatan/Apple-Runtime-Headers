@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSURL *_dbInfoPrefFile;
 }
 
-@property(retain) NSURL *dbInfoPrefFile; // @synthesize dbInfoPrefFile=_dbInfoPrefFile;
 - (void).cxx_destruct;
+@property(retain) NSURL *dbInfoPrefFile; // @synthesize dbInfoPrefFile=_dbInfoPrefFile;
 - (_Bool)validateInfo:(_Bool)arg1;
 - (void)writeDatabaseVersion:(int)arg1 isTemp:(_Bool)arg2;
 - (int)readDatabaseVersion:(_Bool)arg1;

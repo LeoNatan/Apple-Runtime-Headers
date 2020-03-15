@@ -13,10 +13,10 @@
     double _progress;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) UIView *progressBarView; // @synthesize progressBarView=_progressBarView;
 @property(retain, nonatomic) UIView *overallBarView; // @synthesize overallBarView=_overallBarView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

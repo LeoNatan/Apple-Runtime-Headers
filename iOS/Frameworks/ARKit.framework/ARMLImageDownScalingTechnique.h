@@ -17,30 +17,44 @@
     ARImageCroppingTechnique *_imageCroppingTechnique;
     struct vImageCVImageFormat *_cvImageFormatRef;
     struct __CVPixelBufferPool *_bgraPixelBufferPool;
-    struct CGSize _imageSize;
+    struct __CVPixelBufferPool *_bgraMattingPixelBufferPool;
     int _lockedOrientation;
     ARMattingImageMetaData *_mattingImageData;
     ARMLImageDownScalingResultData *_downSamplingResultData;
     _Bool _enableDoubleMLResolutionForIPad;
     NSObject<OS_dispatch_queue> *_processingQueue;
     double _resultLatency;
+    _Bool _deterministic;
     _Bool _centerCropImage;
     _Bool _generateMattingMetaData;
+    _Bool _resizeUltraWideImage;
+    CDUnknownBlockType _wideRotationStrategy;
+    CDUnknownBlockType _ultrawideRotationStrategy;
+    struct CGSize _imageSize;
 }
 
-@property(nonatomic) _Bool generateMattingMetaData; // @synthesize generateMattingMetaData=_generateMattingMetaData;
-@property(nonatomic) _Bool centerCropImage; // @synthesize centerCropImage=_centerCropImage;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType ultrawideRotationStrategy; // @synthesize ultrawideRotationStrategy=_ultrawideRotationStrategy;
+@property(copy, nonatomic) CDUnknownBlockType wideRotationStrategy; // @synthesize wideRotationStrategy=_wideRotationStrategy;
+@property(nonatomic) _Bool resizeUltraWideImage; // @synthesize resizeUltraWideImage=_resizeUltraWideImage;
+@property(nonatomic) _Bool generateMattingMetaData; // @synthesize generateMattingMetaData=_generateMattingMetaData;
+@property(readonly, nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
+@property(nonatomic) _Bool centerCropImage; // @synthesize centerCropImage=_centerCropImage;
+- (id)_fullDescription;
 - (_Bool)isEqual:(id)arg1;
-- (id)_convertImageColorSpace:(id)arg1;
+- (id)_convertImageColorSpace:(id)arg1 pPoolToUse:(struct __CVPixelBufferPool **)arg2;
 - (id)_imageDataForNeuralNetwork:(id)arg1 scaledSize:(struct CGSize)arg2 deviceOrientation:(long long)arg3 pRegionOfInterest:(struct CGSize *)arg4 pRotationOfResultTensor:(long long *)arg5;
+- (CDUnknownBlockType)defaultRotationStrategy;
+- (id)_downscaledResultDataFromImageData:(id)arg1 croppedRect:(struct CGRect)arg2;
 - (long long)_getDeviceOrientation;
 - (id)processData:(id)arg1;
 - (double)requiredTimeInterval;
 - (void)lockOrientation:(long long)arg1;
+- (void)prepare:(_Bool)arg1;
 - (void)dealloc;
 - (id)initWithSize:(struct CGSize)arg1;
 - (id)initWithSize:(struct CGSize)arg1 requiredTimeInterval:(double)arg2;
+- (id)nodeName;
 
 @end
 

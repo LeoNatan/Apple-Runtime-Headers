@@ -13,8 +13,8 @@
     id <IMAPSelectMailboxOperationDelegate> _delegate;
 }
 
-@property(readonly, nonatomic) __weak id <IMAPSelectMailboxOperationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <IMAPSelectMailboxOperationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)main;
 - (id)initWithMailboxName:(id)arg1;
 - (id)initWithMailboxName:(id)arg1 delegate:(id)arg2;

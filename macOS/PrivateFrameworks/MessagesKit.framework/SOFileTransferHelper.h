@@ -17,9 +17,9 @@
 
 + (id)sharedInstance;
 + (id)bundleName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workerQueue; // @synthesize workerQueue=_workerQueue;
 @property(retain) NSMutableDictionary *guidToResolvedBookmarkMap; // @synthesize guidToResolvedBookmarkMap=_guidToResolvedBookmarkMap;
-- (void).cxx_destruct;
 - (id)archiveURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)runBlockWhenDoneArchiving:(CDUnknownBlockType)arg1;
 - (id)accountIDForFileTransferGUID:(id)arg1;

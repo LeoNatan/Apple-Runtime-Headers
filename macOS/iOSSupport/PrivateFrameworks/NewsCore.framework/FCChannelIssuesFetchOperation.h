@@ -19,13 +19,13 @@
     NSDictionary *_resultIssuesByChannel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *resultIssuesByChannel; // @synthesize resultIssuesByChannel=_resultIssuesByChannel;
 @property(nonatomic) long long issueSet; // @synthesize issueSet=_issueSet;
 @property(retain, nonatomic) NSArray *channelIDs; // @synthesize channelIDs=_channelIDs;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
 @property(copy, nonatomic) CDUnknownBlockType fetchCompletionHandler; // @synthesize fetchCompletionHandler=_fetchCompletionHandler;
 @property(copy, nonatomic) FCCachePolicy *cachePolicy; // @synthesize cachePolicy=_cachePolicy;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (BOOL)validateOperation;

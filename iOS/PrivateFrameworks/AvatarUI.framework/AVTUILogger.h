@@ -18,10 +18,10 @@
     NSObject<OS_os_log> *_backendLog;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_os_log> *backendLog; // @synthesize backendLog=_backendLog;
 @property(readonly, nonatomic) NSObject<OS_os_log> *interactionLog; // @synthesize interactionLog=_interactionLog;
 @property(readonly, nonatomic) NSObject<OS_os_log> *generalLog; // @synthesize generalLog=_generalLog;
-- (void).cxx_destruct;
 - (void)logCarouselEndsDraggingWithVelocity:(double)arg1 willSwitchIndexPathInsteadOfScrollBack:(_Bool)arg2 forHighVelocity:(_Bool)arg3;
 - (void)logCarouselDelegateDidUpdateRecord:(id)arg1;
 - (void)logCarouselDelegateNearnessFactorDidChange:(double)arg1 towardRecord:(_Bool)arg2 editable:(_Bool)arg3;
@@ -196,6 +196,7 @@
 - (void)deletingRecords:(CDUnknownBlockType)arg1;
 - (void)savingRecords:(CDUnknownBlockType)arg1;
 - (void)logPerformedRecentStickersMigration:(_Bool)arg1;
+- (void)logFetchedRecentStickerWithNoStickerConfiguration:(id)arg1;
 - (void)logFetchedOrphanedRecentSticker:(id)arg1;
 - (void)logErrorFetchingRecentStickers:(id)arg1;
 - (void)logErrorSavingRecentSticker:(id)arg1;

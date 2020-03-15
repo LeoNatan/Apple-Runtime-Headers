@@ -6,6 +6,7 @@
 
 #import <UIKit/UIView.h>
 
+#import <PhotosUICore/PXDebugHierarchyProvider-Protocol.h>
 #import <PhotosUICore/PXDiagnosticsEnvironment-Protocol.h>
 #import <PhotosUICore/PXGAccessibilityRendererDelegate-Protocol.h>
 #import <PhotosUICore/PXGDiagnosticsProvider-Protocol.h>
@@ -13,10 +14,10 @@
 #import <PhotosUICore/PXScrollViewControllerObserver-Protocol.h>
 #import <PhotosUICore/UIGestureRecognizerDelegate-Protocol.h>
 
-@class MTKView, NSDictionary, NSString, PXGAnchor, PXGDebugHUDLayer, PXGEngine, PXGLayout, PXGRectDiagnosticsLayer, PXScrollViewController, PXScrollViewSpeedometer, UIColor;
+@class MTKView, NSArray, NSDictionary, NSString, PXGAnchor, PXGDebugHUDLayer, PXGEngine, PXGLayout, PXGRectDiagnosticsLayer, PXScrollViewController, PXScrollViewSpeedometer, UIColor;
 @protocol PXGViewAccessibilityDelegate, PXGViewDiagnosticsSource;
 
-@interface PXGView : UIView <PXDiagnosticsEnvironment, PXScrollViewControllerObserver, PXGEngineDelegate, PXGAccessibilityRendererDelegate, UIGestureRecognizerDelegate, PXGDiagnosticsProvider>
+@interface PXGView : UIView <PXDiagnosticsEnvironment, PXScrollViewControllerObserver, PXGEngineDelegate, PXGAccessibilityRendererDelegate, UIGestureRecognizerDelegate, PXGDiagnosticsProvider, PXDebugHierarchyProvider>
 {
     PXGDebugHUDLayer *_debugHUDLayer;
     PXGRectDiagnosticsLayer *_rectDiagnosticsLayer;
@@ -27,7 +28,7 @@
     _Bool _isAnimatingScroll;
     _Bool _showDebugHUD;
     _Bool _showPerspectiveDebug;
-    _Bool _ignoreBoundsChanges;
+    _Bool _shouldWorkaround18475431;
     PXGLayout *accessibilityRootLayout;
     id <PXGViewAccessibilityDelegate> _accessibilityDelegate;
     PXScrollViewController *_scrollViewController;
@@ -41,12 +42,17 @@
     struct UIEdgeInsets _hitTestPadding;
 }
 
++ (id)allDescriptions;
++ (id)debugHierarchyObjectsInGroupWithID:(id)arg1 onObject:(id)arg2 outOptions:(id *)arg3;
++ (id)debugHierarchyChildGroupingID;
++ (void)enumerateAllViewsUsingBlock:(CDUnknownBlockType)arg1;
 + (_Bool)forceAccessibilityEnabled;
 + (void)setForceAccessibilityEnabled:(_Bool)arg1;
 + (_Bool)isAvailable;
 + (long long)screenPixelCount;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXGEngine *engine; // @synthesize engine=_engine;
-@property(nonatomic) _Bool ignoreBoundsChanges; // @synthesize ignoreBoundsChanges=_ignoreBoundsChanges;
+@property(nonatomic) _Bool shouldWorkaround18475431; // @synthesize shouldWorkaround18475431=_shouldWorkaround18475431;
 @property(retain, nonatomic) id <PXGViewDiagnosticsSource> diagnosticsSource; // @synthesize diagnosticsSource=_diagnosticsSource;
 @property(nonatomic) _Bool showPerspectiveDebug; // @synthesize showPerspectiveDebug=_showPerspectiveDebug;
 @property(nonatomic) _Bool showDebugHUD; // @synthesize showDebugHUD=_showDebugHUD;
@@ -60,7 +66,6 @@
 @property(readonly, nonatomic) PXScrollViewSpeedometer *scrollingSpeedometer; // @synthesize scrollingSpeedometer=_scrollingSpeedometer;
 @property(readonly, nonatomic) PXScrollViewController *scrollViewController; // @synthesize scrollViewController=_scrollViewController;
 @property(nonatomic) __weak id <PXGViewAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
-- (void).cxx_destruct;
 - (id)viewForSpriteIndex:(unsigned int)arg1;
 @property(readonly, nonatomic) NSDictionary *ppt_extraResults;
 - (void)ppt_cleanUpAfterTest:(id)arg1 isScrollTest:(_Bool)arg2;
@@ -79,6 +84,8 @@
 - (_Bool)itemDidShowAlternateUIAtLocation:(struct CGPoint)arg1;
 - (_Bool)itemWasRightClickedWithHitTestResult:(id)arg1 location:(struct CGPoint)arg2;
 - (_Bool)itemWasDoubleClickedWithHitTestResult:(id)arg1;
+- (void)enumerateDebugHierarchyWithIdentifier:(id)arg1 options:(unsigned long long)arg2 usingBlock:(CDUnknownBlockType)arg3;
+@property(readonly, nonatomic) NSArray *debugHierarchyIdentifiers;
 @property(readonly, copy, nonatomic) NSString *diagnosticDescription;
 - (void)_ensureEndAnimatedScroll;
 - (void)scrollViewControllerDidEndScrollingAnimation:(id)arg1;
@@ -103,6 +110,8 @@
 - (void)disablePreheating;
 - (void)installLayoutCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_installNextDidLayoutHandler:(CDUnknownBlockType)arg1;
+- (void)_updateDebugHUD;
+- (void)_updateFocusItemProvider;
 - (void)_updateUserInterfaceDirection;
 - (void)_updateLayoutScreenScale;
 - (void)_updateIsVisible;
@@ -114,9 +123,11 @@
 @property(retain, nonatomic) PXGLayout *rootLayout;
 - (void)setHidden:(_Bool)arg1;
 - (void)didMoveToWindow;
-- (struct UIColor *)backgroundColor;
-- (void)setBackgroundColor:(struct UIColor *)arg1;
+- (id)backgroundColor;
+- (void)setBackgroundColor:(id)arg1;
 - (void)_updateMetalView;
+@property(readonly, nonatomic) NSString *preferredFileNameForExportingDebugHierarchy;
+- (_Bool)exportDebugHierarchyToURL:(id)arg1 error:(id *)arg2;
 - (void)safeAreaInsetsDidChange;
 - (void)_dynamicUserInterfaceTraitDidChange;
 - (void)traitCollectionDidChange:(id)arg1;

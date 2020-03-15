@@ -18,10 +18,10 @@
     NSString *_reason;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isInvalidated) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) __weak SBFolderIconImageView *folderIconImageView; // @synthesize folderIconImageView=_folderIconImageView;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

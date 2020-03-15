@@ -17,12 +17,12 @@
     struct dispatch_semaphore_s *_boundsExceeded;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct dispatch_semaphore_s *boundsExceeded; // @synthesize boundsExceeded=_boundsExceeded;
 @property(retain, nonatomic) NSMutableArray *entries; // @synthesize entries=_entries;
 @property(readonly, nonatomic) _Bool isValid; // @synthesize isValid=_isValid;
 @property(nonatomic) unsigned long long bytesErrorLevel; // @synthesize bytesErrorLevel=_bytesErrorLevel;
 @property(readonly, nonatomic) unsigned long long bytesUpperBound; // @synthesize bytesUpperBound=_bytesUpperBound;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)removeNextDataWithBlock:(CDUnknownBlockType)arg1;
 - (void)addData:(id)arg1;

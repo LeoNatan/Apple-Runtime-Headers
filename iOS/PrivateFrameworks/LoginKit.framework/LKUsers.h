@@ -15,8 +15,8 @@
     NSArray *_students;
 }
 
-@property(copy, nonatomic) NSArray *students; // @synthesize students=_students;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *students; // @synthesize students=_students;
 - (id)initWithUsers:(id)arg1;
 
 // Remaining properties

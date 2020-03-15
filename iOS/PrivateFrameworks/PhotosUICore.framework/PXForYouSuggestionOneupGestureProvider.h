@@ -17,8 +17,8 @@
     PXForYouSuggestionAssetsDataSourceManager *_dataSourceManager;
 }
 
-@property(readonly, nonatomic) PXForYouSuggestionAssetsDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXForYouSuggestionAssetsDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_stopShowingOriginal;

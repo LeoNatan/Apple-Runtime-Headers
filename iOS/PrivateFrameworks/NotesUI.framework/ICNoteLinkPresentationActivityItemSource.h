@@ -13,8 +13,8 @@
     id <ICSearchIndexableNote> _note;
 }
 
-@property(retain) id <ICSearchIndexableNote> note; // @synthesize note=_note;
 - (void).cxx_destruct;
+@property(retain) id <ICSearchIndexableNote> note; // @synthesize note=_note;
 - (id)detail;
 - (id)title;
 - (id)initWithNote:(id)arg1;

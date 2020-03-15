@@ -18,14 +18,14 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *enumNamespace; // @synthesize enumNamespace=_enumNamespace;
 @property(retain, nonatomic) INCodableEnum *codableEnum; // @synthesize codableEnum=_codableEnum;
-- (void).cxx_destruct;
 - (id)valueWithName:(id)arg1;
 - (id)valueForIndex:(unsigned long long)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)dictionaryRepresentationForLanguage:(id)arg1;
+- (id)dictionaryRepresentationWithLocalizer:(id)arg1;
 - (void)updateWithDictionary:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

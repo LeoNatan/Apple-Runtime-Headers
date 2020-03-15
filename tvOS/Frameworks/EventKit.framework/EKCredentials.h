@@ -15,9 +15,9 @@
 }
 
 + (id)credentialsWithUsername:(id)arg1 password:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *password; // @synthesize password=_password;
 @property(readonly, nonatomic) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -14,9 +14,9 @@
     NSDate *_timeToCheck;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *timeToCheck; // @synthesize timeToCheck=_timeToCheck;
 @property(retain, nonatomic) NSMutableDictionary *cache; // @synthesize cache=_cache;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_checkCache;
 - (_Bool)_isTimeToCheck;

@@ -22,6 +22,7 @@
     NSString *_fingerprint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fingerprint; // @synthesize fingerprint=_fingerprint;
 @property(retain, nonatomic) NSDate *prunedAt; // @synthesize prunedAt=_prunedAt;
 @property(nonatomic) short prefetchCount; // @synthesize prefetchCount=_prefetchCount;
@@ -32,7 +33,6 @@
 @property(nonatomic) short remoteAvailability; // @synthesize remoteAvailability=_remoteAvailability;
 @property(nonatomic) unsigned int sourceCplType; // @synthesize sourceCplType=_sourceCplType;
 @property(nonatomic) unsigned int cplType; // @synthesize cplType=_cplType;
-- (void).cxx_destruct;
 - (unsigned int)cplTypeWithAssetID:(id)arg1;
 - (_Bool)isEqualToValidatedExternalResource:(id)arg1;
 - (id)initWithInternalResource:(id)arg1;

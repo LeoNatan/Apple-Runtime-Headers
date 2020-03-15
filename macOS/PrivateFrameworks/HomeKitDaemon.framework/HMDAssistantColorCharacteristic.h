@@ -16,11 +16,11 @@
     NSString *_format;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL mandatory; // @synthesize mandatory=_mandatory;
 @property(readonly, nonatomic) NSString *format; // @synthesize format=_format;
 @property(readonly, nonatomic) NSString *writeCharacteristicType; // @synthesize writeCharacteristicType=_writeCharacteristicType;
 @property(readonly, nonatomic) NSString *readCharacteristicType; // @synthesize readCharacteristicType=_readCharacteristicType;
-- (void).cxx_destruct;
 - (id)initWithReadCharacteristicType:(id)arg1 writeCharacteristicType:(id)arg2 format:(id)arg3 mandatory:(BOOL)arg4;
 
 @end

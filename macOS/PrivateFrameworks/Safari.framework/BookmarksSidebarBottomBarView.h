@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSButton *_editButton;
 }
 
-@property(readonly, nonatomic) NSButton *editButton; // @synthesize editButton=_editButton;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSButton *editButton; // @synthesize editButton=_editButton;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

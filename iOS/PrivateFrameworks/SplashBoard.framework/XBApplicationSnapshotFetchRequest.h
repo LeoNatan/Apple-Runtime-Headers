@@ -18,10 +18,10 @@
 }
 
 + (id)fetchRequest;
+- (void).cxx_destruct;
 @property(retain, nonatomic) XBApplicationSnapshotGenerationContext *fallbackGenerationContext; // @synthesize fallbackGenerationContext=_fallbackGenerationContext;
 @property(copy, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(retain, nonatomic) XBApplicationSnapshotPredicate *predicate; // @synthesize predicate=_predicate;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

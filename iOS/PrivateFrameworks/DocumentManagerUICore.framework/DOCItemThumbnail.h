@@ -26,6 +26,7 @@
     UIImage *_thumbnailImage;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *thumbnailImage; // @synthesize thumbnailImage=_thumbnailImage;
 @property(readonly, nonatomic) DOCThumbnailRequest *currentRequest; // @synthesize currentRequest=_currentRequest;
 @property(readonly, nonatomic) NSHashTable *listeners; // @synthesize listeners=_listeners;
@@ -35,7 +36,6 @@
 @property(nonatomic) _Bool representativeIcon; // @synthesize representativeIcon=_representativeIcon;
 @property(retain, nonatomic) id <DOCThumbnail> fallback; // @synthesize fallback=_fallback;
 @property(readonly, nonatomic) FPItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)updateItemTo:(id)arg1;
 - (void)_notifyListeners;
 - (void)scheduleUpdateIfNeeded;

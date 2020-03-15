@@ -22,12 +22,12 @@
     NSXPCConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) id <BLTPingSubscribing> client; // @synthesize client=_client;
 @property(copy) NSString *machServiceName; // @synthesize machServiceName=_machServiceName;
 @property __weak id <BLTBulletinDistributorSubscriberDeviceDelegate> deviceDelegate; // @synthesize deviceDelegate=_deviceDelegate;
 @property __weak id <BLTBulletinDistributorSubscriberDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_connectIfNecessary;
 - (void)subscribeWithMachServiceName:(id)arg1;
 - (void)sendBulletinSummary:(id)arg1;

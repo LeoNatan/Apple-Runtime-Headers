@@ -17,10 +17,10 @@
     NSString *_selectedCandidateSurface;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *selectedCandidateSurface; // @synthesize selectedCandidateSurface=_selectedCandidateSurface;
 @property(retain, nonatomic) CIMMecabraZhuyinEngine *mecabraEngine; // @synthesize mecabraEngine=_mecabraEngine;
 @property(copy, nonatomic) NSAttributedString *inlineText; // @synthesize inlineText=_inlineText;
-- (void).cxx_destruct;
 - (void)didHandleSecondaryCandidateSelectionChanged:(id)arg1;
 - (void)updateMecabraEnvironmentWithCandidates:(id)arg1;
 - (id)mecabraEnvironment;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)instance;
-@property(retain, nonatomic) AWDServerConnection *awdServer; // @synthesize awdServer=_awdServer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AWDServerConnection *awdServer; // @synthesize awdServer=_awdServer;
 - (void)gizmoDatabaseMigrationFailure;
 - (void)bootstrapGizmo:(unsigned long long)arg1;
 - (void)uninitializedDatabaseSave;

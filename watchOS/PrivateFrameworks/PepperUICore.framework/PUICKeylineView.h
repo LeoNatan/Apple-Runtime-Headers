@@ -16,9 +16,9 @@
 }
 
 + (float)lineWidth;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isDashed) _Bool dashed; // @synthesize dashed=_dashed;
 @property(nonatomic, getter=isVertical) _Bool vertical; // @synthesize vertical=_vertical;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *strokeColor;
 @property(nonatomic) float keylineAlpha;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

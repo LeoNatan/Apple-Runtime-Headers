@@ -22,11 +22,11 @@
     NSString *__extentionIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *_extentionIdentifier; // @synthesize _extentionIdentifier=__extentionIdentifier;
 @property(readonly) id <SLWebClient> _webClient; // @synthesize _webClient=__webClient;
 @property(retain) WKWebView *webView; // @synthesize webView=_webView;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 - (void)webView:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)webView:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;

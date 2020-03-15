@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@protocol ParsecTableCellViewDelegate, WBSParsecSearchSession;
+@protocol ParsecTableCellViewDelegate;
 
 @protocol ParsecTableCellView
 @property(nonatomic) __weak id <ParsecTableCellViewDelegate> delegate;
-- (void)configureUsingCompletionListItem:(struct CompletionListItem *)arg1 session:(id <WBSParsecSearchSession>)arg2;
+-     // Error parsing type: v32@0:8^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16@"<WBSParsecSearchSession>"24, name: configureUsingCompletionListItem:session:
 @end
 

@@ -20,13 +20,13 @@
     CDUnknownBlockType _topUpAction;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool topUpEnabled; // @synthesize topUpEnabled=_topUpEnabled;
 @property(copy, nonatomic) CDUnknownBlockType topUpAction; // @synthesize topUpAction=_topUpAction;
 @property(retain, nonatomic) NSString *topUpTitle; // @synthesize topUpTitle=_topUpTitle;
 @property(retain, nonatomic) NSString *availableCredit; // @synthesize availableCredit=_availableCredit;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *balance; // @synthesize balance=_balance;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

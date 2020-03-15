@@ -21,6 +21,7 @@
     NSMutableSet *_unavailableItems;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *platformKeyProfileOverrides; // @synthesize platformKeyProfileOverrides=_platformKeyProfileOverrides;
 @property(readonly, nonatomic) double pageGenerationTime; // @synthesize pageGenerationTime=_pageGenerationTime;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) NSArray *ineligibleGratisIdentifiers; // @synthesize ineligibleGratisIdentifiers=_ineligibleGratisIdentifiers;
 @property(copy, nonatomic) NSDictionary *componentDictionary; // @synthesize componentDictionary=_componentDictionary;
 @property(readonly, copy, nonatomic) NSSet *allUnavailableItemIdentifiers; // @synthesize allUnavailableItemIdentifiers=_unavailableItems;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)setUnavailableItemIdentifiers:(id)arg1;
 - (id)itemForItemIdentifier:(id)arg1;

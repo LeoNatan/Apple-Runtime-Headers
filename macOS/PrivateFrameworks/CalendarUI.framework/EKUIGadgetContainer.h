@@ -48,6 +48,7 @@
 }
 
 + (id)enclosingGadgetContainerForLayoutItem:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL activeKeyboardHover; // @synthesize activeKeyboardHover=_activeKeyboardHover;
 @property BOOL isHovered; // @synthesize isHovered=_isHovered;
 @property BOOL isExpanded; // @synthesize isExpanded=_isExpanded;
@@ -80,7 +81,6 @@
 @property BOOL ignoresMouseEvents; // @synthesize ignoresMouseEvents=_ignoresMouseEvents;
 @property BOOL doNotPassdownExpandedState; // @synthesize doNotPassdownExpandedState=_doNotPassdownExpandedState;
 @property double maximumHeightBeforeScrolling; // @synthesize maximumHeightBeforeScrolling=_maximumHeightBeforeScrolling;
-- (void).cxx_destruct;
 - (void)updateDividers;
 @property(readonly) BOOL hasKeyboardFocus;
 - (BOOL)containerView:(id)arg1 didReceiveOpenEvent:(id)arg2;

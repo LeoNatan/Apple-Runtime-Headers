@@ -27,13 +27,13 @@
     BOOL _delegateSupplementaryViewDidEndFloating;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(nonatomic) double largestHeight; // @synthesize largestHeight=_largestHeight;
 @property(readonly, nonatomic) NSMutableArray *supplementaryGlobalAttributes; // @synthesize supplementaryGlobalAttributes=_supplementaryGlobalAttributes;
 @property(readonly, nonatomic) NSMutableArray *supplementaryAttributes; // @synthesize supplementaryAttributes=_supplementaryAttributes;
 @property(readonly, nonatomic) NSMutableArray *attributesBySections; // @synthesize attributesBySections=_attributesBySections;
 @property(readonly, nonatomic) NSMutableArray *attributes; // @synthesize attributes=_attributes;
-- (void).cxx_destruct;
 - (BOOL)supportStickiness;
 - (BOOL)supportHeaders;
 - (unsigned long long)orientation;

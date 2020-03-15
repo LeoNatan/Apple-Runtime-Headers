@@ -20,12 +20,12 @@
     UIStackView *_buttonStackView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIStackView *buttonStackView; // @synthesize buttonStackView=_buttonStackView;
 @property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
 @property(retain, nonatomic) NSSet *selectedRecurrences; // @synthesize selectedRecurrences=_selectedRecurrences;
 @property(nonatomic) __weak id <HUDayOfWeekPickerCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)updateUIWithAnimation:(_Bool)arg1;
 - (void)_setupConstraints;
 - (void)_toggleWeekdayButton:(id)arg1;

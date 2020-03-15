@@ -16,9 +16,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *eventExternalURLToSyntheticRouteHypothesizerMap; // @synthesize eventExternalURLToSyntheticRouteHypothesizerMap=_eventExternalURLToSyntheticRouteHypothesizerMap;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
 - (void)removeSyntheticRouteHypothesizerForEventExternalURL:(id)arg1;
 - (void)addSyntheticRouteHypothesizer:(id)arg1 forEventExternalURL:(id)arg2;
 - (id)syntheticRouteHypothesizerForEventExternalURL:(id)arg1;

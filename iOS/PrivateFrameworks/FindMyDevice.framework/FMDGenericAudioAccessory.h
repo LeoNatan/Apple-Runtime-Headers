@@ -21,13 +21,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)copyAccessory:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *audioURL; // @synthesize audioURL=_audioURL;
 @property(retain, nonatomic) NSString *audioRoutingIdentifier; // @synthesize audioRoutingIdentifier=_audioRoutingIdentifier;
 @property(retain, nonatomic) FMDAccessoryIdentifier *accessoryIdentifier; // @synthesize accessoryIdentifier=_accessoryIdentifier;
-- (void).cxx_destruct;
 - (_Bool)updatePlaybackChannels:(id)arg1;
 - (_Bool)updateAudioAsset:(id)arg1;
-@property(readonly, nonatomic) unsigned long long inEar;
+@property(readonly, nonatomic) unsigned long long audioSafetyStatus;
 @property(readonly, nonatomic) _Bool playingSound;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, copy) NSString *description;

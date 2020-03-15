@@ -24,6 +24,7 @@
     struct _NSRange _range;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *language; // @synthesize language=_language;
 @property(copy, nonatomic) NSArray *children; // @synthesize children=_children;
 @property(nonatomic) __weak MMElement *parent; // @synthesize parent=_parent;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSArray *innerRanges; // @synthesize innerRanges=_innerRanges;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
-- (void).cxx_destruct;
 - (id)removeLastChild;
 - (void)removeChild:(id)arg1;
 - (void)addChild:(id)arg1;

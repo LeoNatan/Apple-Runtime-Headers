@@ -24,6 +24,7 @@
     GKTournamentViewRequest *_viewRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GKTournamentViewRequest *viewRequest; // @synthesize viewRequest=_viewRequest;
 @property(nonatomic) _Bool playerResigned; // @synthesize playerResigned=_playerResigned;
 @property(retain, nonatomic) GKScore *playerScore; // @synthesize playerScore=_playerScore;
@@ -33,7 +34,6 @@
 @property(nonatomic) __weak id <GKTournamentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) GKTournamentDefinition *tournamentDefinition; // @synthesize tournamentDefinition=_tournamentDefinition;
 @property(readonly, nonatomic) GKTournament *tournament; // @synthesize tournament=_tournament;
-- (void).cxx_destruct;
 - (void)didReceiveMemoryWarning;
 - (void)willFinishWithError:(id)arg1;
 - (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;

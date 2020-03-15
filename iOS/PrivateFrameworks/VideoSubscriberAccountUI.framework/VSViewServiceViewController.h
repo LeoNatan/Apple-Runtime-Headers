@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 
 + (id)_remoteViewControllerInterface;
 + (id)_exportedInterface;
+- (void).cxx_destruct;
 @property(copy, nonatomic) VSAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 @property(retain, nonatomic) UINavigationController *navController; // @synthesize navController=_navController;
 @property(nonatomic) _Bool didAuthenticateAccount; // @synthesize didAuthenticateAccount=_didAuthenticateAccount;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VSRemoteNotifier *remoteNotifier; // @synthesize remoteNotifier=_remoteNotifier;
 @property(retain, nonatomic) VSRestrictionsCenter *restrictionsCenter; // @synthesize restrictionsCenter=_restrictionsCenter;
 @property(retain, nonatomic) VSPersistentStorage *storage; // @synthesize storage=_storage;
-- (void).cxx_destruct;
 - (void)remoteNotifier:(id)arg1 didReceiveRemoteNotificationWithUserInfo:(id)arg2;
 - (void)identityProviderViewControllerDidFinishLoading:(id)arg1;
 - (void)identityProviderViewController:(id)arg1 didAuthenticateAccount:(id)arg2 forRequest:(id)arg3;
@@ -68,7 +68,6 @@ __attribute__((visibility("hidden")))
 - (void)_showIdentityProviderPickerViewControllerWithIdentityProviders:(id)arg1;
 - (void)_performRequestWithIdentityProvider:(id)arg1 account:(id)arg2;
 - (void)_determinePreAuthAppIsAuthorized:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_presentWelcomeMessageForIdentityProvider:(id)arg1 withLogoCacheURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_identityProviderRequestForViewServiceRequest:(id)arg1 withAccount:(id)arg2;
 - (void)_performRequestInternal:(id)arg1 withID:(id)arg2 identityProviders:(id)arg3 accounts:(id)arg4;
 - (void)_performRequest:(id)arg1 withIdentifier:(id)arg2;

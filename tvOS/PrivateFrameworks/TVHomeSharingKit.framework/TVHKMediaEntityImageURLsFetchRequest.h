@@ -19,11 +19,11 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool cropToFit; // @synthesize cropToFit=_cropToFit;
 @property(nonatomic) struct CGSize scaleToSize; // @synthesize scaleToSize=_scaleToSize;
 @property(nonatomic) unsigned long long imageType; // @synthesize imageType=_imageType;
 @property(copy, nonatomic) NSArray *mediaEntities; // @synthesize mediaEntities=_mediaEntities;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithMediaEntities:(id)arg1;

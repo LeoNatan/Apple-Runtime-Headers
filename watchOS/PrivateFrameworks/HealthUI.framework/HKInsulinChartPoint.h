@@ -20,12 +20,12 @@
     id <HKGraphSeriesBlockCoordinateInfo> _userInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <HKGraphSeriesBlockCoordinateInfo> userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) NSDate *midDate; // @synthesize midDate=_midDate;
 @property(retain, nonatomic) NSNumber *totalSum; // @synthesize totalSum=_totalSum;
 @property(retain, nonatomic) NSNumber *basalSum; // @synthesize basalSum=_basalSum;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)maxYValue;
 - (id)minYValue;
 - (id)allYValues;

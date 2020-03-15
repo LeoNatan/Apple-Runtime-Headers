@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_semaphore> *_finishedSemaphore;
 }
 
-@property(copy) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
-@property(copy) CDUnknownBlockType pathHandler; // @synthesize pathHandler=_pathHandler;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
+@property(copy) CDUnknownBlockType pathHandler; // @synthesize pathHandler=_pathHandler;
 - (void)cancel;
 - (void)decodeWithPathHandler:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (void)_finishedDecodingWithPath:(Path_7969893c)arg1;

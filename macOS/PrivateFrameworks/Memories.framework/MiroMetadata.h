@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly) NSArray *loudnessRanges; // @synthesize loudnessRanges=_loudnessRanges;
 @property(retain) NSArray *allRanges; // @synthesize allRanges=_allRanges;
-- (void).cxx_destruct;
 - (void)removeRangesOfType:(unsigned long long)arg1;
 - (void)addRanges:(id)arg1;
 - (void)setRanges:(id)arg1;

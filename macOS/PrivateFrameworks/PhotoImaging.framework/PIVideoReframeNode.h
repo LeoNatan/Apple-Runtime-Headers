@@ -17,19 +17,19 @@
     CDStruct_996ac03c _stabCropRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_1b6d18a9 frameDuration; // @synthesize frameDuration=_frameDuration;
 @property(retain, nonatomic) id <NUVideoProperties> inputVideoProperties; // @synthesize inputVideoProperties=_inputVideoProperties;
 @property(nonatomic) CDStruct_996ac03c stabCropRect; // @synthesize stabCropRect=_stabCropRect;
 @property(retain, nonatomic) PIReframeKeyframeSequence *keyframeSequence; // @synthesize keyframeSequence=_keyframeSequence;
-- (void).cxx_destruct;
 -     // Error parsing type: @144@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24{CGRect={CGPoint=dd}{CGSize=dd}}56{?=[3]}88@136, name: _stabilizeImage:cleanRect:cropRect:transform:geometry:
 - (id)_evaluateImage:(out id *)arg1;
 - (id)_evaluateImageGeometry:(out id *)arg1;
 - (id)_evaluateVideoProperties:(out id *)arg1;
 - (BOOL)requiresVideoComposition;
-- (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
+- (id)resolvedNodeWithCachedInputs:(id)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
 - (BOOL)shouldCacheNodeForPipelineState:(id)arg1;
-- (id)initWithSettings:(id)arg1 inputs:(struct NSDictionary *)arg2;
+- (id)initWithSettings:(id)arg1 inputs:(id)arg2;
 - (id)initWithKeyframes:(id)arg1 stabCropRect:(CDStruct_996ac03c)arg2 input:(id)arg3;
 
 @end

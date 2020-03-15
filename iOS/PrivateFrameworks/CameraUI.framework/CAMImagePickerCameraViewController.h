@@ -31,6 +31,7 @@
 }
 
 + (_Bool)isEmulatingImagePicker;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_statusBarWasHidden, setter=_setStatusBarWasHidden:) _Bool statusBarWasHidden; // @synthesize statusBarWasHidden=_statusBarWasHidden;
 @property(copy, nonatomic, getter=_mostRecentVideoProperties, setter=_setMostRecentVideoProperties:) NSDictionary *mostRecentVideoProperties; // @synthesize mostRecentVideoProperties=_mostRecentVideoProperties;
 @property(copy, nonatomic, getter=_mostRecentPhotoProperties, setter=_setMostRecentPhotoProperties:) NSDictionary *mostRecentPhotoProperties; // @synthesize mostRecentPhotoProperties=_mostRecentPhotoProperties;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) PLPhotoTileViewController *_photoTileViewController; // @synthesize _photoTileViewController=__photoTileViewController;
 @property(readonly, nonatomic) PLCropOverlay *_cropOverlay; // @synthesize _cropOverlay=__cropOverlay;
 @property(retain, nonatomic) UIView *customOverlayView; // @synthesize customOverlayView=_customOverlayView;
-- (void).cxx_destruct;
 - (long long)_videoConfigurationForImagePickerQualityType:(long long)arg1;
 - (long long)_imagePickerQualityTypeForVideoConfiguration:(long long)arg1;
 - (long long)_flashModeForImagePickerCameraFlashMode:(long long)arg1;

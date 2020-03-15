@@ -25,12 +25,12 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL decision; // @synthesize decision=_decision;
 @property(retain, nonatomic) NSString *caseStatus; // @synthesize caseStatus=_caseStatus;
 @property(nonatomic) unsigned int caseCountTarget; // @synthesize caseCountTarget=_caseCountTarget;
 @property(nonatomic) unsigned int caseCount; // @synthesize caseCount=_caseCount;
 @property(retain, nonatomic) NSString *caseIdentifier; // @synthesize caseIdentifier=_caseIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

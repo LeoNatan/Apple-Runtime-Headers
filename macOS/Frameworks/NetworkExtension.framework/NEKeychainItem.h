@@ -26,11 +26,11 @@
 + (BOOL)setDomain:(int)arg1 outOldDomain:(int *)arg2;
 + (int)getPreferencesDomainForItemDomain:(long long)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) BOOL legacy; // @synthesize legacy=_legacy;
 @property(copy) NEKeychainItem *oldItem; // @synthesize oldItem=_oldItem;
 @property(copy) NSString *accessGroup; // @synthesize accessGroup=_accessGroup;
 @property long long domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (void)migrateFromPreferences:(struct __SCPreferences *)arg1;
 - (void)syncUsingConfiguration:(id)arg1 accountName:(id)arg2 passwordType:(long long)arg3 identifierSuffix:(id)arg4;
 - (void)remove;

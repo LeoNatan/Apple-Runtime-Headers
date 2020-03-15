@@ -17,8 +17,8 @@
 + (id)resultOfTarget:(id)arg1 selector:(SEL)arg2 arguments:(id)arg3;
 + (struct objc_method *)_methodWithTarget:(id)arg1 selector:(SEL)arg2;
 + (id)invocationManagerWithTarget:(id)arg1 selector:(SEL)arg2 arguments:(id)arg3;
-@property(retain) NSInvocation *invocation; // @synthesize invocation=_invocation;
 - (void).cxx_destruct;
+@property(retain) NSInvocation *invocation; // @synthesize invocation=_invocation;
 - (id)_methodReturnTypeAsString;
 - (id)_invokeMethodReturningNumber;
 - (id)_invokeMethodReturningValue;

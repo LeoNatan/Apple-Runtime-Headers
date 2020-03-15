@@ -19,10 +19,10 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly) HMBLocalZone *localZone; // @synthesize localZone=_localZone;
 @property(readonly) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
-- (void).cxx_destruct;
 - (id)importClipsWithImportData:(id)arg1;
 - (id)initWithLocalZone:(id)arg1;
 

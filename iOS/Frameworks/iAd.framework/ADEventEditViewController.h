@@ -15,10 +15,10 @@
     id _notificationObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id notificationObserver; // @synthesize notificationObserver=_notificationObserver;
 @property(retain, nonatomic) ADHomeButtonHandler *homeButtonHandler; // @synthesize homeButtonHandler=_homeButtonHandler;
 @property(retain, nonatomic) ADAdSpace *adSpace; // @synthesize adSpace=_adSpace;
-- (void).cxx_destruct;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)cancelAndDismiss;

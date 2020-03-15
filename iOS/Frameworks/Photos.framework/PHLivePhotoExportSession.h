@@ -17,10 +17,10 @@
 
 + (_Bool)_canCreateLivePhotoWithURLs:(id)arg1 outError:(id *)arg2;
 + (_Bool)_identifyResourceURLs:(id)arg1 outImageURL:(id *)arg2 outVideoURL:(id *)arg3 error:(id *)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
 @property(retain, nonatomic) NSURL *imageURL; // @synthesize imageURL=_imageURL;
 @property(readonly, nonatomic) NSArray *fileURLs; // @synthesize fileURLs=_fileURLs;
-- (void).cxx_destruct;
 - (_Bool)_isOutputURLValid:(id)arg1 withOptions:(id)arg2 error:(out id *)arg3;
 - (id)writeToFileURL:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)initWithResourceFileURLs:(id)arg1;

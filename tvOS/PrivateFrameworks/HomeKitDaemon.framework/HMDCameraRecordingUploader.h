@@ -28,6 +28,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property double totalClipDuration; // @synthesize totalClipDuration=_totalClipDuration;
 @property(readonly) NSMutableArray *operations; // @synthesize operations=_operations;
 @property double frameTimeOffset; // @synthesize frameTimeOffset=_frameTimeOffset;
@@ -40,7 +41,6 @@
 @property double targetFragmentDuration; // @synthesize targetFragmentDuration=_targetFragmentDuration;
 @property(copy) NSData *videoInitData; // @synthesize videoInitData=_videoInitData;
 @property(readonly) unsigned long long activeUploadOperationCount; // @synthesize activeUploadOperationCount=_activeUploadOperationCount;
-- (void).cxx_destruct;
 - (id)errorForCancel;
 - (_Bool)errorIsCancelled:(id)arg1;
 - (void)_cancelOperationsForCurrentClip;

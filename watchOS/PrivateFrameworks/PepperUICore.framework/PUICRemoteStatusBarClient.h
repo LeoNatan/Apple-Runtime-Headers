@@ -16,10 +16,10 @@
     PUICApplicationStatusBarItem *_statusBarItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICApplicationStatusBarItem *statusBarItem; // @synthesize statusBarItem=_statusBarItem;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 
 @end
 

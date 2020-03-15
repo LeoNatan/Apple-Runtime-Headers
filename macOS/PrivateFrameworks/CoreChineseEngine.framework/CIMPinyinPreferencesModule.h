@@ -24,6 +24,7 @@
     NSStackView *_correctFuzzyPinyinStackView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSStackView *correctFuzzyPinyinStackView; // @synthesize correctFuzzyPinyinStackView=_correctFuzzyPinyinStackView;
 @property(retain, nonatomic) NSButton *correctSpellingOption; // @synthesize correctSpellingOption=_correctSpellingOption;
 @property(retain, nonatomic) NSStackView *optionsStackView; // @synthesize optionsStackView=_optionsStackView;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) CIMFuzzyPinyinTableView *fuzzyPinyinTableView; // @synthesize fuzzyPinyinTableView=_fuzzyPinyinTableView;
 @property(retain, nonatomic) NSMutableArray *fuzzyPinyinPreferences; // @synthesize fuzzyPinyinPreferences=_fuzzyPinyinPreferences;
 @property(retain, nonatomic) NSWindow *fuzzyPinyinPreferencesSheet; // @synthesize fuzzyPinyinPreferencesSheet=_fuzzyPinyinPreferencesSheet;
-- (void).cxx_destruct;
 - (void)keyboardLayoutValueChanged:(id)arg1;
 - (void)closeFuzzyPinyinPreferences:(id)arg1;
 - (void)openFuzzyPinyinPreferences:(id)arg1;

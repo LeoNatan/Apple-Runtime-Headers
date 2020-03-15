@@ -27,6 +27,7 @@
 }
 
 + (id)cacheDeleteServiceListener:(id)arg1 options:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(copy, nonatomic) CDUnknownBlockType notify; // @synthesize notify=_notify;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) CacheDeleteServiceInfo *serviceInfo; // @synthesize serviceInfo=_serviceInfo;
 @property(readonly) BOOL anonymous; // @synthesize anonymous=_anonymous;
 @property(readonly) BOOL legacyCallbacks; // @synthesize legacyCallbacks=_legacyCallbacks;
-- (void).cxx_destruct;
 - (void)serviceCallback:(id)arg1 replyBlock:(CDUnknownBlockType)arg2;
 - (void)setNotifyCallback:(CDUnknownBlockType)arg1;
 - (void)serviceNotify:(id)arg1 replyBlock:(CDUnknownBlockType)arg2;

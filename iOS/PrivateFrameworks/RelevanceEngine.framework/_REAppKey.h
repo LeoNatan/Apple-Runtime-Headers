@@ -16,9 +16,9 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool remote; // @synthesize remote=_remote;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

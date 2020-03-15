@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *multilingualLanguages; // @synthesize multilingualLanguages=_multilingualLanguages;
 @property(nonatomic) _Bool assertDefaultKeyPlane; // @synthesize assertDefaultKeyPlane=_assertDefaultKeyPlane;
 @property(copy, nonatomic) NSString *accentKeyString; // @synthesize accentKeyString=_accentKeyString;
 @property(copy, nonatomic) NSString *layoutTag; // @synthesize layoutTag=_layoutTag;
 @property(retain, nonatomic) TIKeyboardIntermediateText *intermediateText; // @synthesize intermediateText=_intermediateText;
 @property(copy, nonatomic) TIKeyboardInputManagerState *inputManagerState; // @synthesize inputManagerState=_inputManagerState;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

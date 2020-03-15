@@ -14,9 +14,9 @@
     NSDictionary *_extendedSnapshotData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *extendedSnapshotData; // @synthesize extendedSnapshotData=_extendedSnapshotData;
 @property(readonly, nonatomic) XBApplicationSnapshot *snapshot; // @synthesize snapshot=_snapshot;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PUICApplicationStatusBarItem *statusBarItem;
 @property(readonly, nonatomic) NSDate *snapshotCreationDate;
 @property(readonly, nonatomic) CSLSSnapshotContext *snapshotContext;

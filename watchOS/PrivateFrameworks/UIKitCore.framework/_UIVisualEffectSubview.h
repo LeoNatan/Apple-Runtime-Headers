@@ -20,12 +20,12 @@
     id <_UIVisualEffectViewSubviewMonitoring> _subviewMonitor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_UIVisualEffectViewSubviewMonitoring> subviewMonitor; // @synthesize subviewMonitor=_subviewMonitor;
 @property(copy, nonatomic) NSArray *filters; // @synthesize filters=_filters;
 @property(copy, nonatomic) NSArray *viewEffects; // @synthesize viewEffects=_viewEffects;
 @property(retain, nonatomic) UIView<_UIVisualEffectViewParticipating> *containedView; // @synthesize containedView=_containedView;
 @property(retain, nonatomic) _UIVisualEffectViewBackdropCaptureGroup *primaryCaptureGroup; // @synthesize primaryCaptureGroup=_primaryCaptureGroup;
-- (void).cxx_destruct;
 - (id)_initialValueForLayer:(id)arg1 keyPath:(id)arg2 usePresentationValue:(_Bool)arg3;
 - (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)layoutSubviews;

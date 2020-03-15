@@ -82,12 +82,12 @@
 
 + (id)accessibilityLabelForNumberOfTabs:(unsigned long long)arg1 andNumberOfPinnedTabs:(unsigned long long)arg2;
 + (id)_tabBarColorNamed:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NSTabBarSyncedButton> buttonThatSyncsWithPlaceholderTabInEmptyUnpinnedRegion; // @synthesize buttonThatSyncsWithPlaceholderTabInEmptyUnpinnedRegion=_buttonThatSyncsWithPlaceholderTabInEmptyUnpinnedRegion;
 @property(nonatomic) __weak NSView *lastKeyView; // @synthesize lastKeyView=_lastKeyView;
 @property(nonatomic) __weak NSView *firstKeyView; // @synthesize firstKeyView=_firstKeyView;
 @property __weak id <NSTabBarDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSArray *tabButtons; // @synthesize tabButtons=_tabButtons;
-- (void).cxx_destruct;
 - (id)_getTabRectsForInsertingTabCount:(long long)arg1;
 - (struct CGRect)_getFirstTabRectForInsertingTabCount:(long long)arg1;
 - (struct CGRect)_defaultTabItemRectForTabCount:(long long)arg1;

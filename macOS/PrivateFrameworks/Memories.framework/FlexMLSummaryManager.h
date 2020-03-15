@@ -17,12 +17,12 @@
     NSString *_metadataPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int targetTimeScale; // @synthesize targetTimeScale=_targetTimeScale;
 @property(readonly, nonatomic) NSString *metadataPath; // @synthesize metadataPath=_metadataPath;
 @property(readonly, nonatomic) NSString *rootPath; // @synthesize rootPath=_rootPath;
 @property(readonly, nonatomic) NSArray *allDurations; // @synthesize allDurations=_allDurations;
 @property(readonly, nonatomic) NSArray *allFileNames; // @synthesize allFileNames=_allFileNames;
-- (void).cxx_destruct;
 - (id)allSummaryDurations;
 - (id)_summaryForDuration:(CDStruct_1b6d18a9)arg1;
 - (id)summaryForDuration:(CDStruct_1b6d18a9)arg1;

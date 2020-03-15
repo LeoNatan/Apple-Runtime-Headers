@@ -23,6 +23,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_1b6d18a9 videoDuration; // @synthesize videoDuration=_videoDuration;
 @property(retain, nonatomic) AVAssetImageGenerator *imageGenerator; // @synthesize imageGenerator=_imageGenerator;
 @property(retain, nonatomic) NSMutableArray *imageLoadInfosBeingLoaded; // @synthesize imageLoadInfosBeingLoaded=_imageLoadInfosBeingLoaded;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) TVPStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(retain, nonatomic) TVPMediaItemLoader *mediaItemLoader; // @synthesize mediaItemLoader=_mediaItemLoader;
 @property(retain, nonatomic) NSObject<TVPMediaItem> *mediaItem; // @synthesize mediaItem=_mediaItem;
-- (void).cxx_destruct;
 - (void)_registerStateMachineHandlers;
 - (void)_mediaItemLoader:(id)arg1 stateDidChangeTo:(id)arg2;
 - (void)cancelImageLoadingForIdentifiers:(id)arg1;

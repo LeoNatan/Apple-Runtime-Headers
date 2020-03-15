@@ -14,9 +14,9 @@
     HMDAccessoryNetworkCredential *_networkCredential;
 }
 
+- (void).cxx_destruct;
 @property(readonly) HMDAccessoryNetworkCredential *networkCredential; // @synthesize networkCredential=_networkCredential;
 @property(readonly) NSUUID *messageIdentifier; // @synthesize messageIdentifier=_messageIdentifier;
-- (void).cxx_destruct;
 - (id)initWithMessageUUID:(id)arg1 networkCredential:(id)arg2;
 
 @end

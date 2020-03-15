@@ -22,6 +22,7 @@
     void *_BOMCopier;
 }
 
+- (void).cxx_destruct;
 @property void *_BOMCopier; // @synthesize _BOMCopier;
 @property unsigned int operation; // @synthesize operation=_operation;
 @property _Bool inProgress; // @synthesize inProgress=_inProgress;
@@ -31,7 +32,6 @@
 @property(readonly, copy) NSURL *outputURL; // @synthesize outputURL=_outputURL;
 @property(readonly, copy) NSURL *inputURL; // @synthesize inputURL=_inputURL;
 @property __weak id <CUTFileCopierDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_worker_doCopy;
 - (void)_main_copierFinishedWithResult:(id)arg1;
 - (void)cleanup;

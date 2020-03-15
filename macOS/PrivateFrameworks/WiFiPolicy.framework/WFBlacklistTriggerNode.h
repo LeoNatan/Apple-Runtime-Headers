@@ -17,12 +17,12 @@
     NSString *_bssid;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *bssid; // @synthesize bssid=_bssid;
 @property double triggerReasonTimestamp; // @synthesize triggerReasonTimestamp=_triggerReasonTimestamp;
 @property(copy) NSString *triggerReasonString; // @synthesize triggerReasonString=_triggerReasonString;
 @property long long triggerReasonData; // @synthesize triggerReasonData=_triggerReasonData;
 @property unsigned long long triggerReason; // @synthesize triggerReason=_triggerReason;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

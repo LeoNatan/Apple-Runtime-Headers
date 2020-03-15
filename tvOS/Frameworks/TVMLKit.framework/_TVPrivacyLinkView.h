@@ -11,8 +11,8 @@
     UIView *_implView;
 }
 
-@property(retain, nonatomic) UIView *implView; // @synthesize implView=_implView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *implView; // @synthesize implView=_implView;
 - (void)updateConstraints;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 

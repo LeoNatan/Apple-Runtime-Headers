@@ -47,6 +47,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsScrollToLastRow; // @synthesize needsScrollToLastRow=_needsScrollToLastRow;
 @property(nonatomic) float headerHeight; // @synthesize headerHeight=_headerHeight;
 @property(retain, nonatomic) UIButton *doneButton; // @synthesize doneButton=_doneButton;
@@ -68,7 +69,6 @@
 @property(retain, nonatomic) CSLBulletinDismissalHelper *dismissalHelper; // @synthesize dismissalHelper=_dismissalHelper;
 @property(nonatomic) __weak id <CSLBulletinCoalesceViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak CSLNotificationCenterCellFactoryManager *cellFactoryManager; // @synthesize cellFactoryManager=_cellFactoryManager;
-- (void).cxx_destruct;
 - (void)didSwipeDownAlertView:(id)arg1;
 - (_Bool)shouldHaveBackgroundViewForAlertView:(id)arg1;
 - (id)contentViewForAlertView:(id)arg1;

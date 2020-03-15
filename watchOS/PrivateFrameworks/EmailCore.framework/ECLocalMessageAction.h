@@ -17,10 +17,10 @@
     NSURL *_mailboxURL;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool userInitiated; // @synthesize userInitiated=_userInitiated;
 @property(retain, nonatomic) NSURL *mailboxURL; // @synthesize mailboxURL=_mailboxURL;
 @property(retain, nonatomic) NSString *messageActionPersistentID; // @synthesize messageActionPersistentID=_messageActionPersistentID;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

@@ -18,11 +18,11 @@
     CLLocation *_transactionLocation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLLocation *transactionLocation; // @synthesize transactionLocation=_transactionLocation;
 @property(retain, nonatomic) NSDate *transactionDate; // @synthesize transactionDate=_transactionDate;
 @property(copy, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
 @property(copy, nonatomic) NSArray *stationCodes; // @synthesize stationCodes=_stationCodes;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

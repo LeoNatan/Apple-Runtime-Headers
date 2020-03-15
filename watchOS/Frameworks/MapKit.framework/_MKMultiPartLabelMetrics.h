@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     unsigned int _currentSeparatorIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int currentSeparatorIndex; // @synthesize currentSeparatorIndex=_currentSeparatorIndex;
 @property(readonly, nonatomic) NSMutableAttributedString *attributedString; // @synthesize attributedString=_attributedString;
 @property(readonly, copy, nonatomic) NSArray *components; // @synthesize components=_components;
 @property(readonly, copy, nonatomic) NSArray *separators; // @synthesize separators=_separators;
 @property(readonly, copy, nonatomic) NSAttributedString *originalAttributedString; // @synthesize originalAttributedString=_originalAttributedString;
-- (void).cxx_destruct;
 - (void)reset;
 - (_Bool)_shiftLocationOfStrings:(id)arg1 startingAtIndex:(unsigned int)arg2 shiftValue:(int)arg3;
 - (_Bool)replaceSeparatorAtIndex:(unsigned int)arg1 withString:(id)arg2;

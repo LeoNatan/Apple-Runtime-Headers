@@ -16,9 +16,9 @@
     CDUnknownBlockType _dateOfBirthUpdateHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dateOfBirthUpdateHandler; // @synthesize dateOfBirthUpdateHandler=_dateOfBirthUpdateHandler;
 @property(retain, nonatomic) FIUIHealthSettingsDatePicker *datePickerView; // @synthesize datePickerView=_datePickerView;
-- (void).cxx_destruct;
 - (void)forceUpdate;
 - (void)setDateOfBirth:(id)arg1;
 - (id)init;

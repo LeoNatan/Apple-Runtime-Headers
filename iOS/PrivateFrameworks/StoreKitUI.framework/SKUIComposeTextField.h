@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
 
 + (id)labelColorForStyle:(long long)arg1;
 + (id)labelFontForStyle:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long composeReviewStyle; // @synthesize composeReviewStyle=_style;
-- (void).cxx_destruct;
 - (void)_textChanged:(id)arg1;
 - (_Bool)textField:(id)arg1 shouldInsertText:(id)arg2 replacingRange:(struct _NSRange)arg3;
 - (void)layoutSubviews;

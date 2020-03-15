@@ -23,13 +23,13 @@
     _TVRCMatchPointDeviceQuery *_matchPointQuery;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TVRCMatchPointDeviceQuery *matchPointQuery; // @synthesize matchPointQuery=_matchPointQuery;
 @property(retain, nonatomic) _TVRCRapportDeviceQuery *rapportDeviceQuery; // @synthesize rapportDeviceQuery=_rapportDeviceQuery;
 @property(retain, nonatomic) _TVRCMediaRemoteDeviceQuery *mediaRemoteQuery; // @synthesize mediaRemoteQuery=_mediaRemoteQuery;
 @property(retain, nonatomic) NSMutableDictionary *aggregateDevices; // @synthesize aggregateDevices=_aggregateDevices;
 @property(nonatomic) BOOL isRunning; // @synthesize isRunning=_isRunning;
 @property(nonatomic) __weak id <_TVRXDeviceQueryDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)rapportDeviceQuery:(id)arg1 removedDevice:(id)arg2;
 - (void)rapportDeviceQuery:(id)arg1 addedDevice:(id)arg2;
 - (void)matchpointDeviceQuery:(id)arg1 removedService:(id)arg2;

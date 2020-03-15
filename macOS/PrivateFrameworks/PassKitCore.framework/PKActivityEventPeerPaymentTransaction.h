@@ -14,9 +14,9 @@
     PKPaymentTransaction *_relatedTopUpPeerPaymentAccountDepositTransaction;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKPaymentTransaction *relatedTopUpPeerPaymentAccountDepositTransaction; // @synthesize relatedTopUpPeerPaymentAccountDepositTransaction=_relatedTopUpPeerPaymentAccountDepositTransaction;
 @property(readonly, nonatomic) PKPaymentTransaction *relatedTopUpFundingSourceWithdrawlTransaction; // @synthesize relatedTopUpFundingSourceWithdrawlTransaction=_relatedTopUpFundingSourceWithdrawlTransaction;
-- (void).cxx_destruct;
 - (id)eventType;
 - (BOOL)isEqualToActivityEvent:(id)arg1;
 - (unsigned long long)hash;

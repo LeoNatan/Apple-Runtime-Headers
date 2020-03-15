@@ -20,9 +20,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)recurrenceEndWithOccurrenceCount:(unsigned int)arg1;
 + (id)recurrenceEndWithEndDate:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int occurrenceCount; // @synthesize occurrenceCount=_occurrenceCount;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

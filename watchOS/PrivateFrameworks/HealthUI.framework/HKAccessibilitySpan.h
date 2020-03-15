@@ -17,12 +17,12 @@
     NSString *_dataComprehensionUnitForChart;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *dataComprehensionUnitForChart; // @synthesize dataComprehensionUnitForChart=_dataComprehensionUnitForChart;
 @property(readonly, nonatomic) NSNumber *dataComprehensionMaxYValue; // @synthesize dataComprehensionMaxYValue=_dataComprehensionMaxYValue;
 @property(readonly, nonatomic) NSNumber *dataComprehensionMinYValue; // @synthesize dataComprehensionMinYValue=_dataComprehensionMinYValue;
 @property(readonly, nonatomic) long dataSeriesType; // @synthesize dataSeriesType=_dataSeriesType;
 @property(readonly, nonatomic) NSString *dataSeriesTitle; // @synthesize dataSeriesTitle=_dataSeriesTitle;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithTitle:(id)arg1 seriesType:(long)arg2 dataComprehensionMinYValue:(id)arg3 dataComprehensionMaxYValue:(id)arg4 dataComprehensionUnitForChart:(id)arg5;
 

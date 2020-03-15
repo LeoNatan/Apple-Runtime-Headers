@@ -17,8 +17,8 @@
 }
 
 + (BOOL)_shouldRetryForLaunchError:(id)arg1;
-@property(readonly) id <XCUIPlatformApplicationServicesProviding> platformApplicationServicesProvider; // @synthesize platformApplicationServicesProvider=_platformApplicationServicesProvider;
 - (void).cxx_destruct;
+@property(readonly) id <XCUIPlatformApplicationServicesProviding> platformApplicationServicesProvider; // @synthesize platformApplicationServicesProvider=_platformApplicationServicesProvider;
 - (void)launchProcessWithPath:(id)arg1 bundleID:(id)arg2 arguments:(id)arg3 environmentVariables:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)initWithPlatformApplicationServicesProvider:(id)arg1;
 

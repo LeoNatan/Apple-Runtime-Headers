@@ -4,7 +4,39 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#pragma mark Blocks
+
+typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
+
 #pragma mark Named Structures
+
+struct CATransform3D {
+    double _field1;
+    double _field2;
+    double _field3;
+    double _field4;
+    double _field5;
+    double _field6;
+    double _field7;
+    double _field8;
+    double _field9;
+    double _field10;
+    double _field11;
+    double _field12;
+    double _field13;
+    double _field14;
+    double _field15;
+    double _field16;
+};
+
+struct CGAffineTransform {
+    double a;
+    double b;
+    double c;
+    double d;
+    double tx;
+    double ty;
+};
 
 struct CGPoint {
     double _field1;
@@ -17,7 +49,35 @@ struct CGRect {
 };
 
 struct CGSize {
+    double width;
+    double height;
+};
+
+#pragma mark Typedef'd Structures
+
+typedef struct {
     double _field1;
     double _field2;
-};
+    _Bool _field3;
+} CDStruct_2815125f;
+
+typedef struct {
+    double _field1;
+    double _field2;
+    double _field3;
+    double _field4;
+    _Bool _field5;
+} CDStruct_0b12104d;
+
+typedef struct {
+    struct CGSize _field1;
+    struct CGSize _field2;
+    double _field3;
+    double _field4;
+    double _field5;
+} CDStruct_9fb44af5;
+
+typedef struct {
+    struct CGSize _field1;
+} CDStruct_69dbf190;
 

@@ -17,8 +17,8 @@
     _Bool _usesCompactLayout;
 }
 
-@property(nonatomic) _Bool usesCompactLayout; // @synthesize usesCompactLayout=_usesCompactLayout;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool usesCompactLayout; // @synthesize usesCompactLayout=_usesCompactLayout;
 - (double)preferredHeightForWidth:(double)arg1 inTableView:(id)arg2;
 - (void)layoutSubviews;
 - (void)setTitleText:(id)arg1;

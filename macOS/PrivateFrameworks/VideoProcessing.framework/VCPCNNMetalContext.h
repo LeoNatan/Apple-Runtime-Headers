@@ -17,10 +17,10 @@
 
 + (BOOL)supportVectorForward;
 + (BOOL)supportGPU;
+- (void).cxx_destruct;
 @property(retain) id <MTLCommandBuffer> commandBuffer; // @synthesize commandBuffer=_commandBuffer;
 @property(retain) id <MTLCommandQueue> commandQueue; // @synthesize commandQueue=_commandQueue;
 @property(retain) id <MTLDevice> device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (int)execute;
 - (id)initNewContext:(BOOL)arg1;
 

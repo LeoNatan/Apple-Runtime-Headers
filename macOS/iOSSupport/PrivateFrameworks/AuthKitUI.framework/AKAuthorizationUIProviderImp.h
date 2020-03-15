@@ -13,13 +13,13 @@
 
 @interface AKAuthorizationUIProviderImp : NSObject <AKAuthorizationUIProvider>
 {
-    struct UIWindow *_hostWindow;
+    UIWindow *_hostWindow;
     id <AKAuthorizationUIProviderMacHelper> _authorizationUIHelper;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <AKAuthorizationUIProviderMacHelper> authorizationUIHelper; // @synthesize authorizationUIHelper=_authorizationUIHelper;
 @property __weak UIWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
-- (void).cxx_destruct;
 - (void)presentAuthorizationUIForContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 // Remaining properties

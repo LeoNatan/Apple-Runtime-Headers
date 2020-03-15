@@ -8,7 +8,6 @@
 
 @interface _TtC11AppStoreKit21TopShelfPromotionItem : _TtC11AppStoreKit12TopShelfItem
 {
-    // Error parsing type: , name: title
     // Error parsing type: , name: promotionText
     // Error parsing type: , name: contextTitle
     // Error parsing type: , name: promotionImageName

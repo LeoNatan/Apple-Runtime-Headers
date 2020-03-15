@@ -19,6 +19,7 @@
     BOOL _windowIsExpanded;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL windowIsExpanded; // @synthesize windowIsExpanded=_windowIsExpanded;
 @property(retain, nonatomic) IMKUICandidateBarListView *listView; // @synthesize listView=_listView;
 @property(retain, nonatomic) IMKUICandidateLineLayout *lineLayout; // @synthesize lineLayout=_lineLayout;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) IMKUICandidateLayoutTraits *expandedLayoutTraits; // @synthesize expandedLayoutTraits=_expandedLayoutTraits;
 @property(retain, nonatomic) IMKUICandidateItemLayout *collapsedItemLayout; // @synthesize collapsedItemLayout=_collapsedItemLayout;
 @property(retain, nonatomic) IMKUICandidateArrowButton *arrowButton; // @synthesize arrowButton=_arrowButton;
-- (void).cxx_destruct;
 - (id)appearanceView;
 - (long long)accessibilityOrientation;
 - (id)candidatesSelectableByKeyboard;

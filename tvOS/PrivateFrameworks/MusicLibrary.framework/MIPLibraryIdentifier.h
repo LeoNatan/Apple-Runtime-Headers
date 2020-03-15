@@ -19,9 +19,9 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long libraryId; // @synthesize libraryId=_libraryId;
 @property(retain, nonatomic) NSString *libraryName; // @synthesize libraryName=_libraryName;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -17,8 +17,8 @@
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
-@property(nonatomic) __weak PDFExtensionViewController *extensionViewController; // @synthesize extensionViewController=_extensionViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak PDFExtensionViewController *extensionViewController; // @synthesize extensionViewController=_extensionViewController;
 - (oneway void)hostToExtension:(id)arg1;
 
 // Remaining properties

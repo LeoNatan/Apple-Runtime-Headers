@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 + (id)formattedNameFromComponents:(id)arg1 forProvider:(id)arg2 withFormat:(unsigned long long)arg3;
 + (id)formattedNameFromProvider:(id)arg1 withFormat:(unsigned long long)arg2;
 + (id)nameComponentsFromProvider:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cachedFormattedNames; // @synthesize cachedFormattedNames=_cachedFormattedNames;
 @property(readonly, nonatomic) NSPersonNameComponents *nameComponents; // @synthesize nameComponents=_nameComponents;
 @property(readonly, nonatomic) id <CNMeCardSharingNameProvider> nameProvider; // @synthesize nameProvider=_nameProvider;
-- (void).cxx_destruct;
 - (id)formattedNameWithFormat:(unsigned long long)arg1;
 - (id)initWithNameProvider:(id)arg1;
 

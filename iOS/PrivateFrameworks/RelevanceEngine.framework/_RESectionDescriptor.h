@@ -17,12 +17,12 @@
     NSArray *_rules;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool allowsSubsections; // @synthesize allowsSubsections=_allowsSubsections;
 @property(copy, nonatomic) NSArray *rules; // @synthesize rules=_rules;
 @property(nonatomic) long long maxElementCount; // @synthesize maxElementCount=_maxElementCount;
 @property(readonly, nonatomic) _Bool invertRanking; // @synthesize invertRanking=_invertRanking;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithHistoricSectionDescriptor:(id)arg1;
 - (id)initWithSectionDescriptor:(id)arg1;
 

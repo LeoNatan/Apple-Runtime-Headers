@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     _Bool _hasIAP;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasIAP; // @synthesize hasIAP=_hasIAP;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
-- (void).cxx_destruct;
 - (void)_updateForPreferredContentSize;
 - (_Bool)_isLargeContentSize;
 - (void)_contentSizeCategoryDidChange;

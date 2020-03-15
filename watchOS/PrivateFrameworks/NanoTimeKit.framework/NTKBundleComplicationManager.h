@@ -16,8 +16,8 @@
 }
 
 + (id)sharedManager;
-@property(readonly, nonatomic) NTKBundleComplicationDataSourceLoader *loader; // @synthesize loader=_loader;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NTKBundleComplicationDataSourceLoader *loader; // @synthesize loader=_loader;
 - (void)enumerateBundlesForComplicationFamily:(int)arg1 device:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (id)localizedAppNameForBundleIdentifier:(id)arg1;
 - (_Bool)bundleExistsWithIdentifier:(id)arg1 appBundleIdentifier:(id)arg2;

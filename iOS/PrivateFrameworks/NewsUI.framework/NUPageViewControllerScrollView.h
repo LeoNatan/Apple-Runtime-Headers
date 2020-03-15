@@ -13,8 +13,8 @@
     id <NUPageViewControllerScrollViewAccessibilityDelegate> _accessibilityDelegate;
 }
 
-@property(nonatomic) __weak id <NUPageViewControllerScrollViewAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NUPageViewControllerScrollViewAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 - (_Bool)accessibilityScroll:(long long)arg1;
 
 @end

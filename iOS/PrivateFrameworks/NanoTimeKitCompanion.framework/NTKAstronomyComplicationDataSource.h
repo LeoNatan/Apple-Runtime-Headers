@@ -6,11 +6,11 @@
 
 #import <NanoTimeKitCompanion/NTKComplicationDataSource.h>
 
-@class CLLocation;
+@class CLLocation, NSString;
 
 @interface NTKAstronomyComplicationDataSource : NTKComplicationDataSource
 {
-    struct NSString *_token;
+    NSString *_token;
     CLLocation *_currentLocation;
     CLLocation *_anyLocation;
     unsigned long long _vista;

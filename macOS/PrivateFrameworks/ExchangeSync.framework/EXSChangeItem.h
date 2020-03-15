@@ -28,6 +28,7 @@
 
 + (id)changeTypeToString:(long long)arg1;
 + (id)changeItemTypeToString:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EXSItemProperties *properties; // @synthesize properties=_properties;
 @property(retain, nonatomic) NSString *internalParentFolderID; // @synthesize internalParentFolderID=_internalParentFolderID;
 @property(retain, nonatomic) NSString *internalChangeKey; // @synthesize internalChangeKey=_internalChangeKey;
@@ -42,7 +43,6 @@
 @property(nonatomic) long long itemType; // @synthesize itemType=_itemType;
 @property(nonatomic) long long accountID; // @synthesize accountID=_accountID;
 @property(nonatomic) long long changeID; // @synthesize changeID=_changeID;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)itemTypeIsItem;
 - (BOOL)itemTypeIsFolder;

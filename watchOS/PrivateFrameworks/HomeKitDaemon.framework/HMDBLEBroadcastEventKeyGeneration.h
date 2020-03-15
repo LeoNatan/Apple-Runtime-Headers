@@ -19,9 +19,9 @@
 + (id)broadcastKeyGenerationEventForAccessory:(id)arg1 reason:(int)arg2;
 + (id)uuid;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) HMDAccessory *accessory; // @synthesize accessory=_accessory;
-- (void).cxx_destruct;
 - (id)initBroadcastKeyGenerationEventForAccessory:(id)arg1 reason:(int)arg2;
 - (id)metricForAWD;
 - (unsigned int)AWDMessageType;

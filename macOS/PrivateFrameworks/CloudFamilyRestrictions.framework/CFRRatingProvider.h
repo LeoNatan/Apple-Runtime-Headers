@@ -16,11 +16,11 @@
     NSDictionary *_allowStringForProviderKey;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *allowStringForProviderKey; // @synthesize allowStringForProviderKey=_allowStringForProviderKey;
 @property(retain, nonatomic) NSDictionary *disallowStringForProviderKey; // @synthesize disallowStringForProviderKey=_disallowStringForProviderKey;
 @property(retain, nonatomic) NSDictionary *providerKeyForSetting; // @synthesize providerKeyForSetting=_providerKeyForSetting;
 @property(retain, nonatomic) NSDictionary *ratingProviders; // @synthesize ratingProviders=_ratingProviders;
-- (void).cxx_destruct;
 - (id)ratingForRank:(long long)arg1 country:(id)arg2 mediaFeature:(id)arg3;
 - (id)ratingForRank:(long long)arg1 country:(id)arg2 contentSetting:(id)arg3;
 - (id)ratingsForCountryCode:(id)arg1 mediaFeature:(id)arg2;

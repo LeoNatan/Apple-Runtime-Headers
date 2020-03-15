@@ -41,6 +41,7 @@
     _Bool *_telephonyDaemonRestartHandlerCanceled;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool *telephonyDaemonRestartHandlerCanceled; // @synthesize telephonyDaemonRestartHandlerCanceled=_telephonyDaemonRestartHandlerCanceled;
 @property(nonatomic, getter=isAirplaneModeEnabled) _Bool airplaneModeEnabled; // @synthesize airplaneModeEnabled=_airplaneModeEnabled;
 @property(readonly, nonatomic) RadiosPreferences *radiosPreferences; // @synthesize radiosPreferences=_radiosPreferences;
@@ -59,7 +60,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(readonly, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(readonly, nonatomic) _Bool hasCellularTelephony; // @synthesize hasCellularTelephony=_hasCellularTelephony;
-- (void).cxx_destruct;
 - (id)debugDescriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)debugDescriptionWithMultilinePrefix:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (id)supplementaryViewKind;
 + (id)reuseIdentifier;
-@property(retain, nonatomic) UILabel *countLabel; // @synthesize countLabel=_countLabel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UILabel *countLabel; // @synthesize countLabel=_countLabel;
 - (void)configureWithAcknowledgmentTally:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

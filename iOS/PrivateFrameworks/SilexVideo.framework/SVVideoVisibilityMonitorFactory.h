@@ -16,8 +16,8 @@
     id <SVVideoVisiblePercentageManager> _videoVisiblePercentageManager;
 }
 
-@property(readonly, nonatomic) id <SVVideoVisiblePercentageManager> videoVisiblePercentageManager; // @synthesize videoVisiblePercentageManager=_videoVisiblePercentageManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SVVideoVisiblePercentageManager> videoVisiblePercentageManager; // @synthesize videoVisiblePercentageManager=_videoVisiblePercentageManager;
 - (id)createVisibilityMonitorForVideo:(id)arg1;
 - (id)initWithVideoVisiblePercentageManager:(id)arg1;
 

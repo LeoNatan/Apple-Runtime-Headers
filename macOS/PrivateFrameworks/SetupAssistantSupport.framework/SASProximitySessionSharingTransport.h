@@ -14,9 +14,9 @@
     CUMessageSession *_actionMessageSession;
 }
 
+- (void).cxx_destruct;
 @property(retain) CUMessageSession *actionMessageSession; // @synthesize actionMessageSession=_actionMessageSession;
 @property(retain) CUMessageSession *messageSession; // @synthesize messageSession=_messageSession;
-- (void).cxx_destruct;
 - (void)sendData:(id)arg1 response:(CDUnknownBlockType)arg2;
 - (void)invalidate;
 - (void)activate;

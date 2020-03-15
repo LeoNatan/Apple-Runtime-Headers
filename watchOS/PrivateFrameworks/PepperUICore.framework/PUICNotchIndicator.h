@@ -32,6 +32,7 @@
 }
 
 + (id)sharedNotchIndicator;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(nonatomic) _Bool flashShown; // @synthesize flashShown=_flashShown;
 @property(nonatomic) _Bool flashEnabled; // @synthesize flashEnabled=_flashEnabled;
@@ -49,7 +50,6 @@
 @property(nonatomic) _Bool usingCrown; // @synthesize usingCrown=_usingCrown;
 @property(nonatomic) float offset; // @synthesize offset=_offset;
 @property(nonatomic) float length; // @synthesize length=_length;
-- (void).cxx_destruct;
 - (void)_displayLinkFired:(id)arg1;
 - (void)setMinorDetentsEnabled:(_Bool)arg1;
 - (void)flash;

@@ -30,8 +30,8 @@
     id <PKPassPersonalizationViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) id <PKPassPersonalizationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) id <PKPassPersonalizationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_presentPersonalizationErrorAlert;
 - (id)_nextCellForIndexPath:(id)arg1;
 - (void)_positionFooterView;

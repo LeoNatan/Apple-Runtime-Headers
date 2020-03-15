@@ -21,8 +21,8 @@
     id <CSLLauncherTableViewDataSourceDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSLLauncherTableViewDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLLauncherTableViewDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_sortList:(id)arg1;
 - (void)_updateModelWithBundleInfos:(id)arg1 notifyDelegate:(_Bool)arg2;
 - (id)iconViewForBundleIdentifier:(id)arg1;

@@ -18,12 +18,12 @@
 }
 
 + (id)operationWithBundlePath:(id)arg1 showProgress:(BOOL)arg2 storeClient:(id)arg3;
+- (void).cxx_destruct;
 @property BOOL isAppleSigned; // @synthesize isAppleSigned=_isAppleSigned;
 @property BOOL isDeveloperSigned; // @synthesize isDeveloperSigned=_isDeveloperSigned;
 @property BOOL showProgress; // @synthesize showProgress=_showProgress;
 @property(retain) NSString *bundlePath; // @synthesize bundlePath=_bundlePath;
 @property(retain) ISServiceProxy *proxy; // @synthesize proxy=_proxy;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithBundlePath:(id)arg1 showProgress:(BOOL)arg2 storeClient:(id)arg3;
 

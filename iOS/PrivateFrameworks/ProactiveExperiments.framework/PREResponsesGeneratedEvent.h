@@ -21,6 +21,7 @@
     unsigned long long _responseGenerationTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int generationStatus; // @synthesize generationStatus=_generationStatus;
 @property(nonatomic) unsigned long long responseGenerationTime; // @synthesize responseGenerationTime=_responseGenerationTime;
 @property(nonatomic) _Bool hasQuestionMark; // @synthesize hasQuestionMark=_hasQuestionMark;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSString *locale; // @synthesize locale=_locale;
 @property(retain, nonatomic) NSString *language; // @synthesize language=_language;
 @property(retain, nonatomic) NSArray *responses; // @synthesize responses=_responses;
-- (void).cxx_destruct;
 
 @end
 

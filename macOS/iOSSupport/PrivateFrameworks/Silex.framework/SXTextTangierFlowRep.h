@@ -21,12 +21,12 @@
     struct CGRect _frameInCanvas;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect frameInCanvas; // @synthesize frameInCanvas=_frameInCanvas;
 @property(nonatomic) __weak SXTextTangierInteractiveCanvasController *icc; // @synthesize icc=_icc;
 @property(retain, nonatomic) SXAXCustomRotor *headingsRotor; // @synthesize headingsRotor=_headingsRotor;
 @property(retain, nonatomic) SXAXCustomRotor *linkRotor; // @synthesize linkRotor=_linkRotor;
 @property(nonatomic) __weak id <SXTextTangierRepAccessibilityDataSource> accessibilityDataSource; // @synthesize accessibilityDataSource;
-- (void).cxx_destruct;
 - (id)sxaxNameForEditRotorAction:(id)arg1;
 - (id)sxaxSupportedEditRotorActions;
 - (BOOL)accessibilitySupportsTextSelection;

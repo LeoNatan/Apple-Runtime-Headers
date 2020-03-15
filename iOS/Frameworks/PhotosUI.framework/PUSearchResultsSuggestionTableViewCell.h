@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_symbolConfigurationForFont:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *resultAuxSubtitleLabel; // @synthesize resultAuxSubtitleLabel=_resultAuxSubtitleLabel;
 @property(retain, nonatomic) UILabel *resultTitleLabel; // @synthesize resultTitleLabel=_resultTitleLabel;
-- (void).cxx_destruct;
 - (_Bool)shouldUseAccessibilityLayout;
 - (void)_preferredContentSizeChanged:(id)arg1;
 - (void)setTitle:(id)arg1 resultCount:(unsigned long long)arg2 categoryImage:(id)arg3;

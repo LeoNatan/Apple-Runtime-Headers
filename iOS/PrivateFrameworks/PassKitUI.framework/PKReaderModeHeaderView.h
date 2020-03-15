@@ -17,8 +17,8 @@
     unsigned long long _state;
 }
 
-@property(nonatomic) unsigned long long state; // @synthesize state=_state;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long state; // @synthesize state=_state;
 - (void)layoutSubviews;
 - (void)_configureForCurrentState;
 - (id)_subtitleForState:(unsigned long long)arg1;

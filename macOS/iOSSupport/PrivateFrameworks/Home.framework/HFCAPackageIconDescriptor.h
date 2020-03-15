@@ -18,11 +18,11 @@
     NSDictionary *_iconModifiers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *iconModifiers; // @synthesize iconModifiers=_iconModifiers;
 @property(readonly, nonatomic) NSString *state; // @synthesize state=_state;
 @property(readonly, nonatomic) NSString *packageIdentifier; // @synthesize packageIdentifier=_packageIdentifier;
 @property(readonly, nonatomic) BOOL shouldForceLTR; // @synthesize shouldForceLTR=_shouldForceLTR;
-- (void).cxx_destruct;
 - (id)iconDescriptorByMergingWithIconDescriptor:(id)arg1;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSString *identifier;

@@ -16,11 +16,11 @@
     NSPersistentHistoryToken *_historyToken;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSPersistentHistoryToken *historyToken; // @synthesize historyToken=_historyToken;
 @property(retain) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 @property(retain) NSUUID *currentDeviceIdentifier; // @synthesize currentDeviceIdentifier=_currentDeviceIdentifier;
 @property(retain) NSManagedObjectID *currentDeviceObjectID; // @synthesize currentDeviceObjectID=_currentDeviceObjectID;
-- (void).cxx_destruct;
 
 @end
 

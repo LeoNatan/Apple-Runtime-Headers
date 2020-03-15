@@ -17,9 +17,9 @@
     TIAutocorrectionList *_candidates;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TIAutocorrectionList *candidates; // @synthesize candidates=_candidates;
 @property(readonly, copy, nonatomic) CDUnknownBlockType candidateHandler; // @synthesize candidateHandler=_candidateHandler;
-- (void).cxx_destruct;
 - (void)close;
 - (void)pushCandidates:(id)arg1;
 - (void)open;

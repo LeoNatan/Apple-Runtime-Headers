@@ -40,6 +40,7 @@
 
 + (id)getURLsForCompletionHandlerRequest:(id)arg1;
 + (id)keyPathsForPanelSettings;
+- (void).cxx_destruct;
 @property(retain, setter=_setAlertInformativeMessage:) NSString *alertInformationMessage; // @synthesize alertInformationMessage=_alertInformationMessage;
 @property(retain, setter=_setAlertMessage:) NSString *alertMessage; // @synthesize alertMessage=_alertMessage;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
@@ -48,7 +49,6 @@
 @property(retain) NSString *prompt; // @synthesize prompt=_prompt;
 @property id delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSRemoteWindowController *controller; // @synthesize controller=_windowController;
-- (void).cxx_destruct;
 - (id)contentView;
 - (void)orderOut:(id)arg1;
 - (void)controller:(id)arg1 hasWindowAvailable:(id)arg2;

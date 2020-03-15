@@ -41,6 +41,7 @@
     NWPathEvaluator *_scopedPathEvaluator;
 }
 
+- (void).cxx_destruct;
 @property(retain) NWPathEvaluator *scopedPathEvaluator; // @synthesize scopedPathEvaluator=_scopedPathEvaluator;
 @property unsigned int flags; // @synthesize flags=_flags;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -69,7 +70,6 @@
 @property(retain) NSArray *remoteTrafficSelectors; // @synthesize remoteTrafficSelectors=_remoteTrafficSelectors;
 @property(retain) NSArray *localTrafficSelectors; // @synthesize localTrafficSelectors=_localTrafficSelectors;
 @property(retain) NSArray *ikeConfig; // @synthesize ikeConfig=_ikeConfig;
-- (void).cxx_destruct;
 - (_Bool)NEIKEv2ProviderAuthenticate:(id)arg1;
 - (_Bool)tryAlternateServerAddresses;
 - (void)setTunnelNetworkSettings:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

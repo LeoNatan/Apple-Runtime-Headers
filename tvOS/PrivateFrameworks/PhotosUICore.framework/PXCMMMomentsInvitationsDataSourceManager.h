@@ -22,9 +22,9 @@
 
 + (id)mockDataSourceManagerFromRecentLargeMoments;
 + (id)new;
+- (void).cxx_destruct;
 @property(retain) NSMutableOrderedSet *_remainingAssetCollectionObjectIDsToFetch; // @synthesize _remainingAssetCollectionObjectIDsToFetch=__remainingAssetCollectionObjectIDsToFetch;
 @property(retain, nonatomic) PXCMMMomentsInvitationsDataSourceState *_state; // @synthesize _state=__state;
-- (void).cxx_destruct;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1 withPreparedInfo:(id)arg2;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
 - (void)_handleFinishedFetchingBatch:(id)arg1 preparedChangeDetails:(id)arg2 forFetchResult:(id)arg3;

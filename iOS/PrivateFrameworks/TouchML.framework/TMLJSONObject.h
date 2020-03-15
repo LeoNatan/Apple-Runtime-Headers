@@ -24,11 +24,11 @@
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (id)tmlPropertyWithKeyPath:(id)arg1;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *STRING; // @synthesize STRING=_STRING;
 @property(copy, nonatomic) NSData *DATA; // @synthesize DATA=_DATA;
 @property(copy, nonatomic) NSDictionary *rawJSON; // @synthesize rawJSON=_rawJSON;
 @property(readonly, nonatomic) TMLJSONSchema *SCHEMA; // @synthesize SCHEMA=_SCHEMA;
-- (void).cxx_destruct;
 - (void)notifyAllObservers;
 - (void)tmlRemoveObserver:(id)arg1 forKeyPath:(id)arg2;
 - (void)tmlAddObserver:(id)arg1 forKeyPath:(id)arg2 callback:(CDUnknownBlockType)arg3;

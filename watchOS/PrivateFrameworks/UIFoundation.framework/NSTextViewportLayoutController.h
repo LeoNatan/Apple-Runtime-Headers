@@ -21,10 +21,10 @@
     id <NSTextViewportElementProvider> _elementProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly) struct CGRect viewportBounds; // @synthesize viewportBounds=_viewportBounds;
 @property(readonly) __weak id <NSTextViewportElementProvider> elementProvider; // @synthesize elementProvider=_elementProvider;
 @property __weak id <NSTextViewportLayoutDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)removeViewportLayoutObserver:(id)arg1;
 - (void)addViewportLayoutObserver:(id)arg1;
 - (id)textViewportElementForLocation:(id)arg1;

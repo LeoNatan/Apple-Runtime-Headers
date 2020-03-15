@@ -23,8 +23,8 @@
 + (_Bool)trap;
 + (void)setTrap:(_Bool)arg1;
 + (id)sharedInstance;
-@property(readonly, getter=isCanceled) _Bool canceled; // @synthesize canceled=_canceled;
 - (void).cxx_destruct;
+@property(readonly, getter=isCanceled) _Bool canceled; // @synthesize canceled=_canceled;
 - (void)messageReceiveChannel:(id)arg1 didDeliverMessage:(SEL)arg2;
 - (void)messageReceiveChannel:(id)arg1 willDeliverMessage:(SEL)arg2;
 - (void)keepPersistentObjectInContext:(id)arg1;

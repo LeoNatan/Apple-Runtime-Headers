@@ -13,8 +13,8 @@
     NSData *_cacheData;
 }
 
-@property(readonly, nonatomic) NSData *cacheData; // @synthesize cacheData=_cacheData;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSData *cacheData; // @synthesize cacheData=_cacheData;
 - (void)loadView;
 - (id)initWithCacheData:(id)arg1;
 

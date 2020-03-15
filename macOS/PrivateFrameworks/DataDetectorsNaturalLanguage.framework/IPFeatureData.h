@@ -16,9 +16,9 @@
 }
 
 + (id)featureDataWithType:(unsigned long long)arg1 value:(id)arg2 matchRange:(struct _NSRange)arg3;
+- (void).cxx_destruct;
 @property(retain) id value; // @synthesize value=_value;
 @property unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)xmlElementAttributes;
 - (id)xmlElementName;
 - (id)nGramMarker;

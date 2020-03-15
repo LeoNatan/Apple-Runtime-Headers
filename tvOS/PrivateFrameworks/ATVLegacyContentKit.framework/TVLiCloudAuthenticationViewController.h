@@ -16,9 +16,9 @@
     TVSignInLandingView *_signInView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVSignInLandingView *signInView; // @synthesize signInView=_signInView;
 @property(copy, nonatomic) CDUnknownBlockType callbackBlock; // @synthesize callbackBlock=_callbackBlock;
-- (void).cxx_destruct;
 - (void)_menuOutGestureRecognized;
 - (void)authenticateUserOnSelectSignIn;
 - (id)preferredFocusEnvironments;

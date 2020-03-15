@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     double _minimumItemHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double minimumItemHeight; // @synthesize minimumItemHeight=_minimumItemHeight;
 @property(nonatomic) double interitemSpacing; // @synthesize interitemSpacing=_interitemSpacing;
 @property(nonatomic, getter=isCentered) _Bool centered; // @synthesize centered=_centered;
-- (void).cxx_destruct;
 - (void)_buildLayout;
 - (struct CGSize)_sizeForCellAtIndexPath:(id)arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;

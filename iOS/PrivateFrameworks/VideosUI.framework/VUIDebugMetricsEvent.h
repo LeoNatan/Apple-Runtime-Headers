@@ -11,27 +11,23 @@
 __attribute__((visibility("hidden")))
 @interface VUIDebugMetricsEvent : NSObject
 {
-    NSDictionary *_elements;
-    NSDictionary *_timingElements;
-    NSDictionary *_commonElements;
-    NSDictionary *_reliableUnderlyingDictionary;
+    NSArray *_eventData;
+    NSDictionary *_rawData;
+    NSArray *_sortedPageKeys;
+    NSArray *_sortedPrimaryKeys;
 }
 
-@property(retain, nonatomic) NSDictionary *reliableUnderlyingDictionary; // @synthesize reliableUnderlyingDictionary=_reliableUnderlyingDictionary;
-@property(retain, nonatomic) NSDictionary *commonElements; // @synthesize commonElements=_commonElements;
-@property(retain, nonatomic) NSDictionary *timingElements; // @synthesize timingElements=_timingElements;
-@property(retain, nonatomic) NSDictionary *elements; // @synthesize elements=_elements;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *sortedPrimaryKeys; // @synthesize sortedPrimaryKeys=_sortedPrimaryKeys;
+@property(retain, nonatomic) NSArray *sortedPageKeys; // @synthesize sortedPageKeys=_sortedPageKeys;
+@property(retain, nonatomic) NSDictionary *rawData; // @synthesize rawData=_rawData;
+@property(retain, nonatomic) NSArray *eventData; // @synthesize eventData=_eventData;
 - (id)objectForKeyedSubscript:(id)arg1;
 @property(readonly, nonatomic) NSString *pageContext;
-@property(readonly, nonatomic) NSString *eventTertiaryInformation;
-@property(readonly, nonatomic) NSString *eventSubheader;
 @property(readonly, nonatomic) NSString *eventType;
 @property(readonly, nonatomic) NSDate *eventDate;
 @property(readonly, nonatomic) NSDictionary *rawEvent;
-@property(readonly, nonatomic) NSArray *sortedTimingKeys;
-@property(readonly, nonatomic) NSArray *sortedCommonKeys;
-@property(readonly, nonatomic) NSArray *sortedElementKeys;
+- (id)_sortKeys:(id)arg1;
 - (id)initWithEventDictionary:(id)arg1 termCollater:(id)arg2;
 
 @end

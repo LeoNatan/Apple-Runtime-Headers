@@ -11,10 +11,10 @@
 @class NSArray, NSString, NSURL;
 
 @interface ICAttachmentModel (UI) <QLPreviewItem>
-+ (struct UIImage *)fileIconForURL:(id)arg1 withPreferredSize:(struct CGSize)arg2 uti:(id)arg3;
-+ (struct UIImage *)fileIconForURL:(id)arg1 withPreferredSize:(struct CGSize)arg2;
++ (id)fileIconForURL:(id)arg1 withPreferredSize:(struct CGSize)arg2 uti:(id)arg3;
++ (id)fileIconForURL:(id)arg1 withPreferredSize:(struct CGSize)arg2;
 - (void)drawPreviewInRect:(struct CGRect)arg1;
-- (struct UIImage *)fileIconWithPreferredSize:(struct CGSize)arg1;
+- (id)fileIconWithPreferredSize:(struct CGSize)arg1;
 - (id)activityItems;
 @property(readonly, nonatomic) NSArray *quicklookPreviewItems;
 @property(readonly, nonatomic) CDUnknownBlockType genericBrickLargeThumbnailCreator;

@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 
 + (id)getClient;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) id <CAReportingServiceProtocol> serverDelegateSync; // @synthesize serverDelegateSync=_serverDelegateSync;
 @property(retain) id <CAReportingServiceProtocol> serverDelegateAsync; // @synthesize serverDelegateAsync=_serverDelegateAsync;
 @property(retain) NSMutableDictionary *clientReporters; // @synthesize clientReporters=_clientReporters;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)destoryService;
 - (void)destroyClient;
 - (id)getConfigurationForReporterID:(long long)arg1;

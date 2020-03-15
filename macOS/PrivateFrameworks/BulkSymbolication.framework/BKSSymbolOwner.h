@@ -24,6 +24,7 @@
     NSDictionary *_variantDictionary;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *variantDictionary; // @synthesize variantDictionary=_variantDictionary;
 @property(readonly, nonatomic) NSNumber *symbolCount; // @synthesize symbolCount=_symbolCount;
 @property(readonly, nonatomic) NSNumber *linesCount; // @synthesize linesCount=_linesCount;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSString *architecture; // @synthesize architecture=_architecture;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithSymbolOwnerInfoDict:(id)arg1 uuid:(id)arg2;
 

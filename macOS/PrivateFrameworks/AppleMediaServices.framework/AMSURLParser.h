@@ -21,10 +21,12 @@
 + (id)bagSubProfileVersion;
 + (id)bagSubProfile;
 + (id)bagKeySet;
-@property(retain) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 - (void).cxx_destruct;
+@property(retain) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
+- (BOOL)_matchURL:(id)arg1 toPatterns:(id)arg2;
 - (id)bagContract;
 - (id)initWithBagContract:(id)arg1;
+- (id)typeForCommerceUIURL:(id)arg1;
 - (id)isCommerceUIURL:(id)arg1;
 - (id)initWithBag:(id)arg1;
 

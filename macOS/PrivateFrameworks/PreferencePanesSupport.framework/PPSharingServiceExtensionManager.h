@@ -20,10 +20,10 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property __weak PPSharingServiceViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (void)switchToPanel:(id)arg1;
 - (void)setServiceAvailable:(BOOL)arg1;
 - (void)setServiceState:(long long)arg1;

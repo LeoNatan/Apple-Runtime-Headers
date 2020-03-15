@@ -13,6 +13,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (double)_axScaleTransformForFocusLayerLineWidth;
 - (_Bool)_isTransparentFocusRegion;
 - (id)actionsForFloatingAppNubView;
 - (id)actionsForPinnedAppNubView;

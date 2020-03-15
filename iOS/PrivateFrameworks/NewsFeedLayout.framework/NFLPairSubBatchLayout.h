@@ -15,9 +15,9 @@
 }
 
 + (id)pairComponentFeedSetting:(id)arg1 componentOne:(id)arg2 componentTwo:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NFLSingleComponentLayout *componentTwo; // @synthesize componentTwo=_componentTwo;
 @property(retain, nonatomic) NFLSingleComponentLayout *componentOne; // @synthesize componentOne=_componentOne;
-- (void).cxx_destruct;
 - (_Bool)_isHorizontal;
 - (id)singleComponentLayouts;
 - (id)layoutInfosAtRowOrigin:(long long)arg1 columnOrigin:(long long)arg2 subBatchRowOffset:(long long)arg3 feedSettings:(id)arg4;

@@ -18,12 +18,14 @@
     id <SBAppSwticherAppAccessibilityElementDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBAppSwticherAppAccessibilityElementDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak SBFluidSwitcherContentViewAccessibility *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) id itemContainer; // @synthesize itemContainer=_itemContainer;
 @property(retain, nonatomic) SBAppLayoutAccessibility *appLayout; // @synthesize appLayout=_appLayout;
 @property(readonly, nonatomic) _Bool isControlCenter; // @synthesize isControlCenter=_isControlCenter;
-- (void).cxx_destruct;
+- (_Bool)_accessibilityIsDescendantOfElement:(id)arg1;
+- (_Bool)canBecomeFocused;
 - (_Bool)_axIsAppActive;
 - (_Bool)_accessibilityUpdatesSwitchMenu;
 - (id)_accessibilityScrollAncestor;

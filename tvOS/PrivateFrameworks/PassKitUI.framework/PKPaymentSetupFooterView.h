@@ -20,11 +20,11 @@
     UIButton *_setupLaterButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *setupLaterButton; // @synthesize setupLaterButton=_setupLaterButton;
 @property(retain, nonatomic) UIButton *manualEntryButton; // @synthesize manualEntryButton=_manualEntryButton;
 @property(nonatomic) _Bool forceShowSetupLaterButton; // @synthesize forceShowSetupLaterButton=_forceShowSetupLaterButton;
 @property(nonatomic) long long context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)_createSetupLaterButton;
 - (void)setButtonsEnabled:(_Bool)arg1;
 - (void)layoutSubviews;

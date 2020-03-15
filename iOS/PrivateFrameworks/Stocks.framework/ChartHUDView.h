@@ -31,12 +31,12 @@
 + (id)stringForTimeIntervalSince1970:(double)arg1 withInterval:(long long)arg2 isDouble:(_Bool)arg3 isLeft:(_Bool)arg4;
 + (void)initializeDateFormattersIfNeededForInterval:(long long)arg1 withTimeZone:(id)arg2;
 + (id)_dateRangeSeparatorString;
+- (void).cxx_destruct;
 @property(nonatomic) double barHeight; // @synthesize barHeight=_barHeight;
 @property(nonatomic, getter=isOverlayHidden) _Bool overlayHidden; // @synthesize overlayHidden=_overlayHidden;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) StockGraphView *graphView; // @synthesize graphView=_graphView;
 @property(nonatomic) __weak StockChartView *chartView; // @synthesize chartView=_chartView;
-- (void).cxx_destruct;
 - (void)tapDragGestureChanged:(id)arg1;
 - (void)_showHUD;
 - (_Bool)isTrackingTouches;

@@ -20,9 +20,9 @@
 
 + (id)_horizontalLayoutSpacer;
 + (id)_verticalLayoutSpacer;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType lengthUpdateBlock; // @synthesize lengthUpdateBlock=_lengthUpdateBlock;
 @property(nonatomic) BOOL horizontal; // @synthesize horizontal=_horizontal;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(nonatomic) double length;
 - (void)_activate;

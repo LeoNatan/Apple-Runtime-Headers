@@ -19,12 +19,12 @@
     AWDProactiveModelFittingLogRegWeights *_logRegWeights;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AWDProactiveModelFittingLinRegObjectiveFeatures *linRegObjectiveFeatures; // @synthesize linRegObjectiveFeatures=_linRegObjectiveFeatures;
 @property(retain, nonatomic) AWDProactiveModelFittingLinRegFeatureMatrix *linRegFeatureMatrix; // @synthesize linRegFeatureMatrix=_linRegFeatureMatrix;
 @property(retain, nonatomic) AWDProactiveModelFittingLogRegGradient *logRegGradient; // @synthesize logRegGradient=_logRegGradient;
 @property(retain, nonatomic) AWDProactiveModelFittingLogRegWeights *logRegWeights; // @synthesize logRegWeights=_logRegWeights;
 @property(retain, nonatomic) AWDProactiveModelFittingEvaluation *evaluation; // @synthesize evaluation=_evaluation;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

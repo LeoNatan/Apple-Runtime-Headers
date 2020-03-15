@@ -14,8 +14,8 @@
     MSDiagnosticManager *_diagnosticManager;
 }
 
-@property(retain, nonatomic) MSDiagnosticManager *diagnosticManager; // @synthesize diagnosticManager=_diagnosticManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MSDiagnosticManager *diagnosticManager; // @synthesize diagnosticManager=_diagnosticManager;
 - (void)_submitFinalDrawingInsertCount:(long long)arg1 sentMessage:(_Bool)arg2;
 - (void)abandonMessageWithActualDrawingInsertCount:(long long)arg1;
 - (void)sendMessageWithActualDrawingInsertCount:(long long)arg1;

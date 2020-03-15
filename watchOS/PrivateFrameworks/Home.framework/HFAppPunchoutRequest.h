@@ -23,11 +23,11 @@
 + (_Bool)supportsSecureCoding;
 + (id)handleRequest:(id)arg1;
 + (_Bool)canHandleBundleID:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *storeURL; // @synthesize storeURL=_storeURL;
 @property(readonly, nonatomic) NSURL *payloadURL; // @synthesize payloadURL=_payloadURL;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

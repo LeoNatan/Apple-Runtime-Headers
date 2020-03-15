@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     NSArray *_additionalReadAccessAllowedPaths;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *additionalReadAccessAllowedPaths; // @synthesize additionalReadAccessAllowedPaths=_additionalReadAccessAllowedPaths;
 @property(nonatomic, getter=isCreditCardAutoFillEnabled) BOOL creditCardAutoFillEnabled; // @synthesize creditCardAutoFillEnabled=_creditCardAutoFillEnabled;
 @property(nonatomic) struct UserNotificationProvider *notificationProvider; // @synthesize notificationProvider=_notificationProvider;
@@ -49,7 +50,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL useAutomaticWebProcessPrewarming; // @synthesize useAutomaticWebProcessPrewarming=_useAutomaticWebProcessPrewarming;
 @property(nonatomic) BOOL usePerTabWebProcesses; // @synthesize usePerTabWebProcesses=_usePerTabWebProcesses;
 @property(copy, nonatomic) NSString *injectedBundlePath; // @synthesize injectedBundlePath=_injectedBundlePath;
-- (void).cxx_destruct;
 - (id)initWithInjectedBundlePath:(id)arg1 client:(struct ContextClient *)arg2 injectedBundleClient:(struct ContextInjectedBundleClient *)arg3;
 
 @end

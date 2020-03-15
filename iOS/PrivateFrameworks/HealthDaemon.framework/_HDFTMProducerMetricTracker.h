@@ -18,8 +18,8 @@
     _Bool _metricAvailable;
 }
 
-@property(readonly, nonatomic) _Bool metricAvailable; // @synthesize metricAvailable=_metricAvailable;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool metricAvailable; // @synthesize metricAvailable=_metricAvailable;
 - (void)_startTimer;
 - (void)resume;
 - (void)pause;

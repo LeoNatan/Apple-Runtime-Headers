@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_buttonText;
 }
 
+- (void).cxx_destruct;
 @property BOOL usesLargeIcon; // @synthesize usesLargeIcon=_usesLargeIcon;
 @property(copy) NSString *buttonText; // @synthesize buttonText=_buttonText;
 @property(copy) NSString *captionText; // @synthesize captionText=_captionText;
 @property(retain, nonatomic) NSColor *textTintColor; // @synthesize textTintColor=_textTintColor;
-- (void).cxx_destruct;
 - (id)imageFromImage:(id)arg1 withSize:(struct CGSize)arg2 padding:(double)arg3;
 - (id)attributedStringForCaptionAndTitle;
 - (void)setTitle:(id)arg1;

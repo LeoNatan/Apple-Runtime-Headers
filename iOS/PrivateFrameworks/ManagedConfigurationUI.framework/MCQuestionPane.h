@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     double _statusBarHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double statusBarHeight; // @synthesize statusBarHeight=_statusBarHeight;
 @property(nonatomic) double navigationBarHeight; // @synthesize navigationBarHeight=_navigationBarHeight;
-- (void).cxx_destruct;
 - (void)transitionViewDidComplete:(id)arg1;
 - (void)viewDidBecomeVisible;
 - (void)enableInputField;

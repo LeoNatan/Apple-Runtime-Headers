@@ -40,6 +40,7 @@
     struct NSEdgeInsets _padding;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL presentedAlternateAppearance; // @synthesize presentedAlternateAppearance=_presentedAlternateAppearance;
 @property(readonly, nonatomic) PXNumberAnimator *alternateAppearanceMixAnimator; // @synthesize alternateAppearanceMixAnimator=_alternateAppearanceMixAnimator;
 @property(copy, nonatomic) NSDictionary *floatingSubtitleAttributes; // @synthesize floatingSubtitleAttributes=_floatingSubtitleAttributes;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) PXCuratedLibraryChapterHeaderLayoutSpec *spec; // @synthesize spec=_spec;
 @property(nonatomic) struct PXSimpleIndexPath sectionIndexPath; // @synthesize sectionIndexPath=_sectionIndexPath;
 @property(retain, nonatomic) PXAssetCollectionReference *assetCollectionReference; // @synthesize assetCollectionReference=_assetCollectionReference;
-- (void).cxx_destruct;
 - (id)imageNameAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
 - (long long)verticalAlignmentForStringAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
 - (id)stringAttributesAtIndex:(unsigned int)arg1 inLayout:(id)arg2;

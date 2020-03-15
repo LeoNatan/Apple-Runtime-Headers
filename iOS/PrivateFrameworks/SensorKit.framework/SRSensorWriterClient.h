@@ -16,8 +16,8 @@
 }
 
 + (id)sensorWriterClientWithWriter:(id)arg1;
-@property __weak SRSensorWriter *writer; // @synthesize writer=_writer;
 - (void).cxx_destruct;
+@property __weak SRSensorWriter *writer; // @synthesize writer=_writer;
 - (void)setMonitoring:(_Bool)arg1;
 - (void)resetDatastoreFiles:(id)arg1;
 - (id)initWithWriter:(id)arg1;

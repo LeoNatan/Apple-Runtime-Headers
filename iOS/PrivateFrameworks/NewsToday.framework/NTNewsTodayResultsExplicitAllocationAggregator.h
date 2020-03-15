@@ -26,6 +26,7 @@
     NSObject<FCTodayPrivateData> *_todayData;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSObject<FCTodayPrivateData> *todayData; // @synthesize todayData=_todayData;
 @property(copy, nonatomic) NSDate *filterDate; // @synthesize filterDate=_filterDate;
 @property(nonatomic) double slotsLimit; // @synthesize slotsLimit=_slotsLimit;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NTPBSectionSlotCostInfo *nonVideoSectionSlotCostInfo; // @synthesize nonVideoSectionSlotCostInfo=_nonVideoSectionSlotCostInfo;
 @property(retain, nonatomic) id <FCFeedPersonalizing> feedPersonalizer; // @synthesize feedPersonalizer=_feedPersonalizer;
 @property(retain, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
-- (void).cxx_destruct;
 - (id)_sectionFilterTransformationWithDescriptor:(id)arg1 priorClusterIDsInOtherSections:(id)arg2 priorClusterIDsInSection:(id)arg3 otherArticleIDs:(id)arg4 embedsLimit:(unsigned long long)arg5;
 - (id)_itemsForSection:(id)arg1 items:(id)arg2 previouslyChosenItems:(id)arg3 allowLeadingCell:(_Bool)arg4 leadingCellItemID:(id *)arg5 priorClusterIDsInOtherSections:(id)arg6 sectionItemsLimit:(unsigned long long)arg7 otherArticleIDs:(id)arg8 embedsLimit:(unsigned long long)arg9 remainingSlots:(double)arg10 slotsUsed:(double *)arg11 noMoreItemsToGive:(_Bool *)arg12 noRoomForMoreItems:(_Bool *)arg13 slotAllocationByDynamicSlotItemID:(id)arg14;
 - (id)aggregateSections:(id)arg1 itemsBySectionDescriptor:(id)arg2;

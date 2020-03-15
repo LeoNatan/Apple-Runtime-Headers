@@ -20,8 +20,8 @@
     id <_SFAppleConnectExtensionUIDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <_SFAppleConnectExtensionUIDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_SFAppleConnectExtensionUIDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)dismissExtensionViewController:(id)arg1;
 - (void)presentExtensionViewController:(id)arg1;
 - (void)dispatchMessageToContentScriptWithName:(id)arg1 userInfo:(id)arg2;

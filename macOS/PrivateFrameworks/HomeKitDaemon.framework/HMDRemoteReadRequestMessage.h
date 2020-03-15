@@ -16,10 +16,10 @@
     NSObject<OS_dispatch_queue> *_responseQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *responseQueue; // @synthesize responseQueue=_responseQueue;
 @property(readonly, nonatomic) NSUUID *accessoryUUID; // @synthesize accessoryUUID=_accessoryUUID;
 @property(readonly, nonatomic) HMFMessage *readMessage; // @synthesize readMessage=_readMessage;
-- (void).cxx_destruct;
 - (id)description;
 - (id)debugDescription;
 - (id)initWithReadMessage:(id)arg1 accessoryUUID:(id)arg2 responseQueue:(id)arg3;

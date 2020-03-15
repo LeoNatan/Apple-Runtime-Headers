@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) _Bool useDisplayModeAsDefaultForNextWake; // @synthesize useDisplayModeAsDefaultForNextWake=_useDisplayModeAsDefaultForNextWake;
 @property(nonatomic) _Bool treatDisplayModeAsFallback; // @synthesize treatDisplayModeAsFallback=_treatDisplayModeAsFallback;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool writeDisplayModeToDisk; // @synthesize writeDisplayModeToDisk=_writeDisplayModeToDisk;
 @property(readonly, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) PBSDisplayMode *displayMode; // @synthesize displayMode=_displayMode;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

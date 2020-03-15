@@ -10,7 +10,7 @@
 {
 }
 
-- (id)createAccountPageViewControllerFor:(id)arg1;
+- (id)createAccountPageViewControllerFor:(id)arg1 useAMS:(BOOL)arg2;
 
 @end
 

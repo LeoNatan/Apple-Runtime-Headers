@@ -24,10 +24,10 @@
 + (id)sharedInstanceIfAvailable;
 + (id)sharedInstance;
 + (void)_initializeSharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *carrierTemplateParameterValues; // @synthesize carrierTemplateParameterValues=_carrierTemplateParameterValues;
 @property(readonly, nonatomic) NSDictionary *templateParameterValues; // @synthesize templateParameterValues=_templateParameterValues;
 @property(readonly, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *defaultSearchEngineName;
 @property(readonly, copy, nonatomic) NSArray *searchEngineNames;
 @property(readonly, copy, nonatomic) NSArray *enginesAvailableForUnifiedFieldSearching;
@@ -40,6 +40,7 @@
 - (id)engineInfoForScriptName:(id)arg1;
 - (id)engineInfoFor:(id)arg1;
 - (id)_existingEngineInfoFor:(id)arg1;
+- (void)_postDefaultSearchEngineDidChange;
 - (id)defaultSearchEngine;
 - (void)_setDefaultSearchEngine:(id)arg1;
 - (void)setDefaultSearchEngine:(id)arg1;

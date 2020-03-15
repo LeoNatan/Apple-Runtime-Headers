@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long permission; // @synthesize permission=_permission;
 @property(copy, nonatomic) NSString *preferredUserAddress; // @synthesize preferredUserAddress=_preferredUserAddress;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSString *uri; // @synthesize uri=_uri;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

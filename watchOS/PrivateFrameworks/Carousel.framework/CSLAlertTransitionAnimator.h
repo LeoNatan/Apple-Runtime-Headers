@@ -26,6 +26,7 @@
     CUISAlertViewController *_appearingViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CUISAlertViewController *appearingViewController; // @synthesize appearingViewController=_appearingViewController;
 @property(retain, nonatomic) CUISAlertTransitionContext *endingContext; // @synthesize endingContext=_endingContext;
 @property(retain, nonatomic) CUISAlertTransitionContext *startingContext; // @synthesize startingContext=_startingContext;
@@ -36,7 +37,6 @@
 @property(nonatomic) __weak id <CSLAlertTransitionAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned int transitionStyle; // @synthesize transitionStyle=_transitionStyle;
 @property(retain, nonatomic) CSLAlertTransitionContext *transitionContext; // @synthesize transitionContext=_transitionContext;
-- (void).cxx_destruct;
 - (void)completeCurrentTransitionImmediately;
 - (void)tellDelegateWillShowAppearingAlert;
 - (void)configureAlertContext:(id)arg1 withContext:(id)arg2;

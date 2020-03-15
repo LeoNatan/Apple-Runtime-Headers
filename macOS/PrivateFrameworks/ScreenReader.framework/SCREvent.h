@@ -33,8 +33,8 @@ __attribute__((visibility("hidden")))
 + (id)titleForTag:(long long)arg1;
 + (id)_tagTitleMap;
 + (BOOL)supportsSecureCoding;
-@property(nonatomic) long long insertionPointAffinity; // @synthesize insertionPointAffinity=_insertionPointAffinity;
 - (void).cxx_destruct;
+@property(nonatomic) long long insertionPointAffinity; // @synthesize insertionPointAffinity=_insertionPointAffinity;
 - (id)description;
 - (BOOL)isDFROriginatedEvent;
 - (BOOL)isGestureEvent;

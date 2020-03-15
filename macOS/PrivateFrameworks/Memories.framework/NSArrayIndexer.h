@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)indexerWithInitialArray:(id)arg1 finalArray:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexSet *deletedIndexesBeforeInsertions; // @synthesize deletedIndexesBeforeInsertions=_deletedIndexesBeforeInsertions;
 @property(retain, nonatomic) NSIndexSet *insertedIndexesAfterDeletions; // @synthesize insertedIndexesAfterDeletions=_insertedIndexesAfterDeletions;
 @property(retain, nonatomic) NSArray *finalArray; // @synthesize finalArray=_finalArray;
 @property(retain, nonatomic) NSArray *initialArray; // @synthesize initialArray=_initialArray;
-- (void).cxx_destruct;
 - (void)analyze;
 - (id)initWithInitialArray:(id)arg1 finalArray:(id)arg2;
 

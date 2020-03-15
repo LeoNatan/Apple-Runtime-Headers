@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 + (void)removeTaskInfoForTask:(id)arg1;
 + (id)createTaskInfoForTask:(id)arg1;
 + (id)taskInfoForTask:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(readonly) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly) NSObject<OS_dispatch_queue> *taskQueue; // @synthesize taskQueue=_taskQueue;
@@ -43,7 +44,6 @@ __attribute__((visibility("hidden")))
 @property(retain) NSURLSessionTaskMetrics *metrics; // @synthesize metrics=_metrics;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) NSMutableData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (void)migrateFromTaskInfo:(id)arg1;
 - (id)initWithTask:(id)arg1;
 

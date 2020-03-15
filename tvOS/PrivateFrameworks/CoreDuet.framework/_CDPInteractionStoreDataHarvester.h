@@ -18,10 +18,10 @@
     NSArray *_interactions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *interactions; // @synthesize interactions=_interactions;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(retain, nonatomic) _CDInteractionStore *store; // @synthesize store=_store;
-- (void).cxx_destruct;
 - (id)contactForIdentifier:(id)arg1;
 - (void)loadWithLimit:(unsigned long long)arg1 dataPointReader:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 

@@ -15,10 +15,10 @@
     HMHome *_home;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(readonly, nonatomic) HMUser *user; // @synthesize user=_user;
 @property(readonly, nonatomic) NSMutableSet *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (id)invalidationReasons;
 - (id)reloadItems;
 - (id)init;

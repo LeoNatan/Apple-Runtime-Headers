@@ -28,6 +28,7 @@
 }
 
 + (id)_indexPathsFromRange:(struct _NSRange)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldExchange; // @synthesize shouldExchange=_shouldExchange;
 @property(nonatomic) struct _NSRange exchangedIndexRange; // @synthesize exchangedIndexRange=_exchangedIndexRange;
 @property(nonatomic) struct _NSRange movedIndexRange; // @synthesize movedIndexRange=_movedIndexRange;
@@ -36,7 +37,6 @@
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) BOOL isRearranging; // @synthesize isRearranging=_isRearranging;
 @property(readonly, nonatomic) __weak UXCollectionView *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 - (void)updateDraggingItemsForDrag:(id)arg1;
 - (BOOL)wantsPeriodicDraggingUpdates;
 - (void)draggingEnded:(id)arg1;

@@ -14,9 +14,9 @@
     NSData *_payload;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *payload; // @synthesize payload=_payload;
 @property(nonatomic) int anyEventType; // @synthesize anyEventType=_anyEventType;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

@@ -15,8 +15,8 @@
     NSString *_platform;
 }
 
-@property(readonly, copy, nonatomic) NSString *platform; // @synthesize platform=_platform;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *platform; // @synthesize platform=_platform;
 - (BOOL)validateCondition:(id)arg1 context:(id)arg2;
 - (id)initWithPlatform:(id)arg1;
 

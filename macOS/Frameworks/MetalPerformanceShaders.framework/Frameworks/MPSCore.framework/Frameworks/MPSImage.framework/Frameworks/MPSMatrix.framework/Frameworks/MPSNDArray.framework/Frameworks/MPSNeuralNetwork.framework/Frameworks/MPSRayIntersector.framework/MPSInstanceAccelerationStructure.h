@@ -12,7 +12,7 @@
 @interface MPSInstanceAccelerationStructure : MPSAccelerationStructure
 {
     unsigned long long _transformType;
-    // Error parsing type: ^{MPSInstanceBVH=^^?{atomic<unsigned int>=AI}^{MPSBVHGroup}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQiIi@@^{MPSLibrary}@}, name: _bvh
+    // Error parsing type: ^{MPSInstanceBVH=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}^{MPSBVHGroup}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQiIi@@^{MPSLibrary}@}, name: _bvh
     NSArray *_accelerationStructures;
     id <MTLBuffer> _instanceBuffer;
     unsigned long long _instanceBufferOffset;
@@ -59,11 +59,11 @@
 - (unsigned long long)innerNodeCount;
 - (unsigned long long)leafNodeCount;
 - (int)rootNodeType;
--     // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>=AI}^{MPSBufferAllocator}}16@0:8, name: pageBufferRange
--     // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>=AI}^{MPSBufferAllocator}}16@0:8, name: pageTable1BufferRange
--     // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>=AI}^{MPSBufferAllocator}}16@0:8, name: pageTable0BufferRange
--     // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>=AI}^{MPSBufferAllocator}}16@0:8, name: leafNodeBufferRange
--     // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>=AI}^{MPSBufferAllocator}}16@0:8, name: innerNodeBufferRange
+-     // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}^{MPSBufferAllocator}}16@0:8, name: pageBufferRange
+-     // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}^{MPSBufferAllocator}}16@0:8, name: pageTable1BufferRange
+-     // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}^{MPSBufferAllocator}}16@0:8, name: pageTable0BufferRange
+-     // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}^{MPSBufferAllocator}}16@0:8, name: leafNodeBufferRange
+-     // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}^{MPSBufferAllocator}}16@0:8, name: innerNodeBufferRange
 @property(nonatomic) unsigned long long transformType;
 
 @end

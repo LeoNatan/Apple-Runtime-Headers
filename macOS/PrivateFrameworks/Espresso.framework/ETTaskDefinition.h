@@ -34,6 +34,8 @@
     unordered_map_1de83e55 _blobShapes;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property vector_ebb6ef3e non_batches; // @synthesize non_batches=_non_batches;
 @property unordered_map_1de83e55 blobShapes; // @synthesize blobShapes=_blobShapes;
 @property(retain) NSArray *outputNames; // @synthesize outputNames=_outputNames;
@@ -44,8 +46,6 @@
 @property(nonatomic) unsigned long long platform; // @synthesize platform=_platform;
 @property(retain, nonatomic) ETOptimizerDefinition *optimizer; // @synthesize optimizer=_optimizer;
 @property(retain, nonatomic) ETModelDefinition *inferenceModel; // @synthesize inferenceModel=_inferenceModel;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (unsigned long long)platformForLayerNamed:(id)arg1 error:(id *)arg2;
 - (id)getTensorNamed:(id)arg1;
 - (BOOL)setTensorNamed:(id)arg1 withValue:(id)arg2 error:(id *)arg3;

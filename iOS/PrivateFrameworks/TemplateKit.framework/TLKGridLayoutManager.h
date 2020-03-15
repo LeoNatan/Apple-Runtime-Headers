@@ -34,6 +34,7 @@
 + (id)arrayOfItemsForSection:(id)arg1;
 + (id)verticalAlignmentsForItems:(id)arg1;
 + (id)gridManagerWithAlignments:(id)arg1 rows:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool tableContainsRowHeaders; // @synthesize tableContainsRowHeaders=_tableContainsRowHeaders;
 @property(retain, nonatomic) NSArray *verticalRowAlignments; // @synthesize verticalRowAlignments=_verticalRowAlignments;
 @property(retain, nonatomic) NSArray *alignments; // @synthesize alignments=_alignments;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) NSMapTable *itemToRowMapping; // @synthesize itemToRowMapping=_itemToRowMapping;
 @property(retain, nonatomic) NSArray *itemsForRows; // @synthesize itemsForRows=_itemsForRows;
 @property(retain, nonatomic) NSDictionary *itemsForIndex; // @synthesize itemsForIndex=_itemsForIndex;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)hasManyTrailingColumns;
 - (double)trailingSectionSpacingBasedOnTotalViewsInSection:(long long)arg1;

@@ -23,13 +23,13 @@
 
 + (BOOL)isOnline;
 + (id)sharedObjectManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HPDReachability *reachability; // @synthesize reachability=_reachability;
 @property(retain, nonatomic) HPDAuthChallengeHandler *authHandler; // @synthesize authHandler=_authHandler;
 @property(retain, nonatomic) NSMapTable *topicPreloadsByBook; // @synthesize topicPreloadsByBook=_topicPreloadsByBook;
 @property(retain, nonatomic) NSMapTable *ddmBookCache; // @synthesize ddmBookCache=_ddmBookCache;
 @property(retain, nonatomic) NSMapTable *ddmObjectCache; // @synthesize ddmObjectCache=_ddmObjectCache;
 @property(retain, nonatomic) NSURLSession *urlSession; // @synthesize urlSession=_urlSession;
-- (void).cxx_destruct;
 - (void)_resetSession;
 - (void)processEventNotification:(id)arg1;
 - (void)_authenticateWithCompletionHandler:(CDUnknownBlockType)arg1;

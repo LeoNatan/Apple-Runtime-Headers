@@ -7,9 +7,13 @@
 #import <AppAnalytics/AAAccessTracker.h>
 
 @interface AAAccessTracker (AppAnalytics2)
-- (id)peekDataEventByName:(id)arg1;
-- (void)popDataEventByName:(id)arg1;
-- (void)popDataEventType:(Class)arg1;
-- (void)pushDataEvent:(id)arg1 traits:(id)arg2 file:(id)arg3 line:(long long)arg4;
+- (void)explicitSubmitRawEvent:(id)arg1 onlyIfTimed:(_Bool)arg2 submitTime:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)explicitSubmitRawEvent:(id)arg1 submitTime:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)explicitSubmitRawEvent:(id)arg1 onlyIfTimed:(_Bool)arg2 submitTime:(id)arg3;
+- (void)explicitSubmitRawEvent:(id)arg1 submitTime:(id)arg2;
+- (void)explicitSubmitEventType:(Class)arg1 onlyIfTimed:(_Bool)arg2 submitTime:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)explicitSubmitEventType:(Class)arg1 submitTime:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)explicitSubmitEventType:(Class)arg1 onlyIfTimed:(_Bool)arg2 submitTime:(id)arg3;
+- (void)explicitSubmitEventType:(Class)arg1 submitTime:(id)arg2;
 @end
 

@@ -21,9 +21,9 @@
 
 + (id)_restoreNotification;
 + (BOOL)isSystemRestoreDone;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL restoreDoneHandled; // @synthesize restoreDoneHandled=_restoreDoneHandled;
 @property(nonatomic) __weak id <MTSystemStateDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)gatherDiagnostics;
 - (void)printDiagnostics;
 - (id)liveDarwinNotifications;

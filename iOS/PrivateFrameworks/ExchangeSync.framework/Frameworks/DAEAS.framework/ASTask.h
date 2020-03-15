@@ -62,6 +62,7 @@
 
 + (void)_restoreDefaultTaskTimeout;
 + (void)_setDefaultTaskTimeout:(double)arg1 failureFallbackTimeout:(double)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSThread *thread; // @synthesize thread=_thread;
 @property(nonatomic) _Bool isLoadedOnMainThread; // @synthesize isLoadedOnMainThread=_isLoadedOnMainThread;
 @property(retain, nonatomic) DATaskManager *strongTaskManagerDuringDelegateCallout; // @synthesize strongTaskManagerDuringDelegateCallout=_strongTaskManagerDuringDelegateCallout;
@@ -78,7 +79,6 @@
 @property(retain, nonatomic) id context; // @synthesize context=_context;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak DATaskManager *taskManager; // @synthesize taskManager=_taskManager;
-- (void).cxx_destruct;
 - (void)_unitTestFinished;
 - (id)onBehalfOfBundleIdentifier;
 - (id)_requestForLogging;

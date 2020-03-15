@@ -20,6 +20,7 @@
 }
 
 + (id)configurationWithProfile:(id)arg1 minimumSeriesSize:(int)arg2 maximumSeriesSize:(int)arg3 deletedSampleThreshold:(int)arg4 analyticsAccumulator:(id)arg5 error:(id *)arg6;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _HDWorkoutCondenserAnalyticsAccumulator *analyticsAccumulator; // @synthesize analyticsAccumulator=_analyticsAccumulator;
 @property(readonly, nonatomic) int deletedSampleThreshold; // @synthesize deletedSampleThreshold=_deletedSampleThreshold;
 @property(readonly, nonatomic) int maximumSeriesSize; // @synthesize maximumSeriesSize=_maximumSeriesSize;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) double minimumWorkoutDuration; // @synthesize minimumWorkoutDuration=_minimumWorkoutDuration;
 @property(readonly, nonatomic) HDSQLitePredicate *predicate; // @synthesize predicate=_predicate;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (id)initWithProfile:(id)arg1 predicate:(id)arg2 minimumWorkoutDuration:(double)arg3 minimumSeriesSize:(int)arg4 maximumSeriesSize:(int)arg5 deletedSampleThreshold:(int)arg6 analyticsAccumulator:(id)arg7;
 
 @end

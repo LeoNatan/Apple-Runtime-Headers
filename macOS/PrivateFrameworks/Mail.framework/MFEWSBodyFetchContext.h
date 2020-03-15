@@ -16,8 +16,8 @@
     MFEWSAccountTaskManager *_manager;
 }
 
-@property(readonly, nonatomic) MFEWSAccountTaskManager *manager; // @synthesize manager=_manager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MFEWSAccountTaskManager *manager; // @synthesize manager=_manager;
 - (void)cacheBodiesForMessages:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)setBodyFetchTask:(id)arg1;

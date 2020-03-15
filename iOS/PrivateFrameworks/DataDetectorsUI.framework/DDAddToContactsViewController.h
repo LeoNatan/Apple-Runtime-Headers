@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
 + (id)alternateNameForContact:(id)arg1;
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
-@property(retain) DDAction *action; // @synthesize action=_action;
 - (void).cxx_destruct;
+@property(retain) DDAction *action; // @synthesize action=_action;
 - (void)contactViewControllerForUnknownContactDidEndAddingToContacts:(id)arg1;
 - (void)contactViewControllerForUnknownContactDidBeginAddingToContacts:(id)arg1;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;

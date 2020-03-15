@@ -25,12 +25,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long timeToSaveMillis; // @synthesize timeToSaveMillis=_timeToSaveMillis;
 @property(nonatomic) unsigned long long timeToGenerateMillis; // @synthesize timeToGenerateMillis=_timeToGenerateMillis;
 @property(nonatomic) unsigned long long timeToCaptureMillis; // @synthesize timeToCaptureMillis=_timeToCaptureMillis;
 @property(retain, nonatomic) AWDCarouselAppInfo *app; // @synthesize app=_app;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

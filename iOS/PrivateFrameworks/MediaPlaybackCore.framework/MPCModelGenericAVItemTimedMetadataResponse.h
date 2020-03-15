@@ -16,10 +16,10 @@
     MPSectionedCollection *_unpersonalizedContentDescriptors;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) MPSectionedCollection *unpersonalizedContentDescriptors; // @synthesize unpersonalizedContentDescriptors=_unpersonalizedContentDescriptors;
 @property(retain, nonatomic) MPCModelGenericAVItemTimedMetadataStreamFields *streamFields; // @synthesize streamFields=_streamFields;
 @property(copy, nonatomic) NSData *adamIDData; // @synthesize adamIDData=_adamIDData;
-- (void).cxx_destruct;
 - (void)_personalizationResponseDidInvalidateNotification:(id)arg1;
 - (void)dealloc;
 - (id)initWithRequest:(id)arg1 personalizationResponse:(id)arg2;

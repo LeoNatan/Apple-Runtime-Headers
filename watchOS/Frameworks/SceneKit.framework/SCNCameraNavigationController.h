@@ -86,6 +86,8 @@
     SCNNode *_freeViewCameraNode;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) float rotationSensitivity; // @synthesize rotationSensitivity=_rotationSensitivity;
 @property(nonatomic) float truckSensitivity; // @synthesize truckSensitivity=_truckSensitivity;
 @property(nonatomic) float panSensitivity; // @synthesize panSensitivity=_panSensitivity;
@@ -95,8 +97,6 @@
 @property(readonly, nonatomic) SCNNode *freeCamera; // @synthesize freeCamera=_freeViewCameraNode;
 @property(nonatomic) SCNView *view; // @synthesize view=_view;
 @property(nonatomic) id <SCNCameraNavigationControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)__didChangePointOfView;
 - (void)__willChangePointOfView;
 - (void)_translateToViewPoint:(struct CGPoint)arg1;

@@ -22,12 +22,12 @@
     id <KHEditorLayoutProtocol> _layoutObject;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <KHEditorLayoutProtocol> layoutObject; // @synthesize layoutObject=_layoutObject;
 @property(readonly, nonatomic) UXImageView *layoutImageView; // @synthesize layoutImageView=_layoutImageView;
 @property(retain, nonatomic) UXView *selectedHoverBackgroundView; // @synthesize selectedHoverBackgroundView=_selectedHoverBackgroundView;
 @property(retain, nonatomic) UXView *hoverBackgroundView; // @synthesize hoverBackgroundView=_hoverBackgroundView;
 @property(retain, nonatomic) UXView *selectedBackgroundView; // @synthesize selectedBackgroundView=_selectedBackgroundView;
-- (void).cxx_destruct;
 - (BOOL)accessibilityPerformShowMenu;
 - (unsigned long long)trackingOptions;
 - (struct CGRect)hoverStateTrackingRect;

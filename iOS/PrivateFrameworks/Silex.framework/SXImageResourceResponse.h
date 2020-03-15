@@ -14,9 +14,9 @@
     UIImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) unsigned long long imageQuality; // @synthesize imageQuality=_imageQuality;
-- (void).cxx_destruct;
 
 @end
 

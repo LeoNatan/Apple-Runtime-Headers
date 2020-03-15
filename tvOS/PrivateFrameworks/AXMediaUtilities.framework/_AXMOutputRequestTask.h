@@ -13,8 +13,8 @@
     AXMOutputRequest *_request;
 }
 
-@property(retain, nonatomic) AXMOutputRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AXMOutputRequest *request; // @synthesize request=_request;
 
 @end
 

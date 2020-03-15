@@ -20,12 +20,12 @@
     TVTableView *_listView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVTableView *listView; // @synthesize listView=_listView;
 @property(retain, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(copy, nonatomic) NSString *descriptionText; // @synthesize descriptionText=_descriptionText;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) NSArray *menuItems; // @synthesize menuItems=_menuItems;
-- (void).cxx_destruct;
 - (struct CGSize)_headerViewMargins;
 - (double)_listWidth;
 - (id)_createDataSource;

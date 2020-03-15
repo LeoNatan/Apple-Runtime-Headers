@@ -14,9 +14,9 @@
     NSColor *_borderColor;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSColor *borderColor; // @synthesize borderColor=_borderColor;
 @property BOOL showBorder; // @synthesize showBorder=_showBorder;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)inTesting;
 - (BOOL)hasTesting;

@@ -15,9 +15,9 @@
     NSObject<OS_dispatch_source> *_resizingEventsSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *resizingEventsSource; // @synthesize resizingEventsSource=_resizingEventsSource;
 @property(nonatomic) BOOL postsDidEndResizeNotifications; // @synthesize postsDidEndResizeNotifications=_postsDidEndResizeNotifications;
-- (void).cxx_destruct;
 - (void)viewFrameDidChangeNotification:(id)arg1;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;

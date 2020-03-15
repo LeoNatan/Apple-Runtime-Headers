@@ -15,8 +15,8 @@
     BOOL _isRecording;
 }
 
-@property BOOL isRecording; // @synthesize isRecording=_isRecording;
 - (void).cxx_destruct;
+@property BOOL isRecording; // @synthesize isRecording=_isRecording;
 - (void)recordTargetProcessPID:(int)arg1 forLanguage:(unsigned long long)arg2 reservedNames:(id)arg3 withBlock:(CDUnknownBlockType)arg4;
 - (void)_recordTargetProcessPID:(int)arg1;
 - (void)launchRecorderProcessWithBlock:(CDUnknownBlockType)arg1;

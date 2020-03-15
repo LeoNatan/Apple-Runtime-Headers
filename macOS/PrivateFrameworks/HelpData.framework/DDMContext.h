@@ -16,10 +16,10 @@
 }
 
 + (id)sharedContext;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *systemVersionDictionary; // @synthesize systemVersionDictionary=_systemVersionDictionary;
 @property CDStruct_f6aba300 osVersionSystem; // @synthesize osVersionSystem=_osVersionSystem;
 @property(retain) NSProcessInfo *processInfo; // @synthesize processInfo=_processInfo;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) NSString *acEnvironmentName;
 @property(readonly) NSString *environmentName;

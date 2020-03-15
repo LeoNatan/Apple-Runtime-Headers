@@ -18,9 +18,9 @@
 
 + (id)sharedDatabase;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool cloudKitPushInSameProcess; // @synthesize cloudKitPushInSameProcess=_cloudKitPushInSameProcess;
 @property(nonatomic) _Bool cloudKitSync; // @synthesize cloudKitSync=_cloudKitSync;
-- (void).cxx_destruct;
 - (id)nonePunctuationGroup;
 - (id)somePunctuationGroup;
 - (id)allPunctuationGroup;

@@ -26,6 +26,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double inline_round_corner_pt; // @synthesize inline_round_corner_pt=_inline_round_corner_pt;
 @property(readonly, nonatomic) double round_corner_pt; // @synthesize round_corner_pt=_round_corner_pt;
 @property(readonly, nonatomic) NSImage *image; // @synthesize image=_image;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, nonatomic) long long title_maxlines; // @synthesize title_maxlines=_title_maxlines;
 @property(readonly, nonatomic) BOOL title_nowrap; // @synthesize title_nowrap=_title_nowrap;
-- (void).cxx_destruct;
 - (long long)type;
 @property BOOL isMultiTweet;
 - (id)initWithSFSearchResult:(id)arg1 cardSection:(id)arg2;

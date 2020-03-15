@@ -21,13 +21,13 @@
 }
 
 + (id)dateFormatter;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool finalized; // @synthesize finalized=_finalized;
 @property(readonly, nonatomic) NSDate *displayTime; // @synthesize displayTime=_displayTime;
 @property(readonly, nonatomic) float fraction; // @synthesize fraction=_fraction;
 @property(readonly, nonatomic) NSDate *toDate; // @synthesize toDate=_toDate;
 @property(readonly, nonatomic) NSDate *fromDate; // @synthesize fromDate=_fromDate;
 @property(readonly, nonatomic) NSDate *presentationTime; // @synthesize presentationTime=_presentationTime;
-- (void).cxx_destruct;
 - (void)finalize;
 - (id)shortDescription;
 @property(readonly, copy) NSString *description;

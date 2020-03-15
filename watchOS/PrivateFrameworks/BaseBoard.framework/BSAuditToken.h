@@ -28,9 +28,9 @@
 + (id)tokenFromAuditTokenRef:(CDStruct_4c969caf *)arg1;
 + (id)tokenFromAuditToken:(CDStruct_4c969caf)arg1;
 + (id)tokenForCurrentProcess;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_4c969caf realToken; // @synthesize realToken=_auditToken;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;

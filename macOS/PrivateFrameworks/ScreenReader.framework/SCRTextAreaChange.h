@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (void)collapsePairs:(struct NSMutableArray *)arg1;
++ (void)collapsePairs:(id)arg1;
 + (id)changeWithEditType:(long long)arg1 value:(id)arg2 marker:(id)arg3 length:(unsigned long long)arg4;
 - (BOOL)containedByRange:(id)arg1 forUIElement:(id)arg2;
 - (void)addValueToOutputRequest:(id)arg1 typingEchoPreference:(long long)arg2;

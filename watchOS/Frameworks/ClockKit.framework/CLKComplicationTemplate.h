@@ -25,11 +25,11 @@
 
 + (id)complicationTemplateWithJSONObjectRepresentation:(id)arg1 bundle:(id)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, setter=setUISensitivity:) int uiSensitivity; // @synthesize uiSensitivity=_uiSensitivity;
 @property(readonly, nonatomic, getter=isLinkedOnOrAfterGrace) _Bool linkedOnOrAfterGrace; // @synthesize linkedOnOrAfterGrace=_linkedOnOrAfterGrace;
 @property(copy, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(readonly, nonatomic) _Bool tritium_isTritiumInactiveCopy; // @synthesize tritium_isTritiumInactiveCopy=_tritium_isTritiumInactiveCopy;
-- (void).cxx_destruct;
 - (void)_enumerateAllKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateScalarKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)_setProvidersPaused:(_Bool)arg1;

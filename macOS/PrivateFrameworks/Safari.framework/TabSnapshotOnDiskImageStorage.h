@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_group> *_waitForAPIOperationCompletionBeforeFinalizingSynchronizationGroup;
 }
 
-@property(nonatomic) long long initializationStatus; // @synthesize initializationStatus=_initializationStatus;
 - (void).cxx_destruct;
+@property(nonatomic) long long initializationStatus; // @synthesize initializationStatus=_initializationStatus;
 - (void)_endAPIOperationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_beginAPIOperation;
 - (void)_dispatchAsynchronousBlockOnAPIQueue:(CDUnknownBlockType)arg1;

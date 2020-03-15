@@ -16,10 +16,15 @@
 }
 
 + (id)preferencesWithApplicationID:(id)arg1;
++ (id)makeStandardPreferences;
 + (id)standardPreferences;
++ (id)makeIISSupportPreferences;
 + (id)iisSupportPreferences;
++ (id)makeAddressBookManagerPreferences;
 + (id)addressBookManagerPreferences;
++ (id)makeAddressBookPreferences;
 + (id)addressBookPreferences;
+- (void).cxx_destruct;
 @property(copy) NSDictionary *registeredDefaults; // @synthesize registeredDefaults=_registeredDefaults;
 - (BOOL)userHasOptedInToPreference:(id)arg1;
 - (BOOL)userHasOptedOutOfPreference:(id)arg1;
@@ -43,7 +48,6 @@
 - (id)primitiveObjectForKey:(id)arg1;
 - (id)primitiveDefaults;
 - (void)registerDefaults:(id)arg1;
-- (void)dealloc;
 - (id)initWithPrimitiveDefaults:(id)arg1;
 - (id)initWithApplicationID:(id)arg1;
 

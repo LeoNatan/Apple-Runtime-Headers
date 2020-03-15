@@ -17,12 +17,12 @@
     NSURL *_clickedImageURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *clickedImageURL; // @synthesize clickedImageURL=_clickedImageURL;
 @property(retain, nonatomic) NSURL *clickedMediaURL; // @synthesize clickedMediaURL=_clickedMediaURL;
 @property(retain, nonatomic) NSURL *clickedLinkURL; // @synthesize clickedLinkURL=_clickedLinkURL;
 @property(retain, nonatomic) MUIWebAttachmentController *clickedAttachmentController; // @synthesize clickedAttachmentController=_clickedAttachmentController;
 @property(copy, nonatomic) NSArray *selectedAttachmentControllers; // @synthesize selectedAttachmentControllers=_selectedAttachmentControllers;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *selectedAndClickedAttachmentControllers;
 
 @end

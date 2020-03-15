@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) REMChangeToken *token; // @synthesize token=_token;
 @property(readonly, nonatomic) NSString *author; // @synthesize author=_author;
 @property(readonly, nonatomic) NSString *storeID; // @synthesize storeID=_storeID;
 @property(readonly, nonatomic) REMObjectID *accountID; // @synthesize accountID=_accountID;
 @property(readonly, nonatomic) NSArray *changes; // @synthesize changes=_changes;
 @property(readonly, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

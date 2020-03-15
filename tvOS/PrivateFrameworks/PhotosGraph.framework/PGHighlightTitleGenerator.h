@@ -21,12 +21,12 @@
 + (id)meaningLabelsSortedByPriority;
 + (_Bool)collectionContainsAppleEvent:(id)arg1;
 + (id)commonMeaningLabelForTitleUsingMomentNodes:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool createVerboseTitle; // @synthesize createVerboseTitle=_createVerboseTitle;
 @property(retain, nonatomic) PGTitleTuple *titleTuple; // @synthesize titleTuple=_titleTuple;
 @property(retain, nonatomic) PHAsset *keyAsset; // @synthesize keyAsset=_keyAsset;
 @property(retain, nonatomic) PHAssetCollection *curatedAssetCollection; // @synthesize curatedAssetCollection=_curatedAssetCollection;
 @property(retain, nonatomic) id <PGEventEnrichment> collection; // @synthesize collection=_collection;
-- (void).cxx_destruct;
 - (void)_generateTitleTuples;
 - (id)initWithCollection:(id)arg1 curatedAssetCollection:(id)arg2 keyAsset:(id)arg3 createVerboseTitle:(_Bool)arg4;
 

@@ -17,10 +17,10 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *updateNoteDuringEditIntervalMillis; // @synthesize updateNoteDuringEditIntervalMillis=_updateNoteDuringEditIntervalMillis;
 @property(retain, nonatomic) NSNumber *updateNoteWhenIdleForMillis; // @synthesize updateNoteWhenIdleForMillis=_updateNoteWhenIdleForMillis;
 @property(retain, nonatomic) NSNumber *syncStateIntervalMillis; // @synthesize syncStateIntervalMillis=_syncStateIntervalMillis;
-- (void).cxx_destruct;
 
 @end
 

@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)keyPathsForValuesAffectingRotatedBrowserSize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ResponsiveDesignPresetConfiguration *nextConfiguration; // @synthesize nextConfiguration=_nextConfiguration;
 @property(nonatomic) unsigned long long pixelRatio; // @synthesize pixelRatio=_pixelRatio;
 @property(nonatomic) struct CGSize screenSize; // @synthesize screenSize=_screenSize;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *portraitImageName; // @synthesize portraitImageName=_portraitImageName;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)_updateDisplayNameIfNeeded;
 @property(readonly, nonatomic) struct CGSize rotatedBrowserSize;
 @property(readonly, nonatomic) struct CGSize browserSize;

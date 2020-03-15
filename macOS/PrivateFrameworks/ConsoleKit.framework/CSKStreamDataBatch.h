@@ -15,8 +15,8 @@
     NSArray *_entities;
 }
 
-@property(retain, nonatomic) NSArray *entities; // @synthesize entities=_entities;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *entities; // @synthesize entities=_entities;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

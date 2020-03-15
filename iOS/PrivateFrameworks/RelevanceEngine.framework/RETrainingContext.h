@@ -18,8 +18,8 @@
     RETrainingContext *_cachedAttributeContext;
 }
 
-@property(retain) RETrainingContext *cachedAttributeContext; // @synthesize cachedAttributeContext=_cachedAttributeContext;
 - (void).cxx_destruct;
+@property(retain) RETrainingContext *cachedAttributeContext; // @synthesize cachedAttributeContext=_cachedAttributeContext;
 - (_Bool)performSimulationCommand:(id)arg1 withOptions:(id)arg2;
 - (id)attributeForKey:(id)arg1;
 - (void)setAttribute:(id)arg1 forKey:(id)arg2;

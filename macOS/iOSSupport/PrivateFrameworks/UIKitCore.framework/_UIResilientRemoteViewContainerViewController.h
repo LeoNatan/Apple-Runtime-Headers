@@ -21,6 +21,7 @@
 }
 
 + (id)instantiateWithExtension:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL delayingDisplayOfRemoteView; // @synthesize delayingDisplayOfRemoteView=_delayingDisplayOfRemoteView;
 @property(retain, nonatomic) UIViewController *errorViewController; // @synthesize errorViewController=_errorViewController;
 @property(retain, nonatomic) _UIWaitingForRemoteViewContainerViewController *waitingController; // @synthesize waitingController=_waitingController;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) id <NSCopying> extensionRequestIdentifier; // @synthesize extensionRequestIdentifier=_extensionRequestIdentifier;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property(readonly, nonatomic) id remoteViewController; // @synthesize remoteViewController=_remoteViewController;
-- (void).cxx_destruct;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)_displayError:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;

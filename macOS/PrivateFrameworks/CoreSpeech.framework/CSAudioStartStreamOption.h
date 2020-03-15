@@ -14,6 +14,7 @@
     BOOL _requestHistoricalAudioDataWithHostTime;
     BOOL _requestHistoricalAudioDataSampleCount;
     BOOL _useOpportunisticZLL;
+    BOOL _skipAlertBehavior;
     unsigned long long _startRecordingHostTime;
     unsigned long long _startRecordingSampleCount;
     long long _startAlertBehavior;
@@ -21,7 +22,8 @@
     long long _errorAlertBehavior;
 }
 
-+ (id)mutedOption;
++ (id)noAlertOption;
+@property(nonatomic) BOOL skipAlertBehavior; // @synthesize skipAlertBehavior=_skipAlertBehavior;
 @property(nonatomic) long long errorAlertBehavior; // @synthesize errorAlertBehavior=_errorAlertBehavior;
 @property(nonatomic) long long stopAlertBehavior; // @synthesize stopAlertBehavior=_stopAlertBehavior;
 @property(nonatomic) long long startAlertBehavior; // @synthesize startAlertBehavior=_startAlertBehavior;

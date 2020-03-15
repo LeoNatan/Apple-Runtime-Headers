@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <QLPreviewControllerStateProtocolHostOnly> _stateManager;
 }
 
-@property __weak id <QLPreviewControllerStateProtocolHostOnly> stateManager; // @synthesize stateManager=_stateManager;
 - (void).cxx_destruct;
+@property __weak id <QLPreviewControllerStateProtocolHostOnly> stateManager; // @synthesize stateManager=_stateManager;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)dropMethod;

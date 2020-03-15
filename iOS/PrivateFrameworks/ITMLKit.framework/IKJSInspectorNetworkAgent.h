@@ -16,8 +16,13 @@
     IKJSInspectorController *_controller;
 }
 
-@property(readonly, nonatomic) __weak IKJSInspectorController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak IKJSInspectorController *controller; // @synthesize controller=_controller;
+- (void)interceptWithResponseWithErrorCallback:(CDUnknownBlockType)arg1 successCallback:(CDUnknownBlockType)arg2 requestId:(id)arg3 content:(id)arg4 base64Encoded:(_Bool)arg5 mimeType:(id *)arg6 status:(int *)arg7 statusText:(id *)arg8 headers:(id *)arg9;
+- (void)interceptContinueWithErrorCallback:(CDUnknownBlockType)arg1 successCallback:(CDUnknownBlockType)arg2 requestId:(id)arg3;
+- (void)removeInterceptionWithErrorCallback:(CDUnknownBlockType)arg1 successCallback:(CDUnknownBlockType)arg2 url:(id)arg3 stage:(long long *)arg4;
+- (void)addInterceptionWithErrorCallback:(CDUnknownBlockType)arg1 successCallback:(CDUnknownBlockType)arg2 url:(id)arg3 stage:(long long *)arg4;
+- (void)setInterceptionEnabledWithErrorCallback:(CDUnknownBlockType)arg1 successCallback:(CDUnknownBlockType)arg2 enabled:(_Bool)arg3;
 - (void)getSerializedCertificateWithErrorCallback:(CDUnknownBlockType)arg1 successCallback:(CDUnknownBlockType)arg2 requestId:(id)arg3;
 - (void)resolveWebSocketWithErrorCallback:(CDUnknownBlockType)arg1 successCallback:(CDUnknownBlockType)arg2 requestId:(id)arg3 objectGroup:(id *)arg4;
 - (void)loadResourceWithErrorCallback:(CDUnknownBlockType)arg1 successCallback:(CDUnknownBlockType)arg2 frameId:(id)arg3 url:(id)arg4;

@@ -19,8 +19,8 @@
 
 + (BOOL)canSendMail;
 + (id)log;
-@property(nonatomic) __weak id <MFMailComposeViewControllerDelegate> mailComposeDelegate; // @synthesize mailComposeDelegate=_mailComposeDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MFMailComposeViewControllerDelegate> mailComposeDelegate; // @synthesize mailComposeDelegate=_mailComposeDelegate;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(BOOL)arg2;
 - (void)setPreferredSendingEmailAddress:(id)arg1;

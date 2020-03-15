@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _autohighlightIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long autohighlightIndex; // @synthesize autohighlightIndex=_autohighlightIndex;
 @property(nonatomic) _Bool supportsOneupMode; // @synthesize supportsOneupMode=_supportsOneupMode;
 @property(retain, nonatomic) NSDictionary *overriddenFullscreenImages; // @synthesize overriddenFullscreenImages=_overriddenFullscreenImages;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *carouselLockupElements; // @synthesize carouselLockupElements=_carouselLockupElements;
 @property(retain, nonatomic) NSArray *bannerButtonElements; // @synthesize bannerButtonElements=_bannerButtonElements;
 @property(retain, nonatomic) VideosExtrasZoomingImageTransitionController *activeZoomingImageInteractiveTransitionController; // @synthesize activeZoomingImageInteractiveTransitionController=_activeZoomingImageInteractiveTransitionController;
-- (void).cxx_destruct;
 - (void)_pushImageBrowserWithVisibleItemIndex:(unsigned long long)arg1;
 - (id)_mainChildViewController;
 - (void)_loadTextElement:(id)arg1 textAttributes:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;

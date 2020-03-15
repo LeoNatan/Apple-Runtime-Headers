@@ -24,12 +24,12 @@
 + (Class)mutableClass;
 + (id)strokeWithType:(long long)arg1 color:(id)arg2 width:(double)arg3;
 + (id)strokeWithName:(id)arg1 color:(id)arg2 width:(double)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double miterLimit; // @synthesize miterLimit=_miterLimit;
 @property(readonly, nonatomic) int join; // @synthesize join=_join;
 @property(readonly, nonatomic) double width; // @synthesize width=_width;
 @property(readonly, retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(readonly, copy, nonatomic) NSString *strokeName; // @synthesize strokeName=_strokeName;
-- (void).cxx_destruct;
 - (void)brushPath:(id)arg1 inContext:(struct CGContext *)arg2;
 - (void)brushPath:(id)arg1 withScaling:(CDStruct_c3b9c2ee)arg2 inElementRange:(struct _NSRange)arg3 into:(id)arg4 sectionIndex:(unsigned long long *)arg5 viewScale:(double)arg6;
 - (void)brushSection:(id)arg1 sectionIndex:(unsigned long long)arg2 ontoPath:(id)arg3 withScaling:(CDStruct_c3b9c2ee)arg4 inElementRange:(struct _NSRange)arg5 into:(id)arg6 viewScale:(double)arg7;

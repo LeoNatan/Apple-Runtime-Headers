@@ -12,9 +12,9 @@
     id _valueView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id valueView; // @synthesize valueView=_valueView;
 @property(retain, nonatomic) id headerView; // @synthesize headerView=_headerView;
-- (void).cxx_destruct;
 - (id)accessibilityValue;
 - (id)accessibilityLabel;
 - (_Bool)isAccessibilityElement;

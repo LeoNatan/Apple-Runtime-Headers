@@ -26,10 +26,10 @@
 + (id)notificationCenterOverride;
 + (void)setSharedRegistry:(id)arg1;
 + (id)sharedRegistry;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <FPAppRegistryDelegate> delegate; // @synthesize delegate=_delegate;
 @property unsigned long long dataState; // @synthesize dataState=_dataState;
 @property(nonatomic) _Bool keepUpToDate; // @synthesize keepUpToDate=_keepUpToDate;
-- (void).cxx_destruct;
 - (id)_bundleIDForHomonymOfApp:(id)arg1;
 - (void)_didRemoveApps:(id)arg1;
 - (void)_didUpdateApps:(id)arg1;

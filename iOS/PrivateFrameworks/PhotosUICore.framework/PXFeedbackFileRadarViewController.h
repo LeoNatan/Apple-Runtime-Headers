@@ -12,9 +12,9 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) unsigned long long collectionType; // @synthesize collectionType=_collectionType;
-- (void).cxx_destruct;
 - (void)_handleCompletion;
 - (void)_handleRadarFiledWithError:(id)arg1;
 - (void)_handleUserConfirmation;

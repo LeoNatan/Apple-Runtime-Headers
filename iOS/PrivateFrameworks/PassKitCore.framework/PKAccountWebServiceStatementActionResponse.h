@@ -15,10 +15,10 @@
     NSString *_statementDataHash;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *statementDataHash; // @synthesize statementDataHash=_statementDataHash;
 @property(readonly, copy, nonatomic) NSString *statementDataFilename; // @synthesize statementDataFilename=_statementDataFilename;
 @property(readonly, copy, nonatomic) NSData *statementPDFData; // @synthesize statementPDFData=_statementPDFData;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 
 @end

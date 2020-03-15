@@ -15,9 +15,9 @@
 }
 
 + (id)keyboardCapInfoWithKeyCapString:(id)arg1 isDeadKey:(BOOL)arg2;
+- (void).cxx_destruct;
 @property BOOL isDeadKey; // @synthesize isDeadKey=_isDeadKey;
 @property(copy) NSString *keyCapString; // @synthesize keyCapString=_keyCapString;
-- (void).cxx_destruct;
 
 @end
 

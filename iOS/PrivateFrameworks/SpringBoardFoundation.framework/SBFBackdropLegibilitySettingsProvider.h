@@ -19,9 +19,9 @@
     id <SBFLegibilitySettingsProviderDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(nonatomic) __weak id <SBFLegibilitySettingsProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)backdropViewDidChange:(id)arg1;
 - (void)dealloc;
 - (id)initWithBackdropView:(id)arg1;

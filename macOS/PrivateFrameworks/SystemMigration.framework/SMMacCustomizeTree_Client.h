@@ -34,6 +34,7 @@
 
 + (id)keyPathsForValuesAffectingRebootRequired;
 + (id)keyPathsForValuesAffectingMigratableState;
+- (void).cxx_destruct;
 @property unsigned long long noGroupFilesProcessed; // @synthesize noGroupFilesProcessed=_noGroupFilesProcessed;
 @property unsigned long long serverFilesProcessed; // @synthesize serverFilesProcessed=_serverFilesProcessed;
 @property unsigned long long printerFilesProcessed; // @synthesize printerFilesProcessed=_printerFilesProcessed;
@@ -54,7 +55,6 @@
 @property(retain) SMCustomizeTreeNode_Client *settings; // @synthesize settings=_settings;
 @property(copy) NSNumber *filesProcessed; // @synthesize filesProcessed;
 @property(retain) NSString *migratableStateDescription; // @synthesize migratableStateDescription;
-- (void).cxx_destruct;
 - (BOOL)rebootRequired;
 - (BOOL)migratableState;
 - (id)migrationRequest;

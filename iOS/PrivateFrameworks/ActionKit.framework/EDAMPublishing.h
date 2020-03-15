@@ -18,11 +18,11 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *publicDescription; // @synthesize publicDescription=_publicDescription;
 @property(retain, nonatomic) NSNumber *ascending; // @synthesize ascending=_ascending;
 @property(retain, nonatomic) NSNumber *order; // @synthesize order=_order;
 @property(retain, nonatomic) NSString *uri; // @synthesize uri=_uri;
-- (void).cxx_destruct;
 
 @end
 

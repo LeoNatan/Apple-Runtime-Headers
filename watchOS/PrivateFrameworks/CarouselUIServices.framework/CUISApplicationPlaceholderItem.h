@@ -16,11 +16,11 @@
     NSString *_overrideTimeText;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isStatusBarHidden) _Bool statusBarHidden; // @synthesize statusBarHidden=_statusBarHidden;
 @property(copy, nonatomic) NSString *overrideTimeText; // @synthesize overrideTimeText=_overrideTimeText;
 @property(retain, nonatomic) PUICApplicationStatusBarItem *statusBarItem; // @synthesize statusBarItem=_statusBarItem;
 @property(retain, nonatomic) CUISApplicationPlaceholderContent *placeholderContent; // @synthesize placeholderContent=_placeholderContent;
-- (void).cxx_destruct;
 
 @end
 

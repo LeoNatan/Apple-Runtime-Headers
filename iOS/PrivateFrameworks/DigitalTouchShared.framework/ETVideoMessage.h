@@ -22,12 +22,12 @@
 }
 
 + (unsigned short)messageType;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool pauseTimeCompression; // @synthesize pauseTimeCompression=_pauseTimeCompression;
 @property(nonatomic) unsigned long long mediaType; // @synthesize mediaType=_mediaType;
 @property(retain, nonatomic) ETSketchMessage *introMessage; // @synthesize introMessage=_introMessage;
 @property(retain, nonatomic) UIImage *stillImage; // @synthesize stillImage=_stillImage;
 @property(retain, nonatomic) NSURL *mediaURL; // @synthesize mediaURL=_mediaURL;
-- (void).cxx_destruct;
 - (double)messageDuration;
 - (_Bool)isAnimated;
 - (double)compressTimeSinceStartOfMessage:(double)arg1;

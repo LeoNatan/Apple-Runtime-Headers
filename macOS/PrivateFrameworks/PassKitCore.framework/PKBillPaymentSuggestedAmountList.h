@@ -26,6 +26,7 @@
 + (id)requiredSuggestedAmountCategories;
 + (id)roundingHandler;
 + (id)boundaryAngle;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKBillPaymentSuggestedAmount *initialSuggestedAmount; // @synthesize initialSuggestedAmount=_initialSuggestedAmount;
 @property(readonly, copy, nonatomic) NSDecimalNumber *smalllestSuggestionAmountBelowRemainingStatementAmount; // @synthesize smalllestSuggestionAmountBelowRemainingStatementAmount=_smalllestSuggestionAmountBelowRemainingStatementAmount;
 @property(readonly, copy, nonatomic) NSDecimalNumber *maximumAmount; // @synthesize maximumAmount=_maximumAmount;
@@ -33,7 +34,6 @@
 @property(readonly, copy, nonatomic) NSDecimalNumber *minimumAmount; // @synthesize minimumAmount=_minimumAmount;
 @property(readonly, copy, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
 @property(readonly, copy, nonatomic) NSArray *sortedSuggestedAmounts; // @synthesize sortedSuggestedAmounts=_sortedSuggestedAmounts;
-- (void).cxx_destruct;
 - (id)_boundaryAmount;
 - (void)_updateValues;
 - (id)_suggestedAmountThatIsNotRequired:(id)arg1 suggestedAmount2:(id)arg2;

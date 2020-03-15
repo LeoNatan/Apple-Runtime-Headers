@@ -15,8 +15,8 @@
     MSVArtworkServiceRequest *_request;
 }
 
-@property(readonly, nonatomic) MSVArtworkServiceRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MSVArtworkServiceRequest *request; // @synthesize request=_request;
 - (void)setDebugMessage:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *debugMessage;
 - (void)setOperationError:(id)arg1;

@@ -15,9 +15,9 @@
 }
 
 + (id)cacheWithContext:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AAAbsintheContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
-- (void).cxx_destruct;
 - (id)initWithContext:(id)arg1;
 - (id)init;
 

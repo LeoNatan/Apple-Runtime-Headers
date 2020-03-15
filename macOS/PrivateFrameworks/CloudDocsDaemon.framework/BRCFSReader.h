@@ -28,9 +28,9 @@
     NSObject<OS_dispatch_group> *_lostScanGroup;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) brc_task_tracker *taskTracker; // @synthesize taskTracker=_taskTracker;
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *lostScanGroup; // @synthesize lostScanGroup=_lostScanGroup;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)resume;
 - (void)suspend;

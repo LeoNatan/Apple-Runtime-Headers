@@ -23,8 +23,8 @@
 
 + (id)sharedManager;
 + (id)allocWithZone:(struct _NSZone *)arg1;
-@property(readonly, nonatomic) MCInvocationQueue *tasks; // @synthesize tasks=_tasks;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MCInvocationQueue *tasks; // @synthesize tasks=_tasks;
 - (void)_emailAddresses:(id)arg1 approvedOrRejected:(BOOL)arg2;
 - (void)emailAddressesRejected:(id)arg1;
 - (void)emailAddressesApproved:(id)arg1;

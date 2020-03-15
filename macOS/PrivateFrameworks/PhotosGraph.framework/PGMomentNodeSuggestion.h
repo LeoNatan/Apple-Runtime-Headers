@@ -27,6 +27,7 @@
     NSString *_subtitle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSDate *universalEndDate; // @synthesize universalEndDate=_universalEndDate;
@@ -40,7 +41,6 @@
 @property(nonatomic) unsigned short notificationState; // @synthesize notificationState=_notificationState;
 @property(readonly, nonatomic) unsigned short subtype; // @synthesize subtype=_subtype;
 @property(readonly, nonatomic) unsigned short type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) unsigned long long relevanceDurationInDays;
 @property(readonly, nonatomic) id recipe;

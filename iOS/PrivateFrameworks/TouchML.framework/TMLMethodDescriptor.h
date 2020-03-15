@@ -21,12 +21,12 @@
 
 + (id)decode:(const struct ProtobufCMessage *)arg1;
 + (id)methodSelectorForMethodName:(id)arg1 parameters:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isOptional) _Bool optional; // @synthesize optional=_optional;
 @property(readonly, nonatomic) NSString *methodSelector; // @synthesize methodSelector=_methodSelector;
 @property(readonly, nonatomic) NSArray *parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) unsigned long long returnType; // @synthesize returnType=_returnType;
 @property(readonly, nonatomic) NSString *methodName; // @synthesize methodName=_methodName;
-- (void).cxx_destruct;
 - (void)encode:(struct ProtobufCMessage *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithName:(id)arg1 returnType:(unsigned long long)arg2 parameters:(id)arg3 methodSelector:(id)arg4 attributes:(id)arg5;

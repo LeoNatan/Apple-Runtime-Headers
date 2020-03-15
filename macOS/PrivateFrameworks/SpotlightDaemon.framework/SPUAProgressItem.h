@@ -21,6 +21,7 @@
 
 + (void)queueRelatedDelete:(id)arg1 forBundleID:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int deleteCount; // @synthesize deleteCount=_deleteCount;
 @property(nonatomic) unsigned int errorCount; // @synthesize errorCount=_errorCount;
 @property(nonatomic) unsigned int completeCount; // @synthesize completeCount=_completeCount;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSString *relatedID; // @synthesize relatedID=_relatedID;
 @property(retain, nonatomic) NSString *uaID; // @synthesize uaID=_uaID;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (void)update:(int)arg1;
 - (void)add;
 - (unsigned long long)hash;

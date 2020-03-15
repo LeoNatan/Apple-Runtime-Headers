@@ -15,10 +15,10 @@
     _UILegibilitySettings *_legibilitySettings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(nonatomic) _Bool permitted; // @synthesize permitted=_permitted;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)_imageWithName:(id)arg1;
 - (id)_buttonImageNameForSelected:(_Bool)arg1;
 - (id)_statisticsIdentifierForType;

@@ -33,6 +33,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property _Bool dayPassPending; // @synthesize dayPassPending=_dayPassPending;
 @property(retain) NSURLSession *dayPassSession; // @synthesize dayPassSession=_dayPassSession;
 @property _Bool dayPassFailed; // @synthesize dayPassFailed=_dayPassFailed;
@@ -51,7 +52,6 @@
 @property(retain) NSUUID *dayPassUUID; // @synthesize dayPassUUID=_dayPassUUID;
 @property(retain) NSData *dayPass; // @synthesize dayPass=_dayPass;
 @property(retain) NPTunnelTuscanyEndpoint *tuscanyEndpoint; // @synthesize tuscanyEndpoint=_tuscanyEndpoint;
-- (void).cxx_destruct;
 @property(readonly) _Bool isTFOEnabled;
 @property unsigned int dayPassSessionCounter;
 - (void)invalidateDayPass;

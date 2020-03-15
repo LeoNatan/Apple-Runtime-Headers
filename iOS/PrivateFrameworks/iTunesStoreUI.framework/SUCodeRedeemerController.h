@@ -17,10 +17,10 @@
 }
 
 + (_Bool)cameraSupported;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
 @property(nonatomic) _Bool cameraflipDirection; // @synthesize cameraflipDirection=_cameraflipDirection;
 @property(nonatomic) __weak id <SUCodeRedeemerControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_setChildViewController:(id)arg1;
 - (void)_enableBlur;
 - (void)_disableBlur;

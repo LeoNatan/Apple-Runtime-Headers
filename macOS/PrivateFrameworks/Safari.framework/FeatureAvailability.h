@@ -52,11 +52,11 @@
 + (BOOL)isSafariSyncEnabled;
 + (BOOL)isUserSignedIntoICloud;
 + (void)startMonitoringForAvailabilityChanges;
+- (void).cxx_destruct;
 @property long long cachedScreenTimeUserState; // @synthesize cachedScreenTimeUserState=_cachedScreenTimeUserState;
 @property(getter=isUserUsingManagedAppleID) BOOL userUsingManagedAppleID; // @synthesize userUsingManagedAppleID=_threadUnsafeUserUsingManagedAppleID;
 @property(getter=isKeychainSyncEnabled) BOOL keychainSyncEnabled; // @synthesize keychainSyncEnabled=_threadUnsafeKeychainSyncEnabled;
 @property(getter=isUserSignedIntoICloud) BOOL userSignedIntoICloud; // @synthesize userSignedIntoICloud=_threadUnsafeUserSignedIntoICloud;
-- (void).cxx_destruct;
 - (void)_executeBlockAfterScreenTimeUserStateDetermined:(CDUnknownBlockType)arg1;
 - (void)isScreenTimeUserRestrictedWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(getter=isSafariSyncEnabled) BOOL safariSyncEnabled; // @synthesize safariSyncEnabled=_threadUnsafeSafariSyncEnabled;

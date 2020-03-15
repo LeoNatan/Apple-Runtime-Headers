@@ -24,11 +24,11 @@
 + (id)displayNameForUndoablePropertyChangeWithKey:(id)arg1;
 + (id)keyPathsForValuesAffectingDrawingBounds;
 + (id)keyPathsForValuesAffectingHitTestBounds;
+- (void).cxx_destruct;
 @property(copy) NSString *contents; // @synthesize contents=_contents;
 @property __weak AKAnnotation *childAnnotation; // @synthesize childAnnotation=_childAnnotation;
 @property(retain) NSColor *fillColor; // @synthesize fillColor=_fillColor;
 @property struct CGRect rectangle; // @synthesize rectangle=_rectangle;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)translateBy:(struct CGPoint)arg1;

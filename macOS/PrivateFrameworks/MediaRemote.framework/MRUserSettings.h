@@ -15,8 +15,8 @@
 }
 
 + (id)currentSettings;
-@property(nonatomic, getter=isExternalDevicePairingAllowed) BOOL externalDevicePairingAllowed; // @synthesize externalDevicePairingAllowed=_externalDevicePairingAllowed;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isExternalDevicePairingAllowed) BOOL externalDevicePairingAllowed; // @synthesize externalDevicePairingAllowed=_externalDevicePairingAllowed;
 - (void)_removeValueForKey:(id)arg1;
 - (long long)_integerValueForKey:(id)arg1 usingDefaultValue:(long long)arg2;
 - (double)_doubleValueForKey:(id)arg1 usingDefaultValue:(double)arg2;

@@ -38,6 +38,7 @@
 
 + (id)logCategory;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDCloudCache *cloudCache; // @synthesize cloudCache=_cloudCache;
 @property(retain, nonatomic) HMDBackingStore *backingStore; // @synthesize backingStore=_backingStore;
 @property(readonly, nonatomic) IDSService *service; // @synthesize service=_service;
@@ -49,7 +50,6 @@
 @property(readonly, nonatomic) APSConnection *pushConnection; // @synthesize pushConnection=_pushConnection;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(readonly) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
-- (void).cxx_destruct;
 - (void)service:(id)arg1 devicesChanged:(id)arg2;
 - (void)service:(id)arg1 activeAccountsChanged:(id)arg2;
 - (void)account:(id)arg1 aliasesChanged:(id)arg2;

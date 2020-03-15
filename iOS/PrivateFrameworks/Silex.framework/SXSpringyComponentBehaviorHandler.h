@@ -19,6 +19,7 @@
     struct CGPoint _originalCenter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double delta; // @synthesize delta=_delta;
 @property(readonly, nonatomic) double damping; // @synthesize damping=_damping;
 @property(readonly, nonatomic) double frequency; // @synthesize frequency=_frequency;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) UIDynamicAnimator *dynamicAnimator; // @synthesize dynamicAnimator=_dynamicAnimator;
 @property(retain, nonatomic) UIAttachmentBehavior *dynamicBehavior; // @synthesize dynamicBehavior=_dynamicBehavior;
 @property(nonatomic) double lastYOffset; // @synthesize lastYOffset=_lastYOffset;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)destroyWithBehaviorController:(id)arg1;
 - (void)updateWithBehaviorController:(id)arg1;

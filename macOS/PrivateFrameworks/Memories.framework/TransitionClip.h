@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (int)overlapTypeForName:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *transitionEffectSettings; // @synthesize transitionEffectSettings=_transitionEffectSettings;
 @property(nonatomic) BOOL forcedNoOverlap; // @synthesize forcedNoOverlap=_forcedNoOverlap;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_e83c9415 effectRange;
 - (int)biasedDuration;
 - (int)biasedStartOffset;

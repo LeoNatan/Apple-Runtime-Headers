@@ -22,6 +22,7 @@
     NSString *_mutingChannelID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *mutingChannelID; // @synthesize mutingChannelID=_mutingChannelID;
 @property(readonly, copy, nonatomic) NTPBDiscoverMoreVideosInfo *discoverMoreVideosInfo; // @synthesize discoverMoreVideosInfo=_discoverMoreVideosInfo;
 @property(readonly, copy, nonatomic) FCColorGradient *darkStyleBackgroundColorGradient; // @synthesize darkStyleBackgroundColorGradient=_darkStyleBackgroundColorGradient;
@@ -32,7 +33,6 @@
 @property(readonly, copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 @property(readonly, copy, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
 @property(readonly, nonatomic) NSArray *headlines; // @synthesize headlines=_headlines;
-- (void).cxx_destruct;
 - (id)initWithVideoGroupConfig:(id)arg1 headlines:(id)arg2;
 
 @end

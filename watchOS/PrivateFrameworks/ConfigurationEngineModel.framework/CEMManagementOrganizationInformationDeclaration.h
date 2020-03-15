@@ -26,12 +26,12 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadOrganizationMagic; // @synthesize payloadOrganizationMagic=_payloadOrganizationMagic;
 @property(copy, nonatomic) NSString *payloadOrganizationEmail; // @synthesize payloadOrganizationEmail=_payloadOrganizationEmail;
 @property(copy, nonatomic) NSString *payloadOrganizationPhone; // @synthesize payloadOrganizationPhone=_payloadOrganizationPhone;
 @property(copy, nonatomic) NSString *payloadOrganizationAddress; // @synthesize payloadOrganizationAddress=_payloadOrganizationAddress;
 @property(copy, nonatomic) NSString *payloadOrganizationName; // @synthesize payloadOrganizationName=_payloadOrganizationName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)UTITypes;
+- (void).cxx_destruct;
 @property(nonatomic) struct CLLocationCoordinate2D coordinate; // @synthesize coordinate=_coordinate;
 @property(copy, nonatomic) NSString *locationTitle; // @synthesize locationTitle=_locationTitle;
-- (void).cxx_destruct;
 - (_Bool)isDroppedPin;
 - (id)vCardURLProperties;
 - (id)_generateThumbnailFillToSize:(struct CGSize)arg1;

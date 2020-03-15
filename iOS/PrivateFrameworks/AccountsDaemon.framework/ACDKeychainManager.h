@@ -47,7 +47,7 @@
 + (id)keychainServiceNameForClientID:(id)arg1 accountTypeIdentifier:(id)arg2 additionalAccountTypeSegment:(id)arg3 key:(id)arg4;
 + (_Bool)_removeCredentialItemWithKey:(id)arg1 forAccountWithID:(id)arg2 username:(id)arg3 accountTypeID:(id)arg4 clientID:(id)arg5 options:(id)arg6 error:(id *)arg7;
 + (void)removeCredentialForAccount:(id)arg1 key:(id)arg2 error:(id *)arg3;
-+ (void)_removeCredentialForAccountWithUsername:(id)arg1 accountQualifiedUsername:(id)arg2 accountIdentifier:(id)arg3 accountTypeIdentifier:(id)arg4 credentialType:(id)arg5 clientID:(id)arg6 options:(id)arg7 error:(id *)arg8;
++ (void)_removeCredentialsForAccount:(id)arg1 clientID:(id)arg2 options:(id)arg3 error:(id *)arg4;
 + (void)removeCredentialForAccount:(id)arg1 clientID:(id)arg2 error:(id *)arg3;
 + (void)removeCredentialForAccount:(id)arg1 error:(id *)arg2;
 + (void)removeCredentialForAccount:(id)arg1 clientID:(id)arg2;

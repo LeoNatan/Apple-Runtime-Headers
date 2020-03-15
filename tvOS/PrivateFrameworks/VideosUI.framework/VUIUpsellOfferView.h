@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)upsellViewFromElement:(id)arg1 existingView:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFocusContainerGuide *containerGuide; // @synthesize containerGuide=_containerGuide;
 @property(retain, nonatomic) UIVisualEffectView *bgVisualEffectView; // @synthesize bgVisualEffectView=_bgVisualEffectView;
 @property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) VUIUpsellOfferViewLayout *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 - (id)preferredFocusEnvironments;
 - (struct CGSize)_tvOS_layoutSubviewsWithSize:(struct CGSize)arg1 computationOnly:(_Bool)arg2;
 - (void)layoutSubviews;

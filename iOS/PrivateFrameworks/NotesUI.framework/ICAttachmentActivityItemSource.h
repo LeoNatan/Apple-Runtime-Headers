@@ -16,8 +16,8 @@
     ICAttachment *_attachment;
 }
 
-@property(nonatomic) __weak ICAttachment *attachment; // @synthesize attachment=_attachment;
 - (void).cxx_destruct;
+@property(nonatomic) __weak ICAttachment *attachment; // @synthesize attachment=_attachment;
 - (id)activityViewController:(id)arg1 attachmentNameForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 dataTypeIdentifierForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;

@@ -20,8 +20,8 @@
 + (void)unregister;
 + (void)setupWithArticleDatabase:(id)arg1;
 + (void)initialize;
-@property(retain, nonatomic) FCCKContentFetchOperation *fetchOperation; // @synthesize fetchOperation=_fetchOperation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FCCKContentFetchOperation *fetchOperation; // @synthesize fetchOperation=_fetchOperation;
 - (void)stopLoading;
 - (void)startLoading;
 

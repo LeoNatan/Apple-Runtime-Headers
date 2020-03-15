@@ -23,10 +23,10 @@
 + (id)serviceSpecifiersWithEntitlementValue:(id)arg1 serviceType:(id)arg2 error:(id *)arg3;
 + (id)serviceSpecifiersWithEntitlementValue:(id)arg1 error:(id *)arg2;
 + (id)_serviceSpecifiersWithEntitlementValue:(id)arg1 serviceType:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(readonly) _SWCDomain *SWCDomain; // @synthesize SWCDomain=_domain;
 @property(readonly) _SWCApplicationIdentifier *SWCApplicationIdentifier; // @synthesize SWCApplicationIdentifier=_applicationIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

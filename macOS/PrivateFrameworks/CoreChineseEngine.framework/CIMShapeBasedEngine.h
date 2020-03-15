@@ -29,6 +29,7 @@
     CIMCandidate *_selectedMecabraCandidate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldGroupWindowMovement; // @synthesize shouldGroupWindowMovement=_shouldGroupWindowMovement;
 @property(retain, nonatomic) CIMCandidate *selectedMecabraCandidate; // @synthesize selectedMecabraCandidate=_selectedMecabraCandidate;
 @property(nonatomic) BOOL punctuationWindowIsTabbed; // @synthesize punctuationWindowIsTabbed=_punctuationWindowIsTabbed;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) NSDictionary *keyMappings; // @synthesize keyMappings=_keyMappings;
 @property(readonly, nonatomic) unsigned long long analysisOptions; // @synthesize analysisOptions=_analysisOptions;
 @property(retain, nonatomic) CIMMecabraShapeBasedEngine *mecabraEngine; // @synthesize mecabraEngine=_mecabraEngine;
-- (void).cxx_destruct;
 - (Class)onscreenCandidateWindowClass;
 - (BOOL)supportsSubstitutionCandidates;
 - (id)mecabraEnvironment;

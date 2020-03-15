@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     TVHSMediaServerIdentifier *_mediaServerIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) TVHSMediaServerIdentifier *mediaServerIdentifier; // @synthesize mediaServerIdentifier=_mediaServerIdentifier;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) TVHSMediaServerResponse *response; // @synthesize response=_response;
 @property(retain, nonatomic) TVHSMediaServerRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)_cancelRequest;
 - (_Bool)_isFirstToFinish;
 - (void)_handleResponse:(id)arg1;

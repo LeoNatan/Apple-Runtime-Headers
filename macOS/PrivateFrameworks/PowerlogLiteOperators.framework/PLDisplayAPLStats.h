@@ -18,13 +18,13 @@
     NSNumber *_avgAPL;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSNumber *avgAPL; // @synthesize avgAPL=_avgAPL;
 @property(retain) NSNumber *avgPower; // @synthesize avgPower=_avgPower;
 @property(retain) NSNumber *frames; // @synthesize frames=_frames;
 @property(retain) NSNumber *avgBlue; // @synthesize avgBlue=_avgBlue;
 @property(retain) NSNumber *avgGreen; // @synthesize avgGreen=_avgGreen;
 @property(retain) NSNumber *avgRed; // @synthesize avgRed=_avgRed;
-- (void).cxx_destruct;
 
 @end
 

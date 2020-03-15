@@ -17,8 +17,8 @@
 }
 
 + (id)publicEventCriteriaByCategoryForGraph:(id)arg1;
-@property(retain, nonatomic) PGGraph *graph; // @synthesize graph=_graph;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PGGraph *graph; // @synthesize graph=_graph;
 - (id)_appleEventsCriteriaArray;
 - (id)_festivalsAndFairsCriteriaArray;
 - (id)_artsAndMuseumsCriteriaArray;

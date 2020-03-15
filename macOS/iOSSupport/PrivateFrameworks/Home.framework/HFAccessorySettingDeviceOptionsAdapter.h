@@ -14,17 +14,17 @@
 
 @interface HFAccessorySettingDeviceOptionsAdapter : HFAccessorySettingAdapter <HFAccessorySettingDeviceOptionsAdapterUtilityDelegate, HFAccessorySettingAdapterButtonHandling, HFAccessorySettingAdapterDisplayArbitrating>
 {
-    BOOL _isAccessoryActive;
+    BOOL _isAccessoryReachableOverRapport;
     NAFuture *_inProgressSysdiagnoseCollectionFuture;
     HFAccessorySettingDeviceOptionsAdapterUtility *_adapterUtility;
 }
 
-@property(retain, nonatomic) HFAccessorySettingDeviceOptionsAdapterUtility *adapterUtility; // @synthesize adapterUtility=_adapterUtility;
-@property(nonatomic) BOOL isAccessoryActive; // @synthesize isAccessoryActive=_isAccessoryActive;
-@property(retain, nonatomic) NAFuture *inProgressSysdiagnoseCollectionFuture; // @synthesize inProgressSysdiagnoseCollectionFuture=_inProgressSysdiagnoseCollectionFuture;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HFAccessorySettingDeviceOptionsAdapterUtility *adapterUtility; // @synthesize adapterUtility=_adapterUtility;
+@property(nonatomic) BOOL isAccessoryReachableOverRapport; // @synthesize isAccessoryReachableOverRapport=_isAccessoryReachableOverRapport;
+@property(retain, nonatomic) NAFuture *inProgressSysdiagnoseCollectionFuture; // @synthesize inProgressSysdiagnoseCollectionFuture=_inProgressSysdiagnoseCollectionFuture;
 - (id)_home;
-- (void)currentAccessoryReachableOverRapportUpdated:(BOOL)arg1;
+- (void)accessoryReachableOverRapport:(BOOL)arg1;
 - (id)inProgressButtonPressFutureForEntity:(id)arg1;
 - (BOOL)supportButtonPressForEntity:(id)arg1;
 - (id)handleButtonPressForEntity:(id)arg1;

@@ -16,8 +16,8 @@
     id <SXEdgeSpacing> _margin;
 }
 
-@property(readonly, nonatomic) id <SXEdgeSpacing> margin; // @synthesize margin=_margin;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SXEdgeSpacing> margin; // @synthesize margin=_margin;
 - (id)initWithMargin:(struct _SXConvertibleValue)arg1;
 
 // Remaining properties

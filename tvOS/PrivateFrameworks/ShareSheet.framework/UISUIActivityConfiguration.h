@@ -31,6 +31,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)configurationForActivity:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long encodingType; // @synthesize encodingType=_encodingType;
 @property(retain, nonatomic) NSString *activityClassName; // @synthesize activityClassName=_activityClassName;
 @property(readonly, nonatomic) NSString *positionBeforeActivityType; // @synthesize positionBeforeActivityType=_positionBeforeActivityType;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic) NSString *activityType; // @synthesize activityType=_activityType;
 @property(readonly, nonatomic) long long activityCategory; // @synthesize activityCategory=_activityCategory;
 @property(readonly, nonatomic) NSUUID *activityUUID; // @synthesize activityUUID=_activityUUID;
-- (void).cxx_destruct;
 - (void)_validateProperties;
 - (void)_collectPropertiesFromAttributesOfUnderlyingActivity:(id)arg1;
 - (void)_encodeByPropertiesWithCoder:(id)arg1;

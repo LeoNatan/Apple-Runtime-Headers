@@ -23,13 +23,13 @@
 
 + (id)_workoutConfigurationFromDictionary:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *predictionSessionUUID; // @synthesize predictionSessionUUID=_predictionSessionUUID;
 @property(retain, nonatomic) NSUUID *fitnessMachineSessionUUID; // @synthesize fitnessMachineSessionUUID=_fitnessMachineSessionUUID;
 @property(copy) HKQuantity *lapLength; // @synthesize lapLength=_lapLength;
 @property int swimmingLocationType; // @synthesize swimmingLocationType=_swimmingLocationType;
 @property int locationType; // @synthesize locationType=_locationType;
 @property unsigned int activityType; // @synthesize activityType=_activityType;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;

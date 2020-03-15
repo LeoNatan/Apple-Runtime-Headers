@@ -16,9 +16,9 @@
 }
 
 + (id)properties;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *configurationTracker; // @synthesize configurationTracker=_configurationTracker;
 @property(retain, nonatomic) NSString *lastSeenConfiguredNameLocal; // @synthesize lastSeenConfiguredNameLocal=_lastSeenConfiguredNameLocal;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(retain, nonatomic) NSString *associatedServiceType; // @dynamic associatedServiceType;

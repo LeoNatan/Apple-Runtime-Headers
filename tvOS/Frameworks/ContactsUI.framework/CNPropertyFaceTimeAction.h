@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     CNPropertyBestIDSValueQuery *_bestFaceTimeQuery;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNPropertyBestIDSValueQuery *bestFaceTimeQuery; // @synthesize bestFaceTimeQuery=_bestFaceTimeQuery;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)queryComplete;
 - (void)_queryFaceTimeStatus;
 - (void)performActionForItem:(id)arg1 sender:(id)arg2;

@@ -14,9 +14,9 @@
     NSData *_typingIndicatorData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *typingIndicatorData; // @synthesize typingIndicatorData=_typingIndicatorData;
 @property(copy, nonatomic) NSString *plugInBundleID; // @synthesize plugInBundleID=_plugInBundleID;
-- (void).cxx_destruct;
 - (id)indicatorLayer;
 - (id)iconImage;
 - (struct CGSize)loadSizeThatFits:(struct CGSize)arg1 textAlignmentInsets:(out struct UIEdgeInsets *)arg2;

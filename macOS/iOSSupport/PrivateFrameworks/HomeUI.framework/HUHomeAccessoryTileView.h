@@ -15,9 +15,9 @@
     HUGridServiceCell *_tileView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HUGridServiceCell *tileView; // @synthesize tileView=_tileView;
 @property(readonly, nonatomic) UIImageView *homeView; // @synthesize homeView=_homeView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)updateUIWithAnimation:(BOOL)arg1;
 @property(readonly, nonatomic) double aspectRatio;

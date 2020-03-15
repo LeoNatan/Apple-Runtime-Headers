@@ -17,9 +17,9 @@
     int _tag;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int tag; // @synthesize tag=_tag;
 @property(nonatomic) __weak id <FIUIChartDataSetDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)reloadData;
 - (id)labelsForSet;
 - (id)points;

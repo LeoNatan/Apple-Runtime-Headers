@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     UILabel *_currentValueLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *currentValueLabel; // @synthesize currentValueLabel=_currentValueLabel;
 @property(retain, nonatomic) UIImageView *knobBGView; // @synthesize knobBGView=_knobBGView;
 @property(retain, nonatomic) UIView *knobView; // @synthesize knobView=_knobView;
 @property(nonatomic) double stepSize; // @synthesize stepSize=_stepSize;
-- (void).cxx_destruct;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

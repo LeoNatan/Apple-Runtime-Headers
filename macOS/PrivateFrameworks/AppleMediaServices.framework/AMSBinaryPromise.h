@@ -21,8 +21,8 @@
 + (id)promiseWithError:(id)arg1;
 + (id)promiseWithAny:(id)arg1;
 + (id)promiseWithAll:(id)arg1;
-@property(retain) AMSPromise *backingPromise; // @synthesize backingPromise=_backingPromise;
 - (void).cxx_destruct;
+@property(retain) AMSPromise *backingPromise; // @synthesize backingPromise=_backingPromise;
 - (void)_removeFromGlobalPromiseStorage;
 - (id)promiseAdapter;
 - (CDUnknownBlockType)completionHandlerAdapter;

@@ -46,6 +46,7 @@
 
 + (Class)topErrorsType;
 + (Class)topReasonsType;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int homeZoneUploadCount; // @synthesize homeZoneUploadCount=_homeZoneUploadCount;
 @property(nonatomic) unsigned int homeManagerUploadCount; // @synthesize homeManagerUploadCount=_homeManagerUploadCount;
 @property(nonatomic) unsigned int homeZoneFetchCount; // @synthesize homeZoneFetchCount=_homeZoneFetchCount;
@@ -60,7 +61,6 @@
 @property(nonatomic) unsigned int fetchCount; // @synthesize fetchCount=_fetchCount;
 @property(nonatomic) unsigned int pushCount; // @synthesize pushCount=_pushCount;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

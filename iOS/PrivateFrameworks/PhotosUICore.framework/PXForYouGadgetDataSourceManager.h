@@ -26,20 +26,21 @@
     PXHorizontalCollectionGadgetProvider *_recentInterestSuggestionsHorizontalGadgetProvider;
     PXForYouRecentInterestSuggestionsGadgetProvider *_recentInterestsSuggestionsGadgetProvider;
     PXForYouMemoryGadgetProvider *_memoryGadgetProvider;
-    PXPeopleQuestionsGadgetProvider *_questionsGadgetProvider;
-    PXHorizontalCollectionGadgetProvider *_questionsHorizontalGadgetProvider;
+    PXPeopleQuestionsGadgetProvider *_peopleQuestionsGadgetProvider;
+    PXHorizontalCollectionGadgetProvider *_peopleQuestionsHorizontalGadgetProvider;
     PXForYouFooterGadgetProvider *_footerGadgetProvider;
     PXSampleSuggestionProvider *_sampleSuggestionGadgetsProvider;
     PXSampleGadgetProvider *_sampleGadgetsProvider;
     PXTapToRadarGadgetProvider *_tapToRadarProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXTapToRadarGadgetProvider *tapToRadarProvider; // @synthesize tapToRadarProvider=_tapToRadarProvider;
 @property(retain, nonatomic) PXSampleGadgetProvider *sampleGadgetsProvider; // @synthesize sampleGadgetsProvider=_sampleGadgetsProvider;
 @property(retain, nonatomic) PXSampleSuggestionProvider *sampleSuggestionGadgetsProvider; // @synthesize sampleSuggestionGadgetsProvider=_sampleSuggestionGadgetsProvider;
 @property(retain, nonatomic) PXForYouFooterGadgetProvider *footerGadgetProvider; // @synthesize footerGadgetProvider=_footerGadgetProvider;
-@property(retain, nonatomic) PXHorizontalCollectionGadgetProvider *questionsHorizontalGadgetProvider; // @synthesize questionsHorizontalGadgetProvider=_questionsHorizontalGadgetProvider;
-@property(retain, nonatomic) PXPeopleQuestionsGadgetProvider *questionsGadgetProvider; // @synthesize questionsGadgetProvider=_questionsGadgetProvider;
+@property(retain, nonatomic) PXHorizontalCollectionGadgetProvider *peopleQuestionsHorizontalGadgetProvider; // @synthesize peopleQuestionsHorizontalGadgetProvider=_peopleQuestionsHorizontalGadgetProvider;
+@property(retain, nonatomic) PXPeopleQuestionsGadgetProvider *peopleQuestionsGadgetProvider; // @synthesize peopleQuestionsGadgetProvider=_peopleQuestionsGadgetProvider;
 @property(retain, nonatomic) PXForYouMemoryGadgetProvider *memoryGadgetProvider; // @synthesize memoryGadgetProvider=_memoryGadgetProvider;
 @property(retain, nonatomic) PXForYouRecentInterestSuggestionsGadgetProvider *recentInterestsSuggestionsGadgetProvider; // @synthesize recentInterestsSuggestionsGadgetProvider=_recentInterestsSuggestionsGadgetProvider;
 @property(retain, nonatomic) PXHorizontalCollectionGadgetProvider *recentInterestSuggestionsHorizontalGadgetProvider; // @synthesize recentInterestSuggestionsHorizontalGadgetProvider=_recentInterestSuggestionsHorizontalGadgetProvider;
@@ -51,7 +52,6 @@
 @property(retain, nonatomic) PXCMMInvitationsHorizontalGadgetProvider *CMMInvitationsHorizontalGadgetProvider; // @synthesize CMMInvitationsHorizontalGadgetProvider=_CMMInvitationsHorizontalGadgetProvider;
 @property(readonly, nonatomic) _Bool isLaunchedToTest; // @synthesize isLaunchedToTest=_isLaunchedToTest;
 @property(readonly, nonatomic) PXForYouGadgetPriorityManager *priorityManager; // @synthesize priorityManager=_priorityManager;
-- (void).cxx_destruct;
 - (void)didUpdateCloudPhotoLibraryEnablement:(id)arg1;
 - (void)presentationRequestForWelcomeCloudViewController:(id)arg1;
 - (_Bool)_resetSortingRanksIfNecessary;
@@ -64,6 +64,7 @@
 - (CDUnknownBlockType)gadgetProviderSortComparator;
 - (CDUnknownBlockType)gadgetSortComparator;
 - (void)didLoadDataForPriorities;
+- (_Bool)_canShowSurveyQuestionsGadget;
 - (id)gadgetProviders;
 - (void)removeCachedProviders;
 - (id)initWithPriorityManager:(id)arg1 isLaunchedToTest:(_Bool)arg2;

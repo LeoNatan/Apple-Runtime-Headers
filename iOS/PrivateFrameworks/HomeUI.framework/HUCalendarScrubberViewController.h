@@ -20,12 +20,12 @@
     double _lastBoundsWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double lastBoundsWidth; // @synthesize lastBoundsWidth=_lastBoundsWidth;
 @property(copy, nonatomic) CDUnknownBlockType scrollCompletionBlock; // @synthesize scrollCompletionBlock=_scrollCompletionBlock;
 @property(nonatomic) long long currentSection; // @synthesize currentSection=_currentSection;
 @property(nonatomic) __weak id <HUCalendarScrubberViewDelegate> scrubberDelegate; // @synthesize scrubberDelegate=_scrubberDelegate;
 @property(retain, nonatomic) HUCalendarScrubberDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)scrubberDataSourceDidReload:(id)arg1;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;

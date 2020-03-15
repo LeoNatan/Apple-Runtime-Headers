@@ -38,10 +38,10 @@
     PKMicaLayer *_userIntentDeviceLayer;
     double _phoneAspectRatio;
     CALayer *_customImageLayer;
-    struct NSColor *_secondaryColor;
-    struct NSColor *_primaryHighlightColor;
-    struct NSColor *_intentPrimaryHighlightColor;
-    struct NSColor *_secondaryHighlightColor;
+    NSColor *_secondaryColor;
+    NSColor *_primaryHighlightColor;
+    NSColor *_intentPrimaryHighlightColor;
+    NSColor *_secondaryHighlightColor;
     unsigned int _userIntentEdge;
     long long _colorMode;
     NSColor *_primaryColor;
@@ -54,6 +54,7 @@
 + (void)invokeSuccessFeedback;
 + (id)sharedStaticResources;
 + (BOOL)automaticallyNotifiesObserversOfState;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PKGlyphViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned int userIntentEdge; // @synthesize userIntentEdge=_userIntentEdge;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
@@ -61,7 +62,6 @@
 @property(readonly, nonatomic) struct NSEdgeInsets customImageAlignmentEdgeInsets; // @synthesize customImageAlignmentEdgeInsets=_customImageAlignmentEdgeInsets;
 @property(readonly, copy, nonatomic) NSColor *primaryColor; // @synthesize primaryColor=_primaryColor;
 @property(readonly, nonatomic) long long colorMode; // @synthesize colorMode=_colorMode;
-- (void).cxx_destruct;
 - (void)fingerprintGlyphView:(id)arg1 didLayoutContentLayer:(id)arg2;
 - (struct CGPoint)_phonePositionDeltaWhileShownFromRotationPercentage:(double)arg1 toPercentage:(double)arg2;
 - (struct CGPoint)_phonePositionWhileShownWithRotationPercentage:(double)arg1;
@@ -71,11 +71,11 @@
 @property(nonatomic) BOOL fadeOnRecognized;
 - (void)setColorMode:(long long)arg1 animated:(BOOL)arg2;
 - (void)_applyColorMode:(BOOL)arg1;
-- (struct NSColor *)_secondaryColorForStyle:(long long)arg1 mode:(long long)arg2;
-- (struct NSColor *)_primaryColorForStyle:(long long)arg1 mode:(long long)arg2;
-- (void)_setSecondaryColor:(struct NSColor *)arg1 animated:(BOOL)arg2;
+- (id)_secondaryColorForStyle:(long long)arg1 mode:(long long)arg2;
+- (id)_primaryColorForStyle:(long long)arg1 mode:(long long)arg2;
+- (void)_setSecondaryColor:(id)arg1 animated:(BOOL)arg2;
 - (void)_applyEffectivePrimaryColorToLayersAnimated:(BOOL)arg1;
-- (void)_setPrimaryColor:(struct NSColor *)arg1 animated:(BOOL)arg2;
+- (void)_setPrimaryColor:(id)arg1 animated:(BOOL)arg2;
 - (void)_applyEffectiveHighlightColorsToLayersAnimated:(BOOL)arg1;
 - (void)_setRecognizedIfNecessaryWithTransitionIndex:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_updateCheckViewStateAnimated:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;

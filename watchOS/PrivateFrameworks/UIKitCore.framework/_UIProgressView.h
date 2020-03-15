@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSProgress *_trackedProgress;
 }
 
-@property(retain, nonatomic) NSProgress *trackedProgress; // @synthesize trackedProgress=_trackedProgress;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSProgress *trackedProgress; // @synthesize trackedProgress=_trackedProgress;
 - (void)_updateProgressValue;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (struct CGSize)intrinsicContentSize;

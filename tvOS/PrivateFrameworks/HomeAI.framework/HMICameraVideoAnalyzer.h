@@ -38,6 +38,7 @@
 + (id)logCategory;
 + (id)queryVersionInformation;
 + (long long)confidenceThatEventOccurred:(long long)arg1 events:(long long)arg2 annotationScores:(id)arg3;
+- (void).cxx_destruct;
 @property(getter=shouldSaveVideoFramesToDisk) _Bool saveVideoFramesToDisk; // @synthesize saveVideoFramesToDisk=_saveVideoFramesToDisk;
 @property(readonly, getter=shouldUploadVideoAnalysisEvent) _Bool uploadVideoAnalysisEvent; // @synthesize uploadVideoAnalysisEvent=_uploadVideoAnalysisEvent;
 @property _Bool sessionEnded; // @synthesize sessionEnded=_sessionEnded;
@@ -56,7 +57,6 @@
 @property(readonly, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property __weak id <HMICameraVideoAnalyzerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_flagCountsAsString;
 - (id)_outcomeCountsAsString;
 - (void)_sendAnalyticsEventForRequest:(id)arg1 outcome:(long long)arg2 result:(id)arg3 error:(id)arg4;

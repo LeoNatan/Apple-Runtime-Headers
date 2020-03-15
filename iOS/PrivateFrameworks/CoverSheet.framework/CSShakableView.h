@@ -18,10 +18,10 @@
     double _shakeDistance;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double shakeDistance; // @synthesize shakeDistance=_shakeDistance;
 @property(retain, nonatomic) NSArray *prototypeSpringAnimations; // @synthesize prototypeSpringAnimations=_prototypeSpringAnimations;
 @property(readonly, nonatomic) SBFTouchPassThroughView *containerView; // @synthesize containerView=_containerView;
-- (void).cxx_destruct;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (void)beginShakingWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_invokeCompletionBlockIfNecessary;

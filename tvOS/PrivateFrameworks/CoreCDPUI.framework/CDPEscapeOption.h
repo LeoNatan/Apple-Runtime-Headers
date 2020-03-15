@@ -18,12 +18,12 @@
 }
 
 + (id)cancelOption;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *progressLabel; // @synthesize progressLabel=_progressLabel;
 @property(copy, nonatomic) NSString *progressTitle; // @synthesize progressTitle=_progressTitle;
 @property(copy, nonatomic) CDUnknownBlockType escapeAction; // @synthesize escapeAction=_escapeAction;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 
 @end
 

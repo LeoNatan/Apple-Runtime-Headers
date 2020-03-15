@@ -13,8 +13,8 @@
     NSMutableDictionary *_routingTable;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *routingTable; // @synthesize routingTable=_routingTable;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *routingTable; // @synthesize routingTable=_routingTable;
 - (id)copyAndDecorateRequest:(id)arg1;
 - (void)updateOriginalHostname:(id)arg1 destinationHostname:(id)arg2;
 - (id)init;

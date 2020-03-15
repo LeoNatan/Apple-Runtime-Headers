@@ -45,6 +45,7 @@
 
 + (void)setMessageWindowCountEnabled:(_Bool)arg1;
 + (_Bool)messageWindowCountEnabled;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDSService *service; // @synthesize service=_service;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) _Bool delegateRequiresACKs; // @synthesize delegateRequiresACKs=_delegateRequiresACKs;
@@ -55,7 +56,6 @@
 @property(nonatomic) _Bool enableTransmissionWindow; // @synthesize enableTransmissionWindow=_enableTransmissionWindow;
 @property(retain, nonatomic) NSObject<OS_os_activity> *transportActivity; // @synthesize transportActivity=_transportActivity;
 @property(nonatomic) __weak id <NMSMessageCenterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)service:(id)arg1 connectedDevicesChanged:(id)arg2;
 - (void)service:(id)arg1 nearbyDevicesChanged:(id)arg2;
 - (void)service:(id)arg1 didSwitchActivePairedDevice:(id)arg2 acknowledgementBlock:(CDUnknownBlockType)arg3;

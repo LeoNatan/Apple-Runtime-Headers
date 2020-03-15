@@ -25,6 +25,7 @@
     UIButton *_decrementButton;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UIButton *decrementButton; // @synthesize decrementButton=_decrementButton;
 @property(readonly, nonatomic) __weak UIButton *incrementButton; // @synthesize incrementButton=_incrementButton;
 @property(nonatomic) _Bool didUserUpdatevalue; // @synthesize didUserUpdatevalue=_didUserUpdatevalue;
@@ -36,7 +37,6 @@
 @property(nonatomic) double minumumStepValueIncrement; // @synthesize minumumStepValueIncrement=_minumumStepValueIncrement;
 @property(nonatomic) double valueStepIncremement; // @synthesize valueStepIncremement=_valueStepIncremement;
 @property(nonatomic) double value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (void)_updateButton:(id)arg1 forPressedState:(_Bool)arg2;
 - (void)_updatePlusMinusButtonStates;
 - (void)_notifyValueChanged;

@@ -19,11 +19,11 @@
 }
 
 + (id)previewRetrievalQueue;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType refreshBlock; // @synthesize refreshBlock=_refreshBlock;
 @property(retain, nonatomic) WFFileRepresentation *file; // @synthesize file=_file;
 @property(nonatomic) __weak WFContentItem *originalItem; // @synthesize originalItem=_originalItem;
 @property(nonatomic) __weak WFContentItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *previewItemTitle;
 @property(readonly, nonatomic) NSURL *previewItemURL;
 

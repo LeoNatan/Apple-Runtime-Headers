@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     PSSpecifier *_groupSpecifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PSSpecifier *groupSpecifier; // @synthesize groupSpecifier=_groupSpecifier;
 @property(nonatomic) __weak PSListController *listController; // @synthesize listController=_listController;
 @property(retain, nonatomic) NSString *pinCode; // @synthesize pinCode=_pinCode;
-- (void).cxx_destruct;
 - (id)specifiers;
 - (id)initWithListController:(id)arg1 groupSpecifier:(id)arg2;
 

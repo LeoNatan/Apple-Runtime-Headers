@@ -28,12 +28,12 @@ __attribute__((visibility("hidden")))
 + (id)sessionStartDate;
 + (void)setSessionStartDate:(id)arg1;
 + (id)scoreClasses;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MNLocation *lastLocation; // @synthesize lastLocation=_lastLocation;
 @property(readonly, nonatomic) NSDictionary *scores; // @synthesize scores=_scores;
 @property(nonatomic) unsigned long long suggestionID; // @synthesize suggestionID=_suggestionID;
 @property(readonly, nonatomic) MNCommuteDestination *commuteDestination; // @synthesize commuteDestination=_commuteDestination;
 @property(nonatomic) __weak id <MNCommuteDestinationUpdaterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)commuteScoreUpdaterDidUpdate:(id)arg1;
 - (void)locationTrackerDidArrive:(id)arg1;
 - (void)locationTracker:(id)arg1 didUpdateETAForRoute:(id)arg2;

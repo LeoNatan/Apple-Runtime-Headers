@@ -48,6 +48,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property unsigned long long lockerItemID; // @synthesize lockerItemID=_lockerItemID;
 @property unsigned int purchaseToken; // @synthesize purchaseToken=_purchaseToken;
 @property _Bool watchOnly; // @synthesize watchOnly=_watchOnly;
@@ -81,7 +82,6 @@
 @property long long contentRatingFlags; // @synthesize contentRatingFlags=_contentRatingFlags;
 @property(copy) NSString *circularIconURLString; // @synthesize circularIconURLString=_circularIconURLString;
 @property(copy) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (void)_setBooleanPropertiesForBitfield:(int)arg1;
 - (int)_bitfieldForBooleanProperties;
 - (id)initWithCoder:(id)arg1;

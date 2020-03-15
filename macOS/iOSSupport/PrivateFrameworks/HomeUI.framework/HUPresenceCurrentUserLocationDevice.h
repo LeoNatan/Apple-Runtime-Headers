@@ -17,9 +17,9 @@
 + (id)customDeviceWithHMDevice:(id)arg1;
 + (id)currentDevice;
 + (id)FMFDevice;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMDevice *customDevice; // @synthesize customDevice=_customDevice;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithType:(unsigned long long)arg1 customDevice:(id)arg2;
 
 @end

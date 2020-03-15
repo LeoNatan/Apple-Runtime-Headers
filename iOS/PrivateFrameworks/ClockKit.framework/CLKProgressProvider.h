@@ -9,13 +9,13 @@
 #import <ClockKit/NSCopying-Protocol.h>
 #import <ClockKit/NSSecureCoding-Protocol.h>
 
-@class NSMutableDictionary, UIColor;
+@class NSMutableDictionary, NSNumber, UIColor;
 
 @interface CLKProgressProvider : NSObject <NSCopying, NSSecureCoding>
 {
     unsigned long long _nextUpdateToken;
     NSMutableDictionary *_updateHandlersByToken;
-    struct NSNumber *_timerToken;
+    NSNumber *_timerToken;
     _Bool _finalized;
     _Bool _paused;
     UIColor *_tintColor;
@@ -23,10 +23,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 @property double backgroundRingAlpha; // @synthesize backgroundRingAlpha=_backgroundRingAlpha;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
-- (void).cxx_destruct;
 - (double)_progressFractionForNow:(id)arg1;
 - (void)_validate;
 - (_Bool)_needsUpdates;
@@ -41,8 +41,8 @@
 - (long long)timeTravelUpdateFrequency;
 - (void)finalize;
 - (void)validate;
-- (void)stopUpdatesForToken:(struct NSNumber *)arg1;
-- (struct NSNumber *)startUpdatesWithHandler:(CDUnknownBlockType)arg1;
+- (void)stopUpdatesForToken:(id)arg1;
+- (id)startUpdatesWithHandler:(CDUnknownBlockType)arg1;
 - (double)progressFractionForNow:(id)arg1;
 - (void)dealloc;
 - (void)_commonInit;

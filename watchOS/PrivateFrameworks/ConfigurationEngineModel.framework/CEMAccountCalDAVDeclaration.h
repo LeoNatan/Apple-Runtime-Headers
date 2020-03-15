@@ -27,13 +27,13 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadCalDAVCredentials; // @synthesize payloadCalDAVCredentials=_payloadCalDAVCredentials;
 @property(copy, nonatomic) NSNumber *payloadCalDAVPort; // @synthesize payloadCalDAVPort=_payloadCalDAVPort;
 @property(copy, nonatomic) NSNumber *payloadCalDAVUseSSL; // @synthesize payloadCalDAVUseSSL=_payloadCalDAVUseSSL;
 @property(copy, nonatomic) NSString *payloadCalDAVPrincipalURL; // @synthesize payloadCalDAVPrincipalURL=_payloadCalDAVPrincipalURL;
 @property(copy, nonatomic) NSString *payloadCalDAVHostName; // @synthesize payloadCalDAVHostName=_payloadCalDAVHostName;
 @property(copy, nonatomic) NSString *payloadCalDAVAccountDescription; // @synthesize payloadCalDAVAccountDescription=_payloadCalDAVAccountDescription;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

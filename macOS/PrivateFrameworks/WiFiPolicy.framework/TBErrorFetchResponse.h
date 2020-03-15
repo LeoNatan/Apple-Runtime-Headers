@@ -19,10 +19,10 @@
 
 + (id)remoteResponseWithError:(id)arg1;
 + (id)responseWithError:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NSSet *tiles; // @synthesize tiles;
 @property(readonly, nonatomic) NSArray *results; // @synthesize results;
-- (void).cxx_destruct;
 - (id)initWithError:(id)arg1;
 
 // Remaining properties

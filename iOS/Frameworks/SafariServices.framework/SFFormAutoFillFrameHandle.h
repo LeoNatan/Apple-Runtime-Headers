@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) _WKFrameHandle *frameHandle; // @synthesize frameHandle=_frameHandle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _WKFrameHandle *frameHandle; // @synthesize frameHandle=_frameHandle;
 @property(readonly, nonatomic) struct __SecTrust *webui_serverTrust;
 @property(readonly, nonatomic) NSURL *webui_URL;
 - (void)encodeWithCoder:(id)arg1;

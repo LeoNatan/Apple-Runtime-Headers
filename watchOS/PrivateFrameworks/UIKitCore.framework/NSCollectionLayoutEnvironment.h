@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     UITraitCollection *_traitCollection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(retain, nonatomic) id <NSCollectionLayoutContainer> container; // @synthesize container=_container;
 @property(retain, nonatomic) id <_UIDataSourceSnapshot> _dataSourceSnapshot; // @synthesize _dataSourceSnapshot=__dataSourceSnapshot;
-- (void).cxx_destruct;
 - (id)initWithContainer:(id)arg1 traitCollection:(id)arg2 dataSourceSnapshot:(id)arg3;
 
 // Remaining properties

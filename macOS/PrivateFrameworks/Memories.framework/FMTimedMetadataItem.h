@@ -18,11 +18,11 @@
     CDStruct_e83c9415 _timeRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *values; // @synthesize values=_values;
 @property(readonly) CDStruct_e83c9415 timeRange; // @synthesize timeRange=_timeRange;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (void)adjustDurationTo:(CDStruct_1b6d18a9)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

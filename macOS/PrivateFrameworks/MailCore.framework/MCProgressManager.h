@@ -22,9 +22,9 @@
 + (id)sharedInstance;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)log;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *trackedAccountNames; // @synthesize trackedAccountNames=_trackedAccountNames;
 @property(retain, nonatomic) MCProgressEntry *activeEntry; // @synthesize activeEntry=_activeEntry;
-- (void).cxx_destruct;
 - (void)_diagnosticsNotificationReceived:(id)arg1;
 - (void)removeObjectFromOrderedEntriesAtIndex:(unsigned long long)arg1;
 - (void)insertObject:(id)arg1 inOrderedEntriesAtIndex:(unsigned long long)arg2;

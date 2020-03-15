@@ -14,8 +14,8 @@
 }
 
 + (id)responseWithNetworkSearchResults:(id)arg1;
-@property(retain, nonatomic) GEOWiFiQualityNetworkSearchResult *networkSearchResult; // @synthesize networkSearchResult=_networkSearchResult;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GEOWiFiQualityNetworkSearchResult *networkSearchResult; // @synthesize networkSearchResult=_networkSearchResult;
 - (id)initWithNetworkSearchResults:(id)arg1;
 
 @end

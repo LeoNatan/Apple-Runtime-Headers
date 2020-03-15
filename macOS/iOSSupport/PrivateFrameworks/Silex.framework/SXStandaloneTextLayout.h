@@ -17,8 +17,8 @@
     id <SXStandaloneTextLayoutDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SXStandaloneTextLayoutDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SXStandaloneTextLayoutDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)p_wpLayoutParent;
 @property(readonly, nonatomic) BOOL columnsAreLeftToRight;
 @property(readonly, nonatomic) BOOL shrinkTextToFit;

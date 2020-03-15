@@ -15,8 +15,8 @@
 
 + (BOOL)isInputStringValidAsMonogram:(id)arg1;
 + (BOOL)isInputStringValid:(id)arg1;
-@property(retain, nonatomic) NSString *inputString; // @synthesize inputString=_inputString;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *inputString; // @synthesize inputString=_inputString;
 - (BOOL)inputStringContainsValidCharacters;
 - (BOOL)inputStringHasCorrectNumberOfCharactersAsMonogram;
 - (BOOL)inputStringHasCorrectNumberOfCharacters;

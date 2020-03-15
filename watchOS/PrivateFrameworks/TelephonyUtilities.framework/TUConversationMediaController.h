@@ -17,9 +17,9 @@
     id <TUConversationManagerDataSource> _dataSource;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <TUConversationManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <TUConversationMediaControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)mediaPrioritiesChangeForConversation:(id)arg1;
 - (void)updateConversationWithUUID:(id)arg1 participantPresentationContexts:(id)arg2;
 - (id)initWithConversationDataSource:(id)arg1;

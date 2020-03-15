@@ -14,6 +14,7 @@
 {
     _Bool _isInstalled;
     _Bool _isBuiltInVoice;
+    _Bool _isVoiceReadyToUse;
     NSString *_name;
     NSArray *_languages;
     long long _gender;
@@ -28,6 +29,8 @@
 + (long long)genderFromString:(id)arg1;
 + (id)genderStringFromGender:(long long)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(nonatomic) _Bool isVoiceReadyToUse; // @synthesize isVoiceReadyToUse=_isVoiceReadyToUse;
 @property(nonatomic) _Bool isBuiltInVoice; // @synthesize isBuiltInVoice=_isBuiltInVoice;
 @property(nonatomic) _Bool isInstalled; // @synthesize isInstalled=_isInstalled;
 @property(nonatomic) long long type; // @synthesize type=_type;
@@ -35,7 +38,6 @@
 @property(nonatomic) long long gender; // @synthesize gender=_gender;
 @property(copy, nonatomic) NSArray *languages; // @synthesize languages=_languages;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -23,11 +23,11 @@
 
 + (_Bool)_isCapabilityBasedActivity;
 + (unsigned long long)_xpcAttributes;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImagePickerController *imagePickerController; // @synthesize imagePickerController=_imagePickerController;
 @property(retain, nonatomic) CNContact *person; // @synthesize person=_person;
 @property(retain, nonatomic) CNContactPickerViewController *peoplePicker; // @synthesize peoplePicker=_peoplePicker;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (_Bool)contactViewController:(id)arg1 shouldPerformDefaultActionForContactProperty:(id)arg2;
 - (void)imagePickerControllerDidCancel:(id)arg1;

@@ -24,6 +24,7 @@
     struct CGRect _layerContentBounds;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *diagnosticsRenderedLines; // @synthesize diagnosticsRenderedLines=_diagnosticsRenderedLines;
 @property(nonatomic) BOOL diagnosticsEnabled; // @synthesize diagnosticsEnabled=_diagnosticsEnabled;
 @property(readonly, nonatomic) double _textScaleFactor; // @synthesize _textScaleFactor=__textScaleFactor;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) PXTitleSubtitleLabelSpec *spec; // @synthesize spec=_spec;
 @property(readonly, copy, nonatomic) NSString *subtitleText; // @synthesize subtitleText=_subtitleText;
 @property(readonly, copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-- (void).cxx_destruct;
 - (void)setTypesettingMode:(long long)arg1;
 - (void)setSpec:(id)arg1;
 - (void)setSubtitleText:(id)arg1;

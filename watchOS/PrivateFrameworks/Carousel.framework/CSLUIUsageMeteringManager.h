@@ -22,13 +22,13 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) double lastUIChangeTime; // @synthesize lastUIChangeTime=_lastUIChangeTime;
 @property(nonatomic) _Bool screenOn; // @synthesize screenOn=_screenOn;
 @property(retain, nonatomic) CSLUIUsageMeteringLocation *currentAlertLocation; // @synthesize currentAlertLocation=_currentAlertLocation;
 @property(retain, nonatomic) CSLUIUsageMeteringLocation *previousBaseLocation; // @synthesize previousBaseLocation=_previousBaseLocation;
 @property(retain, nonatomic) CSLUIUsageMeteringLocation *currentBaseLocation; // @synthesize currentBaseLocation=_currentBaseLocation;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)switcherViewController:(id)arg1 didDisappearIndex:(unsigned int)arg2;
 - (void)switcherViewController:(id)arg1 didAppearIndex:(unsigned int)arg2;
 - (void)switcherViewControllerDidDismiss:(id)arg1;

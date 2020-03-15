@@ -16,10 +16,10 @@
 }
 
 + (double)animationDuration;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *contentViews; // @synthesize contentViews=_contentViews;
 @property(retain, nonatomic) CUISAlertHeaderView *header; // @synthesize header=_header;
 @property(retain, nonatomic) CUISBulletinActionMenu *menu; // @synthesize menu=_menu;
-- (void).cxx_destruct;
 - (void)animateWithCompletion:(CDUnknownBlockType)arg1;
 
 @end

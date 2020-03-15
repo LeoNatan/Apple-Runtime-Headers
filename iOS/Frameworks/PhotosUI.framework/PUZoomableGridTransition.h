@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _currentInteractiveCenterOffset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <UIViewControllerContextTransitioning> transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(retain, nonatomic, setter=_setTransitionLayout:) UICollectionViewTransitionLayout *_transitionLayout; // @synthesize _transitionLayout=__transitionLayout;
 @property(nonatomic, setter=_setCurrentInteractiveCenterOffset:) struct CGSize currentInteractiveCenterOffset; // @synthesize currentInteractiveCenterOffset=_currentInteractiveCenterOffset;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setOriginZoomLevel:) unsigned long long originZoomLevel; // @synthesize originZoomLevel=_originZoomLevel;
 @property(readonly, nonatomic) __weak PUMomentsZoomLevelManager *zoomLevelManager; // @synthesize zoomLevelManager=_zoomLevelManager;
 @property(readonly, nonatomic, getter=isInteractive) _Bool interactive; // @synthesize interactive=_interactive;
-- (void).cxx_destruct;
 - (void)cancelInteractiveTransitionAnimated;
 - (void)finishInteractiveTransitionAnimated;
 - (void)updateInteractiveTransitionForProgress:(double)arg1 centerOffset:(struct CGSize)arg2;

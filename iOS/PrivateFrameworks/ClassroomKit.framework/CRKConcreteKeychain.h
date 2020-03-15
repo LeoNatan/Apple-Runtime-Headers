@@ -16,8 +16,8 @@
 }
 
 + (id)defaultKeychain;
-@property(readonly, copy, nonatomic) NSDictionary *baseQueryAttributes; // @synthesize baseQueryAttributes=_baseQueryAttributes;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *baseQueryAttributes; // @synthesize baseQueryAttributes=_baseQueryAttributes;
 - (id)description;
 - (id)addItem:(void *)arg1 toAccessGroup:(id)arg2;
 - (id)makeItemWithPersistentID:(id)arg1 expectedTypeID:(unsigned long long)arg2 creationBlock:(CDUnknownBlockType)arg3;

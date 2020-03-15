@@ -44,12 +44,12 @@
 }
 
 + (id)scaleViewWithMapView:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int mapType; // @synthesize mapType=_mapType;
 @property(nonatomic) _Bool usedInternallyByMapView; // @synthesize usedInternallyByMapView=_usedInternallyByMapView;
 @property(nonatomic) int legendAlignment; // @synthesize legendAlignment=_legendAlignment;
 @property(nonatomic) int scaleVisibility; // @synthesize scaleVisibility=_scaleVisibility;
 @property(nonatomic) __weak MKMapView *mapView; // @synthesize mapView=_mapView;
-- (void).cxx_destruct;
 - (void)_localizedDistanceStringsWithMeters:(unsigned int)arg1 imperial:(double)arg2 useFeet:(_Bool)arg3 inMetric:(_Bool)arg4 displaysYardsForShortDistances:(_Bool)arg5 strings:(id)arg6;
 - (id)_scaleViewFormattedStringForInteger:(int)arg1;
 - (id)_scaleViewFormattedStringForFloat:(float)arg1;

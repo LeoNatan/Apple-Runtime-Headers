@@ -28,6 +28,7 @@
     struct CGSize _blueprintSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOrderedSet *snapLines; // @synthesize snapLines=_snapLines;
 @property(retain, nonatomic) SXComponentDependencyResolver *dependencySolver; // @synthesize dependencySolver=_dependencySolver;
 @property(retain, nonatomic) NSMutableSet *invalidatedComponents; // @synthesize invalidatedComponents=_invalidatedComponents;
@@ -41,7 +42,6 @@
 @property(nonatomic) struct CGSize blueprintSize; // @synthesize blueprintSize=_blueprintSize;
 @property(readonly, nonatomic) _Bool isComplete; // @synthesize isComplete=_isComplete;
 @property(nonatomic) __weak SXLayoutBlueprint *parentLayoutBlueprint; // @synthesize parentLayoutBlueprint=_parentLayoutBlueprint;
-- (void).cxx_destruct;
 - (id)layoutDescriptionForBlueprint:(id)arg1 depth:(unsigned long long)arg2;
 - (id)debugDescription;
 - (id)description;

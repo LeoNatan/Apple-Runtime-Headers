@@ -17,12 +17,12 @@
     NSLayoutConstraint *_bannerWidthConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *bannerWidthConstraint; // @synthesize bannerWidthConstraint=_bannerWidthConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *bannerYPositionConstraint; // @synthesize bannerYPositionConstraint=_bannerYPositionConstraint;
 @property(nonatomic) _Bool bannerAnimating; // @synthesize bannerAnimating=_bannerAnimating;
 @property(nonatomic) _Bool bannerVisible; // @synthesize bannerVisible=_bannerVisible;
 @property(retain, nonatomic) GKNotificationBannerView *bannerView; // @synthesize bannerView=_bannerView;
-- (void).cxx_destruct;
 - (struct CGPoint)_visibleBannerCenterPosition:(struct CGSize)arg1;
 - (struct CGPoint)_hiddenBannerPosition:(struct CGSize)arg1;
 - (void)addConstraintsForBannerView;

@@ -16,9 +16,9 @@
     NFContainer *_privateContainer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NFContainer *privateContainer; // @synthesize privateContainer=_privateContainer;
 @property(retain, nonatomic) NFContainer *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (id)unsafeRegisterForKey:(id)arg1 name:(id)arg2 factory:(CDUnknownBlockType)arg3;
 - (id)registerKey:(id)arg1 factory:(CDUnknownBlockType)arg2;
 - (id)registerProtocol:(id)arg1 name:(id)arg2 factory:(CDUnknownBlockType)arg3;

@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *pendingEntries; // @synthesize pendingEntries=_pendingEntries;
 @property(readonly, nonatomic) NSArray *entries; // @synthesize entries=_entries;
 @property(readonly, nonatomic) NSSet *senderIdentifiers; // @synthesize senderIdentifiers=_senderIdentifiers;
 @property(readonly, nonatomic) NSSet *recipientIdentifiers; // @synthesize recipientIdentifiers=_recipientIdentifiers;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *senderIdentifier; // @dynamic senderIdentifier;
 - (id)mostRecentTextEntries:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool mostRecentTextEntryIsByMe;

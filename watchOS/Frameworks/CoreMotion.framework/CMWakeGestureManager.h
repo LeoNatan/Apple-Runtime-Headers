@@ -31,11 +31,11 @@
 + (_Bool)isWakeGestureAvailable;
 + (id)sharedManager;
 + (id)stringForGestureState:(int)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) int crown; // @synthesize crown=_crown;
 @property(nonatomic) int wrist; // @synthesize wrist=_wrist;
 @property(nonatomic) id <CMWakeGestureDelegate> delegate; // @synthesize delegate=_delegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)onWakeUpdated:(const struct Sample *)arg1;
 - (void)forceDetected;
 - (_Bool)setFireAllEnabled:(_Bool)arg1;

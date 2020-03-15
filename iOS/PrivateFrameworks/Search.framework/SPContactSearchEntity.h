@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 
 + (id)contactStore;
 + (_Bool)supportsSecureCoding;
-@property(retain) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 - (void).cxx_destruct;
+@property(retain) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 - (id)contact;
 - (id)queryString;
 - (void)appendToQuery:(id)arg1 key:(id)arg2 value:(id)arg3 additions:(id)arg4;

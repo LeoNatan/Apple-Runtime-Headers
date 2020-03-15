@@ -16,9 +16,9 @@
     NSDateComponents *_fireTimeComponents;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDateComponents *fireTimeComponents; // @synthesize fireTimeComponents=_fireTimeComponents;
 @property(copy, nonatomic) NSDate *fireDate; // @synthesize fireDate=_fireDate;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)_fireDateForTimeComponents:(id)arg1;
 @property(readonly, nonatomic) NSDate *effectiveFireDate;

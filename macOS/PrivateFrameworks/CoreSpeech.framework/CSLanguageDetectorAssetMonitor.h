@@ -16,10 +16,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) int notifyToken; // @synthesize notifyToken=_notifyToken;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <CSLanguageDetectorAssetMonitorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_supportedLocale:(CDUnknownBlockType)arg1;
 - (void)supportedLocale:(CDUnknownBlockType)arg1;
 - (void)startMonitor;

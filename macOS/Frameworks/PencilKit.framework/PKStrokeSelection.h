@@ -17,11 +17,11 @@
 }
 
 + (id)strokeSelectionFromData:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKDrawing *drawing; // @synthesize drawing=_drawing;
 @property(copy, nonatomic) NSImage *strokeImage; // @synthesize strokeImage=_strokeImage;
 @property(readonly, nonatomic) PKStroke *lassoStroke; // @synthesize lassoStroke=_lassoStroke;
 @property(readonly, nonatomic) NSMutableOrderedSet *strokes; // @synthesize strokes=_strokes;
-- (void).cxx_destruct;
 - (BOOL)containsBitmapData;
 - (id)strokeDataForSelection;
 - (id)legacyStrokeDataForSelection;

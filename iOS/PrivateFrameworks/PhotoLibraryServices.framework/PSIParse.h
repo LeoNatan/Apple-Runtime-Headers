@@ -15,8 +15,8 @@
     PSIDateFilter *_dateFilter;
 }
 
-@property(copy, nonatomic) PSIDateFilter *dateFilter; // @synthesize dateFilter=_dateFilter;
 - (void).cxx_destruct;
+@property(copy, nonatomic) PSIDateFilter *dateFilter; // @synthesize dateFilter=_dateFilter;
 - (id)description;
 - (id)descriptionWithToken:(id)arg1;
 - (id)parseByReplacingTokensInRange:(struct _NSRange)arg1 withTokens:(id)arg2;

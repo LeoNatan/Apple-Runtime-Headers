@@ -31,6 +31,7 @@
 + (unsigned int)headerStyleForPresentationMode:(unsigned int)arg1;
 + (unsigned int)presentationModeForHeaderStyle:(unsigned int)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) CUISAlertChevronView *topChevron; // @synthesize topChevron=_topChevron;
 @property(retain, nonatomic) CUISAlertHeaderView *header; // @synthesize header=_header;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) UIImage *attachment; // @synthesize attachment=_attachment;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *alertTitle; // @synthesize alertTitle=_alertTitle;
-- (void).cxx_destruct;
 - (void)setActionMenu:(id)arg1;
 - (void)animateSlideDownDismissLongLookWithCompletion:(CDUnknownBlockType)arg1;
 - (void)animateDismissLongLookWithCompletion:(CDUnknownBlockType)arg1;

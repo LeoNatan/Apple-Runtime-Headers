@@ -30,6 +30,7 @@
 }
 
 + (Class)devicePreferredLanguageType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *deviceAppBundleId; // @synthesize deviceAppBundleId=_deviceAppBundleId;
 @property(retain, nonatomic) NSString *deviceAppVersion; // @synthesize deviceAppVersion=_deviceAppVersion;
 @property(nonatomic) long long deviceDstOffset; // @synthesize deviceDstOffset=_deviceDstOffset;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) NSString *deviceTimezone; // @synthesize deviceTimezone=_deviceTimezone;
 @property(retain, nonatomic) NSString *deviceType; // @synthesize deviceType=_deviceType;
 @property(retain, nonatomic) NSString *devicePushToken; // @synthesize devicePushToken=_devicePushToken;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

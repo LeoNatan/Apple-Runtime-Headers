@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _contentPadding;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *mainToolbarContainer; // @synthesize mainToolbarContainer=_mainToolbarContainer;
 @property(nonatomic) __weak id <PUPhotoEditToolbarDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double longSideMargin; // @synthesize longSideMargin=_longSideMargin;
@@ -53,7 +54,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool useTabBarHeight; // @synthesize useTabBarHeight=_useTabBarHeight;
 @property(nonatomic) _Bool useLargeShortSideHeight; // @synthesize useLargeShortSideHeight=_useLargeShortSideHeight;
 @property(readonly, nonatomic) long long layoutOrientation; // @synthesize layoutOrientation=_layoutOrientation;
-- (void).cxx_destruct;
 - (void)accessibilityLongPressChanged:(id)arg1;
 - (void)_updateBackgroundAnimated:(_Bool)arg1;
 - (void)_addCenterConstraintsWithMetrics:(id)arg1 verticalLayout:(_Bool)arg2;

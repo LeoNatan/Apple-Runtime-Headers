@@ -17,8 +17,8 @@
 }
 
 + (BOOL)isSupported;
-@property(retain, nonatomic) id configChangedObserverToken; // @synthesize configChangedObserverToken=_configChangedObserverToken;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id configChangedObserverToken; // @synthesize configChangedObserverToken=_configChangedObserverToken;
 - (void)_logAudioFileInfo:(id)arg1;
 - (void)_stopActiveSound:(id)arg1;
 - (BOOL)_startEngineIfNeeded:(id *)arg1;

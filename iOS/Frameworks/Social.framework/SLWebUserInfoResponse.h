@@ -18,13 +18,13 @@
     NSDictionary *_userInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;
 @property(readonly) NSError *error; // @synthesize error=_error;
 @property(readonly) NSArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly) long long statusCode; // @synthesize statusCode=_statusCode;
-- (void).cxx_destruct;
 - (void)setError:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (void)setDisplayName:(id)arg1;

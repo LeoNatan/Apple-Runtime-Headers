@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSMenuItem *_denyMenuItem;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSMenuItem *denyMenuItem; // @synthesize denyMenuItem=_denyMenuItem;
 @property(nonatomic) __weak NSMenuItem *allowMenuItem; // @synthesize allowMenuItem=_allowMenuItem;
 @property(nonatomic) __weak NSPopUpButton *policyPopUpButton; // @synthesize policyPopUpButton=_policyPopUpButton;
 @property(retain, nonatomic) UserNotificationPolicyData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (void)setUserNotificationPolicyFrom:(id)arg1;
 - (int)_permissionPolicyForMenuItem:(id)arg1;
 - (id)_menuItemForPermissionPolicy:(int)arg1;

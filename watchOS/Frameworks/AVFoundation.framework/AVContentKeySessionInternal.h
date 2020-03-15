@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVWeakReference, AVWeakReferencingDelegateStorage, NSData, NSHashTable, NSMutableArray, NSMutableDictionary, NSString, NSURL;
+@class AVContentKeyReportGroup, AVWeakReference, AVWeakReferencingDelegateStorage, NSData, NSHashTable, NSMutableArray, NSMutableDictionary, NSString, NSURL;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -18,13 +18,12 @@ __attribute__((visibility("hidden")))
     NSData *_appIdentifier;
     _Bool _isExpired;
     _Bool _internal;
+    AVContentKeyReportGroup *_defaultContentKeyGroup;
     NSObject<OS_dispatch_queue> *_threadSafetyQ;
-    struct __CFData *_protectorSessionIdentifier;
     NSHashTable *_contentKeyRecipients;
-    struct OpaqueFigContentKeySession *_figContentKeySession;
-    NSMutableArray *_cryptorsList;
     NSString *_keySystem;
     NSMutableDictionary *keyRequestsByRequestID;
+    NSMutableArray *_contentKeyGroups;
     NSObject<OS_dispatch_queue> *_delegateReadWriteQueue;
     NSObject<OS_dispatch_queue> *_delegateQueue;
 }

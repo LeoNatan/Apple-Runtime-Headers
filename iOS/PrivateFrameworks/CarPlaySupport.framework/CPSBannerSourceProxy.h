@@ -11,7 +11,7 @@
 #import <CarPlaySupport/CPSApplicationStateObserving-Protocol.h>
 #import <CarPlaySupport/CPSBannerSourceServerToClientInterface-Protocol.h>
 
-@class BSServiceConnection, NSString;
+@class BSServiceConnection, CPSApplicationStateMonitor, NSString;
 @protocol CPBannerDelegate, OS_dispatch_queue;
 
 @interface CPSBannerSourceProxy : NSObject <CPSBannerSourceServerToClientInterface, BSInvalidatable, CPBannerProviding, CPSApplicationStateObserving>
@@ -19,12 +19,14 @@
     id <CPBannerDelegate> _delegate;
     BSServiceConnection *_connection;
     NSObject<OS_dispatch_queue> *_callbackQueue;
+    CPSApplicationStateMonitor *_applicationStateMonitor;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) CPSApplicationStateMonitor *applicationStateMonitor; // @synthesize applicationStateMonitor=_applicationStateMonitor;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) BSServiceConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) __weak id <CPBannerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)applicationStateMonitor:(id)arg1 didBecomeActive:(_Bool)arg2;
 - (void)bannerDidDisappearWithIdentifier:(id)arg1;
 - (void)bannerDidAppearWithIdentifier:(id)arg1;
@@ -33,7 +35,7 @@
 - (void)postBannerForManeuver:(id)arg1 travelEstimates:(id)arg2;
 - (void)invalidate;
 - (void)setBundleIdentifier:(id)arg1;
-- (id)initWithDelegate:(id)arg1;
+- (id)initWithDelegate:(id)arg1 applicationStateMonitor:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

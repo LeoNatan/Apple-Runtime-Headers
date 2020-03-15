@@ -8,7 +8,7 @@
 
 #import <AppleMediaServices/NSCopying-Protocol.h>
 
-@class AMSBuyParams, NSDictionary, NSNumber, NSString;
+@class AMSBuyParams, AMSProcessInfo, NSDictionary, NSNumber, NSString;
 
 @interface AMSPurchase : NSObject <NSCopying>
 {
@@ -19,23 +19,25 @@
     AMSBuyParams *_buyParams;
     NSString *_callerBundleId;
     NSString *_clientId;
+    AMSProcessInfo *_clientInfo;
     NSNumber *_ownerAccountId;
     long long _purchaseType;
     NSString *_storefront;
     NSNumber *_uniqueIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSNumber *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(copy) NSString *storefront; // @synthesize storefront=_storefront;
 @property(readonly) long long purchaseType; // @synthesize purchaseType=_purchaseType;
 @property(copy) NSNumber *ownerAccountId; // @synthesize ownerAccountId=_ownerAccountId;
+@property(copy) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(copy) NSString *clientId; // @synthesize clientId=_clientId;
 @property(copy) NSString *callerBundleId; // @synthesize callerBundleId=_callerBundleId;
 @property(readonly) AMSBuyParams *buyParams; // @synthesize buyParams=_buyParams;
 @property(getter=isUserInitiated) BOOL userInitiated; // @synthesize userInitiated=_userInitiated;
 @property(copy) NSDictionary *additionalHeaders; // @synthesize additionalHeaders=_additionalHeaders;
 @property(copy) NSNumber *accountId; // @synthesize accountId=_accountId;
-- (void).cxx_destruct;
 - (id)_generateIdentifier;
 - (unsigned long long)hash;
 - (id)description;

@@ -19,9 +19,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)identifierWithSchema:(id)arg1 entity:(long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *schemaIdentifier; // @synthesize schemaIdentifier=_schemaIdentifier;
 @property(readonly, nonatomic) long long entityIdentifier; // @synthesize entityIdentifier=_entityIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

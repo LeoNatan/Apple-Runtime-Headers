@@ -14,8 +14,8 @@
     NSString *_script;
 }
 
-@property(readonly) NSString *script; // @synthesize script=_script;
 - (void).cxx_destruct;
+@property(readonly) NSString *script; // @synthesize script=_script;
 - (void)load;
 @property(retain) JSValue *result;
 - (id)identifier;

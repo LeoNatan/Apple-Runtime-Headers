@@ -68,6 +68,7 @@
 + (void)setSecureCodableCustomExtendedDataClasses:(id)arg1;
 + (id)secureCodableCustomExtendedDataClasses;
 + (id)normalizeSnapshotName:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGAffineTransform imageTransform; // @synthesize imageTransform=_imageTransform;
 @property(nonatomic) long long fileLocation; // @synthesize fileLocation=_fileLocation;
 @property(copy, nonatomic, getter=_relativePath, setter=_setRelativePath:) NSString *relativePath; // @synthesize relativePath=_relativePath;
@@ -101,7 +102,6 @@
 @property(copy, nonatomic) NSString *variantID; // @synthesize variantID=_variantID;
 @property(readonly, copy, nonatomic) NSString *groupID; // @synthesize groupID=_groupID;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)_descriptionBuilderWithMultilinePrefix:(id)arg1 includeVariants:(_Bool)arg2;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

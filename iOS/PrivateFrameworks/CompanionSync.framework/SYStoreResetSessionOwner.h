@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _fetchNextBatch;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType fetchNextBatch; // @synthesize fetchNextBatch=_fetchNextBatch;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType fetchNextBatch; // @synthesize fetchNextBatch=_fetchNextBatch;
 - (long long)syncSession:(id)arg1 enqueueChanges:(CDUnknownBlockType)arg2 error:(id *)arg3;
 - (long long)_sendBufferedChanges:(CDUnknownBlockType)arg1;
 - (_Bool)isResetSync;

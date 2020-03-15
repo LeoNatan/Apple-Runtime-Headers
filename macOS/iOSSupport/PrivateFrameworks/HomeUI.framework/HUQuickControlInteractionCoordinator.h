@@ -17,11 +17,11 @@
     id <HUQuickControlInteractionCoordinatorDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HUQuickControlInteractionCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UIView<HUQuickControlControllableView> *controlView; // @synthesize controlView=_controlView;
 @property(nonatomic, getter=isUserInteractionEnabled) BOOL userInteractionEnabled; // @synthesize userInteractionEnabled=_userInteractionEnabled;
 @property(nonatomic) BOOL viewVisible; // @synthesize viewVisible=_viewVisible;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isUserInteractionActive) BOOL userInteractionActive;
 - (void)recordInteractionStart;
 - (void)beginUserInteractionWithFirstTouchGestureRecognizer:(id)arg1;

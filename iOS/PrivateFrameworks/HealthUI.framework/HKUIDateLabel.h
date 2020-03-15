@@ -16,9 +16,9 @@
 
 + (id)_formattedTextFromDate:(id)arg1 formatTemplate:(long long)arg2 useUppercase:(_Bool)arg3;
 + (id)dateStringForDateRange:(id)arg1 formatTemplate:(long long)arg2 useUppercase:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useUppercase; // @synthesize useUppercase=_useUppercase;
 @property(readonly, nonatomic) HKValueRange *dateRange; // @synthesize dateRange=_dateRange;
-- (void).cxx_destruct;
 - (_Bool)_setDateRange:(id)arg1;
 - (void)setDateRange:(id)arg1 formatTemplate:(long long)arg2;
 - (void)setDate:(id)arg1 formatTemplate:(long long)arg2;

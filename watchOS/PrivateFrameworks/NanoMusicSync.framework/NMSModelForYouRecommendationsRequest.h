@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSDictionary *_nms_cachedStoreItemMetadataResults;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *nms_cachedStoreItemMetadataResults; // @synthesize nms_cachedStoreItemMetadataResults=_nms_cachedStoreItemMetadataResults;
 @property(retain, nonatomic) NSArray *nms_cachedRecommendationsArray; // @synthesize nms_cachedRecommendationsArray=_nms_cachedRecommendationsArray;
 @property(nonatomic) _Bool nms_useCachedDataOnly; // @synthesize nms_useCachedDataOnly=_nms_useCachedDataOnly;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)newOperationWithResponseHandler:(CDUnknownBlockType)arg1;
 

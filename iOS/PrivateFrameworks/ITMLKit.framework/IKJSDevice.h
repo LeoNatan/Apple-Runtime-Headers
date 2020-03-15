@@ -21,8 +21,8 @@
 }
 
 + (id)getMobileGestaltString:(struct __CFString *)arg1;
-@property(nonatomic) __weak id <IKAppDeviceConfig> deviceConfig; // @synthesize deviceConfig=_deviceConfig;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <IKAppDeviceConfig> deviceConfig; // @synthesize deviceConfig=_deviceConfig;
 @property(readonly, nonatomic) NSString *osBuildNumber;
 - (id)capacity:(id)arg1;
 @property(readonly, nonatomic) _Bool isSeedBuild;

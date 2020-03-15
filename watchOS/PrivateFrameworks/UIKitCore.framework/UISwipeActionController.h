@@ -22,6 +22,7 @@
     UISwipeOccurrence *_currentSwipeOccurrence;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UISwipeOccurrence *currentSwipeOccurrence; // @synthesize currentSwipeOccurrence=_currentSwipeOccurrence;
 @property(retain, nonatomic) NSMutableSet *swipeOccurrences; // @synthesize swipeOccurrences=_swipeOccurrences;
 @property(retain, nonatomic) _UISwipeHandler *swipeHandler; // @synthesize swipeHandler=_swipeHandler;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) UISwipeActionsConfiguration *incomingSwipeActionsConfiguration; // @synthesize incomingSwipeActionsConfiguration=_incomingSwipeActionsConfiguration;
 @property(nonatomic) unsigned int style; // @synthesize style=_style;
 @property(nonatomic) __weak id <UISwipeActionHost> swipeActionHost; // @synthesize swipeActionHost=_swipeActionHost;
-- (void).cxx_destruct;
 - (void)_observeScrollViewDidScroll:(id)arg1;
 - (struct CGRect)swipeHandlerRestingFrame:(id)arg1;
 - (void)swipeHandler:(id)arg1 didConfirmSwipeWithInfo:(CDStruct_5516dc31)arg2;

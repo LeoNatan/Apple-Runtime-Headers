@@ -14,8 +14,8 @@
     id <DNDSPairedDeviceStateMonitorDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <DNDSPairedDeviceStateMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <DNDSPairedDeviceStateMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)resume;
 @property(readonly, copy) DNDSPairedDevice *pairedDevice; // @dynamic pairedDevice;
 - (id)initWithIDSService:(id)arg1;

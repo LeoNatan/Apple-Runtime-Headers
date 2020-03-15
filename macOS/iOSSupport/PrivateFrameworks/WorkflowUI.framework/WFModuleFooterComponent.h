@@ -14,8 +14,8 @@
 }
 
 + (id)newWithText:(id)arg1;
-@property(retain, nonatomic) NSURL *link; // @synthesize link=_link;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSURL *link; // @synthesize link=_link;
 - (void)openLink;
 
 @end

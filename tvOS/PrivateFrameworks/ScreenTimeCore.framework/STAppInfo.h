@@ -21,6 +21,7 @@
     NSData *_artworkData;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSData *artworkData; // @synthesize artworkData=_artworkData;
 @property(copy, nonatomic) NSURL *artworkURL; // @synthesize artworkURL=_artworkURL;
 @property(copy, nonatomic) NSURL *localURL; // @synthesize localURL=_localURL;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) long long source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

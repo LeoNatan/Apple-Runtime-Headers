@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)scheduledTimerWithTimeInterval:(double)arg1 target:(id)arg2 selector:(SEL)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) SEL selector; // @synthesize selector=_selector;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)_timerDidFire;
 - (void)invalidate;
 - (void)dealloc;

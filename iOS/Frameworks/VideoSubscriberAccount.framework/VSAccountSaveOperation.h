@@ -17,12 +17,12 @@
     NSOperation *_currentOperation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperation *currentOperation; // @synthesize currentOperation=_currentOperation;
 @property(retain, nonatomic) VSAccountChannels *unsavedChannels; // @synthesize unsavedChannels=_unsavedChannels;
 @property(retain, nonatomic) VSPersistentStorage *storage; // @synthesize storage=_storage;
 @property(copy, nonatomic) NSArray *unsavedAccounts; // @synthesize unsavedAccounts=_unsavedAccounts;
 @property(retain, nonatomic) VSOptional *result; // @synthesize result=_result;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)executionDidBegin;
 - (void)_startAccountChannelsSaveOperation;

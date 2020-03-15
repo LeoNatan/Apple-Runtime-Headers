@@ -30,6 +30,7 @@
     EWSServerVersionInfo *_serverInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain) EWSServerVersionInfo *serverInfo; // @synthesize serverInfo=_serverInfo;
 @property BOOL logActivity; // @synthesize logActivity=_logActivity;
 @property(retain) id ewsResponse; // @synthesize ewsResponse=_ewsResponse;
@@ -43,7 +44,6 @@
 @property(copy) NSString *clientRequestID; // @synthesize clientRequestID=_clientRequestID;
 @property(copy) NSString *schemaVersion; // @synthesize schemaVersion=_schemaVersion;
 @property double timeout; // @synthesize timeout=_timeout;
-- (void).cxx_destruct;
 - (id)_serverVersionInfoFromHeaders:(id)arg1;
 - (void)failWithError:(id)arg1;
 - (BOOL)shouldRetryForOAuthTokenRefreshWithError:(id)arg1;

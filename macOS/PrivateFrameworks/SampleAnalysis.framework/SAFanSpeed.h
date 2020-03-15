@@ -20,16 +20,16 @@
 + (id)fanSpeedWithPAStyleSerializedFanSpeed:(const CDStruct_fc10d2b4 *)arg1;
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_931ec236 *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property(readonly) int fanSpeed; // @synthesize fanSpeed=_fanSpeed;
 @property(readonly) SATimestamp *timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 @property(readonly) BOOL fanSpeedIsValid;
 - (id)initWithTimestamp:(id)arg1;
 - (id)init;
-- (void)populateReferencesUsingBuffer:(CDStruct_931ec236 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(struct NSMutableDictionary *)arg3 andDataBufferDictionary:(struct NSMutableDictionary *)arg4;
+- (void)populateReferencesUsingBuffer:(CDStruct_931ec236 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(id)arg3 andDataBufferDictionary:(id)arg4;
 - (id)initEmpty;
-- (void)addSelfToSerializationDictionary:(struct NSMutableDictionary *)arg1;
-- (BOOL)addSelfToBuffer:(CDStruct_931ec236 *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg3;
+- (void)addSelfToSerializationDictionary:(id)arg1;
+- (BOOL)addSelfToBuffer:(CDStruct_931ec236 *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(id)arg3;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 
 // Remaining properties

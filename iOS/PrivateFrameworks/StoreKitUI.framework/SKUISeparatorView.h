@@ -15,10 +15,10 @@
     long long _separatorStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long separatorStyle; // @synthesize separatorStyle=_separatorStyle;
 @property(copy, nonatomic) UIColor *color2; // @synthesize color2=_color2;
 @property(copy, nonatomic) UIColor *color1; // @synthesize color1=_color1;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

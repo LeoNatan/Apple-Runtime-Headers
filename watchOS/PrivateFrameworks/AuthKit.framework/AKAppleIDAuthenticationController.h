@@ -20,11 +20,12 @@
 }
 
 + (id)sensitiveAuthenticationKeys;
-@property(copy, nonatomic) CDUnknownBlockType deallocHandler; // @synthesize deallocHandler=_deallocHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType deallocHandler; // @synthesize deallocHandler=_deallocHandler;
 - (id)_authenticationServiceConnection;
-- (id)_urlBagFromCache:(_Bool)arg1 withError:(id *)arg2;
-- (void)fetchURLBagWithCompletion:(CDUnknownBlockType)arg1;
+- (void)forceURLBagUpdateForAltDSID:(id)arg1 urlSwitchData:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)_urlBagFromCache:(_Bool)arg1 altDSID:(id)arg2 withError:(id *)arg3;
+- (void)fetchURLBagForAltDSID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)accountNamesForAltDSID:(id)arg1;
 - (void)validateVettingToken:(id)arg1 forAltDSID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)persistMasterKeyVerifier:(id)arg1 context:(id)arg2 completion:(CDUnknownBlockType)arg3;

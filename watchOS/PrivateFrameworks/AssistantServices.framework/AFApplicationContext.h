@@ -21,11 +21,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)newWithBuilder:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *contextDictionary; // @synthesize contextDictionary=_contextDictionary;
 @property(readonly, copy, nonatomic) AceObject *aceContext; // @synthesize aceContext=_aceContext;
 @property(readonly, copy, nonatomic) AFBulletin *bulletin; // @synthesize bulletin=_bulletin;
 @property(readonly, copy, nonatomic) NSString *associatedBundleIdentifier; // @synthesize associatedBundleIdentifier=_associatedBundleIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

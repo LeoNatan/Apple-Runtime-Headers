@@ -54,12 +54,12 @@
 + (void)initializeLocalAccountNamesInBackground;
 + (id)allCloudObjectsInContext:(id)arg1;
 + (id)existingCloudObjectForRecordID:(id)arg1 accountID:(id)arg2 context:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICAccountProxy *accountProxy; // @synthesize accountProxy=_accountProxy;
 @property(retain, nonatomic) ICFolder *trashFolder; // @synthesize trashFolder=_trashFolder;
 @property(retain, nonatomic) ICFolder *defaultFolder; // @synthesize defaultFolder=_defaultFolder;
 @property(nonatomic) BOOL didAddTrashObservers; // @synthesize didAddTrashObservers=_didAddTrashObservers;
 @property(nonatomic) BOOL didAddObservers; // @synthesize didAddObservers=_didAddObservers;
-- (void).cxx_destruct;
 - (void)updateSubFolderMergeableDataChangeCount;
 - (id)subFolderOrderMergeableData;
 - (void)setSubFolderOrderMergeableData:(id)arg1;

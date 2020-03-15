@@ -27,6 +27,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKImage *frontFaceImage; // @synthesize frontFaceImage=_frontFaceImage;
 @property(copy, nonatomic) NSSet *shippingActivity; // @synthesize shippingActivity=_shippingActivity;
 @property(copy, nonatomic) NSSet *orderActivity; // @synthesize orderActivity=_orderActivity;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSString *FPANSuffix; // @synthesize FPANSuffix=_FPANSuffix;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)shipmentTrackingURL;
 - (id)jsonDictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;

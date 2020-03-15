@@ -13,8 +13,8 @@
     ACAccount *_account;
 }
 
-@property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (id)urlRequest;
 - (id)initWithAccount:(id)arg1;
 

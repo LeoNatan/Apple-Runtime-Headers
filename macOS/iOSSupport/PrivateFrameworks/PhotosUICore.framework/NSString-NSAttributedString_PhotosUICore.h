@@ -14,6 +14,8 @@
 - (id)stringByRemovingDigits;
 - (BOOL)containsDigits;
 - (struct _NSRange)rangeOfDigits;
+- (id)px_stringByAppendingDescriptionDetails:(id)arg1;
+- (id)px_stringByAppendingDescriptionDetailsWithFormat:(id)arg1;
 @property(readonly, nonatomic) BOOL px_endsWithFullStopOrEquivalentPunctuationMark;
 @property(readonly, nonatomic) NSArray *px_integerValues;
 @property(readonly, nonatomic) struct _NSRange px_firstLetterRange;

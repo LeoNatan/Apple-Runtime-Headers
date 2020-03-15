@@ -10,8 +10,12 @@
 {
 }
 
++ (_Bool)_shouldShowAddCardFlow:(id)arg1;
 + (void)configureWebServiceIfNecessary:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)registrationIsSupportedInCurrentRegionWithWebService:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (void)shouldShowPasscodeAccessibilityOverride:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (void)shouldShowWalletInSettings:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (void)shouldShowWalletInBuddy:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end
 

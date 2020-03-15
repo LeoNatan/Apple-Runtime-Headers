@@ -16,10 +16,10 @@
 }
 
 + (Class)layoutAttributesClass;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPassAvailable) _Bool passAvailable; // @synthesize passAvailable=_passAvailable;
 @property(retain, nonatomic) NSArray *allowedIndexPaths; // @synthesize allowedIndexPaths=_allowedIndexPaths;
 @property(nonatomic) float yOffset; // @synthesize yOffset=_yOffset;
-- (void).cxx_destruct;
 - (id)indexPathForContentOffset:(struct CGPoint)arg1;
 - (struct CGPoint)contentOffsetForIndexPath:(id)arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;

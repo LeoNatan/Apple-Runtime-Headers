@@ -32,6 +32,7 @@
 }
 
 + (id)shared;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXKWorkspaceManager *_workspaceManager; // @synthesize _workspaceManager=__workspaceManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *_delegateQueue; // @synthesize _delegateQueue=__delegateQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *_trackerQueue; // @synthesize _trackerQueue=__trackerQueue;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) NSMutableSet *_listenerWrappers; // @synthesize _listenerWrappers=__listenerWrappers;
 @property(retain, nonatomic) AXFUIElement *_originalSharedElement; // @synthesize _originalSharedElement=__originalSharedElement;
 @property(nonatomic, getter=isStarted) BOOL started; // @synthesize started=_started;
-- (void).cxx_destruct;
 - (void)_performAsyncOnApplicationQueueOfElement:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)_performAsyncOnDelegateQueue:(CDUnknownBlockType)arg1;
 - (void)_performAsyncOnTrackerQueue:(CDUnknownBlockType)arg1;

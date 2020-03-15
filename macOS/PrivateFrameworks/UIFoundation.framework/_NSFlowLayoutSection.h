@@ -46,6 +46,7 @@
     BOOL _lastRecommendationWasShowSectionCollapseButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double scrollOffset; // @synthesize scrollOffset=_scrollOffset;
 @property(readonly, nonatomic) struct _NSRange validItemRange; // @synthesize validItemRange=_validItemRange;
 @property(readonly, nonatomic) long long itemsByRowCount; // @synthesize itemsByRowCount=_itemsByRowCount;
@@ -73,7 +74,6 @@
 @property(nonatomic) double verticalInterstice; // @synthesize verticalInterstice=_verticalInterstice;
 @property(readonly, nonatomic) NSMutableArray *rows; // @synthesize rows=_rows;
 @property(readonly, nonatomic) NSMutableArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (void)transformItemIfInCollapsedRowEndZone:(id)arg1;
 @property(nonatomic, getter=isCollapsed) BOOL collapsed;
 - (unsigned long long)rowIndexForItemAtIndex:(unsigned long long)arg1;

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSData *_request;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *playerPath; // @synthesize playerPath=_playerPath;
 @property(retain, nonatomic) NSData *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

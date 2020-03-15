@@ -29,6 +29,7 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(nonatomic) __weak MFMailMessageLibrary *library; // @synthesize library=_library;
 @property(retain, nonatomic) id <EMUserProfileProvider> userProfileProvider; // @synthesize userProfileProvider=_userProfileProvider;
 - (id)threadPersistence;
@@ -42,7 +43,6 @@
 - (id)database;
 - (id)conversationPersistence;
 @property(retain, nonatomic) id <EDAccountsProvider> accountsProvider; // @synthesize accountsProvider=_accountsProvider;
-- (void).cxx_destruct;
 - (void)scheduleRecurringActivity;
 - (void)_configureSearchableIndexManagerIfNecessary;
 - (void)setUpWithMailboxProvider:(id)arg1 remoteSearchProvider:(id)arg2;

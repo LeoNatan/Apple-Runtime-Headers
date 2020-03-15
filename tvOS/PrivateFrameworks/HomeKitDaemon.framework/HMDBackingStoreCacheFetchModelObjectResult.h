@@ -14,9 +14,9 @@
     HMDBackingStoreModelObject *_object;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMDBackingStoreModelObject *object; // @synthesize object=_object;
 @property(readonly, nonatomic) CKRecord *record; // @synthesize record=_record;
-- (void).cxx_destruct;
 - (id)initWithRecord:(id)arg1 data:(id)arg2 encoding:(unsigned long long)arg3 error:(id *)arg4;
 
 @end

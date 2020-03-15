@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     NSURL *_shareURL;
 }
 
-@property(readonly, nonatomic) NSURL *shareURL; // @synthesize shareURL=_shareURL;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *shareURL; // @synthesize shareURL=_shareURL;
 - (id)activityViewControllerLinkPresentationMetadata:(id)arg1;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;

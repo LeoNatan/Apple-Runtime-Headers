@@ -38,18 +38,19 @@ struct BindingEvaluator {
     id _field2;
     id _field3;
     id _field4;
-    unsigned int _field5;
-    id _field6;
-    struct LSVersionNumber _field7;
-    char _field8;
-    unsigned long long _field9;
-    unsigned int _field10;
+    id _field5;
+    unsigned int _field6;
+    id _field7;
+    struct LSVersionNumber _field8;
+    char _field9;
+    unsigned long long _field10;
     unsigned int _field11;
-    struct vector<LSBundleClass, std::__1::allocator<LSBundleClass>> _field12;
-    CDUnknownBlockType _field13;
-    id _field14;
-    CDUnknownBlockType _field15;
-    id _field16;
+    unsigned int _field12;
+    struct vector<LSBundleClass, std::__1::allocator<LSBundleClass>> _field13;
+    CDUnknownBlockType _field14;
+    id _field15;
+    CDUnknownBlockType _field16;
+    id _field17;
 };
 
 struct CSMap {
@@ -292,35 +293,6 @@ struct LSSchema {
 
 struct LSVersionNumber {
     unsigned char _opaque[32];
-};
-
-struct NSMutableDictionary {
-    Class _field1;
-};
-
-struct NSMutableSet {
-    Class _field1;
-};
-
-struct NSXPCConnection {
-    Class _field1;
-    void *_field2;
-    id _field3;
-    id _field4;
-    unsigned int _field5;
-    unsigned int _field6;
-    CDUnknownBlockType _field7;
-    CDUnknownBlockType _field8;
-    id _field9;
-    id _field10;
-    id _field11;
-    id _field12;
-    id _field13;
-    id _field14;
-    id _field15;
-    id _field16;
-    id _field17;
-    id _field18;
 };
 
 struct OpaqueAEDataStorageType;
@@ -576,7 +548,7 @@ typedef struct optional<LaunchServices::BindingEvaluator> {
         struct BindingEvaluator _field2;
     } _field1;
     _Bool _field2;
-} optional_a0013cf8;
+} optional_2a5bf5f3;
 
 typedef struct unordered_map<OpaqueMappedResourceFileRef *, NSData *, std::__1::hash<OpaqueMappedResourceFileRef *>, std::__1::equal_to<OpaqueMappedResourceFileRef *>, std::__1::allocator<std::__1::pair<OpaqueMappedResourceFileRef *const, NSData *>>> {
     struct __hash_table<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, std::__1::__unordered_map_hasher<OpaqueMappedResourceFileRef *, std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, std::__1::hash<OpaqueMappedResourceFileRef *>, true>, std::__1::__unordered_map_equal<OpaqueMappedResourceFileRef *, std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, std::__1::equal_to<OpaqueMappedResourceFileRef *>, true>, std::__1::allocator<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>>> {

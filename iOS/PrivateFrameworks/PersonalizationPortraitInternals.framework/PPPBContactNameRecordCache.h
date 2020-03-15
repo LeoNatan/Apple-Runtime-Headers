@@ -20,9 +20,9 @@
 }
 
 + (Class)recordsType;
+- (void).cxx_destruct;
 @property(nonatomic) long long createdAt; // @synthesize createdAt=_createdAt;
 @property(retain, nonatomic) NSMutableArray *records; // @synthesize records=_records;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -15,12 +15,12 @@
 }
 
 + (id)newWithAttributes:(const struct WFTextInputAttributes *)arg1 updateBlock:(CDUnknownBlockType)arg2 beginAction:(CKTypedComponentAction_789af415)arg3 doneAction:(CKTypedComponentAction_789af415)arg4 size:(const struct CKComponentSize *)arg5;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CKTypedComponentAction_789af415 doneAction; // @synthesize doneAction=_doneAction;
 @property(readonly, nonatomic) CKTypedComponentAction_789af415 beginAction; // @synthesize beginAction=_beginAction;
 @property(readonly, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
 @property(readonly, nonatomic) struct WFTextInputAttributes attributes; // @synthesize attributes=_attributes;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 
 @end
 

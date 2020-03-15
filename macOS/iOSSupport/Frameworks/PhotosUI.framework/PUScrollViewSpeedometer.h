@@ -28,6 +28,7 @@
     struct CGPoint __lastContentOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setNextRegimeCount:) long long _nextRegimeCount; // @synthesize _nextRegimeCount=__nextRegimeCount;
 @property(nonatomic, setter=_setNextRegime:) long long _nextRegime; // @synthesize _nextRegime=__nextRegime;
 @property(retain, nonatomic, setter=_setTimeoutTimer:) NSTimer *_timeoutTimer; // @synthesize _timeoutTimer=__timeoutTimer;
@@ -42,7 +43,6 @@
 @property(nonatomic, setter=_setRegime:) long long regime; // @synthesize regime=_regime;
 @property(nonatomic, setter=_setScrollSpeed:) struct CGPoint scrollSpeed; // @synthesize scrollSpeed=_scrollSpeed;
 @property(nonatomic) __weak id <PUScrollViewSpeedometerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (long long)_newRegimeForScrollSpeed:(struct CGPoint)arg1;
 - (void)_handleTimeoutTimer:(id)arg1;
 - (void)_rescheduleTimeout;

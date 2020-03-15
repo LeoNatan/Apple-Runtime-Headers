@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     PUBrowsingSession *_browsingSession;
 }
 
-@property(retain, nonatomic) PUBrowsingSession *browsingSession; // @synthesize browsingSession=_browsingSession;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PUBrowsingSession *browsingSession; // @synthesize browsingSession=_browsingSession;
 - (void)_updateScrubberBarButtonItemIfNeeded;
 - (void)_invalidateScrubberBarButtonItem;
 @property(readonly, nonatomic) UIBarButtonItem *scrubberBarButtonItem; // @synthesize scrubberBarButtonItem=_scrubberBarButtonItem;

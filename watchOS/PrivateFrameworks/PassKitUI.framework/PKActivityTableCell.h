@@ -13,8 +13,8 @@
     UIActivityIndicatorView *_activityIndicator;
 }
 
-@property(readonly, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 - (void)layoutSubviews;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (id)pk_childrenForAppearance;

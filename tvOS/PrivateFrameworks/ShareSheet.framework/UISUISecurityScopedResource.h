@@ -30,12 +30,12 @@
 + (id)scopedResourceWithFileURL:(id)arg1 allowedAccess:(long long)arg2;
 + (id)scopedResourcesForAncestorsOfItemWithAbsolutePath:(id)arg1 traversalStopPaths:(id)arg2 allowedAccess:(long long)arg3;
 + (id)scopedResourceWithAbsolutePath:(id)arg1 allowedAccess:(long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) long long underlyingSandboxAssertionHandle; // @synthesize underlyingSandboxAssertionHandle=_underlyingSandboxAssertionHandle;
 @property(nonatomic) _Bool hasActiveAccessAssertion; // @synthesize hasActiveAccessAssertion=_hasActiveAccessAssertion;
 @property(retain, nonatomic) FPSandboxingURLWrapper *sandboxExtensionWrapper; // @synthesize sandboxExtensionWrapper=_sandboxExtensionWrapper;
 @property(nonatomic) long long allowedAccess; // @synthesize allowedAccess=_allowedAccess;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (_Bool)_isEqualAccessToSecurityScopedResource:(id)arg1;
 - (void)stopAccessing;
 - (void)startAccessing;

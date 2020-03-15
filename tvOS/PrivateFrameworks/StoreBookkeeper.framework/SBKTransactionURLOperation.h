@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)operationWithRequest:(id)arg1 delegate:(id)arg2;
-@property(retain, nonatomic) SBKRequest *SBKRequest; // @synthesize SBKRequest=_SBKRequest;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SBKRequest *SBKRequest; // @synthesize SBKRequest=_SBKRequest;
 - (id)description;
 @property(nonatomic) _Bool shouldAuthenticate; // @synthesize shouldAuthenticate=_shouldAuthenticate;
 - (id)_init;

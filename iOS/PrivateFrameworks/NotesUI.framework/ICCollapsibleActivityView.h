@@ -13,8 +13,8 @@
     UIActivityIndicatorView *_activityIndicator;
 }
 
-@property(retain, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(readonly, nonatomic) _Bool isAnimating;
 - (void)performSetup;
 - (void)setCollapsed:(_Bool)arg1;

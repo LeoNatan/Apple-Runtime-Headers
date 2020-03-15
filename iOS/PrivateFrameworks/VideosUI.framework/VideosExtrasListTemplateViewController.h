@@ -26,8 +26,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)relatedContentViewControllerForElement:(id)arg1;
-@property(retain, nonatomic) VideosExtrasViewElementViewController *relatedContentViewController; // @synthesize relatedContentViewController=_relatedContentViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VideosExtrasViewElementViewController *relatedContentViewController; // @synthesize relatedContentViewController=_relatedContentViewController;
 - (void)_configureVignette:(_Bool)arg1;
 - (void)_prepareLayout;
 - (void)_setNavigationConstraints;

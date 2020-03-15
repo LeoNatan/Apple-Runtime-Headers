@@ -24,12 +24,12 @@
 + (_Bool)_hasOptionsForServices:(id)arg1 outCharacteristicType:(id *)arg2;
 + (_Bool)hasOptionsForAnyServiceInHome:(id)arg1;
 + (_Bool)hasOptionsForServiceVendingItem:(id)arg1 outCharacteristicType:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <HFCharacteristicValueSource> overrideValueSource; // @synthesize overrideValueSource=_overrideValueSource;
 @property(retain, nonatomic) NSMutableSet *optionItems; // @synthesize optionItems=_optionItems;
 @property(retain, nonatomic) HFItem<HFServiceVendor> *serviceVendingItem; // @synthesize serviceVendingItem=_serviceVendingItem;
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (void)setValueSource:(id)arg1;
 - (id)valueSource;
 - (id)_optionsForCharacteristicType:(id)arg1 characteristics:(id)arg2;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <PUTilingViewControllerTransition> _currentTransition;
 }
 
-@property(readonly, nonatomic) __weak id <PUTilingViewControllerTransition> currentTransition; // @synthesize currentTransition=_currentTransition;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <PUTilingViewControllerTransition> currentTransition; // @synthesize currentTransition=_currentTransition;
 - (void)transition:(id)arg1 didComplete:(_Bool)arg2;
 - (void)transitionDidBeginAnimation:(id)arg1;
 - (void)transitionWillBeginAnimation:(id)arg1;

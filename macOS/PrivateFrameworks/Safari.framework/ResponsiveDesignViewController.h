@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     WKWebView *_webView;
 }
 
-@property(readonly, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
 - (void)responsiveDesignContainerView:(id)arg1 didChangeBrowserSize:(struct CGSize)arg2;
 - (id)snapHeightsForResponsiveDesignContainerView:(id)arg1;
 - (id)snapWidthsForResponsiveDesignContainerView:(id)arg1;

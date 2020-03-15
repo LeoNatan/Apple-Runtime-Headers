@@ -28,6 +28,7 @@
 - (void)_removeLocalTransaction:(id)arg1;
 - (void)_refreshPaymentsWithPolicy:(long long)arg1;
 - (void)_processUpdates:(id)arg1 trimUnmatched:(BOOL)arg2 sendUpdatedDownloads:(BOOL)arg3;
+- (void)_processTransaction:(id)arg1;
 - (void)_notifyObserversAboutPurchaseIntentsForProducts:(id)arg1;
 - (void)_notifyObserversRestoreTransactionsFinished;
 - (void)_notifyObserversRestoreTransactionsFailedWithError:(id)arg1;

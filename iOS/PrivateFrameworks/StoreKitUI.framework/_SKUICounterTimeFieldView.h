@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _visibilityField;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long visibilityField; // @synthesize visibilityField=_visibilityField;
 @property(readonly, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(readonly, nonatomic) UILabel *labelLabel; // @synthesize labelLabel=_labelLabel;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)layoutSubviews;

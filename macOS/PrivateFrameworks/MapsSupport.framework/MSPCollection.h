@@ -23,9 +23,9 @@
 + (Class)mutableObjectClass;
 + (id)immutableObjectProtocol;
 + (Class)immutableObjectClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MSPCollectionItemReplica *itemReplica; // @synthesize itemReplica=_itemReplica;
 - (id)storageIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFromCollection:(id)arg1 isUserVisibleChange:(out char *)arg2;

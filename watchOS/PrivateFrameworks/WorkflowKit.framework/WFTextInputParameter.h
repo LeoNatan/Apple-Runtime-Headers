@@ -25,6 +25,7 @@
     unsigned int _syntaxHighlightingType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool processesIntoContentItems; // @synthesize processesIntoContentItems=_processesIntoContentItems;
 @property(readonly, nonatomic) unsigned int syntaxHighlightingType; // @synthesize syntaxHighlightingType=_syntaxHighlightingType;
 @property(readonly, nonatomic) unsigned int hintDisplayMode; // @synthesize hintDisplayMode=_hintDisplayMode;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) int keyboardType; // @synthesize keyboardType=_keyboardType;
 @property(readonly, nonatomic, getter=isSecureTextEntry) _Bool secureTextEntry; // @synthesize secureTextEntry=_secureTextEntry;
 @property(copy, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
-- (void).cxx_destruct;
 - (void)setLocalizedPlaceholder:(id)arg1;
 - (id)defaultSupportedVariableTypes;
 - (id)hintForState:(id)arg1;

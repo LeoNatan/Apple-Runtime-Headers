@@ -35,8 +35,8 @@ __attribute__((visibility("hidden")))
 + (id)keyValueStoreDisabledErrorWithTransaction:(id)arg1 underlyingError:(id)arg2;
 + (id)unknownErrorWithTransaction:(id)arg1 underlyingError:(id)arg2;
 + (id)keyValueStoreErrorWithCode:(long long)arg1 localizedDescription:(id)arg2 transaction:(id)arg3 underlyingError:(id)arg4;
-@property(retain) SBKTransaction *transaction; // @synthesize transaction=_transaction;
 - (void).cxx_destruct;
+@property(retain) SBKTransaction *transaction; // @synthesize transaction=_transaction;
 @property(readonly) double retrySeconds;
 @property(readonly, copy) NSString *currentStoreAccountName;
 @property(readonly, copy) NSString *previousStoreAccountName;

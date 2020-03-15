@@ -13,8 +13,8 @@
     PHPhotoLibrary *_photoLibrary;
 }
 
-@property(retain) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 - (void).cxx_destruct;
+@property(retain) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 
 @end
 

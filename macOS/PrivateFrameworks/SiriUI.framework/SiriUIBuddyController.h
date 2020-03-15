@@ -31,12 +31,12 @@
     NSDictionary *_userInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly) __weak id <MBSecondPartyHost> host; // @synthesize host=_host;
 @property __weak id <SiriUIBuddyDelegate> delegate; // @synthesize delegate=_delegate;
 @property BOOL skippedVoiceTrigger; // @synthesize skippedVoiceTrigger=_skippedVoiceTrigger;
 @property BOOL enableSiri; // @synthesize enableSiri=_enableSiri;
-- (void).cxx_destruct;
 - (void)didCloseLid:(id)arg1;
 - (void)didOpenLid:(id)arg1;
 - (long long)_mbuaGetDataSharingOptInStatus;

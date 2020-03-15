@@ -13,8 +13,8 @@
     NSArray *_columnStack;
 }
 
-@property(readonly, nonatomic) NSArray *columnStack; // @synthesize columnStack=_columnStack;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *columnStack; // @synthesize columnStack=_columnStack;
 - (id)description;
 - (unsigned long long)rangeInBounds:(struct _NSRange)arg1;
 - (id)componentsAfterComponent:(id)arg1;

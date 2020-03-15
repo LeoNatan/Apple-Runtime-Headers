@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(readonly, copy) NSNumber *numberValue; // @synthesize numberValue=_numberValue;
 @property(readonly, copy) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 - (id)description;

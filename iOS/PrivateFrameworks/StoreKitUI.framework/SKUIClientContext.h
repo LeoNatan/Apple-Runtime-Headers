@@ -43,6 +43,7 @@
 + (id)localizedStringForKey:(id)arg1 inBundles:(id)arg2 inTable:(id)arg3;
 + (id)localizedStringForKey:(id)arg1 inBundles:(id)arg2;
 + (id)defaultContext;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSCache *placeholderImageCache; // @synthesize placeholderImageCache=_placeholderImageCache;
 @property(nonatomic) long long userInterfaceIdiomOverride; // @synthesize userInterfaceIdiomOverride=_userInterfaceIdiomOverride;
 @property(retain, nonatomic) SSUpdatableAssetController *updatableAssetController; // @synthesize updatableAssetController=_updatableAssetController;
@@ -54,7 +55,6 @@
 @property(readonly, copy, nonatomic) NSDictionary *configurationDictionary; // @synthesize configurationDictionary=_configurationDictionary;
 @property(readonly, nonatomic) SUClientInterface *clientInterface; // @synthesize clientInterface=_clientInterface;
 @property(nonatomic, getter=_applicationController, setter=_setApplicationController:) __weak SKUIApplicationController *_applicationController; // @synthesize _applicationController;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)_navigationHistory;
 - (void)_setValue:(id)arg1 forConfigurationKey:(id)arg2;

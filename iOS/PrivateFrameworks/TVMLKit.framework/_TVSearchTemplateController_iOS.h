@@ -30,8 +30,8 @@
     IKViewElement *_viewElement;
 }
 
-@property(readonly, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 - (id)impressionableElementsContainedInDocument:(id)arg1;
 - (void)_recordImpressionsForVisibleView;
 - (void)_cancelImpressionsUpdate;

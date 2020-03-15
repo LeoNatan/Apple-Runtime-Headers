@@ -20,10 +20,10 @@
 
 + (id)notificationDataFromPersistentStorageWithPath:(id)arg1 error:(id *)arg2;
 + (id)persistentStorageWithPath:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) CALNInMemoryTriggeredEventNotificationDataStorage *inMemoryStorage; // @synthesize inMemoryStorage=_inMemoryStorage;
 @property(readonly, copy, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (_Bool)_saveDataWithError:(id *)arg1;
 - (_Bool)_loadDataWithError:(id *)arg1;
 - (void)_removeData;

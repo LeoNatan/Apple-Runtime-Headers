@@ -13,8 +13,8 @@
     id <AVTSectionItemTransitionModel> _sectionItemTransitionModel;
 }
 
-@property(readonly, nonatomic) id <AVTSectionItemTransitionModel> sectionItemTransitionModel; // @synthesize sectionItemTransitionModel=_sectionItemTransitionModel;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <AVTSectionItemTransitionModel> sectionItemTransitionModel; // @synthesize sectionItemTransitionModel=_sectionItemTransitionModel;
 - (id)model;
 - (void)performTransition;
 - (id)initWithModel:(id)arg1 animated:(_Bool)arg2 setupHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4 logger:(id)arg5;

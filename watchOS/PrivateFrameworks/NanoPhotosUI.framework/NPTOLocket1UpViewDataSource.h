@@ -15,8 +15,8 @@
     NPTOLocketReader *_reader;
 }
 
-@property(retain) NPTOLocketReader *reader; // @synthesize reader=_reader;
 - (void).cxx_destruct;
+@property(retain) NPTOLocketReader *reader; // @synthesize reader=_reader;
 - (id)photo1UpModelAtIndex:(unsigned int)arg1;
 - (unsigned int)photo1UpViewNumberOfPhotos;
 

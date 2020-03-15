@@ -15,9 +15,9 @@
     HapticClient *_client;
 }
 
+- (void).cxx_destruct;
 @property __weak HapticClient *client; // @synthesize client=_client;
 @property unsigned int chanID; // @synthesize chanID=_chanID;
-- (void).cxx_destruct;
 - (_Bool)resetAtTime:(double)arg1 error:(id *)arg2;
 - (_Bool)scheduleParameterCurve:(unsigned int)arg1 curve:(id)arg2 atTime:(double)arg3 error:(id *)arg4;
 - (_Bool)setParameter:(unsigned int)arg1 value:(float)arg2 atTime:(double)arg3 error:(id *)arg4;

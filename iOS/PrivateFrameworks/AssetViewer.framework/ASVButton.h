@@ -31,6 +31,7 @@
     struct UIEdgeInsets _largeImageInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *white26PercentColor; // @synthesize white26PercentColor=_white26PercentColor;
 @property(retain, nonatomic) UIColor *white52PercentColor; // @synthesize white52PercentColor=_white52PercentColor;
 @property(retain, nonatomic) UIColor *white75PercentColor; // @synthesize white75PercentColor=_white75PercentColor;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) ASVWrappedButton *button; // @synthesize button=_button;
 @property(nonatomic) struct UIEdgeInsets largeImageInsets; // @synthesize largeImageInsets=_largeImageInsets;
 @property(nonatomic) long long controlStyle; // @synthesize controlStyle=_controlStyle;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateCurrentAppearanceIfNeeded;
 - (void)layoutSubviews;

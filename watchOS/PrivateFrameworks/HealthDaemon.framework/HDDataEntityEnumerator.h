@@ -26,6 +26,7 @@
     NSString *_lastSQL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *lastSQL; // @synthesize lastSQL=_lastSQL;
 @property(nonatomic) _Bool improveJoinOrderingForStartDateIndexSelection; // @synthesize improveJoinOrderingForStartDateIndexSelection=_improveJoinOrderingForStartDateIndexSelection;
 @property(nonatomic) _Bool ignoreEntityClassAdditionalPredicateForEnumeration; // @synthesize ignoreEntityClassAdditionalPredicateForEnumeration=_ignoreEntityClassAdditionalPredicateForEnumeration;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSSet *restrictedSourceEntities; // @synthesize restrictedSourceEntities=_restrictedSourceEntities;
 @property(retain, nonatomic) _HKFilter *filter; // @synthesize filter=_filter;
 @property(readonly, nonatomic) NSSet *objectTypes; // @synthesize objectTypes=_objectTypes;
-- (void).cxx_destruct;
 - (id)_joinClauseForProperties:(id)arg1;
 - (_Bool)_enumerateObjectsOnDatabase:(id)arg1 error:(id *)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)_prepareDeletedObjectsAndSamplesDescriptor:(id)arg1 error:(id *)arg2;

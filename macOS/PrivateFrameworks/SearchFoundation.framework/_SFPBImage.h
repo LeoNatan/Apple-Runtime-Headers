@@ -33,6 +33,7 @@
     _SFPBCalendarImage *_calendarImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _SFPBCalendarImage *calendarImage; // @synthesize calendarImage=_calendarImage;
 @property(retain, nonatomic) _SFPBMediaArtworkImage *mediaArtworkImage; // @synthesize mediaArtworkImage=_mediaArtworkImage;
 @property(retain, nonatomic) _SFPBAppIconImage *appIconImage; // @synthesize appIconImage=_appIconImage;
@@ -51,7 +52,6 @@
 @property(nonatomic) BOOL shouldCropToCircle; // @synthesize shouldCropToCircle=_shouldCropToCircle;
 @property(nonatomic) BOOL isTemplate; // @synthesize isTemplate=_isTemplate;
 @property(copy) NSData *imageData; // @synthesize imageData=_imageData;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

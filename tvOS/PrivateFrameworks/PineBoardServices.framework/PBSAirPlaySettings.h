@@ -31,6 +31,7 @@
 + (unsigned long long)migrateWithContext:(id)arg1 error:(id *)arg2;
 + (id)_airPlayPreferences;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isNearbyAirPlayEnabled) _Bool nearbyAirPlayEnabled; // @synthesize nearbyAirPlayEnabled=_nearbyAirPlayEnabled;
 @property(nonatomic) unsigned long long accessType; // @synthesize accessType=_accessType;
 @property(readonly, copy, nonatomic) NSArray *availableSecurityTypes; // @synthesize availableSecurityTypes=_availableSecurityTypes;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic, getter=isSettingsModificationAllowed) _Bool settingsModificationAllowed; // @synthesize settingsModificationAllowed=_settingsModificationAllowed;
 @property(readonly, nonatomic, getter=isAirPlayAllowed) _Bool airPlayAllowed; // @synthesize airPlayAllowed=_airPlayAllowed;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)_setPassword:(id)arg1;
 - (void)_writeAirPlayAccessSettings;
 - (void)_updateSettings;

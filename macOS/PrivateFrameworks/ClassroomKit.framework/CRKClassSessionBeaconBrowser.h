@@ -26,6 +26,7 @@
 }
 
 + (id)invitationUUID;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isScanning; // @synthesize isScanning=_isScanning;
 @property(copy, nonatomic) NSSet *trackingUUIDs; // @synthesize trackingUUIDs=_trackingUUIDs;
 @property(retain, nonatomic) CRKWiProxTrackerScanner *trackerScanner; // @synthesize trackerScanner=_trackerScanner;
@@ -33,7 +34,6 @@
 @property(nonatomic) BOOL allowInvitationSessions; // @synthesize allowInvitationSessions=_allowInvitationSessions;
 @property(copy, nonatomic) NSSet *organizationUUIDs; // @synthesize organizationUUIDs=_organizationUUIDs;
 @property(nonatomic) __weak id <CRKClassSessionBeaconBrowserDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)delegateDidFailWithError:(id)arg1;
 - (void)delegateDidFindInvitationSessionWithEndpoint:(id)arg1;
 - (void)delegateDidFindClassSession:(id)arg1 flags:(unsigned short)arg2;

@@ -14,9 +14,9 @@
     CNObservable *_observable;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNObservable *observable; // @synthesize observable=_observable;
 @property(retain, nonatomic) NSString *debugDescription; // @synthesize debugDescription=_debugDescription;
-- (void).cxx_destruct;
 - (id)subscribe:(id)arg1;
 - (id)initWithBlock:(CDUnknownBlockType)arg1;
 

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     TVSWiFiNetwork *_network;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVSWiFiNetwork *network; // @synthesize network=_network;
 @property(retain, nonatomic) TVSWiFiInterface *interface; // @synthesize interface=_interface;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithInterface:(id)arg1 network:(id)arg2;
 - (id)init;

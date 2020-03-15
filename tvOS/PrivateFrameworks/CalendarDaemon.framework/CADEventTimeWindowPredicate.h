@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool mustStartInInterval; // @synthesize mustStartInInterval=_mustStartInInterval;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) CADPredicate *wrappedPredicate; // @synthesize wrappedPredicate=_wrappedPredicate;
-- (void).cxx_destruct;
 - (id)defaultPropertiesToLoad;
 - (_Bool)shouldLoadDefaultProperties;
 - (void)encodeWithCoder:(id)arg1;

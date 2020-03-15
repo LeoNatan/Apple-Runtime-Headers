@@ -30,6 +30,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *serviceAssigned; // @synthesize serviceAssigned=_serviceAssigned;
 @property(retain, nonatomic) NSNumber *recipientUserId; // @synthesize recipientUserId=_recipientUserId;
 @property(retain, nonatomic) NSString *recipientUsername; // @synthesize recipientUsername=_recipientUsername;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) NSString *notebookGuid; // @synthesize notebookGuid=_notebookGuid;
 @property(retain, nonatomic) NSNumber *userId; // @synthesize userId=_userId;
 @property(retain, nonatomic) NSNumber *id; // @synthesize id=_id;
-- (void).cxx_destruct;
 
 @end
 

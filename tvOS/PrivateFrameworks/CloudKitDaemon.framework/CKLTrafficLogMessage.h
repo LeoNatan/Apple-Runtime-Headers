@@ -23,6 +23,7 @@
     NSArray *_responseObjects;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *responseObjects; // @synthesize responseObjects=_responseObjects;
 @property(retain, nonatomic) NSDictionary *responseHeaders; // @synthesize responseHeaders=_responseHeaders;
 @property(readonly, nonatomic) NSDate *responseTime; // @synthesize responseTime=_responseTime;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSString *requestMethod; // @synthesize requestMethod=_requestMethod;
 @property(retain, nonatomic) NSDate *requestTime; // @synthesize requestTime=_requestTime;
 @property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_initWithUUID:(id)arg1 requestMetadata:(id)arg2 requestObjects:(id)arg3 bodyStreamResetCount:(long long)arg4 responseMetadata:(id)arg5 responseObjects:(id)arg6;
 

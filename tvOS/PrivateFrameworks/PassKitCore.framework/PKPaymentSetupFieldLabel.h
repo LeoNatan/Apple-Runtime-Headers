@@ -20,6 +20,7 @@
     unsigned long long _alingment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long alingment; // @synthesize alingment=_alingment;
 @property(copy, nonatomic) NSString *businessChatIntentName; // @synthesize businessChatIntentName=_businessChatIntentName;
 @property(copy, nonatomic) NSString *businessChatIdentifier; // @synthesize businessChatIdentifier=_businessChatIdentifier;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) NSString *detailSubtitle; // @synthesize detailSubtitle=_detailSubtitle;
 @property(copy, nonatomic) NSString *detailTitle; // @synthesize detailTitle=_detailTitle;
 @property(copy, nonatomic) NSString *buttonTitle; // @synthesize buttonTitle=_buttonTitle;
-- (void).cxx_destruct;
 - (unsigned long long)fieldType;
 - (_Bool)submissionStringMeetsAllRequirements;
 - (id)submissionString;

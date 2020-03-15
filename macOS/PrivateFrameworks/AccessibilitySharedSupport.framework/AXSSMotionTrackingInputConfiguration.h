@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL allowSeparateInputForExpressions; // @synthesize allowSeparateInputForExpressions=_allowSeparateInputForExpressions;
 @property(copy, nonatomic) NSSet *allowedTrackingTypes; // @synthesize allowedTrackingTypes=_allowedTrackingTypes;
 @property(copy, nonatomic) NSArray *orderedInputPreference; // @synthesize orderedInputPreference=_orderedInputPreference;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqualToMotionTrackingInputConfiguration:(id)arg1;

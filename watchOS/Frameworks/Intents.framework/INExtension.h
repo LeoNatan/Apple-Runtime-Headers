@@ -17,8 +17,8 @@
 }
 
 + (void)initialize;
-@property(readonly, nonatomic) INExtensionContext *_extensionContext; // @synthesize _extensionContext;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) INExtensionContext *_extensionContext; // @synthesize _extensionContext;
 - (id)handlerForIntent:(id)arg1;
 - (void)beginRequestWithExtensionContext:(id)arg1;
 

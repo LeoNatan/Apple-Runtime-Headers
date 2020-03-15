@@ -31,6 +31,7 @@
     long long _ptpTrashedState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long ptpTrashedState; // @synthesize ptpTrashedState=_ptpTrashedState;
 @property(retain, nonatomic) NSDate *trashedDate; // @synthesize trashedDate=_trashedDate;
 @property(nonatomic) short trashedState; // @synthesize trashedState=_trashedState;
@@ -46,7 +47,6 @@
 @property(nonatomic) unsigned int recipeID; // @synthesize recipeID=_recipeID;
 @property(nonatomic) unsigned int resourceType; // @synthesize resourceType=_resourceType;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqualToValidatedExternalResource:(id)arg1;
 - (void)setTrashedStateFromURL;

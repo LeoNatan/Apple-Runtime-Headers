@@ -38,6 +38,8 @@
             unsigned int usesPunctuationKeysForRowNavigation:1;
             unsigned int insertsSpaceAfterPredictiveInput:1;
             unsigned int shouldFixupIncompleteRomaji:1;
+            unsigned int usesLiveConversion:1;
+            unsigned int delayedCandidateList:1;
         } fields;
     } _mask;
     _Bool _shouldAddModifierSymbolsToWordCharacters;
@@ -60,6 +62,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *searchStringForMarkedText; // @synthesize searchStringForMarkedText=_searchStringForMarkedText;
 @property(copy, nonatomic) TICharacterSetDescription *terminatorsDeletingAutospace; // @synthesize terminatorsDeletingAutospace=_terminatorsDeletingAutospace;
 @property(copy, nonatomic) TICharacterSetDescription *terminatorsPreventingAutocorrection; // @synthesize terminatorsPreventingAutocorrection=_terminatorsPreventingAutocorrection;
@@ -78,7 +81,6 @@
 @property(nonatomic) unsigned long long inputCount; // @synthesize inputCount=_inputCount;
 @property(copy, nonatomic) NSString *wordSeparator; // @synthesize wordSeparator=_wordSeparator;
 @property(retain, nonatomic) TIKeyboardCandidate *autocorrectionRecordForInputString; // @synthesize autocorrectionRecordForInputString=_autocorrectionRecordForInputString;
-- (void).cxx_destruct;
 - (_Bool)stringEndsWord:(id)arg1;
 - (_Bool)shouldDeleteAutospaceBeforeTerminator:(id)arg1;
 - (_Bool)shouldSuppressAutocorrectionWithTerminator:(id)arg1;
@@ -90,6 +92,10 @@
 @property(nonatomic) _Bool shouldFixupIncompleteRomaji;
 @property(nonatomic) _Bool insertsSpaceAfterPredictiveInput;
 @property(nonatomic) _Bool usesContinuousPathProgressiveCandidates;
+- (void)setDelayedCandidateList:(_Bool)arg1;
+- (_Bool)delayedCandidateList;
+- (void)setUsesLiveConversion:(_Bool)arg1;
+- (_Bool)usesLiveConversion;
 @property(nonatomic) _Bool usesContinuousPath;
 @property(nonatomic) unsigned long long autoquoteType;
 @property(nonatomic) _Bool suppressPlaceholderCandidate;

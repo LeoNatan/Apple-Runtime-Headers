@@ -16,11 +16,11 @@
     NSTextField *_customDuration;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextField *customDuration; // @synthesize customDuration=_customDuration;
 @property(retain) NSPopUpButton *customUnit; // @synthesize customUnit=_customUnit;
 @property(retain) IGPopupWindowController *popup; // @synthesize popup=_popup;
 @property __weak EKEvent *event; // @synthesize event=_event;
-- (void).cxx_destruct;
 - (void)cancelClicked:(id)arg1;
 - (void)okClicked:(id)arg1;
 - (BOOL)showPopupOnView:(id)arg1;

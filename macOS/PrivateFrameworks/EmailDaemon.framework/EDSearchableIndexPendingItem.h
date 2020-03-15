@@ -16,10 +16,10 @@
     id <EDIndexableItem> _referenceItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <EDIndexableItem> referenceItem; // @synthesize referenceItem=_referenceItem;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, nonatomic) BOOL requiresPreprocessing;

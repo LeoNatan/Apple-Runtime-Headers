@@ -18,10 +18,10 @@
     NSArray *_itemsToShare;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *itemsToShare; // @synthesize itemsToShare=_itemsToShare;
 @property(retain, nonatomic) SFAirDropActivityViewController *airDropActivityControllerViewController; // @synthesize airDropActivityControllerViewController=_airDropActivityControllerViewController;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler;
-- (void).cxx_destruct;
 - (void)_callCompletionHandlerWithError:(id)arg1;
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
 - (id)animationControllerForDismissedController:(id)arg1;

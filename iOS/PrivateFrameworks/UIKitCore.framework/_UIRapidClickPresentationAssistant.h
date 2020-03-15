@@ -25,13 +25,13 @@ __attribute__((visibility("hidden")))
     NSValue *_preservedInputViewId;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSValue *preservedInputViewId; // @synthesize preservedInputViewId=_preservedInputViewId;
 @property(retain, nonatomic) UIView *stashedSuperView; // @synthesize stashedSuperView=_stashedSuperView;
 @property(retain, nonatomic) UIViewController *stashedParentViewController; // @synthesize stashedParentViewController=_stashedParentViewController;
 @property(retain, nonatomic) UITargetedPreview *sourcePreview; // @synthesize sourcePreview=_sourcePreview;
 @property(retain, nonatomic) _UIClickPresentation *presentation; // @synthesize presentation;
 @property(copy, nonatomic) CDUnknownBlockType lifecycleCompletion; // @synthesize lifecycleCompletion;
-- (void).cxx_destruct;
 - (void)_animateUsingFluidSpringWithType:(unsigned long long)arg1 animations:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

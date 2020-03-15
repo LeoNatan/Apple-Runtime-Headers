@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     _TVLabel *_label;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TVLabel *label; // @synthesize label=_label;
 @property(readonly, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
-- (void).cxx_destruct;
 - (void)transferLayoutStylesFromElement:(id)arg1;
 - (struct UIEdgeInsets)tv_alignmentInsetsForExpectedWidth:(double)arg1;
 - (void)setLineBreakMode:(long long)arg1;

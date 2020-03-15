@@ -16,10 +16,10 @@
     IMAPPersistenceBlockOperation *_operation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMAPPersistenceBlockOperation *operation; // @synthesize operation=_operation;
 @property(readonly, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(readonly, nonatomic) id <IMAPMessageDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)operationFinished:(id)arg1;
 - (void)recalculatePriorities;
 - (id)nextPersistenceOperation;

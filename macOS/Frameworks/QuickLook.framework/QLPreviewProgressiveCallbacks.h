@@ -14,11 +14,11 @@
     CDUnknownBlockType _createSafeAttachmentURL;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType createSafeAttachmentURL; // @synthesize createSafeAttachmentURL=_createSafeAttachmentURL;
 @property(copy, nonatomic) CDUnknownBlockType appendData; // @synthesize appendData=_appendData;
 @property(copy, nonatomic) CDUnknownBlockType startAttachment; // @synthesize startAttachment=_startAttachment;
 @property(copy, nonatomic) CDUnknownBlockType startDataRepresentation; // @synthesize startDataRepresentation=_startDataRepresentation;
-- (void).cxx_destruct;
 
 @end
 

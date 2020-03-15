@@ -14,9 +14,9 @@
     int _slotID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int slotID; // @synthesize slotID=_slotID;
 @property(retain, nonatomic) NSString *phoneCertificate; // @synthesize phoneCertificate=_phoneCertificate;
-- (void).cxx_destruct;
 
 @end
 

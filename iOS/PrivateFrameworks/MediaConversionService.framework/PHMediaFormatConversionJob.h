@@ -14,9 +14,9 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain) PHMediaFormatConversionRequest *conversionRequest; // @synthesize conversionRequest=_conversionRequest;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

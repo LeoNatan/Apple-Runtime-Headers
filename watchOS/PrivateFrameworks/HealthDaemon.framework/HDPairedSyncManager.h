@@ -14,8 +14,8 @@
 }
 
 + (id)syncCoordinatorWithServiceName:(id)arg1;
-@property(readonly) PSYSyncCoordinator *syncCoordinator; // @synthesize syncCoordinator=_syncCoordinator;
 - (void).cxx_destruct;
+@property(readonly) PSYSyncCoordinator *syncCoordinator; // @synthesize syncCoordinator=_syncCoordinator;
 - (_Bool)permitSynchronization;
 - (id)initWithProfile:(id)arg1 queue:(id)arg2;
 

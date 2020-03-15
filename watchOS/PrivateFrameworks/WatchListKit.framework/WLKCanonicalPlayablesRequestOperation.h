@@ -14,9 +14,9 @@
     WLKCanonicalPlayablesResponse *_response;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WLKCanonicalPlayablesResponse *response; // @synthesize response=_response;
 @property(readonly, copy, nonatomic) NSString *contentID; // @synthesize contentID=_contentID;
-- (void).cxx_destruct;
 - (void)processResponse;
 - (id)initWithContentID:(id)arg1 profiles:(id)arg2 caller:(id)arg3;
 

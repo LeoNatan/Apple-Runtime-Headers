@@ -15,8 +15,8 @@
     HFSimpleItemManager *_itemManager;
 }
 
-@property(retain, nonatomic) HFSimpleItemManager *itemManager; // @synthesize itemManager=_itemManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HFSimpleItemManager *itemManager; // @synthesize itemManager=_itemManager;
 - (long long)_tableRowToTemperatureUnit:(unsigned long long)arg1;
 - (id)_controlItem;
 - (void)itemManager:(id)arg1 didUpdateResultsForSourceItem:(id)arg2;

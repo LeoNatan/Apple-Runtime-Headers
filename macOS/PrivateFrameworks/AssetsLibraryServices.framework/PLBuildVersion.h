@@ -18,12 +18,12 @@
 }
 
 + (id)currentBuildVersionString;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *minorBuildLetterString; // @synthesize minorBuildLetterString=_minorBuildLetterString;
 @property(readonly, nonatomic) long long minorBuildNumber; // @synthesize minorBuildNumber=_minorBuildNumber;
 @property(readonly, copy, nonatomic) NSString *majorBuildLetterString; // @synthesize majorBuildLetterString=_majorBuildLetterString;
 @property(readonly, nonatomic) long long majorBuildNumber; // @synthesize majorBuildNumber=_majorBuildNumber;
 @property(readonly, copy, nonatomic) NSString *stringRepresentation; // @synthesize stringRepresentation=_stringRepresentation;
-- (void).cxx_destruct;
 - (id)description;
 - (long long)compareBuildVersionString:(id)arg1 withPrecision:(long long)arg2;
 - (long long)compareBuildVersion:(id)arg1 withPrecision:(long long)arg2;

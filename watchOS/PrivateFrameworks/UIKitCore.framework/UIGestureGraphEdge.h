@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UIGestureGraphNode *_targetNode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isDirected) _Bool directed; // @synthesize directed=_directed;
 @property(readonly, nonatomic) UIGestureGraphNode *targetNode; // @synthesize targetNode=_targetNode;
 @property(readonly, nonatomic) UIGestureGraphNode *sourceNode; // @synthesize sourceNode=_sourceNode;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic, getter=isLoop) _Bool loop;
 - (id)commonNode:(id)arg1;

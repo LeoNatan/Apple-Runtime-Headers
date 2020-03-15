@@ -17,12 +17,12 @@
     NSObject<OS_dispatch_source> *_timerSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timerSource; // @synthesize timerSource=_timerSource;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) double leewayTimeInterval; // @synthesize leewayTimeInterval=_leewayTimeInterval;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)start;
 - (void)dealloc;

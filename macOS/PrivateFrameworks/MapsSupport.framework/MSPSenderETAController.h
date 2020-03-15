@@ -29,8 +29,8 @@ __attribute__((visibility("hidden")))
     NSObject<MSPSenderETAControllerDelegate> *_delegate;
 }
 
-@property(nonatomic) __weak NSObject<MSPSenderETAControllerDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSObject<MSPSenderETAControllerDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void)groupSessionEnded:(id)arg1 withError:(id)arg2;
 - (void)groupSession:(id)arg1 participantDidLeave:(id)arg2;
 - (void)groupSession:(id)arg1 participantDidJoin:(id)arg2;

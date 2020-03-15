@@ -13,8 +13,8 @@
     id <SBFolderControllerDelegate> _forwardingTarget;
 }
 
-@property(retain, nonatomic) id <SBFolderControllerDelegate> forwardingTarget; // @synthesize forwardingTarget=_forwardingTarget;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <SBFolderControllerDelegate> forwardingTarget; // @synthesize forwardingTarget=_forwardingTarget;
 - (id)backgroundViewForDockForRootFolderController:(id)arg1;
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;

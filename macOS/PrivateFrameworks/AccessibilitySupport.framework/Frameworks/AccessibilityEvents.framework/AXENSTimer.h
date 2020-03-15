@@ -17,10 +17,10 @@
     NSTimer *__timer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *_timer; // @synthesize _timer=__timer;
 @property(nonatomic) SEL _selector; // @synthesize _selector=__selector;
 @property(retain, nonatomic) id _target; // @synthesize _target=__target;
-- (void).cxx_destruct;
 - (void)_nsTimerFired:(id)arg1;
 - (void)invalidate;
 - (void)fire;

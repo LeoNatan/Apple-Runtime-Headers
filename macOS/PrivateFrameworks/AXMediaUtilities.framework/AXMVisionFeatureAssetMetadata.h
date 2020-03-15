@@ -25,6 +25,7 @@
 
 + (id)assetMetadataFromURL:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *assetURL; // @synthesize assetURL=_assetURL;
 @property(retain, nonatomic) NSString *PNGImageDescription; // @synthesize PNGImageDescription=_PNGImageDescription;
 @property(retain, nonatomic) NSString *EXIFUserComment; // @synthesize EXIFUserComment=_EXIFUserComment;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSString *uti; // @synthesize uti=_uti;
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *url;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

@@ -28,10 +28,10 @@ __attribute__((visibility("hidden")))
 + (CDUnknownFunctionPointerType)faceDescriptorCreator;
 + (id)configurationOptionKeysForDetectorKey;
 + (void)recordDefaultConfigurationOptionsInDictionary:(id)arg1;
-@property(readonly, nonatomic) unsigned long long length; // @synthesize length=_length;
-@property(readonly, nonatomic) _Bool useLowPriorityMode; // @synthesize useLowPriorityMode=_useLowPriorityMode;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long length; // @synthesize length=_length;
+@property(readonly, nonatomic) _Bool useLowPriorityMode; // @synthesize useLowPriorityMode=_useLowPriorityMode;
 - (void)printDebugInfoFor:(struct __CVBuffer *)arg1 imageBuffer:(id)arg2 originalImageLumaCrop:(struct vImage_Buffer)arg3 faceBBoxInLumaCropCoordinates:(struct CGRect)arg4 magnifiedBBoxInLumaCropCoordinates:(struct _Geometry2D_rect2D_)arg5;
 - (_Bool)isFaceprinterCompatibleWithFaceprinterCreatedWithOptions:(id)arg1;
 - (id)processWithOptions:(id)arg1 regionOfInterest:(struct CGRect)arg2 warningRecorder:(id)arg3 error:(id *)arg4;

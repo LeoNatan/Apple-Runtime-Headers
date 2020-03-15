@@ -20,9 +20,9 @@
 + (id)exceptionForEvent:(id)arg1 date:(id)arg2;
 + (id)_exceptionForEventOccurrence:(id)arg1;
 + (id)exceptionForEvent:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSManagedObjectID *masterManagedObjectID; // @synthesize masterManagedObjectID=_masterManagedObjectID;
 @property(retain) EKRecurrenceIdentifier *recurrenceIdentifier; // @synthesize recurrenceIdentifier=_recurrenceIdentifier;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

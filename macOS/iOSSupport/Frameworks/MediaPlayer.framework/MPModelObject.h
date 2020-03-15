@@ -34,8 +34,8 @@
 + (id)requiredLibraryRemovalProperties;
 + (BOOL)supportsKeepLocalStatusObservation;
 + (id)requiredKeepLocalStatusObservationProperties;
-@property(readonly, copy, nonatomic) MPIdentifierSet *identifiers; // @synthesize identifiers=_identifiers;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) MPIdentifierSet *identifiers; // @synthesize identifiers=_identifiers;
 - (BOOL)_isModelKey:(id)arg1;
 - (id)_stateDumpObject;
 - (void)setValue:(id)arg1 forModelKey:(id)arg2;

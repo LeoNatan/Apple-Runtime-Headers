@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
-@property(nonatomic) __weak SFSafariViewController *activeLoginViewController; // @synthesize activeLoginViewController=_activeLoginViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SFSafariViewController *activeLoginViewController; // @synthesize activeLoginViewController=_activeLoginViewController;
 - (void)_handleMultipleAccountsNeedReloginFromPresenter:(id)arg1;
 - (void)_handleSingleAccountNeedsRelogin:(id)arg1 fromPresenter:(id)arg2 profile:(id)arg3;
 - (void)_dismissReloginViewController:(id)arg1;

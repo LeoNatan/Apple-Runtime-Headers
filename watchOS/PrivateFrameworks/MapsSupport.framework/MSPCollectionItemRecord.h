@@ -23,11 +23,11 @@
 + (id)recordsByApplyingEdits:(id)arg1 toArbitraryRecords:(id)arg2;
 + (id)tombstoneRecord;
 + (id)recordWithContentsOfRecord:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MSPVectorTimestamp *positionTimestamp; // @synthesize positionTimestamp=_positionTimestamp;
 @property(readonly, nonatomic) MSPPosition *position; // @synthesize position=_position;
 @property(readonly, copy, nonatomic) MSPVectorTimestamp *contentsTimestamp; // @synthesize contentsTimestamp=_contentsTimestamp;
 @property(readonly, copy, nonatomic) NSData *contents; // @synthesize contents=_contents;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, copy) NSString *description;

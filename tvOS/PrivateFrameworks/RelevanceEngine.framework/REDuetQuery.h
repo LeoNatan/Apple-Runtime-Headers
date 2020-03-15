@@ -14,9 +14,9 @@
     _DKQuery *_query;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _DKQuery *query; // @synthesize query=_query;
 @property(copy, nonatomic) CDUnknownBlockType transformBlock; // @synthesize transformBlock=_transformBlock;
-- (void).cxx_destruct;
 @property(nonatomic) long long offset;
 
 @end

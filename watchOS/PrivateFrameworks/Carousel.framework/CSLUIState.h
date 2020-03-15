@@ -17,10 +17,10 @@
     CSLScrollCenterUIState *_scrollUIState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLScrollCenterUIState *scrollUIState; // @synthesize scrollUIState=_scrollUIState;
 @property(retain, nonatomic) CSLAlertUIState *alertUIState; // @synthesize alertUIState=_alertUIState;
 @property(retain, nonatomic) CSLMainUIState *mainUIState; // @synthesize mainUIState=_mainUIState;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

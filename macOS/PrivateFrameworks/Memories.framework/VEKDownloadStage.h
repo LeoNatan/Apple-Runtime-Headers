@@ -15,10 +15,10 @@
     VEKResult *_stageResults;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VEKResult *stageResults; // @synthesize stageResults=_stageResults;
 @property(retain, nonatomic) MiroCloudDownloader *cloudDownloader; // @synthesize cloudDownloader=_cloudDownloader;
 @property int downloadPolicy; // @synthesize downloadPolicy=_downloadPolicy;
-- (void).cxx_destruct;
 - (void)tellPipelineThatItShouldCancelPlease;
 - (BOOL)shouldCancelOnNonLocalAssets;
 - (void)_downloadAssets:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

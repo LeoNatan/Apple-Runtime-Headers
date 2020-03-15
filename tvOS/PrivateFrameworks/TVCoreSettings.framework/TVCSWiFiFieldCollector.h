@@ -17,11 +17,11 @@
     NSMutableSet *_ignoredFields;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *ignoredFields; // @synthesize ignoredFields=_ignoredFields;
 @property(retain, nonatomic) id <NSObject><WFNetworkView> commonProvider; // @synthesize commonProvider=_commonProvider;
 @property(nonatomic) unsigned long long currentFieldIndex; // @synthesize currentFieldIndex=_currentFieldIndex;
 @property(retain, nonatomic) NSMutableDictionary *fields; // @synthesize fields=_fields;
-- (void).cxx_destruct;
 - (id)_orderedFields;
 - (void)_updateFieldsWithCommonProvider;
 - (void)_addField:(id)arg1 withReplacing:(_Bool)arg2;

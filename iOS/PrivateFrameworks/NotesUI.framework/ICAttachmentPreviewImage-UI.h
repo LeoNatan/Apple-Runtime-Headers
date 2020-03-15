@@ -9,25 +9,25 @@
 @class UIImage;
 
 @interface ICAttachmentPreviewImage (UI)
-+ (struct UIImage *)orientedImage:(struct UIImage *)arg1 withTransform:(struct CGAffineTransform)arg2 background:(int)arg3 backgroundTransform:(struct CGAffineTransform)arg4;
++ (id)orientedImage:(id)arg1 withTransform:(struct CGAffineTransform)arg2 background:(int)arg3 backgroundTransform:(struct CGAffineTransform)arg4;
 + (id)imageCache;
 - (void)writeOrientedPreviewToDisk;
 @property(readonly, nonatomic) UIImage *image;
 - (CDUnknownBlockType)asyncImage:(CDUnknownBlockType)arg1 aboutToLoadHandler:(CDUnknownBlockType)arg2;
 - (id)newImageLoaderForUpdatingImageOnCompletion:(_Bool)arg1 asyncDataLoading:(_Bool)arg2;
 - (id)newImageLoaderForUpdatingImageOnCompletion:(_Bool)arg1;
-- (struct UIImage *)orientedImageWithBackground:(int)arg1;
-- (struct UIImage *)imageWithBackground:(int)arg1;
+- (id)orientedImageWithBackground:(int)arg1;
+- (id)imageWithBackground:(int)arg1;
 - (long long)previewImageOrientation;
 @property(readonly, nonatomic) UIImage *orientedImage;
 - (struct CGAffineTransform)orientedImageTransform;
 - (void)clearCachedOrientedImage;
-- (void)setCachedOrientedImage:(struct UIImage *)arg1;
-- (struct UIImage *)cachedOrientedImage;
+- (void)setCachedOrientedImage:(id)arg1;
+- (id)cachedOrientedImage;
 - (id)orientedImageID;
 - (void)clearCachedImage;
 - (_Bool)hasCachedImage;
-- (void)setCachedImage:(struct UIImage *)arg1;
-- (struct UIImage *)cachedImage;
+- (void)setCachedImage:(id)arg1;
+- (id)cachedImage;
 @end
 

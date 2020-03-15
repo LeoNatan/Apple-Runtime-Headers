@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)pickInfoWithItem:(id)arg1 score:(float)arg2 distance:(float)arg3 splitDistance:(float)arg4 pickOrder:(unsigned long long)arg5 adjustedPickOrder:(unsigned long long)arg6 sourceOrder:(unsigned long long)arg7 splitOrder:(unsigned long long)arg8 imageDistance:(float)arg9 clipCompareResultFlags:(unsigned long long)arg10;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long clipCompareResultFlags; // @synthesize clipCompareResultFlags=_clipCompareResultFlags;
 @property(readonly, nonatomic) float imageDistance; // @synthesize imageDistance=_imageDistance;
 @property(readonly, nonatomic) id <MiroMediaItem> item; // @synthesize item=_item;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float splitDistance; // @synthesize splitDistance=_splitDistance;
 @property(nonatomic) float distance; // @synthesize distance=_distance;
 @property(nonatomic) float score; // @synthesize score=_score;
-- (void).cxx_destruct;
 - (double)_idealDurationForBlueprint:(id)arg1 biased:(BOOL)arg2 max:(BOOL)arg3;
 - (double)voiceRangeDuration;
 - (double)trimmedDuration;

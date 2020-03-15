@@ -14,9 +14,9 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly) _NSQuickActionPresentation *_presentation; // @synthesize _presentation;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (BOOL)moveToTrashAndReturnError:(id *)arg1;
 @property(readonly) BOOL canMoveToTrash;
 - (BOOL)revealInFinderAndReturnError:(id *)arg1;

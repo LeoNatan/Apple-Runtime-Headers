@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     SKUIIndexBarEntryListViewElement *_entryListViewElement;
 }
 
-@property(readonly, nonatomic) SKUIIndexBarEntryListViewElement *entryListViewElement; // @synthesize entryListViewElement=_entryListViewElement;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SKUIIndexBarEntryListViewElement *entryListViewElement; // @synthesize entryListViewElement=_entryListViewElement;
 - (void)_entityProviderDidInvalidateNotification:(id)arg1;
 - (id)targetIndexBarEntryIDForEntryDescriptorAtIndex:(long long)arg1 returningRelativeSectionIndex:(out long long *)arg2;
 - (void)setRootTargetViewElement:(id)arg1;

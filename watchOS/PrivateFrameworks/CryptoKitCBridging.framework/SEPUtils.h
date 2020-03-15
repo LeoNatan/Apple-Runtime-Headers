@@ -11,7 +11,6 @@
 }
 
 + (id)dataFromACL:(struct __SecAccessControl *)arg1;
-+ (_Bool)isAvailable;
 
 @end
 

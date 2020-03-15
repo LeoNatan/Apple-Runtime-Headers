@@ -18,8 +18,8 @@
 + (id)paused;
 + (id)loading;
 + (id)stopped;
-@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithName:(id)arg1;

@@ -18,8 +18,8 @@
 }
 
 + (Class)providerNamesType;
-@property(retain, nonatomic) NSMutableArray *providerNames; // @synthesize providerNames=_providerNames;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *providerNames; // @synthesize providerNames=_providerNames;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;

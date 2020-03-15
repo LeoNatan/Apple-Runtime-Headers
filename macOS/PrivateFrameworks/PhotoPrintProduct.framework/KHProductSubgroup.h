@@ -13,8 +13,8 @@
     NSMutableArray *_products;
 }
 
-@property(readonly, nonatomic) NSArray *products; // @synthesize products=_products;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *products; // @synthesize products=_products;
 @property(readonly, nonatomic) long long displayIndex;
 @property(readonly, nonatomic) NSString *displayPrice;
 @property(readonly, nonatomic) NSString *displayDescription;

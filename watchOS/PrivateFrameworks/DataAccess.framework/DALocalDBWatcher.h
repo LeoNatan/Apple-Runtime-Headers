@@ -19,8 +19,8 @@
 }
 
 + (id)sharedDBWatcher;
-@property(nonatomic) int lastSavedCalSequenceNumber; // @synthesize lastSavedCalSequenceNumber=_lastSavedCalSequenceNumber;
 - (void).cxx_destruct;
+@property(nonatomic) int lastSavedCalSequenceNumber; // @synthesize lastSavedCalSequenceNumber=_lastSavedCalSequenceNumber;
 - (void)didReceiveDarwinNotification:(id)arg1;
 - (void)noteCalDBDirChanged;
 - (void)removeConcernedNoteParty:(id)arg1;

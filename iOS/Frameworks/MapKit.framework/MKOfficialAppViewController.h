@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
     MKPlaceSectionHeaderView *_officialAppHeaderView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowing; // @synthesize isShowing=_isShowing;
 @property(retain, nonatomic) MKPlaceSectionHeaderView *officialAppHeaderView; // @synthesize officialAppHeaderView=_officialAppHeaderView;
 @property(retain, nonatomic) MKOfficialAppView *officialAppView; // @synthesize officialAppView=_officialAppView;
 @property(nonatomic) __weak id <MKOfficialAppViewControllerDelegate> officialAppDelegate; // @synthesize officialAppDelegate=_officialAppDelegate;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
-- (void).cxx_destruct;
 - (id)infoCardChildUnactionableUIElements;
 - (id)infoCardChildPossibleActions;
 - (void)officialAppViewDidSelectPunchOutButton:(id)arg1;

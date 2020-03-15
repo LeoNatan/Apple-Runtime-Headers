@@ -14,9 +14,9 @@
     unsigned long long _elementCount;
 }
 
-@property(readonly, nonatomic) unsigned long long elementCount; // @synthesize elementCount=_elementCount;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long elementCount; // @synthesize elementCount=_elementCount;
 -     // Error parsing type: Q32@0:8^{?=[4]}16Q24, name: getDouble4x4Array:maxCount:
 -     // Error parsing type: Q32@0:8^{?=[4]}16Q24, name: getFloat4x4Array:maxCount:
 -     // Error parsing type: v32@0:8r^{?=[4]}16Q24, name: setDouble4x4Array:count:

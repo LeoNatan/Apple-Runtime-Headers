@@ -18,8 +18,8 @@
     NSArray *_recents;
 }
 
-@property(retain, nonatomic) NSArray *recents; // @synthesize recents=_recents;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *recents; // @synthesize recents=_recents;
 - (void)_queue_writeCompressedProtobufRepresentationToDisk:(id)arg1;
 - (void)_enqueueDiskWrite;
 - (void)_persistTimerExpired:(id)arg1;

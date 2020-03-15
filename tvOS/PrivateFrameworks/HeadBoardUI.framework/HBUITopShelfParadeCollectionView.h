@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CABasicAnimation *_scrollAnimation;
 }
 
-@property(readonly, nonatomic) CABasicAnimation *scrollAnimation; // @synthesize scrollAnimation=_scrollAnimation;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CABasicAnimation *scrollAnimation; // @synthesize scrollAnimation=_scrollAnimation;
 - (id)_customScrollAnimation;
 - (id)centerItemIndexPath;
 - (_Bool)itemAtIndexPathIsCloseToCenter:(id)arg1;

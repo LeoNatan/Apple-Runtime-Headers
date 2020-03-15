@@ -9,6 +9,6 @@
 @class ICMusicSubscriptionStatusResponse, NSError, NSUUID;
 
 @protocol ICMusicSubscriptionStatusRemoteRequestingClient <NSObject>
-- (void)deliverSubscriptionStatusResponse:(ICMusicSubscriptionStatusResponse *)arg1 forUniqueIdentifier:(NSUUID *)arg2 error:(NSError *)arg3;
+- (void)deliverSubscriptionStatusResponse:(ICMusicSubscriptionStatusResponse *)arg1 forRemoteRequestWithUniqueIdentifier:(NSUUID *)arg2 error:(NSError *)arg3;
 @end
 

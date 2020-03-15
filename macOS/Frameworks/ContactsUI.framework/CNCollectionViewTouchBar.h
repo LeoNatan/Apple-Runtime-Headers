@@ -23,6 +23,7 @@
     NSGroupTouchBarItem *_groupItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSGroupTouchBarItem *groupItem; // @synthesize groupItem=_groupItem;
 @property(retain, nonatomic) NSButton *removeButton; // @synthesize removeButton=_removeButton;
 @property(retain, nonatomic) NSStackView *collectionStackView; // @synthesize collectionStackView=_collectionStackView;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) CNAddFieldTouchBar *addFieldTouchBar; // @synthesize addFieldTouchBar=_addFieldTouchBar;
 @property(retain, nonatomic) NSTouchBar *touchBar; // @synthesize touchBar=_touchBar;
 @property __weak id <CNCollectionViewTouchBarDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)addField:(id)arg1;
 - (void)addGroup;
 - (void)addContact;

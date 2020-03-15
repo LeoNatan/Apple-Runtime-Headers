@@ -18,11 +18,11 @@
     NSMutableDictionary *_reporters;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasReroutedInitiatedPlaybackEvent; // @synthesize hasReroutedInitiatedPlaybackEvent=_hasReroutedInitiatedPlaybackEvent;
 @property(readonly, nonatomic) NSMutableDictionary *reporters; // @synthesize reporters=_reporters;
 @property(readonly, nonatomic) unsigned long long initiatedPlaybackLocation; // @synthesize initiatedPlaybackLocation=_initiatedPlaybackLocation;
 @property(nonatomic) unsigned long long currentPlaybackLocation; // @synthesize currentPlaybackLocation=_currentPlaybackLocation;
-- (void).cxx_destruct;
 - (id)analyticsReporterForEvent:(id)arg1;
 - (void)reportEvent:(id)arg1;
 - (id)reporterForPlaybackLocation:(unsigned long long)arg1;

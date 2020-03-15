@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSString *_trendingSearchURLString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *trendingSearchURLString; // @synthesize trendingSearchURLString=_trendingSearchURLString;
 @property(readonly, nonatomic) NSString *searchHintsURLString; // @synthesize searchHintsURLString=_searchHintsURLString;
 @property(readonly, nonatomic) NSString *placeholderString; // @synthesize placeholderString=_placeholderString;
 @property(readonly, nonatomic) SKUIViewElementText *defaultText; // @synthesize defaultText=_defaultText;
 @property(readonly, nonatomic) NSString *accessoryText; // @synthesize accessoryText=_accessoryText;
-- (void).cxx_destruct;
 - (long long)pageComponentType;
 - (unsigned long long)elementType;
 - (id)applyUpdatesWithElement:(id)arg1;

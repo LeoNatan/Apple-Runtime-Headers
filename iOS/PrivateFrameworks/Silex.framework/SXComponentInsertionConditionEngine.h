@@ -15,8 +15,8 @@
     NSMutableSet *_conditions;
 }
 
-@property(readonly, nonatomic) NSMutableSet *conditions; // @synthesize conditions=_conditions;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableSet *conditions; // @synthesize conditions=_conditions;
 - (void)addCondition:(id)arg1;
 - (_Bool)validateMarker:(id)arg1 componentTraits:(unsigned long long)arg2 layoutProvider:(id)arg3;
 - (void)insertedComponent:(id)arg1 approximateLocation:(struct CGPoint)arg2;

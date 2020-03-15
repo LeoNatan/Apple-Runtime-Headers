@@ -15,9 +15,9 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *recipients; // @synthesize recipients=_recipients;
 @property(readonly, copy, nonatomic) NSArray *composeRecipients; // @synthesize composeRecipients=_composeRecipients;
-- (void).cxx_destruct;
 - (unsigned long long)indexOfComposeRecipientForRecipient:(id)arg1;
 - (id)initWithComposeRecipients:(id)arg1 recipients:(id)arg2;
 - (id)init;

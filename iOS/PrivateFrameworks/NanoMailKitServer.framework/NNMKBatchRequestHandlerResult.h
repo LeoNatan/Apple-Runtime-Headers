@@ -16,11 +16,11 @@
     NSArray *_messageIdsForRequestingContentDownload;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *messageIdsForRequestingContentDownload; // @synthesize messageIdsForRequestingContentDownload=_messageIdsForRequestingContentDownload;
 @property(retain, nonatomic) NSArray *missingMessageHeaderIds; // @synthesize missingMessageHeaderIds=_missingMessageHeaderIds;
 @property(retain, nonatomic) NSArray *mailboxesToTriggerFullSync; // @synthesize mailboxesToTriggerFullSync=_mailboxesToTriggerFullSync;
 @property(retain, nonatomic) NSArray *fetchResults; // @synthesize fetchResults=_fetchResults;
-- (void).cxx_destruct;
 
 @end
 

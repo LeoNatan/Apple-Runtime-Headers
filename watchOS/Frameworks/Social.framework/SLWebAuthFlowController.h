@@ -20,8 +20,8 @@
     id <SLWebClient> _webClient;
 }
 
-@property(readonly) id <SLWebClient> webClient; // @synthesize webClient=_webClient;
 - (void).cxx_destruct;
+@property(readonly) id <SLWebClient> webClient; // @synthesize webClient=_webClient;
 - (void)webViewDidFinishLoadWithPageTitleSupplier:(CDUnknownBlockType)arg1;
 - (_Bool)shouldHideWebViewForLoadWithRequest:(id)arg1;
 - (id)requestForAuthURL:(id)arg1;

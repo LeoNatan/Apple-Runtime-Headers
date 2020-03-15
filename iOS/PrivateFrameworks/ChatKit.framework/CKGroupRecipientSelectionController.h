@@ -15,8 +15,8 @@
     UIBarButtonItem *_doneButton;
 }
 
-@property(retain, nonatomic) UIBarButtonItem *doneButton; // @synthesize doneButton=_doneButton;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIBarButtonItem *doneButton; // @synthesize doneButton=_doneButton;
 - (id)handlesForScreenTimePolicyCheck;
 - (void)_frecencySearch;
 - (void)_updateNavigationButton;

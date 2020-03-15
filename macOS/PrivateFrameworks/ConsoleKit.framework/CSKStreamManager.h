@@ -14,8 +14,8 @@
 }
 
 + (id)sharedManager;
-@property(readonly, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 - (void)resumeStream:(id)arg1;
 - (void)pauseStream:(id)arg1;
 - (void)cancelAllStreams;

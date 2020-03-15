@@ -16,15 +16,17 @@
     NSMutableArray *_results;
     NSNumber *_impression;
     NSNumber *_tap;
+    NSString *_addendum;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSString *addendum; // @synthesize addendum=_addendum;
 @property(retain, nonatomic) NSNumber *tap; // @synthesize tap=_tap;
 @property(retain, nonatomic) NSNumber *impression; // @synthesize impression=_impression;
 @property(retain, nonatomic) NSMutableArray *results; // @synthesize results=_results;
 @property(retain, nonatomic) NSString *responseObfuscationID; // @synthesize responseObfuscationID=_responseObfuscationID;
 @property(retain, nonatomic) NSString *appVectorVersion; // @synthesize appVectorVersion=_appVectorVersion;
 @property(retain, nonatomic) NSString *experimentID; // @synthesize experimentID=_experimentID;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (void)addPrediction:(id)arg1 forTestWeights:(id)arg2 andLookbackPeriod:(id)arg3;
 - (id)initWithExperimentID:(id)arg1;

@@ -31,6 +31,7 @@
 
 + (id)_sharedBannerView;
 + (void)prepareInterstitialAds;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ADInterstitialAd *interstitialAd; // @synthesize interstitialAd=_interstitialAd;
 @property(retain, nonatomic) ADBannerView *bannerView; // @synthesize bannerView=_bannerView;
 @property(nonatomic, getter=isPresentingFullScreenAd) _Bool presentingFullScreenAd; // @synthesize presentingFullScreenAd=_presentingFullScreenAd;
@@ -44,7 +45,6 @@
 @property(copy, nonatomic) NSString *bannerAuthUserName; // @synthesize bannerAuthUserName=_bannerAuthUserName;
 @property(copy, nonatomic) NSString *bannerAdSection; // @synthesize bannerAdSection=_bannerAdSection;
 @property(copy, nonatomic) NSURL *bannerServerURL; // @synthesize bannerServerURL=_bannerServerURL;
-- (void).cxx_destruct;
 - (void)bannerViewActionDidFinish:(id)arg1;
 - (_Bool)bannerViewActionShouldBegin:(id)arg1 willLeaveApplication:(_Bool)arg2;
 - (void)bannerView:(id)arg1 didFailToReceiveAdWithError:(id)arg2;

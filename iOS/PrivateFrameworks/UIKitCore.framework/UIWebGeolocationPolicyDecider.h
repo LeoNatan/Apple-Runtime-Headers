@@ -19,13 +19,13 @@
 + (void)initialize;
 - (void)didDenyGeolocationForPromptInfo:(id)arg1;
 - (void)didAuthorizeGeolocationForPromptInfo:(id)arg1;
+- (void)decidePolicyForGeolocationRequestFromOrigin:(id)arg1 requestingURL:(id)arg2 view:(id)arg3 listener:(id)arg4;
 - (void)decidePolicyForGeolocationRequestFromOrigin:(id)arg1 requestingURL:(id)arg2 window:(id)arg3 listener:(id)arg4;
 - (void)webView:(id)arg1 decidePolicyForGeolocationRequestFromOrigin:(id)arg2 frame:(id)arg3 listener:(id)arg4;
 - (_Bool)_getAuthorizationStatusForToken:(id)arg1 requestingURL:(id)arg2 promptInfo:(id *)arg3;
 - (_Bool)getAuthorizationStatusForOrigin:(id)arg1 requestingURL:(id)arg2 promptInfo:(id *)arg3;
-- (void)_decidePolicyForGeolocationRequestFromOrigin:(id)arg1 requestingURL:(id)arg2 window:(id)arg3 listener:(id)arg4;
+- (void)_decidePolicyForGeolocationRequestFromOrigin:(id)arg1 requestingURL:(id)arg2 view:(id)arg3 listener:(id)arg4;
 - (void)_executeNextChallenge;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)_addChallengeCount:(long long)arg1 forToken:(id)arg2 requestingURL:(id)arg3;
 - (long long)_getChallengeCountFromHistoryForToken:(id)arg1 requestingURL:(id)arg2;
 - (void)clearAuthorizationsAddedBetween:(id)arg1 and:(id)arg2;

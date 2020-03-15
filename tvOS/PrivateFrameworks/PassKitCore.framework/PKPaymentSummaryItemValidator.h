@@ -17,8 +17,8 @@
 
 + (Class)validatedClass;
 + (id)validatorWithObject:(id)arg1;
-@property(readonly, nonatomic) PKPaymentSummaryItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKPaymentSummaryItem *item; // @synthesize item=_item;
 - (_Bool)isValidWithAPIType:(unsigned long long)arg1 withError:(id *)arg2;
 - (_Bool)isValidWithError:(id *)arg1;
 - (id)initWithPaymentSummaryItem:(id)arg1;

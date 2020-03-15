@@ -10,7 +10,7 @@
 
 @interface MPSCommandBufferImageCache : NSObject
 {
-    // Error parsing type: ^{MPSDevice=^^?^{MPSDevice}@^{MPSDeviceFreeList}{atomic<MTLLibraryNode *>=A^{MTLLibraryNode}}[2[2[2{atomic<void *>=A^v}]]][563{MPSPixelCapabilities=b1b1b1b1b1b2b1b8}]{atomic<void *>=A^v}Ii{MPSGPUInfo=b8b8b8b16b4b20}[106{atomic<MPSLibrary *>=A^{MPSLibrary}}]}, name: _device
+    // Error parsing type: ^{MPSDevice=^^?^{MPSDevice}@^{MPSDeviceFreeList}{atomic<MTLLibraryNode *>={__cxx_atomic_impl<MTLLibraryNode *, std::__1::__cxx_atomic_base_impl<MTLLibraryNode *> >=A^{MTLLibraryNode}}}[2[2[2{atomic<void *>={__cxx_atomic_impl<void *, std::__1::__cxx_atomic_base_impl<void *> >=A^v}}]]][563{MPSPixelCapabilities=b1b1b1b1b1b2b1b8}]{atomic<void *>={__cxx_atomic_impl<void *, std::__1::__cxx_atomic_base_impl<void *> >=A^v}}Ii{MPSGPUInfo=b8b8b8b16b4b20}[107{atomic<MPSLibrary *>={__cxx_atomic_impl<MPSLibrary *, std::__1::__cxx_atomic_base_impl<MPSLibrary *> >=A^{MPSLibrary}}}]}, name: _device
     id <MTLCommandBuffer> _cmdBuffer;
     long long _debugMode;
     struct HeapNode *_freeList[65];
@@ -22,7 +22,7 @@
     BOOL _needsRetain;
     unsigned long long _totalAllocationBytes;
     unsigned long long _cacheDelay;
-    // Error parsing type: {atomic<long>="__a_"Aq}, name: _commandBufferCount
+    // Error parsing type: {atomic<long>="__a_"{__cxx_atomic_impl<long, std::__1::__cxx_atomic_base_impl<long> >="__a_value"Aq}}, name: _commandBufferCount
     id <MPSHeapProvider> _heapProvider;
     BOOL _isMPSCommandBuffer;
 }

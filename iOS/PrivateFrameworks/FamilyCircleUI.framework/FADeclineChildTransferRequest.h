@@ -13,8 +13,8 @@
     NSString *_requestCode;
 }
 
-@property(copy, nonatomic) NSString *requestCode; // @synthesize requestCode=_requestCode;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *requestCode; // @synthesize requestCode=_requestCode;
 - (id)urlRequest;
 - (id)urlString;
 - (_Bool)isUserInitiated;

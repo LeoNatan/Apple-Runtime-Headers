@@ -29,8 +29,8 @@
 
 + (unsigned int)_filteringOptionWithMode:(unsigned int)arg1;
 + (id)sharedTimeline;
-@property(readonly, nonatomic) unsigned int mode; // @synthesize mode=_mode;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int mode; // @synthesize mode=_mode;
 - (void)_cloudAvailabilityDidChangeNotification:(id)arg1;
 - (void)originObserver:(id)arg1 didUpdateTimestampForOrigin:(id)arg2;
 - (void)originObserver:(id)arg1 didUpdatePlaybackQueueForOrigin:(id)arg2;

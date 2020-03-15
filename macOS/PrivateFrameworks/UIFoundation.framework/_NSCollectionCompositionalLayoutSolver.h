@@ -45,6 +45,7 @@
     struct CGSize _actualContentSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldPerformPhysicalRTLTransforms; // @synthesize shouldPerformPhysicalRTLTransforms=_shouldPerformPhysicalRTLTransforms;
 @property(nonatomic) long long numberOfSectionsWithTransformVisibleItemsHandler; // @synthesize numberOfSectionsWithTransformVisibleItemsHandler=_numberOfSectionsWithTransformVisibleItemsHandler;
 @property(retain, nonatomic) _NSCollectionPreferredSizes *globalSupplementaryPreferredSizes; // @synthesize globalSupplementaryPreferredSizes=_globalSupplementaryPreferredSizes;
@@ -75,7 +76,6 @@
 @property(nonatomic) int layoutAxis; // @synthesize layoutAxis=_layoutAxis;
 @property(readonly, nonatomic) NSObject *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(retain, nonatomic) id <NSCollectionLayoutContainer> container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (struct CGRect)bounds;
 - (struct CGRect)_dynamicReferenceBounds;
 - (id)auxiliaryHostPreferredSizes;

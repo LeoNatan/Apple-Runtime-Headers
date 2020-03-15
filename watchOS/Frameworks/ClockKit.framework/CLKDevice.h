@@ -6,6 +6,8 @@
 
 #import <objc/NSObject.h>
 
+@class NSCache;
+
 @interface CLKDevice : NSObject
 {
     _Bool _runningGraceOrLater;
@@ -23,14 +25,17 @@
     unsigned int _materialType;
     int _pairedDeviceCapabilitiesChangeNotificationToken;
     struct os_unfair_lock_s _capabilitiesLock;
+    NSCache *_supportedCapabilitiesCache;
     struct CGRect _screenBounds;
 }
 
 + (void)setCurrentDevice:(id)arg1;
 + (id)currentDevice;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool supportsUrsa; // @synthesize supportsUrsa=_supportsUrsa;
 @property(nonatomic) _Bool hasRichMediaComplications; // @synthesize hasRichMediaComplications=_hasRichMediaComplications;
 @property(nonatomic) _Bool isExplorer; // @synthesize isExplorer=_isExplorer;
+@property(retain, nonatomic) NSCache *supportedCapabilitiesCache; // @synthesize supportedCapabilitiesCache=_supportedCapabilitiesCache;
 @property(readonly, nonatomic) struct os_unfair_lock_s capabilitiesLock; // @synthesize capabilitiesLock=_capabilitiesLock;
 @property(readonly, nonatomic) int pairedDeviceCapabilitiesChangeNotificationToken; // @synthesize pairedDeviceCapabilitiesChangeNotificationToken=_pairedDeviceCapabilitiesChangeNotificationToken;
 @property(nonatomic) unsigned int materialType; // @synthesize materialType=_materialType;
@@ -45,6 +50,7 @@
 @property(readonly, nonatomic) _Bool unlockedSinceBoot;
 @property(readonly, nonatomic) _Bool isLocked;
 - (_Bool)_queryAndCacheNanoRegistryDeviceCapabilities;
+- (_Bool)supportsCapability:(id)arg1;
 @property(readonly, nonatomic, getter=isRunningGraceOrLater) _Bool runningGraceOrLater; // @synthesize runningGraceOrLater=_runningGraceOrLater;
 @property(readonly, nonatomic) unsigned int version; // @synthesize version=_version;
 - (void)_loadDeviceInfo;

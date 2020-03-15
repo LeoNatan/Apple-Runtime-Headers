@@ -33,6 +33,7 @@
     HKQuantity *_lastTodayDistanceValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKQuantity *lastTodayDistanceValue; // @synthesize lastTodayDistanceValue=_lastTodayDistanceValue;
 @property(readonly, nonatomic) HKQuantity *todayDistanceValue; // @synthesize todayDistanceValue=_todayDistanceValue;
 @property(nonatomic) long long lastCheckedIndexForDistance; // @synthesize lastCheckedIndexForDistance=_lastCheckedIndexForDistance;
@@ -52,7 +53,6 @@
 @property(readonly, nonatomic) ACHDataStoreActivityProperties *properties; // @synthesize properties=_properties;
 @property(retain, nonatomic) HKActivitySummary *yesterdayActivitySummary; // @synthesize yesterdayActivitySummary=_yesterdayActivitySummary;
 @property(retain, nonatomic) HKActivitySummary *todayActivitySummary; // @synthesize todayActivitySummary=_todayActivitySummary;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) HKQuantity *yesterdayStandGoal;
 @property(readonly, nonatomic) HKQuantity *todayStandGoal;
 @property(readonly, nonatomic) HKQuantity *yesterdayStandValue;

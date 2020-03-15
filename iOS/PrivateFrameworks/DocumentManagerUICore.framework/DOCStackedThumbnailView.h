@@ -16,11 +16,11 @@
     struct CGSize _topThumbnailSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *thumbnailImageViews; // @synthesize thumbnailImageViews=_thumbnailImageViews;
 @property(nonatomic) struct CGSize topThumbnailSize; // @synthesize topThumbnailSize=_topThumbnailSize;
 @property(copy, nonatomic) NSArray *URLs; // @synthesize URLs=_URLs;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;

@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     PFCloudKitStoreMonitor *_monitor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *operationIDToResult; // @synthesize operationIDToResult=_operationIDToResult;
 @property(readonly, nonatomic) PFCloudKitStoreMonitor *monitor; // @synthesize monitor=_monitor;
 @property(readonly, nonatomic) PFCloudKitExportContext *exportContext; // @synthesize exportContext=_exportContext;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSCloudKitMirroringRequest *request; // @synthesize request=_request;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, copy, nonatomic) PFCloudKitExporterOptions *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (void)finishExportWithResult:(id)arg1;
 - (void)updateMetadataForSavedRecords:(id)arg1 deletedRecordIDs:(id)arg2 inStore:(id)arg3 withManagedObjectContext:(id)arg4;
 - (void)exportOperationFinished:(id)arg1 withSavedRecords:(id)arg2 deletedRecordIDs:(id)arg3 operationError:(id)arg4;

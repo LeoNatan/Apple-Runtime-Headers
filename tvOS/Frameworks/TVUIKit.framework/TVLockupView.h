@@ -37,6 +37,7 @@
 
 + (_Bool)_inheritsAncestorHighlighting;
 + (Class)_concreteContentViewClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ancestorFocused; // @synthesize ancestorFocused=_ancestorFocused;
 @property(retain, nonatomic) UIView *concreteContentView; // @synthesize concreteContentView=_concreteContentView;
 @property(nonatomic) _Bool fixesHeaderFooterAtUnfocusedWidth; // @synthesize fixesHeaderFooterAtUnfocusedWidth=_fixesHeaderFooterAtUnfocusedWidth;
@@ -58,7 +59,6 @@
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(retain, nonatomic) TVLockupHeaderFooterView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) TVLockupHeaderFooterView *headerView; // @synthesize headerView=_headerView;
-- (void).cxx_destruct;
 - (unsigned long long)_stateForFocusUpdateContext:(id)arg1;
 - (void)_ancestorWillUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;

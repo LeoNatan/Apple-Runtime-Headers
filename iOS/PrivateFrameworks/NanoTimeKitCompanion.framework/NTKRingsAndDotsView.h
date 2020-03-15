@@ -27,6 +27,7 @@
 }
 
 + (id)emptyFillFractions;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *overlapArcArray; // @synthesize overlapArcArray=_overlapArcArray;
 @property(retain, nonatomic) NSArray *ringViews; // @synthesize ringViews=_ringViews;
 @property(nonatomic) double appearanceAnimationProgress; // @synthesize appearanceAnimationProgress=_appearanceAnimationProgress;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) NSMutableArray *ringsFillFractions; // @synthesize ringsFillFractions=_ringsFillFractions;
 @property(retain, nonatomic) NSArray *ringColors; // @synthesize ringColors=_ringColors;
 @property(retain, nonatomic) UIColor *overrideColor; // @synthesize overrideColor=_overrideColor;
-- (void).cxx_destruct;
 - (double)radiusForRingAtIndex:(long long)arg1;
 - (void)_setDiameter:(double)arg1;
 - (void)updateMonochromeColor;

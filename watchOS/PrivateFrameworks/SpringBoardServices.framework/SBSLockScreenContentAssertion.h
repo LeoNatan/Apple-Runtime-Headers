@@ -20,12 +20,12 @@
 + (_Bool)_isRestrictedDevice;
 + (id)acquireContentProviderAssertionForType:(unsigned int)arg1 slot:(id)arg2 identifier:(id)arg3 configurationObject:(id)arg4 errorHandler:(CDUnknownBlockType)arg5;
 + (id)acquireContentProviderAssertionForType:(unsigned int)arg1 slot:(id)arg2 identifier:(id)arg3 errorHandler:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(copy, nonatomic, getter=_errorHandler, setter=_setErrorHandler:) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(retain, nonatomic) SBSLockScreenContentAction *action; // @synthesize action=_action;
 @property(retain, nonatomic) id configurationObject; // @synthesize configurationObject=_configurationObject;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSString *slot; // @synthesize slot=_slot;
-- (void).cxx_destruct;
 - (void)_acquireAssertionWithType:(unsigned int)arg1 slot:(id)arg2 identifier:(id)arg3 configurationObject:(id)arg4;
 - (unsigned int)type;
 - (void)invalidate;

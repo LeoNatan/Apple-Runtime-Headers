@@ -15,10 +15,10 @@
     SSAccount *_iTunesAccount;
 }
 
+- (void).cxx_destruct;
 @property BOOL isFirstRun; // @synthesize isFirstRun=_isFirstRun;
 @property(retain) SSAccount *iTunesAccount; // @synthesize iTunesAccount=_iTunesAccount;
 @property UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
-- (void).cxx_destruct;
 - (void)_launchPrefsUsingDaemon;
 - (void)launchiCloudFamilySettings;
 

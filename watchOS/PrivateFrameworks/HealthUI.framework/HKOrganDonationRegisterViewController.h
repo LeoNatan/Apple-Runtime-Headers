@@ -33,13 +33,13 @@
     UIBarButtonItem *_nextButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *nextButton; // @synthesize nextButton=_nextButton;
 @property(retain, nonatomic) NSArray *dataEntryItems; // @synthesize dataEntryItems=_dataEntryItems;
 @property(copy, nonatomic) CDUnknownBlockType registrationCompletionHandler; // @synthesize registrationCompletionHandler=_registrationCompletionHandler;
 @property(retain, nonatomic) NSString *completionButtonTitle; // @synthesize completionButtonTitle=_completionButtonTitle;
 @property(retain, nonatomic) HKOrganDonationRegistrant *registrant; // @synthesize registrant=_registrant;
 @property(retain, nonatomic) _HKMedicalIDData *medicalIDData; // @synthesize medicalIDData=_medicalIDData;
-- (void).cxx_destruct;
 - (void)organDonationConnectionManagerDidRemoveCredential:(id)arg1;
 - (void)organDonationConnectionManagerDidStoreCredential:(id)arg1;
 - (void)updateButtonTapped:(id)arg1;

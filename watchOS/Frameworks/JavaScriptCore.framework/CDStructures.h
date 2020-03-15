@@ -44,16 +44,6 @@ struct CallbackData {
     id _field8;
 };
 
-struct ClassInfo;
-
-struct InlineWatchpointSet {
-    unsigned int _field1;
-};
-
-struct JSCell;
-
-struct JSGlobalObject;
-
 struct JSLock;
 
 struct JSObject {
@@ -89,15 +79,11 @@ struct MappedFileData {
     unsigned int m_fileSize;
 };
 
-struct NoLock;
-
 struct OpaqueJSValue;
 
 struct OrdinalNumber {
     int _field1;
 };
-
-struct PropertyTable;
 
 struct RefPtr<JSC::CachedBytecode, WTF::DumbPtrTraits<JSC::CachedBytecode>> {
     struct CachedBytecode *m_ptr;
@@ -113,10 +99,6 @@ struct RefPtr<JSC::SourceProvider, WTF::DumbPtrTraits<JSC::SourceProvider>> {
 
 struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl>> {
     struct StringImpl *m_ptr;
-};
-
-struct RefPtr<WTF::UniquedStringImpl, WTF::DumbPtrTraits<WTF::UniquedStringImpl>> {
-    struct UniquedStringImpl *_field1;
 };
 
 struct RetainPtr<NSURL> {
@@ -139,55 +121,11 @@ struct String {
 
 struct StringImpl;
 
-struct Strong<JSC::JSObject> {
+struct Strong<JSC::JSObject, JSC::ShouldStrongDestructorGrabLock::No> {
     struct JSValue *m_slot;
 };
 
-struct Structure {
-    struct Structure *_field1;
-    unsigned char _field2;
-    unsigned char _field3;
-    unsigned char _field4;
-    unsigned char _field5;
-    struct StructureIDBlob _field6;
-    unsigned short _field7;
-    unsigned char _field8;
-    struct NoLock _field9;
-    unsigned int _field10;
-    struct WriteBarrier<JSC::JSGlobalObject, WTF::DumbPtrTraits<JSC::JSGlobalObject>> _field11;
-    struct WriteBarrier<JSC::Unknown, WTF::DumbValueTraits<JSC::Unknown>> _field12;
-    struct WriteBarrier<JSC::StructureChain, WTF::DumbPtrTraits<JSC::StructureChain>> _field13;
-    struct WriteBarrier<JSC::JSCell, WTF::DumbPtrTraits<JSC::JSCell>> _field14;
-    struct RefPtr<WTF::UniquedStringImpl, WTF::DumbPtrTraits<WTF::UniquedStringImpl>> _field15;
-    struct ClassInfo *_field16;
-    struct StructureTransitionTable _field17;
-    struct WriteBarrier<JSC::PropertyTable, WTF::DumbPtrTraits<JSC::PropertyTable>> _field18;
-    struct InlineWatchpointSet _field19;
-    int _field20;
-    unsigned int _field21;
-};
-
-struct StructureChain;
-
-struct StructureIDBlob {
-    union {
-        struct {
-            struct Structure *_field1;
-            unsigned char _field2;
-            unsigned char _field3;
-            unsigned char _field4;
-            unsigned char _field5;
-        } _field1;
-        CDStruct_c10b32d8 _field2;
-        long long _field3;
-    } _field1;
-};
-
-struct StructureTransitionTable {
-    int _field1;
-};
-
-struct UniquedStringImpl;
+struct Structure;
 
 struct Weak<JSC::JSGlobalObject> {
     struct WeakImpl *m_impl;
@@ -217,26 +155,6 @@ struct WeakObjCPtr<id<JSModuleLoaderDelegate>> {
     id m_weakReference;
 };
 
-struct WriteBarrier<JSC::JSCell, WTF::DumbPtrTraits<JSC::JSCell>> {
-    struct JSCell *_field1;
-};
-
-struct WriteBarrier<JSC::JSGlobalObject, WTF::DumbPtrTraits<JSC::JSGlobalObject>> {
-    struct JSGlobalObject *_field1;
-};
-
-struct WriteBarrier<JSC::PropertyTable, WTF::DumbPtrTraits<JSC::PropertyTable>> {
-    struct PropertyTable *_field1;
-};
-
-struct WriteBarrier<JSC::StructureChain, WTF::DumbPtrTraits<JSC::StructureChain>> {
-    struct StructureChain *_field1;
-};
-
-struct WriteBarrier<JSC::Unknown, WTF::DumbValueTraits<JSC::Unknown>> {
-    long long _field1;
-};
-
 struct _NSRange {
     unsigned int _field1;
     unsigned int _field2;
@@ -255,11 +173,6 @@ struct unique_ptr<JSC::WeakGCMap<id, JSC::JSObject, WTF::PtrHash<id>, WTF::HashT
 
 #pragma mark Typedef'd Structures
 
-typedef struct {
-    int payload;
-    int tag;
-} CDStruct_c10b32d8;
-
 // Template types
 typedef struct RefPtr<JSC::CachedBytecode, WTF::DumbPtrTraits<JSC::CachedBytecode>> {
     struct CachedBytecode *m_ptr;
@@ -275,7 +188,10 @@ typedef struct pair<JSC::JSObject *, JSC::JSObject *> {
 union EncodedValueDescriptor {
     long long asInt64;
     double asDouble;
-    CDStruct_c10b32d8 asBits;
+    struct {
+        int payload;
+        int tag;
+    } asBits;
 };
 
 union WeakValueUnion {

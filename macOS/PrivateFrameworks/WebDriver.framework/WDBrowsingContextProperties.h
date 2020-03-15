@@ -16,11 +16,11 @@
     struct CGRect _windowFrame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect windowFrame; // @synthesize windowFrame=_windowFrame;
 @property(readonly, copy, nonatomic) NSString *url; // @synthesize url=_url;
 @property(readonly, copy, nonatomic) WDBrowsingContext *handle; // @synthesize handle=_handle;
 @property(readonly, nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (id)initWithBrowsingContext:(id)arg1 url:(id)arg2 active:(BOOL)arg3 windowFrame:(struct CGRect)arg4;
 - (id)initWithJSONObject:(id)arg1;
 

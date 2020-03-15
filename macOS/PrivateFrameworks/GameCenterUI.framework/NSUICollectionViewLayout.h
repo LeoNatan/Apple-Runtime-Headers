@@ -31,8 +31,8 @@
 
 + (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
-@property(readonly, nonatomic) __weak NSUICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak NSUICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (id)indexPathOfItemBelow:(id)arg1;
 - (id)indexPathOfItemAbove:(id)arg1;
 - (id)indexPathOfItemAfter:(id)arg1;

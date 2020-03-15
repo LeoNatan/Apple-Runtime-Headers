@@ -17,12 +17,12 @@
     NSString *_sourceName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sourceName; // @synthesize sourceName=_sourceName;
 @property(retain, nonatomic) HKCategoryType *categoryType; // @synthesize categoryType=_categoryType;
 @property(retain, nonatomic) HKQuantityType *quantityType; // @synthesize quantityType=_quantityType;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) HKSampleType *sampleType;
 
 @end

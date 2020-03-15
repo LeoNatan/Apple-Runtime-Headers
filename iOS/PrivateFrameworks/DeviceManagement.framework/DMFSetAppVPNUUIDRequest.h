@@ -17,8 +17,8 @@
 + (_Bool)isPermittedOnUserConnection;
 + (_Bool)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
-@property(copy, nonatomic) NSString *UUIDString; // @synthesize UUIDString=_UUIDString;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *UUIDString; // @synthesize UUIDString=_UUIDString;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

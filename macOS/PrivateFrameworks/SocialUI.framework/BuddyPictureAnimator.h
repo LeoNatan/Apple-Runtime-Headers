@@ -18,12 +18,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SOSystemIdleMonitor *systemIdleMonitor; // @synthesize systemIdleMonitor=_systemIdleMonitor;
 @property(readonly, nonatomic) BOOL shouldNotAnimate; // @synthesize shouldNotAnimate=_shouldNotAnimate;
 @property(readonly, retain, nonatomic) SOTimer *mainAnimationTimer; // @synthesize mainAnimationTimer=_mainAnimationTimer;
 @property(readonly, retain, nonatomic) SOTimerCenter *timerCenter; // @synthesize timerCenter=_timerCenter;
 @property(readonly, retain, nonatomic) NSMutableSet *buddyPicturesToPost; // @synthesize buddyPicturesToPost=_buddyPicturesToPost;
-- (void).cxx_destruct;
 - (void)removeAnimatingBuddyPicture:(id)arg1;
 - (void)addAnimatingBuddyPicture:(id)arg1;
 - (void)startAnimationIfDesired;

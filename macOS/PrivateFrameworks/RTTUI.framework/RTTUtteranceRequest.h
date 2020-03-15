@@ -17,11 +17,11 @@
 }
 
 + (id)utteranceRequestWithIndex:(unsigned long long)arg1 forString:(id)arg2 inCellPath:(id)arg3 call:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TUCall *call; // @synthesize call=_call;
 @property(nonatomic) __weak NSIndexPath *cellIndexPath; // @synthesize cellIndexPath=_cellIndexPath;
 @property(retain, nonatomic) NSString *string; // @synthesize string=_string;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

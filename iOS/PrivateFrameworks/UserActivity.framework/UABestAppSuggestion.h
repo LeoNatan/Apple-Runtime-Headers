@@ -28,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) _Bool isActive; // @synthesize isActive=_isActive;
 @property(readonly, copy) NSDate *lastActiveTime; // @synthesize lastActiveTime=_lastActiveTime;
 @property(readonly, copy) NSString *originatingDeviceType; // @synthesize originatingDeviceType=_originatingDeviceType;
@@ -41,7 +42,6 @@
 @property(readonly, copy) NSDictionary *options; // @synthesize options=_options;
 @property(copy) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(readonly) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)hash;

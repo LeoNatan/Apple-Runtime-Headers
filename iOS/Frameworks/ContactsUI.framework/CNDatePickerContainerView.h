@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIDatePicker *_datePicker;
 }
 
-@property(readonly, nonatomic) UIDatePicker *datePicker; // @synthesize datePicker=_datePicker;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIDatePicker *datePicker; // @synthesize datePicker=_datePicker;
 - (id)initWithDatePicker:(id)arg1;
 
 @end

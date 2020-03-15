@@ -13,8 +13,8 @@
     NSNumber *_storeAccountIdentifier;
 }
 
-@property(readonly, copy, nonatomic) NSNumber *storeAccountIdentifier; // @synthesize storeAccountIdentifier=_storeAccountIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSNumber *storeAccountIdentifier; // @synthesize storeAccountIdentifier=_storeAccountIdentifier;
 - (void)resolveError:(id)arg1;
 - (id)initWithStoreAccountIdentifier:(id)arg1;
 

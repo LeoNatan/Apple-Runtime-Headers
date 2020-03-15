@@ -20,11 +20,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)defaultOptions;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *delayPeriod; // @synthesize delayPeriod=_delayPeriod;
 @property(nonatomic) _Bool MDMUseDelayPeriod; // @synthesize MDMUseDelayPeriod=_MDMUseDelayPeriod;
 @property(retain, nonatomic) NSString *requestedPMV; // @synthesize requestedPMV=_requestedPMV;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_setDefaultOptions;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

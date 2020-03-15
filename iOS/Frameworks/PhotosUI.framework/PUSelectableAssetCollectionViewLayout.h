@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     struct CGSize _layoutReferenceSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize layoutReferenceSize; // @synthesize layoutReferenceSize=_layoutReferenceSize;
 @property(retain, nonatomic) NSSet *floatingCellIndexPaths; // @synthesize floatingCellIndexPaths=_floatingCellIndexPaths;
 @property(nonatomic) struct UIOffset sharingBadgeOffset; // @synthesize sharingBadgeOffset=_sharingBadgeOffset;
-- (void).cxx_destruct;
 - (struct CGRect)collectionViewBounds;
 - (_Bool)flipsHorizontallyInOppositeLayoutDirection;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;

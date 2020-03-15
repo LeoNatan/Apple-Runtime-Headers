@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly, nonatomic) __weak UIViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
-- (void).cxx_destruct;
 - (void)messageComposeViewController:(id)arg1 didFinishWithResult:(long long)arg2;
 - (void)reportResponseViaSMS:(id)arg1 forExtension:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)reportResponseViaNetwork:(id)arg1 forExtension:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;

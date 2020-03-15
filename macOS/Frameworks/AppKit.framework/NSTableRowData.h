@@ -71,6 +71,7 @@ __attribute__((visibility("hidden")))
     unsigned int _rowViewsDereferenceImminent:1;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableIndexSet *mutableHiddenRowIndexes; // @synthesize mutableHiddenRowIndexes=_hiddenRowIndexes;
 @property(copy) CDUnknownBlockType animationCompletionHandler; // @synthesize animationCompletionHandler=_animationCompletionHandler;
 @property(retain, nonatomic) NSView *preferredReuseView; // @synthesize preferredReuseView=_preferredReuseView;
@@ -81,7 +82,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSTableSwipeData *swipeData; // @synthesize swipeData=_swipeData;
 @property(nonatomic) struct CGSize targetTableFrameSize; // @synthesize targetTableFrameSize=_targetTableFrameSize;
 @property(copy) CDUnknownBlockType delayEditBlock; // @synthesize delayEditBlock=_delayEditBlock;
-- (void).cxx_destruct;
 - (void)_animateSwipeToDeleteWithGestureAmount:(double)arg1 velocity:(double)arg2 stiffness:(double)arg3;
 - (void)_trackSwipeToDeleteFromEvent:(id)arg1;
 - (double)_rubberBandGestureAmount:(double)arg1;

@@ -17,12 +17,12 @@
     NSMutableArray *_docInfos;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *docInfos; // @synthesize docInfos=_docInfos;
 @property(retain, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(retain, nonatomic) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)bumpModificationDate;
 - (id)init;
 @property(readonly, nonatomic) long long docCamPDFVersion;

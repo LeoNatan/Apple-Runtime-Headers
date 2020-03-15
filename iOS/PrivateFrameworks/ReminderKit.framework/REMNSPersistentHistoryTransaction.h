@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain) _REMNSPersistentHistoryTransactionStorage *storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
+@property(retain) _REMNSPersistentHistoryTransactionStorage *storage; // @synthesize storage=_storage;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)author;

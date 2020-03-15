@@ -22,6 +22,7 @@
     int _localCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int localCount; // @synthesize localCount=_localCount;
 @property(readonly, nonatomic) NSString *localIdentifier; // @synthesize localIdentifier=_localIdentifier;
 @property(readonly, nonatomic) NSString *keyAssetUUIDString; // @synthesize keyAssetUUIDString=_keyAssetUUIDString;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) int remoteCount; // @synthesize remoteCount=_remoteCount;
 @property(readonly, nonatomic) NSString *remoteIdentifier; // @synthesize remoteIdentifier=_remoteIdentifier;
 @property(readonly, nonatomic) int collectionTarget; // @synthesize collectionTarget=_collectionTarget;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

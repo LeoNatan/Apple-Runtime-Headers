@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     id _userData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id userData; // @synthesize userData=_userData;
 @property(readonly, nonatomic) unsigned int _loggingID; // @synthesize _loggingID;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)fetchWithConfiguration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)init;

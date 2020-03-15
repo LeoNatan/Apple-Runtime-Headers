@@ -14,9 +14,9 @@
     NSArray *_assetHandles;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *assetHandles; // @synthesize assetHandles=_assetHandles;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
-- (void).cxx_destruct;
 - (void)_finish;
 - (void)performOperation;
 - (id)initWithAssetHandle:(id)arg1;

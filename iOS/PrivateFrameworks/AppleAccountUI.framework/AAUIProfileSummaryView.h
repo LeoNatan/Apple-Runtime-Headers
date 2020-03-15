@@ -18,9 +18,9 @@
 }
 
 + (double)desiredHeight;
+- (void).cxx_destruct;
 @property(nonatomic) double topPadding; // @synthesize topPadding=_topPadding;
 @property(nonatomic) _Bool hidesPhoto; // @synthesize hidesPhoto=_hidesPhoto;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithName:(id)arg1 email:(id)arg2 image:(id)arg3;
 

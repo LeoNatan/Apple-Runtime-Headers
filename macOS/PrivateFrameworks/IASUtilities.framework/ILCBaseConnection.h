@@ -19,6 +19,7 @@
     NSThread *_workThread;
 }
 
+- (void).cxx_destruct;
 @property int socket; // @synthesize socket=_socket;
 @property(retain) NSThread *workThread; // @synthesize workThread=_workThread;
 @property(retain) NSData *passwordHash; // @synthesize passwordHash=_passwordHash;
@@ -26,7 +27,6 @@
 @property int clientnonce; // @synthesize clientnonce=_clientnonce;
 @property int servernonce; // @synthesize servernonce=_servernonce;
 @property(retain) NSString *hostname; // @synthesize hostname=_hostname;
-- (void).cxx_destruct;
 - (void)disconnect;
 - (id)securityHashForData:(id)arg1;
 - (int)sendSecurePacket:(CDStruct_d2964125 *)arg1;

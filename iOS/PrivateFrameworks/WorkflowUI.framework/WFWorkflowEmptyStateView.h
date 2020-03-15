@@ -20,13 +20,13 @@
     NSLayoutConstraint *_addButtonHeightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSLayoutConstraint *addButtonHeightConstraint; // @synthesize addButtonHeightConstraint=_addButtonHeightConstraint;
 @property(readonly, nonatomic) UIButton *addButton; // @synthesize addButton=_addButton;
 @property(readonly, nonatomic) UIButton *tourButton; // @synthesize tourButton=_tourButton;
 @property(readonly, nonatomic) UILabel *instructionLabel; // @synthesize instructionLabel=_instructionLabel;
 @property(nonatomic) __weak id <WFWorkflowEmptyStateViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSAttributedString *instructionText;
 @property(readonly, nonatomic) WFWorkflowSettingsLayoutMetrics *layoutMetrics; // @synthesize layoutMetrics=_layoutMetrics;
 - (void)showDrawer;

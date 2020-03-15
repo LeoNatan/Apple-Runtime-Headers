@@ -26,6 +26,7 @@
 }
 
 + (id)decode:(const struct ProtobufCMessage *)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isOptional) _Bool optional; // @synthesize optional=_optional;
 @property(readonly, nonatomic) TMLValueExpression *initializer; // @synthesize initializer=_initializer;
 @property(copy, nonatomic) NSString *objcClassName; // @synthesize objcClassName=_objcClassName;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSDictionary *properties; // @synthesize properties=_properties;
 @property(readonly, nonatomic) NSString *superClassName; // @synthesize superClassName=_superClassName;
 @property(readonly, nonatomic) NSString *className; // @synthesize className=_className;
-- (void).cxx_destruct;
 - (void)encode:(struct ProtobufCMessage *)arg1;
 - (_Bool)mergeFromClassDescriptor:(id)arg1;
 - (_Bool)canMergeFromClassDescriptor:(id)arg1;

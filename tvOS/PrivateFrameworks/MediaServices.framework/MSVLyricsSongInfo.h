@@ -22,6 +22,7 @@
 
 + (id)_descriptionForLyricsInfoType:(long long)arg1;
 + (id)_elementsInArray:(id)arg1 atTimeOffset:(double)arg2 errorMargin:(double)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *translationsMap; // @synthesize translationsMap=_translationsMap;
 @property(retain, nonatomic) NSArray *lyricsSections; // @synthesize lyricsSections=_lyricsSections;
 @property(retain, nonatomic) NSArray *lyricsLines; // @synthesize lyricsLines=_lyricsLines;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSArray *songwriters; // @synthesize songwriters=_songwriters;
 @property(nonatomic) double songDuration; // @synthesize songDuration=_songDuration;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)_sortLyricsLinesByStartTime:(id)arg1;
 - (void)setLyricsLinesSortedByStartTime:(id)arg1;
 - (id)description;

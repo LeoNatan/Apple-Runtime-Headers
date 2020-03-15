@@ -38,7 +38,6 @@
     _Bool _isEditingWordPrefix;
     TIKeyboardState *_keyboardState;
     TIKeyboardInputManagerConfig *_config;
-    CDUnknownBlockType _candidateGenerationCompletionHandler;
     TIRevisionHistory *_revisionHistory;
     TILRUDictionary *_autocorrectionHistory;
     TILRUDictionary *_recentAutocorrections;
@@ -64,6 +63,7 @@
     TIAutocorrectionList *_lastContinuousPathAutocorrection;
     id <TICandidateHandler> _candidateHandlerForOpenRequest;
     unsigned long long _lastNumCandidatesRequest;
+    CDUnknownBlockType _candidateGenerationCompletionHandler;
     struct _NSRange _candidateRange;
 }
 
@@ -77,6 +77,9 @@
 + (id)userDictionaryWordKeyPairsFilePath;
 + (id)keyboardUserDirectory;
 + (void)resetResponseKit;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType candidateGenerationCompletionHandler; // @synthesize candidateGenerationCompletionHandler=_candidateGenerationCompletionHandler;
 @property(nonatomic) unsigned long long lastNumCandidatesRequest; // @synthesize lastNumCandidatesRequest=_lastNumCandidatesRequest;
 @property(retain, nonatomic) id <TICandidateHandler> candidateHandlerForOpenRequest; // @synthesize candidateHandlerForOpenRequest=_candidateHandlerForOpenRequest;
 @property(retain, nonatomic) TIAutocorrectionList *lastContinuousPathAutocorrection; // @synthesize lastContinuousPathAutocorrection=_lastContinuousPathAutocorrection;
@@ -103,13 +106,10 @@
 @property(readonly, nonatomic) TILRUDictionary *recentAutocorrections; // @synthesize recentAutocorrections=_recentAutocorrections;
 @property(readonly, nonatomic) TILRUDictionary *autocorrectionHistory; // @synthesize autocorrectionHistory=_autocorrectionHistory;
 @property(readonly, nonatomic) TIRevisionHistory *revisionHistory; // @synthesize revisionHistory=_revisionHistory;
-@property(copy, nonatomic) CDUnknownBlockType candidateGenerationCompletionHandler; // @synthesize candidateGenerationCompletionHandler=_candidateGenerationCompletionHandler;
 @property(nonatomic) struct _NSRange candidateRange; // @synthesize candidateRange=_candidateRange;
 @property(nonatomic, getter=isWordLearningEnabled) _Bool wordLearningEnabled; // @synthesize wordLearningEnabled=_wordLearningEnabled;
 @property(readonly, nonatomic) TIKeyboardInputManagerConfig *config; // @synthesize config=_config;
 @property(retain, nonatomic) TIKeyboardState *keyboardState; // @synthesize keyboardState=_keyboardState;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) TIEmojiCandidateGenerator *emojiCandidateGenerator;
 - (void)didUpdateInputModeProbabilities:(id)arg1;
 - (void)didUpdateInputModes:(id)arg1;
@@ -295,6 +295,7 @@
 - (void)addInput:(id)arg1 withContext:(id)arg2;
 - (id)handleKeyboardInput:(id)arg1;
 - (id)keyboardConfiguration;
+- (_Bool)syncToKeyboardState:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)logDiscoverabilityEvent:(int)arg1 userInfo:(id)arg2;
 - (void)syncToKeyboardState:(id)arg1;
 - (_Bool)documentState:(id)arg1 matchesDocumentState:(id)arg2;
@@ -384,6 +385,8 @@
 - (_Bool)usesAutoDeleteWord;
 - (_Bool)newInputAcceptsUserSelectedCandidate;
 - (_Bool)commitsAcceptedCandidate;
+- (_Bool)delayedCandidateList;
+- (_Bool)usesLiveConversion;
 - (_Bool)shouldFixupIncompleteRomaji;
 - (double)continuousPathLanguageWeight;
 - (_Bool)usesContinuousPath;

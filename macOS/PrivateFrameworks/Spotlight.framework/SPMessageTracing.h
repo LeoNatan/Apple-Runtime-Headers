@@ -20,11 +20,11 @@
 + (id)sharedSearchSession;
 + (id)shared;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) SPMessageTracingSearchSession *currentSearchSession; // @synthesize currentSearchSession=_currentSearchSession;
 @property(nonatomic) BOOL resultIsBeingDisplayed; // @synthesize resultIsBeingDisplayed=_resultIsBeingDisplayed;
 @property(nonatomic) BOOL queryIsBeingRequested; // @synthesize queryIsBeingRequested=_queryIsBeingRequested;
-- (void).cxx_destruct;
 - (id)getCategoryForResult:(id)arg1;
 - (void)signpostResultDisplayed;
 - (void)signpostResultSelected;

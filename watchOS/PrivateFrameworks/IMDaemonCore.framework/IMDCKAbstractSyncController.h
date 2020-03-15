@@ -15,9 +15,9 @@
     id <IMDCKAbstractSyncControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <IMDCKAbstractSyncControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool isSyncing; // @synthesize isSyncing=_isSyncing;
-- (void).cxx_destruct;
 - (_Bool)_fetchedAllChangesFromCloudKit;
 - (void)syncBatchCompleted:(unsigned int)arg1;
 - (void)addSyncDebuggingInfoToDictionary:(id)arg1;

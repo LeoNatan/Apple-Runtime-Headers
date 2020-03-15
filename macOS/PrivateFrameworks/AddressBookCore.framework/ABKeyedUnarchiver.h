@@ -14,8 +14,8 @@
 }
 
 + (id)unarchiveObjectWithData:(id)arg1 addressBook:(id)arg2 error:(id *)arg3;
-@property(readonly, nonatomic) ABAddressBook *addressBook; // @synthesize addressBook=_addressBook;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ABAddressBook *addressBook; // @synthesize addressBook=_addressBook;
 - (id)initForReadingWithData:(id)arg1 addressBook:(id)arg2 error:(id *)arg3;
 
 @end

@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int contextType; // @synthesize contextType=_contextType;
 @property(nonatomic) _Bool publicNetAllowed; // @synthesize publicNetAllowed=_publicNetAllowed;
 @property(nonatomic) _Bool suspended; // @synthesize suspended=_suspended;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSString *apnName; // @synthesize apnName=_apnName;
 @property(retain, nonatomic) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
 @property(retain, nonatomic) NSNumber *pdp; // @synthesize pdp=_pdp;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

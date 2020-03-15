@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 + (id)endNoteStringForRefType:(int)arg1;
 + (id)refTypeEnumMap;
 + (id)wordRefTypeEnumMap;
+- (void).cxx_destruct;
 @property(readonly) __weak WDDocument *document; // @synthesize document=mDocument;
 @property(retain, nonatomic) NSString *pages; // @synthesize pages=mPages;
 @property(retain, nonatomic) NSMutableArray *urls; // @synthesize urls=mUrls;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *sourceType; // @synthesize sourceType=mSourceType;
 @property(retain, nonatomic) NSMutableArray *authors; // @synthesize authors=mAuthors;
 @property(retain, nonatomic) NSString *year; // @synthesize year=mYear;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDocument:(id)arg1;
 

@@ -42,11 +42,11 @@
 }
 
 + (id)_disabledLayerActions;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NTKVictoryAnalogBackgroundViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long dialShape; // @synthesize dialShape=_dialShape;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(retain, nonatomic) id <NTKVictoryAnalogBackgroundColorPalette> palette; // @synthesize palette=_palette;
-- (void).cxx_destruct;
 - (id)_dotImage;
 - (id)_circularDialLogoImage;
 - (id)_logoImage;

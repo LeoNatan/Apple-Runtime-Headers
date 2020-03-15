@@ -17,12 +17,12 @@
     unsigned long long _argCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long argCount; // @synthesize argCount=_argCount;
 @property(readonly, nonatomic) const struct OpaqueJSValue **args; // @synthesize args=_args;
 @property(readonly, nonatomic) struct OpaqueJSValue *thisObject; // @synthesize thisObject=_thisObject;
 @property(readonly, nonatomic) struct OpaqueJSValue *callback; // @synthesize callback=_callback;
 @property(readonly, retain) TVLLegacyJSContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithContext:(struct OpaqueJSContext *)arg1 callback:(struct OpaqueJSValue *)arg2 thisObject:(struct OpaqueJSValue *)arg3 args:(const struct OpaqueJSValue **)arg4 argCount:(unsigned long long)arg5;
 

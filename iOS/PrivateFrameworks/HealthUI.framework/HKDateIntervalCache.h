@@ -23,12 +23,12 @@
     HKValueRange *_dateRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKValueRange *dateRange; // @synthesize dateRange=_dateRange;
 @property(retain, nonatomic) NSDateComponents *minorDateSpacingComponents; // @synthesize minorDateSpacingComponents=_minorDateSpacingComponents;
 @property(retain, nonatomic) NSDateComponents *dateSpacingComponents; // @synthesize dateSpacingComponents=_dateSpacingComponents;
 @property(retain, nonatomic) NSDateComponents *referenceSpacingComponents; // @synthesize referenceSpacingComponents=_referenceSpacingComponents;
 @property(nonatomic) unsigned long long dateAnchorUnit; // @synthesize dateAnchorUnit=_dateAnchorUnit;
-- (void).cxx_destruct;
 - (id)_generateCachedDates;
 - (id)_firstDateAfter:(id)arg1 matchingComponents:(id)arg2 calendar:(id)arg3;
 - (unsigned long long)_minimumCalendarUnitForComponents:(id)arg1;

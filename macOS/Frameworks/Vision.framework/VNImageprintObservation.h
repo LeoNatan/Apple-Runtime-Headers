@@ -17,10 +17,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)observationWithImageprint:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *imageprintVersion; // @synthesize imageprintVersion=_imageprintVersion;
 @property(readonly, nonatomic) BOOL imageprintValid; // @synthesize imageprintValid=_imageprintValid;
 @property(retain, nonatomic) VNImageprint *imageprint; // @synthesize imageprint=_imageprint;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *rawImageprintDescriptor;
 - (id)initWithRawImageprintDescriptor:(id)arg1;
 - (BOOL)isImageprintValid;

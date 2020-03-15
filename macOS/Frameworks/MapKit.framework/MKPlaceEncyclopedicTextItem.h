@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)textItemWithLabel:(id)arg1 value:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *value; // @synthesize value;
 @property(readonly, nonatomic) NSString *label; // @synthesize label;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

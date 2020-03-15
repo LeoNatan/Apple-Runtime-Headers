@@ -45,6 +45,7 @@
     id _strongDelegate;
 }
 
+- (void).cxx_destruct;
 @property(retain) id strongDelegate; // @synthesize strongDelegate=_strongDelegate;
 @property(readonly) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(readonly) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
@@ -62,7 +63,6 @@
 @property(nonatomic) int interfaceTraceFd; // @synthesize interfaceTraceFd=_interfaceTraceFd;
 @property(nonatomic) unsigned int mgrflags; // @synthesize mgrflags=_mgrflags;
 @property(nonatomic) __weak id <NWStatisticsManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithQueue:(id)arg1;
 - (void)dealloc;

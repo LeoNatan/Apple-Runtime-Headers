@@ -15,9 +15,9 @@
     UIViewController *_presentingViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(retain) NSNumber *authenticatedDSID; // @synthesize authenticatedDSID=_authenticatedDSID;
-- (void).cxx_destruct;
 - (void)setScriptOptions:(id)arg1;
 - (void)sendCompletionCallback:(id)arg1;
 - (void)run;

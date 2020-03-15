@@ -23,8 +23,8 @@
 + (id)predicateForAvailableAutoTournaments;
 + (id)predicateForAvailableCustomTournaments;
 + (id)predicateForAvailableTournaments;
-@property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithPredicate:(id)arg1;

@@ -29,13 +29,13 @@ __attribute__((visibility("hidden")))
 + (Class)uploadsType;
 + (Class)assetsType;
 + (id)options;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *authPutRequest; // @synthesize authPutRequest=_authPutRequest;
 @property(retain, nonatomic) NSMutableArray *contentRequestHeaders; // @synthesize contentRequestHeaders=_contentRequestHeaders;
 @property(retain, nonatomic) NSMutableArray *uploads; // @synthesize uploads=_uploads;
 @property(retain, nonatomic) NSMutableArray *assets; // @synthesize assets=_assets;
 @property(retain, nonatomic) CKDPRecordFieldIdentifier *field; // @synthesize field=_field;
 @property(retain, nonatomic) CKDPRecordType *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

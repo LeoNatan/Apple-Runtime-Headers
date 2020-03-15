@@ -19,6 +19,7 @@
     NSString *_flavor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *flavor; // @synthesize flavor=_flavor;
 @property(readonly, copy, nonatomic) NSString *mediaKind; // @synthesize mediaKind=_mediaKind;
 @property(readonly, copy, nonatomic) NSString *storeFrontID; // @synthesize storeFrontID=_storeFrontID;
@@ -26,7 +27,6 @@
 @property(readonly, copy, nonatomic) NSNumber *matchStatus; // @synthesize matchStatus=_matchStatus;
 @property(readonly, copy, nonatomic) NSNumber *accountID; // @synthesize accountID=_accountID;
 @property(readonly, copy, nonatomic) NSNumber *adamID; // @synthesize adamID=_adamID;
-- (void).cxx_destruct;
 - (id)initWithItemID:(id)arg1 title:(id)arg2 storeFrontID:(id)arg3 mediaKind:(id)arg4 accountID:(id)arg5 matchStatus:(id)arg6 flavor:(id)arg7;
 
 @end

@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isNavd; // @synthesize isNavd=_isNavd;
 @property(readonly, nonatomic) GEORouteAttributes *routeAttributes; // @synthesize routeAttributes=_routeAttributes;
 @property(readonly, nonatomic) BOOL hasArrived; // @synthesize hasArrived=_hasArrived;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) GEOComposedRoute *route; // @synthesize route=_route;
 @property(retain, nonatomic) GEODirectionsRequestFeedback *feedback; // @synthesize feedback=_feedback;
 @property(nonatomic) __weak id <GEORouteHypothesizerUpdaterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (int)_transportType;
 - (void)_updateScoreForLocation:(id)arg1;
 - (BOOL)_checkForArrival:(id)arg1 routeMatch:(id)arg2;

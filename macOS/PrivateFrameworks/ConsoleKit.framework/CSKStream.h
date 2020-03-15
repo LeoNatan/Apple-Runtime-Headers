@@ -38,6 +38,7 @@
     CSKEntity *_keyEntity;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak CSKEntity *keyEntity; // @synthesize keyEntity=_keyEntity;
 @property(nonatomic) BOOL sourceStreamingDidFinishSignaled; // @synthesize sourceStreamingDidFinishSignaled=_sourceStreamingDidFinishSignaled;
 @property(nonatomic) unsigned long long sourceTerminatedFailures; // @synthesize sourceTerminatedFailures=_sourceTerminatedFailures;
@@ -57,7 +58,6 @@
 @property(nonatomic) unsigned long long messagesCount; // @synthesize messagesCount=_messagesCount;
 @property(readonly, nonatomic) CSKStreamSource *source; // @synthesize source=_source;
 @property(nonatomic) __weak id <CSKStreamDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_removeObserverOnObserverFilters:(id)arg1;
 - (void)_addObserverOnObserverFilters:(id)arg1;
 - (void)_updateSchedulerState:(unsigned long long)arg1;

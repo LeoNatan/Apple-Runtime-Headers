@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long backgroundTaskIdentifier; // @synthesize backgroundTaskIdentifier=_backgroundTaskIdentifier;
 @property(nonatomic) _Bool networkErrorOccurredDuringInvalidation; // @synthesize networkErrorOccurredDuringInvalidation=_networkErrorOccurredDuringInvalidation;
 @property(retain, nonatomic) NSMutableSet *penaltyBox; // @synthesize penaltyBox=_penaltyBox;
 @property(retain, nonatomic) NSMutableArray *keyLoaders; // @synthesize keyLoaders=_keyLoaders;
 @property(retain, nonatomic) TVPStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
-- (void).cxx_destruct;
 - (void)_registerStateMachineHandlers;
 - (void)_networkReachbilityDidChange:(id)arg1;
 - (_Bool)_getParamsForDeletionInfo:(id)arg1 keyServerURL:(id *)arg2 nonceURL:(id *)arg3 keyIdentifier:(id *)arg4 offlineKeyData:(id *)arg5 dsid:(id *)arg6 additionalRequestParams:(id *)arg7 contentID:(id *)arg8;

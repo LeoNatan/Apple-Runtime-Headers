@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSHashTable *_userQueries;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool finalized; // @synthesize finalized=_finalized;
 @property(readonly, nonatomic) NSHashTable *userQueries; // @synthesize userQueries=_userQueries;
 @property(readonly, nonatomic) HMBSQLStatement *deleteRecord; // @synthesize deleteRecord=_deleteRecord;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *modelType; // @synthesize modelType=_modelType;
 @property(readonly, nonatomic) Class modelClass; // @synthesize modelClass=_modelClass;
 @property(readonly, nonatomic) __weak HMBLocalSQLContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)finalize;
 - (void)dealloc;
 - (unsigned int)_updateQueryForZoneRow:(unsigned int)arg1 recordRow:(unsigned int)arg2 encodedColumns:(id)arg3 error:(id *)arg4;

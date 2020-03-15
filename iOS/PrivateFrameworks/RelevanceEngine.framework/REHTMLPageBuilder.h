@@ -32,11 +32,11 @@
 + (id)_headElement;
 + (id)_htmlElement;
 + (id)_docTypeElement;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *links; // @synthesize links=_links;
 @property(retain, nonatomic) NSString *pageDescription; // @synthesize pageDescription=_pageDescription;
 @property(retain, nonatomic) NSArray *loadingScripts; // @synthesize loadingScripts=_loadingScripts;
 @property(retain, nonatomic) NSArray *stylesheets; // @synthesize stylesheets=_stylesheets;
-- (void).cxx_destruct;
 - (id)pageWithTitle:(id)arg1 content:(id)arg2 backLocation:(id)arg3;
 - (id)init;
 

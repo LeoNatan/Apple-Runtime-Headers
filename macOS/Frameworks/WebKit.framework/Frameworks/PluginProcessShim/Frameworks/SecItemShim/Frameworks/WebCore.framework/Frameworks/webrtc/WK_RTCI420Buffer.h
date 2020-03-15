@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <webrtc/WK_RTCI420Buffer-Protocol.h>
+#import <webrtc/RTCI420Buffer-Protocol.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface WK_RTCI420Buffer : NSObject <WK_RTCI420Buffer>
+@interface WK_RTCI420Buffer : NSObject <RTCI420Buffer>
 {
     scoped_refptr_b674d2a6 _i420Buffer;
 }

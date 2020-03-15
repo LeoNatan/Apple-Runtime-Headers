@@ -17,11 +17,11 @@
 }
 
 + (BOOL)isHomeKitURL:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isValidForPairing; // @synthesize isValidForPairing=_isValidForPairing;
 @property(readonly, nonatomic) BOOL hasAddRequest; // @synthesize hasAddRequest=_hasAddRequest;
 @property(readonly, nonatomic) HMSetupAccessoryPayload *setupPayload; // @synthesize setupPayload=_setupPayload;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (BOOL)isAllZerosCode;
 - (id)description;
 - (id)initWithSetupCode:(id)arg1;

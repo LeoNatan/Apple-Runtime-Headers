@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)shouldShowSecurityUIInUnifiedFieldForBrowserContentViewController:(id)arg1;
-@property __weak id <UnifiedFieldSecurityUIManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property __weak id <UnifiedFieldSecurityUIManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_certificateTrustSheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)_showCertificateSheetWithHostname:(id)arg1 cerficiateChain:(id)arg2 evCertificateOrganizationName:(id)arg3 inWindow:(id)arg4;
 - (void)showCertificateSheetInWindow:(id)arg1;

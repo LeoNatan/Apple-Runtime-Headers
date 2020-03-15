@@ -20,10 +20,10 @@
     id <HDClientDataCollectionObservationStateMonitorDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HDClientDataCollectionObservationStateMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 @property(readonly, nonatomic) HDHealthStoreClient *client; // @synthesize client=_client;
-- (void).cxx_destruct;
 - (void)processDidEnterForeground:(id)arg1;
 - (void)processDidEnterBackground:(id)arg1;
 - (void)workoutManagerDidChangeState:(id)arg1;

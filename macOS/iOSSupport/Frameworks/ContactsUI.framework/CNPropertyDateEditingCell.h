@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     UIViewController *_contentViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(retain, nonatomic) CNDatePickerContainerView *datePickerContainerView; // @synthesize datePickerContainerView=_datePickerContainerView;
 @property(retain, nonatomic) UIDatePicker *datePicker; // @synthesize datePicker=_datePicker;
-- (void).cxx_destruct;
 - (void)regainFocus;
 - (void)picker:(id)arg1 didPickItem:(id)arg2;
 - (void)pickerDidCancel:(id)arg1;

@@ -16,11 +16,11 @@
     id <CLKMonochromeFilterProvider> _filterProvider;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 @property(nonatomic) double fillFraction; // @synthesize fillFraction=_fillFraction;
 @property(readonly, nonatomic) double radius; // @synthesize radius=_radius;
 @property(readonly, nonatomic) double ringWidth; // @synthesize ringWidth=_ringWidth;
-- (void).cxx_destruct;
 - (void)_drawRingWithRadius:(double)arg1 fillFraction:(double)arg2 alpha:(double)arg3;
 - (void)_drawBackgroundRings;
 - (void)drawRect:(struct CGRect)arg1;

@@ -17,12 +17,12 @@
     NSMutableDictionary *_itemForIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *itemForIdentifier; // @synthesize itemForIdentifier=_itemForIdentifier;
 @property(copy, nonatomic) HFStaticItem *passwordItem; // @synthesize passwordItem=_passwordItem;
 @property(copy, nonatomic) HFStaticItem *passwordEnableItem; // @synthesize passwordEnableItem=_passwordEnableItem;
 @property(copy, nonatomic) NSArray *accessControlItems; // @synthesize accessControlItems=_accessControlItems;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)items;
 - (id)_buildItems;
 - (id)initWithItems:(id)arg1;

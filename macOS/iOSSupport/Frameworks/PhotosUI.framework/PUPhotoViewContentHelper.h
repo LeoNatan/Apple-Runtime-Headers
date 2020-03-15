@@ -85,6 +85,7 @@
 
 + (struct CGSize)sizeThatFits:(struct CGSize)arg1 imageSize:(struct CGSize)arg2 fillMode:(long long)arg3;
 + (struct CGRect)_imageContentFrameForBounds:(struct CGRect)arg1 imageSize:(struct CGSize)arg2 fillMode:(long long)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setAudioSession:) ISWrappedAVAudioSession *_audioSession; // @synthesize _audioSession=__audioSession;
 @property(retain, nonatomic, setter=_setTitleSubtitleUILabel:) PXTitleSubtitleUILabel *_titleSubtitleLabel; // @synthesize _titleSubtitleLabel=__titleSubtitleLabel;
 @property(retain, nonatomic, setter=_setBadgeView:) PXUIAssetBadgeView *_badgeView; // @synthesize _badgeView=__badgeView;
@@ -135,7 +136,6 @@
 @property(nonatomic) long long fillMode; // @synthesize fillMode=_fillMode;
 @property(readonly, nonatomic) __weak UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic, getter=isTextBannerVisible) BOOL textBannerVisible; // @synthesize textBannerVisible=_isTextBannerVisible;
-- (void).cxx_destruct;
 - (void)animateCrossfadeToImage:(id)arg1;
 - (void)contentViewDynamicUserInterfaceTraitDidChange;
 - (void)layoutSubviewsOfContentView;

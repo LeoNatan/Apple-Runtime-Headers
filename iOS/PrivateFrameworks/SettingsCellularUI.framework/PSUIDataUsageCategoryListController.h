@@ -6,14 +6,19 @@
 
 #import <Preferences/PSListController.h>
 
+@class PSUIDataUsageCategorySpecifier;
+
 __attribute__((visibility("hidden")))
 @interface PSUIDataUsageCategoryListController : PSListController
 {
+    PSUIDataUsageCategorySpecifier *_parentSpecifier;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) PSUIDataUsageCategorySpecifier *parentSpecifier; // @synthesize parentSpecifier=_parentSpecifier;
 - (_Bool)shouldReloadSpecifiersOnResume;
 - (id)specifiers;
-- (id)specifier;
+- (id)init;
 
 @end
 

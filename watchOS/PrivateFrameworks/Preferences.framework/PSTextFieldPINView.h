@@ -18,8 +18,8 @@
     _Bool _usesNumericKeyboard;
 }
 
-@property(nonatomic) _Bool usesNumericKeyboard; // @synthesize usesNumericKeyboard=_usesNumericKeyboard;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool usesNumericKeyboard; // @synthesize usesNumericKeyboard=_usesNumericKeyboard;
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (void)deleteLastCharacter;
 - (void)appendString:(id)arg1;

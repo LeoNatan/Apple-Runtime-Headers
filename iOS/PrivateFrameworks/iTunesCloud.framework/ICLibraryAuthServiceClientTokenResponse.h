@@ -19,12 +19,12 @@
     ICLibraryAuthServiceClientTokenResult *_tokenResult;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) ICLibraryAuthServiceClientTokenResult *tokenResult; // @synthesize tokenResult=_tokenResult;
 @property(nonatomic, getter=isSuccess) _Bool success; // @synthesize success=_success;
 @property(readonly, nonatomic) long long serverInstance; // @synthesize serverInstance=_serverInstance;
 @property(readonly, copy, nonatomic) NSString *serverHostName; // @synthesize serverHostName=_serverHostName;
 @property(readonly, nonatomic) int resultCode; // @synthesize resultCode=_resultCode;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (id)initWithResultCode:(int)arg1;

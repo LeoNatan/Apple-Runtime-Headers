@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)accountsForPredicate:(id)arg1 inPersistenceStack:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNCDPersistenceContext *persistenceContext; // @synthesize persistenceContext=_persistenceContext;
 @property(readonly, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
-- (void).cxx_destruct;
 - (id)fetchAccounts:(id *)arg1;
 - (id)initWithPredicate:(id)arg1 persistenceContext:(id)arg2;
 - (id)init;

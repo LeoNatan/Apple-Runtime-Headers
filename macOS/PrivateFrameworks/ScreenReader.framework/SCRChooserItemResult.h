@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)chooserElementForUIElement:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *descriptionOverride; // @synthesize descriptionOverride=_descriptionOverride;
 @property(readonly, nonatomic) NSValue *textRange; // @synthesize textRange=_textRange;
 @property(copy, nonatomic) NSString *rotorIdentifier; // @synthesize rotorIdentifier=_rotorIdentifier;
 @property(copy, nonatomic) NSString *loader; // @synthesize loader=_loader;
 @property(retain, nonatomic) SCRElement *element; // @synthesize element=_element;
 @property(readonly, nonatomic) SCRUIElement *uiElement; // @synthesize uiElement=_uiElement;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithUIElement:(id)arg1 textRange:(id)arg2;

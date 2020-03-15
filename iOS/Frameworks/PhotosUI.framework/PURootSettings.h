@@ -58,6 +58,7 @@
 + (void)setupStatusBarInternalSettingsGestureOnInternalDevices;
 + (id)settingsControllerModule;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *_internal_libraryStateImage; // @synthesize _internal_libraryStateImage=__internal_libraryStateImage;
 @property(retain, nonatomic) NSString *_internal_libraryStateBriefDescription; // @synthesize _internal_libraryStateBriefDescription=__internal_libraryStateBriefDescription;
 @property(retain, nonatomic) PXImportSettings *importSettings; // @synthesize importSettings=_importSettings;
@@ -85,7 +86,6 @@
 @property(retain, nonatomic) PUTabbedLibrarySettings *tabbedLibrarySettings; // @synthesize tabbedLibrarySettings=_tabbedLibrarySettings;
 @property(retain, nonatomic) PUCompositeVideoSettings *compositeVideoSettings; // @synthesize compositeVideoSettings=_compositeVideoSettings;
 @property(nonatomic) _Bool allowIrisUI; // @synthesize allowIrisUI=_allowIrisUI;
-- (void).cxx_destruct;
 - (void)setEnforceDisableIrisUI:(_Bool)arg1;
 - (_Bool)irisUIEnabled;
 - (id)archiveValueForKey:(id)arg1;

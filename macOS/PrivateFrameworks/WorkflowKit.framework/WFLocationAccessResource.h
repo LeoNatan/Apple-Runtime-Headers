@@ -17,9 +17,9 @@
 }
 
 + (BOOL)isSystemResource;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType makeAvailableCompletionHandler; // @synthesize makeAvailableCompletionHandler=_makeAvailableCompletionHandler;
 @property(retain, nonatomic) CLLocationManager *locationManager; // @synthesize locationManager=_locationManager;
-- (void).cxx_destruct;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;

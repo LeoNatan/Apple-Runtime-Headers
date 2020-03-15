@@ -21,12 +21,12 @@
 }
 
 + (long long)_spanForNewStatusWithEvent:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CALNDataSourceEventRepresentationProvider> dataSourceEventRepresentationProvider; // @synthesize dataSourceEventRepresentationProvider=_dataSourceEventRepresentationProvider;
 @property(readonly, nonatomic) id <CALNRemoteMutator> remoteMutator; // @synthesize remoteMutator=_remoteMutator;
 @property(readonly, nonatomic) id <CALNEKCalendarNotificationReferenceProvider> notificationReferenceProvider; // @synthesize notificationReferenceProvider=_notificationReferenceProvider;
 @property(readonly, nonatomic) id <CALNInboxNotificationProvider> inboxNotificationProvider; // @synthesize inboxNotificationProvider=_inboxNotificationProvider;
 @property(readonly, nonatomic) id <EKEventStoreProvider> eventStoreProvider; // @synthesize eventStoreProvider=_eventStoreProvider;
-- (void).cxx_destruct;
 - (void)_setParticipantStatus:(long long)arg1 withSourceClientIdentifier:(id)arg2;
 - (id)_notificationInfoFromNotification:(id)arg1 inEventStore:(id)arg2;
 - (void)reportEventInvitationAsJunkWithSourceClientIdentifier:(id)arg1;

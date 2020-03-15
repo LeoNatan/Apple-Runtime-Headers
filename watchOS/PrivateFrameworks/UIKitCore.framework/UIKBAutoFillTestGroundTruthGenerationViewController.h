@@ -25,9 +25,9 @@ __attribute__((visibility("hidden")))
     id <UIKBAutoFillTestGroundTruthGenerationViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIKBAutoFillTestViewController *testViewController; // @synthesize testViewController=_testViewController;
 @property(nonatomic) __weak id <UIKBAutoFillTestGroundTruthGenerationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)taggerView:(id)arg1 didTagTextFieldRequest:(id)arg2 withSelectedType:(int)arg3;
 - (void)taggerView:(id)arg1 didTagFormRequest:(id)arg2 withSelectedType:(int)arg3;
 - (int)taggerView:(id)arg1 selectedTypeForTextFieldRequest:(id)arg2;

@@ -14,9 +14,9 @@
     NSString *_systemImageName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *systemImageName; // @synthesize systemImageName=_systemImageName;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (unsigned long long)hash;

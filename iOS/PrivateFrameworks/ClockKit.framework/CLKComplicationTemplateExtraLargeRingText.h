@@ -15,10 +15,10 @@
     long long _ringStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long ringStyle; // @synthesize ringStyle=_ringStyle;
 @property(nonatomic) float fillFraction; // @synthesize fillFraction=_fillFraction;
 @property(copy, nonatomic) CLKTextProvider *textProvider; // @synthesize textProvider=_textProvider;
-- (void).cxx_destruct;
 - (void)_enumerateIntegerKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateFloatKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateTextProviderKeysWithBlock:(CDUnknownBlockType)arg1;

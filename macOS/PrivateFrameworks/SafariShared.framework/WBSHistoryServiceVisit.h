@@ -13,6 +13,7 @@
     BOOL _loadSuccessful;
     BOOL _httpNonGet;
     BOOL _synthesized;
+    int _score;
     long long _itemID;
     NSString *_title;
     double _visitTime;
@@ -21,11 +22,11 @@
     long long _origin;
     long long _generation;
     long long _attributes;
-    long long _score;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(nonatomic) long long score; // @synthesize score=_score;
+- (void).cxx_destruct;
+@property(nonatomic) int score; // @synthesize score=_score;
 @property(nonatomic) long long attributes; // @synthesize attributes=_attributes;
 @property(nonatomic) long long generation; // @synthesize generation=_generation;
 @property(nonatomic) long long origin; // @synthesize origin=_origin;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) double visitTime; // @synthesize visitTime=_visitTime;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) long long itemID; // @synthesize itemID=_itemID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)visitWithUpdatedID:(long long)arg1 updatedItemID:(long long)arg2;

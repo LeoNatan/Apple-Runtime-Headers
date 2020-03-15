@@ -34,6 +34,7 @@
     iCloudTouchBarController *_touchBarController;
 }
 
+- (void).cxx_destruct;
 @property(retain) iCloudTouchBarController *touchBarController; // @synthesize touchBarController=_touchBarController;
 @property __weak NSLayoutConstraint *hideErrorConstraint; // @synthesize hideErrorConstraint=_hideErrorConstraint;
 @property __weak NSLayoutConstraint *showErrorConstraint; // @synthesize showErrorConstraint=_showErrorConstraint;
@@ -51,7 +52,6 @@
 @property __weak NSImageView *passPhraseImageView; // @synthesize passPhraseImageView=_passPhraseImageView;
 @property BOOL showRandomView; // @synthesize showRandomView=_showRandomView;
 @property id <MMCSCPassPhraseRecoveryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)clickedOnLink:(id)arg1;
 - (void)controlTextDidChange:(id)arg1;
 - (id)forgotCodeAttributedString;

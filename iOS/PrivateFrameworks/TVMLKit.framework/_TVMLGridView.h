@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     UIView *_headerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(nonatomic) _Bool configureForListTemplate; // @synthesize configureForListTemplate=_configureForListTemplate;
-- (void).cxx_destruct;
 - (_Bool)_shouldFadeCellsForBoundChangeWhileRotating;
 - (id)rowMetricsForExpectedWidth:(double)arg1 withContentInset:(struct UIEdgeInsets)arg2 firstItemRowIndex:(long long *)arg3;
 - (id)rowMetricsForExpectedWidth:(double)arg1 firstItemRowIndex:(long long *)arg2;

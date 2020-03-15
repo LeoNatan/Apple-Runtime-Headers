@@ -14,9 +14,9 @@
     SISchemaPersonalization *_personalization;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SISchemaPersonalization *personalization; // @synthesize personalization=_personalization;
 @property(copy, nonatomic) NSString *siriLinkedSpeechID; // @synthesize siriLinkedSpeechID=_siriLinkedSpeechID;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

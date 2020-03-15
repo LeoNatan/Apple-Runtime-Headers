@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)outputInfoWithPhotoBlurRadius:(double)arg1 videoAlpha:(double)arg2 videoBlurRadius:(double)arg3 label:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double videoBlurRadius; // @synthesize videoBlurRadius=_videoBlurRadius;
 @property(readonly, nonatomic) double videoAlpha; // @synthesize videoAlpha=_videoAlpha;
 @property(readonly, nonatomic) double photoBlurRadius; // @synthesize photoBlurRadius=_photoBlurRadius;
 @property(readonly, nonatomic) NSString *diagnosticLabel; // @synthesize diagnosticLabel=_diagnosticLabel;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithPhotoBlurRadius:(double)arg1 videoAlpha:(double)arg2 videoBlurRadius:(double)arg3 label:(id)arg4;
 

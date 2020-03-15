@@ -28,6 +28,7 @@
 + (id)stringFromComponentType:(long long)arg1;
 + (long long)componentTypeFromString:(id)arg1;
 + (id)profileWithDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL isContainer; // @synthesize isContainer;
 @property(retain) NSMutableArray *subcomponents; // @synthesize subcomponents;
 @property(readonly, retain) NSDictionary *attributes; // @synthesize attributes;
@@ -35,7 +36,6 @@
 @property(readonly, retain) NSString *name; // @synthesize name;
 @property(readonly) long long type; // @synthesize type;
 @property(readonly, retain) NSNumber *identifier; // @synthesize identifier;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToXMComponent:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

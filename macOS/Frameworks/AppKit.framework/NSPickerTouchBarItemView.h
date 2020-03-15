@@ -33,10 +33,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)makeStandardActivatePopoverGestureRecognizer;
+- (void).cxx_destruct;
 @property __weak NSTouchBarItem *sourceItemForOverlay; // @synthesize sourceItemForOverlay=_sourceItemForOverlay;
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (id)_disclosureTouchBar;
 - (void)_showPressHoldPopup:(id)arg1;
 - (void)_showPopover;

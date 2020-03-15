@@ -26,6 +26,7 @@
     NSURL *_attribution_url;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int text_align; // @synthesize text_align=_text_align;
 @property(readonly, nonatomic) NSURL *attribution_url; // @synthesize attribution_url=_attribution_url;
 @property(readonly, nonatomic) NSString *attribution_text; // @synthesize attribution_text=_attribution_text;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) NSString *description_text; // @synthesize description_text=_description_text;
 @property(readonly, nonatomic) int title_weight; // @synthesize title_weight=_title_weight;
 @property BOOL title_nowrap; // @synthesize title_nowrap=_title_nowrap;
-- (void).cxx_destruct;
 - (long long)type;
 - (id)initWithSFSearchResult:(id)arg1 cardSection:(id)arg2;
 

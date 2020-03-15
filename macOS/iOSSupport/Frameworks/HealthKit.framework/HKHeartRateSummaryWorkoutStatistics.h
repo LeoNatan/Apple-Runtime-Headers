@@ -16,10 +16,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setMaximumHeartRate:) HKQuantity *maximumHeartRate; // @synthesize maximumHeartRate=_maximumHeartRate;
 @property(retain, nonatomic, setter=_setAverageHeartRate:) HKQuantity *averageHeartRate; // @synthesize averageHeartRate=_averageHeartRate;
 @property(readonly, nonatomic) unsigned long long workoutActivityType; // @synthesize workoutActivityType=_workoutActivityType;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSData *modifiedPlacemarkData; // @synthesize modifiedPlacemarkData=_modifiedPlacemarkData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *modifiedPlacemarkData; // @synthesize modifiedPlacemarkData=_modifiedPlacemarkData;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

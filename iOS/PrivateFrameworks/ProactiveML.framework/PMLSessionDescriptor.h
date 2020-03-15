@@ -20,11 +20,11 @@
 }
 
 + (id)descriptorForName:(id)arg1 version:(id)arg2 locale:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *locale; // @synthesize locale=_locale;
 @property(readonly, nonatomic) float featureVersion; // @synthesize featureVersion=_featureVersion;
 @property(readonly, nonatomic) NSString *version; // @synthesize version=_version;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
 - (id)toPlistWithChunks:(id)arg1;

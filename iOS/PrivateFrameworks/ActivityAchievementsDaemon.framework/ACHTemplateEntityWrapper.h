@@ -17,9 +17,9 @@
     id <ACHTemplateEntitySyncedTemplatesObserver> _syncedTemplatesObserver;
 }
 
-@property(nonatomic) __weak id <ACHTemplateEntitySyncedTemplatesObserver> syncedTemplatesObserver; // @synthesize syncedTemplatesObserver=_syncedTemplatesObserver;
-@property(retain, nonatomic) HDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ACHTemplateEntitySyncedTemplatesObserver> syncedTemplatesObserver; // @synthesize syncedTemplatesObserver=_syncedTemplatesObserver;
+@property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void)templateEntityDidReceiveSyncedTemplates:(id)arg1 provenance:(long long)arg2;
 - (id)allTemplatesWithError:(id *)arg1;
 - (_Bool)removeTemplates:(id)arg1 error:(id *)arg2;

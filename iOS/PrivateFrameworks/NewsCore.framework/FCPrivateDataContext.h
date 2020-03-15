@@ -29,12 +29,12 @@
     id <FCContentContext> _contentContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
 @property(retain, nonatomic) id <FCPrivateDataContextInternal> internalPrivateDataContext; // @synthesize internalPrivateDataContext=_internalPrivateDataContext;
 @property(readonly, nonatomic) FCNetworkBehaviorMonitor *networkBehaviorMonitor; // @synthesize networkBehaviorMonitor=_networkBehaviorMonitor;
 @property(readonly, nonatomic, getter=isPrivateDataSyncingEnabled) _Bool privateDataSyncingEnabled; // @synthesize privateDataSyncingEnabled=_privateDataSyncingEnabled;
 @property(readonly, nonatomic) FCTagSettings *tagSettings; // @synthesize tagSettings=_tagSettings;
-- (void).cxx_destruct;
 - (id)privateStoreWithName:(id)arg1 version:(unsigned long long)arg2 options:(unsigned long long)arg3;
 @property(readonly, copy, nonatomic) NSString *privateDataDirectory; // @synthesize privateDataDirectory=_privateDataDirectory;
 @property(readonly, nonatomic) id <FCPushNotificationHandling> privatePushNotificationHandler; // @synthesize privatePushNotificationHandler=_privatePushNotificationHandler;

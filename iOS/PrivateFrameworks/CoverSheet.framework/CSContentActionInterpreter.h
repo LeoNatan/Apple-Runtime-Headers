@@ -13,8 +13,8 @@
     UIViewController *_nowPlayingViewController;
 }
 
-@property(nonatomic) __weak UIViewController *nowPlayingViewController; // @synthesize nowPlayingViewController=_nowPlayingViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIViewController *nowPlayingViewController; // @synthesize nowPlayingViewController=_nowPlayingViewController;
 - (void)_viewControllerFromAction:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end

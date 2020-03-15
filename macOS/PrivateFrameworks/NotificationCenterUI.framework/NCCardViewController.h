@@ -29,12 +29,12 @@
     unsigned long long _cardMaterial;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL cardVisible; // @synthesize cardVisible=_cardVisible;
 @property(nonatomic) BOOL onDarkBackdrop; // @synthesize onDarkBackdrop=_onDarkBackdrop;
 @property(nonatomic) unsigned long long cardMaterial; // @synthesize cardMaterial=_cardMaterial;
 @property(retain, nonatomic) NSViewController *contentController; // @synthesize contentController=_contentController;
 @property(retain, nonatomic) NSViewController *headerController; // @synthesize headerController=_headerController;
-- (void).cxx_destruct;
 - (void)_layoutViews;
 - (void)viewDidLayout;
 - (void)viewWillLayout;

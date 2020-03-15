@@ -22,6 +22,7 @@
     CDStruct_02c44088 _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int syncID; // @synthesize syncID=_syncID;
 @property(nonatomic) unsigned int lastKnownResyncID; // @synthesize lastKnownResyncID=_lastKnownResyncID;
 @property(retain, nonatomic) NPKProtoCatalog *catalog; // @synthesize catalog=_catalog;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSData *previousManifestHash; // @synthesize previousManifestHash=_previousManifestHash;
 @property(retain, nonatomic) NPKProtoHash *libraryHash; // @synthesize libraryHash=_libraryHash;
 @property(retain, nonatomic) NPKProtoPass *pass; // @synthesize pass=_pass;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

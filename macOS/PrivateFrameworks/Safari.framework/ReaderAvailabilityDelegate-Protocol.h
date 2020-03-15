@@ -8,6 +8,5 @@
 
 @protocol ReaderAvailabilityDelegate <NSObject>
 - (void)readerControllerDidBecomeUnavailableUnexpectedly:(const struct ReaderController *)arg1;
-- (void)readerController:(const struct ReaderController *)arg1 didUpdateAvailability:(int)arg2;
 @end
 

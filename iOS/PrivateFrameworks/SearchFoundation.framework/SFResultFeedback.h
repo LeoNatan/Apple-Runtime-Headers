@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) SFSearchResult *result; // @synthesize result=_result;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SFSearchResult *result; // @synthesize result=_result;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

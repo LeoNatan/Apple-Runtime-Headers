@@ -31,6 +31,7 @@
     NSString *_senderImagePath;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *senderImagePath; // @synthesize senderImagePath=_senderImagePath;
 @property(retain) NSString *processImagePath; // @synthesize processImagePath=_processImagePath;
 @property unsigned long long creatorActivityIdentifier; // @synthesize creatorActivityIdentifier=_creatorActivityIdentifier;
@@ -50,7 +51,6 @@
 @property int processIdentifier; // @synthesize processIdentifier=_processIdentifier;
 @property unsigned long long machContinuousTimestamp; // @synthesize machContinuousTimestamp=_machContinuousTimestamp;
 @property(retain) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)initWithLogEventProxy:(id)arg1;
 
 @end

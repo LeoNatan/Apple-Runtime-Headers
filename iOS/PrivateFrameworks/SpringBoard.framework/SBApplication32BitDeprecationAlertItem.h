@@ -13,8 +13,8 @@
     SBApplication *_associatedDisplay;
 }
 
-@property(nonatomic) __weak SBApplication *associatedDisplay; // @synthesize associatedDisplay=_associatedDisplay;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SBApplication *associatedDisplay; // @synthesize associatedDisplay=_associatedDisplay;
 - (id)_message;
 - (id)_title;
 - (_Bool)dismissOnLock;

@@ -17,9 +17,9 @@
 }
 
 + (id)ruleWithFilter:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
 @property(nonatomic) double priority; // @synthesize priority=_priority;
-- (void).cxx_destruct;
 - (_Bool)ruleMatchesItem:(id)arg1;
 - (id)initWithFilter:(CDUnknownBlockType)arg1;
 

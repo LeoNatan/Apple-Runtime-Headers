@@ -16,9 +16,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pushedViewControllerStack; // @synthesize pushedViewControllerStack=_pushedViewControllerStack;
 @property(nonatomic) __weak id <HUToolbarStateManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_shouldRestoreToolbarButtons;
 - (id)_instanceForBackButtonValues;
 - (void)restoreStandardToolbarItems;

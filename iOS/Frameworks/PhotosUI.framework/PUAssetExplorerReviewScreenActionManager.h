@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     unsigned long long __sourceType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long _sourceType; // @synthesize _sourceType=__sourceType;
 @property(readonly, nonatomic) PUUUIDSelectionManager *disableLivePhotosSelectionManager; // @synthesize disableLivePhotosSelectionManager=_disableLivePhotosSelectionManager;
 @property(readonly, nonatomic) PUUUIDSelectionManager *selectionManager; // @synthesize selectionManager=_selectionManager;
 @property(nonatomic) __weak id <PUReviewAssetProvider> reviewAssetProvider; // @synthesize reviewAssetProvider=_reviewAssetProvider;
 @property(nonatomic) __weak id <PUAssetExplorerReviewScreenActionManagerDelegate> reviewScreenActionManagerDelegate; // @synthesize reviewScreenActionManagerDelegate=_reviewScreenActionManagerDelegate;
-- (void).cxx_destruct;
 - (id)actionPerformerForSimpleActionType:(unsigned long long)arg1 onAssetsByAssetCollection:(id)arg2;
 - (_Bool)shouldEnableActionType:(unsigned long long)arg1 onAsset:(id)arg2 inAssetCollection:(id)arg3;
 - (_Bool)canPerformActionType:(unsigned long long)arg1 onAsset:(id)arg2 inAssetCollection:(id)arg3;

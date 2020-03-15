@@ -24,6 +24,7 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MLFoundationDevice *device; // @synthesize device=_device;
 @property(copy, nonatomic) NSArray *deviceOps; // @synthesize deviceOps=_deviceOps;
 @property(readonly, nonatomic) int regularizationType; // @synthesize regularizationType=_regularizationType;
@@ -33,7 +34,6 @@
 @property(nonatomic) BOOL applyGradientClipping; // @synthesize applyGradientClipping=_applyGradientClipping;
 @property(readonly, nonatomic) float gradientRescale; // @synthesize gradientRescale=_gradientRescale;
 @property(nonatomic) float learningRate; // @synthesize learningRate=_learningRate;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (void)bindDevice:(id)arg1 deviceOps:(id)arg2;

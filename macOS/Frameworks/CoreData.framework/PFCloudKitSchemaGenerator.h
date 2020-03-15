@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 
 + (id)representativeValueFor:(id)arg1;
 + (id)newRepresentativeRecordForStaticFieldsInEntity:(id)arg1 inZoneWithID:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSCloudKitMirroringDelegateOptions *mirroringOptions; // @synthesize mirroringOptions=_mirroringOptions;
 @property(readonly, nonatomic) NSString *configurationName; // @synthesize configurationName=_configurationName;
 @property(readonly, nonatomic) CKRecordZone *recordZone; // @synthesize recordZone=_recordZone;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 @property(readonly, nonatomic) __weak NSPersistentStore *store; // @synthesize store=_store;
 @property(readonly, nonatomic) NSPersistentStoreCoordinator *coordinator; // @synthesize coordinator=_coordinator;
-- (void).cxx_destruct;
 - (void)populateRelationshipsOnObject:(id)arg1 withCache:(id)arg2;
 - (void)populateValuesOnObject:(id)arg1;
 - (id)representativeObjectForEntity:(id)arg1 withManagedObjectContext:(id)arg2 cache:(id)arg3 populate:(BOOL)arg4;

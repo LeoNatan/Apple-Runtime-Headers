@@ -9,7 +9,7 @@
 #import <AuthKit/NSCopying-Protocol.h>
 #import <AuthKit/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSNumber, NSString;
+@class NSArray, NSDictionary, NSNumber, NSString;
 
 @interface AKUserInformation : NSObject <NSSecureCoding, NSCopying>
 {
@@ -32,11 +32,14 @@
     unsigned long long _appleIDSecurityLevel;
     unsigned long long _authMode;
     unsigned long long _repairState;
+    NSDictionary *_additionalInfo;
     NSString *_selectedEmail;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *selectedEmail; // @synthesize selectedEmail=_selectedEmail;
+@property(copy, nonatomic) NSDictionary *additionalInfo; // @synthesize additionalInfo=_additionalInfo;
 @property(nonatomic) unsigned long long repairState; // @synthesize repairState=_repairState;
 @property(nonatomic) unsigned long long authMode; // @synthesize authMode=_authMode;
 @property(nonatomic) unsigned long long appleIDSecurityLevel; // @synthesize appleIDSecurityLevel=_appleIDSecurityLevel;
@@ -56,7 +59,6 @@
 @property(copy, nonatomic) NSString *forwardingEmail; // @synthesize forwardingEmail=_forwardingEmail;
 @property(copy, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;
 @property(copy, nonatomic) NSString *givenName; // @synthesize givenName=_givenName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -18,8 +18,8 @@
     NUScene *_scene;
 }
 
-@property(retain, nonatomic) NUScene *scene; // @synthesize scene=_scene;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NUScene *scene; // @synthesize scene=_scene;
 - (_Bool)prepareForTime:(double)arg1;
 - (void)renderForDisplayWithEncoder:(id)arg1;
 - (void)setupForQuadView:(id)arg1;

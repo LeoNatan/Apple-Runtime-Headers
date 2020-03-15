@@ -21,10 +21,12 @@
 + (id)keywordsForAsset:(id)arg1;
 + (id)keywordsForAssetWithUUID:(id)arg1 managedObjectContext:(id)arg2;
 - (void).cxx_destruct;
+- (_Bool)_setKeyword:(id)arg1 forAssets:(id)arg2 managedObjectContext:(id)arg3;
 - (_Bool)_setKeywords:(id)arg1 forAsset:(id)arg2 managedObjectContext:(id)arg3;
 - (id)_inq_keywordObjectsForKeywords:(id)arg1 managedObjectContext:(id)arg2;
 - (void)_invalidateKeywordCache;
 - (void)_inq_loadKeywordsUsingContextIfNecessaryInManagedObjectContext:(id)arg1;
+- (_Bool)setKeyword:(id)arg1 forAssets:(id)arg2 managedObjectContext:(id)arg3;
 - (_Bool)setKeywords:(id)arg1 forAsset:(id)arg2;
 - (_Bool)setKeywords:(id)arg1 forAssetUUID:(id)arg2 managedObjectContext:(id)arg3;
 - (id)initWithPathManager:(id)arg1;

@@ -18,13 +18,13 @@
     unsigned long long _delivered;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long delivered; // @synthesize delivered=_delivered;
 @property(nonatomic) unsigned long long length; // @synthesize length=_length;
 @property(nonatomic) unsigned long long bodyLength; // @synthesize bodyLength=_bodyLength;
 @property(nonatomic) unsigned long long headersLength; // @synthesize headersLength=_headersLength;
 @property(retain, nonatomic) NSInputStream *body; // @synthesize body=_body;
 @property(retain, nonatomic) NSData *headers; // @synthesize headers=_headers;
-- (void).cxx_destruct;
 - (unsigned long long)read:(char *)arg1 maxLength:(unsigned long long)arg2;
 - (void)appendNewLine:(id)arg1;
 - (id)makeHeadersDataFromHeadersDict:(id)arg1 boundary:(id)arg2;

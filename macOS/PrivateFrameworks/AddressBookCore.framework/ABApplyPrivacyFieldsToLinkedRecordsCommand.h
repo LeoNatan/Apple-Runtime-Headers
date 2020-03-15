@@ -13,9 +13,12 @@
     NSString *_personIdentifier;
     ABAddressBook *_addressBook;
     NSMutableArray *_privatizedFields;
+    BOOL ignoresGuardianRestrictions;
 }
 
 + (id)commandWithPerson:(id)arg1;
+- (void)setIgnoresGuardianRestrictions:(BOOL)arg1;
+- (BOOL)ignoresGuardianRestrictions;
 - (void)executeUndo;
 - (void)markPrivateIdentifier:(id)arg1 property:(id)arg2;
 - (void)applyPrivacyFieldsUsingMap:(id)arg1;

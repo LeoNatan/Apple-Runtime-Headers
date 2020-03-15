@@ -15,10 +15,10 @@
     PUICApplicationStatusBarItem *_statusBarItem;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool statusBarNavUIDisabled; // @synthesize statusBarNavUIDisabled=_statusBarNavUIDisabled;
 @property(nonatomic) _Bool sawWillMove; // @synthesize sawWillMove=_sawWillMove;
 @property(retain, nonatomic) PUICApplicationStatusBarItem *statusBarItem; // @synthesize statusBarItem=_statusBarItem;
-- (void).cxx_destruct;
 
 @end
 

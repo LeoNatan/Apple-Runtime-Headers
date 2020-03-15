@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSArray *_skippedEvents;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *skippedEvents; // @synthesize skippedEvents=_skippedEvents;
 @property(retain) NSURL *reportURL; // @synthesize reportURL=_reportURL;
 @property(retain) NSArray *events; // @synthesize events=_events;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property BOOL containsLoadURL; // @synthesize containsLoadURL=_containsLoadURL;
 @property(retain) NSString *canaryIdentifier; // @synthesize canaryIdentifier=_canaryIdentifier;
 @property(retain) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 
 @end
 

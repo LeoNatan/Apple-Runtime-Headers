@@ -9,7 +9,7 @@
 #import <HealthKit/NSCopying-Protocol.h>
 #import <HealthKit/NSSecureCoding-Protocol.h>
 
-@class HKConcept, NSString;
+@class HKConcept, NSNumber, NSString;
 @protocol NSCopying><NSSecureCoding;
 
 @interface HKConceptAttribute : NSObject <NSSecureCoding, NSCopying>
@@ -22,22 +22,24 @@
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)_attributeWithName:(id)arg1 valueType:(long long)arg2;
-+ (id)_attributeWithIdentifier:(long long)arg1 name:(id)arg2 valueType:(long long)arg3 value:(id)arg4;
++ (id)attributeWithIdentifier:(long long)arg1 name:(id)arg2 valueType:(long long)arg3 value:(id)arg4;
++ (id)attributeWithIdentifier:(long long)arg1 name:(id)arg2 numberValue:(id)arg3;
++ (id)attributeWithIdentifier:(long long)arg1 name:(id)arg2 stringValue:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) id <NSCopying><NSSecureCoding> value; // @synthesize value=_value;
 @property(readonly, nonatomic) long long valueType; // @synthesize valueType=_valueType;
 @property(readonly, nonatomic) __weak HKConcept *concept; // @synthesize concept=_concept;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) long long identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
+@property(readonly, copy, nonatomic) NSNumber *numberValue;
+@property(readonly, copy, nonatomic) NSString *stringValue;
+- (id)initWithIdentifier:(long long)arg1 name:(id)arg2 valueType:(long long)arg3 value:(id)arg4 concept:(id)arg5;
 - (id)init;
-- (id)_initWithIdentifier:(long long)arg1 name:(id)arg2 valueType:(long long)arg3 value:(id)arg4;
-- (id)_init;
-- (id)_attributeBySettingConcept:(id)arg1;
+- (id)attributeBySettingConcept:(id)arg1;
 
 @end
 

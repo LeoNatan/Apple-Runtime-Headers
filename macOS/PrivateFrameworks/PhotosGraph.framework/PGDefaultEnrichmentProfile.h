@@ -20,11 +20,11 @@
 
 + (long long)cardinalModeForSummary;
 + (unsigned long long)durationForSummary;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PGDejunkerDeduperOptions *extendedCurationOptions; // @synthesize extendedCurationOptions=_extendedCurationOptions;
 @property(readonly) NSDictionary *debugInfos; // @synthesize debugInfos=_debugInfos;
 @property(nonatomic) BOOL collectsDebugInfo; // @synthesize collectsDebugInfo=_collectsDebugInfo;
 @property(readonly, nonatomic) PGManager *manager; // @synthesize manager=_manager;
-- (void).cxx_destruct;
 - (id)faceInfosWithAsset:(id)arg1;
 - (id)sceneInfoWithAsset:(id)arg1;
 - (id)debugInfoDictionaryByAddingItemInfosToDebugInfo:(id)arg1;

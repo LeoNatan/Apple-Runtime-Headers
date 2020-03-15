@@ -15,9 +15,9 @@
 }
 
 + (id)sharedCache;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastCacheClearTime; // @synthesize lastCacheClearTime=_lastCacheClearTime;
 @property(retain, nonatomic) NSCache *cellCache; // @synthesize cellCache=_cellCache;
-- (void).cxx_destruct;
 - (id)identifierForResults:(id)arg1;
 - (void)setCells:(id)arg1 forResults:(id)arg2;
 - (id)cellViewsForResults:(id)arg1;

@@ -16,10 +16,10 @@
 }
 
 + (id)sharedNotifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *accountChangeHandlerQueue; // @synthesize accountChangeHandlerQueue=_accountChangeHandlerQueue;
 @property(retain, nonatomic) NSMapTable *notificationHandlers; // @synthesize notificationHandlers=_notificationHandlers;
 @property(nonatomic) int accountChangedToken; // @synthesize accountChangedToken=_accountChangedToken;
-- (void).cxx_destruct;
 - (void)unregisterObserverForAccountChangeNotification:(id)arg1;
 - (void)registerObserver:(id)arg1 forAccountChangeNotification:(CDUnknownBlockType)arg2;
 - (void)postAccountChangedNotificationToClients;

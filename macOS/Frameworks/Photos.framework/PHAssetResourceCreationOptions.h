@@ -20,13 +20,13 @@
     NSString *_uniformTypeIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldIngestInPlace; // @synthesize shouldIngestInPlace=_shouldIngestInPlace;
 @property(nonatomic) BOOL shouldMoveFile; // @synthesize shouldMoveFile=_shouldMoveFile;
 @property(copy, nonatomic) NSString *uniformTypeIdentifier; // @synthesize uniformTypeIdentifier=_uniformTypeIdentifier;
 @property(copy, nonatomic) NSString *originalFilename; // @synthesize originalFilename=_originalFilename;
 @property(nonatomic) int burstPickType; // @synthesize burstPickType=_burstPickType;
 @property(retain, nonatomic) NSDate *alternateImportImageDate; // @synthesize alternateImportImageDate=_alternateImportImageDate;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)propertyListRepresentation;
 - (id)initWithPropertyListRepresentation:(id)arg1;

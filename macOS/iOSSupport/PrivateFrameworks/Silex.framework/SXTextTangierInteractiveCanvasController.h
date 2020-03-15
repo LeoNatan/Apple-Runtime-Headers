@@ -21,6 +21,7 @@
 }
 
 + (void)createCanvasWithDelegate:(id)arg1 outICC:(id *)arg2 outLayerHost:(id *)arg3 iccClass:(Class)arg4 layerHostClass:(Class)arg5;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL mightScrollToTop; // @synthesize mightScrollToTop=_mightScrollToTop;
 @property(nonatomic) BOOL isScrolling; // @synthesize isScrolling=_isScrolling;
 @property(nonatomic) BOOL startedEditing; // @synthesize startedEditing=_startedEditing;
@@ -28,7 +29,6 @@
 @property(nonatomic) BOOL forceLayoutAndRenderOnThread; // @synthesize forceLayoutAndRenderOnThread=_forceLayoutAndRenderOnThread;
 @property(nonatomic) __weak id <SXTextTangierInteractiveCanvasControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (void)teardown;
 - (void)endUISession;
 - (BOOL)p_shouldLayoutAndRenderOnThreadForcePendingLayout:(BOOL)arg1;

@@ -18,16 +18,17 @@
     FCNetworkBehaviorMonitor *_networkBehaviorMonitor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldBypassCDNForCKAssetURLs; // @synthesize shouldBypassCDNForCKAssetURLs=_shouldBypassCDNForCKAssetURLs;
 @property(nonatomic) BOOL shouldUseSecureConnectionForCKAssetURLs; // @synthesize shouldUseSecureConnectionForCKAssetURLs=_shouldUseSecureConnectionForCKAssetURLs;
 @property(readonly, nonatomic) BOOL shouldUseCloudd; // @synthesize shouldUseCloudd=_shouldUseCloudd;
 @property(readonly, nonatomic) FCNetworkBehaviorMonitor *networkBehaviorMonitor; // @synthesize networkBehaviorMonitor=_networkBehaviorMonitor;
 @property(readonly, nonatomic) BOOL isProductionEnvironment; // @synthesize isProductionEnvironment=_isProductionEnvironment;
 @property(readonly, copy, nonatomic) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
-- (void).cxx_destruct;
 - (id)permanentURLForRecordID:(id)arg1 field:(long long)arg2 useSecureConnection:(BOOL)arg3;
 - (id)permanentURLForRecordID:(id)arg1 field:(long long)arg2;
 - (void)addOperation:(id)arg1;
+- (void)updateAssetURLHostIfNeededWithComponents:(id)arg1;
 - (id)initWithContainerIdentifier:(id)arg1 productionEnvironment:(BOOL)arg2 networkBehaviorMonitor:(id)arg3;
 - (id)initWithContextConfiguration:(id)arg1 networkBehaviorMonitor:(id)arg2;
 - (id)init;

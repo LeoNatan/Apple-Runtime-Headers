@@ -14,9 +14,9 @@
     double _leftOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double leftOffset; // @synthesize leftOffset=_leftOffset;
 @property(readonly, nonatomic) WFPaddedTextField *textField; // @synthesize textField=_textField;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

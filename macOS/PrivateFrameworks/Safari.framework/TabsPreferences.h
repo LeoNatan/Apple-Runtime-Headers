@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     NSTextField *_openInNewWindowLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTextField *openInNewWindowLabel; // @synthesize openInNewWindowLabel=_openInNewWindowLabel;
 @property(nonatomic) __weak NSTextField *openInNewActiveWindowLabel; // @synthesize openInNewActiveWindowLabel=_openInNewActiveWindowLabel;
 @property(nonatomic) __weak NSTextField *openInNewTabLabel; // @synthesize openInNewTabLabel=_openInNewTabLabel;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSView *tabCreationPolicyView; // @synthesize tabCreationPolicyView=_tabCreationPolicyView;
 @property(nonatomic) __weak NSStackView *checkBoxStackView; // @synthesize checkBoxStackView=_checkBoxStackView;
 @property(nonatomic) __weak NSView *mainContentView; // @synthesize mainContentView=_mainContentView;
-- (void).cxx_destruct;
 - (id)safariHelpAnchor;
 - (void)initializeFromDefaults;
 - (void)toggleCommand1Through9SwitchesTabs:(id)arg1;

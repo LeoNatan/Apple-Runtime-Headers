@@ -16,8 +16,8 @@
     NUSpace *_space;
 }
 
-@property(readonly) NUSpace *space; // @synthesize space=_space;
 - (void).cxx_destruct;
+@property(readonly) NUSpace *space; // @synthesize space=_space;
 - (id)description;
 - (_Bool)isEqualToTaggedImageSpace:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

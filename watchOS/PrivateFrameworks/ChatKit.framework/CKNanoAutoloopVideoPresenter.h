@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     AVPlayerLooper *_playerLooper;
 }
 
-@property(retain, nonatomic) AVPlayerLooper *playerLooper; // @synthesize playerLooper=_playerLooper;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AVPlayerLooper *playerLooper; // @synthesize playerLooper=_playerLooper;
 - (_Bool)playerViewControllerShouldHandleDoneButtonTap:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)presentFromViewController:(id)arg1;

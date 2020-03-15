@@ -30,6 +30,7 @@
 + (BOOL)supportsSecureCoding;
 + (id)dialogWithError:(id)arg1;
 + (id)_dialogFromResponseDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *buttonActions; // @synthesize buttonActions=_buttonActions;
 @property(copy) NSString *helpAnchor; // @synthesize helpAnchor=_helpAnchor;
 @property BOOL showsHelp; // @synthesize showsHelp=_showsHelp;
@@ -42,7 +43,6 @@
 @property(copy) NSString *informativeText; // @synthesize informativeText=_informativeText;
 @property(copy) NSString *messageText; // @synthesize messageText=_messageText;
 @property BOOL kind; // @synthesize kind=_kind;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

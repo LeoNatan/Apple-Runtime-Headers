@@ -14,9 +14,9 @@
     NSString *_serviceID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *serviceID; // @synthesize serviceID=_serviceID;
 @property(readonly, copy, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
-- (void).cxx_destruct;
 - (id)initWithChannelID:(id)arg1 serviceID:(id)arg2;
 
 @end

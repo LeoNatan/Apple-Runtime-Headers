@@ -16,11 +16,11 @@
     struct CGRect _targetRect;
 }
 
+- (void).cxx_destruct;
 @property struct CGRect targetRect; // @synthesize targetRect=_targetRect;
 @property(retain, nonatomic) NSSet *layoutGuideMatches; // @synthesize layoutGuideMatches=_layoutGuideMatches;
 @property(retain, nonatomic) NSArray *layoutGuides; // @synthesize layoutGuides=_layoutGuides;
 @property long long validGuides; // @synthesize validGuides=_validGuides;
-- (void).cxx_destruct;
 
 @end
 

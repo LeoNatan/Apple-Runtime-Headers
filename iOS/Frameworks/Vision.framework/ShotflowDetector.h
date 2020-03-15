@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 + (struct CGSize)inputImageSize;
 + (id)modelName;
 + (id)inputLayerName;
+- (void).cxx_destruct;
 @property(nonatomic) float smartDistanceFactor; // @synthesize smartDistanceFactor=_smartDistanceFactor;
 @property(nonatomic) float smartThreshold; // @synthesize smartThreshold=_smartThreshold;
 @property(nonatomic) int olmcsMergeCountDelta; // @synthesize olmcsMergeCountDelta=_olmcsMergeCountDelta;
@@ -43,7 +44,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float osfsThreshold; // @synthesize osfsThreshold=_osfsThreshold;
 @property(retain, nonatomic) NSArray *filterThreshold; // @synthesize filterThreshold=_filterThreshold;
 @property(nonatomic) float nmsThreshold; // @synthesize nmsThreshold=_nmsThreshold;
-- (void).cxx_destruct;
 - (id)enforceSquareFaces:(id)arg1 withHeight:(float)arg2 andWidth:(float)arg3;
 - (id)detectAndProcessObjects:(const struct vImage_Buffer *)arg1 inputIsBGR:(_Bool)arg2;
 - (id)processBoxes:(id)arg1 withHeight:(float)arg2 andWidth:(float)arg3;

@@ -16,9 +16,9 @@
     CSLChargingManager *_chargingManager;
 }
 
+- (void).cxx_destruct;
 @property _Bool disableExternalTapToWake; // @synthesize disableExternalTapToWake=_disableExternalTapToWake;
 @property(readonly, nonatomic) __weak CSLChargingManager *chargingManager; // @synthesize chargingManager=_chargingManager;
-- (void).cxx_destruct;
 - (void)_removePreferencesObserver;
 - (void)_addPreferencesObserver;
 - (void)_main_updateExternalTapToWake;

@@ -20,12 +20,12 @@
 + (id)buildRequiredOnlyWithName:(id)arg1;
 + (id)buildWithName:(id)arg1 withAuthenticationType:(id)arg2 withUsername:(id)arg3 withPassword:(id)arg4 withAllowedProtocolMask:(id)arg5;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadAllowedProtocolMask; // @synthesize payloadAllowedProtocolMask=_payloadAllowedProtocolMask;
 @property(copy, nonatomic) NSString *payloadPassword; // @synthesize payloadPassword=_payloadPassword;
 @property(copy, nonatomic) NSString *payloadUsername; // @synthesize payloadUsername=_payloadUsername;
 @property(copy, nonatomic) NSString *payloadAuthenticationType; // @synthesize payloadAuthenticationType=_payloadAuthenticationType;
 @property(copy, nonatomic) NSString *payloadName; // @synthesize payloadName=_payloadName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

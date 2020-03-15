@@ -15,9 +15,9 @@
     id <SBAlertItemPresenter> _presenter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SBAlertItemPresenter> presenter; // @synthesize presenter=_presenter;
 @property(retain, nonatomic) SBAlertItem *alertItem; // @synthesize alertItem=_alertItem;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

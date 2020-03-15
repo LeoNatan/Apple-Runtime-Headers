@@ -21,13 +21,13 @@
 }
 
 + (id)keyPathsForValuesAffectingNotifications;
+- (void).cxx_destruct;
 @property(copy) NSSet *installedBundleIdentifiers; // @synthesize installedBundleIdentifiers=_installedBundleIdentifiers;
 @property(retain, nonatomic) NSFetchedResultsController *installedAppsController; // @synthesize installedAppsController=_installedAppsController;
 @property(readonly) NSFetchedResultsController *fetchedResultsController; // @synthesize fetchedResultsController=_fetchedResultsController;
 @property(readonly, copy) NSNumber *userDSID; // @synthesize userDSID=_userDSID;
 @property(readonly, copy) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
 @property _Bool includeTotalUsageDetailItem; // @synthesize includeTotalUsageDetailItem=_includeTotalUsageDetailItem;
-- (void).cxx_destruct;
 - (void)_updateInstalledBundleIdentifiers;
 - (void)controllerDidChangeContent:(id)arg1;
 - (void)_enumerateUsageBlocksWithUnitGranularity:(unsigned int)arg1 block:(CDUnknownBlockType)arg2;

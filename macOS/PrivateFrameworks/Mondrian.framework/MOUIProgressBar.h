@@ -17,11 +17,11 @@
     CALayer *_progressBarLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) NSColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(retain, nonatomic) NSColor *color; // @synthesize color=_color;
 @property(nonatomic) float progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 - (void)layout;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;

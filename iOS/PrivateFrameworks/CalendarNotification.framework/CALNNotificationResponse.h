@@ -17,11 +17,11 @@
 }
 
 + (id)responseWithNotification:(id)arg1 actionIdentifier:(id)arg2 originIdentifier:(id)arg3 targetConnectionEndpoint:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BSServiceConnectionEndpoint *targetConnectionEndpoint; // @synthesize targetConnectionEndpoint=_targetConnectionEndpoint;
 @property(readonly, copy, nonatomic) NSString *originIdentifier; // @synthesize originIdentifier=_originIdentifier;
 @property(readonly, copy, nonatomic) NSString *actionIdentifier; // @synthesize actionIdentifier=_actionIdentifier;
 @property(readonly, nonatomic) CALNNotification *notification; // @synthesize notification=_notification;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqualToResponse:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

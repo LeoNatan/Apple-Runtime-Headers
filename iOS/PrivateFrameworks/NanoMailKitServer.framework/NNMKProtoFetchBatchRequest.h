@@ -22,10 +22,10 @@
 }
 
 + (Class)fetchRequestType;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool wantsBatchedResponse; // @synthesize wantsBatchedResponse=_wantsBatchedResponse;
 @property(retain, nonatomic) NSMutableArray *fetchRequests; // @synthesize fetchRequests=_fetchRequests;
 @property(nonatomic) unsigned int fullSyncVersion; // @synthesize fullSyncVersion=_fullSyncVersion;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

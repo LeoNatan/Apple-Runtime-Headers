@@ -13,8 +13,8 @@
     NSSet *_tilingControllers;
 }
 
-@property(copy, nonatomic) NSSet *tilingControllers; // @synthesize tilingControllers=_tilingControllers;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSSet *tilingControllers; // @synthesize tilingControllers=_tilingControllers;
 - (void)updateComposition;
 
 @end

@@ -30,6 +30,7 @@
 + (id)defaultLandingPageByLocalizedStorefrontID;
 + (id)renewalLandingPageByLocalizedStorefrontID;
 + (id)defaultConfigurationForStorefrontID:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *subscriptionButtonConfigurationsByType; // @synthesize subscriptionButtonConfigurationsByType=_subscriptionButtonConfigurationsByType;
 @property(retain, nonatomic) NSDictionary *magazineGenresByGenre; // @synthesize magazineGenresByGenre=_magazineGenresByGenre;
 @property(retain, nonatomic) NSDictionary *paywallConfigurationsByType; // @synthesize paywallConfigurationsByType=_paywallConfigurationsByType;
@@ -37,7 +38,6 @@
 @property(readonly, copy, nonatomic) NSString *localizedStorefrontID; // @synthesize localizedStorefrontID=_localizedStorefrontID;
 @property(readonly, copy, nonatomic) NSString *storefrontID; // @synthesize storefrontID=_storefrontID;
 @property(retain, nonatomic) NSDictionary *configDict; // @synthesize configDict=_configDict;
-- (void).cxx_destruct;
 - (id)defaultMagazineGenres;
 - (id)defaultSubscriptionButtonConfigs;
 - (id)defaultPaywallConfigs;

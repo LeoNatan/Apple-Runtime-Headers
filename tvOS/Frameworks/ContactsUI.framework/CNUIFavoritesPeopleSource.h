@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 
 + (id)sourceWithEnvironment:(id)arg1 contactStore:(id)arg2;
 + (id)sourceKind;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *cachedPeople; // @synthesize cachedPeople=_cachedPeople;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) CNFavorites *favorites; // @synthesize favorites=_favorites;
-- (void).cxx_destruct;
 - (id)peopleInGroup:(id)arg1 keysToFetch:(id)arg2;
 - (id)groups;
 

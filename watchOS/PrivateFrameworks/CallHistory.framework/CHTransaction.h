@@ -20,9 +20,9 @@
 + (id)toString:(unsigned int)arg1;
 + (id)unarchivedObjectFromData:(id)arg1 error:(id *)arg2;
 + (id)unarchivedObjectClasses;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *record; // @synthesize record=_record;
 @property(readonly, nonatomic) unsigned int transactionType; // @synthesize transactionType=_transactionType;
-- (void).cxx_destruct;
 - (_Bool)isEqualToTransaction:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

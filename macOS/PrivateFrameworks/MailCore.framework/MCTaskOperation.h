@@ -15,9 +15,9 @@
 }
 
 + (void)setTaskDescription:(const char *)arg1;
+- (void).cxx_destruct;
 @property(retain) MCActivityMonitor *parentMonitor; // @synthesize parentMonitor=_parentMonitor;
 @property(retain) MCActivityMonitor *monitor; // @synthesize monitor=_monitor;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)dealloc;
 - (void)main;

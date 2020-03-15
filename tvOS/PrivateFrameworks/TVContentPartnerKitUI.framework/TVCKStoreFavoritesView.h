@@ -39,6 +39,7 @@
 + (id)_darkModeListTitleTextColor;
 + (id)_lightModeListTitleTextColor;
 + (id)listTitleTextColor;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint lastVelocity; // @synthesize lastVelocity=_lastVelocity;
 @property(nonatomic) long long panLockDirection; // @synthesize panLockDirection=_panLockDirection;
 @property(retain, nonatomic) TVCKStoreFavoriteItemCell *editedCell; // @synthesize editedCell=_editedCell;
@@ -57,7 +58,6 @@
 @property(nonatomic) __weak id <TVCKStoreFavoritesViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long category; // @synthesize category=_category;
 @property(readonly, nonatomic) struct CGSize itemSize; // @synthesize itemSize=_itemSize;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (_Bool)shouldUpdateFocusInContext:(id)arg1;
 - (id)preferredFocusEnvironments;

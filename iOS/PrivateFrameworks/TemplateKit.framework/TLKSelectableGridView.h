@@ -21,10 +21,10 @@
 
 + (unsigned long long)idealNumberOfColumnsForTitles:(id)arg1 fittingSize:(struct CGSize)arg2 containerView:(id)arg3;
 + (unsigned long long)maxColumns;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *buttons; // @synthesize buttons=_buttons;
 @property __weak id <TLKSelectableGridViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *tuples; // @synthesize tuples=_tuples;
-- (void).cxx_destruct;
 - (id)arrangedEntrySubviews;
 - (struct CGSize)containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize)arg2 forArrangedSubview:(id)arg3;
 - (void)selectableGridButtonPressed:(id)arg1;

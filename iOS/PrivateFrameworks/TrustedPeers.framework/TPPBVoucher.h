@@ -20,9 +20,9 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sponsor; // @synthesize sponsor=_sponsor;
 @property(retain, nonatomic) NSString *beneficiary; // @synthesize beneficiary=_beneficiary;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

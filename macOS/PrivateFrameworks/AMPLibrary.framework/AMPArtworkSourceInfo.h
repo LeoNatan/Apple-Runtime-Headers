@@ -22,6 +22,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *storeID; // @synthesize storeID=_storeID;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
 @property(nonatomic) unsigned long long remoteID; // @synthesize remoteID=_remoteID;
@@ -29,7 +30,6 @@
 @property(nonatomic) unsigned int kind; // @synthesize kind=_kind;
 @property(nonatomic) unsigned long long persistentID; // @synthesize persistentID=_persistentID;
 @property(nonatomic) unsigned long long dbID; // @synthesize dbID=_dbID;
-- (void).cxx_destruct;
 - (id)initWithCloudLibraryURL:(id)arg1 andToken:(id)arg2 forDBID:(unsigned long long)arg3 forPersistentID:(unsigned long long)arg4;
 - (id)initWithCloudLibraryToken:(id)arg1 forDBID:(unsigned long long)arg2 forPersistentID:(unsigned long long)arg3;
 - (id)initWithPurchasesURL:(id)arg1 forDBID:(unsigned long long)arg2 forPersistentID:(unsigned long long)arg3;

@@ -14,9 +14,9 @@
     NSSet *_blacklistedBundleIDs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *blacklistedBundleIDs; // @synthesize blacklistedBundleIDs=_blacklistedBundleIDs;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)_requestBlacklistUpdate;
 - (_Bool)containsBundleIdentifier:(id)arg1;
 - (id)_blacklistPreference;

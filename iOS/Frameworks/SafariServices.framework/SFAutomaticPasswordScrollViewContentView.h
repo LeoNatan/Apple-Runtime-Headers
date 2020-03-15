@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <SFAutomaticPasswordScrollViewContentViewLayoutObserver> _layoutObserver;
 }
 
-@property(nonatomic) __weak id <SFAutomaticPasswordScrollViewContentViewLayoutObserver> layoutObserver; // @synthesize layoutObserver=_layoutObserver;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SFAutomaticPasswordScrollViewContentViewLayoutObserver> layoutObserver; // @synthesize layoutObserver=_layoutObserver;
 - (void)layoutSubviews;
 
 @end

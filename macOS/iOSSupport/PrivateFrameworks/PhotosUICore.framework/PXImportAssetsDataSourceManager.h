@@ -32,6 +32,7 @@
 + (void)addModels:(id)arg1 toAssetCollections:(id)arg2 assetCollectionsById:(id)arg3;
 + (BOOL)assetCollectionsArray:(id)arg1 isEqualToAssetCollectionsArray:(id)arg2;
 + (void)copyFromAssetCollections:(id)arg1 toAssetCollections:(id *)arg2 assetCollectionsById:(id *)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) long long forcedAlreadyImportedTruncationMode; // @synthesize forcedAlreadyImportedTruncationMode=_forcedAlreadyImportedTruncationMode;
 @property(nonatomic) long long maxAlreadyImportedItems; // @synthesize maxAlreadyImportedItems=_maxAlreadyImportedItems;
 @property(nonatomic) BOOL needsFilterUpdate; // @synthesize needsFilterUpdate=_needsFilterUpdate;
@@ -46,7 +47,6 @@
 @property(copy, nonatomic) NSSet *visibleImportAssetIdentifiers; // @synthesize visibleImportAssetIdentifiers=_visibleImportAssetIdentifiers;
 @property(retain, nonatomic) PXImportAssetsDataSource *unfilteredDataSource; // @synthesize unfilteredDataSource=_unfilteredDataSource;
 @property(nonatomic) __weak id <PXImportAssetsDataSourceManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (long long)countOfAlreadyImportedAssetCollectionInCollectionsMap:(id)arg1;
 - (long long)countOfUnfilteredAlreadyImportedAssetCollection;
 @property(readonly, nonatomic) PXImportAssetCollection *unfilteredAlreadyImportedAssetCollection;

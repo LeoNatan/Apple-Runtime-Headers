@@ -21,6 +21,7 @@
     struct _NSRange _resultingInsertedRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange resultingInsertedRange; // @synthesize resultingInsertedRange=_resultingInsertedRange;
 @property(copy, nonatomic) NSString *resultingFullString; // @synthesize resultingFullString=_resultingFullString;
 @property(readonly, nonatomic) struct _NSRange replacementRange; // @synthesize replacementRange=_replacementRange;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool isForExplicitSelection; // @synthesize isForExplicitSelection=_isForExplicitSelection;
 @property(nonatomic) _Bool wantsCandidatesListVisible; // @synthesize wantsCandidatesListVisible=_wantsCandidatesListVisible;
 @property(readonly, nonatomic) ArouetCandidatesResult *candidatesResult; // @synthesize candidatesResult=_candidatesResult;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) struct _NSRange selectedCandidateRange;
 - (id)initWithCandidatesResult:(id)arg1 replacementRange:(struct _NSRange)arg2;

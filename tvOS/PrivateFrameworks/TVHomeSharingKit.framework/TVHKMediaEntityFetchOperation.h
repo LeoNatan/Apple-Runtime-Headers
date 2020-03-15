@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSPredicate *_postFetchPredicate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool processRangeAfterFetch; // @synthesize processRangeAfterFetch=_processRangeAfterFetch;
 @property(copy, nonatomic) NSPredicate *postFetchPredicate; // @synthesize postFetchPredicate=_postFetchPredicate;
 @property(copy, nonatomic) NSArray *postFetchSortDescriptors; // @synthesize postFetchSortDescriptors=_postFetchSortDescriptors;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) TVHSMediaServerProtocolVersion *protocolVersion; // @synthesize protocolVersion=_protocolVersion;
 @property(copy, nonatomic) TVHSMediaServerIdentifier *mediaServerIdentifier; // @synthesize mediaServerIdentifier=_mediaServerIdentifier;
 @property(copy, nonatomic) TVHKMediaEntityFetchRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)_mediaEntities:(id)arg1 subarrayWithRange:(struct _NSRange)arg2;
 - (id)_processFetchedMediaEntities:(id)arg1;
 - (id)initWithRequest:(id)arg1 mediaServerIdentifier:(id)arg2;

@@ -17,12 +17,12 @@
     long long _timeout;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long timeout; // @synthesize timeout=_timeout;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *bulletinImageType; // @synthesize bulletinImageType=_bulletinImageType;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)_updateHUD;
 - (id)initWithHUDType:(long long)arg1;
 

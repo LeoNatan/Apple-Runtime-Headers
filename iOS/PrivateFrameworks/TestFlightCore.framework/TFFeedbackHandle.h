@@ -17,10 +17,10 @@
     NSString *_logKey;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *logKey; // @synthesize logKey=_logKey;
 @property(retain, nonatomic) SBSRemoteAlertHandle *internalHandle; // @synthesize internalHandle=_internalHandle;
 @property(readonly, nonatomic) TFFeedbackHandleConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)remoteAlertHandle:(id)arg1 didInvalidateWithError:(id)arg2;
 - (void)remoteAlertHandleDidDeactivate:(id)arg1;
 - (void)invalidateFeedbackViewController;

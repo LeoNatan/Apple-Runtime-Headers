@@ -19,13 +19,13 @@
 }
 
 + (id)createLabelWithNumberOfLines:(long long)arg1 font:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) BOOL hasLeadingEdgeAlignedCancelButton; // @synthesize hasLeadingEdgeAlignedCancelButton=_hasLeadingEdgeAlignedCancelButton;
 @property(copy, nonatomic) CDUnknownBlockType cancelButtonAction; // @synthesize cancelButtonAction=_cancelButtonAction;
 @property(copy, nonatomic) CDUnknownBlockType primaryButtonAction; // @synthesize primaryButtonAction=_primaryButtonAction;
 @property(readonly, nonatomic) NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(readonly, nonatomic) NSButton *primaryButton; // @synthesize primaryButton=_primaryButton;
 @property(readonly, nonatomic) NSImageView *iconView; // @synthesize iconView=_iconView;
-- (void).cxx_destruct;
 @property(readonly) double interItemMargin;
 @property(readonly) double contentBottomEdge;
 @property(readonly) double contentTopEdge;

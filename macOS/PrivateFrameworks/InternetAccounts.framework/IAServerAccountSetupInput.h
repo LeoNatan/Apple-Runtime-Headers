@@ -19,6 +19,7 @@
     BOOL _enableVPN;
 }
 
+- (void).cxx_destruct;
 @property BOOL enableVPN; // @synthesize enableVPN=_enableVPN;
 @property BOOL enableCardDAV; // @synthesize enableCardDAV=_enableCardDAV;
 @property BOOL enableCalDAV; // @synthesize enableCalDAV=_enableCalDAV;
@@ -26,7 +27,6 @@
 @property BOOL enableMail; // @synthesize enableMail=_enableMail;
 @property(retain) NSString *serverAddress; // @synthesize serverAddress=_serverAddress;
 @property(retain) NSString *serverName; // @synthesize serverName=_serverName;
-- (void).cxx_destruct;
 
 @end
 

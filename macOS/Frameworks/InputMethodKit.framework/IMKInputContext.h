@@ -17,11 +17,11 @@
     IMKInputContext *_composingContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
 @property(readonly, nonatomic) IMKInputContext *composingContext; // @synthesize composingContext=_composingContext;
 @property(readonly, nonatomic) id <IMKTextDocument> documentContent; // @synthesize documentContent=_documentContent;
 @property(readonly, nonatomic) IMKKeyboardState *keyboardState; // @synthesize keyboardState=_keyboardState;
-- (void).cxx_destruct;
 - (id)contextWithLanguageCode:(id)arg1;
 - (id)contextWithComposingContext:(id)arg1;
 - (id)contextWithDocumentContent:(id)arg1;

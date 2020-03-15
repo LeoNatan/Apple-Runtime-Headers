@@ -23,13 +23,13 @@
 + (unsigned long long)finalSizeWithEngine:(id)arg1;
 + (BOOL)shouldMigrateUserDataForUser:(id)arg1;
 + (BOOL)copiesHomeDirectoriesForRequest:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSError *processError; // @synthesize processError=_processError;
 @property(readonly) BOOL onlyPreflightHomeDirectories; // @synthesize onlyPreflightHomeDirectories=_onlyPreflightHomeDirectories;
 @property(retain) NSMutableSet *pathsToBePreflighted; // @synthesize pathsToBePreflighted=_pathsToBePreflighted;
 @property(retain) NSArray *usersToReplace; // @synthesize usersToReplace=_usersToReplace;
 @property(retain) SMPreflightEngine *preflightEngine; // @synthesize preflightEngine=_preflightEngine;
 @property(retain) SMCopyEngine *fileCopyEngine; // @synthesize fileCopyEngine=_fileCopyEngine;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)estimatedTimeRemainingChanged:(double)arg1;
 - (void)transferRateChanged:(double)arg1;

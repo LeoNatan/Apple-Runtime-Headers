@@ -18,10 +18,10 @@
 + (_Bool)supportsSecureCoding;
 + (id)kindWithVariants:(unsigned long long)arg1 songKind:(id)arg2 options:(unsigned long long)arg3;
 + (id)identityKind;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) MPModelSongKind *songKind; // @synthesize songKind=_songKind;
 @property(readonly, nonatomic) unsigned long long variants; // @synthesize variants=_variants;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)humanDescription;

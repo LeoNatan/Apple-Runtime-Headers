@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     MPMediaItem *_mediaItem;
 }
 
-@property(retain, nonatomic) MPMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 - (id)imageLoadParamsWithImageType:(unsigned long long)arg1;
 - (id)mediaPlayerMediaItem;
 - (id)rentalExpirationDate;

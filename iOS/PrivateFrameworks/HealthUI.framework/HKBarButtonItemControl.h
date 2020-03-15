@@ -18,13 +18,13 @@
     UIControl *_barButtonItemControl;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIControl *barButtonItemControl; // @synthesize barButtonItemControl=_barButtonItemControl;
 @property(readonly, nonatomic) UIBarButtonItem *barButtonItem; // @synthesize barButtonItem=_barButtonItem;
 @property(readonly, nonatomic) UIToolbar *toolbar; // @synthesize toolbar=_toolbar;
 @property(nonatomic) double horizontalMargin; // @synthesize horizontalMargin=_horizontalMargin;
 @property(nonatomic) _Bool collapseHeight; // @synthesize collapseHeight=_collapseHeight;
 @property(nonatomic) long long preferredHeight; // @synthesize preferredHeight=_preferredHeight;
-- (void).cxx_destruct;
 - (void)_barButtonAction:(id)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;

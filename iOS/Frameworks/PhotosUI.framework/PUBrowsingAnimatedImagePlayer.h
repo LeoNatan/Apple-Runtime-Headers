@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
     NSMutableSet *__animatedImageLoadingDisablingReasons;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setAnimatedImageRequestID:) int _animatedImageRequestID; // @synthesize _animatedImageRequestID=__animatedImageRequestID;
 @property(retain, nonatomic) NSMutableSet *_animatedImageLoadingDisablingReasons; // @synthesize _animatedImageLoadingDisablingReasons=__animatedImageLoadingDisablingReasons;
 @property(nonatomic, setter=_setAnimatedImageLoadingAllowed:) _Bool isAnimatedImageLoadingAllowed; // @synthesize isAnimatedImageLoadingAllowed=_isAnimatedImageLoadingAllowed;
 @property(retain, nonatomic, setter=_setAnimatedImage:) PHAnimatedImage *animatedImage; // @synthesize animatedImage=_animatedImage;
 @property(readonly, nonatomic) PUMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(retain, nonatomic) id <PUDisplayAsset> asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (id)debugDetailedDescription;
 - (void)_handleAnimatedImageRequestComplete:(id)arg1;
 - (void)_updateAnimatedImage;

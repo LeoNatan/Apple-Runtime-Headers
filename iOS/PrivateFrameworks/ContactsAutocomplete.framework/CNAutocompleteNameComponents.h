@@ -20,11 +20,11 @@
 
 + (id)contactKeys;
 + (id)nameComponentsWithFirstName:(id)arg1 lastName:(id)arg2 nickname:(id)arg3 nameSuffix:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly) NSString *nameSuffix; // @synthesize nameSuffix=_nameSuffix;
 @property(readonly) NSString *nickname; // @synthesize nickname=_nickname;
 @property(readonly) NSString *lastName; // @synthesize lastName=_lastName;
 @property(readonly) NSString *firstName; // @synthesize firstName=_firstName;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

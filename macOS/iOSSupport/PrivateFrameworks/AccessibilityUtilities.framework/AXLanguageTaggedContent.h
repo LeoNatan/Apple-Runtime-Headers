@@ -14,6 +14,7 @@
     struct _NSRange _currentChunk;
     BOOL _predictedByTagger;
     void *_nlTagger;
+    void *_namedEntityTagger;
     BOOL _tagged;
     NSMutableArray *_tags;
     NSMutableOrderedSet *_unpredictedAmbiguousLangMaps;
@@ -22,6 +23,7 @@
     NSMutableString *_contentString;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *currentDialects; // @synthesize currentDialects=_currentDialects;
 @property(retain, nonatomic) NSMutableString *contentString; // @synthesize contentString=_contentString;
 @property(retain, nonatomic) NSMutableOrderedSet *predictedSecondaryLangMaps; // @synthesize predictedSecondaryLangMaps=_predictedSecondaryLangMaps;
@@ -29,7 +31,6 @@
 @property(retain, nonatomic) NSMutableOrderedSet *unpredictedAmbiguousLangMaps; // @synthesize unpredictedAmbiguousLangMaps=_unpredictedAmbiguousLangMaps;
 @property(nonatomic, getter=isTagged) BOOL tagged; // @synthesize tagged=_tagged;
 @property(retain, nonatomic) NSMutableArray *tags; // @synthesize tags=_tags;
-- (void).cxx_destruct;
 - (void)updateTagsForLocalePrefChange;
 - (id)primaryUnambiguousDialect;
 - (id)primaryAmbiguousDialect;
@@ -45,6 +46,7 @@
 - (BOOL)_isStringCombinationOfCommonAndEmoji:(id)arg1;
 - (void)tagContent;
 - (BOOL)_addLanguageTagForCurrentChunk;
+- (BOOL)_isNamedEntity:(id)arg1;
 - (BOOL)_addLanguageTagForDateIfNecessary;
 - (id)_overrideLanguageDetection:(id)arg1;
 - (CDStruct_3a8d9e70 *)_languageHintsEvenlyDistributedWithProbability:(float)arg1 excludingHints:(id)arg2;

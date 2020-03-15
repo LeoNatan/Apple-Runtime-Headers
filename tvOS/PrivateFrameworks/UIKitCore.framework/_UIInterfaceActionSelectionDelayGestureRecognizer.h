@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIDelayedAction *_delayedAction;
 }
 
-@property(readonly, nonatomic) UIDelayedAction *delayedAction; // @synthesize delayedAction=_delayedAction;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIDelayedAction *delayedAction; // @synthesize delayedAction=_delayedAction;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_timerSatisfied;

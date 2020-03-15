@@ -23,12 +23,12 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mOofMessages; // @synthesize mOofMessages=_mOofMessages;
 @property(retain, nonatomic) NSArray *oofMessages; // @synthesize oofMessages=_oofMessages;
 @property(retain, nonatomic) NSString *endTime; // @synthesize endTime=_endTime;
 @property(retain, nonatomic) NSString *startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) NSNumber *oofState; // @synthesize oofState=_oofState;
-- (void).cxx_destruct;
 - (id)convertToDAOofParams;
 - (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
 - (id)description;

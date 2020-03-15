@@ -20,11 +20,11 @@
     struct NSEdgeInsets _padding;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct NSEdgeInsets padding; // @synthesize padding=_padding;
 @property(readonly, nonatomic) BOOL userInterfaceStyleAllowsShadow; // @synthesize userInterfaceStyleAllowsShadow=_userInterfaceStyleAllowsShadow;
 @property(readonly, nonatomic) double shadowCornerRadius; // @synthesize shadowCornerRadius=_shadowCornerRadius;
 @property(readonly, nonatomic) NSShadow *shadow; // @synthesize shadow=_shadow;
-- (void).cxx_destruct;
 - (BOOL)allowsPositionDependentHeaderContentOpacityInZoomLevel:(long long)arg1;
 - (id)sectionConfiguratorForAssetCollection:(id)arg1 inZoomLevel:(long long)arg2;
 - (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned long long)arg2;

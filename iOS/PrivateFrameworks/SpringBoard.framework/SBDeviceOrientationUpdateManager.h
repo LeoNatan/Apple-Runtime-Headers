@@ -17,8 +17,8 @@
     long long _lastUpdatedDeviceOrientation;
 }
 
-@property(nonatomic) long long lastUpdatedDeviceOrientation; // @synthesize lastUpdatedDeviceOrientation=_lastUpdatedDeviceOrientation;
 - (void).cxx_destruct;
+@property(nonatomic) long long lastUpdatedDeviceOrientation; // @synthesize lastUpdatedDeviceOrientation=_lastUpdatedDeviceOrientation;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

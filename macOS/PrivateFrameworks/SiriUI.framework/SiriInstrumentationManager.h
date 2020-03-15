@@ -19,16 +19,16 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property int lastSiriUIStateSnapShot; // @synthesize lastSiriUIStateSnapShot=_lastSiriUIStateSnapShot;
 @property(retain) SAUIAssistantUtteranceView *assistantUtteranceViewSnapShot; // @synthesize assistantUtteranceViewSnapShot=_assistantUtteranceViewSnapShot;
 @property int currentInvocationSource; // @synthesize currentInvocationSource=_currentInvocationSource;
 @property(retain) AFAnalyticsTurnBasedInstrumentationContext *currentInstrumentationTurnContext; // @synthesize currentInstrumentationTurnContext=_currentInstrumentationTurnContext;
-- (void).cxx_destruct;
 - (unsigned int)audioDevice:(unsigned int)arg1 propertyUInt32:(unsigned int)arg2;
 - (void)emitDialogOutputEventWith:(id)arg1 canUseServerTTS:(BOOL)arg2 spokenDialogOutput:(id)arg3 displayedDialogOutput:(id)arg4;
 - (void)emitTextToSpeechEndEvent;
 - (void)emitTextToSpeechBeginEvent;
-- (void)emitPunchOutEventWithURL:(id)arg1 appID:(id)arg2 previousTurnIdentifier:(struct NSUUID *)arg3;
+- (void)emitPunchOutEventWithURL:(id)arg1 appID:(id)arg2 previousTurnIdentifier:(id)arg3;
 - (void)emitPunchOutInvocationWithSiriViewController:(id)arg1;
 - (void)emitUUFRPresentedEventWith:(id)arg1 dialogIdentifier:(id)arg2 dialogPhase:(id)arg3;
 - (void)emitUUFRPresentedEventWith:(id)arg1 dialogPhase:(id)arg2;

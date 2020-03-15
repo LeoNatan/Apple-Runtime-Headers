@@ -25,9 +25,9 @@
     UICollectionView *_collectionView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(readonly, nonatomic) __weak id <CKSupplementaryViewDataSource> supplementaryViewDataSource; // @synthesize supplementaryViewDataSource=_supplementaryViewDataSource;
-- (void).cxx_destruct;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;

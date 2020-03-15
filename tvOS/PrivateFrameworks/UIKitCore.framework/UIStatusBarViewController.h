@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)statusBarOrientationAnimationDurationFrom:(long long)arg1 to:(long long)arg2;
-- (id)_window;
 - (void).cxx_destruct;
+- (id)_window;
 - (void)_statusBarViewControllerKeyboardDidHide:(id)arg1;
 - (void)_statusBarViewControllerKeyboardWillShow:(id)arg1;
 - (void)_finishStatusBarOrientationChange;

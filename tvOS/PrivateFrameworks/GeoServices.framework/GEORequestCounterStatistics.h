@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long bytesReceived; // @synthesize bytesReceived=_bytesReceived;
 @property(readonly, nonatomic) unsigned long long bytesTransmitted; // @synthesize bytesTransmitted=_bytesTransmitted;
-- (void).cxx_destruct;
 - (unsigned long long)countForResult:(unsigned char)arg1;
 - (void)incrementCount:(unsigned long long)arg1 forResult:(unsigned char)arg2;
 - (void)incrementBytesReceived:(unsigned long long)arg1;

@@ -17,25 +17,28 @@ __attribute__((visibility("hidden")))
     NSString *_identifier;
     BOOL _isPersistent;
     long long _type;
+    BOOL _isChildAccount;
+    NSArray *_childAccounts;
+    NSNumber *_dsid;
 }
 
+- (void).cxx_destruct;
+@property(readonly) BOOL isChildAccount; // @synthesize isChildAccount=_isChildAccount;
+@property(readonly) NSNumber *dsid; // @synthesize dsid=_dsid;
+@property(readonly, copy) NSArray *childAccounts; // @synthesize childAccounts=_childAccounts;
 @property long long type; // @synthesize type=_type;
 @property BOOL isPersistent; // @synthesize isPersistent=_isPersistent;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy) NSURL *baseURL; // @synthesize baseURL=_baseURL;
-- (void).cxx_destruct;
 - (BOOL)_isLocalAccount;
 @property(readonly) ABCDContainer *containerRepresentation;
 @property(readonly) NSURL *persistentStoreURL;
 @property(readonly) BOOL isEnabled;
 
 // Remaining properties
-@property(readonly, copy) NSArray *childAccounts;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly) NSNumber *dsid;
 @property(readonly) unsigned long long hash;
-@property(readonly) BOOL isChildAccount;
 @property(readonly) Class superclass;
 
 @end

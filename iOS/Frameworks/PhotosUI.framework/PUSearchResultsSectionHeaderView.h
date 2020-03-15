@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 
 + (double)headerViewHeight;
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool largeTextSizeConstraintsAreActive; // @synthesize largeTextSizeConstraintsAreActive=_largeTextSizeConstraintsAreActive;
 @property(retain, nonatomic) NSLayoutConstraint *buttonRegularTrailingConstraint; // @synthesize buttonRegularTrailingConstraint=_buttonRegularTrailingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *buttonCompactTrailingConstraint; // @synthesize buttonCompactTrailingConstraint=_buttonCompactTrailingConstraint;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *smallAndMediumTextSizeConstraints; // @synthesize smallAndMediumTextSizeConstraints=_smallAndMediumTextSizeConstraints;
 @property(readonly, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)setupSmallAndMediumTextConstraints;
 - (void)setupLargeTextConstaints;
 - (void)setupConstraintsForTextSize;

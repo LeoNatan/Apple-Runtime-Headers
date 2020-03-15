@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
     _Bool _supportsDockViewController;
     UIKeyboardFloatingTransitionController *_floatingTransitionController;
     _Bool _shouldNotifyRemoteKeyboards;
+    _Bool _forceAccessoryViewToBottomOfHostView;
     _Bool _dontDismissKeyboardOnScrolling;
     _Bool _dontDismissReachability;
     UIInputViewSet *_inputViewSet;
@@ -73,6 +74,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSLayoutConstraint *accessoryViewHeightConstraint; // @synthesize accessoryViewHeightConstraint=_accessoryViewHeightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *assistantViewHeightConstraint; // @synthesize assistantViewHeightConstraint=_assistantViewHeightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *inputViewHeightConstraint; // @synthesize inputViewHeightConstraint=_inputViewHeightConstraint;
+@property(nonatomic) _Bool forceAccessoryViewToBottomOfHostView; // @synthesize forceAccessoryViewToBottomOfHostView=_forceAccessoryViewToBottomOfHostView;
 @property(readonly, retain, nonatomic) UIInputWindowControllerHosting *hosting; // @synthesize hosting=_hosting;
 @property(nonatomic) _Bool shouldNotifyRemoteKeyboards; // @synthesize shouldNotifyRemoteKeyboards=_shouldNotifyRemoteKeyboards;
 @property(retain, nonatomic) UIInputViewPlacementTransition *currentTransition; // @synthesize currentTransition=_currentTransition;

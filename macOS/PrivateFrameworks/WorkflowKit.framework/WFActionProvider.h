@@ -13,8 +13,8 @@
     id <WFActionProviderDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <WFActionProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <WFActionProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)deleteCache;
 - (void)updateCache:(CDUnknownBlockType)arg1;
 - (id)createAllAvailableActions;

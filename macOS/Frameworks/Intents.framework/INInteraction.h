@@ -35,6 +35,7 @@
 + (void)deleteAllInteractionsWithCompletion:(CDUnknownBlockType)arg1;
 + (BOOL)supportsSecureCoding;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
@@ -45,9 +46,8 @@
 @property(copy, setter=_setContextExtensionUUID:) NSUUID *_contextExtensionUUID; // @synthesize _contextExtensionUUID;
 @property(nonatomic, setter=_setDonatedBySiri:) BOOL _donatedBySiri; // @synthesize _donatedBySiri;
 @property(retain, setter=_setSnippet:) SAUISnippet *_snippet; // @synthesize _snippet;
-- (void).cxx_destruct;
 - (id)parameterValueForParameter:(id)arg1;
-@property(readonly) unsigned long long _indexingHash;
+@property(readonly) long long _indexingHash;
 - (id)_searchableItemIncludingData:(BOOL)arg1;
 @property(readonly, copy) CSSearchableItem *_searchableItem;
 - (id)_dictionaryRepresentation;

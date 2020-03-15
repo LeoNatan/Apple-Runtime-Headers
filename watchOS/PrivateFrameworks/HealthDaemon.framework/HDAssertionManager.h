@@ -19,8 +19,8 @@
     NSObject<OS_dispatch_queue> *_assertionExpirationQueue;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *assertionExpirationQueue; // @synthesize assertionExpirationQueue=_assertionExpirationQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *assertionExpirationQueue; // @synthesize assertionExpirationQueue=_assertionExpirationQueue;
 - (void)_postNotification:(id)arg1 forAssertion:(id)arg2;
 - (void)_lock_enumerateActiveAssertionsWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_releaseAssertion:(id)arg1;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIWindow *_window;
 }
 
-@property(readonly, nonatomic) __weak UIWindow *window; // @synthesize window=_window;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak UIWindow *window; // @synthesize window=_window;
 - (_Bool)update;
 @property(readonly, nonatomic) struct CGSize adjustedWindowSize;
 - (id)initWithWindow:(id)arg1;

@@ -15,6 +15,9 @@
     // Error parsing type: , name: loopBehavior
     // Error parsing type: , name: clipReversed
     // Error parsing type: , name: animationSpeed
+    // Error parsing type: , name: muteAudio
+    // Error parsing type: , name: audioGain
+    // Error parsing type: , name: targetAnimationEntity
     // Error parsing type: , name: animationComponents
 }
 

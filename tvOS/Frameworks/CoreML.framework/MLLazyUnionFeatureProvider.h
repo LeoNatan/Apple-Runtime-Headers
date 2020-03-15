@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     id <MLFeatureProvider> _second;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MLFeatureProvider> second; // @synthesize second=_second;
 @property(retain, nonatomic) id <MLFeatureProvider> first; // @synthesize first=_first;
-- (void).cxx_destruct;
 - (id)unionFeatureProvider;
 - (id)featureValueForName:(id)arg1;
 @property(readonly, nonatomic) NSSet *featureNames;

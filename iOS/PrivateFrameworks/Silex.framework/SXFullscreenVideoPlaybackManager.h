@@ -15,10 +15,10 @@
     NSHashTable *_candidates;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool layoutInProgress; // @synthesize layoutInProgress=_layoutInProgress;
 @property(nonatomic) _Bool transitionInProgress; // @synthesize transitionInProgress=_transitionInProgress;
 @property(readonly, nonatomic) NSHashTable *candidates; // @synthesize candidates=_candidates;
-- (void).cxx_destruct;
 - (void)didLayoutForSize:(struct CGSize)arg1;
 - (void)didTransitionToSize:(struct CGSize)arg1;
 - (void)willLayoutAndTransitionToSize:(struct CGSize)arg1;

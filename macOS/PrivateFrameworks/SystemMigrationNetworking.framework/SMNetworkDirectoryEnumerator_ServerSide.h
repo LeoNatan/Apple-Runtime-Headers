@@ -13,6 +13,7 @@
     BOOL _autoDetectBundles;
     BOOL _autoSizeBundles;
     BOOL _useTrueOnDiskSizes;
+    BOOL _stopEnumeration;
     NSArray *_requestedProperties;
     NSSet *_dontDescendPaths;
     NSDictionary *_restartPoint;
@@ -23,10 +24,12 @@
     id _startingFilesystemIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain) id startingFilesystemIdentifier; // @synthesize startingFilesystemIdentifier=_startingFilesystemIdentifier;
 @property(retain) NSMutableSet *hardlinkInodes; // @synthesize hardlinkInodes=_hardlinkInodes;
 @property(retain) NSURL *alternateBasePathURL; // @synthesize alternateBasePathURL=_alternateBasePathURL;
 @property(retain) NSURL *basePathURL; // @synthesize basePathURL=_basePathURL;
+@property BOOL stopEnumeration; // @synthesize stopEnumeration=_stopEnumeration;
 @property(retain) NSString *compressionFormat; // @synthesize compressionFormat=_compressionFormat;
 @property(retain) NSDictionary *restartPoint; // @synthesize restartPoint=_restartPoint;
 @property(retain) NSSet *dontDescendPaths; // @synthesize dontDescendPaths=_dontDescendPaths;
@@ -34,8 +37,7 @@
 @property BOOL useTrueOnDiskSizes; // @synthesize useTrueOnDiskSizes=_useTrueOnDiskSizes;
 @property BOOL autoSizeBundles; // @synthesize autoSizeBundles=_autoSizeBundles;
 @property BOOL autoDetectBundles; // @synthesize autoDetectBundles=_autoDetectBundles;
-- (void).cxx_destruct;
-- (void)enumerateToFileDescriptor:(int)arg1;
+- (BOOL)enumerateToFileDescriptor:(int)arg1;
 - (id)initWithDirectory:(id)arg1;
 
 @end

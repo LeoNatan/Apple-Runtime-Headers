@@ -25,6 +25,7 @@
 
 + (id)iconImageNamed:(id)arg1 withSize:(unsigned long long)arg2 displayStyle:(unsigned long long)arg3;
 + (Class)iconContentViewClassForIconDescriptor:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long primaryState; // @synthesize primaryState=_primaryState;
 @property(retain, nonatomic) id <HFIconDescriptor> iconDescriptor; // @synthesize iconDescriptor=_iconDescriptor;
 @property(nonatomic) long long renderingMode; // @synthesize renderingMode=_renderingMode;
@@ -35,7 +36,6 @@
 @property(nonatomic) unsigned long long iconSize; // @synthesize iconSize=_iconSize;
 @property(nonatomic) __weak id <HUIconContentViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIVisualEffect *vibrancyEffect; // @synthesize vibrancyEffect=_vibrancyEffect;
-- (void).cxx_destruct;
 - (long long)renderingModeForSubview:(id)arg1 suggestedRenderingMode:(long long)arg2;
 - (void)invalidateRenderingMode;
 - (void)_updateOverrideRenderingModeForSubviewsOfView:(id)arg1;

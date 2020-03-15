@@ -15,8 +15,8 @@
     id _overriddenSingleton;
 }
 
-@property __weak id overriddenSingleton; // @synthesize overriddenSingleton=_overriddenSingleton;
 - (void).cxx_destruct;
+@property __weak id overriddenSingleton; // @synthesize overriddenSingleton=_overriddenSingleton;
 - (_Bool)shouldInvokeSelector:(SEL)arg1 onSingleton:(id)arg2;
 - (void)didOverrideSingleton:(id)arg1;
 

@@ -21,10 +21,10 @@
 + (id)humanBodyObjectWithFigEmbeddedCaptureDeviceObjectDictionary:(id)arg1;
 + (id)humanFaceObjectWithFigEmbeddedCaptureDeviceObjectDictionary:(id)arg1;
 + (id)objectWithFigEmbeddedCaptureDeviceObjectDictionary:(id)arg1 type:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) int confidence; // @synthesize confidence=_confidence;
 @property(readonly) NSString *type; // @synthesize type=_type;
 @property(readonly) struct CGRect bounds; // @synthesize bounds=_bounds;
-- (void).cxx_destruct;
 @property(readonly) CDStruct_1b6d18a9 duration;
 @property(readonly) CDStruct_1b6d18a9 time;
 - (id)initWithType:(id)arg1 bounds:(struct CGRect)arg2 confidence:(int)arg3;

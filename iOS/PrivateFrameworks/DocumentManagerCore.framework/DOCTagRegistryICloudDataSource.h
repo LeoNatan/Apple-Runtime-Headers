@@ -17,11 +17,11 @@
     id <DOCTagRegistryDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <DOCTagRegistryDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workingQueue; // @synthesize workingQueue=_workingQueue;
 @property(retain, nonatomic) NSObject *iCloudToken; // @synthesize iCloudToken=_iCloudToken;
 @property(retain, nonatomic) NSUbiquitousKeyValueStore *store; // @synthesize store=_store;
-- (void).cxx_destruct;
 - (long long)iCloudTagSerialNumber;
 - (long long)iCloudTagVersion;
 - (id)iCloudTags;

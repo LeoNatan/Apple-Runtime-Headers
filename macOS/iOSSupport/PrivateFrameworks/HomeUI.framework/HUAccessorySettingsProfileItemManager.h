@@ -13,8 +13,8 @@
     HUAccessorySettingsProfileModule *_profileModule;
 }
 
-@property(retain, nonatomic) HUAccessorySettingsProfileModule *profileModule; // @synthesize profileModule=_profileModule;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HUAccessorySettingsProfileModule *profileModule; // @synthesize profileModule=_profileModule;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;
 - (id)_buildItemProvidersForHome:(id)arg1;
 - (id)initWithDelegate:(id)arg1 accessoryGroupItem:(id)arg2;

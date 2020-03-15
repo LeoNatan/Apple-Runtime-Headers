@@ -15,10 +15,10 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property BOOL done; // @synthesize done=_done;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) SKDisk *alternateBlessTarget; // @synthesize alternateBlessTarget=_alternateBlessTarget;
-- (void).cxx_destruct;
 - (BOOL)_requestTRBXCompatibilityCheck;
 - (void)_cleanUpPKGDMGSItemsAtPath:(id)arg1;
 - (void)_writeTALRestoreApps;

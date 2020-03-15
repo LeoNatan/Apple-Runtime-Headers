@@ -14,9 +14,9 @@
     unsigned long long _indexesOfInterest;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long indexesOfInterest; // @synthesize indexesOfInterest=_indexesOfInterest;
 @property(retain, nonatomic) NSKnownKeysMappingStrategy *allKeysMappingStrategy; // @synthesize allKeysMappingStrategy=_allKeysMappingStrategy;
-- (void).cxx_destruct;
 
 @end
 

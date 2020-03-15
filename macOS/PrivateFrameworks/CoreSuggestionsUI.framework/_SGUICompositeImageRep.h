@@ -13,8 +13,8 @@
     NSArray *_arrayOfImageDictionaries;
 }
 
-@property(copy, nonatomic) NSArray *arrayOfImageDictionaries; // @synthesize arrayOfImageDictionaries=_arrayOfImageDictionaries;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *arrayOfImageDictionaries; // @synthesize arrayOfImageDictionaries=_arrayOfImageDictionaries;
 - (BOOL)draw;
 
 @end

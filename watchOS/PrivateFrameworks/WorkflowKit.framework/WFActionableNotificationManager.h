@@ -16,9 +16,9 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *handlersQueue; // @synthesize handlersQueue=_handlersQueue;
 @property(readonly, nonatomic) NSMutableDictionary *handlersForIdentifiers; // @synthesize handlersForIdentifiers=_handlersForIdentifiers;
-- (void).cxx_destruct;
 - (void)handleNotificationResponse:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)addNotificationRequestWithContentBody:(id)arg1 actions:(id)arg2 identifier:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)init;

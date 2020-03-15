@@ -24,6 +24,7 @@
 }
 
 + (BOOL)supportsAccount:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 @property(retain) NSStackView *verticalStack; // @synthesize verticalStack=_verticalStack;
 @property(retain) NSImageView *imageView; // @synthesize imageView=_imageView;
@@ -33,7 +34,6 @@
 @property(retain) NSProgressIndicator *spinner; // @synthesize spinner=_spinner;
 @property(retain) NSBox *webViewContainer; // @synthesize webViewContainer=_webViewContainer;
 @property __weak id <ACUIWebAuthDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)helpButton:(id)arg1;
 - (void)_setContinueTextFieldHidden:(BOOL)arg1;
 - (void)_webLoginSucceeded;

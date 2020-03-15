@@ -15,9 +15,9 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(retain) SPClientSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)clear;
 - (void)updateWithQueryContext:(id)arg1;
 - (void)deactivate;

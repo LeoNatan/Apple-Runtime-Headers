@@ -24,10 +24,10 @@
     id <WebBookmarkInMemoryChangeFilter> _inMemoryFilter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <WebBookmarkInMemoryChangeFilter> inMemoryFilter; // @synthesize inMemoryFilter=_inMemoryFilter;
 @property(readonly, nonatomic) int folderID; // @synthesize folderID=_folderID;
 @property(readonly, nonatomic, getter=isCustomQuery) _Bool customQuery; // @synthesize customQuery=_customQuery;
-- (void).cxx_destruct;
 - (void)_preparePrefixesFromNormalizedString:(id)arg1;
 - (id)_normalizeUserTypedString:(id)arg1;
 - (id)bookmarksInCollection:(id)arg1 fromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;

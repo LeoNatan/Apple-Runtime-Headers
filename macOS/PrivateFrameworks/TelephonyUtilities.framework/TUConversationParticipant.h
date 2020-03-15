@@ -27,6 +27,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *activeIDSDestination; // @synthesize activeIDSDestination=_activeIDSDestination;
 @property(copy, nonatomic) NSString *avcIdentifier; // @synthesize avcIdentifier=_avcIdentifier;
 @property(nonatomic) long long videoPriority; // @synthesize videoPriority=_videoPriority;
@@ -38,7 +39,6 @@
 @property(nonatomic, getter=isMuted) BOOL muted; // @synthesize muted=_muted;
 @property(readonly, copy, nonatomic) TUHandle *handle; // @synthesize handle=_handle;
 @property(readonly, nonatomic) unsigned long long identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

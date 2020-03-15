@@ -15,9 +15,9 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SEL action; // @synthesize action=_action;
 @property(readonly, nonatomic) __weak CATState *state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithState:(id)arg1 action:(SEL)arg2;
 - (id)init;

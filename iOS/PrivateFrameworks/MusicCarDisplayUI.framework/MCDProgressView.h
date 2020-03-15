@@ -19,8 +19,8 @@
     CDStruct_fce57115 _durationSnapshot;
 }
 
-@property(nonatomic) CDStruct_fce57115 durationSnapshot; // @synthesize durationSnapshot=_durationSnapshot;
 - (void).cxx_destruct;
+@property(nonatomic) CDStruct_fce57115 durationSnapshot; // @synthesize durationSnapshot=_durationSnapshot;
 - (void)pauseDisplayLinkIfNeeded;
 - (void)runUntilNextDisplayLinkEvent;
 - (void)_updateProgressForElapsedTime:(double)arg1 duration:(double)arg2;

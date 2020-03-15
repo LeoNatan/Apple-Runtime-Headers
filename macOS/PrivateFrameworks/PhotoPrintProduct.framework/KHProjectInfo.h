@@ -22,6 +22,7 @@
     long long _calendarNumberOfMonths;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long calendarNumberOfMonths; // @synthesize calendarNumberOfMonths=_calendarNumberOfMonths;
 @property(nonatomic) long long calendarStartingYear; // @synthesize calendarStartingYear=_calendarStartingYear;
 @property(nonatomic) long long calendarStartingMonthIndex; // @synthesize calendarStartingMonthIndex=_calendarStartingMonthIndex;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(retain, nonatomic) NSString *productCode; // @synthesize productCode=_productCode;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)clearHydrationOperations;
 - (void)addHydrationOperation:(id)arg1;
 @property(readonly, nonatomic) NSArray *hydrationOperations;

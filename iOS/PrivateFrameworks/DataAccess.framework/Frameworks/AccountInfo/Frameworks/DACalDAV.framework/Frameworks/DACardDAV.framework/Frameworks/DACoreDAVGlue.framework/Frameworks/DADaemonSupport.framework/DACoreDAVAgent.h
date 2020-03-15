@@ -16,9 +16,9 @@
     NSTimer *_optionsTimeoutTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *optionsTimeoutTimer; // @synthesize optionsTimeoutTimer=_optionsTimeoutTimer;
 @property(retain, nonatomic) CoreDAVOptionsTask *optionsProbe; // @synthesize optionsProbe=_optionsProbe;
-- (void).cxx_destruct;
 - (id)waiterID;
 - (void)_probeAndSyncWithBlock:(CDUnknownBlockType)arg1;
 - (void)_serverProbeTimedOut;

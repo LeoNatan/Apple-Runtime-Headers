@@ -33,11 +33,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isUnlikelyPhone; // @synthesize isUnlikelyPhone=_isUnlikelyPhone;
 @property(nonatomic) unsigned int extractionModelVersion; // @synthesize extractionModelVersion=_extractionModelVersion;
 @property(nonatomic) _Bool signature; // @synthesize signature=_signature;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

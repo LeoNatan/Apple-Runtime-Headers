@@ -69,10 +69,10 @@
 + (void)undeleteAttachment:(id)arg1;
 + (void)deleteAttachment:(id)arg1;
 + (id)newAttachmentWithIdentifier:(id)arg1 note:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVAsset *movie; // @synthesize movie=_movie;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(nonatomic, getter=isSettingMergeableData) BOOL settingMergeableData; // @synthesize settingMergeableData;
-- (void).cxx_destruct;
 - (id)ic_loggingValues;
 - (BOOL)locationNeedsUpdate;
 - (void)attachmentDidChange;

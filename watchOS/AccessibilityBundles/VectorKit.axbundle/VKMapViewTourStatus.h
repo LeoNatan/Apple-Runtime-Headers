@@ -25,6 +25,7 @@
     struct CGPoint _futurePoint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isStationary; // @synthesize isStationary=_isStationary;
 @property(nonatomic) unsigned long long lastFuturePOISide; // @synthesize lastFuturePOISide=_lastFuturePOISide;
 @property(nonatomic) unsigned long long futurePOISide; // @synthesize futurePOISide=_futurePOISide;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) VKFeatureAccessibilityElement *futureLocation; // @synthesize futureLocation=_futureLocation;
 @property(retain, nonatomic) VKFeatureAccessibilityElement *lastCurrentLocation; // @synthesize lastCurrentLocation=_lastCurrentLocation;
 @property(retain, nonatomic) VKFeatureAccessibilityElement *currentLocation; // @synthesize currentLocation=_currentLocation;
-- (void).cxx_destruct;
 - (void)updateTourStatusWithCurrentLocation:(id)arg1 currentPoint:(struct CGPoint)arg2 futureLocation:(id)arg3 futurePoint:(struct CGPoint)arg4 tourPOI:(id)arg5 tourPOISide:(unsigned long long)arg6 isStationary:(_Bool)arg7;
 - (id)_stringForSide:(unsigned long long)arg1;
 - (id)shortTourStatusAnnouncement;

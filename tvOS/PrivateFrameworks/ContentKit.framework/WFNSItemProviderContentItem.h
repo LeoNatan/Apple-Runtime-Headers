@@ -25,10 +25,10 @@
 + (id)ownedTypes;
 + (id)itemProviderTypeIdentifierOverridesWithFileURLType:(id)arg1;
 + (id)itemProviderTypeIdentifierOverrides;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFFileType *fileURLType; // @synthesize fileURLType=_fileURLType;
 @property(nonatomic) _Bool useNewLoadingAPI; // @synthesize useNewLoadingAPI=_useNewLoadingAPI;
 @property(copy, nonatomic) NSString *contentName; // @synthesize contentName=_contentName;
-- (void).cxx_destruct;
 - (void)preloadImportantItemsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)cachesSupportedTypes;
 - (id)outputTypes;

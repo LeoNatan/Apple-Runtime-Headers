@@ -21,12 +21,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *childCount; // @synthesize childCount=_childCount;
 @property(retain, nonatomic) NSNumber *sharedAliasRecursiveCount; // @synthesize sharedAliasRecursiveCount=_sharedAliasRecursiveCount;
 @property(retain, nonatomic) NSNumber *sharedByMeRecursiveCount; // @synthesize sharedByMeRecursiveCount=_sharedByMeRecursiveCount;
 @property(retain, nonatomic) NSNumber *recursiveChildCount; // @synthesize recursiveChildCount=_recursiveChildCount;
 @property(retain, nonatomic) NSNumber *quotaUsed; // @synthesize quotaUsed=_quotaUsed;
-- (void).cxx_destruct;
 - (id)description;
 - (id)descriptionWithContext:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

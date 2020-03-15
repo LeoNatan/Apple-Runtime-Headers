@@ -24,6 +24,7 @@
     NSMutableSet *_connections;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int clientsShouldConnectToken; // @synthesize clientsShouldConnectToken=_clientsShouldConnectToken;
 @property(retain, nonatomic) NSMutableSet *connections; // @synthesize connections=_connections;
 @property(retain, nonatomic) NSMutableDictionary *callUUIDToPublicCallUUIDMap; // @synthesize callUUIDToPublicCallUUIDMap=_callUUIDToPublicCallUUIDMap;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <CXCallControllerHostDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)callControllerHostConnection:(id)arg1 requestTransaction:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)callControllerHostConnection:(id)arg1 requestCalls:(CDUnknownBlockType)arg2;
 - (void)callControllerHostConnectionInvalidated:(id)arg1;

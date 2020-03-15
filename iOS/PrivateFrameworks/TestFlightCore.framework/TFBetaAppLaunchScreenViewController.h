@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     UIBarButtonItem *_cancelBarButtonItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIBarButtonItem *cancelBarButtonItem; // @synthesize cancelBarButtonItem=_cancelBarButtonItem;
 @property(retain, nonatomic) TFBetaAppLaunchScreenView *launchScreenView; // @synthesize launchScreenView=_launchScreenView;
 @property(readonly, nonatomic) TFBetaAppLaunchPresenter *presenter; // @synthesize presenter=_presenter;
 @property(nonatomic) __weak id <TFBetaAppLaunchScreenHost> launchScreenHost; // @synthesize launchScreenHost=_launchScreenHost;
-- (void).cxx_destruct;
 - (void)_didPressNavigationItemCancel;
 - (void)_didPressExitLaunchScreenButton;
 - (void)_didPressOpenHowToSupportLinkButton;

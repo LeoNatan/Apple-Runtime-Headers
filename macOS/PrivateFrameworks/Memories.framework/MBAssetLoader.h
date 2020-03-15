@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedLoader;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *queuedOperations; // @synthesize queuedOperations=_queuedOperations;
 @property(retain, nonatomic) NSRecursiveLock *queuedOperationsLock; // @synthesize queuedOperationsLock=_queuedOperationsLock;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) NSArray *prefetchKeys; // @synthesize prefetchKeys=_prefetchKeys;
 @property unsigned long long maxConcurrentOperationCount; // @synthesize maxConcurrentOperationCount=_maxConcurrentOperationCount;
-- (void).cxx_destruct;
 - (void)_loadAssetsFromURLs:(id)arg1 withResultHandler:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)loadAssetsFromURLs:(id)arg1 withResultHandler:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)resumeOperationQueue:(id)arg1;

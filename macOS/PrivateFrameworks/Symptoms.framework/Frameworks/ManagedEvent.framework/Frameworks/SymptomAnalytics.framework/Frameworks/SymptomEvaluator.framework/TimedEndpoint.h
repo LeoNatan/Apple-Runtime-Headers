@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     unsigned long long _stallType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long stallType; // @synthesize stallType=_stallType;
 @property(readonly, nonatomic) long long interfaceType; // @synthesize interfaceType=_interfaceType;
 @property(readonly, nonatomic) NSDate *time; // @synthesize time=_time;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)touch;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

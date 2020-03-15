@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain) GKCustomTournamentRequestInternal *internal; // @synthesize internal=_internal;
 - (void).cxx_destruct;
+@property(retain) GKCustomTournamentRequestInternal *internal; // @synthesize internal=_internal;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (void)createTournamentWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
     UIColor *_clipBackgroundColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *clipBackgroundColor; // @synthesize clipBackgroundColor=_clipBackgroundColor;
 @property(nonatomic) double clipCornerRadius; // @synthesize clipCornerRadius=_clipCornerRadius;
-- (void).cxx_destruct;
 - (void)updateMaskWithBounds:(struct CGRect)arg1 maskRect:(struct CGRect)arg2;
 - (void)animateSheetMaskFromOldSheetFrame:(struct CGRect)arg1 toSheetFrame:(struct CGRect)arg2 duration:(double)arg3;
 - (void)restoreSheetCutout;

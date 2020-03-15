@@ -24,6 +24,7 @@
     id <HKHealthStoreClientInterface> _clientRemoteObjectProxy;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <HKHealthStoreClientInterface> clientRemoteObjectProxy; // @synthesize clientRemoteObjectProxy=_clientRemoteObjectProxy;
 @property(retain, nonatomic) NSUUID *subserverUUID; // @synthesize subserverUUID=_subserverUUID;
 @property(retain, nonatomic) NSMutableSet *healthServiceClosedSessionClientIDs; // @synthesize healthServiceClosedSessionClientIDs=_healthServiceClosedSessionClientIDs;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSMutableDictionary *healthServiceDiscoveryClientIDs; // @synthesize healthServiceDiscoveryClientIDs=_healthServiceDiscoveryClientIDs;
 @property(retain, nonatomic) HDIdentifierTable *healthServiceDiscoveryServerIDs; // @synthesize healthServiceDiscoveryServerIDs=_healthServiceDiscoveryServerIDs;
 @property(retain, nonatomic) HDHealthServiceManager *healthServiceManager; // @synthesize healthServiceManager=_healthServiceManager;
-- (void).cxx_destruct;
 - (_Bool)_isClientSessionValid:(unsigned int)arg1;
 - (_Bool)_isServerSessionValid:(unsigned int)arg1;
 - (void)_closeSessionBetweenServer:(unsigned int)arg1 andClient:(unsigned int)arg2;

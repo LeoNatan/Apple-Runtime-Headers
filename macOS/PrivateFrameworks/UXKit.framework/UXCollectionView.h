@@ -140,6 +140,7 @@
 + (BOOL)isCompatibleWithResponsiveScrolling;
 + (void)initialize;
 + (Class)documentClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType scrollingRequest; // @synthesize scrollingRequest=_scrollingRequest;
 @property(retain, nonatomic) NSIndexPath *lastRightClickedIndexPath; // @synthesize lastRightClickedIndexPath=_lastRightClickedIndexPath;
 @property(readonly, nonatomic, getter=isDecelerating) BOOL decelerating; // @synthesize decelerating=_decelerating;
@@ -152,7 +153,6 @@
 @property(nonatomic) __weak NSObject<UXCollectionViewDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak NSObject<UXCollectionViewDataSource> *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) UXCollectionViewLayout *collectionViewLayout; // @synthesize collectionViewLayout=_layout;
-- (void).cxx_destruct;
 - (BOOL)isLassoSelectionInProgress;
 - (BOOL)lassoInvertsSelection;
 - (void)setLassoInvertsSelection:(BOOL)arg1;

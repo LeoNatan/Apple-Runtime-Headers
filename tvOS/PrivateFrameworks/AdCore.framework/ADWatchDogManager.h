@@ -17,9 +17,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *tokenCollection; // @synthesize tokenCollection=_tokenCollection;
 @property(retain, nonatomic) NSNumber *currentToken; // @synthesize currentToken=_currentToken;
-- (void).cxx_destruct;
 - (id)getNextToken;
 - (void)incrementToken;
 - (void)simulateCrash:(id)arg1 becauseOf:(unsigned long long)arg2 actuallyTook:(double)arg3;

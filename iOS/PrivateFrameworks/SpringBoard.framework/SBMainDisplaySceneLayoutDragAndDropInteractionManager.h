@@ -32,6 +32,7 @@
     NSString *_windowDragSceneIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool windowDragHandledByDruid; // @synthesize windowDragHandledByDruid=_windowDragHandledByDruid;
 @property(retain, nonatomic) NSString *windowDragSceneIdentifier; // @synthesize windowDragSceneIdentifier=_windowDragSceneIdentifier;
 @property(copy, nonatomic) CDUnknownBlockType windowDragSessionPrepareCompletionBlock; // @synthesize windowDragSessionPrepareCompletionBlock=_windowDragSessionPrepareCompletionBlock;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic) __weak SBFluidSwitcherViewController *floatingSwitcherContentController; // @synthesize floatingSwitcherContentController=_floatingSwitcherContentController;
 @property(readonly, nonatomic) __weak SBMainDisplaySceneLayoutViewController *sceneLayoutViewController; // @synthesize sceneLayoutViewController=_sceneLayoutViewController;
 @property(readonly, nonatomic) __weak SBFluidSwitcherViewController *mainSwitcherContentController; // @synthesize mainSwitcherContentController=_mainSwitcherContentController;
-- (void).cxx_destruct;
 - (void)transactionDidComplete:(id)arg1;
 - (_Bool)_workspaceWouldAllowTransitionToApplication:(id)arg1;
 - (void)_dismissInlineAppExposeIfNeeded;

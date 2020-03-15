@@ -26,9 +26,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_reuseKeyForSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PUCollectionViewSelectionDelegate> selectionDelegate; // @synthesize selectionDelegate=_selectionDelegate;
 @property(nonatomic) __weak id <PUCollectionViewReorderDelegate> reorderDelegate; // @synthesize reorderDelegate=_reorderDelegate;
-- (void).cxx_destruct;
 - (void)visiblyInsertItemAtIndexPath:(id)arg1 modelUpdate:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)_updateDragUsingIndexPathUpdateBlock:(CDUnknownBlockType)arg1;

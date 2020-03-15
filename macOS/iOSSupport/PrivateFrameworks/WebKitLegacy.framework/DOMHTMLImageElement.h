@@ -41,6 +41,8 @@
 @property(copy) NSString *name;
 - (id)mimeType;
 - (id)dataRepresentation:(BOOL)arg1;
+- (id)mimeType;
+- (id)dataRepresentation:(BOOL)arg1;
 
 @end
 

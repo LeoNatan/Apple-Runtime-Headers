@@ -17,10 +17,10 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) __weak MDLMaterialProperty *output; // @synthesize output=_output;
 @property(readonly, nonatomic) __weak MDLMaterialProperty *input; // @synthesize input=_input;
-- (void).cxx_destruct;
 - (id)initWithOutput:(id)arg1 input:(id)arg2;
 
 @end

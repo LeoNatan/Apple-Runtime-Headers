@@ -17,10 +17,10 @@
     NSHashTable *_observers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) HFSiriLanguageOption *selectedLanguageOption; // @synthesize selectedLanguageOption=_selectedLanguageOption;
 @property(copy, nonatomic) NSSet *availableLanguageOptions; // @synthesize availableLanguageOptions=_availableLanguageOptions;
-- (void).cxx_destruct;
 - (BOOL)shouldShowSettingsEntity:(id)arg1;
 - (id)_beginMonitoringSettingsKeyPath:(id)arg1;
 - (id)_reloadLanguagesFromHomeKitNotifyingObservers:(BOOL)arg1;

@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)timeRangeType;
-@property(retain, nonatomic) NSMutableArray *timeRanges; // @synthesize timeRanges=_timeRanges;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *timeRanges; // @synthesize timeRanges=_timeRanges;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

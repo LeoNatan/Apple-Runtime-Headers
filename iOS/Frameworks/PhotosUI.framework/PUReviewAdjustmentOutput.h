@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSURL *__baseVideoURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setBaseVideoURL:) NSURL *_baseVideoURL; // @synthesize _baseVideoURL=__baseVideoURL;
 @property(retain, nonatomic, setter=_setBaseImageURL:) NSURL *_baseImageURL; // @synthesize _baseImageURL=__baseImageURL;
 @property(nonatomic, setter=_setAdjustmentInputBaseVersion:) long long _adjustmentInputBaseVersion; // @synthesize _adjustmentInputBaseVersion=__adjustmentInputBaseVersion;
 @property(retain, nonatomic, setter=_setRenderedVideoFileURL:) NSURL *renderedVideoFileURL; // @synthesize renderedVideoFileURL=_renderedVideoFileURL;
 @property(retain, nonatomic, setter=_setRenderedImageFileURL:) NSURL *renderedImageFileURL; // @synthesize renderedImageFileURL=_renderedImageFileURL;
-- (void).cxx_destruct;
 
 @end
 

@@ -19,11 +19,11 @@
     NSProgress *_progress;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(nonatomic) __weak id <IMAPMessageActionSyncOperationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) ECLocalMessageAction *messageAction; // @synthesize messageAction=_messageAction;
 @property(readonly, nonatomic) id <IMAPMessageDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)messageDataForRemoteID:(id)arg1 mailboxURL:(id)arg2;
 - (BOOL)checkUIDValidity:(unsigned int)arg1 mailboxURL:(id)arg2;
 - (id)flagsForIMAPUIDs:(id)arg1 mailboxURL:(id)arg2;

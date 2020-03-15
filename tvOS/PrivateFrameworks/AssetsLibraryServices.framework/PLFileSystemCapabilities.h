@@ -21,14 +21,15 @@
     NSError *_error;
 }
 
++ (unsigned long long)minimumAvailableBytesRequiredForLibraryOpen;
 + (id)capabilitiesWithURL:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSError *error; // @synthesize error=_error;
 @property(readonly) _Bool isValid; // @synthesize isValid=_isValid;
 @property(readonly) _Bool isRootFileSystemVolume; // @synthesize isRootFileSystemVolume=_isRootFileSystemVolume;
 @property(readonly) _Bool isInternalVolume; // @synthesize isInternalVolume=_isInternalVolume;
 @property(readonly) _Bool isLocalVolume; // @synthesize isLocalVolume=_isLocalVolume;
 @property(readonly) _Bool isReadOnly; // @synthesize isReadOnly=_isReadOnly;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)determineCapabilitiesWithURL:(id)arg1 error:(id *)arg2;
 @property(readonly) _Bool isCentralizedCacheDeleteCapable;

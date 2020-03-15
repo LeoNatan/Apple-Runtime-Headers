@@ -21,9 +21,9 @@
 + (id)entryEventForwardDefinitions;
 + (id)entryEventPointDefinitions;
 + (void)load;
+- (void).cxx_destruct;
 @property struct __FSEventStream *stream; // @synthesize stream=_stream;
 @property(retain) PLXPCResponderOperatorComposition *fileListResponder; // @synthesize fileListResponder=_fileListResponder;
-- (void).cxx_destruct;
 - (void)logLogFileName:(id)arg1 withName:(id)arg2;
 - (void)addLogFileNameEntry:(BOOL)arg1 withType:(id)arg2 withName:(id)arg3;
 - (void)initOperatorDependancies;

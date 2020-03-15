@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     function_b1fce659 _other;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) function_b1fce659 other; // @synthesize other=_other;
 @property(nonatomic) function_b1fce659 cancel; // @synthesize cancel=_cancel;
 @property(nonatomic) function_b1fce659 ok; // @synthesize ok=_ok;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)stdAlertSheetOtherButtonPressed;
 - (void)stdAlertSheetCancelButtonPressed;
 - (void)stdAlertSheetOKButtonPressed;

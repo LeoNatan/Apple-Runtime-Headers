@@ -35,6 +35,7 @@
 }
 
 + (id)interestedChangeKeys;
+- (void).cxx_destruct;
 @property(retain) NSArray *someInviteeTimes; // @synthesize someInviteeTimes=_someInviteeTimes;
 @property(retain) NSArray *allInviteeTimes; // @synthesize allInviteeTimes=_allInviteeTimes;
 @property(retain) NSDate *currentProposedStartDate; // @synthesize currentProposedStartDate=_currentProposedStartDate;
@@ -54,7 +55,6 @@
 @property(retain) NSStackView *containerStackView; // @synthesize containerStackView=_containerStackView;
 @property(retain) EKUIProposedTimeDateTimeGadget *proposedTimeDateTimeGadget; // @synthesize proposedTimeDateTimeGadget=_proposedTimeDateTimeGadget;
 @property(retain) CalUIControlView *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (void)showMoreOptionsForView:(id)arg1;
 - (void)selectAlternativeTimeView:(id)arg1;
 - (double)maxHeight;

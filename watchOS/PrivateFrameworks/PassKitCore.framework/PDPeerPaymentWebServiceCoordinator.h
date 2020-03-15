@@ -9,11 +9,12 @@
 #import <PassKitCore/PDCloudStoreNotificationCoordinatorObserver-Protocol.h>
 #import <PassKitCore/PDPushNotificationConsumer-Protocol.h>
 #import <PassKitCore/PDScheduledActivityClient-Protocol.h>
+#import <PassKitCore/PKPeerPaymentRegistrationDelegate-Protocol.h>
 
-@class NSHashTable, NSMutableArray, NSString, PDAssertionManager, PDCloudStoreNotificationCoordinator, PDPeerPaymentWebServiceArchiver, PDPushNotificationManager, PDUserNotificationManager, PKPaymentWebService, PKPeerPaymentAccount, PKPeerPaymentWebService;
+@class NSHashTable, NSMutableArray, NSString, PDAssertionManager, PDCloudStoreNotificationCoordinator, PDDeviceRegistrationServiceCoordinator, PDPeerPaymentWebServiceArchiver, PDPushNotificationManager, PDUserNotificationManager, PKPaymentWebService, PKPeerPaymentAccount, PKPeerPaymentWebService;
 @protocol OS_dispatch_queue, PDPeerPaymentWebServiceCoordinatorDataSource, PDWebServiceCoordinatorPassStore;
 
-@interface PDPeerPaymentWebServiceCoordinator : NSObject <PDPushNotificationConsumer, PDScheduledActivityClient, PDCloudStoreNotificationCoordinatorObserver>
+@interface PDPeerPaymentWebServiceCoordinator : NSObject <PDPushNotificationConsumer, PDScheduledActivityClient, PDCloudStoreNotificationCoordinatorObserver, PKPeerPaymentRegistrationDelegate>
 {
     PDPushNotificationManager *_pushNotificationManager;
     NSObject<OS_dispatch_queue> *_sharedPeerPaymentWebServiceQueue;
@@ -32,12 +33,14 @@
     struct os_unfair_lock_s _lockObservers;
     NSHashTable *_observers;
     PDCloudStoreNotificationCoordinator *_cloudStoreNotificationCoordinator;
+    PDDeviceRegistrationServiceCoordinator *_deviceRegistrationCoordinator;
     PKPaymentWebService *_paymentWebService;
 }
 
-@property(retain, nonatomic) PKPaymentWebService *paymentWebService; // @synthesize paymentWebService=_paymentWebService;
-@property(retain, nonatomic) PDCloudStoreNotificationCoordinator *cloudStoreNotificationCoordinator; // @synthesize cloudStoreNotificationCoordinator=_cloudStoreNotificationCoordinator;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKPaymentWebService *paymentWebService; // @synthesize paymentWebService=_paymentWebService;
+@property(retain, nonatomic) PDDeviceRegistrationServiceCoordinator *deviceRegistrationCoordinator; // @synthesize deviceRegistrationCoordinator=_deviceRegistrationCoordinator;
+@property(retain, nonatomic) PDCloudStoreNotificationCoordinator *cloudStoreNotificationCoordinator; // @synthesize cloudStoreNotificationCoordinator=_cloudStoreNotificationCoordinator;
 - (void)_accessObserversWithHandler:(CDUnknownBlockType)arg1;
 - (void)unregisterObserver:(id)arg1;
 - (void)registerObserver:(id)arg1;
@@ -56,7 +59,7 @@
 - (void)applyPushNotificationToken:(id)arg1;
 - (void)handlePushNotificationForTopic:(id)arg1 userInfo:(id)arg2;
 - (id)pushNotificationTopics;
-- (void)cloudStoreNotificationCoordinator:(id)arg1 createdZoneWithName:(id)arg2;
+- (void)cloudStoreNotificationCoordinator:(id)arg1 createdZoneWithName:(id)arg2 forContainerName:(id)arg3;
 - (void)performScheduledActivityWithIdentifier:(id)arg1 activityCriteria:(id)arg2;
 - (void)_performPeerPaymentReregisterActivityForReason:(id)arg1;
 - (void)_schedulePeerPaymentReregisterActivityForReason:(id)arg1;
@@ -76,7 +79,7 @@
 - (void)deleteAccountWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updateAccountWithCompletion:(CDUnknownBlockType)arg1;
 - (void)unregisterDeviceWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_registerWithPeerPaymentWebService:(id)arg1 registerURL:(id)arg2 pushToken:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)peformDeviceWithRegistrationURL:(id)arg1 pushToken:(id)arg2 forceReregister:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)registerDeviceWithRegistrationURL:(id)arg1 pushToken:(id)arg2 forceReregister:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)registerDeviceWithRegistrationURL:(id)arg1 pushToken:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)registerDeviceWithCompletion:(CDUnknownBlockType)arg1;

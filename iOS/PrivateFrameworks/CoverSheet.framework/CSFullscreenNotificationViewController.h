@@ -22,9 +22,9 @@
     id <CSNotificationDispatcher> _dispatcher;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CSNotificationDispatcher> dispatcher; // @synthesize dispatcher=_dispatcher;
 @property(readonly, nonatomic) NCNotificationRequest *notificationRequest; // @synthesize notificationRequest=_request;
-- (void).cxx_destruct;
 - (void)_dismissFromSignificantUserInteraction;
 - (_Bool)dismissNotificationInLongLookAnimated:(_Bool)arg1;
 - (_Bool)isPresentingNotificationInLongLook;

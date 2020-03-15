@@ -17,12 +17,12 @@
     NSString *_customActivityType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *customActivityType; // @synthesize customActivityType=_customActivityType;
 @property(retain, nonatomic) NSString *systemImageName; // @synthesize systemImageName=_systemImageName;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
-- (void).cxx_destruct;
 - (void)performActivity;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 - (long long)activityCategory;

@@ -21,12 +21,12 @@
 
 + (id)withKey:(id)arg1 fixedPointNanosecondValue:(unsigned long long)arg2;
 + (id)withKey:(id)arg1 value:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *units; // @synthesize units=_units;
 @property(nonatomic) double observationTimestamp; // @synthesize observationTimestamp=_observationTimestamp;
 @property(retain, nonatomic) NSString *comment; // @synthesize comment=_comment;
 @property(retain, nonatomic) NSNumber *value; // @synthesize value=_value;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (BOOL)isEqualToMeasurement:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

@@ -16,10 +16,10 @@
 }
 
 + (id)optionsWithDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(nonatomic, getter=isLocalOnly) _Bool localOnly; // @synthesize localOnly=_localOnly;
 @property(nonatomic, getter=isPinned) _Bool pinned; // @synthesize pinned=_pinned;
-- (void).cxx_destruct;
 - (id)initWithOptionsDictionary:(id)arg1;
 
 @end

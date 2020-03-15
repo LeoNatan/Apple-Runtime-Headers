@@ -14,11 +14,11 @@
     long long _compareValue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long compareValue; // @synthesize compareValue=_compareValue;
 @property(nonatomic) long long maskValue; // @synthesize maskValue=_maskValue;
 @property(retain, nonatomic) id sentinal; // @synthesize sentinal=_sentinal;
 @property(copy, nonatomic) CDUnknownBlockType fetchBlock; // @synthesize fetchBlock=_fetchBlock;
-- (void).cxx_destruct;
 - (id)mainReturningError;
 - (id)initWithSentinal:(id)arg1 alreadyPushedTo:(unsigned long long)arg2 fetchResult:(CDUnknownBlockType)arg3;
 - (id)initWithAlreadyPushedTo:(unsigned long long)arg1 result:(CDUnknownBlockType)arg2;

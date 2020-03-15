@@ -16,8 +16,8 @@
     NSTimer *_tapHandleTimer;
 }
 
-@property unsigned long long tapCount; // @synthesize tapCount=_lastTapCount;
 - (void).cxx_destruct;
+@property unsigned long long tapCount; // @synthesize tapCount=_lastTapCount;
 - (void)dealloc;
 - (void)reset;
 - (struct CGPoint)locationInView:(id)arg1;

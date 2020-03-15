@@ -23,9 +23,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)textWithString:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maxLines; // @synthesize maxLines=_maxLines;
 @property(copy) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

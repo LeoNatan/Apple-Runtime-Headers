@@ -20,11 +20,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)fakeBundle;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) struct Hex savedHex; // @synthesize savedHex=_savedHex;
 @property(nonatomic) struct Hex hex; // @synthesize hex=_hex;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

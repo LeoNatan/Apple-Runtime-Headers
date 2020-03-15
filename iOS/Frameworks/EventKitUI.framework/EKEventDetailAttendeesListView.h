@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     double _bottomSpacingForSpinner;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long columnBItems; // @synthesize columnBItems=_columnBItems;
 @property(readonly, nonatomic) long long columnAItems; // @synthesize columnAItems=_columnAItems;
 @property(nonatomic) double bottomSpacingForSpinner; // @synthesize bottomSpacingForSpinner=_bottomSpacingForSpinner;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIColor *highlightedTextColor; // @synthesize highlightedTextColor=_highlightedTextColor;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) NSArray *ungrouped; // @synthesize ungrouped=_ungrouped;
-- (void).cxx_destruct;
 - (void)_setShowingSpinner:(_Bool)arg1;
 - (void)_layoutSpinner;
 - (void)_createSpinnerViewIfNeeded;

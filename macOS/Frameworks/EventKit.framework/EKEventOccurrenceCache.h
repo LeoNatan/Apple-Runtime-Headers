@@ -18,12 +18,12 @@
     NSObject<OS_dispatch_queue> *_cacheQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cacheQueue; // @synthesize cacheQueue=_cacheQueue;
 @property(retain, nonatomic) NSMutableArray *eventsWithProposedTimes; // @synthesize eventsWithProposedTimes=_eventsWithProposedTimes;
 @property(retain, nonatomic) CalDefaultDictionary *binnedEvents; // @synthesize binnedEvents=_binnedEvents;
 @property(retain, nonatomic) NSMutableOrderedSet *binnedDates; // @synthesize binnedDates=_binnedDates;
 @property(nonatomic) __weak EKBackingStore *backingStore; // @synthesize backingStore=_backingStore;
-- (void).cxx_destruct;
 - (id)_binnedOccurrences;
 - (id)_allOccurrences;
 - (id)_cachedRange;

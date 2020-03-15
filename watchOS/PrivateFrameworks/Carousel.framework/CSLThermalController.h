@@ -21,8 +21,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) int level; // @synthesize level=_level;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) int level; // @synthesize level=_level;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)_setTrapped:(_Bool)arg1;

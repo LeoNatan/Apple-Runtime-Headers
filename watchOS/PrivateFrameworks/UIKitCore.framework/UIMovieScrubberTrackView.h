@@ -47,9 +47,9 @@ __attribute__((visibility("hidden")))
     id <UIMovieScrubberTrackViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UIMovieScrubberTrackViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <UIMovieScrubberTrackViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_unzoomAnimationDidFinish;
 - (void)_zoomAnimationDidFinish;
 - (void)unzoom;

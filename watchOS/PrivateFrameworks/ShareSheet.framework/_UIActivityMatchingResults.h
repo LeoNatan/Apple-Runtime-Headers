@@ -15,9 +15,9 @@
     NSArray *_orderedActivities;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *orderedActivities; // @synthesize orderedActivities=_orderedActivities;
 @property(readonly, nonatomic) _UIActivityMatchingContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *excludedActivityTypes;
 - (void)addExcludedActivityTypes:(id)arg1;
 - (id)initWithActivityMatchingContext:(id)arg1;

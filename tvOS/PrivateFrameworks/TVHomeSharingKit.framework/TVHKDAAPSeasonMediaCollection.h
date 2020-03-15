@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     TVHKDAAPSeasonMediaCollectionIdentifier *_seasonIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVHKDAAPSeasonMediaCollectionIdentifier *seasonIdentifier; // @synthesize seasonIdentifier=_seasonIdentifier;
 @property(copy, nonatomic) NSArray *episodesSortedByReleaseDate; // @synthesize episodesSortedByReleaseDate=_episodesSortedByReleaseDate;
 @property(copy, nonatomic) NSArray *episodesSortedByAddedDate; // @synthesize episodesSortedByAddedDate=_episodesSortedByAddedDate;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSArray *episodes; // @synthesize episodes=_episodes;
 @property(nonatomic, getter=isSplitSeason) _Bool splitSeason; // @synthesize splitSeason=_splitSeason;
 - (id)type;
-- (void).cxx_destruct;
 - (_Bool)_allEpisodesHaveReleaseDates;
 - (id)_latestEpisodeWithReleaseDate;
 - (id)_earliestEpisodeWithReleaseDate;

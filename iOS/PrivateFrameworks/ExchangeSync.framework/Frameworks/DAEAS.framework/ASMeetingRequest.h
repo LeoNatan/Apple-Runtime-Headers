@@ -33,6 +33,7 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(nonatomic) __weak ASEmailItem *parentEmailItem; // @synthesize parentEmailItem=_parentEmailItem;
 @property(retain, nonatomic) NSMutableDictionary *placeHolder; // @synthesize placeHolder=_placeHolder;
 @property(retain, nonatomic) NSArray *forwardees; // @synthesize forwardees=_forwardees;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NSDate *recurrenceId; // @synthesize recurrenceId=_recurrenceId;
 @property(retain, nonatomic) NSDate *dateReceived; // @synthesize dateReceived=_dateReceived;
 @property(retain, nonatomic) NSNumber *instanceType; // @synthesize instanceType=_instanceType;
-- (void).cxx_destruct;
 - (id)unactionableICSRepresentationForAccount:(id)arg1;
 - (_Bool)cachedOrganizerIsSelfWithAccount:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

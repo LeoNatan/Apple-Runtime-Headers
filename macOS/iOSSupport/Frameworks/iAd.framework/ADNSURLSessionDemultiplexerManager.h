@@ -19,12 +19,12 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSessionConfiguration *proxySessionConfigurationConnect; // @synthesize proxySessionConfigurationConnect=_proxySessionConfigurationConnect;
 @property(retain, nonatomic) NSURLSessionConfiguration *proxySessionConfigurationLegacy; // @synthesize proxySessionConfigurationLegacy=_proxySessionConfigurationLegacy;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *demuxManagerQueue; // @synthesize demuxManagerQueue=_demuxManagerQueue;
 @property(retain) NSMutableDictionary *sessionDemultiplexerForIdentifier; // @synthesize sessionDemultiplexerForIdentifier=_sessionDemultiplexerForIdentifier;
 @property(copy) NSArray *protocolClasses; // @synthesize protocolClasses=_protocolClasses;
-- (void).cxx_destruct;
 - (long long)pretapRequestCountForIdentifier:(id)arg1;
 - (void)unregisterSessionDemultiplexerWithIdentifier:(id)arg1;
 - (id)sessionDemultiplexerForAdByIdentifier:(id)arg1 maximumRequestCount:(long long)arg2 proxyType:(long long)arg3;

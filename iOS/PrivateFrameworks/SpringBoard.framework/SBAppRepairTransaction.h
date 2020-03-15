@@ -15,8 +15,8 @@
     STTelephonyStatusDomain *_telephonyDomain;
 }
 
-@property(readonly, copy, nonatomic) NSSet *appInfos; // @synthesize appInfos=_appInfos;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSSet *appInfos; // @synthesize appInfos=_appInfos;
 - (void)_startAppRepairs;
 - (void)_completeRequest:(id)arg1 success:(_Bool)arg2 error:(id)arg3;
 - (void)_evaluateCompletion;

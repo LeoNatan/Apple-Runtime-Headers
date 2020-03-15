@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     struct CGRect _imageablePageBounds;
 }
 
+- (void).cxx_destruct;
 @property long long pageToPrint; // @synthesize pageToPrint=_pageToPrint;
 @property double scale; // @synthesize scale=_scale;
 @property struct CGSize paperSize; // @synthesize paperSize=_paperSize;
 @property struct CGRect imageablePageBounds; // @synthesize imageablePageBounds=_imageablePageBounds;
 @property(retain) id <UINSPDFDocument> cachedPdfDocument; // @synthesize cachedPdfDocument=_cachedPdfDocument;
 @property(copy) CDUnknownBlockType pdfDocumentGenerator; // @synthesize pdfDocumentGenerator=_pdfDocumentGenerator;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGRect)rectForPage:(long long)arg1;
 - (struct CGPoint)locationOfPrintRect:(struct CGRect)arg1;

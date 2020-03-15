@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_fields;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *fields; // @synthesize fields=_fields;
 @property(retain, nonatomic) UIBarButtonItem *nextButton; // @synthesize nextButton=_nextButton;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(retain, nonatomic) SKUIRedeemIdManager *manager; // @synthesize manager=_manager;
 @property(nonatomic) __weak id <SKUIRedeemIdDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_adjustInsetsForKeyboardFrameValue:(id)arg1;
 - (void)_keyboardDidHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;

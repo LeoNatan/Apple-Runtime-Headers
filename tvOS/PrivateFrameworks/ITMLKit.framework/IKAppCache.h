@@ -31,6 +31,7 @@
 }
 
 + (id)_appContextDelegateSelectors;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType validationCompletionHandler; // @synthesize validationCompletionHandler=_validationCompletionHandler;
 @property(readonly, nonatomic) IKAppContext *validationContext; // @synthesize validationContext=_validationContext;
 @property(readonly, nonatomic) unsigned long long status; // @synthesize status=_status;
@@ -45,7 +46,6 @@
 @property(nonatomic) __weak id <IKAppCacheDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <IKAppContextDelegate> appContextDelegate; // @synthesize appContextDelegate=_appContextDelegate;
 @property(nonatomic) _Bool shouldIgnoreHTTPCache; // @synthesize shouldIgnoreHTTPCache=_shouldIgnoreHTTPCache;
-- (void).cxx_destruct;
 - (id)_cacheFileURLForAppJS:(id)arg1 checksum:(id)arg2 error:(id *)arg3;
 - (void)updateCacheWithValidatedJS:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_validatedChecksumForScript:(id)arg1 error:(id *)arg2;

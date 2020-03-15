@@ -15,10 +15,10 @@
     unsigned long long _size;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(readonly, nonatomic) NSData *signature; // @synthesize signature=_signature;
 @property(readonly, nonatomic) int index; // @synthesize index=_index;
-- (void).cxx_destruct;
 - (id)description;
 - (id)CKPropertiesDescription;
 - (id)initWithIndex:(int)arg1 signature:(id)arg2 size:(unsigned long long)arg3;

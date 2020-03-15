@@ -16,11 +16,11 @@
     NSCache *__assetReferenceByIndexPathCache;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSCache *_assetReferenceByIndexPathCache; // @synthesize _assetReferenceByIndexPathCache=__assetReferenceByIndexPathCache;
 @property(readonly, nonatomic) NSString *changeFromDataSourceIdentifier; // @synthesize changeFromDataSourceIdentifier=_changeFromDataSourceIdentifier;
 @property(readonly, nonatomic) PXPhotosDataSourceChange *change; // @synthesize change=_change;
 @property(readonly, nonatomic) PXPhotosDataSource *photosDataSource; // @synthesize photosDataSource=_photosDataSource;
-- (void).cxx_destruct;
 - (id)assetAtIndexPath:(id)arg1;
 - (_Bool)couldAssetReferenceAppear:(id)arg1;
 - (long long)numberOfAssetsWithMaximum:(long long)arg1;

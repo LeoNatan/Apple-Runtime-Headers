@@ -15,8 +15,8 @@
 }
 
 + (id)operationWithCompletion:(CDUnknownBlockType)arg1;
-@property(readonly, copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (void)invokeCompletionWithResponse:(id)arg1 error:(id)arg2;
 - (void)appendData:(id)arg1;
 @property(readonly, copy, nonatomic) NSData *data;

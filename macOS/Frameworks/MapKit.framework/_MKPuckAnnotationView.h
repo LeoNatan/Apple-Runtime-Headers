@@ -40,6 +40,7 @@
     double _presentationCourse;
     double _locationAccuracy;
     CLLocation *_lastLocation;
+    BOOL _hasExplicitCollisionMode;
     double _headingOffset;
 }
 
@@ -48,6 +49,7 @@
 + (double)baseDiameter;
 + (unsigned long long)_selectedZIndex;
 + (unsigned long long)_zIndex;
+- (void).cxx_destruct;
 @property(nonatomic) double headingOffset; // @synthesize headingOffset=_headingOffset;
 @property(nonatomic) BOOL rotateInnerImageToMatchCourse; // @synthesize rotateInnerImageToMatchCourse=_rotateInnerImageToMatchCourse;
 @property(retain, nonatomic) NSImage *innerImageMask; // @synthesize innerImageMask=_innerImageMask;
@@ -67,7 +69,6 @@
 @property(nonatomic) BOOL canShowHeadingIndicator; // @synthesize canShowHeadingIndicator=_canShowHeadingIndicator;
 @property(nonatomic) BOOL allowsPulse; // @synthesize allowsPulse=_allowsPulse;
 @property(nonatomic) long long zoomDirection; // @synthesize zoomDirection=_zoomDirection;
-- (void).cxx_destruct;
 - (void)_setPresentationCourse:(double)arg1;
 - (void)_setAnimatingToCoordinate:(BOOL)arg1;
 - (void)setAnimatingToCoordinate:(BOOL)arg1;
@@ -128,6 +129,9 @@
 - (void)_updateFromMap;
 - (void)_setMapDisplayStyle:(CDStruct_51745937)arg1;
 - (void)_setMapType:(unsigned long long)arg1;
+- (void)setDisplayPriority:(float)arg1;
+- (long long)collisionMode;
+- (void)setCollisionMode:(long long)arg1;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 
 // Remaining properties

@@ -27,6 +27,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long supportedContentOptions; // @synthesize supportedContentOptions=_supportedContentOptions;
 @property(retain, nonatomic) MPPlaybackArchiveConfiguration *playbackArchiveConfiguration; // @synthesize playbackArchiveConfiguration=_playbackArchiveConfiguration;
 @property(nonatomic) BOOL pickingForExternalPlayer; // @synthesize pickingForExternalPlayer=_pickingForExternalPlayer;
@@ -39,7 +40,6 @@
 @property(nonatomic) BOOL showsCloudItems; // @synthesize showsCloudItems=_showsCloudItems;
 @property(nonatomic) BOOL allowsPickingMultipleItems; // @synthesize allowsPickingMultipleItems=_allowsPickingMultipleItems;
 @property(nonatomic) unsigned long long mediaTypes; // @synthesize mediaTypes=_mediaTypes;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(nonatomic) BOOL supportsUnavailableContent;

@@ -30,6 +30,7 @@
     NSString *_message;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *message; // @synthesize message=_message;
 @property(retain) NSString *code; // @synthesize code=_code;
 @property(retain) AKPinFieldView *pinView; // @synthesize pinView=_pinView;
@@ -45,7 +46,6 @@
 @property(copy) CDUnknownBlockType cancelBlock; // @synthesize cancelBlock=_cancelBlock;
 @property(copy) CDUnknownBlockType pinEnteredBlock; // @synthesize pinEnteredBlock=_pinEnteredBlock;
 @property(retain) NSObject<AKSecondFactorCodeEntryDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)noCodeButtonPressed:(id)arg1;
 - (void)_codeEntered;
 - (void)_resetPinView;

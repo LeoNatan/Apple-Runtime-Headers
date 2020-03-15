@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     id <_UILegacyFocusRegion> _focusableRegion;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isFocusCandidate) _Bool focusCandidate; // @synthesize focusCandidate=_focusCandidate;
 @property(nonatomic) _Bool isFocusGuide; // @synthesize isFocusGuide=_isFocusGuide;
 @property(nonatomic) __weak id <_UILegacyFocusRegion> focusableRegion; // @synthesize focusableRegion=_focusableRegion;
-- (void).cxx_destruct;
 - (id)description;
 - (void)drawVisualRepresentationInContext:(struct CGContext *)arg1 imageFrame:(struct CGRect)arg2 isFinal:(_Bool)arg3;
 - (id)visualRepresentationColor;

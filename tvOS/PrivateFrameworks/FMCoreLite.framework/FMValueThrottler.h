@@ -18,12 +18,12 @@
     id <FMCancelable> _valueUpdateCancelationToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <FMCancelable> valueUpdateCancelationToken; // @synthesize valueUpdateCancelationToken=_valueUpdateCancelationToken;
 @property(readonly, nonatomic) NSMutableSet *observerBlocks; // @synthesize observerBlocks=_observerBlocks;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 @property(retain, nonatomic) id <FMScheduler> updateScheduler; // @synthesize updateScheduler=_updateScheduler;
 @property(readonly, nonatomic) double throttleInterval; // @synthesize throttleInterval=_throttleInterval;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasPendingValueChange;
 - (void)flushValueChanges;
 - (id)observeValueChangesWithBlock:(CDUnknownBlockType)arg1;

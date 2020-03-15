@@ -19,10 +19,10 @@
 
 + (id)intervalWorkoutDefinition;
 + (id)definitionFromDictionary:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *sets; // @synthesize sets=_sets;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)byRemovingIntervalDefinitionAtIndexPath:(id)arg1;
 - (id)byReplacingIntervalDefinitionAtIndexPath:(id)arg1 withIntervalDefinition:(id)arg2;
 - (id)byInsertingIntervalDefinition:(id)arg1 atIndexPath:(id)arg2;

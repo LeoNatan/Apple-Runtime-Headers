@@ -18,8 +18,8 @@
     CDUnknownBlockType __completion;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType _completion; // @synthesize _completion=__completion;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType _completion; // @synthesize _completion=__completion;
 - (void)_send;
 - (void)send:(CDUnknownBlockType)arg1;
 - (id)initWithBundleId:(id)arg1 productIdentifier:(id)arg2;

@@ -14,9 +14,9 @@
     UIView *_sourceView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *sourceView; // @synthesize sourceView=_sourceView;
 @property(retain, nonatomic) id sourceElement; // @synthesize sourceElement=_sourceElement;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)accessibilityRespondsToUserInteraction;
 - (unsigned long long)accessibilityTraits;

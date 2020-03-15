@@ -21,6 +21,7 @@
     ASTaskManager *_taskManager;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(retain, nonatomic) ASTaskManager *taskManager; // @synthesize taskManager=_taskManager;
 @property(copy, nonatomic) NSString *originalKey; // @synthesize originalKey=_originalKey;
@@ -29,7 +30,6 @@
 @property(nonatomic) __weak id contextInfo; // @synthesize contextInfo=_contextInfo;
 @property(nonatomic) __weak id <ASPolicyPreflighterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak ASAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)cancelPendingPreflightRequest;
 - (void)acknowledgeAccountOnlyRemoteWipeWithSuccess:(_Bool)arg1;
 - (void)acknowledgeIntentionToRemoteWipe;

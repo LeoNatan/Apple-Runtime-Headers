@@ -29,6 +29,7 @@
 }
 
 + (_Bool)shouldParseChildDOMElements;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long badgePlacement; // @synthesize badgePlacement=_badgePlacement;
 @property(readonly, nonatomic) NSArray *trailingBadges; // @synthesize trailingBadges=_trailingBadges;
 @property(readonly, nonatomic) long long numberOfLines; // @synthesize numberOfLines=_numberOfLines;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) long long labelViewStyle; // @synthesize labelViewStyle=_labelViewStyle;
 @property(nonatomic) _Bool containsLinks; // @synthesize containsLinks=_containsLinks;
 @property(readonly, nonatomic) NSArray *badges; // @synthesize badges=_badges;
-- (void).cxx_destruct;
 - (void)_walkDOM:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)_stringFromNumberElement:(id)arg1;
 - (id)_stringFromDurationElement:(id)arg1;

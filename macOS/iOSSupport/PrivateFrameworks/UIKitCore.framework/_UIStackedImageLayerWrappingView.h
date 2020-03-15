@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <CALayerDelegate> _actionDelegate;
 }
 
-@property(nonatomic) __weak id <CALayerDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CALayerDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)dealloc;
 

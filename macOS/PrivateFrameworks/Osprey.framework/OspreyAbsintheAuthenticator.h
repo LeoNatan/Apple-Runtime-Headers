@@ -17,25 +17,24 @@ __attribute__((visibility("hidden")))
     NSData *_certificateData;
     OspreyGRPCChannel *_channel;
     NSString *_uuid;
+    NSDate *_sessionExpireOn;
     long long _state;
     NSData *_sessionInfo;
-    NSDate *_sessionExpireOn;
     NSURL *_server;
     OspreyKeychain *_keychainStorage;
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) __weak OspreyKeychain *keychainStorage; // @synthesize keychainStorage=_keychainStorage;
 @property(retain, nonatomic) NSURL *server; // @synthesize server=_server;
-@property(retain, nonatomic) NSDate *sessionExpireOn; // @synthesize sessionExpireOn=_sessionExpireOn;
 @property(retain, nonatomic) NSData *sessionInfo; // @synthesize sessionInfo=_sessionInfo;
 @property(nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
+@property(readonly, nonatomic) NSDate *sessionExpireOn; // @synthesize sessionExpireOn=_sessionExpireOn;
 - (void)createClientSessionWithData:(id)arg1 success:(CDUnknownBlockType)arg2 failure:(CDUnknownBlockType)arg3;
 - (void)fetchAbsintheServerCertificate:(CDUnknownBlockType)arg1 failure:(CDUnknownBlockType)arg2;
 - (void)_initializeAbsintheClientWithCertificateData:(id)arg1 success:(CDUnknownBlockType)arg2 fail:(CDUnknownBlockType)arg3;
 - (void)_ensureAuthenticatedWithCompletion:(CDUnknownBlockType)arg1 failure:(CDUnknownBlockType)arg2;
-- (BOOL)_isSessionInfoExpired;
 - (BOOL)isSessionInfoExpired;
 - (id)_signData:(id)arg1;
 - (void)signData:(id)arg1 success:(CDUnknownBlockType)arg2 failure:(CDUnknownBlockType)arg3;

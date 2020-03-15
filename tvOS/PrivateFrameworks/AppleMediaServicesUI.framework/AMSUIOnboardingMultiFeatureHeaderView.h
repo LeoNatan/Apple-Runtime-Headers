@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSArray *_featureViews;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *featureViews; // @synthesize featureViews=_featureViews;
 @property(nonatomic) _Bool isPresentedInFormSheet; // @synthesize isPresentedInFormSheet=_isPresentedInFormSheet;
 @property(nonatomic) double containerHeight; // @synthesize containerHeight=_containerHeight;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)updateContentSize;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

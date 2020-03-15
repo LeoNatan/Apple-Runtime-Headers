@@ -25,6 +25,7 @@
 
 + (id)_silhouetteImage;
 + (void)_configureFloatingContentViewAppearance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(readonly, nonatomic) _TVSMHighContrastFocusView *highContrastView; // @synthesize highContrastView=_highContrastView;
 @property(readonly, nonatomic) UILabel *initialsLabel; // @synthesize initialsLabel=_initialsLabel;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) _UIFloatingContentView *floatingContentView; // @synthesize floatingContentView=_floatingContentView;
 @property(retain, nonatomic) NSPersonNameComponents *personNameComponents; // @synthesize personNameComponents=_personNameComponents;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)updateAppearanceForLockupViewState:(unsigned long long)arg1;
 - (void)_updateContentImage;
 - (void)traitCollectionDidChange:(id)arg1;

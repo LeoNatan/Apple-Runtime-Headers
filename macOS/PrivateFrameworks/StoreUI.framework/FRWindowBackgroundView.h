@@ -17,12 +17,12 @@
     NSString *_subtitle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSImage *icon; // @synthesize icon=_icon;
 @property(copy, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
-- (void).cxx_destruct;
 - (void)_drawEtchedString:(id)arg1 inRect:(struct CGRect)arg2 withAttributes:(id)arg3;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)isOpaque;

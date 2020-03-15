@@ -17,11 +17,11 @@
     BOOL _initialized;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMKUICandidateStepperAccessoryImageView *topArrowView; // @synthesize topArrowView=_topArrowView;
 @property(nonatomic) BOOL initialized; // @synthesize initialized=_initialized;
 @property(nonatomic) __weak id <IMKUICandidateStepperViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) IMKUICandidateStepperAccessoryImageView *bottomArrowView; // @synthesize bottomArrowView=_bottomArrowView;
-- (void).cxx_destruct;
 - (void)mouseUp:(id)arg1;
 - (void)setBottomStepperState:(BOOL)arg1;
 - (void)setTopStepperState:(BOOL)arg1;

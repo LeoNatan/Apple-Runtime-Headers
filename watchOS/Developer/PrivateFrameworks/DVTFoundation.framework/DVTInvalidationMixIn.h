@@ -22,6 +22,7 @@
 - (void)DVTInvalidationMixIn_SoftAssertDidInvalidateDealloc;
 - (void)DVTInvalidationMixIn_HardAssertDidInvalidateDealloc;
 - (void)DVTInvalidationMixIn_DeZombifyDealloc;
+- (void)addAutoInvalidatedObject:(id)arg1;
 - (void)invalidate;
 - (void)primitiveInvalidate;
 @property(retain) DVTStackBacktrace *creationBacktrace;

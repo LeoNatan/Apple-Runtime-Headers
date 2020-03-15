@@ -15,8 +15,8 @@
     NSString *_value;
 }
 
-@property(retain, nonatomic) NSString *value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *value; // @synthesize value=_value;
 @property(readonly) NSArray *idsCanonicalDestinations;
 @property(readonly) BOOL mostRecentCallWasMissed;
 @property(readonly) long long mostRecentCallType;

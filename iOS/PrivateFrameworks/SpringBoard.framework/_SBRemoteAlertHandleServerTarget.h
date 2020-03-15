@@ -18,9 +18,9 @@
 }
 
 + (id)currentTarget;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBSRemoteAlertHandleServiceServerInterface> proxyInterface; // @synthesize proxyInterface=_proxyInterface;
 @property(readonly, nonatomic) __weak BSServiceConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)_performBlock:(CDUnknownBlockType)arg1;
 - (oneway void)invalidateRemoteAlertHandleWithID:(id)arg1;
 - (oneway void)activateRemoteAlertHandleWithID:(id)arg1 activationContext:(id)arg2;

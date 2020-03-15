@@ -16,11 +16,11 @@
     NSError *_latestError;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool joined; // @synthesize joined=_joined;
 @property(retain, nonatomic) NSError *latestError; // @synthesize latestError=_latestError;
 @property(retain, nonatomic) NSArray *fiaContacts; // @synthesize fiaContacts=_fiaContacts;
 @property(retain, nonatomic) NSArray *cnContacts; // @synthesize cnContacts=_cnContacts;
-- (void).cxx_destruct;
 
 @end
 

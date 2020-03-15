@@ -22,12 +22,12 @@
 
 + (id)titlesForABCardViewKeys;
 + (id)abCardViewKeys;
+- (void).cxx_destruct;
 @property(retain) NSArray *addFieldButtons; // @synthesize addFieldButtons=_addFieldButtons;
 @property(retain) NSArray *addContactGroupButtons; // @synthesize addContactGroupButtons=_addContactGroupButtons;
 @property(retain) NSStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain) NSTouchBar *touchBar; // @synthesize touchBar=_touchBar;
 @property __weak id <CNAddFieldTouchBarDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)addField:(id)arg1;
 - (void)updateTouchBar;
 - (id)addFieldPopoverItem;

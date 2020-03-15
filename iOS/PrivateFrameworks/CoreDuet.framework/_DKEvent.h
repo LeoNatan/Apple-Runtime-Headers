@@ -49,13 +49,14 @@
 + (id)metadataForInteraction:(id)arg1 storeKeyImage:(_Bool)arg2;
 + (_Bool)copyMetadata:(id)arg1 toManagedObject:(id)arg2;
 + (id)fetchCustomMetadataWithName:(id)arg1 valueHash:(id)arg2 context:(id)arg3;
-+ (id)eventValueFromManagedObject:(id)arg1 streamName:(id)arg2 readMetadata:(_Bool)arg3 cache:(id)arg4;
-+ (id)uncachedEventValueFromManagedObject:(id)arg1 readMetadata:(_Bool)arg2 cache:(id)arg3;
++ (id)eventValueFromManagedObject:(id)arg1 streamName:(id)arg2 readMetadata:(_Bool)arg3 excludedMetadataKeys:(id)arg4 cache:(id)arg5;
++ (id)uncachedEventValueFromManagedObject:(id)arg1 readMetadata:(_Bool)arg2 excludedMetadataKeys:(id)arg3 cache:(id)arg4;
 + (id)eventStreamFromManagedObject:(id)arg1 forValue:(id)arg2 cache:(id)arg3;
-+ (id)objectFromManagedObject:(id)arg1 readMetadata:(_Bool)arg2 cache:(id)arg3;
++ (id)objectFromManagedObject:(id)arg1 readMetadata:(_Bool)arg2 excludedMetadataKeys:(id)arg3 cache:(id)arg4;
 + (id)entityName;
 + (id)keyPathForMOKeyPath:(id)arg1;
 + (id)moKeyPathForKeyPath:(id)arg1;
+- (void).cxx_destruct;
 @property long long compatibilityVersion; // @synthesize compatibilityVersion=_compatibilityVersion;
 @property _Bool shouldSync; // @synthesize shouldSync=_shouldSync;
 @property double confidence; // @synthesize confidence=_confidence;
@@ -65,7 +66,6 @@
 @property(retain) _DKEventStream *stream; // @synthesize stream=_stream;
 @property(retain) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)stringValue;
 - (double)doubleValue;
@@ -85,8 +85,8 @@
 - (unsigned long long)eventValueClassOf:(id)arg1;
 - (id)metadataFromCustomMetadata:(id)arg1 cache:(id)arg2;
 - (id)metadataFromCustomMetadata:(id)arg1;
-- (id)metadataFromStructuredMetadata:(id)arg1 cache:(id)arg2;
-- (id)metadataFromStructuredMetadata:(id)arg1;
+- (id)metadataFromStructuredMetadata:(id)arg1 excludedMetadataKeys:(id)arg2 cache:(id)arg3;
+- (id)metadataFromStructuredMetadata:(id)arg1 excludedMetadataKeys:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

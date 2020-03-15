@@ -13,8 +13,8 @@
     id <CSLTheaterModeXPCServerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSLTheaterModeXPCServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLTheaterModeXPCServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)updateClientsWithTheaterModeEnabled:(_Bool)arg1;
 - (void)queue_handleMessage:(id)arg1 client:(id)arg2;
 - (id)initWithDelegate:(id)arg1;

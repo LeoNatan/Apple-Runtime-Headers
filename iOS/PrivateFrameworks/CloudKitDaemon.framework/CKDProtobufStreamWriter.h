@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     NSFileHandle *_binaryLogFileHandle;
 }
 
+- (void).cxx_destruct;
 @property _Bool haveFinishedStreaming; // @synthesize haveFinishedStreaming=_haveFinishedStreaming;
 @property(nonatomic) _Bool haveFinishedCompression; // @synthesize haveFinishedCompression=_haveFinishedCompression;
 @property(nonatomic) _Bool hasInitedCompression; // @synthesize hasInitedCompression=_hasInitedCompression;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType logRequestObjectBlock; // @synthesize logRequestObjectBlock=_logRequestObjectBlock;
 @property(nonatomic) unsigned long long bufferSize; // @synthesize bufferSize=_bufferSize;
 @property(nonatomic) _Bool shouldCompress; // @synthesize shouldCompress=_shouldCompress;
-- (void).cxx_destruct;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (long long)_streamNextObject:(id)arg1;
 - (void)_prepareObjectForStreaming:(id)arg1;

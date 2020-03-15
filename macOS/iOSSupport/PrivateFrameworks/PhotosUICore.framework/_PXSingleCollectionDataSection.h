@@ -14,9 +14,9 @@
     id <PXDisplayCollection> _displayCollection;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <PXDisplayCollection> displayCollection; // @synthesize displayCollection=_displayCollection;
 - (long long)count;
-- (void).cxx_destruct;
 - (id)objectAtIndex:(long long)arg1;
 - (long long)indexOfCollection:(id)arg1;
 - (id)initWithDisplayCollection:(id)arg1;

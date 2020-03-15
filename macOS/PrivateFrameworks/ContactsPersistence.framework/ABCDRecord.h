@@ -6,7 +6,7 @@
 
 #import <CoreData/NSManagedObject.h>
 
-@class ABRecord, NSDate, NSMutableDictionary, NSNumber, NSSet, NSString;
+@class ABRecord, NSData, NSDate, NSMutableDictionary, NSNumber, NSSet, NSString;
 
 @interface ABCDRecord : NSManagedObject
 {
@@ -14,6 +14,8 @@
     NSMutableDictionary *_propertyValueCache;
 }
 
++ (void)validateForInsertContainedRecord:(id)arg1;
++ (BOOL)validateContainedRecord:(id)arg1 forGuardianRestrictions:(id *)arg2;
 + (id)managedObjectModelForName:(id)arg1;
 + (id)managedObjectModel;
 + (id)managedObjectModelUrl;
@@ -36,7 +38,9 @@
 + (id)compoundPredicateForKey:(id)arg1 option:(id)arg2 andSubPredicate:(id)arg3;
 + (id)bitwiseAndPredicateForKey:(id)arg1 andNumber:(long long)arg2 comparingToNumber:(long long)arg3 withComparisonType:(unsigned long long)arg4;
 + (void)initialize;
++ (id)os_log;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL ignoresGuardianRestrctionsDuringValidation;
 @property(readonly, nonatomic) __weak NSString *displayName;
 - (BOOL)isKindOfEntityNamed:(id)arg1;
 - (BOOL)nts_HasChangedProperties;
@@ -71,6 +75,7 @@
 - (BOOL)_isPublicRecord;
 - (id)_table;
 - (void)awakeFromInsert;
+- (id)initWithUniqueId:(id)arg1 managedObjectContext:(id)arg2;
 - (id)initWithEntity:(id)arg1 uniqueId:(id)arg2 insertIntoManagedObjectContext:(id)arg3;
 - (id)initWithEntity:(id)arg1 insertIntoManagedObjectContext:(id)arg2;
 - (unsigned long long)nameOrderWithFormatter:(id)arg1;
@@ -79,6 +84,15 @@
 // Remaining properties
 @property(readonly, nonatomic) NSDate *creationDate; // @dynamic creationDate;
 @property(retain, nonatomic) NSSet *customProperties; // @dynamic customProperties;
+@property(retain, nonatomic) NSString *externalCollectionPath; // @dynamic externalCollectionPath;
+@property(retain, nonatomic) NSString *externalFilename; // @dynamic externalFilename;
+@property(retain, nonatomic) NSString *externalHash; // @dynamic externalHash;
+@property(retain, nonatomic) NSString *externalImageURI; // @dynamic externalImageURI;
+@property(retain, nonatomic) NSString *externalModificationTag; // @dynamic externalModificationTag;
+@property(retain, nonatomic) NSString *externalPropertiesJSON; // @dynamic externalPropertiesJSON;
+@property(retain, nonatomic) NSData *externalRepresentation; // @dynamic externalRepresentation;
+@property(retain, nonatomic) NSString *externalURI; // @dynamic externalURI;
+@property(retain, nonatomic) NSString *externalUUID; // @dynamic externalUUID;
 @property(readonly, nonatomic) NSDate *modificationDate; // @dynamic modificationDate;
 @property(retain, nonatomic) NSDate *primitiveCreationDate; // @dynamic primitiveCreationDate;
 @property(retain, nonatomic) NSNumber *primitiveCreationDateYear; // @dynamic primitiveCreationDateYear;
@@ -87,7 +101,9 @@
 @property(retain, nonatomic) NSNumber *primitiveModificationDateYear; // @dynamic primitiveModificationDateYear;
 @property(retain, nonatomic) NSNumber *primitiveModificationDateYearless; // @dynamic primitiveModificationDateYearless;
 @property(retain, nonatomic) NSString *primitiveUniqueId; // @dynamic primitiveUniqueId;
+@property(nonatomic) long long syncStatus; // @dynamic syncStatus;
 @property(retain, nonatomic) NSString *uniqueId; // @dynamic uniqueId;
+@property(retain, nonatomic) NSSet *unknownProperties; // @dynamic unknownProperties;
 
 @end
 

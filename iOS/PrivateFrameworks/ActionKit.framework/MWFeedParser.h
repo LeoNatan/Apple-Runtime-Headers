@@ -37,6 +37,7 @@
     NSURLRequest *request;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isParsing) _Bool parsing; // @synthesize parsing;
 @property(readonly, nonatomic, getter=didFail) _Bool failed; // @synthesize failed;
 @property(readonly, nonatomic, getter=isStopped) _Bool stopped; // @synthesize stopped;
@@ -52,7 +53,6 @@
 @property(nonatomic) id <MWFeedParserDelegate> delegate; // @synthesize delegate;
 @property(retain, nonatomic) NSURLRequest *request; // @synthesize request;
 @property(copy, nonatomic) NSURL *url; // @synthesize url;
-- (void).cxx_destruct;
 - (_Bool)processAtomLink:(id)arg1 andAddToMWObject:(id)arg2;
 - (_Bool)createEnclosureFromAttributes:(id)arg1 andAddToItem:(id)arg2;
 - (void)dispatchFeedItemToDelegate;

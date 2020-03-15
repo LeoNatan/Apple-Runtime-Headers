@@ -18,7 +18,8 @@
 - (BOOL)reinterpretsStringsAsContactHandlesFromVariable:(BOOL)arg1;
 - (void)processContentCollection:(id)arg1 fromVariable:(BOOL)arg2 valueHandler:(CDUnknownBlockType)arg3;
 - (id)collectionByConvertingStringItemsToHandles:(id)arg1;
-- (void)processWithVariableSource:(id)arg1 parameter:(id)arg2 userInputRequiredHandler:(CDUnknownBlockType)arg3 valueHandler:(CDUnknownBlockType)arg4;
+- (void)processWithContext:(id)arg1 userInputRequiredHandler:(CDUnknownBlockType)arg2 valueHandler:(CDUnknownBlockType)arg3;
+- (id)initWithValue:(id)arg1;
 
 @end
 

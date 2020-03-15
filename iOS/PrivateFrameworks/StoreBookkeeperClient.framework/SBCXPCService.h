@@ -21,12 +21,12 @@
 + (id)newListener;
 + (id)XPCInterfaceDebugDescription;
 + (Class)XPCServiceInterfaceClass;
+- (void).cxx_destruct;
 @property(getter=isConnectionConfigured) _Bool connectionConfigured; // @synthesize connectionConfigured=_connectionConfigured;
 @property(readonly) SBCXPCServiceInterface *XPCServiceInterface; // @synthesize XPCServiceInterface=_XPCServiceInterface;
 @property(readonly) SBCClientConfiguration *clientConfiguration; // @synthesize clientConfiguration=_clientConfiguration;
 @property(retain) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)setClientConfiguration:(id)arg1;
 - (void)_serverDidLaunch;
 - (void)closeServiceConnection;

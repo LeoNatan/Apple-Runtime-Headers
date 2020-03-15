@@ -13,8 +13,8 @@
     id <WFAccountLoginViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <WFAccountLoginViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <WFAccountLoginViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)accessibilityPerformEscape;
 - (id)initWithAccountClass:(Class)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

@@ -27,8 +27,8 @@
     RWIDriver *_driver;
 }
 
-@property(readonly, nonatomic) RWIDriver *driver; // @synthesize driver=_driver;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) RWIDriver *driver; // @synthesize driver=_driver;
 - (void)hostConnectionTerminated:(id)arg1;
 - (id)forwardedCapabilitiesForSession:(id)arg1;
 @property(readonly, nonatomic) id <WDServiceHost> serviceHost;

@@ -44,6 +44,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *counterpartIdentifiers; // @synthesize counterpartIdentifiers=_counterpartIdentifiers;
 @property(copy, nonatomic) MIStoreMetadata *storeMetadata; // @synthesize storeMetadata=_storeMetadata;
 @property(copy, nonatomic) NSDictionary *localizedInfoPlistStrings; // @synthesize localizedInfoPlistStrings=_localizedInfoPlistStrings;
@@ -71,7 +72,6 @@
 @property(nonatomic) unsigned int applicationType; // @synthesize applicationType=_applicationType;
 @property(copy, nonatomic) NSString *applicationName; // @synthesize applicationName=_applicationName;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (_Bool)isTheSameAppAs:(id)arg1;
 - (id)localizedInfoPlistStringsForKeys:(id)arg1 fetchingFirstMatchingLocalizationInList:(id)arg2;
 - (_Bool)isCompatibleWithCPUType:(int)arg1 subtype:(int)arg2;

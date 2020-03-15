@@ -35,6 +35,7 @@
 + (id)viewControllerForEditingAvatar:(id)arg1 store:(id)arg2;
 + (id)defaultSessionProvider;
 + (_Bool)shouldShowSplashScreen;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVTAvatarAttributeEditorViewController *attributeEditorViewController; // @synthesize attributeEditorViewController=_attributeEditorViewController;
 @property(readonly, nonatomic) AVTSplashScreenViewController *splashScreenViewController; // @synthesize splashScreenViewController=_splashScreenViewController;
 @property(nonatomic) _Bool hasChanges; // @synthesize hasChanges=_hasChanges;
@@ -47,7 +48,6 @@
 @property(readonly, nonatomic) id <AVTAvatarStoreInternal> store; // @synthesize store=_store;
 @property(retain, nonatomic) AVTAvatarRecord *initialAvatarRecord; // @synthesize initialAvatarRecord=_initialAvatarRecord;
 @property(nonatomic) __weak id <AVTAvatarEditorViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)controllerPresentationWillObstructView:(id)arg1;
 - (void)confirmCancel;
 - (void)handleDiscardAttempt;

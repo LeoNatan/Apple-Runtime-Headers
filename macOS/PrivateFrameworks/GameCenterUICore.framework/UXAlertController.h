@@ -19,13 +19,13 @@
 }
 
 + (id)alertControllerWithTitle:(id)arg1 message:(id)arg2 preferredStyle:(long long)arg3;
+- (void).cxx_destruct;
 @property(retain) NSView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(retain) NSAlert *alert; // @synthesize alert=_alert;
 @property(readonly) long long preferredStyle; // @synthesize preferredStyle=_preferredStyle;
 @property(retain) NSArray *textFields; // @synthesize textFields=_textFields;
 @property(retain) NSArray *actions; // @synthesize actions=_actions;
 @property(copy) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (void)_gkExecuteActionForReturnCode:(long long)arg1;
 - (void)_gkPresentInWindow:(id)arg1;
 - (void)_gkPresentYourself;

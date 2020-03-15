@@ -17,12 +17,12 @@
     NSArray *_contexts;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *contexts; // @synthesize contexts=_contexts;
 @property(nonatomic) unsigned long long supportsIdentification; // @synthesize supportsIdentification=_supportsIdentification;
 @property(nonatomic) unsigned long long isAnySIMInserted; // @synthesize isAnySIMInserted=_isAnySIMInserted;
 @property(nonatomic) unsigned long long isAnySIMUsable; // @synthesize isAnySIMUsable=_isAnySIMUsable;
 @property(nonatomic) unsigned long long dualSIMEnabled; // @synthesize dualSIMEnabled=_dualSIMEnabled;
-- (void).cxx_destruct;
 - (id)debugDescription;
 
 @end

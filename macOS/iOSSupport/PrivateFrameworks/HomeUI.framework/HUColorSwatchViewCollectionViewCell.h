@@ -13,8 +13,8 @@
     HUColorSwatchView *_swatchView;
 }
 
-@property(readonly, nonatomic) HUColorSwatchView *swatchView; // @synthesize swatchView=_swatchView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HUColorSwatchView *swatchView; // @synthesize swatchView=_swatchView;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -15,9 +15,9 @@
 }
 
 + (id)interestedChangeKeys;
+- (void).cxx_destruct;
 @property BOOL showWorkingElsewhere; // @synthesize showWorkingElsewhere=_showWorkingElsewhere;
 @property(retain) EKUIPopUpButton *availabilityPicker; // @synthesize availabilityPicker=_availabilityPicker;
-- (void).cxx_destruct;
 - (void)availabilityChanged:(id)arg1;
 - (void)updateWithChanges:(id)arg1;
 - (void)buildAvailabilityListForCalendar;

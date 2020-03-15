@@ -12,9 +12,9 @@ __attribute__((visibility("hidden")))
     struct NodeDescription _nodeDescription;
 }
 
-@property(readonly) struct NodeDescription nodeDescription; // @synthesize nodeDescription=_nodeDescription;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly) struct NodeDescription nodeDescription; // @synthesize nodeDescription=_nodeDescription;
 - (id)initWithNodeDescription:(const struct NodeDescription *)arg1;
 
 @end

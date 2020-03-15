@@ -11,8 +11,8 @@
     id _collectionID;
 }
 
-@property(retain, nonatomic) id collectionID; // @synthesize collectionID=_collectionID;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id collectionID; // @synthesize collectionID=_collectionID;
 
 @end
 

@@ -19,11 +19,11 @@
     NSXPCConnection *_serviceConnection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isMonitoring) _Bool monitoring; // @synthesize monitoring=_monitoring;
 @property(retain, nonatomic) NSXPCConnection *serviceConnection; // @synthesize serviceConnection=_serviceConnection;
 @property(nonatomic) __weak id <CRVehiclePolicyMonitoring> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSData *vehicleCertificateSerial; // @synthesize vehicleCertificateSerial=_vehicleCertificateSerial;
-- (void).cxx_destruct;
 - (void)willDisableCertificateSerial:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)willEnableCertificateSerial:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)stopMonitoring;

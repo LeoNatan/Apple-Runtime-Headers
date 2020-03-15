@@ -43,6 +43,7 @@
 + (id)_selectedDurationDescriptions;
 + (id)_durationDescriptions;
 + (id)_timeDescriptionsForDate:(id)arg1 inTimeZone:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSArray *horizontalConstraints; // @synthesize horizontalConstraints=_horizontalConstraints;
 @property BOOL makeCalendarPickerKeyOnNextWindowUpdate; // @synthesize makeCalendarPickerKeyOnNextWindowUpdate=_makeCalendarPickerKeyOnNextWindowUpdate;
 @property BOOL openingCalendarPicker; // @synthesize openingCalendarPicker=_openingCalendarPicker;
@@ -61,7 +62,6 @@
 @property __weak id <IIDatePickerWithMiniCalDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSDatePicker *textTimePicker; // @synthesize textTimePicker=_textTimePicker;
 @property(retain) IIDatePicker *textDatePicker; // @synthesize textDatePicker=_textDatePicker;
-- (void).cxx_destruct;
 - (void)_updateSuggestionPanelSize;
 - (void)_setTimeToSuggestionAtIndex:(long long)arg1;
 - (void)_timeSuggestionPicked:(id)arg1;

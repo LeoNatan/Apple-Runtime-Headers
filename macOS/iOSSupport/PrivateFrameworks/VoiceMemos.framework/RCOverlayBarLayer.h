@@ -24,11 +24,11 @@ __attribute__((visibility("hidden")))
 + (double)_internalSelectionBarWidth;
 + (double)selectionKnobRadius;
 + (double)selectionBarWidth;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL barWidthMatchesKnobs; // @synthesize barWidthMatchesKnobs=_barWidthMatchesKnobs;
 @property(nonatomic) double widthMultiplier; // @synthesize widthMultiplier=_widthMultiplier;
 @property(retain, nonatomic) UIImage *barGlyph; // @synthesize barGlyph=_barGlyph;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)layoutSublayers;
 - (void)_loadWithColor:(id)arg1 selectionExtentIncludingKnobs:(double)arg2 topKnob:(BOOL)arg3 bottomKnob:(BOOL)arg4;
 - (id)barComponents;

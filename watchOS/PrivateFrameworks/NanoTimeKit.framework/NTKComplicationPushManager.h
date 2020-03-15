@@ -36,6 +36,7 @@
 + (id)topicsFromBundleIDs:(id)arg1;
 + (id)bundleIDFromTopic:(id)arg1;
 + (id)topicFromBundleId:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *complicationVendorBundleIDs; // @synthesize complicationVendorBundleIDs=_complicationVendorBundleIDs;
 @property(retain, nonatomic) CSLPITimer *budgetResetTimer; // @synthesize budgetResetTimer=_budgetResetTimer;
 @property(retain, nonatomic) NSSet *currentlyEnabledClients; // @synthesize currentlyEnabledClients=_currentlyEnabledClients;
@@ -47,7 +48,6 @@
 @property(readonly, nonatomic) APSConnection *developmentConnection; // @synthesize developmentConnection=_developmentConnection;
 @property(readonly, nonatomic) APSConnection *productionConnection; // @synthesize productionConnection=_productionConnection;
 @property(readonly, nonatomic) NSXPCListener *xpcListener; // @synthesize xpcListener=_xpcListener;
-- (void).cxx_destruct;
 - (id)watchKitExtensionForAppBundleID:(id)arg1;
 - (void)dealloc;
 - (void)_batteryLevelDidChange;

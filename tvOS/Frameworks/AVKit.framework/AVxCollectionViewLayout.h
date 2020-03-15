@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     struct CGSize _itemSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVxGroupList *groups; // @synthesize groups=_groups;
 @property(nonatomic) struct CGSize itemSize; // @synthesize itemSize=_itemSize;
 @property(nonatomic) double interitemSpacing; // @synthesize interitemSpacing=_interitemSpacing;
-- (void).cxx_destruct;
 - (void)_buildLayout;
 - (void)_buildLayoutForSection:(long long)arg1 minX:(double)arg2 maxX:(double)arg3;
 - (double)_calculateWidthForSection:(long long)arg1 maxWidthAllowed:(double)arg2;

@@ -6,26 +6,39 @@
 
 #import <QuartzCore/CAShapeLayer.h>
 
+@class AXFKAFocusRingBorderShapeLayer;
+
 @interface AXFKAFocusRingShapeLayer : CAShapeLayer
 {
-    CAShapeLayer *_bottomBorderLayer;
+    AXFKAFocusRingBorderShapeLayer *_bottomBorderLayer;
+    unsigned long long _kind;
+    long long _interfaceStyle;
 }
 
-+ (id)springBoardFilter;
-+ (id)defaultFilter;
-+ (id)vibrantFilter;
-+ (id)selectedParentLayer;
-+ (id)selectedLayer;
-+ (id)parentLayer;
-+ (id)focusLayer;
++ (id)layerWithStyle:(long long)arg1 kind:(unsigned long long)arg2;
 + (id)selectedParentLayerForUserInterfaceStyle:(long long)arg1;
 + (id)selectedLayerForUserInterfaceStyle:(long long)arg1;
 + (id)parentLayerForUserInterfaceStyle:(long long)arg1;
 + (id)focusLayerForUserInterfaceStyle:(long long)arg1;
-@property(retain, nonatomic) CAShapeLayer *bottomBorderLayer; // @synthesize bottomBorderLayer=_bottomBorderLayer;
 - (void).cxx_destruct;
+@property(nonatomic) long long interfaceStyle; // @synthesize interfaceStyle=_interfaceStyle;
+@property(nonatomic) unsigned long long kind; // @synthesize kind=_kind;
+@property(retain, nonatomic) AXFKAFocusRingBorderShapeLayer *bottomBorderLayer; // @synthesize bottomBorderLayer=_bottomBorderLayer;
+- (id)bottomFocusRingColorForTintColor:(id)arg1;
+- (double)insetForFocusRingBorder:(id)arg1;
+@property(readonly, nonatomic) _Bool increaseContrast;
+@property(readonly, nonatomic) _Bool useLargeRing;
+@property(readonly, nonatomic) struct CGColor *ringColorRef;
+@property(readonly, nonatomic) _Bool useDefaultRingColor;
+- (double)borderScale;
+- (id)tintColor;
+- (id)fillColorForBottomLayer;
+- (struct CGColor *)strokeColorForBottomLayer;
+- (double)lineWidthForBottomLayer;
+- (void)updateAppearance;
 - (void)_updateBottomLayerPath;
 - (void)setPath:(struct CGPath *)arg1;
+- (void)dealloc;
 - (id)init;
 
 @end

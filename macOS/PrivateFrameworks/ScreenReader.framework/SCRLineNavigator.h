@@ -31,12 +31,12 @@ __attribute__((visibility("hidden")))
 + (id)lineForRange:(id)arg1 movingForward:(BOOL)arg2 text:(id)arg3 innerText:(id)arg4;
 + (id)attributedSubstringWithRange:(id)arg1 text:(id)arg2;
 + (id)textProviderForText:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SCRElement<SCRText> *_originalTextProvider; // @synthesize _originalTextProvider=__originalTextProvider;
 @property(nonatomic) BOOL movingForward; // @synthesize movingForward=_movingForward;
 @property(retain, nonatomic) SCRTextMarkerRange *currentLineRange; // @synthesize currentLineRange=_currentLineRange;
 @property(retain, nonatomic) SCRElement<SCRText> *textProvider; // @synthesize textProvider=_textProvider;
 @property(copy, nonatomic) NSAttributedString *currentVisualLine; // @synthesize currentVisualLine=_currentVisualLine;
-- (void).cxx_destruct;
 - (BOOL)providerMatchesElement:(id)arg1;
 - (id)elementRangeForLineRange:(struct _NSRange)arg1;
 - (struct _NSRange)lineRangeForElementRange:(id)arg1;

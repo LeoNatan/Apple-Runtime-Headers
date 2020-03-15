@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSColor *_color;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSColor *color; // @synthesize color=_color;
 @property(readonly, copy, nonatomic) NSString *contentAdvisoryString; // @synthesize contentAdvisoryString=_contentAdvisoryString;
-- (void).cxx_destruct;
 - (id)_labelAttributes;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (struct CGSize)cellSize;

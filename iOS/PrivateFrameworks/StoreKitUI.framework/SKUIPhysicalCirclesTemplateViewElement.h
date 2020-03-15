@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)supportedFeatures;
-@property(readonly, nonatomic) SKUIPhysicalCirclesTemplateDOMFeature *scriptInterface; // @synthesize scriptInterface=_scriptInterface;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SKUIPhysicalCirclesTemplateDOMFeature *scriptInterface; // @synthesize scriptInterface=_scriptInterface;
 @property(readonly, nonatomic) SKUILabelViewElement *titleElement;
 @property(readonly, nonatomic) SKUILabelViewElement *subtitleElement;
 @property(readonly, nonatomic) SKUIPaletteViewElement *footerPaletteElement;

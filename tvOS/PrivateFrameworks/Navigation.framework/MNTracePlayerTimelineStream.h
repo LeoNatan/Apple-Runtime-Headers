@@ -16,10 +16,10 @@
     CDUnknownBlockType _handler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double nextUpdatePosition; // @synthesize nextUpdatePosition=_nextUpdatePosition;
 @property(readonly, nonatomic) unsigned long long nextIndex; // @synthesize nextIndex=_nextIndex;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
-- (void).cxx_destruct;
 - (void)jumpToPosition:(double)arg1;
 - (void)triggerNextUpdate;
 - (id)initWithData:(id)arg1;

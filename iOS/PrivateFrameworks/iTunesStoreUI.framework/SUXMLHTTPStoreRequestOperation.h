@@ -16,9 +16,9 @@
     ISDataProvider *_dataProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ISDataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
 @property(retain, nonatomic) SSAuthenticationContext *authenticationContext; // @synthesize authenticationContext=_authenticationContext;
-- (void).cxx_destruct;
 - (void)run;
 @property(copy) CDUnknownBlockType outputBlock;
 - (id)initWithRequestProperties:(id)arg1;

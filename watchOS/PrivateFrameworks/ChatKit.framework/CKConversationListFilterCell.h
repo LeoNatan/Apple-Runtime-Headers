@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (float)defaultHeight;
 + (id)identifier;
-@property(retain, nonatomic) UISegmentedControl *filterControl; // @synthesize filterControl=_filterControl;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UISegmentedControl *filterControl; // @synthesize filterControl=_filterControl;
 - (void)layoutSubviews;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 

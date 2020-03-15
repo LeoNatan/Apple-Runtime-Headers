@@ -23,13 +23,13 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isLoading) _Bool loading; // @synthesize loading=_loading;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *loadHomesGroup; // @synthesize loadHomesGroup=_loadHomesGroup;
 @property(retain, nonatomic) HMHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(readonly, nonatomic) NSHashTable *eventObservers; // @synthesize eventObservers=_eventObservers;
 @property(readonly, nonatomic) _Bool hasLoadedHomes; // @synthesize hasLoadedHomes=_hasLoadedHomes;
 @property(readonly, nonatomic) NSArray *homes; // @synthesize homes=_homes;
-- (void).cxx_destruct;
 - (void)applicationContext:(id)arg1 applicationStateDidChange:(long long)arg2;
 - (void)homeManagerDidUpdateHomes:(id)arg1;
 - (id)serviceWithIdentifier:(id)arg1 inHome:(id)arg2;
@@ -44,6 +44,7 @@
 - (void)addEventObserver:(id)arg1;
 - (void)ensureHomesAreLoadedWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)reloadData;
+- (void)_setHomes:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

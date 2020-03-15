@@ -20,6 +20,7 @@
     STYWakeDetectorDebugInfo *_debugInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) STYWakeDetectorDebugInfo *debugInfo; // @synthesize debugInfo=_debugInfo;
 @property(nonatomic) unsigned long long loginWindowWakeEnd; // @synthesize loginWindowWakeEnd=_loginWindowWakeEnd;
 @property(nonatomic) unsigned long long graphicsReady; // @synthesize graphicsReady=_graphicsReady;
@@ -28,7 +29,6 @@
 @property(nonatomic) unsigned long long endType; // @synthesize endType=_endType;
 @property(nonatomic) unsigned long long sleepType; // @synthesize sleepType=_sleepType;
 @property(nonatomic) unsigned long long wakeType; // @synthesize wakeType=_wakeType;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) unsigned long long wakeEnd;
 

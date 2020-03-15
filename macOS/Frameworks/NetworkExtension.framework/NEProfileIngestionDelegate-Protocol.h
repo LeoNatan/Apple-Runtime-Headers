@@ -11,6 +11,7 @@
 + (void)profileMigrationComplete;
 + (NSString *)getServiceIDForPayload:(NSDictionary *)arg1;
 - (NSArray *)getCertificatesForConfigurationWithIdentifier:(NSString *)arg1;
+- (BOOL)updateAccountIdentifiers:(NSDictionary *)arg1;
 - (BOOL)updateManagedAppRules:(NSArray *)arg1;
 - (BOOL)updateAppLayerVPNMappingRules:(NSDictionary *)arg1;
 - (NSArray *)copyManagedConfigurationIDs;

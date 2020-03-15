@@ -20,8 +20,8 @@
 }
 
 + (id)logCategory;
-@property(readonly) __weak HMDHome *home; // @synthesize home=_home;
 - (void).cxx_destruct;
+@property(readonly) __weak HMDHome *home; // @synthesize home=_home;
 - (id)logIdentifier;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)addOperation:(id)arg1;

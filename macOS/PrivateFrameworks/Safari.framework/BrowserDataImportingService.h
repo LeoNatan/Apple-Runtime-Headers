@@ -13,11 +13,11 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)_replyWithImporterForBrowserWithBundleIdentifier:(id)arg1 bundleIdentifierMappings:(id)arg2 replyBlock:(CDUnknownBlockType)arg3;
+- (void)_createImporterWithBrowserDataDirectories:(id)arg1 importEngineClass:(Class)arg2 replyBlock:(CDUnknownBlockType)arg3;
 - (void)exit;
-- (void)createCredentialImporterForBrowserWithBundleIdentifier:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)createHistoryImporterForBrowserWithBundleIdentifier:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)createBookmarkImporterForBrowserWithBundleIdentifier:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)createCredentialImporterWithBrowserDataDirectories:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)createHistoryImporterWithBrowserDataDirectories:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)createBookmarkImporterWithBrowserDataDirectories:(id)arg1 reply:(CDUnknownBlockType)arg2;
 
 @end
 

@@ -25,6 +25,7 @@
 
 + (id)mainIdentityJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long mainIdentity; // @synthesize mainIdentity=_mainIdentity;
 @property(readonly, nonatomic) NSNumber *isAdmin; // @synthesize isAdmin=_isAdmin;
 @property(readonly, nonatomic) NSDate *dateJoined; // @synthesize dateJoined=_dateJoined;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
 @property(readonly, nonatomic) NSString *email; // @synthesize email=_email;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSString *displayName;
 @property(readonly, nonatomic) NSString *twitterDisplayName;

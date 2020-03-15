@@ -47,6 +47,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_profileConnection, setter=_setProfileConnection:) MCProfileConnection *profileConnection; // @synthesize profileConnection=_profileConnection;
 @property(retain, nonatomic, getter=_biometricKitInterface, setter=_setBiometricKitInterface:) _SBUIBiometricKitInterface *biometricKitInterface; // @synthesize biometricKitInterface=_biometricInterface;
 @property(retain, nonatomic, getter=_keybagInterface, setter=_setKeybagInterface:) SBFMobileKeyBag *keybagInterface; // @synthesize keybagInterface=_keybag;
@@ -54,7 +55,6 @@
 @property(readonly, nonatomic, getter=isMatchingEnabled) _Bool matchingEnabled; // @synthesize matchingEnabled=_isMatchingEnabled;
 @property(retain, nonatomic) SBFCredentialSet *unlockCredentialSet; // @synthesize unlockCredentialSet=_unlockCredentialSet;
 @property(retain, nonatomic) id <SBUIBiometricAuthenticationPolicy> authenticationPolicy; // @synthesize authenticationPolicy=_authenticationPolicy;
-- (void).cxx_destruct;
 - (void)_notifyObserversOfEvent:(unsigned long long)arg1;
 - (void)_updateHandlersForEvent:(unsigned long long)arg1;
 - (void)_reevaluateFaceDetection;

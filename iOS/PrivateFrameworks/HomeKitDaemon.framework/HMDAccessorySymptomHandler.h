@@ -29,6 +29,7 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)hasMessageReceiverChildren;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *sfDeviceIdentifier; // @synthesize sfDeviceIdentifier=_sfDeviceIdentifier;
 @property(retain, nonatomic) NSSet *localSymptoms; // @synthesize localSymptoms=_localSymptoms;
 @property(readonly, nonatomic) HMDSymptomManager *symptomManager; // @synthesize symptomManager=_symptomManager;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSSet *syncedSymptoms; // @synthesize syncedSymptoms=_syncedSymptoms;
 @property(readonly, nonatomic) __weak HMDAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)symptomManager:(id)arg1 didChangeSFDeviceIdentifier:(id)arg2;

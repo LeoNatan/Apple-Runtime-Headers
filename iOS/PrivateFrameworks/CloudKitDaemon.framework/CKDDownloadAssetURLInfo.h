@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     struct _OpaquePCSShareProtection *_recordPCS;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _OpaquePCSShareProtection *recordPCS; // @synthesize recordPCS=_recordPCS;
 @property(retain, nonatomic) CKAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 

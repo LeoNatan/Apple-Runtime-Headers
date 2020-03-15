@@ -65,6 +65,7 @@
     _Bool _dispatchedSnapshotMetrics;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool deviceIsInWalkaboutExperimentGroup; // @synthesize deviceIsInWalkaboutExperimentGroup=_deviceIsInWalkaboutExperimentGroup;
 @property(retain, nonatomic) Class peerProviderClass; // @synthesize peerProviderClass=_peerProviderClass;
 @property(nonatomic) _Bool siriConnectionUsesPeerManagedSync; // @synthesize siriConnectionUsesPeerManagedSync=_siriConnectionUsesPeerManagedSync;
@@ -73,7 +74,6 @@
 @property(copy, nonatomic) NSString *peerVersion; // @synthesize peerVersion=_peerVersion;
 @property(copy, nonatomic) NSString *peerType; // @synthesize peerType=_peerType;
 @property(nonatomic) __weak id <SiriCoreSiriBackgroundConnectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)getConnectionMetrics:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)_connectionMethodDescription;
 - (id)getConnectionMethodUsed;

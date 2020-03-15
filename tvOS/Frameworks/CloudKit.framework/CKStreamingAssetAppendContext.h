@@ -27,6 +27,7 @@
 }
 
 + (id)requestToAppendSegmentData:(id)arg1 uploadURL:(id)arg2 requestUUID:(id)arg3 offset:(unsigned long long)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool fakeMissingUploadReceipt; // @synthesize fakeMissingUploadReceipt=_fakeMissingUploadReceipt;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) NSObject<OS_os_activity> *osActivity; // @synthesize osActivity=_osActivity;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *appendQueue; // @synthesize appendQueue=_appendQueue;
 @property(retain, nonatomic) CKStreamingAsset *streamingAsset; // @synthesize streamingAsset=_streamingAsset;
-- (void).cxx_destruct;
 - (void)abort;
 - (void)URLSession:(id)arg1 _willRetryBackgroundDataTask:(id)arg2 withError:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;

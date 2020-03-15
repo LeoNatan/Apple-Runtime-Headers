@@ -14,8 +14,8 @@
     int _currentRepeatType;
 }
 
-@property(nonatomic) int currentRepeatType; // @synthesize currentRepeatType=_currentRepeatType;
 - (void).cxx_destruct;
+@property(nonatomic) int currentRepeatType; // @synthesize currentRepeatType=_currentRepeatType;
 - (id)newCommandEventWithType:(int)arg1 preservesRepeatMode:(_Bool)arg2;
 - (id)newCommandEventWithType:(int)arg1;
 - (id)_mediaRemoteCommandInfoOptions;

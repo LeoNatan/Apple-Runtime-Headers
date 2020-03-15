@@ -9,12 +9,14 @@
 #import <CoverSheet/CSQuickActionsDelegate-Protocol.h>
 #import <CoverSheet/SBUIFlashlightObserver-Protocol.h>
 
-@class CSCoverSheetViewController, NSString, SBUIFlashlightController;
+@class CSCoverSheetViewController, CSLockScreenSettings, NSString, SBLockScreenDefaults, SBUIFlashlightController;
 @protocol CSCameraPrewarming, SBFLockOutStatusProvider;
 
 @interface CSQuickActionsViewController : CSCoverSheetViewControllerBase <CSQuickActionsDelegate, SBUIFlashlightObserver>
 {
     SBUIFlashlightController *_flashlight;
+    CSLockScreenSettings *_prototypeSettings;
+    SBLockScreenDefaults *_lockScreenDefaults;
     _Bool _suppressingVisibleChanges;
     _Bool _animatingToCamera;
     CSCoverSheetViewController *_coverSheetViewController;
@@ -24,12 +26,12 @@
 
 + (Class)viewClass;
 + (_Bool)deviceSupportsButtons;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool animatingToCamera; // @synthesize animatingToCamera=_animatingToCamera;
 @property(nonatomic) _Bool suppressingVisibleChanges; // @synthesize suppressingVisibleChanges=_suppressingVisibleChanges;
 @property(retain, nonatomic) id <CSCameraPrewarming> cameraPrewarmer; // @synthesize cameraPrewarmer=_cameraPrewarmer;
 @property(retain, nonatomic) id <SBFLockOutStatusProvider> lockOutController; // @synthesize lockOutController=_lockOutController;
 @property(nonatomic) __weak CSCoverSheetViewController *coverSheetViewController; // @synthesize coverSheetViewController=_coverSheetViewController;
-- (void).cxx_destruct;
 - (void)_featureLockStateDidChangeNotification:(id)arg1;
 - (void)_deviceBlockStateDidChangeNotification:(id)arg1;
 - (void)_updateFlashlightButtonAvailabilityRespectingSuppression:(_Bool)arg1;
@@ -39,6 +41,8 @@
 - (void)_tearDownFlashlight;
 - (void)_tearDownFlashlightIfOff;
 - (void)_setupFlashlight;
+- (_Bool)_shouldPrelaunchOnTouch;
+- (_Bool)_shouldPrewarmOnTouch;
 - (_Bool)_supportsCamera;
 - (void)_resetIdleTimer;
 - (void)_toggleFlashlight;

@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
     struct NSDirectionalEdgeInsets _hitRectInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showsHighlightedAppearance; // @synthesize showsHighlightedAppearance=_showsHighlightedAppearance;
 @property(nonatomic) long long trackingState; // @synthesize trackingState=_trackingState;
 @property(nonatomic) __weak NSTimer *longPressTimer; // @synthesize longPressTimer=_longPressTimer;
@@ -56,7 +57,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isCollapsed) BOOL collapsed; // @synthesize collapsed=_collapsed;
 @property(nonatomic, getter=isIncluded) BOOL included; // @synthesize included=_included;
 @property(nonatomic) struct CGSize extrinsicContentSize; // @synthesize extrinsicContentSize=_extrinsicContentSize;
-- (void).cxx_destruct;
 - (void)_updateIsHiddenAndAlpha;
 - (void)_updateMicaPackage:(id)arg1;
 - (struct CGSize)intrinsicContentSize;

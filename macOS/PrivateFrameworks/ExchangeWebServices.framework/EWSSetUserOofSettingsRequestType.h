@@ -15,9 +15,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EWSUserOofSettingsType *UserOofSettings; // @synthesize UserOofSettings=_UserOofSettings;
 @property(retain, nonatomic) EWSEmailAddress *Mailbox; // @synthesize Mailbox=_Mailbox;
-- (void).cxx_destruct;
 
 @end
 

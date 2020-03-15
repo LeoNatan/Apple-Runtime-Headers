@@ -18,10 +18,10 @@
     AVExternalDevice *_externalDevice;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool limitedUI; // @synthesize limitedUI=_limitedUI;
 @property(retain, nonatomic) AVExternalDevice *externalDevice; // @synthesize externalDevice=_externalDevice;
 @property(retain, nonatomic) CNStarkNoContentBannerView *overlayView; // @synthesize overlayView=_overlayView;
-- (void).cxx_destruct;
 - (_Bool)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 propertyKey:(id)arg3 propertyIdentifier:(id)arg4;
 - (void)contactListViewController:(id)arg1 didSelectContact:(id)arg2;
 - (_Bool)contactListViewController:(id)arg1 canSelectContact:(id)arg2;

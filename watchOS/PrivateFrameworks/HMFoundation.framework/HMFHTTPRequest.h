@@ -14,9 +14,9 @@
     double _timeoutInterval;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMFHTTPRequestInternal *internal; // @synthesize internal=_internal;
 @property(nonatomic) double timeoutInterval; // @synthesize timeoutInterval=_timeoutInterval;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURLRequest *urlRequest;
 @property(readonly, nonatomic) NSData *body;
 @property(readonly, nonatomic) NSDictionary *headerFields;

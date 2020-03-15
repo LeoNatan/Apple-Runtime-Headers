@@ -21,13 +21,13 @@
     unsigned int _mapType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsName; // @synthesize showsName=_showsName;
 @property(nonatomic) unsigned int mapType; // @synthesize mapType=_mapType;
 @property(retain, nonatomic) _MKNanoPlaceCardFooterView *cell; // @synthesize cell=_cell;
 @property(retain, nonatomic) UIColor *pinTintColor; // @synthesize pinTintColor=_pinTintColor;
 @property(readonly, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(nonatomic) __weak id <_MKNanoPlaceCardMapDataDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)notifyDelegateForActionAtIndexPath:(id)arg1;
 - (id)cellForRowAtIndexPath:(id)arg1 inTableView:(id)arg2;
 - (id)titleForSection:(int)arg1;

@@ -62,9 +62,9 @@
     NSString *_phaseDescription;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool highPriority; // @synthesize highPriority=_highPriority;
 @property(copy) NSString *phaseDescription; // @synthesize phaseDescription=_phaseDescription;
-- (void).cxx_destruct;
 - (id)taskIdentifier;
 - (void)_pushTaskDidFinishWithError:(id)arg1;
 - (void)cancel;

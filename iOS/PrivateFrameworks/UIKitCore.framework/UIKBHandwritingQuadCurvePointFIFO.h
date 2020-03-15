@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     CDStruct_23d8ee2f _lastPoint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_19cde01f lastPoint; // @synthesize lastPoint=_lastPoint;
 @property(retain, nonatomic) NSMutableArray *prevPoints; // @synthesize prevPoints=_prevPoints;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(copy) CDUnknownBlockType emissionHandler; // @synthesize emissionHandler=_emissionHandler;
-- (void).cxx_destruct;
 - (void)clear;
 - (void)flush;
 - (void)addPoint:(struct)arg1;

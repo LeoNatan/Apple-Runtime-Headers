@@ -124,10 +124,10 @@
 + (id)entryForAssetURL:(id)arg1 contents:(id)arg2;
 + (id)entryForAssetID:(id)arg1 contents:(id)arg2;
 + (id)libraryPlistWithKind:(long long)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *directory; // @synthesize directory=_directory;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(nonatomic) long long kind; // @synthesize kind=_kind;
-- (void).cxx_destruct;
 - (_Bool)bumpModificationDate;
 - (void)removeDeletedPaths:(id)arg1;
 - (void)addDeletedFiles:(id)arg1;

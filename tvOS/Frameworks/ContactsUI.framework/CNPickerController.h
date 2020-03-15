@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     long long _customItemsSection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long customItemsSection; // @synthesize customItemsSection=_customItemsSection;
 @property(nonatomic) long long builtinItemsSection; // @synthesize builtinItemsSection=_builtinItemsSection;
 @property(nonatomic) long long discoveredItemsSection; // @synthesize discoveredItemsSection=_discoveredItemsSection;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool allowsDiscoveredItems; // @synthesize allowsDiscoveredItems=_allowsDiscoveredItems;
 @property(copy, nonatomic) NSArray *discoveredItems; // @synthesize discoveredItems=_discoveredItems;
 @property(retain, nonatomic) id selectedItem; // @synthesize selectedItem=_selectedItem;
-- (void).cxx_destruct;
 - (id)_itemAtIndexPath:(id)arg1;
 - (unsigned long long)_indexForCustomItemAtIndexPath:(id)arg1;
 - (void)tableView:(id)arg1 didEndEditingRowAtIndexPath:(id)arg2;

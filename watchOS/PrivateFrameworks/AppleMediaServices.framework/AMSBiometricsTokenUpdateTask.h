@@ -27,6 +27,7 @@
 + (id)bagSubProfileVersion;
 + (id)bagSubProfile;
 + (id)bagKeySet;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldPromptUser; // @synthesize shouldPromptUser=_shouldPromptUser;
 @property(retain, nonatomic) AMSURLSession *session; // @synthesize session=_session;
 @property(readonly, nonatomic) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(retain, nonatomic) NSDictionary *additionalDialogMetrics; // @synthesize additionalDialogMetrics=_additionalDialogMetrics;
 @property(readonly, nonatomic) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)initWithAccount:(id)arg1 bag:(id)arg2;
 - (void)handleDialogRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)handleAuthenticateRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;

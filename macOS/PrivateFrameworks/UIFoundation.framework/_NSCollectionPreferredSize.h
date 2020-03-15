@@ -16,11 +16,11 @@
     NSCollectionLayoutSize *_layoutSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize preferredSize; // @synthesize preferredSize=_preferredSize;
 @property(readonly, nonatomic) NSCollectionLayoutSize *layoutSize; // @synthesize layoutSize=_layoutSize;
 @property(readonly, nonatomic) struct CGSize fittingSize; // @synthesize fittingSize=_fittingSize;
 @property(readonly, nonatomic) struct CGSize originalSize; // @synthesize originalSize=_originalSize;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithOriginalSize:(struct CGSize)arg1 fittingSize:(struct CGSize)arg2 layoutSize:(id)arg3;
 

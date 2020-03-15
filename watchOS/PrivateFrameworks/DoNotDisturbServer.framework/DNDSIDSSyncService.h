@@ -19,8 +19,8 @@
     id <DNDSSyncServiceDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <DNDSSyncServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <DNDSSyncServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_queue_handleIncomingMessage:(id)arg1 deviceIdentifier:(id)arg2;
 - (_Bool)_queue_sendMessage:(id)arg1 withVersionNumber:(unsigned int)arg2 error:(id *)arg3;
 - (void)_queue_resume;

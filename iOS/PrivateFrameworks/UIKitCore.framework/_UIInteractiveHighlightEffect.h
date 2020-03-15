@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _preferredContentInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak _UIPortalView *portalView; // @synthesize portalView=_portalView;
 @property(nonatomic) __weak UIView *superview; // @synthesize superview=_superview;
 @property(retain, nonatomic) _UIInteractiveHighlightEnvironment *environment; // @synthesize environment=_environment;
 @property(nonatomic) struct UIEdgeInsets preferredContentInsets; // @synthesize preferredContentInsets=_preferredContentInsets;
 @property(nonatomic) __weak UIVisualEffectView *effectView; // @synthesize effectView=_effectView;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)finalizeEffect;
 - (void)applyBackgroundEffectWithMagnitude:(double)arg1 interactive:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

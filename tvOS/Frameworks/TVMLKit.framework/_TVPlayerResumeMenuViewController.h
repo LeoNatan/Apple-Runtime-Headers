@@ -16,9 +16,9 @@
     CDUnknownBlockType _didSelectOptionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didSelectOptionBlock; // @synthesize didSelectOptionBlock=_didSelectOptionBlock;
 @property(readonly, nonatomic) TVPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)resumeMenuSelection:(id)arg1;
 - (void)_updateTransportBarForFocusedView:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSObject *_object;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject *object; // @synthesize object=_object;
 @property(copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(retain, nonatomic) NSObject *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (_Bool)sendCompletion;
 - (_Bool)cancel;

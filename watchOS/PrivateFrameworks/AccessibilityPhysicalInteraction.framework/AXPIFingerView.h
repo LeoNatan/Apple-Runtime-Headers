@@ -17,32 +17,42 @@
     float _force;
     unsigned int _shape;
     AXPIFingerLayer *_cursorLayer;
+    CAShapeLayer *_outerStrokeTrackLayer;
+    CAShapeLayer *_outerStrokeLayer;
+    CAShapeLayer *_innerStrokeLayer;
     id <AXPIFingerAppearanceDelegate> _appearanceDelegate;
     CAShapeLayer *_progressLayer;
     CDUnknownBlockType _lastProgressCompletionBlock;
 }
 
++ (id)layerClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType lastProgressCompletionBlock; // @synthesize lastProgressCompletionBlock=_lastProgressCompletionBlock;
 @property(retain, nonatomic) CAShapeLayer *progressLayer; // @synthesize progressLayer=_progressLayer;
 @property(nonatomic) __weak id <AXPIFingerAppearanceDelegate> appearanceDelegate; // @synthesize appearanceDelegate=_appearanceDelegate;
+@property(retain, nonatomic) CAShapeLayer *innerStrokeLayer; // @synthesize innerStrokeLayer=_innerStrokeLayer;
+@property(retain, nonatomic) CAShapeLayer *outerStrokeLayer; // @synthesize outerStrokeLayer=_outerStrokeLayer;
+@property(retain, nonatomic) CAShapeLayer *outerStrokeTrackLayer; // @synthesize outerStrokeTrackLayer=_outerStrokeTrackLayer;
 @property(retain, nonatomic) AXPIFingerLayer *cursorLayer; // @synthesize cursorLayer=_cursorLayer;
 @property(nonatomic) unsigned int shape; // @synthesize shape=_shape;
 @property(nonatomic) float force; // @synthesize force=_force;
 @property(nonatomic, getter=isPressed) _Bool pressed; // @synthesize pressed=_pressed;
-- (void).cxx_destruct;
 - (_Bool)accessibilityIgnoresInvertColors;
 - (_Bool)isUserInteractionEnabled;
 - (float)_iconScaleForForce:(float)arg1;
 - (void)animateToTapWithDuration:(double)arg1;
 - (id)_createProgressLayerWithDuration:(double)arg1 inRect:(struct CGRect)arg2;
+- (void)_setPathForCurrentShape;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (void)cancelExisingCircularProgressAnimation;
 - (void)animateCircularProgressWithDuration:(double)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setPressed:(_Bool)arg1 animated:(_Bool)arg2;
 @property(nonatomic, getter=isSelected) _Bool selected;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 appearanceDelegate:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (id)backdropLayer;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

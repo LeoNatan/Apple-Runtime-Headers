@@ -9,11 +9,9 @@
 #import <NetworkExtension/NSCopying-Protocol.h>
 #import <NetworkExtension/NSSecureCoding-Protocol.h>
 
-@class NSURL;
-
 @interface NEFilterDataVerdict : NEFilterVerdict <NSSecureCoding, NSCopying>
 {
-    NSURL *_url;
+    int _statisticsReportFrequency;
     unsigned long long _passBytes;
     unsigned long long _peekBytes;
 }
@@ -25,10 +23,11 @@
 + (id)allowVerdict;
 + (id)needRulesVerdict;
 + (_Bool)supportsSecureCoding;
-@property(retain) NSURL *url; // @synthesize url=_url;
 @property unsigned long long peekBytes; // @synthesize peekBytes=_peekBytes;
 @property unsigned long long passBytes; // @synthesize passBytes=_passBytes;
-- (void).cxx_destruct;
+@property int statisticsReportFrequency; // @synthesize statisticsReportFrequency=_statisticsReportFrequency;
+- (int)filterAction;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

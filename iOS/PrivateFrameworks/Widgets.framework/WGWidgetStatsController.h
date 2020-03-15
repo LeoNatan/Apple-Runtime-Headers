@@ -14,9 +14,9 @@
     WGWidgetDiscoveryController *_discoveryController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool bootstrapFavoriteWidgets; // @synthesize bootstrapFavoriteWidgets=_bootstrapFavoriteWidgets;
 @property(readonly, nonatomic) __weak WGWidgetDiscoveryController *discoveryController; // @synthesize discoveryController=_discoveryController;
-- (void).cxx_destruct;
 - (void)unregisterWidgetForPredictionEvents:(id)arg1;
 - (void)registerWidgetForPredictionEvents:(id)arg1;
 - (void)_setupLaunchStats;

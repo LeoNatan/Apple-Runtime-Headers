@@ -16,10 +16,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *expiredChannelIDs; // @synthesize expiredChannelIDs=_expiredChannelIDs;
 @property(retain, nonatomic) NSMutableDictionary *supplementalArticleIDs; // @synthesize supplementalArticleIDs=_supplementalArticleIDs;
 @property(retain, nonatomic) NSMutableSet *processedChannelIDs; // @synthesize processedChannelIDs=_processedChannelIDs;
-- (void).cxx_destruct;
 - (void)purgeExpiredChannelIdentifiersNotInArray:(id)arg1;
 - (unsigned long long)expiredGroupEmitCountForChannelWithIdentifier:(id)arg1;
 - (void)purgeSupplementalArticleIDsNotInArray:(id)arg1 forChannel:(id)arg2;

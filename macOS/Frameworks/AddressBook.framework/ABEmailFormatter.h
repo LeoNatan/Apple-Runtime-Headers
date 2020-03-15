@@ -6,11 +6,20 @@
 
 #import <AddressBook/ABSearchHighlightFormatter.h>
 
+@class CNCache;
+
 @interface ABEmailFormatter : ABSearchHighlightFormatter
 {
+    CNCache *_formattedEmailsCache;
 }
 
++ (id)formatEmailAddress:(id)arg1;
++ (id)sharedEmailAddressScanner;
++ (id)sharedEmailFormatter;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) CNCache *formattedEmailsCache; // @synthesize formattedEmailsCache=_formattedEmailsCache;
 - (id)stringForObjectValue:(id)arg1;
+- (id)init;
 
 @end
 

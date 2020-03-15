@@ -16,10 +16,10 @@
 }
 
 + (id)copyParseRules;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *supportedItems; // @synthesize supportedItems=_supportedItems;
 @property(retain, nonatomic) CoreDAVLeafItem *maxSizeItem; // @synthesize maxSizeItem=_maxSizeItem;
 @property(retain, nonatomic) CoreDAVLeafItem *maxResourcesItem; // @synthesize maxResourcesItem=_maxResourcesItem;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL supportsDelete;
 @property(readonly, nonatomic) BOOL supportsUpdate;
 @property(readonly, nonatomic) BOOL supportsInsert;

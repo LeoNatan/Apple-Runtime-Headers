@@ -24,10 +24,10 @@
 + (Class)mutableObjectClass;
 + (id)immutableObjectProtocol;
 + (Class)immutableObjectClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_isImmutable) _Bool immutable; // @synthesize immutable=_immutable;
 @property(readonly, nonatomic) MSPBookmarkStorage *bookmarkStorage; // @synthesize bookmarkStorage=_bookmarkStorage;
 @property(readonly, nonatomic) NSUUID *storageIdentifier; // @synthesize storageIdentifier=_storageIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)debugTitle;
 - (_Bool)isUserVisibleDuplicateOfFavorite:(id)arg1;

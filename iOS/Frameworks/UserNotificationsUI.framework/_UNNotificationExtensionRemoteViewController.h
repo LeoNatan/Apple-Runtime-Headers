@@ -23,10 +23,10 @@
 + (_Bool)_isSecureForRemoteViewService;
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didCheckActionResponseDelegate; // @synthesize didCheckActionResponseDelegate=_didCheckActionResponseDelegate;
 @property(retain, nonatomic) id <_UNNotificationExtensionHostInterface> hostService; // @synthesize hostService=_hostService;
 @property(retain, nonatomic) UIViewController<UNNotificationContentExtension> *extensionViewController; // @synthesize extensionViewController=_extensionViewController;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)delayed:(id)arg1;
 - (void)_invalidateExtensionContext;

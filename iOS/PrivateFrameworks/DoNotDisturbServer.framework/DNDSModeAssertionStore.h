@@ -25,10 +25,10 @@
 + (id)upgradeDictionaryRepresentation:(id)arg1 fromVersionNumber:(unsigned long long)arg2 toVersionNumber:(unsigned long long)arg3;
 + (id)messageDateForPeaceSyncDictionaryRepresentation:(id)arg1;
 + (id)newWithPeaceSyncDictionaryRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *invalidationRequests; // @synthesize invalidationRequests=_invalidationRequests;
 @property(readonly, copy, nonatomic) NSArray *invalidations; // @synthesize invalidations=_invalidations;
 @property(readonly, copy, nonatomic) NSArray *assertions; // @synthesize assertions=_assertions;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;

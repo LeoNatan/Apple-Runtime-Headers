@@ -13,8 +13,8 @@
     UIColor *_thumbTintColor;
 }
 
-@property(retain, nonatomic) UIColor *thumbTintColor; // @synthesize thumbTintColor=_thumbTintColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *thumbTintColor; // @synthesize thumbTintColor=_thumbTintColor;
 - (void)updateThumbColor;
 - (id)initWithThumbTintColor:(id)arg1;
 

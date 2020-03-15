@@ -15,9 +15,9 @@
 }
 
 + (id)identifierForPlayActivityID:(id)arg1 channelID:(id)arg2 duration:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *metadataByIdentifier; // @synthesize metadataByIdentifier=_metadataByIdentifier;
 @property(readonly, copy, nonatomic) NSArray *playActivityIdentifiers; // @synthesize playActivityIdentifiers=_playActivityIdentifiers;
-- (void).cxx_destruct;
 - (void)processResponse;
 - (id)initWithIdentifiers:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;

@@ -37,7 +37,8 @@
         unsigned int eventsDrawContent:1;
         unsigned int eventsMatchKey:1;
         unsigned int populateReasonTokens:4;
-        unsigned int RESERVED:16;
+        unsigned int isOpen:1;
+        unsigned int RESERVED:15;
     } _mFlags;
 }
 

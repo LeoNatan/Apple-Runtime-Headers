@@ -26,11 +26,11 @@
 + (_Bool)supportsSecureCoding;
 + (id)textFeatureWithData:(id)arg1;
 + (id)textFeatureWithType:(int)arg1 string:(id)arg2 weight:(float)arg3 origin:(unsigned int)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int origin; // @synthesize origin=_origin;
 @property(nonatomic) float weight; // @synthesize weight=_weight;
 @property(copy, nonatomic) NSString *string; // @synthesize string=_string;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

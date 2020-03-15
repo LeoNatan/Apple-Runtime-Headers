@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct _NSRange textPositionsRange; // @synthesize textPositionsRange=_textPositionsRange;
 @property(readonly, nonatomic) _Bool useTechnicalTableIfPossible; // @synthesize useTechnicalTableIfPossible=_useTechnicalTableIfPossible;
 @property(readonly, nonatomic, getter=isPartial) _Bool partial; // @synthesize partial=_partial;
 @property(readonly, nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(readonly, copy, nonatomic) NSString *language; // @synthesize language=_language;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

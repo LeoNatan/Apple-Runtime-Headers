@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     NSTimer *_relativeTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *relativeTimer; // @synthesize relativeTimer=_relativeTimer;
 @property(nonatomic) unsigned long long relativePhase; // @synthesize relativePhase=_relativePhase;
 @property(nonatomic) unsigned long long momentumPhase; // @synthesize momentumPhase=_momentumPhase;
 @property(nonatomic) unsigned long long gesturePhase; // @synthesize gesturePhase=_gesturePhase;
 @property(nonatomic) unsigned int contextId; // @synthesize contextId=_contextId;
-- (void).cxx_destruct;
 - (void)addMomentumDelta:(struct CGPoint)arg1 timestamp:(double)arg2;
 @property(readonly, nonatomic) struct CGPoint momentumVelocity;
 - (void)resetMomentumVelocity;

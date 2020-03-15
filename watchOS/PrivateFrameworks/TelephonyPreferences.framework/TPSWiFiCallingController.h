@@ -21,6 +21,7 @@
     TUSenderIdentityCapabilities *_subscriptionCapabilities;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TUSenderIdentityCapabilities *subscriptionCapabilities; // @synthesize subscriptionCapabilities=_subscriptionCapabilities;
 @property(readonly, nonatomic) CTXPCServiceSubscriptionContext *subscriptionContext; // @synthesize subscriptionContext=_subscriptionContext;
 @property(copy, nonatomic) NSDictionary *encryptedIdentityInfo; // @synthesize encryptedIdentityInfo=_encryptedIdentityInfo;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) TPSCarrierBundleController *carrierBundleController; // @synthesize carrierBundleController=_carrierBundleController;
 @property(retain, nonatomic) TPSCloudCallingThumperProvisioningURLController *thumperProvisioningURLController; // @synthesize thumperProvisioningURLController=_thumperProvisioningURLController;
 @property(retain, nonatomic) TPSCloudCallingEmergencyAddressURLController *emergencyAddressURLController; // @synthesize emergencyAddressURLController=_emergencyAddressURLController;
-- (void).cxx_destruct;
 - (void)didChangeWiFiCallingCapabilitiesForSenderIdentityWithUUID:(id)arg1;
 - (void)didChangeThumperCallingCapabilitiesForSenderIdentityWithUUID:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *localizedCarrierName;

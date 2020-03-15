@@ -13,8 +13,8 @@
     PCSCKKSItemModifyContext *_context;
 }
 
-@property(retain) PCSCKKSItemModifyContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(retain) PCSCKKSItemModifyContext *context; // @synthesize context=_context;
 - (void)itemStored:(id)arg1;
 - (void)setIdentityToCurrent;
 - (int)addAndNotifyOnSync:(struct _PCSIdentityData *)arg1 attributes:(struct __CFDictionary *)arg2 returnAttributes:(const struct __CFDictionary **)arg3 complete:(CDUnknownBlockType)arg4;

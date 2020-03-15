@@ -23,11 +23,11 @@
     CSLStuckTransactionDialog *_dialog;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLStuckTransactionDialog *dialog; // @synthesize dialog=_dialog;
 @property(retain, nonatomic) CSLStuckTransactionContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) __weak id <IOSSHLTransactionWatchdogHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool shouldContinueAfterWatchdog; // @synthesize shouldContinueAfterWatchdog=_shouldContinueAfterWatchdog;
-- (void).cxx_destruct;
 - (void)stuckTransactionDialogDidTapButton:(id)arg1;
 - (void)stuckTransactionDialogDidDismiss:(id)arg1;
 - (void)transactionDidComplete:(id)arg1;

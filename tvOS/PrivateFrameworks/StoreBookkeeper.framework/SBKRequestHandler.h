@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     SBKStoreURLBagContext *_bagContext;
 }
 
-@property(readonly, nonatomic) SBKStoreURLBagContext *bagContext; // @synthesize bagContext=_bagContext;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SBKStoreURLBagContext *bagContext; // @synthesize bagContext=_bagContext;
 - (void)cancel;
 - (void)timeout;
 - (id)initWithBagContext:(id)arg1;

@@ -13,8 +13,8 @@
     UNUserNotificationCenter *_notificationCenter;
 }
 
-@property(retain, nonatomic) UNUserNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UNUserNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 - (void)postNotificationWithTitle:(id)arg1 message:(id)arg2;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)init;

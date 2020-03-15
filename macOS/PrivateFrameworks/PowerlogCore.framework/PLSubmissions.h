@@ -43,6 +43,7 @@
 + (id)updateSubmissionTagWithConnection:(id)arg1 withReason:(id)arg2;
 + (void)generateSubmissionTag;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSArray *submitReasonMessage; // @synthesize submitReasonMessage=_submitReasonMessage;
 @property BOOL enableRestartAtEPL; // @synthesize enableRestartAtEPL=_enableRestartAtEPL;
 @property(retain) NSNumber *capValue; // @synthesize capValue=_capValue;
@@ -54,7 +55,6 @@
 @property(retain) PLSQLiteConnection *connection; // @synthesize connection=_connection;
 @property BOOL eplEnabled; // @synthesize eplEnabled=_eplEnabled;
 @property __weak PLStorageOperator *storageOperator; // @synthesize storageOperator=_storageOperator;
-- (void).cxx_destruct;
 - (void)stopWatchdog;
 - (void)startWatchdog;
 - (void)filterDatabaseAtPath:(id)arg1 withMaxOutputFileSize:(long long)arg2 removingTables:(id)arg3 hashingTableKeys:(id)arg4 usingTrimmingQueries:(id)arg5 withSubmitReason:(id)arg6;

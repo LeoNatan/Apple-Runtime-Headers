@@ -24,6 +24,7 @@
     UIKeyboardInputMode *_savedKeyboardInputMode;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIKeyboardInputMode *savedKeyboardInputMode; // @synthesize savedKeyboardInputMode=_savedKeyboardInputMode;
 @property(retain, nonatomic) UILabel *placeholderLabel; // @synthesize placeholderLabel=_placeholderLabel;
 @property(nonatomic) double adjustedLineFragmentPadding; // @synthesize adjustedLineFragmentPadding=_adjustedLineFragmentPadding;
@@ -36,7 +37,6 @@
 @property(nonatomic) double placeholderExpandedWidth; // @synthesize placeholderExpandedWidth=_placeholderExpandedWidth;
 @property(nonatomic) double placeHolderWidth; // @synthesize placeHolderWidth=_placeHolderWidth;
 @property(copy, nonatomic) UIColor *placeholderColor; // @synthesize placeholderColor=_placeholderColor;
-- (void).cxx_destruct;
 - (void)textViewDidChange:(id)arg1;
 - (void)updateTextView;
 - (void)restoreKeyboardInputMode;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CKQuadTreeNode *_rootNode;
 }
 
-@property(readonly, nonatomic) CKQuadTreeNode *rootNode; // @synthesize rootNode=_rootNode;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CKQuadTreeNode *rootNode; // @synthesize rootNode=_rootNode;
 - (void)visit:(CDUnknownBlockType)arg1;
 - (id)initWithPoints:(id)arg1;
 - (id)init;

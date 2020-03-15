@@ -28,10 +28,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) int batteryAlertState; // @synthesize batteryAlertState=_batteryAlertState;
 @property(retain, nonatomic) CSLBatteryAlertViewController *controller; // @synthesize controller=_controller;
 @property(nonatomic) __weak id <CUISAlertProviderDelegate> alertProviderDelegate; // @synthesize alertProviderDelegate;
-- (void).cxx_destruct;
 - (void)controllerDidDeactivate:(id)arg1;
 - (void)deactivateController:(id)arg1;
 - (id)init;

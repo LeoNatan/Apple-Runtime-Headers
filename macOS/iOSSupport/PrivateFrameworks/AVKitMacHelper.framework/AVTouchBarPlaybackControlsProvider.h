@@ -32,8 +32,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
-@property(nonatomic) BOOL prefersCompactTouchBarScrubber; // @synthesize prefersCompactTouchBarScrubber=_prefersCompactTouchBarScrubber;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL prefersCompactTouchBarScrubber; // @synthesize prefersCompactTouchBarScrubber=_prefersCompactTouchBarScrubber;
 - (void)updateTouchBarItemIdentifiersForTouchBar:(id)arg1;
 - (BOOL)isTouchBarPlaybackControlsViewControllerLoaded;
 - (id)touchBarPlaybackControlsViewController;

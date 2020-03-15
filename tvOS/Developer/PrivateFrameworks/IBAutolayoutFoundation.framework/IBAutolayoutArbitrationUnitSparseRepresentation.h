@@ -16,9 +16,9 @@
     IBSparseAutolayoutInfo *_sparseInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IBSparseAutolayoutInfo *sparseInfo; // @synthesize sparseInfo=_sparseInfo;
 @property(readonly) id rootObject; // @synthesize rootObject=_rootObject;
-- (void).cxx_destruct;
 @property(readonly) Class arbitrationUnitClass;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;

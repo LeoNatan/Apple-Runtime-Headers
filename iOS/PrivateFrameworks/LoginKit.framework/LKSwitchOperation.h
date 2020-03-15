@@ -15,10 +15,10 @@
     NSMutableArray *_mutableKeychainItemsAddedAfterRecoverEMCS;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mutableKeychainItemsAddedAfterRecoverEMCS; // @synthesize mutableKeychainItemsAddedAfterRecoverEMCS=_mutableKeychainItemsAddedAfterRecoverEMCS;
 @property(readonly, nonatomic) unsigned long long switchType; // @synthesize switchType=_switchType;
 @property(readonly, nonatomic) LKRecoverEMCSOperation *recoverEMCSOperation; // @synthesize recoverEMCSOperation=_recoverEMCSOperation;
-- (void).cxx_destruct;
 - (id)dictionary;
 - (id)switchTypeString;
 - (void)removeLastKeychainItemAdditionEvent;

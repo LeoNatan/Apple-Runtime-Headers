@@ -18,13 +18,13 @@
     ICNFMCActivityMonitor *_progressMonitor;
 }
 
+- (void).cxx_destruct;
 @property(retain) ICNFMCActivityMonitor *progressMonitor; // @synthesize progressMonitor=_progressMonitor;
 @property BOOL shouldTryCreate; // @synthesize shouldTryCreate=_shouldTryCreate;
 @property(copy) NSDictionary *messageInfo; // @synthesize messageInfo=_messageInfo;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(copy) NSArray *serverFlags; // @synthesize serverFlags=_serverFlags;
 @property(retain) NSDate *dateReceived; // @synthesize dateReceived=_dateReceived;
-- (void).cxx_destruct;
 - (BOOL)executeOnConnection:(id)arg1;
 - (id)newCommandDataForLiteralPlus:(BOOL)arg1;
 - (id)debugCommandString;

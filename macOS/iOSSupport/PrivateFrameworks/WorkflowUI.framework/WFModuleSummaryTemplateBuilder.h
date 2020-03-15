@@ -17,10 +17,10 @@
 
 + (id)slotsForMultipleParameterState:(id)arg1 inParameter:(id)arg2;
 + (BOOL)formatString:(id)arg1 containsParameterKey:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *parameterKeys; // @synthesize parameterKeys=_parameterKeys;
 @property(retain, nonatomic) NSArray *formatItems; // @synthesize formatItems=_formatItems;
 @property(readonly, copy, nonatomic) NSString *formatString; // @synthesize formatString=_formatString;
-- (void).cxx_destruct;
 - (id)buildContentWithParameters:(id)arg1 editableParameters:(id)arg2 parameterStates:(id)arg3 variableBeingEdited:(id)arg4;
 - (id)contentByEnumeratingSummaryWithParameterSlotBuilder:(CDUnknownBlockType)arg1;
 - (void)itemizeFormatStringIfNeeded;

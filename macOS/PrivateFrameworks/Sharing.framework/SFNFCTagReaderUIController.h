@@ -25,11 +25,11 @@
     NSString *_purpose;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *purpose; // @synthesize purpose=_purpose;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)uiInvalidatedWithCompletion:(CDUnknownBlockType)arg1;
 - (void)uiActivatedWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_nfcTagScannedCount;

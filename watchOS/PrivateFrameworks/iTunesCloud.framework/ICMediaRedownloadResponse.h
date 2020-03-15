@@ -17,8 +17,8 @@
     NSDictionary *_responseDictionary;
 }
 
-@property(readonly, copy, nonatomic) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
 @property(readonly, copy, nonatomic) NSData *subscriptionKeyBagData;
 @property(readonly, copy, nonatomic) NSArray *items;
 @property(readonly, copy, nonatomic) NSString *jingleAction;

@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_requests;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *keyProfile; // @synthesize keyProfile=_keyProfile;
 @property(copy, nonatomic) NSString *imageProfile; // @synthesize imageProfile=_imageProfile;
 @property(nonatomic) __weak id <SKUIMissingItemDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long batchSize; // @synthesize batchSize=_batchSize;
-- (void).cxx_destruct;
 - (void)_requestItems:(id)arg1 withReason:(long long)arg2;
 - (id)_existingRequestIDForItemID:(id)arg1;
 - (void)itemRequest:(id)arg1 didFinishWithItems:(id)arg2 invalidItemIdentifiers:(id)arg3;

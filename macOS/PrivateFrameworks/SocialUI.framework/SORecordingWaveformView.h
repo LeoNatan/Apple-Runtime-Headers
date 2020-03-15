@@ -13,8 +13,8 @@
     SOAudioMessageWaveForm *_waveForm;
 }
 
-@property(readonly, nonatomic) SOAudioMessageWaveForm *waveForm; // @synthesize waveForm=_waveForm;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SOAudioMessageWaveForm *waveForm; // @synthesize waveForm=_waveForm;
 - (void)clearPowerLevels;
 - (void)appendPowerLevel:(double)arg1;
 - (void)dealloc;

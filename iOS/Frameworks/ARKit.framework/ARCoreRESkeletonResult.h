@@ -25,13 +25,13 @@
 + (id)jointParentIndices;
 + (id)jointNames;
 + (_Bool)supportsSecureCoding;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) double estimatedScaleFactor; // @synthesize estimatedScaleFactor=_estimatedScaleFactor;
 // Error parsing type for property visionTransform:
 // Property attributes: T{?=[4]},N,V_visionTransform
 
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;

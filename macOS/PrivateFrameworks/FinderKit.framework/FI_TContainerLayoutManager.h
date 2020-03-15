@@ -26,11 +26,11 @@ __attribute__((visibility("hidden")))
     struct TNotificationCenterObserver _windowDidEndLiveResizeObserver;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) struct NSEdgeInsets sidebarViewContentInsets; // @synthesize sidebarViewContentInsets=_sidebarViewContentInsets;
 @property(nonatomic) struct NSEdgeInsets browserViewContentInsets; // @synthesize browserViewContentInsets=_browserViewContentInsets;
 @property(nonatomic) _Bool opaqueToolbar; // @synthesize opaqueToolbar=_opaqueToolbar;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)sidebarScrollViewVerticalContentInsetsLayoutGuide;
 - (id)browserScrollViewVerticalContentInsetsLayoutGuide;
 - (id)bottomStatusBarLayoutGuide;

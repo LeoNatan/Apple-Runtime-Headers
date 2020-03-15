@@ -18,8 +18,8 @@
     UITraitCollection *_traitCollection;
 }
 
-@property(retain, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 - (void)cancel;
 @property(readonly, nonatomic, getter=isLoading) _Bool loading;
 - (void)startWithCompletionHandler:(CDUnknownBlockType)arg1;

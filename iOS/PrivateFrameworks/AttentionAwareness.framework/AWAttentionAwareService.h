@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedAttentionService;
-@property unsigned long long clientCount; // @synthesize clientCount=_clientCount;
 - (void).cxx_destruct;
+@property unsigned long long clientCount; // @synthesize clientCount=_clientCount;
 - (void)crashWithReply:(CDUnknownBlockType)arg1;
 - (void)getUnitTestSamplerWithReply:(CDUnknownBlockType)arg1;
 - (void)_createUnitTestScheduler;

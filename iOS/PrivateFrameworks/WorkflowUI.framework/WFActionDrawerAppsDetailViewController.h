@@ -23,10 +23,10 @@
     NSString *_bundleIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool loading; // @synthesize loading=_loading;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) __weak id <WFActionDrawerAppsDetailViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)moveToState:(id)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) WFActionDrawerState *state;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

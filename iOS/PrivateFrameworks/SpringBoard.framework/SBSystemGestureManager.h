@@ -27,9 +27,9 @@
 }
 
 + (id)mainDisplayManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *gesturesPreventedByStylus; // @synthesize gesturesPreventedByStylus=_gesturesPreventedByStylus;
 @property(nonatomic, getter=areSystemGesturesDisabledForAccessibility) _Bool systemGesturesDisabledForAccessibility; // @synthesize systemGesturesDisabledForAccessibility=_systemGesturesDisabledForAccessibility;
-- (void).cxx_destruct;
 - (id)acquireSystemGestureDisableAssertionForReason:(id)arg1 exceptSystemGestureTypes:(id)arg2;
 - (void)ignoreScreenEdgeTouchWithIdentifier:(unsigned int)arg1;
 - (void)_systemGestureChanged:(id)arg1;

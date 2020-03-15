@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IDSAccountIdentity *accountIdentity; // @synthesize accountIdentity=_accountIdentity;
 @property(readonly, nonatomic) IDSMPFullDeviceIdentity *modernIdentity; // @synthesize modernIdentity=_modernIdentity;
 @property(readonly, nonatomic) IDSMPFullLegacyIdentity *legacyIdentity; // @synthesize legacyIdentity=_legacyIdentity;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

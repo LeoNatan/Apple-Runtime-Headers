@@ -16,8 +16,8 @@
     NSProgress *_progress;
 }
 
-@property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void)finishWithError:(id)arg1;
 - (void)performRequestOnOperationQueue:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)performRequestWithCompletionHandler:(CDUnknownBlockType)arg1;

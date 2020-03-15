@@ -70,6 +70,7 @@
 + (id)applicationProxyForBundleType:(unsigned long long)arg1 identifier:(id)arg2 isCompanion:(BOOL)arg3 URL:(id)arg4 itemID:(id)arg5 bundleUnit:(unsigned int *)arg6;
 + (id)applicationProxyForIdentifier:(id)arg1 withContext:(struct LSContext *)arg2;
 + (id)applicationProxyWithBundleUnitID:(unsigned int)arg1 withContext:(struct LSContext *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int bundleModTime; // @synthesize bundleModTime=_bundleModTime;
 @property(nonatomic) BOOL userInitiatedUninstall; // @synthesize userInitiatedUninstall=_userInitiatedUninstall;
 @property(readonly, nonatomic) BOOL runsIndependentlyOfCompanionApp; // @synthesize runsIndependentlyOfCompanionApp=_runsIndependentlyOfCompanionApp;
@@ -109,7 +110,6 @@
 @property(readonly, nonatomic) NSDate *registeredDate; // @synthesize registeredDate=_registeredDate;
 @property(readonly, nonatomic) NSArray *counterpartIdentifiers; // @synthesize counterpartIdentifiers=_counterpartIdentifiers;
 @property(readonly, nonatomic) NSString *companionApplicationIdentifier; // @synthesize companionApplicationIdentifier=_companionApplicationIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSArray *carPlayInstrumentClusterURLSchemes;
 @property(readonly, nonatomic, getter=isArcadeApp) BOOL arcadeApp;

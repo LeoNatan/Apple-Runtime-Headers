@@ -15,10 +15,10 @@
     long long _roundedCornersMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long roundedCornersMode; // @synthesize roundedCornersMode=_roundedCornersMode;
 @property(nonatomic) BOOL shouldEnableFocus; // @synthesize shouldEnableFocus=_shouldEnableFocus;
 @property(copy, nonatomic) NSArray *overlaySpecs; // @synthesize overlaySpecs=_overlaySpecs;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double focusedSizeIncrease;
 @property(readonly, nonatomic) struct CGSize floatingUnfocusedShadowExpansion;
 @property(readonly, nonatomic) double floatingUnfocusedShadowVerticalOffset;

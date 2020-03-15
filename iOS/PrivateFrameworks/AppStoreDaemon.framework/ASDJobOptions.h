@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ASDJobManifest *manifest; // @synthesize manifest=_manifest;
 @property(retain, nonatomic) NSXPCConnection *endpoint; // @synthesize endpoint=_endpoint;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

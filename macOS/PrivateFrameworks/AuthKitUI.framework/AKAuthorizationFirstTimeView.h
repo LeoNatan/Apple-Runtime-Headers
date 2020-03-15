@@ -19,6 +19,7 @@
     NSTextField *_messageLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSTextField *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property(readonly) NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly) NSStackView *stackView; // @synthesize stackView=_stackView;
@@ -26,7 +27,6 @@
 @property(readonly, copy) NSImage *message; // @synthesize message=_message;
 @property(readonly, copy) NSImage *title; // @synthesize title=_title;
 @property(readonly, copy) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)_iconColor;
 - (id)_imageViewWithImage:(id)arg1;
 - (id)_verticalStackView;

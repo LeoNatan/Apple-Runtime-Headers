@@ -14,9 +14,12 @@
 {
     BOOL _shouldIgnore;
     BOOL _authenticationRequired;
+    BOOL _ECP2Field;
     unsigned long long _technology;
     long long _terminalType;
     long long _valueAddedServiceMode;
+    unsigned long long _terminalSubtype;
+    long long _accessTerminalSubtype;
     NSArray *_TCIs;
     NSArray *_merchantIdentifiers;
     NSError *_error;
@@ -24,19 +27,22 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)fieldPropertiesForFieldNotification:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) NSArray *merchantIdentifiers; // @synthesize merchantIdentifiers=_merchantIdentifiers;
 @property(copy, nonatomic) NSArray *TCIs; // @synthesize TCIs=_TCIs;
+@property(nonatomic, getter=isECP2Field) BOOL ECP2Field; // @synthesize ECP2Field=_ECP2Field;
 @property(nonatomic) BOOL authenticationRequired; // @synthesize authenticationRequired=_authenticationRequired;
-@property(nonatomic) BOOL shouldIgnore; // @synthesize shouldIgnore=_shouldIgnore;
+@property(readonly, nonatomic) BOOL shouldIgnore; // @synthesize shouldIgnore=_shouldIgnore;
+@property(readonly, nonatomic) long long accessTerminalSubtype; // @synthesize accessTerminalSubtype=_accessTerminalSubtype;
+@property(readonly, nonatomic) unsigned long long terminalSubtype; // @synthesize terminalSubtype=_terminalSubtype;
 @property(readonly, nonatomic) long long valueAddedServiceMode; // @synthesize valueAddedServiceMode=_valueAddedServiceMode;
 @property(readonly, nonatomic) long long terminalType; // @synthesize terminalType=_terminalType;
 @property(readonly, nonatomic) unsigned long long technology; // @synthesize technology=_technology;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
-- (id)initWithTechnology:(unsigned long long)arg1 terminalType:(long long)arg2 valueAddedServiceMode:(long long)arg3;
+- (id)initWithTechnology:(unsigned long long)arg1 terminalType:(long long)arg2 terminalSubtype:(unsigned long long)arg3 valueAddedServiceMode:(long long)arg4;
 
 @end
 

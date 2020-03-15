@@ -27,9 +27,9 @@
 + (id)templateImageNamed:(id)arg1;
 + (id)imageNamed:(id)arg1 inBundle:(id)arg2;
 + (id)imageNamed:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isHorizontallyFlipped) _Bool horizontallyFlipped; // @synthesize horizontallyFlipped=_horizontallyFlipped;
 @property(retain, nonatomic) UIImage *underlyingImage; // @synthesize underlyingImage=_underlyingImage;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

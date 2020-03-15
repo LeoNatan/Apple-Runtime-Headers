@@ -23,6 +23,7 @@
     NSMutableArray *_currentResults;
 }
 
+- (void).cxx_destruct;
 @property BOOL isCancelled; // @synthesize isCancelled=_isCancelled;
 @property(retain) NSMutableArray *currentResults; // @synthesize currentResults=_currentResults;
 @property(retain) NSDictionary *searchTerms; // @synthesize searchTerms=_searchTerms;
@@ -33,7 +34,6 @@
 @property(retain) NSString *searchString; // @synthesize searchString=_searchString;
 @property(retain) CalDAVPrincipalSearchPropertySet *searchSet; // @synthesize searchSet=_searchSet;
 @property(retain) id <CalDAVAutocompleOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly) NSArray *results;
 - (void)_handleOperationResults:(id)arg1;
 - (void)_launchAgentSearch;

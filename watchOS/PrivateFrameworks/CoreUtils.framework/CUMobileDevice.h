@@ -22,6 +22,7 @@
     NSString *_wifiAddress;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *wifiAddress; // @synthesize wifiAddress=_wifiAddress;
 @property(copy, nonatomic) NSString *udid; // @synthesize udid=_udid;
 @property(nonatomic) _Bool placeholder; // @synthesize placeholder=_placeholder;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSString *internalModel; // @synthesize internalModel=_internalModel;
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) _Bool connected; // @synthesize connected=_connected;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;

@@ -21,9 +21,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isNavigatingToDemo) _Bool navigatingToDemo; // @synthesize navigatingToDemo=_navigatingToDemo;
 @property(nonatomic) int backLightStatus; // @synthesize backLightStatus=_backLightStatus;
-- (void).cxx_destruct;
 - (void)backlightDidChange:(id)arg1 from:(int)arg2 to:(int)arg3;
 - (void)_cancelStandaloneSecuredResetTimer;
 - (void)_demoResetTimerFired;

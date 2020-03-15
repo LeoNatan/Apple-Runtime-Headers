@@ -15,10 +15,10 @@
     long long _generatorGeneration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long generatorGeneration; // @synthesize generatorGeneration=_generatorGeneration;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) FPItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)didMoveToWindow;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateThumbnailForURL:(id)arg1;

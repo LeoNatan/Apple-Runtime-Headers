@@ -26,12 +26,12 @@ __attribute__((visibility("hidden")))
 + (int)_updateFileDescriptor:(int)arg1 forPersistentURL:(id)arg2;
 + (int)_fileDescriptorForPersistentURL:(id)arg1;
 + (void)_setupFileDescriptorQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PLPhotoLibrary *_photoLibrary; // @synthesize _photoLibrary;
 @property(nonatomic) _Bool isValid; // @synthesize isValid=_isValid;
 @property(copy, nonatomic) NSString *extension; // @synthesize extension=_extension;
 @property(retain, nonatomic) id <PLSidecar> sidecar; // @synthesize sidecar=_sidecar;
 @property(retain, nonatomic) PLManagedAsset *photo; // @synthesize photo=_photo;
-- (void).cxx_destruct;
 - (void)_performBlockAndWait:(CDUnknownBlockType)arg1;
 - (_Bool)_isVideo;
 - (_Bool)_isImage;

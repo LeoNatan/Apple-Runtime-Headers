@@ -13,8 +13,8 @@
     CDUnknownBlockType _evaluatingBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType evaluatingBlock; // @synthesize evaluatingBlock=_evaluatingBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType evaluatingBlock; // @synthesize evaluatingBlock=_evaluatingBlock;
 - (id)evaluate:(id)arg1:(long long)arg2:(id)arg3;
 - (id)initWithAppContext:(id)arg1 evaluatingBlock:(CDUnknownBlockType)arg2;
 

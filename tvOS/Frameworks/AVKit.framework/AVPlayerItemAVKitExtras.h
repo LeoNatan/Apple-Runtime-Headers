@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     long long _progressiveDownloadContentState;
 }
 
+- (void).cxx_destruct;
 @property long long progressiveDownloadContentState; // @synthesize progressiveDownloadContentState=_progressiveDownloadContentState;
 @property double pendingTimeBoundary; // @synthesize pendingTimeBoundary=_pendingTimeBoundary;
 @property(nonatomic, getter=isAirPlayedContent) _Bool airPlayedContent; // @synthesize airPlayedContent=_airPlayedContent;
@@ -51,7 +52,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *interstitialTimeRanges; // @synthesize interstitialTimeRanges=_interstitialTimeRanges;
 @property(retain, nonatomic) NSArray *externalMetadata; // @synthesize externalMetadata=_externalMetadata;
 @property(retain, nonatomic) NSArray *navigationMarkerGroups; // @synthesize navigationMarkerGroups=_navigationMarkerGroups;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

@@ -19,10 +19,10 @@
 }
 
 + (id)os_log;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *allAccountsImpl; // @synthesize allAccountsImpl=_allAccountsImpl;
 @property(readonly, nonatomic) id <ABAccountCollection> accountCollection; // @synthesize accountCollection=_accountCollection;
 @property(readonly, copy, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
-- (void).cxx_destruct;
 - (id)tag;
 - (void)setTag:(id)arg1;
 @property(readonly) ABAccount *defaultAccount;

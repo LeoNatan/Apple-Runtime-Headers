@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     double _missRetainTime;
 }
 
+- (void).cxx_destruct;
 @property unsigned int pruneSize; // @synthesize pruneSize=_pruneSize;
 @property unsigned int capacityLimit; // @synthesize capacityLimit=_capacityLimit;
 @property double missRetainTime; // @synthesize missRetainTime=_missRetainTime;
 @property double hitRetainTime; // @synthesize hitRetainTime=_hitRetainTime;
-- (void).cxx_destruct;
 - (id)stateDictionary;
 - (id)description;
 - (void)setEntry:(id)arg1 forUUID:(id)arg2;

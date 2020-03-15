@@ -21,6 +21,7 @@
     unsigned int _bitmapInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *bitmapData; // @synthesize bitmapData=_bitmapData;
 @property(nonatomic) unsigned int bitmapInfo; // @synthesize bitmapInfo=_bitmapInfo;
 @property(nonatomic) unsigned long long bytesPerRow; // @synthesize bytesPerRow=_bytesPerRow;
@@ -28,7 +29,6 @@
 @property(nonatomic) unsigned long long bitsPerComponent; // @synthesize bitsPerComponent=_bitsPerComponent;
 @property(nonatomic) unsigned long long height; // @synthesize height=_height;
 @property(nonatomic) unsigned long long width; // @synthesize width=_width;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

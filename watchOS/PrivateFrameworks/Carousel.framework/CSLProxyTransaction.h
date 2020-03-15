@@ -15,8 +15,8 @@
     BSTransaction *_proxiedTransaction;
 }
 
-@property(readonly, nonatomic) BSTransaction *proxiedTransaction; // @synthesize proxiedTransaction=_proxiedTransaction;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BSTransaction *proxiedTransaction; // @synthesize proxiedTransaction=_proxiedTransaction;
 - (void)transactionDidComplete:(id)arg1;
 - (id)_descriptionProem;
 - (void)_willFailWithReason:(id)arg1;

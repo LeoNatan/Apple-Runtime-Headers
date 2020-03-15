@@ -137,6 +137,7 @@
 + (BOOL)shouldIgnoreExpectedConfigurationVersionUpdateForReason:(id)arg1;
 + (BOOL)doesSaveReasonAffectOnlyLocalData:(id)arg1;
 + (BOOL)doesSaveReasonAffectHomeManager:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *siriSyncNotificationReasons; // @synthesize siriSyncNotificationReasons=_siriSyncNotificationReasons;
 @property(nonatomic) unsigned long long siriSyncNotificationTime; // @synthesize siriSyncNotificationTime=_siriSyncNotificationTime;
 @property(retain, nonatomic) HMDAWDLogEventObserver *awdLogEventObserver; // @synthesize awdLogEventObserver=_awdLogEventObserver;
@@ -236,7 +237,6 @@
 @property(readonly) unsigned long long status; // @synthesize status=_status;
 @property(readonly, nonatomic) HMDSoftwareUpdateManager *softwareUpdateManager; // @synthesize softwareUpdateManager=_softwareUpdateManager;
 @property(readonly, nonatomic) HMDKeyTransferAgent *keyTransferAgent; // @synthesize keyTransferAgent=_keyTransferAgent;
-- (void).cxx_destruct;
 - (void)handleRemoteUserClientCloudShareRequest:(id)arg1;
 - (void)_cleanChangesIfNoAddChangeObjectID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)emptyModelObjectWithChangeType:(unsigned long long)arg1;
@@ -375,6 +375,7 @@
 - (void)_handleUpdateiCloudSwitchState:(id)arg1;
 - (void)_handleQueryiCloudSwitchState:(id)arg1;
 - (void)_handleShouldDisplayiCloudSwitch:(id)arg1;
+- (void)_auditDuplicatePreviouslyAddedAccessory:(id)arg1;
 - (void)auditDuplicatePreviouslyAddedAccessory:(id)arg1;
 - (void)_handleRetrieveVendorIdentifier:(id)arg1;
 - (void)_handleRequestForCompanionKeysSync:(id)arg1;

@@ -18,12 +18,12 @@
     NSMutableArray *_mutableChildNodes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *mutableChildNodes; // @synthesize mutableChildNodes=_mutableChildNodes;
 @property(readonly, nonatomic) NSArray *flattenedDescendents; // @synthesize flattenedDescendents=_flattenedDescendents;
 @property(nonatomic) __weak id <WFTreeObserver> observer; // @synthesize observer=_observer;
 @property(readonly, nonatomic) __weak WFTreeNode *parentNode; // @synthesize parentNode=_parentNode;
 @property(retain, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
-- (void).cxx_destruct;
 - (id)paddedStringAtDepth:(unsigned long long)arg1;
 - (id)debugDescriptionAtDepth:(unsigned long long)arg1;
 - (id)debugDescription;

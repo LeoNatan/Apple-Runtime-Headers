@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) long long fetchingState; // @synthesize fetchingState=_fetchingState;
 - (void).cxx_destruct;
+@property(nonatomic) long long fetchingState; // @synthesize fetchingState=_fetchingState;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)newItemProvider;

@@ -20,6 +20,7 @@
     NSMutableDictionary *_folderIdToLastFolderContentsRequestDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *folderIdToLastFolderContentsRequestDate; // @synthesize folderIdToLastFolderContentsRequestDate=_folderIdToLastFolderContentsRequestDate;
 @property(nonatomic) __weak NSObject<OS_dispatch_source> *deferredFolderContentsSource; // @synthesize deferredFolderContentsSource=_deferredFolderContentsSource;
 @property(nonatomic) __weak NSObject<OS_dispatch_source> *deferredFolderListSource; // @synthesize deferredFolderListSource=_deferredFolderListSource;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) NSDate *lastFolderWipeRequestDate; // @synthesize lastFolderWipeRequestDate=_lastFolderWipeRequestDate;
 @property(retain, nonatomic) NSDate *lastFolderListRequestDate; // @synthesize lastFolderListRequestDate=_lastFolderListRequestDate;
 @property(retain, nonatomic) NSDate *lastAllFolderContentsRequestDate; // @synthesize lastAllFolderContentsRequestDate=_lastAllFolderContentsRequestDate;
-- (void).cxx_destruct;
 - (_Bool)allowFolderWipe;
 - (long long)clientBehaviorForFolderContents;
 - (long long)clientBehaviorForFolderList;

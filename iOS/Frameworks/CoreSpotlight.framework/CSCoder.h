@@ -17,9 +17,9 @@
     struct _MDPlistContainer *_container;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool finalized; // @synthesize finalized=_finalized;
 @property(readonly, nonatomic) struct _MDPlistContainer *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (void)endDictionary;
 - (void)beginDictionary;
 - (void)endType;

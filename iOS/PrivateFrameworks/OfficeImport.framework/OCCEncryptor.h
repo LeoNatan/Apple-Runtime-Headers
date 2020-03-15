@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)allocTempFileWithBase:(id)arg1 filename:(id *)arg2;
-@property(readonly, nonatomic) NSString *outputFilename; // @synthesize outputFilename=mOutputFilename;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *outputFilename; // @synthesize outputFilename=mOutputFilename;
 - (_Bool)encryptIntoOutputFile;
 - (_Bool)encrypt;
 - (id)initWithStreamer:(struct OCCStreamer *)arg1;

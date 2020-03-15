@@ -25,13 +25,13 @@
     IMKUICandidateLayout *_layout;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double surfaceWidth; // @synthesize surfaceWidth=_surfaceWidth;
 @property(retain, nonatomic) IMKCandidate *selectedCandidate; // @synthesize selectedCandidate=_selectedCandidate;
 @property(nonatomic) BOOL showsChevron; // @synthesize showsChevron=_showsChevron;
 @property(nonatomic) __weak id <IMKUICandidateControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) IMKCandidateListDictionary *candidateGroups; // @synthesize candidateGroups=_candidateGroups;
 @property(retain, nonatomic) NSButton<IMKCandidateBarFunctionRowButtonProtocol> *button; // @synthesize button=_button;
-- (void).cxx_destruct;
 - (id)accessoryViewController;
 - (id)touchBarItem;
 @property(readonly, nonatomic) NSArray *visibleCandidates;

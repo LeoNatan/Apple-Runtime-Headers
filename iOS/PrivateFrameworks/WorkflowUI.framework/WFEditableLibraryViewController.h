@@ -24,13 +24,13 @@
 }
 
 + (Class)resultsControllerClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *dragItemOriginIndexPath; // @synthesize dragItemOriginIndexPath=_dragItemOriginIndexPath;
 @property(retain, nonatomic) AVAudioPlayer *reorderSoundPlayer; // @synthesize reorderSoundPlayer=_reorderSoundPlayer;
 @property(retain, nonatomic) UIBarButtonItem *duplicateButtonItem; // @synthesize duplicateButtonItem=_duplicateButtonItem;
 @property(retain, nonatomic) UIBarButtonItem *deleteButtonItem; // @synthesize deleteButtonItem=_deleteButtonItem;
 @property(retain, nonatomic) UIBarButtonItem *createButtonItem; // @synthesize createButtonItem=_createButtonItem;
 @property(readonly, nonatomic) _Bool dropping; // @synthesize dropping=_dropping;
-- (void).cxx_destruct;
 - (void)accessibilityAnnounceMovingWorkflowToIndexPath:(id)arg1;
 - (void)playReorderSound;
 - (void)resultsController:(id)arg1 handleLegacyMoveFromIndexPath:(id)arg2 toIndexPath:(id)arg3;

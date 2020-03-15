@@ -20,6 +20,7 @@
     UIButton *_doneButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(nonatomic) __weak UIButton *revealActionButton; // @synthesize revealActionButton=_revealActionButton;
 @property(nonatomic) __weak UIButton *renameButton; // @synthesize renameButton=_renameButton;
@@ -27,7 +28,6 @@
 @property(nonatomic) __weak UIButton *keyboardButton; // @synthesize keyboardButton=_keyboardButton;
 @property(nonatomic) unsigned long long exitAccessory; // @synthesize exitAccessory=_exitAccessory;
 @property(nonatomic) __weak id <WFVariableConfigurationAccessoryViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canRevealAction;
 @property(nonatomic) _Bool canRename;
 - (void)revealActionPressed;

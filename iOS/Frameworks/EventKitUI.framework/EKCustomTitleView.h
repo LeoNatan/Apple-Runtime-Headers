@@ -19,6 +19,7 @@
     UILabel *_subTitle;
 }
 
+- (void).cxx_destruct;
 @property _Bool animating; // @synthesize animating=_animating;
 @property _Bool showSubtitle; // @synthesize showSubtitle=_showSubtitle;
 @property(retain) UILabel *subTitle; // @synthesize subTitle=_subTitle;
@@ -26,7 +27,6 @@
 @property(retain) UIImageView *originalImage; // @synthesize originalImage=_originalImage;
 @property(retain) UILabel *title; // @synthesize title=_title;
 @property(retain) UILabel *originalTitle; // @synthesize originalTitle=_originalTitle;
-- (void).cxx_destruct;
 - (long long)indexOfAccessibilityElement:(id)arg1;
 - (id)accessibilityElementAtIndex:(long long)arg1;
 - (long long)accessibilityElementCount;

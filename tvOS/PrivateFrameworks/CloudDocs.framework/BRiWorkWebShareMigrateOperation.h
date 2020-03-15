@@ -15,10 +15,10 @@
     CDUnknownBlockType _shareMigrationCompletionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType shareMigrationCompletionBlock; // @synthesize shareMigrationCompletionBlock=_shareMigrationCompletionBlock;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)main;
 - (void)_copyShare;

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     PSDataUsageStatisticsCache *_statisticsCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PSDataUsageStatisticsCache *statisticsCache; // @synthesize statisticsCache=_statisticsCache;
 @property(nonatomic) __weak id <PSAppCellularUsageSpecifierDelegate> specifierDelegate; // @synthesize specifierDelegate=_specifierDelegate;
-- (void).cxx_destruct;
 - (id)specifiers;
 - (id)initWithPolicySpecifierDelegate:(id)arg1 statisticsCache:(id)arg2;
 

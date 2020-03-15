@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     CALayer *_cancelButtonGlyphLayer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CALayer *cancelButtonGlyphLayer; // @synthesize cancelButtonGlyphLayer=_cancelButtonGlyphLayer;
 @property(readonly, nonatomic) CALayer *sendButtonGlyphLayer; // @synthesize sendButtonGlyphLayer=_sendButtonGlyphLayer;
 @property(readonly, nonatomic) UIView *cancelButtonCircle; // @synthesize cancelButtonCircle=_cancelButtonCircle;
 @property(readonly, nonatomic) UIView *sendButtonCircle; // @synthesize sendButtonCircle=_sendButtonCircle;
-- (void).cxx_destruct;
 - (id)_glyphLayerForButtonAnimationWithGlyphName:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 hasDarkVibrancy:(_Bool)arg2 color:(BOOL)arg3;
 

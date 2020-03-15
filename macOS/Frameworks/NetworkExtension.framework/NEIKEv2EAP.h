@@ -24,9 +24,9 @@
 + (struct EAPClientModule_s *)getMSCHAPv2Module;
 + (struct EAPClientModule_s *)getSIMModule;
 + (struct EAPClientModule_s *)getAKAModule;
+- (void).cxx_destruct;
 @property struct EAPClientModule_s *module; // @synthesize module=_module;
 @property(retain) NEIKEv2EAPProtocol *protocol; // @synthesize protocol=_protocol;
-- (void).cxx_destruct;
 @property(readonly) NSMutableData *sessionKey;
 - (id)createPayloadResponseForRequest:(id)arg1 ikeSA:(id)arg2 success:(char *)arg3 reportEAPError:(char *)arg4;
 - (id)init;

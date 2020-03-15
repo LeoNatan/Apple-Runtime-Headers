@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool lastItem; // @synthesize lastItem=_lastItem;
 @property(nonatomic) long long size; // @synthesize size=_size;
 @property(retain, nonatomic) NSData *signature; // @synthesize signature=_signature;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

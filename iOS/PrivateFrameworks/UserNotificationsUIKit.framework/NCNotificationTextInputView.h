@@ -20,12 +20,12 @@
     UIButton *_button;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 @property(retain, nonatomic) UIStackView *horizontalStack; // @synthesize horizontalStack=_horizontalStack;
 @property(retain, nonatomic) NCNotificationAction *action; // @synthesize action=_action;
 @property(nonatomic) __weak id <NCNotificationTextInputViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateForTextChange;
 - (void)_buttonPressed:(id)arg1;
 - (double)_maximumTextViewHeight;

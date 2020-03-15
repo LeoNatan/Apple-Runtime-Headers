@@ -19,15 +19,13 @@
     NSSet *_loveEmojis;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PGMessageProfile *messageProfile; // @synthesize messageProfile=_messageProfile;
 @property(retain, nonatomic) NSDictionary *personLocalIdentifierByCNIdentifier; // @synthesize personLocalIdentifierByCNIdentifier=_personLocalIdentifierByCNIdentifier;
 @property(readonly, nonatomic) NSSet *contactIdentifiers; // @synthesize contactIdentifiers=_contactIdentifiers;
 @property(readonly, nonatomic) NSSet *personNodes; // @synthesize personNodes=_personNodes;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *loveEmojis; // @synthesize loveEmojis=_loveEmojis;
 - (unsigned long long)numberOfEmojis:(id)arg1 inText:(id)arg2;
-- (id)_cnPostalAddressFromAddressComponents:(id)arg1;
-- (id)locationFromAddressComponents:(id)arg1;
 - (id)addressComponentFromText:(id)arg1 usingDataDetector:(id)arg2;
 - (_Bool)_isInterestingGroupChatWithPersons:(id)arg1;
 - (void)runWithGraphUpdate:(id)arg1 progressBlock:(CDUnknownBlockType)arg2;

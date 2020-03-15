@@ -15,8 +15,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) MNSettings *settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MNSettings *settings; // @synthesize settings=_settings;
 - (void)setVolumeFromDefaults;
 - (void)updateForSettings:(id)arg1;
 - (void)removeObserver:(id)arg1;

@@ -16,11 +16,11 @@
     UIImage *_colorizedImage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) UIImage *colorizedImage; // @synthesize colorizedImage=_colorizedImage;
 @property(retain, nonatomic) UIImage *templateImage; // @synthesize templateImage=_templateImage;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
-- (void).cxx_destruct;
 - (struct CGSize)_buttonSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;

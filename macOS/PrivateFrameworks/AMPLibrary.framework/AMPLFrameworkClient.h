@@ -16,9 +16,9 @@
     NSString *_libraryFilePath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *libraryFilePath; // @synthesize libraryFilePath=_libraryFilePath;
 @property(retain, nonatomic) NSString *deviceID; // @synthesize deviceID=_deviceID;
-- (void).cxx_destruct;
 - (void)synchronousParentalPreferencesWithReply:(CDUnknownBlockType)arg1;
 - (void)synchronousMigratedMediaFolderBookmarkWithReply:(CDUnknownBlockType)arg1;
 - (void)synchronousAppHasMigrated:(id)arg1 withReply:(CDUnknownBlockType)arg2;

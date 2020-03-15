@@ -17,11 +17,11 @@
     NSDictionary *_traditionalDictionary;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *traditionalDictionary; // @synthesize traditionalDictionary=_traditionalDictionary;
 @property(readonly) NSString *provider; // @synthesize provider=_provider;
 @property(readonly) unsigned long long sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
 @property(readonly) unsigned long long changeSeqno; // @synthesize changeSeqno=_changeSeqno;
-- (void).cxx_destruct;
 - (id)_createCountsForProvider:(int)arg1;
 - (id)_initWithCounts:(const struct nstat_counts *)arg1 sourceIdent:(unsigned long long)arg2 seqno:(unsigned long long)arg3;
 @property(readonly) double _rttVariation;

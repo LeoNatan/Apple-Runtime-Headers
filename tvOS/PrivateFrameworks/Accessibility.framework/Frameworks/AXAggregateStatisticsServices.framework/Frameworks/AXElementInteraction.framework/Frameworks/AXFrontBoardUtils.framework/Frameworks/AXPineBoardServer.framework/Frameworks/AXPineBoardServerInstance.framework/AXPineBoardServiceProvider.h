@@ -16,8 +16,7 @@
 
 + (id)server;
 - (id)_pbApp;
-- (_Bool)isNonExclusiveSystemUIVisible;
-- (_Bool)isNonExclusiveSystemUIFocusable;
+- (_Bool)isNonExclusiveSystemUIFocusableIncludingPIPWindow:(_Bool)arg1;
 - (void)activeInterfaceOrientation:(CDUnknownBlockType)arg1;
 - (long long)activeInterfaceOrientation;
 - (void)wakeUpDeviceIfNecessary;

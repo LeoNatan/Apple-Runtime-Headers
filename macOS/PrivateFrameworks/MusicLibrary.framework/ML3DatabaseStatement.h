@@ -16,10 +16,10 @@
     struct sqlite3_stmt *_sqliteStatement;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isExecuting; // @synthesize isExecuting=_isExecuting;
 @property(nonatomic) BOOL clearBindingsAfterRunning; // @synthesize clearBindingsAfterRunning=_clearBindingsAfterRunning;
 @property(readonly, nonatomic) struct sqlite3_stmt *sqliteStatement; // @synthesize sqliteStatement=_sqliteStatement;
-- (void).cxx_destruct;
 - (void)bindValuesInArray:(id)arg1;
 - (void)bindValuesForParameterNames:(id)arg1;
 - (void)bindValue:(id)arg1 forParameterAtPosition:(int)arg2;

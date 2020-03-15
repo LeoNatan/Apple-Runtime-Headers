@@ -21,12 +21,12 @@
     unsigned long long _navigationCameraHeadingOverride;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEORouteMatch *routeMatch; // @synthesize routeMatch=_routeMatch;
 @property(copy, nonatomic) NSArray *groupedManeuverCounts; // @synthesize groupedManeuverCounts=_groupedManeuverCounts;
 @property(nonatomic) unsigned long long currentStepIndex; // @synthesize currentStepIndex=_currentStepIndex;
 @property(readonly, nonatomic) GEOComposedRoute *route; // @synthesize route=_route;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)enumerateAdditionalRoutesToFrameUsingBlock:(CDUnknownBlockType)arg1;
 - (void)addRouteToFrame:(id)arg1 divergenceCoord:(struct PolylineCoordinate)arg2 convergenceCoord:(struct PolylineCoordinate)arg3;
 - (void)clearAdditionalRoutesToFrame;

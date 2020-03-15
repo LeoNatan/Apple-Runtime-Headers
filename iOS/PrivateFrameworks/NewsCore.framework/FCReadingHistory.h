@@ -31,10 +31,10 @@
 + (_Bool)requiresBatchedSync;
 + (_Bool)requiresPushNotificationSupport;
 + (id)desiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCMTWriterLock *itemsLock; // @synthesize itemsLock=_itemsLock;
 @property(retain, nonatomic) NSMutableDictionary *itemsByArticleID; // @synthesize itemsByArticleID=_itemsByArticleID;
 @property(retain, nonatomic) NSMutableDictionary *itemsByIdentifier; // @synthesize itemsByIdentifier=_itemsByIdentifier;
-- (void).cxx_destruct;
 - (void)_removeHistoryItemWithItemID:(id)arg1 articleID:(id)arg2;
 - (void)_addHistoryItems:(id)arg1 addToStore:(_Bool)arg2;
 - (void)_modifyHistoryForArticleID:(id)arg1 withBlock:(CDUnknownBlockType)arg2;

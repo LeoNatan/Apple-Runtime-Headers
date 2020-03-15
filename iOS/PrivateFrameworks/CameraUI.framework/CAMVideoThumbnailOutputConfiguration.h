@@ -14,9 +14,9 @@
     struct CGSize _thumbnailSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *filters; // @synthesize filters=_filters;
 @property(readonly, nonatomic) struct CGSize thumbnailSize; // @synthesize thumbnailSize=_thumbnailSize;
-- (void).cxx_destruct;
 - (id)initWithMode:(long long)arg1;
 - (id)initWithThumbnailSize:(struct CGSize)arg1 filters:(id)arg2;
 

@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property(readonly, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(readonly, nonatomic) UIBezierPath *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (void)setStrokeColor:(id)arg1;
 - (void)setFillColor:(id)arg1;
 - (void)setPath:(id)arg1;

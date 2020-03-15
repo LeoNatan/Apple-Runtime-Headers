@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     BRCSyncContext *_syncContext;
 }
 
-@property(readonly, nonatomic) BRCSyncContext *syncContext; // @synthesize syncContext=_syncContext;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BRCSyncContext *syncContext; // @synthesize syncContext=_syncContext;
 - (void)close;
 - (long long)completedUnitCount;
 - (id)stageID;

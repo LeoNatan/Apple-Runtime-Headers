@@ -24,6 +24,7 @@
 }
 
 + (id)statisticsWithTargetPlaybackDuration:(CDStruct_1b6d18a9)arg1 frameRate:(float)arg2 targetOutputTotalBytes:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property float frameRate; // @synthesize frameRate=_frameRate;
 @property double targetPlaybackDuration; // @synthesize targetPlaybackDuration=_targetPlaybackDuration;
 @property unsigned long long targetOutputTotalBytes; // @synthesize targetOutputTotalBytes=_targetOutputTotalBytes;
@@ -35,7 +36,6 @@
 @property unsigned long long processedOutputTotalBytes; // @synthesize processedOutputTotalBytes=_processedOutputTotalBytes;
 @property(retain) NSMutableArray *outputChunkMeasurements; // @synthesize outputChunkMeasurements=_outputChunkMeasurements;
 @property unsigned long long lastOutputChunkTimestamp; // @synthesize lastOutputChunkTimestamp=_lastOutputChunkTimestamp;
-- (void).cxx_destruct;
 - (id)summaryDescription;
 - (id)outputChunkMeasurementsDescription;
 @property(readonly) long long effectiveEncodingBitRate;

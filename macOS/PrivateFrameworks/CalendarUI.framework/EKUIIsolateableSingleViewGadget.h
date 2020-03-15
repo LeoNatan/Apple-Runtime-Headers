@@ -15,10 +15,10 @@
     NSArray *_groupedGadgets;
 }
 
+- (void).cxx_destruct;
 @property BOOL isDoneWithGrouping; // @synthesize isDoneWithGrouping=_isDoneWithGrouping;
 @property(retain) NSArray *groupedGadgets; // @synthesize groupedGadgets=_groupedGadgets;
 @property __weak EKUIIsolateableSingleViewGadget *linkedGadget; // @synthesize linkedGadget=_linkedGadget;
-- (void).cxx_destruct;
 - (BOOL)updateWithDiff:(id)arg1;
 - (void)setObject:(id)arg1;
 - (BOOL)shouldDisplay;

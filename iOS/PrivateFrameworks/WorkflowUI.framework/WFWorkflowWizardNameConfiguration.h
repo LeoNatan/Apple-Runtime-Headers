@@ -20,12 +20,12 @@
 + (id)tellSiriInfoText;
 + (id)addToSiriConfiguration;
 + (id)newWorkflowConfiguration;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *doneBarButtonTitle; // @synthesize doneBarButtonTitle=_doneBarButtonTitle;
 @property(nonatomic) _Bool showsSuggestions; // @synthesize showsSuggestions=_showsSuggestions;
 @property(nonatomic) _Bool showsHeySiri; // @synthesize showsHeySiri=_showsHeySiri;
 @property(copy, nonatomic) NSString *footerText; // @synthesize footerText=_footerText;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

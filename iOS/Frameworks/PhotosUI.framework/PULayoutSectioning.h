@@ -16,9 +16,9 @@
     id <PULayoutSectioningDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PULayoutSectioning *baseSectioning; // @synthesize baseSectioning=_baseSectioning;
 @property(nonatomic) id <PULayoutSectioningDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)writeToURL:(id)arg1 error:(id *)arg2;
 - (id)sectioningHash;
 - (id)sectioningHashHasIncorrectSampling:(_Bool *)arg1 hasInvisibleItemsInBaseSectioning:(_Bool *)arg2;

@@ -16,8 +16,8 @@
     CSLThrottledActivityPolicy *_throttledActivityPolicy;
 }
 
-@property(readonly) CSLThrottledActivityPolicy *throttledActivityPolicy; // @synthesize throttledActivityPolicy=_throttledActivityPolicy;
 - (void).cxx_destruct;
+@property(readonly) CSLThrottledActivityPolicy *throttledActivityPolicy; // @synthesize throttledActivityPolicy=_throttledActivityPolicy;
 - (id)policy:(id)arg1 budgetManagerForContext:(id)arg2;
 - (id)responseForActivity:(id)arg1 withState:(id)arg2;
 - (_Bool)appliesToActivity:(id)arg1;

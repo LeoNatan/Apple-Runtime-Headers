@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     MNAnnouncementPlan *_plan;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MNAnnouncementPlan *plan; // @synthesize plan=_plan;
 @property(nonatomic) double speed; // @synthesize speed=_speed;
 @property(nonatomic) double distance; // @synthesize distance=_distance;
 @property(retain, nonatomic) NSArray *events; // @synthesize events=_events;
 @property(nonatomic) __weak MNGuidanceEventManager *manager; // @synthesize manager=_manager;
-- (void).cxx_destruct;
 - (id)nextEvent;
 - (void)_dropToResolveConflict:(id)arg1;
 - (_Bool)_compressToResolveConflict:(id)arg1;

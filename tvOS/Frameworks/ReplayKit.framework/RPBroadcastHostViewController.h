@@ -15,10 +15,10 @@
     NSXPCListenerEndpoint *_listenerEndpoint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCListenerEndpoint *listenerEndpoint; // @synthesize listenerEndpoint=_listenerEndpoint;
 @property(retain, nonatomic) RPBroadcastExtensionHostContext *hostContext; // @synthesize hostContext=_hostContext;
 @property(nonatomic) __weak RPBroadcastViewController *broadcastViewController; // @synthesize broadcastViewController=_broadcastViewController;
-- (void).cxx_destruct;
 - (void)updateBroadcastHandlerListenerEndpoint;
 - (oneway void)completeSetupWithBroadcastURL:(id)arg1;
 

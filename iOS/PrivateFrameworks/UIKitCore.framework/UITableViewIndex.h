@@ -32,11 +32,11 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _drawingInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets drawingInsets; // @synthesize drawingInsets=_drawingInsets;
 @property(readonly, nonatomic) _Bool pastBottom; // @synthesize pastBottom=_pastBottom;
 @property(readonly, nonatomic) _Bool pastTop; // @synthesize pastTop=_pastTop;
 @property(readonly, nonatomic) long long selectedSection; // @synthesize selectedSection=_selectedSection;
-- (void).cxx_destruct;
 - (long long)_indexForEntryAtPoint:(struct CGPoint)arg1;
 - (_Bool)_accessibilityHUDGestureManagerCancelsTouchesInView:(id)arg1;
 - (void)_accessibilityHUDGestureManager:(id)arg1 gestureLiftedAtPoint:(struct CGPoint)arg2;

@@ -19,8 +19,8 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
-@property(retain, nonatomic) NSMutableArray *mClasses; // @synthesize mClasses=_mClasses;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *mClasses; // @synthesize mClasses=_mClasses;
 - (void)addClass:(id)arg1;
 @property(readonly, nonatomic) NSArray *classes;
 - (_Bool)_isSearchResult;

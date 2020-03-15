@@ -24,10 +24,10 @@
 
 + (id)discoverAvailableWidgetsWithError:(id *)arg1;
 + (id)_widgetExtensionsDiscoveryAttributes;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_widgetVisbilityManager) WGWidgetVisibilityManager *widgetVisbilityManager; // @synthesize widgetVisbilityManager=_widgetVisbilityManager;
 @property(nonatomic) id <_WGParentDataSourceManager> parentDataSourceManager; // @synthesize parentDataSourceManager=_parentDataSourceManager;
 @property(retain, nonatomic, getter=_plugInDiscoveryToken, setter=_setPlugInDiscoveryToken:) id plugInDiscoveryToken; // @synthesize plugInDiscoveryToken=_plugInDiscoveryToken;
-- (void).cxx_destruct;
 - (void)_endContinuousPlugInDiscovery;
 - (void)_beginContinuousPlugInDiscovery;
 - (void)_updatePublishedWidgetExtensions;

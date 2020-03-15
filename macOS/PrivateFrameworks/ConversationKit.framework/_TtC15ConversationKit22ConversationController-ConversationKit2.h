@@ -6,9 +6,7 @@
 
 #import <ConversationKit/_TtC15ConversationKit22ConversationController.h>
 
-#import <ConversationKit/AVCRemoteVideoClientDelegate-Protocol.h>
-
-@interface _TtC15ConversationKit22ConversationController (ConversationKit2) <AVCRemoteVideoClientDelegate>
+@interface _TtC15ConversationKit22ConversationController (ConversationKit2)
 - (void)remoteVideoClient:(id)arg1 remoteVideoAttributesDidChange:(id)arg2;
 - (void)remoteVideoClient:(id)arg1 videoDidDegrade:(BOOL)arg2;
 - (void)remoteVideoClient:(id)arg1 remoteVideoDidPause:(BOOL)arg2;

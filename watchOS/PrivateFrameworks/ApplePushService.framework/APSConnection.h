@@ -56,10 +56,10 @@
 + (struct __SecIdentity *)copyIdentity;
 + (void)_safelyCancelAndReleaseConnection:(id)arg1;
 + (_Bool)isValidEnvironment:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isShutdown; // @synthesize isShutdown=_isShutdown;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *ivarQueue; // @synthesize ivarQueue=_ivarQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
-- (void).cxx_destruct;
 - (void)confirmReceiptForMessage:(id)arg1;
 - (void)requestKeepAlive;
 - (void)invalidateTokenForTopic:(id)arg1 identifier:(id)arg2;

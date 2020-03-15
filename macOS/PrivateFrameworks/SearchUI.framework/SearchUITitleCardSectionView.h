@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsRecyclingForCardSection:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NUIContainerBoxView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) TLKLabel *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)updateWithRowModel:(id)arg1;
 - (id)setupContentView;
 

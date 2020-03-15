@@ -17,9 +17,9 @@
 + (id)buildRequiredOnlyWithType:(id)arg1;
 + (id)buildWithType:(id)arg1 withPort:(id)arg2;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadPort; // @synthesize payloadPort=_payloadPort;
 @property(copy, nonatomic) NSString *payloadType; // @synthesize payloadType=_payloadType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     PDFAccessibilityAssociationInfo *_associationInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PDFAccessibilityAssociationInfo *associationInfo; // @synthesize associationInfo=_associationInfo;
 @property(nonatomic) __weak PDFAnnotation *annotation; // @synthesize annotation=_annotation;
-- (void).cxx_destruct;
 - (id)description;
 - (id)accessibilityNodeRepresentation;
 - (id)nextNodeWithAnnotationType:(id)arg1;

@@ -14,8 +14,8 @@
 }
 
 + (id)sharedAccounting;
-@property(retain, nonatomic) NSMutableDictionary *actions; // @synthesize actions=_actions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *actions; // @synthesize actions=_actions;
 - (long long)resultForAction:(id)arg1;
 - (void)reset;
 - (void)recordResult:(long long)arg1 forAction:(id)arg2;

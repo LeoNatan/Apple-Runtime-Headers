@@ -18,12 +18,12 @@
     NSMutableSet *_allServerHostPorts;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *allServerHostPorts; // @synthesize allServerHostPorts=_allServerHostPorts;
 @property(retain) NSMutableDictionary *results; // @synthesize results=_results;
 @property(retain) NSObject<OS_os_log> *logHandle; // @synthesize logHandle=_logHandle;
 @property __weak NSObject<OS_dispatch_queue> *weakDelegateQueue; // @synthesize weakDelegateQueue=_weakDelegateQueue;
 @property __weak id <AssetCacheServicesReporterDelegate> weakDelegate; // @synthesize weakDelegate=_weakDelegate;
-- (void).cxx_destruct;
 - (id)sortedHostPorts:(id)arg1 usingSortInfo:(id)arg2;
 - (id)serverSortInfoForHostPort:(id)arg1 rank:(id)arg2;
 - (void)didFinishWithResults:(id)arg1;
@@ -31,7 +31,9 @@
 - (void)willStartGatheringResultsForKeyPath:(id)arg1;
 - (id)keyPath:(id)arg1 byAppendingKey:(id)arg2;
 - (void)reportReachability;
-- (void)reportPublicIPAddressRangesAndFavoredServerRangesWithKeyPath:(id)arg1;
+- (void)reportPublicIPAddressRangesWithKeyPath:(id)arg1 andFavoredServerRangesWithKeyPath:(id)arg2 generateOptions:(CDUnknownBlockType)arg3;
+- (void)reportFreshPublicIPAddressRangesAndFavoredServerRangesWithKeyPath:(id)arg1;
+- (void)reportCachedPublicIPAddressRangesAndFavoredServerRangesWithKeyPath:(id)arg1;
 - (id)locateServersWithOptions:(id)arg1;
 - (void)reportServersWithKeyPath:(id)arg1 generateOptions:(CDUnknownBlockType)arg2;
 - (void)reportFreshServersWithKeyPath:(id)arg1;

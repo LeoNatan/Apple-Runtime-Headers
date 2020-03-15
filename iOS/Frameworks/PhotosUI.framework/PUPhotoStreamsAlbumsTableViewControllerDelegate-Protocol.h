@@ -6,10 +6,11 @@
 
 #import <PhotosUI/NSObject-Protocol.h>
 
-@class PUPhotoStreamAlbumsTableViewController;
+@class NSObject, PUPhotoStreamAlbumsTableViewController;
+@protocol PLAlbumProtocol;
 
 @protocol PUPhotoStreamsAlbumsTableViewControllerDelegate <NSObject>
 - (void)controllerWillCreateNewAlbum:(PUPhotoStreamAlbumsTableViewController *)arg1;
-- (void)controller:(PUPhotoStreamAlbumsTableViewController *)arg1 didSelectAlbum:(struct NSObject *)arg2;
+- (void)controller:(PUPhotoStreamAlbumsTableViewController *)arg1 didSelectAlbum:(NSObject<PLAlbumProtocol> *)arg2;
 @end
 

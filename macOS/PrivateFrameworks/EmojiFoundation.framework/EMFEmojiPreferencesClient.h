@@ -17,9 +17,9 @@
 
 + (id)differentialPrivacyRecorderForEmoji:(id)arg1 usageMode:(id)arg2;
 + (id)serviceInterface;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isValid; // @synthesize isValid=_isValid;
 @property(retain, nonatomic) NSString *machName; // @synthesize machName=_machName;
-- (void).cxx_destruct;
 - (void)didDisplaySkinToneHelp;
 - (void)didViewEmojiIndex:(long long)arg1 forCategory:(id)arg2;
 - (void)didUseEmoji:(id)arg1 usageMode:(id)arg2 typingName:(id)arg3;

@@ -19,10 +19,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)requestForTargetBundleID:(id)arg1 targetPid:(int)arg2 notificationPayload:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *notificationPayload; // @synthesize notificationPayload=_notificationPayload;
 @property(nonatomic) int targetPid; // @synthesize targetPid=_targetPid;
 @property(copy, nonatomic) NSString *targetBundleID; // @synthesize targetBundleID=_targetBundleID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithTargetBundleID:(id)arg1 targetPid:(int)arg2 notificationPayload:(id)arg3;

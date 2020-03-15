@@ -15,8 +15,8 @@
     NSUUID *_uuid;
 }
 
-@property(retain) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
+@property(retain) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 

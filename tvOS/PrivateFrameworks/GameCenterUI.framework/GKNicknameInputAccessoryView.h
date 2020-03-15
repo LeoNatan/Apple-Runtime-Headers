@@ -20,6 +20,7 @@
     UIView *_containerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) UILabel *suggestionsLabel; // @synthesize suggestionsLabel=_suggestionsLabel;
 @property(retain, nonatomic) UIButton *thirdSuggestion; // @synthesize thirdSuggestion=_thirdSuggestion;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) UIButton *firstSuggestion; // @synthesize firstSuggestion=_firstSuggestion;
 @property __weak id <GKNicknameInputAccessoryViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UILabel *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (void)suggestionPicked:(id)arg1;
 @property(retain, nonatomic) NSArray *suggestions; // @dynamic suggestions;
 - (void)awakeFromNib;

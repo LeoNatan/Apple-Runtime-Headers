@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(copy, nonatomic) NSArray *textObjects; // @synthesize textObjects=_textObjects;
-- (void).cxx_destruct;
 - (void)setText:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -14,9 +14,9 @@
     struct _NSRange _selectionRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange selectionRange; // @synthesize selectionRange=_selectionRange;
 @property(copy, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
-- (void).cxx_destruct;
 - (id)attributedStringForFontSize:(double)arg1 foregroundColor:(id)arg2;
 - (id)initWithAttributedString:(id)arg1 range:(struct _NSRange)arg2;
 

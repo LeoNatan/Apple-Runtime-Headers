@@ -24,12 +24,12 @@
 + (void)setSharedManager:(id)arg1;
 + (id)sharedManager;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *observedAccessories; // @synthesize observedAccessories=_observedAccessories;
 @property(readonly, nonatomic) HMFTimer *saveTimer; // @synthesize saveTimer=_saveTimer;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(nonatomic) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
-- (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
 - (void)_reallySave;
 - (void)__save;

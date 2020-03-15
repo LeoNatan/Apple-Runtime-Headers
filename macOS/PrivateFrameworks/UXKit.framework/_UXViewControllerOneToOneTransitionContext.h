@@ -19,6 +19,7 @@
     struct CGRect _toStartFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect toStartFrame; // @synthesize toStartFrame=_toStartFrame;
 @property(nonatomic) struct CGRect toEndFrame; // @synthesize toEndFrame=_toEndFrame;
 @property(nonatomic) struct CGRect fromEndFrame; // @synthesize fromEndFrame=_fromEndFrame;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) UXViewController *fromViewController; // @synthesize fromViewController=_fromViewController;
 - (void)setArbitraryTransitionCompletionHandler:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)arbitraryTransitionCompletionHandler;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UXView *fromView;
 @property(readonly, nonatomic) UXView *toView;
 - (struct CGRect)finalFrameForViewController:(id)arg1;

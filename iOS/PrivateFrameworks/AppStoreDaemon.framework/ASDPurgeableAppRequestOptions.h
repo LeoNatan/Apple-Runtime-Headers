@@ -16,10 +16,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *volume; // @synthesize volume=_volume;
 @property(nonatomic) long long urgency; // @synthesize urgency=_urgency;
 @property(nonatomic) _Bool performAvailablityCheck; // @synthesize performAvailablityCheck=_performAvailablityCheck;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_loadedImageActualTimes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *loadedImageActualTimes; // @synthesize loadedImageActualTimes=_loadedImageActualTimes;
 @property(retain, nonatomic) NSMutableDictionary *imageProxyMappings; // @synthesize imageProxyMappings=_imageProxyMappings;
 @property(retain, nonatomic) NSMutableSet *imageProxies; // @synthesize imageProxies=_imageProxies;
 @property(retain, nonatomic) TVPExternalImageConfig *config; // @synthesize config=_config;
-- (void).cxx_destruct;
 - (id)_closestURLForImageTime:(double)arg1 actualTime:(double *)arg2;
 - (unsigned long long)_closestImageIndexForTime:(double)arg1 actualTime:(double *)arg2 imageInterval:(double)arg3;
 - (id)loadedImageForTime:(double)arg1;

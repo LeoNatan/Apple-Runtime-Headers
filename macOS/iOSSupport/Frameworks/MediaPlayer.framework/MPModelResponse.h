@@ -17,12 +17,12 @@
     MPSectionedCollection *_results;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) MPSectionedCollection *results; // @synthesize results=_results;
 @property(readonly, nonatomic, getter=isValid) BOOL valid; // @synthesize valid=_valid;
 @property(retain, nonatomic) MPPropertySet *deferredItemProperties; // @synthesize deferredItemProperties=_deferredItemProperties;
 @property(retain, nonatomic) MPPropertySet *deferredSectionProperties; // @synthesize deferredSectionProperties=_deferredSectionProperties;
 @property(readonly, copy, nonatomic) MPModelRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)_invalidate;
 @property(readonly, nonatomic, getter=isEmpty) BOOL empty;
 - (void)getChangeDetailsFromPreviousResponse:(id)arg1 completion:(CDUnknownBlockType)arg2;

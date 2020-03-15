@@ -21,11 +21,11 @@
     HUContainedServicesGridViewController *_presentedServiceGroupDetailsViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak HUContainedServicesGridViewController *presentedServiceGroupDetailsViewController; // @synthesize presentedServiceGroupDetailsViewController=_presentedServiceGroupDetailsViewController;
 @property(copy, nonatomic) NSSet *whitelistedServices; // @synthesize whitelistedServices=_whitelistedServices;
 @property(copy, nonatomic) NSSet *blacklistedServices; // @synthesize blacklistedServices=_blacklistedServices;
 @property(readonly, nonatomic) HFActionSetBuilder *actionSetBuilder; // @synthesize actionSetBuilder=_actionSetBuilder;
-- (void).cxx_destruct;
 - (void)_removeActionsInServiceActionItem:(id)arg1;
 - (id)detailsViewControllerForContainedServiceGridViewController:(id)arg1 item:(id)arg2;
 - (_Bool)hasDetailsActionForContainedServiceGridViewController:(id)arg1 item:(id)arg2;

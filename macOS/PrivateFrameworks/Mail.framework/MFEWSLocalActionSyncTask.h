@@ -22,11 +22,11 @@
     ECLocalMessageActionResults *_resultsToPersist;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ECLocalMessageActionResults *resultsToPersist; // @synthesize resultsToPersist=_resultsToPersist;
 @property(nonatomic) BOOL needToPersistResults; // @synthesize needToPersistResults=_needToPersistResults;
 @property(nonatomic) BOOL needToCheckForActions; // @synthesize needToCheckForActions=_needToCheckForActions;
 @property(nonatomic) BOOL actionOperationRunning; // @synthesize actionOperationRunning=_actionOperationRunning;
-- (void).cxx_destruct;
 - (void)_createProgressForAction:(id)arg1;
 - (void)persistActionResultsOperationCompleted:(id)arg1 needToReplayAction:(BOOL)arg2;
 - (void)messageActionSyncOperationCompleted:(id)arg1 results:(id)arg2;

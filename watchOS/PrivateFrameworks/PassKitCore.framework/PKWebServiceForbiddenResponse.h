@@ -15,10 +15,10 @@
     NSString *_localizedDescription;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
 @property(copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(copy, nonatomic) NSNumber *errorCode; // @synthesize errorCode=_errorCode;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 
 @end

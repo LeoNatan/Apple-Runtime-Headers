@@ -14,8 +14,8 @@
 }
 
 + (id)progressSpecifier;
-@property(retain) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator;
 - (void).cxx_destruct;
+@property(retain) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator;
 
 @end
 

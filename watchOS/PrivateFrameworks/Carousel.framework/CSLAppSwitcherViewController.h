@@ -44,8 +44,8 @@
     _Bool _runningPPTTest;
 }
 
-@property(readonly, nonatomic) CSLAppSwitcherView *switcherView; // @synthesize switcherView=_switcherView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CSLAppSwitcherView *switcherView; // @synthesize switcherView=_switcherView;
 - (void)backlight:(id)arg1 didTurnOn:(_Bool)arg2 atContinuousTime:(unsigned long long)arg3 forReason:(unsigned int)arg4;
 - (void)backlight:(id)arg1 willBeOn:(_Bool)arg2 forReason:(unsigned int)arg3;
 - (void)PPTPanAround:(id)arg1 panCount:(int)arg2;

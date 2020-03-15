@@ -12,10 +12,12 @@ __attribute__((visibility("hidden")))
 @interface UIInputViewSetPlacement_DockResponderApplicator : UIInputViewSetPlacement_FloatingApplicator
 {
     UIKeyboardPopoverContainer *_popover;
+    struct CGRect _popoverRectPlaceholder;
 }
 
-@property(retain, nonatomic) UIKeyboardPopoverContainer *popover; // @synthesize popover=_popover;
 - (void).cxx_destruct;
+@property(nonatomic) struct CGRect popoverRectPlaceholder; // @synthesize popoverRectPlaceholder=_popoverRectPlaceholder;
+@property(retain, nonatomic) UIKeyboardPopoverContainer *popover; // @synthesize popover=_popover;
 - (BOOL)isEqual:(id)arg1;
 - (struct CGRect)popoverFrame;
 - (void)invalidate;

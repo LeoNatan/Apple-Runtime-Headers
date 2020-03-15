@@ -52,6 +52,7 @@
     NSString *_strongMark;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *strongMark; // @synthesize strongMark=_strongMark;
 @property(copy, nonatomic) NSString *emphasisMark; // @synthesize emphasisMark=_emphasisMark;
 @property(copy, nonatomic) NSString *ulItemMark; // @synthesize ulItemMark=_ulItemMark;
@@ -90,7 +91,6 @@
 @property(nonatomic) _Bool escapeSnob; // @synthesize escapeSnob=_escapeSnob;
 @property(nonatomic) _Bool unicodeSnob; // @synthesize unicodeSnob=_unicodeSnob;
 @property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
-- (void).cxx_destruct;
 - (id)unifiable;
 - (unsigned short)nameToCodepoint:(id)arg1;
 - (void)parser:(id)arg1 foundData:(id)arg2;

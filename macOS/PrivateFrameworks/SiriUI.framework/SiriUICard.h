@@ -32,6 +32,7 @@
 
 + (id)mostRecentSummaryTitle;
 + (double)headerHeight;
+- (void).cxx_destruct;
 @property(retain) NCCardViewController *cardViewController; // @synthesize cardViewController=_cardViewController;
 @property __weak NSView *supplementaryHeaderView; // @synthesize supplementaryHeaderView=_supplementaryHeaderView;
 @property __weak NSView *cardContent; // @synthesize cardContent=_cardContent;
@@ -42,7 +43,6 @@
 @property(nonatomic) __weak id <SiriUICardDelegate> delegate; // @synthesize delegate=_delegate;
 @property __weak SiriUISnippetControllerCell *cellView; // @synthesize cellView=_cellView;
 @property(retain) SiriUICardContentViewController *contentController; // @synthesize contentController=_contentController;
-- (void).cxx_destruct;
 - (void)stashCardView:(id)arg1;
 - (BOOL)allowsStashingCardView:(id)arg1;
 - (void)stash;

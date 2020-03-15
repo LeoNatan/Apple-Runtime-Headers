@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
 @property(retain) NSNumber *_usePerstentCache; // @synthesize _usePerstentCache=__usePerstentCache;
-- (void).cxx_destruct;
 @property(readonly) _Bool usePerstentCache; // @dynamic usePerstentCache;
 
 @end

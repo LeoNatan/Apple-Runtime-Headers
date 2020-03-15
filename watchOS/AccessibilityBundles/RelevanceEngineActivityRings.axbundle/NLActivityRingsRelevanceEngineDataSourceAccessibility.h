@@ -10,10 +10,10 @@
 {
 }
 
-+ (id)ringsElementWithActivitySummary:(id)arg1;
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (void)getElementsInSection:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 
 @end
 

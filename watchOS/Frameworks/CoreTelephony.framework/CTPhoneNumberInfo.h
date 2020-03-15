@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isRead; // @synthesize isRead=_isRead;
 @property(nonatomic) _Bool isEditable; // @synthesize isEditable=_isEditable;
 @property(nonatomic) _Bool isPresent; // @synthesize isPresent=_isPresent;
 @property(retain, nonatomic) NSString *displayPhoneNumber; // @synthesize displayPhoneNumber=_displayPhoneNumber;
 @property(retain, nonatomic) NSString *number; // @synthesize number=_number;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

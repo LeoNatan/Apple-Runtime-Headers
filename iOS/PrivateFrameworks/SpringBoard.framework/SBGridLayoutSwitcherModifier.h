@@ -26,6 +26,7 @@
     struct CGSize _fixedCardSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long layoutDirection; // @synthesize layoutDirection=_layoutDirection;
 @property(nonatomic) unsigned long long alignment; // @synthesize alignment=_alignment;
 @property(copy, nonatomic) NSString *softFilteredBundleIdentifier; // @synthesize softFilteredBundleIdentifier=_softFilteredBundleIdentifier;
@@ -36,7 +37,6 @@
 @property(nonatomic) __weak id <SBGridLayoutSwitcherModifierDelegate> gridDelegate; // @synthesize gridDelegate=_gridDelegate;
 @property(nonatomic) double cardScale; // @synthesize cardScale=_unroundedCardScale;
 @property(nonatomic) __weak id <SBFluidSwitcherScrollProvidingDelegate> scrollDelegate; // @synthesize scrollDelegate=_scrollDelegate;
-- (void).cxx_destruct;
 - (id)_softFilteredAppLayouts;
 - (struct CGSize)_scaledCardSize;
 - (struct CGSize)_cardSize;

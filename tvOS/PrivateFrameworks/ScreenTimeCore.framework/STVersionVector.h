@@ -16,9 +16,9 @@
     NSString *_editorIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *editorIdentifier; // @synthesize editorIdentifier=_editorIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *nodeByIdentifier; // @synthesize nodeByIdentifier=_nodeByIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)debugDescription;
 - (id)description;

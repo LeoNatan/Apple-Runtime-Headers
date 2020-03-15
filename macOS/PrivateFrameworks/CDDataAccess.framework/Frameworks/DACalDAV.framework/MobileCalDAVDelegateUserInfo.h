@@ -17,11 +17,11 @@
 }
 
 + (id)infoFromCalDAVDetails:(id)arg1 allowWrite:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL allowWrite; // @synthesize allowWrite=_allowWrite;
 @property(retain, nonatomic) NSString *uid; // @synthesize uid=_uid;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) NSString *principalPath; // @synthesize principalPath=_principalPath;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithPrincipalPath:(id)arg1 displayName:(id)arg2 allowWrite:(BOOL)arg3;
 

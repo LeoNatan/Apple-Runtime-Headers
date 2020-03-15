@@ -17,12 +17,12 @@
     NSTextField *_valueTextField;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextField *valueTextField; // @synthesize valueTextField=_valueTextField;
 @property(retain) NSTextField *labelTextField; // @synthesize labelTextField=_labelTextField;
 @property(nonatomic) BOOL isBottomRow; // @synthesize isBottomRow=_isBottomRow;
 @property(nonatomic) BOOL isTopRow; // @synthesize isTopRow=_isTopRow;
 @property(retain, nonatomic) PKPassField *field; // @synthesize field=_field;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

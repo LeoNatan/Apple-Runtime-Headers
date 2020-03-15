@@ -16,9 +16,9 @@
     NSString *_verificationCode;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *verificationCode; // @synthesize verificationCode=_verificationCode;
 @property(retain, nonatomic) NPKProtoStandaloneRequestHeader *requestHeader; // @synthesize requestHeader=_requestHeader;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

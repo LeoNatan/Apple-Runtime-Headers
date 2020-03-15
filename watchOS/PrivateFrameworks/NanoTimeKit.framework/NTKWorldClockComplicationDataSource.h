@@ -6,9 +6,11 @@
 
 #import <NanoTimeKit/NTKComplicationDataSource.h>
 
+@class NSNumber;
+
 @interface NTKWorldClockComplicationDataSource : NTKComplicationDataSource
 {
-    struct NSNumber *_minuteUpdateToken;
+    NSNumber *_minuteUpdateToken;
     _Bool _listeningForNotifications;
 }
 

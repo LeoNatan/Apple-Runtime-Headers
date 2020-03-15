@@ -14,9 +14,9 @@
     FBProcessWatchdogEventContext *_eventContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) FBProcessWatchdogEventContext *eventContext; // @synthesize eventContext=_eventContext;
 @property(readonly, nonatomic) long long event; // @synthesize event=_event;
-- (void).cxx_destruct;
 - (id)initWithProcess:(id)arg1 context:(id)arg2 policy:(id)arg3;
 
 @end

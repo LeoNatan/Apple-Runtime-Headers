@@ -9,7 +9,7 @@
 #import <HealthKit/NSCopying-Protocol.h>
 #import <HealthKit/NSSecureCoding-Protocol.h>
 
-@class HKCodedQuantity, HKCodedValueCollection, HKMedicalDate, HKMedicalDateInterval, HKRatioValue, HKUCUMUnitDisplayConverter, NSArray, NSDateComponents, NSString;
+@class HKCodedQuantity, HKCodedValueCollection, HKConcept, HKMedicalDate, HKMedicalDateInterval, HKRatioValue, HKUCUMUnitDisplayConverter, NSArray, NSDateComponents, NSString;
 @protocol NSObject><NSSecureCoding;
 
 @interface HKInspectableValue : NSObject <NSSecureCoding, NSCopying>
@@ -30,8 +30,8 @@
 + (id)inspectableValueWithCodedQuantity:(id)arg1;
 + (id)inspectableValueWithString:(id)arg1;
 + (id)inspectableValueWithValueType:(long long)arg1 value:(id)arg2;
-@property(readonly, nonatomic) long long valueType; // @synthesize valueType=_valueType;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long valueType; // @synthesize valueType=_valueType;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -40,6 +40,8 @@
 - (void)_assertValueClass:(Class)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
+@property(readonly, copy, nonatomic) HKConcept *dataAbsentReason;
+@property(readonly, copy, nonatomic) HKConcept *concept;
 @property(readonly, nonatomic) NSString *unitString;
 @property(readonly, nonatomic) HKUCUMUnitDisplayConverter *converter;
 @property(readonly, copy, nonatomic) NSArray *dataAbsentReasonCodings;

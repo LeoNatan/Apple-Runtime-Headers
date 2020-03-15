@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     id _observedObject;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL progressIncludesDownload; // @synthesize progressIncludesDownload=_progressIncludesDownload;
 @property(nonatomic) __weak id observedObject; // @synthesize observedObject=_observedObject;
 @property(retain, nonatomic) VEKProgress *progress; // @synthesize progress=_progress;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
 - (id)initWithObservedObject:(id)arg1;

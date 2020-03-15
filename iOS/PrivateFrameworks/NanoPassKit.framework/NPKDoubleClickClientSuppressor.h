@@ -21,11 +21,11 @@
 + (void)endDoubleClickClientSuppressionWithRequestToken:(unsigned long long)arg1;
 + (unsigned long long)requestDoubleClickClientSuppressionWithResponseHandler:(CDUnknownBlockType)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *suppressorQueue; // @synthesize suppressorQueue=_suppressorQueue;
 @property(nonatomic) unsigned long long nextSuppressionRequestToken; // @synthesize nextSuppressionRequestToken=_nextSuppressionRequestToken;
 @property(retain) NSMutableIndexSet *suppressionRequestTokens; // @synthesize suppressionRequestTokens=_suppressionRequestTokens;
 @property(retain, nonatomic) NPKAssertion *suppressionAssertion; // @synthesize suppressionAssertion=_suppressionAssertion;
-- (void).cxx_destruct;
 - (void)_postSuppressionStateChanged;
 - (void)_acquireSuppressionAssertionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_acquireSuppressionAssertionIfNeededWithCompletion:(CDUnknownBlockType)arg1;

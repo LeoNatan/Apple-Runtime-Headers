@@ -26,12 +26,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long endDate; // @synthesize endDate=_endDate;
 @property(nonatomic) long long startDate; // @synthesize startDate=_startDate;
 @property(retain, nonatomic) HDAWDHealthKitRoutineLocation *to; // @synthesize to=_to;
 @property(retain, nonatomic) HDAWDHealthKitRoutineLocation *from; // @synthesize from=_from;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

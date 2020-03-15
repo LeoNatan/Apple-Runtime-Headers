@@ -18,12 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedSafariDelegate;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *loginURL; // @synthesize loginURL=_loginURL;
 @property(retain, nonatomic) HKHealthRecordsStore *healthRecordsStore; // @synthesize healthRecordsStore=_healthRecordsStore;
-- (void).cxx_destruct;
 - (id)safariViewController:(id)arg1 excludedActivityTypesForURL:(id)arg2 title:(id)arg3;
 - (void)safariViewControllerDidFinish:(id)arg1;
-- (void)_postAWDMetricForSafariCancellation:(id)arg1;
 - (id)init;
 - (id)_init;
 

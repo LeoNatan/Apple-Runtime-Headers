@@ -15,8 +15,8 @@
     id <XCUIDevice> _device;
 }
 
-@property(readonly) id <XCUIDevice> device; // @synthesize device=_device;
 - (void).cxx_destruct;
+@property(readonly) id <XCUIDevice> device; // @synthesize device=_device;
 - (id)applicationImplForSpecifier:(id)arg1;
 - (id)_canonicalSpecifierFromSpecifier:(id)arg1;
 - (id)_identifierFromSpecifier:(id)arg1;

@@ -45,6 +45,7 @@
     id <PKAccountAutomaticPaymentsControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PKAccountAutomaticPaymentsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *automaticPayments; // @synthesize automaticPayments=_automaticPayments;
 @property(retain, nonatomic) NSArray *fundingSources; // @synthesize fundingSources=_fundingSources;
@@ -56,7 +57,6 @@
 @property(readonly, nonatomic) PKAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) long long paymentSetupContext; // @synthesize paymentSetupContext=_paymentSetupContext;
 @property(readonly, nonatomic) unsigned long long featureIdentifier; // @synthesize featureIdentifier=_featureIdentifier;
-- (void).cxx_destruct;
 - (void)paymentAuthorizationCoordinator:(id)arg1 didUpdateAccountServicePaymentMethod:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)paymentAuthorizationCoordinator:(id)arg1 didAuthorizeApplePayTrustSignature:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)paymentAuthorizationCoordinator:(id)arg1 didAuthorizePayment:(id)arg2 handler:(CDUnknownBlockType)arg3;

@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 + (id)CN2CCodeMap;
 + (id)CCode2CNMap;
 + (id)phoneNumberDataMap;
-@property(retain, nonatomic) NSCache *metadataCache; // @synthesize metadataCache=_metadataCache;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSCache *metadataCache; // @synthesize metadataCache=_metadataCache;
 - (id)getMetadataForNonGeographicalRegion:(id)arg1;
 - (id)getMetadataForRegion:(id)arg1;
 - (id)getAllMetadata;

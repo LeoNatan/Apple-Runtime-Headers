@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_6d721b98 *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
-@property(readonly) NSMutableDictionary *mountStatusDict; // @synthesize mountStatusDict=_mountStatusDict;
 - (void).cxx_destruct;
+@property(readonly) NSMutableDictionary *mountStatusDict; // @synthesize mountStatusDict=_mountStatusDict;
 - (void)enumerateUnresponsiveMountsBetweenStartTime:(id)arg1 endTime:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (void)enumerateMountsBlockingThread:(unsigned long long)arg1 betweenStartTime:(id)arg2 endTime:(id)arg3 block:(CDUnknownBlockType)arg4;
 - (BOOL)hasUnresponsiveMountsForThreadID:(unsigned long long)arg1;

@@ -15,10 +15,10 @@
     CDUnknownBlockType _handler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(copy, nonatomic) NSNumber *registrationToken; // @synthesize registrationToken=_registrationToken;
 @property(copy, nonatomic) NSString *notificationName; // @synthesize notificationName=_notificationName;
-- (void).cxx_destruct;
 - (id)initWithNotificationName:(id)arg1 registrationToken:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)init;
 

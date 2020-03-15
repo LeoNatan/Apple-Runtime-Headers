@@ -8,7 +8,7 @@
 
 #import <IBAppleTVCocoaTouchImageCatalogToolExtensions/IBICSchemaProvider-Protocol.h>
 
-@class IBICColorSpace, IBICContrastAppearance, IBICDeviceOrientation, IBICExtent, IBICIdiom, IBICLanguageDirection, IBICLuminosityAppearance, IBICPlatform, IBICRole, IBICScale, IBICSize, IBICSystemVersion, NSString;
+@class IBICColorSpace, IBICContrastAppearance, IBICDeviceOrientation, IBICExtent, IBICIdiom, IBICLanguageDirection, IBICLocale, IBICLuminosityAppearance, IBICPlatform, IBICRole, IBICScale, IBICSize, IBICSystemVersion, NSString;
 
 @interface IBICAppleTVSchemaAdditions : NSObject <IBICSchemaProvider>
 {
@@ -41,6 +41,7 @@
     IBICLanguageDirection *_anyLanguageDirection;
     IBICLanguageDirection *_leftToRightLanguageDirection;
     IBICLanguageDirection *_rightToLeftLanguageDirection;
+    IBICLocale *_developmentLanguageLocale;
     IBICLuminosityAppearance *_anyLightness;
     IBICLuminosityAppearance *_darkAppearance;
     IBICLuminosityAppearance *_lightAppearance;

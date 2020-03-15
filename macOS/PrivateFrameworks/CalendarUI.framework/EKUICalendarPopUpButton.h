@@ -28,6 +28,7 @@
 
 + (id)_calendarForItem:(id)arg1;
 + (Class)cellClass;
+- (void).cxx_destruct;
 @property unsigned long long entityType; // @synthesize entityType=_entityType;
 @property __weak EKViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain) NSEvent *delayedEvent; // @synthesize delayedEvent=_delayedEvent;
@@ -42,7 +43,6 @@
 @property BOOL showCalendarSwatch; // @synthesize showCalendarSwatch=_showCalendarSwatch;
 @property BOOL showCalendarName; // @synthesize showCalendarName=_showCalendarName;
 @property(nonatomic) __weak EKCalendarItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)updateIcon;
 - (BOOL)isTruncated;
 - (void)mouseDown:(id)arg1;

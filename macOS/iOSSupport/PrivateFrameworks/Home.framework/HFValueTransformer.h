@@ -15,10 +15,10 @@
 
 + (id)identityTransformer;
 + (id)transformerForValueClass:(Class)arg1 transformBlock:(CDUnknownBlockType)arg2 reverseTransformBlock:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType reverseTransformBlock; // @synthesize reverseTransformBlock=_reverseTransformBlock;
 @property(copy, nonatomic) CDUnknownBlockType transformBlock; // @synthesize transformBlock=_transformBlock;
 @property(retain, nonatomic) Class valueClass; // @synthesize valueClass=_valueClass;
-- (void).cxx_destruct;
 - (id)valueForTransformedValue:(id)arg1;
 - (id)transformedValueForValue:(id)arg1;
 

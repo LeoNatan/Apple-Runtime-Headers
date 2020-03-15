@@ -18,13 +18,13 @@
     NSArray *_uiDataclasses;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *uiDataclasses; // @synthesize uiDataclasses=_uiDataclasses;
 @property(retain) ACUICertificatePanelManager *certPanelMgr; // @synthesize certPanelMgr=_certPanelMgr;
 @property(readonly, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property(nonatomic) BOOL disableAutoReload; // @synthesize disableAutoReload=_disableAutoReload;
 @property(retain) NSTextField *errorMessageLabel; // @synthesize errorMessageLabel=_errorMessageLabel;
 @property(retain) NSTextField *passwordField; // @synthesize passwordField=_passwordField;
-- (void).cxx_destruct;
 - (id)nibBundle;
 - (void)digestSaveError:(id)arg1 inWindow:(id)arg2 isSetup:(BOOL)arg3;
 - (void)digestSaveError:(id)arg1 inWindow:(id)arg2;

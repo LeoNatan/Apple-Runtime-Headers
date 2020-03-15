@@ -17,10 +17,10 @@
     NSString *_subHeaderDisplayName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *subHeaderDisplayName; // @synthesize subHeaderDisplayName=_subHeaderDisplayName;
 @property(copy, nonatomic) NSString *headerDisplayName; // @synthesize headerDisplayName=_headerDisplayName;
 @property(nonatomic) int cellType; // @synthesize cellType=_cellType;
-- (void).cxx_destruct;
 - (id)initWithSearchResultSection:(id)arg1;
 - (id)init;
 

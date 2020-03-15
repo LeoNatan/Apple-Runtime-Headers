@@ -17,11 +17,11 @@
     id <CalDAVPrincipal> _principal;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldTrySyncTokenForBulkUpload; // @synthesize shouldTrySyncTokenForBulkUpload=_shouldTrySyncTokenForBulkUpload;
 @property(retain, nonatomic) id <CalDAVPrincipal> principal; // @synthesize principal=_principal;
 @property(retain, nonatomic) id <CalDAVCalendar> calendar; // @synthesize calendar=_calendar;
 @property(retain, nonatomic) CalDAVBulkUploadTaskGroup *uploadTaskGroup; // @synthesize uploadTaskGroup=_uploadTaskGroup;
-- (void).cxx_destruct;
 - (void)cancelTaskGroup;
 - (void)startTaskGroup;
 - (void)_performRegularUpload;

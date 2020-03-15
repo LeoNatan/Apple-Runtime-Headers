@@ -17,9 +17,9 @@
     id <SXResourceDataSource> _resourceDataSource;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXResourceDataSource> resourceDataSource; // @synthesize resourceDataSource=_resourceDataSource;
 @property(readonly, nonatomic) id <SXDOMObjectProviding> DOMObjectProvider; // @synthesize DOMObjectProvider=_DOMObjectProvider;
-- (void).cxx_destruct;
 - (id)dataSourcesForReferences:(id)arg1;
 - (id)initWithDOMObjectProvider:(id)arg1 resourceDataSource:(id)arg2;
 

@@ -26,13 +26,13 @@
 + (id)applicationShortcutService;
 + (struct CGPath *)shadowPathForIconFrame:(struct CGRect)arg1 cornerRadius:(double)arg2;
 + (id)cacheForVariant:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *applicationShortcutWidgetBundleIdentifier; // @synthesize applicationShortcutWidgetBundleIdentifier=_applicationShortcutWidgetBundleIdentifier;
 @property(copy, nonatomic) NSURL *applicationBundleURL; // @synthesize applicationBundleURL=_applicationBundleURL;
 @property(retain) SFSearchResult *searchResult; // @synthesize searchResult=_searchResult;
 @property(retain) LSApplicationProxy *applicationProxy; // @synthesize applicationProxy=_applicationProxy;
 @property(nonatomic) unsigned long long variant; // @synthesize variant=_variant;
 @property(nonatomic) __weak id <SearchUIHomeScreenEngagementDelegate> engagementDelegate; // @synthesize engagementDelegate=_engagementDelegate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)appIconsChanged:(id)arg1;
 - (void)deviceManagementPolicyDidChange:(id)arg1;

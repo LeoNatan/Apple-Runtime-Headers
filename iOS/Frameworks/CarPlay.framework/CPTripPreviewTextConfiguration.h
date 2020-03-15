@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *overviewButtonTitle; // @synthesize overviewButtonTitle=_overviewButtonTitle;
 @property(readonly, copy, nonatomic) NSString *additionalRoutesButtonTitle; // @synthesize additionalRoutesButtonTitle=_additionalRoutesButtonTitle;
 @property(readonly, copy, nonatomic) NSString *startButtonTitle; // @synthesize startButtonTitle=_startButtonTitle;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStartButtonTitle:(id)arg1 additionalRoutesButtonTitle:(id)arg2 overviewButtonTitle:(id)arg3;

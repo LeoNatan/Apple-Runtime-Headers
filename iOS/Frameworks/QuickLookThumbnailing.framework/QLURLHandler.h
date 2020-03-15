@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsAccessToExternalResources; // @synthesize needsAccessToExternalResources=_needsAccessToExternalResources;
 @property(nonatomic) long long externalResourcesHandle; // @synthesize externalResourcesHandle=_externalResourcesHandle;
 @property(copy, nonatomic) NSString *externalResourcesToken; // @synthesize externalResourcesToken=_externalResourcesToken;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSString *fileExtensionToken; // @synthesize fileExtensionToken=_fileExtensionToken;
 @property(nonatomic) long long physicalFileExtensionHandle; // @synthesize physicalFileExtensionHandle=_physicalFileExtensionHandle;
 @property(nonatomic) long long fileExtensionHandle; // @synthesize fileExtensionHandle=_fileExtensionHandle;
-- (void).cxx_destruct;
 - (char *)sandboxExtensionIssueFileWithClass:(const char *)arg1 path:(const char *)arg2 flags:(unsigned int)arg3;
 - (long long)sandboxExtensionConsume:(const char *)arg1;
 - (void)sandboxExtensionRelease:(long long)arg1;

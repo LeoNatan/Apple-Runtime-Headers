@@ -28,8 +28,8 @@
     _Bool _recordingMode;
 }
 
-@property(nonatomic) _Bool recordingMode; // @synthesize recordingMode=_recordingMode;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool recordingMode; // @synthesize recordingMode=_recordingMode;
 - (void)captureOutput:(id)arg1 didOutputMetadataObjects:(id)arg2 fromConnection:(id)arg3;
 - (void)capturedSynchedOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer *)arg2 fromVideoConnection:(id)arg3 metaDataOutput:(id)arg4 didOutputMetadataObjects:(id)arg5 didOutputDepthData:(id)arg6 atTime:(CDStruct_1b6d18a9)arg7;
 - (void)dataOutputSynchronizer:(id)arg1 didOutputSynchronizedDataCollection:(id)arg2;
@@ -39,6 +39,7 @@
 - (id)prepareToStart;
 - (void)configureCaptureDevice;
 - (id)configureCaptureSession;
+- (void)reconfigure:(id)arg1;
 - (id)outputsForSynchronizer;
 - (unsigned long long)providedDataTypes;
 - (void)dealloc;

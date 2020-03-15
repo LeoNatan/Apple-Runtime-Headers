@@ -36,6 +36,7 @@
 + (id)newWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4;
 + (id)newWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(_Bool)arg3;
 + (id)newWithMessage:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldEncrypt; // @synthesize shouldEncrypt=_shouldEncrypt;
 @property(nonatomic) _Bool shouldSign; // @synthesize shouldSign=_shouldSign;
 @property(nonatomic) long long action; // @synthesize action=_action;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) MFAttachmentCompositionContext *attachmentContext; // @synthesize attachmentContext=_attachmentContext;
 @property(nonatomic) __weak id <MFDeliveryDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSDictionary *compositionSpecification; // @synthesize compositionSpecification=_compositionSpecification;
-- (void).cxx_destruct;
 - (id)originalMessageObjectID;
 - (void)setAccount:(id)arg1;
 - (void)setArchiveAccount:(id)arg1;

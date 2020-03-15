@@ -17,21 +17,19 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_placecardsReceived;
     NSMutableSet *_placecardsMissed;
     NSMutableArray *_preloadBatches;
-    _Bool _isSufficientlyLoaded;
     unsigned long long _currentBatchGeneration;
     _GEOTransitPreloadCamera *_camera;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _GEOTransitPreloadCamera *camera; // @synthesize camera=_camera;
 @property(nonatomic) unsigned long long currentBatchGeneration; // @synthesize currentBatchGeneration=_currentBatchGeneration;
-@property(nonatomic) _Bool isSufficientlyLoaded; // @synthesize isSufficientlyLoaded=_isSufficientlyLoaded;
 @property(retain, nonatomic) NSMutableArray *preloadBatches; // @synthesize preloadBatches=_preloadBatches;
 @property(retain, nonatomic) NSMutableSet *placecardsMissed; // @synthesize placecardsMissed=_placecardsMissed;
 @property(retain, nonatomic) NSMutableSet *placecardsReceived; // @synthesize placecardsReceived=_placecardsReceived;
 @property(retain, nonatomic) GEOTileKeyList *tilesMissed; // @synthesize tilesMissed=_tilesMissed;
 @property(retain, nonatomic) GEOTileKeyList *tilesReceived; // @synthesize tilesReceived=_tilesReceived;
 @property(retain, nonatomic) GEOTileKeyList *tilesLoadingOrLoaded; // @synthesize tilesLoadingOrLoaded=_tilesLoadingOrLoaded;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

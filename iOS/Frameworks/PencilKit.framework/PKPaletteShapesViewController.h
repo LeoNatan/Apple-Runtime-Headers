@@ -18,9 +18,9 @@
     NSArray *_shapes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *shapes; // @synthesize shapes=_shapes;
 @property(nonatomic) __weak id <PKPaletteShapesViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;

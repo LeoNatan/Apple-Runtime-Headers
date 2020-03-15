@@ -17,12 +17,12 @@
     struct __MecabraContext *_mecabraContext;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct __MecabraContext *mecabraContext; // @synthesize mecabraContext=_mecabraContext;
 @property(nonatomic) struct __Mecabra *mecabra; // @synthesize mecabra=_mecabra;
 @property(nonatomic) int textContentType; // @synthesize textContentType=_textContentType;
 @property(copy, nonatomic) NSString *rightDocumentContext; // @synthesize rightDocumentContext=_rightDocumentContext;
 @property(copy, nonatomic) NSString *leftDocumentContext; // @synthesize leftDocumentContext=_leftDocumentContext;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *environmentDebuggingInformation;
 - (void)declareEndOfSentence;
 - (void)addPunctuationCandidateToContext:(id)arg1;

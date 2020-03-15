@@ -13,8 +13,8 @@
     TVLMenuElement *_menu;
 }
 
-@property(retain, nonatomic) TVLMenuElement *menu; // @synthesize menu=_menu;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TVLMenuElement *menu; // @synthesize menu=_menu;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 feedDocument:(id)arg2;
 

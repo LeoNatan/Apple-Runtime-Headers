@@ -23,12 +23,12 @@
 }
 
 + (id)defaultLocationEventBuilderForHome:(id)arg1 eventType:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HUTriggerConditionEditorItemModuleController *conditionEditorModuleController; // @synthesize conditionEditorModuleController=_conditionEditorModuleController;
 @property(readonly, nonatomic) HUPresenceUserPickerItemModuleController *userPickerModuleController; // @synthesize userPickerModuleController=_userPickerModuleController;
 @property(readonly, nonatomic) __weak id <HUTriggerEditorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(readonly, nonatomic) HFLocationTriggerBuilder *triggerBuilder; // @synthesize triggerBuilder=_triggerBuilder;
-- (void).cxx_destruct;
 - (void)presenceUserPickerItemModuleController:(id)arg1 presentViewController:(id)arg2;
 - (void)resetSelectedLocationToHomeForPresenceUserPickerItemModuleController:(id)arg1;
 - (void)regionEditorDidCancel:(id)arg1;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <UIDragSession> _dragSession;
 }
 
-@property(retain, nonatomic) id <UIDragSession> dragSession; // @synthesize dragSession=_dragSession;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <UIDragSession> dragSession; // @synthesize dragSession=_dragSession;
 - (id)description;
 @property(readonly, nonatomic) _Bool isActive;
 

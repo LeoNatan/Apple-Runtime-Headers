@@ -17,9 +17,9 @@
     UIViewController *_containeeViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *containeeViewController; // @synthesize containeeViewController=_containeeViewController;
 @property(retain, nonatomic) CSLAppSwitcherItem *switcherItem; // @synthesize switcherItem=_switcherItem;
-- (void).cxx_destruct;
 - (void)claimContainee;
 - (void)performUnzoomedActionAnimated:(_Bool)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;

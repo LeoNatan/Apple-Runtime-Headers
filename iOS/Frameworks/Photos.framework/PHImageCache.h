@@ -19,8 +19,8 @@
     id <PHImageCacheDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PHImageCacheDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PHImageCacheDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_didReceiveMemoryWarningNotification:(id)arg1;
 - (void)commitChangesWithQueueToProcessDeletes:(id)arg1;
 - (void)removeAllEntries;

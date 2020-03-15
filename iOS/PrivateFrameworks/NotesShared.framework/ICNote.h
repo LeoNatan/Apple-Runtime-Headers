@@ -93,6 +93,7 @@
 + (id)newPlaceholderObjectForRecordName:(id)arg1 accountID:(id)arg2 context:(id)arg3;
 + (id)newCloudObjectForRecord:(id)arg1 accountID:(id)arg2 context:(id)arg3;
 + (id)existingCloudObjectForRecordID:(id)arg1 accountID:(id)arg2 context:(id)arg3;
+- (void).cxx_destruct;
 @property _Bool isRecoveringCryptoWrappedKey; // @synthesize isRecoveringCryptoWrappedKey;
 @property(nonatomic) _Bool shouldAddMediaAsynchronously; // @synthesize shouldAddMediaAsynchronously;
 @property(retain, nonatomic) id reservedForTextStorage; // @synthesize reservedForTextStorage=_reservedForTextStorage;
@@ -105,7 +106,6 @@
 @property(retain, nonatomic) TTMergeableStringVersionedDocument *document; // @synthesize document=_document;
 @property(retain) NSData *decryptedData; // @synthesize decryptedData;
 @property(copy, nonatomic) TTVectorMultiTimestamp *archivedTimestamp; // @synthesize archivedTimestamp;
-- (void).cxx_destruct;
 - (_Bool)populateReplicaIDToUserIDDictIfNecessary;
 - (void)mergeReplicaAndUserIDsFromDictionary:(id)arg1;
 - (void)addReplicaID:(id)arg1 forUserID:(id)arg2;

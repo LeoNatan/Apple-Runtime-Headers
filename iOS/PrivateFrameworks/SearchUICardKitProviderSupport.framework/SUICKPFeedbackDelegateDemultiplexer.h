@@ -18,10 +18,10 @@
     id <SearchUIFeedbackDelegate> _defaultDelegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SearchUIFeedbackDelegate> defaultDelegate; // @synthesize defaultDelegate=_defaultDelegate;
 @property(readonly, nonatomic) NSMutableDictionary *feedbackDelegatesByCardSectionViewIds; // @synthesize feedbackDelegatesByCardSectionViewIds=_feedbackDelegatesByCardSectionViewIds;
 @property(readonly, nonatomic) NSMutableDictionary *feedbackDelegatesByCardSectionIdentifiers; // @synthesize feedbackDelegatesByCardSectionIdentifiers=_feedbackDelegatesByCardSectionIdentifiers;
-- (void).cxx_destruct;
 - (void)presentViewControllerForCard:(id)arg1 animate:(_Bool)arg2;
 - (void)cardSectionViewDidSelectPreferredPunchoutIndex:(long long)arg1;
 - (void)cardSectionViewDidInvalidateSize:(id)arg1;

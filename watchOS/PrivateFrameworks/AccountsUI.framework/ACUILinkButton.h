@@ -13,8 +13,8 @@
     NSString *_acui_titleString;
 }
 
-@property(retain) NSString *acui_titleString; // @synthesize acui_titleString=_acui_titleString;
 - (void).cxx_destruct;
+@property(retain) NSString *acui_titleString; // @synthesize acui_titleString=_acui_titleString;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)setHighlighted:(_Bool)arg1;
 - (id)_normalStringAttributes;

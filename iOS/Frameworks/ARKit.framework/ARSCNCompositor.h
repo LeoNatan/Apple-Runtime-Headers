@@ -25,6 +25,7 @@
     double _filterOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double filterOffset; // @synthesize filterOffset=_filterOffset;
 @property(nonatomic) double filterScale; // @synthesize filterScale=_filterScale;
 @property(nonatomic) double filterEpsilon; // @synthesize filterEpsilon=_filterEpsilon;
@@ -38,7 +39,6 @@
 @property(nonatomic) long long compositorAlgorithm; // @synthesize compositorAlgorithm=_compositorAlgorithm;
 @property(nonatomic) unsigned long long erosionRadius; // @synthesize erosionRadius=_erodeRadius;
 @property(nonatomic) unsigned long long uncertaintyRadius; // @synthesize uncertaintyRadius=_uncertaintyRadius;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithView:(id)arg1 mode:(long long)arg2 algorithm:(long long)arg3;
 

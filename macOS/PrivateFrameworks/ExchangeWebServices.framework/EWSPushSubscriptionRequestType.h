@@ -16,10 +16,10 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *URL; // @synthesize URL=_URL;
 @property(nonatomic) BOOL StatusFrequencyIsSpecified; // @synthesize StatusFrequencyIsSpecified=_StatusFrequencyIsSpecified;
 @property(nonatomic) long long StatusFrequency; // @synthesize StatusFrequency=_StatusFrequency;
-- (void).cxx_destruct;
 
 @end
 

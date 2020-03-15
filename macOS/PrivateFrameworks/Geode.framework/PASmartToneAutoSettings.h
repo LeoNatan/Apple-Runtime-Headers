@@ -24,6 +24,7 @@
     NSData *_lightMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *lightMap; // @synthesize lightMap=_lightMap;
 @property(nonatomic) double localAutoValue; // @synthesize localAutoValue=_localAutoValue;
 @property(nonatomic) double whitePoint; // @synthesize whitePoint=_whitePoint;
@@ -36,7 +37,6 @@
 @property(nonatomic) double p02; // @synthesize p02=_p02;
 @property(nonatomic) double highKey; // @synthesize highKey=_highKey;
 @property(nonatomic) double tonalRange; // @synthesize tonalRange=_tonalRange;
-- (void).cxx_destruct;
 - (BOOL)_applyArchiveDictionary:(id)arg1;
 - (void)_archiveIntoDictionary:(id)arg1;
 - (id)init;

@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 
 + (id)_comparatorForStrategy:(unsigned long long)arg1 comparisonOptions:(unsigned long long)arg2;
 + (id)_referenceItemsSourceForType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <VTKComparator> cachedImageComparator; // @synthesize cachedImageComparator=_cachedImageComparator;
 @property(retain, nonatomic) id <VTKStoreManager> cachedStoreManager; // @synthesize cachedStoreManager=_cachedStoreManager;
 @property(retain, nonatomic) id <VTKReferenceItemsSource> cachedReferenceItemsSource; // @synthesize cachedReferenceItemsSource=_cachedReferenceItemsSource;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long comparisonOptions; // @synthesize comparisonOptions=_comparisonOptions;
 @property(nonatomic) unsigned long long imageComparatorStrategy; // @synthesize imageComparatorStrategy=_imageComparatorStrategy;
 @property(nonatomic) unsigned long long referenceItemsSourceType; // @synthesize referenceItemsSourceType=_referenceItemsSourceType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *exclusionAreas;
 @property(readonly, nonatomic) NSArray *drawItems;
 - (void)addExclusionAreaAt:(struct CGRect)arg1;

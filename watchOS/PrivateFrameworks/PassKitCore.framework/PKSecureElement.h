@@ -66,6 +66,7 @@
 - (void)markAppletWithIdentifierForDeletion:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)markAllAppletsForDeletionWithExternalAuthorization:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)appletWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)allAppletsAndCredentialsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)allAppletsWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)setRegistrationInformation:(id)arg1 primaryRegionTopic:(id)arg2;
 - (_Bool)hasRegistrationInformation;

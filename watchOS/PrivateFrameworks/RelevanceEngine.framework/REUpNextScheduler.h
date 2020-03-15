@@ -22,11 +22,11 @@
 + (id)schedulerWithQueue:(id)arg1 delay:(double)arg2 updateCompletionBlock:(CDUnknownBlockType)arg3;
 + (id)schedulerWithQueue:(id)arg1 delay:(double)arg2 updateBlock:(CDUnknownBlockType)arg3;
 + (id)schedulerWithQueue:(id)arg1 updateBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType updateCompletionBlock; // @synthesize updateCompletionBlock=_updateCompletionBlock;
 @property(readonly, copy, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
 @property(readonly, nonatomic) double delay; // @synthesize delay=_delay;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)_queue_performUpdate;
 - (void)schedule;
 - (_Bool)performImmediately;

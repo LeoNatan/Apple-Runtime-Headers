@@ -12,11 +12,13 @@
 
 @interface CNUIUndoableCommand : ABBookUndoableCommand <CNUISaveRequestCommand>
 {
+    BOOL _ignoresGuardianRestrictions;
     CNContactStore *_contactStore;
 }
 
-@property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL ignoresGuardianRestrictions; // @synthesize ignoresGuardianRestrictions=_ignoresGuardianRestrictions;
+@property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void)visit:(id)arg1;
 - (void)didExecute;
 - (void)willExecute;
@@ -26,7 +28,7 @@
 - (void)executeUndo;
 - (void)executeRedo;
 - (void)execute;
-- (id)initWithContactStore:(id)arg1;
+- (id)initWithContactStore:(id)arg1 ignoresGuardianRestrictions:(BOOL)arg2;
 - (id)init;
 
 // Remaining properties

@@ -22,6 +22,7 @@
         unsigned int requestPaymentIntentCurrencyAmountUnsupportedReason:1;
         unsigned int sendPaymentIntentCurrencyAmountUnsupportedReason:1;
         unsigned int customUnsupportedReason:1;
+        unsigned int findDeviceAndPlaySoundIntentDeviceUnsupportedReason:1;
         unsigned int createTimerIntentLabelUnsupportedReason:1;
         unsigned int addMediaIntentMediaDestinationUnsupportedReason:1;
         unsigned int addMediaIntentMediaItemsUnsupportedReason:1;
@@ -52,6 +53,7 @@
     int _requestPaymentIntentCurrencyAmountUnsupportedReason;
     int _sendPaymentIntentCurrencyAmountUnsupportedReason;
     unsigned int _customUnsupportedReason;
+    int _findDeviceAndPlaySoundIntentDeviceUnsupportedReason;
     int _createTimerIntentLabelUnsupportedReason;
     int _addMediaIntentMediaDestinationUnsupportedReason;
     int _addMediaIntentMediaItemsUnsupportedReason;
@@ -78,6 +80,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)conflictingParametersType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int runWorkflowIntentWorkflowUnsupportedReason; // @synthesize runWorkflowIntentWorkflowUnsupportedReason=_runWorkflowIntentWorkflowUnsupportedReason;
 @property(nonatomic) int setTaskAttributeIntentTemporalEventTriggerUnsupportedReason; // @synthesize setTaskAttributeIntentTemporalEventTriggerUnsupportedReason=_setTaskAttributeIntentTemporalEventTriggerUnsupportedReason;
@@ -100,6 +103,7 @@
 @property(nonatomic) int addMediaIntentMediaItemsUnsupportedReason; // @synthesize addMediaIntentMediaItemsUnsupportedReason=_addMediaIntentMediaItemsUnsupportedReason;
 @property(nonatomic) int addMediaIntentMediaDestinationUnsupportedReason; // @synthesize addMediaIntentMediaDestinationUnsupportedReason=_addMediaIntentMediaDestinationUnsupportedReason;
 @property(nonatomic) int createTimerIntentLabelUnsupportedReason; // @synthesize createTimerIntentLabelUnsupportedReason=_createTimerIntentLabelUnsupportedReason;
+@property(nonatomic) int findDeviceAndPlaySoundIntentDeviceUnsupportedReason; // @synthesize findDeviceAndPlaySoundIntentDeviceUnsupportedReason=_findDeviceAndPlaySoundIntentDeviceUnsupportedReason;
 @property(nonatomic) unsigned int customUnsupportedReason; // @synthesize customUnsupportedReason=_customUnsupportedReason;
 @property(nonatomic) int sendPaymentIntentCurrencyAmountUnsupportedReason; // @synthesize sendPaymentIntentCurrencyAmountUnsupportedReason=_sendPaymentIntentCurrencyAmountUnsupportedReason;
 @property(nonatomic) int requestPaymentIntentCurrencyAmountUnsupportedReason; // @synthesize requestPaymentIntentCurrencyAmountUnsupportedReason=_requestPaymentIntentCurrencyAmountUnsupportedReason;
@@ -108,7 +112,6 @@
 @property(nonatomic) int addTasksIntentContactEventTriggerUnsupportedReason; // @synthesize addTasksIntentContactEventTriggerUnsupportedReason=_addTasksIntentContactEventTriggerUnsupportedReason;
 @property(copy, nonatomic) NSArray *conflictingParameters; // @synthesize conflictingParameters=_conflictingParameters;
 @property(nonatomic) int startCallIntentCallCapabilityUnsupportedReason; // @synthesize startCallIntentCallCapabilityUnsupportedReason=_startCallIntentCallCapabilityUnsupportedReason;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
@@ -180,6 +183,9 @@
 - (int)StringAsCreateTimerIntentLabelUnsupportedReason:(id)arg1;
 - (id)createTimerIntentLabelUnsupportedReasonAsString:(int)arg1;
 @property(nonatomic) _Bool hasCreateTimerIntentLabelUnsupportedReason;
+- (int)StringAsFindDeviceAndPlaySoundIntentDeviceUnsupportedReason:(id)arg1;
+- (id)findDeviceAndPlaySoundIntentDeviceUnsupportedReasonAsString:(int)arg1;
+@property(nonatomic) _Bool hasFindDeviceAndPlaySoundIntentDeviceUnsupportedReason;
 @property(nonatomic) _Bool hasCustomUnsupportedReason;
 - (int)StringAsSendPaymentIntentCurrencyAmountUnsupportedReason:(id)arg1;
 - (id)sendPaymentIntentCurrencyAmountUnsupportedReasonAsString:(int)arg1;

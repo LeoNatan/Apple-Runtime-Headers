@@ -16,11 +16,11 @@
     NSMutableArray *_descendantFinders;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *descendantFinders; // @synthesize descendantFinders=_descendantFinders;
 @property(retain) XCUIRecorderNodeFinder *ancestorFinder; // @synthesize ancestorFinder=_ancestorFinder;
 @property(retain) XCSourceCodeTreeNode *node; // @synthesize node=_node;
 @property(copy) NSSet *matchingSnapshots; // @synthesize matchingSnapshots=_matchingSnapshots;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (id)nodeIncludingDescendants;
 - (id)description;

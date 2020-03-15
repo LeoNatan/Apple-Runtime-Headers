@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     id <PUForYouSuggestionActionPerformerDelegate> _statusDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PUForYouSuggestionActionPerformerDelegate> statusDelegate; // @synthesize statusDelegate=_statusDelegate;
 @property(readonly, nonatomic) PXPhotoKitAdjustedUIMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(readonly, nonatomic) PXForYouSuggestionDisplayAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithAsset:(id)arg1;
 

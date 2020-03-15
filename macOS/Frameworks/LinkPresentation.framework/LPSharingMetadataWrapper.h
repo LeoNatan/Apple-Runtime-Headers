@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasCompletedFetch; // @synthesize hasCompletedFetch=_hasCompletedFetch;
 @property(nonatomic) BOOL hasFetchedSubresources; // @synthesize hasFetchedSubresources=_hasFetchedSubresources;
 @property(retain, nonatomic) LPLinkMetadata *metadata; // @synthesize metadata=_metadata;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)dataRepresentation;

@@ -22,8 +22,8 @@
 + (_Bool)_isContactsLabel:(id)arg1;
 + (_Bool)_isContactsProperty:(id)arg1;
 + (_Bool)isWBSProxyProperty:(id)arg1;
-@property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 - (unsigned int)_numberOfValuesForWBSProperty:(id)arg1 andContact:(id)arg2;
 - (unsigned int)_numberOfValuesForWBSProperty:(id)arg1;
 - (id)valueStringForWBSProperty:(id)arg1 wbsComponent:(id)arg2 atIndex:(unsigned int)arg3;

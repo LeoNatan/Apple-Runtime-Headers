@@ -13,8 +13,8 @@
     NSURL *_videoURL;
 }
 
-@property(readonly, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
 - (id)initWithVideoURL:(id)arg1;
 
 @end

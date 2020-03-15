@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     _Bool _detached;
 }
 
+- (void).cxx_destruct;
 @property _Bool detached; // @synthesize detached=_detached;
 @property _Bool running; // @synthesize running=_running;
 @property(copy) CDUnknownBlockType handler; // @synthesize handler=_handler;
-- (void).cxx_destruct;
 - (id)initWithHandler:(CDUnknownBlockType)arg1;
 
 @end

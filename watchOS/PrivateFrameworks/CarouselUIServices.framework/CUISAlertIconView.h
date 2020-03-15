@@ -18,12 +18,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int iconType; // @synthesize iconType=_iconType;
 @property(retain, nonatomic) UIImage *shadow; // @synthesize shadow=_shadow;
 @property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 @property(retain, nonatomic) UIImageView *shadowView; // @synthesize shadowView=_shadowView;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (id)_nameForIconType:(unsigned int)arg1;
 - (void)layoutSubviews;
 - (void)setIcon:(id)arg1 idealIconSize:(struct CGSize)arg2;

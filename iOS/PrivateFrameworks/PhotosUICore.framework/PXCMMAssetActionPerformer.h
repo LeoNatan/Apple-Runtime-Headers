@@ -14,9 +14,9 @@
     PXCMMPhotoKitImportStatusManager *_importStatusManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXCMMPhotoKitImportStatusManager *importStatusManager; // @synthesize importStatusManager=_importStatusManager;
 @property(retain, nonatomic) PXSectionedSelectionManager *cmmSelectionManager; // @synthesize cmmSelectionManager=_cmmSelectionManager;
-- (void).cxx_destruct;
 
 @end
 

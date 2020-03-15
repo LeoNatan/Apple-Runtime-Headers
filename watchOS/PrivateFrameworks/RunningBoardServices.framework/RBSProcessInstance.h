@@ -21,9 +21,9 @@
 
 + (_Bool)supportsBSXPCSecureCoding;
 + (id)instanceWithIdentifier:(id)arg1 identity:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RBSProcessIdentifier *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) RBSProcessIdentity *identity; // @synthesize identity=_identity;
-- (void).cxx_destruct;
 - (id)processPredicate;
 - (_Bool)matchesProcess:(id)arg1;
 - (int)rbs_pid;

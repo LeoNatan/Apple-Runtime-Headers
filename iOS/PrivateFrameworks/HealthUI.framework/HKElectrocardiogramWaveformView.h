@@ -17,12 +17,12 @@
     struct CGRect _lastPathBounds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect lastPathBounds; // @synthesize lastPathBounds=_lastPathBounds;
 @property(nonatomic) struct CGRect pathBounds; // @synthesize pathBounds=_pathBounds;
 @property(retain, nonatomic) NSArray *shapeLayers; // @synthesize shapeLayers=_shapeLayers;
 @property(retain, nonatomic) UIColor *lineColor; // @synthesize lineColor=_lineColor;
 @property(nonatomic) double lineWidth; // @synthesize lineWidth=_lineWidth;
-- (void).cxx_destruct;
 - (void)tintColorDidChange;
 - (struct CGSize)intrinsicContentSize;
 - (void)setPaths:(id)arg1;

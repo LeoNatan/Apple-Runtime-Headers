@@ -13,8 +13,8 @@
     UISegmentedControl *_segmentedControl;
 }
 
-@property(retain, nonatomic) UISegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UISegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 - (struct CGSize)intrinsicContentSize;
 @property(nonatomic) long long eraserType;
 - (_Bool)_canShowWhileLocked;

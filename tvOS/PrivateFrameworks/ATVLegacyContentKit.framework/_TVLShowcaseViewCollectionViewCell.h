@@ -13,8 +13,8 @@
     TVImageProxy *_imageProxy;
 }
 
-@property(retain, nonatomic) TVImageProxy *imageProxy; // @synthesize imageProxy=_imageProxy;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TVImageProxy *imageProxy; // @synthesize imageProxy=_imageProxy;
 
 @end
 

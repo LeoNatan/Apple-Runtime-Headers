@@ -20,12 +20,12 @@
 
 + (void)_enableFolderActionsDispatcherLaunchDJobIfNeeded;
 + (id)sharedDispatcher;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *observedFrontEnds; // @synthesize observedFrontEnds=_observedFrontEnds;
 @property(retain) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property BOOL folderActionsEnabled; // @synthesize folderActionsEnabled=_folderActionsEnabled;
 @property(retain) NSMutableArray *folderActions; // @synthesize folderActions=_folderActions;
 @property(retain) NSMutableArray *frontEnds; // @synthesize frontEnds=_frontEnds;
-- (void).cxx_destruct;
 - (void)enableFolderActionsAndRunOnUnprocessedItems;
 - (void)setURL:(id)arg1 ofScriptWithURL:(id)arg2 forFolderActionWithURL:(id)arg3;
 - (void)disableScriptWithURL:(id)arg1 forFolderWithURL:(id)arg2;
@@ -51,10 +51,10 @@
 - (void)updateFolderActionsInfo:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)seriallyDispatchBlock:(CDUnknownBlockType)arg1;
-- (void)stopObservingFrontEnd:(struct NSObject *)arg1;
-- (void)startObservingFrontEnd:(struct NSObject *)arg1;
-- (void)removeFrontEnd:(struct NSObject *)arg1;
-- (void)addFrontEnd:(struct NSObject *)arg1;
+- (void)stopObservingFrontEnd:(id)arg1;
+- (void)startObservingFrontEnd:(id)arg1;
+- (void)removeFrontEnd:(id)arg1;
+- (void)addFrontEnd:(id)arg1;
 - (void)dealloc;
 
 @end

@@ -19,10 +19,10 @@
     NSDictionary *_labelAttributes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *labelAttributes; // @synthesize labelAttributes=_labelAttributes;
 @property(nonatomic) float cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) UIColor *barColor; // @synthesize barColor=_barColor;
-- (void).cxx_destruct;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
 - (void)layoutSubviews;
 - (void)_loadFromDataSet;

@@ -15,8 +15,8 @@
     FCThreadSafeMutableDictionary *_dictionary;
 }
 
-@property(readonly, nonatomic) FCThreadSafeMutableDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) FCThreadSafeMutableDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (void)removeAllWrappingKeys;
 - (void)setWrappingKey:(id)arg1 forWrappingKeyID:(id)arg2;
 - (id)wrappingKeyForWrappingKeyID:(id)arg1;

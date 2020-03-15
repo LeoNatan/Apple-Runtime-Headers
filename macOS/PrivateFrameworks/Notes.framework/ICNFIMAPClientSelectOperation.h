@@ -16,9 +16,9 @@
 }
 
 + (BOOL)automaticallyNotifiesObserversOfDelayed;
+- (void).cxx_destruct;
 @property BOOL useCondStore; // @synthesize useCondStore=_useCondStore;
 @property(retain) ICNFIMAPMailbox *imapMailbox; // @synthesize imapMailbox=_imapMailbox;
-- (void).cxx_destruct;
 @property BOOL delayed;
 @property(readonly) BOOL readOnly;
 - (BOOL)isReady;

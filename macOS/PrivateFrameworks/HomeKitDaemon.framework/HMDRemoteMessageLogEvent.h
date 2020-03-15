@@ -21,10 +21,10 @@
 + (id)sendingRemoteMessage:(id)arg1 transportType:(int)arg2;
 + (id)uuid;
 + (int)awdMessageTypeFromHMDMessageType:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL sending; // @synthesize sending=_sending;
 @property(readonly, nonatomic) int transportType; // @synthesize transportType=_transportType;
 @property(readonly, nonatomic) HMDRemoteMessage *remoteMessage; // @synthesize remoteMessage=_remoteMessage;
-- (void).cxx_destruct;
 - (id)initWithRemoteMessage:(id)arg1 transportType:(int)arg2 sending:(BOOL)arg3;
 - (id)metricForAWD;
 - (unsigned int)AWDMessageType;

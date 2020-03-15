@@ -24,13 +24,13 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLSConcurrentObserverStore *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly) NSString *lastKnownCountryCode; // @synthesize lastKnownCountryCode=_lastKnownCountryCode;
 @property(readonly) int registrationStatus; // @synthesize registrationStatus=_registrationStatus;
 @property(retain) NSDate *lastConnectedDate; // @synthesize lastConnectedDate=_lastConnectedDate;
 @property unsigned int status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (void)simActiveDidChange:(_Bool)arg1;
 - (void)_informObserversOfChangeInSimActive:(_Bool)arg1;
 @property(readonly) _Bool simActive;

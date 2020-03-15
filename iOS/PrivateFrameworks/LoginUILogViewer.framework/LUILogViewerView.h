@@ -25,6 +25,7 @@
     UIButton *_rightCaretButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *rightCaretButton; // @synthesize rightCaretButton=_rightCaretButton;
 @property(retain, nonatomic) UIButton *leftCaretButton; // @synthesize leftCaretButton=_leftCaretButton;
 @property(retain, nonatomic) UILabel *searchResultLabel; // @synthesize searchResultLabel=_searchResultLabel;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) UIButton *filterButton; // @synthesize filterButton=_filterButton;
 @property(retain, nonatomic) UIView *contentHolderView; // @synthesize contentHolderView=_contentHolderView;
 @property(nonatomic) __weak id <LUILogViewerViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)rightCaretButtonTapped:(id)arg1;
 - (void)leftCaretButtonTapped:(id)arg1;
 - (void)filterButtonTapped:(id)arg1;

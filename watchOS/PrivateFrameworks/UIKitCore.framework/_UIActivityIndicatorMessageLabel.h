@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultRegularContentSizeTextAttributes;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *effectiveTextAttributes; // @synthesize effectiveTextAttributes=_effectiveTextAttributes;
 @property(copy, nonatomic) NSDictionary *regularTextAttributes; // @synthesize regularTextAttributes=_regularTextAttributes;
-- (void).cxx_destruct;
 - (void)_ensureCapableOfCalculatingBaselineOffsets;
 - (id)_validatedAttributedString:(id)arg1;
 - (float)_effectiveVerticalSpacingToSpinner;

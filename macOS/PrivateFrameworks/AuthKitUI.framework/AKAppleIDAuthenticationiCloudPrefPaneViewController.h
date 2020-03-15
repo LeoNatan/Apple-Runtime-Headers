@@ -35,6 +35,7 @@
     OBPrivacyLinkController *_privacyController;
 }
 
+- (void).cxx_destruct;
 @property(retain) OBPrivacyLinkController *privacyController; // @synthesize privacyController=_privacyController;
 @property(copy) CDUnknownBlockType passwordHandler; // @synthesize passwordHandler=_passwordHandler;
 @property(retain) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
@@ -56,7 +57,6 @@
 @property(retain) NSButton *createButton; // @synthesize createButton=_createButton;
 @property(retain) NSButton *forgotButton; // @synthesize forgotButton=_forgotButton;
 @property(retain) NSButton *loginButton; // @synthesize loginButton=_loginButton;
-- (void).cxx_destruct;
 - (void)_addPrivacyView:(id)arg1;
 - (void)context:(id)arg1 needsPasswordWithCompletion:(CDUnknownBlockType)arg2;
 - (void)setPasswordFieldHidden:(BOOL)arg1 animated:(BOOL)arg2;

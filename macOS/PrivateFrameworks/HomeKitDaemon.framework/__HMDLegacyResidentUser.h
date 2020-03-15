@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)supportsSecureCoding;
 + (void)initialize;
-@property(readonly, nonatomic) HMDResidentUser *residentUser; // @synthesize residentUser=_residentUser;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HMDResidentUser *residentUser; // @synthesize residentUser=_residentUser;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isRemoteGateway;

@@ -14,8 +14,8 @@
 }
 
 + (unsigned long long)targetVersion;
-@property(readonly, copy, nonatomic) NSArray *accounts; // @synthesize accounts=_accounts;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *accounts; // @synthesize accounts=_accounts;
 - (id)_referencesAsEncodedMessageIDStringFromMessageHeaders:(id)arg1;
 - (void)_reparseReferencesForRowIDsByMailboxURL:(id)arg1;
 - (void)runWithRowIDsNeedingConversationRecalculation:(id)arg1;

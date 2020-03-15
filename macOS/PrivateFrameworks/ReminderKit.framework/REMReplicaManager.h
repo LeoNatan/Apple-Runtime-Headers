@@ -28,6 +28,7 @@
 + (BOOL)supportsSecureCoding;
 + (BOOL)shouldUseNewInMemoryOnlyReplicaManager;
 + (id)replicaManagerForAccountID:(id)arg1 store:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL exceededMaxSerializedSize; // @synthesize exceededMaxSerializedSize=_exceededMaxSerializedSize;
 @property(nonatomic) unsigned long long maxLastSavedVersion; // @synthesize maxLastSavedVersion=_maxLastSavedVersion;
 @property(nonatomic) unsigned long long currentVersion; // @synthesize currentVersion=_currentVersion;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSMutableOrderedSet *replicaUUIDs; // @synthesize replicaUUIDs=_replicaUUIDs;
 @property(nonatomic) BOOL isPersistable; // @synthesize isPersistable=_isPersistable;
 @property(nonatomic) struct os_unfair_lock_s ivarLock; // @synthesize ivarLock=_ivarLock;
-- (void).cxx_destruct;
 - (void)addRandomReplicaEntriesWithCount:(long long)arg1;
 - (BOOL)hasEqualPersistedEntriesAs:(id)arg1;
 - (id)clockOfFirstReplicaForCRDTID:(id)arg1;

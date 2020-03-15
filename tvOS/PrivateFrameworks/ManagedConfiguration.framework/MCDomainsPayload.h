@@ -18,8 +18,8 @@
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
-@property(retain, nonatomic) NSDictionary *restrictions; // @synthesize restrictions=_restrictions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *restrictions; // @synthesize restrictions=_restrictions;
 - (id)payloadDescriptionKeyValueSections;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id *)arg3;

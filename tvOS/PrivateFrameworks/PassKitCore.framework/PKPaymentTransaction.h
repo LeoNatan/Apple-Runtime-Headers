@@ -9,7 +9,7 @@
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 #import <PassKitCore/PKCloudStoreCoding-Protocol.h>
 
-@class CLLocation, NSArray, NSData, NSDate, NSDecimalNumber, NSDictionary, NSNumber, NSOrderedSet, NSSet, NSString, NSTimeZone, NSUUID, PKAccountEvent, PKCurrencyAmount, PKInstallmentPlan, PKInstallmentPlanPayment, PKMerchant, PKPaymentTransactionFees, PKPaymentTransactionForeignExchangeInformation, PKPaymentTransactionRewards;
+@class CLLocation, NSArray, NSData, NSDate, NSDecimalNumber, NSDictionary, NSNumber, NSOrderedSet, NSSet, NSString, NSTimeZone, NSURL, NSUUID, PKAccountEvent, PKCurrencyAmount, PKInstallmentPlan, PKInstallmentPlanPayment, PKMerchant, PKPaymentTransactionFees, PKPaymentTransactionForeignExchangeInformation, PKPaymentTransactionRewards;
 
 @interface PKPaymentTransaction : NSObject <NSSecureCoding, PKCloudStoreCoding>
 {
@@ -33,6 +33,7 @@
     NSDecimalNumber *_amount;
     NSDecimalNumber *_subtotalAmount;
     NSString *_currencyCode;
+    NSArray *_amounts;
     NSDate *_transactionDate;
     NSDate *_transactionStatusChangedDate;
     NSDate *_expirationDate;
@@ -100,6 +101,9 @@
     PKInstallmentPlan *_installmentPlan;
     NSDictionary *_metadata;
     NSDate *_lastMerchantReprocessingDate;
+    NSString *_receiptProviderIdentifier;
+    NSString *_receiptIdentifier;
+    NSURL *_receiptProviderURL;
     NSString *_issueReportIdentifier;
     long long _transactionStatus;
     long long _transactionType;
@@ -109,11 +113,13 @@
     unsigned long long _updateReasons;
 }
 
++ (id)formattedBalanceAdjustmentForAmount:(id)arg1 transactionType:(long long)arg2 adjustmentType:(long long)arg3 peerPaymentType:(long long)arg4;
 + (id)cloudStoreTransactionDeviceDataRecordTypeRecordNamePrefix;
 + (_Bool)supportsSecureCoding;
 + (id)paymentTransactionWithSource:(unsigned long long)arg1 dictionary:(id)arg2 hasNotificationServiceData:(_Bool)arg3;
 + (id)paymentTransactionWithSource:(unsigned long long)arg1;
 + (id)paymentTransactionFromSource:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long updateReasons; // @synthesize updateReasons=_updateReasons;
 @property(nonatomic) long long transactionDeclinedReason; // @synthesize transactionDeclinedReason=_transactionDeclinedReason;
 @property(nonatomic) unsigned long long transactionSource; // @synthesize transactionSource=_transactionSource;
@@ -121,6 +127,9 @@
 @property(nonatomic) long long transactionType; // @synthesize transactionType=_transactionType;
 @property(nonatomic) long long transactionStatus; // @synthesize transactionStatus=_transactionStatus;
 @property(copy, nonatomic) NSString *issueReportIdentifier; // @synthesize issueReportIdentifier=_issueReportIdentifier;
+@property(retain, nonatomic) NSURL *receiptProviderURL; // @synthesize receiptProviderURL=_receiptProviderURL;
+@property(copy, nonatomic) NSString *receiptIdentifier; // @synthesize receiptIdentifier=_receiptIdentifier;
+@property(copy, nonatomic) NSString *receiptProviderIdentifier; // @synthesize receiptProviderIdentifier=_receiptProviderIdentifier;
 @property(nonatomic, getter=isFuzzyMatched) _Bool fuzzyMatched; // @synthesize fuzzyMatched=_fuzzyMatched;
 @property(nonatomic) _Bool originatedByDevice; // @synthesize originatedByDevice=_originatedByDevice;
 @property(nonatomic) _Bool hasNotificationServiceData; // @synthesize hasNotificationServiceData=_hasNotificationServiceData;
@@ -202,16 +211,17 @@
 @property(copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(copy, nonatomic) NSDate *transactionStatusChangedDate; // @synthesize transactionStatusChangedDate=_transactionStatusChangedDate;
 @property(copy, nonatomic) NSDate *transactionDate; // @synthesize transactionDate=_transactionDate;
+@property(copy, nonatomic) NSArray *amounts; // @synthesize amounts=_amounts;
 @property(copy, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
 @property(copy, nonatomic) NSDecimalNumber *subtotalAmount; // @synthesize subtotalAmount=_subtotalAmount;
 @property(copy, nonatomic) NSDecimalNumber *amount; // @synthesize amount=_amount;
 @property(copy, nonatomic) NSString *paymentHash; // @synthesize paymentHash=_paymentHash;
 @property(copy, nonatomic) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
-- (id)_latestDipusteEvent;
+- (id)_latestDisputeEvent;
 @property(readonly, nonatomic) unsigned long long disputeType;
 @property(readonly, nonatomic) unsigned long long disputeStatus;
+@property(readonly, nonatomic) _Bool reviewed;
 - (void)answeredQuestion:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSSet *unansweredQuestions;
 @property(readonly, nonatomic) NSSet *answeredQuestionsOnThisDevice;
@@ -234,6 +244,7 @@
 - (id)updateReasonsDescription;
 - (void)addUpdateReasons:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool updateReasonIsInitialDownload;
+@property(readonly, nonatomic) NSString *associatedReceiptUniqueID;
 @property(readonly, nonatomic) _Bool fullyProcessed;
 @property(readonly, nonatomic) _Bool supportsFuzzyMatching;
 @property(readonly, nonatomic) _Bool hasBackingData;
@@ -245,7 +256,7 @@
 @property(retain, nonatomic) CLLocation *location;
 @property(readonly, nonatomic) __weak NSString *displayLocation;
 - (unsigned long long)itemType;
-- (id)recordTypesAndNames;
+- (id)recordTypesAndNamesIncludingServerData:(_Bool)arg1;
 - (void)encodeServerAndDeviceDataWithCloudStoreCoder:(id)arg1;
 - (void)encodeWithCloudStoreCoder:(id)arg1;
 - (id)initWithCloudStoreCoder:(id)arg1;

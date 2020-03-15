@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     long long _maximumResponseCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long maximumResponseCount; // @synthesize maximumResponseCount=_maximumResponseCount;
 @property(retain, nonatomic) WKWebView *webViewForProcessSharing; // @synthesize webViewForProcessSharing=_webViewForProcessSharing;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

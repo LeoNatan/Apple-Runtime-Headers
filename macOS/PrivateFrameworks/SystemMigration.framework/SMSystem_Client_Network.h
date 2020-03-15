@@ -28,6 +28,7 @@
 + (id)keyPathsForValuesAffectingFasterInterfaceRecommendation;
 + (id)guiMonitorKeys;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL isAttemptingWirelessSwitch; // @synthesize isAttemptingWirelessSwitch=_isAttemptingWirelessSwitch;
 @property(readonly) NSOrderedSet *connectionFamilies; // @synthesize connectionFamilies=_connectionFamilies;
 @property(readonly) unsigned long long effectiveConnectionMethod; // @synthesize effectiveConnectionMethod=_effectiveConnectionMethod;
@@ -40,7 +41,6 @@
 @property(retain) NSNumber *passcode; // @synthesize passcode;
 @property(retain) NSImage *icon; // @synthesize icon;
 @property(readonly) NSString *model; // @synthesize model;
-- (void).cxx_destruct;
 - (BOOL)matchesLongTermIdentifier:(id)arg1;
 @property(readonly) NSString *fasterInterfaceRecommendation;
 - (BOOL)isMounted;

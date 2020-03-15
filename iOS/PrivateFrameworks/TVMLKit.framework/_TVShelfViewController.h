@@ -35,11 +35,11 @@
 }
 
 + (void)_contentForCell:(id)arg1 shouldHide:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) long long prominentSectionIndex; // @synthesize prominentSectionIndex=_prominentSectionIndex;
 @property(nonatomic, getter=isCentered) _Bool centered; // @synthesize centered=_centered;
 @property(nonatomic) unsigned long long speedBumpEdges; // @synthesize speedBumpEdges=_speedBumpEdges;
 @property(nonatomic) __weak id <__TVShelfViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateWithViewElement:(id)arg1;
 - (void)_didSettleOnItemAtIndexPath:(id)arg1;
 - (void)_delayedUpdatePreview;

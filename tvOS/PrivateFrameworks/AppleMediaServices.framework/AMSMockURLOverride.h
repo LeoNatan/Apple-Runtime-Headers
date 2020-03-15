@@ -8,28 +8,30 @@
 
 #import <AppleMediaServices/NSCopying-Protocol.h>
 
-@class AMSMockURLResponse, AMSObservable;
+@class AMSMockURLResponse, AMSObservable, NSMutableArray;
 
-__attribute__((visibility("hidden")))
 @interface AMSMockURLOverride : NSObject <NSCopying>
 {
     AMSObservable *_executedObservable;
     AMSMockURLResponse *_response;
-    id _comparator;
-    long long _comparatorType;
+    NSMutableArray *_comparators;
 }
 
 + (id)overrideWithURLRegex:(id)arg1 usingResponse:(id)arg2;
 + (id)overrideWithPathComponent:(id)arg1 usingResponse:(id)arg2;
 + (id)overrideWithHost:(id)arg1 usingResponse:(id)arg2;
-@property(nonatomic) long long comparatorType; // @synthesize comparatorType=_comparatorType;
-@property(retain, nonatomic) id comparator; // @synthesize comparator=_comparator;
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *comparators; // @synthesize comparators=_comparators;
 @property(retain, nonatomic) AMSMockURLResponse *response; // @synthesize response=_response;
 @property(retain, nonatomic) AMSObservable *executedObservable; // @synthesize executedObservable=_executedObservable;
-- (void).cxx_destruct;
-- (_Bool)shouldOverrideURL:(id)arg1;
-- (_Bool)isEqualToOverride:(id)arg1;
-- (_Bool)isEqual:(id)arg1;
+- (void)_withURLMatchingHost:(id)arg1 containingPath:(id)arg2 queryItems:(id)arg3;
+- (_Bool)shouldOverrideURLRequest:(id)arg1;
+- (void)withResponse:(id)arg1;
+- (void)withHTTPBodyValidation:(CDUnknownBlockType)arg1 encoding:(long long)arg2;
+- (void)withURLRegexValidation:(id)arg1;
+- (void)withURLQueryItems:(id)arg1;
+- (void)withURLContainingPath:(id)arg1;
+- (void)withURLMatchingHost:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

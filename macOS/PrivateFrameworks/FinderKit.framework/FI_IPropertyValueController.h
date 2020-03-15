@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)propertyValueController;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
 @property(nonatomic) _Bool shouldBeEnabled; // @synthesize shouldBeEnabled=_shouldBeEnabled;
 @property(nonatomic) _Bool shouldBeVisible; // @synthesize shouldBeVisible=_shouldBeVisible;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)handleNodeMDAttributesChanged:(const struct TFENode *)arg1 attributes:(id)arg2 isDisplayAttributes:(_Bool)arg3;
 - (void)handleNodesGoingAway:(const struct TFENodeVector *)arg1;
 - (void)handleBulkNodesDeleted:(const map_27534541 *)arg1 observedNodes:(const struct TFENodeVector *)arg2;

@@ -15,10 +15,10 @@
     int _ringStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int ringStyle; // @synthesize ringStyle=_ringStyle;
 @property(copy, nonatomic) CLKProgressProvider *progressProvider; // @synthesize progressProvider=_progressProvider;
 @property(copy, nonatomic) CLKImageProvider *imageProvider; // @synthesize imageProvider=_imageProvider;
-- (void).cxx_destruct;
 - (struct CGSize)_imageSize;
 - (void)_enumerateIntegerKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateProgressProviderKeysWithBlock:(CDUnknownBlockType)arg1;

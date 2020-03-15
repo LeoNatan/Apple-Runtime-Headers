@@ -14,10 +14,10 @@
 }
 
 + (id)activityItemImageRepWithAsset:(id)arg1 thumbnailProvider:(CDUnknownBlockType)arg2 dataProvider:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dataProvider; // @synthesize dataProvider=_dataProvider;
 @property(copy, nonatomic) CDUnknownBlockType thumbnailProvider; // @synthesize thumbnailProvider=_thumbnailProvider;
 @property(retain, nonatomic) id asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (id)data;
 - (id)thumbnail;
 

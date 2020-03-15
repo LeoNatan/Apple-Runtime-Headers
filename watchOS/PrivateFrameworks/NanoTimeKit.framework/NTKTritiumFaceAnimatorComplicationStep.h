@@ -16,9 +16,9 @@
 
 + (id)stepWithTritiumOnFrameRange:(struct _NSRange)arg1 tritiumOffFrameRange:(struct _NSRange)arg2 complicationSlot:(id)arg3 scale:(float)arg4 scaleType:(int)arg5 brightness:(float)arg6;
 + (id)stepWithTritiumOnFrameRange:(struct _NSRange)arg1 tritiumOffFrameRange:(struct _NSRange)arg2 complicationSlot:(id)arg3 scale:(float)arg4 scaleType:(int)arg5;
+- (void).cxx_destruct;
 @property(nonatomic) float brightness; // @synthesize brightness=_brightness;
 @property(readonly, nonatomic) NSString *complicationSlot; // @synthesize complicationSlot=_complicationSlot;
-- (void).cxx_destruct;
 - (void)setIsTritiumOn:(_Bool)arg1 progress:(float)arg2 faceView:(id)arg3;
 
 @end

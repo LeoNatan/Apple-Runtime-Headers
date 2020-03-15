@@ -33,6 +33,7 @@
     NSMutableDictionary *_kernelNexusClientFlows;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *kernelNexusClientFlows; // @synthesize kernelNexusClientFlows=_kernelNexusClientFlows;
 @property __weak NSObject<NENexusDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(retain) NENexusAgent *agent; // @synthesize agent=_agent;
@@ -51,7 +52,6 @@
 @property(nonatomic) unsigned long long availability; // @synthesize availability=_availability;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) unsigned long long level; // @synthesize level=_level;
-- (void).cxx_destruct;
 - (void)handleUnassertFromClient:(id)arg1;
 - (void)handleAssertFromClient:(id)arg1;
 - (void)handleStartFromClient:(id)arg1;

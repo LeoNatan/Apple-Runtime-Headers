@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     BOOL mImportCSV;
 }
 
-@property(nonatomic) BOOL importCSV; // @synthesize importCSV=mImportCSV;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL importCSV; // @synthesize importCSV=mImportCSV;
 - (void)reportWarning:(id)arg1;
 - (id)oaState;
 - (id)columnWidthConvertor;

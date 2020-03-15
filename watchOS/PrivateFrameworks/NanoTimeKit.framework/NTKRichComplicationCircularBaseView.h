@@ -26,10 +26,10 @@
 + (id)keylineImageWithFilled:(_Bool)arg1 forDevice:(id)arg2;
 + (void)updateCustomDataAnimationFromEarlierView:(id)arg1 laterView:(id)arg2 isForward:(_Bool)arg3 animationType:(unsigned int)arg4 animationDuration:(double)arg5 animationFraction:(float)arg6;
 + (void)prepareCustomDataAnimation:(id)arg1 fromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) int position; // @synthesize position=_position;
 @property(readonly, nonatomic) UIView *framingView; // @synthesize framingView=_framingView;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)_transitToHighlightState:(_Bool)arg1 fraction:(float)arg2;
 - (unsigned int)_adjustFontSizeForLabel:(id)arg1 fontWeight:(float)arg2 possibleMaxWidths:(id)arg3 possibleFontSizes:(id)arg4;
 - (id)_createAndAddColoringLabel;

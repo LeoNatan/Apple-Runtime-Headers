@@ -16,10 +16,10 @@
     UNNotificationAction *_unAction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UNNotificationAction *unAction; // @synthesize unAction=_unAction;
 @property(retain, nonatomic) BBAction *bbAction; // @synthesize bbAction=_bbAction;
 @property(nonatomic) __weak id <CUISBulletinClientFactoryActionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)synthesizeBBAction;
 - (void)handleAction:(id)arg1;
 

@@ -14,13 +14,14 @@ __attribute__((visibility("hidden")))
     NSDictionary *_dictionary;
 }
 
-@property(retain, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)sortedKeys;
 - (void)viewDidLoad;
+- (id)initWithDictionary:(id)arg1;
 
 @end
 

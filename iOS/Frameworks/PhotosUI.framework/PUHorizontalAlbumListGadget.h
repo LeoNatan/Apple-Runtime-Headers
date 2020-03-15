@@ -21,12 +21,12 @@
     NSUserActivity *_siriActionActivity;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUserActivity *siriActionActivity; // @synthesize siriActionActivity=_siriActionActivity;
 @property(readonly, nonatomic) PUAlbumDropSessionController *dropSessionController; // @synthesize dropSessionController=_dropSessionController;
 @property(readonly, nonatomic) PUPhotoPinchGestureRecognizer *pinchGestureRecognizer; // @synthesize pinchGestureRecognizer=_pinchGestureRecognizer;
 @property(retain, nonatomic) PUSessionInfo *sessionInfo; // @synthesize sessionInfo=_sessionInfo;
 @property(readonly, nonatomic) PUAlbumsGadgetProvider *provider; // @synthesize provider=_provider;
-- (void).cxx_destruct;
 - (void)_updateCollectionViewLayout;
 - (void)_navigateToCollection:(id)arg1 animated:(_Bool)arg2 interactive:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (_Bool)_canUseStackedAlbumTransitionToNavigationToCollection:(id)arg1;
@@ -40,6 +40,7 @@
 - (void)setGadgetSpec:(id)arg1;
 - (id)accessoryButtonTitle;
 - (unsigned long long)accessoryButtonType;
+- (unsigned long long)gadgetCapabilities;
 - (unsigned long long)gadgetType;
 - (void)collectionView:(id)arg1 performDropWithCoordinator:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldSpringLoadItemAtIndexPath:(id)arg2 withContext:(id)arg3;

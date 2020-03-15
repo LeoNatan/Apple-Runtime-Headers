@@ -18,10 +18,10 @@
     id <CRCard> receivedCard;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CRCard> receivedCard; // @synthesize receivedCard;
 @property(retain, nonatomic) id <CRCard> requestedCard; // @synthesize requestedCard;
 @property(retain, nonatomic) id <CRCard> baseCard; // @synthesize baseCard;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, nonatomic) SFFeedback *backingFeedback;

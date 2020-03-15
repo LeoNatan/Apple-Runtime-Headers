@@ -13,8 +13,8 @@
     AXSiriShortcutsViewController *_parentViewController;
 }
 
-@property(nonatomic) __weak AXSiriShortcutsViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak AXSiriShortcutsViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
 - (void)layoutSubviews;
 
 @end

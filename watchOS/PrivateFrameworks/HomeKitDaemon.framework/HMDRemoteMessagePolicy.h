@@ -18,6 +18,8 @@
 }
 
 + (id)defaultSecurePolicy;
++ (id)defaultPolicy;
++ (id)remoteMessagePolicyWithRequiresSecureMessage:(_Bool)arg1 allowsAnonymousMessage:(_Bool)arg2 requiresAccountMessage:(_Bool)arg3 transportRestriction:(unsigned int)arg4 roles:(unsigned int)arg5;
 @property(readonly) unsigned int roles; // @synthesize roles=_roles;
 @property(readonly) unsigned int transportRestriction; // @synthesize transportRestriction=_transportRestriction;
 @property(readonly) _Bool requiresAccountMessage; // @synthesize requiresAccountMessage=_requiresAccountMessage;
@@ -27,6 +29,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (id)__initWithRequiresSecureMessage:(_Bool)arg1 allowsAnonymousMessage:(_Bool)arg2 requiresAccountMessage:(_Bool)arg3 transportRestriction:(unsigned int)arg4 roles:(unsigned int)arg5;
 - (id)init;
 
 @end

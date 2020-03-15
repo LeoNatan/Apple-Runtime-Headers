@@ -23,11 +23,11 @@ __attribute__((visibility("hidden")))
 + (id)dockViewHomeGestureExclusionZones;
 + (CDStruct_b7523c42)_itemFramesForBoundingSize:(struct CGSize)arg1;
 + (long long)_currentInterfaceOrientation;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIKeyboardDockItem *centerDockItem; // @synthesize centerDockItem=_centerDockItem;
 @property(retain, nonatomic) UIKeyboardDockItem *rightDockItem; // @synthesize rightDockItem=_rightDockItem;
 @property(retain, nonatomic) UIKeyboardDockItem *leftDockItem; // @synthesize leftDockItem=_leftDockItem;
 @property(nonatomic) __weak id <UIKeyboardDockViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_keyboardLongPressInteractionRegions;
 - (id)_keyboardLayoutView;
 - (void)layoutSubviews;

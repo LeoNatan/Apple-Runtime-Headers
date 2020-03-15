@@ -21,12 +21,12 @@
     id _extendedTraitObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain) id extendedTraitObserver; // @synthesize extendedTraitObserver=_extendedTraitObserver;
 @property(retain) PKExtendedTraitCollection *extendedTraitCollection; // @synthesize extendedTraitCollection=_extendedTraitCollection;
 @property(retain) id <PXPlacesMapGeotaggableInfoDelegate> informationDelegate; // @synthesize informationDelegate=_informationDelegate;
 @property(nonatomic) __weak id <PXPlacesMapPipelineComponentProvider> pipelineComponentProvider; // @synthesize pipelineComponentProvider;
 @property(readonly) unsigned long long popoverImageType; // @synthesize popoverImageType=_popoverImageType;
-- (void).cxx_destruct;
 - (void)imageForGeotaggable:(id)arg1 ofSize:(struct CGSize)arg2 networkAccessAllowed:(_Bool)arg3 andCompletion:(CDUnknownBlockType)arg4;
 - (void)reset;
 - (id)viewForAnnotation:(id)arg1 andMapView:(id)arg2;

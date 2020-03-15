@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     VUIPlistMediaDatabase *_database;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIPlistMediaDatabase *database; // @synthesize database=_database;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) VUIMediaItemEntityTypesFetchResponse *response; // @synthesize response=_response;
-- (void).cxx_destruct;
 - (void)executionDidBegin;
 - (id)initWithDatabase:(id)arg1;
 - (id)init;

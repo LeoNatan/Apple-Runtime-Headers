@@ -20,11 +20,11 @@
 
 + (id)_mediaItemIdentifierForContributorImageLoadParams:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *videoCreditsOperationQueue; // @synthesize videoCreditsOperationQueue=_videoCreditsOperationQueue;
 @property(retain, nonatomic) NSMutableDictionary *processedMediaItemIdentifiers; // @synthesize processedMediaItemIdentifiers=_processedMediaItemIdentifiers;
 @property(retain, nonatomic) NSMutableDictionary *videoCreditsContextByIdentifier; // @synthesize videoCreditsContextByIdentifier=_videoCreditsContextByIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *templateImageURLStringByContributorName; // @synthesize templateImageURLStringByContributorName=_templateImageURLStringByContributorName;
-- (void).cxx_destruct;
 - (void)_updateTemplateImageURLStrings:(id)arg1;
 - (void)_completeTemplateImageURLStringRequest:(id)arg1 templateImageURLStrings:(id)arg2 error:(id)arg3;
 - (void)operation:(id)arg1 templateImageURLStringForParams:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;

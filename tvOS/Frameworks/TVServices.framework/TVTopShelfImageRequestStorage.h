@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSMutableDictionary *requests; // @synthesize requests=_requests;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *requests; // @synthesize requests=_requests;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

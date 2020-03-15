@@ -18,9 +18,9 @@
 + (id)iTunesMetadataFromZipArchive:(id)arg1 url:(id)arg2 error:(id *)arg3;
 + (id)iTunesMetadataForBookAssetAtURL:(id)arg1 error:(id *)arg2;
 + (id)metadataForAssetAtURL:(id)arg1 preloadedMetadata:(id)arg2 includeCover:(BOOL)arg3 error:(id *)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(nonatomic) BOOL includeCover; // @synthesize includeCover=_includeCover;
-- (void).cxx_destruct;
 - (id)_opfDataFromZipArchive:(id)arg1 error:(id *)arg2;
 - (id)_opfDataFromUncompressetAssetWithError:(id *)arg1;
 - (id)_metadataFromCompressedAssetWithPreloadedMetadata:(id)arg1 error:(id *)arg2;

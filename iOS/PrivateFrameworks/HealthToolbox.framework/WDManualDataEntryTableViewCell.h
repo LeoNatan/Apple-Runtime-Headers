@@ -32,11 +32,11 @@ __attribute__((visibility("hidden")))
     UIFont *_bodyFont;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *bodyFont; // @synthesize bodyFont=_bodyFont;
 @property(nonatomic) __weak id <WDManualDataEntryTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool shouldHighlightWhenEditing; // @synthesize shouldHighlightWhenEditing=_shouldHighlightWhenEditing;
 @property(retain, nonatomic) HKDisplayType *displayType; // @synthesize displayType=_displayType;
-- (void).cxx_destruct;
 - (void)_updateDecimalSeparator;
 - (id)_sanitizedTextFieldText:(id)arg1;
 - (id)_removeDecimalSeparatorsFromText:(id)arg1;

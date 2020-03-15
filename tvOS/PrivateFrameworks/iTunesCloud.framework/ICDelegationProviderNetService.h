@@ -22,8 +22,8 @@
     NSNetService *_netService;
 }
 
-@property(readonly, nonatomic) NSNetService *netService; // @synthesize netService=_netService;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSNetService *netService; // @synthesize netService=_netService;
 - (void)_updateTXTRecordProperties;
 - (void)_setState:(long long)arg1;
 - (void)_resolveWithCompletionHandler:(CDUnknownBlockType)arg1;

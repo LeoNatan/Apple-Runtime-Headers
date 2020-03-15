@@ -20,9 +20,9 @@
 + (id)metadataWithData:(id)arg1;
 + (id)metadataWithICSComponent:(id)arg1;
 + (id)_whitelistedClassesForSecureCoding;
+- (void).cxx_destruct;
 @property int classification; // @synthesize classification=_classification;
 @property(retain) NSDictionary *x_props; // @synthesize x_props=_x_props;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)dataRepresentationWithExistingMetaData:(id)arg1;

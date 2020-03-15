@@ -20,6 +20,7 @@
     CDUnknownBlockType _executionQueueAbortCompletionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType executionQueueAbortCompletionBlock; // @synthesize executionQueueAbortCompletionBlock=_executionQueueAbortCompletionBlock;
 @property unsigned int nextJobSequenceNumber; // @synthesize nextJobSequenceNumber=_nextJobSequenceNumber;
 @property(retain, nonatomic) NSString *queueID; // @synthesize queueID=_queueID;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *jobQueue; // @synthesize jobQueue=_jobQueue;
 @property(nonatomic) __weak id <MCJobQueueObserver> observer; // @synthesize observer=_observer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *executionQueue; // @synthesize executionQueue=_executionQueue;
-- (void).cxx_destruct;
 - (void)abortEnqueuedJobsCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)waitForEnqueuedJobsToCompleteCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)jobDidFinishFromFunction:(const char *)arg1;

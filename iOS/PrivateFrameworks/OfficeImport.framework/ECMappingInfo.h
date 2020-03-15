@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)mappingInfoWithSheetName:(id)arg1;
-@property(readonly, nonatomic) NSString *sheetName; // @synthesize sheetName=mSheetName;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *sheetName; // @synthesize sheetName=mSheetName;
 @property(readonly, nonatomic) int columnOffset;
 @property(readonly, nonatomic) int rowOffset;
 - (id)initWithSheetName:(id)arg1;

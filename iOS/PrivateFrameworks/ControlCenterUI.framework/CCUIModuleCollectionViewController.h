@@ -32,9 +32,9 @@
     id <CCUIModuleCollectionViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isHomeGestureDismissalAllowed) _Bool homeGestureDismissalAllowed; // @synthesize homeGestureDismissalAllowed=_homeGestureDismissalAllowed;
 @property(nonatomic) __weak id <CCUIModuleCollectionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateHomeGestureDismissalAllowed;
 - (void)_beginAppearanceTransition:(_Bool)arg1 affectedModule:(id)arg2;
 - (long long)_interfaceOrientation;

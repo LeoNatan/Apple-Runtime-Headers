@@ -20,10 +20,10 @@
 
 + (id)clueWithValue:(id)arg1 forKey:(id)arg2 confidence:(double)arg3 relevance:(double)arg4;
 + (id)clueWithValue:(id)arg1 forKey:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) CLSPlace *relatedPlace; // @synthesize relatedPlace=_relatedPlace;
 @property(retain) CLSPerson *relatedPerson; // @synthesize relatedPerson=_relatedPerson;
 @property(retain) CLSEvent *relatedEvent; // @synthesize relatedEvent=_relatedEvent;
-- (void).cxx_destruct;
 - (BOOL)isEqualToClue:(id)arg1;
 - (id)description;
 - (id)relatedInputTimeClues;

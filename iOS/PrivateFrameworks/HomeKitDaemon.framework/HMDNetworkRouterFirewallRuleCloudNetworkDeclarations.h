@@ -19,13 +19,13 @@
 }
 
 + (id)__decodeRuleConfigurationWithVersionString:(id)arg1 ruleConfigurationValue:(id)arg2 baseAccessoryIdentifier:(id)arg3;
-+ (id)__decodeRuleConfigurationsFromJSONDictionary:(struct NSDictionary *)arg1 baseAccessoryIdentifier:(id)arg2 allowUnzippedData:(_Bool)arg3;
++ (id)__decodeRuleConfigurationsFromJSONDictionary:(id)arg1 baseAccessoryIdentifier:(id)arg2 allowUnzippedData:(_Bool)arg3;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *ruleConfigurations; // @synthesize ruleConfigurations=_ruleConfigurations;
 @property(readonly, nonatomic) NSDate *lastModifiedTime; // @synthesize lastModifiedTime=_lastModifiedTime;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) HMDNetworkRouterFirewallRuleAccessoryIdentifier *baseAccessoryIdentifier; // @synthesize baseAccessoryIdentifier=_baseAccessoryIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *prettyJSONDictionary;
 - (id)attributeDescriptions;
 - (id)initWithBaseAccessoryIdentifier:(id)arg1 data:(id)arg2 allowUnzippedData:(_Bool)arg3;

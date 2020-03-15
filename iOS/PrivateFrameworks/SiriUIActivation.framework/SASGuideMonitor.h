@@ -18,10 +18,10 @@
 }
 
 + (id)monitor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastGuideCheck; // @synthesize lastGuideCheck=_lastGuideCheck;
 @property(retain, nonatomic) NSDate *lastAppUpdateTimestamp; // @synthesize lastAppUpdateTimestamp=_lastAppUpdateTimestamp;
 @property(readonly, nonatomic, getter=_language) AFUISiriLanguage *language; // @synthesize language=_language;
-- (void).cxx_destruct;
 - (void)checkForGuideUpdatesIfNecessary;
 - (void)_applicationsDidChange;
 - (void)siriLanguageSpokenLanguageCodeDidChange:(id)arg1;

@@ -14,9 +14,9 @@
     NSAttributedString *_attributedString;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
 @property(retain, nonatomic) ICTrackedParagraph *trackedParagraph; // @synthesize trackedParagraph=_trackedParagraph;
-- (void).cxx_destruct;
 
 @end
 

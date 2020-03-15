@@ -16,11 +16,11 @@
     NSString *_userDSID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *userDSID; // @synthesize userDSID=_userDSID;
 @property(readonly, copy) NSString *requestID; // @synthesize requestID=_requestID;
 @property(readonly) long long reason; // @synthesize reason=_reason;
 @property(readonly, copy) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSDictionary *dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithContainerIdentifier:(id)arg1 reason:(long long)arg2 requestID:(id)arg3 userDSID:(id)arg4;

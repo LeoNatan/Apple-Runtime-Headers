@@ -20,11 +20,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *buyParameters; // @synthesize buyParameters=_buyParameters;
 @property(copy) NSString *bagURLKey; // @synthesize bagURLKey=_bagURLKey;
 @property(copy) NSString *forcedUsername; // @synthesize forcedUsername=_forcedUsername;
 @property(readonly) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

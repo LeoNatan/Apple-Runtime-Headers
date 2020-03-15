@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     WFSSHKeyPair *_keyPair;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFSSHKeyPair *keyPair; // @synthesize keyPair=_keyPair;
 @property(readonly, nonatomic) WFBasicTableItem *generateItem; // @synthesize generateItem=_generateItem;
 @property(readonly, nonatomic) WFBasicTableItem *exportItem; // @synthesize exportItem=_exportItem;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) WFTableSection *keyInfoSection; // @synthesize keyInfoSection=_keyInfoSection;
 @property(readonly, nonatomic) WFTableDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <WFSSHKeyConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)keyGenerationViewController:(id)arg1 didFinishWithKeyPair:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)showHashWithType:(unsigned long long)arg1;

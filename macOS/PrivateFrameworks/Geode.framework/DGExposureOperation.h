@@ -25,10 +25,10 @@
 + (id)inputKeys;
 + (id)attributes;
 + (id)_stringsTableName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *inputBrightness; // @synthesize inputBrightness=_inputBrightness;
 @property(copy, nonatomic) NSNumber *inputRecoveryEV; // @synthesize inputRecoveryEV=_inputRecoveryEV;
 @property(copy, nonatomic) NSNumber *inputEV; // @synthesize inputEV=_inputEV;
-- (void).cxx_destruct;
 - (void)_applyAutoSettings:(id)arg1;
 - (BOOL)applySettingsDictionary:(id)arg1;
 - (id)defaultValueForInputKey:(id)arg1;

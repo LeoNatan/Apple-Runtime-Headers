@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     CDStruct_1b6d18a9 _observationInterval;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 observationInterval; // @synthesize observationInterval=_observationInterval;
 @property(retain, nonatomic) AVAssetTrack *timecodeTrack; // @synthesize timecodeTrack=_timecodeTrack;
-- (void).cxx_destruct;
 - (_Bool)timecodeAvailable;
 - (_Bool)readTimecodes;
 - (_Bool)validateCMTime:(CDStruct_1b6d18a9)arg1;

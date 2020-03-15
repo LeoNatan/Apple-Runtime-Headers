@@ -6,10 +6,10 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class INIntentSlotDescription, NSArray, NSString;
+@class INIntentSlotDescription, INStringLocalizer, NSArray, NSString;
 
 @protocol INIntentSlotComposing <NSObject>
-- (NSString *)localizeValueOfSlotDescription:(INIntentSlotDescription *)arg1 forLanguage:(NSString *)arg2;
+- (NSString *)localizeValueOfSlotDescription:(INIntentSlotDescription *)arg1 withLocalizer:(INStringLocalizer *)arg2;
 - (NSArray *)intentSlotDescriptions;
 @end
 

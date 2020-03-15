@@ -17,8 +17,8 @@
 }
 
 + (Class)supportedCommandClass;
-@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void)handleAceView:(id)arg1 isExpository:(BOOL)arg2 taskTracker:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)handleCommand:(id)arg1 withContext:(id)arg2 taskTracker:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)prepareToHandleCommand:(id)arg1 completion:(CDUnknownBlockType)arg2;

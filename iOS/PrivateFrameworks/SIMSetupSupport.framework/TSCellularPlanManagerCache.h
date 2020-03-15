@@ -18,11 +18,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSArray *danglingPlanItems; // @synthesize danglingPlanItems=_danglingPlanItems;
 @property(nonatomic) unsigned long long supportedFlowTypes; // @synthesize supportedFlowTypes=_supportedFlowTypes;
 @property(retain) NSArray *planItems; // @synthesize planItems=_planItems;
 @property(nonatomic) __weak id <TSCellularPlanManagerCacheDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (id)_getByteRepresentationOf:(id)arg1;
 - (id)_getValidatedPlanItemFor:(id)arg1;
 - (void)_updateLocalCachedPlanItems:(id)arg1;

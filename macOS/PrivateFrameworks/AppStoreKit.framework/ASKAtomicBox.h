@@ -11,8 +11,8 @@
     id _value;
 }
 
-@property(retain) id value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(retain) id value; // @synthesize value=_value;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

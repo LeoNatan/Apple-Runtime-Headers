@@ -19,10 +19,10 @@
 
 + (id)uniqueTableConstraintWithName:(id)arg1 columnNames:(id)arg2;
 + (id)primaryKeyTableConstraintWithName:(id)arg1 columnNames:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *columnNames; // @synthesize columnNames=_columnNames;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithName:(id)arg1 type:(int)arg2 columnNames:(id)arg3;
 

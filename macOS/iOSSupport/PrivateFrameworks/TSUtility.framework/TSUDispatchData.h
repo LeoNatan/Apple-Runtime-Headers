@@ -18,12 +18,12 @@
     unsigned long long _fragmentsCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long fragmentsCount; // @synthesize fragmentsCount=_fragmentsCount;
 @property(readonly, nonatomic) NSObject<OS_dispatch_data> *defragmentedData; // @synthesize defragmentedData=_defragmentedData;
 @property(readonly, nonatomic) NSObject<OS_dispatch_data> *fragmentedData; // @synthesize fragmentedData=_fragmentedData;
 @property(nonatomic) unsigned long long maxFragmentsCount; // @synthesize maxFragmentsCount=_maxFragmentsCount;
 @property(readonly, nonatomic) unsigned long long size; // @synthesize size=_size;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_data> *data;
 - (void)append:(id)arg1;
 - (id)initWithData:(id)arg1;

@@ -14,8 +14,8 @@
 }
 
 + (id)convenienceFormatter;
-@property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 - (_Bool)getObjectValue:(out id *)arg1 forString:(id)arg2 errorDescription:(out id *)arg3;
 - (id)stringForObjectValue:(id)arg1;
 - (float)convertInchesHGPressure:(float)arg1 toUnit:(int)arg2;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)makeDelegate;
+- (void).cxx_destruct;
 @property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
 @property(retain, nonatomic) FI_TFileSystemOperationDelegate *selfReference; // @synthesize selfReference=_selfReference;
-- (void).cxx_destruct;
 - (void)aboutToTearDown;
 - (int)asyncNodeOperation:(id)arg1 completedNotification:(const struct TOperationMonitor *)arg2;
 - (int)asyncNodeOperation:(id)arg1 errorNotification:(const struct TOperationMonitor *)arg2 error:(const struct OperationErrorRecord *)arg3 reply:(struct NodeEventReply *)arg4;

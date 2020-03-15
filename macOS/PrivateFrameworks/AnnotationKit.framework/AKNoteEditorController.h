@@ -26,13 +26,13 @@
 + (void)p_showCoalestedMargins;
 + (id)p_queuedAnimations;
 + (void)p_addMarginShowToCoalescedTimer:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AKNoteMarginView *marginView; // @synthesize marginView=_marginView;
 @property(retain, nonatomic) AKNoteAnimationWindowController *animator; // @synthesize animator=_animator;
 @property(retain, nonatomic) AKNoteEditorWindowController *controller; // @synthesize controller=_controller;
 @property(retain, nonatomic) AKNoteStickyView *stickyView; // @synthesize stickyView=_stickyView;
 @property(nonatomic) __weak id <AKNoteEditorControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) AKPopupAnnotation *annotation; // @synthesize annotation=_annotation;
-- (void).cxx_destruct;
 - (int)p_annotationStyleForPopupAnnotation:(id)arg1;
 - (void)p_hideStickyView;
 - (void)p_showStickyView;

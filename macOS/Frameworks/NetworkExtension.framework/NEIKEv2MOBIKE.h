@@ -27,6 +27,7 @@
     NSString *_mobikeServer;
 }
 
+- (void).cxx_destruct;
 @property BOOL mobikeEarlyDisconnect; // @synthesize mobikeEarlyDisconnect=_mobikeEarlyDisconnect;
 @property BOOL mobikeReasserting; // @synthesize mobikeReasserting=_mobikeReasserting;
 @property BOOL mobikePending; // @synthesize mobikePending=_mobikePending;
@@ -39,7 +40,6 @@
 @property(retain) NSObject<OS_dispatch_queue> *mobikeQueue; // @synthesize mobikeQueue=_mobikeQueue;
 @property(retain) NSObject<OS_dispatch_source> *mobikeWaitTimer; // @synthesize mobikeWaitTimer=_mobikeWaitTimer;
 @property __weak NEIKEv2PacketTunnelProvider *tunnelProvider; // @synthesize tunnelProvider=_tunnelProvider;
-- (void).cxx_destruct;
 - (void)initiateMOBIKE:(unsigned long long)arg1 pathStatus:(long long)arg2 serverAddress:(id)arg3 earlyDisconnect:(BOOL)arg4;
 - (BOOL)startMOBIKE:(id)arg1;
 - (void)mobikeDisconnect;

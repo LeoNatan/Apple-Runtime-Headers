@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isGlanceCategory; // @synthesize isGlanceCategory=_isGlanceCategory;
 @property(nonatomic) _Bool serialized; // @synthesize serialized=_serialized;
 @property(nonatomic) unsigned int domain; // @synthesize domain=_domain;
@@ -35,7 +36,6 @@
 @property _Bool doNotFold; // @synthesize doNotFold=_doNotFold;
 @property(retain, nonatomic) NSMutableOrderedSet *resultSet; // @synthesize resultSet=_resultSet;
 @property(retain, nonatomic) NSArray *hiddenExtResults; // @synthesize hiddenExtResults=_hiddenExtResults;
-- (void).cxx_destruct;
 - (void)sortUsingComparator:(CDUnknownBlockType)arg1;
 - (void)replaceResultsAtIndex:(unsigned long long)arg1 withResults:(id)arg2;
 - (void)removeResultsInArray:(id)arg1;

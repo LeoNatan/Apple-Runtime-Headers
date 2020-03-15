@@ -16,8 +16,8 @@
     NSString *_applicationName;
 }
 
-@property(retain, nonatomic) NSString *applicationName; // @synthesize applicationName=_applicationName;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *applicationName; // @synthesize applicationName=_applicationName;
 - (id)tableView:(id)arg1 anonymousCellForRow:(unsigned long long)arg2;
 - (id)tableView:(id)arg1 emailCellForRow:(unsigned long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

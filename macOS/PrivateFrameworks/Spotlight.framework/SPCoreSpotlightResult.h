@@ -21,10 +21,10 @@
     CSSearchableItemAttributeSet *_attributeSet;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CSSearchableItemAttributeSet *attributeSet; // @synthesize attributeSet=_attributeSet;
 @property(readonly, nonatomic) NSString *sectionIdentifier; // @synthesize sectionIdentifier=_sectionIdentifier;
 @property(retain, nonatomic) NSString *threadId; // @synthesize threadId=_threadId;
-- (void).cxx_destruct;
 - (void)markAsUsed;
 - (id)quickLookItemForQueryString:(id)arg1;
 - (id)providerDataTypes;

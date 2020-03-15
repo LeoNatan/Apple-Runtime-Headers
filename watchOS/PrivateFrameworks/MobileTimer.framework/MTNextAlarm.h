@@ -16,11 +16,11 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isSleepAlarm; // @synthesize isSleepAlarm=_isSleepAlarm;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSDate *fireDate; // @synthesize fireDate=_fireDate;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, copy, nonatomic) NSURL *clockAppSectionURL;
 

@@ -26,6 +26,7 @@
     struct _SXConvertibleValue _suggestedHeight;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long ignoreViewportPadding; // @synthesize ignoreViewportPadding=_ignoreViewportPadding;
 @property(readonly, nonatomic) id <SXEdgeSpacing> padding; // @synthesize padding=_padding;
 @property(readonly, nonatomic) struct _SXConvertibleValue suggestedHeight; // @synthesize suggestedHeight=_suggestedHeight;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) unsigned long long ignoreDocumentGutter; // @synthesize ignoreDocumentGutter=_ignoreDocumentGutter;
 @property(readonly, nonatomic) struct _NSRange columnRange; // @synthesize columnRange=_columnRange;
 @property(readonly, nonatomic) struct _SXComponentContentInset contentInset; // @synthesize contentInset=_contentInset;
-- (void).cxx_destruct;
 - (id)initWithColumnRange:(struct _NSRange)arg1;
 
 // Remaining properties

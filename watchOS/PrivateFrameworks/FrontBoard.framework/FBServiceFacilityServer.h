@@ -24,8 +24,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) BSServiceDomainSpecification *domain; // @synthesize domain=_domain;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BSServiceDomainSpecification *domain; // @synthesize domain=_domain;
 - (void)_queue_evaluateSuspendedFacility:(id)arg1;
 - (void)_queue_evaluateSuspendedFacilities;
 - (_Bool)_queue_areFacilityPrerequisitesSatisfied:(id)arg1;

@@ -16,9 +16,9 @@
     NSString *_version;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *version; // @synthesize version=_version;
 @property(readonly, nonatomic) EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
-- (void).cxx_destruct;
 - (id)versionFromData:(id)arg1 error:(id *)arg2;
 - (id)serializeEvent:(id)arg1 error:(id *)arg2;
 - (id)deserializeData:(id)arg1 error:(id *)arg2;

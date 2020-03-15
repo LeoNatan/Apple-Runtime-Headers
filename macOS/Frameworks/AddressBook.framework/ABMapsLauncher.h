@@ -15,9 +15,9 @@
 }
 
 + (id)mapsLauncherWithRequest:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ABMapsLauncher *nextLauncher; // @synthesize nextLauncher=_nextLauncher;
 @property(readonly, nonatomic) ABMapsLaunchRequest *launchRequest; // @synthesize launchRequest=_launchRequest;
-- (void).cxx_destruct;
 - (void)launchMaps;
 - (id)initWithLaunchRequest:(id)arg1 nextLauncher:(id)arg2;
 - (id)initWithLaunchRequest:(id)arg1;

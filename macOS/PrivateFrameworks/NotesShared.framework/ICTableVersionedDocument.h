@@ -19,8 +19,8 @@
 + (id)tableDoc;
 + (unsigned int)minimumSupportedVersion;
 + (unsigned int)serializationVersion;
-@property(retain, nonatomic) ICTable *table; // @synthesize table=_table;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ICTable *table; // @synthesize table=_table;
 - (id)serializeCurrentVersion:(unsigned int *)arg1;
 - (void)mergeVersion:(unsigned int)arg1 fromData:(id)arg2;
 @property(readonly) CRDocument *innerTableDocument; // @synthesize innerTableDocument=_innerTableDocument;

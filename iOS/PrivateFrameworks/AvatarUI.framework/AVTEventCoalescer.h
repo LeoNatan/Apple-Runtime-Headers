@@ -21,13 +21,13 @@
     double _delay;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool eventDeliveryScheduled; // @synthesize eventDeliveryScheduled=_eventDeliveryScheduled;
 @property(readonly, nonatomic) double delay; // @synthesize delay=_delay;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(copy, nonatomic) NSString *eventLabel; // @synthesize eventLabel=_eventLabel;
 @property(copy, nonatomic) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
-- (void).cxx_destruct;
 - (void)eventDidOccur:(CDUnknownBlockType)arg1;
 - (void)registerEventForCoalescingWithLabel:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)initWithDelay:(double)arg1 queue:(id)arg2 logger:(id)arg3;

@@ -19,11 +19,11 @@
     NSMutableArray *_disconnectedClients;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *disconnectedClients; // @synthesize disconnectedClients=_disconnectedClients;
 @property(readonly, nonatomic) NSMutableArray *connectedClients; // @synthesize connectedClients=_connectedClients;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) NSString *machServiceName; // @synthesize machServiceName=_machServiceName;
-- (void).cxx_destruct;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)logClients;
 - (void)shutdown;

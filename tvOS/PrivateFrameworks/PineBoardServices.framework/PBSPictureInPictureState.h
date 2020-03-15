@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) BSSettings *settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BSSettings *settings; // @synthesize settings=_settings;
 @property(readonly, nonatomic, getter=isPictureInPictureActive) _Bool pictureInPictureActive;
 @property(readonly, nonatomic) unsigned long long presentationState;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -14,6 +14,7 @@
 + (void)_sf_animateLinkImage:(id)arg1 withAnimation:(long long)arg2 fromPoint:(struct CGPoint)arg3 inView:(id)arg4 toRect:(struct CGRect)arg5 inView:(id)arg6 afterImageDisappearsBlock:(CDUnknownBlockType)arg7 afterDestinationLayerBouncesBlock:(CDUnknownBlockType)arg8;
 - (void)ss_setUntransformedFrame:(struct CGRect)arg1;
 - (struct CGRect)ss_untransformedFrame;
+- (void)_sf_setMatchesIntrinsicContentSize;
 - (id)_sf_firstAncestorViewOfClass:(Class)arg1;
 - (void)_sf_setOrderedSubviews:(id *)arg1 count:(unsigned long long)arg2;
 - (id)_sf_snapshotImageFromIOSurface;

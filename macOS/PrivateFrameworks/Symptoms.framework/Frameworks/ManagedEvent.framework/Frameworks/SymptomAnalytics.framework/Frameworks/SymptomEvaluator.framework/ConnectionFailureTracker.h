@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_failedFlows;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *failedFlows; // @synthesize failedFlows=_failedFlows;
 @property(retain, nonatomic) NSData *destinationAddress; // @synthesize destinationAddress=_destinationAddress;
 @property(nonatomic) long long ifType; // @synthesize ifType=_ifType;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double lastConnectionFailTime; // @synthesize lastConnectionFailTime=_lastConnectionFailTime;
 @property(nonatomic) double firstConnectionFailTime; // @synthesize firstConnectionFailTime=_firstConnectionFailTime;
 @property(nonatomic) int numConsecutiveFailures; // @synthesize numConsecutiveFailures=_numConsecutiveFailures;
-- (void).cxx_destruct;
 - (_Bool)noteInitialSnapshot:(id)arg1;
 - (void)_reportFailure:(unsigned long long)arg1 owner:(id)arg2;
 - (void)_logFailure;

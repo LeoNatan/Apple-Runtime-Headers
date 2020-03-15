@@ -20,8 +20,8 @@
     FCForYouCatchUpCondition *_condition;
 }
 
-@property(retain, nonatomic) FCForYouCatchUpCondition *condition; // @synthesize condition=_condition;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FCForYouCatchUpCondition *condition; // @synthesize condition=_condition;
 - (void)_possiblyFinishWithError:(id)arg1;
 - (void)cancel;
 - (void)notifyWithCompletion:(CDUnknownBlockType)arg1;

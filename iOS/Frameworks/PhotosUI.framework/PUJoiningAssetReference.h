@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     PUAssetReference *_containedAssetReference;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PUAssetReference *containedAssetReference; // @synthesize containedAssetReference=_containedAssetReference;
 @property(readonly, nonatomic) long long hintDataSourceIndex; // @synthesize hintDataSourceIndex=_hintDataSourceIndex;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithContainedAssetReference:(id)arg1 hintDataSourceIndex:(long long)arg2 indexPath:(id)arg3 dataSourceIdentifier:(id)arg4;
 - (id)initWithAsset:(id)arg1 assetCollection:(id)arg2 indexPath:(id)arg3 dataSourceIdentifier:(id)arg4;

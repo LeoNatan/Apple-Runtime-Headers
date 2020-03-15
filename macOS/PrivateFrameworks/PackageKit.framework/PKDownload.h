@@ -25,9 +25,9 @@
 + (BOOL)canDownloadURL:(id)arg1;
 + (void)addDownloadClass:(Class)arg1;
 + (id)_downloadClasses;
+- (void).cxx_destruct;
 @property BOOL downloadInBackground; // @synthesize downloadInBackground=_downloadInBackground;
 @property(readonly) __weak id <PKDownloadDelegate><NSObject> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (BOOL)failedDownloadValidation;
 - (BOOL)validatesDuringDownload;

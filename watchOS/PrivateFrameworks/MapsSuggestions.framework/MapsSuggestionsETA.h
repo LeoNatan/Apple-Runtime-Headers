@@ -24,6 +24,7 @@
 
 + (id)ETAWithData:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *originator; // @synthesize originator=_originator;
 @property(readonly, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(readonly, nonatomic) NSDate *time; // @synthesize time=_time;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) NSString *longTrafficString; // @synthesize longTrafficString=_longTrafficString;
 @property(readonly, nonatomic) NSString *shortTrafficString; // @synthesize shortTrafficString=_shortTrafficString;
 @property(readonly, nonatomic) double seconds; // @synthesize seconds=_seconds;
-- (void).cxx_destruct;
 - (id)description;
 - (id)data;
 - (id)initWithCoder:(id)arg1;

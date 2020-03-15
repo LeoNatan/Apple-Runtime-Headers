@@ -18,8 +18,8 @@
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
-@property(nonatomic) __weak UIViewController<REMReminderCreationPublicViewController> *publicViewController; // @synthesize publicViewController=_publicViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIViewController<REMReminderCreationPublicViewController> *publicViewController; // @synthesize publicViewController=_publicViewController;
 - (void)viewHostDidDismiss;
 - (void)viewServiceDidFinish;
 - (void)viewServiceDidFailWithError:(id)arg1;

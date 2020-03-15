@@ -21,6 +21,7 @@
     long long _timeControlStatus;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long timeControlStatus; // @synthesize timeControlStatus=_timeControlStatus;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic, getter=isAudioSessionActive) _Bool audioSessionActive; // @synthesize audioSessionActive=_audioSessionActive;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) long long playbackState; // @synthesize playbackState=_playbackState;
 @property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
 @property(nonatomic) __weak id <NCAudioPlayerControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)handlePlayerItemFailedToPlayToEndTimeNotification:(id)arg1;
 - (void)handlePlayerItemDidPlayToEndTimeNotification:(id)arg1;
 - (void)handleAudioSessionMediaServicesWereResetNotification:(id)arg1;

@@ -10,17 +10,18 @@
 
 @interface NTKSpectrumColorPalette : NSObject
 {
-    unsigned int _color;
     UIColor *_bandColor;
     UIColor *_fromColor;
     UIColor *_toColor;
+    float _overlayOpacity;
 }
 
 + (id)paletteForColor:(unsigned int)arg1 device:(id)arg2;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) float overlayOpacity; // @synthesize overlayOpacity=_overlayOpacity;
 @property(readonly, nonatomic) UIColor *toColor; // @synthesize toColor=_toColor;
 @property(readonly, nonatomic) UIColor *fromColor; // @synthesize fromColor=_fromColor;
 @property(readonly, nonatomic) UIColor *bandColor; // @synthesize bandColor=_bandColor;
-- (void).cxx_destruct;
 - (id)initWithColor:(unsigned int)arg1 device:(id)arg2;
 
 @end

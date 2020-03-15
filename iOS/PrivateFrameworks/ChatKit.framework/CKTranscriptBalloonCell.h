@@ -14,9 +14,9 @@
     CKBalloonView *_balloonView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool mayReparentPluginViews; // @synthesize mayReparentPluginViews=_mayReparentPluginViews;
 @property(retain, nonatomic) CKBalloonView *balloonView; // @synthesize balloonView=_balloonView;
-- (void).cxx_destruct;
 - (void)setAnimationPauseReasons:(long long)arg1;
 - (id)messageDisplayView;
 - (void)willLayoutDrawerLabelFrame:(struct CGRect *)arg1;

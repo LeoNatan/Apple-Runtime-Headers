@@ -21,6 +21,7 @@
     NSSet *_optionalCharacteristics;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowAssociatedService; // @synthesize allowAssociatedService=_allowAssociatedService;
 @property(retain, nonatomic) NSSet *optionalCharacteristics; // @synthesize optionalCharacteristics=_optionalCharacteristics;
 @property(retain, nonatomic) NSSet *mandatoryCharacteristics; // @synthesize mandatoryCharacteristics=_mandatoryCharacteristics;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSString *uuidStr; // @synthesize uuidStr=_uuidStr;
 @property(retain, nonatomic) NSString *svcDescription; // @synthesize svcDescription=_svcDescription;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)dump;
 - (id)description;
 - (id)generateDictionary:(id)arg1 metadata:(id)arg2;

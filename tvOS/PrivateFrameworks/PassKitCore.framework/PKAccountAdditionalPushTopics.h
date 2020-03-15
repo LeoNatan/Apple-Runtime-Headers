@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payments; // @synthesize payments=_payments;
 @property(copy, nonatomic) NSString *extendedAccount; // @synthesize extendedAccount=_extendedAccount;
 @property(copy, nonatomic) NSString *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CMAttitude *deviceAttitude; // @synthesize deviceAttitude=_deviceAttitude;
 @property(readonly, nonatomic) double presentationTimestamp; // @synthesize presentationTimestamp=_presentationTimestamp;
 @property(readonly, nonatomic) long long videoSourceHeight; // @synthesize videoSourceHeight=_videoSourceHeight;
 @property(readonly, nonatomic) long long videoSourceWidth; // @synthesize videoSourceWidth=_videoSourceWidth;
 @property(readonly, nonatomic) float videoZoomFactor; // @synthesize videoZoomFactor=_videoZoomFactor;
 @property(readonly, nonatomic) float videoFieldOfView; // @synthesize videoFieldOfView=_videoFieldOfView;
-- (void).cxx_destruct;
 - (struct CGRect)motionCorrectedNormalizedFrame:(struct CGRect)arg1 targetAttitude:(id)arg2 targetZoomFactor:(float)arg3 interfaceOrientation:(long long)arg4 mirrored:(_Bool)arg5;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

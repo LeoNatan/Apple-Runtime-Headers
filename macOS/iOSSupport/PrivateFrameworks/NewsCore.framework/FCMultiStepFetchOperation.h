@@ -15,10 +15,10 @@
     NFMutexLock *_accessLock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NFMutexLock *accessLock; // @synthesize accessLock=_accessLock;
 @property(retain, nonatomic) NSMutableArray *stepResults; // @synthesize stepResults=_stepResults;
 @property(retain, nonatomic) NSMutableArray *steps; // @synthesize steps=_steps;
-- (void).cxx_destruct;
 - (void)_performNextStep;
 - (void)customizeChildOperation:(id)arg1 forFetchStep:(SEL)arg2;
 - (id)completeFetchOperation;

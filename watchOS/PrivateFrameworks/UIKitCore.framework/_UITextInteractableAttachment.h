@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSTextAttachment *_attachment;
 }
 
-@property(retain, nonatomic) NSTextAttachment *attachment; // @synthesize attachment=_attachment;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSTextAttachment *attachment; // @synthesize attachment=_attachment;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isAttachment;
 

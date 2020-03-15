@@ -25,12 +25,12 @@
     NSString *_message;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(retain, nonatomic) UIImage *longLookHeaderViewIcon; // @synthesize longLookHeaderViewIcon=_longLookHeaderViewIcon;
 @property(retain, nonatomic) UIImage *headerViewIcon; // @synthesize headerViewIcon=_headerViewIcon;
 @property(retain, nonatomic) CUISBulletinActionMenu *actionMenu; // @synthesize actionMenu=_actionMenu;
 @property(nonatomic) __weak id <CSLBatteryAlertViewControllerDelegate> controllerDelegate; // @synthesize controllerDelegate=_controllerDelegate;
-- (void).cxx_destruct;
 - (id)longLookPlatterColorForHeaderView:(id)arg1;
 - (id)longLookIconForHeaderView:(id)arg1;
 - (id)iconForHeaderView:(id)arg1;

@@ -19,13 +19,13 @@
     NSMutableDictionary *_imageSizeCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *imageSizeCache; // @synthesize imageSizeCache=_imageSizeCache;
 @property(retain, nonatomic) DCLRUCache *inMemoryImageCache; // @synthesize inMemoryImageCache=_inMemoryImageCache;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *imageCacheQueue; // @synthesize imageCacheQueue=_imageCacheQueue;
 @property(readonly, nonatomic) NSURL *docCamImageDirectoryURL; // @synthesize docCamImageDirectoryURL=_docCamImageDirectoryURL;
 @property(readonly, nonatomic) NSURL *cachesDirectoryURL; // @synthesize cachesDirectoryURL=_cachesDirectoryURL;
 @property(retain, nonatomic) id <DCDataCryptorDelegate> dataCryptorDelegate; // @synthesize dataCryptorDelegate=_dataCryptorDelegate;
-- (void).cxx_destruct;
 - (void)applicationWillTerminate:(id)arg1;
 - (id)createNSDataFrom:(id)arg1 metaData:(id)arg2;
 - (void)clearInMemoryCache;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *backgroundVerticalAdjustmentsForBarMetrics;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSValue *miniTitlePositionOffset; // @synthesize miniTitlePositionOffset;
 @property(retain, nonatomic) NSValue *titlePositionOffset; // @synthesize titlePositionOffset;
-- (void).cxx_destruct;
 - (double)backgroundVerticalAdjustmentForBarMetrics:(long long)arg1;
 - (void)setBackgroundVerticalAdjustment:(double)arg1 forBarMetrics:(long long)arg2;
 - (id)anyBackgroundImage;

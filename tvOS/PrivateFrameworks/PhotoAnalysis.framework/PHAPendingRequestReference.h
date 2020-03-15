@@ -14,9 +14,9 @@
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *label; // @synthesize label=_label;
 @property __weak PHAGraphServiceWorker *worker; // @synthesize worker=_worker;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

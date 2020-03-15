@@ -8,7 +8,7 @@
 
 #import <AppleMediaServices/AMSURLHandling-Protocol.h>
 
-@class AMSURLSession, NSString;
+@class AMSSigningSecurityService, AMSURLSession, NSString;
 @protocol OS_dispatch_queue;
 
 @interface AMSURLProtocolHandler : NSObject <AMSURLHandling>
@@ -16,13 +16,15 @@
     AMSURLSession *session;
     NSObject<OS_dispatch_queue> *_responsePingQueue;
     NSObject<OS_dispatch_queue> *_metricsQueue;
+    AMSSigningSecurityService *_signingService;
 }
 
 + (double)_randomDouble;
+- (void).cxx_destruct;
+@property(readonly) AMSSigningSecurityService *signingService; // @synthesize signingService=_signingService;
 @property(retain) NSObject<OS_dispatch_queue> *metricsQueue; // @synthesize metricsQueue=_metricsQueue;
 @property(retain) NSObject<OS_dispatch_queue> *responsePingQueue; // @synthesize responsePingQueue=_responsePingQueue;
 @property __weak AMSURLSession *session; // @synthesize session;
-- (void).cxx_destruct;
 - (BOOL)_URLIsTrustedFromRequest:(id)arg1 bag:(id)arg2;
 - (BOOL)_shouldEnableReversePushForTask:(id)arg1;
 - (void)_setResponseCookiesFromResponse:(id)arg1 taskInfo:(id)arg2;

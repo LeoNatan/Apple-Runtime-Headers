@@ -20,11 +20,11 @@
 
 + (id)legacyPlatforms;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *voiceConfig; // @synthesize voiceConfig=_voiceConfig;
 @property(copy, nonatomic) NSURL *searchPathURL; // @synthesize searchPathURL=_searchPathURL;
 @property(copy, nonatomic) NSArray *resourceList; // @synthesize resourceList=_resourceList;
 @property(copy, nonatomic) NSArray *languages; // @synthesize languages=_languages;
-- (void).cxx_destruct;
 - (id)defaultFootprintString;
 - (id)defaultTypeString;
 - (id)defaultVoice;

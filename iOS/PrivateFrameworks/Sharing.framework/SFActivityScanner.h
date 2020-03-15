@@ -17,8 +17,8 @@
     NSUUID *_identifier;
 }
 
-@property(retain) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(retain) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (void)scanManager:(id)arg1 pairedDevicesChanged:(id)arg2;
 - (void)scanManager:(id)arg1 lostDeviceWithDevice:(id)arg2;
 - (void)scanManager:(id)arg1 foundDeviceWithDevice:(id)arg2;

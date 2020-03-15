@@ -26,12 +26,12 @@
 + (void)setFaceTimePhotosEnabledDeterminer:(CDUnknownBlockType)arg1;
 + (CDUnknownBlockType)faceTimePhotosEnabledDeterminer;
 + (_Bool)isFaceTimePhotosEnabledByDefault;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *providerByVideoStreamToken; // @synthesize providerByVideoStreamToken=_providerByVideoStreamToken;
 @property(readonly, nonatomic) NSMutableDictionary *capabilitiesByVideoStreamToken; // @synthesize capabilitiesByVideoStreamToken=_capabilitiesByVideoStreamToken;
 @property(readonly, nonatomic) __weak id <TUMomentsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <TUMomentsControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)serverDiedForDataSource:(id)arg1;
 - (void)dataSource:(id)arg1 didReceiveLocallyRequestedMomentDescriptor:(id)arg2;
 - (void)dataSource:(id)arg1 willCaptureRemoteRequestFromRequesterID:(id)arg2;

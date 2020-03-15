@@ -21,8 +21,8 @@
 + (id)complete;
 + (id)none;
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSString *fileProtection; // @synthesize fileProtection=_fileProtection;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *fileProtection; // @synthesize fileProtection=_fileProtection;
 - (BOOL)indicatesProtection;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;

@@ -23,6 +23,7 @@
 }
 
 + (id)parameters;
+- (void).cxx_destruct;
 @property(nonatomic) __weak _UIFeedbackParameters *parentParameters; // @synthesize parentParameters=_parentParameters;
 @property(nonatomic) __weak _UIFeedback *feedback; // @synthesize feedback=_feedback;
 @property(nonatomic) float releaseTime; // @synthesize releaseTime=_releaseTime;
@@ -31,7 +32,6 @@
 @property(nonatomic) float transposition; // @synthesize transposition=_transposition;
 @property(nonatomic) float rate; // @synthesize rate=_rate;
 @property(nonatomic) float volume; // @synthesize volume=_volume;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1 feedback:(id)arg2;
 - (_Bool)isEqual:(id)arg1;

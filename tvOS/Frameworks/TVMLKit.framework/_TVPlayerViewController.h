@@ -22,12 +22,12 @@
     TVPlayer *_player;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TVPlayer *player; // @synthesize player=_player;
 @property(retain, nonatomic) UIViewController *overlayViewController; // @synthesize overlayViewController=_overlayViewController;
 @property(nonatomic) long long resumeMenuBehavior; // @synthesize resumeMenuBehavior=_resumeMenuBehavior;
 @property(nonatomic) _Bool showsVideoControls; // @synthesize showsVideoControls=_showsVideoControls;
 @property(readonly, nonatomic) _TVPlayerResumeMenuViewController *resumeMenuViewController; // @synthesize resumeMenuViewController=_resumeMenuViewController;
-- (void).cxx_destruct;
 - (void)_showResumeMenuWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)_shouldShowResumeMenu;
 - (void)player:(id)arg1 shouldStartPlaybackAtTime:(double)arg2 forMediaItem:(id)arg3 completion:(CDUnknownBlockType)arg4;

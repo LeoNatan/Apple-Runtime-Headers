@@ -20,8 +20,8 @@
 }
 
 + (id)sharedSingletonWithDirectory:(id)arg1;
-@property(readonly) PMLTrainingStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
+@property(readonly) PMLTrainingStore *store; // @synthesize store=_store;
 - (void)setSourceRecoverer:(CDUnknownBlockType)arg1;
 - (id)planReceivedWithPayload:(id)arg1 error:(id *)arg2;
 - (void)trimDb;

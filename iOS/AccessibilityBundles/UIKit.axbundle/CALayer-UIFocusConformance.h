@@ -9,33 +9,41 @@
 #import <UIKit/UIFocusItem-Protocol.h>
 #import <UIKit/UIFocusItemContainer-Protocol.h>
 #import <UIKit/_UIFocusEnvironmentPrivate-Protocol.h>
+#import <UIKit/_UIFocusRegionContainer-Protocol.h>
 
 @class NSArray, NSString, UIView;
 @protocol UICoordinateSpace, UIFocusEnvironment, UIFocusItemContainer;
 
-@interface CALayer (UIFocusConformance) <UIFocusItem, UIFocusItemContainer, _UIFocusEnvironmentPrivate>
+@interface CALayer (UIFocusConformance) <UIFocusItem, UIFocusItemContainer, _UIFocusEnvironmentPrivate, _UIFocusRegionContainer>
+- (_Bool)conformsToProtocol:(id)arg1;
 @property(readonly, nonatomic) id <UICoordinateSpace> coordinateSpace;
 - (id)focusItemsInRect:(struct CGRect)arg1;
+- (id)_regionForFocusedItem:(id)arg1 inCoordinateSpace:(id)arg2;
+- (id)_preferredFocusRegionCoordinateSpace;
+- (void)_searchForFocusRegionsInContext:(id)arg1;
 @property(readonly, nonatomic) _Bool canBecomeFocused;
 - (void)_updateFocusLayerFrame;
 - (void)_destroyFocusLayer;
-- (void)_setupFocusLayer;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (_Bool)shouldUpdateFocusInContext:(id)arg1;
 - (void)updateFocusIfNeeded;
 - (void)setNeedsFocusUpdate;
 @property(readonly, nonatomic) id <UIFocusItemContainer> focusItemContainer;
+- (id)_focusGroupDescriptor;
+- (id)_axDefaultFocusGroupDescriptor;
+- (void)_axSetStoredDefaultFocusGroupDescriptor:(id)arg1;
+- (id)_axGetStoredDefaultFocusGroupDescriptor;
 @property(readonly, nonatomic) __weak id <UIFocusEnvironment> parentFocusEnvironment;
 @property(readonly, copy, nonatomic) NSArray *preferredFocusEnvironments;
-- (void)_axSetFocusLayer:(id)arg1;
-- (id)_axGetFocusLayer;
 @property(nonatomic) _Bool areChildrenFocused;
+- (void)_axSetAreChildrenFocused:(_Bool)arg1;
+- (_Bool)_axAreChildrenFocused;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic, getter=_isEligibleForFocusInteraction) _Bool eligibleForFocusInteraction;
-@property(readonly, nonatomic) struct CGRect frame;
+@property(readonly, nonatomic) struct CGRect frame; // @dynamic frame;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy, nonatomic, getter=_linearFocusMovementSequences) NSArray *linearFocusMovementSequences;
 @property(readonly, nonatomic, getter=_preferredFocusMovementStyle) long long preferredFocusMovementStyle;

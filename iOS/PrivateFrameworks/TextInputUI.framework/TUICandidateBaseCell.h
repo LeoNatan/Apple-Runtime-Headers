@@ -15,11 +15,14 @@
     UIImageView *_backgroundImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 @property(retain, nonatomic) id <TUICandidateViewStyle> style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setSelected:(_Bool)arg1;
+- (void)updateBackground:(id)arg1 color:(id)arg2;
+- (id)cellBackgroundImage;
+- (id)cellBackgroundColor;
 - (void)updateColors;
 
 @end

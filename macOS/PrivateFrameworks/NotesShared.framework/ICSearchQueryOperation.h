@@ -44,6 +44,7 @@
 + (id)prefixMatchingQueryStringForSearchString:(id)arg1;
 + (id)queryFields;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long rankingStrategy; // @synthesize rankingStrategy=_rankingStrategy;
 @property(readonly, nonatomic) BOOL allowEmptySearchString; // @synthesize allowEmptySearchString=_allowEmptySearchString;
 @property(nonatomic) BOOL performNLSearch; // @synthesize performNLSearch=_performNLSearch;
@@ -66,7 +67,6 @@
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSMutableArray *results; // @synthesize results=_results;
 @property(copy, nonatomic) CDUnknownBlockType foundItemsHandler; // @synthesize foundItemsHandler=_foundItemsHandler;
-- (void).cxx_destruct;
 - (void)cancel;
 - (unsigned long long)relevanceBitFieldForSearchableItem:(id)arg1;
 - (unsigned long long)matchedFieldForSearchableItem:(id)arg1;

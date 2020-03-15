@@ -14,8 +14,8 @@
 }
 
 + (id)attributedPinyinCandidateWithCandidate:(id)arg1;
-@property(retain, nonatomic) NSAttributedString *annotatedSurface; // @synthesize annotatedSurface=_annotatedSurface;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSAttributedString *annotatedSurface; // @synthesize annotatedSurface=_annotatedSurface;
 
 @end
 

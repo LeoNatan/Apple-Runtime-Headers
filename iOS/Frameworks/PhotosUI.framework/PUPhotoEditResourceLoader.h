@@ -20,13 +20,13 @@
 }
 
 + (id)compositionFromPHAdjustmentData:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setContentEditingRequestID:) unsigned long long _contentEditingRequestID; // @synthesize _contentEditingRequestID=__contentEditingRequestID;
 @property(retain, nonatomic, setter=_setEnqueuedRequests:) NSMutableArray *_enqueuedRequests; // @synthesize _enqueuedRequests=__enqueuedRequests;
 @property(retain, nonatomic) PUPhotoEditResourceLoadRequest *currentRequest; // @synthesize currentRequest=_currentRequest;
 @property(nonatomic, setter=_setResourcesAvailability:) long long resourcesAvailability; // @synthesize resourcesAvailability=_resourcesAvailability;
 @property(readonly, nonatomic) PUEditableMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(readonly, nonatomic) id <PUEditableAsset> asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)_downloadSignpostEvent:(const char *)arg1;
 - (void)_dequeueRequestIfNeeded;
 - (void)_handleSuccess:(_Bool)arg1 withResult:(id)arg2 forRequest:(id)arg3 error:(id)arg4;

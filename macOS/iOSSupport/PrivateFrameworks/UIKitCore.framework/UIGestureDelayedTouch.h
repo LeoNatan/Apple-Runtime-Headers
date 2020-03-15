@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     BOOL _cloneForSecondDelivery;
 }
 
+- (void).cxx_destruct;
 @property BOOL cloneForSecondDelivery; // @synthesize cloneForSecondDelivery=_cloneForSecondDelivery;
 @property(retain, nonatomic) UIEvent *event; // @synthesize event=_event;
 @property(retain, nonatomic) UITouch *stateWhenDelivered; // @synthesize stateWhenDelivered=_stateWhenDelivered;
 @property(retain, nonatomic) UITouch *stateWhenDelayed; // @synthesize stateWhenDelayed=_stateWhenDelayed;
 @property(retain, nonatomic) UITouch *touch; // @synthesize touch=_touch;
-- (void).cxx_destruct;
 - (id)description;
 - (double)timestampForDelivery;
 - (long long)phaseForDelivery;

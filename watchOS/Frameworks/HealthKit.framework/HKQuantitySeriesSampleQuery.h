@@ -28,9 +28,9 @@
 
 + (id)clientInterfaceProtocol;
 + (Class)configurationClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool orderByQuantitySampleStartDate; // @synthesize orderByQuantitySampleStartDate=_orderByQuantitySampleStartDate;
 @property(nonatomic) _Bool includeSample; // @synthesize includeSample=_includeSample;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *unitTest_cachedQuantitySamplesByUUID;
 - (void)queue_queryDidDeactivate:(id)arg1;
 - (void)queue_deliverError:(id)arg1;

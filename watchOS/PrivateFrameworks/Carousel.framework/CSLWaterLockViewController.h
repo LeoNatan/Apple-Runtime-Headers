@@ -16,8 +16,8 @@
 }
 
 + (id)systemLockIdentifier;
-@property(nonatomic) _Bool raindropBehaviorEnabled; // @synthesize raindropBehaviorEnabled=_raindropBehaviorEnabled;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool raindropBehaviorEnabled; // @synthesize raindropBehaviorEnabled=_raindropBehaviorEnabled;
 - (void)_performRaindropPopAnimationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_performLockPopAnimationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_updateAlertTextForPopped:(_Bool)arg1;

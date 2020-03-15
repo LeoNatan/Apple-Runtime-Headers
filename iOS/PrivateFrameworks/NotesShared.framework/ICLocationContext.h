@@ -18,9 +18,9 @@
 }
 
 + (id)sharedContext;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requestedAuthorization; // @synthesize requestedAuthorization=_requestedAuthorization;
 @property(retain, nonatomic) CLGeocoder *geocoder; // @synthesize geocoder=_geocoder;
-- (void).cxx_destruct;
 - (void)requestAuthorizationIfNeeded;
 @property(readonly, nonatomic) CLLocationManager *locationManager;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;

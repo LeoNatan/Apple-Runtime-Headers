@@ -17,11 +17,11 @@
 }
 
 + (id)editOptionCollectionWithEditMode:(long long)arg1 localizedName:(id)arg2 options:(id)arg3 collectionType:(unsigned long long)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long collectionType; // @synthesize collectionType=_collectionType;
 @property(copy, nonatomic) NSArray *options; // @synthesize options=_options;
 @property(copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)filteredCollectionForDevice:(id)arg1;
 - (id)filteredCollectionWithObjectsPassingTest:(CDUnknownBlockType)arg1;

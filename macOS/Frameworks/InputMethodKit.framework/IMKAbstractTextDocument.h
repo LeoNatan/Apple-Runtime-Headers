@@ -20,12 +20,12 @@
     NSMutableArray *_textSegmentationCharacterCounts;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *textSegmentationCharacterCounts; // @synthesize textSegmentationCharacterCounts=_textSegmentationCharacterCounts;
 @property(retain, nonatomic) NSString *textMarkedForUndo; // @synthesize textMarkedForUndo=_textMarkedForUndo;
 @property(readonly, nonatomic) id <IMKCandidateMenu> candidateMenu; // @synthesize candidateMenu=_candidateMenu;
 @property(nonatomic) BOOL showsWithMarking; // @synthesize showsWithMarking=_showsWithMarking;
 @property(readonly, nonatomic) IMKTextDocumentTraits *traits; // @synthesize traits=_traits;
-- (void).cxx_destruct;
 - (void)undoTextChanges;
 - (void)unmarkStateForUndo;
 - (void)markStateForUndo;

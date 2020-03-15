@@ -13,8 +13,8 @@
     NSView *_dividerView;
 }
 
-@property(retain) NSView *dividerView; // @synthesize dividerView=_dividerView;
 - (void).cxx_destruct;
+@property(retain) NSView *dividerView; // @synthesize dividerView=_dividerView;
 - (void)updateDividerVisibility;
 - (void)setSelected:(BOOL)arg1;
 - (void)setPreviousRowSelected:(BOOL)arg1;

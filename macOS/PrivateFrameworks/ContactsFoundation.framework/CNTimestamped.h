@@ -14,9 +14,9 @@
 
 + (id)timestampedWithValue:(id)arg1 timestamp:(double)arg2;
 + (CDUnknownBlockType)wrapTransformWithScheduler:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) double timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly) id value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

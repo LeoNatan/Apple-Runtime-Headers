@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <_MKKVOProxyDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <_MKKVOProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_MKKVOProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)removeObserverForObject:(id)arg1 forKeyPath:(id)arg2;
 - (void)removeObserverForObject:(id)arg1 forKeyPath:(id)arg2 context:(void *)arg3;

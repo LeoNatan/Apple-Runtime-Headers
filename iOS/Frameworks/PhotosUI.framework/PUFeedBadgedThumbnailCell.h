@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     PXBadgedThumbnailView *_badgedThumbnailView;
 }
 
-@property(readonly, nonatomic) PXBadgedThumbnailView *badgedThumbnailView; // @synthesize badgedThumbnailView=_badgedThumbnailView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXBadgedThumbnailView *badgedThumbnailView; // @synthesize badgedThumbnailView=_badgedThumbnailView;
 - (void)prepareForReuse;
 - (id)initWithFrame:(struct CGRect)arg1;
 

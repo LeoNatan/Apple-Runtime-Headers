@@ -15,10 +15,10 @@
     NSMutableSet *_triggerItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *triggerItems; // @synthesize triggerItems=_triggerItems;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;

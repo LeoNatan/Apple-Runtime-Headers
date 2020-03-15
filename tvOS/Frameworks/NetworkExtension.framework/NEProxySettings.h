@@ -40,6 +40,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSArray *supplementalMatchOrders; // @synthesize supplementalMatchOrders=_supplementalMatchOrders;
 @property(copy) NSArray *supplementalMatchDomains; // @synthesize supplementalMatchDomains=_supplementalMatchDomains;
 @property _Bool usePassiveFTP; // @synthesize usePassiveFTP=_usePassiveFTP;
@@ -59,7 +60,6 @@
 @property _Bool HTTPSEnabled; // @synthesize HTTPSEnabled=_HTTPSEnabled;
 @property _Bool HTTPEnabled; // @synthesize HTTPEnabled=_HTTPEnabled;
 @property _Bool autoProxyConfigurationEnabled; // @synthesize autoProxyConfigurationEnabled=_autoProxyConfigurationEnabled;
-- (void).cxx_destruct;
 @property(readonly) _Bool enabled;
 @property(copy) NEProxyServer *HTTPSServer;
 @property(copy) NEProxyServer *HTTPServer;

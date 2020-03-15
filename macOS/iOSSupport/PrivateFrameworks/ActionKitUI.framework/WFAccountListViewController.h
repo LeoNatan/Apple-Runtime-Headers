@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     NSArray *_accounts;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *accounts; // @synthesize accounts=_accounts;
 @property(readonly, nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
 @property(readonly, nonatomic) Class accountClass; // @synthesize accountClass=_accountClass;
-- (void).cxx_destruct;
 - (void)loginViewControllerDidCancel:(id)arg1;
 - (void)loginViewController:(id)arg1 didLoginWithAccount:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

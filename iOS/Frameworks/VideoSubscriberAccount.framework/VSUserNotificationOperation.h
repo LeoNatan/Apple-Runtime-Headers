@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     CDUnknownFunctionPointerType _userNotificationCancelProc;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) CDUnknownFunctionPointerType userNotificationCancelProc; // @synthesize userNotificationCancelProc=_userNotificationCancelProc;
 @property(nonatomic) CDUnknownFunctionPointerType userNotificationReceiveResponseProc; // @synthesize userNotificationReceiveResponseProc=_userNotificationReceiveResponseProc;
 @property(nonatomic) CDUnknownFunctionPointerType userNotificationCreateProc; // @synthesize userNotificationCreateProc=_userNotificationCreateProc;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSURL *iconURL; // @synthesize iconURL=_iconURL;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)main;
 - (id)init;

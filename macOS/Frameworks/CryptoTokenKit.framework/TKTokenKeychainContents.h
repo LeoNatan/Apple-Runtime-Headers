@@ -15,9 +15,9 @@
     NSString *_tokenID;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *tokenID; // @synthesize tokenID=_tokenID;
 @property(readonly) TKTokenConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (id)certificateForKey:(id)arg1;
 - (id)keyForObjectID:(id)arg1 error:(id *)arg2;
 - (id)certificateForObjectID:(id)arg1 error:(id *)arg2;

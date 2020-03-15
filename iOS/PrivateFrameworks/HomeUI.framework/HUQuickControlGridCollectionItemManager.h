@@ -27,6 +27,7 @@
 + (unsigned long long)specialCaseSectionSortingForControlItem:(id)arg1 viewController:(id)arg2 fromControlItems:(id)arg3 primaryServiceType:(id)arg4;
 + (_Bool)isPrimaryOrBinaryStateControlItem:(id)arg1;
 + (unsigned long long)preferredControlForControlItem:(id)arg1 allControlItems:(id)arg2 isSupplementary:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *controlItemToViewControllerTable; // @synthesize controlItemToViewControllerTable=_controlItemToViewControllerTable;
 @property(retain, nonatomic) HFItemProvider *controlItemProvider; // @synthesize controlItemProvider=_controlItemProvider;
 @property(retain, nonatomic) HFServiceItemProvider *serviceItemProvider; // @synthesize serviceItemProvider=_serviceItemProvider;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) HFAccessoryControlItem *accessoryControlItem; // @synthesize accessoryControlItem=_accessoryControlItem;
 @property(readonly, nonatomic) HFItemProvider *overflowItemProvider; // @synthesize overflowItemProvider=_overflowItemProvider;
 @property(readonly, nonatomic) HFItemProvider *supplementaryItemProvider; // @synthesize supplementaryItemProvider=_supplementaryItemProvider;
-- (void).cxx_destruct;
 - (id)_composeIdentifierForService:(id)arg1 section:(unsigned long long)arg2;
 - (_Bool)_catchAllLayoutForGridViewProfiles:(id)arg1 supplementaryViewProfiles:(id)arg2;
 - (id)titleForItem:(id)arg1;

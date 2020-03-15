@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)cellClass;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) double maxWidthAvailable; // @synthesize maxWidthAvailable=_maxWidthAvailable;
 @property(nonatomic) _Bool shouldEdit; // @synthesize shouldEdit=_shouldEdit;
 @property(nonatomic) _Bool becomingFirstResponder; // @synthesize becomingFirstResponder=_becomingFirstResponder;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (_Bool)isLTRLocalization;
 - (struct CGRect)editorViewMaxFrame;

@@ -15,8 +15,8 @@
     NSString *_deviceName;
 }
 
-@property(retain, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

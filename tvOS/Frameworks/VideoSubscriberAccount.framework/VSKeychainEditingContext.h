@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_items;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *items; // @synthesize items=_items;
 @property(retain, nonatomic) NSUndoManager *undoManager; // @synthesize undoManager=_undoManager;
 @property(retain, nonatomic) VSKeychainStore *keychainStore; // @synthesize keychainStore=_keychainStore;
-- (void).cxx_destruct;
 - (_Bool)save:(id *)arg1;
 @property(readonly, nonatomic) NSSet *registeredItems;
 @property(readonly, nonatomic) NSSet *updatedItems;

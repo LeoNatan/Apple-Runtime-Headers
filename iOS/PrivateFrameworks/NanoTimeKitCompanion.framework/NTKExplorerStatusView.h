@@ -30,13 +30,13 @@
 + (double)dotBorderWidth;
 + (double)dotSpacing;
 + (double)dotDiameter;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsFullSignalStrength; // @synthesize showsFullSignalStrength=_showsFullSignalStrength;
 @property(nonatomic) long long signalStrengthBars; // @synthesize signalStrengthBars=_signalStrengthBars;
 @property(readonly, nonatomic) long long position; // @synthesize position=_position;
 @property(retain, nonatomic) NTKExplorerDotColorOptions *dotColorOptions; // @synthesize dotColorOptions=_dotColorOptions;
 @property(retain, nonatomic) NTKExplorerDotLayoutConstraints *dotLayoutConstraints; // @synthesize dotLayoutConstraints=_dotLayoutConstraints;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
-- (void).cxx_destruct;
 - (void)_layoutDotLayers;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(double)arg1;

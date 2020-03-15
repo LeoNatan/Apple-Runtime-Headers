@@ -15,8 +15,8 @@
 
 + (void)purgeSharedCache;
 + (id)sharedCache;
-@property(retain, nonatomic) NSPointerArray *pointerArray; // @synthesize pointerArray=_pointerArray;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSPointerArray *pointerArray; // @synthesize pointerArray=_pointerArray;
 - (void)_addEntryWithObject:(id)arg1 key:(id)arg2;
 - (void)_removeEntryAtIndex:(unsigned long long)arg1;
 - (void)_makeKeyMostRecentlyUsed:(id)arg1;

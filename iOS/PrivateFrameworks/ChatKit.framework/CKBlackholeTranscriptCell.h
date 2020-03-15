@@ -15,10 +15,10 @@
     UILabel *_bodyLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *bodyLabel; // @synthesize bodyLabel=_bodyLabel;
 @property(retain, nonatomic) UIDateLabel *dateLabel; // @synthesize dateLabel=_dateLabel;
 @property(retain, nonatomic) UILabel *fromLabel; // @synthesize fromLabel=_fromLabel;
-- (void).cxx_destruct;
 - (void)configureForMessageItem:(id)arg1 showSender:(_Bool)arg2;
 - (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

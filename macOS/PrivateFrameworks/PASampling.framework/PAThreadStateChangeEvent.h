@@ -15,10 +15,10 @@
     unsigned long long _stateChangeType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long stateChangeType; // @synthesize stateChangeType=_stateChangeType;
 @property(nonatomic) double machTimestamp; // @synthesize machTimestamp=_machTimestamp;
 @property(readonly, nonatomic) PASampleThreadData *threadData; // @synthesize threadData=_threadData;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithThreadData:(id)arg1 machTime:(double)arg2 stateChangeType:(unsigned long long)arg3;
 - (id)initUnknownThreadStateChangeEventWithTid:(unsigned long long)arg1 machTime:(double)arg2 stateChangeType:(unsigned long long)arg3;

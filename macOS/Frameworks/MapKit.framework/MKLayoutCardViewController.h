@@ -15,12 +15,12 @@
     NSMutableDictionary *_cacheModuleType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cacheModuleType; // @synthesize cacheModuleType=_cacheModuleType;
 @property(retain, nonatomic) NSMutableDictionary *cacheVC; // @synthesize cacheVC=_cacheVC;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
-- (void).cxx_destruct;
-- (struct _MKUIViewController *)_createViewControllerForModule:(id)arg1;
-- (struct _MKUIViewController *)_cachedViewControllerForModule:(int)arg1;
+- (id)_createViewControllerForModule:(id)arg1;
+- (id)_cachedViewControllerForModule:(int)arg1;
 - (void)_createModuleLayout:(id)arg1;
 - (id)_layoutModuleForMapItem;
 - (BOOL)isLayoutDynamic;

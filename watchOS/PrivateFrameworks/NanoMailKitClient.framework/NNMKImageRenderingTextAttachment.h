@@ -22,11 +22,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (void)setCellClass:(Class)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mimePartNumber; // @synthesize mimePartNumber=_mimePartNumber;
 @property(retain, nonatomic) NSString *contentId; // @synthesize contentId=_contentId;
 @property(retain, nonatomic) NSString *mailboxId; // @synthesize mailboxId=_mailboxId;
 @property(retain, nonatomic) NSString *messageId; // @synthesize messageId=_messageId;
-- (void).cxx_destruct;
 - (id)attachmentCell;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

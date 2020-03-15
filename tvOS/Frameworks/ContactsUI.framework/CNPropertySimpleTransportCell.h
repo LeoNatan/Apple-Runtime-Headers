@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     UIColor *_actionsColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *actionsColor; // @synthesize actionsColor=_actionsColor;
 @property(nonatomic) _Bool shouldShowTransportButtons; // @synthesize shouldShowTransportButtons=_shouldShowTransportButtons;
 @property(nonatomic) _Bool allowsActions; // @synthesize allowsActions=_allowsActions;
-- (void).cxx_destruct;
 - (void)transportButtonClicked:(id)arg1;
 - (_Bool)shouldPerformDefaultAction;
 - (id)variableConstraints;

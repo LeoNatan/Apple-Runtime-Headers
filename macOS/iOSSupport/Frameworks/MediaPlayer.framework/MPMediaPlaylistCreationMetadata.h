@@ -16,10 +16,10 @@
     NSString *_descriptionText;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *descriptionText; // @synthesize descriptionText=_descriptionText;
 @property(copy, nonatomic) NSString *authorDisplayName; // @synthesize authorDisplayName=_authorDisplayName;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1;
 - (id)init;
 

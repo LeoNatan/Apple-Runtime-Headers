@@ -15,9 +15,9 @@
 }
 
 + (id)signJavaScriptString:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id sessionToken; // @synthesize sessionToken=_sessionToken;
 @property(readonly, nonatomic) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
-- (void).cxx_destruct;
 - (void)processSignature:(id)arg1;
 - (id)signData:(id)arg1 error:(id *)arg2;
 - (void)closeSession;

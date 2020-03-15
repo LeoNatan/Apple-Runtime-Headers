@@ -14,9 +14,9 @@
     NSImage *_selectionImage;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSImage *selectionImage; // @synthesize selectionImage=_selectionImage;
 @property(retain) CNAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;
-- (void).cxx_destruct;
 - (void)delete:(id)arg1;
 - (void)rightMouseDown:(id)arg1;
 - (void)_setLikeness:(id)arg1;

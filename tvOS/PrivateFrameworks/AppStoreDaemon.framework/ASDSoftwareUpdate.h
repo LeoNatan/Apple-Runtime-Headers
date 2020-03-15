@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long rawUpdateState; // @synthesize rawUpdateState=_rawUpdateState;
 @property(copy, nonatomic) NSDictionary *metrics; // @synthesize metrics=_metrics;
 @property(nonatomic) long long updateState; // @synthesize updateState=_updateState;
@@ -36,7 +37,6 @@
 @property(nonatomic, getter=isDownloaded) _Bool downloaded; // @synthesize downloaded=_downloaded;
 @property(copy, nonatomic) NSDate *installDate; // @synthesize installDate=_installDate;
 @property(copy, nonatomic) NSArray *blockedBy; // @synthesize blockedBy=_blockedBy;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

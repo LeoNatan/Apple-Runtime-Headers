@@ -19,6 +19,7 @@
     double _currentTime;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMManualUpdater *displayUpdater; // @synthesize displayUpdater=_displayUpdater;
 @property(nonatomic, getter=isPlayed) _Bool played; // @synthesize played=_played;
 @property(nonatomic, getter=isPlaying) _Bool playing; // @synthesize playing=_playing;
@@ -26,7 +27,6 @@
 @property(nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) BOOL color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)setImage:(id)arg1;
 - (void)prepareForDisplay;
 - (void)setNeedsPrepareForDisplay;

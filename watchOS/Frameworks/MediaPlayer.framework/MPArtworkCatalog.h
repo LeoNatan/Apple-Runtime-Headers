@@ -29,6 +29,7 @@
 + (void)setCachePurgesWhenEnteringBackground:(_Bool)arg1 forCacheIdentifier:(id)arg2 requestingContext:(id)arg3;
 + (void)setCacheLimit:(int)arg1 forCacheIdentifier:(id)arg2 requestingContext:(id)arg3;
 + (id)staticArtworkCatalogWithImage:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int renderHint; // @synthesize renderHint=_renderHint;
 @property(nonatomic) __weak id <MPArtworkDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) id token; // @synthesize token=_token;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSString *cacheIdentifier; // @synthesize cacheIdentifier=_cacheIdentifier;
 @property(nonatomic) struct CGSize fittingSize; // @synthesize fittingSize=_fittingSize;
 @property(nonatomic) float destinationScale; // @synthesize destinationScale=_destinationScale;
-- (void).cxx_destruct;
 - (void)_updateWithRepresentation:(id)arg1 isBestRepresentation:(_Bool)arg2 modelRevisionID:(long long)arg3;
 - (void)_updateRepresentation;
 - (void)_loadBestRepresentationIfNeeded;

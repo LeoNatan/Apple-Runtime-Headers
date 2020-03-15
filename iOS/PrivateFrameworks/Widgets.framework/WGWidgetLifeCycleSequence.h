@@ -15,9 +15,9 @@
     WGWidgetLifeCycleSequence *_previousSequence;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_previousSequence, setter=_setPreviousSequence:) WGWidgetLifeCycleSequence *previousSequence; // @synthesize previousSequence=_previousSequence;
 @property(readonly, copy, nonatomic) NSString *sequenceIdentifier; // @synthesize sequenceIdentifier=_sequenceIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)transitionToState:(long long)arg1;
 - (CDUnknownBlockType)beginTransitionToState:(long long)arg1 error:(id *)arg2;

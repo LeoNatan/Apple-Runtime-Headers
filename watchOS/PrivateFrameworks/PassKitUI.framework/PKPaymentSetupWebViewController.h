@@ -17,8 +17,8 @@
     int _context;
 }
 
-@property(nonatomic) int context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(nonatomic) int context; // @synthesize context=_context;
 - (_Bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (void)webViewDidFinishLoad:(id)arg1;

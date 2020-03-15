@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     struct _NSRange _attachmentRange;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *typingAttributesBeforeInsertion; // @synthesize typingAttributesBeforeInsertion=_typingAttributesBeforeInsertion;
 @property(nonatomic) struct _NSRange attachmentRange; // @synthesize attachmentRange=_attachmentRange;
-- (void).cxx_destruct;
 - (id)imageForBounds:(struct CGRect)arg1 textContainer:(id)arg2 characterIndex:(unsigned long long)arg3;
 
 @end

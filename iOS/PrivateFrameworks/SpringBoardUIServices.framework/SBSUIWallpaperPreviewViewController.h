@@ -45,6 +45,7 @@
     struct CGRect _cropRect;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) SBFWallpaperConfiguration *wallpaperConfiguration; // @synthesize wallpaperConfiguration=_wallpaperConfiguration;
 @property(nonatomic) double parallaxFactor; // @synthesize parallaxFactor=_parallaxFactor;
 @property(nonatomic) double zoomScale; // @synthesize zoomScale=_zoomScale;
@@ -54,7 +55,6 @@
 @property(readonly) UIImage *wallpaperImage; // @synthesize wallpaperImage=_wallpaperImage;
 @property(nonatomic) __weak id <SBSUIWallpaperPreviewViewControllerDelegate> previewDelegate; // @synthesize previewDelegate=_previewDelegate;
 @property(nonatomic) __weak id <SBFLegibilitySettingsProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)colorSamplingEnabled;
 - (void)setColorSamplingEnabled:(_Bool)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

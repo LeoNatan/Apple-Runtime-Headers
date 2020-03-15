@@ -22,11 +22,11 @@
 + (void)requestWithIdentifier:(id)arg1 didCompleteWithItems:(id)arg2;
 + (void)requestWithIdentifier:(id)arg1 didCancelWithError:(id)arg2;
 + (id)commandName;
+- (void).cxx_destruct;
 @property(copy) id <NSCopying> requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
 @property(copy) NSArray *returnedItems; // @synthesize returnedItems=_returnedItems;
 @property(copy) NSArray *inputItems; // @synthesize inputItems=_inputItems;
 @property(retain) STMOpaqueExtension *extension; // @synthesize extension=_extension;
-- (void).cxx_destruct;
 - (BOOL)tryFinishWithRequestIdentifier:(id)arg1;
 - (void)requestDidFailToBeginWithError:(id)arg1;
 - (void)requestDidBeginWithRequestIdentifier:(id)arg1;

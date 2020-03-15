@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     long long _contentMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long contentMode; // @synthesize contentMode=_contentMode;
 @property(retain, nonatomic) CALayer *stackLayer1; // @synthesize stackLayer1=_stackLayer1;
 @property(retain, nonatomic) CALayer *stackLayer0; // @synthesize stackLayer0=_stackLayer0;
 @property(retain, nonatomic) CALayer *imageLayer; // @synthesize imageLayer=_imageLayer;
-- (void).cxx_destruct;
 - (struct CGRect)_imageContentFrame;
 - (void)layoutSubviews;
 - (void)setImage:(id)arg1;

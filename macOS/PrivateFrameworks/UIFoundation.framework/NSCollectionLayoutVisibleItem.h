@@ -17,10 +17,10 @@
     NSCollectionLayoutItem *_layoutItem;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isDirty) BOOL dirty; // @synthesize dirty=_dirty;
 @property(retain, nonatomic) NSCollectionLayoutItem *layoutItem; // @synthesize layoutItem=_layoutItem;
 @property(retain, nonatomic) NSCollectionViewLayoutAttributes *layoutAttributes; // @synthesize layoutAttributes=_layoutAttributes;
-- (void).cxx_destruct;
 @property(readonly) struct CGRect bounds;
 @property struct CGPoint center;
 @property(readonly) struct CGRect frame;

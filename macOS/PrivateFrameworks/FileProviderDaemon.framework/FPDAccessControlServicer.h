@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     FPDAccessControlStore *_accessStore;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak FPDExtensionManager *extensionManager; // @synthesize extensionManager=_extensionManager;
 @property(nonatomic) __weak FPDAccessControlStore *accessStore; // @synthesize accessStore=_accessStore;
-- (void).cxx_destruct;
 - (void)fetchEnumeratorForItemsAccessibleByBundleIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)revokeAccessToAllBundlesCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)revokeAccessToAllItemsForBundle:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

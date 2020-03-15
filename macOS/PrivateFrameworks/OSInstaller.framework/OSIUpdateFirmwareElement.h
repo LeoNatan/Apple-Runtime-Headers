@@ -18,10 +18,10 @@
 + (id)getFirmwareUpdateLauncherStatistics;
 + (BOOL)shouldUpdateFirmware;
 + (BOOL)cookieExists;
+- (void).cxx_destruct;
 @property(retain) OSIPersonalizedManifests *personalizedManifests; // @synthesize personalizedManifests=_personalizedManifests;
 @property BOOL firmwareUpdatesQueued; // @synthesize firmwareUpdatesQueued=_firmwareUpdatesQueued;
 @property(retain) NSArray *packageSpecifiers; // @synthesize packageSpecifiers=_packageSpecifiers;
-- (void).cxx_destruct;
 - (void)unmountESP:(id)arg1;
 - (void)purgeCachesOnEFIDisk:(id)arg1;
 - (id)internalEFIDisk;

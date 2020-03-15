@@ -62,6 +62,7 @@
 }
 
 + (id)acceptableItemClasses;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NAFuture *accountFuture; // @synthesize accountFuture=_accountFuture;
 @property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(nonatomic) _Bool isPresentingRoomsList; // @synthesize isPresentingRoomsList=_isPresentingRoomsList;
@@ -88,7 +89,6 @@
 @property(retain, nonatomic) HUNameItemModuleController *nameItemModuleController; // @synthesize nameItemModuleController=_nameItemModuleController;
 @property(nonatomic) _Bool requiresPresentingViewControllerDismissal; // @synthesize requiresPresentingViewControllerDismissal=_requiresPresentingViewControllerDismissal;
 @property(nonatomic) __weak id <HUPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
-- (void).cxx_destruct;
 - (void)_setDismissedHomePodHasNonMemberMediaAccountWarning:(_Bool)arg1;
 - (void)didSelectHomeAssistantDeviceSplitAccountAction:(unsigned long long)arg1;
 - (void)_didRemoveHomeKitObject:(id)arg1;

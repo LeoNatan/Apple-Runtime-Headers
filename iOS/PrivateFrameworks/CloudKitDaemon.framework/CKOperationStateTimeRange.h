@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(readonly) double duration; // @synthesize duration=_duration;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly) unsigned long long operationState; // @synthesize operationState=_operationState;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)CKPropertiesDescription;
 @property(readonly) double relativeStart;

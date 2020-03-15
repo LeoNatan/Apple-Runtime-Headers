@@ -17,11 +17,11 @@
     SVVideoAccessoryBarItemTransitionContext *_context;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SVVideoAccessoryBarItemTransitionContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) id <SVVideoAccessoryItemTransitioning> transitionCoordinator; // @synthesize transitionCoordinator=_transitionCoordinator;
 @property(readonly, nonatomic) id <SVAccessoryItem> toItem; // @synthesize toItem=_toItem;
 @property(readonly, nonatomic) id <SVAccessoryItem> fromItem; // @synthesize fromItem=_fromItem;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)performTransitionOnContainerView:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (id)initWithFromItem:(id)arg1 toItem:(id)arg2 transitionCoordinator:(id)arg3;

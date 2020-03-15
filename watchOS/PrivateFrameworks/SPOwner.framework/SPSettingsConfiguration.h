@@ -26,6 +26,7 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) NSSet *serviceDisabledReasons; // @synthesize serviceDisabledReasons=_serviceDisabledReasons;
 @property(copy, nonatomic) NSString *serviceState; // @synthesize serviceState=_serviceState;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) FMXPCSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) FMXPCServiceDescription *serviceDescription; // @synthesize serviceDescription=_serviceDescription;
 @property(retain, nonatomic) NSUserDefaults *sharedDefaults; // @synthesize sharedDefaults=_sharedDefaults;
-- (void).cxx_destruct;
 - (void)setServiceState:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)beginRefreshingServiceStateWithBlock:(CDUnknownBlockType)arg1;
 - (void)_invalidate;

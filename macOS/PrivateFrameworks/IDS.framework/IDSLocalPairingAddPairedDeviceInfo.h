@@ -20,12 +20,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *bluetoothMACAddress; // @synthesize bluetoothMACAddress=_bluetoothMACAddress;
 @property(nonatomic) BOOL supportsIPsecWithSPPLink; // @synthesize supportsIPsecWithSPPLink=_supportsIPsecWithSPPLink;
 @property(readonly, nonatomic) NSData *BTOutOfBandKey; // @synthesize BTOutOfBandKey=_BTOutOfBandKey;
 @property(readonly, nonatomic) long long pairingProtocolVersion; // @synthesize pairingProtocolVersion=_pairingProtocolVersion;
 @property(readonly, nonatomic) NSUUID *cbuuid; // @synthesize cbuuid=_cbuuid;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

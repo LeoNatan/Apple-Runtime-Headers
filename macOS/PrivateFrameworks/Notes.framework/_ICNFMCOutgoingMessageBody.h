@@ -13,8 +13,8 @@
     NSMutableData *_rawData;
 }
 
-@property(retain, nonatomic) NSMutableData *rawData; // @synthesize rawData=_rawData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableData *rawData; // @synthesize rawData=_rawData;
 @property __weak ICNFMCOutgoingMessage *message;
 - (id)init;
 

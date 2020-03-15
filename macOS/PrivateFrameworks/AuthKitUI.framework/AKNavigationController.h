@@ -25,6 +25,7 @@
     NSLayoutConstraint *_paddingHeightEqualConstraint;
 }
 
+- (void).cxx_destruct;
 @property BOOL needsSmoothAnimationMomentaryToggle; // @synthesize needsSmoothAnimationMomentaryToggle=_needsSmoothAnimationMomentaryToggle;
 @property(retain) NSLayoutConstraint *paddingHeightEqualConstraint; // @synthesize paddingHeightEqualConstraint=_paddingHeightEqualConstraint;
 @property(retain) NSLayoutConstraint *paddingHeightLessThanOrEqualConstraint; // @synthesize paddingHeightLessThanOrEqualConstraint=_paddingHeightLessThanOrEqualConstraint;
@@ -37,7 +38,6 @@
 @property __weak NSView *navigationBarView; // @synthesize navigationBarView=_navigationBarView;
 @property(copy) NSArray *internalViewControllers; // @synthesize internalViewControllers=_internalViewControllers;
 @property __weak id <AKNavigationControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)_performSmoothAnimation;

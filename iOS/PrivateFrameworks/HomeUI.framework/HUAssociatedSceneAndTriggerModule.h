@@ -19,13 +19,13 @@
     HFStaticItemProvider *_staticItemProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFStaticItemProvider *staticItemProvider; // @synthesize staticItemProvider=_staticItemProvider;
 @property(readonly, nonatomic) HFItem *triggersItem; // @synthesize triggersItem=_triggersItem;
 @property(readonly, nonatomic) HFItem *scenesItem; // @synthesize scenesItem=_scenesItem;
 @property(readonly, nonatomic) unsigned long long context; // @synthesize context=_context;
 @property(readonly, copy, nonatomic) HFItem<HFServiceLikeItem> *serviceLikeItem; // @synthesize serviceLikeItem=_serviceLikeItem;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;
 - (id)itemProviders;
 - (id)initWithItemUpdater:(id)arg1 home:(id)arg2 serviceLikeItem:(id)arg3 context:(unsigned long long)arg4;

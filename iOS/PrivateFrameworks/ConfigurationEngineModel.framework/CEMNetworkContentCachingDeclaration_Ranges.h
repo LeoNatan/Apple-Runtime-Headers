@@ -18,10 +18,10 @@
 + (id)buildRequiredOnlyWithFirst:(id)arg1 withLast:(id)arg2;
 + (id)buildWithType:(id)arg1 withFirst:(id)arg2 withLast:(id)arg3;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadLast; // @synthesize payloadLast=_payloadLast;
 @property(copy, nonatomic) NSString *payloadFirst; // @synthesize payloadFirst=_payloadFirst;
 @property(copy, nonatomic) NSString *payloadType; // @synthesize payloadType=_payloadType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

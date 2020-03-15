@@ -16,9 +16,9 @@
     _Bool _fromUserPowerDown;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool fromUserPowerDown; // @synthesize fromUserPowerDown=_fromUserPowerDown;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

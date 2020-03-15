@@ -22,6 +22,7 @@
     SearchUICardSectionRowModel *_cardSectionRowModel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SearchUICardSectionRowModel *cardSectionRowModel; // @synthesize cardSectionRowModel=_cardSectionRowModel;
 @property(nonatomic) __weak id <SearchUIFeedbackDelegate> feedbackDelegate; // @synthesize feedbackDelegate=_feedbackDelegate;
 @property(retain, nonatomic) SearchUIImageView *thumbnailView; // @synthesize thumbnailView=_thumbnailView;
@@ -31,7 +32,6 @@
 @property(nonatomic) double width; // @synthesize width=_width;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(retain, nonatomic) UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 
 @end
 

@@ -38,6 +38,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long iFrameInterval; // @synthesize iFrameInterval=_iFrameInterval;
 @property(nonatomic) unsigned long long imageWidth; // @synthesize imageWidth=_imageWidth;
 @property(nonatomic) unsigned long long imageHeight; // @synthesize imageHeight=_imageHeight;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) NSString *cameraUUID; // @synthesize cameraUUID=_cameraUUID;
 @property(nonatomic) unsigned long long duration; // @synthesize duration=_duration;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

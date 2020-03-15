@@ -19,10 +19,10 @@
 
 + (id)createWithProductData:(id)arg1 firmwareVersion:(id)arg2;
 + (id)identifierFromRecordID:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMFVersion *firmwareVersion; // @synthesize firmwareVersion=_firmwareVersion;
 @property(readonly, nonatomic) NSString *productNumber; // @synthesize productNumber=_productNumber;
 @property(readonly, nonatomic) NSString *productGroup; // @synthesize productGroup=_productGroup;
-- (void).cxx_destruct;
 - (id)attributeDescriptions;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;

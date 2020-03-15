@@ -14,8 +14,8 @@
 }
 
 + (id)definition;
-@property(retain, nonatomic) EWSRootItemIdType *RootItemId; // @synthesize RootItemId=_RootItemId;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EWSRootItemIdType *RootItemId; // @synthesize RootItemId=_RootItemId;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 
 @end

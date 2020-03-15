@@ -23,11 +23,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)reservationItemReferencesType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *reservationItemReferences; // @synthesize reservationItemReferences=_reservationItemReferences;
 @property(retain, nonatomic) _INPBDataString *reservationContainerReference; // @synthesize reservationContainerReference=_reservationContainerReference;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

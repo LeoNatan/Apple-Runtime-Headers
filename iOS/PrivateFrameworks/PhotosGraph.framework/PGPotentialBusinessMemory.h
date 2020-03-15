@@ -15,9 +15,9 @@
     long long _year;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long year; // @synthesize year=_year;
 @property(readonly) PGGraphNode *businessNode; // @synthesize businessNode=_businessNode;
-- (void).cxx_destruct;
 - (void)addMomentNode:(id)arg1;
 @property(readonly) NSString *business;
 - (id)initWithBusinessNode:(id)arg1 year:(long long)arg2;

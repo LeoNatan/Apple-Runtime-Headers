@@ -18,9 +18,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *RootItemChangeKey; // @synthesize RootItemChangeKey=_RootItemChangeKey;
 @property(copy, nonatomic) NSString *RootItemId; // @synthesize RootItemId=_RootItemId;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

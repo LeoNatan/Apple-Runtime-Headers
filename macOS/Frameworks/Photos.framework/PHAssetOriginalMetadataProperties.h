@@ -22,6 +22,7 @@
 
 + (id)propertiesToFetch;
 + (id)propertySetName;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long timeZoneOffset; // @synthesize timeZoneOffset=_timeZoneOffset;
 @property(readonly, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(readonly, nonatomic) unsigned long long originalFilesize; // @synthesize originalFilesize=_originalFilesize;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) long long originalWidth; // @synthesize originalWidth=_originalWidth;
 @property(readonly, nonatomic) long long originalHeight; // @synthesize originalHeight=_originalHeight;
 @property(readonly, nonatomic) NSString *originalAssetsUUID; // @synthesize originalAssetsUUID=_originalAssetsUUID;
-- (void).cxx_destruct;
 - (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(BOOL)arg3;
 
 @end

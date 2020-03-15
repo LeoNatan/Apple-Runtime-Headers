@@ -21,11 +21,11 @@
 }
 
 + (id)sharedProvider;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _MXAssetStorage *assetStorage; // @synthesize assetStorage=_assetStorage;
 @property(retain, nonatomic) _MXExtensionServiceCenter *serviceCenter; // @synthesize serviceCenter=_serviceCenter;
 @property(retain, nonatomic) _MXExtensionDispatchCenter *dispatchCenter; // @synthesize dispatchCenter=_dispatchCenter;
 @property(retain, nonatomic) _MXExtensionMatchingMerger *merger; // @synthesize merger=_merger;
-- (void).cxx_destruct;
 - (BOOL)_disableExtension:(id)arg1 error:(id *)arg2;
 - (BOOL)_enableExtension:(id)arg1 error:(id *)arg2;
 - (id)siblingExtensionsWithContainingAppIdentifer:(id)arg1;

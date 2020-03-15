@@ -18,8 +18,8 @@
 + (_Bool)messageExpectsNotificationResponse:(id)arg1;
 + (id)messagesWithNotificationResponses;
 + (void)initialize;
-@property(retain, nonatomic) NSMapTable *sessionNotificationPayloads; // @synthesize sessionNotificationPayloads=_sessionNotificationPayloads;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMapTable *sessionNotificationPayloads; // @synthesize sessionNotificationPayloads=_sessionNotificationPayloads;
 - (id)description;
 - (void)clearNotificationsForDevice:(id)arg1;
 - (id)notificationPayloadWithIdentifier:(id)arg1 device:(id)arg2;

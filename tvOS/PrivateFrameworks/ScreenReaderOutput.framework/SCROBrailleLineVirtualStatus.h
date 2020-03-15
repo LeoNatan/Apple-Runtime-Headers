@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     char *_cells;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) char *cells; // @synthesize cells=_cells;
 @property(nonatomic) long long length; // @synthesize length=_length;
 @property(nonatomic) int alignment; // @synthesize alignment=_alignment;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

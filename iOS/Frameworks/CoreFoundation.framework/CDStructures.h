@@ -50,6 +50,13 @@ struct NSMethodFrameArgInfo {
     char _field10[0];
 };
 
+struct NSMethodFrameDescriptor {
+    struct NSMethodFrameArgInfo *_field1;
+    struct NSMethodFrameArgInfo *_field2;
+    unsigned int _field3;
+    unsigned int _field4;
+};
+
 struct _NSRange {
     unsigned long long _field1;
     unsigned long long _field2;
@@ -133,13 +140,6 @@ typedef struct {
     long long _field1;
     long long _field2;
 } CDStruct_912cb5d2;
-
-typedef struct {
-    struct NSMethodFrameArgInfo *retInfo;
-    struct NSMethodFrameArgInfo *argInfo;
-    unsigned int numArgs;
-    unsigned int frameSize;
-} CDStruct_b48d777a;
 
 typedef struct {
     struct __CFBasicHash *set;

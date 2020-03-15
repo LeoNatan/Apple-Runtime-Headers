@@ -16,11 +16,11 @@
     NSArray *_customConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *customConstraints; // @synthesize customConstraints=_customConstraints;
 @property(retain) NSTextField *nameView; // @synthesize nameView=_nameView;
 @property(readonly) ABCardCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain) CNContactListCellViewController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (BOOL)accessibilityPerformPress;
 - (id)metrics;
 - (id)views;

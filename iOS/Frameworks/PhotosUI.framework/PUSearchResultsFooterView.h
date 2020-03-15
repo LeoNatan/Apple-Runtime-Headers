@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 
 + (id)_preferredCalloutFont;
 + (id)_preferredBoldLabelFont;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *fileRadarToSelfConstraint; // @synthesize fileRadarToSelfConstraint=_fileRadarToSelfConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *fileRadarToNoResultsConstraint; // @synthesize fileRadarToNoResultsConstraint=_fileRadarToNoResultsConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *fileRadarToIndexViewConstraint; // @synthesize fileRadarToIndexViewConstraint=_fileRadarToIndexViewConstraint;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PUSearchResultsIndexingProgressView *indexingProgressView; // @synthesize indexingProgressView=_indexingProgressView;
 @property(retain, nonatomic) UILabel *noResultsLabel; // @synthesize noResultsLabel=_noResultsLabel;
 @property(nonatomic) __weak id <PUSearchResultsFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)_updateTapRadarConstraints;
 - (void)_didSelectTapToRadarButton:(id)arg1;

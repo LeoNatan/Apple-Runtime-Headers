@@ -13,8 +13,8 @@
     ICShareExtension *_shareExtension;
 }
 
-@property(readonly, nonatomic) __weak ICShareExtension *shareExtension; // @synthesize shareExtension=_shareExtension;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak ICShareExtension *shareExtension; // @synthesize shareExtension=_shareExtension;
 - (void)addContentToShareController:(id)arg1 withInput:(id)arg2 parameters:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)performActionWithInput:(id)arg1 parameters:(id)arg2 userInterface:(id)arg3 successHandler:(CDUnknownBlockType)arg4 errorHandler:(CDUnknownBlockType)arg5;
 - (id)textItemHandling;

@@ -42,12 +42,12 @@
 + (id)unspecifiedConfiguration;
 + (id)defaultConfiguration;
 + (id)_defaultConfiguration;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setProvider:) __weak id <UIImageSymbolConfigurationProvider> provider; // @synthesize provider=_provider;
 @property(copy, nonatomic, setter=_setTextStyle:) NSString *textStyle; // @synthesize textStyle=_textStyle;
 @property(nonatomic, setter=_setWeight:) long long weight; // @synthesize weight=_weight;
 @property(nonatomic, setter=_setPointSizeScaleFactor:) double customFontPointSizeMultiplier; // @synthesize customFontPointSizeMultiplier=_customFontPointSizeMultiplier;
 @property(nonatomic, setter=_setScale:) long long scale; // @synthesize scale=_scale;
-- (void).cxx_destruct;
 - (void)_deriveGlyphSize:(long long *)arg1 weight:(long long *)arg2 pointSize:(double *)arg3;
 - (_Bool)isEquivalentToConfiguration:(id)arg1;
 - (_Bool)isSimilarToConfiguration:(id)arg1;

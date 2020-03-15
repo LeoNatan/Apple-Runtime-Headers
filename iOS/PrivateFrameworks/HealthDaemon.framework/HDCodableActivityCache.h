@@ -52,6 +52,7 @@
 
 + (Class)dailyBriskMinutesStatisticsType;
 + (Class)dailyEnergyBurnedStatisticsType;
+- (void).cxx_destruct;
 @property(nonatomic) double activeHoursGoal; // @synthesize activeHoursGoal=_activeHoursGoal;
 @property(nonatomic) double briskMinutesGoal; // @synthesize briskMinutesGoal=_briskMinutesGoal;
 @property(nonatomic) long long sequence; // @synthesize sequence=_sequence;
@@ -70,7 +71,6 @@
 @property(nonatomic) double energyBurned; // @synthesize energyBurned=_energyBurned;
 @property(nonatomic) long long cacheIndex; // @synthesize cacheIndex=_cacheIndex;
 @property(retain, nonatomic) HDCodableSample *sample; // @synthesize sample=_sample;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

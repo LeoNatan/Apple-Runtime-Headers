@@ -19,11 +19,11 @@
 
 + (id)sharedWrapperForSession:(void *)arg1;
 + (void)cancelSharedWrapperForSession:(void *)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly) NEIPC *ipc; // @synthesize ipc=_ipc;
 @property(readonly) NSObject<OS_dispatch_queue> *ipcQueue; // @synthesize ipcQueue=_ipcQueue;
 @property(readonly) NSObject<OS_dispatch_queue> *sendQueue; // @synthesize sendQueue=_sendQueue;
-- (void).cxx_destruct;
 - (void)cancel;
 - (id)initWithSession:(void *)arg1 identifier:(id)arg2;
 

@@ -37,6 +37,7 @@
     NSDictionary *_txtDictionary;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *txtDictionary; // @synthesize txtDictionary=_txtDictionary;
 @property(copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(nonatomic) int port; // @synthesize port=_port;
@@ -47,7 +48,6 @@
 @property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) unsigned long long advertiseFlags; // @synthesize advertiseFlags=_advertiseFlags;
-- (void).cxx_destruct;
 - (void)_updateTXTDictionary;
 - (void)_updateLocked;
 - (void)invalidate;

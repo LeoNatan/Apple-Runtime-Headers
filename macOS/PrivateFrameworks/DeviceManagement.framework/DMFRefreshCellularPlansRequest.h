@@ -17,8 +17,8 @@
 + (BOOL)isPermittedOnUserConnection;
 + (BOOL)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
-@property(copy, nonatomic) NSURL *eSIMServerURL; // @synthesize eSIMServerURL=_eSIMServerURL;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSURL *eSIMServerURL; // @synthesize eSIMServerURL=_eSIMServerURL;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

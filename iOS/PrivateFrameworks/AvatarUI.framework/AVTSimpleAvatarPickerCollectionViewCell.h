@@ -20,12 +20,12 @@
 + (double)imageInsetForInsetSize:(unsigned long long)arg1;
 + (struct CGPath *)selectionPathInBounds:(struct CGRect)arg1;
 + (id)cellIdentifier;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVTUIAnimatingImageView *imageView; // @synthesize imageView=_imageView;
 @property(readonly, nonatomic) UIView *selectionLayer; // @synthesize selectionLayer=_selectionLayer;
 @property(nonatomic) _Bool showSelectedState; // @synthesize showSelectedState=_showSelectedState;
 @property(nonatomic) unsigned long long imageInsetSize; // @synthesize imageInsetSize=_imageInsetSize;
 @property(retain, nonatomic) NSUUID *displaySessionUUID; // @synthesize displaySessionUUID=_displaySessionUUID;
-- (void).cxx_destruct;
 - (void)updateHighlightedState:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)prepareForReuse;
 - (void)setHighlighted:(_Bool)arg1;

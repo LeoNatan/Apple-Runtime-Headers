@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
 @property(readonly, copy, nonatomic) NSString *internalGroupID; // @synthesize internalGroupID=_internalGroupID;
 @property(readonly, copy, nonatomic) NSString *externalGroupID; // @synthesize externalGroupID=_externalGroupID;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

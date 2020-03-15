@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long version; // @synthesize version=_version;
 @property(readonly, copy, nonatomic) NSMutableDictionary *scoreMap; // @synthesize scoreMap=_scoreMap;
 @property(readonly, copy, nonatomic) NSMutableDictionary *recipientMap; // @synthesize recipientMap=_recipientMap;
-- (void).cxx_destruct;
 - (void)removeAllObjects;
 - (void)updateWithContainer:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

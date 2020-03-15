@@ -6,18 +6,17 @@
 
 #import <NanoTimeKit/NTKAnalogFaceView.h>
 
-@class NTKBigNumeralsTimeComponentLabel, UIView;
+@class NSNumber, NTKBigNumeralsTimeComponentLabel, UIView;
 
 @interface NTKBigNumeralsAnalogFaceView : NTKAnalogFaceView
 {
     UIView *_hourLabelContainerView;
     NTKBigNumeralsTimeComponentLabel *_hourLabel;
-    struct NSNumber *_timerToken;
+    NSNumber *_timerToken;
     _Bool _showingStatusBar;
 }
 
 + (Class)_timeViewClass;
-+ (int)uiSensitivity;
 - (void).cxx_destruct;
 - (id)tritium_createFaceAnimator;
 - (void)tritium_unloadContentViews;

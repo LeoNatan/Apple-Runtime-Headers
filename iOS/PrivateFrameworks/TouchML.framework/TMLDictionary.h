@@ -14,8 +14,8 @@
 }
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
-@property(retain, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;
 - (id)union:(id)arg1;

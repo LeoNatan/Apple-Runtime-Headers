@@ -11,8 +11,8 @@
     id _userLocationMarker;
 }
 
-@property(retain, nonatomic) id userLocationMarker; // @synthesize userLocationMarker=_userLocationMarker;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id userLocationMarker; // @synthesize userLocationMarker=_userLocationMarker;
 - (id)initWithAccessibilityContainer:(id)arg1 userLocationMarker:(id)arg2;
 - (id)_accessibilityScrollStatus;
 - (_Bool)pointInside:(struct CGPoint)arg1;

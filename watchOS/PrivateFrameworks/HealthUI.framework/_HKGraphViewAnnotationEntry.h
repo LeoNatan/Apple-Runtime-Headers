@@ -15,10 +15,10 @@
     id _modelCoordinate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id modelCoordinate; // @synthesize modelCoordinate=_modelCoordinate;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) NSString *annotation; // @synthesize annotation=_annotation;
-- (void).cxx_destruct;
 
 @end
 

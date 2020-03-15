@@ -13,8 +13,8 @@
     NSString *_escapeCharacter;
 }
 
-@property(readonly, nonatomic) NSString *escapeCharacter; // @synthesize escapeCharacter=_escapeCharacter;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *escapeCharacter; // @synthesize escapeCharacter=_escapeCharacter;
 - (id)SQLForEntityClass:(Class)arg1;
 - (id)initWithProperty:(id)arg1 value:(id)arg2 escapeCharacter:(id)arg3;
 

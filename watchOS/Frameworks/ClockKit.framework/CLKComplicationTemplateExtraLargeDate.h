@@ -15,10 +15,10 @@
     unsigned int _highlightMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int highlightMode; // @synthesize highlightMode=_highlightMode;
 @property(copy, nonatomic) CLKDateTextProvider *dayTextProvider; // @synthesize dayTextProvider=_dayTextProvider;
 @property(copy, nonatomic) CLKDateTextProvider *weekdayTextProvider; // @synthesize weekdayTextProvider=_weekdayTextProvider;
-- (void).cxx_destruct;
 - (_Bool)highlightLine2;
 - (void)setHighlightLine2:(_Bool)arg1;
 - (void)_enumerateIntegerKeysWithBlock:(CDUnknownBlockType)arg1;

@@ -18,10 +18,10 @@
 + (id)boldLabelFont;
 + (id)labelFont;
 + (id)cellIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *shimmerTimer; // @synthesize shimmerTimer=_shimmerTimer;
 @property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (void)shimmerOnceWithCompletion:(CDUnknownBlockType)arg1;
 - (void)cancelShimmerTimer;
 - (void)startShimmering;

@@ -29,6 +29,7 @@
 }
 
 + (id)_monthFormatter;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *startOfMonth; // @synthesize startOfMonth=_startOfMonth;
 @property(readonly, nonatomic) double totalCyclingDuration; // @synthesize totalCyclingDuration=_totalCyclingDuration;
 @property(readonly, nonatomic) HKQuantity *averageCyclingDistance; // @synthesize averageCyclingDistance=_averageCyclingDistance;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) HKQuantity *totalActiveEnergyBurn; // @synthesize totalActiveEnergyBurn=_totalActiveEnergyBurn;
 @property(readonly, nonatomic) double averageWorkoutDuration; // @synthesize averageWorkoutDuration=_averageWorkoutDuration;
 @property(readonly, nonatomic) double totalWorkoutDuration; // @synthesize totalWorkoutDuration=_totalWorkoutDuration;
-- (void).cxx_destruct;
 - (void)_calculateAverages;
 - (void)_calculateStats;
 @property(readonly, nonatomic) unsigned int workoutCount;

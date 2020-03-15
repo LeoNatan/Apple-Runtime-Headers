@@ -17,12 +17,12 @@
     NSDictionary *_userInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property unsigned long long optionFlags; // @synthesize optionFlags=_optionFlags;
 @property(retain) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 @property long long currentRetryCount; // @synthesize currentRetryCount=_currentRetryCount;
 @property long long allowedRetryCount; // @synthesize allowedRetryCount=_allowedRetryCount;
-- (void).cxx_destruct;
 - (struct __CFUserNotification *)copyUserNotification;
 - (id)initWithDictionary:(id)arg1 options:(unsigned long long)arg2;
 - (id)init;

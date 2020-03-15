@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     long long _dropCandidateParentRow;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long dropCandidateChildIndex; // @synthesize dropCandidateChildIndex=_dropCandidateChildIndex;
 @property(nonatomic) id dropCandidateItem; // @synthesize dropCandidateItem=_dropCandidateItem;
 @property(nonatomic) struct CGRect lastOffscreenDropIndicatorFrame; // @synthesize lastOffscreenDropIndicatorFrame=_lastOffscreenDropIndicatorFrame;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long dropCandidateParentRow; // @synthesize dropCandidateParentRow=_dropCandidateParentRow;
 @property(nonatomic) long long dropCandidateRow; // @synthesize dropCandidateRow=_dropCandidateRow;
 @property(nonatomic) unsigned long long dragOperation; // @synthesize dragOperation=_dragOperation;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

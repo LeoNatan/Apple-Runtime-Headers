@@ -25,6 +25,7 @@
     struct CGRect _placeholderImageContentsRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isDisplayingVideo; // @synthesize isDisplayingVideo=_isDisplayingVideo;
 @property(nonatomic) _Bool allowsEdgeAntialiasing; // @synthesize allowsEdgeAntialiasing=_allowsEdgeAntialiasing;
 @property(nonatomic) __weak id <PUVideoPlayerViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -33,7 +34,6 @@
 @property(nonatomic) _Bool isReadyForVideoDisplay; // @synthesize isReadyForVideoDisplay=_isReadyForVideoDisplay;
 @property(nonatomic) struct CGRect placeholderImageContentsRect; // @synthesize placeholderImageContentsRect=_placeholderImageContentsRect;
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
-- (void).cxx_destruct;
 - (id)generateSnapshotImage;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;

@@ -17,9 +17,9 @@
 
 + (id)_propertiesForItemClass:(Class)arg1;
 + (id)_shapeForType:(Class)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MFEWSMailboxItemsBatch *batch; // @synthesize batch=_batch;
 @property(nonatomic) __weak id <MFEWSFetchMessageMetadataOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)main;
 - (id)init;
 - (id)initWithBatch:(id)arg1;

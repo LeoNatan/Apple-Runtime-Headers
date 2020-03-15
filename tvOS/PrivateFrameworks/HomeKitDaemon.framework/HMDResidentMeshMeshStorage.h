@@ -19,6 +19,7 @@
     NSMutableDictionary *_accessoryListWithLinkQuality;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *accessoryListWithLinkQuality; // @synthesize accessoryListWithLinkQuality=_accessoryListWithLinkQuality;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) unsigned long long generationCount; // @synthesize generationCount=_generationCount;
@@ -26,7 +27,6 @@
 @property(nonatomic) __weak HMDResidentMesh *owner; // @synthesize owner=_owner;
 @property(retain, nonatomic) NSDictionary *metrics; // @synthesize metrics=_metrics;
 @property(readonly, nonatomic) HMDDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)_requestStatus;
 - (id)initWithDevice:(id)arg1 owner:(id)arg2;
 

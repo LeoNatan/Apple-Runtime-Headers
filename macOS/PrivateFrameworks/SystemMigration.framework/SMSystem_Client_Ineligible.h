@@ -14,8 +14,8 @@
 }
 
 + (id)guiInterestedKeys;
-@property(retain) NSImage *overrideIcon; // @synthesize overrideIcon=_overrideIcon;
 - (void).cxx_destruct;
+@property(retain) NSImage *overrideIcon; // @synthesize overrideIcon=_overrideIcon;
 - (unsigned long long)uiRank;
 - (id)displayState;
 - (id)displayIcon;

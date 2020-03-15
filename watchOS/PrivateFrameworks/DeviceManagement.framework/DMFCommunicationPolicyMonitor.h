@@ -21,14 +21,14 @@
 + (id)_equivalentCommunicationBundleIdentifiersForCommunicationBundleIdentifier:(id)arg1;
 + (id)_calculateCommunicationPoliciesWithApplicationPoliciesByBundleIdentifier:(id)arg1 categoryEffectivePolicy:(id)arg2;
 + (id)_transformEffectivePoliciesIntoCommunicationPolicies:(id)arg1;
-+ (unsigned int)communicationPolicyForApplicationPolicy:(id)arg1 downtimeEnforced:(_Bool)arg2 communicationLimitsEnabled:(_Bool)arg3;
++ (unsigned int)communicationPolicyForApplicationPolicy:(id)arg1 downtimeEnforced:(_Bool)arg2;
 + (id)communicationBundleIdentifiers;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy, nonatomic) NSArray *policyTypes; // @synthesize policyTypes=_policyTypes;
 @property(readonly, nonatomic) DMFApplicationPolicyMonitor *applicationPolicyMonitor; // @synthesize applicationPolicyMonitor=_applicationPolicyMonitor;
 @property(nonatomic) _Bool didFetchInitialPolicies; // @synthesize didFetchInitialPolicies=_didFetchInitialPolicies;
 @property(copy, nonatomic) NSDictionary *policiesByBundleIdentifier; // @synthesize policiesByBundleIdentifier=_policiesByBundleIdentifier;
-- (void).cxx_destruct;
 - (void)_updateWithPoliciesByBundleIdentifier:(id)arg1 categoryEffectivePolicy:(id)arg2;
 - (void)_updatePoliciesByBundleIdentifier;
 - (id)init;

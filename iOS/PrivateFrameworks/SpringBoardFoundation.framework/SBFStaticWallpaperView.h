@@ -23,11 +23,11 @@
 + (_Bool)_allowsParallax;
 + (_Bool)_canDownscaleSampleImage;
 + (_Bool)_canCacheImages;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *displayedImageHashString; // @synthesize displayedImageHashString=_displayedImageHashString;
 @property(copy, nonatomic) NSData *displayedImageHashData; // @synthesize displayedImageHashData=_displayedImageHashData;
 @property(retain, nonatomic, getter=_sampleImage, setter=_setSampleImage:) UIImage *sampleImage; // @synthesize sampleImage=_sampleImage;
 @property(retain, nonatomic, getter=_displayedImage, setter=_setDisplayedImage:) UIImage *displayedImage; // @synthesize displayedImage=_displayedImage;
-- (void).cxx_destruct;
 @property(retain, nonatomic) SBFColorBoxes *colorBoxes;
 - (void)_updateColorBoxesWithKey:(id)arg1 image:(id)arg2;
 - (id)_createColorBoxes;

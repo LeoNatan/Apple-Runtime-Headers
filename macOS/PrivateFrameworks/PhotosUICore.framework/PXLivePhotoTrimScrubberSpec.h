@@ -25,6 +25,7 @@
     struct NSEdgeInsets _filmstripViewInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL useMiniScrubberHeight; // @synthesize useMiniScrubberHeight=_useMiniScrubberHeight;
 @property(nonatomic) BOOL fallbackToPlayheadTracking; // @synthesize fallbackToPlayheadTracking=_fallbackToPlayheadTracking;
 @property(nonatomic) BOOL fallbackToKeyTimeTracking; // @synthesize fallbackToKeyTimeTracking=_fallbackToKeyTimeTracking;
@@ -38,7 +39,6 @@
 @property(nonatomic) double handleWidth; // @synthesize handleWidth=_handleWidth;
 @property(nonatomic) double handleTouchDistance; // @synthesize handleTouchDistance=_handleTouchDistance;
 @property(nonatomic) double scrubberHeight; // @synthesize scrubberHeight=_scrubberHeight;
-- (void).cxx_destruct;
 - (void)_updateScrubberHeight;
 - (id)init;
 

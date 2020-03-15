@@ -18,10 +18,10 @@
     struct CGRect _actualLayoutFrameOrBounds;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect actualLayoutFrameOrBounds; // @synthesize actualLayoutFrameOrBounds=_actualLayoutFrameOrBounds;
 @property(readonly, nonatomic) struct CGRect expectedLayoutFrameOrBounds; // @synthesize expectedLayoutFrameOrBounds=_expectedLayoutFrameOrBounds;
 @property(readonly, nonatomic) NSObject<IBAutolayoutItem> *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (id)misplacementStatusByIgnoringSize;
 - (id)misplacementStatusByIgnoringPosition;
 - (_Bool)isEqualToMisplacementStatus:(id)arg1;

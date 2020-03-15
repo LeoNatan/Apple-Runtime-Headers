@@ -28,10 +28,10 @@
 }
 
 + (id)sharedManager;
-@property(readonly, nonatomic) RWINotificationManager *notificationManager; // @synthesize notificationManager=_notificationManager;
-@property(nonatomic) __weak id <RWIManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) RWINotificationManager *notificationManager; // @synthesize notificationManager=_notificationManager;
+@property(nonatomic) __weak id <RWIManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)currentMachine;
 - (void)updateDriver:(id)arg1 toState:(BOOL)arg2;
 - (void)unmanageDriver:(id)arg1;
@@ -77,7 +77,7 @@
 - (void)requestDriver:(id)arg1 shouldBeActive:(BOOL)arg2 forwardIfUnhandled:(BOOL)arg3;
 - (void)indicateDebuggable:(id)arg1 enabled:(BOOL)arg2;
 - (id)openChannelForDebuggable:(id)arg1;
-- (id)openInspectorForDebuggable:(id)arg1 pauseImmediately:(BOOL)arg2;
+- (void)openInspectorWithConfiguration:(id)arg1 forDebuggable:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) NSObject<_RWIRelayToClientMessageReceiver> *messageReceiver;
 @property(readonly, nonatomic) RWIApplication *currentApplication;
 @property(readonly, nonatomic) RWITarget *currentTarget;

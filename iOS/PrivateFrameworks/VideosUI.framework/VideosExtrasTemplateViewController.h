@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)templateViewControllerWithDocument:(id)arg1 options:(id)arg2 context:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak VideosExtrasContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) IKAppDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 - (void)configureBackgroundWithElements:(id)arg1;
 - (_Bool)shouldUpdateByReplacingViewControllerWithTemplate:(id)arg1;
 - (void)documentDidFail:(id)arg1 withError:(id)arg2;

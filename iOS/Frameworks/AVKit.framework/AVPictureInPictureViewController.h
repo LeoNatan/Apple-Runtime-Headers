@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)keyPathsForValuesAffectingShouldShowLoadingIndicator;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AVPictureInPictureViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool shouldShowAlternateActionButtonImage; // @synthesize shouldShowAlternateActionButtonImage=_shouldShowAlternateActionButtonImage;
 @property(readonly, nonatomic) AVPictureInPicturePlayerLayerView *pictureInPicturePlayerLayerView; // @synthesize pictureInPicturePlayerLayerView=_pictureInPicturePlayerLayerView;
 @property(retain, nonatomic) AVPlayerController *playerController; // @synthesize playerController=_playerController;
-- (void).cxx_destruct;
 - (void)loadView;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;

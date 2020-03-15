@@ -20,6 +20,7 @@
     SFPunchout *_punchout;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) SFPunchout *punchout; // @synthesize punchout=_punchout;
 @property(retain, nonatomic) NSString *image_align; // @synthesize image_align=_image_align;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSString *offer_type; // @synthesize offer_type=_offer_type;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithMediaOffer:(id)arg1;
 
 @end

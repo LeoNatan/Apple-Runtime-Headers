@@ -26,11 +26,11 @@
 }
 
 + (long long)preferredCellStyle;
+- (void).cxx_destruct;
 @property(nonatomic) __weak TSKSettingItem *item; // @synthesize item=_item;
 @property(nonatomic) unsigned long long accessories; // @synthesize accessories=_accessories;
 @property(nonatomic) long long badgeValue; // @synthesize badgeValue=_badgeValue;
 @property(copy, nonatomic) NSString *rightText; // @synthesize rightText=_rightText;
-- (void).cxx_destruct;
 - (void)_accessibilitySetCurrentGesture:(id)arg1;
 - (void)_updateKonamiCodeTrackerWithButtonPressType:(long long)arg1;
 - (void)_konamiCodeRecognizerWithTapGestureRecognizer:(id)arg1;

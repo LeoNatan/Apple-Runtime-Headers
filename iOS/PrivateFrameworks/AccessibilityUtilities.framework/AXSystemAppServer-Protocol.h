@@ -12,7 +12,7 @@
 + (id <AXSystemAppServer>)server;
 - (void)wakeUpDeviceIfNecessary;
 - (_Bool)isSystemSleeping;
-- (_Bool)isNonExclusiveSystemUIFocusable;
+- (_Bool)isNonExclusiveSystemUIFocusableIncludingPIPWindow:(_Bool)arg1;
 - (void)rebootDevice;
 - (_Bool)isMediaPlaying;
 - (_Bool)isReceivingAirPlay;

@@ -14,9 +14,9 @@
     long long _labelType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long labelType; // @synthesize labelType=_labelType;
 @property(copy, nonatomic) NSString *customLabel; // @synthesize customLabel=_customLabel;
-- (void).cxx_destruct;
 - (id)debugDescription;
 @property(readonly, nonatomic) NSString *label;
 - (id)initWithLabelType:(long long)arg1 customLabel:(id)arg2;

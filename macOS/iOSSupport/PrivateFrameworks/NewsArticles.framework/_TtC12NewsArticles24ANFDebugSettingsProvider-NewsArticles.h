@@ -6,9 +6,7 @@
 
 #import <NewsArticles/_TtC12NewsArticles24ANFDebugSettingsProvider.h>
 
-#import <NewsArticles/NUANFDebugSettingsProvider-Protocol.h>
-
-@interface _TtC12NewsArticles24ANFDebugSettingsProvider (NewsArticles) <NUANFDebugSettingsProvider>
+@interface _TtC12NewsArticles24ANFDebugSettingsProvider (NewsArticles)
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 @end

@@ -16,11 +16,11 @@
     struct _NSRange _range;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *groupings; // @synthesize groupings=_groupings;
 @property(nonatomic) long long boostRuleIndex; // @synthesize boostRuleIndex=_boostRuleIndex;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(retain, nonatomic) NSString *rule; // @synthesize rule=_rule;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

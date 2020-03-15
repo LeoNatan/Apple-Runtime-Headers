@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) BOOL allowNetwork; // @synthesize allowNetwork=_allowNetwork;
-- (void).cxx_destruct;
 - (id)init;
 - (BOOL)_boundingCircle:(const Sphere_37dc312c *)arg1 intersectsPoints:(CDStruct_6e3f967a *)arg2 pointCount:(unsigned long long)arg3;
 - (BOOL)_boundingCircle:(const Sphere_37dc312c *)arg1 intersectsTransitLink:(CDStruct_bbd2305b *)arg2;

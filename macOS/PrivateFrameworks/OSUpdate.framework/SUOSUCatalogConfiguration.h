@@ -16,11 +16,11 @@
     unsigned long long _seedConfigurationType;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long seedConfigurationType; // @synthesize seedConfigurationType=_seedConfigurationType;
 @property unsigned long long catalogConfigurationType; // @synthesize catalogConfigurationType=_catalogConfigurationType;
 @property(retain) NSString *managedByOrganizationName; // @synthesize managedByOrganizationName=_managedByOrganizationName;
 @property(retain) NSString *catalogHostName; // @synthesize catalogHostName=_catalogHostName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCatalogHostName:(id)arg1 managedByOrganizationName:(id)arg2 configurationType:(unsigned long long)arg3 seedType:(unsigned long long)arg4;
 

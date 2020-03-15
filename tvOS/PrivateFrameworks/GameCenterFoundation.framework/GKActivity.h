@@ -23,11 +23,11 @@
 + (id)currentOrNew;
 + (id)detached;
 + (id)activity;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_os_activity> *activity; // @synthesize activity=_activity;
 @property(retain, nonatomic) NSObject<OS_os_activity> *parent; // @synthesize parent=_parent;
 @property(nonatomic) unsigned int mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)execute:(CDUnknownBlockType)arg1;
 - (void)named:(id)arg1 execute:(CDUnknownBlockType)arg2;
 - (id)named:(id)arg1;

@@ -28,8 +28,8 @@
 + (id)sharedAnisetteFreeURLSession;
 + (id)sharedURLSession;
 + (id)_createURLSessionUsesAppleIDContext:(_Bool)arg1;
-@property(nonatomic) _Bool _usesAppleIDContext; // @synthesize _usesAppleIDContext=__usesAppleIDContext;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool _usesAppleIDContext; // @synthesize _usesAppleIDContext=__usesAppleIDContext;
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)beginAuthenticationDataTaskWithRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)_unsafe_retryTaskIfPossible:(id)arg1;

@@ -20,12 +20,12 @@
     NSArray *_formattedTextPieces;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *formattedTextPieces; // @synthesize formattedTextPieces=_formattedTextPieces;
 @property(copy, nonatomic) NSArray *icons; // @synthesize icons=_icons;
 @property(copy, nonatomic) NSString *contentAdvisory; // @synthesize contentAdvisory=_contentAdvisory;
 @property(retain, nonatomic) _SFPBGraphicalFloat *starRating; // @synthesize starRating=_starRating;
 @property(retain, nonatomic) _SFPBText *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

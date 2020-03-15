@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_contactIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 @property(readonly, copy, nonatomic) NSString *handle; // @synthesize handle=_handle;
 @property(readonly, nonatomic) long long directionality; // @synthesize directionality=_directionality;
 @property(readonly, nonatomic) long long transport; // @synthesize transport=_transport;
-- (void).cxx_destruct;
 - (id)initWithTransport:(long long)arg1 directionality:(long long)arg2 destinationHandle:(id)arg3 destinationContactIdentifier:(id)arg4;
 - (id)initWithTransport:(long long)arg1 directionality:(long long)arg2 destinationHandle:(id)arg3;
 

@@ -12,10 +12,14 @@
 
 + (id)preferencesValueforKey:(struct __CFString *)arg1 domain:(struct __CFString *)arg2;
 + (_Bool)wantsStatisticsShown;
++ (_Bool)wantsDebugPhysicsEnabled;
 + (_Bool)wantsDebugVisualizationEnabled;
-+ (_Bool)wantsSTAREnabled;
 + (_Bool)forceDisableRayTracedAmbientOcclusion;
 + (_Bool)wantsRayTracedAmbientOcclusionEnabled;
++ (_Bool)wantsShowLastPlacementResultTypeStatus;
++ (_Bool)wantsTrackedRaycastStatus;
++ (_Bool)wantsPeopleOcclusionDisabled;
++ (_Bool)allowCheckoutNonSecureHTML;
 + (id)checkoutFragment;
 + (_Bool)wantsParentToCameraInARAndEnableProbes;
 + (_Bool)wantsOpenInObjectMode;

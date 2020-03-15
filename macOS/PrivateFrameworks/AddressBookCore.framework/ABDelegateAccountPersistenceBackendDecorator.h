@@ -17,9 +17,9 @@
     id <ABAccountPersistenceBackend> _parentBackend;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <ABAccountPersistenceBackend> parentBackend; // @synthesize parentBackend=_parentBackend;
 @property(readonly, nonatomic) id <ABAccountPersistenceBackend> delegateBackend; // @synthesize delegateBackend=_delegateBackend;
-- (void).cxx_destruct;
 - (void)deletePersistentValuesWithAddressBook:(id)arg1;
 - (BOOL)savePersistentValues:(id)arg1 postNotifications:(BOOL)arg2;
 - (void)rediscoverPersistentValuesWithCompletionHandler:(CDUnknownBlockType)arg1;

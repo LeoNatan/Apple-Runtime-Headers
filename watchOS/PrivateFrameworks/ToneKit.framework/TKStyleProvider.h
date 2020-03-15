@@ -17,8 +17,8 @@
     UIScreen *_screen;
 }
 
-@property(retain, nonatomic) UIScreen *screen; // @synthesize screen=_screen;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIScreen *screen; // @synthesize screen=_screen;
 @property(readonly, nonatomic) float vibrationRecorderRippleFingerMovingSpeed;
 @property(readonly, nonatomic) float vibrationRecorderRippleFingerStillSpeed;
 @property(readonly, nonatomic) float vibrationRecorderRippleFinalRadius;

@@ -16,10 +16,10 @@
 }
 
 + (id)shared;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MTIDMemoryStorage *sessionStorage; // @synthesize sessionStorage=_sessionStorage;
 @property(retain, nonatomic) MTIDFileStorage *appStorage; // @synthesize appStorage=_appStorage;
 @property(retain, nonatomic) MTIDFileStorage *deviceStorage; // @synthesize deviceStorage=_deviceStorage;
-- (void).cxx_destruct;
 - (id)valueForNamespace:(id)arg1 options:(id)arg2 cachePolicy:(long long)arg3;
 - (id)storageForNamespace:(id)arg1;
 - (id)resetIDForNamespace:(id)arg1;

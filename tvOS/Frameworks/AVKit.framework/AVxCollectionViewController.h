@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_rightItems;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *rightItems; // @synthesize rightItems=_rightItems;
 @property(readonly, nonatomic) NSMutableArray *centerItems; // @synthesize centerItems=_centerItems;
 @property(readonly, nonatomic) NSMutableArray *leftItems; // @synthesize leftItems=_leftItems;
 @property(nonatomic) long long initialFocus; // @synthesize initialFocus=_initialFocus;
 @property(nonatomic) __weak id <AVxCollectionViewControllerDelegate> interactiveCollectionViewControllerDelegate; // @synthesize interactiveCollectionViewControllerDelegate=_interactiveCollectionViewControllerDelegate;
-- (void).cxx_destruct;
 - (id)collectionView:(id)arg1 layout:(id)arg2 controlItemForIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldUpdateFocusInContext:(id)arg2;

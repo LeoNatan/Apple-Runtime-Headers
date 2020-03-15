@@ -13,8 +13,8 @@
     NSArray *_commands;
 }
 
-@property(readonly, copy, nonatomic) NSArray *commands; // @synthesize commands=_commands;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *commands; // @synthesize commands=_commands;
 - (void)cleanupAfterCompletion;
 - (long long)composition;
 - (id)init;

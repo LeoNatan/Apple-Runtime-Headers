@@ -45,10 +45,6 @@ struct CC_SHA512state_st {
     unsigned long long wbuf[16];
 };
 
-struct NSString {
-    Class _field1;
-};
-
 struct __CE_CRLDistributionPoint {
     struct __CE_DistributionPointName *_field1;
     int _field2;

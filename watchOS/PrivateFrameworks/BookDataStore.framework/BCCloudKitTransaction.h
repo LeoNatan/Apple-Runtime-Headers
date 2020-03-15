@@ -21,6 +21,7 @@
 }
 
 + (id)transactionNameForEntityName:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) int clientCount; // @synthesize clientCount=_clientCount;
 @property(nonatomic) __weak id <BCCloudKitTransactionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *transactionLifetime; // @synthesize transactionLifetime=_transactionLifetime;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) BDSOSTransaction *osTransaction; // @synthesize osTransaction=_osTransaction;
 @property(retain, nonatomic) BUCoalescingCallBlock *coalescedNotification; // @synthesize coalescedNotification=_coalescedNotification;
 @property(copy, nonatomic) NSString *entityName; // @synthesize entityName=_entityName;
-- (void).cxx_destruct;
 - (void)laq_scheduleTransactionLifetime;
 - (void)signal;
 - (void)clientConnected;

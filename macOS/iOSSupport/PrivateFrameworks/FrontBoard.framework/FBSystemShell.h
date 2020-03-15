@@ -24,9 +24,9 @@
 
 + (id)sharedInstance;
 + (id)_createSingletonWithOptions:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long _state; // @synthesize _state;
 @property(readonly, nonatomic) FBSystemShellInitializationContext *initializationContext; // @synthesize initializationContext=_initializationContext;
-- (void).cxx_destruct;
 - (void)_setState:(unsigned long long)arg1;
 - (void)_setSystemIdleSleepDisabled:(BOOL)arg1 forReason:(id)arg2;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

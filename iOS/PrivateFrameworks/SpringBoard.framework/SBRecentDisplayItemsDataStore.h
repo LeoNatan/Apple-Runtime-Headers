@@ -16,8 +16,8 @@
     _Bool _shouldFallbackToRecentAppLayouts;
 }
 
-@property(nonatomic) __weak id <SBRecentDisplayItemsPersistenceDelegate> persistenceDelegate; // @synthesize persistenceDelegate=_persistenceDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBRecentDisplayItemsPersistenceDelegate> persistenceDelegate; // @synthesize persistenceDelegate=_persistenceDelegate;
 - (id)_displayItemsFromRecentAppLayouts:(id)arg1;
 @property(copy, nonatomic) NSOrderedSet *displayItems;
 - (id)initWithRecentLayouts:(id)arg1 fallbackToRecentAppLayouts:(_Bool)arg2;

@@ -89,6 +89,7 @@
 
 + (id)createEndpointFromHostList:(id)arg1 defaultPortString:(id)arg2 allowIPv6:(_Bool)arg3;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSData *updateHash; // @synthesize updateHash=_updateHash;
 @property(readonly) NSObject<OS_dispatch_queue> *reprocessQueue; // @synthesize reprocessQueue=_reprocessQueue;
 @property(retain) NSUUID *configurationIdentifier; // @synthesize configurationIdentifier=_configurationIdentifier;
@@ -157,7 +158,6 @@
 @property(copy) NSNumber *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly) long long source; // @synthesize source=_source;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)incrementSessionCounters;
 - (void)cleanupStaleKeys;
 @property(readonly) CDUnknownBlockType latencyComparator;

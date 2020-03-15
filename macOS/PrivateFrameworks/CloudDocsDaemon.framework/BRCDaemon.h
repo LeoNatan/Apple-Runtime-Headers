@@ -50,6 +50,7 @@
 + (id)UTIForExtension:(id)arg1;
 + (BOOL)isDaemonRunning;
 + (id)daemon;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL doesNotHaveEnoughDiskSpaceToBeFunctional; // @synthesize doesNotHaveEnoughDiskSpaceToBeFunctional=_hasNotEnoughDiskSpaceToBeFunctional;
 @property(readonly, nonatomic) BRCVersionsFileProvider *versionsProvider; // @synthesize versionsProvider=_versionsProvider;
 @property(readonly, nonatomic) NSDate *startupDate; // @synthesize startupDate=_startupDate;
@@ -63,7 +64,6 @@
 @property(retain, nonatomic) NSString *cacheDirPath; // @synthesize cacheDirPath=_cacheDirPath;
 @property(retain, nonatomic) NSString *appSupportDirPath; // @synthesize appSupportDirPath=_appSupportDirPath;
 @property(retain, nonatomic) NSString *logsDirPath; // @synthesize logsDirPath=_logsDirPath;
-- (void).cxx_destruct;
 - (void)resumeIPCAcceptation;
 - (void)suspendIPCAcceptation;
 - (void)exitWithCode:(int)arg1;

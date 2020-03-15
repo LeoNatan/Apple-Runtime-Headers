@@ -15,10 +15,10 @@
     NSMutableSet *_conditionItems;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *conditionItems; // @synthesize conditionItems=_conditionItems;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) NSSet *conditions; // @synthesize conditions=_conditions;
-- (void).cxx_destruct;
 - (id)reloadItems;
 - (id)items;
 - (id)initWithConditions:(id)arg1 home:(id)arg2;

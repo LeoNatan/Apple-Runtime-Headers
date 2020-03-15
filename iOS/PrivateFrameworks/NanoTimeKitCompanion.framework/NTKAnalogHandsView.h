@@ -45,6 +45,7 @@
 }
 
 + (long long)preferredCountOfInstancesToCache;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(nonatomic) _Bool shouldRestoreSecondHandAfterScrubbing; // @synthesize shouldRestoreSecondHandAfterScrubbing=_shouldRestoreSecondHandAfterScrubbing;
 @property(nonatomic) _Bool showDebugClientSideHands; // @synthesize showDebugClientSideHands=_showDebugClientSideHands;
@@ -61,7 +62,6 @@
 @property(retain, nonatomic) NTKHandView *minuteHandView; // @synthesize minuteHandView=_minuteHandView;
 @property(retain, nonatomic) NTKHandView *hourHandView; // @synthesize hourHandView=_hourHandView;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)_accessibilityInvalidateElements;
 - (void)_repointDebugHandsToCurrentTime;
 - (void)_handleDisplayLink;

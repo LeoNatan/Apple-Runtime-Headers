@@ -28,8 +28,8 @@
 + (id)initialPositionWithClientIdentifier:(id)arg1;
 + (id)_pathComponentsForSignpost:(id)arg1;
 + (_Bool)supportsSecureCoding;
-@property(readonly, getter=_pathComponents) NSArray *pathComponents; // @synthesize pathComponents=_pathComponents;
 - (void).cxx_destruct;
+@property(readonly, getter=_pathComponents) NSArray *pathComponents; // @synthesize pathComponents=_pathComponents;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

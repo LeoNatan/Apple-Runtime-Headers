@@ -16,8 +16,8 @@
     unsigned long long _composingInputIndex;
 }
 
-@property(nonatomic) unsigned long long composingInputIndex; // @synthesize composingInputIndex=_composingInputIndex;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long composingInputIndex; // @synthesize composingInputIndex=_composingInputIndex;
 - (_Bool)hasKindOf:(Class)arg1;
 - (void)insertInput:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)replaceComposingInputWith:(id)arg1;

@@ -10,17 +10,21 @@
 
 @interface WKBrowsingContextHandle : NSObject <NSSecureCoding>
 {
-    ObjectIdentifier_8136369e _pageID;
+    ObjectIdentifier_b2f7915a _pageProxyID;
+    ObjectIdentifier_8136369e _webPageID;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic, getter=_pageID) ObjectIdentifier_8136369e pageID; // @synthesize pageID=_pageID;
 - (id).cxx_construct;
+@property(readonly, nonatomic, getter=_webPageID) ObjectIdentifier_8136369e webPageID; // @synthesize webPageID=_webPageID;
+@property(readonly, nonatomic, getter=_pageProxyID) ObjectIdentifier_b2f7915a pageProxyID; // @synthesize pageProxyID=_pageProxyID;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
-- (id)_initWithPageID:(ObjectIdentifier_8136369e)arg1;
+- (id)_initWithPageProxyID:(ObjectIdentifier_b2f7915a)arg1 andWebPageID:(ObjectIdentifier_8136369e)arg2;
+- (id)_initWithPage:(struct WebPage *)arg1;
+- (id)_initWithPageProxy:(struct WebPageProxy *)arg1;
 
 @end
 

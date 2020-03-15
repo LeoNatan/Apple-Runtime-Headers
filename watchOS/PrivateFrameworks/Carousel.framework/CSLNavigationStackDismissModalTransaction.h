@@ -15,9 +15,9 @@
     CSLNavigationStackUpdate *_update;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CSLNavigationStackUpdate *update; // @synthesize update=_update;
 @property(readonly, nonatomic) CSLNavigationStackController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (void)_didInterruptWithReason:(id)arg1;
 - (_Bool)_canBeInterrupted;
 - (void)_begin;

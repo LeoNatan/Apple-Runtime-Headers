@@ -36,6 +36,7 @@
 + (id)_alarmForEvent:(id)arg1 withAlarmID:(id)arg2;
 + (id)_alarmDateForAlarm:(id)arg1 eventStartDate:(id)arg2;
 + (double)snoozeInterval;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CALNTriggeredEventNotificationMailtoURLProvider *mailtoURLProvider; // @synthesize mailtoURLProvider=_mailtoURLProvider;
 @property(readonly, nonatomic) id <CALNDebugPreferences> debugPreferences; // @synthesize debugPreferences=_debugPreferences;
 @property(readonly, nonatomic) id <CALNTimeToLeaveRefreshMonitor> timeToLeaveRefreshMonitor; // @synthesize timeToLeaveRefreshMonitor=_timeToLeaveRefreshMonitor;
@@ -51,7 +52,6 @@
 @property(readonly, nonatomic) id <CALNRemoteMutator> remoteMutator; // @synthesize remoteMutator=_remoteMutator;
 @property(readonly, nonatomic) id <EKEventStoreProvider> eventStoreProvider; // @synthesize eventStoreProvider=_eventStoreProvider;
 @property(nonatomic) __weak id <CALNTriggeredEventNotificationDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)eventObjectIDForEventID:(id)arg1;
 - (id)_eventForEventID:(id)arg1;
 - (id)_eventForSourceClientIdentifier:(id)arg1;

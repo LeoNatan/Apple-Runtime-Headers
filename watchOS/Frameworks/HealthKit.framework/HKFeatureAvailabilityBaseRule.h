@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)ruleClassForRawValue:(id)arg1;
-@property(nonatomic) __weak id <HKFeatureAvailabilityDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <HKFeatureAvailabilityDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (_Bool)evaluate;
 - (void)processUserInfo:(id)arg1;
 - (id)initWithRawValue:(id)arg1 dataSource:(id)arg2;

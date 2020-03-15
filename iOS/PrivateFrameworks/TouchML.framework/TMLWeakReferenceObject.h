@@ -12,8 +12,8 @@
 }
 
 + (id)weakReferenceWithObject:(id)arg1;
-@property(readonly, nonatomic) __weak id object; // @synthesize object=_object;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id object; // @synthesize object=_object;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (unsigned long long)hash;

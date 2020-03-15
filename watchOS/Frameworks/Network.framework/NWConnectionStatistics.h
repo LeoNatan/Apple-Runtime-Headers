@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSString, NSUUID, NWL2Report, PBCodable;
+@class NSArray, NSString, NSUUID, NWDeviceReport, NWL2Report, PBCodable;
 
 @interface NWConnectionStatistics : NSObject
 {
@@ -15,22 +15,25 @@
     NSUUID *_externallyVisibleConnectionUUID;
     NSArray *_externallyVisibleActivityUUIDs;
     NWL2Report *_layer2Report;
+    NWDeviceReport *_deviceReport;
     PBCodable *_awdReport;
     unsigned int _awdMetricID;
     NSArray *_activities;
     struct netcore_stats_tcp_report _report;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *activities; // @synthesize activities=_activities;
 @property(nonatomic) unsigned int awdMetricID; // @synthesize awdMetricID=_awdMetricID;
 @property(retain, nonatomic) PBCodable *awdReport; // @synthesize awdReport=_awdReport;
 @property(nonatomic) struct netcore_stats_tcp_report report; // @synthesize report=_report;
+@property(retain, nonatomic) NWDeviceReport *deviceReport; // @synthesize deviceReport=_deviceReport;
 @property(retain, nonatomic) NWL2Report *layer2Report; // @synthesize layer2Report=_layer2Report;
 @property(retain, nonatomic) NSArray *externallyVisibleActivityUUIDs; // @synthesize externallyVisibleActivityUUIDs=_externallyVisibleActivityUUIDs;
 @property(retain, nonatomic) NSUUID *externallyVisibleConnectionUUID; // @synthesize externallyVisibleConnectionUUID=_externallyVisibleConnectionUUID;
 @property(retain, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
 @property(retain, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-- (void).cxx_destruct;
+- (id)initWithPBCodableData:(id)arg1;
 - (id)initWithTCPReport:(struct netcore_stats_tcp_report *)arg1 length:(unsigned long)arg2 clientIdentifier:(id)arg3 sourceIdentifier:(id)arg4;
 - (_Bool)tlsHandshakeTimedOut;
 @property(readonly, nonatomic) NSUUID *connectionUUID;

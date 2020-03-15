@@ -18,8 +18,8 @@
 + (id)globalConfiguration;
 + (void)setGlobalConfiguration:(id)arg1;
 + (id)main;
-@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void)afterInterval:(double)arg1 async:(CDUnknownBlockType)arg2;
 - (void)sync:(CDUnknownBlockType)arg1;
 - (void)async:(CDUnknownBlockType)arg1;

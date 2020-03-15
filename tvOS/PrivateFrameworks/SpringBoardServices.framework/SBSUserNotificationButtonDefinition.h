@@ -19,10 +19,10 @@
 }
 
 + (id)_buttonDefinitionsFromSerializedDefinitions:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isPreferredButton; // @synthesize isPreferredButton=_isPreferredButton;
 @property(readonly, nonatomic) int presentationStyle; // @synthesize presentationStyle=_presentationStyle;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (void)_copyPropertiesToDefinition:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

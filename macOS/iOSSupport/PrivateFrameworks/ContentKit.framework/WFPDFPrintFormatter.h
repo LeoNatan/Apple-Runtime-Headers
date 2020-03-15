@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     WFPDFDocument *_document;
 }
 
-@property(readonly, nonatomic) WFPDFDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WFPDFDocument *document; // @synthesize document=_document;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) UIPrintFormatter *printFormatter; // @synthesize printFormatter=_printFormatter;
 - (id)initWithPDFDocument:(id)arg1;

@@ -26,6 +26,7 @@
 }
 
 + (_Bool)_preventsAppearanceProxyCustomization;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dismissCompletionHandler; // @synthesize dismissCompletionHandler=_dismissCompletionHandler;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) GKAuthenticateHostViewController *extensionHostViewController; // @synthesize extensionHostViewController=_extensionHostViewController;
@@ -36,7 +37,6 @@
 @property(nonatomic, getter=isRotationLocked) _Bool rotationLocked; // @synthesize rotationLocked=_rotationLocked;
 @property(nonatomic) _Bool disablesSignIn; // @synthesize disablesSignIn=_disablesSignIn;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (void)onboardingFlowDidSignOut;
 - (void)showPasswordChangeAlertWithURL:(id)arg1;
 - (_Bool)shouldAutorotate;

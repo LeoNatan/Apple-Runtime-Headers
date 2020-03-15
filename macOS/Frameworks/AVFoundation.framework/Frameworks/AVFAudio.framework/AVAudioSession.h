@@ -17,9 +17,9 @@
 
 + (id)sharedInstance;
 + (id)primarySession;
+- (void).cxx_destruct;
 @property(retain) CAReporter *reporter; // @synthesize reporter=_reporter;
 @property(readonly, getter=isOtherAudioPlaying) BOOL otherAudioPlaying; // @synthesize otherAudioPlaying=_otherAudioPlaying;
-- (void).cxx_destruct;
 @property(readonly) BOOL allowHapticsAndSystemSoundsDuringRecording;
 - (BOOL)setAllowHapticsAndSystemSoundsDuringRecording:(BOOL)arg1 error:(id *)arg2;
 @property(readonly) unsigned long long promptStyle;

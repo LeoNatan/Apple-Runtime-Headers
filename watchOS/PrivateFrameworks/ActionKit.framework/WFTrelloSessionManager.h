@@ -16,10 +16,10 @@
     NSURLSession *_session;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
 @property(readonly, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(copy, nonatomic) NSString *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (void)requestPath:(id)arg1 parameters:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)lookupCardWithURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getAttachmentsOnCard:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

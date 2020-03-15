@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     LPPadding *_padding;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldScaleMaximumLinesWithDynamicType; // @synthesize shouldScaleMaximumLinesWithDynamicType=_shouldScaleMaximumLinesWithDynamicType;
 @property(readonly, retain, nonatomic) LPPadding *padding; // @synthesize padding=_padding;
 @property(retain, nonatomic) LPGlyphStyle *leadingGlyph; // @synthesize leadingGlyph=_leadingGlyph;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned int maximumLines; // @synthesize maximumLines=_maximumLines;
 @property(retain, nonatomic) NSFont *font; // @synthesize font=_font;
 @property(retain, nonatomic) NSColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

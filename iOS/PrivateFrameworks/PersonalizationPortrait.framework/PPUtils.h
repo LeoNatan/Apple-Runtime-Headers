@@ -24,6 +24,7 @@
 + (id)hexOfBytes:(const void *)arg1 size:(unsigned long long)arg2;
 + (id)Sha256ForData:(id)arg1 withSalt:(id)arg2;
 + (_Bool)isInternalDevice;
++ (id)osBuild;
 + (_Bool)isConstrainedDevice;
 + (void)enumerateChunksOfSize:(unsigned long long)arg1 fromArray:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 

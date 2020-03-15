@@ -32,6 +32,7 @@
 + (id)defaultArticleSubscriptionButtonWithLandingPageArticleID:(id)arg1;
 + (id)defaultOsloSheetTargetSubscriptionButton;
 + (id)defaultLandingPageTargetSubscriptionButtonWithLandingPageArticleID:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=shouldDismissLandingPagePostPurchase) BOOL dismissLandingPagePostPurchase; // @synthesize dismissLandingPagePostPurchase=_dismissLandingPagePostPurchase;
 @property(retain, nonatomic) FCColor *buttonTextColor; // @synthesize buttonTextColor=_buttonTextColor;
 @property(retain, nonatomic) FCColor *buttonColor; // @synthesize buttonColor=_buttonColor;
@@ -42,7 +43,6 @@
 @property(copy, nonatomic) NSString *nonTrialText; // @synthesize nonTrialText=_nonTrialText;
 @property(copy, nonatomic) NSString *trialText; // @synthesize trialText=_trialText;
 @property(nonatomic) unsigned long long subscriptionButtonType; // @synthesize subscriptionButtonType=_subscriptionButtonType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

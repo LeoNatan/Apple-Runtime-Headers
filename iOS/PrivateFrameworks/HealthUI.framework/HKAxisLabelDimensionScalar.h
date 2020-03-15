@@ -17,9 +17,9 @@
 }
 
 + (long long)_fractionDigitsForStep:(double)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *negativeZeroString; // @synthesize negativeZeroString=_negativeZeroString;
 @property(retain, nonatomic) NSNumberFormatter *formatter; // @synthesize formatter=_formatter;
-- (void).cxx_destruct;
 - (id)stringForLocation:(id)arg1;
 - (void)setStepSizeForLabels:(double)arg1;
 - (double)ticksPerStepSize:(double)arg1;

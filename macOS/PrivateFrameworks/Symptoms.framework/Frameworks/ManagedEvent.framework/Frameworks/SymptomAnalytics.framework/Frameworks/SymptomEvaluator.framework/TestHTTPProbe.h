@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     NSURL *_urlToTest;
 }
 
-@property(retain, nonatomic) NSURL *urlToTest; // @synthesize urlToTest=_urlToTest;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSURL *urlToTest; // @synthesize urlToTest=_urlToTest;
 - (BOOL)isEqual:(id)arg1;
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
 - (void)stopTest;

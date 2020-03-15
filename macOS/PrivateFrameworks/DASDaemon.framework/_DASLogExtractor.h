@@ -18,12 +18,12 @@
 }
 
 + (id)extractorForArchive:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *category; // @synthesize category=_category;
 @property(retain, nonatomic) NSString *subsystem; // @synthesize subsystem=_subsystem;
 @property(retain, nonatomic) OSLogEventStream *eventStream; // @synthesize eventStream=_eventStream;
 @property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(retain, nonatomic) OSLogEventStore *logStore; // @synthesize logStore=_logStore;
-- (void).cxx_destruct;
 - (int)sysConditionsLog:(BOOL)arg1 startDate:(id)arg2 endDate:(id)arg3;
 - (void)addConditionToHistory:(id)arg1 fromMessage:(id)arg2 atTimestamp:(id)arg3 compactRepresentation:(BOOL)arg4;
 - (id)objectForTrigger:(id)arg1 fromCondition:(id)arg2 compactRepresentation:(BOOL)arg3;

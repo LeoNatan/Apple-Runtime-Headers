@@ -9,6 +9,7 @@
 @class FPDDomainIndexer, NSArray, NSData, NSError;
 
 @protocol FPDDomainIndexerDelegate <NSObject>
+- (void)extensionIndexerDidFinishIndexing:(FPDDomainIndexer *)arg1;
 - (void)extensionIndexer:(FPDDomainIndexer *)arg1 didIndexOneBatchWithError:(NSError *)arg2 updatedItems:(NSArray *)arg3 deletedIDs:(NSArray *)arg4 anchor:(NSData *)arg5 anchorPersisted:(void (^)(NSError *))arg6;
 - (void)extensionIndexer:(FPDDomainIndexer *)arg1 didChangeNeedsAuthentification:(BOOL)arg2;
 @end

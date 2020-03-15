@@ -15,10 +15,10 @@ __attribute__((visibility("hidden")))
 
 + (id)mailAppBundleIdentifier;
 @property(readonly, nonatomic) struct WebArchiveSharingController *controller; // @synthesize controller=_controller;
+- (void)_didLaunchApplication:(id)arg1;
 - (void)registerForDidLaunchApplicationNotification;
 - (void)dealloc;
 - (id)initWithWebArchiveSharingController:(struct WebArchiveSharingController *)arg1;
-- (void)_didLaunchApplication:(id)arg1;
 
 @end
 

@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSDictionary *sandboxExtensions; // @synthesize sandboxExtensions=_sandboxExtensions;
 @property(copy) NSString *sharedDataPath; // @synthesize sharedDataPath=_sharedDataPath;
 @property(copy) NSArray *items; // @synthesize items=_items;
 @property long long dataSize; // @synthesize dataSize=_dataSize;
 @property(retain) NSFileHandle *dataFile; // @synthesize dataFile=_dataFile;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

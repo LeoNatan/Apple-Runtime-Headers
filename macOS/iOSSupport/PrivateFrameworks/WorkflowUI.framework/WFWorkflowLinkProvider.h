@@ -19,13 +19,13 @@
     id <WFUserInterface> _userInterface;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <WFUserInterface> userInterface; // @synthesize userInterface=_userInterface;
 @property(readonly, nonatomic) NSURL *realmURL; // @synthesize realmURL=_realmURL;
 @property(readonly, nonatomic) NSString *workflowID; // @synthesize workflowID=_workflowID;
 @property(retain, nonatomic) NSURL *workflowURL; // @synthesize workflowURL=_workflowURL;
 @property(copy, nonatomic) NSString *exclusiveActivityType; // @synthesize exclusiveActivityType=_exclusiveActivityType;
 @property(readonly, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
-- (void).cxx_destruct;
 - (id)activityViewControllerLinkMetadata:(id)arg1;
 - (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize)arg3;

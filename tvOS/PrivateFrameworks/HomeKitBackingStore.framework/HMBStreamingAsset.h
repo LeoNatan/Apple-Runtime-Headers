@@ -21,9 +21,9 @@
 + (_Bool)includeInModelEncoding;
 + (id)hmbDecodeData:(id)arg1 fromStorageLocation:(unsigned long long)arg2 error:(id *)arg3;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKStreamingAsset *downloadStreamingAsset; // @synthesize downloadStreamingAsset=_downloadStreamingAsset;
 @property(retain, nonatomic) CKStreamingAsset *uploadStreamingAsset; // @synthesize uploadStreamingAsset=_uploadStreamingAsset;
-- (void).cxx_destruct;
 - (id)nativeCKValueWithEncodingContext:(id)arg1 error:(id *)arg2;
 - (id)hmbEncodeForStorageLocation:(unsigned long long)arg1 error:(id *)arg2;
 - (void)encodeWithCoder:(id)arg1;

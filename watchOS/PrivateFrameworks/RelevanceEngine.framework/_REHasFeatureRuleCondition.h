@@ -16,9 +16,9 @@
     REFeature *_feature;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool contains; // @synthesize contains=_contains;
 @property(readonly, nonatomic) REFeature *feature; // @synthesize feature=_feature;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_inflectionFeatureValuePairs;
 - (_Bool)isEqual:(id)arg1;

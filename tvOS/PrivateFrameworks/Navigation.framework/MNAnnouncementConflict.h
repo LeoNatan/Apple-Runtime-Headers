@@ -17,12 +17,12 @@
     double _desiredTimeGap;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool announcementsAreSimilar; // @synthesize announcementsAreSimilar=_announcementsAreSimilar;
 @property(nonatomic) double desiredTimeGap; // @synthesize desiredTimeGap=_desiredTimeGap;
 @property(nonatomic) double timeGap; // @synthesize timeGap=_timeGap;
 @property(retain, nonatomic) MNAnnouncementPlanEvent *secondEvent; // @synthesize secondEvent=_secondEvent;
 @property(retain, nonatomic) MNAnnouncementPlanEvent *firstEvent; // @synthesize firstEvent=_firstEvent;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

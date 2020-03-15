@@ -17,12 +17,12 @@
     _Bool _isPrimary;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *grouping; // @synthesize grouping=_grouping;
 @property _Bool isPrimary; // @synthesize isPrimary=_isPrimary;
 @property(copy) NSArray *parameters; // @synthesize parameters=_parameters;
 @property(retain) id value; // @synthesize value=_value;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithName:(id)arg1;
 

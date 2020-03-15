@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 
 + (void)_showCursor;
 + (void)_hideCursor;
+- (void).cxx_destruct;
 @property(readonly) BOOL cursorIsInTouchBar; // @synthesize cursorIsInTouchBar=_cursorIsInTouchBar;
 @property __weak id <NSTouchBarCustomizationCursorManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_exitTouchBarWithDFRLocation:(struct CGPoint)arg1 cancelled:(BOOL)arg2;
 - (void)_enterTouchBarWithDisplayLocation:(struct CGPoint)arg1 mouseIsDown:(BOOL)arg2;
 - (BOOL)updateWithEvent:(id)arg1;

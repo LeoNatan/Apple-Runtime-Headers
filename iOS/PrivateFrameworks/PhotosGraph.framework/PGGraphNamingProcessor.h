@@ -22,6 +22,7 @@
     unsigned long long _numberOfSignals;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long numberOfSignals; // @synthesize numberOfSignals=_numberOfSignals;
 @property(retain, nonatomic) NSMutableDictionary *filteredOutContactMatchesByPersonLocalIdentifier; // @synthesize filteredOutContactMatchesByPersonLocalIdentifier=_filteredOutContactMatchesByPersonLocalIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *selectedContactMatchesByPersonLocalIdentifier; // @synthesize selectedContactMatchesByPersonLocalIdentifier=_selectedContactMatchesByPersonLocalIdentifier;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) NSSet *personNodesToName; // @synthesize personNodesToName=_personNodesToName;
 @property(retain, nonatomic) NSMutableArray *analyzersToRun; // @synthesize analyzersToRun=_analyzersToRun;
 @property(readonly, nonatomic) unsigned long long runOptions; // @synthesize runOptions=_runOptions;
-- (void).cxx_destruct;
 - (id)personNodesToNameFromPersonNodes:(id)arg1;
 - (id)matchPropertiesBetweenContactIdentifier:(id)arg1 andPersonLocalIdentifier:(id)arg2;
 - (id)_swapPersonAndContactIdentifiersFromMatchesByContactIdentifier:(id)arg1;

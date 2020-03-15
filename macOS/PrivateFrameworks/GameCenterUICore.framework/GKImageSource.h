@@ -22,13 +22,13 @@
 + (void)clearCache;
 + (id)sharedCache;
 + (id)syncQueue;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldRenderDefaultImageWithBrush; // @synthesize shouldRenderDefaultImageWithBrush=_shouldRenderDefaultImageWithBrush;
 @property(retain, nonatomic) NSImage *renderedDefaultImage; // @synthesize renderedDefaultImage=_renderedDefaultImage;
 @property(retain, nonatomic) NSImage *defaultImage; // @synthesize defaultImage=_defaultImage;
 @property(retain, nonatomic) GKImageBrush *imageBrush; // @synthesize imageBrush=_imageBrush;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) GKThreadsafeCache *cache; // @synthesize cache=_cache;
-- (void).cxx_destruct;
 - (void)clearCachedImageForIdentifier:(id)arg1;
 - (id)processAndCacheImageDataInContext:(id)arg1 withImage:(id)arg2 forIdentifier:(id)arg3;
 - (id)processAndCacheImageDataInContext:(id)arg1 withImage:(id)arg2 forKey:(id)arg3;

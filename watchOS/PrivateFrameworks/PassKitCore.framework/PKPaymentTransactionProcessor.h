@@ -31,10 +31,10 @@
     PKUsageNotificationServer *_usageNotificationServer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PKUsageNotificationServer *usageNotificationServer; // @synthesize usageNotificationServer=_usageNotificationServer;
 @property(nonatomic) __weak id <PKPaymentTransactionProcessorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (id)_pendingMerchantCleanupItemForTransaction:(id)arg1;
 - (id)_pendingStationsUpdateItemForTransaction:(id)arg1;
 - (id)_pendingLocationUpdateItemForTransaction:(id)arg1;

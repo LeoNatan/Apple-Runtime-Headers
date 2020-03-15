@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     NSArray *_titles;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *titles; // @synthesize titles=_titles;
 @property(copy, nonatomic) NSString *moreListTitle; // @synthesize moreListTitle=_moreListTitle;
 @property(nonatomic) long long maximumNumberOfVisiblePills; // @synthesize maximumNumberOfVisiblePills=_maximumNumberOfVisiblePills;
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 @property(copy, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
-- (void).cxx_destruct;
 - (void)_segmentedControlAction:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

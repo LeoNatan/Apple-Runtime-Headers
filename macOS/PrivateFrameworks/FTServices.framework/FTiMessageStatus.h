@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) FTServiceStatus *serviceStatus; // @synthesize serviceStatus=_serviceStatus;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) FTServiceStatus *serviceStatus; // @synthesize serviceStatus=_serviceStatus;
 @property(readonly, nonatomic) BOOL iMessageSupported;
 - (id)initPrivate;
 

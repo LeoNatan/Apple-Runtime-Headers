@@ -17,8 +17,8 @@
     HKHealthStore *_healthStore;
 }
 
-@property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 - (void)connectionInvalidated;
 - (id)remoteInterface;
 - (id)exportedInterface;

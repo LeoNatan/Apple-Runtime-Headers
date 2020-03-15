@@ -15,8 +15,8 @@
     IKAppPlaylistBridge *_bridge;
 }
 
-@property(readonly, nonatomic) IKAppPlaylistBridge *bridge; // @synthesize bridge=_bridge;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IKAppPlaylistBridge *bridge; // @synthesize bridge=_bridge;
 @property(nonatomic) long long repeatMode;
 @property(nonatomic) long long endAction;
 @property(readonly, nonatomic) unsigned long long length;

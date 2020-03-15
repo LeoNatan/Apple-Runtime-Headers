@@ -6,9 +6,7 @@
 
 #import <swiftCore/_TtCs12_SwiftObject.h>
 
-#import <TeaUI/TUMotionManagerObserver-Protocol.h>
-
-@interface _TtC5TeaUI26MotionManagerObserverProxy : _TtCs12_SwiftObject <TUMotionManagerObserver>
+@interface _TtC5TeaUI26MotionManagerObserverProxy : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: delegate
 }

@@ -17,12 +17,12 @@
     TLKLabel *_subtitleLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TLKLabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) TLKLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) _Bool topLabelIsVibrant; // @synthesize topLabelIsVibrant=_topLabelIsVibrant;
 @property(retain, nonatomic) TLKMultilineText *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) TLKMultilineText *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)subtitleFont;
 - (id)titleFont;
 - (id)subtitleLabelText;

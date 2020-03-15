@@ -13,8 +13,8 @@
     HUIntrinsicSizeDescriptor *_sizeDescriptor;
 }
 
-@property(readonly, nonatomic) HUIntrinsicSizeDescriptor *sizeDescriptor; // @synthesize sizeDescriptor=_sizeDescriptor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HUIntrinsicSizeDescriptor *sizeDescriptor; // @synthesize sizeDescriptor=_sizeDescriptor;
 - (id)initWithSizeDescriptor:(id)arg1;
 
 @end

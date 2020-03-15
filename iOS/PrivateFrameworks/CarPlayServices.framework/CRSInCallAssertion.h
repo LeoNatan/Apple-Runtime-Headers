@@ -23,9 +23,9 @@
     BSServiceConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BSServiceConnection *connection; // @synthesize connection=_connection;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (void)_handleConnectionInterrupted;
 - (void)_handleConnectionActivated;
 - (void)invalidate;

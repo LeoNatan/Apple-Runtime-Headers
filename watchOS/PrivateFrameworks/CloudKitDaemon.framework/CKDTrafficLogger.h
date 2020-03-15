@@ -14,9 +14,9 @@
     NSString *_requestID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *requestID; // @synthesize requestID=_requestID;
 @property(nonatomic) int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
-- (void).cxx_destruct;
 - (void)finishRequestLog;
 - (void)logPartialResponseObjectData:(id)arg1;
 - (void)logResponseConfiguration:(unsigned int)arg1 withMessageClassString:(id)arg2;

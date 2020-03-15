@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_primaryBottomConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *primaryBottomConstraint; // @synthesize primaryBottomConstraint=_primaryBottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *primaryTopConstraint; // @synthesize primaryTopConstraint=_primaryTopConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *primaryTrailingConstraint; // @synthesize primaryTrailingConstraint=_primaryTrailingConstraint;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableDictionary *preferredSizeByContentType; // @synthesize preferredSizeByContentType=_preferredSizeByContentType;
 @property(retain, nonatomic) NSMutableDictionary *viewsByContentType; // @synthesize viewsByContentType=_viewsByContentType;
 @property(nonatomic) double presentationProgress; // @synthesize presentationProgress=_presentationProgress;
-- (void).cxx_destruct;
 - (void)setView:(id)arg1 forContentType:(long long)arg2;
 - (id)viewForContentType:(long long)arg1;
 - (void)setPreferredSize:(struct CGSize)arg1 forContentType:(long long)arg2;

@@ -6,8 +6,12 @@
 
 #import <UIKitCore/_UIMotionEffectEventProvider.h>
 
+#import <UIKitCore/_UIFocusEffectsObserver-Protocol.h>
+
+@class NSString;
+
 __attribute__((visibility("hidden")))
-@interface _UIMotionEffectFocusEventProvider : _UIMotionEffectEventProvider
+@interface _UIMotionEffectFocusEventProvider : _UIMotionEffectEventProvider <_UIFocusEffectsObserver>
 {
     _Bool _isGeneratingEvents;
     struct CGPoint _focusPosition;
@@ -17,12 +21,19 @@ __attribute__((visibility("hidden")))
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)sharedInstance;
 + (void)initialize;
+- (void)focusEffectsController:(id)arg1 updateMovementDirection:(struct CGVector)arg2;
 @property(nonatomic) struct CGPoint focusPosition;
 - (id)currentEvent;
 - (void)stopGeneratingEvents;
 - (void)startGeneratingEvents;
 - (_Bool)wantsSynchronizedUpdates;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

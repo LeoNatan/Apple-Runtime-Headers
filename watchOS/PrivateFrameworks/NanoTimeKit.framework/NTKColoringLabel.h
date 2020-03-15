@@ -10,7 +10,7 @@
 #import <NanoTimeKit/NTKColoringView-Protocol.h>
 #import <NanoTimeKit/NTKTimeTravelState-Protocol.h>
 
-@class CLKDevice, CLKFont, CLKTextProvider, NSAttributedString, NSParagraphStyle, NSString, UIColor, UIFont, UIView, _NTKColorManager;
+@class CLKDevice, CLKFont, CLKTextProvider, NSAttributedString, NSNumber, NSParagraphStyle, NSString, UIColor, UIFont, UIView, _NTKColorManager;
 @protocol CLKMonochromeFilterProvider;
 
 @interface NTKColoringLabel : NTKLegibilityLabel <NTKColoringView, CLKUILabel, NTKTimeTravelState>
@@ -18,7 +18,7 @@
     CLKDevice *_device;
     unsigned int _options;
     _NTKColorManager *_colorManager;
-    struct NSNumber *_updateToken;
+    NSNumber *_updateToken;
     _Bool _updatedAfterTimeTravelStateChange;
     CLKFont *_preTimeTravelFont;
     _Bool _monochromeSnapshot;
@@ -48,6 +48,7 @@
 }
 
 + (id)labelWithOptions:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool usesTextProviderSize; // @synthesize usesTextProviderSize=_usesTextProviderSize;
 @property(nonatomic) _Bool cachedOpticalEdgeInsetsIsValid; // @synthesize cachedOpticalEdgeInsetsIsValid=_cachedOpticalEdgeInsetsIsValid;
 @property(readonly, nonatomic) struct UIEdgeInsets cachedOpticalEdgeInsets; // @synthesize cachedOpticalEdgeInsets=_cachedOpticalEdgeInsets;
@@ -69,7 +70,6 @@
 @property(readonly, nonatomic) unsigned int options; // @synthesize options=_options;
 @property(retain, nonatomic) UIColor *overrideColor; // @synthesize overrideColor=_overrideColor;
 @property(nonatomic) _Bool inTimeTravel; // @synthesize inTimeTravel=_inTimeTravel;
-- (void).cxx_destruct;
 - (void)_setAnimationAlpha:(float)arg1;
 - (void)_setUpSnapshot;
 - (void)editingDidEnd;

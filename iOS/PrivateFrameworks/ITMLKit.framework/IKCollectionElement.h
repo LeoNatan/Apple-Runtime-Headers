@@ -15,8 +15,8 @@
 }
 
 + (id)supportedFeaturesForElementName:(id)arg1;
-@property(readonly, nonatomic) IKAppBrowserBridge *browserBridge; // @synthesize browserBridge=_browserBridge;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IKAppBrowserBridge *browserBridge; // @synthesize browserBridge=_browserBridge;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (void)appDocumentDidMarkStylesDirty;
 @property(readonly, retain, nonatomic) NSArray *sections;

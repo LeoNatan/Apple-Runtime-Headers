@@ -22,13 +22,13 @@
     NSArray *_bundleChannelIDs;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *bundleChannelIDs; // @synthesize bundleChannelIDs=_bundleChannelIDs;
 @property(readonly, nonatomic) FCPurchaseLookupRecordSource *purchaseLookupRecordSource; // @synthesize purchaseLookupRecordSource=_purchaseLookupRecordSource;
 @property(readonly, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
 @property(retain, nonatomic) NFUnfairLock *accessLock; // @synthesize accessLock=_accessLock;
 @property(retain, nonatomic) FCKeyValueStore *localStore; // @synthesize localStore=_localStore;
 @property(nonatomic) __weak id <FCBundleChannelProviderDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (void)fetchBundleTagIDsForPurchaseID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)refreshBundleChannelIDsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updateBundleChannelIDs:(id)arg1;

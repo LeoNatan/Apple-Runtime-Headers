@@ -18,10 +18,10 @@
     AKAppleIDServerUIDataHarvester *_serverDataHarvester;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AKAppleIDServerUIDataHarvester *serverDataHarvester; // @synthesize serverDataHarvester=_serverDataHarvester;
 @property(retain, nonatomic) AAUIServerHookResponse *serverHookResponse; // @synthesize serverHookResponse=_serverHookResponse;
 @property(nonatomic) __weak id <AAUIServerHookDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)harvestDataFromResponse:(id)arg1;
 - (_Bool)shouldMatchModel:(id)arg1;
 - (_Bool)shouldMatchElement:(id)arg1;

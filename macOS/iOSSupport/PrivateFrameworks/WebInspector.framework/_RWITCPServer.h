@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     id <_RWITCPServerDelegate> _delegate;
 }
 
-@property(readonly, nonatomic) __weak id <_RWITCPServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <_RWITCPServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)connectionClosed:(id)arg1;
 - (BOOL)_createListenDispatchSource;
 - (BOOL)_listenOnLaunchdProvidedSocket:(const char *)arg1;

@@ -25,9 +25,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)_identifierFromDictionary:(id)arg1;
 + (id)_dictionaryFromIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) TVContentIdentifier *container; // @synthesize container=_container;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(CDUnknownBlockType)arg2;
 - (id)_flattenedRepresentation;
 - (id)description;

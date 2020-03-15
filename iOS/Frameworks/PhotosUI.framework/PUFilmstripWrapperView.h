@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     struct CGRect _visibleRect;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *anchoredLeft; // @synthesize anchoredLeft=_anchoredLeft;
 @property(nonatomic, setter=setExpandedSize:) struct CGSize expandedSize; // @synthesize expandedSize=_expandedSize;
 @property(nonatomic, setter=setExpanded:) _Bool isExpanded; // @synthesize isExpanded=_isExpanded;
 @property(retain, nonatomic) PUFilmstripView *filmstripView; // @synthesize filmstripView=_filmstripView;
 @property(nonatomic) struct CGRect visibleRect; // @synthesize visibleRect=_visibleRect;
 @property(nonatomic, setter=setAnimating:) _Bool isAnimating; // @synthesize isAnimating=_isAnimating;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 
 @end

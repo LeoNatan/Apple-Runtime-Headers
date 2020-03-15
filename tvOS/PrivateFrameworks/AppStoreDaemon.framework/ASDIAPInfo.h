@@ -27,6 +27,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *subscriptionFamilyId; // @synthesize subscriptionFamilyId=_subscriptionFamilyId;
 @property(retain, nonatomic) NSDate *purchaseDate; // @synthesize purchaseDate=_purchaseDate;
@@ -37,7 +38,6 @@
 @property(nonatomic) _Bool autoRenewStatus; // @synthesize autoRenewStatus=_autoRenewStatus;
 @property(retain, nonatomic) NSNumber *appAdamId; // @synthesize appAdamId=_appAdamId;
 @property(retain, nonatomic) NSNumber *adamId; // @synthesize adamId=_adamId;
-- (void).cxx_destruct;
 - (id)_newCopyWithClass:(Class)arg1 zone:(struct _NSZone *)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

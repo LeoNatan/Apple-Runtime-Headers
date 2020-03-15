@@ -19,11 +19,11 @@
 }
 
 + (void)loadWebResource:(id)arg1 withSize:(struct CGSize)arg2 configuration:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) WFWebResource *webResource; // @synthesize webResource=_webResource;
 @property(retain, nonatomic) WKNavigation *pageNavigation; // @synthesize pageNavigation=_pageNavigation;
 @property(retain, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
-- (void).cxx_destruct;
 - (void)webView:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;

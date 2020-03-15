@@ -27,6 +27,7 @@
     struct CGPoint _textOffsetFromCircle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float textFrameWidthAdjustment; // @synthesize textFrameWidthAdjustment=_textFrameWidthAdjustment;
 @property(nonatomic) _Bool dontApplyCenteringOffset; // @synthesize dontApplyCenteringOffset=_dontApplyCenteringOffset;
 @property(nonatomic) _Bool circleShouldFillFrame; // @synthesize circleShouldFillFrame=_circleShouldFillFrame;
@@ -34,7 +35,6 @@
 @property(nonatomic) struct CGPoint textOffsetFromCircle; // @synthesize textOffsetFromCircle=_textOffsetFromCircle;
 @property(nonatomic) float textYOffset; // @synthesize textYOffset=_textYOffset;
 @property(nonatomic) float circleDiameter; // @synthesize circleDiameter=_circleDiameter;
-- (void).cxx_destruct;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 - (void)pulse:(CDUnknownBlockType)arg1;
 - (void)_layoutSubviews;

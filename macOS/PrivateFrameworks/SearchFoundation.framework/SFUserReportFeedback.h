@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFPunchout *userSelection; // @synthesize userSelection=_userSelection;
 @property(retain, nonatomic) SFCardSection *cardSection; // @synthesize cardSection=_cardSection;
 @property(retain, nonatomic) SFSearchResult *result; // @synthesize result=_result;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

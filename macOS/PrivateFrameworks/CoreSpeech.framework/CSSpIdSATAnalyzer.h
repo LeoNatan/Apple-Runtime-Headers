@@ -46,6 +46,7 @@
 }
 
 + (id)createSATAnalyzersForCSSpIdType:(unsigned long long)arg1 withModel:(unsigned long long)arg2 withAsset:(id)arg3 withFallbackAsset:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *voiceProfilePruningCookie; // @synthesize voiceProfilePruningCookie=_voiceProfilePruningCookie;
 @property(readonly, nonatomic) int maxAllowedBaseProfileUtterances; // @synthesize maxAllowedBaseProfileUtterances=_maxAllowedBaseProfileUtterances;
 @property(readonly, nonatomic) int maxAllowedImplicitUtterances; // @synthesize maxAllowedImplicitUtterances=_maxAllowedImplicitUtterances;
@@ -79,7 +80,6 @@
 @property(readonly, nonatomic) NSString *sysConfigFilepath; // @synthesize sysConfigFilepath=_sysConfigFilepath;
 @property(readonly, nonatomic) NSString *profileID; // @synthesize profileID=_profileID;
 @property(readonly, nonatomic) unsigned long long spIdType; // @synthesize spIdType=_spIdType;
-- (void).cxx_destruct;
 - (void)deleteExistingSATModel;
 - (void)deleteVectorAtIndex:(int)arg1;
 - (id)getSpeakerVectorAtIndex:(unsigned long long)arg1;

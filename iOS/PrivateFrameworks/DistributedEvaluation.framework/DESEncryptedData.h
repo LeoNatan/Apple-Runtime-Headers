@@ -21,11 +21,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *algorithm; // @synthesize algorithm=_algorithm;
 @property(retain, nonatomic) NSData *encryptedKey; // @synthesize encryptedKey=_encryptedKey;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(nonatomic) int version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

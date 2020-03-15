@@ -23,9 +23,9 @@
 + (id)sharedInstance;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOperationQueue *snippetCommitQueue; // @synthesize snippetCommitQueue=_snippetCommitQueue;
 @property(readonly, nonatomic) MFSnippetCalculator *snippetCalculator; // @synthesize snippetCalculator=_snippetCalculator;
-- (void).cxx_destruct;
 - (void)_commitPendingSnippets;
 - (void)_queueCommitPendingSnippets;
 - (void)snippetCalculator:(id)arg1 didSkipMessages:(id)arg2;

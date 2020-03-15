@@ -17,8 +17,8 @@
     id <STYIOPMNotificationDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <STYIOPMNotificationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <STYIOPMNotificationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_sendEventNotification:(unsigned long long)arg1;
 - (void)_handleEvent:(unsigned int)arg1 ofType:(unsigned long long)arg2;
 - (void)iopmEvent:(unsigned int)arg1;

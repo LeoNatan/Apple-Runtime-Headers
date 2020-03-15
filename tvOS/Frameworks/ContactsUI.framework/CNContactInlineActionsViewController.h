@@ -33,6 +33,7 @@
 
 + (_Bool)isEmptyModel:(id)arg1;
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNUIUserActionListDataSource *actionListDataSource; // @synthesize actionListDataSource=_actionListDataSource;
 @property(retain, nonatomic) UIAlertController *alertController; // @synthesize alertController=_alertController;
 @property(copy, nonatomic) NSDictionary *defaultActionPerType; // @synthesize defaultActionPerType=_defaultActionPerType;
@@ -47,7 +48,6 @@
 @property(nonatomic) _Bool displaysTitles; // @synthesize displaysTitles=_displaysTitles;
 @property(nonatomic) _Bool displaysUnavailableActionTypes; // @synthesize displaysUnavailableActionTypes=_displaysUnavailableActionTypes;
 @property(nonatomic) __weak id <CNUIObjectViewControllerDelegate> objectViewControllerDelegate; // @synthesize objectViewControllerDelegate;
-- (void).cxx_destruct;
 - (void)showDisambiguationFromSourceView:(id)arg1 actionType:(id)arg2;
 - (void)performAction:(id)arg1;
 - (void)contactActionsViewController:(id)arg1 didSelectAction:(id)arg2;

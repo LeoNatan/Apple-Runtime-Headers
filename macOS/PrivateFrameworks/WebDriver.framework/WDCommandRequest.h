@@ -18,13 +18,13 @@
     SEL _selector;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SEL selector; // @synthesize selector=_selector;
 @property(readonly, nonatomic) BOOL wasCancelled; // @synthesize wasCancelled=_wasCancelled;
 @property(readonly, copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(readonly, nonatomic) long long method; // @synthesize method=_method;
 @property(readonly, nonatomic) RouteResponse *response; // @synthesize response=_response;
 @property(readonly, nonatomic) RouteRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)cancel;
 - (id)initWithRequest:(id)arg1 response:(id)arg2 selector:(SEL)arg3 method:(long long)arg4 path:(id)arg5;
 

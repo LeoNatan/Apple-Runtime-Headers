@@ -15,9 +15,9 @@
 }
 
 + (id)actionWithUpdateType:(unsigned int)arg1 entity:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLMainUIEntity *entity; // @synthesize entity=_entity;
 @property(nonatomic) unsigned int updateType; // @synthesize updateType=_updateType;
-- (void).cxx_destruct;
 
 @end
 

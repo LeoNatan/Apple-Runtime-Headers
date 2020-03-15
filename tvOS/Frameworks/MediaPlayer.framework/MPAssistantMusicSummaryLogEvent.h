@@ -15,10 +15,10 @@
     double _tracklistLoadDuration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double tracklistLoadDuration; // @synthesize tracklistLoadDuration=_tracklistLoadDuration;
 @property(copy, nonatomic) NSNumber *perceivedTotalStartupTime; // @synthesize perceivedTotalStartupTime=_perceivedTotalStartupTime;
 @property(nonatomic) double blockingSecureKeyLoadDuration; // @synthesize blockingSecureKeyLoadDuration=_blockingSecureKeyLoadDuration;
-- (void).cxx_destruct;
 - (id)eventPayload;
 - (long long)eventCode;
 - (id)eventName;

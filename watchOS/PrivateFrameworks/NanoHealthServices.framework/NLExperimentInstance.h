@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int value; // @synthesize value=_value;
 @property(readonly, nonatomic) NLExperimentalCondition *experimentalCondition; // @synthesize experimentalCondition=_experimentalCondition;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)hash;

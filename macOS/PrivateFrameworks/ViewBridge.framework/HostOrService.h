@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (BOOL)colorHasMeaningfulAlpha:(id)arg1;
 - (int)owningProcessForWindow:(unsigned int)arg1;
-- (void)invalidate:(struct NSMutableDictionary *)arg1;
+- (void)invalidate:(id)arg1;
 - (void)post:(struct __CGEvent *)arg1;
 - (id)secBundleIdentifier;
 @property(readonly) NSDictionary *secBundleInfo;

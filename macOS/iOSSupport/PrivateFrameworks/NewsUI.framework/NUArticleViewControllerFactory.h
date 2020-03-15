@@ -24,6 +24,7 @@
     id <NUArticlePrefetcherType> _articlePrefetcher;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NUArticlePrefetcherType> articlePrefetcher; // @synthesize articlePrefetcher=_articlePrefetcher;
 @property(readonly, nonatomic) id <NUDocumentSectionBlueprintProvider> headerBlueprintProvider; // @synthesize headerBlueprintProvider=_headerBlueprintProvider;
 @property(readonly, nonatomic) id <NFResolver> resolver; // @synthesize resolver=_resolver;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) id <NUArticleAdManagerFactory> articleAdManagerFactory; // @synthesize articleAdManagerFactory=_articleAdManagerFactory;
 @property(readonly, nonatomic) id <NUArticleDataProviderFactory> articleDataProviderFactory; // @synthesize articleDataProviderFactory=_articleDataProviderFactory;
 @property(readonly, nonatomic) NSHashTable *loadingListeners; // @synthesize loadingListeners=_loadingListeners;
-- (void).cxx_destruct;
 - (id)createArticleExcerptViewControllerWithArticle:(id)arg1 traits:(id)arg2;
 - (id)createArticleWebViewControllerWithArticle:(id)arg1;
 - (id)createArticleViewControllerWithArticle:(id)arg1 issue:(id)arg2;

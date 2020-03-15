@@ -14,8 +14,8 @@
     id <LAUIPasswordFieldDelegate> _passwordFieldDelegate;
 }
 
-@property(nonatomic) __weak id <LAUIPasswordFieldDelegate> passwordFieldDelegate; // @synthesize passwordFieldDelegate=_passwordFieldDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <LAUIPasswordFieldDelegate> passwordFieldDelegate; // @synthesize passwordFieldDelegate=_passwordFieldDelegate;
 - (void)doCommandBySelector:(SEL)arg1;
 - (void)setIsTextFieldFirstResponder:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;

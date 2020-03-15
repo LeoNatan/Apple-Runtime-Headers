@@ -16,8 +16,8 @@
     id <SVPlayerProviding> _playerProvider;
 }
 
-@property(readonly, nonatomic) id <SVPlayerProviding> playerProvider; // @synthesize playerProvider=_playerProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SVPlayerProviding> playerProvider; // @synthesize playerProvider=_playerProvider;
 - (id)createTimeControlStatusObserverForVideo:(id)arg1;
 - (id)initWithPlayerProvider:(id)arg1;
 

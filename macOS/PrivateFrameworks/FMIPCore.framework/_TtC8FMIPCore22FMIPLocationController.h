@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: locationManager
     // Error parsing type: , name: delegate
     // Error parsing type: , name: locationUpdatingQueue
+    // Error parsing type: , name: currentLocation
 }
 
 - (void).cxx_destruct;

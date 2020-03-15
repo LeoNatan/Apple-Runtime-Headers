@@ -18,11 +18,11 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NSURL *location; // @synthesize location=_location;
 @property(readonly, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly) NSProgress *progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 - (void)resume;
 - (id)initWithLocation:(id)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;
 

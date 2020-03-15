@@ -49,9 +49,9 @@
     id <UIStatusBarStyleDelegate_SpringBoardOnly> _realStyleDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UIStatusBarStyleDelegate_SpringBoardOnly> realStyleDelegate; // @synthesize realStyleDelegate=_realStyleDelegate;
 @property(nonatomic) __weak id <SBMainDisplaySceneLayoutStatusBarViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (long long)overriddenRequestedStyleFromStyle:(long long)arg1;
 - (int)statusBar:(id)arg1 effectiveStyleOverridesForRequestedStyle:(long long)arg2 overrides:(int)arg3;
 - (void)statusBar:(id)arg1 didTriggerButtonType:(long long)arg2 withAction:(long long)arg3 context:(id)arg4;

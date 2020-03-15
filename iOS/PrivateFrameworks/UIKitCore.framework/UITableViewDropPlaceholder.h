@@ -11,8 +11,8 @@
     CDUnknownBlockType _previewParametersProvider;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType previewParametersProvider; // @synthesize previewParametersProvider=_previewParametersProvider;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType previewParametersProvider; // @synthesize previewParametersProvider=_previewParametersProvider;
 
 @end
 

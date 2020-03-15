@@ -26,6 +26,7 @@
 - (void)creditStatementsForAccountIdentifier:(NSString *)arg1 completion:(void (^)(NSSet *, NSError *))arg2;
 - (void)lastRedemptionEventToPeerPaymentForAccountIdentifier:(NSString *)arg1 completion:(void (^)(PKAccountEvent *, NSError *))arg2;
 - (void)insertEvents:(NSSet *)arg1 withAccountidentifier:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
+- (void)deleteEventsWithAccountIdentifier:(NSString *)arg1 excludingTypes:(NSSet *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)deleteEventWithIdentifier:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)deleteEventsWithAccountIdentifier:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)eventsForAccountIdentifier:(NSString *)arg1 types:(NSArray *)arg2 startDate:(NSDate *)arg3 endDate:(NSDate *)arg4 orderedByDate:(int)arg5 limit:(unsigned int)arg6 completion:(void (^)(NSArray *, NSError *))arg7;

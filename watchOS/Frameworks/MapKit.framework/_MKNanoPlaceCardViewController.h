@@ -30,10 +30,10 @@
     id <_MKNanoPlaceCardViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int mapType; // @synthesize mapType=_mapType;
 @property(nonatomic) _Bool showsAddressInline; // @synthesize showsAddressInline=_showsAddressInline;
 @property(nonatomic) __weak id <_MKNanoPlaceCardViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)transitDeparturesDataSource:(id)arg1 showIncidents:(id)arg2;
 - (void)transitDeparturesDataSource:(id)arg1 didSelectConnectionInformation:(id)arg2;
 - (void)transitDeparturesDataSource:(id)arg1 didSelectTransitLine:(id)arg2 fromCell:(id)arg3;

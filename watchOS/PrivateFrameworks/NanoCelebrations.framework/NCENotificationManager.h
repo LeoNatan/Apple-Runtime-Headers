@@ -17,9 +17,9 @@
     UNUserNotificationCenter *_userNotificationCenter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UNUserNotificationCenter *userNotificationCenter; // @synthesize userNotificationCenter=_userNotificationCenter;
 @property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
-- (void).cxx_destruct;
 - (_Bool)bulletinsLiaison:(id)arg1 isCelebrationPosted:(id)arg2;
 - (void)bulletinsLiaisonDidRequestDismissalForAllBulletins:(id)arg1;
 - (void)bulletinsLiaison:(id)arg1 didRequestBulletinToBePostedForCelebrationName:(id)arg2;

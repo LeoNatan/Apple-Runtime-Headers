@@ -26,6 +26,7 @@
 + (id)_primaryAssetResource:(id)arg1;
 + (_Bool)supportsAssetResourceTypes:(id)arg1 mediaType:(long long *)arg2 importedBy:(short)arg3;
 + (_Bool)_supportsAssetResourceTypes:(id)arg1 mediaType:(long long *)arg2 mediaSubtype:(unsigned long long *)arg3 importedBy:(short)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHExternalAssetResource *primaryResource; // @synthesize primaryResource=_primaryResource;
 @property(readonly, nonatomic) unsigned long long mediaSubtype; // @synthesize mediaSubtype=_mediaSubtype;
 @property(readonly, nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) _Bool didValidateForInsertion; // @synthesize didValidateForInsertion=_didValidateForInsertion;
 @property(readonly, nonatomic) NSArray *assetResources; // @synthesize assetResources=_assetResources;
 @property(readonly, nonatomic) __weak PHAssetCreationRequest *assetCreationRequest; // @synthesize assetCreationRequest=_assetCreationRequest;
-- (void).cxx_destruct;
 - (id)validatedDataForAssetResource:(id)arg1;
 - (id)validatedURLForAssetResource:(id)arg1;
 - (id)_validatedContextForResource:(id)arg1;

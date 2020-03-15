@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     struct CGRect _toFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) long long direction; // @synthesize direction=_direction;
-- (void).cxx_destruct;
 - (id)_timingFunction;
 - (id)_positionAnimation;
 - (id)_inputColorAnimation;

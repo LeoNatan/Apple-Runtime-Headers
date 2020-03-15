@@ -18,12 +18,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needToSubmitMetric; // @synthesize needToSubmitMetric=_needToSubmitMetric;
 @property(nonatomic) unsigned int numberOfMessagesPlacedCorrectly; // @synthesize numberOfMessagesPlacedCorrectly=_numberOfMessagesPlacedCorrectly;
 @property(nonatomic) unsigned int numberOfMessagesPlacedOutOfOrder; // @synthesize numberOfMessagesPlacedOutOfOrder=_numberOfMessagesPlacedOutOfOrder;
 @property(nonatomic) unsigned int numberOfMessagesSeen; // @synthesize numberOfMessagesSeen=_numberOfMessagesSeen;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *orderingMetricQueue; // @synthesize orderingMetricQueue=_orderingMetricQueue;
-- (void).cxx_destruct;
 - (void)_persistMetric;
 - (void)_submitMetric;
 - (void)_submitMetricIfNeeded;

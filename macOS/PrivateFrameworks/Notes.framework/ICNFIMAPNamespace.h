@@ -15,10 +15,10 @@
     NSArray *_extensions;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *extensions; // @synthesize extensions=_extensions;
 @property(copy, nonatomic) NSString *separator; // @synthesize separator=_separator;
 @property(copy, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

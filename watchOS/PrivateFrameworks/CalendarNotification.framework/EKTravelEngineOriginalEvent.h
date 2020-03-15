@@ -21,6 +21,7 @@
     NSData *_locationMapKitHandle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool automaticGeocodingAllowed; // @synthesize automaticGeocodingAllowed=_automaticGeocodingAllowed;
 @property(nonatomic) _Bool locationIsAConferenceRoom; // @synthesize locationIsAConferenceRoom=_locationIsAConferenceRoom;
 @property(retain, nonatomic) NSData *locationMapKitHandle; // @synthesize locationMapKitHandle=_locationMapKitHandle;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain, nonatomic) NSString *eventExternalURL; // @synthesize eventExternalURL=_eventExternalURL;
-- (void).cxx_destruct;
 - (_Bool)isEqualToOriginalEvent:(id)arg1;
 - (id)description;
 

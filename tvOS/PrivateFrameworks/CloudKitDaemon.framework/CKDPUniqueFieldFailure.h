@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     CKDPIdentifier *_identifierForConstraintFailure;
 }
 
-@property(retain, nonatomic) CKDPIdentifier *identifierForConstraintFailure; // @synthesize identifierForConstraintFailure=_identifierForConstraintFailure;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKDPIdentifier *identifierForConstraintFailure; // @synthesize identifierForConstraintFailure=_identifierForConstraintFailure;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

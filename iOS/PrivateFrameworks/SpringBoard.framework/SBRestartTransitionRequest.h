@@ -22,6 +22,7 @@
     NSURL *_applicationLaunchURL;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *applicationLaunchURL; // @synthesize applicationLaunchURL=_applicationLaunchURL;
 @property(copy, nonatomic) BKSDisplayRenderOverlayDescriptor *customOverlayDescriptor; // @synthesize customOverlayDescriptor=_customOverlayDescriptor;
 @property(nonatomic) _Bool wantsPersistentSnapshot; // @synthesize wantsPersistentSnapshot=_wantsPersistentSnapshot;
@@ -29,7 +30,6 @@
 @property(nonatomic) int restartType; // @synthesize restartType=_restartType;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(copy, nonatomic) NSString *requester; // @synthesize requester=_requester;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

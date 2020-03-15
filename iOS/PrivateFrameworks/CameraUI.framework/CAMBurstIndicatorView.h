@@ -17,12 +17,12 @@
     long long __numberOfPhotos;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long _numberOfPhotos; // @synthesize _numberOfPhotos=__numberOfPhotos;
 @property(readonly, nonatomic) UILabel *_countLabel; // @synthesize _countLabel=__countLabel;
 @property(readonly, nonatomic) UIView *_backgroundView; // @synthesize _backgroundView=__backgroundView;
 @property(copy, nonatomic) NSString *contentSizeCategory; // @synthesize contentSizeCategory=_contentSizeCategory;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
-- (void).cxx_destruct;
 - (void)_updateAttributes;
 - (void)_updateCountLabelWithNumberOfPhotos;
 - (void)_performCaptureAnimation;

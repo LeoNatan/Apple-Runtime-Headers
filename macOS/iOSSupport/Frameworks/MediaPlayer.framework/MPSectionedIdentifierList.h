@@ -28,11 +28,11 @@
 
 + (void)_performWithoutRequiringExclusivity:(CDUnknownBlockType)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MPSectionedIdentifierListAnnotationDelegate> annotationDelegate; // @synthesize annotationDelegate=_annotationDelegate;
 @property(nonatomic) BOOL automaticallyReversesNonDestructiveDataSourceEdits; // @synthesize automaticallyReversesNonDestructiveDataSourceEdits=_automaticallyReversesNonDestructiveDataSourceEdits;
 @property(nonatomic) __weak id <MPSectionedIdentifierListDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_reverseEnumeratorWillStartAtEnd:(id)arg1 withExclusiveAccessToken:(id)arg2;
 - (void)_enumerator:(id)arg1 didEncounterEntry:(id)arg2 withExclusiveAccessToken:(id)arg3;
 - (id)_endEntryWithExclusiveAccessToken:(id)arg1;
@@ -86,9 +86,9 @@
 - (id)_encodeEntry:(id)arg1 withExclusiveAccessToken:(id)arg2;
 - (void)encodeWithCoder:(id)arg1 withExclusiveAccessToken:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
-- (void)_stitchPreviousEntry:(id)arg1 toEntry:(id)arg2 cloneIndex:(struct NSMutableDictionary *)arg3;
+- (void)_stitchPreviousEntry:(id)arg1 toEntry:(id)arg2 cloneIndex:(id)arg3;
 - (void)_stitchLastItemEntryToHeadEntry:(id)arg1 branchList:(id)arg2;
-- (void)_stitchWithPreviousEntry:(id)arg1 list:(id)arg2 cloneIndex:(struct NSMutableDictionary *)arg3;
+- (void)_stitchWithPreviousEntry:(id)arg1 list:(id)arg2 cloneIndex:(id)arg3;
 - (void)_beforeInitWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;

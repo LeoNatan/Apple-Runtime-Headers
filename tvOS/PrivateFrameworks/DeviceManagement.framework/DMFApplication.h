@@ -44,6 +44,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DMFApplicationInstallProgress *progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) _Bool fileSharingEnabled; // @synthesize fileSharingEnabled=_fileSharingEnabled;
 @property(readonly, nonatomic) _Bool isRemoveable; // @synthesize isRemoveable=_isRemoveable;
@@ -72,7 +73,6 @@
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, copy, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

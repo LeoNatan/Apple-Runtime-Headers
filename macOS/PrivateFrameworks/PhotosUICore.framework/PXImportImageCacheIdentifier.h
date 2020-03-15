@@ -15,10 +15,10 @@
     long long _cacheIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long cacheIndex; // @synthesize cacheIndex=_cacheIndex;
 @property(nonatomic) unsigned long long sizeType; // @synthesize sizeType=_sizeType;
 @property(copy, nonatomic) NSString *assetUuid; // @synthesize assetUuid=_assetUuid;
-- (void).cxx_destruct;
 
 @end
 

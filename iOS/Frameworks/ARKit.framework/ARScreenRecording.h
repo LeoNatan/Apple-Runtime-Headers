@@ -15,10 +15,10 @@
     RPScreenRecorder *_recorder;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RPScreenRecorder *recorder; // @synthesize recorder=_recorder;
 @property(retain, nonatomic) UIViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
 @property(nonatomic) _Bool saveInPhotosLibrary; // @synthesize saveInPhotosLibrary=_saveInPhotosLibrary;
-- (void).cxx_destruct;
 - (void)stopRecordingWithHandler:(CDUnknownBlockType)arg1;
 - (void)startRecordingWithHandler:(CDUnknownBlockType)arg1;
 - (id)initWith:(id)arg1;

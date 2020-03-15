@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     UITableView *_tableView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) SKUIReportAConcernReasonDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) SKUIReportAConcernConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)cancelPressed:(id)arg1;
 - (void)viewWillLayoutSubviews;

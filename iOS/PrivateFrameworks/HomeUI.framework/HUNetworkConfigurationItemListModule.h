@@ -14,9 +14,9 @@
     HFNetworkConfigurationGroupItemProvider *_networkConfigurationGroupItemProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFNetworkConfigurationGroupItemProvider *networkConfigurationGroupItemProvider; // @synthesize networkConfigurationGroupItemProvider=_networkConfigurationGroupItemProvider;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;
 - (id)itemProviders;
 - (id)networkConfigurationGroupItemForProfile:(id)arg1;

@@ -13,8 +13,8 @@
     NSString *_title;
 }
 
-@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (BOOL)isTappable;
 - (Class)cellViewClass;
 - (id)initWithSection:(id)arg1;

@@ -20,8 +20,8 @@
 + (Class)mutableObjectClass;
 + (id)immutableObjectProtocol;
 + (Class)immutableObjectClass;
-@property(copy, nonatomic) id <MSPRouteInformationSource> routeInformationSource; // @synthesize routeInformationSource=_routeInformationSource;
 - (void).cxx_destruct;
+@property(copy, nonatomic) id <MSPRouteInformationSource> routeInformationSource; // @synthesize routeInformationSource=_routeInformationSource;
 - (_Bool)_isUserVisibleDuplicateOfSameClassObject:(id)arg1;
 - (id)transferToImmutableIfValidWithError:(out id *)arg1;
 @property(nonatomic, getter=navigationWasInterrupted) _Bool navigationInterrupted;

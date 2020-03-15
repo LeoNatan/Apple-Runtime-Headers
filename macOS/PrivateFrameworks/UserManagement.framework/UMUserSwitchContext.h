@@ -18,11 +18,11 @@
 
 + (id)contextWithDataRepresentation:(id)arg1;
 + (id)contextWithSetupData:(id)arg1 shortLivedToken:(id)arg2 secondaryActionRequired:(BOOL)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *environmentsByServices; // @synthesize environmentsByServices=_environmentsByServices;
 @property(nonatomic) BOOL secondaryActionRequired; // @synthesize secondaryActionRequired=_secondaryActionRequired;
 @property(copy, nonatomic) NSString *shortLivedToken; // @synthesize shortLivedToken=_shortLivedToken;
 @property(copy, nonatomic) NSData *setupData; // @synthesize setupData=_setupData;
-- (void).cxx_destruct;
 - (id)description;
 - (id)dataRepresentation;
 - (id)dictRepresentation;

@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     unsigned long long _lastSeenTicks;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool paired; // @synthesize paired=_paired;
 @property(nonatomic) unsigned long long lastSeenTicks; // @synthesize lastSeenTicks=_lastSeenTicks;
 @property(copy, nonatomic) NSData *deviceAddress; // @synthesize deviceAddress=_deviceAddress;
 @property(copy, nonatomic) NSData *bloomFilterData; // @synthesize bloomFilterData=_bloomFilterData;
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

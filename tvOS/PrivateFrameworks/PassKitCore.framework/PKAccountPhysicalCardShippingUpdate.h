@@ -25,6 +25,7 @@
 + (id)recordNamePrefix;
 + (id)recordType;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateComponents *estimatedDeliveryDate; // @synthesize estimatedDeliveryDate=_estimatedDeliveryDate;
 @property(retain, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(copy, nonatomic) NSString *shippingCompany; // @synthesize shippingCompany=_shippingCompany;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSString *localizedDeliveryExceptionReason; // @synthesize localizedDeliveryExceptionReason=_localizedDeliveryExceptionReason;
 @property(nonatomic) long long shippingStatus; // @synthesize shippingStatus=_shippingStatus;
 @property(copy, nonatomic) NSString *physicalCardIdentifier; // @synthesize physicalCardIdentifier=_physicalCardIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqualToPhysicalCardShippingUpdate:(id)arg1;

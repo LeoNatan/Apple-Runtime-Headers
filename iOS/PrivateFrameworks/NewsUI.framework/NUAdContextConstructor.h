@@ -15,10 +15,10 @@
     NUAdContextDefinition *_bodyDefinition;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NUAdContextDefinition *bodyDefinition; // @synthesize bodyDefinition=_bodyDefinition;
 @property(readonly, nonatomic) NUAdContextDefinition *headerDefinition; // @synthesize headerDefinition=_headerDefinition;
 @property(readonly, nonatomic) NUAdContextDefinition *rootDefinition; // @synthesize rootDefinition=_rootDefinition;
-- (void).cxx_destruct;
 - (id)contextEntryForKey:(id)arg1 andValue:(id)arg2;
 - (void)dictionary:(id)arg1 addValue:(id)arg2 forKeyPath:(id)arg3;
 - (id)valueForPropertyDefinition:(id)arg1 fromContextProviders:(id)arg2 keyedContextProviders:(id)arg3;

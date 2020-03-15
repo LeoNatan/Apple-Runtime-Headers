@@ -25,6 +25,7 @@
     struct CGSize __contentSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setAnimationCount:) long long _animationCount; // @synthesize _animationCount=__animationCount;
 @property(nonatomic, setter=_setDidLoadContent:) _Bool _didLoadContent; // @synthesize _didLoadContent=__didLoadContent;
 @property(nonatomic, setter=_setContentSize:) struct CGSize _contentSize; // @synthesize _contentSize=__contentSize;
@@ -33,7 +34,6 @@
 @property(nonatomic, setter=_setContentViewAnchoringType:) long long contentViewAnchoringType; // @synthesize contentViewAnchoringType=_contentViewAnchoringType;
 @property(retain, nonatomic) PXWidgetSpec *spec; // @synthesize spec=_spec;
 @property(nonatomic) __weak id <PXWidgetDelegate> widgetDelegate; // @synthesize widgetDelegate=_widgetDelegate;
-- (void).cxx_destruct;
 - (void)userDidSelectDisclosureControl;
 @property(readonly, nonatomic) NSString *localizedDisclosureTitle;
 @property(readonly, nonatomic) NSString *localizedTitle;

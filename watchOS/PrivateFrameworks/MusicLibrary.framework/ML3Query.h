@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) _Bool filtersOnDynamicProperties; // @synthesize filtersOnDynamicProperties=_filtersOnDynamicProperties;
 @property(readonly, nonatomic) ML3AggregateQuery *nonDirectAggregateQuery; // @synthesize nonDirectAggregateQuery=_nonDirectAggregateQuery;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSArray *orderingTerms; // @synthesize orderingTerms=_orderingTerms;
 @property(readonly, nonatomic) ML3Predicate *predicate; // @synthesize predicate=_predicate;
 @property(readonly, nonatomic) Class entityClass; // @synthesize entityClass=_entityClass;
-- (void).cxx_destruct;
 - (_Bool)sectionsPersistentIDColumnIsDistinct;
 @property(readonly, nonatomic) NSString *sectionProperty;
 - (id)countStatementParameters;

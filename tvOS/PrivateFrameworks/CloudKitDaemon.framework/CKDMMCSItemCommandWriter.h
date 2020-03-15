@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     unsigned long long _maximumLength;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maximumLength; // @synthesize maximumLength=_maximumLength;
 @property(retain, nonatomic) NSMutableIndexSet *byteRanges; // @synthesize byteRanges=_byteRanges;
 @property(retain, nonatomic) CKDMMCSItem *MMCSItem; // @synthesize MMCSItem=_MMCSItem;
 @property(retain, nonatomic) CKDMMCSItemGroupContext *MMCSRequest; // @synthesize MMCSRequest=_MMCSRequest;
-- (void).cxx_destruct;
 - (_Bool)writeBytesAtOffset:(unsigned long long)arg1 bytes:(char *)arg2 length:(unsigned long long)arg3 bytesWritten:(unsigned long long *)arg4 error:(id *)arg5;
 - (_Bool)isContiguous;
 - (_Bool)readBytesAtOffset:(unsigned long long)arg1 bytes:(char *)arg2 length:(unsigned long long)arg3 bytesRead:(unsigned long long *)arg4 error:(id *)arg5;

@@ -26,6 +26,7 @@
 }
 
 + (double)progressIndicatorStep;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *backdropMaskImageView; // @synthesize backdropMaskImageView=_backdropMaskImageView;
 @property(readonly, nonatomic) _UIBackdropView *backdropView; // @synthesize backdropView=_backdropView;
 @property(readonly, nonatomic) UIView *blockView; // @synthesize blockView=_blockView;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)dismissAnimatedWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)definesAnimatedDismissal;
 - (void)_rotateToInterfaceOrientation:(long long)arg1;

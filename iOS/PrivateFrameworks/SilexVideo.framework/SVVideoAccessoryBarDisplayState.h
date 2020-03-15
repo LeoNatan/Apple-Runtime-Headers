@@ -14,9 +14,9 @@
     SVVideoAccessoryBarItemDisplayState *_trailingState;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SVVideoAccessoryBarItemDisplayState *trailingState; // @synthesize trailingState=_trailingState;
 @property(readonly, nonatomic) SVVideoAccessoryBarItemDisplayState *leadingState; // @synthesize leadingState=_leadingState;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithLeadingState:(id)arg1 trailingState:(id)arg2;
 

@@ -21,12 +21,12 @@
     long long _maxNumberOfSections;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long maxNumberOfSections; // @synthesize maxNumberOfSections=_maxNumberOfSections;
 @property(retain, nonatomic) NSMutableArray *delayedChanges; // @synthesize delayedChanges=_delayedChanges;
 @property(retain, nonatomic) NSString *invitationAlbumCloudGUID; // @synthesize invitationAlbumCloudGUID=_invitationAlbumCloudGUID;
 @property(nonatomic) unsigned long long estimatedGadgetCount; // @synthesize estimatedGadgetCount=_estimatedGadgetCount;
 @property(retain, nonatomic) PXFeedSectionInfosManager *feedSectionInfosManager; // @synthesize feedSectionInfosManager=_feedSectionInfosManager;
-- (void).cxx_destruct;
 - (void)_update:(id)arg1;
 - (id)_gadgetsForSectionIndexes:(id)arg1;
 - (id)_indexesOfSectionInfosToDisplay:(unsigned long long)arg1;

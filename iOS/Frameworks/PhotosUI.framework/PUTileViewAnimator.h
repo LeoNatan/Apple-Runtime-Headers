@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSMapTable *__synchronizedAnimationGroupsByTransition;
 }
 
-@property(readonly, nonatomic) NSMapTable *_synchronizedAnimationGroupsByTransition; // @synthesize _synchronizedAnimationGroupsByTransition=__synchronizedAnimationGroupsByTransition;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMapTable *_synchronizedAnimationGroupsByTransition; // @synthesize _synchronizedAnimationGroupsByTransition=__synchronizedAnimationGroupsByTransition;
 - (void)transition:(id)arg1 didComplete:(_Bool)arg2;
 - (void)_performAnimations:(CDUnknownBlockType)arg1 withOptions:(id)arg2;
 - (void)updateAnimationForTileController:(id)arg1 withRepositionedTargetLayoutInfo:(id)arg2;

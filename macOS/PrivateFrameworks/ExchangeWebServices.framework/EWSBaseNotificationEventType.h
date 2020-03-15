@@ -16,8 +16,8 @@
 }
 
 + (id)definition;
-@property(copy, nonatomic) NSString *Watermark; // @synthesize Watermark=_Watermark;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *Watermark; // @synthesize Watermark=_Watermark;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

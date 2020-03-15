@@ -20,8 +20,8 @@
 }
 
 + (_Bool)supportsSharingThumbnails;
-@property(retain, nonatomic) MKMapSnapshotRequest *servingRequest; // @synthesize servingRequest=_servingRequest;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MKMapSnapshotRequest *servingRequest; // @synthesize servingRequest=_servingRequest;
 - (void)createSnapShotWithCoordinate:(struct CLLocationCoordinate2D)arg1 zoomLevel:(unsigned long long)arg2 size:(struct CGSize)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)flushRequestQueue;
 - (id)recreateCurrentSnapshotWithRequester:(id)arg1 context:(id)arg2;

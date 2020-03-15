@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)ticket:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double safeTime; // @synthesize safeTime;
 @property(nonatomic) unsigned int qos; // @synthesize qos;
 @property(copy, nonatomic) CDUnknownBlockType submissionHandler; // @synthesize submissionHandler;
 @property(retain, nonatomic) id <GEOMapServiceThrottlableTicket> ticket; // @synthesize ticket;
-- (void).cxx_destruct;
 
 @end
 

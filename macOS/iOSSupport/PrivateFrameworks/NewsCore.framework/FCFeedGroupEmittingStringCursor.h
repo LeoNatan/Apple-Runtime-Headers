@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSString *string; // @synthesize string=_string;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *string; // @synthesize string=_string;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithString:(id)arg1;

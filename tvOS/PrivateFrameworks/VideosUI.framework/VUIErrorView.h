@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     VUILabel *_debugTextLabel2;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUILabel *debugTextLabel2; // @synthesize debugTextLabel2=_debugTextLabel2;
 @property(retain, nonatomic) VUILabel *debugTextLabel; // @synthesize debugTextLabel=_debugTextLabel;
 @property(retain, nonatomic) VUILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) VUIErrorLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)layoutSubviewsWithSize:(struct CGSize)arg1 computationOnly:(_Bool)arg2;

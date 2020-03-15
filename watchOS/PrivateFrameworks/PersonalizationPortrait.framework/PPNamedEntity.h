@@ -20,10 +20,10 @@
 
 + (id)describeCategory:(unsigned int)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *bestLanguage; // @synthesize bestLanguage=_bestLanguage;
 @property(readonly, nonatomic) unsigned int category; // @synthesize category=_category;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double sentimentScore;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

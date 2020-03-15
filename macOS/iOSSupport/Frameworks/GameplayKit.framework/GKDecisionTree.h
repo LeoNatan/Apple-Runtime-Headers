@@ -20,9 +20,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) GKRandomSource *randomSource; // @synthesize randomSource=_randomSource;
 @property(retain, nonatomic) GKDecisionNode *rootNode; // @synthesize rootNode=_rootNode;
-- (void).cxx_destruct;
 - (id)description;
 - (id)findAccuracyWithExamples:(id)arg1 actions:(id)arg2 attributes:(id)arg3;
 - (id)findActionForAnswers:(id)arg1;

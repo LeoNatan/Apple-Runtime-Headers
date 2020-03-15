@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFAppleIDValidationRecord *validationRecord; // @synthesize validationRecord=_validationRecord;
 @property(retain, nonatomic) NSData *privateKeyPersistentReference; // @synthesize privateKeyPersistentReference=_privateKeyPersistentReference;
 @property(retain, nonatomic) SFAppleIDIdentity *identity; // @synthesize identity=_identity;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSString *certificateToken; // @synthesize certificateToken=_certificateToken;
 @property(readonly, nonatomic) NSString *appleID; // @synthesize appleID=_appleID;
 @property(retain, nonatomic) NSString *altDSID; // @synthesize altDSID=_altDSID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithAppleID:(id)arg1;

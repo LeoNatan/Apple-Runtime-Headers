@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool allDay; // @synthesize allDay=_allDay;
 @property(readonly, nonatomic) NSTimeZone *detectedTimeZone; // @synthesize detectedTimeZone=_detectedTimeZone;
 @property(readonly, nonatomic) NSDate *detectedDate; // @synthesize detectedDate=_detectedDate;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) struct _NSRange labelRange; // @synthesize labelRange=_labelRange;
 @property(readonly, nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(readonly, nonatomic) unsigned int matchType; // @synthesize matchType=_matchType;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToDataDetectorMatch:(id)arg1;

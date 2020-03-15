@@ -10,6 +10,7 @@
 @protocol UMUserListUpdateObserver;
 
 @protocol UMUserManagement <NSObject>
+@property(readonly, nonatomic) unsigned long long userQuotaSize;
 @property(readonly, nonatomic) unsigned long long maxNumberOfUsers;
 @property(readonly, nonatomic) _Bool isLoginSession;
 @property(readonly, copy, nonatomic) UMUser *loginUser;

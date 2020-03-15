@@ -20,11 +20,11 @@
     CDStruct_7c66fec0 _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *errorDescription; // @synthesize errorDescription=_errorDescription;
 @property(retain, nonatomic) HDCodableRoutinePredictedLocationsResponse *fetchNextLocationResponse; // @synthesize fetchNextLocationResponse=_fetchNextLocationResponse;
 @property(retain, nonatomic) HDCodableRoutineLocationResponse *fetchLocationResponse; // @synthesize fetchLocationResponse=_fetchLocationResponse;
 @property(retain, nonatomic) NSString *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

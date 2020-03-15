@@ -18,10 +18,10 @@
     double _bufferAggregationInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double bufferAggregationInterval; // @synthesize bufferAggregationInterval=_bufferAggregationInterval;
 @property(copy, nonatomic) CDUnknownBlockType sensorDatumComparisonBlock; // @synthesize sensorDatumComparisonBlock=_sensorDatumComparisonBlock;
 @property(copy, nonatomic) CDUnknownBlockType objectCreationBlock; // @synthesize objectCreationBlock=_objectCreationBlock;
-- (void).cxx_destruct;
 - (id)_processBufferIfSensorDatumInvalid:(id)arg1;
 - (void)_resetBuffer;
 - (id)_createObjectsFromBuffer:(id)arg1 lastProcessedDatum:(id)arg2;

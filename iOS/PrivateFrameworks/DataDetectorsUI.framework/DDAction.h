@@ -41,13 +41,13 @@
 + (id)contextByAddingValue:(id)arg1 toKey:(id)arg2 inContext:(id)arg3;
 + (id)clientActionsDelegate;
 + (void)setClientActionsDelegate:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject<DDActionDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(retain) CNContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) int hostApplication; // @synthesize hostApplication=_hostApplication;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) _Bool companion; // @synthesize companion=_isCompanion;
 @property(nonatomic) _Bool isDefaultAction; // @synthesize isDefaultAction=_isDefaultAction;
-- (void).cxx_destruct;
 - (void)setupPopoverPresentationController:(id)arg1 view:(id)arg2;
 - (id)displayNameForEmails:(id)arg1 phoneNumbers:(id)arg2;
 - (void)invalidate;

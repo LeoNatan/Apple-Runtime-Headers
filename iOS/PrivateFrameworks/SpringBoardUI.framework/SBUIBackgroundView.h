@@ -29,9 +29,9 @@
     MTMaterialView *_luminanceView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isTransitioningBackgroundStyle) _Bool transitioningBackgroundStyle; // @synthesize transitioningBackgroundStyle=_transitioning;
 @property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_style;
-- (void).cxx_destruct;
 - (double)_valueFromStart:(double)arg1 toEnd:(double)arg2 withFraction:(double)arg3;
 - (id)_backgroundColorForDarkenAlpha:(double)arg1 andProgress:(double)arg2;
 - (void)_luminanceWithProgress:(double)arg1;

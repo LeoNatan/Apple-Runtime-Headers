@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
     unsigned long long _maxCharactersDownscale;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long maxCharactersDownscale; // @synthesize maxCharactersDownscale=_maxCharactersDownscale;
 @property(readonly) BOOL useCurrentLocale; // @synthesize useCurrentLocale=_useCurrentLocale;
 @property(readonly, nonatomic) BOOL uppercase; // @synthesize uppercase=_uppercase;
 @property(copy) CDUnknownBlockType onTap; // @synthesize onTap=_onTap;
-- (void).cxx_destruct;
 - (id)attributedText;
 - (id)text;
 - (void)_updateFontForStringLength:(unsigned long long)arg1;

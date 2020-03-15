@@ -24,6 +24,7 @@
     NSMutableOrderedSet *_articleSearchResults;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableOrderedSet *articleSearchResults; // @synthesize articleSearchResults=_articleSearchResults;
 @property(nonatomic) unsigned long long parsecQueryID; // @synthesize parsecQueryID=_parsecQueryID;
 @property(retain, nonatomic) FCCloudContext *cloudContext; // @synthesize cloudContext=_cloudContext;
@@ -34,7 +35,6 @@
 @property(nonatomic) _Bool fetching; // @synthesize fetching=_fetching;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) NSString *keyboardInputMode; // @synthesize keyboardInputMode=_keyboardInputMode;
-- (void).cxx_destruct;
 - (id)fetchMoreResultsWithLimit:(unsigned long long)arg1 qualityOfService:(long long)arg2 callbackQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)initWithParsecQueryID:(unsigned long long)arg1;
 

@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSNumber *_docID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isDirectory; // @synthesize isDirectory=_isDirectory;
 @property(nonatomic) unsigned int genCount; // @synthesize genCount=_genCount;
 @property(retain, nonatomic) NSNumber *docID; // @synthesize docID=_docID;
 @property(retain, nonatomic) NSNumber *fileID; // @synthesize fileID=_fileID;
 @property(retain, nonatomic) NSString *relativePath; // @synthesize relativePath=_relativePath;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithPQLResultSet:(id)arg1;
 - (id)initWithRelativePath:(id)arg1 fileID:(id)arg2 docID:(id)arg3 genCount:(unsigned int)arg4 isDirectory:(_Bool)arg5;

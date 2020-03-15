@@ -18,11 +18,11 @@
 
 + (id)otherItem;
 + (id)itemWithTitle:(id)arg1;
+- (void).cxx_destruct;
 @property unsigned long long type; // @synthesize type=_type;
 @property(retain) IAAListPlugin *plugin; // @synthesize plugin=_plugin;
 @property(retain) NSString *title; // @synthesize title=_title;
 @property(retain) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1;
 
 @end

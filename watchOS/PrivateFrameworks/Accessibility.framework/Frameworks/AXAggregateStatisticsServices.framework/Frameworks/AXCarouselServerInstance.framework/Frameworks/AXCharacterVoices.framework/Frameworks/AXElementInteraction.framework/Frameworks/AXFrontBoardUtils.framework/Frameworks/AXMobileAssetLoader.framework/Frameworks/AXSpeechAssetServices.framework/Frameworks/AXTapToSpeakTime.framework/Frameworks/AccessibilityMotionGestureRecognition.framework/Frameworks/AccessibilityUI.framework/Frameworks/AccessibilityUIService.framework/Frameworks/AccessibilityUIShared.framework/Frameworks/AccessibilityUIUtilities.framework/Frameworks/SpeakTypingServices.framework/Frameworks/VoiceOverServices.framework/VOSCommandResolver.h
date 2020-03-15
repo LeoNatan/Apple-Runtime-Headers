@@ -26,6 +26,7 @@
 
 + (id)resolverForCurrentHost;
 + (unsigned int)currentHost;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType resolvingEventOccurredBlock; // @synthesize resolvingEventOccurredBlock=_resolvingEventOccurredBlock;
 @property(copy, nonatomic) CDUnknownBlockType fetchContextBlock; // @synthesize fetchContextBlock=_fetchContextBlock;
 @property(copy, nonatomic) CDUnknownBlockType fetchPressCountBlock; // @synthesize fetchPressCountBlock=_fetchPressCountBlock;
@@ -34,7 +35,6 @@
 @property(nonatomic) unsigned int keyboardMode; // @synthesize keyboardMode=_keyboardMode;
 @property(nonatomic) _Bool shouldApplyRTL; // @synthesize shouldApplyRTL=_shouldApplyRTL;
 @property(retain, nonatomic) VOSScreenreaderMode *screenreaderMode; // @synthesize screenreaderMode=_screenreaderMode;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 @property(readonly, nonatomic) unsigned int context;

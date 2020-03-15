@@ -17,9 +17,9 @@
     NSString *_publisher;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *publisher; // @synthesize publisher=_publisher;
 @property(readonly, nonatomic) HMSoftwareUpdate *softwareUpdate; // @synthesize softwareUpdate=_softwareUpdate;
-- (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 @property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject;
 - (id)initWithSoftwareUpdate:(id)arg1 publisher:(id)arg2;

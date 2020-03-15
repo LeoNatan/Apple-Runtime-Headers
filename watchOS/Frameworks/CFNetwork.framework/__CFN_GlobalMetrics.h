@@ -22,12 +22,12 @@
 }
 
 + (id)globalMetrics;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *backgroundSessionMetrics; // @synthesize backgroundSessionMetrics=_backgroundSessionMetrics;
 @property(retain, nonatomic) NSMutableDictionary *ephemeralSessionMetrics; // @synthesize ephemeralSessionMetrics=_ephemeralSessionMetrics;
 @property(retain, nonatomic) NSMutableDictionary *defaultSessionMetrics; // @synthesize defaultSessionMetrics=_defaultSessionMetrics;
 @property(retain, nonatomic) id <_NSURLSessionEventDelegate> forwardingDelegate; // @synthesize forwardingDelegate=_forwardingDelegate;
 @property(retain) id <_NSURLSessionHTTPRewriter> HTTPRewriter; // @synthesize HTTPRewriter=_HTTPRewriter;
-- (void).cxx_destruct;
 - (void)sessionDestroy:(id)arg1;
 - (void)sessionCreate:(id)arg1;
 - (id)init;

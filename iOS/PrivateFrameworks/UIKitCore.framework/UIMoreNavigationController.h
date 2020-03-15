@@ -16,8 +16,8 @@
 }
 
 + (Class)_moreListControllerClass;
-@property(readonly, nonatomic) UIViewController *moreListController; // @synthesize moreListController=_moreListController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIViewController *moreListController; // @synthesize moreListController=_moreListController;
 @property(nonatomic) _Bool moreViewControllersChanged;
 @property(nonatomic) _Bool allowsCustomizing;
 @property(retain, nonatomic) NSArray *moreViewControllers;

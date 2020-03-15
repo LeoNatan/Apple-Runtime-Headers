@@ -19,9 +19,8 @@ __attribute__((visibility("hidden")))
     id <ExternalURLNavigationDelegate> _delegate;
 }
 
-+ (BOOL)_applicationAtURL:(id)arg1 passesCodeSignCheck:(id)arg2;
-@property(nonatomic) __weak id <ExternalURLNavigationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ExternalURLNavigationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)reset;
 - (void)_enqueueOrPresentDialogWithConfiguration:(id)arg1 externalURL:(id)arg2 applicationURL:(id)arg3 tabDialogPresenter:(id)arg4;
 - (long long)_URLTypeForURL:(id)arg1;

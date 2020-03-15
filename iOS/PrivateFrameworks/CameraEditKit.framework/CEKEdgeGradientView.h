@@ -17,12 +17,12 @@
     CDStruct_54402055 _gradientDimensions;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_54402055 gradientDimensions; // @synthesize gradientDimensions=_gradientDimensions;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(nonatomic) long long gradientDirection; // @synthesize gradientDirection=_gradientDirection;
 @property(readonly, nonatomic) UIColor *customEdgeGradientColor; // @synthesize customEdgeGradientColor=_customEdgeGradientColor;
 @property(readonly, nonatomic) long long edgeGradientStyle; // @synthesize edgeGradientStyle=_edgeGradientStyle;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)setCustomEdgeGradientStyleWithColor:(id)arg1;
 - (void)setEdgeGradientStyleMask;

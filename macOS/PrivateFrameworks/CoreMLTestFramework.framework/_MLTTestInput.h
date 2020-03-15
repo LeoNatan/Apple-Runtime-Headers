@@ -22,6 +22,7 @@
 }
 
 + (id)inputWithTestData:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentSet; // @synthesize currentSet=_currentSet;
 @property(retain, nonatomic) NSArray *testData; // @synthesize testData=_testData;
 @property(copy, nonatomic) NSArray *outputTestData; // @synthesize outputTestData=_outputTestData;
@@ -29,7 +30,6 @@
 @property(copy, nonatomic) NSString *otherFrameWorkPredictionKey; // @synthesize otherFrameWorkPredictionKey=_otherFrameWorkPredictionKey;
 @property(copy, nonatomic) NSString *vecDataKey; // @synthesize vecDataKey=_vecDataKey;
 @property(copy, nonatomic) NSString *inputDataKey; // @synthesize inputDataKey=_inputDataKey;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL dataAvailable;
 - (id)nextDataSet:(id *)arg1;
 - (id)initWithTestData:(id)arg1;

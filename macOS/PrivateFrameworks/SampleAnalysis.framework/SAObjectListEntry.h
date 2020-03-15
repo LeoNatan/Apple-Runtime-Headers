@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _size;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long size; // @synthesize size=_size;
 @property(retain) id <SASerializable> instance; // @synthesize instance=_instance;
-- (void).cxx_destruct;
 
 @end
 

@@ -41,6 +41,7 @@
 + (struct CGSize)secondaryVideoSize;
 + (struct CGSize)primaryVideoSize;
 + (_Bool)isSmallScreen;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsLayout; // @synthesize needsLayout=_needsLayout;
 @property(copy, nonatomic) NSString *currentContentSizeCategory; // @synthesize currentContentSizeCategory=_currentContentSizeCategory;
 @property(nonatomic) _Bool constrainToContainer; // @synthesize constrainToContainer=_constrainToContainer;
@@ -55,7 +56,6 @@
 @property(readonly, nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
 @property(readonly, nonatomic) struct CGSize containerSize; // @synthesize containerSize=_containerSize;
 @property(nonatomic) __weak id <AVTSplashScreenLayoutDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)didChangeContentSizeCategory:(id)arg1;

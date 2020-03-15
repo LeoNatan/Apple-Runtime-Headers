@@ -14,8 +14,8 @@
 }
 
 + (id)sharedManager;
-@property(retain) QLExtensionManager *extensionManager; // @synthesize extensionManager=_extensionManager;
 - (void).cxx_destruct;
+@property(retain) QLExtensionManager *extensionManager; // @synthesize extensionManager=_extensionManager;
 - (void)_viewControllerForExtension:(id)arg1 context:(id)arg2 requestIdentifier:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)remoteViewControllerForPreview:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 

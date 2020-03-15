@@ -39,6 +39,7 @@
     unsigned long long __notificationTimeout;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType _intervalEndHandler; // @synthesize _intervalEndHandler=__intervalEndHandler;
 @property(copy, nonatomic) CDUnknownBlockType _stopProcessingBlock; // @synthesize _stopProcessingBlock=__stopProcessingBlock;
 @property(retain, nonatomic) OSLogEventLiveStream *_liveStream; // @synthesize _liveStream=__liveStream;
@@ -65,7 +66,6 @@
 @property(retain, nonatomic) SignpostSupportPIDFilter *pidFilter; // @synthesize pidFilter=_pidFilter;
 @property(retain, nonatomic) SignpostSupportExactProcessNameFilter *processNameFilter; // @synthesize processNameFilter=_processNameFilter;
 @property(retain, nonatomic) SignpostSupportSubsystemCategoryFilter *subsystemCategoryFilter; // @synthesize subsystemCategoryFilter=_subsystemCategoryFilter;
-- (void).cxx_destruct;
 - (id)_loggingSupportStreamPredicateFromFiltersWithForLiveStreaming:(_Bool)arg1;
 - (void)dealloc;
 - (void)_processingCompleted:(id)arg1;

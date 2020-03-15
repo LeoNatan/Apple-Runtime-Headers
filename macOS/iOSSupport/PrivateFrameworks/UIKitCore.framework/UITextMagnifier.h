@@ -27,10 +27,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)renderClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIResponder<UITextInput> *text; // @synthesize text=_text;
 @property(retain, nonatomic) UIView *target; // @synthesize target=_target;
 @property(nonatomic) struct CGPoint animationPoint; // @synthesize animationPoint=_animationPoint;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double offsetFromMagnificationPoint;
 @property(readonly, nonatomic) BOOL isHorizontal;
 - (void)updateFrameAndOffset;

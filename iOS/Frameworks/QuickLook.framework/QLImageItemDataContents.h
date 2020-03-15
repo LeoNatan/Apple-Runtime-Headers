@@ -17,8 +17,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)imageItemContentsWithImage:(id)arg1 imageData:(id)arg2;
-@property(retain, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     TVPSecureKeyRequest *_request;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVPSecureKeyRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) NSDate *renewalDate; // @synthesize renewalDate=_renewalDate;
 @property(retain, nonatomic) NSData *keyData; // @synthesize keyData=_keyData;
-- (void).cxx_destruct;
 
 @end
 

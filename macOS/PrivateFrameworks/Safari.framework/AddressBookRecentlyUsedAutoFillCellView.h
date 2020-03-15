@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct CGSize)sizeWithContactNameAndContactLabel:(id)arg1 addressBookDataWillBeFilled:(id)arg2;
+- (void).cxx_destruct;
 @property __weak NSTextField *addressBookDataWillBeFilledTextField; // @synthesize addressBookDataWillBeFilledTextField=_addressBookDataWillBeFilledTextField;
 @property __weak NSTextField *contactNameAndContactLabelTextField; // @synthesize contactNameAndContactLabelTextField=_contactNameAndContactLabelTextField;
 @property(copy, nonatomic) NSString *addressBookDataWillBeFilled; // @synthesize addressBookDataWillBeFilled=_addressBookDataWillBeFilled;
 @property(copy, nonatomic) NSString *contactNameAndContactLabel; // @synthesize contactNameAndContactLabel=_contactNameAndContactLabel;
-- (void).cxx_destruct;
 - (void)awakeFromNib;
 
 @end

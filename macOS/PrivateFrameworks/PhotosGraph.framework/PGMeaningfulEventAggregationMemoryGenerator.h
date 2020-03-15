@@ -19,10 +19,10 @@
 }
 
 + (id)_mostSpecificLabelForMeaning:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long meaning; // @synthesize meaning=_meaning;
 @property(nonatomic) unsigned long long eventType; // @synthesize eventType=_eventType;
 @property(retain, nonatomic) NSDate *lowerBoundLocalDate; // @synthesize lowerBoundLocalDate=_lowerBoundLocalDate;
-- (void).cxx_destruct;
 - (id)_filterAssets:(id)arg1 inMomentNode:(id)arg2 forAreaNode:(id)arg3;
 - (id)_filterAssets:(id)arg1 inMomentNode:(id)arg2 forCityNode:(id)arg3;
 - (id)_filterAssets:(id)arg1 withPositiveLocations:(id)arg2 negativeLocations:(id)arg3 maximumDistance:(double)arg4;

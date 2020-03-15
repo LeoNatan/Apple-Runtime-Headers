@@ -19,6 +19,7 @@
     CDUnknownBlockType _handler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPlaceholder) _Bool placeholder; // @synthesize placeholder=_placeholder;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
@@ -26,7 +27,6 @@
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)performAction;
 - (id)description;
 - (unsigned long long)hash;

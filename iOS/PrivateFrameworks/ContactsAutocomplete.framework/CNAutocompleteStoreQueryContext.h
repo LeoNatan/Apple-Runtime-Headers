@@ -15,9 +15,9 @@
 }
 
 + (id)cacheBoundaryStrategies;
+- (void).cxx_destruct;
 @property(readonly) CNCache *calendarServerReuseCache; // @synthesize calendarServerReuseCache=_calendarServerReuseCache;
 @property(readonly) CNCache *directoryServerReuseCache; // @synthesize directoryServerReuseCache=_directoryServerReuseCache;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

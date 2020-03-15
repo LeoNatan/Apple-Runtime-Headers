@@ -23,11 +23,11 @@
 }
 
 + (double)weight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <GEODirectionServiceTicket> directionsRequestTicket; // @synthesize directionsRequestTicket=_directionsRequestTicket;
 @property(retain, nonatomic) NSDate *lastRouteUpdate; // @synthesize lastRouteUpdate=_lastRouteUpdate;
 @property(nonatomic) double otherDestinationTravelTime; // @synthesize otherDestinationTravelTime=_otherDestinationTravelTime;
 @property(nonatomic) __weak MNCommuteDestination *otherDestination; // @synthesize otherDestination=_otherDestination;
-- (void).cxx_destruct;
 - (id)_directionsRequestFeedback;
 - (id)_routeAttributes;
 - (void)_handleDirectionsResponse:(id)arg1 error:(id)arg2 forRequest:(id)arg3;

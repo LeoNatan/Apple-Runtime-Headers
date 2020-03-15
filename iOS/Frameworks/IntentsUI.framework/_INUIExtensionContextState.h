@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *interfaceSections; // @synthesize interfaceSections=_interfaceSections;
 @property(copy, nonatomic) NSDictionary *hostedViewMaximumAllowedSizes; // @synthesize hostedViewMaximumAllowedSizes=_hostedViewMaximumAllowedSizes;
 @property(copy, nonatomic) NSDictionary *hostedViewMinimumAllowedSizes; // @synthesize hostedViewMinimumAllowedSizes=_hostedViewMinimumAllowedSizes;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

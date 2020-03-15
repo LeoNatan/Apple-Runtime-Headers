@@ -14,9 +14,9 @@
     NSArray *_labels;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *labels; // @synthesize labels=_labels;
 @property(retain, nonatomic) TVLImageElement *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;
 

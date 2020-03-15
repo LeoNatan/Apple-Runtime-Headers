@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     struct CGPoint _anchorPoint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float frequency; // @synthesize frequency=_frequency;
 @property(nonatomic) float damping; // @synthesize damping=_damping;
 @property(nonatomic) struct CGPoint anchorPoint; // @synthesize anchorPoint=_anchorPoint;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithItem:(id)arg1 anchorPoint:(struct CGPoint)arg2;
 

@@ -16,12 +16,12 @@
     ICNoteEditorIconImageView *_pauseView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICNoteEditorIconImageView *pauseView; // @synthesize pauseView=_pauseView;
 @property(retain, nonatomic) ICNoteEditorIconImageView *playView; // @synthesize playView=_playView;
 @property(retain, nonatomic) CALayer *backgroundLayer; // @synthesize backgroundLayer=_backgroundLayer;
 @property(retain, nonatomic) ICAttachment *audioAttachment; // @synthesize audioAttachment=_audioAttachment;
-- (void).cxx_destruct;
-- (struct UIColor *)foregroundStrokeColor;
+- (id)foregroundStrokeColor;
 - (void)didPlayToEndNotification:(id)arg1;
 - (void)audioPlaybackTimeChangedNotification:(id)arg1;
 - (void)audioPlaybackStopNotification:(id)arg1;

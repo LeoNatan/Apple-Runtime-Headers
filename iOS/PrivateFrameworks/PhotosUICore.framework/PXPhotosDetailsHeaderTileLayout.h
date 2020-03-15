@@ -20,10 +20,10 @@
     id <PXPhotosDetailsHeaderTileLayoutDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXPhotosDetailsHeaderTileLayoutDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(retain, nonatomic) PXPhotosDetailsHeaderSpec *spec; // @synthesize spec=_spec;
-- (void).cxx_destruct;
 - (struct CGRect)_contentsRectForAspectRatio:(double)arg1;
 @property(readonly, nonatomic) struct PXTileIdentifier contentTileIdentifier;
 - (struct PXTileIdentifier)tileIdentifierForTileKind:(long long)arg1;

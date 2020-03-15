@@ -28,12 +28,12 @@
 + (id)itemGroupWithLibraryHeavyRotationRecommendation:(id)arg1 playlistID:(id)arg2 downloadedItemsOnly:(_Bool)arg3;
 + (id)itemGroupWithSyncedAlbumID:(id)arg1 downloadedItemsOnly:(_Bool)arg2;
 + (id)itemGroupWithSyncedPlaylistID:(id)arg1 downloadedItemsOnly:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool downloadedItemsOnly; // @synthesize downloadedItemsOnly=_downloadedItemsOnly;
 @property(nonatomic) _Bool manuallyAdded; // @synthesize manuallyAdded=_manuallyAdded;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(retain, nonatomic) NMSMediaContainerQuotaData *quotaData; // @synthesize quotaData=_quotaData;
 @property(retain, nonatomic) id referenceObj; // @synthesize referenceObj=_referenceObj;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isEstimate;
 - (id)itemList;
 - (id)identifiersForContainerType:(unsigned int)arg1;

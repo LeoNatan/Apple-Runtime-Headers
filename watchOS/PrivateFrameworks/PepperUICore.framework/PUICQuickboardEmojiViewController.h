@@ -30,6 +30,7 @@
 }
 
 + (void)resetLastSelectedEmojiTypeForTesting;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICQuickboardTransitionCoordinator *emojiTransitionCoordinator; // @synthesize emojiTransitionCoordinator=_emojiTransitionCoordinator;
 @property(retain, nonatomic) PUICQuickboardPunchoutView *punchoutView; // @synthesize punchoutView=_punchoutView;
 @property(readonly, nonatomic) UIButton *acceptButton; // @synthesize acceptButton=_acceptButton;
@@ -40,7 +41,6 @@
 @property(nonatomic) __weak id <PUICQuickboardEmojiViewControllerDelegate> emojiViewControllerDelegate; // @synthesize emojiViewControllerDelegate=_emojiViewControllerDelegate;
 @property(nonatomic) unsigned int quickboardType; // @synthesize quickboardType=_quickboardType;
 @property(nonatomic) _Bool supportsRecentItemPayloads; // @synthesize supportsRecentItemPayloads=_supportsRecentItemPayloads;
-- (void).cxx_destruct;
 - (void)selectEmojiForTesting;
 - (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) _Bool animatesSelectionToDestinationView;

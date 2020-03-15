@@ -14,8 +14,8 @@
 }
 
 + (Class)valueClass;
-@property(readonly, copy, nonatomic) NSString *incrementalCharacteristicType; // @synthesize incrementalCharacteristicType=_incrementalCharacteristicType;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *incrementalCharacteristicType; // @synthesize incrementalCharacteristicType=_incrementalCharacteristicType;
 @property(readonly, nonatomic) NSNumber *stepValue;
 @property(readonly, nonatomic) NSNumber *maxValue;
 @property(readonly, nonatomic) NSNumber *minValue;

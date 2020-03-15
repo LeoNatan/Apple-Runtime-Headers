@@ -20,10 +20,10 @@
 + (Class)disabledPortraitTagsType;
 + (Class)optionalTagsType;
 + (Class)defaultTagsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *disabledPortraitTags; // @synthesize disabledPortraitTags=_disabledPortraitTags;
 @property(retain, nonatomic) NSMutableArray *optionalTags; // @synthesize optionalTags=_optionalTags;
 @property(retain, nonatomic) NSMutableArray *defaultTags; // @synthesize defaultTags=_defaultTags;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

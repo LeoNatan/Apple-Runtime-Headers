@@ -16,9 +16,9 @@
     NSUUID *_originIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned short index; // @synthesize index=_index;
 @property(readonly, nonatomic) NSUUID *originIdentifier; // @synthesize originIdentifier=_originIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

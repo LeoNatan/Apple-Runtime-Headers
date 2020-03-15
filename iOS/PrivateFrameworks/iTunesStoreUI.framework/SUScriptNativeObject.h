@@ -18,8 +18,8 @@
 
 + (id)objectWithNativeObject:(id)arg1 weak:(_Bool)arg2;
 + (id)objectWithNativeObject:(id)arg1;
-@property(retain, nonatomic) NSLock *internalLock; // @synthesize internalLock=_internalLock;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSLock *internalLock; // @synthesize internalLock=_internalLock;
 - (void)unlock;
 - (void)setupNativeObject;
 - (void)lock;

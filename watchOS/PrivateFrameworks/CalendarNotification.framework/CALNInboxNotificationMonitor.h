@@ -17,9 +17,9 @@
     _EKNotificationMonitor *_notificationMonitor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(readonly, nonatomic) _EKNotificationMonitor *notificationMonitor; // @synthesize notificationMonitor=_notificationMonitor;
-- (void).cxx_destruct;
 - (void)protectedDataDidBecomeAvailable;
 - (void)handleBTAJob:(id)arg1 named:(const char *)arg2;
 - (void)didRegisterForBackgroundTaskAgentJobs;

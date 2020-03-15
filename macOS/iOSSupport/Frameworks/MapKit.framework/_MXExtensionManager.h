@@ -46,11 +46,11 @@
 + (id)lookupPolicyForRestaurantReservationExtensions;
 + (id)lookupPolicyForRestaurantReservationExtensionWithContainingAppIdentifier:(id)arg1;
 + (id)restaurantReservationIntentClassNames;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _MXExtensionProvider *extensionProvider; // @synthesize extensionProvider=_extensionProvider;
 @property(nonatomic) __weak id <_MXExtensionManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id matchingContext; // @synthesize matchingContext=_matchingContext;
 @property(readonly, nonatomic) id <_MXExtensionLookupPolicy> lookupPolicy; // @synthesize lookupPolicy=_lookupPolicy;
-- (void).cxx_destruct;
 - (id)_applyExtensionPredicateWithExtensionsIfNeeded:(id)arg1;
 - (void)dealloc;
 - (void)invalidate;

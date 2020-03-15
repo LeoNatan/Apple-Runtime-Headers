@@ -6,36 +6,39 @@
 
 #import <UIKitCore/UIEvent.h>
 
-@class NSMapTable, NSMutableDictionary;
+@class NSMapTable;
 
 __attribute__((visibility("hidden")))
 @interface UIHoverEvent : UIEvent
 {
-    NSMapTable *_touchesByWindow;
+    NSMapTable *_touchesByContextId;
     NSMapTable *_deliveryTableByTouch;
     _Bool _hasOutstandingUpdates;
-    NSMutableDictionary *_trackedHoverTouches;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *trackedHoverTouches; // @synthesize trackedHoverTouches=_trackedHoverTouches;
-@property(nonatomic) _Bool hasOutstandingUpdates; // @synthesize hasOutstandingUpdates=_hasOutstandingUpdates;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool hasOutstandingUpdates; // @synthesize hasOutstandingUpdates=_hasOutstandingUpdates;
+- (void)_cancelAllGestureRecognizers;
 - (id)_deliveryTableByTouchCreateIfNeeded:(id)arg1;
-- (id)_touchesByWindow:(id)arg1 createIfNeeded:(_Bool)arg2;
-- (void)removeHoverTouchForPathIndex:(long long)arg1;
-- (void)setHoverTouch:(id)arg1 forPathIndex:(long long)arg2;
-- (id)hoverTouchForPathIndex:(long long)arg1;
+- (id)_touchesByContextId:(unsigned int)arg1 createIfNeeded:(_Bool)arg2;
+- (void)_windowDidDetachContext:(id)arg1;
+- (void)removeHoverTouchForContextId:(unsigned int)arg1 pathIndex:(long long)arg2;
+- (void)setHoverTouch:(id)arg1 forContextId:(unsigned int)arg2 pathIndex:(long long)arg3;
+- (id)hoverTouchForContextId:(unsigned int)arg1 pathIndex:(long long)arg2;
 - (void)removeTouch:(id)arg1 fromGestureRecognizer:(id)arg2;
 - (void)setNeedsHitTestReset;
 - (void)setNeedsUpdate;
+- (void)_gestureRecognizerNoLongerNeedsSendEvent:(id)arg1;
 - (_Bool)_sendEventToGestureRecognizer:(id)arg1;
 - (id)_gestureRecognizersForWindow:(id)arg1;
+- (id)_windows;
 - (id)touchesForGestureRecognizer:(id)arg1;
 - (id)touchesForView:(id)arg1;
 - (id)touchesForWindow:(id)arg1;
 - (id)allTouches;
 - (long long)subtype;
 - (long long)type;
+- (void)dealloc;
 - (id)_init;
 
 @end

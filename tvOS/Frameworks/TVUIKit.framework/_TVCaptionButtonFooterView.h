@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 + (id)_vibrantLabelForLabel:(id)arg1;
 + (id)subtitleLabelWithText:(id)arg1;
 + (id)titleLabelWithText:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TVVibrantLabel *subtitleVibrantLabel; // @synthesize subtitleVibrantLabel=_subtitleVibrantLabel;
 @property(retain, nonatomic) _TVVibrantLabel *titleVibrantLabel; // @synthesize titleVibrantLabel=_titleVibrantLabel;
-- (void).cxx_destruct;
 - (void)_updateSubtitleVibrantLabel;
 - (void)_updateTitleVibrantLabel;
 - (void)_addVibrantLabel:(id)arg1 underLabel:(id)arg2;

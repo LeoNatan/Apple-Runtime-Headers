@@ -16,10 +16,10 @@
     id <CNLikenessEditorHostDelegate> _editorHost;
 }
 
+- (void).cxx_destruct;
 @property BOOL likenessNeedsUpdating; // @synthesize likenessNeedsUpdating=_likenessNeedsUpdating;
 @property __weak id <CNLikenessEditorHostDelegate> editorHost; // @synthesize editorHost=_editorHost;
 @property(retain) PRLikeness *likeness; // @synthesize likeness=_likeness;
-- (void).cxx_destruct;
 - (id)likenessWithUpdateBlock:(CDUnknownBlockType)arg1 createBlock:(CDUnknownBlockType)arg2;
 - (void)configureInitialDisplayForLikeness:(id)arg1 isMe:(BOOL)arg2;
 

@@ -23,6 +23,7 @@
 + (id)_interfaceType;
 + (_Bool)_supportsInterface:(struct __SCNetworkInterface *)arg1;
 + (id)RJ45EthernetInterface;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *dnsAddresses; // @synthesize dnsAddresses=_dnsAddresses;
 @property(copy, nonatomic) NSString *routerAddress; // @synthesize routerAddress=_routerAddress;
 @property(copy, nonatomic) NSString *subnetMask; // @synthesize subnetMask=_subnetMask;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool shouldUseDHCP; // @synthesize shouldUseDHCP=_shouldUseDHCP;
 @property(copy, nonatomic) NSString *IPAddress; // @synthesize IPAddress=_IPAddress;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *primaryDNSAddress;
 - (id)_dnsAddressesForService:(struct __CFString *)arg1 domain:(struct __CFString *)arg2;
 - (_Bool)_setDNSWithAddresses:(id)arg1 forServiceRef:(struct __SCNetworkService *)arg2;

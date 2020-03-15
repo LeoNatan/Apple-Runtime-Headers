@@ -14,9 +14,9 @@
     HMFObject *context;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMFObject *context; // @synthesize context;
 @property(retain, nonatomic) HMDHAPAccessory *accessory; // @synthesize accessory;
-- (void).cxx_destruct;
 - (id)initWithAccessory:(id)arg1 context:(id)arg2;
 
 @end

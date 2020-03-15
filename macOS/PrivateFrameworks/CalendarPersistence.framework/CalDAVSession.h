@@ -18,12 +18,12 @@
     CalDAVAccountInfoProvider *_accountInfoProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDate *fullRefreshDate; // @synthesize fullRefreshDate=_fullRefreshDate;
 @property BOOL isDelegate; // @synthesize isDelegate=_isDelegate;
 @property(retain) NSMutableDictionary *calendarSources; // @synthesize calendarSources=_calendarSources;
 @property(retain) CalDAVAccountInfoProvider *accountInfoProvider; // @synthesize accountInfoProvider=_accountInfoProvider;
 @property(retain) NSString *pushToken; // @synthesize pushToken=_pushToken;
-- (void).cxx_destruct;
 - (id)description;
 - (id)debugInfo;
 - (void)systemWillSleep;

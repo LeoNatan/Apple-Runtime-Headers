@@ -9,7 +9,8 @@
 __attribute__((visibility("hidden")))
 @interface WebCoreSharedBufferData : NSData
 {
-    struct RefPtr<const WebCore::SharedBuffer::DataSegment, WTF::DumbPtrTraits<const WebCore::SharedBuffer::DataSegment>> sharedBufferDataSegment;
+    struct RefPtr<const WebCore::SharedBuffer::DataSegment, WTF::DumbPtrTraits<const WebCore::SharedBuffer::DataSegment>> _dataSegment;
+    unsigned long long _position;
 }
 
 + (void)initialize;
@@ -17,7 +18,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (const void *)bytes;
 - (unsigned long long)length;
--     // Error parsing type: @24@0:8r^{DataSegment={atomic<unsigned int>=AI}{Variant<WTF::Vector<char, 0, WTF::CrashOnOverflow, 16>, WTF::RetainPtr<const __CFData *>, WTF::FileSystemImpl::MappedFileData>=(__variant_data<WTF::Vector<char, 0, WTF::CrashOnOverflow, 16>, WTF::RetainPtr<const __CFData *>, WTF::FileSystemImpl::MappedFileData>=(__variant_data<WTF::Vector<char, 0, WTF::CrashOnOverflow, 16> >={__storage_wrapper<WTF::Vector<char, 0, WTF::CrashOnOverflow, 16> >={type=[16C]}}{__dummy_type=})(__variant_data<WTF::RetainPtr<const __CFData *>, WTF::FileSystemImpl::MappedFileData>=(__variant_data<WTF::RetainPtr<const __CFData *> >={__storage_wrapper<WTF::RetainPtr<const __CFData *> >={type=[8C]}}{__dummy_type=})(__variant_data<WTF::FileSystemImpl::MappedFileData>={__storage_wrapper<WTF::FileSystemImpl::MappedFileData>={type=[16C]}}{__dummy_type=})))c}}16, name: initWithSharedBufferDataSegment:
+-     // Error parsing type: @32@0:8r^{DataSegment={atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}{Variant<WTF::Vector<char, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>, WTF::RetainPtr<const __CFData *>, WTF::FileSystemImpl::MappedFileData>=(__variant_data<WTF::Vector<char, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>, WTF::RetainPtr<const __CFData *>, WTF::FileSystemImpl::MappedFileData>=(__variant_data<WTF::Vector<char, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> >={__storage_wrapper<WTF::Vector<char, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> >={type=[16C]}}{__dummy_type=})(__variant_data<WTF::RetainPtr<const __CFData *>, WTF::FileSystemImpl::MappedFileData>=(__variant_data<WTF::RetainPtr<const __CFData *> >={__storage_wrapper<WTF::RetainPtr<const __CFData *> >={type=[8C]}}{__dummy_type=})(__variant_data<WTF::FileSystemImpl::MappedFileData>={__storage_wrapper<WTF::FileSystemImpl::MappedFileData>={type=[16C]}}{__dummy_type=})))c}}16Q24, name: initWithDataSegment:position:
 - (void)dealloc;
 
 @end

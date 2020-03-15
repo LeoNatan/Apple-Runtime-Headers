@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IDSDeviceIdentity *deviceIdentity; // @synthesize deviceIdentity=_deviceIdentity;
 @property(retain, nonatomic) NSArray *participants; // @synthesize participants=_participants;
 @property(retain, nonatomic) IDSMPConversationGroup *conversationGroup; // @synthesize conversationGroup=_conversationGroup;
-- (void).cxx_destruct;
 - (id)_memberList;
 - (id)decypherData:(id)arg1 withAccountIdentity:(id)arg2 signingDevicePublicKey:(id)arg3 identifier:(id)arg4 error:(id *)arg5;
 - (id)cypherData:(id)arg1 withAccountIdentity:(id)arg2 identifier:(id *)arg3 error:(id *)arg4;

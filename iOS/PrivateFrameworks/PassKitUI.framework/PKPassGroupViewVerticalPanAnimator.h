@@ -18,12 +18,12 @@
     struct CGPoint _panningViewTargetPosition;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double panningViewTargetScale; // @synthesize panningViewTargetScale=_panningViewTargetScale;
 @property(nonatomic) struct CGPoint panningViewTargetPosition; // @synthesize panningViewTargetPosition=_panningViewTargetPosition;
 @property(nonatomic) struct CGPoint panningViewStartPosition; // @synthesize panningViewStartPosition=_panningViewStartPosition;
 @property(retain, nonatomic) UIPanGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 @property(readonly, retain, nonatomic) PKPassGroupView *groupView; // @synthesize groupView=_groupView;
-- (void).cxx_destruct;
 - (void)dismissWithStartVelocity:(double)arg1 alongSideApplier:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_dynamicAnimationWithStart:(double)arg1 target:(double)arg2 initialVelocity:(double)arg3;
 - (void)layoutViewsWithY:(double)arg1;

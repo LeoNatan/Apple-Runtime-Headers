@@ -43,9 +43,9 @@
 + (id)factoryWithDuration:(double)arg1;
 + (id)factoryWithSettings:(id)arg1 timingFunction:(id)arg2;
 + (id)factoryWithSettings:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsAdditiveAnimations; // @synthesize allowsAdditiveAnimations=_allowsAdditiveAnimations;
 @property(readonly, copy, nonatomic) BSAnimationSettings *settings; // @synthesize settings=_settings;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

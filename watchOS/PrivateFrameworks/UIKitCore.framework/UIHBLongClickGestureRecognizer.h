@@ -17,8 +17,8 @@
     unsigned int _numberOfClicksRequired;
 }
 
-@property(nonatomic) unsigned int numberOfClicksRequired; // @synthesize numberOfClicksRequired=_numberOfClicksRequired;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int numberOfClicksRequired; // @synthesize numberOfClicksRequired=_numberOfClicksRequired;
 - (void)pressesEventDidReceiveTerminal:(id)arg1;
 - (void)_processPresses:(id)arg1;
 - (_Bool)_requiredClickCountMetForPress:(id)arg1;

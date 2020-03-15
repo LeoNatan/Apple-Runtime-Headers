@@ -14,8 +14,8 @@
 }
 
 + (id)buttonWithFont:(id)arg1;
-@property(retain, nonatomic) UIFont *representedFont; // @synthesize representedFont=_representedFont;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIFont *representedFont; // @synthesize representedFont=_representedFont;
 - (void)layoutSubviews;
 
 @end

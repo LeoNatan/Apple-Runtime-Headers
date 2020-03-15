@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)differentialStyle;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDContentFormat *contentFormat; // @synthesize contentFormat=mContentFormat;
 @property(retain, nonatomic) EDProtection *protection; // @synthesize protection=mProtection;
 @property(retain, nonatomic) EDFont *font; // @synthesize font=mFont;
 @property(retain, nonatomic) EDFill *fill; // @synthesize fill=mFill;
 @property(retain, nonatomic) EDBorders *borders; // @synthesize borders=mBorders;
 @property(retain, nonatomic) EDAlignmentInfo *alignmentInfo; // @synthesize alignmentInfo=mAlignmentInfo;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

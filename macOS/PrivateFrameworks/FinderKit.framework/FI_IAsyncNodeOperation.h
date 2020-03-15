@@ -28,10 +28,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)operationWithNodes:(const struct TFENodeVector *)arg1;
-@property(retain, nonatomic) FI_IAsyncNodeOperation *selfReference; // @synthesize selfReference=_selfReference;
-@property unsigned int options; // @synthesize options=_options;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FI_IAsyncNodeOperation *selfReference; // @synthesize selfReference=_selfReference;
+@property unsigned int options; // @synthesize options=_options;
 - (int)handleCompletedNotification;
 - (int)handleSuboperationCompleted:(unsigned int)arg1 targetNode:(const struct TFENode *)arg2;
 - (int)handleSuboperationStarted:(unsigned int)arg1;

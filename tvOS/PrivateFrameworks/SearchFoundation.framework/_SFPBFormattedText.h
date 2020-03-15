@@ -20,12 +20,12 @@
     _SFPBImage *_glyph;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int textColor; // @synthesize textColor=_textColor;
 @property(nonatomic) _Bool isBold; // @synthesize isBold=_isBold;
 @property(nonatomic) _Bool isEmphasized; // @synthesize isEmphasized=_isEmphasized;
 @property(retain, nonatomic) _SFPBImage *glyph; // @synthesize glyph=_glyph;
 @property(retain, nonatomic) _SFPBText *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

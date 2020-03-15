@@ -27,6 +27,7 @@
     id <MTLBuffer> _effectDataBuffer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <MTLBuffer> effectDataBuffer; // @synthesize effectDataBuffer=_effectDataBuffer;
 @property(readonly, nonatomic) id <MTLBuffer> resizableCapInsetsBuffer; // @synthesize resizableCapInsetsBuffer=_resizableCapInsetsBuffer;
 @property(readonly, nonatomic) id <MTLBuffer> spriteStylesBuffer; // @synthesize spriteStylesBuffer=_spriteStylesBuffer;
@@ -38,7 +39,6 @@
 @property(nonatomic) const CDStruct_ac168a83 *originalSpriteGeometries; // @synthesize originalSpriteGeometries=_originalSpriteGeometries;
 @property(nonatomic) const CDStruct_9d1ebe49 *spriteInfos; // @synthesize spriteInfos=_spriteInfos;
 @property(readonly, nonatomic) id <MTLDevice> device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)prepareForCommit;
 // Error parsing type for property uniforms:

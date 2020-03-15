@@ -24,10 +24,10 @@ __attribute__((visibility("hidden")))
     _HMContext *_context;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property __weak id <_HMAudioControlDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak HMMediaSession *mediaSession; // @synthesize mediaSession=_mediaSession;
-- (void).cxx_destruct;
 - (void)_handleAudioControlUpdated:(id)arg1;
 - (void)updateMuted:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateVolume:(float)arg1 completionHandler:(CDUnknownBlockType)arg2;

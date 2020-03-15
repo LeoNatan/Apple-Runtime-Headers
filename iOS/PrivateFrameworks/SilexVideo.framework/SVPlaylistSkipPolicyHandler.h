@@ -16,8 +16,8 @@
     id <SVContentTransitionTypeProviding> _contentTransitionTypeProvider;
 }
 
-@property(readonly, nonatomic) id <SVContentTransitionTypeProviding> contentTransitionTypeProvider; // @synthesize contentTransitionTypeProvider=_contentTransitionTypeProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SVContentTransitionTypeProviding> contentTransitionTypeProvider; // @synthesize contentTransitionTypeProvider=_contentTransitionTypeProvider;
 @property(readonly, nonatomic) _Bool canSkip;
 - (id)initWithContentTransitionTypeProvider:(id)arg1;
 

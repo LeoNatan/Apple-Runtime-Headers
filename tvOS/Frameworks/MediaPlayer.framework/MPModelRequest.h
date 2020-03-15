@@ -27,6 +27,7 @@
 + (id)sharedNetworkQueue;
 + (id)sharedQueue;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *itemSortDescriptors; // @synthesize itemSortDescriptors=_itemSortDescriptors;
 @property(copy, nonatomic) MPPropertySet *itemProperties; // @synthesize itemProperties=_itemProperties;
 @property(retain, nonatomic) MPModelKind *itemKind; // @synthesize itemKind=_itemKind;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) MPPropertySet *sectionProperties; // @synthesize sectionProperties=_sectionProperties;
 @property(retain, nonatomic) MPModelKind *sectionKind; // @synthesize sectionKind=_sectionKind;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)_kindForClass:(Class)arg1;
 @property(retain, nonatomic) Class itemClass;
 @property(retain, nonatomic) Class sectionClass;

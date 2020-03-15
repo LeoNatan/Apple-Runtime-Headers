@@ -38,6 +38,7 @@
 + (id)overrideAppConfigID;
 + (id)internalOverrideAdditionalSegmentSetIDs;
 + (id)internalOverrideSegmentSetIDs;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isRunningUnitTests) BOOL runningUnitTests; // @synthesize runningUnitTests=_runningUnitTests;
 @property(nonatomic) BOOL attemptedAppConfigFetch; // @synthesize attemptedAppConfigFetch=_attemptedAppConfigFetch;
 @property(retain, nonatomic) NSHashTable *coreConfigObservers; // @synthesize coreConfigObservers=_coreConfigObservers;
@@ -55,7 +56,6 @@
 @property(readonly, nonatomic) id <FCFeldsparIDProvider> feldsparIDProvider; // @synthesize feldsparIDProvider=_feldsparIDProvider;
 @property(readonly, nonatomic) FCContextConfiguration *contextConfiguration; // @synthesize contextConfiguration=_contextConfiguration;
 @property(readonly, nonatomic) RCConfigurationManager *remoteConfigurationManager; // @synthesize remoteConfigurationManager=_remoteConfigurationManager;
-- (void).cxx_destruct;
 - (id)_changeTagsInRecords:(id)arg1;
 - (id)_changeTagsInWidgetConfigurationDict:(id)arg1;
 - (id)_mergeRecords:(id)arg1 withCachedRecords:(id)arg2;

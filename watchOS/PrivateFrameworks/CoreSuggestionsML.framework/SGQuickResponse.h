@@ -20,6 +20,7 @@
     unsigned int _categoryId;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isCustomResponse; // @synthesize isCustomResponse=_isCustomResponse;
 @property(readonly, nonatomic) unsigned int categoryId; // @synthesize categoryId=_categoryId;
 @property(readonly, nonatomic) unsigned int modelId; // @synthesize modelId=_modelId;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) unsigned int replyTextId; // @synthesize replyTextId=_replyTextId;
 @property(readonly, copy, nonatomic) NSString *lang; // @synthesize lang=_lang;
 @property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)initWithText:(id)arg1 lang:(id)arg2 replyTextId:(unsigned int)arg3 styleGroupId:(unsigned int)arg4 semanticClassId:(unsigned int)arg5 modelId:(unsigned int)arg6 categoryId:(unsigned int)arg7 isCustomResponse:(_Bool)arg8;
 
 @end

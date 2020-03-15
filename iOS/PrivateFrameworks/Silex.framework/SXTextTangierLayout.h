@@ -17,8 +17,8 @@
     SXTextTangierTextWrapper *_textWrapper;
 }
 
-@property(retain, nonatomic) SXTextTangierTextWrapper *textWrapper; // @synthesize textWrapper=_textWrapper;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SXTextTangierTextWrapper *textWrapper; // @synthesize textWrapper=_textWrapper;
 - (id)additionalReliedOnLayoutsForTextWrap;
 - (id)textWrapperForExteriorWrap;
 @property(readonly, nonatomic) struct CGSize adjustedInsets;

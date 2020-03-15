@@ -16,12 +16,14 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
+- (void)fetchRoutePreloadSessionsFrom:(id)arg1 completion:(CDUnknownBlockType)arg2 completionQueue:(id)arg3;
+- (void)recordRoutePreloadSessionAt:(id)arg1 transportType:(int)arg2 tilesPreloaded:(unsigned int)arg3 tilesUsed:(unsigned int)arg4 tilesMissed:(unsigned int)arg5;
 - (void)fetchAnalyticsHandlingDataFrom:(id)arg1 completion:(CDUnknownBlockType)arg2 completionQueue:(id)arg3;
 - (void)recordAnalyticsDBExpireCount:(int)arg1 logMsgType:(int)arg2 at:(id)arg3;
 - (void)recordAnalyticsUploadFailureCount:(int)arg1 logMsgType:(int)arg2 at:(id)arg3;
-- (void)recordAnalyticsUploadSuccessCount:(int)arg1 bytes:(int)arg2 logMsgType:(int)arg3 at:(id)arg4;
+- (void)recordAnalyticsUploadSuccessCount:(int)arg1 bytes:(int)arg2 logMsgType:(int)arg3 usedCellular:(_Bool)arg4 at:(id)arg5;
 - (void)recordAnalyticsPersistCount:(int)arg1 logMsgType:(int)arg2 at:(id)arg3;
 - (void)_recordAnalylticsCount:(int)arg1 logMsgType:(int)arg2 at:(id)arg3 withFxn:(CDUnknownFunctionPointerType)arg4;
 - (void)readProactiveTileDownloadsSince:(id)arg1 handler:(CDUnknownBlockType)arg2;

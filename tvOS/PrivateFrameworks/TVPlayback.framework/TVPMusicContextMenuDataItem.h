@@ -18,13 +18,13 @@
     CDUnknownBlockType _actionBlock;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasCheckmark; // @synthesize hasCheckmark=_hasCheckmark;
 @property(copy, nonatomic) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
 @property(nonatomic) long long menuItemType; // @synthesize menuItemType=_menuItemType;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 identifier:(id)arg2 actionBlock:(CDUnknownBlockType)arg3;
 - (id)initWithIdentifier:(id)arg1 actionBlock:(CDUnknownBlockType)arg2;
 - (id)initWithTitle:(id)arg1 actionBlock:(CDUnknownBlockType)arg2;

@@ -22,11 +22,11 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *instanceId; // @synthesize instanceId=_instanceId;
 @property(retain, nonatomic) NSString *eventId; // @synthesize eventId=_eventId;
 @property(retain, nonatomic) NSNumber *status; // @synthesize status=_status;
 @property(retain, nonatomic) NSString *requestId; // @synthesize requestId=_requestId;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

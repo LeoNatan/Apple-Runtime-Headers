@@ -34,6 +34,7 @@
 }
 
 + (Class)arrayValuesType;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isMiniUUIDSet; // @synthesize isMiniUUIDSet=_isMiniUUIDSet;
 @property(nonatomic) _Bool isError; // @synthesize isError=_isError;
 @property(nonatomic) _Bool isDate; // @synthesize isDate=_isDate;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) NSData *uUIDValue; // @synthesize uUIDValue=_uUIDValue;
 @property(retain, nonatomic) NRPBNumber *numberValue; // @synthesize numberValue=_numberValue;
 @property(retain, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

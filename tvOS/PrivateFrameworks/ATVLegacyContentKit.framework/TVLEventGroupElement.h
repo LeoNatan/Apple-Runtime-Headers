@@ -20,6 +20,7 @@
     TVLXMLElement *_xml;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) TVLXMLElement *xml; // @synthesize xml=_xml;
 @property(nonatomic) _Bool showDescriptionOnChapterSkip; // @synthesize showDescriptionOnChapterSkip=_showDescriptionOnChapterSkip;
 @property(nonatomic) _Bool showChapterMarkers; // @synthesize showChapterMarkers=_showChapterMarkers;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) int refreshIntervalSec; // @synthesize refreshIntervalSec=_refreshIntervalSec;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 feedDocument:(id)arg2;
 

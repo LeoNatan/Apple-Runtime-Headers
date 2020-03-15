@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
     NSView *_lastKeyView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSView *lastKeyView; // @synthesize lastKeyView=_lastKeyView;
 @property(nonatomic) __weak NSView *firstKeyView; // @synthesize firstKeyView=_firstKeyView;
-- (void).cxx_destruct;
 - (void)setDefaultKeyLoop;
 - (void)setNextKeyView:(id)arg1;
 

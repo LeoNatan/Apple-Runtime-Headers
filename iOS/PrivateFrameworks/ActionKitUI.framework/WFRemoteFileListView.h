@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
     NSDictionary *_filesBySection;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *filesBySection; // @synthesize filesBySection=_filesBySection;
 @property(readonly, nonatomic) UILocalizedIndexedCollation *collation; // @synthesize collation=_collation;
 @property(readonly, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak id <WFRemoteFileListViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(long long)arg3;

@@ -15,10 +15,10 @@
     UIScrollView *_scrollView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(readonly, nonatomic) UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (_Bool)canBecomeFirstResponder;
 - (_Bool)becomeFirstResponder;
 @property(copy, nonatomic) NSString *message;

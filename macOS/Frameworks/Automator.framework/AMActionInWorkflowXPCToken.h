@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain) NSString *actionUUID; // @synthesize actionUUID=_actionUUID;
 - (void).cxx_destruct;
+@property(retain) NSString *actionUUID; // @synthesize actionUUID=_actionUUID;
 - (id)_am_convertFromXPCWithWorkflow:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

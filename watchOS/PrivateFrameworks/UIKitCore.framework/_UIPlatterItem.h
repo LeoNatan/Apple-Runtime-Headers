@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UIView *_heldView;
 }
 
-@property(readonly) __weak UIView *heldView; // @synthesize heldView=_heldView;
 - (void).cxx_destruct;
+@property(readonly) __weak UIView *heldView; // @synthesize heldView=_heldView;
 @property(readonly, nonatomic) struct CGRect bounds;
 @property(nonatomic) struct CGAffineTransform transform;
 @property(nonatomic) struct CGPoint center;

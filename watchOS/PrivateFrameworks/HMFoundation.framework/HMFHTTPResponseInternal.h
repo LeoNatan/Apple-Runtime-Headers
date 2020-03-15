@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSData *_body;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *body; // @synthesize body=_body;
 @property(copy, nonatomic) NSDictionary *headerFields; // @synthesize headerFields=_headerFields;
 @property(readonly, nonatomic) int statusCode; // @synthesize statusCode=_statusCode;
 @property(retain, nonatomic) HMFActivity *activity; // @synthesize activity=_activity;
-- (void).cxx_destruct;
 - (void)setHeaderValue:(id)arg1 forHeaderKey:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithStatusCode:(int)arg1 headerFields:(id)arg2 body:(id)arg3;

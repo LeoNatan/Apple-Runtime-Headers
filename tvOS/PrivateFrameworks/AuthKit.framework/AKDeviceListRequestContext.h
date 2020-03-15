@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *operatingSystems; // @synthesize operatingSystems=_operatingSystems;
 @property(copy, nonatomic) NSArray *services; // @synthesize services=_services;
 @property(nonatomic) _Bool includeFamilyDevices; // @synthesize includeFamilyDevices=_includeFamilyDevices;
 @property(nonatomic) _Bool includeUntrustedDevices; // @synthesize includeUntrustedDevices=_includeUntrustedDevices;
 @property(copy, nonatomic) NSString *altDSID; // @synthesize altDSID=_altDSID;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

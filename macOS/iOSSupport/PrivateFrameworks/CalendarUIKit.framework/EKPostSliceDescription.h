@@ -14,9 +14,9 @@
     EKSeriesDetails *_createdSeriesDetails;
 }
 
+- (void).cxx_destruct;
 @property(copy) EKSeriesDetails *createdSeriesDetails; // @synthesize createdSeriesDetails=_createdSeriesDetails;
 @property(copy) EKSeriesDetails *updatedMainSeriesDetails; // @synthesize updatedMainSeriesDetails=_updatedMainSeriesDetails;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

@@ -13,8 +13,8 @@
     PLDisplayAPLStats *_displayAPLStats;
 }
 
-@property(retain) PLDisplayAPLStats *displayAPLStats; // @synthesize displayAPLStats=_displayAPLStats;
 - (void).cxx_destruct;
+@property(retain) PLDisplayAPLStats *displayAPLStats; // @synthesize displayAPLStats=_displayAPLStats;
 - (id)init;
 
 @end

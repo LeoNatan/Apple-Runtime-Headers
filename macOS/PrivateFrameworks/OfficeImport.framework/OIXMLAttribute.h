@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)attributeWithName:(id)arg1 stringValue:(id)arg2;
+- (void).cxx_destruct;
 - (void)setStringValue:(id)arg1;
 - (id)stringValue;
 - (id)name;
-- (void).cxx_destruct;
 - (void)_appendXMLStringToString:(struct __CFString *)arg1 level:(int)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithName:(id)arg1 stringValue:(id)arg2;

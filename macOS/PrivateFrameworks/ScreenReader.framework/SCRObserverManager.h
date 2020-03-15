@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedManager;
-@property(retain, nonatomic) NSMutableDictionary *_lastProcessedLayoutChangeNotificationTimestampForObserverIDs; // @synthesize _lastProcessedLayoutChangeNotificationTimestampForObserverIDs=__lastProcessedLayoutChangeNotificationTimestampForObserverIDs;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *_lastProcessedLayoutChangeNotificationTimestampForObserverIDs; // @synthesize _lastProcessedLayoutChangeNotificationTimestampForObserverIDs=__lastProcessedLayoutChangeNotificationTimestampForObserverIDs;
 - (id)description;
 - (id)status;
 - (BOOL)setThrottleTime:(int)arg1 forApplication:(id)arg2 name:(struct __CFString *)arg3 uiElement:(id)arg4;

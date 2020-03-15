@@ -17,9 +17,9 @@
 }
 
 + (void)load;
+- (void).cxx_destruct;
 @property(readonly) HMFSystemPreference *homeKitPreference; // @synthesize homeKitPreference=_homeKitPreference;
 @property(readonly) HMFSystemPreference *airPlayPreference; // @synthesize airPlayPreference=_airPlayPreference;
-- (void).cxx_destruct;
 - (id)stringValue;
 - (id)numberValue;
 - (_Bool)boolValue;

@@ -34,6 +34,7 @@
 + (id)setupAssistantStyle;
 + (id)defaultStyle;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(nonatomic) long long footerLinkAlignment; // @synthesize footerLinkAlignment=_footerLinkAlignment;
 @property(nonatomic) long long footerLabelAlignment; // @synthesize footerLabelAlignment=_footerLabelAlignment;
@@ -51,7 +52,6 @@
 @property(retain, nonatomic) UIColor *buttonRowTextColor; // @synthesize buttonRowTextColor=_buttonRowTextColor;
 @property(retain, nonatomic) UIColor *radioGroupSelectedColor; // @synthesize radioGroupSelectedColor=_radioGroupSelectedColor;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 - (id)init;
 - (void)applyToNavigationController:(id)arg1;
 - (void)applyToObjectModel:(id)arg1;

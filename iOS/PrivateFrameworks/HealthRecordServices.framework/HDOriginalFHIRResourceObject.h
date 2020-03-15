@@ -6,22 +6,24 @@
 
 #import <HealthRecordServices/HDFHIRResourceObject.h>
 
-@class HDHRSOriginInformation;
+@class HDHRSOriginInformation, NSString;
 
 @interface HDOriginalFHIRResourceObject : HDFHIRResourceObject
 {
     HDHRSOriginInformation *_originInformation;
+    NSString *_country;
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)resourceObjectWithData:(id)arg1 sourceURL:(id)arg2 FHIRVersion:(id)arg3 receivedDate:(id)arg4 extractionHints:(unsigned long long)arg5 originVersion:(CDStruct_f6aba300)arg6 originBuild:(id)arg7 error:(id *)arg8;
-@property(readonly, copy, nonatomic) HDHRSOriginInformation *originInformation; // @synthesize originInformation=_originInformation;
++ (id)resourceObjectWithData:(id)arg1 sourceURL:(id)arg2 FHIRVersion:(id)arg3 receivedDate:(id)arg4 extractionHints:(unsigned long long)arg5 originVersion:(CDStruct_f6aba300)arg6 originBuild:(id)arg7 country:(id)arg8 error:(id *)arg9;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *country; // @synthesize country=_country;
+@property(readonly, copy, nonatomic) HDHRSOriginInformation *originInformation; // @synthesize originInformation=_originInformation;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)_initWithResourceIdentifier:(id)arg1 JSONObject:(id)arg2 sourceURL:(id)arg3 FHIRVersion:(id)arg4 receivedDate:(id)arg5 extractionHints:(unsigned long long)arg6 originInformation:(id)arg7;
+- (id)_initWithResourceIdentifier:(id)arg1 JSONObject:(id)arg2 sourceURL:(id)arg3 FHIRVersion:(id)arg4 receivedDate:(id)arg5 extractionHints:(unsigned long long)arg6 originInformation:(id)arg7 country:(id)arg8;
 
 @end
 

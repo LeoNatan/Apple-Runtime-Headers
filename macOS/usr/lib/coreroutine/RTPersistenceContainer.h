@@ -19,13 +19,13 @@
     NSPersistentStoreCoordinator *_coordinator;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSPersistentStoreCoordinator *coordinator; // @synthesize coordinator=_coordinator;
 @property BOOL setupFailed; // @synthesize setupFailed=_setupFailed;
 @property BOOL serveContexts; // @synthesize serveContexts=_serveContexts;
 @property(retain) NSObject<OS_dispatch_queue> *contextRequestsQueue; // @synthesize contextRequestsQueue=_contextRequestsQueue;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
-- (id)persistenceContextWithOptions:(long long)arg1;
+- (id)persistenceContextWithOptions:(unsigned long long)arg1;
 - (id)_persistenceContext;
 - (id)waitForPersistenceContext;
 - (id)persistenceContext;

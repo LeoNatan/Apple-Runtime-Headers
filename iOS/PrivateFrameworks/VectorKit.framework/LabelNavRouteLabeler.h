@@ -64,6 +64,8 @@ __attribute__((visibility("hidden")))
     _Bool _needsDebugConsoleClear;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool debugEnableShieldsOnRouteLine; // @synthesize debugEnableShieldsOnRouteLine=_debugEnableShieldsOnRouteLine;
 @property(nonatomic) struct VKLabelNavArtworkCache *artworkCache; // @synthesize artworkCache=_artworkCache;
 @property(nonatomic) _Bool debugDisableRoadSignLimit; // @synthesize debugDisableRoadSignLimit=_debugDisableRoadSignLimit;
@@ -75,8 +77,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool drawRoadSigns; // @synthesize drawRoadSigns=_drawRoadSigns;
 @property(retain, nonatomic) VKPolylineOverlay *route; // @synthesize route=_route;
 @property(readonly, nonatomic) _Bool needsLayout; // @synthesize needsLayout=_needsLayout;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (unsigned char)computeRoutePositionForPOIAtPixel:(const Matrix_8746f91e *)arg1 currentPosition:(unsigned char)arg2 context:(struct NavContext *)arg3;
 - (_Bool)needsDebugDraw;
 - (void)debugDraw:(id)arg1 overlayConsole:(struct DebugConsole *)arg2 navContext:(struct NavContext *)arg3;

@@ -23,6 +23,7 @@
     double _sineWaveSmoothingFactor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double sineWaveSmoothingFactor; // @synthesize sineWaveSmoothingFactor=_sineWaveSmoothingFactor;
 @property(nonatomic) _Bool shouldNegateAnnotationValue; // @synthesize shouldNegateAnnotationValue=_shouldNegateAnnotationValue;
 @property(nonatomic) _Bool shouldApplyRollingAverage; // @synthesize shouldApplyRollingAverage=_shouldApplyRollingAverage;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) HKLineSeriesPointMarkerStyle *pointMarkerStyle; // @synthesize pointMarkerStyle=_pointMarkerStyle;
 @property(retain, nonatomic) HKFillStyle *fillStyle; // @synthesize fillStyle=_fillStyle;
 @property(retain, nonatomic) HKStrokeStyle *strokeStyle; // @synthesize strokeStyle=_strokeStyle;
-- (void).cxx_destruct;
 
 @end
 

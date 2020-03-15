@@ -24,13 +24,13 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSXPCListener *xpcServiceListener; // @synthesize xpcServiceListener=_xpcServiceListener;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *accountChangeSemaphore; // @synthesize accountChangeSemaphore=_accountChangeSemaphore;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *calloutQueue; // @synthesize calloutQueue=_calloutQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
-- (void).cxx_destruct;
 - (void)_removeObserver:(id)arg1;
 - (void)_addObserver:(id)arg1;
 - (void)_unblockExecutionForFutureAccountChange;

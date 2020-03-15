@@ -30,11 +30,11 @@
 
 + (Class)staticEntityIdentifiersType;
 + (Class)filterPredicatesType;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool includeNonLibraryEntities; // @synthesize includeNonLibraryEntities=_includeNonLibraryEntities;
 @property(retain, nonatomic) NSMutableArray *staticEntityIdentifiers; // @synthesize staticEntityIdentifiers=_staticEntityIdentifiers;
 @property(nonatomic) _Bool filteringDisabled; // @synthesize filteringDisabled=_filteringDisabled;
 @property(retain, nonatomic) NSMutableArray *filterPredicates; // @synthesize filterPredicates=_filterPredicates;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

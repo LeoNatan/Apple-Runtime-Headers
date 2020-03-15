@@ -18,7 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)undefinedIdentifier;
++ (id)systolicBloodPressure;
++ (id)diastolicBloodPressure;
++ (id)inMemoryConceptIdentifier;
 + (id)identifierWithNumber:(id)arg1;
 + (id)identifierWithRawIdentifier:(long long)arg1;
 @property(nonatomic) long long rawIdentifier; // @synthesize rawIdentifier=_rawIdentifier;

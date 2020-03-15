@@ -19,12 +19,12 @@
     NSArray *_errors;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *errors; // @synthesize errors=_errors;
 @property(retain, nonatomic) NSString *credentials; // @synthesize credentials=_credentials;
 @property(retain, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 @property(retain, nonatomic) NSString *businessIdentifier; // @synthesize businessIdentifier=_businessIdentifier;
 @property(nonatomic) NSString *status; // @synthesize status=_status;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BCError *error;
 @property(readonly, nonatomic) NSDictionary *dictionaryValue;
 - (id)responseMessageFor:(id)arg1 message:(id)arg2;

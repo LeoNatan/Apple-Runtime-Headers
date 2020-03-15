@@ -18,8 +18,8 @@
 + (BOOL)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
 + (Class)whitelistedClassForResultObject;
-@property(copy, nonatomic) NSString *originator; // @synthesize originator=_originator;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *originator; // @synthesize originator=_originator;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

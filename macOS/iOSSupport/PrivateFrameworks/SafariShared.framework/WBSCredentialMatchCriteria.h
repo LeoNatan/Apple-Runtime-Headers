@@ -15,10 +15,10 @@
     NSString *_partialUsername;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *partialUsername; // @synthesize partialUsername=_partialUsername;
 @property(readonly, copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (id)initWithURL:(id)arg1 options:(unsigned long long)arg2 partialUsername:(id)arg3;
 
 @end

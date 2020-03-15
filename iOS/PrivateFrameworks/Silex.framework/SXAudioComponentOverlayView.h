@@ -15,10 +15,10 @@
     UIActivityIndicatorView *_activityIndicator;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(readonly, nonatomic) UIImage *audioIndicatorImage; // @synthesize audioIndicatorImage=_audioIndicatorImage;
 @property(readonly, nonatomic) UIButton *playButton; // @synthesize playButton=_playButton;
-- (void).cxx_destruct;
 - (void)stopActivityIndicator;
 - (void)startActivityIndicator;
 - (void)setImage:(id)arg1;

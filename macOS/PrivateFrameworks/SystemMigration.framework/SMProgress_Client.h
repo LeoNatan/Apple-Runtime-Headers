@@ -32,6 +32,7 @@
 + (id)keyPathsForValuesAffectingEffectiveConnectionMethod;
 + (id)keyPathsForValuesAffectingFasterInterfaceRecommendation;
 + (id)progressEventsListenerInterface;
+- (void).cxx_destruct;
 @property(retain) id observationContext; // @synthesize observationContext=_observationContext;
 @property unsigned long long requestedClientScannerState; // @synthesize requestedClientScannerState=_requestedClientScannerState;
 @property(retain) id sourceSystemID; // @synthesize sourceSystemID=_sourceSystemID;
@@ -44,7 +45,6 @@
 @property BOOL toAnotherMac; // @synthesize toAnotherMac=_toAnotherMac;
 @property(retain) SMSystem_Client *sourceSystem; // @synthesize sourceSystem=_sourceSystem;
 @property __weak NSObject<MigrationProgressEventsListener> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)userDeclinedSoftAP;
 - (void)attemptingWirelessNetworkSwitch:(BOOL)arg1 manual:(BOOL)arg2;

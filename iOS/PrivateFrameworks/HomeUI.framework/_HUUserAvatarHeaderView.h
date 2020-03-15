@@ -19,13 +19,13 @@
     NAFuture *_mediaAccountFuture;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NAFuture *mediaAccountFuture; // @synthesize mediaAccountFuture=_mediaAccountFuture;
 @property(nonatomic) __weak id <HUSplitAccountDelegate> splitAccountDelegate; // @synthesize splitAccountDelegate=_splitAccountDelegate;
 @property(retain, nonatomic) NSArray *layoutConstraints; // @synthesize layoutConstraints=_layoutConstraints;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(retain, nonatomic) HUSplitAccountHeaderTableView *splitAccountHeaderView; // @synthesize splitAccountHeaderView=_splitAccountHeaderView;
 @property(readonly, nonatomic) HUContactView *contactView; // @synthesize contactView=_contactView;
-- (void).cxx_destruct;
 - (id)_keyDescriptors;
 @property(retain, nonatomic) NSAttributedString *message;
 - (void)dismissSplitAccountView;

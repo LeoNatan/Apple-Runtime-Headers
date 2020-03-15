@@ -18,8 +18,8 @@
 
 + (id)itemTypeIdentifier;
 + (Class)viewClass;
-@property(retain, nonatomic) IMTranscriptChatItem *chatTranscriptItem; // @synthesize chatTranscriptItem=_chatTranscriptItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IMTranscriptChatItem *chatTranscriptItem; // @synthesize chatTranscriptItem=_chatTranscriptItem;
 - (struct CGSize)sizeConstrainedToWidth:(double)arg1;
 @property(readonly, nonatomic) long long layoutOrientation;
 @property(readonly, nonatomic) long long layoutClassification;

@@ -24,9 +24,9 @@
 + (id)logCategory;
 + (id)shortDescription;
 + (double)timeout;
+- (void).cxx_destruct;
 @property(readonly) HMFMessage *message; // @synthesize message=_message;
 @property(readonly) IDSService *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(_Bool)arg4 error:(id)arg5 context:(id)arg6;
 - (id)logIdentifier;
 - (void)main;

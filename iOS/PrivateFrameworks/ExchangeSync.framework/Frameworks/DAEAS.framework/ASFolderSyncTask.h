@@ -17,9 +17,9 @@
     _Bool _isSpinning;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long dataclasses; // @synthesize dataclasses=_dataclasses;
 @property(nonatomic) _Bool requireChangedFolders; // @synthesize requireChangedFolders=_requireChangedFolders;
-- (void).cxx_destruct;
 - (int)numDownloadedElements;
 - (long long)taskStatusForExchangeStatus:(int)arg1;
 - (void)dealloc;

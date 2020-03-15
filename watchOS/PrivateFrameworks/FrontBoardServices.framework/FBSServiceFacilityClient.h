@@ -31,10 +31,10 @@
 }
 
 + (id)defaultShellEndpoint;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isConfigured) _Bool configured; // @synthesize configured=_configured;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *calloutQueue; // @synthesize calloutQueue=_calloutQueue;
 @property(readonly, nonatomic) BSServiceQuality *serviceQuality; // @synthesize serviceQuality=_serviceQuality;
-- (void).cxx_destruct;
 - (void)_queue_handleMessage:(id)arg1;
 - (void)_queue_handleError:(id)arg1;
 - (void)_lock_activate;

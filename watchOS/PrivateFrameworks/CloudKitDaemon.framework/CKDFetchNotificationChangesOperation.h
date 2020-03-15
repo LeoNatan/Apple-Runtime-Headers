@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     CKServerChangeToken *_resultServerChangeToken;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool moreComing; // @synthesize moreComing=_moreComing;
 @property(retain, nonatomic) CKServerChangeToken *resultServerChangeToken; // @synthesize resultServerChangeToken=_resultServerChangeToken;
 @property(nonatomic) _Bool wantsChanges; // @synthesize wantsChanges=_wantsChanges;
 @property(nonatomic) unsigned int resultsLimit; // @synthesize resultsLimit=_resultsLimit;
 @property(retain, nonatomic) CKServerChangeToken *previousServerChangeToken; // @synthesize previousServerChangeToken=_previousServerChangeToken;
 @property(copy, nonatomic) CDUnknownBlockType notificationChangedBlock; // @synthesize notificationChangedBlock=_notificationChangedBlock;
-- (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)fillOutOperationResult:(id)arg1;
 - (Class)operationResultClass;

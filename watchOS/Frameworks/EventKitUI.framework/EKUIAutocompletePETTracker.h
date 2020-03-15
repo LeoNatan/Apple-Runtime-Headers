@@ -23,13 +23,13 @@
     EKCalendar *_initialCalendar;
 }
 
+- (void).cxx_destruct;
 @property(retain) EKCalendar *initialCalendar; // @synthesize initialCalendar=_initialCalendar;
 @property _Bool initialIsAllDay; // @synthesize initialIsAllDay=_initialIsAllDay;
 @property(retain) NSTimeZone *initialTimeZone; // @synthesize initialTimeZone=_initialTimeZone;
 @property(retain) NSDate *initialEndDate; // @synthesize initialEndDate=_initialEndDate;
 @property(retain) NSDate *initialStartDate; // @synthesize initialStartDate=_initialStartDate;
 @property unsigned int finalNumberOfAutocompleteResults; // @synthesize finalNumberOfAutocompleteResults=_finalNumberOfAutocompleteResults;
-- (void).cxx_destruct;
 - (void)trackAutocompleteEventsOnSaveWithEvent:(id)arg1 selectedResult:(id)arg2 selectedIndex:(unsigned int)arg3 isZKW:(_Bool)arg4;
 - (void)trackAutocompleteResultsShown;
 - (void)trackAutocompleteQuery;

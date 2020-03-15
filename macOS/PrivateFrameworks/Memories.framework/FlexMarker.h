@@ -19,12 +19,12 @@
     long long _number;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long number; // @synthesize number=_number;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) long long position; // @synthesize position=_position;
 @property(readonly, nonatomic) long long markerID; // @synthesize markerID=_markerID;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)_decodeTypeAndBarsFromName;
 - (id)init;

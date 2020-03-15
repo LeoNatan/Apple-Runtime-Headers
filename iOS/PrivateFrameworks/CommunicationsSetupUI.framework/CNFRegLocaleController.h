@@ -25,11 +25,11 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) NSArray *regionData; // @synthesize regionData=_regionData;
 @property(copy, nonatomic) NSString *currentPhoneValue; // @synthesize currentPhoneValue=_currentPhoneValue;
 @property(copy, nonatomic) NSString *currentRegionID; // @synthesize currentRegionID=_currentRegionID;
-- (void).cxx_destruct;
 - (void)_setupEventHandlers;
 - (void)_buildSpecifierCache:(id)arg1;
 - (void)_buildPhoneNumberSpecifierCache:(id)arg1;

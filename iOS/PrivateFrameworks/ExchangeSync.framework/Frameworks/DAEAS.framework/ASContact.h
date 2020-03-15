@@ -88,6 +88,7 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(nonatomic) long long fileAsAutoConstruction; // @synthesize fileAsAutoConstruction=_fileAsAutoConstruction;
 @property(retain, nonatomic) NSString *mms; // @synthesize mms=_mms;
 @property(retain, nonatomic) NSString *nickName; // @synthesize nickName=_nickName;
@@ -153,7 +154,6 @@
 @property(retain, nonatomic) NSString *assistantName; // @synthesize assistantName=_assistantName;
 @property(retain, nonatomic) NSDate *anniversary; // @synthesize anniversary=_anniversary;
 @property(nonatomic, setter=setABRecord:) void *abRecord; // @synthesize abRecord=_abRecord;
-- (void).cxx_destruct;
 - (_Bool)deleteFromContainer:(void *)arg1;
 - (_Bool)saveServerIDToExistingItem;
 - (_Bool)loadLocalItemWithAccount:(id)arg1;

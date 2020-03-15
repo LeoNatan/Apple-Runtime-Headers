@@ -18,10 +18,10 @@
     SBAppStatusBarSettings *_overrideStatusBarSettings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_overrideStatusBarSettings, setter=_setOverrideStatusBarSettings:) SBAppStatusBarSettings *overrideStatusBarSettings; // @synthesize overrideStatusBarSettings=_overrideStatusBarSettings;
 @property(readonly, nonatomic, getter=_isApplicationStatusBarHidden) _Bool _applicationStatusBarHidden; // @synthesize _applicationStatusBarHidden=__applicationStatusBarHidden;
 @property(nonatomic) __weak id <SBApplicationSceneViewControllingStatusBarDelegate> applicationSceneStatusBarDelegate; // @synthesize applicationSceneStatusBarDelegate=_applicationSceneStatusBarDelegate;
-- (void).cxx_destruct;
 - (double)_applicationStatusBarAlpha;
 @property(readonly, nonatomic) long long overrideStatusBarStyle;
 @property(readonly, nonatomic) double statusBarAlpha;

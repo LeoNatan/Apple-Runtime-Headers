@@ -19,8 +19,8 @@
 }
 
 + (id)sharedInstanceForCameraPosition:(long long)arg1 longEdgeImageResolution:(unsigned int)arg2;
-@property(readonly, nonatomic) id <MTLTexture> texture; // @synthesize texture=_texture;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <MTLTexture> texture; // @synthesize texture=_texture;
 - (float)snrToNoiseIntensity:(float)arg1;
 - (id)initWithNoiseModel:(int)arg1;
 

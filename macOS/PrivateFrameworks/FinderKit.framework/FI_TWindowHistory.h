@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     struct TNSWeakPtr<FI_TBrowserContainerController, void> _weakController;
 }
 
-@property(nonatomic) long long historyPosition; // @synthesize historyPosition=_historyPosition;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) long long historyPosition; // @synthesize historyPosition=_historyPosition;
 - (void)nodeObserver:(struct TNodeObserver *)arg1 nodeMoved:(const struct TFENode *)arg2;
 - (void)nodeObserver:(struct TNodeObserver *)arg1 nodeDeleted:(const struct TFENode *)arg2 fromObservedNode:(const struct TFENode *)arg3;
 - (id)currentEntry;

@@ -15,9 +15,9 @@
 }
 
 + (id)transactionWithBulletinID:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long transactionID; // @synthesize transactionID=_transactionID;
 @property(readonly, copy, nonatomic) NSString *bulletinID; // @synthesize bulletinID=_bulletinID;
-- (void).cxx_destruct;
 - (unsigned long long)incrementTransactionID;
 - (id)description;
 - (id)initWithBulletinID:(id)arg1;

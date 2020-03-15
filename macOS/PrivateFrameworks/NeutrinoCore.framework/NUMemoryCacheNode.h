@@ -13,9 +13,9 @@
     id <NUBufferImage> _cachedImage;
 }
 
-@property(readonly) id <NUBufferImage> cachedImage; // @synthesize cachedImage=_cachedImage;
 - (void).cxx_destruct;
-- (void)resolveSourceWithResponse:(struct NUResponse *)arg1;
+@property(readonly) id <NUBufferImage> cachedImage; // @synthesize cachedImage=_cachedImage;
+- (void)resolveSourceWithResponse:(id)arg1;
 - (id)newRenderRequestWithOriginalRequest:(id)arg1 error:(out id *)arg2;
 - (BOOL)tryLoadPersistentURL:(id)arg1 error:(out id *)arg2;
 - (id)persistentURL;

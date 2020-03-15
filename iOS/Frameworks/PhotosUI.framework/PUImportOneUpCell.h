@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)alphaForSelectedCells;
+- (void).cxx_destruct;
 @property(nonatomic) long long thumbnailRequestID; // @synthesize thumbnailRequestID=_thumbnailRequestID;
 @property(retain, nonatomic) UITextField *debugTextField; // @synthesize debugTextField=_debugTextField;
 @property(retain, nonatomic) PXImportItemViewModel *importItem; // @synthesize importItem=_importItem;
 @property(nonatomic) __weak id <PUImportOneUpCellDisplayDelegate> displayDelegate; // @synthesize displayDelegate=_displayDelegate;
-- (void).cxx_destruct;
 - (void)updateDebugLabel:(id)arg1;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)layoutSubviews;

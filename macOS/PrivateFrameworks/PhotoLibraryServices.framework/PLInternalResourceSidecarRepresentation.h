@@ -15,8 +15,8 @@
     PLInternalResource *_resource;
 }
 
-@property(nonatomic) __weak PLInternalResource *resource; // @synthesize resource=_resource;
 - (void).cxx_destruct;
+@property(nonatomic) __weak PLInternalResource *resource; // @synthesize resource=_resource;
 @property(readonly, nonatomic) unsigned int resourceType;
 @property(readonly, copy) NSString *description;
 @property(readonly, retain, nonatomic) NSURL *fileURL;

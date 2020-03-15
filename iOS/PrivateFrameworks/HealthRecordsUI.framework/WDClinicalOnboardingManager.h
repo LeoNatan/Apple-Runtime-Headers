@@ -17,21 +17,19 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) __weak WDClinicalOnboardingOAuthNavigationViewController *inFlightLoginViewController; // @synthesize inFlightLoginViewController=_inFlightLoginViewController;
 @property(retain, nonatomic) WDClinicalGatewayProxy *pendingOnboardingGateway; // @synthesize pendingOnboardingGateway=_pendingOnboardingGateway;
 @property(retain, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
+- (id)getPendingOnboardingGatewayAndClear;
 - (void)_didDismissLoginViewController:(id)arg1;
 - (void)_dismissInFlightLoginViewControllerIfExistsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_startLoginWithLoginViewController:(id)arg1 presentingViewController:(id)arg2;
 - (void)_startOrReplaceLoginWithLoginViewController:(id)arg1 presentingViewController:(id)arg2;
-- (void)_onboardAsNewGateway:(id)arg1 presentingViewController:(id)arg2;
-- (void)_createOnboardingViewControllerForGatewayProxy:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)createOnboardingViewControllerForPendingOnboardingGatewayWithCompletion:(CDUnknownBlockType)arg1;
-- (void)registerInflightOnboardingViewController:(id)arg1;
+- (void)registerInflightOnboardingViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_presentAccount:(id)arg1 presentingViewController:(id)arg2;
+- (id)gatewayProxyWithActivity:(id)arg1;
 - (void)onboardWithActivity:(id)arg1 presentingViewController:(id)arg2;
-- (void)didHandlePendingOnboardingGateway;
-@property(readonly, nonatomic) _Bool hasPendingOnboardingGateway;
 - (void)dealloc;
 - (id)initWithProfile:(id)arg1;
 - (id)init;

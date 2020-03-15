@@ -23,9 +23,9 @@
 + (id)feedRangeFromDate:(id)arg1 toDate:(id)arg2;
 + (id)feedRangeWithMaxOrder:(unsigned long long)arg1 minOrder:(unsigned long long)arg2;
 + (id)feedRangeWithTop:(id)arg1 bottom:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) FCFeedCursor *bottom; // @synthesize bottom=_bottom;
 @property(copy, nonatomic) FCFeedCursor *top; // @synthesize top=_top;
-- (void).cxx_destruct;
 - (id)description;
 - (id)feedRangeByUnioningWithRange:(id)arg1;
 - (id)feedRangeByIntersectingWithRange:(id)arg1;

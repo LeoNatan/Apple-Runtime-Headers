@@ -13,8 +13,8 @@
     SFPunchout *_punchout;
 }
 
-@property(retain, nonatomic) SFPunchout *punchout; // @synthesize punchout=_punchout;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SFPunchout *punchout; // @synthesize punchout=_punchout;
 - (BOOL)isAccessibilityElement;
 - (BOOL)allowsVibrancy;
 

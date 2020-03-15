@@ -41,8 +41,8 @@ __attribute__((visibility("hidden")))
 + (id)symptomEvaluatorDatabaseContainerPath;
 + (id)configureClass:(id)arg1;
 + (id)sharedInstance;
-@property(retain, nonatomic) NSMutableDictionary *launchParams; // @synthesize launchParams=_launchParams;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *launchParams; // @synthesize launchParams=_launchParams;
 - (int)configureInstance:(id)arg1;
 - (void)deleteDatabaseCompleted:(BOOL)arg1 error:(id)arg2;
 - (void)destroyPersistentStoreCompleted:(BOOL)arg1 error:(id)arg2;

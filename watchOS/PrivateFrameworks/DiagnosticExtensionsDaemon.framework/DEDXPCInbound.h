@@ -17,9 +17,9 @@
     DEDController *_delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak DEDController *delegate; // @synthesize delegate=_delegate;
 @property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
-- (void).cxx_destruct;
 - (void)cancelNotifySession:(id)arg1;
 - (void)notifySession:(id)arg1;
 - (void)didCancelSession:(id)arg1;

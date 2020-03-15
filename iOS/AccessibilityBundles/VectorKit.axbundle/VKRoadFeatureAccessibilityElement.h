@@ -21,11 +21,11 @@
     NSArray *_consolidatedAndOrderedFeatures;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *consolidatedAndOrderedFeatures; // @synthesize consolidatedAndOrderedFeatures=_consolidatedAndOrderedFeatures;
 @property(nonatomic) int travelDirection; // @synthesize travelDirection=_travelDirection;
 @property(retain, nonatomic) NSArray *intersectingRoads; // @synthesize intersectingRoads=_intersectingRoads;
 @property(retain, nonatomic) NSString *roadDirection; // @synthesize roadDirection=_roadDirection;
-- (void).cxx_destruct;
 - (id)_roadDirectionDescription;
 - (id)_nearestIntersectionForPoint:(struct CGPoint)arg1;
 - (_Bool)pointInside:(struct CGPoint)arg1;

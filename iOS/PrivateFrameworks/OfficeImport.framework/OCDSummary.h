@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     NSString *_company;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *company; // @synthesize company=_company;
 @property(retain) NSString *subject; // @synthesize subject=_subject;
-- (void).cxx_destruct;
 - (void)setHyperlinkBase:(id)arg1;
 - (id)hyperlinkBase;
 - (void)setComments:(id)arg1;

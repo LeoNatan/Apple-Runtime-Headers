@@ -19,8 +19,8 @@
     id <SGSuggestionDelegate> _suggestionDelegate;
 }
 
-@property(nonatomic) __weak id <SGSuggestionDelegate> suggestionDelegate; // @synthesize suggestionDelegate=_suggestionDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SGSuggestionDelegate> suggestionDelegate; // @synthesize suggestionDelegate=_suggestionDelegate;
 - (void)list:(id)arg1 didRemoveItem:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)list:(id)arg1 didAddItem:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)unlockNotifications;

@@ -26,11 +26,11 @@
 }
 
 + (id)syncIdWithPrefix:(id)arg1 identifier:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MSPHistoryEntryStorage *searchRequest; // @synthesize searchRequest=_searchRequest;
 @property(retain, nonatomic) MSPPinStorage *pin; // @synthesize pin=_pin;
 @property(retain, nonatomic) MSPBookmarkStorage *bookmark; // @synthesize bookmark=_bookmark;
 @property(retain, nonatomic) NSString *syncId; // @synthesize syncId=_syncId;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;

@@ -22,12 +22,12 @@
 }
 
 + (id)sharedServer;
+- (void).cxx_destruct;
 @property(retain) IDDiagnosticsStore *store; // @synthesize store=_store;
 @property(readonly) BOOL installFinished; // @synthesize installFinished=_installFinished;
 @property(retain) NSObject<OS_dispatch_queue> *connectionQueue; // @synthesize connectionQueue=_connectionQueue;
 @property(retain) NSMutableArray *clientConnections; // @synthesize clientConnections=_clientConnections;
 @property(retain) NSXPCListener *listener; // @synthesize listener=_listener;
-- (void).cxx_destruct;
 - (void)clearDiagnosticMessages:(CDUnknownBlockType)arg1;
 - (void)clearSingleDiagnosticMessage:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)recordDiagnosticMessage:(long long)arg1 withData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

@@ -14,9 +14,9 @@
     NSMutableSet *_entries;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *entries; // @synthesize entries=_entries;
 @property(retain, nonatomic) HMDVendorModelEntry *defaultEntry; // @synthesize defaultEntry=_defaultEntry;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)lookupProductData:(id)arg1;
 - (id)lookupModel:(id)arg1;

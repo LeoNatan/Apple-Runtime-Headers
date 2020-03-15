@@ -39,6 +39,7 @@
 }
 
 + (_Bool)authenticateFlowWithState:(struct cfil_crypto_state *)arg1 crypto_key:(id)arg2 flow:(id)arg3 salt:(unsigned int)arg4 isKernelSocket:(_Bool)arg5;
+- (void).cxx_destruct;
 @property int crypto_kernel_salt; // @synthesize crypto_kernel_salt=_crypto_kernel_salt;
 @property struct cfil_crypto_state *crypto_state; // @synthesize crypto_state=_crypto_state;
 @property(retain) NSObject<OS_dispatch_source> *sendFailedTimer; // @synthesize sendFailedTimer=_sendFailedTimer;
@@ -60,7 +61,6 @@
 @property(retain) NSExtension *dataExtension; // @synthesize dataExtension=_dataExtension;
 @property(readonly, nonatomic) NSString *pluginType; // @synthesize pluginType=_pluginType;
 @property(readonly) __weak id <NEPluginManagerObjectFactory> managerObjectFactory; // @synthesize managerObjectFactory=_managerObjectFactory;
-- (void).cxx_destruct;
 - (void)resetFilterSettings;
 - (void)handleStopCompleteWithError:(id)arg1;
 - (void)stopFilterExtensionWithReason:(int)arg1;

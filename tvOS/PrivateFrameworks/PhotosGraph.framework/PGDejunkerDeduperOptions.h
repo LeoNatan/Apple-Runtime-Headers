@@ -47,6 +47,7 @@
     NSSet *_identifiersOfRequiredItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *identifiersOfRequiredItems; // @synthesize identifiersOfRequiredItems=_identifiersOfRequiredItems;
 @property(nonatomic) double finalPassDedupingThreshold; // @synthesize finalPassDedupingThreshold=_finalPassDedupingThreshold;
 @property(nonatomic) double finalPassMaximumTimeGroupExtension; // @synthesize finalPassMaximumTimeGroupExtension=_finalPassMaximumTimeGroupExtension;
@@ -82,7 +83,6 @@
 @property(nonatomic) double identicalDedupingTimeIntervalForPeople; // @synthesize identicalDedupingTimeIntervalForPeople=_identicalDedupingTimeIntervalForPeople;
 @property(nonatomic) double identicalDedupingTimeInterval; // @synthesize identicalDedupingTimeInterval=_identicalDedupingTimeInterval;
 @property(nonatomic) _Bool doIdenticalDeduping; // @synthesize doIdenticalDeduping=_doIdenticalDeduping;
-- (void).cxx_destruct;
 - (id)description;
 - (id)dictionaryRepresentationRestrictingToGlobalOptions:(_Bool)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;

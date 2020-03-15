@@ -24,11 +24,11 @@ __attribute__((visibility("hidden")))
     id <MTLDevice> _device;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MTLDevice> device; // @synthesize device=_device;
 @property(readonly, nonatomic) unsigned long long drawableID; // @synthesize drawableID=_drawableID;
 @property(readonly, nonatomic) double presentedTime; // @synthesize presentedTime=_presentedTime;
 @property(readonly) CAMetalLayer *layer; // @synthesize layer=_layer;
-- (void).cxx_destruct;
 - (void)addPresentedHandler:(CDUnknownBlockType)arg1;
 @property(nonatomic) struct CGSize size;
 @property(nonatomic) unsigned long long pixelFormat;

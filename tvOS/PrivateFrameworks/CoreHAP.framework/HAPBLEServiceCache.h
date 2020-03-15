@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *cachedCharacteristics; // @synthesize cachedCharacteristics=_cachedCharacteristics;
 @property(retain, nonatomic) NSArray *linkedServices; // @synthesize linkedServices=_linkedServices;
 @property(nonatomic) unsigned long long serviceProperties; // @synthesize serviceProperties=_serviceProperties;
 @property(nonatomic) unsigned long long serviceInstanceOrder; // @synthesize serviceInstanceOrder=_serviceInstanceOrder;
 @property(readonly, nonatomic) NSNumber *serviceInstanceId; // @synthesize serviceInstanceId=_serviceInstanceId;
 @property(readonly, nonatomic) NSUUID *serviceUUID; // @synthesize serviceUUID=_serviceUUID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

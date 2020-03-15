@@ -6,7 +6,7 @@
 
 #import <NanoMailKitClient/WKNavigationDelegate-Protocol.h>
 
-@class NSArray, NSData, NSError, NSString, NSURL, WKBackForwardListItem, WKFrameInfo, WKNavigation, WKNavigationAction, WKWebView, WKWebpagePreferences, _WKContentRuleListAction;
+@class NSArray, NSData, NSError, NSString, NSURL, NSURLAuthenticationChallenge, WKBackForwardListItem, WKFrameInfo, WKNavigation, WKNavigationAction, WKWebView, WKWebpagePreferences, _WKContentRuleListAction;
 @protocol NSSecureCoding;
 
 @protocol WKNavigationDelegatePrivate <WKNavigationDelegate>
@@ -29,6 +29,7 @@
 - (void)_webViewWillEndNavigationGesture:(WKWebView *)arg1 withNavigationToBackForwardListItem:(WKBackForwardListItem *)arg2;
 - (void)_webViewDidEndNavigationGesture:(WKWebView *)arg1 withNavigationToBackForwardListItem:(WKBackForwardListItem *)arg2;
 - (void)_webViewDidBeginNavigationGesture:(WKWebView *)arg1;
+- (void)_webView:(WKWebView *)arg1 authenticationChallenge:(NSURLAuthenticationChallenge *)arg2 shouldAllowLegacyTLS:(void (^)(_Bool))arg3;
 - (NSData *)_webCryptoMasterKeyForWebView:(WKWebView *)arg1;
 - (void)_webViewWebProcessDidBecomeUnresponsive:(WKWebView *)arg1;
 - (void)_webViewWebProcessDidBecomeResponsive:(WKWebView *)arg1;

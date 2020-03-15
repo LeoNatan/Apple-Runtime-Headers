@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)reuseIdentifier;
-@property(retain, nonatomic) OBHeaderView *headerView; // @synthesize headerView=_headerView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) OBHeaderView *headerView; // @synthesize headerView=_headerView;
 - (id)reuseIdentifier;
 - (id)initWithTitle:(id)arg1;
 

@@ -21,6 +21,7 @@
     NSNumber *_callerPID;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSNumber *callerPID; // @synthesize callerPID=_callerPID;
 @property(readonly, nonatomic) NSXPCConnection *caller; // @synthesize caller=_caller;
 @property(retain) NSDictionary *parameters; // @synthesize parameters=_parameters;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property __weak id <TKTokenSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) TKToken *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *name;
 - (void)terminate;
 - (void)getAdvertisedItemsWithReply:(CDUnknownBlockType)arg1;

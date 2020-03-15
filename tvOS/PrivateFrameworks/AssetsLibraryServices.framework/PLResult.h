@@ -16,9 +16,9 @@
 
 + (id)failureWithError:(id)arg1;
 + (id)successWithResult:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSError *error; // @synthesize error=_error;
 @property(readonly) id result; // @synthesize result=_result;
-- (void).cxx_destruct;
 - (id)description;
 - (id)resultWithError:(id *)arg1;
 @property(readonly) _Bool isFailure;

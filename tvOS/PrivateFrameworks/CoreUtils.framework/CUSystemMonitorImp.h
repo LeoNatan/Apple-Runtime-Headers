@@ -6,14 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class CUBluetoothClient, CUNetInterfaceMonitor, CUSystemMonitor, CUWiFiManager, NSArray, NSData, NSMutableArray, NSString;
+#import <CoreUtils/FMFSessionDelegate-Protocol.h>
+
+@class CUBluetoothClient, CUNetInterfaceMonitor, CUSystemMonitor, CUWiFiManager, NSArray, NSData, NSMutableArray, NSMutableSet, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
-@interface CUSystemMonitorImp : NSObject
+@interface CUSystemMonitorImp : NSObject <FMFSessionDelegate>
 {
     NSObject<OS_dispatch_queue> *_dispatchQueue;
-    struct NSMutableSet *_monitors;
+    NSMutableSet *_monitors;
     CDStruct_83abfce7 _bluetoothAddress48;
     NSData *_bluetoothAddressData;
     CUBluetoothClient *_bluetoothClient;
@@ -25,6 +27,14 @@ __attribute__((visibility("hidden")))
     int _familyUpdatedToken;
     _Bool _manateeAvailable;
     _Bool _manateeObserving;
+    int _fmfDevicesChangedToken;
+    int _meDeviceChangedToken;
+    int _meDeviceRetryToken;
+    NSString *_meDeviceFMFDeviceID;
+    NSString *_meDeviceIDSDeviceID;
+    NSString *_meDeviceName;
+    _Bool _meDeviceIsMe;
+    _Bool _meDeviceValid;
     CUNetInterfaceMonitor *_netInterfaceMonitor;
     unsigned int _netFlags;
     CDUnion_fab80606 _primaryIPv4Addr;
@@ -82,6 +92,7 @@ __attribute__((visibility("hidden")))
 - (void)_rotatingIdentifierTimerFired;
 - (void)_rotatingIdentifierMonitorStop;
 - (void)_rotatingIdentifierMonitorStart;
+- (void)_primaryAppleIDChanged2:(_Bool)arg1;
 - (void)_primaryAppleIDChanged:(id)arg1;
 - (id)_primaryAppleIDAccount;
 - (void)_primaryAppleIDMonitorStop;
@@ -90,6 +101,8 @@ __attribute__((visibility("hidden")))
 - (void)_powerUnlimitedMonitorStart;
 - (void)_netInterfaceMonitorStop;
 - (void)_netInterfaceMonitorStart;
+- (void)_meDeviceCheckCompletion:(id)arg1 error:(id)arg2 firstCheck:(_Bool)arg3;
+- (void)_meDeviceCheckStart:(_Bool)arg1;
 - (void)_meDeviceMonitorStop;
 - (void)_meDeviceMonitorStart;
 - (void)_manateeChanged:(id)arg1;
@@ -109,6 +122,12 @@ __attribute__((visibility("hidden")))
 - (void)removeMonitor:(id)arg1;
 - (void)addMonitor:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -19,12 +19,12 @@
     BSProcessHandle *_processHandle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BSProcessHandle *processHandle; // @synthesize processHandle=_processHandle;
 @property(readonly, copy, nonatomic) NSSet *handles; // @synthesize handles=_handles;
 @property(readonly, copy, nonatomic) NSString *buttonTitle; // @synthesize buttonTitle=_buttonTitle;
 @property(copy, nonatomic) CDUnknownBlockType dialAction; // @synthesize dialAction=_dialAction;
 @property(retain, nonatomic) SBSRemoteAlertHandle *remoteAlertHandle; // @synthesize remoteAlertHandle=_remoteAlertHandle;
-- (void).cxx_destruct;
 - (void)remoteAlertHandle:(id)arg1 didInvalidateWithError:(id)arg2;
 - (void)remoteAlertHandleDidDeactivate:(id)arg1;
 - (void)remoteAlertHandleDidActivate:(id)arg1;

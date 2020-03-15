@@ -20,12 +20,12 @@
     struct CGPoint _approximateLocation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SXComponentAnchor> componentAnchor; // @synthesize componentAnchor=_componentAnchor;
 @property(readonly, nonatomic) NSArray *path; // @synthesize path=_path;
 @property(readonly, nonatomic) struct CGPoint approximateLocation; // @synthesize approximateLocation=_approximateLocation;
 @property(readonly, nonatomic) id <SXComponent> trailingComponent; // @synthesize trailingComponent=_trailingComponent;
 @property(readonly, nonatomic) id <SXComponent> leadingComponent; // @synthesize leadingComponent=_leadingComponent;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqualToMarker:(id)arg1;
 - (id)initWithLeadingComponent:(id)arg1 trailingComponent:(id)arg2 approximateLocation:(struct CGPoint)arg3 path:(id)arg4;

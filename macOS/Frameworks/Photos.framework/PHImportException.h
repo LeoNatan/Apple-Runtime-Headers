@@ -24,6 +24,7 @@
 + (id)logForMostImportantException:(id)arg1;
 + (id)mostImportantException:(id)arg1;
 + (id)exceptionWithMessage:(id)arg1 path:(id)arg2 importance:(unsigned long long)arg3 nsError:(id)arg4 file:(char *)arg5 line:(unsigned long long)arg6;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *createDate; // @synthesize createDate=_createDate;
 @property(readonly, nonatomic) NSError *nsError; // @synthesize nsError=_nsError;
 @property(readonly, nonatomic) unsigned long long lineNumber; // @synthesize lineNumber=_lineNumber;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
 @property(readonly, nonatomic) unsigned long long importance; // @synthesize importance=_importance;
 @property(readonly, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (id)logWithPrefix:(id)arg1;
 - (id)description;
 @property(readonly, nonatomic) BOOL isTerminal;

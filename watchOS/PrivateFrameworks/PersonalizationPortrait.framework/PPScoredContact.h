@@ -24,6 +24,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)scoredContactWithContact:(id)arg1 scoredPhoneNumbers:(id)arg2 scoredEmailAddresses:(id)arg3 scoredSocialProfiles:(id)arg4 scoredPostalAddresses:(id)arg5 score:(double)arg6 flags:(unsigned char)arg7;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *scoredPostalAddresses; // @synthesize scoredPostalAddresses=_scoredPostalAddresses;
 @property(readonly, nonatomic) NSArray *scoredSocialProfiles; // @synthesize scoredSocialProfiles=_scoredSocialProfiles;
 @property(readonly, nonatomic) NSArray *scoredEmailAddresses; // @synthesize scoredEmailAddresses=_scoredEmailAddresses;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) unsigned char flags; // @synthesize flags=_flags;
 @property(readonly, nonatomic) double score; // @synthesize score=_score;
 @property(readonly, nonatomic) PPContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (_Bool)isEqualToScoredContact:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

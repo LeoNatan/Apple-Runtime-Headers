@@ -26,13 +26,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *dataVal; // @synthesize dataVal=_dataVal;
 @property(nonatomic) _Bool boolVal; // @synthesize boolVal=_boolVal;
 @property(nonatomic) double doubleVal; // @synthesize doubleVal=_doubleVal;
 @property(nonatomic) float floatVal; // @synthesize floatVal=_floatVal;
 @property(nonatomic) long long intVal; // @synthesize intVal=_intVal;
 @property(retain, nonatomic) NSString *stringVal; // @synthesize stringVal=_stringVal;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

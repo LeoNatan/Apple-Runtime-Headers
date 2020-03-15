@@ -19,11 +19,11 @@
 
 + (id)extensionMatchingDictionariesForExtensionItems:(id)arg1;
 + (id)extensionBasedActivityForExtension:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) _UIMatchingExtensionsResult *primedExtensionsResult; // @synthesize primedExtensionsResult=_primedExtensionsResult;
 @property(retain) NSObject<OS_dispatch_queue> *primedExtensionsQueue; // @synthesize primedExtensionsQueue=_primedExtensionsQueue;
 @property(copy, nonatomic) CDUnknownBlockType fetchShortcutsBlock; // @synthesize fetchShortcutsBlock=_fetchShortcutsBlock;
 @property(copy, nonatomic) NSArray *extensionPointIdentifiers; // @synthesize extensionPointIdentifiers=_extensionPointIdentifiers;
-- (void).cxx_destruct;
 - (id)activitiesForMatchingContext:(id)arg1 error:(id *)arg2;
 - (void)primeWithDiscoveryContext:(id)arg1;
 - (void)dealloc;

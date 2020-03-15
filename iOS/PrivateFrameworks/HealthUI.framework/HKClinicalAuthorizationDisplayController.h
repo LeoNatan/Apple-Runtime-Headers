@@ -13,8 +13,8 @@
     HKClinicalSourceAuthorizationController *_authorizationController;
 }
 
-@property(readonly, nonatomic) HKClinicalSourceAuthorizationController *authorizationController; // @synthesize authorizationController=_authorizationController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HKClinicalSourceAuthorizationController *authorizationController; // @synthesize authorizationController=_authorizationController;
 @property(readonly, copy, nonatomic) HKSource *source;
 - (id)currentTimeTitleForReadAuthorizationModeFooterWithSelectedMode:(long long)arg1 formatBlock:(CDUnknownBlockType)arg2;
 - (id)committedTitleForReadAuthorizationModeFooterWithSelectedMode:(long long)arg1 formatBlock:(CDUnknownBlockType)arg2;

@@ -16,8 +16,8 @@
     id <NFResolver> _resolver;
 }
 
-@property(readonly, nonatomic) id <NFResolver> resolver; // @synthesize resolver=_resolver;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <NFResolver> resolver; // @synthesize resolver=_resolver;
 - (id)componentViewForComponent:(id)arg1;
 @property(readonly, nonatomic) int role;
 @property(readonly, nonatomic) NSString *type;

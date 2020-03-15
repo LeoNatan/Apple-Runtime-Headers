@@ -16,9 +16,9 @@
     TUSearchController *_searchController;
 }
 
+- (void).cxx_destruct;
 @property __weak TUSearchController *searchController; // @synthesize searchController=_searchController;
 @property(retain, nonatomic) CHRecentCall *recentCall; // @synthesize recentCall=_recentCall;
-- (void).cxx_destruct;
 @property(readonly) NSArray *idsCanonicalDestinations;
 @property(readonly) _Bool mostRecentCallWasMissed;
 @property(readonly) long long mostRecentCallType;

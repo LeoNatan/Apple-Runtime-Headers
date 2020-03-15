@@ -18,10 +18,10 @@
     UIColor *_linkColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *linkColor; // @synthesize linkColor=_linkColor;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(nonatomic) int context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)_messageAttributedStringWithTextColor:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1 style:(int)arg2;

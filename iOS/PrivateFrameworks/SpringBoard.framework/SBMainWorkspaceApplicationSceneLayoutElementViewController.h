@@ -30,6 +30,7 @@
     SBInlineAppExposeContainerViewController *_inlineAppExposeContainerOverlayViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBInlineAppExposeContainerViewController *inlineAppExposeContainerOverlayViewController; // @synthesize inlineAppExposeContainerOverlayViewController=_inlineAppExposeContainerOverlayViewController;
 @property(retain, nonatomic) SBSceneViewStatusBarAssertion *inlineAppExposeContainerStatusBarAssertion; // @synthesize inlineAppExposeContainerStatusBarAssertion=_inlineAppExposeContainerStatusBarAssertion;
 @property(nonatomic) double shadowOffset; // @synthesize shadowOffset=_shadowOffset;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) UIDropInteraction *dropInteraction; // @synthesize dropInteraction=_dropInteraction;
 @property(nonatomic) double darkenViewAlpha; // @synthesize darkenViewAlpha=_darkenViewAlpha;
 @property(nonatomic) _Bool clipsToBounds; // @synthesize clipsToBounds=_clipsToBounds;
-- (void).cxx_destruct;
 - (id)_deviceApplicationSceneViewController:(id)arg1;
 - (id)_deviceApplicationSceneViewController;
 - (id)_medusaDecoratedVC:(id)arg1;

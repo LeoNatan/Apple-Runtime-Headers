@@ -11,7 +11,7 @@
 @protocol CNContactCardWidget <NSObject>
 - (BOOL)shouldBeIncludedInKeyViewLoop;
 - (double)desiredHeight;
-- (void)commitEditing;
+- (BOOL)commitEditing;
 - (void)setContact:(CNContact *)arg1;
 
 @optional

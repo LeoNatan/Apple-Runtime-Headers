@@ -15,9 +15,9 @@
     IDSCKContainer *_container;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDSCKContainer *container; // @synthesize container=_container;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)setObject:(id)arg1 forKey:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchObjectForKey:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setData:(id)arg1 forKey:(id)arg2 completion:(CDUnknownBlockType)arg3;

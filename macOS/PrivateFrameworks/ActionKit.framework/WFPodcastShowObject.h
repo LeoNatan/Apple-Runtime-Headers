@@ -24,12 +24,12 @@
 + (id)childrenJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *children; // @synthesize children=_children;
 @property(readonly, nonatomic) NSURL *feedURL; // @synthesize feedURL=_feedURL;
 @property(readonly, nonatomic) NSString *storeId; // @synthesize storeId=_storeId;
 @property(readonly, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *wfName;
 
 // Remaining properties

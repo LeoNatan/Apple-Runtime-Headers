@@ -20,10 +20,10 @@
 + (id)settingsWithContactStore:(id)arg1;
 + (id)defaultSettings;
 + (_Bool)threeDTouchEnabledDefaultValue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PRPersonaStore *personaStore; // @synthesize personaStore=_personaStore;
 @property(nonatomic) _Bool threeDTouchEnabled; // @synthesize threeDTouchEnabled=_threeDTouchEnabled;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-- (void).cxx_destruct;
 - (id)initWithContactStore:(id)arg1 personaStore:(id)arg2 threeDTouchEnabled:(_Bool)arg3;
 
 @end

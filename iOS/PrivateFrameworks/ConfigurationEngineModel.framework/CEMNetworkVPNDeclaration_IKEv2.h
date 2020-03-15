@@ -39,6 +39,7 @@
 + (id)buildRequiredOnlyWithRemoteAddress:(id)arg1 withLocalIdentifier:(id)arg2 withRemoteIdentifier:(id)arg3 withAuthenticationMethod:(id)arg4;
 + (id)buildWithRemoteAddress:(id)arg1 withLocalIdentifier:(id)arg2 withRemoteIdentifier:(id)arg3 withAuthenticationMethod:(id)arg4 withPayloadCertificateUUID:(id)arg5 withSharedSecret:(id)arg6 withExtendedAuthEnabled:(id)arg7 withAuthName:(id)arg8 withDisableRedirect:(id)arg9 withDisableMOBIKE:(id)arg10 withUseConfigurationAttributeInternalIPSubnet:(id)arg11 withEnablePFS:(id)arg12 withEnableCertificateRevocationCheck:(id)arg13 withAuthPassword:(id)arg14 withDeadPeerDetectionRate:(id)arg15 withCertificateType:(id)arg16 withServerCertificateIssuerCommonName:(id)arg17 withServerCertificateCommonName:(id)arg18 withIKESecurityAssociationParameters:(id)arg19 withChildSecurityAssociationParameters:(id)arg20 withTLSMinimumVersion:(id)arg21 withTLSMaximumVersion:(id)arg22 withNATKeepAliveOffloadEnable:(id)arg23 withNATKeepAliveInterval:(id)arg24;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadNATKeepAliveInterval; // @synthesize payloadNATKeepAliveInterval=_payloadNATKeepAliveInterval;
 @property(copy, nonatomic) NSNumber *payloadNATKeepAliveOffloadEnable; // @synthesize payloadNATKeepAliveOffloadEnable=_payloadNATKeepAliveOffloadEnable;
 @property(copy, nonatomic) NSString *payloadTLSMaximumVersion; // @synthesize payloadTLSMaximumVersion=_payloadTLSMaximumVersion;
@@ -63,7 +64,6 @@
 @property(copy, nonatomic) NSString *payloadRemoteIdentifier; // @synthesize payloadRemoteIdentifier=_payloadRemoteIdentifier;
 @property(copy, nonatomic) NSString *payloadLocalIdentifier; // @synthesize payloadLocalIdentifier=_payloadLocalIdentifier;
 @property(copy, nonatomic) NSString *payloadRemoteAddress; // @synthesize payloadRemoteAddress=_payloadRemoteAddress;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

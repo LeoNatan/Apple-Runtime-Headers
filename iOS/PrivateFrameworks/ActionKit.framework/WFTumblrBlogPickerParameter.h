@@ -16,8 +16,8 @@
 
 + (id)referencedActionResourceClasses;
 + (void)initialize;
-@property(retain, nonatomic) WFTumblrAccessResource *tumblrAccessResource; // @synthesize tumblrAccessResource=_tumblrAccessResource;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFTumblrAccessResource *tumblrAccessResource; // @synthesize tumblrAccessResource=_tumblrAccessResource;
 - (id)localizedLabelForPossibleState:(id)arg1;
 @property(readonly, nonatomic) NSArray *possibleStates; // @synthesize possibleStates=_possibleStates;
 - (id)defaultSerializedRepresentation;

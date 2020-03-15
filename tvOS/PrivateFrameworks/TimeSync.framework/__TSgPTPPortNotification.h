@@ -13,8 +13,8 @@
     TSgPTPPort *_port;
 }
 
-@property(nonatomic) __weak TSgPTPPort *port; // @synthesize port=_port;
 - (void).cxx_destruct;
+@property(nonatomic) __weak TSgPTPPort *port; // @synthesize port=_port;
 
 @end
 

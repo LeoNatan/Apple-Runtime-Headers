@@ -50,6 +50,7 @@
     struct CGRect __mouseDownViewOriginalFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSCache *_systemFontCacheBySize; // @synthesize _systemFontCacheBySize=__systemFontCacheBySize;
 @property unsigned long long _localUndoGroupingLevel; // @synthesize _localUndoGroupingLevel=__localUndoGroupingLevel;
 @property unsigned long long _previewScanOrderIndex; // @synthesize _previewScanOrderIndex=__previewScanOrderIndex;
@@ -80,7 +81,6 @@
 @property(nonatomic) BOOL showGroupingPreview; // @synthesize showGroupingPreview=_showGroupingPreview;
 @property(nonatomic) __weak id <ACSHPanelViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak ACSHPanelElementView *editorFocusedView; // @synthesize editorFocusedView=_editorFocusedView;
-- (void).cxx_destruct;
 - (id)cachedSystemFontOfSize:(double)arg1;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (id)accessibilityAttributeValue:(id)arg1;

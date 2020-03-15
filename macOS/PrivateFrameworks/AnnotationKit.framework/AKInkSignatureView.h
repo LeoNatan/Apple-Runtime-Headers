@@ -20,13 +20,13 @@
     NSTrackingArea *_trackingArea;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTrackingArea *trackingArea; // @synthesize trackingArea=_trackingArea;
 @property(retain) PKDrawing *latestDrawing; // @synthesize latestDrawing=_latestDrawing;
 @property(copy) PKInk *ink; // @synthesize ink=_ink;
 @property(retain) PKCanvasView *canvasView; // @synthesize canvasView=_canvasView;
 @property BOOL hasStrokes; // @synthesize hasStrokes=_hasStrokes;
 @property(retain, nonatomic) NSColor *strokeColor; // @synthesize strokeColor=_strokeColor;
-- (void).cxx_destruct;
 - (void)canvasViewDrawingDidChange:(id)arg1;
 - (struct CGPath *)copyPotracedPathAndReturnDrawing:(id *)arg1;
 - (void)clear;

@@ -27,11 +27,11 @@
 + (id)serverRemoteObjectInterface;
 + (id)serverExportedInterface;
 + (id)machServiceName;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool monitorClientForSuspension; // @synthesize monitorClientForSuspension=_monitorClientForSuspension;
 @property(readonly, nonatomic) id <NRNSXPCConnectionProtocol> connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) id target; // @synthesize target=_target;
 @property(readonly, nonatomic) _Bool invalidated; // @synthesize invalidated=_invalidated;
-- (void).cxx_destruct;
 - (void)_invalidate;
 @property(readonly, nonatomic) id remoteObjectProxy;
 - (_Bool)hasEntitlements;

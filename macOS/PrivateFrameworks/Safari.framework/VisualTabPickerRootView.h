@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     VisualTabPickerViewController *_visualTabPickerViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak VisualTabPickerViewController *visualTabPickerViewController; // @synthesize visualTabPickerViewController=_visualTabPickerViewController;
 @property(readonly, nonatomic) VisualTabPickerCloudTabsView *cloudTabsView; // @synthesize cloudTabsView=_cloudTabsView;
 @property(readonly, nonatomic) VisualTabPickerSearchField *searchField; // @synthesize searchField=_searchField;
 @property(readonly, nonatomic) VisualTabPickerGridView *gridView; // @synthesize gridView=_gridView;
-- (void).cxx_destruct;
 - (BOOL)_isShowingSearchField;
 - (void)_didScroll:(id)arg1;
 - (void)setUpSubviews;

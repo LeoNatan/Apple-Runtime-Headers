@@ -22,11 +22,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
 @property(readonly, copy, nonatomic) NSDate *skipDate; // @synthesize skipDate=_skipDate;
 @property(readonly, copy, nonatomic) NSNumber *pauseTime; // @synthesize pauseTime=_pauseTime;
 @property(readonly, copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

@@ -11,6 +11,7 @@
 @protocol SBProximitySensorControlling <NSObject>
 @property(nonatomic) _Bool pocketTouchesExpected;
 @property(nonatomic, getter=isProximityDetectionEnabled) _Bool proximityDetectionEnabled;
+- (SBHIDUILockAssertion *)suspendMultitouchForSource:(long long)arg1 reason:(NSString *)arg2;
 - (SBHIDUILockAssertion *)suspendProximityDetectionAndMultitouchForSource:(long long)arg1 disableTapToWake:(_Bool)arg2 reason:(NSString *)arg3;
 - (SBHIDUILockAssertion *)suspendProximityDetectionForSource:(long long)arg1 reason:(NSString *)arg2;
 - (void)resetProximityCalibration;

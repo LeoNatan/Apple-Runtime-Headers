@@ -32,6 +32,7 @@
 }
 
 + (Class)otherVisibleSectionsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *engagementTargetUrl; // @synthesize engagementTargetUrl=_engagementTargetUrl;
 @property(retain, nonatomic) NSString *webEmbedId; // @synthesize webEmbedId=_webEmbedId;
 @property(retain, nonatomic) NSString *widgetUserId; // @synthesize widgetUserId=_widgetUserId;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) NSString *widgetSectionId; // @synthesize widgetSectionId=_widgetSectionId;
 @property(retain, nonatomic) NSString *sourceChannelId; // @synthesize sourceChannelId=_sourceChannelId;
 @property(retain, nonatomic) NSString *articleId; // @synthesize articleId=_articleId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

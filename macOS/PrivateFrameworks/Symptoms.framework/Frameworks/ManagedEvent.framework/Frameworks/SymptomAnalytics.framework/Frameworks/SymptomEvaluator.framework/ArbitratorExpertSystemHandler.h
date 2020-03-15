@@ -28,8 +28,8 @@ __attribute__((visibility("hidden")))
 + (id)configureClass:(id)arg1;
 + (id)sharedInstance;
 + (void)setInitializeAsHelper:(BOOL)arg1;
-@property unsigned long long externalStepper; // @synthesize externalStepper=_externalStepper;
 - (void).cxx_destruct;
+@property unsigned long long externalStepper; // @synthesize externalStepper=_externalStepper;
 - (void)_removeAllReportRecords;
 - (void)_removeReportRecordForKey:(id)arg1;
 - (void)_saveReportRecord:(id)arg1;

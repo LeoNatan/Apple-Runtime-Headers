@@ -45,6 +45,7 @@
 + (id)imageWithDeviceScreenScaleImageData:(id)arg1;
 + (id)imageWithData:(id)arg1;
 + (id)imageWithData:(id)arg1 scale:(float)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool allowsAnimated; // @synthesize allowsAnimated=_allowsAnimated;
 @property(readonly, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
@@ -54,7 +55,6 @@
 @property(nonatomic) int renderingMode; // @synthesize renderingMode=_renderingMode;
 @property(readonly, nonatomic) NSImage *NSImage; // @synthesize NSImage=_NSImage;
 @property(readonly, nonatomic) float scale; // @synthesize scale=_scale;
-- (void).cxx_destruct;
 - (struct CGAffineTransform)contentsTransformForDrawingWithSize:(struct CGSize)arg1 scale:(float)arg2;
 @property(readonly, nonatomic) struct CGImage *internalCGImage;
 @property(readonly, nonatomic) struct CGImageSource *internalImageSource;

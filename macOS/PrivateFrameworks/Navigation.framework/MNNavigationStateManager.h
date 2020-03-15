@@ -21,11 +21,11 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MNNavigationState *currentState; // @synthesize currentState=_currentState;
 @property(readonly, nonatomic) BOOL isStarted; // @synthesize isStarted=_isStarted;
 @property(nonatomic) __weak id <MNNavigationSessionManagerDelegate> navigationDelegate; // @synthesize navigationDelegate=_navigationDelegate;
 @property(readonly, nonatomic) GEOApplicationAuditToken *auditToken; // @synthesize auditToken=_auditToken;
-- (void).cxx_destruct;
 - (void)resumeRealtimeUpdatesForSubscriber:(id)arg1;
 - (void)pauseRealtimeUpdatesForSubscriber:(id)arg1;
 - (void)checkinForNavigationService:(CDUnknownBlockType)arg1;

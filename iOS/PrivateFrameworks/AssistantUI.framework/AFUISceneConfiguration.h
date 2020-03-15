@@ -27,6 +27,7 @@
 
 + (id)defaultSiriSceneConfigurationWithInitialBounds:(struct CGRect)arg1 onDisplay:(id)arg2;
 + (id)stringForDeactivationReason:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
 @property(nonatomic) long long userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
 @property(copy, nonatomic) FBSSceneParameters *sceneParameters; // @synthesize sceneParameters=_sceneParameters;
@@ -37,7 +38,6 @@
 @property(nonatomic) _Bool takeAssertionsWhenInBackground; // @synthesize takeAssertionsWhenInBackground=_takeAssertionsWhenInBackground;
 @property(nonatomic) long long launchIntent; // @synthesize launchIntent=_launchIntent;
 @property(nonatomic) _Bool foreground; // @synthesize foreground=_foreground;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_setupPlatformSpecificDefaultSettings;

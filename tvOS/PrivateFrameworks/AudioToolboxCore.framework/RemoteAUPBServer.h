@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     struct vector<NSObject<OS_dispatch_semaphore>*, std::__1::allocator<NSObject<OS_dispatch_semaphore>*>> replySemas;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) struct OpaqueAUPBServer *ref; // @synthesize ref;
 @property(retain, nonatomic) id <AUPBServing> proxyInterface; // @synthesize proxyInterface;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)signalAllSemaphores;
 - (void)removeSema:(id)arg1;
 - (void)addSema:(id)arg1;

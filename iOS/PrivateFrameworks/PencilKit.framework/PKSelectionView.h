@@ -44,6 +44,7 @@
     struct CGAffineTransform _userTransform;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGAffineTransform userTransform; // @synthesize userTransform=_userTransform;
 @property(copy, nonatomic) CDUnknownBlockType calculateSelectionHullBlock; // @synthesize calculateSelectionHullBlock=_calculateSelectionHullBlock;
 @property(retain, nonatomic) UIBezierPath *lassoPath; // @synthesize lassoPath=_lassoPath;
@@ -54,7 +55,6 @@
 @property(readonly, nonatomic) struct CGPoint offsetInTouchView; // @synthesize offsetInTouchView=_offsetInTouchView;
 @property(retain, nonatomic) PKStrokeSelection *strokeSelection; // @synthesize strokeSelection=_strokeSelection;
 @property(readonly, nonatomic) _Bool isDragging; // @synthesize isDragging=_isDragging;
-- (void).cxx_destruct;
 - (void)didBeginDraggingSelection;
 - (void)scrollContent:(struct CGPoint)arg1;
 - (id)strokesContainedBySelection:(id)arg1;
@@ -82,11 +82,13 @@
 - (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)duplicate:(id)arg1;
+- (void)paste:(id)arg1;
 - (void)delete:(id)arg1;
 - (void)copy:(id)arg1;
 - (void)cut:(id)arg1;
 - (void)toggleEditMenu;
 - (_Bool)canBecomeFirstResponder;
+- (id)keyCommands;
 - (long long)editingInteractionConfiguration;
 - (_Bool)lassoContainsPoint:(struct CGPoint)arg1;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;

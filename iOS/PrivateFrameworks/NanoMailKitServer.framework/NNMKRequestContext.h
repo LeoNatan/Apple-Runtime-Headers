@@ -19,6 +19,7 @@
     unsigned long long _messagesForSpecialMailbox;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long messagesForSpecialMailbox; // @synthesize messagesForSpecialMailbox=_messagesForSpecialMailbox;
 @property(nonatomic) unsigned long long resendInterval; // @synthesize resendInterval=_resendInterval;
 @property(nonatomic) _Bool hasProtectedMessages; // @synthesize hasProtectedMessages=_hasProtectedMessages;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSDate *beforeDate; // @synthesize beforeDate=_beforeDate;
 @property(retain, nonatomic) NSString *conversationId; // @synthesize conversationId=_conversationId;
 @property(retain, nonatomic) NSArray *mailboxes; // @synthesize mailboxes=_mailboxes;
-- (void).cxx_destruct;
 
 @end
 

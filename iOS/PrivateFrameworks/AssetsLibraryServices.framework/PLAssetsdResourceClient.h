@@ -10,6 +10,7 @@
 {
 }
 
+- (id)projectExtensionDataForProjectUuid:(id)arg1;
 - (_Bool)updateInternalResourcePath:(id)arg1 objectURI:(id)arg2 error:(id *)arg3;
 - (id)consolidateAssets:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)generateOnDemandResourcesForAsset:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

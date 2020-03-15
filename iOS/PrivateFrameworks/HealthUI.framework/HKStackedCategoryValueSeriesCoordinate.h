@@ -19,11 +19,11 @@
     struct CGPoint _end;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <HKGraphSeriesBlockCoordinateInfo> userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, nonatomic) long long pointStyle; // @synthesize pointStyle=_pointStyle;
 @property(readonly, nonatomic) struct CGPoint end; // @synthesize end=_end;
 @property(readonly, nonatomic) struct CGPoint start; // @synthesize start=_start;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) double endXValue;
 @property(readonly, nonatomic) double startXValue;

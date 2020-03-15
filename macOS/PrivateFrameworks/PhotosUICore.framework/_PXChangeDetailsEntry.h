@@ -15,10 +15,10 @@
     NSMutableArray *_subitemEntries;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *subitemEntries; // @synthesize subitemEntries=_subitemEntries;
 @property(nonatomic) long long index; // @synthesize index=_index;
 @property(readonly, nonatomic) PXMutableArrayChangeDetails *changeDetails; // @synthesize changeDetails=_changeDetails;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *subitemChangesByItem;
 - (void)updateWithSectionedChangeDetails:(id)arg1;
 - (void)addSubitemEntry:(id)arg1;

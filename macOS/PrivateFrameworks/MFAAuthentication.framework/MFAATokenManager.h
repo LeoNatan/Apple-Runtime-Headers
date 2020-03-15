@@ -13,9 +13,10 @@
     NSXPCConnection *_xpcConnection;
 }
 
++ (BOOL)isTokenValidForFeatures:(unsigned long long)arg1 token:(id)arg2;
 + (id)sharedManager;
-@property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void)confirmActivationForAuthToken:(id)arg1 withUUID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)confirmActivationForToken:(id)arg1 withUUID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)requestActivationForAuthToken:(id)arg1 withUUID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

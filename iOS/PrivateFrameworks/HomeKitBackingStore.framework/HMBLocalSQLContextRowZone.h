@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     NSUUID *_replication;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *replication; // @synthesize replication=_replication;
 @property(nonatomic) unsigned long long zoneRow; // @synthesize zoneRow=_zoneRow;
 @property(retain, nonatomic) id <HMBLocalZoneID> identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)debugDescription;
 - (id)initWithZoneRow:(unsigned long long)arg1 name:(id)arg2 token:(id)arg3;

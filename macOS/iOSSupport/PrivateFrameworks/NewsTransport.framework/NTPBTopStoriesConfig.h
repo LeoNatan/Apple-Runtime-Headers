@@ -29,6 +29,7 @@
 }
 
 + (Class)styleConfigsType;
+- (void).cxx_destruct;
 @property(nonatomic) long long badgesTimeout; // @synthesize badgesTimeout=_badgesTimeout;
 @property(retain, nonatomic) NSMutableArray *styleConfigs; // @synthesize styleConfigs=_styleConfigs;
 @property(nonatomic) long long cutoffTime; // @synthesize cutoffTime=_cutoffTime;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSString *channelId; // @synthesize channelId=_channelId;
 @property(nonatomic) BOOL promotingEnabled; // @synthesize promotingEnabled=_promotingEnabled;
 @property(nonatomic) BOOL pinningEnabled; // @synthesize pinningEnabled=_pinningEnabled;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

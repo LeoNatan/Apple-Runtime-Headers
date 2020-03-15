@@ -18,13 +18,13 @@
     unsigned long long _signpostId;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long signpostId; // @synthesize signpostId=_signpostId;
 @property unsigned char subtype; // @synthesize subtype=_subtype;
 @property unsigned char type; // @synthesize type=_type;
 @property(retain) NSDate *endTime; // @synthesize endTime=_endTime;
 @property(retain) NSDate *startTime; // @synthesize startTime=_startTime;
 @property(retain) id uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (id)description;
 - (double)duration;
 - (void)stop;

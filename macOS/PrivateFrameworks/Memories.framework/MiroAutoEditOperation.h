@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     MiroAutoEditController *_autoEditController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int requestID; // @synthesize requestID=_requestID;
 @property(retain) MiroAutoEditController *autoEditController; // @synthesize autoEditController=_autoEditController;
 @property(retain, nonatomic) MiroCloudDownloader *cloudDownloader; // @synthesize cloudDownloader=_cloudDownloader;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(copy) CDUnknownBlockType cleanupHandler; // @synthesize cleanupHandler=_cleanupHandler;
 @property(retain) MiroMemory *memory; // @synthesize memory=_memory;
 @property(retain) MiroAutoEditor *autoEditorParent; // @synthesize autoEditorParent=_autoEditorParent;
-- (void).cxx_destruct;
 - (void)_downloadWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)finished;
 - (void)start;

@@ -19,9 +19,9 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool offsetPresent; // @synthesize offsetPresent=_offsetPresent;
 @property(retain, nonatomic) NSString *significantEvent; // @synthesize significantEvent=_significantEvent;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

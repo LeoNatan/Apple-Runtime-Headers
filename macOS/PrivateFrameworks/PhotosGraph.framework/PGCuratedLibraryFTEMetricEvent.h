@@ -18,10 +18,10 @@
     NSDictionary *_payload;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(readonly, nonatomic) PGGraph *graph; // @synthesize graph=_graph;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)gatherMetricsWithProgressBlock:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSDictionary *payload; // @synthesize payload=_payload;

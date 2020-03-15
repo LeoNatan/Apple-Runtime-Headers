@@ -21,10 +21,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long arrivalDate; // @synthesize arrivalDate=_arrivalDate;
 @property(retain, nonatomic) HDAWDHealthKitRoutineLocation *location; // @synthesize location=_location;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

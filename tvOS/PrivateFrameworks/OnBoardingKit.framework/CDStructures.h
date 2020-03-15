@@ -15,10 +15,6 @@ struct CGSize {
     double _field2;
 };
 
-struct UIViewController {
-    Class _field1;
-};
-
 #pragma mark Typedef'd Structures
 
 typedef struct {

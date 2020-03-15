@@ -16,10 +16,10 @@
     unsigned long long _types;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long types; // @synthesize types=_types;
 @property(readonly, nonatomic) id <SXComponentInteractionHandler> handler; // @synthesize handler=_handler;
 @property(readonly, nonatomic) __weak SXComponentView *componentView; // @synthesize componentView=_componentView;
-- (void).cxx_destruct;
 - (_Bool)handlesType:(unsigned long long)arg1;
 - (id)initWithComponentView:(id)arg1 handler:(id)arg2 types:(unsigned long long)arg3;
 

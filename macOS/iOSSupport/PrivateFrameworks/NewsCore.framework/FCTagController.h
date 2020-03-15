@@ -27,6 +27,7 @@
 
 + (BOOL)isTagAllowedInContentStoreFront:(id)arg1;
 + (BOOL)isTagAllowed:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *prefetchedTags; // @synthesize prefetchedTags=_prefetchedTags;
 @property(retain, nonatomic) FCOperationThrottler *tagPrefetchThrottler; // @synthesize tagPrefetchThrottler=_tagPrefetchThrottler;
 @property(retain, nonatomic) NSCache *fastCache; // @synthesize fastCache=_fastCache;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) FCTagRecordSource *tagRecordSource; // @synthesize tagRecordSource=_tagRecordSource;
 @property(retain, nonatomic) FCAssetManager *assetManager; // @synthesize assetManager=_assetManager;
 @property(retain, nonatomic) FCCKContentDatabase *contentDatabase; // @synthesize contentDatabase=_contentDatabase;
-- (void).cxx_destruct;
 - (id)jsonEncodableObject;
 - (void)operationThrottler:(id)arg1 performAsyncOperationWithCompletion:(CDUnknownBlockType)arg2;
 - (void)configurationManager:(id)arg1 configurationDidChange:(id)arg2;

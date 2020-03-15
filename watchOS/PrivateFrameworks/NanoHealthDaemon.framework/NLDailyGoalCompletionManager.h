@@ -23,9 +23,9 @@
 }
 
 + (id)submanagerIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NLCoachingSubmanagerDelegate> coachingSubmanagerDelegate; // @synthesize coachingSubmanagerDelegate;
 @property(nonatomic) __weak FITypicalDayActivityModel *typicalDayModel; // @synthesize typicalDayModel;
-- (void).cxx_destruct;
 - (long long)_activitySummaryIndexForDate:(id)arg1;
 - (_Bool)requiresCoachingConditionsOnRequests;
 - (int)minimumRecentActiveDays;

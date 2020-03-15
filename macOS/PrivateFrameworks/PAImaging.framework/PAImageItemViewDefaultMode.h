@@ -19,8 +19,8 @@
 
 + (id)defaultModeForImageType:(id)arg1;
 + (id)defaultMode;
-@property(retain) PAImageType *imageType; // @synthesize imageType=_imageType;
 - (void).cxx_destruct;
+@property(retain) PAImageType *imageType; // @synthesize imageType=_imageType;
 - (BOOL)willLoadPreviewImage;
 - (void)deactivateWithView:(id)arg1;
 - (void)activateWithView:(id)arg1;

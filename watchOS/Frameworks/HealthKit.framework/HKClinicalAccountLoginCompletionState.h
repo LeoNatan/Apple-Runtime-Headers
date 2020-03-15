@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool wasRelogin; // @synthesize wasRelogin=_wasRelogin;
 @property(copy, nonatomic) NSNumber *alternateCredentialPersistentID; // @synthesize alternateCredentialPersistentID=_alternateCredentialPersistentID;
 @property(readonly, nonatomic) HKClinicalAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

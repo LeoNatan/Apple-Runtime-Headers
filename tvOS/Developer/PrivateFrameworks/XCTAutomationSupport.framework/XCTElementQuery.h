@@ -29,7 +29,9 @@
 
 + (id)_firstMatchTransformerSubarraysFromArray:(id)arg1 trailingMatchAllTransformers:(id *)arg2;
 + (void)provideCapabilitiesToBuilder:(id)arg1;
++ (id)_descriptionForTransformerArray:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property _Bool useLegacyElementType; // @synthesize useLegacyElementType=_useLegacyElementType;
 @property(readonly, copy) NSArray *transformers; // @synthesize transformers=_transformers;
 @property(copy, nonatomic) CDUnknownBlockType evaluationContext; // @synthesize evaluationContext=_evaluationContext;
@@ -41,7 +43,6 @@
 @property(readonly) _Bool isMacOS; // @synthesize isMacOS=_isMacOS;
 @property(readonly) unsigned long long options; // @synthesize options=_options;
 @property(readonly, copy) XCAccessibilityElement *rootElement; // @synthesize rootElement=_rootElement;
-- (void).cxx_destruct;
 - (id)_allMatchingSnapshotsForInput:(id)arg1 transformers:(id)arg2 relatedElements:(id *)arg3 noMatchesMessage:(id *)arg4 error:(id *)arg5;
 - (id)_firstMatchingSnapshotForInput:(id)arg1 transformers:(id)arg2 relatedElements:(id *)arg3 noMatchesMessage:(id *)arg4 error:(id *)arg5;
 - (id)_firstMatchingSnapshotForInput:(id)arg1 transformersSubarrays:(id)arg2 relatedElements:(id *)arg3 noMatchesMessage:(id *)arg4 error:(id *)arg5;
@@ -59,7 +60,6 @@
 @property(readonly) unsigned long long hash;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-@property(readonly) _Bool supportsRemoteEvaluation;
 - (id)initWithRootElement:(id)arg1 transformers:(id)arg2 options:(unsigned long long)arg3 isMacOS:(_Bool)arg4 timeoutControls:(id)arg5;
 - (id)initWithRootElement:(id)arg1 transformers:(id)arg2 options:(unsigned long long)arg3 isMacOS:(_Bool)arg4;
 - (id)initWithRootElement:(id)arg1 transformers:(id)arg2 options:(unsigned long long)arg3;

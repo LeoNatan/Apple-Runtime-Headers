@@ -18,12 +18,12 @@
 }
 
 + (id)infoForCategory:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool supportsSmartReplies; // @synthesize supportsSmartReplies=_supportsSmartReplies;
 @property(readonly, nonatomic) NSString *defaultsChangedNotificationName; // @synthesize defaultsChangedNotificationName=_defaultsChangedNotificationName;
 @property(readonly, nonatomic) NSString *defaultsKey; // @synthesize defaultsKey=_defaultsKey;
 @property(readonly, nonatomic) NSString *defaultsDomain; // @synthesize defaultsDomain=_defaultsDomain;
 @property(readonly, nonatomic) unsigned long long defaultCount; // @synthesize defaultCount=_defaultCount;
-- (void).cxx_destruct;
 
 @end
 

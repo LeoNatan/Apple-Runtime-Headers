@@ -17,9 +17,9 @@
     unsigned long long _spinnerColor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long spinnerColor; // @synthesize spinnerColor=_spinnerColor;
 @property(retain, nonatomic) NSError *loadingError; // @synthesize loadingError=_loadingError;
-- (void).cxx_destruct;
 - (void)_updateLoadingSpinner;
 - (void)_updateLoadingText;
 - (void)_commonInit;

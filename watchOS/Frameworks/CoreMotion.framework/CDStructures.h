@@ -10,6 +10,8 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct ALSData;
+
 struct ARSessionState;
 
 struct Accel;
@@ -430,6 +432,7 @@ struct Item {
     struct unique_ptr<CMMsl::AccessoryWake, std::__1::default_delete<CMMsl::AccessoryWake>> _accessoryWake;
     struct unique_ptr<CMMsl::AccessoryWakeDebug, std::__1::default_delete<CMMsl::AccessoryWakeDebug>> _accessoryWakeDebug;
     struct unique_ptr<CMMsl::AirpodEvent, std::__1::default_delete<CMMsl::AirpodEvent>> _airpodEvent;
+    struct unique_ptr<CMMsl::ALSData, std::__1::default_delete<CMMsl::ALSData>> _alsData;
     struct unique_ptr<CMMsl::AnchorCorrection, std::__1::default_delete<CMMsl::AnchorCorrection>> _anchorCorrection;
     struct unique_ptr<CMMsl::ARSessionState, std::__1::default_delete<CMMsl::ARSessionState>> _arSessionState;
     struct unique_ptr<CMMsl::AudioAccessoryDeviceMotion, std::__1::default_delete<CMMsl::AudioAccessoryDeviceMotion>> _audioAccessoryDeviceMotion;
@@ -518,6 +521,7 @@ struct Item {
     struct unique_ptr<CMMsl::PressureGps, std::__1::default_delete<CMMsl::PressureGps>> _pressureGps;
     struct unique_ptr<CMMsl::PressureOscarEmu, std::__1::default_delete<CMMsl::PressureOscarEmu>> _pressureOscarEmu;
     struct unique_ptr<CMMsl::Prox, std::__1::default_delete<CMMsl::Prox>> _prox;
+    struct unique_ptr<CMMsl::RelativeDeviceMotionCorrelatedMotion, std::__1::default_delete<CMMsl::RelativeDeviceMotionCorrelatedMotion>> _relativeDeviceMotionCorrelatedMotion;
     struct unique_ptr<CMMsl::RelativeDeviceMotionInternal, std::__1::default_delete<CMMsl::RelativeDeviceMotionInternal>> _relativeDeviceMotionInternal;
     struct unique_ptr<CMMsl::RelativeGravityConstraints, std::__1::default_delete<CMMsl::RelativeGravityConstraints>> _relativeGravityConstraints;
     struct unique_ptr<CMMsl::RelativeGravityCorrection, std::__1::default_delete<CMMsl::RelativeGravityCorrection>> _relativeGravityCorrection;
@@ -545,6 +549,7 @@ struct Item {
     struct unique_ptr<CMMsl::WatchOrientationSettings, std::__1::default_delete<CMMsl::WatchOrientationSettings>> _watchOrientationSettings;
     struct unique_ptr<CMMsl::WifiScanResults, std::__1::default_delete<CMMsl::WifiScanResults>> _wifiScanResults;
     struct unique_ptr<CMMsl::WorkoutEvent, std::__1::default_delete<CMMsl::WorkoutEvent>> _workoutEvent;
+    struct unique_ptr<CMMsl::WorkoutRecorderALSData, std::__1::default_delete<CMMsl::WorkoutRecorderALSData>> _workoutRecorderALSData;
     struct unique_ptr<CMMsl::WorkoutRecorderAccel, std::__1::default_delete<CMMsl::WorkoutRecorderAccel>> _workoutRecorderAccel;
     struct unique_ptr<CMMsl::WorkoutRecorderAccel800, std::__1::default_delete<CMMsl::WorkoutRecorderAccel800>> _workoutRecorderAccel800;
     struct unique_ptr<CMMsl::WorkoutRecorderBodyMetrics, std::__1::default_delete<CMMsl::WorkoutRecorderBodyMetrics>> _workoutRecorderBodyMetrics;
@@ -662,6 +667,8 @@ struct ReaderIterator {
     struct Item fItem;
 };
 
+struct RelativeDeviceMotionCorrelatedMotion;
+
 struct RelativeDeviceMotionInternal;
 
 struct RelativeGravityConstraints;
@@ -731,6 +738,8 @@ struct WatchOrientationSettings;
 struct WifiScanResults;
 
 struct WorkoutEvent;
+
+struct WorkoutRecorderALSData;
 
 struct WorkoutRecorderAccel;
 
@@ -928,6 +937,12 @@ struct shared_ptr<int> {
 struct unique_ptr<CLDeviceMotionLiteService, std::__1::default_delete<CLDeviceMotionLiteService>> {
     struct __compressed_pair<CLDeviceMotionLiteService *, std::__1::default_delete<CLDeviceMotionLiteService>> {
         struct CLDeviceMotionLiteService *__value_;
+    } __ptr_;
+};
+
+struct unique_ptr<CMMsl::ALSData, std::__1::default_delete<CMMsl::ALSData>> {
+    struct __compressed_pair<CMMsl::ALSData *, std::__1::default_delete<CMMsl::ALSData>> {
+        struct ALSData *__value_;
     } __ptr_;
 };
 
@@ -1585,6 +1600,12 @@ struct unique_ptr<CMMsl::Prox, std::__1::default_delete<CMMsl::Prox>> {
     } __ptr_;
 };
 
+struct unique_ptr<CMMsl::RelativeDeviceMotionCorrelatedMotion, std::__1::default_delete<CMMsl::RelativeDeviceMotionCorrelatedMotion>> {
+    struct __compressed_pair<CMMsl::RelativeDeviceMotionCorrelatedMotion *, std::__1::default_delete<CMMsl::RelativeDeviceMotionCorrelatedMotion>> {
+        struct RelativeDeviceMotionCorrelatedMotion *__value_;
+    } __ptr_;
+};
+
 struct unique_ptr<CMMsl::RelativeDeviceMotionInternal, std::__1::default_delete<CMMsl::RelativeDeviceMotionInternal>> {
     struct __compressed_pair<CMMsl::RelativeDeviceMotionInternal *, std::__1::default_delete<CMMsl::RelativeDeviceMotionInternal>> {
         struct RelativeDeviceMotionInternal *__value_;
@@ -1744,6 +1765,12 @@ struct unique_ptr<CMMsl::WifiScanResults, std::__1::default_delete<CMMsl::WifiSc
 struct unique_ptr<CMMsl::WorkoutEvent, std::__1::default_delete<CMMsl::WorkoutEvent>> {
     struct __compressed_pair<CMMsl::WorkoutEvent *, std::__1::default_delete<CMMsl::WorkoutEvent>> {
         struct WorkoutEvent *__value_;
+    } __ptr_;
+};
+
+struct unique_ptr<CMMsl::WorkoutRecorderALSData, std::__1::default_delete<CMMsl::WorkoutRecorderALSData>> {
+    struct __compressed_pair<CMMsl::WorkoutRecorderALSData *, std::__1::default_delete<CMMsl::WorkoutRecorderALSData>> {
+        struct WorkoutRecorderALSData *__value_;
     } __ptr_;
 };
 

@@ -19,11 +19,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long fmfProvisionedState; // @synthesize fmfProvisionedState=_fmfProvisionedState;
 @property(retain, nonatomic) NSString *establishingAccountID; // @synthesize establishingAccountID=_establishingAccountID;
 @property(retain, nonatomic) FMFDevice *activeDevice; // @synthesize activeDevice=_activeDevice;
 @property(retain, nonatomic) FMFSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (id)fmfGroupIdGroup;
 - (id)fmfGroupIdOneToOne;
 - (Class)__FMFSessionClass;

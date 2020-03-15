@@ -24,12 +24,14 @@
     _Bool _bravoConstituentPhotoDeliveryEnabled;
     _Bool _momentCaptureMovieRecordingEnabled;
     int _maxQualityPrioritization;
+    _Bool _deferredProcessingEnabled;
     _Bool _digitalFlashCaptureEnabled;
     _Bool _irisFrameHarvestingEnabled;
 }
 
 @property(nonatomic) _Bool irisFrameHarvestingEnabled; // @synthesize irisFrameHarvestingEnabled=_irisFrameHarvestingEnabled;
 @property(nonatomic) _Bool digitalFlashCaptureEnabled; // @synthesize digitalFlashCaptureEnabled=_digitalFlashCaptureEnabled;
+@property(nonatomic) _Bool deferredProcessingEnabled; // @synthesize deferredProcessingEnabled=_deferredProcessingEnabled;
 @property(nonatomic) int maxQualityPrioritization; // @synthesize maxQualityPrioritization=_maxQualityPrioritization;
 @property(nonatomic) _Bool momentCaptureMovieRecordingEnabled; // @synthesize momentCaptureMovieRecordingEnabled=_momentCaptureMovieRecordingEnabled;
 @property(nonatomic) _Bool bravoConstituentPhotoDeliveryEnabled; // @synthesize bravoConstituentPhotoDeliveryEnabled=_bravoConstituentPhotoDeliveryEnabled;

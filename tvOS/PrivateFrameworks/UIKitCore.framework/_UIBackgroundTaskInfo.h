@@ -14,8 +14,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _taskId;
     CDUnknownBlockType _expireHandler;
     BKSProcessAssertion *_processAssertion;
-    int _count;
     NSString *_taskName;
+    long long _creationTime;
+    _Bool _alreadyWarnedAboutExpiration;
 }
 
 + (id)backgroundTaskAssertionQueue;

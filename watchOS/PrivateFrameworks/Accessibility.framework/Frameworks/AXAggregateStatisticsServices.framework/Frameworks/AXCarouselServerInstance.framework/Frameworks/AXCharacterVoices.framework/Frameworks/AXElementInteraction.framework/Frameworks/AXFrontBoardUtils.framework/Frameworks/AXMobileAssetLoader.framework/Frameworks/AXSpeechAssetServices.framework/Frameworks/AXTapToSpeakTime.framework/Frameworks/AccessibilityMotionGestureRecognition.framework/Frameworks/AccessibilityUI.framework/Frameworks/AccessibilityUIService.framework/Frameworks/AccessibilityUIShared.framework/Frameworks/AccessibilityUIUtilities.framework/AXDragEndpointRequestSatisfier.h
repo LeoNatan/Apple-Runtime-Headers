@@ -17,8 +17,8 @@
     id <AXDragEndpointRequestSatisfierDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <AXDragEndpointRequestSatisfierDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AXDragEndpointRequestSatisfierDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)requestDragEndpoint:(CDUnknownBlockType)arg1;
 - (id)initWithConnection:(id)arg1;
 

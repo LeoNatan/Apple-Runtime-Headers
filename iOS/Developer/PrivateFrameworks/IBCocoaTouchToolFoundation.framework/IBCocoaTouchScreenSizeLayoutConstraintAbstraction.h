@@ -16,10 +16,10 @@
     unsigned long long _attribute;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long attribute; // @synthesize attribute=_attribute;
 @property(nonatomic) double size; // @synthesize size=_size;
 @property(retain, nonatomic) NSObject<IBAutolayoutItem> *topLevelView; // @synthesize topLevelView=_topLevelView;
-- (void).cxx_destruct;
 - (id)makeRepresentingConstraintWithProvider:(id)arg1;
 - (id)constraintInDocument;
 - (unsigned long long)hash;

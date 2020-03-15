@@ -20,12 +20,12 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSMutableDictionary *serverConnectionsByComponentId; // @synthesize serverConnectionsByComponentId=_serverConnectionsByComponentId;
 @property(retain, nonatomic) HDPeriodicActivity *scheduler; // @synthesize scheduler=_scheduler;
 @property(retain, nonatomic) ACHEarnedInstanceStore *earnedInstanceStore; // @synthesize earnedInstanceStore=_earnedInstanceStore;
-@property(retain, nonatomic) HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
+@property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (id)_serverConnectionForComponentId:(unsigned int)arg1;
 - (_Bool)_submitMetric:(id)arg1 container:(id)arg2 connection:(id)arg3;
 - (_Bool)_computeAndSubmitAchievementCountMetric;

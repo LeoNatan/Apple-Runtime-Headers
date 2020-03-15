@@ -20,10 +20,10 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property __weak PPSecPrivacyViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (BOOL)performSystemAdministrationBlock:(CDUnknownBlockType)arg1;
 - (BOOL)isAutorized;
 - (void)deauthorize;

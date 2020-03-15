@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     double _normalizedCurrentValue;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *previewLayers; // @synthesize previewLayers=_previewLayers;
 @property double normalizedCurrentValue; // @synthesize normalizedCurrentValue=_normalizedCurrentValue;
-- (void).cxx_destruct;
 - (struct CGPath *)_createPathWithRightCornersRoundedInRect:(struct CGRect)arg1 cornerRadius:(double)arg2;
 - (void)layoutSublayersOfLayer:(id)arg1;
 - (void)setFrame:(struct CGRect)arg1;

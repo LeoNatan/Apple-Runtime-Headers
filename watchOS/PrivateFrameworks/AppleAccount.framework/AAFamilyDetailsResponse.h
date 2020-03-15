@@ -22,6 +22,7 @@
     NSString *_childAccountButtonTitle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *childAccountButtonTitle; // @synthesize childAccountButtonTitle=_childAccountButtonTitle;
 @property(readonly, nonatomic) NSString *childAccountPrompt; // @synthesize childAccountPrompt=_childAccountPrompt;
 @property(readonly, nonatomic) NSString *addMemberInstructions; // @synthesize addMemberInstructions=_addMemberInstructions;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) AAFamilyMember *me; // @synthesize me=_me;
 @property(readonly, nonatomic) AAFamilyMember *organizer; // @synthesize organizer=_organizer;
 @property(readonly, nonatomic) NSArray *members; // @synthesize members=_members;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *firstNames;
 @property(readonly, nonatomic) int pendingInviteCount;
 @property(readonly, nonatomic) int pendingMemberCount;

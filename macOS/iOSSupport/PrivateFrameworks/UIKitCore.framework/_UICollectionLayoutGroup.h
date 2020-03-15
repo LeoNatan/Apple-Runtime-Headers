@@ -13,7 +13,7 @@
 
 @interface _UICollectionLayoutGroup : _UICollectionLayoutItem <NSCopying, _UICollectionLayoutAPIRespresenting>
 {
-    int _layoutAxis;
+    unsigned long long _layoutAxis;
     BOOL _isCustomGroup;
     NSArray *_subitems;
     long long _count;
@@ -28,7 +28,7 @@
 }
 
 + (id)customGroupWithSize:(id)arg1 frameProvider:(CDUnknownBlockType)arg2;
-+ (id)groupWithLayoutAxis:(int)arg1 size:(id)arg2 subitems:(id)arg3 count:(long long)arg4;
++ (id)groupWithLayoutAxis:(unsigned long long)arg1 size:(id)arg2 subitems:(id)arg3 count:(long long)arg4;
 + (id)layoutGroupWithSize:(id)arg1 visualFormats:(id)arg2 itemProvider:(CDUnknownBlockType)arg3;
 + (id)verticalGroupWithSize:(id)arg1 subitemsProvider:(CDUnknownBlockType)arg2;
 + (id)horizontalGroupWithSize:(id)arg1 subitemsProvider:(CDUnknownBlockType)arg2;
@@ -36,8 +36,8 @@
 + (id)verticalGroupWithSize:(id)arg1 subitem:(id)arg2 count:(long long)arg3;
 + (id)horizontalGroupWithSize:(id)arg1 subitems:(id)arg2;
 + (id)horizontalGroupWithSize:(id)arg1 subitem:(id)arg2 count:(long long)arg3;
-@property(nonatomic) long long groupOptions; // @synthesize groupOptions=_groupOptions;
 - (void).cxx_destruct;
+@property(nonatomic) long long groupOptions; // @synthesize groupOptions=_groupOptions;
 - (id)_apiRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)visualDescription;
@@ -46,7 +46,7 @@
 @property(readonly, nonatomic) BOOL isHorizontalGroup;
 @property(copy, nonatomic) _UICollectionLayoutSpacing *interItemSpacing;
 @property(copy, nonatomic) NSArray *supplementaryItems;
-- (id)initWithlayoutSize:(id)arg1 contentInsets:(struct NSDirectionalEdgeInsets)arg2 layoutAxis:(int)arg3 isCustomGroup:(BOOL)arg4 subitems:(id)arg5 count:(long long)arg6 supplementaryItems:(id)arg7 interItemSpacing:(id)arg8 groupOptions:(long long)arg9 subitemsProvider:(CDUnknownBlockType)arg10 frameProvider:(CDUnknownBlockType)arg11 customGroupItemProvider:(CDUnknownBlockType)arg12 visualFormats:(id)arg13 visualFormatProvider:(CDUnknownBlockType)arg14;
+- (id)initWithlayoutSize:(id)arg1 contentInsets:(struct NSDirectionalEdgeInsets)arg2 layoutAxis:(unsigned long long)arg3 isCustomGroup:(BOOL)arg4 subitems:(id)arg5 count:(long long)arg6 supplementaryItems:(id)arg7 interItemSpacing:(id)arg8 groupOptions:(long long)arg9 subitemsProvider:(CDUnknownBlockType)arg10 frameProvider:(CDUnknownBlockType)arg11 customGroupItemProvider:(CDUnknownBlockType)arg12 visualFormats:(id)arg13 visualFormatProvider:(CDUnknownBlockType)arg14;
 
 @end
 

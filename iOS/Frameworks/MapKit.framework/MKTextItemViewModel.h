@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_values;
 }
 
-@property(copy, nonatomic) NSArray *values; // @synthesize values=_values;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *values; // @synthesize values=_values;
 - (id)stringsForRowAtIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfRows;
 - (id)initWithTextItemContainer:(id)arg1 labelsFont:(id)arg2 labelsSpacing:(double)arg3 maxWidth:(double)arg4;

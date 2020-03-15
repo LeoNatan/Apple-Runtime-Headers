@@ -10,6 +10,7 @@
 #import <Safari/CALayerDelegate-Protocol.h>
 #import <Safari/DelayedPopUpRolloverImageButtonDelegate-Protocol.h>
 #import <Safari/NSAnimationDelegate-Protocol.h>
+#import <Safari/NSViewLayerContentScaleDelegate-Protocol.h>
 #import <Safari/UnifiedFieldEditorDelegate-Protocol.h>
 #import <Safari/WBSFluidProgressControllerDelegate-Protocol.h>
 
@@ -17,7 +18,7 @@
 @protocol UnifiedFieldDelegate;
 
 __attribute__((visibility("hidden")))
-@interface UnifiedField : NSTextField <CAAnimationDelegate, CALayerDelegate, DelayedPopUpRolloverImageButtonDelegate, WBSFluidProgressControllerDelegate, NSAnimationDelegate, UnifiedFieldEditorDelegate>
+@interface UnifiedField : NSTextField <CAAnimationDelegate, CALayerDelegate, DelayedPopUpRolloverImageButtonDelegate, NSAnimationDelegate, NSViewLayerContentScaleDelegate, UnifiedFieldEditorDelegate, WBSFluidProgressControllerDelegate>
 {
     NSTimer *_truncationUpdateTimer;
     NSString *_reflectedURLString;
@@ -58,7 +59,6 @@ __attribute__((visibility("hidden")))
     BOOL _siteIconIsUnderMouse;
     WebBookmark *_bookmarkToDragFromSiteIcon;
     BOOL _securityPillIsUnderMouse;
-    NSString *_evCertificateTitle;
     double _minProgressPosition;
     TextFieldThatIgnoresClicks *_hintTextField;
     double _lastHintTextWidth;
@@ -100,6 +100,7 @@ __attribute__((visibility("hidden")))
     BOOL _shouldLayOutAsFirstResponder;
     WBSFaviconRequestsController *_requestsController;
     NSColor *_textColor;
+    struct CGRect _frameAvailableForMainContent;
     BOOL _showingMagnifyingGlass;
     BOOL _showingSecurityUI;
     BOOL _reflectingSearchTerms;
@@ -116,14 +117,20 @@ __attribute__((visibility("hidden")))
     NSString *_authenticationHost;
     long long _readerButtonState;
     InteriorUnifiedField *_overlayStaticTextField;
+    NSColor *_evCertificateTextColor;
+    NSColor *_evCertificateTextColorForPrivateWindow;
+    NSColor *_lockButtonColor;
 }
 
 + (unsigned long long)simplificationsForReflectedURL;
-+ (double)mediaIndicatorYOffset;
 + (double)urlTextYOffset;
 + (double)marginBeforeFirstComponent;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL pageStatusTextFieldNeedUpdate; // @synthesize pageStatusTextFieldNeedUpdate=_pageStatusTextFieldNeedUpdate;
+@property(readonly, nonatomic) NSColor *lockButtonColor; // @synthesize lockButtonColor=_lockButtonColor;
+@property(readonly, nonatomic) NSColor *evCertificateTextColorForPrivateWindow; // @synthesize evCertificateTextColorForPrivateWindow=_evCertificateTextColorForPrivateWindow;
+@property(readonly, nonatomic) NSColor *evCertificateTextColor; // @synthesize evCertificateTextColor=_evCertificateTextColor;
 @property(nonatomic) BOOL rightmostButtonIsForReader; // @synthesize rightmostButtonIsForReader=_rightmostButtonIsForReader;
 @property(readonly, nonatomic) InteriorUnifiedField *overlayStaticTextField; // @synthesize overlayStaticTextField=_overlayStaticTextField;
 @property(nonatomic) long long readerButtonState; // @synthesize readerButtonState=_readerButtonState;
@@ -142,7 +149,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) SearchProvidersController *searchProvidersController; // @synthesize searchProvidersController=_searchProvidersController;
 @property(nonatomic) __weak UnifiedFieldBezelView *bezelView; // @synthesize bezelView=_bezelView;
 - (id)placeholderString;
-- (void).cxx_destruct;
 - (void)updateAudioIndicatorAppearance;
 - (void)setHasAudio:(BOOL)arg1 mediaCaptureDevice:(BOOL)arg2 displayCaptureDevice:(BOOL)arg3;
 - (id)_audioIndicatorDescription;
@@ -220,7 +226,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)_shouldReaderButtonBeVisible;
 - (void)_layOutReaderButtonIfNeeded;
 - (void)_createReaderButtonIfNeeded;
-- (void)updateDisplayedEVTitleIfNeeded;
 - (void)_updateLockButtonVisibility;
 - (BOOL)_isLockButtonVisible;
 - (BOOL)_shouldLockButtonBeVisible;
@@ -280,7 +285,6 @@ __attribute__((visibility("hidden")))
 - (void)_updateSecurityUIPlacementAndVisibility;
 - (void)_updateRightmostButtonToolTip;
 - (void)_internalSetStringValue:(id)arg1;
-- (id)_evTitleAttributes;
 - (void)_shouldShowFullURLPreferenceDidChange:(id)arg1;
 - (BOOL)_shouldShowAlternativeStaticURLForAboutBlank;
 - (BOOL)_shouldShowFullURL;
@@ -353,9 +357,7 @@ __attribute__((visibility("hidden")))
 - (id)_notSecureAnnotation;
 - (void)setShowsNotSecureAnnotation:(BOOL)arg1 hasFocusedSensitiveField:(BOOL)arg2;
 - (void)setUpNotSecureAnnotationContainer;
-- (void)setExtendedValidationCertificateTitle:(id)arg1;
 @property(readonly, nonatomic) struct CGRect urlTextFrame;
-- (BOOL)_extendedValidationCertificateIsAvailable;
 - (void)appendSlashAndCollapseSelection;
 - (BOOL)lastCompletionListItemIsSelectedForFieldEditor:(id)arg1;
 - (BOOL)firstCompletionListItemIsSelectedForFieldEditor:(id)arg1;
@@ -438,13 +440,13 @@ __attribute__((visibility("hidden")))
 - (id)_pageTitleColor;
 - (void)windowWillClose;
 @property(readonly, nonatomic) long long staticTextFieldLineBreakStyle;
-- (id)_evCertLockImageForPrivateWindow;
-- (id)_evLockButtonImage;
-- (id)_lockButtonImage;
-@property(readonly, nonatomic) NSColor *lockButtonColor;
-@property(readonly, nonatomic) NSColor *evCertificateTextColorForPrivateWindow;
-@property(readonly, nonatomic) NSColor *evCertificateTextColor;
 @property(readonly, nonatomic) NSColor *deemphasizedTextColor;
+- (double)_readerButtonYOffset;
+- (double)_oneStepBookmarkingButtonYOffset;
+- (double)_popupWindowBlockedYOffset;
+- (double)_rightButtonYOffset;
+- (double)mediaIndicatorYOffset;
+- (double)_yOffsetForButton:(id)arg1;
 - (struct CGSize)intrinsicContentSize;
 
 // Remaining properties

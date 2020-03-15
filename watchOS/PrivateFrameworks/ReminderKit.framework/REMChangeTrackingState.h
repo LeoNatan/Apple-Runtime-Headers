@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastConsumedDate; // @synthesize lastConsumedDate=_lastConsumedDate;
 @property(retain, nonatomic) REMChangeToken *lastConsumedChangeToken; // @synthesize lastConsumedChangeToken=_lastConsumedChangeToken;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     double _baselineOffset;
 }
 
-@property(readonly, nonatomic) double baselineOffset; // @synthesize baselineOffset=_baselineOffset;
-@property(readonly, nonatomic) struct CGRect iconFrame; // @synthesize iconFrame=_iconFrame;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) double baselineOffset; // @synthesize baselineOffset=_baselineOffset;
+@property(readonly, nonatomic) struct CGRect iconFrame; // @synthesize iconFrame=_iconFrame;
 - (_Bool)hitTestCancelLayer:(const struct CGPoint *)arg1;
 - (void)setIconFrame:(const struct CGRect *)arg1 baselineOffset:(double)arg2;
 @property(nonatomic) _Bool cancelIsPressed; // @dynamic cancelIsPressed;

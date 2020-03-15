@@ -31,6 +31,7 @@
     int _preferredContentAlignment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int preferredContentAlignment; // @synthesize preferredContentAlignment=_preferredContentAlignment;
 @property(nonatomic) float trailingBarAlpha; // @synthesize trailingBarAlpha=_trailingBarAlpha;
 @property(nonatomic) float leadingBarAlpha; // @synthesize leadingBarAlpha=_leadingBarAlpha;
@@ -44,7 +45,6 @@
 @property(nonatomic) _Bool underlayBarContent; // @synthesize underlayBarContent=_underlayBarContent;
 @property(readonly, nonatomic) int titleLocation; // @synthesize titleLocation=_titleLocation;
 @property(readonly, nonatomic) __weak UINavigationItem *navigationItem; // @synthesize navigationItem=_navigationItem;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)navigationBarTraitCollectionDidChangeTo:(id)arg1 from:(id)arg2;
 - (void)_navigationBarTraitCollectionDidChangeTo:(id)arg1 from:(id)arg2;

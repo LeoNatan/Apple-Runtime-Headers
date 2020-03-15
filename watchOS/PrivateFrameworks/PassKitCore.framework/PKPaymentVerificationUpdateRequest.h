@@ -15,10 +15,10 @@
     PKVerificationChannel *_channel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKVerificationChannel *channel; // @synthesize channel=_channel;
 @property(retain, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
 @property(copy, nonatomic) NSString *stepIdentifier; // @synthesize stepIdentifier=_stepIdentifier;
-- (void).cxx_destruct;
 - (void)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 appleAccountInformation:(id)arg3 deviceData:(id)arg4 webService:(id)arg5 certChain:(id)arg6 devSigned:(_Bool)arg7 completion:(CDUnknownBlockType)arg8;
 
 @end

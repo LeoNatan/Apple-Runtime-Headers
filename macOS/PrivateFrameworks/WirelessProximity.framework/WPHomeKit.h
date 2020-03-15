@@ -13,8 +13,8 @@
     id <WPHomeKitDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <WPHomeKitDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <WPHomeKitDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)scanningFailedToStart:(id)arg1 ofType:(unsigned char)arg2;
 - (void)scanningStoppedOfType:(unsigned char)arg1;
 - (void)scanningStartedOfType:(unsigned char)arg1;

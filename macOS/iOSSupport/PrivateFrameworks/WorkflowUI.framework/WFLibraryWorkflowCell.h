@@ -23,6 +23,7 @@
 + (id)jitterRotationAnimation;
 + (id)jitterYTranslationAnimation;
 + (id)jitterXTranslationAnimation;
+- (void).cxx_destruct;
 @property(nonatomic) long long dragState; // @synthesize dragState=_dragState;
 @property(readonly, nonatomic) __weak WFLibraryWorkflowCellSelectionView *selectionView; // @synthesize selectionView=_selectionView;
 @property(readonly, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
@@ -30,7 +31,6 @@
 @property(nonatomic) BOOL hideEditButton; // @synthesize hideEditButton=_hideEditButton;
 @property(nonatomic, getter=isJittering) BOOL jittering; // @synthesize jittering=_jittering;
 @property(readonly, nonatomic) UIButton *editButton; // @synthesize editButton=_editButton;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (id)accessibilityPath;
 - (BOOL)accessibilityEditWorkflow;

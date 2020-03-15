@@ -37,6 +37,7 @@
 + (struct CGSize)suggestedBodyImageSizeForDevice:(id)arg1;
 + (struct CGSize)suggestedHeaderImageSizeForDevice:(id)arg1;
 + (void)clearLabel:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
 @property(retain, nonatomic) UIColor *imageColor; // @synthesize imageColor=_imageColor;
 @property(readonly, nonatomic) CALayer *imageLayer; // @synthesize imageLayer=_imageLayer;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) NSDate *overrideDate; // @synthesize overrideDate=_overrideDate;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
-- (void).cxx_destruct;
 - (void)overrideDateDidChange;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(float)arg1;

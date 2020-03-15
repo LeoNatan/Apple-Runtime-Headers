@@ -20,9 +20,9 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MIPMultiverseIdentifier *visualReferenceMultiverseIdentifier; // @synthesize visualReferenceMultiverseIdentifier=_visualReferenceMultiverseIdentifier;
 @property(retain, nonatomic) MIPMultiverseIdentifier *selectedMultiverseIdentifier; // @synthesize selectedMultiverseIdentifier=_selectedMultiverseIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

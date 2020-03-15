@@ -28,8 +28,8 @@
 + (double)_actualCornerRadiusForDevice:(id)arg1;
 + (double)cornerRadius;
 + (id)timeTravelColor;
-@property(nonatomic) __weak id <NTKTimeTravelModuleViewTapClient> tapDelegate; // @synthesize tapDelegate=_tapDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NTKTimeTravelModuleViewTapClient> tapDelegate; // @synthesize tapDelegate=_tapDelegate;
 - (id)_formatDateStringForIntervalBetweenReferenceDate:(id)arg1 andOverrideDate:(id)arg2;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

@@ -19,12 +19,12 @@
     NSMutableSet *_mutableDisabledConditions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *mutableDisabledConditions; // @synthesize mutableDisabledConditions=_mutableDisabledConditions;
 @property(retain, nonatomic) NSMutableSet *mutableEnabledConditions; // @synthesize mutableEnabledConditions=_mutableEnabledConditions;
 @property(readonly, nonatomic) HFTransformItemProvider *itemProvider; // @synthesize itemProvider=_itemProvider;
 @property(readonly, nonatomic) HFConditionItemProvider *sourceConditionItemProvider; // @synthesize sourceConditionItemProvider=_sourceConditionItemProvider;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (void)_buildItemProviders;
 - (void)setConditionEnabled:(_Bool)arg1 forCondition:(id)arg2;
 - (_Bool)isConditionEnabled:(id)arg1;

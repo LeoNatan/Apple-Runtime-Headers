@@ -19,12 +19,12 @@
     NSDictionary *_actionParameters;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *actionParameters; // @synthesize actionParameters=_actionParameters;
 @property(readonly, nonatomic) _Bool requiresDelegate; // @synthesize requiresDelegate=_requiresDelegate;
 @property(readonly, copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, copy, nonatomic) NSString *displayText; // @synthesize displayText=_displayText;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithICAction:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 displayText:(id)arg2 url:(id)arg3 requiresDelegate:(_Bool)arg4 actionParameters:(id)arg5;

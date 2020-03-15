@@ -17,11 +17,11 @@
     unsigned long long _mode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(readonly, nonatomic) WFTriggerManager *triggerManager; // @synthesize triggerManager=_triggerManager;
 @property(nonatomic) __weak id <WFTriggerConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WFTrigger *trigger; // @synthesize trigger=_trigger;
-- (void).cxx_destruct;
 - (void)finish;
 - (void)dismiss:(id)arg1;
 - (void)viewDidLoad;

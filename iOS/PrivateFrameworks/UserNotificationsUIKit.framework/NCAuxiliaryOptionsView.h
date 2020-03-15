@@ -25,11 +25,11 @@
     BSUIFontProvider *_fontProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BSUIFontProvider *fontProvider; // @synthesize fontProvider=_fontProvider;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
 @property(nonatomic) _Bool auxiliaryOptionsVisible; // @synthesize auxiliaryOptionsVisible=_auxiliaryOptionsVisible;
 @property(readonly, nonatomic) NSArray *optionButtons; // @synthesize optionButtons=_optionButtons;
-- (void).cxx_destruct;
 - (void)_layoutOptionsButtons;
 - (void)_layoutOptionsSummaryTextLabel;
 - (struct CGSize)_optionsSummaryLabelSizeThatFits:(struct CGSize)arg1;

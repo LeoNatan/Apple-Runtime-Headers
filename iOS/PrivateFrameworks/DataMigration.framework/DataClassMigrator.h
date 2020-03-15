@@ -18,12 +18,12 @@
 }
 
 + (id)dataClassMigratorForBundleAtPath:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didUpgrade; // @synthesize didUpgrade=_didUpgrade;
 @property(retain, nonatomic) NSString *restoredBackupProductType; // @synthesize restoredBackupProductType=_restoredBackupProductType;
 @property(retain, nonatomic) NSString *restoredBackupBuildVersion; // @synthesize restoredBackupBuildVersion=_restoredBackupBuildVersion;
 @property(nonatomic) unsigned int userDataDisposition; // @synthesize userDataDisposition=_userDataDisposition;
 @property(retain, nonatomic) NSDictionary *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (_Bool)performMigration;
 @property(readonly, nonatomic) _Bool wasPasscodeSetInBackup;
 @property(readonly, nonatomic) _Bool shouldPreserveSettingsAfterRestore;

@@ -18,10 +18,10 @@
     CDStruct_f2ecb737 _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableError *launchError; // @synthesize launchError=_launchError;
 @property(nonatomic) _Bool success; // @synthesize success=_success;
 @property(retain, nonatomic) NSString *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

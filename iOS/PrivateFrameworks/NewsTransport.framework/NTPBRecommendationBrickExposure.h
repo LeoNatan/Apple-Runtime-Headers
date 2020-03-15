@@ -25,10 +25,10 @@
 }
 
 + (Class)recommendedFeedIdsType;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool exposedFromReferredUser; // @synthesize exposedFromReferredUser=_exposedFromReferredUser;
 @property(retain, nonatomic) NSMutableArray *recommendedFeedIds; // @synthesize recommendedFeedIds=_recommendedFeedIds;
 @property(retain, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

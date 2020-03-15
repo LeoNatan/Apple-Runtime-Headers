@@ -28,6 +28,7 @@
     NSIndexPath *_chosenTargetCellularPlanItem;
 }
 
+- (void).cxx_destruct;
 @property _Bool hasContinueButton; // @synthesize hasContinueButton=_hasContinueButton;
 @property _Bool hasBackButton; // @synthesize hasBackButton=_hasBackButton;
 @property(retain) NSIndexPath *chosenTargetCellularPlanItem; // @synthesize chosenTargetCellularPlanItem=_chosenTargetCellularPlanItem;
@@ -37,7 +38,6 @@
 @property(retain) NSArray *selectedPlanItems; // @synthesize selectedPlanItems=_selectedPlanItems;
 @property(retain, nonatomic) NSLayoutConstraint *heightAnchor; // @synthesize heightAnchor=_heightAnchor;
 @property __weak id <TSSIMSetupFlowDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)canBeShownFromSuspendedState;
 - (void)_doneButtonTapped;
 - (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;

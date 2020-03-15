@@ -40,6 +40,7 @@
 }
 
 + (void)preparePrintsEditorModalForWindow:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property BOOL prefetchAllowed; // @synthesize prefetchAllowed=_prefetchAllowed;
 @property(nonatomic) BOOL didShowAlertAboutCroppedPhotos; // @synthesize didShowAlertAboutCroppedPhotos=_didShowAlertAboutCroppedPhotos;
 @property(readonly, nonatomic) KHProductSubgroupMenuController *layoutsChangeSizeMenuController; // @synthesize layoutsChangeSizeMenuController=_layoutsChangeSizeMenuController;
@@ -58,7 +59,6 @@
 @property(copy, nonatomic) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;
 @property(copy, nonatomic) CDUnknownBlockType addPhotosRequestHandler; // @synthesize addPhotosRequestHandler=_addPhotosRequestHandler;
 @property(readonly, nonatomic) KHPrintsProjectBundleController *projectBundleController; // @synthesize projectBundleController=_projectBundleController;
-- (void).cxx_destruct;
 - (void)viewWillDisappear;
 - (void)viewDidAppear;
 - (void)viewWillAppear;

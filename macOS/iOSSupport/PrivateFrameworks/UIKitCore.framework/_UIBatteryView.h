@@ -42,6 +42,7 @@
 + (double)_lineWidthAndInterspaceForIconSize:(long long)arg1;
 + (struct CGSize)_pinSizeForIconSize:(long long)arg1;
 + (struct CGSize)_batterySizeForIconSize:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double pinColorAlpha; // @synthesize pinColorAlpha=_pinColorAlpha;
 @property(nonatomic) double bodyColorAlpha; // @synthesize bodyColorAlpha=_bodyColorAlpha;
 @property(nonatomic) BOOL showsPercentage; // @synthesize showsPercentage=_showsPercentage;
@@ -59,7 +60,6 @@
 @property(nonatomic) BOOL saverModeActive; // @synthesize saverModeActive=_saverModeActive;
 @property(nonatomic) long long chargingState; // @synthesize chargingState=_chargingState;
 @property(nonatomic) double chargePercent; // @synthesize chargePercent=_chargePercent;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIAccessibilityHUDItem *accessibilityHUDRepresentation;
 - (struct CGSize)intrinsicContentSize;
 - (void)applyStyleAttributes:(id)arg1;

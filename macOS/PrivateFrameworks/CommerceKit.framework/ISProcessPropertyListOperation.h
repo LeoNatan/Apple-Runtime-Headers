@@ -18,8 +18,8 @@
     CDUnknownBlockType _preParserBlock;
 }
 
-@property(retain) ISPropertyListProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
 - (void).cxx_destruct;
+@property(retain) ISPropertyListProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (void)run;

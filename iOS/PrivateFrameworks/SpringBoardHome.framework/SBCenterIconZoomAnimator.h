@@ -25,13 +25,13 @@
     id <SBDockOffscreenFractionModifying> _dockOffscreenFractionModifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool animatingIcons; // @synthesize animatingIcons=_animatingIcons;
 @property(readonly, nonatomic) double centerCol; // @synthesize centerCol=_centerCol;
 @property(readonly, nonatomic) double centerRow; // @synthesize centerRow=_centerRow;
 @property(readonly, nonatomic) struct CGPoint cameraPosition; // @synthesize cameraPosition=_cameraPosition;
 @property(readonly, nonatomic) UIView *zoomView; // @synthesize zoomView=_zoomView;
 @property(retain, nonatomic) id <SBDockOffscreenFractionModifying> dockOffscreenFractionModifier; // @synthesize dockOffscreenFractionModifier=_dockOffscreenFractionModifier;
-- (void).cxx_destruct;
 - (void)_calculateCentersAndCameraPosition;
 - (void)_calculateCenters;
 - (id)_animationFactoryForFolderView;

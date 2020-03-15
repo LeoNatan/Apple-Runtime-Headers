@@ -16,8 +16,8 @@
     NSObject<SVVideoPlaybackPolicy> *_playbackPolicy;
 }
 
-@property(readonly, nonatomic) NSObject<SVVideoPlaybackPolicy> *playbackPolicy; // @synthesize playbackPolicy=_playbackPolicy;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<SVVideoPlaybackPolicy> *playbackPolicy; // @synthesize playbackPolicy=_playbackPolicy;
 - (id)createPlaybackPolicyObserver;
 - (id)initWithPlaybackPolicy:(id)arg1;
 

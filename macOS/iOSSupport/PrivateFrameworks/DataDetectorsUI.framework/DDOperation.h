@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 + (BOOL)_needsFullScannerForDetectionTypes:(unsigned long long)arg1;
 + (CDUnknownBlockType)urlificationBlockForTypes:(unsigned long long)arg1;
 + (CDUnknownBlockType)shouldUrlifyBlockForTypes:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL ignoreSignatures; // @synthesize ignoreSignatures=_ignoreSignatures;
 @property(retain, nonatomic) NSDictionary *context; // @synthesize context=_context;
 @property BOOL isDiscarded; // @synthesize isDiscarded=_isDiscarded;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *results; // @synthesize results=_results;
 @property BOOL needContinuation; // @synthesize needContinuation=_needContinuation;
 @property(retain, nonatomic) id container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (void)dispatchScanQueryCreationWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)newOperationForContinuation;
 - (id)newOperationForStartingOver;

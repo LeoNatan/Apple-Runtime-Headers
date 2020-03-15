@@ -15,8 +15,8 @@
     NSOutputStream *_oStream;
 }
 
-@property(retain, nonatomic) NSOutputStream *oStream; // @synthesize oStream=_oStream;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSOutputStream *oStream; // @synthesize oStream=_oStream;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (void)endRequest;
 - (void)logData:(id)arg1;

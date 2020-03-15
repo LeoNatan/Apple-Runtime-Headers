@@ -22,6 +22,7 @@
     UIView *_currentBottomView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *currentBottomView; // @synthesize currentBottomView=_currentBottomView;
 @property(retain, nonatomic) UIView *currentTopView; // @synthesize currentTopView=_currentTopView;
 @property(nonatomic) _Bool hasPendingViews; // @synthesize hasPendingViews=_hasPendingViews;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) UIView *bottomContainerView; // @synthesize bottomContainerView=_bottomContainerView;
 @property(retain, nonatomic) UIView *topContainerView; // @synthesize topContainerView=_topContainerView;
 @property(nonatomic) __weak id <NPKPaymentStatusViewAnimationCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_invokeDidStartHidingOnDelegate;
 - (void)_invokeDidFinishPresentingOnDelegate;
 - (CDUnknownBlockType)_statusViewsAnimationBlockForPresentation:(_Bool)arg1;

@@ -15,10 +15,10 @@
     long long _messageType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long messageType; // @synthesize messageType=_messageType;
 @property(nonatomic) long long deviceType; // @synthesize deviceType=_deviceType;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (_Bool)matchesMessage:(id)arg1;
 
 @end

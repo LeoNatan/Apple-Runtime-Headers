@@ -40,6 +40,7 @@
 }
 
 + (Class)labelClass;
+- (void).cxx_destruct;
 @property(nonatomic) float minTimeLabelWidth; // @synthesize minTimeLabelWidth=_minTimeLabelWidth;
 @property(nonatomic) int timeLabelStyle; // @synthesize timeLabelStyle=_timeLabelStyle;
 @property(nonatomic) double availableDuration; // @synthesize availableDuration=_availableDuration;
@@ -47,7 +48,6 @@
 @property(nonatomic) float detailScrubbingVerticalRange; // @synthesize detailScrubbingVerticalRange=_detailScrubbingVerticalRange;
 @property(nonatomic) _Bool allowsScrubbing; // @synthesize allowsScrubbing=_allowsScrubbing;
 @property(nonatomic) __weak id <MPDetailSliderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateForAvailableDuraton;
 - (void)_commitValue;
 - (void)_resetScrubInfo;

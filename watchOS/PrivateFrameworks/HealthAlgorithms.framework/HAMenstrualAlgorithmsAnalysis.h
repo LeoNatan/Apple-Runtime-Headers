@@ -15,10 +15,10 @@
     HAMenstrualAlgorithmsStats *_stats;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HAMenstrualAlgorithmsStats *stats; // @synthesize stats=_stats;
 @property(retain, nonatomic) NSArray *fertilityPredictions; // @synthesize fertilityPredictions=_fertilityPredictions;
 @property(retain, nonatomic) NSArray *menstruationPredictions; // @synthesize menstruationPredictions=_menstruationPredictions;
-- (void).cxx_destruct;
 
 @end
 

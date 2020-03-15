@@ -24,6 +24,7 @@
     CDUnknownBlockType _configurationBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType configurationBlock; // @synthesize configurationBlock=_configurationBlock;
 @property(copy, nonatomic) CDUnknownBlockType validationBlock; // @synthesize validationBlock=_validationBlock;
 @property(nonatomic) _Bool canBeNil; // @synthesize canBeNil=_canBeNil;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) Protocol *protocol; // @synthesize protocol=_protocol;
 @property(retain, nonatomic) Class cls; // @synthesize cls=_cls;
 @property(nonatomic) unsigned long long source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (id)withPrivateAccessInWeakContainer:(id)arg1;
 - (id)withPrivateAccessInContainer:(id)arg1;
 - (id)privateAccessContainer;

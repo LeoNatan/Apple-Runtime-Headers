@@ -15,9 +15,11 @@
     NSPointerArray *_allKeyboardFocusable;
 }
 
++ (_Bool)isCustomKeyboardFocusEnabled;
++ (id)directionalKeyCommandsWithAction:(SEL)arg1;
 + (id)sharedManager;
-@property(retain) NSPointerArray *allKeyboardFocusable; // @synthesize allKeyboardFocusable=_allKeyboardFocusable;
 - (void).cxx_destruct;
+@property(retain) NSPointerArray *allKeyboardFocusable; // @synthesize allKeyboardFocusable=_allKeyboardFocusable;
 - (_Bool)_isRegistered:(id)arg1;
 - (void)_printAllRegisteredFocusable;
 - (id)adjacentFocusableToFocusable:(id)arg1 direction:(long long)arg2;

@@ -22,8 +22,8 @@
 + (_Bool)supportsSecureCoding;
 + (id)shortDescription;
 + (_Bool)isAccessorySupported:(id)arg1;
-@property(readonly, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 - (void).cxx_destruct;
+@property(readonly, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

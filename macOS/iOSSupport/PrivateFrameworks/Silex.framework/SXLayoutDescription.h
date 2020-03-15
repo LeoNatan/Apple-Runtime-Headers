@@ -13,8 +13,8 @@
     NSString *_taskIdentifier;
 }
 
-@property(readonly, nonatomic) NSString *taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
 - (id)initWithTaskIdentifier:(id)arg1;
 
 @end

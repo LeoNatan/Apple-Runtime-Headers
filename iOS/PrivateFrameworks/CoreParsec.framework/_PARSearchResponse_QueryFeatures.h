@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     _PARQueryFeatures_Stats *_stats;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool topDown; // @synthesize topDown=_topDown;
 @property(retain, nonatomic) _PARQueryFeatures_Stats *stats; // @synthesize stats=_stats;
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;
 @property(copy, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

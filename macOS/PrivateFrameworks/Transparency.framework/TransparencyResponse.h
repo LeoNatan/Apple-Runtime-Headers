@@ -15,10 +15,10 @@
     TransparencyRequest *_request;
 }
 
+- (void).cxx_destruct;
 @property(retain) TransparencyRequest *request; // @synthesize request=_request;
 @property(retain) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(retain) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)serverHint;
 - (id)initWithRequest:(id)arg1 responseData:(id)arg2 metadata:(id)arg3;
 

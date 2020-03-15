@@ -13,8 +13,8 @@
     NSMutableArray *_childResults;
 }
 
-@property(readonly) NSArray *childResults; // @synthesize childResults=_childResults;
 - (void).cxx_destruct;
+@property(readonly) NSArray *childResults; // @synthesize childResults=_childResults;
 - (BOOL)isLocalResult;
 - (void)addResult:(id)arg1;
 - (id)initWithResult:(id)arg1;

@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) CNGroup *group; // @synthesize group=_group;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNGroup *group; // @synthesize group=_group;
 - (void)acceptEventVisitor:(id)arg1;
 - (id)description;
 - (unsigned int)hash;

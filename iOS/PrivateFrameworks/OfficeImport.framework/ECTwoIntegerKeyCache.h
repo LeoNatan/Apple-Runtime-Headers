@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     _Bool _assertForCollisions;
 }
 
-@property(nonatomic) _Bool assertForCollisions; // @synthesize assertForCollisions=_assertForCollisions;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool assertForCollisions; // @synthesize assertForCollisions=_assertForCollisions;
 - (void)setObject:(id)arg1 forKey1:(long long)arg2 key2:(long long)arg3;
 - (id)objectForKey1:(long long)arg1 key2:(long long)arg2;
 - (id)init;

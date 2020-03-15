@@ -13,8 +13,8 @@
     NSString *_skipValueString;
 }
 
-@property(retain, nonatomic) NSString *skipValueString; // @synthesize skipValueString=_skipValueString;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *skipValueString; // @synthesize skipValueString=_skipValueString;
 
 @end
 

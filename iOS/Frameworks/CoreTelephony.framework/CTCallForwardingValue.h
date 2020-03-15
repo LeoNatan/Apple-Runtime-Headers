@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *noReplyTime; // @synthesize noReplyTime=_noReplyTime;
 @property(retain, nonatomic) NSString *saveNumber; // @synthesize saveNumber=_saveNumber;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) int clss; // @synthesize clss=_clss;
 @property(nonatomic) int reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

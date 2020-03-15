@@ -35,9 +35,9 @@
 + (void)enumerateContentAtURL:(id)arg1 properties:(id)arg2 options:(unsigned long long)arg3 handler:(CDUnknownBlockType)arg4;
 + (id)_realUserHomeDirectory;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *systemSerialQueue; // @synthesize systemSerialQueue=_systemSerialQueue;
-- (void).cxx_destruct;
 - (void)asyncFetchDirectoriesAtURL:(id)arg1 target:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)asyncDeepFetchFilesAtURL:(id)arg1 target:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)asyncFetchFilesAtURL:(id)arg1 target:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

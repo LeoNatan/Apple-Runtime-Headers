@@ -23,10 +23,10 @@
     SBIconListView *_dockListView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBIconListView *dockListView; // @synthesize dockListView=_dockListView;
 @property(readonly, nonatomic) SBIconListView *iconListView; // @synthesize iconListView=_iconListView;
 @property(retain, nonatomic) NSSet *criticalIconNodeIdentifiers; // @synthesize criticalIconNodeIdentifiers=_criticalIconNodeIdentifiers;
-- (void).cxx_destruct;
 - (void)_invalidateAnimationForSignificantIconModelChangesForReason:(id)arg1;
 - (void)_iconModelDidReload:(id)arg1;
 - (void)_iconModelDidRelayout:(id)arg1;

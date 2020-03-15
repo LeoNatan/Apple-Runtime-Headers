@@ -23,13 +23,13 @@
 
 + (id)logCategory;
 + (BOOL)isPeerAvailable;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType finalCompletionHandler; // @synthesize finalCompletionHandler=_finalCompletionHandler;
 @property(nonatomic) BOOL broadcastFailure; // @synthesize broadcastFailure=_broadcastFailure;
 @property(retain, nonatomic) HMFExponentialBackoffTimer *broadcastUUIDTimer; // @synthesize broadcastUUIDTimer=_broadcastUUIDTimer;
 @property(retain, nonatomic) NSMutableSet *broadcastNotifiedDevices; // @synthesize broadcastNotifiedDevices=_broadcastNotifiedDevices;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *broadcastGroup; // @synthesize broadcastGroup=_broadcastGroup;
 @property(retain, nonatomic) NSUUID *currentKeyUUID; // @synthesize currentKeyUUID=_currentKeyUUID;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)_handleKeyTransferAgentMessage:(id)arg1;
 - (void)_endPairingWithError:(id)arg1;

@@ -13,8 +13,8 @@
     CALNUNNotificationRequestMapper *_notificationRequestMapper;
 }
 
-@property(readonly, nonatomic) CALNUNNotificationRequestMapper *notificationRequestMapper; // @synthesize notificationRequestMapper=_notificationRequestMapper;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CALNUNNotificationRequestMapper *notificationRequestMapper; // @synthesize notificationRequestMapper=_notificationRequestMapper;
 - (id)_calnNotificationFromUNNotification:(id)arg1;
 - (id)calnNotificationsFromUNNotifications:(id)arg1;
 - (id)calnNotificationFromUNNotification:(id)arg1;

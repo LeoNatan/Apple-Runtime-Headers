@@ -6,22 +6,27 @@
 
 #import <UIKit/UINavigationController.h>
 
-@class HKClinicalProvider, HRProfile, SFSafariViewController;
+@class HKClinicalProvider, HRProfile, SFSafariViewController, WDClinicalGatewayProxy;
 
 __attribute__((visibility("hidden")))
 @interface WDClinicalOnboardingOAuthNavigationViewController : UINavigationController
 {
+    _Bool _showProviderNotFound;
+    _Bool _onboardingSourceIsDeepLink;
     HRProfile *_profile;
     SFSafariViewController *_safariViewController;
     HKClinicalProvider *_providerToPresent;
+    WDClinicalGatewayProxy *_gatewayProxyToTry;
 }
 
 + (id)clinicalOnboardingOauthViewControllerWithProfile:(id)arg1;
-@property(retain, nonatomic) HKClinicalProvider *providerToPresent; // @synthesize providerToPresent=_providerToPresent;
-@property(retain, nonatomic) SFSafariViewController *safariViewController; // @synthesize safariViewController=_safariViewController;
-@property(readonly, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
-- (void)_postAWDOnboardingMetric;
+@property(nonatomic) _Bool onboardingSourceIsDeepLink; // @synthesize onboardingSourceIsDeepLink=_onboardingSourceIsDeepLink;
+@property(nonatomic) _Bool showProviderNotFound; // @synthesize showProviderNotFound=_showProviderNotFound;
+@property(retain, nonatomic) WDClinicalGatewayProxy *gatewayProxyToTry; // @synthesize gatewayProxyToTry=_gatewayProxyToTry;
+@property(retain, nonatomic) HKClinicalProvider *providerToPresent; // @synthesize providerToPresent=_providerToPresent;
+@property(readonly, nonatomic) SFSafariViewController *safariViewController; // @synthesize safariViewController=_safariViewController;
+@property(readonly, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
 - (void)dismissViewController;
 - (void)presentSafariViewController;
 - (void)showClinicalAccountEducationViewControllerWithAccount:(id)arg1;
@@ -29,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (void)createRootViewController;
 - (void)completionNotificationHandler:(id)arg1;
 - (void)beginListeningToNotification;
+- (void)presentSafariViewController:(id)arg1 withGatewayUrl:(id)arg2;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;

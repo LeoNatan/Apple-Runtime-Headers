@@ -27,6 +27,7 @@
 
 + (id)entitlements;
 + (id)eventStream;
+- (void).cxx_destruct;
 @property(nonatomic) int timeZoneToken; // @synthesize timeZoneToken=_timeZoneToken;
 @property struct __SCPreferences *radioPrefs; // @synthesize radioPrefs=_radioPrefs;
 @property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
@@ -37,7 +38,6 @@
 @property(nonatomic) unsigned long long updateInterval; // @synthesize updateInterval=_updateInterval;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *updateTimer; // @synthesize updateTimer=_updateTimer;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;

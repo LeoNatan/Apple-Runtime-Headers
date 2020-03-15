@@ -18,12 +18,12 @@
 }
 
 + (id)identity;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *creationTime; // @synthesize creationTime=_creationTime;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) unsigned int userID; // @synthesize userID=_userID;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (id)serverIdentity;
 - (id)initWithServerIdentity:(id)arg1;
 

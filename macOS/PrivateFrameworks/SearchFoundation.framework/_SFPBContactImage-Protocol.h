@@ -12,7 +12,6 @@
 @property(readonly, nonatomic) NSData *jsonData;
 @property(nonatomic) BOOL threeDTouchEnabled;
 @property(copy, nonatomic) NSArray *contactIdentifiers;
-@property(copy, nonatomic) NSString *contactIdentifier;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSString *)contactIdentifiersAtIndex:(unsigned long long)arg1;

@@ -21,9 +21,9 @@
     id <PA2DBufferLazySource> _source;
 }
 
-@property(retain) id <PA2DBufferLazySource> source; // @synthesize source=_source;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain) id <PA2DBufferLazySource> source; // @synthesize source=_source;
 @property(readonly, copy) NSString *description;
 - (void)endAccess:(struct PFIntRect_st)arg1;
 - (void)beginAccess:(struct PFIntRect_st)arg1 emptyProcessor:(CDUnknownBlockType)arg2;

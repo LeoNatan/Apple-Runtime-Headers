@@ -23,13 +23,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)appearanceWithTitle:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *viewClassName; // @synthesize viewClassName=_viewClassName;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(copy, nonatomic) BBColor *color; // @synthesize color=_color;
 @property(copy, nonatomic) BBImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) BBColor *titleColor; // @synthesize titleColor=_titleColor;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)awakeAfterUsingCoder:(id)arg1;
 - (id)replacementObjectForCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

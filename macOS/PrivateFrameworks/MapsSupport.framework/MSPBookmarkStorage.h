@@ -24,6 +24,7 @@
     CDStruct_dd13975a _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MSPTransitLineBookmark *transitLineBookmark; // @synthesize transitLineBookmark=_transitLineBookmark;
 @property(retain, nonatomic) MSPRegionBookmark *regionBookmark; // @synthesize regionBookmark=_regionBookmark;
 @property(retain, nonatomic) MSPRouteBookmark *routeBookmark; // @synthesize routeBookmark=_routeBookmark;
@@ -31,7 +32,6 @@
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) double position; // @synthesize position=_position;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_domain;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(retain, nonatomic) _SFFluidProgressView *progressView; // @synthesize progressView=_progressView;
 @property(readonly, nonatomic) SFNanoStatusBarTitleView *titleView; // @synthesize titleView=_titleView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;

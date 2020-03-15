@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     id <NACVolumeController> _nacVolumeController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NACVolumeController> nacVolumeController; // @synthesize nacVolumeController=_nacVolumeController;
 @property(retain, nonatomic) MPAVRoutingController *routingController; // @synthesize routingController=_routingController;
 @property(retain, nonatomic) MPVolumeController *volumeController; // @synthesize volumeController=_volumeController;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int volumeWarningState; // @synthesize volumeWarningState=_volumeWarningState;
 @property(nonatomic, getter=isVolumeWarningEnabled) _Bool volumeWarningEnabled; // @synthesize volumeWarningEnabled=_volumeWarningEnabled;
 @property(nonatomic, getter=isVolumeControlAvailable) _Bool volumeControlAvailable; // @synthesize volumeControlAvailable=_volumeControlAvailable;
-- (void).cxx_destruct;
 
 @end
 

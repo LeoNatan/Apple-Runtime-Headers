@@ -17,10 +17,10 @@
     SEL _action;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)color:(id)arg1 byMultiplyingSubComponentsBy:(float)arg2;
 - (void)tappedLink:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

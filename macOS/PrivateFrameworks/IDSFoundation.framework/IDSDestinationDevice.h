@@ -16,9 +16,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (BOOL)isDeviceURI:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isGuest; // @synthesize isGuest=_isGuest;
 @property(retain, nonatomic) IDSURI *destinationURI; // @synthesize destinationURI=_destinationURI;
-- (void).cxx_destruct;
 - (id)groupID;
 - (id)destinationURIs;
 - (BOOL)isDevice;

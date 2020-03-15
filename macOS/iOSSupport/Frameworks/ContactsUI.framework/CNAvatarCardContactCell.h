@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIImageView *_contactImageView;
 }
 
-@property(retain, nonatomic) UIImageView *contactImageView; // @synthesize contactImageView=_contactImageView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImageView *contactImageView; // @synthesize contactImageView=_contactImageView;
 - (BOOL)moreHighlighted;
 - (void)reloadData;
 - (void)prepareForReuse;

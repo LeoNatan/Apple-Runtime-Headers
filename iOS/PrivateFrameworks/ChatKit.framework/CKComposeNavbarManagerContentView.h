@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CKNavigationBarCanvasView *_canvasView;
 }
 
-@property(retain, nonatomic) CKNavigationBarCanvasView *canvasView; // @synthesize canvasView=_canvasView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKNavigationBarCanvasView *canvasView; // @synthesize canvasView=_canvasView;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 

@@ -18,8 +18,8 @@
     id <NSSharingServicePickerToolbarItemDelegate> _delegate;
 }
 
-@property __weak id <NSSharingServicePickerToolbarItemDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <NSSharingServicePickerToolbarItemDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)sharingService:(id)arg1 sourceWindowForShareItems:(id)arg2 sharingContentScope:(long long *)arg3;
 - (void)sharingServicePicker:(id)arg1 didChooseSharingService:(id)arg2;
 - (id)sharingServicePicker:(id)arg1 delegateForSharingService:(id)arg2;

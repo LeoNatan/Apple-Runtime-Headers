@@ -16,8 +16,8 @@
     VNSaliencyImageObservation *_observation;
 }
 
-@property(readonly, nonatomic) VNSaliencyImageObservation *observation; // @synthesize observation=_observation;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) VNSaliencyImageObservation *observation; // @synthesize observation=_observation;
 - (id)initWithObservation:(id)arg1;
 
 // Remaining properties

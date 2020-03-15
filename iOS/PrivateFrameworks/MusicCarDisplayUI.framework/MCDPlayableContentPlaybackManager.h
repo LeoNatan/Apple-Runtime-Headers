@@ -20,11 +20,11 @@
     long long _totalItemCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long totalItemCount; // @synthesize totalItemCount=_totalItemCount;
 @property(nonatomic) long long playingItemIndex; // @synthesize playingItemIndex=_playingItemIndex;
 @property(retain, nonatomic) MCDPCModel *model; // @synthesize model=_model;
 @property(nonatomic, getter=isSeeking) _Bool seeking; // @synthesize seeking=_seeking;
-- (void).cxx_destruct;
 - (void)nowPlayingViewControllerMore:(id)arg1;
 - (_Bool)nowPlayingViewControllerCanShowMore:(id)arg1;
 - (void)nowPlayingViewControllerAddToLibrary:(id)arg1;

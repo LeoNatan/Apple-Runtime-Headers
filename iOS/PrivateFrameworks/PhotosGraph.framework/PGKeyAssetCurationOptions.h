@@ -26,6 +26,7 @@
     PHAsset *_referenceAsset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHAsset *referenceAsset; // @synthesize referenceAsset=_referenceAsset;
 @property(nonatomic) _Bool promoteAutoplayableItems; // @synthesize promoteAutoplayableItems=_promoteAutoplayableItems;
 @property(nonatomic) double prefilterAssetsWithFacesThreshold; // @synthesize prefilterAssetsWithFacesThreshold=_prefilterAssetsWithFacesThreshold;
@@ -38,7 +39,6 @@
 @property(nonatomic) _Bool focusOnPeople; // @synthesize focusOnPeople=_focusOnPeople;
 @property(retain, nonatomic) NSSet *referencePersonUUIDs; // @synthesize referencePersonUUIDs=_referencePersonUUIDs;
 @property(retain, nonatomic) CLLocation *referenceLocation; // @synthesize referenceLocation=_referenceLocation;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;

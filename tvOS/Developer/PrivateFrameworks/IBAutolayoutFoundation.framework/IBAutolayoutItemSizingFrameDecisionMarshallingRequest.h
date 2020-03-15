@@ -16,9 +16,9 @@
 }
 
 + (id)requestWithMarshallableObjectPackage:(id)arg1 arbitrationUnit:(id)arg2 itemToSize:(id)arg3 toLayoutFrame:(struct CGRect)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect layoutFrame; // @synthesize layoutFrame=_layoutFrame;
 @property(readonly, nonatomic) NSObject<IBAutolayoutItem> *itemToSize; // @synthesize itemToSize=_itemToSize;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;

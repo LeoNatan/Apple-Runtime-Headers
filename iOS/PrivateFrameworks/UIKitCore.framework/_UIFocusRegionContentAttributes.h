@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)attributesForFocusRegionContentInContainer:(id)arg1 coordinateSpace:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requiresIntersectionWithFocusMapSearchArea; // @synthesize requiresIntersectionWithFocusMapSearchArea=_requiresIntersectionWithFocusMapSearchArea;
 @property(copy, nonatomic) _UIFocusRegion *contentRegion; // @synthesize contentRegion=_contentRegion;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

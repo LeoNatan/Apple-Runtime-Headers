@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)name;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long sheetIndex; // @synthesize sheetIndex=_sheetIndex;
 @property(readonly, nonatomic) EDFormula *formula; // @synthesize formula=_formula;
 @property(retain, nonatomic) EDString *nameString; // @synthesize nameString=_nameString;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) OITSUPointerKeyDictionary *maxWorksheetReferences;
 - (void)setFormula:(id)arg1 workbook:(id)arg2;

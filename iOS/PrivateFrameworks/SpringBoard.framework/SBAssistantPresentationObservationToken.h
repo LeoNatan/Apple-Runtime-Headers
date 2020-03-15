@@ -15,8 +15,8 @@
     SBAssistantController *_assistantController;
 }
 
-@property(readonly, nonatomic) SBAssistantController *assistantController; // @synthesize assistantController=_assistantController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SBAssistantController *assistantController; // @synthesize assistantController=_assistantController;
 - (void)assistantDidDisappear:(id)arg1;
 - (void)assistantWillDisappear:(id)arg1;
 - (void)assistantDidAppear:(id)arg1;

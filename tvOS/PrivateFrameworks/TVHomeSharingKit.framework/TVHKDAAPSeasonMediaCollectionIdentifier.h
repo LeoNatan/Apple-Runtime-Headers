@@ -23,11 +23,11 @@ __attribute__((visibility("hidden")))
 + (_Bool)supportsSecureCoding;
 + (id)seasonIdentifierWithEpisode:(id)arg1;
 + (id)seasonIdentifierBasedOnAlbumMetadataWithEpisode:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *seasonNumber; // @synthesize seasonNumber=_seasonNumber;
 @property(copy, nonatomic) NSString *albumTitle; // @synthesize albumTitle=_albumTitle;
 @property(copy, nonatomic) TVHKDMAPMediaEntityIdentifier *albumIdentifier; // @synthesize albumIdentifier=_albumIdentifier;
 @property(copy, nonatomic) NSString *showTitle; // @synthesize showTitle=_showTitle;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

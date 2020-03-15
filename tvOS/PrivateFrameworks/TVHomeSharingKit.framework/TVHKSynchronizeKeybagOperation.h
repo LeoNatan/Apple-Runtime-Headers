@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     TVHSMediaServerIdentifier *_mediaServerIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVHSMediaServerIdentifier *mediaServerIdentifier; // @synthesize mediaServerIdentifier=_mediaServerIdentifier;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) _Bool success; // @synthesize success=_success;
-- (void).cxx_destruct;
 - (void)executionDidBegin;
 - (id)initWithMediaServerIdentifier:(id)arg1;
 - (id)init;

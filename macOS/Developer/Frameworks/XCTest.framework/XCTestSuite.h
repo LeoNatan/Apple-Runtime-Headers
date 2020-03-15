@@ -6,11 +6,14 @@
 
 #import <XCTest/XCTest.h>
 
-@class NSArray, NSDictionary, NSString;
+@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, XCTestConfiguration;
 
 @interface XCTestSuite : XCTest
 {
-    id _internalImplementation;
+    NSString *_name;
+    NSMutableArray *_mutableTests;
+    XCTestConfiguration *_testConfiguration;
+    NSMutableDictionary *_mutableActivityAggregateStatistics;
 }
 
 + (id)testClassSuitesForTestIdentifiers:(id)arg1 skippingTestIdentifiers:(id)arg2 testExecutionOrdering:(long long)arg3;
@@ -28,6 +31,10 @@
 + (id)testSuiteWithName:(id)arg1;
 + (id)testCaseNamesForScopeNames:(id)arg1;
 - (void).cxx_destruct;
+@property(readonly) NSMutableDictionary *mutableActivityAggregateStatistics; // @synthesize mutableActivityAggregateStatistics=_mutableActivityAggregateStatistics;
+@property(retain) XCTestConfiguration *testConfiguration; // @synthesize testConfiguration=_testConfiguration;
+@property(retain) NSMutableArray *mutableTests; // @synthesize mutableTests=_mutableTests;
+@property(copy) NSString *name; // @synthesize name=_name;
 - (id)_initWithTestConfiguration:(id)arg1;
 - (void)_applyRandomExecutionOrdering;
 - (void)_sortTestsUsingDefaultExecutionOrdering;
@@ -47,7 +54,6 @@
 - (void)addTest:(id)arg1;
 - (id)_testSuiteWithIdentifier:(id)arg1;
 - (id)description;
-@property(copy) NSString *name;
 - (id)initWithName:(id)arg1;
 - (id)init;
 - (void)removeTestsWithNames:(id)arg1;

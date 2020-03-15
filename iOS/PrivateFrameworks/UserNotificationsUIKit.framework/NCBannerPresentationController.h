@@ -21,9 +21,9 @@
 + (struct CGRect)visiblePresentedFrameForView:(id)arg1 inPresentationFrame:(struct CGRect)arg2;
 + (struct CGRect)_presentedFrameForVisiblePortion:(_Bool)arg1 ofView:(id)arg2 inPresentationFrame:(struct CGRect)arg3;
 + (struct CGRect)useableContainerViewFrameInContainerViewWithBounds:(struct CGRect)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool wantsUseableContainerBounds; // @synthesize wantsUseableContainerBounds=_wantsUseableContainerBounds;
 @property(retain, nonatomic) NSArray *additionalBackgroundViews; // @synthesize additionalBackgroundViews=_additionalBackgroundViews;
-- (void).cxx_destruct;
 - (struct CGRect)_frameForViewController:(id)arg1 beyondEdge:(unsigned long long)arg2;
 - (struct CGRect)_presentedFrameForView:(id)arg1 inPresentationFrame:(struct CGRect)arg2;
 - (struct CGRect)frameOfDismissedViewInContainerView;

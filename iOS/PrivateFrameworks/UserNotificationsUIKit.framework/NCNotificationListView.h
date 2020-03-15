@@ -39,6 +39,7 @@
     struct CGRect _visibleRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize cachedSize; // @synthesize cachedSize=_cachedSize;
 @property(nonatomic, getter=isCachedSizeValid) _Bool cachedSizeValid; // @synthesize cachedSizeValid=_cachedSizeValid;
 @property(nonatomic, getter=hasPerformedFirstLayout) _Bool performedFirstLayout; // @synthesize performedFirstLayout=_performedFirstLayout;
@@ -65,7 +66,6 @@
 @property(nonatomic, getter=isGrouped) _Bool grouped; // @synthesize grouped=_grouped;
 @property(nonatomic) struct CGRect visibleRect; // @synthesize visibleRect=_visibleRect;
 @property(nonatomic) __weak id <NCNotificationListViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isNotificationListViewCurrentlyVisible) _Bool notificationListViewCurrentlyVisible;
 - (struct CGAffineTransform)_scaleTransformForGroupingAnimationForViewAtIndex:(unsigned long long)arg1 leadingViewHeight:(double)arg2;
 - (void)_recycleViewIfNecessary:(id)arg1 withDataSource:(id)arg2;

@@ -15,8 +15,8 @@
     MCBlockOperation *_operation;
 }
 
-@property(retain, nonatomic) MCBlockOperation *operation; // @synthesize operation=_operation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MCBlockOperation *operation; // @synthesize operation=_operation;
 - (void)endBlockOperation;
 
 @end

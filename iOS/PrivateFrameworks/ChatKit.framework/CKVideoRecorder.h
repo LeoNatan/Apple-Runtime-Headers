@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     AVCaptureStillImageOutput *_stillImageOutput;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool canceled; // @synthesize canceled=_canceled;
 @property(retain, nonatomic) AVCaptureStillImageOutput *stillImageOutput; // @synthesize stillImageOutput=_stillImageOutput;
 @property(retain, nonatomic) AVCaptureMovieFileOutput *videoOutput; // @synthesize videoOutput=_videoOutput;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSURL *outputFileURL; // @synthesize outputFileURL=_outputFileURL;
 @property(nonatomic) __weak id <CKVideoRecorderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer; // @synthesize captureVideoPreviewLayer=_captureVideoPreviewLayer;
-- (void).cxx_destruct;
 - (void)captureOutput:(id)arg1 didFinishRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3 error:(id)arg4;
 - (void)captureOutput:(id)arg1 didStartRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
 - (void)setupCamera:(id)arg1;

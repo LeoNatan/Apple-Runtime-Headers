@@ -24,13 +24,13 @@
 
 + (id)userInfoChangeSummary:(id)arg1;
 + (BOOL)userInfoHasChanges:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) ABAddressBookNotificationInfo *preparedNotificationInfo; // @synthesize preparedNotificationInfo=_preparedNotificationInfo;
 @property(readonly, retain) CNFuture *metadataController; // @synthesize metadataController=_metadataController;
 @property(readonly) __weak id notificationSource; // @synthesize notificationSource=_notificationSource;
 @property(readonly, copy) NSString *notificationID; // @synthesize notificationID=_notificationID;
 @property(readonly) BOOL isUsingDefaultAddressBookDirectory; // @synthesize isUsingDefaultAddressBookDirectory=_isUsingDefaultAddressBookDirectory;
 @property(readonly, copy) NSString *addressBookDirectory; // @synthesize addressBookDirectory=_addressBookDirectory;
-- (void).cxx_destruct;
 - (void)updateNotificationInfo:(id)arg1 withRecords:(id)arg2 userInfoKey:(id)arg3 ignoreRecordsForKey:(id)arg4;
 - (void)nts_SendAddressBookDidSaveNotificationsWithPublicUserInfo:(id)arg1 privateUserInfo:(id)arg2 privateTablesChanged:(BOOL)arg3;
 - (void)postDatabaseWillSaveNotification:(id)arg1;

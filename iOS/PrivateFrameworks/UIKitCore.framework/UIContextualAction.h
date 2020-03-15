@@ -21,6 +21,7 @@
 }
 
 + (id)contextualActionWithStyle:(long long)arg1 title:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType preHandler; // @synthesize preHandler=_preHandler;
 @property(nonatomic) _Bool forcesFallbackBackgroundColor; // @synthesize forcesFallbackBackgroundColor=_forcesFallbackBackgroundColor;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
@@ -29,7 +30,6 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_completeWithResult:(_Bool)arg1;
 - (void)cancel;

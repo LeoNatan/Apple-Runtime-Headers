@@ -13,8 +13,8 @@
     PHAssetCollection *_assetCollection;
 }
 
-@property(retain, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
 - (id)debugDictionary;
 
 @end

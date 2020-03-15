@@ -22,8 +22,8 @@
     id <STYWakeDataConsumer> _consumer;
 }
 
-@property __weak id <STYWakeDataConsumer> consumer; // @synthesize consumer=_consumer;
 - (void).cxx_destruct;
+@property __weak id <STYWakeDataConsumer> consumer; // @synthesize consumer=_consumer;
 - (void)receivedPowerManagerNotification:(unsigned long long)arg1 atTimestamp:(unsigned long long)arg2;
 - (void)handleSignpostProcessingCompletion:(id)arg1;
 - (void)handleSignpostInterval:(id)arg1;

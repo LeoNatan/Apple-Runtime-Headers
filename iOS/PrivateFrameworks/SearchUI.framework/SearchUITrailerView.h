@@ -17,12 +17,12 @@
     UIView *_centeredBoxView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *centeredBoxView; // @synthesize centeredBoxView=_centeredBoxView;
 @property(retain, nonatomic) SFPunchout *punchout; // @synthesize punchout=_punchout;
 @property(retain, nonatomic) TLKLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) SearchUIButton *playButton; // @synthesize playButton=_playButton;
 @property(nonatomic) __weak SearchUITrailersCardSectionView *cardSectionView; // @synthesize cardSectionView=_cardSectionView;
-- (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)playTrailer;
 - (id)initWithMediaItem:(id)arg1 cardSectionView:(id)arg2;

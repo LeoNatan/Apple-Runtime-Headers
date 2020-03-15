@@ -28,6 +28,7 @@
 
 + (BOOL)automaticallyNotifiesObserversOfViewControllers;
 + (id)keyPathsForValuesAffectingTopViewController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *poppedViewControllers; // @synthesize poppedViewControllers=_poppedViewControllers;
 @property(nonatomic) double slideDuration; // @synthesize slideDuration=_slideDuration;
 @property(nonatomic) __weak NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) NSLayoutConstraint *currentVerticalSpacingLayout; // @synthesize currentVerticalSpacingLayout=_currentVerticalSpacingLayout;
 @property(retain, nonatomic) NSLayoutConstraint *currentHorizontalSpacingLayout; // @synthesize currentHorizontalSpacingLayout=_currentHorizontalSpacingLayout;
 @property(copy, nonatomic) NSMutableArray *viewControllers; // @synthesize viewControllers=_viewControllers;
-- (void).cxx_destruct;
 - (BOOL)_gkShouldRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
 - (void)_gkRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
 - (void)_gkForceNextContentUpdate;

@@ -18,8 +18,8 @@
     CDUnknownBlockType _completion;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (oneway void)clientRemote_saveDone:(id)arg1;
 - (oneway void)clientRemote_invalidate;
 - (oneway void)clientRemote_deliverObject:(id)arg1;

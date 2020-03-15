@@ -15,8 +15,8 @@
 
 + (id)actionWithPayload:(id)arg1;
 + (int)actionID;
-@property(retain) NSArray *bundlePaths; // @synthesize bundlePaths=_bundlePaths;
 - (void).cxx_destruct;
+@property(retain) NSArray *bundlePaths; // @synthesize bundlePaths=_bundlePaths;
 - (id)setOfClassesToDecodeInTheResult;
 - (BOOL)success;
 - (BOOL)returnsData;

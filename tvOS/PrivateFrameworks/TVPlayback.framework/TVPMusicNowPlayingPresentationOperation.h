@@ -17,10 +17,10 @@
     UIViewController *_presentedViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isAnimated) _Bool animated; // @synthesize animated=_animated;
 @property(readonly, nonatomic) UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 @property(readonly, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
-- (void).cxx_destruct;
 - (_Bool)isFinished;
 - (_Bool)isExecuting;
 - (void)_finish;

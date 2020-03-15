@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
 
 + (id)viewControllerForCreditCardsAuthorization;
 + (id)viewControllerForPasswordsAuthorization;
-@property(nonatomic) __weak NSObject<InlineAuthorizationViewControllerDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSObject<InlineAuthorizationViewControllerDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void)cancelAuthentication;
 - (void)_processAuthenticationResult:(BOOL)arg1 error:(id)arg2;
 - (void)loadView;

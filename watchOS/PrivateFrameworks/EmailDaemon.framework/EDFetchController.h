@@ -17,8 +17,8 @@
 }
 
 + (id)log;
-@property(retain, nonatomic) id <EDAccountsProvider> accountsProvider; // @synthesize accountsProvider=_accountsProvider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <EDAccountsProvider> accountsProvider; // @synthesize accountsProvider=_accountsProvider;
 - (id)initWithAccountsProvider:(id)arg1;
 
 // Remaining properties

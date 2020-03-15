@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _contentFulfillmentHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType contentFulfillmentHandler; // @synthesize contentFulfillmentHandler=_contentFulfillmentHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType contentFulfillmentHandler; // @synthesize contentFulfillmentHandler=_contentFulfillmentHandler;
 - (void)_drawDebugQuickLookImageWithInfo:(id)arg1 inContext:(struct CGContext *)arg2;
 - (_Bool)_shouldDrawDebugQuickLookImageWithInfo:(id)arg1;
 - (int)_visualRepresentationPatternType;

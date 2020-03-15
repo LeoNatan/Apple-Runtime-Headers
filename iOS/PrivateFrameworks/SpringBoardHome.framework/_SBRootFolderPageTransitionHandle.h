@@ -21,13 +21,13 @@
     double _pageTransitionProgress;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isValid) _Bool valid; // @synthesize valid=_valid;
 @property(nonatomic) double pageTransitionProgress; // @synthesize pageTransitionProgress=_pageTransitionProgress;
 @property(nonatomic) long long destinationPageState; // @synthesize destinationPageState=_destinationPageState;
 @property(nonatomic) long long sourcePageState; // @synthesize sourcePageState=_sourcePageState;
 @property(readonly, nonatomic) SBRootFolderController *folderController; // @synthesize folderController=_folderController;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

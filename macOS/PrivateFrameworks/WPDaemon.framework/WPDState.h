@@ -21,6 +21,7 @@
 }
 
 + (long long)getWPStateFromCBManagerState:(long long)arg1;
+- (void).cxx_destruct;
 @property BOOL initialUpdate; // @synthesize initialUpdate=_initialUpdate;
 @property(retain) NSMutableDictionary *cbStates; // @synthesize cbStates=_cbStates;
 @property(retain) NSMutableSet *cbManagers; // @synthesize cbManagers=_cbManagers;
@@ -28,7 +29,6 @@
 @property __weak NSObject<OS_dispatch_queue> *cbQueue; // @synthesize cbQueue=_cbQueue;
 @property BOOL restricted; // @synthesize restricted=_restricted;
 @property long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)coalesceState:(long long *)arg1 Restricted:(char *)arg2 UpdateCache:(BOOL)arg3;
 - (void)updateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updateWithManager:(id)arg1 Completion:(CDUnknownBlockType)arg2;

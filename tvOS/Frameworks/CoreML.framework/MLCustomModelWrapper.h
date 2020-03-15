@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSObject<MLCustomModel> *_customModel;
 }
 
-@property(retain) NSObject<MLCustomModel> *customModel; // @synthesize customModel=_customModel;
 - (void).cxx_destruct;
+@property(retain) NSObject<MLCustomModel> *customModel; // @synthesize customModel=_customModel;
 - (id)predictionsFromBatch:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)initWithModelDescription:(id)arg1 customModel:(id)arg2 configuration:(id)arg3;

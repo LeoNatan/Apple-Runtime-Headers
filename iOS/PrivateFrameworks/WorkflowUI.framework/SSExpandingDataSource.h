@@ -11,8 +11,8 @@
     CDUnknownBlockType _collapsedSectionCountBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType collapsedSectionCountBlock; // @synthesize collapsedSectionCountBlock=_collapsedSectionCountBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType collapsedSectionCountBlock; // @synthesize collapsedSectionCountBlock=_collapsedSectionCountBlock;
 - (void)performBatchUpdates:(CDUnknownBlockType)arg1;
 - (void)removeItemsAtIndexes:(id)arg1 inSection:(long long)arg2;
 - (void)removeItemsInRange:(struct _NSRange)arg1 inSection:(long long)arg2;

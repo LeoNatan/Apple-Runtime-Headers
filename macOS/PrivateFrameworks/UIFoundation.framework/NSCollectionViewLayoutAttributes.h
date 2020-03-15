@@ -38,9 +38,9 @@
 + (id)layoutAttributesForInterSectionGapBeforeIndexPath:(id)arg1;
 + (id)layoutAttributesForInterItemGapBeforeIndexPath:(id)arg1;
 + (id)layoutAttributesForItemWithIndexPath:(id)arg1;
+- (void).cxx_destruct;
 @property long long zIndex; // @synthesize zIndex=_zIndex;
 @property double alpha; // @synthesize alpha=_alpha;
-- (void).cxx_destruct;
 @property(readonly) NSString *representedElementKind;
 @property(readonly) long long representedElementCategory;
 - (BOOL)_isSupplementaryView;

@@ -26,6 +26,7 @@
 + (id)agentFromData:(id)arg1;
 + (id)agentType;
 + (id)agentDomain;
+- (void).cxx_destruct;
 @property __weak NSObject<NENexusAgentDelegate> *delegate; // @synthesize delegate=_delegate;
 @property unsigned int frameType; // @synthesize frameType=_frameType;
 @property(retain) NWNetworkAgentRegistration *registration; // @synthesize registration=_registration;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSString *agentDescription; // @synthesize agentDescription;
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active;
 @property(copy, nonatomic) NSUUID *agentUUID; // @synthesize agentUUID;
-- (void).cxx_destruct;
 - (void)unassertAgentWithOptions:(id)arg1;
 - (BOOL)assertAgentWithOptions:(id)arg1;
 - (BOOL)startAgentWithOptions:(id)arg1;

@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
     id <UISpringLoadedInteractionContext> _context;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UISpringLoadedInteractionContext> context; // @synthesize context=_context;
 @property(retain, nonatomic) _UIVelocityIntegrator *velocityIntegrator; // @synthesize velocityIntegrator=_velocityIntegrator;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(nonatomic) double cancelingVelocityThreshold; // @synthesize cancelingVelocityThreshold=_cancelingVelocityThreshold;
 @property(nonatomic) double beginningVelocityThreshold; // @synthesize beginningVelocityThreshold=_beginningVelocityThreshold;
 @property(nonatomic) __weak id <UISpringLoadedInteractionBehaviorDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (void)_tick:(id)arg1;
 - (void)setupDisplayLink;
 - (void)interactionDidFinish:(id)arg1;

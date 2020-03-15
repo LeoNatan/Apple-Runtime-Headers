@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)revision:(unsigned long long)arg1 supportsConstellation:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long constellation; // @synthesize constellation=_constellation;
 @property(retain, nonatomic) NSNumber *cascadeStepCount; // @synthesize cascadeStepCount=_cascadeStepCount;
 @property(nonatomic) _Bool performBlinkDetection; // @synthesize performBlinkDetection=_performBlinkDetection;
 @property(nonatomic) _Bool refineRightEyeRegion; // @synthesize refineRightEyeRegion=_refineRightEyeRegion;
 @property(nonatomic) _Bool refineLeftEyeRegion; // @synthesize refineLeftEyeRegion=_refineLeftEyeRegion;
 @property(nonatomic) _Bool refineMouthRegion; // @synthesize refineMouthRegion=_refineMouthRegion;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithRequestClass:(Class)arg1;
 

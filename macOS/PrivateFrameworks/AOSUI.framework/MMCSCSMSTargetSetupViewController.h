@@ -28,6 +28,7 @@
     iCloudTouchBarController *_touchBarController;
 }
 
+- (void).cxx_destruct;
 @property(retain) iCloudTouchBarController *touchBarController; // @synthesize touchBarController=_touchBarController;
 @property(retain) MMPhoneNumberFormatter *smsTargetFormatter; // @synthesize smsTargetFormatter=_smsTargetFormatter;
 @property __weak NSButton *smsTargetHelpButton; // @synthesize smsTargetHelpButton=_smsTargetHelpButton;
@@ -41,7 +42,6 @@
 @property __weak NSTextField *smsTargetTitle; // @synthesize smsTargetTitle=_smsTargetTitle;
 @property __weak NSImageView *smsTargetImageView; // @synthesize smsTargetImageView=_smsTargetImageView;
 @property id <MMCSCSMSTargetSetupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)controlTextDidChange:(id)arg1;
 - (void)_selectCountryCodeInPopUpMenu:(id)arg1;
 @property(readonly) NSString *smsTarget;

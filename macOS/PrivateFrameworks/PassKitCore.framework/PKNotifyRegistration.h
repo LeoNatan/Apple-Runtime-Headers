@@ -19,8 +19,8 @@
     NSString *_name;
 }
 
-@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (_Bool)hasSubregistrations;
 - (void)removeInvalidatedSubregistration:(id)arg1;
 - (id)subregisterWithHandler:(CDUnknownBlockType)arg1;

@@ -24,8 +24,8 @@
 + (_Bool)isStillImageDisparity:(id)arg1;
 + (id)focusRectDictionaryFromRect:(struct CGRect)arg1;
 + (id)focusRectDictionaryFromMetadata:(id)arg1;
-@property(retain, nonatomic) PIFaceObservationCache *faceObservationCache; // @synthesize faceObservationCache=_faceObservationCache;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PIFaceObservationCache *faceObservationCache; // @synthesize faceObservationCache=_faceObservationCache;
 - (void)_calculateWithImageProperties:(id)arg1 valuesAtCapture:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)submit:(CDUnknownBlockType)arg1;
 

@@ -53,9 +53,9 @@ __attribute__((visibility("hidden")))
 + (id)willBeginPossibleDeletionOfItemAtURL:(id)arg1;
 + (id)willBeginPossibleMoveOfItemAtURL:(id)arg1 toURL:(id)arg2;
 + (id)willBeginPossibleCreationOfItemAtURL:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) BRNotificationReceiver *receiver; // @synthesize receiver=_receiver;
 @property __weak NSMetadataQuery *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (void)notificationReceiverDidReceiveNotifications:(id)arg1;
 - (void)notificationsReceiverDidReceiveNotificationsBatch:(id)arg1;
 - (void)notificationsReceiverDidFinishGathering:(id)arg1;

@@ -19,9 +19,9 @@
 }
 
 + (id)proxy;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id result; // @synthesize result=_result;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (struct __CFError *)copyCFError;
 - (void)handleObjResult:(id)arg1 error:(id)arg2;
 - (void)handleBoolResult:(_Bool)arg1 error:(id)arg2;

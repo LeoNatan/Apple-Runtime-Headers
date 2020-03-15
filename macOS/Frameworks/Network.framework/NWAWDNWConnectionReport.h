@@ -8,7 +8,7 @@
 
 #import <Network/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString, NWAWDNWL2Report;
+@class NSMutableArray, NSString, NWAWDNWDeviceReport, NWAWDNWL2Report;
 
 __attribute__((visibility("hidden")))
 @interface NWAWDNWConnectionReport : PBCodable <NSCopying>
@@ -55,6 +55,7 @@ __attribute__((visibility("hidden")))
     int _connectedInterfaceType;
     int _connectionMode;
     NSString *_connectionUUID;
+    NWAWDNWDeviceReport *_deviceReport;
     int _failureReason;
     int _firstAddressFamily;
     NWAWDNWL2Report *_l2Report;
@@ -158,6 +159,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)activitiesType;
+- (void).cxx_destruct;
+@property(retain, nonatomic) NWAWDNWDeviceReport *deviceReport; // @synthesize deviceReport=_deviceReport;
 @property(retain, nonatomic) NWAWDNWL2Report *l2Report; // @synthesize l2Report=_l2Report;
 @property(nonatomic) BOOL prohibitsConstrained; // @synthesize prohibitsConstrained=_prohibitsConstrained;
 @property(nonatomic) BOOL prohibitsExpensive; // @synthesize prohibitsExpensive=_prohibitsExpensive;
@@ -220,7 +223,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL systemProxyConfigured; // @synthesize systemProxyConfigured=_systemProxyConfigured;
 @property(nonatomic) BOOL triggeredPath; // @synthesize triggeredPath=_triggeredPath;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -230,6 +232,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasDeviceReport;
 @property(readonly, nonatomic) BOOL hasL2Report;
 @property(nonatomic) BOOL hasProhibitsConstrained;
 @property(nonatomic) BOOL hasProhibitsExpensive;

@@ -15,9 +15,9 @@
 }
 
 + (id)defaultReuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) UILabel *callToActionLabel; // @synthesize callToActionLabel=_callToActionLabel;
-- (void).cxx_destruct;
 - (void)setupConstraints;
 - (void)setupSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

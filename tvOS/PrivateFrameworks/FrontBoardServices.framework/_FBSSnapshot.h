@@ -18,8 +18,8 @@
     IOSurface *_protectedSurfaceRef;
 }
 
-@property(readonly, copy, nonatomic) _FBSSnapshotContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) _FBSSnapshotContext *context; // @synthesize context=_context;
 - (struct CGSize)_scaledSnapshotSize;
 - (double)_scale;
 - (void)_synchronizedCaptureWithCompletion:(CDUnknownBlockType)arg1;

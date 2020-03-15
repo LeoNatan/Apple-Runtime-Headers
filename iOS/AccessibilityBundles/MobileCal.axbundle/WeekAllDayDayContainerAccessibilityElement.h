@@ -16,11 +16,11 @@
     UIView *_allDayView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *allDayView; // @synthesize allDayView=_allDayView;
 @property(nonatomic) unsigned long long dayIndex; // @synthesize dayIndex=_dayIndex;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) NSMutableArray *children; // @synthesize children=_children;
-- (void).cxx_destruct;
 - (id)_accessibilityParentForFindingScrollParent;
 - (_Bool)isAccessibilityElement;
 - (struct CGRect)accessibilityFrame;

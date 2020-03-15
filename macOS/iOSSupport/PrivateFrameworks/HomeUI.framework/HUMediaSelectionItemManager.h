@@ -35,6 +35,7 @@
     NSNumber *_lastSelectedVolume;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *lastSelectedVolume; // @synthesize lastSelectedVolume=_lastSelectedVolume;
 @property(retain, nonatomic) HFPlaybackArchive *lastSelectedArchive; // @synthesize lastSelectedArchive=_lastSelectedArchive;
 @property(retain, nonatomic) SKCloudServiceController *cloudServiceController; // @synthesize cloudServiceController=_cloudServiceController;
@@ -58,7 +59,6 @@
 @property(retain, nonatomic) HFStaticItem *playbackStateAdjustVolumeOnlyItem; // @synthesize playbackStateAdjustVolumeOnlyItem=_playbackStateAdjustVolumeOnlyItem;
 @property(readonly, nonatomic) HFActionSetBuilder *actionSetBuilder; // @synthesize actionSetBuilder=_actionSetBuilder;
 @property(retain, nonatomic) HFStaticItem *selectedPlaybackStateItem; // @synthesize selectedPlaybackStateItem=_selectedPlaybackStateItem;
-- (void).cxx_destruct;
 - (id)_volumeForMediaAction;
 - (id)_defaultCurrentVolume;
 - (id)_itemsToHideInSet:(id)arg1;

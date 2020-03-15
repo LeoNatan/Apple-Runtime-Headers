@@ -31,8 +31,8 @@
 + (id)vortexField;
 + (id)dragField;
 + (BOOL)supportsSecureCoding;
-@property(nonatomic, getter=isExclusive) BOOL exclusive; // @synthesize exclusive=_exclusive;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isExclusive) BOOL exclusive; // @synthesize exclusive=_exclusive;
 - (BOOL)isEqualToNode:(id)arg1;
 @property(retain, nonatomic) SKRegion *region; // @synthesize region=_region;
 @property(nonatomic, getter=isEnabled) BOOL enabled;

@@ -18,9 +18,9 @@
     HDDemoDataGenerator *_generator;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HDDemoDataGenerator *generator; // @synthesize generator=_generator;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)daemonReady:(id)arg1;
 - (void)_queue_generateDemoDataIfNeeded;
 - (id)initWithProfile:(id)arg1;

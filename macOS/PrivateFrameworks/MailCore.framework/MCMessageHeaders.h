@@ -38,10 +38,10 @@
 + (BOOL)isMessageIDHeaderKey:(id)arg1;
 + (BOOL)isAddressHeaderKey:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *headerData; // @synthesize headerData=_headerData;
 @property(retain) NSNumber *primitiveMessageIsFromMicrosoft; // @synthesize primitiveMessageIsFromMicrosoft=_primitiveMessageIsFromMicrosoft;
 @property(readonly, nonatomic) unsigned long long encodingHint; // @synthesize encodingHint=_encodingHint;
-- (void).cxx_destruct;
 - (void)_appendAddressList:(id)arg1 toData:(id)arg2 forKey:(id)arg3;
 @property(readonly, copy) NSString *description;
 - (void)_appendEncodedHeadersToData:(id)arg1;

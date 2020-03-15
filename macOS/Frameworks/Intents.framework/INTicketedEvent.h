@@ -22,11 +22,11 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) CLPlacemark *location; // @synthesize location=_location;
 @property(readonly, copy) INDateComponentsRange *eventDuration; // @synthesize eventDuration=_eventDuration;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly) long long category; // @synthesize category=_category;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

@@ -17,12 +17,12 @@
     unsigned long long _activityIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long activityIdentifier; // @synthesize activityIdentifier=_activityIdentifier;
 @property(readonly, nonatomic) NSString *composedMessage; // @synthesize composedMessage=_composedMessage;
 @property(readonly, nonatomic) NSString *senderImagePath; // @synthesize senderImagePath=_senderImagePath;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) NSString *process; // @synthesize process=_process;
-- (void).cxx_destruct;
 - (_Bool)containsMessage:(id)arg1;
 - (_Bool)loggedByFramework:(id)arg1;
 - (_Bool)loggedByProcess:(id)arg1;

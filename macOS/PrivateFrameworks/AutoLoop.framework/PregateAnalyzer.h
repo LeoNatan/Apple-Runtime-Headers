@@ -32,6 +32,7 @@
 }
 
 + (id)pregateFailureReasonsToString:(int)arg1;
+- (void).cxx_destruct;
 @property(retain) NSArray *exposureTimes; // @synthesize exposureTimes=_exposureTimes;
 @property(retain) NSArray *gainScores; // @synthesize gainScores=_gainScores;
 @property(retain) NSArray *focusScores; // @synthesize focusScores=_focusScores;
@@ -51,7 +52,6 @@
 @property CDStruct_1b6d18a9 requiredFrameTime; // @synthesize requiredFrameTime;
 @property CDStruct_1b6d18a9 minimumRequiredTrimLength; // @synthesize minimumRequiredTrimLength;
 @property(retain) PregateFeatureBuilder *featureBuilder; // @synthesize featureBuilder;
-- (void).cxx_destruct;
 - (int)processPregateSuccess:(int *)arg1;
 - (int)findGatingPassViaTrimming:(id)arg1;
 - (_Bool)findFrameIndicesInFrameArray:(id)arg1 forTimeRange:(CDStruct_e83c9415)arg2 startIndex:(int *)arg3 endIndex:(int *)arg4;

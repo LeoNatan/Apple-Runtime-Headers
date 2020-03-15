@@ -33,6 +33,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long pcsReportManateeStatus; // @synthesize pcsReportManateeStatus=_pcsReportManateeStatus;
 @property(nonatomic) _Bool hasInternalSettingManateeEnabled; // @synthesize hasInternalSettingManateeEnabled=_hasInternalSettingManateeEnabled;
 @property(nonatomic) _Bool hasCKManateeEnabled; // @synthesize hasCKManateeEnabled=_hasCKManateeEnabled;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NSString *containerID; // @synthesize containerID=_containerID;
 @property(retain, nonatomic) NSString *syncCirclePrefix; // @synthesize syncCirclePrefix=_syncCirclePrefix;
 @property(nonatomic) unsigned int options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

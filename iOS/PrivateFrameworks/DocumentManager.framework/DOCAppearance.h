@@ -31,6 +31,7 @@
 + (id)recentsWidgetAppearance;
 + (id)recentsPopoverAppearance;
 + (id)documentsPickerAppearance;
+- (void).cxx_destruct;
 @property _Bool alwaysEnableScrollInSourceView; // @synthesize alwaysEnableScrollInSourceView=_alwaysEnableScrollInSourceView;
 @property(nonatomic) double createButtonAspectRatio; // @synthesize createButtonAspectRatio=_createButtonAspectRatio;
 @property(nonatomic) unsigned long long browserUserInterfaceStyle; // @synthesize browserUserInterfaceStyle=_browserUserInterfaceStyle;
@@ -42,7 +43,6 @@
 @property(nonatomic) double fullHorizontalTableStackSpacing; // @synthesize fullHorizontalTableStackSpacing=_fullHorizontalTableStackSpacing;
 @property(nonatomic) double regularHorizontalTableStackSpacing; // @synthesize regularHorizontalTableStackSpacing=_regularHorizontalTableStackSpacing;
 @property(nonatomic) double compactHorizontalTableStackSpacing; // @synthesize compactHorizontalTableStackSpacing=_compactHorizontalTableStackSpacing;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

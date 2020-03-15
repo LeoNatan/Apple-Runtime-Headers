@@ -18,10 +18,10 @@
     id <SXQuickLookService> _service;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXQuickLookService> service; // @synthesize service=_service;
 @property(readonly, nonatomic) SXQuickLookFile *file; // @synthesize file=_file;
 @property(nonatomic) __weak id <SXQuickLookInteractorDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (void)loadThumbnailWithSize:(struct CGSize)arg1;
 - (id)initWithFile:(id)arg1 service:(id)arg2;
 

@@ -21,12 +21,12 @@
     struct CGRect _bounds;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldCancel; // @synthesize shouldCancel=_shouldCancel;
 @property(retain, nonatomic, setter=_setLayer:) CALayer *layer; // @synthesize layer=_layer;
 @property(readonly, nonatomic) _Bool rendersAsynchronously; // @synthesize rendersAsynchronously=_rendersAsynchronously;
 @property(readonly, nonatomic) double contentsScale; // @synthesize contentsScale=_contentsScale;
 @property(readonly, nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
-- (void).cxx_destruct;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
 - (void)invalidateLayer;
 - (void)setRendersAsynchronously:(_Bool)arg1;

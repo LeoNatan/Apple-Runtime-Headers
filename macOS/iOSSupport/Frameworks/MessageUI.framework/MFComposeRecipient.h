@@ -34,6 +34,7 @@
 + (id)_requiredKeyDescriptors;
 + (BOOL)supportsSecureCoding;
 + (id)composeRecipientWithAutocompleteResult:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long kind; // @synthesize kind=_kind;
 @property(retain, nonatomic) CNAutocompleteResult *autocompleteResult; // @synthesize autocompleteResult=_autocompleteResult;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
@@ -45,7 +46,6 @@
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) MFComposeRecipientOriginContext *originContext; // @synthesize originContext=_originContext;
 @property(retain, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

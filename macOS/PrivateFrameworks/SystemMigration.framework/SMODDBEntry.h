@@ -13,8 +13,8 @@
     ODRecord *_backingODRecord;
 }
 
-@property(retain) ODRecord *backingODRecord; // @synthesize backingODRecord=_backingODRecord;
 - (void).cxx_destruct;
+@property(retain) ODRecord *backingODRecord; // @synthesize backingODRecord=_backingODRecord;
 - (BOOL)_createDictionaryFromRecord:(id)arg1;
 - (id)name;
 - (id)initWithDictionary:(id)arg1 andName:(id)arg2;

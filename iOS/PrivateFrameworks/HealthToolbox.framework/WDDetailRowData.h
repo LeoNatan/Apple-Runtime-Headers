@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_value;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *value; // @synthesize value=_value;
 @property(readonly, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)initWithKey:(id)arg1 value:(id)arg2;
 
 @end

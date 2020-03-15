@@ -18,8 +18,8 @@
 + (void)loadTournamentDefinitionWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (void)loadTournamentDefinitionsWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (_Bool)supportsSecureCoding;
-@property(retain) GKTournamentDefinitionInternal *internal; // @synthesize internal=_internal;
 - (void).cxx_destruct;
+@property(retain) GKTournamentDefinitionInternal *internal; // @synthesize internal=_internal;
 - (void)loadHistoricalDataForPlayer:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)loadTournamentsWithPredicate:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)proposedNextCustomTournamentStartDate;

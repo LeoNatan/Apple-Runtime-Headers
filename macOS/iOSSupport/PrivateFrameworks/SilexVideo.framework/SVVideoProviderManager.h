@@ -22,11 +22,11 @@
     SVWeakObjectCache *_videoAdProviders;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SVWeakObjectCache *videoAdProviders; // @synthesize videoAdProviders=_videoAdProviders;
 @property(readonly, nonatomic) SVWeakObjectCache *videoProviders; // @synthesize videoProviders=_videoProviders;
 @property(readonly, nonatomic) id <SVVideoAdProviderFactory> videoAdProviderFactory; // @synthesize videoAdProviderFactory=_videoAdProviderFactory;
 @property(readonly, nonatomic) id <SVVideoProviderFactory> videoProviderFactory; // @synthesize videoProviderFactory=_videoProviderFactory;
-- (void).cxx_destruct;
 - (id)videoAdProviderForVideo:(id)arg1;
 - (id)createURLProviderForVideo:(id)arg1;
 - (id)videoEventTrackerForVideo:(id)arg1;

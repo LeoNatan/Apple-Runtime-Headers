@@ -15,8 +15,8 @@
     NSData *_issueViewingSessionId;
 }
 
-@property(retain, nonatomic) NSData *issueViewingSessionId; // @synthesize issueViewingSessionId=_issueViewingSessionId;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *issueViewingSessionId; // @synthesize issueViewingSessionId=_issueViewingSessionId;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

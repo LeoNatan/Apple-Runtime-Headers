@@ -28,6 +28,7 @@
     UIColor *_subtitleFocusedColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *subtitleFocusedColor; // @synthesize subtitleFocusedColor=_subtitleFocusedColor;
 @property(retain, nonatomic) UIColor *subtitleUnfocusedColor; // @synthesize subtitleUnfocusedColor=_subtitleUnfocusedColor;
 @property(copy, nonatomic) NSString *subtitleTextStyle; // @synthesize subtitleTextStyle=_subtitleTextStyle;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) UIColor *unfocusedBgColor; // @synthesize unfocusedBgColor=_unfocusedBgColor;
 @property(nonatomic) double focusedSizeIncrease; // @synthesize focusedSizeIncrease=_focusedSizeIncrease;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double unfocusedImageAlpha;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithShadowImages:(_Bool)arg1;

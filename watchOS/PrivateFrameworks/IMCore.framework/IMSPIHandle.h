@@ -17,10 +17,10 @@
     _Bool _haveFetchedIMPerson;
 }
 
+- (void).cxx_destruct;
 @property(readonly) _Bool isMe; // @synthesize isMe=_isMe;
 @property(readonly) NSString *countryCode; // @synthesize countryCode=_countryCode;
 @property(readonly) NSString *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) NSString *cnContactID;

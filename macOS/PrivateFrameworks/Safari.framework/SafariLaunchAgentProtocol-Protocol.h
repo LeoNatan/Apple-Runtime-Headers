@@ -6,10 +6,11 @@
 
 #import <Safari/ASWebAuthenticationSessionRequestServing-Protocol.h>
 #import <Safari/AuthenticationSessionCoordinating-Protocol.h>
+#import <Safari/SSReadingListCoordinating-Protocol.h>
 
 @class NSURL;
 
-@protocol SafariLaunchAgentProtocol <AuthenticationSessionCoordinating, ASWebAuthenticationSessionRequestServing>
+@protocol SafariLaunchAgentProtocol <AuthenticationSessionCoordinating, ASWebAuthenticationSessionRequestServing, SSReadingListCoordinating>
 - (void)launchSafariToURL:(NSURL *)arg1;
 @end
 

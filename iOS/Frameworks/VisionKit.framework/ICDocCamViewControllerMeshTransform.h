@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _previewViewFrame;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType imageMeshAnimationCompletionBlock; // @synthesize imageMeshAnimationCompletionBlock=_imageMeshAnimationCompletionBlock;
 @property(retain, nonatomic) ICDocCamImageQuad *imageQuad; // @synthesize imageQuad=_imageQuad;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGRect imageViewFrame; // @synthesize imageViewFrame=_imageViewFrame;
 @property(retain, nonatomic) UIView *scrimView; // @synthesize scrimView=_scrimView;
 @property(retain, nonatomic) UIImageView *animationImageView; // @synthesize animationImageView=_animationImageView;
-- (void).cxx_destruct;
 - (id)imageMeshTransformWithImageQuad:(id)arg1 imageViewFrame:(struct CGRect)arg2 previewBounds:(struct CGRect)arg3 finalTransform:(_Bool)arg4;
 - (void)startWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (struct CGRect)frameForImageInImageViewFrame:(struct CGRect)arg1;

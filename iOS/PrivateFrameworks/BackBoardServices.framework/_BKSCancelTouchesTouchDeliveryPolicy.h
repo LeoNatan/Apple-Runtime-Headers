@@ -17,11 +17,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double initialTouchTimestamp; // @synthesize initialTouchTimestamp=_initialTouchTimestamp;
 @property(readonly, nonatomic) unsigned int contextId; // @synthesize contextId=_contextId;
 - (void)setAssertionEndpoint:(id)arg1;
 - (id)assertionEndpoint;
-- (void).cxx_destruct;
 - (id)matchSharingTouchesPolicy:(CDUnknownBlockType)arg1 orCancelTouchesPolicy:(CDUnknownBlockType)arg2 orCombinedPolicy:(CDUnknownBlockType)arg3;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

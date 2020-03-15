@@ -16,10 +16,10 @@
     NSObject<IBBinaryArchiving> *_value;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<IBBinaryArchiving> *value; // @synthesize value=_value;
 @property(readonly, copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(readonly, copy, nonatomic) NSString *objectID; // @synthesize objectID=_objectID;
-- (void).cxx_destruct;
 - (_Bool)requiresSynchronousResultProcessing;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;

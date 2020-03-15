@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UIIndexBarView *_indexBarView;
 }
 
-@property(nonatomic) __weak UIIndexBarView *indexBarView; // @synthesize indexBarView=_indexBarView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIIndexBarView *indexBarView; // @synthesize indexBarView=_indexBarView;
 - (long long)_indexForEntryAtPoint:(struct CGPoint)arg1;
 - (struct CGRect)_visibleBoundsForRect:(struct CGRect)arg1 stride:(double *)arg2;
 - (id)displayEntryFromEntry:(id)arg1;

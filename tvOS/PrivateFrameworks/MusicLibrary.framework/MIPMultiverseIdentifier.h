@@ -32,6 +32,7 @@
 }
 
 + (Class)libraryIdentifiersType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *libraryIdentifiers; // @synthesize libraryIdentifiers=_libraryIdentifiers;
 @property(retain, nonatomic) NSString *cloudUniversalLibraryId; // @synthesize cloudUniversalLibraryId=_cloudUniversalLibraryId;
 @property(nonatomic) long long purchaseHistoryId; // @synthesize purchaseHistoryId=_purchaseHistoryId;
@@ -39,7 +40,6 @@
 @property(nonatomic) long long storeId; // @synthesize storeId=_storeId;
 @property(nonatomic) long long accountId; // @synthesize accountId=_accountId;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

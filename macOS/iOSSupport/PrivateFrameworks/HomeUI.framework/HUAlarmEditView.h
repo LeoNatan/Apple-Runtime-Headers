@@ -14,9 +14,9 @@
     UIDatePicker *_timePicker;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIDatePicker *timePicker; // @synthesize timePicker=_timePicker;
 @property(readonly, nonatomic) UITableView *settingsTable; // @synthesize settingsTable=_settingsTable;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

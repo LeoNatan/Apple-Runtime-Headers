@@ -66,7 +66,7 @@
 }
 
 + (BOOL)_pasteboardHasStrings;
-+ (id)whitelistedDictationDictionaryFromMetadata:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldStartUndoGroup; // @synthesize shouldStartUndoGroup=_shouldStartUndoGroup;
 @property(nonatomic) int currentUndoGroupType; // @synthesize currentUndoGroupType=_currentUndoGroupType;
 @property(nonatomic) struct _NSRange previousSelectedRange; // @synthesize previousSelectedRange=_previousSelectedRange;
@@ -76,7 +76,6 @@
 @property(copy, nonatomic) NSDictionary *typingAttributes; // @synthesize typingAttributes=_typingAttributes;
 @property(nonatomic) BOOL allowsEditingTextAttributes; // @synthesize allowsEditingTextAttributes=_allowsEditingTextAttributes;
 @property(copy, nonatomic, getter=_emptyStringAttributes, setter=_setEmptyStringAttributes:) NSDictionary *emptyStringAttributes; // @synthesize emptyStringAttributes=_emptyStringAttributes;
-- (void).cxx_destruct;
 - (void)removeAnnotation:(id)arg1 forRange:(id)arg2;
 - (void)replaceRange:(id)arg1 withAnnotatedString:(id)arg2 relativeReplacementRange:(struct _NSRange)arg3;
 - (id)annotatedSubstringForRange:(id)arg1;
@@ -192,6 +191,7 @@
 - (void)_invalidateTypingAttributes;
 - (void)_addToTypingAttributes:(id)arg1 value:(id)arg2;
 - (id)_attributesForReplacementInRange:(struct _NSRange)arg1;
+- (id)_attributesForInsertionOfText:(struct _NSRange)arg1;
 - (id)_newAttributedStringForInsertionOfAttributedText:(id)arg1 inRange:(struct _NSRange)arg2;
 - (id)_newAttributedStringForInsertionOfText:(id)arg1 inRange:(struct _NSRange)arg2;
 - (id)_fixupTypingAttributeForAttributes:(id)arg1;
@@ -211,7 +211,7 @@
 - (void)_forceUnmarkTextDueToEditing;
 - (void)setAttributedMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2;
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2;
-- (void)_setAttributedMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2 fromKeyboard:(BOOL)arg3;
+- (void)_setAttributedMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2 fromKeyboard:(BOOL)arg3 useTextStyle:(BOOL)arg4;
 @property(readonly, nonatomic) UITextRange *markedTextRange;
 @property(nonatomic) long long selectionAffinity;
 @property(copy) UITextRange *selectedTextRange;
@@ -259,8 +259,8 @@
 - (BOOL)_mightHaveSelection;
 @property(readonly, nonatomic, getter=isEditing) BOOL editing;
 @property(readonly, nonatomic, getter=isEditable) BOOL editable;
-- (id)attributedSubstringForMarkedRange;
 - (id)markedTextAttributes;
+- (id)attributedSubstringForMarkedRange;
 @property(copy, nonatomic) NSDictionary *markedTextStyle;
 - (void)_insertText:(id)arg1 fromKeyboard:(BOOL)arg2;
 - (struct _NSRange)_rangeToReplaceWhenInsertingText;
@@ -291,7 +291,7 @@
 - (void)_sendDelegateChangeNotificationsForText:(BOOL)arg1 selection:(BOOL)arg2;
 - (void)_sendDelegateWillChangeNotificationsForText:(BOOL)arg1 selection:(BOOL)arg2;
 - (id)_senderForDelegateNotifications;
-- (void)_cancelDictationIfNecessaryForChangeInRange:(struct _NSRange)arg1;
+- (struct _NSRange)_rangeAfterCancelDictationIfNecessaryForChangeInRange:(struct _NSRange)arg1;
 - (void)_detachFromLayoutManager;
 - (void)dealloc;
 - (id)_initWithLayoutManager:(id)arg1;

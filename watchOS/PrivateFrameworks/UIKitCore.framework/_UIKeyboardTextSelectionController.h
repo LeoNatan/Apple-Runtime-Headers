@@ -43,6 +43,8 @@ __attribute__((visibility("hidden")))
 - (void)selectPositionAtBoundary:(int)arg1 inDirection:(int)arg2 relativeToSelection:(id)arg3 executionContext:(id)arg4;
 - (void)selectImmediatePositionAtBoundary:(int)arg1 inDirection:(int)arg2 executionContext:(id)arg3;
 - (void)selectPositionAtBoundary:(int)arg1 inDirection:(int)arg2 executionContext:(id)arg3;
+- (void)selectPositionAtPoint:(struct CGPoint)arg1 granularity:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)selectPositionAtPoint:(struct CGPoint)arg1 granularity:(int)arg2 executionContext:(id)arg3;
 - (void)selectPositionAtPoint:(struct CGPoint)arg1 executionContext:(id)arg2;
 - (void)restartSelection;
 - (void)beginSelection;

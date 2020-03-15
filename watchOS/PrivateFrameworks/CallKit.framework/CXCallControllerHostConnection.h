@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSSet *_capabilities;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *capabilities; // @synthesize capabilities=_capabilities;
 @property(nonatomic) _Bool hasVoIPBackgroundMode; // @synthesize hasVoIPBackgroundMode=_hasVoIPBackgroundMode;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <CXCallControllerHostConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSURL *bundleURL; // @synthesize bundleURL=_bundleURL;
 @property(copy, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
-- (void).cxx_destruct;
 - (oneway void)requestTransaction:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (oneway void)requestCalls:(CDUnknownBlockType)arg1;
 - (oneway void)removeCall:(id)arg1;

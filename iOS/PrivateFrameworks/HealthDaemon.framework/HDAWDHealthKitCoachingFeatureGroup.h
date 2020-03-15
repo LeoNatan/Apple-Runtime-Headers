@@ -18,9 +18,9 @@
 
 + (Class)futureType;
 + (Class)pastType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *futures; // @synthesize futures=_futures;
 @property(retain, nonatomic) NSMutableArray *pasts; // @synthesize pasts=_pasts;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

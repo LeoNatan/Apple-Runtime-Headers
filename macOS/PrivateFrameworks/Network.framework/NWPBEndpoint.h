@@ -19,12 +19,12 @@
     NSData *_txtRecord;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *txtRecord; // @synthesize txtRecord=_txtRecord;
 @property(retain, nonatomic) NWPBInterface *interface; // @synthesize interface=_interface;
 @property(retain, nonatomic) NWPBServiceEndpoint *service; // @synthesize service=_service;
 @property(retain, nonatomic) NWPBHostEndpoint *host; // @synthesize host=_host;
 @property(retain, nonatomic) NWPBAddressEndpoint *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

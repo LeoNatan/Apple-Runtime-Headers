@@ -40,11 +40,11 @@
 + (id)_scheme;
 + (id)_gatewayHost;
 + (id)_host;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTimer *accessTokenInvalidationTimer; // @synthesize accessTokenInvalidationTimer=_accessTokenInvalidationTimer;
 @property(retain, nonatomic) NSString *accessToken; // @synthesize accessToken=_accessToken;
 @property(retain, nonatomic) NSURLSession *defaultSession; // @synthesize defaultSession=_defaultSession;
 @property(nonatomic) __weak id <HKOrganDonationConnectionManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)jwtPayloadWithRegistrant:(id)arg1;
 - (id)payload;
 - (id)jwtHeader;

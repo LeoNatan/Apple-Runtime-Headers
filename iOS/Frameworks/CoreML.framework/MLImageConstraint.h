@@ -26,11 +26,11 @@
 + (id)constraintWithPixelsWide:(long long)arg1 pixelsHigh:(long long)arg2 pixelType:(unsigned long long)arg3;
 + (id)constraintWithPixelsWide:(long long)arg1 pixelsHigh:(long long)arg2 pixelType:(unsigned long long)arg3 sizeConstraint:(id)arg4;
 + (_Bool)osType:(unsigned int)arg1 isAcceptedForPixelType:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long pixelType; // @synthesize pixelType=_pixelType;
 @property(readonly, nonatomic) MLImageSizeConstraint *sizeConstraint; // @synthesize sizeConstraint=_sizeConstraint;
 @property(readonly, nonatomic) long long pixelsWide; // @synthesize pixelsWide=_pixelsWide;
 @property(readonly, nonatomic) long long pixelsHigh; // @synthesize pixelsHigh=_pixelsHigh;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly) unsigned long long imageWidth;

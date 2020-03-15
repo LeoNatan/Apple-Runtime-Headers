@@ -33,6 +33,7 @@
     NSDate *_expiryDate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned short streamID; // @synthesize streamID=_streamID;
 @property(readonly, nonatomic) unsigned long long totalBytes; // @synthesize totalBytes=_totalBytes;
 @property(nonatomic) unsigned long long nextByte; // @synthesize nextByte=_nextByte;
@@ -42,7 +43,6 @@
 @property(nonatomic) unsigned int maxChunkSize; // @synthesize maxChunkSize=_maxChunkSize;
 @property(readonly, nonatomic) _Bool isDone; // @synthesize isDone=_done;
 @property(readonly, nonatomic) _Bool sentFirstMessage; // @synthesize sentFirstMessage=_sentFirstMessage;
-- (void).cxx_destruct;
 - (void)reset;
 - (id)nextMessage;
 - (id)nextMessage_old;

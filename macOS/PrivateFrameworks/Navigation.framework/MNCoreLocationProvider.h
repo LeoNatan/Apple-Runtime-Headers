@@ -31,9 +31,9 @@ __attribute__((visibility("hidden")))
     BOOL _updatingLocations;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL updatingLocations; // @synthesize updatingLocations=_updatingLocations;
 @property(nonatomic) __weak id <MNLocationProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
 - (void)locationManagerDidPauseLocationUpdates:(id)arg1;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;

@@ -32,6 +32,7 @@
 
 + (id)activityWithActionTitle:(id)arg1 actionType:(id)arg2 activityType:(id)arg3 systemImageName:(id)arg4;
 + (id)_destructiveActivities;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXActivityDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <PXActivityActionDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;
 @property(copy, nonatomic) CDUnknownBlockType canPerformActivityActionHandler; // @synthesize canPerformActivityActionHandler=_canPerformActivityActionHandler;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) NSString *actionType; // @synthesize actionType=_actionType;
 @property(copy, nonatomic) NSString *actionTitle; // @synthesize actionTitle=_actionTitle;
 @property(nonatomic) __weak id <PXActivityItemSourceController> itemSourceController; // @synthesize itemSourceController=_itemSourceController;
-- (void).cxx_destruct;
 - (void)performActivity;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 - (id)_systemImageName;

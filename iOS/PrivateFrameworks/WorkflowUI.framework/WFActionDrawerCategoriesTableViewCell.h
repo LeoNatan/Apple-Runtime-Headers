@@ -21,13 +21,13 @@
     WFActionDrawerCategoriesMetrics *_metrics;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak WFActionDrawerCategoriesMetrics *metrics; // @synthesize metrics=_metrics;
 @property(retain, nonatomic) WFActionDrawerCategoriesCollectionViewManager *categoriesCollectionViewManager; // @synthesize categoriesCollectionViewManager=_categoriesCollectionViewManager;
 @property(nonatomic) __weak UICollectionViewFlowLayout *categoriesFlowLayout; // @synthesize categoriesFlowLayout=_categoriesFlowLayout;
 @property(nonatomic) __weak UICollectionView *categoriesCollectionView; // @synthesize categoriesCollectionView=_categoriesCollectionView;
 @property(nonatomic) _Bool shouldStackVertically; // @synthesize shouldStackVertically=_shouldStackVertically;
 @property(nonatomic) __weak id <WFActionDrawerCategoriesTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)categoriesCollectionViewManager:(id)arg1 didSelectCategoryForContentType:(id)arg2 title:(id)arg3;
 - (void)categoriesCollectionViewManagerDidSelectCategoryScripting:(id)arg1 title:(id)arg2;
 - (void)categoriesCollectionViewManagerDidSelectCategoryFavorites:(id)arg1 title:(id)arg2;

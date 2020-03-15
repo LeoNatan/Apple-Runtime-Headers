@@ -15,9 +15,9 @@
     IBAutolayoutStatus *_initialStatus;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBAutolayoutStatus *initialStatus; // @synthesize initialStatus=_initialStatus;
 @property(copy, nonatomic) id <IBCollection> items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;

@@ -16,8 +16,8 @@
     CDUnknownBlockType _activityUpdateBlock;
 }
 
-@property(copy) CDUnknownBlockType activityUpdateBlock; // @synthesize activityUpdateBlock=_activityUpdateBlock;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType activityUpdateBlock; // @synthesize activityUpdateBlock=_activityUpdateBlock;
 - (void)setActive:(BOOL)arg1;
 - (id)initWithDescription:(id)arg1;
 

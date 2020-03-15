@@ -23,6 +23,7 @@
 + (_Bool)isSent:(id)arg1;
 + (id)_nicknameCustomKey;
 + (id)_photoPathCustomKey;
+- (void).cxx_destruct;
 @property(readonly) NSString *attachmentFilename; // @synthesize attachmentFilename=_attachmentFilename;
 @property(readonly) _Bool senderIsBusinessChat; // @synthesize senderIsBusinessChat=_senderIsBusinessChat;
 @property(retain) NSString *photoPath; // @synthesize photoPath=_photoPath;
@@ -31,7 +32,6 @@
 @property(retain) NSString *conversationIdentifier; // @synthesize conversationIdentifier=_conversationIdentifier;
 @property(retain) NSArray *recipients; // @synthesize recipients=_recipients;
 @property(retain) CSPerson *sender; // @synthesize sender=_sender;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)spotlightDomainIdentifier;
 - (id)spotlightBundleIdentifier;

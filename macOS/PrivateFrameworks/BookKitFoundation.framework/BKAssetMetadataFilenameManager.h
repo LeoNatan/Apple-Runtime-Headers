@@ -16,9 +16,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *reservedFilenames; // @synthesize reservedFilenames=_reservedFilenames;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *reservedFilenamesAccessQueue; // @synthesize reservedFilenamesAccessQueue=_reservedFilenamesAccessQueue;
-- (void).cxx_destruct;
 - (void)unreserveFilename:(id)arg1 inDirectory:(id)arg2;
 - (id)reserveNonCollidingFilename:(id)arg1 inDirectory:(id)arg2;
 - (id)init;

@@ -23,13 +23,13 @@
 
 + (id)getHTTPModifiedSinceFromHeaders:(id)arg1;
 + (void)addHTTPIfModifiedSinceToHeaders:(id)arg1 date:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSMutableData *responseData; // @synthesize responseData=_responseData;
 @property(retain) NSHTTPURLResponse *httpResponse; // @synthesize httpResponse=_httpResponse;
 @property(retain) NSMutableURLRequest *request; // @synthesize request=_request;
 @property(retain) NSURLSession *session; // @synthesize session=_session;
 @property(retain) NSOperationQueue *sessionQueue; // @synthesize sessionQueue=_sessionQueue;
 @property(copy) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;

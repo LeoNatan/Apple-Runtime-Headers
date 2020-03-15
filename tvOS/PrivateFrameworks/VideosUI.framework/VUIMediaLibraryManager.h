@@ -23,13 +23,13 @@
 }
 
 + (id)defaultManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<VUIHomeShareMediaLibraryManager> *homeShareManager; // @synthesize homeShareManager=_homeShareManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialProcessingDispatchQueue; // @synthesize serialProcessingDispatchQueue=_serialProcessingDispatchQueue;
 @property(readonly, nonatomic) VUIAggregateMediaLibrary *aggregateMediaLibrary; // @synthesize aggregateMediaLibrary=_aggregateMediaLibrary;
 @property(readonly, nonatomic) VUISidebandMediaLibrary *sidebandMediaLibrary; // @synthesize sidebandMediaLibrary=_sidebandMediaLibrary;
 @property(retain, nonatomic) VUIDeviceMediaLibrary *deviceMediaLibrary; // @synthesize deviceMediaLibrary=_deviceMediaLibrary;
 @property(retain, nonatomic) VUIMediaLibrary *activeMediaLibrary; // @synthesize activeMediaLibrary=_activeMediaLibrary;
-- (void).cxx_destruct;
 - (void)_postHomeShareMediaLibrariesDidChangeNotificationWithMediaLibraries:(id)arg1 andChangeSet:(id)arg2;
 - (id)_homeShareMediaLibraryManager;
 - (id)_mediaLibraryForIdentifier:(id)arg1;

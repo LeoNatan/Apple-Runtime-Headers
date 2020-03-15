@@ -28,6 +28,7 @@
     double _autoTapTimeout;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double autoTapTimeout; // @synthesize autoTapTimeout=_autoTapTimeout;
 @property(nonatomic) double longPressDuration; // @synthesize longPressDuration=_longPressDuration;
 @property(nonatomic) _Bool speechEnabled; // @synthesize speechEnabled=_speechEnabled;
@@ -44,7 +45,6 @@
 @property(copy, nonatomic) NSArray *cursorSizes; // @synthesize cursorSizes=_cursorSizes;
 @property(copy, nonatomic) NSArray *tapBehaviors; // @synthesize tapBehaviors=_tapBehaviors;
 @property(copy, nonatomic) NSArray *scanningStyles; // @synthesize scanningStyles=_scanningStyles;
-- (void).cxx_destruct;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;

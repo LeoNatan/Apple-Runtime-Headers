@@ -13,9 +13,9 @@
     CDUnknownBlockType _progressBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long expectedSize; // @synthesize expectedSize=_expectedSize;
 @property(copy, nonatomic) CDUnknownBlockType progressBlock; // @synthesize progressBlock=_progressBlock;
-- (void).cxx_destruct;
 - (long long)appendData:(id)arg1;
 - (id)initWithConsumers:(id)arg1 expectedSize:(unsigned long long)arg2;
 - (id)initWithConsumer:(id)arg1 expectedSize:(unsigned long long)arg2;

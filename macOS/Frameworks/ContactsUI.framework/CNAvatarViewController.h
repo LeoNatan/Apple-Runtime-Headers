@@ -54,6 +54,7 @@
 + (id)personaStore;
 + (id)contactStore;
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property __weak id <CNAvatarViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property BOOL userSetup; // @synthesize userSetup=_userSetup;
@@ -76,7 +77,6 @@
 @property(retain, nonatomic) NSLayoutConstraint *avatarHeightConstraint; // @synthesize avatarHeightConstraint=_avatarHeightConstraint;
 @property(retain) CNAvatarView<CNAvatarUpdating> *avatarView; // @synthesize avatarView=_avatarView;
 @property(nonatomic) BOOL monogramOnly; // @synthesize monogramOnly=_monogramOnly;
-- (void).cxx_destruct;
 - (double)desiredHeight;
 - (double)topMargin;
 - (unsigned long long)menuItem:(id)arg1 preferredEdgeForPoint:(struct CGPoint)arg2;

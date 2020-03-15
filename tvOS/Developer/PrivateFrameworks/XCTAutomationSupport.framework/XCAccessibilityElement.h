@@ -31,6 +31,7 @@
 + (id)mockElementWithProcessIdentifier:(int)arg1 originPlatform:(unsigned long long)arg2;
 + (id)mockElementWithProcessIdentifier:(int)arg1 payload:(id)arg2;
 + (id)mockElementWithProcessIdentifier:(int)arg1;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long elementType; // @synthesize elementType=_elementType;
 @property(readonly) unsigned long long elementID; // @synthesize elementID=_elementID;
 @property(readonly) unsigned long long elementOrHash; // @synthesize elementOrHash=_elementOrHash;
@@ -38,7 +39,6 @@
 @property(readonly) unsigned long long originPlatform; // @synthesize originPlatform=_originPlatform;
 @property(readonly) int processIdentifier; // @synthesize processIdentifier=_processIdentifier;
 @property(readonly) const struct __AXUIElement *AXUIElement; // @synthesize AXUIElement=_AXUIElement;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

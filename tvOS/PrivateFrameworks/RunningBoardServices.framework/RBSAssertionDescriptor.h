@@ -22,11 +22,11 @@
 
 + (_Bool)supportsBSXPCSecureCoding;
 + (id)descriptorWithIdentifier:(id)arg1 target:(id)arg2 explanation:(id)arg3 attributes:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *attributes; // @synthesize attributes=_attributes;
 @property(readonly, copy, nonatomic) NSString *explanation; // @synthesize explanation=_explanation;
 @property(copy, nonatomic) RBSTarget *target; // @synthesize target=_target;
 @property(readonly, copy, nonatomic) RBSAssertionIdentifier *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)_initWithIdentifier:(id)arg1 target:(id)arg2 explanation:(id)arg3 attributes:(id)arg4;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;

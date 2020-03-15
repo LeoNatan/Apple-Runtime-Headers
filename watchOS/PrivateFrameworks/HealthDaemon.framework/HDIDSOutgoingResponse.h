@@ -29,6 +29,7 @@
     double _sendTimeout;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id pbResponse; // @synthesize pbResponse=_pbResponse;
 @property(getter=isSent) _Bool sent; // @synthesize sent=_sent;
 @property(nonatomic) _Bool forceLocalDelivery; // @synthesize forceLocalDelivery=_forceLocalDelivery;
@@ -43,7 +44,6 @@
 @property(nonatomic) unsigned short requestMessageID; // @synthesize requestMessageID=_requestMessageID;
 @property(retain, nonatomic) HDIDSMessageCenter *messageCenter; // @synthesize messageCenter=_messageCenter;
 @property(copy, nonatomic) NSString *requestIdsIdentifier; // @synthesize requestIdsIdentifier=_requestIdsIdentifier;
-- (void).cxx_destruct;
 - (void)send;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;

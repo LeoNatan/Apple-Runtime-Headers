@@ -22,6 +22,7 @@
     NSObject<OS_dispatch_semaphore> *_stateChangeSemaphore;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *stateChangeSemaphore; // @synthesize stateChangeSemaphore=_stateChangeSemaphore;
 @property(nonatomic) _Bool stateChangeWaiter; // @synthesize stateChangeWaiter=_stateChangeWaiter;
 @property(nonatomic) long long state; // @synthesize state=_state;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(copy, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
 @property(nonatomic) __weak id <BKSAlternateSystemAppDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)alternateSystemAppWithBundleIDDidTerminate:(id)arg1;
 - (void)alternateSystemAppWithBundleIDDidOpen:(id)arg1;
 - (void)alternateSystemAppWithBundleID:(id)arg1 didExitWithContext:(id)arg2;

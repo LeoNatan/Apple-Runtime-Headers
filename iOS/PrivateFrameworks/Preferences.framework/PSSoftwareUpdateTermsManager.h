@@ -23,8 +23,8 @@
     RUIStyle *_serverFlowStyle;
 }
 
-@property(retain, nonatomic) RUIStyle *serverFlowStyle; // @synthesize serverFlowStyle=_serverFlowStyle;
 - (void).cxx_destruct;
+@property(retain, nonatomic) RUIStyle *serverFlowStyle; // @synthesize serverFlowStyle=_serverFlowStyle;
 - (void)_termsDisagree;
 - (void)_acceptedTermsVersion:(id)arg1;
 - (void)_acceptedTermsFromAsset;

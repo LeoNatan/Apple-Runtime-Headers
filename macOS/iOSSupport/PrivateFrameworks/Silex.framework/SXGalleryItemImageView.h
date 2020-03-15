@@ -13,8 +13,8 @@
     SXGalleryItem *_galleryItem;
 }
 
-@property(readonly, nonatomic) SXGalleryItem *galleryItem; // @synthesize galleryItem=_galleryItem;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SXGalleryItem *galleryItem; // @synthesize galleryItem=_galleryItem;
 - (id)accessibilityLabel;
 - (BOOL)isAccessibilityElement;
 - (id)initWithGalleryItem:(id)arg1 imageResource:(id)arg2 resourceDataSource:(id)arg3 reachabilityProvider:(id)arg4;

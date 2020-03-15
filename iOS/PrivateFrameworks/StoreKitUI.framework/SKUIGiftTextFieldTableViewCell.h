@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     _Bool _leftToRight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool leftToRight; // @synthesize leftToRight=_leftToRight;
 @property(readonly, nonatomic) UIControl *textField; // @synthesize textField=_textField;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 @property(copy, nonatomic) NSString *value;

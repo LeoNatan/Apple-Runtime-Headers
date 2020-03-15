@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     WBSPerSitePreference *_downloadsPreference;
 }
 
-@property(readonly, nonatomic) WBSPerSitePreference *downloadsPreference; // @synthesize downloadsPreference=_downloadsPreference;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WBSPerSitePreference *downloadsPreference; // @synthesize downloadsPreference=_downloadsPreference;
 - (id)defaultPreferenceValueForPreferenceIfNotCustomized:(id)arg1;
 - (long long)preferencesStoreKeyForPreference:(id)arg1;
 @property(readonly, nonatomic) WBSPerSitePreferencesSQLiteStore *perSitePreferencesStore;

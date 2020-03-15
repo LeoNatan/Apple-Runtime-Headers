@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *edgeAttributesDict; // @synthesize edgeAttributesDict=_edgeAttributesDict;
 @property(nonatomic) long long windowSize; // @synthesize windowSize=_windowSize;
 @property(nonatomic) double alpha; // @synthesize alpha=_alpha;
 @property(nonatomic) long long trialCount; // @synthesize trialCount=_trialCount;
 @property(retain, nonatomic) NSNumber *interfaceType; // @synthesize interfaceType=_interfaceType;
 @property(retain, nonatomic) NSData *networkSignature; // @synthesize networkSignature=_networkSignature;
-- (void).cxx_destruct;
 - (double)_stochasticRewardFromRTT:(double)arg1;
 - (void)getAttributesForEdge:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)getMinimumLatencyEdge:(CDUnknownBlockType)arg1;

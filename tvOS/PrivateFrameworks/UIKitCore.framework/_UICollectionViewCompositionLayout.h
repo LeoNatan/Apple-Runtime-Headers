@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (id)invalidationContextForPreferredLayoutAttributes:(id)arg1 withOriginalAttributes:(id)arg2;
 - (id)invalidationContextForBoundsChange:(struct CGRect)arg1;
-- (void)invalidateLayoutWithContext:(struct _UICollectionViewCompositionLayoutInvalidationContext *)arg1;
+- (void)invalidateLayoutWithContext:(id)arg1;
 - (void)_prepareLayout:(id)arg1;
 - (void)prepareLayout;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;

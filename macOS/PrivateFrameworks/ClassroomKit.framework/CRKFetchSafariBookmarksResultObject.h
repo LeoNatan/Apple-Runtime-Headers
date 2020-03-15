@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSArray *bookmarks; // @synthesize bookmarks=_bookmarks;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *bookmarks; // @synthesize bookmarks=_bookmarks;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

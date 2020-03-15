@@ -35,6 +35,7 @@
 
 + (id)observerKeys;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool builtIn; // @synthesize builtIn=_builtIn;
 @property(retain, nonatomic) NSNumber *brailleInput; // @synthesize brailleInput=_brailleInput;
 @property(retain, nonatomic) NSNumber *brailleOutput; // @synthesize brailleOutput=_brailleOutput;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) NSSet *textualContexts; // @synthesize textualContexts=_textualContexts;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isIdenticalTo:(id)arg1;

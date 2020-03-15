@@ -22,10 +22,10 @@
 + (void)applyNativeCKValue:(id)arg1 fromSource:(unsigned int)arg2 associatingWith:(id)arg3 toModel:(id)arg4 propertyNamed:(id)arg5;
 + (_Bool)includeInModelEncoding;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int action; // @synthesize action=_action;
 @property(nonatomic) __weak HMBCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
 @property(retain, nonatomic) CKReference *reference; // @synthesize reference=_reference;
-- (void).cxx_destruct;
 - (id)hmbEncodeForStorageLocation:(unsigned int)arg1 error:(id *)arg2;
 - (id)nativeCKValueWithEncodingContext:(id)arg1 error:(id *)arg2;
 - (_Bool)isEqual:(id)arg1;

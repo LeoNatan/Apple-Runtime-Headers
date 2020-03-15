@@ -8,3 +8,11 @@
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
+#pragma mark Named Structures
+
+struct codeChallenge {
+    id _field1;
+    id _field2;
+    id _field3;
+};
+

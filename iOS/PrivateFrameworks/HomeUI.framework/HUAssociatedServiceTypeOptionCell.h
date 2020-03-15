@@ -18,11 +18,11 @@
     UILabel *_titleLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic, getter=isSuggestion) _Bool suggestion; // @synthesize suggestion=_suggestion;
 @property(nonatomic, getter=isChecked) _Bool checked; // @synthesize checked=_checked;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
-- (void).cxx_destruct;
 - (id)colorForCurrentState;
 @property(copy, nonatomic) NSString *title;
 - (void)prepareForReuse;

@@ -17,8 +17,8 @@
 
 + (id)layer;
 + (id)new;
-@property(readonly, copy, nonatomic) NSArray *sources; // @synthesize sources=_sources;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *sources; // @synthesize sources=_sources;
 @property(readonly, copy) NSString *description;
 - (BOOL)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;
 - (id)initLayer;

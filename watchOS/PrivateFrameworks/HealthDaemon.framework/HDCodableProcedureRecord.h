@@ -32,6 +32,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableMedicalCodingListList *bodySitesCodings; // @synthesize bodySitesCodings=_bodySitesCodings;
 @property(retain, nonatomic) HDCodableMedicalCodingListList *followUpsCodings; // @synthesize followUpsCodings=_followUpsCodings;
 @property(retain, nonatomic) HDCodableMedicalCodingListList *complicationsCodings; // @synthesize complicationsCodings=_complicationsCodings;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) HDCodableStringList *performers; // @synthesize performers=_performers;
 @property(retain, nonatomic) HDCodableMedicalCodingList *procedureCodings; // @synthesize procedureCodings=_procedureCodings;
 @property(retain, nonatomic) HDCodableMedicalRecord *medicalRecord; // @synthesize medicalRecord=_medicalRecord;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

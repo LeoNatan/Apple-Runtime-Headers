@@ -18,8 +18,8 @@
 + (id)optionsWithDictionary:(id)arg1;
 + (id)new;
 + (void)registerDefaultDisallowedCoercionPath:(id)arg1;
-@property(readonly, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)optionsByAddingContentsOfOptions:(id)arg1;
 - (id)init;

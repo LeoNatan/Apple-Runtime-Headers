@@ -20,9 +20,9 @@
 
 + (id)sharedInstanceWithInitialDelegate:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
 @property(nonatomic) __weak id <_CRKImageLoaderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)resourceIdentifierForLocalImageType:(int)arg1;
 - (void)_loadSFImageForURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)loadImage:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

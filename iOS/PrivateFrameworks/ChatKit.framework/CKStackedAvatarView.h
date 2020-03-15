@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_contacts;
 }
 
-@property(readonly, copy, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
 - (id)_stackWithMonograms:(id)arg1;
 - (id)initWithContacts:(id)arg1;
 

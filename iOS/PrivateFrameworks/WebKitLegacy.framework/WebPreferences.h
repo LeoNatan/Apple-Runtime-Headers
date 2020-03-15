@@ -83,7 +83,14 @@
 - (id)initWithIdentifier:(id)arg1 sendChangeNotification:(_Bool)arg2;
 - (id)initWithIdentifier:(id)arg1;
 - (id)init;
+- (void)setInAppBrowserPrivacyEnabled:(_Bool)arg1;
+- (_Bool)isInAppBrowserPrivacyEnabled;
+@property(nonatomic) _Bool remotePlaybackEnabled;
+- (void)setCSSShadowPartsEnabled:(_Bool)arg1;
+- (_Bool)cssShadowPartsEnabled;
 @property(nonatomic) _Bool linkPreloadResponsiveImagesEnabled;
+@property(nonatomic) _Bool asyncClipboardAPIEnabled;
+@property(nonatomic) _Bool requestIdleCallbackEnabled;
 @property(nonatomic) _Bool coreMathMLEnabled;
 @property(nonatomic) _Bool resizeObserverEnabled;
 @property(nonatomic) _Bool referrerPolicyAttributeEnabled;
@@ -105,6 +112,9 @@
 @property(nonatomic) _Bool colorFilterEnabled;
 @property(nonatomic) _Bool constantPropertiesEnabled;
 @property(nonatomic) _Bool viewportFitEnabled;
+@property(nonatomic) _Bool useGPUProcessForMedia;
+@property(nonatomic) _Bool genericCueAPIEnabled;
+@property(nonatomic) _Bool pictureInPictureAPIEnabled;
 @property(nonatomic) _Bool encryptedMediaAPIEnabled;
 @property(nonatomic) _Bool legacyEncryptedMediaAPIEnabled;
 @property(nonatomic) _Bool isSecureContextAttributeEnabled;
@@ -113,7 +123,6 @@
 @property(nonatomic) _Bool mediaUserGestureInheritsFromDocument;
 @property(nonatomic) _Bool resourceTimingEnabled;
 @property(nonatomic) _Bool userTimingEnabled;
-@property(nonatomic) _Bool displayContentsEnabled;
 @property(nonatomic) _Bool menuItemElementEnabled;
 @property(nonatomic) _Bool intersectionObserverEnabled;
 - (void)setWebAnimationsCSSIntegrationEnabled:(_Bool)arg1;
@@ -126,6 +135,10 @@
 - (_Bool)syntheticEditingCommandsEnabled;
 - (void)setPointerEventsEnabled:(_Bool)arg1;
 - (_Bool)pointerEventsEnabled;
+- (void)setWebAnimationsMutableTimelinesEnabled:(_Bool)arg1;
+- (_Bool)webAnimationsMutableTimelinesEnabled;
+- (void)setWebAnimationsCompositeOperationsEnabled:(_Bool)arg1;
+- (_Bool)webAnimationsCompositeOperationsEnabled;
 - (void)setWebAnimationsEnabled:(_Bool)arg1;
 - (_Bool)webAnimationsEnabled;
 @property(nonatomic) _Bool CSSOMViewScrollingAPIEnabled;
@@ -142,6 +155,9 @@
 - (_Bool)fetchAPIEnabled;
 - (void)setCacheAPIEnabled:(_Bool)arg1;
 - (_Bool)cacheAPIEnabled;
+@property(nonatomic) _Bool keygenElementEnabled;
+- (void)setDialogElementEnabled:(_Bool)arg1;
+- (_Bool)dialogElementEnabled;
 - (void)setCustomPasteboardDataEnabled:(_Bool)arg1;
 - (_Bool)customPasteboardDataEnabled;
 - (void)setDataTransferItemsEnabled:(_Bool)arg1;
@@ -181,6 +197,8 @@
 - (id)mediaKeysStorageDirectory;
 - (void)setShouldConvertPositionStyleOnCopy:(_Bool)arg1;
 - (_Bool)shouldConvertPositionStyleOnCopy;
+- (void)setHighlightAPIEnabled:(_Bool)arg1;
+- (_Bool)highlightAPIEnabled;
 - (void)setGamepadsEnabled:(_Bool)arg1;
 - (_Bool)gamepadsEnabled;
 - (void)setServiceControlsEnabled:(_Bool)arg1;
@@ -194,6 +212,8 @@
 - (_Bool)useLegacyTextAlignPositionedElementBehavior;
 - (void)setLowPowerVideoAudioBufferSizeEnabled:(_Bool)arg1;
 - (_Bool)lowPowerVideoAudioBufferSizeEnabled;
+- (void)setRenderingUpdateThrottlingEnabled:(_Bool)arg1;
+- (_Bool)renderingUpdateThrottlingEnabled;
 - (void)setHiddenPageCSSAnimationSuspensionEnabled:(_Bool)arg1;
 - (_Bool)hiddenPageCSSAnimationSuspensionEnabled;
 - (void)setHiddenPageDOMTimerThrottlingEnabled:(_Bool)arg1;
@@ -300,8 +320,6 @@
 - (_Bool)webGPUEnabled;
 - (void)setForceWebGLUsesLowPower:(_Bool)arg1;
 - (_Bool)forceLowPowerGPUForWebGL;
-- (void)setForceSoftwareWebGLRendering:(_Bool)arg1;
-- (_Bool)forceSoftwareWebGLRendering;
 - (void)setWebGL2Enabled:(_Bool)arg1;
 - (_Bool)webGL2Enabled;
 - (void)setWebGLEnabled:(_Bool)arg1;

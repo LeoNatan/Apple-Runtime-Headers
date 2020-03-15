@@ -16,8 +16,8 @@
     NSObject<OS_os_log> *_log_t;
 }
 
-@property(readonly, nonatomic) NSObject<OS_os_log> *log_t; // @synthesize log_t=_log_t;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_os_log> *log_t; // @synthesize log_t=_log_t;
 - (void)setDonationsEnabled:(_Bool)arg1;
 - (void)isDonationsEnabled:(_Bool)arg1;
 - (id)init;

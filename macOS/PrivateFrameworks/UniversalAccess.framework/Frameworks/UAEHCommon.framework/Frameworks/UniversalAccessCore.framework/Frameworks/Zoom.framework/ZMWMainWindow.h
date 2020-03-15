@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     CALayer *_previewLayer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isInPreviewMode; // @synthesize isInPreviewMode=_isInPreviewMode;
 @property(readonly, nonatomic) ZMWShadowWindow *shadowWindow; // @synthesize shadowWindow=_shadowWindow;
-- (void).cxx_destruct;
 - (void)handleMouseDragEvent:(struct __CGEvent *)arg1;
 - (void)handleMouseUpEvent:(struct __CGEvent *)arg1;
 - (void)handleMouseDownEvent:(struct __CGEvent *)arg1;

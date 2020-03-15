@@ -14,9 +14,9 @@
     unsigned int _schedulingPolicy;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int schedulingPolicy; // @synthesize schedulingPolicy=_schedulingPolicy;
 @property(readonly, nonatomic) BSTransaction *childTransaction; // @synthesize childTransaction=_childTransaction;
-- (void).cxx_destruct;
 - (id)initWithChildTransaction:(id)arg1 schedulingPolicy:(unsigned int)arg2;
 
 @end

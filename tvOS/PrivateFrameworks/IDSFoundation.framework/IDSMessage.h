@@ -18,11 +18,11 @@
     _Bool _wantsCertifiedDelivery;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSNumber *version; // @synthesize version=_version;
 @property(copy) NSDictionary *deliveryStatusContext; // @synthesize deliveryStatusContext=_deliveryStatusContext;
 @property _Bool wantsCertifiedDelivery; // @synthesize wantsCertifiedDelivery=_wantsCertifiedDelivery;
 @property(copy) NSNumber *wantsDeliveryStatus; // @synthesize wantsDeliveryStatus=_wantsDeliveryStatus;
-- (void).cxx_destruct;
 - (id)_objectForKeyFromMadridBag:(id)arg1;
 - (id)_madridServerBag;
 - (_Bool)_shouldUseJSONForEncoding;

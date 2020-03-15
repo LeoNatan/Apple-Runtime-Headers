@@ -44,6 +44,7 @@
     CDStruct_56d48c16 _payloadMessageEffects;
     CDStruct_56d48c16 _payloadMessageTypes;
     CDStruct_56d48c16 _payloadNotebookItemTypes;
+    CDStruct_56d48c16 _payloadParsecCategories;
     CDStruct_56d48c16 _payloadPaymentStatus;
     CDStruct_56d48c16 _payloadPersonalPlaceTypes;
     CDStruct_56d48c16 _payloadPhotoAttributes;
@@ -83,6 +84,7 @@
     NSArray *_payloadDateTimeRangeLists;
     NSArray *_payloadDateTimeRangeValues;
     NSArray *_payloadDateTimeValues;
+    NSArray *_payloadDeviceDetails;
     NSArray *_payloadDialingContacts;
     NSArray *_payloadDistanceLists;
     NSArray *_payloadDistanceValues;
@@ -209,6 +211,7 @@
 + (Class)payloadDistanceValueType;
 + (Class)payloadDistanceListType;
 + (Class)payloadDialingContactType;
++ (Class)payloadDeviceDetailType;
 + (Class)payloadDateTimeValueType;
 + (Class)payloadDateTimeRangeValueType;
 + (Class)payloadDateTimeRangeListType;
@@ -225,6 +228,7 @@
 + (Class)payloadAppIdentifierType;
 + (Class)payloadActivityListType;
 + (Class)payloadActivityType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(copy, nonatomic) NSArray *payloadWellnessValues; // @synthesize payloadWellnessValues=_payloadWellnessValues;
@@ -291,6 +295,7 @@
 @property(copy, nonatomic) NSArray *payloadDistanceValues; // @synthesize payloadDistanceValues=_payloadDistanceValues;
 @property(copy, nonatomic) NSArray *payloadDistanceLists; // @synthesize payloadDistanceLists=_payloadDistanceLists;
 @property(copy, nonatomic) NSArray *payloadDialingContacts; // @synthesize payloadDialingContacts=_payloadDialingContacts;
+@property(copy, nonatomic) NSArray *payloadDeviceDetails; // @synthesize payloadDeviceDetails=_payloadDeviceDetails;
 @property(copy, nonatomic) NSArray *payloadDateTimeValues; // @synthesize payloadDateTimeValues=_payloadDateTimeValues;
 @property(copy, nonatomic) NSArray *payloadDateTimeRangeValues; // @synthesize payloadDateTimeRangeValues=_payloadDateTimeRangeValues;
 @property(copy, nonatomic) NSArray *payloadDateTimeRangeLists; // @synthesize payloadDateTimeRangeLists=_payloadDateTimeRangeLists;
@@ -307,7 +312,6 @@
 @property(copy, nonatomic) NSArray *payloadAppIdentifiers; // @synthesize payloadAppIdentifiers=_payloadAppIdentifiers;
 @property(copy, nonatomic) NSArray *payloadActivityLists; // @synthesize payloadActivityLists=_payloadActivityLists;
 @property(copy, nonatomic) NSArray *payloadActivities; // @synthesize payloadActivities=_payloadActivities;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
@@ -604,6 +608,14 @@
 @property(readonly, nonatomic) unsigned int payloadPaymentAmountValuesCount;
 - (void)addPayloadPaymentAmountValue:(id)arg1;
 - (void)clearPayloadPaymentAmountValues;
+- (int)StringAsPayloadParsecCategories:(id)arg1;
+- (id)payloadParsecCategoriesAsString:(int)arg1;
+- (int)payloadParsecCategoryAtIndex:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned int payloadParsecCategoriesCount;
+- (void)addPayloadParsecCategory:(int)arg1;
+- (void)clearPayloadParsecCategories;
+@property(readonly, nonatomic) int *payloadParsecCategories;
+- (void)setPayloadParsecCategories:(int *)arg1 count:(unsigned int)arg2;
 - (int)StringAsPayloadNotebookItemTypes:(id)arg1;
 - (id)payloadNotebookItemTypesAsString:(int)arg1;
 - (int)payloadNotebookItemTypeAtIndex:(unsigned int)arg1;
@@ -880,6 +892,10 @@
 - (void)clearPayloadDeviceTypes;
 @property(readonly, nonatomic) int *payloadDeviceTypes;
 - (void)setPayloadDeviceTypes:(int *)arg1 count:(unsigned int)arg2;
+- (id)payloadDeviceDetailAtIndex:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned int payloadDeviceDetailsCount;
+- (void)addPayloadDeviceDetail:(id)arg1;
+- (void)clearPayloadDeviceDetails;
 - (id)payloadDateTimeValueAtIndex:(unsigned int)arg1;
 @property(readonly, nonatomic) unsigned int payloadDateTimeValuesCount;
 - (void)addPayloadDateTimeValue:(id)arg1;

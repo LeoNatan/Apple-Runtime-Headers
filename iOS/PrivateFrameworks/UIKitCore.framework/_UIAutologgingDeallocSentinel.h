@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_message;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool called; // @synthesize called=_called;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

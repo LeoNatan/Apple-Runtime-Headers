@@ -17,10 +17,10 @@
     UIImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showConfirmButton; // @synthesize showConfirmButton=_showConfirmButton;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *titleString; // @synthesize titleString=_titleString;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *re_shortcut_topImage;
 @property(readonly, nonatomic) _Bool re_shortcut_showDismissButton;
 @property(readonly, nonatomic) _Bool re_shortcut_showConfirmButton;

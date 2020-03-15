@@ -20,8 +20,8 @@
 }
 
 + (void)launch;
-@property(nonatomic) __weak _UIKeyboardArbiter *owner; // @synthesize owner;
 - (void).cxx_destruct;
+@property(nonatomic) __weak _UIKeyboardArbiter *owner; // @synthesize owner;
 - (id)_createSceneWithIdentifier:(id)arg1 initialClientSettings:(id)arg2;
 - (void)detach:(id)arg1;
 - (void)attach:(id)arg1;

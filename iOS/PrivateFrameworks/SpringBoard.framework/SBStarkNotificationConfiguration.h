@@ -23,11 +23,11 @@
     NSHashTable *_layoutObservers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BSServiceConnectionEndpoint *openServiceEndpoint; // @synthesize openServiceEndpoint=_openServiceEndpoint;
 @property(readonly, nonatomic, getter=isConnectedWirelessly) _Bool connectedWirelessly; // @synthesize connectedWirelessly=_connectedWirelessly;
 @property(readonly, nonatomic) FBSDisplayIdentity *displayIdentity; // @synthesize displayIdentity=_displayIdentity;
 @property(readonly, nonatomic) UIWindow *focusWindow; // @synthesize focusWindow=_focusWindow;
-- (void).cxx_destruct;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (_Bool)shouldClipForWindow:(id)arg1;

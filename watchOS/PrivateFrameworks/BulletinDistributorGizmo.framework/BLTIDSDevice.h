@@ -18,8 +18,8 @@
     _Bool _cloudReachable;
 }
 
-@property _Bool cloudReachable; // @synthesize cloudReachable=_cloudReachable;
 - (void).cxx_destruct;
+@property _Bool cloudReachable; // @synthesize cloudReachable=_cloudReachable;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

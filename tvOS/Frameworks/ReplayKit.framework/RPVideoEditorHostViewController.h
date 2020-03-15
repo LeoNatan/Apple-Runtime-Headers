@@ -16,9 +16,9 @@
     RPVideoEditorExtensionHostContext *_hostContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RPVideoEditorExtensionHostContext *hostContext; // @synthesize hostContext=_hostContext;
 @property(nonatomic) __weak RPPreviewViewController *previewViewController; // @synthesize previewViewController=_previewViewController;
-- (void).cxx_destruct;
 - (void)setMode:(long long)arg1;
 - (oneway void)extensionDidFinishWithActivityTypes:(id)arg1;
 

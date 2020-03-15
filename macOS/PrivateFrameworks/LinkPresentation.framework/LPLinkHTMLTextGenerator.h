@@ -20,8 +20,8 @@
 }
 
 + (void)initialize;
-@property(nonatomic) __weak id <LPLinkHTMLTextGeneratorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <LPLinkHTMLTextGeneratorDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)linkHTMLGenerator:(id)arg1 URLForResource:(id)arg2 withMIMEType:(id)arg3;
 @property(readonly, copy, nonatomic) NSString *HTMLFragmentString;
 @property(readonly, copy, nonatomic) NSURL *URL;

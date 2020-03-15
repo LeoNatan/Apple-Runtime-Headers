@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 + (Class)layoutAttributesClass;
 + (_Bool)collectionViewCanClipToBounds;
 + (double)snapToBoundariesDecelerationRate;
-@property(retain, nonatomic) SKUIShelfLayoutData *layoutData; // @synthesize layoutData=_layoutData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SKUIShelfLayoutData *layoutData; // @synthesize layoutData=_layoutData;
 - (_Bool)_shouldScrollToContentBeginningInRightToLeft;
 - (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1 withScrollingVelocity:(struct CGPoint)arg2;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;

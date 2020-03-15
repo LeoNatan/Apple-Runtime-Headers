@@ -14,9 +14,9 @@
     NSString *_articleID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
 @property(retain, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
-- (void).cxx_destruct;
 - (id)initWithArticleID:(id)arg1 videoURL:(id)arg2;
 - (id)init;
 

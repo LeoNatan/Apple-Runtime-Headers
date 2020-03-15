@@ -15,6 +15,7 @@
 
 + (long long)dataType;
 - (void).cxx_destruct;
+- (_Bool)shouldShowDisclosure;
 - (_Bool)isValidWithError:(id *)arg1;
 @property(readonly, nonatomic) PKPaymentPass *pass;
 @property(readonly, nonatomic) PKPeerPaymentQuote *quote;

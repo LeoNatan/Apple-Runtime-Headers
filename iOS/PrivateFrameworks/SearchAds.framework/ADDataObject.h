@@ -14,9 +14,9 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) NSDictionary *iAdData; // @synthesize iAdData=_iAdData;
-- (void).cxx_destruct;
 - (id)initWith:(id)arg1 andError:(id)arg2;
 
 @end

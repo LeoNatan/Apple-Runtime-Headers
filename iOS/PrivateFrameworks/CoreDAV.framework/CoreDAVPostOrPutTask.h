@@ -19,13 +19,13 @@
     NSURL *_priorOrderedURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *priorOrderedURL; // @synthesize priorOrderedURL=_priorOrderedURL;
 @property(nonatomic) int absoluteOrder; // @synthesize absoluteOrder=_absoluteOrder;
 @property(retain, nonatomic) NSData *requestDataPayload; // @synthesize requestDataPayload=_requestDataPayload;
 @property(retain, nonatomic) NSString *requestDataContentType; // @synthesize requestDataContentType=_requestDataContentType;
 @property(retain, nonatomic) NSString *previousETag; // @synthesize previousETag=_previousETag;
 @property(nonatomic) _Bool forceToServer; // @synthesize forceToServer=_forceToServer;
-- (void).cxx_destruct;
 - (id)requestBody;
 - (id)additionalHeaderValues;
 - (id)description;

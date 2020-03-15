@@ -14,9 +14,9 @@
     shared_ptr_883eff98 _impl;
 }
 
-@property(nonatomic) shared_ptr_883eff98 impl; // @synthesize impl=_impl;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) shared_ptr_883eff98 impl; // @synthesize impl=_impl;
 @property(copy, nonatomic) CDUnknownBlockType IOEventBlock;
 - (void)stop;
 - (BOOL)startAsyncAndReturnError:(id *)arg1 completionHandler:(CDUnknownBlockType)arg2;

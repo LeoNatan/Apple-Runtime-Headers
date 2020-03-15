@@ -23,12 +23,12 @@
     NSString *_requestingBundleVersion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *requestingBundleVersion; // @synthesize requestingBundleVersion=_requestingBundleVersion;
 @property(copy, nonatomic) NSString *requestingBundleIdentifier; // @synthesize requestingBundleIdentifier=_requestingBundleIdentifier;
 @property(nonatomic, getter=isStreamingRental) _Bool streamingRental; // @synthesize streamingRental=_streamingRental;
 @property(readonly, nonatomic) unsigned long long endpointType; // @synthesize endpointType=_endpointType;
 @property(readonly, copy, nonatomic) NSString *buyParameters; // @synthesize buyParameters=_buyParameters;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSError *responseError;
 @property(readonly, nonatomic) MPStoreRedownloadProductResponse *redownloadProductResponse;
 - (void)main;

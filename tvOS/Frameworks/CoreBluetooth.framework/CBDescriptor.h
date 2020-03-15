@@ -16,11 +16,11 @@
     NSNumber *_handle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *handle; // @synthesize handle=_handle;
 @property(readonly, nonatomic) CBPeripheral *peripheral; // @synthesize peripheral=_peripheral;
 @property(retain) id value; // @synthesize value=_value;
 @property(nonatomic) CBCharacteristic *characteristic; // @synthesize characteristic=_characteristic;
-- (void).cxx_destruct;
 - (id)handleValueWritten:(id)arg1;
 - (id)handleValueUpdated:(id)arg1;
 - (void)invalidate;

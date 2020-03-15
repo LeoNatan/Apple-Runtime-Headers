@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIButton *_rightLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIButton *rightLabel; // @synthesize rightLabel=_rightLabel;
 @property(readonly, nonatomic) UIButton *leftLabel; // @synthesize leftLabel=_leftLabel;
-- (void).cxx_destruct;
 - (void)_setupButton:(id)arg1 forAction:(id)arg2;
 - (id)constantConstraints;
 - (void)setLabelTextAttributes:(id)arg1;

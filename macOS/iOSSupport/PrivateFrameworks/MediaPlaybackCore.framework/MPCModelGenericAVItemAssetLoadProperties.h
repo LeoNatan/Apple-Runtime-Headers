@@ -28,6 +28,7 @@
     NSString *_storefrontID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *storefrontID; // @synthesize storefrontID=_storefrontID;
 @property(copy, nonatomic) NSString *householdID; // @synthesize householdID=_householdID;
 @property(nonatomic) unsigned long long delegatedAccountID; // @synthesize delegatedAccountID=_delegatedAccountID;
@@ -43,7 +44,6 @@
 @property(nonatomic) BOOL prefersVideoContent; // @synthesize prefersVideoContent=_prefersVideoContent;
 @property(copy, nonatomic) NSString *assetSourceStorefrontID; // @synthesize assetSourceStorefrontID=_assetSourceStorefrontID;
 @property(nonatomic) BOOL allowsHLSContent; // @synthesize allowsHLSContent=_allowsHLSContent;
-- (void).cxx_destruct;
 
 @end
 

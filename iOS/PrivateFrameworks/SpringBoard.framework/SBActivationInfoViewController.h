@@ -24,8 +24,8 @@
     UIButton *_regulatoryInfoButton;
 }
 
-@property(readonly, nonatomic) UIButton *regulatoryInfoButton; // @synthesize regulatoryInfoButton=_regulatoryInfoButton;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIButton *regulatoryInfoButton; // @synthesize regulatoryInfoButton=_regulatoryInfoButton;
 - (id)_formattedString:(id)arg1 withSpaceAfterDigits:(unsigned long long)arg2;
 - (id)_formattedCSN:(id)arg1;
 - (id)_formattedIMEI:(id)arg1;

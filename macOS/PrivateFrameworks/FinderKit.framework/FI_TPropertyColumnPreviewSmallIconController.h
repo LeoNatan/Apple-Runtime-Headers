@@ -27,10 +27,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)keyPathsForValuesAffectingShouldBeVisible;
-@property(nonatomic, getter=isApplicableToUI) _Bool applicableToUI; // @synthesize applicableToUI=_isApplicableToUI;
-@property _Bool wantsToWaitForThumbnails; // @synthesize wantsToWaitForThumbnails=_wantsToWaitForThumbnails;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isApplicableToUI) _Bool applicableToUI; // @synthesize applicableToUI=_isApplicableToUI;
+@property _Bool wantsToWaitForThumbnails; // @synthesize wantsToWaitForThumbnails=_wantsToWaitForThumbnails;
 - (id)dragFlockingImageComponentsForNode:(const struct TFENode *)arg1;
 - (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
 - (id)beginDraggingNodes:(const struct TFENodeVector *)arg1 mouseDownEvent:(id)arg2;

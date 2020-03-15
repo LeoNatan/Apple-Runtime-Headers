@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _contentPadding;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool snapToExpandedItem; // @synthesize snapToExpandedItem=_snapToExpandedItem;
 @property(nonatomic) double expandedItemPlayheadProgress; // @synthesize expandedItemPlayheadProgress=_expandedItemPlayheadProgress;
 @property(nonatomic) double expandedItemWidth; // @synthesize expandedItemWidth=_expandedItemWidth;
@@ -60,7 +61,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double playheadVerticalOverhang; // @synthesize playheadVerticalOverhang=_playheadVerticalOverhang;
 @property(nonatomic) struct CGSize interItemSpacing; // @synthesize interItemSpacing=_interItemSpacing;
 @property(nonatomic) __weak id <PUScrubberTilingLayoutDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (double)_normalizedTransitionProgressFrom:(id)arg1 withAbscissa:(double)arg2 outNeighborIndexPath:(out id *)arg3;
 - (id)_indexPathOfItemClosestToAbscissa:(double)arg1;
 - (long long)_indexOfItemClosestToAbscissa:(double)arg1 inSection:(long long)arg2;

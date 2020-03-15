@@ -41,6 +41,7 @@
 }
 
 + (Class)quantitySeriesDataType;
+- (void).cxx_destruct;
 @property(nonatomic) double mostRecentDuration; // @synthesize mostRecentDuration=_mostRecentDuration;
 @property(retain, nonatomic) NSMutableArray *quantitySeriesDatas; // @synthesize quantitySeriesDatas=_quantitySeriesDatas;
 @property(nonatomic) double mostRecentDate; // @synthesize mostRecentDate=_mostRecentDate;
@@ -54,7 +55,6 @@
 @property(nonatomic) double valueInOriginalUnit; // @synthesize valueInOriginalUnit=_valueInOriginalUnit;
 @property(nonatomic) double valueInCanonicalUnit; // @synthesize valueInCanonicalUnit=_valueInCanonicalUnit;
 @property(retain, nonatomic) HDCodableSample *sample; // @synthesize sample=_sample;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

@@ -15,7 +15,7 @@
 #import <AVKit/AVNowPlayingFrameSource-Protocol.h>
 #import <AVKit/UIViewControllerTransitioningDelegate-Protocol.h>
 
-@class AVChannelInterstitialContainer, AVDurationTimeFormatter, AVFrameSet, AVInfoPanelViewController, AVInternalPlaybackOptions, AVKeyValueObserverCollection, AVLoadingIndicatorView, AVNowPlayingDimmingView, AVNowPlayingInfoHintView, AVNowPlayingTransportBar, AVPermissiveSwipeGestureRecognizer, AVSlidewaysTransition, AVStandardScanningDelegate, AVxOverlayViewController, CADisplayLink, NSArray, NSString, NSTimer, NSURL, NSUUID, UIImageView, UIPanGestureRecognizer, UIView, UIViewController, _AVFocusContainerView, _UIVisualEffectBackdropView;
+@class AVChannelInterstitialContainer, AVDurationTimeFormatter, AVFrameSet, AVInfoPanelViewController, AVInternalPlaybackOptions, AVKeyValueObserverCollection, AVLoadingIndicatorView, AVNowPlayingDimmingView, AVNowPlayingInfoHintView, AVNowPlayingTransportBar, AVPermissiveSwipeGestureRecognizer, AVScrubbingAnalytics, AVSlidewaysTransition, AVStandardScanningDelegate, AVxOverlayViewController, CADisplayLink, NSArray, NSString, NSTimer, NSURL, NSUUID, UIImageView, UIPanGestureRecognizer, UIView, UIViewController, _AVFocusContainerView, _UIVisualEffectBackdropView;
 @protocol AVPlayerViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -56,7 +56,9 @@ __attribute__((visibility("hidden")))
         _Bool _isTouching;
         _Bool wasVisibleAtStart;
         long long touchPositionAtStart;
+        double timeIntervalOfMostRecentTouchEvent;
     } _touch;
+    AVScrubbingAnalytics *_scrubbingMetrics;
     id _audioSessionInterruptionNotificationObserver;
     id _playerItemDidScanToEndTimeObserver;
     _Bool _applicationResigning;
@@ -83,6 +85,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _unoccludedBounds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=wasScanningTriggeredBySelectButton) _Bool scanningTriggeredBySelectButton; // @synthesize scanningTriggeredBySelectButton=_scanningTriggeredBySelectButton;
 @property(nonatomic) float currentScanRate; // @synthesize currentScanRate=_currentScanRate;
 @property(nonatomic) _Bool scanningImageBlockCalled; // @synthesize scanningImageBlockCalled=_scanningImageBlockCalled;
@@ -106,7 +109,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGRect unoccludedBounds; // @synthesize unoccludedBounds=_unoccludedBounds;
 @property(readonly) long long playbackControlsState; // @synthesize playbackControlsState=_playbackControlsState;
 @property(retain, nonatomic) AVInternalPlaybackOptions *playbackOptions; // @synthesize playbackOptions=_playbackOptions;
-- (void).cxx_destruct;
 - (id)accessibilityElements;
 - (void)heartbeat:(id)arg1;
 - (void)updateFractionOfContentLoaded;

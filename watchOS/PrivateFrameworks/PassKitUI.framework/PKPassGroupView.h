@@ -61,6 +61,7 @@
     UILongPressGestureRecognizer *_pressGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PKPassGroupViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UILongPressGestureRecognizer *pressGestureRecognizer; // @synthesize pressGestureRecognizer=_pressGestureRecognizer;
 @property(readonly, nonatomic) UIPageControl *pageControl; // @synthesize pageControl=_pageControl;
@@ -71,7 +72,6 @@
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic, getter=isLoaned) _Bool loaned; // @synthesize loaned=_loaned;
 @property(nonatomic, getter=isModallyPresented) _Bool modallyPresented; // @synthesize modallyPresented=_modallyPresented;
-- (void).cxx_destruct;
 - (void)faceFrameDidChangeForPassView:(id)arg1;
 - (void)passView:(id)arg1 didPresentPassDetailsViewController:(id)arg2;
 - (void)passView:(id)arg1 willPresentPassDetailsViewController:(id)arg2;

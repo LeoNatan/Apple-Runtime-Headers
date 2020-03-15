@@ -21,6 +21,7 @@
     NSDictionary *_articleMetadataByArticleID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *articleMetadataByArticleID; // @synthesize articleMetadataByArticleID=_articleMetadataByArticleID;
 @property(retain, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 @property(retain, nonatomic) FCColorGradient *groupDarkStyleBackgroundColorGradient; // @synthesize groupDarkStyleBackgroundColorGradient=_groupDarkStyleBackgroundColorGradient;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSArray *groupFonts; // @synthesize groupFonts=_groupFonts;
 @property(retain, nonatomic) FCColor *groupDarkStyleTitleColor; // @synthesize groupDarkStyleTitleColor=_groupDarkStyleTitleColor;
 @property(retain, nonatomic) FCColor *groupTitleColor; // @synthesize groupTitleColor=_groupTitleColor;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *feedID;
 @property(readonly, nonatomic) NSString *channelID;
 @property(readonly, nonatomic) NSString *sectionID;

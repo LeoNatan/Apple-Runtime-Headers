@@ -19,11 +19,11 @@
     IMBalloonPlugin *_plugin;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMBalloonPlugin *plugin; // @synthesize plugin=_plugin;
 @property(retain, nonatomic) CKBalloonView *balloonView; // @synthesize balloonView=_balloonView;
 @property(retain, nonatomic) UIViewController<CKTranscriptBalloonPluginController> *pluginBubbleViewController; // @synthesize pluginBubbleViewController=_pluginBubbleViewController;
 @property(retain, nonatomic) IMBalloonPluginDataSource *datasource; // @synthesize datasource=_datasource;
-- (void).cxx_destruct;
 - (id)_transcriptPluginBalloon;
 - (id)_imageBalloon;
 - (void)_loadBalloonView;

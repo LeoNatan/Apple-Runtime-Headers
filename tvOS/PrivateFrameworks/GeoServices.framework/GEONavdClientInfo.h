@@ -19,9 +19,9 @@
 
 + (id)clientInfoForNavdPredictions;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *uniqueClientId; // @synthesize uniqueClientId=_uniqueClientId;
 @property(copy, nonatomic) NSString *canonicalName; // @synthesize canonicalName=_canonicalName;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

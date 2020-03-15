@@ -19,11 +19,11 @@
     _HUQuickControlContentCharacteristicWriteQueuedUpdate *_queuedUpdate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _HUQuickControlContentCharacteristicWriteQueuedUpdate *queuedUpdate; // @synthesize queuedUpdate=_queuedUpdate;
 @property(readonly, nonatomic) HFItemManager *itemManager; // @synthesize itemManager=_itemManager;
 @property(nonatomic) _Bool shouldIssueItemUpdatesOnCharacteristicOverrideValueChanges; // @synthesize shouldIssueItemUpdatesOnCharacteristicOverrideValueChanges=_shouldIssueItemUpdatesOnCharacteristicOverrideValueChanges;
 @property(nonatomic) __weak id <HUQuickControlContentCharacteristicWritingDelegate> forwardingCharacteristicWritingDelegate; // @synthesize forwardingCharacteristicWritingDelegate=_forwardingCharacteristicWritingDelegate;
-- (void).cxx_destruct;
 - (id)_characteristicUpdateSuppressionReasonForContent:(id)arg1;
 - (void)quickControlContent:(id)arg1 didEndPossibleWritesForCharacteristics:(id)arg2;
 - (void)quickControlContent:(id)arg1 willBeginPossibleWritesForCharacteristics:(id)arg2;

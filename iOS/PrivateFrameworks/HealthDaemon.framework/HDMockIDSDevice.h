@@ -31,6 +31,7 @@
     NSString *_backgroundAtrialFibrillationVersion;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool supportsCinnamonAntimonyGloryF; // @synthesize supportsCinnamonAntimonyGloryF=_supportsCinnamonAntimonyGloryF;
 @property(nonatomic) _Bool supportsCinnamonHW; // @synthesize supportsCinnamonHW=_supportsCinnamonHW;
 @property(nonatomic) _Bool isActive; // @synthesize isActive=_isActive;
@@ -48,7 +49,6 @@
 @property(copy, nonatomic) NSString *uniqueIDOverride; // @synthesize uniqueIDOverride=_uniqueIDOverride;
 @property(retain, nonatomic) NSUUID *nsuuid; // @synthesize nsuuid=_nsuuid;
 @property(retain, nonatomic) NSUUID *nanoRegistryPairingID; // @synthesize nanoRegistryPairingID=_nanoRegistryPairingID;
-- (void).cxx_destruct;
 - (id)hd_shortDescription;
 - (_Bool)hd_isEquivalentToDevice:(id)arg1;
 - (id)hd_destinationIdentifier;

@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     NSDate *_lastUpdated;
 }
 
-@property(retain, nonatomic) NSDate *lastUpdated; // @synthesize lastUpdated=_lastUpdated;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *lastUpdated; // @synthesize lastUpdated=_lastUpdated;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 - (void)_updateLastUpdatedLabel;
 @property(copy, nonatomic) NSString *incidentDescription;

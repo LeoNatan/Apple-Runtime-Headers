@@ -15,8 +15,8 @@
     UIView *_linkFooterView;
 }
 
-@property(readonly, nonatomic) UIView *linkFooterView; // @synthesize linkFooterView=_linkFooterView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *linkFooterView; // @synthesize linkFooterView=_linkFooterView;
 - (void)dismissPrivacyController;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;

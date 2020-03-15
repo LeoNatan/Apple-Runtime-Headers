@@ -16,10 +16,10 @@
     NSMutableDictionary *_transformers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *transformers; // @synthesize transformers=_transformers;
 @property(readonly, nonatomic) NSArray *exclusionKeys; // @synthesize exclusionKeys=_exclusionKeys;
 @property(readonly, nonatomic) id <SXJSONObjectMergerClassProviding> classProvider; // @synthesize classProvider=_classProvider;
-- (void).cxx_destruct;
 - (id)replaceLastKeyOfKeyPath:(id)arg1 withKey:(id)arg2;
 - (id)appendKey:(id)arg1 keyPath:(id)arg2;
 - (void)transformObject:(id)arg1 otherObject:(id)arg2 transformer:(id)arg3 key:(id)arg4 keyPath:(id)arg5 dictionary:(id)arg6;

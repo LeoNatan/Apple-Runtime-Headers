@@ -8,7 +8,7 @@
 
 #import <CoreUtils/VSSpeechSynthesizerDelegate-Protocol.h>
 
-@class CUVoiceRequest, NSString, VSSpeechSynthesizer;
+@class CUVoiceRequest, NSMutableArray, NSString, VSSpeechSynthesizer;
 @protocol OS_dispatch_queue;
 
 @interface CUVoiceSession : NSObject <VSSpeechSynthesizerDelegate>
@@ -17,19 +17,19 @@
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
     unsigned int _invalidateFlags;
-    struct NSMutableArray *_requests;
+    NSMutableArray *_requests;
     VSSpeechSynthesizer *_speechSynthesizer;
     struct LogCategory *_ucat;
-    struct NSMutableArray *_voiceRequests;
+    NSMutableArray *_voiceRequests;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     CDUnknownBlockType _invalidationHandler;
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)speechSynthesizer:(id)arg1 didFinishSpeakingRequest:(id)arg2 successfully:(_Bool)arg3 withError2:(id)arg4;
 - (void)speechSynthesizer:(id)arg1 didFinishSpeakingRequest:(id)arg2 successfully:(_Bool)arg3 phonemesSpoken:(id)arg4 withError:(id)arg5;
 - (void)speechSynthesizer:(id)arg1 didStartSpeakingRequest:(id)arg2;

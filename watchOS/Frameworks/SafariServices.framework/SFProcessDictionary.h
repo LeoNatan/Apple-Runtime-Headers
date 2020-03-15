@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     unsigned int _cacheCapacity;
 }
 
-@property(readonly, nonatomic) unsigned int cacheCapacity; // @synthesize cacheCapacity=_cacheCapacity;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int cacheCapacity; // @synthesize cacheCapacity=_cacheCapacity;
 - (id)incrementReferenceForPID:(int)arg1 bundleIdentifier:(id)arg2 valueCreationBlock:(CDUnknownBlockType)arg3;
 - (void)_removeUnreferencedObjectsIfNeeded;
 - (void)decrementReferenceForPID:(int)arg1;

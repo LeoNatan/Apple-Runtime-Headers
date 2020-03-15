@@ -15,8 +15,8 @@
     PKApplePayTrustSignature *_signature;
 }
 
-@property(retain, nonatomic) PKApplePayTrustSignature *signature; // @synthesize signature=_signature;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKApplePayTrustSignature *signature; // @synthesize signature=_signature;
 - (id)_urlRequestWithAppleAccountInformation:(id)arg1;
 - (id)endpointComponents;
 - (Class)responseClass;

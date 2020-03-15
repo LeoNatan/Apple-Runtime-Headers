@@ -14,9 +14,9 @@
     NSMutableArray *_attributes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *attributes; // @synthesize attributes=_attributes;
 @property(readonly, nonatomic) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (id)description;
 - (id)attributesMapWithAttributesForRange:(struct _NSRange)arg1;
 - (id)attributedString;

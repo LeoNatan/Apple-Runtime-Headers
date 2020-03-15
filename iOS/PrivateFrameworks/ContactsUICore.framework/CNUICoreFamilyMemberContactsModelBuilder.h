@@ -26,13 +26,13 @@
 + (id)formattedNameOfContact:(id)arg1 contactFormatterStyle:(long long)arg2;
 + (id)familyMemberContactItemFromContact:(id)arg1 contactFormatterStyle:(long long)arg2 contactTypeAssessor:(id)arg3 itemHasBeenPersisted:(_Bool)arg4;
 + (_Bool)shouldIncludeContact:(id)arg1 givenIncludeWhitelistedContactsOnlySetting:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool markItemsAsPersisted; // @synthesize markItemsAsPersisted=_markItemsAsPersisted;
 @property(readonly, nonatomic) _Bool sortItemsByName; // @synthesize sortItemsByName=_sortItemsByName;
 @property(readonly, nonatomic) _Bool includeWhitelistedContactsOnly; // @synthesize includeWhitelistedContactsOnly=_includeWhitelistedContactsOnly;
 @property(readonly, nonatomic) long long contactFormatterStyle; // @synthesize contactFormatterStyle=_contactFormatterStyle;
 @property(readonly, nonatomic) CNUICoreContactTypeAssessor *contactTypeAssessor; // @synthesize contactTypeAssessor=_contactTypeAssessor;
 @property(readonly, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
-- (void).cxx_destruct;
 - (id)sortedFamilyMemberContactItems:(id)arg1;
 - (id)build;
 - (id)initWithContacts:(id)arg1 contactTypeAssessor:(id)arg2 contactFormatterStyle:(long long)arg3 includeWhitelistedContactsOnly:(_Bool)arg4 sortItemsByName:(_Bool)arg5 markItemsAsPersisted:(_Bool)arg6;

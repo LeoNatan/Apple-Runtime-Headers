@@ -23,10 +23,10 @@
     CSHorizontalScrollFailureRecognizer *_horizontalFailureGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSHorizontalScrollFailureRecognizer *horizontalFailureGestureRecognizer; // @synthesize horizontalFailureGestureRecognizer=_horizontalFailureGestureRecognizer;
 @property(nonatomic) __weak id <CSScrollGestureControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long scrollingStrategy; // @synthesize scrollingStrategy=_scrollingStrategy;
-- (void).cxx_destruct;
 - (_Bool)_shouldAllowScrollForScrollingStrategy:(long long)arg1;
 - (_Bool)_shouldFailHorizontalSwipesForScrollingStrategy:(long long)arg1;
 - (void)_updateForScrollingStrategy:(long long)arg1 fromScrollingStrategy:(long long)arg2;

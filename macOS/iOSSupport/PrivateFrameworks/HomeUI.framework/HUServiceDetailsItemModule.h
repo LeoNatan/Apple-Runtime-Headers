@@ -15,9 +15,9 @@
 }
 
 + (CDUnknownBlockType)serviceDetailsItemSectionComparatorForSortStrategy:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFItem *sourceItem; // @synthesize sourceItem=_sourceItem;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)itemProviders;
 - (id)initWithItemUpdater:(id)arg1 home:(id)arg2 sourceItem:(id)arg3;
 

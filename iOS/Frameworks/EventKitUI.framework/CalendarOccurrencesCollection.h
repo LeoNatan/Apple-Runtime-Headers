@@ -17,10 +17,10 @@
     NSArray *_timedOccurrences;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *timedOccurrences; // @synthesize timedOccurrences=_timedOccurrences;
 @property(readonly, nonatomic) NSArray *allDayOccurrences; // @synthesize allDayOccurrences=_allDayOccurrences;
 @property(readonly, nonatomic) NSArray *occurrences; // @synthesize occurrences=_occurrences;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithOccurrences:(id)arg1 timedOccurrences:(id)arg2 allDayOccurrences:(id)arg3;

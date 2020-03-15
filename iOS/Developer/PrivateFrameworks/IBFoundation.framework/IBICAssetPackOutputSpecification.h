@@ -19,10 +19,10 @@
 
 + (id)outputSpecificationsKeyedByTagSetsFromCommandlinePlist:(id)arg1 makePathsAbsolute:(_Bool)arg2 error:(id *)arg3;
 + (id)outputSpecificationFromCommandlinePlistRecord:(id)arg1 makePathAbsolute:(_Bool)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSString *outputPath; // @synthesize outputPath=_outputPath;
 @property(readonly) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly) NSSet *tags; // @synthesize tags=_tags;
-- (void).cxx_destruct;
 - (id)englishNameForTagSet;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqualToAssetPackOutputSpecification:(id)arg1;

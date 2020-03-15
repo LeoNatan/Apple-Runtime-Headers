@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _handler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(nonatomic) long long availability; // @synthesize availability=_availability;
 @property(copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) BOOL supportsMultipleItems; // @synthesize supportsMultipleItems=_supportsMultipleItems;
 @property(copy, nonatomic) NSArray *supportedContentTypes; // @synthesize supportedContentTypes=_supportedContentTypes;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1 localizedTitle:(id)arg2 availability:(long long)arg3 handler:(CDUnknownBlockType)arg4;
 
 // Remaining properties

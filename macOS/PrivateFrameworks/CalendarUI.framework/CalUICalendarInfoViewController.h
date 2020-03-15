@@ -19,10 +19,10 @@
     EKCalendarViewController *_calendarViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain) EKCalendarViewController *calendarViewController; // @synthesize calendarViewController=_calendarViewController;
 @property __weak id <CalUICalendarInfoViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSPopover *popover; // @synthesize popover=_popover;
-- (void).cxx_destruct;
 - (void)didCommitItem;
 - (void)controllerCouldNotSaveWithError:(id)arg1;
 - (void)showPopoverRelativeToRect:(struct CGRect)arg1 ofView:(id)arg2 preferredEdge:(unsigned long long)arg3;

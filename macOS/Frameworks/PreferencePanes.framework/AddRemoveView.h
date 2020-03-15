@@ -19,12 +19,12 @@
     NSPopUpButtonCell *mActionPopupCell;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL popupButtonShowsArrow; // @synthesize popupButtonShowsArrow=mShowsArrow;
 @property(nonatomic) BOOL showsActionButton; // @synthesize showsActionButton=mShowsActionButton;
 @property(nonatomic) SEL deleteAction; // @synthesize deleteAction=mDeleteAction;
 @property(nonatomic) SEL addAction; // @synthesize addAction=mAddAction;
 @property(retain, nonatomic) id target; // @synthesize target=mTarget;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isActionButtonEnabled) BOOL actionButtonEnabled; // @dynamic actionButtonEnabled;
 - (void)setActionButtonMenu:(id)arg1;
 - (BOOL)setActionButtonAXOverrideValue:(id)arg1 forAttribute:(id)arg2;

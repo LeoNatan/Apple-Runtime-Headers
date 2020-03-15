@@ -29,6 +29,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)quickTypeItemWithLabel:(id)arg1 value:(id)arg2 name:(id)arg3 date:(id)arg4 fields:(unsigned int)arg5 originatingBundleID:(id)arg6 originatingWebsiteURL:(id)arg7 predictionAge:(unsigned long long)arg8 shouldAggregate:(_Bool)arg9 flags:(unsigned char)arg10 score:(double)arg11 source:(unsigned char)arg12 sourceIdentifier:(id)arg13;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char flags; // @synthesize flags=_flags;
 @property(nonatomic) _Bool shouldAggregate; // @synthesize shouldAggregate=_shouldAggregate;
 @property(nonatomic) unsigned long long predictionAge; // @synthesize predictionAge=_predictionAge;
@@ -42,7 +43,6 @@
 @property(copy, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
 @property(nonatomic) unsigned char source; // @synthesize source=_source;
 @property(nonatomic) double score; // @synthesize score=_score;
-- (void).cxx_destruct;
 - (long long)reverseCompare:(id)arg1;
 - (long long)compare:(id)arg1;
 - (_Bool)isEqualToQuickTypeItem:(id)arg1;

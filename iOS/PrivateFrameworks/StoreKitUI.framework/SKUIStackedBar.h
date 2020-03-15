@@ -26,6 +26,7 @@
     double _newOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double offset; // @synthesize offset=_offset;
 @property(nonatomic) _Bool zeroHeightWhenFirstChildExpanded; // @synthesize zeroHeightWhenFirstChildExpanded=_zeroHeightWhenFirstChildExpanded;
 @property(nonatomic) _Bool splitViewStyle; // @synthesize splitViewStyle=_splitViewStyle;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(nonatomic) _Bool alwaysShowsBackButton; // @synthesize alwaysShowsBackButton=_alwaysShowsBackButton;
 @property __weak id <SKUIStackedBarDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_selectItemAtIndex:(long long)arg1;
 - (void)_reload;
 - (void)_resetNewOffset;

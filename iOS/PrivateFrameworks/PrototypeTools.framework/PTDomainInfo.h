@@ -16,15 +16,15 @@
     NSString *_domainGroupName;
     NSString *_domainName;
     NSString *_settingsClassName;
-    NSString *_settingsBundlePath;
+    NSString *_settingsFrameworkBundlePath;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSString *settingsBundlePath; // @synthesize settingsBundlePath=_settingsBundlePath;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *settingsFrameworkBundlePath; // @synthesize settingsFrameworkBundlePath=_settingsFrameworkBundlePath;
 @property(readonly, nonatomic) NSString *settingsClassName; // @synthesize settingsClassName=_settingsClassName;
 @property(readonly, nonatomic) NSString *domainName; // @synthesize domainName=_domainName;
 @property(readonly, nonatomic) NSString *domainGroupName; // @synthesize domainGroupName=_domainGroupName;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;

@@ -20,6 +20,7 @@
     double _leeway;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 @property(nonatomic) _Bool pending; // @synthesize pending=_pending;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *source; // @synthesize source=_source;
@@ -28,7 +29,6 @@
 @property(nonatomic) double coalesingDelay; // @synthesize coalesingDelay=_coalesingDelay;
 @property(nonatomic) double leadingEdgeDelay; // @synthesize leadingEdgeDelay=_leadingEdgeDelay;
 @property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)fireAction;
 - (void)cancel;
 - (void)_setupTimerDelay:(double)arg1 pending:(_Bool)arg2;

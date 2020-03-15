@@ -22,6 +22,7 @@
 }
 
 + (void)updateMailVIP:(id)arg1 phoneFavorites:(id)arg2 meEmailAddresses:(id)arg3;
+- (void).cxx_destruct;
 // Error parsing type for property fuzzyMatchCheck:
 // Property attributes: TT,V_fuzzyMatchCheck
 
@@ -35,7 +36,6 @@
 @property unsigned long long strongRankingQueryCount; // @synthesize strongRankingQueryCount=_strongRankingQueryCount;
 @property(retain) NSArray *rankingQueries; // @synthesize rankingQueries=_rankingQueries;
 @property(retain) NSOrderedSet *requiredAttributes; // @synthesize requiredAttributes=_requiredAttributes;
-- (void).cxx_destruct;
 
 @end
 

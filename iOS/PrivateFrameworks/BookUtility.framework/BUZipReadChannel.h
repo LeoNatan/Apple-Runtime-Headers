@@ -19,11 +19,11 @@
     id <BUReadChannel> _archiveReadChannel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <BUReadChannel> archiveReadChannel; // @synthesize archiveReadChannel=_archiveReadChannel;
 @property(nonatomic) _Bool validateCRC; // @synthesize validateCRC=_validateCRC;
 @property(retain, nonatomic) BUZipArchive *archive; // @synthesize archive=_archive;
 @property(retain, nonatomic) BUZipEntry *entry; // @synthesize entry=_entry;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isValid;
 - (void)addBarrier:(CDUnknownBlockType)arg1;
 - (void)setLowWater:(unsigned long long)arg1;

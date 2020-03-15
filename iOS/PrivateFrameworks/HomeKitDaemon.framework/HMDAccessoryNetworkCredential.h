@@ -15,10 +15,10 @@
     NSData *_wiFiPSK;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSData *wiFiPSK; // @synthesize wiFiPSK=_wiFiPSK;
 @property(readonly) NSNumber *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(readonly) NSUUID *networkRouterUUID; // @synthesize networkRouterUUID=_networkRouterUUID;
-- (void).cxx_destruct;
 - (id)initWithNetworkRouterUUID:(id)arg1 clientIdentifier:(id)arg2 wiFiPSK:(id)arg3;
 
 @end

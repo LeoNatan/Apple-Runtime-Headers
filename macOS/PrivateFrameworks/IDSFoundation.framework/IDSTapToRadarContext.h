@@ -14,9 +14,9 @@
     NSString *_problemDescription;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *problemDescription; // @synthesize problemDescription=_problemDescription;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 problemDescription:(id)arg2;
 
 @end

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     DSPModuleControlDelegate *_controlDelegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DSPModuleControlDelegate *controlDelegate; // @synthesize controlDelegate=_controlDelegate;
 @property(readonly, nonatomic) DatabaseController *databaseController; // @synthesize databaseController=_databaseController;
-- (void).cxx_destruct;
 - (id)initWithDatabaseController:(id)arg1;
 
 @end

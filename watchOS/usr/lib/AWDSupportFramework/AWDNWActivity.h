@@ -8,7 +8,7 @@
 
 #import <AWDSupportFramework/NSCopying-Protocol.h>
 
-@class AWDNWL2Report, NSString;
+@class AWDNWDeviceReport, AWDNWL2Report, NSString;
 
 @interface AWDNWActivity : PBCodable <NSCopying>
 {
@@ -16,6 +16,7 @@
     unsigned long long _activityLabel;
     unsigned long long _timestamp;
     NSString *_activityUUID;
+    AWDNWDeviceReport *_deviceReport;
     AWDNWL2Report *_l2Report;
     NSString *_parentActivityUUID;
     _Bool _isRetry;
@@ -27,6 +28,7 @@
     } _has;
 }
 
+@property(retain, nonatomic) AWDNWDeviceReport *deviceReport; // @synthesize deviceReport=_deviceReport;
 @property(retain, nonatomic) AWDNWL2Report *l2Report; // @synthesize l2Report=_l2Report;
 @property(nonatomic) _Bool isRetry; // @synthesize isRetry=_isRetry;
 @property(retain, nonatomic) NSString *parentActivityUUID; // @synthesize parentActivityUUID=_parentActivityUUID;
@@ -43,6 +45,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasDeviceReport;
 @property(readonly, nonatomic) _Bool hasL2Report;
 @property(nonatomic) _Bool hasIsRetry;
 @property(readonly, nonatomic) _Bool hasParentActivityUUID;

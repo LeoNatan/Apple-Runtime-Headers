@@ -32,6 +32,7 @@
     double _numberOfPagesToCacheAhead;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double numberOfPagesToCacheAhead; // @synthesize numberOfPagesToCacheAhead=_numberOfPagesToCacheAhead;
 @property(nonatomic) long long numberOfItemsPerPage; // @synthesize numberOfItemsPerPage=_numberOfItemsPerPage;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(retain, nonatomic) SKUIResourceLoader *artworkLoader; // @synthesize artworkLoader=_artworkLoader;
 @property(nonatomic) __weak id <SKUIItemCollectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct _NSRange)_visibleItemRange;
 - (id)_screenshotForItem:(id)arg1;
 - (id)_screenshotArtworkRequestWithItem:(id)arg1;

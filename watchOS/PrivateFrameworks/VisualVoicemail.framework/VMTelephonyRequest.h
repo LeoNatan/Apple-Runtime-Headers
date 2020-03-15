@@ -19,8 +19,8 @@
 + (id)unarchivedObjectFromData:(id)arg1 error:(id *)arg2;
 + (id)unarchivedObjectClasses;
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) id <VMTelephonySubscription> subscription; // @synthesize subscription=_subscription;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <VMTelephonySubscription> subscription; // @synthesize subscription=_subscription;
 - (id)archivedDataWithError:(id *)arg1;
 - (_Bool)isEqualToRequest:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

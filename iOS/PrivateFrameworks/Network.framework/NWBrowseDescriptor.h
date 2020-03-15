@@ -21,8 +21,8 @@
 + (id)descriptorWithInternalDescriptor:(id)arg1;
 + (Class)copyClassForDescriptorType:(int)arg1;
 + (unsigned int)descriptorType;
-@property(retain, nonatomic) NSObject<OS_nw_browse_descriptor> *internalDescriptor; // @synthesize internalDescriptor=_internalDescriptor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_nw_browse_descriptor> *internalDescriptor; // @synthesize internalDescriptor=_internalDescriptor;
 - (id)createProtocolBufferObject;
 - (id)encodedData;
 - (id)initWithEncodedData:(id)arg1;

@@ -20,13 +20,13 @@
 
 + (BOOL)string:(id)arg1 containsSubstring:(id)arg2;
 + (id)predicateWithCalendars:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL disableBackingStoreUpdate; // @synthesize disableBackingStoreUpdate=_disableBackingStoreUpdate;
 @property(retain, nonatomic) NSString *customQueryString; // @synthesize customQueryString=_customQueryString;
 @property(retain, nonatomic) NSString *searchTerm; // @synthesize searchTerm=_searchTerm;
 @property(nonatomic) unsigned long long maxResults; // @synthesize maxResults=_maxResults;
 @property(retain, nonatomic) NSString *calendarTitle; // @synthesize calendarTitle=_calendarTitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (BOOL)evaluateWithObject:(id)arg1;
 - (id)mdQueryString;
 - (unsigned long long)entityType;

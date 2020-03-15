@@ -23,13 +23,13 @@
     CDStruct_0b1c536a _clearColor;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isOpaque) _Bool opaque; // @synthesize opaque=_opaque;
 @property(nonatomic) CDStruct_0b1c536a clearColor; // @synthesize clearColor=_clearColor;
 @property(nonatomic) _Bool clearsBackground; // @synthesize clearsBackground=_clearsBackground;
 @property(nonatomic) int colorMode; // @synthesize colorMode=_colorMode;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)_updateWithDevice:(struct Device *)arg1 frame:(struct RenderFrame *)arg2 synchronized:(_Bool)arg3;
 - (void)invalidateInRect:(struct Rect)arg1;
 - (void)invalidate;

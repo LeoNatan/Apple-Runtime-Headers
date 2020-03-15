@@ -6,9 +6,9 @@
 
 #import <HealthUI/NSObject-Protocol.h>
 
-@class HKSampleTypeDateRangeController;
+@class HKSampleTypeDateRangeController, NSDictionary;
 
 @protocol HKSampleTypeDateRangeControllerObserver <NSObject>
-- (void)sampleTypeDateRangeController:(HKSampleTypeDateRangeController *)arg1 didUpdateDateRanges:(struct NSDictionary *)arg2;
+- (void)sampleTypeDateRangeController:(HKSampleTypeDateRangeController *)arg1 didUpdateDateRanges:(NSDictionary *)arg2;
 @end
 

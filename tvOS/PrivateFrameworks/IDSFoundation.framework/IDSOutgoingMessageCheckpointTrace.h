@@ -22,13 +22,13 @@
     unsigned long long _compressedMessageSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long compressedMessageSize; // @synthesize compressedMessageSize=_compressedMessageSize;
 @property(nonatomic) unsigned long long uncompressedMessageSize; // @synthesize uncompressedMessageSize=_uncompressedMessageSize;
 @property(readonly, nonatomic) long long priority; // @synthesize priority=_priority;
 @property(readonly, nonatomic) long long command; // @synthesize command=_command;
 @property(readonly, nonatomic) NSString *service; // @synthesize service=_service;
 @property(readonly, nonatomic) NSString *guid; // @synthesize guid=_guid;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) IDSPeerMessageCheckpointTrace *peerMessageTrace; // @synthesize peerMessageTrace=_peerMessageTrace;
 @property(readonly, nonatomic) CUTCheckpointRange *compressPayload; // @synthesize compressPayload=_compressPayload;
 @property(readonly, nonatomic) CUTCheckpointRange *storeInDatabase; // @synthesize storeInDatabase=_storeInDatabase;

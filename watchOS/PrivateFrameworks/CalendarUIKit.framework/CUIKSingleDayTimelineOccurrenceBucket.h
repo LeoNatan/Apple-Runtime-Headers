@@ -27,11 +27,11 @@
     NSMutableArray *_currentOccurrences;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *currentOccurrences; // @synthesize currentOccurrences=_currentOccurrences;
 @property __weak id <CUIKSingleDayTimelineGeometryDelegate> geometryDelegate; // @synthesize geometryDelegate=_geometryDelegate;
 @property(nonatomic) _Bool isOnlyBucket; // @synthesize isOnlyBucket=_isOnlyBucket;
 @property(retain, nonatomic) CUIKSingleDayTimelineLayoutPartition *correspondingPartition; // @synthesize correspondingPartition=_correspondingPartition;
-- (void).cxx_destruct;
 - (void)stampFramesOntoOccurrences;
 - (void)makeTemporaryChangesPermanent;
 - (void)revertTemporaryChanges;

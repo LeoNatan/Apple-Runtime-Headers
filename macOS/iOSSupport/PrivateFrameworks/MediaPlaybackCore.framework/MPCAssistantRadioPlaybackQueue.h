@@ -14,8 +14,8 @@
 }
 
 + (id)radioQueueWithContextID:(id)arg1 stationStringID:(id)arg2;
-@property(readonly, nonatomic) NSString *stationStringID; // @synthesize stationStringID=_stationStringID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *stationStringID; // @synthesize stationStringID=_stationStringID;
 - (struct _MRSystemAppPlaybackQueue *)createRemotePlaybackQueue;
 - (BOOL)supportedOnCurrentPlatform;
 - (id)description;

@@ -18,8 +18,8 @@
 + (id)singletonInstance;
 + (id)sharedTIContactManager;
 + (void)setSharedTIContactManager:(id)arg1;
-@property(readonly, copy, nonatomic) NSUUID *contactCollectionUUID; // @synthesize contactCollectionUUID;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSUUID *contactCollectionUUID; // @synthesize contactCollectionUUID;
 - (void)handleMemoryPressureLevel:(unsigned long long)arg1 excessMemoryInBytes:(unsigned long long)arg2;
 - (void)keyboardActivityDidTransition:(id)arg1;
 - (void)unload;

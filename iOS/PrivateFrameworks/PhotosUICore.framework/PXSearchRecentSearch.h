@@ -19,9 +19,9 @@
 + (id)new;
 + (_Bool)supportsSecureCoding;
 + (_Bool)_isSupportedRepresentedObjects:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *representedObjects; // @synthesize representedObjects=_representedObjects;
 @property(readonly, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
-- (void).cxx_destruct;
 - (id)init;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

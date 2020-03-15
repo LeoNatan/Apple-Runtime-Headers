@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIActivityIndicatorView *_activityIndicator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(retain, nonatomic) UILabel *indexingLabel; // @synthesize indexingLabel=_indexingLabel;
-- (void).cxx_destruct;
 - (void)contentSizeCategoryChanged;
 - (struct CGSize)intrinsicContentSize;
 - (id)init;

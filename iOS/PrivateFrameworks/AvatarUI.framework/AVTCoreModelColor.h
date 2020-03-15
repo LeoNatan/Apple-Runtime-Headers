@@ -21,6 +21,7 @@
     CDStruct_597dd055 _settingKind;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *derivedColorsByCategories; // @synthesize derivedColorsByCategories=_derivedColorsByCategories;
 @property(readonly, nonatomic) float rangeMax; // @synthesize rangeMax=_rangeMax;
 @property(readonly, nonatomic) float rangeMin; // @synthesize rangeMin=_rangeMin;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) unsigned long long order; // @synthesize order=_order;
 @property(readonly, nonatomic) CDStruct_597dd055 settingKind; // @synthesize settingKind=_settingKind;
 @property(readonly, nonatomic) AVTColorPreset *baseColorPreset; // @synthesize baseColorPreset=_baseColorPreset;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;

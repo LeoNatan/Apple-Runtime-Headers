@@ -15,10 +15,10 @@
     HMDAudioStreamCodecConfiguration *_selectedConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDAudioStreamCodecConfiguration *selectedConfiguration; // @synthesize selectedConfiguration=_selectedConfiguration;
 @property(retain, nonatomic) NSArray *supportedConfigurations; // @synthesize supportedConfigurations=_supportedConfigurations;
 @property(nonatomic) long long siriInputType; // @synthesize siriInputType=_siriInputType;
-- (void).cxx_destruct;
 
 @end
 

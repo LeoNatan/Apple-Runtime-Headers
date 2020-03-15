@@ -15,8 +15,8 @@
     FCIssue *_issue;
 }
 
-@property(readonly, nonatomic) FCIssue *issue; // @synthesize issue=_issue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) FCIssue *issue; // @synthesize issue=_issue;
 - (id)adContextValueForKeyPath:(id)arg1;
 - (id)initWithIssue:(id)arg1;
 

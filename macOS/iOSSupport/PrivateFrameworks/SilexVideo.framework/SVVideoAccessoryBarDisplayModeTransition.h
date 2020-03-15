@@ -17,11 +17,11 @@
     SVVideoAccessoryBarDisplayModeTransitionContext *_context;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SVVideoAccessoryBarDisplayModeTransitionContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) id <SVVideoAccessoryItemDisplayModeTransitioning> transitionCoordinator; // @synthesize transitionCoordinator=_transitionCoordinator;
 @property(readonly, nonatomic) SVVideoAccessoryBarDisplayState *toState; // @synthesize toState=_toState;
 @property(readonly, nonatomic) SVVideoAccessoryBarDisplayState *fromState; // @synthesize fromState=_fromState;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)performTransitionWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)initWithFromState:(id)arg1 toState:(id)arg2 transitionCoordinator:(id)arg3;

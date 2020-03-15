@@ -15,10 +15,10 @@
     NSArray *_bbox;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *bbox; // @synthesize bbox=_bbox;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSArray *regionIds; // @synthesize regionIds=_regionIds;
-- (void).cxx_destruct;
 - (BOOL)containsLocation:(id)arg1;
 - (BOOL)isValue:(double)arg1 betweenValue:(double)arg2 andValue:(double)arg3;
 - (id)init;

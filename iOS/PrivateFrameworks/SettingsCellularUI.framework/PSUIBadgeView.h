@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     double _baseline;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double baseline; // @synthesize baseline=_baseline;
 @property(nonatomic) double minPadding; // @synthesize minPadding=_minPadding;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
 @property(retain, nonatomic) UILabel *badgeLabel; // @synthesize badgeLabel=_badgeLabel;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 @property(copy, nonatomic) NSString *text;
 - (id)init;

@@ -18,12 +18,12 @@
     PHAssetCollection *_curatedAssetCollection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL forDiagnostics; // @synthesize forDiagnostics=_forDiagnostics;
 @property(readonly, nonatomic) PHAssetCollection *curatedAssetCollection; // @synthesize curatedAssetCollection=_curatedAssetCollection;
 @property(readonly, nonatomic) PHAsset *keyAsset; // @synthesize keyAsset=_keyAsset;
 @property(nonatomic, getter=isDebug) BOOL debug; // @synthesize debug=_debug;
 @property(readonly, nonatomic) id <PGEventEnrichment> collection; // @synthesize collection=_collection;
-- (void).cxx_destruct;
 - (void)_generateTitleAndSubtitleWithManager:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (id)initWithCollection:(id)arg1 keyAsset:(id)arg2 curatedAssetCollection:(id)arg3;
 

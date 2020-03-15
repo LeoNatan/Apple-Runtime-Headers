@@ -21,12 +21,12 @@
 
 + (BOOL)canPublishAnonymously;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long activeCache; // @synthesize activeCache=_activeCache;
 @property(copy, nonatomic) NSDate *lastScheduledPublishActivityDate; // @synthesize lastScheduledPublishActivityDate=_lastScheduledPublishActivityDate;
 @property(copy, nonatomic) NSDate *lastPublishDate; // @synthesize lastPublishDate=_lastPublishDate;
 @property(copy, nonatomic) NSDate *lastUpdated; // @synthesize lastUpdated=_lastUpdated;
 @property(nonatomic) BOOL state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

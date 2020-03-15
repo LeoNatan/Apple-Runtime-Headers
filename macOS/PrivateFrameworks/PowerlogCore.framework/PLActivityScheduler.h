@@ -16,9 +16,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(retain) NSMutableDictionary *activities; // @synthesize activities=_activities;
-- (void).cxx_destruct;
 - (id)lastCompletedDateWithIdentifier:(id)arg1;
 - (void)cancelActivityWithIdentifier:(id)arg1;
 - (void)scheduleActivityWithIdentifier:(id)arg1 withCriteria:(id)arg2 withMustRunCriterion:(id)arg3 withQueue:(id)arg4 withInterruptBlock:(CDUnknownBlockType)arg5 withActivityBlock:(CDUnknownBlockType)arg6;

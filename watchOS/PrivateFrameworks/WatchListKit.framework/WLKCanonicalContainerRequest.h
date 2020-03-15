@@ -13,8 +13,8 @@
     NSString *_canonicalID;
 }
 
-@property(readonly, copy, nonatomic) NSString *canonicalID; // @synthesize canonicalID=_canonicalID;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *canonicalID; // @synthesize canonicalID=_canonicalID;
 - (void)makeRequestWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithCanonicalID:(id)arg1;
 

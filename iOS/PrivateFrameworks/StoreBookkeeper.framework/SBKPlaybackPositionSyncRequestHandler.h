@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     NSString *_overrideSyncAnchor;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *overrideSyncAnchor; // @synthesize overrideSyncAnchor=_overrideSyncAnchor;
 @property(retain) NSError *fatalSyncError; // @synthesize fatalSyncError=_fatalSyncError;
 @property _Bool canceled; // @synthesize canceled=_canceled;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property(retain) id <SBKUniversalPlaybackPositionTransactionContext> dataSourceTransactionContext; // @synthesize dataSourceTransactionContext=_dataSourceTransactionContext;
 @property(retain) SBKTransactionController *kvsController; // @synthesize kvsController=_kvsController;
 @property(retain) id <SBKUniversalPlaybackPositionDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)transaction:(id)arg1 conflictDetectionOrdinalForKey:(id)arg2;
 - (id)transaction:(id)arg1 syncAnchorForTransactionSyncAnchor:(id)arg2;
 - (id)transaction:(id)arg1 keyValuePairForUpdatedKey:(id)arg2;

@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSDictionary *imagesForContentSize; // @synthesize imagesForContentSize=_imagesForContentSize;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *imagesForContentSize; // @synthesize imagesForContentSize=_imagesForContentSize;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

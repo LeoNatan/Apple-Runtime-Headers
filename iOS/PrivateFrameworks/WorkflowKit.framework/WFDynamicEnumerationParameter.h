@@ -19,11 +19,11 @@
     NSError *_possibleStatesLoadingError;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *possibleStatesLoadingError; // @synthesize possibleStatesLoadingError=_possibleStatesLoadingError;
 @property(nonatomic) unsigned long long defaultValueLoadingState; // @synthesize defaultValueLoadingState=_defaultValueLoadingState;
 @property(nonatomic) unsigned long long possibleStatesLoadingState; // @synthesize possibleStatesLoadingState=_possibleStatesLoadingState;
 @property(nonatomic) __weak id <WFDynamicEnumerationDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (_Bool)isAsynchronous;
 - (void)defaultSerializedRepresentationDidChange;
 - (void)loadPossibleStatesWithCompletionHandler:(CDUnknownBlockType)arg1;

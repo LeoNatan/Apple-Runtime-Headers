@@ -22,6 +22,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isOnlyExtensionInContainingApp) BOOL onlyExtensionInContainingApp; // @synthesize onlyExtensionInContainingApp=_onlyExtensionInContainingApp;
 @property(retain, nonatomic) LSPlugInKitProxy *plugInKitProxy; // @synthesize plugInKitProxy=_plugInKitProxy;
 @property(copy, nonatomic) NSString *localizedContainingAppName; // @synthesize localizedContainingAppName=_localizedContainingAppName;
@@ -29,7 +30,6 @@
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

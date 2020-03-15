@@ -21,9 +21,9 @@
 }
 
 + (id)sharedDispatch;
+- (void).cxx_destruct;
 @property(retain) NSPreferencePane *prefPaneObject; // @synthesize prefPaneObject=_prefPaneObject;
 @property BOOL allowLegacyInteface; // @synthesize allowLegacyInteface;
-- (void).cxx_destruct;
 @property(readonly) NSString *legacyPreferencePanePath; // @dynamic legacyPreferencePanePath;
 - (oneway void)setLegacyPreferencePanePath:(id)arg1;
 - (void)authorizationViewDidDismissAgent;

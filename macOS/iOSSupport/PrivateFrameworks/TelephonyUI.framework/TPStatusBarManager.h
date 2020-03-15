@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *callDurationTimer; // @synthesize callDurationTimer=_callDurationTimer;
 @property(copy, nonatomic) NSString *currentAbbreviatedStatusBarString; // @synthesize currentAbbreviatedStatusBarString=_currentAbbreviatedStatusBarString;
-- (void).cxx_destruct;
 - (void)updateCurrentAbbreviatedStatusBarStringAndSendNotification;
 - (void)updateCurrentAbbreviatedStatusBarString;
 - (void)dealloc;

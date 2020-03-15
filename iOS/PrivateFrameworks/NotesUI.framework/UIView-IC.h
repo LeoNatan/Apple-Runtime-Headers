@@ -31,7 +31,7 @@
 @property(readonly, nonatomic) struct NSDirectionalEdgeInsets ic_directionalSafeAreaInsets;
 @property(readonly, nonatomic) _Bool ic_isRTL;
 @property(readonly, nonatomic) ICViewControllerManager *ic_viewControllerManager;
-- (void)ic_insertSubview:(struct UIView *)arg1 belowSubview:(struct UIView *)arg2;
+- (void)ic_insertSubview:(id)arg1 belowSubview:(id)arg2;
 - (void)ic_setAlpha:(double)arg1;
 - (void)ic_setNeedsLayout;
 - (void)ic_setNeedsDisplay;

@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *objectIDs; // @synthesize objectIDs=_objectIDs;
 @property(readonly, nonatomic) NSArray *listStorages; // @synthesize listStorages=_listStorages;
 @property(readonly, nonatomic) NSArray *accountStorages; // @synthesize accountStorages=_accountStorages;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

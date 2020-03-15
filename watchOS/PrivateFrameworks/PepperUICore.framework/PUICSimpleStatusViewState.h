@@ -20,11 +20,11 @@
 }
 
 + (id)simpleStateWithName:(id)arg1 withImageName:(id)arg2 inBundle:(id)arg3 withTintColor:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICStatusViewImageView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(nonatomic) double transitionOutDuration; // @synthesize transitionOutDuration=_transitionOutDuration;
 @property(nonatomic) double transitionInDuration; // @synthesize transitionInDuration=_transitionInDuration;
 @property(nonatomic, getter=statusViewIsStateActive) _Bool statusViewStateActive; // @synthesize statusViewStateActive=_statusViewStateActive;
-- (void).cxx_destruct;
 - (double)statusViewTransitionOutDuration;
 - (double)statusViewTransitionInDuration;
 - (id)statusViewIndicatorView;

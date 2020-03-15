@@ -15,9 +15,9 @@
 }
 
 + (long long)_priorityForTargetProtectionMode:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) HMAccessoryNetworkProtectionGroup *group; // @synthesize group=_group;
 @property(readonly, nonatomic) long long targetProtectionModeOption; // @synthesize targetProtectionModeOption=_targetProtectionModeOption;
-- (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)initWithGroup:(id)arg1 targetProtectionModeOption:(long long)arg2;
 

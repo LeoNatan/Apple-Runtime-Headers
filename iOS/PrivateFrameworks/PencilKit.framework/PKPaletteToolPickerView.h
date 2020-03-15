@@ -8,6 +8,7 @@
 
 #import <PencilKit/PKEdgeLocatable-Protocol.h>
 #import <PencilKit/PKPalettePopoverDismissing-Protocol.h>
+#import <PencilKit/PKPalettePopoverUpdating-Protocol.h>
 #import <PencilKit/PKPaletteViewSizeScaling-Protocol.h>
 #import <PencilKit/PKPaletteViewStateObserving-Protocol.h>
 #import <PencilKit/UIPopoverPresentationControllerDelegate-Protocol.h>
@@ -15,7 +16,7 @@
 @class NSArray, NSLayoutConstraint, NSMutableArray, NSString, PKInk, PKPaletteToolPickerOverlayView, PKPaletteToolView, UIScrollView, UIStackView, UIViewController;
 @protocol PKPalettePopoverPresenting><PKPaletteToolPickerViewDelegate, PKPaletteViewStateObservable;
 
-@interface PKPaletteToolPickerView : UIView <UIPopoverPresentationControllerDelegate, PKEdgeLocatable, PKPalettePopoverDismissing, PKPaletteViewSizeScaling, PKPaletteViewStateObserving>
+@interface PKPaletteToolPickerView : UIView <UIPopoverPresentationControllerDelegate, PKEdgeLocatable, PKPalettePopoverDismissing, PKPalettePopoverUpdating, PKPaletteViewStateObserving, PKPaletteViewSizeScaling>
 {
     _Bool _isRulerActive;
     _Bool _usingShortestToolSpacing;
@@ -37,6 +38,7 @@
 }
 
 + (id)defaultToolIdentifiers;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *presentedAttributePickerPopover; // @synthesize presentedAttributePickerPopover=_presentedAttributePickerPopover;
 @property(retain, nonatomic) PKPaletteToolView *lastSelectedTool; // @synthesize lastSelectedTool=_lastSelectedTool;
 @property(retain, nonatomic) NSMutableArray *toolsWidthCompactConstraints; // @synthesize toolsWidthCompactConstraints=_toolsWidthCompactConstraints;
@@ -54,7 +56,6 @@
 @property(nonatomic) __weak id <PKPalettePopoverPresenting><PKPaletteToolPickerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(nonatomic) unsigned long long edgeLocation; // @synthesize edgeLocation=_edgeLocation;
-- (void).cxx_destruct;
 - (void)didChangeAnnotationSupport:(id)arg1;
 - (id)_firstInkingTool;
 - (void)toggleBetweenLastSelectedToolAndCurrentlySelectedTool;
@@ -66,6 +67,7 @@
 - (void)_toolAttributesDidChange:(id)arg1;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
+- (void)updatePopoverUI;
 - (id)sourceViewForPopoverPresentationForTool:(id)arg1;
 - (struct CGRect)sourceRectForPopoverPresentationForTool:(id)arg1;
 - (void)_showToolAttributesPopover;

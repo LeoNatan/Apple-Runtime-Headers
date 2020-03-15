@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *postInitialDayAdvertisementTimes; // @synthesize postInitialDayAdvertisementTimes=_postInitialDayAdvertisementTimes;
 @property(nonatomic) double noAdvertisementDurationDecayFactor; // @synthesize noAdvertisementDurationDecayFactor=_noAdvertisementDurationDecayFactor;
 @property(nonatomic) double slowRollNoAdvertisementDuration; // @synthesize slowRollNoAdvertisementDuration=_slowRollNoAdvertisementDuration;
@@ -30,7 +31,6 @@
 @property(nonatomic) double fastRollAdvertisementInterval; // @synthesize fastRollAdvertisementInterval=_fastRollAdvertisementInterval;
 @property(nonatomic) double fastRollAdvertisementDuration; // @synthesize fastRollAdvertisementDuration=_fastRollAdvertisementDuration;
 @property(nonatomic) double initialNoBeaconDuration; // @synthesize initialNoBeaconDuration=_initialNoBeaconDuration;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

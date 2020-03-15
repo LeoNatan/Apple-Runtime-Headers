@@ -47,6 +47,7 @@
     struct timeval _lastSignOfLife;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSSet *supportedControlCommands; // @synthesize supportedControlCommands=_supportedControlCommands;
 @property(retain) NSString *localInterfaceName; // @synthesize localInterfaceName=_localInterfaceName;
 @property(retain) NSObject<OS_dispatch_semaphore> *payloadChannelRequestSemaphore; // @synthesize payloadChannelRequestSemaphore=_payloadChannelRequestSemaphore;
@@ -79,7 +80,6 @@
 @property int localInterfaceType; // @synthesize localInterfaceType=_localInterfaceType;
 @property unsigned long long protocolVersion; // @synthesize protocolVersion=_protocolVersion;
 @property struct timeval lastSignOfLife; // @synthesize lastSignOfLife=_lastSignOfLife;
-- (void).cxx_destruct;
 - (void)muxerInterrupted:(id)arg1;
 - (void)muxer:(id)arg1 wroteDataToStream:(id)arg2;
 - (void)muxer:(id)arg1 streamClosing:(id)arg2;

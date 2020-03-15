@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     unsigned long long _fetchLimit;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool includesDataValues; // @synthesize includesDataValues=_includesDataValues;
 @property(nonatomic) unsigned long long fetchLimit; // @synthesize fetchLimit=_fetchLimit;
 @property(copy, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(copy, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(retain, nonatomic) VSOptional *itemKind; // @synthesize itemKind=_itemKind;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

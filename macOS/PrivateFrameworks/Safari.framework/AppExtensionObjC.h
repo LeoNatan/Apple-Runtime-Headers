@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 // Error parsing type for property cpp:
-// Property attributes: T^{AppExtension=^^?^^?{HashSet<Safari::EventTarget *, WTF::PtrHash<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *> >={HashTable<Safari::EventTarget *, Safari::EventTarget *, WTF::IdentityExtractor, WTF::PtrHash<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *> >=^^{EventTarget}IIII}}{Lock={Atomic<unsigned char>={atomic<unsigned char>=AC}}}^v^{BrowserBundlePageController}@},R,N
+// Property attributes: T^{AppExtension=^^?^^?{HashSet<Safari::EventTarget *, WTF::PtrHash<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *> >={HashTable<Safari::EventTarget *, Safari::EventTarget *, WTF::IdentityExtractor, WTF::PtrHash<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *> >=^^{EventTarget}}}{Lock={Atomic<unsigned char>={atomic<unsigned char>={__cxx_atomic_impl<unsigned char, std::__1::__cxx_atomic_base_impl<unsigned char> >=AC}}}}^v^{BrowserBundlePageController}@},R,N
 
 
 @end

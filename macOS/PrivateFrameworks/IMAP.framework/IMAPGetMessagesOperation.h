@@ -15,9 +15,9 @@
     id <IMAPGetMessagesOperationDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <IMAPGetMessagesOperationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSIndexSet *uids; // @synthesize uids=_uids;
-- (void).cxx_destruct;
 - (void)main;
 - (id)description;
 - (id)initWithUIDs:(id)arg1 dataSource:(id)arg2 delegate:(id)arg3;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     BOOL _showsThumbnails;
 }
 
-@property BOOL showsThumbnails; // @synthesize showsThumbnails=_showsThumbnails;
 - (void).cxx_destruct;
+@property BOOL showsThumbnails; // @synthesize showsThumbnails=_showsThumbnails;
 - (id)_filterImage:(id)arg1 size:(struct CGSize)arg2;
 - (void)updatePreviewLayerContent;
 - (struct CGPoint)positionForPreviewLayerWithIndex:(long long)arg1;

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSArray *_constraints;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL constraintsForTwoColumns; // @synthesize constraintsForTwoColumns=_constraintsForTwoColumns;
 @property(retain, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) UIKeyCommandDiscoverabilityHUDColumnView *rightColumnView; // @synthesize rightColumnView=_rightColumnView;
 @property(retain, nonatomic) UIKeyCommandDiscoverabilityHUDColumnView *leftColumnView; // @synthesize leftColumnView=_leftColumnView;
-- (void).cxx_destruct;
 
 @end
 

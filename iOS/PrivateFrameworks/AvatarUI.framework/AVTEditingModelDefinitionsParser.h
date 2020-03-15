@@ -19,14 +19,14 @@
 + (id)dataFromBundle;
 + (id)dataFromAvatarKit;
 + (id)errorWithDescription:(id)arg1 underlyingError:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVTEditingModelColors *colorCache; // @synthesize colorCache=_colorCache;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NSData *plistData; // @synthesize plistData=_plistData;
 @property(readonly, nonatomic) AVTUILogger *logger; // @synthesize logger=_logger;
-- (void).cxx_destruct;
 - (id)coreModelRowOptionsFromOptionsDictionary:(id)arg1;
-- (id)coreModelRowFromRowDictionary:(id)arg1 availableTags:(struct NSDictionary *)arg2 usedTags:(id)arg3;
-- (struct NSDictionary *)gatherAllTagsFromPresets:(id)arg1;
+- (id)coreModelRowFromRowDictionary:(id)arg1 availableTags:(id)arg2 usedTags:(id)arg3;
+- (id)gatherAllTagsFromPresets:(id)arg1;
 - (id)coreModelColorsForColorDefinitions:(id)arg1 paletteSettingKind:(CDStruct_597dd055)arg2;
 - (id)coreModelColorsForPaletteSettingKind:(CDStruct_597dd055)arg1;
 - (id)coreModelPresetsForCategory:(long long)arg1;

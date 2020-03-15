@@ -19,11 +19,11 @@
 + (id)_identityWithLegacyFullIdentity:(id)arg1 ngmFullDeviceIdentity:(id)arg2 ngmVersion:(id)arg3 legacyFullIdentitySerializedData:(id)arg4 error:(id *)arg5;
 + (id)identityWithDataRepresentation:(id)arg1 error:(id *)arg2;
 + (id)identityWithLegacyFullIdentity:(id)arg1 ngmFullDeviceIdentity:(id)arg2 ngmVersion:(id)arg3 error:(id *)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *cachedLegacySerializedData; // @synthesize cachedLegacySerializedData=_cachedLegacySerializedData;
 @property(readonly, nonatomic) NSNumber *ngmVersion; // @synthesize ngmVersion=_ngmVersion;
 @property(readonly, nonatomic) IDSNGMFullDeviceIdentity *ngmFullDeviceIdentity; // @synthesize ngmFullDeviceIdentity=_ngmFullDeviceIdentity;
 @property(readonly, nonatomic) IDSMPFullLegacyIdentity *legacyFullIdentity; // @synthesize legacyFullIdentity=_legacyFullIdentity;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)_legacyUnsealMessage:(id)arg1 signedByPublicIdentity:(id)arg2 error:(id *)arg3;

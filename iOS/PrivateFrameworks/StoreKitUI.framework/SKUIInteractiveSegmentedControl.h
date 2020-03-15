@@ -17,11 +17,11 @@
     double _selectionProgress;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double selectionProgress; // @synthesize selectionProgress=_selectionProgress;
 @property(copy, nonatomic) NSArray *segments; // @synthesize segments=_segments;
 @property(nonatomic) double dividerWidth; // @synthesize dividerWidth=_dividerWidth;
 @property(copy, nonatomic) CDUnknownBlockType dividerCreationBlock; // @synthesize dividerCreationBlock=_dividerCreationBlock;
-- (void).cxx_destruct;
 - (void)_unregisterForObservationOfSegment:(id)arg1;
 - (_Bool)_setSelectionProgress:(double)arg1;
 - (void)_registerForObservationOfSegment:(id)arg1;

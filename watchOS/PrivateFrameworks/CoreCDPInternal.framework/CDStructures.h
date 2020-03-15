@@ -8,18 +8,10 @@
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
-#pragma mark Typedef'd Structures
+#pragma mark Named Structures
 
-typedef struct {
-    unsigned int errorCode:1;
-    unsigned int timestamp:1;
-} CDStruct_cc792eb8;
-
-// Ambiguous groups
-typedef struct {
-    unsigned int errorCode:1;
-    unsigned int timestamp:1;
-    unsigned int cloudDataProtectionEnabled:1;
-    unsigned int shouldCompleteSignIn:1;
-} CDStruct_a58e9fc9;
+struct mach_timebase_info {
+    unsigned int numer;
+    unsigned int denom;
+};
 

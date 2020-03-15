@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _capacity;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long capacity; // @synthesize capacity=_capacity;
 @property(readonly, nonatomic) CDUnknownBlockType batchHandler; // @synthesize batchHandler=_batchHandler;
-- (void).cxx_destruct;
 - (void)dequeueObject:(id)arg1 buffer:(id)arg2;
 - (void)enqueueObject:(id)arg1 replaceIfExists:(BOOL)arg2 buffer:(id)arg3;
 @property(readonly, nonatomic) NSString *descriptionType;

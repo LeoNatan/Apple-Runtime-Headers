@@ -25,6 +25,7 @@
     unsigned long long _timeOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long timeOffset; // @synthesize timeOffset=_timeOffset;
 @property(readonly, nonatomic) NSArray *pickerItems; // @synthesize pickerItems=_pickerItems;
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) UIPickerView *currentPickerView; // @synthesize currentPickerView=_currentPickerView;
 @property(readonly, nonatomic) unsigned long long event; // @synthesize event=_event;
 @property(nonatomic) __weak id <WFTimeOffsetPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)pickerView:(id)arg1 titleForRow:(long long)arg2 forComponent:(long long)arg3;
 - (long long)pickerView:(id)arg1 numberOfRowsInComponent:(long long)arg2;
 - (long long)numberOfComponentsInPickerView:(id)arg1;

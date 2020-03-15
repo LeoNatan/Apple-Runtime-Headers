@@ -18,13 +18,13 @@
     NSMutableSet *__activePairedFeedbackGenerators;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *_activePairedFeedbackGenerators; // @synthesize _activePairedFeedbackGenerators=__activePairedFeedbackGenerators;
 @property(readonly, nonatomic) _UIButtonFeedbackGenerator *_shutterButtonMomentaryFeedbackGenerator; // @synthesize _shutterButtonMomentaryFeedbackGenerator=__shutterButtonMomentaryFeedbackGenerator;
 @property(readonly, nonatomic) _UIButtonFeedbackGenerator *_shutterButtonLatchingOffFeedbackGenerator; // @synthesize _shutterButtonLatchingOffFeedbackGenerator=__shutterButtonLatchingOffFeedbackGenerator;
 @property(readonly, nonatomic) _UIButtonFeedbackGenerator *_shutterButtonLatchingOnFeedbackGenerator; // @synthesize _shutterButtonLatchingOnFeedbackGenerator=__shutterButtonLatchingOnFeedbackGenerator;
 @property(readonly, nonatomic) UISelectionFeedbackGenerator *_burstCountFeedbackGenerator; // @synthesize _burstCountFeedbackGenerator=__burstCountFeedbackGenerator;
 @property(readonly, nonatomic) UISelectionFeedbackGenerator *_modeSelectionFeedbackGenerator; // @synthesize _modeSelectionFeedbackGenerator=__modeSelectionFeedbackGenerator;
-- (void).cxx_destruct;
 - (id)_debugStringForPairedFeedback:(unsigned long long)arg1;
 - (id)_feedbackGeneratorForPairedFeedback:(unsigned long long)arg1;
 - (id)_feedbackGeneratorForDiscreteFeedback:(unsigned long long)arg1;

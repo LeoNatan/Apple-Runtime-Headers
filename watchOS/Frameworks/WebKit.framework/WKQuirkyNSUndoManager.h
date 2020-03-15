@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     WKContentView *_contentView;
 }
 
-@property(readonly) __weak WKContentView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+@property(readonly) __weak WKContentView *contentView; // @synthesize contentView=_contentView;
 - (void)redo;
 - (void)undo;
 - (_Bool)canRedo;

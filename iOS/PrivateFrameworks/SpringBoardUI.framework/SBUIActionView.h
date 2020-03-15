@@ -24,10 +24,10 @@
     long long _imagePosition;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic) long long imagePosition; // @synthesize imagePosition=_imagePosition;
 @property(readonly, nonatomic) SBUIAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)_updateVisualStylingIfNecessary;
 - (void)_invalidateVisualStyling;
 - (void)_updateImageViewLayoutConstraints;

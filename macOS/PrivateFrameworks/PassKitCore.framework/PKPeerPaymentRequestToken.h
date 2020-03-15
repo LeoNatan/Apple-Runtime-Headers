@@ -19,9 +19,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)informalRequestToken;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSUUID *deviceScoreIdentifier; // @synthesize deviceScoreIdentifier=_deviceScoreIdentifier;
 @property(readonly, copy, nonatomic) NSString *requestToken; // @synthesize requestToken=_requestToken;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

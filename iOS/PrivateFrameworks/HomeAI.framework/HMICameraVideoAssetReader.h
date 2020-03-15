@@ -26,13 +26,13 @@
 + (id)readerForVideoFragment:(id)arg1 workQueue:(id)arg2 logIdentifier:(id)arg3;
 + (id)trackKeys;
 + (id)assetKeys;
+- (void).cxx_destruct;
 @property(readonly) NSObject<OS_dispatch_queue> *resourceLoaderWorkQueue; // @synthesize resourceLoaderWorkQueue=_resourceLoaderWorkQueue;
 @property(retain, nonatomic) AVAssetReader *assetReader; // @synthesize assetReader=_assetReader;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property unsigned long long currentFrameId; // @synthesize currentFrameId=_currentFrameId;
 @property(readonly) HMICameraVideoFragment *videoFragment; // @synthesize videoFragment=_videoFragment;
 @property(readonly) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
-- (void).cxx_destruct;
 - (_Bool)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
 - (_Bool)readNextFrame:(id *)arg1 error:(id *)arg2;
 - (void)_propertiesLoadedForTrack:(id)arg1 fromAsset:(id)arg2 resultCallback:(CDUnknownBlockType)arg3;

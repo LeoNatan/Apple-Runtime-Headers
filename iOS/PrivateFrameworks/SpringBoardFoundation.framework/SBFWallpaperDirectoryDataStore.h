@@ -18,9 +18,9 @@
 }
 
 + (id)defaultDirectoryURL;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool supportsWallpaperOptions; // @synthesize supportsWallpaperOptions=_supportsWallpaperOptions;
 @property(readonly, copy, nonatomic) NSURL *directoryURL; // @synthesize directoryURL=_directoryURL;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

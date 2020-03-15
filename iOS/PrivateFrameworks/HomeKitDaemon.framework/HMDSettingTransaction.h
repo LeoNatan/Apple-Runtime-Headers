@@ -18,11 +18,11 @@
     NSMutableSet *_removeUUIDs;
 }
 
+- (void).cxx_destruct;
 @property(readonly) _Bool initialCreation; // @synthesize initialCreation=_initialCreation;
 @property(readonly) NSMutableSet *removeUUIDs; // @synthesize removeUUIDs=_removeUUIDs;
 @property(readonly) NSMutableSet *updateModels; // @synthesize updateModels=_updateModels;
 @property(readonly) NSString *transactionLabel; // @synthesize transactionLabel=_transactionLabel;
-- (void).cxx_destruct;
 - (void)addModelToBeUpdated:(id)arg1;
 - (void)addModel:(id)arg1;
 - (void)addSettingModel:(id)arg1;

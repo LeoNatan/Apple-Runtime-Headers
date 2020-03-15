@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
-+ (id)initializeWithClientIdentifier:(id)arg1;
++ (void)initializeWithAppleTVClientIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(retain, nonatomic) AMSMediaTokenService *tokenService; // @synthesize tokenService=_tokenService;
 @property(retain, nonatomic) AMSURLSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (id)_createTokenServiceWithSession:(id)arg1;
 - (id)_createSession;
 - (void)fetchContentForUrl:(id)arg1 completion:(CDUnknownBlockType)arg2;

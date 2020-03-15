@@ -66,6 +66,7 @@
     ETMessage *_parentMessage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool angerUsesForceTouch; // @synthesize angerUsesForceTouch=_angerUsesForceTouch;
 @property(nonatomic) _Bool useFastVerticalWisp; // @synthesize useFastVerticalWisp=_useFastVerticalWisp;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
@@ -79,7 +80,6 @@
 @property(retain, nonatomic) UIColor *drawingColor; // @synthesize drawingColor=_drawingColor;
 @property(nonatomic) __weak id <ETMessageTimeSource> timeSource; // @synthesize timeSource=_timeSource;
 @property(nonatomic) __weak id <ETCanvasViewDelegate> canvasDelegate; // @synthesize canvasDelegate=_canvasDelegate;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_configureAngerRecognizer;
 - (void)setForceTouchEnabled:(_Bool)arg1;

@@ -18,10 +18,10 @@
     CoreDAVPropFindTask *_fetchTask;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CoreDAVPropFindTask *fetchTask; // @synthesize fetchTask=_fetchTask;
 @property(retain, nonatomic) NSURL *inboxURL; // @synthesize inboxURL=_inboxURL;
 @property(retain, nonatomic) ICSDocument *calendarAvailability; // @synthesize calendarAvailability=_calendarAvailability;
-- (void).cxx_destruct;
 - (void)propFindTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
 - (void)_finishWithError:(id)arg1;
 - (void)startTaskGroup;

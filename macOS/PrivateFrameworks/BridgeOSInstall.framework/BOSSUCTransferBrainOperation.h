@@ -13,8 +13,8 @@
     NSDate *_lastProgressLogDate;
 }
 
-@property(retain) NSDate *lastProgressLogDate; // @synthesize lastProgressLogDate=_lastProgressLogDate;
 - (void).cxx_destruct;
+@property(retain) NSDate *lastProgressLogDate; // @synthesize lastProgressLogDate=_lastProgressLogDate;
 - (void)bridgeOSSoftwareUpdateController:(id)arg1 updateBrainTransferComplete:(id)arg2;
 - (void)bridgeOSSoftwareUpdateController:(id)arg1 updateBrainTransferProgress:(double)arg2;
 - (void)startControllerOperation;

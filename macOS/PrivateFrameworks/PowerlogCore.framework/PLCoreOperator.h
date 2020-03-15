@@ -16,8 +16,8 @@
 + (id)registeredOperators;
 + (id)registeredOperatorsOfSuperClassType:(Class)arg1;
 + (void)registerOperator:(Class)arg1;
-@property(retain) NSMutableDictionary *operators; // @synthesize operators=_operators;
 - (void).cxx_destruct;
+@property(retain) NSMutableDictionary *operators; // @synthesize operators=_operators;
 - (id)tablesToTrimConditionsForTrimDate:(id)arg1;
 - (void)log;
 - (void)startOperatorsOfSuperClassType:(Class)arg1;

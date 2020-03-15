@@ -16,10 +16,10 @@
     NSDictionary *_definition;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *definition; // @synthesize definition=_definition;
 @property(readonly, nonatomic) WFAction *action; // @synthesize action=_action;
 @property(nonatomic) __weak id <WFActionSettingsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)donePressed:(id)arg1;
 - (BOOL)accessibilityPerformEscape;
 - (id)initWithAction:(id)arg1 definition:(id)arg2;

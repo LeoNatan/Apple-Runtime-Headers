@@ -18,11 +18,11 @@
     long long _portraitPrettyNumberRule;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *axisBoundsOverrides; // @synthesize axisBoundsOverrides=_axisBoundsOverrides;
 @property(readonly, nonatomic) HKValueRange *defaultAxisBounds; // @synthesize defaultAxisBounds=_defaultAxisBounds;
 @property(nonatomic) long long portraitPrettyNumberRule; // @synthesize portraitPrettyNumberRule=_portraitPrettyNumberRule;
 @property(nonatomic) _Bool shouldExpandBoundsForOutliers; // @synthesize shouldExpandBoundsForOutliers=_shouldExpandBoundsForOutliers;
-- (void).cxx_destruct;
 - (id)_valueRangeForZoomLevel:(long long)arg1;
 - (id)portraitYValueRangeForRange:(id)arg1 zoomLevel:(long long)arg2 allowedDecimalPrecision:(long long)arg3;
 - (id)yValueRangeForRange:(id)arg1 zoomLevel:(long long)arg2;

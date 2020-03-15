@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSArray *recordIDs; // @synthesize recordIDs=_recordIDs;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *recordIDs; // @synthesize recordIDs=_recordIDs;
 - (void)coalesceWithCommand:(id)arg1;
 - (BOOL)canCoalesceWithCommand:(id)arg1;
 - (void)handleBatchOfRecordIDs:(id)arg1 internalPrivateDataContext:(id)arg2 qualityOfService:(long long)arg3 completion:(CDUnknownBlockType)arg4;

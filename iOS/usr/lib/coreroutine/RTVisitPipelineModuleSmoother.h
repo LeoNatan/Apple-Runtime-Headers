@@ -37,6 +37,7 @@
 + (double)getWeightExponentForSmoothedLocationDate:(id)arg1 rawLocationDate:(id)arg2 kernelWidth:(double)arg3 maxDelta:(double)arg4;
 + (double)getMaxDeltaForSmoothedLocationDate:(id)arg1 rawLocations:(id)arg2 kernelWidth:(double)arg3;
 + (unsigned long long)findIndexOfLocationInArray:(id)arg1 inRange:(struct _NSRange)arg2 afterDate:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *entryBeforeAnyGaps; // @synthesize entryBeforeAnyGaps=_entryBeforeAnyGaps;
 @property(readonly, nonatomic) RTVisit *workingVisit; // @synthesize workingVisit=_workingVisit;
 @property(readonly, nonatomic) NSMutableArray *rawLocations; // @synthesize rawLocations=_rawLocations;
@@ -50,7 +51,6 @@
 @property(readonly, nonatomic) NSDate *firstDateToProcessForVisit; // @synthesize firstDateToProcessForVisit=_firstDateToProcessForVisit;
 @property(readonly, nonatomic) NSDate *nextDateToProcess; // @synthesize nextDateToProcess=_nextDateToProcess;
 @property(readonly, nonatomic) NSDate *previousProcessedDate; // @synthesize previousProcessedDate=_previousProcessedDate;
-- (void).cxx_destruct;
 - (id)process:(id)arg1;
 - (void)updateStateWithNewCluster:(id)arg1;
 - (void)resetState;

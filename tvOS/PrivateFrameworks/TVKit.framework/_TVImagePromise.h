@@ -18,13 +18,13 @@
     NSMutableSet *_completionBlocks;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *completionBlocks; // @synthesize completionBlocks=_completionBlocks;
 @property(retain, nonatomic) TVImageProxy *imageProxy; // @synthesize imageProxy=_imageProxy;
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(readonly, copy, nonatomic) NSURL *imageURL; // @synthesize imageURL=_imageURL;
-- (void).cxx_destruct;
 - (void)stopResolving;
 - (void)startResolving;
 - (void)addCompletionBlock:(CDUnknownBlockType)arg1;

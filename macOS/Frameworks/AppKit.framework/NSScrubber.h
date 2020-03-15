@@ -51,9 +51,9 @@
 + (id)outlineSelectionOverlayView;
 + (id)roundedSelectionBackgroundView;
 + (id)touchBarColorListPickerScrubberWithDataSource:(id)arg1 delegate:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSScrubberPendingChanges *pendingChanges; // @synthesize pendingChanges=_tx;
 @property long long itemAlignment; // @synthesize itemAlignment=_itemAlignment;
-- (void).cxx_destruct;
 - (void)setEndcapCornerRadius:(double)arg1;
 - (double)endcapCornerRadius;
 - (void)setSelectionLensSize:(struct CGSize)arg1;

@@ -29,6 +29,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int algorithm; // @synthesize algorithm=_algorithm;
 @property(nonatomic) int mediaType; // @synthesize mediaType=_mediaType;
 @property(retain, nonatomic) NSString *mediaId; // @synthesize mediaId=_mediaId;
@@ -36,7 +37,6 @@
 @property(nonatomic) double quantizedScore; // @synthesize quantizedScore=_quantizedScore;
 @property(nonatomic) double secondsFromUnixEpoch; // @synthesize secondsFromUnixEpoch=_secondsFromUnixEpoch;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

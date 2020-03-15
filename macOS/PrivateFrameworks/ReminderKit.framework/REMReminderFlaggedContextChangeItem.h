@@ -13,8 +13,8 @@
     REMReminderChangeItem *_reminderChangeItem;
 }
 
-@property(retain, nonatomic) REMReminderChangeItem *reminderChangeItem; // @synthesize reminderChangeItem=_reminderChangeItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) REMReminderChangeItem *reminderChangeItem; // @synthesize reminderChangeItem=_reminderChangeItem;
 @property(nonatomic) long long flagged;
 - (id)initWithReminderChangeItem:(id)arg1;
 

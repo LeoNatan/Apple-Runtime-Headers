@@ -30,13 +30,13 @@
     NSLock *_sharedOperationLock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLock *sharedOperationLock; // @synthesize sharedOperationLock=_sharedOperationLock;
 @property(retain) id serviceUnavailableHandler; // @synthesize serviceUnavailableHandler=_serviceUnavailableHandler;
 @property(retain) NSObject<OS_dispatch_semaphore> *invalidationSemaphore; // @synthesize invalidationSemaphore=_invalidationSemaphore;
 @property __weak PHAExecutive *executive; // @synthesize executive=_executive;
 @property(retain) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(retain) PHAManager *photoAnalysisManager; // @synthesize photoAnalysisManager=_photoAnalysisManager;
-- (void).cxx_destruct;
 - (void)cancelOperationsWithIdentifiers:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (id)libraryURLFromContextInformation:(id)arg1;
 - (id)contextInformationFromInvocation:(id)arg1;

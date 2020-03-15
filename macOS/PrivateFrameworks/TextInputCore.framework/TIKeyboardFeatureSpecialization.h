@@ -22,10 +22,10 @@
 
 + (id)createSpecializationForInputMode:(id)arg1;
 + (struct USet *)createAcceptableCharacterSetForKeyboardLocale:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL useRelaxedOVSPolicy; // @synthesize useRelaxedOVSPolicy=_useRelaxedOVSPolicy;
 @property(nonatomic) long long currentUserInterfaceIdiom; // @synthesize currentUserInterfaceIdiom=_currentUserInterfaceIdiom;
 @property(readonly, nonatomic) TIInputMode *inputMode; // @synthesize inputMode=_inputMode;
-- (void).cxx_destruct;
 - (id)replacementForDoubleSpace;
 - (id)accentKeyStringForKeyboardState:(id)arg1;
 - (id)layoutTags;
@@ -57,7 +57,7 @@
 - (id)nonstopPunctuationCharacters;
 - (id)internalStringToExternal:(id)arg1;
 - (id)externalStringToInternal:(id)arg1;
-- (struct NSDictionary *)compositionMapForLayout:(id)arg1 reverse:(BOOL)arg2;
+- (id)compositionMapForLayout:(id)arg1 reverse:(BOOL)arg2;
 - (BOOL)doesComposeText;
 - (void)specializeInputManager:(struct TIInputManager *)arg1 forLayoutState:(id)arg2;
 - (struct TIInputManager *)createInputManager;

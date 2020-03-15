@@ -15,7 +15,7 @@
 @interface MPSKernel : NSObject <NSCopying, NSSecureCoding>
 {
     unsigned long long _options;
-    // Error parsing type: ^{MPSDevice=^^?^{MPSDevice}@^{MPSDeviceFreeList}{atomic<MTLLibraryNode *>=A^{MTLLibraryNode}}[2[2[2{atomic<void *>=A^v}]]][563{MPSPixelCapabilities=b1b1b1b1b1b2b1b8}]{atomic<void *>=A^v}Ii{MPSGPUInfo=b8b8b8b16b4b20}[106{atomic<MPSLibrary *>=A^{MPSLibrary}}]}, name: _device
+    // Error parsing type: ^{MPSDevice=^^?^{MPSDevice}@^{MPSDeviceFreeList}{atomic<MTLLibraryNode *>={__cxx_atomic_impl<MTLLibraryNode *, std::__1::__cxx_atomic_base_impl<MTLLibraryNode *> >=A^{MTLLibraryNode}}}[2[2[2{atomic<void *>={__cxx_atomic_impl<void *, std::__1::__cxx_atomic_base_impl<void *> >=A^v}}]]][563{MPSPixelCapabilities=b1b1b1b1b1b2b1b8}]{atomic<void *>={__cxx_atomic_impl<void *, std::__1::__cxx_atomic_base_impl<void *> >=A^v}}Ii{MPSGPUInfo=b8b8b8b16b4b20}[107{atomic<MPSLibrary *>={__cxx_atomic_impl<MPSLibrary *, std::__1::__cxx_atomic_base_impl<MPSLibrary *> >=A^{MPSLibrary}}}]}, name: _device
     struct MPSLibrary *_library;
     NSString *_label;
     _Bool _enableConcurrency;

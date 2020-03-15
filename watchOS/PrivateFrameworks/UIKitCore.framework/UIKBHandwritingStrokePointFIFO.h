@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     TIHandwritingStrokes *_strokes;
 }
 
-@property(retain, nonatomic) TIHandwritingStrokes *strokes; // @synthesize strokes=_strokes;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TIHandwritingStrokes *strokes; // @synthesize strokes=_strokes;
 - (void)clear;
 - (void)flush;
 - (void)addPoint:(CDStruct_86c70518)arg1;

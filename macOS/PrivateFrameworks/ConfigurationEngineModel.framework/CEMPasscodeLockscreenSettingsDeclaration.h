@@ -28,6 +28,7 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadAllowLockScreenWiFiModification; // @synthesize payloadAllowLockScreenWiFiModification=_payloadAllowLockScreenWiFiModification;
 @property(copy, nonatomic) NSNumber *payloadAllowLockScreenControlCenter; // @synthesize payloadAllowLockScreenControlCenter=_payloadAllowLockScreenControlCenter;
 @property(copy, nonatomic) NSNumber *payloadAllowLockScreenNotificationsView; // @synthesize payloadAllowLockScreenNotificationsView=_payloadAllowLockScreenNotificationsView;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSNumber *payloadAllowLockScreenTodayView; // @synthesize payloadAllowLockScreenTodayView=_payloadAllowLockScreenTodayView;
 @property(copy, nonatomic) NSNumber *payloadAllowAssistantWhileLocked; // @synthesize payloadAllowAssistantWhileLocked=_payloadAllowAssistantWhileLocked;
 @property(copy, nonatomic) NSNumber *payloadAllowVoiceDialing; // @synthesize payloadAllowVoiceDialing=_payloadAllowVoiceDialing;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

@@ -17,10 +17,10 @@
     NSURL *_priorOrderedURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *priorOrderedURL; // @synthesize priorOrderedURL=_priorOrderedURL;
 @property(nonatomic) int absoluteOrder; // @synthesize absoluteOrder=_absoluteOrder;
 @property(retain, nonatomic) NSSet *propertiesToSet; // @synthesize propertiesToSet=_propertiesToSet;
-- (void).cxx_destruct;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (id)requestBody;

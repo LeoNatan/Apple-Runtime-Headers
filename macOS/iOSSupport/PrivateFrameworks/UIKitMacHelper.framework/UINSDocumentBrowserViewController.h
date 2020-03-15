@@ -28,13 +28,13 @@ __attribute__((visibility("hidden")))
     id <UINSWindow> _window;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UINSWindow> window; // @synthesize window=_window;
 @property(copy, nonatomic) NSArray *customActions; // @synthesize customActions=_customActions;
 @property(nonatomic) BOOL allowsPickingMultipleItems; // @synthesize allowsPickingMultipleItems=_allowsPickingMultipleItems;
 @property(nonatomic) BOOL allowsDocumentCreation; // @synthesize allowsDocumentCreation=_allowsDocumentCreation;
 @property(retain, nonatomic) NSArray *documentTypes; // @synthesize documentTypes=_documentTypes;
 @property(nonatomic) __weak id <UINSDocumentBrowserViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)panel:(id)arg1 customActionInvoked:(id)arg2 onItems:(id)arg3;
 - (void)panel:(id)arg1 shouldCreateNewDocumentAtURL:(id)arg2;
 - (void)panel:(id)arg1 userRequestedCreateNewDocument:(CDUnknownBlockType)arg2;

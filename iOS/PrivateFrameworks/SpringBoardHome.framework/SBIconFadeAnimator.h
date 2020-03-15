@@ -15,8 +15,8 @@
     _Bool _fadesReferenceView;
 }
 
-@property(nonatomic) _Bool fadesReferenceView; // @synthesize fadesReferenceView=_fadesReferenceView;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool fadesReferenceView; // @synthesize fadesReferenceView=_fadesReferenceView;
 - (void)_applyAlphaForFraction:(double)arg1;
 - (void)_animateToFraction:(double)arg1 afterDelay:(double)arg2 withSharedCompletion:(CDUnknownBlockType)arg3;
 - (unsigned long long)_numberOfSignificantAnimations;

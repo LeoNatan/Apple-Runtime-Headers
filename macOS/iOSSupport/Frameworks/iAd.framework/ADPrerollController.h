@@ -22,6 +22,7 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) BOOL isObservingThirdPartyAVPlayer; // @synthesize isObservingThirdPartyAVPlayer=_isObservingThirdPartyAVPlayer;
 @property(nonatomic) BOOL setupInProgress; // @synthesize setupInProgress=_setupInProgress;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) ADPrerollView *view; // @synthesize view=_view;
 @property(nonatomic) __weak AVPlayerViewController *avPlayerViewController; // @synthesize avPlayerViewController=_avPlayerViewController;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_appWillResignActive;
 - (void)_handlePlaybackCompletion:(BOOL)arg1;

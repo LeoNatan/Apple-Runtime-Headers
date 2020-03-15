@@ -31,8 +31,8 @@
     NSObject<OS_dispatch_queue> *_managementQueue;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *managementQueue; // @synthesize managementQueue=_managementQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *managementQueue; // @synthesize managementQueue=_managementQueue;
 - (void)invalidate;
 - (void)_suspend;
 - (void)_resume;

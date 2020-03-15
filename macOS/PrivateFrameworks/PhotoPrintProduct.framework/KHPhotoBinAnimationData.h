@@ -25,6 +25,7 @@
     struct CGRect _destinationClippingRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int animationStyle; // @synthesize animationStyle=_animationStyle;
 @property(nonatomic) struct CGSize animatableSize; // @synthesize animatableSize=_animatableSize;
 @property(nonatomic) long long zOrder; // @synthesize zOrder=_zOrder;
@@ -38,7 +39,6 @@
 @property(nonatomic) double sourceTransform; // @synthesize sourceTransform=_sourceTransform;
 @property(nonatomic) struct CGRect sourceClippingRect; // @synthesize sourceClippingRect=_sourceClippingRect;
 @property(readonly, nonatomic) struct CGRect sourceRect; // @synthesize sourceRect=_sourceRect;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGAffineTransform sourceAffineTransform;
 @property(readonly, nonatomic) struct CGAffineTransform destinationAffineTransform;
 - (void)_calculateDestinationRect;

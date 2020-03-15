@@ -16,8 +16,8 @@
     _Bool _rangesExcludeSelection;
 }
 
-@property(nonatomic) _Bool rangesExcludeSelection; // @synthesize rangesExcludeSelection=_rangesExcludeSelection;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool rangesExcludeSelection; // @synthesize rangesExcludeSelection=_rangesExcludeSelection;
 - (struct CGRect)_configureMask:(id)arg1 withPath:(id)arg2;
 - (id)_maskForRects:(id)arg1;
 - (id)_rectsForRange:(id)arg1;

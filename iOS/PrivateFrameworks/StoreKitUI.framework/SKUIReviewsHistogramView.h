@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     NSArray *_histogramValues;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *histogramValues; // @synthesize histogramValues=_histogramValues;
 @property(readonly, nonatomic) UIControl *writeAReviewButton; // @synthesize writeAReviewButton=_writeAReviewButton;
 @property(copy, nonatomic) NSString *versionString; // @synthesize versionString=_versionString;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long numberOfUserRatings; // @synthesize numberOfUserRatings=_numberOfUserRatings;
 @property(retain, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
 @property(readonly, nonatomic) UIControl *appSupportButton; // @synthesize appSupportButton=_appSupportButton;
-- (void).cxx_destruct;
 - (id)_countLabelString;
 - (id)_histogramImageForValues:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

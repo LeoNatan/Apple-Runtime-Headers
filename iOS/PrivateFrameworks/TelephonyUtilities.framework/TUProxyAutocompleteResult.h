@@ -15,8 +15,8 @@
     CNAutocompleteResult *_autocompleteResult;
 }
 
-@property(retain, nonatomic) CNAutocompleteResult *autocompleteResult; // @synthesize autocompleteResult=_autocompleteResult;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNAutocompleteResult *autocompleteResult; // @synthesize autocompleteResult=_autocompleteResult;
 @property(readonly) NSArray *idsCanonicalDestinations;
 @property(readonly) _Bool mostRecentCallWasMissed;
 @property(readonly) long long mostRecentCallType;

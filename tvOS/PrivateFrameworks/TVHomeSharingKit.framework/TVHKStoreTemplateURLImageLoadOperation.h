@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _scaleToSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperation *requestOperation; // @synthesize requestOperation=_requestOperation;
 @property(copy, nonatomic) NSString *templateImageURLString; // @synthesize templateImageURLString=_templateImageURLString;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TVImage *image; // @synthesize image=_image;
 @property(nonatomic) _Bool cropToFit; // @synthesize cropToFit=_cropToFit;
 @property(nonatomic) struct CGSize scaleToSize; // @synthesize scaleToSize=_scaleToSize;
-- (void).cxx_destruct;
 - (void)_handleResponse:(id)arg1 andData:(id)arg2;
 - (void)cancel;
 - (void)executionDidBegin;

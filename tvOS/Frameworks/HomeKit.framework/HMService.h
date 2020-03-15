@@ -54,6 +54,7 @@
 + (void)initializeCharacteristicDictionaries;
 + (id)serviceWithServiceReference:(id)arg1 home:(id)arg2;
 + (id)serviceWithSerializedDictionaryRepresentation:(id)arg1 home:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool mediaSourceDisplayOrderModifiable; // @synthesize mediaSourceDisplayOrderModifiable=_mediaSourceDisplayOrderModifiable;
 @property(retain, nonatomic) NSArray *mediaSourceDisplayOrder; // @synthesize mediaSourceDisplayOrder=_mediaSourceDisplayOrder;
 @property(readonly, copy, nonatomic) NSArray *linkedServiceInstanceIDs; // @synthesize linkedServiceInstanceIDs=_linkedServiceInstanceIDs;
@@ -65,7 +66,6 @@
 @property(readonly, nonatomic, getter=isPrimaryService) _Bool primaryService; // @synthesize primaryService=_primaryService;
 @property(readonly, nonatomic, getter=isUserInteractive) _Bool userInteractive; // @synthesize userInteractive=_userInteractive;
 @property _Bool nameModifiable; // @synthesize nameModifiable=_nameModifiable;
-- (void).cxx_destruct;
 - (_Bool)_hasCharacteristicOfType:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *localizedDescription;
 - (id)_serviceTypeDescription;

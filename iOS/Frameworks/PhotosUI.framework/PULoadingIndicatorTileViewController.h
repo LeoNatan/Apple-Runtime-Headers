@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 + (void)_destroyIndicatorView:(id)arg1;
 + (id)_createIndicatorViewForStyle:(long long)arg1;
 + (struct CGSize)loadingIndicatorTileSizeForStyle:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUProgressIndicatorView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)setStyle:(long long)arg1 animated:(_Bool)arg2;
 - (void)becomeReusable;
 

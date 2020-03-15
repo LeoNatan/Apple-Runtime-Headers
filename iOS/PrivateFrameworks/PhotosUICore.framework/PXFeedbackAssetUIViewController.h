@@ -25,6 +25,7 @@
     NSArray *_autoLoopFrameworkDiagnosticFileURLs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *autoLoopFrameworkDiagnosticFileURLs; // @synthesize autoLoopFrameworkDiagnosticFileURLs=_autoLoopFrameworkDiagnosticFileURLs;
 @property(retain, nonatomic) PXAutoloopVideoProcessTask *autoLoopFrameworkDiagnosticsCurrentTask; // @synthesize autoLoopFrameworkDiagnosticsCurrentTask=_autoLoopFrameworkDiagnosticsCurrentTask;
 @property(retain, nonatomic) PXFeedbackLikeItOrNotComboUIViewController *feedbackController; // @synthesize feedbackController=_feedbackController;
@@ -34,7 +35,6 @@
 @property(nonatomic) _Bool userLikedIt; // @synthesize userLikedIt=_userLikedIt;
 @property(readonly, nonatomic) __weak id <PXFeedbackAssetUIViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)autoloopVideoTaskStatusDidChange:(id)arg1;
 - (void)_startAutoLoopVideoTaskForDiagnosticsWithAsset:(id)arg1;
 - (void)continueFiling;

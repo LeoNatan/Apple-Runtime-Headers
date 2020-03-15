@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     RBSProcessIdentity *_identity;
 }
 
-- (id)identity;
 - (void).cxx_destruct;
+- (id)identity;
 - (id)description;
 - (id)_initWithIdentity:(id)arg1;
 - (id)createRBSTarget;

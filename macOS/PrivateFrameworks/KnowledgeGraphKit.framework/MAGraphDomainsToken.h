@@ -15,10 +15,10 @@
     MAGraph *_graph;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL deregistered; // @synthesize deregistered=_deregistered;
 @property(retain, nonatomic) MAGraph *graph; // @synthesize graph=_graph;
 @property(readonly, nonatomic) NSArray *domains; // @synthesize domains=_domains;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqualToGraphDomainToken:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

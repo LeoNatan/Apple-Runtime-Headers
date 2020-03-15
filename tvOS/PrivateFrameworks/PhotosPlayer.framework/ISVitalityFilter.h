@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _outputChangeHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setOutputDidChange:) _Bool _outputDidChange; // @synthesize _outputDidChange=__outputDidChange;
 @property(nonatomic, setter=_setPerformingOutputChanges:) _Bool _isPerformingOutputChanges; // @synthesize _isPerformingOutputChanges=__isPerformingOutputChanges;
 @property(nonatomic, setter=_setPerformingInputChanges:) _Bool _isPerformingInputChanges; // @synthesize _isPerformingInputChanges=__isPerformingInputChanges;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double visibilityOffset; // @synthesize visibilityOffset=_visibilityOffset;
 @property(nonatomic, setter=setVisible:) _Bool isVisible; // @synthesize isVisible=_isVisible;
 @property(readonly, nonatomic) id <ISVitalitySettings> settings; // @synthesize settings=_settings;
-- (void).cxx_destruct;
 - (void)inputDidChange;
 - (void)_invalidateOutput;
 - (void)performOutputChanges:(CDUnknownBlockType)arg1;

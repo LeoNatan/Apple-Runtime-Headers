@@ -14,9 +14,9 @@
     double _horizontalAccuracy;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double horizontalAccuracy; // @synthesize horizontalAccuracy=_horizontalAccuracy;
 @property(nonatomic) __weak id <MKAnnotation> parentAnnotation; // @synthesize parentAnnotation=_parentAnnotation;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

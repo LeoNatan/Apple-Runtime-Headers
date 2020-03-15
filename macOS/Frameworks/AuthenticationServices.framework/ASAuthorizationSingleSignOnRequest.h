@@ -13,8 +13,8 @@
     NSArray *_authorizationOptions;
 }
 
-@property(copy, nonatomic) NSArray *authorizationOptions; // @synthesize authorizationOptions=_authorizationOptions;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *authorizationOptions; // @synthesize authorizationOptions=_authorizationOptions;
 
 @end
 

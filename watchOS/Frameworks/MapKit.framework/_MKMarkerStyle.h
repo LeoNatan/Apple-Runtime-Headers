@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)markerStyleForTraitCollection:(id)arg1 state:(int)arg2 styleAttributes:(id)arg3 coordinate:(struct CLLocationCoordinate2D)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *glyphImage; // @synthesize glyphImage=_glyphImage;
 @property(readonly, nonatomic) UIColor *glyphColor; // @synthesize glyphColor=_glyphColor;
 @property(readonly, nonatomic) float strokeWidth; // @synthesize strokeWidth=_strokeWidth;
 @property(readonly, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property(readonly, nonatomic) float shadowAlpha; // @synthesize shadowAlpha=_shadowAlpha;
 @property(readonly, nonatomic) UIColor *markerColor; // @synthesize markerColor=_markerColor;
-- (void).cxx_destruct;
 
 @end
 

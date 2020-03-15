@@ -15,9 +15,9 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) unsigned char typeFlags; // @synthesize typeFlags=_typeFlags;
-- (void).cxx_destruct;
 - (const struct _LXLexicon *)getLexiconImplementation;
 - (struct _LXEntry *)copyEntryForString:(id)arg1;
 - (id)getSortKeyEquivalents:(id)arg1;

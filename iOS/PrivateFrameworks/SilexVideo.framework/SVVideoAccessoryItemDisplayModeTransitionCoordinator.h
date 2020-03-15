@@ -18,11 +18,11 @@
     UIViewPropertyAnimator *_animator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewPropertyAnimator *animator; // @synthesize animator=_animator;
 @property(readonly, nonatomic) NSMutableArray *completionBlocks; // @synthesize completionBlocks=_completionBlocks;
 @property(readonly, nonatomic) NSMutableArray *alongsideBlocks; // @synthesize alongsideBlocks=_alongsideBlocks;
 @property(readonly, nonatomic) _Bool animated; // @synthesize animated=_animated;
-- (void).cxx_destruct;
 - (void)animateAlongsideTransition:(CDUnknownBlockType)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)cancelTransition;
 - (void)animateWithContext:(id)arg1;

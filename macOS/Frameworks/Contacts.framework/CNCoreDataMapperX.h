@@ -17,8 +17,9 @@
 }
 
 + (id)defaultContactsStoreDirectoryURL;
-@property(readonly) CNCDChangeHistoryStore *changeHistoryStore; // @synthesize changeHistoryStore=_changeHistoryStore;
 - (void).cxx_destruct;
+@property(readonly) CNCDChangeHistoryStore *changeHistoryStore; // @synthesize changeHistoryStore=_changeHistoryStore;
+- (id)authorizedKeysForContactKeys:(id)arg1 error:(id *)arg2;
 - (BOOL)hasMultipleGroupsOrAccounts;
 - (id)sectionListOffsetsForSortOrder:(long long)arg1 error:(id *)arg2;
 - (id)currentHistoryToken;
@@ -52,7 +53,6 @@
 - (id)meContactIdentifiers:(id *)arg1;
 - (id)contactObservableForFetchRequest:(id)arg1;
 - (void)setNotificationSource:(id)arg1;
-- (id)initWithPersistenceStack:(id)arg1;
 - (id)initWithContactsEnvironment:(id)arg1 managedConfiguration:(id)arg2;
 - (id)init;
 

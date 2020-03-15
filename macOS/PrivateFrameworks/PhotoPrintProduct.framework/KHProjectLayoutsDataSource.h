@@ -14,8 +14,8 @@
 }
 
 + (id)dataSourceWithProject:(id)arg1;
-@property(readonly, nonatomic) KHProject *project; // @synthesize project=_project;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) KHProject *project; // @synthesize project=_project;
 - (id)accessibilityValues;
 - (id)indexesForLayoutsWithPlacements:(id)arg1;
 - (unsigned long long)layoutPlacementAtIndexPath:(id)arg1;

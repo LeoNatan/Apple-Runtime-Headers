@@ -23,20 +23,21 @@
     CNUIEditAuthorizationController *_editAuthorizationController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNUIEditAuthorizationController *editAuthorizationController; // @synthesize editAuthorizationController=_editAuthorizationController;
 @property(nonatomic) __weak UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) CNQueue *receivedContactsQueue; // @synthesize receivedContactsQueue=_receivedContactsQueue;
 @property(nonatomic) __weak id <CNVCardImportControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <CNVCardImportControllerPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
-- (void).cxx_destruct;
 - (void)editAuthorizationController:(id)arg1 authorizationDidFinishWithResult:(long long)arg2;
 - (void)multipleUnknownContactsViewControllerDidComplete:(id)arg1;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (void)cancelModalUnknownPersons:(id)arg1;
+- (void)saveUnknownPersonsAndMarkSaveWithAuthorizationResult:(long long)arg1;
 - (void)showEditAuthorizationPane:(id)arg1 animated:(BOOL)arg2;
+- (id)authorizationCheckForSavingReceivedContacts;
 - (void)authorizeAndSaveUnknownPersons;
-- (void)saveUnknownPersons:(id)arg1 isAuthorized:(BOOL)arg2;
 - (void)saveUnknownPersons:(id)arg1;
 - (void)dismissContactsAndPresentNext;
 - (void)presentImportUIForContacts:(id)arg1;

@@ -15,6 +15,7 @@
     // Error parsing type: , name: key
     // Error parsing type: , name: __entityLookupTable
     // Error parsing type: , name: __simulationSceneCoordinator
+    // Error parsing type: , name: __runtimeSceneCoordinator
     // Error parsing type: , name: __interactions
 }
 

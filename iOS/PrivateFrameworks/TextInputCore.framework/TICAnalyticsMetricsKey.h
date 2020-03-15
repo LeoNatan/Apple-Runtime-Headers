@@ -25,12 +25,12 @@
 + (unsigned char)keyboardTypeStringToEnum:(id)arg1;
 + (id)keyboardTypeEnumToString:(unsigned char)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long userInterfaceIdiom; // @synthesize userInterfaceIdiom=_userInterfaceIdiom;
 @property(readonly, nonatomic) unsigned char keyboardType; // @synthesize keyboardType=_keyboardType;
 @property(readonly, nonatomic) NSString *layoutName; // @synthesize layoutName=_layoutName;
 @property(readonly, nonatomic) NSString *region; // @synthesize region=_region;
 @property(readonly, nonatomic) NSString *language; // @synthesize language=_language;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

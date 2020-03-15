@@ -79,6 +79,7 @@
     AKTouchBarController *_touchBarController;
 }
 
+- (void).cxx_destruct;
 @property(retain) AKTouchBarController *touchBarController; // @synthesize touchBarController=_touchBarController;
 @property(retain) OBPrivacyLinkController *privacyController; // @synthesize privacyController=_privacyController;
 @property BOOL showReauthentication; // @synthesize showReauthentication=_showReauthentication;
@@ -144,7 +145,6 @@
 @property(retain) NSTextField *messageField; // @synthesize messageField=_messageField;
 @property(retain) NSTextField *titleField; // @synthesize titleField=_titleField;
 @property(nonatomic) long long selectedButton; // @synthesize selectedButton=_selectedButton;
-- (void).cxx_destruct;
 - (void)helpButtonPressed:(id)arg1;
 - (void)forgotPasswordPressed:(id)arg1;
 - (void)alternateButtonPressed:(id)arg1;

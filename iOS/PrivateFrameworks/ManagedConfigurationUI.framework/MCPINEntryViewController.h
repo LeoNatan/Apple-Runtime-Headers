@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _style;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(nonatomic) __weak id <DevicePINControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)stringsBundle;
 - (id)stringsTable;
 - (void)_updateStyle;

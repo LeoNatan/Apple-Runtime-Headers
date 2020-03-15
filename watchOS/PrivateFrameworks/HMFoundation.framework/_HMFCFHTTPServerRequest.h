@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSMutableData *_bodyData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableData *bodyData; // @synthesize bodyData=_bodyData;
 @property(readonly, nonatomic) __weak _HMFCFHTTPServerConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) struct __CFReadStream *bodyStream; // @synthesize bodyStream=_bodyStream;
 @property(readonly, nonatomic) struct _CFHTTPServerRequest *requestRef; // @synthesize requestRef=_requestRef;
-- (void).cxx_destruct;
 - (void)setBody:(id)arg1;
 - (void)setHeaders:(id)arg1;
 - (void)setMethod:(id)arg1;

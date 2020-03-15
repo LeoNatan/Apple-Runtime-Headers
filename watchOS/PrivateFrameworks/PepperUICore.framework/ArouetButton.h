@@ -15,9 +15,9 @@
     struct UIEdgeInsets _hitRectInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets hitRectInsets; // @synthesize hitRectInsets=_hitRectInsets;
 @property(nonatomic) __weak UIView *touchDelegate; // @synthesize touchDelegate=_touchDelegate;
-- (void).cxx_destruct;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)touchesEstimatedPropertiesUpdated:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

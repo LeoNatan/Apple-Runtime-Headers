@@ -6,29 +6,32 @@
 
 #import <SAObjects/SABaseClientBoundCommand.h>
 
-@class NSArray, NSString, SAIntentGroupProtobufMessage, SAIntentGroupSiriKitAppSelectionState, SAIntentGroupSiriKitListPosition, SAIntentGroupSiriKitMetrics, SAIntentGroupSiriKitRemoteExecution;
+@class NSArray, NSString, SAIntentGroupParse, SAIntentGroupSiriKitAppSelectionState, SAIntentGroupSiriKitListPosition, SAIntentGroupSiriKitMetrics, SAIntentGroupSiriKitRemoteExecution;
 
 @interface SAIntentGroupRunSiriKitExecutor : SABaseClientBoundCommand
 {
 }
 
-+ (id)runSiriKitExecutorWithDictionary:(id)arg1 context:(id)arg2;
-+ (id)runSiriKitExecutor;
 - (BOOL)mutatingCommand;
 - (BOOL)requiresResponse;
+@property(nonatomic) BOOL voiceTriggerEnabled;
 @property(copy, nonatomic) NSString *usoVerb;
 @property(copy, nonatomic) NSString *userInitiatedAction;
+@property(nonatomic) BOOL textToSpeechEnabled;
 @property(retain, nonatomic) SAIntentGroupSiriKitMetrics *siriKitMetrics;
+@property(copy, nonatomic) NSString *sessionHandOffContinuityID;
 @property(nonatomic) BOOL requiresConditionalMultiUserGrounding;
 @property(retain, nonatomic) SAIntentGroupSiriKitRemoteExecution *remoteExecution;
 @property(retain, nonatomic) SAIntentGroupSiriKitListPosition *readingListPosition;
+@property(retain, nonatomic) SAIntentGroupParse *parse;
 @property(copy, nonatomic) NSString *parentGoalID;
 @property(copy, nonatomic) NSArray *parameterPrompts;
 @property(copy, nonatomic) NSArray *parameterMetadata;
-@property(copy, nonatomic) NSString *intentTypeName;
-@property(retain, nonatomic) SAIntentGroupProtobufMessage *intentAsProto;
-@property(copy, nonatomic) NSString *intentAsJSON;
+@property(nonatomic) BOOL multiUser;
+@property(copy, nonatomic) NSString *interactionType;
+@property(copy, nonatomic) NSString *inputOrigin;
 @property(copy, nonatomic) NSString *goalID;
+@property(nonatomic) BOOL eyesFree;
 @property(nonatomic) BOOL directAction;
 @property(copy, nonatomic) NSString *confirmationState;
 @property(retain, nonatomic) SAIntentGroupSiriKitAppSelectionState *appSelectionState;

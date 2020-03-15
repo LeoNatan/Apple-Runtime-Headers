@@ -14,9 +14,9 @@
     NSString *_type;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *type; // @synthesize type=_type;
 @property(readonly) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (_Bool)conformsToType:(id)arg1;

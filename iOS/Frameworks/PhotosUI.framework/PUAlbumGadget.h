@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSIndexSet *_indexesOfHiddenStackItems;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsUpdate; // @synthesize needsUpdate=_needsUpdate;
 @property(nonatomic, getter=isContentViewVisible) _Bool contentViewVisible; // @synthesize contentViewVisible=_contentViewVisible;
 @property(copy, nonatomic) NSIndexSet *indexesOfHiddenStackItems; // @synthesize indexesOfHiddenStackItems=_indexesOfHiddenStackItems;
@@ -32,16 +33,15 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PHCollection *collection; // @synthesize collection=_collection;
 @property(nonatomic) __weak id <PXGadgetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PXGadgetSpec *gadgetSpec; // @synthesize gadgetSpec=_gadgetSpec;
-- (void).cxx_destruct;
 - (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
 @property(readonly, copy) NSString *description;
 - (void)contentViewDidDisappear;
 - (void)contentViewWillAppear;
 @property(readonly, nonatomic) PUAlbumListCellContentViewHelper *albumListCellContentViewHelper;
-- (struct NSObject *)contentView;
+- (id)contentView;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-@property(readonly, nonatomic) _Bool supportsAssetsDrop;
 @property(readonly, nonatomic) _Bool hasContentToDisplay;
+@property(readonly, nonatomic) unsigned long long gadgetCapabilities;
 @property(readonly, nonatomic) unsigned long long gadgetType;
 - (long long)estimatedIndexInCollection:(id)arg1 ofAssetForStackItemAtIndex:(long long)arg2;
 - (struct CGRect)rectForStackItemAtIndex:(long long)arg1 inCoordinateSpace:(id)arg2;
@@ -62,8 +62,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *localizedTitle;
 @property(nonatomic) long long priority;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) _Bool supportsHighlighting;
-@property(readonly, nonatomic) _Bool supportsSelection;
 @property(nonatomic) struct CGRect visibleContentRect;
 
 @end

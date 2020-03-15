@@ -15,8 +15,8 @@
 
 + (id)sharedContext;
 + (void)setSharedContext:(id)arg1;
-@property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 
 @end
 

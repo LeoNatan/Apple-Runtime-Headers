@@ -34,6 +34,7 @@
 // Remaining properties
 @property(nonatomic) _Bool activePrototypingEnabled; // @dynamic activePrototypingEnabled;
 @property(nonatomic) _Bool prototypeSettingsEnabled; // @dynamic prototypeSettingsEnabled;
+@property(nonatomic) _Bool remotePrototypingEnabled; // @dynamic remotePrototypingEnabled;
 @property(nonatomic) _Bool ringerSwitchShowsUI; // @dynamic ringerSwitchShowsUI;
 @property(nonatomic) _Bool shouldClearPrototypeCachesForMigration; // @dynamic shouldClearPrototypeCachesForMigration;
 @property(nonatomic) _Bool shouldClearSettingsArchivesForMigration; // @dynamic shouldClearSettingsArchivesForMigration;

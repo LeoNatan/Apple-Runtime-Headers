@@ -19,13 +19,13 @@
     NSObject<OS_dispatch_queue> *_synchronizationQueue;
 }
 
+- (void).cxx_destruct;
 @property _Bool isMonitoringSleepWake; // @synthesize isMonitoringSleepWake=_isMonitoringSleepWake;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *synchronizationQueue; // @synthesize synchronizationQueue=_synchronizationQueue;
 @property(nonatomic) unsigned long long maxEntries; // @synthesize maxEntries=_maxEntries;
 @property(readonly, nonatomic) NSMutableArray *startMachContinuousTimes; // @synthesize startMachContinuousTimes=_startMachContinuousTimes;
 @property(readonly, nonatomic) NSMutableArray *startMachAbsoluteTimes; // @synthesize startMachAbsoluteTimes=_startMachAbsoluteTimes;
 @property(readonly, nonatomic) NSMutableArray *translationRanges; // @synthesize translationRanges=_translationRanges;
-- (void).cxx_destruct;
 - (unsigned long long)machContinuousTimeForMachAbsoluteTime:(unsigned long long)arg1;
 - (unsigned long long)machAbsoluteTimeForMachContinuousTime:(unsigned long long)arg1;
 - (_Bool)isEqual:(id)arg1;

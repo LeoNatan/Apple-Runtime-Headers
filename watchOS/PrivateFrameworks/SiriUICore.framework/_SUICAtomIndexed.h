@@ -17,11 +17,11 @@
 }
 
 + (id)atomWithEditOperation:(int)arg1 indexToEdit:(unsigned int)arg2 newText:(id)arg3 indexInArrayB:(unsigned int)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *replacementText; // @synthesize replacementText=_replacementText;
 @property(nonatomic) unsigned int indexInArrayB; // @synthesize indexInArrayB=_indexInArrayB;
 @property(nonatomic) unsigned int indexToEdit; // @synthesize indexToEdit=_indexToEdit;
 @property(nonatomic) int editOperation; // @synthesize editOperation=_editOperation;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithEditOperation:(int)arg1 indexToEdit:(unsigned int)arg2 newText:(id)arg3 indexInArrayB:(unsigned int)arg4;
 

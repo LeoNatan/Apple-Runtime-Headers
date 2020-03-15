@@ -15,10 +15,10 @@
     NSArray *_headers;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *headers; // @synthesize headers=_headers;
 @property(copy, nonatomic) NSArray *fields; // @synthesize fields=_fields;
 @property(nonatomic) _Bool shouldSignBody; // @synthesize shouldSignBody=_shouldSignBody;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

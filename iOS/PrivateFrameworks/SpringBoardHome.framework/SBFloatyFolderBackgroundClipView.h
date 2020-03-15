@@ -13,8 +13,8 @@
     SBFolderBackgroundView *_backgroundView;
 }
 
-@property(readonly, nonatomic) SBFolderBackgroundView *backgroundView; // @synthesize backgroundView=_backgroundView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SBFolderBackgroundView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) double cornerRadius;
 @property(nonatomic) unsigned long long backgroundEffect;
 - (void)layoutSubviews;

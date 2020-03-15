@@ -38,6 +38,7 @@
     struct UIEdgeInsets _edgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL zoomToFitRestoreValue; // @synthesize zoomToFitRestoreValue=_zoomToFitRestoreValue;
 @property(nonatomic) BOOL firstLoadZoomToFit; // @synthesize firstLoadZoomToFit=_firstLoadZoomToFit;
 @property(nonatomic) __weak AKPageController *pageController; // @synthesize pageController=_pageController;
@@ -58,7 +59,6 @@
 @property(retain, nonatomic) UIImage *tentativePlaceholderImage; // @synthesize tentativePlaceholderImage=_tentativePlaceholderImage;
 @property(nonatomic) BOOL centersIgnoringContentInsets; // @synthesize centersIgnoringContentInsets=_centersIgnoringContentInsets;
 @property(nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
-- (void).cxx_destruct;
 - (void)controllerWillDismissSignatureManagerView:(id)arg1;
 - (void)controllerWillShowSignatureManagerView:(id)arg1;
 - (void)controllerWillDismissSignatureCaptureView:(id)arg1;

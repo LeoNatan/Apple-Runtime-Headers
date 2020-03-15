@@ -22,12 +22,12 @@
     long long _expectation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requiresManualReset; // @synthesize requiresManualReset=_requiresManualReset;
 @property(nonatomic) long long expectation; // @synthesize expectation=_expectation;
 @property(nonatomic) double timeMultiplier; // @synthesize timeMultiplier=_timeMultiplier;
 @property(retain, nonatomic) SBAttentionAwarenessClient *attentionAwarenessClient; // @synthesize attentionAwarenessClient=_attentionAwarenessClient;
 @property(copy, nonatomic) SBIdleTimerDescriptor *descriptor; // @synthesize descriptor=_descriptor;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_configurationGeneration) unsigned long long configurationGeneration;
 - (void)_reconfigureAttentionClientAndReset:(_Bool)arg1;
 - (void)_resetExpectation;

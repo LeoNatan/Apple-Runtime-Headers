@@ -18,13 +18,13 @@
     _Bool _usesLockupTitle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_usesLockupTitle) _Bool _usesLockupTitle; // @synthesize _usesLockupTitle;
 @property(readonly, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 @property(readonly, nonatomic) long long maximumBodyLines; // @synthesize maximumBodyLines=_maximumBodyLines;
 @property(readonly, nonatomic) NSArray *links; // @synthesize links=_links;
 @property(readonly, nonatomic) struct SKUIEditorialStyle editorialStyle; // @synthesize editorialStyle=_style;
 @property(readonly, nonatomic) NSString *bodyText; // @synthesize bodyText=_bodyText;
-- (void).cxx_destruct;
 - (long long)componentType;
 - (void)_setTitleText:(id)arg1;
 @property(readonly, nonatomic) NSAttributedString *bodyAttributedText;

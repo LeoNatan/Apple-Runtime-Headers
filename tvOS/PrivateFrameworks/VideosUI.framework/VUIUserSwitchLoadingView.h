@@ -19,13 +19,13 @@
 }
 
 + (id)loadingScreen;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hiding; // @synthesize hiding=_hiding;
 @property(retain, nonatomic) UIActivityIndicatorView *userSpinnerView; // @synthesize userSpinnerView=_userSpinnerView;
 @property(retain, nonatomic) UILabel *userSwitchLabel; // @synthesize userSwitchLabel=_userSwitchLabel;
 @property(retain, nonatomic) UIVisualEffectView *userSwitchEffectView; // @synthesize userSwitchEffectView=_userSwitchEffectView;
 @property(retain, nonatomic) UIView *userSwitchSnapshotView; // @synthesize userSwitchSnapshotView=_userSwitchSnapshotView;
 @property(retain, nonatomic) UIWindow *userSwitchOverlayWindow; // @synthesize userSwitchOverlayWindow=_userSwitchOverlayWindow;
-- (void).cxx_destruct;
 - (id)_textForUserSwitchState:(long long)arg1;
 - (_Bool)isVisible;
 - (void)hide;

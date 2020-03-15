@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_price;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *price; // @synthesize price=_price;
 @property(copy) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 
 @end
 

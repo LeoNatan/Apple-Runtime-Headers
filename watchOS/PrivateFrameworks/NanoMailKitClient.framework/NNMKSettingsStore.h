@@ -20,6 +20,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NPSDomainAccessor *domainAccessor; // @synthesize domainAccessor=_domainAccessor;
 @property(retain, nonatomic) NSString *signature; // @synthesize signature=_signature;
 @property(retain, nonatomic) NSString *swipeRightAction; // @synthesize swipeRightAction=_swipeRightAction;
@@ -27,7 +28,6 @@
 @property(nonatomic) _Bool loadRemoteImages; // @synthesize loadRemoteImages=_loadRemoteImages;
 @property(nonatomic) _Bool askBeforeDeleting; // @synthesize askBeforeDeleting=_askBeforeDeleting;
 @property(nonatomic) unsigned int linesOfPreview; // @synthesize linesOfPreview=_linesOfPreview;
-- (void).cxx_destruct;
 - (void)_setValue:(id)arg1 forKey:(id)arg2;
 - (id)_getValueForKey:(id)arg1;
 - (id)_signature;

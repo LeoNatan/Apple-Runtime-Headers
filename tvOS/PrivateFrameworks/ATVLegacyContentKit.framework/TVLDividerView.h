@@ -16,8 +16,8 @@
 }
 
 + (id)titleFont;
-@property(readonly, nonatomic) TVLDividerElement *dividerElement; // @synthesize dividerElement=_dividerElement;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) TVLDividerElement *dividerElement; // @synthesize dividerElement=_dividerElement;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (_Bool)canBecomeFocused;

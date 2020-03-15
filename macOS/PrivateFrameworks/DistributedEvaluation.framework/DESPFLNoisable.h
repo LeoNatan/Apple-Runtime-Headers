@@ -34,12 +34,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) double weight; // @synthesize weight=_weight;
 @property(nonatomic) unsigned int iteration; // @synthesize iteration=_iteration;
 @property(retain, nonatomic) NSString *recipeId; // @synthesize recipeId=_recipeId;
 @property(nonatomic) int version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

@@ -17,12 +17,12 @@
     struct CGRect _containerViewBounds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect containerViewBounds; // @synthesize containerViewBounds=_containerViewBounds;
 @property(nonatomic, getter=isFloatingSwitcherVisible) _Bool floatingSwitcherVisible; // @synthesize floatingSwitcherVisible=_floatingSwitcherVisible;
 @property(nonatomic) long long floatingConfiguration; // @synthesize floatingConfiguration=_floatingConfiguration;
 @property(nonatomic) long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(retain, nonatomic) SBAppLayout *activeAppLayout; // @synthesize activeAppLayout=_activeAppLayout;
-- (void).cxx_destruct;
 - (Class)_defaultMultitaskingModifierClass;
 - (id)lowEndHardwareModifier;
 - (id)tetheredInsertionModifierFortetheredInsertionEvent:(id)arg1;

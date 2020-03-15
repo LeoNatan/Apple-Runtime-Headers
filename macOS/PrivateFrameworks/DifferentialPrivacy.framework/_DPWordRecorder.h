@@ -14,9 +14,9 @@
     id <_DPDataRecorder><_DPDataRecorderKeyProperties> _recorder;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <_DPDataRecorder><_DPDataRecorderKeyProperties> recorder; // @synthesize recorder=_recorder;
 @property(readonly, nonatomic) unsigned long long wordFragmentWidth; // @synthesize wordFragmentWidth=_wordFragmentWidth;
-- (void).cxx_destruct;
 - (id)initWithKey:(id)arg1 databaseDirectoryPath:(id)arg2 readOnly:(BOOL)arg3;
 - (id)description;
 - (BOOL)record:(id)arg1;

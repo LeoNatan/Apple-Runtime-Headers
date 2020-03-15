@@ -24,10 +24,10 @@
 }
 
 + (id)defaultManager;
+- (void).cxx_destruct;
 @property(readonly) CLLocation *currentLocation; // @synthesize currentLocation=_currentLocation;
 @property(readonly, nonatomic) _Bool active; // @synthesize active=_active;
 @property(nonatomic) __weak id <RCLocationsOfInterestDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_didFetchPlaceInferences:(id)arg1 location:(id)arg2 error:(id)arg3;
 - (void)_requestPlaceInferences;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;

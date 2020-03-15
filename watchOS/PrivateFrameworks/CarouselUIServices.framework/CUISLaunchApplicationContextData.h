@@ -19,6 +19,7 @@
     NSURL *_launchURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *launchURL; // @synthesize launchURL=_launchURL;
 @property(nonatomic) _Bool isInAppSwitcherViewMode; // @synthesize isInAppSwitcherViewMode=_isInAppSwitcherViewMode;
 @property(nonatomic) _Bool isStatusBarHidden; // @synthesize isStatusBarHidden=_isStatusBarHidden;
@@ -26,7 +27,6 @@
 @property(nonatomic) _Bool isNativeWatchkitApplication; // @synthesize isNativeWatchkitApplication=_isNativeWatchkitApplication;
 @property(nonatomic) _Bool isWatchkitApplication; // @synthesize isWatchkitApplication=_isWatchkitApplication;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 
 @end
 

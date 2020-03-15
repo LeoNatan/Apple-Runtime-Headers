@@ -23,9 +23,9 @@
     PUICContentUnavailableView *_noFavoritesView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICContentUnavailableView *noFavoritesView; // @synthesize noFavoritesView=_noFavoritesView;
 @property(nonatomic) __weak id <NCABFavoritesListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_actionTypeIsVideoCall:(id)arg1;
 - (_Bool)_actionTypeIsAudioCall:(id)arg1;
 - (id)_detailTextForFavoritesEntry:(id)arg1;

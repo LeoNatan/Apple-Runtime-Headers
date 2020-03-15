@@ -18,13 +18,13 @@
     NSData *_data;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *data; // @synthesize data=_data;
 @property BOOL shouldTryCreate; // @synthesize shouldTryCreate=_shouldTryCreate;
 @property(retain) MCActivityMonitor *progressMonitor; // @synthesize progressMonitor=_progressMonitor;
 @property(copy) NSDictionary *messageInfo; // @synthesize messageInfo=_messageInfo;
 @property(copy) NSArray *serverFlags; // @synthesize serverFlags=_serverFlags;
 @property(retain) NSDate *dateReceived; // @synthesize dateReceived=_dateReceived;
-- (void).cxx_destruct;
 - (BOOL)executeOnConnection:(id)arg1;
 - (id)newCommandDataForLiteralPlus:(BOOL)arg1;
 - (id)debugCommandStringWithAccount:(id)arg1;

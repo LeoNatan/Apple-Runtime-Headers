@@ -24,10 +24,10 @@
     NSString *_artistName;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool animatesAccessoryViews; // @synthesize animatesAccessoryViews=_animatesAccessoryViews;
 @property(retain, nonatomic) NSString *artistName; // @synthesize artistName=_artistName;
 @property(retain, nonatomic) NSString *songTitle; // @synthesize songTitle=_songTitle;
-- (void).cxx_destruct;
 - (void)_detachMotionEffects;
 - (void)_attachMotionEffects;
 - (_Bool)_unapplyMotionEffect:(id)arg1;

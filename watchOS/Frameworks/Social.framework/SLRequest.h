@@ -26,10 +26,10 @@
 }
 
 + (id)requestForServiceType:(id)arg1 requestMethod:(int)arg2 URL:(id)arg3 parameters:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int requestMethod; // @synthesize requestMethod=_requestMethod;
 @property(readonly, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_url;
-- (void).cxx_destruct;
 - (unsigned int)networkServiceType;
 - (void)setNetworkServiceType:(unsigned int)arg1;
 - (void)setPayload:(id)arg1;

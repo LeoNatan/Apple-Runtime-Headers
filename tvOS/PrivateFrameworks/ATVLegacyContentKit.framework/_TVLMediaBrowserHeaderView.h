@@ -13,8 +13,8 @@
     UIView *_headerView;
 }
 
-@property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 - (id)preferredFocusEnvironments;
 - (_Bool)canBecomeFocused;
 - (void)layoutSubviews;

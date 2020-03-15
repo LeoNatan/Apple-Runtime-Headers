@@ -163,6 +163,7 @@ __attribute__((visibility("hidden")))
     _Bool didFireKVOForAssetForNonStreamingItem;
     AVAudioMix *mostRecentlyAppliedAudioMix;
     _Bool audioSpatializationAllowed;
+    _Bool audioSpatializationAllowedWasSet;
     AVWeakReference *playerReference;
     _Bool didSetAssetToAssetWithFigPlaybackItem;
     struct OpaqueFigCPEProtector *figCPEProtector;

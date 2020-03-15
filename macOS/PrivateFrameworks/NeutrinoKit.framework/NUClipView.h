@@ -14,9 +14,9 @@
     NUViewGeometry *_geometry;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NUViewGeometry *geometry; // @synthesize geometry=_geometry;
 @property(nonatomic) BOOL shouldCenterContent; // @synthesize shouldCenterContent=_shouldCenterContent;
-- (void).cxx_destruct;
 - (struct CGRect)constrainBoundsRect:(struct CGRect)arg1;
 
 @end

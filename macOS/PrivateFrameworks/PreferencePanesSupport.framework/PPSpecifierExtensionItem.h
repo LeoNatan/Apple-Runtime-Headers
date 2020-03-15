@@ -28,6 +28,7 @@
 }
 
 + (id)_exportedInterface;
+- (void).cxx_destruct;
 @property BOOL extenionDidLoad; // @synthesize extenionDidLoad=_extenionDidLoad;
 @property(copy) CDUnknownBlockType viewDidLoadCompleteBlock; // @synthesize viewDidLoadCompleteBlock=_viewDidLoadCompleteBlock;
 @property(retain) NSObject<OS_dispatch_queue> *commConnectionQueue; // @synthesize commConnectionQueue=_commConnectionQueue;
@@ -37,7 +38,6 @@
 @property(retain) NSRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(retain) NSXPCConnection *commConnection; // @synthesize commConnection=_commConnection;
 @property(retain) NSXPCListener *listener; // @synthesize listener=_listener;
-- (void).cxx_destruct;
 - (void)___nsx_pingHost:(CDUnknownBlockType)arg1;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)extension:(id)arg1 viewBridgeEndpoint:(id)arg2 commChannelEndpoint:(id)arg3;

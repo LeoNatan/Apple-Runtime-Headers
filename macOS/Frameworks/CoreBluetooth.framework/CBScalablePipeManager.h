@@ -22,10 +22,10 @@
     NSHashTable *_pipes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSHashTable *pipes; // @synthesize pipes=_pipes;
 @property(nonatomic) __weak id <CBScalablePipeManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, retain, nonatomic) NSSet *identifiers; // @synthesize identifiers=_identifiers;
-- (void).cxx_destruct;
 - (void)handleMsg:(unsigned short)arg1 args:(id)arg2;
 - (BOOL)isMsgAllowedWhenOff:(unsigned short)arg1;
 - (void)handleHostStateUpdated:(id)arg1;

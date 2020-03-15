@@ -39,9 +39,9 @@ __attribute__((visibility("hidden")))
     CameraFrame_406dbd31 _previousCameraFrame;
 }
 
-@property(nonatomic) _Bool virtualParallaxEnabled; // @synthesize virtualParallaxEnabled=_virtualParallaxEnabled;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool virtualParallaxEnabled; // @synthesize virtualParallaxEnabled=_virtualParallaxEnabled;
 - (double)zoomLevelAdjustmentForTileSize:(long long)arg1;
 - (id)viewportInfo;
 - (double)topDownMinimumZoomLevelForTileSize:(long long)arg1;
@@ -73,7 +73,7 @@ __attribute__((visibility("hidden")))
 - (Unit_3d259e8a)_horizontalFieldOfView:(Unit_3d259e8a)arg1;
 - (void)startPanningAtPoint:(struct CGPoint)arg1 panAtStartPoint:(_Bool)arg2;
 - (_Bool)tapAtPoint:(struct CGPoint)arg1;
-- (void)runBumpAnimation:(const Geocentric_d8fde6f2 *)arg1 targetPoint:(const Geocentric_d8fde6f2 *)arg2;
+- (void)runBumpAnimation:(const Geocentric_d8fde6f2 *)arg1 targetPoint:(const Geocentric_d8fde6f2 *)arg2 rigType:(unsigned char)arg3;
 - (void)animatePath:(vector_e91c9c3b *)arg1 withTarget:(const Geocentric_d8fde6f2 *)arg2 lookAtTarget:(_Bool)arg3 constantLod:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (_Bool)isAnimationsRunning;
 - (_Bool)isAnimationsRunningExceptBump;

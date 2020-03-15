@@ -12,18 +12,18 @@
 {
     unsigned char _protocol;
     NSNumber *_typeValue;
-    struct NSDictionary *_jsonDictionary;
+    NSDictionary *_jsonDictionary;
 }
 
-+ (id)createListWithJSONDictionary:(struct NSDictionary *)arg1 key:(id)arg2;
-+ (id)createWithJSONDictionary:(struct NSDictionary *)arg1;
++ (id)createListWithJSONDictionary:(id)arg1 key:(id)arg2;
++ (id)createWithJSONDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *jsonDictionary; // @synthesize jsonDictionary=_jsonDictionary;
 @property(readonly, nonatomic) NSNumber *typeValue; // @synthesize typeValue=_typeValue;
 @property(readonly, nonatomic) unsigned char protocol; // @synthesize protocol=_protocol;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSDictionary *prettyJSONDictionary;
-- (id)initWithJSONDictionary:(struct NSDictionary *)arg1 protocol:(unsigned char)arg2 typeValue:(id)arg3;
+- (id)initWithJSONDictionary:(id)arg1 protocol:(unsigned char)arg2 typeValue:(id)arg3;
 
 @end
 

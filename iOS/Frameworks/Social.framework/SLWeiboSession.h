@@ -25,9 +25,9 @@
 }
 
 + (id)_remoteInterface;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType locationInformationChangedBlock; // @synthesize locationInformationChangedBlock=_locationInformationChangedBlock;
 @property(copy, nonatomic) CDUnknownBlockType connectionResetBlock; // @synthesize connectionResetBlock=_connectionResetBlock;
-- (void).cxx_destruct;
 - (_Bool)countMediaAttachmentsTowardCharacterCount;
 - (long long)characterCountForText:(id)arg1 shortenedURLCost:(long long)arg2;
 - (id)serviceAccountTypeIdentifier;

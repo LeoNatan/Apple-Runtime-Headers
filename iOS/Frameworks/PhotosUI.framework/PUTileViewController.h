@@ -25,6 +25,7 @@
     NSArray *_gestureRecognizers;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setReadyForDisplay:) _Bool isReadyForDisplay; // @synthesize isReadyForDisplay=_isReadyForDisplay;
 @property(retain, nonatomic, setter=_setGestureRecognizers:) NSArray *gestureRecognizers; // @synthesize gestureRecognizers=_gestureRecognizers;
 @property(retain, nonatomic, setter=_setMaskView:) UIView *_maskView; // @synthesize _maskView=__maskView;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic, setter=_setView:) UIView *view; // @synthesize view=_view;
 @property(retain, nonatomic, setter=_setContentView:) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic, getter=isContentViewEnabled) _Bool contentViewEnabled; // @synthesize contentViewEnabled=_contentViewEnabled;
-- (void).cxx_destruct;
 - (void)_handleReadinessForced:(_Bool)arg1;
 - (void)notifyWhenReadyForDisplayWithTimeOut:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_updateVisibleRectView;

@@ -14,9 +14,9 @@
     NSArray *_facetimeRowViewConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *facetimeRowViewConstraints; // @synthesize facetimeRowViewConstraints=_facetimeRowViewConstraints;
 @property(retain, nonatomic) ABCommunicationButtonsController *buttonsController; // @synthesize buttonsController=_buttonsController;
-- (void).cxx_destruct;
 - (void)generateConstraints;
 - (void)viewWillMoveToWindow:(id)arg1;
 

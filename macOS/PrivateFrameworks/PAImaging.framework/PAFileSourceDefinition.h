@@ -13,8 +13,8 @@
     PAImageRequestCacheHint *_cacheHint;
 }
 
-@property(retain) PAImageRequestCacheHint *cacheHint; // @synthesize cacheHint=_cacheHint;
 - (void).cxx_destruct;
+@property(retain) PAImageRequestCacheHint *cacheHint; // @synthesize cacheHint=_cacheHint;
 - (id)generateSourceNodeWithIdentifier:(id)arg1 error:(out id *)arg2;
 
 @end

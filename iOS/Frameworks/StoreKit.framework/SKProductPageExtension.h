@@ -24,13 +24,13 @@
 + (id)clientInterface;
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool askToBuy; // @synthesize askToBuy=_askToBuy;
 @property(copy, nonatomic) NSString *promptString; // @synthesize promptString=_promptString;
 @property(nonatomic) _Bool showsRightBarButton; // @synthesize showsRightBarButton=_showsRightBarButton;
 @property(copy, nonatomic) NSString *rightBarButtonTitle; // @synthesize rightBarButtonTitle=_rightBarButtonTitle;
 @property(copy, nonatomic) NSString *cancelButtonTitle; // @synthesize cancelButtonTitle=_cancelButtonTitle;
 @property(nonatomic) _Bool showsStoreButton; // @synthesize showsStoreButton=_showsStoreButton;
-- (void).cxx_destruct;
 - (id)_createNavigationItem;
 - (void)rightBarButtonPressed:(id)arg1;
 - (void)cancelButtonPressed:(id)arg1;

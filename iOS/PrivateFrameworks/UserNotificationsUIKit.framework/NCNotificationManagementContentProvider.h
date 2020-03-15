@@ -17,9 +17,9 @@
     id <NCNotificationManagementContentProviderDelegate> _managementDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NCNotificationManagementContentProviderDelegate> managementDelegate; // @synthesize managementDelegate=_managementDelegate;
 @property(retain, nonatomic) NCNotificationRequest *notificationRequest; // @synthesize notificationRequest=_notificationRequest;
-- (void).cxx_destruct;
 - (void)handleManageAction:(id)arg1;
 - (void)configureOptionButtons:(id)arg1;
 - (id)initWithNotificationRequest:(id)arg1 managementDelegate:(id)arg2;

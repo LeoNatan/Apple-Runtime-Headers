@@ -19,9 +19,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)currentOSVersionWithProfile:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *operatingSystemBuild; // @synthesize operatingSystemBuild=_operatingSystemBuild;
 @property(readonly, nonatomic) CDStruct_f6aba300 operatingSystemVersion; // @synthesize operatingSystemVersion=_operatingSystemVersion;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

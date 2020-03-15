@@ -15,11 +15,11 @@
     struct TopoID _timestamp;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct TopoID timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) _Bool hidden; // @synthesize hidden=_hidden;
 @property(readonly, nonatomic) ICDrawingCommandData *data; // @synthesize data=_data;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

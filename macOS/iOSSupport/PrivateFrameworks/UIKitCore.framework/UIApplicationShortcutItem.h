@@ -25,6 +25,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)_staticApplicationShortcutItemsFromBundle:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *userInfoData; // @synthesize userInfoData=_userInfoData;
 @property(nonatomic) unsigned long long activationMode; // @synthesize activationMode=_activationMode;
 @property(copy, nonatomic) id targetContentIdentifier; // @synthesize targetContentIdentifier=_targetContentIdentifier;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSString *localizedSubtitle; // @synthesize localizedSubtitle=_localizedSubtitle;
 @property(copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *userInfo;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;

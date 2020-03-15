@@ -19,12 +19,12 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) GEOETATrafficUpdateResponse *response; // @synthesize response=_response;
 @property(retain, nonatomic) GEOETATrafficUpdateRequest *request; // @synthesize request=_request;
 @property(nonatomic) double responseTimestamp; // @synthesize responseTimestamp=_responseTimestamp;
 @property(nonatomic) double requestTimestamp; // @synthesize requestTimestamp=_requestTimestamp;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double position;
 
 // Remaining properties

@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)cellClass;
-@property(retain, nonatomic) OneStepBookmarkingButtonController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+@property(retain, nonatomic) OneStepBookmarkingButtonController *controller; // @synthesize controller=_controller;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (id)accessibilityDescriptionForCell:(id)arg1;

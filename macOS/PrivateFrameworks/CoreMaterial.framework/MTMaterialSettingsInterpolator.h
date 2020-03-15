@@ -21,13 +21,13 @@
 }
 
 + (id)_filteringProtocolGetterNames;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType blurRadiusTransformer; // @synthesize blurRadiusTransformer=_blurRadiusTransformer;
 @property(copy, nonatomic) NSString *initialConfiguration; // @synthesize initialConfiguration=_initialConfiguration;
 @property(retain, nonatomic) id <MTRecipeMaterialSettingsProviding> initialSettings; // @synthesize initialSettings=_initialSettings;
 @property(copy, nonatomic) NSString *finalConfiguration; // @synthesize finalConfiguration=_finalConfiguration;
 @property(retain, nonatomic) id <MTRecipeMaterialSettingsProviding> finalSettings; // @synthesize finalSettings=_finalSettings;
 @property(nonatomic) double weighting; // @synthesize weighting=_weighting;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_backdropScaleWithSettings:(id)arg1 configuration:(id)arg2;
 - (id)_colorMatrixColorWithSettings:(id)arg1 configuration:(id)arg2 alpha:(double)arg3;

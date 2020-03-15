@@ -23,13 +23,13 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isFetchingClientState; // @synthesize isFetchingClientState=_isFetchingClientState;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) CSSearchableIndex *index; // @synthesize index=_index;
 @property(readonly, nonatomic) id <VCDatabaseProvider> databaseProvider; // @synthesize databaseProvider=_databaseProvider;
 @property(retain, nonatomic) VCSpotlightSyncOperation *syncOperation; // @synthesize syncOperation=_syncOperation;
 @property(readonly, nonatomic) WFDebouncer *debouncer; // @synthesize debouncer=_debouncer;
-- (void).cxx_destruct;
 - (void)syncOperationFinishedWithRequestToRelaunch:(_Bool)arg1;
 - (void)sync;
 - (void)requestSync;

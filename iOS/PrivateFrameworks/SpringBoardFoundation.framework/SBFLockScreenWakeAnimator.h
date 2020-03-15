@@ -18,11 +18,11 @@
     SBFLockScreenDateView *_dateView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBFLockScreenDateView *dateView; // @synthesize dateView=_dateView;
 @property(retain, nonatomic) UIView *superviewForDateViewAnimation; // @synthesize superviewForDateViewAnimation=_superviewForDateViewAnimation;
 @property(nonatomic) __weak UIVisualEffectView *wakeEffectView; // @synthesize wakeEffectView=_wakeEffectView;
 @property(nonatomic) long long wakeState; // @synthesize wakeState=_wakeState;
-- (void).cxx_destruct;
 - (id)_wakeEffectsForPersistentWakeState:(long long)arg1;
 - (id)_wakeEffectsForAnimatingWakeState:(long long)arg1;
 - (long long)_targetWakeStateForFadeIn:(_Bool)arg1;

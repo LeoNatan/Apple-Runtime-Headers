@@ -19,11 +19,11 @@
     UINavigationController *_navigationController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(retain, nonatomic) TVApplicationController *appController; // @synthesize appController=_appController;
 @property(retain, nonatomic) TVCKSearchAppSetupHelper *setupHelper; // @synthesize setupHelper=_setupHelper;
 @property(readonly, nonatomic) TVCKSearchSiriContext *siriContext; // @synthesize siriContext=_siriContext;
-- (void).cxx_destruct;
 - (void)_startAppControllerWithBootURL:(id)arg1;
 - (id)_launchOptions;
 - (void)appController:(id)arg1 evaluateAppJavaScriptInContext:(id)arg2;

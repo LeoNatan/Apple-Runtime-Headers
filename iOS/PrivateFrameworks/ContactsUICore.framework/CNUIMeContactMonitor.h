@@ -22,12 +22,12 @@
 + (id)unifiedMeContactMonitor;
 + (id)makeMeContactMonitor;
 + (id)meContactMonitor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNCancelable> meNotificationToken; // @synthesize meNotificationToken=_meNotificationToken;
 @property(retain, nonatomic) id <CNReaderWriterScheduler> lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) id <CNMeContactComparisonStrategy> strategy; // @synthesize strategy=_strategy;
-- (void).cxx_destruct;
 - (void)meChanged:(id)arg1;
 @property(readonly, nonatomic) NSArray *meContactIdentifiers;
 - (_Bool)isMeContact:(id)arg1;

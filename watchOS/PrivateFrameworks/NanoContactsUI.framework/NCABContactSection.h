@@ -18,11 +18,11 @@
     struct _NSRange _range;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sortKey; // @synthesize sortKey=_sortKey;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

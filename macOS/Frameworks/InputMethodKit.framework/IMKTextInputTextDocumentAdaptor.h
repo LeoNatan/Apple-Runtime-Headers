@@ -16,8 +16,8 @@
     id <IMKTextDocument> _textDocument;
 }
 
-@property(readonly, nonatomic) id <IMKTextDocument> textDocument; // @synthesize textDocument=_textDocument;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <IMKTextDocument> textDocument; // @synthesize textDocument=_textDocument;
 - (struct CGRect)firstRectForCharacterRange:(struct _NSRange)arg1 actualRange:(struct _NSRange *)arg2;
 - (id)stringFromRange:(struct _NSRange)arg1 actualRange:(struct _NSRange *)arg2;
 - (id)uniqueClientIdentifierString;

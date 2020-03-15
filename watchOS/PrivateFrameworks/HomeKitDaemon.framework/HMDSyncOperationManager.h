@@ -32,6 +32,7 @@
     HMFExponentialBackoffTimer *_cloudPushDelayTimer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=wasSyncLoopDialogDisplayed) _Bool syncLoopDialogDisplayed; // @synthesize syncLoopDialogDisplayed=_syncLoopDialogDisplayed;
 @property(retain, nonatomic) HMFExponentialBackoffTimer *cloudPushDelayTimer; // @synthesize cloudPushDelayTimer=_cloudPushDelayTimer;
 @property(nonatomic) int pauseCloudPushLevel; // @synthesize pauseCloudPushLevel=_pauseCloudPushLevel;
@@ -49,7 +50,6 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(nonatomic) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
-- (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
 - (void)resetCloudPushTimer:(id)arg1;
 - (void)killCloudPushAndResume;

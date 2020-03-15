@@ -52,8 +52,15 @@
     BOOL _hasMultipleRates;
     BOOL _hasZeroRate;
     BOOL _uiProjectorOverride;
+    BOOL _hasHDRModes;
+    BOOL _preferHDRModes;
     BOOL _needsUpdate;
     struct os_unfair_lock_s _accessLock;
+    void *_coreDisplayFrameworkBundle;
+    CDUnknownFunctionPointerType _isHDRModeSupported;
+    CDUnknownFunctionPointerType _isHDRModeEnabled;
+    CDUnknownFunctionPointerType _enableHDRMode;
+    BOOL _hasHDRModeSupport;
     NSMutableArray *_presetsArray;
     unsigned int _numberOfPresets;
     BOOL _hasRotationSensor;
@@ -100,6 +107,9 @@
 @property(readonly) NSUUID *uuid;
 @property(readonly) struct CGRect hardwareBounds;
 @property(readonly) int mirrorMasterDisplayID;
+- (void)setPreferHDRModes:(BOOL)arg1;
+@property(readonly) BOOL preferHDRModes;
+@property(readonly) BOOL hasHDRModes;
 @property(readonly) BOOL isForcedToMirror;
 - (void)setMirrorMaster:(BOOL)arg1;
 - (void)setMirrorMode:(id)arg1;

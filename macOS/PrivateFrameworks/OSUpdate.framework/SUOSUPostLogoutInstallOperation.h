@@ -27,6 +27,7 @@
     NSObject<OS_dispatch_source> *_progressTimer;
 }
 
+- (void).cxx_destruct;
 @property BOOL installInProgress; // @synthesize installInProgress=_installInProgress;
 @property(retain) NSObject<OS_dispatch_source> *progressTimer; // @synthesize progressTimer=_progressTimer;
 @property(retain) IASUnifiedProgressClient *progressClient; // @synthesize progressClient=_progressClient;
@@ -41,7 +42,6 @@
 @property BOOL shouldShutDownWhenComplete; // @synthesize shouldShutDownWhenComplete=_shouldShutDownWhenComplete;
 @property BOOL enableStashing; // @synthesize enableStashing=_enableStashing;
 @property BOOL enableBatteryPowerCheck; // @synthesize enableBatteryPowerCheck=_enableBatteryPowerCheck;
-- (void).cxx_destruct;
 - (id)_productKeysFromProducts:(id)arg1;
 - (id)_synchronousUpdateService;
 - (id)_asynchronousUpdateService;

@@ -13,6 +13,11 @@
 }
 
 - (id)setupXPCConnection;
+- (void)initializeRateLimitingBuffer;
+- (id)capped:(id)arg1 to:(unsigned long long)arg2;
+- (void)cleanupExpiredConditionsInBuffer;
+- (_Bool)operationWithCondition:(id)arg1 forType:(long long)arg2;
+- (_Bool)isConditionRateLimited:(id)arg1 onOperation:(long long)arg2;
 - (void)isStatusConditionRegistered:(id)arg1 bundleIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)clearStatusCondition:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setStatusCondition:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

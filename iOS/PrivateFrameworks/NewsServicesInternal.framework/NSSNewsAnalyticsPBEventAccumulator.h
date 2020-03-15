@@ -18,10 +18,10 @@
     NSMutableArray *_events;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *events; // @synthesize events=_events;
 @property(readonly, nonatomic) __weak id <NSSNewsAnalyticsSessionManager> sessionManager; // @synthesize sessionManager=_sessionManager;
 @property(readonly, copy, nonatomic) NSSNewsAnalyticsEnvelopeDescriptor *envelopeDescriptor; // @synthesize envelopeDescriptor=_envelopeDescriptor;
-- (void).cxx_destruct;
 - (void)observeEvents:(id)arg1;
 - (void)observeEvent:(id)arg1;
 - (id)dequeueEventsIntoEnvelope;

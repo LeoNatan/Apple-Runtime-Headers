@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     NSArray *_acknowledgmentViews;
 }
 
-@property(copy, nonatomic) NSArray *acknowledgmentViews; // @synthesize acknowledgmentViews=_acknowledgmentViews;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *acknowledgmentViews; // @synthesize acknowledgmentViews=_acknowledgmentViews;
 - (_Bool)_hasGroupCounts;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)performCancelAnimation:(CDUnknownBlockType)arg1;

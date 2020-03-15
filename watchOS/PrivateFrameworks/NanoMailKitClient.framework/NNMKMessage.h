@@ -56,6 +56,7 @@
 + (_Bool)checkStatus:(unsigned int)arg1 stateToCheck:(unsigned int)arg2;
 + (id)siriPersonForAddress:(id)arg1;
 + (id)siriPersonArrayFromAddressesArray:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool replaceStandaloneNotification; // @synthesize replaceStandaloneNotification=_replaceStandaloneNotification;
 @property(nonatomic) unsigned int visibleStatus; // @synthesize visibleStatus=_visibleStatus;
 @property(nonatomic) unsigned int isSpecialMailboxSpecific; // @synthesize isSpecialMailboxSpecific=_isSpecialMailboxSpecific;
@@ -79,7 +80,6 @@
 @property(retain, nonatomic) NSString *preview; // @synthesize preview=_preview;
 @property(copy, nonatomic) NSDate *dateReceived; // @synthesize dateReceived=_dateReceived;
 @property(retain, nonatomic) NSString *subject; // @synthesize subject=_subject;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isFromSource:(unsigned int)arg1;

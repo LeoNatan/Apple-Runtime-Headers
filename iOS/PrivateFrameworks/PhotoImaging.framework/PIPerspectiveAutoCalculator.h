@@ -41,6 +41,7 @@
 
 + (void)requestVisionCleanUp;
 + (void)undoOrientation:(long long)arg1 forPitch:(double *)arg2 yaw:(double *)arg3 angle:(double *)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CIImage *debugLineDetectionImage; // @synthesize debugLineDetectionImage=_debugLineDetectionImage;
 @property(readonly) NSMutableDictionary *debugDiagnostics; // @synthesize debugDiagnostics=_debugDiagnostics;
 @property(copy) NSString *debugFilesPrefix; // @synthesize debugFilesPrefix=_debugFilesPrefix;
@@ -65,7 +66,6 @@
 @property(copy) NSNumber *maxAutoPitch; // @synthesize maxAutoPitch=_maxAutoPitch;
 @property(copy) NSNumber *maxAutoYaw; // @synthesize maxAutoYaw=_maxAutoYaw;
 @property(retain, nonatomic) PIFaceObservationCache *faceObservationCache; // @synthesize faceObservationCache=_faceObservationCache;
-- (void).cxx_destruct;
 - (void)submitVerified:(CDUnknownBlockType)arg1;
 - (_Bool)passesMinimumCorrectionCheck:(id)arg1 error:(out id *)arg2;
 - (_Bool)passesConfidenceCheck:(id)arg1 error:(out id *)arg2;

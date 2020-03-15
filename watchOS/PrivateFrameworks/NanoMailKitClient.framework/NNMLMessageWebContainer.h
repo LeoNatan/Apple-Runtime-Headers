@@ -21,10 +21,10 @@
 }
 
 + (void)prewarmWebView;
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) NNMKMessageContentWebView *webView; // @synthesize webView=_webView;
 @property(nonatomic) __weak id <NNMLMessageViewContainerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (void)webView:(id)arg1 didCommitNavigation:(id)arg2;

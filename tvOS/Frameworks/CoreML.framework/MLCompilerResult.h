@@ -14,8 +14,8 @@
 }
 
 + (id)resultWithOutputFiles:(id)arg1;
-@property(retain) NSArray *outputFiles; // @synthesize outputFiles=_outputFiles;
 - (void).cxx_destruct;
+@property(retain) NSArray *outputFiles; // @synthesize outputFiles=_outputFiles;
 
 @end
 

@@ -14,8 +14,8 @@
     _Bool _iTunesStoreStream;
 }
 
-@property(nonatomic, getter=isiTunesStoreStream) _Bool iTunesStoreStream; // @synthesize iTunesStoreStream=_iTunesStoreStream;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isiTunesStoreStream) _Bool iTunesStoreStream; // @synthesize iTunesStoreStream=_iTunesStoreStream;
 - (int)MPStoreRadioStreamProtocolFromICStoreRadioStreamProtocol:(int)arg1;
 - (int)MPStoreRadioStreamFlavorFromICStoreRadioStreamFlavor:(int)arg1;
 - (_Bool)isITunesStoreStream;

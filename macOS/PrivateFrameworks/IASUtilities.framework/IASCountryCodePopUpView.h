@@ -20,6 +20,7 @@
 }
 
 + (void)populateMenuItem:(id)arg1 withRepresentedObject:(id)arg2;
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *topDistanceUpperConstraint; // @synthesize topDistanceUpperConstraint=_topDistanceUpperConstraint;
 @property __weak NSLayoutConstraint *topDistanceConstraint; // @synthesize topDistanceConstraint=_topDistanceConstraint;
 @property __weak NSBox *separatorLine; // @synthesize separatorLine=_separatorLine;
@@ -27,7 +28,6 @@
 @property __weak NSTextField *countryName; // @synthesize countryName=_countryName;
 @property __weak NSTextField *countryCode; // @synthesize countryCode=_countryCode;
 @property __weak NSTextField *regionSeperator; // @synthesize regionSeperator=_regionSeperator;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 @property(readonly) BOOL isSeparatorItem;
 

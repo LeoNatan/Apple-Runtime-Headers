@@ -15,9 +15,9 @@
     NSIndexSet *_uids;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSIndexSet *uids; // @synthesize uids=_uids;
 @property(readonly, nonatomic) __weak id <IMAPGetServerMessagesOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithDataSource:(id)arg1;
 - (id)initWithUIDs:(id)arg1 dataSource:(id)arg2 delegate:(id)arg3;

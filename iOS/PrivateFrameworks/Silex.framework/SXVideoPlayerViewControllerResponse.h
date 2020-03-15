@@ -16,11 +16,11 @@
     SXVideoPlayerVisibilityMonitor *_visibilityMonitor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SXVideoPlayerVisibilityMonitor *visibilityMonitor; // @synthesize visibilityMonitor=_visibilityMonitor;
 @property(retain, nonatomic) SXVideoAnalyticsRouter *analyticsRouter; // @synthesize analyticsRouter=_analyticsRouter;
 @property(nonatomic) _Bool expectVideoPlayerViewController; // @synthesize expectVideoPlayerViewController=_expectVideoPlayerViewController;
 @property(nonatomic) _Bool shouldAutoplay; // @synthesize shouldAutoplay=_shouldAutoplay;
-- (void).cxx_destruct;
 
 @end
 

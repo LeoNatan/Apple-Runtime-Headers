@@ -13,8 +13,8 @@
     SMWindowsMacPathMapper *windowsMacPathMap;
 }
 
-@property(retain) SMWindowsMacPathMapper *windowsMacPathMap; // @synthesize windowsMacPathMap;
 - (void).cxx_destruct;
+@property(retain) SMWindowsMacPathMapper *windowsMacPathMap; // @synthesize windowsMacPathMap;
 - (id)uniqueHomeDirectoryForUserWithName:(id)arg1;
 - (double)estimatedTimeToCompletePhase:(unsigned long long)arg1;
 - (id)createUserAccount:(id)arg1 withShortname:(id)arg2 longname:(id)arg3 password:(id)arg4 authorizingUser:(id)arg5 authorizingPassword:(id)arg6 homeDirectory:(id)arg7 outUID:(long long *)arg8;

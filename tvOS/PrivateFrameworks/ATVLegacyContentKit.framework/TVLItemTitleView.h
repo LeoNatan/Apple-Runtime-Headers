@@ -20,6 +20,7 @@
     TVImageView *_rightImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVImageView *rightImageView; // @synthesize rightImageView=_rightImageView;
 @property(retain, nonatomic) TVImageView *ratingImageView; // @synthesize ratingImageView=_ratingImageView;
 @property(nonatomic) _Bool ratingSnapsToTitle; // @synthesize ratingSnapsToTitle=_ratingSnapsToTitle;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) UILabel *rightTitleLabel; // @synthesize rightTitleLabel=_rightTitleLabel;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -12,9 +12,9 @@
     struct VKEdgeInsets _edgePadding;
 }
 
-@property(nonatomic) struct VKEdgeInsets edgePadding; // @synthesize edgePadding=_edgePadding;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) struct VKEdgeInsets edgePadding; // @synthesize edgePadding=_edgePadding;
 - (CDStruct_02837cd9)boundingRect;
 - (_Bool)isEmpty;
 - (void)addPoints:(const vector_554e3200 *)arg1;

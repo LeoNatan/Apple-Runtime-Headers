@@ -23,6 +23,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *breatheStatistics; // @synthesize breatheStatistics=_breatheStatistics;
 @property(retain, nonatomic) NSArray *workoutRecoveryStatistics; // @synthesize workoutRecoveryStatistics=_workoutRecoveryStatistics;
 @property(retain, nonatomic) NSArray *workoutStatistics; // @synthesize workoutStatistics=_workoutStatistics;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) HKQuantity *restingHeartRate; // @synthesize restingHeartRate=_restingHeartRate;
 @property(retain, nonatomic) NSDateInterval *heartRateDateInterval; // @synthesize heartRateDateInterval=_heartRateDateInterval;
 @property(nonatomic) long long activityCacheIndex; // @synthesize activityCacheIndex=_activityCacheIndex;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

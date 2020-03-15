@@ -18,11 +18,11 @@
 }
 
 + (id)timerQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSProgress *currentProgress; // @synthesize currentProgress=_currentProgress;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *deferTimer; // @synthesize deferTimer=_deferTimer;
 @property(readonly, nonatomic) BLFileFetcher *fileFetcher; // @synthesize fileFetcher=_fileFetcher;
 @property(readonly, nonatomic) int batchSize; // @synthesize batchSize=_batchSize;
-- (void).cxx_destruct;
 - (void)_fetchOfflineKeyForMediaItem:(id)arg1 mediaPlaylistCacheURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_processStreamInf:(id)arg1 item:(id)arg2 directoryUtils:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_fetchKeysForEnumerator:(id)arg1 completedCount:(int)arg2 shouldStop:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;

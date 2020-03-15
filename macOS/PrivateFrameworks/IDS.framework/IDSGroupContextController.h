@@ -20,11 +20,11 @@
     NSString *_serviceName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(retain, nonatomic) CUTPromiseSeal *seal; // @synthesize seal=_seal;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) id <IDSGroupContextControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_contentWithCompletion:(CDUnknownBlockType)arg1;
 - (void)qGroupContextWithDeviceIdentity:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)qSetupSeal;

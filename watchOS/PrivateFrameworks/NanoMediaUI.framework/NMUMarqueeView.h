@@ -32,6 +32,7 @@
     double _marqueeScrollRate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
 @property(retain, nonatomic) UIColor *featheringColor; // @synthesize featheringColor=_featheringColor;
 @property(nonatomic) float featheringPercentageWidth; // @synthesize featheringPercentageWidth=_featheringPercentageWidth;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(nonatomic) float contentGap; // @synthesize contentGap=_contentGap;
-- (void).cxx_destruct;
 - (_Bool)_isRunningInNowPlayingViewService;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;

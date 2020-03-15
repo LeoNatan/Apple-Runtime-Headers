@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     HKSource *_source;
 }
 
-@property(retain, nonatomic) HKSource *source; // @synthesize source=_source;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HKSource *source; // @synthesize source=_source;
 - (void)deleteAllSourceData;
 - (void)deleteSource;
 - (void)deleteAllStoredData;

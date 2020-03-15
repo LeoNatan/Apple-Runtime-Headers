@@ -30,6 +30,7 @@
 + (id)fromDictionary:(id)arg1;
 + (BOOL)supportsSecureCoding;
 + (id)messageWithSearchableItem:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isStoredEncrypted; // @synthesize isStoredEncrypted=_isStoredEncrypted;
 @property(copy, nonatomic) NSString *accountType; // @synthesize accountType=_accountType;
 @property(nonatomic) BOOL isSent; // @synthesize isSent=_isSent;
@@ -41,7 +42,6 @@
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(copy, nonatomic) NSString *textContent; // @synthesize textContent=_textContent;
 @property(copy, nonatomic) NSString *subject; // @synthesize subject=_subject;
-- (void).cxx_destruct;
 - (id)spotlightUniqueIdentifier;
 - (id)spotlightDomainIdentifier;
 - (id)spotlightBundleIdentifier;

@@ -16,11 +16,11 @@
     HKDisplayType *_displayType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKDisplayType *displayType; // @synthesize displayType=_displayType;
 @property(retain, nonatomic) HKUnitPreferenceController *unitController; // @synthesize unitController=_unitController;
 @property(retain, nonatomic) UIFont *minorFont; // @synthesize minorFont=_minorFont;
 @property(retain, nonatomic) UIFont *majorFont; // @synthesize majorFont=_majorFont;
-- (void).cxx_destruct;
 - (id)_formattedStringForValue:(id)arg1;
 - (id)_formattedStringWithValue:(double)arg1 unit:(id)arg2 showUnit:(_Bool)arg3;
 - (id)_unitNameFromUnit:(id)arg1 number:(id)arg2;

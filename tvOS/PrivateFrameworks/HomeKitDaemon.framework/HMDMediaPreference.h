@@ -16,8 +16,8 @@
 }
 
 + (void)load;
-@property(readonly) HMFSystemPreference *homeKitPreference; // @synthesize homeKitPreference=_homeKitPreference;
 - (void).cxx_destruct;
+@property(readonly) HMFSystemPreference *homeKitPreference; // @synthesize homeKitPreference=_homeKitPreference;
 - (id)stringValue;
 - (id)numberValue;
 - (_Bool)boolValue;

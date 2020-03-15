@@ -20,12 +20,12 @@
     NSData *_storageIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *positionTimestamp; // @synthesize positionTimestamp=_positionTimestamp;
 @property(retain, nonatomic) NSData *position; // @synthesize position=_position;
 @property(retain, nonatomic) NSData *contentsTimestamp; // @synthesize contentsTimestamp=_contentsTimestamp;
 @property(retain, nonatomic) NSData *contents; // @synthesize contents=_contents;
 @property(retain, nonatomic) NSData *storageIdentifier; // @synthesize storageIdentifier=_storageIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;

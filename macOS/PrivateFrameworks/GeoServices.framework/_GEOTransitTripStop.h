@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)transitTripStopsForPlaceData:(id)arg1;
-@property(readonly, nonatomic) id <GEOTransitDeparture> departure; // @synthesize departure=_departure;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <GEOTransitDeparture> departure; // @synthesize departure=_departure;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, nonatomic) GEOStyleAttributes *styleAttributes;
 @property(readonly, nonatomic) GEOLatLng *location;

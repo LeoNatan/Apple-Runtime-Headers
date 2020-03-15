@@ -14,8 +14,8 @@
 }
 
 + (void)clearStaticStateForAvatar:(id)arg1;
-@property(readonly, nonatomic) id <AVTAvatarTransitionModel> avatarTransitionModel; // @synthesize avatarTransitionModel=_avatarTransitionModel;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <AVTAvatarTransitionModel> avatarTransitionModel; // @synthesize avatarTransitionModel=_avatarTransitionModel;
 - (void)performTransition;
 - (id)model;
 - (id)initWithModel:(id)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3 logger:(id)arg4;

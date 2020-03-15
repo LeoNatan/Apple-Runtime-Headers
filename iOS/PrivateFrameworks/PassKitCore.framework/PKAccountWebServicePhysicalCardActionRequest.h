@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPaymentDeviceMetadata *deviceMetadata; // @synthesize deviceMetadata=_deviceMetadata;
 @property(retain, nonatomic) PKPhysicalCardAction *action; // @synthesize action=_action;
 @property(copy, nonatomic) NSString *physicalCardIdentifier; // @synthesize physicalCardIdentifier=_physicalCardIdentifier;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSData *publicKeyHash; // @synthesize publicKeyHash=_publicKeyHash;
 @property(retain, nonatomic) PKApplePayTrustHashResponse *hashResponse; // @synthesize hashResponse;
 @property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)manifestHashWithReferenceIdentifier:(id)arg1;

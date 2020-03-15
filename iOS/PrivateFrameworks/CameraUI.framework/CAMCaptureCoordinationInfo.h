@@ -15,10 +15,10 @@
     unsigned long long _resultSpecifiers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long resultSpecifiers; // @synthesize resultSpecifiers=_resultSpecifiers;
 @property(readonly, nonatomic) NSSet *allExpectedResultSpecifiers; // @synthesize allExpectedResultSpecifiers=_allExpectedResultSpecifiers;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool representsFinalProcessedVideo;
 @property(readonly, nonatomic) _Bool representsFinalProcessedStillImage;
 @property(readonly, nonatomic, getter=isFinalExpectedVideoResult) _Bool finalExpectedVideoResult;

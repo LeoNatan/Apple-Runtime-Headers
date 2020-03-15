@@ -17,10 +17,10 @@
     NSString *_bundleIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *podcastFeedURLIdentifier; // @synthesize podcastFeedURLIdentifier=_podcastFeedURLIdentifier;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, nonatomic) NSNumber *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
-- (void).cxx_destruct;
 - (id)stringValue;
 - (id)numberValue;
 - (long long)longLongValue;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _callback;
 }
 
-@property(copy) CDUnknownBlockType callback; // @synthesize callback=_callback;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType callback; // @synthesize callback=_callback;
 - (void)callCallback:(_Bool)arg1 error:(id)arg2;
 - (id)initWithCallback:(CDUnknownBlockType)arg1;
 

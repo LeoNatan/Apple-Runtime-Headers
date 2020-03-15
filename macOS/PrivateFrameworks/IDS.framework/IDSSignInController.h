@@ -25,6 +25,7 @@
     IDSCTAdapter *_CTAdapter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDSCTAdapter *CTAdapter; // @synthesize CTAdapter=_CTAdapter;
 @property(retain, nonatomic) NSMutableDictionary *initialStateByService; // @synthesize initialStateByService=_initialStateByService;
 @property(retain, nonatomic) NSMapTable *delegateByServiceType; // @synthesize delegateByServiceType=_delegateByServiceType;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *signInQueue; // @synthesize signInQueue=_signInQueue;
 @property(retain, nonatomic) NSMutableDictionary *accountIDDescriptionMap; // @synthesize accountIDDescriptionMap=_accountIDDescriptionMap;
 @property(retain, nonatomic) NSMutableDictionary *serviceNameAccountControllerMap; // @synthesize serviceNameAccountControllerMap=_serviceNameAccountControllerMap;
-- (void).cxx_destruct;
 - (void)accountController:(id)arg1 accountRemoved:(id)arg2;
 - (void)accountController:(id)arg1 accountDisabled:(id)arg2;
 - (void)accountController:(id)arg1 accountAdded:(id)arg2;

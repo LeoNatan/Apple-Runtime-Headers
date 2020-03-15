@@ -22,6 +22,7 @@
     NSString *_responseKey;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *responseKey; // @synthesize responseKey=_responseKey;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) NSString *state; // @synthesize state=_state;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) ASWebAuthenticationSession *authenticationSession; // @synthesize authenticationSession=_authenticationSession;
 @property(readonly, copy, nonatomic) NSURL *redirectURI; // @synthesize redirectURI=_redirectURI;
 @property(readonly, copy, nonatomic) NSURL *authorizationURL; // @synthesize authorizationURL=_authorizationURL;
-- (void).cxx_destruct;
 - (_Bool)resumeSessionWithURL:(id)arg1;
 - (_Bool)resumeSessionWithResponseObject:(id)arg1;
 - (id)initWithSessionManager:(id)arg1 authorizationURL:(id)arg2 responseType:(id)arg3 redirectURI:(id)arg4 specifyRedirectURI:(_Bool)arg5 completionHandler:(CDUnknownBlockType)arg6;

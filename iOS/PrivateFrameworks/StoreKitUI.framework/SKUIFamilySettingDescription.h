@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)_viewClassForSettingDescription:(id)arg1;
-@property(readonly, nonatomic) long long viewState; // @synthesize viewState=_viewState;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long viewState; // @synthesize viewState=_viewState;
 - (void)_updateWithViewState:(long long)arg1;
 - (void)_updateViewState;
 - (_Bool)_initiallyHidden;

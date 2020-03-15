@@ -13,8 +13,8 @@
     UITextField *_detailTextField;
 }
 
-@property(readonly, nonatomic) UITextField *detailTextField; // @synthesize detailTextField=_detailTextField;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UITextField *detailTextField; // @synthesize detailTextField=_detailTextField;
 - (void)_setupDetailTextField;
 - (void)_setup;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

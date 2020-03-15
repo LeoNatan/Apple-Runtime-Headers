@@ -56,6 +56,7 @@
 + (id)_instanceIfExists;
 + (id)sharedInstance;
 + (id)start;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FBSceneManager *sceneManager; // @synthesize sceneManager=_sceneManager;
 @property(readonly, nonatomic) SBTransientOverlayPresentationManager *transientOverlayPresentationManager; // @synthesize transientOverlayPresentationManager=_transientOverlayPresentationManager;
 @property(readonly, nonatomic) SBInCallTransientOverlayManager *inCallTransientOverlayManager; // @synthesize inCallTransientOverlayManager=_inCallTransientOverlayManager;
@@ -66,7 +67,6 @@
 @property(retain, nonatomic) SBWorkspaceTransaction *currentTransaction; // @synthesize currentTransaction=_currentTransaction;
 @property(retain, nonatomic, getter=_activeIdleTimerProvider, setter=_setActiveIdleTimerProvider:) id <SBIdleTimerProviding> activeIdleTimerProvider; // @synthesize activeIdleTimerProvider=_activeIdleTimerProvider;
 @property(readonly, nonatomic, getter=isMedusaEnabled) _Bool medusaEnabled; // @synthesize medusaEnabled=_medusaEnabled;
-- (void).cxx_destruct;
 - (_Bool)presentTransientOverlayViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)dismissTransientOverlayViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)dismissAllTransientOverlayPresentationsAnimated:(_Bool)arg1;
@@ -103,6 +103,7 @@
 - (id)transientOverlayPresentationManager:(id)arg1 acquireDisableAutoUnlockAssertionWithReason:(id)arg2;
 - (void)transientOverlayPresentationManagerRequestsAppIconForceTouchDismissal:(id)arg1 animated:(_Bool)arg2;
 - (unsigned long long)defaultSupportedInterfaceOrientationsForTransientOverlayPresentationManager:(id)arg1;
+- (_Bool)isKeyboardVisibleForSpringBoardForTransientOverlayPresentationManager:(id)arg1;
 - (_Bool)defaultShouldAutorotateForTransientOverlayPresentationManager:(id)arg1;
 - (long long)defaultPreferredInterfaceOrientationForPresentationForTransientOverlayPresentationManager:(id)arg1;
 - (id)transientOverlayPresentationManager:(id)arg1 acquireHideAppStatusBarAssertionWithReason:(id)arg2 animated:(_Bool)arg3;

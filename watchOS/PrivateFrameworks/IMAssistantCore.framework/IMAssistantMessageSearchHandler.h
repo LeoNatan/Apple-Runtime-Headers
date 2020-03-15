@@ -16,8 +16,8 @@
     id <IMAssistantMessageAttributeSanitizer> _attributeSanitizer;
 }
 
-@property(retain, nonatomic) id <IMAssistantMessageAttributeSanitizer> attributeSanitizer; // @synthesize attributeSanitizer=_attributeSanitizer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <IMAssistantMessageAttributeSanitizer> attributeSanitizer; // @synthesize attributeSanitizer=_attributeSanitizer;
 - (id)resolveSpeakableGroupNames:(id)arg1 forIntent:(id)arg2;
 - (void)resolveRecipientsAndSender:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)handleSearchForMessages:(id)arg1 completion:(CDUnknownBlockType)arg2;

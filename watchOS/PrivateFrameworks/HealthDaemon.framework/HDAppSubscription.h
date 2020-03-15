@@ -18,13 +18,13 @@
     long long _launchTimeHysteresis;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long launchTimeHysteresis; // @synthesize launchTimeHysteresis=_launchTimeHysteresis;
 @property(readonly, nonatomic) long long lastAckTime; // @synthesize lastAckTime=_lastAckTime;
 @property(readonly, nonatomic) unsigned long long lastAnchor; // @synthesize lastAnchor=_lastAnchor;
 @property(readonly, nonatomic) unsigned long long updateFrequency; // @synthesize updateFrequency=_updateFrequency;
 @property(readonly, nonatomic) int dataCode; // @synthesize dataCode=_dataCode;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (void)setLaunchTimeHysteresis:(long long)arg1;
 - (void)setLastAnchor:(unsigned long long)arg1;
 - (void)setLastAckTime:(long long)arg1;

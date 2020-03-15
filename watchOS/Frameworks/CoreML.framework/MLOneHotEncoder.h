@@ -22,10 +22,10 @@
 + (id)featureEncoderFrom:(id)arg1 inputDescription:(id)arg2 outputDescription:(id)arg3 orderedInputFeatureNames:(id)arg4 orderedOutputFeatureNames:(id)arg5;
 + (id)featureEncoderFrom:(id)arg1 inputDescription:(id)arg2 orderedInputFeatureNames:(id)arg3;
 + (id)loadModelFromSpecification:(struct _MLModelSpecification *)arg1 configuration:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool handleUnknown; // @synthesize handleUnknown=_handleUnknown;
 @property(readonly, nonatomic) _Bool ouputSparse; // @synthesize ouputSparse=_ouputSparse;
 @property(readonly, nonatomic) NSOrderedSet *featureEncoding; // @synthesize featureEncoding=_featureEncoding;
-- (void).cxx_destruct;
 - (id)encodeFeatureValueIntString:(unsigned int)arg1;
 - (id)unknownDenseVector;
 - (id)encodeFeatureValue:(id)arg1;

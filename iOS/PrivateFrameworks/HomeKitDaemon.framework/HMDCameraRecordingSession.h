@@ -39,6 +39,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) NSMutableDictionary *analysisEventsBySequenceNumber; // @synthesize analysisEventsBySequenceNumber=_analysisEventsBySequenceNumber;
 @property double cumulativeFragmentDuration; // @synthesize cumulativeFragmentDuration=_cumulativeFragmentDuration;
 @property(readonly) NSMutableDictionary *confidenceLevelsByEventReason; // @synthesize confidenceLevelsByEventReason=_confidenceLevelsByEventReason;
@@ -57,7 +58,6 @@
 @property(readonly) double configuredFragmentDuration; // @synthesize configuredFragmentDuration=_configuredFragmentDuration;
 @property __weak id <HMDCameraRecordingSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)recordingUploaderIsIdle:(id)arg1;
 - (void)recordingUploader:(id)arg1 didFinishClip:(id)arg2;

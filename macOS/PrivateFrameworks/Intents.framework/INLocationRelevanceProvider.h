@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy) CLRegion *region; // @synthesize region=_region;
 - (void).cxx_destruct;
+@property(readonly, copy) CLRegion *region; // @synthesize region=_region;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;

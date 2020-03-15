@@ -21,11 +21,11 @@
     UICollectionView *_collectionView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) NSArray *appItems; // @synthesize appItems=_appItems;
 @property(retain, nonatomic) WFActionDrawerResultsController *resultsController; // @synthesize resultsController=_resultsController;
 @property(nonatomic) __weak id <WFActionDrawerAppsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)moveToState:(id)arg1 animated:(_Bool)arg2;
 - (id)state;
 - (double)expectedCollectionViewWidth;

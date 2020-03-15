@@ -50,6 +50,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)registerDevices;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long registryID; // @synthesize registryID;
 @property(readonly) unsigned long long recommendedMaxWorkingSetSize; // @synthesize recommendedMaxWorkingSetSize;
 @property(readonly) unsigned long long dedicatedMemorySize; // @synthesize dedicatedMemorySize;
@@ -68,8 +70,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, getter=isLowPower) _Bool lowPower; // @synthesize lowPower;
 @property(readonly, getter=isHeadless) _Bool headless; // @synthesize headless;
 @property(readonly) MTLSerializer *serializer; // @synthesize serializer=_serializer;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long maxBufferLength;
 @property(readonly) unsigned long long featureProfile;
 @property(readonly) unsigned long long maxThreadgroupMemoryLength;
@@ -97,10 +97,10 @@ __attribute__((visibility("hidden")))
 - (id)newArgumentEncoderWithLayout:(id)arg1;
 - (id)newIndirectArgumentBufferLayoutWithStructType:(id)arg1;
 - (id)familyName;
-- (id)newComputePipelineWithDescriptor:(id)arg1 variant:(struct NSObject *)arg2 errorMessage:(id *)arg3;
-- (struct NSObject *)newComputeVariantWithCompilerOutput:(id)arg1 pipelineStatisticsOutput:(id)arg2;
+- (id)newComputePipelineWithDescriptor:(id)arg1 variant:(id)arg2 errorMessage:(id *)arg3;
+- (id)newComputeVariantWithCompilerOutput:(id)arg1 pipelineStatisticsOutput:(id)arg2;
 - (id)wrapComputeState:(id)arg1 descriptor:(id)arg2;
-- (id)pipelinePerformanceStatisticsWithComputeVariant:(struct NSObject *)arg1 compileTimeOutput:(id)arg2;
+- (id)pipelinePerformanceStatisticsWithComputeVariant:(id)arg1 compileTimeOutput:(id)arg2;
 - (id)pipelinePerformanceStatisticsWithVertexVariant:(id)arg1 fragmentVariant:(id)arg2 vertexCompileTimeOutput:(id)arg3 fragmentCompileTimeOutput:(id)arg4;
 - (CDStruct_04792461)pipelineFlagsWithVertexVariant:(id)arg1 fragmentVariant:(id)arg2;
 - (id)newRenderPipelineWithDescriptor:(id)arg1 vertexVariant:(id)arg2 fragmentVariant:(id)arg3 errorMessage:(id *)arg4;

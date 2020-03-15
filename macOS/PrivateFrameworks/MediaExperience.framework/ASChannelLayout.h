@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)descriptionsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *descriptions; // @synthesize descriptions=_descriptions;
 @property(nonatomic) unsigned int bitmap; // @synthesize bitmap=_bitmap;
 @property(nonatomic) unsigned int tag; // @synthesize tag=_tag;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     _UIKBRTFingerInfo *_fakeRightIndex;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIKBRTFingerInfo *fakeRightIndex; // @synthesize fakeRightIndex=_fakeRightIndex;
 @property(retain, nonatomic) _UIKBRTFingerInfo *fakeLeftIndex; // @synthesize fakeLeftIndex=_fakeLeftIndex;
 @property(retain, nonatomic) NSMutableDictionary *touches; // @synthesize touches=_touches;
 @property(retain, nonatomic) NSMapTable *fingerFeedbackViewMap; // @synthesize fingerFeedbackViewMap=_fingerFeedbackViewMap;
 @property(retain, nonatomic) _UIKBRTFingerDetectionView *feedbackView; // @synthesize feedbackView=_feedbackView;
 @property(nonatomic) UIView *feedbackParentView; // @synthesize feedbackParentView=_feedbackParentView;
-- (void).cxx_destruct;
 - (void)_updateFingerFeedback:(id)arg1;
 - (void)_updateFingerFeedback;
 - (void)_updateTouchInfoForFingerID:(unsigned long long)arg1;

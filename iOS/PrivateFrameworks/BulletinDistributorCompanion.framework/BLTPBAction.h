@@ -24,6 +24,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *behaviorParametersNulls; // @synthesize behaviorParametersNulls=_behaviorParametersNulls;
 @property(retain, nonatomic) NSData *behaviorParameters; // @synthesize behaviorParameters=_behaviorParameters;
 @property(nonatomic) int behavior; // @synthesize behavior=_behavior;
@@ -31,7 +32,6 @@
 @property(nonatomic) int activationMode; // @synthesize activationMode=_activationMode;
 @property(retain, nonatomic) BLTPBAppearance *appearance; // @synthesize appearance=_appearance;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

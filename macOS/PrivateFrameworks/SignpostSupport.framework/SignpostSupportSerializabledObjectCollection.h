@@ -21,11 +21,11 @@
 + (BOOL)timeRangeForSerializedCollection:(id)arg1 continuousTimeFirstOut:(unsigned long long *)arg2 continuousTimeLastOut:(unsigned long long *)arg3 errorOut:(id *)arg4;
 + (id)_deserializedDictionaryForData:(id)arg1 errorOut:(id *)arg2;
 + (BOOL)_versionIsSupported:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long machContinuousTimeLast; // @synthesize machContinuousTimeLast=_machContinuousTimeLast;
 @property(readonly, nonatomic) unsigned long long machContinuousTimeFirst; // @synthesize machContinuousTimeFirst=_machContinuousTimeFirst;
 @property(readonly, nonatomic) NSNumber *formatVersion; // @synthesize formatVersion=_formatVersion;
 @property(readonly, nonatomic) NSArray *objectArray; // @synthesize objectArray=_objectArray;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1 errorOut:(id *)arg2;
 - (id)newSerializedCollection:(BOOL)arg1;
 - (id)initWithSerializeableObjectArray:(id)arg1;

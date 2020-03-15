@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSButton *_removeButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSButton *removeButton; // @synthesize removeButton=_removeButton;
 @property(retain, nonatomic) NSButton *pairButton; // @synthesize pairButton=_pairButton;
 @property(retain, nonatomic) NSButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain, nonatomic) NSTextField *deviceStateTextField; // @synthesize deviceStateTextField=_deviceStateTextField;
 @property(retain, nonatomic) NSTextField *deviceNameTextField; // @synthesize deviceNameTextField=_deviceNameTextField;
 @property(retain, nonatomic) NSImageView *deviceImageView; // @synthesize deviceImageView=_deviceImageView;
-- (void).cxx_destruct;
 
 @end
 

@@ -26,6 +26,7 @@
     NSObject<OS_dispatch_queue> *_userInteractiveQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isFaceProcessingComplete) _Bool faceProcessingComplete; // @synthesize faceProcessingComplete=_faceProcessingComplete;
 @property(readonly, nonatomic) _Bool isFaceProcessingComplete; // @synthesize isFaceProcessingComplete=_isFaceProcessingComplete;
 @property(getter=isCountCacheValid) _Bool countCacheValid; // @synthesize countCacheValid=_countCacheValid;
@@ -37,7 +38,6 @@
 @property(nonatomic) unsigned long long processedCount; // @synthesize processedCount=_processedCount;
 @property(nonatomic) unsigned long long pendingCount; // @synthesize pendingCount=_pendingCount;
 @property(nonatomic) unsigned long long cachedUnlockValue; // @synthesize cachedUnlockValue=_cachedUnlockValue;
-- (void).cxx_destruct;
 - (void)_appWillEnterForeground;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1 withPreparedInfo:(id)arg2;
 - (double)_progressFromWorkerDictionary:(id)arg1;

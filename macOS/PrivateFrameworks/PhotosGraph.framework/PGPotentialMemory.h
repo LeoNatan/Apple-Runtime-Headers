@@ -33,6 +33,7 @@
     PGMemoryGenerator *_upgradedMemoryGenerator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PGMemoryGenerator *upgradedMemoryGenerator; // @synthesize upgradedMemoryGenerator=_upgradedMemoryGenerator;
 @property(retain, nonatomic) PGPotentialMemory *upgradedPotentialMemory; // @synthesize upgradedPotentialMemory=_upgradedPotentialMemory;
 @property(readonly) NSDictionary *numberOfAssetsByMomentIDs; // @synthesize numberOfAssetsByMomentIDs=_numberOfAssetsByMomentIDs;
@@ -50,7 +51,6 @@
 @property(retain) NSSet *momentNodes; // @synthesize momentNodes=_momentNodes;
 @property(retain) PGGraphMomentNode *momentNode; // @synthesize momentNode=_momentNode;
 @property(retain) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
-- (void).cxx_destruct;
 - (id)buildAssetCollectionUsingMemoryController:(id)arg1 withMinimumNumberOfAssets:(unsigned long long)arg2;
 - (double)computeContentScoreUsingMemoryController:(id)arg1;
 - (void)_resetOverlapCheck;

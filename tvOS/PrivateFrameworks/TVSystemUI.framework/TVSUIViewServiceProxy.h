@@ -30,6 +30,7 @@
     NSObject<OS_dispatch_queue> *_delegateQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
@@ -38,7 +39,6 @@
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) TVSUIViewServiceContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) UIViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
-- (void).cxx_destruct;
 - (void)_fetchExtension:(CDUnknownBlockType)arg1;
 - (void)_handleLosingRemoteViewController;
 - (void)_handleReceivingHostViewController:(id)arg1;

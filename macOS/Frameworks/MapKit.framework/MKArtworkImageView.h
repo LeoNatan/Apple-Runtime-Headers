@@ -17,10 +17,10 @@
     NSColor *_secondaryTintColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *secondaryTintColor; // @synthesize secondaryTintColor=_secondaryTintColor;
 @property(retain, nonatomic) NSColor *primaryTintColor; // @synthesize primaryTintColor=_primaryTintColor;
 @property(retain, nonatomic) id <MKArtworkImageSource> imageSource; // @synthesize imageSource=_imageSource;
-- (void).cxx_destruct;
 - (void)viewDidChangeEffectiveAppearance;
 @property(readonly, nonatomic) MKImageView *badgeView;
 - (void)_updateImageView;

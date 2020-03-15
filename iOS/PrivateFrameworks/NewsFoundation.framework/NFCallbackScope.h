@@ -14,9 +14,9 @@
     NSArray *_names;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *names; // @synthesize names=_names;
 @property(readonly, nonatomic) unsigned long long scope; // @synthesize scope=_scope;
-- (void).cxx_destruct;
 - (id)initWithScope:(unsigned long long)arg1 names:(id)arg2;
 
 @end

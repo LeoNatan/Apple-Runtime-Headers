@@ -18,10 +18,10 @@
 
 + (id)sharedManager;
 - (void).cxx_destruct;
-- (struct NSObject *)_placeholderImageWithColor:(struct NSObject *)arg1;
-- (struct NSObject *)newPlaceholderImageForFormat:(unsigned short)arg1 photoImageSize:(struct CGSize)arg2;
+- (id)_placeholderImageWithColor:(id)arg1;
+- (id)newPlaceholderImageForFormat:(unsigned short)arg1 photoImageSize:(struct CGSize)arg2;
 - (id)placeholderDataForFormat:(unsigned short)arg1 photoImageSize:(struct CGSize)arg2 width:(int *)arg3 height:(int *)arg4 bytesPerRow:(int *)arg5 dataWidth:(int *)arg6 dataHeight:(int *)arg7 imageDataOffset:(int *)arg8;
-- (id)_cacheKeyForFormat:(id)arg1 photoImageSize:(struct CGSize)arg2 photoImageColor:(struct NSObject *)arg3;
+- (id)_cacheKeyForFormat:(id)arg1 photoImageSize:(struct CGSize)arg2 photoImageColor:(id)arg3;
 - (id)init;
 
 @end

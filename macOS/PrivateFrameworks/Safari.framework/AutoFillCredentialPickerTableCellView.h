@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSColor *_unselectedTextColor;
 }
 
-@property(retain, nonatomic) NSColor *unselectedTextColor; // @synthesize unselectedTextColor=_unselectedTextColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSColor *unselectedTextColor; // @synthesize unselectedTextColor=_unselectedTextColor;
 - (void)setBackgroundStyle:(long long)arg1;
 - (void)awakeFromNib;
 

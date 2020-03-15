@@ -13,8 +13,8 @@
     HRVideoPlayerView *_videoPlayerView;
 }
 
-@property(retain, nonatomic) HRVideoPlayerView *videoPlayerView; // @synthesize videoPlayerView=_videoPlayerView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HRVideoPlayerView *videoPlayerView; // @synthesize videoPlayerView=_videoPlayerView;
 - (long long)stackedButtonViewLastButtonMode;
 - (id)buttonTitleString;
 - (id)bodyString;

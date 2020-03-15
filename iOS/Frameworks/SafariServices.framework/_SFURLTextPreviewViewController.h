@@ -17,10 +17,9 @@
     _SFURLTextPreviewView *_previewView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _SFURLTextPreviewView *previewView; // @synthesize previewView=_previewView;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
-- (id)previewActionItems;
 - (id)_previewHeader;
 - (id)_activatedElementInfo;
 - (void)_setActivatedElementInfo:(id)arg1;

@@ -20,6 +20,7 @@
 }
 
 + (id)emptyAnalysis;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int averageNumberOfInterruptions; // @synthesize averageNumberOfInterruptions=_averageNumberOfInterruptions;
 @property(readonly, nonatomic) double averageTimeAsleep; // @synthesize averageTimeAsleep=_averageTimeAsleep;
 @property(readonly, nonatomic) double averageTimeInBed; // @synthesize averageTimeInBed=_averageTimeInBed;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) int consistencyCount; // @synthesize consistencyCount=_consistencyCount;
 @property(readonly, nonatomic) int numberOfAsleepSamples; // @synthesize numberOfAsleepSamples=_numberOfAsleepSamples;
 @property(readonly, copy, nonatomic) NSArray *sleepDays; // @synthesize sleepDays=_sleepDays;
-- (void).cxx_destruct;
 - (id)initWithSleepDays:(id)arg1 numberOfAsleepSamples:(int)arg2 consistencyCount:(int)arg3 averageEfficiency:(double)arg4 averageTimeInBed:(double)arg5 averageTimeAlseep:(double)arg6 averageNumberOfInterruptions:(int)arg7;
 
 @end

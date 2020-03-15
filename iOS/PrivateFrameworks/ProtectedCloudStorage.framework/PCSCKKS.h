@@ -15,10 +15,10 @@
     NSString *_dsid;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *dsid; // @synthesize dsid=_dsid;
 @property(retain) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property struct _PCSIdentitySetData *set; // @synthesize set=_set;
-- (void).cxx_destruct;
 - (id)stripOperationErrorIfPCSError:(id)arg1;
 - (void)createIdentity:(id)arg1 complete:(CDUnknownBlockType)arg2;
 - (void)createNewIdentity:(id)arg1 roll:(_Bool)arg2 sync:(_Bool)arg3 complete:(CDUnknownBlockType)arg4;

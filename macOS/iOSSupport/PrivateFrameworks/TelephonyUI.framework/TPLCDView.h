@@ -20,8 +20,8 @@
 
 + (double)defaultLabelFontSize;
 + (double)defaultTextFontSize;
-@property BOOL verticallyCenterTextViewIfLabelless; // @synthesize verticallyCenterTextViewIfLabelless=_verticallyCenterTextViewIfLabelless;
 - (void).cxx_destruct;
+@property BOOL verticallyCenterTextViewIfLabelless; // @synthesize verticallyCenterTextViewIfLabelless=_verticallyCenterTextViewIfLabelless;
 - (id)secondLineText;
 - (void)setSecondLineText:(id)arg1;
 - (void)setLayoutAsLabelled:(BOOL)arg1;

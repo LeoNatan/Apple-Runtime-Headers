@@ -16,9 +16,9 @@
     HKOrganDonationCallToActionTableViewCell *_notRegisteredCell;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKOrganDonationCallToActionTableViewCell *notRegisteredCell; // @synthesize notRegisteredCell=_notRegisteredCell;
 @property(nonatomic) __weak id <HKMedicalIDRegisteredOrganDonorTableItemDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)titleForFooter;
 - (void)presentDonateLifeRegistrationSequence;
 - (void)tableView:(id)arg1 didSelectRowAtIndex:(long long)arg2;

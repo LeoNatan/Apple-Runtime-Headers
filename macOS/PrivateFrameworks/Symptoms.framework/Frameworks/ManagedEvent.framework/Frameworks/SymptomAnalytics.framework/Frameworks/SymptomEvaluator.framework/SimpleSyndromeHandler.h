@@ -29,9 +29,9 @@ __attribute__((visibility("hidden")))
 + (void)setDefaultNextStage:(id)arg1;
 + (id)configureClass:(id)arg1;
 + (id)objectWithName:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) const char *syndromeUTF8Name; // @synthesize syndromeUTF8Name=_syndromeUTF8Name;
 @property(readonly, nonatomic) NSString *syndromeName; // @synthesize syndromeName=_syndromeName;
-- (void).cxx_destruct;
 - (void)_reset:(id)arg1;
 - (void)didReceiveSyndrome:(id)arg1;
 - (_Bool)_setName:(id)arg1;

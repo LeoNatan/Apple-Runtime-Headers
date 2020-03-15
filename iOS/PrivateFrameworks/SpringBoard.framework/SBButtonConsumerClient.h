@@ -19,13 +19,13 @@
     NSMutableSet *_registrations;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *registrations; // @synthesize registrations=_registrations;
 @property(nonatomic, getter=isSuspended) _Bool suspended; // @synthesize suspended=_suspended;
 @property(nonatomic, getter=isRunningVisible) _Bool runningVisible; // @synthesize runningVisible=_runningVisible;
 @property(nonatomic, getter=isApplication) _Bool application; // @synthesize application=_application;
 @property(nonatomic, getter=isEntitledToConsumeButtonsInBackground) _Bool entitledToConsumeButtonsInBackground; // @synthesize entitledToConsumeButtonsInBackground=_entitledToConsumeButtonsInBackground;
 @property(retain, nonatomic) id <FBSServiceFacilityClientHandle> systemServiceClient; // @synthesize systemServiceClient=_systemServiceClient;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool canReceiveEvents;
 - (id)description;
 - (unsigned long long)hash;

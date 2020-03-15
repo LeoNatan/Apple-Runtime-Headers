@@ -35,7 +35,6 @@
     NSString *_uti;
     NSString *_mimeType;
     NSURLResponse *_response;
-    _SFQuickLookDocument *_quickLookDocument;
     NSUUID *_identifier;
     long long _bytesExpected;
     unsigned long long _bytesLoaded;
@@ -45,10 +44,13 @@
     WBSFluidProgressController *_fluidProgressController;
     id <_SFDownloadDelegate> _delegate;
     id <_SFDownloadPlaceholderImporter> _placeholderImporter;
+    _SFQuickLookDocument *_quickLookDocument;
 }
 
 + (id)downloadDestinationPathWithFilename:(id)arg1;
 + (id)provisionalDownloadWithMIMEType:(id)arg1 request:(id)arg2 response:(id)arg3 filename:(id)arg4 uti:(id)arg5 userInitiatedAction:(id)arg6;
+- (void).cxx_destruct;
+@property(retain, nonatomic) _SFQuickLookDocument *quickLookDocument; // @synthesize quickLookDocument=_quickLookDocument;
 @property(nonatomic) __weak id <_SFDownloadPlaceholderImporter> placeholderImporter; // @synthesize placeholderImporter=_placeholderImporter;
 @property(nonatomic) __weak id <_SFDownloadDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak WBSFluidProgressController *fluidProgressController; // @synthesize fluidProgressController=_fluidProgressController;
@@ -60,14 +62,12 @@
 @property(nonatomic) _Bool suppressesPrompt; // @synthesize suppressesPrompt=_suppressesPrompt;
 @property(nonatomic) _Bool explicitlySaved; // @synthesize explicitlySaved=_explicitlySaved;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-@property(retain, nonatomic) _SFQuickLookDocument *quickLookDocument; // @synthesize quickLookDocument=_quickLookDocument;
 @property(readonly, nonatomic) NSURLResponse *response; // @synthesize response=_response;
 @property(readonly, copy, nonatomic) NSString *mimeType; // @synthesize mimeType=_mimeType;
 @property(readonly, copy, nonatomic) NSString *uti; // @synthesize uti=_uti;
 @property(readonly, nonatomic) _WKUserInitiatedAction *userInitiatedAction; // @synthesize userInitiatedAction=_userInitiatedAction;
 @property(readonly, nonatomic) NSString *fileDownloadPath; // @synthesize fileDownloadPath=_fileDownloadPath;
 @property(readonly, nonatomic) NSURL *sourceURL; // @synthesize sourceURL=_sourceURL;
-- (void).cxx_destruct;
 - (_Bool)hasFailedURL;
 - (double)estimatedProgress;
 - (id)expectedOrCurrentURL;
@@ -99,6 +99,7 @@
 - (void)resumeInProcessPool:(id)arg1;
 - (void)_validateSandboxAccessToURL:(id)arg1;
 @property(readonly, nonatomic) _Bool canResume;
+@property(readonly, nonatomic) long long dataOwner;
 - (id)completedFileURL:(_Bool *)arg1;
 @property(readonly, nonatomic) NSURL *completedFileURL;
 @property(readonly, nonatomic) NSString *filenameWithoutExtension;

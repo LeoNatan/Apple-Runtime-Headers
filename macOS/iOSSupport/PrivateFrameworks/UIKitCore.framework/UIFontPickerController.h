@@ -21,10 +21,10 @@
     UIFontDescriptor *_selectedFontDescriptor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFontDescriptor *selectedFontDescriptor; // @synthesize selectedFontDescriptor=_selectedFontDescriptor;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(nonatomic) __weak id <UIFontPickerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIFontDescriptor *selectedFont;
 - (void)pickerDidCancel;
 - (void)pickerDidSelectFont:(struct __CTFontDescriptor *)arg1;

@@ -32,6 +32,8 @@
 + (id)createGroupTemplate:(id)arg1;
 + (id)createGroupWithIdentifier:(id)arg1 name:(id)arg2 children:(id)arg3;
 + (id)createParameterWithIdentifier:(id)arg1 name:(id)arg2 address:(unsigned long long)arg3 min:(float)arg4 max:(float)arg5 unit:(unsigned int)arg6 unitName:(id)arg7 flags:(unsigned int)arg8 valueStrings:(id)arg9 dependentParameters:(id)arg10;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSXPCConnection *remoteParameterSynchronizerXPCConnection; // @synthesize remoteParameterSynchronizerXPCConnection=_remoteParameterSynchronizerXPCConnection;
 @property(nonatomic) _Bool _suppressObserverCallbacks; // @synthesize _suppressObserverCallbacks=__suppressObserverCallbacks;
 @property(nonatomic) struct AURemoteParameterObserver *remoteRecorderToken; // @synthesize remoteRecorderToken=_remoteRecorderToken;
@@ -43,8 +45,6 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *observationQueue; // @synthesize observationQueue=_observationQueue;
 @property(nonatomic) _Bool _autoCreatedForV2AU; // @synthesize _autoCreatedForV2AU=__autoCreatedForV2AU;
 @property(nonatomic) vector_66b3461a addrToParamIndex; // @synthesize addrToParamIndex=_addrToParamIndex;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)remoteSyncParameter:(unsigned long long)arg1 value:(float)arg2 extOriginator:(unsigned long long)arg3 hostTime:(unsigned long long)arg4 eventType:(unsigned int)arg5;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

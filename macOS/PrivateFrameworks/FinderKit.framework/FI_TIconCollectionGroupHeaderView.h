@@ -32,11 +32,11 @@ __attribute__((visibility("hidden")))
 + (id)titleColor;
 + (id)titleFont;
 + (id)nibName;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isCollapseButtonHiddenManually) _Bool collapseButtonHiddenManually; // @synthesize collapseButtonHiddenManually=_isCollapseButtonHiddenManually;
 @property(nonatomic, getter=isCollapsed) _Bool collapsed; // @synthesize collapsed=_isCollapsed;
 @property(nonatomic) unsigned long long nodeCount; // @synthesize nodeCount=_nodeCount;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property __weak NSButton *sectionCollapseButton;
 @property(readonly) NSString *reuseIdentifier;
 - (void)updateLayer;

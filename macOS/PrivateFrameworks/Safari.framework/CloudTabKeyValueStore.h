@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedCloudTabKeyValueStore;
-@property(copy, nonatomic) CDUnknownBlockType keyValueStoreChangeNotificationHandler; // @synthesize keyValueStoreChangeNotificationHandler=_keyValueStoreChangeNotificationHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType keyValueStoreChangeNotificationHandler; // @synthesize keyValueStoreChangeNotificationHandler=_keyValueStoreChangeNotificationHandler;
 - (void)_cachedDictionaryRepresentationWasUpdated;
 - (void)_updateCachedDictionaryRepresentationFromKeyValueStore:(long long)arg1;
 - (void)removeObjectInKeyValueStore:(long long)arg1 forKey:(id)arg2 blockUntilDone:(BOOL)arg3 bypassingCache:(BOOL)arg4;

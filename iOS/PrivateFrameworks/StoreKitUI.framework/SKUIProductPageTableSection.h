@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     _Bool _expanded;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (id)textBoxTableViewCellForTableView:(id)arg1 indexPath:(id)arg2;
 - (id)selectionActionForTableView:(id)arg1 indexPath:(id)arg2;
 - (double)heightForTextLayout:(id)arg1 isExpanded:(_Bool)arg2;

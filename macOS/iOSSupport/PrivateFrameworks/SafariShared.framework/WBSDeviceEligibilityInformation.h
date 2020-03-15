@@ -15,10 +15,10 @@
     NSArray *_devices;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasWindowsDevices; // @synthesize hasWindowsDevices=_hasWindowsDevices;
 @property(readonly, nonatomic) NSArray *devices; // @synthesize devices=_devices;
 @property(readonly, nonatomic) NSDate *dateOfLatestDAVAccessByIneligibleWindowsDevice; // @synthesize dateOfLatestDAVAccessByIneligibleWindowsDevice=_dateOfLatestDAVAccessByIneligibleWindowsDevice;
-- (void).cxx_destruct;
 - (id)description;
 - (CDStruct_4bcfbbae)potentiallyEligibleDevicesWithEligibleOperatingSystemVersionRanges:(id)arg1;
 - (id)initWithDeviceListResponseDictionary:(id)arg1;

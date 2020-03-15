@@ -25,6 +25,7 @@
     NSArray *_glyphTintShapeLayers;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *glyphTintShapeLayers; // @synthesize glyphTintShapeLayers=_glyphTintShapeLayers;
 @property(copy, nonatomic) NSArray *glyphTintBackgroundLayers; // @synthesize glyphTintBackgroundLayers=_glyphTintBackgroundLayers;
 @property(retain, nonatomic) UIColor *glyphTintColor; // @synthesize glyphTintColor=_glyphTintColor;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) MTMaterialShadowView *materialView; // @synthesize materialView=_materialView;
 @property(nonatomic) float sliderValue; // @synthesize sliderValue=_sliderValue;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)_updateGlyphWithStaticColor:(id)arg1 animationSettings:(id)arg2;
 - (void)_setGlyphTintColor:(id)arg1 animationDuration:(double)arg2;
 - (id)_visibleViewsForState:(unsigned long long)arg1;

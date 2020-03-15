@@ -59,11 +59,11 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDPResponseOperationHeader *header; // @synthesize header=_header;
 @property(retain, nonatomic) CKDPResponseOperationResult *result; // @synthesize result=_result;
 @property(retain, nonatomic) CKDPOperation *response; // @synthesize response=_response;
 @property(nonatomic) unsigned int operationCost; // @synthesize operationCost=_operationCost;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

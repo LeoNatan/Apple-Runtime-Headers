@@ -18,9 +18,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *sessionInfoQueue; // @synthesize sessionInfoQueue=_sessionInfoQueue;
-- (void).cxx_destruct;
 - (void)_stopMonitoring;
 - (void)_startMonitoring;
 - (void)CSAudioServerCrashMonitorDidReceiveServerRestart:(id)arg1;

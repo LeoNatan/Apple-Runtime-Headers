@@ -20,9 +20,9 @@
 + (BOOL)supportsSecureCoding;
 + (id)stringForActionType:(unsigned char)arg1;
 + (id)_actionFromResponseDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *actionParameters; // @synthesize actionParameters=_actionParameters;
 @property(readonly, nonatomic) unsigned char action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

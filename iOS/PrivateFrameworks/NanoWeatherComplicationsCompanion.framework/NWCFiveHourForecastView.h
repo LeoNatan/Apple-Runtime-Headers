@@ -19,10 +19,10 @@
 }
 
 + (unsigned long long)maximumHourlyConditionCount;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIStackView *horizontalStackView; // @synthesize horizontalStackView=_horizontalStackView;
 @property(retain, nonatomic) NSArray *hourlyForecastViews; // @synthesize hourlyForecastViews=_hourlyForecastViews;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NWMDataFormatter> dataFormatter;
 @property(readonly, nonatomic) Class hourlyForecastViewClass;
 - (void)updateMonochromeColor;

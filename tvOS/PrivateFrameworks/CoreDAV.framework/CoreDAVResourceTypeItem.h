@@ -19,13 +19,13 @@
 }
 
 + (id)copyParseRules;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *unauthenticated; // @synthesize unauthenticated=_unauthenticated;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *collection; // @synthesize collection=_collection;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *principal; // @synthesize principal=_principal;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *shared; // @synthesize shared=_shared;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *searchAddressBook; // @synthesize searchAddressBook=_searchAddressBook;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *addressBook; // @synthesize addressBook=_addressBook;
-- (void).cxx_destruct;
 - (_Bool)isTypeWithNameSpace:(id)arg1 andName:(id)arg2;
 @property(readonly, nonatomic) NSSet *stringSet;
 - (void)write:(id)arg1;

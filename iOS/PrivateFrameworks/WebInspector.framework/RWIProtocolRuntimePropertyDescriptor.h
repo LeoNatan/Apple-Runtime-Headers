@@ -15,15 +15,15 @@
 @property(nonatomic) _Bool nativeGetter;
 @property(retain, nonatomic) RWIProtocolRuntimeRemoteObject *symbol;
 @property(nonatomic) _Bool isOwn;
-@property(nonatomic) _Bool wasThrown;
 @property(nonatomic) _Bool enumerable;
 @property(nonatomic) _Bool configurable;
+@property(nonatomic) _Bool wasThrown;
 @property(retain, nonatomic) RWIProtocolRuntimeRemoteObject *set;
 @property(retain, nonatomic) RWIProtocolRuntimeRemoteObject *get;
 @property(nonatomic) _Bool writable;
 @property(retain, nonatomic) RWIProtocolRuntimeRemoteObject *value;
 @property(copy, nonatomic) NSString *name;
-- (id)initWithName:(id)arg1 configurable:(_Bool)arg2 enumerable:(_Bool)arg3;
+- (id)initWithName:(id)arg1;
 
 @end
 

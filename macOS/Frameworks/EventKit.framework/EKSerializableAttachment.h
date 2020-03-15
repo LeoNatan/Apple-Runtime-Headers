@@ -15,9 +15,9 @@
 }
 
 + (id)classesForKey;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *contentTypeFromServer; // @synthesize contentTypeFromServer=_contentTypeFromServer;
 @property(retain, nonatomic) NSURL *urlOnDisk; // @synthesize urlOnDisk=_urlOnDisk;
-- (void).cxx_destruct;
 - (id)createAttachment;
 - (id)initWithAttachment:(id)arg1;
 

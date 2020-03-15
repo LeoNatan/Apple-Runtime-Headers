@@ -19,8 +19,8 @@
 }
 
 + (id)reuseIdentifier;
-@property(nonatomic) struct CGRect crop; // @synthesize crop=_crop;
 - (void).cxx_destruct;
+@property(nonatomic) struct CGRect crop; // @synthesize crop=_crop;
 @property(retain, nonatomic) UIImage *photo;
 - (void)setSelected:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;

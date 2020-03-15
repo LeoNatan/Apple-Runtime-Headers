@@ -20,6 +20,7 @@
     PHImportTimerCollection *_timers;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char importType; // @synthesize importType=_importType;
 @property(retain, nonatomic) PHImportTimerCollection *timers; // @synthesize timers=_timers;
 @property(retain, nonatomic) NSString *downloadedPath; // @synthesize downloadedPath=_downloadedPath;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) NSMutableArray *relatedRecords; // @synthesize relatedRecords=_relatedRecords;
 @property(retain, nonatomic) PHImportAsset *importAsset; // @synthesize importAsset=_importAsset;
 @property(retain, nonatomic) NSString *assetIdentifier; // @synthesize assetIdentifier=_assetIdentifier;
-- (void).cxx_destruct;
 @property(readonly) BOOL canReference;
 - (BOOL)needsDownload;
 - (id)allImportRecords;

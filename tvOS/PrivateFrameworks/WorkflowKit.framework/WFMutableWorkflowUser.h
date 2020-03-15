@@ -18,13 +18,13 @@
     long long mainIdentity;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long mainIdentity; // @synthesize mainIdentity;
 @property(retain, nonatomic) NSURL *profileImageURL; // @synthesize profileImageURL;
 @property(retain, nonatomic) NSURL *websiteURL; // @synthesize websiteURL;
 @property(copy, nonatomic) NSString *twitter; // @synthesize twitter;
 @property(copy, nonatomic) NSString *fullName; // @synthesize fullName;
 @property(copy, nonatomic) NSString *email; // @synthesize email;
-- (void).cxx_destruct;
 
 @end
 

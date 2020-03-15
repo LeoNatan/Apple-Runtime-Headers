@@ -29,6 +29,7 @@
     unsigned long long __memoriesStyle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long _memoriesStyle; // @synthesize _memoriesStyle=__memoriesStyle;
 @property(readonly, nonatomic) PXFeedDateFormatter *_dateFormatter; // @synthesize _dateFormatter=__dateFormatter;
 @property(readonly, nonatomic) PXPhotoKitUIMediaProvider *_mediaProvider; // @synthesize _mediaProvider=__mediaProvider;
@@ -37,7 +38,6 @@
 @property(nonatomic) _Bool canRenderTextAsynchronously; // @synthesize canRenderTextAsynchronously=_canRenderTextAsynchronously;
 @property(readonly, nonatomic) PXUIScrollViewController *scrollViewController; // @synthesize scrollViewController=_scrollViewController;
 @property(readonly, nonatomic) PXReusableObjectPool *viewTilePool; // @synthesize viewTilePool=_viewTilePool;
-- (void).cxx_destruct;
 - (void)_dateFormatterChanged:(id)arg1;
 - (void)_updateDateLabelTile:(id)arg1;
 - (void)_getImageRequester:(id *)arg1 title:(id *)arg2 subtitle:(id *)arg3 forIndexPath:(struct PXSimpleIndexPath)arg4 dataSource:(id)arg5;

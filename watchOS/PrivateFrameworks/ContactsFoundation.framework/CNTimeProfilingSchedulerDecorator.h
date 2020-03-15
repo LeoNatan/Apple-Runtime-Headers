@@ -18,9 +18,9 @@
 }
 
 + (id)os_log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long blockCounter; // @synthesize blockCounter=_blockCounter;
 @property(readonly, nonatomic) id <CNScheduler> scheduler; // @synthesize scheduler=_scheduler;
-- (void).cxx_destruct;
 @property(readonly) double timestamp;
 - (id)afterDelay:(double)arg1 performBlock:(CDUnknownBlockType)arg2 qualityOfService:(unsigned int)arg3;
 - (id)afterDelay:(double)arg1 performBlock:(CDUnknownBlockType)arg2;

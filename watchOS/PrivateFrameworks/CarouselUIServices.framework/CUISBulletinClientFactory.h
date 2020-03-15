@@ -31,9 +31,9 @@
 + (_Bool)sendBulletinsToApp:(id)arg1;
 + (id)missedBulletinObserver;
 + (void)prepareForBulletins;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int requestedDefaultActionMenu; // @synthesize requestedDefaultActionMenu=_requestedDefaultActionMenu;
 @property(nonatomic) __weak id <CUISBulletinClientFactoryDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)alertSuppressionContexts;
 - (void)addNotification:(id)arg1 withSoundPolicy:(unsigned int)arg2;
 - (void)addBulletin:(id)arg1 withSoundPolicy:(unsigned int)arg2;

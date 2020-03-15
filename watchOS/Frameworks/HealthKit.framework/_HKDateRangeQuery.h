@@ -22,7 +22,7 @@
 - (_Bool)queue_shouldDeactivateAfterInitialResults;
 - (void)queue_validate;
 - (void)queue_queryDidDeactivate:(id)arg1;
-- (void)client_deliverDateRangeDictionary:(struct NSDictionary *)arg1 forQuery:(id)arg2;
+- (void)client_deliverDateRangeDictionary:(id)arg1 forQuery:(id)arg2;
 - (id)initWithHandler:(CDUnknownBlockType)arg1;
 
 // Remaining properties

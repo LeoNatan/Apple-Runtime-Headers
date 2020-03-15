@@ -24,6 +24,7 @@
     struct CGSize _lastResize;
 }
 
+- (void).cxx_destruct;
 @property struct CGSize lastResize; // @synthesize lastResize=_lastResize;
 @property unsigned long long automaticResizeDisableCount; // @synthesize automaticResizeDisableCount=_automaticResizeDisableCount;
 @property BOOL resizePending; // @synthesize resizePending=_resizePending;
@@ -32,7 +33,6 @@
 @property double automaticResizeDelay; // @synthesize automaticResizeDelay=_automaticResizeDelay;
 @property(nonatomic) __weak id <AKAuthorizationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) AKAuthorizationPresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
-- (void).cxx_destruct;
 - (void)performPasswordAuthenticationForPaneViewController:(id)arg1;
 - (void)performAppleIDAuthorizationForPaneViewController:(id)arg1;
 - (void)authorizationPaneViewController:(id)arg1 pushEditScope:(id)arg2 presentationContext:(id)arg3 options:(id)arg4;

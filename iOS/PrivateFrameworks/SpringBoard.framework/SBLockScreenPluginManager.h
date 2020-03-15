@@ -23,11 +23,11 @@
     _Bool _enabled;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) __weak id <SBLockScreenPluginManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) SBLockScreenPlugin *displayedPlugin; // @synthesize displayedPlugin=_displayedPlugin;
 @property(readonly, nonatomic) SBLockScreenPlugin *activePlugin; // @synthesize activePlugin=_activePlugin;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

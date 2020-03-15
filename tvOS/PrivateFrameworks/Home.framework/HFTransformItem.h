@@ -15,10 +15,10 @@
     CDUnknownBlockType _resultsTransformBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType resultsTransformBlock; // @synthesize resultsTransformBlock=_resultsTransformBlock;
 @property(copy, nonatomic) CDUnknownBlockType optionsTransformBlock; // @synthesize optionsTransformBlock=_optionsTransformBlock;
 @property(retain, nonatomic) HFItem *sourceItem; // @synthesize sourceItem=_sourceItem;
-- (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithSourceItem:(id)arg1 updateOptionsTransformBlock:(CDUnknownBlockType)arg2 resultsTransformBlock:(CDUnknownBlockType)arg3;

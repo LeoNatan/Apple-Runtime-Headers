@@ -21,6 +21,7 @@
     NSString *_toneIdentifierForDeemphasizingAlert;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isDeemphasized) _Bool deemphasized; // @synthesize deemphasized=_deemphasized;
 @property(nonatomic, getter=isBeingDeemphasized) _Bool beingDeemphasized; // @synthesize beingDeemphasized=_beingDeemphasized;
 @property(copy, nonatomic) NSString *toneIdentifierForDeemphasizingAlert; // @synthesize toneIdentifierForDeemphasizingAlert=_toneIdentifierForDeemphasizingAlert;
@@ -29,7 +30,6 @@
 @property(nonatomic) __weak id <TLAlertPlaybackObserver> playbackObserver; // @synthesize playbackObserver=_playbackObserver;
 @property(retain, nonatomic) TLAlertPlaybackCompletionContext *playbackCompletionContext; // @synthesize playbackCompletionContext=_playbackCompletionContext;
 @property(retain, nonatomic) TLSystemSound *sound; // @synthesize sound=_sound;
-- (void).cxx_destruct;
 
 @end
 

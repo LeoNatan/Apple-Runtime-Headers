@@ -19,10 +19,10 @@
 }
 
 + (_Bool)handlesComplicationTemplate:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long highlightMode; // @synthesize highlightMode=_highlightMode;
 @property(readonly) NSDate *timeTravelDate; // @synthesize timeTravelDate=_timeTravelDate;
 @property(retain, nonatomic) CLKComplicationTemplate *complicationTemplate; // @synthesize complicationTemplate=_complicationTemplate;
-- (void).cxx_destruct;
 - (void)_propagateColorSchemeToSubviews:(id)arg1;
 - (void)_enumerateColoringViewsSubviewsWithBlock:(CDUnknownBlockType)arg1 invertedHighlight:(_Bool)arg2;
 - (_Bool)_useInvertedHighlightForColorScheme:(id)arg1;

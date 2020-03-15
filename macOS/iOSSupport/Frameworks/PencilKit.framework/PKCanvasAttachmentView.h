@@ -16,11 +16,11 @@
     NSMutableArray *_fullyRenderedCompletionBlocks;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *fullyRenderedCompletionBlocks; // @synthesize fullyRenderedCompletionBlocks=_fullyRenderedCompletionBlocks;
 @property(nonatomic) double drawingWidth; // @synthesize drawingWidth=_drawingWidth;
 @property(nonatomic) BOOL _wantsFullyRenderedNotification; // @synthesize _wantsFullyRenderedNotification=__wantsFullyRenderedNotification;
 @property(nonatomic) __weak PKCanvasView *canvasView; // @synthesize canvasView=_canvasView;
-- (void).cxx_destruct;
 - (double)drawingScale;
 - (BOOL)disableTileAnimations;
 - (void)fullyRendered;

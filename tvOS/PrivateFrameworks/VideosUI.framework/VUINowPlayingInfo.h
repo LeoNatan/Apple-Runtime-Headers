@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     UIViewController<TVMediaControllerHosting> *_mediaControllerHost;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController<TVMediaControllerHosting> *mediaControllerHost; // @synthesize mediaControllerHost=_mediaControllerHost;
 @property(readonly, nonatomic) VUIMediaInfo *mediaInfo; // @synthesize mediaInfo=_mediaInfo;
 @property(readonly, nonatomic) NSObject<TVPAVFPlayback> *player; // @synthesize player=_player;
 @property(readonly, nonatomic) AVPlayerViewController *avPlayerViewController; // @synthesize avPlayerViewController=_avPlayerViewController;
-- (void).cxx_destruct;
 - (id)initWithMediaInfo:(id)arg1 player:(id)arg2 avPlayerViewController:(id)arg3;
 
 @end

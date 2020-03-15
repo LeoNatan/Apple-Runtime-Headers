@@ -18,8 +18,8 @@
     UIButton *_passwordButton;
 }
 
-@property(readonly, nonatomic) UIButton *passwordButton; // @synthesize passwordButton=_passwordButton;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIButton *passwordButton; // @synthesize passwordButton=_passwordButton;
 - (void)_setupConstraints;
 - (void)setHidden:(_Bool)arg1;
 - (void)updateConstraints;

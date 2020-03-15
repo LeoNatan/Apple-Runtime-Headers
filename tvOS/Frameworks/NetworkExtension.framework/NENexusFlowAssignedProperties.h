@@ -13,8 +13,8 @@
     NWEndpoint *_localEndpoint;
 }
 
-@property(retain) NWEndpoint *localEndpoint; // @synthesize localEndpoint=_localEndpoint;
 - (void).cxx_destruct;
+@property(retain) NWEndpoint *localEndpoint; // @synthesize localEndpoint=_localEndpoint;
 
 @end
 

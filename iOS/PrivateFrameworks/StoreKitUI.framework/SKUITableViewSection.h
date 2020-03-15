@@ -15,10 +15,10 @@
     long long _sectionIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long sectionIndex; // @synthesize sectionIndex=_sectionIndex;
 @property(nonatomic) _Bool hidesHeaderView; // @synthesize hidesHeaderView=_hidesHeaderView;
 @property(nonatomic) __weak id <SKUITableViewSectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forIndexPath:(id)arg3;
 - (id)tableViewCellForTableView:(id)arg1 indexPath:(id)arg2;
 @property(readonly, nonatomic) long long numberOfRowsInSection;

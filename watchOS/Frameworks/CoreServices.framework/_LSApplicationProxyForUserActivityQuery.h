@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 + (_Bool)supportsSecureCoding;
 + (id)queryWithActivityType:(id)arg1;
 + (id)queryWithDomainName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *activityType; // @synthesize activityType=_activityType;
 @property(readonly, copy, nonatomic) NSString *domainName; // @synthesize domainName=_domainName;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

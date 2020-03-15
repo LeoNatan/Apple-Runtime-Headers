@@ -19,10 +19,10 @@
 
 + (id)featureForAllArticles;
 + (id)featureForTopicID:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *key; // @synthesize key=_key;
 @property(nonatomic) _Bool queryable; // @synthesize queryable=_queryable;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *topicID;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;

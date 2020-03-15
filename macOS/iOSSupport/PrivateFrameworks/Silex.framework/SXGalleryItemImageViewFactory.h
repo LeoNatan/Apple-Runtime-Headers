@@ -17,9 +17,9 @@
     id <SWReachabilityProvider> _reachabilityProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SWReachabilityProvider> reachabilityProvider; // @synthesize reachabilityProvider=_reachabilityProvider;
 @property(readonly, nonatomic) id <SXResourceDataSourceProvider> resourceDataSourceProvider; // @synthesize resourceDataSourceProvider=_resourceDataSourceProvider;
-- (void).cxx_destruct;
 - (id)imageViewForGalleryItem:(id)arg1 imageResource:(id)arg2;
 - (id)initWithResourceDataSourceProvider:(id)arg1 reachabilityProvider:(id)arg2;
 

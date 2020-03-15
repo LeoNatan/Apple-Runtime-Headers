@@ -17,9 +17,9 @@
     HFColorPalette *_colorPalette;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPendingColorPaletteChangeDelegateNotification; // @synthesize hasPendingColorPaletteChangeDelegateNotification=_hasPendingColorPaletteChangeDelegateNotification;
 @property(retain, nonatomic) HFColorPalette *colorPalette; // @synthesize colorPalette=_colorPalette;
-- (void).cxx_destruct;
 - (void)cancelButtonTappedToDismissColorViewController;
 - (void)controlView:(id)arg1 didSelectColorAtIndexPath:(id)arg2;
 - (void)presentFullColorViewForControlView:(id)arg1 selectedColorIndexPath:(id)arg2;

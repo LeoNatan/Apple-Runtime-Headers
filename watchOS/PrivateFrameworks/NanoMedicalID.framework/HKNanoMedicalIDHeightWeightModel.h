@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)cellIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *height; // @synthesize height=_height;
 @property(retain, nonatomic) NSString *weight; // @synthesize weight=_weight;
-- (void).cxx_destruct;
 - (id)initWithHeight:(id)arg1 weight:(id)arg2;
 
 @end

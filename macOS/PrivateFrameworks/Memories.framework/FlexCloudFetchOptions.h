@@ -15,10 +15,10 @@
     NSArray *_sortDescriptors;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL localOnly; // @synthesize localOnly=_localOnly;
 @property(retain, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
-- (void).cxx_destruct;
 
 @end
 

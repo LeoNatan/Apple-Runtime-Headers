@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WebUI/WBSUserMediaPermissionController.h>
+#import <SafariSharedUI/WBSUserMediaPermissionController.h>
 
 @interface _SFUserMediaPermissionController : WBSUserMediaPermissionController
 {
 }
 
+- (void)_didRetrieveUserMediaPermission:(unsigned int)arg1 forDevices:(unsigned int)arg2 url:(id)arg3 mainFrameURL:(id)arg4 decisionHandler:(CDUnknownBlockType)arg5 dialogPresenter:(id)arg6;
 - (void)requestUserMediaAuthorizationForDevices:(unsigned int)arg1 url:(id)arg2 mainFrameURL:(id)arg3 decisionHandler:(CDUnknownBlockType)arg4 dialogPresenter:(id)arg5;
 - (void)coalescedAsynchronousWriter:(id)arg1 didFinishWritingData:(id)arg2;
 - (void)savePendingChanges;

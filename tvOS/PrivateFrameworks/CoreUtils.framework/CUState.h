@@ -17,9 +17,9 @@
     CUState *_parent;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (id)description;
 - (void)dealloc;

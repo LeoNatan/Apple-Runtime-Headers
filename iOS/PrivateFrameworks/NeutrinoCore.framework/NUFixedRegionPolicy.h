@@ -17,10 +17,10 @@
     CDStruct_1e2b2e48 _scale;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NURegion *region; // @synthesize region=_region;
 @property long long roundingPolicy; // @synthesize roundingPolicy=_roundingPolicy;
 @property CDStruct_912cb5d2 scale; // @synthesize scale=_scale;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)regionForGeometry:(id)arg1;
 - (id)initWithRegion:(id)arg1;

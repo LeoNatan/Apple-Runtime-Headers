@@ -11,8 +11,8 @@
 __attribute__((visibility("hidden")))
 @interface FontAssetDownloadManager : NSObject
 {
-    // Error parsing type: {TCFRef<const __CFArray *>="fRef"{atomic<const __CFArray *>="__a_"A^{__CFArray}}}, name: fDescriptors
-    // Error parsing type: {TCFRef<const __CFSet *>="fRef"{atomic<const __CFSet *>="__a_"A^{__CFSet}}}, name: fMandatoryAttributes
+    // Error parsing type: {TCFRef<const __CFArray *>="fRef"{atomic<const __CFArray *>="__a_"{__cxx_atomic_impl<const __CFArray *, std::__1::__cxx_atomic_base_impl<const __CFArray *> >="__a_value"A^{__CFArray}}}}, name: fDescriptors
+    // Error parsing type: {TCFRef<const __CFSet *>="fRef"{atomic<const __CFSet *>="__a_"{__cxx_atomic_impl<const __CFSet *, std::__1::__cxx_atomic_base_impl<const __CFSet *> >="__a_value"A^{__CFSet}}}}, name: fMandatoryAttributes
     CDUnknownBlockType fProgressCallbackBlock;
     NSMutableDictionary *fProgressParams;
     NSMutableDictionary *fDownloadOptions;

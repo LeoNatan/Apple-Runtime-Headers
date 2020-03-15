@@ -28,6 +28,7 @@
     NSObject<OS_dispatch_queue> *_synchronizationQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool earnedInstanceStoreDidFinishInitialFetch; // @synthesize earnedInstanceStoreDidFinishInitialFetch=_earnedInstanceStoreDidFinishInitialFetch;
 @property(nonatomic) _Bool templateStoreDidFinishInitialFetch; // @synthesize templateStoreDidFinishInitialFetch=_templateStoreDidFinishInitialFetch;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *synchronizationQueue; // @synthesize synchronizationQueue=_synchronizationQueue;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) ACHTemplateAssetRegistry *templateAssetRegistry; // @synthesize templateAssetRegistry=_templateAssetRegistry;
 @property(retain, nonatomic) ACHEarnedInstanceStore *earnedInstanceStore; // @synthesize earnedInstanceStore=_earnedInstanceStore;
 @property(retain, nonatomic) ACHTemplateStore *templateStore; // @synthesize templateStore=_templateStore;
-- (void).cxx_destruct;
 - (_Bool)_queue_addProgressAndGoalToAchievement:(id)arg1;
 - (void)progressProviderDidUpdateProgressValues:(id)arg1;
 - (void)_queue_removeEarnedInstancesFromLocalStore:(id)arg1;

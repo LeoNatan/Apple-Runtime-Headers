@@ -22,6 +22,7 @@
     NSArray *_viewsRepresentingContentBackground;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *viewsRepresentingContentBackground; // @synthesize viewsRepresentingContentBackground=_viewsRepresentingContentBackground;
 @property(copy, nonatomic) NSArray *otherBarButtonItems; // @synthesize otherBarButtonItems=_otherBarButtonItems;
 @property(copy, nonatomic) NSArray *cancelBarButtonItems; // @synthesize cancelBarButtonItems=_cancelBarButtonItems;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSArray *viewsRepresentingBackButton; // @synthesize viewsRepresentingBackButton=_viewsRepresentingBackButton;
 @property(retain, nonatomic) UINavigationItem *backItem; // @synthesize backItem=_backItem;
 @property(retain, nonatomic) UINavigationItem *topItem; // @synthesize topItem=_topItem;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

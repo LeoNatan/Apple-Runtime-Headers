@@ -19,9 +19,9 @@
 
 + (id)keyboardFocusedElement;
 + (id)keyboardFocusedApplicationElement;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <AXKKeyboardFocusSearchDelegate> searchDelegate; // @synthesize searchDelegate=_searchDelegate;
 @property(retain, nonatomic) AXFUIElement *accessibilityFocusedElement; // @synthesize accessibilityFocusedElement=_accessibilityFocusedElement;
-- (void).cxx_destruct;
 - (void)workspaceManager:(id)arg1 didUpdateFrontmostApplicationController:(id)arg2;
 - (id)init;
 

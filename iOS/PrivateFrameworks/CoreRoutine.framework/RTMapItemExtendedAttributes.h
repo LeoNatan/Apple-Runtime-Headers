@@ -22,12 +22,12 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)fingerprintLabelTypeToString:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) long long wifiFingerprintLabelType; // @synthesize wifiFingerprintLabelType=_wifiFingerprintLabelType;
 @property(nonatomic) double wifiConfidence; // @synthesize wifiConfidence=_wifiConfidence;
 @property(nonatomic) _Bool isMe; // @synthesize isMe=_isMe;
 @property(copy, nonatomic) NSString *addressIdentifier; // @synthesize addressIdentifier=_addressIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

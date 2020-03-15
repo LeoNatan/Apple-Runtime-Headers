@@ -24,7 +24,7 @@
 @property BOOL suspendSorting; // @synthesize suspendSorting=_suspendSorting;
 @property(copy) NSString *filterTerms; // @synthesize filterTerms=_filterTerms;
 @property(retain) id <ABPersonListHeadlining> headliner; // @synthesize headliner=_headliner;
-@property(copy) NSMutableDictionary *entriesByUID; // @synthesize entriesByUID=_entriesByUID;
+@property(retain) NSMutableDictionary *entriesByUID; // @synthesize entriesByUID=_entriesByUID;
 @property(copy) NSArray *sectionedEntries; // @synthesize sectionedEntries=_sectionedEntries;
 @property(copy, nonatomic) NSArray *entries; // @synthesize entries=_entries;
 - (void)removeEntriesFromReverseCache:(id)arg1;

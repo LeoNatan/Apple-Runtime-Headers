@@ -22,6 +22,7 @@
     NSString *_currentStorefront;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *currentStorefront; // @synthesize currentStorefront=_currentStorefront;
 @property(retain, nonatomic) CKStoreAccount *activeAccount; // @synthesize activeAccount=_activeAccount;
 @property(readonly, nonatomic) ASKCommerceAccountObserverProxy *changeObserver; // @synthesize changeObserver=_changeObserver;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *notifyQueue; // @synthesize notifyQueue=_notifyQueue;
 @property(readonly, copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
-- (void).cxx_destruct;
 - (void)accountStore:(id)arg1 primaryAccountChanged:(id)arg2;
 - (void)dealloc;
 - (id)initWithBlock:(CDUnknownBlockType)arg1;

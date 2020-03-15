@@ -17,12 +17,12 @@
     NSMutableOrderedSet *_selectionStack;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableOrderedSet *selectionStack; // @synthesize selectionStack=_selectionStack;
 @property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
 @property(retain, nonatomic) NSArray *images; // @synthesize images=_images;
 @property(nonatomic) unsigned long long selectedSegment; // @synthesize selectedSegment=_selectedSegment;
 @property(nonatomic) unsigned long long selectionType; // @synthesize selectionType=_selectionType;
-- (void).cxx_destruct;
 - (unsigned long long)segmentCount;
 - (id)segmentForTag:(long long)arg1;
 - (long long)tagForSegment:(unsigned long long)arg1;

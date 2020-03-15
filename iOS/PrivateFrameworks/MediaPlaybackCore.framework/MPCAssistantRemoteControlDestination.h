@@ -27,6 +27,7 @@
 + (id)podcastsApplicationDestination;
 + (id)watchRadioApplicationDestination;
 + (id)systemMediaApplicationDestination;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool singleGroup; // @synthesize singleGroup=_singleGroup;
 @property(readonly, nonatomic) NSString *outputGroupID; // @synthesize outputGroupID=_outputGroupID;
 @property(readonly, nonatomic) NSArray *outputGroups; // @synthesize outputGroups=_outputGroups;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) void *origin; // @synthesize origin=_origin;
 @property(readonly, nonatomic) NSString *playerID; // @synthesize playerID=_playerID;
 @property(readonly, nonatomic) NSString *appBundleID; // @synthesize appBundleID=_appBundleID;
-- (void).cxx_destruct;
 - (void)_getCompanionOrigin:(CDUnknownBlockType)arg1;
 - (id)_copyWithZone:(struct _NSZone *)arg1 usingConcreteClass:(Class)arg2;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

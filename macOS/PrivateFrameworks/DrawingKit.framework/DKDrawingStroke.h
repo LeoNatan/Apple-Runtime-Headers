@@ -16,8 +16,8 @@
 }
 
 + (id)drawingStrokeWithData:(id)arg1 count:(unsigned long long)arg2;
-@property(readonly) NSMutableArray *strokePoints; // @synthesize strokePoints=_strokePoints;
 - (void).cxx_destruct;
+@property(readonly) NSMutableArray *strokePoints; // @synthesize strokePoints=_strokePoints;
 - (id)_decodeDKEncodedDrawingPointDataAsArray:(id)arg1 count:(long long)arg2;
 - (id)_encodePointsDrawingPointData:(id)arg1;
 - (id)encodedBrushStroke;

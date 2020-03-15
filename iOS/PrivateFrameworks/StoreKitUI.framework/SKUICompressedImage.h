@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UIColor *_borderColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) long long cornerType; // @synthesize cornerType=_cornerType;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

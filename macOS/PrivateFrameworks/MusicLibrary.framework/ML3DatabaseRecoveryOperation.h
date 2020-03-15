@@ -14,9 +14,9 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (void)_recreateDatabaseWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_updateLastCorruptionRestoreAttemptDate;
 - (id)_lastCorruptionRestoreAttemptDate;

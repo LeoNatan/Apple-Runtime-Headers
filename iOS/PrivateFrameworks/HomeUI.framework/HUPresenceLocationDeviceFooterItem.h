@@ -16,11 +16,11 @@
     HMHome *_home;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(nonatomic) _Bool useSingleUserStyle; // @synthesize useSingleUserStyle=_useSingleUserStyle;
 @property(retain, nonatomic) HUPresenceCurrentUserLocationDevice *selectedLocationDevice; // @synthesize selectedLocationDevice=_selectedLocationDevice;
 @property(readonly, nonatomic) HULocationDeviceManager *locationDeviceManager; // @synthesize locationDeviceManager=_locationDeviceManager;
-- (void).cxx_destruct;
 - (id)_homeHubNeedsUpdateWarningText;
 - (id)_someUsersNeedSoftwareUpdateWarningText;
 - (id)_locationDeviceTextForDeviceNameString:(id)arg1;

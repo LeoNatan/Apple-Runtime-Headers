@@ -16,12 +16,13 @@
     NSString *_userAltDSID;
 }
 
++ (void)currentUserWithCompletion:(CDUnknownBlockType)arg1;
 + (id)currentUser;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *userAltDSID; // @synthesize userAltDSID=_userAltDSID;
 @property(readonly, copy, nonatomic) NSNumber *userDSID; // @synthesize userDSID=_userDSID;
 @property(readonly, copy, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;
 @property(readonly, copy, nonatomic) NSString *givenName; // @synthesize givenName=_givenName;
-- (void).cxx_destruct;
 - (id)initWithGivenName:(id)arg1 familyName:(id)arg2 userDSID:(id)arg3 userAltDSID:(id)arg4;
 
 @end

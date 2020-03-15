@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSArray *_uninstalledSources;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *uninstalledSources; // @synthesize uninstalledSources=_uninstalledSources;
 @property(retain, nonatomic) HKSourceListDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) WDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

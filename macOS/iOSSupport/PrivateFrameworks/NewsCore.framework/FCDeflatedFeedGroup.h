@@ -20,11 +20,11 @@
     FCSharedStringIndex *_sharedStrings;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCSharedStringIndex *sharedStrings; // @synthesize sharedStrings=_sharedStrings;
 @property(readonly, nonatomic) NTPBFeedViewportGroup *pbGroup; // @synthesize pbGroup=_pbGroup;
 @property(readonly, copy, nonatomic) NSArray *videoPlaylistHeadlines; // @synthesize videoPlaylistHeadlines=_videoPlaylistHeadlines;
 @property(readonly, copy, nonatomic) NSArray *headlines; // @synthesize headlines=_headlines;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL usesPlaceholderHeadlines;
 @property(readonly, nonatomic) id <FCForYouBridgedFeedGroup> bridgedGroup;
 @property(readonly, copy, nonatomic) NSArray *issueIDs;

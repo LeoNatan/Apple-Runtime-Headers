@@ -26,9 +26,9 @@
 + (double)updateInterval;
 + (id)systemPredictorsSupportingFeatureSet:(id)arg1 relevanceEngine:(id)arg2;
 + (id)availablePredictors;
+- (void).cxx_destruct;
 @property(nonatomic) int beginUpdatesCount; // @synthesize beginUpdatesCount=_beginUpdatesCount;
 @property(setter=_setIsRunning:) _Bool _isRunning; // @synthesize _isRunning=__isRunning;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool running;
 - (void)_performUpdate;
 - (void)invalidate;

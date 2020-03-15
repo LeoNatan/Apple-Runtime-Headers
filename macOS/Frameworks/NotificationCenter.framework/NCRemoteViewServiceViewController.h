@@ -32,12 +32,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)createViewServiceWindow;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NCRemoteViewServiceSubsystem *subSystem; // @synthesize subSystem=_subSystem;
 @property(retain, nonatomic) NCRemoteViewServiceWindow *remoteWindow; // @synthesize remoteWindow=_remoteWindow;
 @property(nonatomic) __weak NSViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 @property(retain, nonatomic) NSViewController *clientViewController; // @synthesize clientViewController=_clientViewController;
 @property(readonly, nonatomic) NSView *rootContainer; // @synthesize rootContainer=_rootContainer;
-- (void).cxx_destruct;
 - (void)remoteViewServiceContainerView:(id)arg1 requestSizeChange:(struct CGSize)arg2 fenceRight:(id)arg3;
 - (void)remoteViewServiceContainerViewFrameChanged:(id)arg1;
 - (void)childViewControllerDidChangePreferredContentSize:(id)arg1;

@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *authorizationTokenType; // @synthesize authorizationTokenType=_tokenType;
 @property(readonly, nonatomic) AVOutputDevice *outputDevice; // @synthesize outputDevice=_outputDevice;
 @property(readonly, nonatomic) NSString *ID; // @synthesize ID=_uniqueID;
 @property __weak AVFigEndpointUIAgentOutputDeviceAuthorizationSessionImpl *parentAuthorizationSessionImpl; // @synthesize parentAuthorizationSessionImpl=_parentSession;
-- (void).cxx_destruct;
 - (void)enterTerminalStatus:(long long)arg1 error:(id)arg2;
 - (void)cancel;
 - (void)respondWithAuthorizationToken:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

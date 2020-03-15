@@ -27,6 +27,7 @@
 + (struct CGRect)sendButtonAlignmentRectInVerticalBounds:(struct CGRect)arg1 relativeCenterAlignmentPoint:(struct CGPoint)arg2 controlsCount:(unsigned long long)arg3;
 + (struct CGRect)sendButtonAlignmentRectInHorizontalBounds:(struct CGRect)arg1 relativeCenterAlignmentPoint:(struct CGPoint)arg2;
 + (id)supportedButtons;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setButtonsForLayout:) NSArray *_buttonsForLayout; // @synthesize _buttonsForLayout=__buttonsForLayout;
 @property(retain, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(readonly, nonatomic) UIButton *sendButton; // @synthesize sendButton=_sendButton;
@@ -39,7 +40,6 @@
 @property(nonatomic) _Bool shouldLayoutVertically; // @synthesize shouldLayoutVertically=_shouldLayoutVertically;
 @property(copy, nonatomic) NSSet *enabledButtons; // @synthesize enabledButtons=_enabledButtons;
 @property(copy, nonatomic) NSSet *availableButtons; // @synthesize availableButtons=_availableButtons;
-- (void).cxx_destruct;
 - (void)_updateBackgroundTransparency;
 - (void)_updateButtonText;
 - (void)_updateButtonVisibility;

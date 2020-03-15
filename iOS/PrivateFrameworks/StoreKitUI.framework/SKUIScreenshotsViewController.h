@@ -32,10 +32,10 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_trailerImages;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(nonatomic) __weak id <SKUIScreenshotsDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_setTrailerImage:(id)arg1 forIndex:(long long)arg2;
 - (void)_setImage:(id)arg1 forIndex:(long long)arg2;
 - (id)viewForZoomingInScrollView:(id)arg1;

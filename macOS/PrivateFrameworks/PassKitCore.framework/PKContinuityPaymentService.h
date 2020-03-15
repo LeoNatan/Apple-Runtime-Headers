@@ -21,8 +21,8 @@
 }
 
 + (id)sharedService;
-@property(nonatomic) __weak id <PKContinuityPaymentServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PKContinuityPaymentServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didReceiveCancellationForRemotePaymentRequest:(id)arg1;
 - (void)didReceivePaymentResult:(id)arg1 forRemotePaymentRequest:(id)arg2;
 - (void)didReceivePayment:(id)arg1 forRemotePaymentRequest:(id)arg2;

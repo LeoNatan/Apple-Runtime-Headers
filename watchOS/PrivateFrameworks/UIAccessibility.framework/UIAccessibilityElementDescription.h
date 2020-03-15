@@ -26,6 +26,7 @@
 + (id)_descriptionWithAXElement:(id)arg1;
 + (id)_descriptionWithLocalElement:(id)arg1;
 + (id)descriptionWithElement:(id)arg1 frameInContainerSpaceOrNil:(struct CGRect)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(nonatomic) struct CGRect frameInContainerSpace; // @synthesize frameInContainerSpace=_frameInContainerSpace;
 @property(retain, nonatomic) NSAttributedString *attributedValue; // @synthesize attributedValue=_attributedValue;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 @property(nonatomic) unsigned long long traits; // @synthesize traits=_traits;
 @property(nonatomic) _Bool isAccessibleElement; // @synthesize isAccessibleElement=_isAccessibleElement;
-- (void).cxx_destruct;
 - (id)convertToAccessibilityElementWithContainer:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

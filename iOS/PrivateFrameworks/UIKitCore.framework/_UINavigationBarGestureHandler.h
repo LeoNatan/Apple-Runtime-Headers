@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     long long _idiom;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long idiom; // @synthesize idiom=_idiom;
 @property(nonatomic) __weak id <_UINavigationBarGestureHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak UINavigationBar *navigationBar; // @synthesize navigationBar=_navigationBar;
-- (void).cxx_destruct;
 - (void)_handlePopSwipe:(id)arg1;
 - (_Bool)_gestureRecognizerShouldBegin:(id)arg1;
 - (id)initWithNavigationBar:(id)arg1;

@@ -19,10 +19,10 @@
 + (void)handleDistributedNotificationsWithHandlers:(id)arg1;
 + (void)handleDarwinNotificationsWithHandlers:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *modificationQueue; // @synthesize modificationQueue=_modificationQueue;
 @property(retain, nonatomic) NSMutableDictionary *distributedNotificationHandlers; // @synthesize distributedNotificationHandlers=_distributedNotificationHandlers;
 @property(retain, nonatomic) NSMutableDictionary *darwinNotificationHandlers; // @synthesize darwinNotificationHandlers=_darwinNotificationHandlers;
-- (void).cxx_destruct;
 - (void)_didReceiveDistributedNotification:(id)arg1 withContext:(id)arg2;
 - (void)_didReceiveDarwinNotification:(id)arg1;
 - (void)deregisterHandlerForDistributedNotification:(id)arg1;

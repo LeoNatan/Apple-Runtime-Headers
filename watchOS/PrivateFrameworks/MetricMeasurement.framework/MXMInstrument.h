@@ -19,10 +19,10 @@
 + (id)instrumentWithInstrumentals:(id)arg1;
 + (id)activeInstrument;
 + (void)load;
+- (void).cxx_destruct;
 @property(readonly) NSObject<OS_dispatch_queue> *instrumentalsQueue; // @synthesize instrumentalsQueue=_instrumentalsQueue;
 @property CDStruct_20a349ae *currentIteration; // @synthesize currentIteration=_currentIteration;
 @property(readonly, nonatomic) NSArray *instrumentals; // @synthesize instrumentals=_instrumentals;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)_validOptionKeys;
 - (id)_defaultValueWithOption:(id)arg1;

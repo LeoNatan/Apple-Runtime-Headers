@@ -52,6 +52,7 @@
 + (id)keyPathsForValuesAffecting_dummyPropertyForObservation;
 + (id)metadataWithDataRepresentation:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) LPSpecializationMetadata *specialization; // @synthesize specialization=_specialization;
 @property(copy, nonatomic) NSArray *audios; // @synthesize audios=_audios;
 @property(copy, nonatomic) NSArray *streamingVideos; // @synthesize streamingVideos=_streamingVideos;
@@ -81,7 +82,6 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(retain, nonatomic) NSURL *originalURL; // @synthesize originalURL=_originalURL;
-- (void).cxx_destruct;
 - (void)_decodeAllImagesWithMaximumSize:(struct CGSize)arg1;
 - (void)_populateMetadataForBackwardCompatibility;
 - (void)_enumerateAsynchronousFields:(CDUnknownBlockType)arg1;

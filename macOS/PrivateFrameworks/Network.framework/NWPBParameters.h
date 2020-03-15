@@ -64,6 +64,7 @@
 + (Class)requiredAgentsType;
 + (Class)prohibitedAgentsType;
 + (Class)prohibitedInterfacesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *metadata; // @synthesize metadata=_metadata;
 @property(retain, nonatomic) NSMutableArray *preferredAgents; // @synthesize preferredAgents=_preferredAgents;
 @property(retain, nonatomic) NSMutableArray *requiredAgents; // @synthesize requiredAgents=_requiredAgents;
@@ -89,7 +90,6 @@
 @property(retain, nonatomic) NSString *effectiveProcessUUID; // @synthesize effectiveProcessUUID=_effectiveProcessUUID;
 @property(retain, nonatomic) NSString *effectiveBundleID; // @synthesize effectiveBundleID=_effectiveBundleID;
 @property(retain, nonatomic) NSString *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

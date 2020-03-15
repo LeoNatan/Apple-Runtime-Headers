@@ -21,13 +21,13 @@
     NSString *_bundleIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) NSString *continueButtonTitle; // @synthesize continueButtonTitle=_continueButtonTitle;
 @property(retain, nonatomic) NSString *learnMoreText; // @synthesize learnMoreText=_learnMoreText;
 @property(retain, nonatomic) NSString *explanationText; // @synthesize explanationText=_explanationText;
 @property(nonatomic) unsigned long long supportedDomains; // @synthesize supportedDomains=_supportedDomains;
 @property(nonatomic) __weak id <SearchUIFirstTimeExperienceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (void)showPrivacyView;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;

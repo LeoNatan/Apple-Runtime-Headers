@@ -15,8 +15,8 @@
 
 + (_Bool)supportsComplicationFamily:(int)arg1;
 + (_Bool)handlesComplicationTemplate:(id)arg1;
-@property(readonly, nonatomic) NTKCurvedColoringLabel *outerLabel; // @synthesize outerLabel=_outerLabel;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NTKCurvedColoringLabel *outerLabel; // @synthesize outerLabel=_outerLabel;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(float)arg1;
 - (void)_editingDidEnd;

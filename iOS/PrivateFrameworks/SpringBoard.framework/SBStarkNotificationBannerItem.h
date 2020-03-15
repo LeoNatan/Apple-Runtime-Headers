@@ -15,9 +15,9 @@
     id <SBStarkNotificationBannerItemDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NCNotificationRequest *request; // @synthesize request=_request;
 @property(nonatomic) __weak id <SBStarkNotificationBannerItemDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_supportsSubActions;
 - (id)_allActions;
 - (id)_closeAction;

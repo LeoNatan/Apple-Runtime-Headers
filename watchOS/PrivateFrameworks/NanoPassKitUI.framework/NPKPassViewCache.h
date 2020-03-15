@@ -14,9 +14,9 @@
     NSMutableDictionary *_viewsByUniqueID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *viewsByUniqueID; // @synthesize viewsByUniqueID=_viewsByUniqueID;
 @property(retain, nonatomic) NSMutableArray *viewsInOrderOfUse; // @synthesize viewsInOrderOfUse=_viewsInOrderOfUse;
-- (void).cxx_destruct;
 - (void)_trimCachedViewsIfNecessary;
 - (void)clearCache;
 - (id)cachedPassViewForPass:(id)arg1;

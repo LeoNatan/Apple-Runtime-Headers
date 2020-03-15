@@ -23,6 +23,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isRebootRequired) BOOL rebootRequired; // @synthesize rebootRequired=_rebootRequired;
 @property(nonatomic, getter=isAllowed) BOOL allowed; // @synthesize allowed=_allowed;
 @property(readonly, nonatomic) NSArray *bundleIDs; // @synthesize bundleIDs=_bundleIDs;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) NSString *developerName; // @synthesize developerName=_developerName;
 @property(readonly, nonatomic) NSString *applicationPath; // @synthesize applicationPath=_applicationPath;
 @property(readonly, nonatomic) NSString *applicationName; // @synthesize applicationName=_applicationName;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic, getter=isModified) BOOL modified;

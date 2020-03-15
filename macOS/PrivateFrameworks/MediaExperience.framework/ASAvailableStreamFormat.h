@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)sampleRateRangeType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *sampleRateRanges; // @synthesize sampleRateRanges=_sampleRateRanges;
 @property(retain, nonatomic) ASStreamFormat *format; // @synthesize format=_format;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

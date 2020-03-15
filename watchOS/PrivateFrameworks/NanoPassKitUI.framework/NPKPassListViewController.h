@@ -10,6 +10,7 @@
 #import <NanoPassKitUI/NPKCollectionViewDelegate-Protocol.h>
 #import <NanoPassKitUI/NPKPassActionControllerProtocol-Protocol.h>
 #import <NanoPassKitUI/NPKPassCollectionViewCellDelegate-Protocol.h>
+#import <NanoPassKitUI/NPKPassDetailTableViewControllerDelegate-Protocol.h>
 #import <NanoPassKitUI/NPKPaymentStatusViewAnimationCoordinatorDelegate-Protocol.h>
 #import <NanoPassKitUI/NPKTransitPassesInfoManagerDelegate-Protocol.h>
 #import <NanoPassKitUI/NPKVASPassContactlessInterfaceManagerDelegate-Protocol.h>
@@ -17,11 +18,12 @@
 #import <NanoPassKitUI/PKGroupDelegate-Protocol.h>
 #import <NanoPassKitUI/PKGroupsControllerDelegate-Protocol.h>
 #import <NanoPassKitUI/PUICSnapshotDelegate-Protocol.h>
+#import <NanoPassKitUI/UICollectionViewDataSourcePrefetching-Protocol.h>
 #import <NanoPassKitUI/UICollectionViewDelegateFlowLayout-Protocol.h>
 
 @class NPKActivatingUIAssertion, NPKCollectionView, NPKPassDetailTableViewController, NPKPassGroupPagingBar, NPKPassListLayout, NPKPaymentReadyView, NPKPaymentStatusView, NPKPaymentStatusViewAnimationCoordinator, NPKPaymentThreePartTopView, NPKScrollOverFixedContentFadeAndScaleAnimationCoordinator, NPKSinglePassLayout, NPKSynchronizedAnimationCoordinator, NPKTransientPassAssertion, NPKTransitPassesInfoManager, NPKTransitionalSinglePassLayout, NPKVASPassContactlessInterfaceManager, NSArray, NSMutableArray, NSMutableDictionary, NSNumber, NSString, PKFieldDetector, PKGroupsController, PKPass, PUICContentUnavailableView, UIImageView, UILabel, UIView;
 
-@interface NPKPassListViewController : UIViewController <NPKCollectionViewDataSource, UICollectionViewDelegateFlowLayout, NPKPassCollectionViewCellDelegate, NPKCollectionViewDelegate, PKFieldDetectorObserver, PKGroupsControllerDelegate, PKGroupDelegate, NPKVASPassContactlessInterfaceManagerDelegate, NPKPaymentStatusViewAnimationCoordinatorDelegate, NPKTransitPassesInfoManagerDelegate, PUICSnapshotDelegate, NPKPassActionControllerProtocol>
+@interface NPKPassListViewController : UIViewController <NPKCollectionViewDataSource, UICollectionViewDelegateFlowLayout, NPKPassCollectionViewCellDelegate, NPKCollectionViewDelegate, PKFieldDetectorObserver, PKGroupsControllerDelegate, PKGroupDelegate, NPKVASPassContactlessInterfaceManagerDelegate, NPKPaymentStatusViewAnimationCoordinatorDelegate, NPKTransitPassesInfoManagerDelegate, UICollectionViewDataSourcePrefetching, NPKPassDetailTableViewControllerDelegate, PUICSnapshotDelegate, NPKPassActionControllerProtocol>
 {
     NSArray *_currentPasses;
     NSArray *_currentPaymentPasses;
@@ -76,6 +78,7 @@
     struct CGRect _frameForVASStatusView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool statusBarIsShown; // @synthesize statusBarIsShown=_statusBarIsShown;
 @property(retain, nonatomic) NPKSynchronizedAnimationCoordinator *animationCoordinatorFORVASReadyView; // @synthesize animationCoordinatorFORVASReadyView=_animationCoordinatorFORVASReadyView;
 @property(retain, nonatomic) NPKPaymentStatusViewAnimationCoordinator *animationCoordinatorForVASStatusView; // @synthesize animationCoordinatorForVASStatusView=_animationCoordinatorForVASStatusView;
@@ -121,7 +124,7 @@
 @property(readonly) NSArray *nonPaymentPassDescriptionsForDisplay; // @synthesize nonPaymentPassDescriptionsForDisplay=_nonPaymentPassDescriptionsForDisplay;
 @property(readonly) NSArray *paymentPassDescriptionsForDisplay; // @synthesize paymentPassDescriptionsForDisplay=_paymentPassDescriptionsForDisplay;
 @property(retain, nonatomic) NPKActivatingUIAssertion *activatingUIAssertion; // @synthesize activatingUIAssertion=_activatingUIAssertion;
-- (void).cxx_destruct;
+- (void)passDetailTableViewController:(id)arg1 didTopUpAmount:(id)arg2 forBalanceField:(id)arg3 passWithUniqueID:(id)arg4;
 - (void)transitPassesInfoManager:(id)arg1 didUpdatePassInfo:(id)arg2 withPassUniqueID:(id)arg3;
 - (void)group:(id)arg1 didMovePassFromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
 - (void)group:(id)arg1 didRemovePass:(id)arg2 atIndex:(unsigned int)arg3;
@@ -192,6 +195,7 @@
 - (void)_updateContentView;
 - (void)closeButtonTapped;
 - (void)setShowingCloseButton:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)collectionView:(id)arg1 prefetchItemsAtIndexPaths:(id)arg2;
 - (void)_auditCellZIndexes;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;

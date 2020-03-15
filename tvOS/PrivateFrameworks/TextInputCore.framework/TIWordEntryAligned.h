@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *alignedTouches; // @synthesize alignedTouches=_alignedTouches;
 @property(nonatomic) int inSessionAlignmentConfidence; // @synthesize inSessionAlignmentConfidence=_inSessionAlignmentConfidence;
 @property(nonatomic) _Bool isContinuousPathConversion; // @synthesize isContinuousPathConversion=_isContinuousPathConversion;
 @property(retain, nonatomic) TIWordEntry *originalWord; // @synthesize originalWord=_originalWord;
 @property(copy, nonatomic) NSString *expectedString; // @synthesize expectedString=_expectedString;
 @property(retain, nonatomic) NSArray *alignedKeyboardInputs; // @synthesize alignedKeyboardInputs=_alignedKeyboardInputs;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 - (void)encodeWithCoder:(id)arg1;

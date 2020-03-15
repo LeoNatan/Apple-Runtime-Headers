@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSArray *_extraConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *extraConstraints; // @synthesize extraConstraints=_extraConstraints;
 @property(nonatomic) _Bool largeText; // @synthesize largeText=_largeText;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)_updateLayout;
 - (void)_updateText;
 - (struct CGSize)intrinsicContentSize;

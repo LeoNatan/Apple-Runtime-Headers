@@ -42,12 +42,12 @@ __attribute__((visibility("hidden")))
     double minimumYawCorrectionAreaCoverage;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly) float yawCorrectionAreaCoverage; // @synthesize yawCorrectionAreaCoverage;
 @property(readonly) float pitchCorrectionAreaCoverage; // @synthesize pitchCorrectionAreaCoverage;
 @property double minimumYawCorrectionAreaCoverage; // @synthesize minimumYawCorrectionAreaCoverage;
 @property double minimumPitchCorrectionAreaCoverage; // @synthesize minimumPitchCorrectionAreaCoverage;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)computeTransform;
 - (void)computeGuides;
 - (void)clusterLineSegments;

@@ -15,10 +15,10 @@
     NSSet *_emailAddresses;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 
 @end
 

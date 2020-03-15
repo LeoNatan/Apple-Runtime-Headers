@@ -15,10 +15,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completionHandler;
 }
 
-@property(readonly, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-@property(readonly, nonatomic) double verifyTime; // @synthesize verifyTime=_verifyTime;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
+@property(readonly, nonatomic) double verifyTime; // @synthesize verifyTime=_verifyTime;
 @property(readonly, nonatomic) struct Certificate *intermediateCertificate;
 @property(readonly, nonatomic) struct Certificate *certificate;
 - (id)initWithCertificate:(Ref_46982f58 *)arg1 intermediateCertificate:(Ref_46982f58 *)arg2 verifyTime:(double)arg3 completionHandler:(CDUnknownBlockType)arg4;

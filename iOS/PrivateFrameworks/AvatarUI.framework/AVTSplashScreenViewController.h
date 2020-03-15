@@ -29,6 +29,7 @@
     AVTSplashScreenLayout *_currentLayout;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVTSplashScreenLayout *currentLayout; // @synthesize currentLayout=_currentLayout;
 @property(retain, nonatomic) AVPlayerViewController *secondaryPlayerViewController; // @synthesize secondaryPlayerViewController=_secondaryPlayerViewController;
 @property(retain, nonatomic) AVQueuePlayer *secondaryQueuePlayer; // @synthesize secondaryQueuePlayer=_secondaryQueuePlayer;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) __weak id <AVTSplashScreenViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)splashScreenLayoutDidChange:(id)arg1;
 - (void)didTapContinueButton:(id)arg1;
 - (void)applyLayout:(id)arg1;

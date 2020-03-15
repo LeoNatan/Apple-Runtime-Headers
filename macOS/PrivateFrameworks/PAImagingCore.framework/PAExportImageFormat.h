@@ -22,11 +22,11 @@
 + (id)tiff8Format;
 + (id)png8Format;
 + (id)jpegFormatWithQuality:(double)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL canIncludeMetadata; // @synthesize canIncludeMetadata=_canIncludeMetadata;
 @property(retain, nonatomic) NSString *pathExtension; // @synthesize pathExtension=_pathExtension;
 @property(nonatomic) struct __CFString *uti; // @synthesize uti=_uti;
 @property(nonatomic) unsigned long long bitsPerChannel; // @synthesize bitsPerChannel=_bitsPerChannel;
-- (void).cxx_destruct;
 - (id)debugDescription;
 
 @end

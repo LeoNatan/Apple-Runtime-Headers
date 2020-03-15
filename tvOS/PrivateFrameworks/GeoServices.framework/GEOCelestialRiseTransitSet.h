@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSDate *_set;
 }
 
-@property(readonly, nonatomic) struct CAARiseTransitSetDetails riseTransitSet; // @synthesize riseTransitSet=_riseTransitSet;
-@property(readonly, nonatomic) double julianDay; // @synthesize julianDay=_julianDay;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct CAARiseTransitSetDetails riseTransitSet; // @synthesize riseTransitSet=_riseTransitSet;
+@property(readonly, nonatomic) double julianDay; // @synthesize julianDay=_julianDay;
 - (id)description;
 - (double)_oldestEventInJulianDay;
 - (int)_numberOfEvents;

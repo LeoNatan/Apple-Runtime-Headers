@@ -22,11 +22,11 @@
 }
 
 + (id)animationCoordinatorWithDuration:(double)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(copy, nonatomic) CDUnknownBlockType animations; // @synthesize animations=_animations;
 @property(nonatomic, getter=isDurationInherited) _Bool durationInherited; // @synthesize durationInherited=_durationInherited;
 @property(nonatomic) unsigned long long animationOptions; // @synthesize animationOptions=_animationOptions;
-- (void).cxx_destruct;
 - (void)animationEnded:(_Bool)arg1;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

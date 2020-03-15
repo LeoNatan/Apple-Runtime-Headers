@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
     UIView *_fromView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int transition; // @synthesize transition=_transition;
 @property(nonatomic) _Bool removeFromView; // @synthesize removeFromView=_removeFromView;
 @property(nonatomic) __weak UIView *fromView; // @synthesize fromView=_fromView;
 @property(nonatomic) __weak UIView *toView; // @synthesize toView=_toView;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)transitionViewShouldUseViewControllerCallbacks;
 - (void)transitionViewDidComplete:(id)arg1 fromView:(id)arg2 toView:(id)arg3 removeFromView:(_Bool)arg4;
 - (struct CGPoint)transitionView:(id)arg1 endOriginForToView:(id)arg2 forTransition:(int)arg3 defaultOrigin:(struct CGPoint)arg4;

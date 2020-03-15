@@ -14,9 +14,9 @@
     HMFMessageDestination *_messageDestination;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMFMessageDestination *messageDestination; // @synthesize messageDestination=_messageDestination;
 @property(readonly, nonatomic) __weak HMHomeManager *homeManager; // @synthesize homeManager=_homeManager;
-- (void).cxx_destruct;
 - (void)fetchCloudChangesAndForceChangesFoundWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchCloudChangesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_fetchCloudChangesWithForceChangesFound:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;

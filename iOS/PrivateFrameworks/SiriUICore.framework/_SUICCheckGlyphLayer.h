@@ -18,8 +18,8 @@
     UIColor *_primaryColor;
 }
 
-@property(copy, nonatomic) UIColor *primaryColor; // @synthesize primaryColor=_primaryColor;
 - (void).cxx_destruct;
+@property(copy, nonatomic) UIColor *primaryColor; // @synthesize primaryColor=_primaryColor;
 - (double)_updateCovered:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (double)setCovered:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setRevealed:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

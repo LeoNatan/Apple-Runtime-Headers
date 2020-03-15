@@ -16,8 +16,8 @@
     id <SVPlayerItemObserverFactory> _playerItemObserverFactory;
 }
 
-@property(readonly, nonatomic) id <SVPlayerItemObserverFactory> playerItemObserverFactory; // @synthesize playerItemObserverFactory=_playerItemObserverFactory;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SVPlayerItemObserverFactory> playerItemObserverFactory; // @synthesize playerItemObserverFactory=_playerItemObserverFactory;
 - (id)createBufferObserverForVideo:(id)arg1;
 - (id)initWithPlayerItemObserverFactory:(id)arg1;
 

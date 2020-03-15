@@ -19,11 +19,11 @@
     FBSShutdownOptions *_fbOptions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FBSShutdownOptions *fbOptions; // @synthesize fbOptions=_fbOptions;
 @property(readonly, nonatomic) _Bool shouldEnterEcoMode; // @synthesize shouldEnterEcoMode=_shouldEnterEcoMode;
 @property(readonly, nonatomic) unsigned int cslReason; // @synthesize cslReason=_cslReason;
 @property(readonly, nonatomic) BSProcessHandle *origin; // @synthesize origin=_origin;
-- (void).cxx_destruct;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

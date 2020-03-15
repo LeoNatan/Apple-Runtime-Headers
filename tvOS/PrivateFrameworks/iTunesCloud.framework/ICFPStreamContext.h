@@ -14,9 +14,9 @@
     NSData *_playerInfoContextRequestData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *playerInfoContextRequestData; // @synthesize playerInfoContextRequestData=_playerInfoContextRequestData;
 @property(readonly, nonatomic) unsigned long long accountID; // @synthesize accountID=_accountID;
-- (void).cxx_destruct;
 - (_Bool)getStreamerInfoContextDataUsingPlayerInfoContextData:(id)arg1 returningData:(id *)arg2 error:(id *)arg3;
 - (_Bool)getPlayerDelegateInfoDataUsingPlayerDelegateInfoResponseData:(id)arg1 returningData:(id *)arg2 error:(id *)arg3;
 - (void)dealloc;

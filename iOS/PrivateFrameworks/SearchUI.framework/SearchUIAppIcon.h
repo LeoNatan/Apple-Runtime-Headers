@@ -17,10 +17,10 @@
 
 + (_Bool)isPlaceholderIcon;
 + (_Bool)canGenerateIconsInBackground;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SearchUIAppIconImage *iconImage; // @synthesize iconImage=_iconImage;
 @property(readonly, nonatomic) unsigned long long variant; // @synthesize variant=_variant;
 @property(readonly, nonatomic) SFSearchResult *searchResult; // @synthesize searchResult=_searchResult;
-- (void).cxx_destruct;
 - (void)iconDidChange;
 - (void)applicationWithBundleIdentifierDidChangeIconAccessories:(id)arg1;
 - (id)uniqueIdentifier;

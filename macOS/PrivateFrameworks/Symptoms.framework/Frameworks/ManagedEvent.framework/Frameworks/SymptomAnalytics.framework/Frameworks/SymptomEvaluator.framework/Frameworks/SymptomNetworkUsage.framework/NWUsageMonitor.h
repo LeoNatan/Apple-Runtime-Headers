@@ -28,8 +28,8 @@
 }
 
 + (void)initialize;
-@property(readonly) BOOL debugMode; // @synthesize debugMode=_debugMode;
 - (void).cxx_destruct;
+@property(readonly) BOOL debugMode; // @synthesize debugMode=_debugMode;
 - (id)initWithQueue:(id)arg1;
 - (id)stateDictionary;
 - (void)configure:(id)arg1;

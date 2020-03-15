@@ -18,11 +18,11 @@
     NSString *_messageId;
 }
 
+- (void).cxx_destruct;
 @property _Bool beingDeleted; // @synthesize beingDeleted=_beingDeleted;
 @property _Bool inProgress; // @synthesize inProgress=_inProgress;
 @property(readonly, nonatomic) NSString *messageId; // @synthesize messageId=_messageId;
 @property(readonly, nonatomic) NSString *sourceKey; // @synthesize sourceKey=_sourceKey;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)highPriority;
 - (void)markAsFailed;

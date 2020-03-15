@@ -21,13 +21,13 @@
 }
 
 + (id)attributedStringsCache;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *otherSigners; // @synthesize otherSigners=_otherSigners;
 @property(retain, nonatomic) NSArray *fromSenders; // @synthesize fromSenders=_fromSenders;
 @property(retain, nonatomic) NSArray *bccRecipients; // @synthesize bccRecipients=_bccRecipients;
 @property(retain, nonatomic) NSArray *ccRecipients; // @synthesize ccRecipients=_ccRecipients;
 @property(retain, nonatomic) NSArray *toRecipients; // @synthesize toRecipients=_toRecipients;
 @property(nonatomic) __weak id <MFCaptionLabelDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)_formattedAttributedString;
 - (id)_whitespaceStringWithWidth:(double)arg1;
 - (id)_chevronImage;

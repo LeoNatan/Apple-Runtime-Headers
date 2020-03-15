@@ -13,8 +13,8 @@
     NSArray *_visibleComplicationSlots;
 }
 
-@property(retain, nonatomic) NSArray *visibleComplicationSlots; // @synthesize visibleComplicationSlots=_visibleComplicationSlots;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *visibleComplicationSlots; // @synthesize visibleComplicationSlots=_visibleComplicationSlots;
 - (void)_updateNodeVisibility;
 - (void)createSubNodes;
 

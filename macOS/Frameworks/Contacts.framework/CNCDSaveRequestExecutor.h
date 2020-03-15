@@ -25,6 +25,8 @@
 - (BOOL)updateContactsCache:(id *)arg1;
 - (id)allContactIdentifiers;
 - (BOOL)loadContactsCache:(id *)arg1;
+- (id)contactsErrorFromCoreDataError:(id)arg1;
+- (id)recordsForErrorFromIdentifiers:(id)arg1;
 - (BOOL)executeSaveRequest:(id *)arg1;
 - (id)initWithSaveRequest:(id)arg1 persistenceContext:(id)arg2 context:(id)arg3;
 - (id)init;

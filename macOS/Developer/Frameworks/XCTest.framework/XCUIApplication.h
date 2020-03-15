@@ -34,6 +34,7 @@
 + (id)keyPathsForValuesAffectingState;
 + (id)keyPathsForValuesAffectingIsApplicationStateKnown;
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly) BOOL fauxCollectionViewCellsEnabled; // @synthesize fauxCollectionViewCellsEnabled=_fauxCollectionViewCellsEnabled;
 @property(getter=isIdleAnimationWaitEnabled) BOOL idleAnimationWaitEnabled; // @synthesize idleAnimationWaitEnabled=_idleAnimationWaitEnabled;
 @property BOOL allowBackgroundInteraction; // @synthesize allowBackgroundInteraction=_allowBackgroundInteraction;
@@ -48,7 +49,6 @@
 @property(copy, nonatomic) NSArray *launchArguments; // @synthesize launchArguments=_launchArguments;
 @property(readonly) XCUIElement *keyboard; // @synthesize keyboard=_keyboard;
 @property(retain) XCUIApplicationOpenRequest *lastLaunchRequest; // @synthesize lastLaunchRequest=_lastLaunchRequest;
-- (void).cxx_destruct;
 @property(readonly) long long activationPolicy;
 @property(readonly, nonatomic) long long interfaceOrientation;
 - (void)_waitForQuiescence;
@@ -59,6 +59,7 @@
 - (void)_performWithInteractionOptions:(unsigned int)arg1 block:(CDUnknownBlockType)arg2;
 - (void)terminate;
 - (void)_activate;
+- (void)resetAuthorizationStatusForResource:(long long)arg1;
 - (void)activate;
 - (void)_launchUsingXcode:(BOOL)arg1;
 - (void)launch;

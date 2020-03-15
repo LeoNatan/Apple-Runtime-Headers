@@ -17,10 +17,10 @@
     NSMutableDictionary *_assertTypesUUIDsMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *assertTypesUUIDsMap; // @synthesize assertTypesUUIDsMap=_assertTypesUUIDsMap;
 @property(retain, nonatomic) NSMutableDictionary *outstandingAssertionStatusUpdaters; // @synthesize outstandingAssertionStatusUpdaters=_outstandingAssertionStatusUpdaters;
 @property(readonly, nonatomic) IDSService *transportationService; // @synthesize transportationService=_transportationService;
-- (void).cxx_destruct;
 - (id)_removeOutstandingAssertionStatusUpdaterWithUUID:(id)arg1;
 - (void)_addOutstandingAssertionStatusUpdater:(id)arg1 withAssertType:(int)arg2;
 - (id)_outstandingAssertionStatusUpdaterWithRequest:(id)arg1 assertionType:(unsigned long long)arg2 assertionUUID:(id)arg3;

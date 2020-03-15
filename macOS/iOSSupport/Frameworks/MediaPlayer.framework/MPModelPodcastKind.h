@@ -16,8 +16,8 @@
 + (BOOL)supportsSecureCoding;
 + (id)kindWithEpisodeKind:(id)arg1;
 + (id)identityKind;
-@property(readonly, nonatomic) MPModelPodcastEpisodeKind *episodeKind; // @synthesize episodeKind=_episodeKind;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MPModelPodcastEpisodeKind *episodeKind; // @synthesize episodeKind=_episodeKind;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isDone; // @synthesize isDone=_isDone;
 @property(nonatomic) double timeRemaining; // @synthesize timeRemaining=_timeRemaining;
 @property(nonatomic) float normalizedPercentComplete; // @synthesize normalizedPercentComplete=_normalizedPercentComplete;
 @property(nonatomic) float percentComplete; // @synthesize percentComplete=_percentComplete;
 @property(retain, nonatomic) NSString *phase; // @synthesize phase=_phase;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

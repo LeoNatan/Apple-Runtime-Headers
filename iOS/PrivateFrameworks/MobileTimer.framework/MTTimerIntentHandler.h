@@ -14,9 +14,9 @@
     id <MTTimerManagerIntentSupport> _timerManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MTTimerManagerIntentSupport> timerManager; // @synthesize timerManager=_timerManager;
 @property(nonatomic) __weak id <MTTimerManagerProviding> timerManagerProvider; // @synthesize timerManagerProvider=_timerManagerProvider;
-- (void).cxx_destruct;
 - (_Bool)_isDefaultTimer:(id)arg1;
 - (id)_alternateTimersForTargetTimerState:(long long)arg1 type:(long long)arg2 inTimers:(id)arg3 allowedTimerStates:(id)arg4;
 - (id)_onlyUnnamedTimerInTimers:(id)arg1 forTargetTimer:(id)arg2 allowMultiple:(_Bool)arg3;

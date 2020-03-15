@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     double _maxWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(nonatomic) int currentLabelCompressionLevel; // @synthesize currentLabelCompressionLevel=_currentLabelCompressionLevel;
-- (void).cxx_destruct;
 - (double)extraRightPadding;
 - (double)extraLeftPadding;
 - (id)shortenedTitleWithCompressionLevel:(int)arg1;

@@ -19,13 +19,13 @@
     NSDictionary *_result;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *result; // @synthesize result=_result;
 @property(copy, nonatomic) CDUnknownBlockType personalizationCompletion; // @synthesize personalizationCompletion=_personalizationCompletion;
 @property(copy, nonatomic) NSArray *relativeRequests; // @synthesize relativeRequests=_relativeRequests;
 @property(copy, nonatomic) NSArray *absoluteRequests; // @synthesize absoluteRequests=_absoluteRequests;
 @property(copy, nonatomic) FCPersonalizationTreatment *personalizationTreatment; // @synthesize personalizationTreatment=_personalizationTreatment;
 @property(retain, nonatomic) id <FCReadonlyPersonalizationAggregateStore> aggregateStore; // @synthesize aggregateStore=_aggregateStore;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (_Bool)validateOperation;

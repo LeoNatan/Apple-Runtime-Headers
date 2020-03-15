@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     UIVisualEffectView *_backgroundVisualEffectView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIVisualEffectView *backgroundVisualEffectView; // @synthesize backgroundVisualEffectView=_backgroundVisualEffectView;
 @property(retain, nonatomic) UIView *shelfView; // @synthesize shelfView=_shelfView;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldBindRowsTogether;
 - (id)rowMetricsForExpectedWidth:(double)arg1 firstItemRowIndex:(long long *)arg2;
 - (void)_updateAppearance;

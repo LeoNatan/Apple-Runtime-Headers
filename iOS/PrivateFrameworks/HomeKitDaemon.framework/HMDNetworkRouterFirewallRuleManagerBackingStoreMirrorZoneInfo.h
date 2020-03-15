@@ -19,6 +19,7 @@
     HMBLocalZone *_mirroredLocalZone;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMBLocalZone *mirroredLocalZone; // @synthesize mirroredLocalZone=_mirroredLocalZone;
 @property(retain, nonatomic) HMDNetworkRouterFirewallRuleCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
 @property(readonly, nonatomic) _Bool ignoreChangeToken; // @synthesize ignoreChangeToken=_ignoreChangeToken;
@@ -26,7 +27,6 @@
 @property(readonly, nonatomic) _Bool zoneHasChanged; // @synthesize zoneHasChanged=_zoneHasChanged;
 @property(readonly, nonatomic) NSMutableSet *recordIDs; // @synthesize recordIDs=_recordIDs;
 @property(readonly, nonatomic) CKRecordZoneID *zoneID; // @synthesize zoneID=_zoneID;
-- (void).cxx_destruct;
 - (void)forceRefresh;
 - (void)markDeleted;
 - (void)markChanged;

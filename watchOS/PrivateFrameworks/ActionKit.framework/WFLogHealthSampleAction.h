@@ -13,8 +13,8 @@
     NSDate *_currentDate;
 }
 
-@property(retain, nonatomic) NSDate *currentDate; // @synthesize currentDate=_currentDate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *currentDate; // @synthesize currentDate=_currentDate;
 - (void)saveObject:(id)arg1 withObjectType:(id)arg2 item:(id)arg3;
 - (void)forceUpdateSelectedUnit;
 - (void)updateParameterStates;

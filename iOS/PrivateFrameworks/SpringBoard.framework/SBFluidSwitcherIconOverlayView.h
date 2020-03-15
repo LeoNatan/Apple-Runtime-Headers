@@ -20,8 +20,8 @@
     double _cornerRadius;
 }
 
-@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 - (void).cxx_destruct;
+@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 - (void)_setUpIconCrossfadeView;
 - (void)_setUpIconCrossfadeAnimatableProperty;
 - (double)_iconOverlayScale;

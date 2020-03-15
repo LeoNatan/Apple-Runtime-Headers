@@ -28,6 +28,7 @@
     double _watchdogExtension;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double watchdogExtension; // @synthesize watchdogExtension=_watchdogExtension;
 @property(retain, nonatomic) id <FBProcessWatchdogProviding> watchdogProvider; // @synthesize watchdogProvider=_watchdogProvider;
 @property(nonatomic) unsigned int launchAssertionFlags; // @synthesize launchAssertionFlags=_launchAssertionFlags;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) NSDictionary *environment; // @synthesize environment=_environment;
 @property(copy, nonatomic) NSArray *arguments; // @synthesize arguments=_arguments;
 @property(copy, nonatomic) RBSProcessIdentity *identity; // @synthesize identity=_identity;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)_launchAssertionFlags;

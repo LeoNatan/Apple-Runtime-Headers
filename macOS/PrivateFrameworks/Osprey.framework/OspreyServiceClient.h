@@ -14,9 +14,9 @@
     NSURLSessionConfiguration *_Conf;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURLSessionConfiguration *Conf; // @synthesize Conf=_Conf;
 @property(readonly, copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)initWithURL:(id)arg1 configuration:(id)arg2;
 
 @end

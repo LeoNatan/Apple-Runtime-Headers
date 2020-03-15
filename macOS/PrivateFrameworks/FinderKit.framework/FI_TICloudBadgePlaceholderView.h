@@ -18,13 +18,13 @@ __attribute__((visibility("hidden")))
     function_b1fce659 _clickHandler;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) int badge; // @synthesize badge=_badge;
 @property int context; // @synthesize context=_context;
 @property(getter=isActive) _Bool active; // @synthesize active=_active;
 @property(getter=isDimmed) _Bool dimmed; // @synthesize dimmed=_dimmed;
 @property(getter=isSelected) _Bool selected; // @synthesize selected=_selected;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (BOOL)acceptsFirstResponder;
 - (void)setClickHandler:(const function_b1fce659 *)arg1;

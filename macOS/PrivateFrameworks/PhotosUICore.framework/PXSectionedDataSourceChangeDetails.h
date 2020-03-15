@@ -30,11 +30,11 @@
 + (id)indexPathSetAfterApplyingChanges:(id)arg1 toIndexPathSet:(id)arg2 hasIncrementalChanges:(out char *)arg3;
 + (struct PXSimpleIndexPath)indexPathAfterRevertingChanges:(id)arg1 fromIndexPath:(struct PXSimpleIndexPath)arg2 hasIncrementalChanges:(out char *)arg3 objectChanged:(out char *)arg4;
 + (struct PXSimpleIndexPath)indexPathAfterApplyingChanges:(id)arg1 toIndexPath:(struct PXSimpleIndexPath)arg2 hasIncrementalChanges:(out char *)arg3 objectChanged:(out char *)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSIndexSet *sectionsWithItemChanges; // @synthesize sectionsWithItemChanges=_sectionsWithItemChanges;
 @property(readonly, nonatomic) PXArrayChangeDetails *sectionChanges; // @synthesize sectionChanges=_sectionChanges;
 @property(readonly, nonatomic) unsigned long long toDataSourceIdentifier; // @synthesize toDataSourceIdentifier=_toDataSourceIdentifier;
 @property(readonly, nonatomic) unsigned long long fromDataSourceIdentifier; // @synthesize fromDataSourceIdentifier=_fromDataSourceIdentifier;
-- (void).cxx_destruct;
 - (id)changedItemsInSection:(long long)arg1;
 - (id)insertedItemsInSection:(long long)arg1;
 - (id)deletedItemsInSection:(long long)arg1;

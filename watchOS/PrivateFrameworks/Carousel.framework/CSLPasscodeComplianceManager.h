@@ -22,12 +22,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PUConnection *unlockConnection; // @synthesize unlockConnection=_unlockConnection;
 @property(nonatomic) int phonePasscodeState; // @synthesize phonePasscodeState=_phonePasscodeState;
 @property(nonatomic) int silentPairingState; // @synthesize silentPairingState=_silentPairingState;
 @property(nonatomic) _Bool cachedIsCompliant; // @synthesize cachedIsCompliant=_cachedIsCompliant;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *complianceCheckQueue; // @synthesize complianceCheckQueue=_complianceCheckQueue;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isPasscodeCompliant;
 - (void)_updateCompliance;

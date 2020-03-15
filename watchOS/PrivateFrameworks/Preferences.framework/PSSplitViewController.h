@@ -15,9 +15,9 @@
     PSRootController *_containerNavigationController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PSRootController *containerNavigationController; // @synthesize containerNavigationController=_containerNavigationController;
 @property(nonatomic) __weak id <PSSplitViewControllerNavigationDelegate> navigationDelegate; // @synthesize navigationDelegate=_navigationDelegate;
-- (void).cxx_destruct;
 - (id)categoryController;
 - (void)setViewControllers:(id)arg1;
 - (void)setupControllerForToolbar:(id)arg1;

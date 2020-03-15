@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <webrtc/WK_RTCCodecSpecificInfo-Protocol.h>
+#import <webrtc/RTCCodecSpecificInfo-Protocol.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface WK_RTCCodecSpecificInfoH264 : NSObject <WK_RTCCodecSpecificInfo>
+@interface WK_RTCCodecSpecificInfoH264 : NSObject <RTCCodecSpecificInfo>
 {
     unsigned long long _packetizationMode;
 }

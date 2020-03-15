@@ -12,6 +12,7 @@
 
 + (BOOL)nearbyDevicesEnabled;
 + (BOOL)isWakeToRemoteOnLockScreenDisabled;
++ (BOOL)legacyDevicesDisabled;
 + (BOOL)rapportEnabled;
 
 @end

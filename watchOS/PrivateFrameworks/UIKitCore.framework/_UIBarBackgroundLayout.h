@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     UIVibrancyEffect *_bg2ShadowEffect;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIVibrancyEffect *bg2ShadowEffect; // @synthesize bg2ShadowEffect=_bg2ShadowEffect;
 @property(readonly, nonatomic) UIVibrancyEffect *bg1ShadowEffect; // @synthesize bg1ShadowEffect=_bg1ShadowEffect;
 @property(nonatomic) _Bool disableTinting; // @synthesize disableTinting=_disableTinting;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float backgroundAlpha; // @synthesize backgroundAlpha=_backgroundAlpha;
 @property(nonatomic) int interfaceStyle; // @synthesize interfaceStyle=_interfaceStyle;
 @property(nonatomic) int interfaceIdiom; // @synthesize interfaceIdiom=_interfaceIdiom;
-- (void).cxx_destruct;
 - (id)description;
 - (void)describeInto:(id)arg1;
 @property(readonly, nonatomic) float bg2ShadowAlpha;

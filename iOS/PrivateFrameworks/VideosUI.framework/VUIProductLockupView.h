@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)productLockupViewWithMedia:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIMediaTagsView *mediaBadgeTagsView; // @synthesize mediaBadgeTagsView=_mediaBadgeTagsView;
 @property(retain, nonatomic) VUIMediaTagsView *mediaInfoTagsView; // @synthesize mediaInfoTagsView=_mediaInfoTagsView;
 @property(retain, nonatomic) UIImage *contentRatingImage; // @synthesize contentRatingImage=_contentRatingImage;
@@ -65,7 +66,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIImage *coverArtPlaceholderImage; // @synthesize coverArtPlaceholderImage=_coverArtPlaceholderImage;
 @property(readonly, nonatomic) TVImageProxy *coverArtImageProxy; // @synthesize coverArtImageProxy=_coverArtImageProxy;
 @property(retain, nonatomic) id <VUILibraryProductLockupViewLayout> layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (struct CGSize)_layoutForStacked:(struct CGSize)arg1 metricsOnly:(_Bool)arg2;
 - (struct CGSize)_layoutForCompact:(struct CGSize)arg1 metricsOnly:(_Bool)arg2;
 - (struct CGSize)_layoutForCategoryAccessibility:(struct CGSize)arg1 metricsOnly:(_Bool)arg2;

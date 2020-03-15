@@ -16,9 +16,9 @@
     struct _opaque_pthread_rwlock_t _lock;
 }
 
-@property(nonatomic) unsigned int count; // @synthesize count=_count;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int count; // @synthesize count=_count;
 - (id)_createErrorWithCode:(unsigned int)arg1 description:(id)arg2 underlyingError:(id)arg3;
 - (unsigned int)totalCount;
 - (unsigned int)countForValue:(id)arg1;

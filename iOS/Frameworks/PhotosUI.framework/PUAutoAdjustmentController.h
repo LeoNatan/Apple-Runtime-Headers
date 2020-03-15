@@ -21,9 +21,9 @@
     id <NUImageProperties> _imageProperties;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NUImageProperties> imageProperties; // @synthesize imageProperties=_imageProperties;
 @property(nonatomic, getter=isBusy, setter=_setBusy:) _Bool busy; // @synthesize busy=_busy;
-- (void).cxx_destruct;
 - (void)_revertAutoValuesOnCompositionController:(id)arg1;
 - (void)_applyAutoValuesOnCompositionController:(id)arg1 whiteBalanceSettings:(id)arg2 redEyeCorrections:(id)arg3 smartToneLevel:(double)arg4 smartColorLevel:(double)arg5 valuesCalculator:(id)arg6;
 - (_Bool)isAutoEnhanceEnabledForCompositionController:(id)arg1;

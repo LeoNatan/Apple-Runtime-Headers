@@ -16,11 +16,11 @@
     WFDailyRoutineShortcutSetupLocation *_location;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFDailyRoutineShortcutSetupLocation *location; // @synthesize location=_location;
 @property(readonly, nonatomic) WFDailyRoutineShortcutSetupTriggerBuilder *trigger; // @synthesize trigger=_trigger;
 @property(readonly, copy, nonatomic) NSArray *questions; // @synthesize questions=_questions;
 @property(readonly, copy, nonatomic) NSString *routineName; // @synthesize routineName=_routineName;
-- (void).cxx_destruct;
 - (id)initWithRoutineName:(id)arg1 questions:(id)arg2 trigger:(id)arg3 location:(id)arg4;
 
 @end

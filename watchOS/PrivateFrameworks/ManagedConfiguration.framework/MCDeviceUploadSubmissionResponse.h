@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *devices; // @synthesize devices=_devices;
 @property(readonly, nonatomic) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;
 @property(readonly, nonatomic) NSString *requestStatus; // @synthesize requestStatus=_requestStatus;
 @property(readonly, nonatomic) NSString *requestId; // @synthesize requestId=_requestId;
-- (void).cxx_destruct;
 - (id)_devicesFromDeviceArray:(id)arg1;
 - (id)initWithDict:(id)arg1;
 - (id)initWithCoder:(id)arg1;

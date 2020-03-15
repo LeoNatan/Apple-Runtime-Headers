@@ -17,9 +17,9 @@
 }
 
 + (id)JSONKeyPathsByPropertyKey;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *feedURL; // @synthesize feedURL=_feedURL;
 @property(copy, nonatomic) NSString *podcastUUID; // @synthesize podcastUUID=_podcastUUID;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 identifier:(id)arg2 podcastUUID:(id)arg3 feedURL:(id)arg4 kind:(id)arg5;
 
 // Remaining properties

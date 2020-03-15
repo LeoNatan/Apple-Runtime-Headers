@@ -14,8 +14,8 @@
     id <RPMessageable> _messenger;
 }
 
-@property(retain, nonatomic) id <RPMessageable> messenger; // @synthesize messenger=_messenger;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <RPMessageable> messenger; // @synthesize messenger=_messenger;
 - (void)hidCommand:(int)arg1 buttonState:(int)arg2 destinationID:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)hidCommand:(int)arg1 destinationID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)invalidate;

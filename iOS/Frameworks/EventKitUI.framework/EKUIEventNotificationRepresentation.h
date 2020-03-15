@@ -37,6 +37,7 @@
 + (id)invitationNotificationRepresentationWithNotification:(id)arg1 event:(id)arg2 date:(id)arg3 endDate:(id)arg4 timeZone:(id)arg5;
 + (id)upcomingEventNotificationRepresentationWithEvent:(id)arg1 date:(id)arg2 displayTimeZone:(id)arg3;
 + (id)defaultEventNotificationRepresentationWithTitle:(id)arg1 message:(id)arg2 notes:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *organizerContactDictionary; // @synthesize organizerContactDictionary=_organizerContactDictionary;
 @property(retain, nonatomic) NSString *notes; // @synthesize notes=_notes;
 @property(retain, nonatomic) NSArray *potentialConflictDates; // @synthesize potentialConflictDates=_potentialConflictDates;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) EKUITextAndHeaderItem *subtitleItem; // @synthesize subtitleItem=_subtitleItem;
 @property(retain, nonatomic) EKUITextAndHeaderItem *titleItem; // @synthesize titleItem=_titleItem;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_setOwnerForContactDictionary:(id)arg1;
 - (void)setOrganizerForContactDictionary:(id)arg1;

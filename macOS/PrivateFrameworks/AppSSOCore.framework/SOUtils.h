@@ -19,6 +19,7 @@
 + (int)pidFromAuditToken:(CDStruct_6ad76789)arg1;
 + (BOOL)auditTokenFromData:(id)arg1 auditToken:(CDStruct_6ad76789 *)arg2;
 + (id)mapArray:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
++ (BOOL)isAppSSOServiceAvailable;
 + (BOOL)isInternalBuild;
 + (id)currentProcessContainerPath;
 + (BOOL)sandboxAllowsXPC:(const char *)arg1;

@@ -27,6 +27,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *xpcActivity; // @synthesize xpcActivity=_xpcActivity;
 @property(nonatomic) double periodicSyncInterval; // @synthesize periodicSyncInterval=_periodicSyncInterval;
 @property(nonatomic) BOOL didDeleteSyncedEvents; // @synthesize didDeleteSyncedEvents=_didDeleteSyncedEvents;
@@ -39,7 +40,6 @@
 @property(nonatomic) BOOL isInitialSync; // @synthesize isInitialSync=_isInitialSync;
 @property(nonatomic) BOOL forceSync; // @synthesize forceSync=_forceSync;
 @property(readonly, nonatomic) BOOL isSingleDevice; // @synthesize isSingleDevice=_isSingleDevice;
-- (void).cxx_destruct;
 - (BOOL)isEqualToSyncType:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

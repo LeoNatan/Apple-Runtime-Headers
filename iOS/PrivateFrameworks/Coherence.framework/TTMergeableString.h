@@ -29,6 +29,8 @@
     struct TopoReplica _replica;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) long long renameGeneration; // @synthesize renameGeneration=_renameGeneration;
 @property(nonatomic) long long addedByLocalCounter; // @synthesize addedByLocalCounter=_addedByLocalCounter;
 @property(readonly, nonatomic) _TtC9Coherence11ObjCReplica *addedByReplica; // @synthesize addedByReplica=_addedByReplica;
@@ -39,8 +41,6 @@
 @property(retain, nonatomic) id attributedString; // @synthesize attributedString=_attributedString;
 @property(retain, nonatomic) _TtC9Coherence11ObjCVersion *addedByVersion; // @synthesize addedByVersion=_addedByVersion;
 @property(retain, nonatomic) _TtC9Coherence11ObjCVersion *version; // @synthesize version=_version;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)finalizeTimestamps;
 - (_Bool)needToFinalizeTimestamps;
 - (void)applyRenamesAndRetainOrRelease:(id)arg1;

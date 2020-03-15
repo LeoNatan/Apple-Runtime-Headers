@@ -15,10 +15,10 @@
     unsigned long long _shipmentQuoteMaximum;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long shipmentQuoteMaximum; // @synthesize shipmentQuoteMaximum=_shipmentQuoteMaximum;
 @property(readonly, nonatomic) unsigned long long shipmentQuoteMinimum; // @synthesize shipmentQuoteMinimum=_shipmentQuoteMinimum;
 @property(readonly, nonatomic) PKPhysicalCard *physicalCard; // @synthesize physicalCard=_physicalCard;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 
 @end

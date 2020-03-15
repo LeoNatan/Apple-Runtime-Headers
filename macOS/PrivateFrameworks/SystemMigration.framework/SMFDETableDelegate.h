@@ -14,9 +14,9 @@
     NSString *_passwordButtonLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *passwordButtonLabel; // @synthesize passwordButtonLabel=_passwordButtonLabel;
 @property SMFDEManagementViewController *fdeManagementViewController; // @synthesize fdeManagementViewController=_fdeManagementViewController;
-- (void).cxx_destruct;
 - (void)pressedPasswordButton:(id)arg1;
 - (void)awakeFromNib;
 

@@ -16,8 +16,8 @@
     IKAppMediaItemBridge *_mediaItemBridge;
 }
 
-@property(readonly, nonatomic) __weak IKAppMediaItemBridge *mediaItemBridge; // @synthesize mediaItemBridge=_mediaItemBridge;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak IKAppMediaItemBridge *mediaItemBridge; // @synthesize mediaItemBridge=_mediaItemBridge;
 - (void)contentKeySession:(id)arg1 contentKeyRequest:(id)arg2 didFailWithError:(id)arg3;
 - (void)contentKeySession:(id)arg1 didProvideRenewingContentKeyRequest:(id)arg2;
 - (void)contentKeySession:(id)arg1 didProvideContentKeyRequest:(id)arg2;

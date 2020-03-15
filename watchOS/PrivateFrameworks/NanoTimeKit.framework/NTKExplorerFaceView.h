@@ -24,9 +24,9 @@
 }
 
 + (Class)_timeViewClass;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int color; // @synthesize color=_color;
 @property(nonatomic) unsigned int density; // @synthesize density=_density;
-- (void).cxx_destruct;
 - (id)tritium_createFaceAnimator;
 - (void)tritium_unloadContentViews;
 - (void)tritium_loadContentViews;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     PBPresentationReaderState *mPresentationState;
 }
 
-@property(readonly) __weak PBPresentationReaderState *presentationState; // @synthesize presentationState=mPresentationState;
 - (void).cxx_destruct;
+@property(readonly) __weak PBPresentationReaderState *presentationState; // @synthesize presentationState=mPresentationState;
 - (id)drawableOnTgtSlideForShapeId:(int)arg1;
 - (id)xmlDocumentState;
 - (id)xmlDrawingState;

@@ -22,12 +22,12 @@
     NSTimeZone *_timeZone;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(nonatomic) __weak id <PKMonthDayCollectionViewControllerDelegate> dayDelegate; // @synthesize dayDelegate=_dayDelegate;
 @property(nonatomic) long long maximumDayNumber; // @synthesize maximumDayNumber=_maximumDayNumber;
 @property(nonatomic) long long minimumDayNumber; // @synthesize minimumDayNumber=_minimumDayNumber;
 @property(nonatomic) long long dayNumber; // @synthesize dayNumber=_dayNumber;
-- (void).cxx_destruct;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldDeselectItemAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;

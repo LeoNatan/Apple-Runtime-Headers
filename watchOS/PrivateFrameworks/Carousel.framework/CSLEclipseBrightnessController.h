@@ -19,8 +19,8 @@
     _Bool _coreBrightnessEnabled;
 }
 
-@property(nonatomic) _Bool coreBrightnessEnabled; // @synthesize coreBrightnessEnabled=_coreBrightnessEnabled;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool coreBrightnessEnabled; // @synthesize coreBrightnessEnabled=_coreBrightnessEnabled;
 - (void)endBrightnessControlling;
 - (void)setBrightnessFactor:(float)arg1;
 - (void)beginBrightnessControlling;

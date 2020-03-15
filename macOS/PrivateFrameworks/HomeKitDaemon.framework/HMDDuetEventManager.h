@@ -22,12 +22,12 @@
 + (id)identifierForType:(unsigned long long)arg1 eventValue:(id)arg2;
 + (id)eventTypeAsString:(unsigned long long)arg1;
 + (id)eventStreamForType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <_DKKnowledgeQuerying> queryStore; // @synthesize queryStore=_queryStore;
 @property(retain, nonatomic) _DKKnowledgeStore *deleteStore; // @synthesize deleteStore=_deleteStore;
 @property(retain, nonatomic) id <_DKKnowledgeSaving> saveStore; // @synthesize saveStore=_saveStore;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(retain, nonatomic) _CDClientContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)dumpAllEvents;
 - (id)dumpEventsOfType:(unsigned long long)arg1 fromDate:(id)arg2 offset:(unsigned long long)arg3 limit:(unsigned long long)arg4;
 - (id)_dumpEventsOfType:(unsigned long long)arg1 fromDate:(id)arg2 offset:(unsigned long long)arg3 limit:(unsigned long long)arg4;

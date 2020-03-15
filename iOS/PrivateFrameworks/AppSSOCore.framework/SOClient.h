@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_queue;
-@property(retain) SOServiceConnection *serviceConnection; // @synthesize serviceConnection=_serviceConnection;
 - (void).cxx_destruct;
+@property(retain) SOServiceConnection *serviceConnection; // @synthesize serviceConnection=_serviceConnection;
 - (void)isExtensionProcessWithAuditToken:(CDStruct_6ad76789)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)debugHintsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)realmsWithCompletion:(CDUnknownBlockType)arg1;

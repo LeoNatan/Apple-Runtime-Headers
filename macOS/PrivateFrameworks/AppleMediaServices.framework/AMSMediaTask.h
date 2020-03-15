@@ -13,6 +13,7 @@
 
 @interface AMSMediaTask : AMSTask <AMSBagConsumer>
 {
+    BOOL _charts;
     BOOL _URLKnownToBeTrusted;
     ACAccount *_account;
     NSArray *_additionalPlatforms;
@@ -33,6 +34,7 @@
 + (id)bagSubProfileVersion;
 + (id)bagSubProfile;
 + (id)bagKeySet;
+- (void).cxx_destruct;
 @property BOOL URLKnownToBeTrusted; // @synthesize URLKnownToBeTrusted=_URLKnownToBeTrusted;
 @property(readonly) long long type; // @synthesize type=_type;
 @property(retain) NSString *searchTerm; // @synthesize searchTerm=_searchTerm;
@@ -43,11 +45,11 @@
 @property(readonly) NSString *clientVersion; // @synthesize clientVersion=_clientVersion;
 @property(retain) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(readonly) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
+@property BOOL charts; // @synthesize charts=_charts;
 @property(retain) NSArray *bundleIdentifiers; // @synthesize bundleIdentifiers=_bundleIdentifiers;
 @property(readonly) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 @property(retain) NSArray *additionalPlatforms; // @synthesize additionalPlatforms=_additionalPlatforms;
 @property(retain) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)perform;
 - (id)initWithType:(long long)arg1 clientIdentifier:(id)arg2 clientVersion:(id)arg3 bag:(id)arg4;
 

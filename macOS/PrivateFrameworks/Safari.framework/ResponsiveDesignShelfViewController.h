@@ -32,12 +32,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)keyPathsForValuesAffectingPresetConfigurations;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *displayUserAgent; // @synthesize displayUserAgent=_displayUserAgent;
 @property(nonatomic) unsigned long long displayPixelRatio; // @synthesize displayPixelRatio=_displayPixelRatio;
 @property(nonatomic) double displayZoomLevel; // @synthesize displayZoomLevel=_displayZoomLevel;
 @property(nonatomic) struct CGSize displayBrowserSize; // @synthesize displayBrowserSize=_displayBrowserSize;
 @property(retain, nonatomic) ResponsiveDesignPresetConfiguration *selectedPresetConfiguration; // @synthesize selectedPresetConfiguration=_selectedPresetConfiguration;
-- (void).cxx_destruct;
 - (void)_saveCustomPresetConfigurationsSoon;
 - (void)_saveLastConfigurationSoon;
 - (void)_userAgentButtonChanged:(id)arg1;

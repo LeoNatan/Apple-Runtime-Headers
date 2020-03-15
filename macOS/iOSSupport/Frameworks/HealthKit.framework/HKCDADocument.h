@@ -18,11 +18,11 @@
     NSString *_custodianName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *custodianName; // @synthesize custodianName=_custodianName;
 @property(readonly, copy) NSString *authorName; // @synthesize authorName=_authorName;
 @property(readonly, copy) NSString *patientName; // @synthesize patientName=_patientName;
 @property(readonly, copy) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_descriptionFieldTitle:(id)arg1 content:(id)arg2 maxSize:(unsigned long long)arg3;
 - (void)encodeWithCoder:(id)arg1 omittedContentFlags:(long long)arg2;

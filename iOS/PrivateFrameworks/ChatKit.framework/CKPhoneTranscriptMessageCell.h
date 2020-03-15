@@ -13,8 +13,8 @@
     CKAvatarView *_avatarView;
 }
 
-@property(retain, nonatomic) CKAvatarView *avatarView; // @synthesize avatarView=_avatarView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKAvatarView *avatarView; // @synthesize avatarView=_avatarView;
 - (void)setShowAvatarView:(_Bool)arg1 withContact:(id)arg2 preferredHandle:(id)arg3 avatarViewDelegate:(id)arg4;
 - (void)layoutSubviewsForContents;
 - (id)contactImageView;

@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: feedPersonalizer
     // Error parsing type: , name: tagController
     // Error parsing type: , name: journalGroup
+    // Error parsing type: , name: privateDataDirectory
 }
 
 - (void).cxx_destruct;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSData *_signingKey;
 }
 
-@property(retain, nonatomic) NSData *signingKey; // @synthesize signingKey=_signingKey;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *signingKey; // @synthesize signingKey=_signingKey;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

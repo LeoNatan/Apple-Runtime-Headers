@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) double width; // @synthesize width=_width;
-- (void).cxx_destruct;
 
 @end
 

@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 + (id)titleFont;
 + (id)titleFontOfSize:(float)arg1;
 + (float)defaultButtonWidth;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) _Bool autosizes; // @synthesize autosizes=_autosizes;
 @property(retain, nonatomic) UIColor *highlightedBackgroundColor; // @synthesize highlightedBackgroundColor=_highlightedBackgroundColor;
 @property(retain, nonatomic) UIColor *defaultBackgroundColor; // @synthesize defaultBackgroundColor=_defaultBackgroundColor;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) float buttonWidth;
 @property(readonly, nonatomic) UIView *sourceView;
 - (void)setHighlighted:(_Bool)arg1;

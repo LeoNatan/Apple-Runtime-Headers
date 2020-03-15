@@ -17,9 +17,9 @@
     APSConnection *_pushConnection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) APSConnection *pushConnection; // @synthesize pushConnection=_pushConnection;
 @property(nonatomic) __weak id <CFRPushDelegate> pushDelegate; // @synthesize pushDelegate=_pushDelegate;
-- (void).cxx_destruct;
 - (id)enabledTopics;
 - (void)connectionDidReconnect:(id)arg1;
 - (void)connection:(id)arg1 didChangeConnectedStatus:(BOOL)arg2;

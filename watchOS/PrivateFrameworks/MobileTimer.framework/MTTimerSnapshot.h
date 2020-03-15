@@ -15,8 +15,8 @@
     MTTimerStorage *_storage;
 }
 
-@property(readonly, nonatomic) MTTimerStorage *storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MTTimerStorage *storage; // @synthesize storage=_storage;
 - (void)nextTimerDidChange:(id)arg1;
 - (void)source:(id)arg1 didFireTimer:(id)arg2;
 - (void)source:(id)arg1 didDismissTimer:(id)arg2;

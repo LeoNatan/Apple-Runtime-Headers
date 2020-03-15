@@ -25,13 +25,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *windowId; // @synthesize windowId=_windowId;
 @property(retain, nonatomic) NSString *referringSite; // @synthesize referringSite=_referringSite;
 @property(retain, nonatomic) NSString *referringUrl; // @synthesize referringUrl=_referringUrl;
 @property(nonatomic) float maxScrollDepth; // @synthesize maxScrollDepth=_maxScrollDepth;
 @property(retain, nonatomic) NSString *sourceChannelId; // @synthesize sourceChannelId=_sourceChannelId;
 @property(retain, nonatomic) NSString *articleId; // @synthesize articleId=_articleId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

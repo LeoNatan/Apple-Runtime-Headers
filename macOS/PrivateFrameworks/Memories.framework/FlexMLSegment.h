@@ -16,11 +16,11 @@
     CDStruct_1b6d18a9 _summaryTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *gainFunction; // @synthesize gainFunction=_gainFunction;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 summaryTime; // @synthesize summaryTime=_summaryTime;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 trackTime; // @synthesize trackTime=_trackTime;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (id)initWithDuration:(CDStruct_1b6d18a9)arg1 trackTime:(CDStruct_1b6d18a9)arg2 summaryTime:(CDStruct_1b6d18a9)arg3 gainFunction:(id)arg4;
 
 @end

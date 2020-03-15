@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSSecureCoding> response; // @synthesize response=_response;
 @property(nonatomic, getter=_isShadowOperationForRemoteExecution, setter=_setShadowOperationForRemoteExecution:) _Bool _shadowOperationForRemoteExecution; // @synthesize _shadowOperationForRemoteExecution=__shadowOperationForRemoteExecution;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)_execute;

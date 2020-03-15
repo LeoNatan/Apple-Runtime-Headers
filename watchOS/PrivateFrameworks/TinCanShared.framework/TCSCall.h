@@ -27,6 +27,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *dateConnected; // @synthesize dateConnected=_dateConnected;
 @property(readonly, copy, nonatomic) NSDate *dateAnsweredOrDialed; // @synthesize dateAnsweredOrDialed=_dateAnsweredOrDialed;
 @property(readonly, nonatomic) int disconnectedReason; // @synthesize disconnectedReason=_disconnectedReason;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) _Bool isRemoteUplinkMuted; // @synthesize isRemoteUplinkMuted=_isRemoteUplinkMuted;
 @property(readonly, nonatomic) _Bool isOutgoing; // @synthesize isOutgoing=_isOutgoing;
 @property(readonly, nonatomic) _Bool isConnected; // @synthesize isConnected=_isConnected;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)hash;

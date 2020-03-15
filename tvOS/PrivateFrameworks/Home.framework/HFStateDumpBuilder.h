@@ -17,10 +17,10 @@
 
 + (id)_coerceObjectToPropertyList:(id)arg1 options:(unsigned long long)arg2;
 + (id)builderWithObject:(id)arg1 context:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *entries; // @synthesize entries=_entries;
 @property(readonly, nonatomic) HFStateDumpBuilderContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) id object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (id)_filteredEntries;
 - (id)_formattedObjectForObject:(id)arg1 withRepresentation:(unsigned long long)arg2 context:(id)arg3 options:(unsigned long long)arg4;
 - (id)_formattedObjectForEntry:(id)arg1 withRepresentation:(unsigned long long)arg2;

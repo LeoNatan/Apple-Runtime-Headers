@@ -16,11 +16,11 @@
     TLKProminenceView *_highlightView;
 }
 
+- (void).cxx_destruct;
 @property _Bool isEmphasized; // @synthesize isEmphasized=_isEmphasized;
 @property(retain) TLKProminenceView *highlightView; // @synthesize highlightView=_highlightView;
 @property(retain) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain) TLKLabel *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)tlk_updateForAppearance:(id)arg1;
 - (void)didMoveToWindow;
 - (void)_dynamicUserInterfaceTraitDidChange;

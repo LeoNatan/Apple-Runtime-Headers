@@ -26,6 +26,8 @@
     _Bool __hasSZExtractor;
     _Bool __doesSZExtractorConsumeExtractedData;
     _Bool _startedUserInitiated;
+    unsigned short __TLSMinimumSupportedProtocolVersion;
+    unsigned short __TLSMaximumSupportedProtocolVersion;
     unsigned int _identifier;
     unsigned int _taskKind;
     int _state;
@@ -67,6 +69,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) __CFN_TaskMetrics *taskMetrics; // @synthesize taskMetrics=_taskMetrics;
 @property(copy) NSDictionary *additionalProperties; // @synthesize additionalProperties=_additionalProperties;
 @property(retain) NSDictionary *_backgroundTrailers; // @synthesize _backgroundTrailers=__backgroundTrailers;
@@ -78,6 +81,8 @@
 @property(nonatomic) _Bool _doesSZExtractorConsumeExtractedData; // @synthesize _doesSZExtractorConsumeExtractedData=__doesSZExtractorConsumeExtractedData;
 @property(nonatomic) _Bool _hasSZExtractor; // @synthesize _hasSZExtractor=__hasSZExtractor;
 @property(retain, nonatomic) id <SZExtractor> _extractor; // @synthesize _extractor=__extractor;
+@property unsigned short _TLSMaximumSupportedProtocolVersion; // @synthesize _TLSMaximumSupportedProtocolVersion=__TLSMaximumSupportedProtocolVersion;
+@property unsigned short _TLSMinimumSupportedProtocolVersion; // @synthesize _TLSMinimumSupportedProtocolVersion=__TLSMinimumSupportedProtocolVersion;
 @property _Bool forceWatchNoCellular; // @synthesize forceWatchNoCellular=_forceWatchNoCellular;
 @property double timeoutIntervalForResource; // @synthesize timeoutIntervalForResource=_timeoutIntervalForResource;
 @property(copy) NSString *pathToDownloadTaskFile; // @synthesize pathToDownloadTaskFile=_pathToDownloadTaskFile;
@@ -118,7 +123,6 @@
 @property double creationTime; // @synthesize creationTime=_creationTime;
 @property unsigned int taskKind; // @synthesize taskKind=_taskKind;
 @property unsigned int identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithDownloadTask:(id)arg1 uniqueIdentifier:(id)arg2 bundleID:(id)arg3 sessionID:(id)arg4;

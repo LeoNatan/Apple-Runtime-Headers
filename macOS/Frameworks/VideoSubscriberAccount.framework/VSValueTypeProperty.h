@@ -17,11 +17,11 @@
 }
 
 + (id)valueTypePropertyWithName:(id)arg1 kind:(unsigned long long)arg2 allowedClasses:(id)arg3 initialValue:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id initialValue; // @synthesize initialValue=_initialValue;
 @property(copy, nonatomic) NSSet *allowedClasses; // @synthesize allowedClasses=_allowedClasses;
 @property(nonatomic) unsigned long long kind; // @synthesize kind=_kind;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 
 @end
 

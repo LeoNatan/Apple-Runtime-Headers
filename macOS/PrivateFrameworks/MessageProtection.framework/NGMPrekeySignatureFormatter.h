@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSData *_prekeyPublic;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *prekeyPublic; // @synthesize prekeyPublic=_prekeyPublic;
 @property(readonly, nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (id)signedData;
 - (id)initWithPublicPrekey:(id)arg1;
 - (id)initToSignKey:(id)arg1;

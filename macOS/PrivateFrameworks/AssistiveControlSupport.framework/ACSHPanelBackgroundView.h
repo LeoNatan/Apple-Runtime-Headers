@@ -15,10 +15,10 @@
     struct CGImage *__cachedImage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGImage *_cachedImage; // @synthesize _cachedImage=__cachedImage;
 @property(retain, nonatomic) NSColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)updateLayer;

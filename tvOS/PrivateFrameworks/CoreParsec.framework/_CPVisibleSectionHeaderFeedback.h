@@ -19,10 +19,10 @@
     NSString *_sectionId;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sectionId; // @synthesize sectionId=_sectionId;
 @property(nonatomic) int headerType; // @synthesize headerType=_headerType;
 @property(nonatomic) unsigned long long timestamp;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

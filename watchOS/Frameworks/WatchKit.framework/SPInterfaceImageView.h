@@ -31,6 +31,7 @@
     struct CGSize _cachedSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize cachedSize; // @synthesize cachedSize=_cachedSize;
 @property(nonatomic) struct CGSize cachedContainerSize; // @synthesize cachedContainerSize=_cachedContainerSize;
 @property(nonatomic) struct CGSize interfacePlistSize; // @synthesize interfacePlistSize=_interfacePlistSize;
@@ -48,7 +49,6 @@
 @property(copy, nonatomic) NSString *stringsFileName; // @synthesize stringsFileName=_stringsFileName;
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(retain, nonatomic) NSDictionary *itemDescriptionForIB; // @synthesize itemDescriptionForIB=_itemDescriptionForIB;
-- (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setInterfaceItemValue:(id)arg1 property:(id)arg2;
 - (_Bool)hasIntrinsicHeight;

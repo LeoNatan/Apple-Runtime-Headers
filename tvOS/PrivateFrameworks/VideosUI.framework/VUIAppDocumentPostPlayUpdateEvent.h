@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSDictionary *_postPlayUpdateData;
 }
 
-@property(retain, nonatomic) NSDictionary *postPlayUpdateData; // @synthesize postPlayUpdateData=_postPlayUpdateData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *postPlayUpdateData; // @synthesize postPlayUpdateData=_postPlayUpdateData;
 - (id)dictionaryRepresentation;
 - (id)initWithPostPlayUpdateData:(id)arg1;
 - (id)initWithDescriptor:(id)arg1;

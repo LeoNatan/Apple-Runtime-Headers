@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     MCProfileConnection *_connection;
 }
 
-@property(readonly, nonatomic) MCProfileConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MCProfileConnection *connection; // @synthesize connection=_connection;
 - (id)filteredOpenInOriginatingAccounts:(id)arg1 targetAppBundleID:(id)arg2 targetAccountManagement:(int)arg3;
 - (id)filteredOpenInAccounts:(id)arg1 originatingAppBundleID:(id)arg2 sourceAccountManagement:(int)arg3;
 - (_Bool)mayShowLocalAccountsForTargetBundleID:(id)arg1 targetAccountManagement:(int)arg2;

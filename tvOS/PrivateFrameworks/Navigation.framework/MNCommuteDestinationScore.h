@@ -22,13 +22,13 @@
 + (id)sessionStartDate;
 + (void)setSessionStartDate:(id)arg1;
 + (double)weight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(readonly, nonatomic) NSString *descriptionExtras; // @synthesize descriptionExtras=_descriptionExtras;
 @property(nonatomic) __weak MNCommuteDestination *destination; // @synthesize destination=_destination;
 @property(retain, nonatomic) NSDate *lastUpdate; // @synthesize lastUpdate=_lastUpdate;
 @property(readonly, nonatomic) int score; // @synthesize score=_score;
 @property(readonly, nonatomic) _Bool destinationInvalid; // @synthesize destinationInvalid=_destinationInvalid;
-- (void).cxx_destruct;
 - (id)description;
 - (void)notifyObservers;
 - (void)removeObserver:(id)arg1;

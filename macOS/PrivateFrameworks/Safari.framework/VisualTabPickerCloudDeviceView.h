@@ -24,10 +24,10 @@ __attribute__((visibility("hidden")))
     id <VisualTabPickerCloudDeviceViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL closeRequestSupported; // @synthesize closeRequestSupported=_closeRequestSupported;
 @property(nonatomic) __weak id <VisualTabPickerCloudDeviceViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <VisualTabPickerCloudDeviceViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_reloadData;
 - (BOOL)_isHeaderRow:(long long)arg1;
 - (id)_createTabTitleField;

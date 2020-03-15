@@ -17,12 +17,12 @@
     NSDictionary *_loadedConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *loadedConfiguration; // @synthesize loadedConfiguration=_loadedConfiguration;
 @property(retain, nonatomic) SKUIReloadConfigurationOperation *pendingReloadOperation; // @synthesize pendingReloadOperation=_pendingReloadOperation;
 @property(readonly, nonatomic) NSMutableArray *completionBlocks; // @synthesize completionBlocks=_completionBlocks;
 @property(readonly, nonatomic) NSOperationQueue *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, copy, nonatomic) NSString *configurationCachePath; // @synthesize configurationCachePath=_configurationCachePath;
-- (void).cxx_destruct;
 - (void)finishPreloadingConfiguration:(id)arg1 error:(id)arg2;
 - (void)preloadConfigurationForPurpose:(long long)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (id)newReloadConfigurationOperation;

@@ -26,9 +26,9 @@ __attribute__((visibility("hidden")))
     UIStatusBarForegroundStyleAttributes *_foregroundStyle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIStatusBarForegroundStyleAttributes *foregroundStyle; // @synthesize foregroundStyle=_foregroundStyle;
 @property(nonatomic) int idiom; // @synthesize idiom=_idiom;
-- (void).cxx_destruct;
 - (_Bool)rectIntersectsBatteryItem:(struct CGRect)arg1;
 - (_Bool)rectIntersectsTimeItem:(struct CGRect)arg1;
 - (struct CGRect)frameForAllItemsInRegion:(int)arg1;

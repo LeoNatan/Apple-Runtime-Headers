@@ -20,12 +20,12 @@
     id <PXDisplayAsset> _keyAsset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldInvert; // @synthesize shouldInvert=_shouldInvert;
 @property(readonly, nonatomic) id <PXDisplayAsset> keyAsset; // @synthesize keyAsset=_keyAsset;
 @property(readonly, nonatomic) id <PXDisplaySuggestion> suggestion; // @synthesize suggestion=_suggestion;
 @property(readonly, nonatomic) NSString *adjustedContentIdentifier; // @synthesize adjustedContentIdentifier=_adjustedContentIdentifier;
 @property(readonly, nonatomic) PHAsset *photoKitAsset; // @synthesize photoKitAsset=_photoKitAsset;
-- (void).cxx_destruct;
 - (id)_computedPortraitEffectSettingsForCompositionController:(id)arg1;
 - (id)applyAdjustmentsToCompositionController:(id)arg1 renderer:(id)arg2;
 @property(readonly, nonatomic) _Bool wantsAdjustments;

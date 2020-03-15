@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)sortUsingCoreDuetAvailable;
 + (id)managerForContact:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) NSMutableSet *enabledActionIdentifiers; // @synthesize enabledActionIdentifiers=_enabledActionIdentifiers;
 @property(retain, nonatomic) NSCountedSet *actionsUsageSet; // @synthesize actionsUsageSet=_actionsUsageSet;
 @property(nonatomic) _Bool sortsWithDuet; // @synthesize sortsWithDuet=_sortsWithDuet;
-- (void).cxx_destruct;
 - (id)sortedActions:(id)arg1;
 - (void)_updateDuetInteractionsIfNeeded;
 - (void)updateCachedEnabledStateForAction:(id)arg1;

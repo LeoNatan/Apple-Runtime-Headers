@@ -15,9 +15,9 @@
     id <EKShareePickerViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <EKShareePickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSArray *sharees; // @synthesize sharees=_sharees;
-- (void).cxx_destruct;
 - (void)setSearchAccountID:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 calendar:(id)arg2;
 

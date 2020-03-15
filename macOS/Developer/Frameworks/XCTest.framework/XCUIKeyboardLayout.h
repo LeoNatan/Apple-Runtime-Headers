@@ -18,9 +18,9 @@
 + (id)_keyboardLayoutForIdentifier:(id)arg1;
 + (id)unicodeHexKeyboardLayout;
 + (id)currentKeyboardLayout;
+- (void).cxx_destruct;
 @property(readonly) id <XCUIKeyboardKeyMap> primaryKeyMap; // @synthesize primaryKeyMap=_primaryKeyMap;
 @property(readonly) id <XCUITextInputSource> inputSource; // @synthesize inputSource=_inputSource;
-- (void).cxx_destruct;
 - (id)_errorWithInputSourceError:(id)arg1;
 - (id)_setActiveInputState:(id)arg1 error:(id *)arg2;
 - (BOOL)deactivateWithNewState:(id)arg1 error:(id *)arg2;

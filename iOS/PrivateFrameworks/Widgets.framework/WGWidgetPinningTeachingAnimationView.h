@@ -18,13 +18,13 @@
     UILabel *_debugLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *debugLabel; // @synthesize debugLabel=_debugLabel;
 @property(retain, nonatomic, setter=_setTimerToNextState:) NSTimer *timerToNextState; // @synthesize timerToNextState=_timerToNextState;
 @property(retain, nonatomic) CALayer *page1Layer; // @synthesize page1Layer=_page1Layer;
 @property(retain, nonatomic) CALayer *pagesLayer; // @synthesize pagesLayer=_pagesLayer;
 @property(retain, nonatomic) CALayer *materialsLayer; // @synthesize materialsLayer=_materialsLayer;
 @property(nonatomic, setter=_setState:) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (unsigned long long)_stateFollowingState:(unsigned long long)arg1;
 - (double)_durationForState:(unsigned long long)arg1;
 - (void)_updateMaterials;

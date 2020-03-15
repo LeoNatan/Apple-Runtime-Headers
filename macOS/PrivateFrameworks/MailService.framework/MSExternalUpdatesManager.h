@@ -19,10 +19,10 @@
 
 + (id)sharedInstance;
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isMail; // @synthesize isMail=_isMail;
 @property(readonly, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(readonly, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator; // @synthesize persistentStoreCoordinator=_persistentStoreCoordinator;
-- (void).cxx_destruct;
 - (id)_managedObjectContext;
 - (void)_processLocalAppendAction:(id)arg1;
 - (void)processLocalActions;

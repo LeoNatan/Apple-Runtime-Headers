@@ -39,6 +39,7 @@
     struct CGSize _interfacePlistSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isNativeInterfaceObject; // @synthesize isNativeInterfaceObject=_isNativeInterfaceObject;
 @property(readonly, nonatomic) _Bool hasIntrinsicHeight; // @synthesize hasIntrinsicHeight=_hasIntrinsicHeight;
 @property(readonly, nonatomic) struct CGSize interfacePlistSize; // @synthesize interfacePlistSize=_interfacePlistSize;
@@ -50,7 +51,6 @@
 @property(nonatomic) int interfaceAlignment; // @synthesize interfaceAlignment=_interfaceAlignment;
 @property(retain, nonatomic) NSDictionary *companionProperty; // @synthesize companionProperty=_companionProperty;
 @property(retain, nonatomic) NSDictionary *itemDescriptionForIB; // @synthesize itemDescriptionForIB=_itemDescriptionForIB;
-- (void).cxx_destruct;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (void)animateTransition:(id)arg1;

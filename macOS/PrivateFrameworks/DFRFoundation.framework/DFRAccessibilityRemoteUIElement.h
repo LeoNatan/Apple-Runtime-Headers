@@ -20,12 +20,12 @@
 + (id)elementWithBuffer:(const void **)arg1 size:(unsigned long long *)arg2;
 + (_Bool)enableNotifications;
 + (void)setEnableNotifications:(_Bool)arg1;
+- (void).cxx_destruct;
 @property(readonly) struct CGRect frame; // @synthesize frame=_frame;
 @property(readonly) long long placement; // @synthesize placement=_placement;
 @property(readonly) int processIdentifier; // @synthesize processIdentifier=_processIdentifier;
 @property(readonly) long long uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(readonly) id accessibilityElement; // @synthesize accessibilityElement=_accessibilityElement;
-- (void).cxx_destruct;
 
 @end
 

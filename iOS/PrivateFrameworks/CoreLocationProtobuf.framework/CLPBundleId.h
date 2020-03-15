@@ -18,10 +18,10 @@
     CDStruct_b5306035 _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
 @property(retain, nonatomic) NSString *shortKey; // @synthesize shortKey=_shortKey;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

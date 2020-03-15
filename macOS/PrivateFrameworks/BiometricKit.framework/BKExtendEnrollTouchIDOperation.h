@@ -15,9 +15,9 @@
     NSData *_credentialSet;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *credentialSet; // @synthesize credentialSet=_credentialSet;
 @property(retain, nonatomic) BKIdentity *identity; // @synthesize identity=_identity;
-- (void).cxx_destruct;
 - (void)homeButtonPressed:(unsigned long long)arg1;
 - (void)statusMessage:(unsigned int)arg1 client:(unsigned long long)arg2;
 - (void)matchResult:(id)arg1 details:(id)arg2 client:(unsigned long long)arg3;

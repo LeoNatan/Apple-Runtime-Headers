@@ -38,6 +38,7 @@
 + (id)applianceForVendorBagDictionary:(id)arg1;
 + (id)applianceForInfoDictionary:(id)arg1;
 + (_Bool)isInfoPlistApplianceForDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TVLApplianceViewController *viewController; // @synthesize viewController=_viewController;
 @property(copy, nonatomic) NSDictionary *launchOptions; // @synthesize launchOptions=_launchOptions;
 @property(readonly, nonatomic) id <TVLReadWriteFeedResource> sessionResource; // @synthesize sessionResource=_sessionResource;
@@ -50,7 +51,6 @@
 @property(readonly, copy, nonatomic) NSString *vendorIdentifier; // @synthesize vendorIdentifier=_vendorIdentifier;
 @property(nonatomic) long long applianceType; // @synthesize applianceType=_applianceType;
 @property(nonatomic) __weak id <TVLApplianceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)restorationPathForController:(id)arg1;
 - (void)prettyPrintControllerStack;
 - (void)endControllerTransaction;

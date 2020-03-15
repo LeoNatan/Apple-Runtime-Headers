@@ -17,11 +17,11 @@
     id <CSKExtendedTextFieldDelegate> _extraDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showsAlternate; // @synthesize showsAlternate=_showsAlternate;
 @property(nonatomic) __weak id <CSKExtendedTextFieldDelegate> extraDelegate; // @synthesize extraDelegate=_extraDelegate;
 @property(retain, nonatomic) NSString *alternateStringValue; // @synthesize alternateStringValue=_alternateStringValue;
 @property(retain, nonatomic) NSString *defaultStringValue; // @synthesize defaultStringValue=_defaultStringValue;
-- (void).cxx_destruct;
 - (void)mouseDown:(id)arg1;
 - (void)showAlternateStringValue:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

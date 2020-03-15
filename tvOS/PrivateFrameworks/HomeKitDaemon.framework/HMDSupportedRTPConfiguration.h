@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSArray *srtpCryptoSuites; // @synthesize srtpCryptoSuites=_srtpCryptoSuites;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *srtpCryptoSuites; // @synthesize srtpCryptoSuites=_srtpCryptoSuites;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)description:(id)arg1 indent:(id)arg2;

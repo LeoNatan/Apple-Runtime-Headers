@@ -16,11 +16,11 @@
     NSDictionary *_expectedValues;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *expectedValues; // @synthesize expectedValues=_expectedValues;
 @property(copy, nonatomic) NSArray *encryptedFields; // @synthesize encryptedFields=_encryptedFields;
 @property(copy, nonatomic) NSArray *unencryptedFields; // @synthesize unencryptedFields=_unencryptedFields;
 @property(copy, nonatomic) NSString *recordType; // @synthesize recordType=_recordType;
-- (void).cxx_destruct;
 
 @end
 

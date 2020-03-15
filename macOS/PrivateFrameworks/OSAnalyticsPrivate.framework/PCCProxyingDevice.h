@@ -32,8 +32,8 @@
     double _requestTimeout;
 }
 
-@property double requestTimeout; // @synthesize requestTimeout=_requestTimeout;
 - (void).cxx_destruct;
+@property double requestTimeout; // @synthesize requestTimeout=_requestTimeout;
 - (void)startTimer;
 - (void)diagnosticResultsEvent:(id)arg1 type:(id)arg2 result:(id)arg3;
 - (void)finishRequestWithMessage:(id)arg1 result:(id)arg2;

@@ -13,8 +13,8 @@
     NSArray *_meterLayers;
 }
 
-@property(retain, nonatomic) NSArray *meterLayers; // @synthesize meterLayers=_meterLayers;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *meterLayers; // @synthesize meterLayers=_meterLayers;
 - (double)rotationAngleAtProgress:(float)arg1;
 - (void)colorMetersWithProgress:(double)arg1;
 - (void)_updateGradient;

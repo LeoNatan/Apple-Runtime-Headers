@@ -21,9 +21,9 @@
     id <BKSSystemApplicationClientDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <BKSSystemApplicationClientDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double systemIdleSleepInterval; // @synthesize systemIdleSleepInterval=_systemIdleSleepInterval;
-- (void).cxx_destruct;
 - (void)_sendMessageOfType:(long long)arg1 packer:(CDUnknownBlockType)arg2 replyHandler:(CDUnknownBlockType)arg3 waitForReply:(_Bool)arg4 waitDuration:(unsigned long long)arg5;
 - (void)_sendMessageOfType:(long long)arg1 packer:(CDUnknownBlockType)arg2 replyHandler:(CDUnknownBlockType)arg3;
 - (void)_sendMessageOfType:(long long)arg1 packer:(CDUnknownBlockType)arg2;

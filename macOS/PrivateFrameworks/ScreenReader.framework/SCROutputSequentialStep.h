@@ -20,8 +20,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(nonatomic) BOOL requestWasSentSynchronously; // @synthesize requestWasSentSynchronously=_requestWasSentSynchronously;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL requestWasSentSynchronously; // @synthesize requestWasSentSynchronously=_requestWasSentSynchronously;
 - (id)shortDescription;
 - (id)description;
 - (long long)repeatStyle;

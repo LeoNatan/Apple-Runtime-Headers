@@ -75,6 +75,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *persistentID; // @synthesize persistentID=_persistentID;
 @property(copy, nonatomic) NSDate *iAdImpressionDate; // @synthesize iAdImpressionDate=_iAdImpressionDate;
 @property(copy, nonatomic) NSDate *iAdConversionDate; // @synthesize iAdConversionDate=_iAdConversionDate;
@@ -134,7 +135,6 @@
 @property(copy, nonatomic) NSNumber *artistID; // @synthesize artistID=_artistID;
 @property(copy, nonatomic) NSArray *assets; // @synthesize assets=_assets;
 @property(copy, nonatomic) NSData *appReceiptData; // @synthesize appReceiptData=_appReceiptData;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

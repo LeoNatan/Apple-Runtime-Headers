@@ -20,8 +20,8 @@
 }
 
 + (void)prewarm;
-@property _Bool isActivelyTraining; // @synthesize isActivelyTraining=_isActivelyTraining;
 - (void).cxx_destruct;
+@property _Bool isActivelyTraining; // @synthesize isActivelyTraining=_isActivelyTraining;
 - (void)elementAction:(id)arg1 wantsViewControllerDisplayed:(id)arg2;
 - (void)elementAction:(id)arg1 wantsToPerformTapActionForComplicationSlot:(id)arg2;
 - (void)elementAction:(id)arg1 didFinishTask:(_Bool)arg2;

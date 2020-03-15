@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TIKeyboardCandidateResultSet *resultSet; // @synthesize resultSet=_resultSet;
 @property(retain, nonatomic) TIKeyboardState *keyboardState; // @synthesize keyboardState=_keyboardState;
-- (void).cxx_destruct;
 - (void)replaceDocumentState:(id)arg1;
 - (id)shortDescription;
 - (void)removeContextFromKeyboardState;

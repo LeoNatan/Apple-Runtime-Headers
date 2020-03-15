@@ -19,8 +19,8 @@
     id <_PKUIKVisibilityBackdropViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <_PKUIKVisibilityBackdropViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_PKUIKVisibilityBackdropViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)pkui_accessibilitySettingsDidChange:(id)arg1;
 - (void)_updateStyleIfNecessary;
 - (void)pkui_commitBackdropSettings;

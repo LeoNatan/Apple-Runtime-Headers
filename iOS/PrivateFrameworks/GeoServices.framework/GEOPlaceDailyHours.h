@@ -16,9 +16,9 @@
 
 + (id)getPlaceDailyHoursForWeekday:(long long)arg1 placeDailyHours:(id)arg2;
 + (id)dailyHours:(id)arg1 forDays:(struct _NSRange)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *openIntervals; // @synthesize openIntervals=_openIntervals;
 @property(readonly, nonatomic) struct _NSRange dayOfWeekRange; // @synthesize dayOfWeekRange=_dayOfWeekRange;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

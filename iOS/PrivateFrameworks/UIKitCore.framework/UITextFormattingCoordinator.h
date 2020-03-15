@@ -19,8 +19,8 @@
 + (void)toggleFontPanel:(id)arg1;
 + (_Bool)isFontPanelVisible;
 + (id)textFormattingCoordinatorForWindowScene:(id)arg1;
-@property(nonatomic) __weak id <UITextFormattingCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <UITextFormattingCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)fontPickerViewControllerDidPickFont:(id)arg1;
 - (void)updateTextAttributesWithConversionHandler:(CDUnknownBlockType)arg1;
 - (void)setSelectedAttributes:(id)arg1 isMultiple:(_Bool)arg2;

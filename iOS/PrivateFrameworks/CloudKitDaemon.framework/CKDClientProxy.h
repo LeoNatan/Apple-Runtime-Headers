@@ -47,6 +47,7 @@
 + (id)operationStatusReport:(id)arg1;
 + (id)sharedClientThrottlingOperationQueue;
 + (id)accountStatusWorkloop;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDPCSFetchAggregator *fetchAggregator; // @synthesize fetchAggregator=_fetchAggregator;
 @property(nonatomic) __weak NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSString *sourceApplicationBundleID; // @synthesize sourceApplicationBundleID=_sourceApplicationBundleID;
@@ -75,7 +76,6 @@
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 @property(retain, nonatomic) NSOperationQueue *cleanupOperationQueue; // @synthesize cleanupOperationQueue=_cleanupOperationQueue;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
-- (void).cxx_destruct;
 - (_Bool)canUsePackagesWithError:(id *)arg1;
 - (_Bool)canOpenFileAtURL:(id)arg1;
 - (void)submitClientEventMetric:(id)arg1 withSetupInfo:(id)arg2 completeWhenQueued:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;

@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)requestWithRootView:(id)arg1 focusSystem:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect visualRepresentationMinimumArea; // @synthesize visualRepresentationMinimumArea=_visualRepresentationMinimumArea;
 @property(nonatomic) __weak UIView *focusableRegionAncestorView; // @synthesize focusableRegionAncestorView=_focusableRegionAncestorView;
 @property(nonatomic) _Bool clipToSnapshotRect; // @synthesize clipToSnapshotRect=_clipToSnapshotRect;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGRect snapshotRect; // @synthesize snapshotRect=_snapshotRect;
 @property(retain, nonatomic) UIFocusSystem *focusSystem; // @synthesize focusSystem=_focusSystem;
 @property(nonatomic) __weak UIView *rootView; // @synthesize rootView=_rootView;
-- (void).cxx_destruct;
 - (id)takeSnapshot;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithRootView:(id)arg1 focusSystem:(id)arg2;

@@ -16,8 +16,8 @@
     PXPlacesMapController *_mapController;
 }
 
-@property(retain, nonatomic) PXPlacesMapController *mapController; // @synthesize mapController=_mapController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PXPlacesMapController *mapController; // @synthesize mapController=_mapController;
 - (void)sendTraitNotification;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 @property(readonly, nonatomic) PKExtendedTraitCollection *pk_extendedTraitCollection;

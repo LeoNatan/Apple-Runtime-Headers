@@ -22,12 +22,12 @@
 }
 
 + (id)imageForSurface:(struct __IOSurface *)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect viewPort; // @synthesize viewPort=_viewPort;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
 @property(retain, nonatomic) id <MTLTexture> mtlTexture; // @synthesize mtlTexture=_mtlTexture;
 @property(retain, nonatomic) CARenderer *renderer; // @synthesize renderer=_renderer;
 @property(retain, nonatomic) CALayer *layer; // @synthesize layer=_layer;
-- (void).cxx_destruct;
 - (struct __IOSurface *)newSurfaceWithWidth:(float)arg1 height:(float)arg2;
 - (id)renderLayer;
 

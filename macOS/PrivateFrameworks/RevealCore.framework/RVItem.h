@@ -30,6 +30,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
 @property(retain, nonatomic) NSString *trailingText; // @synthesize trailingText=_trailingText;
 @property(retain, nonatomic) NSString *leadingText; // @synthesize leadingText=_leadingText;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) long long normalizedType; // @synthesize normalizedType=_normalizedType;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)constrainContextSubstring:(id)arg1 range:(struct _NSRange)arg2 leading:(BOOL)arg3;
 - (id)getClientHintKey:(id)arg1 ofType:(Class)arg2;
 @property(readonly, nonatomic) NSURL *normalizedURL;

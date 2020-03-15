@@ -30,6 +30,7 @@
     double _warningDuration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool suspendsOnOriginatorSuspension; // @synthesize suspendsOnOriginatorSuspension=_suspendsOnOriginatorSuspension;
 @property(nonatomic) double warningDuration; // @synthesize warningDuration=_warningDuration;
 @property(nonatomic) double invalidationDuration; // @synthesize invalidationDuration=_invalidationDuration;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NSString *domainAttributes; // @synthesize domainAttributes=_domainAttributes;
 @property(nonatomic) unsigned long long legacyReason; // @synthesize legacyReason=_legacyReason;
 @property(nonatomic) unsigned long long runningReason; // @synthesize runningReason=_runningReason;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

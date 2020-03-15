@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     VSOptional *_logoLoadOperation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSOptional *logoLoadOperation; // @synthesize logoLoadOperation=_logoLoadOperation;
 @property(nonatomic) _Bool didCreateAccount; // @synthesize didCreateAccount=_didCreateAccount;
 @property(retain, nonatomic) VSAccount *account; // @synthesize account=_account;
 @property(copy, nonatomic) VSAccountMetadata *accountMetadata; // @synthesize accountMetadata=_accountMetadata;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

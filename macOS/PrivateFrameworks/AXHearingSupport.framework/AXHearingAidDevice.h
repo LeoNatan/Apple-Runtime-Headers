@@ -93,6 +93,7 @@
 }
 
 + (id)characteristicsUUIDs;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *rightBatteryLowDate; // @synthesize rightBatteryLowDate=_rightBatteryLowDate;
 @property(retain, nonatomic) NSDate *leftBatteryLowDate; // @synthesize leftBatteryLowDate=_leftBatteryLowDate;
 @property(nonatomic) unsigned long long rightWriteResponseProperties; // @synthesize rightWriteResponseProperties=_rightWriteResponseProperties;
@@ -160,7 +161,6 @@
 @property(retain, nonatomic) NSString *name; // @synthesize name;
 @property(retain, nonatomic) NSString *rightUUID; // @synthesize rightUUID;
 @property(retain, nonatomic) NSString *leftUUID; // @synthesize leftUUID;
-- (void).cxx_destruct;
 - (id)persistentRepresentation;
 - (BOOL)addPeripheral:(id)arg1;
 @property(readonly, copy) NSString *description;

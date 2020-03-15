@@ -15,10 +15,10 @@
     NSArray *_bundleIDs;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *bundleIDs; // @synthesize bundleIDs=_bundleIDs;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(copy, nonatomic) NSDate *pollTime; // @synthesize pollTime=_pollTime;
-- (void).cxx_destruct;
 - (id)dictionary;
 - (id)description;
 - (id)initWithDictionary:(id)arg1;

@@ -27,6 +27,7 @@
     struct WGWidgetListSettings _listSettings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cachedThresholds; // @synthesize cachedThresholds=_cachedThresholds;
 @property(retain, nonatomic) NSMutableDictionary *resizeContexts; // @synthesize resizeContexts=_resizeContexts;
 @property(retain, nonatomic) WGWidgetPinningTeachingView *teachingView; // @synthesize teachingView=_teachingView;
@@ -39,7 +40,6 @@
 @property(nonatomic) double revealProgress; // @synthesize revealProgress=_revealProgress;
 @property(nonatomic, getter=isRevealed) _Bool revealed; // @synthesize revealed=_revealed;
 @property(nonatomic) struct WGWidgetListSettings listSettings; // @synthesize listSettings=_listSettings;
-- (void).cxx_destruct;
 - (_Bool)shouldShowTeachingView;
 - (void)widgetPinningTeachingViewDidSelectNo:(id)arg1;
 - (void)widgetPinningTeachingViewDidSelectYes:(id)arg1;

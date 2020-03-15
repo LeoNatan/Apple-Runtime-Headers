@@ -16,8 +16,8 @@
 }
 
 + (id)defaultReuseIdentifier;
-@property(retain) MKMapView *mapView; // @synthesize mapView=_mapView;
 - (void).cxx_destruct;
+@property(retain) MKMapView *mapView; // @synthesize mapView=_mapView;
 - (id)mapView:(id)arg1 rendererForOverlay:(id)arg2;
 - (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
 - (void)setUpConstraints;

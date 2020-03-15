@@ -27,6 +27,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *mobileDeviceConnections; // @synthesize mobileDeviceConnections=_mobileDeviceConnections;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *deviceAccessQueue; // @synthesize deviceAccessQueue=_deviceAccessQueue;
 @property(readonly, nonatomic, getter=isPasscodeLocked) BOOL passcodeLocked; // @synthesize passcodeLocked=_passcodeLocked;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) long long pairingProgress; // @synthesize pairingProgress=_pairingProgress;
 @property(nonatomic) __weak id <RWIDeviceDelegate> deviceDelegate; // @synthesize deviceDelegate=_deviceDelegate;
 @property(readonly, nonatomic) long long deviceClass; // @synthesize deviceClass=_deviceClass;
-- (void).cxx_destruct;
 - (void)_queueAttemptingPairWithProgressCallback:(CDUnknownBlockType)arg1;
 - (void)_fetchDeviceInformationFromMobileDeviceConnection:(id)arg1;
 - (void)setPasscodeLocked:(BOOL)arg1;

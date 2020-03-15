@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     AUAudioUnitBus *_outputBus;
     AUAudioUnitBusArray *_outputBusArray;
     CDUnknownBlockType _cachedRenderBlock;
-    // Error parsing type: {atomic<bool>="__a_"AB}, name: _running
+    // Error parsing type: {atomic<bool>="__a_"{__cxx_atomic_impl<bool, std::__1::__cxx_atomic_base_impl<bool> >="__a_value"AB}}, name: _running
     _Bool _prepared;
     _Bool _shouldPrepareTargetOnAllocate;
     struct mutex _targetPreparationMutex;
@@ -24,17 +24,17 @@ __attribute__((visibility("hidden")))
     unsigned int _currentHostingMaxFramesToRender;
     struct AudioBufferList *_abl;
     float *_buffer;
-    // Error parsing type: {atomic<float>="__a_"Af}, name: _signalPresent
+    // Error parsing type: {atomic<float>="__a_"{__cxx_atomic_impl<float, std::__1::__cxx_atomic_base_impl<float> >="__a_value"Af}}, name: _signalPresent
     double _signalPresentDecayPerSample;
     struct shared_ptr<AudioStreamRecordingManager::StreamWriter> _recordingStreamWriter;
     unsigned int _desiredLayoutTag;
     AUAudioUnit *_target;
 }
 
-@property(retain, nonatomic) AUAudioUnit *target; // @synthesize target=_target;
-@property(nonatomic) unsigned int desiredLayoutTag; // @synthesize desiredLayoutTag=_desiredLayoutTag;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AUAudioUnit *target; // @synthesize target=_target;
+@property(nonatomic) unsigned int desiredLayoutTag; // @synthesize desiredLayoutTag=_desiredLayoutTag;
 - (id)outputBusses;
 - (id)inputBusses;
 - (id)channelCapabilities;

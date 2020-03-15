@@ -13,6 +13,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (_Bool)_accessibilityRemembersLastFocusedChild;
 - (_Bool)_axIsRootFolder;
 - (_Bool)_accessibilitySBScrollToPreviousPage;
 - (_Bool)_accessibilitySBScrollToNextPage;

@@ -24,6 +24,7 @@
     NSLayoutConstraint *_footerWidthConstraint;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSLayoutConstraint *footerWidthConstraint; // @synthesize footerWidthConstraint=_footerWidthConstraint;
 @property(readonly) NSLayoutConstraint *headerWidthConstraint; // @synthesize headerWidthConstraint=_headerWidthConstraint;
 @property(retain) NSMutableArray *mutableConstraints; // @synthesize mutableConstraints=_mutableConstraints;
@@ -33,7 +34,6 @@
 @property(readonly) NSStackView *paneHeaderStackView; // @synthesize paneHeaderStackView=_paneHeaderStackView;
 @property __weak id <AKAuthorizationEditableDataSources> editableDataSources; // @synthesize editableDataSources=_editableDataSources;
 @property __weak id <AKAuthorizationPaneViewControllerDelegate><AKAuthorizationPaneAutomaticResizeDelegate> paneDelegate; // @synthesize paneDelegate=_paneDelegate;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)_newStackView;

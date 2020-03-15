@@ -16,11 +16,11 @@
     unsigned long long _type;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) unsigned long long generation; // @synthesize generation=_generation;
 @property(readonly, nonatomic) EDPersistenceDatabaseConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) EFResource *resource; // @synthesize resource=_resource;
-- (void).cxx_destruct;
 - (id)initWithConnection:(id)arg1 generation:(unsigned long long)arg2;
 
 @end

@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSURL *cardURL; // @synthesize cardURL=_cardURL;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSURL *cardURL; // @synthesize cardURL=_cardURL;
 - (unsigned int)nwActivityLabel;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

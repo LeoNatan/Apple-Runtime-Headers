@@ -8,40 +8,22 @@
 
 #import <InAppMessages/NSCopying-Protocol.h>
 
-@class NSArray, NSDate, NSString, NSURL;
+@class NSArray, NSString;
 
 @interface IAMMessage : NSObject <NSCopying>
 {
-    _Bool _isCarousel;
-    _Bool _hasCloseButton;
+    _Bool _requiresCloseButton;
     NSString *_identifier;
-    NSArray *_targets;
-    long long _type;
-    long long _priority;
-    NSURL *_templateURL;
-    unsigned long long _maximumNumberOfDisplays;
-    NSDate *_startDate;
-    NSDate *_endDate;
     NSArray *_contentPages;
-    NSURL *_webArchiveURL;
 }
 
-@property(readonly, copy, nonatomic) NSURL *webArchiveURL; // @synthesize webArchiveURL=_webArchiveURL;
-@property(readonly, nonatomic) NSArray *contentPages; // @synthesize contentPages=_contentPages;
-@property(readonly, nonatomic) _Bool hasCloseButton; // @synthesize hasCloseButton=_hasCloseButton;
-@property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
-@property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-@property(readonly, nonatomic) unsigned long long maximumNumberOfDisplays; // @synthesize maximumNumberOfDisplays=_maximumNumberOfDisplays;
-@property(readonly, copy, nonatomic) NSURL *templateURL; // @synthesize templateURL=_templateURL;
-@property(readonly, nonatomic) long long priority; // @synthesize priority=_priority;
-@property(readonly, nonatomic) _Bool isCarousel; // @synthesize isCarousel=_isCarousel;
-@property(readonly, nonatomic) long long type; // @synthesize type=_type;
-@property(readonly, copy, nonatomic) NSArray *targets; // @synthesize targets=_targets;
-@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool requiresCloseButton; // @synthesize requiresCloseButton=_requiresCloseButton;
+@property(readonly, nonatomic) NSArray *contentPages; // @synthesize contentPages=_contentPages;
+@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithICApplicationMessage:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 targets:(id)arg2 type:(long long)arg3 contentPages:(id)arg4 maximumNumberOfDisplays:(unsigned long long)arg5 webArchiveURL:(id)arg6;
+- (id)initWithIdentifier:(id)arg1 contentPages:(id)arg2 requiresCloseButton:(_Bool)arg3;
 
 @end
 

@@ -18,8 +18,8 @@
 + (float)boolForKey:(id)arg1;
 + (float)floatForKey:(id)arg1;
 + (id)sharedSettings;
-@property(readonly, nonatomic) NSDictionary *settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *settings; // @synthesize settings=_settings;
 - (float)boolForKey:(id)arg1;
 - (float)floatForKey:(id)arg1;
 - (id)init;

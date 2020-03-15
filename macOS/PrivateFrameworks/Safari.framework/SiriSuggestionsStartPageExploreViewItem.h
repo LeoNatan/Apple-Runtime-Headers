@@ -26,11 +26,10 @@ __attribute__((visibility("hidden")))
     id <SiriSuggestionsStartPageExploreViewItemDelegate> _delegate;
 }
 
-+ (id)_handoffIconForDeviceType:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SiriSuggestionsStartPageExploreViewItemDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WBSForYouLinkRecommendation *recommendation; // @synthesize recommendation=_recommendation;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)_removeBadgeViewIfNecessary;
 - (void)_addBadgeViewIfNecessary;
 - (void)rightMouseDown:(id)arg1;

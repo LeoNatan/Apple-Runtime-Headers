@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
 + (id)scoreboardCLayoutWithInnerMargin:(double)arg1;
 + (id)scoreboardBLayout;
 + (id)scoreboardALayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIScoreboardRowLayout *bottomRowLayout; // @synthesize bottomRowLayout=_bottomRowLayout;
 @property(retain, nonatomic) VUIScoreboardRowLayout *topRowLayout; // @synthesize topRowLayout=_topRowLayout;
 @property(retain, nonatomic) VUITextLayout *textLayout; // @synthesize textLayout=_textLayout;
 @property(nonatomic) double padding; // @synthesize padding=_padding;
 @property(nonatomic) struct TVCornerRadii borderRadii; // @synthesize borderRadii=_borderRadii;
-- (void).cxx_destruct;
 
 @end
 

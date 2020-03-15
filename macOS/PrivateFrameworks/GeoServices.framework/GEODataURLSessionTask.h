@@ -39,6 +39,7 @@
     NSDate *_originalStartDate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL receivedRNFNotification; // @synthesize receivedRNFNotification=_receivedRNFNotification;
 @property(readonly, nonatomic) BOOL mptcpNegotiated; // @synthesize mptcpNegotiated=_mptcpNegotiated;
 @property(nonatomic) unsigned int sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
@@ -52,7 +53,6 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(readonly, nonatomic) GEODataRequest *request; // @synthesize request=_request;
 @property(readonly, nonatomic) NSObject<OS_os_activity> *activity; // @synthesize activity=_activity;
-- (void).cxx_destruct;
 - (void)delegateAsync:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) id <GEORequestCounterTicket> requestCounterTicket;
 - (void)notifyDelegateWithSession:(id)arg1;

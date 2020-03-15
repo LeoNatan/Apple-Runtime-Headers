@@ -19,10 +19,10 @@
     id <SVVideoSkipHandling> _handler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoSkipHandling> handler; // @synthesize handler=_handler;
 @property(readonly, nonatomic) id <SVVideoSkipPolicy> policy; // @synthesize policy=_policy;
 @property(readonly, nonatomic) id <SVVideoQueueProviding> queueProvider; // @synthesize queueProvider=_queueProvider;
-- (void).cxx_destruct;
 - (BOOL)skipToVideo:(id)arg1 animated:(BOOL)arg2 force:(BOOL)arg3;
 - (BOOL)skipToPrevious;
 - (BOOL)skipToNext;

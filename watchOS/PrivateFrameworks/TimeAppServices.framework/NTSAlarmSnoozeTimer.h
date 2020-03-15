@@ -18,12 +18,12 @@
 }
 
 + (id)sharedAlarmSnoozeTimer;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool inForeground; // @synthesize inForeground=_inForeground;
 @property(nonatomic) unsigned int nextToken; // @synthesize nextToken=_nextToken;
 @property(retain, nonatomic) NSMutableDictionary *handlers; // @synthesize handlers=_handlers;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(retain, nonatomic) MTAlarmManager *alarmManager; // @synthesize alarmManager=_alarmManager;
-- (void).cxx_destruct;
 - (void)_modelReload:(id)arg1;
 - (void)_modelStateChanged:(id)arg1;
 - (void)_backgrounded:(id)arg1;

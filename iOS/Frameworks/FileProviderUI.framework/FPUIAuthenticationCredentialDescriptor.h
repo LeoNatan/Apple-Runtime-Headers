@@ -16,11 +16,11 @@
     NSString *_password;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 @property(nonatomic, getter=isPasswordRequired) _Bool passwordRequired; // @synthesize passwordRequired=_passwordRequired;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 
 @end
 

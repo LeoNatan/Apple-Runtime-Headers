@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _hitRectInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets hitRectInsets; // @synthesize hitRectInsets=_hitRectInsets;
 @property(readonly, nonatomic) SKUIImageView *additionalImageView; // @synthesize additionalImageView=_additionalImageView;
 @property(nonatomic) _Bool useBigHitTarget; // @synthesize useBigHitTarget=_useBigHitTarget;
 @property(readonly, nonatomic) SKUIImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) struct UIEdgeInsets bigHitInsets; // @synthesize bigHitInsets=_bigHitInsets;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setBackgroundColor:(id)arg1;

@@ -16,11 +16,11 @@
     NSImage *_largeIcon;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSImage *largeIcon; // @synthesize largeIcon=_largeIcon;
 @property(retain) NSImage *smallIcon; // @synthesize smallIcon=_smallIcon;
 @property(retain) NSString *calendarIdentifier; // @synthesize calendarIdentifier=_calendarIdentifier;
 @property(retain) NSString *sourceTitle; // @synthesize sourceTitle=_sourceTitle;
-- (void).cxx_destruct;
 
 @end
 

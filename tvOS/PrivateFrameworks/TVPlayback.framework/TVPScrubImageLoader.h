@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _maxImageSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double priorityImageTime; // @synthesize priorityImageTime=_priorityImageTime;
 @property(retain, nonatomic) NSMutableArray *loadedImageInfos; // @synthesize loadedImageInfos=_loadedImageInfos;
 @property(retain, nonatomic) NSMutableArray *imageInfosBeingLoaded; // @synthesize imageInfosBeingLoaded=_imageInfosBeingLoaded;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSObject<TVPPlayback> *player; // @synthesize player=_player;
 @property(nonatomic) _Bool imagesAvailable; // @synthesize imagesAvailable=_imagesAvailable;
 @property(nonatomic) __weak id <TVPScrubImageLoaderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (double)_timeAfterInsertingInterstitials:(double)arg1;
 - (double)_timeAfterRemovingInterstitials:(double)arg1;
 - (id)_closestLoadedImageInfoForTime:(double)arg1;

@@ -66,10 +66,10 @@
 + (void)_blockingXPCCallWithArgumentBlock:(CDUnknownBlockType)arg1 resultHandler:(CDUnknownBlockType)arg2;
 + (void)_safelyCancelAndReleaseConnection:(id)arg1;
 + (BOOL)isValidEnvironment:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isShutdown; // @synthesize isShutdown=_isShutdown;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *ivarQueue; // @synthesize ivarQueue=_ivarQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
-- (void).cxx_destruct;
 - (void)setCriticalWakeTopics:(id)arg1;
 - (void)_setCriticalWakeTopics:(id)arg1;
 - (void)setDarkWakeTopics:(id)arg1;

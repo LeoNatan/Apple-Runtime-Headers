@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
     SCRVisualsHighlightCursor *_cursor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SCRVisualsHighlightCursor *cursor; // @synthesize cursor=_cursor;
 @property(readonly, nonatomic) SCRVisualsMenuWindow *menuWindow; // @synthesize menuWindow=_menuWindow;
 @property(readonly, nonatomic) AXFDispatchQueue *_syncQueue; // @synthesize _syncQueue=__syncQueue;
@@ -52,7 +53,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SCRKeyboardKey *hotKey; // @synthesize hotKey=_hotKey;
 @property(retain, nonatomic) NSMutableString *typeAheadString; // @synthesize typeAheadString=_typeAheadString;
-- (void).cxx_destruct;
 - (id)_lastWordForString:(id)arg1;
 - (BOOL)_handleGestureTrackingEvent:(id)arg1 request:(id)arg2;
 - (void)_handleOutputForIndexSelection:(unsigned long long)arg1 request:(id)arg2 shouldBraille:(BOOL)arg3;

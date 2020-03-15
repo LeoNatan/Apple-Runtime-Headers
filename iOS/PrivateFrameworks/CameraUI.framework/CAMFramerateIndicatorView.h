@@ -16,11 +16,11 @@
     UILabel *__label;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *_label; // @synthesize _label=__label;
 @property(readonly, nonatomic) UIImageView *_borderImageView; // @synthesize _borderImageView=__borderImageView;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
-- (void).cxx_destruct;
 - (void)_updateAppearance;
 - (long long)_framesPerSecond;
 - (void)_updateForAppearanceChange;

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     struct CGRect _frame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(nonatomic) unsigned long long badgesCorner; // @synthesize badgesCorner=_badgesCorner;
 @property(nonatomic) struct UIOffset badgesOffset; // @synthesize badgesOffset=_badgesOffset;
 @property(retain, nonatomic) UIView *snapshotView; // @synthesize snapshotView=_snapshotView;
-- (void).cxx_destruct;
 
 @end
 

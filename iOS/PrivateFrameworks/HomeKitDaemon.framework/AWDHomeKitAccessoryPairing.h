@@ -8,11 +8,12 @@
 
 #import <HomeKitDaemon/NSCopying-Protocol.h>
 
-@class AWDHomeKitVendorInformation;
+@class AWDHomeKitVendorInformation, NSString;
 
 @interface AWDHomeKitAccessoryPairing : PBCodable <NSCopying>
 {
     unsigned long long _timestamp;
+    NSString *_appIdentifier;
     int _certified;
     int _credentialType;
     unsigned int _duration;
@@ -43,6 +44,8 @@
     } _has;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSString *appIdentifier; // @synthesize appIdentifier=_appIdentifier;
 @property(nonatomic) _Bool isNetworkRouterReplace; // @synthesize isNetworkRouterReplace=_isNetworkRouterReplace;
 @property(nonatomic) _Bool isNetworkRouterAdd; // @synthesize isNetworkRouterAdd=_isNetworkRouterAdd;
 @property(nonatomic) _Bool isAddWithOwnershipProof; // @synthesize isAddWithOwnershipProof=_isAddWithOwnershipProof;
@@ -54,7 +57,6 @@
 @property(nonatomic) int errorCode; // @synthesize errorCode=_errorCode;
 @property(nonatomic) unsigned int duration; // @synthesize duration=_duration;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -64,6 +66,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasAppIdentifier;
 @property(nonatomic) _Bool hasIsNetworkRouterReplace;
 @property(nonatomic) _Bool hasIsNetworkRouterAdd;
 @property(nonatomic) _Bool hasIsAddWithOwnershipProof;

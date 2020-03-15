@@ -22,11 +22,11 @@
 + (id)quantityFromAxisValue:(double)arg1;
 + (double)frequencyFromAxisValue:(double)arg1;
 + (double)axisValueFromFrequency:(double)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isAverage; // @synthesize isAverage=_isAverage;
 @property(nonatomic) _Bool isLeftEar; // @synthesize isLeftEar=_isLeftEar;
 @property(readonly, nonatomic) NSNumber *yValue; // @synthesize yValue=_yValue;
 @property(readonly, nonatomic) NSNumber *xValue; // @synthesize xValue=_xValue;
-- (void).cxx_destruct;
 - (id)userInfo;
 - (id)maxYValue;
 - (id)minYValue;

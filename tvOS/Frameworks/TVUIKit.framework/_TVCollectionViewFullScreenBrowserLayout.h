@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)layoutAttributesClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *layoutAttributesByIndexPath; // @synthesize layoutAttributesByIndexPath=_layoutAttributesByIndexPath;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(nonatomic) struct CGSize cellSize; // @synthesize cellSize=_cellSize;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(readonly, nonatomic) NSArray *orderedLayoutAttributes; // @synthesize orderedLayoutAttributes=_orderedLayoutAttributes;
 @property(readonly, nonatomic) NSArray *layoutAttributesBySection; // @synthesize layoutAttributesBySection=_layoutAttributesBySection;
-- (void).cxx_destruct;
 - (void)_evaluateCenterCellIndexTransitionCheck;
 - (void)_enumerateVisibleCellIndexesInRect:(struct CGRect)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (long long)_currentCenterCellIndexWithTransitionState:(_Bool *)arg1;

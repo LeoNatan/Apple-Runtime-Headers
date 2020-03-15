@@ -37,6 +37,7 @@
     NSString *_updateDescription;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *installationRequirementsDescription; // @synthesize installationRequirementsDescription=_installationRequirementsDescription;
 @property(readonly, nonatomic) NSString *updateDescription; // @synthesize updateDescription=_updateDescription;
 @property(readonly, nonatomic) NSString *supportURLString; // @synthesize supportURLString=_supportURLString;
@@ -61,7 +62,6 @@
 @property(readonly, nonatomic) SKUIItemContentRating *contentRating; // @synthesize contentRating=_contentRating;
 - (id)childItemIdentifiers;
 @property(readonly, nonatomic) NSURL *artistPageURL; // @synthesize artistPageURL=_artistPageURL;
-- (void).cxx_destruct;
 - (void)_setInAppPurchases:(id)arg1;
 - (void)_setVersionHistory:(id)arg1;
 - (long long)numberOfChildItems;

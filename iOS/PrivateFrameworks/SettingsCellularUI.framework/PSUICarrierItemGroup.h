@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     PSListController *_listController;
 }
 
-@property(nonatomic) __weak PSListController *listController; // @synthesize listController=_listController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak PSListController *listController; // @synthesize listController=_listController;
 - (void)carrierItemPressed:(id)arg1;
 - (id)specifiersForCarrierItems;
 - (_Bool)hasCarrierItems;

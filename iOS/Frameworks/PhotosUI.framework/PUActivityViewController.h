@@ -29,6 +29,7 @@
     _Bool _isDismissed;
     _Bool _shouldUpdateVisibleItemsWhenReady;
     _Bool _isPreparingAssets;
+    _Bool _didSuccessfullyPrepareAssets;
     _Bool _preparedAsCloudLink;
     PUSharingHeaderController *_sharingHeaderController;
     struct CGRect _lastSelectedActivityFrame;
@@ -57,6 +58,8 @@
 + (id)actionSheetPhotosApplicationActivities;
 + (id)defaultActivityTypeOrder;
 + (_Bool)isOutboundShareActivity:(id)arg1;
++ (id)descriptionForPreparationErrorType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool sendAsOriginals; // @synthesize sendAsOriginals=_sendAsOriginals;
 @property(nonatomic) _Bool excludeLocation; // @synthesize excludeLocation=_excludeLocation;
 @property(nonatomic) _Bool excludeLiveness; // @synthesize excludeLiveness=_excludeLiveness;
@@ -71,7 +74,6 @@
 @property(nonatomic) __weak id <PUActivityViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSArray *photosActivities; // @synthesize photosActivities=_photosActivities;
 @property(readonly, nonatomic) PUActivitySharingViewModel *sharingViewModel; // @synthesize sharingViewModel=_sharingViewModel;
-- (void).cxx_destruct;
 - (void)ppt_cancelActivity;
 - (void)ppt_performActivityOfType:(id)arg1;
 - (_Bool)prepareForDismissingForced:(_Bool)arg1;
@@ -124,7 +126,9 @@
 - (void)_removeRemakerProgressView;
 - (void)_showRemakerProgressView:(id)arg1 forMail:(_Bool)arg2 withCancelationHandler:(CDUnknownBlockType)arg3;
 - (void)_handleUserCancelWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_sendCPAnalyticsAssetExportPreparationEventWithActivityType:(id)arg1 didComplete:(_Bool)arg2 error:(id)arg3;
 - (void)_sendCPAnalyticsShareEventWithActivityType:(id)arg1 didComplete:(_Bool)arg2;
+- (id)_generateAnalyticsPayloadForSharingEventsToActivityType:(id)arg1;
 - (void)_activity:(id)arg1 category:(long long)arg2 didComplete:(_Bool)arg3;
 - (void)_updateTopBorderView;
 @property(readonly, copy, nonatomic) NSOrderedSet *assets;
@@ -137,6 +141,7 @@
 - (id)initWithAssetItems:(id)arg1 photosApplicationActivities:(id)arg2 linkPresentation:(id)arg3 assetIdentifiers:(id)arg4 sharingViewModel:(id)arg5;
 - (id)initWithAssetItems:(id)arg1 photosApplicationActivities:(id)arg2 linkPresentation:(id)arg3;
 - (id)init;
+- (unsigned long long)preparationErrorTypeFromError:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

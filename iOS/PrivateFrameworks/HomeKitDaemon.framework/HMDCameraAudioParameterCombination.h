@@ -19,6 +19,7 @@
     NSNumber *_rtpPTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *rtpPTime; // @synthesize rtpPTime=_rtpPTime;
 @property(readonly, nonatomic) NSNumber *rtcpInterval; // @synthesize rtcpInterval=_rtcpInterval;
 @property(readonly, nonatomic) NSNumber *minimumBitrate; // @synthesize minimumBitrate=_minimumBitrate;
@@ -26,7 +27,6 @@
 @property(readonly, nonatomic) HMDAudioSampleRate *sampleRate; // @synthesize sampleRate=_sampleRate;
 @property(readonly, nonatomic) HMDBitRateSetting *bitrateSetting; // @synthesize bitrateSetting=_bitrateSetting;
 @property(readonly, nonatomic) HMDAudioCodecGroup *codecGroupType; // @synthesize codecGroupType=_codecGroupType;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)initWithCodecGroup:(id)arg1 bitrateSetting:(id)arg2 sampleRate:(id)arg3 maximumBitrate:(id)arg4 minimumBitrate:(id)arg5 rtcpInterval:(id)arg6 rtpPtime:(id)arg7;

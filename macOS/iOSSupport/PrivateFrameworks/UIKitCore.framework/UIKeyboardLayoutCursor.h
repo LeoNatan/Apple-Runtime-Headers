@@ -43,8 +43,6 @@ __attribute__((visibility("hidden")))
 - (void)_moveWithEvent:(id)arg1;
 - (BOOL)_handleWheelChangedWithEvent:(id)arg1;
 - (void)_wheelChangedWithEvent:(id)arg1;
-- (BOOL)_handlePhysicalKeyDownWithEvent:(id)arg1;
-- (void)_handleKeyUIEvent:(id)arg1;
 - (BOOL)_handleRemoteControlReceivedWithEvent:(id)arg1;
 - (void)remoteControlReceivedWithEvent:(id)arg1;
 - (BOOL)_handlePhysicalButtonEvent:(id)arg1;

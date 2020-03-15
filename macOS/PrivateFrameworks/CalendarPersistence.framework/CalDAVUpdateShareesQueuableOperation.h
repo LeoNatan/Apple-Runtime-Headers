@@ -15,9 +15,9 @@
 }
 
 + (void)resendInvitationsForSharees:(id)arg1 withCalendarObjectIDString:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *shareesToRemove; // @synthesize shareesToRemove=_shareesToRemove;
 @property(retain) NSMutableSet *shareesToUpdate; // @synthesize shareesToUpdate=_shareesToUpdate;
-- (void).cxx_destruct;
 - (void)performOperation;
 - (id)_deletedCalDAVCalendarServerUserItemFromAddress:(id)arg1;
 - (BOOL)updateOperationWithChangeRequest:(id)arg1;

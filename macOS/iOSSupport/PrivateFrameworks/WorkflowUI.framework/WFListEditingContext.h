@@ -16,11 +16,11 @@
     WFListEditorUpdateItem *_updateItem;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL nested; // @synthesize nested=_nested;
 @property(nonatomic) BOOL key; // @synthesize key=_key;
 @property(retain, nonatomic) WFListEditorUpdateItem *updateItem; // @synthesize updateItem=_updateItem;
 @property(retain, nonatomic) WFVariableEditingContext *variableContext; // @synthesize variableContext=_variableContext;
-- (void).cxx_destruct;
 
 @end
 

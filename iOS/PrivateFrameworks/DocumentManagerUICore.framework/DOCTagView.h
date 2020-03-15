@@ -17,11 +17,11 @@
     UILabel *_tagNameLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *tagNameLabel; // @synthesize tagNameLabel=_tagNameLabel;
 @property(nonatomic) __weak id <DOCTagViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(copy, nonatomic) DOCTag *tagValue; // @synthesize tagValue=_tagValue;
-- (void).cxx_destruct;
 - (_Bool)canBecomeFirstResponder;
 - (id)viewForLastBaselineLayout;
 - (void)updateColors;

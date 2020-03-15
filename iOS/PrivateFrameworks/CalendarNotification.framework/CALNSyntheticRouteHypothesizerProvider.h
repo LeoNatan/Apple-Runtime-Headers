@@ -16,8 +16,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) CADSyntheticRouteHypothesizerCache *syntheticRouteHypothesizerCache; // @synthesize syntheticRouteHypothesizerCache=_syntheticRouteHypothesizerCache;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CADSyntheticRouteHypothesizerCache *syntheticRouteHypothesizerCache; // @synthesize syntheticRouteHypothesizerCache=_syntheticRouteHypothesizerCache;
 - (void)removedRouteHypothesizerForEventExternalURL:(id)arg1;
 - (void)createdRouteHypothesizer:(id)arg1 forEventExternalURL:(id)arg2;
 - (void)didDismissUINotification:(unsigned long long)arg1 forPlannedDestination:(id)arg2 dismissalType:(unsigned long long)arg3;

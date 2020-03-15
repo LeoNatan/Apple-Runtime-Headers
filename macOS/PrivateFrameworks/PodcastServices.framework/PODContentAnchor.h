@@ -23,11 +23,11 @@
 + (id)userDefaultsKeyForSavedAnchorInDomain:(id)arg1;
 + (id)nullAnchorForDomain:(id)arg1 libraryPath:(id)arg2;
 + (id)nullAnchorForDomain:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
 @property(retain, nonatomic) NSString *libraryPath; // @synthesize libraryPath=_libraryPath;
 @property(nonatomic) long long revision; // @synthesize revision=_revision;
 @property(retain, nonatomic) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)isEqualToEquatable:(id)arg1;

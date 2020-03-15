@@ -17,11 +17,11 @@
     id <CNCDPersistenceChangesNotifier> _changesNotifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNCDPersistenceChangesNotifier> changesNotifier; // @synthesize changesNotifier=_changesNotifier;
 @property(readonly, nonatomic) id owningAddressBook; // @synthesize owningAddressBook=_owningAddressBook;
 @property(readonly, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 @property(readonly, nonatomic) id <CNCDPersistenceBackend> persistenceBackend; // @synthesize persistenceBackend=_persistenceBackend;
-- (void).cxx_destruct;
 - (id)defaultPersistentStore;
 - (void)applyDiff:(id)arg1 toContainerWithIdentifier:(id)arg2;
 - (id)defaultContainer;

@@ -14,8 +14,8 @@
 {
     CDUnknownBlockType _completionHandler;
     NSArray *_assets;
-    // Error parsing type: {atomic<bool>="__a_"AB}, name: _started
-    // Error parsing type: {atomic<bool>="__a_"AB}, name: _cancel
+    // Error parsing type: {atomic<bool>="__a_"{__cxx_atomic_impl<bool, std::__1::__cxx_atomic_base_impl<bool> >="__a_value"AB}}, name: _started
+    // Error parsing type: {atomic<bool>="__a_"{__cxx_atomic_impl<bool, std::__1::__cxx_atomic_base_impl<bool> >="__a_value"AB}}, name: _cancel
 }
 
 + (id)taskWithAssets:(id)arg1 andCompletionHandler:(CDUnknownBlockType)arg2;

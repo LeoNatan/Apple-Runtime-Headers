@@ -21,13 +21,13 @@
     NSObject<OS_dispatch_queue> *_delegateQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(retain) NSObject<OS_dispatch_queue> *watchdogQueue; // @synthesize watchdogQueue=_watchdogQueue;
 @property BOOL shouldStop; // @synthesize shouldStop=_shouldStop;
 @property(retain, nonatomic) id <NSObject> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) MLBackgroundTask *task; // @synthesize task=_task;
 @property(retain, nonatomic) _DASActivity *activity; // @synthesize activity=_activity;
-- (void).cxx_destruct;
 - (void)stop;
 - (unsigned char)start;
 - (BOOL)createExtensionDataSourceWithInfoKey:(id)arg1 conformingToProtocol:(id)arg2;

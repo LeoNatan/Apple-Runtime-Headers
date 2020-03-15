@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UIBarButtonItem *_anchorBarButtonItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *anchorBarButtonItem; // @synthesize anchorBarButtonItem=_anchorBarButtonItem;
 @property(retain, nonatomic) UIView *anchorView; // @synthesize anchorView=_anchorView;
 @property(copy, nonatomic) NSArray *passthroughViews; // @synthesize passthroughViews=_passthroughViews;
 @property(nonatomic) unsigned int permittedArrowDirections; // @synthesize permittedArrowDirections=_permittedArrowDirections;
-- (void).cxx_destruct;
 - (id)segueWithDestinationViewController:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

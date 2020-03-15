@@ -48,11 +48,11 @@
 + (id)changedTimeActionName:(id)arg1;
 + (id)genericEventChangedActionName:(id)arg1;
 + (id)multipleEventsChangedActionName;
+- (void).cxx_destruct;
 @property BOOL completedRecurringReminder; // @synthesize completedRecurringReminder=_completedRecurringReminder;
 @property(retain) NSDictionary *objectsRequiringAlteredSpan; // @synthesize objectsRequiringAlteredSpan=_objectsRequiringAlteredSpan;
 @property(retain) NSArray *previousSliceInfo; // @synthesize previousSliceInfo=_previousSliceInfo;
 @property(retain) NSArray *previousObjects; // @synthesize previousObjects=_previousObjects;
-- (void).cxx_destruct;
 - (id)_invertedNonSliceObjects;
 - (id)_objectsForInverse;
 - (id)_objectsRequiringAlteredSpan:(id)arg1;

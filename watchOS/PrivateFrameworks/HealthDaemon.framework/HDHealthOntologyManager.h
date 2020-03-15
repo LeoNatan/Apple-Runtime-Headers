@@ -6,13 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class HDProfile, HDSimpleGraphDatabase, HKObserverSet, NSArray, NSCache, NSDictionary, NSURL, NSUUID;
+@class HDProfile, HDSimpleGraphDatabase, HKObserverSet, NSCache, NSDictionary, NSURL, NSUUID;
 @protocol OS_dispatch_queue;
 
 @interface HDHealthOntologyManager : NSObject
 {
     NSDictionary *_codingSystemPriorityInfo;
-    NSArray *_privateCodeCreationCodingSortDescriptors;
     NSUUID *_assetAvailabilityRegistrationToken;
     struct os_unfair_lock_s _ivarLock;
     // Error parsing type: AB, name: _invalidated
@@ -25,25 +24,20 @@
     _Bool _unitTest_useEmbeddedOntologyAsset;
     HDProfile *_profile;
     NSObject<OS_dispatch_queue> *_queue;
-    NSURL *_ontologyURL;
     HDSimpleGraphDatabase *_graphDatabase;
+    NSURL *_ontologyURL;
 }
 
 + (void)obliterateWithProfile:(id)arg1 reason:(id)arg2;
 + (id)_ontologyURLForProfile:(id)arg1;
-+ (id)supportedLocales;
-+ (id)_primaryCodingKeyPathForSampleTypeIdentifier:(id)arg1;
-+ (id)_unknownConceptName;
-+ (id)_bestDisplayableCodingInCodings:(id)arg1 prioritizedCodingSystems:(id)arg2;
-+ (id)_bestDisplayNameForCodings:(id)arg1 prioritizedCodingSystems:(id)arg2;
 + (_Bool)graphDatabase:(id)arg1 setVersion:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool unitTest_useEmbeddedOntologyAsset; // @synthesize unitTest_useEmbeddedOntologyAsset=_unitTest_useEmbeddedOntologyAsset;
 @property(readonly, nonatomic) _Bool unitTest_useEmbeddedOntology; // @synthesize unitTest_useEmbeddedOntology=_unitTest_useEmbeddedOntology;
-@property(retain, nonatomic) HDSimpleGraphDatabase *graphDatabase; // @synthesize graphDatabase=_graphDatabase;
 @property(readonly, copy, nonatomic) NSURL *ontologyURL; // @synthesize ontologyURL=_ontologyURL;
+@property(retain, nonatomic) HDSimpleGraphDatabase *graphDatabase; // @synthesize graphDatabase=_graphDatabase;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)hd_unitTesting_clearCache;
 - (void)hd_unitTesting_disableCache;
 - (void)hd_unitTesting_setupDatabase;
@@ -55,7 +49,6 @@
 - (_Bool)_createOntologyDirectoryIfNecessaryWithError:(id *)arg1;
 - (_Bool)_work_node:(id)arg1 addAttributeWithCoding:(id)arg2 error:(id *)arg3;
 - (_Bool)performGraphDatabaseWork:(CDUnknownBlockType)arg1 usingTransaction:(_Bool)arg2 error:(id *)arg3;
-- (_Bool)supportsLocale:(id)arg1;
 - (void)_notifyObserversReferenceOntologyCreated;
 - (void)_notifyObserversReferenceOntologyDidUpdateWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)_notifyObserversReferenceOntologyWillUpdate;
@@ -72,6 +65,7 @@
 - (_Bool)insertAssociations:(id)arg1 error:(id *)arg2;
 - (_Bool)makeAssociationFromSampleUUID:(id)arg1 toConcept:(id)arg2 error:(id *)arg3;
 - (long long)countOfConceptsAssociatedWithUserRecords:(id *)arg1;
+- (id)_ontologyConfigurationForCountryCode:(id)arg1;
 - (id)relationshipsForConceptWithIdentifier:(id)arg1 error:(id *)arg2;
 - (id)conceptsWithRelationship:(id)arg1 fromNodeWithID:(id)arg2 error:(id *)arg3;
 - (id)conceptsWithRelationship:(id)arg1 toNodeWithID:(id)arg2 error:(id *)arg3;
@@ -84,14 +78,12 @@
 - (id)conceptForIdentifier:(id)arg1 error:(id *)arg2;
 - (id)_conceptWithGraphDatabaseCall:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (id)_work_conceptFromGraphNode:(id)arg1 preloadRelationships:(_Bool)arg2;
-- (id)_codingSystemPriorityArrayForSampleType:(id)arg1 property:(id)arg2;
-- (id)_adHocConceptCodingFromCodings:(id)arg1;
-- (id)_privateCodeCreationCodingSortDescriptors;
-- (id)_primaryCodingFromCodings:(id)arg1 usingPrioritizedCodingSystems:(id)arg2;
-- (_Bool)_isNebulousCoding:(id)arg1;
-- (id)_work_graphDatabase:(id)arg1 synthesizeConceptWithPrimaryCoding:(id)arg2 displayName:(id)arg3;
-- (id)_work_graphDatabase:(id)arg1 findConceptForCoding:(id)arg2;
-- (id)conceptForContext:(id)arg1 locale:(id)arg2;
+- (_Bool)_work_graphDatabase:(id)arg1 insertConcept:(id)arg2 error:(id *)arg3;
+- (id)_work_graphDatabase:(id)arg1 newConceptIdentifierWithName:(id)arg2 error:(id *)arg3;
+- (id)_work_graphDatabase:(id)arg1 findConceptForCoding:(id)arg2 error:(id *)arg3;
+- (id)_work_graphDatabase:(id)arg1 findConceptsForCodings:(id)arg2 error:(id *)arg3;
+- (id)conceptForContext:(id)arg1;
+- (id)_work_graphDatabase:(id)arg1 resolveMercuryConceptForCodings:(id)arg2 country:(id)arg3 error:(id *)arg4;
 - (void)_queue_createAndInitializeIfNeeded;
 - (id)userVersionWithError:(id *)arg1;
 - (id)_queue_graphDatabaseUserVersionWithError:(id *)arg1;

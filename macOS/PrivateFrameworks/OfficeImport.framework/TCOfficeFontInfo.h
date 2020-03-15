@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)officeFontInfoWithFullName:(id)arg1 isBold:(BOOL)arg2 isItalic:(BOOL)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isItalic; // @synthesize isItalic=_isItalic;
 @property(readonly, nonatomic) BOOL isBold; // @synthesize isBold=_isBold;
 @property(readonly, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)officeName;
 - (id)initWithFullName:(id)arg1 isBold:(BOOL)arg2 isItalic:(BOOL)arg3;

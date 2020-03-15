@@ -17,12 +17,12 @@
     UILabel *_labelView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *labelView; // @synthesize labelView=_labelView;
 @property(retain, nonatomic) UIView *labelContainerView; // @synthesize labelContainerView=_labelContainerView;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(nonatomic) _Bool cardAccepted; // @synthesize cardAccepted=_cardAccepted;
 @property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
-- (void).cxx_destruct;
 - (void)_updateLoyaltyText;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

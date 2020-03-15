@@ -19,9 +19,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *personIdentifier; // @synthesize personIdentifier=_personIdentifier;
 @property(copy, nonatomic) NSDictionary *extraProperties; // @synthesize extraProperties=_extraProperties;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

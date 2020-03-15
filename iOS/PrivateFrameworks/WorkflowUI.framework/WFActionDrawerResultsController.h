@@ -16,10 +16,10 @@
 }
 
 + (id)localizedAppNames;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFActionDrawerResults *cachedSiriSuggestionsResults; // @synthesize cachedSiriSuggestionsResults=_cachedSiriSuggestionsResults;
 @property(readonly, nonatomic) WFActionRegistry *actionRegistry; // @synthesize actionRegistry=_actionRegistry;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)actions;
 - (id)actionsForCategory:(id)arg1;
 - (_Bool)filteringForResidentCompatibleActions;

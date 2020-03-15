@@ -11,8 +11,8 @@
     CDUnknownBlockType _startHandler;
 }
 
-@property(readonly, copy, nonatomic) CDUnknownBlockType startHandler; // @synthesize startHandler=_startHandler;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CDUnknownBlockType startHandler; // @synthesize startHandler=_startHandler;
 - (void)execute;
 - (id)initWithStartHandler:(CDUnknownBlockType)arg1;
 

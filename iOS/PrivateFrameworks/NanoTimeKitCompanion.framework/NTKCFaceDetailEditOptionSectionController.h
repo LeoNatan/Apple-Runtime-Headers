@@ -19,13 +19,13 @@
     NTKCFaceDetailRowActionCell *_actionRow;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTKCFaceDetailRowActionCell *actionRow; // @synthesize actionRow=_actionRow;
 @property(readonly, nonatomic) Class editCellClass; // @synthesize editCellClass=_editCellClass;
 @property(nonatomic) __weak id <NTKCFaceDetailEditOptionSectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSDictionary *selectedOptions; // @synthesize selectedOptions=_selectedOptions;
 @property(nonatomic) __weak NTKFaceView *faceView; // @synthesize faceView=_faceView;
 @property(retain, nonatomic) NTKEditOptionCollection *collection; // @synthesize collection=_collection;
-- (void).cxx_destruct;
 - (void)_customizeActionRow:(id)arg1 withEditOption:(id)arg2;
 - (id)_actionNameForOption:(id)arg1;
 - (void)_refreshActionRowContent;

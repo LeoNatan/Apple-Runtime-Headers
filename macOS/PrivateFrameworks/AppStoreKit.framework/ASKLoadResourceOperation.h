@@ -12,9 +12,9 @@
     long long __loadReason;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setLoadReason:) long long _loadReason; // @synthesize _loadReason=__loadReason;
 @property(copy) CDUnknownBlockType outputBlock; // @synthesize outputBlock=_outputBlock;
-- (void).cxx_destruct;
 - (void)main;
 - (void)didCompleteWithResource:(id)arg1 error:(id)arg2;
 

@@ -21,12 +21,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSURL *URL; // @synthesize URL=_URL;
 @property(retain) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(retain) NSString *name; // @synthesize name=_name;
 @property(retain) NSString *FAACode; // @synthesize FAACode=_FAACode;
 @property(retain) NSString *IATACode; // @synthesize IATACode=_IATACode;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

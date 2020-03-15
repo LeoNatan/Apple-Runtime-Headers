@@ -14,8 +14,8 @@
 }
 
 + (id)actionWithActions:(id)arg1;
-@property(retain, nonatomic) NSArray *subactions; // @synthesize subactions=_subactions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *subactions; // @synthesize subactions=_subactions;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)hasAssociatedSound;
 - (BOOL)hasAssociatedSoundForDoubleAction;

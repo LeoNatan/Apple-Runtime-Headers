@@ -17,11 +17,11 @@
 }
 
 + (CDUnknownBlockType)_networkRouterItemComparator;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFNetworkRouterItemProvider *networkRouterItemProvider; // @synthesize networkRouterItemProvider=_networkRouterItemProvider;
 @property(readonly, nonatomic) HMHome *overrideHome; // @synthesize overrideHome=_overrideHome;
 @property(retain, nonatomic) HUNetworkConfigurationItemListModule *networkConfigurationItemListModule; // @synthesize networkConfigurationItemListModule=_networkConfigurationItemListModule;
 @property(retain, nonatomic) HFItem *homeProtectionItem; // @synthesize homeProtectionItem=_homeProtectionItem;
-- (void).cxx_destruct;
 - (id)_homeFuture;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;
 - (id)_buildItemModulesForHome:(id)arg1;

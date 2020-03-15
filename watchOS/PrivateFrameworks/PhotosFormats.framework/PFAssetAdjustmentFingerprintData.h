@@ -22,6 +22,7 @@
     NSData *_secondaryAdjustmentData;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *secondaryAdjustmentData; // @synthesize secondaryAdjustmentData=_secondaryAdjustmentData;
 @property(copy, nonatomic) NSString *largeAdjustmentDataFingerprint; // @synthesize largeAdjustmentDataFingerprint=_largeAdjustmentDataFingerprint;
 @property(copy, nonatomic) NSData *largeAdjustmentData; // @synthesize largeAdjustmentData=_largeAdjustmentData;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSString *adjustmentCreatorCode; // @synthesize adjustmentCreatorCode=_adjustmentCreatorCode;
 @property(copy, nonatomic) NSString *adjustmentCompoundVersion; // @synthesize adjustmentCompoundVersion=_adjustmentCompoundVersion;
 @property(copy, nonatomic) NSString *adjustmentType; // @synthesize adjustmentType=_adjustmentType;
-- (void).cxx_destruct;
 
 @end
 

@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     NSString *_ssid;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int present; // @synthesize present=_present;
 @property(copy, nonatomic) NSString *ssid; // @synthesize ssid=_ssid;
 @property(nonatomic) int rssi; // @synthesize rssi=_rssi;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned int deviceIECategory; // @synthesize deviceIECategory=_deviceIECategory;
 @property(copy, nonatomic) NSData *deviceIEBluetoothMAC; // @synthesize deviceIEBluetoothMAC=_deviceIEBluetoothMAC;
 @property(copy, nonatomic) NSData *bssid; // @synthesize bssid=_bssid;
-- (void).cxx_destruct;
 - (unsigned int)_updateWithDeviceIE:(const char *)arg1 end:(const char *)arg2;
 - (id)description;
 

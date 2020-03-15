@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     UIButton *_infoButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *infoButton; // @synthesize infoButton=_infoButton;
 @property(retain, nonatomic) UILabel *descriptionTextLabel; // @synthesize descriptionTextLabel=_descriptionTextLabel;
 @property(nonatomic) long long layoutType; // @synthesize layoutType=_layoutType;
 @property(retain, nonatomic) NSString *descriptionText; // @synthesize descriptionText=_descriptionText;
 @property(nonatomic) __weak id <CKBusinessInfoViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)infoButtonTapped:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

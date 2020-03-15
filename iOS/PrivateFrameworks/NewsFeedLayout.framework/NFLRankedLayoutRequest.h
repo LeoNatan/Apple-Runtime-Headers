@@ -20,11 +20,11 @@
 
 + (id)requestsWithTileInfo:(id)arg1 columnSpans:(id)arg2 cellType:(long long)arg3 showAccessoryText:(_Bool)arg4;
 + (id)requestWithTileInfo:(id)arg1 columnSpan:(unsigned long long)arg2 cellType:(long long)arg3 showAccessoryText:(_Bool)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isShowingAccessoryText) _Bool showAccessoryText; // @synthesize showAccessoryText=_showAccessoryText;
 @property(readonly, nonatomic) long long cellType; // @synthesize cellType=_cellType;
 @property(readonly, nonatomic) unsigned long long columnSpan; // @synthesize columnSpan=_columnSpan;
 @property(readonly, copy, nonatomic) NSObject<NFLFeedTileInfo> *tileInfo; // @synthesize tileInfo=_tileInfo;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

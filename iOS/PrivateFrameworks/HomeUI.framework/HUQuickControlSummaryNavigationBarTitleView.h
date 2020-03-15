@@ -14,9 +14,9 @@
     NSArray *_contentConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *contentConstraints; // @synthesize contentConstraints=_contentConstraints;
 @property(retain, nonatomic) HUQuickControlSummaryView *summaryView; // @synthesize summaryView=_summaryView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)updateConstraints;
 - (id)initWithFrame:(struct CGRect)arg1;

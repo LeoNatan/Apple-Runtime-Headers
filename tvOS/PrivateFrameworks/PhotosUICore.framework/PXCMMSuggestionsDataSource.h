@@ -15,8 +15,8 @@
     PXCMMSuggestionsDataSourceState *__state;
 }
 
-@property(readonly, nonatomic) PXCMMSuggestionsDataSourceState *_state; // @synthesize _state=__state;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXCMMSuggestionsDataSourceState *_state; // @synthesize _state=__state;
 - (long long)_adjustedIndexFromIndex:(long long)arg1;
 - (struct PXSimpleIndexPath)indexPathForObjectReference:(id)arg1;
 - (id)suggestionAtItemIndexPath:(struct PXSimpleIndexPath)arg1;

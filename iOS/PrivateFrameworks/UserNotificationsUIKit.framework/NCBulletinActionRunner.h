@@ -19,12 +19,12 @@
     BBObserver *_observer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool responseWasSent; // @synthesize responseWasSent=_responseWasSent;
 @property(readonly, nonatomic) BBObserver *observer; // @synthesize observer=_observer;
 @property(readonly, nonatomic) BBBulletin *bulletin; // @synthesize bulletin=_bulletin;
 @property(readonly, nonatomic) BBAction *action; // @synthesize action=_action;
 @property(nonatomic) _Bool shouldForwardAction; // @synthesize shouldForwardAction=_shouldForwardAction;
-- (void).cxx_destruct;
 - (void)executeAction:(id)arg1 fromOrigin:(id)arg2 endpoint:(id)arg3 withParameters:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)initWithAction:(id)arg1 bulletin:(id)arg2 observer:(id)arg3;
 

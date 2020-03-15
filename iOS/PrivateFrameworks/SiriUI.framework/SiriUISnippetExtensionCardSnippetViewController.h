@@ -16,9 +16,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 - (id)snippet;
-- (void).cxx_destruct;
 - (void)_resumeTouchesIfNecessary;
 - (void)_cancelTouchesIfNecessary;
 - (id)sashItem;

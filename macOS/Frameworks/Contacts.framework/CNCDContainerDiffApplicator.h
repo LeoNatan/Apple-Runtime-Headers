@@ -6,13 +6,19 @@
 
 #import <objc/NSObject.h>
 
+@class CNCDSaveContext;
+
 __attribute__((visibility("hidden")))
 @interface CNCDContainerDiffApplicator : NSObject
 {
+    CNCDSaveContext *_saveContext;
 }
 
-- (void)setGuardianRestricted:(struct NSNumber *)arg1 onContainerWithIdentifier:(id)arg2;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) CNCDSaveContext *saveContext; // @synthesize saveContext=_saveContext;
+- (void)setGuardianRestricted:(BOOL)arg1 onContainerWithIdentifier:(id)arg2;
 - (void)applyDiff:(id)arg1 toContainerWithIdentifier:(id)arg2;
+- (id)initWithSaveContext:(id)arg1;
 
 @end
 

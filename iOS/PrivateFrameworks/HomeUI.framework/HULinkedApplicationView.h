@@ -27,6 +27,7 @@
     NSArray *_currentConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *currentConstraints; // @synthesize currentConstraints=_currentConstraints;
 @property(retain, nonatomic) NSURL *storeURL; // @synthesize storeURL=_storeURL;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)_viewButtonTapped:(id)arg1;
 - (void)updateUIWithAnimation:(_Bool)arg1;
 - (void)updateConstraints;

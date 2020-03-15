@@ -51,6 +51,7 @@
     CDStruct_4fab6026 _collapsedItemFading;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CEKSelectionFeedbackGenerator *_selectionFeedbackGenerator; // @synthesize _selectionFeedbackGenerator=__selectionFeedbackGenerator;
 @property(nonatomic, setter=_setExpandedAnimationCounter:) unsigned long long _expandedAnimationCounter; // @synthesize _expandedAnimationCounter=__expandedAnimationCounter;
 @property(retain, nonatomic, setter=_setCollapseTimer:) NSTimer *_collapseTimer; // @synthesize _collapseTimer=__collapseTimer;
@@ -81,7 +82,6 @@
 @property(nonatomic) long long selectedLightingType; // @synthesize selectedLightingType=_selectedLightingType;
 @property(nonatomic) long long lightingEffectSet; // @synthesize lightingEffectSet=_lightingEffectSet;
 @property(nonatomic) __weak id <CEKLightingControlDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateToContentSize:(id)arg1;
 - (void)_performFeedback;
 - (void)_prepareFeedback;

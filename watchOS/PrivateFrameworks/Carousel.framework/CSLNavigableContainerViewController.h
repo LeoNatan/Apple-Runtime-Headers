@@ -18,9 +18,9 @@
     UIViewController *_containeeViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIViewController *containeeViewController; // @synthesize containeeViewController=_containeeViewController;
 @property(readonly, nonatomic) CSLMainUIEntity *entity; // @synthesize entity=_entity;
-- (void).cxx_destruct;
 - (_Bool)containsVisibleViewController:(id)arg1;
 - (void)beginDisappearingTransitionToViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)beginAppearingTransitionFromViewController:(id)arg1 animated:(_Bool)arg2;

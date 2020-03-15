@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     VUILabel *_logoTextView;
     VUILabel *_subTextView;
     VUILabel *_episodeInfoView;
+    _TVImageView *_logoTextGradientView;
     _TVImageView *_coverArtImageView;
     _TVImageView *_decorationImageView;
     _TVImageView *_decorationImageGradientView;
@@ -30,6 +31,7 @@ __attribute__((visibility("hidden")))
     VUIMediaTagsView *_tagsView;
     VUIMediaTagsView *_infoTagsView;
     VUILabel *_disclaimerTextView;
+    VUILabel *_promoTextView;
     VUILabel *_availabilityTextView;
     _TVImageView *_availabilityImageView;
     CAGradientLayer *_gradientLayer;
@@ -39,6 +41,7 @@ __attribute__((visibility("hidden")))
     double _contentOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double contentOffset; // @synthesize contentOffset=_contentOffset;
 @property(retain, nonatomic) VUILabel *tagsComputationLabel; // @synthesize tagsComputationLabel=_tagsComputationLabel;
 @property(retain, nonatomic) VUILabel *descComputationLabel; // @synthesize descComputationLabel=_descComputationLabel;
@@ -47,6 +50,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool prefersUberLayout; // @synthesize prefersUberLayout=_prefersUberLayout;
 @property(retain, nonatomic) _TVImageView *availabilityImageView; // @synthesize availabilityImageView=_availabilityImageView;
 @property(retain, nonatomic) VUILabel *availabilityTextView; // @synthesize availabilityTextView=_availabilityTextView;
+@property(retain, nonatomic) VUILabel *promoTextView; // @synthesize promoTextView=_promoTextView;
 @property(retain, nonatomic) VUILabel *disclaimerTextView; // @synthesize disclaimerTextView=_disclaimerTextView;
 @property(retain, nonatomic) VUIMediaTagsView *infoTagsView; // @synthesize infoTagsView=_infoTagsView;
 @property(retain, nonatomic) VUIMediaTagsView *tagsView; // @synthesize tagsView=_tagsView;
@@ -57,13 +61,13 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _TVImageView *decorationImageGradientView; // @synthesize decorationImageGradientView=_decorationImageGradientView;
 @property(retain, nonatomic) _TVImageView *decorationImageView; // @synthesize decorationImageView=_decorationImageView;
 @property(retain, nonatomic) _TVImageView *coverArtImageView; // @synthesize coverArtImageView=_coverArtImageView;
+@property(retain, nonatomic) _TVImageView *logoTextGradientView; // @synthesize logoTextGradientView=_logoTextGradientView;
 @property(retain, nonatomic) VUILabel *episodeInfoView; // @synthesize episodeInfoView=_episodeInfoView;
 @property(retain, nonatomic) VUILabel *subTextView; // @synthesize subTextView=_subTextView;
 @property(retain, nonatomic) VUILabel *logoTextView; // @synthesize logoTextView=_logoTextView;
 @property(retain, nonatomic) _TVImageView *logoImageView; // @synthesize logoImageView=_logoImageView;
 @property(retain, nonatomic) VUIProductBannerLayout *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 - (struct CGSize)_iOS_layoutButtonViewsWithWidth:(double)arg1 origin:(struct CGPoint)arg2 isVerticalLayout:(_Bool)arg3 computationOnly:(_Bool)arg4;
 - (struct CGSize)_iOS_layoutSubviewsWithSize:(struct CGSize)arg1 computationOnly:(_Bool)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

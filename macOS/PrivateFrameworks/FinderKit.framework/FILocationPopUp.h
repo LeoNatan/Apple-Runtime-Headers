@@ -31,13 +31,13 @@
     BOOL _shouldAllowTargetingCloud;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property BOOL shouldAllowTargetingCloud; // @synthesize shouldAllowTargetingCloud=_shouldAllowTargetingCloud;
 @property BOOL shouldShowKeyEquivalents; // @synthesize shouldShowKeyEquivalents=_shouldShowKeyEquivalents;
 @property BOOL shouldIncludeAncestors; // @synthesize shouldIncludeAncestors=_shouldIncludeAncestors;
 @property BOOL shouldShowFavorites; // @synthesize shouldShowFavorites=_shouldShowFavorites;
 @property BOOL shouldShowDevices; // @synthesize shouldShowDevices=_shouldShowDevices;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (BOOL)performKeyEquivalent:(id)arg1;
 - (void)buildMenuAsync;
 - (void)menuNeedsUpdate:(id)arg1;

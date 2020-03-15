@@ -19,6 +19,7 @@
     NSArray *_productDataAlternates;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *productDataAlternates; // @synthesize productDataAlternates=_productDataAlternates;
 @property(readonly, nonatomic) NSString *productData; // @synthesize productData=_productData;
 @property(readonly, nonatomic) HMDAccessoryVersion *firmwareVersion; // @synthesize firmwareVersion=_firmwareVersion;
@@ -26,7 +27,6 @@
 @property(readonly, nonatomic) NSString *appBundleID; // @synthesize appBundleID=_appBundleID;
 @property(readonly, nonatomic) NSString *manufacturer; // @synthesize manufacturer=_manufacturer;
 @property(readonly, nonatomic) NSString *model; // @synthesize model=_model;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)attributeDescriptions;

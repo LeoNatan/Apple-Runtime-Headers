@@ -15,8 +15,8 @@
     CDUnknownBlockType _priorityComparator;
 }
 
-@property(readonly, copy, nonatomic) CDUnknownBlockType priorityComparator; // @synthesize priorityComparator=_priorityComparator;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CDUnknownBlockType priorityComparator; // @synthesize priorityComparator=_priorityComparator;
 - (unsigned long long)_insertionIndexForObject:(id)arg1 buffer:(id)arg2;
 - (void)enqueueObject:(id)arg1 buffer:(id)arg2;
 - (id)initWithComparator:(CDUnknownBlockType)arg1;

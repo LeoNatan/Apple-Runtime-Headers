@@ -27,10 +27,10 @@
 + (_Bool)stringContainsPhoneNumbers:(id)arg1;
 + (id)phoneNumbersInString:(id)arg1 error:(id *)arg2;
 + (id)phoneNumberUtil;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) NSString *contactName; // @synthesize contactName=_contactName;
 @property(readonly, nonatomic) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (id)wfSerializedRepresentation;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

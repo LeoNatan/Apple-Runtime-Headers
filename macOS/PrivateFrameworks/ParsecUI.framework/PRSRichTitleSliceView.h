@@ -55,6 +55,7 @@
     NSAttributedString *_fullDescriptionTextAttributedString;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSAttributedString *fullDescriptionTextAttributedString; // @synthesize fullDescriptionTextAttributedString=_fullDescriptionTextAttributedString;
 @property __weak NSLayoutConstraint *overlayBottomAlignedToImage; // @synthesize overlayBottomAlignedToImage=_overlayBottomAlignedToImage;
 @property __weak NSLayoutConstraint *overlayRightAlignedToImage; // @synthesize overlayRightAlignedToImage=_overlayRightAlignedToImage;
@@ -90,7 +91,6 @@
 @property(readonly) NSArray *moreGlyphs; // @synthesize moreGlyphs=_moreGlyphs;
 @property double roundingRadius; // @synthesize roundingRadius=_roundingRadius;
 @property BOOL needsRoundedImage; // @synthesize needsRoundedImage=_needsRoundedImage;
-- (void).cxx_destruct;
 - (void)setContraint:(id)arg1 attached:(BOOL)arg2 toView:(id)arg3;
 - (void)addBuyOptions:(id)arg1 addActionButton:(id)arg2 locallyAvailable:(BOOL)arg3 forCardSection:(id)arg4;
 - (void)openURL:(id)arg1;

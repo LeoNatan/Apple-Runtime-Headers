@@ -17,11 +17,11 @@
 }
 
 + (id)configurationWithPhotoLibrary:(id)arg1 serviceStatus:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType buttonAction; // @synthesize buttonAction=_buttonAction;
 @property(readonly, nonatomic) NSString *buttonTitle; // @synthesize buttonTitle=_buttonTitle;
 @property(readonly, nonatomic) NSString *message; // @synthesize message=_message;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 buttonTitle:(id)arg3 buttonAction:(CDUnknownBlockType)arg4;
 
 @end

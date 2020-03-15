@@ -48,9 +48,9 @@
 - (void)enumerateColumnsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateCellRangesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateCellIDsUsingBlock:(CDUnknownBlockType)arg1;
-- (struct NSObject *)topToBottomIterator;
-- (struct NSObject *)rightToLeftIterator;
-- (struct NSObject *)iterator;
+- (id)topToBottomIterator;
+- (id)rightToLeftIterator;
+- (id)iterator;
 - (CDStruct_0441cfb5)suitableCursor;
 - (CDStruct_0441cfb5)suitableAnchor;
 - (id)copyWithZone:(struct _NSZone *)arg1;

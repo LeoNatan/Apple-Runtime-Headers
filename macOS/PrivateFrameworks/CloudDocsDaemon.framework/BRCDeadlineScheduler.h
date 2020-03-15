@@ -28,11 +28,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _computeNextAdmissibleDateForScheduling;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BRCFairScheduler *fairScheduler; // @synthesize fairScheduler=_fairScheduler;
 @property(readonly, nonatomic) BOOL isCancelled; // @synthesize isCancelled=_isCancelled;
 @property(copy, nonatomic) CDUnknownBlockType computeNextAdmissibleDateForScheduling; // @synthesize computeNextAdmissibleDateForScheduling=_computeNextAdmissibleDateForScheduling;
 @property(nonatomic) long long coalescingLeeway; // @synthesize coalescingLeeway=_leeway;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)close;
 - (void)_close;

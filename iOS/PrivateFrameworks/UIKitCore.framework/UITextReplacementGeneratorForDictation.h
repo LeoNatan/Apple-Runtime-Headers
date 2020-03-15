@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSTextAlternatives *_alternatives;
 }
 
-@property(readonly, nonatomic) NSTextAlternatives *alternatives; // @synthesize alternatives=_alternatives;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSTextAlternatives *alternatives; // @synthesize alternatives=_alternatives;
 - (id)replacements;
 - (id)initWithAlternatives:(id)arg1 stringToReplace:(id)arg2 replacementRange:(id)arg3;
 

@@ -18,12 +18,12 @@
 }
 
 + (id)buttonWithTitle:(id)arg1 color:(id)arg2 icon:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *transformingImageView; // @synthesize transformingImageView=_transformingImageView;
 @property(nonatomic) _Bool animatingTouchDown; // @synthesize animatingTouchDown=_animatingTouchDown;
 @property(retain, nonatomic) UIColor *backgroundImageColor; // @synthesize backgroundImageColor=_backgroundImageColor;
 @property(retain, nonatomic) UIColor *imageViewTintColor; // @synthesize imageViewTintColor=_imageViewTintColor;
 @property(copy, nonatomic) CDUnknownBlockType touchUpAnimationCompleteHandler; // @synthesize touchUpAnimationCompleteHandler=_touchUpAnimationCompleteHandler;
-- (void).cxx_destruct;
 - (struct CGRect)backgroundImageFrame;
 - (struct CGRect)imageRectForContentRect:(struct CGRect)arg1;
 - (struct CGRect)titleRectForContentRect:(struct CGRect)arg1;

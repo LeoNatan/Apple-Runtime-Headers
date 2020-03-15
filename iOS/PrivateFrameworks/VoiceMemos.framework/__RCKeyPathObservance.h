@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _observer;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType observer; // @synthesize observer=_observer;
 @property(retain, nonatomic) NSArray *keyPaths; // @synthesize keyPaths=_keyPaths;
 @property(nonatomic) __weak id <NSObject> object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)remove;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

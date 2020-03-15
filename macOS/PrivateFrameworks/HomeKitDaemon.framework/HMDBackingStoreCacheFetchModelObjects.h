@@ -19,6 +19,7 @@
     NSString *_type;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 @property(retain, nonatomic) NSUUID *parent; // @synthesize parent=_parent;
 @property(retain, nonatomic) NSArray *names; // @synthesize names=_names;
@@ -26,7 +27,6 @@
 @property(copy, nonatomic) CDUnknownBlockType fetchResult; // @synthesize fetchResult=_fetchResult;
 @property(retain, nonatomic) HMDBackingStoreCacheShareGroup *share; // @synthesize share=_share;
 @property(retain, nonatomic) HMDBackingStoreCacheGroup *group; // @synthesize group=_group;
-- (void).cxx_destruct;
 - (id)mainReturningError;
 - (id)initWithNames:(id)arg1 fetchResult:(CDUnknownBlockType)arg2;
 - (id)initWithUUIDs:(id)arg1 fetchResult:(CDUnknownBlockType)arg2;

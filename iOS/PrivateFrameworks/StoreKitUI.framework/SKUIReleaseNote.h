@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)dateFormatter;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *versionString; // @synthesize versionString=_versionString;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) NSString *changeNotes; // @synthesize changeNotes=_changeNotes;
-- (void).cxx_destruct;
 - (id)initWithReleaseNoteDictionary:(id)arg1 dateFormatter:(id)arg2;
 
 @end

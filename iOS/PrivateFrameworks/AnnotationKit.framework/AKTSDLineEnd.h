@@ -35,12 +35,12 @@
 + (id)filledDiamond;
 + (id)filledCircle;
 + (id)simpleArrow;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int lineJoin; // @synthesize lineJoin=mLineJoin;
 @property(readonly, nonatomic) _Bool isFilled; // @synthesize isFilled=mIsFilled;
 @property(readonly, nonatomic) struct CGPoint endPoint; // @synthesize endPoint=mEndPoint;
 @property(readonly, nonatomic) struct CGPath *path; // @synthesize path=mPath;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=mIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) _Bool isNone;
 @property(readonly, nonatomic) struct CGPath *wrapPath;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NWMTemperatureFormatter *_formatter;
 }
 
-@property(retain, nonatomic) NWMTemperatureFormatter *formatter; // @synthesize formatter=_formatter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NWMTemperatureFormatter *formatter; // @synthesize formatter=_formatter;
 - (id)dataFormatter;
 - (Class)hourlyForecastViewClass;
 

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     unsigned long long _fifo;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=setFIFO:) unsigned long long fifo; // @synthesize fifo=_fifo;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
-- (void).cxx_destruct;
 - (void)cancel;
 - (long long)compare:(id)arg1;
 - (id)initWithBlock:(CDUnknownBlockType)arg1 key:(id)arg2 priority:(long long)arg3 fifo:(unsigned long long)arg4;

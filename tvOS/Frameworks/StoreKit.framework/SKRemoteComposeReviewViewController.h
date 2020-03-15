@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
-@property(nonatomic) __weak SKComposeReviewViewController *composeReviewViewController; // @synthesize composeReviewViewController=_composeReviewViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SKComposeReviewViewController *composeReviewViewController; // @synthesize composeReviewViewController=_composeReviewViewController;
 - (void)promptForStarRating;
 - (void)didPrepareWithResult:(id)arg1 error:(id)arg2;
 - (void)didFinishWithResult:(id)arg1 error:(id)arg2;

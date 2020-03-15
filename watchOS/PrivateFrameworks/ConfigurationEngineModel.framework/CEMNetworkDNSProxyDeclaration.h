@@ -24,10 +24,10 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CEMAnyPayload *payloadProviderConfiguration; // @synthesize payloadProviderConfiguration=_payloadProviderConfiguration;
 @property(copy, nonatomic) NSString *payloadProviderBundleIdentifier; // @synthesize payloadProviderBundleIdentifier=_payloadProviderBundleIdentifier;
 @property(copy, nonatomic) NSString *payloadAppBundleIdentifier; // @synthesize payloadAppBundleIdentifier=_payloadAppBundleIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

@@ -26,10 +26,10 @@ __attribute__((visibility("hidden")))
     int _selectionCoalescing;
 }
 
-@property(nonatomic) _Bool supportsPrefetching; // @synthesize supportsPrefetching=_supportsPrefetching;
-@property(nonatomic) _Bool useActiveAppearance; // @synthesize useActiveAppearance=_useActiveAppearance;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool supportsPrefetching; // @synthesize supportsPrefetching=_supportsPrefetching;
+@property(nonatomic) _Bool useActiveAppearance; // @synthesize useActiveAppearance=_useActiveAppearance;
 - (_Bool)receiveDrop:(struct TDropOperation *)arg1 draggingInfo:(id)arg2;
 - (unsigned long long)validateDrop:(id)arg1 proposedIndexPath:(id *)arg2 dropOperation:(long long *)arg3 dropTargetNode:(const struct TFENode *)arg4 outDropTargetNodeAcceptsDrop:(_Bool *)arg5;
 - (void)draggingSession:(id)arg1 endedAtPoint:(struct CGPoint)arg2 operation:(unsigned long long)arg3;

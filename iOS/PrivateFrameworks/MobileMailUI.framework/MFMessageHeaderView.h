@@ -19,15 +19,17 @@
     MFMessageDisplayMetrics *_displayMetrics;
     MFMessageHeaderViewBlock *_pinnedBlock;
     MessageHeaderViewModel *_viewModel;
+    struct CGRect _draggableArea;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) struct CGRect draggableArea; // @synthesize draggableArea=_draggableArea;
 @property(retain, nonatomic) MessageHeaderViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(nonatomic) _Bool bottomSeparatorDrawsFlushWithLeadingEdge; // @synthesize bottomSeparatorDrawsFlushWithLeadingEdge=_bottomSeparatorDrawsFlushWithLeadingEdge;
 @property(copy, nonatomic) NSArray *headerBlocks; // @synthesize headerBlocks=_headerBlocks;
 @property(retain, nonatomic) MFMessageHeaderViewBlock *pinnedBlock; // @synthesize pinnedBlock=_pinnedBlock;
 @property(retain, nonatomic) MFMessageDisplayMetrics *displayMetrics; // @synthesize displayMetrics=_displayMetrics;
 @property(nonatomic) __weak id <MFMessageHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (_Bool)_blockHasWhiteOrClearBackground:(id)arg1;
 - (void)_updateSeparators;

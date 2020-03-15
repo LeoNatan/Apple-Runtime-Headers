@@ -16,11 +16,11 @@
     UIViewFloatAnimatableProperty *_resizeProgress;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewFloatAnimatableProperty *resizeProgress; // @synthesize resizeProgress=_resizeProgress;
 @property(nonatomic) double expandedHeight; // @synthesize expandedHeight=_expandedHeight;
 @property(nonatomic) double compactHeight; // @synthesize compactHeight=_compactHeight;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
-- (void).cxx_destruct;
 
 @end
 

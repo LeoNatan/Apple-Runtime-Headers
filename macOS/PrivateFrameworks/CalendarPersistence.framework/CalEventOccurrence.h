@@ -53,6 +53,7 @@
 + (id)changedPropertiesToCheck;
 + (id)legacyOccurrenceFromOccurrence:(id)arg1;
 + (id)occurrenceInCalendar:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL needsRebin; // @synthesize needsRebin=_needsRebin;
 @property(retain, nonatomic) NSString *occurrenceID; // @synthesize occurrenceID=_occurrenceID;
 @property(retain, nonatomic) NSString *accountImageID; // @synthesize accountImageID=_accountImageID;
@@ -73,7 +74,6 @@
 @property(retain, nonatomic) NSDate *cachedStart; // @synthesize cachedStart=_cachedStart;
 @property(retain, nonatomic) NSDate *recurrenceDate; // @synthesize recurrenceDate=_recurrenceDate;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)committedPropertyForKey:(id)arg1;
 - (id)propertyForKey:(id)arg1;
 - (id)changedPropertyForKey:(id)arg1;

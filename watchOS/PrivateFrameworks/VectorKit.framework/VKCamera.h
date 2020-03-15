@@ -53,6 +53,8 @@ __attribute__((visibility("hidden")))
     optional_76e85d3d _maxDistanceToGroundRestriction;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) optional_76e85d3d maxDistanceToGroundRestriction; // @synthesize maxDistanceToGroundRestriction=_maxDistanceToGroundRestriction;
 @property(nonatomic) optional_76e85d3d minDistanceToGroundRestriction; // @synthesize minDistanceToGroundRestriction=_minDistanceToGroundRestriction;
 @property(retain, nonatomic) VKCameraRegionRestriction *regionRestriction; // @synthesize regionRestriction=_regionRestriction;
@@ -69,8 +71,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double minHeight; // @synthesize minHeight=_minHeight;
 @property(nonatomic) double maxHeightNoPitch; // @synthesize maxHeightNoPitch=_maxHeightNoPitch;
 @property(nonatomic) double aspectRatio; // @synthesize aspectRatio=_aspectRatio;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (CameraFrame_406dbd31)cameraFrame;
 - (View_a667aa2f)view:(struct ViewSize)arg1;
 @property(readonly, nonatomic) const Matrix_08d701e4 *unscaledProjectionMatrix;

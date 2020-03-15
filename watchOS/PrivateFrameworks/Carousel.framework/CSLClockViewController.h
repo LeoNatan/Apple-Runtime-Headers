@@ -48,12 +48,12 @@
 }
 
 + (id)sharedClockViewController;
+- (void).cxx_destruct;
 @property(retain) CSLClockBlankingWindow *blankingWindow; // @synthesize blankingWindow=_blankingWindow;
 @property(nonatomic) __weak id <CSLSScreenWakeProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isLockScreenBorrowed) _Bool lockScreenBorrowed; // @synthesize lockScreenBorrowed=_lockScreenBorrowed;
 @property(nonatomic) unsigned int pauseReasons; // @synthesize pauseReasons=_pauseReasons;
 @property(readonly, nonatomic) CSLClockHostingManager *hostingManager; // @synthesize hostingManager=_hostingManager;
-- (void).cxx_destruct;
 - (void)backlight:(id)arg1 didTurnOn:(_Bool)arg2 atContinuousTime:(unsigned long long)arg3 forReason:(unsigned int)arg4;
 - (void)hostingManager:(id)arg1 willActivateRequester:(id)arg2;
 - (void)stateMachineDidUpdateEffectiveVisibility:(id)arg1;

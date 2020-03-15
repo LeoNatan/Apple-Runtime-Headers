@@ -11,7 +11,7 @@
 #import <HealthDaemon/HDHealthOntologyManagerObserver-Protocol.h>
 #import <HealthDaemon/HDHealthRecordsAccountEventObserver-Protocol.h>
 
-@class HDConceptIndexManager, HDHealthOntologyManager, HDHealthRecordsNotificationManager, HDOntologyAssetManager, HDProfile, NSString;
+@class HDConceptIndexManager, HDHealthOntologyConfiguration, HDHealthOntologyManager, HDHealthRecordsNotificationManager, HDOntologyAssetManager, HDProfile, NSSet, NSString;
 @protocol HDOntologyTester;
 
 @interface HDOntologyLifecycleManager : NSObject <HDDatabaseProtectedDataObserver, HDHealthDaemonReadyObserver, HDHealthOntologyManagerObserver, HDHealthRecordsAccountEventObserver>
@@ -23,17 +23,21 @@
     HDHealthOntologyManager *_ontologyManager;
     HDConceptIndexManager *_indexManager;
     HDHealthRecordsNotificationManager *_notificationManager;
+    HDHealthOntologyConfiguration *_ontologyConfiguration;
     id <HDOntologyTester> _ontologyTester;
+    HDHealthOntologyConfiguration *_unitTesting_ontologyConfigurationOverride;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) HDHealthOntologyConfiguration *unitTesting_ontologyConfigurationOverride; // @synthesize unitTesting_ontologyConfigurationOverride=_unitTesting_ontologyConfigurationOverride;
 @property(nonatomic) __weak id <HDOntologyTester> ontologyTester; // @synthesize ontologyTester=_ontologyTester;
 @property(nonatomic, getter=isReady) _Bool ready; // @synthesize ready=_ready;
+@property(copy, nonatomic) HDHealthOntologyConfiguration *ontologyConfiguration; // @synthesize ontologyConfiguration=_ontologyConfiguration;
 @property(readonly, nonatomic) HDHealthRecordsNotificationManager *notificationManager; // @synthesize notificationManager=_notificationManager;
 @property(readonly, nonatomic) HDConceptIndexManager *indexManager; // @synthesize indexManager=_indexManager;
 @property(retain, nonatomic) HDHealthOntologyManager *ontologyManager; // @synthesize ontologyManager=_ontologyManager;
 @property(retain, nonatomic) HDOntologyAssetManager *assetManager; // @synthesize assetManager=_assetManager;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)profileExtension:(id)arg1 accountEventOccurred:(unsigned long long)arg2;
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(_Bool)arg2;
 - (void)ontologyManagerReferenceOntologyCreated:(id)arg1;
@@ -43,6 +47,12 @@
 - (void)_evaluateManagerState;
 - (void)_disableAllManagers;
 - (void)_enableAllManagers;
+- (id)ontologyConfigurationForCountryCode:(id)arg1;
+@property(readonly, copy, nonatomic) NSSet *optInDataCollectionEnabledCountryCodes;
+@property(readonly, copy, nonatomic) NSSet *improveHealthRecordsGatedAnalyticsEnabledCountryCodes;
+@property(readonly, copy, nonatomic) NSSet *allSupportedCountryCodes;
+- (_Bool)isCountryCodeSupported:(id)arg1;
+- (_Bool)isCountrySupported:(id)arg1;
 - (void)dealloc;
 - (void)obliterateWithReason:(id)arg1;
 - (void)invalidateAndWait;

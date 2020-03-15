@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     UIStackView *_stackView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool usesDarkTheme; // @synthesize usesDarkTheme=_usesDarkTheme;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain, nonatomic) NSArray *segmentImages; // @synthesize segmentImages=_segmentImages;
 @property(copy, nonatomic) NSArray *segmentTitles; // @synthesize segmentTitles=_segmentTitles;
 @property(nonatomic) long long selectedSegmentIndex; // @synthesize selectedSegmentIndex=_selectedSegmentIndex;
-- (void).cxx_destruct;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (_Bool)shouldTrack;

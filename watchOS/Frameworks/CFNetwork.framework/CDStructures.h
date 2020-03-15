@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSObject, NSString;
 
 #pragma mark Function Pointers and Blocks
 
@@ -299,8 +299,6 @@ struct NSCFURLProtocolClient {
     id _field4;
 };
 
-struct NSObject;
-
 struct NetworkProxy;
 
 struct RedirectionRecorder;
@@ -498,7 +496,7 @@ struct XTubeManager {
     struct RetainableTypedDict<const CoreSchedulingSet *, GlueTubeManager *> *_field4;
     struct _opaque_pthread_mutex_t _field5;
     struct HTTPConnectionCacheLimits _field6;
-    shared_ptr_9ad247fa _field7;
+    shared_ptr_22b0e4cc _field7;
 };
 
 struct _CFCachedURLResponse;
@@ -602,7 +600,7 @@ struct shared_ptr<HTTPProtocol> {
 };
 
 struct shared_ptr<NSObject<OS_nw_context>> {
-    struct NSObject *__ptr_;
+    NSObject *__ptr_;
     struct __shared_weak_count *__cntrl_;
 };
 
@@ -745,7 +743,9 @@ typedef struct {
     _Bool _field12;
     _Bool _field13;
     _Bool _field14;
-} CDStruct_eeadfa9f;
+    unsigned long long _field15;
+    unsigned long long _field16;
+} CDStruct_78f5ff5d;
 
 typedef struct {
     unsigned int _field1[8];
@@ -778,8 +778,8 @@ typedef struct {
     unsigned char _field10[16];
     int _field11;
     _Bool _field12;
-    CDStruct_eeadfa9f _field13[0];
-} CDStruct_88e232e4;
+    CDStruct_78f5ff5d _field13[0];
+} CDStruct_24e10642;
 
 // Template types
 typedef struct SmartBlockWithArgs<NSURLSessionTaskMetrics *> {
@@ -798,9 +798,9 @@ typedef struct SmartBlockWithArgs<bool> {
 } SmartBlockWithArgs_7064a8fd;
 
 typedef struct shared_ptr<NSObject<OS_nw_context>> {
-    struct NSObject *__ptr_;
+    NSObject *__ptr_;
     struct __shared_weak_count *__cntrl_;
-} shared_ptr_9ad247fa;
+} shared_ptr_22b0e4cc;
 
 typedef struct shared_ptr<TLSServer> {
     struct TLSServer *__ptr_;

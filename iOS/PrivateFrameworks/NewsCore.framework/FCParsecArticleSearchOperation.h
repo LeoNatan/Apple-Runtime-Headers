@@ -24,6 +24,7 @@
     SFMoreResults *_moreResults;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFMoreResults *moreResults; // @synthesize moreResults=_moreResults;
 @property(nonatomic) unsigned long long parsecQueryID; // @synthesize parsecQueryID=_parsecQueryID;
 @property(retain, nonatomic) SFRankingFeedback *rankingFeedback; // @synthesize rankingFeedback=_rankingFeedback;
@@ -35,7 +36,6 @@
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(copy, nonatomic) NSString *keyboardInputMode; // @synthesize keyboardInputMode=_keyboardInputMode;
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (id)_rankingFeedbackWithSection:(id)arg1;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;

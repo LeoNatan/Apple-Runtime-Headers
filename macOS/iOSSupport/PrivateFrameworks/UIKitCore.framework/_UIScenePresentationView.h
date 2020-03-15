@@ -27,9 +27,9 @@ __attribute__((visibility("hidden")))
     BOOL _invalidated;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UISceneLayerHostContainerView *hostContainerView; // @synthesize hostContainerView=_hostContainerView;
 @property(retain, nonatomic) UIScenePresentationContext *currentPresentationContext; // @synthesize currentPresentationContext=_currentPresentationContext;
-- (void).cxx_destruct;
 - (void)_updateFrameAndTransform;
 - (void)_geometryDidUpdateWithTransitionContext:(id)arg1;
 - (void)_updateBackgroundColor;

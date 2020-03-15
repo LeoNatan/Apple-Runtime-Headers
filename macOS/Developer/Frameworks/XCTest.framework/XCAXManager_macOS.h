@@ -9,11 +9,13 @@
 #import <XCTest/XCUIAccessibilityInterface-Protocol.h>
 
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, XCTAccessibilityFramework, XCUIDevice;
 
 @interface XCAXManager_macOS : NSObject <XCUIAccessibilityInterface>
 {
     double _AXTimeout;
+    id <XCUIDevice> _device;
+    id <XCTAccessibilityFramework> _accessibilityFramework;
     struct __AXUIElement *_systemWideElement;
     NSMutableDictionary *_observersByPID;
     NSMutableSet *_inProgressObservationSetupPIDs;
@@ -21,9 +23,12 @@
     NSMutableDictionary *_notificationHandlers;
     NSMutableDictionary *_menuOpenObservers;
     NSObject<OS_dispatch_queue> *_queue;
+    CDStruct_0aeaffe8 _accessibilityFunctions;
 }
 
++ (id)axNotificationsOfInterest;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain) NSMutableDictionary *menuOpenObservers; // @synthesize menuOpenObservers=_menuOpenObservers;
 @property(retain) NSMutableDictionary *notificationHandlers; // @synthesize notificationHandlers=_notificationHandlers;
@@ -31,7 +36,9 @@
 @property(retain) NSMutableSet *inProgressObservationSetupPIDs; // @synthesize inProgressObservationSetupPIDs=_inProgressObservationSetupPIDs;
 @property(retain) NSMutableDictionary *observersByPID; // @synthesize observersByPID=_observersByPID;
 @property struct __AXUIElement *systemWideElement; // @synthesize systemWideElement=_systemWideElement;
-- (void).cxx_destruct;
+@property(readonly) id <XCTAccessibilityFramework> accessibilityFramework; // @synthesize accessibilityFramework=_accessibilityFramework;
+@property(readonly) CDStruct_0aeaffe8 accessibilityFunctions; // @synthesize accessibilityFunctions=_accessibilityFunctions;
+@property(readonly) __weak id <XCUIDevice> device; // @synthesize device=_device;
 - (BOOL)enableFauxCollectionViewCells:(id *)arg1;
 - (void)notifyWhenViewControllerViewDidDisappearReply:(CDUnknownBlockType)arg1;
 - (void)notifyWhenViewControllerViewDidAppearReply:(CDUnknownBlockType)arg1;
@@ -43,17 +50,21 @@
 - (BOOL)cachedAccessibilityLoadedValueForPID:(int)arg1;
 - (id)parameterizedAttribute:(id)arg1 forElement:(id)arg2 parameter:(id)arg3 error:(id *)arg4;
 - (BOOL)setAttribute:(id)arg1 value:(id)arg2 element:(id)arg3 outError:(id *)arg4;
+- (BOOL)isMacCatalystForPID:(int)arg1;
 @property(readonly) BOOL usePointTransformationsForFrameConversions;
 @property(readonly) BOOL supportsHostedViewCoordinateTransformations;
 @property(readonly) BOOL axNotificationsIncludeElement;
 - (BOOL)performAction:(id)arg1 onElement:(id)arg2 value:(id)arg3 error:(id *)arg4;
+- (id)_windowForElement:(id)arg1 error:(id *)arg2;
 - (id)interruptingUIElementsAffectingSnapshot:(id)arg1 checkForHandledElement:(id)arg2 containsHandledElement:(char *)arg3;
 - (id)_windowsPotentiallyInterferingWithAXUIElement:(struct __AXUIElement *)arg1;
 - (void)notifyWhenEventLoopIsIdleForApplication:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)removeObserver:(id)arg1 forAXNotification:(id)arg2;
 - (id)addObserverForAXNotification:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)registerForAXNotificationsForApplicationWithPID:(int)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_registerForAXNotificationsForApplicationWithPID:(int)arg1 deadline:(double)arg2 lastError:(id)arg3 completionAndCleanup:(CDUnknownBlockType)arg4;
+- (void)unregisterForAXNotificationsForApplicationWithPID:(int)arg1;
+- (void)_queue_registerForAXNotificationsForApplicationWithPID:(int)arg1 timeout:(double)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)registerForAXNotificationsForApplicationWithPID:(int)arg1 timeout:(double)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_queue_registerForAXNotificationsForApplicationWithPID:(int)arg1 retryDeadline:(double)arg2 lastError:(id)arg3 completionAndCleanup:(CDUnknownBlockType)arg4;
 @property(readonly) BOOL allowsRemoteAccess;
 - (id)attributesForElement:(id)arg1 attributes:(id)arg2 error:(id *)arg3;
 - (id)accessibilityElementForElementAtPoint:(struct CGPoint)arg1 error:(id *)arg2;
@@ -61,12 +72,13 @@
 - (id)hitTestElement:(id)arg1 withPoint:(struct CGPoint)arg2 error:(id *)arg3;
 - (id)requestSnapshotForElement:(id)arg1 attributes:(id)arg2 parameters:(id)arg3 error:(id *)arg4;
 - (id)axAttributesForElementSnapshotKeyPaths:(id)arg1;
-- (BOOL)_startObservingApplication:(struct __AXUIElement *)arg1 error:(id *)arg2;
+- (BOOL)_queue_startObservingApplication:(struct __AXUIElement *)arg1 error:(id *)arg2;
 - (void)performWhenMenuOpens:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)_notifyMenuOpenObserversForMenuElement:(id)arg1;
 - (void)_handleNotification:(id)arg1 accessibilityElement:(id)arg2 info:(id)arg3;
 - (BOOL)loadAccessibility:(id *)arg1;
-- (id)init;
+- (id)initWithDevice:(id)arg1;
+- (id)initWithDevice:(id)arg1 accessibilityFunctions:(CDStruct_0aeaffe8)arg2;
 - (void)_setAXTimeout:(double)arg1 forElement:(struct __AXUIElement *)arg2;
 @property double AXTimeout; // @synthesize AXTimeout=_AXTimeout;
 - (void)dealloc;

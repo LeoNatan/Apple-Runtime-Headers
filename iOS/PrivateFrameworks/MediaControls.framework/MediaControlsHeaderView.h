@@ -36,9 +36,12 @@ __attribute__((visibility("hidden")))
     MPUMarqueeView *_secondaryMarqueeView;
     UILabel *_secondaryLabel;
     UILabel *_placeholderLabel;
+    UIView *_artworkContentView;
     struct CGSize _overrideSize;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) UIView *artworkContentView; // @synthesize artworkContentView=_artworkContentView;
 @property(nonatomic) _Bool shouldUseOverrideSize; // @synthesize shouldUseOverrideSize=_shouldUseOverrideSize;
 @property(retain, nonatomic) UILabel *placeholderLabel; // @synthesize placeholderLabel=_placeholderLabel;
 @property(retain, nonatomic) UILabel *secondaryLabel; // @synthesize secondaryLabel=_secondaryLabel;
@@ -65,7 +68,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIImageView *placeholderArtworkView; // @synthesize placeholderArtworkView=_placeholderArtworkView;
 @property(retain, nonatomic) UIImageView *artworkView; // @synthesize artworkView=_artworkView;
 @property(copy, nonatomic) MPCPlayerPath *playerPath; // @synthesize playerPath=_playerPath;
-- (void).cxx_destruct;
+- (void)launchNowPlayingAppButtonPressed;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_handleContentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_updateRTL;

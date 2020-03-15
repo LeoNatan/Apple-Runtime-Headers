@@ -6,9 +6,7 @@
 
 #import <NewsArticles/_TtC12NewsArticles25TableOfContentsURLHandler.h>
 
-#import <NewsArticles/SXURLHandling-Protocol.h>
-
-@interface _TtC12NewsArticles25TableOfContentsURLHandler (NewsArticles) <SXURLHandling>
+@interface _TtC12NewsArticles25TableOfContentsURLHandler (NewsArticles)
 - (void)openURL:(id)arg1;
 @end
 

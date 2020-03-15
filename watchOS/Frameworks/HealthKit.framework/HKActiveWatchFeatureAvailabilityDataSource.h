@@ -17,10 +17,10 @@
     NRPairedDeviceRegistry *_pairedDeviceRegistry;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NRPairedDeviceRegistry *pairedDeviceRegistry; // @synthesize pairedDeviceRegistry=_pairedDeviceRegistry;
 @property(copy, nonatomic) NSString *atrialFibrillationDetectionOnboardingCountryCode; // @synthesize atrialFibrillationDetectionOnboardingCountryCode=_atrialFibrillationDetectionOnboardingCountryCode;
 @property(copy, nonatomic) NSString *electrocardiogramOnboardingCountryCode; // @synthesize electrocardiogramOnboardingCountryCode=_electrocardiogramOnboardingCountryCode;
-- (void).cxx_destruct;
 - (CDStruct_4bb15e50)_operatingSystemVersionForWatchOSVersion:(unsigned int)arg1;
 - (CDStruct_4bb15e50)watchElectrocardiogramVersion;
 - (CDStruct_4bb15e50)watchAtrialFibrillationDetectionVersion;

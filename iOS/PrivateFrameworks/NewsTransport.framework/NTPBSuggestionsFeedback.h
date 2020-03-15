@@ -17,9 +17,9 @@
 }
 
 + (Class)gradesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *feedback; // @synthesize feedback=_feedback;
 @property(retain, nonatomic) NSMutableArray *grades; // @synthesize grades=_grades;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

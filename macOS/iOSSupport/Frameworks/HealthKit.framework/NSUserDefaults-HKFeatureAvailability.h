@@ -11,6 +11,7 @@
 @interface NSUserDefaults (HKFeatureAvailability)
 + (id)hk_featureAvailabilityUserDefaults;
 + (id)hk_heartRhythmDefaults;
+@property(nonatomic, getter=hk_electrocardiogramWatchAppInstallHasBeenAllowed, setter=hk_setElectrocardiogramWatchAppInstallIsAllowed:) BOOL hk_electrocardiogramWatchAppInstallIsAllowed;
 @property(readonly, nonatomic) BOOL hk_hfeModeEnabled;
 @property(retain, nonatomic, setter=hk_setDemoResultKeys:) NSArray *hk_demoResultKeys;
 @property(nonatomic, getter=hk_atrialFibrillationSetupModalViewHasBeenPresented, setter=hk_setAtrialFibrillationSetupModalViewPresented:) BOOL hk_atrialFibrillationSetupModalViewPresented;

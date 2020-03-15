@@ -27,9 +27,9 @@
 
 + (_Bool)isDisabledInAirplaneMode;
 + (_Bool)isEnabled;
+- (void).cxx_destruct;
 @property(retain, nonatomic) STSiriContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
-- (void).cxx_destruct;
 - (struct __CFString *)resultTransformForLanguageModel:(id)arg1;
 - (id)yieldDictationConnection;
 - (void)dictationConnection:(id)arg1 didRecognizeTokens:(id)arg2 languageModel:(id)arg3;

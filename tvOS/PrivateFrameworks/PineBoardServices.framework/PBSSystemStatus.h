@@ -12,7 +12,7 @@
 
 + (void)_setUpdatingOS:(_Bool)arg1;
 + (void)_setThermalState:(unsigned long long)arg1;
-+ (void)_setVideoPlaying:(_Bool)arg1 musicPlaying:(_Bool)arg2;
++ (void)_setSystemPlayingState:(unsigned long long)arg1;
 + (void)_setPresenceDetectionActive:(_Bool)arg1;
 + (void)_setSystemSleepStopping;
 + (void)_setSystemSleepActive;
@@ -37,7 +37,10 @@
 + (_Bool)isSystemUsingEthernet;
 + (_Bool)isInternetAvailable;
 + (_Bool)isMusicPlaying;
++ (id)keyPathsForValuesAffectingMusicPlaying;
 + (_Bool)isVideoPlaying;
++ (id)keyPathsForValuesAffectingVideoPlaying;
++ (unsigned long long)systemPlayingState;
 + (unsigned long long)systemAttentionState;
 - (id)init;
 

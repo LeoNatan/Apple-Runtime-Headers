@@ -19,10 +19,10 @@
 }
 
 + (id)JSONKeyPathsByPropertyKey;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *userLocale; // @synthesize userLocale=_userLocale;
 @property(readonly, nonatomic) NSString *osVersion; // @synthesize osVersion=_osVersion;
 @property(readonly, nonatomic) NSString *appVersion; // @synthesize appVersion=_appVersion;
-- (void).cxx_destruct;
 - (id)javaScriptCoreRepresentationWithError:(id *)arg1;
 @property(readonly, nonatomic) NSString *defaultLocalizedDeniedErrorMessage;
 @property(readonly, nonatomic) NSString *defaultLocalizedDeniedErrorTitle;

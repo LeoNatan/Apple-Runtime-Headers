@@ -66,6 +66,7 @@ __attribute__((visibility("hidden")))
 
 + (Class)ioControllerPrefsType;
 + (Class)portPrefsType;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL wantsMicrophonePermission; // @synthesize wantsMicrophonePermission=_wantsMicrophonePermission;
 @property(nonatomic) BOOL wantsBackgroundAudio; // @synthesize wantsBackgroundAudio=_wantsBackgroundAudio;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
@@ -100,7 +101,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned int originatingProcessToken; // @synthesize originatingProcessToken=_originatingProcessToken;
 @property(nonatomic) unsigned int generationCount; // @synthesize generationCount=_generationCount;
 @property(nonatomic) unsigned int sessionToken; // @synthesize sessionToken=_sessionToken;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

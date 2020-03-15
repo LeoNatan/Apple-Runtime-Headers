@@ -32,6 +32,7 @@
     ABACAccount *_acParentAccount;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <ABACAccountStore> accountStore; // @synthesize accountStore=_accountStore;
 @property(retain, nonatomic) ABACAccount *acParentAccount; // @synthesize acParentAccount=_acParentAccount;
 @property(retain, nonatomic) ABACAccount *acAccount; // @synthesize acAccount=_acAccount;
@@ -46,7 +47,6 @@
 @property(copy, nonatomic) NSString *basePath; // @synthesize basePath=_basePath;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)makeAccountConfigurationWithAccount:(id)arg1;
 - (id)makePersistence;
 @property(retain, nonatomic) ABAccountPersistence *persistence;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSHashTable *_trackedInteractions;
 }
 
-@property(retain, nonatomic) NSHashTable *trackedInteractions; // @synthesize trackedInteractions=_trackedInteractions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSHashTable *trackedInteractions; // @synthesize trackedInteractions=_trackedInteractions;
 - (long long)subtype;
 - (long long)type;
 - (void)deregisterAllInteractionsForWindow:(id)arg1;

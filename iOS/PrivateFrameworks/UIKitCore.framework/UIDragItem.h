@@ -28,6 +28,7 @@
     struct CGSize _visibleDropItemSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long _managementState; // @synthesize _managementState=__managementState;
 @property(retain, nonatomic, getter=_privateLocalContext, setter=_setPrivateLocalContext:) id privateLocalContext; // @synthesize privateLocalContext=_privateLocalContext;
 @property(nonatomic, getter=_deferPreviewUpdates, setter=_setDeferPreviewUpdates:) _Bool deferPreviewUpdates; // @synthesize deferPreviewUpdates=_deferPreviewUpdates;
@@ -43,7 +44,6 @@
 @property(copy, nonatomic) CDUnknownBlockType previewProvider; // @synthesize previewProvider=_previewProvider;
 @property(retain, nonatomic) id localObject; // @synthesize localObject=_localObject;
 @property(retain, nonatomic) NSItemProvider *itemProvider; // @synthesize itemProvider=_itemProvider;
-- (void).cxx_destruct;
 - (id)_currentPreviewProvider;
 - (id)_previewProviderForType:(unsigned long long)arg1;
 - (void)_previewNeedsUpdateForType:(unsigned long long)arg1;

@@ -14,8 +14,8 @@
     NSDate *_expirationDate;
 }
 
-@property(copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 - (void)_enumerateItemsWithBlock:(CDUnknownBlockType)arg1;
 - (id)valueForProperty:(id)arg1;
 - (id)itemForKey:(id)arg1;

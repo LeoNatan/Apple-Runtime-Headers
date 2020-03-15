@@ -18,10 +18,10 @@
     EFCancelationToken *_cancelationToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EFCancelationToken *cancelationToken; // @synthesize cancelationToken=_cancelationToken;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, copy, nonatomic) NSArray *messageObjectIDs; // @synthesize messageObjectIDs=_messageObjectIDs;
-- (void).cxx_destruct;
 - (void)mailboxWasPredicted:(id)arg1;
 - (void)_performQueryWithRemoteConnection:(id)arg1 forRecovery:(BOOL)arg2;
 - (void)recoverQueryWithRemoteConnection:(id)arg1;

@@ -21,13 +21,13 @@
 + (id)volumeConfigurationForDeviceWithUUID:(id)arg1;
 + (id)playbackConfigurationForDeviceWithUUID:(id)arg1;
 + (id)basicConfigurationForDeviceWithUUID:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsNavigation; // @synthesize allowsNavigation=_allowsNavigation;
 @property(copy, nonatomic) NSArray *requiredActions; // @synthesize requiredActions=_requiredActions;
 @property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(nonatomic) int deviceType; // @synthesize deviceType=_deviceType;
 @property(retain, nonatomic) NSUUID *deviceUUID; // @synthesize deviceUUID=_deviceUUID;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (int)nextActionAfterAction:(int)arg1;
 - (int)previousActionBeforeAction:(int)arg1;
 - (int)lastAction;

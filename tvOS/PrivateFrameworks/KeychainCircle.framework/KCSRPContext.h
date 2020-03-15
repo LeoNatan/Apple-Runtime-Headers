@@ -16,10 +16,10 @@
 }
 
 + (id)createWithUser:(id)arg1 digestInfo:(const struct ccdigest_info *)arg2 group:(struct ccdh_gp *)arg3 randomSource:(struct ccrng_state *)arg4;
+- (void).cxx_destruct;
 @property(retain) NSString *user; // @synthesize user=_user;
 @property struct ccrng_state *rng; // @synthesize rng=_rng;
 @property struct ccsrp_ctx *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (_Bool)isAuthenticated;
 - (id)getKey;
 - (void)finalize;

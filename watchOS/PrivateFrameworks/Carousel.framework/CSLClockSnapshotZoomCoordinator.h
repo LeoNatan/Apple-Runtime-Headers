@@ -18,11 +18,11 @@
     CSLIconSnapshotZoomSequencer *_zoomSequencer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLIconSnapshotZoomSequencer *zoomSequencer; // @synthesize zoomSequencer=_zoomSequencer;
 @property(retain, nonatomic) CSLIconZoomCoordinationContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) CSLUITileNavigationController *tileNavigationController; // @synthesize tileNavigationController=_tileNavigationController;
 @property(readonly, nonatomic) CSLClockViewController *clockViewController; // @synthesize clockViewController=_clockViewController;
-- (void).cxx_destruct;
 - (void)endZoomingAtZoomLevel:(float)arg1 didChangeZoomLevels:(_Bool)arg2;
 - (void)zoomLevelDidChange:(float)arg1;
 - (void)prepareToZoomWithContext:(id)arg1;

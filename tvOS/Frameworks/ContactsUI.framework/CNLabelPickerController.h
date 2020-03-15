@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CNPropertyGroupItem *_item;
 }
 
-@property(readonly, nonatomic) __weak CNPropertyGroupItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak CNPropertyGroupItem *item; // @synthesize item=_item;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)removeCustomItem:(id)arg1;
 - (id)titleForPickerItem:(id)arg1;

@@ -63,6 +63,7 @@
 }
 
 + (Class)appBundleIdIndicesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLPPipelineDiagnosticReport *pipelineDiagnosticReport; // @synthesize pipelineDiagnosticReport=_pipelineDiagnosticReport;
 @property(nonatomic) BOOL isFromLocationController; // @synthesize isFromLocationController=_isFromLocationController;
 @property(retain, nonatomic) CLPSatelliteReport *satReport; // @synthesize satReport=_satReport;
@@ -90,7 +91,6 @@
 @property(nonatomic) float horizontalAccuracy; // @synthesize horizontalAccuracy=_horizontalAccuracy;
 @property(nonatomic) double longitude; // @synthesize longitude=_longitude;
 @property(nonatomic) double latitude; // @synthesize latitude=_latitude;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

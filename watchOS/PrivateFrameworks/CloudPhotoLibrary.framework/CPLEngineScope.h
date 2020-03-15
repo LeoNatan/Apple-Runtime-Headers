@@ -23,13 +23,13 @@
 + (_Bool)supportsSecureCoding;
 + (void)formatStatusDictionary:(id)arg1 forScopeWithIdentifier:(id)arg2 appendString:(CDUnknownBlockType)arg3 appendTopLevelStatus:(CDUnknownBlockType)arg4 appendLineStatus:(CDUnknownBlockType)arg5;
 + (id)separatorForStatusKey:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) int stableIndex; // @synthesize stableIndex=_stableIndex;
 @property(nonatomic) int cloudIndex; // @synthesize cloudIndex=_cloudIndex;
 @property(nonatomic) int localIndex; // @synthesize localIndex=_localIndex;
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, nonatomic) int scopeType; // @synthesize scopeType=_scopeType;
 @property(readonly, nonatomic) NSString *scopeIdentifier; // @synthesize scopeIdentifier=_scopeIdentifier;
-- (void).cxx_destruct;
 - (id)redactedDescription;
 - (id)description;
 - (id)statusDescription;

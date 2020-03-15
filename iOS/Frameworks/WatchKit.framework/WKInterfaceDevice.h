@@ -27,6 +27,7 @@
 }
 
 + (id)currentDevice;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *deviceSystemName; // @synthesize deviceSystemName=_deviceSystemName;
 @property(copy, nonatomic) NSString *deviceLocalizedModel; // @synthesize deviceLocalizedModel=_deviceLocalizedModel;
 @property(copy, nonatomic) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;
@@ -41,7 +42,6 @@
 @property(nonatomic, getter=isBatteryMonitoringEnabled) _Bool batteryMonitoringEnabled; // @synthesize batteryMonitoringEnabled=_batteryMonitoringEnabled;
 @property(nonatomic) double screenScale; // @synthesize screenScale=_screenScale;
 @property(nonatomic) struct CGRect screenBounds; // @synthesize screenBounds=_screenBounds;
-- (void).cxx_destruct;
 - (void)playHaptic:(long long)arg1;
 @property(readonly, nonatomic) NSDictionary *cachedImages;
 - (void)removeAllCachedImages;

@@ -11,8 +11,5 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)updateLayer;
-- (BOOL)wantsUpdateLayer;
-
 @end
 

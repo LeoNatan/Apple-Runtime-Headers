@@ -27,6 +27,7 @@
     struct CGRect _contentFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL roundsToScreenScale; // @synthesize roundsToScreenScale=_roundsToScreenScale;
 @property(nonatomic) BOOL layoutRTL; // @synthesize layoutRTL=_layoutRTL;
 @property(retain, nonatomic) id <_NSCollectionCompositionalLayoutSolverResolveResult> currentResolveResult; // @synthesize currentResolveResult=_currentResolveResult;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) _NSCollectionCompositionalLayoutSolver *solver; // @synthesize solver=_solver;
 @property(copy, nonatomic) CDUnknownBlockType layoutSectionProvider; // @synthesize layoutSectionProvider=_layoutSectionProvider;
 @property(retain, nonatomic) NSCollectionLayoutSection *layoutSectionTemplate; // @synthesize layoutSectionTemplate=_layoutSectionTemplate;
-- (void).cxx_destruct;
 - (void)_invokeVisibleItemsInvalidationHandlerIfNeeded;
 - (id)_containerFromCollectionView;
 - (id)_supplementaryElementKindsAssociatedWithItemIndexPath:(id)arg1;

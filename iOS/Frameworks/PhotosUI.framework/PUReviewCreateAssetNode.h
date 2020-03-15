@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     id <PUAdjustmentURLNode> _adjustmentURLNode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <PUAdjustmentURLNode> adjustmentURLNode; // @synthesize adjustmentURLNode=_adjustmentURLNode;
 @property(readonly, nonatomic) id <PUVideoAssetNode> renderVideoAssetNode; // @synthesize renderVideoAssetNode=_renderVideoAssetNode;
 @property(readonly, nonatomic) id <PUVideoURLExportNode> renderVideoURLNode; // @synthesize renderVideoURLNode=_renderVideoURLNode;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) id <PUReviewImageURLNode> imageInfoNode; // @synthesize imageInfoNode=_imageInfoNode;
 @property(readonly, nonatomic) PUReviewAsset *inputAsset; // @synthesize inputAsset=_inputAsset;
 @property(readonly, nonatomic) PUReviewAsset *reviewAsset; // @synthesize reviewAsset=_reviewAsset;
-- (void).cxx_destruct;
 - (void)run;
 - (id)initWithInputAsset:(id)arg1 imageInfoNode:(id)arg2 renderImageInfoNode:(id)arg3 renderImageDataNode:(id)arg4 videoURLNode:(id)arg5 videoAssetNode:(id)arg6 renderVideoURLNode:(id)arg7 renderVideoAssetNode:(id)arg8 adjustmentURLNode:(id)arg9;
 

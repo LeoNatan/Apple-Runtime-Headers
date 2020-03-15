@@ -16,8 +16,8 @@
     _Bool _handled;
 }
 
-@property(readonly, nonatomic, getter=isHandled) _Bool handled; // @synthesize handled=_handled;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isHandled) _Bool handled; // @synthesize handled=_handled;
 @property(readonly, copy) NSString *description;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;

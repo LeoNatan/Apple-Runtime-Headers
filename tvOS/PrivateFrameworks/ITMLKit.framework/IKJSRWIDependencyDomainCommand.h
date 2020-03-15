@@ -17,12 +17,12 @@
     NSArray *_returns;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *returns; // @synthesize returns=_returns;
 @property(readonly, nonatomic) NSArray *params; // @synthesize params=_params;
 @property(readonly, nonatomic) __weak IKJSRWIDependencyDomain *domain; // @synthesize domain=_domain;
 @property(readonly, nonatomic) NSString *purpose; // @synthesize purpose=_purpose;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (_Bool)isValidWithError:(id *)arg1;
 - (id)selectorString;
 - (id)initWithCommandDictionary:(id)arg1 forDomain:(id)arg2;

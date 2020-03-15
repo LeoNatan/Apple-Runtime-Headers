@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *promiscuousChangeBlocks; // @synthesize promiscuousChangeBlocks=_promiscuousChangeBlocks;
 @property(retain, nonatomic) NSMutableDictionary *changeBlocks; // @synthesize changeBlocks=_changeBlocks;
 @property(retain, nonatomic) NSPointerArray *promiscuousObservers; // @synthesize promiscuousObservers=_promiscuousObservers;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSMutableDictionary *oldPropertiesForChangeNotifications; // @synthesize oldPropertiesForChangeNotifications=_oldPropertiesForChangeNotifications;
 @property(retain, nonatomic) NRRegistry *registry; // @synthesize registry=_registry;
 @property(retain, nonatomic) NSUUID *pairingID; // @synthesize pairingID=_pairingID;
-- (void).cxx_destruct;
 - (_Bool)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)initWithQueue:(id)arg1;
 - (void)dealloc;

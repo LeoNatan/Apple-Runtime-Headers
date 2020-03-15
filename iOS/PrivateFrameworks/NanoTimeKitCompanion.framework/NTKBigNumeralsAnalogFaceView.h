@@ -6,19 +6,18 @@
 
 #import <NanoTimeKitCompanion/NTKAnalogFaceView.h>
 
-@class NTKBigNumeralsTimeComponentLabel, UIView;
+@class NSNumber, NTKBigNumeralsTimeComponentLabel, UIView;
 
 @interface NTKBigNumeralsAnalogFaceView : NTKAnalogFaceView
 {
     UIView *_hourLabelContainerView;
     NTKBigNumeralsTimeComponentLabel *_hourLabel;
-    struct NSNumber *_timerToken;
+    NSNumber *_timerToken;
     _Bool _showingStatusBar;
 }
 
 + (id)_swatchForEditModeDependsOnOptions:(long long)arg1 forDevice:(id)arg2;
 + (Class)_timeViewClass;
-+ (long long)uiSensitivity;
 - (void).cxx_destruct;
 - (id)_renderTimeViewSwatchImageForStyle:(unsigned long long)arg1 typeface:(unsigned long long)arg2 color:(unsigned long long)arg3;
 - (id)_swatchImageForEditOption:(id)arg1 mode:(long long)arg2 withSelectedOptions:(id)arg3;

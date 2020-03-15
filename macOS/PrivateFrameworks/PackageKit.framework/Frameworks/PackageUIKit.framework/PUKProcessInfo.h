@@ -20,6 +20,7 @@
     NSString *_vendingIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *vendingIdentifier; // @synthesize vendingIdentifier=_vendingIdentifier;
 @property unsigned int userIdentifier; // @synthesize userIdentifier=_userIdentifier;
 @property(nonatomic) BOOL isPlugin; // @synthesize isPlugin=_isPlugin;
@@ -28,7 +29,6 @@
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property int hostPID; // @synthesize hostPID=_hostPID;
 @property int processIdentifier; // @synthesize processIdentifier=_processIdentifier;
-- (void).cxx_destruct;
 - (id)_bundleIdForPid:(int)arg1;
 - (long long)actionForProcessComparedToBundleIdsToQuit:(id)arg1;
 - (id)description;

@@ -19,8 +19,8 @@
     CDUnknownBlockType _eventBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType eventBlock; // @synthesize eventBlock=_eventBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType eventBlock; // @synthesize eventBlock=_eventBlock;
 - (void)_fire;
 - (void)_scheduleNextFire;
 - (double)_computeNextTime;

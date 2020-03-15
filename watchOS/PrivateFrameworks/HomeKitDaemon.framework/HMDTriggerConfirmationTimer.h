@@ -13,8 +13,8 @@
     NSUUID *_executionSessionID;
 }
 
-@property(readonly, nonatomic) NSUUID *executionSessionID; // @synthesize executionSessionID=_executionSessionID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSUUID *executionSessionID; // @synthesize executionSessionID=_executionSessionID;
 - (id)description;
 - (id)initWithExecutionSessionID:(id)arg1 timeoutInterval:(double)arg2;
 

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_multilingualAlternatives;
 }
 
-@property(readonly, nonatomic) NSArray *multilingualAlternatives; // @synthesize multilingualAlternatives=_multilingualAlternatives;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *multilingualAlternatives; // @synthesize multilingualAlternatives=_multilingualAlternatives;
 - (id)replacements;
 - (id)initWithMultilingualAlternatives:(id)arg1 stringToReplace:(id)arg2 replacementRange:(id)arg3;
 

@@ -15,8 +15,8 @@
     PGManager *_manager;
 }
 
-@property(readonly, nonatomic) PGManager *manager; // @synthesize manager=_manager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PGManager *manager; // @synthesize manager=_manager;
 - (void)enumerateChildVisibilityStateForHighlightItemList:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)curatedAssetsForHighlightItemList:(id)arg1 contextualKeyAssetByHighlighItemUUID:(id)arg2;
 - (id)keyAssetForHighlightItemList:(id)arg1 contextualKeyAssetByHighlighItemUUID:(id)arg2;

@@ -15,8 +15,8 @@
     ICAttachment *_attachment;
 }
 
-@property(retain, nonatomic) ICAttachment *attachment; // @synthesize attachment=_attachment;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ICAttachment *attachment; // @synthesize attachment=_attachment;
 - (id)attachmentInContext:(id)arg1;
 - (id)attachmentUTI;
 - (id)attachmentIdentifier;

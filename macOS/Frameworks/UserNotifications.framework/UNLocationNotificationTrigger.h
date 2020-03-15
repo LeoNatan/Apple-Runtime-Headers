@@ -15,8 +15,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)triggerWithRegion:(id)arg1 repeats:(BOOL)arg2;
-@property(readonly, copy) CLRegion *region; // @synthesize region=_region;
 - (void).cxx_destruct;
+@property(readonly, copy) CLRegion *region; // @synthesize region=_region;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)willTriggerAfterDate:(id)arg1 withRequestedDate:(id)arg2;

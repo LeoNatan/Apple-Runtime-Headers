@@ -6,16 +6,19 @@
 
 #import <PhotosGraph/NSObject-Protocol.h>
 
-@class PHPerson;
-@protocol PGQuestion;
+@class NSDate, NSDictionary, NSString, PHQuestion;
 
 @protocol PGQuestion <NSObject>
-+ (id)questionForPerson:(PHPerson *)arg1;
-@property(readonly, nonatomic) double score;
-@property(readonly, nonatomic) long long type;
-@property(readonly, nonatomic) PHPerson *person;
-- (_Bool)isEqualToQuestion:(id <PGQuestion>)arg1;
+@property(readonly, nonatomic) NSDictionary *additionalInfo;
+@property(nonatomic) double score;
+@property(readonly, nonatomic) double localFactoryScore;
+@property(readonly, nonatomic) unsigned short displayType;
+@property(readonly, nonatomic) unsigned short entityType;
+@property(readonly, nonatomic) unsigned short state;
+@property(readonly, nonatomic) unsigned short type;
+@property(readonly, nonatomic) NSString *entityIdentifier;
+- (_Bool)isEquivalentToPersistedQuestion:(PHQuestion *)arg1;
 - (void)remove;
-- (void)persist;
+- (void)persistWithCreationDate:(NSDate *)arg1;
 @end
 

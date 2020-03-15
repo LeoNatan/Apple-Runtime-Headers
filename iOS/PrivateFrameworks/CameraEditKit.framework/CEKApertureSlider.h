@@ -24,12 +24,12 @@
 + (_Bool)isValidApertureIndexFullStop:(unsigned long long)arg1;
 + (unsigned long long)firstFullStopIndexAfterOrIncludingIndex:(unsigned long long)arg1;
 + (id)validApertureValues;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumberFormatter *_wholeNumberFormatter; // @synthesize _wholeNumberFormatter=__wholeNumberFormatter;
 @property(readonly, nonatomic) NSNumberFormatter *_decimalFormatter; // @synthesize _decimalFormatter=__decimalFormatter;
 @property(nonatomic, setter=_setMaximumApertureIndex:) unsigned long long _maximumApertureIndex; // @synthesize _maximumApertureIndex=__maximumApertureIndex;
 @property(nonatomic, setter=_setMinimumApertureIndex:) unsigned long long _minimumApertureIndex; // @synthesize _minimumApertureIndex=__minimumApertureIndex;
 @property(nonatomic) __weak id <CEKApertureSliderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (unsigned long long)_indexOfClosestValidValueForAperture:(double)arg1;
 - (unsigned long long)_discreteIndexForValidApertureIndex:(unsigned long long)arg1;
 - (unsigned long long)_validApertureIndexForDiscreteIndex:(unsigned long long)arg1;

@@ -15,9 +15,9 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBFAnimationSettings *morphSettings; // @synthesize morphSettings=_morphSettings;
 @property(nonatomic) _Bool morphWithZoom; // @synthesize morphWithZoom=_morphWithZoom;
-- (void).cxx_destruct;
 - (id)effectiveMorphAnimationSettings;
 - (void)setDefaultValues;
 

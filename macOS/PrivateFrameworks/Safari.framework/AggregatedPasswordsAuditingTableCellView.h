@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     NSButton *_auditingButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSButton *auditingButton; // @synthesize auditingButton=_auditingButton;
 @property(nonatomic, getter=isShowingAuditingButton) BOOL showsAuditingButton; // @synthesize showsAuditingButton=_showsAuditingButton;
 @property(nonatomic) __weak id <AggregatedPasswordsAuditingTableCellViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)buttonWasClicked:(id)arg1;
 - (void)awakeFromNib;
 

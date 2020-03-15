@@ -29,6 +29,7 @@
     SignpostCAIntervalAggregationStats *_responsibleFirstFrameGlitchStats;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SignpostCAIntervalAggregationStats *responsibleFirstFrameGlitchStats; // @synthesize responsibleFirstFrameGlitchStats=_responsibleFirstFrameGlitchStats;
 @property(readonly, nonatomic) SignpostCAIntervalAggregationStats *firstFrameGlitchStats; // @synthesize firstFrameGlitchStats=_firstFrameGlitchStats;
 @property(readonly, nonatomic) SignpostCAIntervalAggregationStats *responsibleGlitchStats; // @synthesize responsibleGlitchStats=_responsibleGlitchStats;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic) NSString *processExecutablePath; // @synthesize processExecutablePath=_processExecutablePath;
 @property(readonly, nonatomic) NSString *processName; // @synthesize processName=_processName;
 @property(readonly, nonatomic) _Bool isSystemAggregation; // @synthesize isSystemAggregation=_isSystemAggregation;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (void)_addOtherProcessStallAggregation:(id)arg1;

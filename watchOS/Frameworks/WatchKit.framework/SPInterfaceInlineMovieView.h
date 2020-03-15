@@ -44,6 +44,7 @@
     CDStruct_1b6d18a9 _pauseTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_1b6d18a9 pauseTime; // @synthesize pauseTime=_pauseTime;
 @property(nonatomic) _Bool audioIsActive; // @synthesize audioIsActive=_audioIsActive;
 @property(nonatomic) _Bool finishedPlayerSetup; // @synthesize finishedPlayerSetup=_finishedPlayerSetup;
@@ -62,7 +63,6 @@
 @property _Bool autoplays; // @synthesize autoplays=_autoplays;
 @property(getter=isPlaying) _Bool playing; // @synthesize playing=_playing;
 @property(retain, nonatomic) NSDictionary *itemDescriptionForIB; // @synthesize itemDescriptionForIB=_itemDescriptionForIB;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)willDisappearForNotificationUI;

@@ -16,9 +16,9 @@
     NSString *_atrialFibrillationDetectionOnboardingCountryCode;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *atrialFibrillationDetectionOnboardingCountryCode; // @synthesize atrialFibrillationDetectionOnboardingCountryCode=_atrialFibrillationDetectionOnboardingCountryCode;
 @property(copy, nonatomic) NSString *electrocardiogramOnboardingCountryCode; // @synthesize electrocardiogramOnboardingCountryCode=_electrocardiogramOnboardingCountryCode;
-- (void).cxx_destruct;
 - (CDStruct_f6aba300)watchElectrocardiogramVersion;
 - (CDStruct_f6aba300)watchAtrialFibrillationDetectionVersion;
 - (id)watchCompanionDevicePlatform;

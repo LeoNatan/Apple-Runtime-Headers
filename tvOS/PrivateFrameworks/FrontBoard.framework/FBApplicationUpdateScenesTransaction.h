@@ -21,8 +21,8 @@
     NSMutableArray *_pendingUpdateSceneBlocks;
 }
 
-@property(nonatomic) _Bool waitsForSceneCommits; // @synthesize waitsForSceneCommits=_waitsForSceneCommits;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool waitsForSceneCommits; // @synthesize waitsForSceneCommits=_waitsForSceneCommits;
 - (void)updateSceneTransactionDidCommitUpdate:(id)arg1;
 - (void)updateSceneTransactionWillCommitUpdate:(id)arg1;
 - (void)updateSceneTransactionWillUpdateScene:(id)arg1;

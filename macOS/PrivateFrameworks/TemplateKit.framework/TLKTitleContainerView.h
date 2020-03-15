@@ -17,10 +17,10 @@
 
 + (id)titleFont;
 + (id)titleFontforTitle:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TLKImageView *secondaryImageView; // @synthesize secondaryImageView=_secondaryImageView;
 @property(retain, nonatomic) TLKLabel *secondaryLabel; // @synthesize secondaryLabel=_secondaryLabel;
 @property(retain, nonatomic) TLKLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (id)secondaryTitleLabelString;
 - (id)titleLabelString;
 - (id)viewForLastBaselineLayout;

@@ -20,11 +20,11 @@
 }
 
 + (void)instantiateViewControllerWithExtension:(id)arg1 inputItems:(id)arg2 connectionHandler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) RPVideoEditorViewServiceExtensionHostContext *hostContext; // @synthesize hostContext=_hostContext;
 @property(retain, nonatomic) NSArray *inputItems; // @synthesize inputItems=_inputItems;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property(nonatomic) __weak id <RPVideoEditorHostRemoteNSViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (oneway void)onCancelButtonClickMessage;
 - (void)viewDidLoad;
 - (void)loadView;

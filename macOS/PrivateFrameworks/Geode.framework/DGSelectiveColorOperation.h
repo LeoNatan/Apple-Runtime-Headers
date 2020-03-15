@@ -70,6 +70,7 @@
 + (id)stringForHue:(long long)arg1;
 + (void)initialize;
 + (id)_stringsTableName;
+- (void).cxx_destruct;
 @property double input6Spread; // @synthesize input6Spread=_input6Spread;
 @property double input6Luminance; // @synthesize input6Luminance=_input6Luminance;
 @property double input6Saturation; // @synthesize input6Saturation=_input6Saturation;
@@ -106,7 +107,6 @@
 @property double input1HueShift; // @synthesize input1HueShift=_input1HueShift;
 @property double input1HueBase; // @synthesize input1HueBase=_input1HueBase;
 @property(copy, nonatomic) NSColor *input1Color; // @synthesize input1Color=_input1Color;
-- (void).cxx_destruct;
 - (BOOL)applySettingsDictionary:(id)arg1;
 - (id)settingsDictionary;
 - (id)initWithOperation:(id)arg1;

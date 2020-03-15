@@ -17,9 +17,9 @@
     DVTDispatchLock *_lock;
 }
 
+- (void).cxx_destruct;
 @property(readonly) DVTDispatchLock *lock; // @synthesize lock=_lock;
 @property(readonly) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (void)cancel;
 @property(readonly, getter=isCancelled) _Bool cancelled;
 @property(readonly, copy) NSString *description;

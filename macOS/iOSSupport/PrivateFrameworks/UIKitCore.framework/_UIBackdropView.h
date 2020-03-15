@@ -91,6 +91,7 @@
 + (void)restoreColorSettingsForRequester:(id)arg1;
 + (void)suppressColorSettingsForRequester:(id)arg1;
 + (id)allBackdropViews;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _backdropVisible; // @synthesize _backdropVisible=__backdropVisible;
 @property(nonatomic) double _saturationDeltaFactor; // @synthesize _saturationDeltaFactor=__saturationDeltaFactor;
 @property(nonatomic) double _blurRadius; // @synthesize _blurRadius=__blurRadius;
@@ -160,7 +161,6 @@
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(nonatomic) BOOL autosizesToFitSuperview; // @synthesize autosizesToFitSuperview=_autosizesToFitSuperview;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)setTintOpacity:(double)arg1;
 - (void)setDisablesOccludedBackdropBlurs:(BOOL)arg1;
 - (BOOL)disablesOccludedBackdropBlurs;

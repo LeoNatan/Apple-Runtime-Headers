@@ -15,8 +15,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (void)applyEntries:(id)arg1 withProfile:(id)arg2;
-@property(readonly, nonatomic) HDUserDefault *userDefault; // @synthesize userDefault=_userDefault;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HDUserDefault *userDefault; // @synthesize userDefault=_userDefault;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

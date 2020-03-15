@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_closeString;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *closeString; // @synthesize closeString=_closeString;
 @property(copy, nonatomic) NSString *openString; // @synthesize openString=_openString;
-- (void).cxx_destruct;
 - (id)latexDescriptionInMathMode:(_Bool)arg1;
 - (id)mathMLAttributes;
 - (id)mathMLTag;

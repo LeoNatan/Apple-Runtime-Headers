@@ -16,9 +16,9 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *password; // @synthesize password=_password;
 @property(retain, nonatomic) NSNumber *userId; // @synthesize userId=_userId;
-- (void).cxx_destruct;
 
 @end
 

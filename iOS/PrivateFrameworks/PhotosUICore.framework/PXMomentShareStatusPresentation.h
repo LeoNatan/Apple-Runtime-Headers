@@ -32,6 +32,7 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *pauseStatusDescription; // @synthesize pauseStatusDescription=_pauseStatusDescription;
 @property(nonatomic) _Bool isPaused; // @synthesize isPaused=_isPaused;
 @property(nonatomic) long long numberOfAssetsNotCopied; // @synthesize numberOfAssetsNotCopied=_numberOfAssetsNotCopied;
@@ -46,7 +47,6 @@
 @property(copy, nonatomic) NSString *expirationTitle; // @synthesize expirationTitle=_expirationTitle;
 @property(copy, nonatomic) NSString *assetsTitle; // @synthesize assetsTitle=_assetsTitle;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)_updatePausedStatus;
 - (void)serviceUI:(id)arg1 statusDidChange:(id)arg2;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;

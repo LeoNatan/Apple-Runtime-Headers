@@ -15,8 +15,8 @@
     SFDeviceDiscovery *_deviceDiscovery;
 }
 
-@property(retain, nonatomic) SFDeviceDiscovery *deviceDiscovery; // @synthesize deviceDiscovery=_deviceDiscovery;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SFDeviceDiscovery *deviceDiscovery; // @synthesize deviceDiscovery=_deviceDiscovery;
 - (void)repairDevice:(id)arg1 flags:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)stop;
 - (void)start;

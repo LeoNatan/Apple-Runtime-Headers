@@ -9,7 +9,7 @@
 #import <UIKitCore/_UIFocusEnvironmentInternal-Protocol.h>
 #import <UIKitCore/_UIFocusEnvironmentPrivate-Protocol.h>
 
-@class NSArray, NSString, UIFocusAnimationCoordinator, UIResponder, UIView, _UIFocusAnimationCoordinatorManager, _UIFocusSoundGenerator, _UIFocusUpdateRequest;
+@class NSArray, NSString, UIFocusAnimationCoordinator, UIResponder, UIView, _UIFocusAnimationCoordinatorManager, _UIFocusGroupHistory, _UIFocusSoundGenerator, _UIFocusUpdateRequest;
 @protocol UIFocusEnvironment, UIFocusItem, UIFocusItemContainer, _UIFocusHapticFeedbackGenerator, _UIFocusRegionContainer, _UIFocusSystemDelegate;
 
 @interface UIFocusSystem : NSObject <_UIFocusEnvironmentInternal, _UIFocusEnvironmentPrivate>
@@ -27,6 +27,7 @@
     } _flags;
     _Bool _enabled;
     id <UIFocusItem> _focusedItem;
+    _UIFocusGroupHistory *_focusGroupHistory;
     _UIFocusAnimationCoordinatorManager *_focusAnimationCoordinatorManager;
     id <_UIFocusSystemDelegate> _delegate;
     id <UIFocusItem> _previousFocusedItem;
@@ -38,16 +39,17 @@
 + (_Bool)environment:(id)arg1 containsEnvironment:(id)arg2;
 + (id)_allFocusSystems;
 + (id)focusSystemForEnvironment:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isEnabled, setter=_setEnabled:) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic, getter=_focusHapticFeedbackGenerator, setter=_setFocusHapticFeedbackGenerator:) id <_UIFocusHapticFeedbackGenerator> focusHapticFeedbackGenerator; // @synthesize focusHapticFeedbackGenerator=_focusHapticFeedbackGenerator;
 @property(retain, nonatomic, getter=_focusSoundGenerator, setter=_setFocusSoundGenerator:) _UIFocusSoundGenerator *focusSoundGenerator; // @synthesize focusSoundGenerator=_focusSoundGenerator;
 @property(readonly, nonatomic, getter=_previousFocusedItem) __weak id <UIFocusItem> previousFocusedItem; // @synthesize previousFocusedItem=_previousFocusedItem;
 @property(nonatomic, getter=_delegate, setter=_setDelegate:) __weak id <_UIFocusSystemDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic, getter=_focusAnimationCoordinatorManager, setter=_setFocusAnimationCoordinatorManager:) _UIFocusAnimationCoordinatorManager *focusAnimationCoordinatorManager; // @synthesize focusAnimationCoordinatorManager=_focusAnimationCoordinatorManager;
-- (void).cxx_destruct;
 - (void)_didFinishUpdatingFocusInContext:(id)arg1;
 - (_Bool)_shouldRestoreFocusInContext:(id)arg1;
 - (_Bool)_prefersDeferralForFocusUpdateInContext:(id)arg1;
+- (void)_uiktest_disableFocusDeferral;
 - (void)_uiktest_setPreviousFocusedItem:(id)arg1;
 - (_Bool)_uiktest_updateFocusToItem:(id)arg1;
 @property(readonly, nonatomic, getter=_preferredFirstResponder) __weak UIResponder *preferredFirstResponder;
@@ -60,6 +62,7 @@
 - (void)_setNeedsFocusRestoration;
 - (id)_contextForUpdateToEnvironment:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)_simulatedProgrammaticFocusUpdateToEnvironment:(id)arg1;
+- (_Bool)_updateFocusImmediatelyToEnvironment:(id)arg1;
 - (_Bool)_updateFocusImmediatelyWithContext:(id)arg1;
 - (void)_performWithoutFocusUpdates:(CDUnknownBlockType)arg1;
 - (void)_sendNotificationsForFocusUpdateInContext:(id)arg1 withAnimationCoordinator:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
@@ -81,6 +84,7 @@
 @property(readonly, nonatomic) id <UIFocusItemContainer> focusItemContainer;
 @property(readonly, nonatomic, getter=_focusMapContainer) __weak id <_UIFocusRegionContainer> focusMapContainer;
 @property(readonly, nonatomic) __weak id <UIFocusEnvironment> parentFocusEnvironment;
+@property(readonly, nonatomic, getter=_focusGroupHistory) _UIFocusGroupHistory *focusGroupHistory; // @synthesize focusGroupHistory=_focusGroupHistory;
 @property(readonly, nonatomic, getter=_currentFocusAnimationCoordinator) UIFocusAnimationCoordinator *currentFocusAnimationCoordinator;
 @property(readonly, nonatomic, getter=_focusedView) __weak UIView *focusedView;
 @property(readonly, nonatomic) __weak id <UIFocusItem> focusedItem; // @synthesize focusedItem=_focusedItem;

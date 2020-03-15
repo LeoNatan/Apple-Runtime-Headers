@@ -20,6 +20,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL requiresRecovery; // @synthesize requiresRecovery=_requiresRecovery;
 @property(nonatomic) BOOL shouldCollectWorkoutEvents; // @synthesize shouldCollectWorkoutEvents=_shouldCollectWorkoutEvents;
 @property(copy, nonatomic) NSUUID *associatedSessionUUID; // @synthesize associatedSessionUUID=_associatedSessionUUID;
@@ -27,7 +28,6 @@
 @property(nonatomic) unsigned long long goalType; // @synthesize goalType=_goalType;
 @property(copy, nonatomic) HKWorkoutConfiguration *workoutConfiguration; // @synthesize workoutConfiguration=_workoutConfiguration;
 @property(copy, nonatomic) HKDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

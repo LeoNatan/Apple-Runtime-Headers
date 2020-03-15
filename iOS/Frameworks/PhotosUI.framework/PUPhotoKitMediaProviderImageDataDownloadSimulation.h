@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSDictionary *__resultInfo;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setResultInfo:) NSDictionary *_resultInfo; // @synthesize _resultInfo=__resultInfo;
 @property(nonatomic, setter=_setResultOrientation:) long long _resultOrientaton; // @synthesize _resultOrientaton=__resultOrientaton;
 @property(retain, nonatomic, setter=_setResultDataUTI:) NSString *_resultDataUTI; // @synthesize _resultDataUTI=__resultDataUTI;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType externalResultHandler; // @synthesize externalResultHandler=_externalResultHandler;
 @property(readonly, copy, nonatomic) CDUnknownBlockType internalProgressHandler; // @synthesize internalProgressHandler=_internalProgressHandler;
 @property(copy, nonatomic) CDUnknownBlockType externalProgressHandler; // @synthesize externalProgressHandler=_externalProgressHandler;
-- (void).cxx_destruct;
 - (void)endSimulationWithError:(id)arg1;
 - (void)updateSimulationWithProgress:(double)arg1;
 - (void)_handleResultImageData:(id)arg1 dataUTI:(id)arg2 orientation:(long long)arg3 info:(id)arg4;

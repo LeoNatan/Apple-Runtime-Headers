@@ -35,6 +35,7 @@
     _Bool _accessAllowedWhenLocked;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool accessAllowedWhenLocked; // @synthesize accessAllowedWhenLocked=_accessAllowedWhenLocked;
 @property(readonly, copy, nonatomic) NSArray *remoteAccounts; // @synthesize remoteAccounts=_remoteAccounts;
 @property(readonly, nonatomic) HMDAccount *account; // @synthesize account=_account;
@@ -55,7 +56,6 @@
 @property(readonly, copy, nonatomic) NSUUID *primaryHomeUUID; // @synthesize primaryHomeUUID=_primaryHomeUUID;
 @property(readonly, copy, nonatomic) NSArray *accessories; // @synthesize accessories=_accessories;
 @property(readonly, copy, nonatomic) NSArray *homes; // @synthesize homes=_homes;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

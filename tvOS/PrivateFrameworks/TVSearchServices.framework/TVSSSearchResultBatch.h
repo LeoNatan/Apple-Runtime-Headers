@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isFinalBatch) _Bool finalBatch; // @synthesize finalBatch=_finalBatch;
 @property(copy, nonatomic) NSArray *contentItems; // @synthesize contentItems=_contentItems;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

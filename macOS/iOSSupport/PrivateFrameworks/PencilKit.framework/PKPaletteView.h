@@ -11,6 +11,7 @@
 #import <PencilKit/PKPaletteHostViewDelegate-Protocol.h>
 #import <PencilKit/PKPalettePopoverDismissing-Protocol.h>
 #import <PencilKit/PKPalettePopoverPresenting-Protocol.h>
+#import <PencilKit/PKPalettePopoverUpdating-Protocol.h>
 #import <PencilKit/PKPaletteToolPickerViewDelegate-Protocol.h>
 #import <PencilKit/PKPaletteToolPreviewDelegate-Protocol.h>
 #import <PencilKit/PKPaletteUndoRedoViewDelegate-Protocol.h>
@@ -20,7 +21,7 @@
 @class NSLayoutConstraint, NSString, NSUndoManager, PKInk, PKPaletteContainerView, PKPaletteContentView, PKPaletteToolPreview, PKPaletteUndoRedoView, UIViewController;
 @protocol PKPaletteViewAnnotationDelegate, PKPaletteViewDelegate, PKPaletteViewInternalDelegate;
 
-@interface PKPaletteView : UIView <PKPaletteUndoRedoViewDelegate, PKPaletteToolPickerViewDelegate, PKPaletteColorPickerViewDelegate, PKPaletteAdditionalOptionsViewDelegate, PKPaletteToolPreviewDelegate, PKPalettePopoverPresenting, PKPaletteViewStateObservable, PKPalettePopoverDismissing, PKPaletteViewSizeScaling, PKPaletteHostViewDelegate>
+@interface PKPaletteView : UIView <PKPaletteUndoRedoViewDelegate, PKPaletteToolPickerViewDelegate, PKPaletteColorPickerViewDelegate, PKPaletteAdditionalOptionsViewDelegate, PKPaletteToolPreviewDelegate, PKPalettePopoverUpdating, PKPalettePopoverPresenting, PKPaletteViewStateObservable, PKPalettePopoverDismissing, PKPaletteViewSizeScaling, PKPaletteHostViewDelegate>
 {
     NSUndoManager *_undoManager;
     BOOL _autoHideEnabled;
@@ -67,6 +68,7 @@
 }
 
 + (id)makeBackgroundView;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSettingSelectedColor) BOOL settingSelectedColor; // @synthesize settingSelectedColor=_settingSelectedColor;
 @property(retain, nonatomic) UIViewController *popoverPresentingController; // @synthesize popoverPresentingController=_popoverPresentingController;
 @property(nonatomic, getter=isToolPreviewMinimized) BOOL toolPreviewMinimized; // @synthesize toolPreviewMinimized=_toolPreviewMinimized;
@@ -106,7 +108,6 @@
 @property(nonatomic) __weak id <PKPaletteViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UIViewController *presentationController; // @synthesize presentationController=_presentationController;
 @property(readonly, nonatomic) unsigned long long autoHideCorner; // @synthesize autoHideCorner=_autoHideCorner;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isBackgroundMaterialUpdatingPaused) BOOL backgroundMaterialUpdatingPaused;
 - (void)setToolPreviewMinimized:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)toolPreviewView;
@@ -171,6 +172,8 @@
 - (id)_clippingViewBackgroundColor;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) BOOL useCompactSize;
+- (void)updatePopoverUI;
+- (void)updatePalettePopover:(id)arg1;
 - (id)palettePopoverSourceView;
 - (struct CGRect)palettePopoverSourceRect;
 - (BOOL)wantsCustomPalettePopoverPresentationSource;

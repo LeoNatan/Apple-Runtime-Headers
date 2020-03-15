@@ -33,6 +33,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isSuspendable) BOOL suspendable; // @synthesize suspendable=_suspendable;
 @property(readonly, nonatomic) NSString *syncLibraryID; // @synthesize syncLibraryID=_syncLibraryID;
 @property(readonly, nonatomic) BOOL isServerImport; // @synthesize isServerImport=_isServerImport;
@@ -49,7 +50,6 @@
 @property(readonly, nonatomic) NSData *playlistData; // @synthesize playlistData=_playlistData;
 @property(readonly, nonatomic) NSData *trackData; // @synthesize trackData=_trackData;
 @property(readonly, nonatomic) NSString *libraryPath; // @synthesize libraryPath=_libraryPath;
-- (void).cxx_destruct;
 - (id)_copyWithZone:(struct _NSZone *)arg1 usingConcreteClass:(Class)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

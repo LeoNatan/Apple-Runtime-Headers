@@ -21,12 +21,12 @@
     UIPresentationController *_presentationController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIPresentationController *presentationController; // @synthesize presentationController=_presentationController;
 @property(readonly, nonatomic) NSMapTable *activityTypesOrActivities; // @synthesize activityTypesOrActivities=_activityTypesOrActivities;
 @property(readonly, nonatomic) UIDropInteraction *dropInteraction; // @synthesize dropInteraction=_dropInteraction;
 @property(readonly, nonatomic) __weak id <_UISheetDropInteractionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)dropInteraction:(id)arg1 sessionDidEnd:(id)arg2;
 - (void)dropInteraction:(id)arg1 item:(id)arg2 willAnimateDropWithAnimator:(id)arg3;
 - (id)dropInteraction:(id)arg1 previewForDroppingItem:(id)arg2 withDefault:(id)arg3;

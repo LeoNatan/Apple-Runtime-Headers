@@ -10,6 +10,7 @@
 {
 }
 
+- (id)targetDataInfo;
 - (void)updateVisibleParameters;
 - (void)selectedStorageServiceChanged;
 - (BOOL)setParameterState:(id)arg1 forKey:(id)arg2;

@@ -11,6 +11,8 @@
 + (unsigned long long)safari_chromeSupportedImportingDataTypes;
 + (void)safari_fetchDefaultBrowserBundleWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (id)safari_safariTechnologyPreviewBundleURL;
++ (BOOL)safari_applicationAtURL:(id)arg1 passesCodeSignCheck:(id)arg2;
++ (BOOL)safari_applicationIsSignedByMacAppStoreAtURL:(id)arg1;
 + (BOOL)safari_handlerIsSafariFamilyApplication:(id)arg1;
 + (id)safari_URLOfDefaultHTTPHandlerApplication;
 + (BOOL)safari_isSafariFamilyApplicationDefaultHTTPHandler;
@@ -27,7 +29,6 @@
 + (id)safari_defaultApplicationNameForUserAgent;
 + (id)test_safari_defaultApplicationNameForUserAgentUsingBundle:(id)arg1;
 @property(readonly, nonatomic) BOOL safari_isDataImportingInstallPathDependent;
-@property(readonly, nonatomic) unsigned long long safari_supportedTestDriveImportingDataTypes;
 @property(readonly, nonatomic) unsigned long long safari_supportedImportingDataTypes;
 @property(readonly, nonatomic) BOOL safari_isFirefoxBrowser;
 @property(readonly, nonatomic) BOOL safari_isChromeBrowser;

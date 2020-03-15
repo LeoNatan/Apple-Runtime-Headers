@@ -57,8 +57,8 @@
 + (void)_unregisterAnimator:(id)arg1;
 + (void)_registerAnimator:(id)arg1;
 + (void)initialize;
-@property(retain, nonatomic) UIDynamicAnimatorTicker *ticker; // @synthesize ticker=_ticker;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIDynamicAnimatorTicker *ticker; // @synthesize ticker=_ticker;
 - (id)_referenceSystem;
 - (unsigned long long)_referenceSystemType;
 - (struct CGRect)_referenceSystemBounds;

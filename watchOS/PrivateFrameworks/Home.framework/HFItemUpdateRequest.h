@@ -17,10 +17,10 @@
 
 + (id)requestToUpdateItems:(id)arg1 senderSelector:(SEL)arg2;
 + (id)requestToReloadItemProviders:(id)arg1 senderSelector:(SEL)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SEL senderSelector; // @synthesize senderSelector=_senderSelector;
 @property(readonly, nonatomic) NSSet *itemsProvidersToReload; // @synthesize itemsProvidersToReload=_itemsProvidersToReload;
 @property(readonly, nonatomic) NSSet *itemsToUpdate; // @synthesize itemsToUpdate=_itemsToUpdate;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithItemProviders:(id)arg1 items:(id)arg2 senderSelector:(SEL)arg3;
 

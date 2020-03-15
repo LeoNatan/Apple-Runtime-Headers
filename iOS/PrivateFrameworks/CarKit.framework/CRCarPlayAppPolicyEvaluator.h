@@ -16,9 +16,9 @@
 }
 
 + (id)_carIntentIdentifiers;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CRCarPlayAppBlacklist *blacklist; // @synthesize blacklist=_blacklist;
 @property(nonatomic, getter=isGeoSupported) _Bool geoSupported; // @synthesize geoSupported=_geoSupported;
-- (void).cxx_destruct;
 - (void)fetchApplicationBundleIdentifiersForCarIntents:(CDUnknownBlockType)arg1;
 - (id)effectivePolicyForAppDeclaration:(id)arg1 inVehicleWithCertificateSerial:(id)arg2;
 - (id)effectivePolicyForAppDeclaration:(id)arg1;

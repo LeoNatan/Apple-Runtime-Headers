@@ -20,9 +20,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)ruleForDispatchingKeyCommandsMatchingPredicate:(id)arg1 toTargets:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *targets; // @synthesize targets=_targets;
 @property(readonly, copy, nonatomic) BKSHIDEventKeyCommandsDispatchingPredicate *predicate; // @synthesize predicate=_predicate;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

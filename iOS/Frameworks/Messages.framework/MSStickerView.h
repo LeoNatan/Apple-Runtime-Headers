@@ -28,6 +28,7 @@
     UILongPressGestureRecognizer *_longPressRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isPeeled; // @synthesize isPeeled=_isPeeled;
 @property(nonatomic) _Bool animating; // @synthesize animating=_animating;
 @property(readonly, nonatomic) UILongPressGestureRecognizer *longPressRecognizer; // @synthesize longPressRecognizer=_longPressRecognizer;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) NSError *stickerError; // @synthesize stickerError=_stickerError;
 @property(nonatomic) double animationDuration; // @synthesize animationDuration=_animationDuration;
 @property(retain, nonatomic) MSSticker *sticker; // @synthesize sticker=_sticker;
-- (void).cxx_destruct;
 - (id)_stickerSendManager;
 - (void)handleLongPress:(id)arg1;
 - (void)handleTap:(id)arg1;

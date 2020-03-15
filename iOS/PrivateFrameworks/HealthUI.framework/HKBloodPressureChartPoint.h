@@ -19,11 +19,11 @@
     NSDate *_date;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(retain, nonatomic) HKHealthChartPoint *diastolicChartPoint; // @synthesize diastolicChartPoint=_diastolicChartPoint;
 @property(retain, nonatomic) HKHealthChartPoint *systolicChartPoint; // @synthesize systolicChartPoint=_systolicChartPoint;
 @property(retain, nonatomic) id <HKGraphSeriesBlockCoordinateInfo> userInfo; // @synthesize userInfo=_userInfo;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)maxYValue;
 - (id)minYValue;

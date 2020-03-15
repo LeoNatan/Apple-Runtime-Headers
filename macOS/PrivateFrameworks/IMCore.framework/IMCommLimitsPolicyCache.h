@@ -16,11 +16,11 @@
     NSMutableDictionary *_chatIdentifierToParticipantIDsHash;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *chatIdentifierToParticipantIDsHash; // @synthesize chatIdentifierToParticipantIDsHash=_chatIdentifierToParticipantIDsHash;
 @property(retain, nonatomic) NSMutableDictionary *participantIDsHashToChatIdentifier; // @synthesize participantIDsHashToChatIdentifier=_participantIDsHashToChatIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *participantIDsHashToConversationContext; // @synthesize participantIDsHashToConversationContext=_participantIDsHashToConversationContext;
 @property(retain, nonatomic) NSMutableDictionary *conversationContextToParticipantIDsHash; // @synthesize conversationContextToParticipantIDsHash=_conversationContextToParticipantIDsHash;
-- (void).cxx_destruct;
 - (id)contextForParticipantIDsHash:(id)arg1;
 - (void)addSentinelContextForParticipantIDsHash:(id)arg1;
 - (void)addTrackingForConversationContext:(id)arg1 forParticipantIDsHash:(id)arg2;

@@ -17,9 +17,9 @@
     NSObject<OS_xpc_object> *activity;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *activity; // @synthesize activity;
 @property(retain, nonatomic) NSString *queryIdentifier; // @synthesize queryIdentifier;
-- (void).cxx_destruct;
 - (id)fetchResultForDayOfWeek:(int)arg1 withStorage:(id)arg2;
 - (id)fetchResultWithReferenceDate:(id)arg1 withStorage:(id)arg2;
 - (id)fetchResultFromStorage:(id)arg1;

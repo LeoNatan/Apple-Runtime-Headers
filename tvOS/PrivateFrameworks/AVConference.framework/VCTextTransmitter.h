@@ -35,7 +35,7 @@ __attribute__((visibility("hidden")))
 - (void)updatePayloadHistory:(id)arg1 timestamp:(unsigned int)arg2 payloadType:(int *)arg3 payload:(char **)arg4 payloadLength:(int *)arg5;
 - (void)sendTextFrameWithRedundancy:(id)arg1 marker:(int)arg2;
 - (unsigned int)getCharTimestampForSystemTime:(double)arg1;
-- (void)sendText:(struct NSString *)arg1;
+- (void)sendText:(id)arg1;
 - (void)sendCharacter:(unsigned short)arg1;
 - (void)stop;
 - (_Bool)start;

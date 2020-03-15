@@ -8,7 +8,7 @@
 
 #import <MediaPlaybackCore/MPCExplicitContentAuthorizationDelegate-Protocol.h>
 
-@class MPCAudioSpectrumAnalyzer, MPCPlaybackIntent, MPCPlayerPath, MPProtocolProxy, NSString, UIView, _MPCAVController, _MPCLeaseManager, _MPCMediaRemotePublisher, _MPCPlaybackAccountManager, _MPCPlaybackEngineSessionManager, _MPCReportingController;
+@class MPCAudioSpectrumAnalyzer, MPCPlaybackIntent, MPCPlayerPath, MPProtocolProxy, NSString, NSXPCListenerEndpoint, UIView, _MPCAVController, _MPCLeaseManager, _MPCMediaRemotePublisher, _MPCMusicPlayerControllerServer, _MPCPlaybackAccountManager, _MPCPlaybackEngineSessionManager, _MPCReportingController;
 @protocol MPCPlaybackEngineDelegate, MPCPlaybackEngineEventObserving;
 
 @interface MPCPlaybackEngine : NSObject <MPCExplicitContentAuthorizationDelegate>
@@ -17,6 +17,7 @@
     _Bool _pictureInPictureSupported;
     _Bool _videoSupported;
     _Bool _stateRestorationSupported;
+    _Bool _queueHandoffSupported;
     _Bool _scheduledPlaybackStatePreservation;
     _Bool _systemMusicApplication;
     _Bool _audioAnalyzerEnabled;
@@ -26,6 +27,7 @@
     MPProtocolProxy<MPCPlaybackEngineEventObserving> *_eventObserver;
     _MPCAVController *_implementation;
     _MPCMediaRemotePublisher *_mediaRemotePublisher;
+    _MPCMusicPlayerControllerServer *_musicPlayerControllerServer;
     _MPCReportingController *_reportingController;
     _MPCPlaybackEngineSessionManager *_sessionManager;
     _MPCLeaseManager *_leaseManager;
@@ -37,6 +39,7 @@
 
 + (_Bool)requiresMainThread;
 + (void)preheatPlayback;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MPCAudioSpectrumAnalyzer *audioAnalyzer; // @synthesize audioAnalyzer=_audioAnalyzer;
 @property(nonatomic, getter=isAudioAnalyzerEnabled) _Bool audioAnalyzerEnabled; // @synthesize audioAnalyzerEnabled=_audioAnalyzerEnabled;
 @property(nonatomic) unsigned int audioSessionOptions; // @synthesize audioSessionOptions=_audioSessionOptions;
@@ -47,17 +50,18 @@
 @property(readonly, nonatomic) _MPCLeaseManager *leaseManager; // @synthesize leaseManager=_leaseManager;
 @property(readonly, nonatomic) _MPCPlaybackEngineSessionManager *sessionManager; // @synthesize sessionManager=_sessionManager;
 @property(readonly, nonatomic) _MPCReportingController *reportingController; // @synthesize reportingController=_reportingController;
+@property(readonly, nonatomic) _MPCMusicPlayerControllerServer *musicPlayerControllerServer; // @synthesize musicPlayerControllerServer=_musicPlayerControllerServer;
 @property(readonly, nonatomic) _MPCMediaRemotePublisher *mediaRemotePublisher; // @synthesize mediaRemotePublisher=_mediaRemotePublisher;
 @property(readonly, nonatomic) _MPCAVController *implementation; // @synthesize implementation=_implementation;
 @property(readonly, nonatomic) MPProtocolProxy<MPCPlaybackEngineEventObserving> *eventObserver; // @synthesize eventObserver=_eventObserver;
 @property(nonatomic, getter=hasScheduledPlaybackStatePreservation) _Bool scheduledPlaybackStatePreservation; // @synthesize scheduledPlaybackStatePreservation=_scheduledPlaybackStatePreservation;
+@property(nonatomic, getter=isQueueHandoffSupported) _Bool queueHandoffSupported; // @synthesize queueHandoffSupported=_queueHandoffSupported;
 @property(nonatomic, getter=isStateRestorationSupported) _Bool stateRestorationSupported; // @synthesize stateRestorationSupported=_stateRestorationSupported;
 @property(retain, nonatomic) MPCPlaybackIntent *fallbackPlaybackIntent; // @synthesize fallbackPlaybackIntent=_fallbackPlaybackIntent;
 @property(nonatomic, getter=isVideoSupported) _Bool videoSupported; // @synthesize videoSupported=_videoSupported;
 @property(nonatomic, getter=isPictureInPictureSupported) _Bool pictureInPictureSupported; // @synthesize pictureInPictureSupported=_pictureInPictureSupported;
 @property(nonatomic) __weak id <MPCPlaybackEngineDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSString *playerID; // @synthesize playerID=_playerID;
-- (void).cxx_destruct;
 - (void)requestAuthorizationForExplicitItem:(id)arg1 reason:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)_shouldIgnorePlaybackSessionError:(id)arg1;
 - (void)_initializePlaybackStack;
@@ -65,8 +69,10 @@
 @property(readonly, nonatomic) UIView *videoView;
 - (void)_itemInsertedNotification:(id)arg1;
 - (void)_itemAssetLoadedNotification:(id)arg1;
+@property(readonly, nonatomic) NSXPCListenerEndpoint *serverEndpoint;
 @property(readonly, nonatomic) MPCPlayerPath *playerPath;
 - (void)reportUserSeekFromTime:(double)arg1 toTime:(double)arg2;
+- (void)reportUserBackgroundedApplication;
 - (void)removeEngineObserver:(id)arg1;
 - (void)addEngineObserver:(id)arg1;
 - (void)removeSupportedSpecializedQueueIdentifier:(id)arg1;

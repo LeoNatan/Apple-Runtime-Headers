@@ -24,6 +24,7 @@
 + (id)pngDataForImageWithIcon:(id)arg1 size:(struct CGSize)arg2;
 + (id)glyphImageWithIcon:(id)arg1 size:(struct CGSize)arg2;
 + (id)imageWithIcon:(id)arg1 size:(struct CGSize)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) BOOL rounded; // @synthesize rounded=_rounded;
 @property(nonatomic) BOOL useCustomImage; // @synthesize useCustomImage=_useCustomImage;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSData *customImageData; // @synthesize customImageData=_customImageData;
 @property(retain, nonatomic) WFColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) unsigned short glyphCharacter; // @synthesize glyphCharacter=_glyphCharacter;
-- (void).cxx_destruct;
 - (id)imageWithSize:(struct CGSize)arg1;
 - (void)drawInContext:(id)arg1 inRect:(struct CGRect)arg2;
 - (id)init;

@@ -40,6 +40,7 @@
     UIView *_grayLine;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *grayLine; // @synthesize grayLine=_grayLine;
 @property(nonatomic) double snapshotVerticalOffset; // @synthesize snapshotVerticalOffset=_snapshotVerticalOffset;
 @property(nonatomic) _Bool isMinifyingOnTranscriptScroll; // @synthesize isMinifyingOnTranscriptScroll=_isMinifyingOnTranscriptScroll;
@@ -51,7 +52,6 @@
 @property(nonatomic) _Bool isMagnified; // @synthesize isMagnified=_isMagnified;
 @property(nonatomic) __weak id <CKBrowserSwitcherFooterViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <CKBrowserSwitcherFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)collectionView;
 - (void)_updateVisibilityState;
 - (void)animateAppStripVisible:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

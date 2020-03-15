@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property unsigned int fairPlayContextID; // @synthesize fairPlayContextID=_fairPlayContextID;
 @property(retain) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_validateFairPlayPath;
 - (unsigned int)_getFairplayContext:(id *)arg1;
 - (void)_destroyContext;

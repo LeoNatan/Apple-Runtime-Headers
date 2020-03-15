@@ -24,6 +24,7 @@
     NSArray *_emailAddresses;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
 @property(copy, nonatomic) NSArray *postalAddresses; // @synthesize postalAddresses=_postalAddresses;
 @property(copy, nonatomic) HKWheelchairUseObject *wheelchairUseObject; // @synthesize wheelchairUseObject=_wheelchairUseObject;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(copy, nonatomic) NSString *middleName; // @synthesize middleName=_middleName;
 @property(copy, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
-- (void).cxx_destruct;
 
 @end
 

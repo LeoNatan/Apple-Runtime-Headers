@@ -20,10 +20,10 @@
 
 + (_Bool)automaticallyNotifiesObserversOfMediaServerDiscoveryConfiguration;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowRestart; // @synthesize allowRestart=_allowRestart;
 @property(retain, nonatomic) TVHSServiceConnection *serviceConnection; // @synthesize serviceConnection=_serviceConnection;
 @property(retain, nonatomic) NSOperationQueue *serialProcessingOperationQueue; // @synthesize serialProcessingOperationQueue=_serialProcessingOperationQueue;
-- (void).cxx_destruct;
 - (void)_stopManagement;
 - (void)_stopManagementIfStarted;
 - (void)serviceConnectionMediaServerDiscoveryConfigurationDidChange:(id)arg1;

@@ -16,9 +16,9 @@
 
 + (id)newConnection;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) FMFMapCache *mapCache; // @synthesize mapCache=_mapCache;
-- (void).cxx_destruct;
 - (void)mapImageForLocation:(id)arg1 altitude:(double)arg2 pitch:(double)arg3 screenRatio:(double)arg4 andCompletion:(CDUnknownBlockType)arg5;
 - (void)noLocationImageForScreenRatio:(double)arg1 andCompletion:(CDUnknownBlockType)arg2;
 - (void)gridImageForScreenRatio:(double)arg1 andCompletion:(CDUnknownBlockType)arg2;

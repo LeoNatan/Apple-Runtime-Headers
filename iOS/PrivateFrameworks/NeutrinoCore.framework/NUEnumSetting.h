@@ -14,8 +14,8 @@
 }
 
 + (id)deserializeFromDictionary:(id)arg1 error:(out id *)arg2;
-@property(readonly) NSArray *values; // @synthesize values=_values;
 - (void).cxx_destruct;
+@property(readonly) NSArray *values; // @synthesize values=_values;
 - (_Bool)serializeIntoDictionary:(id)arg1 error:(out id *)arg2;
 - (_Bool)validateValues:(out id *)arg1;
 - (_Bool)isValid:(out id *)arg1;

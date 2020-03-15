@@ -28,6 +28,7 @@
 
 + (id)cancelRequestError;
 + (id)invalidRequestError:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(copy) NSArray *adjustmentValues; // @synthesize adjustmentValues=_adjustmentValues;
 @property(copy) NSString *adjustmentKey; // @synthesize adjustmentKey=_adjustmentKey;
@@ -39,7 +40,6 @@
 @property(retain) IPAColorProfile *colorProfile; // @synthesize colorProfile=_colorProfile;
 @property(retain) id <NUScalePolicy> scalePolicy; // @synthesize scalePolicy=_scalePolicy;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)submit:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (unsigned long long)interactiveOperationIndex;
 - (id)compositionForImageAtIndex:(unsigned long long)arg1;

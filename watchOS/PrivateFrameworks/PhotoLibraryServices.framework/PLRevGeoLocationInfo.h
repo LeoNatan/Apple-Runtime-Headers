@@ -31,6 +31,7 @@
 + (id)_newRevGeoLocationInfoFromData:(id)arg1;
 + (id)newDataFromRevGeoLocationInfo:(id)arg1;
 + (id)countryCodeWithGEOMapItem:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isHome; // @synthesize isHome=_isHome;
 @property(readonly, nonatomic) PLRevGeoCompoundNameInfo *compoundSecondaryNameInfo; // @synthesize compoundSecondaryNameInfo=_compoundSecondaryNameInfo;
 @property(readonly, nonatomic) PLRevGeoCompoundNameInfo *compoundNameInfo; // @synthesize compoundNameInfo=_compoundNameInfo;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) NSString *addressString; // @synthesize addressString=_addressString;
 @property(readonly, nonatomic) CNPostalAddress *postalAddress; // @synthesize postalAddress=_postalAddress;
 @property(readonly, nonatomic) PLRevGeoMapItem *mapItem; // @synthesize mapItem=_mapItem;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)plistData;

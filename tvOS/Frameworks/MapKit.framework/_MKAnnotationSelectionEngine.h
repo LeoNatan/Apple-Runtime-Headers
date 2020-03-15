@@ -29,12 +29,12 @@ __attribute__((visibility("hidden")))
     id <_MKAnnotationSelectionEngineDelegate> _delegate;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MKAnnotationView *selectedAnnotationView; // @synthesize selectedAnnotationView=_selectedAnnotationView;
 @property(retain, nonatomic) NSSet *candidateViews; // @synthesize candidateViews=_candidateViews;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) __weak id <_MKAnnotationSelectionEngineDelegate> delegate; // @synthesize delegate=_delegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)_updateFromGameController:(id)arg1;
 - (void)_handleGamepadDirectionalPress:(id)arg1;
 - (void)_handleDirectionalPress:(id)arg1;

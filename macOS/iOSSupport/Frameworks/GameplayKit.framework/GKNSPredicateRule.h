@@ -13,8 +13,8 @@
     NSPredicate *_predicate;
 }
 
-@property(readonly, retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 - (BOOL)evaluatePredicateWithSystem:(id)arg1;
 - (id)initWithPredicate:(id)arg1;
 

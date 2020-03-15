@@ -21,6 +21,7 @@
 
 + (id)new;
 + (id)manager;
+- (void).cxx_destruct;
 @property(nonatomic) long long currentPocketState; // @synthesize currentPocketState=_currentPocketState;
 @property(retain, nonatomic) CMPocketStateManager *pocketStateManager; // @synthesize pocketStateManager=_pocketStateManager;
 @property(nonatomic) _Bool hasPendingVoiceTriggerActivation; // @synthesize hasPendingVoiceTriggerActivation=_hasPendingVoiceTriggerActivation;
@@ -28,7 +29,6 @@
 @property(nonatomic) unsigned long long currentVoiceTriggerRestriction; // @synthesize currentVoiceTriggerRestriction=_currentVoiceTriggerRestriction;
 @property(retain, nonatomic) INUIAppIntentDeliverer *currentAppIntentDeliverer; // @synthesize currentAppIntentDeliverer=_currentAppIntentDeliverer;
 @property(retain, nonatomic) AFRemoteRequestWatcher *remoteRequestWatcher; // @synthesize remoteRequestWatcher=_remoteRequestWatcher;
-- (void).cxx_destruct;
 - (_Bool)_requestWatcherVoiceActivationEnabled;
 - (void)_startFetchingPocketStateUpdates;
 - (void)_handlePendingVoiceTriggerActivationsWithInfo:(id)arg1;

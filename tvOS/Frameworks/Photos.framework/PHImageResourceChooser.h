@@ -29,6 +29,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType resourceHandler; // @synthesize resourceHandler=_resourceHandler;
 @property(retain, nonatomic) NSString *loggingPrefix; // @synthesize loggingPrefix=_loggingPrefix;
 @property(nonatomic) __weak id context; // @synthesize context=_context;
@@ -41,7 +42,6 @@
 @property(nonatomic) unsigned long long loadingOptions; // @synthesize loadingOptions=_loadingOptions;
 @property(nonatomic) long long policy; // @synthesize policy=_policy;
 @property(readonly, nonatomic) id <PHResourceChooserAsset> asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)presentNextQualifyingResource;
 - (void)moveFirst;
 - (id)initWithAsset:(id)arg1;

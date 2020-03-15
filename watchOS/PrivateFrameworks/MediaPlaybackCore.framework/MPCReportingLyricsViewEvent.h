@@ -22,6 +22,7 @@
     double _visibleDuration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int sourceType; // @synthesize sourceType=_sourceType;
 @property(copy, nonatomic) NSData *recommendationData; // @synthesize recommendationData=_recommendationData;
 @property(copy, nonatomic) NSString *featureName; // @synthesize featureName=_featureName;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSString *lyricsID; // @synthesize lyricsID=_lyricsID;
 @property(retain, nonatomic) MPModelPlayEvent *modelPlayEvent; // @synthesize modelPlayEvent=_modelPlayEvent;
 @property(retain, nonatomic) MPModelSong *modelSong; // @synthesize modelSong=_modelSong;
-- (void).cxx_destruct;
 
 @end
 

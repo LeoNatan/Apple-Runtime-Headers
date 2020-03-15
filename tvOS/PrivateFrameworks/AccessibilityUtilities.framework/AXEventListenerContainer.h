@@ -14,9 +14,9 @@
     NSString *identifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler;
-- (void).cxx_destruct;
 
 @end
 

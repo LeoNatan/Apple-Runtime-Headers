@@ -14,8 +14,8 @@
 }
 
 + (unsigned long long)actionID;
-@property(retain) SASProximityHandshake *handshake; // @synthesize handshake=_handshake;
 - (void).cxx_destruct;
+@property(retain) SASProximityHandshake *handshake; // @synthesize handshake=_handshake;
 - (id)responsePayload;
 - (void)setResponseFromData:(id)arg1;
 - (BOOL)hasResponse;

@@ -24,6 +24,7 @@
 }
 
 + (id)interestedChangeKeys;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *layoutMetrics; // @synthesize layoutMetrics=_layoutMetrics;
 @property(retain) NSDateComponents *lastFetchedWeatherDateComponents; // @synthesize lastFetchedWeatherDateComponents=_lastFetchedWeatherDateComponents;
 @property(retain) CLLocation *lastFetchedWeatherLocation; // @synthesize lastFetchedWeatherLocation=_lastFetchedWeatherLocation;
@@ -33,7 +34,6 @@
 @property(retain) EKUIWeatherBox *weatherview; // @synthesize weatherview=_weatherview;
 @property(retain) EKUIMapView *mapView; // @synthesize mapView=_mapView;
 @property(retain) EKUIMapContainerView *containerView; // @synthesize containerView=_containerView;
-- (void).cxx_destruct;
 - (id)dateComponentsForWeather;
 - (id)localizedStringWithUnitSymbolsUsingTemperatureString:(id)arg1;
 - (id)weatherStringForWeatherData:(id)arg1;

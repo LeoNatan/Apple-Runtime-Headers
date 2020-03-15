@@ -13,8 +13,8 @@
     id <VEKClipProtocol> _clip;
 }
 
-@property(retain, nonatomic) id <VEKClipProtocol> clip; // @synthesize clip=_clip;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <VEKClipProtocol> clip; // @synthesize clip=_clip;
 - (id)description;
 - (id)initWithClipToEmulate:(id)arg1;
 

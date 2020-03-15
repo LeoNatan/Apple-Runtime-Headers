@@ -15,10 +15,10 @@
     double _idleTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 @property(readonly, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(nonatomic) double idleTime; // @synthesize idleTime=_idleTime;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)invalidate;
 - (void)_takeAssertion;

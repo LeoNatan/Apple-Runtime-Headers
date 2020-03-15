@@ -14,9 +14,9 @@
     NSArray *_expiredUUIDs;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *expiredUUIDs; // @synthesize expiredUUIDs=_expiredUUIDs;
 @property(readonly, copy, nonatomic) NSArray *activeUUIDs; // @synthesize activeUUIDs=_activeUUIDs;
-- (void).cxx_destruct;
 - (id)initWithActiveUUIDs:(id)arg1 expiredUUIDs:(id)arg2;
 
 @end

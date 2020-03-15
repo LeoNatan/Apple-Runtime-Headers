@@ -14,8 +14,8 @@
 + (BOOL)supportsSecureCoding;
 + (id)predicateWithProperty:(id)arg1 valueSet:(id)arg2;
 + (id)predicateWithProperty:(id)arg1 values:(id)arg2;
-@property(copy, nonatomic) id values; // @synthesize values=_values;
 - (void).cxx_destruct;
+@property(copy, nonatomic) id values; // @synthesize values=_values;
 - (BOOL)containsPropertyPredicate:(id)arg1 matchingValue:(id)arg2 usingComparison:(int)arg3;
 - (id)databaseStatementParameters;
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;

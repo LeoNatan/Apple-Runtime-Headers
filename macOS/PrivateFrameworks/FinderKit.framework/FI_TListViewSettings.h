@@ -29,9 +29,9 @@ __attribute__((visibility("hidden")))
 + (_Bool)columnIsSpotlightAttribute:(int)arg1;
 + (id)columnDictionaryFromColumnArray:(vector_abc0d4d8 *)arg1;
 + (id)columnDictionaryForWidth:(long long)arg1 index:(long long)arg2 sortOrder:(_Bool)arg3 visibility:(_Bool)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *columnSettings; // @synthesize columnSettings=_columnSettings;
 @property(retain, nonatomic) NSMutableDictionary *settings; // @synthesize settings=_settings;
-- (void).cxx_destruct;
 - (_Bool)isEquivalentTo:(id)arg1;
 @property(nonatomic) _Bool userDidChangeSort;
 @property(nonatomic) struct CGPoint scrollPosition;

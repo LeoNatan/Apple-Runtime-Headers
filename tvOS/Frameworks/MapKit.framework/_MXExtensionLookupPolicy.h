@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSPredicate *_extensionPredicate;
 }
 
-@property(retain, nonatomic) NSPredicate *extensionPredicate; // @synthesize extensionPredicate=_extensionPredicate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSPredicate *extensionPredicate; // @synthesize extensionPredicate=_extensionPredicate;
 - (id)initWithPredicate:(id)arg1;
 
 // Remaining properties

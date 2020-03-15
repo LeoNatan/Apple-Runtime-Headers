@@ -12,9 +12,9 @@
     id _appLayout;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id appLayout; // @synthesize appLayout=_appLayout;
 @property(nonatomic) __weak id deckSwitcherDelegate; // @synthesize deckSwitcherDelegate=_deckSwitcherDelegate;
-- (void).cxx_destruct;
 - (_Bool)_accessibilityScrollToVisible;
 
 @end

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIView *_relatedView;
 }
 
-@property(nonatomic) __weak UIView *relatedView; // @synthesize relatedView=_relatedView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIView *relatedView; // @synthesize relatedView=_relatedView;
 
 @end
 

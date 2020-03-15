@@ -17,9 +17,9 @@
     id <AFUtteranceSuggestionsDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <AFUtteranceSuggestionsDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
-- (void).cxx_destruct;
 - (void)setSuggestedUtterances:(id)arg1;
 - (void)getSuggestedUtterancesWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_suggestionsFilePath;

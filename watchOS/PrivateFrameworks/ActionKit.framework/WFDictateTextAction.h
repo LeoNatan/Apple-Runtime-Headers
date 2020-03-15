@@ -18,10 +18,10 @@
     NSString *_latestTranscription;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *latestTranscription; // @synthesize latestTranscription=_latestTranscription;
 @property(retain, nonatomic) AFDictationConnection *dictationConnection; // @synthesize dictationConnection=_dictationConnection;
 @property(nonatomic) __weak id <WFDictateTextActionRunningDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dictationConnection:(id)arg1 didRecognizePackage:(id)arg2;
 - (void)dictationConnection:(id)arg1 didRecognizeTokens:(id)arg2 languageModel:(id)arg3;
 - (void)dictationConnection:(id)arg1 speechRecognitionDidFail:(id)arg2;

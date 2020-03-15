@@ -99,12 +99,12 @@ struct DynamicArray<re::IDSInvite *> {
     struct IDSInvite **m_data;
 };
 
-struct DynamicArray<re::SharedPtr<MCProtocolHandle>> {
+struct DynamicArray<re::SharedPtr<(anonymous namespace)::MCProtocolHandle>> {
     struct Allocator *m_allocator;
     unsigned long long m_capacity;
     unsigned long long m_size;
     unsigned int m_version;
-    struct SharedPtr<MCProtocolHandle> *m_data;
+    struct SharedPtr<(anonymous namespace)::MCProtocolHandle> *m_data;
 };
 
 struct DynamicArray<unsigned char> {
@@ -144,7 +144,7 @@ struct IDSSessionService {
 
 struct ServiceLocator;
 
-struct SharedPtr<MCProtocolHandle>;
+struct SharedPtr<(anonymous namespace)::MCProtocolHandle>;
 
 struct SharedPtr<re::DiscoveryInvite> {
     struct DiscoveryInvite *_field1;
@@ -173,20 +173,14 @@ struct Subscription;
 
 struct SubscriptionLegacy;
 
-struct _opaque_pthread_mutex_t {
-    long long __sig;
-    char __opaque[56];
-};
-
 struct mutex {
-    struct _opaque_pthread_mutex_t __m_;
+    struct _opaque_pthread_mutex_t {
+        long long __sig;
+        char __opaque[56];
+    } __m_;
 };
 
 struct queue<GainRampCommand>;
-
-struct recursive_mutex {
-    struct _opaque_pthread_mutex_t __m_;
-};
 
 struct shared_ptr<AudioStreamRecordingManager::StreamWriter> {
     struct StreamWriter *__ptr_;
@@ -209,13 +203,13 @@ typedef struct {
 } CDStruct_70511ce9;
 
 // Template types
-typedef struct DynamicArray<re::SharedPtr<MCProtocolHandle>> {
+typedef struct DynamicArray<re::SharedPtr<(anonymous namespace)::MCProtocolHandle>> {
     struct Allocator *m_allocator;
     unsigned long long m_capacity;
     unsigned long long m_size;
     unsigned int m_version;
-    struct SharedPtr<MCProtocolHandle> *m_data;
-} DynamicArray_959538b5;
+    struct SharedPtr<(anonymous namespace)::MCProtocolHandle> *m_data;
+} DynamicArray_0711906c;
 
 typedef struct DynamicArray<unsigned char> {
     struct Allocator *m_allocator;

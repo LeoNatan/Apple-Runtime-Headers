@@ -16,9 +16,9 @@
 }
 
 + (Class)responseClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=setiTunesAccount:) SSAccount *iTunesAccount; // @synthesize iTunesAccount=_iTunesAccount;
 @property(copy, nonatomic) NSString *serverCacheTag; // @synthesize serverCacheTag=_serverCacheTag;
-- (void).cxx_destruct;
 - (id)urlRequest;
 - (id)urlString;
 - (id)initWithAccount:(id)arg1;

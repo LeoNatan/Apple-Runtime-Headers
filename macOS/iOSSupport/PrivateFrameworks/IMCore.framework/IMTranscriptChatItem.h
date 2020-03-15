@@ -18,8 +18,8 @@
     unsigned int _contiguousLoaded:1;
 }
 
-@property(copy, nonatomic, setter=_setGUID:) NSString *guid; // @synthesize guid=_guid;
 - (void).cxx_destruct;
+@property(copy, nonatomic, setter=_setGUID:) NSString *guid; // @synthesize guid=_guid;
 - (void)_setAttachmentContiguousType:(unsigned char)arg1;
 - (void)_setContiguousType:(unsigned char)arg1;
 - (void)_setContiguousLoaded:(BOOL)arg1;

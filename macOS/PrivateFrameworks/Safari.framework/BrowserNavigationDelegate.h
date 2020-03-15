@@ -34,10 +34,10 @@ __attribute__((visibility("hidden")))
     BOOL _didLoadCurrentURLWithContentBlockersEnabled;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL didLoadCurrentURLWithContentBlockersEnabled; // @synthesize didLoadCurrentURLWithContentBlockersEnabled=_didLoadCurrentURLWithContentBlockersEnabled;
 @property(nonatomic, getter=isNavigatingToCachedPageViaBackForwardList) BOOL navigatingToCachedPageViaBackForwardList; // @synthesize navigatingToCachedPageViaBackForwardList=_navigatingToCachedPageViaBackForwardList;
 @property(nonatomic, getter=isNavigatingViaBackForwardList) BOOL navigatingViaBackForwardList; // @synthesize navigatingViaBackForwardList=_navigatingViaBackForwardList;
-- (void).cxx_destruct;
 - (void)_showAppLinkBannerIfNeeded;
 - (void)_webView:(id)arg1 resolveWebGLLoadPolicyForURL:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (void)_webView:(id)arg1 webGLLoadPolicyForURL:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
@@ -61,7 +61,7 @@ __attribute__((visibility("hidden")))
 - (void)webView:(id)arg1 didReceiveServerRedirectForProvisionalNavigation:(id)arg2;
 - (void)_webView:(id)arg1 didStartProvisionalNavigation:(id)arg2 userInfo:(id)arg3;
 - (void)webView:(id)arg1 decidePolicyForNavigationResponse:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
-- (void)_webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 userInfo:(id)arg3 decisionHandler:(CDUnknownBlockType)arg4;
+- (void)_webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 preferences:(id)arg3 userInfo:(id)arg4 decisionHandler:(CDUnknownBlockType)arg5;
 - (BOOL)donatePageTextMetadata:(id)arg1 allowingDonationWithoutReaderText:(BOOL)arg2;
 - (void)_clearBlockedWindowConfigurationCachesIfNecessary:(BOOL)arg1;
 - (BOOL)_canDonatePageTextToSpotlight;
@@ -73,7 +73,7 @@ __attribute__((visibility("hidden")))
 - (void)didStartBrowserInitiatedLoadForURL:(id)arg1 usingBackForwardList:(BOOL)arg2;
 - (void)_preFillFormsSoon;
 - (BOOL)_canAuthenticateAgainstProtectionSpace:(id)arg1;
-- (void)_locationChangeDoneForWebView:(id)arg1 frameType:(long long)arg2 pageLoadType:(int)arg3 error:(id)arg4;
+- (void)_locationChangeDoneForWebView:(id)arg1 isMainFrame:(BOOL)arg2 pageLoadType:(int)arg3 error:(id)arg4;
 - (void)_loadURLSoonWithUserAndPasswordRemoved:(id)arg1;
 - (BOOL)_handleUserPreferredStartPageLink:(id)arg1 navigationType:(unsigned int)arg2 eventModifiers:(unsigned long long)arg3 eventMouseButton:(long long)arg4;
 - (void)_openHelpAnchorID:(id)arg1;
@@ -88,7 +88,6 @@ __attribute__((visibility("hidden")))
 - (void)cancelProgressFeedback;
 - (void)endProgressFeedback;
 - (void)_didStartProgressForURL:(id)arg1;
-- (id)_provisionalURLFromMainFrameInWebView:(id)arg1;
 - (void)_handleUseWithWebsitePoliciesForURL:(id)arg1 isMainFrame:(BOOL)arg2 decisionHandlerWillUseWebsitePoliciesForReload:(BOOL)arg3 preferredUsePolicy:(long long)arg4 decisionHandler:(CDUnknownBlockType)arg5;
 - (void)_loadWebsitePoliciesForURL:(id)arg1 isForMainFrameNavigation:(BOOL)arg2 isForReload:(BOOL)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)overrideEnableContentBlockersOnNextReload:(BOOL)arg1;

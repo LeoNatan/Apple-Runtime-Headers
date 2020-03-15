@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     _UISlotId *__slotId;
 }
 
-@property(retain, nonatomic, setter=_setSlotId:) _UISlotId *_slotId; // @synthesize _slotId=__slotId;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setSlotId:) _UISlotId *_slotId; // @synthesize _slotId=__slotId;
 - (void)setContents:(id)arg1;
 
 @end

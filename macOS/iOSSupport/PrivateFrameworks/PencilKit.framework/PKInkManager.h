@@ -15,8 +15,8 @@
 
 + (void)clearCachedManager;
 + (id)defaultInkManager;
-@property(readonly, nonatomic) NSMutableDictionary *inks; // @synthesize inks=_inks;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *inks; // @synthesize inks=_inks;
 - (id)inkBehaviorForIdentifier:(id)arg1 version:(unsigned long long)arg2 variant:(id)arg3;
 - (id)inkBehaviorForIdentifier:(id)arg1 variant:(id)arg2;
 - (id)init;

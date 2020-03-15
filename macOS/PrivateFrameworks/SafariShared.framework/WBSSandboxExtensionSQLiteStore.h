@@ -10,7 +10,7 @@
 
 @interface WBSSandboxExtensionSQLiteStore : WBSSQLiteStore <WBSSandboxExtensionStore>
 {
-    // Error parsing type: {atomic<bool>="__a_"AB}, name: _opening
+    // Error parsing type: {atomic<bool>="__a_"{__cxx_atomic_impl<bool, std::__1::__cxx_atomic_base_impl<bool> >="__a_value"AB}}, name: _opening
 }
 
 - (BOOL)_createFreshDatabaseSchemaWithError:(id *)arg1;

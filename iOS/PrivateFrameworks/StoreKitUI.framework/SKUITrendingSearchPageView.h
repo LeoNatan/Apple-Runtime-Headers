@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     SKUITrendingSearchView *_trendingSearchView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUITrendingSearchPage *page; // @synthesize page=_page;
 @property(nonatomic) __weak id <SKUITrendingSearchPageViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_buttonAction:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setBackgroundColor:(id)arg1;

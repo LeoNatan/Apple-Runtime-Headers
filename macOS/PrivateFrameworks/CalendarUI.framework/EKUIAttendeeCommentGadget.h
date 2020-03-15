@@ -15,9 +15,9 @@
 }
 
 + (id)interestedChangeKeys;
+- (void).cxx_destruct;
 @property(retain) NSArray *cachedParticipantsWithComment; // @synthesize cachedParticipantsWithComment=_cachedParticipantsWithComment;
 @property BOOL cachedShouldDisplay; // @synthesize cachedShouldDisplay=_cachedShouldDisplay;
-- (void).cxx_destruct;
 - (void)updateWithChanges:(id)arg1;
 - (void)setObject:(id)arg1;
 - (void)refreshCachedProperties;

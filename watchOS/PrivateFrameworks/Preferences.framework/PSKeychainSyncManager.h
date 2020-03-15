@@ -47,6 +47,7 @@
 
 + (void)getStatusWithCompletion:(CDUnknownBlockType)arg1;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool circleWasReset; // @synthesize circleWasReset=_circleWasReset;
 @property(readonly, nonatomic) int stagedSecurityCodeType; // @synthesize stagedSecurityCodeType=_stagedSecurityCodeType;
 @property(readonly, nonatomic) NSString *stagedSecurityCode; // @synthesize stagedSecurityCode=_stagedSecurityCode;
@@ -63,7 +64,6 @@
 @property(readonly, nonatomic) NSString *appleIDPasswordOrEquivalentToken; // @synthesize appleIDPasswordOrEquivalentToken=_appleIDPasswordOrEquivalentToken;
 @property(copy, nonatomic) NSString *appleIDRawPassword; // @synthesize appleIDRawPassword=_appleIDRawPassword;
 @property(copy, nonatomic) NSString *appleIDUsername; // @synthesize appleIDUsername=_appleIDUsername;
-- (void).cxx_destruct;
 - (void)pinChoiceAlertDidChooseToUseDevicePasscode:(_Bool)arg1;
 - (void)keychainSyncPhoneNumberController:(id)arg1 didCompleteWithPhoneNumber:(id)arg2 countryInfo:(id)arg3;
 - (void)joinCircleAndEnableSecureBackupWithPhoneNumber:(id)arg1 countryInfo:(id)arg2;

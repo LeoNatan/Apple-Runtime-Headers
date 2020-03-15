@@ -19,6 +19,7 @@
     struct CGSize _previousSize;
 }
 
+- (void).cxx_destruct;
 @property struct CGSize previousSize; // @synthesize previousSize=_previousSize;
 @property unsigned long long animationsInProgress; // @synthesize animationsInProgress=_animationsInProgress;
 @property struct CGSize maxDigitSize; // @synthesize maxDigitSize=_maxDigitSize;
@@ -26,7 +27,6 @@
 @property(readonly) NSMutableArray *digitLabels; // @synthesize digitLabels=_digitLabels;
 @property(nonatomic) unsigned long long number; // @synthesize number=_number;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
-- (void).cxx_destruct;
 - (id)_labelForDigit:(unsigned long long)arg1;
 - (void)_updateSizeIfNeeded;
 - (void)_updateFramesForShownDigits;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CALayer *_contentLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *contentLayer; // @synthesize contentLayer=_contentLayer;
 @property(retain, nonatomic) CALayer *animationLayer; // @synthesize animationLayer=_animationLayer;
-- (void).cxx_destruct;
 - (void)setGlyphColor:(id)arg1;
 - (double)animationDuration;
 - (void)animateWithBeginTime:(double)arg1 completionDelay:(double)arg2 completion:(CDUnknownBlockType)arg3;

@@ -16,8 +16,8 @@
 }
 
 + (Class)changeClass;
-@property(readonly, nonatomic) WFDatabaseResult *result; // @synthesize result=_result;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WFDatabaseResult *result; // @synthesize result=_result;
 - (_Bool)deleteSyncedData:(id *)arg1;
 - (_Bool)applyChanges:(id)arg1 fromSyncService:(id)arg2 error:(id *)arg3;
 - (void)databaseResult:(id)arg1 didUpdateObjects:(id)arg2 inserted:(id)arg3 removed:(id)arg4;

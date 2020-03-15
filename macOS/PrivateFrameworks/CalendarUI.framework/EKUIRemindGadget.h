@@ -37,6 +37,7 @@
 }
 
 + (id)interestedChangeKeys;
+- (void).cxx_destruct;
 @property(retain) EKUIRadialMapController *mapController; // @synthesize mapController=_mapController;
 @property(retain) NSButton *departButton; // @synthesize departButton=_departButton;
 @property(retain) NSButton *arriveButton; // @synthesize arriveButton=_arriveButton;
@@ -56,7 +57,6 @@
 @property(retain) RemindMeView *locationView; // @synthesize locationView=_locationView;
 @property(retain) IIDatePickerWithMiniCal *datePicker; // @synthesize datePicker=_datePicker;
 @property(retain) RemindMeView *datePickerView; // @synthesize datePickerView=_datePickerView;
-- (void).cxx_destruct;
 - (void)personSelected:(id)arg1;
 - (double)suggestionsWindowWidth;
 - (struct CGPoint)suggestionsWindowOffset;

@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSDecimalNumber *aprForPurchases; // @synthesize aprForPurchases=_aprForPurchases;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDecimalNumber *aprForPurchases; // @synthesize aprForPurchases=_aprForPurchases;
 - (id)jsonString;
 - (id)jsonDictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;

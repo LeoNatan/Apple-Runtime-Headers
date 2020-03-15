@@ -17,10 +17,10 @@
     PHVideoRequestBehaviorSpec *_behaviorSpec;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHVideoRequestBehaviorSpec *behaviorSpec; // @synthesize behaviorSpec=_behaviorSpec;
 @property(readonly, nonatomic) PHImageDisplaySpec *displaySpec; // @synthesize displaySpec=_displaySpec;
 @property(readonly, nonatomic) __weak id <PHVideoRequestDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)videoURLBecameAvailable:(id)arg1 info:(id)arg2 error:(id)arg3;
 - (void)startRequest;
 - (_Bool)isSynchronous;

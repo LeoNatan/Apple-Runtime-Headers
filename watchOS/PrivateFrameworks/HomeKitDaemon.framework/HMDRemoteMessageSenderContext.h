@@ -19,11 +19,11 @@
     HMDHomeKitVersion *_deviceVersion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) HMDHomeKitVersion *deviceVersion; // @synthesize deviceVersion=_deviceVersion;
 @property(readonly, copy) HMDAccountHandle *accountHandle; // @synthesize accountHandle=_accountHandle;
 @property(readonly, copy) HMDAccountIdentifier *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property(readonly, copy) HMDDeviceHandle *deviceHandle; // @synthesize deviceHandle=_deviceHandle;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *propertyDescription;
 - (id)initWithDeviceHandle:(id)arg1 accountHandle:(id)arg2 accountIdentifier:(id)arg3 deviceVersion:(id)arg4;

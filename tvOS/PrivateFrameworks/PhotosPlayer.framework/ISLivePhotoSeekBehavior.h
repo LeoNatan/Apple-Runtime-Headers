@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     CDStruct_1b6d18a9 _seekTime;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType seekCompletionHandler; // @synthesize seekCompletionHandler=_seekCompletionHandler;
 @property(nonatomic) CDStruct_1b6d18a9 seekTime; // @synthesize seekTime=_seekTime;
-- (void).cxx_destruct;
 - (long long)behaviorType;
 - (void)_handleDidSeekToSeekTime:(_Bool)arg1;
 - (void)_callSeekCompletionHandler:(_Bool)arg1;

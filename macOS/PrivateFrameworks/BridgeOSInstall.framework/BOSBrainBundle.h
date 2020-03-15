@@ -15,10 +15,10 @@
     NSBundle *_bundle;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(retain) BOSBundleComponentVersion *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 @property(readonly) NSString *payloadArchivePath;
 - (id)description;
 - (id)initWithBundleURL:(id)arg1;

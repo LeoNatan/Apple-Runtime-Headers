@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 + (id)_booleanQueryTermWithName:(id)arg1 predicateOperatorType:(unsigned long long)arg2 value:(id)arg3;
 + (id)_sortHeadersFromDMAPEntities:(id)arg1;
 + (unsigned long long)_responseTypeFromEntityResponseType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVHKMediaServerRequestOperation *mediaServerRequestOperation; // @synthesize mediaServerRequestOperation=_mediaServerRequestOperation;
 @property(retain, nonatomic) TVHKMediaEntityKind *mediaEntityKind; // @synthesize mediaEntityKind=_mediaEntityKind;
 @property(retain, nonatomic) TVHSMediaServerRequest *mediaServerRequest; // @synthesize mediaServerRequest=_mediaServerRequest;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSSet *requestSortDMAPCodeNames; // @synthesize requestSortDMAPCodeNames=_requestSortDMAPCodeNames;
 @property(nonatomic) _Bool requestSortAscendingArgument; // @synthesize requestSortAscendingArgument=_requestSortAscendingArgument;
 @property(copy, nonatomic) NSString *requestSortArgument; // @synthesize requestSortArgument=_requestSortArgument;
-- (void).cxx_destruct;
 - (id)_requestMetatdaArgument;
 - (id)_DMAPCodeNamesForAttribute:(id)arg1;
 - (id)_requestIndexArgument;

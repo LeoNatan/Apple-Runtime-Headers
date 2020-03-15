@@ -25,12 +25,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *externalAnalyticsId; // @synthesize externalAnalyticsId=_externalAnalyticsId;
 @property(retain, nonatomic) NSString *sourceChannelId; // @synthesize sourceChannelId=_sourceChannelId;
 @property(retain, nonatomic) NSString *contentViewedId; // @synthesize contentViewedId=_contentViewedId;
 @property(retain, nonatomic) NSString *failureReasonCode; // @synthesize failureReasonCode=_failureReasonCode;
 @property(retain, nonatomic) NSString *eventUdid; // @synthesize eventUdid=_eventUdid;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

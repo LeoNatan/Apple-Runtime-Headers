@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
     int _encodedWidth;
     int _encodedHeight;
     unsigned int _timeStamp;
-    int _spatialIndex;
     NSData *_buffer;
     long long _captureTimeMs;
     long long _ntpTimeMs;
@@ -28,7 +27,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _contentType;
 }
 
-@property(nonatomic) int spatialIndex; // @synthesize spatialIndex=_spatialIndex;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long contentType; // @synthesize contentType=_contentType;
 @property(retain, nonatomic) NSNumber *qp; // @synthesize qp=_qp;
 @property(nonatomic) BOOL completeFrame; // @synthesize completeFrame=_completeFrame;
@@ -43,9 +42,10 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int encodedHeight; // @synthesize encodedHeight=_encodedHeight;
 @property(nonatomic) int encodedWidth; // @synthesize encodedWidth=_encodedWidth;
 @property(retain, nonatomic) NSData *buffer; // @synthesize buffer=_buffer;
-- (void).cxx_destruct;
 - (struct EncodedImage)nativeEncodedImage;
-- (id)initWithNativeEncodedImage:(struct EncodedImage)arg1;
+- (id)initWithNativeEncodedImage:(const struct EncodedImage *)arg1;
+- (void)setEncodedData:(scoped_refptr_05c3cd2c)arg1;
+- (scoped_refptr_05c3cd2c)encodedData;
 
 @end
 

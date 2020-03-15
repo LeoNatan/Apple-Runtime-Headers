@@ -14,8 +14,8 @@
 
 @property(nonatomic) double checklistZoomFactor; // @synthesize checklistZoomFactor=_checklistZoomFactor;
 @property(nonatomic) double zoomFactor; // @synthesize zoomFactor=_zoomFactor;
-- (struct UIFont *)unzoomFont:(struct UIFont *)arg1;
-- (struct UIFont *)zoomFont:(struct UIFont *)arg1;
+- (id)unzoomFont:(id)arg1;
+- (id)zoomFont:(id)arg1;
 - (id)reallyZoomAttributedString:(id)arg1 zoomDirection:(_Bool)arg2;
 - (id)unzoomAttributedString:(id)arg1;
 - (id)zoomAttributedString:(id)arg1;

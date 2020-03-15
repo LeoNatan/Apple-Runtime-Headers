@@ -21,6 +21,7 @@
     NSObject<OS_os_transaction> *_transaction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
 @property(nonatomic) unsigned int dirtyCount; // @synthesize dirtyCount=_dirtyCount;
 @property(nonatomic) unsigned int resetCount; // @synthesize resetCount=_resetCount;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) unsigned long long dirtyTimeout; // @synthesize dirtyTimeout=_dirtyTimeout;
 @property(nonatomic) unsigned long long idleTimeout; // @synthesize idleTimeout=_idleTimeout;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)dirty;
 - (void)_stop;

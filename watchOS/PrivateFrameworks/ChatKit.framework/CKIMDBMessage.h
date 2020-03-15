@@ -14,9 +14,9 @@
     NSString *_personName;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int personID; // @synthesize personID=_personID;
 @property(retain, nonatomic) NSString *personName; // @synthesize personName=_personName;
-- (void).cxx_destruct;
 - (void)markAsRead;
 - (void)resetIMPerson;
 - (void)dealloc;

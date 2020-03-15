@@ -18,6 +18,7 @@
     _Bool __encodeLegacyGloryData;
     NSString *_artist;
     _INPBImageValue *_artwork;
+    NSString *_assetInfo;
     NSString *_identifier;
     NSArray *_namedEntities;
     NSString *_title;
@@ -29,6 +30,7 @@
 + (_Bool)supportsSecureCoding;
 + (Class)topicsType;
 + (Class)namedEntitiesType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
 @property(nonatomic) int type; // @synthesize type=_type;
@@ -36,9 +38,9 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSArray *namedEntities; // @synthesize namedEntities=_namedEntities;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(copy, nonatomic) NSString *assetInfo; // @synthesize assetInfo=_assetInfo;
 @property(retain, nonatomic) _INPBImageValue *artwork; // @synthesize artwork=_artwork;
 @property(copy, nonatomic) NSString *artist; // @synthesize artist=_artist;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
@@ -61,6 +63,7 @@
 - (void)addNamedEntities:(id)arg1;
 - (void)clearNamedEntities;
 @property(readonly, nonatomic) _Bool hasIdentifier;
+@property(readonly, nonatomic) _Bool hasAssetInfo;
 @property(readonly, nonatomic) _Bool hasArtwork;
 @property(readonly, nonatomic) _Bool hasArtist;
 

@@ -14,9 +14,9 @@
     UIStatusBar *_statusBar;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isDateTimeHidden) _Bool dateTimeHidden; // @synthesize dateTimeHidden=_dateTimeHidden;
 @property(retain, nonatomic) UIStatusBar *statusBar; // @synthesize statusBar=_statusBar;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1 forReason:(id)arg2;
 
 @end

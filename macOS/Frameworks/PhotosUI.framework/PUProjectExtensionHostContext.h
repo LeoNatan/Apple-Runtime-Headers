@@ -17,8 +17,8 @@
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
-@property(nonatomic) __weak id <PUProjectExtensionHostContextDelegate> projectHostContextDelegate; // @synthesize projectHostContextDelegate=_projectHostContextDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PUProjectExtensionHostContextDelegate> projectHostContextDelegate; // @synthesize projectHostContextDelegate=_projectHostContextDelegate;
 - (void)performDragOperationWithPasteboardNamed:(id)arg1 draggingSequenceNumber:(long long)arg2;
 - (id)updateProjectInfo:(id)arg1 forProject:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)showEditorForAssetWithLocalIdentifier:(id)arg1;

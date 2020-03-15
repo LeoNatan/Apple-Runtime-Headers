@@ -17,11 +17,11 @@
     NSCalendar *_calendar;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useTrailingWeek; // @synthesize useTrailingWeek=_useTrailingWeek;
 @property(retain, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 @property(retain, nonatomic) MTAlarm *sleepAlarm; // @synthesize sleepAlarm=_sleepAlarm;
 @property(retain, nonatomic) NSArray *allColumnData; // @synthesize allColumnData=_allColumnData;
-- (void).cxx_destruct;
 - (long long)_earliestDay;
 - (id)sleepAlarmIntervalForDay:(long long)arg1;
 - (id)objectAtIndexedSubscript:(long long)arg1;

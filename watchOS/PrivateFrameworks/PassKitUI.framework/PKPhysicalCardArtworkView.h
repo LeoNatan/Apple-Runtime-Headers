@@ -16,9 +16,9 @@
     NSString *_nameOnCard;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *nameOnCard; // @synthesize nameOnCard=_nameOnCard;
 @property(retain, nonatomic) UIImage *artworkImage; // @synthesize artworkImage=_artworkImage;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

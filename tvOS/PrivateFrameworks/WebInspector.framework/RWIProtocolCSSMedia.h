@@ -10,12 +10,17 @@
 
 @interface RWIProtocolCSSMedia : RWIProtocolJSONObject
 {
+    int _sourceLine;
+    NSString *_text;
+    long long _source;
+    NSString *_sourceURL;
 }
 
-@property(nonatomic) int sourceLine;
-@property(copy, nonatomic) NSString *sourceURL;
-@property(nonatomic) long long source;
-@property(copy, nonatomic) NSString *text;
+- (void).cxx_destruct;
+@property(nonatomic) int sourceLine; // @synthesize sourceLine=_sourceLine;
+@property(copy, nonatomic) NSString *sourceURL; // @synthesize sourceURL=_sourceURL;
+@property(nonatomic) long long source; // @synthesize source=_source;
+@property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 - (id)initWithText:(id)arg1 source:(long long)arg2;
 
 @end

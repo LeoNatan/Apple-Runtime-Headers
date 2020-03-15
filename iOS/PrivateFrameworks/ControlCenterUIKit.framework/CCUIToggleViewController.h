@@ -21,8 +21,8 @@
     CCUIToggleModule *_module;
 }
 
-@property(nonatomic) __weak CCUIToggleModule *module; // @synthesize module=_module;
 - (void).cxx_destruct;
+@property(nonatomic) __weak CCUIToggleModule *module; // @synthesize module=_module;
 - (_Bool)shouldFinishTransitionToExpandedContentModule;
 @property(readonly, nonatomic) double preferredExpandedContentHeight;
 - (void)reconfigureView;

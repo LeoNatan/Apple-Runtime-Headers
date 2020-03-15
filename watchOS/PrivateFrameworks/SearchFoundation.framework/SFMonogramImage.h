@@ -22,9 +22,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int monogramStyle; // @synthesize monogramStyle=_monogramStyle;
 @property(copy, nonatomic) NSString *monogramLetters; // @synthesize monogramLetters=_monogramLetters;
-- (void).cxx_destruct;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

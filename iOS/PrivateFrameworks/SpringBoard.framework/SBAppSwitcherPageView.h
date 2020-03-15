@@ -43,6 +43,7 @@
     struct CGRect _contentClippingFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double lighteningAlpha; // @synthesize lighteningAlpha=_lighteningAlpha;
 @property(nonatomic) double wallpaperOverlayAlpha; // @synthesize wallpaperOverlayAlpha=_wallpaperOverlayAlpha;
 @property(nonatomic) _Bool needsBackgroundWallpaperTreatment; // @synthesize needsBackgroundWallpaperTreatment=_needsBackgroundWallpaperTreatment;
@@ -63,7 +64,6 @@
 @property(nonatomic) long long shadowStyle; // @synthesize shadowStyle=_shadowStyle;
 @property(retain, nonatomic) UIView *overlay; // @synthesize overlay=_overlayView;
 @property(retain, nonatomic) UIView<SBAppSwitcherPageContentView> *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
 - (struct CGRect)_viewFrame;

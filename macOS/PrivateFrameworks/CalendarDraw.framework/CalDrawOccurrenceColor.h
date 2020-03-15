@@ -26,9 +26,9 @@
 + (id)adjustedOccurrenceColor:(id)arg1 forAppearance:(id)arg2;
 + (id)adjustedOccurrenceColor:(id)arg1;
 + (id)styleStringForCGColor:(struct CGColor *)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *selectedTextColor; // @synthesize selectedTextColor=_selectedTextColor;
 @property(retain) CalDrawColorKey *colorKey; // @synthesize colorKey=_colorKey;
-- (void).cxx_destruct;
 - (struct CGColor *)foregroundColor;
 - (struct CGColor *)baseColor;
 - (unsigned long long)hash;

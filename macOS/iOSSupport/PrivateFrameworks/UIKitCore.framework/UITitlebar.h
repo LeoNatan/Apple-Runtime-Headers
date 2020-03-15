@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initializeConnections;
-@property(nonatomic, getter=_scene, setter=_setScene:) __weak UIScene *_scene; // @synthesize _scene;
 - (void).cxx_destruct;
+@property(nonatomic, getter=_scene, setter=_setScene:) __weak UIScene *_scene; // @synthesize _scene;
 - (void)_updateHostWindowUserInterfaceStyle;
 - (void)setUserInterfaceStyle:(long long)arg1;
 - (long long)userInterfaceStyle;

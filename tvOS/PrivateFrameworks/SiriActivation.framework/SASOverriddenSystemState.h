@@ -14,9 +14,9 @@
     SiriContextOverride *_contextOverride;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SiriContextOverride *contextOverride; // @synthesize contextOverride=_contextOverride;
 @property(retain, nonatomic) SASSystemState *systemState; // @synthesize systemState=_systemState;
-- (void).cxx_destruct;
 - (_Bool)siriIsSupported;
 - (_Bool)siriIsRestricted;
 - (_Bool)siriIsEnabled;

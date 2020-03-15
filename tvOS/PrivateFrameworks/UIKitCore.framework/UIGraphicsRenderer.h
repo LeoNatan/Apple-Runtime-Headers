@@ -20,8 +20,8 @@
 + (struct CGContext *)_contextWithFormat:(id)arg1 renderer:(id)arg2;
 + (struct CGContext *)contextWithFormat:(id)arg1;
 + (Class)rendererContextClass;
-@property(readonly, nonatomic) UIGraphicsRendererFormat *format; // @synthesize format=_format;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIGraphicsRendererFormat *format; // @synthesize format=_format;
 - (void)_prepareContextForReuse:(struct CGContext *)arg1;
 - (struct CGContext *)_dequeueContextForReuse;
 - (void)_enqueueContextForReuse:(struct CGContext *)arg1;

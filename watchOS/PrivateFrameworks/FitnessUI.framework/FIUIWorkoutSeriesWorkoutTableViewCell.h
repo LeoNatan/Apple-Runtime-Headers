@@ -20,8 +20,8 @@
     UIView *_optionalButtonView;
 }
 
-@property(retain, nonatomic) UIView *optionalButtonView; // @synthesize optionalButtonView=_optionalButtonView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *optionalButtonView; // @synthesize optionalButtonView=_optionalButtonView;
 - (void)_formatDetailLabel;
 - (void)setDetailString:(id)arg1 suffixString:(id)arg2 textColor:(id)arg3;
 - (void)setTitleString:(id)arg1;

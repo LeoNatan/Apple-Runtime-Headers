@@ -29,11 +29,11 @@
 
 + (id)allSupportedItemProperties;
 + (id)allSupportedGroupProperties;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MPMutableSectionedCollection *flatSectionedItems; // @synthesize flatSectionedItems=_flatSectionedItems;
 @property(readonly, nonatomic) NSDictionary *storeItemMetadataResults; // @synthesize storeItemMetadataResults=_storeItemMetadataResults;
 @property(readonly, nonatomic) MPPropertySet *requestedItemPropertySet; // @synthesize requestedItemPropertySet=_requestedItemPropertySet;
 @property(readonly, nonatomic) MPPropertySet *requestedGroupPropertySet; // @synthesize requestedGroupPropertySet=_requestedGroupPropertySet;
-- (void).cxx_destruct;
 - (id)modelObjectForRecommendationDictionary:(id)arg1 userIdentity:(id)arg2;
 - (id)initWithRequestedGroupPropertySet:(id)arg1 requestedItemPropertySet:(id)arg2 storeItemMetadataResults:(id)arg3 flatSectionedItems:(id)arg4;
 

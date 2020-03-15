@@ -15,16 +15,17 @@
     NSXPCConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property BOOL cachedIsRestrictionsPasscodeSet; // @synthesize cachedIsRestrictionsPasscodeSet=_cachedIsRestrictionsPasscodeSet;
 @property BOOL cachedShouldRequestMoreTime; // @synthesize cachedShouldRequestMoreTime=_cachedShouldRequestMoreTime;
-- (void).cxx_destruct;
 - (void)isExplicitContentRestricted:(CDUnknownBlockType)arg1;
 - (id)shouldAllowOneMoreMinuteForCategoryIdentifier:(id)arg1 error:(id *)arg2;
 - (id)shouldAllowOneMoreMinuteForWebsiteURL:(id)arg1 error:(id *)arg2;
 - (id)shouldAllowOneMoreMinuteForBundleIdentifier:(id)arg1 error:(id *)arg2;
 - (BOOL)permitWebFilterURL:(id)arg1 pageTitle:(id)arg2 error:(id *)arg3;
 - (BOOL)performMigrationFromMCXSettings:(id)arg1 error:(id *)arg2;
+@property(readonly) BOOL contactsEditable;
 - (id)primaryiCloudCardDAVAccountIdentifierWithError:(id *)arg1;
 - (void)contactManagementStateForDSID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)requestToManageContactsForDSID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

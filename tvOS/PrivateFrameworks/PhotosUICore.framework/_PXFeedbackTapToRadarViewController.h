@@ -17,11 +17,11 @@
     UISegmentedControl *_segmentedControl;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UISegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 @property(retain, nonatomic) id <_PXFeedbackTapToRadarViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UISwitch *diagnoseSwitch; // @synthesize diagnoseSwitch=_diagnoseSwitch;
 @property(retain, nonatomic) UISwitch *screenshotSwitch; // @synthesize screenshotSwitch=_screenshotSwitch;
-- (void).cxx_destruct;
 - (void)_didSelectFileRadarButton:(id)arg1;
 - (void)_didSelectCancelButton:(id)arg1;
 - (void)viewDidLoad;

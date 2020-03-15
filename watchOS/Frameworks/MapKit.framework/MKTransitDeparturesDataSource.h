@@ -39,6 +39,7 @@
     MKTransitDeparturesDataProvider *_dataProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MKTransitDeparturesDataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
 @property(nonatomic, getter=supportsSystemSectionCollapsing) _Bool supportSystemSectionCollapsing; // @synthesize supportSystemSectionCollapsing=_supportSystemSectionCollapsing;
 @property(nonatomic, getter=allowsTransitLineSelection) _Bool allowTransitLineSelection; // @synthesize allowTransitLineSelection=_allowTransitLineSelection;
@@ -47,7 +48,6 @@
 @property(nonatomic) __weak id <MKTransitDeparturesDataSourceHosting> host; // @synthesize host=_host;
 @property(nonatomic) __weak id <_MKNanoPlaceCardSectionProvidingDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
-- (void).cxx_destruct;
 - (int)_departureSequenceFrequencyTypeForAllDeparturesSections;
 - (int)_transitCategoryForSequence:(id)arg1;
 - (int)transitCategoryForFrequencyType:(int)arg1;

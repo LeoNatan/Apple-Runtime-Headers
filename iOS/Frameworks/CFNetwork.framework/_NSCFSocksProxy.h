@@ -24,10 +24,10 @@
 
 + (void)handleIncomingConnection:(id)arg1 queue:(id)arg2 configuration:(id)arg3;
 + (id)proxyServers;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *configuration; // @synthesize configuration=_configuration;
 @property(retain) NSProxyConnection *outbound; // @synthesize outbound=_outbound;
 @property(retain) NSProxyConnection *inbound; // @synthesize inbound=_inbound;
-- (void).cxx_destruct;
 - (void)outboundConnectionCompleteWithError:(int)arg1;
 - (void)outboundConnectionReceivedData:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)dealloc;

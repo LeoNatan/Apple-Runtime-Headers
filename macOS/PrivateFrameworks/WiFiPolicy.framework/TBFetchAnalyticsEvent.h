@@ -23,6 +23,7 @@
 }
 
 + (id)fetchEventWithSource:(unsigned long long)arg1 type:(unsigned long long)arg2 trigger:(unsigned long long)arg3 duration:(id)arg4 requestCount:(id)arg5 resultCount:(id)arg6 error:(id)arg7;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSNumber *resultCount; // @synthesize resultCount=_resultCount;
@@ -31,7 +32,6 @@
 @property(nonatomic) unsigned long long trigger; // @synthesize trigger=_trigger;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(nonatomic) unsigned long long source; // @synthesize source=_source;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *eventName;
 @property(readonly, nonatomic) NSDictionary *eventDictionary;
 

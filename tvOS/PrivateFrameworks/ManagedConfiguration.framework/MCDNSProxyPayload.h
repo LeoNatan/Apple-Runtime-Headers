@@ -18,10 +18,10 @@
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *providerConfiguration; // @synthesize providerConfiguration=_providerConfiguration;
 @property(readonly, copy, nonatomic) NSString *providerBundleIdentifier; // @synthesize providerBundleIdentifier=_providerBundleIdentifier;
 @property(readonly, copy, nonatomic) NSString *appBundleIdentifier; // @synthesize appBundleIdentifier=_appBundleIdentifier;
-- (void).cxx_destruct;
 - (id)installationWarnings;
 - (id)payloadDescriptionKeyValueSections;
 - (id)subtitle2Description;

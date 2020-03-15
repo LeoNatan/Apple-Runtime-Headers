@@ -21,13 +21,13 @@
     id <SVVisibilityMonitoring> _visibilityMonitor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVisibilityMonitoring> visibilityMonitor; // @synthesize visibilityMonitor=_visibilityMonitor;
 @property(readonly, nonatomic) id <SVVideoPlaybackPolicyObserving> playbackPolicyObserver; // @synthesize playbackPolicyObserver=_playbackPolicyObserver;
 @property(readonly, nonatomic) id <SVPlayerTimeControlStatusObserving> timeControlStatusObserver; // @synthesize timeControlStatusObserver=_timeControlStatusObserver;
 @property(readonly, nonatomic) id <SVVideoLoadingStateObserving> loadingStateObserver; // @synthesize loadingStateObserver=_loadingStateObserver;
 @property(copy, nonatomic, setter=onPlaybackAttempt:) CDUnknownBlockType playbackAttemptBlock; // @synthesize playbackAttemptBlock=_playbackAttemptBlock;
 @property(nonatomic, getter=hasAttemptedPlayback) _Bool attemptedPlayback; // @synthesize attemptedPlayback=_attemptedPlayback;
-- (void).cxx_destruct;
 - (id)initWithLoadingStateObserver:(id)arg1 timeControlStatusObserver:(id)arg2 playbackPolicyObserver:(id)arg3 visibilityMonitor:(id)arg4;
 
 // Remaining properties

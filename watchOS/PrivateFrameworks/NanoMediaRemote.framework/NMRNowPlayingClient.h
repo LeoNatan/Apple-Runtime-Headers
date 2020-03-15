@@ -15,10 +15,10 @@
     NSString *_displayName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, nonatomic) void *mediaRemoteNowPlayingClient; // @synthesize mediaRemoteNowPlayingClient=_mediaRemoteNowPlayingClient;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithMRNowPlayingClient:(void *)arg1;

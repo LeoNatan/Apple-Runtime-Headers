@@ -18,6 +18,7 @@
     // Error parsing type: , name: _gradientEndPoint
 }
 
+- (void).cxx_destruct;
 // Error parsing type for property gradientEndPoint:
 // Property attributes: T,N,V_gradientEndPoint
 
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) NTKSiderealSolarEvent *endingEvent; // @synthesize endingEvent=_endingEvent;
 @property(retain, nonatomic) NTKSiderealSolarEvent *startingEvent; // @synthesize startingEvent=_startingEvent;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)localizedName;
 - (id)description;
 - (id)initWithStartingEvent:(id)arg1 endingEvent:(id)arg2;

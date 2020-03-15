@@ -15,8 +15,8 @@
     ACAccount *_activeiTunesAccount;
 }
 
-@property(retain) ACAccount *activeiTunesAccount; // @synthesize activeiTunesAccount=_activeiTunesAccount;
 - (void).cxx_destruct;
+@property(retain) ACAccount *activeiTunesAccount; // @synthesize activeiTunesAccount=_activeiTunesAccount;
 - (id)isPairedSystemVersionAtLeast:(id)arg1;
 - (BOOL)isActivePairedWatchSystemVersionAtLeastMajorVersion:(id)arg1 minorVersion:(id)arg2 patchVersion:(id)arg3;
 - (BOOL)deviceHasCapabilities:(id)arg1;

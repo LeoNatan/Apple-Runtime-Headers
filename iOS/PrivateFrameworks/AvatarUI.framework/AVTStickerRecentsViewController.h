@@ -17,6 +17,7 @@
 @interface AVTStickerRecentsViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, AVTStickerBackendDelegate, AVTStickerRecentsOverlayDelegate>
 {
     _Bool _hasFetchedDefaultMemoji;
+    _Bool _showPrereleaseSticker;
     id <AVTStickerRecentsViewControllerDelegate> _delegate;
     AVTStickerRecentsMigrator *_stickerRecentsMigrator;
     AVTStickerRecentsOverlayView *_overlayView;
@@ -48,7 +49,9 @@
 + (id)stickerCacheWithEnvironment:(id)arg1;
 + (id)stickerForRecentItem:(id)arg1;
 + (id)layoutForSize:(struct CGSize)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *edgeMaskLayer; // @synthesize edgeMaskLayer=_edgeMaskLayer;
+@property(nonatomic) _Bool showPrereleaseSticker; // @synthesize showPrereleaseSticker=_showPrereleaseSticker;
 @property(retain, nonatomic) NSArray *displayItems; // @synthesize displayItems=_displayItems;
 @property(retain, nonatomic) NSArray *stickerItems; // @synthesize stickerItems=_stickerItems;
 @property(retain, nonatomic) id <AVTStickerRecentsItem> buttonItem; // @synthesize buttonItem=_buttonItem;
@@ -72,7 +75,6 @@
 @property(retain, nonatomic) AVTStickerRecentsOverlayView *overlayView; // @synthesize overlayView=_overlayView;
 @property(retain, nonatomic) AVTStickerRecentsMigrator *stickerRecentsMigrator; // @synthesize stickerRecentsMigrator=_stickerRecentsMigrator;
 @property(nonatomic) __weak id <AVTStickerRecentsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)overlayDidTapContinueButton:(id)arg1;
 - (void)overlayDidTapCloseButton:(id)arg1;
 - (void)overlayDidTapContentView:(id)arg1;

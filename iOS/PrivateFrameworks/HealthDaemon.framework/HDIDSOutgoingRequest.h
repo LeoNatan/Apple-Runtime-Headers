@@ -32,6 +32,7 @@
 + (id)speculativeChangeRequestWithChangeSet:(id)arg1 syncStore:(id)arg2;
 + (id)changeRequestWithChangeSet:(id)arg1 status:(id)arg2 syncStore:(id)arg3;
 + (id)activationRequestWithRestore:(id)arg1 syncStore:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id pbRequest; // @synthesize pbRequest=_pbRequest;
 @property(nonatomic) __weak HDIDSMessageCenter *messageCenter; // @synthesize messageCenter=_messageCenter;
 @property(nonatomic) _Bool forceLocalDelivery; // @synthesize forceLocalDelivery=_forceLocalDelivery;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) IDSDevice *toDevice; // @synthesize toDevice=_toDevice;
 @property(readonly, nonatomic) unsigned short messageID; // @synthesize messageID=_messageID;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)init;
 - (id)nanoSyncDescription;

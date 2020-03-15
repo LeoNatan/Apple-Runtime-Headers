@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     RadiosPreferences *_radiosPreferences;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RadiosPreferences *radiosPreferences; // @synthesize radiosPreferences=_radiosPreferences;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *backgroundQueryQueue; // @synthesize backgroundQueryQueue=_backgroundQueryQueue;
 @property(nonatomic) struct __CTServerConnection *coreTelephonyServerConnection; // @synthesize coreTelephonyServerConnection=_coreTelephonyServerConnection;
 @property(retain, nonatomic) CoreTelephonyClient *coreTelephonyClient; // @synthesize coreTelephonyClient=_coreTelephonyClient;
-- (void).cxx_destruct;
 - (void)currentMobileCountryCodeFromCellularWithCompletion:(CDUnknownBlockType)arg1;
 - (id)init;
 

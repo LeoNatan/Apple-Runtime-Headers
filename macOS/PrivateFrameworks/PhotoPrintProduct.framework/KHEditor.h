@@ -22,11 +22,11 @@
 }
 
 + (id)indexPathsForIndexes:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <KHEditorDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) long long displayMode; // @synthesize displayMode=_displayMode;
 @property(retain, nonatomic) KHEditorDisplayFilter *appliedFilter; // @synthesize appliedFilter=_appliedFilter;
 @property(nonatomic) __weak id <KHEditorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) KHLayoutThumbnailManager *thumbnailManager; // @synthesize thumbnailManager=_thumbnailManager;
 - (id)menuForEvent:(id)arg1;
 - (long long)layoutOrientation;

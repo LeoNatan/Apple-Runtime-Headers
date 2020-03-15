@@ -17,10 +17,10 @@
     NSString *_expandedPath;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *expandedPath; // @synthesize expandedPath=_expandedPath;
 @property unsigned long long quantityDataReceived; // @synthesize quantityDataReceived=_quantityDataReceived;
 @property(retain) NSString *windowsSourcePath; // @synthesize windowsSourcePath=_windowsSourcePath;
-- (void).cxx_destruct;
 - (BOOL)copyActionShouldContinue:(id)arg1;
 - (void)copyAction:(id)arg1 finishedFile:(id)arg2 length:(unsigned long long)arg3;
 - (void)copyAction:(id)arg1 updatedFile:(id)arg2 partialLength:(unsigned long long)arg3;

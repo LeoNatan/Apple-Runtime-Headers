@@ -33,13 +33,13 @@
     struct PXSimpleIndexPath _focusedIndexPath;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct PXSimpleIndexPath focusedIndexPath; // @synthesize focusedIndexPath=_focusedIndexPath;
 @property(nonatomic) struct PXSimpleIndexPath highlightedIndexPath; // @synthesize highlightedIndexPath=_highlightedIndexPath;
 @property(nonatomic) long long maximumNumberOfRows; // @synthesize maximumNumberOfRows=_maximumNumberOfRows;
 @property(retain, nonatomic) PXRelatedSpec *spec; // @synthesize spec=_spec;
 @property(retain, nonatomic) PXRelatedDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <PXRelatedTilingLayoutDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGRect)_rectForEmptyPlaceholder;
 - (_Bool)_shouldShowEmptyPlaceholder;
 - (struct CGRect)_rectForActivityIndicator;

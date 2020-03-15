@@ -23,20 +23,22 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)tagsViewWithMetadata:(id)arg1 layout:(id)arg2 element:(id)arg3 existingView:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *commonSenseDarkImage; // @synthesize commonSenseDarkImage=_commonSenseDarkImage;
 @property(retain, nonatomic) UIImage *commonSenseLightImage; // @synthesize commonSenseLightImage=_commonSenseLightImage;
 @property(nonatomic) double totalSubviewsWidth; // @synthesize totalSubviewsWidth=_totalSubviewsWidth;
 @property(retain, nonatomic) NSArray *groupedSubviews; // @synthesize groupedSubviews=_groupedSubviews;
 @property(copy, nonatomic) NSDictionary *viewsMap; // @synthesize viewsMap=_viewsMap;
 @property(readonly, nonatomic) VUIMediaTagsViewLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (void)_removeGenreLabelAndSeparator;
 - (double)_totalSubviewsWidth;
 - (void)_removeSeparatorsFromGroupsIfNeeded:(_Bool)arg1;
-- (void)_updateAppearance;
+- (void)_updateAppearanceWithUserInterfaceStyle:(long long)arg1;
+- (void)_updateImageAppearanceWithUserInterfaceStyle:(long long)arg1;
 - (_Bool)_shouldPutTextOnSeparateLines;
 - (id)_newRentalExpirationlabel:(id)arg1 exisitingLabel:(id)arg2;
 - (id)_newImageViewAsSubview;
+- (id)_newLabelAsSubview:(id)arg1 withAttributedString:(id)arg2;
 - (id)_newLabelAsSubview:(id)arg1;
 - (void)rentalExpirationLabelNeedsRelayout:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

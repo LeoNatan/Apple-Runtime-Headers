@@ -22,13 +22,13 @@
     unsigned long long _nextRenderTime;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long nextRenderTime; // @synthesize nextRenderTime=_nextRenderTime;
 @property(retain) NURenderNode *lastRenderNode; // @synthesize lastRenderNode=_lastRenderNode;
 @property(retain) NURenderNode *lastPrepareNode; // @synthesize lastPrepareNode=_lastPrepareNode;
 @property(readonly, nonatomic) long long purpose; // @synthesize purpose=_purpose;
 @property(nonatomic) _Bool shouldCoalesceUpdates; // @synthesize shouldCoalesceUpdates=_shouldCoalesceUpdates;
 @property double minimumRenderInterval; // @synthesize minimumRenderInterval=_minimumRenderInterval;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (void)updateNextRenderTimeFromTime:(unsigned long long)arg1;
 - (id)_dequeueRateLimitedJob;

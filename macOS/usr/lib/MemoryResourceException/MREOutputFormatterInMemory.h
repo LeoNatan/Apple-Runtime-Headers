@@ -19,18 +19,18 @@
     NSMutableSet *_addedProcessGroups;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL verbose; // @synthesize verbose=_verbose;
 @property(nonatomic) BOOL isPageSizeSet; // @synthesize isPageSizeSet=_isPageSizeSet;
 @property(retain, nonatomic) NSMutableSet *addedProcessGroups; // @synthesize addedProcessGroups=_addedProcessGroups;
 @property(retain, nonatomic) NSMutableArray *processes; // @synthesize processes=_processes;
 @property(retain, nonatomic) NSMutableDictionary *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)dataForCategories:(id)arg1;
 - (void)end;
-- (void)printGlobalAuxData:(struct NSDictionary *)arg1;
+- (void)printGlobalAuxData:(id)arg1;
 - (void)printSummaryCategories:(id)arg1 total:(CDStruct_8346b022 *)arg2 hadErrors:(BOOL)arg3;
 - (void)printProcessesWithWarnings:(id)arg1 processesWithErrors:(id)arg2 globalErrors:(id)arg3;
-- (void)printProcessAuxData:(struct NSDictionary *)arg1;
+- (void)printProcessAuxData:(id)arg1;
 - (void)printSharedCategories:(id)arg1 sharedWith:(id)arg2 forProcess:(id)arg3 hasProcessView:(BOOL)arg4 total:(CDStruct_8346b022 *)arg5;
 - (void)printProcessCategories:(id)arg1 total:(CDStruct_8346b022 *)arg2;
 - (void)endProcessHeader:(id)arg1;

@@ -18,13 +18,13 @@
     NSLayoutConstraint *_rightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *rightConstraint; // @synthesize rightConstraint=_rightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *leftConstraint; // @synthesize leftConstraint=_leftConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *bottomConstraint; // @synthesize bottomConstraint=_bottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *topConstraint; // @synthesize topConstraint=_topConstraint;
 @property(readonly, nonatomic) UILayoutGuide *mapButtonSafeAreaLayoutGuide; // @synthesize mapButtonSafeAreaLayoutGuide=_mapButtonSafeAreaLayoutGuide;
 @property(nonatomic) __weak CPTemplateApplicationScene *templateApplicationScene; // @synthesize templateApplicationScene=_templateApplicationScene;
-- (void).cxx_destruct;
 - (void)updateLayoutGuideWithInsets:(struct UIEdgeInsets)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 templateScene:(id)arg2;
 

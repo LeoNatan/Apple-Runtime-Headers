@@ -17,10 +17,10 @@
     NSMapTable *_recordZoneObservers;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSyncingEnabled) _Bool syncingEnabled; // @synthesize syncingEnabled=_syncingEnabled;
 @property(retain, nonatomic) NSMapTable *recordZoneObservers; // @synthesize recordZoneObservers=_recordZoneObservers;
 @property(retain, nonatomic) FCCKPrivateDatabase *privateDatabase; // @synthesize privateDatabase=_privateDatabase;
-- (void).cxx_destruct;
 - (void)_saveDatabaseServerChangeToken:(id)arg1;
 - (void)_deleteLocalDataForRecordZoneIDs:(id)arg1;
 - (void)_fetchChangesForRecordZoneIDs:(id)arg1;

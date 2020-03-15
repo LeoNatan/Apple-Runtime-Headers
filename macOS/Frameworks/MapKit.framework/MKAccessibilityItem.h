@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     BOOL _selectable;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(nonatomic, getter=isSelectable) BOOL selectable; // @synthesize selectable=_selectable;
 @property(nonatomic) struct CLLocationCoordinate2D coordinate; // @synthesize coordinate=_coordinate;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) MKMapView *mapView; // @synthesize mapView=_mapView;
-- (void).cxx_destruct;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (void)accessibilityPerformAction:(id)arg1;

@@ -18,9 +18,9 @@
     long long _width;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long width; // @synthesize width=_width;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *targetQueue; // @synthesize targetQueue=_targetQueue;
-- (void).cxx_destruct;
 - (void)_internalQueue_tryDispatchingNextPendingBlock;
 - (void)dispatchAsync:(CDUnknownBlockType)arg1;
 - (id)initWithTargetQueue:(id)arg1 width:(long long)arg2;

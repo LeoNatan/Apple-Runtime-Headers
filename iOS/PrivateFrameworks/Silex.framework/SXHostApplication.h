@@ -15,8 +15,8 @@
     UIApplication *_application;
 }
 
-@property(nonatomic) __weak UIApplication *application; // @synthesize application=_application;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIApplication *application; // @synthesize application=_application;
 - (_Bool)canOpenURL:(id)arg1;
 - (void)openURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) _Bool active;

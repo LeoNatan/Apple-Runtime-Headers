@@ -15,8 +15,8 @@
 
 + (id)asyncBlockOperationWithMainThreadBlock:(CDUnknownBlockType)arg1;
 + (id)asyncBlockOperationWithBlock:(CDUnknownBlockType)arg1;
-@property(readonly, copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void)start;
 - (_Bool)isFinished;
 - (_Bool)isExecuting;

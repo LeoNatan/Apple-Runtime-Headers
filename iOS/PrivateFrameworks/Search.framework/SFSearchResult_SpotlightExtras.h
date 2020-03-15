@@ -34,6 +34,7 @@
 
 + (void)initialize;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long predictionsFeedbackActionType; // @synthesize predictionsFeedbackActionType=_predictionsFeedbackActionType;
 @property(nonatomic) _Bool hasCommunicationContent; // @synthesize hasCommunicationContent=_hasCommunicationContent;
 @property(nonatomic) unsigned int feedbackBlockId; // @synthesize feedbackBlockId=_feedbackBlockId;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) NSNumber *parentFileIdentifier; // @synthesize parentFileIdentifier=_parentFileIdentifier;
 @property(retain, nonatomic) NSNumber *fileIdentifier; // @synthesize fileIdentifier=_fileIdentifier;
 @property(retain, nonatomic) NSString *protectionClass; // @synthesize protectionClass=_protectionClass;
-- (void).cxx_destruct;
 - (id)punchout;
 - (id)debugDescription;
 - (void)setUrl:(id)arg1;

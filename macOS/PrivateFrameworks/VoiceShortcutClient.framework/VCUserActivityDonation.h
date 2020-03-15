@@ -20,12 +20,12 @@
 }
 
 + (id)timestampDateFormatter;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) INShortcut *shortcut; // @synthesize shortcut=_shortcut;
 @property(readonly, copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, copy, nonatomic) NSString *sourceAppIdentifier; // @synthesize sourceAppIdentifier=_sourceAppIdentifier;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id uniqueProperty;
 @property(readonly, copy, nonatomic) NSString *suggestedPhrase;
 @property(readonly, copy, nonatomic) NSString *fullDescription;

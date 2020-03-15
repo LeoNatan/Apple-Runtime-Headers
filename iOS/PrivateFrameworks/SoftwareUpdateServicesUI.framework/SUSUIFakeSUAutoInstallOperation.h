@@ -14,8 +14,8 @@
     NSUUID *_uuid;
 }
 
-- (_Bool)isCanceled;
 - (void).cxx_destruct;
+- (_Bool)isCanceled;
 - (void)cancel;
 - (_Bool)isExpired;
 - (id)id;

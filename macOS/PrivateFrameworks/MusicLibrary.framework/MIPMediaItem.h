@@ -137,6 +137,7 @@
 }
 
 + (Class)libraryIdentifiersType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MIPPodcast *podcast; // @synthesize podcast=_podcast;
 @property(retain, nonatomic) MIPTVShow *tvShow; // @synthesize tvShow=_tvShow;
 @property(retain, nonatomic) MIPMovie *movie; // @synthesize movie=_movie;
@@ -207,7 +208,6 @@
 @property(nonatomic) long long releaseDateTime; // @synthesize releaseDateTime=_releaseDateTime;
 @property(retain, nonatomic) NSString *sortTitle; // @synthesize sortTitle=_sortTitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

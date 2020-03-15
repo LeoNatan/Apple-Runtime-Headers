@@ -40,8 +40,8 @@ __attribute__((visibility("hidden")))
 + (Class)_eventProviderClass;
 + (_Bool)_motionEffectsSupported;
 + (_Bool)_motionEffectsEnabled;
-@property(nonatomic, setter=_setTargetInterfaceOrientation:) long long _targetInterfaceOrientation; // @synthesize _targetInterfaceOrientation;
 - (void).cxx_destruct;
+@property(nonatomic, setter=_setTargetInterfaceOrientation:) long long _targetInterfaceOrientation; // @synthesize _targetInterfaceOrientation;
 @property(readonly, copy) NSString *debugDescription;
 - (void)_unapplyAllEffects;
 - (_Bool)_motionEffect:(id)arg1 belongsToView:(id)arg2;

@@ -20,8 +20,8 @@
     _Bool _running;
 }
 
-@property(nonatomic, getter=isRunning) _Bool running; // @synthesize running=_running;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isRunning) _Bool running; // @synthesize running=_running;
 - (void)enumerateHangsWithBlock:(CDUnknownBlockType)arg1;
 - (double)longestLoop;
 - (void)handleRunLoopActivity:(unsigned long)arg1;

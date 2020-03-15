@@ -22,12 +22,12 @@
 }
 
 + (id)actionControllerForActionIdentifier:(id)arg1 actionTitle:(id)arg2 items:(id)arg3 providerIdentifier:(id)arg4 domainIdentifier:(id)arg5;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <FPUIActionControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *providerIdentifier; // @synthesize providerIdentifier=_providerIdentifier;
 @property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(readonly, nonatomic) NSString *actionIdentifier; // @synthesize actionIdentifier=_actionIdentifier;
 @property(readonly, nonatomic) NSString *domainIdentifier; // @synthesize domainIdentifier=_domainIdentifier;
-- (void).cxx_destruct;
 - (void)remoteActionContext:(id)arg1 didEncounterError:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)remoteActionContextDidFinishAction:(id)arg1 userInfo:(id)arg2 error:(id)arg3;
 - (void)_delegateDidFinishWithUserInfo:(id)arg1 error:(id)arg2;

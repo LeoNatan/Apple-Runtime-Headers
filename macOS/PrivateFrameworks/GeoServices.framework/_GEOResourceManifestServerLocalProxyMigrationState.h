@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     id <NSObject> _transaction;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *pendingTileGroupMigrationTasks; // @synthesize pendingTileGroupMigrationTasks=_pendingTileGroupMigrationTasks;
 @property(readonly, nonatomic) NSString *loadingTileGroupUniqueIdentifier; // @synthesize loadingTileGroupUniqueIdentifier=_loadingTileGroupUniqueIdentifier;
-- (void).cxx_destruct;
 - (id)initWithTileGroupUniqueIdentifier:(id)arg1 transactionName:(id)arg2;
 - (id)init;
 

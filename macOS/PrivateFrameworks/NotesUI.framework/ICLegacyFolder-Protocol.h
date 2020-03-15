@@ -14,7 +14,7 @@
 - (NSManagedObjectContext *)managedObjectContext;
 - (NSManagedObjectID *)objectID;
 - (void)addNotesObject:(id <ICLegacyNote>)arg1;
-- (id <ICLegacyNote>)newNoteInContext:(struct NSManagedObjectContext *)arg1;
+- (id <ICLegacyNote>)newNoteInContext:(NSManagedObjectContext *)arg1;
 - (NSSet *)changes;
 - (id <ICLegacyFolder>)parentFolder;
 - (NSString *)title;

@@ -51,6 +51,7 @@
 @property(readonly, nonatomic) unsigned int resourceUsage; // @dynamic resourceUsage;
 - (_Bool)doesAliasAnyResources:(const id *)arg1 count:(unsigned int)arg2;
 - (_Bool)doesAliasAllResources:(const id *)arg1 count:(unsigned int)arg2;
+- (unsigned long long)gpuAddress;
 - (void)makeAliasable;
 - (_Bool)doesAliasResource:(id)arg1;
 - (id)heap;

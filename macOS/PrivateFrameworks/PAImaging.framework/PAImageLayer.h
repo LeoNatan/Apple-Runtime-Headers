@@ -6,8 +6,8 @@
 
 #import <PAImaging/PAOpenGLLayer.h>
 
-@class NSColor, NSDictionary, NSObject, PADisplay, PAImageDrawStatistics;
-@protocol OS_dispatch_queue, PAImageDrawingDelegate;
+@class NSColor, NSDictionary, NSObject, PADisplay, PAImageDrawStatistics, PFAsyncDispatchMulticaster;
+@protocol OS_dispatch_queue, PAImageDrawingDelegate, PAImageLayerPerformanceMulticaster;
 
 @interface PAImageLayer : PAOpenGLLayer
 {
@@ -15,7 +15,7 @@
     double _perfLayerUpdateTimer;
     double _perfLastLayerUpdateTimings[25];
     unsigned long long _perfNextLayerUpdateTimingIndex;
-    struct PFAsyncDispatchMulticaster *_multicaster;
+    PFAsyncDispatchMulticaster<PAImageLayerPerformanceMulticaster> *_multicaster;
     PAImageDrawStatistics *_lastStatistics;
     BOOL _wantsOverlay;
     PADisplay *_displayDevice;
@@ -28,13 +28,13 @@
 }
 
 + (BOOL)_canDrawConcurrently;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maximumDrawCount; // @synthesize maximumDrawCount=_maximumDrawCount;
 @property(retain, nonatomic) NSColor *overlayColor; // @synthesize overlayColor=_overlayColor;
 @property(retain) id <PAImageDrawingDelegate> drawingDelegate; // @synthesize drawingDelegate=_drawingDelegate;
 @property(copy) NSDictionary *images; // @synthesize images=_images;
 @property struct CGAffineTransform imageTransform; // @synthesize imageTransform=_imageTransform;
 @property struct CGRect imageBounds; // @synthesize imageBounds=_imageBounds;
-- (void).cxx_destruct;
 - (id)lastDrawStatistics;
 - (double)currentTime;
 - (double)_instantLayerFPS;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)imageContentsWithPasteboard:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) SEL action; // @synthesize action;
 @property(retain, nonatomic) id target; // @synthesize target;
-- (void).cxx_destruct;
 - (BOOL)performDragOperation:(id)arg1;
 - (BOOL)prepareForDragOperation:(id)arg1;
 - (unsigned long long)draggingUpdated:(id)arg1;

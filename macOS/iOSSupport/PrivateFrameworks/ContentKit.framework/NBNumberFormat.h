@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSString *_domesticCarrierCodeFormattingRule;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *domesticCarrierCodeFormattingRule; // @synthesize domesticCarrierCodeFormattingRule=_domesticCarrierCodeFormattingRule;
 @property(nonatomic) BOOL nationalPrefixOptionalWhenFormatting; // @synthesize nationalPrefixOptionalWhenFormatting=_nationalPrefixOptionalWhenFormatting;
 @property(retain, nonatomic) NSString *nationalPrefixFormattingRule; // @synthesize nationalPrefixFormattingRule=_nationalPrefixFormattingRule;
 @property(retain, nonatomic) NSMutableArray *leadingDigitsPatterns; // @synthesize leadingDigitsPatterns=_leadingDigitsPatterns;
 @property(retain, nonatomic) NSString *format; // @synthesize format=_format;
 @property(retain, nonatomic) NSString *pattern; // @synthesize pattern=_pattern;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

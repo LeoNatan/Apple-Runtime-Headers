@@ -24,6 +24,7 @@
 
 + (struct CGPath *)selectionPathInBounds:(struct CGRect)arg1;
 + (id)cellIdentifier;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CAShapeLayer *selectionLayer; // @synthesize selectionLayer=_selectionLayer;
 @property(retain, nonatomic) UIButton *accessoryButton; // @synthesize accessoryButton=_accessoryButton;
 @property(readonly, nonatomic) AVTUIAnimatingImageView *imageView; // @synthesize imageView=_imageView;
@@ -34,7 +35,6 @@
 @property(nonatomic) long long imageContentMode; // @synthesize imageContentMode=_imageContentMode;
 @property(copy, nonatomic) CDUnknownBlockType imageInsetProvider; // @synthesize imageInsetProvider=_imageInsetProvider;
 @property(retain, nonatomic) NSUUID *displaySessionUUID; // @synthesize displaySessionUUID=_displaySessionUUID;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)updateSelectionLayer;
 - (void)setSelected:(_Bool)arg1;

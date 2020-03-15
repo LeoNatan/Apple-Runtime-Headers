@@ -23,6 +23,7 @@
 + (id)tapBackFilter;
 + (id)bigEmojiFilter;
 + (id)_monochromeDimmingFilterWithType:(long long)arg1;
+- (void).cxx_destruct;
 @property id delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long messageOrientation; // @synthesize messageOrientation=_messageOrientation;
 @property(readonly, nonatomic) NSURL *soundEffectFileURL; // @synthesize soundEffectFileURL=_soundEffectFileURL;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id triggeredByObject; // @synthesize triggeredByObject=_triggeredByObject;
 @property(nonatomic) _Bool triggeredByResponseKit; // @synthesize triggeredByResponseKit=_triggeredByResponseKit;
-- (void).cxx_destruct;
 - (void)prepareSoundEffect;
 @property(readonly, nonatomic) _Bool effectIsDark;
 @property(readonly, nonatomic) UIColor *backgroundColor;

@@ -13,8 +13,8 @@
     IKCSSRuleList *_ruleList;
 }
 
-@property(retain, nonatomic) IKCSSRuleList *ruleList; // @synthesize ruleList=_ruleList;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IKCSSRuleList *ruleList; // @synthesize ruleList=_ruleList;
 - (id)description;
 
 @end

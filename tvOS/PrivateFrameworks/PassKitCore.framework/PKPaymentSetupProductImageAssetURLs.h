@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *logoImageUrl; // @synthesize logoImageUrl=_logoImageUrl;
 @property(readonly, nonatomic) NSURL *thumbnailImageUrl; // @synthesize thumbnailImageUrl=_thumbnailImageUrl;
 @property(readonly, nonatomic) NSURL *digitalCardImageUrl; // @synthesize digitalCardImageUrl=_digitalCardImageUrl;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

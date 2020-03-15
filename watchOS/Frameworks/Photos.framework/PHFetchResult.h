@@ -47,12 +47,12 @@
 + (id)pl_filterPredicateForAssetContainer:(id)arg1;
 + (id)pl_fetchResultContainingAssetContainer:(id)arg1 photoLibrary:(id)arg2 includeTrash:(_Bool)arg3;
 + (id)pl_fetchResultContainingAssetContainer:(id)arg1 photoLibrary:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool preventsClearingOIDCache; // @synthesize preventsClearingOIDCache=_preventsClearingOIDCache;
 @property int chunkSizeForFetch; // @synthesize chunkSizeForFetch=_chunkSizeForFetch;
 @property(readonly) NSSet *fetchPropertySets; // @synthesize fetchPropertySets=_fetchPropertySets;
 @property(readonly) NSString *fetchType; // @synthesize fetchType=_fetchType;
 @property(readonly) PHQuery *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (id)description;
 - (id)localIdentifiers;
 - (_Bool)isFullyBackedByObjectIDs;

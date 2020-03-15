@@ -16,11 +16,11 @@
     CDUnknownBlockType _popHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldRunPopHandler; // @synthesize shouldRunPopHandler=_shouldRunPopHandler;
 @property(copy, nonatomic) CDUnknownBlockType popHandler; // @synthesize popHandler=_popHandler;
 @property(nonatomic) _Bool bridgedNavigation; // @synthesize bridgedNavigation=_bridgedNavigation;
 @property(retain, nonatomic) AMSBinaryPromise *appearancePromise; // @synthesize appearancePromise=_appearancePromise;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIViewController *embeddedViewController;
 - (_Bool)shouldAutomaticallyForwardAppearanceMethods;
 - (void)setEmbeddedViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

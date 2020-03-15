@@ -17,9 +17,9 @@
     CDStruct_01ef6375 _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *unitString; // @synthesize unitString=_unitString;
 @property(nonatomic) double value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

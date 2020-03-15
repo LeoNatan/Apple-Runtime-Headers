@@ -24,11 +24,11 @@
 + (id)displayNameForUndoablePropertyChangeWithKey:(id)arg1;
 + (id)keyPathsForValuesAffectingDrawingBounds;
 + (id)keyPathsForValuesAffectingHitTestBounds;
+- (void).cxx_destruct;
 @property double rotationAngle; // @synthesize rotationAngle=_rotationAngle;
 @property(copy) NSDictionary *typingAttributes; // @synthesize typingAttributes=_typingAttributes;
 @property(retain) NSTextStorage *annotationText; // @synthesize annotationText=_annotationText;
 @property struct CGRect rectangle; // @synthesize rectangle=_rectangle;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)translateBy:(struct CGPoint)arg1;

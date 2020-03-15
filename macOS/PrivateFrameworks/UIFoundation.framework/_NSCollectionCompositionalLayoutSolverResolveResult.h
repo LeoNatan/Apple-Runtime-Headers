@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     struct CGSize _contentSizeAdjustment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize contentSizeAdjustment; // @synthesize contentSizeAdjustment=_contentSizeAdjustment;
 @property(nonatomic) struct CGPoint contentOffsetAdjustment; // @synthesize contentOffsetAdjustment=_contentOffsetAdjustment;
-- (void).cxx_destruct;
 - (id)indexPathsForInsertedDecorationsForElementKind:(id)arg1;
 - (id)indexPathsForInsertedSupplememtariesForElementKind:(id)arg1;
 - (id)indexPathsForDeletedDecorationsForElementKind:(id)arg1;

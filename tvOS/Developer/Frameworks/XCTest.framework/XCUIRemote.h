@@ -14,8 +14,8 @@
 }
 
 + (id)sharedRemote;
-@property(readonly) __weak id <XCUITVOSDevice> device; // @synthesize device=_device;
 - (void).cxx_destruct;
+@property(readonly) __weak id <XCUITVOSDevice> device; // @synthesize device=_device;
 - (void)_silentlyPressButton:(unsigned long long)arg1 forDuration:(double)arg2;
 - (void)pressButton:(unsigned long long)arg1 forDuration:(double)arg2;
 - (void)pressButton:(unsigned long long)arg1;

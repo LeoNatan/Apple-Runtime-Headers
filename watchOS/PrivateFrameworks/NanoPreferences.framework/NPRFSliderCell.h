@@ -13,8 +13,8 @@
     PUICSlider *_slider;
 }
 
-@property(retain, nonatomic) PUICSlider *slider; // @synthesize slider=_slider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PUICSlider *slider; // @synthesize slider=_slider;
 - (void)setCellEnabled:(_Bool)arg1;
 - (void)layoutSubviews;
 - (void)specifierValueChanged;

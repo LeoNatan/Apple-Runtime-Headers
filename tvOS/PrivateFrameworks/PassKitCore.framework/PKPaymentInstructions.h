@@ -15,10 +15,10 @@
     NSDictionary *_instructionsDictionary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *instructionsDictionary; // @synthesize instructionsDictionary=_instructionsDictionary;
 @property(readonly, nonatomic) NSData *signatureData; // @synthesize signatureData=_signatureData;
 @property(readonly, nonatomic) NSData *instructionsData; // @synthesize instructionsData=_instructionsData;
-- (void).cxx_destruct;
 - (id)_imageDataForImageWithKey:(id)arg1 format:(id *)arg2;
 - (struct CGDataProvider *)_createImageDataProviderForImageKey:(id)arg1;
 - (void)_pruneDirectoryAtURL:(id)arg1;

@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *referenceSignature; // @synthesize referenceSignature=_referenceSignature;
 @property(readonly, nonatomic) NSData *fileSignature; // @synthesize fileSignature=_fileSignature;
 @property(nonatomic) long long listIndex; // @synthesize listIndex=_listIndex;
-- (void).cxx_destruct;
 - (id)CKDescriptionPropertiesWithPublic:(BOOL)arg1 private:(BOOL)arg2 shouldExpand:(BOOL)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

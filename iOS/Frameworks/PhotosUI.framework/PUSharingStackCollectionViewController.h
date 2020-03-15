@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSArray *_assets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsUpdate; // @synthesize needsUpdate=_needsUpdate;
 @property(retain, nonatomic) NSArray *assets; // @synthesize assets=_assets;
 @property(nonatomic) unsigned long long numberOfItems; // @synthesize numberOfItems=_numberOfItems;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <PXUIImageProvider> imageProvider; // @synthesize imageProvider=_imageProvider;
 @property(readonly, nonatomic) PUSharingStackCollectionViewLayout *stackLayout; // @synthesize stackLayout=_stackLayout;
 @property(nonatomic) __weak id <PUSharingStackCollectionViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)_layoutItemInputForAsset:(id)arg1 atIndex:(long long)arg2;
 - (struct CGSize)_sizeForAsset:(id)arg1;
 - (id)sharingStackCollectionViewLayout:(id)arg1 layoutItemForItemAtIndexPath:(id)arg2;

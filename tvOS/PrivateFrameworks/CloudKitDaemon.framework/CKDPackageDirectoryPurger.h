@@ -17,9 +17,9 @@
 
 + (void)schedulePeriodicPurgesInDirectory:(id)arg1;
 + (id)sharedPurger;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *rootDirectories; // @synthesize rootDirectories=_rootDirectories;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)addRootDirectory:(id)arg1;
 - (void)purgeRootDirectory:(id)arg1;
 - (void)purgeDirectory:(id)arg1;

@@ -19,12 +19,12 @@
     NSString *_path;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *path; // @synthesize path=_path;
 @property(retain) NSString *name; // @synthesize name=_name;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property unsigned int uid; // @synthesize uid=_uid;
 @property int pid; // @synthesize pid=_pid;
-- (void).cxx_destruct;
 - (void)postAndProceedWithAutoUpdateNotification:(CDUnknownBlockType)arg1;
 - (void)mdmMajorOSUpdateStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)startInstallingMDMMajorOSUpdateWithBundleId:(id)arg1 orVersion:(id)arg2;

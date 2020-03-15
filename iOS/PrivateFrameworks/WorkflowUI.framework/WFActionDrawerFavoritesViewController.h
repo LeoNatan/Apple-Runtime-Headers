@@ -13,8 +13,8 @@
     WFActionDrawerResultsController *_actionDrawerResultsController;
 }
 
-@property(retain, nonatomic) WFActionDrawerResultsController *actionDrawerResultsController; // @synthesize actionDrawerResultsController=_actionDrawerResultsController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFActionDrawerResultsController *actionDrawerResultsController; // @synthesize actionDrawerResultsController=_actionDrawerResultsController;
 - (_Bool)moveToState:(id)arg1 animated:(_Bool)arg2;
 - (id)state;
 - (void)updateResults;

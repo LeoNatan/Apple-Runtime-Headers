@@ -63,6 +63,7 @@
 }
 
 + (Class)complicationsType;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int flipbookFrameRenderCount; // @synthesize flipbookFrameRenderCount=_flipbookFrameRenderCount;
 @property(nonatomic) float previousDisplayOnMS; // @synthesize previousDisplayOnMS=_previousDisplayOnMS;
 @property(nonatomic) float displayOffMS; // @synthesize displayOffMS=_displayOffMS;
@@ -86,7 +87,6 @@
 @property(retain, nonatomic) NSString *face; // @synthesize face=_face;
 @property(nonatomic) float durationMS; // @synthesize durationMS=_durationMS;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

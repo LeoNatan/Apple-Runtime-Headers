@@ -22,13 +22,13 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMDCameraSnapshotMetrics *snapshotMetrics; // @synthesize snapshotMetrics=_snapshotMetrics;
 @property(readonly, nonatomic) unsigned long long streamingTierType; // @synthesize streamingTierType=_streamingTierType;
 @property(readonly, nonatomic) NSMutableArray *sessionMessages; // @synthesize sessionMessages=_sessionMessages;
 @property(retain, nonatomic) HMDSnapshotCompletionTimer *snapshotCompletionTimer; // @synthesize snapshotCompletionTimer=_snapshotCompletionTimer;
 @property(readonly, nonatomic) id <HMDCameraGetSnapshotProtocol> snapshotGetter; // @synthesize snapshotGetter=_snapshotGetter;
 @property(readonly, nonatomic) HMDCameraSnapshotSessionID *sessionID; // @synthesize sessionID=_sessionID;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)respond:(id)arg1 payload:(id)arg2;
 - (void)dealloc;

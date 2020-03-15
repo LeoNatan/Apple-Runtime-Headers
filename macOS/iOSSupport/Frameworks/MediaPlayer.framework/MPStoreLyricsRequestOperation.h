@@ -17,9 +17,9 @@
 
 + (id)_lyricsURLForURLBagDictionary:(id)arg1;
 + (BOOL)supportsLyricsForURLBagDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(copy, nonatomic) MPStoreLyricsRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)_enqueueOperationWithURL:(id)arg1 bagDictionary:(id)arg2 allowingAuthentication:(BOOL)arg3;
 - (void)execute;
 

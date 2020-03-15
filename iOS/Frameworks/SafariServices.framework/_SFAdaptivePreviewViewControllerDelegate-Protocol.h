@@ -4,10 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <SafariServices/NSObject-Protocol.h>
+
 @class NSURL, UIViewController, _SFAdaptivePreviewViewController;
 
-@protocol _SFAdaptivePreviewViewControllerDelegate
-- (void)adaptivePreviewViewControlerWillDisableLinkPreview:(_SFAdaptivePreviewViewController *)arg1;
+@protocol _SFAdaptivePreviewViewControllerDelegate <NSObject>
 - (UIViewController *)adaptivePreviewViewController:(_SFAdaptivePreviewViewController *)arg1 requestLinkPreviewViewControllerWithURL:(NSURL *)arg2;
+
+@optional
+- (void)adaptivePreviewViewControllerWillDisableLinkPreview:(_SFAdaptivePreviewViewController *)arg1;
+- (double)headerViewHeightForAdaptivePreviewViewController:(_SFAdaptivePreviewViewController *)arg1;
 @end
 

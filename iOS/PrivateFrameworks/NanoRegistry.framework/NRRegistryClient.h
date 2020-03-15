@@ -26,6 +26,7 @@
 + (Class)proxyClass;
 + (Class)xpcConnectionClass;
 + (unsigned long long)updateCounterFromToken:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *registryQueryCompletionBlockEntries; // @synthesize registryQueryCompletionBlockEntries=_registryQueryCompletionBlockEntries;
 @property(nonatomic) unsigned long long backoffDuration; // @synthesize backoffDuration=_backoffDuration;
 @property(nonatomic) _Bool outstandingRegistryQuery; // @synthesize outstandingRegistryQuery=_outstandingRegistryQuery;
@@ -35,7 +36,6 @@
 @property(nonatomic) unsigned long long lastDevicesUpdateCounterNotifyTokenValue; // @synthesize lastDevicesUpdateCounterNotifyTokenValue=_lastDevicesUpdateCounterNotifyTokenValue;
 @property(nonatomic) unsigned long long tokenValue; // @synthesize tokenValue=_tokenValue;
 @property(retain, nonatomic) id <NRNSXPCConnectionProtocol> connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)setCollection:(id)arg1;
 - (void)_fireAllQueryCompletionBlocks;

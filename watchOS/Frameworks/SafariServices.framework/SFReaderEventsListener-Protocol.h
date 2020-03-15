@@ -15,6 +15,7 @@
 - (void)didCollectReadingListItemInfo:(NSDictionary *)arg1 bookmarkID:(NSNumber *)arg2;
 - (void)didSetReaderConfiguration:(NSDictionary *)arg1;
 - (void)contentDidBecomeReadyWithDetectedLanguage:(NSString *)arg1;
+- (void)didDetermineReaderAvailabilityForDynamicCheck:(_Bool)arg1;
 - (void)didDetermineReaderAvailability:(_Bool)arg1 dueToSameDocumentNavigation:(_Bool)arg2;
 @end
 

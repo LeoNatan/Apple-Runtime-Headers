@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <SidebarScrollViewAccessibilityDelegate> _accessibilityDelegate;
 }
 
-@property(nonatomic) __weak id <SidebarScrollViewAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SidebarScrollViewAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 - (id)accessibilityContents;
 - (id)accessibilityChildren;
 - (id)_accessibilityElements:(id)arg1 withDelegateChildren:(id)arg2;

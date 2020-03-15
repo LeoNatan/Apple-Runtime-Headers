@@ -20,8 +20,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) _Bool diagnosticsEnabled; // @synthesize diagnosticsEnabled=_diagnosticsEnabled;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool diagnosticsEnabled; // @synthesize diagnosticsEnabled=_diagnosticsEnabled;
 @property(readonly, copy, nonatomic) NSArray *visionObservations;
 - (void)appendVisionObservations:(id)arg1;
 - (id)startMeasurement:(int)arg1 name:(id)arg2;

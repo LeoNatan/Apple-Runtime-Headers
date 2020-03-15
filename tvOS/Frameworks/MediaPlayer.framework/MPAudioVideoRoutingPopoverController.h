@@ -19,8 +19,8 @@
     _Bool _mirroringOnly;
 }
 
-@property(nonatomic) _Bool mirroringOnly; // @synthesize mirroringOnly=_mirroringOnly;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool mirroringOnly; // @synthesize mirroringOnly=_mirroringOnly;
 - (void)routingViewControllerDidUpdateContents:(id)arg1;
 - (void)routingViewController:(id)arg1 didPickRoute:(id)arg2;
 - (id)routingController;

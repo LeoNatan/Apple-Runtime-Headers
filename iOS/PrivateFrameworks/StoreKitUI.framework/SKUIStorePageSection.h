@@ -24,6 +24,7 @@
     NSArray *_indexPathsForBackgroundItems;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *indexPathsForBackgroundItems; // @synthesize indexPathsForBackgroundItems=_indexPathsForBackgroundItems;
 @property(readonly, nonatomic) IKColor *backgroundColorForSection; // @synthesize backgroundColorForSection=_backgroundColorForSection;
 @property(nonatomic, getter=isTopSection) _Bool topSection; // @synthesize topSection=_topSection;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) SKUIPageComponent *pageComponent; // @synthesize pageComponent=_component;
 @property(readonly, nonatomic) SKUIStorePageSectionContext *context; // @synthesize context=_context;
 @property(nonatomic, getter=isBottomSection) _Bool bottomSection; // @synthesize bottomSection=_bottomSection;
-- (void).cxx_destruct;
 - (void)_sendXEventWithDictionary:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)_recursivelyAddRelevantEntityProvidersForViewElement:(id)arg1 toSet:(id)arg2;
 - (long long)_itemPinningGroup;

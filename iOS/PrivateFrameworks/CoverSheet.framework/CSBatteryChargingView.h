@@ -19,9 +19,9 @@
 + (id)maskImageNameForChargingBattery;
 + (id)batteryChargingViewWithDoubleBattery;
 + (id)batteryChargingViewWithSingleBattery;
+- (void).cxx_destruct;
 @property(nonatomic) double alignmentPercent; // @synthesize alignmentPercent=_alignmentPercent;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
-- (void).cxx_destruct;
 - (double)_batteryOriginYForBatteryHeight:(double)arg1;
 - (id)_chargePercentFont;
 - (id)_updateChargeString:(id)arg1 oldLabel:(id)arg2;

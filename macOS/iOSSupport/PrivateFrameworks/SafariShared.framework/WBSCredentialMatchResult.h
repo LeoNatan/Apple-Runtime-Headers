@@ -15,10 +15,10 @@
     NSArray *_associatedDomainMatches;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *associatedDomainMatches; // @synthesize associatedDomainMatches=_associatedDomainMatches;
 @property(readonly, copy, nonatomic) NSArray *potentialMatches; // @synthesize potentialMatches=_potentialMatches;
 @property(readonly, copy, nonatomic) NSArray *exactMatches; // @synthesize exactMatches=_exactMatches;
-- (void).cxx_destruct;
 - (id)initWithExactMatches:(id)arg1 potentialMatches:(id)arg2 associatedDomainMatches:(id)arg3;
 
 @end

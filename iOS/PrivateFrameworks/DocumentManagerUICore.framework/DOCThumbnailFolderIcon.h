@@ -34,10 +34,10 @@
 + (id)folderIconForDescriptor:(id)arg1;
 + (id)folderIcons;
 + (id)_folderIconsForImageNamePattern:(id)arg1 documentsBadgeNamePattern:(id)arg2 desktopBadgeNamePattern:(id)arg3 sharedBadgeNamePattern:(id)arg4 downloadsBadgeNamePattern:(id)arg5 genericSharepointBadgeNamePattern:(id)arg6;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double imageDimension; // @synthesize imageDimension=_imageDimension;
 @property(readonly, nonatomic) UIImage *plainFolderImage; // @synthesize plainFolderImage=_plainFolderImage;
 @property(readonly, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
-- (void).cxx_destruct;
 - (double)bottomInsetForFolderType:(unsigned long long)arg1;
 @property(readonly, nonatomic) double bottomInset;
 - (struct CGSize)badgeSizeForFolderType:(unsigned long long)arg1;

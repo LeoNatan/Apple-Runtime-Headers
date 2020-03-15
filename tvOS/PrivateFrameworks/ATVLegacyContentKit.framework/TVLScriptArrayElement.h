@@ -13,8 +13,8 @@
     NSArray *_scriptURLs;
 }
 
-@property(copy, nonatomic) NSArray *scriptURLs; // @synthesize scriptURLs=_scriptURLs;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *scriptURLs; // @synthesize scriptURLs=_scriptURLs;
 - (id)initWithXMLElement:(id)arg1 feedDocument:(id)arg2;
 
 @end

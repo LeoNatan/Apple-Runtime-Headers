@@ -18,10 +18,10 @@
     AXVTextField *__titleTextField;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setTitleTextField:) AXVTextField *_titleTextField; // @synthesize _titleTextField=__titleTextField;
 @property(nonatomic) __weak id <AXVTitleWindowMouseEventDelegate> mouseEventDelegate; // @synthesize mouseEventDelegate=_mouseEventDelegate;
 @property(nonatomic) double baseFontSize; // @synthesize baseFontSize=_baseFontSize;
-- (void).cxx_destruct;
 - (void)mouseDownOnView:(id)arg1 event:(id)arg2;
 - (struct CGSize)_windowSizeToFitContent:(double)arg1;
 - (void)_adjustWindowFrameToFitContent:(double)arg1;

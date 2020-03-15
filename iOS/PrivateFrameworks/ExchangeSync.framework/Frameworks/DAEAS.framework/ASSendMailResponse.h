@@ -19,8 +19,8 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
-@property(retain, nonatomic) NSNumber *status; // @synthesize status=_status;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSNumber *status; // @synthesize status=_status;
 - (id)description;
 
 @end

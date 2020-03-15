@@ -17,8 +17,8 @@
     id <HUServiceDetailsControlAndCharacteristicStateItemModuleDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <HUServiceDetailsControlAndCharacteristicStateItemModuleDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <HUServiceDetailsControlAndCharacteristicStateItemModuleDelegate> delegate; // @synthesize delegate=_delegate;
 - (CDUnknownBlockType)_characteristicStateItemComparator;
 - (id)_allCharacteristicTypesForItem:(id)arg1;
 - (id)_createStandaloneCharacteristicSectionsForItems:(id)arg1;

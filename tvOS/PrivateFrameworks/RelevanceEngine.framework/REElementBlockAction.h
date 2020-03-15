@@ -11,8 +11,8 @@
     CDUnknownBlockType _action;
 }
 
-@property(readonly, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

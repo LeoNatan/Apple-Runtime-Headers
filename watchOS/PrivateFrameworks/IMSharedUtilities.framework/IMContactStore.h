@@ -67,6 +67,7 @@
 + (Class)IMCNContactFetchRequestClass;
 + (Class)IMCNContactFormatterClass;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *CNIDsForBatchFetch; // @synthesize CNIDsForBatchFetch=_CNIDsForBatchFetch;
 @property(retain, nonatomic) CNContact *meContact; // @synthesize meContact=_meContact;
 @property(nonatomic) double lastMeContactStoreSync; // @synthesize lastMeContactStoreSync=_lastMeContactStoreSync;
@@ -77,7 +78,10 @@
 @property(retain, nonatomic) NSDictionary *handleIDToCNIDMap; // @synthesize handleIDToCNIDMap=_handleIDToCNIDMap;
 @property(retain, nonatomic) NSData *changeHistoryToken; // @synthesize changeHistoryToken=_changeHistoryToken;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-- (void).cxx_destruct;
+- (id)getCurrentHistoryToken;
+- (id)getIDToCNContactMap;
+- (id)getCNIDToHandleIDsMap;
+- (id)getHandleIDToCNIDMap;
 - (void)checkForContactStoreChanges;
 - (void)handleDropEverythingEvent;
 - (id)fetchMeContactWithKeys:(id)arg1;
@@ -105,6 +109,18 @@
 - (void)dealloc;
 - (id)initWithContactStore:(id)arg1;
 - (id)init;
+- (void)_logDictionaryInformation:(id)arg1 inRange:(struct _NSRange)arg2;
+- (void)_logArrayInBatches:(id)arg1 ofBatchSize:(int)arg2;
+- (void)_logDictionaryInBatches:(id)arg1 ofBatchSize:(int)arg2;
+- (void)logHandleID:(id)arg1;
+- (void)logCNContact:(id)arg1 andID:(id)arg2;
+- (void)logCNContact:(id)arg1;
+- (void)logCurrentHistoryToken;
+- (void)logContactFetchRequestResults:(id)arg1;
+- (void)logHandleIDs:(id)arg1;
+- (void)logCNIDToHandleIDMap;
+- (void)logIDToCNContactMap;
+- (void)loghandleIDToCNIDMap;
 
 @end
 

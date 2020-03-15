@@ -26,9 +26,9 @@
     id <DNDLifetimeDetailsProviderDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <DNDLifetimeDetailsProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSArray *availableLifetimeDetails; // @synthesize availableLifetimeDetails=_availableLifetimeDetails;
-- (void).cxx_destruct;
 - (void)_eventStoreQueue_requestRelevantEvent;
 - (void)_queue_requestLifetimeDetails;
 - (void)_queue_resetLifetimeDetails;

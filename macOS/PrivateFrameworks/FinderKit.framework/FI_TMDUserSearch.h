@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSNumber *_searchNonFinderFiles;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *slices; // @synthesize slices=_slices;
 @property(retain) NSNumber *searchNonFinderFiles; // @synthesize searchNonFinderFiles=_searchNonFinderFiles;
 @property(retain) NSNumber *fileNameOnly; // @synthesize fileNameOnly=_fileNameOnly;
 @property(retain) NSNumber *searchSystemFiles; // @synthesize searchSystemFiles=_searchSystemFiles;
 @property(retain) NSArray *scope; // @synthesize scope=_scope;
 @property(retain) NSString *filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;

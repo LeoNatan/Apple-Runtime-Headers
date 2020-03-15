@@ -14,9 +14,9 @@
     CDUnknownBlockType _eventResponseHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType eventResponseHandler; // @synthesize eventResponseHandler=_eventResponseHandler;
 @property(retain, nonatomic) TVRCDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)sendEvent:(id)arg1 options:(id)arg2;
 - (id)initWithDevice:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
 

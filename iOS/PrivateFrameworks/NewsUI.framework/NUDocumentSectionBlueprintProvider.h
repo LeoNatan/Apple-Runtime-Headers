@@ -17,10 +17,10 @@
     FCObservable *_tempObservableContentOverlayBlueprintData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCObservable *tempObservableContentOverlayBlueprintData; // @synthesize tempObservableContentOverlayBlueprintData=_tempObservableContentOverlayBlueprintData;
 @property(readonly, nonatomic) FCObservable *tempObservableFooterBlueprint; // @synthesize tempObservableFooterBlueprint=_tempObservableFooterBlueprint;
 @property(readonly, nonatomic) FCObservable *tempObservableHeaderBlueprint; // @synthesize tempObservableHeaderBlueprint=_tempObservableHeaderBlueprint;
-- (void).cxx_destruct;
 - (id)observableContentOverlayBlueprintData;
 - (id)observableFooterBlueprint;
 - (id)observableHeaderBlueprint;

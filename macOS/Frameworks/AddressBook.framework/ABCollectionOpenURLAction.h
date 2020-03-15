@@ -13,8 +13,8 @@
     NSDataDetector *_urlDetector;
 }
 
-@property(retain) NSDataDetector *urlDetector; // @synthesize urlDetector=_urlDetector;
 - (void).cxx_destruct;
+@property(retain) NSDataDetector *urlDetector; // @synthesize urlDetector=_urlDetector;
 - (void)makeURLDetectorIfNecessary;
 - (void)executeWithTarget:(id)arg1;
 

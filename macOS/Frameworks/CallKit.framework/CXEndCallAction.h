@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSDate *dateEnded; // @synthesize dateEnded=_dateEnded;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDate *dateEnded; // @synthesize dateEnded=_dateEnded;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)updateSanitizedCopy:(id)arg1 withZone:(struct _NSZone *)arg2;

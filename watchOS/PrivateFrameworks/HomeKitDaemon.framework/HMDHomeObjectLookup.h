@@ -16,8 +16,8 @@
 }
 
 + (id)logCategory;
-@property(readonly, nonatomic) __weak HMDHome *home; // @synthesize home=_home;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak HMDHome *home; // @synthesize home=_home;
 - (void)lookupAndApplyObjectChange:(id)arg1 previous:(id)arg2 result:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_scanUsers;
 - (void)_scanMediaSystems;

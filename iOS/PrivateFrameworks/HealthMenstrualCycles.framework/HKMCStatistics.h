@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSNumber *menstruationLengthUpperPercentile; // @synthesize menstruationLengthUpperPercentile=_menstruationLengthUpperPercentile;
 @property(readonly, copy, nonatomic) NSNumber *menstruationLengthLowerPercentile; // @synthesize menstruationLengthLowerPercentile=_menstruationLengthLowerPercentile;
 @property(copy, nonatomic) NSNumber *menstruationLengthMedian; // @synthesize menstruationLengthMedian=_menstruationLengthMedian;
@@ -34,7 +35,6 @@
 @property(readonly, copy, nonatomic) NSNumber *lastMenstruationStartDayIndex; // @synthesize lastMenstruationStartDayIndex=_lastMenstruationStartDayIndex;
 @property(readonly, copy, nonatomic) NSNumber *firstMenstruationStartDayIndex; // @synthesize firstMenstruationStartDayIndex=_firstMenstruationStartDayIndex;
 @property(readonly, nonatomic) long long numberOfCycles; // @synthesize numberOfCycles=_numberOfCycles;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)redactedDescription;

@@ -12,17 +12,18 @@
 {
     BOOL _delayLoadingURLs;
     CDUnknownBlockType _imageDidLoadBlock;
-    struct NSImage *_image;
-    struct NSImage *_originalImage;
-    struct NSImage *_orientedImage;
+    NSImage *_image;
+    NSImage *_originalImage;
+    NSImage *_orientedImage;
     NSData *_data;
     double _scale;
     NSArray *_previewImageURLs;
     struct CGAffineTransform _orientedImageTransform;
 }
 
-+ (struct NSImage *)orientedImage:(struct NSImage *)arg1 withTransform:(struct CGAffineTransform)arg2 background:(int)arg3 backgroundTransform:(struct CGAffineTransform)arg4;
-+ (struct NSImage *)orientedImage:(struct NSImage *)arg1 withBackground:(int)arg2;
++ (id)orientedImage:(id)arg1 withTransform:(struct CGAffineTransform)arg2 background:(int)arg3 backgroundTransform:(struct CGAffineTransform)arg4;
++ (id)orientedImage:(id)arg1 withBackground:(int)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGAffineTransform orientedImageTransform; // @synthesize orientedImageTransform=_orientedImageTransform;
 @property(nonatomic) BOOL delayLoadingURLs; // @synthesize delayLoadingURLs=_delayLoadingURLs;
 @property(copy, nonatomic) NSArray *previewImageURLs; // @synthesize previewImageURLs=_previewImageURLs;
@@ -32,12 +33,11 @@
 @property(retain, nonatomic) NSImage *originalImage; // @synthesize originalImage=_originalImage;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) CDUnknownBlockType imageDidLoadBlock; // @synthesize imageDidLoadBlock=_imageDidLoadBlock;
-- (void).cxx_destruct;
-- (struct NSImage *)loadOrientedImage;
-- (struct NSImage *)loadImage;
+- (id)loadOrientedImage;
+- (id)loadImage;
 - (BOOL)canLoadImage;
 - (void)loadData;
-- (id)initWithOriginalImage:(struct NSImage *)arg1 orientedImage:(struct NSImage *)arg2 data:(id)arg3 scale:(double)arg4 previewImageURLs:(id)arg5 delayLoadingURLs:(BOOL)arg6;
+- (id)initWithOriginalImage:(id)arg1 orientedImage:(id)arg2 data:(id)arg3 scale:(double)arg4 previewImageURLs:(id)arg5 delayLoadingURLs:(BOOL)arg6;
 
 @end
 

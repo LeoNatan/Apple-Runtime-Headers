@@ -21,6 +21,7 @@
 }
 
 + (id)tupleForMessage:(id)arg1 originalRequestIdentifier:(id)arg2 requestCount:(unsigned long long)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) double creationTime; // @synthesize creationTime=_creationTime;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(retain, nonatomic) NSMutableArray *latestResponses; // @synthesize latestResponses=_latestResponses;
@@ -29,7 +30,6 @@
 @property(nonatomic) unsigned long long pendingResponseCount; // @synthesize pendingResponseCount=_pendingResponseCount;
 @property(retain, nonatomic) NSString *originalRequestIdentifier; // @synthesize originalRequestIdentifier=_originalRequestIdentifier;
 @property(retain, nonatomic) HMFMessage *requestMessage; // @synthesize requestMessage=_requestMessage;
-- (void).cxx_destruct;
 - (id)retrieveAndClearLatestResponses;
 - (id)retrieveAndClearAllResponses;
 - (void)addResponsesToPendingResponse:(id)arg1;

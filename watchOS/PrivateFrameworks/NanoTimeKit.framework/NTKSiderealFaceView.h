@@ -12,7 +12,7 @@
 #import <NanoTimeKit/NTKTritiumMetalContentView-Protocol.h>
 #import <NanoTimeKit/PUICCrownInputSequencerDelegate-Protocol.h>
 
-@class CALayer, CAShapeLayer, CSLPIMinorDetentAssertion, NSCalendar, NSDateFormatter, NSString, NSTimer, NTKFaceViewTapControl, NTKSiderealAuxiliaryDialLabels, NTKSiderealDataSource, NTKSiderealDialBackgroundView, NTKSiderealTimeView, NTKWhistlerAnalogFaceViewComplicationFactory, PUICClientSideAnimation, PUICCrownInputSequencer, UILabel, UIView;
+@class CALayer, CAShapeLayer, CSLPIMinorDetentAssertion, NSCalendar, NSDateFormatter, NSNumber, NSString, NSTimer, NTKFaceViewTapControl, NTKSiderealAuxiliaryDialLabels, NTKSiderealDataSource, NTKSiderealDialBackgroundView, NTKSiderealTimeView, NTKWhistlerAnalogFaceViewComplicationFactory, PUICClientSideAnimation, PUICCrownInputSequencer, UILabel, UIView;
 
 @interface NTKSiderealFaceView : NTKFaceView <NTKTimeView, NTKSiderealDataSourceDelegate, CLKMonochromeFilterProvider, PUICCrownInputSequencerDelegate, NTKTritiumMetalContentView>
 {
@@ -26,7 +26,7 @@
     NSTimer *_wheelDelayTimer;
     NSTimer *_buttonPressTimer;
     NTKSiderealDataSource *_dataSource;
-    struct NSNumber *_clockTimerToken;
+    NSNumber *_clockTimerToken;
     float _currentSolarDayProgress;
     float _interactionProgress;
     float _lastTestedWaypointProgress;
@@ -52,7 +52,6 @@
 }
 
 + (Class)tritium_frameSpecifierClass;
-+ (int)uiSensitivity;
 - (void).cxx_destruct;
 - (void)performScrollTestNamed:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)tritium_applyBurnInStudyFakeActiveStateWithFrameSpecifier:(id)arg1;
@@ -133,7 +132,7 @@
 - (void)_updateSolarOrbitGlowPath:(float)arg1;
 - (void)_refreshGlowPathState;
 - (void)_updateStatusBarVisibility;
-- (void)_cleanupAfterSettingViewMode:(unsigned int)arg1;
+- (void)_cleanupAfterSettingViewMode:(unsigned int)arg1 previousViewMode:(unsigned int)arg2;
 - (void)_interpolateFromViewMode:(unsigned int)arg1 toViewMode:(unsigned int)arg2 progress:(float)arg3;
 - (void)_prepareForSettingViewMode:(unsigned int)arg1 animated:(_Bool)arg2;
 - (void)_setViewMode:(unsigned int)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

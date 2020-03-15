@@ -14,9 +14,9 @@
     NSNumber *_accountID;
 }
 
+- (void).cxx_destruct;
 @property BOOL askToBuyEnabled; // @synthesize askToBuyEnabled=_askToBuyEnabled;
 @property(copy) NSNumber *accountID; // @synthesize accountID=_accountID;
-- (void).cxx_destruct;
 - (id)initWithAccountID:(id)arg1;
 - (id)init;
 

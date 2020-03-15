@@ -38,12 +38,12 @@ __attribute__((visibility("hidden")))
 + (double)savedSidebarWidth;
 + (void)registerDefaults;
 + (void)setDefaultSidebarViewMode:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) BOOL socialLinksSidebarIsShowing; // @synthesize socialLinksSidebarIsShowing=_socialLinksSidebarIsShowing;
 @property(nonatomic) __weak id <SidebarStateRestorationContext> stateRestorationContext; // @synthesize stateRestorationContext=_stateRestorationContext;
 @property(retain, nonatomic) ReadingListSidebarViewController *readingListSidebarViewController; // @synthesize readingListSidebarViewController=_readingListSidebarViewController;
 @property(retain, nonatomic) BookmarksSidebarViewController *bookmarksSidebarViewController; // @synthesize bookmarksSidebarViewController=_bookmarksSidebarViewController;
 @property(retain, nonatomic) AnnotatedBookmarksSidebarViewController *annotatedBookmarksSidebarViewController; // @synthesize annotatedBookmarksSidebarViewController=_annotatedBookmarksSidebarViewController;
-- (void).cxx_destruct;
 - (struct CGRect)_topBarButtonFrameForTabWithIdentifier:(id)arg1;
 - (void)_installViewForActiveMode;
 - (void)_activateViewControllerWithIdentifier:(id)arg1;

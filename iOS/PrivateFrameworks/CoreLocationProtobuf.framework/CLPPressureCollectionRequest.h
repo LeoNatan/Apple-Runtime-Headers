@@ -17,10 +17,10 @@
     CLPLocation *_pressureLocation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLPLocation *pressureLocation; // @synthesize pressureLocation=_pressureLocation;
 @property(retain, nonatomic) CLPPressure *pressure; // @synthesize pressure=_pressure;
 @property(retain, nonatomic) CLPMeta *meta; // @synthesize meta=_meta;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -35,6 +35,7 @@
 }
 
 + (double)defaultHeight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UISegmentedControl *variantSegmentedControl; // @synthesize variantSegmentedControl=_variantSegmentedControl;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -53,7 +54,6 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) __weak id <MPUCompletionFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)_createItemOfferButton;
 - (void)_configureViewsForCompletionOffering;
 - (void)itemOfferButtonWillAnimateTransition:(id)arg1;

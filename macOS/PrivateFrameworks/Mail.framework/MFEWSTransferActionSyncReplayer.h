@@ -15,8 +15,8 @@
     MFEWSConnection *_connection;
 }
 
-@property(retain, nonatomic) MFEWSConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MFEWSConnection *connection; // @synthesize connection=_connection;
 - (id)_folderIDStringForMailboxURLString:(id)arg1;
 - (id)_folderIDStringForMailbox:(id)arg1;
 - (id)_bodyRequestShape;

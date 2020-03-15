@@ -48,6 +48,7 @@
     long long _currentFontSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long currentFontSize; // @synthesize currentFontSize=_currentFontSize;
 @property(retain, nonatomic) MFComposeStyleSelectorButton *indentRightButton; // @synthesize indentRightButton=_indentRightButton;
 @property(retain, nonatomic) MFComposeStyleSelectorButton *indentLeftButton; // @synthesize indentLeftButton=_indentLeftButton;
@@ -79,7 +80,6 @@
 @property(retain, nonatomic) MFComposeColorPickerController *colorPicker; // @synthesize colorPicker=_colorPicker;
 @property(retain, nonatomic) UIStackView *containerStackView; // @synthesize containerStackView=_containerStackView;
 @property(nonatomic) __weak id <MFComposeStyleSelectorViewControllerDelegate> styleDelegate; // @synthesize styleDelegate=_styleDelegate;
-- (void).cxx_destruct;
 - (void)_updateFontsButton:(id)arg1;
 - (void)_setupButtons;
 - (id)_composeStyleSelectorButtonForAttributeType:(long long)arg1;

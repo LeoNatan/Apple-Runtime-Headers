@@ -15,8 +15,8 @@
     NSURL *_URL;
 }
 
-@property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 - (void)_runLookupForHostname:(id)arg1;
 - (void)_resolutionCompletedWithError:(id)arg1;
 - (void)run;

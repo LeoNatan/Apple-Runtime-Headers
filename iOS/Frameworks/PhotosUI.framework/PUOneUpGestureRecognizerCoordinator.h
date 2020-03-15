@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     NSHashTable *__irisGestureRecognizers;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setNeedsUpdateGestureRecognizers:) _Bool _needsUpdateGestureRecognizers; // @synthesize _needsUpdateGestureRecognizers=__needsUpdateGestureRecognizers;
 @property(retain, nonatomic, setter=_setIrisGestureRecognizers:) NSHashTable *_irisGestureRecognizers; // @synthesize _irisGestureRecognizers=__irisGestureRecognizers;
 @property(retain, nonatomic) PULongPressDragController *longPressDragController; // @synthesize longPressDragController=_longPressDragController;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PUOneUpBarsController *oneUpBarsController; // @synthesize oneUpBarsController=_oneUpBarsController;
 @property(retain, nonatomic) PUBrowsingSession *browsingSession; // @synthesize browsingSession=_browsingSession;
 @property(nonatomic) __weak id <PUOneUpGestureRecognizerCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;

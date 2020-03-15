@@ -56,6 +56,7 @@
     unsigned long long _numberOfParentGrandparentOldSignalRegistrationsInCorrectInference;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numberOfParentGrandparentOldSignalRegistrationsInCorrectInference; // @synthesize numberOfParentGrandparentOldSignalRegistrationsInCorrectInference=_numberOfParentGrandparentOldSignalRegistrationsInCorrectInference;
 @property(nonatomic) unsigned long long numberOfAgeDifferentThanMeSignalRegistrationsInCorrectInference; // @synthesize numberOfAgeDifferentThanMeSignalRegistrationsInCorrectInference=_numberOfAgeDifferentThanMeSignalRegistrationsInCorrectInference;
 @property(nonatomic) unsigned long long numberOfCoworkerCalendarSignalRegistrationsInCorrectInference; // @synthesize numberOfCoworkerCalendarSignalRegistrationsInCorrectInference=_numberOfCoworkerCalendarSignalRegistrationsInCorrectInference;
@@ -97,7 +98,6 @@
 @property(nonatomic) unsigned long long numberOfPeople; // @synthesize numberOfPeople=_numberOfPeople;
 @property(retain, nonatomic) PGGraph *graph; // @synthesize graph=_graph;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)_relationshipKeyForLabel:(id)arg1;
 - (id)_readableStringByRelationshipEdgeProperty;

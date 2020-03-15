@@ -18,13 +18,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) long long currentFeatureVersion; // @synthesize currentFeatureVersion=_currentFeatureVersion;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long currentFeatureVersion; // @synthesize currentFeatureVersion=_currentFeatureVersion;
 - (void)enumerateHistoryWithBlock:(CDUnknownBlockType)arg1;
 - (id)description;
-- (long long)featureVersionForSyncAnchor:(struct NSData *)arg1;
-- (struct NSData *)syncAnchorForFeatureVersion:(long long)arg1;
-- (void)addSyncAnchor:(struct NSData *)arg1 forFeatureVersion:(long long)arg2;
+- (long long)featureVersionForSyncAnchor:(id)arg1;
+- (id)syncAnchorForFeatureVersion:(long long)arg1;
+- (void)addSyncAnchor:(id)arg1 forFeatureVersion:(long long)arg2;
 - (id)initWithCurrentFeatureVersion:(long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

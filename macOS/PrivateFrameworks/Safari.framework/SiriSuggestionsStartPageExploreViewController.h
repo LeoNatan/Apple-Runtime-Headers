@@ -29,11 +29,11 @@ __attribute__((visibility("hidden")))
     ForYouRecommendationMediator *_recommendationMediator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ForYouRecommendationMediator *recommendationMediator; // @synthesize recommendationMediator=_recommendationMediator;
 @property(nonatomic) BOOL usesCompactAppearance; // @synthesize usesCompactAppearance=_usesCompactAppearance;
 @property(nonatomic) BOOL usesPrivateBrowsing; // @synthesize usesPrivateBrowsing=_usesPrivateBrowsing;
 @property(nonatomic) BOOL hasContentToDisplay; // @synthesize hasContentToDisplay=_hasContentToDisplay;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double collapsedHeight;
 @property(readonly, nonatomic) double expandedHeight;
 - (void)willReuseItem:(id)arg1;

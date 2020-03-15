@@ -49,6 +49,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property NSNumber *hasTransferrableTelephonyPlan; // @synthesize hasTransferrableTelephonyPlan=_hasTransferrableTelephonyPlan;
 @property(retain) NSNumber *preventSoftwareUpdateDeviceMigration; // @synthesize preventSoftwareUpdateDeviceMigration=_preventSoftwareUpdateDeviceMigration;
 @property(retain) NSNumber *storageCapacity; // @synthesize storageCapacity=_storageCapacity;
@@ -83,7 +84,6 @@
 @property _Bool usesSameAccountForiTunes; // @synthesize usesSameAccountForiTunes=_usesSameAccountForiTunes;
 @property(copy) NSString *appleID; // @synthesize appleID=_appleID;
 @property(copy) NSArray *keyboards; // @synthesize keyboards=_keyboards;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

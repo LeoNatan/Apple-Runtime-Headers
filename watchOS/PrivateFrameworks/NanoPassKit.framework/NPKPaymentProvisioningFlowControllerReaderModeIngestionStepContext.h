@@ -17,12 +17,15 @@
     float _ingestionProgress;
 }
 
++ (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) float ingestionProgress; // @synthesize ingestionProgress=_ingestionProgress;
 @property(nonatomic) unsigned int ingestionState; // @synthesize ingestionState=_ingestionState;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSURL *physicalCardImageURL; // @synthesize physicalCardImageURL=_physicalCardImageURL;
-- (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)description;
 - (id)initWithRequestContext:(id)arg1;
 

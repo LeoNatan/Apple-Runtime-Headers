@@ -10,14 +10,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct NSMutableDictionary {
-    Class _field1;
-};
-
-struct NSString {
-    Class _field1;
-};
-
 struct _MRHIDButtonEvent {
     unsigned int _field1;
     unsigned int _field2;
@@ -45,12 +37,6 @@ struct _MRTextInputTraits {
     _Bool secureTextEntry;
     long long PINEntrySeparatorIndexes[10];
     unsigned long long PINEntrySeparatorIndexesCount;
-};
-
-struct _MRTransactionKeyProtobuf {
-    Class _field1;
-    id _field2;
-    id _field3;
 };
 
 #pragma mark Typedef'd Structures

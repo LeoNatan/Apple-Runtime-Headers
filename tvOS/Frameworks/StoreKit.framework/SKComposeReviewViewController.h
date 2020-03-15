@@ -19,8 +19,8 @@
     id <SKComposeReviewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SKComposeReviewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SKComposeReviewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_requestRemoteViewController;
 - (void)_addRemoteView;
 - (void)_tearDownAfterError:(id)arg1;

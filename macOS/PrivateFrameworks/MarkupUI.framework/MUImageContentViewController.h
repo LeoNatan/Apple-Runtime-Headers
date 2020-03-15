@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
     MUImageView *_preloadedView;
 }
 
+- (void).cxx_destruct;
 @property(retain) MUImageView *preloadedView; // @synthesize preloadedView=_preloadedView;
 @property(retain) id frameChangedObserver; // @synthesize frameChangedObserver=_frameChangedObserver;
 @property(retain) NSDictionary *imageProperties; // @synthesize imageProperties=_imageProperties;
 @property(retain) id sourceContent; // @synthesize sourceContent=_sourceContent;
 @property BOOL contentViewControllerCropEnabled; // @synthesize contentViewControllerCropEnabled;
-- (void).cxx_destruct;
 - (id)_applyFilters:(id)arg1 to:(id)arg2;
 - (id)_cropFilterChainForSourceImage:(id)arg1 withCropRect:(struct CGRect)arg2 originalSize:(struct CGSize)arg3;
 - (void)_translateAnnotationsByX:(double)arg1 byY:(double)arg2;

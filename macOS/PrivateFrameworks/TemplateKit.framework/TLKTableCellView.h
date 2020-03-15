@@ -17,9 +17,9 @@
 }
 
 + (double)separatorHeightForWindow:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) struct NSEdgeInsets customEdgeInsets; // @synthesize customEdgeInsets=_customEdgeInsets;
-- (void).cxx_destruct;
 - (void)layout;
 - (struct CGSize)intrinsicContentSize;
 - (void)setFrame:(struct CGRect)arg1;

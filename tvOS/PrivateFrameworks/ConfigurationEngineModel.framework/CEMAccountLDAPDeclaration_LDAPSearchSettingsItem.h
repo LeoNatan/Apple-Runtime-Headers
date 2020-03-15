@@ -18,10 +18,10 @@
 + (id)buildRequiredOnlyWithLDAPSearchSettingSearchBase:(id)arg1;
 + (id)buildWithLDAPSearchSettingDescription:(id)arg1 withLDAPSearchSettingSearchBase:(id)arg2 withLDAPSearchSettingScope:(id)arg3;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadLDAPSearchSettingScope; // @synthesize payloadLDAPSearchSettingScope=_payloadLDAPSearchSettingScope;
 @property(copy, nonatomic) NSString *payloadLDAPSearchSettingSearchBase; // @synthesize payloadLDAPSearchSettingSearchBase=_payloadLDAPSearchSettingSearchBase;
 @property(copy, nonatomic) NSString *payloadLDAPSearchSettingDescription; // @synthesize payloadLDAPSearchSettingDescription=_payloadLDAPSearchSettingDescription;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

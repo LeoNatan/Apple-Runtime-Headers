@@ -16,8 +16,8 @@
 + (void)flushSharedNotifier;
 + (id)sharedNotifierWithNotificationWrapper:(id)arg1 schedulerProvider:(id)arg2 loggerProvider:(id)arg3;
 + (id)sharedNotifier;
-@property(retain, nonatomic) CNChangesNotifierProxy *notifierProxy; // @synthesize notifierProxy=_notifierProxy;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNChangesNotifierProxy *notifierProxy; // @synthesize notifierProxy=_notifierProxy;
 - (void)setExternalNotificationCoalescingDelay:(double)arg1;
 - (void)setForwardsSelfGeneratedDistributedSaveNotifications:(_Bool)arg1;
 - (_Bool)forwardsSelfGeneratedDistributedSaveNotifications;

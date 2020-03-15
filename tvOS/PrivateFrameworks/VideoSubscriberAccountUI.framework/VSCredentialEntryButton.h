@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) __weak VSCredentialEntryViewModel *owningViewModel; // @synthesize owningViewModel=_owningViewModel;
-- (void).cxx_destruct;
 
 @end
 

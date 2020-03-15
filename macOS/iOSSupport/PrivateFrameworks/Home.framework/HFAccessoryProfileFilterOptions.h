@@ -20,6 +20,7 @@
     CDUnknownBlockType _byFilter;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType byFilter; // @synthesize byFilter=_byFilter;
 @property(copy, nonatomic) NSSet *byRooms; // @synthesize byRooms=_byRooms;
 @property(copy, nonatomic) NSSet *byModels; // @synthesize byModels=_byModels;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) NSSet *byClasses; // @synthesize byClasses=_byClasses;
 @property(copy, nonatomic) NSSet *byCategoryTypes; // @synthesize byCategoryTypes=_byCategoryTypes;
 @property(copy, nonatomic) NSSet *byAccessories; // @synthesize byAccessories=_byAccessories;
-- (void).cxx_destruct;
 
 @end
 

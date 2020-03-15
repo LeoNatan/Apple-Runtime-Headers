@@ -17,8 +17,8 @@
 
 + (id)shortDescription;
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSData *bleIdentifier; // @synthesize bleIdentifier=_bleIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSData *bleIdentifier; // @synthesize bleIdentifier=_bleIdentifier;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithBLEIdentifier:(id)arg1;

@@ -15,8 +15,8 @@
     UISearchDisplayController *_controller;
 }
 
-@property(nonatomic) __weak UISearchDisplayController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UISearchDisplayController *controller; // @synthesize controller=_controller;
 @property(retain, nonatomic, getter=_topShadowView, setter=_setTopShadowView:) UIView *_topShadowView;
 - (double)_offsetForNoResultsMessage;
 - (void)_setOffsetForNoResultsMessage:(double)arg1;

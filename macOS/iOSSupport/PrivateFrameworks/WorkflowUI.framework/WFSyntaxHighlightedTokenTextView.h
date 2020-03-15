@@ -16,8 +16,8 @@
     WFSyntaxHighlightingPluginManager *_pluginManager;
 }
 
-@property(retain, nonatomic) WFSyntaxHighlightingPluginManager *pluginManager; // @synthesize pluginManager=_pluginManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFSyntaxHighlightingPluginManager *pluginManager; // @synthesize pluginManager=_pluginManager;
 - (struct _NSRange)lineRangeForCharacterRange:(struct _NSRange)arg1;
 - (void)updateLineIndicesForTextStorage:(id)arg1;
 - (void)synchronizeTokenManagerWithTextStorage:(id)arg1;

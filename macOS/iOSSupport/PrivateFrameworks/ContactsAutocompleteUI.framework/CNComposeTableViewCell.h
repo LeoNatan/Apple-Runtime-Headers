@@ -27,6 +27,7 @@
 + (double)additionalSeparatorInset;
 + (Class)containerViewClass;
 + (id)identifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NUIContainerStackView *labelViewStack; // @synthesize labelViewStack=_labelViewStack;
 @property(readonly, nonatomic) double trailingButtonWidth; // @synthesize trailingButtonWidth=_trailingButtonWidth;
 @property(nonatomic) double trailingButtonMidlineInsetFromLayoutMargin; // @synthesize trailingButtonMidlineInsetFromLayoutMargin=_trailingButtonMidlineInsetFromLayoutMargin;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) CNComposeRecipient *recipient; // @synthesize recipient=_recipient;
-- (void).cxx_destruct;
 - (void)labelsChangedWidth:(double)arg1;
 - (void)containerViewDidLayoutArrangedSubviews:(id)arg1;
 - (struct CGSize)containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize)arg2 forArrangedSubview:(id)arg3;

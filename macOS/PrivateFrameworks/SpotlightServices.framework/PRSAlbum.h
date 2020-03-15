@@ -18,12 +18,12 @@
 }
 
 + (BOOL)isAlbum:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL playable; // @synthesize playable=_playable;
 @property(retain, nonatomic) NSDictionary *playInfo; // @synthesize playInfo=_playInfo;
 @property(retain, nonatomic) NSNumber *year; // @synthesize year=_year;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSImage *albumArt; // @synthesize albumArt=_albumArt;
-- (void).cxx_destruct;
 
 @end
 

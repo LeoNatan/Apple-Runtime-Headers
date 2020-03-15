@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSView *_popUpButtonContentView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSView *popUpButtonContentView; // @synthesize popUpButtonContentView=_popUpButtonContentView;
 @property(nonatomic) __weak NSTextField *contentValueLabel; // @synthesize contentValueLabel=_contentValueLabel;
 @property(nonatomic) double maximumSectionTitleLabelWidth; // @synthesize maximumSectionTitleLabelWidth=_maximumSectionTitleLabelWidth;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSArray *arrayOfAddressBookDisplayData; // @synthesize arrayOfAddressBookDisplayData=_arrayOfAddressBookDisplayData;
 @property(nonatomic) __weak NSTextField *sectionTitleLabel; // @synthesize sectionTitleLabel=_sectionTitleLabel;
 @property(nonatomic) __weak id <SafeAutoFillChoicesPopUpButtonViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) SafeAutoFillChoicesPopUpButton *popUpButton;
 - (void)_updateButtonLabels;
 - (void)_didSelectMenuItem:(id)arg1;

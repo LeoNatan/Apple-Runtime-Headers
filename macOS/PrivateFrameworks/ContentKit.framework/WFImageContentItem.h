@@ -26,10 +26,11 @@
 + (id)imageTypes;
 + (id)propertyBuilders;
 + (id)itemWithImage:(id)arg1 named:(id)arg2 preferredFileType:(id)arg3;
-+ (id)itemWithSerializedItem:(id)arg1 forType:(id)arg2 named:(id)arg3;
++ (id)itemWithSerializedItem:(id)arg1 forType:(id)arg2 named:(id)arg3 contentSource:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFFileType *preferredFileType; // @synthesize preferredFileType=_preferredFileType;
 @property(nonatomic) BOOL imageIsAnimated; // @synthesize imageIsAnimated=_imageIsAnimated;
-- (void).cxx_destruct;
+- (id)preferredObjectType;
 - (id)copyWithName:(id)arg1 zone:(struct _NSZone *)arg2;
 - (BOOL)isContent;
 - (BOOL)canGenerateRepresentationForType:(id)arg1;

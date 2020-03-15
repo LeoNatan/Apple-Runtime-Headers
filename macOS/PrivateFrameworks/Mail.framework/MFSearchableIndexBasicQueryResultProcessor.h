@@ -17,9 +17,9 @@
     id <MFSearchableIndexQueryResultProcessorDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(getter=isCancelled) BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(nonatomic) __weak id <MFSearchableIndexQueryResultProcessorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)provider:(id)arg1 foundResults:(id)arg2;
 

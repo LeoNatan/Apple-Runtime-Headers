@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_buttons;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *buttons; // @synthesize buttons=_buttons;
 @property(retain) NSStackView *contentStack; // @synthesize contentStack=_contentStack;
 @property BOOL allowsSafari; // @synthesize allowsSafari=_allowsSafari;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(retain) NSStackView *stack; // @synthesize stack=_stack;
 @property(nonatomic) BOOL isCombined; // @synthesize isCombined=_isCombined;
 @property(retain) NSString *displayLanguage; // @synthesize displayLanguage=_displayLanguage;
-- (void).cxx_destruct;
 - (id)flipImage:(id)arg1;
 - (void)setViewDefaults;
 - (void)updateStackConstraints;

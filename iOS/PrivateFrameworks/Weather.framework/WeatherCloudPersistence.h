@@ -11,7 +11,6 @@
 @class NSString, NSUbiquitousKeyValueStore;
 @protocol WeatherCloudPersistenceDelegate;
 
-__attribute__((visibility("hidden")))
 @interface WeatherCloudPersistence : NSObject <WeatherPreferencesPersistence>
 {
     id <WeatherCloudPersistenceDelegate> _delegate;
@@ -20,9 +19,10 @@ __attribute__((visibility("hidden")))
 
 + (id)cloudPersistenceWithDelegate:(id)arg1;
 + (_Bool)processIsWhitelistedForSync;
+- (void).cxx_destruct;
 @property(retain) NSUbiquitousKeyValueStore *cloudStore; // @synthesize cloudStore=_cloudStore;
 @property __weak id <WeatherCloudPersistenceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
+- (void)synchronizeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)synchronize;
 - (void)setBool:(_Bool)arg1 forKey:(id)arg2;
 - (_Bool)boolForKey:(id)arg1;

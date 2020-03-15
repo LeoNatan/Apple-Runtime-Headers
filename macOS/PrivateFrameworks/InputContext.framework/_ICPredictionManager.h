@@ -17,8 +17,8 @@
     _ICResultCache *_cache;
 }
 
-@property(retain) _ICResultCache *cache; // @synthesize cache=_cache;
 - (void).cxx_destruct;
+@property(retain) _ICResultCache *cache; // @synthesize cache=_cache;
 - (void)provideFeedbackForString:(id)arg1 type:(unsigned char)arg2 style:(unsigned char)arg3;
 - (void)hibernate;
 - (void)warmUp;

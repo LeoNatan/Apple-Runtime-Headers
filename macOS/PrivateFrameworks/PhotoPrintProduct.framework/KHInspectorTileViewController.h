@@ -20,6 +20,7 @@
     NSArray *_customConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *customConstraints; // @synthesize customConstraints=_customConstraints;
 @property(retain, nonatomic) UXView *horizontalSeparator; // @synthesize horizontalSeparator=_horizontalSeparator;
 @property(retain, nonatomic) NSArray *titleConstraints; // @synthesize titleConstraints=_titleConstraints;
@@ -28,7 +29,6 @@
 @property(nonatomic) BOOL drawsSeparator; // @synthesize drawsSeparator=_drawsSeparator;
 @property(nonatomic) double contentWidth; // @synthesize contentWidth=_contentWidth;
 @property(retain, nonatomic) UXView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)setupConstraints;
 - (id)title;
 - (void)setTitle:(id)arg1;

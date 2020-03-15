@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     IKViewElement *_viewElement;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool embedded; // @synthesize embedded=_embedded;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long preferredLayoutAttribute;
 @property(readonly, nonatomic) id preferredLayoutGuide;
 @property(readonly, nonatomic) _Bool matchParentHeight;

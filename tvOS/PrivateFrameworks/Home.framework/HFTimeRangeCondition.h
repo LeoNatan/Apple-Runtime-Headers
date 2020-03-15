@@ -15,9 +15,9 @@
 }
 
 + (id)_primitiveTimePredicateClasses;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFTimeCondition<HFPrimitiveTimeCondition> *endCondition; // @synthesize endCondition=_endCondition;
 @property(readonly, nonatomic) HFTimeCondition<HFPrimitiveTimeCondition> *startCondition; // @synthesize startCondition=_startCondition;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithStartCondition:(id)arg1 endCondition:(id)arg2;
 - (id)initWithPredicate:(id)arg1;

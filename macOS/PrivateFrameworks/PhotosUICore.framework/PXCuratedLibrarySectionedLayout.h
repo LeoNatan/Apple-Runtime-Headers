@@ -40,6 +40,7 @@
     struct NSEdgeInsets _padding;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXAssetsDataSource *presentedDataSource; // @synthesize presentedDataSource=_presentedDataSource;
 @property(readonly, nonatomic) long long presentedZoomLevel; // @synthesize presentedZoomLevel=_presentedZoomLevel;
 @property(readonly, nonatomic) struct NSEdgeInsets padding; // @synthesize padding=_padding;
@@ -51,7 +52,6 @@
 @property(nonatomic) double lateralMargin; // @synthesize lateralMargin=_lateralMargin;
 @property(readonly, nonatomic) PXCuratedLibraryViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) PXCuratedLibraryLayoutSpec *spec; // @synthesize spec=_spec;
-- (void).cxx_destruct;
 - (id)_targetAssetCollectionReferenceInZoomLevel:(long long)arg1 forTransitionFromAssetCollectionReference:(id)arg2;
 - (id)viewModel:(id)arg1 dominantAssetCollectionReferenceForZoomLevel:(long long)arg2;
 - (id)_heroAssetCollectionReferenceClosestToAssetCollectionReference:(id)arg1 zoomLevel:(long long)arg2;
@@ -83,8 +83,8 @@
 - (void)_updateSublayoutsForSkimming;
 - (void)_prepareAccumulatedSectionItemsBufferForSections:(long long)arg1;
 - (void)_updateSublayoutsDataSource;
-- (void)willFaultOutSublayout:(id)arg1;
-- (void)didFaultInSublayout:(id)arg1 fromEstimatedContentSize:(struct CGSize)arg2;
+- (void)willFaultOutSublayout:(id)arg1 atIndex:(long long)arg2;
+- (void)didFaultInSublayout:(id)arg1 atIndex:(long long)arg2 fromEstimatedContentSize:(struct CGSize)arg3;
 - (void)_updatePrefetchedSectionsForFaultedInSublayout:(id)arg1;
 - (void)_updateFaultOutsets;
 - (void)update;

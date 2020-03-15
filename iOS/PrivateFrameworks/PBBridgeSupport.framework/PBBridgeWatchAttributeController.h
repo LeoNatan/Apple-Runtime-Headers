@@ -29,13 +29,13 @@
 + (id)sizeDescription:(unsigned long long)arg1;
 + (id)materialDescription:(unsigned long long)arg1;
 + (id)sharedDeviceController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSCache *stringCache; // @synthesize stringCache=_stringCache;
 @property(retain, nonatomic) NRDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) unsigned long long hardwareBehavior; // @synthesize hardwareBehavior=_hardwareBehavior;
 @property(readonly, nonatomic) unsigned long long internalSize; // @synthesize internalSize=_internalSize;
 @property(readonly, nonatomic) unsigned long long material; // @synthesize material=_material;
 @property(readonly, nonatomic) unsigned long long edition; // @synthesize edition=_edition;
-- (void).cxx_destruct;
 - (void)_setMaterialWithCLHSValue:(unsigned long long)arg1;
 - (void)setMaterial:(unsigned long long)arg1;
 - (void)setInternalSize:(unsigned long long)arg1;

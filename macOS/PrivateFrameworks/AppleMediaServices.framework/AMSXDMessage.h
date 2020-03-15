@@ -29,6 +29,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)messageFromProtoMessage:(id)arg1;
+- (void).cxx_destruct;
 @property long long purpose; // @synthesize purpose=_purpose;
 @property(retain) AMSXDDevice *origin; // @synthesize origin=_origin;
 @property(retain) id <NSObject><NSSecureCoding> object; // @synthesize object=_object;
@@ -40,7 +41,6 @@
 @property(retain) NSString *messageID; // @synthesize messageID=_messageID;
 @property BOOL isReply; // @synthesize isReply=_isReply;
 @property(retain) NSString *objectClassName; // @synthesize objectClassName=_objectClassName;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

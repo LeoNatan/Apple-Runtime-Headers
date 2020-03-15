@@ -16,10 +16,10 @@
 }
 
 + (id)itemWithValue:(id)arg1 label:(id)arg2 identifier:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly) NSString *label; // @synthesize label=_label;
 @property(readonly) id value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithValue:(id)arg1 label:(id)arg2 identifier:(id)arg3;
 

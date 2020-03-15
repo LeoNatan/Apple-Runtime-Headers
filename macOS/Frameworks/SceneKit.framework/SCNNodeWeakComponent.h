@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     SCNNodeComponent *next;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SCNNodeComponent *next; // @synthesize next;
 @property(nonatomic) __weak id component; // @synthesize component;
 @property(nonatomic) long long type; // @synthesize type;
-- (void).cxx_destruct;
 - (id)initWithType:(long long)arg1 component:(id)arg2;
 
 @end

@@ -30,6 +30,7 @@
     iCloudTouchBarController *_touchBarController;
 }
 
+- (void).cxx_destruct;
 @property(retain) iCloudTouchBarController *touchBarController; // @synthesize touchBarController=_touchBarController;
 @property(retain) CKInitiateParticipantVettingOperation *operation; // @synthesize operation=_operation;
 @property(retain) CKShareMetadata *shareMetadata; // @synthesize shareMetadata=_shareMetadata;
@@ -44,7 +45,6 @@
 @property __weak NSButton *verifyButton; // @synthesize verifyButton=_verifyButton;
 @property __weak NSTableView *emailAddressTable; // @synthesize emailAddressTable=_emailAddressTable;
 @property(retain) NSWindow *outOfNetworkSheet; // @synthesize outOfNetworkSheet=_outOfNetworkSheet;
-- (void).cxx_destruct;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;

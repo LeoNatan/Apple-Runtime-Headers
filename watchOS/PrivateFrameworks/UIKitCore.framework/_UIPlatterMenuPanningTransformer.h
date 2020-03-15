@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
 {
     id <_UIPlatterMenuPanningTransformerDelegate> _delegate;
     float _minimumXVelocityForAxisLock;
-    int _axisLock;
-    int _overrideLockAxis;
+    unsigned int _axisLock;
+    unsigned int _overrideLockAxis;
     NSDate *_timeForLastDirectionalChange;
     NSDate *_panBeginTime;
     _UIVelocityIntegrator *_velocityIntegrator;
@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)transformerWithAxisTransitionZonePosition:(struct CGPoint)arg1 axisTransitionZoneSize:(struct CGSize)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIVelocityIntegrator *velocityIntegrator; // @synthesize velocityIntegrator=_velocityIntegrator;
 @property(retain, nonatomic) NSDate *panBeginTime; // @synthesize panBeginTime=_panBeginTime;
 @property(nonatomic) struct CGPoint lastDirectionChangeTouchPosition; // @synthesize lastDirectionChangeTouchPosition=_lastDirectionChangeTouchPosition;
@@ -39,15 +40,14 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSDate *timeForLastDirectionalChange; // @synthesize timeForLastDirectionalChange=_timeForLastDirectionalChange;
 @property(nonatomic) struct CGVector lastOffset; // @synthesize lastOffset=_lastOffset;
 @property(nonatomic) double lastAxisLockTime; // @synthesize lastAxisLockTime=_lastAxisLockTime;
-@property(nonatomic) int overrideLockAxis; // @synthesize overrideLockAxis=_overrideLockAxis;
-@property(nonatomic) int axisLock; // @synthesize axisLock=_axisLock;
+@property(nonatomic) unsigned int overrideLockAxis; // @synthesize overrideLockAxis=_overrideLockAxis;
+@property(nonatomic) unsigned int axisLock; // @synthesize axisLock=_axisLock;
 @property(nonatomic) struct CGRect transitionZoneRect; // @synthesize transitionZoneRect=_transitionZoneRect;
 @property(nonatomic) struct CGPoint lastTouchPosition; // @synthesize lastTouchPosition=_lastTouchPosition;
 @property(nonatomic) struct CGSize transitionZoneSize; // @synthesize transitionZoneSize=_transitionZoneSize;
 @property(nonatomic) struct CGPoint transitionZonePosition; // @synthesize transitionZonePosition=_transitionZonePosition;
 @property(nonatomic) float minimumXVelocityForAxisLock; // @synthesize minimumXVelocityForAxisLock=_minimumXVelocityForAxisLock;
 @property(nonatomic) __weak id <_UIPlatterMenuPanningTransformerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didEndPanningWithTouchPosition:(struct CGPoint)arg1 currentTransformedPosition:(struct CGPoint)arg2;
 - (void)didPanWithTouchPosition:(struct CGPoint)arg1 currentTransformedPosition:(struct CGPoint)arg2;
 - (void)didBeginPanningWithTouchPosition:(struct CGPoint)arg1 currentTransformedPosition:(struct CGPoint)arg2;

@@ -21,8 +21,8 @@
     id <PRBeaconRangingSessionDelegate> _delegate;
 }
 
-@property __weak id <PRBeaconRangingSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <PRBeaconRangingSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)beaconListener:(id)arg1 didFailWithError:(id)arg2;
 - (void)beaconListener:(id)arg1 didChangeState:(unsigned long long)arg2;
 - (void)beaconListener:(id)arg1 didOutputRangeResults:(id)arg2;

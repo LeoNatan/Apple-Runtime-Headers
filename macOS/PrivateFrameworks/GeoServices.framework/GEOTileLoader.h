@@ -11,7 +11,7 @@
 #import <GeoServices/GEOResourceManifestTileGroupObserver-Protocol.h>
 #import <GeoServices/GEOTileServerProxyDelegate-Protocol.h>
 
-@class GEOTileLoaderConfiguration, GEOTileLoaderInternal, GEOTileLoaderUsage, GEOTileServerProxy, NSMutableArray, NSMutableSet, NSString, geo_isolater;
+@class GEOTileLoaderConfiguration, GEOTileLoaderInternal, GEOTileLoaderUsage, GEOTileServerProxy, NSHashTable, NSMutableArray, NSMutableSet, NSString, geo_isolater;
 @protocol GEOTileLoaderInternalDelegate, OS_dispatch_queue;
 
 @interface GEOTileLoader : NSObject <GEOPListStateCapturing, GEOTileServerProxyDelegate, GEOResourceManifestTileGroupObserver, GEOExperimentConfigurationObserver>
@@ -33,6 +33,8 @@
     unsigned long long _stateCaptureHandle;
     BOOL _coalesceTimerEnabled;
     GEOTileLoaderInternal *_internal;
+    NSHashTable *_observers;
+    geo_isolater *_observersIsolater;
 }
 
 + (id)diskCacheLocation;
@@ -49,8 +51,8 @@
 + (id)singletonConfiguration;
 + (id)sharedLoader;
 + (void)setMemoryCacheMinCapacity:(unsigned long long)arg1;
-@property(nonatomic, setter=_setCoalesceTimerEnabled:) BOOL _coalesceTimerEnabled; // @synthesize _coalesceTimerEnabled;
 - (void).cxx_destruct;
+@property(nonatomic, setter=_setCoalesceTimerEnabled:) BOOL _coalesceTimerEnabled; // @synthesize _coalesceTimerEnabled;
 - (id)cachedTileForKey:(const struct _GEOTileKey *)arg1;
 - (id)_findInCache:(const struct _GEOTileKey *)arg1;
 - (id)internalDelegateQ;
@@ -84,7 +86,7 @@
 - (unsigned long long)shrinkDiskCacheToSizeSync:(unsigned long long)arg1;
 - (void)shrinkDiskCacheToSize:(unsigned long long)arg1 callbackQ:(id)arg2 finished:(CDUnknownBlockType)arg3;
 - (void)endPreloadSessionForClient:(id)arg1;
-- (void)beginPreloadSessionOfSize:(unsigned long long)arg1 forClient:(id)arg2 exclusive:(BOOL)arg3;
+- (void)beginPreloadSessionOfSize:(unsigned long long)arg1 forClient:(id)arg2;
 - (void)_cancelAllForClientOnLoadQueue:(id)arg1;
 - (void)cancelAllForClientSynchronous:(id)arg1;
 - (void)cancelAllForClient:(id)arg1;
@@ -113,6 +115,10 @@
 - (void)_cancel:(__list_iterator_aef25af4 *)arg1 err:(id)arg2;
 - (void)closeForClient:(id)arg1;
 - (void)openForClient:(id)arg1;
+- (void)_notifyObserversOfFailure:(const struct _GEOTileKey *)arg1 error:(id)arg2 options:(unsigned long long)arg3;
+- (void)_notifyObserversOfSuccess:(const struct _GEOTileKey *)arg1 source:(long long)arg2 options:(unsigned long long)arg3;
+- (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
 - (id)descriptionDictionaryRepresentation;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;

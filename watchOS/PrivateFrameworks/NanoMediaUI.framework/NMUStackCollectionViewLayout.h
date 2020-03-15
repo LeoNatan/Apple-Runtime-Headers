@@ -21,9 +21,9 @@
 }
 
 + (Class)layoutAttributesClass;
+- (void).cxx_destruct;
 @property(nonatomic) float backViewHeight; // @synthesize backViewHeight=_backViewHeight;
 @property(nonatomic) _Bool hasBackView; // @synthesize hasBackView=_hasBackView;
-- (void).cxx_destruct;
 - (void)_configureLayoutAttributes:(id)arg1 withAbsolutePosition:(int)arg2 applyRotation:(_Bool)arg3 applyAlpha:(_Bool)arg4 applyDepthBeyondFirstItemPosition:(_Bool)arg5;
 - (id)_layoutAttributesForBackViewWithAbsolutePosition:(int)arg1;
 - (id)_layoutAttributesForItemAtIndexPath:(id)arg1 absolutePosition:(int)arg2;

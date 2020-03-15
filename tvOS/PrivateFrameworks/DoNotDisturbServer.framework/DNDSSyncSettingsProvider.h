@@ -14,8 +14,8 @@
     id <DNDSSyncSettingsProviderDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <DNDSSyncSettingsProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <DNDSSyncSettingsProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy) DNDSSyncSettings *syncSettings; // @dynamic syncSettings;
 - (id)initWithQueue:(id)arg1;
 

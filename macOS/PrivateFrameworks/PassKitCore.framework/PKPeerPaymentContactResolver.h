@@ -19,11 +19,11 @@
     NSHashTable *_delegates;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *delegates; // @synthesize delegates=_delegates;
 @property(retain, nonatomic) NSCache *handleToContactCache; // @synthesize handleToContactCache=_handleToContactCache;
 @property(readonly, nonatomic) NSArray *keysToFetch; // @synthesize keysToFetch=_keysToFetch;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-- (void).cxx_destruct;
 - (void)contactForHandle:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)contactForHandle:(id)arg1;
 - (BOOL)haveCachedResultForHandle:(id)arg1;

@@ -19,11 +19,11 @@
     id <SVVideoEventTracker> _eventTracker;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SVVideoEventTracker> eventTracker; // @synthesize eventTracker=_eventTracker;
 @property(retain, nonatomic) id <SVVideoPlaybackAttemptTracking> playbackAttemptTracker; // @synthesize playbackAttemptTracker=_playbackAttemptTracker;
 @property(readonly, nonatomic) id <SVVideoEventTrackerProviding> eventTrackerProvider; // @synthesize eventTrackerProvider=_eventTrackerProvider;
 @property(readonly, nonatomic) id <SVVideoPlaybackAttemptTrackerFactory> playbackAttemptTrackerFactory; // @synthesize playbackAttemptTrackerFactory=_playbackAttemptTrackerFactory;
-- (void).cxx_destruct;
 - (void)willTransitionToVideo:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (id)initWithPlaybackAttemptTrackerFactory:(id)arg1 eventTrackerProvider:(id)arg2;
 

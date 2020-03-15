@@ -18,8 +18,8 @@
 + (long long)cellStyleForRow:(id)arg1;
 + (double)cellHeightForRow:(id)arg1;
 + (id)reuseIdentifierForRow:(id)arg1;
-@property(retain, nonatomic) PTRow *row; // @synthesize row=_row;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PTRow *row; // @synthesize row=_row;
 - (void)rowDidReload:(id)arg1;
 - (void)rowDidChangeImage:(id)arg1;
 - (void)rowDidChangeTitle:(id)arg1;

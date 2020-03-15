@@ -13,8 +13,8 @@
     NSString *_transferGUID;
 }
 
-@property(readonly, copy, nonatomic) NSString *transferGUID; // @synthesize transferGUID=_transferGUID;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *transferGUID; // @synthesize transferGUID=_transferGUID;
 - (id)_initWithItem:(id)arg1 sender:(id)arg2 transferGUID:(id)arg3;
 - (BOOL)canDelete;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -23,8 +23,8 @@
 + (BOOL)isCachedLanguageStaleForProperties:(id)arg1 systemLanguage:(id)arg2;
 + (BOOL)isCachedLanguageStaleForProperties:(id)arg1;
 + (BOOL)isWorldClockCityProperties:(id)arg1;
-@property(readonly, nonatomic) ALCity *alCity; // @synthesize alCity=_alCity;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ALCity *alCity; // @synthesize alCity=_alCity;
 @property(readonly, nonatomic) NSURL *idUrl;
 @property(readonly, nonatomic) NSString *countryCode;
 @property(readonly, nonatomic) NSString *unlocalizedCountryName;

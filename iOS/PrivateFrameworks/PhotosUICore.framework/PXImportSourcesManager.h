@@ -19,8 +19,8 @@
 }
 
 + (id)sharedController;
-@property(readonly, nonatomic) PHImportController *importController; // @synthesize importController=_importController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PHImportController *importController; // @synthesize importController=_importController;
 - (void)capabilitiesDidChangeForImportSource:(id)arg1;
 - (void)nameDidChangeForImportSource:(id)arg1;
 - (void)userHasTrustedHostForImportSource:(id)arg1;

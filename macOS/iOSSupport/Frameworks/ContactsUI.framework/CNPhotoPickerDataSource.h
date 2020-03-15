@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)avatarStore;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL allowsPhotoLibraryAccess; // @synthesize allowsPhotoLibraryAccess=_allowsPhotoLibraryAccess;
 @property(readonly, nonatomic) NSArray *providerGroups; // @synthesize providerGroups=_providerGroups;
 @property(readonly, nonatomic) id <AVTAvatarStore> avatarStore; // @synthesize avatarStore=_avatarStore;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) CNContactViewCache *contactViewCache; // @synthesize contactViewCache=_contactViewCache;
 @property(retain, nonatomic) NSIndexPath *activePhotoIndexPath; // @synthesize activePhotoIndexPath=_activePhotoIndexPath;
 @property(retain, nonatomic) CNMutableContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)photoPickerProviderGroup:(id)arg1 didUpdateItem:(id)arg2;
 - (void)photoPickerProviderGroupDidUpdate:(id)arg1;
 - (id)removeItem:(id)arg1;

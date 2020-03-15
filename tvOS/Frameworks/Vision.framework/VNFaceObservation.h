@@ -61,6 +61,7 @@
 + (id)faceObservationWithBoundingBox:(struct CGRect)arg1 andAlignedBoundingBox:(struct CGRect)arg2;
 + (_Bool)_exifOrientationFromFaceRollAngle:(float)arg1 exifOrientation:(int *)arg2 error:(id *)arg3;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) VNFaceSegments *faceSegments; // @synthesize faceSegments=_faceSegments;
 @property(retain, nonatomic) VNFaceprint *faceprint; // @synthesize faceprint=_faceprint;
 @property(nonatomic) unsigned long long faceId; // @synthesize faceId=_faceId;
@@ -85,7 +86,6 @@
 @property(retain, nonatomic) NSNumber *yaw; // @synthesize yaw=_yaw;
 @property(retain, nonatomic) NSNumber *roll; // @synthesize roll=_roll;
 @property(readonly, nonatomic) NSNumber *faceCaptureQuality; // @synthesize faceCaptureQuality=_faceCaptureQuality;
-- (void).cxx_destruct;
 - (_Bool)getFaceEXIFOrientation:(int *)arg1 error:(id *)arg2;
 - (void)setUnalignedBoundingBox:(struct CGRect)arg1;
 @property(retain, nonatomic) VNFaceTorsoprint *faceTorsoprint;

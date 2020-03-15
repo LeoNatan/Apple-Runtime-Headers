@@ -35,6 +35,7 @@
 
 + (id)_iconTintColor;
 + (Class)layoutOptionsClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUVisualEffectContainerView *exclamationView; // @synthesize exclamationView=_exclamationView;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(retain, nonatomic) UIView *overrideAccessoryView; // @synthesize overrideAccessoryView=_overrideAccessoryView;
@@ -53,7 +54,6 @@
 @property(nonatomic) _Bool shouldColorDescription; // @synthesize shouldColorDescription=_shouldColorDescription;
 @property(retain, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(retain, nonatomic) HFItem *serviceItem; // @synthesize serviceItem=_serviceItem;
-- (void).cxx_destruct;
 - (void)_updateExclamationViewColor;
 - (void)_createExclamationViewIfNecessary;
 - (void)_updateAccessoryView;

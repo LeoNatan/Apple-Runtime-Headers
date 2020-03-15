@@ -235,6 +235,7 @@
 }
 
 + (CDStruct_41c1ae05)_dynamicShutterSettingsForCameraMode:(long long)arg1 timerDuration:(long long)arg2 usingCreativeCameraControls:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPerformingReviewUsingOverlay) _Bool performingReviewUsingOverlay; // @synthesize performingReviewUsingOverlay=_performingReviewUsingOverlay;
 @property(nonatomic) struct CGAffineTransform customPreviewViewTransform; // @synthesize customPreviewViewTransform=_customPreviewViewTransform;
 @property(retain, nonatomic) UIView *customOverlayView; // @synthesize customOverlayView=_customOverlayView;
@@ -403,7 +404,6 @@
 @property(readonly, nonatomic) long long configuredCaptureDevice; // @synthesize configuredCaptureDevice=_configuredCaptureDevice;
 @property(readonly, nonatomic) long long configuredCaptureMode; // @synthesize configuredCaptureMode=_configuredCaptureMode;
 @property(nonatomic) long long photoModeAspectRatioCrop; // @synthesize photoModeAspectRatioCrop=_photoModeAspectRatioCrop;
-- (void).cxx_destruct;
 - (void)_handleCreativeCameraButtonTouchAttemptedWhileDisabled:(id)arg1;
 - (void)_handleDoneButtonReleased:(id)arg1;
 - (void)_handlePhotosButtonReleased:(id)arg1;
@@ -894,6 +894,7 @@
 - (_Bool)_shouldShowDrawerControlOfType:(long long)arg1 forGraphConfiguration:(id)arg2;
 - (_Bool)_shouldShowIndicatorOfType:(unsigned long long)arg1 forGraphConfiguration:(id)arg2;
 - (_Bool)_shouldHideControlStatusIndicatorsForGraphConfiguration:(id)arg1;
+- (_Bool)_shouldShowViewfinderLegibilityBackgroundsForGraphConfiguration:(id)arg1;
 - (_Bool)_shouldHideAspectRatioControlForGraphConfiguration:(id)arg1;
 - (_Bool)_shouldShowLowLightControlForGraphConfiguration:(id)arg1;
 - (_Bool)_shouldHideTimerIndicatorViewForGraphConfiguration:(id)arg1;
@@ -1069,7 +1070,7 @@
 - (void)_previewDidStartRunning:(id)arg1;
 - (void)captureController:(id)arg1 didOutputMachineReadableCodeResults:(id)arg2;
 - (void)_updateCaptureTimerIndicatorWithFaceResult:(id)arg1;
-- (void)captureController:(id)arg1 didOutputFaceResults:(id)arg2;
+- (void)captureController:(id)arg1 didOutputFaceResults:(id)arg2 bodyResults:(id)arg3;
 - (void)captureController:(id)arg1 didChangeToGraphConfiguration:(id)arg2 forDesiredConfiguration:(id)arg3 requestID:(int)arg4;
 - (void)_didChangeToGraphConfiguration:(id)arg1 forDesiredConfiguration:(id)arg2 requestID:(int)arg3;
 - (void)_openViewfinderForAllModeAndDeviceChangeReasons;

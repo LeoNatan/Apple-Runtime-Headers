@@ -15,9 +15,9 @@
     UITextField *_textField;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 @property(nonatomic) __weak id <WFTriggerTextConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)done:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;

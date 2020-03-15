@@ -22,10 +22,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long integer; // @synthesize integer=_integer;
 @property(retain, nonatomic) NSString *string; // @synthesize string=_string;
 @property(retain, nonatomic) NSData *bytes; // @synthesize bytes=_bytes;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

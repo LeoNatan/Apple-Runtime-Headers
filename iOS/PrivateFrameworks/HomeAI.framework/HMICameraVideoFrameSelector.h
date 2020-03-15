@@ -24,6 +24,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) id <HMIMotionDetector> detector; // @synthesize detector=_detector;
 @property(readonly) NSMutableArray *predictedFrames; // @synthesize predictedFrames=_predictedFrames;
 @property(readonly) long long maxFrameCount; // @synthesize maxFrameCount=_maxFrameCount;
@@ -31,7 +32,6 @@
 @property(readonly) CDStruct_1b6d18a9 sampleRate; // @synthesize sampleRate=_sampleRate;
 @property(readonly) HMICameraVideoFrameSampler *sampler; // @synthesize sampler=_sampler;
 @property __weak id <HMICameraVideoFrameSelectorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)finish;
 - (_Bool)isFinishedEarly;
 - (_Bool)handleVideoFrame:(id)arg1 error:(id *)arg2;

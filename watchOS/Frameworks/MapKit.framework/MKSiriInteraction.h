@@ -24,13 +24,13 @@
 + (void)generateHashForNavigationURL:(id)arg1;
 + (void)removeRecentIntentWithSearchText:(id)arg1;
 + (void)removeRecentIntentWithPlacemark:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *searchQueryString; // @synthesize searchQueryString=_searchQueryString;
 @property(retain, nonatomic) GEOSearchCategory *searchCategory; // @synthesize searchCategory=_searchCategory;
 @property(nonatomic) int resultIndex; // @synthesize resultIndex=_resultIndex;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(nonatomic) int target; // @synthesize target=_target;
 @property(nonatomic) int action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)_navTimerFired:(id)arg1;
 - (_Bool)_isStartNavigationAction:(int)arg1;
 - (id)_whiteListedNavigationActionAsString:(int)arg1;

@@ -19,9 +19,9 @@
 + (id)returnTransitionOn:(id)arg1;
 + (id)transitionOn:(id)arg1 to:(id)arg2 action:(CDUnknownBlockType)arg3;
 + (id)transitionOn:(id)arg1 to:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSString *destinationName; // @synthesize destinationName=_destinationName;
 @property(readonly) NSString *eventName; // @synthesize eventName=_eventName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)dot:(id)arg1 prefix:(id)arg2 graph:(id)arg3;
 - (id)_dotReachableNodes:(id)arg1;

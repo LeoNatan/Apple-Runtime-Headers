@@ -27,6 +27,7 @@
 + (Class)lteCellTowerLocationType;
 + (Class)cdmaCellTowerLocationType;
 + (Class)cellTowerLocationType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *cellOutOfServiceInfos; // @synthesize cellOutOfServiceInfos=_cellOutOfServiceInfos;
 @property(retain, nonatomic) NSMutableArray *scdmaCellTowerLocations; // @synthesize scdmaCellTowerLocations=_scdmaCellTowerLocations;
 @property(retain, nonatomic) NSMutableArray *wifiAPLocations; // @synthesize wifiAPLocations=_wifiAPLocations;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSMutableArray *cdmaCellTowerLocations; // @synthesize cdmaCellTowerLocations=_cdmaCellTowerLocations;
 @property(retain, nonatomic) NSMutableArray *cellTowerLocations; // @synthesize cellTowerLocations=_cellTowerLocations;
 @property(retain, nonatomic) CLPMeta *meta; // @synthesize meta=_meta;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

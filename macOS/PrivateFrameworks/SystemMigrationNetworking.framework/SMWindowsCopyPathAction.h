@@ -20,12 +20,12 @@
 
 + (BOOL)streamsResults;
 + (int)actionID;
+- (void).cxx_destruct;
 @property(retain) NSString *lastPathReceived; // @synthesize lastPathReceived=_lastPathReceived;
 @property(retain) NSURL *destinationPath; // @synthesize destinationPath=_destinationPath;
 @property(retain) NSString *sourcePath; // @synthesize sourcePath=_sourcePath;
 @property(retain) NSString *expandedPath; // @synthesize expandedPath=_expandedPath;
 @property id <SMNWindowsCopyPathActionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)shouldContinue;
 - (void)finishedFile:(id)arg1 length:(unsigned long long)arg2;
 - (void)updatedFile:(id)arg1 partialLength:(unsigned long long)arg2;

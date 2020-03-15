@@ -14,8 +14,8 @@
     REMLPrediction *_prediction;
 }
 
-@property(readonly, nonatomic) REMLPrediction *prediction; // @synthesize prediction=_prediction;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) REMLPrediction *prediction; // @synthesize prediction=_prediction;
 - (id)predictionForKey:(id)arg1;
 - (id)initWithPrediction:(id)arg1 predictionMap:(id)arg2;
 - (id)initWithPrediction:(id)arg1;

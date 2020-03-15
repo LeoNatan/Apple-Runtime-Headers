@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSDocumentDifferenceSize *_betweenPreviousSavingAndSaving;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDocumentDifferenceSize *betweenPreviousSavingAndSaving; // @synthesize betweenPreviousSavingAndSaving=_betweenPreviousSavingAndSaving;
 @property(readonly, nonatomic) NSDocumentDifferenceSize *betweenPreservingPreviousVersionAndSaving; // @synthesize betweenPreservingPreviousVersionAndSaving=_betweenPreservingPreviousVersionAndSaving;
 @property(readonly, nonatomic) NSDocumentDifferenceSize *dueToRecentChangesBeforeSaving; // @synthesize dueToRecentChangesBeforeSaving=_dueToRecentChangesBeforeSaving;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

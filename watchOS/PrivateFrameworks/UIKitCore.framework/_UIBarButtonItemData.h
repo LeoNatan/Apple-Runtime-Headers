@@ -39,8 +39,8 @@ __attribute__((visibility("hidden")))
 + (id)decodeFromCoder:(id)arg1 prefix:(id)arg2;
 + (id)standardBackButtonData;
 + (id)standardItemDataForStyle:(int)arg1;
-@property(readonly, nonatomic) int style; // @synthesize style=_style;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) int style; // @synthesize style=_style;
 - (struct UIOffset)backgroundImagePositionAdjustmentForState:(int)arg1 style:(int)arg2;
 - (id)backgroundImageForState:(int)arg1 style:(int)arg2;
 - (struct UIOffset)titlePositionAdjustmentForState:(int)arg1 style:(int)arg2;

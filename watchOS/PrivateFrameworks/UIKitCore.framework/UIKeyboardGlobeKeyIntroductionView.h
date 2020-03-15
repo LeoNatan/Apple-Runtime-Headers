@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSDate *_startDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain, nonatomic) UIButton *continueButton; // @synthesize continueButton=_continueButton;
 @property(retain, nonatomic) UITextView *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) _UIBackdropView *backdropView; // @synthesize backdropView=_backdropView;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
-- (void).cxx_destruct;
 - (void)continueButtonTapped;
 - (int)backdropStyleForRenderConfig:(id)arg1;
 - (void)layoutSubviews;

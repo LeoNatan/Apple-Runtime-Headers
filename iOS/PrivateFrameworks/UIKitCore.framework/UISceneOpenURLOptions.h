@@ -18,12 +18,12 @@
 }
 
 + (id)_optionsFromDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool _openAsDownload; // @synthesize _openAsDownload;
 @property(readonly, nonatomic) _Bool openInPlace; // @synthesize openInPlace=_openInPlace;
 @property(readonly, nonatomic) id annotation; // @synthesize annotation=_annotation;
 @property(readonly, nonatomic) BSProcessHandle *_sourceProcessHandle; // @synthesize _sourceProcessHandle;
 @property(readonly, nonatomic) NSString *sourceApplication; // @synthesize sourceApplication=_sourceApp;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

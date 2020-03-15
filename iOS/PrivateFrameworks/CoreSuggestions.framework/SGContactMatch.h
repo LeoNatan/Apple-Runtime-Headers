@@ -21,11 +21,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SGMatchedDetails *matchedDetails; // @synthesize matchedDetails=_matchedDetails;
 @property(readonly, nonatomic) NSArray *matchTokens; // @synthesize matchTokens=_matchTokens;
 @property(readonly, nonatomic) long long matchingFieldType; // @synthesize matchingFieldType=_matchingFieldType;
 @property(readonly, nonatomic) SGContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 @property(readonly, nonatomic) SGObject *matchingField;

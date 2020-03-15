@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) FPItem *item; // @synthesize item=_item;
 @property(readonly, nonatomic) FPSandboxingURLWrapper *genericSandboxWrapper; // @synthesize genericSandboxWrapper=_genericSandboxWrapper;
-- (void).cxx_destruct;
 - (BOOL)shouldProvideFoldedGenericIcon;
 - (id)computeContentType;
 - (id)copyWithZone:(struct _NSZone *)arg1;

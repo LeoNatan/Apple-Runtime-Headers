@@ -30,11 +30,11 @@
 
 + (long long)_ikMediaItemChangeReasonFromReason:(id)arg1;
 + (long long)_ikStateFromTVSState:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool currentMediaItemHasVideoContent; // @synthesize currentMediaItemHasVideoContent=_currentMediaItemHasVideoContent;
 @property(nonatomic) long long resumeMenuBehavior; // @synthesize resumeMenuBehavior;
 @property(nonatomic) __weak id <TVPlayerBridging> bridge; // @synthesize bridge=_bridge;
 @property(retain, nonatomic) TVPlaylist *playlist; // @synthesize playlist=_playlist;
-- (void).cxx_destruct;
 - (void)_setTimeBoundariesToObserver:(id)arg1;
 - (void)_setTimeIntervalObservers:(id)arg1;
 - (void)_setTimedMetadataKeysToObserve:(id)arg1;

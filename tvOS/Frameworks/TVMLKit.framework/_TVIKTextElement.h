@@ -13,8 +13,8 @@
     NSAttributedString *_cachedAttributedString;
 }
 
-@property(copy, nonatomic) NSAttributedString *cachedAttributedString; // @synthesize cachedAttributedString=_cachedAttributedString;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSAttributedString *cachedAttributedString; // @synthesize cachedAttributedString=_cachedAttributedString;
 - (void)_stylesMarkedDirtyNotification:(id)arg1;
 - (void)dealloc;
 

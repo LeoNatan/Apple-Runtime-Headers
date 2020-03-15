@@ -16,11 +16,11 @@
     NSDate *_publishDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *publishDate; // @synthesize publishDate=_publishDate;
 @property(retain, nonatomic) NSDictionary *topStoriesMetadataByArticleID; // @synthesize topStoriesMetadataByArticleID=_topStoriesMetadataByArticleID;
 @property(readonly, nonatomic) NSArray *optionalArticleIDs; // @synthesize optionalArticleIDs=_optionalArticleIDs;
 @property(readonly, nonatomic) NSArray *mandatoryArticleIDPairs; // @synthesize mandatoryArticleIDPairs=_mandatoryArticleIDPairs;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 
 @end

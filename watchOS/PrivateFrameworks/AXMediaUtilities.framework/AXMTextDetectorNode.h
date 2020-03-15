@@ -21,9 +21,9 @@
 + (id)title;
 + (_Bool)isSupported;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *customWords; // @synthesize customWords=_customWords;
 @property(copy, nonatomic) NSArray *recognitionLanguages; // @synthesize recognitionLanguages=_recognitionLanguages;
-- (void).cxx_destruct;
 - (void)evaluate:(id)arg1;
 - (_Bool)shouldEvaluate:(id)arg1;
 - (_Bool)requiresVisionFramework;

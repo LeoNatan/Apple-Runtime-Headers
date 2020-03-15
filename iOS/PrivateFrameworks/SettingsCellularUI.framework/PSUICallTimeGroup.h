@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     PSSpecifier *_lifetimeCallTimeSpecifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PSSpecifier *lifetimeCallTimeSpecifier; // @synthesize lifetimeCallTimeSpecifier=_lifetimeCallTimeSpecifier;
 @property(retain, nonatomic) PSSpecifier *currentCallTimeSpecifier; // @synthesize currentCallTimeSpecifier=_currentCallTimeSpecifier;
 @property(retain, nonatomic) PSSpecifier *groupSpecifier; // @synthesize groupSpecifier=_groupSpecifier;
 @property(retain, nonatomic) CHManager *callHistoryManager; // @synthesize callHistoryManager=_callHistoryManager;
 @property(nonatomic) __weak PSListController *hostController; // @synthesize hostController=_hostController;
-- (void).cxx_destruct;
 - (id)lifetimeCallTime:(id)arg1;
 - (id)callTime:(id)arg1;
 - (id)callTimeDurationRestrictedToCurrentPeriod:(_Bool)arg1;

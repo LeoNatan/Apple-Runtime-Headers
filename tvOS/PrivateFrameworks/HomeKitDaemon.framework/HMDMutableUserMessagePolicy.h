@@ -10,6 +10,8 @@
 {
 }
 
++ (id)userMessagePolicyWithHome:(id)arg1 userPrivilege:(unsigned long long)arg2 remoteAccessRequired:(_Bool)arg3;
++ (id)userMessagePolicyWithHome:(id)arg1 userPrivilege:(unsigned long long)arg2 remoteAccessRequired:(_Bool)arg3 requiresCameraStreamingAccess:(_Bool)arg4;
 @property _Bool requiresCameraStreamingAccess; // @dynamic requiresCameraStreamingAccess;
 @property _Bool requiresRemoteAccess; // @dynamic requiresRemoteAccess;
 @property unsigned long long userPrivilege; // @dynamic userPrivilege;

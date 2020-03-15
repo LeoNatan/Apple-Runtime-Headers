@@ -27,13 +27,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasQuestionMark; // @synthesize hasQuestionMark=_hasQuestionMark;
 @property(nonatomic) unsigned int charCount; // @synthesize charCount=_charCount;
 @property(nonatomic) BOOL isApricotDevice; // @synthesize isApricotDevice=_isApricotDevice;
 @property(retain, nonatomic) NSString *lang; // @synthesize lang=_lang;
 @property(retain, nonatomic) NSString *locale; // @synthesize locale=_locale;
 @property(retain, nonatomic) NSString *hostProcess; // @synthesize hostProcess=_hostProcess;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

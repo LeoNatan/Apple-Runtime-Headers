@@ -20,12 +20,12 @@
 }
 
 + (BOOL)complainAboutSloppyTextureUsage;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL resourceTrackingChecksummingForceAll; // @synthesize resourceTrackingChecksummingForceAll=_resourceTrackingChecksummingForceAll;
 @property(readonly, nonatomic) BOOL resourceTrackingChecksummingEnabled; // @synthesize resourceTrackingChecksummingEnabled=_resourceTrackingChecksummingEnabled;
 @property(nonatomic) unsigned int frameNum; // @synthesize frameNum=_frameNum;
 @property(readonly, nonatomic) BOOL resourceTrackingEnabled; // @synthesize resourceTrackingEnabled=_resourceTrackingEnabled;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)newRemoteTextureView:(id)arg1 parentTexture:(id)arg2;
 - (id)newRemoteBufferView:(id)arg1 parentBuffer:(id)arg2;
 - (void)eventSignaled:(id)arg1 value:(unsigned long long)arg2;
@@ -38,8 +38,10 @@
 - (id)newMotionEstimationPipelineWithDescriptor:(id)arg1;
 - (id)newTiledTextureWithBytesNoCopy:(void *)arg1 length:(unsigned long long)arg2 deallocator:(CDUnknownBlockType)arg3 descriptor:(id)arg4 offset:(unsigned long long)arg5 bytesPerRow:(unsigned long long)arg6;
 - (id)newTiledTextureWithBytesNoCopy:(void *)arg1 length:(unsigned long long)arg2 descriptor:(id)arg3 offset:(unsigned long long)arg4 bytesPerRow:(unsigned long long)arg5;
+- (id)newRasterizationRateMapWithDescriptor:(id)arg1;
 - (unsigned long long)minimumLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;
 - (unsigned long long)minLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;
+- (const struct MTLTargetDeviceArch *)targetDeviceInfo;
 - (unsigned int)checksumBuffer:(id)arg1;
 - (void)_resourceTrackingChecksummingEndOfFrame;
 - (void)bufferChecksummedInFrame:(id)arg1;
@@ -75,6 +77,11 @@
 - (id)newRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned long long)arg2 reflection:(id *)arg3 error:(id *)arg4;
 - (id)_newRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned long long)arg2 reflection:(id *)arg3 error:(id *)arg4;
 - (void)validateTraceBuffer:(unsigned long long)arg1 maxBufferCount:(unsigned long long)arg2 options:(unsigned long long)arg3;
+- (id)newDynamicLibrary:(id)arg1 error:(id *)arg2;
+- (id)newDynamicLibrary:(id)arg1 computeDescriptor:(id)arg2 error:(id *)arg3;
+- (id)newDynamicLibraryFromURL:(id)arg1 error:(id *)arg2;
+- (id)newBinaryLibraryWithOptions:(unsigned long long)arg1 url:(id)arg2 error:(id *)arg3;
+- (id)newBinaryArchiveWithDescriptor:(id)arg1 error:(id *)arg2;
 - (id)newDefaultLibrary;
 - (id)newDefaultLibraryWithBundle:(id)arg1 error:(id *)arg2;
 - (void)notifySamplerStateDeallocated:(id)arg1;

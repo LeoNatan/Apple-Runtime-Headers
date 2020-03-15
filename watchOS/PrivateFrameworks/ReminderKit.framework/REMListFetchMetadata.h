@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int scheduledCount; // @synthesize scheduledCount=_scheduledCount;
 @property(readonly, nonatomic) NSDictionary *incompleteReminderCounts; // @synthesize incompleteReminderCounts=_incompleteReminderCounts;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

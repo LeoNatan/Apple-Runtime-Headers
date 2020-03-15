@@ -32,13 +32,13 @@
 
 + (void)_registerCardSectionViewControllers;
 + (void)initialize;
+- (void).cxx_destruct;
 @property long long preferredPunchoutIndex; // @synthesize preferredPunchoutIndex=_preferredPunchoutIndex;
 @property(nonatomic) _Bool loadBundles; // @synthesize loadBundles=_loadBundles;
 @property(readonly, nonatomic, getter=isIndicatingActivity) _Bool indicatingActivity; // @synthesize indicatingActivity=_indicatingActivity;
 @property(retain, nonatomic) id <CRKCardSectionViewSourcing> cardSectionViewSource; // @synthesize cardSectionViewSource=_cardSectionViewSource;
 @property(nonatomic) __weak id <CRKCardViewControllerDelegate> cardViewControllerDelegate; // @synthesize cardViewControllerDelegate=_cardViewControllerDelegate;
 @property(retain, nonatomic) id <CRCard> card; // @synthesize card=_card;
-- (void).cxx_destruct;
 - (double)contentHeightForWidth:(double)arg1;
 @property(nonatomic) __weak id <CRKCardViewControllerDelegate> delegate;
 - (id)defaultFeedbackDelegateForProvider:(id)arg1;

@@ -21,11 +21,11 @@
 + (id)eventWithLocationTuples:(id)arg1 selectedHomeLocation:(id)arg2 numberOfIterations:(unsigned long long)arg3 nearestLOI:(id)arg4;
 + (id)uuid;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLLocation *nearestLOI; // @synthesize nearestLOI=_nearestLOI;
 @property(nonatomic) unsigned long long numOfIterations; // @synthesize numOfIterations=_numOfIterations;
 @property(retain, nonatomic) CLLocation *selectedHomeLocation; // @synthesize selectedHomeLocation=_selectedHomeLocation;
 @property(copy, nonatomic) NSArray *tuples; // @synthesize tuples=_tuples;
-- (void).cxx_destruct;
 - (id)awdLocationFromLocationTuple:(id)arg1;
 - (id)metricForAWD;
 - (unsigned int)AWDMessageType;

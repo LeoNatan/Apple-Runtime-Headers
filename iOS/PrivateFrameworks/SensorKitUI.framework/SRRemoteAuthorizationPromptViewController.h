@@ -23,10 +23,10 @@
 + (id)serviceViewControllerInterface;
 + (void)requestViewControllerWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSExtension *weakExtension; // @synthesize weakExtension=_weakExtension;
 @property(retain, nonatomic) id <NSCopying> request; // @synthesize request=_request;
 @property(nonatomic) __weak id <SRRemoteAuthorizationPromptViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)invalidate;
 - (void)deleteAllSamples;

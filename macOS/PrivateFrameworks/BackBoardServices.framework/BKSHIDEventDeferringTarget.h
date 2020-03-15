@@ -21,9 +21,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)protobufSchema;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) BKSHIDEventDeferringToken *token; // @synthesize token=_token;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

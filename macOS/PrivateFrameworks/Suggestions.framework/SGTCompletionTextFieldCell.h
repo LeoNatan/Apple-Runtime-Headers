@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     NSImageCell *_imageCell;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSFont *baselineFont; // @synthesize baselineFont=_baselineFont;
 @property(retain, nonatomic) NSImage *sgtImage; // @synthesize sgtImage=_sgtImage;
 @property double afterMargin; // @synthesize afterMargin=_afterMargin;
 @property double beforeMargin; // @synthesize beforeMargin=_beforeMargin;
-- (void).cxx_destruct;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
 - (BOOL)accessibilityIsAttributeSettable:(id)arg1;

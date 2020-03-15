@@ -27,9 +27,9 @@
     NSMutableSet *_activeSessionApps;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *activeSessionApps; // @synthesize activeSessionApps=_activeSessionApps;
 @property(nonatomic) __weak id <CSLSessionModelDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

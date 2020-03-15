@@ -24,11 +24,11 @@
     id <BLTSectionInfoListBBProvider> _sectionInfoProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=hasLoaded) _Bool loaded; // @synthesize loaded=_loaded;
 @property(retain, nonatomic) id <BLTSectionInfoListBBProvider> sectionInfoProvider; // @synthesize sectionInfoProvider=_sectionInfoProvider;
 @property(retain, nonatomic) id <BLTSectionInfoListOverrideProvider> overrideProvider; // @synthesize overrideProvider=_overrideProvider;
 @property(nonatomic) __weak id <BLTSectionInfoListDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)mapSection:(id)arg1 map:(id)arg2;
 - (void)reloadBBSection:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_migrateFromExternalDeviceSwitchToOverrides:(id)arg1 sectionID:(id)arg2;

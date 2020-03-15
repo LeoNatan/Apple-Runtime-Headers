@@ -17,10 +17,10 @@
     NSArray *_tagSequence;
 }
 
-@property(readonly, copy, nonatomic) NSArray *tagSequence; // @synthesize tagSequence=_tagSequence;
-@property(readonly, copy, nonatomic) NSString *commandId; // @synthesize commandId=_commandId;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *tagSequence; // @synthesize tagSequence=_tagSequence;
+@property(readonly, copy, nonatomic) NSString *commandId; // @synthesize commandId=_commandId;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)tokensForTag:(id)arg1;
 - (id)_initWithQuasarCommandTagging:(const struct CommandTagging *)arg1;

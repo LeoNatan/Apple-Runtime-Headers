@@ -36,12 +36,12 @@
     HDWorkoutLocationSmoother *_locationSmoother;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDWorkoutLocationSmoother *locationSmoother; // @synthesize locationSmoother=_locationSmoother;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) HDLocationManager *locationManager; // @synthesize locationManager=_locationManager;
 @property(readonly, nonatomic) HDAlertSuppressor *alertSuppressor; // @synthesize alertSuppressor=_alertSuppressor;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (_Bool)isPowerSavingSupportedForCurrentActivity;
 - (void)endHeartRateRecovery;
 @property(readonly, nonatomic) _Bool isInHeartRateRecovery;
@@ -68,6 +68,7 @@
 - (void)daemonReady:(id)arg1;
 - (id)diagnosticDescription;
 - (void)pauseActiveWorkoutsWithCompletion:(CDUnknownBlockType)arg1;
+- (id)currentWorkoutSessionServer;
 - (void)unregisterCurrentWorkoutObserver:(id)arg1;
 - (void)registerCurrentWorkoutObserver:(id)arg1;
 - (void)getCurrentWorkoutSnapshotWithCompletion:(CDUnknownBlockType)arg1;

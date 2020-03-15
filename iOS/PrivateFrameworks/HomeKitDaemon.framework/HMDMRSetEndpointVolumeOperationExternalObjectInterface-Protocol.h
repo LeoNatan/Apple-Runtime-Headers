@@ -8,7 +8,7 @@
 @protocol OS_dispatch_queue;
 
 @protocol HMDMRSetEndpointVolumeOperationExternalObjectInterface
-- (void)setMRAVOutputDeviceVolume:(float)arg1 endpoint:(void *)arg2 outputDeviceUID:(NSString *)arg3 queue:(NSObject<OS_dispatch_queue> *)arg4 completion:(void (^)(struct __CFError *))arg5;
+- (void)setMRAVOutputDeviceVolume:(float)arg1 endpoint:(void *)arg2 outputDeviceUID:(NSString *)arg3 queue:(NSObject<OS_dispatch_queue> *)arg4 completion:(void (^)(NSError *))arg5;
 - (NSString *)copyMRAVOutputDeviceUniqueIdentifier:(void *)arg1;
 - (NSArray *)copyMRAVEndpointOutputDevices:(void *)arg1;
 - (MPCAssistantConnection *)createMPCAssistantConnection;

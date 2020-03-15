@@ -28,13 +28,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int userSegment; // @synthesize userSegment=_userSegment;
 @property(nonatomic) int timezoneOffset; // @synthesize timezoneOffset=_timezoneOffset;
 @property(retain, nonatomic) NSString *locale; // @synthesize locale=_locale;
 @property(nonatomic) long long deviceId; // @synthesize deviceId=_deviceId;
 @property(nonatomic) long long userId; // @synthesize userId=_userId;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

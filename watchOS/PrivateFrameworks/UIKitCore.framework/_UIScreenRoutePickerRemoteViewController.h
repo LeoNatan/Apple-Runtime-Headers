@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
+- (void).cxx_destruct;
 @property(copy, nonatomic) id <NSCopying><NSObject> extensionRequestIdentifier; // @synthesize extensionRequestIdentifier=_extensionRequestIdentifier;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property(nonatomic) __weak _UIScreenRoutePickerViewController *publicController; // @synthesize publicController=_publicController;
-- (void).cxx_destruct;
 - (void)setPreferredContentSize:(struct CGSize)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)_dismissViewController;

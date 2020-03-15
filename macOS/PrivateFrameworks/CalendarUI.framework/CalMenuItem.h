@@ -14,9 +14,9 @@
     NSImage *_smallIcon;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSImage *smallIcon; // @synthesize smallIcon=_smallIcon;
 @property(retain) NSImage *largeIcon; // @synthesize largeIcon=_largeIcon;
-- (void).cxx_destruct;
 
 @end
 

@@ -19,9 +19,9 @@
     NSString *_prototypeIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *prototypeIdentifier; // @synthesize prototypeIdentifier=_prototypeIdentifier;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *type;
 - (id)initConstructor:(id)arg1:(id)arg2;
 @property(readonly, nonatomic) NSDictionary *dataDictionary;

@@ -20,8 +20,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)searchableItemFromUserActivity:(id)arg1 bundleID:(id)arg2;
-@property unsigned long long score; // @synthesize score=_score;
 - (void).cxx_destruct;
+@property unsigned long long score; // @synthesize score=_score;
 - (void)setAttributes:(id)arg1;
 - (id)attributes;
 @property _Bool noIndex;

@@ -22,13 +22,13 @@
 
 + (id)estimatorWithEnter:(long long)arg1 exit:(long long)arg2 threshold:(double)arg3;
 + (id)estimatorWithEnter:(long long)arg1 exit:(long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double thresholdSeconds; // @synthesize thresholdSeconds=_thresholdSeconds;
 @property(nonatomic) long long rssiExit; // @synthesize rssiExit=_rssiExit;
 @property(nonatomic) long long rssiEnter; // @synthesize rssiEnter=_rssiEnter;
 @property(nonatomic) _Bool preventBoost; // @synthesize preventBoost=_preventBoost;
 @property(readonly, nonatomic) _Bool insideBubbleWithThreshold; // @synthesize insideBubbleWithThreshold=_insideBubbleWithThreshold;
 @property(readonly, nonatomic) _Bool insideBubble; // @synthesize insideBubble=_insideBubble;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double velocitySmoothed;
 @property(readonly, nonatomic) double velocity;
 - (_Bool)shouldExpandBubble;

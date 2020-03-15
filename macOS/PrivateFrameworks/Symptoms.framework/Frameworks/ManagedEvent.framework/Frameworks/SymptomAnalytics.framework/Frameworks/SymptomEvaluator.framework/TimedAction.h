@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     NSDate *_entryTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *entryTime; // @synthesize entryTime=_entryTime;
 @property(readonly, nonatomic) NSString *owner; // @synthesize owner=_owner;
 @property(readonly, nonatomic) int interfaceIndex; // @synthesize interfaceIndex=_interfaceIndex;
 @property(readonly, nonatomic) NSUUID *connectionId; // @synthesize connectionId=_connectionId;
-- (void).cxx_destruct;
 - (id)description;
 @property(nonatomic) unsigned long long target; // @synthesize target=_target;
 - (void)dealloc;

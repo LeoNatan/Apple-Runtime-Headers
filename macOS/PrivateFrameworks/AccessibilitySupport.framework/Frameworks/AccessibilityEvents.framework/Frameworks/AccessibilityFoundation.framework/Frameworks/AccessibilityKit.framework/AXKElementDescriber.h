@@ -15,8 +15,8 @@
 
 + (BOOL)willUseChildrenDescriptionInDescriptionForElement:(id)arg1;
 + (BOOL)childrenDescriptionUsedForDescriptionOfElementWithRole:(id)arg1;
-@property(retain, nonatomic) AXKElementDescriberConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AXKElementDescriberConfiguration *configuration; // @synthesize configuration=_configuration;
 - (id)_attachmentDescriptionForAttributedString:(id)arg1 forContainingElement:(id)arg2 type:(long long)arg3 singleCharCheck:(BOOL)arg4;
 - (id)_descriptionForAttributedString:(id)arg1 forContainingElement:(id)arg2 type:(long long)arg3 singleCharCheck:(BOOL)arg4;
 - (id)_getAttributeValueForElement:(id)arg1 attributeName:(id)arg2;

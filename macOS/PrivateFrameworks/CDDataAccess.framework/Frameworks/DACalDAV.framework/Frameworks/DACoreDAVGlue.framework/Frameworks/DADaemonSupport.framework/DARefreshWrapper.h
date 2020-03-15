@@ -23,6 +23,7 @@
     long long _fetchInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long fetchInterval; // @synthesize fetchInterval=_fetchInterval;
 @property(retain, nonatomic) NSMutableSet *refreshCollections; // @synthesize refreshCollections=_refreshCollections;
 @property(nonatomic) int refreshReason; // @synthesize refreshReason=_refreshReason;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSDate *pushRegistrationTime; // @synthesize pushRegistrationTime=_pushRegistrationTime;
 @property(nonatomic) int pushState; // @synthesize pushState=_pushState;
 @property(nonatomic) __weak id <DARefreshManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)retryCollections:(id)arg1 after:(double)arg2 reason:(int)arg3;
 - (void)dailyRefreshActivityFired;
 - (void)_retryActivityFired;

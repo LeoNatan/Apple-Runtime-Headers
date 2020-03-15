@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSMapTable *_commonObjectsMaps;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *commonObjectsMaps; // @synthesize commonObjectsMaps=_commonObjectsMaps;
 @property(retain, nonatomic) NSMutableArray *currentModifiedObjects; // @synthesize currentModifiedObjects=_currentModifiedObjects;
 @property(retain, nonatomic) NSMutableArray *currentRemovedObjects; // @synthesize currentRemovedObjects=_currentRemovedObjects;
 @property(retain, nonatomic) NSMutableArray *currentAddedObjects; // @synthesize currentAddedObjects=_currentAddedObjects;
 @property(nonatomic) __weak HMObjectMergeOperations *currentOperations; // @synthesize currentOperations=_currentOperations;
 @property(retain, nonatomic) NSMutableArray *currentExistingObjects; // @synthesize currentExistingObjects=_currentExistingObjects;
-- (void).cxx_destruct;
 - (void)mergeCommonObjectsNoMergeCount;
 - (void)_mergeCommonObjects;
 - (void)_enumerateObjectRemoveWithBlock:(CDUnknownBlockType)arg1;

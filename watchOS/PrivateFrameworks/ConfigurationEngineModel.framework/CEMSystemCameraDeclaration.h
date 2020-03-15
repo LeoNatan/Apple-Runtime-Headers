@@ -24,10 +24,10 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadAllowScreenRecording; // @synthesize payloadAllowScreenRecording=_payloadAllowScreenRecording;
 @property(copy, nonatomic) NSNumber *payloadAllowScreenShot; // @synthesize payloadAllowScreenShot=_payloadAllowScreenShot;
 @property(copy, nonatomic) NSNumber *payloadAllowCamera; // @synthesize payloadAllowCamera=_payloadAllowCamera;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

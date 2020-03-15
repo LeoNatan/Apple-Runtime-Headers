@@ -16,8 +16,8 @@
     TVPhotoSourceExtensionContext *_extensionContext;
 }
 
-@property(readonly, nonatomic) TVPhotoSourceExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) TVPhotoSourceExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 - (void)fetchCollectionsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchAssetsForCollectionWithIdentifier:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)beginRequestWithExtensionContext:(id)arg1;

@@ -36,13 +36,13 @@
 + (void)_setAutoDeactivateTimeout:(double)arg1;
 + (id)behaviorWithCoordinateSpace:(id)arg1;
 + (id)behaviorWithConfiguration:(id)arg1 coordinateSpace:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *engines; // @synthesize engines=_engines;
 @property(retain, nonatomic, getter=_configuration, setter=_setConfiguration:) _UIFeedbackGeneratorConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) __weak id <UICoordinateSpace> coordinateSpace; // @synthesize coordinateSpace=_coordinateSpace;
 @property(nonatomic) _Bool usesCustomActivation; // @synthesize usesCustomActivation=_usesCustomActivation;
 @property(nonatomic) long long externalActivationCount; // @synthesize externalActivationCount=_externalActivationCount;
 @property(nonatomic) long long activationCount; // @synthesize activationCount=_activationCount;
-- (void).cxx_destruct;
 - (long long)_outputMode;
 - (void)_setOutputMode:(long long)arg1;
 @property(readonly, nonatomic) NSString *_stats_key;

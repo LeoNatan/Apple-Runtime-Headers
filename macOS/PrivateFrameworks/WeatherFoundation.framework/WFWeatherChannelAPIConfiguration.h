@@ -19,11 +19,11 @@
     id <WFForecastDataParser> _defaultForecastParser;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <WFForecastDataParser> defaultForecastParser; // @synthesize defaultForecastParser=_defaultForecastParser;
 @property(retain, nonatomic) Class defaultForecastRequestFormatterClass; // @synthesize defaultForecastRequestFormatterClass=_defaultForecastRequestFormatterClass;
 @property(retain, nonatomic) NSMutableDictionary *requestParserForForecastType; // @synthesize requestParserForForecastType=_requestParserForForecastType;
 @property(retain, nonatomic) NSMutableDictionary *requestFormatterForForecastType; // @synthesize requestFormatterForForecastType=_requestFormatterForForecastType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isValid;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)hostUrl;

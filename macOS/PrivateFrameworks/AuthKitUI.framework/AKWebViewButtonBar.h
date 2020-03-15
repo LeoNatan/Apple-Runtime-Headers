@@ -26,10 +26,10 @@
     AKTouchBarController *_touchBarController;
 }
 
+- (void).cxx_destruct;
 @property(retain) AKTouchBarController *touchBarController; // @synthesize touchBarController=_touchBarController;
 @property __weak id <AKWebViewButtonBarDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSDictionary *buttonBarDict; // @synthesize buttonBarDict=_buttonBarDict;
-- (void).cxx_destruct;
 - (void)updateDefaultButtons;
 - (void)updateButtonBarDict:(id)arg1;
 - (void)disableSpinner;

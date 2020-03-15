@@ -17,22 +17,24 @@
     _Bool _didPopuldateAppInfo;
     int _pid;
     unsigned long long _objectID;
-    NSString *_remoteDebugDescription;
     NSString *_bridgeDelegateToken;
     NSData *_rawElementData;
+    CDUnknownBlockType _remoteDescriptionBlock;
+    NSString *_remoteDebugDescription;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)allowedDecodableClasses;
 + (void)initialize;
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSString *remoteDebugDescription; // @synthesize remoteDebugDescription=_remoteDebugDescription;
+@property(copy, nonatomic) CDUnknownBlockType remoteDescriptionBlock; // @synthesize remoteDescriptionBlock=_remoteDescriptionBlock;
 @property(nonatomic) _Bool didPopuldateAppInfo; // @synthesize didPopuldateAppInfo=_didPopuldateAppInfo;
 @property(copy, nonatomic) NSData *rawElementData; // @synthesize rawElementData=_rawElementData;
 @property(copy, nonatomic) NSString *bridgeDelegateToken; // @synthesize bridgeDelegateToken=_bridgeDelegateToken;
-@property(copy, nonatomic) NSString *remoteDebugDescription; // @synthesize remoteDebugDescription=_remoteDebugDescription;
 @property(nonatomic) _Bool isApplicationElement; // @synthesize isApplicationElement=_isApplicationElement;
 @property(nonatomic) int pid; // @synthesize pid=_pid;
 @property(nonatomic) unsigned long long objectID; // @synthesize objectID=_objectID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

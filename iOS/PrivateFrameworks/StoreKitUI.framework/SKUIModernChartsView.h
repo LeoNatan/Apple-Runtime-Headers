@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     NSArray *_viewControllers;
 }
 
-@property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 - (void).cxx_destruct;
+@property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 - (void)_updateHeader;
 - (void)_layoutViewControllersWithColumnSize:(struct CGSize)arg1 contentInset:(struct UIEdgeInsets)arg2;
 - (void)_layoutHeadersWithColumnSize:(struct CGSize)arg1;

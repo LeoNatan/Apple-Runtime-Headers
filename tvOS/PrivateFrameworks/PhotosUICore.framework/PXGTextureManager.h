@@ -44,14 +44,14 @@
     long long _streamCount;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long streamCount; // @synthesize streamCount=_streamCount;
 @property(retain) NSArray *textureAtlasManagers; // @synthesize textureAtlasManagers=_textureAtlasManagers;
 @property(readonly, nonatomic) NSDictionary *texturesByPresentationType; // @synthesize texturesByPresentationType=_texturesByPresentationType;
 @property(retain, nonatomic) PXGViewEnvironment *viewEnvironment; // @synthesize viewEnvironment=_viewEnvironment;
 @property(retain, nonatomic) PXGTextureManagerPreheatingStrategy *preheatingStrategy; // @synthesize preheatingStrategy=_preheatingStrategy;
 @property(nonatomic) __weak id <PXGTextureManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)textureProviderNeedsToUnregisterFromDisplayLinkUpdates:(id)arg1;
 - (void)textureProviderNeedsToRegisterToDisplayLinkUpdates:(id)arg1;
 - (void)textureProvider:(id)arg1 didProvidePayload:(id)arg2 forRequestID:(int)arg3;

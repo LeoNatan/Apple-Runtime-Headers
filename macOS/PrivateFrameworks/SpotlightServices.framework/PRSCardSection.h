@@ -13,8 +13,8 @@
     NSString *_title;
 }
 
-@property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 - (id)initWithSFSearchResult:(id)arg1 cardSection:(id)arg2;
 - (id)initWithTitle:(id)arg1 andSFSearchResult:(id)arg2 cardSection:(id)arg3;
 - (id)initWithTitle:(id)arg1;

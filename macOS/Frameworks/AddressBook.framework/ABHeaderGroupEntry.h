@@ -14,9 +14,9 @@
     NSArray *_children;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSArray *children; // @synthesize children=_children;
 - (id)account;
-- (void).cxx_destruct;
 - (BOOL)canShowStatusForAccountWithIdentifier:(id)arg1;
 - (BOOL)canShowStatus;
 - (id)accessibilityDescription;

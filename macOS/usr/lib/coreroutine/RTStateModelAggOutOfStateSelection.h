@@ -15,10 +15,10 @@
     double _dailyDensityCorrection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double dailyDensityCorrection; // @synthesize dailyDensityCorrection=_dailyDensityCorrection;
 @property(nonatomic) double weeklyDensityCorrection; // @synthesize weeklyDensityCorrection=_weeklyDensityCorrection;
 @property(retain, nonatomic) NSMutableArray *selectOOStStates; // @synthesize selectOOStStates=_selectOOStStates;
-- (void).cxx_destruct;
 - (id)initWithSelectOOStStates:(id)arg1 dailyDensityCorrection:(double)arg2 weeklyDensityCorrection:(double)arg3;
 - (id)init;
 

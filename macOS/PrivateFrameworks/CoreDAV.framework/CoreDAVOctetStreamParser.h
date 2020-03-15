@@ -17,8 +17,8 @@
 }
 
 + (BOOL)canHandleContentType:(id)arg1;
-@property(retain, nonatomic) NSMutableData *octetStreamData; // @synthesize octetStreamData=_octetStreamData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableData *octetStreamData; // @synthesize octetStreamData=_octetStreamData;
 @property(readonly) NSError *parserError;
 - (BOOL)processData:(id)arg1 forTask:(id)arg2;
 @property(readonly, copy) NSString *description;

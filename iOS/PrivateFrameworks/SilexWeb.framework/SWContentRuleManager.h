@@ -17,9 +17,9 @@
     NSObject<OS_dispatch_group> *_dispatchGroup;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *dispatchGroup; // @synthesize dispatchGroup=_dispatchGroup;
 @property(readonly, nonatomic) WKUserContentController *userContentController; // @synthesize userContentController=_userContentController;
-- (void).cxx_destruct;
 - (id)configureContentRules;
 - (void)removeContentListForIdentifier:(id)arg1;
 - (void)addContentRuleList:(id)arg1 identifier:(id)arg2;

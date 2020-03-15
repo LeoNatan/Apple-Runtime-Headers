@@ -38,6 +38,7 @@
     TVSiCloudAccountManager *_iCloudAccountManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVSiCloudAccountManager *iCloudAccountManager; // @synthesize iCloudAccountManager=_iCloudAccountManager;
 @property(nonatomic) _Bool hasGameCenterAccount; // @synthesize hasGameCenterAccount=_hasGameCenterAccount;
 @property(nonatomic) _Bool hasStoreAccount; // @synthesize hasStoreAccount=_hasStoreAccount;
@@ -59,7 +60,6 @@
 @property(nonatomic, getter=isRunning) _Bool running; // @synthesize running=_running;
 @property(nonatomic) __weak id <TVCSTapToSetupActivatorHookDelegate> activatorHookDelegate; // @synthesize activatorHookDelegate=_activatorHookDelegate;
 @property(nonatomic) __weak id <TVCSTapToSetupManagerDelegate> userInterfaceDelegate; // @synthesize userInterfaceDelegate=_userInterfaceDelegate;
-- (void).cxx_destruct;
 - (void)_authenticateHomeSharingWithAuthenticationResults:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_authenticateGameCenterWithAuthenticationResults:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_authenticateiCloudWithAuthenticationResults:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

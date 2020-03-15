@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
 
 + (id)logCategory;
 + (double)timeout;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(copy) CDUnknownBlockType sendCompletionBlock; // @synthesize sendCompletionBlock=_sendCompletionBlock;
 @property _Bool shouldSuspendSyncing; // @synthesize shouldSuspendSyncing=_shouldSuspendSyncing;
 @property(readonly) __weak HMDHome *home; // @synthesize home=_home;
 @property(readonly) HMFMessage *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)main;
 - (id)messageDispatcher;

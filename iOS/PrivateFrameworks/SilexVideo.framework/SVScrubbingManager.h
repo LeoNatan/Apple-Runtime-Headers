@@ -17,9 +17,9 @@
     id <SVVideoViewControllerProviding> _videoViewControllerProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoViewControllerProviding> videoViewControllerProvider; // @synthesize videoViewControllerProvider=_videoViewControllerProvider;
 @property(readonly, nonatomic) id <SVScrubbingPolicyHandling> policyHandler; // @synthesize policyHandler=_policyHandler;
-- (void).cxx_destruct;
 - (void)willTransitionToVideo:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (id)initWithPolicyHandler:(id)arg1 videoViewControllerProvider:(id)arg2;
 

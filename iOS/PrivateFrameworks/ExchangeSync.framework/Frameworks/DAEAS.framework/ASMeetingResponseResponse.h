@@ -19,8 +19,8 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
-@property(retain, nonatomic) NSMutableArray *mSingularResponses; // @synthesize mSingularResponses=_mSingularResponses;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *mSingularResponses; // @synthesize mSingularResponses=_mSingularResponses;
 - (id)description;
 - (void)_addSingularResponse:(id)arg1;
 @property(readonly, nonatomic) NSArray *singularResponses;

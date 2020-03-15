@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     HKHorizontalSingleLineSeries *_appointmentSeries;
 }
 
-@property(readonly, nonatomic) HKHorizontalSingleLineSeries *appointmentSeries; // @synthesize appointmentSeries=_appointmentSeries;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HKHorizontalSingleLineSeries *appointmentSeries; // @synthesize appointmentSeries=_appointmentSeries;
 - (id)_parseSpecifications:(id)arg1;
 - (void)setColor:(id)arg1;
 - (id)initWithSpecifications:(id)arg1 profile:(id)arg2 color:(id)arg3;

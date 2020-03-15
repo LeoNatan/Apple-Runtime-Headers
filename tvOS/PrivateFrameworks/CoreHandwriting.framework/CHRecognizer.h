@@ -58,6 +58,8 @@
 + (unsigned long long)_encodeTempDelayedSegmentID:(unsigned long long)arg1;
 + (double)_computeEditPenalizationFromString:(id)arg1 toReferenceString:(id)arg2 withSuffix:(id)arg3 withCaseSensitivity:(_Bool)arg4 withFirstLetterCaseSensitivity:(_Bool)arg5 withDiacriticSensitivity:(_Bool)arg6 withDiacriticsCharSet:(id)arg7 withConsumableStrokesCharSet:(id)arg8 outputSuffix:(id *)arg9 lexiconExtraCharacters:(id *)arg10 firstLetterCaseFlipped:(_Bool *)arg11;
 + (_Bool)_isLocaleSupported:(id)arg1 withMode:(int)arg2;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableIndexSet *lastCharacterSegmentIndexes; // @synthesize lastCharacterSegmentIndexes=_lastCharacterSegmentIndexes;
 @property(nonatomic) unsigned long long lastCharacterSegmentCount; // @synthesize lastCharacterSegmentCount=_lastCharacterSegmentCount;
 @property(nonatomic) void **icuTransliterator; // @synthesize icuTransliterator=_icuTransliterator;
@@ -93,8 +95,6 @@
 @property(retain, nonatomic) NSCharacterSet *activeCharacterSet; // @synthesize activeCharacterSet=_activeCharacterSet;
 @property(nonatomic) unsigned long long maxRecognitionResultCount; // @synthesize maxRecognitionResultCount=_maxRecognitionResultCount;
 @property(nonatomic) int recognitionType; // @synthesize recognitionType=_recognitionType;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)_setupRecognitionInsightRecording;
 @property(nonatomic) _Bool shouldEnableCachingIfAvailable;
 @property(nonatomic) int contentType;

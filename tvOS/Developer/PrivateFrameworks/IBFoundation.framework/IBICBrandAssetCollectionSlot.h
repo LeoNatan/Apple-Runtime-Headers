@@ -19,10 +19,10 @@
 + (Class)assetSetClass;
 + (id)slotWithIdiom:(id)arg1 role:(id)arg2 size:(id)arg3;
 + (id)orderedComponentClasses;
+- (void).cxx_destruct;
 @property(readonly) IBICSize *size; // @synthesize size=_size;
 @property(readonly) IBICRole *role; // @synthesize role=_role;
 @property(readonly) IBICIdiom *idiom; // @synthesize idiom=_idiom;
-- (void).cxx_destruct;
 - (long long)compareDisplayOrder:(id)arg1;
 - (id)shortDisplayNameConsideringCounterparts:(id)arg1;
 - (void)captureComponents;

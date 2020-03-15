@@ -20,10 +20,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *storeCorrelationID; // @synthesize storeCorrelationID=_storeCorrelationID;
 @property(copy, nonatomic) NSNumber *purchaseID; // @synthesize purchaseID=_purchaseID;
 @property(readonly, nonatomic) long long manifestType; // @synthesize manifestType=_manifestType;
-- (void).cxx_destruct;
 - (id)_generateIdentifier;
 - (void)_addActivity:(id)arg1 withIdentifier:(id)arg2 persistentID:(id)arg3;
 - (void)encodeWithCoder:(id)arg1;

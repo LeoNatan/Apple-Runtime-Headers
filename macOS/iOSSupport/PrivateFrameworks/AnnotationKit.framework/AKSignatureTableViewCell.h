@@ -14,9 +14,9 @@
     UIImageView *_signatureImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *signatureImageView; // @synthesize signatureImageView=_signatureImageView;
 @property(retain, nonatomic) AKSignature *signature; // @synthesize signature=_signature;
-- (void).cxx_destruct;
 - (void)_setImageFromSignature;
 - (void)layoutSubviews;
 - (void)_commonInit;

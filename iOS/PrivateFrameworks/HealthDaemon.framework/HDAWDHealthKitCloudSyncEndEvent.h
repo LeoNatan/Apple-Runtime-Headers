@@ -33,6 +33,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long underlyingErrorCode; // @synthesize underlyingErrorCode=_underlyingErrorCode;
 @property(retain, nonatomic) NSString *underlyingErrorDomain; // @synthesize underlyingErrorDomain=_underlyingErrorDomain;
 @property(nonatomic) unsigned long long errorCode; // @synthesize errorCode=_errorCode;
@@ -42,7 +43,6 @@
 @property(nonatomic) unsigned long long duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) HDAWDHealthKitCloudSyncEvent *event; // @synthesize event=_event;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

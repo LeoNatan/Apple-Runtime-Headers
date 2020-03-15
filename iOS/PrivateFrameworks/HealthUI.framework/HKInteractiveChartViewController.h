@@ -70,6 +70,7 @@
 
 + (long long)_timeScopeForTimeScope:(long long)arg1 availableTimeScopes:(id)arg2;
 + (id)_timeScopesWithOptions:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HKInteractiveChartCurrentValueViewCallbacks> standardCurrentValueViewCallbacks; // @synthesize standardCurrentValueViewCallbacks=_standardCurrentValueViewCallbacks;
 @property(copy, nonatomic) CDUnknownBlockType startupReportingBlock; // @synthesize startupReportingBlock=_startupReportingBlock;
 @property(nonatomic) long long delayedAutoscaleActualCount; // @synthesize delayedAutoscaleActualCount=_delayedAutoscaleActualCount;
@@ -92,9 +93,8 @@
 @property(readonly, nonatomic) HKUnitPreferenceController *unitPreferenceController; // @synthesize unitPreferenceController=_unitPreferenceController;
 @property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(readonly, nonatomic) HKGraphViewController *primaryGraphViewController; // @synthesize primaryGraphViewController=_primaryGraphViewController;
-- (void).cxx_destruct;
 - (void)selectTimeScope:(long long)arg1;
-- (void)sampleTypeDateRangeController:(id)arg1 didUpdateDateRanges:(struct NSDictionary *)arg2;
+- (void)sampleTypeDateRangeController:(id)arg1 didUpdateDateRanges:(id)arg2;
 - (void)_updateGraphViewAxisDateRange;
 - (id)_dateForMostRecentData;
 - (id)_defaultAxisRangeIncludeToday:(_Bool)arg1;

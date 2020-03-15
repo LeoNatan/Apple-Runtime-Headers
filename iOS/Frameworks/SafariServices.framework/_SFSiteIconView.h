@@ -27,12 +27,12 @@
     id <_SFSiteIconViewUpdateObserver> _updateObserver;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowDropShadow; // @synthesize shouldShowDropShadow=_shouldShowDropShadow;
 @property(nonatomic) _Bool shouldUseModernStyling; // @synthesize shouldUseModernStyling=_shouldUseModernStyling;
 @property(nonatomic) __weak id <_SFSiteIconViewUpdateObserver> updateObserver; // @synthesize updateObserver=_updateObserver;
 @property(retain, nonatomic) UIImage *leadingImage; // @synthesize leadingImage=_leadingImage;
 @property(retain, nonatomic) WebBookmark *bookmark; // @synthesize bookmark=_bookmark;
-- (void).cxx_destruct;
 - (id)_effectiveBackgroundColor;
 - (void)_setState:(long long)arg1;
 - (void)_setMonogramWithString:(id)arg1 backgroundColor:(id)arg2;
@@ -48,7 +48,7 @@
 - (void)_displayDefaultFolderIcon;
 - (void)updateBookmarkData;
 - (struct CGRect)_imageFrame;
-@property(readonly, nonatomic) UIImage *image;
+@property(retain, nonatomic) UIImage *image;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)dealloc;

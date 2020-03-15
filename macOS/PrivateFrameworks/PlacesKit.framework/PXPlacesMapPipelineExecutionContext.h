@@ -27,11 +27,11 @@
     PXPlacesMapViewPort *_viewPort;
 }
 
+- (void).cxx_destruct;
 @property(retain) PXPlacesMapViewPort *viewPort; // @synthesize viewPort=_viewPort;
 @property(retain) NSArray *updatePlanResults; // @synthesize updatePlanResults=_updatePlanResults;
 @property(readonly) NSMapTable *changesForDataSources; // @synthesize changesForDataSources=_changesForDataSources;
 @property(readonly) double duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (double)durationForExecutionOfPlanResults;
 - (void)stopTimerForExecutionOfPlanResults;
 - (void)startTimerForExecutionOfPlanResults;

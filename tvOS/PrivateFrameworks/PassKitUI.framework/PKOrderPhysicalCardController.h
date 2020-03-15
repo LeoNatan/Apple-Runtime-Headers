@@ -31,6 +31,7 @@
     id <PKSetupFlowControllerProtocol> _parentFlowController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <PKSetupFlowControllerProtocol> parentFlowController; // @synthesize parentFlowController=_parentFlowController;
 @property(retain, nonatomic) CNPostalAddress *shippingAddress; // @synthesize shippingAddress=_shippingAddress;
 @property(retain, nonatomic) PKPhysicalCardArtworkOption *selectedArtworkOption; // @synthesize selectedArtworkOption=_selectedArtworkOption;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) PKPaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
 @property(readonly, nonatomic) long long paymentSetupContext; // @synthesize paymentSetupContext=_paymentSetupContext;
 @property(readonly, nonatomic) unsigned long long featureIdentifier; // @synthesize featureIdentifier=_featureIdentifier;
-- (void).cxx_destruct;
 - (id)_priceForRequestingPhysicalCard;
 - (id)_paymentRequest;
 - (void)completeOrderPhysicalCardWithApplePayTrustSignature:(id)arg1 completion:(CDUnknownBlockType)arg2;

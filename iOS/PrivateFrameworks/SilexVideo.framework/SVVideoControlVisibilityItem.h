@@ -16,9 +16,9 @@
     UIView *_view;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
 @property(nonatomic) _Bool hideable; // @synthesize hideable=_hideable;
-- (void).cxx_destruct;
 - (void)hide:(_Bool)arg1 withAnimationCoordinator:(id)arg2;
 - (_Bool)isVisible;
 - (id)initWithView:(id)arg1;

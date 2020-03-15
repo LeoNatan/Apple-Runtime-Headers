@@ -27,14 +27,13 @@
     unsigned int _identifier;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) struct RunLoopController *runLoopController; // @synthesize runLoopController=_runLoopController;
 @property(nonatomic) unsigned int level; // @synthesize level=_level;
 @property(nonatomic) CDStruct_02837cd9 replaceMapContentInRect; // @synthesize replaceMapContentInRect=_replaceMapContentInRect;
-@property(nonatomic) id <VKOverlayDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) _Bool canProvideVectorData; // @synthesize canProvideVectorData=_canProvideVectorData;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)vectorOverlayNeedsDisplay:(id)arg1 needsFullInvalidate:(_Bool)arg2;
 @property(nonatomic) weak_ptr_4d470b75 standardContainer;
 @property(nonatomic) weak_ptr_96fca551 flyoverContainer;
@@ -45,6 +44,7 @@
 - (_Bool)canDrawKey:(const CDStruct_7523a67d *)arg1;
 - (_Bool)canPossiblyDrawKey:(const CDStruct_7523a67d *)arg1;
 - (void)setNeedsDisplayInRect:(const CDStruct_02837cd9 *)arg1 level:(int)arg2 reason:(unsigned int)arg3;
+@property(nonatomic) __weak id <VKOverlayDelegate> delegate;
 - (void)dealloc;
 - (id)init;
 

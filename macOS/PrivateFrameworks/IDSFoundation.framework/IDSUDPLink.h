@@ -51,6 +51,7 @@
     BOOL _wifiAssistEnabled;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL wifiAssistEnabled; // @synthesize wifiAssistEnabled=_wifiAssistEnabled;
 @property(retain, nonatomic) NSIndexSet *cellularInterfaceIndices; // @synthesize cellularInterfaceIndices=_cellularInterfaceIndices;
 @property(nonatomic) BOOL allowsLinkLocal; // @synthesize allowsLinkLocal=_allowsLinkLocal;
@@ -68,7 +69,6 @@
 @property(retain) NSString *deviceUniqueID; // @synthesize deviceUniqueID=_deviceUniqueID;
 @property(retain) NSString *cbuuid; // @synthesize cbuuid=_cbuuid;
 @property(readonly) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)setWiFiAssistState:(BOOL)arg1;
 - (BOOL)setTrafficClass:(int)arg1;
 - (id)generateLinkReport:(double)arg1 isCurrentLink:(BOOL)arg2;

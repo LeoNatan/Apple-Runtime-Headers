@@ -27,6 +27,7 @@
     NSResponder *_oldFirstResponder;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSResponder *oldFirstResponder; // @synthesize oldFirstResponder=_oldFirstResponder;
 @property(retain, nonatomic) MUISelectionAndClickInformation *selectionAndClickInformation; // @synthesize selectionAndClickInformation=_selectionAndClickInformation;
 @property(retain, nonatomic) NSEvent *attachmentMouseDownEvent; // @synthesize attachmentMouseDownEvent=_attachmentMouseDownEvent;
@@ -35,7 +36,6 @@
 @property(nonatomic) BOOL isDraggingAttachments; // @synthesize isDraggingAttachments=_isDraggingAttachments;
 @property(nonatomic) BOOL isDragging; // @synthesize isDragging=_isDragging;
 @property(nonatomic) __weak MUIWKWebViewController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (id)seamlessCloserTransitionImageForPreviewItem:(id)arg1 contentRect:(struct CGRect *)arg2;
 - (struct CGRect)seamlessCloserSourceFrameOnScreenForPreviewItem:(id)arg1;
 - (void)seamlessOpener:(id)arg1 failedToOpenItems:(id)arg2 withError:(id)arg3;
@@ -63,7 +63,6 @@
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (BOOL)_point:(struct CGPoint)arg1 inAttachment:(id)arg2;
 - (void)mouseDown:(id)arg1;
-- (id)printOperationWithPrintInfo:(id)arg1;
 - (id)selectionAndClickInformationForClickAtPoint:(struct CGPoint)arg1;
 @property(readonly, copy, nonatomic) NSArray *selectedAttachmentControllers;
 - (id)attachmentControllerForAttachmentInfo:(id)arg1;

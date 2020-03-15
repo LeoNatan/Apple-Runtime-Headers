@@ -42,6 +42,7 @@
 + (Class)browserCellClass;
 + (id)viewControllerForElement:(id)arg1;
 + (id)viewControllerForResponder:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController<TVBrowserProviding> *provider; // @synthesize provider=_provider;
 @property(nonatomic) __weak _TVAppDocumentRequestController *centeredDocumentController; // @synthesize centeredDocumentController=_centeredDocumentController;
 @property(retain, nonatomic) NSIndexPath *preferredIndexPath; // @synthesize preferredIndexPath=_preferredIndexPath;
@@ -55,7 +56,6 @@
 @property(nonatomic) double interitemSpacing; // @synthesize interitemSpacing=_interitemSpacing;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(readonly, nonatomic) TVViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 - (id)activeDocument;
 - (id)_cellDataForCell:(id)arg1 remove:(_Bool)arg2;
 - (void)_loadDataForCell:(id)arg1 indexPath:(id)arg2;

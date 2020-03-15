@@ -19,11 +19,11 @@
     PSKeychainSyncManager *_keychainSyncManager;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PSKeychainSyncManager *keychainSyncManager; // @synthesize keychainSyncManager=_keychainSyncManager;
 @property(retain, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
 @property(retain, nonatomic) NSString *dialingPrefix; // @synthesize dialingPrefix=_dialingPrefix;
 @property(retain, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
-- (void).cxx_destruct;
 - (void)dismissAlerts;
 - (void)showSupportVerification;
 - (void)viewDidLayoutSubviews;

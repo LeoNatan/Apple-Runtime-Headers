@@ -25,11 +25,11 @@
 + (id)elementKind;
 + (double)defaultHeight;
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIButton *headerAreaButton; // @synthesize headerAreaButton=_headerAreaButton;
 @property(copy, nonatomic) UIColor *titleTextColor; // @synthesize titleTextColor=_titleTextColor;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 @property(nonatomic) __weak SiriUISnippetViewController *snippetViewController; // @synthesize snippetViewController=_snippetViewController;
-- (void).cxx_destruct;
 - (double)desiredHeightForWidth:(double)arg1;
 - (void)_configureHeaderLabelForBounds:(struct CGRect)arg1;
 - (void)layoutSubviews;

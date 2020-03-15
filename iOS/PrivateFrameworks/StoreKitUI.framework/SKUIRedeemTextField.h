@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     _Bool _suppressBorder;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool suppressBorder; // @synthesize suppressBorder=_suppressBorder;
 @property(nonatomic) _Bool backdropBackground; // @synthesize backdropBackground=_backdropBackground;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGRect)textRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)placeholderRectForBounds:(struct CGRect)arg1;

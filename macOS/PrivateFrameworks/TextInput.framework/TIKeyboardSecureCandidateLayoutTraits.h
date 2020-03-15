@@ -23,6 +23,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TIKeyboardSecureCandidateTextTraits *inputTraitsInSecondLine; // @synthesize inputTraitsInSecondLine=_inputTraitsInSecondLine;
 @property(retain, nonatomic) TIKeyboardSecureCandidateTextTraits *inputTraitsInFirstAndSecondLines; // @synthesize inputTraitsInFirstAndSecondLines=_inputTraitsInFirstAndSecondLines;
 @property(retain, nonatomic) TIKeyboardSecureCandidateTextTraits *inputTraitsInOnlyLine; // @synthesize inputTraitsInOnlyLine=_inputTraitsInOnlyLine;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) TIKeyboardSecureCandidateTextTraits *headerTraitsInOnlyLine; // @synthesize headerTraitsInOnlyLine=_headerTraitsInOnlyLine;
 @property(nonatomic) unsigned int headerInliningBehavior; // @synthesize headerInliningBehavior=_headerInliningBehavior;
 @property(nonatomic) BOOL forceSingleLineLayout; // @synthesize forceSingleLineLayout=_forceSingleLineLayout;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

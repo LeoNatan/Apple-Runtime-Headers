@@ -25,12 +25,12 @@
 + (id)sizeWithContainerSize;
 + (id)sizeWithAbsoluteSize:(struct CGSize)arg1;
 + (id)sizeWithWidthDimension:(id)arg1 heightDimension:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) long long heightSemantic; // @synthesize heightSemantic=_heightSemantic;
 @property(nonatomic) long long widthSemantic; // @synthesize widthSemantic=_widthSemantic;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(retain, nonatomic) NSCollectionLayoutDimension *heightDimension; // @synthesize heightDimension=_heightDimension;
 @property(retain, nonatomic) NSCollectionLayoutDimension *widthDimension; // @synthesize widthDimension=_widthDimension;
-- (void).cxx_destruct;
 - (BOOL)_isEstimatedForAxis:(int)arg1;
 - (BOOL)isEstimated;
 - (BOOL)isContainerSize;

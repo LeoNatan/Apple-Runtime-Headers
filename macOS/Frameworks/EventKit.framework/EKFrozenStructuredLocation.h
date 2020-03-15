@@ -24,6 +24,7 @@
 
 + (Class)alternateUniverseClass;
 + (Class)meltedClass;
+- (void).cxx_destruct;
 @property(readonly, retain) NSString *uuid; // @synthesize uuid;
 @property(readonly, copy, nonatomic) NSData *mapKitHandle; // @synthesize mapKitHandle;
 @property(readonly, copy, nonatomic) NSString *routeType; // @synthesize routeType;
@@ -32,7 +33,6 @@
 @property(readonly, copy, nonatomic) NSString *geoURLString; // @synthesize geoURLString;
 @property(readonly, copy, nonatomic) NSString *abURLString; // @synthesize abURLString;
 @property(readonly, copy, nonatomic) NSString *address; // @synthesize address;
-- (void).cxx_destruct;
 - (id)initWithObject:(id)arg1 createPartialObject:(BOOL)arg2 preFrozenRelationshipObjects:(id)arg3;
 
 // Remaining properties

@@ -16,11 +16,11 @@
     long long _submissionType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long submissionType; // @synthesize submissionType=_submissionType;
 @property(readonly, nonatomic) NSString *dsid; // @synthesize dsid=_dsid;
 @property(readonly, nonatomic) NSString *token; // @synthesize token=_token;
 @property(readonly, nonatomic) NSNumber *entityID; // @synthesize entityID=_entityID;
-- (void).cxx_destruct;
 - (id)compiledEntityID;
 - (id)initWithEntityID:(id)arg1 type:(long long)arg2 token:(id)arg3 dsid:(id)arg4;
 

@@ -19,10 +19,10 @@
     RTPlatform *_platform;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
 @property(retain, nonatomic) NSXPCConnection *pluginConnection; // @synthesize pluginConnection=_pluginConnection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)checkin;
 - (void)launchDaemonWithRestorationIdentifier:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)_launchDaemonWithRestorationIdentifier:(id)arg1 withReply:(CDUnknownBlockType)arg2;

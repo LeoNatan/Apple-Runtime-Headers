@@ -27,12 +27,12 @@
 + (void)_trackStateChange:(id)arg1 ofOperation:(id)arg2 forKeyPath:(id)arg3;
 + (id)unfinishedOperations;
 + (id)operationWithBlock:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property _Bool preventFinish; // @synthesize preventFinish=_preventFinish;
 @property(retain) DVTStackBacktrace *creationBacktrace; // @synthesize creationBacktrace=_creationBacktrace;
 @property(copy) NSArray *warnings; // @synthesize warnings=_warnings;
 @property(copy) NSError *error; // @synthesize error=_error;
 @property(copy) CDUnknownBlockType block; // @synthesize block=_block;
-- (void).cxx_destruct;
 - (id)notFinishedReasonWithDepth:(unsigned long long)arg1;
 - (id)stateString;
 - (void)enumerateUsingBlock:(CDUnknownBlockType)arg1;

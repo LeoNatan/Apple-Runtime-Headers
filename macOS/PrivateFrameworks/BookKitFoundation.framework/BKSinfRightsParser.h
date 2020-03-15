@@ -18,11 +18,11 @@
     NSMutableString *_foundText;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSMutableString *foundText; // @synthesize foundText=_foundText;
 @property(copy, nonatomic) NSString *rightsId; // @synthesize rightsId=_rightsId;
 @property(retain, nonatomic) NSData *sinfData; // @synthesize sinfData=_sinfData;
 @property(retain, nonatomic) NSMutableDictionary *rightsInfo; // @synthesize rightsInfo=_rightsInfo;
-- (void).cxx_destruct;
 - (void)parser:(id)arg1 didEndElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4;
 - (void)parser:(id)arg1 foundCDATA:(id)arg2;
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;

@@ -22,13 +22,13 @@
 }
 
 + (Class)layoutAccessibilityClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableIndexSet *floatingHeaderIndexSet; // @synthesize floatingHeaderIndexSet=_floatingHeaderIndexSet;
 @property(readonly, nonatomic) NSMutableDictionary *headerAttributesByIndexPath; // @synthesize headerAttributesByIndexPath=_headerAttributesByIndexPath;
 @property(readonly, nonatomic) NSMutableArray *layoutAttributesArray; // @synthesize layoutAttributesArray=_layoutAttributesArray;
 @property(nonatomic) BOOL preparingForUpdates; // @synthesize preparingForUpdates=_preparingForUpdates;
 @property(nonatomic) BOOL showsSectionFooterForSingleSection; // @synthesize showsSectionFooterForSingleSection=_showsSectionFooterForSingleSection;
 @property(nonatomic) BOOL showsSectionHeaderForSingleSection; // @synthesize showsSectionHeaderForSingleSection=_showsSectionHeaderForSingleSection;
-- (void).cxx_destruct;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (void)invalidateLayoutWithContext:(id)arg1;

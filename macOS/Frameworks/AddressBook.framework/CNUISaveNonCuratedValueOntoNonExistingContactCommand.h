@@ -13,13 +13,13 @@
     CNUIAggregateUndoableCommand *_aggregateCommand;
 }
 
-@property(retain, nonatomic) CNUIAggregateUndoableCommand *aggregateCommand; // @synthesize aggregateCommand=_aggregateCommand;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNUIAggregateUndoableCommand *aggregateCommand; // @synthesize aggregateCommand=_aggregateCommand;
 - (void)executeUndoWithCNSaveRequest:(id)arg1;
 - (void)executeWithCNSaveRequest:(id)arg1;
 - (id)copyOfContactWithNameValuesOnly:(id)arg1 andInsertedLabeledValue:(id)arg2 forKey:(id)arg3;
-- (id)initWithContactStore:(id)arg1 contact:(id)arg2 nonCuratedValueToSave:(id)arg3 forKey:(id)arg4 containerIdentifier:(id)arg5 setAsMeContact:(BOOL)arg6;
-- (id)initWithContactStore:(id)arg1;
+- (id)initWithContactStore:(id)arg1 contact:(id)arg2 nonCuratedValueToSave:(id)arg3 forKey:(id)arg4 containerIdentifier:(id)arg5 setAsMeContact:(BOOL)arg6 ignoresGuardianRestrictions:(BOOL)arg7;
+- (id)initWithContactStore:(id)arg1 ignoresGuardianRestrictions:(BOOL)arg2;
 
 @end
 

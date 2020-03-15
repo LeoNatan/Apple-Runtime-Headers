@@ -27,11 +27,11 @@
     UIDropInteraction *_dropInteraction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIDropInteraction *dropInteraction; // @synthesize dropInteraction=_dropInteraction;
 @property(nonatomic) __weak id <MFDropTargetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UIView *targetView; // @synthesize targetView=_targetView;
 @property(copy, nonatomic) NSSet *acceptableUTIs; // @synthesize acceptableUTIs=_acceptableUTIs;
-- (void).cxx_destruct;
 - (void)_dropSessionEnded;
 - (_Bool)_delegateCanDropItemsWithDropSession:(id)arg1;
 - (_Bool)_delegateHandlesDrops;

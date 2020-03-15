@@ -25,6 +25,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MIPPlaylist *playlist; // @synthesize playlist=_playlist;
 @property(retain, nonatomic) MIPMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 @property(retain, nonatomic) MIPSeries *series; // @synthesize series=_series;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) MIPAlbum *album; // @synthesize album=_album;
 @property(retain, nonatomic) MIPArtist *artist; // @synthesize artist=_artist;
 @property(retain, nonatomic) MIPMultiverseIdentifier *multiverseId; // @synthesize multiverseId=_multiverseId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

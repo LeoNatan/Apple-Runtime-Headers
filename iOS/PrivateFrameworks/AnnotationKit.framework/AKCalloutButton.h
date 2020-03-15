@@ -14,9 +14,9 @@
     AKCalloutBar *_bar;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak AKCalloutBar *bar; // @synthesize bar=_bar;
 @property(nonatomic) int position; // @synthesize position=_position;
-- (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

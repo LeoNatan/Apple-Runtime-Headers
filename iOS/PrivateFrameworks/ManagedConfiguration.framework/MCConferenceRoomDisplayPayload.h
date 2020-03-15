@@ -16,8 +16,8 @@
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
-@property(readonly, copy, nonatomic) NSString *customMessage; // @synthesize customMessage=_customMessage;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *customMessage; // @synthesize customMessage=_customMessage;
 - (id)payloadDescriptionKeyValueSections;
 - (id)stubDictionary;
 - (id)configuration;

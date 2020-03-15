@@ -18,12 +18,12 @@
 }
 
 + (id)sharedBabysitter;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMutableDictionary *l_restrictedWaiters; // @synthesize l_restrictedWaiters=_l_restrictedWaiters;
 @property(retain, nonatomic) NSMutableDictionary *l_failedWaiters; // @synthesize l_failedWaiters=_l_failedWaiters;
 @property(retain, nonatomic) NSMutableDictionary *l_refreshingWaiters; // @synthesize l_refreshingWaiters=_l_refreshingWaiters;
 @property(retain, nonatomic) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
-- (void).cxx_destruct;
 - (void)_diagnosticReportWithWaiterID:(id)arg1 failureCount:(int)arg2;
 - (void)giveAccountWithIDAnotherChance:(id)arg1;
 - (void)_l_giveAccountWithIDAnotherChance:(id)arg1;

@@ -21,13 +21,13 @@
 }
 
 + (CDStruct_5e758c1a)freeFormAspectRatio;
+- (id).cxx_construct;
 @property(nonatomic) BOOL isAutoCrop; // @synthesize isAutoCrop=_isAutoCrop;
 @property(readonly) unsigned long long hitVertexID; // @synthesize hitVertexID=_hitVertexID;
 @property(nonatomic) CDStruct_5e758c1a aspectRatio; // @synthesize aspectRatio=_aspectRatio;
 @property(nonatomic) double straightenAngle; // @synthesize straightenAngle=_straightenAngle;
 @property long long orientation; // @synthesize orientation=_orientation;
 @property(readonly) struct CGSize masterImageSize; // @synthesize masterImageSize=_masterImageSize;
-- (id).cxx_construct;
 - (CDStruct_5e758c1a)originalAspectRatio;
 - (BOOL)aspectRatioIsFreeForm;
 - (BOOL)aspectRatioIsOriginal;

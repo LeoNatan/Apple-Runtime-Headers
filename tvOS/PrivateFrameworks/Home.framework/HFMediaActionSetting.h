@@ -15,10 +15,10 @@
     HFPlaybackArchive *_playbackArchive;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFPlaybackArchive *playbackArchive; // @synthesize playbackArchive=_playbackArchive;
 @property(nonatomic) long long originalHMNonPausePlaybackState; // @synthesize originalHMNonPausePlaybackState=_originalHMNonPausePlaybackState;
 @property(readonly, nonatomic) HFMediaPlaybackActionBuilder *mediaActionBuilder; // @synthesize mediaActionBuilder=_mediaActionBuilder;
-- (void).cxx_destruct;
 - (void)updatePlaybackState:(long long)arg1;
 - (id)initWithActionBuilder:(id)arg1;
 

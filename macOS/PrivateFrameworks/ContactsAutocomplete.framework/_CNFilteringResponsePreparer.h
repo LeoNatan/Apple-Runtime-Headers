@@ -11,8 +11,8 @@
     CDUnknownBlockType _filter;
 }
 
-@property(readonly, copy) CDUnknownBlockType filter; // @synthesize filter=_filter;
 - (void).cxx_destruct;
+@property(readonly, copy) CDUnknownBlockType filter; // @synthesize filter=_filter;
 - (id)prepareResults:(id)arg1;
 - (id)initWithResponsePreparer:(id)arg1 delegate:(id)arg2 filter:(CDUnknownBlockType)arg3;
 

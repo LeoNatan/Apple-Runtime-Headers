@@ -12,12 +12,12 @@
     CDUnknownBlockType _handleVerdict;
 }
 
-@property(readonly) CDUnknownBlockType handleVerdict; // @synthesize handleVerdict=_handleVerdict;
-@property(readonly) CDUnknownBlockType getVerdict; // @synthesize getVerdict=_getVerdict;
 - (void).cxx_destruct;
-- (void)executeVerdictHandlerWithVerdict:(id)arg1;
-- (void)executeWithFlow:(id)arg1;
-- (void)enqueueWithFlow:(id)arg1;
+@property(readonly, nonatomic) CDUnknownBlockType handleVerdict; // @synthesize handleVerdict=_handleVerdict;
+@property(readonly, nonatomic) CDUnknownBlockType getVerdict; // @synthesize getVerdict=_getVerdict;
+- (void)executeVerdictHandlerWithFlow:(id)arg1 verdict:(id)arg2 context:(id)arg3;
+- (void)executeWithFlow:(id)arg1 context:(id)arg2;
+- (void)enqueueWithFlow:(id)arg1 context:(id)arg2;
 - (id)initWithGetVerdictBlock:(CDUnknownBlockType)arg1 handleVerdictBlock:(CDUnknownBlockType)arg2;
 
 @end

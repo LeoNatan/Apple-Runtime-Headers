@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *peerTrackingDictionary; // @synthesize peerTrackingDictionary=_peerTrackingDictionary;
 @property(retain) NSUUID *peerUUID; // @synthesize peerUUID=_peerUUID;
 @property unsigned char clientType; // @synthesize clientType=_clientType;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

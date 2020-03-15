@@ -16,8 +16,8 @@
     NSExtensionContext *_extensionContext;
 }
 
-@property(readonly, nonatomic) NSExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 - (void)openURL:(id)arg1;
 - (void)openURL:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)initWithExtensionContext:(id)arg1;

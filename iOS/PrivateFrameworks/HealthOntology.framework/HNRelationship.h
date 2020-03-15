@@ -15,8 +15,8 @@
     NSString *_type;
 }
 
-@property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithType:(id)arg1;
 - (id)init;

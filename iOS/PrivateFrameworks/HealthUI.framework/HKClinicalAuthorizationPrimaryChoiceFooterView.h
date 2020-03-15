@@ -13,8 +13,8 @@
     UIButton *_primaryButton;
 }
 
-@property(readonly, nonatomic) UIButton *primaryButton; // @synthesize primaryButton=_primaryButton;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIButton *primaryButton; // @synthesize primaryButton=_primaryButton;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateMetricsWithTraitCollection:(id)arg1;
 - (double)_bottomMarginForTraitCollection:(id)arg1;

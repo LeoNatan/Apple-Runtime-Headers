@@ -22,6 +22,7 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) long long PropertyType; // @synthesize PropertyType=_PropertyType;
 @property(copy, nonatomic) NSString *PropertyTag; // @synthesize PropertyTag=_PropertyTag;
 @property(copy, nonatomic) NSString *PropertySetId; // @synthesize PropertySetId=_PropertySetId;
@@ -29,7 +30,6 @@
 @property(nonatomic) BOOL PropertyIdSpecified; // @synthesize PropertyIdSpecified=_PropertyIdSpecified;
 @property(nonatomic) long long PropertyId; // @synthesize PropertyId=_PropertyId;
 @property(nonatomic) long long DistinguishedPropertySetId; // @synthesize DistinguishedPropertySetId=_DistinguishedPropertySetId;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

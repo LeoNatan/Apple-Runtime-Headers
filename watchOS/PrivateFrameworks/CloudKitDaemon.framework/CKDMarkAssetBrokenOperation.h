@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     NSError *_markAssetBrokenError;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *markAssetBrokenError; // @synthesize markAssetBrokenError=_markAssetBrokenError;
 @property(nonatomic) unsigned int numMarkAssetBrokenFailures; // @synthesize numMarkAssetBrokenFailures=_numMarkAssetBrokenFailures;
 @property(retain, nonatomic) CKRecord *record; // @synthesize record=_record;
@@ -49,7 +50,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool touchRepairZone; // @synthesize touchRepairZone=_touchRepairZone;
 @property(retain, nonatomic) CKUploadRequestConfiguration *uploadRequestConfiguration; // @synthesize uploadRequestConfiguration=_uploadRequestConfiguration;
 @property(copy, nonatomic) CDUnknownBlockType assetOrPackageMarkedBrokenBlock; // @synthesize assetOrPackageMarkedBrokenBlock=_assetOrPackageMarkedBrokenBlock;
-- (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
 - (id)checkPreconditions;

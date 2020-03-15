@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     TVPDownload *_downloadInternal;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVPDownload *downloadInternal; // @synthesize downloadInternal=_downloadInternal;
 @property(retain, nonatomic) VUIMediaEntityAssetControllerState *stateInternal; // @synthesize stateInternal=_stateInternal;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *completionDispatchQueueInternal; // @synthesize completionDispatchQueueInternal=_completionDispatchQueueInternal;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <VUIMediaEntityAssetControllerDelegate> delegateInternal; // @synthesize delegateInternal=_delegateInternal;
 @property(retain, nonatomic) NSObject<VUIMediaEntityIdentifier> *mediaEntityIdentifierInternal; // @synthesize mediaEntityIdentifierInternal=_mediaEntityIdentifierInternal;
 @property(retain, nonatomic) VUIVideoManagedObject *videoManagedObjectInternal; // @synthesize videoManagedObjectInternal=_videoManagedObjectInternal;
-- (void).cxx_destruct;
 - (void)_updateDownloadStateAndNotifyDelegates;
 - (void)_updateObservedDownload;
 - (void)download:(id)arg1 progressDidChange:(double)arg2;
@@ -41,7 +41,7 @@ __attribute__((visibility("hidden")))
 - (void)cancelAndRemoveDownload;
 - (void)resumeDownload;
 - (void)pauseDownload;
-- (void)startDownloadWithCompletion:(CDUnknownBlockType)arg1;
+- (void)startDownloadAllowingCellular:(_Bool)arg1 quality:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)invalidate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *completionDispatchQueue;
 @property(readonly, copy, nonatomic) VUIMediaEntityAssetControllerState *state;

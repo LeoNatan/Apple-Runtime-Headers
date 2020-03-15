@@ -18,10 +18,10 @@
     MFMailboxTransformer *_mailboxTransformer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MFMailboxTransformer *mailboxTransformer; // @synthesize mailboxTransformer=_mailboxTransformer;
 @property(retain, nonatomic) id <EDAccountsProvider> accountsProvider; // @synthesize accountsProvider=_accountsProvider;
 @property(nonatomic) __weak id <EDMailboxProviderDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (long long)mailboxTypeForMailboxObjectID:(id)arg1;
 - (id)mailboxObjectIDsForMailboxType:(long long)arg1;
 - (id)legacyMailboxForObjectID:(id)arg1;

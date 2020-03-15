@@ -21,12 +21,12 @@
     id <CDPLocalSecretFollowUpProvider> _followUpProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CDPLocalSecretFollowUpProvider> followUpProvider; // @synthesize followUpProvider=_followUpProvider;
 @property(retain, nonatomic) id <CDPStateUIProviderInternal> uiProvider; // @synthesize uiProvider=_uiProvider;
 @property(retain, nonatomic) CDPDSecureBackupController *secureBackupController; // @synthesize secureBackupController=_secureBackupController;
 @property(retain, nonatomic) CDPDCircleController *circleController; // @synthesize circleController=_circleController;
 @property(retain, nonatomic) CDPContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)secureChannelContextForController:(id)arg1;
 - (id)contextForController:(id)arg1;
 - (void)circleController:(id)arg1 secureBackupRecordsArePresentWithCompletion:(CDUnknownBlockType)arg2;

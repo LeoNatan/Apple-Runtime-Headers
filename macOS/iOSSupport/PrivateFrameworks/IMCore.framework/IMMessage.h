@@ -66,6 +66,7 @@
 + (id)breadcrumbMessageWithText:(id)arg1 associatedMessageGUID:(id)arg2 balloonBundleID:(id)arg3 fileTransferGUIDs:(id)arg4 payloadData:(id)arg5;
 + (id)editedMessageWithOriginalMessage:(id)arg1 originalPrefixedGUID:(id)arg2 newBody:(id)arg3;
 + (id)instantMessageWithAssociatedMessageContent:(id)arg1 flags:(unsigned long long)arg2 associatedMessageGUID:(id)arg3 associatedMessageType:(long long)arg4 associatedMessageRange:(struct _NSRange)arg5 messageSummaryInfo:(id)arg6;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long sortID; // @synthesize sortID=_sortID;
 @property(nonatomic) BOOL isSOS; // @synthesize isSOS=_isSOS;
 @property(retain, nonatomic) NSString *notificationIDSTokenURI; // @synthesize notificationIDSTokenURI=_notificationIDSTokenURI;
@@ -96,7 +97,6 @@
 @property(readonly, nonatomic) NSAttributedString *messageSubject; // @synthesize messageSubject=_messageSubject;
 @property(readonly, nonatomic) IMHandle *subject; // @synthesize subject=_subject;
 @property(retain, nonatomic, setter=_updateSender:) IMHandle *sender; // @synthesize sender=_sender;
-- (void).cxx_destruct;
 - (void)_ovverrideGUIDForTest:(id)arg1;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;

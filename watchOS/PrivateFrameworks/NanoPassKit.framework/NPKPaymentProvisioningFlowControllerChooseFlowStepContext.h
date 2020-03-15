@@ -13,8 +13,11 @@
     NSArray *_sections;
 }
 
-@property(retain, nonatomic) NSArray *sections; // @synthesize sections=_sections;
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *sections; // @synthesize sections=_sections;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)description;
 - (id)initWithRequestContext:(id)arg1;
 

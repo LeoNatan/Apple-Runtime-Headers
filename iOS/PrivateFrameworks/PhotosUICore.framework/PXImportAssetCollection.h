@@ -23,9 +23,9 @@
 }
 
 + (id)dayFormatter;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool alreadyImportedGroup; // @synthesize alreadyImportedGroup=_alreadyImportedGroup;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)localizedTitle;
 - (long long)indexOfItem:(id)arg1;
 - (id)itemAtIndex:(unsigned long long)arg1;

@@ -21,8 +21,8 @@
 }
 
 + (void)needsToRun:(CDUnknownBlockType)arg1;
-@property(retain) NSMutableArray *currentItemsForIMessage; // @synthesize currentItemsForIMessage=_currentItemsForIMessage;
 - (void).cxx_destruct;
+@property(retain) NSMutableArray *currentItemsForIMessage; // @synthesize currentItemsForIMessage=_currentItemsForIMessage;
 - (void)setDefaultNavigationItems:(id)arg1;
 - (void)viewControllerDidComplete:(id)arg1;
 - (id)nextViewControllerFrom:(id)arg1;

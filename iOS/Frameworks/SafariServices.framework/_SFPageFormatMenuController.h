@@ -16,9 +16,9 @@
     UIViewController *_viewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(readonly, nonatomic) __weak id <_SFBrowserContentController> browserContentController; // @synthesize browserContentController=_browserContentController;
-- (void).cxx_destruct;
 - (id)_sitePreferencesAlertItem;
 - (id)_contentBlockersToggleAlertItem;
 - (_Bool)_canHideToolbar;
@@ -27,6 +27,7 @@
 - (id)_readerThemeAlertItem;
 - (id)_readerTextSizeAlertItem;
 - (id)_pageZoomAlertItem;
+- (void)_anchorInWindowCoordinatesForAlert:(id)arg1;
 - (id)_fullScreenAlertItem;
 - (id)_desktopMobileToggleAlertItem;
 - (id)_readerAlertItem;

@@ -16,12 +16,12 @@
     struct CGRect _bounds;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) Class viewClass; // @synthesize viewClass=_viewClass;
 @property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 - (void)setBounds:(struct CGRect)arg1;
 - (struct CGRect)bounds;
 - (struct CGRect)frame;
-- (void).cxx_destruct;
 - (void)resolveViewsInView:(id)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)removeFromSupernode;

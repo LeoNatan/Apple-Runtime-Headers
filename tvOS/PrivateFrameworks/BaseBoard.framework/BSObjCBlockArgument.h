@@ -15,9 +15,9 @@
 }
 
 + (id)argumentWithSignature:(id)arg1 atIndex:(long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) BSObjCArgument *returnValue; // @synthesize returnValue=_returnValue;
 @property(readonly, copy, nonatomic) NSArray *arguments; // @synthesize arguments=_arguments;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)_prettyTypeString;
 - (_Bool)isBlock;

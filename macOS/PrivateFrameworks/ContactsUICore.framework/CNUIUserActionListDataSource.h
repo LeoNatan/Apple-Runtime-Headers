@@ -26,12 +26,12 @@
 + (id)allSupportedActionTypes;
 + (id)allActionTypes;
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNUIUserActionDisambiguationModeler *modeler; // @synthesize modeler=_modeler;
 @property(retain, nonatomic) CNUIUserActionListModelCache *models; // @synthesize models=_models;
 @property(copy, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) BOOL tracksChanges; // @synthesize tracksChanges=_tracksChanges;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
-- (void).cxx_destruct;
 - (id)thirdPartyActionsForCurrentContactAndPropertyKey:(id)arg1 identifier:(id)arg2;
 - (id)thirdPartyActionsForContactProperty:(id)arg1;
 - (id)thirdPartyTargetsForActionTypes:(id)arg1;

@@ -19,10 +19,10 @@
     MSPCloudContainer *_cloudContainer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MSPCloudContainer *cloudContainer; // @synthesize cloudContainer=_cloudContainer;
 @property(retain, nonatomic) MSPContainer *container; // @synthesize container=_container;
 @property(retain, nonatomic) MSPCloudSynchronizer *synchronizer; // @synthesize synchronizer=_synchronizer;
-- (void).cxx_destruct;
 - (void)cloudContainerDidChange:(id)arg1;
 - (void)containerDidEraseContents:(id)arg1 fromStorageTypes:(unsigned long long)arg2;
 - (void)container:(id)arg1 didEditWithNewContents:(id)arg2 orderedEdits:(id)arg3 cause:(long long)arg4 context:(id)arg5;

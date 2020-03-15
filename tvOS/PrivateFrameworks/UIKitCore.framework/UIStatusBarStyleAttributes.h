@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     _Bool _pulsingAnimationEnabled;
 }
 
-@property(nonatomic, getter=isPulsingAnimationEnabled) _Bool pulsingAnimationEnabled; // @synthesize pulsingAnimationEnabled=_pulsingAnimationEnabled;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isPulsingAnimationEnabled) _Bool pulsingAnimationEnabled; // @synthesize pulsingAnimationEnabled=_pulsingAnimationEnabled;
 - (long long)tapButtonType;
 - (_Bool)shouldShowInternalItemType:(int)arg1 withScreenCapabilities:(id)arg2;
 - (double)glowAnimationDuration;

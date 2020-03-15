@@ -16,8 +16,8 @@
 
 + (id)volatileImageWithImage:(id)arg1 fromAssetManager:(id)arg2;
 + (id)volatileImageWithImage:(id)arg1;
-@property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 - (id)_init;
 - (id)init;
 

@@ -24,6 +24,7 @@
     CDUnknownBlockType _sessionInvalidated;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool sessionMarkedInvalid; // @synthesize sessionMarkedInvalid=_sessionMarkedInvalid;
 @property(copy, nonatomic) CDUnknownBlockType sessionInvalidated; // @synthesize sessionInvalidated=_sessionInvalidated;
 @property(nonatomic) long long maximumRequestCount; // @synthesize maximumRequestCount=_maximumRequestCount;
@@ -33,7 +34,6 @@
 @property(retain) NSMutableDictionary *taskInfoByTaskIdentifier; // @synthesize taskInfoByTaskIdentifier=_taskInfoByTaskIdentifier;
 @property(nonatomic) long long requestCount; // @synthesize requestCount=_requestCount;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;

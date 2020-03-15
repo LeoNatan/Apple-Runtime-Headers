@@ -15,10 +15,10 @@
     MFEWSGetItemsResponseOperation *_getItemsResponse;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL messageResponseType; // @synthesize messageResponseType=_messageResponseType;
 @property(readonly, nonatomic) MFEWSGetItemsResponseOperation *getItemsResponse; // @synthesize getItemsResponse=_getItemsResponse;
 @property(readonly, copy, nonatomic) NSString *messageMeetingItemIdString; // @synthesize messageMeetingItemIdString=_messageMeetingItemIdString;
-- (void).cxx_destruct;
 - (id)newResponseOperationWithGateway:(id)arg1 errorHandler:(id)arg2;
 @property(retain, nonatomic) MFEWSCreateEventReplyResponseOperation *responseOperation;
 - (id)prepareRequest;

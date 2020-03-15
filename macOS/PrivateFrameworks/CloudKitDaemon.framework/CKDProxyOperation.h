@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     CKOperationResult *_cachedResult;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL didHandleCancel; // @synthesize didHandleCancel=_didHandleCancel;
 @property(retain, nonatomic) CKOperationResult *cachedResult; // @synthesize cachedResult=_cachedResult;
 @property(copy, nonatomic) CDUnknownBlockType operationProgressedBlock; // @synthesize operationProgressedBlock=_operationProgressedBlock;
-- (void).cxx_destruct;
 - (id)operationResult;
 - (void)_cancelOnCallbackQueueIfNecessary;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;

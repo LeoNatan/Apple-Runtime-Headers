@@ -13,8 +13,8 @@
     NUComposition *_composition;
 }
 
-@property(readonly) NUComposition *composition; // @synthesize composition=_composition;
 - (void).cxx_destruct;
+@property(readonly) NUComposition *composition; // @synthesize composition=_composition;
 - (id)initWithComposition:(id)arg1;
 - (id)init;
 - (id)sourceContainerNodeWithIdentifier:(id)arg1 error:(out id *)arg2;

@@ -20,8 +20,8 @@
 + (_Bool)_isValidCDAKeyPath:(id)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)CDADocumentSampleWithData:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 metadata:(id)arg4 validationError:(id *)arg5;
-@property(readonly) HKCDADocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+@property(readonly) HKCDADocument *document; // @synthesize document=_document;
 - (_Bool)_predicateMatchForKeyPath:(id)arg1 operatorType:(unsigned int)arg2 pattern:(id)arg3;
 - (id)_fieldValueForKeyPath:(id)arg1;
 - (void)_applyPropertiesWithOmittedFlags:(int)arg1 compressedDocumentData:(id)arg2 title:(id)arg3 patientName:(id)arg4 authorName:(id)arg5 custodianName:(id)arg6;

@@ -20,7 +20,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)fakeBookmarkMatchDataWithURLString:(id)arg1 title:(id)arg2;
+- (id)fakeBookmarkMatchDataWithURLString:(id)arg1 title:(id)arg2 shouldPreload:(_Bool)arg3;
 - (void)enumerateMatchDataForTypedStringHint:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)getBestMatchesForTypedString:(id)arg1 limit:(unsigned int)arg2 forQueryID:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)_matchSnapshotForCompletionMatch:(id)arg1;

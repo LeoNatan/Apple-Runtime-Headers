@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     BOOL _highlighted;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double horizPadding; // @synthesize horizPadding=_horizPadding;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)dealloc;
 @property(nonatomic) struct CGFont *font; // @dynamic font;
 @property(nonatomic) struct CGColor *fontColor; // @dynamic fontColor;

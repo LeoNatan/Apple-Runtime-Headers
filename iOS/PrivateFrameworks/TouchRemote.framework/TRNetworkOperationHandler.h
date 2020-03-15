@@ -15,8 +15,8 @@
     CDUnknownBlockType _joinNetworkHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType joinNetworkHandler; // @synthesize joinNetworkHandler=_joinNetworkHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType joinNetworkHandler; // @synthesize joinNetworkHandler=_joinNetworkHandler;
 - (void)_handleNetworkRequest:(id)arg1 withResponseHandler:(CDUnknownBlockType)arg2;
 - (void)registerMessageHandlersForSession:(id)arg1;
 - (id)initWithJoinNetworkHandler:(CDUnknownBlockType)arg1;

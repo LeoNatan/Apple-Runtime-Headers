@@ -15,10 +15,10 @@
     NSMutableString *_mutableText;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableString *mutableText; // @synthesize mutableText=_mutableText;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *elementName; // @synthesize elementName=_elementName;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -4,13 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIView.h>
+#import <NanoPassKitUI/NPKAMPPaymentDetailsView.h>
 
-@class NSAttributedString, NSString, UIImageView, UILabel, UIStackView;
+@class UIImageView, UILabel, UIStackView;
 
-@interface NPKAMPPaymentView : UIView
+@interface NPKAMPPaymentView : NPKAMPPaymentDetailsView
 {
-    struct CGImage *_appIconImage;
     unsigned int _displayStyle;
     UIImageView *_appIconImageView;
     UILabel *_appDetailsLabel;
@@ -24,13 +23,12 @@
 + (id)_stackViewWithArrangedSubviews:(id)arg1;
 + (id)ampPaymentViewWithFrame:(struct CGRect)arg1;
 + (id)ampPaymentView;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(copy, nonatomic) UILabel *amountLabel; // @synthesize amountLabel=_amountLabel;
 @property(copy, nonatomic) UILabel *appDetailsLabel; // @synthesize appDetailsLabel=_appDetailsLabel;
 @property(copy, nonatomic) UIImageView *appIconImageView; // @synthesize appIconImageView=_appIconImageView;
 @property(nonatomic) unsigned int displayStyle; // @synthesize displayStyle=_displayStyle;
-@property(nonatomic) struct CGImage *appIconImage; // @synthesize appIconImage=_appIconImage;
-- (void).cxx_destruct;
 - (float)_heightForAttributedText:(id)arg1 inDisplayStyle:(unsigned int)arg2;
 - (unsigned int)displayStyleFittingHeight:(float)arg1 withAttributedText:(id)arg2;
 - (id)_applyStylingToValueString:(id)arg1 displayStyle:(unsigned int)arg2 lineBreakMode:(int)arg3;
@@ -51,8 +49,11 @@
 - (void)_setUpAmountLabel;
 - (void)_setUpAppDetailsLabel;
 - (void)_setUpAppIconImageView;
-@property(copy, nonatomic) NSString *amountText;
-@property(copy, nonatomic) NSAttributedString *appDetailsAttributedText;
+- (void)setAmountText:(id)arg1;
+- (id)amountText;
+- (void)setAppDetailsAttributedText:(id)arg1;
+- (id)appDetailsAttributedText;
+- (void)setAppIconImage:(struct CGImage *)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -21,10 +21,10 @@
     BOOL _isDrawingWithMarkerOrEraser;
 }
 
-@property(nonatomic) BOOL isDrawingWithMarkerOrEraser; // @synthesize isDrawingWithMarkerOrEraser=_isDrawingWithMarkerOrEraser;
-@property(nonatomic) BOOL isDrawingWithPencil; // @synthesize isDrawingWithPencil=_isDrawingWithPencil;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL isDrawingWithMarkerOrEraser; // @synthesize isDrawingWithMarkerOrEraser=_isDrawingWithMarkerOrEraser;
+@property(nonatomic) BOOL isDrawingWithPencil; // @synthesize isDrawingWithPencil=_isDrawingWithPencil;
 - (double)averageMovementDistance;
 - (void)accumulateMovementForCurrentFrame;
 - (void)registerFrameStartTimestamp:(double)arg1;

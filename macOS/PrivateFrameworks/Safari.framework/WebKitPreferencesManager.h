@@ -33,9 +33,9 @@ __attribute__((visibility("hidden")))
 + (id)readingListFetcherPageGroupPreferencesManager;
 + (id)readerPageGroupPreferencesManager;
 + (id)contentPageGroupPreferencesManager;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) WKPreferences *_wkPreferences; // @synthesize _wkPreferences=__wkPreferences;
 @property(readonly, nonatomic) BOOL intelligentTrackingPreventionDebugModeEnabledIsForced; // @synthesize intelligentTrackingPreventionDebugModeEnabledIsForced=_intelligentTrackingPreventionDebugModeEnabledIsForced;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL webSecurityEnabledIsForced;
 @property(readonly, nonatomic) BOOL webGLEnabledIsForced;
 @property(readonly, nonatomic) BOOL webAudioEnabledIsForced;
@@ -101,7 +101,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL diagnosticLoggingEnabledIsForced;
 @property(readonly, nonatomic) BOOL developerExtrasEnabledIsForced;
 @property(readonly, nonatomic) BOOL defaultTextEncodingNameIsForced;
-@property(readonly, nonatomic) BOOL cookieEnabledIsForced;
 @property(readonly, nonatomic) BOOL compositingRepaintCountersVisibleIsForced;
 @property(readonly, nonatomic) BOOL compositingBordersVisibleIsForced;
 @property(readonly, nonatomic) BOOL canvasUsesAcceleratedDrawingIsForced;
@@ -184,7 +183,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL diagnosticLoggingEnabled;
 @property(nonatomic) BOOL developerExtrasEnabled;
 @property(copy, nonatomic) NSString *defaultTextEncodingName;
-@property(nonatomic) BOOL cookieEnabled;
 @property(nonatomic) BOOL compositingRepaintCountersVisible;
 @property(nonatomic) BOOL compositingBordersVisible;
 @property(nonatomic) BOOL canvasUsesAcceleratedDrawing;

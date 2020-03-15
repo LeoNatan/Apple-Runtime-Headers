@@ -18,9 +18,9 @@
 
 + (id)createEmptyTemporaryFileForContacts:(id)arg1;
 + (id)itemWithContacts:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSURL *url; // @synthesize url=_url;
 @property(retain) NSArray *contacts; // @synthesize contacts=_contacts;
-- (void).cxx_destruct;
 - (void)serializeVCard;
 - (id)pasteboardPropertyListForType:(id)arg1;
 - (id)writableTypesForPasteboard:(id)arg1;

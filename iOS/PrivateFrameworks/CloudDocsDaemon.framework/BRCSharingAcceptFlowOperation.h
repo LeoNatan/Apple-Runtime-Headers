@@ -10,7 +10,7 @@
 #import <CloudDocsDaemon/BRCOperationSubclass-Protocol.h>
 #import <CloudDocsDaemon/LSOpenResourceOperationDelegate-Protocol.h>
 
-@class BRCAccountSession, BRCAppLibrary, BRCClientZone, BRCItemID, BRCXPCClient, CKRecordID, CKShare, CKShareMetadata, NSArray, NSObject, NSString, NSURL;
+@class BRCAccountSession, BRCAppLibrary, BRCClientZone, BRCItemID, BRCXPCClient, CKRecordID, CKShareMetadata, NSArray, NSObject, NSString, NSURL;
 @protocol BRCUserNotifier, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -23,14 +23,15 @@ __attribute__((visibility("hidden")))
     NSURL *_shareURL;
     CKRecordID *_shareID;
     CKShareMetadata *_shareMetadata;
-    CKShare *_share;
-    BRCItemID *_sharedItemID;
+    BRCItemID *_linkItemID;
+    BRCItemID *_rootItemID;
     NSString *_unsaltedBookmarkData;
     BRCClientZone *_clientZone;
     BRCAppLibrary *_appLibrary;
     _Bool _needsZoneAndAppLibraryActivation;
-    NSURL *_shareDocumentURL;
-    NSString *_documentName;
+    NSURL *_liveFileURL;
+    NSString *_rootFilename;
+    NSString *_linkFilename;
     BRCXPCClient *_xpcClient;
     NSObject<OS_dispatch_queue> *_queue;
 }
@@ -50,6 +51,7 @@ __attribute__((visibility("hidden")))
 - (void)_acceptShareURL;
 - (void)_openSharedSideFaultFile;
 - (void)_openDocumentInDocumentsAppIfInstalled:(id)arg1;
+- (void)_openSharedSideFaultFileWithAppID:(id)arg1;
 - (void)_checkIfShouldWaitUntilDownloadCompletion;
 - (void)_createSideFaultOnDisk;
 - (void)_waitForSharedItemToBeOnDiskOnOwner;
@@ -66,6 +68,9 @@ __attribute__((visibility("hidden")))
 - (void)_activateSharedZoneIfNeeded;
 - (void)_captureOpenInfoFromDocument:(id)arg1;
 - (_Bool)_isiWorkShare;
+- (_Bool)_isDirectoryLinkInsideFolderShare;
+- (_Bool)_isDocumentLinkInsideFolderShare;
+- (_Bool)_isLinkInsideFolderShare;
 - (_Bool)_isFolderShare;
 - (_Bool)_isOwnerOrShareAlreadyAccepted;
 - (_Bool)_isOwner;

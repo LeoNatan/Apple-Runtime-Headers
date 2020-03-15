@@ -18,9 +18,9 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <HMDCameraIDSDeviceConnectionReceiverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_callSessionEnded:(id)arg1;
 - (void)_socketOpened:(id)arg1;
 @property(readonly, nonatomic) int remoteAudioSocket;

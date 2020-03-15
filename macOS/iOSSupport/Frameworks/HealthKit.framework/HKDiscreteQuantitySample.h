@@ -22,6 +22,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (BOOL)_isConcreteObjectClass;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _hasMostRecentQuantityDateInterval; // @synthesize _hasMostRecentQuantityDateInterval=__hasMostRecentQuantityDateInterval;
 @property(nonatomic) BOOL _hasMostRecentQuantity; // @synthesize _hasMostRecentQuantity=__hasMostRecentQuantity;
 @property(nonatomic) BOOL _hasMaximumQuantity; // @synthesize _hasMaximumQuantity=__hasMaximumQuantity;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic, setter=_setMostRecentQuantity:) HKQuantity *mostRecentQuantity; // @synthesize mostRecentQuantity=_mostRecentQuantity;
 @property(copy, nonatomic, setter=_setMaximumQuantity:) HKQuantity *maximumQuantity; // @synthesize maximumQuantity=_maximumQuantity;
 @property(copy, nonatomic, setter=_setMinimumQuantity:) HKQuantity *minimumQuantity; // @synthesize minimumQuantity=_minimumQuantity;
-- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setAverageQuantity:) HKQuantity *averageQuantity;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     RCSSavedRecordingAccessToken *_fileToken;
 }
 
-@property(retain, nonatomic) RCSSavedRecordingAccessToken *fileToken; // @synthesize fileToken=_fileToken;
 - (void).cxx_destruct;
+@property(retain, nonatomic) RCSSavedRecordingAccessToken *fileToken; // @synthesize fileToken=_fileToken;
 @property(readonly, nonatomic) NSDictionary *settings;
 @property(readonly, nonatomic) AVAudioFormat *processingFormat;
 @property(readonly, nonatomic) AVAudioFormat *fileFormat;

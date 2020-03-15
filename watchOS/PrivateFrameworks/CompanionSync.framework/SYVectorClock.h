@@ -17,8 +17,8 @@
 
 + (Class)clocksType;
 + (void)initialize;
-@property(retain, nonatomic) NSMutableArray *clocks; // @synthesize clocks=_clocks;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *clocks; // @synthesize clocks=_clocks;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -14,9 +14,9 @@
     unsigned long long _osVersion;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long osVersion; // @synthesize osVersion=_osVersion;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)initWithOSVersion:(unsigned long long)arg1 andDisplayName:(id)arg2;
 
 @end

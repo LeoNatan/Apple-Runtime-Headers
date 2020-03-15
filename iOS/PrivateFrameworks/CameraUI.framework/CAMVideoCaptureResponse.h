@@ -25,6 +25,7 @@
     CDStruct_1b6d18a9 _stillDisplayTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 stillDisplayTime; // @synthesize stillDisplayTime=_stillDisplayTime;
 @property(readonly, copy, nonatomic) NSString *stillPersistenceUUID; // @synthesize stillPersistenceUUID=_stillPersistenceUUID;
 @property(readonly, nonatomic) UIImage *previewImage; // @synthesize previewImage=_previewImage;
@@ -36,7 +37,6 @@
 @property(readonly, copy, nonatomic) NSURL *localPersistenceURL; // @synthesize localPersistenceURL=_localPersistenceURL;
 @property(readonly, copy, nonatomic) NSString *persistenceUUID; // @synthesize persistenceUUID=_persistenceUUID;
 @property(readonly, nonatomic) struct CGSize finalExpectedPixelSize; // @synthesize finalExpectedPixelSize=_finalExpectedPixelSize;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 irisStillDisplayTime;
 @property(readonly, nonatomic) NSURL *irisVideoPersistenceURL;
 @property(readonly, nonatomic, getter=isExpectingPairedVideo) _Bool expectingPairedVideo;

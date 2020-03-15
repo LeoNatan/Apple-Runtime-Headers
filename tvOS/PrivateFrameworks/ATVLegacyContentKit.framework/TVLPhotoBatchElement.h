@@ -16,11 +16,11 @@
     NSArray *_items;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) NSString *dimmedTitle; // @synthesize dimmedTitle=_dimmedTitle;
 @property(retain, nonatomic) NSString *boldTitle; // @synthesize boldTitle=_boldTitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;
 

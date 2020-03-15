@@ -6,9 +6,7 @@
 
 #import <NewsArticles/_TtC12NewsArticles28ArticleViewerAppStateMonitor.h>
 
-#import <NewsArticles/SXAppStateMonitor-Protocol.h>
-
-@interface _TtC12NewsArticles28ArticleViewerAppStateMonitor (NewsArticles) <SXAppStateMonitor>
+@interface _TtC12NewsArticles28ArticleViewerAppStateMonitor (NewsArticles)
 - (void)performOnApplicationWindowDidBecomeBackground:(CDUnknownBlockType)arg1;
 - (void)performOnApplicationWindowDidBecomeForeground:(CDUnknownBlockType)arg1;
 - (void)performOnApplicationDidEnterBackground:(CDUnknownBlockType)arg1;

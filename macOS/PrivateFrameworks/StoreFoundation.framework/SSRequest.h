@@ -18,9 +18,9 @@
 }
 
 + (id)_newIdentifier;
+- (void).cxx_destruct;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id <SSRequestDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_finish;
 - (void)_failWithError:(id)arg1;
 - (BOOL)issueRequestForIdentifier:(id)arg1 error:(id *)arg2;

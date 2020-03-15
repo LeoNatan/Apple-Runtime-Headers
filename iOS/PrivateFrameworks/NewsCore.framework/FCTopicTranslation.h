@@ -17,12 +17,12 @@
     NTPBArticleTopic *_articleTopic;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTPBArticleTopic *articleTopic; // @synthesize articleTopic=_articleTopic;
 @property(nonatomic) _Bool isEligibleForGroupingIfFavorited; // @synthesize isEligibleForGroupingIfFavorited=_isEligibleForGroupingIfFavorited;
 @property(nonatomic) _Bool isEligibleForGrouping; // @synthesize isEligibleForGrouping=_isEligibleForGrouping;
 @property(nonatomic) _Bool isHidden; // @synthesize isHidden=_isHidden;
 @property(retain, nonatomic) NSString *tagID; // @synthesize tagID=_tagID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithLanguageBucket:(id)arg1;
 - (id)initWithTagID:(id)arg1;

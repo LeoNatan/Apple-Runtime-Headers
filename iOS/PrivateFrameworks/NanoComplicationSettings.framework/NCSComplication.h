@@ -21,6 +21,7 @@
     unsigned long long _installState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long installState; // @synthesize installState=_installState;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(nonatomic) _Bool cannotBeDisabled; // @synthesize cannotBeDisabled=_cannotBeDisabled;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) NSString *complicationBundleIdentifier; // @synthesize complicationBundleIdentifier=_complicationBundleIdentifier;
 @property(copy, nonatomic) NSString *appBundleIdentifier; // @synthesize appBundleIdentifier=_appBundleIdentifier;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) _Bool isInstalled;
 - (id)description;

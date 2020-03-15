@@ -18,11 +18,11 @@
     NSString *_subtitle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL swapTitleAndSubtitle; // @synthesize swapTitleAndSubtitle=_swapTitleAndSubtitle;
 @property(readonly, copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

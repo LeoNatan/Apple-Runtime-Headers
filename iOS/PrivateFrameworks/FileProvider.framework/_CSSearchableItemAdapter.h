@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)fp_queryFetchAttributes;
-@property(readonly, nonatomic) CSSearchableItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CSSearchableItem *item; // @synthesize item=_item;
 @property(readonly, copy) NSString *fp_cloudContainerIdentifier;
 @property(readonly) _Bool fp_isContainerPristine;
 @property(readonly) _Bool fp_isContainer;

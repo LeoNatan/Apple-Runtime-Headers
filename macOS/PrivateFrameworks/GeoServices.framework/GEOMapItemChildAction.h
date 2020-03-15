@@ -14,9 +14,9 @@
     GEOMapItemChildActionSearch *_childActionSearch;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEOMapItemChildActionSearch *childActionSearch; // @synthesize childActionSearch=_childActionSearch;
 @property(nonatomic) long long childActionType; // @synthesize childActionType=_childActionType;
-- (void).cxx_destruct;
 - (id)initWithChildAction:(id)arg1;
 
 @end

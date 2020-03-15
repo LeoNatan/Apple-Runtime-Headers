@@ -22,6 +22,7 @@
     CBManager *_manager;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char connectedTransport; // @synthesize connectedTransport=_connectedTransport;
 @property(nonatomic) __weak CBManager *manager; // @synthesize manager=_manager;
 @property(nonatomic) long long role; // @synthesize role=_role;
@@ -30,7 +31,6 @@
 @property(nonatomic) long long pairingState; // @synthesize pairingState=_pairingState;
 @property(nonatomic) unsigned long long mtuLength; // @synthesize mtuLength=_mtuLength;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)hasTag:(id)arg1;
 - (void)untag:(id)arg1;
 - (void)tag:(id)arg1;

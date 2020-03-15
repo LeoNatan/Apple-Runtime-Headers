@@ -14,8 +14,8 @@
 }
 
 + (id)sharedManager;
-@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void)updatingUserFonts:(CDUnknownBlockType)arg1;
 - (void)resumeAndShowAlertForSuspendedFontProviders;
 - (void)fontChanged:(id)arg1 reply:(CDUnknownBlockType)arg2;

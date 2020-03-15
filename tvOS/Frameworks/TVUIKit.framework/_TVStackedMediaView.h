@@ -8,7 +8,7 @@
 
 #import <TVUIKit/_TVStackedMediaLoaderDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, UIImage, UIImageView, UIMotionEffectGroup, UIViewPropertyAnimator, _TVStackedMediaDocument, _TVStackedMediaLoader;
+@class NSMutableArray, NSString, UIImage, UIImageView, UIMotionEffectGroup, UIViewPropertyAnimator, _TVStackedMediaDocument, _TVStackedMediaLoader, _TVStackedMediaViewGimballingConfiguration;
 @protocol _TVStackedMediaViewDelegate;
 
 @interface _TVStackedMediaView : UIView <_TVStackedMediaLoaderDelegate>
@@ -37,18 +37,21 @@
     NSString *_currentPreviewAssetPath;
     _TVStackedMediaLoader *_mediaLoader;
     UIViewPropertyAnimator *_videoViewsAnimator;
+    _TVStackedMediaViewGimballingConfiguration *_gimballingConfiguration;
     long long _videoAnimatorConfiguration;
     long long _currentDisplayMode;
     double _maxGimbalMovement;
     struct CGPoint _focusMovementDirection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool failedToLoadVideoAsset; // @synthesize failedToLoadVideoAsset=_failedToLoadVideoAsset;
 @property(nonatomic) _Bool failedToLoadPreviewAsset; // @synthesize failedToLoadPreviewAsset=_failedToLoadPreviewAsset;
 @property(nonatomic) double maxGimbalMovement; // @synthesize maxGimbalMovement=_maxGimbalMovement;
 @property(nonatomic) struct CGPoint focusMovementDirection; // @synthesize focusMovementDirection=_focusMovementDirection;
 @property(nonatomic) long long currentDisplayMode; // @synthesize currentDisplayMode=_currentDisplayMode;
 @property(nonatomic) long long videoAnimatorConfiguration; // @synthesize videoAnimatorConfiguration=_videoAnimatorConfiguration;
+@property(retain, nonatomic) _TVStackedMediaViewGimballingConfiguration *gimballingConfiguration; // @synthesize gimballingConfiguration=_gimballingConfiguration;
 @property(retain, nonatomic) UIViewPropertyAnimator *videoViewsAnimator; // @synthesize videoViewsAnimator=_videoViewsAnimator;
 @property(retain, nonatomic) _TVStackedMediaLoader *mediaLoader; // @synthesize mediaLoader=_mediaLoader;
 @property(retain, nonatomic) NSString *currentPreviewAssetPath; // @synthesize currentPreviewAssetPath=_currentPreviewAssetPath;
@@ -66,7 +69,6 @@
 @property(retain, nonatomic) UIImage *fallbackImage; // @synthesize fallbackImage=_fallbackImage;
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 @property(nonatomic) __weak id <_TVStackedMediaViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)stackedMediaLoaderVideoToPreviewTransitionCompleted:(id)arg1;
 - (void)stackedMediaLoaderReadyToTransitionVideoToPreview:(id)arg1;
 - (void)stackedMediaLoaderPreviewToVideoTransitionCompleted:(id)arg1;
@@ -75,11 +77,10 @@
 - (void)stackedMediaLoader:(id)arg1 readyWithPlayerLayer:(id)arg2 forEntry:(id)arg3;
 - (void)_playVideoViews:(_Bool)arg1;
 - (struct CGRect)_viewFrameForEntryAtLayerIndex:(unsigned long long)arg1;
-- (double)_gimbalAmountForEntryAtLayerIndex:(unsigned long long)arg1;
 - (void)_uninstallMotionEffect;
 - (void)_installMotionEffect;
 - (void)_calculateMaxGimbalAmount;
-- (void)_applyGimbalMovementToView:(id)arg1 withFrame:(struct CGRect)arg2 gimbalAmount:(double)arg3;
+- (void)_applyGimbalMovementToView:(id)arg1 withFrame:(struct CGRect)arg2 gimbalMovement:(double)arg3;
 - (void)_positionOverlayView;
 - (void)_positionGimballingDocumentView:(id)arg1 forLayerAtIndex:(unsigned long long)arg2;
 - (void)_positionGimballingDocumentViews;

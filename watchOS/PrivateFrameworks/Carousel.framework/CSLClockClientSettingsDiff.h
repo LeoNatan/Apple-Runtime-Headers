@@ -18,8 +18,8 @@
 
 + (id)diffFromSettings:(id)arg1 toSettings:(id)arg2;
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) BSSettingsDiff *diff; // @synthesize diff=_diff;
 - (void).cxx_destruct;
+@property(retain, nonatomic) BSSettingsDiff *diff; // @synthesize diff=_diff;
 @property(readonly, copy) NSString *description;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;

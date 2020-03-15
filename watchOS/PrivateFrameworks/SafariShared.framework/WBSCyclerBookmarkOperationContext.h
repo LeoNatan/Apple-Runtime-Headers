@@ -16,10 +16,10 @@
     NSString *_titlePrefix;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *titlePrefix; // @synthesize titlePrefix=_titlePrefix;
 @property(retain, nonatomic) WBSCyclerBookmarkListRepresentation *topLevelBookmark; // @synthesize topLevelBookmark=_topLevelBookmark;
 @property(retain, nonatomic) id <WBSCyclerTestTarget> testTarget; // @synthesize testTarget=_testTarget;
-- (void).cxx_destruct;
 - (id)_copyBookmark:(id)arg1 filteringWithIdentifierWhitelist:(id)arg2;
 - (id)_buildDictionaryOfDescendantIdentifiersToParentIdentifiersFromList:(id)arg1;
 - (_Bool)_isBookmarkValid:(id)arg1;

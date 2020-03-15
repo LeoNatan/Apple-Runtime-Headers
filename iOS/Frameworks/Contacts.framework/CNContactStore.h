@@ -34,8 +34,8 @@
 + (_Bool)isXPCDataMapperStore:(id)arg1;
 + (id)contactStoreForPublicAddressBook:(void *)arg1;
 + (id)_contactStoreForPublicAddressBook:(void *)arg1;
-@property(retain, nonatomic) CNContainerCache *containerCache; // @synthesize containerCache=_containerCache;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNContainerCache *containerCache; // @synthesize containerCache=_containerCache;
 - (_Bool)hasAccountFirstSyncCompleted;
 - (id)authorizedKeysForContactKeys:(id)arg1;
 - (void)requestAuthorization:(long long)arg1 entityType:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;

@@ -17,9 +17,9 @@
     HFDiscoveredAccessory *_discoveredAccessory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFDiscoveredAccessory *discoveredAccessory; // @synthesize discoveredAccessory=_discoveredAccessory;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
-- (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)accessories;
 @property(readonly, nonatomic) NSSet *services;

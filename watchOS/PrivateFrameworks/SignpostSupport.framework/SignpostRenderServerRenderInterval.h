@@ -20,6 +20,7 @@
     unsigned long long _renderServerTID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long renderServerTID; // @synthesize renderServerTID=_renderServerTID;
 @property(readonly, nonatomic) int renderServerPID; // @synthesize renderServerPID=_renderServerPID;
 @property(readonly, nonatomic) NSString *renderSkipReason; // @synthesize renderSkipReason=_renderSkipReason;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) unsigned int displayID; // @synthesize displayID=_displayID;
 @property(readonly, nonatomic) unsigned long long displayRefreshIntervalMachContinuousTime; // @synthesize displayRefreshIntervalMachContinuousTime=_displayRefreshIntervalMachContinuousTime;
 @property(readonly, nonatomic) unsigned int frameSeed; // @synthesize frameSeed=_frameSeed;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool didSkipRender;
 - (id)initWithRenderServerRenderInterval:(id)arg1;
 

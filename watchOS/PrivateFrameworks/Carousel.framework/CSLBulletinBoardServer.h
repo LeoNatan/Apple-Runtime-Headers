@@ -19,12 +19,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CSLBulletinSectionInfoCache *sectionInfoCache; // @synthesize sectionInfoCache=_sectionInfoCache;
 @property(readonly, nonatomic) CSLBulletinDistributorSystemStateProvider *bulletinDistributorSystemStateProvider; // @synthesize bulletinDistributorSystemStateProvider=_bulletinDistributorSystemStateProvider;
 @property(retain) BLTBulletinDistributorClient *bulletinDistributorClient; // @synthesize bulletinDistributorClient=_bulletinDistributorClient;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *bulletinBoardQueue; // @synthesize bulletinBoardQueue=_bulletinBoardQueue;
 @property(readonly, nonatomic) BBDataProviderConnection *bulletinBoardConnection; // @synthesize bulletinBoardConnection=_bulletinBoardConnection;
-- (void).cxx_destruct;
 - (void)start;
 - (void)prepare;
 

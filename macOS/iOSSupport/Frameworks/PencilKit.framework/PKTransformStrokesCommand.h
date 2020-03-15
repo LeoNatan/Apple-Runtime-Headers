@@ -15,9 +15,9 @@
 }
 
 + (id)commandForTransforming:(id)arg1 drawing:(id)arg2 strokeTransform:(struct CGAffineTransform)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGAffineTransform strokeTransform; // @synthesize strokeTransform=_strokeTransform;
 @property(readonly, nonatomic) NSArray *strokes; // @synthesize strokes=_strokes;
-- (void).cxx_destruct;
 - (id)description;
 - (void)applyToDrawing:(id)arg1;
 - (id)invertedInDrawing:(id)arg1;

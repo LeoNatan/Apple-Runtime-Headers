@@ -8,7 +8,7 @@
 
 #import <NanoTimeKit/CLKComplicationClientInvalidationObserver-Protocol.h>
 
-@class CLKComplicationClient, NSString, NSTimer, NTKRemoteComplicationBudgetManager, NTKRemoteComplicationOperation, SPComplicationConnection;
+@class CLKComplicationClient, NSNumber, NSString, NSTimer, NTKRemoteComplicationBudgetManager, NTKRemoteComplicationOperation, SPComplicationConnection;
 @protocol NTKRemoteComplicationOperationSessionDelegate, OS_dispatch_queue;
 
 @interface NTKRemoteComplicationOperationSession : NSObject <CLKComplicationClientInvalidationObserver>
@@ -18,7 +18,7 @@
     int _meteringType;
     CLKComplicationClient *_client;
     SPComplicationConnection *_complicationConnection;
-    struct NSNumber *_waitForClientToken;
+    NSNumber *_waitForClientToken;
     NSTimer *_minimumWakeTimer;
     NSTimer *_prolongWakeTimer;
     NSTimer *_maximumWakeTimer;
@@ -32,9 +32,9 @@
     id <NTKRemoteComplicationOperationSessionDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *appBundleID; // @synthesize appBundleID=_appBundleID;
 @property(readonly, nonatomic) NSString *clientID; // @synthesize clientID=_clientID;
-- (void).cxx_destruct;
 - (void)complicationClientInvalidated:(id)arg1;
 - (void)_maximumSessionTimerFired;
 - (void)_prolongSessionTimerFired;

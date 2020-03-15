@@ -15,10 +15,10 @@
     NSString *_bundleIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (long long)compare:(id)arg1;
 - (id)initWithName:(id)arg1 icon:(id)arg2 bundleIdentifier:(id)arg3;
 - (id)initWithBundleIdentifier:(id)arg1;

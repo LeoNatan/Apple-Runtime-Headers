@@ -14,8 +14,8 @@
 }
 
 + (id)requestWithFetchRequest:(id)arg1;
-@property(readonly, nonatomic) NSFetchRequest *fetchRequest; // @synthesize fetchRequest=_fetchRequest;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSFetchRequest *fetchRequest; // @synthesize fetchRequest=_fetchRequest;
 - (id)description;
 - (id)initWithEntity:(id)arg1 predicate:(id)arg2 sortDescriptors:(id)arg3;
 - (id)initWithEntity:(id)arg1 predicate:(id)arg2;

@@ -66,6 +66,7 @@
 }
 
 + (Class)hashedPeopleIDsType;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool noInteractionWithinMaxWindow; // @synthesize noInteractionWithinMaxWindow=_noInteractionWithinMaxWindow;
 @property(nonatomic) unsigned long long dateRemovedFromNotificationCenter; // @synthesize dateRemovedFromNotificationCenter=_dateRemovedFromNotificationCenter;
 @property(nonatomic) unsigned long long dateAddedToNotificationCenter; // @synthesize dateAddedToNotificationCenter=_dateAddedToNotificationCenter;
@@ -89,7 +90,6 @@
 @property(retain, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

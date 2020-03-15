@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <PUTilingCoordinateSystem> _fixedCoordinateSystem;
 }
 
-@property(retain, nonatomic) id <PUTilingCoordinateSystem> fixedCoordinateSystem; // @synthesize fixedCoordinateSystem=_fixedCoordinateSystem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <PUTilingCoordinateSystem> fixedCoordinateSystem; // @synthesize fixedCoordinateSystem=_fixedCoordinateSystem;
 - (id)_layoutInfoWithDefaultDisappearance:(id)arg1;
 - (id)finalLayoutInfoForDisappearingTileController:(id)arg1 fromLayoutInfo:(id)arg2;
 - (id)initialLayoutInfoForAppearingTileController:(id)arg1 toLayoutInfo:(id)arg2;

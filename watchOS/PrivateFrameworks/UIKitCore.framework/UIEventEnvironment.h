@@ -18,6 +18,8 @@ __attribute__((visibility("hidden")))
     UIRemoteControlEvent *_remoteControlEvent;
     _Bool _isSystemApplication;
     double _commitTimeForTouchEvents;
+    double _beginTimeForTouchEvents;
+    double _deadlineTimeForTouchEvents;
     NSMutableSet *_windowsWithActiveTouchMaps;
     _Bool _hasSeenAnyPencilEvents;
     UIPressesEvent *_fallbackPressesEvent;
@@ -36,10 +38,10 @@ __attribute__((visibility("hidden")))
 
 + (void)_setKeyboardWindowSceneConnected:(_Bool)arg1;
 + (_Bool)_isKeyboardWindowSceneConnected;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *windowsWithActiveTouchMaps; // @synthesize windowsWithActiveTouchMaps=_windowsWithActiveTouchMaps;
 @property(retain, nonatomic) NSMutableArray *eventQueue; // @synthesize eventQueue=_eventQueue;
 @property(nonatomic) UIApplication *application; // @synthesize application=_application;
-- (void).cxx_destruct;
 - (void)_sendRemoteControlEvent:(int)arg1;
 - (void)_sendMotionCancelled:(int)arg1;
 - (void)_sendMotionEnded:(int)arg1;

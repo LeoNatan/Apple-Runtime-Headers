@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CADisplayLink;
+@class CADisplayLink, NSPointerArray;
 @protocol _SFDynamicBarAnimatorDelegate;
 
 @interface _SFDynamicBarAnimator : NSObject
@@ -23,6 +23,7 @@
     float _lastOffset;
     _Bool _inSteadyState;
     _Bool _performingBatchUpdates;
+    NSPointerArray *_stateObservers;
     _Bool _sendingOutputsDidChange;
     int _state;
     float _topBarHeight;
@@ -31,6 +32,7 @@
     id <_SFDynamicBarAnimatorDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_SFDynamicBarAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) float minimumTopBarHeight; // @synthesize minimumTopBarHeight=_minimumTopBarHeight;
 @property(readonly, nonatomic, getter=isSendingOutputsDidChange) _Bool sendingOutputsDidChange; // @synthesize sendingOutputsDidChange=_sendingOutputsDidChange;
@@ -38,7 +40,6 @@
 @property(readonly, nonatomic) float topBarHeight; // @synthesize topBarHeight=_topBarHeight;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
 @property(readonly, nonatomic, getter=isTrackingDrag) _Bool trackingDrag; // @synthesize trackingDrag=_dragging;
-- (void).cxx_destruct;
 - (void)setBottomBarOffset:(float)arg1 forState:(int)arg2;
 - (void)setTopBarHeight:(float)arg1 forState:(int)arg2;
 - (void)performBatchUpdates:(CDUnknownBlockType)arg1;
@@ -60,6 +61,8 @@
 - (void)_transitionToSteadyState;
 - (void)attemptTransitionToState:(int)arg1 animated:(_Bool)arg2;
 - (void)_moveBarsWithDelta:(float)arg1;
+- (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

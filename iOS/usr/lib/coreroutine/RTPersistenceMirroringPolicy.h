@@ -16,9 +16,9 @@
     RTTokenBucket *_tokenBucket;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTTokenBucket *tokenBucket; // @synthesize tokenBucket=_tokenBucket;
 @property(readonly, nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
-- (void).cxx_destruct;
 - (id)qualityOfServiceToString:(long long)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

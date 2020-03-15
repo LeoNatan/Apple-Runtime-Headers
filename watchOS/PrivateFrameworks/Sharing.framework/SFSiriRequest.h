@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _startTicks;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool synthesizing; // @synthesize synthesizing=_synthesizing;
 @property(nonatomic) unsigned long long startTicks; // @synthesize startTicks=_startTicks;
 @property(copy, nonatomic) CDUnknownBlockType speechStartHandler; // @synthesize speechStartHandler=_speechStartHandler;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id owner; // @synthesize owner=_owner;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(nonatomic) double delaySecs; // @synthesize delaySecs=_delaySecs;
-- (void).cxx_destruct;
 
 @end
 

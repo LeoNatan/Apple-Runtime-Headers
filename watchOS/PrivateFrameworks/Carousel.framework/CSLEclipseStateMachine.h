@@ -23,12 +23,12 @@
     CSLEclipseStateMachineResolvingState *_resolvingState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLEclipseStateMachineResolvingState *resolvingState; // @synthesize resolvingState=_resolvingState;
 @property(retain, nonatomic) CSLEclipseStateMachineEclipsedState *eclipsedState; // @synthesize eclipsedState=_eclipsedState;
 @property(retain, nonatomic) CSLEclipseStateMachineInteractiveState *interactiveState; // @synthesize interactiveState=_interactiveState;
 @property(retain, nonatomic) CSLEclipseStateMachineDeclipsedState *declipsedState; // @synthesize declipsedState=_declipsedState;
 @property(nonatomic) __weak id <CSLEclipseStateMachineDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setCharging:(_Bool)arg1;
 - (void)setTheaterModeEnabled:(_Bool)arg1;
 - (_Bool)handleTap:(id)arg1;

@@ -21,6 +21,7 @@
     NSString *_reason;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(nonatomic) __weak SBHIDInterface *HIDInterface; // @synthesize HIDInterface=_HIDInterface;
 @property(nonatomic) long long source; // @synthesize source=_source;
@@ -28,7 +29,6 @@
 @property(nonatomic) _Bool pocketTouchesExpected; // @synthesize pocketTouchesExpected=_pocketTouchesExpected;
 @property(nonatomic) _Bool suspendMultitouch; // @synthesize suspendMultitouch=_suspendMultitouch;
 @property(nonatomic) _Bool suspendProximitySensor; // @synthesize suspendProximitySensor=_suspendProximitySensor;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

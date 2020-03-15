@@ -18,13 +18,13 @@
     NSMutableSet *_rootFrames;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(retain) NSMutableSet *rootFrames; // @synthesize rootFrames=_rootFrames;
 @property unsigned long long lastTimestampIndex; // @synthesize lastTimestampIndex=_lastTimestampIndex;
 @property unsigned long long firstTimestampIndex; // @synthesize firstTimestampIndex=_firstTimestampIndex;
 @property unsigned int count; // @synthesize count=_count;
 @property(readonly) NSUUID *mainBinaryUuid; // @synthesize mainBinaryUuid=_mainBinaryUuid;
-- (void).cxx_destruct;
 - (void)printToOutputStream:(id)arg1;
 - (void)printBinaryImagesToOutputStream:(id)arg1;
 - (void)printStacksToOutputStream:(id)arg1;

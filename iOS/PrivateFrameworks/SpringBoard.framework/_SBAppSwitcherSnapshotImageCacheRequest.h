@@ -17,12 +17,12 @@
     XBApplicationSnapshot *_snapshot;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) XBApplicationSnapshot *snapshot; // @synthesize snapshot=_snapshot;
 @property(retain, nonatomic) SBDisplayItem *displayItem; // @synthesize displayItem=_displayItem;
 @property(retain, nonatomic) SBAppLayout *appLayout; // @synthesize appLayout=_appLayout;
 @property(nonatomic) _Bool loadFullSizeSnapshot; // @synthesize loadFullSizeSnapshot=_loadFullSizeSnapshot;
 @property(readonly, nonatomic) unsigned long long sequenceID; // @synthesize sequenceID=_sequenceID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithSequenceID:(unsigned long long)arg1;
 

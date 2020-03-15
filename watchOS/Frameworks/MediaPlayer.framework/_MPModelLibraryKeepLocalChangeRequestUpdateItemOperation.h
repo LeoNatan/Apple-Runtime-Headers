@@ -14,9 +14,9 @@
     int _keepLocal;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int keepLocal; // @synthesize keepLocal=_keepLocal;
 @property(retain, nonatomic) MPMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
-- (void).cxx_destruct;
 - (void)execute;
 
 @end

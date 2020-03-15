@@ -26,12 +26,12 @@
 }
 
 + (void)load;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMChatTranscriptLayoutSpecification *layoutSpecification; // @synthesize layoutSpecification=_layoutSpecification;
 @property(retain, nonatomic) IMChatTranscriptLayoutEngine *layoutEngine; // @synthesize layoutEngine=_layoutEngine;
 @property __weak NSCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) id <IMChatTranscriptItemVending> chatTranscriptItemProvider; // @synthesize chatTranscriptItemProvider=_chatTranscriptItemProvider;
 @property __weak id <SONativeTranscriptViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) IMChatTranscriptLayoutSpecification *test_layoutSpecification;
 @property(retain, nonatomic, setter=test_setChatTranscriptItemProvider:) id <IMChatTranscriptItemVending> test_chatTranscriptItemProvider;
 @property(readonly, nonatomic) NSCollectionView *test_collectionView;

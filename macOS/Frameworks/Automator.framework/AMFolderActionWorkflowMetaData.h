@@ -15,9 +15,9 @@
 }
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSString *savedFolderActionFolderPath; // @synthesize savedFolderActionFolderPath=_savedFolderActionFolderPath;
 @property(copy, nonatomic) NSString *folderActionFolderPath; // @synthesize folderActionFolderPath=_folderActionFolderPath;
-- (void).cxx_destruct;
 - (id)metaData;
 - (void)setFromDictionary:(id)arg1;
 

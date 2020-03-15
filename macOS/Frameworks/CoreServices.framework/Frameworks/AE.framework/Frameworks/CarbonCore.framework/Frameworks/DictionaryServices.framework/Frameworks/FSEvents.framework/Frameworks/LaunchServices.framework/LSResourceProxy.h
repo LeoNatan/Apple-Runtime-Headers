@@ -19,9 +19,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setIconsDictionary:) _LSLazyPropertyList *_iconsDictionary; // @synthesize _iconsDictionary=__iconsDictionary;
 @property(copy, nonatomic, setter=_setLocalizedName:) NSString *localizedName; // @synthesize localizedName=_localizedName;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long propertyListCachingStrategy;
 - (id)iconDataForVariant:(int)arg1 withOptions:(int)arg2;
 - (id)iconDataForVariant:(int)arg1;

@@ -17,12 +17,12 @@
     UIView *_overlayView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
 @property(readonly, nonatomic) __TVSUIWallpaperProxy *wallpaperProxy; // @synthesize wallpaperProxy=_wallpaperProxy;
 @property(readonly, nonatomic) long long currentUserInterfaceStyle; // @synthesize currentUserInterfaceStyle=_currentUserInterfaceStyle;
 @property(readonly, copy, nonatomic) NSArray *userInterfaceStyles; // @synthesize userInterfaceStyles=_userInterfaceStyles;
 @property(readonly, nonatomic) long long variant; // @synthesize variant=_variant;
-- (void).cxx_destruct;
 - (void)_updateWallpaperForReducedTransparency:(_Bool)arg1;
 - (void)_updateWallpaperImageAnimated:(_Bool)arg1;
 - (void)reducedTransparencyDidChange:(id)arg1;

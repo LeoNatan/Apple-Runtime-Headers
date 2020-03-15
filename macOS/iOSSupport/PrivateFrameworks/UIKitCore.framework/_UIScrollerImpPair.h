@@ -40,12 +40,12 @@ __attribute__((visibility("hidden")))
 + (void)_scrollerStyleRecommendationChanged:(id)arg1;
 + (void)_updateAllScrollerImpPairsForNewRecommendedScrollerStyle:(long long)arg1;
 + (void)_observeRecommendedScrollerStyle;
+- (void).cxx_destruct;
 @property(nonatomic) long long scrollerStyle; // @synthesize scrollerStyle=_scrollerStyle;
 @property(retain, nonatomic) _UIScrollerImp *horizontalScrollerImp; // @synthesize horizontalScrollerImp=_horizontalScrollerImp;
 @property(retain, nonatomic) _UIScrollerImp *verticalScrollerImp; // @synthesize verticalScrollerImp=_verticalScrollerImp;
 @property(nonatomic) __weak id <_UIScrollerImpPairDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UIView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (BOOL)_gestureRecognizer:(id)arg1 canPreventGestureRecognizer:(id)arg2;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_hoverGestureRecognizerChanged:(id)arg1;

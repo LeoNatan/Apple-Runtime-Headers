@@ -31,13 +31,13 @@
     id <ORBTapGestureRecognizerDelegate> _orbDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldAllowTouchMove; // @synthesize shouldAllowTouchMove=_shouldAllowTouchMove;
 @property(nonatomic) _Bool shouldCancelOtherGestureRecognizers; // @synthesize shouldCancelOtherGestureRecognizers=_shouldCancelOtherGestureRecognizers;
 @property(nonatomic) _Bool acceptLongPress; // @synthesize acceptLongPress=_acceptLongPress;
 @property(nonatomic) __weak id <ORBTapGestureRecognizerDelegate> orbDelegate; // @synthesize orbDelegate=_orbDelegate;
 @property(readonly, nonatomic) float progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) _Bool hasLatched; // @synthesize hasLatched=_hasLatched;
-- (void).cxx_destruct;
 - (void)_cleanupLongPressGesture;
 - (void)_clearLongPressProgressTimer;
 - (void)_scheduleLongPressProgressTimerWithDelay:(double)arg1;

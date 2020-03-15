@@ -21,6 +21,7 @@
     UILabel *__label;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *_label; // @synthesize _label=__label;
 @property(readonly, nonatomic) UIView *_crossHairY; // @synthesize _crossHairY=__crossHairY;
 @property(readonly, nonatomic) UIView *_crossHairX; // @synthesize _crossHairX=__crossHairX;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool textOnTop; // @synthesize textOnTop=_textOnTop;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 @property(copy, nonatomic) NSString *text;
 @property(nonatomic) double borderWidth;

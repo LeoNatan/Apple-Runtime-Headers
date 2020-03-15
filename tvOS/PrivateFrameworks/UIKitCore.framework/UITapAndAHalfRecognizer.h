@@ -21,11 +21,12 @@ __attribute__((visibility("hidden")))
     UIDelayedAction *_tapTimer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double minimumFinalPressDuration; // @synthesize minimumFinalPressDuration=_minimumFinalPressDuration;
 @property(nonatomic) double allowableMovement; // @synthesize allowableMovement=_allowableMovement;
 @property(retain, nonatomic) UITouch *touch; // @synthesize touch=_touch;
 @property(nonatomic) int numberOfFullTaps; // @synthesize numberOfFullTaps=_numberOfFullTaps;
-- (void).cxx_destruct;
+@property(readonly, nonatomic) struct CGPoint locationOfFirstTap;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

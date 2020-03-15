@@ -15,8 +15,8 @@
     NSArray *_automaticallyLoadedAssetKeys;
 }
 
-@property(readonly, copy, nonatomic) NSArray *automaticallyLoadedAssetKeys; // @synthesize automaticallyLoadedAssetKeys=_automaticallyLoadedAssetKeys;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *automaticallyLoadedAssetKeys; // @synthesize automaticallyLoadedAssetKeys=_automaticallyLoadedAssetKeys;
 - (id)createPlayerItemWithAsset:(id)arg1;
 - (id)initWithAutomaticallyLoadedAssetKeys:(id)arg1;
 

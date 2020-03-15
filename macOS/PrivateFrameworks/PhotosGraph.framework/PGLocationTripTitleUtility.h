@@ -25,6 +25,7 @@
 + (id)_locationTitleWithLocationNode:(id)arg1 addressNode:(id)arg2 countryNode:(id)arg3 allowSecondPart:(BOOL)arg4;
 + (void)_aoiTitleWithLocationNodes:(id)arg1 momentNodes:(id)arg2 allowLongAOI:(BOOL)arg3 result:(CDUnknownBlockType)arg4;
 + (id)_filteredCityNodesByNameForCityNodes:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long tripTitleType; // @synthesize tripTitleType=_tripTitleType;
 @property(retain, nonatomic) NSArray *usedTitleComponents; // @synthesize usedTitleComponents=_usedTitleComponents;
 @property(retain, nonatomic) PGIncompleteLocationResolver *incompleteLocationResolver; // @synthesize incompleteLocationResolver=_incompleteLocationResolver;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSSet *momentNodes; // @synthesize momentNodes=_momentNodes;
 @property(retain, nonatomic) NSSet *usedLocationNodes; // @synthesize usedLocationNodes=_usedLocationNodes;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)_bestAddressNodeForCityNodes:(id)arg1 inMomentNodes:(id)arg2;
 - (void)_cityTitleWithCityNode:(id)arg1 countryNode:(id)arg2 visitedCountryOnlyOnce:(BOOL)arg3 momentNodes:(id)arg4 result:(CDUnknownBlockType)arg5;
 - (id)_cityNodesFromMomentNodes:(id)arg1;

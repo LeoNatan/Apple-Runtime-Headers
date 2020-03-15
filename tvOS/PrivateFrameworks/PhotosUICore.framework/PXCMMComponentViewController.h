@@ -13,8 +13,8 @@
     PXCMMSession *_session;
 }
 
-@property(readonly, nonatomic) PXCMMSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXCMMSession *session; // @synthesize session=_session;
 - (double)preferredContentHeightForWidth:(double)arg1;
 - (id)initWithSession:(id)arg1;
 - (id)initWithCoder:(id)arg1;

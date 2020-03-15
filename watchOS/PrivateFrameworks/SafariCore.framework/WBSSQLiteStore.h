@@ -21,11 +21,11 @@
     NSObject<OS_dispatch_queue> *_databaseQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *databaseQueue; // @synthesize databaseQueue=_databaseQueue;
 @property(readonly, nonatomic) WBSSQLiteDatabase *database; // @synthesize database=_database;
 @property(nonatomic) __weak id <WBSSQLiteStoreDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSURL *databaseURL; // @synthesize databaseURL=_databaseURL;
-- (void).cxx_destruct;
 - (void)_releaseDatabaseCoordinationLock;
 - (_Bool)_acquireDatabaseCoordinationLockForDatabaseURL:(id)arg1;
 - (id)_databaseCoordinationLockURLForDatabaseURL:(id)arg1;

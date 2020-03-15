@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <VideosUI/VUIMediaEntitiesDataSource.h>
 
 #import <VideosUI/SSDownloadManagerObserver-Protocol.h>
 #import <VideosUI/VUIDownloadManagerDelegate-Protocol.h>
@@ -14,12 +14,12 @@
 @protocol VUIDownloadDataSourceDelegate;
 
 __attribute__((visibility("hidden")))
-@interface VUIDownloadDataSource : NSObject <VUIMediaEntitiesFetchControllerDelegate, VUIDownloadManagerDelegate, SSDownloadManagerObserver>
+@interface VUIDownloadDataSource : VUIMediaEntitiesDataSource <VUIMediaEntitiesFetchControllerDelegate, VUIDownloadManagerDelegate, SSDownloadManagerObserver>
 {
     _Bool _hasFetchedAllDownloadEntities;
     _Bool _hasFetchedAllDownloadedEntities;
     _Bool _performingRentalExpirationFetch;
-    id <VUIDownloadDataSourceDelegate> _delegate;
+    id <VUIDownloadDataSourceDelegate> _downloadDelegate;
     NSArray *_downloadEntities;
     VUIMediaLibrary *_mediaLibrary;
     VUIMediaEntitiesFetchController *_downloadedEntitiesFetchController;
@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_groupingByShowIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *groupingByShowIdentifier; // @synthesize groupingByShowIdentifier=_groupingByShowIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *episodesDownloadingForShow; // @synthesize episodesDownloadingForShow=_episodesDownloadingForShow;
 @property(retain, nonatomic) NSArray *activelyDownloadingMediaItems; // @synthesize activelyDownloadingMediaItems=_activelyDownloadingMediaItems;
@@ -45,8 +46,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUIMediaEntitiesFetchController *downloadedEntitiesFetchController; // @synthesize downloadedEntitiesFetchController=_downloadedEntitiesFetchController;
 @property(readonly, nonatomic) VUIMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
 @property(retain, nonatomic) NSArray *downloadEntities; // @synthesize downloadEntities=_downloadEntities;
-@property(nonatomic) __weak id <VUIDownloadDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
+@property(nonatomic) __weak id <VUIDownloadDataSourceDelegate> downloadDelegate; // @synthesize downloadDelegate=_downloadDelegate;
 - (id)_coalesceActiveDownloadEntitiesAndDownloadedEntities;
 - (_Bool)_doesEpisodeSet:(id)arg1 containMediaEntity:(id)arg2;
 - (void)_notifyDelegatesDownloadsFetchCompletedWithChanges:(_Bool)arg1;
@@ -70,7 +70,8 @@ __attribute__((visibility("hidden")))
 - (void)controller:(id)arg1 fetchRequests:(id)arg2 didCompleteWithResult:(id)arg3;
 - (void)loadDownloadData;
 - (void)dealloc;
-- (id)initWithMediaLibrary:(id)arg1;
+- (void)startFetch;
+- (id)initWithMediaLibrary:(id)arg1 fetchRequest:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

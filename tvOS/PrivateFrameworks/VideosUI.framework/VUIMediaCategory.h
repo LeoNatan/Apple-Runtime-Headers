@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)mediaCatgeoryForType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *supportedChildMediaCollectionTypes; // @synthesize supportedChildMediaCollectionTypes=_supportedChildMediaCollectionTypes;
 @property(copy, nonatomic) NSSet *supportedMediaCollectionTypes; // @synthesize supportedMediaCollectionTypes=_supportedMediaCollectionTypes;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_initWithType:(unsigned long long)arg1;
 - (id)init;

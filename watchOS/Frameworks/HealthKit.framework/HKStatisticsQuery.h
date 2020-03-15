@@ -22,11 +22,11 @@
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
 + (Class)configurationClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_dateInterval, setter=_setDateInterval:) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
 @property(nonatomic) unsigned int mergeStrategy; // @synthesize mergeStrategy=_mergeStrategy;
 @property(readonly, nonatomic) unsigned int options; // @synthesize options=_options;
 @property(readonly, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (void)client_deliverStatistics:(id)arg1 forQuery:(id)arg2;
 - (void)queue_deliverError:(id)arg1;
 - (void)queue_validate;

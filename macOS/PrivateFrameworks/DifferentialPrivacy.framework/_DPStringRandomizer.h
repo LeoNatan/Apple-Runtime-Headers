@@ -15,9 +15,9 @@
 }
 
 + (id)stringRandomizerWithEpsilon:(double)arg1 privatizationAlgorithm:(unsigned long long)arg2 dataAlgorithm:(unsigned long long)arg3 algorithmParameters:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long algorithm; // @synthesize algorithm=_algorithm;
 @property(readonly, nonatomic) id <_DPStringRandomizer> randomizer; // @synthesize randomizer=_randomizer;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithEpsilon:(double)arg1 privatizationAlgorithm:(unsigned long long)arg2 dataAlgorithm:(unsigned long long)arg3 algorithmParameters:(id)arg4;
 - (id)init;

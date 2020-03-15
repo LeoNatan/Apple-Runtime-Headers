@@ -34,9 +34,9 @@
 + (Class)slottedAssetClass;
 + (Class)repIdentifierClass;
 + (_Bool)isAbstractCatalogItemClass;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long conflictState; // @synthesize conflictState=_conflictState;
 @property(copy, nonatomic) IBICSlot *slot; // @synthesize slot=_slot;
-- (void).cxx_destruct;
 - (id)languageComponentsRepresentedByConflictFreeSiblings;
 - (long long)compareForVariantMatching:(id)arg1;
 - (long long)filteringPriorityForVariantSelection;

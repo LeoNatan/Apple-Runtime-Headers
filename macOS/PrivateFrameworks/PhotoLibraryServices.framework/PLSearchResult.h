@@ -13,8 +13,8 @@
     PSIGroupResult *_groupResult;
 }
 
-@property(readonly, nonatomic) PSIGroupResult *groupResult; // @synthesize groupResult=_groupResult;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PSIGroupResult *groupResult; // @synthesize groupResult=_groupResult;
 - (BOOL)isImplicitlyTokenized;
 - (BOOL)isMatchedByIdentifierAtIndex:(long long)arg1;
 - (BOOL)isContentStringTextSearchableAtIndex:(long long)arg1;

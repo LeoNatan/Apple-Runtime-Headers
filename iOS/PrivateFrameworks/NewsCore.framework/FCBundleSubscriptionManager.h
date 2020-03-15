@@ -26,6 +26,7 @@
     id <FCCoreConfigurationManager> _configurationManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
 @property(retain, nonatomic) id <FCBundleChannelProviderType> bundleChannelProvider; // @synthesize bundleChannelProvider=_bundleChannelProvider;
 @property(retain, nonatomic) NFMutexLock *accessLock; // @synthesize accessLock=_accessLock;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) FCBundleSubscription *cachedSubscription; // @synthesize cachedSubscription=_cachedSubscription;
 @property(readonly, nonatomic) FCPurchaseLookupRecordSource *purchaseLookupRecordSource; // @synthesize purchaseLookupRecordSource=_purchaseLookupRecordSource;
 @property(readonly, nonatomic) id <FCBundleEntitlementsProviderType> bundleEntitlementsProvider; // @synthesize bundleEntitlementsProvider=_bundleEntitlementsProvider;
-- (void).cxx_destruct;
 - (void)prepareForUseWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, copy, nonatomic) FCBundleSubscription *bundleSubscription;
 - (id)changeSetBetween:(id)arg1 newSubscription:(id)arg2;

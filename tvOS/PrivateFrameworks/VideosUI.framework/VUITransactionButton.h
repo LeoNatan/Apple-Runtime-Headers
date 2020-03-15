@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_textContentTitleBackup;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *textContentTitleBackup; // @synthesize textContentTitleBackup=_textContentTitleBackup;
 @property(retain, nonatomic) VUICircularProgress *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 @property(nonatomic) _Bool monitorTransaction; // @synthesize monitorTransaction=_monitorTransaction;
 @property(nonatomic, getter=isWaitingForTransactionToStart) _Bool waitingForTransactionToStart; // @synthesize waitingForTransactionToStart=_waitingForTransactionToStart;
-- (void).cxx_destruct;
 - (void)_handleTransactionDidFinishNotification:(id)arg1;
 - (void)_handleTransactionDidStartNotification:(id)arg1;
 - (void)_unregisterTransactionNotifications;

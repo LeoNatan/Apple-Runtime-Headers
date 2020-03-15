@@ -32,6 +32,7 @@
 }
 
 + (id)styledStringFromStringArray:(id)arg1;
+- (void).cxx_destruct;
 - (void)setAction:(id)arg1;
 - (id)action;
 - (void)setThumbnail:(id)arg1;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) MKSearchFoundationRichText *secondLineDisplayedText; // @synthesize secondLineDisplayedText=_secondLineDisplayedText;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(retain, nonatomic) NSData *mapsData; // @synthesize mapsData=_mapsData;
-- (void).cxx_destruct;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
 - (void)locationManagerDidPauseLocationUpdates:(id)arg1;
 - (BOOL)locationManagerShouldPauseLocationUpdates:(id)arg1;

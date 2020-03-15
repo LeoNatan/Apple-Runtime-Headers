@@ -21,8 +21,8 @@
     double _retrievalTime;
 }
 
-@property(nonatomic) double retrievalTime; // @synthesize retrievalTime=_retrievalTime;
 - (void).cxx_destruct;
+@property(nonatomic) double retrievalTime; // @synthesize retrievalTime=_retrievalTime;
 - (void)_faultInTokens;
 - (void)_faultInBestTokens;
 - (id)artworkTokenForSource:(long long)arg1;

@@ -20,12 +20,12 @@
     NSMutableOrderedSet *_objectIDsBeingProcessed;
 }
 
+- (void).cxx_destruct;
 @property BOOL needsReindexing; // @synthesize needsReindexing=_needsReindexing;
 @property(nonatomic, getter=isObservingChanges) BOOL observingChanges; // @synthesize observingChanges=_observingChanges;
 @property(retain, nonatomic) NSMutableOrderedSet *objectIDsBeingProcessed; // @synthesize objectIDsBeingProcessed=_objectIDsBeingProcessed;
 @property(retain, nonatomic) NSMutableOrderedSet *objectIDsToProcess; // @synthesize objectIDsToProcess=_objectIDsToProcess;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *processingQueue; // @synthesize processingQueue=_processingQueue;
-- (void).cxx_destruct;
 - (void)clearObjectIDsToIgnoreAndStageForReindexing;
 - (id)stateDefaultsKey;
 - (void)loadState;

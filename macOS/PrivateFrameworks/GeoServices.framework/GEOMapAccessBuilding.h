@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     NSArray *_sections;
 }
 
-@property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 - (void)dealloc;
 - (id)initWithBuildingFeature:(CDStruct_2043ea72 *)arg1;
 

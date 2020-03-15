@@ -14,9 +14,9 @@
     CoreDAVItem *_content;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CoreDAVItem *content; // @synthesize content=_content;
 @property(retain, nonatomic) CoreDAVLeafItem *dtstamp; // @synthesize dtstamp=_dtstamp;
-- (void).cxx_destruct;
 - (id)copyParseRules;
 - (id)init;
 

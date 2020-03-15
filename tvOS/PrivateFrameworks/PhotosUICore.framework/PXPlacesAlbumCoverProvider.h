@@ -25,11 +25,11 @@
 + (id)_cachedSnapshotPathForFilename:(id)arg1;
 + (id)_cachedSnapshotPathDark;
 + (id)_cachedSnapshotPathLight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cachedPlaceholders; // @synthesize cachedPlaceholders=_cachedPlaceholders;
 @property(retain, nonatomic) PHAssetCollection *placesCollection; // @synthesize placesCollection=_placesCollection;
 @property(retain, nonatomic) id <PXPlacesSnapshotFactoryDelegate> factoryDelegate; // @synthesize factoryDelegate=_factoryDelegate;
 @property(retain, nonatomic) PXPlacesSnapshotFactory *factory; // @synthesize factory=_factory;
-- (void).cxx_destruct;
 - (id)placesAlbumCoverProviderLog;
 - (id)backgroundImageNameForType:(unsigned long long)arg1 usingTraitCollection:(id)arg2;
 - (id)createAlbumPlaceHolderImageUsingTraitCollection:(id)arg1;

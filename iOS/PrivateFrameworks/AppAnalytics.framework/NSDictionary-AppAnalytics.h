@@ -6,9 +6,7 @@
 
 #import <Foundation/NSDictionary.h>
 
-#import <AppAnalytics/AADataType-Protocol.h>
-
-@interface NSDictionary (AppAnalytics) <AADataType>
+@interface NSDictionary (AppAnalytics)
 - (id)toJsonValueAndReturnError:(id *)arg1;
 @end
 

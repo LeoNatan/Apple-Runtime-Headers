@@ -28,6 +28,7 @@
     NSArray *_sectionOrderArrayWhenViewingOther;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *sectionOrderArrayWhenViewingOther; // @synthesize sectionOrderArrayWhenViewingOther=_sectionOrderArrayWhenViewingOther;
 @property(retain, nonatomic) NSArray *sectionOrderArrayWhenViewingSelf; // @synthesize sectionOrderArrayWhenViewingSelf=_sectionOrderArrayWhenViewingSelf;
 @property(retain, nonatomic) HFItem *removeItem; // @synthesize removeItem=_removeItem;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) HFItem *allowEditingItem; // @synthesize allowEditingItem=_allowEditingItem;
 @property(retain, nonatomic) HFItem *remoteAccessItem; // @synthesize remoteAccessItem=_remoteAccessItem;
 @property(retain, nonatomic) HFItem *localAccessItem; // @synthesize localAccessItem=_localAccessItem;
-- (void).cxx_destruct;
 - (BOOL)_isVoiceIDEnabled:(id)arg1;
 - (BOOL)_isTVViewingProfilesEnabledForUser;
 - (BOOL)_isPersonalRequestsEnabledForUser;

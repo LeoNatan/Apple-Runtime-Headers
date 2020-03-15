@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSURL *_saveItemsRootURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *saveItemsRootURL; // @synthesize saveItemsRootURL=_saveItemsRootURL;
 @property(copy, nonatomic) NSString *itemsDirectory; // @synthesize itemsDirectory=_itemsDirectory;
-- (void).cxx_destruct;
 - (id)saveItems:(id)arg1 withID:(id)arg2 testCase:(id)arg3;
 - (id)init;
 

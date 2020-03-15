@@ -13,8 +13,8 @@
     BYBuddyDaemonMigrationSourceClient *_migrationSourceClient;
 }
 
-@property(retain, nonatomic) BYBuddyDaemonMigrationSourceClient *migrationSourceClient; // @synthesize migrationSourceClient=_migrationSourceClient;
 - (void).cxx_destruct;
+@property(retain, nonatomic) BYBuddyDaemonMigrationSourceClient *migrationSourceClient; // @synthesize migrationSourceClient=_migrationSourceClient;
 - (void)setFileTransferSession:(id)arg1;
 - (void)launchSetupForMigration:(id)arg1;
 - (id)init;

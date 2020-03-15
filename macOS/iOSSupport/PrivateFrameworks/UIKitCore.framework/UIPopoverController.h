@@ -81,6 +81,7 @@
 + (BOOL)_useLegacyPopoverControllers;
 + (void)_setForceModernPopoverUse:(BOOL)arg1;
 + (BOOL)_popoversDisabled;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_allowsPopoverPresentationToAdapt, setter=_setAllowsPopoverPresentationToAdapt:) BOOL allowsPopoverPresentationToAdapt; // @synthesize allowsPopoverPresentationToAdapt=_allowsPopoverPresentationToAdapt;
 @property(retain, nonatomic, getter=_presentationController, setter=_setPresentationController:) UIPopoverPresentationController *presentationController; // @synthesize presentationController=_presentationController;
 @property(nonatomic) unsigned long long popoverArrowDirection; // @synthesize popoverArrowDirection=_popoverArrowDirection;
@@ -95,7 +96,6 @@
 @property(nonatomic) BOOL dismissesOnRotation; // @synthesize dismissesOnRotation=_dismissesOnRotation;
 @property(retain, nonatomic) UIDimmingView *dimmingView; // @synthesize dimmingView=_dimmingView;
 @property(nonatomic) __weak id <UIPopoverControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (void)_modalAnimationFinishedEndIgnoringInteractiveEvents:(BOOL)arg1;

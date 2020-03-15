@@ -13,8 +13,8 @@
     UIView *_customView;
 }
 
-@property(retain, nonatomic) UIView *customView; // @synthesize customView=_customView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *customView; // @synthesize customView=_customView;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

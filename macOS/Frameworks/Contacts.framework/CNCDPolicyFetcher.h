@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)policyForContainerWithIdentifier:(id)arg1 inPersistenceStack:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNCDPersistenceContext *persistenceContext; // @synthesize persistenceContext=_persistenceContext;
 @property(retain, nonatomic) CNContainer *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (id)fetchPolicy:(id *)arg1;
 - (id)initWithContainer:(id)arg1 persistenceContext:(id)arg2;
 - (id)init;

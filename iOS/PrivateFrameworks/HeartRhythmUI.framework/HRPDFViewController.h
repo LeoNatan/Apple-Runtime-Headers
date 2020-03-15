@@ -14,9 +14,9 @@
     PDFDocument *_pdfDocument;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PDFDocument *pdfDocument; // @synthesize pdfDocument=_pdfDocument;
 @property(retain, nonatomic) NSData *pdfData; // @synthesize pdfData=_pdfData;
-- (void).cxx_destruct;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;
 - (id)pdfView;

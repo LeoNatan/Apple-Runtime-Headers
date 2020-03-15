@@ -37,6 +37,7 @@
     BOOL _demoFinalized;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL demoFinalized; // @synthesize demoFinalized=_demoFinalized;
 @property(readonly, copy, nonatomic) NSDictionary *demoAccessories; // @synthesize demoAccessories=_demoAccessories;
 @property(readonly, nonatomic) BOOL accessAllowedWhenLocked; // @synthesize accessAllowedWhenLocked=_accessAllowedWhenLocked;
@@ -59,7 +60,6 @@
 @property(readonly, copy, nonatomic) NSUUID *primaryHomeUUID; // @synthesize primaryHomeUUID=_primaryHomeUUID;
 @property(readonly, copy, nonatomic) NSArray *accessories; // @synthesize accessories=_accessories;
 @property(readonly, copy, nonatomic) NSArray *homes; // @synthesize homes=_homes;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

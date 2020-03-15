@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     id <PXGridPresentation> _gridPresentation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <PXGridPresentation> gridPresentation; // @synthesize gridPresentation=_gridPresentation;
 @property(retain, nonatomic) PUAlbumListViewControllerSpec *spec; // @synthesize spec=_spec;
 @property(retain, nonatomic) PUSessionInfo *sessionInfo; // @synthesize sessionInfo=_sessionInfo;
 @property(retain, nonatomic) PXPhotoKitCollectionsDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PXPhotoKitCollectionsDataSource *dataSource;
 
 @end

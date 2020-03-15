@@ -29,8 +29,8 @@ __attribute__((visibility("hidden")))
     float _maximumPopoverHeight;
 }
 
-@property float maximumPopoverHeight; // @synthesize maximumPopoverHeight=_maximumPopoverHeight;
 - (void).cxx_destruct;
+@property float maximumPopoverHeight; // @synthesize maximumPopoverHeight=_maximumPopoverHeight;
 - (void)showCancelButton;
 - (void)removePrinter:(id)arg1 moreGoing:(_Bool)arg2;
 - (void)addPrinter:(id)arg1 moreComing:(_Bool)arg2;

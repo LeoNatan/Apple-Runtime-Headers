@@ -38,7 +38,6 @@
 - (id)ams_saveAccount:(id)arg1 verifyCredentials:(BOOL)arg2;
 - (id)ams_saveAccount:(id)arg1;
 - (id)ams_iTunesAccountWithUsername:(id)arg1;
-- (id)ams_iTunesAccountWithHomeUserIdentifier:(id)arg1;
 - (id)ams_iTunesAccountWithDSID:(id)arg1;
 - (id)ams_iTunesAccountWithAltDSID:(id)arg1 DSID:(id)arg2 username:(id)arg3;
 - (id)ams_iTunesAccountWithAltDSID:(id)arg1;
@@ -47,15 +46,18 @@
 - (id)ams_IDSAccountForAccount:(id)arg1;
 - (id)ams_IDMSAccountForAccount:(id)arg1;
 - (id)ams_iCloudAccountForAccount:(id)arg1;
+- (id)ams_demoAccount;
 - (id)ams_cookiesForURL:(id)arg1;
 - (id)ams_fetchGrandSlamTokenForAccount:(id)arg1 withIdentifier:(id)arg2 error:(id *)arg3;
 - (id)ams_accountWithAltDSID:(id)arg1 DSID:(id)arg2 username:(id)arg3 accountTypeIdentifier:(id)arg4;
 @property(readonly) NSString *ams_mediaType;
 @property(readonly) ACAccount *ams_localiTunesAccount;
-@property(readonly) NSArray *ams_iTunesAccountsWithHomeUserIdentifiers;
 @property(readonly) NSArray *ams_iTunesAccounts;
 @property(readonly) ACAccount *ams_activeiTunesAccount;
 @property(readonly) ACAccount *ams_activeiCloudAccount;
 @property(readonly, getter=ams_isActiveAccountCombined) BOOL ams_activeAccountCombined;
+
+// Remaining properties
+@property(readonly) NSArray *ams_iTunesAccountsWithHomeUserIdentifiers;
 @end
 

@@ -24,8 +24,8 @@
 + (void)invalidateTimer:(id)arg1;
 + (void)addTimerToMainRunLoop:(id)arg1;
 + (void)initialize;
-@property(nonatomic) __weak id <BSRelativeDateTimerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <BSRelativeDateTimerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)powerMonitorSystemDidWakeFromSleep:(id)arg1;
 - (void)_invalidateTimer;
 - (double)_nextFireInterval:(id)arg1 resolution:(unsigned long long)arg2 comparedToNow:(long long)arg3;

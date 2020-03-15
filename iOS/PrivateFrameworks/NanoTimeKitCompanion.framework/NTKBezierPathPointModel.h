@@ -15,8 +15,8 @@
     NSDictionary *_horizontalPercentageCache;
 }
 
-@property(readonly, nonatomic) UIBezierPath *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIBezierPath *path; // @synthesize path=_path;
 - (double)_computeDistanceBetweenPointA:(struct CGPoint)arg1 andPointB:(struct CGPoint)arg2;
 - (double)_estimatePercentageForEndPadding:(double)arg1;
 - (struct CGPoint)_computePointOnPathForHorizontalPercentage:(double)arg1;

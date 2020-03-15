@@ -21,13 +21,13 @@
     double _resetSessionTimeoutAfterTransaction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *currentPassToken; // @synthesize currentPassToken=_currentPassToken;
 @property(nonatomic) _Bool isSessionEnabled; // @synthesize isSessionEnabled=_isSessionEnabled;
 @property(retain, nonatomic) CSLSBacklightAssertion *screenOnAssertion; // @synthesize screenOnAssertion=_screenOnAssertion;
 @property(retain, nonatomic) NPKQuickPaymentSession *paymentSession; // @synthesize paymentSession=_paymentSession;
 @property(nonatomic) double resetSessionTimeoutAfterTransaction; // @synthesize resetSessionTimeoutAfterTransaction=_resetSessionTimeoutAfterTransaction;
 @property(nonatomic) __weak id <NPKVASPassContactlessInterfaceManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_scheduleResetSessionForPass:(id)arg1;
 - (void)_releaseScreenOnAssertion;
 - (void)_renewScreenOnAssertion;

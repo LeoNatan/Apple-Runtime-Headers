@@ -23,9 +23,9 @@
     NSArray *_combinedActionActivitySections;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *combinedActionActivitySections; // @synthesize combinedActionActivitySections=_combinedActionActivitySections;
 @property(nonatomic) __weak id <WFActionDrawerSearchResultsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)appsTableViewCell:(id)arg1 didSelectAppWithBundleIdentifier:(id)arg2;
 - (_Bool)moveToState:(id)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) WFActionDrawerState *state;

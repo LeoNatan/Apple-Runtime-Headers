@@ -21,6 +21,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *companyStartDate; // @synthesize companyStartDate=_companyStartDate;
 @property(retain, nonatomic) NSString *workPhone; // @synthesize workPhone=_workPhone;
 @property(retain, nonatomic) NSString *linkedInProfileUrl; // @synthesize linkedInProfileUrl=_linkedInProfileUrl;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSString *department; // @synthesize department=_department;
 @property(retain, nonatomic) NSString *location; // @synthesize location=_location;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 
 @end
 

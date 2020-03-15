@@ -21,9 +21,9 @@
     WiFiAwarePublishConfiguration *_configuration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WiFiAwarePublishConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) __weak id <WiFiAwarePublisherDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)publishTerminatedWithReason:(long long)arg1;
 - (void)publishReceivedMessage:(id)arg1 fromSubscriberID:(unsigned char)arg2 subscriberAddress:(id)arg3;

@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     NSArray *_outputShapes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *outputShapes; // @synthesize outputShapes=_outputShapes;
 @property(readonly, nonatomic) NSArray *inputShapes; // @synthesize inputShapes=_inputShapes;
 @property(readonly, nonatomic) NSArray *outputRanks; // @synthesize outputRanks=_outputRanks;
 @property(readonly, nonatomic) NSArray *inputRanks; // @synthesize inputRanks=_inputRanks;
 @property(readonly, nonatomic) NSNumber *axis; // @synthesize axis=_axis;
 @property(readonly, nonatomic) _Bool shapeInfoNeeded; // @synthesize shapeInfoNeeded=_shapeInfoNeeded;
-- (void).cxx_destruct;
 - (void)computeOnCPUWithInputTensors:(id)arg1 outputTensors:(id)arg2;
 - (_Bool)hasGPUSupport;
 - (id)initWithParameters:(id)arg1;

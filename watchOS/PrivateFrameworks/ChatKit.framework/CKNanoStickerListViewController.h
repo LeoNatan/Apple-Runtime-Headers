@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
     CKNanoStickerListTableViewCell *_sizingCell;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKNanoStickerListTableViewCell *sizingCell; // @synthesize sizingCell=_sizingCell;
 @property(copy, nonatomic) NSArray *stickers; // @synthesize stickers=_stickers;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) CKMessagePartChatItem *chatItem; // @synthesize chatItem=_chatItem;
 @property(nonatomic) __weak id <CKNanoStickerListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

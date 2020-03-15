@@ -16,9 +16,9 @@
     UIWindow *_window;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long stackViewStyle; // @synthesize stackViewStyle=_stackViewStyle;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (long long)_stackDepth;
 - (struct CGSize)_sizeOfItemAtIndex:(double)arg1;
 - (struct UIOffset)_relativeOffsetOfItemAtIndex:(long long)arg1 withCenter:(struct CGPoint)arg2;

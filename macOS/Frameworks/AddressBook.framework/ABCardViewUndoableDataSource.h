@@ -17,9 +17,9 @@
     ABCommandExecutor *_commandExecutor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ABCommandExecutor *commandExecutor; // @synthesize commandExecutor=_commandExecutor;
 @property(retain, nonatomic) AKCardViewDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)createAndExecuteEditCommandWithKey:(id)arg1 value:(id)arg2;
 - (void)rejectLabeledValue:(id)arg1 valueKeyPath:(id)arg2;
 - (void)confirmLabeledValue:(id)arg1 valueKeyPath:(id)arg2;
@@ -41,7 +41,7 @@
 - (void)setImage:(id)arg1;
 - (id)uniqueIdentifiers;
 - (id)URL;
-@property(getter=isTransient) BOOL transient;
+@property(readonly, getter=isTransient) BOOL transient;
 - (BOOL)isDirectoryResult;
 - (BOOL)isEmpty;
 - (BOOL)isReadOnly;
@@ -118,6 +118,8 @@
 - (void)markAsViewed:(id)arg1;
 - (id)contactIdentifer;
 - (id)addressBookForActionExecution;
+- (BOOL)ignoresGuardianRestrictions;
+- (void)setIgnoresGuardianRestrictions:(BOOL)arg1;
 - (id)initWithDataSource:(id)arg1 commandExecutor:(id)arg2;
 
 // Remaining properties

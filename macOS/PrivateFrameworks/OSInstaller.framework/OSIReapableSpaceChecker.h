@@ -15,9 +15,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) OSInstallOptions *options; // @synthesize options=_options;
 @property(retain) SMPaths *pather; // @synthesize pather=_pather;
-- (void).cxx_destruct;
 - (id)reapableFiles;
 - (id)reapableSpace;
 - (void)_calculateSystemPathsAndSize;

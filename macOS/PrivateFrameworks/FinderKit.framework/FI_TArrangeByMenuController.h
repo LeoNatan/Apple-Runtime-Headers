@@ -25,13 +25,13 @@ __attribute__((visibility("hidden")))
     struct vector<TKeyValueBinder, std::__1::allocator<TKeyValueBinder>> _keyValueBinders;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool inOpenSave; // @synthesize inOpenSave=_inOpenSave;
 @property(nonatomic) int selectedSortByTag; // @synthesize selectedSortByTag=_selectedSortByTag;
 @property(nonatomic) int selectedGroupByTag; // @synthesize selectedGroupByTag=_selectedGroupByTag;
 @property(retain, nonatomic) NSMenu *sortByMenu; // @synthesize sortByMenu=_sortByMenu;
 @property(retain, nonatomic) NSMenu *arrangeByMenu; // @synthesize arrangeByMenu=_arrangeByMenu;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (int)menuTagForSortBy:(int)arg1;
 - (int)menuTagForGroupBy:(int)arg1;
 - (void)removeCommandKeyEquivalents;

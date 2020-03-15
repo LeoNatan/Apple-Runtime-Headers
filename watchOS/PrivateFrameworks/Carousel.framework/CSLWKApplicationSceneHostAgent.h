@@ -19,12 +19,12 @@
     int _backgroundTaskSupport;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isExtensionBased) _Bool extensionBased; // @synthesize extensionBased=_extensionBased;
 @property(nonatomic) int backgroundTaskSupport; // @synthesize backgroundTaskSupport=_backgroundTaskSupport;
 @property(retain, nonatomic) IOSSHLApplication *application; // @synthesize application=_application;
 @property(retain, nonatomic) NSMutableSet *pendingCoordinators; // @synthesize pendingCoordinators=_pendingCoordinators;
 @property(retain, nonatomic) CSLWKExtensionProcess *extensionProcess; // @synthesize extensionProcess=_extensionProcess;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (void)_queue_didCreateScene:(id)arg1;
 - (void)_queue_reviewActionsForEvent:(id)arg1;

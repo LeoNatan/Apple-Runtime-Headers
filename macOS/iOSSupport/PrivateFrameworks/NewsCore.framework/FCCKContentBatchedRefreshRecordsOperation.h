@@ -25,6 +25,7 @@
     NSError *_operationError;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *operationError; // @synthesize operationError=_operationError;
 @property(retain, nonatomic) NSMutableDictionary *errorsByRecordID; // @synthesize errorsByRecordID=_errorsByRecordID;
 @property(retain, nonatomic) NSMutableSet *deletedRecordIDs; // @synthesize deletedRecordIDs=_deletedRecordIDs;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSDictionary *changeTagsByRecordID; // @synthesize changeTagsByRecordID=_changeTagsByRecordID;
 @property(copy, nonatomic) NSArray *recordIDs; // @synthesize recordIDs=_recordIDs;
 @property(retain, nonatomic) FCCKContentDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (void)_continueRefreshing;
 - (void)resetForRetry;
 - (void)operationWillFinishWithError:(id)arg1;

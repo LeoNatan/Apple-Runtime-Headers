@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     id <WKColorMatrixViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <WKColorMatrixViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <WKColorMatrixViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)colorButtonTapped:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1 colorMatrix:(id)arg2;

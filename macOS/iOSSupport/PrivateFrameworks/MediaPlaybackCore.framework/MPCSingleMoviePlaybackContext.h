@@ -14,8 +14,8 @@
 }
 
 + (Class)queueFeederClass;
-@property(readonly, nonatomic) MPMovie *movie; // @synthesize movie=_movie;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MPMovie *movie; // @synthesize movie=_movie;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithMovie:(id)arg1;
 

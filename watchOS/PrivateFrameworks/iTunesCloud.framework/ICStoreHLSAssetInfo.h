@@ -19,11 +19,11 @@
     NSURL *_playlistURL;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *playlistURL; // @synthesize playlistURL=_playlistURL;
 @property(copy, nonatomic) NSURL *keyServerURL; // @synthesize keyServerURL=_keyServerURL;
 @property(copy, nonatomic) NSURL *keyCertificateURL; // @synthesize keyCertificateURL=_keyCertificateURL;
 @property(nonatomic, getter=isiTunesStoreStream) _Bool iTunesStoreStream; // @synthesize iTunesStoreStream=_isiTunesStoreStream;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *alternateKeyServerURL;
 @property(readonly, copy, nonatomic) NSURL *alternateKeyCertificateURL;
 @property(readonly, copy, nonatomic) NSURL *alternatePlaylistURL;

@@ -14,9 +14,9 @@
     NSString *_objectUniqueID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *objectUniqueID; // @synthesize objectUniqueID=_objectUniqueID;
 @property(readonly, nonatomic) PKPassLibrary *library; // @synthesize library=_library;
-- (void).cxx_destruct;
 - (id)displayProfileOfType:(int)arg1;
 - (id)archiveData;
 - (id)dataForBundleResources:(id)arg1;

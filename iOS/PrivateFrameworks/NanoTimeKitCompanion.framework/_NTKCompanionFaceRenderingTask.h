@@ -15,10 +15,10 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) long long detailMode; // @synthesize detailMode=_detailMode;
 @property(readonly, nonatomic) NTKFace *face; // @synthesize face=_face;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isMemberOfBatch) _Bool memberOfBatch;
 - (id)initWithFace:(id)arg1 detailMode:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 

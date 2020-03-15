@@ -41,6 +41,7 @@
     WFComposeFlowController *_flowController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFComposeFlowController *flowController; // @synthesize flowController=_flowController;
 @property(retain, nonatomic) Class actionsViewControllerClass; // @synthesize actionsViewControllerClass=_actionsViewControllerClass;
 @property(nonatomic) unsigned long long preHideVisibility; // @synthesize preHideVisibility=_preHideVisibility;
@@ -63,7 +64,6 @@
 @property(nonatomic) __weak id <WFComposeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) double bottomContentInset; // @synthesize bottomContentInset=_bottomContentInset;
 @property(readonly, nonatomic) WFEditWorkflowViewController *workflowViewController; // @synthesize workflowViewController=_workflowViewController;
-- (void).cxx_destruct;
 - (void)redoLastWorkflowEdit;
 - (void)undoLastWorkflowEdit;
 - (void)searchActions;

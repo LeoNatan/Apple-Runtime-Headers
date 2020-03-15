@@ -34,6 +34,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)knownKeys;
 + (int)currentArchiveVersion;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSString *weatherDisplayName; // @synthesize weatherDisplayName=_weatherDisplayName;
@@ -47,7 +48,6 @@
 @property(copy, nonatomic) NSString *state; // @synthesize state=_state;
 @property(copy, nonatomic) NSString *county; // @synthesize county=_county;
 @property(copy, nonatomic) NSString *city; // @synthesize city=_city;
-- (void).cxx_destruct;
 - (id)initWithCloudDictionaryRepresentation:(id)arg1;
 - (id)cloudDictionaryRepresentation;
 - (id)initWithLocalDataRepresentation:(id)arg1;

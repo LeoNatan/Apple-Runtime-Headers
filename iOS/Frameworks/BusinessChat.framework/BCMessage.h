@@ -29,6 +29,7 @@
 }
 
 + (id)defaultBubbleTitleFor:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *internalRootKey; // @synthesize internalRootKey=_internalRootKey;
 @property(retain, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 @property(retain, nonatomic) NSString *subcaption; // @synthesize subcaption=_subcaption;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NSString *messageGUID; // @synthesize messageGUID=_messageGUID;
 @property(retain, nonatomic) NSString *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
 @property(retain, nonatomic) NSString *version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (_Bool)isVersionSupported;
 - (_Bool)isAnyUnknownRootKey;
 @property(readonly, nonatomic) Class rootModelObject;

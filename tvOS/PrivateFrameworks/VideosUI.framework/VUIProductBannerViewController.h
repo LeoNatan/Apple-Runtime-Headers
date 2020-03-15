@@ -13,13 +13,15 @@
 __attribute__((visibility("hidden")))
 @interface VUIProductBannerViewController : UIViewController <TVAppTemplateImpressionable>
 {
+    _Bool _shouldAutoHighlight;
     IKViewElement *_viewElement;
     VUIProductBannerView *_bannerView;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) _Bool shouldAutoHighlight; // @synthesize shouldAutoHighlight=_shouldAutoHighlight;
 @property(retain, nonatomic) VUIProductBannerView *bannerView; // @synthesize bannerView=_bannerView;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 - (id)impressionableElementsContainedInDocument:(id)arg1;
 - (void)_configureViewSubviews;
 - (id)preferredFocusEnvironments;

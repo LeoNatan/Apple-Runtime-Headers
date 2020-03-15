@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *mColors;
 }
 
-@property(copy, nonatomic) NSString *name; // @synthesize name=mName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *name; // @synthesize name=mName;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

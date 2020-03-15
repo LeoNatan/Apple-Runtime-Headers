@@ -35,6 +35,7 @@
     NSMutableArray *_sortIndexes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *sortIndexes; // @synthesize sortIndexes=_sortIndexes;
 @property(retain, nonatomic) NSMutableArray *allMessages; // @synthesize allMessages=_allMessages;
 @property(retain, nonatomic) NSMutableArray *messages; // @synthesize messages=_messages;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) CSKDatabaseHandle *sortDBHandle; // @synthesize sortDBHandle=_sortDBHandle;
 @property(retain, nonatomic) CSKDatabaseHandle *searchDBHandle; // @synthesize searchDBHandle=_searchDBHandle;
 @property(retain, nonatomic) CSKDatabaseHandle *readDBHandle; // @synthesize readDBHandle=_readDBHandle;
-- (void).cxx_destruct;
 - (void)_removeMessages:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)_searchUsingFilters:(id)arg1 handleAdditions:(BOOL)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_searchUsingFilters:(id)arg1 handleAdditions:(BOOL)arg2;

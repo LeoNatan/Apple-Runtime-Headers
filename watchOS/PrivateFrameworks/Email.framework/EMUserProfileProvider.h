@@ -23,11 +23,11 @@
 }
 
 + (_Bool)doesAddressList:(id)arg1 containAddressInSet:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(readonly, nonatomic) NSMutableArray *knownToNotBeMyEmail; // @synthesize knownToNotBeMyEmail=_knownToNotBeMyEmail;
 @property(readonly, nonatomic) NSMutableArray *knownToBeMyEmail; // @synthesize knownToBeMyEmail=_knownToBeMyEmail;
 @property(retain, nonatomic) NSDictionary *cache; // @synthesize cache=_cache;
-- (void).cxx_destruct;
 - (id)_contactEmailAddresses;
 - (id)_accountsEmailAddresses;
 - (void)_contactsChanged:(id)arg1;

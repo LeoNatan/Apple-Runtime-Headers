@@ -60,6 +60,7 @@
     NSString *_expressiveSendStyleID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *expressiveSendStyleID; // @synthesize expressiveSendStyleID=_expressiveSendStyleID;
 @property(nonatomic) __weak NSPopover *effectPickerPopover; // @synthesize effectPickerPopover=_effectPickerPopover;
 @property(retain, nonatomic) AVAudioPlayer *player; // @synthesize player=_player;
@@ -96,7 +97,6 @@
 @property(retain, nonatomic) SOFlexibleScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) SOInputLineContainer *inputLineContainer; // @synthesize inputLineContainer=_inputLineContainer;
 @property(nonatomic) __weak id <SOInputLineViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)makeTouchBar;
 - (void)doCommandBySelector:(SEL)arg1;

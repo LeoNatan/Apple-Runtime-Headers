@@ -15,10 +15,10 @@
     NSMutableSet *_alertItems;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *alertItems; // @synthesize alertItems=_alertItems;
 @property(readonly, nonatomic) NSMutableSet *foregroundScenes; // @synthesize foregroundScenes=_foregroundScenes;
 @property(readonly, copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithBundleID:(id)arg1;
 

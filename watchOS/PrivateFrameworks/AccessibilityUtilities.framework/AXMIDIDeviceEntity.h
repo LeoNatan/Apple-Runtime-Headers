@@ -17,12 +17,12 @@
     unsigned long _midiEntity;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long midiEntity; // @synthesize midiEntity=_midiEntity;
 @property(readonly, nonatomic) NSNumber *supportsMMC; // @synthesize supportsMMC=_supportsMMC;
 @property(retain, nonatomic) NSMutableSet *destinations; // @synthesize destinations=_destinations;
 @property(retain, nonatomic) NSMutableSet *sources; // @synthesize sources=_sources;
 @property(nonatomic) __weak AXMIDIDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (id)_destinationForMidiEndpoint:(unsigned long)arg1 addIfNeeded:(_Bool)arg2;
 - (id)_sourceForMidiEndpoint:(unsigned long)arg1 addIfNeeded:(_Bool)arg2;
 - (void)removeMidiDestination:(unsigned long)arg1;

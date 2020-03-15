@@ -30,13 +30,13 @@
 + (id)getManager;
 + (void)setManager:(id)arg1;
 + (void)_withClassLock:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLPIChargingPresentation *activePresentation; // @synthesize activePresentation=_activePresentation;
 @property(copy, nonatomic) CDUnknownBlockType nightstandChangeHandler; // @synthesize nightstandChangeHandler=_nightstandChangeHandler;
 @property(copy, nonatomic) CDUnknownBlockType endAnimationHandler; // @synthesize endAnimationHandler=_endAnimationHandler;
 @property(copy, nonatomic) CDUnknownBlockType alertDismissHandler; // @synthesize alertDismissHandler=_alertDismissHandler;
 @property(copy, nonatomic) CDUnknownBlockType alertPresentationHandler; // @synthesize alertPresentationHandler=_alertPresentationHandler;
 @property(readonly, nonatomic) __weak id <CSLPIChargingCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)chargingPresentation:(id)arg1 didAdvanceToStage:(unsigned int)arg2;
 - (id)addAssertionForAlertPolicy:(id)arg1;
 - (void)turnBacklightOff;

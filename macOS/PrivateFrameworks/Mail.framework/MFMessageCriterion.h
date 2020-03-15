@@ -20,9 +20,9 @@
 + (void)_updateAddressDisplayNames:(id)arg1;
 + (id)messagesInConversationCriterionWithConversationIDs:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSString *groupUniqueID; // @synthesize groupUniqueID=_groupUniqueID;
 @property long long specialMailboxTypeCode; // @synthesize specialMailboxTypeCode=_specialMailboxTypeCode;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL containsAddressBookCriteria;
 @property(readonly, nonatomic) BOOL containsRelativeDateCriteria;
 @property(readonly, nonatomic) BOOL containsMessageIsNotInATrashMailboxCriterion;

@@ -10,11 +10,13 @@
 {
     BOOL _executedBlock;
     CDUnknownBlockType _block;
+    double _timeout;
 }
 
+- (void).cxx_destruct;
+@property double timeout; // @synthesize timeout=_timeout;
 @property(copy) CDUnknownBlockType block; // @synthesize block=_block;
 @property BOOL executedBlock; // @synthesize executedBlock=_executedBlock;
-- (void).cxx_destruct;
 - (BOOL)_runBlock;
 - (id)resultWithTimeout:(double)arg1 error:(id *)arg2;
 - (id)resultWithError:(id *)arg1;
@@ -22,6 +24,7 @@
 - (void)addSuccessBlock:(CDUnknownBlockType)arg1;
 - (void)addFinishBlock:(CDUnknownBlockType)arg1;
 - (void)addErrorBlock:(CDUnknownBlockType)arg1;
+- (id)initWithTimeout:(double)arg1 block:(CDUnknownBlockType)arg2;
 - (id)initWithBlock:(CDUnknownBlockType)arg1;
 
 @end

@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     VUILabel *_impressionParentNameLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUILabel *impressionParentNameLabel; // @synthesize impressionParentNameLabel=_impressionParentNameLabel;
 @property(retain, nonatomic) VUILabel *impressionParentIdLabel; // @synthesize impressionParentIdLabel=_impressionParentIdLabel;
 @property(retain, nonatomic) VUILabel *staticImpressionParentLabel; // @synthesize staticImpressionParentLabel=_staticImpressionParentLabel;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUILabel *staticIDLabel; // @synthesize staticIDLabel=_staticIDLabel;
 @property(retain, nonatomic) VUILabel *typeLabel; // @synthesize typeLabel=_typeLabel;
 @property(retain, nonatomic) VUILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
 @property(copy, nonatomic) NSString *impressionParentName;

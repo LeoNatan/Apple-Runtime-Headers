@@ -15,9 +15,9 @@
 }
 
 + (struct CGSize)preferredSizeForConfiguration:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ASWriteReviewConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) ASWriteReviewThanksView *thanksView;
 - (void)configureDialogView:(id)arg1;
 - (void)loadView;

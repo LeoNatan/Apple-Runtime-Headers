@@ -20,11 +20,11 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)updatedTableColumnIdentifiersFromLayout:(id)arg1 tableColumnIdentifier:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSortDescriptor *layoutDefaultSortDescriptor; // @synthesize layoutDefaultSortDescriptor=_layoutDefaultSortDescriptor;
 @property(retain, nonatomic) NSDictionary *layoutColumnInitialWidths; // @synthesize layoutColumnInitialWidths=_layoutColumnInitialWidths;
 @property(nonatomic) BOOL layoutColumnsCanBeReordered; // @synthesize layoutColumnsCanBeReordered=_layoutColumnsCanBeReordered;
 @property(retain, nonatomic) NSArray *layoutColumnIdentifiers; // @synthesize layoutColumnIdentifiers=_layoutColumnIdentifiers;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)fillTableColumnsMenu:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;

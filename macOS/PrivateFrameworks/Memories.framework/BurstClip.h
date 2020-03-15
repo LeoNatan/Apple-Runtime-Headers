@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     BurstClipStyle *_burstClipStyle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BurstClipStyle *burstClipStyle; // @synthesize burstClipStyle=_burstClipStyle;
 @property(retain, nonatomic) NSArray *allSourceClips; // @synthesize allSourceClips=_allSourceClips;
 @property(retain, nonatomic) NSArray *containedClips; // @synthesize containedClips=_containedClips;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSColor *threeUpStyleGapColor; // @synthesize threeUpStyleGapColor=_threeUpStyleGapColor;
 @property(nonatomic) unsigned long long burstStyle; // @synthesize burstStyle=_burstStyle;
 @property(nonatomic) unsigned long long allowedBurstStyles; // @synthesize allowedBurstStyles=_allowedBurstStyles;
-- (void).cxx_destruct;
 - (id)pickedKBClips;
 - (id)representingClip;
 - (id)indicesWithBurstSelectionType:(unsigned long long)arg1;

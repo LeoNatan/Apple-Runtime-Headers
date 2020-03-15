@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, retain) MXMMetric *_underlyingMetric; // @synthesize _underlyingMetric=__underlyingMetric;
 - (void).cxx_destruct;
+@property(readonly, retain) MXMMetric *_underlyingMetric; // @synthesize _underlyingMetric=__underlyingMetric;
 - (void)didStopAtTime:(unsigned long long)arg1 stopDate:(id)arg2;
 - (void)willStop;
 - (void)didStartAtTime:(unsigned long long)arg1 startDate:(id)arg2;

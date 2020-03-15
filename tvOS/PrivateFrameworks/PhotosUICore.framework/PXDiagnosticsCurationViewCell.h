@@ -45,6 +45,7 @@
 }
 
 + (double)cellHeightWithCellWidth:(double)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
 @property(retain, nonatomic) NSNumber *dedupedSymbolIndex; // @synthesize dedupedSymbolIndex=_dedupedSymbolIndex;
 @property(retain, nonatomic) NSString *dedupingType; // @synthesize dedupingType=_dedupingType;
@@ -62,7 +63,6 @@
 @property(nonatomic, getter=isBlurry) _Bool blurry; // @synthesize blurry=_isBlurry;
 @property(nonatomic, getter=isUtility) _Bool utility; // @synthesize utility=_isUtility;
 @property(nonatomic, getter=isFavorite) _Bool favorite; // @synthesize favorite=_isFavorite;
-- (void).cxx_destruct;
 - (void)setComparisonMatch:(_Bool)arg1;
 - (void)setClusterParity:(unsigned long long)arg1;
 - (void)prepareForReuse;

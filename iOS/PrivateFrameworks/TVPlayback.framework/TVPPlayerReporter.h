@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id reportingHierarchyToken; // @synthesize reportingHierarchyToken=_reportingHierarchyToken;
 @property double timeWatchedStart; // @synthesize timeWatchedStart=_timeWatchedStart;
 @property double timeWatched; // @synthesize timeWatched=_timeWatched;
 @property(retain) NSString *optFlag; // @synthesize optFlag=_optFlag;
 @property(retain) RTCReporting *rtcAgent; // @synthesize rtcAgent=_rtcAgent;
 @property(nonatomic) __weak TVPPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (id)_rtcAgentUserInfo;
 - (void)_sendSessionSummaryIfNecessary;
 - (void)_sendPlaybackStartupEventsIfNecessary;

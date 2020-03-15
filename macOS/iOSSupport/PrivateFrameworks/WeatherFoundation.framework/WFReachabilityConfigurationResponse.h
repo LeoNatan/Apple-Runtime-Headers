@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSURL *reachabilityHostURL; // @synthesize reachabilityHostURL=_reachabilityHostURL;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSURL *reachabilityHostURL; // @synthesize reachabilityHostURL=_reachabilityHostURL;
 @property(readonly, nonatomic) NWPathEvaluator *pathEvaluator;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

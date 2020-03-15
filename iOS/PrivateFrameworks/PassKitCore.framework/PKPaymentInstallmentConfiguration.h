@@ -18,18 +18,22 @@
     NSDecimalNumber *_openToBuyThresholdAmount;
     NSDecimalNumber *_bindingTotalAmount;
     NSString *_currencyCode;
+    long long _installmentItemType;
     NSString *_installmentMerchantIdentifier;
+    NSString *_referrerIdentifier;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSString *referrerIdentifier; // @synthesize referrerIdentifier=_referrerIdentifier;
 @property(copy, nonatomic) NSString *installmentMerchantIdentifier; // @synthesize installmentMerchantIdentifier=_installmentMerchantIdentifier;
+@property(nonatomic) long long installmentItemType; // @synthesize installmentItemType=_installmentItemType;
 @property(nonatomic, getter=isInStorePurchase) _Bool inStorePurchase; // @synthesize inStorePurchase=_inStorePurchase;
 @property(copy, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
 @property(retain, nonatomic) NSDecimalNumber *bindingTotalAmount; // @synthesize bindingTotalAmount=_bindingTotalAmount;
 @property(retain, nonatomic) NSDecimalNumber *openToBuyThresholdAmount; // @synthesize openToBuyThresholdAmount=_openToBuyThresholdAmount;
 @property(copy, nonatomic) NSData *merchandisingImageData; // @synthesize merchandisingImageData=_merchandisingImageData;
 @property(nonatomic) long long feature; // @synthesize feature=_feature;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqualToInstallmentConfiguration:(id)arg1;

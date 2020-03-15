@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     struct CGRect _avoidanceFrame;
 }
 
-@property(nonatomic) struct CGRect avoidanceFrame; // @synthesize avoidanceFrame=_avoidanceFrame;
 - (void).cxx_destruct;
+@property(nonatomic) struct CGRect avoidanceFrame; // @synthesize avoidanceFrame=_avoidanceFrame;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)updateClients:(id)arg1;
 - (id)findBlockadesForName:(id)arg1;

@@ -17,8 +17,8 @@
     UIScreenEdgePanGestureRecognizer *_homeGestureRecognizer;
 }
 
-@property(retain, nonatomic) UIScreenEdgePanGestureRecognizer *homeGestureRecognizer; // @synthesize homeGestureRecognizer=_homeGestureRecognizer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIScreenEdgePanGestureRecognizer *homeGestureRecognizer; // @synthesize homeGestureRecognizer=_homeGestureRecognizer;
 - (void)unregisterHomeGestureParticipant;
 - (void)_addGrabberView:(id)arg1;
 - (void)registerHomeGestureParticipant:(id)arg1;

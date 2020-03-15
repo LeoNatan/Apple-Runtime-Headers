@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) long long textElementType; // @synthesize textElementType=_textElementType;
 @property(readonly, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
 @property(readonly, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description:(BOOL)arg1;

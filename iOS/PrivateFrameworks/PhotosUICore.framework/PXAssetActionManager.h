@@ -13,8 +13,9 @@
     PXSectionedSelectionManager *_selectionManager;
 }
 
-@property(readonly, nonatomic) PXSectionedSelectionManager *selectionManager; // @synthesize selectionManager=_selectionManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXSectionedSelectionManager *selectionManager; // @synthesize selectionManager=_selectionManager;
+- (void)executeActionForActionType:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)shouldEnableActionType:(id)arg1 onAsset:(id)arg2;
 - (id)actionPerformerForActionType:(id)arg1;
 - (_Bool)canPerformAssetVariationActions;

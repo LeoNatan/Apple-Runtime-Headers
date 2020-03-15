@@ -14,9 +14,9 @@
 
 + (id)convergenceCoordinate:(struct PolylineCoordinate)arg1;
 + (id)divergenceCoordinate:(struct PolylineCoordinate)arg1;
+- (id).cxx_construct;
 @property(nonatomic) struct PolylineCoordinate routeCoordinate; // @synthesize routeCoordinate=_routeCoordinate;
 @property(nonatomic) unsigned long long significanceType; // @synthesize significanceType=_significanceType;
-- (id).cxx_construct;
 - (id)description;
 
 @end

@@ -21,6 +21,7 @@
     NSString *_UUID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 @property(readonly, nonatomic) _Bool provisionsThisDevice; // @synthesize provisionsThisDevice=_provisionsThisDevice;
 @property(readonly, nonatomic) _Bool provisionsAllDevices; // @synthesize provisionsAllDevices=_provisionsAllDevices;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic, getter=isAppleInternalProfile) _Bool appleInternalProfile; // @synthesize appleInternalProfile=_appleInternalProfile;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly, copy, nonatomic) NSString *signerIdentity; // @synthesize signerIdentity=_signerIdentity;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

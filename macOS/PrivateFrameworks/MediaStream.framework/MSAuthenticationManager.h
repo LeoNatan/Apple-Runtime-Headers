@@ -19,9 +19,9 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(nonatomic) int keybagChangeNotifyToken; // @synthesize keybagChangeNotifyToken=_keybagChangeNotifyToken;
 @property(nonatomic) BOOL isListeningToKeybagChanges; // @synthesize isListeningToKeybagChanges=_isListeningToKeybagChanges;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isWaitingForAuth) BOOL waitingForAuth;
 - (void)rearmAuthenticationAlert;
 - (void)didEncounterAuthenticationSuccessForPersonID:(id)arg1;

@@ -17,8 +17,8 @@
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
-@property(retain, nonatomic) RPVideoEditorHostRemoteNSViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) RPVideoEditorHostRemoteNSViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
 - (oneway void)onCancelButtonClickMessage;
 - (id)remoteProxy;
 

@@ -21,6 +21,7 @@
     NSString *_displayText;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *displayText; // @synthesize displayText=_displayText;
 @property(copy, nonatomic) NSString *concernTypeID; // @synthesize concernTypeID=_concernTypeID;
 @property(copy, nonatomic) NSString *aucType; // @synthesize aucType=_aucType;
@@ -28,7 +29,6 @@
 @property(nonatomic) long long concernItemType; // @synthesize concernItemType=_concernItemType;
 @property(copy, nonatomic) NSString *contentID; // @synthesize contentID=_contentID;
 @property(copy, nonatomic) NSString *userID; // @synthesize userID=_userID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

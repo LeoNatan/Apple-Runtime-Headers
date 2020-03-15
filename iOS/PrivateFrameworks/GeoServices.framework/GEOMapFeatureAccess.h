@@ -19,10 +19,10 @@
 }
 
 + (unsigned long long)zoomLevelForStyle:(int)arg1 scale:(int)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool visitDoubleTravelDirectionRoadsTwice; // @synthesize visitDoubleTravelDirectionRoadsTwice=_visitDoubleTravelDirectionRoadsTwice;
 @property(nonatomic) _Bool flipNegativeTravelDirectionRoads; // @synthesize flipNegativeTravelDirectionRoads=_flipNegativeTravelDirectionRoads;
 @property(nonatomic) _Bool allowNetworkTileLoad; // @synthesize allowNetworkTileLoad=_allowNetworkTileLoad;
-- (void).cxx_destruct;
 - (void)_preloadTilesNear:(CDStruct_c3b9c2ee)arg1 radius:(double)arg2 tileSetStyle:(int)arg3 tileSize:(int)arg4 tileScale:(int)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (id)roadTileKeysNear:(CDStruct_c3b9c2ee)arg1 radius:(double)arg2;
 - (void)preloadBuildingTilesNear:(CDStruct_c3b9c2ee)arg1 radius:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;

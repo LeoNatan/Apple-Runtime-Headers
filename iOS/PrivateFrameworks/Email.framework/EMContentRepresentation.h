@@ -10,7 +10,7 @@
 #import <Email/EFPubliclyDescribable-Protocol.h>
 #import <Email/NSSecureCoding-Protocol.h>
 
-@class CSSearchableItem, EFInvocationToken, EFSandboxedURLWrapper, EMListUnsubscribeCommand, EMMessage, EMSecurityInformation, NSArray, NSString, NSURL;
+@class CSSearchableItem, EFInvocationToken, EFSandboxedURLWrapper, EMListUnsubscribeCommand, EMMessage, EMMessageHeaders, EMSecurityInformation, NSArray, NSString, NSURL;
 @protocol EMContentItem, _EMDistantContentRepresentation;
 
 @interface EMContentRepresentation : NSObject <NSSecureCoding, EFLoggable, EFPubliclyDescribable>
@@ -28,6 +28,7 @@
     EMListUnsubscribeCommand *_unsubscribeCommand;
     long long _remainingByteCount;
     long long _transportType;
+    EMMessageHeaders *_requestedHeaders;
     EFSandboxedURLWrapper *_urlWrapper;
     id <_EMDistantContentRepresentation> _distantContentRepresentation;
     CDUnknownBlockType _requestMoreContentBlock;
@@ -38,9 +39,11 @@
 + (id)distantContentRepresentationInterface;
 + (id)contentRequestDelegateInterface;
 + (id)log;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType requestMoreContentBlock; // @synthesize requestMoreContentBlock=_requestMoreContentBlock;
 @property(retain, nonatomic) id <_EMDistantContentRepresentation> distantContentRepresentation; // @synthesize distantContentRepresentation=_distantContentRepresentation;
 @property(retain, nonatomic) EFSandboxedURLWrapper *urlWrapper; // @synthesize urlWrapper=_urlWrapper;
+@property(retain, nonatomic) EMMessageHeaders *requestedHeaders; // @synthesize requestedHeaders=_requestedHeaders;
 @property(nonatomic) long long transportType; // @synthesize transportType=_transportType;
 @property(nonatomic) long long remainingByteCount; // @synthesize remainingByteCount=_remainingByteCount;
 @property(nonatomic) _Bool hasMoreContent; // @synthesize hasMoreContent=_hasMoreContent;
@@ -52,7 +55,6 @@
 @property(copy, nonatomic) NSArray *replyToList; // @synthesize replyToList=_replyToList;
 @property(retain, nonatomic) NSURL *publicMessageURL; // @synthesize publicMessageURL=_publicMessageURL;
 @property(nonatomic) __weak id <EMContentItem> contentItem; // @synthesize contentItem=_contentItem;
-- (void).cxx_destruct;
 - (void)mergeUpdatedRepresentation:(id)arg1;
 - (id)requestAdditionalContentWithCompletion:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)_distantLoaderBlockForContentItem:(id)arg1;

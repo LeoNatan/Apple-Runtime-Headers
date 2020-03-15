@@ -16,8 +16,8 @@
 }
 
 + (Class)responseType;
-@property(retain, nonatomic) NSMutableArray *responses; // @synthesize responses=_responses;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *responses; // @synthesize responses=_responses;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

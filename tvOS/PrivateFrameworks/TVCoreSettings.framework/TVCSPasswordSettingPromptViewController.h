@@ -16,11 +16,11 @@
     TVSUITextAlertController *_alertController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVSUITextAlertController *alertController; // @synthesize alertController=_alertController;
 @property(copy, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 @property(copy, nonatomic) CDUnknownBlockType didSelect; // @synthesize didSelect=_didSelect;
-- (void).cxx_destruct;
 - (id)_alertTextMessage;
 - (void)_didSelectWithPasswordSetting:(unsigned long long)arg1;
 - (void)configureWithAccount:(id)arg1;

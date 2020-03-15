@@ -41,6 +41,7 @@
 - (void)getLocationDefaultForKey:(NSString *)arg1 replyBlock:(void (^)(NSError *, NSData *))arg2;
 - (void)setLocationDefaultForKey:(NSString *)arg1 andValue:(NSData *)arg2 replyBlock:(void (^)(NSError *))arg3;
 - (void)getAppsUsingLocationWithReplyBlock:(void (^)(NSError *, NSDictionary *))arg1;
+- (void)getGnssBandsInUseWithReplyBlock:(void (^)(NSError *, NSArray *))arg1;
 - (void)getTechnologiesInUseWithReplyBlock:(void (^)(NSError *, NSArray *))arg1;
 @end
 

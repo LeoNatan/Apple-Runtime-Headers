@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     NSSet *_offlineAssetRepresentations;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *offlineAssetRepresentations; // @synthesize offlineAssetRepresentations=_offlineAssetRepresentations;
 @property unsigned long long numberOfCompletedWorkItems; // @synthesize numberOfCompletedWorkItems=_numberOfCompletedWorkItems;
 @property unsigned long long numberOfWorkItems; // @synthesize numberOfWorkItems=_numberOfWorkItems;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL automaticallyStartDownloads; // @synthesize automaticallyStartDownloads=_automaticallyStartDownloads;
 @property(nonatomic, getter=isDownloading) BOOL downloading; // @synthesize downloading=_downloading;
 @property(nonatomic) double downloadProgress; // @synthesize downloadProgress=_downloadProgress;
-- (void).cxx_destruct;
 - (id)localOriginalImageForIdentifierURL:(id)arg1;
 - (id)projectOriginalImageForIdentifierURL:(id)arg1;
 - (id)originalImageForIdentifierURL:(id)arg1;

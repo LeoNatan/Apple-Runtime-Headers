@@ -23,13 +23,13 @@
 
 + (unsigned long long)_imageTypeForTagName:(id)arg1;
 + (_Bool)shouldParseChildDOMElements;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IKSrcSetRule *bestRule; // @synthesize bestRule=_bestRule;
 @property(retain, nonatomic) NSArray *srcsetRules; // @synthesize srcsetRules=_srcsetRules;
 @property(retain, nonatomic) NSURL *resolvedURL; // @synthesize resolvedURL=_resolvedURL;
 @property(readonly, nonatomic) double aspectRatio; // @synthesize aspectRatio=_aspectRatio;
 @property(readonly, nonatomic) unsigned long long imageType; // @synthesize imageType=_imageType;
 @property(readonly, retain, nonatomic) NSDictionary *srcset; // @synthesize srcset=_srcset;
-- (void).cxx_destruct;
 - (void)_resolveURL;
 - (void)_initCommon;
 - (void)_parseSrcset:(id)arg1;

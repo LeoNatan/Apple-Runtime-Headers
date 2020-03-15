@@ -13,6 +13,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (_Bool)handleKeyHIDEvent:(struct __IOHIDEvent *)arg1;
 - (void)_handleAuthenticationFeedback:(id)arg1;
 - (_Bool)biometricAuthenticationCoordinator:(id)arg1 requestsUnlockWithIntent:(int)arg2;
 - (void)_setUILocked:(_Bool)arg1;

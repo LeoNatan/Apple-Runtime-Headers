@@ -14,9 +14,9 @@
     NSMutableArray *_requests;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *requests; // @synthesize requests=_requests;
 @property(nonatomic) unsigned long long collapsingThreshold; // @synthesize collapsingThreshold=_collapsingThreshold;
-- (void).cxx_destruct;
 - (id)_collapsedNotificationRequestForNotificationRequest:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)_collapsedNotificationRequestFromCollapsibleRequests:(id)arg1;
 - (unsigned long long)_collapsedCountForCollapsibleRequests:(id)arg1;

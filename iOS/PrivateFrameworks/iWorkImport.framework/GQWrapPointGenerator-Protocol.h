@@ -11,7 +11,7 @@
 @protocol GQWrapPointGenerator <NSObject>
 - (void)clearWrapPoints;
 - (vector_dadce35e *)createListOfWrapPointsAlongY:(float)arg1 minX:(float)arg2 maxX:(float)arg3 zIndex:(int)arg4;
-- (const set_3d57cb01 *)wrapPoints;
+- (const set_978dc09f *)wrapPoints;
 - (void)addWrapPoint:(GQDWrapPoint *)arg1;
 @end
 

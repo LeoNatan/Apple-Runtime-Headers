@@ -21,9 +21,9 @@
     id <_TVRXVoiceRecorderDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_TVRXVoiceRecorderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL recordsAutomatically; // @synthesize recordsAutomatically=_recordsAutomatically;
-- (void).cxx_destruct;
 - (void)_processAudioBufferOnMainQueue:(id)arg1;
 - (void)voiceControllerDidStopRecording:(id)arg1 forReason:(long long)arg2;
 - (void)voiceControllerRecordBufferAvailable:(id)arg1 buffer:(id)arg2;

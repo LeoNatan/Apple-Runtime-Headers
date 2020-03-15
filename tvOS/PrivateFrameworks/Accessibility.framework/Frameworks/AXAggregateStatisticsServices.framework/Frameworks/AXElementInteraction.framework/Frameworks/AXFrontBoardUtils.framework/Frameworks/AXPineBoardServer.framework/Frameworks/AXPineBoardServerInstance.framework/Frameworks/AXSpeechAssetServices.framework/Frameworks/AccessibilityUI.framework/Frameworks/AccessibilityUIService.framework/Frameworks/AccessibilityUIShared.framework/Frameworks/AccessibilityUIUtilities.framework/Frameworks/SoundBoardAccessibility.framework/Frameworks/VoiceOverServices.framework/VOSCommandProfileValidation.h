@@ -17,8 +17,8 @@
 + (id)keyboardShortcutAssignedToOtherCommandValidation:(id)arg1;
 + (id)gestureAssignedToOtherCommandValidation:(id)arg1;
 + (id)successfulValidation;
-@property(retain, nonatomic) VOSCommand *previouslyBoundCommand; // @synthesize previouslyBoundCommand=_previouslyBoundCommand;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VOSCommand *previouslyBoundCommand; // @synthesize previouslyBoundCommand=_previouslyBoundCommand;
 @property(readonly, nonatomic) NSString *localizedErrorMessage;
 @property(readonly, nonatomic) NSString *localizedErrorTitle;
 @property(readonly, nonatomic) _Bool isKeyboardShortcutAssignedToOtherCommand;

@@ -13,8 +13,8 @@
     id <SAServerBoundCommand> _fetchContentCommand;
 }
 
-@property(retain, nonatomic) id <SAServerBoundCommand> fetchContentCommand; // @synthesize fetchContentCommand=_fetchContentCommand;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <SAServerBoundCommand> fetchContentCommand; // @synthesize fetchContentCommand=_fetchContentCommand;
 - (id)initWithFetchContentCommand:(id)arg1;
 
 @end

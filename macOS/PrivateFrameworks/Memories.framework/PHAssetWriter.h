@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 
 + (id)assetWriterForAssetRepresentation:(id)arg1;
 + (id)assetWriterForIdentifierURL:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property BOOL stop; // @synthesize stop=_stop;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL networkAccessAllowed; // @synthesize networkAccessAllowed=_networkAccessAllowed;
 @property(retain, nonatomic) NSURL *destinationURL; // @synthesize destinationURL=_destinationURL;
 @property(retain, nonatomic) PHAssetRepresentation *assetRepresentation; // @synthesize assetRepresentation=_assetRepresentation;
-- (void).cxx_destruct;
 - (unsigned long long)estimatedOutputSizeWithError:(id *)arg1;
 - (id)transfer;
 - (id)request;

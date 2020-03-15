@@ -14,9 +14,9 @@
     NSMutableSet *_notificationTokens;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *notificationTokens; // @synthesize notificationTokens=_notificationTokens;
 @property(retain, nonatomic) NSMutableDictionary *kvoObservationTokens; // @synthesize kvoObservationTokens=_kvoObservationTokens;
-- (void).cxx_destruct;
 - (id)actualNibNameForName:(id)arg1;
 @property(readonly, copy) NSString *controllerNibName;
 - (void)performSegueWithIdentifier:(id)arg1 sender:(id)arg2;

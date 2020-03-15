@@ -34,6 +34,7 @@
 + (id)albumWithAlbum:(id)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)album;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isFamilySharedAlbum; // @synthesize isFamilySharedAlbum=_isFamilySharedAlbum;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
 @property(retain, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) NSString *ownerFullName; // @synthesize ownerFullName=_ownerFullName;
 @property(retain, nonatomic) NSString *ownerPersonID; // @synthesize ownerPersonID=_ownerPersonID;
 @property(retain, nonatomic) NSString *ownerEmail; // @synthesize ownerEmail=_ownerEmail;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

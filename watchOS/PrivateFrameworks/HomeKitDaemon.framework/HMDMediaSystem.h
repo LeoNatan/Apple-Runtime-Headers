@@ -39,6 +39,7 @@
 + (id)sortMediaComponents:(id)arg1;
 + (void)_configureMediaSystemComponents:(id)arg1 mediaSystem:(id)arg2;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) HMDMediaSystemSymptomHandler *symptomsHandler; // @synthesize symptomsHandler=_symptomsHandler;
 @property(retain, nonatomic) HMFTimer *fixupSettingsTimer; // @synthesize fixupSettingsTimer=_fixupSettingsTimer;
 @property(retain, nonatomic) HMFTimer *auditSettingsTimer; // @synthesize auditSettingsTimer=_auditSettingsTimer;
@@ -49,7 +50,6 @@
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) NSString *configuredName; // @synthesize configuredName=_configuredName;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, copy) NSSet *messageReceiverChildren;
 - (id)modelObjectWithChangeType:(unsigned int)arg1;
 - (id)backingStoreObjects;
@@ -109,7 +109,7 @@
 - (id)initWithMediaSystemModel:(id)arg1 home:(id)arg2;
 - (id)init;
 - (id)assistantObject;
-- (id)url;
+- (id)urlString;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

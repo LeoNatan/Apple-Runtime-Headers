@@ -21,6 +21,7 @@
     NSArray *_activeButtonLayoutConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *activeButtonLayoutConstraints; // @synthesize activeButtonLayoutConstraints=_activeButtonLayoutConstraints;
 @property(nonatomic) _Bool showsArtwork; // @synthesize showsArtwork=_showsArtwork;
 @property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) MCDPlayModeButton *shuffleButton; // @synthesize shuffleButton=_shuffleButton;
 @property(readonly, nonatomic) MCDPlayModeButton *moreButton; // @synthesize moreButton=_moreButton;
 @property(readonly, nonatomic) MCDRepeatButton *repeatButton; // @synthesize repeatButton=_repeatButton;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;
 - (void)_updateButtonLayouts;

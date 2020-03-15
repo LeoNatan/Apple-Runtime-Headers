@@ -21,13 +21,13 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *hotspotClientsUsage; // @synthesize hotspotClientsUsage=_hotspotClientsUsage;
 @property(retain) NSDictionary *workspaceInfoDict; // @synthesize workspaceInfoDict=_workspaceInfoDict;
 @property(copy) CDUnknownBlockType refreshCompletionHandler; // @synthesize refreshCompletionHandler=_refreshCompletionHandler;
 @property _Bool refreshInProgress; // @synthesize refreshInProgress=_refreshInProgress;
 @property(retain) CTDeviceDataUsage *cachedDeviceDataUsage; // @synthesize cachedDeviceDataUsage=_cachedDeviceDataUsage;
 @property(retain, nonatomic) CoreTelephonyClient *client; // @synthesize client=_client;
-- (void).cxx_destruct;
 - (void)_handleUsageOrInfoChanged;
 - (id)previousBillingCycleEndDate;
 - (id)billingCycleEndDate;

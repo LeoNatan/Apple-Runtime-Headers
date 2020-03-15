@@ -19,9 +19,9 @@
 + (_Bool)_supportsOperatorType:(unsigned int)arg1;
 + (id)_acceptedKeyPath;
 + (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned int)arg2 value:(id)arg3 dataTypes:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int operatorType; // @synthesize operatorType=_operatorType;
 @property(readonly, copy, nonatomic) NSString *value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

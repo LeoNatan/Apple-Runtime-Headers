@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     BOOL _showsAudioTrackPreview;
 }
 
-@property(readonly) BOOL showsAudioTrackPreview; // @synthesize showsAudioTrackPreview=_showsAudioTrackPreview;
 - (void).cxx_destruct;
+@property(readonly) BOOL showsAudioTrackPreview; // @synthesize showsAudioTrackPreview=_showsAudioTrackPreview;
 - (void)zoomWithInfo:(CDStruct_ef34d2b9)arg1;
 - (void)startThumbnailGenerationWithZoomInfo:(CDStruct_ef34d2b9)arg1;
 - (void)updateTrackViewIfNeeded;

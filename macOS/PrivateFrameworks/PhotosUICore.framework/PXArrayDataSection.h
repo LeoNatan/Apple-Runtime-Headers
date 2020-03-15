@@ -13,8 +13,8 @@
     NSArray *_sectionContent;
 }
 
-@property(readonly, copy, nonatomic) NSArray *sectionContent; // @synthesize sectionContent=_sectionContent;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *sectionContent; // @synthesize sectionContent=_sectionContent;
 - (long long)validatedIndexOfObject:(id)arg1 hintIndex:(long long)arg2;
 - (long long)indexOfObject:(id)arg1;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;

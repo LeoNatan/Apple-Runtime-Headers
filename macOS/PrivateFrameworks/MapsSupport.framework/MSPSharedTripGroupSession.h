@@ -27,10 +27,10 @@ __attribute__((visibility("hidden")))
     id <MSPSharedTripGroupSessionDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MSPSharedTripGroupSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *initiatorDisplayName; // @synthesize initiatorDisplayName=_initiatorDisplayName;
 @property(readonly, nonatomic) NSString *initiatorIdentifier; // @synthesize initiatorIdentifier=_initiatorIdentifier;
-- (void).cxx_destruct;
 - (void)participantDidLeave:(id)arg1;
 - (void)participantDidJoin:(id)arg1;
 - (BOOL)_validParticipant:(id)arg1;

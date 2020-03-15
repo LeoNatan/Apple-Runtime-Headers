@@ -14,8 +14,8 @@
 }
 
 + (id)definition;
-@property(retain, nonatomic) EWSFindFolderParentType *RootFolder; // @synthesize RootFolder=_RootFolder;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EWSFindFolderParentType *RootFolder; // @synthesize RootFolder=_RootFolder;
 
 @end
 

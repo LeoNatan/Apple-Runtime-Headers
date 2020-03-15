@@ -22,9 +22,9 @@
     _Bool _invalidated;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FBSSerialQueue *queue; // @synthesize queue=_queue;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)noteDidReceiveMessage:(id)arg1 withType:(long long)arg2 fromClient:(id)arg3;
 - (void)noteClientDidDisconnect:(id)arg1;
 - (void)noteClientDidConnect:(id)arg1 withMessage:(id)arg2;

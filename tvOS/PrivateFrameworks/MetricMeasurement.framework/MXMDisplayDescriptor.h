@@ -13,8 +13,8 @@
     CADisplay *_display;
 }
 
-@property(readonly, nonatomic) CADisplay *display; // @synthesize display=_display;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CADisplay *display; // @synthesize display=_display;
 - (id)initWithDisplay:(id)arg1;
 @property(readonly, nonatomic, getter=main) _Bool isMain;
 @property(readonly, nonatomic) NSString *name;

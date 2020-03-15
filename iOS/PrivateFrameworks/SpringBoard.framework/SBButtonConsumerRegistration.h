@@ -16,11 +16,11 @@
     long long _eventPriority;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long eventPriority; // @synthesize eventPriority=_eventPriority;
 @property(nonatomic) unsigned long long eventMask; // @synthesize eventMask=_eventMask;
 @property(nonatomic) long long buttonKind; // @synthesize buttonKind=_buttonKind;
 @property(nonatomic) __weak SBButtonConsumerClient *client; // @synthesize client=_client;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

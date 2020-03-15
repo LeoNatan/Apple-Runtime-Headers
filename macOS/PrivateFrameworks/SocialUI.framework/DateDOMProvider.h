@@ -17,12 +17,12 @@
     NSMutableArray *_timeOrDateFragments;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *timeOrDateFragments; // @synthesize timeOrDateFragments=_timeOrDateFragments;
 @property(retain) NSMutableArray *timeFragments; // @synthesize timeFragments=_timeFragments;
 @property(retain) NSMutableArray *dateFragments; // @synthesize dateFragments=_dateFragments;
 @property(retain) NSMutableArray *longFragments; // @synthesize longFragments=_longFragments;
 @property(retain) NSMutableArray *preciseFragments; // @synthesize preciseFragments=_preciseFragments;
-- (void).cxx_destruct;
 - (id)formatDate:(id)arg1 roundInterval:(int)arg2 showDate:(BOOL)arg3 showTime:(BOOL)arg4 showSeconds:(BOOL)arg5;
 - (id)parseTime:(id)arg1 changeToDateStampTomorrow:(BOOL)arg2;
 - (id)timeStringForDate:(id)arg1;

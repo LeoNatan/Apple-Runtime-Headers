@@ -13,8 +13,8 @@
     CAMPerformanceTestHarness *_currentTestHarness;
 }
 
-@property(retain, nonatomic) CAMPerformanceTestHarness *currentTestHarness; // @synthesize currentTestHarness=_currentTestHarness;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CAMPerformanceTestHarness *currentTestHarness; // @synthesize currentTestHarness=_currentTestHarness;
 - (void)prepareForDefaultImageSnapshotForScreen:(id)arg1;
 - (unsigned long long)supportedInterfaceOrientationsForWindow:(id)arg1;
 - (_Bool)runTest:(id)arg1 options:(id)arg2;
@@ -24,8 +24,8 @@
 - (_Bool)runSwitchToPortraitFrontWithTestWithName:(id)arg1 options:(id)arg2;
 - (_Bool)runTakePictureFrontPortraitTest:(id)arg1 options:(id)arg2 prototype:(id)arg3;
 - (_Bool)runTakePicturePortraitTest:(id)arg1 options:(id)arg2 prototype:(id)arg3;
-- (_Bool)runTakePictureTestWithFrontCamera:(id)arg1 options:(id)arg2 prototype:(id)arg3;
-- (_Bool)runTakePictureTestWithTestName:(id)arg1 options:(id)arg2 prototype:(id)arg3;
+- (_Bool)runTakePictureTestWithFrontCamera:(id)arg1 options:(id)arg2 prototype:(id)arg3 forCaptureMode:(long long)arg4;
+- (_Bool)runTakePictureTestWithTestName:(id)arg1 options:(id)arg2 prototype:(id)arg3 forCaptureMode:(long long)arg4;
 - (void)didChangeToMode:(long long)arg1 device:(long long)arg2;
 - (void)didOpenViewfinderForReason:(long long)arg1;
 - (void)willOpenViewfinderForReason:(long long)arg1;

@@ -13,8 +13,8 @@
     WFModuleTitleView *_moduleTitleView;
 }
 
-@property(readonly, nonatomic) WFModuleTitleView *moduleTitleView; // @synthesize moduleTitleView=_moduleTitleView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WFModuleTitleView *moduleTitleView; // @synthesize moduleTitleView=_moduleTitleView;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (_Bool)isAccessibilityElement;

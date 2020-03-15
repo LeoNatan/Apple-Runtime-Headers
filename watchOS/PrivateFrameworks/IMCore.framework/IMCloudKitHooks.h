@@ -53,15 +53,13 @@
 - (_Bool)isSyncing;
 - (_Bool)isStartingSync;
 - (void)initiateSync;
-- (void)_requestMOCEnabledReturned:(unsigned int)arg1;
-- (void)requestMOCEnabledState;
 - (void)setShouldOptimizeAttachmentStorage:(_Bool)arg1;
 - (_Bool)shouldOptimizeAttachmentStorage;
 - (_Bool)eligibleForTruthZone;
 - (_Bool)rampedIntoTruthZone;
 - (_Bool)removedFromiCloudBackup;
 - (void)tryToDisableAllDevices;
-- (void)fetchSecurityLevelAndUpdateMiCSwitchEligibility;
+- (void)fetchAccountStatusAndUpdateMiCSwitchEligibility;
 - (void)performAdditionalStorageRequiredCheck;
 - (void)setEnabled:(_Bool)arg1;
 - (_Bool)isEnabled;

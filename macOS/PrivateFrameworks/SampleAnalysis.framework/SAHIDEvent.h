@@ -22,16 +22,16 @@
 + (id)hidEventWithoutReferencesFromPAStyleSerializedHIDEvent:(const CDStruct_55f67497 *)arg1;
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_ff5f2e9b *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property(readonly) unsigned int hidEventType; // @synthesize hidEventType=_hidEventType;
 @property(readonly) SATimestamp *hidEventTimestamp; // @synthesize hidEventTimestamp=_hidEventTimestamp;
 @property(readonly) NSArray *steps; // @synthesize steps=_steps;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (void)addKTraceEvent:(struct trace_point *)arg1 fromSession:(struct ktrace_session *)arg2;
 - (id)initWithHIDEventType:(unsigned int)arg1 atTimestamp:(id)arg2;
-- (void)populateReferencesUsingBuffer:(const CDStruct_ff5f2e9b *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(struct NSMutableDictionary *)arg3 andDataBufferDictionary:(struct NSMutableDictionary *)arg4;
-- (void)addSelfToSerializationDictionary:(struct NSMutableDictionary *)arg1;
-- (BOOL)addSelfToBuffer:(CDStruct_ff5f2e9b *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg3;
+- (void)populateReferencesUsingBuffer:(const CDStruct_ff5f2e9b *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(id)arg3 andDataBufferDictionary:(id)arg4;
+- (void)addSelfToSerializationDictionary:(id)arg1;
+- (BOOL)addSelfToBuffer:(CDStruct_ff5f2e9b *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(id)arg3;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 
 // Remaining properties

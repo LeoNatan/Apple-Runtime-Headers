@@ -24,6 +24,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)executionHistoryItemWithExecPath:(id)arg1 mmapPath:(id)arg2 signingID:(id)arg3 teamID:(id)arg4 cdHash:(id)arg5 responsiblePath:(id)arg6 developerName:(id)arg7 lasSeen:(id)arg8;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *lastSeen; // @synthesize lastSeen=_lastSeen;
 @property(readonly, nonatomic) NSString *developerName; // @synthesize developerName=_developerName;
 @property(readonly, nonatomic) NSString *responsiblePath; // @synthesize responsiblePath=_responsiblePath;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) NSString *signingID; // @synthesize signingID=_signingID;
 @property(readonly, nonatomic) NSString *mmapPath; // @synthesize mmapPath=_mmapPath;
 @property(readonly, nonatomic) NSString *execPath; // @synthesize execPath=_execPath;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithExecPath:(id)arg1 mmapPath:(id)arg2 signingID:(id)arg3 teamID:(id)arg4 cdHash:(id)arg5 responsiblePath:(id)arg6 developerName:(id)arg7 lasSeen:(id)arg8;

@@ -23,6 +23,7 @@
     struct UIEdgeInsets _hitRectInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *overrideColor; // @synthesize overrideColor=_overrideColor;
 @property(nonatomic) BOOL forcesUppercaseText; // @synthesize forcesUppercaseText=_forcesUppercaseText;
 @property(nonatomic, getter=isRouteLabelHidden) BOOL routeLabelHidden; // @synthesize routeLabelHidden=_routeLabelHidden;
@@ -31,7 +32,6 @@
 @property(nonatomic) struct UIEdgeInsets hitRectInsets; // @synthesize hitRectInsets=_hitRectInsets;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(nonatomic) double accessoryImageSpacing; // @synthesize accessoryImageSpacing=_accessoryImageSpacing;
-- (void).cxx_destruct;
 - (void)_intrinsicContentSizeInvalidatedForChildView:(id)arg1;
 @property(retain, nonatomic) UIImage *accessoryImage;
 - (void)tintColorDidChange;

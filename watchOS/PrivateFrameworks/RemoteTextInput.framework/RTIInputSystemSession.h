@@ -19,13 +19,13 @@
     id <RTIInputSystemSessionDelegate> _sessionDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <RTIInputSystemSessionDelegate> sessionDelegate; // @synthesize sessionDelegate=_sessionDelegate;
 @property(retain, nonatomic) NSHashTable *extraSessionDelegates; // @synthesize extraSessionDelegates=_extraSessionDelegates;
 @property(retain, nonatomic) RTITextOperations *textOperations; // @synthesize textOperations=_textOperations;
 @property(retain, nonatomic) RTIDocumentState *documentState; // @synthesize documentState=_documentState;
 @property(retain, nonatomic) RTIDocumentTraits *documentTraits; // @synthesize documentTraits=_documentTraits;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)enumerateSessionDelegatesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)removeSessionDelegate:(id)arg1;
 - (void)addSessionDelegate:(id)arg1;

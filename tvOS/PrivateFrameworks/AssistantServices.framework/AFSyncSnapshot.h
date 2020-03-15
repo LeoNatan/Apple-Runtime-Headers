@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
 @property(nonatomic) long long count; // @synthesize count=_count;
 @property(copy, nonatomic) NSString *validity; // @synthesize validity=_validity;
 @property(copy, nonatomic) NSString *anchor; // @synthesize anchor=_anchor;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

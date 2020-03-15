@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)fakeMenuItemViewWithFrame:(struct CGRect)arg1;
-@property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)mouseUp:(id)arg1;

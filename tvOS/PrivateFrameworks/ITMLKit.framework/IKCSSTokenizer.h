@@ -28,8 +28,8 @@
 + (_Bool)isDigit:(unsigned short)arg1;
 + (_Bool)isNewline:(unsigned short)arg1;
 + (_Bool)isWhitespace:(unsigned short)arg1;
-@property(readonly, nonatomic) IKCSSToken *currentToken; // @synthesize currentToken=_currentToken;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IKCSSToken *currentToken; // @synthesize currentToken=_currentToken;
 - (id)_consumeComment:(unsigned long long)arg1 consumed:(unsigned long long *)arg2;
 - (id)_consumeString:(unsigned long long)arg1 consumed:(unsigned long long *)arg2 toEndChar:(unsigned short)arg3;
 - (id)_consumeWhitespace:(unsigned long long)arg1 consumed:(unsigned long long *)arg2;

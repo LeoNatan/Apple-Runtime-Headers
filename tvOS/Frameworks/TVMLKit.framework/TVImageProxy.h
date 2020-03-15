@@ -33,6 +33,7 @@
 }
 
 + (id)_imageDecoratorQueue;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool writeToAssetLibrary; // @synthesize writeToAssetLibrary=_writeToAssetLibrary;
 @property(nonatomic) _Bool loadSynchronouslyIfCached; // @synthesize loadSynchronouslyIfCached=_loadSynchronouslyIfCached;
 @property(nonatomic) __weak id <IKNetworkRequestLoader> requestLoader; // @synthesize requestLoader=_requestLoader;
@@ -50,7 +51,6 @@
 @property(nonatomic) _Bool cacheOnLoad; // @synthesize cacheOnLoad=_cacheOnLoad;
 @property(retain, nonatomic) id imageLoader; // @synthesize imageLoader=_imageLoader;
 @property(readonly, nonatomic) id object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (void)_callWriteCompletionHandlerWithPath:(id)arg1 error:(id)arg2 finished:(_Bool)arg3;
 - (void)_callCompletionHandlerWithImage:(id)arg1 error:(id)arg2 finished:(_Bool)arg3;
 - (void)cancel;

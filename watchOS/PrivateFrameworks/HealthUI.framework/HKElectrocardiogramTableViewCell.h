@@ -17,10 +17,10 @@
 
 + (float)estimatedHeight;
 + (id)defaultReuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *bottomPaddingConstraint; // @synthesize bottomPaddingConstraint=_bottomPaddingConstraint;
 @property(retain, nonatomic) HKElectrocardiogramCardView *cardView; // @synthesize cardView=_cardView;
 @property(nonatomic) _Bool bottomPaddingDisabled; // @synthesize bottomPaddingDisabled=_bottomPaddingDisabled;
-- (void).cxx_destruct;
 - (void)_setupConstraints;
 - (void)_setupUIWithSample:(id)arg1 dateCache:(id)arg2 onboarding:(_Bool)arg3;
 - (void)prepareForReuse;

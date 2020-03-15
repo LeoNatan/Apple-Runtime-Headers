@@ -19,12 +19,12 @@
 
 + (unsigned char)typeForString:(id)arg1;
 + (id)describeType:(unsigned char)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double validEndDate; // @synthesize validEndDate=_validEndDate;
 @property(readonly, nonatomic) double validStartDate; // @synthesize validStartDate=_validStartDate;
 @property(readonly, nonatomic) NSUserActivity *userActivity; // @synthesize userActivity=_userActivity;
 @property(readonly, nonatomic) unsigned char type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *teamIdentifier; // @synthesize teamIdentifier=_teamIdentifier;
-- (void).cxx_destruct;
 - (id)jsonObject;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithTeamIdentifier:(id)arg1 type:(unsigned char)arg2 userActivity:(id)arg3 validStartDate:(double)arg4 validEndDate:(double)arg5;

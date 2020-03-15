@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     UIActivityIndicatorView *_loadingIndicator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIActivityIndicatorView *loadingIndicator; // @synthesize loadingIndicator=_loadingIndicator;
 @property(nonatomic) BOOL showsLoadingIndicator; // @synthesize showsLoadingIndicator=_showsLoadingIndicator;
 @property(readonly, nonatomic) AVButton *button; // @synthesize button=_button;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL hasFullScreenAppearance; // @synthesize hasFullScreenAppearance=_hasFullScreenAppearance;
 @property(nonatomic, getter=isIncluded) BOOL included; // @synthesize included=_included;
 @property(nonatomic, getter=isRemoved) BOOL removed; // @synthesize removed=_removed;
-- (void).cxx_destruct;
 - (void)_updateIsHiddenAndAlpha;
 @property(readonly, nonatomic, getter=isCollapsedOrExcluded) BOOL collapsedOrExcluded; // @synthesize collapsedOrExcluded=_collapsedOrExcluded;
 @property(nonatomic) struct CGSize extrinsicContentSize;

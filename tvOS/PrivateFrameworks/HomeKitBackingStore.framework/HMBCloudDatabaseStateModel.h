@@ -14,8 +14,8 @@
 }
 
 + (id)hmbProperties;
-@property(nonatomic) __weak CKDatabase *database; // @synthesize database=_database;
 - (void).cxx_destruct;
+@property(nonatomic) __weak CKDatabase *database; // @synthesize database=_database;
 @property(copy, nonatomic) NSSet *subscriptions;
 - (id)initWithModelID:(id)arg1 parentModelID:(id)arg2;
 

@@ -16,11 +16,11 @@
     NSString *_termsIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool termsAccepted; // @synthesize termsAccepted=_termsAccepted;
 @property(copy, nonatomic) NSString *termsIdentifier; // @synthesize termsIdentifier=_termsIdentifier;
 @property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
-- (void).cxx_destruct;
 - (id)_urlRequestWithAppleAccountInformation:(id)arg1;
 
 @end

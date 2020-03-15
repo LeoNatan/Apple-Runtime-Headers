@@ -39,6 +39,7 @@
     CDUnknownBlockType __t_rootCompleted;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType _t_rootCompleted; // @synthesize _t_rootCompleted=__t_rootCompleted;
 @property(copy, nonatomic) CDUnknownBlockType _t_remoteOperationWasScheduled; // @synthesize _t_remoteOperationWasScheduled=__t_remoteOperationWasScheduled;
 @property(copy, nonatomic) CDUnknownBlockType _t_patchActionOperationInfo; // @synthesize _t_patchActionOperationInfo=__t_patchActionOperationInfo;
@@ -51,7 +52,6 @@
 @property(copy, nonatomic) NSDictionary *targetFilenamesByItem; // @synthesize targetFilenamesByItem=__targetFilenamesByItem;
 @property(copy, nonatomic) NSDictionary *targetFilenamesByURL; // @synthesize targetFilenamesByURL=__targetFilenamesByURL;
 @property(readonly, nonatomic) NSDictionary *errorsByItem; // @synthesize errorsByItem=_errorsByItem;
-- (void).cxx_destruct;
 - (id)fp_prettyDescription;
 - (void)_scheduleAgainAfterErrorRecovery;
 - (void)_t_unblockReader;

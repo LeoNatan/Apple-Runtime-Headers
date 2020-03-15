@@ -22,6 +22,7 @@
     NSMutableArray *_allMessages;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *allMessages; // @synthesize allMessages=_allMessages;
 @property(retain, nonatomic) NSMutableArray *messages; // @synthesize messages=_messages;
 @property(retain, nonatomic) NSSortDescriptor *lastUsedSortDescriptor; // @synthesize lastUsedSortDescriptor=_lastUsedSortDescriptor;
@@ -29,7 +30,6 @@
 @property(copy, nonatomic) CDUnknownBlockType removalCompletion; // @synthesize removalCompletion=_removalCompletion;
 @property(copy, nonatomic) CDUnknownBlockType additionCompletion; // @synthesize additionCompletion=_additionCompletion;
 @property(copy, nonatomic) CDUnknownBlockType resetCompletion; // @synthesize resetCompletion=_resetCompletion;
-- (void).cxx_destruct;
 - (void)_removeMessages:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)handleRemovalDataBatch:(id)arg1;
 - (void)handleAdditionDataBatch:(id)arg1;

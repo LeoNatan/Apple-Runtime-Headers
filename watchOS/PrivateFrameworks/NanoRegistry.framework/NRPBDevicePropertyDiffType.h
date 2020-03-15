@@ -17,8 +17,8 @@
     CDStruct_f5f6ac14 _has;
 }
 
-@property(retain, nonatomic) NRPBDevicePropertyDiff *diff; // @synthesize diff=_diff;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NRPBDevicePropertyDiff *diff; // @synthesize diff=_diff;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

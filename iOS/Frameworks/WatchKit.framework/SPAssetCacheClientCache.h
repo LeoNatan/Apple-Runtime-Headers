@@ -17,12 +17,12 @@
     unsigned long long _cacheType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cacheType; // @synthesize cacheType=_cacheType;
 @property(nonatomic) long long size; // @synthesize size=_size;
 @property(retain, nonatomic) NSMutableArray *keys; // @synthesize keys=_keys;
 @property(retain, nonatomic) NSMutableDictionary *assets; // @synthesize assets=_assets;
 @property(retain, nonatomic) NSString *gizmoCacheIdentifier; // @synthesize gizmoCacheIdentifier=_gizmoCacheIdentifier;
-- (void).cxx_destruct;
 - (id)dataForImageWithName:(id)arg1;
 - (void)deleteDataForAsset:(id)arg1;
 - (_Bool)saveAssetData:(id)arg1 forAsset:(id)arg2;

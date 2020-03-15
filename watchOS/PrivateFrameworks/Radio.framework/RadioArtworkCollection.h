@@ -15,8 +15,8 @@
     NSArray *_artworks;
 }
 
-@property(readonly, nonatomic) NSArray *artworks; // @synthesize artworks=_artworks;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *artworks; // @synthesize artworks=_artworks;
 - (id)_artworksBySortingArtworks:(id)arg1;
 - (id)bestArtworkForPointSize:(struct CGSize)arg1;
 - (id)bestArtworkForPixelSize:(struct CGSize)arg1;

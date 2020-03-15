@@ -17,12 +17,12 @@
     NSArray *_additionalChangeTags;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *additionalChangeTags; // @synthesize additionalChangeTags=_additionalChangeTags;
 @property(readonly, nonatomic) unsigned int requestType; // @synthesize requestType=_requestType;
 @property(readonly, nonatomic) NSURL *fallbackURL; // @synthesize fallbackURL=_fallbackURL;
 @property(readonly, copy, nonatomic) NSString *responseKey; // @synthesize responseKey=_responseKey;
 @property(readonly, copy, nonatomic) NSString *requestKey; // @synthesize requestKey=_requestKey;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

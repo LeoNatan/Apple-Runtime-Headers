@@ -18,13 +18,13 @@
     NSIndexSet *_draggedIndexes;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSIndexSet *draggedIndexes; // @synthesize draggedIndexes=_draggedIndexes;
 @property(retain) NSMutableArray *items; // @synthesize items=_items;
 @property(nonatomic) __weak NSTableView *_itemsTableView; // @synthesize _itemsTableView;
 @property(nonatomic) __weak NSButton *_removeButton; // @synthesize _removeButton;
 @property(nonatomic) __weak NSButton *_addButton; // @synthesize _addButton;
 @property(nonatomic) __weak NSArrayController *_itemsController; // @synthesize _itemsController;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)addItems:(id)arg1;
 - (void)_panelDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;

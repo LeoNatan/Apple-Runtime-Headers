@@ -19,9 +19,9 @@
 
 + (id)createForServer;
 + (id)createForClient;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *recentCallQueue; // @synthesize recentCallQueue=_recentCallQueue;
 @property(readonly, nonatomic) CallHistoryDBHandle *dbStoreHandle; // @synthesize dbStoreHandle;
-- (void).cxx_destruct;
 - (_Bool)moveCallRecordsFromDatabaseAtURL:(id)arg1;
 - (_Bool)saveDatabase:(id *)arg1;
 - (void)dealloc;

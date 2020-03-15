@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)_contentViewClass;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setShouldHideCommentButton:) _Bool _shouldHideCommentButton; // @synthesize _shouldHideCommentButton=__shouldHideCommentButton;
 @property(retain, nonatomic, setter=_setCommentButton:) UIButton *_commentButton; // @synthesize _commentButton=__commentButton;
 @property(readonly, nonatomic) ISLivePhotoUIView *_playerView; // @synthesize _playerView=__playerView;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isPlayerHidden) _Bool playerHidden; // @synthesize playerHidden=_playerHidden;
 @property(nonatomic) int currentImageRequestID; // @synthesize currentImageRequestID=_currentImageRequestID;
 @property(nonatomic) long long commentCount; // @synthesize commentCount=_commentCount;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_layoutPlayerView;
 - (void)prepareForReuse;

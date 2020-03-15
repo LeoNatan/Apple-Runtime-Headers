@@ -13,8 +13,8 @@
     NSArray *_subparts;
 }
 
-@property(readonly, copy, nonatomic) NSArray *subparts; // @synthesize subparts=_subparts;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *subparts; // @synthesize subparts=_subparts;
 - (id)_initWithItem:(id)arg1 messagePartRange:(struct _NSRange)arg2 subparts:(id)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;

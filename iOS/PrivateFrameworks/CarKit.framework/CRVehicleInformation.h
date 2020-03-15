@@ -13,8 +13,8 @@
     CARSessionStatus *_currentSessionStatus;
 }
 
-@property(retain, nonatomic) CARSessionStatus *currentSessionStatus; // @synthesize currentSessionStatus=_currentSessionStatus;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CARSessionStatus *currentSessionStatus; // @synthesize currentSessionStatus=_currentSessionStatus;
 @property(readonly, nonatomic) unsigned long long vehicleAmbientBrightness;
 @property(readonly, nonatomic) unsigned long long driverPosition;
 - (id)init;

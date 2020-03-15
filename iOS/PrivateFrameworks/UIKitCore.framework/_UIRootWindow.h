@@ -22,8 +22,8 @@
     struct CGAffineTransform _additionalRootLayerAffineTransform;
 }
 
-@property(nonatomic, getter=_additionalRootLayerAffineTransform, setter=_setAdditionalRootLayerAffineTransform:) struct CGAffineTransform additionalRootLayerAffineTransform; // @synthesize additionalRootLayerAffineTransform=_additionalRootLayerAffineTransform;
 - (void).cxx_destruct;
+@property(nonatomic, getter=_additionalRootLayerAffineTransform, setter=_setAdditionalRootLayerAffineTransform:) struct CGAffineTransform additionalRootLayerAffineTransform; // @synthesize additionalRootLayerAffineTransform=_additionalRootLayerAffineTransform;
 - (void)_visibilityLock_enqueueUpdateIfNecessary_body;
 - (void)_visibilityLock_enqueueUpdateIfNecessary;
 - (id)_visibilityLock_environment;

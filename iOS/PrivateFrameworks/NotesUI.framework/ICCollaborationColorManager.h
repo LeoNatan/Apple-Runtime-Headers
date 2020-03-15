@@ -16,14 +16,14 @@
 }
 
 + (id)participantColors;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long colorUsageCountMinimum; // @synthesize colorUsageCountMinimum=_colorUsageCountMinimum;
 @property(retain, nonatomic) NSMutableArray *colorUsageCounts; // @synthesize colorUsageCounts=_colorUsageCounts;
 @property(retain, nonatomic) NSMutableDictionary *userIDToColorsDict; // @synthesize userIDToColorsDict=_userIDToColorsDict;
-- (void).cxx_destruct;
 - (id)participantAXDisplayNameForUserID:(id)arg1 forNote:(id)arg2;
 - (id)containerScopedUserRecordNameForAccount:(id)arg1;
 - (id)baseColorValuesForUserID:(id)arg1;
-- (struct UIColor *)highlightColorForUserID:(id)arg1 withPercentage:(double)arg2 forNote:(id)arg3 darkAppearance:(_Bool)arg4;
+- (id)highlightColorForUserID:(id)arg1 withPercentage:(double)arg2 forNote:(id)arg3 darkAppearance:(_Bool)arg4;
 - (id)init;
 
 @end

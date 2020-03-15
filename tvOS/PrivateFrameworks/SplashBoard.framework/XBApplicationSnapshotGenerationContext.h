@@ -17,10 +17,10 @@
     double _timeout;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(readonly, copy, nonatomic) XBLaunchStateRequest *launchRequest; // @synthesize launchRequest=_launchRequest;
 @property(readonly, nonatomic) XBApplicationLaunchCompatibilityInfo *applicationCompatibilityInfo; // @synthesize applicationCompatibilityInfo=_applicationCompatibilityInfo;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

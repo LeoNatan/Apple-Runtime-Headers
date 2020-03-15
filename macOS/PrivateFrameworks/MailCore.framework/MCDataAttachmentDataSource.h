@@ -15,8 +15,8 @@
     NSData *_data;
 }
 
-@property(readonly, copy, nonatomic) NSData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) BOOL isDirectory;
 @property(readonly, nonatomic) BOOL canResultsBeCached;
 @property(readonly, nonatomic) BOOL dataIsLocallyAvailable;

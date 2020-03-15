@@ -20,9 +20,9 @@
 }
 
 + (id)sessionWithConnection:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) BOOL isPaused; // @synthesize isPaused=_isPaused;
-- (void).cxx_destruct;
 - (void)handleTextActionPayload:(id)arg1;
 - (oneway void)remoteTextInputSessionWithID:(id)arg1 didChangePause:(BOOL)arg2 withReason:(id)arg3;
 - (oneway void)remoteTextInputSessionWithID:(id)arg1 documentTraitsDidChange:(id)arg2;

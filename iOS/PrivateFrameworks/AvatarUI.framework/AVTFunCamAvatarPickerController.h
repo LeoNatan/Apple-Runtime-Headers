@@ -49,6 +49,7 @@
 + (id)sessionProviderWithEnvironment:(id)arg1 delegate:(id)arg2;
 + (id)newGridLayout;
 + (id)itemsFromRecords:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSObject> changeNotificationToken; // @synthesize changeNotificationToken=_changeNotificationToken;
 @property(readonly, nonatomic) AVTRenderingScope *gridRenderingScope; // @synthesize gridRenderingScope=_gridRenderingScope;
 @property(readonly, nonatomic) AVTRenderingScope *editableRecordsListRenderingScope; // @synthesize editableRecordsListRenderingScope=_editableRecordsListRenderingScope;
@@ -73,7 +74,6 @@
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(nonatomic) __weak id <AVTAvatarPickerDelegate> avatarPickerDelegate; // @synthesize avatarPickerDelegate;
 @property(nonatomic) __weak id <AVTPresenterDelegate> presenterDelegate; // @synthesize presenterDelegate;
-- (void).cxx_destruct;
 - (void)selectAvatarRecordWithIdentifier:(id)arg1 animated:(_Bool)arg2;
 - (void)sessionProviderWillStartCameraSession:(id)arg1;
 - (void)sessionProviderDidEndCameraSession:(id)arg1;

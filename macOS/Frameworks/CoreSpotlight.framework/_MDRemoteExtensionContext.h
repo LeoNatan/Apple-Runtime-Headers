@@ -15,8 +15,8 @@
     CSIndexExtensionRequestHandler *_requestHandler;
 }
 
-@property(retain, nonatomic) CSIndexExtensionRequestHandler *requestHandler; // @synthesize requestHandler=_requestHandler;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CSIndexExtensionRequestHandler *requestHandler; // @synthesize requestHandler=_requestHandler;
 - (void)getLastUpdateTimeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)performJob:(id)arg1 acknowledgementHandler:(CDUnknownBlockType)arg2;
 - (id)hostContext;

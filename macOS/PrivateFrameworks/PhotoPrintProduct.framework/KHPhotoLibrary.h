@@ -21,8 +21,8 @@
 }
 
 + (id)defaultLibrary;
-@property(readonly, nonatomic) NSCache *photoCache; // @synthesize photoCache=_photoCache;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSCache *photoCache; // @synthesize photoCache=_photoCache;
 - (id)pageLayoutPhotoGroupWithUID:(id)arg1;
 - (id)pageLayoutPhotoGroupCollectionAtIndex:(long long)arg1;
 - (long long)pageLayoutNumberOfPhotoGroupCollections;

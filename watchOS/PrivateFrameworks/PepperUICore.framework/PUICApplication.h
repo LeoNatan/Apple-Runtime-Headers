@@ -42,13 +42,13 @@
 + (id)_defaultSessionForBundle;
 + (id)_sessionForIdentifier:(id)arg1;
 + (float)topWindowLevel;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICSnapshotController *snapshotController; // @synthesize snapshotController=_snapshotController;
 @property(retain, nonatomic) NSMutableDictionary *activeSessions; // @synthesize activeSessions=_activeSessions;
 @property(retain, nonatomic) NSMutableDictionary *viewOnWakeExpirationDict; // @synthesize viewOnWakeExpirationDict=_viewOnWakeExpirationDict;
 @property(retain, nonatomic) PUICActionWindowListener *windowListener; // @synthesize windowListener=_windowListener;
 @property(nonatomic) int orientation; // @synthesize orientation=_orientation;
 @property(retain, nonatomic) UIWindow *iconWindow; // @synthesize iconWindow=_iconWindow;
-- (void).cxx_destruct;
 - (void)_handlePlatformSpecificActions:(id)arg1 forScene:(id)arg2 withTransitionContext:(id)arg3;
 - (_Bool)_isSpringBoardShowingAnAlert;
 - (void)_applicationHandleSiriTask:(id)arg1;

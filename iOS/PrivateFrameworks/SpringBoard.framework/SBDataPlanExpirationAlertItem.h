@@ -13,8 +13,8 @@
     NSDate *_expirationDate;
 }
 
-@property(retain, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 - (void)configure:(_Bool)arg1 requirePasscodeForActions:(_Bool)arg2;
 - (id)initWithAccountURL:(id)arg1 expirationDate:(id)arg2;
 

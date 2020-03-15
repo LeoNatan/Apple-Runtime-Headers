@@ -31,13 +31,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *messageName; // @synthesize messageName=_messageName;
 @property(nonatomic) BOOL isSecure; // @synthesize isSecure=_isSecure;
 @property(retain, nonatomic) NSString *transactionID; // @synthesize transactionID=_transactionID;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) unsigned long long payloadSize; // @synthesize payloadSize=_payloadSize;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

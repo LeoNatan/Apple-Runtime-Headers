@@ -16,8 +16,8 @@
 }
 
 + (id)logCategory;
-@property(readonly, nonatomic) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 - (void)_scanAccounts;
 - (void)_scanCloudZones;
 - (void)_scanHomes;

@@ -15,10 +15,10 @@
     CDUnknownBlockType _deleteBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType deleteBlock; // @synthesize deleteBlock=_deleteBlock;
 @property(copy, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
 @property(copy, nonatomic) CDUnknownBlockType createBlock; // @synthesize createBlock=_createBlock;
-- (void).cxx_destruct;
 - (void)executeOperation;
 - (void)prepareToExecuteWithResponse:(id)arg1 forRequestOperation:(id)arg2;
 @property(retain) EWSSyncFolderHierarchyResponseType *response;

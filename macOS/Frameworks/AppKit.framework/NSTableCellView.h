@@ -18,8 +18,8 @@
     NSImageView *_imageView;
 }
 
-@property(retain) id objectValue; // @synthesize objectValue=_objectValue;
 - (void).cxx_destruct;
+@property(retain) id objectValue; // @synthesize objectValue=_objectValue;
 @property(readonly) NSArray *draggingImageComponents;
 - (void)layout;
 - (void)viewWillDraw;

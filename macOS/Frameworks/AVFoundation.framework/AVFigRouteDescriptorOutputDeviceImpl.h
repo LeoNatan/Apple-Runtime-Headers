@@ -22,9 +22,9 @@
     BOOL _useRouteConfigUpdatedNotification;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct __CFDictionary *routeDescriptor; // @synthesize routeDescriptor=_routeDescriptor;
 @property __weak AVOutputDevice *parentOutputDevice; // @synthesize parentOutputDevice=_parentDevice;
-- (void).cxx_destruct;
 - (void)configureUsingBlock:(CDUnknownBlockType)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) BOOL canRelayCommunicationChannel;
 @property(readonly, nonatomic) BOOL canCommunicateWithAllLogicalDeviceMembers;
@@ -45,6 +45,7 @@
 - (BOOL)setCurrentBluetoothListeningMode:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) NSString *currentBluetoothListeningMode;
 @property(readonly, nonatomic) NSArray *availableBluetoothListeningModes;
+@property(readonly, nonatomic) long long HAPConformance;
 @property(readonly, nonatomic) BOOL supportsBluetoothSharing;
 @property(readonly, nonatomic) BOOL presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
 @property(readonly, nonatomic) BOOL canFetchMediaDataFromSender;

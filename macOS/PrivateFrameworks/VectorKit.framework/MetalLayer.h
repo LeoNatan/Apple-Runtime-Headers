@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     struct CGSize _backingSize;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL sRGB; // @synthesize sRGB=_sRGB;
 @property(readonly, nonatomic) struct CGSize backingSize; // @synthesize backingSize=_backingSize;
 @property id <GGLLayerDelegate> renderDelegate; // @synthesize renderDelegate=_delegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)display;
 - (void)didEnterBackground;
 - (void)onTimerFired:(double)arg1 presentAtTime:(double)arg2;

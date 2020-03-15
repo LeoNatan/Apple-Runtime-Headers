@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSPredicate *_predicate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(nonatomic) __weak id <WDMedicalRecordSearchResultViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 
 @end

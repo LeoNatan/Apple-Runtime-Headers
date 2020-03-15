@@ -20,11 +20,11 @@
 }
 
 + (id)sharedProvider;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *completionQueue; // @synthesize completionQueue=_completionQueue;
 @property(nonatomic) double uptimeAtInternetDateAndTimeFetch; // @synthesize uptimeAtInternetDateAndTimeFetch=_uptimeAtInternetDateAndTimeFetch;
 @property(retain, nonatomic) NSDate *internetDateAndTime; // @synthesize internetDateAndTime=_internetDateAndTime;
 @property(retain, nonatomic) id <CRKInternetDateFetching> dateFetchingProvider; // @synthesize dateFetchingProvider=_dateFetchingProvider;
-- (void).cxx_destruct;
 - (id)fetchExistingInternetDate;
 - (void)fetchInternetDateWithCompletion:(CDUnknownBlockType)arg1;
 - (id)init;

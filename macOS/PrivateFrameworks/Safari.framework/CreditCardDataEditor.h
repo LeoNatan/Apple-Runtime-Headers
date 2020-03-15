@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_creditCardIconForNumberAllowingPartialMatch:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSLayoutConstraint *addRemoveButtonEqualWidthsConstraint; // @synthesize addRemoveButtonEqualWidthsConstraint=_addRemoveButtonEqualWidthsConstraint;
 @property(nonatomic) __weak NSButton *removeCreditCardButton; // @synthesize removeCreditCardButton=_removeCreditCardButton;
 @property(nonatomic) __weak NSButton *addCreditCardButton; // @synthesize addCreditCardButton=_addCreditCardButton;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSTableView *tableView; // @synthesize tableView=_tableView;
 @property(copy, nonatomic) NSArray *creditCardData; // @synthesize creditCardData=_creditCardData;
 @property(nonatomic) __weak id <CreditCardDataEditorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)creditCardDataEditorCellView:(id)arg1 willAbortEditingForTextFieldWithIdentifier:(id)arg2;
 - (void)creditCardDataEditorCellView:(id)arg1 didSetObjectValue:(id)arg2 forTextFieldWithIdentifier:(id)arg3;
 - (void)creditCardDataEditorCellView:(id)arg1 textDidChangeInFieldEditor:(id)arg2 forTextFieldWithIdentifier:(id)arg3;

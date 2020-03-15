@@ -6,17 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray;
+@class NSArray, NSMutableArray, NSString;
 
 @interface VKMuninJunction : NSObject
 {
     NSMutableArray *_roads;
+    NSString *_name;
 }
 
+@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSArray *roads; // @synthesize roads=_roads;
 - (id)description;
 - (void)dealloc;
-- (id)initWithMuninJunction:(const struct MuninJunction *)arg1;
+- (id)initWithMuninJunction:(const struct MuninJunction *)arg1 localize:(_Bool)arg2;
 
 @end
 

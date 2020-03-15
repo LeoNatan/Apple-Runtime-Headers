@@ -61,6 +61,7 @@
 + (id)systemSourceDirectoryURLs;
 + (id)systemSourcePathExtension;
 + (id)descriptionWithBundleIdentifier:(id)arg1 path:(id)arg2 allowServiceExtensionFiltering:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowUnlimitedPendingNotifications; // @synthesize allowUnlimitedPendingNotifications=_allowUnlimitedPendingNotifications;
 @property(nonatomic) _Bool daemonShouldReceiveApplicationEvents; // @synthesize daemonShouldReceiveApplicationEvents=_daemonShouldReceiveApplicationEvents;
 @property(nonatomic) _Bool daemonShouldReceiveNotificationSettingsUpdates; // @synthesize daemonShouldReceiveNotificationSettingsUpdates=_daemonShouldReceiveNotificationSettingsUpdates;
@@ -101,7 +102,6 @@
 @property(copy, nonatomic) NSString *universalApplicationIdentifier; // @synthesize universalApplicationIdentifier=_universalApplicationIdentifier;
 @property(copy, nonatomic) NSString *processBundleIdentifier; // @synthesize processBundleIdentifier=_processBundleIdentifier;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
 - (void)setDefaultTopicsFromArray:(id)arg1 bundle:(id)arg2;

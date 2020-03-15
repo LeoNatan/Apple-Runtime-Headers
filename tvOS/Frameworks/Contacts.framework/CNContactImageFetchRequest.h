@@ -17,8 +17,8 @@
 
 + (id)predicateForImagesMatchingContactIdentifiers:(id)arg1;
 + (id)recentImagesRequestForContactIdenfitiers:(id)arg1;
-@property(retain, nonatomic) NSArray *contactIdentifiers; // @synthesize contactIdentifiers=_contactIdentifiers;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *contactIdentifiers; // @synthesize contactIdentifiers=_contactIdentifiers;
 @property(readonly, nonatomic) NSPersistentStoreRequest *persistentStoreRequest;
 - (id)initWithContactIdentifiers:(id)arg1;
 

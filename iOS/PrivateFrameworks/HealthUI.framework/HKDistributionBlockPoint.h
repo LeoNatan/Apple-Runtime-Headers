@@ -19,11 +19,11 @@
     struct CGPoint _maxPoint;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <HKGraphSeriesBlockCoordinateInfo> userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, nonatomic) NSArray *distributionSegments; // @synthesize distributionSegments=_distributionSegments;
 @property(readonly, nonatomic) struct CGPoint maxPoint; // @synthesize maxPoint=_maxPoint;
 @property(readonly, nonatomic) struct CGPoint minPoint; // @synthesize minPoint=_minPoint;
-- (void).cxx_destruct;
 - (id)_applyTransformToSegments:(id)arg1 transform:(struct CGAffineTransform)arg2;
 - (id)_segmentsFromChartPoint:(id)arg1 forX:(double)arg2 minY:(double)arg3 maxY:(double)arg4;
 @property(readonly, copy) NSString *description;

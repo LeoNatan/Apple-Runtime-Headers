@@ -17,10 +17,10 @@
 
 + (id)friendListsWithResponseData:(id)arg1;
 + (id)friendListWithDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSString *type; // @synthesize type=_type;
 @property(retain) NSString *name; // @synthesize name=_name;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithFriendListDictionary:(id)arg1;
 
 @end

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_relations;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requiresAll; // @synthesize requiresAll=_requiresAll;
 @property(retain, nonatomic) NSArray *relations; // @synthesize relations=_relations;
-- (void).cxx_destruct;
 - (id)_ui_descriptionBuilder;
 - (id)type;
 - (id)itemStates;

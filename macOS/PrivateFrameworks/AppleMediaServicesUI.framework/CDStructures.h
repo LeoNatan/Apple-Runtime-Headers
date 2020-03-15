@@ -25,16 +25,3 @@ struct CGSize {
     double _field2;
 };
 
-struct NSImage {
-    Class _field1;
-};
-
-struct NSTextField {
-    Class _field1;
-    id _field2;
-};
-
-struct NSViewController {
-    Class _field1;
-};
-

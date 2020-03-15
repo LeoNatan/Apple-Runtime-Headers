@@ -26,6 +26,7 @@
 + (id)propertiesForClass:(Class)arg1 walkingSuperclassesUntilReaching:(Class)arg2;
 + (id)ignoredPropertyNames;
 + (id)defaultPropertyValues;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *lastSavedOrFetchedValues; // @synthesize lastSavedOrFetchedValues=_lastSavedOrFetchedValues;
 @property(readonly, nonatomic) NSMutableSet *modifiedPropertyNamesSinceLastSave; // @synthesize modifiedPropertyNamesSinceLastSave=_modifiedPropertyNamesSinceLastSave;
 @property(readonly, nonatomic) NSMutableDictionary *lastFetchedValues; // @synthesize lastFetchedValues=_lastFetchedValues;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) NSMutableSet *fetchedPropertyNames; // @synthesize fetchedPropertyNames=_fetchedPropertyNames;
 @property(readonly, nonatomic) NSDictionary *allPropertiesByName; // @synthesize allPropertiesByName=_allPropertiesByName;
 @property(readonly, nonatomic) WFRecordDescriptor *descriptor; // @synthesize descriptor=_descriptor;
-- (void).cxx_destruct;
 - (_Bool)saveProperties:(id)arg1 toStorage:(id)arg2 error:(id *)arg3;
 - (void)resetModifications:(_Bool)arg1;
 - (void)markPropertyModifiedIfNecessary:(id)arg1;

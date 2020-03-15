@@ -38,6 +38,7 @@
     TIMecabraEnvironment *_mecabraEnvironment;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TIMecabraEnvironment *mecabraEnvironment; // @synthesize mecabraEnvironment=_mecabraEnvironment;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) NSArray *addressBookEntries; // @synthesize addressBookEntries=_addressBookEntries;
@@ -58,7 +59,6 @@
 @property unsigned short syllableMedialBuffer; // @synthesize syllableMedialBuffer=_syllableMedialBuffer;
 @property unsigned short syllableConsonantBuffer; // @synthesize syllableConsonantBuffer=_syllableConsonantBuffer;
 @property __weak id <CIMMecabraZhuyinEngineDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)candidatesForInputString:(id)arg1;
 - (id)inputStringForCharacters:(id)arg1;
 @property(readonly) NSString *syllableBuffersAggregateString;

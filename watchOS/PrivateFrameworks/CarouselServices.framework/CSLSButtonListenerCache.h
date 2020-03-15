@@ -13,8 +13,8 @@
     NSMutableDictionary *_entries;
 }
 
-@property(retain) NSMutableDictionary *entries; // @synthesize entries=_entries;
 - (void).cxx_destruct;
+@property(retain) NSMutableDictionary *entries; // @synthesize entries=_entries;
 - (id)debugDescription;
 - (void)clear;
 - (void)enumerateEntries:(CDUnknownBlockType)arg1;

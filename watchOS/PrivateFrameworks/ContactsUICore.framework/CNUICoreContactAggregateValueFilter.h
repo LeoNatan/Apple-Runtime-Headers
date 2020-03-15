@@ -15,8 +15,8 @@
     NSArray *_valueFilters;
 }
 
-@property(readonly, nonatomic) NSArray *valueFilters; // @synthesize valueFilters=_valueFilters;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *valueFilters; // @synthesize valueFilters=_valueFilters;
 @property(readonly, copy) NSString *description;
 - (void)filterPropertyValuesFromContact:(id)arg1;
 - (id)contactByFilteringOutPropertyValueOfContact:(id)arg1;

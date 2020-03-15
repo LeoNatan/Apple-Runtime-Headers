@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long architectureCompatibility; // @synthesize architectureCompatibility=_architectureCompatibility;
 @property(nonatomic) long long watchKitCompatibility; // @synthesize watchKitCompatibility=_watchKitCompatibility;
 @property(copy, nonatomic) NSString *uniqueInstallID; // @synthesize uniqueInstallID=_uniqueInstallID;
 @property(retain, nonatomic) NSError *lastInstallationError; // @synthesize lastInstallationError=_lastInstallationError;
 @property(nonatomic) unsigned long long installStatus; // @synthesize installStatus=_installStatus;
-- (void).cxx_destruct;
 - (id)description;
 - (void)setInstallStatusWithGizmoStatus:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

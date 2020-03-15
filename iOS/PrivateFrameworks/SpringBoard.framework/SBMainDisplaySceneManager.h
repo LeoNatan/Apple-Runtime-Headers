@@ -35,10 +35,10 @@
 + (Class)_sceneLayoutWindowClass;
 + (Class)_applicationSceneHandleClass;
 + (Class)_layoutStateManagerClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_isUsingMedusaHostedKeyboardWindow) _Bool _isUsingMedusaHostedKeyboardWindow; // @synthesize _isUsingMedusaHostedKeyboardWindow;
 @property(readonly, nonatomic) UIWindow *_medusaHostedKeyboardWindow; // @synthesize _medusaHostedKeyboardWindow;
 @property(nonatomic) __weak id <SBIdleTimerCoordinating> idleTimerCoordinator; // @synthesize idleTimerCoordinator=_idleTimerCoordinator;
-- (void).cxx_destruct;
 - (void)_userInterfaceStyleArbiterStyleChanged:(id)arg1;
 - (id)coordinatorRequestedIdleTimerBehavior:(id)arg1;
 - (id)idleTimerProvider:(id)arg1 didProposeBehavior:(id)arg2 forReason:(id)arg3;
@@ -46,6 +46,7 @@
 - (void)_updateLevelAndBackgroundSettingsForScene:(id)arg1 transitionContext:(id)arg2;
 - (void)_updateMedusaHostedKeyboardWindowForScene:(id)arg1 isForeground:(_Bool *)arg2;
 - (void)_updateMedusaHostedKeyboardWindow;
+@property(readonly, nonatomic, getter=_isKeyboardVisibleForSpringBoard) _Bool _isKeyboardVisibleForSpringBoard;
 - (void)_updateValidInterfaceOrientationForTransitionContext:(id)arg1;
 - (void)_updateDeviceOrientation:(long long)arg1 ifNeededForScene:(id)arg2;
 - (_Bool)_animateGeometryChangesForExternalForegroundApplicationScenes;

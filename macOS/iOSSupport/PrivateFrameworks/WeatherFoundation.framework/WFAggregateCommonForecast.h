@@ -18,13 +18,13 @@
     NSArray *_dailyPollenForecastedConditions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *dailyPollenForecastedConditions; // @synthesize dailyPollenForecastedConditions=_dailyPollenForecastedConditions;
 @property(retain, nonatomic) NSArray *dailyForecastedConditions; // @synthesize dailyForecastedConditions=_dailyForecastedConditions;
 @property(retain, nonatomic) NSArray *hourlyForecastedConditions; // @synthesize hourlyForecastedConditions=_hourlyForecastedConditions;
 @property(retain, nonatomic) NSArray *lastTwentyFourHoursOfObservations; // @synthesize lastTwentyFourHoursOfObservations=_lastTwentyFourHoursOfObservations;
 @property(retain, nonatomic) WFWeatherConditions *currentObservations; // @synthesize currentObservations=_currentObservations;
 @property(retain, nonatomic) WFAirQualityConditions *airQualityObservations; // @synthesize airQualityObservations=_airQualityObservations;
-- (void).cxx_destruct;
 
 @end
 

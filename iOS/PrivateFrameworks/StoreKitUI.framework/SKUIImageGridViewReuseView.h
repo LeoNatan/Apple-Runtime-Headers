@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
 + (void)requestLayoutForViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 + (struct CGSize)preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (_Bool)prefetchResourcesForViewElement:(id)arg1 reason:(long long)arg2 context:(id)arg3;
-@property(retain, nonatomic) NSArray *imageViews; // @synthesize imageViews=_imageViews;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *imageViews; // @synthesize imageViews=_imageViews;
 - (id)viewForElementIdentifier:(id)arg1;
 - (_Bool)updateWithItemState:(id)arg1 context:(id)arg2 animated:(_Bool)arg3;
 - (_Bool)setImage:(id)arg1 forArtworkRequest:(id)arg2 context:(id)arg3;

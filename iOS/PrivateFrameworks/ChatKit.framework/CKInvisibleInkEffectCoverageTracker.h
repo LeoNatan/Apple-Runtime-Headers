@@ -24,10 +24,10 @@ __attribute__((visibility("hidden")))
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double touchLifetime; // @synthesize touchLifetime=_touchLifetime;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(nonatomic) __weak id <CKInvisibleInkEffectCoverageTrackerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_checkForCover:(id)arg1;
 - (void)recordTouchAtPoint:(struct CGPoint)arg1;
 - (void)reset;

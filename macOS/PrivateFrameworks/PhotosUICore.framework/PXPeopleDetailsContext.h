@@ -21,8 +21,8 @@
 + (id)photosDetailsContextForAssetCollection:(id)arg1 assets:(id)arg2 keyAssets:(id)arg3 enableCuration:(BOOL)arg4 enableKeyAssets:(BOOL)arg5 viewSourceOrigin:(unsigned long long)arg6;
 + (id)photosDetailsContextForAssetCollection:(id)arg1 assets:(id)arg2 viewSourceOrigin:(unsigned long long)arg3;
 + (id)assetCollectionListFetchResultForPeople:(id)arg1 assetCount:(unsigned long long *)arg2;
-@property(readonly, nonatomic) PHFetchResult *keyFaceAssetFetchResult; // @synthesize keyFaceAssetFetchResult=_keyFaceAssetFetchResult;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PHFetchResult *keyFaceAssetFetchResult; // @synthesize keyFaceAssetFetchResult=_keyFaceAssetFetchResult;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1 withPreparedInfo:(id)arg2;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
 - (id)_displayTitleForPeople:(id)arg1;

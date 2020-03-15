@@ -18,9 +18,9 @@
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
-- (void).cxx_destruct;
 - (void)noteViewMovedOffscreenTemporarily;
 - (void)noteTintColorForBackgroundStyleChanged:(id)arg1;
 - (void)backgroundStyle:(CDUnknownBlockType)arg1;

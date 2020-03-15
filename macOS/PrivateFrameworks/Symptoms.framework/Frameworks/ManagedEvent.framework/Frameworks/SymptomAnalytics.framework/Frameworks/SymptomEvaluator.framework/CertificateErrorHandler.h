@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
 
 + (id)configureClass:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int maxCount; // @synthesize maxCount=_maxCount;
 @property(nonatomic) unsigned int maxAge; // @synthesize maxAge=_maxAge;
-- (void).cxx_destruct;
 - (int)read:(id)arg1 returnedValues:(id)arg2;
 - (_Bool)noteSymptom:(id)arg1;
 - (int)configureInstance:(id)arg1;

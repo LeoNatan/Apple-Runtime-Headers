@@ -35,6 +35,7 @@
 }
 
 + (Class)neighborType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *serviceProviderName; // @synthesize serviceProviderName=_serviceProviderName;
 @property(nonatomic) _Bool isLimitedService; // @synthesize isLimitedService=_isLimitedService;
 @property(retain, nonatomic) CLPCellNeighborsGroup *neighborGroup; // @synthesize neighborGroup=_neighborGroup;
@@ -54,7 +55,6 @@
 @property(nonatomic) int lac; // @synthesize lac=_lac;
 @property(nonatomic) int mnc; // @synthesize mnc=_mnc;
 @property(nonatomic) int mcc; // @synthesize mcc=_mcc;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <SafariShared/WBSTouchIconRequest.h>
+#import <SafariSharedUI/WBSTouchIconRequest.h>
 
 @protocol BookmarkItem;
 
@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)requestWithBookmark:(id)arg1 minimumIconSize:(struct CGSize)arg2 maximumIconSize:(struct CGSize)arg3 useSiteNameInsteadOfTitle:(BOOL)arg4;
-@property(readonly, nonatomic) id <BookmarkItem> bookmark; // @synthesize bookmark=_bookmark;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <BookmarkItem> bookmark; // @synthesize bookmark=_bookmark;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

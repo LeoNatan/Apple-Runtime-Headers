@@ -10,16 +10,18 @@
 #import <SafariServices/SFInteractiveDismissControllerDelegate-Protocol.h>
 #import <SafariServices/SFQueueingServiceViewControllerProxyDelegate-Protocol.h>
 #import <SafariServices/_SFLinkPreviewHeaderDelegate-Protocol.h>
+#import <SafariServices/_UIRemoteViewControllerContaining-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSString, NSURL, SFBrowserRemoteViewController, SFInteractiveDismissController, SFQueueingServiceViewControllerProxy, SFSafariLaunchPlaceholderView, SFSafariViewControllerConfiguration, UIColor, _UIAsyncInvocation, _WKActivatedElementInfo;
+@class NSArray, NSMutableDictionary, NSString, NSURL, SFBrowserRemoteViewController, SFInteractiveDismissController, SFQueueingServiceViewControllerProxy, SFSafariLaunchPlaceholderView, SFSafariViewControllerConfiguration, UIColor, UIView, _UIAsyncInvocation, _UIRemoteViewController, _WKActivatedElementInfo;
 @protocol SFSafariViewControllerDelegate, SFServiceViewControllerProtocol;
 
-@interface SFSafariViewController : UIViewController <SFBrowserRemoteViewControllerDelegate, SFInteractiveDismissControllerDelegate, SFQueueingServiceViewControllerProxyDelegate, _SFLinkPreviewHeaderDelegate>
+@interface SFSafariViewController : UIViewController <SFBrowserRemoteViewControllerDelegate, SFInteractiveDismissControllerDelegate, SFQueueingServiceViewControllerProxyDelegate, _SFLinkPreviewHeaderDelegate, _UIRemoteViewControllerContaining>
 {
     SFBrowserRemoteViewController *_remoteViewController;
     _UIAsyncInvocation *_cancelViewServiceRequest;
     _Bool _hasBeenDisplayedAtLeastOnce;
     _Bool _remoteViewControllerHasBeenAdded;
+    UIView *_nanoHeaderView;
     NSArray *_previewActions;
     _WKActivatedElementInfo *_activatedElementInfo;
     NSArray *_customActivities;
@@ -42,6 +44,7 @@
     NSURL *_initialURL;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool defersAddingRemoteViewController; // @synthesize defersAddingRemoteViewController=_defersAddingRemoteViewController;
 @property(readonly, nonatomic) NSURL *initialURL; // @synthesize initialURL=_initialURL;
 @property(readonly, nonatomic) SFQueueingServiceViewControllerProxy<SFServiceViewControllerProtocol> *serviceProxy; // @synthesize serviceProxy=_serviceProxy;
@@ -49,7 +52,6 @@
 @property(retain, nonatomic) UIColor *preferredControlTintColor; // @synthesize preferredControlTintColor=_preferredControlTintColor;
 @property(retain, nonatomic) UIColor *preferredBarTintColor; // @synthesize preferredBarTintColor=_preferredBarTintColor;
 @property(nonatomic) __weak id <SFSafariViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)serviceProxyWillQueueInvocation:(id)arg1;
 - (void)interactiveDismissControllerDidCancel:(id)arg1;
 - (void)interactiveDismissControllerDidEnd:(id)arg1;
@@ -69,6 +71,7 @@
 - (void)remoteViewControllerWillDismiss:(id)arg1;
 - (void)remoteViewControllerDidLoadWebView:(id)arg1;
 - (void)linkPreviewHeader:(id)arg1 didEnableLinkPreview:(_Bool)arg2;
+@property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
 - (void)_addRemoteViewControllerIfNeeded;
 - (void)_connectToService;
 - (void)_setEdgeSwipeDismissalEnabled:(_Bool)arg1;
@@ -81,7 +84,10 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)_updateScrollViewIndicatorInsets;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
+- (_Bool)prefersStatusBarHidden;
 - (void)_boundingPathMayHaveChangedForView:(id)arg1 relativeToBoundsOriginOnly:(_Bool)arg2;
+- (void)_removeLaunchPlaceholderView;
+- (void)_addLaunchPlaceholderView;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithCoder:(id)arg1;

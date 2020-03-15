@@ -37,13 +37,13 @@
     PKPaymentInstallmentConfiguration *_installmentConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPaymentInstallmentConfiguration *installmentConfiguration; // @synthesize installmentConfiguration=_installmentConfiguration;
 @property(retain, nonatomic) id <PKSetupFlowControllerProtocol> parentFlowController; // @synthesize parentFlowController=_parentFlowController;
 @property(readonly, nonatomic) PKPaymentProvisioningController *provisioningController; // @synthesize provisioningController=_provisioningController;
 @property(readonly, nonatomic) int context; // @synthesize context=_context;
 @property(readonly, nonatomic) PKFeatureApplication *featureApplication; // @synthesize featureApplication=_featureApplication;
 @property(readonly, nonatomic) unsigned int featureIdentifier; // @synthesize featureIdentifier=_featureIdentifier;
-- (void).cxx_destruct;
 - (void)featureApplicationChanged:(id)arg1;
 - (id)_displayableErrorForError:(id)arg1 showDetailedErrorFlow:(_Bool)arg2;
 - (void)_invalidateAssertion;
@@ -57,10 +57,12 @@
 - (void)_queueAcceptedFlowWithPage:(id)arg1;
 - (void)_queueCannotResumeIDVFlow;
 - (void)_queueEmailRequiredErrorViewController;
-- (void)_queuePassActiviationFlowWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_queuePassActivationFlowWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_queueDeclinedFlowWithPage:(id)arg1;
+- (void)_queueProgramConsentFlowWithPage:(id)arg1;
 - (void)_queueStateReasonExplanationFlowWithPage:(id)arg1;
 - (void)_queueApplicationTermsFlow;
+- (id)_formatStringSuffixForItemType:(int)arg1;
 - (void)_queueOfferFlowWithPage:(id)arg1;
 - (id)_fieldsViewControllerForPage:(id)arg1;
 - (void)_queueFieldsFlowWithNextStepInfo:(id)arg1;
@@ -82,7 +84,7 @@
 - (void)endApplyFlow;
 - (id)applicationUpdatedAlertControllerWithHandler:(CDUnknownBlockType)arg1;
 - (void)withdrawApplicationWithCompletion:(CDUnknownBlockType)arg1;
-- (void)termsAccepted:(_Bool)arg1 identifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)termsAccepted:(_Bool)arg1 termsIdentifier:(id)arg2 secondaryIdentifier:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)termsShownWithIdentifier:(id)arg1;
 - (void)submitDocumentPage:(id)arg1 selectedDocument:(id)arg2 frontImage:(id)arg3 backImage:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)submitFieldsPage:(id)arg1 completion:(CDUnknownBlockType)arg2;

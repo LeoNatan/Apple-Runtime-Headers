@@ -16,9 +16,9 @@
     C2Session *_unpinnedSession;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) C2Session *unpinnedSession; // @synthesize unpinnedSession=_unpinnedSession;
 @property(retain, nonatomic) C2Session *pinnedSession; // @synthesize pinnedSession=_pinnedSession;
-- (void).cxx_destruct;
 - (void)C2Session:(id)arg1 originalHost:(id)arg2 updatedRoute:(id)arg3;
 - (void)C2Session:(id)arg1 didBecomeInvalidWithError:(id)arg2;
 - (id)underlyingDelegateQueue;

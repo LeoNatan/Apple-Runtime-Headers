@@ -20,9 +20,9 @@
     CDUnknownBlockType _responseHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(copy, nonatomic) MPStoreModelRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)_tearDownTimeoutTimerSource;
 - (void)_finishWithResponse:(id)arg1 error:(id)arg2;
 - (void)dispatchSync:(CDUnknownBlockType)arg1;

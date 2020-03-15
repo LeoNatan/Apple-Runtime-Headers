@@ -22,6 +22,7 @@
 }
 
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *children; // @synthesize children=_children;
 @property(retain, nonatomic) HMDCloudChange *change; // @synthesize change=_change;
 @property(nonatomic) __weak HMDCloudChangeNode *parent; // @synthesize parent=_parent;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSUUID *parentUuid; // @synthesize parentUuid=_parentUuid;
 @property(copy, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(copy, nonatomic) NSString *recordName; // @synthesize recordName=_recordName;
-- (void).cxx_destruct;
 - (void)_markBranchOrphaned;
 - (id)_allNodesInBranch;
 - (void)deleteChildren;

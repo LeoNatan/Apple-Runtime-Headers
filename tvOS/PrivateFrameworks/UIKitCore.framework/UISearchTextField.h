@@ -29,10 +29,10 @@ __attribute__((visibility("hidden")))
     long long __textInputSource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long _textInputSource; // @synthesize _textInputSource=__textInputSource;
 @property(nonatomic, setter=_setPreventSelectionViewActivation:) _Bool _preventSelectionViewActivation; // @synthesize _preventSelectionViewActivation=__preventSelectionViewActivation;
 @property(nonatomic, setter=_setSearchBar:) __weak UISearchBar *_searchBar; // @synthesize _searchBar;
-- (void).cxx_destruct;
 - (_Bool)_textShouldFillFieldEditorHeight;
 - (long long)_blurEffectStyle;
 - (_Bool)_shouldDetermineInterfaceStyleTextColor;
@@ -85,6 +85,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, setter=_setSearchTextOffetValue:) NSValue *_searchTextOffsetValue;
 - (id)_offsetValueForIcon:(long long)arg1;
 - (void)_setOffsetValue:(id)arg1 forIcon:(long long)arg2;
+- (_Bool)_hasCustomClearButtonImage;
 - (id)_clearButtonImageForState:(unsigned long long)arg1;
 - (void)_setClearButtonImage:(id)arg1 forState:(unsigned long long)arg2;
 @property(nonatomic, setter=_setIgnoresDynamicType:) _Bool _ignoresDynamicType;

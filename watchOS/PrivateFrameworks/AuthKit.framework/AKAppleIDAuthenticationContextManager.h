@@ -19,8 +19,8 @@
     id <AKAppleIDAuthenticationDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <AKAppleIDAuthenticationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AKAppleIDAuthenticationDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_clientSideContextForServerContext:(id)arg1;
 - (void)legacyAnisetteDataForContext:(id)arg1 DSID:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)fetchAnisetteDataForContext:(id)arg1 provisionIfNecessary:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;

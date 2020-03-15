@@ -19,11 +19,11 @@
     id <CXVoicemailObserverDataSource> _dataSource;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CXVoicemailObserverDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <CXVoicemailObserverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dataSourceVoicemailsChanged:(id)arg1;
 - (void)_performDelegateCallback:(CDUnknownBlockType)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;

@@ -23,6 +23,7 @@
 }
 
 + (id)instantiateViewController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *viewfinderView; // @synthesize viewfinderView=_viewfinderView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSString *titleMessage; // @synthesize titleMessage=_titleMessage;
 @property(copy, nonatomic) CDUnknownBlockType scannedCodeHandler; // @synthesize scannedCodeHandler=_scannedCodeHandler;
 @property(copy, nonatomic) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
-- (void).cxx_destruct;
 - (void)handlePairManuallyButton:(id)arg1;
 - (void)handleCancelButton:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

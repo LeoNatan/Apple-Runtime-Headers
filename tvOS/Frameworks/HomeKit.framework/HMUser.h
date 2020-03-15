@@ -38,12 +38,12 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(readonly) HMSettingsController *privateSettingsController; // @synthesize privateSettingsController=_privateSettingsController;
 @property(readonly) HMSettingsController *settingsController; // @synthesize settingsController=_settingsController;
 @property __weak id <HMUserDelegatePrivate> delegate; // @synthesize delegate=_delegate;
 @property(retain) _HMContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 @property(readonly) HMSettings *privateSettings; // @synthesize privateSettings=_privateSettings;
 @property(readonly) HMSettings *settings; // @synthesize settings=_settings;
 - (id)userSettingsForHome:(id)arg1;

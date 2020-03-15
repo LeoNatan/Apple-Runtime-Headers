@@ -15,10 +15,10 @@
     RTLearnedVisit *_lastVisit;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTLearnedVisit *lastVisit; // @synthesize lastVisit=_lastVisit;
 @property(retain, nonatomic) RTLearnedVisit *firstVisit; // @synthesize firstVisit=_firstVisit;
 @property(retain, nonatomic) NSMutableArray *placeStats; // @synthesize placeStats=_placeStats;
-- (void).cxx_destruct;
 - (void)log;
 - (id)inferPlaceTypes;
 - (id)inferPlaceTypesFromTopMedianDwellTime;

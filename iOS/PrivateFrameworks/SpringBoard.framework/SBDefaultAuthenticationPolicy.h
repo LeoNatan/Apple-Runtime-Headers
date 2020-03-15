@@ -17,10 +17,10 @@
     SecureBackup *_secureBackupHelper;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_secureBackupHelper, setter=_setSecureBackupHelper:) SecureBackup *secureBackupHelper; // @synthesize secureBackupHelper=_secureBackupHelper;
 @property(retain, nonatomic) SBSoftwareUpdatePasscodePolicyManager *softwareUpdatePasscodePolicyManager; // @synthesize softwareUpdatePasscodePolicyManager=_softwareUpdatePasscodePolicyManager;
 @property(retain, nonatomic) SBiCloudPasscodeRequirementLockoutController *iCloudPasscodeRequirementLockoutController; // @synthesize iCloudPasscodeRequirementLockoutController=_iCloudPasscodeRequirementLockoutController;
-- (void).cxx_destruct;
 - (void)passcodeAuthenticationFailedWithError:(id)arg1;
 - (void)clearPasscodeCache;
 - (void)cachePasscode:(id)arg1;

@@ -15,9 +15,9 @@
 }
 
 + (id)bedtimeAlarmWithSleepDate:(id)arg1 wakeDate:(id)arg2 calendar:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDateComponents *wakeDateComponents; // @synthesize wakeDateComponents=_wakeDateComponents;
 @property(readonly, nonatomic) NSDateComponents *sleepDateComponents; // @synthesize sleepDateComponents=_sleepDateComponents;
-- (void).cxx_destruct;
 - (id)firstDateIntervalAfterDate:(id)arg1 calendar:(id)arg2;
 - (id)initWithSleepDateComponents:(id)arg1 wakeDateComponents:(id)arg2;
 

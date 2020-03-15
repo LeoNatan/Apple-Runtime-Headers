@@ -14,9 +14,9 @@
     unsigned long long _streamID;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long streamID; // @synthesize streamID=_streamID;
 @property(retain) IOUSBHostPipe *hostPipe; // @synthesize hostPipe=_hostPipe;
-- (void).cxx_destruct;
 - (BOOL)enqueueIORequestWithData:(id)arg1 error:(id *)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)sendIORequestWithData:(id)arg1 bytesTransferred:(unsigned long long *)arg2 error:(id *)arg3;
 - (BOOL)abortWithOption:(unsigned long long)arg1 error:(id *)arg2;

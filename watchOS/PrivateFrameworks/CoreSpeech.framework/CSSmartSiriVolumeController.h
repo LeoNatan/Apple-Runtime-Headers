@@ -21,10 +21,10 @@
     CSXPCClient *_xpcClient;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSXPCClient *xpcClient; // @synthesize xpcClient=_xpcClient;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <CSSmartSiriVolumeControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_createXPCClientConnectionIfNeeded;
 - (void)CSSmartSiriVolumeDidReceiveTimerChanged:(int)arg1;
 - (void)CSSmartSiriVolumeDidReceiveAlarmChanged:(int)arg1;

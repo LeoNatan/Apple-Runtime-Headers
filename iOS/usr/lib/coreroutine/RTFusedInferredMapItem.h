@@ -16,10 +16,10 @@
 }
 
 + (id)sortFusedInferredMapItems:(id)arg1 confidenceEqualityEpsilon:(double)arg2 referenceLocation:(id)arg3 distanceCalculator:(id)arg4 ascending:(_Bool)arg5;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long source; // @synthesize source=_source;
 @property(nonatomic) double confidence; // @synthesize confidence=_confidence;
 @property(retain, nonatomic) RTMapItem *mapItem; // @synthesize mapItem=_mapItem;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

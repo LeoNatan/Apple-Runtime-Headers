@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _contentType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long contentType; // @synthesize contentType=_contentType;
 @property(readonly, copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1 title:(id)arg2 placeholder:(id)arg3 contentType:(unsigned long long)arg4;
 
 @end

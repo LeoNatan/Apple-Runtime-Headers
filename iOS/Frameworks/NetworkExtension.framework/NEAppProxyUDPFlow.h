@@ -13,8 +13,8 @@
     NWEndpoint *_localEndpoint;
 }
 
-@property(readonly) NWEndpoint *localEndpoint; // @synthesize localEndpoint=_localEndpoint;
 - (void).cxx_destruct;
+@property(readonly) NWEndpoint *localEndpoint; // @synthesize localEndpoint=_localEndpoint;
 - (id)description;
 - (void)writeDatagrams:(id)arg1 sentByEndpoints:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)readDatagramsWithCompletionHandler:(CDUnknownBlockType)arg1;

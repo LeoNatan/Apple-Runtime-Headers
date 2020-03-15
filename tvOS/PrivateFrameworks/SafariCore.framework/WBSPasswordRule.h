@@ -13,9 +13,9 @@
 }
 
 + (id)ruleWithType:(long long)arg1 value:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id value; // @synthesize value=_value;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithPasswordRuleType:(long long)arg1 value:(id)arg2;
 
 @end

@@ -38,6 +38,7 @@
 
 + (void)_deallocInstanceForDevice:(id)arg1;
 + (id)sharedInstanceForDevice:(id)arg1 withPixelFormat:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long bufferOffsetFlower; // @synthesize bufferOffsetFlower=_bufferOffsetFlower;
 @property(readonly, nonatomic) unsigned long long bufferOffsetSkirt; // @synthesize bufferOffsetSkirt=_bufferOffsetSkirt;
 @property(readonly, nonatomic) unsigned long long bufferOffsetHead; // @synthesize bufferOffsetHead=_bufferOffsetHead;
@@ -47,7 +48,6 @@
 @property(readonly, nonatomic) unsigned long long bufferOffsetBody; // @synthesize bufferOffsetBody=_bufferOffsetBody;
 @property(readonly, nonatomic) unsigned long long bufferOffsetBackground; // @synthesize bufferOffsetBackground=_bufferOffsetBackground;
 @property(readonly, nonatomic) id <MTLBuffer> mtlBuffer; // @synthesize mtlBuffer=_mtlBuffer;
-- (void).cxx_destruct;
 - (id)getMTLTexture:(id)arg1;
 - (id)textureWithName:(id)arg1;
 - (id)textureWithName:(id)arg1 prefix:(id)arg2;

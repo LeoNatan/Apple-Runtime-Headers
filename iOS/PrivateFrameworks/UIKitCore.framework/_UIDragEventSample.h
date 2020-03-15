@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sampleFromHIDEvent:(struct __IOHIDEvent *)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasBeenDelivered; // @synthesize hasBeenDelivered=_hasBeenDelivered;
 @property(readonly, nonatomic) unsigned int windowServerHitTestContextID; // @synthesize windowServerHitTestContextID=_windowServerHitTestContextID;
 @property(readonly, nonatomic) _Bool isDragEnd; // @synthesize isDragEnd=_isDragEnd;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGPoint locationInWindow; // @synthesize locationInWindow=_locationInWindow;
 @property(readonly, nonatomic) struct CGPoint sceneLocation; // @synthesize sceneLocation=_sceneLocation;
 @property(readonly, nonatomic) UIWindow *window; // @synthesize window=_window;
-- (void).cxx_destruct;
 - (id)description;
 - (id)hitTestWithEvent:(id)arg1;
 

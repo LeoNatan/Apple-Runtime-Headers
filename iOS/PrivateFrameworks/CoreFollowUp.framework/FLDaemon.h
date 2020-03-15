@@ -17,13 +17,14 @@
 
 + (id)sharedInstance;
 + (id)daemonWithErrorHandler:(CDUnknownBlockType)arg1;
-@property(retain, nonatomic) NSXPCListenerEndpoint *daemonXPCEndpoint; // @synthesize daemonXPCEndpoint=_daemonXPCEndpoint;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCListenerEndpoint *daemonXPCEndpoint; // @synthesize daemonXPCEndpoint=_daemonXPCEndpoint;
 - (id)synchronousDaemonWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)daemonWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)invalidateConnection;
 - (id)remoteObjectInterface;
 - (id)connection;
+- (void)dealloc;
 - (id)init;
 
 @end

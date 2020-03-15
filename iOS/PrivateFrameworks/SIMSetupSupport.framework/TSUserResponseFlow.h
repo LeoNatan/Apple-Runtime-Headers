@@ -18,8 +18,8 @@
     unsigned long long _userConsentType;
 }
 
-@property unsigned long long userConsentType; // @synthesize userConsentType=_userConsentType;
 - (void).cxx_destruct;
+@property unsigned long long userConsentType; // @synthesize userConsentType=_userConsentType;
 - (void)setDefaultNavigationItems:(id)arg1;
 - (void)viewControllerDidComplete:(id)arg1;
 - (id)nextViewControllerFrom:(id)arg1;

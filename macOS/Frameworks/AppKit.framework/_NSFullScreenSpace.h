@@ -113,6 +113,7 @@ __attribute__((visibility("hidden")))
 - (void)displayChanged;
 - (void)parentSpaceRelocated;
 - (BOOL)suppressImplicitFullScreenForOtherWindows;
+- (void)_updateSpaceProperties;
 - (BOOL)_spaceConsideredVisible;
 - (void)dealloc;
 - (void)resolveTileSpaceID:(unsigned long long)arg1;

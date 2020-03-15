@@ -11,14 +11,14 @@
     CDUnknownBlockType _deduperFunction;
 }
 
-@property(readonly, copy, nonatomic) CDUnknownBlockType deduperFunction; // @synthesize deduperFunction=_deduperFunction;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CDUnknownBlockType deduperFunction; // @synthesize deduperFunction=_deduperFunction;
 - (id)dedupeDoubleArrayOfInferredMapItems:(id)arg1 error:(id *)arg2;
 - (id)dedupeDoubleArrayOfInferredMapItems:(id)arg1 state:(id)arg2 error:(id *)arg3;
 - (id)dedupeInferredMapItems:(id)arg1 error:(id *)arg2;
 - (id)dedupeInferredMapItems:(id)arg1 state:(id)arg2 error:(id *)arg3;
 - (id)ingestInferredMapItems:(id)arg1 state:(id)arg2 error:(id *)arg3;
-- (struct RTPair *)ingestInferredMapItem:(id)arg1 state:(id)arg2 error:(id *)arg3;
+- (id)ingestInferredMapItem:(id)arg1 state:(id)arg2 error:(id *)arg3;
 - (_Bool)inferredMapItem:(id)arg1 dedupesToInferredMapItem:(id)arg2 error:(id *)arg3;
 - (id)initWithDeduperFunction:(CDUnknownBlockType)arg1;
 - (id)init;

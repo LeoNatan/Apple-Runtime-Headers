@@ -23,6 +23,7 @@
     struct PXSimpleIndexPath _skimmedIndexPath;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct PXSimpleIndexPath skimmedIndexPath; // @synthesize skimmedIndexPath=_skimmedIndexPath;
 @property(readonly, nonatomic) struct PXSimpleIndexPath initialIndexPath; // @synthesize initialIndexPath=_initialIndexPath;
 @property(readonly, copy, nonatomic) PXIndexPathSet *indexPathSetForSkimming; // @synthesize indexPathSetForSkimming=_indexPathSetForSkimming;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) _Bool hintsVisible; // @synthesize hintsVisible=_hintsVisible;
 @property(readonly, nonatomic) PXAssetCollectionReference *containingAssetCollectionReference; // @synthesize containingAssetCollectionReference=_containingAssetCollectionReference;
 @property(readonly, nonatomic) PXCuratedLibraryViewModel *viewModel; // @synthesize viewModel=_viewModel;
-- (void).cxx_destruct;
 - (void)persistSkimmingState;
 - (void)_updateViewModel;
 @property(readonly, nonatomic) _Bool canStartSkimming;

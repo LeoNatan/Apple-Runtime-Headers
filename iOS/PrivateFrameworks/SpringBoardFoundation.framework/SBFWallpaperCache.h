@@ -17,8 +17,8 @@
 }
 
 + (id)wallpaperCache;
-@property(readonly, nonatomic) SBFMappedImageCache *imageCache; // @synthesize imageCache=_imageCache;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SBFMappedImageCache *imageCache; // @synthesize imageCache=_imageCache;
 - (void)removeEverythingWithCompletion:(CDUnknownBlockType)arg1;
 - (void)warmupForKey:(id)arg1;
 - (id)colorBoxesForKey:(id)arg1 generatingIfNeceesaryFromImage:(id)arg2;

@@ -17,11 +17,11 @@
 }
 
 + (id)parseBuffer:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) REScriptASTNode *expression; // @synthesize expression=_expression;
 @property(readonly, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(readonly, nonatomic) REScriptToken *name; // @synthesize name=_name;
 @property(readonly, nonatomic) REScriptToken *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)dependencies;
 - (id)initWithType:(id)arg1 options:(id)arg2 name:(id)arg3 expression:(id)arg4;
 

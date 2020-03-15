@@ -16,9 +16,9 @@
     CDUnknownBlockType _colorizationBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType colorizationBlock; // @synthesize colorizationBlock=_colorizationBlock;
 @property(retain, nonatomic) NTKKeylineTouchable *touchable; // @synthesize touchable;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *color;
 
 // Remaining properties

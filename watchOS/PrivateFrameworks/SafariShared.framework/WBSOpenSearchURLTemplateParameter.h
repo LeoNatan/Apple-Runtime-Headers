@@ -16,11 +16,11 @@
     struct _NSRange _range;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isOptional) _Bool optional; // @synthesize optional=_optional;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(copy, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 
 @end
 

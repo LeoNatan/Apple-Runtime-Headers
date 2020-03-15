@@ -33,6 +33,8 @@
 - (BOOL)areSessionsAllowed;
 - (BOOL)isInRestrictedMode;
 - (void)configureReaderModeRFForTransitPartner:(BOOL)arg1 transitPartner:(unsigned int)arg2 callback:(CDUnknownBlockType)arg3;
+- (id)startSecureElementAndHCESession:(CDUnknownBlockType)arg1;
+- (id)startHCESession:(CDUnknownBlockType)arg1;
 - (id)startNdefTagSessionWithBluetoothLESecureOOBData:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (id)startNdefTagSession:(CDUnknownBlockType)arg1;
 - (id)startPeerPaymentSession:(CDUnknownBlockType)arg1;
@@ -71,6 +73,8 @@
 - (unsigned int)checkUserBlessing:(id)arg1 hasCards:(char *)arg2;
 - (unsigned int)checkUserBlessing:(id)arg1;
 - (void)dumpLPMDebugLog;
+- (id)releaseSinglePollExpressModeAssertion;
+- (id)startSinglePollExpressModeAssertion:(double)arg1;
 - (id)getPowerCounters:(id *)arg1;
 - (id)disableHeadless;
 - (BOOL)getHeadlessFactoryMode:(id *)arg1;

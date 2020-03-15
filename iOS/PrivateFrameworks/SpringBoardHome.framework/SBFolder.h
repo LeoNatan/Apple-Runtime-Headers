@@ -37,6 +37,7 @@
 
 + (_Bool)isFolderNodeIdentifier:(id)arg1;
 + (_Bool)isRootFolderClass;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long requiredTrailingEmptyListCount; // @synthesize requiredTrailingEmptyListCount=_requiredTrailingEmptyListCount;
 @property(readonly, nonatomic) unsigned long long maxIconCountInFirstList; // @synthesize maxIconCountInFirstList=_maxIconCountInFirstList;
 @property(readonly, nonatomic) unsigned long long maxIconCountInLists; // @synthesize maxIconCountInLists=_maxIconCountInLists;
@@ -47,7 +48,6 @@
 @property(copy, nonatomic) NSString *defaultDisplayName; // @synthesize defaultDisplayName=_defaultDisplayName;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

@@ -20,12 +20,15 @@ __attribute__((visibility("hidden")))
     BOOL _usesCustomContentsRect;
     BOOL _roundsImage;
     BOOL _usesAutomaticImageInset;
+    BOOL _preserveAspectRatio;
     NSShadow *_imageShadow;
     NSImage *_image;
     NSColor *_backgroundColor;
     long long _highlightState;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) BOOL preserveAspectRatio; // @synthesize preserveAspectRatio=_preserveAspectRatio;
 @property(nonatomic) BOOL usesAutomaticImageInset; // @synthesize usesAutomaticImageInset=_usesAutomaticImageInset;
 @property(nonatomic) BOOL roundsImage; // @synthesize roundsImage=_roundsImage;
 @property(nonatomic) long long highlightState; // @synthesize highlightState=_highlightState;
@@ -33,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSShadow *imageShadow; // @synthesize imageShadow=_imageShadow;
-- (void).cxx_destruct;
 - (void)_updateCustomContentsRectIfNeeded;
 - (struct CGRect)_imageViewFrame;
 - (struct CGRect)_insetBounds;

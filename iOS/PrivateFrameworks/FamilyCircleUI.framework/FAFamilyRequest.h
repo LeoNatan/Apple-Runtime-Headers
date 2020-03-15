@@ -13,8 +13,8 @@
     ACAccount *_appleAccount;
 }
 
-@property(retain, nonatomic) ACAccount *appleAccount; // @synthesize appleAccount=_appleAccount;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ACAccount *appleAccount; // @synthesize appleAccount=_appleAccount;
 - (id)urlRequest;
 - (void)URLRequestWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_decoratedURLWithCompletion:(CDUnknownBlockType)arg1;

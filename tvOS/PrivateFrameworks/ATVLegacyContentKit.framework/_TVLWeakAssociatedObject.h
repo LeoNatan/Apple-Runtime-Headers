@@ -11,8 +11,8 @@
     id _representedObject;
 }
 
-@property(nonatomic) __weak id representedObject; // @synthesize representedObject=_representedObject;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id representedObject; // @synthesize representedObject=_representedObject;
 
 @end
 

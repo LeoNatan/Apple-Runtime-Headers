@@ -28,6 +28,7 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ADPrivacyMarker *privacyMarker; // @synthesize privacyMarker=_privacyMarker;
 @property(nonatomic) double accumulatedViewingTime; // @synthesize accumulatedViewingTime=_accumulatedViewingTime;
 @property(retain, nonatomic) NSTimer *passiveWatchingTimer; // @synthesize passiveWatchingTimer=_passiveWatchingTimer;
@@ -38,7 +39,6 @@
 @property(nonatomic) _Bool hasAction; // @synthesize hasAction=_hasAction;
 @property(nonatomic) _Bool barsVisible; // @synthesize barsVisible=_barsVisible;
 @property(nonatomic) __weak id <ADPrerollViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)fadeToBlackWithCompletion:(CDUnknownBlockType)arg1;
 - (void)beginCountdown:(double)arg1;
 - (void)enablePrivacyButton;

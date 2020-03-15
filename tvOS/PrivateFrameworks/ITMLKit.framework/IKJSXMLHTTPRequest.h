@@ -53,6 +53,7 @@
 }
 
 + (id)xhrOperationQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) JSManagedValue *managedSelf; // @synthesize managedSelf=_managedSelf;
 @property(retain) NSHTTPURLResponse *cachedURLResponse; // @synthesize cachedURLResponse=_cachedURLResponse;
 @property(retain) NSDictionary *performanceMetrics; // @synthesize performanceMetrics=_performanceMetrics;
@@ -83,7 +84,6 @@
 @property(retain, nonatomic) NSString *requestId; // @synthesize requestId=_requestId;
 @property(retain, nonatomic) NSURL *requestURL; // @synthesize requestURL=_requestURL;
 @property unsigned long long timeout; // @synthesize timeout;
-- (void).cxx_destruct;
 - (id)_timeIntervalSince1970;
 - (void)_reprime:(id)arg1;
 - (void)_prime:(id)arg1;

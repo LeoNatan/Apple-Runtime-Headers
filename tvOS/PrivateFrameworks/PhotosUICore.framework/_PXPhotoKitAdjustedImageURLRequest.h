@@ -16,10 +16,10 @@
     CDUnknownBlockType _resultHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
 @property(readonly, copy, nonatomic) NSString *pairingIdentifier; // @synthesize pairingIdentifier=_pairingIdentifier;
 @property(readonly, nonatomic) PHImageRequestOptions *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (void)_handleExportFinished:(id)arg1;
 - (void)_renderIfNeeded;
 - (void)progressDidChange;

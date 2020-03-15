@@ -23,6 +23,7 @@
 }
 
 + (id)createWithController:(id)arg1 gestureData:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect locObjectBounds; // @synthesize locObjectBounds=_locObjectBounds;
 @property(nonatomic) struct CGPoint locInObject; // @synthesize locInObject=_locInObject;
 @property(retain, nonatomic) NSString *action; // @synthesize action=_action;
@@ -33,7 +34,6 @@
 @property(nonatomic) __weak WKInterfaceController *controller; // @synthesize controller=_controller;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)_sendGestureReply:(id)arg1 withSpecificKey:(id)arg2;
 - (void)_invokeTargetAction;
 - (void)callTargetActionWithGestureData:(id)arg1;

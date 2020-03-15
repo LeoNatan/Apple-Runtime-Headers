@@ -21,6 +21,7 @@
     UIViewPropertyAnimator *_switchAnimator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewPropertyAnimator *switchAnimator; // @synthesize switchAnimator=_switchAnimator;
 @property(retain, nonatomic) HUVisualEffectContainerView *switchBottomIndicatorContainerView; // @synthesize switchBottomIndicatorContainerView=_switchBottomIndicatorContainerView;
 @property(retain, nonatomic) HUShapeLayerView *switchBottomIndicatorView; // @synthesize switchBottomIndicatorView=_switchBottomIndicatorView;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) UIView *switchBackgroundView; // @synthesize switchBackgroundView=_switchBackgroundView;
 @property(retain, nonatomic) HUVisualEffectContainerView *frameContainerView; // @synthesize frameContainerView=_frameContainerView;
 @property(retain, nonatomic) HUShapeLayerView *frameView; // @synthesize frameView=_frameView;
-- (void).cxx_destruct;
 - (struct CGRect)switchBottomIndicatorFrameForVisibleSwitchBounds:(struct CGRect)arg1 switchOn:(_Bool)arg2;
 - (struct CGRect)switchTopIndicatorFrameForVisibleSwitchBounds:(struct CGRect)arg1 switchOn:(_Bool)arg2;
 - (void)updateColorsForDisplayStyle:(unsigned long long)arg1;

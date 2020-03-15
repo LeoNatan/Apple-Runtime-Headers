@@ -17,10 +17,10 @@
     NSData *_targetValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMPBCharacteristicReference *characteristicReference; // @synthesize characteristicReference=_characteristicReference;
 @property(retain, nonatomic) NSData *targetValue; // @synthesize targetValue=_targetValue;
 @property(retain, nonatomic) NSData *actionUUID; // @synthesize actionUUID=_actionUUID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

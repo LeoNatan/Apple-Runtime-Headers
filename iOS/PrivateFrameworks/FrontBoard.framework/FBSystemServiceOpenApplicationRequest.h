@@ -17,11 +17,11 @@
 }
 
 + (id)request;
+- (void).cxx_destruct;
 @property(retain, nonatomic) FBProcess *clientProcess; // @synthesize clientProcess=_clientProcess;
 @property(copy, nonatomic) FBSOpenApplicationOptions *options; // @synthesize options=_options;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic, getter=isTrusted) _Bool trusted; // @synthesize trusted=_trusted;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

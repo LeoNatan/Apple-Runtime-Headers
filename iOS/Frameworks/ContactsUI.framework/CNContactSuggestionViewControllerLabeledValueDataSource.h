@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     CNLabeledValue *_labeledValue;
 }
 
-@property(retain, nonatomic) CNLabeledValue *labeledValue; // @synthesize labeledValue=_labeledValue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNLabeledValue *labeledValue; // @synthesize labeledValue=_labeledValue;
 @property(readonly, nonatomic) NSURL *url;
 @property(readonly, nonatomic) NSString *from;
 @property(readonly, nonatomic) NSString *date;

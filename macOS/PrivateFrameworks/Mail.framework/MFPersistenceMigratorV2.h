@@ -22,13 +22,13 @@
     unsigned long long _v1CleanupCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isTrackingCleanupProgress; // @synthesize isTrackingCleanupProgress=_isTrackingCleanupProgress;
 @property(nonatomic) unsigned long long v1CleanupCount; // @synthesize v1CleanupCount=_v1CleanupCount;
 @property(nonatomic) unsigned long long messagesProgressCount; // @synthesize messagesProgressCount=_messagesProgressCount;
 @property(nonatomic) unsigned long long progressChunkSize; // @synthesize progressChunkSize=_progressChunkSize;
 @property(readonly, nonatomic) id <MFActivityProgressUpdater> activityProgressUpdater; // @synthesize activityProgressUpdater=_activityProgressUpdater;
 @property(retain, nonatomic) NSFileManager *fileManager; // @synthesize fileManager=_fileManager;
-- (void).cxx_destruct;
 - (void)migrate;
 - (BOOL)_shouldIgnoreFilename:(id)arg1;
 - (void)_migrateMailboxesFromDirectory:(id)arg1 toDirectory:(id)arg2 baseDirectory:(id)arg3 usingUUID:(id)arg4 mailboxCacheDictionary:(id)arg5 accountPrefix:(id)arg6;

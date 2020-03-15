@@ -29,10 +29,10 @@ __attribute__((visibility("hidden")))
 + (BOOL)browserTabQualifiesForUserActivityContinuation:(id)arg1;
 + (BOOL)browserTabQualifiesForCloudTabSyncing:(id)arg1;
 + (id)sharedCloudTabStore;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL cloudTabsSupported; // @synthesize cloudTabsSupported=_cloudTabsSupported;
 @property(nonatomic) BOOL suppressSavingTabs; // @synthesize suppressSavingTabs=_suppressSavingTabs;
 - (id)dateOfLastCloudTabDevicesUpdate;
-- (void).cxx_destruct;
 - (BOOL)closeAllTabsOnDevice:(id)arg1;
 - (BOOL)closeTabs:(id)arg1 onDevice:(id)arg2;
 - (BOOL)closeTab:(id)arg1 onDevice:(id)arg2;

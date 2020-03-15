@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     id <UINSActivityItemSource> _item;
 }
 
-@property(readonly, nonatomic) id <UINSActivityItemSource> item; // @synthesize item=_item;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <UINSActivityItemSource> item; // @synthesize item=_item;
 - (id)sharingServicePicker:(id)arg1 thumbnailImageForSharingServiceName:(id)arg2 suggestedSize:(struct CGSize)arg3;
 - (id)sharingServicePicker:(id)arg1 dataTypeIdentifierForSharingServiceName:(id)arg2;
 - (id)sharingServicePicker:(id)arg1 subjectForSharingServiceName:(id)arg2;

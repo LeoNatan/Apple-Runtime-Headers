@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _eventHandler;
 }
 
-@property(copy) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
 - (id)IO80211SkywalkInterfaceInfo:(id)arg1 error:(id *)arg2;
 - (id)IO80211InterfaceInfo:(id)arg1 error:(id *)arg2;
 - (id)IO80211VirtualInterfaceInfo:(id)arg1 error:(id *)arg2;

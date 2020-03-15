@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _animationCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long animationCount; // @synthesize animationCount=_animationCount;
 @property(retain, nonatomic) _UIContextMenuCommitContainerView *animationContainer; // @synthesize animationContainer=_animationContainer;
 @property(retain, nonatomic) _UIPortalView *destinationContentPortalView; // @synthesize destinationContentPortalView=_destinationContentPortalView;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *source; // @synthesize source=_source;
 @property(nonatomic) double destinationRadius; // @synthesize destinationRadius=_destinationRadius;
 @property(nonatomic) double sourceRadius; // @synthesize sourceRadius=_sourceRadius;
-- (void).cxx_destruct;
 - (void)_prepareAnimationViews;
 - (void)_prepareSnapshots;
 - (void)animateWithAlongsideActions:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;

@@ -24,10 +24,10 @@ __attribute__((visibility("hidden")))
 + (id)equivalenceStrategyWithString:(id)arg1;
 + (id)phoneNumberIndexKey:(id)arg1;
 + (id)emailIndexKey:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <_CNContactHandleStringEquivalenceStrategy> equivalenceStrategy; // @synthesize equivalenceStrategy=_equivalenceStrategy;
 @property(readonly, copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(readonly, copy, nonatomic) NSString *indexKey; // @synthesize indexKey=_indexKey;
-- (void).cxx_destruct;
 - (_Bool)isEquivalentToString:(id)arg1 strict:(_Bool *)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

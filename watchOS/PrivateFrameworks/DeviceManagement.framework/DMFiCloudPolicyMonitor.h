@@ -16,10 +16,10 @@
 }
 
 + (_Bool)automaticallyNotifiesObserversOfICloudLogoutPolicy;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSArray *policyTypes; // @synthesize policyTypes=_policyTypes;
 @property(nonatomic) int iCloudLogoutPolicy; // @synthesize iCloudLogoutPolicy=_iCloudLogoutPolicy;
-- (void).cxx_destruct;
 - (void)_updateiCloudLogoutFromPolicies:(id)arg1;
 - (void)_updateiCloudLogout;
 - (void)dealloc;

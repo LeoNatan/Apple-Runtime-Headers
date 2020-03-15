@@ -13,8 +13,8 @@
     id <SXIssueCoverLayoutAttributesFactory> _layoutOptionsFactory;
 }
 
-@property(readonly, nonatomic) id <SXIssueCoverLayoutAttributesFactory> layoutOptionsFactory; // @synthesize layoutOptionsFactory=_layoutOptionsFactory;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SXIssueCoverLayoutAttributesFactory> layoutOptionsFactory; // @synthesize layoutOptionsFactory=_layoutOptionsFactory;
 - (double)calculateHeightForWidth:(double)arg1 layoutContext:(id)arg2;
 - (id)initWithComponent:(id)arg1 componentLayout:(id)arg2 componentStyle:(id)arg3 DOMObjectProvider:(id)arg4 layoutOptions:(id)arg5 layoutOptionsFactory:(id)arg6;
 

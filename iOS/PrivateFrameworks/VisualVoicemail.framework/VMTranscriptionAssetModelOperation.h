@@ -11,8 +11,8 @@
     CDUnknownBlockType _operationCompletion;
 }
 
-@property(copy) CDUnknownBlockType operationCompletion; // @synthesize operationCompletion=_operationCompletion;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType operationCompletion; // @synthesize operationCompletion=_operationCompletion;
 - (void)main;
 - (void)cancel;
 - (id)initWithSpeechRecognizer:(id)arg1;

@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     long long _disableLoggingCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long disableLoggingCount; // @synthesize disableLoggingCount=_disableLoggingCount;
 @property(retain, nonatomic) NSRegularExpression *framesRegex; // @synthesize framesRegex=_framesRegex;
 @property(nonatomic) long long indentationLevel; // @synthesize indentationLevel=_indentationLevel;
 @property(nonatomic) long long loggingLevel; // @synthesize loggingLevel=_loggingLevel;
 @property(retain, nonatomic) NSMutableString *log; // @synthesize log=_log;
 @property(nonatomic) BOOL logsToConsole; // @synthesize logsToConsole=_logsToConsole;
-- (void).cxx_destruct;
 - (void)enableLogging;
 - (void)disableLogging;
 - (void)decrementIndentationLevel;

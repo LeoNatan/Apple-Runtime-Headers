@@ -15,8 +15,8 @@
 }
 
 + (BOOL)canAutomaticallyCreateLibrary;
-@property(readonly) PLLibraryServicesManager *libraryServicesManager; // @synthesize libraryServicesManager=_libraryServicesManager;
 - (void).cxx_destruct;
+@property(readonly) PLLibraryServicesManager *libraryServicesManager; // @synthesize libraryServicesManager=_libraryServicesManager;
 - (BOOL)lightweightPermissionCheckWithPath:(id)arg1 isDir:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)lightweightPermissionCheckWithError:(id *)arg1;
 - (BOOL)openPhotoLibraryDatabase:(id *)arg1;

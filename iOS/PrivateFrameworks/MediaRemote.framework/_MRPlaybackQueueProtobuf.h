@@ -26,6 +26,7 @@
 }
 
 + (Class)contentItemType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *queueIdentifier; // @synthesize queueIdentifier=_queueIdentifier;
 @property(nonatomic) _Bool sendingPlaybackQueueTransaction; // @synthesize sendingPlaybackQueueTransaction=_sendingPlaybackQueueTransaction;
 @property(retain, nonatomic) _MRNowPlayingPlayerPathProtobuf *resolvedPlayerPath; // @synthesize resolvedPlayerPath=_resolvedPlayerPath;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) _MRPlaybackQueueContextProtobuf *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSMutableArray *contentItems; // @synthesize contentItems=_contentItems;
 @property(nonatomic) int location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

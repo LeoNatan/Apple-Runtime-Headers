@@ -19,7 +19,7 @@
 - (_Bool)deallocateDocumentIDOfItemAtURL:(id)arg1 error:(id *)arg2;
 - (_Bool)removeTemporaryStorage:(id)arg1 error:(id *)arg2;
 - (id)additionForItemAtURL:(id)arg1 forPersistentIdentifier:(id)arg2 error:(id *)arg3;
-- (id)persistentIdentifierInStorage:(struct NSObject *)arg1 forAdditionNamed:(id)arg2 inNameSpace:(id)arg3;
+- (id)persistentIdentifierInStorage:(id)arg1 forAdditionNamed:(id)arg2 inNameSpace:(id)arg3;
 - (id)temporaryStorageForItemAtURL:(id)arg1 locatedAtURL:(id)arg2 error:(id *)arg3;
 - (void)_connectionWithDaemonWasLost;
 - (id)permanentStorageForItemAtURL:(id)arg1 allocateIfNone:(_Bool)arg2 error:(id *)arg3;

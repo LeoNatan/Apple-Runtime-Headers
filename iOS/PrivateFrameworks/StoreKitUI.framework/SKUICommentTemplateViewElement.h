@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSString *_postPlaceholderText;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool showKeyboard; // @synthesize showKeyboard=_showKeyboard;
 @property(readonly, nonatomic) _Bool scrollNewCommentToView; // @synthesize scrollNewCommentToView=_scrollNewCommentToView;
 @property(readonly, nonatomic) NSString *postPlaceholderText; // @synthesize postPlaceholderText=_postPlaceholderText;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *commentAsText; // @synthesize commentAsText=_commentAsText;
 @property(readonly, nonatomic) NSString *asFormat; // @synthesize asFormat=_asFormat;
 @property(readonly, nonatomic) NSString *asText; // @synthesize asText=_asText;
-- (void).cxx_destruct;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 
 @end

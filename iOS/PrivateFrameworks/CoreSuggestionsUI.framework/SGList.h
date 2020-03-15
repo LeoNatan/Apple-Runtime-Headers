@@ -16,10 +16,10 @@
     NSMutableArray *_array;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *array; // @synthesize array=_array;
 @property(copy, nonatomic) CDUnknownBlockType comparator; // @synthesize comparator=_comparator;
 @property(nonatomic) __weak id <SGListDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)items;
 - (unsigned long long)indexOfItem:(id)arg1;
 - (id)itemAtIndex:(unsigned long long)arg1;

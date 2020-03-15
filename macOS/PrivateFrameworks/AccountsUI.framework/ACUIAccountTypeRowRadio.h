@@ -14,9 +14,9 @@
     NSButton *_radioButton;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSButton *radioButton; // @synthesize radioButton=_radioButton;
 @property __weak ACUISetupManagerViewController *setupManager; // @synthesize setupManager=_setupManager;
-- (void).cxx_destruct;
 - (void)select:(id)arg1;
 - (void)mouseDown:(id)arg1;
 

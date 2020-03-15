@@ -31,6 +31,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *breadcrumbText; // @synthesize breadcrumbText=_breadcrumbText;
 @property(copy, nonatomic) NSString *statusText; // @synthesize statusText=_statusText;
 @property(nonatomic) _Bool requiresValidation; // @synthesize requiresValidation=_requiresValidation;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) NSUUID *senderParticipantIdentifier; // @synthesize senderParticipantIdentifier=_senderParticipantIdentifier;
 @property(nonatomic, getter=isPending) _Bool pending; // @synthesize pending=_pending;
 @property(readonly, nonatomic) MSSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)_mergeSanitizedDataFromMessage:(id)arg1;
 - (void)_sanitize;
 - (id)_sanitizedCopy;

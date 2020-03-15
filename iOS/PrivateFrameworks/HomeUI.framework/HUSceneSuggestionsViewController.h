@@ -18,10 +18,10 @@
     HUSceneSuggestionsItemManager *_suggestionsItemManager;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak HUSceneSuggestionsItemManager *suggestionsItemManager; // @synthesize suggestionsItemManager=_suggestionsItemManager;
 @property(nonatomic) __weak id <HUSceneEditorDelegate> sceneEditorDelegate; // @synthesize sceneEditorDelegate=_sceneEditorDelegate;
 @property(nonatomic) __weak id <HUPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (void)setupCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3;

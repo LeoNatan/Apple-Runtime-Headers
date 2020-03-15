@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSString *_recentsMessage;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *recentsMessage; // @synthesize recentsMessage=_recentsMessage;
 @property(copy, nonatomic) NSString *recentsTitle; // @synthesize recentsTitle=_recentsTitle;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long keyboardType; // @synthesize keyboardType=_keyboardType;
 @property(copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -14,9 +14,9 @@
     MPCReportingPlaybackObserver *_reportingPlaybackObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPCReportingPlaybackObserver *reportingPlaybackObserver; // @synthesize reportingPlaybackObserver=_reportingPlaybackObserver;
 @property(retain, nonatomic) MPCJinglePlayActivityReportingController *jinglePlayActivityReportingController; // @synthesize jinglePlayActivityReportingController=_jinglePlayActivityReportingController;
-- (void).cxx_destruct;
 - (void)recordLyricsViewEvent:(id)arg1;
 - (void)dealloc;
 - (id)init;

@@ -92,8 +92,8 @@
     } _split;
 }
 
-@property(nonatomic) BOOL thumbRejectionEnabled; // @synthesize thumbRejectionEnabled=_thumbRejectionEnabled;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL thumbRejectionEnabled; // @synthesize thumbRejectionEnabled=_thumbRejectionEnabled;
 - (id)gestureStateString;
 - (double)tapInterval;
 - (struct CGPoint)tapPointWeightedToSides;

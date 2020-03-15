@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *assetFeatureVectors; // @synthesize assetFeatureVectors=_assetFeatureVectors;
 @property(readonly, nonatomic) NSArray *momentFeatureVectors; // @synthesize momentFeatureVectors=_momentFeatureVectors;
 @property(readonly, nonatomic) NSArray *classes; // @synthesize classes=_classes;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

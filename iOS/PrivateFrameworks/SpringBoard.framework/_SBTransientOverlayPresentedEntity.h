@@ -32,6 +32,7 @@
     id <BSInvalidatable> _siriWindowLevelAssertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <BSInvalidatable> siriWindowLevelAssertion; // @synthesize siriWindowLevelAssertion=_siriWindowLevelAssertion;
 @property(retain, nonatomic) SBPresentationObservationToken *siriPresentationObservationToken; // @synthesize siriPresentationObservationToken=_siriPresentationObservationToken;
 @property(retain, nonatomic) id <BSInvalidatable> controlCenterWindowLevelAssertion; // @synthesize controlCenterWindowLevelAssertion=_controlCenterWindowLevelAssertion;
@@ -51,7 +52,6 @@
 @property(retain, nonatomic) SBTransientOverlayBackgroundWindow *backgroundWindow; // @synthesize backgroundWindow=_backgroundWindow;
 @property(readonly, nonatomic) SBTransientOverlayViewController *viewController; // @synthesize viewController=_viewController;
 @property(readonly, nonatomic) double baseWindowLevel; // @synthesize baseWindowLevel=_baseWindowLevel;
-- (void).cxx_destruct;
 - (id)initWithViewController:(id)arg1 window:(id)arg2 baseWindowLevel:(double)arg3;
 
 @end

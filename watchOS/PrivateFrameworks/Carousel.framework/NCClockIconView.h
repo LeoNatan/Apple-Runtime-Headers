@@ -18,10 +18,10 @@
     UIView *_zoomView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *zoomView; // @synthesize zoomView=_zoomView;
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic) __weak id <NCClockIconViewZoomController> zoomController; // @synthesize zoomController=_zoomController;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)accessibilityTraits;
 - (_Bool)isAccessibilityElement;

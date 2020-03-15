@@ -22,6 +22,7 @@
     PMLSessionDescriptor *_sessionDescriptor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PMLSessionDescriptor *sessionDescriptor; // @synthesize sessionDescriptor=_sessionDescriptor;
 @property(readonly, nonatomic) unsigned int mode; // @synthesize mode=_mode;
 @property(readonly, copy, nonatomic) NSString *language; // @synthesize language=_language;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) NSArray *labels; // @synthesize labels=_labels;
 @property(readonly, nonatomic) NSArray *preprocessingMethods; // @synthesize preprocessingMethods=_preprocessingMethods;
 @property(readonly, nonatomic) SGModelHyperparameters *modelHyperparameters; // @synthesize modelHyperparameters=_modelHyperparameters;
-- (void).cxx_destruct;
 - (id)initWithLanguage:(id)arg1 mode:(unsigned int)arg2 dictionary:(id)arg3;
 - (id)initWithLanguage:(id)arg1 mode:(unsigned int)arg2 plistPath:(id)arg3;
 

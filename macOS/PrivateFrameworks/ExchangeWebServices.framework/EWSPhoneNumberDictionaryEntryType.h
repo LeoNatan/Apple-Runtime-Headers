@@ -17,9 +17,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *Key; // @synthesize Key=_Key;
 @property(copy, nonatomic) NSString *contentString; // @synthesize contentString=_contentString;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

@@ -19,8 +19,8 @@
 
 + (Class)clientInterfaceClass;
 + (id)sharedInstance;
-@property(readonly) NSArray *clients; // @synthesize clients=_clients;
 - (void).cxx_destruct;
+@property(readonly) NSArray *clients; // @synthesize clients=_clients;
 - (void)client:(id)arg1 didInvalidationConnection:(id)arg2;
 - (void)client:(id)arg1 didInterruptConnection:(id)arg2;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

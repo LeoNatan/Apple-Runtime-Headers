@@ -14,8 +14,8 @@
     PXGLayout *_initialLayout;
 }
 
-@property(readonly, nonatomic) PXGLayout *initialLayout; // @synthesize initialLayout=_initialLayout;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXGLayout *initialLayout; // @synthesize initialLayout=_initialLayout;
 - (void)_handleDoubleTap:(id)arg1;
 - (void)animate:(CDUnknownBlockType)arg1 animationRenderingCompletionHandler:(CDUnknownBlockType)arg2 proceedHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) PXGView *gridView; // @synthesize gridView=_gridView;

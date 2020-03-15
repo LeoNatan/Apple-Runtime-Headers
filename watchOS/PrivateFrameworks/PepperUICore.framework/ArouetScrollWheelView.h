@@ -32,6 +32,7 @@
     NSTimer *_scrollCommitTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *scrollCommitTimer; // @synthesize scrollCommitTimer=_scrollCommitTimer;
 @property(retain, nonatomic) PUICPickerWheelNotchProvider *notchProvider; // @synthesize notchProvider=_notchProvider;
 @property(retain, nonatomic) ArouetCandidatesScrollView *scrollView; // @synthesize scrollView=_scrollView;
@@ -43,7 +44,6 @@
 @property(nonatomic, setter=_setCurrentIndex:) unsigned int currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(nonatomic) __weak id <ArouetScrollWheelViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <ArouetScrollWheelViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_alertDelegateDidChangeToCurrentIndex:(unsigned int)arg1;
 - (int)_numberOfRows;
 - (id)_titleForItemAtIndex:(unsigned int)arg1;

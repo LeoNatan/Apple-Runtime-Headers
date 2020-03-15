@@ -17,10 +17,10 @@
     MMWebKitViewController *_purchaseWebKitViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain) MMWebKitViewController *purchaseWebKitViewController; // @synthesize purchaseWebKitViewController=_purchaseWebKitViewController;
 @property(retain) NSString *accountID; // @synthesize accountID=_accountID;
 @property(retain) NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
-- (void).cxx_destruct;
 - (void)_closeWebviewWindow:(BOOL)arg1;
 - (void)mmWebKitViewControllerDidDismiss:(id)arg1;
 - (void)mmWebKitViewControllerDidFinishLoading:(id)arg1;

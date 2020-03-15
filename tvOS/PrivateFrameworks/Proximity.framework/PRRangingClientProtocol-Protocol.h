@@ -6,13 +6,14 @@
 
 #import <Proximity/NSObject-Protocol.h>
 
-@class NSArray, NSError, PRRemoteDevice;
+@class NSArray, NSError, PRRemoteDevice, PRSessionStartNotification;
 
 @protocol PRRangingClientProtocol <NSObject>
 - (void)rangingServiceDidUpdateState:(unsigned long long)arg1;
 - (void)didFailWithError:(NSError *)arg1;
 
 @optional
+- (void)didReceiveSessionStartNotification:(PRSessionStartNotification *)arg1;
 - (void)remoteDevice:(PRRemoteDevice *)arg1 didChangeState:(long long)arg2;
 - (void)rangingRequestDidUpdateStatus:(unsigned long long)arg1;
 - (void)didReceiveNewSolutions:(NSArray *)arg1;

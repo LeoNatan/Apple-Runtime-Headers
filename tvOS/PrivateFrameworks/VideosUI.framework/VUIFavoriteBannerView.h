@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     VUILabel *_subtitleLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) NSArray *backgroundImageLogos; // @synthesize backgroundImageLogos=_backgroundImageLogos;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) VUIFavoriteBannerLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (void)prepareForCellReuse;
 - (id)_generateSiderowImagePointsForSize:(struct CGSize)arg1;
 - (id)_generatePlainWeaveImagePointsForSize:(struct CGSize)arg1;

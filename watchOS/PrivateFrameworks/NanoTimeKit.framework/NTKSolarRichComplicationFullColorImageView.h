@@ -8,7 +8,7 @@
 
 #import <NanoTimeKit/CLKFullColorImageView-Protocol.h>
 
-@class CAGradientLayer, CALayer, CLKDevice, CLLocation, NSDate, NSDictionary, NSString, NTKBezierPathPointModel, NTKBezierPathView, NTKSolarPath, NTKSolarTimeModel, PUICClientSideAnimation;
+@class CAGradientLayer, CALayer, CLKDevice, CLLocation, NSDate, NSDictionary, NSNumber, NSString, NTKBezierPathPointModel, NTKBezierPathView, NTKSolarPath, NTKSolarTimeModel, PUICClientSideAnimation;
 @protocol CLKMonochromeFilterProvider;
 
 @interface NTKSolarRichComplicationFullColorImageView : UIView <CLKFullColorImageView>
@@ -44,7 +44,7 @@
     float _sunsetXInCurve;
     struct CGRect _solarPathViewRect;
     float _prevDiskTimePercentage;
-    struct NSNumber *_clockTimerToken;
+    NSNumber *_clockTimerToken;
     PUICClientSideAnimation *_diskAnimaton;
     CLKDevice *_device;
     _Bool _paused;
@@ -55,11 +55,11 @@
     NSDate *_timeTravelDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *timeTravelDate; // @synthesize timeTravelDate=_timeTravelDate;
 @property(readonly, nonatomic) _Bool usingIdealizedTime; // @synthesize usingIdealizedTime=_usingIdealizedTime;
 @property(readonly, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
-- (void).cxx_destruct;
 - (void)_didReceiveSignificantTimeChangeNotification;
 - (void)_didReceiveTimeZoneDidChangeNotification;
 - (void)_updateGradientBackgroundWithYPosition:(float)arg1 xPercentage:(float)arg2 topDistanceAboveHorizonLine:(float)arg3 bottomDistanceBelowHorizonLine:(float)arg4;

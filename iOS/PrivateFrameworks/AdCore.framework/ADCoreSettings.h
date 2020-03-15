@@ -35,6 +35,7 @@
 
 + (_Bool)educationModeEnabled;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *iTunesStorefront; // @synthesize iTunesStorefront=_iTunesStorefront;
 @property(nonatomic) int runState; // @synthesize runState=_runState;
 @property(nonatomic) _Bool hasDeterminedRoamingStatus; // @synthesize hasDeterminedRoamingStatus=_hasDeterminedRoamingStatus;
@@ -56,7 +57,6 @@
 @property(nonatomic) double jingleTimeoutInterval; // @synthesize jingleTimeoutInterval=_jingleTimeoutInterval;
 @property(retain, nonatomic) NSURL *defaultConfigurationServerURL; // @synthesize defaultConfigurationServerURL=_defaultConfigurationServerURL;
 @property(retain, nonatomic) NSURL *defaultServerURL; // @synthesize defaultServerURL=_defaultServerURL;
-- (void).cxx_destruct;
 @property(readonly) _Bool unitTesting;
 @property(nonatomic) int maxSegmentSendInterval;
 @property(nonatomic) int segmentRetrievalInterval;
@@ -67,7 +67,6 @@
 @property(nonatomic) _Bool isLATEnabled;
 @property(readonly, nonatomic) _Bool limitAdTrackingRestrictionEnabledBySpringboard;
 - (void)reloadStorefront:(CDUnknownBlockType)arg1;
-- (_Bool)deviceUnlockedOnce;
 - (_Bool)purpleBuddyWillRun;
 - (int)deviceRunStateForBundleIdentifier:(id)arg1;
 - (id)deviceDescription;

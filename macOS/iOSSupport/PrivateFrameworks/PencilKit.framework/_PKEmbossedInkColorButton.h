@@ -15,9 +15,9 @@
 }
 
 + (id)colorFillImageIsCompact:(BOOL)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *embossImageView; // @synthesize embossImageView=_embossImageView;
 @property(retain, nonatomic) UIImageView *colorImageView; // @synthesize colorImageView=_colorImageView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithColor:(id)arg1 isCompact:(BOOL)arg2;
 

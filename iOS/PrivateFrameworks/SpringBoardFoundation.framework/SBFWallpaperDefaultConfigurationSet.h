@@ -27,9 +27,9 @@
 + (id)defaultWallpaperDictionary;
 + (id)defaultWallpaperBaseURL;
 + (id)systemDefaultConfigurationSet;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBFWallpaperDefaultConfiguration *homeScreenDefaultWallpaperConfiguration; // @synthesize homeScreenDefaultWallpaperConfiguration=_homeScreenDefaultWallpaperConfiguration;
 @property(readonly, nonatomic) SBFWallpaperDefaultConfiguration *lockScreenDefaultWallpaperConfiguration; // @synthesize lockScreenDefaultWallpaperConfiguration=_lockScreenDefaultWallpaperConfiguration;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

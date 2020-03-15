@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)preferredHeight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIBackdropView *backdropView; // @synthesize backdropView=_backdropView;
 @property(retain, nonatomic) UIView *bottomSeparator; // @synthesize bottomSeparator=_bottomSeparator;
 @property(retain, nonatomic) UIView *topSeparator; // @synthesize topSeparator=_topSeparator;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) _Bool isOverlay; // @synthesize isOverlay=_isOverlay;
 @property(nonatomic) __weak id <CKTranscriptManagementNameFieldDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)commitGroupName;
 @property(copy, nonatomic) NSString *groupName;
 - (void)textFieldDidEndEditing:(id)arg1;

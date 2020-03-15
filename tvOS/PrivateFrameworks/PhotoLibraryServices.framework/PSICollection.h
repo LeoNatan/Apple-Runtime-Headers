@@ -22,6 +22,7 @@
     NSDate *_sortDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDate *sortDate; // @synthesize sortDate=_sortDate;
 @property(readonly) unsigned long long numberOfAssets; // @synthesize numberOfAssets=_numberOfAssets;
 @property(readonly) unsigned long long type; // @synthesize type=_type;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly) PSIDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly) PSIDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_initForCopy:(_Bool)arg1;

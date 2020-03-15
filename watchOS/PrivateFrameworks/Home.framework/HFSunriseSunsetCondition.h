@@ -17,10 +17,10 @@
     NSDateComponents *_offset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDateComponents *offset; // @synthesize offset=_offset;
 @property(readonly, copy, nonatomic) NSString *significantEvent; // @synthesize significantEvent=_significantEvent;
 @property(readonly, nonatomic) unsigned int comparisonType; // @synthesize comparisonType=_comparisonType;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (int)compare:(id)arg1;
 - (id)initWithSignificantEvent:(id)arg1 offset:(id)arg2 comparisonType:(unsigned int)arg3;

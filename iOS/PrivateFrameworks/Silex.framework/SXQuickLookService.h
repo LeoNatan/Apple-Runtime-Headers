@@ -15,8 +15,8 @@
     QLThumbnailGenerator *_generator;
 }
 
-@property(readonly, nonatomic) QLThumbnailGenerator *generator; // @synthesize generator=_generator;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) QLThumbnailGenerator *generator; // @synthesize generator=_generator;
 - (void)fetchThumbnailForFile:(id)arg1 size:(struct CGSize)arg2 onCompletion:(CDUnknownBlockType)arg3 onError:(CDUnknownBlockType)arg4;
 - (id)init;
 

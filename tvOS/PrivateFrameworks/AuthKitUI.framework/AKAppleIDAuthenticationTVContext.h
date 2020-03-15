@@ -15,8 +15,8 @@
     AKTVSignInViewController *_signInViewController;
 }
 
-@property(retain, nonatomic) AKTVSignInViewController *signInViewController; // @synthesize signInViewController=_signInViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AKTVSignInViewController *signInViewController; // @synthesize signInViewController=_signInViewController;
 - (void)presentServerProvidedUIWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)signInViewControllerDidDismiss:(id)arg1;
 - (void)signInViewControllerWillDismiss:(id)arg1;
@@ -28,6 +28,7 @@
 - (void)dismissSecondFactorUIWithCompletion:(CDUnknownBlockType)arg1;
 - (void)presentSecondFactorUIWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_cleanUpBasicLoginWithCompletion:(CDUnknownBlockType)arg1;
+- (void)dismissBasicLoginUIWithCompletion:(CDUnknownBlockType)arg1;
 - (void)presentLoginAlertWithError:(id)arg1 title:(id)arg2 message:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)presentBasicLoginUIWithCompletion:(CDUnknownBlockType)arg1;
 

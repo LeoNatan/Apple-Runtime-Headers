@@ -14,9 +14,9 @@
     NSButton *_minusButton;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSButton *minusButton; // @synthesize minusButton=_minusButton;
 @property(retain) NSButton *plusButton; // @synthesize plusButton=_plusButton;
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

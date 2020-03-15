@@ -11,6 +11,8 @@
 }
 
 + (id)sharedPreferences;
+- (BOOL)bypassPersonalizedHeySiri;
+- (BOOL)isMultiPhraseVTEnabled;
 - (BOOL)opportuneSpeakListenerBypassEnabled;
 - (BOOL)companionSyncVoiceTriggerUtterancesEnabled;
 - (id)fakeHearstModelPath;
@@ -38,6 +40,7 @@
 - (double)remoteVoiceTriggerDelayTime;
 - (BOOL)_isDirectory:(id)arg1;
 - (id)getStartOfSpeechAudioLogFilePath;
+- (BOOL)forceVoiceTriggerAPMode;
 - (BOOL)startOfSpeechAudioLoggingEnabled;
 - (long long)getJarvisTriggerMode;
 - (void)setJarvisTriggerMode:(long long)arg1;

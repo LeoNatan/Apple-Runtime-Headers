@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasFakeTimestamp; // @synthesize hasFakeTimestamp=_hasFakeTimestamp;
 @property(readonly, nonatomic) _Bool isMarkedAsUnwatched; // @synthesize isMarkedAsUnwatched=_isMarkedAsUnwatched;
 @property(readonly, nonatomic) _Bool hasBeenRented; // @synthesize hasBeenRented=_hasBeenRented;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) NSDate *bookmarkTimestamp; // @synthesize bookmarkTimestamp=_bookmarkTimestamp;
 @property(readonly, nonatomic) double bookmarkTime; // @synthesize bookmarkTime=_bookmarkTime;
 @property(readonly, nonatomic) TVCKBookmarkKey *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (_Bool)hasRemoteData;
 - (void)_setIsMarkedAsUnwatched:(_Bool)arg1;
 - (void)_setHasBeenRented:(_Bool)arg1;

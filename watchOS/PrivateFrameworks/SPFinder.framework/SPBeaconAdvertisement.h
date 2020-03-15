@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSUUID *recordIdentifier; // @synthesize recordIdentifier=_recordIdentifier;
 @property(copy, nonatomic) SPEstimatedLocation *location; // @synthesize location=_location;
 @property(copy, nonatomic) NSDate *scanDate; // @synthesize scanDate=_scanDate;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSData *deviceType; // @synthesize deviceType=_deviceType;
 @property(copy, nonatomic) NSData *publicKey; // @synthesize publicKey=_publicKey;
 @property(copy, nonatomic) NSData *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithAddress:(id)arg1 publicKey:(id)arg2 deviceType:(id)arg3 batteryState:(id)arg4 rawStatus:(unsigned char)arg5 rssi:(int)arg6 scanDate:(id)arg7 recordIdentifier:(id)arg8;

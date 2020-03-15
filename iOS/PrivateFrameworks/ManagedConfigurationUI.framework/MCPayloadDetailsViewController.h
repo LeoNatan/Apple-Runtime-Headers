@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSArray *_keyValueSections;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *keyValueSections; // @synthesize keyValueSections=_keyValueSections;
 @property(retain, nonatomic) MCPayloadInfo *payloadInfo; // @synthesize payloadInfo=_payloadInfo;
 @property(retain, nonatomic) MCPayload *payload; // @synthesize payload=_payload;
-- (void).cxx_destruct;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;

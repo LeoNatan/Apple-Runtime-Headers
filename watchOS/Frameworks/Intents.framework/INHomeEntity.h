@@ -27,6 +27,7 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) INSpeakableString *group; // @synthesize group=_group;
 @property(readonly, copy, nonatomic) INSpeakableString *home; // @synthesize home=_home;
 @property(readonly, copy, nonatomic) INSpeakableString *zone; // @synthesize zone=_zone;
@@ -36,7 +37,6 @@
 @property(readonly, copy, nonatomic) NSString *entityIdentifier; // @synthesize entityIdentifier=_entityIdentifier;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) INSpeakableString *entityName; // @synthesize entityName=_entityName;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned int)arg1;
 @property(readonly, copy) NSString *description;
@@ -46,7 +46,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned int hash;
-@property(readonly, nonatomic) NSString *name;
+@property(readonly, copy, nonatomic) NSString *name;
 @property(readonly, nonatomic) int deviceType;
 - (id)initWithName:(id)arg1 type:(int)arg2 deviceType:(int)arg3;
 - (id)initWithEntityName:(id)arg1 type:(int)arg2 entityIdentifier:(id)arg3 deviceTypes:(id)arg4 sceneType:(int)arg5 room:(id)arg6 zone:(id)arg7 home:(id)arg8 group:(id)arg9;

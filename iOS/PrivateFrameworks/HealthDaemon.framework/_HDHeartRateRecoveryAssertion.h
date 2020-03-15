@@ -13,8 +13,8 @@
     id <HDWorkoutSessionStateController> _sessionStateController;
 }
 
-@property(readonly, nonatomic) __weak id <HDWorkoutSessionStateController> sessionStateController; // @synthesize sessionStateController=_sessionStateController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <HDWorkoutSessionStateController> sessionStateController; // @synthesize sessionStateController=_sessionStateController;
 - (id)initWithOwnerIdentifier:(id)arg1 sessionStateController:(id)arg2;
 
 @end

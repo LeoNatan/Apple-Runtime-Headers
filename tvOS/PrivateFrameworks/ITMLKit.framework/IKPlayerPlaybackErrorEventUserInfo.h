@@ -16,9 +16,9 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldStopDueToError; // @synthesize shouldStopDueToError=_shouldStopDueToError;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *properties;
 - (id)initWithError:(id)arg1 shouldStopDueToError:(_Bool)arg2;
 

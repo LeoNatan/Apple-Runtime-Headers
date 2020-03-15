@@ -18,11 +18,11 @@
     long long _fileOptions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long fileOptions; // @synthesize fileOptions=_fileOptions;
 @property(readonly, nonatomic) _Bool allowsMoveOperation; // @synthesize allowsMoveOperation=_allowsMoveOperation;
 @property(readonly, nonatomic) NSString *bestAvailableUTI; // @synthesize bestAvailableUTI=_bestAvailableUTI;
 @property(readonly, nonatomic) SBIconView *iconView; // @synthesize iconView=_iconView;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

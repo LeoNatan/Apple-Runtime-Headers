@@ -15,10 +15,10 @@
     NSString *_urlType;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *urlType; // @synthesize urlType=_urlType;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;

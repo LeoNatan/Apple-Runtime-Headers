@@ -17,11 +17,11 @@
 }
 
 + (id)automaticDNDQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(copy, nonatomic) CDUnknownBlockType exitConfirmationChangeObserver; // @synthesize exitConfirmationChangeObserver=_exitConfirmationChangeObserver;
 @property(copy, nonatomic) CDUnknownBlockType statusChangeObserver; // @synthesize statusChangeObserver=_statusChangeObserver;
 @property(readonly, nonatomic) unsigned long long cachedAutomaticDNDActiveState; // @synthesize cachedAutomaticDNDActiveState=_cachedAutomaticDNDActiveState;
-- (void).cxx_destruct;
 - (void)_detachObservers;
 - (void)_notifyExitConfirmationActive:(_Bool)arg1;
 - (void)_fetchStatusForObserver;

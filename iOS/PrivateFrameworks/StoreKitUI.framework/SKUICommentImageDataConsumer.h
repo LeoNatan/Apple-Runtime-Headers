@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completionBlock;
 }
 
-@property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 - (id)_scaledImageWithBounds:(struct CGSize)arg1 contentRect:(struct CGRect)arg2 drawBlock:(CDUnknownBlockType)arg3;
 - (id)imageForImage:(id)arg1;
 

@@ -29,6 +29,7 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadProxyCaptiveLoginAllowed; // @synthesize payloadProxyCaptiveLoginAllowed=_payloadProxyCaptiveLoginAllowed;
 @property(copy, nonatomic) NSNumber *payloadProxyPACFallbackAllowed; // @synthesize payloadProxyPACFallbackAllowed=_payloadProxyPACFallbackAllowed;
 @property(copy, nonatomic) NSString *payloadProxyPACURL; // @synthesize payloadProxyPACURL=_payloadProxyPACURL;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSNumber *payloadProxyServerPort; // @synthesize payloadProxyServerPort=_payloadProxyServerPort;
 @property(copy, nonatomic) NSString *payloadProxyServer; // @synthesize payloadProxyServer=_payloadProxyServer;
 @property(copy, nonatomic) NSString *payloadProxyType; // @synthesize payloadProxyType=_payloadProxyType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

@@ -10,14 +10,15 @@
 
 @interface NSPersistentCloudKitContainerOptions : NSObject
 {
-    BOOL _useEncryptedStorage;
+    BOOL _useDeviceToDeviceEncryption;
     NSString *_containerIdentifier;
     NSString *_apsConnectionMachServiceName;
 }
 
 @property(retain, nonatomic) NSString *apsConnectionMachServiceName; // @synthesize apsConnectionMachServiceName=_apsConnectionMachServiceName;
-@property BOOL useEncryptedStorage; // @synthesize useEncryptedStorage=_useEncryptedStorage;
+@property(nonatomic) BOOL useDeviceToDeviceEncryption; // @synthesize useDeviceToDeviceEncryption=_useDeviceToDeviceEncryption;
 @property(readonly, copy) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
+@property BOOL useEncryptedStorage;
 - (void)dealloc;
 - (id)initWithContainerIdentifier:(id)arg1;
 

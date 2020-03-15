@@ -26,6 +26,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)new;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *refreshToken; // @synthesize refreshToken=_refreshToken;
 @property(copy, nonatomic) NSData *accessToken; // @synthesize accessToken=_accessToken;
 @property(nonatomic) long long realUserStatus; // @synthesize realUserStatus=_realUserStatus;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSString *state; // @synthesize state=_state;
 @property(readonly, copy, nonatomic) NSArray *authorizedScopes; // @synthesize authorizedScopes=_authorizedScopes;
 @property(readonly, copy, nonatomic) NSString *user; // @synthesize user=_user;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

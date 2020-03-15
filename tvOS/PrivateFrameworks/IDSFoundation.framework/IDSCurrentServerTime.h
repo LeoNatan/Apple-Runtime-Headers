@@ -16,9 +16,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <IDSCurrentServerTimeProvider> serverTimeProvider; // @synthesize serverTimeProvider=_serverTimeProvider;
 @property(retain) IDSCurrentServerTimePair *timePair; // @synthesize timePair=_timePair;
-- (void).cxx_destruct;
 - (void)_refreshServerTime;
 - (void)_storeInitialServerTime;
 - (double)_refreshTimeInterval;

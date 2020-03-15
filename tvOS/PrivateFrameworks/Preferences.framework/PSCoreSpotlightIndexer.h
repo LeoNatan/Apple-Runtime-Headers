@@ -20,11 +20,11 @@
 + (id)sharedInstance;
 + (char *)spotlightIndexQueueIdentifier;
 + (id)searchIndexIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *indexFromControllerLog; // @synthesize indexFromControllerLog=_indexFromControllerLog;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *spotlightIndexQueue; // @synthesize spotlightIndexQueue=_spotlightIndexQueue;
 @property(retain, nonatomic) CSSearchableIndex *prefsSearchableIndex; // @synthesize prefsSearchableIndex=_prefsSearchableIndex;
 @property(nonatomic) _Bool skipManifests; // @synthesize skipManifests=_skipManifests;
-- (void).cxx_destruct;
 - (void)performYukonManifestMigrationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)indexThirdPartyAppsWithPrefix:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_urlsFromManifestForSpecifier:(id)arg1 bundle:(id)arg2;

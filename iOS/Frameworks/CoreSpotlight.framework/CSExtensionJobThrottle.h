@@ -18,13 +18,13 @@
     NSMutableDictionary *_countersByBundleID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *countersByBundleID; // @synthesize countersByBundleID=_countersByBundleID;
 @property(nonatomic) unsigned long long maxSecondsBetweenRetriesUnderMemoryPressure; // @synthesize maxSecondsBetweenRetriesUnderMemoryPressure=_maxSecondsBetweenRetriesUnderMemoryPressure;
 @property(nonatomic) unsigned long long minSecondsBetweenRetriesUnderMemoryPressure; // @synthesize minSecondsBetweenRetriesUnderMemoryPressure=_minSecondsBetweenRetriesUnderMemoryPressure;
 @property(nonatomic) unsigned long long maxSecondsBetweenRetries; // @synthesize maxSecondsBetweenRetries=_maxSecondsBetweenRetries;
 @property(nonatomic) unsigned long long minSecondsBetweenRetries; // @synthesize minSecondsBetweenRetries=_minSecondsBetweenRetries;
 @property(nonatomic) unsigned long long maxRetryCount; // @synthesize maxRetryCount=_maxRetryCount;
-- (void).cxx_destruct;
 - (long long)nextDispatchTimeDeltaForExtension:(id)arg1 job:(id)arg2 memoryPressure:(_Bool)arg3;
 - (id)initWithDictionary:(id)arg1;
 

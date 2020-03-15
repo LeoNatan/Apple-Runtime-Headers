@@ -6,7 +6,7 @@
 
 #import <SAObjects/SACFAbstractClientCommand.h>
 
-@class NSString;
+@class NSString, SAAppInfo;
 
 @interface SACFSpokenNotificationFlowCommand : SACFAbstractClientCommand
 {
@@ -16,8 +16,13 @@
 + (id)spokenNotificationFlowCommand;
 - (BOOL)mutatingCommand;
 - (BOOL)requiresResponse;
+@property(copy, nonatomic) NSString *userInterfaceIdiom;
+@property(copy, nonatomic) NSString *userAgent;
 @property(nonatomic) BOOL shouldPromptUser;
+@property(copy, nonatomic) NSString *outputVoiceLanguageCode;
 @property(copy, nonatomic) NSString *notificationID;
+@property(copy, nonatomic) NSString *languageCode;
+@property(retain, nonatomic) SAAppInfo *appInfo;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 

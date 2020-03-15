@@ -18,10 +18,10 @@
     NSData *_bookAnnotations;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *bookAnnotations; // @synthesize bookAnnotations=_bookAnnotations;
 @property(copy, nonatomic) NSString *assetVersion; // @synthesize assetVersion=_assetVersion;
 @property(readonly, copy, nonatomic) NSString *assetID; // @synthesize assetID=_assetID;
-- (void).cxx_destruct;
 - (id)configuredRecordFromAttributes;
 - (id)zoneName;
 - (id)identifier;

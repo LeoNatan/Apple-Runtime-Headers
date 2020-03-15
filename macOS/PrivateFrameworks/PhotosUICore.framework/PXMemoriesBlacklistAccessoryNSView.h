@@ -16,10 +16,10 @@
     NSArray *_constraints;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setConstraints:) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) NSView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(retain, nonatomic) PXMemoriesBlacklistAccessoryViewSpec *viewSpec; // @synthesize viewSpec=_viewSpec;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)updateConstraintsWithNewAnchorXPos:(double)arg1;
 - (void)_createAndAddSubview;

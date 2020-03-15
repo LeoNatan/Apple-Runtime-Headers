@@ -32,12 +32,12 @@
     PKPaymentWebService *_webService;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isPerformingNextActionLoop) _Bool performingNextActionLoop; // @synthesize performingNextActionLoop=_performingNextActionLoop;
 @property(readonly, nonatomic, getter=isShowingActivitySpinner) _Bool showingActivitySpinner; // @synthesize showingActivitySpinner=_showingActivitySpinner;
 @property(retain, nonatomic) PKPaymentSetupFieldsModel *fieldsModel; // @synthesize fieldsModel=_fieldsModel;
 @property(retain, nonatomic) PKPaymentWebService *webService; // @synthesize webService=_webService;
 @property(nonatomic) __weak id <PKPaymentSetupViewControllerDelegate> setupDelegate; // @synthesize setupDelegate=_setupDelegate;
-- (void).cxx_destruct;
 - (void)logAggDCheckpointForKey:(id)arg1;
 - (void)logAggDContextSpecificCheckpointForKey:(id)arg1;
 - (id)_contextSpecificStringForAggDKey:(id)arg1;

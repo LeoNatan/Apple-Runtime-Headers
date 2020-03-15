@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSArray *_constraintsWithConstant;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *constraintsWithConstant; // @synthesize constraintsWithConstant=_constraintsWithConstant;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)viewForLastBaselineLayout;
 - (void)applyStyleAttributes:(id)arg1;
 @property(copy, nonatomic) NSString *text;

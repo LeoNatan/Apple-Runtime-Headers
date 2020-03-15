@@ -13,8 +13,8 @@
     NSArray *_batches;
 }
 
-@property(readonly, nonatomic) NSArray *batches; // @synthesize batches=_batches;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *batches; // @synthesize batches=_batches;
 - (id)batchedObservables;
 - (void)addObservable:(id)arg1 toBatchAtIndex:(unsigned long long)arg2;
 - (id)initWithBatchCount:(unsigned long long)arg1;

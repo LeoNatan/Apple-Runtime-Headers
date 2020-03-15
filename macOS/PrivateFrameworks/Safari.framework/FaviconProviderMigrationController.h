@@ -26,10 +26,10 @@ __attribute__((visibility("hidden")))
     NSURL *_iconControllerDatabaseURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *faviconDiskCacheURL; // @synthesize faviconDiskCacheURL=_faviconDiskCacheURL;
 @property(readonly, nonatomic) NSURL *faviconDatabaseURL; // @synthesize faviconDatabaseURL=_faviconDatabaseURL;
 @property(readonly, nonatomic) NSURL *iconControllerDatabaseURL; // @synthesize iconControllerDatabaseURL=_iconControllerDatabaseURL;
-- (void).cxx_destruct;
 - (void)dataCacheDidSetUp:(id)arg1;
 - (id)_databaseQueueName;
 - (void)_closeDatabases;

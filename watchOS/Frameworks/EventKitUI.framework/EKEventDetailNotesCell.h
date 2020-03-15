@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     id <EKEventDetailNotesCellDelegate> _noteDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <EKEventDetailNotesCellDelegate> noteDelegate; // @synthesize noteDelegate=_noteDelegate;
 @property(readonly, nonatomic) _Bool isTruncatingNotes; // @synthesize isTruncatingNotes=_isTruncatingNotes;
-- (void).cxx_destruct;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;
 - (float)_layoutForWidth:(float)arg1;
 - (void)layoutSubviews;

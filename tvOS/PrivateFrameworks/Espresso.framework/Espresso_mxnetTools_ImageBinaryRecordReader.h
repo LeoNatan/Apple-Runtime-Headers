@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     struct _mxnetTools_imageHeader_t_ _imageHeader;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *labelsPrivate; // @synthesize labelsPrivate=_labelsPrivate;
 @property unsigned long long currentOffset; // @synthesize currentOffset=_currentOffset;
 @property struct _mxnetTools_imageHeader_t_ imageHeader; // @synthesize imageHeader=_imageHeader;
 @property struct _mxnetTools_recordHeader_t_ recordHeader; // @synthesize recordHeader=_recordHeader;
 @property(retain) NSFileHandle *recFileHandle; // @synthesize recFileHandle=_recFileHandle;
-- (void).cxx_destruct;
 - (struct _mxnetTools_imageID_t_)imageID;
 - (id)labels;
 - (id)imageData;

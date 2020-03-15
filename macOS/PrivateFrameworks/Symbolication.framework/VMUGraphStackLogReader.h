@@ -29,9 +29,9 @@
 + (void)initialize;
 + (void)_claimUnarchivingOfClass:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *diskLogs; // @synthesize diskLogs=_diskLogs;
 @property(nonatomic) __weak VMUProcessObjectGraph *graph; // @synthesize graph=_graph;
-- (void).cxx_destruct;
 - (int)enumerateRecords:(CDUnknownBlockType)arg1;
 @property(readonly) unsigned long long nodesInUniquingTable;
 - (id)vmuVMRegionForAddress:(unsigned long long)arg1;

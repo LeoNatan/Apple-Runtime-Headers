@@ -20,10 +20,12 @@
     GEOObserverHashTable *_sendingObservers;
     NSMutableArray *_receivedTrips;
     BOOL _sendingAccountAvailable;
+    NSArray *_aliases;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *aliases; // @synthesize aliases=_aliases;
 - (void)_openConnectionIfNeeded;
 - (id)_remoteObjectProxy;
 - (void)accountAvailabilityDidChange:(BOOL)arg1;
@@ -39,6 +41,8 @@
 - (void)destinationReachedDidUpdateForSharedTrip:(id)arg1;
 - (void)destinationDidUpdateForSharedTrip:(id)arg1;
 - (void)sharedTripDidBecomeAvailable:(id)arg1;
+- (void)_fetchAccountAliasesWithCompletion:(CDUnknownBlockType)arg1;
+- (void)fetchAccountAliasesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_fetchAccountValidWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchAccountValidWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_blockSharedTrip:(id)arg1;

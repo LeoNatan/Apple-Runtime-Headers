@@ -17,9 +17,9 @@
     id <SXConditionHints> _hints;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXConditionHints> hints; // @synthesize hints=_hints;
 @property(readonly, nonatomic) SXLayoutOptions *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithLayoutOptions:(id)arg1 hints:(id)arg2;

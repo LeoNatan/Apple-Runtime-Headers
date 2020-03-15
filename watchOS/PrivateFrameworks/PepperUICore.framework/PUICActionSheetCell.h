@@ -32,6 +32,7 @@
 
 + (_Bool)_isMultilineRowWithTitle:(id)arg1 leftAccessoryView:(id)arg2 cellWidth:(float)arg3 outMultilineHeight:(float *)arg4;
 + (float)heightForRowWithTitle:(id)arg1 leftAccessoryView:(id)arg2 cellWidth:(float)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *customBackgroundView; // @synthesize customBackgroundView=_customBackgroundView;
 @property(retain, nonatomic) PUICTableViewCellBackgroundView *backgroundSourceOverView; // @synthesize backgroundSourceOverView=_backgroundSourceOverView;
 @property(retain, nonatomic) PUICTableViewCellBackgroundView *backgroundColorDodgeView; // @synthesize backgroundColorDodgeView=_backgroundColorDodgeView;
@@ -50,7 +51,6 @@
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) NSString *accessoryTitle; // @synthesize accessoryTitle=_accessoryTitle;
 @property(retain, nonatomic) UIView *leftAccessoryView; // @synthesize leftAccessoryView=_leftAccessoryView;
-- (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)prepareForReuse;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;

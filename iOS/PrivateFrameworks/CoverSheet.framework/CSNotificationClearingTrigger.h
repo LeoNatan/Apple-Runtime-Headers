@@ -19,6 +19,7 @@
     id <CSNotificationClearingTriggerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool triggerArmed; // @synthesize triggerArmed=_triggerArmed;
 @property(nonatomic) _Bool screenOff; // @synthesize screenOff=_screenOff;
 @property(nonatomic) _Bool uiLocked; // @synthesize uiLocked=_uiLocked;
@@ -26,7 +27,6 @@
 @property(nonatomic) _Bool hadNotificationContentAtDisappearance; // @synthesize hadNotificationContentAtDisappearance=_hadNotificationContentAtDisappearance;
 @property(nonatomic) _Bool authenticated; // @synthesize authenticated=_authenticated;
 @property(nonatomic) __weak id <CSNotificationClearingTriggerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_clearIfNeeded;
 - (_Bool)_shouldFire;
 - (_Bool)_wouldArmForDiscreteParameters;

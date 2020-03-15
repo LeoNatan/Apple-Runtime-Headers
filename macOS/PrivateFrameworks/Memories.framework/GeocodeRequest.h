@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_completionHandlers;
 }
 
-@property(retain, nonatomic) NSMutableArray *completionHandlers; // @synthesize completionHandlers=_completionHandlers;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *completionHandlers; // @synthesize completionHandlers=_completionHandlers;
 - (void)addCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)init;
 

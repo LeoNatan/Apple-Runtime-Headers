@@ -49,12 +49,12 @@ __attribute__((visibility("hidden")))
     UIAlertController *_alertController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIAlertControllerVisualStyle *visualStyle; // @synthesize visualStyle=_visualStyle;
 @property(nonatomic) __weak UIAlertController *alertController; // @synthesize alertController=_alertController;
 @property(retain) NSLayoutConstraint *labelContainerTrailingPinConstraint; // @synthesize labelContainerTrailingPinConstraint=_labelContainerTrailingPinConstraint;
 @property(retain) NSLayoutConstraint *labelContainerLeadingPinConstraint; // @synthesize labelContainerLeadingPinConstraint=_labelContainerLeadingPinConstraint;
 @property(retain) NSLayoutConstraint *labelContainerCenterXConstraint; // @synthesize labelContainerCenterXConstraint=_labelContainerCenterXConstraint;
-- (void).cxx_destruct;
 - (void)_drawFocusRingMask;
 - (void)_action:(id)arg1 updatedTitleTextColor:(id)arg2;
 - (void)_action:(id)arg1 updatedImageTintColor:(id)arg2;

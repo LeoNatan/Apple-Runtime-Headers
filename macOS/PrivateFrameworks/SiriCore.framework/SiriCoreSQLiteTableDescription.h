@@ -17,10 +17,10 @@
     NSArray *_constraints;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(readonly, copy, nonatomic) NSArray *columns; // @synthesize columns=_columns;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithName:(id)arg1 columnsProvider:(CDUnknownBlockType)arg2 constraintsProvider:(CDUnknownBlockType)arg3;
 - (id)initWithName:(id)arg1 columns:(id)arg2 constraints:(id)arg3;

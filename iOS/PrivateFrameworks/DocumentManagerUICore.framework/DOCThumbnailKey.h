@@ -17,9 +17,9 @@
     DOCThumbnailDescriptor *_descriptor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DOCThumbnailDescriptor *descriptor; // @synthesize descriptor=_descriptor;
 @property(readonly, nonatomic) NSObject<NSCopying> *primaryKey; // @synthesize primaryKey=_primaryKey;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

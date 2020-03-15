@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)reportSpamButton;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showReportSMSSpam; // @synthesize showReportSMSSpam=_showReportSMSSpam;
 @property(retain, nonatomic) UIButton *reportSpamButton; // @synthesize reportSpamButton=_reportSpamButton;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSAttributedString *attributedButtonText;
 - (void)clearFilters;
 - (void)addFilter:(id)arg1;

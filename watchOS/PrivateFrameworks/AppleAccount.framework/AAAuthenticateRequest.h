@@ -17,11 +17,11 @@
 }
 
 + (Class)responseClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *authToken; // @synthesize authToken=_authToken;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (id)urlRequest;
 - (id)urlCredential;
 - (id)urlString;

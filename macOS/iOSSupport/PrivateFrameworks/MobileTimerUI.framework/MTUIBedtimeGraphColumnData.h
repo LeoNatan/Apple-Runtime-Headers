@@ -15,8 +15,8 @@
     NSMutableSet *_intervals;
 }
 
-@property(retain, nonatomic) NSMutableSet *intervals; // @synthesize intervals=_intervals;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableSet *intervals; // @synthesize intervals=_intervals;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (id)orderedIntervals;
 - (void)addInterval:(id)arg1;

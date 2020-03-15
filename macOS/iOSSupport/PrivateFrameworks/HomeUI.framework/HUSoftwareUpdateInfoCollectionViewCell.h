@@ -21,11 +21,11 @@
     UIView *_bottomSeparatorView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *bottomSeparatorView; // @synthesize bottomSeparatorView=_bottomSeparatorView;
 @property(readonly, nonatomic) UIView *topSeparatorView; // @synthesize topSeparatorView=_topSeparatorView;
 @property(readonly, nonatomic) HUSoftwareUpdateInfoView *infoView; // @synthesize infoView=_infoView;
 @property(nonatomic) __weak id <HUResizableCellDelegate> resizingDelegate; // @synthesize resizingDelegate=_resizingDelegate;
-- (void).cxx_destruct;
 - (void)didUpdateRequiredHeightForSoftwareUpdateInfoView:(id)arg1;
 @property(nonatomic) BOOL bottomSeparatorVisible;
 @property(nonatomic) BOOL topSeparatorVisible;

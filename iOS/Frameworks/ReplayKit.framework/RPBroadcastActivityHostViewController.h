@@ -15,8 +15,8 @@
     RPBroadcastActivityViewController *_broadcastActivityViewController;
 }
 
-@property(nonatomic) __weak RPBroadcastActivityViewController *broadcastActivityViewController; // @synthesize broadcastActivityViewController=_broadcastActivityViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak RPBroadcastActivityViewController *broadcastActivityViewController; // @synthesize broadcastActivityViewController=_broadcastActivityViewController;
 - (oneway void)presentationInfoWithCompletion:(CDUnknownBlockType)arg1;
 - (long long)modalPresentationStyle;
 - (unsigned long long)popoverArrowDirection;

@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     MTLRasterizationRateLayerArrayInternal *_layerAccessor;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)setLabel:(id)arg1;
 - (id)label;
 - (void)setScreenSize:(CDStruct_da2e99ad)arg1;
 - (CDStruct_da2e99ad)screenSize;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)formattedDescription:(unsigned long long)arg1;
 - (id)description;
 - (unsigned long long)hash;

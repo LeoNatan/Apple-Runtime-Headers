@@ -17,9 +17,9 @@
 + (id)animationWithDuration:(double)arg1 timingFunction:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 + (CDUnknownBlockType)linearTimingFunction;
 + (CDUnknownBlockType)timingFunctionForMediaTimingFunction:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (void)callAndReleaseCompletionHandler;
 - (id)valueByAddingCurrentValueToValue:(id)arg1;
 - (_Bool)isFinishedAnimating;

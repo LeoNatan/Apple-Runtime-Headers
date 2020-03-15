@@ -15,9 +15,9 @@
 }
 
 + (id)eventWithName:(id)arg1 withPayload:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *payload; // @synthesize payload=_payload;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

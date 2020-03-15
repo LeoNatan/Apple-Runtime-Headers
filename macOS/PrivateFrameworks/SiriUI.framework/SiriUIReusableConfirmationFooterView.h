@@ -17,10 +17,10 @@
 }
 
 + (double)defaultHeight;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(readonly, nonatomic) NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) SAUIConfirmationOptions *confirmationOptions; // @synthesize confirmationOptions=_confirmationOptions;
-- (void).cxx_destruct;
 - (BOOL)isFlipped;
 - (struct NSEdgeInsets)edgeInsets;
 - (void)layout;

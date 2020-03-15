@@ -13,8 +13,8 @@
     AKPageController *_pageController;
 }
 
-@property __weak AKPageController *pageController; // @synthesize pageController=_pageController;
 - (void).cxx_destruct;
+@property __weak AKPageController *pageController; // @synthesize pageController=_pageController;
 - (void)performUndo:(id)arg1;
 - (id)initWithPageController:(id)arg1;
 

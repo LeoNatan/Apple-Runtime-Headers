@@ -13,8 +13,8 @@
     EWSEmailAddress *_emailAddress;
 }
 
-@property(readonly, nonatomic) EWSEmailAddress *emailAddress; // @synthesize emailAddress=_emailAddress;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) EWSEmailAddress *emailAddress; // @synthesize emailAddress=_emailAddress;
 - (id)prepareRequest;
 @property(retain, nonatomic) MFEWSGetUserOofSettingsResponseOperation *responseOperation;
 - (id)newResponseOperationWithGateway:(id)arg1 errorHandler:(id)arg2;

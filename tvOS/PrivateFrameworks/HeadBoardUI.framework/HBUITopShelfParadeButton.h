@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     HBUITopShelfParadeButtonIndeterminateProgressView *_indeterminateProgressView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HBUITopShelfParadeButtonIndeterminateProgressView *indeterminateProgressView; // @synthesize indeterminateProgressView=_indeterminateProgressView;
 @property(readonly, nonatomic) HBUITopShelfParadeButtonProgressView *progressView; // @synthesize progressView=_progressView;
 @property(readonly, nonatomic) UIStackView *titleImageContentView; // @synthesize titleImageContentView=_titleImageContentView;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSProgress *installApplicationProgress; // @synthesize installApplicationProgress=_installApplicationProgress;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;

@@ -14,9 +14,9 @@
     NSString *_logKey;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *logKey; // @synthesize logKey=_logKey;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (void)overwriteMetadataForInstalledVersion:(id)arg1 build:(id)arg2 withLocalizedDisplayNames:(id)arg3 localizedTestNotes:(id)arg4 primaryLocaleKey:(id)arg5 developerName:(id)arg6 expirationDate:(id)arg7 iconUrlTemplate:(id)arg8 testerEmail:(id)arg9;
 - (void)updateLocalizedTestNotes:(id)arg1 forVersion:(id)arg2 build:(id)arg3;
 - (void)setBetaAppLaunchScreenEnabled:(_Bool)arg1 forVersion:(id)arg2 build:(id)arg3;

@@ -15,10 +15,10 @@
     NSMutableArray *_stringsWithClocksToResetAfterRealizingLocalChanges;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *stringsWithClocksToResetAfterRealizingLocalChanges; // @synthesize stringsWithClocksToResetAfterRealizingLocalChanges=_stringsWithClocksToResetAfterRealizingLocalChanges;
 @property(retain, nonatomic) NSMutableArray *stringsWithClocksNeedingUpdating; // @synthesize stringsWithClocksNeedingUpdating=_stringsWithClocksNeedingUpdating;
 @property(retain, nonatomic) TTCRVectorMultiTimestamp *sharedTopotextTimestamp; // @synthesize sharedTopotextTimestamp=_sharedTopotextTimestamp;
-- (void).cxx_destruct;
 - (void)realizeLocalChanges;
 - (void)mergeTimestampWithDocument:(id)arg1;
 - (unsigned long long)mergeResultForMergingWithDocument:(id)arg1;

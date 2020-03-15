@@ -18,11 +18,11 @@
     NSDate *_proposedDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *proposedDate; // @synthesize proposedDate=_proposedDate;
 @property(readonly, nonatomic) _Bool shouldSeek; // @synthesize shouldSeek=_shouldSeek;
 @property(readonly, nonatomic) NSDate *currentDate; // @synthesize currentDate=_currentDate;
 @property(readonly, nonatomic) NSDate *requestedDate; // @synthesize requestedDate=_requestedDate;
-- (void).cxx_destruct;
 - (void)processReturnJSValue:(id)arg1 inContext:(id)arg2;
 @property(readonly, nonatomic) NSDictionary *properties;
 - (id)initWithRequestDate:(id)arg1 currentDate:(id)arg2;

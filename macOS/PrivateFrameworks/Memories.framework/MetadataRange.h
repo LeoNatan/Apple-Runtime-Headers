@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
 + (id)descriptionForShotType:(int)arg1;
 + (id)descriptionForFacePositions:(int)arg1;
 + (id)objectFromPlist:(id)arg1 inProject:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property(nonatomic) int duration; // @synthesize duration=_duration;
 @property(nonatomic) int startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

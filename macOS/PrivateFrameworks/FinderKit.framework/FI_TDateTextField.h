@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)cellClass;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useRelativeDates; // @synthesize useRelativeDates=_useRelativeDates;
 @property(nonatomic) _Bool autoFormatToFit; // @synthesize autoFormatToFit=_autoFormatToFit;
 @property(nonatomic) _Bool suspendReformat; // @synthesize suspendReformat=_suspendReformat;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (struct CGSize)calcIdealSizeImpl;
 - (void)formatToFit;
 - (void)reformat;

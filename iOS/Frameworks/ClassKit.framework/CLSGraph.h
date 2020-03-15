@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
+@class NSMapTable;
 @protocol CLSGraphVertex><NSObject;
 
 @interface CLSGraph : NSObject
 {
-    struct NSMapTable *_verticesMap;
-    struct NSMapTable *_inEdgesMap;
-    struct NSMapTable *_outEdgesMap;
+    NSMapTable *_verticesMap;
+    NSMapTable *_inEdgesMap;
+    NSMapTable *_outEdgesMap;
     unsigned long long _options;
 }
 
@@ -22,7 +23,7 @@
 - (void)traverseVerticesPassingTest:(CDUnknownBlockType)arg1 enumerationBlock:(CDUnknownBlockType)arg2;
 - (void)traverse:(CDUnknownBlockType)arg1;
 - (void)enumerate:(CDUnknownBlockType)arg1;
-- (void)_enumerateVerticesInEdges:(struct NSHashTable *)arg1 skipingEdges:(struct NSHashTable *)arg2 enumerationBlock:(CDUnknownBlockType)arg3;
+- (void)_enumerateVerticesInEdges:(id)arg1 skipingEdges:(id)arg2 enumerationBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateOutNeighboursOfVertex:(id)arg1 enumerationBlock:(CDUnknownBlockType)arg2;
 - (id)outNeighboursOfVertex:(id)arg1;
 - (void)enumerateInNeighboursOfVertex:(id)arg1 enumerationBlock:(CDUnknownBlockType)arg2;
@@ -39,7 +40,7 @@
 - (_Bool)containsVertex:(id)arg1;
 - (_Bool)containsVertexWithVertexID:(id)arg1;
 - (id)vertexWithVertexID:(id)arg1;
-- (unsigned long long)_degreeOfVertex:(id)arg1 inEdgeMap:(struct NSMapTable *)arg2;
+- (unsigned long long)_degreeOfVertex:(id)arg1 inEdgeMap:(id)arg2;
 - (unsigned long long)outDegree:(id)arg1;
 - (unsigned long long)inDegree:(id)arg1;
 - (unsigned long long)degree:(id)arg1;

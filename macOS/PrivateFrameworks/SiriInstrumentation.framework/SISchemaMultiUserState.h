@@ -13,8 +13,8 @@
     NSArray *_enrolledUsers;
 }
 
-@property(copy, nonatomic) NSArray *enrolledUsers; // @synthesize enrolledUsers=_enrolledUsers;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *enrolledUsers; // @synthesize enrolledUsers=_enrolledUsers;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

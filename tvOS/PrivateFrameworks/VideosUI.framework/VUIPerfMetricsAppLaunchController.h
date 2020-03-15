@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(copy, nonatomic) NSDictionary *appLaunchData; // @synthesize appLaunchData=_appLaunchData;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *appLaunchData; // @synthesize appLaunchData=_appLaunchData;
 - (void)_setAppLaunchFieldWithData:(id)arg1;
 - (void)recordAppLaunchEventWithEventType:(id)arg1;
 - (id)init;

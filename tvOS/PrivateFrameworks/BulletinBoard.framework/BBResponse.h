@@ -32,6 +32,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *context; // @synthesize context=_context;
 @property(nonatomic) _Bool didOpenApplication; // @synthesize didOpenApplication=_didOpenApplication;
 @property(copy, nonatomic) BSServiceConnectionEndpoint *endpoint; // @synthesize endpoint=_endpoint;
@@ -47,7 +48,6 @@
 @property(copy, nonatomic) NSString *bulletinID; // @synthesize bulletinID=_bulletinID;
 @property(copy, nonatomic) CDUnknownBlockType sendBlock; // @synthesize sendBlock=_sendBlock;
 @property(copy, nonatomic) NSArray *lifeAssertions; // @synthesize lifeAssertions=_lifeAssertions;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)send;

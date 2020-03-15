@@ -16,8 +16,8 @@
 }
 
 + (id)definition;
-@property(copy, nonatomic) NSString *Value; // @synthesize Value=_Value;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *Value; // @synthesize Value=_Value;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

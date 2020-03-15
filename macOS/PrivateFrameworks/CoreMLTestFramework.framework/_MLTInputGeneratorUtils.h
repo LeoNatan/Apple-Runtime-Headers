@@ -19,6 +19,7 @@
     NSDictionary *_sequences;
 }
 
+- (void).cxx_destruct;
 @property BOOL usesNdArrayInterpretation; // @synthesize usesNdArrayInterpretation=_usesNdArrayInterpretation;
 @property unsigned int seedForRandomInput; // @synthesize seedForRandomInput=_seedForRandomInput;
 @property(retain) NSDictionary *sequences; // @synthesize sequences=_sequences;
@@ -26,7 +27,6 @@
 @property(retain) NSDictionary *inputDescriptions; // @synthesize inputDescriptions=_inputDescriptions;
 @property int currentCase; // @synthesize currentCase=_currentCase;
 @property(nonatomic) struct __CVBuffer *buffer; // @synthesize buffer=_buffer;
-- (void).cxx_destruct;
 - (id)generateRandomMultiArrayFeatureWithMultiArrayConstraint:(id)arg1 error:(id *)arg2;
 - (id)generateRandomDouble;
 - (id)generateRandomUniformBetween:(double)arg1 and:(double)arg2;

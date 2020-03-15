@@ -15,9 +15,9 @@
     NSDictionary *_knownFieldMethods;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *knownFieldMethods; // @synthesize knownFieldMethods=_knownFieldMethods;
 @property(nonatomic) __weak id <MTEventDataProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (SEL)knownFieldAccessorForFieldName:(id)arg1;
 - (id)processMetricsData:(id)arg1 performanceData:(id)arg2;
 - (id)knownFields;

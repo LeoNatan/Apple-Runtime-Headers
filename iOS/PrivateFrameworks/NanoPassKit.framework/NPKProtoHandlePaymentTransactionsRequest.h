@@ -20,10 +20,10 @@
 + (Class)passAppletStatesType;
 + (Class)transactionPassIDsType;
 + (Class)transactionsBytesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *passAppletStates; // @synthesize passAppletStates=_passAppletStates;
 @property(retain, nonatomic) NSMutableArray *transactionPassIDs; // @synthesize transactionPassIDs=_transactionPassIDs;
 @property(retain, nonatomic) NSMutableArray *transactionsBytes; // @synthesize transactionsBytes=_transactionsBytes;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

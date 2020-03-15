@@ -13,8 +13,8 @@
     NSString *_articleID;
 }
 
-@property(copy, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithArticleID:(id)arg1;

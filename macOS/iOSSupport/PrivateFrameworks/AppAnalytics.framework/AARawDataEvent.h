@@ -6,9 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <AppAnalytics/AADataEventType-Protocol.h>
-
-@interface AARawDataEvent : NSObject <AADataEventType>
+@interface AARawDataEvent : NSObject
 {
     // Error parsing type: , name: name
     // Error parsing type: , name: dictionary

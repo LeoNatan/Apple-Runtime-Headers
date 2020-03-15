@@ -16,9 +16,9 @@
 }
 
 + (id)requestWithMarshallableObjectPackage:(id)arg1 arbitrationUnit:(id)arg2 view:(id)arg3 orientationMask:(unsigned long long)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long orientationMask; // @synthesize orientationMask=_orientationMask;
 @property(readonly, nonatomic) NSObject<IBAutolayoutItem> *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;

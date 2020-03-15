@@ -25,6 +25,7 @@
     FCAsyncSerialQueue *_fetchQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCAsyncSerialQueue *fetchQueue; // @synthesize fetchQueue=_fetchQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 @property(retain, nonatomic) id <NTTodayResultsSource> todayResultsSource; // @synthesize todayResultsSource=_todayResultsSource;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) CDUnknownBlockType sessionProvider; // @synthesize sessionProvider=_sessionProvider;
 @property(retain, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
 @property(copy, nonatomic) CDUnknownBlockType newResultsHandler; // @synthesize newResultsHandler=_newResultsHandler;
-- (void).cxx_destruct;
 - (void)_setupTodayResultsSource;
 - (void)userDidReadHeadlineWithAnalyticsElement:(id)arg1 atDate:(id)arg2;
 - (void)userDidSeeHeadlinesWithAnalyticsElements:(id)arg1 atDate:(id)arg2;

@@ -17,12 +17,12 @@
     NSArray *_items;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(nonatomic) BOOL restoreApplicationData; // @synthesize restoreApplicationData=_restoreApplicationData;
 @property(nonatomic) BOOL createAsMobileBackup; // @synthesize createAsMobileBackup=_createAsMobileBackup;
 @property(nonatomic) BOOL createsPlaceholders; // @synthesize createsPlaceholders=_createsPlaceholders;
 @property(nonatomic) BOOL completeDataPromise; // @synthesize completeDataPromise=_completeDataPromise;
-- (void).cxx_destruct;
 - (id)initWithApplicationMetadata:(id)arg1;
 - (id)init;
 

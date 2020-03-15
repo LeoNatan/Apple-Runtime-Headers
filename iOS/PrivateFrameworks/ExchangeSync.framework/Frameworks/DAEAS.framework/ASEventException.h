@@ -27,11 +27,11 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *placeHolder; // @synthesize placeHolder=_placeHolder;
 @property(retain, nonatomic) NSDate *exceptionStartTime; // @synthesize exceptionStartTime=_exceptionStartTime;
 @property(retain, nonatomic) NSNumber *isDeleted; // @synthesize isDeleted=_isDeleted;
 @property(nonatomic) __weak ASEvent *originalEvent; // @synthesize originalEvent=_originalEvent;
-- (void).cxx_destruct;
 - (_Bool)hasOccurrenceInTheFuture;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

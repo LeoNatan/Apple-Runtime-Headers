@@ -15,18 +15,18 @@
 
 @interface XCTestDriver : NSObject <XCTRunnerIDESessionDelegate, XCDebugLogDelegate, XCTASDebugLogDelegate>
 {
+    int _debugMessageBufferOverflow;
     XCTestConfiguration *_testConfiguration;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableArray *_debugMessageBuffer;
-    int _debugMessageBufferOverflow;
 }
 
 + (id)sharedTestDriver;
+- (void).cxx_destruct;
 @property int debugMessageBufferOverflow; // @synthesize debugMessageBufferOverflow=_debugMessageBufferOverflow;
 @property(retain) NSMutableArray *debugMessageBuffer; // @synthesize debugMessageBuffer=_debugMessageBuffer;
-@property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly) XCTestConfiguration *testConfiguration; // @synthesize testConfiguration=_testConfiguration;
-- (void).cxx_destruct;
 - (void)runTestConfiguration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)runTestSuite:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)reportStallOnMainThreadInTestCase:(id)arg1 method:(id)arg2 file:(id)arg3 line:(unsigned long long)arg4;

@@ -18,9 +18,9 @@
 }
 
 + (id)makeInputEvent:(id)arg1 order:(long long)arg2 wordSeparator:(id)arg3 accentedLanguage:(_Bool)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreTapData; // @synthesize ignoreTapData=_ignoreTapData;
 @property(retain, nonatomic) TIKeyboardInput *input; // @synthesize input=_input;
-- (void).cxx_destruct;
 - (void)reportInterKeyTiming:(id)arg1 previousEvent:(id)arg2;
 - (void)reportToSession:(id)arg1;
 - (double)touchUpErrorDistance;

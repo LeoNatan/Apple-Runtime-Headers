@@ -17,11 +17,11 @@
     long long _hobbyType;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long hobbyType; // @synthesize hobbyType=_hobbyType;
 @property(readonly) long long year; // @synthesize year=_year;
 @property(readonly) PGGraphNode *person; // @synthesize person=_person;
 @property(retain) NSArray *hobbyAssets; // @synthesize hobbyAssets=_hobbyAssets;
-- (void).cxx_destruct;
 - (void)addMomentNode:(id)arg1;
 - (id)initWithPerson:(id)arg1 year:(long long)arg2 hobbyType:(long long)arg3;
 

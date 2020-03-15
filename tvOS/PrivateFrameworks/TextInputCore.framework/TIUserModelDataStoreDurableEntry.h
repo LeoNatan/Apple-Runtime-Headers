@@ -16,11 +16,11 @@
     NSNumber *_value;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSNumber *value; // @synthesize value=_value;
 @property(readonly) NSString *key; // @synthesize key=_key;
 @property(readonly) NSDate *lastUpdateDate; // @synthesize lastUpdateDate=_lastUpdateDate;
 @property(readonly) NSDate *creationDate; // @synthesize creationDate=_creationDate;
-- (void).cxx_destruct;
 - (id)initWithCreationDate:(id)arg1 withLastUpdateDate:(id)arg2 withKey:(id)arg3 withValue:(id)arg4;
 
 @end

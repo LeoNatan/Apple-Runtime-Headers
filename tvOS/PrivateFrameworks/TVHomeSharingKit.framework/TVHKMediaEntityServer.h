@@ -33,6 +33,7 @@
 + (id)_preflightFetchRequest:(id)arg1 connectionState:(unsigned long long)arg2 sessionState:(id)arg3;
 + (id)_preflightMediaServerRequestWithConnectionState:(unsigned long long)arg1;
 + (_Bool)_didContentsChangeWithNewSessionState:(id)arg1 oldSessionState:(id)arg2 revisionKeyPath:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) TVHSMediaServerProtocolVersion *protocolVersion; // @synthesize protocolVersion=_protocolVersion;
 @property(copy, nonatomic) NSString *imageLoaderIdentifier; // @synthesize imageLoaderIdentifier=_imageLoaderIdentifier;
 @property(nonatomic) _Bool allowsCaching; // @synthesize allowsCaching=_allowsCaching;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) TVHKMediaEntitySearchManager *searchManager; // @synthesize searchManager=_searchManager;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) TVHSMediaServerIdentifier *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_cancelAllQueryOperations;
 - (void)_checkinCheckoutRentalMediaItem:(id)arg1 checkin:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_playbackDidTimeout;

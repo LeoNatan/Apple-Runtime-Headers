@@ -23,6 +23,7 @@
     unsigned long long _maxCapacity_GuidanceManeuver;
 }
 
+- (void).cxx_destruct;
 @property _Bool _enabledModified; // @synthesize _enabledModified=__enabledModified;
 @property _Bool requestSourceSupportsRouteGuidance; // @synthesize requestSourceSupportsRouteGuidance=_requestSourceSupportsRouteGuidance;
 @property _Bool requestSourceName; // @synthesize requestSourceName=_requestSourceName;
@@ -34,7 +35,6 @@
 @property _Bool isEnabled; // @synthesize isEnabled=_isEnabled;
 @property(retain) NSString *name; // @synthesize name=_name;
 @property unsigned long long identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

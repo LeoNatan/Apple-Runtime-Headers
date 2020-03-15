@@ -21,9 +21,9 @@
     MFEWSPruneFolderHierarchyTaskOperation *_pruneFolderHierarchyTaskOperation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MFEWSPruneFolderHierarchyTaskOperation *pruneFolderHierarchyTaskOperation; // @synthesize pruneFolderHierarchyTaskOperation=_pruneFolderHierarchyTaskOperation;
 @property(copy, nonatomic) NSString *syncStateToReconcile; // @synthesize syncStateToReconcile=_syncStateToReconcile;
-- (void).cxx_destruct;
 - (void)recalculatePriorities;
 - (void)operationFinished:(id)arg1;
 - (void)persistFolderHierarchyOperation:(id)arg1 completedBatch:(id)arg2;

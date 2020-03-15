@@ -24,13 +24,13 @@
 
 + (void)_receiveNotification:(id)arg1 observer:(id)arg2 selector:(SEL)arg3 createHintGenerator:(CDUnknownBlockType)arg4;
 + (void)_recieveNotification:(id)arg1 queue:(id)arg2 creationBacktrace:(id)arg3 createHintGenerator:(CDUnknownBlockType)arg4 block:(CDUnknownBlockType)arg5;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType block; // @synthesize block=_block;
 @property(copy) NSString *notificationName; // @synthesize notificationName=_notificationName;
 @property(retain) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property SEL selector; // @synthesize selector=_selector;
 @property(retain) id observer; // @synthesize observer=_observer;
 @property _Bool isCancelled; // @synthesize isCancelled=_isCancelled;
-- (void).cxx_destruct;
 - (void)receiveNotification:(id)arg1;
 - (void)cancel;
 - (id)initWithBlock:(CDUnknownBlockType)arg1 queue:(id)arg2;

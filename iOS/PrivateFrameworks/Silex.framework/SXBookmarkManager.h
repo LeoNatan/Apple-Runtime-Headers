@@ -16,8 +16,8 @@
     NSMutableDictionary *_applicators;
 }
 
-@property(readonly, nonatomic) NSMutableDictionary *applicators; // @synthesize applicators=_applicators;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *applicators; // @synthesize applicators=_applicators;
 - (void)applyBookmark:(id)arg1;
 - (void)registerApplicator:(id)arg1 bookmarkType:(Class)arg2;
 - (id)init;

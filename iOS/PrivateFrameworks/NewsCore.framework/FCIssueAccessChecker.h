@@ -15,9 +15,9 @@
     FCPrivateChannelMembershipController *_privateChannelMembershipController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCPrivateChannelMembershipController *privateChannelMembershipController; // @synthesize privateChannelMembershipController=_privateChannelMembershipController;
 @property(readonly, nonatomic) id <FCPaidAccessCheckerType> paidAccessChecker; // @synthesize paidAccessChecker=_paidAccessChecker;
-- (void).cxx_destruct;
 - (id)initWithPaidAccessChecker:(id)arg1 privateChannelMembershipController:(id)arg2;
 - (id)initWithAccessCheckers:(id)arg1;
 - (id)init;

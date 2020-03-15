@@ -11,6 +11,7 @@
 @protocol CLLocationManagerDelegateInternal <CLLocationManagerDelegate>
 
 @optional
+- (void)locationManager:(CLLocationManager *)arg1 didNotReceiveLocationUpdatesForRegionMonitoringInInterval:(double)arg2;
 - (void)locationManager:(CLLocationManager *)arg1 rangingDidFailForPeer:(_CLRangingPeer *)arg2 withError:(NSError *)arg3;
 - (void)locationManager:(CLLocationManager *)arg1 didStopRangingForPeer:(_CLRangingPeer *)arg2;
 - (void)locationManager:(CLLocationManager *)arg1 didStartRangingForPeer:(_CLRangingPeer *)arg2;

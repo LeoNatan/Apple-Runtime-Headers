@@ -13,8 +13,8 @@
     UIScreen *_screen;
 }
 
-@property(readonly, nonatomic) UIScreen *screen; // @synthesize screen=_screen;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIScreen *screen; // @synthesize screen=_screen;
 - (id)image;
 - (id)view;
 - (void)dealloc;

@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     NSString *_completion;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float score; // @synthesize score=_score;
 @property(copy, nonatomic) NSString *completion; // @synthesize completion=_completion;
 @property(copy, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

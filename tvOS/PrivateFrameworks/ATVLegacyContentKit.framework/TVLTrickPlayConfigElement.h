@@ -17,12 +17,12 @@
     NSString *_thumbnailNameFormat;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *thumbnailNameFormat; // @synthesize thumbnailNameFormat=_thumbnailNameFormat;
 @property(nonatomic) _Bool oneBasedNamingScheme; // @synthesize oneBasedNamingScheme=_oneBasedNamingScheme;
 @property(copy, nonatomic) NSString *trickPlayURL; // @synthesize trickPlayURL=_trickPlayURL;
 @property(nonatomic) int trickPlayCount; // @synthesize trickPlayCount=_trickPlayCount;
 @property(nonatomic) double frameTimeDifferenceInSeconds; // @synthesize frameTimeDifferenceInSeconds=_frameTimeDifferenceInSeconds;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 feedDocument:(id)arg2;
 

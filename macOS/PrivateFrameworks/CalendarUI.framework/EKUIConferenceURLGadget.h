@@ -15,10 +15,10 @@
     EKUICallButton *_actionButton;
 }
 
+- (void).cxx_destruct;
 @property(retain) EKUICallButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain) NSTextField *label; // @synthesize label=_label;
 @property(retain) NSView *controlView; // @synthesize controlView=_controlView;
-- (void).cxx_destruct;
 - (id)conferenceURL;
 - (void)conferenceAction;
 - (BOOL)shouldDisplay;

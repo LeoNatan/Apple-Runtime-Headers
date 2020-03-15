@@ -13,8 +13,8 @@
     MPMediaItem *_collectionRepresentativeItem;
 }
 
-@property(retain, nonatomic) MPMediaItem *collectionRepresentativeItem; // @synthesize collectionRepresentativeItem=_collectionRepresentativeItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPMediaItem *collectionRepresentativeItem; // @synthesize collectionRepresentativeItem=_collectionRepresentativeItem;
 - (id)initWithCollectionRepresentativeItem:(id)arg1;
 
 @end

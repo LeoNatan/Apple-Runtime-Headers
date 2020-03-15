@@ -13,8 +13,8 @@
     SBApplication *_application;
 }
 
-@property(readonly, nonatomic) SBApplication *application; // @synthesize application=_application;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SBApplication *application; // @synthesize application=_application;
 - (_Bool)dismissOnLock;
 - (id)initWithApplication:(id)arg1;
 

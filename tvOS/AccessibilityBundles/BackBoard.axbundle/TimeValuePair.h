@@ -12,9 +12,9 @@
     id value;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id value; // @synthesize value;
 @property(nonatomic) double fireTime; // @synthesize fireTime;
-- (void).cxx_destruct;
 
 @end
 

@@ -17,11 +17,11 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain) HIDServiceClient *serviceClient; // @synthesize serviceClient=_serviceClient;
 @property(retain) HIDEventSystemClient *client; // @synthesize client=_client;
 @property __weak id <HIDVirtualEventServiceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long serviceID;
 - (_Bool)dispatchEvent:(id)arg1;
 - (void)cancel;

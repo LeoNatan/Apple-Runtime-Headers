@@ -19,10 +19,10 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXCMMComposeRecipientSelectionSnapshot *selectionSnapshot; // @synthesize selectionSnapshot=_selectionSnapshot;
 @property(nonatomic) __weak id <PXCMMComposeRecipientSelectionManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PXCMMComposeRecipientDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_invalidateCurrentSelectionSnapshotWithChangedComposeRecipients:(id)arg1;
 - (id)_createComposeRecipientSelectionSnapshotFromCurrentState;
 - (id)_setSelectedState:(_Bool)arg1 forComposeRecipients:(id)arg2;

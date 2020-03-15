@@ -15,9 +15,9 @@
 }
 
 + (id)pointerWithReadBlock:(CDUnknownBlockType)arg1 writeBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType writeBlock; // @synthesize writeBlock=_writeBlock;
 @property(copy, nonatomic) CDUnknownBlockType readBlock; // @synthesize readBlock=_readBlock;
-- (void).cxx_destruct;
 @property(nonatomic) id pointee;
 
 @end

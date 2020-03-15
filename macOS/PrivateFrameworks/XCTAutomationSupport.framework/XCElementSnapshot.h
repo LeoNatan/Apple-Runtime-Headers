@@ -14,13 +14,13 @@
 
 @interface XCElementSnapshot : NSObject <NSSecureCoding, NSCopying>
 {
-    unsigned int _faultedInProperties;
     BOOL _isMainWindow;
     BOOL _enabled;
     BOOL _selected;
     BOOL _hasFocus;
     BOOL _hasKeyboardFocus;
     BOOL _isTruncatedValue;
+    unsigned int _faultedInProperties;
     id <XCUIElementSnapshotApplication> _application;
     unsigned long long _generation;
     id <XCTElementSnapshotAttributeDataSource> _dataSource;
@@ -45,7 +45,7 @@
 }
 
 + (unsigned long long)elementTypeForAccessibilityElement:(id)arg1 usingAXAttributes_iOS:(id)arg2 useLegacyElementType:(BOOL)arg3;
-+ (unsigned long long)elementTypeForAccessibilityElement:(id)arg1 usingAXAttributes_macOS:(id)arg2 useLegacyElementType:(BOOL)arg3;
++ (unsigned long long)elementTypeForAccessibilityElement:(id)arg1 usingAXAttributes_macOS:(id)arg2 macCatalystStatusProvider:(id)arg3 useLegacyElementType:(BOOL)arg4;
 + (id)axAttributesForSnapshotAttributes:(id)arg1 isMacOS:(BOOL)arg2;
 + (id)requiredAXAttributesForElementSnapshotHierarchyOnMacOS:(BOOL)arg1;
 + (id)sanitizedElementSnapshotHierarchyAttributesForAttributes:(id)arg1 isMacOS:(BOOL)arg2;
@@ -53,12 +53,13 @@
 + (id)axAttributesForElementSnapshotKeyPaths:(id)arg1 isMacOS:(BOOL)arg2;
 + (id)elementWithAccessibilityElement:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property XCElementSnapshot *parent; // @synthesize parent=_parent;
 @property(retain) XCAccessibilityElement *parentAccessibilityElement; // @synthesize parentAccessibilityElement=_parentAccessibilityElement;
 @property(readonly, copy, nonatomic) XCAccessibilityElement *accessibilityElement; // @synthesize accessibilityElement=_accessibilityElement;
+@property unsigned int faultedInProperties; // @synthesize faultedInProperties=_faultedInProperties;
 @property BOOL isTruncatedValue; // @synthesize isTruncatedValue=_isTruncatedValue;
 @property(copy) NSDictionary *additionalAttributes; // @synthesize additionalAttributes=_additionalAttributes;
-- (void).cxx_destruct;
 @property(readonly) BOOL isMacOS;
 @property(readonly) BOOL isTopLevelTouchBarElement;
 @property(readonly) BOOL isTouchBarElement;
@@ -81,6 +82,7 @@
 - (id)nearestSharedAncestorOfElement:(id)arg1 matchingType:(long long)arg2;
 - (id)_nearestAncestorMatchingAnyOfTypes:(id)arg1;
 - (id)nearestAncestorMatchingType:(long long)arg1;
+- (BOOL)_frameFuzzyMatchesElement:(id)arg1 tolerance:(double)arg2;
 - (BOOL)_frameFuzzyMatchesElement:(id)arg1;
 - (BOOL)_fuzzyMatchesElement:(id)arg1;
 - (BOOL)_matchesElement:(id)arg1;

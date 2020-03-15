@@ -14,9 +14,9 @@
     UIFocusContainerGuide *_containerGuide;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIFocusContainerGuide *containerGuide; // @synthesize containerGuide=_containerGuide;
 @property(nonatomic) _Bool containsInertia; // @synthesize containsInertia=_containsInertia;
-- (void).cxx_destruct;
 - (_Bool)_containsInertiaSelectionChanges;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

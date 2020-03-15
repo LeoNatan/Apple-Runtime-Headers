@@ -20,6 +20,7 @@
     NSArray *_groupDiffs;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *groupDiffs; // @synthesize groupDiffs=_groupDiffs;
 @property(readonly, copy, nonatomic) NSDictionary *modifiedElementsIndices; // @synthesize modifiedElementsIndices=_modifiedElementsIndices;
 @property(readonly, copy, nonatomic) NSArray *modifiedElements; // @synthesize modifiedElements=_modifiedElements;
@@ -28,7 +29,6 @@
 @property(readonly, copy, nonatomic) NSDictionary *insertedElementsIndices; // @synthesize insertedElementsIndices=_insertedElementsIndices;
 @property(readonly, copy, nonatomic) NSArray *insertedElements; // @synthesize insertedElements=_insertedElements;
 @property(readonly, copy, nonatomic) NSString *viewportIdentifier; // @synthesize viewportIdentifier=_viewportIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isEmpty;
 - (id)init;
 - (id)initWithViewportIdentifier:(id)arg1 insertedElements:(id)arg2 insertedElementsIndices:(id)arg3 deletedElements:(id)arg4 deletedElementsIndices:(id)arg5 modifiedElements:(id)arg6 modifiedElementsIndices:(id)arg7 groupDiffs:(id)arg8;

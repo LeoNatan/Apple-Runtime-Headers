@@ -36,9 +36,9 @@ __attribute__((visibility("hidden")))
     WDDocument *mTargetDocument;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak WDDocument *targetDocument; // @synthesize targetDocument=mTargetDocument;
 @property(readonly) NSMutableDictionary *previousFlowElement; // @synthesize previousFlowElement=mPreviousFlowElement;
-- (void).cxx_destruct;
 - (struct WBTextBoxReaderInfo)textBoxInfoAtIndex:(unsigned long long)arg1;
 - (unsigned long long)textBoxCount;
 - (void)cacheTextBox:(id)arg1 withChainIndex:(unsigned short)arg2;

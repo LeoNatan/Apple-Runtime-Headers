@@ -15,10 +15,10 @@
     CNContactCardViewControllerDataSourceDelegate *_dataSourceDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak CNContactCardViewControllerDataSourceDelegate *dataSourceDelegate; // @synthesize dataSourceDelegate=_dataSourceDelegate;
 @property(nonatomic) __weak CNContactNameViewController *contactNameViewController; // @synthesize contactNameViewController=_contactNameViewController;
 @property(nonatomic) __weak CNContactCardViewController *contactCardViewController; // @synthesize contactCardViewController=_contactCardViewController;
-- (void).cxx_destruct;
 - (BOOL)editing;
 - (void)setEditing:(BOOL)arg1;
 - (void)dataSourceChangesShouldPersistOnABPerson:(BOOL)arg1;

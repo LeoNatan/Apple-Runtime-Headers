@@ -16,8 +16,8 @@
     NSTableView *_tableView;
 }
 
-@property(retain, nonatomic) NSTableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSTableView *tableView; // @synthesize tableView=_tableView;
 - (void)selectRow:(unsigned long long)arg1;
 @property(readonly) unsigned long long selectedRow;
 - (void)reloadData;

@@ -18,12 +18,12 @@
     _Bool _showsIndexNumbers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct SKUIEditorialStyle editorialStyle; // @synthesize editorialStyle=_editorialStyle;
 @property(readonly, nonatomic) _Bool showsIndexNumbers; // @synthesize showsIndexNumbers=_showsIndexNumbers;
 @property(readonly, nonatomic) struct SKUILockupStyle lockupStyle; // @synthesize lockupStyle=_lockupStyle;
 @property(readonly, nonatomic) long long gridType; // @synthesize gridType=_gridType;
 @property(readonly, nonatomic) NSArray *children; // @synthesize children=_children;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_setChildrenWithFeaturedContextContext:(id)arg1;
 - (void)_reloadMissingItemCount;

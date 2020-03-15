@@ -26,6 +26,7 @@
 }
 
 + (id)sharedScheduler;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastScreenOff; // @synthesize lastScreenOff=_lastScreenOff;
 @property(nonatomic) _Bool pending; // @synthesize pending=_pending;
 @property(nonatomic) _Bool disabled; // @synthesize disabled=_disabled;
@@ -37,7 +38,6 @@
 @property(nonatomic) float brightnessBefore; // @synthesize brightnessBefore=_brightnessBefore;
 @property(retain, nonatomic) CSLPITimer *softwakeStartTimer; // @synthesize softwakeStartTimer=_softwakeStartTimer;
 @property(nonatomic) float softwakeInterval; // @synthesize softwakeInterval=_softwakeInterval;
-- (void).cxx_destruct;
 - (void)_cancelSoftWake;
 - (double)_calculateAdditionalScreenOffInterval;
 - (void)_scheduleSoftwakeStartTimer:(id)arg1;

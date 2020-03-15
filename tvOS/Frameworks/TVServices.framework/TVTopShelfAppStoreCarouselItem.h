@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVTopShelfInstallApplicationAction *installApplicationAction; // @synthesize installApplicationAction=_installApplicationAction;
 @property(nonatomic, getter=isAppleArcadeGame) _Bool appleArcadeGame; // @synthesize appleArcadeGame=_appleArcadeGame;
 @property(nonatomic, getter=isGameControllerRequired) _Bool gameControllerRequired; // @synthesize gameControllerRequired=_gameControllerRequired;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

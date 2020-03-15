@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _sectionInset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets sectionInset; // @synthesize sectionInset=_sectionInset;
 @property(nonatomic) struct CGRect sectionHeaderFrame; // @synthesize sectionHeaderFrame=_sectionHeaderFrame;
 @property(retain, nonatomic) NSArray *itemFrames; // @synthesize itemFrames=_itemFrames;
-- (void).cxx_destruct;
 
 @end
 

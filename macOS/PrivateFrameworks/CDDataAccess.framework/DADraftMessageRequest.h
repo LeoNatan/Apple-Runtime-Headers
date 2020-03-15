@@ -14,9 +14,9 @@
     DAMailMessage *_message;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL send; // @synthesize send=_send;
 @property(retain, nonatomic) DAMailMessage *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithRequestType:(int)arg1 message:(id)arg2 send:(BOOL)arg3;
 

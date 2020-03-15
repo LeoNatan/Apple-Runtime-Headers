@@ -20,12 +20,12 @@
 }
 
 + (id)writeThumbnailImage:(struct CGImage *)arg1 inInboxAtURL:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long maximumCacheSize; // @synthesize maximumCacheSize=_maximumCacheSize;
 @property(readonly, nonatomic) NSURL *databaseURL; // @synthesize databaseURL=_databaseURL;
 @property(readonly, nonatomic) NSURL *thumbnailsDirectoryURL; // @synthesize thumbnailsDirectoryURL=_thumbnailsDirectoryURL;
 @property(readonly, nonatomic) NSURL *directoryURL; // @synthesize directoryURL=_directoryURL;
 @property(retain, nonatomic) QLExternalThumbnailCacheDatabase *db; // @synthesize db=_db;
-- (void).cxx_destruct;
 - (id)writeThumbnailImageInInbox:(struct CGImage *)arg1;
 - (void)getThumbnailCacheURLWrappersWithCompletion:(CDUnknownBlockType)arg1;
 - (id)inboxDirectoryURL;

@@ -22,6 +22,7 @@
 
 + (id)_printableAccountInfo:(id)arg1;
 + (id)_sanitizedInfoDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CDPDSecureBackupConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) id <CDPDSecureBackupProxy> secureBackupProxy; // @synthesize secureBackupProxy=_secureBackupProxy;
 @property(nonatomic) _Bool fakeNearlyDepletedRecords; // @synthesize fakeNearlyDepletedRecords=_fakeNearlyDepletedRecords;
@@ -29,7 +30,6 @@
 @property(nonatomic) __weak id <CDPDSecureBackupDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <CDPStateUIProviderInternal> uiProvider; // @synthesize uiProvider=_uiProvider;
 @property(readonly, nonatomic) CDPContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (_Bool)_disableRecoveryKey:(id *)arg1;
 - (void)disableRecoveryKeyWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)_disableSecureBackup:(id *)arg1;
@@ -45,7 +45,6 @@
 - (id)performEscrowRecoveryWithRecoveryContext:(id)arg1 error:(id *)arg2;
 - (id)_clientMetadataWithSecretType:(unsigned long long)arg1 length:(unsigned long long)arg2;
 - (id)_currentAnisetteData;
-- (id)stashedPRK;
 - (_Bool)_disableThenEnableWithInfo:(id)arg1 error:(id *)arg2;
 - (void)_authenticatedEnableSecureBackupWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)authenticatedEnableSecureBackupWithRecoveryKey:(id)arg1 error:(id *)arg2;

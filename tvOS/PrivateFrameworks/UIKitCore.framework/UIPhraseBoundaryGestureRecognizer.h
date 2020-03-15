@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     id _userData;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id userData; // @synthesize userData=_userData;
 @property(readonly, nonatomic) _Bool secondDelayElapsed; // @synthesize secondDelayElapsed=_secondDelayElapsed;
 @property(nonatomic) double secondDelay; // @synthesize secondDelay=_secondDelay;
 @property(nonatomic) __weak UIResponder<UITextInput> *textInput; // @synthesize textInput=_textInput;
-- (void).cxx_destruct;
 - (void)clearTimer;
 - (void)startTimer;
 - (void)secondDelayElapsed:(id)arg1;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIView *_rightSeparator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *rightSeparator; // @synthesize rightSeparator=_rightSeparator;
 @property(retain, nonatomic) UIView *leftSeparator; // @synthesize leftSeparator=_leftSeparator;
-- (void).cxx_destruct;
 - (void)layoutSubviewsForContents;
 - (id)initWithFrame:(struct CGRect)arg1;
 

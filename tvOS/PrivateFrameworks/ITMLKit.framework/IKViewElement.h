@@ -58,6 +58,7 @@
 + (_Bool)shouldParseChildDOMElements;
 + (id)effectiveChildDOMElementsForDOMElement:(id)arg1;
 + (void)willParseDOMElement:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long implicitUpdateType; // @synthesize implicitUpdateType=_implicitUpdateType;
 @property(readonly, copy, nonatomic) NSArray *aliases; // @synthesize aliases=_aliases;
 @property(readonly, nonatomic) _Bool prototypesUpdated; // @synthesize prototypesUpdated=_prototypesUpdated;
@@ -86,7 +87,6 @@
 @property(readonly, copy, nonatomic) NSString *elementID; // @synthesize elementID=_elementID;
 @property(readonly, nonatomic) _Bool isPartOfPrototypeElement; // @synthesize isPartOfPrototypeElement=_isPartOfPrototypeElement;
 @property(retain, nonatomic) IKViewElementStyleComposer *styleComposer; // @synthesize styleComposer=_styleComposer;
-- (void).cxx_destruct;
 - (_Bool)_elevateToImplicitUpdateType:(unsigned long long)arg1;
 - (unsigned long long)_updateSubtreeWithElement:(id)arg1;
 - (void)appDocumentDidMarkStylesDirty;

@@ -23,13 +23,13 @@
     NSDictionary *_tiltDictionary;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *leaseCertificateURLString; // @synthesize leaseCertificateURLString=_leaseCertificateURLString;
 @property(readonly, nonatomic) NSString *streamingDownloadURLString; // @synthesize streamingDownloadURLString=_srdnldURLString;
 @property(readonly, nonatomic) NSString *storeFrontSuffix; // @synthesize storeFrontSuffix=_storeFrontSuffix;
 @property(readonly, nonatomic) NSDictionary *radioConfigurationDictionary; // @synthesize radioConfigurationDictionary=_tiltDictionary;
 @property(readonly, nonatomic) NSString *mescalSetupURLString; // @synthesize mescalSetupURLString=_mescalSetupURLString;
 @property(readonly, nonatomic) NSString *mescalCertificateURLString; // @synthesize mescalCertificateURLString=_mescalSetupCertURLString;
-- (void).cxx_destruct;
 - (id)_platformContext;
 - (id)_cacheRepresentation;
 - (id)_initWithCacheRepresentation:(id)arg1;

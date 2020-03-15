@@ -20,8 +20,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)domainForURL:(id)arg1;
-@property(retain, nonatomic) NSDictionary *urlMappingByDomain; // @synthesize urlMappingByDomain=_urlMappingByDomain;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *urlMappingByDomain; // @synthesize urlMappingByDomain=_urlMappingByDomain;
 - (id)jsonEncodableObject;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

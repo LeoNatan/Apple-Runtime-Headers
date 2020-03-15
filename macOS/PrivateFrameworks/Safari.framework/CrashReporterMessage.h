@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 
 + (void)messageChanged;
 + (id)allMessagesAsString;
-@property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *body; // @synthesize body=_body;
 - (void)dealloc;
 - (id)initWithTitle:(id)arg1;

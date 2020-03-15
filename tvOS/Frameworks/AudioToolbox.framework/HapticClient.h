@@ -33,6 +33,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _asyncStopCallback;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType asyncStopCallback; // @synthesize asyncStopCallback=_asyncStopCallback;
 @property int serverProcessID; // @synthesize serverProcessID=_serverProcessID;
 @property(copy) CDUnknownBlockType connectionCallback; // @synthesize connectionCallback=_connectionCallback;
@@ -42,8 +44,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) _Bool prewarmed; // @synthesize prewarmed=_prewarmed;
 @property(readonly) NSArray *channelKeys; // @synthesize channelKeys=_channelKeys;
 @property(readonly) unsigned long long clientID; // @synthesize clientID=_clientID;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)clientStoppedForReason:(unsigned long long)arg1 error:(id)arg2;
 - (void)clientCompletedWithError:(id)arg1;
 - (void)sequenceFinished:(unsigned long long)arg1 error:(id)arg2;

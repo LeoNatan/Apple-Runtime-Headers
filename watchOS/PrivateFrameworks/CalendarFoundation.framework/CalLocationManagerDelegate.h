@@ -19,10 +19,10 @@
     _Bool _didFinish;
 }
 
+- (void).cxx_destruct;
 @property _Bool didFinish; // @synthesize didFinish=_didFinish;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain) CLLocation *currentLocation; // @synthesize currentLocation=_currentLocation;
-- (void).cxx_destruct;
 - (void)didFinishLocationLookupWithLocation:(id)arg1 error:(id)arg2;
 - (void)cancel;
 - (void)timeout;

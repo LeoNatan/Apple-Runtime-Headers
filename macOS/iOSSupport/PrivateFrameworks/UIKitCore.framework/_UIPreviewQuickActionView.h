@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     UILabel *_label;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UILabel *label; // @synthesize label=_label;
 @property(nonatomic) __weak UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) __weak UIImageView *backgroundViewImage; // @synthesize backgroundViewImage=_backgroundViewImage;
 @property(nonatomic) BOOL selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) UIPreviewAction *quickAction; // @synthesize quickAction=_quickAction;
-- (void).cxx_destruct;
 - (void)_updateCircleBackgroundImage;
 - (void)updateFromQuickAction;
 - (id)centerYAnchor;

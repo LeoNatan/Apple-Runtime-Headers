@@ -25,11 +25,11 @@
 + (id)_iosParameterFromPlatformParameter:(id)arg1;
 + (id)translationObjectFromUIKitObject:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXUIElement *systemWideElement; // @synthesize systemWideElement=_systemWideElement;
 @property(retain, nonatomic) AXUIElement *systemAppElement; // @synthesize systemAppElement=_systemAppElement;
 @property(retain, nonatomic) struct __AXObserver *axEventObserver; // @synthesize axEventObserver=_axEventObserver;
 - (BOOL)accessibilityEnabled;
-- (void).cxx_destruct;
 - (id)remoteTranslationDataWithTranslation:(id)arg1 pid:(int)arg2;
 - (id)translationObjectFromData:(id)arg1;
 - (id)platformElementFromTranslation:(id)arg1;

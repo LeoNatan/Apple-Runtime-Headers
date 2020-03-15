@@ -18,10 +18,10 @@
 + (_Bool)_hasWritableCharacteristicsOfType:(id)arg1 valueSource:(id)arg2;
 + (id)readOnlyCharacteristicTypes;
 + (Class)valueClass;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *maximumCharacteristicType; // @synthesize maximumCharacteristicType=_maximumCharacteristicType;
 @property(readonly, copy, nonatomic) NSString *minimumCharacteristicType; // @synthesize minimumCharacteristicType=_minimumCharacteristicType;
 @property(readonly, copy, nonatomic) NSSet *targetCharacteristicTypes; // @synthesize targetCharacteristicTypes=_targetCharacteristicTypes;
-- (void).cxx_destruct;
 - (id)_targetCharacteristicTypeMetadataWithCharacteristicValuesKeyedByType:(id)arg1;
 - (id)_maximumCharacteristicTypeMetadata;
 - (id)_minimumCharacteristicTypeMetadata;

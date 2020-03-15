@@ -16,6 +16,9 @@ __attribute__((visibility("hidden")))
 - (id)typeDescription;
 - (void)addItemNameContentToRequest:(id)arg1;
 - (void)addItemDescriptionForEndInteractionToRequest:(id)arg1;
+- (BOOL)moveToLastElementWithEvent:(id)arg1 request:(id)arg2;
+- (BOOL)moveToFirstElementWithEvent:(id)arg1 request:(id)arg2;
+- (void)_moveToChildElement:(id)arg1 request:(id)arg2;
 - (BOOL)canNavigateToChildren;
 - (void)setFocusedChild:(id)arg1;
 - (void)_updateFocusedChildFromSelectionChange;

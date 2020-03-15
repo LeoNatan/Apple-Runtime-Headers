@@ -17,8 +17,8 @@
     unsigned int _state;
 }
 
-@property(nonatomic) unsigned int state; // @synthesize state=_state;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int state; // @synthesize state=_state;
 - (void)layoutSubviews;
 - (void)_configureForCurrentState;
 - (id)_subtitleForState:(unsigned int)arg1;

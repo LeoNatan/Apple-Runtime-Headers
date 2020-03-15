@@ -19,6 +19,7 @@
     struct CGRect _bounds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long coordinateSystem; // @synthesize coordinateSystem=_coordinateSystem;
 @property(nonatomic) struct CGPoint inViewCenterPoint; // @synthesize inViewCenterPoint=_inViewCenterPoint;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
@@ -26,7 +27,6 @@
 @property(nonatomic, getter=isPointerInteractable) BOOL pointerInteractable; // @synthesize pointerInteractable=_pointerInteractable;
 @property(nonatomic, getter=isObscured) BOOL obscured; // @synthesize obscured=_obscured;
 @property(copy, nonatomic) WDRemoteElement *element; // @synthesize element=_element;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

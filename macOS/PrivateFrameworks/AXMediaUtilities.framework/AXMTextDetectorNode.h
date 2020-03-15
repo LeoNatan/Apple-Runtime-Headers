@@ -22,9 +22,9 @@
 + (id)title;
 + (BOOL)isSupported;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *customWords; // @synthesize customWords=_customWords;
 @property(copy, nonatomic) NSArray *recognitionLanguages; // @synthesize recognitionLanguages=_recognitionLanguages;
-- (void).cxx_destruct;
 - (void)evaluate:(id)arg1;
 - (void)_evaluateByRecognizingText:(id)arg1 textDetectionOptions:(id)arg2;
 - (void)_evaluateByDetectingTextRectangles:(id)arg1 textDetectionOptions:(id)arg2;

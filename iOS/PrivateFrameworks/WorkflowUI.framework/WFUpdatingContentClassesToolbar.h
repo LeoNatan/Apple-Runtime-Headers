@@ -13,8 +13,8 @@
     WFWorkflow *_workflow;
 }
 
-@property(retain, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 - (_Bool)accessibilityElementsHidden;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;

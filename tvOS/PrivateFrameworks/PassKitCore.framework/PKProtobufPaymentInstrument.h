@@ -38,6 +38,7 @@
 
 + (Class)associatedWebDomainsType;
 + (Class)paymentApplicationsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *organizationName; // @synthesize organizationName=_organizationName;
 @property(nonatomic) unsigned int peerPaymentAccountState; // @synthesize peerPaymentAccountState=_peerPaymentAccountState;
 @property(nonatomic) long long peerPaymentAccountBalance; // @synthesize peerPaymentAccountBalance=_peerPaymentAccountBalance;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) NSMutableArray *paymentApplications; // @synthesize paymentApplications=_paymentApplications;
 @property(retain, nonatomic) NSString *passID; // @synthesize passID=_passID;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

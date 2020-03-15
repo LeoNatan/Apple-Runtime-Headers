@@ -15,10 +15,10 @@
     NSNumber *_durationUntilPlaybackWillAdvance;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *durationUntilPlaybackWillAdvance; // @synthesize durationUntilPlaybackWillAdvance=_durationUntilPlaybackWillAdvance;
 @property(retain, nonatomic) UIViewController *optionsViewController; // @synthesize optionsViewController=_optionsViewController;
 @property(retain, nonatomic) UIViewController *detailViewController; // @synthesize detailViewController=_detailViewController;
-- (void).cxx_destruct;
 
 @end
 

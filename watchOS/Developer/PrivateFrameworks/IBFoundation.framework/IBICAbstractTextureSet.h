@@ -18,9 +18,9 @@
 + (Class)requiredChildrenClass;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)createDefaultInstancesForUnitTesting;
+- (void).cxx_destruct;
 @property(nonatomic) long long textureContentIntent; // @synthesize textureContentIntent=_textureContentIntent;
 @property(nonatomic) long long textureOrigin; // @synthesize textureOrigin=_textureOrigin;
-- (void).cxx_destruct;
 - (void)enumerateDescriptionAttributeComponents:(CDUnknownBlockType)arg1;
 - (_Bool)isEqualForUnitTests:(id)arg1;
 - (id)children;
@@ -34,7 +34,7 @@
 - (_Bool)manifestArchivist:(id)arg1 childHasDataToRecordInManifest:(id)arg2;
 - (void)manifestArchivist:(id)arg1 applyPropertiesFromChildEntry:(id)arg2 toChild:(id)arg3 results:(id)arg4;
 - (_Bool)manifestArchivist:(id)arg1 validateManifest:(id)arg2 results:(id)arg3;
-- (void)manifestArchivist:(id)arg1 applyPropertiesFromManifest:(id)arg2;
+- (void)manifestArchivist:(id)arg1 applyPropertiesFromManifest:(id)arg2 manifestFileData:(id)arg3;
 - (void)manifestArchivist:(id)arg1 populateManifest:(id)arg2;
 - (id)explicitPixelFormatForChild:(id)arg1;
 - (void)setExplicitPixelFormat:(id)arg1 forChild:(id)arg2;
@@ -42,7 +42,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
-- (_Bool)applyTextureSizeFromBaseMipRep:(id)arg1 toAssetImportInfo:(id)arg2;
+- (_Bool)applyTextureSizeFromBaseMipRep:(id)arg1 toAssetImportInfo:(id)arg2 error:(id *)arg3;
 - (_Bool)populateNamedAssetImportInfo:(id)arg1 forChild:(id)arg2 allCompiledItems:(id)arg3 withOptions:(id)arg4 error:(id *)arg5;
 
 @end

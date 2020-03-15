@@ -23,6 +23,7 @@
     NSString *_interactionIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool detectMultipleUtterances; // @synthesize detectMultipleUtterances=_detectMultipleUtterances;
 @property(copy, nonatomic) NSString *interactionIdentifier; // @synthesize interactionIdentifier=_interactionIdentifier;
 @property(copy, nonatomic) NSArray *contextualStrings; // @synthesize contextualStrings=_contextualStrings;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic, getter=_searchRequest, setter=_setSearchRequest:) _SFSearchRequest *_searchRequest; // @synthesize _searchRequest;
 @property(nonatomic, getter=_forceOfflineRecognition, setter=_setForceOfflineRecognition:) _Bool _forceOfflineRecognition; // @synthesize _forceOfflineRecognition;
 @property(nonatomic, getter=_maximumRecognitionDuration, setter=_setMaximumRecognitionDuration:) double _maxiumRecognitionDuration; // @synthesize _maxiumRecognitionDuration;
-- (void).cxx_destruct;
 - (id)_speechRequestOptions;
 - (id)_dictationOptionsWithTaskHint:(long long)arg1 requestIdentifier:(id)arg2;
 - (id)_startedConnectionWithLanguageCode:(id)arg1 delegate:(id)arg2 taskHint:(long long)arg3 requestIdentifier:(id)arg4;

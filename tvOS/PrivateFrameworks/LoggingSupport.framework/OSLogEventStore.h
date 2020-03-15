@@ -20,11 +20,11 @@
 + (id)storeWithFileURL:(id)arg1;
 + (id)storeWithArchiveURL:(id)arg1;
 + (id)localStore;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType _upgradeHandler; // @synthesize _upgradeHandler;
 @property(copy, nonatomic) CDUnknownBlockType _progressHandler; // @synthesize _progressHandler;
 @property(retain, nonatomic) NSArray *_relativeFilePaths; // @synthesize _relativeFilePaths;
 @property(retain, nonatomic) NSURL *_archiveURL; // @synthesize _archiveURL;
-- (void).cxx_destruct;
 - (void)prepareWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setUpgradeConfirmationHandler:(CDUnknownBlockType)arg1;
 - (void)setProgressHandler:(CDUnknownBlockType)arg1;

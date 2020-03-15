@@ -22,6 +22,7 @@
     struct CGAffineTransform _contentTransform;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView<NTKEditOptionContainerView> *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
 @property(nonatomic) unsigned long long selectedOptionIndex; // @synthesize selectedOptionIndex=_selectedOptionIndex;
@@ -29,7 +30,6 @@
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 @property(copy, nonatomic) CDUnknownBlockType optionToViewMapper; // @synthesize optionToViewMapper=_optionToViewMapper;
 @property(readonly, nonatomic) unsigned long long numberOfOptions; // @synthesize numberOfOptions=_numberOfOptions;
-- (void).cxx_destruct;
 - (void)_enumerateSideViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_transitionAnimatedToSelectedOptionFromIndex:(unsigned long long)arg1;
 - (void)_transitionToSelectedOption;

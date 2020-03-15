@@ -6,23 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class TransparencyLogSession;
+@class TransparencyLogSession, TransparencyManagedDataStore;
 
 @interface TransparencyLogClient : NSObject
 {
     TransparencyLogSession *_session;
+    TransparencyManagedDataStore *_dataStore;
 }
 
-@property(retain) TransparencyLogSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
-- (BOOL)downloadRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+@property(retain) TransparencyManagedDataStore *dataStore; // @synthesize dataStore=_dataStore;
+@property(retain) TransparencyLogSession *session; // @synthesize session=_session;
+- (void)downloadRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)fetchRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (BOOL)download:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (BOOL)download:(id)arg1 shouldRetry:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)download:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)fetch:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)fetch:(id)arg1 shouldRetry:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)needsRetry:(id)arg1;
-- (id)initWithBackgroundSession:(id)arg1;
+- (id)initWithBackgroundSession:(id)arg1 dataStore:(id)arg2;
 
 @end
 

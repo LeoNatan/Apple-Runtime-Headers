@@ -34,6 +34,8 @@
 + (long long)_asciiDimensionForBoundsDimension:(double)arg1;
 + (struct _PKStrokePoint)_decompressStrokePoint:(struct PKCompressedStrokePoint)arg1 withTimestamp:(double)arg2;
 + (struct PKCompressedStrokePoint)_compressStrokePoint:(struct _PKStrokePoint)arg1 withTimestamp:(double)arg2;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _PKStrokeClipPlane *_clipPlane; // @synthesize _clipPlane=__clipPlane;
 @property(retain, nonatomic) NSArray *_substrokes; // @synthesize _substrokes;
 @property(nonatomic) struct _PKStrokeID _substrokesVersion; // @synthesize _substrokesVersion;
@@ -44,8 +46,6 @@
 @property(nonatomic) struct _PKStrokeID _version; // @synthesize _version;
 @property(nonatomic) CDStruct_87ef4b51 _flags; // @synthesize _flags;
 @property(retain, nonatomic) PKInk *ink; // @synthesize ink=_ink;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)_dataInUnknownFields;
 - (void)_addTestDataToUnknownFields;
 @property(retain, nonatomic) _PKStrokeData *_strokeData; // @synthesize _strokeData;

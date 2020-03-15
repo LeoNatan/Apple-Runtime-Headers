@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSMutableOrderedSet *_typeOrder;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableOrderedSet *typeOrder; // @synthesize typeOrder=_typeOrder;
 @property(retain, nonatomic) NSMutableDictionary *blockByType; // @synthesize blockByType=_blockByType;
 @property(retain, nonatomic) Class theClass; // @synthesize theClass=_theClass;
-- (void).cxx_destruct;
 - (id)createObjectFromRepresentationConformingToType:(id)arg1 data:(id)arg2 URL:(id)arg3 outError:(id *)arg4;
 - (_Bool)canCoerceFromType:(id)arg1;
 - (id)availableImportTypes;

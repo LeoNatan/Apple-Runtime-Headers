@@ -50,13 +50,16 @@
 + (id)fallbackImageURLForIdentifier:(id)arg1 account:(id)arg2;
 + (void)ensureFallbackImageDirectoryExistsForAccount:(id)arg1;
 + (id)fallbackImageDirectoryURL;
++ (unsigned long long)countOfAttachmentsMatchingPredicate:(id)arg1 context:(id)arg2;
 + (id)newFetchRequestForAttachments;
 + (id)notDeletedPredicate;
 + (id)predicateForInlineDrawing;
 + (id)predicateForPasswordProtected:(_Bool)arg1;
 + (id)predicateForSearchableAttachments;
 + (id)predicateForAttachmentBrowser;
++ (id)predicateForVisibleAttachmentsIncludingTrash;
 + (id)predicateForVisibleAttachments;
++ (id)predicateForVisibleAttachmentsIncludingTrash:(_Bool)arg1;
 + (id)predicateForVisibleObjects;
 + (id)attachmentTypeUTIsToHideFromAttachmentBrowser;
 + (id)attachmentsMatchingPredicate:(id)arg1 context:(id)arg2;
@@ -69,10 +72,10 @@
 + (void)undeleteAttachment:(id)arg1;
 + (void)deleteAttachment:(id)arg1;
 + (id)newAttachmentWithIdentifier:(id)arg1 note:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVAsset *movie; // @synthesize movie=_movie;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(nonatomic, getter=isSettingMergeableData) _Bool settingMergeableData; // @synthesize settingMergeableData;
-- (void).cxx_destruct;
 - (id)ic_loggingValues;
 - (_Bool)locationNeedsUpdate;
 - (void)attachmentDidChange;

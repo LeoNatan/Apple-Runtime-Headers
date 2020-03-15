@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
     UIImagePickerController *_cameraViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImagePickerController *cameraViewController; // @synthesize cameraViewController=_cameraViewController;
 @property(copy, nonatomic) CDUnknownBlockType mediaExportCompletionBlock; // @synthesize mediaExportCompletionBlock=_mediaExportCompletionBlock;
 @property(retain, nonatomic) NSError *captureError; // @synthesize captureError=_captureError;
@@ -54,7 +55,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CKRecordingElapsedTimeView *timerView; // @synthesize timerView=_timerView;
 @property(retain, nonatomic) UIView *topBackgroundView; // @synthesize topBackgroundView=_topBackgroundView;
 @property(nonatomic) __weak id <CKVideoMessageRecordingViewControllerDelegate> videoMessageDelegate; // @synthesize videoMessageDelegate=_videoMessageDelegate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_cleanupCamera;
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;

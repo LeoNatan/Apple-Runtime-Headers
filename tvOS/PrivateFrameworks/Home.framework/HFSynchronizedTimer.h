@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSTimer *activeTimer; // @synthesize activeTimer=_activeTimer;
-- (void).cxx_destruct;
 - (void)_timerDidFire;
 - (void)_updateTimerState;
 - (void)removeObserver:(id)arg1;

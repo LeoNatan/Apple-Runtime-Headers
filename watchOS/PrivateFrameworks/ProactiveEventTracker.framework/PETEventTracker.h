@@ -18,12 +18,12 @@
     id <PETLoggingOutlet> _loggingOutlet;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <PETLoggingOutlet> loggingOutlet; // @synthesize loggingOutlet=_loggingOutlet;
 @property(readonly, nonatomic) _Bool testingMode; // @synthesize testingMode=_testingMode;
 @property(readonly, nonatomic) NSArray *propertySubsets; // @synthesize propertySubsets=_propertySubsets;
 @property(readonly, nonatomic) NSArray *registeredProperties; // @synthesize registeredProperties=_registeredProperties;
 @property(readonly, nonatomic) NSString *featureId; // @synthesize featureId=_featureId;
-- (void).cxx_destruct;
 - (void)disableTestingMode;
 - (id)getValueForKey:(id)arg1;
 - (id)getKeyValueDict;

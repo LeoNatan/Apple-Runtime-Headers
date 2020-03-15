@@ -20,13 +20,13 @@
     _MPCProtoRadioContentReference *_seedContentReference;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *playActivityFeatureName; // @synthesize playActivityFeatureName=_playActivityFeatureName;
 @property(retain, nonatomic) _MPCProtoDelegateInfo *accountInfo; // @synthesize accountInfo=_accountInfo;
 @property(retain, nonatomic) _MPCProtoRadioContentReference *nowPlayingContentReference; // @synthesize nowPlayingContentReference=_nowPlayingContentReference;
 @property(retain, nonatomic) _MPCProtoRadioContentReference *seedContentReference; // @synthesize seedContentReference=_seedContentReference;
 @property(retain, nonatomic) NSString *radioStationURLString; // @synthesize radioStationURLString=_radioStationURLString;
 @property(retain, nonatomic) NSString *radioStationID; // @synthesize radioStationID=_radioStationID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     VUIMediaEntityType *_entityType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) VUIMediaEntityType *entityType; // @synthesize entityType=_entityType;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)contentDescriptionFont;
 - (int)contentDescriptionNumberOfLines;
 - (long long)downloadButtonPosition;

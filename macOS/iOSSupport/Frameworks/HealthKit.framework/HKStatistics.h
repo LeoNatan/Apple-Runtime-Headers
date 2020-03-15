@@ -38,6 +38,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (void)_validateOptions:(unsigned long long)arg1 forDataType:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *sumQuantityBySourceID; // @synthesize sumQuantityBySourceID=_sumQuantityBySourceID;
 @property(copy, nonatomic) NSDictionary *sumQuantityBySource; // @synthesize sumQuantityBySource=_sumQuantityBySource;
 @property(copy, nonatomic) HKQuantity *sumQuantity; // @synthesize sumQuantity=_sumQuantity;
@@ -55,7 +56,6 @@
 @property(copy, nonatomic) HKQuantity *minimumQuantity; // @synthesize minimumQuantity=_minimumQuantity;
 @property(copy, nonatomic) HKQuantity *averageQuantity; // @synthesize averageQuantity=_averageQuantity;
 @property(nonatomic) unsigned long long dataCount; // @synthesize dataCount=_dataCount;
-- (void).cxx_destruct;
 - (id)_copyOverwritingObjectType:(id)arg1;
 - (id)description;
 - (void)_setSources:(id)arg1;

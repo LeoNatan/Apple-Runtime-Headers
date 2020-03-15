@@ -22,6 +22,7 @@
 + (id)populateIMMessageItemWithProtoBufFields:(id)arg1 withProtbufData:(id)arg2;
 + (id)protobufForCompressedData:(id)arg1;
 - (_Bool)shouldStoreMessage;
+- (_Bool)callerIDShouldBeCheckedForRegistration:(id)arg1;
 - (_Bool)_shouldDownloadIfPhoneNumberAndNoSIM:(id)arg1;
 - (id)copyCKRecordRepresentationWithZoneID:(id)arg1 salt:(id)arg2;
 - (_Bool)_usingStingRay;

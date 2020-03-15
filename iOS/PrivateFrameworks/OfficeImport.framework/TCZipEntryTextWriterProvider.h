@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     OISFUZipArchiveOutputStream *_outputStream;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isCompressed; // @synthesize isCompressed=_isCompressed;
 @property(readonly, nonatomic) OISFUZipArchiveOutputStream *outputStream; // @synthesize outputStream=_outputStream;
 @property(readonly, copy, nonatomic) NSString *entryName; // @synthesize entryName=_entryName;
-- (void).cxx_destruct;
 - (_Bool)setUp;
 - (id)initWithEntryName:(id)arg1 outputStream:(id)arg2 isCompressed:(_Bool)arg3;
 

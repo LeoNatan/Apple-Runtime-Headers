@@ -36,6 +36,7 @@
 + (id)entryEventPointDefinitions;
 + (void)load;
 + (id)defaults;
+- (void).cxx_destruct;
 @property(retain) NSDate *detectionStartTime; // @synthesize detectionStartTime=_detectionStartTime;
 @property(retain) NSMutableDictionary *pushUsageDict; // @synthesize pushUsageDict=_pushUsageDict;
 @property(retain) PLXPCListenerOperatorComposition *apsdConnectedListener; // @synthesize apsdConnectedListener=_apsdConnectedListener;
@@ -44,7 +45,6 @@
 @property(retain) PLXPCListenerOperatorComposition *sentKeepAliveListener; // @synthesize sentKeepAliveListener=_sentKeepAliveListener;
 @property(retain) PLXPCListenerOperatorComposition *sentPushListener; // @synthesize sentPushListener=_sentPushListener;
 @property(retain) PLXPCListenerOperatorComposition *receivedPushListener; // @synthesize receivedPushListener=_receivedPushListener;
-- (void).cxx_destruct;
 - (void)checkPushUsage:(id)arg1 withPLEntry:(id)arg2;
 - (void)sendEnergyIssueSignatureNotification:(id)arg1 withThreshold:(double)arg2;
 - (void)accountReceivedPushWithEntry:(id)arg1;

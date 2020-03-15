@@ -20,8 +20,8 @@
     id <ANAccountNotifierDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <ANAccountNotifierDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ANAccountNotifierDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)notificationWasCleared:(id)arg1;
 - (void)notificationWasDismissed:(id)arg1;
 - (void)notificationWasActivated:(id)arg1;

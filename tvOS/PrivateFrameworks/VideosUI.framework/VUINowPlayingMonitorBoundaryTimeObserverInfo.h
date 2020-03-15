@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _handler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(retain, nonatomic) NSUUID *token; // @synthesize token=_token;
 @property(nonatomic) _Bool notifiedOfEntry; // @synthesize notifiedOfEntry=_notifiedOfEntry;
 @property(nonatomic) double time; // @synthesize time=_time;
-- (void).cxx_destruct;
 
 @end
 

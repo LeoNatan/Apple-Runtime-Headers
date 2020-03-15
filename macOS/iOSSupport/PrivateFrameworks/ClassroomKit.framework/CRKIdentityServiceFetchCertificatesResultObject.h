@@ -13,8 +13,8 @@
     NSDictionary *_certificatesByPersonLinkID;
 }
 
-@property(copy, nonatomic) NSDictionary *certificatesByPersonLinkID; // @synthesize certificatesByPersonLinkID=_certificatesByPersonLinkID;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *certificatesByPersonLinkID; // @synthesize certificatesByPersonLinkID=_certificatesByPersonLinkID;
 
 @end
 

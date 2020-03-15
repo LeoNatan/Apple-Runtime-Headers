@@ -44,6 +44,7 @@
 + (id)createSoftwareProductForAppAtPath:(id)arg1;
 + (id)productPathToUpgradeForBundleIdentifier:(id)arg1 versionNumberString:(id)arg2;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSNumber *expectedStoreVersion; // @synthesize expectedStoreVersion=_expectedStoreVersion;
 @property(copy) NSString *expectedBundleVersion; // @synthesize expectedBundleVersion=_expectedBundleVersion;
 @property BOOL metadataChangeHasAlreadyOccurred; // @synthesize metadataChangeHasAlreadyOccurred=_metadataChangeHasAlreadyOccurred;
@@ -70,7 +71,6 @@
 @property(retain) NSString *appName; // @synthesize appName=_appName;
 @property(retain) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property(retain) NSString *accountOpaqueDSID; // @synthesize accountOpaqueDSID=_accountOpaqueDSID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

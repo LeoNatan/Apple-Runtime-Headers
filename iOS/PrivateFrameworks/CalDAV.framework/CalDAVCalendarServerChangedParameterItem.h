@@ -14,9 +14,9 @@
     NSString *_typeAttribute;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *typeAttribute; // @synthesize typeAttribute=_typeAttribute;
 @property(retain, nonatomic) NSString *nameAttribute; // @synthesize nameAttribute=_nameAttribute;
-- (void).cxx_destruct;
 - (void)parserFoundAttributes:(id)arg1;
 
 @end

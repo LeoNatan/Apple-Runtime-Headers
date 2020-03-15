@@ -23,9 +23,9 @@
     id <WGWidgetVisibilityDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_mobileGestaltAnswerByWidgetTag) NSMutableDictionary *mobileGestaltAnswerByWidgetTag; // @synthesize mobileGestaltAnswerByWidgetTag=_mobileGestaltAnswerByWidgetTag;
 @property(nonatomic) __weak id <WGWidgetVisibilityDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_widgetVisibilityChanged;
 - (void)_widgetVisibilityPreferencesChanged;
 - (void)_unregisterForVisiblityPreferenceChanges;

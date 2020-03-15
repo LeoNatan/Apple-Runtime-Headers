@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     UIView *_greyOutView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *greyOutView; // @synthesize greyOutView=_greyOutView;
 @property(retain, nonatomic) UIButton *textButton; // @synthesize textButton=_textButton;
-- (void).cxx_destruct;
 - (struct CGSize)contentViewSizeThatFits:(struct CGSize)arg1;
 - (id)contentView;
 - (void)_handleContentSizeCategoryDidChange:(id)arg1;

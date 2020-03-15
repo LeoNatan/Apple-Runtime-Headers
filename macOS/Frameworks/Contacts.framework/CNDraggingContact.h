@@ -17,10 +17,10 @@
 
 + (id)availableDataRepresentationTypes;
 + (id)os_log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *cachedFileURLRepresentation; // @synthesize cachedFileURLRepresentation=_cachedFileURLRepresentation;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (id)dataRepresentationForType:(id)arg1;
 - (void)cleanupFileURLRepresentation;
 - (id)fileURLRepresentation;

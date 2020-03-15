@@ -24,6 +24,7 @@
     BSServiceConnectionListener *_connectionListener;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BSServiceConnectionListener *connectionListener; // @synthesize connectionListener=_connectionListener;
 @property(readonly, nonatomic) NSMutableSet *activeConnections; // @synthesize activeConnections=_activeConnections;
 @property(readonly, nonatomic) FBServiceClientAuthenticator *lowDensityLayoutAuthenticator; // @synthesize lowDensityLayoutAuthenticator=_lowDensityLayoutAuthenticator;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) FBServiceClientAuthenticator *requestSuggestedAppAuthenticator; // @synthesize requestSuggestedAppAuthenticator=_requestSuggestedAppAuthenticator;
 @property(readonly, nonatomic) FBServiceClientAuthenticator *resetHomeScreenLayoutAuthenticator; // @synthesize resetHomeScreenLayoutAuthenticator=_resetHomeScreenLayoutAuthenticator;
 @property(readonly, nonatomic) SBIconController *iconController; // @synthesize iconController=_iconController;
-- (void).cxx_destruct;
 - (void)listener:(id)arg1 didReceiveConnection:(id)arg2 withContext:(id)arg3;
 @property(copy, nonatomic) NSNumber *lowDensityIconLayoutEnabledValue;
 - (void)addWidgetToTodayViewWithBundleIdentifier:(id)arg1;

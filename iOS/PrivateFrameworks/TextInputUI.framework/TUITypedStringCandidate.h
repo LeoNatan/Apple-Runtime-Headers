@@ -14,8 +14,8 @@
 }
 
 + (id)typedStringCandidateWithLocale:(id)arg1 typedString:(id)arg2;
-@property(retain, nonatomic) NSString *displayLabel; // @synthesize displayLabel=_displayLabel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *displayLabel; // @synthesize displayLabel=_displayLabel;
 - (id)label;
 
 @end

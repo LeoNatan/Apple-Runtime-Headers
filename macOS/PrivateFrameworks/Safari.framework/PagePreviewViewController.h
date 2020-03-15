@@ -4,23 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/NSViewController.h>
+#import <Safari/BrowserContainerViewController.h>
 
 #import <Safari/NSPopoverDelegate-Protocol.h>
 
-@class BrowserViewController, NSClickGestureRecognizer, NSProgressIndicator, NSString, NSTextField, NSURL;
+@class BrowserViewController, NSClickGestureRecognizer, NSProgressIndicator, NSString, NSTextField, NSURL, NSView;
 @protocol PagePreviewViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface PagePreviewViewController : NSViewController <NSPopoverDelegate>
+@interface PagePreviewViewController : BrowserContainerViewController <NSPopoverDelegate>
 {
     BrowserViewController *_previewBrowserViewController;
+    NSView *_previewAndScreenTimeWrapperView;
     struct CGSize _mainViewSize;
     NSTextField *_titleTextField;
     NSClickGestureRecognizer *_clickRecognizer;
     NSProgressIndicator *_spinner;
     double _popoverToViewScale;
     BOOL _isPreviewingImage;
+    BOOL _isPopoverClosing;
     BOOL _loading;
     id <PagePreviewViewControllerDelegate> _delegate;
     NSString *_previewTitle;
@@ -28,11 +30,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct CGSize)previewPadding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(nonatomic, getter=isLoading) BOOL loading; // @synthesize loading=_loading;
 @property(copy, nonatomic) NSString *previewTitle; // @synthesize previewTitle=_previewTitle;
 @property(nonatomic) __weak id <PagePreviewViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
+- (id)tabDialogHostingView;
 - (void)popoverDidClose:(id)arg1;
 - (void)popoverWillClose:(id)arg1;
 - (void)_addToReadingListButtonClicked:(id)arg1;
@@ -46,6 +49,9 @@ __attribute__((visibility("hidden")))
 - (void)loadView;
 - (void)dealloc;
 - (id)initWithMainViewSize:(struct CGSize)arg1 popoverToViewScale:(double)arg2;
+- (BOOL)didFireCloseEvent;
+- (BOOL)isWindowClosing;
+- (id)browserViewController;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

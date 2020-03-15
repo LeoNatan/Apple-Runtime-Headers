@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIButton *_nextButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *nextButton; // @synthesize nextButton=_nextButton;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)setMessage:(id)arg1 showButton:(_Bool)arg2;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

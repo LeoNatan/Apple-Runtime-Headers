@@ -43,6 +43,7 @@
 }
 
 + (id)defaultPropertyValues;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cachedSyncHash; // @synthesize cachedSyncHash=_cachedSyncHash;
 @property(readonly, nonatomic, getter=isConflictOfOtherWorkflow) BOOL conflictOfOtherWorkflow; // @synthesize conflictOfOtherWorkflow=_conflictOfOtherWorkflow;
 @property(readonly, nonatomic) NSNumber *location; // @synthesize location=_location;
@@ -71,7 +72,6 @@
 @property(retain, nonatomic) WFWorkflowIcon *icon; // @synthesize icon=_icon;
 @property(copy, nonatomic) NSString *legacyName; // @synthesize legacyName=_legacyName;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (unsigned long long)syncHash;
 - (BOOL)isEquivalentForSyncTo:(id)arg1;
 - (BOOL)saveChangesToStorage:(id)arg1 error:(id *)arg2;

@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSString *_storefrontIDString;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *storefrontIDString; // @synthesize storefrontIDString=_storefrontIDString;
 @property(copy, nonatomic) NSString *storeIDString; // @synthesize storeIDString=_storeIDString;
 @property(retain, nonatomic) SSVPlatformRequestOperation *platformOperation; // @synthesize platformOperation=_platformOperation;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSDictionary *results; // @synthesize results=_results;
 @property(nonatomic) unsigned long long storefrontID; // @synthesize storefrontID=_storefrontID;
 @property(readonly, nonatomic) unsigned long long storeID; // @synthesize storeID=_storeID;
-- (void).cxx_destruct;
 - (id)_countryCode;
 - (void)cancel;
 - (void)executionDidBegin;

@@ -32,6 +32,7 @@
     NSTimer *_timer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) SVTimeBasedAction *upNextItemDisplayAction; // @synthesize upNextItemDisplayAction=_upNextItemDisplayAction;
 @property(retain, nonatomic) id <SVVideoLoadingStateObserving> loadingStateObserver; // @synthesize loadingStateObserver=_loadingStateObserver;
@@ -49,7 +50,6 @@
 @property(readonly, nonatomic) id <SVVideoControlsTimingProviding> timingProvider; // @synthesize timingProvider=_timingProvider;
 @property(readonly, nonatomic) SVTimeline *timeline; // @synthesize timeline=_timeline;
 @property(readonly, nonatomic) SVVideoAccessoryBarView *accessoryBarView; // @synthesize accessoryBarView=_accessoryBarView;
-- (void).cxx_destruct;
 - (void)cancelScheduledNowPlayingOrMoreFromTransition;
 - (void)scheduleTransitionToLeadingItem:(id)arg1 withTimeInterval:(double)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)scheduleMoreFromTransitionIfNeeded;

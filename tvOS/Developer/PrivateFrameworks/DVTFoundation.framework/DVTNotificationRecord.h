@@ -16,9 +16,9 @@
     DVTStackBacktrace *_backtrace;
 }
 
+- (void).cxx_destruct;
 @property(readonly) DVTStackBacktrace *backtrace; // @synthesize backtrace=_backtrace;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (_Bool)isDangling;
 @property(readonly) id observee;
 - (id)initWithObservee:(id)arg1 name:(id)arg2;

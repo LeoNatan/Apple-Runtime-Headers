@@ -24,8 +24,8 @@
 + (id)inputKeys;
 + (id)attributes;
 + (id)_stringsTableName;
-@property(nonatomic) double inputSize; // @synthesize inputSize=_inputSize;
 - (void).cxx_destruct;
+@property(nonatomic) double inputSize; // @synthesize inputSize=_inputSize;
 - (void)_applyAutoSettings:(id)arg1;
 - (void)replaceObjectInInputSpotsAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (void)removeObjectFromInputSpotsAtIndex:(unsigned long long)arg1;

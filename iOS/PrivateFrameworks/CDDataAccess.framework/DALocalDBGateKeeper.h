@@ -19,12 +19,12 @@
 }
 
 + (id)sharedGateKeeper;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *unitTestHackRunLoopMode; // @synthesize unitTestHackRunLoopMode=_unitTestHackRunLoopMode;
 @property(retain, nonatomic) NSMutableSet *waiterIDsExpectingEventsLock; // @synthesize waiterIDsExpectingEventsLock=_waiterIDsExpectingEventsLock;
 @property(retain, nonatomic) NSMutableArray *eventsWaiters; // @synthesize eventsWaiters=_eventsWaiters;
 @property(retain, nonatomic) id <DADataclassLockWatcher> eventsLockHolder; // @synthesize eventsLockHolder=_eventsLockHolder;
 @property(nonatomic) _Bool claimedOwnershipOfEvents; // @synthesize claimedOwnershipOfEvents=_claimedOwnershipOfEvents;
-- (void).cxx_destruct;
 - (void)_setUnitTestHackRunLoopMode:(id)arg1;
 - (id)stateString;
 - (void)claimedOwnershipOfDataclasses:(long long)arg1;

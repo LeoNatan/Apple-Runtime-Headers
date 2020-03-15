@@ -20,6 +20,7 @@
     SEL _action;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
 @property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
@@ -28,7 +29,6 @@
 @property(nonatomic) long long blurStyle; // @synthesize blurStyle=_blurStyle;
 @property(retain, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
 @property(retain, nonatomic) UIStackView *buttonContainer; // @synthesize buttonContainer=_buttonContainer;
-- (void).cxx_destruct;
 - (void)_selectBackground:(id)arg1 animated:(_Bool)arg2;
 - (void)_selectBackground:(id)arg1;
 - (void)_createButtonsWithBlurStyle:(long long)arg1;

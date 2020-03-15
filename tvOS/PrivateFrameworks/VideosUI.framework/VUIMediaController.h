@@ -57,6 +57,7 @@
     unsigned long long _deactivationReasons;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long deactivationReasons; // @synthesize deactivationReasons=_deactivationReasons;
 @property(copy, nonatomic) NSString *titleForLogging; // @synthesize titleForLogging=_titleForLogging;
 @property(nonatomic) _Bool observingPictureInPictureActive; // @synthesize observingPictureInPictureActive=_observingPictureInPictureActive;
@@ -99,7 +100,6 @@
 @property(copy, nonatomic) TVMediaInfo *mediaInfo; // @synthesize mediaInfo=_mediaInfo;
 @property(retain, nonatomic) AVPlayerViewController *avPlayerViewController; // @synthesize avPlayerViewController=_avPlayerViewController;
 @property(retain, nonatomic) NSObject<TVPAVFPlayback> *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)_registerStateMachineHandlers;
 - (void)_stateDidChangeFromState:(id)arg1 toState:(id)arg2 onEvent:(id)arg3 context:(id)arg4 userInfo:(id)arg5;
 - (void)_updateAVPlayerViewControllerWithAVPlayerForPlayer:(id)arg1;
@@ -112,6 +112,7 @@
 - (struct CGRect)_playbackContainerViewFrame:(_Bool)arg1 hasSecondaryVideoView:(_Bool)arg2;
 - (_Bool)_shouldIgnorePlaybackStop;
 @property(readonly, nonatomic, getter=isBackgrounded) _Bool backgrounded;
+- (_Bool)isFullscreenPlaybackIntent;
 - (void)_updatePlayerMuteStateForBackgroundPlaybackWithReason:(id)arg1;
 - (void)_mediaControllerStartedPlayback:(id)arg1;
 - (void)_handlePlaybackErrorNotification:(id)arg1;

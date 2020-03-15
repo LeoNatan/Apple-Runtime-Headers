@@ -13,8 +13,8 @@
     NSDictionary *_parameters;
 }
 
-@property(readonly) NSDictionary *parameters; // @synthesize parameters=_parameters;
 - (void).cxx_destruct;
+@property(readonly) NSDictionary *parameters; // @synthesize parameters=_parameters;
 - (id)initWithMode:(unsigned long long)arg1 parameters:(id)arg2 error:(id *)arg3;
 
 @end

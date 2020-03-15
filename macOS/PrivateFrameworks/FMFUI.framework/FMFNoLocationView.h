@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     FMFNoLocationBackgroundView *_blur;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FMFNoLocationBackgroundView *blur; // @synthesize blur=_blur;
 @property(retain, nonatomic) NSView *insetView; // @synthesize insetView=_insetView;
 @property(retain, nonatomic) NSTextView *detailsLabel; // @synthesize detailsLabel=_detailsLabel;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSLayoutConstraint *topInsetConstraint; // @synthesize topInsetConstraint=_topInsetConstraint;
 @property(nonatomic) BOOL blockLabelUpdates; // @synthesize blockLabelUpdates=_blockLabelUpdates;
 @property(nonatomic) __weak id <FMFNoLocationViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (void)updatePersonImageViewImage;
 - (void)setHidden:(BOOL)arg1;

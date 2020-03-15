@@ -14,26 +14,29 @@ __attribute__((visibility("hidden")))
 @interface CompletionListItemObjCAdapter : NSObject <WBSCompletionListItem>
 {
     NSString *_parsecDomainIdentifier;
+    long long _parsecQueryID;
     SFSearchResult *_sfSearchResultValue;
     unsigned long long _engagementDestination;
     WBSQuerySuggestion *siriSuggestion;
-    struct CompletionListItem *_completionListItem;
+    // Error parsing type: ^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}, name: _completionListItem
 }
 
-@property(nonatomic) struct CompletionListItem *completionListItem; // @synthesize completionListItem=_completionListItem;
+- (void).cxx_destruct;
+// Error parsing type for property completionListItem:
+// Property attributes: T^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@},N,V_completionListItem
+
 @property(retain, nonatomic) WBSQuerySuggestion *siriSuggestion; // @synthesize siriSuggestion;
 @property(readonly, nonatomic) unsigned long long engagementDestination; // @synthesize engagementDestination=_engagementDestination;
 @property(readonly, nonatomic) SFSearchResult *sfSearchResultValue; // @synthesize sfSearchResultValue=_sfSearchResultValue;
+@property(nonatomic) long long parsecQueryID; // @synthesize parsecQueryID=_parsecQueryID;
 @property(readonly, nonatomic) NSString *parsecDomainIdentifier; // @synthesize parsecDomainIdentifier=_parsecDomainIdentifier;
-- (void).cxx_destruct;
 - (void)invalidate;
-@property(readonly, nonatomic) long long parsecQueryID;
 - (unsigned long long)_determineEngagementDestination;
 - (BOOL)_isQuickWebsiteSearch;
 - (id)_determineSFSearchResultValue;
 @property(readonly, nonatomic) NSString *lastSearchQuery;
 - (id)_determineParsecDomainIdentifier;
-- (id)initWithCompletionListItem:(struct CompletionListItem *)arg1;
+-     // Error parsing type: @24@0:8^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16, name: initWithCompletionListItem:
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

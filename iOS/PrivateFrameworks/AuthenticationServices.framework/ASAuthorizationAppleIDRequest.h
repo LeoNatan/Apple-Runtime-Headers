@@ -13,8 +13,8 @@
     NSString *_user;
 }
 
-@property(copy, nonatomic) NSString *user; // @synthesize user=_user;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *user; // @synthesize user=_user;
 
 @end
 

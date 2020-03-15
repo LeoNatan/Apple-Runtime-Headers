@@ -22,6 +22,7 @@
     NSDate *_spinnerTime;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDate *spinnerTime; // @synthesize spinnerTime=_spinnerTime;
 @property int freeBusyStatus; // @synthesize freeBusyStatus=_freeBusyStatus;
 @property BOOL selected; // @synthesize selected=_selected;
@@ -32,7 +33,6 @@
 @property(retain) NSProgressIndicator *spinner; // @synthesize spinner=_spinner;
 @property(retain) CNAutocompleteResult *cnResult; // @synthesize cnResult=_cnResult;
 @property(retain) CalUILocationSuggestionResult *suggestion; // @synthesize suggestion=_suggestion;
-- (void).cxx_destruct;
 - (void)setBackgroundStyle:(long long)arg1;
 - (void)updateFreeBusyStatusIcon;
 - (void)updateFreeBusyStatusIconOnMainThread;

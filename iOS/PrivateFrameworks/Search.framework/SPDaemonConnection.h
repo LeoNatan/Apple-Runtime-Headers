@@ -20,9 +20,9 @@
 
 + (id)sharedBackgroundConnection;
 + (id)sharedConnection;
+- (void).cxx_destruct;
 @property(nonatomic) struct __CFDictionary *runningQueries; // @synthesize runningQueries=_runningQueries;
 @property(retain, nonatomic) NSString *daemonName; // @synthesize daemonName=_daemonName;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)barrierOnXPC:(CDUnknownBlockType)arg1;
 - (id)connectionQueue;

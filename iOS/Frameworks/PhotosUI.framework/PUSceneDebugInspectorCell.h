@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *coverageLabel; // @synthesize coverageLabel=_coverageLabel;
 @property(retain, nonatomic) UILabel *thresholdLabel; // @synthesize thresholdLabel=_thresholdLabel;
 @property(retain, nonatomic) UILabel *isIndexedLabel; // @synthesize isIndexedLabel=_isIndexedLabel;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UILabel *synonymsLabel; // @synthesize synonymsLabel=_synonymsLabel;
 @property(retain, nonatomic) UILabel *keywordLabel; // @synthesize keywordLabel=_keywordLabel;
 @property(retain, nonatomic) PUSceneDebugInspectorSceneViewModel *viewModel; // @synthesize viewModel=_viewModel;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

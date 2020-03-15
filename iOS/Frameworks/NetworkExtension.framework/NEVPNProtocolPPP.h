@@ -17,11 +17,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NEIPv6Settings *IPv6Settings; // @synthesize IPv6Settings=_IPv6Settings;
 @property(copy) NEIPv4Settings *IPv4Settings; // @synthesize IPv4Settings=_IPv4Settings;
 @property _Bool verboseLoggingEnabled; // @synthesize verboseLoggingEnabled=_verboseLoggingEnabled;
 @property long long authenticationMethod; // @synthesize authenticationMethod=_authenticationMethod;
-- (void).cxx_destruct;
 - (_Bool)updateWithServiceProtocolsFromService:(struct __SCNetworkService *)arg1;
 - (_Bool)setServiceProtocolsInService:(struct __SCNetworkService *)arg1;
 - (id)initFromLegacyDictionary:(id)arg1;

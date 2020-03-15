@@ -31,6 +31,7 @@
 + (id)pendingSubscriptionWithSubscriptionID:(id)arg1 url:(id)arg2 title:(id)arg3 pollingURL:(id)arg4 dateAdded:(id)arg5;
 + (id)subscriptionWithSubscriptionID:(id)arg1 tagID:(id)arg2 type:(unsigned long long)arg3 order:(id)arg4 origin:(unsigned long long)arg5 groupID:(id)arg6 dateAdded:(id)arg7 notificationsEnabled:(_Bool)arg8 zone:(unsigned long long)arg9;
 + (id)subscriptionWithSubscriptionID:(id)arg1 dictionaryRepresentation:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool canRetry; // @synthesize canRetry=_canRetry;
 @property(readonly, nonatomic) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;
 @property(readonly, nonatomic) NSURL *pollingURL; // @synthesize pollingURL=_pollingURL;
@@ -45,7 +46,6 @@
 @property(readonly, copy, nonatomic) NSNumber *order; // @synthesize order=_order;
 @property(readonly, nonatomic) unsigned long long subscriptionType; // @synthesize subscriptionType=_subscriptionType;
 @property(readonly, copy, nonatomic) NSString *subscriptionID; // @synthesize subscriptionID=_subscriptionID;
-- (void).cxx_destruct;
 - (id)copyWithOrder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;

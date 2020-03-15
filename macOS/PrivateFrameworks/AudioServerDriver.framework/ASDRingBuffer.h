@@ -19,12 +19,12 @@
     ASDStreamFormat *_readFormat;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAllocated) BOOL allocated; // @synthesize allocated=_allocated;
 @property(copy, nonatomic) ASDStreamFormat *readFormat; // @synthesize readFormat=_readFormat;
 @property(copy, nonatomic) ASDStreamFormat *writeFormat; // @synthesize writeFormat=_writeFormat;
 @property(nonatomic) long long frameCapacity; // @synthesize frameCapacity=_frameCapacity;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType readWithZerosBlock;
 @property(readonly, nonatomic) CDUnknownBlockType readBlock;
 @property(readonly, nonatomic) CDUnknownBlockType writeBlock;

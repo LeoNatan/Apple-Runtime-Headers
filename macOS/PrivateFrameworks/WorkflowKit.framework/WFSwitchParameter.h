@@ -16,9 +16,9 @@
 
 + (id)defaultOffDisplayName;
 + (id)defaultOnDisplayName;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *localizedOffDisplayName; // @synthesize localizedOffDisplayName=_localizedOffDisplayName;
 @property(readonly, nonatomic) NSString *localizedOnDisplayName; // @synthesize localizedOnDisplayName=_localizedOnDisplayName;
-- (void).cxx_destruct;
 - (id)initWithDefinition:(id)arg1;
 - (Class)singleStateClass;
 

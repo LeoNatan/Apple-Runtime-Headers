@@ -13,8 +13,8 @@
     CKRecordZone *_recordZone;
 }
 
-@property(readonly, nonatomic) CKRecordZone *recordZone; // @synthesize recordZone=_recordZone;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CKRecordZone *recordZone; // @synthesize recordZone=_recordZone;
 - (id)description;
 - (id)initWithRecordZone:(id)arg1;
 

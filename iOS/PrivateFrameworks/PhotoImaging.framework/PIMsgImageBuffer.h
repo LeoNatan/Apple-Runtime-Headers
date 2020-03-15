@@ -19,13 +19,13 @@
     NSMutableData *data;
 }
 
+- (void).cxx_destruct;
 @property(readonly) int format; // @synthesize format;
 @property(readonly) unsigned long long height; // @synthesize height;
 @property(readonly) unsigned long long width; // @synthesize width;
 @property(readonly) unsigned long long rowElements; // @synthesize rowElements;
 @property(readonly) unsigned long long elementByteSize; // @synthesize elementByteSize;
 @property(retain) NSMutableData *data; // @synthesize data;
-- (void).cxx_destruct;
 - (id)image;
 - (void *)bytes;
 - (void)dealloc;

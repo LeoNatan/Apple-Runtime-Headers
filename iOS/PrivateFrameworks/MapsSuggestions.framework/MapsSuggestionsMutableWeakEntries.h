@@ -19,7 +19,7 @@
 @property(readonly, nonatomic) unsigned long long count;
 - (id)weakObjectAtIndex:(unsigned long long)arg1;
 - (void)addWeakObject:(id)arg1;
-- (id)initWithEntries:(struct NSArray *)arg1;
+- (id)initWithEntries:(id)arg1;
 - (id)init;
 
 @end

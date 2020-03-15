@@ -81,9 +81,9 @@
 - (BOOL)_allowCoreDataFutures;
 - (id)fileBackedFuturesDirectory;
 - (id)connectionManager;
-- (struct _NSScalarObjectID *)newForeignKeyID:(long long)arg1 entity:(id)arg2;
+- (id)newForeignKeyID:(long long)arg1 entity:(id)arg2;
 - (id)_newObjectIDForEntityDescription:(id)arg1 pk:(long long)arg2;
-- (struct _NSScalarObjectID *)newObjectIDForEntity:(id)arg1 pk:(long long)arg2;
+- (id)newObjectIDForEntity:(id)arg1 pk:(long long)arg2;
 - (Class)objectIDFactoryForSQLEntity:(id)arg1;
 - (id)entityForEntityDescription:(id)arg1;
 - (id)objectIDFactoryForEntity:(id)arg1;

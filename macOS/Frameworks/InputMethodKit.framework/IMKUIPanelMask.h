@@ -14,9 +14,9 @@
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *cachedMaskImage; // @synthesize cachedMaskImage=_cachedMaskImage;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (void)drawInRect:(struct CGRect)arg1;
 - (id)makeImage;
 - (struct NSEdgeInsets)edgeInsets;

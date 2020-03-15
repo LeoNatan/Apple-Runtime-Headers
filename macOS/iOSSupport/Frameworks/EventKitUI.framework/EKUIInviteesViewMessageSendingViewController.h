@@ -18,12 +18,12 @@
 }
 
 + (BOOL)canShowForEvent:(id)arg1 withRecipients:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EKEvent *event; // @synthesize event=_event;
 @property(copy) CDUnknownBlockType messageSendingComplete; // @synthesize messageSendingComplete=_messageSendingComplete;
 @property(retain) NSString *body; // @synthesize body=_body;
 @property(retain) NSString *subjectPrefix; // @synthesize subjectPrefix=_subjectPrefix;
 @property(retain) NSArray *recipients; // @synthesize recipients=_recipients;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithEvent:(id)arg1;

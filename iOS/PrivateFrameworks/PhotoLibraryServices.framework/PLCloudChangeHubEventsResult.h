@@ -18,9 +18,9 @@
     unsigned long long _changeHubEventIndex;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long changeHubEventIndex; // @synthesize changeHubEventIndex=_changeHubEventIndex;
 @property(readonly) long long resultType; // @synthesize resultType=_resultType;
-- (void).cxx_destruct;
 - (id)localEventFromEvent:(id)arg1;
 - (void)enumerateLocalEventsWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSString *currentTokenDescription;

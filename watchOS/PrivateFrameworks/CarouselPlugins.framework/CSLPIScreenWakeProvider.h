@@ -24,9 +24,9 @@
     id <CSLSAOTModeProvider> _client;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool aotEnabled; // @synthesize aotEnabled=_aotEnabled;
 @property(retain, nonatomic) id <CSLSAOTModeProvider> client; // @synthesize client=_client;
-- (void).cxx_destruct;
 - (void)handleScreenOffAnimated:(_Bool)arg1 flags:(unsigned int)arg2 brightnessRamp:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)handleScreenOnAnimated:(_Bool)arg1 flags:(unsigned int)arg2 brightnessRamp:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)didChangeActiveProvider:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;

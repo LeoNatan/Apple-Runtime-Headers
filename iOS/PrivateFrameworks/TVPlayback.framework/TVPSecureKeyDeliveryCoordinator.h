@@ -23,13 +23,13 @@
 
 + (_Bool)isSecureKeyDeliveryRequest:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *requestsAwaitingCertFetch; // @synthesize requestsAwaitingCertFetch=_requestsAwaitingCertFetch;
 @property(nonatomic) _Bool certFetchInProgress; // @synthesize certFetchInProgress=_certFetchInProgress;
 @property(retain, nonatomic) NSData *certificateData; // @synthesize certificateData=_certificateData;
 @property(retain, nonatomic) TVPSecureKeyLoader *secureKeyLoader; // @synthesize secureKeyLoader=_secureKeyLoader;
 @property(retain, nonatomic) TVPPlaybackReportingEventCollection *eventCollection; // @synthesize eventCollection=_eventCollection;
 @property(nonatomic) __weak NSObject<TVPSecureKeyDeliveryCoordinatorDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_finishLoadingWithError:(id)arg1 forRequest:(id)arg2;
 - (void)_loadSecureKeyRequest:(id)arg1 sendStartReportingEvent:(_Bool)arg2;
 - (id)init;

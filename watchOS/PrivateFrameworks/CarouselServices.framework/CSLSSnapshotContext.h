@@ -28,11 +28,11 @@
 + (id)alwaysValidSnapshotContext;
 + (id)snapshotContextWithStaleDate:(id)arg1 uuid:(id)arg2 userInfo:(id)arg3 atGlanceableUI:(_Bool)arg4;
 + (id)snapshotContextWithStaleDate:(id)arg1 userInfo:(id)arg2 atGlanceableUI:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isAtGlanceableUI) _Bool atGlanceableUI; // @synthesize atGlanceableUI=_atGlanceableUI;
 @property(readonly, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(readonly, nonatomic) NSDate *staleDate; // @synthesize staleDate=_staleDate;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;

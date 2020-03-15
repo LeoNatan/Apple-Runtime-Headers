@@ -21,13 +21,13 @@
     UIView *_containerView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(readonly, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (struct _textSizeResult)_textSizeForSubtitle;
 - (struct _textSizeResult)_textSizeForTitle;
 - (struct _textSizeResult)_textSizeForLabel:(id)arg1 lines:(long long)arg2 minWidth:(double)arg3 step:(double)arg4 maxWidth:(double)arg5;

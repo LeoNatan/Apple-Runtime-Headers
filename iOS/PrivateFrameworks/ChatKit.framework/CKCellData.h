@@ -16,11 +16,11 @@
     NSString *_identifer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *identifer; // @synthesize identifer=_identifer;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)initWithImage:(id)arg1 withTitle:(id)arg2 withSubtitle:(id)arg3;
 - (id)initWithImage:(id)arg1 withTitle:(id)arg2;
 

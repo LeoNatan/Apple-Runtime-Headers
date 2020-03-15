@@ -15,10 +15,10 @@
     int _transportType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int transportType; // @synthesize transportType=_transportType;
 @property(readonly, nonatomic) GEOResolvedItem *destination; // @synthesize destination=_destination;
 @property(readonly, nonatomic) GEOResolvedItem *origin; // @synthesize origin=_origin;
-- (void).cxx_destruct;
 - (id)initWithDirectionIntent:(id)arg1;
 
 @end

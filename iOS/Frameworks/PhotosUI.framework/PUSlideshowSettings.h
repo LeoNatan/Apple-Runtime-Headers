@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currentPresetUniqueIdentifier; // @synthesize currentPresetUniqueIdentifier=_currentPresetUniqueIdentifier;
 @property(nonatomic) _Bool slideshowSettingsEnableFullscreenSupport; // @synthesize slideshowSettingsEnableFullscreenSupport=_slideshowSettingsEnableFullscreenSupport;
 @property(nonatomic) double interactiveTransitionVelocityThresholdForAlwaysFinishingIncrementValue; // @synthesize interactiveTransitionVelocityThresholdForAlwaysFinishingIncrementValue=_interactiveTransitionVelocityThresholdForAlwaysFinishingIncrementValue;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double interactiveTransitionFingerTrackingBoxRadiusMaxValue; // @synthesize interactiveTransitionFingerTrackingBoxRadiusMaxValue=_interactiveTransitionFingerTrackingBoxRadiusMaxValue;
 @property(nonatomic) double interactiveTransitionFingerTrackingBoxRadiusMinValue; // @synthesize interactiveTransitionFingerTrackingBoxRadiusMinValue=_interactiveTransitionFingerTrackingBoxRadiusMinValue;
 @property(nonatomic) _Bool allowUserInteractivity; // @synthesize allowUserInteractivity=_allowUserInteractivity;
-- (void).cxx_destruct;
 - (void)setDefaultValues;
 - (void)setDefaultPresetTransitionValues;
 - (void)saveInteractiveSlideshowSettingsInUserDefaults;

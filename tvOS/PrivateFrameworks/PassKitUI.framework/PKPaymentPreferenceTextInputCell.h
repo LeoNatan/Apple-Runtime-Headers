@@ -13,8 +13,8 @@
     UITextField *_textField;
 }
 
-@property(retain, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 - (void)layoutSubviews;
 - (id)initWithReuseIdentifier:(id)arg1;
 

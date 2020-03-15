@@ -35,6 +35,7 @@
 + (_Bool)_shouldApplyEventFromSyncReport:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
 + (_Bool)_checkOccurrencesForEvent:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3;
 + (_Bool)_shouldApplyEvent:(id)arg1 instanceWithStartDate:(id)arg2 startRange:(id)arg3 endRange:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *filename; // @synthesize filename=_filename;
 @property(retain, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(nonatomic) _Bool statusChanged; // @synthesize statusChanged=_statusChanged;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) NSNumber *clientID; // @synthesize clientID=_clientID;
 @property(retain, nonatomic) NSURL *serverID; // @synthesize serverID=_serverID;
 @property(retain, nonatomic) CalDAVCalendarServerScheduleChangesItem *scheduleChanges; // @synthesize scheduleChanges=_scheduleChanges;
-- (void).cxx_destruct;
 - (_Bool)deleteFromContainer:(void *)arg1;
 - (_Bool)saveServerIDToExistingItem;
 - (_Bool)loadLocalItemWithAccount:(id)arg1;

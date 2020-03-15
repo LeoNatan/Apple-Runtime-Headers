@@ -18,10 +18,10 @@
 }
 
 + (Class)pathsType;
+- (void).cxx_destruct;
 @property(nonatomic) double averageSafariVisitsPerDay; // @synthesize averageSafariVisitsPerDay=_averageSafariVisitsPerDay;
 @property(retain, nonatomic) NSMutableArray *paths; // @synthesize paths=_paths;
 @property(retain, nonatomic) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -17,8 +17,8 @@
 + (id)_indexSetFromSet:(id)arg1;
 + (id)diffFromElements:(id)arg1 toElements:(id)arg2 equalComparator:(CDUnknownBlockType)arg3 hashGenerator:(CDUnknownBlockType)arg4 changeComparator:(CDUnknownBlockType)arg5;
 + (id)diffFromElements:(id)arg1 toElements:(id)arg2;
-@property(readonly, nonatomic) NSArray *allOperations; // @synthesize allOperations=_allOperations;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *allOperations; // @synthesize allOperations=_allOperations;
 - (void)enumerateOperationsUsingBlock:(CDUnknownBlockType)arg1;
 
 @end

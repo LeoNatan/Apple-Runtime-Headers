@@ -31,13 +31,13 @@
     NTKBasePhotosFaceView *_faceView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool externalImagesSet; // @synthesize externalImagesSet=_externalImagesSet;
 @property(retain, nonatomic) NTKBasePhotosFaceView *faceView; // @synthesize faceView=_faceView;
 @property(nonatomic) _Bool inGallery; // @synthesize inGallery=_inGallery;
 @property(nonatomic) __weak id <NTKCFaceDetailCustomPhotosViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NTKFace *face; // @synthesize face=_face;
 @property(retain, nonatomic) NTKCompanionCustomPhotosEditor *editor; // @synthesize editor=_editor;
-- (void).cxx_destruct;
 - (void)_selectAllPhotos;
 - (_Bool)_allPhotosSelected;
 - (void)_deletePressed;

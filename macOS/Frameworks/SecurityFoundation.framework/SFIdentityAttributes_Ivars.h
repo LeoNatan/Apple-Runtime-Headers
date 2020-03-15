@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
     NSString *localizedDescription;
     _SFKeySpecifier *keySpecifier;
     NSString *identityName;
-    struct NSString *privateKeyDomain;
+    NSString *privateKeyDomain;
     BOOL hasCertificate;
 }
 

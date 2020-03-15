@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSArray *certificates; // @synthesize certificates=_certificates;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *certificates; // @synthesize certificates=_certificates;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

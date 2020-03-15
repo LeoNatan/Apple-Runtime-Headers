@@ -14,9 +14,9 @@
     double _maximumTransactionDistance;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double maximumTransactionDistance; // @synthesize maximumTransactionDistance=_maximumTransactionDistance;
 @property(retain, nonatomic) RTDefaultsManager *defaultsManager; // @synthesize defaultsManager=_defaultsManager;
-- (void).cxx_destruct;
 - (void)_unregisterPaymentUseCallbacks;
 - (void)_unregisterPassUseCallbacks;
 - (void)_registerPaymentUseCallbacks;

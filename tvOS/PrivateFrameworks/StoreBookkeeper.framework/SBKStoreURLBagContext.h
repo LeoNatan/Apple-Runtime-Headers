@@ -29,6 +29,7 @@
 + (id)ExtrasDomainIdentifier;
 + (id)UPPDomainIdentifier;
 + (void)enumerateRequestURLBagKeysWithBlock:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(retain) SSURLBag *bag; // @synthesize bag=_bag;
 @property _Bool domainDisabled; // @synthesize domainDisabled=_domainDisabled;
 @property(retain) NSURL *pullAllKeyValueRequestURL; // @synthesize pullAllKeyValueRequestURL=_pullAllKeyValueRequestURL;
@@ -37,7 +38,6 @@
 @property(retain) NSURL *pushKeyValueRequestURL; // @synthesize pushKeyValueRequestURL=_pushKeyValueRequestURL;
 @property(retain) NSURL *syncRequestURL; // @synthesize syncRequestURL=_syncRequestURL;
 @property(copy) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 @property double pollingIntervalInSeconds; // @synthesize pollingIntervalInSeconds=_pollingIntervalInSeconds;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

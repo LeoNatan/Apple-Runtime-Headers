@@ -21,12 +21,12 @@
     HUCharacteristicEventOptionItem *_selectedEventOptionItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUCharacteristicEventOptionItem *selectedEventOptionItem; // @synthesize selectedEventOptionItem=_selectedEventOptionItem;
 @property(readonly, nonatomic) HUTriggerConditionEditorItemModuleController *conditionModuleController; // @synthesize conditionModuleController=_conditionModuleController;
 @property(nonatomic) __weak id <HUTriggerEditorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) HFCharacteristicTriggerBuilder *characteristicTriggerBuilder; // @synthesize characteristicTriggerBuilder=_characteristicTriggerBuilder;
-- (void).cxx_destruct;
 - (void)pickerViewCell:(id)arg1 didSelectValueAtIndex:(long long)arg2;
 - (id)pickerViewCell:(id)arg1 attributedTitleForValueAtIndex:(long long)arg2;
 - (BOOL)pickerViewCell:(id)arg1 canSelectValueAtIndex:(long long)arg2;

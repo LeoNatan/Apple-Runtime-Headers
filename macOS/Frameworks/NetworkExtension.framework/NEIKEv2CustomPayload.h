@@ -15,9 +15,9 @@
 }
 
 + (id)copyTypeDescription;
+- (void).cxx_destruct;
 @property(retain) NSData *customData; // @synthesize customData=_customData;
 @property unsigned long long customType; // @synthesize customType=_customType;
-- (void).cxx_destruct;
 - (BOOL)parsePayloadData;
 - (BOOL)generatePayloadData;
 - (BOOL)hasRequiredFields;

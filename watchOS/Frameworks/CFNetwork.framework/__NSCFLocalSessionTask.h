@@ -45,6 +45,8 @@
     _Bool _sentDidFinishCollectingMetrics;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property _Bool didIssueDidFinish; // @synthesize didIssueDidFinish=_didIssueDidFinish;
 @property _Bool didIssueWaitingForConnectivity; // @synthesize didIssueWaitingForConnectivity=_didIssueWaitingForConnectivity;
 @property(copy) CDUnknownBlockType async_initialization; // @synthesize async_initialization=_async_initialization;
@@ -54,8 +56,6 @@
 @property(copy) CDUnknownBlockType dataTaskCompletion; // @synthesize dataTaskCompletion=_dataTaskCompletion;
 @property(retain) NSURL *uploadFile; // @synthesize uploadFile=_uploadFile;
 @property(retain) __NSCFURLSessionConnection *cfConn; // @synthesize cfConn=_cfConn;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)connection:(id)arg1 needConnectedSocketToHost:(id)arg2 port:(unsigned int)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)connection:(id)arg1 didReceiveTCPConnection:(shared_ptr_8da4e70b)arg2 extraBytes:(id)arg3;
 - (void)connection:(id)arg1 didReceiveSocketInputStream:(id)arg2 outputStream:(id)arg3;
@@ -87,6 +87,8 @@
 - (_Bool)_needSendingMetrics;
 - (void)startResourceTimer;
 - (void)setConnection:(id)arg1;
+- (void)set_TLSMaximumSupportedProtocolVersion:(unsigned short)arg1;
+- (void)set_TLSMinimumSupportedProtocolVersion:(unsigned short)arg1;
 - (id)startTimeoutError;
 - (id)resourceTimeoutError;
 - (id)timeoutErrorWithStreamErrorCode:(int)arg1;

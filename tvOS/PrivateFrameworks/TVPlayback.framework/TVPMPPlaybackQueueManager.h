@@ -28,12 +28,12 @@
 + (id)_mediaItemPropertyToMediaRemotePropertyMapping;
 + (_Bool)_mediaItemHasArtwork:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *imageProxies; // @synthesize imageProxies=_imageProxies;
 @property(nonatomic) _Bool isSoleUpdater; // @synthesize isSoleUpdater=_isSoleUpdater;
 @property(retain, nonatomic) NSSet *oldNowPlayingKeys; // @synthesize oldNowPlayingKeys=_oldNowPlayingKeys;
 @property(nonatomic) __weak id <TVPMPPlaybackQueueManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak NSObject<TVPPlayback> *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)_populateNowPlayingInfoDictionaryForContentItem:(id)arg1 withMetadataFromMediaItem:(id)arg2;
 - (id)_mediaItemForContentItemID:(id)arg1;
 - (id)_mediaItemForContentItem:(id)arg1;

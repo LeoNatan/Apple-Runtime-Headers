@@ -17,10 +17,10 @@
     PKTableHeaderView *_headerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKTableHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) UIButton *secondaryButton; // @synthesize secondaryButton=_secondaryButton;
 @property(retain, nonatomic) UIButton *primaryButton; // @synthesize primaryButton=_primaryButton;
-- (void).cxx_destruct;
 - (_Bool)isBuddyiPad;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

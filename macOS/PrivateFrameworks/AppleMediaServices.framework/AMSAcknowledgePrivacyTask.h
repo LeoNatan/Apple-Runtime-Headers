@@ -22,9 +22,9 @@
 + (BOOL)hasPreviouslyAcknowledgedPrivacyIdentifier:(id)arg1;
 + (BOOL)acknowledgementNeededForPrivacyIdentifier:(id)arg1 account:(id)arg2;
 + (BOOL)acknowledgementNeededForPrivacyIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSSet *privacyIdentifiers; // @synthesize privacyIdentifiers=_privacyIdentifiers;
 @property(retain) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)acknowledgePrivacy;
 - (id)initWithPrivacyIdentifiers:(id)arg1 account:(id)arg2;
 - (id)initWithPrivacyIdentifier:(id)arg1 account:(id)arg2;

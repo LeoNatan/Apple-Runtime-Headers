@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     WFRemoteFileStatusView *_statusView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak WFRemoteFileStatusView *statusView; // @synthesize statusView=_statusView;
 @property(readonly, nonatomic) __weak WFRemoteFileListView *fileListView; // @synthesize fileListView=_fileListView;
 @property(readonly, nonatomic) UISearchController *searchController; // @synthesize searchController=_searchController;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool hideSearchBar; // @synthesize hideSearchBar=_hideSearchBar;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
 @property(readonly, nonatomic) id <WFFileStorageService> service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (void)didDismissSearchController:(id)arg1;
 - (void)didPresentSearchController:(id)arg1;
 - (void)updateSearchResultsForSearchController:(id)arg1;

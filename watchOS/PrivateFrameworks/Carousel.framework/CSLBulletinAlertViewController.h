@@ -48,6 +48,7 @@
     CSLBulletinDismissalHelper *_dismissalHelper;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLBulletinDismissalHelper *dismissalHelper; // @synthesize dismissalHelper=_dismissalHelper;
 @property(retain, nonatomic) CSLBulletinQuickboardHelper *quickboardHelper; // @synthesize quickboardHelper=_quickboardHelper;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
@@ -58,7 +59,6 @@
 @property(nonatomic) _Bool bulletinRemoved; // @synthesize bulletinRemoved=_bulletinRemoved;
 @property(retain, nonatomic) CSLBulletinAlertItem *bulletin; // @synthesize bulletin=_bulletin;
 @property(nonatomic, getter=isLaunchedFromNotificationCenter) _Bool launchedFromNotificationCenter; // @synthesize launchedFromNotificationCenter=_launchedFromNotificationCenter;
-- (void).cxx_destruct;
 - (id)actionController;
 - (void)addBulletin:(id)arg1 toAlertItem:(id)arg2 soundWillPlay:(_Bool)arg3;
 - (_Bool)wantsBulletin:(id)arg1 forAlertItem:(id *)arg2;

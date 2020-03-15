@@ -15,8 +15,8 @@
     CSKActivity *_activity;
 }
 
-@property(nonatomic) __weak CSKActivity *activity; // @synthesize activity=_activity;
 - (void).cxx_destruct;
+@property(nonatomic) __weak CSKActivity *activity; // @synthesize activity=_activity;
 - (void)extendedTextFieldDidSwitch:(id)arg1 showsAlternate:(BOOL)arg2;
 - (void)_updateHeaderViewsWithActivity:(id)arg1;
 - (void)viewDidLoad;

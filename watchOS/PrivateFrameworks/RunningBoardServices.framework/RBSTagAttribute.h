@@ -14,8 +14,8 @@
 }
 
 + (id)attributeWithTag:(id)arg1;
-@property(readonly, copy, nonatomic) NSString *tag; // @synthesize tag=_tag;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *tag; // @synthesize tag=_tag;
 - (id)_initWithTag:(id)arg1;
 - (id)succinctDescriptionBuilder;
 - (unsigned int)hash;

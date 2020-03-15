@@ -22,10 +22,10 @@
 + (void)preloadSlideshowFrameworkIfNeeded;
 + (void *)_loadSlideshowFrameworkIfNeeded;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long startIndex; // @synthesize startIndex=_startIndex;
 @property(readonly, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
 @property(nonatomic) __weak id <PXSlideshowSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)presentationViewControllerDidPrepare:(id)arg1;
 - (void)_initPresentationViewController;
 - (id)_presentationGuidelines;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _dismissalAnimations;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dismissalAnimations; // @synthesize dismissalAnimations=_dismissalAnimations;
 @property(retain, nonatomic) UIVisualEffectView *backgroundView; // @synthesize backgroundView=_backgroundView;
-- (void).cxx_destruct;
 - (void)dismissalTransitionWillBegin;
 - (void)presentationTransitionWillBegin;
 - (_Bool)shouldRemovePresentersView;

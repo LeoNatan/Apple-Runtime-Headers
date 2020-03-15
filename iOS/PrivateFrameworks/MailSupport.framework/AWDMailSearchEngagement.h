@@ -28,10 +28,10 @@
 }
 
 + (Class)engagementsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AWDMailUserSuggestionsEngagment *suggestionsEngagement; // @synthesize suggestionsEngagement=_suggestionsEngagement;
 @property(retain, nonatomic) NSMutableArray *engagements; // @synthesize engagements=_engagements;
 @property(nonatomic) unsigned long long numSearchResults; // @synthesize numSearchResults=_numSearchResults;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -15,8 +15,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
-@property(copy, nonatomic) NSString *commonName; // @synthesize commonName=_commonName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *commonName; // @synthesize commonName=_commonName;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

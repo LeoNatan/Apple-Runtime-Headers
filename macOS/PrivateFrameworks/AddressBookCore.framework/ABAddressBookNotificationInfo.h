@@ -26,8 +26,8 @@
 @property BOOL couldAffectSync; // @synthesize couldAffectSync=_couldAffectSync;
 @property(copy) NSArray *affectedSources; // @synthesize affectedSources=_affectedSources;
 @property(copy) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
-@property(copy) NSMutableDictionary *privateUserInfo; // @synthesize privateUserInfo=_privateUserInfo;
-@property(copy) NSMutableDictionary *publicUserInfo; // @synthesize publicUserInfo=_publicUserInfo;
+@property(retain) NSMutableDictionary *privateUserInfo; // @synthesize privateUserInfo=_privateUserInfo;
+@property(retain) NSMutableDictionary *publicUserInfo; // @synthesize publicUserInfo=_publicUserInfo;
 - (void)dealloc;
 - (id)init;
 

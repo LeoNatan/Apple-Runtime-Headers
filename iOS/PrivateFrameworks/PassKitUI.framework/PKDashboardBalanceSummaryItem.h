@@ -22,6 +22,7 @@
     NSArray *_statements;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *statements; // @synthesize statements=_statements;
 @property(retain, nonatomic) PKCreditAccountSummary *summary; // @synthesize summary=_summary;
 @property(retain, nonatomic) PKCreditAccountStatement *statement; // @synthesize statement=_statement;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) PKPaymentWebService *webService; // @synthesize webService=_webService;
 @property(retain, nonatomic) PKPaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
 @property(retain, nonatomic) PKAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

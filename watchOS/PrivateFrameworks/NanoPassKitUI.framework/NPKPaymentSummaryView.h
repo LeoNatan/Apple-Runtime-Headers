@@ -15,10 +15,10 @@
     float __firstLineBaselineFrameOriginY;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setFirstLineBaselineFrameOriginY:) float _firstLineBaselineFrameOriginY; // @synthesize _firstLineBaselineFrameOriginY=__firstLineBaselineFrameOriginY;
 @property(retain, nonatomic) UILabel *amount; // @synthesize amount=_amount;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)_getLabelSize:(struct CGSize *)arg1 amountSize:(struct CGSize *)arg2 maxHeight:(float *)arg3 forViewSize:(struct CGSize)arg4;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

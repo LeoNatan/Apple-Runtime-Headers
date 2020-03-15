@@ -23,9 +23,9 @@
 + (id)sharedLogger;
 + (_Bool)debugLoggingEnabled;
 + (_Bool)verboseLoggingEnabled;
+- (void).cxx_destruct;
 @property(copy) NSString *runtimeOverride; // @synthesize runtimeOverride=_runtimeOverride;
 @property(copy) NSString *filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 - (void)removeRuntimeOverride:(id)arg1;
 - (void)addRuntimeOverride:(id)arg1;
 - (void)logString:(id)arg1;

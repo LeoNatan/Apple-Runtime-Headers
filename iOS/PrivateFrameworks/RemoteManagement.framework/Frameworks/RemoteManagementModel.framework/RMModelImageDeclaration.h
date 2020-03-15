@@ -16,17 +16,17 @@
     RMModelAssetBaseReference *_payloadReference;
 }
 
-+ (id)buildRequiredOnlyWithIdentifier:(id)arg1 descriptor:(id)arg2 reference:(id)arg3;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1 reference:(id)arg2;
 + (id)buildWithIdentifier:(id)arg1 descriptor:(id)arg2 reference:(id)arg3;
 + (id)allowedPayloadKeys;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) RMModelAssetBaseReference *payloadReference; // @synthesize payloadReference=_payloadReference;
 @property(copy, nonatomic) RMModelAssetBaseDescriptor *payloadDescriptor; // @synthesize payloadDescriptor=_payloadDescriptor;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithType:(short)arg1;
-- (_Bool)loadPayload:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
+- (_Bool)loadPayloadFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

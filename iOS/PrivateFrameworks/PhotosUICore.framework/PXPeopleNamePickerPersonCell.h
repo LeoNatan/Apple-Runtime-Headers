@@ -13,8 +13,8 @@
     UIImageView *_personAvatarView;
 }
 
-@property(readonly, nonatomic) __weak UIImageView *personAvatarView; // @synthesize personAvatarView=_personAvatarView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak UIImageView *personAvatarView; // @synthesize personAvatarView=_personAvatarView;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

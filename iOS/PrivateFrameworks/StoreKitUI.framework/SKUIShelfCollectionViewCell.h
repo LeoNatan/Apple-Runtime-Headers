@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)maximumPerspectiveHeightForSize:(struct CGSize)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool rendersWithParallax; // @synthesize rendersWithParallax=_rendersWithParallax;
 @property(nonatomic) _Bool rendersWithPerspective; // @synthesize rendersWithPerspective=_rendersWithPerspective;
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 - (void)updateForChangedDistanceFromVanishingPoint;
 - (void)setVanishingPoint:(struct CGPoint)arg1;
 - (void)setPerspectiveTargetView:(id)arg1;

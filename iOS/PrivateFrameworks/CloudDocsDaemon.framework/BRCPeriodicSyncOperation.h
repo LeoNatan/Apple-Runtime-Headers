@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     CKServerChangeToken *_sideCarChangeToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CKServerChangeToken *sideCarChangeToken; // @synthesize sideCarChangeToken=_sideCarChangeToken;
 @property(readonly, nonatomic) CKServerChangeToken *zoneHealthChangeToken; // @synthesize zoneHealthChangeToken=_zoneHealthChangeToken;
 @property(readonly, nonatomic) CKServerChangeToken *metadataChangeToken; // @synthesize metadataChangeToken=_metadataChangeToken;
 @property(readonly, nonatomic) BRCContainerScheduler *scheduler; // @synthesize scheduler=_scheduler;
-- (void).cxx_destruct;
 - (void)main;
 - (_Bool)scheduleSyncDownIfNeededForZoneID:(id)arg1 zoneIfAny:(id)arg2;
 - (_Bool)shouldRetryForError:(id)arg1;

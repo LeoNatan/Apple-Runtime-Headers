@@ -50,6 +50,7 @@
 }
 
 + (void)_showRebootAlert;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSManager *nssManager; // @synthesize nssManager=_nssManager;
 @property(nonatomic) int installState; // @synthesize installState=_installState;
 @property(retain, nonatomic) id profileListChangedObserver; // @synthesize profileListChangedObserver=_profileListChangedObserver;
@@ -73,7 +74,6 @@
 @property(nonatomic) _Bool userCancelledInstall; // @synthesize userCancelledInstall=_userCancelledInstall;
 @property(nonatomic) _Bool installHasFailed; // @synthesize installHasFailed=_installHasFailed;
 @property(nonatomic) _Bool processingPayload; // @synthesize processingPayload=_processingPayload;
-- (void).cxx_destruct;
 - (void)signInViewControllerDidCancelAuthentication:(id)arg1;
 - (void)signInViewController:(id)arg1 didAuthenticateWithResults:(id)arg2 error:(id)arg3;
 - (void)_profileRemovalDidFinish;

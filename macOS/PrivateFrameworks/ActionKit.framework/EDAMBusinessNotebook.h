@@ -17,10 +17,10 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *recommended; // @synthesize recommended=_recommended;
 @property(retain, nonatomic) NSNumber *privilege; // @synthesize privilege=_privilege;
 @property(retain, nonatomic) NSString *notebookDescription; // @synthesize notebookDescription=_notebookDescription;
-- (void).cxx_destruct;
 
 @end
 

@@ -16,8 +16,8 @@
 }
 
 + (id)logCategory;
-@property(readonly, nonatomic) NSString *timerID; // @synthesize timerID=_timerID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *timerID; // @synthesize timerID=_timerID;
 - (void)_stopTimer:(CDUnknownBlockType)arg1;
 - (void)_startTimer:(id)arg1 home:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, copy) NSString *description;

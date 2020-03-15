@@ -14,9 +14,9 @@
     NSNumber *_maximumValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *maximumValue; // @synthesize maximumValue=_maximumValue;
 @property(retain, nonatomic) NSNumber *minimumValue; // @synthesize minimumValue=_minimumValue;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) WFImage *maximumIcon;
 @property(readonly, nonatomic) WFImage *minimumIcon;
 - (_Bool)shouldAlignLabels;

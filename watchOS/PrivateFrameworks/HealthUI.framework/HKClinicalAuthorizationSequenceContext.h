@@ -15,10 +15,10 @@
     HKSource *_source;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) HKSource *source; // @synthesize source=_source;
 @property(copy, nonatomic) NSString *readUsageDescription; // @synthesize readUsageDescription=_readUsageDescription;
 @property(retain, nonatomic) HKClinicalSourceAuthorizationController *authorizationController; // @synthesize authorizationController=_authorizationController;
-- (void).cxx_destruct;
 
 @end
 

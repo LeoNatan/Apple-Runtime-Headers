@@ -18,9 +18,9 @@
     NSMutableArray *_identifiers;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasFetchedFolders; // @synthesize hasFetchedFolders=_hasFetchedFolders;
 @property(readonly, nonatomic) NSMutableArray *identifiers; // @synthesize identifiers=_identifiers;
-- (void).cxx_destruct;
 - (id)enumeration:(id)arg1 localizedLabelForPossibleState:(id)arg2;
 - (id)possibleStatesForEnumeration:(id)arg1;
 - (void)engine:(id)arg1 connection:(id)arg2 didReceiveFolders:(id)arg3;

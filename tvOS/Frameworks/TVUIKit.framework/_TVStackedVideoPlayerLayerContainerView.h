@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     AVPlayerLayer *_playerLayer;
 }
 
-@property(retain, nonatomic) AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)layoutSubviews;
 

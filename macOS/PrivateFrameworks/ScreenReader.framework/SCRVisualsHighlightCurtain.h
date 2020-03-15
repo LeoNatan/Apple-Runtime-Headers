@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _nonCoveredRect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setUserDefaults:) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
 @property(retain, nonatomic, setter=_setGestureCurtainTransparencyObserver:) id _gestureCurtainTransparencyObserver; // @synthesize _gestureCurtainTransparencyObserver=__gestureCurtainTransparencyObserver;
 @property(nonatomic, setter=_setGestureCurtainTransparency:) double _gestureCurtainTransparency; // @synthesize _gestureCurtainTransparency=__gestureCurtainTransparency;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGRect nonCoveredRect; // @synthesize nonCoveredRect=_nonCoveredRect;
 @property(nonatomic) BOOL blackCurtainEnabled; // @synthesize blackCurtainEnabled=_blackCurtainEnabled;
 @property(nonatomic) BOOL curtainEnabled; // @synthesize curtainEnabled=_curtainEnabled;
-- (void).cxx_destruct;
 - (void)setGestureCurtainTransparencyValue:(id)arg1;
 - (id)initWithUserDefaults:(id)arg1;
 

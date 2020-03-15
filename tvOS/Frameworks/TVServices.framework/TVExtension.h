@@ -33,6 +33,7 @@
 + (id)serviceExtension;
 + (void)setPrincipalObjectClass:(Class)arg1;
 + (void)load;
+- (void).cxx_destruct;
 @property(retain) BKSProcessAssertion *_procAssertion; // @synthesize _procAssertion=__procAssertion;
 @property(retain) NSXPCConnection *_connection; // @synthesize _connection=__connection;
 @property(retain) NSLock *_lock; // @synthesize _lock=__lock;
@@ -41,7 +42,6 @@
 @property int _style; // @synthesize _style=__style;
 @property(copy) NSArray *_protocols; // @synthesize _protocols=__protocols;
 @property(retain) id _principalObject; // @synthesize _principalObject=__principalObject;
-- (void).cxx_destruct;
 - (void)_xpc_topShelf_reportItemPlayed:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)reportItemPlayed:(id)arg1;
 - (void)_xpc_topShelf_reportItemSelected:(id)arg1 reply:(CDUnknownBlockType)arg2;

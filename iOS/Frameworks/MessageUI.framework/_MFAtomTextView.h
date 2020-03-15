@@ -14,8 +14,8 @@
     MFComposeRecipientTextView *_hostRecipientView;
 }
 
-@property __weak MFComposeRecipientTextView *hostRecipientView; // @synthesize hostRecipientView=_hostRecipientView;
 - (void).cxx_destruct;
+@property __weak MFComposeRecipientTextView *hostRecipientView; // @synthesize hostRecipientView=_hostRecipientView;
 - (void)_handleKeyUIEvent:(id)arg1;
 - (_Bool)_delegateSupportsKeyboardEvents;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;

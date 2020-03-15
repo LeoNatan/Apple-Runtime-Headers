@@ -16,11 +16,11 @@
     NSSet *_matchingExistingActions;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isMutuallyExclusiveAction; // @synthesize isMutuallyExclusiveAction=_isMutuallyExclusiveAction;
 @property(readonly, copy, nonatomic) NSSet *matchingExistingActions; // @synthesize matchingExistingActions=_matchingExistingActions;
 @property(readonly, nonatomic) id targetValue; // @synthesize targetValue=_targetValue;
 @property(readonly, nonatomic) HMCharacteristic *characteristic; // @synthesize characteristic=_characteristic;
-- (void).cxx_destruct;
 - (id)initWithCharacteristic:(id)arg1 targetValue:(id)arg2 matchingActions:(id)arg3;
 
 @end

@@ -14,9 +14,9 @@
     NSArray *_commands;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *commands; // @synthesize commands=_commands;
 @property(retain, nonatomic) TVSCSemanticObject *mainEntity; // @synthesize mainEntity=_mainEntity;
-- (void).cxx_destruct;
 - (id)linkedDataDictionary;
 
 @end

@@ -21,13 +21,13 @@
     NSMutableData *_collectedData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableData *collectedData; // @synthesize collectedData=_collectedData;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSMutableData *bytes; // @synthesize bytes=_bytes;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(nonatomic) _Bool collectForRewrite; // @synthesize collectForRewrite=_collectForRewrite;
 @property(nonatomic) __weak id <BLM3U8ParserDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)rewriteWithURL:(id)arg1;
 - (void)saveLine:(id)arg1;
 - (void)processLine;

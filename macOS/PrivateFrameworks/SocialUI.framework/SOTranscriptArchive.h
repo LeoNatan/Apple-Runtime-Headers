@@ -19,13 +19,13 @@
 }
 
 + (void)setupArchivedMessageEncoding;
+- (void).cxx_destruct;
 @property(readonly) NSArray *placeholders; // @synthesize placeholders=_placeholders;
 @property(readonly) NSDictionary *metaData; // @synthesize metaData=_metaData;
 @property(readonly, copy) NSString *roomName; // @synthesize roomName=_roomName;
 @property(readonly, copy) NSNumber *chatStyle; // @synthesize chatStyle=_chatStyle;
 @property(readonly, copy) NSArray *participants; // @synthesize participants=_participants;
 @property(readonly, copy) NSString *accountName; // @synthesize accountName=_accountName;
-- (void).cxx_destruct;
 @property(readonly, copy) NSArray *messages;
 - (id)archive;
 - (id)_createInfoArrayForArchiving;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     double _allowedScrollAmount;
 }
 
+- (void).cxx_destruct;
 @property BOOL updatesDuringLiveResize; // @synthesize updatesDuringLiveResize=_updatesDuringLiveResize;
 @property(readonly) double allowedScrollAmount; // @synthesize allowedScrollAmount=_allowedScrollAmount;
 @property(retain) AVPlayerController *playerController; // @synthesize playerController=_playerController;
-- (void).cxx_destruct;
 - (void)zoomWithInfo:(CDStruct_ef34d2b9)arg1;
 - (void)startThumbnailGenerationWithZoomInfo:(CDStruct_ef34d2b9)arg1;
 

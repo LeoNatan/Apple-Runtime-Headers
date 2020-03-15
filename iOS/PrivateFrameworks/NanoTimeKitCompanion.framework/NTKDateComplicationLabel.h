@@ -36,6 +36,7 @@
     struct UIEdgeInsets _touchEdgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets touchEdgeInsets; // @synthesize touchEdgeInsets=_touchEdgeInsets;
 @property(nonatomic) unsigned long long overrideDateStyle; // @synthesize overrideDateStyle=_overrideDateStyle;
 @property(nonatomic) _Bool legibilityHidden; // @synthesize legibilityHidden=_legibilityHidden;
@@ -47,7 +48,6 @@
 @property(readonly, nonatomic) long long sizeStyle; // @synthesize sizeStyle=_sizeStyle;
 @property(nonatomic) _Bool canUseCurvedText; // @synthesize canUseCurvedText;
 @property(nonatomic) __weak id <NTKComplicationDisplayObserver> displayObserver; // @synthesize displayObserver;
-- (void).cxx_destruct;
 - (double)_legibtilityShadowRadius;
 - (struct CGSize)_highlightInset;
 - (double)_cornerRadius;

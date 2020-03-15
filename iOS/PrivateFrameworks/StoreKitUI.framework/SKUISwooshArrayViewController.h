@@ -31,6 +31,7 @@
     NSMutableArray *_viewControllers;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *swooshComponents; // @synthesize swooshComponents=_swooshComponents;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) SKUIMetricsController *metricsController; // @synthesize metricsController=_metricsController;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(nonatomic) _Bool askPermission; // @synthesize askPermission=_askPermission;
-- (void).cxx_destruct;
 - (id)_scrollView;
 - (void)_reloadChildViewControllers;
 - (void)_loadMissingItemsIfNecessary;

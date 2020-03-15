@@ -11,7 +11,7 @@
 
 @interface MPSImage : NSObject
 {
-    // Error parsing type: ^{MPSDevice=^^?^{MPSDevice}@^{MPSDeviceFreeList}{atomic<MTLLibraryNode *>=A^{MTLLibraryNode}}[2[2[2{atomic<void *>=A^v}]]][563{MPSPixelCapabilities=b1b1b1b1b1b2b1b8}]{atomic<void *>=A^v}Ii{MPSGPUInfo=b8b8b8b16b4b20}[106{atomic<MPSLibrary *>=A^{MPSLibrary}}]}, name: _device
+    // Error parsing type: ^{MPSDevice=^^?^{MPSDevice}@^{MPSDeviceFreeList}{atomic<MTLLibraryNode *>={__cxx_atomic_impl<MTLLibraryNode *, std::__1::__cxx_atomic_base_impl<MTLLibraryNode *> >=A^{MTLLibraryNode}}}[2[2[2{atomic<void *>={__cxx_atomic_impl<void *, std::__1::__cxx_atomic_base_impl<void *> >=A^v}}]]][563{MPSPixelCapabilities=b1b1b1b1b1b2b1b8}]{atomic<void *>={__cxx_atomic_impl<void *, std::__1::__cxx_atomic_base_impl<void *> >=A^v}}Ii{MPSGPUInfo=b8b8b8b16b4b20}[107{atomic<MPSLibrary *>={__cxx_atomic_impl<MPSLibrary *, std::__1::__cxx_atomic_base_impl<MPSLibrary *> >=A^{MPSLibrary}}}]}, name: _device
     unsigned long long _width;
     unsigned long long _height;
     unsigned long long _featureChannels;
@@ -22,11 +22,13 @@
     NSString *_label;
     struct MPSPixelInfo _pixelInfo;
     MPSImage *_parent;
-    // Error parsing type: {MPSAutoTexture="_texture"{atomic<id<MTLTexture> >="__a_"A@}"_resourceSize"{?="size"Q"align"Q}"_rowBytes"Q"_pixelInfo"{MPSPixelInfo="pixelFormat"b10"chunkSize"b6"chunkWidth"b4"chunkHeight"b4"pixelStyle"b4"colorModel"b4"bitDepth"b8"isSigned"b1"isClamped"b1"isInteger"b1"canFilter"b1"canRender"b1"canWrite"b1"canMultisample"b1"isSupported"b1"isCompressed"b1"chunkSizePlane2"b6"log2MinAlignment"b4"featureChannelFormat"b3"_padding"b2}""(?="_subTex"{?="parent"^{MPSAutoTexture}"subRangeStart"I"subRangeSize"I}""{?="_descriptor"@"MTLTextureDescriptor"""(?="_tex"{?="device"^{MPSDevice}}"_temporary"{?="cache"@"MPSCommandBufferImageCache"})})"_type"C"_twiddled"C}, name: _texture
+    // Error parsing type: {MPSAutoTexture="_texture"{atomic<id<MTLTexture> >="__a_"{__cxx_atomic_impl<id<MTLTexture>, std::__1::__cxx_atomic_base_impl<id<MTLTexture> > >="__a_value"A@}}"_resourceSize"{?="size"Q"align"Q}"_rowBytes"Q"_pixelInfo"{MPSPixelInfo="pixelFormat"b10"chunkSize"b6"chunkWidth"b4"chunkHeight"b4"pixelStyle"b4"colorModel"b4"bitDepth"b8"isSigned"b1"isClamped"b1"isInteger"b1"canFilter"b1"canRender"b1"canWrite"b1"canMultisample"b1"isSupported"b1"isCompressed"b1"chunkSizePlane2"b6"log2MinAlignment"b4"featureChannelFormat"b3"_padding"b2}""(?="_subTex"{?="parent"^{MPSAutoTexture}"subRangeStart"I"subRangeSize"I}""{?="_descriptor"@"MTLTextureDescriptor"""(?="_tex"{?="device"^{MPSDevice}}"_temporary"{?="cache"@"MPSCommandBufferImageCache"})})"_type"C"_twiddled"C}, name: _texture
     BOOL _updatedAlready;
 }
 
 + (id)defaultAllocator;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long featureChannelFormat; // @synthesize featureChannelFormat=_featureChannelFormat;
 @property(readonly, retain, nonatomic) MPSImage *parent; // @synthesize parent=_parent;
 @property(readonly, nonatomic) unsigned long long featureChannelsLayout; // @synthesize featureChannelsLayout=_featureChannelsLayout;
@@ -35,8 +37,6 @@
 @property(readonly, nonatomic) unsigned long long featureChannels; // @synthesize featureChannels=_featureChannels;
 @property(readonly, nonatomic) unsigned long long height; // @synthesize height=_height;
 @property(readonly, nonatomic) unsigned long long width; // @synthesize width=_width;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (unsigned long long)resourceSize;
 - (void)synchronizeOnCommandBuffer:(id)arg1;
 - (void)writeBytes:(const void *)arg1 dataLayout:(unsigned long long)arg2 imageIndex:(unsigned long long)arg3;
@@ -50,8 +50,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)debugQuickLookObject;
 - (id)debugDescription;
-- (struct NSArray *)batchRepresentationWithSubRange:(struct _NSRange)arg1;
-- (struct NSArray *)batchRepresentation;
+- (id)batchRepresentationWithSubRange:(struct _NSRange)arg1;
+- (id)batchRepresentation;
 - (id)subImageWithFeatureChannelRange:(struct _NSRange)arg1;
 - (id)initWithParentImage:(id)arg1 sliceRange:(struct _NSRange)arg2 featureChannels:(unsigned long long)arg3;
 - (id)initWithDevice:(id)arg1 imageDescriptor:(id)arg2;

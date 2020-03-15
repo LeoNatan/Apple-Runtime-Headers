@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     UIButton *_delegate;
 }
 
-@property(nonatomic) UIButton *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) UIButton *delegate; // @synthesize delegate=_delegate;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
 @property unsigned long long hardEdge;

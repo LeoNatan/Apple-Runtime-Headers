@@ -14,9 +14,9 @@
     NSOperationQueue *_operationQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) NSURLSessionTask *dataTask; // @synthesize dataTask=_dataTask;
-- (void).cxx_destruct;
 - (void)cancel;
 - (id)init;
 

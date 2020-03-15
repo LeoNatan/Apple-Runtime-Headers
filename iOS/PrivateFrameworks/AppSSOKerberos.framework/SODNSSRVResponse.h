@@ -14,9 +14,9 @@
     NSString *_host;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned short port; // @synthesize port=_port;
 @property(retain, nonatomic) NSString *host; // @synthesize host=_host;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

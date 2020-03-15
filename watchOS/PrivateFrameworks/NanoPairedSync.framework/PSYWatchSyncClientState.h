@@ -20,13 +20,13 @@
     unsigned int _version;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int version; // @synthesize version=_version;
 @property(readonly, nonatomic) _Bool migrationSync; // @synthesize migrationSync=_migrationSync;
 @property(readonly, nonatomic) unsigned int syncSessionType; // @synthesize syncSessionType=_syncSessionType;
 @property(readonly, nonatomic) unsigned int syncSessionState; // @synthesize syncSessionState=_syncSessionState;
 @property(readonly, nonatomic) NSArray *activeActivityLabels; // @synthesize activeActivityLabels=_activeActivityLabels;
 @property(readonly, nonatomic) NSArray *completedActivityLabels; // @synthesize completedActivityLabels=_completedActivityLabels;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

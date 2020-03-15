@@ -22,6 +22,7 @@
     ACSURLSession *__weakSession;
 }
 
+- (void).cxx_destruct;
 @property _Bool _suspended; // @synthesize _suspended=__suspended;
 @property _Bool _failBackToOrigin; // @synthesize _failBackToOrigin=__failBackToOrigin;
 @property _Bool _tryCachingServer; // @synthesize _tryCachingServer=__tryCachingServer;
@@ -29,7 +30,6 @@
 @property(retain) NSURLSessionTask *_nsurlTaskToCachingServer; // @synthesize _nsurlTaskToCachingServer=__nsurlTaskToCachingServer;
 @property(retain) NSURLSessionTask *_nsurlTaskToOrigin; // @synthesize _nsurlTaskToOrigin=__nsurlTaskToOrigin;
 @property(copy) CDUnknownBlockType _nsurlTaskCreator; // @synthesize _nsurlTaskCreator=__nsurlTaskCreator;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_nsurlTaskForRequest:(id)arg1;
 @property(readonly) _Bool _isUpload;

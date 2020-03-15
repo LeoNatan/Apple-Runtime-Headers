@@ -15,8 +15,8 @@
     CNFuture *_future;
 }
 
-@property(readonly) CNFuture *future; // @synthesize future=_future;
 - (void).cxx_destruct;
+@property(readonly) CNFuture *future; // @synthesize future=_future;
 - (CDUnknownBlockType)errorOnlyCompletionHandlerAdapter;
 - (CDUnknownBlockType)boolErrorCompletionHandlerAdapter;
 - (CDUnknownBlockType)completionHandlerAdapterWithDefaultValue:(id)arg1;

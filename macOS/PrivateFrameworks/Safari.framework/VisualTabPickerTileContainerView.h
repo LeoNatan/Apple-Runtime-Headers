@@ -26,12 +26,12 @@ __attribute__((visibility("hidden")))
     long long _tileContainerType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL visibleToUser; // @synthesize visibleToUser=_visibleToUser;
 @property(nonatomic) long long tileContainerType; // @synthesize tileContainerType=_tileContainerType;
 @property(nonatomic) __weak VisualTabPickerGridView *visualTabPickerGridView; // @synthesize visualTabPickerGridView=_visualTabPickerGridView;
 @property(nonatomic) __weak id <VisualTabPickerTileContainerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <VisualTabPickerTileContainerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_updateThumbnailLayout;
 - (struct CGRect)_containerTileFrame;
 - (void)_setUpThumbnail;

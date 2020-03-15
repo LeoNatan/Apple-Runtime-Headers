@@ -15,9 +15,9 @@
     id <SXConditionValidating> _conditionValidator;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXConditionValidating> conditionValidator; // @synthesize conditionValidator=_conditionValidator;
 @property(readonly, nonatomic) SXJSONObjectMerger *objectMerger; // @synthesize objectMerger=_objectMerger;
-- (void).cxx_destruct;
 - (id)resolveObjects:(id)arg1 context:(id)arg2;
 - (id)initWithConditionValidator:(id)arg1 objectMerger:(id)arg2;
 

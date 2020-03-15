@@ -17,9 +17,9 @@
     NSString *_relevanceEngineName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *relevanceEngineName; // @synthesize relevanceEngineName=_relevanceEngineName;
 @property(readonly, nonatomic) NSString *targetProcessName; // @synthesize targetProcessName=_targetProcessName;
-- (void).cxx_destruct;
 - (id)encodedObjectAtPath:(id)arg1;
 - (id)storedDiagnosticLogsPath;
 - (_Bool)runActionOfElementWithDescription1:(id)arg1;

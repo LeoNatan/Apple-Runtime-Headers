@@ -17,11 +17,11 @@
     NSString *_sourceArchiveExtractionRootPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sourceArchiveExtractionRootPath; // @synthesize sourceArchiveExtractionRootPath=_sourceArchiveExtractionRootPath;
 @property(retain, nonatomic) NSString *destinationContentProtectionType; // @synthesize destinationContentProtectionType=_destinationContentProtectionType;
 @property(retain, nonatomic) NSString *destinationExtractionRootPath; // @synthesize destinationExtractionRootPath=_destinationExtractionRootPath;
 @property(readonly, nonatomic) NSString *sourceArchivePath; // @synthesize sourceArchivePath=_sourceArchivePath;
-- (void).cxx_destruct;
 - (_Bool)_createDestinationRoot:(id *)arg1;
 - (id)extractedContentAbsolutePathsMatchingPredicate:(CDUnknownBlockType)arg1;
 - (_Bool)extractArchiveContent:(id *)arg1;

@@ -15,10 +15,10 @@
     NSString *_hostID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool calledDidReceiveNotification; // @synthesize calledDidReceiveNotification=_calledDidReceiveNotification;
 @property(copy, nonatomic) NSString *hostID; // @synthesize hostID=_hostID;
 @property(retain, nonatomic) NSArray *notificationActionsStorage; // @synthesize notificationActionsStorage=_notificationActionsStorage;
-- (void).cxx_destruct;
 - (id)suggestionsForResponseToActionWithIdentifier:(id)arg1 forLocalNotification:(id)arg2 inputLanguage:(id)arg3;
 - (id)suggestionsForResponseToActionWithIdentifier:(id)arg1 forRemoteNotification:(id)arg2 inputLanguage:(id)arg3;
 - (id)suggestionsForResponseToActionWithIdentifier:(id)arg1 forNotification:(id)arg2 inputLanguage:(id)arg3;

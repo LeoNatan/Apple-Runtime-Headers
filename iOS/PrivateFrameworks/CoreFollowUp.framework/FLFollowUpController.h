@@ -19,8 +19,8 @@
     id <FLFollowUpControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <FLFollowUpControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <FLFollowUpControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)_didActivateHSA2LoginNotification:(id)arg1;
 - (void)_postHSA2PasswordResetNotification:(id)arg1 completion:(CDUnknownBlockType)arg2;

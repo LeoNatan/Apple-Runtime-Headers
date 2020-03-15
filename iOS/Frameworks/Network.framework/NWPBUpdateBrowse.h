@@ -17,9 +17,9 @@
 }
 
 + (Class)discoveredEndpointsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *discoveredEndpoints; // @synthesize discoveredEndpoints=_discoveredEndpoints;
 @property(retain, nonatomic) NSString *clientUUID; // @synthesize clientUUID=_clientUUID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

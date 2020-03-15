@@ -25,12 +25,12 @@
 
 + (BOOL)adoptsDefaultGridLayoutMargins;
 + (BOOL)wouldPairingAccessoriesNecessitateConfiguration:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NAFuture *accountArbitrationFuture; // @synthesize accountArbitrationFuture=_accountArbitrationFuture;
 @property(retain, nonatomic) NAFuture *createNewMediaSystemFuture; // @synthesize createNewMediaSystemFuture=_createNewMediaSystemFuture;
 @property(nonatomic) BOOL hasViewEverAppeared; // @synthesize hasViewEverAppeared=_hasViewEverAppeared;
 @property(nonatomic) __weak id <HUMediaSystemEditorViewControllerDelegate> mediaSystemEditorDelegate; // @synthesize mediaSystemEditorDelegate=_mediaSystemEditorDelegate;
 @property(nonatomic) __weak id <HUPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
-- (void).cxx_destruct;
 - (id)_checkIfAccessoriesNeedSoftwareUpdateToSupportPairing;
 - (CDUnknownBlockType)_authKitContextGenerator;
 - (id)_executeAppleMusicAccountReconcilationForMediaSystemBuilder:(id)arg1;

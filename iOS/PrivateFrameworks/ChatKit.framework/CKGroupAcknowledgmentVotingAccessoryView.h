@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CKGroupAcknowledgmentVotingViewController *_votingViewController;
 }
 
-@property(retain, nonatomic) CKGroupAcknowledgmentVotingViewController *votingViewController; // @synthesize votingViewController=_votingViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKGroupAcknowledgmentVotingViewController *votingViewController; // @synthesize votingViewController=_votingViewController;
 - (id)initWithFrame:(struct CGRect)arg1 chatItem:(id)arg2;
 
 @end

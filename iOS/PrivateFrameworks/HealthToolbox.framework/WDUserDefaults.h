@@ -13,8 +13,8 @@
     HKKeyValueDomain *_keyValueDomain;
 }
 
-@property(retain, nonatomic) HKKeyValueDomain *keyValueDomain; // @synthesize keyValueDomain=_keyValueDomain;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HKKeyValueDomain *keyValueDomain; // @synthesize keyValueDomain=_keyValueDomain;
 - (void)valueForKey:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)setValue:(id)arg1 forKey:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)initWithHealthStore:(id)arg1;

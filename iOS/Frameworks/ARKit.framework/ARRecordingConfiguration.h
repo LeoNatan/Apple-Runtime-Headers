@@ -13,18 +13,18 @@
 @interface ARRecordingConfiguration : ARCustomTechniquesConfiguration <ARRecordingTechniqueDelegate>
 {
     NSURL *_fileURL;
-    unsigned long long _state;
     ARRecordingTechniquePublic *_recordingTechnique;
+    unsigned long long _state;
     CDUnknownBlockType _finishBlock;
 }
 
 + (_Bool)isSupported;
 + (_Bool)supportsFrameSemantics:(unsigned long long)arg1;
-@property(copy) CDUnknownBlockType finishBlock; // @synthesize finishBlock=_finishBlock;
-@property(retain, nonatomic) ARRecordingTechniquePublic *recordingTechnique; // @synthesize recordingTechnique=_recordingTechnique;
-@property unsigned long long state; // @synthesize state=_state;
-@property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType finishBlock; // @synthesize finishBlock=_finishBlock;
+@property unsigned long long state; // @synthesize state=_state;
+@property(retain, nonatomic) ARRecordingTechniquePublic *recordingTechnique; // @synthesize recordingTechnique=_recordingTechnique;
+@property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 - (void)technique:(id)arg1 didFinishWithResult:(id)arg2;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

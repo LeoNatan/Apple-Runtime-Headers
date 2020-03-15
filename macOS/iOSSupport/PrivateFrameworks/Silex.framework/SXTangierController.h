@@ -43,6 +43,7 @@
     NSMutableSet *_presentedTextViews;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct os_unfair_lock_s unfairLock; // @synthesize unfairLock=_unfairLock;
 @property(readonly, nonatomic) NSMutableSet *presentedTextViews; // @synthesize presentedTextViews=_presentedTextViews;
 @property(nonatomic) BOOL performedInitialLayoutAndRender; // @synthesize performedInitialLayoutAndRender=_performedInitialLayoutAndRender;
@@ -66,7 +67,6 @@
 @property(readonly, nonatomic) SXTextTangierCanvasViewController *cvc; // @synthesize cvc=_cvc;
 @property(nonatomic) __weak id <SXTangierControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isEnclosingCanvasScrolling) BOOL enclosingCanvasScrolling; // @synthesize enclosingCanvasScrolling=_enclosingCanvasScrolling;
-- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) TSKDocumentRoot *documentRoot;
 - (id)layoutDescriptionForComponent:(id)arg1;
 - (void)endSelection;

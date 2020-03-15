@@ -21,12 +21,12 @@
 
 + (struct CGSize)buttonSize;
 + (id)_backgroundImage;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *_backgroundView; // @synthesize _backgroundView=__backgroundView;
 @property(readonly, nonatomic) UIImageView *_imageView; // @synthesize _imageView=__imageView;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) NSString *contentSize; // @synthesize contentSize=_contentSize;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
-- (void).cxx_destruct;
 - (void)handleButtonReleased:(id)arg1;
 - (_Bool)shouldUseActiveTintForCurrentState;
 - (id)imageNameForCurrentState;

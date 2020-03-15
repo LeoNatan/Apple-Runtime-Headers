@@ -17,9 +17,9 @@
     UITapGestureRecognizer *_tapRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapRecognizer; // @synthesize tapRecognizer=_tapRecognizer;
 @property(nonatomic) __weak id <HUTappableTextViewDelegate> tappableTextViewDelegate; // @synthesize tappableTextViewDelegate=_tappableTextViewDelegate;
-- (void).cxx_destruct;
 - (void)_handleTap:(id)arg1;
 - (void)configureTapRecognizer;
 - (id)initWithCoder:(id)arg1;

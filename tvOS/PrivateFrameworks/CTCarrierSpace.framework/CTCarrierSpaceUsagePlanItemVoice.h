@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *minutesUsed; // @synthesize minutesUsed=_minutesUsed;
 @property(retain, nonatomic) NSString *minutesCapacity; // @synthesize minutesCapacity=_minutesCapacity;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

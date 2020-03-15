@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedController;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WBSPerSitePreference *webGLPreference; // @synthesize webGLPreference=_webGLPreference;
 @property(nonatomic) BOOL firstVisitPolicyIsManagedByAdmin; // @synthesize firstVisitPolicyIsManagedByAdmin=_firstVisitPolicyIsManagedByAdmin;
 @property(nonatomic) int defaultWebGLPolicy; // @synthesize defaultWebGLPolicy=_defaultWebGLPolicy;
-- (void).cxx_destruct;
 - (id)_hostForDomain:(id)arg1;
 - (id)_domainFromHost:(id)arg1;
 - (void)clearWebGLPoliciesAddedAfterDate:(id)arg1;

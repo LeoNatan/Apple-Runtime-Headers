@@ -30,6 +30,8 @@
     struct _VMURange _dataSegmentsRangeInSharedCache;
     struct _VMURange _dataSegmentsRangeOutsideSharedCache;
     VMURangeArray *_dataSegmentsRangeArrayOutsideSharedCache;
+    _Bool _recordRuntimeMetadataChunkInfo;
+    NSMutableDictionary *_addressToRuntimeMetadataChunkInfoDict;
     struct _VMUZoneNode *_zones;
     unsigned int _zonesCount;
     unsigned int _zonesSize;
@@ -71,6 +73,8 @@
 + (id)referenceDescription:(CDStruct_8b65991f)arg1 withSourceNode:(CDStruct_599faf0f)arg2 destinationNode:(CDStruct_599faf0f)arg3 sortedVMRegions:(id)arg4 symbolicator:(struct _CSTypeRef)arg5 alignmentSpacing:(unsigned int)arg6;
 + (id)nodeDescription:(CDStruct_599faf0f)arg1 withNodeOffset:(unsigned long long)arg2 sortedVMRegions:(id)arg3;
 + (void)initialize;
+- (void).cxx_destruct;
+@property(nonatomic) _Bool recordRuntimeMetadataChunkInfo; // @synthesize recordRuntimeMetadataChunkInfo=_recordRuntimeMetadataChunkInfo;
 @property(readonly, nonatomic) unsigned long long physicalFootprintPeak; // @synthesize physicalFootprintPeak=_physicalFootprintPeak;
 @property(readonly, nonatomic) unsigned long long physicalFootprint; // @synthesize physicalFootprint=_physicalFootprint;
 @property(readonly, nonatomic) NSString *binaryImagesDescription; // @synthesize binaryImagesDescription=_binaryImagesDescription;
@@ -90,7 +94,6 @@
 @property(readonly, nonatomic) VMUTaskMemoryCache *memoryCache; // @synthesize memoryCache=_memoryCache;
 @property(readonly, nonatomic) unsigned int task; // @synthesize task=_task;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
-- (void).cxx_destruct;
 - (id)referenceDescription:(CDStruct_8b65991f)arg1 withSourceNode:(unsigned int)arg2 destinationNode:(unsigned int)arg3 symbolicator:(struct _CSTypeRef)arg4 alignmentSpacing:(unsigned int)arg5;
 - (id)nodeDescription:(unsigned int)arg1 withOffset:(unsigned long long)arg2;
 - (id)nodeDescription:(unsigned int)arg1;
@@ -137,11 +140,14 @@
 - (void)_findMarkedAbandonedBlocks;
 - (void)_identifyNonObjectsPointedToByTypedIvars;
 - (void)_fixupBlockIsas;
+- (void)printRuntimeMetadataInfo;
 - (void)_identifyObjCClassStructureBlocks;
 - (void)_sortAndClassifyBlocks;
 - (void)addMallocNodes:(id)arg1;
 - (void)addMallocNodesFromTask;
 - (void)_sortBlocks;
+@property(nonatomic) unsigned int objectContentLevel;
+- (id)_readonlyRegionRanges;
 - (void)addRootNodesFromTask;
 - (void)_addSpecialNodesFromTask;
 - (void)_addThreadNodesFromTask;
@@ -155,6 +161,7 @@
 - (void)dealloc;
 - (void)detachFromTask;
 - (_Bool)_suspend;
+- (void)mapDyldSharedCacheFromTargetWithRegions:(id)arg1;
 - (id)initWithTask:(unsigned int)arg1;
 - (id)initWithTask:(unsigned int)arg1 options:(unsigned long long)arg2;
 - (id)initWithSelfTaskAndOptions:(unsigned long long)arg1;

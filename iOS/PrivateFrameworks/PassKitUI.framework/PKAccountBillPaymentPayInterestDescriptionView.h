@@ -29,11 +29,11 @@
     id <PKAccountBillPaymentPayInterestDescriptionViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PKAccountBillPaymentPayInterestDescriptionViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSDate *selectedPaymentDate; // @synthesize selectedPaymentDate=_selectedPaymentDate;
 @property(copy, nonatomic) NSDate *interestChargeDate; // @synthesize interestChargeDate=_interestChargeDate;
 @property(copy, nonatomic) NSDecimalNumber *interest; // @synthesize interest=_interest;
-- (void).cxx_destruct;
 - (id)_learnMoreAttributedStringWithText:(id)arg1;
 - (void)_updateLabels;
 - (_Bool)_showInterest;

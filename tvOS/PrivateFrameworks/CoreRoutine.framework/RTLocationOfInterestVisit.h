@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long locationOfInterestSource; // @synthesize locationOfInterestSource=_locationOfInterestSource;
 @property(readonly, nonatomic) double locationOfInterestConfidence; // @synthesize locationOfInterestConfidence=_locationOfInterestConfidence;
 @property(readonly, nonatomic) NSDate *exitDate; // @synthesize exitDate=_exitDate;
 @property(readonly, nonatomic) NSDate *entryDate; // @synthesize entryDate=_entryDate;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) RTLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)exit;
 - (id)entry;
 - (id)exitTime;

@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     TVPPlaybackDateController *_lastDateController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVPPlaybackDateController *lastDateController; // @synthesize lastDateController=_lastDateController;
 @property(retain, nonatomic) TVPPlaybackDateController *currentDateController; // @synthesize currentDateController=_currentDateController;
 @property(retain, nonatomic) TVPPlaybackDateController *firstDateController; // @synthesize firstDateController=_firstDateController;
 @property(nonatomic) double roundedDuration; // @synthesize roundedDuration=_roundedDuration;
 @property(retain, nonatomic) TVPDateRange *seekableDateRange; // @synthesize seekableDateRange=_seekableDateRange;
 @property(copy, nonatomic) NSDate *playbackDate; // @synthesize playbackDate=_playbackDate;
-- (void).cxx_destruct;
 - (void)dealloc;
 @property(readonly, copy, nonatomic) NSDate *roundedEndDate;
 @property(readonly, copy, nonatomic) NSDate *roundedStartDate;

@@ -6,8 +6,10 @@
 
 #import <AVConference/NSObject-Protocol.h>
 
+@class NSString;
+
 @protocol VCTextSender <NSObject>
-- (void)sendText:(struct NSString *)arg1;
+- (void)sendText:(NSString *)arg1;
 - (void)sendCharacter:(unsigned short)arg1;
 @end
 

@@ -79,6 +79,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) geo_reentrant_isolater *snappedRoutesIsolater; // @synthesize snappedRoutesIsolater=_snappedRoutesIsolater;
 @property(retain, nonatomic) NSUUID *revisionIdentifier; // @synthesize revisionIdentifier=_revisionIdentifier;
 @property(readonly, nonatomic) id <GEOComposedRouteTransitDisplayStrings> transitRouteDisplayStrings; // @synthesize transitRouteDisplayStrings=_transitRouteDisplayStrings;
@@ -122,7 +123,6 @@
 @property(nonatomic) unsigned long long currentDisplayStep; // @synthesize currentDisplayStep=_currentDisplayStep;
 @property(retain, nonatomic) NSUUID *uniqueRouteID; // @synthesize uniqueRouteID=_uniqueRouteID;
 @property(readonly, nonatomic) GEORoute *geoRoute; // @synthesize geoRoute=_geoRoute;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) _Bool allowsNetworkTileLoad;

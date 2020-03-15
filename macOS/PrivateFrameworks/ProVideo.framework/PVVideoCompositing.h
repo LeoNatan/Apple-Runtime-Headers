@@ -48,12 +48,12 @@
 
 + (BOOL)flushOnFinalRelease;
 + (void)setFlushOnFinalRelease:(BOOL)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int minimumRequestCompletionTimeMS; // @synthesize minimumRequestCompletionTimeMS=_minimumRequestCompletionTimeMS;
 @property(nonatomic) BOOL cancelsPendingRequests; // @synthesize cancelsPendingRequests=_cancelsPendingRequests;
 @property(nonatomic) BOOL thumbnailCompositing; // @synthesize thumbnailCompositing=_thumbnailCompositing;
 @property(retain) PVVideoCompositingContext *videoCompositingContext; // @synthesize videoCompositingContext;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)willEnterForeground:(id)arg1;
 - (void)didEnterBackground:(id)arg1;
 - (void)applicationWillTerminate:(id)arg1;

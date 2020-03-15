@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)effectiveAspectRatioForSize:(struct CGSize)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *insertIndexPaths; // @synthesize insertIndexPaths=_insertIndexPaths;
 @property(retain, nonatomic) NSMutableArray *deleteIndexPaths; // @synthesize deleteIndexPaths=_deleteIndexPaths;
 @property(nonatomic) double currentInterPageScrollPosition; // @synthesize currentInterPageScrollPosition=_currentInterPageScrollPosition;
@@ -53,7 +54,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool isScrollingBetweenPages; // @synthesize isScrollingBetweenPages=_isScrollingBetweenPages;
 @property(nonatomic) _Bool movingItem; // @synthesize movingItem=_movingItem;
 @property(readonly, nonatomic) __weak id <ICDocCamThumbnailViewLayoutDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;
 - (id)initialLayoutAttributesForAppearingItemAtIndexPath:(id)arg1;
 - (void)finalizeCollectionViewUpdates;

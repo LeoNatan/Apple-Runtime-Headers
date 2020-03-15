@@ -18,11 +18,11 @@
     HFItem *_removeItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFItem *removeItem; // @synthesize removeItem=_removeItem;
 @property(retain, nonatomic) HMHome *homeForUser; // @synthesize homeForUser=_homeForUser;
 @property(retain, nonatomic) HFItem *allowRemoteAccessFooterItem; // @synthesize allowRemoteAccessFooterItem=_allowRemoteAccessFooterItem;
 @property(retain, nonatomic) HFItem *allowRemoteAccessItem; // @synthesize allowRemoteAccessItem=_allowRemoteAccessItem;
-- (void).cxx_destruct;
 - (BOOL)_isAllowedToEditTargetUser;
 - (BOOL)_hasResidentDevice;
 - (BOOL)_isUserBeingEditedTheDeviceUser;

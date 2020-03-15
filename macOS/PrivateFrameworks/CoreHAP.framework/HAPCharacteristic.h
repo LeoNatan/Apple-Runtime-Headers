@@ -26,6 +26,7 @@
     HAPCharacteristicMetadata *_accessoryMetadata;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HAPCharacteristicMetadata *accessoryMetadata; // @synthesize accessoryMetadata=_accessoryMetadata;
 @property(nonatomic) BOOL shouldValidateValueAfterReading; // @synthesize shouldValidateValueAfterReading=_shouldValidateValueAfterReading;
 @property(copy, nonatomic) HAPCharacteristicMetadata *metadata; // @synthesize metadata=_metadata;
@@ -34,7 +35,6 @@
 @property(nonatomic) __weak HAPService *service; // @synthesize service=_service;
 @property(copy, nonatomic) NSNumber *instanceID; // @synthesize instanceID=_instanceID;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (BOOL)mergeObject:(id)arg1;
 - (BOOL)shouldMergeObject:(id)arg1;
 @property(readonly, nonatomic) BOOL supportsAdditionalAuthorizationData;

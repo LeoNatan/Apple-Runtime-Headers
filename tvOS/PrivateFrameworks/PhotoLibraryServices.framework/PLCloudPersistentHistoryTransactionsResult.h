@@ -22,10 +22,10 @@
 
 + (CDUnknownBlockType)isTransactionSyncableFilter;
 + (id)fetchTransactionsSinceToken:(id)arg1 inContext:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy) NSPersistentHistoryToken *lastProcessedCoreDataToken; // @synthesize lastProcessedCoreDataToken=_lastProcessedCoreDataToken;
 @property(readonly, copy) NSString *currentTokenDescription; // @synthesize currentTokenDescription=_currentTokenDescription;
 @property(readonly) long long resultType; // @synthesize resultType=_resultType;
-- (void).cxx_destruct;
 - (void)updateLastProcessedCoreDataToken;
 - (id)localEventForAllTransactions;
 - (void)sendLocalEvent:(id)arg1 toEnumerationBlock:(CDUnknownBlockType)arg2;

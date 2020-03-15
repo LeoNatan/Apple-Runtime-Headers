@@ -13,6 +13,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (id)inputEventForInputString:(id)arg1 stringWithoutModifiers:(id)arg2 modifierFlags:(unsigned int)arg3 keyboardState:(id)arg4;
 - (id)remapKeyWithString:(id)arg1 stringWithoutModifiers:(id)arg2 modifierFlags:(unsigned int)arg3 keyboardState:(id)arg4;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

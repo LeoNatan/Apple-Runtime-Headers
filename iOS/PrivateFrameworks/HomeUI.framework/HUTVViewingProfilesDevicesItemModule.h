@@ -16,11 +16,11 @@
     HFItemProvider *_viewingProfileItemProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFItemProvider *viewingProfileItemProvider; // @synthesize viewingProfileItemProvider=_viewingProfileItemProvider;
 @property(readonly, nonatomic) HFUserItem *sourceItem; // @synthesize sourceItem=_sourceItem;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(readonly, nonatomic) NSSet *itemProviders; // @synthesize itemProviders=_itemProviders;
-- (void).cxx_destruct;
 - (id)_commitUpdateToAccessControl:(id)arg1;
 - (void)turnOnTVViewingProfilesForAllDevices;
 @property(copy, nonatomic) NSArray *viewingProfilesDevices;

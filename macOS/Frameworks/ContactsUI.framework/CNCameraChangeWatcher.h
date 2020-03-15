@@ -17,11 +17,11 @@
     id <CNCancelable> _cancelationToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNCancelable> cancelationToken; // @synthesize cancelationToken=_cancelationToken;
 @property(retain, nonatomic) NSWindow *window; // @synthesize window=_window;
 @property(readonly) SEL action; // @synthesize action=_action;
 @property(readonly) __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)stopWatchingWindow:(id)arg1;
 - (id)currentCaptureDevice;
 - (void)startWatchingWindow:(id)arg1 notificationCenter:(id)arg2;

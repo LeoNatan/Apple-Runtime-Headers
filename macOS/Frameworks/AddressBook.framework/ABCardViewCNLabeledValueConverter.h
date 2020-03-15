@@ -17,9 +17,9 @@
     id <ABCardViewProperty> _property;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <ABCardViewProperty> property; // @synthesize property=_property;
 @property(retain, nonatomic) ABCardViewPersonMapper *personMapper; // @synthesize personMapper=_personMapper;
-- (void).cxx_destruct;
 - (void)setPropertiesOnMultiValue:(id)arg1;
 - (void)addSuggestedLabeledValue:(id)arg1 toMultiValue:(id)arg2;
 - (void)addLabeledValue:(id)arg1 toMultiValue:(id)arg2;

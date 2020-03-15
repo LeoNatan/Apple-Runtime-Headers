@@ -27,12 +27,12 @@
     PXMessagesRecentPhotosGadgetProvider *_recentPhotosProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXMessagesRecentPhotosGadgetProvider *recentPhotosProvider; // @synthesize recentPhotosProvider=_recentPhotosProvider;
 @property(copy, nonatomic) NSString *placeholderTitle; // @synthesize placeholderTitle=_placeholderTitle;
 @property(nonatomic) double recentPhotosHeight; // @synthesize recentPhotosHeight=_recentPhotosHeight;
 @property(retain, nonatomic) UIViewController<PXPhotoLibraryPresenting> *recentPhotosViewController; // @synthesize recentPhotosViewController=_recentPhotosViewController;
 @property(retain, nonatomic) PXCMMSuggestionsDataSourceManager *suggestionsDataSourceManager; // @synthesize suggestionsDataSourceManager=_suggestionsDataSourceManager;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)didUpdateCloudPhotoLibraryEnablement:(id)arg1;
 - (void)presentationRequestForWelcomeCloudViewController:(id)arg1;

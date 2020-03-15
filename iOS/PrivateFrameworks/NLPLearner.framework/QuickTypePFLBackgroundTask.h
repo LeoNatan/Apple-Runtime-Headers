@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 + (Class)taskRunnerClass;
-@property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithURL:(id)arg1;

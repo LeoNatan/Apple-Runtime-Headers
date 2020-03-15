@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)keyPathsForValuesAffectingShouldBeVisible;
-@property(nonatomic, getter=isUserDisabled) _Bool userDisabled; // @synthesize userDisabled=_userDisabled;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isUserDisabled) _Bool userDisabled; // @synthesize userDisabled=_userDisabled;
 - (void)updateDisabledStateForKeys:(id)arg1;
 - (_Bool)shouldBeVisible;
 - (_Bool)isApplicableToNodes:(const struct TFENodeVector *)arg1;

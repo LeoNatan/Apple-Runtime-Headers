@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     CKDPShare *_share;
 }
 
-@property(retain, nonatomic) CKDPShare *share; // @synthesize share=_share;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKDPShare *share; // @synthesize share=_share;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

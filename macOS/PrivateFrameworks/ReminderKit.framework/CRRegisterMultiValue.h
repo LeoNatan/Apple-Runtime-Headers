@@ -14,9 +14,9 @@
     NSSet *_cachedValues;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *cachedValues; // @synthesize cachedValues=_cachedValues;
 @property(retain, nonatomic) CRSet *values; // @synthesize values=_values;
-- (void).cxx_destruct;
 - (id)description;
 - (void)setDocument:(id)arg1;
 - (void)walkGraph:(CDUnknownBlockType)arg1;

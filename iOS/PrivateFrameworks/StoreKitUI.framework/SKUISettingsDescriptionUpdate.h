@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     long long _updateType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long updateType; // @synthesize updateType=_updateType;
 @property(retain, nonatomic) NSIndexSet *indexSet; // @synthesize indexSet=_indexSet;
 @property(retain, nonatomic) NSArray *indexPaths; // @synthesize indexPaths=_indexPaths;
-- (void).cxx_destruct;
 - (id)initWithUpdateType:(long long)arg1;
 
 @end

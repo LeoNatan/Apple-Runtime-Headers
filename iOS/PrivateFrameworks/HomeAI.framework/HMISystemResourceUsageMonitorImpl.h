@@ -18,10 +18,10 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly) id <HMISystemResourceUsageMonitorProtocol> resourceUsageMonitor; // @synthesize resourceUsageMonitor=_resourceUsageMonitor;
 @property __weak id <HMISystemResourceUsageMonitorDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (id)getCurrentSystemResourceUsage;
 - (void)start;
 - (id)initWithProductClass:(long long)arg1 workQueue:(id)arg2;

@@ -24,6 +24,7 @@
 
 + (void)deleteCloudDataWithCompletion:(CDUnknownBlockType)arg1;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *conflictResolvers; // @synthesize conflictResolvers=_conflictResolvers;
 @property(retain, nonatomic) BCCloudChangeTokenController *changeTokenController; // @synthesize changeTokenController=_changeTokenController;
 @property(retain, nonatomic) NSManagedObjectModel *objectModel; // @synthesize objectModel=_objectModel;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) BCCloudDataSyncManager *syncManager; // @synthesize syncManager=_syncManager;
 @property(retain, nonatomic) BCCloudDataSource *globalMetadataDataSource; // @synthesize globalMetadataDataSource=_globalMetadataDataSource;
 @property(nonatomic) _Bool enableCloudSync; // @synthesize enableCloudSync=_enableCloudSync;
-- (void).cxx_destruct;
 - (void)setMetadataValue:(id)arg1 forKey:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)metadataValueForKey:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resolvedMetadataValueForKey:(id)arg1 completion:(CDUnknownBlockType)arg2;

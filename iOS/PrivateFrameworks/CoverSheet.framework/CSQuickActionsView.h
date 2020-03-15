@@ -21,13 +21,13 @@
     CSDashBoardQuickActionsButtonSettings *_quickActionsSettings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSDashBoardQuickActionsButtonSettings *quickActionsSettings; // @synthesize quickActionsSettings=_quickActionsSettings;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(nonatomic) _Bool flashlightOn; // @synthesize flashlightOn=_flashlightOn;
 @property(retain, nonatomic) CSQuickActionsButton *cameraButton; // @synthesize cameraButton=_cameraButton;
 @property(retain, nonatomic) CSQuickActionsButton *flashlightButton; // @synthesize flashlightButton=_flashlightButton;
 @property(nonatomic) __weak id <CSQuickActionsDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (_Bool)_prototypingAllowsButtons;
 - (void)_setButtonBackgroundVisible:(_Bool)arg1;

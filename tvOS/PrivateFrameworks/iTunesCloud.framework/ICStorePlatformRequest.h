@@ -31,6 +31,7 @@
     ICStoreRequestContext *_requestContext;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) ICStoreRequestContext *requestContext; // @synthesize requestContext=_requestContext;
 @property(nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(nonatomic) _Bool shouldIgnoreCache; // @synthesize shouldIgnoreCache=_shouldIgnoreCache;
@@ -48,7 +49,6 @@
 @property(copy, nonatomic) NSString *clientBundleVersion; // @synthesize clientBundleVersion=_clientBundleVersion;
 @property(copy, nonatomic) NSString *clientBundleIdentifier; // @synthesize clientBundleIdentifier=_clientBundleIdentifier;
 @property(copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy, nonatomic) NSArray *queryItems;
 @property(readonly, copy, nonatomic) NSDictionary *HTTPHeaders;

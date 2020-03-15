@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ICDocCamImageCache *docCamImageCache; // @synthesize docCamImageCache=_docCamImageCache;
 @property(readonly, nonatomic) int viewServicePid; // @synthesize viewServicePid=_viewServicePid;
 @property(readonly, nonatomic) DCDocumentCameraViewServiceSessionRequest *sessionRequest; // @synthesize sessionRequest=_sessionRequest;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setup;

@@ -17,9 +17,9 @@
 + (id)_mainDisplaySceneLayoutViewController;
 + (id)_mainDisplaySceneManager;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long dockIconActivationMode; // @synthesize dockIconActivationMode=_dockIconActivationMode;
 @property(nonatomic) __weak id <AXSpringBoardServerSideAppManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_mainDisplaySceneLayoutViewController;
 - (id)_mainDisplaySceneManager;
 - (id)_floatingAppRootViewController;

@@ -39,7 +39,8 @@
 
 + (id)preQuerySearchResultsLog;
 + (id)_gridViewControllerSpec;
-+ (id)_newSearchResultsControllerWithSpec:(id)arg1 searchResults:(id)arg2 orAlbum:(struct NSObject *)arg3 title:(id)arg4 headerViewTitle:(id)arg5;
++ (id)_newSearchResultsControllerWithSpec:(id)arg1 searchResults:(id)arg2 orAlbum:(id)arg3 title:(id)arg4 headerViewTitle:(id)arg5;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType ppt_searchTestCompletionHandler; // @synthesize ppt_searchTestCompletionHandler=_ppt_searchTestCompletionHandler;
 @property(retain, nonatomic) PXSearchAnalyticsSession *analyticsSession; // @synthesize analyticsSession=_analyticsSession;
 @property(nonatomic) _Bool shouldMergePendingChanges; // @synthesize shouldMergePendingChanges=_shouldMergePendingChanges;
@@ -55,7 +56,6 @@
 @property(nonatomic) unsigned long long nextAnalyticsSessionBeginType; // @synthesize nextAnalyticsSessionBeginType=_nextAnalyticsSessionBeginType;
 @property(copy, nonatomic) CDUnknownBlockType siriSearchCompletionHandler; // @synthesize siriSearchCompletionHandler=_siriSearchCompletionHandler;
 @property(nonatomic) __weak UISearchController *searchController; // @synthesize searchController=_searchController;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (void)ppt_expandAllSections;
 - (void)_preferredContentSizeChanged:(id)arg1;
@@ -94,6 +94,7 @@
 - (void)updateSearchResultsTableTopAssetsSectionWithResult:(id)arg1;
 - (void)updateSearchResultsTableAtIndexPath:(id)arg1;
 - (void)updateSearchResultsTable;
+- (_Bool)tableView:(id)arg1 canFocusRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;

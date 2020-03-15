@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *givenNameSimilarityDictionary; // @synthesize givenNameSimilarityDictionary=_givenNameSimilarityDictionary;
 @property(retain, nonatomic) NSMutableDictionary *avatarNameSimilarityDictionary; // @synthesize avatarNameSimilarityDictionary=_avatarNameSimilarityDictionary;
 @property(retain, nonatomic) NSArray *instructors; // @synthesize instructors=_instructors;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSString *className; // @synthesize className=_className;
 @property(retain, nonatomic) NSString *classDescription; // @synthesize classDescription=_classDescription;
 @property(copy, nonatomic) NSArray *students; // @synthesize students=_students;
-- (void).cxx_destruct;
 - (void)_updateNamingSimilarityInfoForUser:(id)arg1;
 - (id)initWithClassDictionary:(id)arg1 usersByUserIdentifier:(id)arg2;
 - (id)initWithStudents:(id)arg1 instructors:(id)arg2 className:(id)arg3 classID:(id)arg4;

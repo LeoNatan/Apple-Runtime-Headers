@@ -24,6 +24,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) double transitionTimeout; // @synthesize transitionTimeout=_transitionTimeout;
 @property(retain, nonatomic) NSTimer *transitionWatchdog; // @synthesize transitionWatchdog=_transitionWatchdog;
 @property(retain, nonatomic) id <UIViewControllerAnimatedTransitioning> animator; // @synthesize animator=_animator;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) IOSSHLTransaction *animationParentTransaction; // @synthesize animationParentTransaction=_animationParentTransaction;
 @property(readonly, nonatomic) CSLNavigationStackRequest *request; // @synthesize request=_request;
 @property(readonly, nonatomic) CSLNavigationStackController *navigationController; // @synthesize navigationController=_navigationController;
-- (void).cxx_destruct;
 - (_Bool)shouldWatchdog:(id *)arg1;
 - (void)transactionWatchdogImminent;
 - (id)navigationController:(id)arg1 animationControllerForNonAnimatedOperation:(int)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;

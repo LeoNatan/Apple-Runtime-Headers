@@ -14,9 +14,9 @@
     UIView *_view;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(readonly, nonatomic) NSMutableDictionary *updates; // @synthesize updates=_updates;
-- (void).cxx_destruct;
 - (void)_addUpdate:(id)arg1;
 - (id)initWithView:(id)arg1;
 - (id)init;

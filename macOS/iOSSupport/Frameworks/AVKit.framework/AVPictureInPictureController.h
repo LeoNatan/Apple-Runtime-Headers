@@ -38,6 +38,7 @@
 + (id)pictureInPictureButtonStopImageCompatibleWithTraitCollection:(id)arg1;
 + (id)pictureInPictureButtonStartImageCompatibleWithTraitCollection:(id)arg1;
 + (BOOL)isPictureInPictureSupported;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL pictureInPictureWasStartedWhenEnteringBackground; // @synthesize pictureInPictureWasStartedWhenEnteringBackground=_pictureInPictureWasStartedWhenEnteringBackground;
 @property(nonatomic) BOOL allowsPictureInPictureFromInlineWhenEnteringBackground; // @synthesize allowsPictureInPictureFromInlineWhenEnteringBackground=_allowsPictureInPictureFromInlineWhenEnteringBackground;
 @property(nonatomic) BOOL allowsPictureInPicturePlayback; // @synthesize allowsPictureInPicturePlayback=_allowsPictureInPicturePlayback;
@@ -55,7 +56,6 @@
 @property(nonatomic) __weak id <AVPictureInPictureControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
 @property(nonatomic) long long controlsStyle; // @synthesize controlsStyle=_controlsStyle;
-- (void).cxx_destruct;
 - (void)_stopPictureInPictureAndRestoreUserInterface:(BOOL)arg1;
 - (id)_delegateIfRespondsToSelector:(SEL)arg1;
 - (void)pictureInPicturePlatformAdapterPrepareToStopForDismissal:(id)arg1;

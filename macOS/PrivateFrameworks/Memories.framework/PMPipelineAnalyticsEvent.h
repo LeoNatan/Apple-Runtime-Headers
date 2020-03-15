@@ -22,6 +22,7 @@
     long long _unsuccessfulDownloadCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long unsuccessfulDownloadCount; // @synthesize unsuccessfulDownloadCount=_unsuccessfulDownloadCount;
 @property(nonatomic) long long assetCountAchieved; // @synthesize assetCountAchieved=_assetCountAchieved;
 @property(nonatomic) long long assetCountRequested; // @synthesize assetCountRequested=_assetCountRequested;
@@ -30,7 +31,6 @@
 @property(nonatomic) NSString *durationRequested; // @synthesize durationRequested=_durationRequested;
 @property(nonatomic) long long moodID; // @synthesize moodID=_moodID;
 @property(copy, nonatomic) NSString *songID; // @synthesize songID=_songID;
-- (void).cxx_destruct;
 - (id)copy;
 - (id)eventName;
 - (id)eventPayload;

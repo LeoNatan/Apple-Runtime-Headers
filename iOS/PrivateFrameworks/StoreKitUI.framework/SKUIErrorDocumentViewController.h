@@ -17,8 +17,8 @@
     CDUnknownBlockType _retryActionBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType retryActionBlock; // @synthesize retryActionBlock=_retryActionBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType retryActionBlock; // @synthesize retryActionBlock=_retryActionBlock;
 - (void)loadView;
 - (void)documentDidUpdate:(id)arg1;
 - (id)initWithBackgroundColor:(id)arg1 clientContext:(id)arg2;

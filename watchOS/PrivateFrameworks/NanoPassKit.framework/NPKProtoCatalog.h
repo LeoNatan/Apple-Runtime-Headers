@@ -15,8 +15,8 @@
     NSData *_catalogData;
 }
 
-@property(retain, nonatomic) NSData *catalogData; // @synthesize catalogData=_catalogData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *catalogData; // @synthesize catalogData=_catalogData;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

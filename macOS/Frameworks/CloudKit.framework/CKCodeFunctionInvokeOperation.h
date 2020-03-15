@@ -22,6 +22,7 @@
     NSError *_responseError;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *responseError; // @synthesize responseError=_responseError;
 @property(copy, nonatomic) NSData *serializedResponse; // @synthesize serializedResponse=_serializedResponse;
 @property(nonatomic) BOOL shouldFetchAssetContentInMemory; // @synthesize shouldFetchAssetContentInMemory=_shouldFetchAssetContentInMemory;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSData *serializedRequest; // @synthesize serializedRequest=_serializedRequest;
 @property(copy, nonatomic) NSString *functionName; // @synthesize functionName=_functionName;
 @property(copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
-- (void).cxx_destruct;
 - (id)activityCreate;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -31,6 +31,7 @@
 }
 
 + (Class)_configurationClass;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_state, setter=_setState:) long long state; // @synthesize state=_state;
 @property(retain, nonatomic, getter=_playingContinuousFeedback, setter=_setPlayingContinuousFeedback:) _UIFeedback<_UIFeedbackContinuousPlayable> *playingContinuousFeedback; // @synthesize playingContinuousFeedback=_playingContinuousFeedback;
 @property(nonatomic, getter=_velocity, setter=_setVelocity:) double velocity; // @synthesize velocity=_velocity;
@@ -44,7 +45,6 @@
 @property(nonatomic) double extentBeyondDistance; // @synthesize extentBeyondDistance=_extentBeyondDistance;
 @property(nonatomic) long long axis; // @synthesize axis=_axis;
 @property(nonatomic) double distance; // @synthesize distance=_distance;
-- (void).cxx_destruct;
 - (id)_stats_key;
 - (void)_positionUpdated:(double)arg1 withVelocity:(double)arg2;
 - (void)positionUpdated:(double)arg1;

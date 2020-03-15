@@ -33,8 +33,8 @@
     long long _cellStyle;
 }
 
-@property(nonatomic) long long cellStyle; // @synthesize cellStyle=_cellStyle;
 - (void).cxx_destruct;
+@property(nonatomic) long long cellStyle; // @synthesize cellStyle=_cellStyle;
 - (void)traitCollectionDidChangeFromTrait:(id)arg1 toTrait:(id)arg2 inCollectionView:(id)arg3;
 - (id)previewController:(id)arg1 previewItemAtIndex:(long long)arg2;
 - (long long)numberOfPreviewItemsInPreviewController:(id)arg1;

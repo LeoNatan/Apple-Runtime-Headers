@@ -19,10 +19,10 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsProtectedDataMigration; // @synthesize needsProtectedDataMigration=_needsProtectedDataMigration;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)contentProtectionStateChanged:(long long)arg1 previousState:(long long)arg2;
 - (void)_queue_performMigrationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)daemonReady:(id)arg1;

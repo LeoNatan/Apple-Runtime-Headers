@@ -21,11 +21,11 @@
 }
 
 + (id)operationWithDialog:(id)arg1 storeClient:(id)arg2;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType buttonClickHandler; // @synthesize buttonClickHandler=_buttonClickHandler;
 @property(retain) ISDialogButton *selectedButton; // @synthesize selectedButton=_selectedButton;
 @property BOOL performDefaultActions; // @synthesize performDefaultActions=_performDefaultActions;
 @property(readonly) ISDialog *dialog; // @synthesize dialog=_dialog;
-- (void).cxx_destruct;
 - (void)run;
 - (void)operation:(id)arg1 selectedButton:(id)arg2;
 - (void)handleButtonSelected:(long long)arg1;

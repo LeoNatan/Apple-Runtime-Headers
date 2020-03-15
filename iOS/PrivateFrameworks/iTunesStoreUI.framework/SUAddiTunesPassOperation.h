@@ -21,13 +21,13 @@
     NSObject<OS_dispatch_semaphore> *_semaphore;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
 @property(retain, nonatomic) PKPass *presentedPass; // @synthesize presentedPass=_presentedPass;
 @property(nonatomic) _Bool addedCard; // @synthesize addedCard=_addedCard;
 @property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
 @property(readonly, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) SSAuthenticationContext *authenticationContext; // @synthesize authenticationContext=_authenticationContext;
-- (void).cxx_destruct;
 - (void)addPassesViewControllerDidFinish:(id)arg1;
 - (void)run;
 - (id)initWithViewController:(id)arg1;

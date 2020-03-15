@@ -29,12 +29,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isUpdate; // @synthesize isUpdate=_isUpdate;
 @property(nonatomic) _Bool middleNameAdj; // @synthesize middleNameAdj=_middleNameAdj;
 @property(nonatomic) _Bool lastNameAdj; // @synthesize lastNameAdj=_lastNameAdj;
 @property(nonatomic) _Bool firstNameAdj; // @synthesize firstNameAdj=_firstNameAdj;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

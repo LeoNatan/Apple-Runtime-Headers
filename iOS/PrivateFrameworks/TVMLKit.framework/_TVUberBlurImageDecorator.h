@@ -15,10 +15,10 @@
     unsigned long long _blurStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long blurStyle; // @synthesize blurStyle=_blurStyle;
 @property(nonatomic) unsigned long long blurType; // @synthesize blurType=_blurType;
 @property(retain, nonatomic) UIColor *gradientColor; // @synthesize gradientColor=_gradientColor;
-- (void).cxx_destruct;
 - (id)decoratorIdentifier;
 - (id)decorate:(id)arg1 scaledWithSize:(struct CGSize)arg2 croppedToFit:(_Bool)arg3;
 

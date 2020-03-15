@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedSerialQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *overlayLayer; // @synthesize overlayLayer=_overlayLayer;
 @property(retain, nonatomic) UIImage *thirdAvatar; // @synthesize thirdAvatar=_thirdAvatar;
 @property(retain, nonatomic) UIImage *secondAvatar; // @synthesize secondAvatar=_secondAvatar;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CNMonogrammer *monogrammer; // @synthesize monogrammer=_monogrammer;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) PHAssetCollection *sharedAlbumCollection; // @synthesize sharedAlbumCollection=_sharedAlbumCollection;
-- (void).cxx_destruct;
 @property(readonly) NSObject<OS_os_log> *log;
 - (void)accessibilityInvertColorsStatusDidChange:(id)arg1;
 - (void)_renderAvatarsForAlbumCollection:(id)arg1;

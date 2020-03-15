@@ -15,10 +15,10 @@
     int _changeType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int changeType; // @synthesize changeType=_changeType;
 @property(readonly, nonatomic) WebBookmark *bookmark; // @synthesize bookmark=_bookmark;
 @property(readonly, nonatomic) WebBookmarkCollection *collection; // @synthesize collection=_collection;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_changedAttributeDescription;
 - (id)_changeTypeDescription;

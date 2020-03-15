@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
     NSSet *_capabilities;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *capabilities; // @synthesize capabilities=_capabilities;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(nonatomic) __weak id <CXVoicemailControllerHostConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSURL *bundleURL; // @synthesize bundleURL=_bundleURL;
 @property(copy, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
-- (void).cxx_destruct;
 - (oneway void)requestTransaction:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (oneway void)requestVoicemails:(CDUnknownBlockType)arg1;
 - (oneway void)removeVoicemails:(id)arg1;

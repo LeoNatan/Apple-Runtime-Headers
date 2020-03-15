@@ -17,10 +17,10 @@
     NSMutableSet *_behaviorHandlers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *behaviorHandlers; // @synthesize behaviorHandlers=_behaviorHandlers;
 @property(readonly, nonatomic) UIDynamicAnimator *animator; // @synthesize animator=_animator;
 @property(retain, nonatomic) SXViewport *viewport; // @synthesize viewport=_viewport;
-- (void).cxx_destruct;
 - (void)reset;
 - (void)updateHandler:(id)arg1;
 - (void)updateComponentView:(id)arg1;

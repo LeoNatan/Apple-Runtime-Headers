@@ -17,8 +17,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) __weak id <CUISAlertProviderDelegate> alertProviderDelegate; // @synthesize alertProviderDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CUISAlertProviderDelegate> alertProviderDelegate; // @synthesize alertProviderDelegate;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

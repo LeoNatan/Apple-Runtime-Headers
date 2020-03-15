@@ -19,12 +19,12 @@
     UIFont *_titleFont;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *titleFont; // @synthesize titleFont=_titleFont;
 @property(nonatomic) _Bool useAccssibilityLayout; // @synthesize useAccssibilityLayout=_useAccssibilityLayout;
 @property(readonly, nonatomic) PKSpendingSummaryChartView *chartView; // @synthesize chartView=_chartView;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) PKDashboardCreditAccountItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)_createSubviews;

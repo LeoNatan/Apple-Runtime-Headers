@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     id <PUPhotoPickerRemoteNavigationControllerDelegate> _remoteViewControllerdelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isInitialized) _Bool initialized; // @synthesize initialized=_initialized;
 @property(nonatomic) __weak id <PUPhotoPickerRemoteNavigationControllerDelegate> remoteViewControllerdelegate; // @synthesize remoteViewControllerdelegate=_remoteViewControllerdelegate;
-- (void).cxx_destruct;
 - (id)popToRootViewControllerAnimated:(_Bool)arg1;
 - (id)popToViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)pushViewController:(id)arg1 animated:(_Bool)arg2;

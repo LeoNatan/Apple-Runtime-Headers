@@ -177,12 +177,12 @@
 }
 
 + (id)_reuseKeyForSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2;
+- (void).cxx_destruct;
 @property struct NSEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 @property(copy, nonatomic, getter=_navigationCompletion, setter=_setNavigationCompletion:) CDUnknownBlockType navigationCompletion; // @synthesize navigationCompletion=_navigationCompletion;
 @property(retain, nonatomic) NSView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) __weak id <NSCollectionViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) NSCollectionViewLayout *collectionViewLayout; // @synthesize collectionViewLayout=_layout;
-- (void).cxx_destruct;
 @property(getter=_proposedDropOperation, setter=_setProposedDropOperation:) long long proposedDropOperation;
 @property(retain, getter=_dropTargetIndexPath, setter=_setDropTargetIndexPath:) NSIndexPath *dropTargetIndexPath;
 - (void)_stopAutoscrollTimer;

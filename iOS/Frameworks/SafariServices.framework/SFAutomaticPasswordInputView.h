@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     id <SFAutomaticPasswordInputViewSizing> _inputViewSizing;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldAllowSelfSizing; // @synthesize shouldAllowSelfSizing=_shouldAllowSelfSizing;
 @property(nonatomic) __weak id <SFAutomaticPasswordInputViewSizing> inputViewSizing; // @synthesize inputViewSizing=_inputViewSizing;
 @property(nonatomic) __weak id <SFAutomaticPasswordInputViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long keyboardType; // @synthesize keyboardType=_keyboardType;
-- (void).cxx_destruct;
 - (_Bool)allowsSelfSizing;
 - (struct CGSize)intrinsicContentSize;
 - (void)_useCustomPasswordButtonAction:(id)arg1;

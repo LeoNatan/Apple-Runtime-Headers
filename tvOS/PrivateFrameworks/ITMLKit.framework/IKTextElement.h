@@ -18,8 +18,8 @@
 }
 
 + (_Bool)shouldParseChildDOMElements;
-@property(readonly, nonatomic) unsigned long long textStyle; // @synthesize textStyle=_textStyle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long textStyle; // @synthesize textStyle=_textStyle;
 - (unsigned long long)_styleForTagName:(id)arg1;
 - (id)attributedStringWithFontHandler:(CDUnknownBlockType)arg1 foregroundColor:(id)arg2 textAlignment:(long long)arg3 defaultAttributes:(id *)arg4;
 - (id)attributedStringWithFontHandler:(CDUnknownBlockType)arg1 foregroundColor:(id)arg2 textAlignment:(long long)arg3;

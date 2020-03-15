@@ -14,9 +14,9 @@
     MPMediaLibraryEntityTranslationContext *_entityTranslationContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MPMediaLibraryEntityTranslationContext *entityTranslationContext; // @synthesize entityTranslationContext=_entityTranslationContext;
 @property(readonly, copy, nonatomic) MPModelLibrarySearchScope *scope; // @synthesize scope=_scope;
-- (void).cxx_destruct;
 
 @end
 

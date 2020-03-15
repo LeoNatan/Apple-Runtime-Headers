@@ -20,8 +20,8 @@
     NSDate *_date;
 }
 
-@property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 - (id)_rangeStringWithDisplayType:(id)arg1 unitController:(id)arg2;
 - (id)_stringWithDisplayType:(id)arg1 unitController:(id)arg2 shortened:(_Bool)arg3;
 - (id)_localizedAverageSensitivity:(id)arg1 ear:(long long)arg2 displayType:(id)arg3 unitController:(id)arg4 shortened:(_Bool)arg5;

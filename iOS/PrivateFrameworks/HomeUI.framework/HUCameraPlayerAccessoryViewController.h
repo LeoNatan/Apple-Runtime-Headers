@@ -29,6 +29,7 @@
 }
 
 + (id)_newLabel;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentAccessMode; // @synthesize currentAccessMode=_currentAccessMode;
 @property(nonatomic) _Bool showingBlur; // @synthesize showingBlur=_showingBlur;
 @property(nonatomic) _Bool showingLoadingIndicator; // @synthesize showingLoadingIndicator=_showingLoadingIndicator;
@@ -43,7 +44,6 @@
 @property(nonatomic) __weak HFCameraPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
 @property(nonatomic) _Bool shouldShowLoadingIndicatorForClipPlayback; // @synthesize shouldShowLoadingIndicatorForClipPlayback=_shouldShowLoadingIndicatorForClipPlayback;
 @property(nonatomic) _Bool canShowOverlayContent; // @synthesize canShowOverlayContent=_canShowOverlayContent;
-- (void).cxx_destruct;
 - (_Bool)_shouldShortCircuitBlurEffect;
 - (_Bool)_shouldShortCircuitLoadingIndicator;
 - (id)_errorStringDetailsForError:(id)arg1;

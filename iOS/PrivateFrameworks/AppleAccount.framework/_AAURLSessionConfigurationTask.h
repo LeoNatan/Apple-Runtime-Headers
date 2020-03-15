@@ -25,9 +25,9 @@
     NSURLRequest *_originalRequest;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURLRequest *originalRequest; // @synthesize originalRequest=_originalRequest;
 @property(readonly, nonatomic) AAURLSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
 - (void)cancel;

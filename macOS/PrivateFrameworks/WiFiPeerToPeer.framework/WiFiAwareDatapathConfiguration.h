@@ -20,12 +20,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WiFiAwarePublishDatapathServiceSpecificInfo *serviceSpecificInfo; // @synthesize serviceSpecificInfo=_serviceSpecificInfo;
 @property(readonly, nonatomic) NSData *pmk; // @synthesize pmk=_pmk;
 @property(readonly, nonatomic) NSString *passphrase; // @synthesize passphrase=_passphrase;
 @property(readonly, nonatomic) long long serviceType; // @synthesize serviceType=_serviceType;
 @property(readonly, nonatomic) WiFiAwareDiscoveryResult *discoveryResult; // @synthesize discoveryResult=_discoveryResult;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)pmkEqual:(id)arg1;

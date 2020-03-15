@@ -13,8 +13,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)preferredWidth;
-@property(retain, nonatomic) UIView *innerSeparatorView; // @synthesize innerSeparatorView=_innerSeparatorView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *innerSeparatorView; // @synthesize innerSeparatorView=_innerSeparatorView;
 - (void)layoutSubviews;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)didMoveToWindow;

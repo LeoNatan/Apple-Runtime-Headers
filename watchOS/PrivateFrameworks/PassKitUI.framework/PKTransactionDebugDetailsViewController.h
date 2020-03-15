@@ -18,10 +18,10 @@
     NSDictionary *_mapsMerchantDetails;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *mapsMerchantDetails; // @synthesize mapsMerchantDetails=_mapsMerchantDetails;
 @property(retain, nonatomic) NSDictionary *merchantDetails; // @synthesize merchantDetails=_merchantDetails;
 @property(retain, nonatomic) NSDictionary *transactionDetails; // @synthesize transactionDetails=_transactionDetails;
-- (void).cxx_destruct;
 - (void)_didSelectMap;
 - (id)_cellWithPrimaryText:(id)arg1 infoText:(id)arg2;
 - (id)_mapsCell;

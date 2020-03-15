@@ -18,13 +18,13 @@
     CSKBadgeLabel *_detachedBadgeLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak CSKBadgeLabel *detachedBadgeLabel; // @synthesize detachedBadgeLabel=_detachedBadgeLabel;
 @property(nonatomic) __weak NSTextField *volatileBadgeLabel; // @synthesize volatileBadgeLabel=_volatileBadgeLabel;
 @property(nonatomic) __weak NSTextField *timeTextField; // @synthesize timeTextField=_timeTextField;
 @property(nonatomic) __weak NSTextField *parentActivityIDTextField; // @synthesize parentActivityIDTextField=_parentActivityIDTextField;
 @property(nonatomic) __weak NSTextField *activityIDTextField; // @synthesize activityIDTextField=_activityIDTextField;
 @property(nonatomic) __weak CSKExtendedTextField *processTextField; // @synthesize processTextField=_processTextField;
-- (void).cxx_destruct;
 - (void)updateViewWithActivity:(id)arg1;
 - (void)awakeFromNib;
 

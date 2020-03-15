@@ -21,6 +21,7 @@
     double _impressionThreshold;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double impressionThreshold; // @synthesize impressionThreshold=_impressionThreshold;
 @property(nonatomic) unsigned long long position; // @synthesize position=_position;
 @property(nonatomic) double timePlayed; // @synthesize timePlayed=_timePlayed;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSString *adLine; // @synthesize adLine=_adLine;
 @property(copy, nonatomic) NSString *adCampaign; // @synthesize adCampaign=_adCampaign;
 @property(retain, nonatomic) NUAdBannerView *bannerView; // @synthesize bannerView=_bannerView;
-- (void).cxx_destruct;
 
 @end
 

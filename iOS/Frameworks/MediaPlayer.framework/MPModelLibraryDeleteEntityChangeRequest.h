@@ -15,8 +15,8 @@
     MPModelObject *_modelObject;
 }
 
-@property(retain, nonatomic) MPModelObject *modelObject; // @synthesize modelObject=_modelObject;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPModelObject *modelObject; // @synthesize modelObject=_modelObject;
 - (void)performWithResponseHandler:(CDUnknownBlockType)arg1;
 - (id)newOperationWithResponseHandler:(CDUnknownBlockType)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

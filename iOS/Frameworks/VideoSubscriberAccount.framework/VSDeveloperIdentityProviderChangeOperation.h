@@ -16,11 +16,11 @@
     NSXPCConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) VSOptional *result; // @synthesize result=_result;
 @property(nonatomic) long long changeKind; // @synthesize changeKind=_changeKind;
 @property(retain, nonatomic) VSIdentityProvider *identityProvider; // @synthesize identityProvider=_identityProvider;
-- (void).cxx_destruct;
 - (void)executionDidBegin;
 - (id)_serviceWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;

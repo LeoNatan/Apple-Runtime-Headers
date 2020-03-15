@@ -15,9 +15,9 @@
 }
 
 + (id)init:(id)arg1 withDictionary:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *unitDescription; // @synthesize unitDescription=_unitDescription;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)dump;
 - (id)description;
 - (id)generateDictionary;

@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _animatingFrameSizeCount;
 }
 
-@property _Bool acceptsFirstMouse; // @synthesize acceptsFirstMouse=_acceptsFirstMouse;
-@property(nonatomic, getter=isDimmed) _Bool dimmed; // @synthesize dimmed=_isDimmed;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property _Bool acceptsFirstMouse; // @synthesize acceptsFirstMouse=_acceptsFirstMouse;
+@property(nonatomic, getter=isDimmed) _Bool dimmed; // @synthesize dimmed=_isDimmed;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (BOOL)accessibilityEnabled;
 - (id)accessibilityLabel;

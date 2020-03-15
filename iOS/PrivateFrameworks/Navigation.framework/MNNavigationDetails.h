@@ -8,7 +8,7 @@
 
 #import <Navigation/NSSecureCoding-Protocol.h>
 
-@class GEOComposedRoute, GEOComposedWaypoint, GEODirectionsRequest, GEODirectionsResponse, GEONavigationGuidanceState, MNActiveRouteInfo, MNLocation, MNStartNavigationDetails, NSArray, NSMapTable, NSMutableDictionary, NSString;
+@class GEOComposedRoute, GEOComposedWaypoint, GEODirectionsRequest, GEODirectionsResponse, GEONavigationGuidanceState, MNActiveRouteInfo, MNLocation, MNStartNavigationDetails, NSArray, NSMapTable, NSMutableDictionary, NSString, geo_isolater;
 
 __attribute__((visibility("hidden")))
 @interface MNNavigationDetails : NSObject <NSSecureCoding>
@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     NSMapTable *_routeIDLookup;
     NSMutableDictionary *_routeLookup;
     NSMutableDictionary *_trafficIncidentAlerts;
+    geo_isolater *_routeLookupLock;
     _Bool _guidancePromptsEnabled;
     _Bool _isInPreArrivalState;
     _Bool _traceIsPlaying;
@@ -58,6 +59,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *routeLookup; // @synthesize routeLookup=_routeLookup;
 @property(retain, nonatomic) NSMutableDictionary *trackedCommuteDestinations; // @synthesize trackedCommuteDestinations=_trackedCommuteDestinations;
 @property(retain, nonatomic) NSArray *traceBookmarks; // @synthesize traceBookmarks=_traceBookmarks;
 @property(nonatomic) double tracePosition; // @synthesize tracePosition=_tracePosition;
@@ -93,9 +96,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int desiredNavigationType; // @synthesize desiredNavigationType=_desiredNavigationType;
 @property(nonatomic) int navigationType; // @synthesize navigationType=_navigationType;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)description;
-@property(readonly, nonatomic) NSMutableDictionary *routeLookup;
 @property(readonly, nonatomic) NSMapTable *routeIDLookup;
 - (void)_updateRouteIDLookup;
 - (id)removeTrafficIncidentAlert:(id)arg1;

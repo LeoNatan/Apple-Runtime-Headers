@@ -17,8 +17,8 @@
 
 + (id)suggestedRoomNames:(unsigned long long)arg1;
 + (id)_homeWithHMHome:(id)arg1;
-@property(retain, nonatomic) HMHome *hmHome; // @synthesize hmHome=_hmHome;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HMHome *hmHome; // @synthesize hmHome=_hmHome;
 @property(readonly, copy) NSString *description;
 - (void)removeAccessory:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)addRoomWithName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

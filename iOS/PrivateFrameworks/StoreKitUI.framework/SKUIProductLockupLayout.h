@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_topRightViewElements;
 }
 
-@property(readonly, nonatomic) long long bottomLeftLayoutStyle; // @synthesize bottomLeftLayoutStyle=_bottomLeftLayoutStyle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long bottomLeftLayoutStyle; // @synthesize bottomLeftLayoutStyle=_bottomLeftLayoutStyle;
 - (struct CGSize)_sizeForViewElement:(id)arg1 width:(double)arg2;
 - (struct CGSize)_sizeForVerticalViewElements:(id)arg1 width:(double)arg2;
 - (struct CGSize)_sizeForSegmentedControl:(id)arg1 width:(double)arg2;

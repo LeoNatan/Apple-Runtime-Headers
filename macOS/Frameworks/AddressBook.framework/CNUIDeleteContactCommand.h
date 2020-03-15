@@ -14,13 +14,14 @@
     NSString *_containerIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)executeUndoWithCNSaveRequest:(id)arg1;
 - (void)executeWithCNSaveRequest:(id)arg1;
 - (id)actionName;
-- (id)initWithContact:(id)arg1 containerIdentifier:(id)arg2 contactStore:(id)arg3;
+- (id)initWithContact:(id)arg1 containerIdentifier:(id)arg2 contactStore:(id)arg3 ignoresGuardianRestrictions:(BOOL)arg4;
+- (id)initWithContactStore:(id)arg1 ignoresGuardianRestrictions:(BOOL)arg2;
 
 @end
 

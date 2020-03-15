@@ -16,9 +16,9 @@
 
 + (id)entitlementsForMessageID:(unsigned long long)arg1;
 + (id)sharedServer;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *handlers; // @synthesize handlers=_handlers;
 @property(retain, nonatomic) NSMutableArray *clients; // @synthesize clients=_clients;
-- (void).cxx_destruct;
 - (void)registerFakeClient:(id)arg1;
 - (void)handleMessage:(id)arg1 forIdentifier:(unsigned long long)arg2;
 - (void)addHandler:(id)arg1 andBlock:(CDUnknownBlockType)arg2 forMessageIdentifier:(unsigned long long)arg3;

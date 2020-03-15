@@ -29,6 +29,7 @@
 + (id)pluginKitProxyForUUID:(id)arg1;
 + (id)plugInKitProxyForPlugin:(unsigned int)arg1 withContext:(struct LSContext *)arg2;
 + (id)containingBundleIdentifiersForPlugInBundleIdentifiers:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isOnSystemPartition) BOOL onSystemPartition; // @synthesize onSystemPartition=_onSystemPartition;
 @property(readonly, nonatomic) LSBundleProxy *containingBundle; // @synthesize containingBundle=_containingBundle;
 @property(readonly, nonatomic) NSDate *registrationDate; // @synthesize registrationDate=_registrationDate;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSString *protocol; // @synthesize protocol=_protocol;
 @property(readonly, nonatomic) NSString *originalIdentifier; // @synthesize originalIdentifier=_originalIdentifier;
 @property(readonly, nonatomic) NSString *pluginIdentifier; // @synthesize pluginIdentifier=_pluginIdentifier;
-- (void).cxx_destruct;
 - (BOOL)_usesSystemPersona;
 - (id)_managedPersonas;
 - (id)description;

@@ -19,6 +19,7 @@
     NSTimer *_crossfadeTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *crossfadeTimer; // @synthesize crossfadeTimer=_crossfadeTimer;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) _TVImageLoaderQueue *loaderQueue; // @synthesize loaderQueue=_loaderQueue;
@@ -26,7 +27,6 @@
 @property(nonatomic) double crossfadeDuration; // @synthesize crossfadeDuration=_crossfadeDuration;
 @property(nonatomic) double crossfadePeriod; // @synthesize crossfadePeriod=_crossfadePeriod;
 @property(copy, nonatomic) NSArray *imageProxies; // @synthesize imageProxies=_imageProxies;
-- (void).cxx_destruct;
 - (void)_crossfadeToImage:(id)arg1;
 - (void)_loadNextImage:(id)arg1;
 - (void)_startTimer;

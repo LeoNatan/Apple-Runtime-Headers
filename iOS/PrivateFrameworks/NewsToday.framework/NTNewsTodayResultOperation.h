@@ -6,7 +6,7 @@
 
 #import <NewsToday/NTTodayResultOperation.h>
 
-@class NSDate, NSDictionary, NSObject, NTCatchUpOperationForYouFetchInfo, NTPBTodayResultOperationFetchInfo, NTTodayResults;
+@class NSDate, NSDictionary, NTCatchUpOperationForYouFetchInfo, NTPBTodayResultOperationFetchInfo, NTTodayResults;
 
 @interface NTNewsTodayResultOperation : NTTodayResultOperation
 {
@@ -15,21 +15,19 @@
     NTCatchUpOperationForYouFetchInfo *_forYouFetchInfo;
     NTTodayResults *_resultTodayResults;
     NSDictionary *_resultAssetHandlesByAssetID;
-    NSObject *_resultAssetsHoldToken;
     NTPBTodayResultOperationFetchInfo *_resultFetchInfo;
     NSDictionary *_todayConfigOperationHeldRecordsByType;
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *todayConfigOperationHeldRecordsByType; // @synthesize todayConfigOperationHeldRecordsByType=_todayConfigOperationHeldRecordsByType;
 @property(copy, nonatomic) NTPBTodayResultOperationFetchInfo *resultFetchInfo; // @synthesize resultFetchInfo=_resultFetchInfo;
-@property(retain, nonatomic) NSObject *resultAssetsHoldToken; // @synthesize resultAssetsHoldToken=_resultAssetsHoldToken;
 @property(copy, nonatomic) NSDictionary *resultAssetHandlesByAssetID; // @synthesize resultAssetHandlesByAssetID=_resultAssetHandlesByAssetID;
 @property(copy, nonatomic) NTTodayResults *resultTodayResults; // @synthesize resultTodayResults=_resultTodayResults;
 @property(copy, nonatomic) NTCatchUpOperationForYouFetchInfo *forYouFetchInfo; // @synthesize forYouFetchInfo=_forYouFetchInfo;
 @property(nonatomic) _Bool lastOperationFailedToFinish; // @synthesize lastOperationFailedToFinish=_lastOperationFailedToFinish;
 @property(copy, nonatomic) NSDate *filterDate; // @synthesize filterDate=_filterDate;
-- (void).cxx_destruct;
 - (_Bool)_useForegroundMinimumUpdateInterval;
 - (void)_finalizeTodayResultsWithSectionDescriptors:(id)arg1 catchUpOperationResultsBySectionDescriptor:(id)arg2 itemIDsOfLeadingCells:(id)arg3 slotAllocationByDynamicSlotItemID:(id)arg4 appConfiguration:(id)arg5 feedPersonalizer:(id)arg6 todayData:(id)arg7 completion:(CDUnknownBlockType)arg8;
 - (void)_registerForYouFetchWithForYouFetchInfo:(id)arg1;

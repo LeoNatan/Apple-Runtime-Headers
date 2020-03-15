@@ -21,11 +21,11 @@
 
 + (id)logCategory;
 + (double)timeout;
+- (void).cxx_destruct;
 @property(readonly) NSMutableArray *resolveBlocks; // @synthesize resolveBlocks=_resolveBlocks;
 @property(retain, nonatomic) HMDIDSMessageContext *messageContext; // @synthesize messageContext=_messageContext;
 @property(readonly) IDSService *service; // @synthesize service=_service;
 @property(readonly, copy) HMDAccountHandle *handle; // @synthesize handle=_handle;
-- (void).cxx_destruct;
 - (void)service:(id)arg1 account:(id)arg2 incomingMessage:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(_Bool)arg4 error:(id)arg5 context:(id)arg6;
 - (void)addResolveBlock:(CDUnknownBlockType)arg1;

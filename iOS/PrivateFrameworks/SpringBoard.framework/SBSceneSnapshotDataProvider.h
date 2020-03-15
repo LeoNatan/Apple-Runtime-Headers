@@ -21,8 +21,8 @@
     _Bool _hasProtectedContent;
 }
 
-@property(readonly, retain, nonatomic) XBSnapshotDataProviderContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) XBSnapshotDataProviderContext *context; // @synthesize context=_context;
 - (void)_invalidateSnapshotData;
 - (id)fetchImage;
 - (_Bool)hasProtectedContent;

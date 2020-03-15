@@ -26,11 +26,13 @@
 + (id)noSuchObjectErrorWithExternalIdentifier:(id)arg1;
 + (id)noSuchObjectErrorWithObjectID:(id)arg1;
 + (_Bool)isNoSuchObjectError:(id)arg1 forObjectID:(id)arg2;
++ (id)retryLaterErrorWithInterval:(double)arg1;
 + (id)cancelledError;
 + (id)babySatErrorWithOperationName:(id)arg1;
 + (id)throttledErrorWithRemainingTimeInterval:(double)arg1;
 + (id)unauthorizedErrorWithMissingEntitlement:(id)arg1 requestedAccessLevel:(id)arg2 currentAccesslevel:(id)arg3;
 + (id)unauthorizedErrorWithMissingEntitlement:(id)arg1;
++ (id)errorFromErrors:(id)arg1;
 + (id)unexpectedError;
 + (id)unexpectedNilPropertyWithClass:(Class)arg1 property:(id)arg2;
 + (id)mismatchedObjectIDWithObjectID:(id)arg1 expected:(Class)arg2;

@@ -20,11 +20,11 @@
 }
 
 + (id)sharedBuddyLocationController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *wirelessScanStartDate; // @synthesize wirelessScanStartDate=_wirelessScanStartDate;
 @property(nonatomic) _Bool fakeMode; // @synthesize fakeMode=_fakeMode;
 @property(retain, nonatomic) NSArray *firstGuessedLanguages; // @synthesize firstGuessedLanguages=_firstGuessedLanguages;
 @property(retain, nonatomic) NSArray *guessedCountries; // @synthesize guessedCountries=_guessedCountries;
-- (void).cxx_destruct;
 - (void)reset;
 - (void)_closeWifiConnection;
 - (void)_scanComplete:(id)arg1 error:(_Bool)arg2;

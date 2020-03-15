@@ -14,9 +14,9 @@
     NSURLSessionDataTask *_task;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURLSessionDataTask *task; // @synthesize task=_task;
 @property(retain, nonatomic) NSMutableSet *completionHandlers; // @synthesize completionHandlers=_completionHandlers;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

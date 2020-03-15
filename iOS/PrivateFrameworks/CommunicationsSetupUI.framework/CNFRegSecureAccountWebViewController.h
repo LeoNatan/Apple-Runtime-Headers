@@ -16,8 +16,8 @@
     unsigned long long _signinFailureCount;
 }
 
-@property(retain, nonatomic) IMAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IMAccount *account; // @synthesize account=_account;
 - (void)_setupAccountHandlers;
 - (id)authTokenHeaderValue;
 - (id)authIdHeaderValue;

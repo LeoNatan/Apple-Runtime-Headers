@@ -13,8 +13,8 @@
     NSMutableArray *_levels;
 }
 
-@property(retain, nonatomic) NSMutableArray *levels; // @synthesize levels=_levels;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *levels; // @synthesize levels=_levels;
 - (void)updateLevel:(double)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

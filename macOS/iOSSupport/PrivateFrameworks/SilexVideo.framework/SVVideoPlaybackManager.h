@@ -24,6 +24,7 @@
     id <SVVideoLoadingStateObserving> _loadingStateObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SVVideoLoadingStateObserving> loadingStateObserver; // @synthesize loadingStateObserver=_loadingStateObserver;
 @property(retain, nonatomic) id <SVVideoPlaybackStateObserving> playbackStateObserver; // @synthesize playbackStateObserver=_playbackStateObserver;
 @property(retain, nonatomic) SVPlaybackCoordinator *playbackCoordinator; // @synthesize playbackCoordinator=_playbackCoordinator;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) id <SVPlaybackCoordinatorProviding> playbackCoordinatorProvider; // @synthesize playbackCoordinatorProvider=_playbackCoordinatorProvider;
 @property(readonly, nonatomic) id <SVVideoPlaybackAdvancing> playbackAdvancer; // @synthesize playbackAdvancer=_playbackAdvancer;
 @property(readonly, nonatomic) id <SVVideoPlaybackPolicy> playbackPolicy; // @synthesize playbackPolicy=_playbackPolicy;
-- (void).cxx_destruct;
 - (void)playWithoutRequestingPlayback;
 - (void)pause;
 - (void)play;

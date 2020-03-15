@@ -22,10 +22,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (void)setDefaultStorefrontIdentifier:(id)arg1;
++ (id)defaultStorefrontIdentifier;
 + (void)setDefaultActiveLockerAccountDSID:(id)arg1;
++ (id)defaultActiveLockerAccountDSID;
 + (void)setDefaultActiveAccountDSID:(id)arg1;
-@property(nonatomic) __weak id <ICUserIdentityStoreBackendDelegate> delegate; // @synthesize delegate=_delegate;
++ (id)defaultActiveAccountDSID;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ICUserIdentityStoreBackendDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_propertiesToSaveForProperties:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

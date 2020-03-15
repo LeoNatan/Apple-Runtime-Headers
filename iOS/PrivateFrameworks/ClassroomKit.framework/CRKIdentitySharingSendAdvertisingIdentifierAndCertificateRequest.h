@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "CATTaskRequest.h"
+#import <DeviceManagement/CATTaskRequest.h>
 
 @class NSData, NSSet, NSUUID;
 
@@ -17,11 +17,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *stagedCertificateData; // @synthesize stagedCertificateData=_stagedCertificateData;
 @property(retain, nonatomic) NSData *activeCertificateData; // @synthesize activeCertificateData=_activeCertificateData;
 @property(retain, nonatomic) NSUUID *advertisingIdentifier; // @synthesize advertisingIdentifier=_advertisingIdentifier;
 @property(retain, nonatomic) NSSet *recipients; // @synthesize recipients=_recipients;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

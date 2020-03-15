@@ -70,6 +70,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoresViewportScaleLimits; // @synthesize ignoresViewportScaleLimits=_ignoresViewportScaleLimits;
 @property(nonatomic) unsigned long long dataDetectorTypes; // @synthesize dataDetectorTypes=_dataDetectorTypes;
 @property(nonatomic) _Bool allowsPictureInPictureMediaPlayback; // @synthesize allowsPictureInPictureMediaPlayback=_allowsPictureInPictureMediaPlayback;
@@ -78,8 +80,6 @@
 @property(nonatomic) unsigned long long mediaTypesRequiringUserActionForPlayback; // @synthesize mediaTypesRequiringUserActionForPlayback=_mediaTypesRequiringUserActionForPlayback;
 @property(nonatomic) _Bool allowsAirPlayForMediaPlayback; // @synthesize allowsAirPlayForMediaPlayback=_allowsAirPlayForMediaPlayback;
 @property(nonatomic) _Bool suppressesIncrementalRendering; // @synthesize suppressesIncrementalRendering=_suppressesIncrementalRendering;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (Ref_1d7364d1)copyPageConfiguration;
 @property(nonatomic, setter=_setContentProviderRegistry:) WKWebViewContentProviderRegistry *_contentProviderRegistry;
 @property(retain, nonatomic, setter=_setWebsiteDataStore:) _WKWebsiteDataStore *_websiteDataStore;
@@ -115,6 +115,8 @@
 @property(nonatomic, setter=_setRequiresUserActionForAudioPlayback:) _Bool _requiresUserActionForAudioPlayback;
 @property(nonatomic, setter=_setRequiresUserActionForVideoPlayback:) _Bool _requiresUserActionForVideoPlayback;
 @property(nonatomic, setter=_setDrawsBackground:) _Bool _drawsBackground;
+@property(copy, nonatomic, setter=_setCORSDisablingPatterns:) NSArray *_corsDisablingPatterns;
+@property(readonly, nonatomic) WKWebsiteDataStore *_websiteDataStoreIfExists;
 @property(nonatomic, setter=_setShouldDeferAsynchronousScriptsUntilAfterDocumentLoad:) _Bool _shouldDeferAsynchronousScriptsUntilAfterDocumentLoad;
 @property(nonatomic, setter=_setIncompleteImageBorderEnabled:) _Bool _incompleteImageBorderEnabled;
 @property(nonatomic, setter=_setColorFilterEnabled:) _Bool _colorFilterEnabled;
@@ -132,6 +134,7 @@
 @property(nonatomic, setter=_setAllowsInlineMediaPlaybackAfterFullscreen:) _Bool _allowsInlineMediaPlaybackAfterFullscreen;
 @property(nonatomic, setter=_setInlineMediaPlaybackRequiresPlaysInlineAttribute:) _Bool _inlineMediaPlaybackRequiresPlaysInlineAttribute;
 @property(nonatomic, setter=_setAlwaysRunsAtForegroundPriority:) _Bool _alwaysRunsAtForegroundPriority;
+@property(nonatomic, setter=_setClientNavigationsRunAtForegroundPriority:) _Bool _clientNavigationsRunAtForegroundPriority;
 @property(nonatomic, setter=_setAllowsMetaRefresh:) _Bool _allowsMetaRefresh;
 @property(nonatomic, setter=_setConvertsPositionStyleOnCopy:) _Bool _convertsPositionStyleOnCopy;
 @property(nonatomic, setter=_setAllowUniversalAccessFromFileURLs:) _Bool _allowUniversalAccessFromFileURLs;

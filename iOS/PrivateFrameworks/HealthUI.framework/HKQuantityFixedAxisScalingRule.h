@@ -16,8 +16,8 @@
 }
 
 + (id)ruleWithDefaultAxisBounds:(id)arg1 axisBoundsOverrides:(id)arg2;
-@property(retain, nonatomic) HKUnit *unit; // @synthesize unit=_unit;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HKUnit *unit; // @synthesize unit=_unit;
 - (id)_numberRangeFromQuantityRangeForUnit:(id)arg1 quantityRange:(id)arg2;
 - (void)_convertQuantityRanges;
 - (_Bool)isCompatibleWithQuantityType:(id)arg1;

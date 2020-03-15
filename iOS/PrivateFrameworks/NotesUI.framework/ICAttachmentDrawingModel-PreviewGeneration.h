@@ -9,7 +9,7 @@
 @class UIImage;
 
 @interface ICAttachmentDrawingModel (PreviewGeneration)
-- (struct UIImage *)generateImageUsingFullscreenRenderer;
+- (id)generateImageUsingFullscreenRenderer;
 - (_Bool)generatePreviewsInOperation:(id)arg1;
 - (_Bool)needToGeneratePreviews;
 - (_Bool)generatePreviewsDuringCloudActivity;
@@ -23,7 +23,7 @@
 - (id)activityItems;
 - (id)activityItem;
 @property(readonly, nonatomic) UIImage *imageForActivityItem;
-- (void)saveDrawing:(id)arg1 withImage:(struct UIImage *)arg2 forImageDrawing:(id)arg3;
+- (void)saveDrawing:(id)arg1 withImage:(id)arg2 forImageDrawing:(id)arg3;
 - (CDUnknownBlockType)genericBrickThumbnailCreator;
 - (CDUnknownBlockType)genericListThumbnailCreator;
 @end

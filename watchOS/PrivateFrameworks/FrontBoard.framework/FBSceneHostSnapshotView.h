@@ -15,8 +15,8 @@
     FBSceneSnapshot *_snapshot;
 }
 
-@property(readonly, retain, nonatomic) FBSceneSnapshot *sceneSnapshot; // @synthesize sceneSnapshot=_snapshot;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) FBSceneSnapshot *sceneSnapshot; // @synthesize sceneSnapshot=_snapshot;
 @property(readonly, retain, nonatomic) id IOSurface;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)_initWithSnapshot:(id)arg1;

@@ -23,6 +23,7 @@
     NSLayoutConstraint *_pickerBackgroundViewHeightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool textDidChange; // @synthesize textDidChange=_textDidChange;
 @property(retain, nonatomic) NSLayoutConstraint *pickerBackgroundViewHeightConstraint; // @synthesize pickerBackgroundViewHeightConstraint=_pickerBackgroundViewHeightConstraint;
 @property(retain, nonatomic) UIView *pickerBackgroundView; // @synthesize pickerBackgroundView=_pickerBackgroundView;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) PXPeopleNamePickerViewController *namePicker; // @synthesize namePicker=_namePicker;
 @property(nonatomic) __weak id <PXPeopleFlowViewControllerActionDelegate> actionDelegate; // @synthesize actionDelegate;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)namePickerControllerWillChangeText:(id)arg1;
 - (void)namePickerController:(id)arg1 didPickString:(id)arg2;
 - (void)namePickerController:(id)arg1 didPickContact:(id)arg2;

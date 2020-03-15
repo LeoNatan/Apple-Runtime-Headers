@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _cursorRect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setUserDefaults:) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
 @property(nonatomic, setter=_setTrackpadMouseTrackingVOCursor:) BOOL _trackpadMouseTrackingVOCursor; // @synthesize _trackpadMouseTrackingVOCursor=__trackpadMouseTrackingVOCursor;
 @property(nonatomic, setter=_setCursorApplication:) __weak SCRApplication *_cursorApplication; // @synthesize _cursorApplication=__cursorApplication;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) SCRElement *cursorElement; // @synthesize cursorElement=_cursorElement;
 @property(readonly, nonatomic) NSArray *cursorRects; // @synthesize cursorRects=_cursorRects;
 @property(readonly, nonatomic) struct CGRect cursorRect; // @synthesize cursorRect=_cursorRect;
-- (void).cxx_destruct;
 - (void)_unregisterWindowObservers;
 - (void)_registerWindowObservers;
 - (void)refreshHighlightCursor;

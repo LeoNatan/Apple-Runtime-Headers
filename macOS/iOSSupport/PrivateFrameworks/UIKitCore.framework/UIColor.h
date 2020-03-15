@@ -302,6 +302,7 @@
 - (void)_setDebugName:(id)arg1;
 - (id)_debugName;
 @property(retain, nonatomic, getter=_systemColorName, setter=_setSystemColorName:) NSString *systemColorName;
+- (BOOL)_isOpaque;
 - (BOOL)_isDeepColor;
 - (BOOL)isPatternColor;
 - (id)styleString;

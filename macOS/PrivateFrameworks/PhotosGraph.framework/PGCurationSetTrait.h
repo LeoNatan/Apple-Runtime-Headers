@@ -14,9 +14,9 @@
     NSSet *_negativeItems;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *negativeItems; // @synthesize negativeItems=_negativeItems;
 @property(readonly, nonatomic) NSSet *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (BOOL)isActive;
 - (id)initWithItems:(id)arg1 negativeItems:(id)arg2;

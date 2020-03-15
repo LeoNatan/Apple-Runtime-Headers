@@ -13,6 +13,7 @@
 - (id)entryForCreatingGroups;
 - (void)performWithSender:(id)arg1;
 - (BOOL)validateWithMenuItem:(id)arg1;
+- (BOOL)requiresAuthorizationBeforeExecution;
 
 @end
 

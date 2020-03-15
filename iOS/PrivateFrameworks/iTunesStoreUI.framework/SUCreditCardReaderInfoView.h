@@ -14,9 +14,9 @@
     UILabel *_addCardLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *addCardLabel; // @synthesize addCardLabel=_addCardLabel;
 @property(retain, nonatomic) UILabel *addCardDetailLabel; // @synthesize addCardDetailLabel=_addCardDetailLabel;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

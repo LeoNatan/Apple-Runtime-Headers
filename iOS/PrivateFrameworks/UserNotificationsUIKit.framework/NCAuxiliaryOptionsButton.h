@@ -15,8 +15,11 @@
 
 - (void).cxx_destruct;
 - (void)_configureBackgroundViewIfNecessary;
+- (void)_updateBackgroundVisualStyling;
 - (void)_setCornerRadius:(double)arg1;
+- (void)setHighlighted:(_Bool)arg1;
 - (void)layoutSubviews;
+- (id)init;
 
 @end
 

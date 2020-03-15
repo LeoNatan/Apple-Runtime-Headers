@@ -17,8 +17,8 @@
 + (_Bool)isPermittedOnUserConnection;
 + (_Bool)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
-@property(copy, nonatomic) NSDictionary *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *configuration; // @synthesize configuration=_configuration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

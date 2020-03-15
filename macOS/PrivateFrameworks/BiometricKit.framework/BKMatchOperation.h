@@ -20,6 +20,7 @@
     long long _useCase;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL captureOnly; // @synthesize captureOnly=_captureOnly;
 @property(nonatomic) BOOL stopOnSuccess; // @synthesize stopOnSuccess=_stopOnSuccess;
 @property(nonatomic) long long useCase; // @synthesize useCase=_useCase;
@@ -27,7 +28,6 @@
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(retain, nonatomic) NSNumber *userID; // @synthesize userID=_userID;
 @property(nonatomic) long long purpose; // @synthesize purpose=_purpose;
-- (void).cxx_destruct;
 - (void)statusMessage:(unsigned int)arg1 client:(unsigned long long)arg2;
 - (void)matchResult:(id)arg1 details:(id)arg2 client:(unsigned long long)arg3;
 - (id)matchResultInfoWithServerIdentity:(id)arg1 details:(id)arg2;

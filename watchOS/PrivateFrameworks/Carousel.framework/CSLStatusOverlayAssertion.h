@@ -20,11 +20,11 @@
     NSXPCConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(readonly, nonatomic) NSString *statusString; // @synthesize statusString=_statusString;
 @property(nonatomic) __weak id <CSLStatusOverlayAssertionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_queue_setStatusString:(id)arg1;
 - (oneway void)setStatusString:(id)arg1;
 - (oneway void)acquireWithStatusString:(id)arg1 completion:(CDUnknownBlockType)arg2;

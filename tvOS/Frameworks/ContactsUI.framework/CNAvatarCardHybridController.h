@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     UIAlertController *_alertController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIAlertController *alertController; // @synthesize alertController=_alertController;
 @property(retain, nonatomic) CNAvatarCardViewController *cardViewController; // @synthesize cardViewController=_cardViewController;
-- (void).cxx_destruct;
 - (id)preparedViewControllerForPresentationWithGestureRecognizer:(id)arg1;
 - (void)_didBeginSystemProvidedPresentationOfAlertController:(id)arg1;
 - (void)_willBeginSystemProvidedPresentationOfAlertController:(id)arg1;

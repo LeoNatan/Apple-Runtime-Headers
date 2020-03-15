@@ -26,10 +26,10 @@
 + (id)frameWithPAStyleSerializedFrame:(const CDStruct_1a4856f2 *)arg1;
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_f51ef38d *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property(retain) id childFrameOrFrames; // @synthesize childFrameOrFrames=_childFrameOrFrames;
 @property(retain) SAFrame *parentFrame; // @synthesize parentFrame=_parentFrame;
 @property unsigned long long address; // @synthesize address=_address;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (void)_addChildFrame:(id)arg1;
 @property(readonly) unsigned long long hash;
@@ -44,9 +44,9 @@
 @property(retain) SAInstruction *instruction;
 - (void)writeJSONDictionaryEntriesToStream:(id)arg1;
 - (void)populateReferencesUsingPAStyleSerializedFrame:(const CDStruct_1a4856f2 *)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
-- (void)populateReferencesUsingBuffer:(CDStruct_f51ef38d *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(struct NSMutableDictionary *)arg3 andDataBufferDictionary:(struct NSMutableDictionary *)arg4;
+- (void)populateReferencesUsingBuffer:(CDStruct_f51ef38d *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(id)arg3 andDataBufferDictionary:(id)arg4;
 - (void)addSelfToSerializationDictionary:(id)arg1;
-- (BOOL)addSelfToBuffer:(CDStruct_f51ef38d *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg3;
+- (BOOL)addSelfToBuffer:(CDStruct_f51ef38d *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(id)arg3;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 
 // Remaining properties

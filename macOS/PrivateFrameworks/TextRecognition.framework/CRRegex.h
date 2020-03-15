@@ -13,8 +13,8 @@
     NSArray *_supportedRegularExpressions;
 }
 
-@property(retain, nonatomic) NSArray *supportedRegularExpressions; // @synthesize supportedRegularExpressions=_supportedRegularExpressions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *supportedRegularExpressions; // @synthesize supportedRegularExpressions=_supportedRegularExpressions;
 - (BOOL)stringMatchesRegex:(id)arg1;
 - (id)init;
 

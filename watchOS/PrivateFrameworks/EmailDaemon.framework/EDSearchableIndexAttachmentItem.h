@@ -29,6 +29,7 @@
 + (id)attachmentPersistentIDFromItemIdentifier:(id)arg1;
 + (id)identifierForAttachmentPersistentID:(id)arg1;
 + (id)log;
+- (void).cxx_destruct;
 @property(nonatomic) double searchableItemProcessingDelay; // @synthesize searchableItemProcessingDelay=_searchableItemProcessingDelay;
 @property(nonatomic) _Bool requiresPreprocessing; // @synthesize requiresPreprocessing=_requiresPreprocessing;
 @property(retain, nonatomic) EFPromise *attributeSetForFilePromise; // @synthesize attributeSetForFilePromise=_attributeSetForFilePromise;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) unsigned long long itemInstantiationTime; // @synthesize itemInstantiationTime=_itemInstantiationTime;
 @property(retain, nonatomic) NSData *underlyingData; // @synthesize underlyingData=_underlyingData;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldExcludeFromIndex;
 @property(readonly, nonatomic) _Bool alwaysMarkAsIndexed;
 - (void)setNeedsAllAttributesIndexingType;

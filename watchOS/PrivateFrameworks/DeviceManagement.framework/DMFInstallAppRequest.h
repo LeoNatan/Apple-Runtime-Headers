@@ -19,10 +19,10 @@
 + (_Bool)isPermittedOnUserConnection;
 + (_Bool)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property(nonatomic) _Bool allowFreePurchases; // @synthesize allowFreePurchases=_allowFreePurchases;
 @property(nonatomic) unsigned int licenseType; // @synthesize licenseType=_licenseType;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

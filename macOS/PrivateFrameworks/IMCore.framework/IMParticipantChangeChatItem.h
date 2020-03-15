@@ -14,9 +14,9 @@
     IMHandle *_otherHandle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IMHandle *otherHandle; // @synthesize otherHandle=_otherHandle;
 @property(readonly, nonatomic) IMHandle *sender; // @synthesize sender=_sender;
-- (void).cxx_destruct;
 - (id)_initWithItem:(id)arg1 sender:(id)arg2 otherHandle:(id)arg3;
 @property(readonly, nonatomic) long long changeType;
 - (id)copyWithZone:(struct _NSZone *)arg1;

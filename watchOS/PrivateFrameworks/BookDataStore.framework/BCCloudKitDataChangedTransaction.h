@@ -14,8 +14,8 @@
 }
 
 + (id)transactionNameForEntityName:(id)arg1;
-@property(copy, nonatomic) NSString *notificationName; // @synthesize notificationName=_notificationName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *notificationName; // @synthesize notificationName=_notificationName;
 - (double)coalescingDelay;
 - (void)performWorkWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithEntityName:(id)arg1 notificationName:(id)arg2 delegate:(id)arg3;

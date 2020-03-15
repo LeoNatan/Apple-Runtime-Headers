@@ -31,6 +31,7 @@
 }
 
 + (_Bool)_participantShouldBeUsedForAutocomplete:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(retain, nonatomic) NSString *foundInBundleID; // @synthesize foundInBundleID=_foundInBundleID;
 @property(retain, nonatomic) EKSuggestedEventInfo *suggestionInfo; // @synthesize suggestionInfo=_suggestionInfo;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithUniqueID:(id)arg1;

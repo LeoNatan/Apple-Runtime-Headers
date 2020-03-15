@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <CNChangeHistoryEventVisitor> _visitor;
 }
 
-@property(readonly, nonatomic) id <CNChangeHistoryEventVisitor> visitor; // @synthesize visitor=_visitor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <CNChangeHistoryEventVisitor> visitor; // @synthesize visitor=_visitor;
 - (void)visitPreferredContactForImageEvent:(id)arg1;
 - (void)visitPreferredContactForNameEvent:(id)arg1;
 - (void)visitUnlinkContactEvent:(id)arg1;

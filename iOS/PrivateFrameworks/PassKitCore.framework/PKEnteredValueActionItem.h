@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *serviceProviderData; // @synthesize serviceProviderData=_serviceProviderData;
 @property(readonly, copy, nonatomic) NSString *currency; // @synthesize currency=_currency;
 @property(readonly, nonatomic) _Bool maxAmountIncludesLocalBalance; // @synthesize maxAmountIncludesLocalBalance=_maxAmountIncludesLocalBalance;
@@ -33,7 +34,6 @@
 @property(readonly, copy, nonatomic) NSDecimalNumber *minLoadedBalance; // @synthesize minLoadedBalance=_minLoadedBalance;
 @property(readonly, copy, nonatomic) NSDecimalNumber *maxLoadAmount; // @synthesize maxLoadAmount=_maxLoadAmount;
 @property(readonly, copy, nonatomic) NSDecimalNumber *minLoadAmount; // @synthesize minLoadAmount=_minLoadAmount;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDecimalNumber *maxAmount;
 @property(readonly, copy, nonatomic) NSDecimalNumber *minAmount;
 - (void)encodeWithCoder:(id)arg1;

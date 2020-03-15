@@ -23,9 +23,9 @@
     struct __CGEventSource *_eventSource;
 }
 
+- (void).cxx_destruct;
 @property(readonly) struct __CGEventSource *eventSource; // @synthesize eventSource=_eventSource;
 @property(readonly) XCPointerEvent *pointerEvent; // @synthesize pointerEvent=_pointerEvent;
-- (void).cxx_destruct;
 - (unsigned long long)currentKeyboardModifierFlags;
 - (id)pointerEventForInterpolationStep:(id)arg1 error:(id *)arg2;
 @property(readonly, copy) NSNumber *maxInterpolationValue;

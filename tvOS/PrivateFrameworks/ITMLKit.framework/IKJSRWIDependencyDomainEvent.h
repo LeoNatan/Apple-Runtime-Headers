@@ -16,11 +16,11 @@
     NSArray *_params;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *params; // @synthesize params=_params;
 @property(readonly, nonatomic) __weak IKJSRWIDependencyDomain *domain; // @synthesize domain=_domain;
 @property(readonly, nonatomic) NSString *purpose; // @synthesize purpose=_purpose;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (_Bool)isValidWithError:(id *)arg1;
 - (id)eventImplementationStringWithSoftLinking:(_Bool)arg1;
 - (id)_eventInterfaceStringForImplementation:(_Bool)arg1;

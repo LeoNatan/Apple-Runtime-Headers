@@ -22,11 +22,11 @@
 + (id)nrgIconVariants;
 + (id)_iconVariant:(int)arg1 fromURL:(id)arg2;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *iconCacheQueue; // @synthesize iconCacheQueue=_iconCacheQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property _Bool connectionMayBeValid; // @synthesize connectionMayBeValid=_connectionMayBeValid;
 @property(retain, nonatomic) NSXPCConnection *nrgdConnection; // @synthesize nrgdConnection=_nrgdConnection;
-- (void).cxx_destruct;
 - (void)getCachedIconForBundleID:(id)arg1 iconVariant:(int)arg2 outIconImage:(id *)arg3 queue:(id)arg4 updateBlock:(CDUnknownBlockType)arg5 timeout:(double)arg6;
 - (void)getCachedIconForBundleID:(id)arg1 iconVariant:(int)arg2 outIconImage:(id *)arg3 updateBlock:(CDUnknownBlockType)arg4;
 - (id)_getCachedIconForBundleID:(id)arg1 iconVariant:(int)arg2;

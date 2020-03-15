@@ -18,11 +18,11 @@
     NSObject<OS_os_activity> *_activity;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_os_activity> *activity; // @synthesize activity=_activity;
 @property(retain, nonatomic) NSString *stickyApplicationBundleIdentifier; // @synthesize stickyApplicationBundleIdentifier=_stickyApplicationBundleIdentifier;
 @property(retain, nonatomic) NSString *topApplicationBundleIdentifier; // @synthesize topApplicationBundleIdentifier=_topApplicationBundleIdentifier;
 @property(nonatomic) _Bool skipEvaluation; // @synthesize skipEvaluation=_skipEvaluation;
-- (void).cxx_destruct;
 - (void)_begin;
 - (id)initWithDelegate:(id)arg1;
 

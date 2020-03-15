@@ -23,10 +23,10 @@
 }
 
 + (id)defaultManager;
+- (void).cxx_destruct;
 @property(readonly) NSURL *delegateThemeManagerStagingPath; // @synthesize delegateThemeManagerStagingPath=_delegateThemeManagerStagingPath;
 @property(readonly) NSArray *sources; // @synthesize sources=_sources;
 @property(nonatomic) __weak id <KHThemeManagerPathSourceProtocol> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)watchDirectoriesForThemeManager:(id)arg1;
 - (void)_discoverDelegates;
 - (id)bundleForIdentifier:(id)arg1;

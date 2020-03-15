@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
+@class NSMutableDictionary;
 @protocol OS_dispatch_queue;
 
 @interface NUSchemaRegistry : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
-    struct NSMutableDictionary *_schemas;
-    struct NSMutableDictionary *_versions;
+    NSMutableDictionary *_schemas;
+    NSMutableDictionary *_versions;
 }
 
 + (id)sharedRegistry;

@@ -21,8 +21,8 @@
     IKAppPlayerBridge *_bridge;
 }
 
-@property(readonly, nonatomic) IKAppPlayerBridge *bridge; // @synthesize bridge=_bridge;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IKAppPlayerBridge *bridge; // @synthesize bridge=_bridge;
 - (_Bool)_timedMetadataDidChangeWithExtraInfo:(id)arg1;
 - (void)_removeManagedReference;
 - (void)_addManagedReference;

@@ -14,8 +14,7 @@
 {
 }
 
-- (void)pushValue:(double)arg1 forDistributionKey:(id)arg2;
-- (void)addValue:(long long)arg1 forScalarKey:(id)arg2;
+- (void)sendEvent:(id)arg1 dictionary:(CDUnknownBlockType)arg2;
 - (void)postDarwinNotification:(id)arg1;
 
 // Remaining properties

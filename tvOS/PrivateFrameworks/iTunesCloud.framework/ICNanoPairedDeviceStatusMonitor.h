@@ -19,8 +19,8 @@
 }
 
 + (id)sharedMonitor;
-@property(nonatomic) _Bool isInitialSyncComplete; // @synthesize isInitialSyncComplete=_isInitialSyncComplete;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool isInitialSyncComplete; // @synthesize isInitialSyncComplete=_isInitialSyncComplete;
 - (id)_allObservers;
 @property(readonly, nonatomic, getter=isMediaSyncingSupported) _Bool mediaSyncingSupported;
 @property(readonly, copy, nonatomic) NSArray *allPairedDevicePairingIDs;

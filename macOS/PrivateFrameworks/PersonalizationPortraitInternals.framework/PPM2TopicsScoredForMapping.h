@@ -17,22 +17,21 @@
     unsigned int _resultSizeLog10;
     BOOL _error;
     BOOL _exclusionSpec;
+    BOOL _limitHit;
     BOOL _timeLimited;
-    struct {
-        unsigned int resultSizeLog10:1;
-        unsigned int error:1;
-        unsigned int exclusionSpec:1;
-        unsigned int timeLimited:1;
-    } _has;
+    BOOL _timeSpec;
+    CDStruct_68ee747f _has;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) BOOL limitHit; // @synthesize limitHit=_limitHit;
+@property(nonatomic) BOOL timeSpec; // @synthesize timeSpec=_timeSpec;
 @property(nonatomic) BOOL error; // @synthesize error=_error;
 @property(nonatomic) BOOL exclusionSpec; // @synthesize exclusionSpec=_exclusionSpec;
 @property(nonatomic) BOOL timeLimited; // @synthesize timeLimited=_timeLimited;
 @property(nonatomic) unsigned int resultSizeLog10; // @synthesize resultSizeLog10=_resultSizeLog10;
 @property(retain, nonatomic) NSString *mappingId; // @synthesize mappingId=_mappingId;
 @property(retain, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -42,6 +41,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasLimitHit;
+@property(nonatomic) BOOL hasTimeSpec;
 @property(nonatomic) BOOL hasError;
 @property(nonatomic) BOOL hasExclusionSpec;
 @property(nonatomic) BOOL hasTimeLimited;

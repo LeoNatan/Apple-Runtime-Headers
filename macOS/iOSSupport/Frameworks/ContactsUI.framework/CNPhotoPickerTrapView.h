@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_constraints;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

@@ -16,8 +16,8 @@
     FPQueryEnumerationSettings *_settings;
 }
 
-@property(readonly, nonatomic) FPQueryEnumerationSettings *settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) FPQueryEnumerationSettings *settings; // @synthesize settings=_settings;
 - (unsigned long long)hash;
 - (_Bool)isEqualToItemQueryDescriptor:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

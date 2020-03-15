@@ -15,10 +15,10 @@
     NSArray *_fetchResponseChanges;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *fetchResponseChanges; // @synthesize fetchResponseChanges=_fetchResponseChanges;
 @property(copy, nonatomic) NSArray *fetchResponses; // @synthesize fetchResponses=_fetchResponses;
 @property(nonatomic) long long fetchReason; // @synthesize fetchReason=_fetchReason;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithFetchReason:(long long)arg1 fetchResponses:(id)arg2;
 - (id)init;

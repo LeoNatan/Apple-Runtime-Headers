@@ -21,6 +21,7 @@
 }
 
 + (id)sharedUIDialogPresenter;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *notificationSem; // @synthesize notificationSem=_notificationSem;
 @property(nonatomic) _Bool peerDeviceAcceptedSelection; // @synthesize peerDeviceAcceptedSelection=_peerDeviceAcceptedSelection;
 @property(nonatomic) _Bool selectedByPeerDevice; // @synthesize selectedByPeerDevice=_selectedByPeerDevice;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) id currentContext; // @synthesize currentContext=_currentContext;
 @property(nonatomic) struct __CFUserNotification *currentNotification; // @synthesize currentNotification=_currentNotification;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
 - (_Bool)_presentDialogWithInfo:(id)arg1 options:(unsigned long long)arg2 targetResponse:(unsigned long long)arg3 textField:(id *)arg4 withContext:(id)arg5;
 - (_Bool)_presentDialogWithInfo:(id)arg1 options:(unsigned long long)arg2 textField:(id *)arg3 withContext:(id)arg4;
 - (_Bool)_presentDialogWithInfo:(id)arg1 options:(unsigned long long)arg2 targetResponse:(unsigned long long)arg3 textField:(id *)arg4 withContext:(id)arg5 selectedByPeerDevice:(_Bool *)arg6 timeout:(double)arg7;

@@ -14,9 +14,9 @@
     struct _opaque_pthread_mutex_t _lock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dictionary; // @synthesize dictionary=_dictionary;
 @property(nonatomic) struct _opaque_pthread_mutex_t lock; // @synthesize lock=_lock;
-- (void).cxx_destruct;
 - (void)enumerateKeysAndObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)removeObjectForKey:(id)arg1;
 - (void)removeAllObjects;

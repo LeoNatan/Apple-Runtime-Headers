@@ -18,12 +18,12 @@
     NSTimer *_timer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) TVMusicRoundProgressView *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) TVImageView *adImageView; // @synthesize adImageView=_adImageView;
 @property(retain, nonatomic) id <TVPPlayback> player; // @synthesize player=_player;
 @property(readonly, copy, nonatomic) NSURL *adImageURL; // @synthesize adImageURL=_adImageURL;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setAdImageProxy:(id)arg1;
 - (void)_updateProgressView;

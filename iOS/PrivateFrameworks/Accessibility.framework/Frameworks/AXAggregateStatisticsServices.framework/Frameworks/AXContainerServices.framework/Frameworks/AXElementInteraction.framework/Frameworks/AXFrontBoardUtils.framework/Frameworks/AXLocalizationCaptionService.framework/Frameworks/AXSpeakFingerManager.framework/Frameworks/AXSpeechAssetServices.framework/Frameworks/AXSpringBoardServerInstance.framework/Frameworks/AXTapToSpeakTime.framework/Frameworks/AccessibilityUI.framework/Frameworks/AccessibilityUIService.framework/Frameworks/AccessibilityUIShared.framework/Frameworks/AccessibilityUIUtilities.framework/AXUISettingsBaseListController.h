@@ -14,9 +14,9 @@
     NSArray *_detailItems;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool detailItemsHidden; // @synthesize detailItemsHidden=_detailItemsHidden;
 @property(retain, nonatomic) NSArray *detailItems; // @synthesize detailItems=_detailItems;
-- (void).cxx_destruct;
 - (void)showController:(id)arg1 withSpecifier:(id)arg2;
 - (id)cellForSpecifier:(id)arg1;
 - (id)specifierForIndexPath:(id)arg1;

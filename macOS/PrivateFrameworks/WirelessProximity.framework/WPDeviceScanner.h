@@ -17,11 +17,11 @@
     NSMutableDictionary *_activeScans;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL anyScanResultsRequested; // @synthesize anyScanResultsRequested=_anyScanResultsRequested;
 @property(retain, nonatomic) NSMutableDictionary *activeScans; // @synthesize activeScans=_activeScans;
 @property(retain, nonatomic) NSMutableArray *liveDevices; // @synthesize liveDevices=_liveDevices;
 @property(nonatomic) __weak id <WPDeviceScannerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)timerFinished:(id)arg1;
 - (void)scanningFailedToStart:(id)arg1 ofType:(unsigned char)arg2;
 - (void)scanningStoppedOfType:(unsigned char)arg1;

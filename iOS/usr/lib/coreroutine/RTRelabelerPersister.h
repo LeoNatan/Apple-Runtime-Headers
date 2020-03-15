@@ -22,6 +22,7 @@
 }
 
 + (id)locationFromAggregateVisits:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RTRelabelerPersisterParameters *relabelerPersisterParameters; // @synthesize relabelerPersisterParameters=_relabelerPersisterParameters;
 @property(readonly, nonatomic) RTRelabelerParameters *relabelerParameters; // @synthesize relabelerParameters=_relabelerParameters;
 @property(readonly, nonatomic) NSMutableDictionary *loiIdentifierToUnconcreteMap; // @synthesize loiIdentifierToUnconcreteMap=_loiIdentifierToUnconcreteMap;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) RTDistanceCalculator *distanceCalculator; // @synthesize distanceCalculator=_distanceCalculator;
 @property(retain, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) RTRelabelerPersisterMetrics *metrics; // @synthesize metrics=_metrics;
-- (void).cxx_destruct;
 - (void)logLocalStoreWithReason:(id)arg1;
 - (_Bool)saveWithError:(id *)arg1;
 - (_Bool)consolidateVisitsToLoisWithKnownPlaceTypesWithError:(id *)arg1;
@@ -48,20 +48,20 @@
 - (_Bool)iterativelyCollapseOverlappingRevGeoLOIsWithError:(id *)arg1;
 - (_Bool)cleanUpWithError:(id *)arg1;
 - (_Bool)combineOverlappingRevGeoLOIsStabilized:(_Bool *)arg1 error:(id *)arg2;
-- (_Bool)useRelabeledInferredMapItem:(id)arg1 oldCandidate:(struct RTPair *)arg2 associate:(_Bool)arg3 error:(id *)arg4;
-- (_Bool)associatePlaceholderRelabeledInferredMapItem:(id)arg1 oldCandidate:(struct RTPair *)arg2 error:(id *)arg3;
+- (_Bool)useRelabeledInferredMapItem:(id)arg1 oldCandidate:(id)arg2 associate:(_Bool)arg3 error:(id *)arg4;
+- (_Bool)associatePlaceholderRelabeledInferredMapItem:(id)arg1 oldCandidate:(id)arg2 error:(id *)arg3;
 - (_Bool)uuidConflicts:(id)arg1 context:(id)arg2 error:(id *)arg3;
 - (id)rollUUIDGivenUUID:(id)arg1;
 - (id)rollLOIIdentifier:(id)arg1 context:(id)arg2 error:(id *)arg3;
-- (_Bool)associateNonPlaceholderRelabeledInferredMapItem:(id)arg1 oldCandidate:(struct RTPair *)arg2 error:(id *)arg3;
-- (_Bool)unassociateOldCandidate:(struct RTPair *)arg1 error:(id *)arg2;
+- (_Bool)associateNonPlaceholderRelabeledInferredMapItem:(id)arg1 oldCandidate:(id)arg2 error:(id *)arg3;
+- (_Bool)unassociateOldCandidate:(id)arg1 error:(id *)arg2;
 - (_Bool)resnapVisitsWithError:(id *)arg1;
 - (double)scoreLOIMO:(id)arg1;
 - (double)scoreVisitMO:(id)arg1;
 - (_Bool)untrustedVisitMO:(id)arg1;
 - (_Bool)performBlock:(CDUnknownBlockType)arg1 error:(id *)arg2;
-- (_Bool)restoreToOldCandidate:(struct RTPair *)arg1 error:(id *)arg2;
-- (_Bool)restoreVisit:(id)arg1 transitions:(id)arg2 toOldCandidate:(struct RTPair *)arg3 error:(id *)arg4;
+- (_Bool)restoreToOldCandidate:(id)arg1 error:(id *)arg2;
+- (_Bool)restoreVisit:(id)arg1 transitions:(id)arg2 toOldCandidate:(id)arg3 error:(id *)arg4;
 - (id)learnedPlaceForVisit:(id)arg1 creationDate:(id)arg2 expirationDate:(id)arg3 context:(id)arg4 error:(id *)arg5;
 - (id)fetchRevGeoLearnedPlaceInVicinityOfLocation:(id)arg1 error:(id *)arg2;
 - (id)fetchLearnedPlaceMOforMapItemIdentifier:(id)arg1 error:(id *)arg2;

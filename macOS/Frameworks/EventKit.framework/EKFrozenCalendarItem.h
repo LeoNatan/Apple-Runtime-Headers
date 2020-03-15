@@ -63,6 +63,7 @@
 + (id)propertiesUnavailableForPartialObjects;
 + (id)frozenObjectForObject:(id)arg1 createPartialObject:(BOOL)arg2 preFrozenRelationshipObjects:(id)arg3 forceUpdate:(BOOL)arg4;
 + (Class)meltedClass;
+- (void).cxx_destruct;
 @property(readonly) NSCalendar *cachedCalendar; // @synthesize cachedCalendar=_cachedCalendar;
 @property(readonly) NSDictionary *cachedPreFrozenRelationshipObjects; // @synthesize cachedPreFrozenRelationshipObjects=_cachedPreFrozenRelationshipObjects;
 @property(readonly) NSDate *cachedAdjustedStartDate; // @synthesize cachedAdjustedStartDate=_cachedAdjustedStartDate;
@@ -107,7 +108,6 @@
 @property(readonly, nonatomic) BOOL cachedHasAttachment; // @synthesize cachedHasAttachment=_cachedHasAttachment;
 @property(readonly, nonatomic) BOOL cachedHasAttendee; // @synthesize cachedHasAttendee=_cachedHasAttendee;
 @property(readonly, nonatomic) BOOL cachedHasAlarm; // @synthesize cachedHasAlarm=_cachedHasAlarm;
-- (void).cxx_destruct;
 - (BOOL)isPropertyUnavailable:(id)arg1;
 @property(readonly, copy, nonatomic) NSDate *startDate;
 - (id)_nsCalendar;

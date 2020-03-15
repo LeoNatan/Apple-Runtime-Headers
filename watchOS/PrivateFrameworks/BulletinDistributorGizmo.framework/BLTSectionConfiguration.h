@@ -13,8 +13,8 @@
     BLTSectionIdentifierMapper *_sectionIDMapper;
 }
 
-@property(retain, nonatomic) BLTSectionIdentifierMapper *sectionIDMapper; // @synthesize sectionIDMapper=_sectionIDMapper;
 - (void).cxx_destruct;
+@property(retain, nonatomic) BLTSectionIdentifierMapper *sectionIDMapper; // @synthesize sectionIDMapper=_sectionIDMapper;
 - (unsigned int)coordinationTypeForSectionID:(id)arg1 subtype:(int)arg2 category:(id)arg3;
 
 @end

@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 + (id)customButtonTarget;
 + (void)setCustomButtonTarget:(id)arg1;
 + (void)setBundleToSearch:(id)arg1;
-@property(nonatomic) __weak NSSet *_customButtons; // @synthesize _customButtons;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSSet *_customButtons; // @synthesize _customButtons;
 - (id)_createGroupBoxForChildGrid:(id)arg1 title:(id)arg2 footer:(id)arg3;
 - (void)_insertRadioGroupForItem:(id)arg1 label:(id)arg2 intoGrid:(id)arg3 bundle:(id)arg4 stringsTable:(id)arg5 optionalFooter:(id)arg6;
 - (id)_createDescriptionLabelWithString:(id)arg1;

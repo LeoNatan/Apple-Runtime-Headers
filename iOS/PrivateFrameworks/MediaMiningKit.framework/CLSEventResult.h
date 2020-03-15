@@ -15,9 +15,9 @@
 }
 
 + (id)eventResultWithEvent:(id)arg1 andConfidence:(float)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) float confidence; // @synthesize confidence=_confidence;
 @property(retain, nonatomic) CLSEvent *event; // @synthesize event=_event;
-- (void).cxx_destruct;
 - (id)description;
 - (void)mergeWithResult:(id)arg1;
 - (_Bool)isSameEventAsResult:(id)arg1;

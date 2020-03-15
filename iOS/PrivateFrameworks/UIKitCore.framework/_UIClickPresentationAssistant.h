@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     _UIStateMachine *_stateMachine;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(copy, nonatomic) CDUnknownBlockType transitionCompletion; // @synthesize transitionCompletion=_transitionCompletion;
 @property(retain, nonatomic) UIView *stashedSuperView; // @synthesize stashedSuperView=_stashedSuperView;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UIClickPresentation *presentation; // @synthesize presentation;
 @property(copy, nonatomic) CDUnknownBlockType lifecycleCompletion; // @synthesize lifecycleCompletion;
 @property(readonly, nonatomic) UIViewPropertyAnimator *presentationAnimator; // @synthesize presentationAnimator=_presentationAnimator;
-- (void).cxx_destruct;
 - (void)_createPropertyAnimatorIfNecessaryForTransition:(id)arg1 isAppearing:(_Bool)arg2;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

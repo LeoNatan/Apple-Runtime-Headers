@@ -17,10 +17,10 @@
 }
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *selectionQueue; // @synthesize selectionQueue=_selectionQueue;
 @property(readonly, nonatomic) NSMutableArray *internalSelections; // @synthesize internalSelections=_internalSelections;
 @property(readonly, nonatomic) NSMapTable *flagsByObservers; // @synthesize flagsByObservers=_flagsByObservers;
-- (void).cxx_destruct;
 - (void)_deselectAllObjects;
 - (void)deselectAllObjects;
 - (void)_deselectObjects:(id)arg1;

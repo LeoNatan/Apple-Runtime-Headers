@@ -17,11 +17,11 @@
     id <FCNewsAppConfigurationManager><FCCoreConfigurationManager> _appConfigurationManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <FCNewsAppConfigurationManager><FCCoreConfigurationManager> appConfigurationManager; // @synthesize appConfigurationManager=_appConfigurationManager;
 @property(copy, nonatomic) CDUnknownBlockType submissionCompletion; // @synthesize submissionCompletion=_submissionCompletion;
 @property(copy, nonatomic) CDUnknownBlockType handoffCompletion; // @synthesize handoffCompletion=_handoffCompletion;
 @property(copy, nonatomic) NSArray *envelopes; // @synthesize envelopes=_envelopes;
-- (void).cxx_destruct;
 - (void)operationDidFinishWithError:(id)arg1;
 - (void)performOperation;
 - (_Bool)validateOperation;

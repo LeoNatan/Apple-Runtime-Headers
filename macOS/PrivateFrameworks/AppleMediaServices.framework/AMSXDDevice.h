@@ -20,9 +20,9 @@
 + (id)deviceFromIdentifier:(id)arg1;
 + (id)allPairedDevices;
 + (id)activePairedDevices;
+- (void).cxx_destruct;
 @property long long type; // @synthesize type=_type;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly) NSDictionary *JSONDictionary;

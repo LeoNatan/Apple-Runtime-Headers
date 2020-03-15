@@ -18,8 +18,8 @@
 + (void)useRemoteProxy;
 + (void)useLocalProxy;
 + (void)useProxy:(Class)arg1;
-@property(readonly, nonatomic) id <GEOSearchAttributionServerProxy> serverProxy; // @synthesize serverProxy=_serverProxy;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <GEOSearchAttributionServerProxy> serverProxy; // @synthesize serverProxy=_serverProxy;
 - (void)loadAttributionInfoForIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)init;
 

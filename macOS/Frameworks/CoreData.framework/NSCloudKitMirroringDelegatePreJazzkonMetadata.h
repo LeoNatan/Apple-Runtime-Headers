@@ -24,11 +24,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)allDefaultsKeys;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *keyToPreviousServerChangeToken; // @synthesize keyToPreviousServerChangeToken=_keyToPreviousServerChangeToken;
 @property(readonly, nonatomic) BOOL hasChanges; // @synthesize hasChanges=_hasChanges;
 @property(readonly, nonatomic) BOOL loaded; // @synthesize loaded=_loaded;
 @property(readonly, nonatomic) __weak NSPersistentStore *store; // @synthesize store=_store;
-- (void).cxx_destruct;
 - (id)_keyForDatabaseScope:(long long)arg1;
 - (id)_keyForDatabase:(id)arg1;
 - (id)_keyForZoneName:(id)arg1 owner:(id)arg2 databseScope:(long long)arg3;

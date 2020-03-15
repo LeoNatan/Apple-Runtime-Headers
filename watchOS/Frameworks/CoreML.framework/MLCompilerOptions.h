@@ -16,10 +16,10 @@
 }
 
 + (id)defaultOptions;
+- (void).cxx_destruct;
 @property(retain) NSString *platformVersion; // @synthesize platformVersion=_platformVersion;
 @property(retain) NSString *platform; // @synthesize platform=_platform;
 @property _Bool dryRun; // @synthesize dryRun=_dryRun;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

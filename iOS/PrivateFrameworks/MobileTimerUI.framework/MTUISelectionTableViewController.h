@@ -17,11 +17,11 @@
     NSIndexPath *_parentIndexPath;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsNone; // @synthesize allowsNone=_allowsNone;
 @property(retain, nonatomic) NSIndexPath *parentIndexPath; // @synthesize parentIndexPath=_parentIndexPath;
 @property(nonatomic) __weak id <MTUISelectionTableViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *selectionData; // @synthesize selectionData=_selectionData;
-- (void).cxx_destruct;
 - (void)deselectRowsExcluding:(unsigned long long)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

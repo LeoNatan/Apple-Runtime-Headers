@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     NSArray *_thumbnails;
 }
 
-@property(readonly) NSArray *thumbnails; // @synthesize thumbnails=_thumbnails;
 - (void).cxx_destruct;
+@property(readonly) NSArray *thumbnails; // @synthesize thumbnails=_thumbnails;
 - (void)_cancelThumbnailGenerationTimer;
 - (void)_processRequest:(id)arg1;
 - (void)_didCompleteRequest:(id)arg1;

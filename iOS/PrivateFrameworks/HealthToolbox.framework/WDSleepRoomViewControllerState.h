@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     HKValueRange *_visibleRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKValueRange *visibleRange; // @synthesize visibleRange=_visibleRange;
 @property(readonly, nonatomic) long long timeScope; // @synthesize timeScope=_timeScope;
 @property(readonly, nonatomic) unsigned long long contextType; // @synthesize contextType=_contextType;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithContextType:(unsigned long long)arg1 timeScope:(long long)arg2 visibleRange:(id)arg3;

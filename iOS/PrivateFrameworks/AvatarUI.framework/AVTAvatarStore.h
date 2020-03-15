@@ -30,6 +30,7 @@
 + (unsigned long long)maximumNumberOfSavableAvatars;
 + (id)defaultImageGeneratorForEnvironment:(id)arg1;
 + (id)defaultBackendWithWorkQueue:(id)arg1 environment:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <AVTStickerBackend> stickerBackend; // @synthesize stickerBackend=_stickerBackend;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) AVTAvatarRecordImageGenerator *imageGenerator; // @synthesize imageGenerator=_imageGenerator;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *puppetStoreAccessQueue; // @synthesize puppetStoreAccessQueue=_puppetStoreAccessQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *backendAccessQueue; // @synthesize backendAccessQueue=_backendAccessQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
 - (void)deleteRecentStickersForChangeTracker:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)deleteRecentStickersWithAvatarIdentifier:(id)arg1 stickerIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)didUseStickerWithAvatarIdentifier:(id)arg1 stickerIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

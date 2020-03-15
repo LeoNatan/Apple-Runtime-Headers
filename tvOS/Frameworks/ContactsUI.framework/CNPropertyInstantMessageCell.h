@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     id _action;
 }
 
-@property(retain, nonatomic) id action; // @synthesize action=_action;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id action; // @synthesize action=_action;
 - (void)transportButton1Clicked:(id)arg1;
 - (void)updateTransportButtons;
 - (void)performDefaultAction;

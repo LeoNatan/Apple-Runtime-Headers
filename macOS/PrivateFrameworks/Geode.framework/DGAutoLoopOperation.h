@@ -17,9 +17,9 @@
 + (id)attributes;
 + (id)outputKeys;
 + (id)inputKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *flavor; // @synthesize flavor=_flavor;
 @property(copy, nonatomic) NSDictionary *recipe; // @synthesize recipe=_recipe;
-- (void).cxx_destruct;
 - (BOOL)hasLoopingVideoPlayback;
 - (id)settingsDictionary;
 - (BOOL)applySettingsDictionary:(id)arg1;

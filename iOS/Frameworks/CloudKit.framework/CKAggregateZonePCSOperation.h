@@ -15,9 +15,9 @@
     CKRecordZone *_targetZone;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CKRecordZone *targetZone; // @synthesize targetZone=_targetZone;
 @property(copy, nonatomic) NSArray *sourceZoneIDs; // @synthesize sourceZoneIDs=_sourceZoneIDs;
-- (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (_Bool)CKOperationShouldRun:(id *)arg1;
 - (_Bool)hasCKOperationCallbacksSet;

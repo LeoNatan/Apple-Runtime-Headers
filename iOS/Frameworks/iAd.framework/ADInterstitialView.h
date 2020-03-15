@@ -19,11 +19,11 @@
 }
 
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ADDimmerView *dimmerView; // @synthesize dimmerView=_dimmerView;
 @property(retain, nonatomic) ADPrivacyMarker *privacyMarker; // @synthesize privacyMarker=_privacyMarker;
 @property(nonatomic) __weak ADInterstitialAd *interstitialAd; // @synthesize interstitialAd=_interstitialAd;
 @property(nonatomic) struct CGRect dismissButtonRect; // @synthesize dismissButtonRect=_dismissButtonRect;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_privacyButtonWasTapped;
 - (_Bool)enableDimmerView:(id)arg1;

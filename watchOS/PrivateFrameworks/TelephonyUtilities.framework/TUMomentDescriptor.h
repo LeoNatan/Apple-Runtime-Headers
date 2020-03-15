@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSString *photosAssetIdentifier; // @synthesize photosAssetIdentifier=_photosAssetIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *photosAssetIdentifier; // @synthesize photosAssetIdentifier=_photosAssetIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

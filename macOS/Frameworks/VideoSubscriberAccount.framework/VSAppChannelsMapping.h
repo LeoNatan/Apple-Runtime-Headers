@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *channelIDs; // @synthesize channelIDs=_channelIDs;
 @property(copy, nonatomic) NSString *appAdamID; // @synthesize appAdamID=_appAdamID;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

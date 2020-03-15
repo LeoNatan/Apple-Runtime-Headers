@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
 + (BOOL)supportsBSXPCSecureCoding;
 + (BOOL)supportsSecureCoding;
 + (id)identityWithDefinition:(id)arg1 sessionID:(id)arg2 host:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RBSProcessInstance *host; // @synthesize host=_host;
 @property(readonly, copy, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(readonly, nonatomic) RBSXPCServiceDefinition *definition; // @synthesize definition=_definition;
-- (void).cxx_destruct;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

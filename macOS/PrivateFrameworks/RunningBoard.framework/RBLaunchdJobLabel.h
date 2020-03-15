@@ -21,11 +21,11 @@
 + (BOOL)mayMatchStringRepresentation:(id)arg1;
 + (id)labelFromStringRepresentation:(id)arg1;
 + (id)newLabelWithIdentity:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *stringRepresentation; // @synthesize stringRepresentation=_stringRepresentation;
 @property(readonly, nonatomic) unsigned short seed; // @synthesize seed=_seed;
 @property(readonly, copy, nonatomic) RBSProcessIdentity *identity; // @synthesize identity=_identity;
 @property(readonly, copy, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;

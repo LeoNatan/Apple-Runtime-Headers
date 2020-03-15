@@ -25,6 +25,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDAMClientSyncRateConfig *clientSyncRateConfig; // @synthesize clientSyncRateConfig=_clientSyncRateConfig;
 @property(retain, nonatomic) NSNumber *showChoiceScreen; // @synthesize showChoiceScreen=_showChoiceScreen;
 @property(retain, nonatomic) NSNumber *currentDevicesUsed; // @synthesize currentDevicesUsed=_currentDevicesUsed;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSNumber *updateCount; // @synthesize updateCount=_updateCount;
 @property(retain, nonatomic) NSNumber *fullSyncBefore; // @synthesize fullSyncBefore=_fullSyncBefore;
 @property(retain, nonatomic) NSNumber *currentTime; // @synthesize currentTime=_currentTime;
-- (void).cxx_destruct;
 
 @end
 

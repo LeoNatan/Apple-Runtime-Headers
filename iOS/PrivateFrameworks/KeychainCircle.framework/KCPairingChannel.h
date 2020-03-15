@@ -18,6 +18,7 @@
     _Bool _sessionSupportsSOS;
     _Bool _sessionSupportsOctagon;
     unsigned int _counter;
+    unsigned int _acceptorInitialSyncCredentialsFlags;
     KCPairingChannelContext *_peerVersionContext;
     NSXPCConnection *_connection;
     OTControl *_otControl;
@@ -27,9 +28,12 @@
     OTJoiningConfiguration *_joiningConfiguration;
 }
 
++ (id)pairingChannelDecompressData:(id)arg1;
++ (id)pairingChannelCompressData:(id)arg1;
 + (_Bool)isSupportedPlatform;
 + (id)pairingChannelAcceptor:(id)arg1;
 + (id)pairingChannelInitiator:(id)arg1;
+- (void).cxx_destruct;
 @property _Bool sessionSupportsOctagon; // @synthesize sessionSupportsOctagon=_sessionSupportsOctagon;
 @property _Bool sessionSupportsSOS; // @synthesize sessionSupportsSOS=_sessionSupportsSOS;
 @property(nonatomic) _Bool testFailOctagon; // @synthesize testFailOctagon=_testFailOctagon;
@@ -40,12 +44,12 @@
 @property(retain) NSString *contextID; // @synthesize contextID=_contextID;
 @property(retain) OTControl *otControl; // @synthesize otControl=_otControl;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
+@property unsigned int acceptorInitialSyncCredentialsFlags; // @synthesize acceptorInitialSyncCredentialsFlags=_acceptorInitialSyncCredentialsFlags;
 @property _Bool acceptorWillSendInitialSyncCredentials; // @synthesize acceptorWillSendInitialSyncCredentials=_acceptorWillSendInitialSyncCredentials;
 @property unsigned int counter; // @synthesize counter=_counter;
 @property _Bool initiator; // @synthesize initiator=_initiator;
 @property KCPairingChannelContext *peerVersionContext; // @synthesize peerVersionContext=_peerVersionContext;
 @property(readonly) _Bool needInitialSync; // @synthesize needInitialSync=_needInitialSync;
-- (void).cxx_destruct;
 - (void)setSessionSupportsOctagonForTesting:(_Bool)arg1;
 - (void)setOctagonMessageFailForTesting:(_Bool)arg1;
 - (void)setSOSMessageFailForTesting:(_Bool)arg1;
@@ -68,8 +72,6 @@
 - (void)initiatorSecondPacket:(id)arg1 complete:(CDUnknownBlockType)arg2;
 - (void)initiatorFirstPacket:(id)arg1 complete:(CDUnknownBlockType)arg2;
 - (void)attemptSosUpgrade;
-- (id)decompressData:(id)arg1;
-- (id)compressData:(id)arg1;
 - (void)setNextStateError:(id)arg1 complete:(CDUnknownBlockType)arg2;
 - (void)oneStepTooMany:(id)arg1 complete:(CDUnknownBlockType)arg2;
 - (id)initAsInitiator:(_Bool)arg1 version:(id)arg2;

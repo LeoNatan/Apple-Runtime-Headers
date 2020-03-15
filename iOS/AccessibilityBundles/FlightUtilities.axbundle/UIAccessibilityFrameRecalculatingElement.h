@@ -11,8 +11,8 @@
     CDUnknownBlockType _calculateFrame;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType calculateFrame; // @synthesize calculateFrame=_calculateFrame;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType calculateFrame; // @synthesize calculateFrame=_calculateFrame;
 - (void)dealloc;
 - (struct CGRect)accessibilityFrame;
 

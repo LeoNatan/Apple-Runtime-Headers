@@ -50,13 +50,13 @@
 
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUserActivity *currentUserActivity; // @synthesize currentUserActivity=_currentUserActivity;
 @property(readonly, nonatomic) NMUNowPlayingTrackListTableViewController *nowPlayingTrackListTableViewController; // @synthesize nowPlayingTrackListTableViewController=_nowPlayingTrackListTableViewController;
 @property(nonatomic) __weak NMROrigin *currentOrigin; // @synthesize currentOrigin=_currentOrigin;
 @property(retain, nonatomic) NMRNowPlayingState *placeholderNowPlayingState; // @synthesize placeholderNowPlayingState=_placeholderNowPlayingState;
 @property(retain, nonatomic) NSString *placeholderArtworkTemplateImageName; // @synthesize placeholderArtworkTemplateImageName=_placeholderArtworkTemplateImageName;
 @property(nonatomic) __weak id <NMUNowPlayingViewControllerDelegate> nowPlayingTrackTapDelegate; // @synthesize nowPlayingTrackTapDelegate=_nowPlayingTrackTapDelegate;
-- (void).cxx_destruct;
 - (void)_presentTVRemoteViewController;
 - (void)_updateVolumeControllerObservationStatus;
 - (void)_setShouldObserveVolumeChanges:(_Bool)arg1;

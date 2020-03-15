@@ -21,13 +21,13 @@
 
 + (id)history;
 + (id)runningLoggers;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didReachSoftTimeout; // @synthesize didReachSoftTimeout=_didReachSoftTimeout;
 @property(retain, nonatomic) NSTimer *softTimeoutTimer; // @synthesize softTimeoutTimer=_softTimeoutTimer;
 @property(nonatomic) double softTimeoutInterval; // @synthesize softTimeoutInterval=_softTimeoutInterval;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain, nonatomic) NSString *clientDescription; // @synthesize clientDescription=_clientDescription;
 @property(retain, nonatomic) NSObject<OS_os_activity> *loggerActivity; // @synthesize loggerActivity=_loggerActivity;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_handleTimeout:(id)arg1;
 - (void)finish;

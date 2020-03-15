@@ -17,8 +17,8 @@
 + (id)buildWithActivationLockBypassCode:(id)arg1;
 + (id)allowedReasons;
 + (id)allowedStatusKeys;
-@property(copy, nonatomic) NSString *statusActivationLockBypassCode; // @synthesize statusActivationLockBypassCode=_statusActivationLockBypassCode;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *statusActivationLockBypassCode; // @synthesize statusActivationLockBypassCode=_statusActivationLockBypassCode;
 - (id)serializePayload;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 

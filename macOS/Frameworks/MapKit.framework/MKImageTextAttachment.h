@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     MKImageAttachmentCell *_imageAttachmentCell;
 }
 
-@property(nonatomic) double verticalOffset; // @synthesize verticalOffset=_verticalOffset;
 - (void).cxx_destruct;
+@property(nonatomic) double verticalOffset; // @synthesize verticalOffset=_verticalOffset;
 - (id)initWithImage:(id)arg1 verticalOffset:(double)arg2;
 
 @end

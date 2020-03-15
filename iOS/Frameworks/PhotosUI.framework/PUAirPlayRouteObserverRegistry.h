@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSDate *_lastKnownRouteAvailabilityDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastKnownRouteAvailabilityDate; // @synthesize lastKnownRouteAvailabilityDate=_lastKnownRouteAvailabilityDate;
 @property(nonatomic) unsigned long long lastKnownRouteAvailability; // @synthesize lastKnownRouteAvailability=_lastKnownRouteAvailability;
 @property(nonatomic, getter=_isDiscoveryAllowed, setter=_setDiscoveryAllowed:) _Bool _discoveryAllowed; // @synthesize _discoveryAllowed=__discoveryAllowed;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, setter=_setRouteObservers:) NSHashTable *_routeObservers; // @synthesize _routeObservers=__routeObservers;
 @property(nonatomic, setter=_setRouteAvailability:) unsigned long long routeAvailability; // @synthesize routeAvailability=_routeAvailability;
 @property(nonatomic) __weak id <PUAirPlayRouteObserverRegistryDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)_appEnteringForeground:(id)arg1;
 - (void)_appEnteredBackground:(id)arg1;

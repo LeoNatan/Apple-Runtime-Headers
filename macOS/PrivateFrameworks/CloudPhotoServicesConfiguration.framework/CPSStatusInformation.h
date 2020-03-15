@@ -16,9 +16,9 @@
     long long _serviceDataVersion;
 }
 
+- (void).cxx_destruct;
 @property long long serviceDataVersion; // @synthesize serviceDataVersion=_serviceDataVersion;
 @property(retain) NSDictionary *statusInformation; // @synthesize statusInformation=_statusInformation;
-- (void).cxx_destruct;
 - (BOOL)isLegacySharedPhotoStreamEnabled;
 - (BOOL)isLegacyMyPhotoStreamEnabled;
 - (id)legacyStreamApplicationPrefix;

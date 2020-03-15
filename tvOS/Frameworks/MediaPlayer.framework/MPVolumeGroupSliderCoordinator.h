@@ -21,9 +21,9 @@
     MPVolumeSlider *_masterVolumeSlider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool synced; // @synthesize synced=_synced;
 @property(readonly, nonatomic) MPVolumeSlider *masterVolumeSlider; // @synthesize masterVolumeSlider=_masterVolumeSlider;
-- (void).cxx_destruct;
 - (void)_setControlEventsForVolumeSlider:(id)arg1 add:(_Bool)arg2;
 - (void)_removeControlEventsForVolumeSliders:(id)arg1;
 - (void)_removeControlEventsForVolumeSlider:(id)arg1;

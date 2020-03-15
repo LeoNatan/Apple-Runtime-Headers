@@ -15,10 +15,10 @@
     IMService *_composeSendingService;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak IMService *composeSendingService; // @synthesize composeSendingService=_composeSendingService;
 @property(nonatomic) __weak IMService *previousSendingService; // @synthesize previousSendingService=_previousSendingService;
 @property(nonatomic) _Bool noAvailableServices; // @synthesize noAvailableServices=_noAvailableServices;
-- (void).cxx_destruct;
 - (id)deviceIndependentID;
 - (id)uniqueIdentifier;
 - (void)refreshComposeSendingServiceForAddresses:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;

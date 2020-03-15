@@ -13,6 +13,7 @@
 @property(copy, nonatomic) CDUnknownBlockType networkActivityChangeBlock;
 @property(readonly) NSError *error;
 @property(readonly, nonatomic) _Bool isValid;
+@property(readonly, nonatomic) _Bool isConstrained;
 @property(readonly, nonatomic) _Bool isCellularConnection;
 @property(readonly, nonatomic) _Bool isWritable;
 @property(readonly, nonatomic) _Bool isReadable;

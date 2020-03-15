@@ -18,10 +18,10 @@
     NSArray *_devices;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *devices; // @synthesize devices=_devices;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) __weak id <TPSCloudCallingDeviceControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didChangeCloudCallingDevices;
 - (id)init;
 

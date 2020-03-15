@@ -20,13 +20,13 @@
     NSString *_executablePath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *executablePath; // @synthesize executablePath=_executablePath;
 @property(readonly, nonatomic) unsigned long long earliestMCT; // @synthesize earliestMCT=_earliestMCT;
 @property(readonly, nonatomic) unsigned int transactionSeed; // @synthesize transactionSeed=_transactionSeed;
 @property(readonly, nonatomic) unsigned int contextId; // @synthesize contextId=_contextId;
 @property(readonly, nonatomic) unsigned int frameSeed; // @synthesize frameSeed=_frameSeed;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *processName;
 - (id)initWithContextInfoEvent:(id)arg1;
 

@@ -37,6 +37,7 @@
     NSString *_backupUUID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *backupUUID; // @synthesize backupUUID=_backupUUID;
 @property(readonly, nonatomic) NSString *rawLatestBackup; // @synthesize rawLatestBackup=_rawLatestBackup;
 @property(readonly, nonatomic) NSString *deviceQualifiedClass; // @synthesize deviceQualifiedClass=_deviceQualifiedClass;
@@ -62,7 +63,6 @@
 @property(readonly, nonatomic) NSString *model; // @synthesize model=_model;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *deviceID; // @synthesize deviceID=_deviceID;
-- (void).cxx_destruct;
 - (void)updateWithRUIClientInfo:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 

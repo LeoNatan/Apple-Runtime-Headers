@@ -19,8 +19,8 @@
 }
 
 + (double)intrinsicHeight;
-@property(nonatomic) BOOL showsCheckmark; // @synthesize showsCheckmark=_showsCheckmark;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL showsCheckmark; // @synthesize showsCheckmark=_showsCheckmark;
 - (struct CGSize)intrinsicContentSize;
 @property(copy, nonatomic) NSString *detailText;
 @property(copy, nonatomic) NSString *text;

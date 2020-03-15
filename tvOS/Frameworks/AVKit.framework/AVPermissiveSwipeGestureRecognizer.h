@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _currentDigitizerLocation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double timeTouchesBegan; // @synthesize timeTouchesBegan=_timeTouchesBegan;
 @property(retain, nonatomic) _AVPermissiveSwipeGestureDelegate *permissiveDelegate; // @synthesize permissiveDelegate=_permissiveDelegate;
 @property(nonatomic) struct CGPoint currentDigitizerLocation; // @synthesize currentDigitizerLocation=_currentDigitizerLocation;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool transportBarVisibleAtTouchesBegan; // @synthesize transportBarVisibleAtTouchesBegan=_transportBarVisibleAtTouchesBegan;
 @property(nonatomic, getter=isTransportBarVisible) _Bool transportBarVisible; // @synthesize transportBarVisible=_transportBarVisible;
 @property(nonatomic) double minimumRestTimeBeforeSwipe; // @synthesize minimumRestTimeBeforeSwipe=_minimumRestTimeBeforeSwipe;
-- (void).cxx_destruct;
 - (void)_scheduleTouchRestTimeout;
 - (void)_fireTouchRestTimeout;
 - (void)_cancelTouchRestTimeout;

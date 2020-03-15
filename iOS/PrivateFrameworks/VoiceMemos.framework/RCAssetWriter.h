@@ -25,12 +25,12 @@
     NSURL *_url;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long frameCount; // @synthesize frameCount=_frameCount;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) AVAudioFormat *processingFormat; // @synthesize processingFormat=_processingFormat;
 @property(readonly, nonatomic) AVAudioFormat *fileFormat; // @synthesize fileFormat=_fileFormat;
 @property(readonly, nonatomic) NSDictionary *settings; // @synthesize settings=_settings;
-- (void).cxx_destruct;
 - (_Bool)writeFromBuffer:(id)arg1 error:(id *)arg2;
 - (void)finishWritingAudioFile:(CDUnknownBlockType)arg1;
 - (_Bool)_appendBufferOnQueue:(id)arg1 error:(id *)arg2;

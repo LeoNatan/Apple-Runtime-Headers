@@ -13,8 +13,8 @@
     NSColor *_backgroundColor;
 }
 
-@property(retain) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 - (void).cxx_destruct;
+@property(retain) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithBackgroundColor:(id)arg1;
 

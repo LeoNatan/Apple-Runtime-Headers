@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     NSData *_subscriptionJSON;
 }
 
-@property(copy, nonatomic) NSData *subscriptionJSON; // @synthesize subscriptionJSON=_subscriptionJSON;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSData *subscriptionJSON; // @synthesize subscriptionJSON=_subscriptionJSON;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

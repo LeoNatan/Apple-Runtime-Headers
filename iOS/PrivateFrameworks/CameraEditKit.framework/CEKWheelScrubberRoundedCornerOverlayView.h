@@ -15,10 +15,10 @@
     unsigned long long _corners;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long corners; // @synthesize corners=_corners;
 @property(readonly, nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(readonly, nonatomic) UIColor *cornerColor; // @synthesize cornerColor=_cornerColor;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)_setCorners:(unsigned long long)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

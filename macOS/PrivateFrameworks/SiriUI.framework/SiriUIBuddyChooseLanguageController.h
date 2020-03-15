@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     SOSRSimpleLanguagePopUpButton *_languagePopUp;
 }
 
+- (void).cxx_destruct;
 @property __weak SOSRSimpleLanguagePopUpButton *languagePopUp; // @synthesize languagePopUp=_languagePopUp;
 @property __weak NSView *unsupportedLangageContainer; // @synthesize unsupportedLangageContainer=_unsupportedLangageContainer;
 @property __weak NSButton *languageTwoButton; // @synthesize languageTwoButton=_languageTwoButton;
 @property __weak NSButton *languageOneButton; // @synthesize languageOneButton=_languageOneButton;
 @property __weak NSView *ambiguousLangageContainer; // @synthesize ambiguousLangageContainer=_ambiguousLangageContainer;
 @property __weak SiriUIBuddyController *parentController; // @synthesize parentController=_parentController;
-- (void).cxx_destruct;
 @property(readonly) BOOL shouldShowPane;
 - (void)popupSelectionChanged:(id)arg1;
 - (id)selectedRecognitionLanguage;

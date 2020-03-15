@@ -23,10 +23,10 @@
 }
 
 + (id)sharedPreviewController;
+- (void).cxx_destruct;
 @property double extraSpace; // @synthesize extraSpace=_extraSpace;
 @property(retain) NSArray *slices; // @synthesize slices=_slices;
 @property __weak PRSTableView *sliceTable; // @synthesize sliceTable=_sliceTable;
-- (void).cxx_destruct;
 - (void)updateAccessibleChildren;
 - (BOOL)performAccessbilityPressWithRowView:(id)arg1;
 - (void)tableDidMoveToSuperView;

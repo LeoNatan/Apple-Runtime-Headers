@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     BurstClip *_burstClip;
 }
 
-@property(nonatomic) __weak BurstClip *burstClip; // @synthesize burstClip=_burstClip;
 - (void).cxx_destruct;
+@property(nonatomic) __weak BurstClip *burstClip; // @synthesize burstClip=_burstClip;
 @property(readonly, nonatomic) double idealVideoDuration;
 @property(readonly, nonatomic) double minimumVideoDuration;
 @property(readonly, nonatomic) double maximumPhotoDuration;

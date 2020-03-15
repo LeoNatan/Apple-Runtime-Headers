@@ -16,8 +16,8 @@
 + (long long)roundIntegerValue:(long long)arg1;
 + (double)roundDoubleValue:(double)arg1;
 + (id)instrumentationKeyForKey:(id)arg1;
-@property(nonatomic) __weak id <ICAnalyticsReporterAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ICAnalyticsReporterAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 - (id)whitelistedSubkeysForAccessibilityForKey:(id)arg1;
 - (id)whitelistedKeysForAccessibility;
 - (void)setAXVariantValueIfNecessary:(long long)arg1 forKey:(id)arg2;

@@ -22,6 +22,7 @@
 }
 
 + (BOOL)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *addedConstraints; // @synthesize addedConstraints=_addedConstraints;
 @property(nonatomic) struct CGSize previousSize; // @synthesize previousSize=_previousSize;
 @property(nonatomic) BOOL borderControlsHidden; // @synthesize borderControlsHidden=_borderControlsHidden;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) KHSwitch *finishSwitch; // @synthesize finishSwitch=_finishSwitch;
 @property(readonly, nonatomic) UXLabel *layoutAmountLabel; // @synthesize layoutAmountLabel=_layoutAmountLabel;
 @property(readonly, nonatomic) UXLabel *productFamilyLabel; // @synthesize productFamilyLabel=_productFamilyLabel;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)dealloc;

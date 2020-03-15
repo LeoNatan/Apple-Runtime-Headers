@@ -11,8 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (struct CGRect)boundsForView:(struct NSObject *)arg1 inScrollView:(struct NSObject *)arg2;
-- (struct CGRect)visibleRectForScrollView:(struct NSObject *)arg1;
+- (struct CGRect)boundsForView:(id)arg1 inScrollView:(id)arg2;
+- (struct CGRect)visibleRectForScrollView:(id)arg1;
 
 @end
 

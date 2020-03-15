@@ -15,8 +15,8 @@
     SXViewport *_viewport;
 }
 
-@property(readonly, nonatomic) SXViewport *viewport; // @synthesize viewport=_viewport;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SXViewport *viewport; // @synthesize viewport=_viewport;
 - (double)visiblePercentageOfObject:(id)arg1;
 - (id)initWithViewport:(id)arg1;
 

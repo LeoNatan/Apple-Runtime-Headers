@@ -17,9 +17,9 @@
     IMCloudKitHookTestSingleton *_cloudKitHooks;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMCloudKitHookTestSingleton *cloudKitHooks; // @synthesize cloudKitHooks=_cloudKitHooks;
 @property double defaultTestDuration; // @synthesize defaultTestDuration=_defaultTestDuration;
-- (void).cxx_destruct;
 - (void)startTest;
 - (void)cloudKitEventNotificationManager:(id)arg1 syncProgressDidUpdate:(id)arg2;
 - (void)cloudKitEventNotificationManager:(id)arg1 syncStateDidChange:(id)arg2;

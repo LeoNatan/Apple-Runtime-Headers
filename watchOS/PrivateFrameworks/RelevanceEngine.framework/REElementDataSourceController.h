@@ -41,11 +41,11 @@
     id <REElementDataSourceControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <REElementDataSourceControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
 @property(readonly, nonatomic) REElementDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) Class dataSourceClass; // @synthesize dataSourceClass=_dataSourceClass;
-- (void).cxx_destruct;
 - (void)_loadLoggingHeader;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSString *applicationBundleIdentifier;
@@ -82,6 +82,7 @@
 - (void)pause;
 - (void)_queue_resume;
 - (void)resume;
+- (_Bool)_isWhitelisted;
 - (id)_dataSourceIdentifierFromIdentifier:(id)arg1;
 - (id)_elementForIdentifier:(id)arg1;
 - (void)_removeElementForIdentifier:(id)arg1;

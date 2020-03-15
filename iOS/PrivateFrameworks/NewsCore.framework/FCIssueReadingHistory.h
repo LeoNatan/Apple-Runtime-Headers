@@ -29,9 +29,9 @@
 + (_Bool)requiresHighPriorityFirstSync;
 + (_Bool)requiresBatchedSync;
 + (_Bool)requiresPushNotificationSupport;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCMTWriterLock *itemsLock; // @synthesize itemsLock=_itemsLock;
 @property(retain, nonatomic) NSMutableDictionary *itemsByID; // @synthesize itemsByID=_itemsByID;
-- (void).cxx_destruct;
 - (id)_allHistoryItems;
 - (void)_didChangeForIssueIDs:(id)arg1;
 - (void)_addHistoryItems:(id)arg1;

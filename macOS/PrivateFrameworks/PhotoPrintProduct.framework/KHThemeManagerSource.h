@@ -16,9 +16,9 @@
     KHThemeManager *_manager;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak KHThemeManager *manager; // @synthesize manager=_manager;
 @property(retain, nonatomic) NSURL *sourceURL; // @synthesize sourceURL=_sourceURL;
-- (void).cxx_destruct;
 - (id)descriptionForThemeProvider:(id)arg1;
 - (id)titleForThemeProvider:(id)arg1;
 - (BOOL)isThemePreviewValid:(id)arg1;

@@ -23,12 +23,12 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)searchableItemFromUserActivity:(id)arg1 bundleID:(id)arg2;
+- (void).cxx_destruct;
 @property unsigned long long machTime; // @synthesize machTime=_machTime;
 @property BOOL shouldSetSpotlightMailMessageAttributes; // @synthesize shouldSetSpotlightMailMessageAttributes=_shouldSetSpotlightMailMessageAttributes;
 // Error parsing type for property score:
 // Property attributes: TT,V_score
 
-- (void).cxx_destruct;
 - (void)setAttributes:(id)arg1;
 - (id)attributes;
 @property BOOL noIndex;

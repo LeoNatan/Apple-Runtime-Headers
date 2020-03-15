@@ -18,11 +18,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)_allComplicationConfigurationsWithType:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *abbreviation; // @synthesize abbreviation=_abbreviation;
 @property(readonly, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
 @property(readonly, nonatomic) NSString *shortName; // @synthesize shortName=_shortName;
 @property(readonly, nonatomic) NSString *contactID; // @synthesize contactID=_contactID;
-- (void).cxx_destruct;
 - (id)_initWithComplicationType:(unsigned int)arg1 JSONDictionary:(id)arg2;
 - (void)_addKeysToJSONDictionary:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -23,6 +23,7 @@
     double __minimumPreStabilizationDuration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _hasBeenUnstable; // @synthesize _hasBeenUnstable=__hasBeenUnstable;
 @property(nonatomic) BOOL _allowInstabilityBeforeHold; // @synthesize _allowInstabilityBeforeHold=__allowInstabilityBeforeHold;
 @property(nonatomic) double _minimumPreStabilizationDuration; // @synthesize _minimumPreStabilizationDuration=__minimumPreStabilizationDuration;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) AXETrackingTouchEvent *lastTouchEvent; // @synthesize lastTouchEvent=_lastTouchEvent;
 @property(retain, nonatomic) AXETrackingTouchEvent *firstTouchEvent; // @synthesize firstTouchEvent=_firstTouchEvent;
 @property(retain, nonatomic) id <NSObject><NSCopying> identity; // @synthesize identity=_identity;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) double touchDuration;
 - (BOOL)appendTouchEvent:(id)arg1;

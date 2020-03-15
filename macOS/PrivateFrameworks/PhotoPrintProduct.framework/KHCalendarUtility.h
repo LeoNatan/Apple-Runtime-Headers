@@ -27,8 +27,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 - (id)_dateWithDayOfWeek:(unsigned long long)arg1 weekOfMonth:(long long)arg2 forDate:(id)arg3;
 - (id)_dateByAddingDay:(long long)arg1 month:(long long)arg2 year:(long long)arg3 hour:(long long)arg4 minute:(long long)arg5 second:(long long)arg6 forDate:(id)arg7;
 - (id)dateFromCalendarComponents:(id)arg1;

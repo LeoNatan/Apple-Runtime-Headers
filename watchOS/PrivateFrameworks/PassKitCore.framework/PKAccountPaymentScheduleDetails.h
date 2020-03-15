@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *paymentTermsIdentifier; // @synthesize paymentTermsIdentifier=_paymentTermsIdentifier;
 @property(copy, nonatomic) NSDate *scheduledDate; // @synthesize scheduledDate=_scheduledDate;
 @property(nonatomic) int preset; // @synthesize preset=_preset;
 @property(nonatomic) int scheduledDay; // @synthesize scheduledDay=_scheduledDay;
 @property(nonatomic) int frequency; // @synthesize frequency=_frequency;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

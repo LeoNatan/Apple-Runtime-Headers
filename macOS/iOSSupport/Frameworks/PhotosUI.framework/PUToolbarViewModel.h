@@ -19,6 +19,7 @@
     UIViewController *__viewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL needsToUpdateToolbarSize; // @synthesize needsToUpdateToolbarSize=_needsToUpdateToolbarSize;
 @property(nonatomic, setter=_setViewController:) __weak UIViewController *_viewController; // @synthesize _viewController=__viewController;
 @property(nonatomic) double maximumHeight; // @synthesize maximumHeight=_maximumHeight;
@@ -26,7 +27,6 @@
 @property(nonatomic) double accessoryViewTopOutset; // @synthesize accessoryViewTopOutset=_accessoryViewTopOutset;
 @property(retain, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(copy, nonatomic) NSArray *toolbarItems; // @synthesize toolbarItems=_toolbarItems;
-- (void).cxx_destruct;
 - (void)didPublishChanges;
 @property(readonly, nonatomic) PUToolbarViewModelChange *currentChange;
 - (id)newViewModelChange;

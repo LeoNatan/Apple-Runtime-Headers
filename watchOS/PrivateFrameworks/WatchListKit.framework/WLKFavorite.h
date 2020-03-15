@@ -14,9 +14,9 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *id; // @synthesize id=_id;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;

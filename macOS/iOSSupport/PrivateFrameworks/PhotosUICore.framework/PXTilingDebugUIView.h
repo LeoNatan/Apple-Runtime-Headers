@@ -16,8 +16,8 @@
     PXTilingControllerDebugInfo *__debugInfo;
 }
 
-@property(retain, nonatomic, setter=_setDebugInfo:) PXTilingControllerDebugInfo *_debugInfo; // @synthesize _debugInfo=__debugInfo;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setDebugInfo:) PXTilingControllerDebugInfo *_debugInfo; // @synthesize _debugInfo=__debugInfo;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)tilingControllerDidUpdateDebugInfo:(id)arg1;
 - (id)init;

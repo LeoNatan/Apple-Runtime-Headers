@@ -15,9 +15,9 @@
 }
 
 + (id)label;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(nonatomic) _Bool wantsContactImageLayout; // @synthesize wantsContactImageLayout=_wantsContactImageLayout;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSAttributedString *attributedText;
 - (void)clearFilters;
 - (void)addFilter:(id)arg1;

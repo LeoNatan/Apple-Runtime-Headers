@@ -25,10 +25,10 @@
     id <IKJSViewModelLinkDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <IKJSViewModelLinkDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
 @property(retain, nonatomic) IKDOMDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 - (void)_unhandled;
 - (void)close:(id)arg1;
 - (void)cancel;

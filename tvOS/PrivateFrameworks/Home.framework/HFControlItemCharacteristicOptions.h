@@ -17,8 +17,8 @@
 
 + (id)na_identity;
 + (id)optionsWithReadWriteCharacteristicTypes:(id)arg1;
-@property(readonly, copy, nonatomic) NSDictionary *characteristicTypesByUsage; // @synthesize characteristicTypesByUsage=_characteristicTypesByUsage;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *characteristicTypesByUsage; // @synthesize characteristicTypesByUsage=_characteristicTypesByUsage;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;

@@ -12,7 +12,7 @@
 - (NSArray *)rowMetricsForExpectedWidth:(double)arg1 firstItemRowIndex:(long long *)arg2;
 
 @optional
-@property(readonly, nonatomic) _Bool shouldBindRowsTogether;
 - (NSArray *)showcaseRowMetricsForExpectedWidth:(double)arg1;
+@property(nonatomic, readonly) _Bool shouldBindRowsTogether;
 @end
 

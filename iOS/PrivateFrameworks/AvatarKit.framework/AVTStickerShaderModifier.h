@@ -21,12 +21,12 @@
 + (id)entryPointForModifierName:(id)arg1;
 + (id)shaderModifierFromDictionary:(id)arg1 assetsPath:(id)arg2;
 + (id)shaderModifierCache;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool forceDoubleSided; // @synthesize forceDoubleSided=_forceDoubleSided;
 @property(readonly, nonatomic) NSArray *properties; // @synthesize properties=_properties;
 @property(readonly, nonatomic) NSString *data; // @synthesize data=_data;
 @property(readonly, nonatomic) NSString *geometryName; // @synthesize geometryName=_geometryName;
 @property(readonly, nonatomic) NSString *entryPoint; // @synthesize entryPoint=_entryPoint;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)applyToNodeHierarchy:(id)arg1;
 - (_Bool)applyToNode:(id)arg1;

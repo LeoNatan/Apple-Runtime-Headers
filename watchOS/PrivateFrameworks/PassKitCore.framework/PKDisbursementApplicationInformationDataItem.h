@@ -14,8 +14,8 @@
 }
 
 + (int)dataType;
-@property(retain, nonatomic) PKDisbursementApplicationInformation *applicationInformation; // @synthesize applicationInformation=_applicationInformation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKDisbursementApplicationInformation *applicationInformation; // @synthesize applicationInformation=_applicationInformation;
 - (_Bool)isValidWithError:(id *)arg1;
 - (id)initWithModel:(id)arg1;
 

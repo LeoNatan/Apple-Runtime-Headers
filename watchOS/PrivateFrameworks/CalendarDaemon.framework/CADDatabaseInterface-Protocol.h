@@ -16,7 +16,7 @@
 - (void)CADDatabaseRebuildOccurrenceCacheWithReply:(void (^)(int))arg1;
 - (void)CADDatabaseSetShowsDeclinedEvents:(_Bool)arg1 reply:(void (^)(int))arg2;
 - (void)CADDatabaseExportICSDataForCalendarItems:(NSArray *)arg1 preventLineFolding:(_Bool)arg2 reply:(void (^)(int, NSData *))arg3;
-- (void)CADDatabaseImportICSData:(NSArray *)arg1 intoCalendarsWithIDs:(NSArray *)arg2 optionsMask:(unsigned int)arg3 reply:(void (^)(int, NSArray *))arg4;
+- (void)CADDatabaseImportEvents:(NSArray *)arg1 fromICSData:(NSArray *)arg2 intoCalendarsWithIDs:(NSArray *)arg3 optionsMask:(unsigned int)arg4 batchSize:(int)arg5 reply:(void (^)(int, NSArray *))arg6;
 - (void)CADDatabaseGetNextAssignableColorWithReply:(void (^)(int, NSString *))arg1;
 - (void)CADDatabaseGetChangedEntityIDsSinceTimestamp:(double)arg1 reply:(void (^)(int, _Bool, NSArray *, double))arg2;
 - (void)CADDatabaseGetChangesSinceSequenceNumber:(int)arg1 reply:(void (^)(int, NSDictionary *))arg2;

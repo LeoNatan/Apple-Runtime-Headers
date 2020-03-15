@@ -21,12 +21,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CKRecordID *repairZoneRecordID; // @synthesize repairZoneRecordID=_repairZoneRecordID;
 @property(readonly, nonatomic) NSString *fieldName; // @synthesize fieldName=_fieldName;
 @property(readonly, nonatomic) NSString *recordType; // @synthesize recordType=_recordType;
 @property(readonly, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
 @property(readonly, nonatomic) long long databaseScope; // @synthesize databaseScope=_databaseScope;
-- (void).cxx_destruct;
 - (id)description;
 - (id)CKDescriptionPropertiesWithPublic:(BOOL)arg1 private:(BOOL)arg2 shouldExpand:(BOOL)arg3;
 - (BOOL)isEqual:(id)arg1;

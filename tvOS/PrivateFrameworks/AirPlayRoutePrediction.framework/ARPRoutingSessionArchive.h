@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double routingSessionTimeout; // @synthesize routingSessionTimeout=_routingSessionTimeout;
 @property(readonly, nonatomic) NSArray *sessions; // @synthesize sessions=_sessions;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

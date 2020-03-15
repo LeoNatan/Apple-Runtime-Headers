@@ -18,8 +18,8 @@
     PPQuickTypeBroker *_ppBroker;
 }
 
-@property(retain) PPQuickTypeBroker *ppBroker; // @synthesize ppBroker=_ppBroker;
 - (void).cxx_destruct;
+@property(retain) PPQuickTypeBroker *ppBroker; // @synthesize ppBroker=_ppBroker;
 - (void)provideFeedbackForString:(id)arg1 type:(unsigned char)arg2 style:(unsigned char)arg3;
 - (void)hibernate;
 - (void)warmUp;

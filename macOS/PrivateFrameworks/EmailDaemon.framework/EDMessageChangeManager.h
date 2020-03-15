@@ -22,12 +22,12 @@
 
 + (id)signpostLog;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <EDMessageChangeHookResponder> hookResponder; // @synthesize hookResponder=_hookResponder;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *markAllWorkQueue; // @synthesize markAllWorkQueue=_markAllWorkQueue;
 @property(readonly, nonatomic) EDServerMessagePersistenceFactory *serverMessagePersistenceFactory; // @synthesize serverMessagePersistenceFactory=_serverMessagePersistenceFactory;
 @property(readonly, nonatomic) EDLocalActionPersistence *localActionPersistence; // @synthesize localActionPersistence=_localActionPersistence;
 @property(readonly, nonatomic) EDPersistenceDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (BOOL)_hookResponderRespondsToRequiredMethods:(id)arg1;
 - (void)_invokeHookResponderForDeletedMessages:(id)arg1 generationWindow:(id)arg2;
 - (id)accountForMailboxURL:(id)arg1;

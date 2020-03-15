@@ -15,10 +15,10 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) PKPaymentPass *provisionedPass; // @synthesize provisionedPass=_provisionedPass;
 @property(nonatomic) _Bool cardAdded; // @synthesize cardAdded=_cardAdded;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithRequestContext:(id)arg1;
 

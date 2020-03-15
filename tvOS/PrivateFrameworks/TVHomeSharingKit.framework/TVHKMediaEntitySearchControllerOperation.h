@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     NSOperationQueue *_privateOperationQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *privateOperationQueue; // @synthesize privateOperationQueue=_privateOperationQueue;
 @property(retain, nonatomic) TVHKMediaEntityServer *mediaEntityServer; // @synthesize mediaEntityServer=_mediaEntityServer;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
@@ -55,7 +56,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *currentMovies; // @synthesize currentMovies=_currentMovies;
 @property(copy, nonatomic) TVHKMediaEntitySearchRequest *request; // @synthesize request=_request;
 @property(nonatomic) long long queryReason; // @synthesize queryReason=_queryReason;
-- (void).cxx_destruct;
 - (id)_resultWithResponse:(id)arg1;
 - (_Bool)_enqueueChangesOperationsWithMediaSearchFetchResponse:(id)arg1;
 - (id)_enqueueChangesOperationWithLatestMediaEntities:(id)arg1 currentMediaEntities:(id)arg2;

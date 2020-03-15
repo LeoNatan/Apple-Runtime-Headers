@@ -25,6 +25,7 @@
     struct sqlite3_stmt *deleteNullBlocks;
     struct sqlite3_stmt *insertItem;
     struct sqlite3_stmt *insertDeletionItemsForRecordsOfType;
+    struct sqlite3_stmt *insertDeletionItemsForOrphanedRecordsOfType;
     struct sqlite3_stmt *insertDeletionItemsForRecordWithUUID;
     struct sqlite3_stmt *insertDeletionItemsForRecordsWithParentUUID;
     struct sqlite3_stmt *updateItem;
@@ -76,12 +77,12 @@
 + (id)logCategory;
 + (id)openWithURL:(id)arg1 readOnly:(_Bool)arg2 error:(id *)arg3;
 + (void)unlinkDatastoreAt:(id)arg1 everything:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMBSQLQueryStatement *selectAllRecordTypeRows; // @synthesize selectAllRecordTypeRows=_selectAllRecordTypeRows;
 @property(retain, nonatomic) HMBSQLQueryStatement *selectAllRecordRows; // @synthesize selectAllRecordRows=_selectAllRecordRows;
 @property(retain) NSMutableDictionary *queryContextsByModelType; // @synthesize queryContextsByModelType=_queryContextsByModelType;
 @property(retain) NSMapTable *queryContextsByClass; // @synthesize queryContextsByClass=_queryContextsByClass;
 @property(retain) NSDictionary *queryTables; // @synthesize queryTables=_queryTables;
-- (void).cxx_destruct;
 - (id)flush:(_Bool)arg1;
 - (_Bool)_deleteIndexSentinelsWithZoneRow:(unsigned int)arg1 error:(id *)arg2;
 - (_Bool)_deleteIndexSentinelsWithModelType:(id)arg1 error:(id *)arg2;
@@ -100,6 +101,7 @@
 - (unsigned int)_insertItemWithZoneRow:(unsigned int)arg1 blockRow:(unsigned int)arg2 type:(unsigned int)arg3 modelType:(id)arg4 error:(id *)arg5;
 - (unsigned int)_insertDeletionItemsWithZoneRow:(unsigned int)arg1 blockRow:(unsigned int)arg2 type:(unsigned int)arg3 parentModelID:(id)arg4 error:(id *)arg5;
 - (unsigned int)_insertDeletionItemWithZoneRow:(unsigned int)arg1 blockRow:(unsigned int)arg2 type:(unsigned int)arg3 modelID:(id)arg4 error:(id *)arg5;
+- (unsigned int)_insertDeletionItemsForOrphanedRecordsWithZoneRow:(unsigned int)arg1 blockRow:(unsigned int)arg2 type:(unsigned int)arg3 modelType:(id)arg4 error:(id *)arg5;
 - (unsigned int)_insertDeletionItemsWithZoneRow:(unsigned int)arg1 blockRow:(unsigned int)arg2 type:(unsigned int)arg3 modelType:(id)arg4 error:(id *)arg5;
 - (unsigned int)_insertItemWithZoneRow:(unsigned int)arg1 blockRow:(unsigned int)arg2 type:(unsigned int)arg3 externalID:(id)arg4 externalData:(id)arg5 modelEncoding:(unsigned int)arg6 modelData:(id)arg7 error:(id *)arg8;
 - (unsigned int)_insertBlockWithZoneRow:(unsigned int)arg1 type:(unsigned int)arg2 options:(id)arg3 items:(id)arg4 error:(id *)arg5;

@@ -27,13 +27,13 @@ __attribute__((visibility("hidden")))
 + (id)valueLabelFont;
 + (id)contextItemsForTimeScope:(long long)arg1 sleepAnalysis:(id)arg2;
 + (id)availableContextTypes;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKSleepAnalysis *sleepAnalysis; // @synthesize sleepAnalysis=_sleepAnalysis;
 @property(retain, nonatomic) HKChartCache *chartCache; // @synthesize chartCache=_chartCache;
 @property(retain, nonatomic) HKSleepAnalysisDataSource *sleepAnalysisDataSource; // @synthesize sleepAnalysisDataSource=_sleepAnalysisDataSource;
 @property(nonatomic) unsigned long long selectedContext; // @synthesize selectedContext=_selectedContext;
 @property(retain, nonatomic) WDProfile *profile; // @synthesize profile=_profile;
 @property(retain, nonatomic) HKUnitPreferenceController *unitController; // @synthesize unitController=_unitController;
-- (void).cxx_destruct;
 - (void)updateController:(id)arg1 didReceiveHighFrequencyUpdateForType:(id)arg2;
 - (void)updateController:(id)arg1 didReceiveUpdateForType:(id)arg2 samplesAdded:(id)arg3 objectsRemoved:(id)arg4;
 - (id)_asleepGradientColors;

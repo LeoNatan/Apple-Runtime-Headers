@@ -16,11 +16,11 @@
 }
 
 + (int)actionID;
+- (void).cxx_destruct;
 - (void)setResult:(id)arg1;
 - (id)result;
 @property BOOL cancel; // @synthesize cancel;
 @property(retain) NSNumber *componentIdentifier; // @synthesize componentIdentifier;
-- (void).cxx_destruct;
 - (id)requestPayload;
 - (id)description;
 - (BOOL)expectsAResult;

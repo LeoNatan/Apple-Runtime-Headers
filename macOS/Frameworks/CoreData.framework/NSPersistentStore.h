@@ -76,6 +76,7 @@
 - (void)_updateMetadata;
 - (id)_defaultMetadata;
 - (id)_updatedMetadataWithSeed:(id)arg1 includeVersioning:(BOOL)arg2;
+- (BOOL)_isCloudKitOptioned;
 - (id)obtainPermanentIDsForObjects:(id)arg1 error:(id *)arg2;
 - (void)managedObjectContextDidUnregisterObjectsWithIDs:(id)arg1 generation:(id)arg2;
 - (void)managedObjectContextDidUnregisterObjectsWithIDs:(id)arg1;

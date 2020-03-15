@@ -17,8 +17,8 @@
     id <ICNFMCActivityTarget> _primaryTarget;
 }
 
-@property(retain, nonatomic) id <ICNFMCActivityTarget> primaryTarget; // @synthesize primaryTarget=_primaryTarget;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <ICNFMCActivityTarget> primaryTarget; // @synthesize primaryTarget=_primaryTarget;
 - (id)displayName;
 @property(readonly, copy, nonatomic) NSArray *allTargets;
 - (BOOL)removeActivityTarget:(id)arg1;

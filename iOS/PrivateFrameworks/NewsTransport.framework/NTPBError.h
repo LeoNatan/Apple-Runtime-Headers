@@ -16,9 +16,9 @@
     NSString *_errorMessage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;
 @property(retain, nonatomic) NSString *errorCode; // @synthesize errorCode=_errorCode;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

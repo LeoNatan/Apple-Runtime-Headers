@@ -17,9 +17,9 @@
 + (id)relationWithItemIdentifier:(id)arg1 containerIdentifier:(id)arg2;
 + (id)relationWithItemScopedIdentifier:(id)arg1 containerIdentifier:(id)arg2;
 + (id)relationToContainerWithIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CPLContainerRelation *relation; // @synthesize relation=_relation;
 @property(copy, nonatomic) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
-- (void).cxx_destruct;
 - (_Bool)supportsDirectDeletion;
 - (_Bool)supportsDeletion;
 - (_Bool)validateFullRecord;

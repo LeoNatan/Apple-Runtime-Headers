@@ -15,10 +15,10 @@
     NSString *_responseBody;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *responseBody; // @synthesize responseBody=_responseBody;
 @property(readonly) NSError *error; // @synthesize error=_error;
 @property(readonly) long long statusCode; // @synthesize statusCode=_statusCode;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1 urlResponse:(id)arg2 error:(id)arg3;
 
 @end

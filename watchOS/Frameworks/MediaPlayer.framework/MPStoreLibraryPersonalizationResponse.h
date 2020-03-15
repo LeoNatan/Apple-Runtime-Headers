@@ -16,9 +16,9 @@
     MPModelResponse *_libraryResponse;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPModelResponse *libraryResponse; // @synthesize libraryResponse=_libraryResponse;
 @property(retain, nonatomic) MPSectionedCollection *representedObjectResults; // @synthesize representedObjectResults=_representedObjectResults;
-- (void).cxx_destruct;
 - (id)newOperationForDetailedKeepLocalStatusConfigurationForSectionAtIndex:(int)arg1 responseHandler:(CDUnknownBlockType)arg2;
 - (void)_libraryResponseDidInvalidateNotification:(id)arg1;
 - (void)dealloc;

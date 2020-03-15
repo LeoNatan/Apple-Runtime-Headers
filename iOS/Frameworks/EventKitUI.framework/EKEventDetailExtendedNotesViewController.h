@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     NSString *_notes;
 }
 
-@property(copy, nonatomic) NSString *notes; // @synthesize notes=_notes;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *notes; // @synthesize notes=_notes;
 - (void)updateTextView;
 - (void)loadTextView;
 - (unsigned long long)supportedInterfaceOrientations;

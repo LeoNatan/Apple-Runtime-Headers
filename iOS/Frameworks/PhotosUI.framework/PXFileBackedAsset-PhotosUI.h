@@ -20,6 +20,7 @@
 @property(readonly, nonatomic) _Bool isTemporaryPlaceholder;
 @property(readonly, nonatomic) _Bool isPhotoIrisPlaceholder;
 @property(readonly, nonatomic, getter=isLivePhoto) _Bool livePhoto;
+@property(readonly, nonatomic, getter=isHidden) _Bool hidden;
 @property(readonly, nonatomic) NSDate *modificationDate;
 @property(readonly, nonatomic) unsigned long long originalFilesize;
 @property(readonly, nonatomic) NSString *localizedGeoDescription;

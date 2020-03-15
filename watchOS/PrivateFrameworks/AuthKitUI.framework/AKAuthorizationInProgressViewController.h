@@ -13,8 +13,8 @@
     AKAuthorizationPresentationContext *_presentationContext;
 }
 
-@property(readonly, nonatomic) AKAuthorizationPresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) AKAuthorizationPresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
 - (void)viewDidLoad;
 - (id)initWithAuthorizationContext:(id)arg1;
 

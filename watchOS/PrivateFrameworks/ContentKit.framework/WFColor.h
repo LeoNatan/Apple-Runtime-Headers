@@ -25,9 +25,9 @@
 + (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 + (id)colorWithWhite:(float)arg1 alpha:(float)arg2;
 + (id)colorWithCGColor:(struct CGColor *)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSColor *NSColor; // @synthesize NSColor=_NSColor;
 @property(readonly, nonatomic) struct CGColor *CGColor; // @synthesize CGColor=_CGColor;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

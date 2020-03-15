@@ -21,6 +21,7 @@
     unsigned int _minSuggestionsCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int minSuggestionsCount; // @synthesize minSuggestionsCount=_minSuggestionsCount;
 @property(nonatomic) unsigned int maxSuggestionsCount; // @synthesize maxSuggestionsCount=_maxSuggestionsCount;
 @property(copy, nonatomic) NSArray *outputActions; // @synthesize outputActions=_outputActions;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSArray *suggestedVariables; // @synthesize suggestedVariables=_suggestedVariables;
 @property(nonatomic) __weak id <WFVariableProvider> variableProvider; // @synthesize variableProvider=_variableProvider;
 @property(nonatomic) __weak id <WFVariableSuggesterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)availableVariablesDidChange;
 - (id)init;
 

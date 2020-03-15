@@ -32,6 +32,7 @@
     double _expirationTime;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *dataSeriesDict; // @synthesize dataSeriesDict=_dataSeriesDict;
 @property(nonatomic) int yAxisFractionDigits; // @synthesize yAxisFractionDigits=_yAxisFractionDigits;
 @property(nonatomic) _Bool hasVolume; // @synthesize hasVolume=_hasVolume;
@@ -48,7 +49,6 @@
 @property(readonly) CDStruct_8cc9ba3e *stockValues; // @synthesize stockValues=_stockValues;
 @property(nonatomic) int chartInterval; // @synthesize chartInterval=_chartInterval;
 @property(nonatomic) __weak Stock *stock; // @synthesize stock=_stock;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (void)setLabelPlacement:(int)arg1 forDisplayMode:(id)arg2;

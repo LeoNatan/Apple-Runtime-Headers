@@ -18,10 +18,10 @@
     id <CSLObliterationViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useBlackBackground; // @synthesize useBlackBackground=_useBlackBackground;
 @property(nonatomic) __weak id <CSLObliterationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <CSLObliterationViewControllerOwnerDelegate> ownerDelegate; // @synthesize ownerDelegate=_ownerDelegate;
-- (void).cxx_destruct;
 - (void)showResetFailureMessage;
 - (void)cancelObliteration;
 - (void)failSafeObliterate;

@@ -13,8 +13,8 @@
     UILabel *__messageLabel;
 }
 
-@property(readonly, nonatomic) UILabel *_messageLabel; // @synthesize _messageLabel=__messageLabel;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UILabel *_messageLabel; // @synthesize _messageLabel=__messageLabel;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

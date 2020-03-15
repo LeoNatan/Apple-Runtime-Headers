@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     IDSMessageContext *_idsContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDSMessageContext *idsContext; // @synthesize idsContext=_idsContext;
 @property(retain, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSURL *resourceURL; // @synthesize resourceURL=_resourceURL;
-- (void).cxx_destruct;
 
 @end
 

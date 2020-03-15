@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     SiriUIButton *_backButton;
 }
 
+- (void).cxx_destruct;
 @property(retain) SiriUIButton *backButton; // @synthesize backButton=_backButton;
 @property(retain) SiriUIContentLabel *titleView; // @synthesize titleView=_titleView;
-- (void).cxx_destruct;
 - (BOOL)isFlipped;
 - (id)declaredLayoutConstraints;
 - (void)setBackButtonTarget:(id)arg1 action:(SEL)arg2;

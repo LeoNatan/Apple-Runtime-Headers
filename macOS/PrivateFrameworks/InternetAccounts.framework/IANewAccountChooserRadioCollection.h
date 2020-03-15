@@ -17,8 +17,8 @@
     IANewAccountChooserRadioRowItem *_selectedItem;
 }
 
-@property(retain) IANewAccountChooserRadioRowItem *selectedItem; // @synthesize selectedItem=_selectedItem;
 - (void).cxx_destruct;
+@property(retain) IANewAccountChooserRadioRowItem *selectedItem; // @synthesize selectedItem=_selectedItem;
 - (double)rowHeight;
 - (id)_selectedItem;
 - (void)radioButtonClicked:(id)arg1;

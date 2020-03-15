@@ -33,10 +33,12 @@
     AVTPaddleView *_paddleView;
 }
 
++ (id)inUseStickerPack;
 + (id)stickersAvatarsFetchRequest;
 + (double)headerHeightForWidth:(double)arg1 interitemSpacing:(double)arg2;
 + (unsigned long long)minimumNumberOfVisibleItemForWidth:(double)arg1;
 + (id)stickerViewControllerForStore:(id)arg1 allowEditing:(_Bool)arg2 allowPeel:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVTPaddleView *paddleView; // @synthesize paddleView=_paddleView;
 @property(retain, nonatomic) NSString *selectedRecordIdentifier; // @synthesize selectedRecordIdentifier=_selectedRecordIdentifier;
 @property(retain, nonatomic) AVTStickerPagingController *pagingController; // @synthesize pagingController=_pagingController;
@@ -50,7 +52,6 @@
 @property(readonly, nonatomic) id <AVTAvatarStore> store; // @synthesize store=_store;
 @property(nonatomic) __weak id <AVTStickerDisclosureValidationDelegate> disclosureValidationDelegate; // @synthesize disclosureValidationDelegate=_disclosureValidationDelegate;
 @property(nonatomic) __weak id <AVTPresenterDelegate> presenterDelegate; // @synthesize presenterDelegate;
-- (void).cxx_destruct;
 - (void)paddleViewWantsToBeDismissed:(id)arg1;
 - (void)paddleViewTapped:(id)arg1;
 - (void)dismissPaddleViewIfNecessary;

@@ -16,8 +16,8 @@
     BSUIMappedImageCache *_imageCache;
 }
 
-@property(retain, nonatomic) BSUIMappedImageCache *imageCache; // @synthesize imageCache=_imageCache;
 - (void).cxx_destruct;
+@property(retain, nonatomic) BSUIMappedImageCache *imageCache; // @synthesize imageCache=_imageCache;
 - (id)_cacheKeyForWallpaper:(id)arg1 withVariant:(int)arg2;
 - (void)pruneUnusedWallpaperVariants:(id)arg1;
 - (void)saveVariantsForWallpaper:(id)arg1 originalImage:(id)arg2;

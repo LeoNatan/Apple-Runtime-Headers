@@ -18,8 +18,8 @@
 + (id)bagWithType:(unsigned long long)arg1;
 + (id)sandboxBox;
 + (id)productionBag;
-@property(readonly, nonatomic) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
 - (void)startUpdate;
 - (void)stopObservingBagWithObserver:(id)arg1;
 - (id)loadBagAndObserveUpdatesWithHandler:(CDUnknownBlockType)arg1;

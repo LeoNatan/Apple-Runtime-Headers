@@ -15,6 +15,7 @@
 + (id)safeCategoryTargetClassName;
 - (id)accessibilityValue;
 - (id)accessibilityLabel;
+- (void)_accessibilityLoadAccessibilityInformation;
 - (_Bool)isAccessibilityElement;
 
 @end

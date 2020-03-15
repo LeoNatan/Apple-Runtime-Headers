@@ -17,8 +17,8 @@
 }
 
 + (id)defaultConfiguration;
-@property(readonly, copy, nonatomic) NSOrderedSet *_orderedDomains; // @synthesize _orderedDomains;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSOrderedSet *_orderedDomains; // @synthesize _orderedDomains;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

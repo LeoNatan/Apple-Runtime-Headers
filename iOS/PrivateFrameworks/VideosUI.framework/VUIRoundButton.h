@@ -18,12 +18,12 @@
     UIStackView *_textLabelStackView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIStackView *textLabelStackView; // @synthesize textLabelStackView=_textLabelStackView;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(nonatomic) __weak id <VUIRoundButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *textLabels; // @synthesize textLabels=_textLabels;
 @property(retain, nonatomic) UIImage *buttonImage; // @synthesize buttonImage=_buttonImage;
-- (void).cxx_destruct;
 - (void)buttonPressed:(id)arg1;
 - (void)buttonReleased:(id)arg1;
 - (void)buttonSelected:(id)arg1;

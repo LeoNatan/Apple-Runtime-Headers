@@ -15,10 +15,10 @@
     UIImageView *_chevronImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *chevronImageView; // @synthesize chevronImageView=_chevronImageView;
 @property(retain, nonatomic) UIStackView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;

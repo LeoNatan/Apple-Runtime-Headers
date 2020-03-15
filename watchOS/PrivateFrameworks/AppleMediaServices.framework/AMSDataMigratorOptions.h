@@ -16,10 +16,10 @@
 }
 
 + (id)_stringFromOptionsArray:(id)arg1 atIndex:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int scenario; // @synthesize scenario=_scenario;
 @property(copy, nonatomic) NSString *previousBuildVersion; // @synthesize previousBuildVersion=_previousBuildVersion;
 @property(copy, nonatomic) NSString *currentBuildVersion; // @synthesize currentBuildVersion=_currentBuildVersion;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *optionsArray;
 - (id)initWithOptionsArray:(id)arg1;
 - (id)init;

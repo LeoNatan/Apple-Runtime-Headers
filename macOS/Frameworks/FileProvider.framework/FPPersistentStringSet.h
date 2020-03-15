@@ -16,6 +16,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)clear;
 - (void)save;
 - (BOOL)contains:(id)arg1;
 - (void)remove:(id)arg1;

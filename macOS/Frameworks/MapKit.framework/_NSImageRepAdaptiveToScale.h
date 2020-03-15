@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     id _drawTarget;
 }
 
-@property(nonatomic) __weak id drawTarget; // @synthesize drawTarget=_drawTarget;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id drawTarget; // @synthesize drawTarget=_drawTarget;
 - (BOOL)draw;
 - (id)initWithDrawSelector:(SEL)arg1 delegate:(id)arg2;
 

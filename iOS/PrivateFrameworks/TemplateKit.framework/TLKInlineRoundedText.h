@@ -13,8 +13,8 @@
     NSString *_string;
 }
 
-@property(retain, nonatomic) NSString *string; // @synthesize string=_string;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *string; // @synthesize string=_string;
 - (unsigned long long)_itemType;
 
 @end

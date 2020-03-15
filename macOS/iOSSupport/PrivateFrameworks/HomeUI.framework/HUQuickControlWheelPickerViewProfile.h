@@ -21,6 +21,7 @@
     unsigned long long _style;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(nonatomic) BOOL showOffState; // @synthesize showOffState=_showOffState;
 @property(nonatomic) double selectedRowCornerRadius; // @synthesize selectedRowCornerRadius=_selectedRowCornerRadius;
@@ -30,7 +31,6 @@
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_setMultiStateStyleProperties;
 - (void)_setDefaultStyleProperties;

@@ -62,6 +62,7 @@
 + (void)setDefaultRequestType:(unsigned long long)arg1;
 + (void)initialize;
 + (id)new;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(nonatomic) BOOL incPending; // @synthesize incPending=_incPending;
 @property(nonatomic) unsigned int topk; // @synthesize topk=_topk;
@@ -85,7 +86,6 @@
 @property(retain, nonatomic, setter=setTitle:) NSString *title; // @synthesize title=_title;
 @property(nonatomic) BOOL textIsRaw; // @synthesize textIsRaw=_textIsRaw;
 @property(retain, nonatomic, setter=setText:) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)_executeWithReply:(CDUnknownBlockType)arg1;
 - (void)_postProcessResponse:(id)arg1;
 - (id)execute;

@@ -16,8 +16,8 @@
 }
 
 + (BOOL)prefersNonBlockingReloads;
-@property(retain, nonatomic) NSSet *clientInvalidationReasons; // @synthesize clientInvalidationReasons=_clientInvalidationReasons;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSet *clientInvalidationReasons; // @synthesize clientInvalidationReasons=_clientInvalidationReasons;
 - (id)invalidationReasons;
 @property(readonly, nonatomic) NSSet *items;
 - (id)reloadItems;

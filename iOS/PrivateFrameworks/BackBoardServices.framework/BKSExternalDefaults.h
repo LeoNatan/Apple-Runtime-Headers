@@ -6,7 +6,7 @@
 
 #import <BackBoardServices/BKSAbstractDefaults.h>
 
-@class BKSIAPDefaults, BKSLockdownDefaults, BKSPersistentConnectionDefaults, BKSSpringBoardDefaults;
+@class BKSIAPDefaults, BKSKeyboardDefaults, BKSLockdownDefaults, BKSPersistentConnectionDefaults, BKSSpringBoardDefaults;
 
 @interface BKSExternalDefaults : BKSAbstractDefaults
 {
@@ -14,9 +14,11 @@
     BKSIAPDefaults *_lazy_iapDefaults;
     BKSPersistentConnectionDefaults *_lazy_persistentConnectionDefaults;
     BKSSpringBoardDefaults *_lazy_springBoardDefaults;
+    BKSKeyboardDefaults *_lazy_keyboardDefaults;
 }
 
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) BKSKeyboardDefaults *keyboardDefaults;
 @property(readonly, retain, nonatomic) BKSSpringBoardDefaults *springBoardDefaults;
 @property(readonly, retain, nonatomic) BKSPersistentConnectionDefaults *persistentConnectionDefaults;
 @property(readonly, retain, nonatomic) BKSIAPDefaults *iapDefaults;

@@ -20,11 +20,11 @@
     NSObject<OS_dispatch_queue> *_storageQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *storageQueue; // @synthesize storageQueue=_storageQueue;
 @property(retain, nonatomic) NSMutableDictionary *storageDict; // @synthesize storageDict=_storageDict;
 @property(readonly, retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
-- (void).cxx_destruct;
 - (void)_saveDict:(id)arg1;
 - (id)dictionaryRepresentation;
 - (void)clear;

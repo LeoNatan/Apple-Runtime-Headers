@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
-@property(nonatomic) __weak UIViewController<_UISharingPublicController> *publicController; // @synthesize publicController=_publicController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIViewController<_UISharingPublicController> *publicController; // @synthesize publicController=_publicController;
 - (void)_requestContentSize:(struct CGSize)arg1;
 - (void)_updateTraitCollectionForPopoverStatus;
 - (void)didMoveToParentViewController:(id)arg1;

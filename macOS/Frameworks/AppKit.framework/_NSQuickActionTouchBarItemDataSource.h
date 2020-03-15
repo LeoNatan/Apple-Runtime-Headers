@@ -28,10 +28,10 @@ __attribute__((visibility("hidden")))
 + (BOOL)automaticallyNotifiesObserversOfLabel;
 + (BOOL)automaticallyNotifiesObserversOfImage;
 + (BOOL)accessInstanceVariablesDirectly;
+- (void).cxx_destruct;
 @property(readonly, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(readonly, copy) NSString *label; // @synthesize label=_label;
 @property(readonly, copy) NSString *quickActionIdentifier; // @synthesize quickActionIdentifier=_identifier;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (BOOL)invokeWithoutClient;
 - (BOOL)needsInvocationFromClient;

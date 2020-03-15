@@ -15,9 +15,9 @@
 }
 
 + (id)sharedConverter;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *hkUnitNameLookupTable; // @synthesize hkUnitNameLookupTable=_hkUnitNameLookupTable;
 @property(copy, nonatomic) NSDictionary *synonymLookupTable; // @synthesize synonymLookupTable=_synonymLookupTable;
-- (void).cxx_destruct;
 - (id)hkUnitNameForUCUMUnitCode:(id)arg1;
 - (id)synonymForUCUMUnitString:(id)arg1;
 - (id)init;

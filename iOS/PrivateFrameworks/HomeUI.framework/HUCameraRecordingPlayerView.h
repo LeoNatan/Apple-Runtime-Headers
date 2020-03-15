@@ -15,9 +15,9 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIProgressView *progressView; // @synthesize progressView=_progressView;
 @property(readonly, nonatomic) AVPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (id)initWithPlayer:(id)arg1 displayingProgressView:(_Bool)arg2;
 @property(readonly, nonatomic) AVPlayerLayer *playerLayer;
 

@@ -13,6 +13,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (void)_createDictationPresenterWindowIfNecessary;
 - (void)insertSerializedDictationResult:(id)arg1 withCorrectionIdentifier:(id)arg2;
 - (void)_updateFromSelectedTextRange:(id)arg1 withNewHypothesis:(id)arg2;
 - (void)cancelDictation;

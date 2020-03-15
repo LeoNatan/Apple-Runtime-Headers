@@ -15,10 +15,10 @@
     NSArray *_transferedMessages;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *transferedMessages; // @synthesize transferedMessages=_transferedMessages;
 @property(readonly, nonatomic) NSArray *failedMessages; // @synthesize failedMessages=_failedMessages;
 @property(readonly, nonatomic) unsigned long long resultCode; // @synthesize resultCode=_resultCode;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithResultCode:(unsigned long long)arg1 failedMessages:(id)arg2 transferedMessage:(id)arg3;
 

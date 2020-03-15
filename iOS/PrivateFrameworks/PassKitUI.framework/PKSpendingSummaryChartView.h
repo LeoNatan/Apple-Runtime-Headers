@@ -28,10 +28,10 @@
     _Bool _visible;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(nonatomic, getter=isBlurDisabled) _Bool blurDisabled; // @synthesize blurDisabled=_blurDisabled;
 @property(nonatomic) _Bool showLegend; // @synthesize showLegend=_showLegend;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)configureWithSummary:(id)arg1 presentationStyle:(unsigned long long)arg2;

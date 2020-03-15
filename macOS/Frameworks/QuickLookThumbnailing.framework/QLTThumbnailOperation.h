@@ -15,10 +15,10 @@
     CDUnknownBlockType _needsAdditionalTime;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType needsAdditionalTime; // @synthesize needsAdditionalTime=_needsAdditionalTime;
 @property(readonly) NSError *error; // @synthesize error=_error;
 @property(readonly) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 
 @end
 

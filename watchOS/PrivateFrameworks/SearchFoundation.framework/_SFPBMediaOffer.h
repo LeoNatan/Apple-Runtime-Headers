@@ -20,12 +20,12 @@
     _SFPBImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _SFPBImage *image; // @synthesize image=_image;
 @property(nonatomic) _Bool isEnabled; // @synthesize isEnabled=_isEnabled;
 @property(copy, nonatomic) NSString *offerIdentifier; // @synthesize offerIdentifier=_offerIdentifier;
 @property(copy, nonatomic) NSString *sublabel; // @synthesize sublabel=_sublabel;
 @property(retain, nonatomic) _SFPBActionItem *actionItem; // @synthesize actionItem=_actionItem;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

@@ -31,6 +31,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSRunLoop *wifiRunLoop; // @synthesize wifiRunLoop=_wifiRunLoop;
 @property(nonatomic) struct __CFRunLoopSource *runLoopSource; // @synthesize runLoopSource=_runLoopSource;
 @property(retain, nonatomic) NSThread *wifiThread; // @synthesize wifiThread=_wifiThread;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) NSMutableSet *wiFiAutoAssociationTokens; // @synthesize wiFiAutoAssociationTokens=_wiFiAutoAssociationTokens;
 @property(readonly, nonatomic) BOOL isWoWSupported; // @synthesize isWoWSupported=_isWakeOnWiFiSupported;
 @property(nonatomic) BOOL autoAssociateWiFiAsForegroundClient; // @synthesize autoAssociateWiFiAsForegroundClient=_shouldAutoAssociateAsForeground;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isWoWEnabled; // @synthesize isWoWEnabled=_isWakeOnWiFiEnabled;
 - (void)showNetworkOptions;
 - (void)removeWiFiAutoAssociationClientToken:(id)arg1;

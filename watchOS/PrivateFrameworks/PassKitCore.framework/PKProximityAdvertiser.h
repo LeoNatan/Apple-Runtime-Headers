@@ -18,8 +18,8 @@
     _Bool _isAdvertising;
 }
 
-@property(readonly, nonatomic) _Bool isAdvertising; // @synthesize isAdvertising=_isAdvertising;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool isAdvertising; // @synthesize isAdvertising=_isAdvertising;
 - (void)endAdvertising;
 - (void)_queue_endAdvertising;
 - (CDUnknownBlockType)_createAdvertisingActivationBlockWithName:(id)arg1 duration:(double)arg2 completion:(CDUnknownBlockType)arg3;

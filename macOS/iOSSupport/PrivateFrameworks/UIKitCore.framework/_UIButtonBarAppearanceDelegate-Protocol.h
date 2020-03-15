@@ -5,10 +5,11 @@
 //
 
 #import <UIKitCore/NSObject-Protocol.h>
+#import <UIKitCore/UICoordinateSpace-Protocol.h>
 
 @class UIBarButtonItem, UIColor, UIImage, _UIBarButtonItemAppearanceStorage;
 
-@protocol _UIButtonBarAppearanceDelegate <NSObject>
+@protocol _UIButtonBarAppearanceDelegate <NSObject, UICoordinateSpace>
 @property(readonly, nonatomic) double backButtonMaximumWidth;
 @property(readonly, nonatomic) double backButtonMargin;
 @property(readonly, nonatomic) double defaultTextPadding;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     struct CGSize _phase;
 }
 
+- (void).cxx_destruct;
 @property struct CGSize phase; // @synthesize phase=_phase;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 
 @end
 

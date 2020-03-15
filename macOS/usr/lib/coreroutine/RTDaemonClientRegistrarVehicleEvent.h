@@ -21,12 +21,12 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) RTVehicleLocationProvider *vehicleLocationProvider; // @synthesize vehicleLocationProvider=_vehicleLocationProvider;
 @property(retain, nonatomic) RTInvocationDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
 @property(nonatomic) BOOL registered; // @synthesize registered=_registered;
 @property(nonatomic) __weak id <RTDaemonClientRegistrarVehicleEventProtocol> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)addPendingVehicleEventBlock:(CDUnknownBlockType)arg1 failBlock:(CDUnknownBlockType)arg2 description:(id)arg3;
 - (BOOL)invocationsPending;
 - (long long)countOfPendingInvocations;

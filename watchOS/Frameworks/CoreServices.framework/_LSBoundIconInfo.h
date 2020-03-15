@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool documentAllowOverride; // @synthesize documentAllowOverride=_documentAllowOverride;
 @property(nonatomic, getter=isBadge) _Bool badge; // @synthesize badge=_badge;
 @property(nonatomic, getter=isPrerendered) _Bool prerendered; // @synthesize prerendered=_prerendered;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSURL *dataContainerURL; // @synthesize dataContainerURL=_dataContainerURL;
 @property(retain, nonatomic) NSURL *containerURL; // @synthesize containerURL=_containerURL;
 @property(copy, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
-- (void).cxx_destruct;
 @property(readonly) NSDictionary *bundleIconsDictionary;
 - (_Bool)hasValidIconDictionary;
 - (_Bool)hasValidFileNames;

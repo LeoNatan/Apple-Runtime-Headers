@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 
 + (id)defaultRelay;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly) NSArray *wifiKnownNetworkSSIDs; // @synthesize wifiKnownNetworkSSIDs=_wifiKnownNetworkSSIDs;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 

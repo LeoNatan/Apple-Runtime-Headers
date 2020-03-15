@@ -21,10 +21,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool fullPassRequired; // @synthesize fullPassRequired=_fullPassRequired;
 @property(nonatomic) _Bool changeAccepted; // @synthesize changeAccepted=_changeAccepted;
 @property(retain, nonatomic) NSData *acceptedChangeUUID; // @synthesize acceptedChangeUUID=_acceptedChangeUUID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

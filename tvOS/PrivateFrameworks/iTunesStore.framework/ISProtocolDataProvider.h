@@ -23,6 +23,7 @@
     SSBiometricAuthenticationContext *_biometricAuthenticationContext;
 }
 
+- (void).cxx_destruct;
 @property _Bool shouldProcessDialogsOutsideDaemon; // @synthesize shouldProcessDialogsOutsideDaemon=_shouldProcessDialogsOutsideDaemon;
 @property _Bool shouldTriggerDownloads; // @synthesize shouldTriggerDownloads=_shouldTriggerDownloads;
 @property _Bool shouldProcessProtocol; // @synthesize shouldProcessProtocol=_shouldProcessProtocol;
@@ -30,7 +31,6 @@
 @property _Bool shouldProcessAuthenticationDialogs; // @synthesize shouldProcessAuthenticationDialogs=_shouldProcessAuthenticationDialogs;
 @property _Bool shouldProcessAccount; // @synthesize shouldProcessAccount=_shouldProcessAccount;
 @property _Bool shouldPostFooterSectionChanged; // @synthesize shouldPostFooterSectionChanged=_shouldPostFooterSectionChanged;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_touchIDDialogForResponse:(id)arg1;
 - (_Bool)_shouldFailWithTokenErrorForDialog:(id)arg1 dictionary:(id)arg2 error:(id *)arg3;

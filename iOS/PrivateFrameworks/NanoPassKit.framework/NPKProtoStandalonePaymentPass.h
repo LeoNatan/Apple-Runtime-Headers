@@ -24,13 +24,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NPKProtoStandalonePaymentApplication *devicePrimaryPaymentApplication; // @synthesize devicePrimaryPaymentApplication=_devicePrimaryPaymentApplication;
 @property(retain, nonatomic) NSString *deviceAccountNumberSuffix; // @synthesize deviceAccountNumberSuffix=_deviceAccountNumberSuffix;
 @property(retain, nonatomic) NSString *deviceAccountIdentifier; // @synthesize deviceAccountIdentifier=_deviceAccountIdentifier;
 @property(retain, nonatomic) NSString *primaryAccountNumberSuffix; // @synthesize primaryAccountNumberSuffix=_primaryAccountNumberSuffix;
 @property(retain, nonatomic) NSString *primaryAccountIdentifier; // @synthesize primaryAccountIdentifier=_primaryAccountIdentifier;
 @property(retain, nonatomic) NPKProtoStandalonePass *pass; // @synthesize pass=_pass;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

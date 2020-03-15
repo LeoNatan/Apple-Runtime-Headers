@@ -19,11 +19,11 @@
 + (id)requestForStickersWithAvatarIdentifier:(id)arg1 stickerIdentifier:(id)arg2;
 + (id)requestForMostRecentStickersWithResultLimit:(long long)arg1;
 + (id)requestForAllRecentStickers;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long criteria; // @synthesize criteria=_criteria;
 @property(readonly, copy, nonatomic) NSString *stickerIdentifier; // @synthesize stickerIdentifier=_stickerIdentifier;
 @property(readonly, copy, nonatomic) NSString *avatarIdentifier; // @synthesize avatarIdentifier=_avatarIdentifier;
 @property(readonly, nonatomic) long long resultLimit; // @synthesize resultLimit=_resultLimit;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

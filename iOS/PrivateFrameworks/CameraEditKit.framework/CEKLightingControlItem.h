@@ -19,13 +19,13 @@
 }
 
 + (id)_defaultOutlineImage;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *selectionBackgroundImage; // @synthesize selectionBackgroundImage=_selectionBackgroundImage;
 @property(readonly, nonatomic) UIImage *displayOutlineImage; // @synthesize displayOutlineImage=_displayOutlineImage;
 @property(readonly, nonatomic) UIImage *displayShadowImage; // @synthesize displayShadowImage=_displayShadowImage;
 @property(readonly, nonatomic) UIImage *displayImage; // @synthesize displayImage=_displayImage;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) long long lightingType; // @synthesize lightingType=_lightingType;
-- (void).cxx_destruct;
 - (id)initWithType:(long long)arg1;
 
 @end

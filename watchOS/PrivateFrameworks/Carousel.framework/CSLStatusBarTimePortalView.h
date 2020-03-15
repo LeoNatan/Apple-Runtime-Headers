@@ -14,9 +14,9 @@
     CSLStatusBarTime *_statusBarTime;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLStatusBarTime *statusBarTime; // @synthesize statusBarTime=_statusBarTime;
 @property(retain, nonatomic) CLKUITimeLabel *timeLabel; // @synthesize timeLabel=_timeLabel;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

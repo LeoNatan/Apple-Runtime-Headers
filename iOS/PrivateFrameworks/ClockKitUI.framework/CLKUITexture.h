@@ -16,11 +16,11 @@
 
 + (id)textureWithProviderDelegate:(id)arg1 uuid:(id)arg2 rect: /* Error: Ran out of types for this method. */;
 + (id)textureWithProviderDelegate:(id)arg1 uuid:(id)arg2;
+- (void).cxx_destruct;
 // Error parsing type for property rect:
 // Property attributes: T,R,N,V_rect
 
 @property(readonly, nonatomic) CLKUIAtlas *atlas; // @synthesize atlas=_atlas;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long status;
 @property(readonly, nonatomic) NSString *uuid;
 - (void)dealloc;

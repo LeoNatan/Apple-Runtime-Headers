@@ -24,6 +24,7 @@
 }
 
 + (id)prepopulatedChat;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *simulatedChatIdentifier; // @synthesize simulatedChatIdentifier=_simulatedChatIdentifier;
 @property(readonly, nonatomic) unsigned long long currentMessageID; // @synthesize currentMessageID=_currentMessageID;
 @property(readonly, nonatomic) IMHandle *outgoingHandle; // @synthesize outgoingHandle=_outgoingHandle;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) NSString *simulatedGUID; // @synthesize simulatedGUID=_simulatedGUID;
 @property(readonly, nonatomic) CKIMSimulatedAccount *simulatedAccount; // @synthesize simulatedAccount=_simulatedAccount;
 @property(nonatomic) __weak id <CKIMSimulatedChatDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_messageWithGUID:(id)arg1;
 - (void)simulatedDaemon:(id)arg1 willSendBalloonPayload:(id)arg2 attachments:(id)arg3 messageGUID:(id)arg4 bundleID:(id)arg5;
 - (void)chat:(id)arg1 didSendMessage:(id)arg2 finished:(_Bool)arg3;

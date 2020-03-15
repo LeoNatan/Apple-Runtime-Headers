@@ -16,9 +16,9 @@
     id <PVTaskTokenPoolDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PVTaskTokenPoolDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PVTaskTokenPoolDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)returnToken:(id)arg1;
 - (id)getToken;
 - (id)initWithOffset:(unsigned long long)arg1;

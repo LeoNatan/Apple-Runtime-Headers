@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 
 + (struct CGRect)frameForHeaderInBounds:(struct CGRect)arg1;
 + (long long)topMarginForBounds:(struct CGRect)arg1 shouldShowCaptions:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldShowCaptions; // @synthesize shouldShowCaptions=_shouldShowCaptions;
 @property(retain, nonatomic) CNPhotoPickerVariantsManager *variantsManager; // @synthesize variantsManager=_variantsManager;
 @property(retain, nonatomic) NSArray *providerItems; // @synthesize providerItems=_providerItems;
@@ -55,7 +56,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(readonly, nonatomic) CNPhotoPickerProviderItem *originalItem; // @synthesize originalItem=_originalItem;
 @property(nonatomic) __weak id <CNPhotoPickerVariantListControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)providerItemDidUpdate:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;

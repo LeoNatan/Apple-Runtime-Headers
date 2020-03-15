@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
     UIImageView *_overlayImageView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *itemImageView; // @synthesize itemImageView=_itemImageView;
 @property(nonatomic) struct UIEdgeInsets itemImageInsets; // @synthesize itemImageInsets=_itemImageInsets;
 @property(nonatomic, getter=isItemImageHidden) _Bool itemImageHidden; // @synthesize itemImageHidden=_itemImageHidden;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(copy, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
-- (void).cxx_destruct;
 - (void)_removeOverlay;
 - (void)_reloadHighlight;
 - (void)layoutSubviews;

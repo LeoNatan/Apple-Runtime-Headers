@@ -15,10 +15,10 @@
     IMKUICandidateLayoutTraits *_layoutTraits;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMKUICandidateLayoutTraits *layoutTraits; // @synthesize layoutTraits=_layoutTraits;
 @property(retain, nonatomic) NSMutableDictionary *itemToViewMapping; // @synthesize itemToViewMapping=_itemToViewMapping;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)isFlipped;
 

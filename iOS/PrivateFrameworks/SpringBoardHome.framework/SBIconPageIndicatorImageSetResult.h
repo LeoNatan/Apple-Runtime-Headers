@@ -14,9 +14,9 @@
     _UILegibilityImageSet *_enabledPageIndicatorSet;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UILegibilityImageSet *enabledPageIndicatorSet; // @synthesize enabledPageIndicatorSet=_enabledPageIndicatorSet;
 @property(readonly, nonatomic) _UILegibilityImageSet *pageIndicatorSet; // @synthesize pageIndicatorSet=_pageIndicatorSet;
-- (void).cxx_destruct;
 - (id)initWithIndicatorSet:(id)arg1 enabledIndicatorSet:(id)arg2;
 
 @end

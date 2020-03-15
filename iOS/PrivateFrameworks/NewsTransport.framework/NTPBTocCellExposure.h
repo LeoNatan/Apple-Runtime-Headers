@@ -29,13 +29,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTPBTocCellExposureArticleElement *tocCellExposureArticleElement; // @synthesize tocCellExposureArticleElement=_tocCellExposureArticleElement;
 @property(retain, nonatomic) NTPBFeedCellExposure *feedCellExposure; // @synthesize feedCellExposure=_feedCellExposure;
 @property(nonatomic) int rankInSection; // @synthesize rankInSection=_rankInSection;
 @property(nonatomic) int displayRank; // @synthesize displayRank=_displayRank;
 @property(nonatomic) _Bool isBadged; // @synthesize isBadged=_isBadged;
 @property(retain, nonatomic) NSData *tocCellExposureId; // @synthesize tocCellExposureId=_tocCellExposureId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

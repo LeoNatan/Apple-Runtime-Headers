@@ -32,10 +32,6 @@ struct NSDirectionalEdgeInsets {
     double trailing;
 };
 
-struct NSNumber {
-    Class _field1;
-};
-
 struct UIEdgeInsets {
     double _field1;
     double _field2;

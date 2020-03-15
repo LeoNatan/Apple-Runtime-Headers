@@ -58,13 +58,18 @@
 }
 
 + (id)metadataIdentifierForARRecordableResultsClass:(Class)arg1;
+- (void).cxx_destruct;
 @property __weak id <ARRecordingTechniqueDelegate> recordingTechniqueDelegate; // @synthesize recordingTechniqueDelegate=_recordingTechniqueDelegate;
 @property(nonatomic) _Bool shouldSaveVideoInPhotosLibrary; // @synthesize shouldSaveVideoInPhotosLibrary=_shouldSaveVideoInPhotosLibrary;
 @property(nonatomic) _Bool expectCustomData; // @synthesize expectCustomData=_expectCustomData;
 @property(nonatomic) _Bool expectAudioData; // @synthesize expectAudioData=_expectAudioData;
 @property(nonatomic) _Bool expectDepthData; // @synthesize expectDepthData=_expectDepthData;
 @property(readonly, nonatomic) NSURL *outputFileURL; // @synthesize outputFileURL=_outputFileURL;
-- (void).cxx_destruct;
+- (id)_fullDescription;
+- (void)recordRemovedAnchor:(id)arg1;
+- (void)recordCollaborationData:(id)arg1 localSession:(_Bool)arg2;
+- (void)recordAddedAnchor:(id)arg1;
+- (void)abortRecording;
 - (id)createFileMetadata;
 - (void)writeMetadata:(id)arg1 withTimestamp:(double)arg2 toInputAdaptor:(id)arg3 withIdentifier:(id)arg4 withMetaItems:(id)arg5;
 - (void)writeMetadata:(id)arg1 withTimestamp:(double)arg2 toInputAdaptor:(id)arg3 withIdentifier:(id)arg4;
@@ -100,7 +105,7 @@
 @property(readonly, nonatomic) NSSet *recordingResultDataClasses;
 - (unsigned long long)requiredSensorDataTypes;
 @property(readonly, nonatomic) unsigned long long recordingSensorDataTypes;
-- (id)initWithFileURL:(id)arg1 recordingSensorDataTypes:(unsigned long long)arg2 recordingResultDataClasses:(id)arg3 startImmediately:(_Bool)arg4;
+- (id)initWithFileURL:(id)arg1 recordingSensorDataTypes:(unsigned long long)arg2 recordingResultDataClasses:(id)arg3 startImmediately:(_Bool)arg4 recordCollaborationData:(_Bool)arg5;
 - (id)initWithFileURL:(id)arg1 recordingSensorDataTypes:(unsigned long long)arg2 recordingResultDataClasses:(id)arg3;
 - (id)initWithFileURL:(id)arg1 sensorDataTypes:(unsigned long long)arg2;
 - (id)init;

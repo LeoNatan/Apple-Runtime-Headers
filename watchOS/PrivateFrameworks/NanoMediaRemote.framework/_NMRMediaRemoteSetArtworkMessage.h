@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     CDStruct_99886639 _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int originIdentifier; // @synthesize originIdentifier=_originIdentifier;
 @property(retain, nonatomic) NSData *originalDigest; // @synthesize originalDigest=_originalDigest;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) NSData *jpegData; // @synthesize jpegData=_jpegData;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

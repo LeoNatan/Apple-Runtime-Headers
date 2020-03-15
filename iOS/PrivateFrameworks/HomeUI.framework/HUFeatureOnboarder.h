@@ -23,6 +23,7 @@
     UIViewController<HUConfigurationViewController> *__currentViewControllerForTests;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPerformedPostProcessing; // @synthesize hasPerformedPostProcessing=_hasPerformedPostProcessing;
 @property __weak UIViewController<HUConfigurationViewController> *_currentViewControllerForTests; // @synthesize _currentViewControllerForTests=__currentViewControllerForTests;
 @property(retain, nonatomic) UINavigationController *navController; // @synthesize navController=_navController;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NAFuture *completionFuture; // @synthesize completionFuture=_completionFuture;
 @property(nonatomic) _Bool restart; // @synthesize restart=_restart;
 @property(retain, nonatomic) NSMutableDictionary *userInputResults; // @synthesize userInputResults=_userInputResults;
-- (void).cxx_destruct;
 - (void)restartCurrentOnboarding;
 - (id)getNextViewControllerForOnboardingInput:(id)arg1;
 - (void)configuratorDidFinish:(id)arg1;

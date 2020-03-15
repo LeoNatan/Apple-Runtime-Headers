@@ -16,11 +16,11 @@
     NUGLTexture *_texture;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int magnificationFilter; // @synthesize magnificationFilter=_magnificationFilter;
 @property(nonatomic) unsigned int minificationFilter; // @synthesize minificationFilter=_minificationFilter;
 @property(nonatomic) unsigned int wrapMode; // @synthesize wrapMode=_wrapMode;
 @property(readonly, nonatomic) NUGLTexture *texture; // @synthesize texture=_texture;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithTexture:(id)arg1;
 - (id)init;

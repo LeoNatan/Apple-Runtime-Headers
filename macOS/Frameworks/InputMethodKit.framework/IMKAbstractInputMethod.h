@@ -31,13 +31,13 @@
 + (id)inputMethodVerbatimChainWithAttachedKeyboard:(id)arg1;
 + (id)inputMethodWithAttachedKeyboard:(id)arg1;
 + (id)inputMethodWithChainedInputMethod:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double candidateDelayTimeInterval; // @synthesize candidateDelayTimeInterval=_candidateDelayTimeInterval;
 @property(retain, nonatomic) id <IMKCandidateEngine> candidateEngine; // @synthesize candidateEngine=_candidateEngine;
 @property(copy, nonatomic) CDUnknownBlockType compositionCompletionHandler; // @synthesize compositionCompletionHandler=_compositionCompletionHandler;
 @property(retain, nonatomic) id <IMKInputMethod> composingInputMethod; // @synthesize composingInputMethod=_composingInputMethod;
 @property(readonly, nonatomic) id <IMKInputMethod> chainedInputMethod; // @synthesize chainedInputMethod=_chainedInputMethod;
 @property(readonly, nonatomic) __weak id <IMKKeyboard> attachedKeyboard; // @synthesize attachedKeyboard=_attachedKeyboard;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)candidateHandled:(id)arg1;
 - (BOOL)handleBoundedCandidate:(id)arg1;

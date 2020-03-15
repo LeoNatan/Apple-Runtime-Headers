@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _frame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *internalSublayers; // @synthesize internalSublayers=_internalSublayers;
 @property(nonatomic) __weak ISLayer *internalSuperlayer; // @synthesize internalSuperlayer=_internalSuperlayer;
 @property(retain, nonatomic) ISLayer *mask; // @synthesize mask=_mask;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) ISColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
-- (void).cxx_destruct;
 - (id)debugDescription;
 @property(readonly, copy, nonatomic) NSArray *sublayers;
 - (void)insertSublayer:(id)arg1 atIndex:(unsigned int)arg2;

@@ -15,8 +15,8 @@
     GEORouteHypothesizer *_routeHypothesizer;
 }
 
-@property(readonly, nonatomic) GEORouteHypothesizer *routeHypothesizer; // @synthesize routeHypothesizer=_routeHypothesizer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) GEORouteHypothesizer *routeHypothesizer; // @synthesize routeHypothesizer=_routeHypothesizer;
 - (void)didPostUINotification:(unsigned long long)arg1;
 - (void)stopHypothesizing;
 - (void)requestRefresh;

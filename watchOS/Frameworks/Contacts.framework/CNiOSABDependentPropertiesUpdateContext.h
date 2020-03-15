@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)shouldSetWatchChanges;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPendingSyncImageData; // @synthesize hasPendingSyncImageData=_hasPendingSyncImageData;
 @property(nonatomic) _Bool hasPendingThumbnailImageData; // @synthesize hasPendingThumbnailImageData=_hasPendingThumbnailImageData;
 @property(nonatomic) _Bool hasPendingCropRect; // @synthesize hasPendingCropRect=_hasPendingCropRect;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSData *pendingThumbnailImageData; // @synthesize pendingThumbnailImageData=_pendingThumbnailImageData;
 @property(nonatomic) struct CGRect pendingCropRect; // @synthesize pendingCropRect=_pendingCropRect;
 @property(copy, nonatomic) NSData *pendingImageData; // @synthesize pendingImageData=_pendingImageData;
-- (void).cxx_destruct;
 - (_Bool)setWatchChangesforThumbnailImageDataToPerson:(void *)arg1 error:(id *)arg2;
 - (_Bool)flushPendingImageChangesToPerson:(void *)arg1 logger:(id)arg2 error:(id *)arg3;
 - (void)resetAllData;

@@ -29,6 +29,7 @@
     NSString *_airlineCode;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *airlineCode; // @synthesize airlineCode=_airlineCode;
 @property(retain) NSNumber *flightCode; // @synthesize flightCode=_flightCode;
 @property(retain) FUFlightView *previewFlightView; // @synthesize previewFlightView=_previewFlightView;
@@ -36,7 +37,6 @@
 @property(nonatomic) _Bool showInfoPanel; // @synthesize showInfoPanel=_showInfoPanel;
 @property(nonatomic) _Bool highlightCurrentFlightLeg; // @synthesize highlightCurrentFlightLeg=_highlightCurrentFlightLeg;
 @property(retain, nonatomic) NSArray *flights; // @synthesize flights=_flights;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) FUFlightView *flightView;
 - (void)flightView:(id)arg1 didSelectLeg:(long long)arg2 ofFlight:(long long)arg3;
 - (struct CGSize)preferredContentSize;

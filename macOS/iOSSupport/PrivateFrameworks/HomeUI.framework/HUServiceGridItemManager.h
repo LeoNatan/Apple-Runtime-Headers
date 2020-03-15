@@ -17,12 +17,12 @@
     NSArray *_cachedSortedRooms;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *cachedSortedRooms; // @synthesize cachedSortedRooms=_cachedSortedRooms;
 @property(retain, nonatomic) NSArray *cachedSortedRoomIdentifiers; // @synthesize cachedSortedRoomIdentifiers=_cachedSortedRoomIdentifiers;
 @property(copy, nonatomic) CDUnknownBlockType itemProvidersCreator; // @synthesize itemProvidersCreator=_itemProvidersCreator;
 @property(nonatomic) BOOL shouldShowSectionHeaders; // @synthesize shouldShowSectionHeaders=_shouldShowSectionHeaders;
 @property(nonatomic) BOOL shouldGroupByRoom; // @synthesize shouldGroupByRoom=_shouldGroupByRoom;
-- (void).cxx_destruct;
 - (id)_roomIdentifierForItem:(id)arg1;
 - (id)_sortedRoomIdentifiers;
 - (id)_sortedRooms;

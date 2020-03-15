@@ -23,12 +23,12 @@
 + (id)chapterAtTime:(double)arg1 inChapters:(id)arg2;
 + (id)playbackChapterWithStartTime:(double)arg1 duration:(double)arg2 number:(unsigned long long)arg3 title:(id)arg4 imageFaultBlock:(CDUnknownBlockType)arg5;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) UIImage *image; // @synthesize image=_image;
 @property(readonly, copy) NSString *title; // @synthesize title=_title;
 @property(readonly) unsigned long long number; // @synthesize number=_number;
 @property(readonly) double duration; // @synthesize duration=_duration;
 @property(readonly) double startTime; // @synthesize startTime=_startTime;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

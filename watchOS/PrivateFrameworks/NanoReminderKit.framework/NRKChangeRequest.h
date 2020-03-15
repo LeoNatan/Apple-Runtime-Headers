@@ -20,6 +20,7 @@
     SEL _changeCompareSelector;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) SEL changeCompareSelector; // @synthesize changeCompareSelector=_changeCompareSelector;
 @property(nonatomic) SEL changeApplySelector; // @synthesize changeApplySelector=_changeApplySelector;
 @property(nonatomic) int requestType; // @synthesize requestType=_requestType;
@@ -28,7 +29,6 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(readonly, nonatomic) NSString *targetReminderId; // @synthesize targetReminderId=_targetReminderId;
 @property(nonatomic) __weak NRKReminder *targetReminder; // @synthesize targetReminder=_targetReminder;
-- (void).cxx_destruct;
 - (void)completeClient;
 - (void)cleanupReminderState;
 - (int)compareChange:(id)arg1 toChange:(id)arg2;

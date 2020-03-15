@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *connectionQueue; // @synthesize connectionQueue=_connectionQueue;
-- (void).cxx_destruct;
 - (void)_onConnectionQueue_stopObservingIfIdle;
 - (void)_onConnectionQueue_startObservingIfIdle;
 - (void)removeAllObservers;

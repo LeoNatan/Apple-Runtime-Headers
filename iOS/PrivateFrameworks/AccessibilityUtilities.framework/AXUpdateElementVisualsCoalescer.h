@@ -19,6 +19,7 @@
     double _lastProgressTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double lastProgressTime; // @synthesize lastProgressTime=_lastProgressTime;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(copy, nonatomic) CDUnknownBlockType updateVisualsSequenceInProgressHandler; // @synthesize updateVisualsSequenceInProgressHandler=_updateVisualsSequenceInProgressHandler;
@@ -26,7 +27,6 @@
 @property(copy, nonatomic) CDUnknownBlockType updateVisualsSequenceDidBeginHandler; // @synthesize updateVisualsSequenceDidBeginHandler=_updateVisualsSequenceDidBeginHandler;
 @property(nonatomic) double progressInterval; // @synthesize progressInterval=_progressInterval;
 @property(nonatomic) double threshold; // @synthesize threshold=_threshold;
-- (void).cxx_destruct;
 - (void)_timerDidFire:(id)arg1;
 - (void)notifyUpdateElementVisualsEventDidOccur;
 - (void)dealloc;

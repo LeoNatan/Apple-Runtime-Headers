@@ -16,8 +16,8 @@
     id <SVDiscoverMoreInteractionHandling> _discoverMoreInteractionHandler;
 }
 
-@property(readonly, nonatomic) id <SVDiscoverMoreInteractionHandling> discoverMoreInteractionHandler; // @synthesize discoverMoreInteractionHandler=_discoverMoreInteractionHandler;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SVDiscoverMoreInteractionHandling> discoverMoreInteractionHandler; // @synthesize discoverMoreInteractionHandler=_discoverMoreInteractionHandler;
 - (void)handleInteractionWithContext:(id)arg1;
 - (id)initWithDiscoverMoreInteractionHandler:(id)arg1;
 

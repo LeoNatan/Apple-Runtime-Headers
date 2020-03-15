@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <SafariShared/WBSSafariSandboxBroker.h>
+#import <SafariSharedUI/WBSUISafariSandboxBroker.h>
 
 #import <Safari/SafariSandboxBrokerProtocol-Protocol.h>
 
 @class NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_group;
 
-@interface SafariSandboxBroker : WBSSafariSandboxBroker <SafariSandboxBrokerProtocol>
+@interface SafariSandboxBroker : WBSUISafariSandboxBroker <SafariSandboxBrokerProtocol>
 {
     NSMutableDictionary *_unarchivingOperations;
     NSObject<OS_dispatch_group> *_archiveGroup;

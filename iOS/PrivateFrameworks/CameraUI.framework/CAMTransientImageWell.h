@@ -24,6 +24,7 @@
     UISwipeGestureRecognizer *__stashGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UISwipeGestureRecognizer *_stashGestureRecognizer; // @synthesize _stashGestureRecognizer=__stashGestureRecognizer;
 @property(readonly, nonatomic) UISwipeGestureRecognizer *_unstashGestureRecognizer; // @synthesize _unstashGestureRecognizer=__unstashGestureRecognizer;
 @property(readonly, nonatomic) UITapGestureRecognizer *_tapGestureRecognizer; // @synthesize _tapGestureRecognizer=__tapGestureRecognizer;
@@ -33,7 +34,6 @@
 @property(nonatomic) _Bool autoStashesImages; // @synthesize autoStashesImages=_autoStashesImages;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) __weak id <CAMTransientImageWellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool currentImageHidden;
 - (void)clearImageAnimated:(_Bool)arg1;
 @property(readonly, nonatomic) struct CGRect imageFrame;

@@ -18,9 +18,9 @@
 
 + (id)actionTableWithContentsOfDictionary:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *_info; // @synthesize _info=__info;
 @property(readonly, retain, nonatomic) NSDictionary *actionTableDictionary; // @synthesize actionTableDictionary=_actionTableDictionary;
-- (void).cxx_destruct;
 - (id)actionForName:(id)arg1;
 - (_Bool)isEqualToActionTable:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

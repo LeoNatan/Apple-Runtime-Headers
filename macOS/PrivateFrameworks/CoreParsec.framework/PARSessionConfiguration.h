@@ -22,12 +22,12 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)defaultSessionConfiguration;
+- (void).cxx_destruct;
 @property BOOL enablePersonalizedRanking; // @synthesize enablePersonalizedRanking=_enablePersonalizedRanking;
 @property BOOL dontPreloadImages; // @synthesize dontPreloadImages=_dontPreloadImages;
 @property(readonly) id <PARResultFactory> factory; // @synthesize factory=_factory;
 @property(readonly, copy) NSString *userAgent; // @synthesize userAgent=_userAgent;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

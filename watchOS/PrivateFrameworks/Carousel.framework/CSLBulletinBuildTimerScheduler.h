@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *timerInfos; // @synthesize timerInfos=_timerInfos;
 @property(retain, nonatomic) CSLPITimer *timer; // @synthesize timer=_timer;
-- (void).cxx_destruct;
 - (id)description;
 - (void)scheduleNextTimer;
 - (void)handleTimerExpiredWithInfo:(id)arg1;

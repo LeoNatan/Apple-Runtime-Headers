@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     WKDOMRange *_WKDOMRange;
 }
 
+- (void).cxx_destruct;
 @property BOOL followedByBlank; // @synthesize followedByBlank=_followedByBlank;
 @property(retain) WKDOMRange *range; // @synthesize range=_WKDOMRange;
 @property(retain) NSString *targetURL; // @synthesize targetURL=_targetURL;
 @property(copy) NSString *webViewIdentifier; // @synthesize webViewIdentifier=_webViewIdentifier;
-- (void).cxx_destruct;
 - (id)localizedTypeForAccessibility;
 -     // Error parsing type: v32@0:8^{__DDResult=}16^{__DDScanQuery={__CFRuntimeBase=QAQ}^{__DDQueryFragment}qq^?^v}24, name: setResult:fromQuery:
 - (void)setResult:(struct __DDResult *)arg1;

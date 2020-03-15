@@ -23,6 +23,7 @@
     PHLIngestAsset *_videoComplementAsset;
 }
 
+- (void).cxx_destruct;
 @property(retain) PHLIngestAsset *videoComplementAsset; // @synthesize videoComplementAsset=_videoComplementAsset;
 @property(retain) PHLIngestAsset *miniThumbnailAsset; // @synthesize miniThumbnailAsset=_miniThumbnailAsset;
 @property(readonly) long long options; // @synthesize options=_options;
@@ -34,7 +35,6 @@
 @property(retain) PHLIngestAsset *alternateMasterAsset; // @synthesize alternateMasterAsset=_alternateMasterAsset;
 @property(retain) PHLIngestAsset *masterAsset; // @synthesize masterAsset=_masterAsset;
 @property(readonly) NSString *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (id)initWithMasterAsset:(id)arg1 alternateMasterAsset:(id)arg2 renderedAsset:(id)arg3 thumbnailAsset:(id)arg4 miniThumbnailAsset:(id)arg5 videoComplement:(id)arg6 adjustments:(id)arg7 metadataProperties:(id)arg8 userInfo:(id)arg9 options:(long long)arg10;
 - (id)initWithMasterAsset:(id)arg1 renderedAsset:(id)arg2 thumbnailAsset:(id)arg3 videoComplement:(id)arg4 adjustments:(id)arg5 metadataProperties:(id)arg6 userInfo:(id)arg7;
 - (id)initWithMasterAsset:(id)arg1 renderedAsset:(id)arg2 thumbnailAsset:(id)arg3 adjustments:(id)arg4 metadataProperties:(id)arg5 userInfo:(id)arg6;

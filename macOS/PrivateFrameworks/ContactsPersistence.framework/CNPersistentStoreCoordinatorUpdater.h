@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     id <CNScheduler> _updaterScheduler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNScheduler> updaterScheduler; // @synthesize updaterScheduler=_updaterScheduler;
 @property(retain) id <NSLocking> fileLock; // @synthesize fileLock=_fileLock;
 @property BOOL isPristine; // @synthesize isPristine=_isPristine;
-- (void).cxx_destruct;
 - (id)scopeAccountUrls:(id)arg1 forCacheKey:(id)arg2;
 - (id)locksWithPersistentStoreCoordinator:(id)arg1;
 - (void)updatePersistentStoresWithBuilder:(id)arg1 addedUrls:(id)arg2 removedUrls:(id)arg3 resultBlock:(CDUnknownBlockType)arg4;

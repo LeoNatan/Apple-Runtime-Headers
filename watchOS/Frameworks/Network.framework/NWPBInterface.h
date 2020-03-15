@@ -31,13 +31,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool expensive; // @synthesize expensive=_expensive;
 @property(nonatomic) unsigned int mtu; // @synthesize mtu=_mtu;
 @property(nonatomic) unsigned int delegateIndex; // @synthesize delegateIndex=_delegateIndex;
 @property(nonatomic) unsigned int generation; // @synthesize generation=_generation;
 @property(nonatomic) unsigned int index; // @synthesize index=_index;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

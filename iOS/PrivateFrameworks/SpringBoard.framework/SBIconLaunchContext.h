@@ -14,9 +14,9 @@
     NSSet *_actions;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *actions; // @synthesize actions=_actions;
 @property(retain, nonatomic) SBActivationSettings *activationSettings; // @synthesize activationSettings=_activationSettings;
-- (void).cxx_destruct;
 
 @end
 

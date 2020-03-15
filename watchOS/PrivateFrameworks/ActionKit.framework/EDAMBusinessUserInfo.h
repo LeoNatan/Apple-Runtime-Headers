@@ -19,12 +19,12 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *updated; // @synthesize updated=_updated;
 @property(retain, nonatomic) NSString *email; // @synthesize email=_email;
 @property(retain, nonatomic) NSNumber *role; // @synthesize role=_role;
 @property(retain, nonatomic) NSString *businessName; // @synthesize businessName=_businessName;
 @property(retain, nonatomic) NSNumber *businessId; // @synthesize businessId=_businessId;
-- (void).cxx_destruct;
 
 @end
 

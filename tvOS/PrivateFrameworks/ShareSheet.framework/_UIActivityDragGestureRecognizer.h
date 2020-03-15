@@ -18,10 +18,10 @@
     struct UIEdgeInsets _draggingInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIAutoscroll *autoscroll; // @synthesize autoscroll=_autoscroll;
 @property(retain, nonatomic) UIScrollView *targetScrollView; // @synthesize targetScrollView=_targetScrollView;
 @property(nonatomic) struct UIEdgeInsets draggingInsets; // @synthesize draggingInsets=_draggingInsets;
-- (void).cxx_destruct;
 - (int)autoscrollDirectionsForPoint:(struct CGPoint)arg1 inView:(id)arg2;
 - (void)cancelAutoscroll;
 - (void)beginAutoscrollAndUpdateDirectionIfNeeded;

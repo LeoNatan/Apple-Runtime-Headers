@@ -26,7 +26,8 @@ __attribute__((visibility("hidden")))
 + (id)_finderTagsFromRelativePath:(id)arg1;
 + (BOOL)_modeFromRelativePath:(id)arg1 isPackageFault:(BOOL)arg2;
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSString *rawBouncedLogicalName; // @synthesize rawBouncedLogicalName=_bouncedLogicalName;
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSString *rawBouncedLogicalName; // @synthesize rawBouncedLogicalName=_bouncedLogicalName;
 @property(nonatomic) unsigned char itemScope; // @synthesize itemScope=_itemScope;
 @property(readonly, nonatomic) NSNumber *processingStamp; // @synthesize processingStamp=_processingStamp;
 @property(readonly, nonatomic) NSNumber *tmpBouncedNo; // @synthesize tmpBouncedNo=_tmpBouncedNo;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BRCGenerationID *generationID; // @synthesize generationID=_generationID;
 @property(readonly, nonatomic) NSNumber *fileID; // @synthesize fileID=_fileID;
 @property(readonly, nonatomic) NSNumber *documentID; // @synthesize documentID=_documentID;
-- (void).cxx_destruct;
 - (BOOL)checkStateWithItemID:(id)arg1 logToFile:(struct __sFILE *)arg2;
 - (void)_clearGenerationID;
 - (void)_clearFileID;
@@ -63,7 +63,7 @@ __attribute__((visibility("hidden")))
 - (void)_setCKInfo:(id)arg1;
 - (void)_setItemScope:(unsigned char)arg1;
 - (void)_setParentID:(id)arg1;
-- (void)setFilename:(id)arg1 forcePhysicalName:(id)arg2 serverName:(id)arg3;
+- (void)setFilename:(id)arg1 forcePhysicalName:(id)arg2 forceBouncedLogicalName:(id)arg3 serverName:(id)arg4;
 - (void)setFilename:(id)arg1;
 @property(readonly, nonatomic) NSString *filename;
 - (id)copyWithZone:(struct _NSZone *)arg1;

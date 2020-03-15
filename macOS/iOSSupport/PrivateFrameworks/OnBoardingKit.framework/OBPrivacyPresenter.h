@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <OnBoardingKit/UIAdaptivePresentationControllerDelegate-Protocol.h>
+
 @class NSArray, NSString, OBPrivacyCombinedController, OBPrivacySplashController, UIViewController;
 
-@interface OBPrivacyPresenter : NSObject
+@interface OBPrivacyPresenter : NSObject <UIAdaptivePresentationControllerDelegate>
 {
     BOOL _darkMode;
     BOOL _usesFullScreenPresentation;
@@ -20,7 +22,7 @@
     UIViewController *_presentingViewController;
     long long _modalPresentationStyle;
     unsigned long long _supportedInterfaceOrientations;
-    struct UIViewController *_presentedController;
+    UIViewController *_presentedController;
     NSArray *_presentedIdentifiers;
     CDUnknownBlockType _presentationCompletionHandler;
 }
@@ -31,6 +33,7 @@
 + (id)presenterForPrivacySplashWithIdentifer:(id)arg1;
 + (id)presenterForPrivacySplashWithIdentifier:(id)arg1;
 + (id)presenterForPrivacySplashWithBundle:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL animatePresentAndDismiss; // @synthesize animatePresentAndDismiss=_animatePresentAndDismiss;
 @property(copy) CDUnknownBlockType presentationCompletionHandler; // @synthesize presentationCompletionHandler=_presentationCompletionHandler;
 @property(retain) NSArray *presentedIdentifiers; // @synthesize presentedIdentifiers=_presentedIdentifiers;
@@ -44,11 +47,17 @@
 @property(retain) OBPrivacyCombinedController *combinedController; // @synthesize combinedController=_combinedController;
 @property(retain) OBPrivacySplashController *splashController; // @synthesize splashController=_splashController;
 @property(copy) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;
-- (void).cxx_destruct;
 - (void)dismiss;
 - (void)presentInNavigationStack:(id)arg1;
+- (void)presentationControllerDidDismiss:(id)arg1;
 - (void)present;
 - (void)_presenterDidDismiss;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

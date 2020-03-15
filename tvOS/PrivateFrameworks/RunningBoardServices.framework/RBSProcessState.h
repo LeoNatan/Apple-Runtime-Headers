@@ -33,6 +33,7 @@
 + (_Bool)supportsBSXPCSecureCoding;
 + (void)setActiveStateDescriptor:(id)arg1;
 + (id)stateWithProcess:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char terminationResistance; // @synthesize terminationResistance=_terminationResistance;
 @property(copy, nonatomic) NSSet *primitiveAssertions; // @synthesize primitiveAssertions=_primitiveAssertions;
 @property(copy, nonatomic) NSSet *legacyAssertions; // @synthesize legacyAssertions=_legacyAssertions;
@@ -42,7 +43,6 @@
 @property(nonatomic) unsigned char debugState; // @synthesize debugState=_debugState;
 @property(nonatomic) unsigned char taskState; // @synthesize taskState=_taskState;
 @property(readonly, nonatomic) RBSProcessHandle *process; // @synthesize process=_process;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;

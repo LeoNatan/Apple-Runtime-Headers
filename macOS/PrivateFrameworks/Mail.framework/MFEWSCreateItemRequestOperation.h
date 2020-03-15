@@ -20,12 +20,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL wroteOfflineData; // @synthesize wroteOfflineData=_wroteOfflineData;
 @property(retain) NSString *offlineCreatedEWSItemIdString; // @synthesize offlineCreatedEWSItemIdString=_offlineCreatedEWSItemIdString;
 @property(readonly, nonatomic) long long disposition; // @synthesize disposition=_disposition;
 @property(readonly, nonatomic) BOOL messageType; // @synthesize messageType=_messageType;
 @property(readonly, copy, nonatomic) NSString *EWSFolderIdString; // @synthesize EWSFolderIdString=_EWSFolderIdString;
-- (void).cxx_destruct;
 - (id)newResponseOperationWithGateway:(id)arg1 errorHandler:(id)arg2;
 @property(retain, nonatomic) MFEWSCreateItemResponseOperation *responseOperation;
 - (void)_itemIdString:(id)arg1 didChangeForResponseOperation:(id)arg2;

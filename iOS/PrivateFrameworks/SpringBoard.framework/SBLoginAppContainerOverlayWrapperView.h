@@ -14,8 +14,8 @@
     SBLockOverlayView *_overlayView;
 }
 
-@property(readonly, nonatomic) SBLockOverlayView *overlayView; // @synthesize overlayView=_overlayView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SBLockOverlayView *overlayView; // @synthesize overlayView=_overlayView;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1 overlayView:(id)arg2;
 

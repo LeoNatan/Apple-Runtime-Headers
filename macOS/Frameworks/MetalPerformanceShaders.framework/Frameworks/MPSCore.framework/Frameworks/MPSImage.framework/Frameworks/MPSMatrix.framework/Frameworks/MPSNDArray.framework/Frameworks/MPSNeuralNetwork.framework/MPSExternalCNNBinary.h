@@ -14,7 +14,7 @@
 {
 }
 
-- (unsigned long long)encodeBatchWithFilter:(id)arg1 encoder:(id)arg2 commandBuffer:(id)arg3 callInfo:(const CDStruct_7b0ab756 *)arg4;
+- (unsigned long long)encodeBatchWithFilter:(id)arg1 encoder:(id)arg2 commandBuffer:(id)arg3 callInfo:(const CDStruct_551bb076 *)arg4;
 - (unsigned long long)encodeWithFilter:(id)arg1 encoder:(id)arg2 commandBuffer:(id)arg3 callInfo:(const CDStruct_c2cd3a9e *)arg4;
 - (unsigned long long)encodeToCommandBuffer:(id)arg1 computeCommandEncoder:(id)arg2 options:(unsigned long long)arg3 primaryTexture:(id)arg4 primaryInfo:(const CDStruct_12100558 *)arg5 secondaryTexture:(id)arg6 secondaryInfo:(const CDStruct_12100558 *)arg7 destinationTexture:(id)arg8 destinationInfo:(const CDStruct_5948169e *)arg9;
 

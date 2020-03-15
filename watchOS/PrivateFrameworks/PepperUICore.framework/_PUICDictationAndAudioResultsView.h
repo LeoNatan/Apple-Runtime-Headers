@@ -27,9 +27,9 @@
     id <_PUICDictationAndAudioResultsViewDelegate> _resultsDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAnimatingSelection) _Bool animatingSelection; // @synthesize animatingSelection=_animatingSelection;
 @property(nonatomic) __weak id <_PUICDictationAndAudioResultsViewDelegate> resultsDelegate; // @synthesize resultsDelegate=_resultsDelegate;
-- (void).cxx_destruct;
 - (void)animatePartialResultsHidden;
 - (void)animateLoadingSpinnerHidden;
 - (void)animateFromStreamingToFailure;

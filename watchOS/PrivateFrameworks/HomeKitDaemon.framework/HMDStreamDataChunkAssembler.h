@@ -17,12 +17,12 @@
     NSNumber *_currentSequenceNumber;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSNumber *currentSequenceNumber; // @synthesize currentSequenceNumber=_currentSequenceNumber;
 @property(readonly, copy) NSMutableData *data; // @synthesize data=_data;
 @property(readonly, copy) NSString *type; // @synthesize type=_type;
 @property(copy) HMDStreamData *assembledData; // @synthesize assembledData=_assembledData;
 @property(readonly, copy) HMDStreamDataSequenceNumber *dataSequenceNumber; // @synthesize dataSequenceNumber=_dataSequenceNumber;
-- (void).cxx_destruct;
 - (void)createAssembledDataIfNecessaryForDataChunk:(id)arg1;
 - (_Bool)addDataChunk:(id)arg1 error:(id *)arg2;
 - (id)attributeDescriptions;

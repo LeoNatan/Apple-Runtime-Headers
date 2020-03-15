@@ -18,8 +18,8 @@
 }
 
 + (id)pageZoomFactors;
-@property(readonly, nonatomic) WBSPerSitePreference *pageZoomPreference; // @synthesize pageZoomPreference=_pageZoomPreference;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WBSPerSitePreference *pageZoomPreference; // @synthesize pageZoomPreference=_pageZoomPreference;
 - (id)defaultPreferenceValueForPreferenceIfNotCustomized:(id)arg1;
 - (long long)preferencesStoreKeyForPreference:(id)arg1;
 @property(readonly, nonatomic) WBSPerSitePreferencesSQLiteStore *perSitePreferencesStore;

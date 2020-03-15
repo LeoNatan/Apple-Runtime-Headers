@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@protocol MTLCommandQueue, MTLComputePipelineState, MTLDevice, MTLTexture;
+@protocol MTLBuffer, MTLCommandQueue, MTLComputePipelineState, MTLDevice;
 
 @interface AR2DSkeletonDetectionPostProcessGPU : NSObject
 {
@@ -14,14 +14,14 @@
     id <MTLCommandQueue> _commandQueue;
     id <MTLComputePipelineState> _pipelineStateInterpolate;
     id <MTLComputePipelineState> _pipelineStateMaxFilter;
-    id <MTLTexture> _input;
-    id <MTLTexture> _intermediate;
-    id <MTLTexture> _output;
-    float *_outputBuffer;
+    id <MTLBuffer> _input;
+    id <MTLBuffer> _intermediate;
+    id <MTLBuffer> _output;
 }
 
 - (void).cxx_destruct;
-- (float *)process:(float *)arg1 counter:(unsigned int *)arg2;
+- (float *)process:(float *)arg1 counter:(unsigned int *)arg2 shape:(struct CGSize)arg3;
+- (void)_copyToInputAsFloat16:(float *)arg1 shape:(struct CGSize)arg2;
 - (void)dealloc;
 - (id)init;
 

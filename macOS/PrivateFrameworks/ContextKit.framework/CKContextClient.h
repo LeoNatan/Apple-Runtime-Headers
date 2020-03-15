@@ -22,8 +22,8 @@
 
 + (id)clientWithDefaultRequestType:(unsigned long long)arg1;
 + (id)new;
-@property(readonly, nonatomic) unsigned long long defaultRequestType; // @synthesize defaultRequestType=_defaultRequestType;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long defaultRequestType; // @synthesize defaultRequestType=_defaultRequestType;
 - (void)ancestorsForTopics:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)workWithServiceSemaphore:(CDUnknownBlockType)arg1;
 - (BOOL)tryAcquireServiceSemaphore;

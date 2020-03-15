@@ -15,10 +15,10 @@
     NSArray *_labels;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *labels; // @synthesize labels=_labels;
 @property(retain) NSMutableArray *smallReductionSumResult; // @synthesize smallReductionSumResult=_smallReductionSumResult;
 @property(retain) NSMutableArray *largeReductionSumResult; // @synthesize largeReductionSumResult=_largeReductionSumResult;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

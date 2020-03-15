@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     id <WDAddDataManualEntrySpinnerDataSource> _dataSource;
 }
 
-@property(nonatomic) __weak id <WDAddDataManualEntrySpinnerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <WDAddDataManualEntrySpinnerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void)setTitle:(id)arg1;
 - (void)_updateTableViewCellValue;
 - (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;

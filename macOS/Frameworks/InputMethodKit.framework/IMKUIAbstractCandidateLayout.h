@@ -16,10 +16,10 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id <IMKUICandidateLayoutDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) IMKCandidateListDictionary *candidateGroups; // @synthesize candidateGroups=_candidateGroups;
-- (void).cxx_destruct;
 - (void)prepareLayout;
 - (id)itemForIndexPath:(id)arg1;
 @property(readonly, nonatomic) struct CGSize contentSize;

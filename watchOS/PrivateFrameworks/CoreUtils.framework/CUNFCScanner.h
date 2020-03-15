@@ -20,13 +20,13 @@
     CDUnknownBlockType _lostDeviceHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType lostDeviceHandler; // @synthesize lostDeviceHandler=_lostDeviceHandler;
 @property(copy, nonatomic) CDUnknownBlockType foundDeviceHandler; // @synthesize foundDeviceHandler=_foundDeviceHandler;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(nonatomic) _Bool pauseWhenFound; // @synthesize pauseWhenFound=_pauseWhenFound;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_invalidateWithError:(id)arg1;
 - (void)invalidate;
 - (void)resume;

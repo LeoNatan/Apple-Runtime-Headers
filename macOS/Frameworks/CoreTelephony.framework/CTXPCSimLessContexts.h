@@ -18,9 +18,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *voicePreferred; // @synthesize voicePreferred=_voicePreferred;
 @property(retain, nonatomic) NSArray *subscriptions; // @synthesize subscriptions=_subscriptions;
-- (void).cxx_destruct;
 - (id)findForAccount:(id)arg1;
 - (id)findForUuid:(id)arg1;
 - (id)initWithCoder:(id)arg1;

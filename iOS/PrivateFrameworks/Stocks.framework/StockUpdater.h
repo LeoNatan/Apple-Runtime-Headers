@@ -20,13 +20,13 @@
     CDUnknownBlockType _updateCompletionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType updateCompletionHandler; // @synthesize updateCompletionHandler=_updateCompletionHandler;
 @property(retain, nonatomic) NSArray *pendingStocks; // @synthesize pendingStocks=_pendingStocks;
 @property(retain, nonatomic) NSArray *requestStocks; // @synthesize requestStocks=_requestStocks;
 @property(readonly, nonatomic) _Bool forceUpdate; // @synthesize forceUpdate=_forceUpdate;
 @property(readonly, nonatomic) _Bool isComprehensive; // @synthesize isComprehensive=_isComprehensive;
 @property(nonatomic) __weak id <StockUpdaterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)aggregateDictionaryDomain;
 - (void)failWithError:(id)arg1;
 - (void)didParseData;

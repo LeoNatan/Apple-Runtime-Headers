@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 + (void)popAnimationGroup:(id)arg1;
 + (void)pushAnimationGroup:(id)arg1;
 + (id)animationGroupWithAnimations:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) NSMutableArray *subAnimationGroups; // @synthesize subAnimationGroups=_subAnimationGroups;
 @property(nonatomic) __weak PUAnimationGroup *superAnimationGroup; // @synthesize superAnimationGroup=_superAnimationGroup;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
-- (void).cxx_destruct;
 - (id)description;
 - (void)finishImmediately;
 - (void)complete;

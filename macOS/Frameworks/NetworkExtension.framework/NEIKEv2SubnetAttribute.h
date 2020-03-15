@@ -19,11 +19,11 @@
 }
 
 + (id)copyTypeDescription;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long customType; // @synthesize customType=_customType;
 @property unsigned int ipv4SubnetMask; // @synthesize ipv4SubnetMask=_ipv4SubnetMask;
 @property unsigned char prefix; // @synthesize prefix=_prefix;
 @property(retain) NWAddressEndpoint *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) NWAddressEndpoint *subnetMaskAddress;
 - (id)description;

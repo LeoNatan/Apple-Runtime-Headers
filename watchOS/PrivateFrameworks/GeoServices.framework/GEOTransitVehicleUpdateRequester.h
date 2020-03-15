@@ -25,9 +25,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *processedTripIds; // @synthesize processedTripIds=_processedTripIds;
 @property(readonly, nonatomic) NSHashTable *updaters; // @synthesize updaters=_updaters;
-- (void).cxx_destruct;
 - (void)_removeTripIdsIfApplicable:(id)arg1;
 - (void)_handleMapItems:(id)arg1 error:(id)arg2 forTripIDs:(id)arg3;
 - (void)_sendRequestForTripIds:(id)arg1;

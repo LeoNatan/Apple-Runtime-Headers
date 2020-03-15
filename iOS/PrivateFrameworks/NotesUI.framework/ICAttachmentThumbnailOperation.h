@@ -30,6 +30,7 @@
     struct CGSize _minSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isMovie; // @synthesize isMovie=_isMovie;
 @property(nonatomic) _Bool showAsFileIcon; // @synthesize showAsFileIcon=_showAsFileIcon;
 @property(nonatomic) unsigned long long imageScaling; // @synthesize imageScaling=_imageScaling;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) ICAppearanceInfo *appearanceInfo; // @synthesize appearanceInfo=_appearanceInfo;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) struct CGSize minSize; // @synthesize minSize=_minSize;
-- (void).cxx_destruct;
 - (void)requestThumbnail;
 - (void)main;
 - (void)addCompletionBlock:(CDUnknownBlockType)arg1;

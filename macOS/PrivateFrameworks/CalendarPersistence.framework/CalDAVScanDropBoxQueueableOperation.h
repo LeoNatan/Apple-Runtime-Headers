@@ -15,8 +15,8 @@
     BOOL _isUserRequested;
 }
 
-@property BOOL isUserRequested; // @synthesize isUserRequested=_isUserRequested;
 - (void).cxx_destruct;
+@property BOOL isUserRequested; // @synthesize isUserRequested=_isUserRequested;
 - (void)performOperation;
 - (void)handleResultsOfDropBoxURLLookup:(id)arg1;
 - (id)_updateDropboxBaseURLIfURLOnDifferentHost:(id)arg1;

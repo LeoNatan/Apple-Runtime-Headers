@@ -15,10 +15,10 @@
     struct _NSRange _effectiveRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange effectiveRange; // @synthesize effectiveRange=_effectiveRange;
 @property(retain, nonatomic) PXSItem *item; // @synthesize item=_item;
 @property(retain, nonatomic) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

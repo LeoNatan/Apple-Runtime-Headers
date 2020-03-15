@@ -21,11 +21,11 @@
 
 + (int)_tuOrientationForVideoOrientation:(int)arg1;
 + (int)_videoOrientationForTUOrientation:(int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasRefreshedPreviewAfterError; // @synthesize hasRefreshedPreviewAfterError=_hasRefreshedPreviewAfterError;
 @property(nonatomic) BOOL wantsPreview; // @synthesize wantsPreview=_wantsPreview;
 @property(readonly, nonatomic) id <TUVideoDeviceControllerProvider><TUVideoEffectsProvider> provider; // @synthesize provider=_provider;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
-- (void).cxx_destruct;
 - (void)provider:(id)arg1 cameraZoomAvailabilityDidChange:(BOOL)arg2;
 - (void)captureDevicesChangedForProvider:(id)arg1;
 - (void)didStopPreviewForProvider:(id)arg1;
@@ -52,7 +52,6 @@
 @property(readonly, nonatomic, getter=isPreviewRunning) BOOL previewRunning;
 @property(readonly, copy, nonatomic) NSArray *inputDevices;
 @property(nonatomic) int currentVideoOrientation;
-- (void)resetZoomFactorForCurrentInputDevice;
 @property(retain, nonatomic) AVCaptureDevice *currentInputDevice;
 - (id)debugDescription;
 - (id)init;

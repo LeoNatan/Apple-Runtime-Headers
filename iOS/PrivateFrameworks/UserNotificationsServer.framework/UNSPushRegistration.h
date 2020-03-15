@@ -18,10 +18,10 @@
 }
 
 + (id)pushRegistrationWithEnvironment:(id)arg1 tokenIdentifier:(id)arg2 token:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *tokenIdentifier; // @synthesize tokenIdentifier=_tokenIdentifier;
 @property(readonly, copy, nonatomic) NSData *token; // @synthesize token=_token;
 @property(readonly, copy, nonatomic) NSString *environment; // @synthesize environment=_environment;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

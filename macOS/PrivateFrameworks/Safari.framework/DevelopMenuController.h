@@ -11,7 +11,7 @@
 #import <Safari/RWIDebuggableDelegate-Protocol.h>
 #import <Safari/RWITargetDelegate-Protocol.h>
 
-@class NSArray, NSMenu, NSMenuItem, NSString;
+@class BrowserDiagnosticLoggingDelegate, NSArray, NSMenu, NSMenuItem, NSString;
 
 __attribute__((visibility("hidden")))
 @interface DevelopMenuController : NSObject <RWITargetDelegate, RWIApplicationDelegate, RWIDebuggableDelegate, NSMenuDelegate>
@@ -26,15 +26,17 @@ __attribute__((visibility("hidden")))
     BOOL _developMenuOpen;
     NSArray *_userAgents;
     struct Optional<unsigned long long> _notificationHandlerID;
+    BrowserDiagnosticLoggingDelegate *_sharedInspectorDiagnosticLoggingDelegate;
     BOOL _menuInstalled;
 }
 
 + (id)sharedController;
-@property(readonly, nonatomic, getter=isMenuInstalled) BOOL menuInstalled; // @synthesize menuInstalled=_menuInstalled;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isMenuInstalled) BOOL menuInstalled; // @synthesize menuInstalled=_menuInstalled;
 - (void)inspectDebuggable:(id)arg1;
 - (void)showSnippetEditor:(id)arg1;
+@property(readonly) NSString *iPadMiniUserAgent;
 @property(readonly) NSString *iPadUserAgent;
 @property(readonly) NSString *iPhoneUserAgent;
 @property(readonly) NSArray *userAgents;

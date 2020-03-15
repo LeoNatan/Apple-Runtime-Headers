@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     ADNotificationBus *_owner;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int token; // @synthesize token=_token;
 @property(readonly, nonatomic) __weak ADNotificationBus *owner; // @synthesize owner=_owner;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

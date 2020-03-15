@@ -16,8 +16,8 @@
 
 + (void)drawInContext:(struct CGContext *)arg1 parameters:(id)arg2;
 + (id)defaultValueForKey:(id)arg1;
-@property(retain, nonatomic) CKTextKitRenderer *renderer; // @synthesize renderer=_renderer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKTextKitRenderer *renderer; // @synthesize renderer=_renderer;
 - (void)layoutSublayers;
 @property(readonly, nonatomic) CKTextComponentLayerHighlighter *highlighter;
 - (void)drawInContext:(struct CGContext *)arg1;

@@ -17,10 +17,10 @@
     ASCodableShareLocations *_inviterShareLocations;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ASCodableActivityDataPreview *activityDataPreview; // @synthesize activityDataPreview=_activityDataPreview;
 @property(retain, nonatomic) ASCodableShareLocations *inviterShareLocations; // @synthesize inviterShareLocations=_inviterShareLocations;
 @property(retain, nonatomic) NSString *handshakeToken; // @synthesize handshakeToken=_handshakeToken;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

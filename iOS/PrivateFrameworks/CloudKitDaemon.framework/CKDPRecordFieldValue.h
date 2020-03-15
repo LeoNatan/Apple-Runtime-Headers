@@ -34,6 +34,7 @@
 }
 
 + (Class)listValueType;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isEncrypted; // @synthesize isEncrypted=_isEncrypted;
 @property(retain, nonatomic) CKDPStreamingAsset *streamingAssetValue; // @synthesize streamingAssetValue=_streamingAssetValue;
 @property(retain, nonatomic) CKDPPackage *packageValue; // @synthesize packageValue=_packageValue;
@@ -46,7 +47,6 @@
 @property(nonatomic) double doubleValue; // @synthesize doubleValue=_doubleValue;
 @property(nonatomic) long long signedValue; // @synthesize signedValue=_signedValue;
 @property(retain, nonatomic) NSData *bytesValue; // @synthesize bytesValue=_bytesValue;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

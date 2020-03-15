@@ -17,10 +17,10 @@
     NSString *_dataSource;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) STFamilyMember *me; // @synthesize me=_me;
 @property(copy, nonatomic) NSArray *members; // @synthesize members=_members;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)dictionaryRepresentation;
 - (id)initWithMembers:(id)arg1;

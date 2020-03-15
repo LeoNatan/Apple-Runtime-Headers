@@ -15,10 +15,10 @@
     _UINavigationControllerPalette *_palette;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UINavigationControllerPalette *palette; // @synthesize palette=_palette;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (id)initWithViewController:(id)arg1;

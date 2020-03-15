@@ -22,11 +22,11 @@
     id <CSLClockHostViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsActivationView; // @synthesize allowsActivationView=_allowsActivationView;
 @property(nonatomic) __weak id <CSLClockHostViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *requester; // @synthesize requester=_requester;
 @property(retain, nonatomic) UIView<FBSceneHostView> *sceneHostView; // @synthesize sceneHostView=_sceneHostView;
-- (void).cxx_destruct;
 - (void)layerHostingStateDidChange:(id)arg1;
 - (void)didMoveToWindow;
 - (void)invalidate;

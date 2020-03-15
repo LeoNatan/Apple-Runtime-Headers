@@ -20,13 +20,13 @@
 }
 
 + (struct CGSize)sizeThatFitsWidth:(double)arg1 viewElement:(id)arg2 context:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUIPlayButtonImageCache *imageCache; // @synthesize imageCache=_imageCache;
 @property(copy, nonatomic) NSString *mediaURLString; // @synthesize mediaURLString=_mediaURLString;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) _Bool showOnDemand; // @synthesize showOnDemand=_showOnDemand;
 @property(copy, nonatomic) NSString *playItemIdentifier; // @synthesize playItemIdentifier=_playItemIdentifier;
 @property(nonatomic) long long itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
-- (void).cxx_destruct;
 - (void)_updateEnabledState;
 @property(nonatomic) _Bool useLargeButton;
 @property(nonatomic, getter=isRadio) _Bool radio;

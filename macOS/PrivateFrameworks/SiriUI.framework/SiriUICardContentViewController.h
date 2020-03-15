@@ -13,8 +13,8 @@
     SiriUISnippetControllerCell *_cellView;
 }
 
-@property __weak SiriUISnippetControllerCell *cellView; // @synthesize cellView=_cellView;
 - (void).cxx_destruct;
+@property __weak SiriUISnippetControllerCell *cellView; // @synthesize cellView=_cellView;
 - (void)populateWithSnippetViewController:(id)arg1;
 - (id)nibBundle;
 

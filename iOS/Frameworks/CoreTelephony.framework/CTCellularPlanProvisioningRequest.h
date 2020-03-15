@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *EID; // @synthesize EID=_EID;
 @property(retain, nonatomic) NSString *ICCID; // @synthesize ICCID=_ICCID;
 @property(retain, nonatomic) NSString *confirmationCode; // @synthesize confirmationCode=_confirmationCode;
 @property(retain, nonatomic) NSString *OID; // @synthesize OID=_OID;
 @property(retain, nonatomic) NSString *matchingID; // @synthesize matchingID=_matchingID;
 @property(retain, nonatomic) NSString *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

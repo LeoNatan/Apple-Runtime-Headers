@@ -30,6 +30,7 @@
 }
 
 + (id)getStringOfLocaleSource:(int)arg1;
+- (void).cxx_destruct;
 @property(retain) NSString *testPeer; // @synthesize testPeer=_testPeer;
 @property(retain) NSString *testHost11d; // @synthesize testHost11d=_testHost11d;
 @property int testMcc; // @synthesize testMcc=_testMcc;
@@ -44,7 +45,6 @@
 @property int localeSource; // @synthesize localeSource=_localeSource;
 @property(retain) NSString *localeCountryCode; // @synthesize localeCountryCode=_localeCountryCode;
 @property(nonatomic) __weak id <WiFiLocaleManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didFailWithError:(id)arg1;
 - (void)didUpdateLocations:(id)arg1;
 - (void)didChangeAuthorizationStatus;

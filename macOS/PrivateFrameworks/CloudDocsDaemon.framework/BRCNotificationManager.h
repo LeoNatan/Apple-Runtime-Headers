@@ -30,9 +30,9 @@ __attribute__((visibility("hidden")))
     BOOL _isCancelled;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isCancelled; // @synthesize isCancelled=_isCancelled;
 @property(readonly, nonatomic) BRCAccountSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)invalidatePipeReceiversWatchingAppLibraryIDs:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)pipeDelegateInvalidated:(id)arg1;
 - (void)invalidatePipesWatchingAppLibraryIDs:(id)arg1;

@@ -14,9 +14,9 @@
     unsigned long long _lastDaySyncCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long lastDaySyncCount; // @synthesize lastDaySyncCount=_lastDaySyncCount;
 @property(readonly, nonatomic) NSDate *lastSyncDate; // @synthesize lastSyncDate=_lastSyncDate;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithLastSyncDate:(id)arg1 lastDaySyncCount:(unsigned long long)arg2;
 - (id)init;

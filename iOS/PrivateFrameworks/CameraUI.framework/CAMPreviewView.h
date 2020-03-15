@@ -24,9 +24,11 @@
     double _bottomContentInset;
     UILabel *__simulatorLabel;
     struct CGRect _viewportFrame;
+    struct CGRect _overlayFrame;
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(nonatomic) int _exposureBiasSide; // @synthesize _exposureBiasSide=__exposureBiasSide;
 @property(readonly, nonatomic) UILabel *_simulatorLabel; // @synthesize _simulatorLabel=__simulatorLabel;
 @property(nonatomic) double bottomContentInset; // @synthesize bottomContentInset=_bottomContentInset;
@@ -39,15 +41,17 @@
 @property(nonatomic) long long indicatorClippingStyle; // @synthesize indicatorClippingStyle=_indicatorClippingStyle;
 @property(readonly, nonatomic) UIView *indicatorContainerView; // @synthesize indicatorContainerView=_indicatorContainerView;
 @property(readonly, nonatomic) CAMVideoPreviewView *videoPreviewView; // @synthesize videoPreviewView=_videoPreviewView;
+@property(nonatomic) struct CGRect overlayFrame; // @synthesize overlayFrame=_overlayFrame;
 @property(nonatomic) struct CGRect viewportFrame; // @synthesize viewportFrame=_viewportFrame;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
-- (void).cxx_destruct;
 - (struct CGRect)_aspectFaceRectFromSquareFaceRect:(struct CGRect)arg1 angle:(double)arg2;
 - (int)_faceOrientationForRollAngle:(double)arg1;
+- (struct CGRect)bodyIndicatorFrameForResult:(id)arg1;
 - (struct CGRect)faceIndicatorFrameForFaceResult:(id)arg1;
 - (struct CGPoint)pointForCaptureDevicePointOfInterest:(struct CGPoint)arg1;
 - (struct CGPoint)captureDevicePointOfInterestForPoint:(struct CGPoint)arg1;
 - (struct CGRect)mrcIndicatorFrameForMRCResult:(id)arg1;
+- (struct CGRect)fixedSizeSubjectIndicatorFrameForBodyResult:(id)arg1;
 - (struct CGRect)fixedSizeSubjectIndicatorFrameForFaceResult:(id)arg1;
 - (void)indicatePointOfInterest:(struct CGPoint)arg1;
 - (void)layoutSubviews;

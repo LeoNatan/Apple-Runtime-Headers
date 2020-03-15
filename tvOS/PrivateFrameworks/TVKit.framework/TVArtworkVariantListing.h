@@ -13,8 +13,8 @@
     NSArray *_artworkVariants;
 }
 
-@property(readonly, copy, nonatomic) NSArray *artworkVariants; // @synthesize artworkVariants=_artworkVariants;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *artworkVariants; // @synthesize artworkVariants=_artworkVariants;
 - (id)bestArtworkVariantOfType:(long long)arg1 forSize:(struct CGSize)arg2;
 - (id)bestArtworkVariantForSize:(struct CGSize)arg1;
 - (id)initWithArtworkDictionary:(id)arg1;

@@ -23,11 +23,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldDecode; // @synthesize shouldDecode=_shouldDecode;
 @property(nonatomic) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic, getter=isCircular) _Bool circular; // @synthesize circular=_circular;
 @property(retain, nonatomic) PRLikeness *likeness; // @synthesize likeness=_likeness;
-- (void).cxx_destruct;
 - (void)setNeedsRedraw;
 - (void)layoutSubviews;
 - (void)_setDisplayedView:(id)arg1;

@@ -21,12 +21,12 @@
     long long _maximumNumberOfColumns;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long maximumNumberOfColumns; // @synthesize maximumNumberOfColumns=_maximumNumberOfColumns;
 @property(nonatomic) double interColumnSpacing; // @synthesize interColumnSpacing=_interColumnSpacing;
 @property(nonatomic) double referenceWidth; // @synthesize referenceWidth=_referenceWidth;
 @property(copy, nonatomic) CDUnknownBlockType wantsEdgeToEdgeLayoutBlock; // @synthesize wantsEdgeToEdgeLayoutBlock=_wantsEdgeToEdgeLayoutBlock;
 @property(copy, nonatomic) NSArray *elements; // @synthesize elements=_elements;
-- (void).cxx_destruct;
 - (void)enumerateElementsUsingBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) long long numberOfColumns;
 - (_Bool)_wantsEdgeToEdgeLayoutForElement:(id)arg1;

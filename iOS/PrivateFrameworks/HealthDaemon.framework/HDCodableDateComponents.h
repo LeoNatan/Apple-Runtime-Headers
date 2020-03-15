@@ -46,6 +46,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *timeZone; // @synthesize timeZone=_timeZone;
 @property(retain, nonatomic) NSString *calendar; // @synthesize calendar=_calendar;
 @property(nonatomic) long long nanosecond; // @synthesize nanosecond=_nanosecond;
@@ -62,7 +63,6 @@
 @property(nonatomic) long long month; // @synthesize month=_month;
 @property(nonatomic) long long year; // @synthesize year=_year;
 @property(nonatomic) long long era; // @synthesize era=_era;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

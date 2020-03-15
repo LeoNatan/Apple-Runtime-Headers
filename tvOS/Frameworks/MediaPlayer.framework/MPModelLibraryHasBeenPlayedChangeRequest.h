@@ -15,10 +15,10 @@
     MPModelObject *_model;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasBeenPlayed; // @synthesize hasBeenPlayed=_hasBeenPlayed;
 @property(readonly, nonatomic) MPModelObject *model; // @synthesize model=_model;
 @property(retain, nonatomic) MPMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
-- (void).cxx_destruct;
 - (id)newOperationWithResponseHandler:(CDUnknownBlockType)arg1;
 - (id)initWithModel:(id)arg1;
 

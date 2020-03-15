@@ -22,6 +22,7 @@
     long long _assetCollectionSubtype;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long assetCollectionSubtype; // @synthesize assetCollectionSubtype=_assetCollectionSubtype;
 @property(readonly, nonatomic) long long assetCollectionType; // @synthesize assetCollectionType=_assetCollectionType;
 @property(readonly, copy, nonatomic) NSString *assetCollectionUUID; // @synthesize assetCollectionUUID=_assetCollectionUUID;
@@ -29,7 +30,6 @@
 @property(readonly, copy, nonatomic) NSString *assetUUID; // @synthesize assetUUID=_assetUUID;
 @property(readonly, nonatomic) long long revealMode; // @synthesize revealMode=_revealMode;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) id <PXDisplayAssetCollection> assetCollection; // @synthesize assetCollection=_assetCollection;
 @property(readonly, nonatomic) id <PXDisplayAsset> asset; // @synthesize asset=_asset;

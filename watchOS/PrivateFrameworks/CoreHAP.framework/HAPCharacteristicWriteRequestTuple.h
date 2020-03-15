@@ -20,6 +20,7 @@
 }
 
 + (id)writeRequestTupleForCharacteristic:(id)arg1 value:(id)arg2 authorizationData:(id)arg3 timedWrite:(_Bool)arg4 responseValue:(_Bool)arg5 type:(unsigned int)arg6;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *enableEvents; // @synthesize enableEvents=_enableEvents;
 @property(nonatomic) _Bool includeResponseValue; // @synthesize includeResponseValue=_includeResponseValue;
 @property(nonatomic) unsigned int writeType; // @synthesize writeType=_writeType;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) NSData *authorizationData; // @synthesize authorizationData=_authorizationData;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 @property(retain, nonatomic) HAPCharacteristic *characteristic; // @synthesize characteristic=_characteristic;
-- (void).cxx_destruct;
 
 @end
 

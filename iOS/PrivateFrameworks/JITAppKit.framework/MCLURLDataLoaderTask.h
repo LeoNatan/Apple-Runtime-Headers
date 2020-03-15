@@ -27,6 +27,7 @@
     CDUnknownBlockType _redirectHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType redirectHandler; // @synthesize redirectHandler=_redirectHandler;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) float progress; // @synthesize progress=_progress;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) NSURLRequest *request; // @synthesize request=_request;
 @property(readonly, nonatomic) NSURLRequest *originalRequest; // @synthesize originalRequest=_originalRequest;
 @property(readonly, nonatomic) NSString *category; // @synthesize category=_category;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)applyFileExtension:(id)arg1;

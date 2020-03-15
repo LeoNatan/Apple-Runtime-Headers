@@ -25,11 +25,11 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool picked; // @synthesize picked=_picked;
 @property(nonatomic) _Bool supportsVolumeControl; // @synthesize supportsVolumeControl=_supportsVolumeControl;
 @property(retain, nonatomic) NSString *routeName; // @synthesize routeName=_routeName;
 @property(retain, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

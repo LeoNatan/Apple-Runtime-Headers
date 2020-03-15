@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSArray *_contacts;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
 @property(copy, nonatomic) NSArray *senders; // @synthesize senders=_senders;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithType:(long long)arg1 senders:(id)arg2;
 

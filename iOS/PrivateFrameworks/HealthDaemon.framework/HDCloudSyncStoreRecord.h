@@ -24,12 +24,12 @@
 + (_Bool)isStoreRecord:(id)arg1;
 + (id)recordIDWithZoneID:(id)arg1;
 + (id)recordWithCKRecord:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HDCloudSyncSequenceRecord *tombstoneSequenceRecord; // @synthesize tombstoneSequenceRecord=_tombstoneSequenceRecord;
 @property(readonly, copy, nonatomic) NSUUID *storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
 @property(copy, nonatomic) NSString *pendingOwner; // @synthesize pendingOwner=_pendingOwner;
 @property(readonly, copy, nonatomic) NSString *ownerIdentifier; // @synthesize ownerIdentifier=_ownerIdentifier;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (id)_indentedSequenceRecordDescription:(id)arg1;
 - (id)description;
 - (id)sequenceRecordWithRecordID:(id)arg1;

@@ -19,10 +19,10 @@
     NSString *_extensionIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *extensionIdentifier; // @synthesize extensionIdentifier=_extensionIdentifier;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *stateQueue; // @synthesize stateQueue=_stateQueue;
 @property(retain, nonatomic) GKExtensionHostViewController *extensionHostViewController; // @synthesize extensionHostViewController=_extensionHostViewController;
-- (void).cxx_destruct;
 - (void)extensionDidTerminateWithError:(id)arg1;
 - (_Bool)needToLoadExtension;
 @property(nonatomic) long long extensionLoadState; // @synthesize extensionLoadState=_extensionLoadState;

@@ -20,13 +20,13 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain) AKAuthorizationViewHelper *helper; // @synthesize helper=_helper;
 @property BOOL currentlyActive; // @synthesize currentlyActive=_currentlyActive;
 @property(readonly) AKCredentialRequestContext *credentialRequestContext; // @synthesize credentialRequestContext=_credentialRequestContext;
 @property BOOL makeSheetCritical; // @synthesize makeSheetCritical=_makeSheetCritical;
 @property __weak NSWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
-- (void).cxx_destruct;
 - (void)callCompletionWithAuthorization:(id)arg1 error:(id)arg2;
 - (void)windowWillClose;
 - (void)closeModal;

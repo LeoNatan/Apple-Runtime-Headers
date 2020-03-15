@@ -26,11 +26,11 @@
     SBVolumeHardwareButtonActions *_buttonActions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBVolumeHardwareButtonActions *buttonActions; // @synthesize buttonActions=_buttonActions;
 @property(readonly, nonatomic) SBPressSequenceObserver *volumeDecreaseSequenceObserver; // @synthesize volumeDecreaseSequenceObserver=_volumeDecreaseSequenceObserver;
 @property(readonly, nonatomic) SBPressSequenceObserver *volumeIncreaseSequenceObserver; // @synthesize volumeIncreaseSequenceObserver=_volumeIncreaseSequenceObserver;
 @property(nonatomic) __weak NSHashTable *volumePressBandits; // @synthesize volumePressBandits=_volumePressBandits;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;

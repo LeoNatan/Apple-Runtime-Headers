@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *token; // @synthesize token=_token;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly) unsigned long long hash;

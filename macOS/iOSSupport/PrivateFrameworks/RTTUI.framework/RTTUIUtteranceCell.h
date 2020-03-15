@@ -22,11 +22,11 @@
 }
 
 + (double)heightForUtterance:(id)arg1 andWidth:(double)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_accessibilityIsUnread, setter=_accessibilitySetIsUnread:) BOOL accessibilityIsUnread; // @synthesize accessibilityIsUnread=_accessibilityIsUnread;
 @property(nonatomic) __weak id <RTTUIUtteranceCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isEditingUtterance) BOOL editingUtterance; // @synthesize editingUtterance=_editingUtterance;
 @property(retain, nonatomic) RTTUtterance *utterance; // @synthesize utterance=_utterance;
-- (void).cxx_destruct;
 - (BOOL)_accessibilityRealtimeCompleted;
 - (BOOL)_accessibilityRealtimeHasUnread;
 - (void)_accessibilityHandleATFocused:(BOOL)arg1 assistiveTech:(id)arg2;

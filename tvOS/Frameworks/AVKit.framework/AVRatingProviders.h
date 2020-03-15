@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 
 + (id)shared;
 + (id)ratingProvidersWithName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *mapForTVShows; // @synthesize mapForTVShows=_mapForTVShows;
 @property(readonly, nonatomic) NSDictionary *mapForMovies; // @synthesize mapForMovies=_mapForMovies;
 @property(copy, nonatomic) NSDictionary *plist; // @synthesize plist=_plist;
-- (void).cxx_destruct;
 - (id)findRatingString:(id)arg1;
 - (id)findRatingString:(id)arg1 domain:(long long)arg2 country:(id)arg3 shouldPreferTVDomain:(_Bool)arg4;
 - (id)_tvShowsMapForRating:(id)arg1;

@@ -17,10 +17,10 @@
 
 + (id)articleExcerptHTML;
 + (id)articleExcerptCSS;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long lengthType; // @synthesize lengthType=_lengthType;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic) NSString *processedHTML; // @synthesize processedHTML=_processedHTML;
-- (void).cxx_destruct;
 - (id)embedCSSIntoExcerptHTML:(id)arg1 scale:(double)arg2;
 - (id)paragraphShortExcerptHTML:(id)arg1 article:(id)arg2;
 - (id)excerptHTMLToProcessedHTML:(id)arg1 article:(id)arg2 scale:(double)arg3;

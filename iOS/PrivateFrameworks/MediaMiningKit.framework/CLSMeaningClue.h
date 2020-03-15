@@ -13,8 +13,8 @@
 
 + (id)clueWithValue:(id)arg1 forKey:(id)arg2 confidence:(double)arg3 relevance:(double)arg4;
 + (id)clueWithValue:(id)arg1 forKey:(id)arg2;
-@property(retain) id relatedData; // @synthesize relatedData=_relatedData;
 - (void).cxx_destruct;
+@property(retain) id relatedData; // @synthesize relatedData=_relatedData;
 - (id)init;
 - (_Bool)isEqualToClue:(id)arg1;
 

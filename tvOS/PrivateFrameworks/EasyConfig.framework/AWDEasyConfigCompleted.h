@@ -78,6 +78,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)eaProtocolStringsType;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int enterSetupCodeMs; // @synthesize enterSetupCodeMs=_enterSetupCodeMs;
 @property(retain, nonatomic) NSString *eaHardwareRevision; // @synthesize eaHardwareRevision=_eaHardwareRevision;
 @property(retain, nonatomic) NSString *eaFirmwareRevision; // @synthesize eaFirmwareRevision=_eaFirmwareRevision;
@@ -111,7 +112,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool playPasswordSet; // @synthesize playPasswordSet=_playPasswordSet;
 @property(nonatomic) _Bool userChangedFriendlyName; // @synthesize userChangedFriendlyName=_userChangedFriendlyName;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

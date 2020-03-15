@@ -15,9 +15,9 @@
 }
 
 + (CDUnknownBlockType)comparatorForLocale:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *code; // @synthesize code=_code;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSCollectionLayoutSize *_size;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSCollectionLayoutSize *size; // @synthesize size=_size;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithName:(id)arg1 size:(id)arg2;
 

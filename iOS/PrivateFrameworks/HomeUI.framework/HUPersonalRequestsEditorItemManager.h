@@ -18,13 +18,13 @@
     HFStaticItemProvider *_staticItemProvider;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool onlyShowDeviceSwitches; // @synthesize onlyShowDeviceSwitches=_onlyShowDeviceSwitches;
 @property(readonly, nonatomic) HFStaticItemProvider *staticItemProvider; // @synthesize staticItemProvider=_staticItemProvider;
 @property(readonly, nonatomic) HMHome *homeForUser; // @synthesize homeForUser=_homeForUser;
 @property(readonly, nonatomic) HFItem *neverRequireAuthenticationItem; // @synthesize neverRequireAuthenticationItem=_neverRequireAuthenticationItem;
 @property(readonly, nonatomic) HFItem *requireAuthenticationForSecureRequestsItem; // @synthesize requireAuthenticationForSecureRequestsItem=_requireAuthenticationForSecureRequestsItem;
 @property(retain, nonatomic) HUPersonalRequestsDevicesItemModule *prDevicesModule; // @synthesize prDevicesModule=_prDevicesModule;
-- (void).cxx_destruct;
 - (id)_commitUpdateToAccessControl:(id)arg1;
 @property(nonatomic) _Bool personalRequestsAuthenticationRequired;
 - (void)_unregisterForExternalUpdates;

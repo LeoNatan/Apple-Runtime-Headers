@@ -15,9 +15,9 @@
 }
 
 + (id)labelWithColor:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSTextField *label; // @synthesize label=_label;
 @property(readonly, nonatomic) NSColor *originalTextColor; // @synthesize originalTextColor=_originalTextColor;
-- (void).cxx_destruct;
 - (void)updateLabelForDisplayOverBackgroundWithStyle:(long long)arg1;
 - (void)setBackgroundStyle:(long long)arg1;
 - (void)setupConstraintsWithLeftMargin:(double)arg1 rightmargin:(double)arg2;

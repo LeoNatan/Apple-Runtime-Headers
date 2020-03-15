@@ -7,9 +7,9 @@
 @class UIScrollView, UITraitCollection;
 
 @protocol TUBarCompressionAnimating
-@property(nonatomic) double topOffset;
-@property(readonly, nonatomic) BOOL shouldCompressAtTop;
 - (void)reloadWithTraitCollection:(UITraitCollection *)arg1;
+@property(nonatomic) double topOffset;
+@property(nonatomic, readonly) BOOL shouldCompressAtTop;
 - (double)minimumBarHeightForTraitCollection:(UITraitCollection *)arg1;
 - (double)maximumBarHeightForTraitCollection:(UITraitCollection *)arg1;
 - (BOOL)animationShouldBeginForScrollView:(UIScrollView *)arg1 currentlyFullyCompressed:(BOOL)arg2;

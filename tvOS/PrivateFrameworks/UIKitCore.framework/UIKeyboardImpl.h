@@ -202,7 +202,9 @@
     TICandidateRequestToken *_currentCandidateRequest;
     TIKeyboardCandidate *_autocorrectionToAcceptBeforeProgressiveCandidates;
     NSArray *_alternativePredictions;
+    long long _candidateViewOffset;
     NSString *_deletedString;
+    NSArray *_characterRectsForCharacterRange;
 }
 
 + (void)hardwareKeyboardAvailabilityChanged;
@@ -283,7 +285,9 @@
 + (_Bool)overrideNativeScreen;
 + (id)keyboardScreen;
 + (id)keyboardWindow;
+@property(copy, nonatomic) NSArray *characterRectsForCharacterRange; // @synthesize characterRectsForCharacterRange=_characterRectsForCharacterRange;
 @property(retain, nonatomic) NSString *deletedString; // @synthesize deletedString=_deletedString;
+@property(nonatomic) long long candidateViewOffset; // @synthesize candidateViewOffset=_candidateViewOffset;
 @property(retain, nonatomic) NSArray *alternativePredictions; // @synthesize alternativePredictions=_alternativePredictions;
 @property(retain, nonatomic) TIKeyboardCandidate *autocorrectionToAcceptBeforeProgressiveCandidates; // @synthesize autocorrectionToAcceptBeforeProgressiveCandidates=_autocorrectionToAcceptBeforeProgressiveCandidates;
 @property(retain, nonatomic) TICandidateRequestToken *currentCandidateRequest; // @synthesize currentCandidateRequest=_currentCandidateRequest;
@@ -355,7 +359,7 @@
 - (void)handleModifiersChangeForKeyEvent:(id)arg1 executionContext:(id)arg2;
 - (void)handleKeyEvent:(id)arg1 executionContext:(id)arg2;
 - (_Bool)_shouldEmitString:(id)arg1 forKeyEvent:(id)arg2;
-- (_Bool)_handleKeyCommandCommon:(id)arg1 testOnly:(_Bool)arg2;
+- (unsigned long long)_handleKeyCommandCommon:(id)arg1 testOnly:(_Bool)arg2;
 - (_Bool)_handleKeyCommand:(id)arg1;
 - (_Bool)_isKeyCommand:(id)arg1;
 - (void)handleKeyEvent:(id)arg1;
@@ -435,6 +439,7 @@
 - (void)updateTextCandidateView;
 - (struct CGRect)getCorrectionRectIsVertical:(_Bool *)arg1;
 - (struct CGRect)correctionRect;
+- (id)inputOverlayContainerForCandidateView:(_Bool)arg1;
 - (id)inputOverlayContainer;
 - (_Bool)callLayoutIsGeometricShiftOrMoreKeyForTouch:(id)arg1;
 - (void)callLayoutUpdateRecentInputs;
@@ -603,10 +608,12 @@
 - (void)setPreviousInputString:(id)arg1;
 - (_Bool)acceptInputString:(id)arg1;
 - (void)handleStringInput:(id)arg1 withFlags:(unsigned long long)arg2 withInputManagerHint:(id)arg3 executionContext:(id)arg4;
-- (_Bool)handleTabWithShift:(_Bool)arg1 beforePublicKeyCommands:(_Bool)arg2 isMoveAction:(_Bool)arg3;
+- (_Bool)handleTabWithShift:(_Bool)arg1 beforePublicKeyCommands:(_Bool)arg2 isMoveAction:(_Bool)arg3 testOnly:(_Bool)arg4;
 - (_Bool)handleTabWithShift:(_Bool)arg1 beforePublicKeyCommands:(_Bool)arg2;
 - (_Bool)handleMoveResponderWithShift:(_Bool)arg1;
 - (_Bool)handleTabWithShift:(_Bool)arg1;
+- (_Bool)handleMoveCursorToEndOfLine:(_Bool)arg1 beforePublicKeyCommands:(_Bool)arg2 testOnly:(_Bool)arg3 savedHistory:(id)arg4 force:(_Bool)arg5 canHandleSelectableInputDelegateCommand:(CDUnknownBlockType)arg6;
+- (_Bool)handleMoveCursorToStartOfLine:(_Bool)arg1 beforePublicKeyCommands:(_Bool)arg2 testOnly:(_Bool)arg3 savedHistory:(id)arg4 force:(_Bool)arg5 canHandleSelectableInputDelegateCommand:(CDUnknownBlockType)arg6;
 - (void)handleClearWithExecutionContext:(id)arg1;
 - (void)handleClear;
 - (void)handleClearWithInsertBeforeAdvance:(id)arg1;
@@ -731,7 +738,7 @@
 - (void)clearInputForMarkedText;
 - (void)_setAttributedMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2 inputString:(id)arg3 searchString:(id)arg4 compareAttributes:(_Bool)arg5;
 - (void)setAttributedMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2 inputString:(id)arg3 searchString:(id)arg4;
-- (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2 inputString:(id)arg3 searchString:(id)arg4;
+- (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2 inputString:(id)arg3 searchString:(id)arg4 candidateOffset:(long long)arg5 liveConversionSegments:(id)arg6 highlighSegmentIndex:(unsigned long long)arg7;
 - (struct CGSize)stretchFactor;
 - (unsigned long long)_clipCornersOfView:(id)arg1;
 - (void)_didChangeKeyplaneWithContext:(id)arg1;
@@ -753,10 +760,11 @@
 - (void)prepareForGeometryChange;
 - (void)releaseSuppressUpdateCandidateView;
 - (void)updateLayoutIfNeeded;
+- (_Bool)handleReturnKey:(_Bool)arg1;
+- (_Bool)handleInputManagerBasedKeybind:(id)arg1 testOnly:(_Bool)arg2;
 - (_Bool)handleKeyCommand:(id)arg1 repeatOkay:(_Bool *)arg2 beforePublicKeyCommands:(_Bool)arg3 testOnly:(_Bool)arg4;
+- (_Bool)shouldShowKeyboardMenu;
 - (_Bool)handleKeyCommand:(id)arg1 repeatOkay:(_Bool *)arg2 beforePublicKeyCommands:(_Bool)arg3;
-- (_Bool)handleKeyCommand:(id)arg1 repeatOkay:(_Bool *)arg2 testOnly:(_Bool)arg3;
-- (_Bool)handleKeyCommand:(id)arg1 repeatOkay:(_Bool *)arg2;
 - (_Bool)_cancelOperation:(_Bool)arg1 testOnly:(_Bool)arg2;
 - (_Bool)_canHandleResponderCommandConservatively:(SEL)arg1;
 - (_Bool)_canHandleResponderCommand:(SEL)arg1;
@@ -797,6 +805,7 @@
 - (void)clearCapsLockDelayOverrideTimer;
 - (void)removeCapsLockDelayOverride;
 - (void)adjustCapsLockDelayOverride;
+- (void)updateAssistantView;
 - (_Bool)isTrackpadMode;
 - (void)prepareForFloatingTransition:(_Bool)arg1;
 - (id)keyplaneView;
@@ -894,6 +903,8 @@
 @property(readonly, nonatomic) TISmartPunctuationController *smartPunctuationController; // @synthesize smartPunctuationController=m_smartPunctuationController;
 - (_Bool)checkSpellingPreferenceForTraits;
 - (_Bool)checkSpellingPreference;
+- (_Bool)delayedCandidateList;
+- (_Bool)liveConversionEnabled;
 - (_Bool)smartInsertDeleteIsEnabled;
 - (_Bool)autocapitalizationPreference;
 - (_Bool)candidateSelectionPredictionForTraits;
@@ -910,7 +921,7 @@
 - (_Bool)hideAccessoryViewsDuringSplit;
 - (void)setSplitProgress:(double)arg1;
 - (void)setInSplitKeyboardMode:(_Bool)arg1;
-- (_Bool)shouldAllowTwoFingerSelectionGesture;
+- (_Bool)shouldAllowTwoFingerSelectionGestureOnView:(id)arg1;
 - (void)beginFloatingTransitionFromPanGestureRecognizer:(id)arg1;
 @property(readonly, nonatomic) _Bool splitTransitionInProgress;
 @property(readonly) unsigned long long minimumTouchesForTranslation;
@@ -964,6 +975,7 @@
 - (void)setCapsLockSign;
 @property(nonatomic) _Bool hardwareKeyboardIsSeen;
 - (void)didMoveToWindow;
+- (void)_setCandidateController:(id)arg1;
 - (_Bool)_containsUsernamePasswordPairsInAutofillGroup:(id)arg1;
 - (id)_fallbackAutofillGroup;
 - (id)_autofillGroup;

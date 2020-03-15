@@ -16,8 +16,8 @@
     NSMapTable *_contentProviders;
 }
 
-@property(readonly, nonatomic) NSMapTable *contentProviders; // @synthesize contentProviders=_contentProviders;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMapTable *contentProviders; // @synthesize contentProviders=_contentProviders;
 - (void)updateAccessoryItem:(id)arg1 forVideo:(id)arg2 animated:(_Bool)arg3;
 - (void)registerAccessoryItem:(id)arg1 withContentProvider:(id)arg2;
 - (id)init;

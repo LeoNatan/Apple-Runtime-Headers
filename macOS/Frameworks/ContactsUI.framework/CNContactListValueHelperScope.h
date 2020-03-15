@@ -15,10 +15,10 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly) NSString *key; // @synthesize key=_key;
 @property(readonly) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (id)initWithContact:(id)arg1 key:(id)arg2 identifier:(id)arg3;
 
 @end

@@ -17,9 +17,9 @@
     id <SVVideoSkipThresholdObserverFactory> _thresholdObserverFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoSkipThresholdObserverFactory> thresholdObserverFactory; // @synthesize thresholdObserverFactory=_thresholdObserverFactory;
 @property(readonly, nonatomic) SVTimeline *timeline; // @synthesize timeline=_timeline;
-- (void).cxx_destruct;
 - (id)createSkipLockObserverForVideo:(id)arg1;
 - (id)initWithTimeline:(id)arg1 thresholdObserverFactory:(id)arg2;
 

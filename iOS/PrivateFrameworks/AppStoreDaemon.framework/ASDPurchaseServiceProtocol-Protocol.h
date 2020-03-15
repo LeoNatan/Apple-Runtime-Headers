@@ -7,6 +7,8 @@
 @class ASDPurchase, NSArray, NSNumber;
 
 @protocol ASDPurchaseServiceProtocol
+- (void)unadoptWithReplyHandler:(void (^)(NSDictionary *, NSError *))arg1;
+- (void)adoptionStatus:(_Bool)arg1 withReplyHandler:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)notifyDialogCompleteForPurchaseID:(NSNumber *)arg1 result:(_Bool)arg2 selectedButton:(long long)arg3 withResultHandler:(void (^)(_Bool, NSError *))arg4;
 - (void)notifyAutenticationDialogCompleteForPurchaseID:(NSNumber *)arg1 result:(long long)arg2 checkboxChecked:(_Bool)arg3 withResultHandler:(void (^)(_Bool, NSError *))arg4;
 - (void)startPurchase:(ASDPurchase *)arg1 withReplyHandler:(void (^)(ASDPurchaseResult *, NSError *))arg2;

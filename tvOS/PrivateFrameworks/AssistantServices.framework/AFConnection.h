@@ -70,9 +70,9 @@
 + (_Bool)assistantIsSupportedForLanguageCode:(id)arg1 error:(id *)arg2;
 + (void)initialize;
 + (_Bool)userDataSyncNeeded;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AFSpeechDelegate> speechDelegate; // @synthesize speechDelegate=_speechDelegate;
 @property(nonatomic) __weak id <AFAssistantUIService> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)acquireUserInteractionAssertion;
 - (void)_speechRecordingDidFailWithError:(id)arg1;
 - (void)adviseSessionArbiterToContinueWithPreviousWinner:(_Bool)arg1;
@@ -102,7 +102,7 @@
 - (void)getCachedObjectsWithIdentifiers:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getDeferredObjectsWithIdentifiers:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)sendReplyCommand:(id)arg1;
-- (void)sendGenericAceCommand:(id)arg1 turnIdentifier:(struct NSUUID *)arg2 conflictHandler:(CDUnknownBlockType)arg3;
+- (void)sendGenericAceCommand:(id)arg1 turnIdentifier:(id)arg2 conflictHandler:(CDUnknownBlockType)arg3;
 - (void)sendGenericAceCommand:(id)arg1 conflictHandler:(CDUnknownBlockType)arg2;
 - (void)sendGenericAceCommand:(id)arg1;
 - (float)peakPower;
@@ -128,7 +128,7 @@
 - (CDUnknownBlockType)startRecordingAndGetContinueBlockForPendingSpeechRequestWithOptions:(id)arg1;
 - (void)startRecordingForPendingSpeechRequestWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)startSpeechRequestWithOptions:(id)arg1;
-- (void)_startRequestWithAceCommand:(id)arg1 turnIdentifier:(struct NSUUID *)arg2 suppressAlert:(_Bool)arg3;
+- (void)_startRequestWithAceCommand:(id)arg1 turnIdentifier:(id)arg2 suppressAlert:(_Bool)arg3;
 - (void)_startRequestWithInfo:(id)arg1;
 - (void)startRequestWithInfo:(id)arg1 activationEvent:(long long)arg2;
 - (void)startRequestWithInfo:(id)arg1;
@@ -236,6 +236,7 @@
 - (void)_setShouldSpeak:(_Bool)arg1;
 - (void)_dispatchCommand:(id)arg1 isInterstitial:(_Bool)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)_handleCommand:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)_startUIRequestWithInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_startUIRequestWithText:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_requestDidEnd;
 - (void)_requestWillBeginWithRequestClass:(id)arg1 isSpeechRequest:(_Bool)arg2 speechRequestOptions:(id)arg3 requestInfo:(id)arg4 isBackgroundRequest:(_Bool)arg5 analyticsEventProvider:(CDUnknownBlockType)arg6;

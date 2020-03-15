@@ -54,6 +54,7 @@
 + (id)getSadAndGrayIconForModel:(id)arg1 ofSize:(long long)arg2;
 + (id)iconForFile:(id)arg1 ofSize:(double)arg2;
 + (id)URLWithType:(id)arg1 name:(id)arg2;
+- (void).cxx_destruct;
 @property double activeConnectionBenchmark; // @synthesize activeConnectionBenchmark=_activeConnectionBenchmark;
 @property(retain) NSString *networkUUID; // @synthesize networkUUID=_networkUUID;
 @property(retain) NSDictionary *descriptionData; // @synthesize descriptionData=_descriptionData;
@@ -85,7 +86,6 @@
 @property(retain) NSURL *url; // @synthesize url=_url;
 @property(retain) NSString *secretPassword; // @synthesize secretPassword;
 @property BOOL connected; // @synthesize connected;
-- (void).cxx_destruct;
 @property(readonly) NSOrderedSet *fasterInterfaceRecommendations;
 @property(readonly) NSOrderedSet *connectionFamilies;
 @property(readonly) unsigned long long commonCapabilities;

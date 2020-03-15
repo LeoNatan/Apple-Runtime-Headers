@@ -16,10 +16,10 @@
 }
 
 + (id)sharedMgr;
+- (void).cxx_destruct;
 @property long long queuedRefreshCount; // @synthesize queuedRefreshCount=_queuedRefreshCount;
 @property(retain) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain) NSArray *accountCache; // @synthesize accountCache=_accountCache;
-- (void).cxx_destruct;
 - (id)icaAppleAccountWithPersonID:(id)arg1;
 - (id)icaAppleAccountWithUsername:(id)arg1;
 - (id)icaPrimaryAppleAccount;

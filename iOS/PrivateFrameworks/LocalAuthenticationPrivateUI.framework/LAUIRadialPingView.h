@@ -20,9 +20,9 @@
     _Bool _animating;
 }
 
-@property(nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
 - (void)_endExpand;
 - (void)_startExpandWithDelay:(double)arg1;
 - (void)_updateAnimatingAnimated:(_Bool)arg1;

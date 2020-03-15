@@ -27,6 +27,7 @@
     NSArray *_UICandidates;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *UICandidates; // @synthesize UICandidates=_UICandidates;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) BOOL showsChevron; // @synthesize showsChevron=_showsChevron;
@@ -39,7 +40,6 @@
 @property(nonatomic) __weak id <IMKUIScrubberViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL currentTouchInteractionInsideView; // @synthesize currentTouchInteractionInsideView=_currentTouchInteractionInsideView;
 @property(retain, nonatomic) NSMutableArray *accessibilityChildren; // @synthesize accessibilityChildren=_accessibilityChildren;
-- (void).cxx_destruct;
 - (BOOL)isAccessibilityEnabled;
 - (void)elementQueried:(id)arg1;
 - (void)elementPressed:(id)arg1;

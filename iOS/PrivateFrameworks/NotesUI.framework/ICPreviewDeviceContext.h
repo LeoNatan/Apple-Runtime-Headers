@@ -16,9 +16,9 @@
 }
 
 + (id)sharedContext;
+- (void).cxx_destruct;
 @property(copy) NSArray *nonScalableDeviceInfo; // @synthesize nonScalableDeviceInfo=_nonScalableDeviceInfo;
 @property(copy) NSArray *scalableDeviceInfo; // @synthesize scalableDeviceInfo=_scalableDeviceInfo;
-- (void).cxx_destruct;
 - (void)screensChangedNotification:(id)arg1;
 - (id)deviceInfoScalable:(_Bool)arg1;
 - (double)maxSizeOfPreviewDeviceInfoImage;

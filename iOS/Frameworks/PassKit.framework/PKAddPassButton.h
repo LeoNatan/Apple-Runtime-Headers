@@ -29,8 +29,8 @@
 
 + (id)addPassButtonWithStyle:(long long)arg1;
 + (Class)layerClass;
-@property(nonatomic) long long addPassButtonStyle; // @synthesize addPassButtonStyle=_addPassButtonStyle;
 - (void).cxx_destruct;
+@property(nonatomic) long long addPassButtonStyle; // @synthesize addPassButtonStyle=_addPassButtonStyle;
 - (void)_applyStyle;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)_createHighlightFilterIfNecessary;

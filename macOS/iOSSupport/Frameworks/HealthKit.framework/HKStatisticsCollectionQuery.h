@@ -28,6 +28,7 @@
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
 + (Class)configurationClass;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mergeStrategy; // @synthesize mergeStrategy=_mergeStrategy;
 @property(retain) HKStatisticsCollection *statisticsCollection; // @synthesize statisticsCollection=_statisticsCollection;
 @property(retain) NSNumber *lastAnchor; // @synthesize lastAnchor=_lastAnchor;
@@ -36,7 +37,6 @@
 @property(readonly, copy) NSDateComponents *intervalComponents; // @synthesize intervalComponents=_intervalComponents;
 @property(readonly) unsigned long long options; // @synthesize options=_options;
 @property(readonly) NSDate *anchorDate; // @synthesize anchorDate=_anchorDate;
-- (void).cxx_destruct;
 - (void)_queue_deliverStatisticsObjects:(id)arg1 forQuery:(id)arg2;
 - (void)_queue_deliverResetStatisticsObjects:(id)arg1 forQuery:(id)arg2;
 - (void)_queue_deliverInitialStatisticsObjects:(id)arg1 anchor:(id)arg2 queryUUID:(id)arg3;

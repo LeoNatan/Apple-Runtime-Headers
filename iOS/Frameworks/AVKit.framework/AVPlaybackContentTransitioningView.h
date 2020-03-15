@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _frameForTransitioningContentView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long boundsOrContentSizeAdjustmentCount; // @synthesize boundsOrContentSizeAdjustmentCount=_boundsOrContentSizeAdjustmentCount;
 @property(nonatomic) struct CGRect frameForTransitioningContentView; // @synthesize frameForTransitioningContentView=_frameForTransitioningContentView;
 @property(nonatomic) struct CGRect frameForActiveContentView; // @synthesize frameForActiveContentView=_frameForActiveContentView;
@@ -43,7 +44,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long transitionState; // @synthesize transitionState=_transitionState;
 @property(readonly, nonatomic) AVPlaybackContentContainerView *activeContentView; // @synthesize activeContentView=_activeContentView;
 @property(nonatomic, getter=isPlayingOnSecondScreen) _Bool playingOnSecondScreen; // @synthesize playingOnSecondScreen=_playingOnSecondScreen;
-- (void).cxx_destruct;
 - (id)_makeStateDescription;
 - (id)_descriptionForState:(long long)arg1;
 - (_Bool)_canTransitionFromState:(long long)arg1 toState:(long long)arg2;

@@ -14,9 +14,9 @@
     NSData *_token;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSData *token; // @synthesize token=_token;
 @property(copy) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 
 @end
 

@@ -23,10 +23,10 @@
     NSDate *_date;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) double interval; // @synthesize interval=_interval;
-- (void).cxx_destruct;
 - (void)scheduleBlock:(CDUnknownBlockType)arg1;
 - (void)resume;
 - (void)suspend;

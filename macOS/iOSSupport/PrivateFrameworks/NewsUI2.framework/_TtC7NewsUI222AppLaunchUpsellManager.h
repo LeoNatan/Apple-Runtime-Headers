@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: appActivationURLHandler
     // Error parsing type: , name: bootstrapper
+    // Error parsing type: , name: pptContext
     // Error parsing type: , name: configurationManager
     // Error parsing type: , name: bundleSubscriptionManager
     // Error parsing type: , name: userInfo

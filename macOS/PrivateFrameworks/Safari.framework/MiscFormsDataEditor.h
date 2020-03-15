@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSTextField *_emptyTablePlaceholderText;
 }
 
-@property(nonatomic) __weak NSTextField *emptyTablePlaceholderText; // @synthesize emptyTablePlaceholderText=_emptyTablePlaceholderText;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSTextField *emptyTablePlaceholderText; // @synthesize emptyTablePlaceholderText=_emptyTablePlaceholderText;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (void)removeAllItems:(id)arg1;

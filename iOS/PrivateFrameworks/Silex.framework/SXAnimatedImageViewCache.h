@@ -24,6 +24,7 @@
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(readonly, nonatomic) NSMutableIndexSet *indicesToCache; // @synthesize indicesToCache=_indicesToCache;
 @property(readonly, nonatomic) NSMutableArray *cachedImages; // @synthesize cachedImages=_cachedImages;
@@ -35,7 +36,6 @@
 @property(nonatomic) _Bool cachingEnabled; // @synthesize cachingEnabled=_cachingEnabled;
 @property(nonatomic) __weak SXAnimatedImage *animatedImage; // @synthesize animatedImage=_animatedImage;
 @property(nonatomic) __weak id <SXAnimatedImageViewCacheDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)decodeImageFromSource:(struct CGImageSource *)arg1 index:(unsigned long long)arg2;
 - (void)checkCacheSize;
 - (void)cacheNextImage;

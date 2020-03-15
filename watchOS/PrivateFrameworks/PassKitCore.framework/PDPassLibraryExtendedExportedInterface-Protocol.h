@@ -41,10 +41,10 @@
 - (void)updateObjectWithUniqueIdentifier:(NSString *)arg1 handler:(void (^)(_Bool))arg2;
 - (void)rescheduleCommutePlanRenewalReminderForPassWithUniqueID:(NSString *)arg1;
 - (void)updateSettings:(unsigned int)arg1 forObjectWithUniqueID:(NSString *)arg2;
-- (void)resetApplePayWithDiagnosticReason:(NSString *)arg1 handler:(void (^)(void))arg2;
+- (void)resetApplePayWithDiagnosticReason:(NSString *)arg1 handler:(void (^)(_Bool))arg2;
 - (void)removePassesOfType:(unsigned int)arg1 withDiagnosticReason:(NSString *)arg2 handler:(void (^)(void))arg3;
 - (void)getImageSetContainerForUniqueID:(NSString *)arg1 ofType:(int)arg2 displayProfile:(PKDisplayProfile *)arg3 suffix:(NSString *)arg4 handler:(void (^)(PKImageSetXPCContainer *))arg5;
-- (void)getPassUniqueIdentifiersForFieldProperties:(PKFieldProperties *)arg1 handler:(void (^)(NSArray *))arg2;
+- (void)getMetadataForFieldWithProperties:(PKFieldProperties *)arg1 handler:(void (^)(PKFieldMetadata *))arg2;
 - (void)getPassesWithUniqueIdentifiers:(NSArray *)arg1 handler:(void (^)(NSArray *))arg2;
 - (void)presentContactlessInterfaceForPassWithUniqueIdentifier:(NSString *)arg1 fromSource:(int)arg2 handler:(void (^)(_Bool))arg3;
 - (void)presentContactlessInterfaceForDefaultPassFromSource:(int)arg1 handler:(void (^)(_Bool))arg2;

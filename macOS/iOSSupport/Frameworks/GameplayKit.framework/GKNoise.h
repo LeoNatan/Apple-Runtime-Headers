@@ -18,8 +18,8 @@
 + (id)noiseWithComponentNoises:(id)arg1 selectionNoise:(id)arg2;
 + (id)noiseWithNoiseSource:(id)arg1 gradientColors:(id)arg2;
 + (id)noiseWithNoiseSource:(id)arg1;
-@property(copy, nonatomic) NSDictionary *gradientColors; // @synthesize gradientColors=_gradientColors;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *gradientColors; // @synthesize gradientColors=_gradientColors;
 - (void)__blendWithNoise:(id)arg1 selectionNoise:(id)arg2 selectionRangeLowerBound:(double)arg3 selectionRangeUpperBound:(double)arg4 selectionBoundaryBlendDistance:(double)arg5;
 - (void)displaceXWithNoise:(id)arg1 yWithNoise:(id)arg2 zWithNoise:(id)arg3;
 - (void)raiseToPowerWithNoise:(id)arg1;

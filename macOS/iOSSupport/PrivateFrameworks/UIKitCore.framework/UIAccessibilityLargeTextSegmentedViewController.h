@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     UIScrollView *_mainScrollView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIScrollView *mainScrollView; // @synthesize mainScrollView=_mainScrollView;
 @property(retain, nonatomic) NSArray *segments; // @synthesize segments=_segments;
 @property(retain, nonatomic) UISegment *originalSelectedSegment; // @synthesize originalSelectedSegment=_originalSelectedSegment;
 @property(retain, nonatomic) NSMutableArray *segmentButtons; // @synthesize segmentButtons=_segmentButtons;
 @property(retain, nonatomic) UISegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
-- (void).cxx_destruct;
 - (BOOL)_canShowWhileLocked;
 - (void)_orientationChanged:(id)arg1;
 - (void)buttonTouchUp:(id)arg1;

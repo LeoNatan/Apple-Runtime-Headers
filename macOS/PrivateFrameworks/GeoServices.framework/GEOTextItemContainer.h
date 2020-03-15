@@ -17,9 +17,9 @@
     NSArray *_textItems;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *textItems; // @synthesize textItems=_textItems;
 @property(readonly, nonatomic) id <GEOTextItemDisplayConfig> displayConfig; // @synthesize displayConfig=_displayConfig;
-- (void).cxx_destruct;
 - (id)initWithTextItemContainer:(id)arg1;
 - (id)initWithDisplayConfig:(id)arg1 textItems:(id)arg2;
 - (id)init;

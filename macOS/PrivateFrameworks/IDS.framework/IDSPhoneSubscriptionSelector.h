@@ -14,9 +14,9 @@
     CDUnknownBlockType _syncDaemonControllerBuilder;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType syncDaemonControllerBuilder; // @synthesize syncDaemonControllerBuilder=_syncDaemonControllerBuilder;
 @property(retain, nonatomic) IDSXPCDaemonController *syncDaemonController; // @synthesize syncDaemonController=_syncDaemonController;
-- (void).cxx_destruct;
 - (void)_performSyncAction:(CDUnknownBlockType)arg1;
 - (id)setSelectedSubscriptions:(id)arg1 withError:(id *)arg2;
 - (id)unselectSubscription:(id)arg1 withError:(id *)arg2;

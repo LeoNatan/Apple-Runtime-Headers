@@ -15,10 +15,10 @@
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(readonly) double duration; // @synthesize duration=_duration;
 @property(readonly, getter=isHeader) _Bool header; // @synthesize header=_header;
 @property(readonly, copy) NSString *resourcePath; // @synthesize resourcePath=_resourcePath;
-- (void).cxx_destruct;
 - (id)initWithVideoSegmentMetadata:(id)arg1;
 
 @end

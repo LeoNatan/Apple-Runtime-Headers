@@ -15,8 +15,8 @@
 
 + (_Bool)shouldLaunchAppInBackgroundWithIntent:(id)arg1 intentResponse:(id)arg2;
 + (void)initialize;
-@property(readonly, nonatomic) __weak INCExtensionConnection *_connection; // @synthesize _connection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak INCExtensionConnection *_connection; // @synthesize _connection;
 - (id)_initWithConnection:(id)arg1;
 - (void)launchAppInBackground:(_Bool)arg1 restrictAppsToCarPlay:(_Bool)arg2 userActivityIdentifier:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)launchAppInBackground:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;

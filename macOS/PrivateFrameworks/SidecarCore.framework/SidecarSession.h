@@ -23,10 +23,10 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property __weak id <SidecarSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)timeSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)closeWithError:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)sendMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;

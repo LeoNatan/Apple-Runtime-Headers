@@ -19,10 +19,10 @@
 
 + (id)emptyPlaceholderTitleString;
 + (id)newPlaceholderTitleString;
+- (void).cxx_destruct;
 @property(retain) CalUIReminderViewTouchBar *reminderViewTouchBar; // @synthesize reminderViewTouchBar=_reminderViewTouchBar;
 @property(retain) EKUIRemindGadget *remindGadget; // @synthesize remindGadget=_remindGadget;
 @property(retain) EKUITitleGadget *titleGadget; // @synthesize titleGadget=_titleGadget;
-- (void).cxx_destruct;
 - (void)focusInspectorLocation;
 - (void)focusInspectorDateTime;
 - (void)removeInspectorLocation;

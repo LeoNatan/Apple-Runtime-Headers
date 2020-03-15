@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSString *_identifier;
 }
 
-@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (id)cn_coreDataExchangePredicate;
 - (id)cn_coreDataPredicate;
 - (id)containerIdentifier;

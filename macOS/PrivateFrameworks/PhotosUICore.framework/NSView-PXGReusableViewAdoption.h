@@ -19,13 +19,14 @@
 - (void)pxg_addToScrollViewController:(id)arg1;
 @property(readonly, nonatomic) double px_backingScale;
 - (void)px_addFullBoundsSubview:(id)arg1;
+- (void)px_enumerateDescendantSubviewsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)px_viewOrEnclosingViewOfClass:(Class)arg1;
 - (id)px_snapshotView;
 - (id)px_snapshotImage;
 - (void)px_setCornerRadius:(double)arg1;
 - (void)px_setBorderWidth:(double)arg1;
-- (void)px_setBorderColor:(struct NSColor *)arg1;
-- (void)px_setBackgroundColor:(struct NSColor *)arg1;
+- (void)px_setBorderColor:(id)arg1;
+- (void)px_setBackgroundColor:(id)arg1;
 @property(retain, nonatomic, setter=px_setSpec:) PXViewSpec *px_spec;
 
 // Remaining properties

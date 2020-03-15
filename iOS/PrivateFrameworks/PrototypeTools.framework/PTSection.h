@@ -6,44 +6,53 @@
 
 #import <objc/NSObject.h>
 
+#import <PrototypeTools/PTModuleComponent-Protocol.h>
 #import <PrototypeTools/PTRowObserver-Protocol.h>
 #import <PrototypeTools/PTSettingsKeyPathObserver-Protocol.h>
 
-@class NSArray, NSHashTable, NSMutableArray, NSString, PTSettings;
+@class NSArray, NSMutableArray, NSPredicate, NSString, PTSettings;
+@protocol PTComponentObserver;
 
-@interface PTSection : NSObject <PTSettingsKeyPathObserver, PTRowObserver>
+@interface PTSection : NSObject <PTSettingsKeyPathObserver, PTRowObserver, PTModuleComponent>
 {
     NSArray *_rows;
-    NSHashTable *_observers;
-    NSMutableArray *_allRows;
     NSMutableArray *_enabledRows;
-    NSString *_title;
+    _Bool _enabledSection;
     PTSettings *_settings;
-    NSString *_submoduleKeyPath;
-    NSArray *_appearanceConditions;
+    id <PTComponentObserver> _componentObserver;
+    NSPredicate *_appearancePredicate;
+    NSString *_childSettingsKeyPath;
+    NSString *_title;
     CDUnknownBlockType _footerTextGetter;
     CDUnknownBlockType _unregisterBlock;
 }
 
++ (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType unregisterBlock; // @synthesize unregisterBlock=_unregisterBlock;
 @property(copy, nonatomic) CDUnknownBlockType footerTextGetter; // @synthesize footerTextGetter=_footerTextGetter;
-@property(retain, nonatomic) NSArray *appearanceConditions; // @synthesize appearanceConditions=_appearanceConditions;
-@property(retain, nonatomic) NSString *submoduleKeyPath; // @synthesize submoduleKeyPath=_submoduleKeyPath;
-@property(retain, nonatomic) PTSettings *settings; // @synthesize settings=_settings;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
+@property(retain, nonatomic) NSString *childSettingsKeyPath; // @synthesize childSettingsKeyPath=_childSettingsKeyPath;
+@property(retain, nonatomic) NSPredicate *appearancePredicate; // @synthesize appearancePredicate=_appearancePredicate;
+@property(nonatomic) __weak id <PTComponentObserver> componentObserver; // @synthesize componentObserver=_componentObserver;
+@property(retain, nonatomic) PTSettings *settings; // @synthesize settings=_settings;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+@property(readonly) unsigned long long hash;
+- (_Bool)isEqual:(id)arg1;
 - (void)_sendReload;
 - (void)_sendInserts:(id)arg1 deletes:(id)arg2;
 - (_Bool)_shouldEnableRow:(id)arg1;
 - (void)_reloadEnabledRows;
 - (void)_updateEnabledRows;
+- (void)_recomputeEnabledSection;
+- (id)_remoteEditingWhitelistedComponent;
+@property(readonly, nonatomic) NSArray *enabledSections;
+@property(readonly, nonatomic) NSArray *allSections;
 - (void)rowDidReload:(id)arg1;
 - (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (void)reloadSection;
-- (void)enumerateEnabledRowsUsingBlock:(CDUnknownBlockType)arg1;
-- (void)enumerateAllRowsUsingBlock:(CDUnknownBlockType)arg1;
-- (void)removeObserver:(id)arg1;
-- (void)addObserver:(id)arg1;
 - (unsigned long long)indexOfRow:(id)arg1;
 - (id)rowAtIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfRows;
@@ -53,7 +62,6 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 @end

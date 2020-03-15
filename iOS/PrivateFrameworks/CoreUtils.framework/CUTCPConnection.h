@@ -8,7 +8,7 @@
 
 #import <CoreUtils/CUReadWriteRequestable-Protocol.h>
 
-@class CUBonjourDevice, CUNANDataSession, CUNetLinkEndpoint, CUNetLinkManager, CUReadRequest, CUWiFiManager, CUWriteRequest, NSString;
+@class CUBonjourDevice, CUNANDataSession, CUNetLinkEndpoint, CUNetLinkManager, CUReadRequest, CUWiFiManager, CUWriteRequest, NSMutableArray, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface CUTCPConnection : NSObject <CUReadWriteRequestable>
@@ -17,11 +17,11 @@
     NSObject<OS_dispatch_source> *_readSource;
     unsigned char _readSuspended;
     CUReadRequest *_readRequestCurrent;
-    struct NSMutableArray *_readRequests;
+    NSMutableArray *_readRequests;
     NSObject<OS_dispatch_source> *_writeSource;
     unsigned char _writeSuspended;
     CUWriteRequest *_writeRequestCurrent;
-    struct NSMutableArray *_writeRequests;
+    NSMutableArray *_writeRequests;
     _Bool _activateCalled;
     CDUnknownBlockType _activateCompletion;
     _Bool _invalidateCalled;
@@ -61,6 +61,7 @@
     CDUnion_fab80606 _selfAddr;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType serverInvalidationHandler; // @synthesize serverInvalidationHandler=_serverInvalidationHandler;
 @property(nonatomic) unsigned int trafficFlags; // @synthesize trafficFlags=_trafficFlags;
 @property(nonatomic) int socketFD; // @synthesize socketFD=_socketFD;
@@ -83,7 +84,6 @@
 @property(nonatomic) double connectTimeoutSecs; // @synthesize connectTimeoutSecs=_connectTimeoutSecs;
 @property(readonly, nonatomic) CDUnion_fab80606 selfAddr; // @synthesize selfAddr=_selfAddr;
 @property(readonly, nonatomic) CDUnion_fab80606 peerAddr; // @synthesize peerAddr=_peerAddr;
-- (void).cxx_destruct;
 - (void)_completeWriteRequest:(id)arg1 error:(id)arg2;
 - (void)_abortWritesWithError:(id)arg1;
 - (_Bool)_prepareWriteRequest:(id)arg1 error:(id *)arg2;

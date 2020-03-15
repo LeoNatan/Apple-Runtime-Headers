@@ -17,8 +17,8 @@
     NSObject<EKUITintColorUpdateDelegate> *_tintColorDelegate;
 }
 
-@property(nonatomic) __weak NSObject<EKUITintColorUpdateDelegate> *tintColorDelegate; // @synthesize tintColorDelegate=_tintColorDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSObject<EKUITintColorUpdateDelegate> *tintColorDelegate; // @synthesize tintColorDelegate=_tintColorDelegate;
 - (void)subTintColorUpdatedToColor:(id)arg1;
 - (void)viewTintColorDidChangeForView:(id)arg1 toColor:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;

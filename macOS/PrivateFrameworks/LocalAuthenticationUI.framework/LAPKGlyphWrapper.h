@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
 + (Class)_loadClassFromString:(id)arg1;
 + (void *)_loadPKUI;
 + (id)glyphWithStyle:(long long)arg1 frame:(struct CGRect)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *glyphQueue; // @synthesize glyphQueue=_glyphQueue;
 @property(readonly, nonatomic) NSView<GlyphMethods> *idleTouchID; // @synthesize idleTouchID=_idleTouchID;
 @property(readonly, nonatomic) NSView<GlyphMethods> *glyphView; // @synthesize glyphView=_glyphView;
 @property(nonatomic) BOOL grayedOut; // @synthesize grayedOut=_grayedOut;
 @property(nonatomic) BOOL fastAnimations; // @synthesize fastAnimations=_fastAnimations;
 @property(readonly, nonatomic) NSView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)setState:(long long)arg1 idleTouchID:(BOOL)arg2 animated:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (double)_minimumAnimationDurationForState:(long long)arg1;
 - (id)initWithGlyphView:(id)arg1;

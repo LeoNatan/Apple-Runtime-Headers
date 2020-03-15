@@ -42,6 +42,7 @@
     IDSBatchIDQueryController *_statusQueryController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDSBatchIDQueryController *statusQueryController; // @synthesize statusQueryController=_statusQueryController;
 @property(retain, nonatomic) NSTimer *statusQueryDebounceTimer; // @synthesize statusQueryDebounceTimer=_statusQueryDebounceTimer;
 @property(retain, nonatomic) NSString *unatomizedAddress; // @synthesize unatomizedAddress=_unatomizedAddress;
@@ -63,7 +64,6 @@
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(nonatomic) __weak id <HUAddPeopleViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)sendInvites;
 - (id)recipientsWithStatusPassingTest:(CDUnknownBlockType)arg1;
 - (void)lookupIDSDestinations:(id)arg1;

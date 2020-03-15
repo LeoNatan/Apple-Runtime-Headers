@@ -42,6 +42,7 @@
 - (_Bool)translate;
 @property(copy) NSString *lang;
 @property(copy) NSString *title;
+- (int)structuralComplexityContribution;
 - (void)absolutePosition:(int *)arg1:(int *)arg2:(int *)arg3:(int *)arg4;
 - (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2 adjustForIOSCaret:(_Bool)arg3;
 - (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2;

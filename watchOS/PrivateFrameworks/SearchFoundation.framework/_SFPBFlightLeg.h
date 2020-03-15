@@ -33,6 +33,7 @@
     _SFPBDate *_arrivalGateTime;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _SFPBDate *arrivalGateTime; // @synthesize arrivalGateTime=_arrivalGateTime;
 @property(retain, nonatomic) _SFPBDate *arrivalRunwayTime; // @synthesize arrivalRunwayTime=_arrivalRunwayTime;
 @property(retain, nonatomic) _SFPBDate *departureRunwayTime; // @synthesize departureRunwayTime=_departureRunwayTime;
@@ -51,7 +52,6 @@
 @property(retain, nonatomic) _SFPBDate *departureActualTime; // @synthesize departureActualTime=_departureActualTime;
 @property(retain, nonatomic) _SFPBDate *departurePublishedTime; // @synthesize departurePublishedTime=_departurePublishedTime;
 @property(nonatomic) int status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

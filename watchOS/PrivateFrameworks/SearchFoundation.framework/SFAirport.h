@@ -28,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *country; // @synthesize country=_country;
 @property(copy, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) SFLatLng *location; // @synthesize location=_location;
 @property(copy, nonatomic) NSTimeZone *timezone; // @synthesize timezone=_timezone;
 @property(copy, nonatomic) NSString *code; // @synthesize code=_code;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

@@ -21,6 +21,7 @@
     CDStruct_d6e4b0bd _currentRenderingData;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool lastRenderOverlapped; // @synthesize lastRenderOverlapped=_lastRenderOverlapped;
 @property(nonatomic) CDStruct_d6e4b0bd currentRenderingData; // @synthesize currentRenderingData=_currentRenderingData;
 @property(nonatomic) CDStruct_d6e4b0bd previousRenderingData; // @synthesize previousRenderingData=_previousRenderingData;
@@ -32,7 +33,6 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType sizeForValue; // @synthesize sizeForValue=_sizeForValue;
 @property(nonatomic) _Bool isLabelShiftingEnabled; // @synthesize isLabelShiftingEnabled=_isLabelShiftingEnabled;
 @property(readonly, nonatomic) struct CGRect boundingRegion; // @synthesize boundingRegion=_boundingRegion;
-- (void).cxx_destruct;
 - (CDStruct_d6e4b0bd)_computeRenderingDataForValue:(double)arg1 transformedPoint:(struct CGPoint)arg2 previousSlope:(long long)arg3 nextSlope:(long long)arg4 previousOptions:(long long)arg5;
 - (long long)_slopeForPoint:(struct CGPoint)arg1 otherPoint:(struct CGPoint)arg2;
 - (CDStruct_d6e4b0bd)renderingData;

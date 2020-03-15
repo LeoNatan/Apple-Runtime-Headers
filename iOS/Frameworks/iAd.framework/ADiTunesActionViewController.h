@@ -17,10 +17,10 @@
     ADHomeButtonHandler *_homeButtonHandler;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ADHomeButtonHandler *homeButtonHandler; // @synthesize homeButtonHandler=_homeButtonHandler;
 @property(nonatomic) int defaultResult; // @synthesize defaultResult=_defaultResult;
 @property(retain, nonatomic) SKStoreProductViewController *storeProductViewController; // @synthesize storeProductViewController=_storeProductViewController;
-- (void).cxx_destruct;
 - (void)dismiss;
 - (void)productViewController:(id)arg1 didFinishWithResult:(long long)arg2;
 - (unsigned long long)supportedInterfaceOrientations;

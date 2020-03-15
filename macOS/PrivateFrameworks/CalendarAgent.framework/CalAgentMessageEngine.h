@@ -15,9 +15,9 @@
     CalAgentOperationMap *_operationMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CalAgentOperationMap *operationMap; // @synthesize operationMap=_operationMap;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *listenerConnection; // @synthesize listenerConnection=_listenerConnection;
-- (void).cxx_destruct;
 - (void)logConnectionInfo:(id)arg1;
 - (void)handleMessage:(id)arg1;
 - (void)handlePeerConnection:(id)arg1;

@@ -22,13 +22,13 @@
 + (id)reachabilityWithLocalAddress:(id)arg1 remoteAddress:(id)arg2;
 + (id)reachabilityWithRemoteAddress:(id)arg1;
 + (id)reachabilityWithHostName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *_queue; // @synthesize _queue;
 @property(nonatomic) void *reachabilityRef; // @synthesize reachabilityRef=_reachabilityRef;
 @property(retain, nonatomic) NSString *reachabilityDescription; // @synthesize reachabilityDescription=_description;
 @property(nonatomic) unsigned long long flags; // @synthesize flags=_flags;
 @property(nonatomic) _Bool gettingFlags; // @synthesize gettingFlags=_gettingFlags;
 @property(nonatomic) __weak id <IMReachabilityDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool connectionRequired;
 - (void)_forceGetFlagsIfNecessary;
 - (void)_handleCallbackForSCNetworkReachability:(struct __SCNetworkReachability *)arg1;

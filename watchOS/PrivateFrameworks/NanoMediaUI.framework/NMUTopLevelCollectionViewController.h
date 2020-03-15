@@ -21,8 +21,8 @@
     NMUTopLevelCollectionSyncInfoController *_syncInfoController;
 }
 
-@property(retain, nonatomic) NMUTopLevelCollectionSyncInfoController *syncInfoController; // @synthesize syncInfoController=_syncInfoController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NMUTopLevelCollectionSyncInfoController *syncInfoController; // @synthesize syncInfoController=_syncInfoController;
 - (void)_notifyDidLandOnItemIfNeeded;
 - (void)_updateSpinnersForVisibleItemAtIndexPath:(id)arg1;
 - (void)_setMarqueeViewsPaused:(_Bool)arg1;

@@ -21,8 +21,8 @@
 + (_Bool)isFileAtURL:(id)arg1 validForFamily:(unsigned int)arg2 error:(id *)arg3;
 + (id)dataForFamily:(unsigned int)arg1 fromFileURL:(id)arg2 error:(id *)arg3;
 + (id)dataFromFileURL:(id)arg1;
-@property(readonly, copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 - (id)data;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

@@ -19,16 +19,18 @@
 
 + (id)load:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
 + (id)declarationClassType;
+- (void).cxx_destruct;
 @property(copy, nonatomic) RMModelAnyPayload *declarationPayload; // @synthesize declarationPayload=_declarationPayload;
 @property(copy, nonatomic) NSString *declarationServerToken; // @synthesize declarationServerToken=_declarationServerToken;
 @property(copy, nonatomic) NSString *declarationDescription; // @synthesize declarationDescription=_declarationDescription;
 @property(copy, nonatomic) NSString *declarationIdentifier; // @synthesize declarationIdentifier=_declarationIdentifier;
 @property(copy, nonatomic) NSString *declarationType; // @synthesize declarationType=_declarationType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)updateServerToken;
+- (id)serializePayloadWithType:(short)arg1;
 - (id)serializeWithType:(short)arg1;
-- (_Bool)loadDeclarationFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
+- (_Bool)loadPayloadFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
+- (_Bool)loadFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
 
 @end
 

@@ -135,6 +135,7 @@
 + (id)createActionsControllerWithActionListDataSource:(id)arg1;
 + (id)descriptorForRequiredKeysWithDescription:(id)arg1;
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showingMeContact; // @synthesize showingMeContact=_showingMeContact;
 @property(retain, nonatomic) NSMutableArray *displayGroups; // @synthesize displayGroups=_displayGroups;
 @property(retain, nonatomic) CNCardFaceTimeGroup *cardFaceTimeGroup; // @synthesize cardFaceTimeGroup=_cardFaceTimeGroup;
@@ -227,7 +228,6 @@
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) _Bool highlightedPropertyImportant; // @synthesize highlightedPropertyImportant=_highlightedPropertyImportant;
 @property __weak id <CNContactViewHostProtocol> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)applyContactStyle;
 - (void)updateTableView:(id)arg1 insetsTo:(struct UIEdgeInsets)arg2;
 - (struct UIEdgeInsets)insetsForTableView:(id)arg1;

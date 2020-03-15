@@ -32,6 +32,7 @@
 + (_Bool)isSetupAssistantProvisioningSupported;
 + (id)watchProvisioningURLForPaymentPass:(id)arg1;
 + (id)watchProvisioningURL;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKXPCService *remoteService; // @synthesize remoteService=_remoteService;
 @property(retain, nonatomic) PKPaymentWebServiceContext *connectionUnavailableWebServiceContext; // @synthesize connectionUnavailableWebServiceContext=_connectionUnavailableWebServiceContext;
 @property(retain, nonatomic) NSMutableDictionary *connectionAvailableActions; // @synthesize connectionAvailableActions=_connectionAvailableActions;
@@ -40,7 +41,6 @@
 @property(nonatomic) __weak id <NPKCompanionAgentConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool hasQueuedPaymentPasses; // @synthesize hasQueuedPaymentPasses=_hasQueuedPaymentPasses;
 @property(nonatomic) _Bool queueAppropriateFailedActions; // @synthesize queueAppropriateFailedActions=_queueAppropriateFailedActions;
-- (void).cxx_destruct;
 - (void)remoteService:(id)arg1 didInterruptConnection:(id)arg2;
 - (void)remoteService:(id)arg1 didEstablishConnection:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableMessageService:(_Bool)arg2;
@@ -64,10 +64,12 @@
 - (id)_remoteObjectProxyWithFailureHandler:(CDUnknownBlockType)arg1;
 - (void)_sharedPaymentWebServiceContextForDevice:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)trustedDeviceEnrollmentSignatureWithAccountDSID:(id)arg1 sessionData:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (_Bool)canProvisionAccessPassWithConfiguration:(id)arg1;
+- (_Bool)canAddSecureElementPassWithConfiguration:(id)arg1;
 - (void)noteForegroundVerificationObserverActive:(_Bool)arg1;
 - (void)startBackgroundVerificationObserverForPass:(id)arg1 verificationMethod:(id)arg2;
-- (void)setCommutePlanReminderInterval:(double)arg1 forCommutePlan:(id)arg2 pass:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)commutePlanReminderIntervalForCommutePlan:(id)arg1 pass:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (void)setCommutePlanReminder:(id)arg1 forCommutePlan:(id)arg2 pass:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)commutePlanReminderForCommutePlan:(id)arg1 pass:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)setBalanceReminder:(id)arg1 forBalance:(id)arg2 pass:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)balanceReminderForBalance:(id)arg1 pass:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)balancesForPaymentPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;

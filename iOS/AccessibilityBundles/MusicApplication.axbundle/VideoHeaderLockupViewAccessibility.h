@@ -16,8 +16,8 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
-@property(retain, nonatomic) NSString *accessibilityVideoLabel; // @synthesize accessibilityVideoLabel=_accessibilityVideoLabel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *accessibilityVideoLabel; // @synthesize accessibilityVideoLabel=_accessibilityVideoLabel;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;
 - (id)accessibilityLabel;

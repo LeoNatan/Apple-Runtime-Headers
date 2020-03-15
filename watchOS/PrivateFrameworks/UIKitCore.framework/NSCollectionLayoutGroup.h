@@ -33,6 +33,7 @@
 + (id)verticalGroupWithLayoutSize:(id)arg1 subitem:(id)arg2 count:(int)arg3;
 + (id)horizontalGroupWithLayoutSize:(id)arg1 subitems:(id)arg2;
 + (id)horizontalGroupWithLayoutSize:(id)arg1 subitem:(id)arg2 count:(int)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) int groupOptions; // @synthesize groupOptions=_groupOptions;
 @property(nonatomic) _Bool _hasDecorationItemRequiringRegistration; // @synthesize _hasDecorationItemRequiringRegistration=__hasDecorationItemRequiringRegistration;
 @property(nonatomic) int count; // @synthesize count=_count;
@@ -43,8 +44,7 @@
 @property(nonatomic) int layoutDirection; // @synthesize layoutDirection=_layoutDirection;
 @property(copy, nonatomic) NSArray *subitems; // @synthesize subitems=_subitems;
 @property(copy, nonatomic) NSCollectionLayoutSpacing *interItemSpacing; // @synthesize interItemSpacing=_interItemSpacing;
-- (void).cxx_destruct;
-- (_Bool)_isListSolverCompatibleForLayoutAxis:(int)arg1;
+- (_Bool)_isListSolverCompatibleForLayoutAxis:(unsigned int)arg1;
 - (id)_effectiveSizeForSize:(id)arg1 count:(int)arg2 layoutDirection:(int)arg3;
 - (id)_effectiveCopiedSubitemsForSubitems:(id)arg1 count:(int)arg2 layoutDirection:(int)arg3;
 - (_Bool)isEqual:(id)arg1;
@@ -53,7 +53,7 @@
 - (_Bool)hasVisualFormat;
 - (_Bool)hasItemProvider;
 - (_Bool)isCustomGroup;
-- (int)layoutAxis;
+- (unsigned int)layoutAxis;
 - (_Bool)isHorizontalGroup;
 - (_Bool)isVerticalGroup;
 - (id)description;

@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     VideosExtrasVideoTimelineEvent *_next;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak VideosExtrasVideoTimelineEvent *next; // @synthesize next=_next;
 @property(readonly, nonatomic) __weak VideosExtrasVideoTimelineEvent *previous; // @synthesize previous=_previous;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) double offset; // @synthesize offset=_offset;
 @property(nonatomic) _Bool isFirstEvent; // @synthesize isFirstEvent=_isFirstEvent;
-- (void).cxx_destruct;
 - (id)description;
 - (void)loadImage:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSString *subHeader;

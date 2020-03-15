@@ -20,8 +20,8 @@
     unsigned int _currentTasks;
 }
 
-@property(nonatomic, setter=_setCurrentTasks:) unsigned int currentTasks; // @synthesize currentTasks=_currentTasks;
 - (void).cxx_destruct;
+@property(nonatomic, setter=_setCurrentTasks:) unsigned int currentTasks; // @synthesize currentTasks=_currentTasks;
 - (int)_knownUserTasksCount;
 - (int)_indexForUserTask:(unsigned int)arg1;
 - (double)_lastTimeEndedForUserTask:(unsigned int)arg1;

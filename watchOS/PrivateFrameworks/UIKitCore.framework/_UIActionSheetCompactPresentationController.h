@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     float _pseudoAlertPreferredTop;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPendingAnimatedLayout; // @synthesize hasPendingAnimatedLayout=_hasPendingAnimatedLayout;
 @property(nonatomic) float pseudoAlertPreferredTop; // @synthesize pseudoAlertPreferredTop=_pseudoAlertPreferredTop;
 @property(retain, nonatomic) id <UIActionSheetPresentationControllerVisualStyle> visualStyle; // @synthesize visualStyle=_visualStyle;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool shouldAdoptPresentedAppearance; // @synthesize shouldAdoptPresentedAppearance=_shouldAdoptPresentedAppearance;
 @property(nonatomic) __weak id <_UIActionSheetCompactPresentationControllerDelegate> actionSheetDelegate; // @synthesize actionSheetDelegate=_actionSheetDelegate;
 @property(nonatomic) _Bool avoidsKeyboardDisabled; // @synthesize avoidsKeyboardDisabled=_avoidsKeyboardDisabled;
-- (void).cxx_destruct;
 - (double)_resizeAnimationDuration;
 - (struct CGSize)_minimumSizeForDismissButton;
 - (_Bool)_shouldDisableAvoidsKeyboard;

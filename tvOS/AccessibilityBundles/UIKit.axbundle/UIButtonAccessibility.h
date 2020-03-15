@@ -15,7 +15,6 @@
 + (id)safeCategoryTargetClassName;
 - (_Bool)_axButtonTypeIsModernCircle;
 - (id)accessibilityPath;
-- (struct CGRect)accessibilityFrame;
 - (unsigned long long)accessibilityTraits;
 - (unsigned long long)_accessibilityNativeTraits;
 - (_Bool)accessibilityPerformEscape;

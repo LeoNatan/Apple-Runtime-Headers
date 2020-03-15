@@ -21,8 +21,8 @@
 }
 
 + (id)loadingScreen;
-@property(retain, nonatomic) UIActivityIndicatorView *spinner; // @synthesize spinner=_spinner;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIActivityIndicatorView *spinner; // @synthesize spinner=_spinner;
 - (void)didRotate:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 templateImage:(id)arg2;
 - (double)hideAnimationDuration;

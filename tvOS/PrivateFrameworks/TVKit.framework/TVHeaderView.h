@@ -22,10 +22,10 @@
 + (id)titleColor;
 + (id)subtitleFont;
 + (id)subtitleColor;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useUberImageLayout; // @synthesize useUberImageLayout=_useUberImageLayout;
 @property(nonatomic) struct UIEdgeInsets imageInsets; // @synthesize imageInsets=_imageInsets;
 @property(nonatomic) long long horizontalAlignment; // @synthesize horizontalAlignment=_horizontalAlignment;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *titleLabel;
 @property(readonly, nonatomic) TVImageView *headerImageView;
 @property(readonly, nonatomic) UILabel *subtitleLabel;

@@ -20,10 +20,10 @@
 + (id)powerTestWithBundleID:(id)arg1 interDelay:(double)arg2 operations:(id)arg3;
 + (id)parseStringOperations:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *operations; // @synthesize operations=_operations;
 @property(nonatomic) double interDelay; // @synthesize interDelay=_interDelay;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

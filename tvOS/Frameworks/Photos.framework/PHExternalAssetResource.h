@@ -25,6 +25,7 @@
 
 + (id)assetResourceForDuplicatingAssetResource:(id)arg1 asData:(_Bool)arg2 error:(id *)arg3;
 + (unsigned long long)probableCPLResourceTypeFromAssetResourceType:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long pixelHeight; // @synthesize pixelHeight=_pixelHeight;
 @property(nonatomic) long long pixelWidth; // @synthesize pixelWidth=_pixelWidth;
 @property(copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) unsigned long long cplResourceType; // @synthesize cplResourceType=_cplResourceType;
 @property(copy, nonatomic) PHAssetResourceCreationOptions *creationOptions; // @synthesize creationOptions=_creationOptions;
 @property(readonly, nonatomic) long long type; // @synthesize type=_resourceType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *uniformTypeIdentifier;
 @property(readonly, nonatomic) NSString *originalFilename;
 @property(nonatomic, setter=_setDuplicateAllowsReadAccess:) _Bool duplicateAllowsReadAccess; // @synthesize duplicateAllowsReadAccess=_duplicateAllowsReadAccess;

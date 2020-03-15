@@ -17,9 +17,9 @@
     id <SVVideoSharingPolicy> _sharingPolicy;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoSharingPolicy> sharingPolicy; // @synthesize sharingPolicy=_sharingPolicy;
 @property(readonly, nonatomic) AVControlItem *controlItem; // @synthesize controlItem=_controlItem;
-- (void).cxx_destruct;
 - (void)willTransitionToVideo:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (id)initWithShareControlItem:(id)arg1 sharingPolicy:(id)arg2;
 

@@ -21,6 +21,7 @@
     NSTextField *_dfrTextField;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextField *dfrTextField; // @synthesize dfrTextField=_dfrTextField;
 @property(retain) NSImage *arrowImage; // @synthesize arrowImage=_arrowImage;
 @property(retain) NSImage *fingerImage; // @synthesize fingerImage=_fingerImage;
@@ -28,8 +29,7 @@
 @property(retain) NSImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain) CALayer *viewLayer; // @synthesize viewLayer=_viewLayer;
 @property(retain, nonatomic) NSString *dfrLabel; // @synthesize dfrLabel=_dfrLabel;
-- (void).cxx_destruct;
-- (BOOL)hasSeparateTouchButton;
+- (BOOL)hasSeparateTouchButtonWithTouchBar;
 - (BOOL)hasTouchBar;
 - (id)_getDeviceImagePathWithName:(id)arg1 withType:(id)arg2;
 - (id)_getDeviceColorImageName;

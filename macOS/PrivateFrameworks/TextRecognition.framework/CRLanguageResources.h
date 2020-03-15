@@ -21,11 +21,11 @@
 + (struct _LXLexicon *)createStaticLexicon:(id)arg1;
 + (void *)createCharacterModel:(id)arg1;
 + (id)languageResourcesForLanguageIdentifier:(id)arg1 index:(long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) void *wordLanguageModel; // @synthesize wordLanguageModel=_wordLanguageModel;
 @property(nonatomic) const struct _LXLexicon *staticLexicon; // @synthesize staticLexicon=_staticLexicon;
 @property(nonatomic) void *characterLanguageModel; // @synthesize characterLanguageModel=_characterLanguageModel;
 @property(readonly, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithLanguageIdentifier:(id)arg1;
 

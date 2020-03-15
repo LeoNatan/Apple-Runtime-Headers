@@ -22,13 +22,13 @@
 }
 
 + (id)contextWithScene:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) id <NSObject><NSCopying> clientContext; // @synthesize clientContext=_clientContext;
 @property(nonatomic) __weak FBSSceneTransitionContext *transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(retain, nonatomic) FBSSceneSettingsDiff *settingsDiff; // @synthesize settingsDiff=_settingsDiff;
 @property(retain, nonatomic) FBSSceneSettings *settings; // @synthesize settings=_settings;
 @property(nonatomic) unsigned long long transactionID; // @synthesize transactionID=_transactionID;
 @property(copy, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

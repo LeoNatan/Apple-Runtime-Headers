@@ -35,13 +35,13 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 @property(retain, nonatomic) NSSet *cachedFocusedDeferralProperties; // @synthesize cachedFocusedDeferralProperties=_cachedFocusedDeferralProperties;
 @property(retain, nonatomic) NSMapTable *infoPerFocusChangeObserver; // @synthesize infoPerFocusChangeObserver=_infoPerFocusChangeObserver;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) _Bool needsFlush; // @synthesize needsFlush=_needsFlush;
-- (void).cxx_destruct;
 - (void)_syncObserverState;
 - (void)_focusDataLock_reallyFlushWithSet:(id)arg1;
 - (void)flush;

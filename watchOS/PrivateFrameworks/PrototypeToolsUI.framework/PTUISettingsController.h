@@ -13,13 +13,14 @@
     UIBarButtonItem *_dismissButton;
 }
 
-@property(retain, nonatomic) UIBarButtonItem *dismissButton; // @synthesize dismissButton=_dismissButton;
 - (void).cxx_destruct;
-- (void)_reloadRootModule;
+@property(retain, nonatomic) UIBarButtonItem *dismissButton; // @synthesize dismissButton=_dismissButton;
+- (void)_reloadWithRootModule:(id)arg1;
 - (void)_dismiss;
 - (id)_defaultDismissButton;
 - (void)pushViewController:(id)arg1 animated:(_Bool)arg2;
 - (id)initWithRootModuleController:(id)arg1;
+- (id)_initWithRootModule:(id)arg1;
 - (id)initWithRootSettings:(id)arg1;
 
 @end

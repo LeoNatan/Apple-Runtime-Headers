@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSArray *_topics;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *topics; // @synthesize topics=_topics;
 @property(nonatomic) int portraitVersion; // @synthesize portraitVersion=_portraitVersion;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

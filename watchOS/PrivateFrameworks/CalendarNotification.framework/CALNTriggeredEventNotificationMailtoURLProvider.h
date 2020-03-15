@@ -13,8 +13,8 @@
     id <CALNMailAccounts> _mailAccounts;
 }
 
-@property(readonly, nonatomic) id <CALNMailAccounts> mailAccounts; // @synthesize mailAccounts=_mailAccounts;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <CALNMailAccounts> mailAccounts; // @synthesize mailAccounts=_mailAccounts;
 - (id)mailtoURLForEvent:(id)arg1;
 - (id)initWithMailAccounts:(id)arg1;
 

@@ -54,6 +54,7 @@
 
 + (id)newFrontFaceViewForStyle:(long long)arg1;
 + (Class)_faceClassForStyle:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKPassFaceTemplate *faceTemplate; // @synthesize faceTemplate=_faceTemplate;
 @property(retain, nonatomic) NSMutableArray *headerBucketViews; // @synthesize headerBucketViews=_headerBucketViews;
 @property(nonatomic) long long style; // @synthesize style=_style;
@@ -65,7 +66,6 @@
 @property(nonatomic) _Bool clipsContent; // @synthesize clipsContent=_clipsContent;
 @property(nonatomic) unsigned long long visibleRegions; // @synthesize visibleRegions=_visibleRegions;
 @property(nonatomic) long long backgroundMode; // @synthesize backgroundMode=_backgroundMode;
-- (void).cxx_destruct;
 - (void)_handleTimeOrLocaleChange:(id)arg1;
 - (void)foregroundActiveArbiter:(id)arg1 didUpdateForegroundActiveState:(CDStruct_973bafd3)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveBalanceUpdate:(id)arg2;

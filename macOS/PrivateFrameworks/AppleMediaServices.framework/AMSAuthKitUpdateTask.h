@@ -20,11 +20,11 @@
 
 + (id)_createAuthenticationController;
 + (id)_createAuthenticationContextForAccount:(id)arg1 options:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) AMSAuthenticateOptions *options; // @synthesize options=_options;
 @property(retain) ACDAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(retain) ACAccount *account; // @synthesize account=_account;
 @property(retain) NSArray *additionalControllers; // @synthesize additionalControllers=_additionalControllers;
-- (void).cxx_destruct;
 - (id)_promptAllowedBundleIds;
 - (id)_performAuthKitUpdateByPromptingUserForAccount:(id)arg1 options:(id)arg2;
 - (id)_performAuthKitUpdateUsingSecondaryPasswordForAccount:(id)arg1 options:(id)arg2;

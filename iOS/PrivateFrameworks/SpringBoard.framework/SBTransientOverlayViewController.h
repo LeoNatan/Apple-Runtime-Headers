@@ -62,6 +62,7 @@
     struct CGAffineTransform _presentationContentTransform;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool presentationPrefersStatusBarHidden; // @synthesize presentationPrefersStatusBarHidden=_presentationPrefersStatusBarHidden;
 @property(nonatomic) double presentationHomeGrabberAdditionalEdgeSpacing; // @synthesize presentationHomeGrabberAdditionalEdgeSpacing=_presentationHomeGrabberAdditionalEdgeSpacing;
 @property(nonatomic) double presentationHomeGrabberAlpha; // @synthesize presentationHomeGrabberAlpha=_presentationHomeGrabberAlpha;
@@ -91,7 +92,6 @@
 @property(readonly, nonatomic, getter=isContentOpaque) _Bool contentOpaque; // @synthesize contentOpaque=_contentOpaque;
 @property(readonly, nonatomic) _Bool allowsStackingOverlayContentAbove; // @synthesize allowsStackingOverlayContentAbove=_allowsStackingOverlayContentAbove;
 @property(readonly, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
-- (void).cxx_destruct;
 - (void)_setDisplayLayoutElementActive:(_Bool)arg1;
 - (void)_updateGrabberViewHiddenConfigurationAnimated:(_Bool)arg1;
 - (void)_updateGrabberViewConfiguration;
@@ -99,6 +99,7 @@
 - (struct CGRect)_currentStatusBarFrameForStyle:(long long)arg1;
 - (void)_applyStatusBarStyleRequestWithInitialStatusBarSettings:(id)arg1;
 - (id)_newHomeGrabberViewWithFrame:(struct CGRect)arg1;
+- (_Bool)_isKeyboardVisibleForSpringBoard;
 - (void)_keyboardWillShowNotification:(id)arg1;
 - (void)_keyboardWillHideNotification:(id)arg1;
 - (void)removePresentationBackgroundView:(id)arg1;

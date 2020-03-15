@@ -38,6 +38,7 @@
 + (id)_cachedServiceWithType:(id)arg1;
 + (id)_cachedServices;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSURL *serviceBundleURL; // @synthesize serviceBundleURL=_serviceBundleURL;
 @property(retain) NSString *activityImageName; // @synthesize activityImageName=_activityImageName;
 @property BOOL addDeviceClassToRequest; // @synthesize addDeviceClassToRequest=_addDeviceClassToRequest;
@@ -54,7 +55,6 @@
 @property(retain) NSString *localizedServiceName; // @synthesize localizedServiceName=_localizedServiceName;
 @property(retain) NSString *accountTypeIdentifier; // @synthesize accountTypeIdentifier=_accountTypeIdentifier;
 @property(retain) NSString *serviceTypeIdentifier; // @synthesize serviceTypeIdentifier=_serviceTypeIdentifier;
-- (void).cxx_destruct;
 @property(nonatomic) long long maximumVideoCount; // @dynamic maximumVideoCount;
 - (id)description;
 - (id)composeViewController;

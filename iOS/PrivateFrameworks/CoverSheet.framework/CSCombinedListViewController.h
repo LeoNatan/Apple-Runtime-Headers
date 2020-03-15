@@ -81,6 +81,7 @@
     SBFTouchPassThroughView *_debugViewRight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_dismissGestureEnabled, setter=_setDismissGestureEnabled:) _Bool dismissGestureEnabled; // @synthesize dismissGestureEnabled=_dismissGestureEnabled;
 @property(nonatomic, getter=hasPresentationDirtiedAppearance) _Bool presentationDirtiedAppearance; // @synthesize presentationDirtiedAppearance=_presentationDirtiedAppearance;
 @property(nonatomic, getter=_footerCallToActionLabelHidden, setter=_setFooterCallToActionLabelHidden:) _Bool footerCallToActionLabelHidden; // @synthesize footerCallToActionLabelHidden=_footerCallToActionLabelHidden;
@@ -106,7 +107,6 @@
 @property(nonatomic) __weak id <CSApplicationInforming> applicationInformer; // @synthesize applicationInformer=_applicationInformer;
 @property(nonatomic) __weak id <CSCombinedListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool hasContent; // @synthesize hasContent=_listPresentingContent;
-- (void).cxx_destruct;
 - (void)_testingCoalesceExpandedBundleForNotificationRequest:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_testingExpandCoalescedBundleForNotificationRequest:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)_testingNotificationRequestWithIdentifier:(id)arg1 sectionIdentifier:(id)arg2;

@@ -23,6 +23,7 @@
     long long __blurStyleForEffectAnimationFactory;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setBlurStyleForEffectAnimationFactory:) long long _blurStyleForEffectAnimationFactory; // @synthesize _blurStyleForEffectAnimationFactory=__blurStyleForEffectAnimationFactory;
 @property(retain, nonatomic, setter=_setBlurView:) UIVisualEffectView *_blurView; // @synthesize _blurView=__blurView;
 @property(readonly, nonatomic) UIView *_dimmingView; // @synthesize _dimmingView=__dimmingView;
@@ -32,7 +33,6 @@
 @property(nonatomic) _Bool blurred; // @synthesize blurred=_blurred;
 @property(readonly, nonatomic) long long desiredAspectRatio; // @synthesize desiredAspectRatio=_desiredAspectRatio;
 @property(readonly, nonatomic) UIView *snapshotView; // @synthesize snapshotView=_snapshotView;
-- (void).cxx_destruct;
 - (void)prepareForResumingUsingCrossfade;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 - (void)_removeAnimationOnView:(id)arg1 forKey:(id)arg2;

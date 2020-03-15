@@ -23,11 +23,11 @@
 + (id)requestWithIdentifier:(id)arg1 pushPayload:(id)arg2 bundleIdentifier:(id)arg3;
 + (id)requestWithIdentifier:(id)arg1 content:(id)arg2 trigger:(id)arg3 destinations:(unsigned long long)arg4;
 + (id)requestWithIdentifier:(id)arg1 content:(id)arg2 trigger:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) unsigned long long destinations; // @synthesize destinations=_destinations;
 @property(readonly, copy, nonatomic) UNNotificationTrigger *trigger; // @synthesize trigger=_trigger;
 @property(readonly, copy, nonatomic) UNNotificationContent *content; // @synthesize content=_content;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

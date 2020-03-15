@@ -7,10 +7,12 @@
 #import <ActionKit/WFSelectContactsAction.h>
 
 #import <ActionKitUI/CNContactPickerDelegate-Protocol.h>
+#import <ActionKitUI/UIAdaptivePresentationControllerDelegate-Protocol.h>
 
 @class NSString;
 
-@interface WFSelectContactsAction (UIKit) <CNContactPickerDelegate>
+@interface WFSelectContactsAction (UIKit) <CNContactPickerDelegate, UIAdaptivePresentationControllerDelegate>
+- (void)presentationControllerDidDismiss:(id)arg1;
 - (void)contactPicker:(id)arg1 didSelectContactProperties:(id)arg2;
 - (void)contactPicker:(id)arg1 didSelectContacts:(id)arg2;
 - (void)contactPicker:(id)arg1 didSelectContactProperty:(id)arg2;

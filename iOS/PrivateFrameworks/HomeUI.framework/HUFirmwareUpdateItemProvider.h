@@ -24,6 +24,7 @@
 
 + (_Bool)prefersNonBlockingReloads;
 + (CDUnknownBlockType)itemComparator;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool instructionsHidden; // @synthesize instructionsHidden=_instructionsHidden;
 @property(retain, nonatomic) NSString *instructionsDescription; // @synthesize instructionsDescription=_instructionsDescription;
 @property(retain, nonatomic) NSString *instructionsTitle; // @synthesize instructionsTitle=_instructionsTitle;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)_instructionsItemResultsWithSampleLinkedApplicationItem:(id)arg1 numberOfLinkedApplicationItems:(long long)arg2;
 - (CDUnknownBlockType)_effectiveFilter;
 - (id)invalidationReasons;

@@ -16,9 +16,9 @@
     NSString *_relativePath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fileHash; // @synthesize fileHash=_fileHash;
 @property(retain, nonatomic) NSString *relativePath; // @synthesize relativePath=_relativePath;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

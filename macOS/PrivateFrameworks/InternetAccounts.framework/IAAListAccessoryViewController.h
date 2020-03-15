@@ -14,8 +14,8 @@
     NSView *_view;
 }
 
-@property(readonly) IAAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+@property(readonly) IAAccount *account; // @synthesize account=_account;
 - (void)syncUI;
 - (id)view;
 - (id)initWithAccount:(id)arg1;

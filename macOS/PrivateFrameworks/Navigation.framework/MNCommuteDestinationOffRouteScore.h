@@ -18,8 +18,8 @@
 }
 
 + (double)weight;
-@property(retain, nonatomic) NSMutableArray *offRouteEntries; // @synthesize offRouteEntries=_offRouteEntries;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *offRouteEntries; // @synthesize offRouteEntries=_offRouteEntries;
 - (id)descriptionExtras;
 - (BOOL)destinationInvalid;
 - (int)score;

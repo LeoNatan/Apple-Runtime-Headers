@@ -19,11 +19,11 @@
     unsigned long long _numPoints;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long numPoints; // @synthesize numPoints=_numPoints;
 @property(readonly, nonatomic) unsigned long long numVertices; // @synthesize numVertices=_numVertices;
 @property(readonly, nonatomic) unsigned long long strokePointBufferOffset; // @synthesize strokePointBufferOffset=_strokePointBufferOffset;
 @property(readonly, nonatomic) unsigned long long uniformsBufferOffset; // @synthesize uniformsBufferOffset=_uniformsBufferOffset;
-- (void).cxx_destruct;
 - (_Bool)lockPurgeableResourcesAddToSet:(id)arg1;
 @property(readonly, nonatomic) id <MTLBuffer> strokePointBuffer; // @dynamic strokePointBuffer;
 @property(readonly, nonatomic) id <MTLBuffer> uniformsBuffer; // @dynamic uniformsBuffer;

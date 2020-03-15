@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     int _routeType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int routeType; // @synthesize routeType=_routeType;
 @property(nonatomic, getter=isPicked) _Bool picked; // @synthesize picked=_picked;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 
 @end
 

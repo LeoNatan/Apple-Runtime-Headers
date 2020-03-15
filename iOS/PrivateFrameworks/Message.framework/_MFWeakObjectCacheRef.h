@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     MFWeakObjectCache *_cache;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak MFWeakObjectCache *cache; // @synthesize cache=_cache;
 @property(copy, nonatomic) id <NSCopying> key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

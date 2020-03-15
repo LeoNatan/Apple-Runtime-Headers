@@ -17,7 +17,7 @@
     id _reserved1;
     id _reserved2;
     id _reserved3;
-    struct NSNumber *_isReadOnlyStorage;
+    NSNumber *_isReadOnlyStorage;
     ABAccount *_account;
 }
 
@@ -44,16 +44,14 @@
 + (id)propertyTypes;
 + (id)propertyTypesWithAddressBook:(id)arg1;
 + (id)propertyTypesWithAddressBook:(id)arg1 acquireLock:(BOOL)arg2;
-+ (id)cardDAVProperties;
-+ (id)typeOfCardDAVProperty:(id)arg1;
 + (id)typeOfBuiltInProperty:(id)arg1;
 + (id)builtInProperties;
 + (id)makeUniqueId;
 + (id)_table;
 + (id)_newUniqueIdForTable:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) ABAccount *account; // @synthesize account=_account;
 @property(readonly) NSNumber *isReadOnlyStorage; // @synthesize isReadOnlyStorage=_isReadOnlyStorage;
-- (void).cxx_destruct;
 - (void)unlock;
 - (void)lock;
 - (id)quicklookURL;

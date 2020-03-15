@@ -21,8 +21,8 @@
 + (id)donationValueWithPhoneNumber:(id)arg1 label:(id)arg2 origin:(id)arg3;
 + (id)donationValueWithEmailAddress:(id)arg1 label:(id)arg2 origin:(id)arg3;
 + (id)donationValueWithNameComponents:(id)arg1 origin:(id)arg2;
-@property(readonly, copy, nonatomic) CNDonationOrigin *origin; // @synthesize origin=_origin;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CNDonationOrigin *origin; // @synthesize origin=_origin;
 - (void)updatePropertyListRepresentation:(id)arg1;
 - (id)propertyListRepresentation;
 - (id)initWithPropertyListRepresentation:(id)arg1;

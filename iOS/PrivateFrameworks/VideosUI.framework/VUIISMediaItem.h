@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long loadingContext; // @synthesize loadingContext=_loadingContext;
 @property(retain, nonatomic) NSMutableArray *requestsAwaitingCertFetch; // @synthesize requestsAwaitingCertFetch=_requestsAwaitingCertFetch;
 @property(retain, nonatomic) NSData *certificateData; // @synthesize certificateData=_certificateData;
@@ -36,8 +37,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSURL *tokenServerURL; // @synthesize tokenServerURL=_tokenServerURL;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(nonatomic) _Bool disableScrubbing; // @synthesize disableScrubbing=_disableScrubbing;
-- (void).cxx_destruct;
-- (void)_userPlaybackSettingsDidChange:(id)arg1;
 - (void)_failKeyRequests:(id)arg1 withError:(id)arg2;
 - (void)_sendURLRequestToServer:(id)arg1 forKeyRequest:(id)arg2 attemptNumber:(unsigned long long)arg3;
 - (void)_sendKeyRequestsToServer:(id)arg1 token:(id)arg2;

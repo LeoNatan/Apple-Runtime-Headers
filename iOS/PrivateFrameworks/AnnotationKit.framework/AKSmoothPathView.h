@@ -41,6 +41,7 @@
 }
 
 + (id)newSmoothPathViewForCurrentPlatformWithController:(id)arg1;
+- (void).cxx_destruct;
 @property double singleDotCurrentSize; // @synthesize singleDotCurrentSize=_singleDotCurrentSize;
 @property _Bool disableSingleDotSpecialCase; // @synthesize disableSingleDotSpecialCase=_disableSingleDotSpecialCase;
 @property double currentWeight; // @synthesize currentWeight=_currentWeight;
@@ -65,7 +66,6 @@
 @property(nonatomic) _Bool prestrokedOutputMode; // @synthesize prestrokedOutputMode=_prestrokedOutputMode;
 @property(retain) id <AKSmoothPathViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property __weak AKController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (void)_updateInterpolatingFifoLineWidth;
 - (double)_windowBackingScaleFactor;
 -     // Error parsing type: 24@0:8@16, name: _pointForRecognizer:

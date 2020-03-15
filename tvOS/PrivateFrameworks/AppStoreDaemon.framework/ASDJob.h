@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) long long storeItemID; // @synthesize storeItemID=_storeItemID;
 @property(nonatomic) long long purchaseID; // @synthesize purchaseID=_purchaseID;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSError *failureError; // @synthesize failureError=_failureError;
 @property(copy, nonatomic) NSNumber *externalOrderKey; // @synthesize externalOrderKey=_externalOrderKey;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

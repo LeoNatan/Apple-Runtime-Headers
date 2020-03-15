@@ -22,8 +22,8 @@
 }
 
 + (id)sharedStatus;
-@property(readonly, nonatomic) NSTimer *refreshTimer; // @synthesize refreshTimer=_refreshTimer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSTimer *refreshTimer; // @synthesize refreshTimer=_refreshTimer;
 - (void)_accountStatusUpdatedWithInfo:(id)arg1;
 - (void)_refreshAccountStatus:(id)arg1;
 - (void)_refreshAccounts:(id)arg1 clearingStatus:(BOOL)arg2;

@@ -24,6 +24,7 @@
 + (_Bool)shouldPropagateAppearanceCustomizations;
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType blockToPerformAfterViewDidAppear; // @synthesize blockToPerformAfterViewDidAppear=_blockToPerformAfterViewDidAppear;
 @property(retain, nonatomic) UIColor *previousStatusBarColor; // @synthesize previousStatusBarColor=_previousStatusBarColor;
 @property(nonatomic) __weak GKHostedViewController *managingViewController; // @synthesize managingViewController=_managingViewController;
@@ -31,7 +32,6 @@
 @property(nonatomic) _Bool viewDidAppear; // @synthesize viewDidAppear=_viewDidAppear;
 @property(nonatomic) _Bool didSetRemoteGame; // @synthesize didSetRemoteGame=_didSetRemoteGame;
 @property(retain, nonatomic) GKGame *game; // @synthesize game=_game;
-- (void).cxx_destruct;
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;

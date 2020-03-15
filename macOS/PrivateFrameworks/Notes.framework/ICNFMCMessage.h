@@ -48,12 +48,12 @@
 + (id)messageWithRFC822Data:(id)arg1 sanitizeData:(BOOL)arg2;
 + (id)messageWithRFC822Data:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL recipientType; // @synthesize recipientType=_recipientType;
 @property double primitiveDateLastViewedInterval; // @synthesize primitiveDateLastViewedInterval=_dateLastViewedInterval;
 @property double primitiveDateReceivedInterval; // @synthesize primitiveDateReceivedInterval=_dateReceivedInterval;
 @property double primitiveDateSentInterval; // @synthesize primitiveDateSentInterval=_dateSentInterval;
 @property BOOL primitiveMessageType; // @synthesize primitiveMessageType=_type;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *remoteAttachments;
 @property(readonly, nonatomic) NSURL *imageArchiveURL;
 - (id)spotlightAttributesIncludingText:(BOOL)arg1 includingAdditionalAttributesForCoreSpotlight:(BOOL)arg2;

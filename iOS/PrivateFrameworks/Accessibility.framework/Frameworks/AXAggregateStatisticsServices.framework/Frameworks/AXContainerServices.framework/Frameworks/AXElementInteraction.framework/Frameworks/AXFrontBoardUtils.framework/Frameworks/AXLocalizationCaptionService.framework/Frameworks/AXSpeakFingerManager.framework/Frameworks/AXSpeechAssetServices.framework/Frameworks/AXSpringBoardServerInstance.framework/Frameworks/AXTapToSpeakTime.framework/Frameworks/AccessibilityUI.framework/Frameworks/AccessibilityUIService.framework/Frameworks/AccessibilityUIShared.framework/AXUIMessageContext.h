@@ -18,12 +18,12 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) _Bool completionRequiresWritingBlock; // @synthesize completionRequiresWritingBlock=_completionRequiresWritingBlock;
 @property(retain, nonatomic) AXAccessQueue *targetAccessQueue; // @synthesize targetAccessQueue=_targetAccessQueue;
 @property(nonatomic) void *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *xpcMessage; // @synthesize xpcMessage=_xpcMessage;
-- (void).cxx_destruct;
 
 @end
 

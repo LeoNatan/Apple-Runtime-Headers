@@ -14,9 +14,9 @@
     id <NSObject> _value;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <NSObject> value; // @synthesize value=_value;
 @property(copy, nonatomic) CDUnknownBlockType operationCompletionBlock; // @synthesize operationCompletionBlock=_operationCompletionBlock;
-- (void).cxx_destruct;
 - (void)callAndReleaseCompletionBlock:(BOOL)arg1;
 - (void)dealloc;
 - (id)initWithOperationCompletionBlock:(CDUnknownBlockType)arg1;

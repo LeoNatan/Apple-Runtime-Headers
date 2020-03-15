@@ -13,8 +13,8 @@
     PXAssetCollectionReference *_assetCollectionReference;
 }
 
-@property(readonly, nonatomic) PXAssetCollectionReference *assetCollectionReference; // @synthesize assetCollectionReference=_assetCollectionReference;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXAssetCollectionReference *assetCollectionReference; // @synthesize assetCollectionReference=_assetCollectionReference;
 - (void)performActionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)localizedTitleForUseCase:(unsigned long long)arg1;
 - (id)initWithActionType:(id)arg1 viewModel:(id)arg2;

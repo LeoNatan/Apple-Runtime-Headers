@@ -17,8 +17,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)cdEntityName;
-@property(copy, nonatomic) NSDateComponents *dateComponents; // @synthesize dateComponents=_dateComponents;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDateComponents *dateComponents; // @synthesize dateComponents=_dateComponents;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

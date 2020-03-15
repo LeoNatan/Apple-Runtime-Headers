@@ -52,6 +52,7 @@
 + (id)node;
 + (BOOL)supportsSecureCoding;
 + (id)nodeFromCaptureData:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL performFullCapture; // @synthesize performFullCapture=_performFullCapture;
 @property(nonatomic) __weak GKEntity *entity; // @synthesize entity=_entity;
 @property(nonatomic, getter=isAccessibilityEnabled) BOOL accessibilityEnabled; // @synthesize accessibilityEnabled=_accessibilityEnabled;
@@ -67,7 +68,6 @@
 @property(nonatomic) long long focusBehavior; // @synthesize focusBehavior=_focusBehavior;
 @property(copy, nonatomic) SKReachConstraints *reachConstraints; // @synthesize reachConstraints=_reachConstraints;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isAccessibilityElement) BOOL accessibilityElement; // @synthesize accessibilityElement=_accessibilityElement;
 - (void)setValue:(id)arg1 forAttributeNamed:(id)arg2;
 - (id)valueForAttributeNamed:(id)arg1;

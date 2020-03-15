@@ -13,8 +13,8 @@
     NSSet *_exceptions;
 }
 
-@property(retain, nonatomic) NSSet *exceptions; // @synthesize exceptions=_exceptions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSet *exceptions; // @synthesize exceptions=_exceptions;
 
 @end
 

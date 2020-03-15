@@ -13,8 +13,8 @@
     AXMAudioDataSource *_inputSource;
 }
 
-@property(nonatomic) __weak AXMAudioDataSource *inputSource; // @synthesize inputSource=_inputSource;
 - (void).cxx_destruct;
+@property(nonatomic) __weak AXMAudioDataSource *inputSource; // @synthesize inputSource=_inputSource;
 - (void)processSamples:(unsigned long long)arg1;
 
 @end

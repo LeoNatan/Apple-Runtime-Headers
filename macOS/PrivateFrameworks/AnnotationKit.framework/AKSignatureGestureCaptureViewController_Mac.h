@@ -29,6 +29,7 @@
     NSView *_trackpadContainerView;
 }
 
+- (void).cxx_destruct;
 @property BOOL isInTrackpadInputMode; // @synthesize isInTrackpadInputMode=_isInTrackpadInputMode;
 @property BOOL isCursorHidden; // @synthesize isCursorHidden=_isCursorHidden;
 @property(retain) NSView *trackpadContainerView; // @synthesize trackpadContainerView=_trackpadContainerView;
@@ -41,7 +42,6 @@
 @property __weak AKController *controller; // @synthesize controller=_controller;
 @property(copy) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
 @property(retain) AKSignatureView *signatureView; // @synthesize signatureView=_signatureView;
-- (void).cxx_destruct;
 - (void)keyDown:(id)arg1;
 - (struct CGPoint)_convertPoint:(struct CGPoint)arg1 inViewToQuartzScreenSpace:(id)arg2;
 - (void)stopTrackpadInput;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *colors;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *colors; // @synthesize colors;
 @property(nonatomic) int supplyLevel; // @synthesize supplyLevel;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (_Bool)isOpaque;
 

@@ -32,8 +32,8 @@
     id <FAConfirmIdentityViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <FAConfirmIdentityViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <FAConfirmIdentityViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateFonts;
 - (void)_showImagePickerForAvailableSources;

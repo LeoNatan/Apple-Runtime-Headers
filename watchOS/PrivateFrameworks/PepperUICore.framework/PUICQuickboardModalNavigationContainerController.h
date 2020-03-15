@@ -19,11 +19,11 @@
     PUICQuickboardModalNavigationBar *_modalNavigationBar;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldHideStatusBar; // @synthesize shouldHideStatusBar=_shouldHideStatusBar;
 @property(retain, nonatomic) PUICQuickboardModalNavigationBar *modalNavigationBar; // @synthesize modalNavigationBar=_modalNavigationBar;
 @property(retain, nonatomic) PUICQuickboardModalNavigationController *modalNavigationController; // @synthesize modalNavigationController=_modalNavigationController;
 @property(retain, nonatomic) UIViewController *rootViewController; // @synthesize rootViewController=_rootViewController;
-- (void).cxx_destruct;
 - (void)navigationBar:(id)arg1 didPerformSelectorForBackButton:(id)arg2;
 - (void)updateNavigationBarForViewController:(id)arg1 transition:(unsigned int)arg2;
 - (void)navigationController:(id)arg1 didPopViewController:(id)arg2;

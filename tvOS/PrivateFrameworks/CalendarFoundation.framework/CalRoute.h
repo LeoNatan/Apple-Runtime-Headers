@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *route; // @synthesize route=_route;
 @property double duration; // @synthesize duration=_duration;
 @property(retain) CalLocation *end; // @synthesize end=_end;
 @property(retain) CalLocation *start; // @synthesize start=_start;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

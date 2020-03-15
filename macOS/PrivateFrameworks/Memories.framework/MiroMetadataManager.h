@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedManager;
-@property(nonatomic) __weak NSSet *suggestions; // @synthesize suggestions=_suggestions;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSSet *suggestions; // @synthesize suggestions=_suggestions;
 - (id)clipSuggestionRangesForAsset:(id)arg1;
 - (void)analyzeAsset:(id)arg1 ranges:(id)arg2 types:(unsigned long long)arg3 progressHandler:(CDUnknownBlockType)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)analyzeAssets:(id)arg1 ranges:(id)arg2 types:(unsigned long long)arg3 progressHandler:(CDUnknownBlockType)arg4 completionHandler:(CDUnknownBlockType)arg5;

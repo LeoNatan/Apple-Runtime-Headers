@@ -23,12 +23,12 @@
     id <CDPDAuthProviderInternal> _internalAuthProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CDPDAuthProviderInternal> internalAuthProvider; // @synthesize internalAuthProvider=_internalAuthProvider;
 @property(retain, nonatomic) id <CDPAuthProviderInternal> recoveryAuthProvider; // @synthesize recoveryAuthProvider=_recoveryAuthProvider;
 @property(retain, nonatomic) id <CDPDSecureBackupProxy> sbProxy; // @synthesize sbProxy=_sbProxy;
 @property(retain, nonatomic) id <CDPDCircleProxy> circleProxy; // @synthesize circleProxy=_circleProxy;
 @property(retain, nonatomic) id <CDPStateUIProviderInternal> uiProvider; // @synthesize uiProvider=_uiProvider;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)generateRecoveryKeyWithInfo:(id)arg1 error:(id *)arg2;
 - (void)enableBackupWithRecoveryKey:(id)arg1 completion:(CDUnknownBlockType)arg2;

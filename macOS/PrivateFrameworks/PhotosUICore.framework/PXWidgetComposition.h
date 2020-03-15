@@ -41,6 +41,7 @@
     struct CGPoint __lastContentAdjustmentOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setLastContentAdjustmentOffset:) struct CGPoint _lastContentAdjustmentOffset; // @synthesize _lastContentAdjustmentOffset=__lastContentAdjustmentOffset;
 @property(nonatomic, setter=_setDidLayoutWidgets:) BOOL _didLayoutWidgets; // @synthesize _didLayoutWidgets=__didLayoutWidgets;
 @property(retain, nonatomic, setter=_setFocusedTilingController:) PXTilingController *_focusedTilingController; // @synthesize _focusedTilingController=__focusedTilingController;
@@ -53,11 +54,10 @@
 @property(nonatomic) __weak id <PXWidgetCompositionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak PXScrollViewController *scrollViewController; // @synthesize scrollViewController=_scrollViewController;
 @property(copy, nonatomic, setter=_setElements:) NSArray *_elements; // @synthesize _elements=__elements;
-- (void).cxx_destruct;
 - (void)scrollViewControllerDidScroll:(id)arg1;
 - (BOOL)element:(id)arg1 requestViewControllerDismissalAnimated:(BOOL)arg2;
-- (BOOL)element:(id)arg1 transitionToViewController:(struct NSObject *)arg2 withTransitionType:(long long)arg3;
-- (struct NSObject *)elementViewController:(id)arg1;
+- (BOOL)element:(id)arg1 transitionToViewController:(id)arg2 withTransitionType:(long long)arg3;
+- (id)elementViewController:(id)arg1;
 - (void)elementHasLoadedContentDataDidChange:(id)arg1;
 - (void)elementNeedsLayout:(id)arg1 preferredAnimationOptions:(id)arg2 originatingTilingController:(id)arg3;
 - (id)footerTilingControllerForWidget:(id)arg1;

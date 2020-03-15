@@ -28,6 +28,7 @@
     NSString *_productType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *productType; // @synthesize productType=_productType;
 @property(nonatomic) __weak id <HROnboardingManagerDelegate> onboardingManagerDelegate; // @synthesize onboardingManagerDelegate=_onboardingManagerDelegate;
 @property(retain, nonatomic) HKDateCache *dateCache; // @synthesize dateCache=_dateCache;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(nonatomic) _Bool firstTimeOnboarding; // @synthesize firstTimeOnboarding=_firstTimeOnboarding;
 @property(retain, nonatomic) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
-- (void).cxx_destruct;
 - (void)_didStepBackward;
 - (unsigned long long)navigationControllerSupportedInterfaceOrientations:(id)arg1;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(_Bool)arg3;

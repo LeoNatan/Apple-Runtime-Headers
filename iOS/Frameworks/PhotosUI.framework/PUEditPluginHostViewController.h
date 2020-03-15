@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     UIBarButtonItem *_redoBarButtonItem;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showUndoRedoButtons; // @synthesize showUndoRedoButtons=_showUndoRedoButtons;
 @property(nonatomic) __weak UIBarButtonItem *redoBarButtonItem; // @synthesize redoBarButtonItem=_redoBarButtonItem;
 @property(nonatomic) __weak UIBarButtonItem *undoBarButtonItem; // @synthesize undoBarButtonItem=_undoBarButtonItem;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <PUEditPluginHostViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <PUEditPluginHostViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) PUEditPlugin *plugin; // @synthesize plugin=_plugin;
-- (void).cxx_destruct;
 - (void)handleRedoButton:(id)arg1;
 - (void)handleUndoButton:(id)arg1;
 - (void)setUndoEnabled:(_Bool)arg1 redoEnabled:(_Bool)arg2;

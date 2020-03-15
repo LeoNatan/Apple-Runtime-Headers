@@ -14,9 +14,9 @@
     HKConceptIdentifier *_conceptIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) HKConceptIdentifier *conceptIdentifier; // @synthesize conceptIdentifier=_conceptIdentifier;
 @property(readonly, copy, nonatomic) NSUUID *sampleUUID; // @synthesize sampleUUID=_sampleUUID;
-- (void).cxx_destruct;
 - (id)initWithSampleUUID:(id)arg1 conceptIdentifier:(id)arg2;
 - (id)init;
 

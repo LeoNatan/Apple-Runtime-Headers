@@ -18,11 +18,11 @@
     struct _WFContentSlice _slice;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) struct _WFContentSlice slice; // @synthesize slice=_slice;
 @property(copy, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(readonly, nonatomic) WFContentPredicate *predicate; // @synthesize predicate=_predicate;
-- (void).cxx_destruct;
 - (_Bool)canEvaluateObjects:(id)arg1 withPropertySubstitutor:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NSSet *containedProperties;
 - (void)runWithObjects:(id)arg1 propertySubstitutor:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;

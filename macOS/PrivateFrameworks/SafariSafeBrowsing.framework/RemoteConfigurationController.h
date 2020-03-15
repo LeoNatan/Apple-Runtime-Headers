@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedController;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ProviderConfiguration *tencentProviderConfiguration; // @synthesize tencentProviderConfiguration=_tencentProviderConfiguration;
 @property(readonly, nonatomic) ProviderConfiguration *googleProviderConfiguration; // @synthesize googleProviderConfiguration=_googleProviderConfiguration;
-- (void).cxx_destruct;
 - (BOOL)forceUpdateConfigurationFromServer;
 - (BOOL)forceLoadConfigurationFromDisk;
 - (void)_scheduleConfigurationUpdateDaily;

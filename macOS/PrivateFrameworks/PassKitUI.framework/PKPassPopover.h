@@ -27,12 +27,12 @@
 + (id)popoverWithPass:(id)arg1 relativeToRect:(struct CGRect)arg2 inView:(id)arg3;
 + (id)popoverWithPasses:(id)arg1 relativeToRect:(struct CGRect)arg2 inView:(id)arg3;
 + (id)_popovers;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly) struct CGRect hostRect; // @synthesize hostRect=_hostRect;
 @property(readonly) NSView *hostView; // @synthesize hostView=_hostView;
 @property(readonly) PKPassView *passView; // @synthesize passView=_passView;
 @property(readonly) NSArray *passes; // @synthesize passes=_passes;
-- (void).cxx_destruct;
 - (void)popoverDidClose:(id)arg1;
 - (void)popoverDidShow:(id)arg1;
 - (void)passViewer:(id)arg1 didChangePass:(struct CGSize)arg2;

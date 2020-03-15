@@ -16,8 +16,8 @@
     PUReviewAssetsDataSourceManager *__attachedDataSourceManager;
 }
 
-@property(retain, nonatomic, setter=_setAttachedDataSourceManager:) PUReviewAssetsDataSourceManager *_attachedDataSourceManager; // @synthesize _attachedDataSourceManager=__attachedDataSourceManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setAttachedDataSourceManager:) PUReviewAssetsDataSourceManager *_attachedDataSourceManager; // @synthesize _attachedDataSourceManager=__attachedDataSourceManager;
 - (id)assetsDataSourceManagerInterestingAssetReferences:(id)arg1;
 - (void)assetsDataSourceManager:(id)arg1 didChangeAssetsDataSource:(id)arg2 changeDetails:(id)arg3;
 - (void)assetsDataSourceManager:(id)arg1 didChangeAssetsDataSource:(id)arg2;

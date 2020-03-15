@@ -25,6 +25,7 @@
     NSArray *_resultHeadlines;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *resultHeadlines; // @synthesize resultHeadlines=_resultHeadlines;
 @property(retain, nonatomic) NSArray *ignoreCacheForArticleIDs; // @synthesize ignoreCacheForArticleIDs=_ignoreCacheForArticleIDs;
 @property(retain, nonatomic) NSArray *articleIDs; // @synthesize articleIDs=_articleIDs;
@@ -37,7 +38,6 @@
 @property unsigned long long articleCachePolicy; // @synthesize articleCachePolicy=_articleCachePolicy;
 @property BOOL overrideArticleCachePolicy; // @synthesize overrideArticleCachePolicy=_overrideArticleCachePolicy;
 @property(copy, nonatomic) id <FCCoreConfiguration> configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (id)completeFetchOperation;
 - (id)fetchRecordsWithCompletion:(CDUnknownBlockType)arg1;
 - (id)fetchConfigWithCompletion:(CDUnknownBlockType)arg1;

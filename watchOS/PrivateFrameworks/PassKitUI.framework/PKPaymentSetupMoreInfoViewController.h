@@ -20,13 +20,13 @@
     PKPaymentSetupMoreInfoView *_moreInfoView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isFinalViewController; // @synthesize isFinalViewController=_isFinalViewController;
 @property(readonly, retain, nonatomic) PKPaymentSetupMoreInfoView *moreInfoView; // @synthesize moreInfoView=_moreInfoView;
 @property(copy, nonatomic) CDUnknownBlockType dismissalHandler; // @synthesize dismissalHandler=_dismissalHandler;
 @property(readonly, nonatomic) int context; // @synthesize context=_context;
 @property(readonly, retain, nonatomic) NSArray *moreInfoItems; // @synthesize moreInfoItems=_moreInfoItems;
 @property(readonly, retain, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
-- (void).cxx_destruct;
 - (int)preferredStatusBarStyle;
 - (void)_handleDismissal;
 - (void)_handlePush;

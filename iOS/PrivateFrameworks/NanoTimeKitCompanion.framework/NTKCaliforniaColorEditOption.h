@@ -18,6 +18,7 @@
 + (id)_orderedValuesForDevice:(id)arg1;
 + (id)optionWithCaliforniaColor:(unsigned long long)arg1 forDevice:(id)arg2;
 - (id)_valueToFaceBundleStringDict;
+- (_Bool)optionExistsInDevice:(id)arg1;
 @property(readonly, nonatomic) unsigned long long californiaColor;
 - (long long)swatchStyle;
 

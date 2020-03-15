@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     NSString *_title;
 }
 
-@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (struct CGSize)intrinsicContentSize;
 - (void)sizeToFit;
 - (void)setServiceIconImage:(id)arg1;

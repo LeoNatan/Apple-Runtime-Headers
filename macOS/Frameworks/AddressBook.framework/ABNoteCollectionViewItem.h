@@ -17,8 +17,8 @@
 }
 
 + (id)log;
-@property(retain, nonatomic) id <CNCancelable> deferredSaveToken; // @synthesize deferredSaveToken=_deferredSaveToken;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <CNCancelable> deferredSaveToken; // @synthesize deferredSaveToken=_deferredSaveToken;
 - (BOOL)supportsClickToEdit;
 - (void)deferredSave;
 - (void)requestDeferredSave;

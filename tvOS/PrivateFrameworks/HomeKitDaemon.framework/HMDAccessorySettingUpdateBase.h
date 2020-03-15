@@ -24,6 +24,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id value; // @synthesize value=_value;
 @property(readonly, nonatomic) __weak id <HMDAccessorySettingUpdateDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak HMDAccessorySetting *setting; // @synthesize setting=_setting;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) HMFMessage *originalMessage; // @synthesize originalMessage=_originalMessage;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(readonly, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
-- (void).cxx_destruct;
 - (void)callDelegate:(id)arg1;
 - (void)updateWithAdditionalModel:(id)arg1;
 - (void)update;

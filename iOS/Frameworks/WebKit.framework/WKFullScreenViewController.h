@@ -37,6 +37,8 @@ __attribute__((visibility("hidden")))
     WKWebView *__webView;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) __weak WKWebView *_webView; // @synthesize _webView=__webView;
 @property(nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
 @property(nonatomic, getter=isPictureInPictureActive) _Bool pictureInPictureActive; // @synthesize pictureInPictureActive=_pictureInPictureActive;
@@ -45,8 +47,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(retain, nonatomic) id target; // @synthesize target=_target;
 @property(nonatomic) _Bool prefersHomeIndicatorAutoHidden; // @synthesize prefersHomeIndicatorAutoHidden=_prefersHomeIndicatorAutoHidden;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)_showPhishingAlert;
 - (void)_updateWebViewFullscreenInsets;
 - (void)_statusBarFrameDidChange:(id)arg1;

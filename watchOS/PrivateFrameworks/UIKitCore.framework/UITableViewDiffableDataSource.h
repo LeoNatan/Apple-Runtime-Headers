@@ -16,8 +16,8 @@
     __UIDiffableDataSource *_impl;
 }
 
-@property(retain, nonatomic) __UIDiffableDataSource *impl; // @synthesize impl=_impl;
 - (void).cxx_destruct;
+@property(retain, nonatomic) __UIDiffableDataSource *impl; // @synthesize impl=_impl;
 - (_Bool)_isDiffableDataSource;
 - (void)_applySnapshot:(id)arg1 animatingDifferences:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

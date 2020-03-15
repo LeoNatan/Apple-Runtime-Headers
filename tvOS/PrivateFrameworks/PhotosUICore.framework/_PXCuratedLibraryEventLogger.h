@@ -9,11 +9,12 @@
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 #import <PhotosUICore/PXCuratedLibraryEventLogger-Protocol.h>
 
-@class NSString, NSTimer, PXCuratedLibraryLayout, PXCuratedLibraryViewModel, PXUpdater;
+@class NSObject, NSString, NSTimer, PXCuratedLibraryLayout, PXCuratedLibraryViewModel, PXUpdater;
+@protocol PXAnonymousViewController;
 
 @interface _PXCuratedLibraryEventLogger : PXObservable <PXCuratedLibraryEventLogger, PXChangeObserver>
 {
-    struct NSObject *_sender;
+    NSObject<PXAnonymousViewController> *_sender;
     _Bool _loggedFirstTimeExperience;
     NSTimer *_slowScrollRegimeTimer;
     double _lastUserInteractionTime;
@@ -28,6 +29,7 @@
     id _lastViewedDominantModelObject;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id lastViewedDominantModelObject; // @synthesize lastViewedDominantModelObject=_lastViewedDominantModelObject;
 @property(nonatomic) long long firstTimeExperienceLibraryItemsCount; // @synthesize firstTimeExperienceLibraryItemsCount=_firstTimeExperienceLibraryItemsCount;
 @property(nonatomic) float firstTimeExperienceAnalysisProgress; // @synthesize firstTimeExperienceAnalysisProgress=_firstTimeExperienceAnalysisProgress;
@@ -37,18 +39,17 @@
 @property(readonly, nonatomic) PXUpdater *updater; // @synthesize updater=_updater;
 @property(readonly, nonatomic) PXCuratedLibraryLayout *layout; // @synthesize layout=_layout;
 @property(readonly, nonatomic) PXCuratedLibraryViewModel *viewModel; // @synthesize viewModel=_viewModel;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_setNeedsUpdate;
 - (void)didPerformChanges;
 - (void)_logImpressionWithLastViewedDominantModelObject:(id)arg1 lastUserInteractionTime:(double)arg2;
 - (void)_eventSenderDidChange;
-- (void)_eventSenderDidDisappear:(struct NSObject *)arg1;
-- (void)_eventSenderWillAppear:(struct NSObject *)arg1;
+- (void)_eventSenderDidDisappear:(id)arg1;
+- (void)_eventSenderWillAppear:(id)arg1;
 - (void)logAnalysisProgress:(float)arg1;
 - (void)logLibraryItemsCount:(long long)arg1;
-- (void)logViewControllerDidDisappear:(struct NSObject *)arg1;
-- (void)logViewControllerWillAppear:(struct NSObject *)arg1;
+- (void)logViewControllerDidDisappear:(id)arg1;
+- (void)logViewControllerWillAppear:(id)arg1;
 - (void)_scheduleImpressionLogging;
 - (void)_configureTimerForSlowScrollRegimeUpdatesIfNeeded;
 - (void)_updateDominantModelObject;

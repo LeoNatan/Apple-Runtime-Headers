@@ -16,11 +16,11 @@
     NSString *_enumeratedItemIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *enumeratedItemIdentifier; // @synthesize enumeratedItemIdentifier=_enumeratedItemIdentifier;
 @property(copy) NSString *enumeratingApplicationBundleIdentifier; // @synthesize enumeratingApplicationBundleIdentifier=_enumeratingApplicationBundleIdentifier;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy) NSArray *fileTypes; // @synthesize fileTypes=_fileTypes;
-- (void).cxx_destruct;
 
 @end
 

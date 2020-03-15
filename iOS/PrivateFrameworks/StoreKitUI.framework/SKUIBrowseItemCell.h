@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     _Bool _hasBlueBackgroundWhenSelected;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasBlueBackgroundWhenSelected; // @synthesize hasBlueBackgroundWhenSelected=_hasBlueBackgroundWhenSelected;
 @property(nonatomic) _Bool showTopBorder; // @synthesize showTopBorder=_showTopBorder;
 @property(retain, nonatomic) UIImage *decorationImage; // @synthesize decorationImage=_decorationImage;
-- (void).cxx_destruct;
 - (void)_reloadHighlightState;
 - (void)layoutSubviews;
 - (void)setSelected:(_Bool)arg1;

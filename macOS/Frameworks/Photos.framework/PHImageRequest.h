@@ -26,11 +26,11 @@
     PHImageRequestBehaviorSpec *_behaviorSpec;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHImageRequestBehaviorSpec *behaviorSpec; // @synthesize behaviorSpec=_behaviorSpec;
 @property(retain, nonatomic) PHImageDisplaySpec *displaySpec; // @synthesize displaySpec=_displaySpec;
 @property(readonly, nonatomic) __weak id <PHImageRequestDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) struct CGSize desiredImageSize; // @synthesize desiredImageSize=_desiredImageSize;
-- (void).cxx_destruct;
 - (id)description;
 - (void)configureWithURL:(id)arg1;
 - (void)configureWithURL:(id)arg1 uniformTypeIdentifier:(id)arg2 exifOrientation:(int)arg3;

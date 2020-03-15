@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 + (id)undoStateControlUnavailableLabelFont;
 + (id)undoStateControlLabelFont;
 + (id)undoInteractiveControlLabelFont;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *coverConstraintBottomAnchor; // @synthesize coverConstraintBottomAnchor=_coverConstraintBottomAnchor;
 @property(retain, nonatomic) NSLayoutConstraint *coverConstraintTopAnchor; // @synthesize coverConstraintTopAnchor=_coverConstraintTopAnchor;
 @property(retain, nonatomic) NSLayoutConstraint *coverConstraintRightAnchor; // @synthesize coverConstraintRightAnchor=_coverConstraintRightAnchor;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *springCoverView; // @synthesize springCoverView=_springCoverView;
 @property(retain, nonatomic) UIKBUndoStyling *style; // @synthesize style=_style;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)layoutControlForType:(int)arg1 andStyling:(id)arg2;
 - (id)controlImageByType:(int)arg1;

@@ -15,9 +15,9 @@
     long long _archiveType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long archiveType; // @synthesize archiveType=_archiveType;
 @property(retain, nonatomic) NSData *archiveData; // @synthesize archiveData=_archiveData;
-- (void).cxx_destruct;
 - (void)getCompressedData:(id *)arg1 archiveType:(long long *)arg2;
 - (id)preferredFilename;
 - (id)addRegularFileWithContents:(id)arg1 preferredFilename:(id)arg2;

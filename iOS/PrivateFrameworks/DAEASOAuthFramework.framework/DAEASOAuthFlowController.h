@@ -20,11 +20,11 @@
     NSString *_username;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 @property(retain, nonatomic) NSString *tokenRequestURI; // @synthesize tokenRequestURI=_tokenRequestURI;
 @property(copy, nonatomic) NSString *oauthURI; // @synthesize oauthURI=_oauthURI;
 @property(nonatomic) unsigned long long oauthType; // @synthesize oauthType=_oauthType;
-- (void).cxx_destruct;
 - (id)_urlRequestForOAuthTokenFromAuthCode:(id)arg1;
 - (void)_exchangeAuthCode:(id)arg1 forTokensWithCompletion:(CDUnknownBlockType)arg2;
 - (void)_exchangeAuthCode:(id)arg1 forTokensAndUsernameWithCompletion:(CDUnknownBlockType)arg2;

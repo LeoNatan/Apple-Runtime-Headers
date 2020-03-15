@@ -13,8 +13,8 @@
     OSPRequest *_request;
 }
 
-@property(retain) OSPRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
+@property(retain) OSPRequest *request; // @synthesize request=_request;
 - (void)globallySignForAllDevicesAndVariantsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithRequest:(id)arg1;
 

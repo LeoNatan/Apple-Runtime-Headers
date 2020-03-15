@@ -20,13 +20,13 @@
 }
 
 + (id)groupWithTitle:(id)arg1 settingItems:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool headerIsDirty; // @synthesize headerIsDirty=_headerIsDirty;
 @property(nonatomic) _Bool shouldAutoHide; // @synthesize shouldAutoHide=_shouldAutoHide;
 @property(nonatomic) __weak id <TSKSettingGroupDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool autoHide; // @synthesize autoHide=_autoHide;
 @property(copy, nonatomic) NSArray *visibleItems; // @synthesize visibleItems=_visibleItems;
 @property(copy, nonatomic) NSArray *settingItems; // @synthesize settingItems=_settingItems;
-- (void).cxx_destruct;
 - (void)_applyUpdates:(_Bool)arg1;
 - (void)_pruneDeletedItems;
 - (void)_prepareSettingItems;

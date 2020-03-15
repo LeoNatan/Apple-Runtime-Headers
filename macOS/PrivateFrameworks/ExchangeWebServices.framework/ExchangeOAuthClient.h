@@ -10,10 +10,17 @@
 {
 }
 
++ (struct codeChallenge)codeChallenge;
++ (id)codeChallengeMethod;
++ (id)codeVerifier;
++ (id)state;
++ (id)defaultScopeForHostURL:(id)arg1;
 + (id)hostFQDNFromURL:(id)arg1;
 + (id)scopeForUpgradingFromBasicCreds;
 + (id)clientRedirect;
 + (id)defaultScope;
++ (id)defaultScopesForDomain;
++ (id)defaultScopesWithoutDomain;
 + (id)clientID;
 
 @end

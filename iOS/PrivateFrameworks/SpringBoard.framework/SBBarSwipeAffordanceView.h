@@ -6,32 +6,32 @@
 
 #import <UIKit/UIView.h>
 
-#import <SpringBoard/SBBarSwipeScreenEdgePanGestureRecognizerDelegate-Protocol.h>
+#import <SpringBoard/SBHomeGestureInteractionDelegate-Protocol.h>
+#import <SpringBoard/SBHomeGesturePanGestureRecognizerInterfaceDelegate-Protocol.h>
 #import <SpringBoard/SBHomeGrabberDelegate-Protocol.h>
 #import <SpringBoard/SBSystemGestureRecognizerDelegate-Protocol.h>
 #import <SpringBoard/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSHashTable, NSString, SBBarSwipeScreenEdgePanGestureRecognizer, SBHomeGesturePanGestureRecognizer, SBHomeGrabberView, UINotificationFeedbackGenerator;
+@class NSHashTable, NSString, SBHomeGestureInteraction, SBHomeGrabberView, UINotificationFeedbackGenerator;
 @protocol SBBarSwipeAffordanceDelegate;
 
-@interface SBBarSwipeAffordanceView : UIView <UIGestureRecognizerDelegate, SBHomeGrabberDelegate, SBBarSwipeScreenEdgePanGestureRecognizerDelegate, SBSystemGestureRecognizerDelegate>
+@interface SBBarSwipeAffordanceView : UIView <UIGestureRecognizerDelegate, SBHomeGrabberDelegate, SBSystemGestureRecognizerDelegate, SBHomeGestureInteractionDelegate, SBHomeGesturePanGestureRecognizerInterfaceDelegate>
 {
     NSHashTable *_observers;
     UINotificationFeedbackGenerator *_dismissalFeedbackGenerator;
     double _additionalEdgeSpacing;
-    SBBarSwipeScreenEdgePanGestureRecognizer *_swipeEdgePanGestureRecognizer;
+    SBHomeGestureInteraction *_homeGestureInteraction;
     _Bool _active;
     id <SBBarSwipeAffordanceDelegate> _delegate;
     SBHomeGrabberView *_grabberView;
     long long _feedbackType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long feedbackType; // @synthesize feedbackType=_feedbackType;
 @property(readonly, nonatomic) SBHomeGrabberView *grabberView; // @synthesize grabberView=_grabberView;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(nonatomic) __weak id <SBBarSwipeAffordanceDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, nonatomic) SBHomeGesturePanGestureRecognizer *swipeEdgePanGestureRecognizer; // @synthesize swipeEdgePanGestureRecognizer=_swipeEdgePanGestureRecognizer;
-- (void).cxx_destruct;
 - (id)_settleAffordanceAnimationBehaviorDescription;
 - (id)_unhideHomeAffordanceAnimationSettings;
 - (id)_hideHomeAffordanceAnimationSettings;
@@ -40,14 +40,18 @@
 - (void)_settleGrabber;
 - (void)_fireAction;
 - (double)_progressWithTranslation:(struct CGPoint)arg1 liftoffVelocity:(struct CGPoint)arg2;
-- (void)_handleEdgePanGesture:(id)arg1;
 - (_Bool)shouldAllowAutoHideForHomeGrabberView:(id)arg1;
 - (_Bool)shouldAllowThinStyleForHomeGrabberView:(id)arg1;
 - (double)additionalEdgeSpacingForHomeGrabberView:(id)arg1;
-- (long long)touchGestureInterfaceOrientationForBarSwipeRecognizer:(id)arg1;
+- (long long)touchInterfaceOrientationForGestureRecognizer:(id)arg1;
 - (long long)_effectiveOrientationAccountingForTransforms;
 - (id)viewForSystemGestureRecognizer:(id)arg1;
-- (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (void)homeGestureInteractionCancelled:(id)arg1;
+- (void)homeGestureInteractionEnded:(id)arg1;
+- (void)homeGestureInteractionChanged:(id)arg1;
+- (void)homeGestureInteractionBegan:(id)arg1;
+- (id)customScreenEdgePanGestureRecognizerForHomeGestureInteraction:(id)arg1;
+- (unsigned long long)homeGestureInteraction:(id)arg1 systemGestureTypeForType:(long long)arg2;
 - (void)layoutSubviews;
 - (void)didAddSubview:(id)arg1;
 - (void)_runBlockOnObservers:(CDUnknownBlockType)arg1;

@@ -21,6 +21,7 @@
     SKUIStarRatingQueue *_starRatingQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIStarRatingQueue *starRatingQueue; // @synthesize starRatingQueue=_starRatingQueue;
 @property(retain, nonatomic) SKUIProductReviewURLProvider *reviewURLProvider; // @synthesize reviewURLProvider=_reviewURLProvider;
 @property(retain, nonatomic) SKUIStoreDialogController *dialogController; // @synthesize dialogController=_dialogController;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) SKUIReviewInAppRatingViewController *ratingViewController; // @synthesize ratingViewController=_ratingViewController;
 @property(copy, nonatomic) SKUIReviewInAppConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 - (void)_promptForStarRatingDuringCompose:(id)arg1;
 - (void)_presentAlertForDialog:(id)arg1;
 - (void)_presentWriteReview;

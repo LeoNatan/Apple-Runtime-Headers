@@ -17,9 +17,9 @@
     NSArray *_rectsInElement;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *rectsInElement; // @synthesize rectsInElement=_rectsInElement;
 @property(copy, nonatomic, setter=setUserActivityTitle:) NSString *userActivityTitle; // @synthesize userActivityTitle=_userActivityTitle;
-- (void).cxx_destruct;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)_decodedRectsForEncodedRects:(id)arg1;

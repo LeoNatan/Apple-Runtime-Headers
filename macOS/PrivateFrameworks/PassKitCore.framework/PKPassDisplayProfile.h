@@ -26,6 +26,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasStripImage; // @synthesize hasStripImage=_hasStripImage;
 @property(nonatomic) BOOL hasBackgroundImage; // @synthesize hasBackgroundImage=_hasBackgroundImage;
 @property(nonatomic) BOOL tallCode; // @synthesize tallCode=_tallCode;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) PKColor *secondaryBackgroundColor; // @synthesize secondaryBackgroundColor=_secondaryBackgroundColor;
 @property(retain, nonatomic) PKColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) long long passStyle; // @synthesize passStyle=_passStyle;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

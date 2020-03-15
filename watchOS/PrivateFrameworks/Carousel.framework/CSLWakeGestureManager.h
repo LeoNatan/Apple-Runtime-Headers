@@ -47,9 +47,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *wakeGesturePreferenceLoggingTimer; // @synthesize wakeGesturePreferenceLoggingTimer=_wakeGesturePreferenceLoggingTimer;
 @property(retain, nonatomic) CSLUIUserSpecifiedOrientation *orientationSettings; // @synthesize orientationSettings=_orientationSettings;
-- (void).cxx_destruct;
 - (void)_aggdlogNightstandWakeWasIgnored:(_Bool)arg1;
 - (void)_aggdlogSleepGestureBlocked;
 - (void)_aggdlogEndOfWakeWithWristLower:(_Bool)arg1;

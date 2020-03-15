@@ -26,6 +26,7 @@
     long long _photoQualityPrioritization;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long photoQualityPrioritization; // @synthesize photoQualityPrioritization=_photoQualityPrioritization;
 @property(readonly, nonatomic) long long aspectRatioCrop; // @synthesize aspectRatioCrop=_aspectRatioCrop;
 @property(readonly, nonatomic) _Bool enableAutoLowLightVideoIfSupported; // @synthesize enableAutoLowLightVideoIfSupported=_enableAutoLowLightVideoIfSupported;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) long long videoConfiguration; // @synthesize videoConfiguration=_videoConfiguration;
 @property(readonly, nonatomic) long long device; // @synthesize device=_device;
 @property(readonly, nonatomic) long long mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (id)description;
 - (id)completeDescription;
 - (id)shortDescription;

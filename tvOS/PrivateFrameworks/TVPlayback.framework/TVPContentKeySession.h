@@ -22,13 +22,13 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool offlineKeyGenerationIsForRenewal; // @synthesize offlineKeyGenerationIsForRenewal=_offlineKeyGenerationIsForRenewal;
 @property(retain, nonatomic) NSMutableArray *keyRequestsInProgress; // @synthesize keyRequestsInProgress=_keyRequestsInProgress;
 @property(retain, nonatomic) NSArray *offlineKeyIdentifiersInProgress; // @synthesize offlineKeyIdentifiersInProgress=_offlineKeyIdentifiersInProgress;
 @property(copy, nonatomic) CDUnknownBlockType offlineKeyGenerationCompletionHandler; // @synthesize offlineKeyGenerationCompletionHandler=_offlineKeyGenerationCompletionHandler;
 @property(retain, nonatomic) NSObject<TVPContentKeyLoading> *contentKeyLoader; // @synthesize contentKeyLoader=_contentKeyLoader;
 @property(retain, nonatomic) AVContentKeySession *contentKeySession; // @synthesize contentKeySession=_contentKeySession;
-- (void).cxx_destruct;
 - (void)_loadAVContentKeyRequests:(id)arg1 type:(long long)arg2 isRenewal:(_Bool)arg3;
 - (void)contentKeySession:(id)arg1 didProvideRenewingContentKeyRequest:(id)arg2;
 - (void)contentKeySession:(id)arg1 didProvideContentKeyRequest:(id)arg2;

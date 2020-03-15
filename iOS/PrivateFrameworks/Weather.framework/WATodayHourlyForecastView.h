@@ -18,13 +18,13 @@
     NSArray *_constraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) UIImageView *conditionsImageView; // @synthesize conditionsImageView=_conditionsImageView;
 @property(retain, nonatomic) UILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain, nonatomic) UILabel *temperatureLabel; // @synthesize temperatureLabel=_temperatureLabel;
 @property(retain, nonatomic) UIVisualEffectView *timeLabelVisualEffectView; // @synthesize timeLabelVisualEffectView=_timeLabelVisualEffectView;
 @property(retain, nonatomic) UIVisualEffectView *temperatureLabelVisualEffectView; // @synthesize temperatureLabelVisualEffectView=_temperatureLabelVisualEffectView;
-- (void).cxx_destruct;
 - (void)_setupConstraints;
 - (void)applyVibrancyToTimeWithEffect:(id)arg1;
 @property(retain, nonatomic) UIImage *conditionsImage;

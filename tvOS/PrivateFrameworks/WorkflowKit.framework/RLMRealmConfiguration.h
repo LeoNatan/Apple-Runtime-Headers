@@ -33,14 +33,14 @@
 + (id)wf_appStoreShortcutsConfiguration;
 + (id)wf_systemShortcutsConfiguration;
 + (id)wf_shortcutsDirectoryURL;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *pathOnDisk; // @synthesize pathOnDisk=_pathOnDisk;
 @property(copy, nonatomic) RLMSchema *customSchema; // @synthesize customSchema=_customSchema;
 @property(nonatomic) _Bool dynamic; // @synthesize dynamic=_dynamic;
 @property(nonatomic) _Bool cache; // @synthesize cache=_cache;
 @property(copy, nonatomic) CDUnknownBlockType shouldCompactOnLaunch; // @synthesize shouldCompactOnLaunch=_shouldCompactOnLaunch;
 @property(copy, nonatomic) CDUnknownBlockType migrationBlock; // @synthesize migrationBlock=_migrationBlock;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)syncConfiguration;
 - (void)setCustomSchemaWithoutCopying:(id)arg1;
 - (void)setSchemaMode:(unsigned char)arg1;

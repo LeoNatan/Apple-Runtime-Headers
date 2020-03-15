@@ -18,8 +18,8 @@
 
 + (void)cancelRequestForActionViewControllerForAdSpaceController:(id)arg1;
 + (void)requestActionViewControllerForAdSpace:(id)arg1;
-@property(nonatomic) __weak ADAdSpace *adSpace; // @synthesize adSpace=_adSpace;
 - (void).cxx_destruct;
+@property(nonatomic) __weak ADAdSpace *adSpace; // @synthesize adSpace=_adSpace;
 - (void)setReadyForPresentation:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool readyForPresentation;
 - (void)_remote_viewControllerCreatedForAdSpaceControllerWithIdentifier:(id)arg1;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSDictionary *_attributes;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property(retain) NSAttributedString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 
 @end
 

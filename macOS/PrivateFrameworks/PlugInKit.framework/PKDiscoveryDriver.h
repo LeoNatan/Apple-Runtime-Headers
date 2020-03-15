@@ -25,6 +25,7 @@
     NSObject<OS_dispatch_queue> *_sync;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *sync; // @synthesize sync=_sync;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain) PKDiscoveryLSWatcher *lsWatcher; // @synthesize lsWatcher=_lsWatcher;
@@ -35,7 +36,6 @@
 @property(copy) CDUnknownBlockType report; // @synthesize report=_report;
 @property unsigned long long flags; // @synthesize flags=_flags;
 @property(retain) NSDictionary *attributes; // @synthesize attributes=_attributes;
-- (void).cxx_destruct;
 - (void)removeWatchers;
 - (void)installWatchers;
 - (void)cancel;

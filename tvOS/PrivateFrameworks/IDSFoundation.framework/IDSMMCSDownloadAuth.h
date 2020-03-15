@@ -15,8 +15,8 @@
     NSDictionary *_dictionaryRepresentation;
 }
 
-@property(readonly, nonatomic) NSDictionary *dictionaryRepresentation; // @synthesize dictionaryRepresentation=_dictionaryRepresentation;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *dictionaryRepresentation; // @synthesize dictionaryRepresentation=_dictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSString *ownerID;
 @property(readonly, nonatomic) NSString *authURL;

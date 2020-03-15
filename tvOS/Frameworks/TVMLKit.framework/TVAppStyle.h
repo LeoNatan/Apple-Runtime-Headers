@@ -26,6 +26,7 @@
     CDStruct_81add385 _borderRadius;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *valuesByStyle; // @synthesize valuesByStyle=_valuesByStyle;
 @property(copy, nonatomic) NSString *prototype; // @synthesize prototype=_prototype;
 @property(retain, nonatomic) IKColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
@@ -40,7 +41,6 @@
 @property(nonatomic) CDStruct_81add385 maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(nonatomic) CDStruct_81add385 minWidth; // @synthesize minWidth=_minWidth;
 @property(nonatomic) CDStruct_81add385 width; // @synthesize width=_width;
-- (void).cxx_destruct;
 - (void)_setValue:(id)arg1 forStyle:(id)arg2;
 - (id)valueForStyle:(id)arg1;
 

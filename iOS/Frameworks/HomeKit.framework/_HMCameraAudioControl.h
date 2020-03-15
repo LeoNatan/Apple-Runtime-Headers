@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     HMCharacteristic *_volume;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMCharacteristic *volume; // @synthesize volume=_volume;
 @property(readonly, nonatomic) HMCharacteristic *mute; // @synthesize mute=_mute;
-- (void).cxx_destruct;
 - (id)initWithCameraProfile:(id)arg1 service:(id)arg2 profileUniqueIdentifier:(id)arg3;
 
 @end

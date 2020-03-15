@@ -13,8 +13,8 @@
     NSString *_ICUSortKey;
 }
 
-@property(readonly) NSString *ICUSortKey; // @synthesize ICUSortKey=_ICUSortKey;
 - (void).cxx_destruct;
+@property(readonly) NSString *ICUSortKey; // @synthesize ICUSortKey=_ICUSortKey;
 - (id)initWithKey:(id)arg1 localizedName:(id)arg2 ICUSortKey:(id)arg3;
 
 @end

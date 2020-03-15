@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     UIView *_revealContainerView;
 }
 
+- (void).cxx_destruct;
 @property(setter=_setShouldRespectNearestCurrentContextPresenter:) BOOL _shouldRespectNearestCurrentContextPresenter; // @synthesize _shouldRespectNearestCurrentContextPresenter=__shouldRespectNearestCurrentContextPresenter;
 @property(setter=_setIsCurrentContext:) BOOL _isCurrentContext; // @synthesize _isCurrentContext=__isCurrentContext;
 @property(nonatomic, getter=_isChromeHidden, setter=_setChromeHidden:) BOOL _chromeHidden; // @synthesize _chromeHidden;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType presentationPhaseCompletionBlock; // @synthesize presentationPhaseCompletionBlock=_presentationPhaseCompletionBlock;
 @property(retain, nonatomic) UIGestureRecognizer *panningGestureRecognizer; // @synthesize panningGestureRecognizer=_panningGestureRecognizer;
 @property(readonly) UIView *_dimmingView; // @synthesize _dimmingView;
-- (void).cxx_destruct;
 - (id)_presentedAlertController;
 - (id)presentationController:(id)arg1 viewControllerForAdaptivePresentationStyle:(long long)arg2;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;

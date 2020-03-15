@@ -22,8 +22,8 @@
 }
 
 + (id)serverInterface;
-@property(readonly, copy) HKQuantitySample *quantitySample; // @synthesize quantitySample=_quantitySample;
 - (void).cxx_destruct;
+@property(readonly, copy) HKQuantitySample *quantitySample; // @synthesize quantitySample=_quantitySample;
 - (void)connectionInvalidated;
 - (id)remoteInterface;
 - (id)exportedInterface;

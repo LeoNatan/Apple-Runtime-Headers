@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     SKUIExpandViewElement *_viewElement;
 }
 
-@property(readonly, nonatomic) SKUIExpandViewElement *viewElement; // @synthesize viewElement=_viewElement;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SKUIExpandViewElement *viewElement; // @synthesize viewElement=_viewElement;
 - (id)metricsElementName;
 - (long long)componentType;
 - (id)childComponents;

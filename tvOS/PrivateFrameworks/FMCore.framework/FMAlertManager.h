@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *activeCFNotificationsByCategory; // @synthesize activeCFNotificationsByCategory=_activeCFNotificationsByCategory;
 @property(retain, nonatomic) NSMutableDictionary *activeAlerts; // @synthesize activeAlerts=_activeAlerts;
-- (void).cxx_destruct;
 - (id)_xpcTransactionNameFor:(id)arg1;
 - (void)activateAlert:(id)arg1;
 - (id)initSingleton;

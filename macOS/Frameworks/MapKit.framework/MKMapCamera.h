@@ -27,11 +27,11 @@
 + (id)cameraLookingAtCenterCoordinate:(struct CLLocationCoordinate2D)arg1 fromDistance:(double)arg2 pitch:(double)arg3 heading:(double)arg4;
 + (id)cameraLookingAtCenterCoordinate:(struct CLLocationCoordinate2D)arg1 fromEyeCoordinate:(struct CLLocationCoordinate2D)arg2 eyeAltitude:(double)arg3;
 + (id)camera;
+- (void).cxx_destruct;
 @property(nonatomic) double altitude; // @synthesize altitude=_altitude;
 @property(nonatomic, getter=_precisePitch, setter=_setPrecisePitch:) double precisePitch; // @synthesize precisePitch=_pitch;
 @property(nonatomic) double heading; // @synthesize heading=_heading;
 @property(nonatomic) struct CLLocationCoordinate2D centerCoordinate; // @synthesize centerCoordinate=_centerCoordinate;
-- (void).cxx_destruct;
 - (BOOL)_validate;
 - (id)description;
 - (void)_updateState;

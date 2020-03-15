@@ -24,6 +24,7 @@
     HDCodableMedicalCoding *_statusCoding;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableMedicalCoding *statusCoding; // @synthesize statusCoding=_statusCoding;
 @property(retain, nonatomic) NSData *recordedDate; // @synthesize recordedDate=_recordedDate;
 @property(retain, nonatomic) NSData *lastOccurenceDate; // @synthesize lastOccurenceDate=_lastOccurenceDate;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSData *onsetDate; // @synthesize onsetDate=_onsetDate;
 @property(retain, nonatomic) HDCodableMedicalCodingList *allergyCodings; // @synthesize allergyCodings=_allergyCodings;
 @property(retain, nonatomic) HDCodableMedicalRecord *medicalRecord; // @synthesize medicalRecord=_medicalRecord;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

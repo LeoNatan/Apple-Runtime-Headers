@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSDictionary *_cachedKeysOrder;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *cachedKeysOrder; // @synthesize cachedKeysOrder=_cachedKeysOrder;
 @property(retain, nonatomic) NSArray *array; // @synthesize array=_array;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

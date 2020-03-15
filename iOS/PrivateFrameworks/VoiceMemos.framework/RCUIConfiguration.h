@@ -16,8 +16,8 @@
 }
 
 + (id)defaultConfiguration;
-@property(retain, nonatomic) NSString *debugIdentifier; // @synthesize debugIdentifier=_debugIdentifier;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *debugIdentifier; // @synthesize debugIdentifier=_debugIdentifier;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

@@ -20,9 +20,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setChangeObserver:) __weak id <_UIBarButtonItemAppearanceChangeObserver> _changeObserver; // @synthesize _changeObserver;
 @property(readonly, nonatomic) _UIBarButtonItemData *_data; // @synthesize _data;
-- (void).cxx_destruct;
 - (void)_resetBackIndicatorImages;
 - (void)_setBackIndicatorImage:(id)arg1 transitionMaskImage:(id)arg2;
 - (void)_updateToSupportBackIndicatorsCopyingIndicatorsAndFallbackFrom:(id)arg1;

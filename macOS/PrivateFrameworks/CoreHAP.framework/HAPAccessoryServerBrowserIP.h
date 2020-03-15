@@ -24,6 +24,7 @@
     HAPWACAccessoryBrowser *_hapWACBrowser;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HAPWACAccessoryBrowser *hapWACBrowser; // @synthesize hapWACBrowser=_hapWACBrowser;
 @property(retain, nonatomic) HMFTimer *bonjourEventTimer; // @synthesize bonjourEventTimer=_bonjourEventTimer;
 @property(retain, nonatomic) NSMutableSet *pendingBonjourEvents; // @synthesize pendingBonjourEvents=_pendingBonjourEvents;
@@ -31,7 +32,6 @@
 @property(nonatomic) __weak id <HAPAccessoryServerBrowserDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableSet *discoveredAccessoryServers; // @synthesize discoveredAccessoryServers=_discoveredAccessoryServers;
 @property(copy, nonatomic) NSArray *scanResults; // @synthesize scanResults=_scanResults;
-- (void).cxx_destruct;
 - (id)serverWithIdentifier:(id)arg1;
 - (void)wacBrowser:(id)arg1 didFindUnconfiguredPairedHAPWACAccessory:(id)arg2;
 - (void)wacBrowser:(id)arg1 didRemoveHAPWACAccessory:(id)arg2;

@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSString *_formattedName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *formattedName; // @synthesize formattedName=_formattedName;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)didSelectItemAtIndex:(unsigned long long)arg1;
 - (id)itemForIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfItems;

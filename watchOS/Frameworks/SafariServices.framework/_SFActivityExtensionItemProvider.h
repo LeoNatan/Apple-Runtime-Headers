@@ -13,8 +13,8 @@
     NSExtensionItem *_extensionItem;
 }
 
-@property(retain, nonatomic) NSExtensionItem *extensionItem; // @synthesize extensionItem=_extensionItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSExtensionItem *extensionItem; // @synthesize extensionItem=_extensionItem;
 - (id)_itemForActivityType:(id)arg1;
 - (id)item;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     _RWIRelayClientConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isActive; // @synthesize isActive=_isActive;
 @property(readonly, nonatomic) _RWIRelayClientConnection *connection; // @synthesize connection=_connection;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (BOOL)updateDriverState:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 connection:(id)arg3;

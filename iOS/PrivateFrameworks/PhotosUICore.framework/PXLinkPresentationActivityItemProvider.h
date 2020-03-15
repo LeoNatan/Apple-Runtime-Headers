@@ -15,8 +15,8 @@
     PXLinkPresentationConfiguration *_configuration;
 }
 
-@property(readonly, nonatomic) PXLinkPresentationConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXLinkPresentationConfiguration *configuration; // @synthesize configuration=_configuration;
 - (id)activityViewControllerLinkPresentationMetadata:(id)arg1;
 - (id)_linkMetadataForConfiguration:(id)arg1;
 - (id)initWithConfiguration:(id)arg1;

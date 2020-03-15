@@ -25,6 +25,7 @@
     CDUnknownBlockType _certificateButtonActionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType certificateButtonActionHandler; // @synthesize certificateButtonActionHandler=_certificateButtonActionHandler;
 @property(nonatomic) _Bool certificateButtonIsDestructiveAction; // @synthesize certificateButtonIsDestructiveAction=_certificateButtonIsDestructiveAction;
 @property(retain, nonatomic) NSString *certificateButtonDescription; // @synthesize certificateButtonDescription=_certificateButtonDescription;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSString *certificateTitle; // @synthesize certificateTitle=_certificateTitle;
 @property(nonatomic) int certUIAction; // @synthesize certUIAction=_certUIAction;
 @property(retain, nonatomic) id certificateTrust; // @synthesize certificateTrust=_certificateTrust;
-- (void).cxx_destruct;
 - (void)preferredContentSizeChanged:(id)arg1;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;

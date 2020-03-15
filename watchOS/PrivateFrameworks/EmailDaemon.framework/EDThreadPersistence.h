@@ -44,6 +44,7 @@
 + (id)tablesAndForeignKeysToResolve:(id *)arg1 associationsToResolve:(id *)arg2;
 + (id)signpostLog;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EFDebouncer *threadRecomputationDebouncer; // @synthesize threadRecomputationDebouncer=_threadRecomputationDebouncer;
 @property(retain, nonatomic) id <EFScheduler> threadRecomputationScheduler; // @synthesize threadRecomputationScheduler=_threadRecomputationScheduler;
 @property(retain, nonatomic) id <EFScheduler> reconciliationCleanupScheduler; // @synthesize reconciliationCleanupScheduler=_reconciliationCleanupScheduler;
@@ -53,13 +54,17 @@
 @property(readonly, nonatomic) EDPersistenceHookRegistry *hookRegistry; // @synthesize hookRegistry=_hookRegistry;
 @property(readonly, nonatomic) EDPersistenceDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) EDMessagePersistence *messagePersistence; // @synthesize messagePersistence=_messagePersistence;
-- (void).cxx_destruct;
 - (_Bool)threadScopeManager:(id)arg1 evictThreadScopesWithDatabaseIDs:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (void)threadScopeManager:(id)arg1 gatherStatisticsForThreadScopes:(id)arg2 block:(CDUnknownBlockType)arg3;
+- (void)threadScopeManager:(id)arg1 gatherStatisticsForThreadScopesWithDatabaseIDs:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (void)threadScopeManager:(id)arg1 populateThreadScopesWithBlock:(CDUnknownBlockType)arg2;
 - (_Bool)threadScopeManager:(id)arg1 isValidMailboxObjectID:(id)arg2;
 - (_Bool)threadScopeManager:(id)arg1 mailboxScopeExists:(id)arg2;
-- (id)_statementForOldestThreadInMailbox:(id)arg1 threadScope:(id)arg2;
+- (id)statisticsForThreadScopesWithDatabaseIDs:(id)arg1;
+- (_Bool)addThreadScopeToDatabase:(id)arg1 needsUpdate:(_Bool)arg2 lastViewedDate:(id)arg3;
+- (_Bool)_addThreadScopeToDatabase:(id)arg1 withMailboxDatabaseID:(long long)arg2 needsUpdate:(_Bool)arg3 lastViewedDate:(id)arg4 updateThreadScopeManager:(_Bool)arg5 connection:(id)arg6;
+- (_Bool)_addThreadScopeToDatabaseWithMailboxType:(id)arg1 needsUpdate:(_Bool)arg2 lastViewedDate:(id)arg3 connection:(id)arg4;
+- (_Bool)_addThreadScopeToDatabase:(id)arg1 needsUpdate:(_Bool)arg2 lastViewedDate:(id)arg3 updateThreadScopeManager:(_Bool)arg4;
+- (id)_statementForOldestThreadInMailbox:(id)arg1 threadScope:(id)arg2 createMailboxDatabaseIDIfNecessary:(_Bool)arg3;
 - (id)oldestThreadObjectIDForMailbox:(id)arg1 threadScope:(id)arg2;
 - (_Bool)deleteThreadsWithObjectIDs:(id)arg1;
 - (_Bool)addThreads:(id)arg1;
@@ -120,7 +125,6 @@
 - (void)persistenceDidAddMessages:(id)arg1 generationWindow:(id)arg2;
 - (void)_addPersistedMessages:(id)arg1 journaled:(_Bool)arg2 generationWindow:(id)arg3;
 - (void)persistenceIsAddingMessages:(id)arg1 journaled:(_Bool)arg2 generationWindow:(id)arg3;
-- (_Bool)_addThreadScopeToDatabase:(id)arg1 withMailboxDatabaseID:(long long)arg2 needsUpdate:(_Bool)arg3 connection:(id)arg4;
 - (void)persistenceIsAddingMailboxWithDatabaseID:(long long)arg1 objectID:(id)arg2 generationWindow:(id)arg3;
 - (id)_inactiveMailboxDatabaseIDsForMailboxScope:(id)arg1 forThreadScopeDatabaseID:(id)arg2;
 - (void)_getIndividualMailboxScopes:(id *)arg1 unifiedMailboxThreadScopes:(id *)arg2 forAccount:(id)arg3;
@@ -130,7 +134,6 @@
 - (id)_threadScopedToResetForActivatedAccount:(id)arg1;
 - (void)resetThreadScopedForActivatedAccount:(id)arg1;
 - (void)setNeedsUpdateForThreadScope:(id)arg1;
-- (_Bool)_addThreadScopeToDatabaseWithMailboxType:(id)arg1 needsUpdate:(_Bool)arg2 lastViewedDate:(id)arg3 connection:(id)arg4;
 - (void)persistenceIsInitializingDatabaseWithConnection:(id)arg1;
 - (id)_persistedMessagesForMailboxScope:(id)arg1 messageExpression:(id)arg2;
 - (void)_recomputeThreads;

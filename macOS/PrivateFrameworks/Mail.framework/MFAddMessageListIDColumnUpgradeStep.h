@@ -16,10 +16,10 @@
 }
 
 + (unsigned long long)targetVersion;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSProgress *messageProgress; // @synthesize messageProgress=_messageProgress;
 @property(retain, nonatomic) NSDictionary *mailboxPathsByMailboxURL; // @synthesize mailboxPathsByMailboxURL=_mailboxPathsByMailboxURL;
 @property(readonly, copy, nonatomic) NSArray *accounts; // @synthesize accounts=_accounts;
-- (void).cxx_destruct;
 - (id)_listIDHashForMessageLibraryID:(long long)arg1 mailboxURL:(id)arg2;
 - (void)_gatherListIDsSinceDate:(id)arg1;
 - (void)runWithRowIDsNeedingConversationRecalculation:(id)arg1;

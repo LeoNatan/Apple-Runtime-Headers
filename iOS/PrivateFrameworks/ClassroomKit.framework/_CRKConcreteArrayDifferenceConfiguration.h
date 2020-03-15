@@ -19,12 +19,12 @@
     CDUnknownBlockType _updateBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
 @property(copy, nonatomic) CDUnknownBlockType liftingFunction; // @synthesize liftingFunction=_liftingFunction;
 @property(copy, nonatomic) CDUnknownBlockType publishedItemsIdentifierFunction; // @synthesize publishedItemsIdentifierFunction=_publishedItemsIdentifierFunction;
 @property(copy, nonatomic) CDUnknownBlockType incomingItemsIdentifierFunction; // @synthesize incomingItemsIdentifierFunction=_incomingItemsIdentifierFunction;
 @property(copy, nonatomic) CDUnknownBlockType publishedItemsComparator; // @synthesize publishedItemsComparator=_publishedItemsComparator;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

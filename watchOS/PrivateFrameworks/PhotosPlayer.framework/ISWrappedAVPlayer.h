@@ -42,8 +42,8 @@
 
 + (id)observedAVPIKeysAndContexts;
 + (id)observedAVPKeys;
-@property __weak id <ISWrappedAVPlayerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <ISWrappedAVPlayerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)setWrappedAudioSession:(id)arg1;
 - (void)cancelPendingPrerolls;
 - (void)prerollAtRate:(float)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSDictionary *_config;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *config; // @synthesize config=_config;
 @property(retain) NSDictionary *configurationData; // @synthesize configurationData=_configurationData;
 @property unsigned int deviceSampleRate; // @synthesize deviceSampleRate=_deviceSampleRate;
 @property unsigned int fleetSampleRate; // @synthesize fleetSampleRate=_fleetSampleRate;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly) _Bool isSampled;
 - (_Bool)shouldRunWithSamplingRate:(id)arg1;
 - (unsigned int)hostHash;

@@ -13,8 +13,8 @@ __attribute__((visibility("hidden")))
     UIView *_logoView;
 }
 
-@property(retain, nonatomic) UIView *logoView; // @synthesize logoView=_logoView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *logoView; // @synthesize logoView=_logoView;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

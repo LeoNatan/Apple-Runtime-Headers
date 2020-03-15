@@ -26,6 +26,7 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL SizeSpecified; // @synthesize SizeSpecified=_SizeSpecified;
 @property(nonatomic) long long Size; // @synthesize Size=_Size;
 @property(nonatomic) BOOL LastModifiedTimeSpecified; // @synthesize LastModifiedTimeSpecified=_LastModifiedTimeSpecified;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSString *ContentType; // @synthesize ContentType=_ContentType;
 @property(copy, nonatomic) NSString *Name; // @synthesize Name=_Name;
 @property(retain, nonatomic) EWSAttachmentIdType *AttachmentId; // @synthesize AttachmentId=_AttachmentId;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

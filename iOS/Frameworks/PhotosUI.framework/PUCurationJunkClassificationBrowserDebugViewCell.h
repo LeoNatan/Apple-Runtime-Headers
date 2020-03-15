@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_junkClassificationName;
 }
 
-@property(retain) NSString *junkClassificationName; // @synthesize junkClassificationName=_junkClassificationName;
 - (void).cxx_destruct;
+@property(retain) NSString *junkClassificationName; // @synthesize junkClassificationName=_junkClassificationName;
 
 @end
 

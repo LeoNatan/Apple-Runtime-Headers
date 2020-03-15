@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 + (void)unregisterDelegate:(id)arg1 canonicalId:(id)arg2;
 + (void)registerDelegate:(id)arg1 canonicalId:(id)arg2;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool updateInProgress; // @synthesize updateInProgress=_updateInProgress;
 @property(nonatomic) long long scoreboardUpdateInterval; // @synthesize scoreboardUpdateInterval=_scoreboardUpdateInterval;
 @property(retain, nonatomic) NSTimer *scoreboardUpdateTimer; // @synthesize scoreboardUpdateTimer=_scoreboardUpdateTimer;
 @property(retain, nonatomic) NSMutableDictionary *sportsEventsById; // @synthesize sportsEventsById=_sportsEventsById;
-- (void).cxx_destruct;
 - (void)_invalidateTimer;
 - (void)_resetTimer;
 - (void)_updateTimer;

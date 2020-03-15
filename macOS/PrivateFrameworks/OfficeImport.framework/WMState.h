@@ -30,8 +30,8 @@ __attribute__((visibility("hidden")))
     WDParagraph *_currentParagraph;
 }
 
-@property(retain) WDParagraph *currentParagraph; // @synthesize currentParagraph=_currentParagraph;
 - (void).cxx_destruct;
+@property(retain) WDParagraph *currentParagraph; // @synthesize currentParagraph=_currentParagraph;
 - (BOOL)isHeaderOrFooter;
 - (void)setIsHeaderOrFooter:(BOOL)arg1;
 - (BOOL)isFrameEnd;

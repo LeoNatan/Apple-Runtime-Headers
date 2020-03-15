@@ -23,6 +23,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(getter=isMarkedAsFinished) _Bool markedAsFinished; // @synthesize markedAsFinished=_markedAsFinished;
 @property(retain) HMICameraVideoFrame *frame; // @synthesize frame=_frame;
 @property(readonly) NSMutableArray *unmatchedSampleFrames; // @synthesize unmatchedSampleFrames=_unmatchedSampleFrames;
@@ -30,7 +31,6 @@
 @property(readonly) HMICameraVideoResourceAttributes *attributes; // @synthesize attributes=_attributes;
 @property(readonly) CDStruct_1b6d18a9 targetInterval; // @synthesize targetInterval=_targetInterval;
 @property __weak id <HMICameraVideoFrameSamplerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)finish;
 - (_Bool)appendFrame:(id)arg1 error:(id *)arg2;
 - (_Bool)isFinishedEarly;

@@ -24,6 +24,7 @@
     NSMeasurementFormatter *_measurmentFormatter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMeasurementFormatter *measurmentFormatter; // @synthesize measurmentFormatter=_measurmentFormatter;
 @property(nonatomic) _Bool isMaximum; // @synthesize isMaximum=_isMaximum;
 @property(nonatomic) _Bool isMinimum; // @synthesize isMinimum=_isMinimum;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) MKMapView *mapView; // @synthesize mapView=_mapView;
 @property(nonatomic) unsigned long long proximity; // @synthesize proximity=_proximity;
 @property(nonatomic) __weak id <HULocationTriggerEditorMapDragRadiusViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)usesMetric;
 - (double)minimumRadiusNormalized;
 - (double)maximumRadiusNormalized;

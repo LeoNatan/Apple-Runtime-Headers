@@ -18,13 +18,13 @@
     UIView *_learnMoreContentView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *learnMoreContentView; // @synthesize learnMoreContentView=_learnMoreContentView;
 @property(retain, nonatomic) UILabel *bodyLabel; // @synthesize bodyLabel=_bodyLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIView *heroView; // @synthesize heroView=_heroView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (double)_bodyLastBaselineToContentBottom;
 - (double)_titleLastBaselineToBodyFirstBaseline;
 - (double)_titleTopToFirstBaselineLeading;

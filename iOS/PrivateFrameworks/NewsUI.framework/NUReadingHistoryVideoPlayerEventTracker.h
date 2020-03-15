@@ -16,8 +16,8 @@
     id <NUVideoReadingHistory> _readingHistory;
 }
 
-@property(readonly, nonatomic) id <NUVideoReadingHistory> readingHistory; // @synthesize readingHistory=_readingHistory;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <NUVideoReadingHistory> readingHistory; // @synthesize readingHistory=_readingHistory;
 - (void)playbackStartedWithVideoItem:(id)arg1 metadata:(id)arg2;
 - (void)playbackInitiatedWithVideoItem:(id)arg1 metadata:(id)arg2;
 - (id)initWithReadingHistory:(id)arg1;

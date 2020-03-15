@@ -15,8 +15,8 @@
     TSUFlushingManager *mFlushingManager;
     int mInterest;
     struct os_unfair_lock_s mInterestLock;
-    // Error parsing type: {atomic<int>="__a_"Ai}, name: mRetainCount
-    // Error parsing type: {atomic<int>="__a_"Ai}, name: mOwnerCount
+    // Error parsing type: {atomic<int>="__a_"{__cxx_atomic_impl<int, std::__1::__cxx_atomic_base_impl<int> >="__a_value"Ai}}, name: mRetainCount
+    // Error parsing type: {atomic<int>="__a_"{__cxx_atomic_impl<int, std::__1::__cxx_atomic_base_impl<int> >="__a_value"Ai}}, name: mOwnerCount
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;

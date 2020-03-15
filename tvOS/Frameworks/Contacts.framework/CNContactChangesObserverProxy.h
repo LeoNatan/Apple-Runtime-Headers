@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     CNContact *_contactSnapshot;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContact *contactSnapshot; // @synthesize contactSnapshot=_contactSnapshot;
 @property(nonatomic) _Bool unify; // @synthesize unify=_unify;
 @property(retain, nonatomic) NSArray *keysToFetch; // @synthesize keysToFetch=_keysToFetch;
 @property(nonatomic) __weak id <CNContactChangesObserver> observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 
 @end
 

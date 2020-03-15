@@ -18,10 +18,10 @@
     UIActivityIndicatorView *_spinner;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIActivityIndicatorView *spinner; // @synthesize spinner=_spinner;
 @property(nonatomic) BOOL useFullWidthSeparator; // @synthesize useFullWidthSeparator=_useFullWidthSeparator;
 @property(nonatomic) BOOL showSpinner; // @synthesize showSpinner=_showSpinner;
-- (void).cxx_destruct;
 - (void)createSpinner;
 - (struct CGRect)_separatorFrame;
 - (void)prepareForReuse;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WebUI/WBSSavedPassword.h>
+#import <SafariSharedUI/WBSSavedPassword.h>
 
 @interface WBSSavedPassword (WebUIExtras)
 - (void)safari_getTitle:(id *)arg1 detail:(id *)arg2 forTableViewCell:(id)arg3 withSearchPattern:(id)arg4 warningImage:(id)arg5 leftToRight:(BOOL)arg6;

@@ -14,9 +14,9 @@
     unsigned long long _requestID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long requestIdentifier; // @synthesize requestIdentifier=_requestID;
 @property(retain, nonatomic) id cacheKey; // @synthesize cacheKey=_cacheKey;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

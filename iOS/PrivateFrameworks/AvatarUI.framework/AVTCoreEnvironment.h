@@ -29,12 +29,12 @@
 + (CDUnknownBlockType)serialQueueProvider;
 + (id)defaultEnvironment;
 + (void)resetFlushCacheValuesIfNeeded;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(readonly, copy, nonatomic) CDUnknownBlockType lockProvider; // @synthesize lockProvider=_lockProvider;
 @property(readonly, copy, nonatomic) CDUnknownBlockType serialQueueProvider; // @synthesize serialQueueProvider=_serialQueueProvider;
 @property(readonly, nonatomic) id <AVTBlockScheduler> scheduler; // @synthesize scheduler=_scheduler;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *stickerImageStoreLocation;
 @property(readonly, copy, nonatomic) NSURL *imageCacheStoreLocation;
 @property(readonly, copy, nonatomic) NSURL *imageStoreLocation;

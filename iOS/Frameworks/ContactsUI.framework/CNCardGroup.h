@@ -22,12 +22,12 @@
 }
 
 + (id)groupForContact:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool addSpacerFromPreviousGroup; // @synthesize addSpacerFromPreviousGroup=_addSpacerFromPreviousGroup;
 @property(nonatomic) _Bool useSplitActions; // @synthesize useSplitActions=_useSplitActions;
 @property(readonly, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (id)_loadActionItems;
 - (id)description;
 - (void)removeAllActions;

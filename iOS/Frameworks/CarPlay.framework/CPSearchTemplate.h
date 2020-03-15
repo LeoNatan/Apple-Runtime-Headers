@@ -17,9 +17,9 @@
     NSArray *_listItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *listItems; // @synthesize listItems=_listItems;
 @property(nonatomic) __weak id <CPSearchTemplateDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setTrailingNavigationBarButtons:(id)arg1;
 - (id)trailingNavigationBarButtons;
 - (void)setLeadingNavigationBarButtons:(id)arg1;

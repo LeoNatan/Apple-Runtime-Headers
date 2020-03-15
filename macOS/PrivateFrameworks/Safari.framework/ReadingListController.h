@@ -35,9 +35,9 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)readingListIsAvailable;
 + (id)sharedController;
-@property(nonatomic) BOOL readerShouldBeShownIfPossible; // @synthesize readerShouldBeShownIfPossible=_readerShouldBeShownIfPossible;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL readerShouldBeShownIfPossible; // @synthesize readerShouldBeShownIfPossible=_readerShouldBeShownIfPossible;
 - (void)_processItemsToFetch;
 - (void)_readingListItemsDidChange:(id)arg1;
 - (void)_fetchSyncedReadingListItemSoon:(id)arg1;
@@ -101,6 +101,7 @@ __attribute__((visibility("hidden")))
 - (void)removeItem:(id)arg1;
 - (void)addItemWithBookmark:(id)arg1 addUserInteraction:(int)arg2 allowUndo:(BOOL)arg3 didCheckIfBookmarkEditingIsPermitted:(BOOL)arg4;
 - (void)addItemWithLinkTitle:(id)arg1 linkLabel:(id)arg2 linkURL:(id)arg3 addUserInteraction:(int)arg4 allowUndo:(BOOL)arg5;
+- (void)addItemWithTitle:(id)arg1 url:(id)arg2 previewText:(id)arg3 addUserInteraction:(int)arg4 allowUndo:(BOOL)arg5;
 - (void)addItemWithTitle:(id)arg1 url:(id)arg2 addUserInteraction:(int)arg3 allowUndo:(BOOL)arg4;
 - (BOOL)addURLsFromPasteboard:(id)arg1;
 - (void)clearAllItems;

@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     Class _PCSManagerSuperclass;
 }
 
-@property(retain, nonatomic) Class PCSManagerSuperclass; // @synthesize PCSManagerSuperclass=_PCSManagerSuperclass;
 - (void).cxx_destruct;
+@property(retain, nonatomic) Class PCSManagerSuperclass; // @synthesize PCSManagerSuperclass=_PCSManagerSuperclass;
 - (void)forwardInvocation:(id)arg1;
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;

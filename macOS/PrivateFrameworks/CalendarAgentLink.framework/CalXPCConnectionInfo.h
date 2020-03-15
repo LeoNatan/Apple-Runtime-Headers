@@ -18,12 +18,12 @@
 }
 
 + (id)infoForMachServiceName:(id)arg1 remoteObjectProtocol:(id)arg2 exportedObject:(id)arg3 exportedObjectProtocol:(id)arg4 lifecycleNotification:(id)arg5;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *lifecycleNotification; // @synthesize lifecycleNotification=_lifecycleNotification;
 @property(retain, nonatomic) Protocol *exportedObjectProtocol; // @synthesize exportedObjectProtocol=_exportedObjectProtocol;
 @property(retain, nonatomic) id exportedObject; // @synthesize exportedObject=_exportedObject;
 @property(retain, nonatomic) Protocol *remoteObjectProtocol; // @synthesize remoteObjectProtocol=_remoteObjectProtocol;
 @property(copy, nonatomic) NSString *machServiceName; // @synthesize machServiceName=_machServiceName;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)hasRequiredFields;
 - (id)initWithMachServiceName:(id)arg1 remoteObjectProtocol:(id)arg2 exportedObject:(id)arg3 exportedObjectProtocol:(id)arg4 lifecycleNotification:(id)arg5;

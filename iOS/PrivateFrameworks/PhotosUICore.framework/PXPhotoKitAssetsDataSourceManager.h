@@ -21,8 +21,8 @@
 
 + (id)dataSourceManagerForAssetCollection:(id)arg1;
 + (id)dataSourceManagerWithAsset:(id)arg1;
-@property(retain, nonatomic) id <PXPhotosDataSourceProvider> photosDataSourceProvider; // @synthesize photosDataSourceProvider=_photosDataSourceProvider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <PXPhotosDataSourceProvider> photosDataSourceProvider; // @synthesize photosDataSourceProvider=_photosDataSourceProvider;
 - (void)photosDataSourceDidFinishBackgroundFetching:(id)arg1;
 - (id)photosDataSourceInterestingAssetReferences:(id)arg1;
 - (void)photosDataSource:(id)arg1 didChange:(id)arg2;

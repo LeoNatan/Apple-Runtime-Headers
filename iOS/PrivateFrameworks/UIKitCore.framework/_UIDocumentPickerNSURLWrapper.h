@@ -24,11 +24,11 @@
 + (id)wrapperWithURL:(id)arg1 readonly:(_Bool)arg2;
 + (id)wrapperWithURL:(id)arg1;
 + (id)wrapperWithURL:(id)arg1 createSandboxIfNoneAttached:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(retain) NSData *promiseScope; // @synthesize promiseScope=_promiseScope;
 @property(retain) NSData *scope; // @synthesize scope=_scope;
 @property(retain) NSURL *promiseURL; // @synthesize promiseURL=_promiseURL;
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

@@ -18,11 +18,11 @@
     NSURL *_altURL;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool inPlatter; // @synthesize inPlatter=_inPlatter;
 @property(retain) NSURL *altURL; // @synthesize altURL=_altURL;
 @property(retain) NSString *searchWebQuery; // @synthesize searchWebQuery=_searchWebQuery;
 @property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (void)manageDictionaries:(id)arg1;
 - (id)manageDictionariesURL;

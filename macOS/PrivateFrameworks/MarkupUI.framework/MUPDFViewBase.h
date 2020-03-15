@@ -15,10 +15,10 @@
     NSCursor *_annotationCursor;
 }
 
+- (void).cxx_destruct;
 @property BOOL restrainsMinZoomToViewSize; // @synthesize restrainsMinZoomToViewSize=_restrainsMinZoomToViewSize;
 @property(retain) NSCursor *annotationCursor; // @synthesize annotationCursor=_annotationCursor;
 @property __weak AKController *annotationController; // @synthesize annotationController=_annotationController;
-- (void).cxx_destruct;
 - (id)_annotationController;
 - (void)selectAll:(id)arg1;
 - (void)copy:(id)arg1;

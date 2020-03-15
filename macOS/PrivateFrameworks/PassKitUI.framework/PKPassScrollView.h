@@ -16,11 +16,11 @@
     PKPassViewController *_selectedViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain) PKPassViewController *selectedViewController; // @synthesize selectedViewController=_selectedViewController;
 @property(readonly) BOOL inMomentumScrolling; // @synthesize inMomentumScrolling=_inMomentumScrolling;
 @property BOOL disregardFurtherScrolling; // @synthesize disregardFurtherScrolling=_disregardFurtherScrolling;
 @property BOOL scrollEnabled; // @synthesize scrollEnabled=_scrollEnabled;
-- (void).cxx_destruct;
 - (void)scrollWheel:(id)arg1;
 
 @end

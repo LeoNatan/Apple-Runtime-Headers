@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     NSSet *_desiredKeys;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *desiredKeys; // @synthesize desiredKeys=_desiredKeys;
 @property(retain, nonatomic) NSMutableDictionary *recordIDByRequestID; // @synthesize recordIDByRequestID=_recordIDByRequestID;
 @property(nonatomic) unsigned long long recordCount; // @synthesize recordCount=_recordCount;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long URLOptions; // @synthesize URLOptions=_URLOptions;
 @property(nonatomic) unsigned long long requestedTTL; // @synthesize requestedTTL=_requestedTTL;
 @property(retain, nonatomic) NSSet *assetFieldNamesToPublishURLs; // @synthesize assetFieldNamesToPublishURLs=_assetFieldNamesToPublishURLs;
-- (void).cxx_destruct;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestedListFieldsForDesiredIndexedListKeys;

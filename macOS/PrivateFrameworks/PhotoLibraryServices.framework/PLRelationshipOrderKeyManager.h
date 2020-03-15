@@ -21,9 +21,9 @@
     NSURL *_libraryURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL conflictDetected; // @synthesize conflictDetected=_conflictDetected;
 @property(readonly, nonatomic) BOOL hasStashedLocationValues; // @synthesize hasStashedLocationValues=_hasStashedLocationValues;
-- (void).cxx_destruct;
 - (id)parentFolderOrderValueForAlbum:(id)arg1 inManagedObjectContext:(id)arg2;
 - (id)albumsAndOrderValuesForAsset:(id)arg1 inManagedObjectContext:(id)arg2;
 - (BOOL)writeStashedLocationValuesInLibrary:(id)arg1 error:(id *)arg2;

@@ -19,8 +19,8 @@
 + (id)recordNamePrefix;
 + (id)recordType;
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSDate *updatedDate; // @synthesize updatedDate=_updatedDate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *updatedDate; // @synthesize updatedDate=_updatedDate;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

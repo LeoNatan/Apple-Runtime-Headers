@@ -8,19 +8,19 @@
 
 @interface UIImage (Utilities)
 + (struct CGRect)ic_aspectFitImageFrameForViewWithFrame:(struct CGRect)arg1 imageSize:(struct CGSize)arg2;
-+ (struct UIImage *)ic_imageWithColor:(struct UIColor *)arg1 size:(struct CGSize)arg2;
-+ (struct UIImage *)ic_fileIconForURL:(id)arg1 withPreferredSize:(struct CGSize)arg2;
++ (id)ic_imageWithColor:(id)arg1 size:(struct CGSize)arg2;
++ (id)ic_fileIconForURL:(id)arg1 withPreferredSize:(struct CGSize)arg2;
 + (id)ic_orientationMetadataFromImageOrientation:(long long)arg1;
-+ (struct UIImage *)ic_imageWithData:(id)arg1;
-+ (struct UIImage *)ic_imageWithCGImage:(struct CGImage *)arg1;
-+ (struct UIImage *)ic_imageWithCGImage:(struct CGImage *)arg1 scale:(double)arg2 orientation:(long long)arg3;
-+ (struct UIImage *)ic_orientedImageFromImage:(struct UIImage *)arg1 toOrientation:(long long)arg2;
-+ (struct UIImage *)ic_orientedImageFromImage:(struct UIImage *)arg1 fromOrientation:(long long)arg2;
-+ (struct UIImage *)ic_orientedImageFromCGImage:(struct CGImage *)arg1 scale:(double)arg2 transform:(struct CGAffineTransform)arg3;
++ (id)ic_imageWithData:(id)arg1;
++ (id)ic_imageWithCGImage:(struct CGImage *)arg1;
++ (id)ic_imageWithCGImage:(struct CGImage *)arg1 scale:(double)arg2 orientation:(long long)arg3;
++ (id)ic_orientedImageFromImage:(id)arg1 toOrientation:(long long)arg2;
++ (id)ic_orientedImageFromImage:(id)arg1 fromOrientation:(long long)arg2;
++ (id)ic_orientedImageFromCGImage:(struct CGImage *)arg1 scale:(double)arg2 transform:(struct CGAffineTransform)arg3;
 + (id)ic_UIImageFromCIImage:(id)arg1;
-+ (struct UIImage *)ic_imageNamed:(id)arg1 withTint:(struct UIColor *)arg2 size:(struct CGSize)arg3;
-+ (struct UIImage *)ic_imageNamed:(id)arg1 withTint:(struct UIColor *)arg2;
-+ (struct UIImage *)ic_imageWithContentsOfURL:(id)arg1;
++ (id)ic_imageNamed:(id)arg1 withTint:(id)arg2 size:(struct CGSize)arg3;
++ (id)ic_imageNamed:(id)arg1 withTint:(id)arg2;
++ (id)ic_imageWithContentsOfURL:(id)arg1;
 + (id)ic_systemImageNamed:(id)arg1 fromFont:(id)arg2 scale:(long long)arg3;
 + (id)ic_systemImageNamed:(id)arg1 scale:(long long)arg2;
 + (id)ic_systemImageNamed:(id)arg1 fromFont:(id)arg2;
@@ -29,7 +29,7 @@
 + (id)ic_largeSystemImageNamed:(id)arg1;
 - (struct CGContext *)ic_newARGB8BitmapContextFromImage:(struct CGImage *)arg1;
 - (struct CGRect)ic_cropRectZeroAlpha;
-- (struct UIImage *)ic_decodeInBackground;
+- (id)ic_decodeInBackground;
 - (void)ic_decodeWithCompletion:(CDUnknownBlockType)arg1;
 - (id)ic_imageDataWithUTType:(id)arg1 metadata:(id)arg2;
 - (id)ic_imageDataWithUTType:(id)arg1;
@@ -40,11 +40,11 @@
 - (id)ic_horizontallyMirroredImage;
 - (long long)ic_imageOrientation;
 - (struct CGImage *)ic_CGImage;
-- (struct UIImage *)ic_imageFromRect:(struct CGRect)arg1;
-- (struct UIImage *)ic_scaledImageWithSize:(struct CGSize)arg1 scale:(double)arg2;
-- (struct UIImage *)ic_scaledImageMaxDimension:(double)arg1 scale:(double)arg2;
-- (struct UIImage *)ic_scaledImageMinDimension:(double)arg1 scale:(double)arg2;
-- (struct UIImage *)ic_imageWithTint:(struct UIColor *)arg1 size:(struct CGSize)arg2;
+- (id)ic_imageFromRect:(struct CGRect)arg1;
+- (id)ic_scaledImageWithSize:(struct CGSize)arg1 scale:(double)arg2;
+- (id)ic_scaledImageMaxDimension:(double)arg1 scale:(double)arg2;
+- (id)ic_scaledImageMinDimension:(double)arg1 scale:(double)arg2;
+- (id)ic_imageWithTint:(id)arg1 size:(struct CGSize)arg2;
 - (id)ic_imageWithTextStyle:(id)arg1 scale:(long long)arg2;
 - (id)ic_imageWithTextStyle:(id)arg1;
 - (id)ic_imageWithFont:(id)arg1 scale:(long long)arg2;

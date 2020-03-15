@@ -23,10 +23,10 @@
 + (id)thisWeekRelativeDateFormatter;
 + (id)todayDateFormatter;
 + (id)createImageAsTextAttachment;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isLabelSizeLoaded) _Bool labelSizeLoaded; // @synthesize labelSizeLoaded=_labelSizeLoaded;
 @property(nonatomic, getter=isButtonSizeLoaded) _Bool buttonSizeLoaded; // @synthesize buttonSizeLoaded=_buttonSizeLoaded;
 @property(copy, nonatomic) NSAttributedString *transcriptButtonText; // @synthesize transcriptButtonText=_transcriptButtonText;
-- (void).cxx_destruct;
 - (struct CGSize)loadButtonSizeThatFits:(struct CGSize)arg1 textAlignmentInsets:(out struct UIEdgeInsets *)arg2;
 - (struct CGSize)loadLabelSizeThatFits:(struct CGSize)arg1 textAlignmentInsets:(out struct UIEdgeInsets *)arg2;
 @property(readonly, nonatomic) _Bool allowsEffectAutoPlayback;

@@ -51,6 +51,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _hwFaceRect;
 }
 
+- (void).cxx_destruct;
 @property _Bool isSyncedWithImage; // @synthesize isSyncedWithImage=_isSyncedWithImage;
 @property float pitchAngle; // @synthesize pitchAngle=_pitchAngle;
 @property _Bool hasPitchAngle; // @synthesize hasPitchAngle=_hasPitchAngle;
@@ -87,7 +88,6 @@ __attribute__((visibility("hidden")))
 @property _Bool smiling; // @synthesize smiling;
 @property _Bool rightEyeOpen; // @synthesize rightEyeOpen;
 @property _Bool leftEyeOpen; // @synthesize leftEyeOpen;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithFaceStat:(id)arg1;
 

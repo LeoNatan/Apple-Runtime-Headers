@@ -33,6 +33,7 @@
 + (_Bool)cslsSessionWasCreatedInThisProcess:(id)arg1;
 + (_Bool)_currentRunningSessionWasScheduled;
 + (id)session;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool sessionDidStopCalled; // @synthesize sessionDidStopCalled=_sessionDidStopCalled;
 @property(retain, nonatomic) NSTimer *playHapticTimer; // @synthesize playHapticTimer=_playHapticTimer;
 @property(nonatomic) _Bool scheduleRequested; // @synthesize scheduleRequested=_scheduleRequested;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(nonatomic) __weak id <WKExtendedRuntimeSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (int)_invalidationReasonAndDelegateCallbackErrorForError:(id)arg1 outCallbackError:(id *)arg2;
 @property(readonly, copy) NSString *description;
 - (void)_sessionDidStopWithError:(id)arg1;

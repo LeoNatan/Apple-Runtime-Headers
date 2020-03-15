@@ -24,6 +24,7 @@
     unsigned long long _settledState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long settledState; // @synthesize settledState=_settledState;
 @property(retain, nonatomic) NSDate *startCollectAccessPoints; // @synthesize startCollectAccessPoints=_startCollectAccessPoints;
 @property(nonatomic) unsigned long long accessPointsCollectedPerFingerprint; // @synthesize accessPointsCollectedPerFingerprint=_accessPointsCollectedPerFingerprint;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) RTDefaultsManager *defaultsManager; // @synthesize defaultsManager=_defaultsManager;
 @property(nonatomic, getter=isFingerprintMonitoringEnabled) _Bool fingerprintMonitoringEnabled; // @synthesize fingerprintMonitoringEnabled=_fingerprintMonitoringEnabled;
 @property(nonatomic) _Bool available; // @synthesize available=_available;
-- (void).cxx_destruct;
 - (void)injectWifiAccessPointsToLastFingerprint:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)injectFingerprints:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)onWiFiScanNotification:(id)arg1;

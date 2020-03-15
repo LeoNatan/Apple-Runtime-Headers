@@ -16,11 +16,11 @@
     NSDictionary *_userInfo;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) long long repeatMode; // @synthesize repeatMode=_repeatMode;
 @property(nonatomic) long long endAction; // @synthesize endAction=_endAction;
 @property(readonly, copy, nonatomic) NSArray *mediaItems; // @synthesize mediaItems=_mediaItems;
-- (void).cxx_destruct;
 - (void)insertObjects:(id)arg1 atIndexes:(id)arg2;
 - (void)removeObjectsAtIndexes:(id)arg1;
 - (void)addObject:(id)arg1;

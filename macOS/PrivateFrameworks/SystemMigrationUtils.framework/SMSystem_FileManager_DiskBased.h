@@ -16,8 +16,8 @@
 }
 
 + (id)appropriateDiskFileMangerForSystemRoot:(id)arg1;
-@property(retain) NSURL *root; // @synthesize root=_root;
 - (void).cxx_destruct;
+@property(retain) NSURL *root; // @synthesize root=_root;
 - (id)bundleInformationAtPaths:(id)arg1;
 - (id)resourceValuesForKeys:(id)arg1 onPaths:(id)arg2 error:(id *)arg3;
 - (id)pathToRemoteFile:(id)arg1 exists:(char *)arg2 makeAvailable:(BOOL)arg3;

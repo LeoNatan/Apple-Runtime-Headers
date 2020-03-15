@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 
 + (void)setCornerRadius:(double)arg1;
 + (double)cornerRadius;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasContent; // @synthesize hasContent=_hasContent;
 @property(readonly, nonatomic) UIVisualEffectView *backdropView; // @synthesize backdropView=_backdropView;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (struct CGSize)contentSizeForWidth:(double)arg1;
 - (void)loadView;
 

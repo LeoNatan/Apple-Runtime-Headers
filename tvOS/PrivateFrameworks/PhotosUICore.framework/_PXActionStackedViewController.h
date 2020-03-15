@@ -15,8 +15,8 @@
     NSArray *_viewControllers;
 }
 
-@property(readonly, copy, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
 - (struct CGSize)preferredContentSize;
 - (void)viewWillLayoutSubviews;
 - (void)loadView;

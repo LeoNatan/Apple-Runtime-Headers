@@ -31,6 +31,7 @@
 + (id)archiveName;
 + (BOOL)shouldCache;
 + (long long)imageSetType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKImage *overlayMaterialPropertyImage; // @synthesize overlayMaterialPropertyImage=_overlayMaterialPropertyImage;
 @property(retain, nonatomic) PKImage *roughnessMaterialPropertyImage; // @synthesize roughnessMaterialPropertyImage=_roughnessMaterialPropertyImage;
 @property(retain, nonatomic) PKImage *metalnessMaterialPropertyImage; // @synthesize metalnessMaterialPropertyImage=_metalnessMaterialPropertyImage;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) PKImage *specularMaterialPropertyImage; // @synthesize specularMaterialPropertyImage=_specularMaterialPropertyImage;
 @property(retain, nonatomic) PKImage *ambientMaterialPropertyImage; // @synthesize ambientMaterialPropertyImage=_ambientMaterialPropertyImage;
 @property(retain, nonatomic) PKImage *diffuseMaterialPropertyImage; // @synthesize diffuseMaterialPropertyImage=_diffuseMaterialPropertyImage;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -14,8 +14,8 @@
     AKController *_annotationController;
 }
 
-@property(nonatomic) __weak AKController *annotationController; // @synthesize annotationController=_annotationController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak AKController *annotationController; // @synthesize annotationController=_annotationController;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)setState:(long long)arg1;
 

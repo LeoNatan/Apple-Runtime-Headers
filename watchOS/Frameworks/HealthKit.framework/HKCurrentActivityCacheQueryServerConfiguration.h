@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSDateComponents *statisticsIntervalComponents; // @synthesize statisticsIntervalComponents=_statisticsIntervalComponents;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDateComponents *statisticsIntervalComponents; // @synthesize statisticsIntervalComponents=_statisticsIntervalComponents;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -16,11 +16,11 @@
     NSArray *_itemScopes;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *itemScopes; // @synthesize itemScopes=_itemScopes;
 @property(readonly) NSArray *textConsumers; // @synthesize textConsumers=_textConsumers;
 @property(readonly) SGMicrodataParserStackItem *parent; // @synthesize parent=_parent;
 @property(readonly) SGMicrodataDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 - (id)initWithParent:(id)arg1 item:(id)arg2 htmlId:(id)arg3 textConsumer:(id)arg4;
 - (id)initWithDocument:(id)arg1;
 

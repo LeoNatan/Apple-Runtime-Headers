@@ -13,8 +13,8 @@
     TISKSessionSamples *_sessionSamples;
 }
 
-@property(retain, nonatomic) TISKSessionSamples *sessionSamples; // @synthesize sessionSamples=_sessionSamples;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TISKSessionSamples *sessionSamples; // @synthesize sessionSamples=_sessionSamples;
 - (id)description;
 - (id)init:(id)arg1 order:(long long)arg2;
 

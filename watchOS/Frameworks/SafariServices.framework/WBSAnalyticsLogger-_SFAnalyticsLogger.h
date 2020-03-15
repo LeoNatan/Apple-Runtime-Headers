@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WebUI/WBSAnalyticsLogger.h>
+#import <SafariSharedUI/WBSAnalyticsLogger.h>
 
 @interface WBSAnalyticsLogger (_SFAnalyticsLogger)
 - (void)_sf_didTerminateWebProcessBeforeNavigationForReason:(int)arg1;

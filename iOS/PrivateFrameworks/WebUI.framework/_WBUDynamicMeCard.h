@@ -16,8 +16,8 @@
 }
 
 + (id)_contactObjectComponentForString:(id)arg1;
-@property(readonly, nonatomic) _Bool meCardExists; // @synthesize meCardExists=_meCardExists;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool meCardExists; // @synthesize meCardExists=_meCardExists;
 - (void)performWhenReady:(CDUnknownBlockType)arg1;
 - (id)valueForProperty:(id)arg1 contact:(id)arg2;
 - (void)_meCardChanged:(id)arg1;

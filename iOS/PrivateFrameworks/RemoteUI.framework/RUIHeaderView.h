@@ -22,8 +22,8 @@
     struct UIEdgeInsets _margins;
 }
 
-@property(nonatomic) struct UIEdgeInsets margins; // @synthesize margins=_margins;
 - (void).cxx_destruct;
+@property(nonatomic) struct UIEdgeInsets margins; // @synthesize margins=_margins;
 - (double)headerHeightForWidth:(double)arg1 inView:(id)arg2;
 - (void)layoutSubviews;
 - (double)_titleSubtitlePaddingInView:(id)arg1;

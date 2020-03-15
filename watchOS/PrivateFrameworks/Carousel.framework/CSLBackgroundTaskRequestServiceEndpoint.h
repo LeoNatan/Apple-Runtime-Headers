@@ -20,11 +20,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLClientConnections *clients; // @synthesize clients=_clients;
 @property(readonly, nonatomic) NSXPCInterface *exportedInterface; // @synthesize exportedInterface=_exportedInterface;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(nonatomic) __weak CSLBackgroundService *backgroundService; // @synthesize backgroundService=_backgroundService;
-- (void).cxx_destruct;
 - (void)reconnect:(CDUnknownBlockType)arg1;
 - (void)connect:(CDUnknownBlockType)arg1;
 - (void)cancelBackgroundTaskRequestForBundleID:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -13,8 +13,8 @@
     id <BLTSettingsSendSerializerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <BLTSettingsSendSerializerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <BLTSettingsSendSerializerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)sendNowWithSent:(CDUnknownBlockType)arg1 withAcknowledgement:(CDUnknownBlockType)arg2 withTimeout:(id)arg3;
 - (void)handleFileURL:(id)arg1;
 - (void)sendRequest:(id)arg1 type:(unsigned short)arg2 withTimeout:(id)arg3 withDescription:(id)arg4 onlyOneFor:(id)arg5 didSend:(CDUnknownBlockType)arg6 andResponse:(CDUnknownBlockType)arg7 spoolToFile:(_Bool)arg8;

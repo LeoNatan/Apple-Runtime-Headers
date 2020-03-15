@@ -28,6 +28,7 @@
 - (long long)htmlInputElementAutoFillButtonType;
 - (void)setHTMLInputElementAutoFillButtonEnabledWithButtonType:(long long)arg1;
 - (BOOL)isHTMLInputElementAutoFillButtonEnabled;
+@property(nonatomic) BOOL HTMLInputElementIsAutoFilledAndViewable;
 @property(nonatomic) BOOL HTMLInputElementIsAutoFilled;
 @property(readonly, nonatomic) struct CGRect elementBounds;
 - (id)renderedImageWithOptions:(unsigned int)arg1 width:(id)arg2;

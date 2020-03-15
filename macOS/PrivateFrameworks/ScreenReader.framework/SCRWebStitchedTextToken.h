@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     struct CGRect _rect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=uiElement, setter=setUIElement:) SCRUIElement *uiElement; // @synthesize uiElement=_uiElement;
 @property(nonatomic) struct CGRect rect; // @synthesize rect=_rect;
 @property(copy, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -22,12 +22,12 @@
     NSString *_tertiarySubtitleText;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *tertiarySubtitleText; // @synthesize tertiarySubtitleText=_tertiarySubtitleText;
 @property(copy, nonatomic) NSString *secondarySubtitleText; // @synthesize secondarySubtitleText=_secondarySubtitleText;
 @property(copy, nonatomic) NSString *subtitleText; // @synthesize subtitleText=_subtitleText;
 @property(copy, nonatomic) NSString *amountText; // @synthesize amountText=_amountText;
 @property(nonatomic) _Bool inBridge; // @synthesize inBridge=_inBridge;
-- (void).cxx_destruct;
 - (struct CGSize)_layoutWithBounds:(struct CGRect)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

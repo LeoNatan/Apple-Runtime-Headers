@@ -201,6 +201,7 @@
 + (Class)externalAnalyticsConfigType;
 + (Class)endpointConfigsType;
 + (Class)languageConfigsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTPBUserSegmentationApiConfiguration *userSegmentationApiConfiguration; // @synthesize userSegmentationApiConfiguration=_userSegmentationApiConfiguration;
 @property(retain, nonatomic) NSString *articleRecirculationComponentPlacementConfig; // @synthesize articleRecirculationComponentPlacementConfig=_articleRecirculationComponentPlacementConfig;
 @property(nonatomic) unsigned int privateDataMigrationCleanupLevel; // @synthesize privateDataMigrationCleanupLevel=_privateDataMigrationCleanupLevel;
@@ -278,7 +279,6 @@
 @property(nonatomic) long long shortReminderTime; // @synthesize shortReminderTime=_shortReminderTime;
 @property(retain, nonatomic) NSMutableArray *languageConfigs; // @synthesize languageConfigs=_languageConfigs;
 @property(retain, nonatomic) NSString *fallbackLanguageTag; // @synthesize fallbackLanguageTag=_fallbackLanguageTag;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

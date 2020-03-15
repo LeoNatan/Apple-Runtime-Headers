@@ -27,6 +27,7 @@
 
 + (id)takeFullScreenPassAccessoryAssertionWithBrightnessClient:(id)arg1 withInvalidationHandler:(CDUnknownBlockType)arg2;
 + (id)takeFullScreenPassAccessoryAssertionWithInvalidationHandler:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *invalidationTimer; // @synthesize invalidationTimer=_invalidationTimer;
 @property(retain, nonatomic) CSLSAlertSuppressionAssertion *alertSuppressionAssertion; // @synthesize alertSuppressionAssertion=_alertSuppressionAssertion;
 @property(retain, nonatomic) CSLSBacklightAssertion *noScreenOffAssertion; // @synthesize noScreenOffAssertion=_noScreenOffAssertion;
@@ -40,7 +41,6 @@
 @property(nonatomic) _Bool preventGestures; // @synthesize preventGestures=_preventGestures;
 @property(nonatomic) _Bool preventScreenOff; // @synthesize preventScreenOff=_preventScreenOff;
 @property(nonatomic) float miniumumNits; // @synthesize miniumumNits=_miniumumNits;
-- (void).cxx_destruct;
 - (void)_buildAssertionObjects;
 - (_Bool)_currentDisplayBacklightMinimumNitsIsEqualTo:(id)arg1;
 - (void)_backlightMinimumNitsEnabled:(_Bool)arg1;

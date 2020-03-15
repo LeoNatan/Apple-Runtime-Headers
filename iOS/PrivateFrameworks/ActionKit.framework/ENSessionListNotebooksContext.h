@@ -21,6 +21,7 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) long long pendingSharedNotebooks; // @synthesize pendingSharedNotebooks=_pendingSharedNotebooks;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSMutableDictionary *sharedBusinessNotebooks; // @synthesize sharedBusinessNotebooks=_sharedBusinessNotebooks;
 @property(retain, nonatomic) NSMutableArray *linkedPersonalNotebooks; // @synthesize linkedPersonalNotebooks=_linkedPersonalNotebooks;
 @property(retain, nonatomic) NSMutableArray *resultNotebooks; // @synthesize resultNotebooks=_resultNotebooks;
-- (void).cxx_destruct;
 
 @end
 

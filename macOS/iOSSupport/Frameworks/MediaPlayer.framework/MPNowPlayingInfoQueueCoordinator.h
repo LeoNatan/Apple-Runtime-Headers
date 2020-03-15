@@ -20,12 +20,12 @@
     id <MPAVQueueCoordinatingDataSource> _dataSource;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <MPAVQueueCoordinatingDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) BOOL shouldDeferItemLoading; // @synthesize shouldDeferItemLoading=_shouldDeferItemLoading;
 @property(nonatomic) BOOL shouldExpectEmptyQueue; // @synthesize shouldExpectEmptyQueue=_shouldExpectEmptyQueue;
 @property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(readonly, nonatomic) MPAVItem *currentItem; // @synthesize currentItem=_currentItem;
-- (void).cxx_destruct;
 - (void)reloadItemsKeepingCurrentItem:(BOOL)arg1;
 - (void)reset;
 - (id)initWithDataSource:(id)arg1;

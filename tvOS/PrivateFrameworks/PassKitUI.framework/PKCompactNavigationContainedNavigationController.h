@@ -20,10 +20,10 @@
     PKCompactNavigationContainerController *_parentNavigationContainerController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool propagateParentNCCBottomSafeAreaInset; // @synthesize propagateParentNCCBottomSafeAreaInset=_propagateParentNCCBottomSafeAreaInset;
 @property(nonatomic) __weak PKCompactNavigationContainerController *parentNavigationContainerController; // @synthesize parentNavigationContainerController=_parentNavigationContainerController;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)_observers;
 - (void)removeContentContainerObserver:(id)arg1;
 - (void)addContentContainerObserver:(id)arg1;

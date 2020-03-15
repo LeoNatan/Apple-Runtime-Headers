@@ -22,10 +22,10 @@
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
 + (Class)configurationClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long limit; // @synthesize limit=_limit;
 @property(readonly, nonatomic) _Bool ascending; // @synthesize ascending=_ascending;
 @property(readonly, nonatomic) CDStruct_ef5fcbe6 dayIndexRange; // @synthesize dayIndexRange=_dayIndexRange;
-- (void).cxx_destruct;
 - (void)queue_queryDidDeactivate:(id)arg1;
 - (void)queue_validate;
 - (void)queue_deliverError:(id)arg1;

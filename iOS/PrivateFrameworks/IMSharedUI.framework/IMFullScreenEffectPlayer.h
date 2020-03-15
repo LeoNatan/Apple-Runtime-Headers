@@ -20,7 +20,7 @@
     IMFullScreenEffect *_fullScreenEffect;
     id <IMFullScreenEffectSoundPlayer> _soundPlayer;
     IMMessagePartChatItem *_messagePartChatItem;
-    struct UIImage *_messageImage;
+    UIImage *_messageImage;
     double _startTime;
     double _endTime;
     NSString *_languageCode;
@@ -29,6 +29,7 @@
     id <IMFullScreenEffectPlayerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <IMFullScreenEffectPlayerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool isFromMe; // @synthesize isFromMe=_isFromMe;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
@@ -43,7 +44,6 @@
 @property(nonatomic) __weak IMMessagePartChatItem *messagePartChatItem; // @synthesize messagePartChatItem=_messagePartChatItem;
 @property(retain, nonatomic) id <IMFullScreenEffectSoundPlayer> soundPlayer; // @synthesize soundPlayer=_soundPlayer;
 @property(retain, nonatomic) IMFullScreenEffect *fullScreenEffect; // @synthesize fullScreenEffect=_fullScreenEffect;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool didPlay;
 @property(readonly, nonatomic) _Bool isPlaying;
 - (void)stopPlayingEffect;

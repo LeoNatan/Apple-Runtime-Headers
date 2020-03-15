@@ -21,6 +21,7 @@
 
 + (id)settingsControllerModule;
 + (id)_settingsModule;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *toBeRemovedAlphaAnimationSettings; // @synthesize toBeRemovedAlphaAnimationSettings=_toBeRemovedAlphaAnimationSettings;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *toBeRemovedScaleAnimationSettings; // @synthesize toBeRemovedScaleAnimationSettings=_toBeRemovedScaleAnimationSettings;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *toBeMadeFullscreenFrameAnimationSettings; // @synthesize toBeMadeFullscreenFrameAnimationSettings=_toBeMadeFullscreenFrameAnimationSettings;
@@ -28,7 +29,6 @@
 @property(nonatomic) double toBeRemovedFinalBlurRadius; // @synthesize toBeRemovedFinalBlurRadius=_toBeRemovedFinalBlurRadius;
 @property(nonatomic) double toBeRemovedFinalAlpha; // @synthesize toBeRemovedFinalAlpha=_toBeRemovedFinalAlpha;
 @property(nonatomic) double toBeRemovedFinalScale; // @synthesize toBeRemovedFinalScale=_toBeRemovedFinalScale;
-- (void).cxx_destruct;
 - (void)setDefaultValues;
 
 @end

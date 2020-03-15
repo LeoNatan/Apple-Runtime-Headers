@@ -20,6 +20,7 @@
     NSDictionary *_dictionary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 @property(retain, nonatomic) NSString *suffix; // @synthesize suffix=_suffix;
 @property(retain, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSString *descriptionLong; // @synthesize descriptionLong=_descriptionLong;
 @property(nonatomic) long long cardType; // @synthesize cardType=_cardType;
 @property(retain, nonatomic) NSString *cardArtwork; // @synthesize cardArtwork=_cardArtwork;
-- (void).cxx_destruct;
 - (id)initWithCardArtwork:(id)arg1 cardType:(long long)arg2 descriptionLong:(id)arg3 descriptionShort:(id)arg4 paymentNetwork:(long long)arg5 serialNumber:(id)arg6 suffix:(id)arg7;
 - (id)init;
 

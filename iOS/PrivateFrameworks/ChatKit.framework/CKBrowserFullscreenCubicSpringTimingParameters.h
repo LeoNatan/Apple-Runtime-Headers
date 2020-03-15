@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UICubicTimingParameters *_springCubicTimingParameters;
 }
 
-@property(retain, nonatomic) UICubicTimingParameters *springCubicTimingParameters; // @synthesize springCubicTimingParameters=_springCubicTimingParameters;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UICubicTimingParameters *springCubicTimingParameters; // @synthesize springCubicTimingParameters=_springCubicTimingParameters;
 - (id)cubicTimingParameters;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

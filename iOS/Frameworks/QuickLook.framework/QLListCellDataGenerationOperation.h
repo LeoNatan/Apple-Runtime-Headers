@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     id <QLListCellDataGenerationOperationDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <QLListCellDataGenerationOperationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak QLItem *item; // @synthesize item=_item;
 @property(nonatomic) __weak QLListCell *cell; // @synthesize cell=_cell;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
-- (void).cxx_destruct;
 - (void)_didDetermineFileSize:(id)arg1 fileTypeString:(id)arg2;
 - (void)_didGenerateThumbnail:(id)arg1;
 - (void)_finishIfNeeded;

@@ -17,10 +17,10 @@
     UITextField *_nameTextField;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldAllowSelection; // @synthesize shouldAllowSelection=_shouldAllowSelection;
 @property(nonatomic) _Bool shouldDisableTextFieldWhenNotEditing; // @synthesize shouldDisableTextFieldWhenNotEditing=_shouldDisableTextFieldWhenNotEditing;
 @property(retain, nonatomic) UITextField *nameTextField; // @synthesize nameTextField=_nameTextField;
-- (void).cxx_destruct;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (void)setTextFieldValue:(id)arg1 specifier:(id)arg2;

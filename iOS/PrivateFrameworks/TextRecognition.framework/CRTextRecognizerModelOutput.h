@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     MLMultiArray *_output_label_prob_map;
 }
 
-@property(retain, nonatomic) MLMultiArray *output_label_prob_map; // @synthesize output_label_prob_map=_output_label_prob_map;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MLMultiArray *output_label_prob_map; // @synthesize output_label_prob_map=_output_label_prob_map;
 - (id)featureValueForName:(id)arg1;
 @property(readonly, nonatomic) NSSet *featureNames;
 - (id)initWithOutput_label_prob_map:(id)arg1;

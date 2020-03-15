@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     struct CGRect __previousFocusedElementFrameInMyCoordinates;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *_previousFocusedElementEquivalenceTag; // @synthesize _previousFocusedElementEquivalenceTag=__previousFocusedElementEquivalenceTag;
 @property(nonatomic) struct CGRect _previousFocusedElementFrameInMyCoordinates; // @synthesize _previousFocusedElementFrameInMyCoordinates=__previousFocusedElementFrameInMyCoordinates;
-- (void).cxx_destruct;
 - (BOOL)_moveToContentSibling:(id)arg1 withScrolling:(BOOL)arg2 withSelection:(BOOL)arg3 request:(id)arg4;
 - (BOOL)_moveToAdjacentContentSiblingInDirection:(long long)arg1 request:(id)arg2;
 - (void)_moveToLastSiblingInDirection:(long long)arg1 request:(id)arg2;

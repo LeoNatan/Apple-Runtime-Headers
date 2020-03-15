@@ -25,6 +25,7 @@
     struct NSEdgeInsets _selectionEdgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *themeDescription; // @synthesize themeDescription=_themeDescription;
 @property(retain, nonatomic) NSString *themeTitle; // @synthesize themeTitle=_themeTitle;
 @property(nonatomic) struct CGSize additionalCloudSpace; // @synthesize additionalCloudSpace=_additionalCloudSpace;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) UXImageView *cloudImageView; // @synthesize cloudImageView=_cloudImageView;
 @property(readonly, nonatomic) UXImageView *themePreviewImageView; // @synthesize themePreviewImageView=_themePreviewImageView;
 @property(readonly, nonatomic) UXLabel *themeTitleLabel; // @synthesize themeTitleLabel=_themeTitleLabel;
-- (void).cxx_destruct;
 - (BOOL)accessibilityPerformPress;
 - (struct CGRect)accessibilityFrame;
 - (void)setSelected:(BOOL)arg1;

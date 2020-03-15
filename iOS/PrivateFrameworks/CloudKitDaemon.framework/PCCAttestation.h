@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSData *_routingToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *routingToken; // @synthesize routingToken=_routingToken;
 @property(retain, nonatomic) NSData *quotingEnclaveQuote; // @synthesize quotingEnclaveQuote=_quotingEnclaveQuote;
 @property(retain, nonatomic) NSData *applicationEnclaveQuote; // @synthesize applicationEnclaveQuote=_applicationEnclaveQuote;
 @property(retain, nonatomic) NSString *certificate; // @synthesize certificate=_certificate;
-- (void).cxx_destruct;
 - (id)initWithCertificate:(id)arg1 applicationEnclaveQuote:(id)arg2 quotingEnclaveQuote:(id)arg3 routingToken:(id)arg4;
 
 @end

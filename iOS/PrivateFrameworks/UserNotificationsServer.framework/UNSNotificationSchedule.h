@@ -13,8 +13,8 @@
     NSDate *_previousTriggerDate;
 }
 
-@property(retain, nonatomic) NSDate *previousTriggerDate; // @synthesize previousTriggerDate=_previousTriggerDate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *previousTriggerDate; // @synthesize previousTriggerDate=_previousTriggerDate;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

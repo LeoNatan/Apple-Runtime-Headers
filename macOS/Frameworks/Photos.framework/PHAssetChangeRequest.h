@@ -91,7 +91,6 @@
     unsigned long long _originalResourceChoice;
     PHContentEditingOutput *_contentEditingOutput;
     NSString *_editorBundleID;
-    NSString *_clientBundleID;
     NSIndexSet *_supportedEditOperations;
     NSURL *_videoURLForUpdate;
     NSString *_pairingIdentifier;
@@ -120,6 +119,7 @@
 + (id)creationRequestForAssetFromImageAtFileURL:(id)arg1;
 + (id)creationRequestForAssetFromImage:(id)arg1;
 + (id)_allAssetEditOperations;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *keywordTitles; // @synthesize keywordTitles=_keywordTitles;
 @property(retain, nonatomic) CLLocation *shiftedLocation; // @synthesize shiftedLocation=_shiftedLocation;
 @property(nonatomic) BOOL reverseLocationDataIsValid; // @synthesize reverseLocationDataIsValid=_reverseLocationDataIsValid;
@@ -145,13 +145,11 @@
 @property(retain, nonatomic) NSString *pairingIdentifier; // @synthesize pairingIdentifier=_pairingIdentifier;
 @property(retain, nonatomic) NSURL *videoURLForUpdate; // @synthesize videoURLForUpdate=_videoURLForUpdate;
 @property(retain, nonatomic) NSIndexSet *supportedEditOperations; // @synthesize supportedEditOperations=_supportedEditOperations;
-@property(readonly, copy, nonatomic) NSString *clientBundleID; // @synthesize clientBundleID=_clientBundleID;
 @property(readonly, copy, nonatomic) NSString *editorBundleID; // @synthesize editorBundleID=_editorBundleID;
 @property(readonly, nonatomic) BOOL didChangeAdjustments; // @synthesize didChangeAdjustments=_didChangeAdjustments;
 @property(retain, nonatomic) PHContentEditingOutput *contentEditingOutput; // @synthesize contentEditingOutput=_contentEditingOutput;
 @property(nonatomic) unsigned long long originalResourceChoice; // @synthesize originalResourceChoice=_originalResourceChoice;
 @property(nonatomic) unsigned short photoIrisVisibilityState; // @synthesize photoIrisVisibilityState=_photoIrisVisibilityState;
-- (void).cxx_destruct;
 - (void)markDidChangeAdjustments;
 - (BOOL)isRevertingContentToOriginal;
 - (BOOL)isHiding;

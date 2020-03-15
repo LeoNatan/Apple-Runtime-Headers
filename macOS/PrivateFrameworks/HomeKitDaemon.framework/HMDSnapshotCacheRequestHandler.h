@@ -21,10 +21,10 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *snapshotCacheMap; // @synthesize snapshotCacheMap=_snapshotCacheMap;
 @property(readonly, nonatomic) NSString *logString; // @synthesize logString=_logString;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
 - (void)requestSnapshot:(id)arg1 streamingTierType:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)timerDidFire:(id)arg1;
 - (void)setSnapshotFileToCache:(id)arg1 proactiveSessionID:(id)arg2;

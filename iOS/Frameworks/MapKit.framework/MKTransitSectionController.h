@@ -25,13 +25,13 @@ __attribute__((visibility("hidden")))
     NSSet *_incidentEntitiesToExclude;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MKTransitSectionPagingFilter *_pagingFilter; // @synthesize _pagingFilter=__pagingFilter;
 @property(readonly, nonatomic) unsigned long long numberOfFilteredLines; // @synthesize numberOfFilteredLines=_numberOfFilteredLines;
 @property(retain, nonatomic) NSSet *incidentEntitiesToExclude; // @synthesize incidentEntitiesToExclude=_incidentEntitiesToExclude;
 @property(retain, nonatomic) NSDate *expiredHighFrequencyCutoffDate; // @synthesize expiredHighFrequencyCutoffDate=_expiredHighFrequencyCutoffDate;
 @property(retain, nonatomic) NSDate *departureCutoffDate; // @synthesize departureCutoffDate=_departureCutoffDate;
 @property(readonly, nonatomic) id <GEOTransitSystem> system; // @synthesize system=_system;
-- (void).cxx_destruct;
 - (void)_buildRows;
 - (void)_setNeedsBuildRows;
 - (_Bool)_needsBuildRows;

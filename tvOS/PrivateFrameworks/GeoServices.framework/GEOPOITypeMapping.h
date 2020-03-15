@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (id)typeToCategoryMapping;
 - (id)categoryToTypeMapping;
 - (id)alwaysVisibleTypes;
-- (_Bool)parseCategoryMappingJSON:(id)arg1 categoryToPOIType:(struct NSDictionary **)arg2 POITypeToCategory:(struct NSDictionary **)arg3;
+- (_Bool)parseCategoryMappingJSON:(id)arg1 categoryToPOIType:(id *)arg2 POITypeToCategory:(id *)arg3;
 - (id)parseVisiblePOITypesJSON:(id)arg1;
 - (void)parsePOICategoriesJSON:(id)arg1;
 - (void)loadPOICategoriesJSON;

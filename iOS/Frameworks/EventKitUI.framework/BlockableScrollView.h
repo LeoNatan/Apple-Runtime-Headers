@@ -15,9 +15,9 @@
     NSObject<BlockableScrollViewDelegate> *_blockableDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isResizing; // @synthesize isResizing=_isResizing;
 @property(nonatomic) __weak NSObject<BlockableScrollViewDelegate> *blockableDelegate; // @synthesize blockableDelegate=_blockableDelegate;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 

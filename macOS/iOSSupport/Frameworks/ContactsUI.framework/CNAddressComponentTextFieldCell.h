@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)cellIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *chevron; // @synthesize chevron=_chevron;
 @property(retain, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 @property(retain, nonatomic) NSArray *componentConstraints; // @synthesize componentConstraints=_componentConstraints;
 @property(nonatomic) __weak UITextField *textFieldForChevron; // @synthesize textFieldForChevron=_textFieldForChevron;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *textAttributes;
 @property(readonly, nonatomic) NSArray *textFields;
 - (id)currentConstraintsForMetrics:(id)arg1;

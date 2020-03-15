@@ -15,8 +15,8 @@
     NSURL *_directoryURL;
 }
 
-@property(readonly, copy, nonatomic) NSURL *directoryURL; // @synthesize directoryURL=_directoryURL;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSURL *directoryURL; // @synthesize directoryURL=_directoryURL;
 - (void)removeAllFileWrappersForFileCache:(id)arg1;
 - (void)fileCache:(id)arg1 removeFileWrapperNamed:(id)arg2;
 - (id)fileCache:(id)arg1 loadFileWrapperNamed:(id)arg2;

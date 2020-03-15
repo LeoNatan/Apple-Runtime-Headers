@@ -20,12 +20,12 @@
     CDStruct_e83c9415 timeRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void)setConfidence:(double)arg1;
 @property(readonly, nonatomic) double confidence;
 - (void)setTimeRange:(CDStruct_e83c9415)arg1;
 @property(readonly, nonatomic) CDStruct_e83c9415 timeRange;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1;
 
 // Remaining properties

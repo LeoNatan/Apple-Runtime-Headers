@@ -26,13 +26,13 @@
 + (id)bestAppearanceForView:(id)arg1;
 + (id)appearanceWithStyle:(unsigned long long)arg1;
 + (id)allAppearances;
+- (void).cxx_destruct;
 @property(readonly) double accessibilityContrastColorBoost; // @synthesize accessibilityContrastColorBoost=_accessibilityContrastColorBoost;
 @property(readonly) id compositingFilter; // @synthesize compositingFilter=_compositingFilter;
 @property(readonly) _Bool isVibrant; // @synthesize isVibrant=_isVibrant;
 @property(readonly) _Bool isDark; // @synthesize isDark=_isDark;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) unsigned long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)colorWithWhite:(unsigned long long)arg1 highContrastWhite:(unsigned long long)arg2;
 - (id)colorWithWhite:(unsigned long long)arg1;
 - (id)textColorForColor:(long long)arg1;

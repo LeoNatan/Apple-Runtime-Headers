@@ -29,6 +29,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)metadataFromStoreMetadata:(id)arg1;
+- (void).cxx_destruct;
 @property _Bool skipIfInstalled; // @synthesize skipIfInstalled=_skipIfInstalled;
 @property(copy) NSString *redownloadParams; // @synthesize redownloadParams=_redownloadParams;
 @property(copy) NSNumber *purchaserID; // @synthesize purchaserID=_purchaserID;
@@ -40,7 +41,6 @@
 @property(copy) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(copy) NSString *appleID; // @synthesize appleID=_appleID;
 @property(copy) NSString *altDSID; // @synthesize altDSID=_altDSID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

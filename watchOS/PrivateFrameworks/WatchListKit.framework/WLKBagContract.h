@@ -18,8 +18,8 @@
 }
 
 + (id)defaultContract;
-@property(retain, nonatomic) AMSBag *bag; // @synthesize bag=_bag;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AMSBag *bag; // @synthesize bag=_bag;
 @property(readonly, nonatomic) AMSBagValue *trustedDomains;
 @property(readonly, nonatomic) id <AMSMetricsBagContract> metricsContract;
 @property(readonly, nonatomic) id <AMSMescalBagContract> mescalContract;

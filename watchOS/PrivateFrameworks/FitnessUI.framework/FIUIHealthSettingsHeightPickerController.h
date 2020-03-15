@@ -14,8 +14,8 @@
     CDUnknownBlockType _heightUpdateHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType heightUpdateHandler; // @synthesize heightUpdateHandler=_heightUpdateHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType heightUpdateHandler; // @synthesize heightUpdateHandler=_heightUpdateHandler;
 - (id)_pickerDisplayStringForHeightForRow:(int)arg1 forComponent:(int)arg2;
 - (void)_heightPickerUpdated;
 - (void)setHeightQuantity:(id)arg1;

@@ -33,6 +33,7 @@
 + (BOOL)automaticallyNotifiesObserversOfApplicationWithMenubar;
 + (BOOL)automaticallyNotifiesObserversOfFrontmostApplication;
 + (BOOL)automaticallyNotifiesObserversOfRunningApplications;
+- (void).cxx_destruct;
 @property(nonatomic) int _updateGen; // @synthesize _updateGen=__updateGen;
 @property(readonly, nonatomic) NSOperationQueue *_updateQueue; // @synthesize _updateQueue=__updateQueue;
 @property(readonly, nonatomic) AXFDispatchQueue *_delegateQueue; // @synthesize _delegateQueue=__delegateQueue;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic, setter=_setLaunchServicesProvider:) _AXFLaunchServicesProvider *_launchServicesProvider; // @synthesize _launchServicesProvider=__launchServicesProvider;
 @property __weak id <AXFApplicationManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic, setter=_setFocusedApplication:) AXFUIElement *_focusedApplication; // @synthesize _focusedApplication=__focusedApplication;
-- (void).cxx_destruct;
 - (void)_assertNotApplicationManagerQueue;
 - (void)_assertApplicationManagerQueue;
 - (id)_applicationWithProcessIdentifier:(int)arg1 applicationIdentifier:(id)arg2;

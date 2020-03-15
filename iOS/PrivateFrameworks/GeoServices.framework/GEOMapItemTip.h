@@ -13,8 +13,8 @@
     GEOPDTip *_geoTip;
 }
 
-@property(retain, nonatomic) GEOPDTip *geoTip; // @synthesize geoTip=_geoTip;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GEOPDTip *geoTip; // @synthesize geoTip=_geoTip;
 @property(readonly, nonatomic) NSString *tipId;
 @property(readonly, nonatomic) _Bool hasTipId;
 @property(readonly, nonatomic) NSString *bestImageURL;

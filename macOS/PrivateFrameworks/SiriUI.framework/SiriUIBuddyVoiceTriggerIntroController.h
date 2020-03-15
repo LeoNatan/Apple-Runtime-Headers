@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSButton *_skipButton;
 }
 
+- (void).cxx_destruct;
 @property __weak NSButton *skipButton; // @synthesize skipButton=_skipButton;
 @property __weak SiriUIBuddyController *parentController; // @synthesize parentController=_parentController;
-- (void).cxx_destruct;
 - (void)didCloseLid;
 - (void)didOpenLid;
 - (void)updateViewForClamshellMode:(BOOL)arg1;

@@ -20,10 +20,10 @@
     BOOL _hydrating;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hydrating; // @synthesize hydrating=_hydrating;
 @property(nonatomic) BOOL needsHydration; // @synthesize needsHydration=_needsHydration;
 @property(retain, nonatomic) id iconImage; // @synthesize iconImage=_iconImage;
-- (void).cxx_destruct;
 - (void)removeAllHydrationCompletionBlocks;
 - (void)addHydrationCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)postHydrationBeganNotification;

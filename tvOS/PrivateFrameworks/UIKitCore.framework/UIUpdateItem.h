@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     UITableViewUpdateGap *_gap;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UITableViewUpdateGap *gap; // @synthesize gap=_gap;
 @property(nonatomic) _Bool headerFooterOnly; // @synthesize headerFooterOnly=_headerFooterOnly;
 @property(nonatomic) long long animation; // @synthesize animation=_animation;
 @property(readonly, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(readonly, nonatomic) int action; // @synthesize action=_action;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isDecomposedFromReload;
 - (long long)inverseCompareIndexPaths:(id)arg1;
 - (long long)compareIndexPaths:(id)arg1;

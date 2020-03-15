@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)changeWithChangeType:(int)arg1 account:(id)arg2 oldAccount:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ACAccount *oldAccount; // @synthesize oldAccount=_oldAccount;
 @property(readonly, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) int changeType; // @synthesize changeType=_changeType;
-- (void).cxx_destruct;
 - (id)initWithChangeType:(int)arg1 account:(id)arg2 oldAccount:(id)arg3;
 
 @end

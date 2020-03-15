@@ -20,13 +20,13 @@
 
 + (id)scannerWithString:(id)arg1 lineRanges:(id)arg2;
 + (id)scannerWithString:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *transactions; // @synthesize transactions=_transactions;
 @property(nonatomic) unsigned long long rangeIndex; // @synthesize rangeIndex=_rangeIndex;
 @property(nonatomic) struct _NSRange currentRange; // @synthesize currentRange=_currentRange;
 @property(nonatomic) unsigned long long startLocation; // @synthesize startLocation=_startLocation;
 @property(readonly, copy, nonatomic) NSArray *lineRanges; // @synthesize lineRanges=_lineRanges;
 @property(readonly, nonatomic) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct _NSRange currentLineRange;
 - (unsigned long long)_locationOfCharacter:(unsigned short)arg1 inRange:(struct _NSRange)arg2;
 - (id)_lineRangesForString:(id)arg1;

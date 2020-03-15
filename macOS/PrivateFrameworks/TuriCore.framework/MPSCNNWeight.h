@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
 - (void)checkpoint;
 - (void)purge;
 - (BOOL)load;
-- (unsigned long long)bias_size;
-- (unsigned long long)weight_size;
+- (unsigned long long)biasSize;
+- (unsigned long long)weightSize;
 - (float *)biasTerms;
 - (void *)weights;
 - (id)descriptor;

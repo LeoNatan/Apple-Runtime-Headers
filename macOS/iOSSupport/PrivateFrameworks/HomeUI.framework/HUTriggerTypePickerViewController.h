@@ -15,9 +15,9 @@
     HFActionSetBuilder *_actionSetBuilder;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFActionSetBuilder *actionSetBuilder; // @synthesize actionSetBuilder=_actionSetBuilder;
 @property(nonatomic) __weak id <HUTriggerEditorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_createTriggerBuilderOfClass:(Class)arg1;
 - (id)_createTriggerEditorForItem:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

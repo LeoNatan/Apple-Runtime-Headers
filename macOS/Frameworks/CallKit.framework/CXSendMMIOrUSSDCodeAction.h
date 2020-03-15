@@ -16,10 +16,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *senderIdentityUUID; // @synthesize senderIdentityUUID=_senderIdentityUUID;
 @property(nonatomic) long long ttyType; // @synthesize ttyType=_ttyType;
 @property(copy, nonatomic) NSString *code; // @synthesize code=_code;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)updateCopy:(id)arg1 withZone:(struct _NSZone *)arg2;

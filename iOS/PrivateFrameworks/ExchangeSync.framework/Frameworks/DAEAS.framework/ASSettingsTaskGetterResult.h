@@ -13,10 +13,10 @@
     id _result;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id result; // @synthesize result=_result;
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property(nonatomic) int key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)initWithKey:(int)arg1 status:(long long)arg2 result:(id)arg3;
 
 @end

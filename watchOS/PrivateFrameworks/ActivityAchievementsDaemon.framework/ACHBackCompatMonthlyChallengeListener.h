@@ -19,11 +19,11 @@
     NSDictionary *_injectedKeyValuePairs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *injectedKeyValuePairs; // @synthesize injectedKeyValuePairs=_injectedKeyValuePairs;
 @property(copy, nonatomic) CDUnknownBlockType readTemplatesBlock; // @synthesize readTemplatesBlock=_readTemplatesBlock;
 @property(nonatomic) __weak ACHTemplateStore *templateStore; // @synthesize templateStore=_templateStore;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (id)_definitionsFromKeyValuePairs:(id)arg1;
 - (_Bool)_readAndSaveBackCompatDefinitions;
 - (void)_protectedNanoUserDefaultsDidSyncWithNotification:(id)arg1;

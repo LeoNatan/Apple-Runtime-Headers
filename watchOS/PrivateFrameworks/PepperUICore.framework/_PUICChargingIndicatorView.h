@@ -20,8 +20,8 @@
     id <_PUICChargingIndicatorViewDataSource> _dataSource;
 }
 
-@property(nonatomic) __weak id <_PUICChargingIndicatorViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_PUICChargingIndicatorViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) _Bool iconShadow;
 - (void)_removeChargingLabelIfNecessary;
 - (void)_createChargingLabelIfNecessary;

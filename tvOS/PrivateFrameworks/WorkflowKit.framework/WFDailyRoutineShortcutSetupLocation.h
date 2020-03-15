@@ -13,8 +13,8 @@
     NSString *_prompt;
 }
 
-@property(readonly, copy, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
 - (id)initWithPrompt:(id)arg1;
 
 @end

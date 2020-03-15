@@ -15,8 +15,8 @@
     NSArray *_seasons;
 }
 
-@property(retain, nonatomic) NSArray *seasons; // @synthesize seasons=_seasons;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *seasons; // @synthesize seasons=_seasons;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

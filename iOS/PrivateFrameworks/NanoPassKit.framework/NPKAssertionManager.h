@@ -16,8 +16,8 @@
 }
 
 + (id)sharedManager;
-@property(retain) NSHashTable *acquiredAssertions; // @synthesize acquiredAssertions=_acquiredAssertions;
 - (void).cxx_destruct;
+@property(retain) NSHashTable *acquiredAssertions; // @synthesize acquiredAssertions=_acquiredAssertions;
 - (id)_errorWithUnderlyingError:(id)arg1;
 - (void)_queue_invalidateAssertionWithType:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_queue_acquireAssertionWithType:(unsigned long long)arg1 reason:(id)arg2 completion:(CDUnknownBlockType)arg3;

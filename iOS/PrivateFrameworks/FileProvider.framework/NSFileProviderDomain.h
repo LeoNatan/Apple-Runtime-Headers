@@ -26,6 +26,7 @@
 
 + (id)domainFromPlistDictionary:(id)arg1 identifier:(id)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isEnterpriseDomain; // @synthesize isEnterpriseDomain=_isEnterpriseDomain;
 @property(retain, nonatomic) NSString *personaIdentifier; // @synthesize personaIdentifier=_personaIdentifier;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
@@ -36,7 +37,6 @@
 @property(readonly, copy) NSString *pathRelativeToDocumentStorage; // @synthesize pathRelativeToDocumentStorage=_pathRelativeToDocumentStorage;
 @property(readonly, copy) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)plistDictionary;
 - (id)initWithCoder:(id)arg1;

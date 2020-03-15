@@ -34,6 +34,7 @@
     CDUnknownBlockType _statusChangedHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int statusFlags; // @synthesize statusFlags=_statusFlags;
 @property(copy, nonatomic) CDUnknownBlockType statusChangedHandler; // @synthesize statusChangedHandler=_statusChangedHandler;
 @property(copy, nonatomic) NSArray *peers; // @synthesize peers=_peers;
@@ -44,7 +45,6 @@
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)session:(id)arg1 didChangeProximitySensorState:(unsigned long long)arg2;
 - (void)session:(id)arg1 didFailwithError:(id)arg2;
 - (void)session:(id)arg1 didEstimateScores:(id)arg2;

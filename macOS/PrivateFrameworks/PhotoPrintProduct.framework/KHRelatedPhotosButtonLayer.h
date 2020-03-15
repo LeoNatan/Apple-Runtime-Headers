@@ -13,10 +13,10 @@
     CAShapeLayer *_chainLayer2;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *chainLayer2; // @synthesize chainLayer2=_chainLayer2;
 @property(retain, nonatomic) CAShapeLayer *chainLayer1; // @synthesize chainLayer1=_chainLayer1;
 @property(retain, nonatomic) CAShapeLayer *roundShapeLayer; // @synthesize roundShapeLayer=_roundShapeLayer;
-- (void).cxx_destruct;
 - (BOOL)containsPoint:(struct CGPoint)arg1;
 - (id)hitTest:(struct CGPoint)arg1;
 - (void)_configureChainLayer:(id)arg1 isUpperChain:(BOOL)arg2;

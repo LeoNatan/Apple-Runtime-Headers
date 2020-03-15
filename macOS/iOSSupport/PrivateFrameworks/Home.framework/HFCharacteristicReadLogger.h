@@ -15,8 +15,8 @@
 
 + (id)nameForTransportType:(unsigned long long)arg1;
 + (id)transportKeyForCharacteristic:(id)arg1;
-@property(retain, nonatomic) NSMutableDictionary *accessoriesToReadByTransport; // @synthesize accessoriesToReadByTransport=_accessoriesToReadByTransport;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *accessoriesToReadByTransport; // @synthesize accessoriesToReadByTransport=_accessoriesToReadByTransport;
 - (void)markCharacteristicAsRead:(id)arg1 withLogger:(id)arg2;
 - (void)addCharacteristic:(id)arg1 withUpdateLogger:(id)arg2;
 - (unsigned long long)numberOfAccessoriesForTransportType:(unsigned long long)arg1;

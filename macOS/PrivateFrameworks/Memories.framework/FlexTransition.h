@@ -21,12 +21,12 @@
 }
 
 + (long long)validFadeLengthForLength:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL useNextSegmentForFadeOut; // @synthesize useNextSegmentForFadeOut=_useNextSegmentForFadeOut;
 @property(readonly, copy, nonatomic) NSString *transitionSegmentName; // @synthesize transitionSegmentName=_transitionSegmentName;
 @property(readonly, nonatomic) long long fadeIn; // @synthesize fadeIn=_fadeIn;
 @property(readonly, nonatomic) long long fadeOut; // @synthesize fadeOut=_fadeOut;
 @property(readonly, nonatomic) BOOL prevented; // @synthesize prevented=_prevented;
-- (void).cxx_destruct;
 - (BOOL)isDefaultTransition;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

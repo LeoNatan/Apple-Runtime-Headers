@@ -15,10 +15,10 @@
     CSKTextViewController *_textViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSKTextViewController *textViewController; // @synthesize textViewController=_textViewController;
 @property(retain, nonatomic) NSFont *defaultFont; // @synthesize defaultFont=_defaultFont;
 @property(retain, nonatomic) CSKMessage *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (id)tabViewController:(id)arg1 viewForTabItemAtIndex:(unsigned long long)arg2;
 - (void)_updateMessageDetailsWithCurrentMessage;
 - (void)_updateTextViewFont:(id)arg1;

@@ -15,10 +15,10 @@
     int _errorCode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int errorCode; // @synthesize errorCode=_errorCode;
 @property(copy, nonatomic) NSString *errorDomain; // @synthesize errorDomain=_errorDomain;
 @property(retain, nonatomic) SISchemaViewContainer *viewContainer; // @synthesize viewContainer=_viewContainer;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

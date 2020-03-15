@@ -15,8 +15,8 @@
     UINavigationController *_navigationController;
 }
 
-@property(nonatomic) __weak UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 - (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(unsigned long long *)arg3;
 - (void)presentBiometricOrPasscodeValidationForAppleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentLoginAlertWithError:(id)arg1 title:(id)arg2 message:(id)arg3 completion:(CDUnknownBlockType)arg4;

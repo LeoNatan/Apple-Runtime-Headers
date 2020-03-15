@@ -18,9 +18,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)withAutosaveIdentifier:(id)arg1 subject:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *subject; // @synthesize subject=_subject;
 @property(readonly, copy, nonatomic) NSString *autosaveIdentifier; // @synthesize autosaveIdentifier=_autosaveIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithAutosaveIdentifier:(id)arg1 subject:(id)arg2;

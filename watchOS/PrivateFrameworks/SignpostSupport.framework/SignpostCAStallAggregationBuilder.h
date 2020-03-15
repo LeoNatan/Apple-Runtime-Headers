@@ -20,11 +20,11 @@
     SignpostCAInstrumentationProcessor *_caInstrumentationProcessor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SignpostCAInstrumentationProcessor *caInstrumentationProcessor; // @synthesize caInstrumentationProcessor=_caInstrumentationProcessor;
 @property(readonly, nonatomic) SignpostCAStallAggregation *stallAggregation; // @synthesize stallAggregation=_stallAggregation;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *syncQueue; // @synthesize syncQueue=_syncQueue;
 @property(nonatomic) float maxDurationSec; // @synthesize maxDurationSec=_maxDurationSec;
-- (void).cxx_destruct;
 - (id)newConfiguredExtractor;
 - (void)handleSignpostIntervalBegin:(id)arg1;
 - (void)handleSignpostInterval:(id)arg1;

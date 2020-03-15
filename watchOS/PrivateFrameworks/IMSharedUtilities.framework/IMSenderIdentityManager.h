@@ -15,8 +15,8 @@
 
 + (_Bool)isTUSenderIdentity:(id)arg1 equalToSubscriptionContext:(id)arg2;
 + (id)sharedInstance;
-@property(retain, nonatomic) CNGeminiManager *geminiManager; // @synthesize geminiManager=_geminiManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNGeminiManager *geminiManager; // @synthesize geminiManager=_geminiManager;
 - (id)bestSenderIdentityForGeminiHandle:(id)arg1 contact:(id)arg2;
 - (id)bestSenderIdentityForHandleID:(id)arg1 contact:(id)arg2;
 - (id)bestSenderIdentityForHandleIDs:(id)arg1;

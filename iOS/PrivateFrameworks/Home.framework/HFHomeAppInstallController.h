@@ -20,11 +20,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *statusUpdaters; // @synthesize statusUpdaters=_statusUpdaters;
 @property(nonatomic) long long lastReportedStatus; // @synthesize lastReportedStatus=_lastReportedStatus;
 @property(retain, nonatomic) ASDSystemAppRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) NAFuture *activeHomeAppDownloadFuture; // @synthesize activeHomeAppDownloadFuture=_activeHomeAppDownloadFuture;
-- (void).cxx_destruct;
 - (void)_cleanup;
 - (void)_dispatchStatusUpdate:(long long)arg1;
 - (void)request:(id)arg1 didCompleteWithError:(id)arg2;

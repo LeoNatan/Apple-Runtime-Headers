@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_requests;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *requests; // @synthesize requests=_requests;
 @property(copy, nonatomic) NSArray *responses; // @synthesize responses=_responses;
-- (void).cxx_destruct;
 - (void)executionDidBegin;
 - (id)initWithMediaLibrary:(id)arg1 requests:(id)arg2;
 - (id)initWithMediaLibrary:(id)arg1;

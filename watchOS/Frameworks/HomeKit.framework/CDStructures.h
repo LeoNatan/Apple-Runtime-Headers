@@ -10,10 +10,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct NSDictionary {
-    Class _field1;
-};
-
 struct _NSRange {
     unsigned int _field1;
     unsigned int _field2;

@@ -15,10 +15,10 @@
     struct PHAssetResourceTableDataSpecification _dataSpec;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) struct PHAssetResourceTableDataSpecification dataSpec; // @synthesize dataSpec=_dataSpec;
 @property(readonly, nonatomic) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
-- (void).cxx_destruct;
 - (id)initWithObjectID:(id)arg1 dataSpec:(const struct PHAssetResourceTableDataSpecification *)arg2 data:(id)arg3;
 
 @end

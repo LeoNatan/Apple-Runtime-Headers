@@ -50,6 +50,7 @@
 + (double)heightForStyle:(long long)arg1 orientation:(long long)arg2;
 + (Class)_implementationClass;
 + (void)_setImplementationClass:(Class)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UIStatusBarManager> manager; // @synthesize manager=_manager;
 @property(nonatomic) struct CGRect avoidanceFrame; // @synthesize avoidanceFrame=_avoidanceFrame;
 @property(copy, nonatomic) NSArray *enabledPartIdentifiers; // @synthesize enabledPartIdentifiers=_enabledPartIdentifiers;
@@ -76,7 +77,6 @@
 @property(readonly, nonatomic) int styleOverrides; // @synthesize styleOverrides=_styleOverrides;
 @property(nonatomic) __weak id <UIStatusBarCarPlayDockDataProviding> dockDataProvider; // @synthesize dockDataProvider=_dockDataProvider;
 @property(nonatomic) __weak id <UIStatusBarStyleDelegate> styleDelegate; // @synthesize styleDelegate=_styleDelegate;
-- (void).cxx_destruct;
 - (_Bool)_usesModernBar;
 - (void)_performAnimations:(CDUnknownBlockType)arg1 withParameters:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)_rectIntersectsTimeItem:(struct CGRect)arg1;

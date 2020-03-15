@@ -17,10 +17,10 @@
     SBDeviceOrientationUpdateManager *_hackyBackReference;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isInvalidated) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(nonatomic, setter=_setHackyBackReference:) __weak SBDeviceOrientationUpdateManager *hackyBackReference; // @synthesize hackyBackReference=_hackyBackReference;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)invalidate;
 - (void)dealloc;

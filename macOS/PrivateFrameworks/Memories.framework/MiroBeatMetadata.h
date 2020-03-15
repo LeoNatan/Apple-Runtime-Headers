@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)beatWithMetadataItem:(id)arg1 andPriority:(long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(retain, nonatomic) FMTimedMetadataItem *metadataItem; // @synthesize metadataItem=_metadataItem;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithMetadataItem:(id)arg1 andPriority:(long long)arg2;
 

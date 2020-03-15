@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)_shouldDefaultToTouches;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIDelayedAction *ignoreTouch; // @synthesize ignoreTouch;
 @property(nonatomic) SEL checkCanBeginDrag; // @synthesize checkCanBeginDrag=_checkCanBeginDrag;
 @property(nonatomic) BOOL canBeginDrag; // @synthesize canBeginDrag=_canBeginDrag;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double minimumDistance; // @synthesize minimumDistance=_minimumDistance;
 @property(nonatomic) struct CGPoint startPosition; // @synthesize startPosition=_startPosition;
 @property(nonatomic) double maximumDeviation; // @synthesize maximumDeviation=_maximumDeviation;
-- (void).cxx_destruct;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

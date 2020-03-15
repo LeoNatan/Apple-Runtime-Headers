@@ -19,6 +19,7 @@
 + (id)defaultInstanceForIdioms:(id)arg1 enforceStrictIdioms:(_Bool)arg2;
 + (id)defaultName;
 + (Class)assetRepClass;
++ (id)createDefaultInstancesForUnitTesting;
 - (_Bool)isEqualForUnitTests:(id)arg1;
 - (_Bool)requiresRootNamespace;
 - (id)effectiveModificationDateForCARCompiler;

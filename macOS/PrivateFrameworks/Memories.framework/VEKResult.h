@@ -13,8 +13,8 @@
     NSDictionary *_results;
 }
 
-@property(retain) NSDictionary *results; // @synthesize results=_results;
 - (void).cxx_destruct;
+@property(retain) NSDictionary *results; // @synthesize results=_results;
 - (id)description;
 - (id)initWithResults:(id)arg1;
 - (void)appendResult:(id)arg1;

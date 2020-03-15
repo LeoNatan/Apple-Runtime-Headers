@@ -14,9 +14,9 @@
     unsigned long long _estimatedFileLength;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long estimatedFileLength; // @synthesize estimatedFileLength=_estimatedFileLength;
 @property(readonly, copy) NSString *pathExtension; // @synthesize pathExtension=_pathExtension;
-- (void).cxx_destruct;
 - (id)initWithPathExtension:(id)arg1 estimatedFileLength:(unsigned long long)arg2;
 
 @end

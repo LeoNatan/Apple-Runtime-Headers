@@ -15,8 +15,8 @@
     PARSession *_listener;
 }
 
-@property(nonatomic) __weak PARSession *listener; // @synthesize listener=_listener;
 - (void).cxx_destruct;
+@property(nonatomic) __weak PARSession *listener; // @synthesize listener=_listener;
 - (void)didEngageSection:(id)arg1;
 - (void)didGradeResultRelevancy:(id)arg1;
 - (void)didReportUserResponseFeedback:(id)arg1;

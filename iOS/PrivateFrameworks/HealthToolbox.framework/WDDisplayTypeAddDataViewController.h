@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     WDAddDataManualEntryItem *_valueFieldManualEntryItem;
 }
 
-@property(retain, nonatomic) WDAddDataManualEntryItem *valueFieldManualEntryItem; // @synthesize valueFieldManualEntryItem=_valueFieldManualEntryItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WDAddDataManualEntryItem *valueFieldManualEntryItem; // @synthesize valueFieldManualEntryItem=_valueFieldManualEntryItem;
 - (void)manualEntryItemDidUpdate:(id)arg1;
 - (void)_updateManualEntryItemWithCurrentBMI:(id)arg1;
 - (void)_setDefaultValuesIfNecessary;

@@ -18,13 +18,13 @@
     struct CGPoint _initialTouchLocation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBReachabilitySettings *settings; // @synthesize settings=_settings;
 @property(nonatomic) _Bool movedPastHysteresis; // @synthesize movedPastHysteresis=_movedPastHysteresis;
 @property(nonatomic) _Bool everTranslatedUpwards; // @synthesize everTranslatedUpwards=_everTranslatedUpwards;
 @property(nonatomic) struct CGPoint initialTouchLocation; // @synthesize initialTouchLocation=_initialTouchLocation;
 @property(retain, nonatomic) UITouch *activeTouch; // @synthesize activeTouch=_activeTouch;
 @property(retain, nonatomic) SBTouchHistory *touchHistory; // @synthesize touchHistory=_touchHistory;
-- (void).cxx_destruct;
 - (void)reset;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     SEL _action;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SEL action; // @synthesize action=_action;
 @property(readonly, nonatomic) __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (id)description;
 - (void)performActionWithSender:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;

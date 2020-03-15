@@ -22,13 +22,13 @@
     CPSApplicationStateMonitor *_applicationStateMonitor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak CPSApplicationStateMonitor *applicationStateMonitor; // @synthesize applicationStateMonitor=_applicationStateMonitor;
 @property(nonatomic) __weak id <CPTemplateDelegate> templateDelegate; // @synthesize templateDelegate=_templateDelegate;
 @property(retain, nonatomic) NSTimer *alertTimer; // @synthesize alertTimer=_alertTimer;
 @property(readonly, nonatomic) CPSNavigationAlertView *currentAlertView; // @synthesize currentAlertView=_currentAlertView;
 @property(readonly, nonatomic) CPNavigationAlert *currentAlert; // @synthesize currentAlert=_currentAlert;
 @property(readonly, nonatomic) __weak id <CPSNavigationAlertQueueDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)applicationStateMonitor:(id)arg1 didBecomeActive:(_Bool)arg2;
 - (void)didSelectButton:(id)arg1;
 - (void)_visibleAlertTimerFired:(id)arg1;

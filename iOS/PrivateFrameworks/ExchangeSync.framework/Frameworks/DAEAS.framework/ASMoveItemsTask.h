@@ -15,10 +15,10 @@
     NSMutableArray *_moveItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *moveItems; // @synthesize moveItems=_moveItems;
 @property(nonatomic) long long dataclass; // @synthesize dataclass=_dataclass;
 @property(retain, nonatomic) NSArray *pushedMoveRequests; // @synthesize pushedMoveRequests=_pushedMoveRequests;
-- (void).cxx_destruct;
 - (long long)taskStatusForExchangeStatus:(int)arg1;
 - (id)requestBody;
 - (void)finishWithError:(id)arg1;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_ranges;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *ranges; // @synthesize ranges=_ranges;
 @property(retain, nonatomic) UIColor *rangeColor; // @synthesize rangeColor=_rangeColor;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;

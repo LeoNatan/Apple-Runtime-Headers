@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     FMSlidingPaneViewController *_owningViewController;
 }
 
-@property(nonatomic) __weak FMSlidingPaneViewController *owningViewController; // @synthesize owningViewController=_owningViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak FMSlidingPaneViewController *owningViewController; // @synthesize owningViewController=_owningViewController;
 - (void)layoutSubviews;
 
 @end

@@ -28,6 +28,7 @@
     unsigned long long _messageUnitsTextLength;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long messageUnitsTextLength; // @synthesize messageUnitsTextLength=_messageUnitsTextLength;
 @property(retain) NSString *htmlContent; // @synthesize htmlContent=_htmlContent;
 @property _Bool isSenderSignificant; // @synthesize isSenderSignificant=_isSenderSignificant;
@@ -41,7 +42,6 @@
 @property(retain) NSString *subject; // @synthesize subject=_subject;
 @property(retain) NSString *threadIdentifier; // @synthesize threadIdentifier=_threadIdentifier;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)detectedKeywordsDictionary;
 - (void)addDetectedKeyword:(id)arg1 classificationTypeIdentifier:(id)arg2;
 @property(readonly) NSString *lowercaseSubject;

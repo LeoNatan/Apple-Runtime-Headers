@@ -15,8 +15,8 @@
     IKJSInspectorController *_controller;
 }
 
-@property(readonly, nonatomic) __weak IKJSInspectorController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak IKJSInspectorController *controller; // @synthesize controller=_controller;
 - (id)_storageForStorageId:(id)arg1;
 - (id)_storageIdForStorage:(id)arg1;
 - (void)_itemsCleared:(id)arg1;

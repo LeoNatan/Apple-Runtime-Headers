@@ -21,11 +21,11 @@
 + (Class)sectionTagsType;
 + (Class)channelTagsType;
 + (Class)topicTagsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *sectionTags; // @synthesize sectionTags=_sectionTags;
 @property(retain, nonatomic) NSMutableArray *channelTags; // @synthesize channelTags=_channelTags;
 @property(retain, nonatomic) NSMutableArray *topicTags; // @synthesize topicTags=_topicTags;
 @property(retain, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

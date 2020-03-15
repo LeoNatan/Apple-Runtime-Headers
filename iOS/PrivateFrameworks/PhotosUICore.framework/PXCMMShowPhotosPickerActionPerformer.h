@@ -13,8 +13,8 @@
     id <PXGridPresentation> _gridPresentation;
 }
 
-@property(readonly, nonatomic) id <PXGridPresentation> gridPresentation; // @synthesize gridPresentation=_gridPresentation;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <PXGridPresentation> gridPresentation; // @synthesize gridPresentation=_gridPresentation;
 - (id)performActionWithSession:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)performPhotosPickerActionWithSession:(id)arg1 gridPresentation:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 

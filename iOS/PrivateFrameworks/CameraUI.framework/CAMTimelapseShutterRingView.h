@@ -22,6 +22,7 @@
     CDStruct_8ae1ff66 _spec;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CALayer *_timerHandParentLayer; // @synthesize _timerHandParentLayer=__timerHandParentLayer;
 @property(readonly, nonatomic) CALayer *_timerHandLayer; // @synthesize _timerHandLayer=__timerHandLayer;
 @property(readonly, nonatomic) CAReplicatorLayer *_largeTickReplicatorLayer; // @synthesize _largeTickReplicatorLayer=__largeTickReplicatorLayer;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) double _smallTickRotationRadians; // @synthesize _smallTickRotationRadians=__smallTickRotationRadians;
 @property(nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
 @property(readonly, nonatomic) CDStruct_8ae1ff66 spec; // @synthesize spec=_spec;
-- (void).cxx_destruct;
 - (double)_rotationZFromTransform:(struct CATransform3D)arg1;
 - (void)_addStopAnimations;
 - (void)_addStartAnimations;

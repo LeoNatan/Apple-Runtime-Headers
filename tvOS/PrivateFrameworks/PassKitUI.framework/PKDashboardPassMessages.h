@@ -15,8 +15,8 @@
     NSOrderedSet *_messages;
 }
 
-@property(retain, nonatomic) NSOrderedSet *messages; // @synthesize messages=_messages;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSOrderedSet *messages; // @synthesize messages=_messages;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

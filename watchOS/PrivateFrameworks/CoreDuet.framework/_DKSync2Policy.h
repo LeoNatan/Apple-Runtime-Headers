@@ -48,6 +48,7 @@
 + (id)policyForSyncTransportType:(int)arg1;
 + (id)policyCache;
 + (id)userDefaults;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *streamNamesToAlwaysSync; // @synthesize streamNamesToAlwaysSync=_streamNamesToAlwaysSync;
 @property(nonatomic) unsigned int policyDownloadIntervalInDays; // @synthesize policyDownloadIntervalInDays=_policyDownloadIntervalInDays;
 @property(nonatomic) unsigned int triggeredSyncDelayInSeconds; // @synthesize triggeredSyncDelayInSeconds=_triggeredSyncDelayInSeconds;
@@ -70,7 +71,6 @@
 @property(retain, nonatomic) NSNumber *version; // @synthesize version=_version;
 @property(nonatomic) _Bool syncDisabled; // @synthesize syncDisabled=_syncDisabled;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (double)hoursBetweenSyncsWhenIsSingleDevice:(_Bool)arg1 urgency:(unsigned int)arg2;
 - (double)hoursBetweenSyncsWhenIsSingleDevice:(_Bool)arg1;

@@ -19,13 +19,13 @@
     NSMutableSet *_internalVolumes;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *internalVolumes; // @synthesize internalVolumes=_internalVolumes;
 @property(retain) NSObject<OS_dispatch_group> *initializeGroup; // @synthesize initializeGroup=_initializeGroup;
 @property(retain) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property BOOL existingVolumeEventsRecieved; // @synthesize existingVolumeEventsRecieved=_existingVolumeEventsRecieved;
 @property struct _CFVolumeObserver *observer; // @synthesize observer=_observer;
 @property(readonly) id <SPMVolumeObserverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)volumes;
 - (void)_notifyDelegateWithVolume:(id)arg1 mounted:(BOOL)arg2;
 - (void)_handleVolumeUnountedAtURL:(id)arg1 name:(id)arg2;

@@ -16,8 +16,8 @@
     NSString *_label;
 }
 
-@property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

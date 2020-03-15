@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     SKUIImageView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak SKUIImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) __weak SKUIHorizontalLockupView *lockup; // @synthesize lockup=_lockup;
-- (void).cxx_destruct;
 - (void)setImage:(id)arg1;
 - (id)initWithImage:(id)arg1;
 

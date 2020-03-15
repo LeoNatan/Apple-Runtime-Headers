@@ -21,21 +21,23 @@
     NSMutableArray *_deferredInsertMediaObjectBlocks;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *deferredInsertMediaObjectBlocks; // @synthesize deferredInsertMediaObjectBlocks=_deferredInsertMediaObjectBlocks;
 @property(retain, nonatomic) CKChatEagerUploadController *eagerUploadController; // @synthesize eagerUploadController=_eagerUploadController;
 @property(nonatomic) _Bool forceMMS; // @synthesize forceMMS=_forceMMS;
 @property(nonatomic) _Bool mimeType; // @synthesize mimeType=_mimeType;
-- (void).cxx_destruct;
 - (_Bool)_shouldUseExistingConversations;
 - (_Bool)_shouldUseDefaultFirstResponder;
 - (void)_conversationListDidFinishLoading:(id)arg1;
 - (void)registerForNotifications;
+- (_Bool)messageEntryViewShouldBeginEditing:(id)arg1;
 - (void)hideEntryViewContent:(_Bool)arg1;
 - (void)_setEntryViewVisible:(_Bool)arg1;
 - (_Bool)shouldDismissAfterSend;
 - (void)setTextEntryContentsVisible:(_Bool)arg1;
 - (_Bool)_shouldAllowCameraAttachments;
 - (void)disableCameraAttachments;
+- (void)setShouldDisableEntryField:(_Bool)arg1;
 - (void)setCanEditRecipients:(_Bool)arg1;
 - (void)setPendingAddresses:(id)arg1;
 - (_Bool)_deviceIsLocked;

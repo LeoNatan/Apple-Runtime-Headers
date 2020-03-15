@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     UIPhysicalKeyboardEvent *_physicalKeyboardEvent;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIPhysicalKeyboardEvent *physicalKeyboardEvent; // @synthesize physicalKeyboardEvent=_physicalKeyboardEvent;
 @property(readonly, nonatomic) _UIGameControllerEvent *gameControllerEvent; // @synthesize gameControllerEvent=_gameControllerEvent;
 @property(readonly, nonatomic) UIWheelEvent *wheelEvent; // @synthesize wheelEvent=_wheelEvent;
 @property(readonly, nonatomic) UIPressesEvent *pressesEvent; // @synthesize pressesEvent=_pressesEvent;
 @property(readonly, nonatomic) UITouchesEvent *touchesEvent; // @synthesize touchesEvent=_touchesEvent;
 @property(readonly, nonatomic) UIMoveEvent *moveEvent; // @synthesize moveEvent=_moveEvent;
-- (void).cxx_destruct;
 - (void)addPhysicalKeyboardEvent:(id)arg1;
 - (void)addGameControllerEvent:(id)arg1;
 - (void)addWheelEvent:(id)arg1;

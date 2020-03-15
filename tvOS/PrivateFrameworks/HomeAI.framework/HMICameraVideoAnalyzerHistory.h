@@ -26,6 +26,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
 @property(readonly) __weak HMICameraVideoAnalyzer *analyzer; // @synthesize analyzer=_analyzer;
 @property(retain) NSArray *lastRequestSignificantEvents; // @synthesize lastRequestSignificantEvents=_lastRequestSignificantEvents;
@@ -37,7 +38,6 @@
 @property long long predictions; // @synthesize predictions=_predictions;
 @property(readonly) long long maxPredictions; // @synthesize maxPredictions=_maxPredictions;
 @property(readonly) long long minRepetitions; // @synthesize minRepetitions=_minRepetitions;
-- (void).cxx_destruct;
 - (void)reset;
 - (id)predictedResultForRequest:(id)arg1;
 - (id)predictedSignificantEventsForRequest:(id)arg1;

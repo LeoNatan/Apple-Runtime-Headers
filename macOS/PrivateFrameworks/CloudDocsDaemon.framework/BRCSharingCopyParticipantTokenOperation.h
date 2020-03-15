@@ -26,7 +26,6 @@ __attribute__((visibility("hidden")))
 - (void)main;
 - (void)_fetchBaseTokenWithCompletion:(CDUnknownBlockType)arg1;
 - (id)createActivity;
-- (BOOL)shouldRetryForError:(id)arg1;
 - (id)initWithItem:(id)arg1;
 
 // Remaining properties

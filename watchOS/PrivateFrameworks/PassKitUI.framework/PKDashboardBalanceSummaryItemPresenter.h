@@ -27,8 +27,8 @@
     int _cellStyle;
 }
 
-@property(nonatomic) int cellStyle; // @synthesize cellStyle=_cellStyle;
 - (void).cxx_destruct;
+@property(nonatomic) int cellStyle; // @synthesize cellStyle=_cellStyle;
 - (void)traitCollectionDidChangeFromTrait:(id)arg1 toTrait:(id)arg2 inCollectionView:(id)arg3;
 - (_Bool)_statementIsFromMonthPriorToSummaryForItem:(id)arg1;
 - (_Bool)_shouldInset;

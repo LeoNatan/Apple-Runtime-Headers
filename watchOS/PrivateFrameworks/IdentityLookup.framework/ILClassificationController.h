@@ -22,12 +22,12 @@
 + (_Bool)shouldActivate;
 + (id)electedExtensionFromExtensions:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType firstMatchCompletionBlock; // @synthesize firstMatchCompletionBlock=_firstMatchCompletionBlock;
 @property(readonly, nonatomic) NSHashTable *delegates; // @synthesize delegates=_delegates;
 @property(readonly, nonatomic) id matchingExtensionToken; // @synthesize matchingExtensionToken=_matchingExtensionToken;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) NSArray *extensions; // @synthesize extensions=_extensions;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1;

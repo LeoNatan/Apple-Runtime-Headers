@@ -22,12 +22,12 @@
 }
 
 + (id)userContext;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *localDeviceID; // @synthesize localDeviceID=_localDeviceID;
 @property(retain, nonatomic) _CDInMemoryContext *userContext; // @synthesize userContext=_userContext;
 @property(retain, nonatomic) NSMutableArray *pendingAllDeviceRegistrations; // @synthesize pendingAllDeviceRegistrations=_pendingAllDeviceRegistrations;
 @property(retain, nonatomic) NSMutableDictionary *contexts; // @synthesize contexts=_contexts;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *syncQueue; // @synthesize syncQueue=_syncQueue;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;
@@ -65,7 +65,7 @@
 - (id)unsafe_contextForDeviceWithDeviceID:(id)arg1;
 - (id)contextForDeviceWithDeviceID:(id)arg1;
 - (id)contextForKeyPath:(id)arg1;
-- (struct NSDictionary *)valuesForKeyPaths:(id)arg1;
+- (id)valuesForKeyPaths:(id)arg1;
 - (id)valuesForKeyPaths:(id)arg1 inContextsMatchingPredicate:(id)arg2;
 - (id)localContext;
 - (id)init;

@@ -21,6 +21,7 @@
     NSString *_childLastName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *childLastName; // @synthesize childLastName=_childLastName;
 @property(copy, nonatomic) NSString *childFirstName; // @synthesize childFirstName=_childFirstName;
 @property(nonatomic) _Bool isChildTransferInvite; // @synthesize isChildTransferInvite=_isChildTransferInvite;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSString *organizerLastName; // @synthesize organizerLastName=_organizerLastName;
 @property(copy, nonatomic) NSString *organizerFirstName; // @synthesize organizerFirstName=_organizerFirstName;
 @property(copy, nonatomic) NSString *code; // @synthesize code=_code;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 

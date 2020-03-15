@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSNumber *pairingIdentifier; // @synthesize pairingIdentifier=_pairingIdentifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSNumber *pairingIdentifier; // @synthesize pairingIdentifier=_pairingIdentifier;
 - (void)_cloneFromPairedEndpoint:(id)arg1;
 - (_Bool)_isEqualToPairedEndpoint:(id)arg1;
 - (id)initWithCoder:(id)arg1;

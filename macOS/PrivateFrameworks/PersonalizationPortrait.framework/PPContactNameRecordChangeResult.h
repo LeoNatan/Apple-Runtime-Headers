@@ -19,9 +19,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)contactNameRecordChangeResultWithChanges:(id)arg1 changesTruncated:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL changesTruncated; // @synthesize changesTruncated=_changesTruncated;
 @property(readonly, nonatomic) NSArray *changes; // @synthesize changes=_changes;
-- (void).cxx_destruct;
 - (BOOL)isEqualToContactNameRecordChangeResult:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

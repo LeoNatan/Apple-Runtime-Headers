@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)fetchRequestInfoForPredicate:(id)arg1 properties:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *properties; // @synthesize properties=_properties;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
-- (void).cxx_destruct;
 
 @end
 

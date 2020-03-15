@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
-@property(nonatomic) __weak SKStorePageViewController *storePageViewController; // @synthesize storePageViewController=_storePageViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SKStorePageViewController *storePageViewController; // @synthesize storePageViewController=_storePageViewController;
 - (void)showProductPageWithItemIdentifier:(id)arg1;
 - (void)didFinishWithResult:(id)arg1 error:(id)arg2;
 

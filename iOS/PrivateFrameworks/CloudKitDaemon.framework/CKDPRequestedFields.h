@@ -18,9 +18,9 @@
 
 + (Class)listFieldType;
 + (Class)fieldsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *listFields; // @synthesize listFields=_listFields;
 @property(retain, nonatomic) NSMutableArray *fields; // @synthesize fields=_fields;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

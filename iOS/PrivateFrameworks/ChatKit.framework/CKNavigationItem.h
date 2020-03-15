@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIScrollView *_contentScrollView;
 }
 
-@property(nonatomic) __weak UIScrollView *contentScrollView; // @synthesize contentScrollView=_contentScrollView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIScrollView *contentScrollView; // @synthesize contentScrollView=_contentScrollView;
 
 @end
 

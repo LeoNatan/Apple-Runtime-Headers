@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
 
 + (double)defaultDuration;
 + (id)timingCurveProvider;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewPropertyAnimator *animator; // @synthesize animator=_animator;
 @property(nonatomic) int affectedSides; // @synthesize affectedSides=_affectedSides;
 @property(nonatomic) float progress; // @synthesize progress=_progress;
 @property(copy, nonatomic) UISlidingBarStateRequest *toRequest; // @synthesize toRequest=_toRequest;
 @property(copy, nonatomic) UISlidingBarStateRequest *fromRequest; // @synthesize fromRequest=_fromRequest;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UISlidingBarStateRequest *stateRequest;
 
 @end

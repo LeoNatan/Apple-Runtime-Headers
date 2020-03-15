@@ -24,10 +24,10 @@
     CDUnknownBlockType _statusHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType statusHandler; // @synthesize statusHandler=_statusHandler;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_wifiStatusChangedInternal:(long long)arg1;
 - (void)_wifiStatusChangedExternal:(long long)arg1;
 - (void)_wifiEnsureStopped;

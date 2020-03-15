@@ -21,6 +21,7 @@
     NSString *_siriData;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *siriData; // @synthesize siriData=_siriData;
 @property(copy, nonatomic) NSString *accessibilityText; // @synthesize accessibilityText=_accessibilityText;
 @property(nonatomic) _Bool hasGradient; // @synthesize hasGradient=_hasGradient;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 @property(nonatomic) _Bool configureForMetrics; // @synthesize configureForMetrics=_configureForMetrics;
 @property(retain, nonatomic) id imageProxy; // @synthesize imageProxy=_imageProxy;
-- (void).cxx_destruct;
 - (id)initWithProxy:(id)arg1 andPlaceHolderImage:(id)arg2;
 
 @end

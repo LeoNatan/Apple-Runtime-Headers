@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     NSDateComponents *_dateOfBirthComponents;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateComponents *dateOfBirthComponents; // @synthesize dateOfBirthComponents=_dateOfBirthComponents;
 @property(retain, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(retain, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
 @property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(readonly, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(readonly, nonatomic) HKElectrocardiogram *sample; // @synthesize sample=_sample;
-- (void).cxx_destruct;
 - (void)_fetchDemographicInformation;
 - (id)initWithSample:(id)arg1 healthStore:(id)arg2;
 

@@ -14,9 +14,9 @@
     _TVRCMROriginWrapper *_origin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak _TVRCMROriginWrapper *origin; // @synthesize origin=_origin;
 @property(nonatomic) __weak _TVRCMRTelevisionWrapper *television; // @synthesize television=_television;
-- (void).cxx_destruct;
 - (struct _MRHIDTouchEvent)_createMRHIDTouchEvent:(id)arg1;
 - (void)sendTouchEvent:(id)arg1 withDeviceID:(unsigned long long)arg2;
 @property(readonly, nonatomic) _TVRCMRVirtualTouchDeviceWrapper *touchDevice;

@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSString *_themeName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *themeName; // @synthesize themeName=_themeName;
 @property(nonatomic) long long themeIdentifier; // @synthesize themeIdentifier=_themeIdentifier;
 @property(copy, nonatomic) UIColor *primaryTextColor; // @synthesize primaryTextColor=_primaryTextColor;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIImage *headerImage; // @synthesize headerImage=_headerImage;
 @property(copy, nonatomic) UIColor *bodyTextColor; // @synthesize bodyTextColor=_bodyTextColor;
 @property(copy, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (id)initWithThemeDictionary:(id)arg1;

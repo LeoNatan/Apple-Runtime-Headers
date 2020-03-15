@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     long long _backgroundStyle;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) int bladeRunnerBadge; // @synthesize bladeRunnerBadge=_bladeRunnerBadge;
 @property(nonatomic) int context; // @synthesize context=_context;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(nonatomic, getter=isDimmed) _Bool dimmed; // @synthesize dimmed=_dimmed;
 @property(nonatomic, getter=isInBatchUpdate) _Bool inBatchUpdate; // @synthesize inBatchUpdate=_inBatchUpdate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (BOOL)acceptsFirstResponder;
 - (id)hitTest:(struct CGPoint)arg1;

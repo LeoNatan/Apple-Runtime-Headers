@@ -83,6 +83,7 @@
 + (void)vetSortDescriptor:(id)arg1;
 + (id)_observerAssociationSet;
 + (id)_lifeAssertionAssociationSet;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *alertSuppressionAppIDs_deprecated; // @synthesize alertSuppressionAppIDs_deprecated;
 @property(nonatomic) unsigned int realertCount_deprecated; // @synthesize realertCount_deprecated;
 @property(copy, nonatomic) NSString *header; // @synthesize header=_header;
@@ -144,7 +145,6 @@
 @property(copy, nonatomic) NSString *recordID; // @synthesize recordID=_publisherRecordID;
 @property(copy, nonatomic) NSSet *subsectionIDs; // @synthesize subsectionIDs=_subsectionIDs;
 @property(copy, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
-- (void).cxx_destruct;
 - (id)shortDescription;
 - (id)safeDescription;
 - (id)description;

@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *extensionIdentifier; // @synthesize extensionIdentifier=_extensionIdentifier;
 @property(nonatomic) long long suggestedAction; // @synthesize suggestedAction=_suggestedAction;
 @property(copy, nonatomic) NSString *messageBody; // @synthesize messageBody=_messageBody;
 @property(copy, nonatomic) NSString *sender; // @synthesize sender=_sender;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)hash;

@@ -16,6 +16,7 @@
     _Bool _canHandleHighBandwidthModes;
     _Bool _shouldModeSwitchForDynamicRange;
     _Bool _shouldModeSwitchForFrameRate;
+    _Bool _atmosEnabled;
     _Bool _detectedPoorCableConnection;
     _Bool _deemed4KCapable;
     double _localeRefreshRate;
@@ -36,6 +37,7 @@
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)sharedInstance;
 + (void)preheat;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *audioLatencies; // @synthesize audioLatencies=_audioLatencies;
 @property(readonly, nonatomic) PBSDisplayManagerServiceProxy *serviceProxy; // @synthesize serviceProxy=_serviceProxy;
 @property(retain, nonatomic) NSHashTable *stateObservers; // @synthesize stateObservers=_stateObservers;
@@ -44,6 +46,7 @@
 @property(retain, nonatomic) NSSet *promotedVirtualDisplayModes; // @synthesize promotedVirtualDisplayModes=_promotedVirtualDisplayModes;
 @property(nonatomic) _Bool detectedPoorCableConnection; // @synthesize detectedPoorCableConnection=_detectedPoorCableConnection;
 @property(nonatomic) long long displayConnection; // @synthesize displayConnection=_displayConnection;
+@property(nonatomic) _Bool atmosEnabled; // @synthesize atmosEnabled=_atmosEnabled;
 @property(nonatomic) _Bool shouldModeSwitchForFrameRate; // @synthesize shouldModeSwitchForFrameRate=_shouldModeSwitchForFrameRate;
 @property(nonatomic) _Bool shouldModeSwitchForDynamicRange; // @synthesize shouldModeSwitchForDynamicRange=_shouldModeSwitchForDynamicRange;
 @property(nonatomic) _Bool canHandleHighBandwidthModes; // @synthesize canHandleHighBandwidthModes=_canHandleHighBandwidthModes;
@@ -54,12 +57,12 @@
 @property(retain, nonatomic) PBSDisplayMode *currentDisplayMode; // @synthesize currentDisplayMode=_currentDisplayMode;
 @property(retain, nonatomic) NSArray *sortedDisplayModes; // @synthesize sortedDisplayModes=_sortedDisplayModes;
 @property(nonatomic) double localeRefreshRate; // @synthesize localeRefreshRate=_localeRefreshRate;
-- (void).cxx_destruct;
 - (void)removeStateObserver:(id)arg1;
 - (void)addStateObserver:(id)arg1;
 - (void)refreshValuesFromSerialisedState:(id)arg1 notifyObservers:(_Bool)arg2;
 - (void)refreshValuesOnQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)enableModeSwitchingForFrameRate:(_Bool)arg1;
+- (void)enableAtmos:(_Bool)arg1;
 - (void)enableModeSwitchingForDynamicRange:(_Bool)arg1;
 - (void)wakeDisplay:(CDUnknownBlockType)arg1;
 - (void)sleepDisplay:(CDUnknownBlockType)arg1;

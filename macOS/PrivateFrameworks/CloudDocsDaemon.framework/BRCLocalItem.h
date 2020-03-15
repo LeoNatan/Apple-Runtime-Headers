@@ -54,6 +54,7 @@
 + (id)unsaltedBookmarkDataWithItemResolutionString:(id)arg1 serverZone:(id)arg2;
 + (id)bookmarkDataWithItemResolutionString:(id)arg1 serverZone:(id)arg2;
 + (id)_bookmarkDataWithItemResolutionString:(id)arg1 serverZone:(id)arg2 salted:(BOOL)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BRCPQLConnection *db; // @synthesize db=_db;
 @property(retain, nonatomic) BRCAppLibrary *appLibrary; // @synthesize appLibrary=_appLibrary;
 @property(nonatomic) unsigned long long sharingOptions; // @synthesize sharingOptions=_sharingOptions;
@@ -68,7 +69,6 @@
 @property(readonly, nonatomic) BRCUserRowID *ownerKey; // @synthesize ownerKey=_ownerKey;
 @property(readonly, nonatomic) BRCItemID *itemID; // @synthesize itemID=_itemID;
 @property(readonly, nonatomic) unsigned long long dbRowID; // @synthesize dbRowID=_dbRowID;
-- (void).cxx_destruct;
 - (BOOL)_computedUserVisibleStatusAtPath:(id)arg1;
 - (BOOL)startDownloadInTask:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (BOOL)evictInTask:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
@@ -92,7 +92,7 @@
 - (void)clearFromStage;
 - (void)markStagedWithFileID:(unsigned long long)arg1 generationID:(unsigned int)arg2 documentID:(unsigned int)arg3;
 - (void)markStagedWithFileID:(unsigned long long)arg1 generationID:(unsigned int)arg2;
-- (void)markRenamedUsingServerItem:(id)arg1 toRelpath:(id)arg2 logicalName:(id)arg3 filename:(id)arg4 forContentApplyOnly:(BOOL)arg5;
+- (void)markRenamedUsingServerItem:(id)arg1 toRelpath:(id)arg2 logicalName:(id)arg3 filename:(id)arg4 origLogicalNameBeforeBounce:(id)arg5 forContentApplyOnly:(BOOL)arg6;
 - (void)markRemovedFromFilesystemForServerEdit:(BOOL)arg1;
 - (void)moveAsideLocally;
 - (void)markNeedsDeleteWhenAlreadyDeadInServerTruth;
@@ -127,7 +127,7 @@
 - (BOOL)_checkZoneUpdateFromFSAtPath:(id)arg1 parentGlobalID:(id)arg2;
 - (void)updateFromFSAtPath:(id)arg1;
 - (BOOL)updateXattrInfoFromPath:(id)arg1 error:(id *)arg2;
-- (void)learnItemID:(id)arg1 ownerKey:(id)arg2 sharingOptions:(unsigned long long)arg3 path:(id)arg4 markLost:(BOOL)arg5;
+- (void)learnItemID:(id)arg1 serverItem:(id)arg2 path:(id)arg3 markLost:(BOOL)arg4;
 - (unsigned long long)diffAgainstOriginalItem;
 - (unsigned long long)diffAgainstLocalItem:(id)arg1;
 - (unsigned long long)diffAgainstServerItem:(id)arg1;

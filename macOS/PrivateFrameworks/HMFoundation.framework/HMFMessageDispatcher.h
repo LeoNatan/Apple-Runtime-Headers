@@ -29,10 +29,10 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(nonatomic) BOOL shouldAutomaticallyIndex; // @synthesize shouldAutomaticallyIndex=_shouldAutomaticallyIndex;
 @property(readonly, nonatomic) HMFMessageTransport *transport; // @synthesize transport=_transport;
-- (void).cxx_destruct;
 - (void)messageTransport:(id)arg1 didReceiveMessage:(id)arg2;
 - (void)sendMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)sendMessage:(id)arg1;

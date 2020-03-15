@@ -27,6 +27,7 @@
     long long _requestType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long requestType; // @synthesize requestType=_requestType;
 @property(retain, nonatomic) NSObject<OS_os_transaction> *mirrorTransaction; // @synthesize mirrorTransaction=_mirrorTransaction;
 @property(retain, nonatomic) RTPersistenceMirroringPolicy *mirroringPolicy; // @synthesize mirroringPolicy=_mirroringPolicy;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) NSMutableArray *completionHandlers; // @synthesize completionHandlers=_completionHandlers;
 @property(nonatomic) __weak id <RTPersistenceMirroringRequestDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSCloudKitMirroringRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isReady) BOOL ready;
 - (id)requestTypeToString:(long long)arg1;
 - (id)description;

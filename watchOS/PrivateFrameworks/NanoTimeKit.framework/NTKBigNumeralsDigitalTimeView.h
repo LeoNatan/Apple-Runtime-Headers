@@ -10,7 +10,7 @@
 #import <NanoTimeKit/NTKTimeView-Protocol.h>
 #import <NanoTimeKit/NTKTritiumAnimator-Protocol.h>
 
-@class CLKDevice, NSDate, NSString, NTKBigNumeralsTimeComponentLabel;
+@class CLKDevice, NSDate, NSNumber, NSString, NTKBigNumeralsTimeComponentLabel;
 
 @interface NTKBigNumeralsDigitalTimeView : UIView <CLKTimeFormatterObserver, NTKTimeView, NTKTritiumAnimator>
 {
@@ -18,7 +18,7 @@
     NTKBigNumeralsTimeComponentLabel *_topLabel;
     NTKBigNumeralsTimeComponentLabel *_bottomLabel;
     NSDate *_overrideDate;
-    struct NSNumber *_timerToken;
+    NSNumber *_timerToken;
     _Bool _frozen;
     _Bool _showingStatus;
     unsigned int _style;
@@ -26,13 +26,12 @@
     unsigned int _color;
 }
 
-+ (int)uiSensitivity;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int color; // @synthesize color=_color;
 @property(readonly, nonatomic) unsigned int typeface; // @synthesize typeface=_typeface;
 @property(readonly, nonatomic) unsigned int style; // @synthesize style=_style;
 @property(nonatomic) _Bool showingStatus; // @synthesize showingStatus=_showingStatus;
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
-- (void).cxx_destruct;
 - (void)tritium_transitionToFrameSpecifier:(id)arg1;
 - (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
 - (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;

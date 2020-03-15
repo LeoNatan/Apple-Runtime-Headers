@@ -15,8 +15,8 @@
     NSMutableDictionary *_dirtyPopularityDict;
 }
 
-@property(readonly, nonatomic) long long version; // @synthesize version=_version;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long version; // @synthesize version=_version;
 - (id)createAppDataDictionary;
 - (id)songPopularityForAdamID:(long long)arg1;
 - (void)setSongPopularity:(id)arg1 forAdamID:(long long)arg2;

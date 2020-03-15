@@ -25,9 +25,9 @@
 + (id)iTunesStoreAccount;
 + (id)iCloudAccount;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSObject> notifyToken; // @synthesize notifyToken=_notifyToken;
 @property(retain) NSNumber *lastiTunesAccountID; // @synthesize lastiTunesAccountID=_lastiTunesAccountID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool deviceHasHomeButton;
 - (void)unregisterForiTunesAccountChanges;
 

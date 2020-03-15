@@ -13,8 +13,8 @@
     NSSet *_momentLocalIdentifiers;
 }
 
-@property(readonly, nonatomic) NSSet *momentLocalIdentifiers; // @synthesize momentLocalIdentifiers=_momentLocalIdentifiers;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *momentLocalIdentifiers; // @synthesize momentLocalIdentifiers=_momentLocalIdentifiers;
 - (id)description;
 - (unsigned long long)changeCount;
 - (unsigned long long)type;

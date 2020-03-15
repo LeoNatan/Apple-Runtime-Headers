@@ -22,9 +22,9 @@
 + (id)referenceRangeWithIdentifier:(id)arg1 maxValue:(id)arg2;
 + (id)referenceRangeWithIdentifier:(id)arg1 minValue:(id)arg2;
 + (id)referenceRangeWithIdentifier:(id)arg1 minValue:(id)arg2 maxValue:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKInspectableValueCollection *valueRange; // @synthesize valueRange=_valueRange;
 @property(readonly, nonatomic) NSString *referenceRangeIdentifier; // @synthesize referenceRangeIdentifier=_referenceRangeIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;

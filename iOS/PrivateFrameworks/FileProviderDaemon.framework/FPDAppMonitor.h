@@ -20,10 +20,10 @@
     FPDServer *_server;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak FPDServer *server; // @synthesize server=_server;
 @property(readonly, copy, nonatomic) FPAppRegistry *appRegistry; // @synthesize appRegistry=_appRegistry;
 @property(getter=isMonitoring) _Bool monitoring; // @synthesize monitoring=_monitoring;
-- (void).cxx_destruct;
 - (void)_updateDefaultProviderByAppBundleID;
 - (id)_updateDefaultProviderDomainID;
 - (void)_didChangeDefaultSaveLocationInUserDefaults;

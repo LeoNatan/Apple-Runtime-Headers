@@ -17,12 +17,12 @@
     id _userData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isDecorated; // @synthesize isDecorated=_isDecorated;
 @property(readonly, nonatomic) id userData; // @synthesize userData=_userData;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) PXGLayout *layout; // @synthesize layout=_layout;
 @property(readonly, nonatomic) PXGSpriteReference *spriteReference; // @synthesize spriteReference=_spriteReference;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithSpriteReference:(id)arg1 layout:(id)arg2 identifier:(id)arg3 userData:(id)arg4;
 - (id)init;

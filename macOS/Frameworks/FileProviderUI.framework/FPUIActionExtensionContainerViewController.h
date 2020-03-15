@@ -16,7 +16,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)_setupWithActionExtensionViewController:(id)arg1;
+- (void)_embedActionExtensionViewController;
 - (void)_plugViewServiceWithExtensionPrincipalForUUID:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_configureWithDomainIdentifier:(id)arg1;
 - (void)_prepareAuthenticationUsingServerURL:(id)arg1;

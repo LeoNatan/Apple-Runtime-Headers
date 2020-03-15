@@ -11,7 +11,6 @@
 
 @class NSString, WLKNotificationCenter;
 
-__attribute__((visibility("hidden")))
 @interface VUIJSNotificationCenter : IKJSObject <WLKNotificationCenterDelegate, VUIJSNotificationCenter>
 {
     WLKNotificationCenter *_center;

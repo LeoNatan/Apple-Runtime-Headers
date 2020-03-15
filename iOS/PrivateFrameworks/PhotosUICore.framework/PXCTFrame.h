@@ -20,6 +20,7 @@
     struct CGPoint _origin;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGPoint origin; // @synthesize origin=_origin;
 @property(readonly, nonatomic) __weak PXCTFramesetter *framesetter; // @synthesize framesetter=_framesetter;
 @property(readonly, nonatomic) _Bool allowTruncation; // @synthesize allowTruncation=_allowTruncation;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) const struct __CTFrame *frame; // @synthesize frame=_frame;
 @property(readonly, nonatomic, getter=isTruncated) _Bool truncated; // @synthesize truncated=_truncated;
 @property(readonly, nonatomic) NSArray *lines; // @synthesize lines=_lines;
-- (void).cxx_destruct;
 - (_Bool)_truncateLine:(inout const struct __CTLine **)arg1 withOrigin:(inout struct CGPoint *)arg2 referenceAttributedString:(inout id *)arg3 bounds:(struct CGRect)arg4;
 - (void)prepare;
 - (void)dealloc;

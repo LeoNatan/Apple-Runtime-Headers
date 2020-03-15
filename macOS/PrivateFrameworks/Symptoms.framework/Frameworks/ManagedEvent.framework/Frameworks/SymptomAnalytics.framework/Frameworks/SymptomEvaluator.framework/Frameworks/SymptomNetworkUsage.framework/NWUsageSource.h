@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     NSString *_delegateName;
 }
 
+- (void).cxx_destruct;
 @property BOOL updateScreenStateOn; // @synthesize updateScreenStateOn=_updateScreenStateOn;
 @property BOOL startScreenStateOn; // @synthesize startScreenStateOn=_startScreenStateOn;
 @property unsigned int updateAppState; // @synthesize updateAppState=_updateAppState;
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 @property unsigned int seqno; // @synthesize seqno=_seqno;
 @property(readonly, nonatomic) unsigned long long reference; // @synthesize reference=_reference;
 @property unsigned long long snapshotRevision; // @synthesize snapshotRevision=_snapshotRevision;
-- (void).cxx_destruct;
 - (id)initWithUpdate:(struct nstat_msg_src_update_convenient *)arg1 monitor:(id)arg2;
 - (BOOL)updateWithUpdate:(struct nstat_msg_src_update_convenient *)arg1 monitor:(id)arg2;
 - (void)saveOldValues:(struct nstat_counts *)arg1;

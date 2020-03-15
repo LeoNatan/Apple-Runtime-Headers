@@ -20,13 +20,13 @@
 }
 
 + (id)sessionUpdatesQueue;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requiresCarCapabilitiesValues; // @synthesize requiresCarCapabilitiesValues=_requiresCarCapabilitiesValues;
 @property(nonatomic) unsigned long long timeoutInterval; // @synthesize timeoutInterval=_timeoutInterval;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *connectingTimer; // @synthesize connectingTimer=_connectingTimer;
 @property(retain, nonatomic) CARSessionChangedNotificationConverter *notificationConverter; // @synthesize notificationConverter=_notificationConverter;
 @property(retain, nonatomic) CARSession *session; // @synthesize session=_session;
 @property(nonatomic) __weak id <CARSessionObserving> sessionObserver; // @synthesize sessionObserver=_sessionObserver;
-- (void).cxx_destruct;
 - (void)_notifyDidUpdateSession:(id)arg1;
 - (void)_notifyDidDisconnectSession:(id)arg1;
 - (void)_notifyDidConnectSession:(id)arg1;

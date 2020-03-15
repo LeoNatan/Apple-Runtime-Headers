@@ -27,6 +27,7 @@
 }
 
 + (id)pageControllerWithController:(id)arg1 andPageModelController:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *noteEditors; // @synthesize noteEditors=_noteEditors;
 @property BOOL superviewDependentThingsWereSetUp; // @synthesize superviewDependentThingsWereSetUp=_superviewDependentThingsWereSetUp;
 @property(retain, nonatomic) id inkOverlayDrawingUndoTarget; // @synthesize inkOverlayDrawingUndoTarget=_inkOverlayDrawingUndoTarget;
@@ -38,7 +39,6 @@
 @property unsigned long long pageIndex; // @synthesize pageIndex=_pageIndex;
 @property(retain) AKPageModelController *pageModelController; // @synthesize pageModelController=_pageModelController;
 @property __weak AKController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (id)_popoverPresentingViewController;
 - (BOOL)handleEditAnnotation:(id)arg1;
 - (id)popoverPresentingViewControllerForNoteEditor:(id)arg1;

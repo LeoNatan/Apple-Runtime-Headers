@@ -38,6 +38,7 @@
 + (id)registrationWithIdentifier:(id)arg1 contextualPredicate:(id)arg2 dismissalPolicy:(id)arg3 deviceSet:(unsigned long long)arg4 clientIdentifier:(id)arg5 mustWake:(_Bool)arg6 qualityOfService:(unsigned int)arg7 callback:(CDUnknownBlockType)arg8;
 + (id)registrationWithIdentifier:(id)arg1 contextualPredicate:(id)arg2 dismissalPolicy:(id)arg3 deviceSet:(unsigned long long)arg4 clientIdentifier:(id)arg5 mustWake:(_Bool)arg6 callback:(CDUnknownBlockType)arg7;
 + (id)registrationWithIdentifier:(id)arg1 contextualPredicate:(id)arg2 dismissalPolicy:(id)arg3 deviceSet:(unsigned long long)arg4 mustWake:(_Bool)arg5 callback:(CDUnknownBlockType)arg6;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType informativeCallback; // @synthesize informativeCallback=_informativeCallback;
 @property(copy, nonatomic) NSString *locationManagerEffectiveBundlePath; // @synthesize locationManagerEffectiveBundlePath=_locationManagerEffectiveBundlePath;
 @property(copy, nonatomic) NSString *locationManagerEffectiveBundleID; // @synthesize locationManagerEffectiveBundleID=_locationManagerEffectiveBundleID;
@@ -51,7 +52,6 @@
 @property(retain, nonatomic) _CDContextualPredicate *dismissalPolicy; // @synthesize dismissalPolicy=_dismissalPolicy;
 @property(retain, nonatomic) _CDContextualPredicate *predicate; // @synthesize predicate=_predicate;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

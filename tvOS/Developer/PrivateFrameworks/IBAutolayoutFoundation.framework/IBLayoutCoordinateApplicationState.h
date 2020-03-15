@@ -16,11 +16,11 @@
     long long _exclusivity;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSSet *layoutGuideMatches; // @synthesize layoutGuideMatches=_layoutGuideMatches;
 @property(copy) NSArray *guides; // @synthesize guides=_guides;
 @property long long exclusivity; // @synthesize exclusivity=_exclusivity;
 @property double coordinate; // @synthesize coordinate=_coordinate;
-- (void).cxx_destruct;
 - (void)addLayoutGuideMatch:(id)arg1;
 - (void)addLayoutGuide:(id)arg1;
 - (id)initWithCoordinate:(double)arg1 exclusivity:(long long)arg2;

@@ -28,15 +28,15 @@
 }
 
 + (id)sharedClientManager;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType clientUnregistrationHandler; // @synthesize clientUnregistrationHandler=_clientUnregistrationHandler;
 @property(copy, nonatomic) CDUnknownBlockType clientRegistrationHandler; // @synthesize clientRegistrationHandler=_clientRegistrationHandler;
-- (void).cxx_destruct;
 - (void)_handleApplicationStateChange:(id)arg1;
 - (void)_removeClient:(id)arg1;
 - (void)_addClient:(id)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)stopWaitingForClientWithIdentifier:(id)arg1 forToken:(struct NSNumber *)arg2;
-- (struct NSNumber *)waitForClientWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)stopWaitingForClientWithIdentifier:(id)arg1 forToken:(id)arg2;
+- (id)waitForClientWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)enumerateClientsWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSDictionary *clientsByIdentifier;
 - (void)dealloc;

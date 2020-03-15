@@ -17,11 +17,11 @@
     unsigned long long _type;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(retain, nonatomic) PSDataUsageStatisticsCache *statisticsCache; // @synthesize statisticsCache=_statisticsCache;
 @property(nonatomic) __weak id <PSBillingPeriodSource> billingPeriodSource; // @synthesize billingPeriodSource=_billingPeriodSource;
-- (void).cxx_destruct;
 - (id)dataUsageString;
 - (unsigned long long)dataUsage;
 - (id)initWithType:(unsigned long long)arg1 bundleID:(id)arg2 statisticsCache:(id)arg3;

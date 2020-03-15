@@ -20,8 +20,8 @@
 }
 
 + (struct CGSize)preferredSize;
-@property(nonatomic, setter=_setSelected:) _Bool _selected; // @synthesize _selected=__selected;
 - (void).cxx_destruct;
+@property(nonatomic, setter=_setSelected:) _Bool _selected; // @synthesize _selected=__selected;
 - (void)_showUnselectedView;
 - (void)_showSelectedView;
 - (void)_updateBadgeViewIfNeeded;

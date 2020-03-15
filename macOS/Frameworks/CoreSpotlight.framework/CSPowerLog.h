@@ -17,10 +17,10 @@
 
 + (id)keyNameForOperation:(long long)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cachedCount; // @synthesize cachedCount=_cachedCount;
 @property(retain, nonatomic) NSDate *lastFlushDate; // @synthesize lastFlushDate=_lastFlushDate;
 @property(retain, nonatomic) NSMutableDictionary *operationsByBundleID; // @synthesize operationsByBundleID=_operationsByBundleID;
-- (void).cxx_destruct;
 - (void)flushToPowerLog;
 - (void)_addToDictionary:(long long)arg1 bundleID:(id)arg2 itemCount:(unsigned long long)arg3;
 - (void)logWithBundleID:(id)arg1 indexOperation:(long long)arg2 itemCount:(unsigned long long)arg3;

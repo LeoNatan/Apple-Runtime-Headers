@@ -28,11 +28,11 @@
 + (id)keyPathsForValuesInvalidatingLayout;
 + (id)keyPathsForValuesAffectingAlignmentRectInsets;
 + (id)keyPathsForValuesInvalidatingDisplay;
+- (void).cxx_destruct;
 @property(getter=isHighlighted) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property long long state; // @synthesize state=_state;
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)handlePress:(id)arg1;

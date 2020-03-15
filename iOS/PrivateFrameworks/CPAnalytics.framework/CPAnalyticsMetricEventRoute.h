@@ -15,10 +15,10 @@
     NSArray *_propertiesToInclude;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *propertiesToInclude; // @synthesize propertiesToInclude=_propertiesToInclude;
 @property(readonly, nonatomic) NSString *destinationEventKey; // @synthesize destinationEventKey=_destinationEventKey;
 @property(readonly, nonatomic) NSString *destination; // @synthesize destination=_destination;
-- (void).cxx_destruct;
 - (id)initWithConfig:(id)arg1;
 
 @end

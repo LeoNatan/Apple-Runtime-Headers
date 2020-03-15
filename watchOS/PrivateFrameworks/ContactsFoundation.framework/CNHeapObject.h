@@ -16,11 +16,11 @@
     unsigned int _bytes;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int bytes; // @synthesize bytes=_bytes;
 @property(nonatomic) unsigned int count; // @synthesize count=_count;
 @property(retain, nonatomic) NSString *binary; // @synthesize binary=_binary;
 @property(retain, nonatomic) NSString *className; // @synthesize className=_className;
-- (void).cxx_destruct;
 - (id)classAndBinaryKey;
 - (id)description;
 

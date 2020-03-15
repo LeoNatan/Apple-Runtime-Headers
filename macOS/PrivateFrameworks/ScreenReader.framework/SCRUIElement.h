@@ -16,6 +16,7 @@
     BOOL _isValid;
     id _textAttributeCache;
     BOOL _disableBulkIPCRequests;
+    BOOL __forcedToBeNonPromotableByBoolAttributes;
     NSMutableSet *__supportedAttributes;
     NSMutableSet *__supportedParameterizedAttributes;
     NSString *__roleDescriptionCache;
@@ -32,6 +33,8 @@
 + (id)uiElementWithAXFElement:(id)arg1;
 + (id)uiElementWithAXElement:(struct __AXUIElement *)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
+@property(nonatomic) BOOL _forcedToBeNonPromotableByBoolAttributes; // @synthesize _forcedToBeNonPromotableByBoolAttributes=__forcedToBeNonPromotableByBoolAttributes;
 @property(retain, nonatomic) NSString *_lastKnownRole; // @synthesize _lastKnownRole=__lastKnownRole;
 @property(nonatomic) long long _lifespanCacheRefCount; // @synthesize _lifespanCacheRefCount=__lifespanCacheRefCount;
 @property(retain, nonatomic) NSMutableDictionary *_lifespanCache; // @synthesize _lifespanCache=__lifespanCache;
@@ -41,7 +44,6 @@
 @property(retain, nonatomic, setter=_setSupportedParameterizedAttributes:) NSMutableSet *_supportedParameterizedAttributes; // @synthesize _supportedParameterizedAttributes=__supportedParameterizedAttributes;
 @property(retain, nonatomic, setter=_setSupportedAttributes:) NSMutableSet *_supportedAttributes; // @synthesize _supportedAttributes=__supportedAttributes;
 @property(nonatomic) BOOL disableBulkIPCRequests; // @synthesize disableBulkIPCRequests=_disableBulkIPCRequests;
-- (void).cxx_destruct;
 - (void)clearTextAttributeCache;
 - (void)setLastSelectedTextMarkerRange:(id)arg1;
 - (id)lastSelectedTextMarkerRange;

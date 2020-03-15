@@ -15,9 +15,9 @@
 }
 
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property(copy, nonatomic) HMDDeviceHandle *preferredHandle; // @synthesize preferredHandle=_preferredHandle;
 @property(readonly, nonatomic) HMDDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (id)remoteDestinationString;
 - (id)description;
 - (id)debugDescription;

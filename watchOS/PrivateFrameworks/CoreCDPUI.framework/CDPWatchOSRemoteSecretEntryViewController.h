@@ -19,8 +19,8 @@
     id <CDPWatchOSRemoteSecretEntryDelegate> _delegate;
 }
 
-@property(readonly, nonatomic) CDPRemoteDeviceSecretValidator *validator; // @synthesize validator=_validator;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDPRemoteDeviceSecretValidator *validator; // @synthesize validator=_validator;
 - (id)_headerStringForDevice:(id)arg1 localDeviceClass:(id)arg2;
 - (void)updateHeaderForDevice:(id)arg1;
 - (void)enableUserInteractionAndStopSpinner;

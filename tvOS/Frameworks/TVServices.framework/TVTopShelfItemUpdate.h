@@ -15,14 +15,16 @@
     NSString *_itemIdentifier;
     TVTopShelfAction *_playAction;
     TVTopShelfAction *_displayAction;
+    TVTopShelfAction *_addToLibraryAction;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)new;
+- (void).cxx_destruct;
+@property(retain, nonatomic) TVTopShelfAction *addToLibraryAction; // @synthesize addToLibraryAction=_addToLibraryAction;
 @property(retain, nonatomic) TVTopShelfAction *displayAction; // @synthesize displayAction=_displayAction;
 @property(retain, nonatomic) TVTopShelfAction *playAction; // @synthesize playAction=_playAction;
 @property(readonly, nonatomic) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

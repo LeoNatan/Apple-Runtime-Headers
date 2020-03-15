@@ -14,11 +14,11 @@
     UIView *_destinationOverView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *destinationOverView; // @synthesize destinationOverView=_destinationOverView;
 @property(readonly, nonatomic) UIView *destinationOutView; // @synthesize destinationOutView=_destinationOutView;
 @property(readonly, nonatomic) UIView *destinationOutContainerView; // @synthesize destinationOutContainerView=_destinationOutContainerView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)_setContinuousCornerRadius:(double)arg1;
 - (double)_continuousCornerRadius;
 - (void)_setCornerRadius:(double)arg1;

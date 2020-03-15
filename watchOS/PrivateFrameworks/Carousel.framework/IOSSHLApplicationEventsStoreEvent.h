@@ -15,10 +15,10 @@
     NSDate *_date;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) unsigned int reason; // @synthesize reason=_reason;
 @property(nonatomic) unsigned int eventType; // @synthesize eventType=_eventType;
-- (void).cxx_destruct;
 
 @end
 

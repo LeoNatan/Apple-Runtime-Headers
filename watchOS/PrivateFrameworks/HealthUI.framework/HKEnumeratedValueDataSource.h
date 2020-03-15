@@ -14,9 +14,9 @@
     CDUnknownBlockType _userInfoCreationBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType userInfoCreationBlock; // @synthesize userInfoCreationBlock=_userInfoCreationBlock;
 @property(retain, nonatomic) NSArray *enumeratedValueOrder; // @synthesize enumeratedValueOrder=_enumeratedValueOrder;
-- (void).cxx_destruct;
 - (id)_enumeratedValuesToIndices:(id)arg1 mapping:(id)arg2;
 - (id)_enumeratedValueOrderMapping;
 - (void)_handleSamples:(id)arg1 blockStart:(id)arg2 blockEnd:(id)arg3 intervalComponents:(id)arg4 completion:(CDUnknownBlockType)arg5;

@@ -35,6 +35,7 @@
     double _percentageOfCurrentStepRemainingAtRequestStart;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEOApplicationAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 @property(nonatomic) unsigned int maxAlternateRoutesCount; // @synthesize maxAlternateRoutesCount=_maxAlternateRoutesCount;
 @property(nonatomic) double debugTimeWindowDuration; // @synthesize debugTimeWindowDuration=_debugTimeWindowDuration;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) GEOComposedRoute *route; // @synthesize route=_route;
 @property(retain, nonatomic) NSString *requestingAppIdentifier; // @synthesize requestingAppIdentifier=_requestingAppIdentifier;
 @property(nonatomic) __weak id <GEOETAUpdaterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_updateRouteWithETATrafficUpdateResponse:(id)arg1;
 - (_Bool)updateRouteWithETATrafficUpdateResponse:(id)arg1 step:(id)arg2 percentOfStepRemaining:(double)arg3;
 - (id)routesForETAUpdateRequest;

@@ -4,17 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <VideosUI/VUILibraryFetchControllerViewController.h>
+#import <UIKit/UIViewController.h>
 
 #import <VideosUI/UITableViewDataSource-Protocol.h>
 #import <VideosUI/UITableViewDelegate-Protocol.h>
 #import <VideosUI/VUIDownloadDataSourceDelegate-Protocol.h>
 #import <VideosUI/VUIDownloadEntityTableViewCellDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, UIBarButtonItem, UITableView, VUIDownloadDataSource, VUIDownloadEntityTableViewCell;
+@class NSMutableArray, NSString, UIAlertController, UIBarButtonItem, UITableView, VUIDownloadDataSource, VUIDownloadEntityTableViewCell, VUIViewControllerContentPresenter;
 
 __attribute__((visibility("hidden")))
-@interface VUIDownloadViewController : VUILibraryFetchControllerViewController <UITableViewDataSource, UITableViewDelegate, VUIDownloadDataSourceDelegate, VUIDownloadEntityTableViewCellDelegate>
+@interface VUIDownloadViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, VUIDownloadDataSourceDelegate, VUIDownloadEntityTableViewCellDelegate>
 {
     UITableView *_downloadEntitiesTableView;
     VUIDownloadDataSource *_downloadManager;
@@ -23,10 +23,15 @@ __attribute__((visibility("hidden")))
     UIBarButtonItem *_rightBarButtonItem;
     UIBarButtonItem *_leftBarButtonItem;
     UIBarButtonItem *_backBarButtonItem;
+    UIAlertController *_alertController;
     NSMutableArray *_assetControllersToRemove;
+    VUIViewControllerContentPresenter *_contentPresenter;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) VUIViewControllerContentPresenter *contentPresenter; // @synthesize contentPresenter=_contentPresenter;
 @property(retain, nonatomic) NSMutableArray *assetControllersToRemove; // @synthesize assetControllersToRemove=_assetControllersToRemove;
+@property(retain, nonatomic) UIAlertController *alertController; // @synthesize alertController=_alertController;
 @property(retain, nonatomic) UIBarButtonItem *backBarButtonItem; // @synthesize backBarButtonItem=_backBarButtonItem;
 @property(retain, nonatomic) UIBarButtonItem *leftBarButtonItem; // @synthesize leftBarButtonItem=_leftBarButtonItem;
 @property(retain, nonatomic) UIBarButtonItem *rightBarButtonItem; // @synthesize rightBarButtonItem=_rightBarButtonItem;
@@ -34,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *downloadEntities; // @synthesize downloadEntities=_downloadEntities;
 @property(retain, nonatomic) VUIDownloadDataSource *downloadManager; // @synthesize downloadManager=_downloadManager;
 @property(retain, nonatomic) UITableView *downloadEntitiesTableView; // @synthesize downloadEntitiesTableView=_downloadEntitiesTableView;
-- (void).cxx_destruct;
 - (void)_updateMediaEntitiesWithNewDownloads:(id)arg1;
 - (void)_exitEditingMode;
 - (id)_configureAlertControllerForIndexPath:(id)arg1;
@@ -52,11 +56,12 @@ __attribute__((visibility("hidden")))
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;
-- (id)initWithMediaLibrary:(id)arg1;
+- (id)initWithDataSource:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

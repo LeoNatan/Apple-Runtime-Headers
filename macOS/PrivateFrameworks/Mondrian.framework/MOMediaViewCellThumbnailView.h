@@ -21,8 +21,8 @@
     id <MOMediaViewCellThumbnailViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <MOMediaViewCellThumbnailViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MOMediaViewCellThumbnailViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)accessibilityRoleDescription;
 - (id)accessibilityLabel;
 - (id)accessibilityIdentifier;

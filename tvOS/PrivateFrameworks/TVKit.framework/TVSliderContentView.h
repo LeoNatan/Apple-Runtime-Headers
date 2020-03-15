@@ -15,12 +15,12 @@
     struct CGRect _rightDividerFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect rightDividerFrame; // @synthesize rightDividerFrame=_rightDividerFrame;
 @property(nonatomic) struct CGRect leftDividerFrame; // @synthesize leftDividerFrame=_leftDividerFrame;
 @property(readonly, nonatomic) UIView *rightContentView; // @synthesize rightContentView=_rightContentView;
 @property(readonly, nonatomic) UIView *middleContentView; // @synthesize middleContentView=_middleContentView;
 @property(readonly, nonatomic) UIView *leftContentView; // @synthesize leftContentView=_leftContentView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setContentScaleFactor:(double)arg1;
 - (id)initWithCoder:(id)arg1;

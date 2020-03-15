@@ -7,32 +7,31 @@
 #import <VideosUI/VUILibraryStackViewController.h>
 
 #import <VideosUI/UICollectionViewDataSource-Protocol.h>
-#import <VideosUI/VUIMediaEntitiesFetchControllerDelegate-Protocol.h>
 #import <VideosUI/VUIProductLockupViewDelegate-Protocol.h>
 #import <VideosUI/VUIRoundButtonDelegate-Protocol.h>
 
-@class NSString, VUIDownloadButton, VUILibraryProductInfoView, VUIMediaEntitiesFetchController, VUIMediaItem, VUIProductLockupView;
+@class NSString, VUIDownloadButton, VUILibraryProductInfoView, VUIMediaItem, VUIProductLockupView, VUIViewControllerContentPresenter;
 
 __attribute__((visibility("hidden")))
-@interface VUILibraryProductViewController : VUILibraryStackViewController <UICollectionViewDataSource, VUIMediaEntitiesFetchControllerDelegate, VUIProductLockupViewDelegate, VUIRoundButtonDelegate>
+@interface VUILibraryProductViewController : VUILibraryStackViewController <UICollectionViewDataSource, VUIProductLockupViewDelegate, VUIRoundButtonDelegate>
 {
     VUIMediaItem *_mediaItem;
-    VUIMediaEntitiesFetchController *_fetchController;
     VUIProductLockupView *_productLockupView;
     VUILibraryProductInfoView *_productInfoView;
     VUIDownloadButton *_downloadButton;
+    VUIViewControllerContentPresenter *_contentPresenter;
 }
 
-@property(retain, nonatomic) VUIDownloadButton *downloadButton; // @synthesize downloadButton=_downloadButton;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VUIViewControllerContentPresenter *contentPresenter; // @synthesize contentPresenter=_contentPresenter;
+@property(retain, nonatomic) VUIDownloadButton *downloadButton; // @synthesize downloadButton=_downloadButton;
 - (void)reportMetricsPageEvent;
+- (void)_updateAfterContentWasManuallyDeleted:(_Bool)arg1;
 - (id)_productSectionForHeader:(id)arg1 data:(id)arg2 group:(id)arg3 maxItemCount:(unsigned long long)arg4;
 - (id)_productInfoViewWithMediaItem:(id)arg1;
 - (id)_productLockupViewWithMediaItem:(id)arg1;
 - (void)didSelectButton:(id)arg1;
 - (void)contentDescriptionExpanded;
-- (void)controller:(id)arg1 fetchRequests:(id)arg2 didFailWithError:(id)arg3;
-- (void)controller:(id)arg1 fetchRequests:(id)arg2 didCompleteWithResult:(id)arg3;
 - (void)traitCollectionDidChange:(id)arg1;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
@@ -41,9 +40,10 @@ __attribute__((visibility("hidden")))
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)start;
 - (void)configureWithCollectionView:(id)arg1;
+- (void)viewWillLayoutSubviews;
+- (void)loadView;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithMediaLibrary:(id)arg1;
 - (id)initWithMediaItem:(id)arg1;
 
 // Remaining properties

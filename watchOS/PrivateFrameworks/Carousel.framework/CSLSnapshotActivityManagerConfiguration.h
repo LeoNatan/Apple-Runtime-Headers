@@ -18,12 +18,12 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) CSLDuetSnapshotBudgetController *budgetController; // @synthesize budgetController=_budgetController;
 @property(retain, nonatomic) CSLDuetMeteringManager *meteringManager; // @synthesize meteringManager=_meteringManager;
 @property(retain, nonatomic) _DASActivityGroup *activityGroup; // @synthesize activityGroup=_activityGroup;
 @property(retain, nonatomic) id <_DASActivityGroupScheduler> scheduler; // @synthesize scheduler=_scheduler;
-- (void).cxx_destruct;
 
 @end
 

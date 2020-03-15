@@ -20,9 +20,9 @@
 + (BOOL)gatherJunkMailUsageCounts;
 + (id)sharedInstance;
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *referenceDate; // @synthesize referenceDate=_referenceDate;
 @property(readonly, nonatomic) NSCalendar *gregorianCalendar; // @synthesize gregorianCalendar=_gregorianCalendar;
-- (void).cxx_destruct;
 - (void)incrementCountForKey:(id)arg1 byCount:(unsigned long long)arg2;
 - (void)incrementCountForKey:(id)arg1;
 - (void)removeCountForKey:(id)arg1;

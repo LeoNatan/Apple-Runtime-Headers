@@ -17,9 +17,9 @@
 }
 
 + (id)migratedIdentifierForLeafIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsWebClips; // @synthesize allowsWebClips=_allowsWebClips;
 @property(readonly, nonatomic) id <SBIconModelApplicationDataSource> applicationDataSource; // @synthesize applicationDataSource=_applicationDataSource;
-- (void).cxx_destruct;
 - (id)modernizeRootArchive:(id)arg1;
 - (_Bool)importState:(id)arg1;
 - (id)exportFlattenedState:(_Bool)arg1 includeMissingIcons:(_Bool)arg2;

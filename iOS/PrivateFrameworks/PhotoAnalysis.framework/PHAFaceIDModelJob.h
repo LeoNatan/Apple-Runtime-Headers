@@ -18,12 +18,12 @@
     NSProgress *_progress;
 }
 
+- (void).cxx_destruct;
 @property _Bool done; // @synthesize done=_done;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *backgroundQueue; // @synthesize backgroundQueue=_backgroundQueue;
 @property unsigned long long jobScenario; // @synthesize jobScenario=_jobScenario;
 @property(retain, nonatomic) PHAVisionServiceFaceProcessingWorker *faceProcessingWorker; // @synthesize faceProcessingWorker=_faceProcessingWorker;
-- (void).cxx_destruct;
 - (_Bool)stopProcessingOnWorker:(id)arg1 withError:(id *)arg2;
 - (_Bool)startProcessingOnWorker:(id)arg1 withError:(id *)arg2;
 - (float)completionScore;

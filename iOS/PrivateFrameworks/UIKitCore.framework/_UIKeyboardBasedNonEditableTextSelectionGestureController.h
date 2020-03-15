@@ -11,7 +11,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (_Bool)shouldAddForceGesture;
 - (Class)textInteractionClass;
 
 @end

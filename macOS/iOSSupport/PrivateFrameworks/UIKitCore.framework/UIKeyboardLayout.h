@@ -11,7 +11,7 @@
 #import <UIKitCore/_UIScreenEdgePanRecognizerDelegate-Protocol.h>
 #import <UIKitCore/_UIViewRepresentingKeyboardLayout-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString, NSUUID, UIKBCadenceMonitor, UIKBScreenTraits, UIKBTextEditingTraits, UIKeyboardTaskQueue, UIKeyboardTypingStyleEstimator, UITextInputTraits, _UIKBRTFingerDetection, _UIKBRTRecognizer, _UIKBRTTouchDrifting, _UIKBRTTouchVelocities, _UIScreenEdgePanRecognizer;
+@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString, NSUUID, UIEvent, UIKBCadenceMonitor, UIKBScreenTraits, UIKBTextEditingTraits, UIKeyboardTaskQueue, UIKeyboardTypingStyleEstimator, UITextInputTraits, _UIKBRTFingerDetection, _UIKBRTRecognizer, _UIKBRTTouchDrifting, _UIKBRTTouchVelocities, _UIScreenEdgePanRecognizer;
 @protocol OS_dispatch_queue;
 
 @interface UIKeyboardLayout : UIView <_UIKBRTRecognizerDelegate, _UIKBRTTouchDriftingDelegate, _UIViewRepresentingKeyboardLayout, _UIScreenEdgePanRecognizerDelegate>
@@ -26,6 +26,7 @@
     BOOL _disableInteraction;
     UIKeyboardTaskQueue *_taskQueue;
     UIKeyboardTypingStyleEstimator *_typingStyleEstimator;
+    UIEvent *_currentTouchDownEvent;
     BOOL hideKeysUnderIndicator;
     BOOL _hasPreferredHeight;
     BOOL _isExecutingDeferredTouchTasks;
@@ -173,6 +174,7 @@
 - (void)commitTouches:(id)arg1 executionContext:(id)arg2;
 - (void)forceUpdatesForCommittedTouch;
 - (void)commitTouchUUIDs:(id)arg1;
+- (void)commitTouchUUIDs:(id)arg1 cancelInsteadOfUp:(BOOL)arg2;
 - (id)touchUUIDsToCommitBeforeTouchUUID:(id)arg1;
 - (void)_removeTouchesFromProcessing:(id)arg1;
 - (void)touchesEstimatedPropertiesUpdated:(id)arg1;
@@ -246,6 +248,7 @@
 @property(readonly, nonatomic) long long idiom;
 @property(readonly, nonatomic) long long orientation;
 @property(retain, nonatomic) UIKeyboardTaskQueue *taskQueue;
+@property(readonly, nonatomic) UIEvent *currentTouchDownEvent;
 @property(readonly, nonatomic) UIKeyboardTypingStyleEstimator *typingStyleEstimator;
 - (void)willMoveToWindow:(id)arg1;
 - (void)dealloc;

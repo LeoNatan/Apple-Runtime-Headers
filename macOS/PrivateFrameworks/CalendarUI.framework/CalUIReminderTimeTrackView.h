@@ -17,10 +17,10 @@
     NSMutableDictionary *_markLabels;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *markLabels; // @synthesize markLabels=_markLabels;
 @property(retain) NSCalendar *calendar; // @synthesize calendar=_calendar;
 @property BOOL enclosingScrollViewInInteractiveScroll; // @synthesize enclosingScrollViewInInteractiveScroll=_enclosingScrollViewInInteractiveScroll;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (double)_documentWidthForDateInterval:(id)arg1;
 - (double)_offsetAtDate:(id)arg1;

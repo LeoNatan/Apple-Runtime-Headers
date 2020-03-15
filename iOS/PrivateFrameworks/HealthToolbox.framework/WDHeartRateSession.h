@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_heartRateRange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *heartRateRange; // @synthesize heartRateRange=_heartRateRange;
 @property(retain, nonatomic) HKSample *sample; // @synthesize sample=_sample;
 @property(nonatomic) long long sessionType; // @synthesize sessionType=_sessionType;
-- (void).cxx_destruct;
 - (id)annotationColors;
 - (id)overlayColor;
 - (long long)distributionStyle;

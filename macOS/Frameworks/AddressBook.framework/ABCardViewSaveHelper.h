@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class ABCommandExecutor, AKCardViewDataSource, CNContactStore, NSString;
+@class ABCommandExecutor, AKCardViewDataSource, CNContactStore, CNContainer;
 @protocol ABCardViewSaveHelperDelegate;
 
 @interface ABCardViewSaveHelper : NSObject
@@ -14,27 +14,29 @@
     BOOL _isContactNewlyCreated;
     BOOL _isSaving;
     BOOL _hasSaved;
+    BOOL _ignoresGuardianRestrictions;
     CNContactStore *_contactStore;
     AKCardViewDataSource *_dataSource;
+    CNContainer *_parentContainer;
     ABCommandExecutor *_commandExecutor;
     id <ABCardViewSaveHelperDelegate> _delegate;
-    NSString *_containerIdentifier;
 }
 
-@property(nonatomic) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
+- (void).cxx_destruct;
+@property(nonatomic) BOOL ignoresGuardianRestrictions; // @synthesize ignoresGuardianRestrictions=_ignoresGuardianRestrictions;
 @property(nonatomic) __weak id <ABCardViewSaveHelperDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL hasSaved; // @synthesize hasSaved=_hasSaved;
 @property(nonatomic) BOOL isSaving; // @synthesize isSaving=_isSaving;
 @property(nonatomic) BOOL isContactNewlyCreated; // @synthesize isContactNewlyCreated=_isContactNewlyCreated;
 @property(retain, nonatomic) ABCommandExecutor *commandExecutor; // @synthesize commandExecutor=_commandExecutor;
+@property(retain, nonatomic) CNContainer *parentContainer; // @synthesize parentContainer=_parentContainer;
 @property(retain, nonatomic) AKCardViewDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-- (void).cxx_destruct;
 - (id)makeSetImageCommandForContact:(id)arg1;
 - (id)makeLinkCommandForContacts:(id)arg1 linkIdentifier:(id)arg2;
 - (id)makeUpdateCommandForUpdatedContacts:(id)arg1;
 - (id)makeDeleteCommandForDeletedContacts:(id)arg1;
-- (id)makeAddCommandForContacts:(id)arg1 accountIdentifier:(id)arg2 personInserted:(BOOL)arg3;
+- (id)makeAddCommandForContacts:(id)arg1 toContainer:(id)arg2;
 - (void)executeCommand:(id)arg1;
 - (id)propertiesToSetOnNewPerson;
 - (id)contactByApplyingChangesFromContact:(id)arg1 toContact:(id)arg2;

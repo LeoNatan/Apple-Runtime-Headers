@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (unsigned int)maxParametersCount;
-@property(readonly, nonatomic) NSArray *parameters; // @synthesize parameters=_parameters;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *parameters; // @synthesize parameters=_parameters;
 - (void)callCompletion:(CDUnknownBlockType)arg1 onQueue:(id)arg2 withResult:(id)arg3 error:(id)arg4;
 - (id)eventsForEventLookupResponses:(id)arg1 usingIdentifierToEventMap:(id)arg2;
 - (id)spatialEventLookupResultsFromResponse:(id)arg1;

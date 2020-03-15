@@ -10,7 +10,7 @@
 
 @interface NSDictionary (FPAuxData) <FPAuxDataType>
 @property(readonly, nonatomic) id jsonRepresentation;
-- (struct NSDictionary *)mergeWithData:(struct NSDictionary *)arg1;
+- (id)mergeWithData:(id)arg1;
 - (id)mergeAuxDatum:(id)arg1 withDatum:(id)arg2;
 @property(readonly, nonatomic) BOOL isContainer;
 @end

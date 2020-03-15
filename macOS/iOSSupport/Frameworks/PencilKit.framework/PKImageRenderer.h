@@ -18,12 +18,12 @@
 }
 
 + (void)_fuzzTestUnzippedData:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL synchronous; // @synthesize synchronous=_synchronous;
 @property(nonatomic) long long cancelCount; // @synthesize cancelCount=_cancelCount;
 @property(retain, nonatomic) PKMetalRendererController *rendererController; // @synthesize rendererController=_rendererController;
 @property(readonly, nonatomic) double scale; // @synthesize scale=_scale;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
-- (void).cxx_destruct;
 @property(nonatomic) BOOL invertColors;
 - (void)buildStrokeRenderCacheForDrawing:(id)arg1;
 - (void)resume;

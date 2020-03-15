@@ -22,9 +22,9 @@
     CDUnknownBlockType _thumbnailsFetchCompletionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType thumbnailsFetchCompletionBlock; // @synthesize thumbnailsFetchCompletionBlock=_thumbnailsFetchCompletionBlock;
 @property(copy, nonatomic) CDUnknownBlockType perThumbnailCompletionBlock; // @synthesize perThumbnailCompletionBlock=_perThumbnailCompletionBlock;
-- (void).cxx_destruct;
 - (void)_perItemCompletionBlockFor:(id)arg1 thumbnail:(id)arg2 contentType:(id)arg3 error:(id)arg4;
 - (void)operation:(id)arg1 didReceiveProgressInfo:(id)arg2 error:(id)arg3;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;

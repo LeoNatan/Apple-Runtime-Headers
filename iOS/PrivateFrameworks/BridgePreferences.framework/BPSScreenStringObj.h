@@ -17,11 +17,11 @@
 }
 
 + (id)screenStringsWithArray:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *size448h; // @synthesize size448h=_size448h;
 @property(copy, nonatomic) NSString *size394h; // @synthesize size394h=_size394h;
 @property(copy, nonatomic) NSString *regular; // @synthesize regular=_regular;
 @property(copy, nonatomic) NSString *compact; // @synthesize compact=_compact;
-- (void).cxx_destruct;
 - (id)initWithArray:(id)arg1;
 
 @end

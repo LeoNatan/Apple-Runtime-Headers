@@ -36,6 +36,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isCustomResponse; // @synthesize isCustomResponse=_isCustomResponse;
 @property(nonatomic) _Bool isApricotDevice; // @synthesize isApricotDevice=_isApricotDevice;
 @property(retain, nonatomic) NSString *lang; // @synthesize lang=_lang;
@@ -48,7 +49,6 @@
 @property(nonatomic) unsigned int replyTextId; // @synthesize replyTextId=_replyTextId;
 @property(nonatomic) unsigned int responseClassId; // @synthesize responseClassId=_responseClassId;
 @property(nonatomic) unsigned int modelId; // @synthesize modelId=_modelId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

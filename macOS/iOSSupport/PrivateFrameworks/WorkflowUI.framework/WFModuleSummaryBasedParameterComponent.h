@@ -22,6 +22,7 @@
 
 + (id)singleButtonSlotForParameter:(id)arg1 state:(id)arg2;
 + (id)newWithParameter:(id)arg1 state:(id)arg2 updateBlock:(CDUnknownBlockType)arg3 options:(struct WFParameterComponentOptions)arg4 variableProvider:(id)arg5 variableUIDelegate:(id)arg6 navigationContext:(id)arg7 labelsToAlignTo:(id)arg8;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <WFComponentNavigationContext> navigationContext; // @synthesize navigationContext=_navigationContext;
 @property(readonly, nonatomic) __weak id <WFVariableUIDelegate> variableUIDelegate; // @synthesize variableUIDelegate=_variableUIDelegate;
 @property(readonly, nonatomic) __weak id <WFVariableProvider> variableProvider; // @synthesize variableProvider=_variableProvider;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) id <WFParameterState> state; // @synthesize state=_state;
 @property(readonly, nonatomic) WFModuleSummaryBasedParameterComponentStateWriter *stateWriter; // @synthesize stateWriter=_stateWriter;
 - (id)parameter;
-- (void).cxx_destruct;
 
 @end
 

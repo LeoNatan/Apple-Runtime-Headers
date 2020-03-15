@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     CKOperationMMCSRequestOptions *_MMCSRequestOptions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKOperationMMCSRequestOptions *MMCSRequestOptions; // @synthesize MMCSRequestOptions=_MMCSRequestOptions;
 @property(nonatomic) unsigned long long networkServiceType; // @synthesize networkServiceType=_networkServiceType;
 @property(retain, nonatomic) C2MetricOptions *metricOptions; // @synthesize metricOptions=_metricOptions;
@@ -55,7 +56,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *topmostParentOperationID; // @synthesize topmostParentOperationID=_topmostParentOperationID;
 @property(nonatomic) long long containerEnvironment; // @synthesize containerEnvironment=_containerEnvironment;
 @property(nonatomic) long long databaseScope; // @synthesize databaseScope=_databaseScope;
-- (void).cxx_destruct;
 - (id)MMCSOptions;
 - (BOOL)usesBackgroundSession;
 - (id)description;

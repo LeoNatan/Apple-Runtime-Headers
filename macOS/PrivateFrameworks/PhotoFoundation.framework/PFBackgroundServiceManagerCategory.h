@@ -20,9 +20,9 @@
 }
 
 + (id)categoryWithName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSString *name; // @synthesize name=_name;
 @property(readonly) id uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)runNextWorkContext;
 - (void)removeWorkContext:(id)arg1;
 - (void)addWorkContext:(id)arg1;

@@ -12,6 +12,7 @@
 
 @interface ASDAppUsageStats : NSObject <NSCopying>
 {
+    _Bool _isExtensionUsage;
     NSString *_bundleID;
     NSString *_bundleVersion;
     NSDate *_endDate;
@@ -26,6 +27,7 @@
     long long _usageTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int usageCount; // @synthesize usageCount=_usageCount;
 @property(nonatomic) long long usageTime; // @synthesize usageTime=_usageTime;
 @property(copy, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
@@ -33,12 +35,12 @@
 @property(copy, nonatomic) NSDate *lastEventEndDate; // @synthesize lastEventEndDate=_lastEventEndDate;
 @property(copy, nonatomic) NSString *itemName; // @synthesize itemName=_itemName;
 @property(copy, nonatomic) NSNumber *itemID; // @synthesize itemID=_itemID;
+@property(nonatomic) _Bool isExtensionUsage; // @synthesize isExtensionUsage=_isExtensionUsage;
 @property(copy, nonatomic) NSNumber *evid; // @synthesize evid=_evid;
 @property(nonatomic) long long eventTime; // @synthesize eventTime=_eventTime;
 @property(copy, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(copy, nonatomic) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)_formatTimeInternal:(long long)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

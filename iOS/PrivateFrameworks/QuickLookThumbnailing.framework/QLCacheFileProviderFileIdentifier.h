@@ -19,9 +19,9 @@
 + (_Bool)supportsSecureCoding;
 + (Class)versionedFileIdentifierClass;
 + (id)knownFileProviderIdentifiersSoFar;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
 @property(readonly, copy) NSString *fileProviderIdentifier; // @synthesize fileProviderIdentifier=_fileProviderIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

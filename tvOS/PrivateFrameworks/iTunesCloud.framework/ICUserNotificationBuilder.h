@@ -17,9 +17,9 @@
     double _timeoutInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double timeoutInterval; // @synthesize timeoutInterval=_timeoutInterval;
 @property(nonatomic) long long alertLevel; // @synthesize alertLevel=_alertLevel;
-- (void).cxx_destruct;
 - (void)_setBoolValue:(_Bool)arg1 forKey:(struct __CFString *)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(copy, nonatomic) NSString *title;

@@ -45,10 +45,6 @@ struct CLKUIQuadSize {
     int height;
 };
 
-struct NSNumber {
-    Class _field1;
-};
-
 struct UIEdgeInsets {
     float top;
     float left;

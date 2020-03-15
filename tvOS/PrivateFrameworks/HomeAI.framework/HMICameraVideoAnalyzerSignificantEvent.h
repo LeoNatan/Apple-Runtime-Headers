@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *annotationScores; // @synthesize annotationScores=_annotationScores;
 @property(readonly) HMICameraVideoFrame *videoFrame; // @synthesize videoFrame=_videoFrame;
 @property(readonly) long long events; // @synthesize events=_events;
-- (void).cxx_destruct;
 - (long long)confidenceThatEventOccurred:(long long)arg1;
 - (id)initWithEvents:(long long)arg1 annotationScores:(id)arg2 videoFrame:(id)arg3;
 - (unsigned long long)hash;

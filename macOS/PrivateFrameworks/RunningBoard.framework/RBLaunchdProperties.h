@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)propertiesForPid:(int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *underlyingAssertion; // @synthesize underlyingAssertion=_underlyingAssertion;
 @property(readonly, nonatomic) BOOL doesOverrideManagement; // @synthesize doesOverrideManagement=_doesOverrideManagement;
 @property(readonly, nonatomic) int requestedJetsamPriority; // @synthesize requestedJetsamPriority=_requestedJetsamPriority;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isMultiInstance) BOOL multiInstance; // @synthesize multiInstance=_multiInstance;
 @property(readonly, nonatomic) int hostPid; // @synthesize hostPid=_hostPid;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isDaemon) BOOL daemon;
 @property(readonly, nonatomic, getter=isXPCService) BOOL XPCService;
 - (id)_initDaemonWithProperties:(id)arg1 path:(id)arg2;

@@ -15,10 +15,10 @@
     UIColor *_bezelTextColor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *bezelTextColor; // @synthesize bezelTextColor=_bezelTextColor;
 @property(readonly, nonatomic) long long theme; // @synthesize theme=_theme;
 @property(readonly, nonatomic) double bezelLabelCircularRadius; // @synthesize bezelLabelCircularRadius=_bezelLabelCircularRadius;
-- (void).cxx_destruct;
 - (void)_setView:(id)arg1 forSideAtIndex:(long long)arg2;
 @property(readonly, nonatomic) double currentBezelTextWidth;
 - (void)setBezelTextColor:(id)arg1;

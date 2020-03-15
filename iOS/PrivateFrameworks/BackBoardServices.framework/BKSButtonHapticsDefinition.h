@@ -18,9 +18,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)definitionForHomeButton;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool representsHomeButton; // @synthesize representsHomeButton=_representsHomeButton;
 @property(readonly, nonatomic, getter=_BSSettings) BSSettings *BSSettings; // @synthesize BSSettings=_settings;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)updateFromDefinition:(id)arg1 withChangeInspectorBlock:(CDUnknownBlockType)arg2;

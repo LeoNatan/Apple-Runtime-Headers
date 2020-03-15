@@ -18,11 +18,11 @@
     CAContext *_context;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAContext *context; // @synthesize context=_context;
 @property(nonatomic) unsigned int slotID; // @synthesize slotID=_slotID;
 @property(retain, nonatomic) UIImage *snapshotImage; // @synthesize snapshotImage=_snapshotImage;
 @property(nonatomic) __weak CSLFieldOfIconsViewController *fieldOfIconsViewController; // @synthesize fieldOfIconsViewController=_fieldOfIconsViewController;
-- (void).cxx_destruct;
 - (void)calendarIconSource:(id)arg1 updatedIcon:(id)arg2 circularIcon:(id)arg3;
 - (CDStruct_cbf5dcb2)generateSnapshot;
 - (void)invalidateSnapshot;

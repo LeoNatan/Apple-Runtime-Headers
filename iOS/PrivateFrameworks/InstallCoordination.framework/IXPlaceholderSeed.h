@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isPlugin; // @synthesize isPlugin=_isPlugin;
 @property(nonatomic) unsigned long long installType; // @synthesize installType=_installType;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(copy, nonatomic) NSString *bundleName; // @synthesize bundleName=_bundleName;
-- (void).cxx_destruct;
 - (Class)clientPromiseClass;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

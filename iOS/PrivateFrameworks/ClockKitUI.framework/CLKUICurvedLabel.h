@@ -40,6 +40,7 @@
     double _animationAlpha;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double animationAlpha; // @synthesize animationAlpha=_animationAlpha;
 @property(nonatomic) __weak UIView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) double imagePadding; // @synthesize imagePadding=_imagePadding;
@@ -50,7 +51,6 @@
 @property(nonatomic) double centerAngle; // @synthesize centerAngle=_centerAngle;
 @property(nonatomic) _Bool interior; // @synthesize interior=_interior;
 @property(nonatomic) double circleRadius; // @synthesize circleRadius=_circleRadius;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_enumerateTransforms:(_Bool)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)_transformForImage:(CDUnknownBlockType)arg1;

@@ -17,11 +17,11 @@
     CUISBulletinActionMenu *_actionMenu;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CUISBulletinActionMenu *actionMenu; // @synthesize actionMenu=_actionMenu;
 @property(retain, nonatomic) CUISBulletinClientFactory *factory; // @synthesize factory=_factory;
 @property(retain, nonatomic) NSDictionary *customInfo; // @synthesize customInfo=_customInfo;
 @property(retain, nonatomic) UIViewController<CUISBulletinQuickLongLook> *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (id)initWithViewController:(id)arg1 customInfo:(id)arg2 factory:(id)arg3;
 
 @end

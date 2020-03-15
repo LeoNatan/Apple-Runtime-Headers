@@ -11,8 +11,8 @@
     NSObject *_target;
 }
 
-@property __weak NSObject *target; // @synthesize target=_target;
 - (void).cxx_destruct;
+@property __weak NSObject *target; // @synthesize target=_target;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)initWithTarget:(id)arg1;
 

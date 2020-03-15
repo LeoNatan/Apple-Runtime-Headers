@@ -38,6 +38,7 @@
     NSString *_listPriority;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *listPriority; // @synthesize listPriority=_listPriority;
 @property(copy, nonatomic) NSString *backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(copy, nonatomic) NSString *summaryFormat; // @synthesize summaryFormat=_summaryFormat;
@@ -64,7 +65,6 @@
 @property(nonatomic) _Bool hasCustomSilenceAction; // @synthesize hasCustomSilenceAction=_hasCustomSilenceAction;
 @property(nonatomic) _Bool hasCustomDismissAction; // @synthesize hasCustomDismissAction=_hasCustomDismissAction;
 @property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

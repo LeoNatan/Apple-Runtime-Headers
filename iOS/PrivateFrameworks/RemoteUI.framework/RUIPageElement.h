@@ -13,8 +13,8 @@
     RUIPage *_page;
 }
 
-@property(nonatomic) __weak RUIPage *page; // @synthesize page=_page;
 - (void).cxx_destruct;
+@property(nonatomic) __weak RUIPage *page; // @synthesize page=_page;
 @property(nonatomic, getter=isLoading) _Bool loading;
 @property(copy, nonatomic) NSString *title;
 - (id)staticValues;

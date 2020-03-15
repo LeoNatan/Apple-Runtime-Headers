@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     long long _alignment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(nonatomic) double interitemSpace; // @synthesize interitemSpace=_interitemSpace;
 @property(nonatomic) double totalWidth; // @synthesize totalWidth=_totalWidth;
 @property(retain, nonatomic) NSMutableArray *buttonItems; // @synthesize buttonItems=_buttonItems;
-- (void).cxx_destruct;
 - (double)offsetForItem:(unsigned long long)arg1;
 - (void)setItemWidth:(double)arg1;
 - (void)addItem:(id)arg1;

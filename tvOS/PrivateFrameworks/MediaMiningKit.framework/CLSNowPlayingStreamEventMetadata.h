@@ -20,13 +20,13 @@
     NSString *_source;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *source; // @synthesize source=_source;
 @property(copy, nonatomic) NSSet *genres; // @synthesize genres=_genres;
 @property(retain, nonatomic) NSNumber *durationInSeconds; // @synthesize durationInSeconds=_durationInSeconds;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *artist; // @synthesize artist=_artist;
 @property(copy, nonatomic) NSString *album; // @synthesize album=_album;
-- (void).cxx_destruct;
 - (_Bool)isEqualToEventMetadata:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

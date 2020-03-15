@@ -33,10 +33,10 @@
 + (id)headingStyle;
 + (id)titleStyle;
 + (id)defaultTextStyles;
+- (void).cxx_destruct;
 @property unsigned int ttStyle; // @synthesize ttStyle=_ttStyle;
 @property(retain) NSString *name; // @synthesize name=_name;
 @property(retain) NSDictionary *attributes; // @synthesize attributes=_attributes;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *icaxStyleDescription;
 @property(readonly) BOOL isTextList;
 

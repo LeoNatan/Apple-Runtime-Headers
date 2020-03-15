@@ -14,9 +14,9 @@
     AXMIDIDeviceEntity *_entity;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak AXMIDIDeviceEntity *entity; // @synthesize entity=_entity;
 @property(nonatomic) unsigned int midiEndpoint; // @synthesize midiEndpoint=_midiEndpoint;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *driverName;
 @property(readonly, nonatomic) NSNumber *isPrivate;
 @property(readonly, nonatomic) NSNumber *isOffline;

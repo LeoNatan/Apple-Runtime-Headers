@@ -22,10 +22,10 @@
 + (id)coreGlyphsCatalog;
 + (id)assetCatalogResourceWithURL:(id)arg1 symbolName:(id)arg2 error:(id *)arg3;
 + (id)assetCatalogResourceWithURL:(id)arg1 imageName:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSString *symbolName; // @synthesize symbolName=_symbolName;
 @property(readonly) NSString *imageName; // @synthesize imageName=_imageName;
 @property(readonly) CUICatalog *catalog; // @synthesize catalog=_catalog;
-- (void).cxx_destruct;
 @property(readonly, getter=isPrecomposed) _Bool precomposed;
 - (id)imageForSize:(struct CGSize)arg1 scale:(double)arg2;
 @property(readonly) ISImageBag *imageBag; // @synthesize imageBag=_imageBag;

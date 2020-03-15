@@ -46,6 +46,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isAdvertisement; // @synthesize isAdvertisement=_isAdvertisement;
 @property(nonatomic) BOOL isAlwaysLive; // @synthesize isAlwaysLive=_isAlwaysLive;
 @property(retain, nonatomic) NSData *artworkDataDigest; // @synthesize artworkDataDigest=_artworkDataDigest;
@@ -62,7 +63,6 @@
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) NSString *artist; // @synthesize artist=_artist;
 @property(retain, nonatomic) NSString *album; // @synthesize album=_album;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

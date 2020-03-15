@@ -21,6 +21,7 @@
     PUTileLayoutInfo *_layoutInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool wantsVisibleRectChanges; // @synthesize wantsVisibleRectChanges=_wantsVisibleRectChanges;
 @property(readonly, nonatomic) PUTileLayoutInfo *layoutInfo; // @synthesize layoutInfo=_layoutInfo;
 @property(readonly, nonatomic) __weak PUTilingView *tilingView; // @synthesize tilingView=_tilingView;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) NSString *reuseIdentifier; // @synthesize reuseIdentifier=_reuseIdentifier;
 @property(nonatomic, getter=isDetached) _Bool detached; // @synthesize detached=_detached;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (id)description;
 - (void)notifyWhenReadyForDisplayWithTimeOut:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)adoptAssetTransitionInfo:(id)arg1;

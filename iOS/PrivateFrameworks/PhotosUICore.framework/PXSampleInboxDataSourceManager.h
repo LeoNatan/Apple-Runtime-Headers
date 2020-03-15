@@ -18,9 +18,9 @@
     PXSampleInboxMediaProvider *_sampleMediaProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXSampleInboxMediaProvider *sampleMediaProvider; // @synthesize sampleMediaProvider=_sampleMediaProvider;
 @property(retain, nonatomic) NSArray *mockedModels; // @synthesize mockedModels=_mockedModels;
-- (void).cxx_destruct;
 - (void)requestTitleAndSubtitleForModel:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)subtitleForModel:(id)arg1;
 - (id)titleForModel:(id)arg1;

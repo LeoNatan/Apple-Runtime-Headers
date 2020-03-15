@@ -15,10 +15,10 @@
     struct _NSRange _characterRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange characterRange; // @synthesize characterRange=_characterRange;
 @property(retain, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
 @property(retain, nonatomic) ICTrackedParagraph *trackedParagraph; // @synthesize trackedParagraph=_trackedParagraph;
-- (void).cxx_destruct;
 
 @end
 

@@ -19,13 +19,13 @@
     id <PXTilingControllerCompositionObserver> _observer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXTilingControllerCompositionObserver> observer; // @synthesize observer=_observer;
 @property(nonatomic, setter=_setScrollController:) __weak id <PXTilingScrollController> _scrollController; // @synthesize _scrollController=__scrollController;
 @property(nonatomic) __weak id <PXTilingControllerCompositionOutput> output; // @synthesize output=_output;
 @property(nonatomic) __weak id <PXTilingControllerCompositionInput> input; // @synthesize input=_input;
 @property(readonly, copy, nonatomic) NSSet *tilingControllers; // @synthesize tilingControllers=_tilingControllers;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (void)invalidateCompositionWithContext:(id)arg1;
 - (void)invalidateComposition;
 - (void)updateComposition;

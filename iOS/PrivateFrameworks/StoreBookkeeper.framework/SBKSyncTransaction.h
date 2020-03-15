@@ -21,9 +21,9 @@
     NSURL *_syncRequestURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSURL *syncRequestURL; // @synthesize syncRequestURL=_syncRequestURL;
 @property(readonly) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)processDataInResponse:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 @property(readonly) NSArray *keysToDelete; // @synthesize keysToDelete=_keysToDelete;
 @property(readonly) NSArray *keysToUpdate; // @synthesize keysToUpdate=_keysToUpdate;

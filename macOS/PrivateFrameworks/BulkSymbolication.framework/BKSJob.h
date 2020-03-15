@@ -27,6 +27,7 @@
 }
 
 + (id)_speedTracerProtectionSpace;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL shouldReadFromKeychain; // @synthesize shouldReadFromKeychain=_shouldReadFromKeychain;
 @property(retain, nonatomic) NSURLCredential *odCredential; // @synthesize odCredential=_odCredential;
 @property(readonly, nonatomic) NSString *requestBoundaryString; // @synthesize requestBoundaryString=_requestBoundaryString;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) double timeoutInSec; // @synthesize timeoutInSec=_timeoutInSec;
 @property unsigned char state; // @synthesize state=_state;
 @property(copy, nonatomic) CDUnknownBlockType odCredentialProvidingBlock; // @synthesize odCredentialProvidingBlock=_odCredentialProvidingBlock;
-- (void).cxx_destruct;
 - (void)addRequestCollection:(id)arg1;
 - (void)addRequest:(id)arg1;
 - (void)addRequestForSymbolOwnerUUID:(id)arg1 offset:(unsigned long long)arg2 isTextExec:(BOOL)arg3;

@@ -6,7 +6,7 @@
 
 #import <NotesUI/NSObject-Protocol.h>
 
-@class NSManagedObjectContext, NSManagedObjectID, NSSet, NSString;
+@class NSManagedObjectContext, NSManagedObjectID, NSSet, NSString, NoteContext;
 @protocol ICLegacyAccount, ICLegacyFolder, ICLegacyNote;
 
 @protocol ICLegacyFolder <NSObject>
@@ -14,7 +14,7 @@
 - (NSManagedObjectContext *)managedObjectContext;
 - (NSManagedObjectID *)objectID;
 - (void)addNotesObject:(id <ICLegacyNote>)arg1;
-- (id <ICLegacyNote>)newNoteInContext:(struct NoteContext *)arg1;
+- (id <ICLegacyNote>)newNoteInContext:(NoteContext *)arg1;
 - (NSSet *)changes;
 - (id <ICLegacyFolder>)parentFolder;
 - (NSString *)title;

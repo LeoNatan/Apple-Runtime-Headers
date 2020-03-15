@@ -15,9 +15,9 @@
     UIViewPropertyAnimator *_videoGravityAnimator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewPropertyAnimator *videoGravityAnimator; // @synthesize videoGravityAnimator=_videoGravityAnimator;
 @property(copy, nonatomic) NSString *targetVideoGravity; // @synthesize targetVideoGravity=_targetVideoGravity;
-- (void).cxx_destruct;
 - (id)_mediaTimingFunctionForCurrentAnimationCurve;
 - (void)_updatePlayerLayerViewFrame:(id)arg1;
 - (void)_updatePlayerLayerViewFrame;

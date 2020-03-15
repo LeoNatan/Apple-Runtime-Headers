@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
     UITableView *_tableView;
 }
 
-@property(nonatomic) __weak id <SKUIGiftContactSearchDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SKUIGiftContactSearchDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_tableView;
 - (void)_setResults:(id)arg1;
 - (void)_finishSearchWithResults:(id)arg1;

@@ -20,13 +20,13 @@
 
 + (id)_gkKeyWindowRootViewController;
 + (id)keyPathsForValuesAffectingTheme;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL automaticallyAdjustsScrollViewInsets; // @synthesize automaticallyAdjustsScrollViewInsets=_automaticallyAdjustsScrollViewInsets;
 @property(retain) UXViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(nonatomic) __weak NSView *initialFirstResponder; // @synthesize initialFirstResponder=_initialFirstResponder;
 @property(retain, nonatomic) UXNavigationItem *navigationItem; // @synthesize navigationItem=_navigationItem;
 @property(nonatomic) __weak UXNavigationController *navigationController; // @synthesize navigationController=_navigationController;
-- (void).cxx_destruct;
 - (void)presentError:(id)arg1 modalForWindow:(id)arg2 delegate:(id)arg3 didPresentSelector:(SEL)arg4 contextInfo:(void *)arg5;
 - (void)presentError:(id)arg1;
 - (void)_didEndSheet;

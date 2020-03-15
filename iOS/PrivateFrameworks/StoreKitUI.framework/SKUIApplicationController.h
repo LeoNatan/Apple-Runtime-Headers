@@ -68,6 +68,7 @@
 + (void)prepareForLaunch;
 + (void)finishedWithConfigurationPreloader;
 + (id)configurationPreloader;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUIScrollingTabBarController *scrollingTabBarController; // @synthesize scrollingTabBarController=_scrollingTabBarController;
 @property(readonly, nonatomic) SKUIApplicationControllerOptions *options; // @synthesize options=_options;
 @property(readonly, nonatomic) SKUIModalDocumentController *modalDocumentController; // @synthesize modalDocumentController=_modalDocumentController;
@@ -77,7 +78,6 @@
 @property(nonatomic) _Bool mescalPrimeEnabledForXHRRequests; // @synthesize mescalPrimeEnabledForXHRRequests=_mescalPrimeEnabledForXHRRequests;
 @property(nonatomic, setter=_setHidesTabBar:) _Bool _hidesTabBar; // @synthesize _hidesTabBar;
 @property(nonatomic) __weak id <SKUIApplicationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_setManifestURLOnUpdatableAssetController:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_rootDocuments;
 - (void)_loadApplicationFromUpdatableAssetsCache:(id)arg1;

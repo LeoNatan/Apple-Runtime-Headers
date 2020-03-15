@@ -21,13 +21,13 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *Year; // @synthesize Year=_Year;
 @property(nonatomic) long long DayOfWeek; // @synthesize DayOfWeek=_DayOfWeek;
 @property(nonatomic) long long Month; // @synthesize Month=_Month;
 @property(nonatomic) long long DayOrder; // @synthesize DayOrder=_DayOrder;
 @property(retain, nonatomic) NSDateComponents *Time; // @synthesize Time=_Time;
 @property(nonatomic) long long Bias; // @synthesize Bias=_Bias;
-- (void).cxx_destruct;
 - (BOOL)matchesPatternForDate:(id)arg1 withBias:(long long)arg2 inCalendar:(id)arg3;
 - (BOOL)isEqualToSerializableTimeZoneTime:(id)arg1;
 

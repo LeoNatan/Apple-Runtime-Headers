@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)shouldShowAlertForRedeem:(id)arg1 configuration:(id)arg2;
 + (void)beginThrottleInterval;
-@property(nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (void)show;
 - (id)initWithRedeemConfiguration:(id)arg1 clientContext:(id)arg2;

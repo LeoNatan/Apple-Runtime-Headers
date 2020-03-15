@@ -15,9 +15,9 @@
     int _state;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
 @property(nonatomic) __weak CSLPrelaunchActivityManager *prelaunchActivityManager; // @synthesize prelaunchActivityManager=_prelaunchActivityManager;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_asyncNotifyObserversOfChangeToState:(int)arg1 fromState:(int)arg2;
 - (_Bool)transitionToStateIfNecessary:(int)arg1;

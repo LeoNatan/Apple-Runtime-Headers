@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultReuseIdentifier;
-@property(readonly, nonatomic) WDAtrialFibrillationDetectionSetupView *setupView; // @synthesize setupView=_setupView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WDAtrialFibrillationDetectionSetupView *setupView; // @synthesize setupView=_setupView;
 - (void)_setUpConstraints;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

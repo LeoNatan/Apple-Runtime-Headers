@@ -18,9 +18,9 @@
     ADInterstitialAd *_interstitial;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ADInterstitialAd *interstitial; // @synthesize interstitial=_interstitial;
 @property(copy, nonatomic) CDUnknownBlockType unloadBlock; // @synthesize unloadBlock=_unloadBlock;
-- (void).cxx_destruct;
 - (void)interstitialAd:(id)arg1 didFailWithError:(id)arg2;
 - (void)interstitialAdDidLoad:(id)arg1;
 - (void)interstitialAdDidUnload:(id)arg1;

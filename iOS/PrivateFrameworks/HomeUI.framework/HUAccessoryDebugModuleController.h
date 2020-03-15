@@ -15,8 +15,8 @@
     NSMapTable *_cellToItemMap;
 }
 
-@property(retain) NSMapTable *cellToItemMap; // @synthesize cellToItemMap=_cellToItemMap;
 - (void).cxx_destruct;
+@property(retain) NSMapTable *cellToItemMap; // @synthesize cellToItemMap=_cellToItemMap;
 - (void)switchCell:(id)arg1 didTurnOn:(_Bool)arg2;
 - (_Bool)canSelectItem:(id)arg1;
 - (unsigned long long)didSelectItem:(id)arg1;

@@ -29,6 +29,7 @@
     int __trailingBackgroundStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setTrailingBackgroundStyle:) int _trailingBackgroundStyle; // @synthesize _trailingBackgroundStyle=__trailingBackgroundStyle;
 @property(nonatomic, setter=_setLeadingBackgroundStyle:) int _leadingBackgroundStyle; // @synthesize _leadingBackgroundStyle=__leadingBackgroundStyle;
 @property(nonatomic, setter=_setTrailingBorderWidthIsInPixels:) _Bool _trailingBorderWidthIsInPixels; // @synthesize _trailingBorderWidthIsInPixels=__trailingBorderWidthIsInPixels;
@@ -44,7 +45,6 @@
 @property(nonatomic) float maximumMainWidth; // @synthesize maximumMainWidth=_maximumMainWidth;
 @property(nonatomic) float minimumMainWidthFractionForSecondColumn; // @synthesize minimumMainWidthFractionForSecondColumn=_minimumMainWidthFractionForSecondColumn;
 @property(nonatomic) float minimumMainWidthFraction; // @synthesize minimumMainWidthFraction=_minimumMainWidthFraction;
-- (void).cxx_destruct;
 - (void)setTrailingBorderWidthInPoints:(float)arg1;
 - (void)setTrailingBorderWidthInPixels:(float)arg1;
 - (float)trailingBorderWidthForScale:(float)arg1;

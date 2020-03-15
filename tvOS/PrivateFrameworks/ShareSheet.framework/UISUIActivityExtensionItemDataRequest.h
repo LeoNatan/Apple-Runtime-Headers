@@ -31,6 +31,7 @@
 + (id)requestForActivity:(id)arg1 activityType:(id)arg2 activitySpecificMetadata:(id)arg3;
 + (id)requestForActivity:(id)arg1 activityType:(id)arg2 sourceAppIsManaged:(_Bool)arg3;
 + (id)requestForActivity:(id)arg1 activityType:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool sourceAppIsManaged; // @synthesize sourceAppIsManaged=_sourceAppIsManaged;
 @property(retain, nonatomic) NSDictionary *activitySpecificMetadata; // @synthesize activitySpecificMetadata=_activitySpecificMetadata;
 @property(nonatomic) _Bool activitySupportsPromiseURLs; // @synthesize activitySupportsPromiseURLs=_activitySupportsPromiseURLs;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NSString *activityType; // @synthesize activityType=_activityType;
 @property(retain, nonatomic) NSUUID *activityUUID; // @synthesize activityUUID=_activityUUID;
 @property(readonly, nonatomic) Class classForPreparingExtensionItemData; // @synthesize classForPreparingExtensionItemData=_classForPreparingExtensionItemData;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)_initWithClassForPreparingExtensionItemData:(Class)arg1;

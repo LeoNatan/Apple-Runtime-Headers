@@ -16,10 +16,10 @@
 }
 
 + (id)splitDatabaseWithSourceDatabasePath:(id)arg1 destinationDirectoryPath:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *destinationDirectoryPath; // @synthesize destinationDirectoryPath=_destinationDirectoryPath;
 @property(readonly, nonatomic) NSString *sourceDatabaseBackupPath; // @synthesize sourceDatabaseBackupPath=_sourceDatabaseBackupPath;
 @property(readonly, nonatomic) NSString *sourceDatabasePath; // @synthesize sourceDatabasePath=_sourceDatabasePath;
-- (void).cxx_destruct;
 - (BOOL)moveAside;
 - (id)split;
 - (BOOL)canSplit;

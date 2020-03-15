@@ -19,11 +19,11 @@
     Class _cellClass;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak Class cellClass; // @synthesize cellClass=_cellClass;
 @property(copy, nonatomic) CDUnknownBlockType cellConfigureBlock; // @synthesize cellConfigureBlock=_cellConfigureBlock;
 @property(nonatomic) long long rowAnimation; // @synthesize rowAnimation=_rowAnimation;
 @property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (void)reloadData;
 - (void)deleteSectionsAtIndexes:(id)arg1;
 - (void)insertSectionsAtIndexes:(id)arg1;

@@ -65,6 +65,7 @@
 + (id)metadataFromPlistAtURL:(id)arg1 error:(id *)arg2;
 + (id)metadataFromPlistData:(id)arg1 error:(id *)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *md5; // @synthesize md5=_md5;
 @property(nonatomic, getter=isFactoryInstall) _Bool factoryInstall; // @synthesize factoryInstall=_factoryInstall;
 @property(copy, nonatomic) NSDictionary *nameTranscriptions; // @synthesize nameTranscriptions=_nameTranscriptions;
@@ -111,7 +112,6 @@
 @property(copy, nonatomic) NSString *iAdImpressionDate; // @synthesize iAdImpressionDate=_iAdImpressionDate;
 @property(copy, nonatomic) NSString *iAdConversionDate; // @synthesize iAdConversionDate=_iAdConversionDate;
 @property(copy, nonatomic) NSString *iAdAttribution; // @synthesize iAdAttribution=_iAdAttribution;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)dictionaryRepresentation;

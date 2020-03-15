@@ -19,11 +19,11 @@
     NSString *_query;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEOMapRegion *mapRegion; // @synthesize mapRegion=_mapRegion;
 @property(retain, nonatomic) NSString *language; // @synthesize language=_language;
 @property(retain, nonatomic) NSString *locationDisplayString; // @synthesize locationDisplayString=_locationDisplayString;
 @property(retain, nonatomic) NSString *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;

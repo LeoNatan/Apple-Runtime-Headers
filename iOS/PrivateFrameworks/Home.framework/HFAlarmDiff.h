@@ -17,11 +17,11 @@
 }
 
 + (id)generateAlarmDiffFromSet:(id)arg1 toSet:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *unmodifiedAlarms; // @synthesize unmodifiedAlarms=_unmodifiedAlarms;
 @property(copy, nonatomic) NSSet *deletedAlarms; // @synthesize deletedAlarms=_deletedAlarms;
 @property(copy, nonatomic) NSSet *addedAlarms; // @synthesize addedAlarms=_addedAlarms;
 @property(copy, nonatomic) NSSet *updatedAlarms; // @synthesize updatedAlarms=_updatedAlarms;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) _Bool inputWasEqual;
 

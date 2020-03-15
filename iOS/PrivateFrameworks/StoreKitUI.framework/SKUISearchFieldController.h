@@ -38,6 +38,7 @@
     long long _numberOfSearchResults;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long numberOfSearchResults; // @synthesize numberOfSearchResults=_numberOfSearchResults;
 @property(copy, nonatomic) NSString *trendingSearchURLString; // @synthesize trendingSearchURLString=_trendingSearchURLString;
 @property(copy, nonatomic) NSString *searchHintsURLString; // @synthesize searchHintsURLString=_searchHintsURLString;
@@ -45,7 +46,6 @@
 @property(nonatomic) __weak id <SKUISearchFieldDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(readonly, nonatomic) __weak UIViewController *contentsController; // @synthesize contentsController=_contentsController;
-- (void).cxx_destruct;
 - (void)_setResponse:(id)arg1 error:(id)arg2;
 - (void)_reloadTrendingVisibility;
 - (void)_reloadData;

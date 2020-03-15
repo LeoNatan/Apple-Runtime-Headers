@@ -17,10 +17,10 @@
     double _internalCustomSpacingAfter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double internalCustomSpacingAfter; // @synthesize internalCustomSpacingAfter=_internalCustomSpacingAfter;
 @property(readonly, nonatomic) UIView *internalView; // @synthesize internalView=_internalView;
 @property(readonly, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 @property(nonatomic) double customSpacingAfter;
 - (void)addToConstraints:(id)arg1 context:(id)arg2;
 - (void)addToStackView:(id)arg1 context:(id)arg2;

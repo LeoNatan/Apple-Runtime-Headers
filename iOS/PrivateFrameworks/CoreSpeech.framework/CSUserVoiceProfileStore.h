@@ -13,6 +13,7 @@
 
 + (id)sharedInstance;
 @property(readonly, nonatomic) unsigned long long numberOfBaseProfileUtterancesToUpload; // @synthesize numberOfBaseProfileUtterancesToUpload=_numberOfBaseProfileUtterancesToUpload;
+- (void)logVoiceProfileConfusionWithCleanup:(_Bool)arg1;
 - (void)_logVoiceProfileConfusionForAsset:(id)arg1 withCleanup:(_Bool)arg2;
 - (id)cleanupInvalidCloudOnBoardedProfilesWithDryRun:(_Bool)arg1;
 - (void)addiTunesAccountForVoiceProfile:(id)arg1 withMultiUserToken:(id)arg2 withDsid:(id)arg3 withAltDsid:(id)arg4 withHomeId:(id)arg5 withHomeUserId:(id)arg6 withCompletionBlock:(CDUnknownBlockType)arg7;

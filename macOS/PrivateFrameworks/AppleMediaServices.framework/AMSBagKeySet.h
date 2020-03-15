@@ -8,23 +8,27 @@
 
 #import <AppleMediaServices/NSCopying-Protocol.h>
 #import <AppleMediaServices/NSMutableCopying-Protocol.h>
+#import <AppleMediaServices/NSSecureCoding-Protocol.h>
 
 @class NSSet;
 
-@interface AMSBagKeySet : NSObject <NSCopying, NSMutableCopying>
+@interface AMSBagKeySet : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
 {
     NSSet *_keys;
 }
 
++ (BOOL)supportsSecureCoding;
 + (void)resetRegisteredBagKeySets;
 + (id)registeredBagKeySetForProfile:(id)arg1 profileVersion:(id)arg2;
 + (void)registerBagKeySet:(id)arg1 forProfile:(id)arg2 profileVersion:(id)arg3;
 + (id)bagKeySetCacheAccessQueue;
 + (id)bagKeySetCache;
-@property(readonly) NSSet *keys; // @synthesize keys=_keys;
 - (void).cxx_destruct;
+@property(readonly) NSSet *keys; // @synthesize keys=_keys;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)hasKey:(id)arg1;

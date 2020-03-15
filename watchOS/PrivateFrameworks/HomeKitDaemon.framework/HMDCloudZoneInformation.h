@@ -27,6 +27,7 @@
 + (id)cloudZonesArrayWithCloudZones:(id)arg1;
 + (id)cloudZoneInformationWithCloudZones:(id)arg1;
 + (id)cloudZonesWithDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=doesHandlesCloudRecord) _Bool handlesCloudRecord; // @synthesize handlesCloudRecord=_handlesCloudRecord;
 @property(nonatomic) int schemaVersion; // @synthesize schemaVersion=_schemaVersion;
 @property(nonatomic, getter=isZoneCreated) _Bool zoneCreated; // @synthesize zoneCreated=_zoneCreated;
@@ -34,7 +35,6 @@
 @property(nonatomic, getter=didFetchFailed) _Bool fetchFailed; // @synthesize fetchFailed=_fetchFailed;
 @property(retain, nonatomic) NSString *ownerName; // @synthesize ownerName=_ownerName;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (id)emptyModelObjectWithChangeType:(unsigned int)arg1 parent:(id)arg2;
 - (id)modelObjectWithChangeType:(unsigned int)arg1 version:(int)arg2 parent:(id)arg3;
 - (id)modelObjectWithChangeType:(unsigned int)arg1 parent:(id)arg2;

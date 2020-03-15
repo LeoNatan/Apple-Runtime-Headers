@@ -14,37 +14,37 @@
 __attribute__((visibility("hidden")))
 @interface MCSessionHandler : NSObject <MCSessionPrivateDelegate>
 {
-    // Error parsing type: ^{MultipeerProtocolLayer=^^?{atomic<int>=Ai}{SharedPtr<re::internal::WeakCount>=^{WeakCount}}^{Allocator}^{ProtocolLayerListener}^{PacketPool}{ObjCObject=@}{ObjCObject=@}{Address={DynamicString=^{Allocator}*QQ}}{mutex={_opaque_pthread_mutex_t=q[56c]}}{condition_variable={_opaque_pthread_cond_t=q[40c]}}}, name: _protocolLayer
+    // Error parsing type: ^{MultipeerProtocolLayer=^^?{atomic<int>={__cxx_atomic_impl<int, std::__1::__cxx_atomic_base_impl<int> >=Ai}}{SharedPtr<re::internal::WeakCount>=^{WeakCount}}^{Allocator}^{ProtocolLayerListener}^{PacketPool}{ObjCObject=@}{ObjCObject=@}{Address={DynamicString=^{Allocator}*QQ}}{mutex={_opaque_pthread_mutex_t=q[56c]}}{condition_variable={_opaque_pthread_cond_t=q[40c]}}}, name: _protocolLayer
     MCSession *_session;
     NSMutableDictionary *_peersToHandles;
     NSMutableArray *_pendingData;
     NSLock *_handlesLock;
     id <MCSessionPrivateDelegate> _nextDelegate;
-    DynamicArray_959538b5 _handles;
+    DynamicArray_0711906c _handles;
     DynamicArray_8f05e591 _tempBuf;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MCSessionPrivateDelegate> nextDelegate; // @synthesize nextDelegate=_nextDelegate;
 @property(nonatomic) DynamicArray_8f05e591 tempBuf; // @synthesize tempBuf=_tempBuf;
-@property(nonatomic) DynamicArray_959538b5 *handles; // @synthesize handles=_handles;
+@property(nonatomic) DynamicArray_0711906c *handles; // @synthesize handles=_handles;
 @property(retain, nonatomic) NSLock *handlesLock; // @synthesize handlesLock=_handlesLock;
 @property(retain, nonatomic) NSMutableArray *pendingData; // @synthesize pendingData=_pendingData;
 @property(retain, nonatomic) NSMutableDictionary *peersToHandles; // @synthesize peersToHandles=_peersToHandles;
 @property(retain, nonatomic) MCSession *session; // @synthesize session=_session;
 // Error parsing type for property protocolLayer:
-// Property attributes: T^{MultipeerProtocolLayer=^^?{atomic<int>=Ai}{SharedPtr<re::internal::WeakCount>=^{WeakCount}}^{Allocator}^{ProtocolLayerListener}^{PacketPool}{ObjCObject=@}{ObjCObject=@}{Address={DynamicString=^{Allocator}*QQ}}{mutex={_opaque_pthread_mutex_t=q[56c]}}{condition_variable={_opaque_pthread_cond_t=q[40c]}}},N,V_protocolLayer
+// Property attributes: T^{MultipeerProtocolLayer=^^?{atomic<int>={__cxx_atomic_impl<int, std::__1::__cxx_atomic_base_impl<int> >=Ai}}{SharedPtr<re::internal::WeakCount>=^{WeakCount}}^{Allocator}^{ProtocolLayerListener}^{PacketPool}{ObjCObject=@}{ObjCObject=@}{Address={DynamicString=^{Allocator}*QQ}}{mutex={_opaque_pthread_mutex_t=q[56c]}}{condition_variable={_opaque_pthread_cond_t=q[40c]}}},N,V_protocolLayer
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)session:(id)arg1 didReceiveStream:(id)arg2 withName:(id)arg3 fromPeer:(id)arg4 propagate:(char *)arg5;
 - (void)session:(id)arg1 didFinishReceivingResourceWithName:(id)arg2 fromPeer:(id)arg3 atURL:(id)arg4 withError:(id)arg5 propagate:(char *)arg6;
 - (void)session:(id)arg1 didStartReceivingResourceWithName:(id)arg2 fromPeer:(id)arg3 withProgress:(id)arg4 propagate:(char *)arg5;
 - (void)session:(id)arg1 peer:(id)arg2 didChangeState:(long long)arg3 propagate:(char *)arg4;
 - (void)session:(id)arg1 didReceiveData:(id)arg2 fromPeer:(id)arg3 propagate:(char *)arg4;
--     // Error parsing type: @28@0:8r^{Packet={atomic<re::Packet *>=A^{Packet}}^v^vIIi^v^{Packet}}16C24, name: dataForPacket:channel:
+-     // Error parsing type: @28@0:8r^{Packet={atomic<re::Packet *>={__cxx_atomic_impl<re::Packet *, std::__1::__cxx_atomic_base_impl<re::Packet *> >=A^{Packet}}}^v^vIIi^v^{Packet}}16C24, name: dataForPacket:channel:
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
--     // Error parsing type: @32@0:8@16^{MultipeerProtocolLayer=^^?{atomic<int>=Ai}{SharedPtr<re::internal::WeakCount>=^{WeakCount}}^{Allocator}^{ProtocolLayerListener}^{PacketPool}{ObjCObject=@}{ObjCObject=@}{Address={DynamicString=^{Allocator}*QQ}}{mutex={_opaque_pthread_mutex_t=q[56c]}}{condition_variable={_opaque_pthread_cond_t=q[40c]}}}24, name: initWithSession:protocolLayer:
+-     // Error parsing type: @32@0:8@16^{MultipeerProtocolLayer=^^?{atomic<int>={__cxx_atomic_impl<int, std::__1::__cxx_atomic_base_impl<int> >=Ai}}{SharedPtr<re::internal::WeakCount>=^{WeakCount}}^{Allocator}^{ProtocolLayerListener}^{PacketPool}{ObjCObject=@}{ObjCObject=@}{Address={DynamicString=^{Allocator}*QQ}}{mutex={_opaque_pthread_mutex_t=q[56c]}}{condition_variable={_opaque_pthread_cond_t=q[40c]}}}24, name: initWithSession:protocolLayer:
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -23,6 +23,7 @@
     NSString *_sourceIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
 @property(readonly, copy, nonatomic) NSString *sourceTitle; // @synthesize sourceTitle=_sourceTitle;
 @property(readonly, nonatomic) _Bool isDelegate; // @synthesize isDelegate=_isDelegate;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) unsigned int changeType; // @synthesize changeType=_changeType;
 @property(readonly, nonatomic) EKCalendarResourceChangeNotification *calendarNotification; // @synthesize calendarNotification=_calendarNotification;
 @property(readonly, copy, nonatomic) NSString *sourceClientIdentifier; // @synthesize sourceClientIdentifier=_sourceClientIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithSourceClientIdentifier:(id)arg1 calendarNotification:(id)arg2 changeType:(unsigned int)arg3 date:(id)arg4 allDay:(_Bool)arg5 timeZone:(id)arg6 expirationDate:(id)arg7 launchURL:(id)arg8 isDelegate:(_Bool)arg9 sourceTitle:(id)arg10 sourceIdentifier:(id)arg11;
 

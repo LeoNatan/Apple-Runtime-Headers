@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)outputIsExemptFromTaintTrackingInheritance;
 - (id)unitWithSymbol:(id)arg1;
 - (id)currentUnitType;
 - (id)unitParameter;

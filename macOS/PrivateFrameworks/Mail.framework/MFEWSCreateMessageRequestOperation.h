@@ -21,6 +21,7 @@
     MFEWSGetItemsResponseOperation *_getItemsResponse;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MFEWSGetItemsResponseOperation *getItemsResponse; // @synthesize getItemsResponse=_getItemsResponse;
 @property(readonly, copy, nonatomic) NSDictionary *recipientsByHeaderKey; // @synthesize recipientsByHeaderKey=_recipientsByHeaderKey;
 @property(readonly, copy, nonatomic) NSString *sender; // @synthesize sender=_sender;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) MCMessage *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *existingItemIdString; // @synthesize existingItemIdString=_existingItemIdString;
-- (void).cxx_destruct;
 - (id)prepareRequest;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

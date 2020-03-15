@@ -32,6 +32,7 @@
     double _intensity;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double intensity; // @synthesize intensity=_intensity;
 @property(readonly, nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic) float hdrGain; // @synthesize hdrGain=_hdrGain;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) CAFilter *filter; // @synthesize filter=_filter;
 @property(readonly, nonatomic, getter=isDisplayingVideoComplement) BOOL displayingVideoComplement; // @synthesize displayingVideoComplement=_displayingVideoComplement;
 @property(readonly, nonatomic) CALayer *layer; // @synthesize layer=_layer;
-- (void).cxx_destruct;
 - (void)_updateFilterIntensityIfNeeded;
 - (void)_invalidateFilterIntensity;
 - (void)_updateDisplayingVideoComplementIfNeeded;

@@ -18,10 +18,10 @@
 + (id)keyPathsForValuesAffectingExternalOutputDevicePicked;
 + (id)keyPathsForValuesAffectingExternalOutputDeviceAvailable;
 + (id)keyPathsForValuesAffectingOutputContext;
+- (void).cxx_destruct;
 @property BOOL menuIsShown; // @synthesize menuIsShown=_menuIsShown;
 @property(retain) AVOutputDeviceDiscoverySessionController *outputDeviceDiscoverySessionController; // @synthesize outputDeviceDiscoverySessionController=_outputDeviceDiscoverySessionController;
 @property(retain) AVOutputContextController *outputContextController; // @synthesize outputContextController=_outputContextController;
-- (void).cxx_destruct;
 - (BOOL)showMenuForRect:(struct CGRect)arg1 appearanceName:(id)arg2 allowReselectionOfSelectedOutputDevice:(BOOL)arg3;
 @property(readonly, getter=isExternalOutputDevicePicked) BOOL externalOutputDevicePicked;
 @property(readonly, getter=isExternalOutputDeviceAvailable) BOOL externalOutputDeviceAvailable;

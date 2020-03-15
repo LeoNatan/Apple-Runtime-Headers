@@ -26,8 +26,8 @@
     _Bool _allowsManualEntry;
 }
 
-@property(nonatomic) _Bool allowsManualEntry; // @synthesize allowsManualEntry=_allowsManualEntry;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool allowsManualEntry; // @synthesize allowsManualEntry=_allowsManualEntry;
 - (void)_showSpinner:(_Bool)arg1;
 - (void)_terminateSetupFlow;
 - (void)_handleNextStep;

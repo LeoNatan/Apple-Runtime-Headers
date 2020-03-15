@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     _Bool _showsCancelButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsCancelButton; // @synthesize showsCancelButton=_showsCancelButton;
 @property(nonatomic) __weak SKProductPageViewController *productPageViewController; // @synthesize productPageViewController=_productPageViewController;
 @property(copy, nonatomic) NSString *cancelButtonTitle; // @synthesize cancelButtonTitle=_cancelButtonTitle;
-- (void).cxx_destruct;
 - (void)_storeSheetCancelButtonAction:(id)arg1;
 - (id)_cancelButtonItem;
 - (void)_addCancelButtonToNavigationItem:(id)arg1;

@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _dismissalHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool suppressDismissalHandlerUnlessDimmingViewTapped; // @synthesize suppressDismissalHandlerUnlessDimmingViewTapped=_suppressDismissalHandlerUnlessDimmingViewTapped;
 @property(copy, nonatomic) CDUnknownBlockType dismissalHandler; // @synthesize dismissalHandler=_dismissalHandler;
-- (void).cxx_destruct;
 - (void)dismissalTransitionDidEnd:(_Bool)arg1;
 
 @end

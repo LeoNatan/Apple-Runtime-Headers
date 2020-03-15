@@ -22,6 +22,7 @@
     CATextLayer *__titleLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CATextLayer *_titleLayer; // @synthesize _titleLayer=__titleLayer;
 @property(retain, nonatomic) CALayer *_imageLayer; // @synthesize _imageLayer=__imageLayer;
 @property(retain, nonatomic) CAShapeLayer *_borderLayer; // @synthesize _borderLayer=__borderLayer;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
 @property(nonatomic) long long displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(nonatomic) __weak id <AXVMenuItemDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_updateBorderLayerWithBounds:(struct CGRect)arg1;
 - (void)_updateImageLayerWithBounds:(struct CGRect)arg1;

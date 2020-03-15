@@ -14,9 +14,9 @@
     MKAnnotationView *_annotationView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL parallaxEnabled; // @synthesize parallaxEnabled=_parallaxEnabled;
 @property(readonly, nonatomic) __weak MKAnnotationView *annotationView; // @synthesize annotationView=_annotationView;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isLeftAnchored) BOOL leftAnchored;
 @property(readonly, nonatomic) long long anchorPosition;
 @property(readonly, nonatomic) BOOL hasPendingVisibility;

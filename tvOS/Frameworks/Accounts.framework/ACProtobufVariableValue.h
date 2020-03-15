@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ACProtobufVariableValueDictionary *dictionaryValue; // @synthesize dictionaryValue=_dictionaryValue;
 @property(retain, nonatomic) ACProtobufVariableValueList *setValue; // @synthesize setValue=_setValue;
 @property(retain, nonatomic) ACProtobufVariableValueList *arrayValue; // @synthesize arrayValue=_arrayValue;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long unsignedIntegerValue; // @synthesize unsignedIntegerValue=_unsignedIntegerValue;
 @property(nonatomic) long long integerValue; // @synthesize integerValue=_integerValue;
 @property(retain, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

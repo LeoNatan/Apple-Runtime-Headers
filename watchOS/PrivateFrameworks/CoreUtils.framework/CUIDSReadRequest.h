@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completion;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 
 @end
 

@@ -21,10 +21,10 @@
     struct CGRect _highlightRect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *controls; // @synthesize controls=_controls;
 @property(nonatomic) _Bool up; // @synthesize up=_up;
 @property(nonatomic) double arrowX; // @synthesize arrowX=_arrowX;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFitsControls:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGRect)dividerLineRectForControl:(long long)arg1;

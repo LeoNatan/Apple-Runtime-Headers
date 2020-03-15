@@ -17,11 +17,11 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(nonatomic) double response; // @synthesize response=_response;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *breathingSettings; // @synthesize breathingSettings=_breathingSettings;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *peekingAndPanningSettings; // @synthesize peekingAndPanningSettings=_peekingAndPanningSettings;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *popToSwitcherSettings; // @synthesize popToSwitcherSettings=_popToSwitcherSettings;
-- (void).cxx_destruct;
 - (void)setDefaultValues;
 
 @end

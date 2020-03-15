@@ -14,9 +14,9 @@
     NSString *_displayName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) _Bool success; // @synthesize success=_success;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 
 @end

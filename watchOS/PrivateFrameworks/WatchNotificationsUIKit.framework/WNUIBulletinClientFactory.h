@@ -29,13 +29,13 @@
 + (id)appBundleIdentifierOverrideForBulletin:(id)arg1;
 + (void)initialize;
 + (id)sharedClientBundleManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UNNotification *firstNotification; // @synthesize firstNotification=_firstNotification;
 @property(retain, nonatomic) BBBulletin *firstBulletin; // @synthesize firstBulletin=_firstBulletin;
 @property(retain, nonatomic) UIViewController<WNUINotificationContent> *clientController; // @synthesize clientController=_clientController;
 @property(retain, nonatomic) NSMutableDictionary *actionIdentifiersToActions; // @synthesize actionIdentifiersToActions=_actionIdentifiersToActions;
 @property(copy, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
 @property(retain, nonatomic) WNUIClientBundleManagerBundleInfo *bundleInfo; // @synthesize bundleInfo=_bundleInfo;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier;
 - (void)dismissNotificationContentExtension;
 - (void)clearNotificationAndDismissShouldAnimate:(_Bool)arg1;

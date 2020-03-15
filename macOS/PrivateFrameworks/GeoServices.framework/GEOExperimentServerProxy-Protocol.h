@@ -14,7 +14,7 @@
 @property(nonatomic) __weak id <GEOExperimentServerProxyDelegate> delegate;
 - (void)_debug_setBucketIdDictionaryRepresentation:(NSDictionary *)arg1;
 - (void)_debug_setActiveExperimentBranchDictionaryRepresentation:(NSDictionary *)arg1;
-- (void)_debug_fetchAllAvailableExperiments:(void (^)(GEOABAssignmentResponse *, NSError *, struct NSDictionary *))arg1;
+- (void)_debug_fetchAllAvailableExperiments:(void (^)(GEOABAssignmentResponse *, NSError *, NSDictionary *))arg1;
 - (void)_debug_setQuerySubstring:(NSString *)arg1 forExperimentType:(long long)arg2 dispatcherRequestType:(int)arg3;
 - (void)abAssignUUIDWithSyncCompletionHandler:(void (^)(NSString *, NSDate *, NSError *))arg1;
 - (void)abAssignUUIDWithCompletionHandler:(void (^)(NSString *, NSDate *, NSError *))arg1;

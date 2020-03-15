@@ -34,6 +34,7 @@
     MMCSCSMSTargetRecoveryViewController *_cscSMSTargetVC;
 }
 
+- (void).cxx_destruct;
 @property(retain) MMCSCSMSTargetRecoveryViewController *cscSMSTargetVC; // @synthesize cscSMSTargetVC=_cscSMSTargetVC;
 @property(retain) MMCSCPassPhraseRecoveryViewController *cscPassPhraseVC; // @synthesize cscPassPhraseVC=_cscPassPhraseVC;
 @property(retain) MMCSCPinRecoveryViewController *cscPinVC; // @synthesize cscPinVC=_cscPinVC;
@@ -51,7 +52,6 @@
 @property BOOL isFirstDevice; // @synthesize isFirstDevice=_isFirstDevice;
 @property(copy) NSString *accountID; // @synthesize accountID=_accountID;
 @property id <MMCSCRecoveryControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)mmCSCSMSTargetRecoveryViewControllerDidCancel:(id)arg1;
 - (void)mmCSCSMSTargetRecoveryViewControllerDidEnd:(id)arg1;
 - (void)mmCSCPassPhraseRecoveryViewControllerDidCancel:(id)arg1;

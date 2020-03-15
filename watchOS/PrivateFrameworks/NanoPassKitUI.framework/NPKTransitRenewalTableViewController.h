@@ -19,13 +19,13 @@
     PKPaymentPassAction *_remoteAction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPaymentPassAction *remoteAction; // @synthesize remoteAction=_remoteAction;
 @property(nonatomic) unsigned int requestingRemoteAction; // @synthesize requestingRemoteAction=_requestingRemoteAction;
 @property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
 @property(nonatomic) __weak id <NPKTransitRenewalTableViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PKPaymentPassAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)_fetchRemoteContentIfNeeded;
 - (id)_actionToUse;
 - (_Bool)_needsRemoteContent;

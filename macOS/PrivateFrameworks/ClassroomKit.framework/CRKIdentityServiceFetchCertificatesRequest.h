@@ -13,8 +13,8 @@
     NSArray *_personLinkIDs;
 }
 
-@property(copy, nonatomic) NSArray *personLinkIDs; // @synthesize personLinkIDs=_personLinkIDs;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *personLinkIDs; // @synthesize personLinkIDs=_personLinkIDs;
 
 @end
 

@@ -18,11 +18,11 @@
 }
 
 + (id)sharedPowerlogService;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *requestQueue; // @synthesize requestQueue=_requestQueue;
 @property(retain) NSObject<OS_os_log> *MXPowerLogServiceLogHandle; // @synthesize MXPowerLogServiceLogHandle=_MXPowerLogServiceLogHandle;
 @property(retain) MXSourceXPCPayload *unarchivedPowerlogData; // @synthesize unarchivedPowerlogData=_unarchivedPowerlogData;
 @property(retain) NSMutableArray *powerlogDataPaths; // @synthesize powerlogDataPaths=_powerlogDataPaths;
-- (void).cxx_destruct;
 - (BOOL)metricsAvailableForDate:(id)arg1;
 - (id)getMetricsForClient:(id)arg1 dateString:(id)arg2;
 - (BOOL)_updateMetrics;

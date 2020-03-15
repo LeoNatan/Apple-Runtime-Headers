@@ -12,13 +12,17 @@
 
 @interface PKDashboardTextActionItem : NSObject <PKDashboardItem>
 {
+    int _style;
     NSString *_title;
+    NSString *_subtitle;
     CDUnknownBlockType _action;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
-@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
+@property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
+@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+@property(nonatomic) int style; // @synthesize style=_style;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

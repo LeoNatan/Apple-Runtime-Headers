@@ -33,6 +33,7 @@
 }
 
 + (id)resizeImage:(id)arg1 toSize:(struct CGSize)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *resizedAppIcon; // @synthesize resizedAppIcon=_resizedAppIcon;
 @property(retain, nonatomic) NSMutableArray *readyCallbacks; // @synthesize readyCallbacks=_readyCallbacks;
 @property(nonatomic) long long readyState; // @synthesize readyState=_readyState;
@@ -50,7 +51,6 @@
 @property(readonly, nonatomic) NSImage *appIcon; // @synthesize appIcon=_appIcon;
 @property(readonly, copy, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(readonly, nonatomic) NSNumber *adamId; // @synthesize adamId=_adamId;
-- (void).cxx_destruct;
 - (void)performURLFetch;
 - (void)transitionToReadyAndInvokeCallbacks;
 - (void)performWhenReady:(CDUnknownBlockType)arg1;

@@ -24,8 +24,8 @@
 + (id)journalForInMemoryDb;
 + (id)journalWithDbPath:(id)arg1;
 + (id)_journalPathForDbPath:(id)arg1;
-@property(readonly, nonatomic) _Bool journaling; // @synthesize journaling=_journaling;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool journaling; // @synthesize journaling=_journaling;
 - (id)directoryPath;
 - (_Bool)stopJournaling;
 - (_Bool)startJournaling;

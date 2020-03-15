@@ -8,7 +8,7 @@
 
 #import <ClassroomKit/CRKFeatureDataStoreProtocol-Protocol.h>
 
-@class NSString;
+@class NSSet, NSString;
 
 @interface CRKFeatureDataStore_iOSMac : NSObject <CRKFeatureDataStoreProtocol>
 {
@@ -25,6 +25,7 @@
 @property(readonly, nonatomic, getter=isClassroomRequestPermissionToLeaveClassesForced) BOOL classroomRequestPermissionToLeaveClassesForced; // @synthesize classroomRequestPermissionToLeaveClassesForced;
 @property(nonatomic, getter=isClassroomInstructorRoleEnabled) BOOL classroomInstructorRoleEnabled; // @synthesize classroomInstructorRoleEnabled;
 @property(readonly, nonatomic, getter=isClassroomAutomaticClassJoiningForced) BOOL classroomAutomaticClassJoiningForced; // @synthesize classroomAutomaticClassJoiningForced;
+@property(readonly, copy, nonatomic) NSSet *activeClassroomRoles;
 - (void)setBoolValue:(BOOL)arg1 ask:(BOOL)arg2 forSetting:(id)arg3 configurationUUID:(id)arg4;
 - (void)setBoolValue:(BOOL)arg1 ask:(BOOL)arg2 forSetting:(id)arg3;
 - (unsigned long long)effectiveValueForSetting:(id)arg1 configurationUUID:(id)arg2 outAsk:(char *)arg3;

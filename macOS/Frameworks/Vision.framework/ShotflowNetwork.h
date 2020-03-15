@@ -46,10 +46,10 @@ __attribute__((visibility("hidden")))
 + (float)inputImageMaxDimension;
 + (float)inputImageMinDimension;
 + (id)inputLayerName;
-@property(readonly, nonatomic) unsigned long long preferredSmallSide; // @synthesize preferredSmallSide=_preferredSmallSide;
-@property(nonatomic) float threshold; // @synthesize threshold=_threshold;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long preferredSmallSide; // @synthesize preferredSmallSide=_preferredSmallSide;
+@property(nonatomic) float threshold; // @synthesize threshold=_threshold;
 - (id)resizeAndProcessVImage:(struct vImage_Buffer)arg1 inputIsBGR:(BOOL)arg2;
 - (id)processVImage:(struct vImage_Buffer)arg1 inputIsBGR:(BOOL)arg2;
 - (void)runNetwork:(struct vImage_Buffer)arg1 inputIsBGR:(BOOL)arg2;

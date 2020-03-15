@@ -13,8 +13,8 @@
     MLPipeline *_engine;
 }
 
-@property(retain) MLPipeline *engine; // @synthesize engine=_engine;
 - (void).cxx_destruct;
+@property(retain) MLPipeline *engine; // @synthesize engine=_engine;
 - (id)classify:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)initWithEngine:(id)arg1 interface:(id)arg2 metadata:(id)arg3 configuration:(id)arg4 error:(id *)arg5;
 @property(readonly) MLPipeline *pipeline;

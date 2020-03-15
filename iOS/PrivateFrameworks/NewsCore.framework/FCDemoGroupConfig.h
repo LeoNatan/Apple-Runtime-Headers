@@ -17,10 +17,10 @@
     NSArray *_articleIDs;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *articleIDs; // @synthesize articleIDs=_articleIDs;
 @property(readonly, copy, nonatomic) NSString *topicID; // @synthesize topicID=_topicID;
 @property(readonly, nonatomic) unsigned long long demoGroupType; // @synthesize demoGroupType=_demoGroupType;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *tagIDs;
 - (id)initWithDictionary:(id)arg1;
 - (id)init;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     MKWebViewMessageHandlerProxy *_messageHandlerProxy;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MKWebViewMessageHandlerProxy *messageHandlerProxy; // @synthesize messageHandlerProxy=_messageHandlerProxy;
 @property(readonly, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
 @property(readonly, copy, nonatomic) MKWebBridgeConfiguration *bridgeConfiguration; // @synthesize bridgeConfiguration=_bridgeConfiguration;
-- (void).cxx_destruct;
 - (id)initWithBridgeConfiguration:(id)arg1 webView:(id)arg2 messageHandlerProxy:(id)arg3;
 
 @end

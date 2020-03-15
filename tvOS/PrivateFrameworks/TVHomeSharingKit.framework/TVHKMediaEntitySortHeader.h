@@ -16,10 +16,10 @@
 }
 
 + (id)mediaEntitySortHeaderWithDMAPEntity:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;
 @property(nonatomic) unsigned long long startIndex; // @synthesize startIndex=_startIndex;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithTitle:(id)arg1 startIndex:(unsigned long long)arg2;
 - (id)init;

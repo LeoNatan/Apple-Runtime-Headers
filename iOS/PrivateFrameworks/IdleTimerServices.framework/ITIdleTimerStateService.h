@@ -21,8 +21,8 @@
     id <ITIdleTimerStateServiceDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <ITIdleTimerStateServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ITIdleTimerStateServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_addStateCaptureHandler;
 - (id)_identifierForClientProcess:(id)arg1;
 - (_Bool)clientConfiguration:(id)arg1 handleIdleEvent:(unsigned long long)arg2;

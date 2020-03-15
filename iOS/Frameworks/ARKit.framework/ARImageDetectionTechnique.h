@@ -20,6 +20,8 @@
     _Bool _finishedLoadingImages;
     _Bool _tracking;
     _Bool _deterministicMode;
+    long long _maximumNumberOfTrackedImages;
+    _Bool _continuousDetection;
     struct shared_ptr<arkit::KeyMapBuffer<const void *, std::__1::vector<unsigned char, std::__1::allocator<unsigned char>>>> _poseBuffer;
     _Bool _needsWorldTrackingPoseData;
     _Bool _enableAutomaticImageScaleEstimation;
@@ -28,13 +30,12 @@
     NSDictionary *_referenceImageMap;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *referenceImageMap; // @synthesize referenceImageMap=_referenceImageMap;
 @property(readonly) ARODTHandleManager *odtTHandleManger; // @synthesize odtTHandleManger=_odtTHandleManger;
 @property(retain) ARWorldTrackingPoseData *currentWorldTrackingPose; // @synthesize currentWorldTrackingPose=_currentWorldTrackingPose;
 @property(nonatomic) _Bool enableAutomaticImageScaleEstimation; // @synthesize enableAutomaticImageScaleEstimation=_enableAutomaticImageScaleEstimation;
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (void)updateARPresentationMode:(long long)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (void)_loadReferenceImages;
 @property(readonly, nonatomic) _Bool finishedLoadingImages;
@@ -43,7 +44,7 @@
 - (double)requiredTimeInterval;
 - (_Bool)syncWithProcessedImage;
 - (unsigned long long)requiredSensorDataTypes;
-- (id)initWithReferenceImages:(id)arg1 maximumNumberOfTrackedImages:(long long)arg2 continuousDetection:(_Bool)arg3 deterministicMode:(_Bool)arg4 processingQueue:(id)arg5;
+- (id)initWithReferenceImages:(id)arg1 maximumNumberOfTrackedImages:(long long)arg2 continuousDetection:(_Bool)arg3 processingQueue:(id)arg4;
 - (id)initWithReferenceImages:(id)arg1 maximumNumberOfTrackedImages:(long long)arg2 processingQueue:(id)arg3;
 - (id)initWithReferenceImages:(id)arg1 maximumNumberOfTrackedImages:(long long)arg2;
 - (id)initWithReferenceImages:(id)arg1;

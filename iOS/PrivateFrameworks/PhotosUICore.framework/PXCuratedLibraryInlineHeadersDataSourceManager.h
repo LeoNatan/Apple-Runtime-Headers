@@ -26,10 +26,10 @@
     PXUpdater *_updater;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXUpdater *updater; // @synthesize updater=_updater;
 @property(readonly, nonatomic) PXCuratedLibraryInlineHeadersDataSource *yearsDataSource; // @synthesize yearsDataSource=_yearsDataSource;
 @property(readonly, nonatomic) PXCuratedLibraryInlineHeadersDataSource *monthsDataSource; // @synthesize monthsDataSource=_monthsDataSource;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)setNeedsUpdate;
 - (void)didPerformChanges;

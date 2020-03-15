@@ -65,6 +65,7 @@
 + (id)sidebarVisibilityProgressAnimator;
 + (id)defaultIconLocation;
 + (id)dockIconLocation;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool userAttemptedToOverscrollDuringCurrentGesture; // @synthesize userAttemptedToOverscrollDuringCurrentGesture=_userAttemptedToOverscrollDuringCurrentGesture;
 @property(readonly, nonatomic) unsigned long long ignoresOverscrollOnFirstPageOrientations; // @synthesize ignoresOverscrollOnFirstPageOrientations=_ignoresOverscrollOnFirstPageOrientations;
 @property(retain, nonatomic) SBHRootFolderSettings *folderSettings; // @synthesize folderSettings=_folderSettings;
@@ -92,7 +93,6 @@
 @property(readonly, nonatomic, getter=isDockExternal) _Bool dockExternal; // @synthesize dockExternal=_dockExternal;
 @property(nonatomic) unsigned long long dockEdge; // @synthesize dockEdge=_dockEdge;
 @property(readonly, nonatomic) SBFParallaxSettings *parallaxSettings; // @synthesize parallaxSettings=_parallaxSettings;
-- (void).cxx_destruct;
 - (void)_checkSidebarVisibilityProgressAfterScroll;
 - (_Bool)_shouldIgnoreOverscrollOnFirstPageForOrientation:(long long)arg1;
 - (_Bool)_shouldIgnoreOverscrollOnFirstPageForCurrentOrientation;

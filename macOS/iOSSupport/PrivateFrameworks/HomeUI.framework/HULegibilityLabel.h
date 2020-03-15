@@ -25,12 +25,12 @@
     _UILegibilitySettings *_legibilitySettings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(nonatomic) double strength; // @synthesize strength=_strength;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(copy, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
-- (void).cxx_destruct;
 - (void)_updateLegibilityView;
 - (void)_updateLabelForLegibilitySettings;
 - (double)_layoutGuideOffsetFromBottom:(id)arg1;

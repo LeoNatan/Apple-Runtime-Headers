@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     NSDictionary *_groupingValues;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *groupingValues; // @synthesize groupingValues=_groupingValues;
 @property(readonly, nonatomic) __weak IKDOMPrototype *prototype; // @synthesize prototype=_prototype;
 @property(readonly, nonatomic) IKAppPrototypeIdentifier *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)_sparseObjectFromObject:(id)arg1 usingPropertyPaths:(id)arg2;
 - (void)updateUsageIndexesWithChangeSet:(id)arg1;
 - (void)removeUsageForIndex:(long long)arg1;

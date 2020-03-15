@@ -15,8 +15,8 @@
     NSString *_maxContentSizeCategory;
 }
 
-@property(nonatomic) NSString *maxContentSizeCategory; // @synthesize maxContentSizeCategory=_maxContentSizeCategory;
 - (void).cxx_destruct;
+@property(nonatomic) NSString *maxContentSizeCategory; // @synthesize maxContentSizeCategory=_maxContentSizeCategory;
 - (id)_backgroundImageWithColor:(id)arg1;
 - (id)_titleFont;
 - (void)stopLoadingAnimation;

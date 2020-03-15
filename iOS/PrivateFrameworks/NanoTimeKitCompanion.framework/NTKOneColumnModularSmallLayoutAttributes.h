@@ -21,6 +21,7 @@
 }
 
 + (id)attributesForTemplate:(id)arg1 forDevice:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double titleBaselineOffset; // @synthesize titleBaselineOffset=_titleBaselineOffset;
 @property(retain, nonatomic) CLKFont *titleFont; // @synthesize titleFont=_titleFont;
 @property(nonatomic) double minimumFontSize; // @synthesize minimumFontSize=_minimumFontSize;
@@ -29,7 +30,6 @@
 @property(nonatomic) double marginWidth; // @synthesize marginWidth=_marginWidth;
 @property(nonatomic) double subtitleBaselineOffset; // @synthesize subtitleBaselineOffset=_subtitleBaselineOffset;
 @property(retain, nonatomic) CLKFont *subtitleFont; // @synthesize subtitleFont=_subtitleFont;
-- (void).cxx_destruct;
 
 @end
 

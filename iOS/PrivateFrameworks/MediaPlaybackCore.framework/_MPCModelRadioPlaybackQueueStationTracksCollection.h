@@ -22,10 +22,10 @@
     MPCModelGenericAVItemUserIdentityPropertySet *_identityPropertySet;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPCModelGenericAVItemUserIdentityPropertySet *identityPropertySet; // @synthesize identityPropertySet=_identityPropertySet;
 @property(readonly, copy, nonatomic) MPSectionedCollection *tracks; // @synthesize tracks=_tracks;
 @property(readonly, copy, nonatomic) MPSectionedCollection *trackModels; // @synthesize trackModels=_trackModels;
-- (void).cxx_destruct;
 - (id)trackForItemAtIndex:(long long)arg1;
 - (long long)removeExplicitItems;
 @property(readonly, nonatomic) long long numberOfItems;

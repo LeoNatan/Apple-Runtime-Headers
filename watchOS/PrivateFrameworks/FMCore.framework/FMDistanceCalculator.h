@@ -19,13 +19,13 @@
     NSNumberFormatter *_formatter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumberFormatter *formatter; // @synthesize formatter=_formatter;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *calculationQueue; // @synthesize calculationQueue=_calculationQueue;
 @property(retain, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(retain, nonatomic) NSLocale *measurementSystemLocale; // @synthesize measurementSystemLocale=_measurementSystemLocale;
 @property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property(nonatomic) __weak NSObject<FMDistanceCalculatorLocalizationDelegate> *localizationDelegate; // @synthesize localizationDelegate=_localizationDelegate;
-- (void).cxx_destruct;
 - (id)localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 - (id)localizedStringForKey:(id)arg1 value:(id)arg2;
 - (id)_localizedDistanceFromLocation:(id)arg1 toLocation:(id)arg2;

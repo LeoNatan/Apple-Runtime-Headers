@@ -22,9 +22,9 @@
 
 + (id)_nodeIDsFromNodePaths:(id)arg1;
 + (id)_parseAttributeString:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isInspectElementModeEnabled) _Bool inspectElementModeEnabled; // @synthesize inspectElementModeEnabled=_inspectElementModeEnabled;
 @property(readonly, nonatomic) __weak IKJSInspectorController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (void)_fullfillNodePath:(id)arg1;
 - (void)getDataBindingsForNodeWithErrorCallback:(CDUnknownBlockType)arg1 successCallback:(CDUnknownBlockType)arg2 nodeId:(int)arg3;
 - (void)getAssociatedDataForNodeWithErrorCallback:(CDUnknownBlockType)arg1 successCallback:(CDUnknownBlockType)arg2 nodeId:(int)arg3;

@@ -16,8 +16,11 @@
     NSDictionary *_snapshotAfter;
     NSMutableArray *_resultingPeople;
     NSArray *_resultingPeopleUIDs;
+    BOOL ignoresGuardianRestrictions;
 }
 
+- (void)setIgnoresGuardianRestrictions:(BOOL)arg1;
+- (BOOL)ignoresGuardianRestrictions;
 @property(copy) NSDictionary *snapshotAfter; // @synthesize snapshotAfter=_snapshotAfter;
 @property(copy) NSDictionary *snapshotBefore; // @synthesize snapshotBefore=_snapshotBefore;
 @property(copy) NSArray *resultingPeopleUIDs; // @synthesize resultingPeopleUIDs=_resultingPeopleUIDs;

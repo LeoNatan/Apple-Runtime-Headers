@@ -17,12 +17,12 @@
     HDSQLiteDatabase *_database;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HDSQLiteDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) HDProfile *profile; // @synthesize profile=_profile;
 @property(readonly, nonatomic) _Bool permitPendingAssociations; // @synthesize permitPendingAssociations=_permitPendingAssociations;
 @property(readonly, nonatomic) _Bool enforceSameSource; // @synthesize enforceSameSource=_enforceSameSource;
 @property(readonly, copy, nonatomic) NSUUID *parentUUID; // @synthesize parentUUID=_parentUUID;
-- (void).cxx_destruct;
 - (id)initWithParentUUID:(id)arg1 enforceSameSource:(_Bool)arg2 permitPendingAssociations:(_Bool)arg3 profile:(id)arg4 database:(id)arg5;
 
 @end

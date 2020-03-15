@@ -25,10 +25,10 @@
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
 + (Class)configurationClass;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_updateInterval, setter=_setUpdateInterval:) double updateInterval; // @synthesize updateInterval=_updateInterval;
 @property(copy, nonatomic) CDUnknownBlockType initialQueryResultsHandler; // @synthesize initialQueryResultsHandler=_initialQueryResultsHandler;
 @property(copy, nonatomic) CDUnknownBlockType queryUpdateHandler; // @synthesize queryUpdateHandler=_queryUpdateHandler;
-- (void).cxx_destruct;
 - (void)client_deliverResult:(id)arg1 query:(id)arg2;
 - (void)queue_deliverError:(id)arg1;
 - (void)_validateIntervalComponents:(id)arg1;

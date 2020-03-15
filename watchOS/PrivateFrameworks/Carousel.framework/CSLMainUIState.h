@@ -15,8 +15,8 @@
     NSArray *_entities;
 }
 
-@property(copy, nonatomic) NSArray *entities; // @synthesize entities=_entities;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *entities; // @synthesize entities=_entities;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned int hash;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

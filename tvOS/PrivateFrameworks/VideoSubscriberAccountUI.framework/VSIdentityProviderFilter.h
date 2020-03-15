@@ -16,10 +16,10 @@
 }
 
 + (id)keyPathsForValuesAffectingFilteredIdentityProviders;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *searchQuery; // @synthesize searchQuery=_searchQuery;
 @property(copy, nonatomic) NSArray *supportedAccountProviderIDs; // @synthesize supportedAccountProviderIDs=_supportedAccountProviderIDs;
 @property(copy, nonatomic) NSArray *allIdentityProviders; // @synthesize allIdentityProviders=_allIdentityProviders;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *filteredIdentityProviders;
 - (id)init;
 

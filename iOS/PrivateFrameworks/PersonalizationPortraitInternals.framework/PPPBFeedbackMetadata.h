@@ -23,12 +23,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isMapped; // @synthesize isMapped=_isMapped;
 @property(nonatomic) unsigned long long unixTimestampSec; // @synthesize unixTimestampSec=_unixTimestampSec;
 @property(retain, nonatomic) NSString *mappingId; // @synthesize mappingId=_mappingId;
 @property(retain, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(retain, nonatomic) NSString *clientBundleId; // @synthesize clientBundleId=_clientBundleId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

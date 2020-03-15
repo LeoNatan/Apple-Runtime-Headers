@@ -19,10 +19,10 @@
     id <SOExtensionDelegate> _extensionDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SOExtensionDelegate> extensionDelegate; // @synthesize extensionDelegate=_extensionDelegate;
 @property(retain, nonatomic) NSArray *associatedDomains; // @synthesize associatedDomains=_associatedDomains;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToExtension:(id)arg1;

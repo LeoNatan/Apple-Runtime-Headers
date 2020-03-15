@@ -19,12 +19,12 @@
     CATSerialOperationQueue *_serialOperationQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CATSerialOperationQueue *serialOperationQueue; // @synthesize serialOperationQueue=_serialOperationQueue;
 @property(readonly, nonatomic) NSMutableSet *expiredCoursesToPresent; // @synthesize expiredCoursesToPresent=_expiredCoursesToPresent;
 @property(readonly, nonatomic) CRKCourseEnrollmentController *enrollmentController; // @synthesize enrollmentController=_enrollmentController;
 @property(readonly, nonatomic) id <CRKExpiredCoursesInteractionDelegate> expiredCoursesInteractionDelegate; // @synthesize expiredCoursesInteractionDelegate=_expiredCoursesInteractionDelegate;
 @property(readonly, nonatomic) id <CRKRequestPerformingProtocol> studentDaemonProxy; // @synthesize studentDaemonProxy=_studentDaemonProxy;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)expiredCoursesInteractionDidFinish:(id)arg1;
 - (void)beginInteractionWithExpiredCourses:(id)arg1;

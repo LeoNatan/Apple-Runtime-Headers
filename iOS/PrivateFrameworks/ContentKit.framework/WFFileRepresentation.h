@@ -40,6 +40,7 @@
 + (id)fileWithURL:(id)arg1 options:(long long)arg2;
 + (id)fileWithData:(id)arg1 ofType:(id)arg2 proposedFilename:(id)arg3 originalURL:(id)arg4;
 + (id)fileWithData:(id)arg1 ofType:(id)arg2 proposedFilename:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool securityScopedResource; // @synthesize securityScopedResource=_securityScopedResource;
 @property(readonly, nonatomic) _Bool deletesFileOnDeallocation; // @synthesize deletesFileOnDeallocation=_deletesFileOnDeallocation;
 @property(readonly, nonatomic) NSURL *originalURL; // @synthesize originalURL=_originalURL;
@@ -47,7 +48,6 @@
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, nonatomic) WFFileType *wfType; // @synthesize wfType=_wfType;
 @property(retain, nonatomic) NSString *filename; // @synthesize filename=_filename;
-- (void).cxx_destruct;
 - (_Bool)isEncodable;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

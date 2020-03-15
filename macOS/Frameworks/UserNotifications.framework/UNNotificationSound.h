@@ -40,6 +40,7 @@
 + (id)defaultCriticalSound;
 + (id)defaultSystemSound;
 + (id)defaultSound;
+- (void).cxx_destruct;
 @property(readonly, getter=isCritical) BOOL critical; // @synthesize critical=_critical;
 @property(readonly, copy) NSURL *vibrationPatternFileURL; // @synthesize vibrationPatternFileURL=_vibrationPatternFileURL;
 @property(readonly, copy) NSString *vibrationIdentifier; // @synthesize vibrationIdentifier=_vibrationIdentifier;
@@ -54,7 +55,6 @@
 @property(readonly, copy) NSNumber *audioVolume; // @synthesize audioVolume=_audioVolume;
 @property(readonly, copy) NSString *audioCategory; // @synthesize audioCategory=_audioCategory;
 @property(readonly, copy) NSString *alertTopic; // @synthesize alertTopic=_alertTopic;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

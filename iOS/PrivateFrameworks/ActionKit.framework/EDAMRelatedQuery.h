@@ -20,13 +20,13 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cacheKey; // @synthesize cacheKey=_cacheKey;
 @property(retain, nonatomic) NSString *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSString *referenceUri; // @synthesize referenceUri=_referenceUri;
 @property(retain, nonatomic) EDAMNoteFilter *filter; // @synthesize filter=_filter;
 @property(retain, nonatomic) NSString *plainText; // @synthesize plainText=_plainText;
 @property(retain, nonatomic) NSString *noteGuid; // @synthesize noteGuid=_noteGuid;
-- (void).cxx_destruct;
 
 @end
 

@@ -13,8 +13,8 @@
     NSSet *_domainsIneligibleForPasswordAuditing;
 }
 
-@property(copy) NSSet *domainsIneligibleForPasswordAuditing; // @synthesize domainsIneligibleForPasswordAuditing=_domainsIneligibleForPasswordAuditing;
 - (void).cxx_destruct;
+@property(copy) NSSet *domainsIneligibleForPasswordAuditing; // @synthesize domainsIneligibleForPasswordAuditing=_domainsIneligibleForPasswordAuditing;
 - (id)initWithDomainsIneligibleForPasswordAuditing:(id)arg1;
 - (id)init;
 

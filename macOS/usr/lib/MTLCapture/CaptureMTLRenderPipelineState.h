@@ -21,8 +21,8 @@
     MTLRenderPipelineDescriptor *_descriptor;
 }
 
-@property(copy, nonatomic) MTLRenderPipelineDescriptor *descriptor; // @synthesize descriptor=_descriptor;
 - (void).cxx_destruct;
+@property(copy, nonatomic) MTLRenderPipelineDescriptor *descriptor; // @synthesize descriptor=_descriptor;
 - (id)newVertexShaderDebugInfo;
 - (id)newFragmentShaderDebugInfo;
 - (unsigned int)getVertexShaderTelemetryID;

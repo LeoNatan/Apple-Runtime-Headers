@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     int _centeredAroundPercentSegmentDrawCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int centeredAroundPercentSegmentDrawCount; // @synthesize centeredAroundPercentSegmentDrawCount=_centeredAroundPercentSegmentDrawCount;
 @property(nonatomic) unsigned int renderArea; // @synthesize renderArea=_renderArea;
-- (void).cxx_destruct;
 - (_Bool)shouldRunStateForRing:(id)arg1;
 - (void)didInitialize;
 - (id)name;

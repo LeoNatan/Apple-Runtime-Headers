@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     HMAddUserRemoteViewController *_remoteViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMAddUserRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(retain, nonatomic) _UIAsyncInvocation *cancelServiceInvocation; // @synthesize cancelServiceInvocation=_cancelServiceInvocation;
 @property(copy, nonatomic) CDUnknownBlockType loadHandler; // @synthesize loadHandler=_loadHandler;
 @property(nonatomic) _Bool shouldPresentWhenLoaded; // @synthesize shouldPresentWhenLoaded=_shouldPresentWhenLoaded;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (void)_presentAsTopmostViewController;
 - (void)userManagementDidFinishWithError:(id)arg1;
 - (void)userManagementDidLoad;

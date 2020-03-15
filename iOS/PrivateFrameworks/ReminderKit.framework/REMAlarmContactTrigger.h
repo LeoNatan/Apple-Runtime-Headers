@@ -17,8 +17,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)cdEntityName;
-@property(readonly, nonatomic) REMContactRepresentation *contactRepresentation; // @synthesize contactRepresentation=_contactRepresentation;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) REMContactRepresentation *contactRepresentation; // @synthesize contactRepresentation=_contactRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;
 - (unsigned long long)hash;

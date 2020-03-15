@@ -16,10 +16,10 @@
     NSMutableSet *_activeAssertionIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *activeAssertionIdentifiers; // @synthesize activeAssertionIdentifiers=_activeAssertionIdentifiers;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) Class assertionClass; // @synthesize assertionClass=_assertionClass;
-- (void).cxx_destruct;
 - (void)deregisterAssertion:(id)arg1;
 - (void)registerAssertion:(id)arg1;
 - (id)initWithAssertionClass:(Class)arg1;

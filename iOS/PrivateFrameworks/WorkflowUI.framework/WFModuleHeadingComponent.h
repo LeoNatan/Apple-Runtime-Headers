@@ -16,9 +16,9 @@
 }
 
 + (id)newWithModel:(id)arg1 navigationContext:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <WFComponentNavigationContext> navigationContext; // @synthesize navigationContext=_navigationContext;
 @property(readonly, nonatomic) WFModuleModel *model; // @synthesize model=_model;
-- (void).cxx_destruct;
 - (void)removeButtonTapped:(id)arg1;
 - (void)settingsButtonTapped;
 - (void)titleComponentTapped:(id)arg1;

@@ -16,9 +16,9 @@
     NSMutableArray *_commands;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *commands; // @synthesize commands=_commands;
 @property(retain, nonatomic) NSMutableDictionary *seen; // @synthesize seen=_seen;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)addToGroup:(id)arg1;
 - (void)applyToString:(id)arg1;

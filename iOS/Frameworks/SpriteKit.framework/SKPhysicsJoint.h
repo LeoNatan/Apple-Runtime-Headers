@@ -21,12 +21,12 @@
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool _implicit; // @synthesize _implicit=__implicit;
 @property(readonly, nonatomic) double reactionTorque; // @synthesize reactionTorque;
 @property(readonly, nonatomic) struct CGVector reactionForce; // @synthesize reactionForce;
 @property(retain, nonatomic) SKPhysicsBody *bodyB; // @synthesize bodyB;
 @property(retain, nonatomic) SKPhysicsBody *bodyA; // @synthesize bodyA;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

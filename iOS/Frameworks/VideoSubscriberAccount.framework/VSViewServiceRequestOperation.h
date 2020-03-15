@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
     NSUUID *_requestID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSUUID *requestID; // @synthesize requestID=_requestID;
 @property(retain, nonatomic) VSViewServiceHostViewController *viewServiceHostViewController; // @synthesize viewServiceHostViewController=_viewServiceHostViewController;
 @property(retain, nonatomic) VSOptional *result; // @synthesize result=_result;
 @property(nonatomic) __weak id <VSViewServiceRequestOperationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) VSViewServiceRequest *viewServiceRequest; // @synthesize viewServiceRequest=_viewServiceRequest;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)finishExecutionIfPossible;
 - (void)executionDidBegin;

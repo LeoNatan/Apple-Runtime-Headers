@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     NSObject<OS_nw_path_flow> *_internalPathFlow;
 }
 
-@property(readonly) NSObject<OS_nw_path_flow> *internalPathFlow; // @synthesize internalPathFlow=_internalPathFlow;
 - (void).cxx_destruct;
+@property(readonly) NSObject<OS_nw_path_flow> *internalPathFlow; // @synthesize internalPathFlow=_internalPathFlow;
 - (id)privateDescription;
 - (id)description;
 - (id)descriptionWithIndent:(int)arg1 showFullContent:(_Bool)arg2;

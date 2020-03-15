@@ -28,6 +28,7 @@
     PHCachingImageManager *_imageManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHCachingImageManager *imageManager; // @synthesize imageManager=_imageManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *placeTileFetchCounterQueue; // @synthesize placeTileFetchCounterQueue=_placeTileFetchCounterQueue;
 @property(nonatomic) unsigned long long cellLabelNumberOfLinesPermitted; // @synthesize cellLabelNumberOfLinesPermitted=_cellLabelNumberOfLinesPermitted;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) PXGadgetSpec *gadgetSpec; // @synthesize gadgetSpec=_gadgetSpec;
 @property(nonatomic) __weak id <PXGadgetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
-- (void).cxx_destruct;
 - (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)updateCellLabelNumberOfLinesWithScreenSize:(struct CGSize)arg1;
@@ -63,8 +63,9 @@
 - (id)debugURLsForDiagnostics;
 - (_Bool)hasLoadedContentData;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (struct NSObject *)contentViewController;
+- (id)contentViewController;
 @property(readonly, nonatomic) _Bool hasContentToDisplay;
+@property(readonly, nonatomic) unsigned long long gadgetCapabilities;
 @property(readonly, nonatomic) unsigned long long gadgetType;
 @property(readonly, nonatomic) NSString *localizedTitle;
 - (void)traitCollectionDidChange:(id)arg1;
@@ -82,9 +83,6 @@
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) unsigned long long headerStyle;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) _Bool supportsAssetsDrop;
-@property(readonly, nonatomic) _Bool supportsHighlighting;
-@property(readonly, nonatomic) _Bool supportsSelection;
 @property(nonatomic) struct CGRect visibleContentRect;
 
 @end

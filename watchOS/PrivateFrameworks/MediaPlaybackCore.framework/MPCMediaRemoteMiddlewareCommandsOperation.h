@@ -18,11 +18,11 @@
     MPCFuture *_supportedCommandsFuture;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPCFuture *supportedCommandsFuture; // @synthesize supportedCommandsFuture=_supportedCommandsFuture;
 @property(retain, nonatomic) MPCMediaRemoteMiddleware *middleware; // @synthesize middleware=_middleware;
 @property(readonly, nonatomic) NSArray *invalidationObservers; // @synthesize invalidationObservers=_invalidationObservers;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
-- (void).cxx_destruct;
 - (id)timeoutDescription;
 - (void)execute;
 - (id)initWithMiddleware:(id)arg1;

@@ -41,6 +41,7 @@
 }
 
 + (struct UIEdgeInsets)adjustedLayoutMargins:(struct UIEdgeInsets)arg1 viewportWidth:(double)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <FCFeedTheming> feedTheme; // @synthesize feedTheme=_feedTheme;
 @property(retain, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) BOOL showingPrefetchedPurchase; // @synthesize showingPrefetchedPurchase=_showingPrefetchedPurchase;
@@ -66,7 +67,6 @@
 @property(readonly, nonatomic) double feedWidth; // @synthesize feedWidth=_feedWidth;
 @property(copy, nonatomic) NSString *preferredContentSizeCategory; // @synthesize preferredContentSizeCategory=_preferredContentSizeCategory;
 @property(retain, nonatomic) FCHeadlineTemplate *defaultHeadlineTemplate; // @synthesize defaultHeadlineTemplate=_defaultHeadlineTemplate;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) UIColor *feedBackgroundColor;
 - (BOOL)preservesTraitCollection:(id)arg1;
 - (BOOL)preservesLayoutMargins:(struct UIEdgeInsets)arg1;

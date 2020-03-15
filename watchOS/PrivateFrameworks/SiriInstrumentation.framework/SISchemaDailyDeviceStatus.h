@@ -28,6 +28,7 @@
     long long _assistantRecordPublishTimestampMs;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int spokenNotificationsWhitelistSettings; // @synthesize spokenNotificationsWhitelistSettings=_spokenNotificationsWhitelistSettings;
 @property(nonatomic) _Bool spokenNotificationsControlCenterModuleEnabled; // @synthesize spokenNotificationsControlCenterModuleEnabled=_spokenNotificationsControlCenterModuleEnabled;
 @property(nonatomic) _Bool spokenNotificationsproxCardSeen; // @synthesize spokenNotificationsproxCardSeen=_spokenNotificationsproxCardSeen;
@@ -44,7 +45,6 @@
 @property(copy, nonatomic) NSString *sharedUserId; // @synthesize sharedUserId=_sharedUserId;
 @property(copy, nonatomic) NSString *siriSpeechID; // @synthesize siriSpeechID=_siriSpeechID;
 @property(copy, nonatomic) NSString *siriDeviceID; // @synthesize siriDeviceID=_siriDeviceID;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

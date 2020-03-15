@@ -19,11 +19,11 @@
 }
 
 + (_Bool)validatePredicate:(id)arg1 allowedKeys:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSSet *allowedKeys; // @synthesize allowedKeys=_allowedKeys;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(nonatomic) _Bool validated; // @synthesize validated=_validated;
-- (void).cxx_destruct;
 - (void)visitPredicateOperator:(id)arg1;
 - (void)visitPredicate:(id)arg1;
 - (void)visitPredicateExpression:(id)arg1;

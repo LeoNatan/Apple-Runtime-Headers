@@ -18,10 +18,10 @@
 }
 
 + (id)uuid;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long migrationEnd; // @synthesize migrationEnd=_migrationEnd;
 @property(readonly, nonatomic) unsigned long long migrationStart; // @synthesize migrationStart=_migrationStart;
 @property(readonly, nonatomic) AWDHomeKitDataModelMigration *metric; // @synthesize metric=_metric;
-- (void).cxx_destruct;
 - (id)metricForAWD;
 - (unsigned int)AWDMessageType;
 - (unsigned long long)migrationDurationInMilliseconds;

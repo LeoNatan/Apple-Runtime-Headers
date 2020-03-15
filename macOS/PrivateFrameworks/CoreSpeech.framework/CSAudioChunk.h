@@ -20,6 +20,7 @@
     NSData *_remoteVAD;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *remoteVAD; // @synthesize remoteVAD=_remoteVAD;
 @property(readonly, nonatomic) unsigned long long hostTime; // @synthesize hostTime=_hostTime;
 @property(readonly, nonatomic) unsigned long long startSampleCount; // @synthesize startSampleCount=_startSampleCount;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) unsigned long long numSamples; // @synthesize numSamples=_numSamples;
 @property(readonly, nonatomic) unsigned long long numChannels; // @synthesize numChannels=_numChannels;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (void)splitAudioChunkSuchThatNumSamplesReceivedSoFar:(unsigned long long)arg1 reachesACountOf:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)skipSamplesAtStartSuchThatNumSamplesReceivedSoFar:(unsigned long long)arg1 reachesACountOf:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)subChunkFrom:(unsigned long long)arg1 numSamples:(unsigned long long)arg2;

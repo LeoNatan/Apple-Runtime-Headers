@@ -18,10 +18,10 @@
     id <HKGraphSeriesBlockCoordinateInfo> _userInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <HKGraphSeriesBlockCoordinateInfo> userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) NSDate *xValue; // @synthesize xValue=_xValue;
 @property(retain, nonatomic) NSArray *timeIntervalOffsets; // @synthesize timeIntervalOffsets=_timeIntervalOffsets;
-- (void).cxx_destruct;
 - (id)maxYValue;
 - (id)minYValue;
 - (id)allYValues;

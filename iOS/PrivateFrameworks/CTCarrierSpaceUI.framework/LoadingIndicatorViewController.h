@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSString *_messageText;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *messageText; // @synthesize messageText=_messageText;
 @property(retain, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 @property __weak UIActivityIndicatorView *spinnerView; // @synthesize spinnerView=_spinnerView;
 @property(nonatomic) __weak UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property(nonatomic) __weak UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;

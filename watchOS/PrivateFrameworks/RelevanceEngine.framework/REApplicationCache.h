@@ -35,8 +35,8 @@
 - (unsigned int)typeForApplication:(id)arg1;
 - (id)watchKitExtensionForApplication:(id)arg1;
 - (void)_accessRemoteApplicationsMapWithCompletion:(CDUnknownBlockType)arg1;
-- (id)remoteApplicationForLocalApplication:(struct NSString *)arg1;
-- (id)localApplicationForRemoteApplication:(struct NSString *)arg1;
+- (id)remoteApplicationForLocalApplication:(id)arg1;
+- (id)localApplicationForRemoteApplication:(id)arg1;
 - (_Bool)applicationIsRemote:(id)arg1;
 - (_Bool)_queue_applicationIsRestricted:(id)arg1;
 - (_Bool)applicationIsRestricted:(id)arg1;

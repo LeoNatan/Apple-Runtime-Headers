@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     UIView *_eventForwardView;
 }
 
-@property(nonatomic) __weak UIView *eventForwardView; // @synthesize eventForwardView=_eventForwardView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIView *eventForwardView; // @synthesize eventForwardView=_eventForwardView;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 
 @end

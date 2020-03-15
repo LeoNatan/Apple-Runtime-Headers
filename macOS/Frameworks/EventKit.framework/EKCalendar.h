@@ -67,6 +67,7 @@
 + (Class)frozenClass;
 + (id)calendarForEntityType:(unsigned long long)arg1 eventStore:(id)arg2;
 + (id)calendarWithCalendar:(id)arg1 eventStore:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isNaturalLanguageSuggestedEventCalendar; // @synthesize isNaturalLanguageSuggestedEventCalendar=_isNaturalLanguageSuggestedEventCalendar;
 @property(nonatomic) BOOL isSuggestedEventCalendar; // @synthesize isSuggestedEventCalendar=_isSuggestedEventCalendar;
 @property(nonatomic) BOOL isSubscribedHolidayCalendar; // @synthesize isSubscribedHolidayCalendar=_isSubscribedHolidayCalendar;
@@ -100,7 +101,6 @@
 - (id)defaultOrganizerAddressForNewItems;
 @property(readonly, nonatomic) NSString *calendarIdentifier; // @synthesize calendarIdentifier;
 - (BOOL)cachedHasSharees;
-- (void).cxx_destruct;
 - (id)frozenObject;
 - (id)coreDataEntityName;
 - (BOOL)revert;

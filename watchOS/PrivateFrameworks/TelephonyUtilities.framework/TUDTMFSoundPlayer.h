@@ -11,8 +11,8 @@
     CDUnknownBlockType _playSystemSoundHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType playSystemSoundHandler; // @synthesize playSystemSoundHandler=_playSystemSoundHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType playSystemSoundHandler; // @synthesize playSystemSoundHandler=_playSystemSoundHandler;
 - (void)attemptToPlaySoundType:(int)arg1;
 - (_Bool)attemptToPlayKey:(unsigned char)arg1;
 - (id)init;

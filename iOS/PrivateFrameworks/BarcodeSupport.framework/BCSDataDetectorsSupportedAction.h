@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     NSString *_icsString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *icsString; // @synthesize icsString=_icsString;
 @property(readonly, copy, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(readonly, nonatomic) DDScannerResult *scannerResult; // @synthesize scannerResult=_scannerResult;
-- (void).cxx_destruct;
 - (id)_actionStringsArray;
 - (void)determineActionabilityWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)debugDescriptionExtraInfoDictionary;

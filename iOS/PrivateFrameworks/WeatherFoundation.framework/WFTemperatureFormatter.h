@@ -22,6 +22,7 @@
 }
 
 + (id)temperatureFormatterWithInputUnit:(int)arg1 outputUnit:(int)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool includeDegreeSymbol; // @synthesize includeDegreeSymbol=_includeDegreeSymbol;
 @property(nonatomic) int symbolType; // @synthesize symbolType=_symbolType;
 @property(nonatomic) unsigned long long maximumFractionDigits; // @synthesize maximumFractionDigits=_maximumFractionDigits;
@@ -30,7 +31,6 @@
 @property(nonatomic) int inputUnit; // @synthesize inputUnit=_inputUnit;
 @property(copy, nonatomic) NSString *fallbackTemperatureString; // @synthesize fallbackTemperatureString=_fallbackTemperatureString;
 @property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
-- (void).cxx_destruct;
 - (void)_localeDidChangeNotification:(id)arg1;
 - (id)_formatTemperatureValue:(id)arg1 toUnit:(int)arg2;
 - (id)formattedTemperatureFromString:(id)arg1;

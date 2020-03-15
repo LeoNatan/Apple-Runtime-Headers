@@ -15,9 +15,9 @@
     NSMutableSet *_selectedWorkflows;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *selectedWorkflows; // @synthesize selectedWorkflows=_selectedWorkflows;
 @property(nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
-- (void).cxx_destruct;
 - (void)collectionView:(id)arg1 moveItemAtIndexPath:(id)arg2 toIndexPath:(id)arg3;
 - (_Bool)collectionView:(id)arg1 canMoveItemAtIndexPath:(id)arg2;
 - (void)removeDeletedResultsFromSelection;

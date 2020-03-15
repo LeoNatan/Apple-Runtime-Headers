@@ -18,13 +18,13 @@
     long long _maxSelectable;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long maxSelectable; // @synthesize maxSelectable=_maxSelectable;
 @property(copy, nonatomic) NSArray *searchPlayers; // @synthesize searchPlayers=_searchPlayers;
 @property(copy, nonatomic) NSArray *allPlayers; // @synthesize allPlayers=_allPlayers;
 @property(nonatomic) __weak UISearchBar *searchBar; // @synthesize searchBar=_searchBar;
 @property(nonatomic, getter=isSearching) _Bool searching; // @synthesize searching=_searching;
 @property(retain, nonatomic) NSMutableDictionary *playerStates; // @synthesize playerStates=_playerStates;
-- (void).cxx_destruct;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;

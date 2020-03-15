@@ -21,13 +21,13 @@
 }
 
 + (id)defaultManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TPSReachability *hostReachability; // @synthesize hostReachability=_hostReachability;
 @property(retain, nonatomic) TPSReachability *internetReachability; // @synthesize internetReachability=_internetReachability;
 @property(retain, nonatomic) NSString *hostName; // @synthesize hostName=_hostName;
 @property(nonatomic) _Bool internetActive; // @synthesize internetActive=_internetActive;
 @property(nonatomic) _Bool connected; // @synthesize connected=_connected;
 @property(nonatomic) _Bool reachabilityInitialized; // @synthesize reachabilityInitialized=_reachabilityInitialized;
-- (void).cxx_destruct;
 - (void)updateStatus:(id)arg1;
 - (void)reachabilityChanged:(id)arg1;
 - (void)stopNotifier;

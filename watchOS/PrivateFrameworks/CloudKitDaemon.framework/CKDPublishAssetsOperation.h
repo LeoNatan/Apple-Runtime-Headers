@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_fetchedRecordsByID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *fetchedRecordsByID; // @synthesize fetchedRecordsByID=_fetchedRecordsByID;
 @property(retain) NSOperation *fetchRecordsOperation; // @synthesize fetchRecordsOperation=_fetchRecordsOperation;
 @property(nonatomic) unsigned int URLOptions; // @synthesize URLOptions=_URLOptions;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSDictionary *fileNamesByAssetFieldNames; // @synthesize fileNamesByAssetFieldNames=_fileNamesByAssetFieldNames;
 @property(retain, nonatomic) NSArray *recordIDs; // @synthesize recordIDs=_recordIDs;
 @property(copy, nonatomic) CDUnknownBlockType assetPublishedBlock; // @synthesize assetPublishedBlock=_assetPublishedBlock;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;

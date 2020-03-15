@@ -19,10 +19,10 @@
 
 + (id)ANFBookmarkWithArticleID:(id)arg1;
 + (id)PDFBookmarkWithPageID:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
 @property(readonly, copy, nonatomic) NSString *pageID; // @synthesize pageID=_pageID;
 @property(readonly, nonatomic) long long issueType; // @synthesize issueType=_issueType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithIssueType:(long long)arg1 articleID:(id)arg2 pageID:(id)arg3;
 - (id)init;

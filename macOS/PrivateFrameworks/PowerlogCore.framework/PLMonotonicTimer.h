@@ -22,13 +22,13 @@
 + (BOOL)debugInstance;
 + (id)debugScheduledTimerWithMonotonicFireDate:(id)arg1 withInterval:(double)arg2 withQueue:(id)arg3 withBlock:(CDUnknownBlockType)arg4;
 + (id)scheduledTimerWithMonotonicFireDate:(id)arg1 withInterval:(double)arg2 withQueue:(id)arg3 withBlock:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(retain) PLEntryNotificationOperatorComposition *wakeEntryNotification; // @synthesize wakeEntryNotification=_wakeEntryNotification;
 @property(retain) NSMutableSet *canceledFireDates; // @synthesize canceledFireDates=_canceledFireDates;
 @property(copy) CDUnknownBlockType block; // @synthesize block=_block;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property double interval; // @synthesize interval=_interval;
 @property(retain, nonatomic) NSDate *monotonicFireDate; // @synthesize monotonicFireDate=_monotonicFireDate;
-- (void).cxx_destruct;
 - (void)reschedule;
 - (void)timerFiredForMonotonicFireDate:(id)arg1;
 - (void)_cancel;

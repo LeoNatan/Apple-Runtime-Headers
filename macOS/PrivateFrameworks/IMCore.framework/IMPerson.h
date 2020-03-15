@@ -36,6 +36,7 @@
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 orEmail:(id)arg3;
 + (id)existingABPersonWithFirstName:(id)arg1 lastName:(id)arg2;
 + (id)allPeople;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContact *cnContact; // @synthesize cnContact=_cnContact;
 @property(readonly, nonatomic) BOOL _registered; // @synthesize _registered;
 @property(retain, nonatomic) NSString *cachedNickName; // @synthesize cachedNickName=_cachedNickName;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic, setter=_setUniqueID:) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(retain, nonatomic, setter=_setCustomBook:) ABAddressBook *_customBook; // @synthesize _customBook;
 @property(readonly, nonatomic) ABPerson *_abPerson; // @synthesize _abPerson;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 @property(readonly, nonatomic) unsigned long long status;
 @property(readonly, nonatomic) NSData *imageDataWithoutLoading;

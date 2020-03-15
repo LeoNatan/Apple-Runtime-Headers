@@ -15,9 +15,9 @@
 }
 
 + (id)sharedSoftwareMap;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKSoftwareMapObserver *sharedObserver; // @synthesize sharedObserver=_sharedObserver;
 @property(retain, nonatomic) NSMutableDictionary *productsObservers; // @synthesize productsObservers=_productsObservers;
-- (void).cxx_destruct;
 - (void)startAdoptionEligibilityCheckWithReplyBlock:(CDUnknownBlockType)arg1;
 - (id)adopt:(id)arg1;
 - (id)adoptableBundleIdentifiers;

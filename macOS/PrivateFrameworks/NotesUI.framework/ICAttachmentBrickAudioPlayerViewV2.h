@@ -17,11 +17,11 @@
     ICArcLayer *_progressCircleLayer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAudioPlayingDisabled) BOOL audioPlayingDisabled; // @synthesize audioPlayingDisabled=_audioPlayingDisabled;
 @property(retain, nonatomic) ICArcLayer *progressCircleLayer; // @synthesize progressCircleLayer=_progressCircleLayer;
 @property(retain, nonatomic) ICCircleLayer *progressGrooveLayer; // @synthesize progressGrooveLayer=_progressGrooveLayer;
 @property(nonatomic) id <ICAttachmentBrickAudioPlayerViewV2Delegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)hostViewDidZoom:(id)arg1;
 - (id)hitTest:(struct CGPoint)arg1;
 - (void)showStopped;
@@ -34,8 +34,8 @@
 - (void)createProgressLayers;
 - (void)createPlayPauseViews;
 - (id)addSubImageViewForImage:(id)arg1;
-- (struct NSColor *)backgroundPressedColor;
-- (struct NSColor *)backgroundNormalColor;
+- (id)backgroundPressedColor;
+- (id)backgroundNormalColor;
 - (void)createBackgroundLayer;
 - (void)sharedInit;
 

@@ -18,13 +18,13 @@
     NSString *_defaultSourceBundleIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *defaultSourceBundleIdentifier; // @synthesize defaultSourceBundleIdentifier=_defaultSourceBundleIdentifier;
 @property(readonly, copy) NSString *sourceBundleIdentifier; // @synthesize sourceBundleIdentifier=_sourceBundleIdentifier;
 @property(readonly, copy) HKHealthStoreConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly) HDClientAuthorizationOracle *authorizationOracle; // @synthesize authorizationOracle=_authorizationOracle;
 @property(readonly) HDProfile *profile; // @synthesize profile=_profile;
 @property(readonly) HDXPCClient *XPCClient; // @synthesize XPCClient=_XPCClient;
-- (void).cxx_destruct;
 - (_Bool)verifyHealthRecordsPermissionGrantedWithError:(id *)arg1;
 - (id)sourceVersionWithDaemon:(id)arg1;
 - (_Bool)hasPrivateMetadataAccess;

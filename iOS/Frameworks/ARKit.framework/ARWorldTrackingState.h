@@ -9,6 +9,8 @@
 #import <ARKit/NSCopying-Protocol.h>
 #import <ARKit/NSSecureCoding-Protocol.h>
 
+@class NSArray;
+
 @interface ARWorldTrackingState : NSObject <NSCopying, NSSecureCoding>
 {
     _Bool _majorRelocalization;
@@ -19,12 +21,29 @@
     long long _vioTrackingState;
     double _lastMajorRelocalizationTimestamp;
     double _originTimestamp;
+    double _poseTimestamp;
+    unsigned long long _currentVIOMapSize;
+    unsigned long long _numberOfCameraSwitches;
+    unsigned long long _reinitializationAttempts;
+    NSArray *_mergedSessionIdentifiers;
+    NSArray *_collaborationStats;
+    // Error parsing type: {?="columns"[4]}, name: _majorRelocalizationCameraTransform
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *collaborationStats; // @synthesize collaborationStats=_collaborationStats;
+@property(retain, nonatomic) NSArray *mergedSessionIdentifiers; // @synthesize mergedSessionIdentifiers=_mergedSessionIdentifiers;
+@property(nonatomic) unsigned long long reinitializationAttempts; // @synthesize reinitializationAttempts=_reinitializationAttempts;
+@property(nonatomic) unsigned long long numberOfCameraSwitches; // @synthesize numberOfCameraSwitches=_numberOfCameraSwitches;
+@property(nonatomic) unsigned long long currentVIOMapSize; // @synthesize currentVIOMapSize=_currentVIOMapSize;
+@property(nonatomic) double poseTimestamp; // @synthesize poseTimestamp=_poseTimestamp;
 @property(nonatomic) double originTimestamp; // @synthesize originTimestamp=_originTimestamp;
 @property(nonatomic) double lastMajorRelocalizationTimestamp; // @synthesize lastMajorRelocalizationTimestamp=_lastMajorRelocalizationTimestamp;
 @property(nonatomic) long long vioTrackingState; // @synthesize vioTrackingState=_vioTrackingState;
+// Error parsing type for property majorRelocalizationCameraTransform:
+// Property attributes: T{?=[4]},N,V_majorRelocalizationCameraTransform
+
 @property(nonatomic) _Bool poseGraphUpdated; // @synthesize poseGraphUpdated=_poseGraphUpdated;
 @property(nonatomic) _Bool minorRelocalization; // @synthesize minorRelocalization=_minorRelocalization;
 @property(nonatomic) _Bool majorRelocalization; // @synthesize majorRelocalization=_majorRelocalization;

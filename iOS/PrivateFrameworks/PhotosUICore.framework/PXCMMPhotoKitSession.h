@@ -18,11 +18,11 @@
     PHAsset *_anchorAsset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PHAsset *anchorAsset; // @synthesize anchorAsset=_anchorAsset;
 @property(readonly, nonatomic) PHMomentShare *originatingMomentShare; // @synthesize originatingMomentShare=_originatingMomentShare;
 @property(readonly, nonatomic) PHSuggestion *suggestion; // @synthesize suggestion=_suggestion;
 @property(readonly, nonatomic) PHMomentShare *momentShare; // @synthesize momentShare=_momentShare;
-- (void).cxx_destruct;
 - (id)diagnosticDictionary;
 - (id)momentShareStatusPresentationWithPresentationStyle:(long long)arg1;
 - (id)description;

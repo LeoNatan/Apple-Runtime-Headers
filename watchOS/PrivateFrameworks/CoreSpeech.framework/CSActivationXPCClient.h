@@ -13,8 +13,8 @@
     NSObject<OS_xpc_object> *_xpcConnection;
 }
 
-@property(retain, nonatomic) NSObject<OS_xpc_object> *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_xpc_object> *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (id)_decodeError:(id)arg1;
 - (void)_sendMessage:(id)arg1 connection:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)notifyActivationEvent:(id)arg1 completion:(CDUnknownBlockType)arg2;

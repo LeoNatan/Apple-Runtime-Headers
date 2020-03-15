@@ -16,10 +16,10 @@
 }
 
 + (id)requiredPlaylistEntryProperties;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completeResponseHandler; // @synthesize completeResponseHandler=_completeResponseHandler;
 @property(copy, nonatomic) CDUnknownBlockType localPersistenceResponseHandler; // @synthesize localPersistenceResponseHandler=_localPersistenceResponseHandler;
 @property(copy, nonatomic) MPModelLibraryPlaylistEditChangeRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (_Bool)_isCloudLibraryEnabled;
 - (void)execute;
 

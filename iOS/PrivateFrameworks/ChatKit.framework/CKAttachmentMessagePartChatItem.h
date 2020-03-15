@@ -15,9 +15,9 @@
     CKMediaObject *_mediaObject;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKMediaObject *mediaObject; // @synthesize mediaObject=_mediaObject;
 - (id)transcriptTraitCollection;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *transferGUID;
 - (id)dragItemProvider;
 - (id)pasteboardItems;

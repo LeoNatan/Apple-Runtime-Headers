@@ -27,11 +27,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _itemViewGenerator;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType itemViewGenerator; // @synthesize itemViewGenerator=_itemViewGenerator;
 @property(nonatomic) _Bool suppressSpacing; // @synthesize suppressSpacing=_suppressSpacing;
 @property(nonatomic) _Bool useGroupSizing; // @synthesize useGroupSizing=_useGroupSizing;
 @property(readonly, nonatomic) UILayoutGuide *popoverLayoutGuide; // @synthesize popoverLayoutGuide=_popoverLayoutGuide;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_addConstraintsToActivate:(id)arg1 toDeactivate:(id)arg2;
 - (void)_addLayoutGuides:(id)arg1;
@@ -40,7 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateItemViewSizing;
 - (void)_updateCustomView;
 - (_Bool)_shouldBeDirty;
-- (id)_item;
+- (id)barButtonItem;
 - (double)minimumLayoutWidthGivenMinimumSpaceWidth:(double)arg1;
 - (_Bool)shouldHoriziontallyCenterView:(id)arg1;
 - (void)_updateItemView;

@@ -12,13 +12,13 @@
 {
     _Bool _vibrant;
     _Bool _disableVibrancy;
-    struct UIColor *_defaultTextColor;
+    UIColor *_defaultTextColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *defaultTextColor; // @synthesize defaultTextColor=_defaultTextColor;
 @property(nonatomic) _Bool disableVibrancy; // @synthesize disableVibrancy=_disableVibrancy;
 @property(nonatomic) _Bool vibrant; // @synthesize vibrant=_vibrant;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *ic_stringValue;
 @property(retain, nonatomic) NSAttributedString *ic_attributedStringValue;
 - (void)setTextColor:(id)arg1;

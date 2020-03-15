@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     IrisClip *_irisClip;
 }
 
-@property(nonatomic) __weak IrisClip *irisClip; // @synthesize irisClip=_irisClip;
 - (void).cxx_destruct;
+@property(nonatomic) __weak IrisClip *irisClip; // @synthesize irisClip=_irisClip;
 - (double)maximumPhotoDuration;
 - (double)idealPhotoDuration;
 - (double)minimumPhotoDuration;

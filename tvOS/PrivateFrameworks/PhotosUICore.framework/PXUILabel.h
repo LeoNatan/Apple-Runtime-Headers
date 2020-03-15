@@ -19,9 +19,9 @@
     PXLabelSpec *_spec;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXLabelSpec *spec; // @synthesize spec=_spec;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)_configuredText;
 - (void)updateConstraints;
 - (void)_configureLabel;

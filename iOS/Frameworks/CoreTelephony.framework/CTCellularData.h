@@ -14,9 +14,9 @@
     CDUnknownBlockType _cellularDataRestrictionDidUpdateNotifier;
 }
 
-@property(copy) CDUnknownBlockType cellularDataRestrictionDidUpdateNotifier; // @synthesize cellularDataRestrictionDidUpdateNotifier=_cellularDataRestrictionDidUpdateNotifier;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType cellularDataRestrictionDidUpdateNotifier; // @synthesize cellularDataRestrictionDidUpdateNotifier=_cellularDataRestrictionDidUpdateNotifier;
 - (void)dealloc;
 @property(readonly, nonatomic) unsigned long long restrictedState; // @synthesize restrictedState=_restrictedState;
 - (void)setCellularDataRestrictionStateFromPolicies:(void *)arg1;

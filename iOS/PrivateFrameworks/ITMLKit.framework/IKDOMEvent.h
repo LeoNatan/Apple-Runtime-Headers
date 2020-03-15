@@ -25,6 +25,7 @@
     long long _dispatchState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool defaultPrevented; // @synthesize defaultPrevented=_defaultPrevented;
 @property(nonatomic) long long dispatchState; // @synthesize dispatchState=_dispatchState;
 @property(nonatomic) long long eventPhase; // @synthesize eventPhase=_eventPhase;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) _Bool bubbles; // @synthesize bubbles=_bubbles;
 @property(retain, nonatomic) IKDOMNode *target; // @synthesize target=_target;
 @property(readonly, retain, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)stopImmediatePropagation;
 - (void)preventDefault;
 - (void)stopPropagation;

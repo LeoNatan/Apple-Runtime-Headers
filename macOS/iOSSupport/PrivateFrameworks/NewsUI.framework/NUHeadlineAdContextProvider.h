@@ -17,9 +17,9 @@
     FCIssue *_issue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCIssue *issue; // @synthesize issue=_issue;
 @property(readonly, nonatomic) id <FCHeadlineProviding> headline; // @synthesize headline=_headline;
-- (void).cxx_destruct;
 - (id)contextProvidersForKeyPath:(id)arg1;
 - (id)adContextValueForKeyPath:(id)arg1;
 - (id)initWithHeadline:(id)arg1 issue:(id)arg2;

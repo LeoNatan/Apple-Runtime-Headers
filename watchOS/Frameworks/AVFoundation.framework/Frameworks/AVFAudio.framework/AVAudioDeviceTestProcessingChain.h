@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *processingStripURL; // @synthesize processingStripURL=_processingStripURL;
 @property(retain, nonatomic) NSURL *graphURL; // @synthesize graphURL=_graphURL;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

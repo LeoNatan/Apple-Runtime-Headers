@@ -13,8 +13,8 @@
     NSString *_extensionContextClassName;
 }
 
-@property(readonly, nonatomic) NSString *extensionContextClassName; // @synthesize extensionContextClassName=_extensionContextClassName;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *extensionContextClassName; // @synthesize extensionContextClassName=_extensionContextClassName;
 - (id)initWithExtensionContextClassName:(id)arg1;
 
 @end

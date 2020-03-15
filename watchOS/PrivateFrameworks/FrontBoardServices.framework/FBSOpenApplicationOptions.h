@@ -19,8 +19,8 @@
 
 + (_Bool)supportsBSXPCSecureCoding;
 + (id)optionsWithDictionary:(id)arg1;
-@property(copy, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_payload;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_payload;
 - (void)_sanitizeAndValidatePayload;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

@@ -24,6 +24,7 @@
     NSMutableArray *__connections;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *_connections; // @synthesize _connections=__connections;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_queue; // @synthesize _queue=__queue;
 @property(readonly, nonatomic) NSXPCListener *_listener; // @synthesize _listener=__listener;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) CAMPersistenceController *_persistenceController; // @synthesize _persistenceController=__persistenceController;
 @property(readonly, nonatomic) CAMNebulaIrisBackendController *_irisBackendController; // @synthesize _irisBackendController=__irisBackendController;
 @property(readonly, nonatomic) CAMTimelapseBackendController *_timelapseBackendController; // @synthesize _timelapseBackendController=__timelapseBackendController;
-- (void).cxx_destruct;
 - (void)persistenceController:(id)arg1 didGenerateVideoLocalPersistenceResult:(id)arg2 forCaptureResult:(id)arg3 fromRequest:(id)arg4;
 - (void)daemonConnectionManagerHasBeenDisconnected:(id)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

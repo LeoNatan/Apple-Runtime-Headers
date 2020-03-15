@@ -16,11 +16,11 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(copy, nonatomic) CDUnknownBlockType transactionConfigurator; // @synthesize transactionConfigurator=_transactionConfigurator;
 @property(copy, nonatomic) CDUnknownBlockType transactionProvider; // @synthesize transactionProvider=_transactionProvider;
 @property(nonatomic) long long source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (_Bool)isMainWorkspaceTransitionRequest;
 - (id)succinctDescriptionBuilder;
 - (void)setTransientOverlayContext:(id)arg1;

@@ -27,13 +27,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)additionalFieldsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *collapseIdKey; // @synthesize collapseIdKey=_collapseIdKey;
 @property(nonatomic) BOOL shouldSendMutableContent; // @synthesize shouldSendMutableContent=_shouldSendMutableContent;
 @property(nonatomic) BOOL shouldSendContentAvailable; // @synthesize shouldSendContentAvailable=_shouldSendContentAvailable;
 @property(retain, nonatomic) NSMutableArray *additionalFields; // @synthesize additionalFields=_additionalFields;
 @property(nonatomic) BOOL shouldBadge; // @synthesize shouldBadge=_shouldBadge;
 @property(retain, nonatomic) CKDPSubscriptionNotificationAlert *alert; // @synthesize alert=_alert;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

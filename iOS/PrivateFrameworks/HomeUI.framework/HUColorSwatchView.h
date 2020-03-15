@@ -21,6 +21,7 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) CAShapeLayer *selectedCircleOuterLayer; // @synthesize selectedCircleOuterLayer=_selectedCircleOuterLayer;
 @property(retain, nonatomic) CAShapeLayer *selectedCircleInnerLayer; // @synthesize selectedCircleInnerLayer=_selectedCircleInnerLayer;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic) _Bool labelHidden; // @synthesize labelHidden=_labelHidden;
 @property(nonatomic) unsigned long long selectionState; // @synthesize selectionState=_selectionState;
-- (void).cxx_destruct;
 - (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)layoutSubviews;
 - (void)traitCollectionDidChange:(id)arg1;

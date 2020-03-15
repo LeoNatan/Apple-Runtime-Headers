@@ -18,11 +18,11 @@
 
 + (id)customRegionWithCircularRegion:(id)arg1;
 + (id)homeRegionWithHome:(id)arg1 eventType:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CLCircularRegion *circularRegion; // @synthesize circularRegion=_circularRegion;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(readonly, nonatomic) unsigned long long eventType; // @synthesize eventType=_eventType;
 @property(readonly, nonatomic) unsigned long long regionType; // @synthesize regionType=_regionType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CLCircularRegion *defaultCircularRegionForCoordinate;
 @property(readonly, copy, nonatomic) NSString *identifier;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D coordinate;

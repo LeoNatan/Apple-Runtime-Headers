@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
     _Bool _isPad;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isPad; // @synthesize isPad=_isPad;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(nonatomic) long long buttonType; // @synthesize buttonType=_buttonType;
 @property(readonly, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(retain, nonatomic) NSAttributedString *attributedTitle; // @synthesize attributedTitle=_attributedTitle;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setBackgroundColor:(id)arg1;
 @property(nonatomic) double progress;

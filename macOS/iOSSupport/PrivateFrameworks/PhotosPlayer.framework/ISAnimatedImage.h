@@ -19,12 +19,12 @@
     struct CGSize _pixelSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ISFrameCache *frameCache; // @synthesize frameCache=_frameCache;
 @property(readonly, nonatomic) struct CGSize pixelSize; // @synthesize pixelSize=_pixelSize;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) unsigned long long loopCount; // @synthesize loopCount=_loopCount;
 @property(readonly, nonatomic) unsigned long long frameCount; // @synthesize frameCount=_frameCount;
-- (void).cxx_destruct;
 - (void)_preloadDelayTimes;
 @property(nonatomic) long long cacheStrategy;
 - (double)frameDelayAtIndex:(unsigned long long)arg1;

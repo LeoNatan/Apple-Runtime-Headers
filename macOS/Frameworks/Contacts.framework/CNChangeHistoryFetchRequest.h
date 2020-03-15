@@ -29,6 +29,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
 @property(nonatomic) BOOL includeLabeledValueChanges; // @synthesize includeLabeledValueChanges=_includeLabeledValueChanges;
 @property(nonatomic) BOOL includeImagesChanged; // @synthesize includeImagesChanged=_includeImagesChanged;
@@ -43,7 +44,6 @@
 @property(nonatomic) BOOL shouldUnifyResults; // @synthesize shouldUnifyResults=_shouldUnifyResults;
 @property(copy, nonatomic) NSArray *additionalContactKeyDescriptors; // @synthesize additionalContactKeyDescriptors=_additionalContactKeyDescriptors;
 @property(copy, nonatomic) NSData *startingToken; // @synthesize startingToken=_startingToken;
-- (void).cxx_destruct;
 @property(nonatomic) BOOL unifyResults;
 - (void)setStartingAnchor:(id)arg1;
 @property(readonly, nonatomic) CNChangeHistoryAnchor *startingAnchor;

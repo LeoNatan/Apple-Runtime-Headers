@@ -19,11 +19,11 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(nonatomic) long long validationType; // @synthesize validationType=_validationType;
 @property(readonly, nonatomic) long long addressKind; // @synthesize addressKind=_addressKind;
 @property(readonly, copy, nonatomic) NSString *address; // @synthesize address=_address;
 @property(readonly, nonatomic) PXCMMComposeRecipient *composeRecipient; // @synthesize composeRecipient=_composeRecipient;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;

@@ -39,6 +39,7 @@
 + (unsigned long long)maximumAdjustmentDataLength;
 + (id)renderURLWithExtensionForMediaType:(long long)arg1;
 + (id)outputForFlippingFullSizeRenderWithContentEditingInput:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *reframeVariation; // @synthesize reframeVariation=_reframeVariation;
 @property(nonatomic) _Bool isSwappingFullSizeRenderWithAlternateRender; // @synthesize isSwappingFullSizeRenderWithAlternateRender=_isSwappingFullSizeRenderWithAlternateRender;
 @property(retain, nonatomic) NSNumber *videoDuration; // @synthesize videoDuration=_videoDuration;
@@ -58,7 +59,6 @@
 @property(nonatomic) _Bool isSubstandardRender; // @synthesize isSubstandardRender=_isSubstandardRender;
 @property(retain, nonatomic) NSNumber *originalResourceChoice; // @synthesize originalResourceChoice=_originalResourceChoice;
 @property(copy) NSURL *renderedContentURL; // @synthesize renderedContentURL=_renderedContentURL;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

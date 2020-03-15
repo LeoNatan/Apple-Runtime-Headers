@@ -19,12 +19,12 @@
     IKViewElementStyleComposer *_styleComposer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IKViewElementStyleComposer *styleComposer; // @synthesize styleComposer=_styleComposer;
 @property(copy, nonatomic) NSDictionary *childNodes; // @synthesize childNodes=_childNodes;
 @property(readonly, copy, nonatomic) IKViewElementStyle *styleOverrides; // @synthesize styleOverrides=_styleOverrides;
 @property(readonly, copy, nonatomic) NSString *nodeName; // @synthesize nodeName=_nodeName;
 @property(readonly, nonatomic) __weak IKTemplateTreeNode *parentNode; // @synthesize parentNode=_parentNode;
-- (void).cxx_destruct;
 - (id)initWithNodeName:(id)arg1 styleOverrides:(id)arg2 parentNode:(id)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

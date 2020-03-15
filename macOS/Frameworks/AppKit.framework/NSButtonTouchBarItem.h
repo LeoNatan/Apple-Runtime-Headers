@@ -21,9 +21,9 @@
 + (id)buttonTouchBarItemWithIdentifier:(id)arg1 title:(id)arg2 image:(id)arg3 target:(id)arg4 action:(SEL)arg5;
 + (id)buttonTouchBarItemWithIdentifier:(id)arg1 image:(id)arg2 target:(id)arg3 action:(SEL)arg4;
 + (id)buttonTouchBarItemWithIdentifier:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4;
+- (void).cxx_destruct;
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)dealloc;
 @property(copy) NSString *customizationLabel;
 @property(getter=isEnabled) BOOL enabled;

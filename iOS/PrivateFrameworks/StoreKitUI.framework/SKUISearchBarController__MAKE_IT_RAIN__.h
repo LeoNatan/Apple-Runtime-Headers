@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UISearchController *_searchController;
 }
 
-@property(readonly, nonatomic) UISearchController *searchController; // @synthesize searchController=_searchController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UISearchController *searchController; // @synthesize searchController=_searchController;
 - (id)initWithSearchBarViewElement:(id)arg1;
 
 @end

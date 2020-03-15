@@ -20,12 +20,12 @@
     UIImageView *_dialImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain) UIImageView *dialImageView; // @synthesize dialImageView=_dialImageView;
 @property id <TPSlidingButtonDelegateProtocol> delegate; // @synthesize delegate=_delegate;
 @property int type; // @synthesize type=_type;
 @property(retain) UIButton *sideButtonRight; // @synthesize sideButtonRight=_sideButtonRight;
 @property(retain) _UIActionSlider *acceptButton; // @synthesize acceptButton=_acceptButton;
-- (void).cxx_destruct;
 - (void)actionSliderDidCompleteSlide:(id)arg1;
 - (void)actionSlider:(id)arg1 didUpdateSlideWithValue:(double)arg2;
 - (struct CGSize)intrinsicContentSize;

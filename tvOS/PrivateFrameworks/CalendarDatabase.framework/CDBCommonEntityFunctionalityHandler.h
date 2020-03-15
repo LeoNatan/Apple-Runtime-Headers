@@ -16,9 +16,9 @@
 }
 
 + (void)_notifyDestructionObservers:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *destructionObservers; // @synthesize destructionObservers=_destructionObservers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *lock; // @synthesize lock=_lock;
-- (void).cxx_destruct;
 - (void)notifyOfEntityDestruction;
 - (void)removeDestructionObserver:(struct CalRelation *)arg1;
 - (void)addDestructionObserver:(struct CalRelation *)arg1;

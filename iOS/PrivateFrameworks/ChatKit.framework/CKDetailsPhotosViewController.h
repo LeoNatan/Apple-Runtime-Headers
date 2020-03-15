@@ -36,6 +36,7 @@
     UIBarButtonItem *_parentRightBarButtonItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *parentRightBarButtonItem; // @synthesize parentRightBarButtonItem=_parentRightBarButtonItem;
 @property(retain, nonatomic) NSArray *visibleMediaObjects; // @synthesize visibleMediaObjects=_visibleMediaObjects;
 @property(nonatomic, getter=isSelectingAttachments) _Bool selectingAttachments; // @synthesize selectingAttachments=_selectingAttachments;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) NSArray *mediaObjects; // @synthesize mediaObjects=_mediaObjects;
 @property(retain, nonatomic) CKAttachmentCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) __weak id <CKSharedAssetsControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (double)collectionView:(id)arg1 layout:(id)arg2 spacingBetweenSection:(long long)arg3 andHeaderForGroupID:(id)arg4;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 headerSizeForGroupID:(id)arg3 proposedSize:(struct CGSize)arg4;
 - (id)collectionView:(id)arg1 layout:(id)arg2 groupIDForSection:(long long)arg3;

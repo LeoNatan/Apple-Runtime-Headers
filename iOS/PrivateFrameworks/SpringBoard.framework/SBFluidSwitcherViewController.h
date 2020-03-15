@@ -98,6 +98,7 @@
     id <BSInvalidatable> _wallpaperRequireAssertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <BSInvalidatable> wallpaperRequireAssertion; // @synthesize wallpaperRequireAssertion=_wallpaperRequireAssertion;
 @property(retain, nonatomic) UILabel *modifierStackDebugLabel; // @synthesize modifierStackDebugLabel=_modifierStackDebugLabel;
 @property(nonatomic) __weak SBViewMorphAnimator *morphToPiPAnimator; // @synthesize morphToPiPAnimator=_morphToPiPAnimator;
@@ -123,7 +124,6 @@
 @property(nonatomic) __weak id <SBSwitcherContentViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <SBSwitcherContentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <SBTetheredSwitcherContentViewControlling> tetheredViewController; // @synthesize tetheredViewController=_tetheredViewController;
-- (void).cxx_destruct;
 - (void)reduceMotionStatusDidChange:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)_updateModifierStackDebugLabel;

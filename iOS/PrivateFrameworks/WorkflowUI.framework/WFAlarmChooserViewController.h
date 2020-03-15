@@ -21,11 +21,11 @@
     NSMutableOrderedSet *_checkedAlarmIDs;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableOrderedSet *checkedAlarmIDs; // @synthesize checkedAlarmIDs=_checkedAlarmIDs;
 @property(readonly, nonatomic) MTAlarmDataSource *alarmDataSource; // @synthesize alarmDataSource=_alarmDataSource;
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak id <WFAlarmChooserViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)cancel:(id)arg1;
 - (void)finish:(id)arg1;
 - (void)updateDoneButtonEnabled;

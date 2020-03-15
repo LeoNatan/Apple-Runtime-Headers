@@ -8,6 +8,7 @@
 @protocol NSDraggingInfo;
 
 @protocol WebViewImplDelegate
+- (void)_web_grantDOMPasteAccess;
 - (void)_web_didPerformDragOperation:(BOOL)arg1;
 - (unsigned long long)_web_dragDestinationActionForDraggingInfo:(id <NSDraggingInfo>)arg1;
 - (void)_web_didChangeContentSize:(struct CGSize)arg1;

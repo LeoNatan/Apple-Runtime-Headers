@@ -29,6 +29,7 @@
 + (id)itemWithItemDict:(id)arg1;
 + (id)itemWithUrlString:(id)arg1 title:(id)arg2 actionTitle:(id)arg3 actionUrlString:(id)arg4;
 + (id)itemWithArticleID:(id)arg1 title:(id)arg2 actionTitle:(id)arg3 actionUrlString:(id)arg4 storyType:(id)arg5 displayDate:(id)arg6;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *displayDate; // @synthesize displayDate=_displayDate;
 @property(readonly, copy, nonatomic) NSString *storyType; // @synthesize storyType=_storyType;
 @property(readonly, copy, nonatomic) NSString *urlString; // @synthesize urlString=_urlString;
@@ -37,7 +38,6 @@
 @property(readonly, copy, nonatomic) NSString *actionTitle; // @synthesize actionTitle=_actionTitle;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) unsigned long long itemType; // @synthesize itemType=_itemType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id <FCSpecialEventWebEmbedProviding> asWebEmbed;
 @property(readonly, nonatomic) id <FCSpecialEventArticleProviding> asArticle;
 @property(readonly, copy, nonatomic) NSString *identifier;

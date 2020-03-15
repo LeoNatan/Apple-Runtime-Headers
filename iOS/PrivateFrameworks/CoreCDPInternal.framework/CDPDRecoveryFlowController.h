@@ -20,12 +20,12 @@
     id <CDPStateUIProviderInternal> _uiProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CDPStateUIProviderInternal> uiProvider; // @synthesize uiProvider=_uiProvider;
 @property(retain, nonatomic) CDPDSecureBackupController *secureBackupController; // @synthesize secureBackupController=_secureBackupController;
 @property(retain, nonatomic) CDPDCircleController *circleController; // @synthesize circleController=_circleController;
 @property(retain, nonatomic) CDPDRecoveryFlowContext *recoveryContext; // @synthesize recoveryContext=_recoveryContext;
 @property(retain, nonatomic) id <CDPRemoteDeviceSecretValidatorProtocol> validator; // @synthesize validator=_validator;
-- (void).cxx_destruct;
 - (_Bool)secretValidator:(id)arg1 shouldContinueValidationAfterError:(id)arg2;
 - (void)secretValidator:(id)arg1 recoverSecureBackupWithContext:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)retrieveInflatedDevices:(CDUnknownBlockType)arg1;

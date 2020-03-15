@@ -15,9 +15,9 @@
 }
 
 + (BOOL)shouldLogFor35464009;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *contactToRemindersCount; // @synthesize contactToRemindersCount=_contactToRemindersCount;
 @property unsigned long long reminderBadgeCount; // @synthesize reminderBadgeCount=_reminderBadgeCount;
-- (void).cxx_destruct;
 - (void)_remindersBadgeCountForContactIdentifier:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (BOOL)_contributesToRemindersWithContactBadgeCount;
 - (void)_remindersBadgeCountWithReply:(CDUnknownBlockType)arg1;

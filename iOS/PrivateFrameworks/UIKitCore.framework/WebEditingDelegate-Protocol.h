@@ -20,7 +20,7 @@
 - (_Bool)webView:(WebView *)arg1 doCommandBySelector:(SEL)arg2;
 - (_Bool)webView:(WebView *)arg1 shouldChangeTypingStyle:(DOMCSSStyleDeclaration *)arg2 toStyle:(DOMCSSStyleDeclaration *)arg3;
 - (_Bool)webView:(WebView *)arg1 shouldApplyStyle:(DOMCSSStyleDeclaration *)arg2 toElementsInDOMRange:(DOMRange *)arg3;
-- (_Bool)webView:(WebView *)arg1 shouldChangeSelectedDOMRange:(DOMRange *)arg2 toDOMRange:(DOMRange *)arg3 affinity:(int)arg4 stillSelecting:(_Bool)arg5;
+- (_Bool)webView:(WebView *)arg1 shouldChangeSelectedDOMRange:(DOMRange *)arg2 toDOMRange:(DOMRange *)arg3 affinity:(unsigned long long)arg4 stillSelecting:(_Bool)arg5;
 - (_Bool)webView:(WebView *)arg1 shouldDeleteDOMRange:(DOMRange *)arg2;
 - (_Bool)webView:(WebView *)arg1 shouldInsertText:(NSString *)arg2 replacingDOMRange:(DOMRange *)arg3 givenAction:(long long)arg4;
 - (_Bool)webView:(WebView *)arg1 shouldInsertNode:(DOMNode *)arg2 replacingDOMRange:(DOMRange *)arg3 givenAction:(long long)arg4;

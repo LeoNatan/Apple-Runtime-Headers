@@ -37,8 +37,8 @@
 + (id)shortTitlesForLanguageIdentifiers:(id)arg1;
 + (_Bool)_heySiriSupportedForLanguage:(id)arg1;
 + (id)bundle;
-@property(readonly, nonatomic) SUICAssistantVoiceSettingsConnection *settingsConnection; // @synthesize settingsConnection=_settingsConnection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SUICAssistantVoiceSettingsConnection *settingsConnection; // @synthesize settingsConnection=_settingsConnection;
 - (void)deleteHistorySuccessfulFromViewController:(id)arg1;
 - (void)showAssistantHistoryViewController:(id)arg1;
 - (void)contactPicker:(id)arg1 didSelectContact:(id)arg2;

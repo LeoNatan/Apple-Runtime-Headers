@@ -20,13 +20,13 @@
 
 + (unsigned long long)directionForBody:(id)arg1 face:(id)arg2;
 + (id)subjectForExpansionWithSaliencyScale:(float)arg1 startingSubject:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isSalientObject) _Bool salientObject; // @synthesize salientObject=_salientObject;
 @property(readonly, nonatomic) float saliencyScale; // @synthesize saliencyScale=_saliencyScale;
 @property(readonly, copy, nonatomic) NSMutableSet *mutablePoints; // @synthesize mutablePoints=_mutablePoints;
 @property(readonly, nonatomic) struct CGPoint centerPoint; // @synthesize centerPoint=_centerPoint;
 @property(readonly, nonatomic) unsigned long long direction; // @synthesize direction=_direction;
 @property(readonly, nonatomic) PIReframeSubject *body; // @synthesize body=_body;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect boundingBox;
 - (void)addPointsFromCluster:(id)arg1;
 - (void)addPoint:(id)arg1;

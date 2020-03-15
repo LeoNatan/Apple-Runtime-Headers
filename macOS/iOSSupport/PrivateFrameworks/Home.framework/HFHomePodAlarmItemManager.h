@@ -15,9 +15,9 @@
     HFHomePodAlarmItemModule *_alarmItemModule;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFHomePodAlarmItemModule *alarmItemModule; // @synthesize alarmItemModule=_alarmItemModule;
 @property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
-- (void).cxx_destruct;
 - (void)_unregisterForExternalUpdates;
 - (void)_registerForExternalUpdates;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;

@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(copy, nonatomic) NSArray *additionalInformationVariants; // @synthesize additionalInformationVariants=_additionalInformationVariants;
 @property(copy, nonatomic) NSArray *selectionSummaryVariants; // @synthesize selectionSummaryVariants=_selectionSummaryVariants;
 @property(copy, nonatomic) NSArray *summaryVariants; // @synthesize summaryVariants=_summaryVariants;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -6,7 +6,7 @@
 
 #import <VideosUI/VUIShelfViewController.h>
 
-@class NSArray, NSString, VUILibraryLockupViewCell;
+@class NSArray, NSString, UICollectionViewDiffableDataSource, VUILibraryLockupViewCell, VUIMediaEntitiesDataSource;
 @protocol VUILibraryShelfCollectionViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -18,29 +18,33 @@ __attribute__((visibility("hidden")))
     NSString *_headerSubtitle;
     id <VUILibraryShelfCollectionViewControllerDelegate> _delegate;
     NSArray *_fetchResults;
+    VUIMediaEntitiesDataSource *_dataSource;
+    UICollectionViewDiffableDataSource *_diffableDataSource;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) UICollectionViewDiffableDataSource *diffableDataSource; // @synthesize diffableDataSource=_diffableDataSource;
+@property(readonly, nonatomic) VUIMediaEntitiesDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(copy, nonatomic) NSArray *fetchResults; // @synthesize fetchResults=_fetchResults;
 @property(nonatomic) __weak id <VUILibraryShelfCollectionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool disableSeeAllButton; // @synthesize disableSeeAllButton=_disableSeeAllButton;
 @property(retain, nonatomic) NSString *headerSubtitle; // @synthesize headerSubtitle=_headerSubtitle;
 @property(retain, nonatomic) NSString *headerTitle; // @synthesize headerTitle=_headerTitle;
-- (void).cxx_destruct;
 - (void)_updateHeaderView;
 - (_Bool)_hideSeeAllButton;
 - (double)_computeBottomMargin;
 - (struct CGSize)_configureSizingCellWithEntity:(id)arg1;
 - (void)_didPressSeeAllButton:(id)arg1;
+- (id)_getEntityIdentifiersFromEntities;
+- (id)_createDiffableDataSourceSnapshot;
+- (id)_createDiffableDataSourceForCollectionView:(id)arg1;
 - (void)configureWithCollectionView:(id)arg1;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (long long)numberOfSectionsInCollectionView:(id)arg1;
-- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
-- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
-- (void)updateWithLatestMediaEntities:(id)arg1 andChangeSet:(id)arg2;
+- (void)updateWithDataSource:(id)arg1;
 - (void)setHeaderTitle:(id)arg1 andSubtitle:(id)arg2;
-- (id)initWithFetchResults:(id)arg1;
+- (id)initWithDataSource:(id)arg1;
 
 @end
 

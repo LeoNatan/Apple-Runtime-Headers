@@ -18,15 +18,15 @@
     UIFontDescriptor *_fontDescriptor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIFontDescriptor *fontDescriptor; // @synthesize fontDescriptor=_fontDescriptor;
 @property(readonly, nonatomic) double pointSize; // @synthesize pointSize=_pointSize;
 @property(readonly, nonatomic) int traits; // @synthesize traits=_traits;
 @property(readonly, nonatomic) NSString *fontName; // @synthesize fontName=_fontName;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithFont:(struct UIFont *)arg1;
+- (id)initWithFont:(id)arg1;
 
 @end
 

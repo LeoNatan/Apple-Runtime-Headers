@@ -13,8 +13,8 @@
     NSDictionary *_styleKeyValues;
 }
 
-@property(readonly, copy, nonatomic) NSDictionary *styleKeyValues; // @synthesize styleKeyValues=_styleKeyValues;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *styleKeyValues; // @synthesize styleKeyValues=_styleKeyValues;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;
 

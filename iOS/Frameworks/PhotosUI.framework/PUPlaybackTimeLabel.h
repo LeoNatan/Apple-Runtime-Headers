@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     CDStruct_1b6d18a9 _playbackDuration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setNeedsUpdateLabel:) _Bool _needsUpdateLabel; // @synthesize _needsUpdateLabel=__needsUpdateLabel;
 @property(nonatomic, setter=_setNeedsUpdateBackground:) _Bool _needsUpdateBackground; // @synthesize _needsUpdateBackground=__needsUpdateBackground;
 @property(readonly, nonatomic) UILabel *_label; // @synthesize _label=__label;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) CDStruct_1b6d18a9 playbackDuration; // @synthesize playbackDuration=_playbackDuration;
 @property(nonatomic) CDStruct_1b6d18a9 currentPlaybackTime; // @synthesize currentPlaybackTime=_currentPlaybackTime;
 @property(nonatomic) long long format; // @synthesize format=_format;
-- (void).cxx_destruct;
 - (id)_stringFromTimeInterval:(double)arg1;
 - (id)_labelTextWithFormat:(long long)arg1 elapsedInterval:(double)arg2 remainingInterval:(double)arg3;
 - (struct CGSize)_maximumLabelSizeWithDuration:(double)arg1;

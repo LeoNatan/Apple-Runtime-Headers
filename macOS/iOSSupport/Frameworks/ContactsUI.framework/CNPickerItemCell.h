@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UITextField *_textField;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPlaceholder) BOOL placeholder; // @synthesize placeholder=_placeholder;
 @property(retain, nonatomic) UITextField *textField; // @synthesize textField=_textField;
-- (void).cxx_destruct;
 - (void)setTextFieldHidden:(BOOL)arg1;
 - (void)endEditing;
 - (void)beginEditing;

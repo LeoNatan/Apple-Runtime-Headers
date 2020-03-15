@@ -34,6 +34,7 @@
 + (Class)_viewClassForPanelElement:(id)arg1;
 + (double)viewPadding;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _wasObservingModel; // @synthesize _wasObservingModel=__wasObservingModel;
 @property(nonatomic) BOOL _isObservingModel; // @synthesize _isObservingModel=__isObservingModel;
 @property(retain) NSMutableArray *_editorSelectedPanelElementViews; // @synthesize _editorSelectedPanelElementViews=__editorSelectedPanelElementViews;
@@ -49,7 +50,6 @@
 @property(nonatomic) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic) BOOL selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) ACSHPanelElement *panelElement; // @synthesize panelElement=_panelElement;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)adjustedFontForBaseFontSize:(double)arg1;
 - (BOOL)isEqual:(id)arg1;

@@ -25,13 +25,13 @@
 + (id)hardCodedPrincipalPathForDSID:(id)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)nameComponentsForFamilyMember:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isMe; // @synthesize isMe=_isMe;
 @property(readonly, copy, nonatomic) NSPersonNameComponents *nameComponents; // @synthesize nameComponents=_nameComponents;
 @property(readonly, copy, nonatomic) NSString *principalPath; // @synthesize principalPath=_principalPath;
 @property(readonly, copy, nonatomic) NSString *appleID; // @synthesize appleID=_appleID;
 @property(readonly, copy, nonatomic) NSString *altDSID; // @synthesize altDSID=_altDSID;
 @property(readonly, copy, nonatomic) NSNumber *dsid; // @synthesize dsid=_dsid;
-- (void).cxx_destruct;
 - (id)_hardCodedPrincipalPathForFamilyMember:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

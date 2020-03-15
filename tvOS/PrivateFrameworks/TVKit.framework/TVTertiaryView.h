@@ -15,9 +15,9 @@
 }
 
 + (id)defaultSeperator;
+- (void).cxx_destruct;
 @property(nonatomic) double viewSpacing; // @synthesize viewSpacing=_viewSpacing;
 @property(retain, nonatomic) NSArray *tertiaryViews; // @synthesize tertiaryViews=_tertiaryViews;
-- (void).cxx_destruct;
 - (void)updateSubviewHighlights;
 - (void)setHighlightProgress:(double)arg1;
 @property(readonly, nonatomic) double labelHeight;

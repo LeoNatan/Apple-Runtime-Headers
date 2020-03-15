@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isUsingTwoLineLayout; // @synthesize isUsingTwoLineLayout=_isUsingTwoLineLayout;
 @property(nonatomic) _Bool didCalculateLayout; // @synthesize didCalculateLayout=_didCalculateLayout;
 @property(retain, nonatomic) NSArray *activatedConstraints; // @synthesize activatedConstraints=_activatedConstraints;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(retain, nonatomic) CNGeminiResult *geminiResult; // @synthesize geminiResult=_geminiResult;
 @property(nonatomic) _Bool allowsPickerActions; // @synthesize allowsPickerActions=_allowsPickerActions;
-- (void).cxx_destruct;
 - (id)localizedLabelFromGeminiResult:(id)arg1;
 - (id)localizedChannelUsageFromGeminiResult:(id)arg1;
 - (id)twoLineLayoutConstraints;

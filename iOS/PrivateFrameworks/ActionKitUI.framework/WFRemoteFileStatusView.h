@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSArray *_errorConstraints;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *errorConstraints; // @synthesize errorConstraints=_errorConstraints;
 @property(readonly, nonatomic) NSArray *loadingContraints; // @synthesize loadingContraints=_loadingContraints;
 @property(readonly, nonatomic) NSArray *emptyConstraints; // @synthesize emptyConstraints=_emptyConstraints;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIActivityIndicatorView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(readonly, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) __weak id <WFRemoteFileStatusViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setError:(id)arg1;
 - (void)setLoading;
 - (void)setEmpty;

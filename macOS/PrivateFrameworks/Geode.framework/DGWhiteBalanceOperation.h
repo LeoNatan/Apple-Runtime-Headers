@@ -42,6 +42,7 @@
 + (id)attributes;
 + (void)setDefaultColorType:(long long)arg1;
 + (id)_stringsTableName;
+- (void).cxx_destruct;
 @property(copy) NSNumber *tint; // @synthesize tint=_tint;
 @property(copy) NSNumber *temperature; // @synthesize temperature=_temperature;
 @property(retain, nonatomic) id <DGWhiteBalanceRAWProperties> rawProperties; // @synthesize rawProperties=_rawProperties;
@@ -60,7 +61,6 @@
 @property(copy, nonatomic) NSNumber *inputColorType; // @synthesize inputColorType=_inputColorType;
 @property(copy, nonatomic) NSNumber *inputIsDefaults; // @synthesize inputIsDefaults=_isDefaults;
 @property long long inputLegacyVersion; // @synthesize inputLegacyVersion=_legacyVersion;
-- (void).cxx_destruct;
 - (void)_applyAutoSettings:(id)arg1;
 - (void)addAutoSettings:(id)arg1;
 - (void)applySettingsValue:(id)arg1 forKey:(id)arg2;

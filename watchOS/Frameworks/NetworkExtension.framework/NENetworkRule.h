@@ -24,13 +24,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) int matchDirection; // @synthesize matchDirection=_matchDirection;
 @property(readonly) int matchProtocol; // @synthesize matchProtocol=_matchProtocol;
 @property(readonly) unsigned int matchLocalPrefix; // @synthesize matchLocalPrefix=_matchLocalPrefix;
 @property(readonly) NWHostEndpoint *matchLocalNetwork; // @synthesize matchLocalNetwork=_matchLocalNetwork;
 @property(readonly) unsigned int matchRemotePrefix; // @synthesize matchRemotePrefix=_matchRemotePrefix;
 @property(readonly) NWHostEndpoint *matchRemoteEndpoint; // @synthesize matchRemoteEndpoint=_matchRemoteEndpoint;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

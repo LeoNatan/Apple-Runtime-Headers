@@ -23,6 +23,7 @@
     struct CGSize __photoSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setPhotoSize:) struct CGSize _photoSize; // @synthesize _photoSize=__photoSize;
 @property(retain, nonatomic, setter=_setPhoto:) struct CGImage *_photo; // @synthesize _photo=__photo;
 @property(readonly, nonatomic) NSView *_containerView; // @synthesize _containerView=__containerView;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSView *customPhotoView; // @synthesize customPhotoView=_customPhotoView;
 @property(nonatomic) struct CGPoint scaleAnchorOffset; // @synthesize scaleAnchorOffset=_scaleAnchorOffset;
 @property(retain, nonatomic) ISBasePlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)setContent:(id)arg1;
 - (void)applyOutputInfo:(id)arg1 withTransitionOptions:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)applyScale:(double)arg1 withTransitionOptions:(id)arg2 completion:(CDUnknownBlockType)arg3;

@@ -34,6 +34,7 @@
 
 + (id)allowedClassesForSecureCoding;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PBItemCollectionDataTransferDelegate> itemQueue_dataTransferDelegate; // @synthesize itemQueue_dataTransferDelegate=_itemQueue_dataTransferDelegate;
 @property(nonatomic) long long itemQueue_remotePasteboardState; // @synthesize itemQueue_remotePasteboardState=_itemQueue_remotePasteboardState;
 @property(nonatomic, getter=itemQueue_isDeviceLockedPasteboard) _Bool itemQueue_deviceLockedPasteboard; // @synthesize itemQueue_deviceLockedPasteboard=_itemQueue_deviceLockedPasteboard;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) NSXPCListenerEndpoint *itemQueue_remoteDataProviderEndpoint; // @synthesize itemQueue_remoteDataProviderEndpoint=_itemQueue_remoteDataProviderEndpoint;
 @property(retain, nonatomic) NSXPCListener *itemQueue_dataConsumersListener; // @synthesize itemQueue_dataConsumersListener=_itemQueue_dataConsumersListener;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)item:(id)arg1 representationFinishedDataTransfer:(id)arg2;
 - (void)item:(id)arg1 representation:(id)arg2 beganDataTransferWithProgress:(id)arg3;

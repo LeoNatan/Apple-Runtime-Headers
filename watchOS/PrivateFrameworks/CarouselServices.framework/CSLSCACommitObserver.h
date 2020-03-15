@@ -14,9 +14,9 @@
 
 + (void)observeBeforeCommit:(CDUnknownBlockType)arg1 afterCommit:(CDUnknownBlockType)arg2;
 + (void)observeAfterDelay:(double)arg1 beforeCommit:(CDUnknownBlockType)arg2 afterCommit:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType afterCommit; // @synthesize afterCommit=_afterCommit;
 @property(copy, nonatomic) CDUnknownBlockType beforeCommit; // @synthesize beforeCommit=_beforeCommit;
-- (void).cxx_destruct;
 - (void)_observeCommitAfterDelay:(double)arg1;
 - (void)_observeNextCommit;
 - (id)initWithBeforeCommit:(CDUnknownBlockType)arg1 afterCommit:(CDUnknownBlockType)arg2;

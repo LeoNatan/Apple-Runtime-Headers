@@ -20,8 +20,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) __weak id <CUISAlertProviderDelegate> alertProviderDelegate; // @synthesize alertProviderDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CUISAlertProviderDelegate> alertProviderDelegate; // @synthesize alertProviderDelegate;
 - (void)deactivateController:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_playHaptic;
 - (void)requestActivateAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;

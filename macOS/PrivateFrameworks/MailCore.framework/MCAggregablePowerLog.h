@@ -19,9 +19,9 @@
     double _aggregationPeriod;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double aggregationPeriod; // @synthesize aggregationPeriod=_aggregationPeriod;
 @property(readonly, copy, nonatomic) CDUnknownBlockType aggregationBlock; // @synthesize aggregationBlock=_aggregationBlock;
-- (void).cxx_destruct;
 - (void)batchingTimerDidFire:(id)arg1;
 - (void)logEventWithDictionary:(id)arg1;
 - (id)initWithEventName:(id)arg1 aggregationPeriod:(double)arg2 aggregationBlock:(CDUnknownBlockType)arg3;

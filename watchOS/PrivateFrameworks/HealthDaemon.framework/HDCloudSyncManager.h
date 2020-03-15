@@ -24,13 +24,13 @@
 }
 
 + (void)_containerIdentifiersWithEncryptionSupportEnabled:(_Bool)arg1 accountManateeEnabled:(_Bool)arg2 internalSettingManateeEnabled:(_Bool)arg3 resultHandler:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) int inProgressSyncCount; // @synthesize inProgressSyncCount=_inProgressSyncCount;
 @property(nonatomic) _Bool shouldResync; // @synthesize shouldResync=_shouldResync;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 @property(readonly, nonatomic) _Bool supportsRebase; // @synthesize supportsRebase=_supportsRebase;
 @property(retain) HDAssertion *preparedDatabaseAccessibilityAssertion; // @synthesize preparedDatabaseAccessibilityAssertion=_preparedDatabaseAccessibilityAssertion;
-- (void).cxx_destruct;
 - (void)unitTest_setSupportsRebase:(_Bool)arg1;
 - (void)_queue_considerStartingBackstopSyncForThreshold:(double)arg1;
 - (void)contentProtectionStateChanged:(int)arg1 previousState:(int)arg2;

@@ -11,6 +11,7 @@
 }
 
 + (id)localizedMessageForHomeKitError:(id)arg1;
++ (_Bool)isAlreadyExistsError:(id)arg1;
 
 @end
 

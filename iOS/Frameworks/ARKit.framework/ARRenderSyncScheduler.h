@@ -21,9 +21,9 @@
     unsigned long long _excessiveCallbackOptions;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long excessiveCallbackOptions; // @synthesize excessiveCallbackOptions=_excessiveCallbackOptions;
 @property double inputJitterBufferInterval; // @synthesize inputJitterBufferInterval=_inputJitterBufferInterval;
-- (void).cxx_destruct;
 - (unsigned long long)_callbackActionForBlockWithLatency:(double)arg1;
 - (void)_tryNextBlockWithTotalTried:(unsigned long long)arg1;
 - (void)_callback;

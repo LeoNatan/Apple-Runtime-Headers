@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     double _visibleHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double visibleHeight; // @synthesize visibleHeight=_visibleHeight;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)scrollRectToVisible:(struct CGRect)arg1 animated:(_Bool)arg2;
 - (_Bool)_scrollsToMakeFirstResponderVisible;
 - (void)layoutSubviews;

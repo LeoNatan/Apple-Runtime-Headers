@@ -16,9 +16,9 @@
     unsigned int _messageCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int messageCount; // @synthesize messageCount=_messageCount;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 - (void)invokeCompletionWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)incrementMessageCount;
 - (id)changeSetWithChanges:(id)arg1 statusCode:(int)arg2 error:(id)arg3;

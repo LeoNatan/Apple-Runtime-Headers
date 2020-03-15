@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property(retain) NSMutableDictionary *queuedURLs; // @synthesize queuedURLs=_queuedURLs;
-- (void).cxx_destruct;
 - (void)noteThumbnailGenerationQueuedExternallyForDocumentAtURL:(id)arg1;
 - (void)enqueueThumbnailGenerationIfNeededForDocumentAtURL:(id)arg1 atBackgroundPriority:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)init;

@@ -16,11 +16,11 @@
     unsigned long long _rank;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long rank; // @synthesize rank=_rank;
 @property(retain, nonatomic) NSMutableArray *children; // @synthesize children=_children;
 @property(retain, nonatomic) REUpNextSetNode *parent; // @synthesize parent=_parent;
 @property(readonly, nonatomic) id item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)remove;
 - (void)join:(id)arg1;
 - (id)rootNode;

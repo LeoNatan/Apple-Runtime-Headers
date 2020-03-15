@@ -22,11 +22,11 @@
 + (id)_storagePath;
 + (id)snapshotPathForFace:(id)arg1 detailMode:(long long)arg2;
 + (id)_snapshotNameForFace:(id)arg1 detailMode:(long long)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType faceBatchCompletionHandler; // @synthesize faceBatchCompletionHandler=_faceBatchCompletionHandler;
 @property(retain, nonatomic) NTKFace *currentFace; // @synthesize currentFace=_currentFace;
 @property(nonatomic, getter=isQueueActive) _Bool queueActive; // @synthesize queueActive=_queueActive;
 @property(retain, nonatomic) NSMutableArray *pendingTaskList; // @synthesize pendingTaskList=_pendingTaskList;
-- (void).cxx_destruct;
 - (void)_startNextWorkItem;
 - (void)_notifyFinishedFaceBatchIfNeeded;
 - (void)requestSnapshotOfFace:(id)arg1 completion:(CDUnknownBlockType)arg2;

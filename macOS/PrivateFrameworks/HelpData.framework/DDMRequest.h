@@ -22,6 +22,7 @@
 
 + (id)topicRequestWithID:(id)arg1 ddmBookID:(id)arg2 language:(id)arg3 product:(id)arg4 productVersion:(id)arg5 platform:(id)arg6 platformVersion:(id)arg7;
 + (id)bookRequestWithID:(id)arg1 language:(id)arg2 product:(id)arg3 productVersion:(id)arg4 platform:(id)arg5 platformVersion:(id)arg6;
+- (void).cxx_destruct;
 @property(readonly) NSString *productVersion; // @synthesize productVersion=_productVersion;
 @property(readonly) NSString *platformVersion; // @synthesize platformVersion=_platformVersion;
 @property(readonly) NSString *platform; // @synthesize platform=_platform;
@@ -30,7 +31,6 @@
 @property(readonly) NSString *ddmBookID; // @synthesize ddmBookID=_ddmBookID;
 @property(readonly) NSString *ddmID; // @synthesize ddmID=_ddmID;
 @property(readonly) unsigned int requestType; // @synthesize requestType=_requestType;
-- (void).cxx_destruct;
 - (id)ddmObjectFromResponseDictionary:(id)arg1 originURL:(id)arg2;
 @property(readonly) NSURL *ddmURL;
 - (id)_ddmURLWithURLComponents:(id)arg1;

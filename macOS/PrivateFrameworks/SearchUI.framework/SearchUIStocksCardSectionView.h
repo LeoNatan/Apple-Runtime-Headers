@@ -27,6 +27,7 @@
     NSMutableArray *_xLabelViews;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int graphColor; // @synthesize graphColor=_graphColor;
 @property(retain) NSMutableArray *xLabelViews; // @synthesize xLabelViews=_xLabelViews;
 @property(retain) NSView *xAxisKeyline; // @synthesize xAxisKeyline=_xAxisKeyline;
@@ -39,7 +40,6 @@
 @property(retain) SearchUIStockChartDisplayMode *displayMode; // @synthesize displayMode=_displayMode;
 @property(retain) SearchUIStockGraphView *stockGraphView; // @synthesize stockGraphView=_stockGraphView;
 @property(retain) SearchUIChartUpdater *chartUpdater; // @synthesize chartUpdater=_chartUpdater;
-- (void).cxx_destruct;
 - (void)layoutAxesAndXLabels;
 - (void)layoutPriceLabels;
 - (struct CGRect)lineGraphFrame;

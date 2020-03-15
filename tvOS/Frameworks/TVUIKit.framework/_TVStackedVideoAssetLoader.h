@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 @class AVAsset, AVPlayer, AVPlayerItem, AVPlayerLayer, NSError, _TVStackedMediaDocumentEntry;
-@protocol _TVStackedVideoAssetLoaderDelegate;
+@protocol OS_dispatch_source, _TVStackedVideoAssetLoaderDelegate;
 
 __attribute__((visibility("hidden")))
 @interface _TVStackedVideoAssetLoader : NSObject
 {
+    NSObject<OS_dispatch_source> *_timeoutTimer;
     _Bool _isObservingPlayerStatus;
     _TVStackedMediaDocumentEntry *_entry;
     id <_TVStackedVideoAssetLoaderDelegate> _delegate;
@@ -24,6 +25,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_serialQueue;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isObservingPlayerStatus; // @synthesize isObservingPlayerStatus=_isObservingPlayerStatus;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
@@ -33,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) AVAsset *asset; // @synthesize asset=_asset;
 @property(nonatomic) __weak id <_TVStackedVideoAssetLoaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) _TVStackedMediaDocumentEntry *entry; // @synthesize entry=_entry;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_observePlayerStatus;
 - (id)_createCompositionContext;
@@ -48,6 +49,11 @@ __attribute__((visibility("hidden")))
 - (void)__notifyDelegateOfLoaded:(_Bool)arg1 error:(id)arg2;
 - (void)_notifyDelegateOfLoaded:(_Bool)arg1 error:(id)arg2;
 - (void)_timeoutIfNecessary;
+- (void)_foregroundNotification:(id)arg1;
+- (void)_backgroundNotification:(id)arg1;
+- (void)_registerForTimeoutForeBackGroundNotifications;
+- (void)_cancelTimeoutTimer;
+- (void)_scheduleTimeoutTimer;
 - (_Bool)isLoaded;
 - (void)cancel;
 - (void)loadEntryAsset;

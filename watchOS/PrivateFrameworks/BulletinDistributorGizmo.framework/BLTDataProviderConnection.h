@@ -16,9 +16,9 @@
 }
 
 + (id)dataProviderConnectionWithServiceName:(id)arg1 onQueue:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dataProviderConnectionQueue; // @synthesize dataProviderConnectionQueue=_dataProviderConnectionQueue;
 @property(retain, nonatomic) BBDataProviderConnection *dataProviderConnection; // @synthesize dataProviderConnection=_dataProviderConnection;
-- (void).cxx_destruct;
 
 @end
 

@@ -43,6 +43,7 @@
 + (id)effectiveCoreLocationBundle;
 + (void)beginMonitoringSiriAvailability;
 + (unsigned long long)availabilityState;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_instrumentationTurnContext, setter=_setInstrumentationTurnContext:) AFAnalyticsTurnBasedInstrumentationContext *instrumentationTurnContext; // @synthesize instrumentationTurnContext=_instrumentationTurnContext;
 @property(retain, nonatomic, getter=_currentSpeechRequestGroup, setter=_setCurrentSpeechRequestGroup:) NSObject<OS_dispatch_group> *currentSpeechRequestGroup; // @synthesize currentSpeechRequestGroup=_currentSpeechRequestGroup;
 @property(retain, nonatomic) NSArray *directActionContext; // @synthesize directActionContext=_directActionContext;
@@ -53,7 +54,6 @@
 @property(nonatomic) __weak id <AFUISiriSessionLocalDelegate> localDelegate; // @synthesize localDelegate=_localDelegate;
 @property(nonatomic) __weak id <AFUISiriSessionLocalDataSource> localDataSource; // @synthesize localDataSource=_localDataSource;
 @property(retain, nonatomic) id <AFUISiriSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (int)_mapInvocationSource:(long long)arg1;
 - (void)_updateActiveAccount:(id)arg1 withNumberOfActiveAccounts:(unsigned long long)arg2;
 - (void)_updateActiveAccount:(id)arg1;
@@ -64,6 +64,7 @@
 - (float)recordingPowerLevel;
 - (_Bool)isListening;
 - (_Bool)isPreventingActivationGesture;
+- (void)_discardConnectionForReason:(long long)arg1;
 - (void)endForReason:(long long)arg1;
 - (void)end;
 - (void)_discardCurrentSpeechGroup;

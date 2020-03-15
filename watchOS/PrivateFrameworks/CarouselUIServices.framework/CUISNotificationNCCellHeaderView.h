@@ -19,8 +19,8 @@
     unsigned int _notificationIconStyle;
 }
 
-@property(nonatomic) unsigned int notificationIconStyle; // @synthesize notificationIconStyle=_notificationIconStyle;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int notificationIconStyle; // @synthesize notificationIconStyle=_notificationIconStyle;
 - (void)_createSubviews;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) struct CGRect backgroundFrame;

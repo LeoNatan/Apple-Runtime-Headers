@@ -6,14 +6,15 @@
 
 #import <FinderKit/FI_TBaseBrowserViewController.h>
 
+#import <FinderKit/FPUIActionViewControllerDelegate-Protocol.h>
 #import <FinderKit/NSMenuDelegate-Protocol.h>
 #import <FinderKit/NSScrollViewDelegate-Protocol.h>
 #import <FinderKit/TThumbnailExtractorDelegate-Protocol.h>
 
-@class FI_TBrowserViewDataSource, FI_TContainerLayoutManager, NSLayoutGuide, NSString, NSView;
+@class FI_TBrowserViewDataSource, FI_TContainerLayoutManager, NSLayoutGuide, NSString, NSView, NSVisualEffectView;
 
 __attribute__((visibility("hidden")))
-@interface FI_TBrowserViewController : FI_TBaseBrowserViewController <TThumbnailExtractorDelegate, NSMenuDelegate, NSScrollViewDelegate>
+@interface FI_TBrowserViewController : FI_TBaseBrowserViewController <FPUIActionViewControllerDelegate, TThumbnailExtractorDelegate, NSMenuDelegate, NSScrollViewDelegate>
 {
     struct TFENodeVector _resolvedTargetPath;
     struct TFENodeVector _unResolvedTargetPath;
@@ -52,6 +53,7 @@ __attribute__((visibility("hidden")))
     struct TNSRef<FI_TICloudNoDocumentsViewController, void> _iCloudNoDocumentsViewController;
     struct TNSRef<FI_TLoadingViewController, void> _loadingViewController;
     struct TNSRef<NSViewController, void> _authenticationViewController;
+    NSVisualEffectView *_authenticationBackgroundView;
     struct TKeyValueObserver _viewSettingsObserver;
     struct TKeyValueBinder _sortByBinder;
     struct TKeyValueObserver _contentInsetsDidChangeObserver;
@@ -60,6 +62,8 @@ __attribute__((visibility("hidden")))
     struct vector<TNotificationCenterObserver, std::__1::allocator<TNotificationCenterObserver>> _notificationObservers;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly) _Bool closingTarget; // @synthesize closingTarget=_closingTarget;
 @property(readonly) _Bool unbindingViewSettings; // @synthesize unbindingViewSettings=_unbindingViewSettings;
 @property(readonly) _Bool iCloudMode; // @synthesize iCloudMode=_iCloudMode;
@@ -74,8 +78,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool selectionHasBeenHandled; // @synthesize selectionHasBeenHandled=_selectionHasBeenHandled;
 @property _Bool delayNextPreviewPaneRetarget; // @synthesize delayNextPreviewPaneRetarget=_delayNextPreviewPaneRetarget;
 @property(getter=isInitialConfigInProgress) _Bool initialConfigInProgress; // @synthesize initialConfigInProgress=_isInitialConfigInProgress;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)unregisterContainerWithNodeKeyCache:(const struct TFENode *)arg1;
 - (void)registerContainerWithNodeKeyCache:(const struct TFENode *)arg1;
 - (_Bool)canAllNodesBeOpened:(const struct TFENodeVector *)arg1;
@@ -110,7 +112,9 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)itemCountForLoadingUI;
 - (id)viewToOverlayForLoadingUI;
 - (void)configureForAuthenticationUI;
+- (void)actionControllerDidFinishAction:(id)arg1 error:(id)arg2;
 - (void)configureForAuthenticationUI:(_Bool)arg1;
+- (id)viewToCoverWithAuthenticationUI;
 - (_Bool)shouldShowAuthenticationUI;
 - (void)configureForNoDocuments:(_Bool)arg1;
 - (_Bool)shouldShowNoDocumentsUI;

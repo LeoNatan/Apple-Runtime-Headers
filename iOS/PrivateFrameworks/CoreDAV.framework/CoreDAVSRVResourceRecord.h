@@ -17,12 +17,12 @@
     NSString *_target;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *target; // @synthesize target=_target;
 @property(retain, nonatomic) NSNumber *port; // @synthesize port=_port;
 @property(retain, nonatomic) NSNumber *weight; // @synthesize weight=_weight;
 @property(retain, nonatomic) NSNumber *priority; // @synthesize priority=_priority;
 @property(retain, nonatomic) NSString *serviceString; // @synthesize serviceString=_serviceString;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

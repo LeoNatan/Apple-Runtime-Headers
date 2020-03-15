@@ -23,6 +23,7 @@
     NSArray *_vocabularyItems;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool haveAssignedAllSiriIDs; // @synthesize haveAssignedAllSiriIDs=_haveAssignedAllSiriIDs;
 @property(copy, nonatomic) NSArray *vocabularyItems; // @synthesize vocabularyItems=_vocabularyItems;
 @property(copy, nonatomic) NSString *thisGeneration; // @synthesize thisGeneration=_thisGeneration;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSString *intentSlot; // @synthesize intentSlot=_intentSlot;
 @property(copy, nonatomic) NSString *appBundleID; // @synthesize appBundleID=_appBundleID;
 @property(nonatomic) _Bool resetOnNextSync; // @synthesize resetOnNextSync=_resetOnNextSync;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithContentsOfFile:(id)arg1;

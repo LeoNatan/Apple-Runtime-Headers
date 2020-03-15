@@ -16,9 +16,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (double)timeout;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *dateConnected; // @synthesize dateConnected=_dateConnected;
 @property(retain, nonatomic) CXHandoffContext *handoffContext; // @synthesize handoffContext=_handoffContext;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)updateCopy:(id)arg1 withZone:(struct _NSZone *)arg2;

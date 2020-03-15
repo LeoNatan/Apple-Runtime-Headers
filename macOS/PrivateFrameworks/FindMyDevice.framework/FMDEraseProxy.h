@@ -10,7 +10,7 @@
 {
 }
 
-- (void)eraseMacUsingObliterate:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)eraseDeviceWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end
 

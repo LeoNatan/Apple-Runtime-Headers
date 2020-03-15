@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     long long _signIndex;
 }
 
+- (void).cxx_destruct;
 @property long long signIndex; // @synthesize signIndex=_signIndex;
 @property long long findIndex; // @synthesize findIndex=_findIndex;
 @property long long slotIndex; // @synthesize slotIndex=_slotIndex;
 @property(retain) NSMutableArray *findResults; // @synthesize findResults=_findResults;
-- (void).cxx_destruct;
 
 @end
 

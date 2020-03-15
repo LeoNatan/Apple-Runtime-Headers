@@ -50,6 +50,7 @@
     struct UIEdgeInsets _thumbnailEdgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setCollectionViewSnapshot:) UIView *_collectionViewSnapshot; // @synthesize _collectionViewSnapshot=__collectionViewSnapshot;
 @property(readonly, nonatomic) CEKAnimationGenerator *_animationGenerator; // @synthesize _animationGenerator=__animationGenerator;
 @property(nonatomic, setter=_setPreviewTransitionProgress:) double _previewTransitionProgress; // @synthesize _previewTransitionProgress=__previewTransitionProgress;
@@ -75,7 +76,6 @@
 @property(nonatomic) unsigned long long defaultIndex; // @synthesize defaultIndex=_defaultIndex;
 @property(nonatomic) unsigned long long itemCount; // @synthesize itemCount=_itemCount;
 @property(nonatomic) __weak id <CEKWheelScrubberViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_performFeedback;
 - (void)_prepareFeedback;
 - (_Bool)_shouldPerformFeedback;

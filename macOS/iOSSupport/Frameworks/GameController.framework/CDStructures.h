@@ -10,11 +10,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct CGPoint {
-    double x;
-    double y;
-};
-
 struct GCExtendedGamepadElementInitInfo {
     char _field1;
     char _field2;

@@ -17,11 +17,11 @@
     NSMutableDictionary *_lastTrimDateByWorkerType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *lastTrimDateByWorkerType; // @synthesize lastTrimDateByWorkerType=_lastTrimDateByWorkerType;
 @property(readonly, nonatomic) NSMutableDictionary *cachedAverageScoresByWorkerType; // @synthesize cachedAverageScoresByWorkerType=_cachedAverageScoresByWorkerType;
 @property(readonly, nonatomic) NSMutableDictionary *scoresByWorkerType; // @synthesize scoresByWorkerType=_scoresByWorkerType;
 @property(nonatomic) double maxScoreRecentnessInterval; // @synthesize maxScoreRecentnessInterval=_maxScoreRecentnessInterval;
-- (void).cxx_destruct;
 - (id)statusAsDictionary;
 - (_Bool)isHealthyForWorkerType:(short)arg1;
 - (void)reset;

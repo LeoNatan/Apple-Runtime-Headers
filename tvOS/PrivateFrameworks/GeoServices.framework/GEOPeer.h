@@ -23,6 +23,7 @@
     id <NSObject> _preloadingTransaction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *entitlementCache; // @synthesize entitlementCache=_entitlementCache;
 @property(readonly, nonatomic) GEOProxyClient *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(copy, nonatomic) NSString *debugIdentifier; // @synthesize debugIdentifier=_debugIdentifier;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool preloadingExclusively; // @synthesize preloadingExclusively=_preloadingExclusively;
 @property(nonatomic) _Bool preloading; // @synthesize preloading=_preloading;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (_Bool)hasEntitlement:(id)arg1;
 - (id)valueForEntitlement:(id)arg1;
 @property(readonly, nonatomic) _Bool isLocationd;

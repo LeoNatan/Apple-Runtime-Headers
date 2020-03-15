@@ -25,9 +25,9 @@
 + (id)colorWithRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
 + (id)colorWithWhite:(double)arg1 alpha:(double)arg2;
 + (id)colorWithCGColor:(struct CGColor *)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *UIColor; // @synthesize UIColor=_UIColor;
 @property(readonly, nonatomic) struct CGColor *CGColor; // @synthesize CGColor=_CGColor;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

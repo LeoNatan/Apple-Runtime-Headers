@@ -28,6 +28,7 @@
 
 + (id)_openButtonDescriptionForNotificationRequest:(id)arg1 cell:(id)arg2;
 + (id)_actionButtonDescriptionsForNotificationRequest:(id)arg1 sectionSettings:(id)arg2 cell:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didPlayHaptic; // @synthesize didPlayHaptic=_didPlayHaptic;
 @property(retain, nonatomic) _UIStatesFeedbackGenerator *defaultActionFeedbackGenerator; // @synthesize defaultActionFeedbackGenerator=_defaultActionFeedbackGenerator;
 @property(retain, nonatomic) NCNotificationListCellActionButton *defaultActionButton; // @synthesize defaultActionButton=_defaultActionButton;
@@ -39,7 +40,6 @@
 @property(nonatomic) _Bool highlightDefaultActionButton; // @synthesize highlightDefaultActionButton=_highlightDefaultActionButton;
 @property(copy, nonatomic) NSString *materialGroupNameBase; // @synthesize materialGroupNameBase=_materialGroupNameBase;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
-- (void).cxx_destruct;
 - (_Bool)adjustForContentSizeCategoryChange;
 - (void)_actuateFeedbackForDefaultActionUnlockedIfNecessary;
 - (void)_actuateFeedbackForDefaultActionLockedIfNecessary;

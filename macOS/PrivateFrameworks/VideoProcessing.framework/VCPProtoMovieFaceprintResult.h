@@ -18,9 +18,9 @@
 }
 
 + (id)resultFromLegacyDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *faceprintBlob; // @synthesize faceprintBlob=_faceprintBlob;
 @property(nonatomic) unsigned int faceID; // @synthesize faceID=_faceID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

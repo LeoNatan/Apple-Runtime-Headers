@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *episodeSyncIDs; // @synthesize episodeSyncIDs=_episodeSyncIDs;
 @property(readonly, nonatomic) NSDate *addedDate; // @synthesize addedDate=_addedDate;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initUsingPropertiesFrom:(id)arg1;

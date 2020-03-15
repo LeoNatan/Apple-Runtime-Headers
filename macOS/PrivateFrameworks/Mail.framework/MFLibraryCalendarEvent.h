@@ -23,6 +23,7 @@
     long long _responseStatus;
 }
 
+- (void).cxx_destruct;
 @property long long responseStatus; // @synthesize responseStatus=_responseStatus;
 @property BOOL isResponseRequested; // @synthesize isResponseRequested=_isResponseRequested;
 @property BOOL hasBeenProcessed; // @synthesize hasBeenProcessed=_hasBeenProcessed;
@@ -34,7 +35,6 @@
 @property(copy) NSString *location; // @synthesize location=_location;
 @property(copy) NSString *associatedCalendarItemIdString; // @synthesize associatedCalendarItemIdString=_associatedCalendarItemIdString;
 @property(copy) NSString *originalReceivedAccountURLString; // @synthesize originalReceivedAccountURLString=_originalReceivedAccountURLString;
-- (void).cxx_destruct;
 
 @end
 

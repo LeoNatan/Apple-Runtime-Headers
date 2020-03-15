@@ -24,11 +24,11 @@ __attribute__((visibility("hidden")))
     struct CGSize _aspectRatio;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isNavigationEnabled) _Bool navigationEnabled; // @synthesize navigationEnabled=_navigationEnabled;
 @property(nonatomic) long long selectedNavigationMarkerIndex; // @synthesize selectedNavigationMarkerIndex=_selectedNavigationMarkerIndex;
 @property(nonatomic) struct CGSize aspectRatio; // @synthesize aspectRatio=_aspectRatio;
 @property(nonatomic) __weak id <AVInfoPanelNavigationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_selectNavigationMarkerAtIndex:(long long)arg1 shouldScrollToCenter:(_Bool)arg2;
 - (void)_createOrUpdateHeightConstraint;
 - (void)_createOrUpdateWidthConstraint;

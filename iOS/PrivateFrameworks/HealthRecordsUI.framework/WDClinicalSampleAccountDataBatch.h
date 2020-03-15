@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSDictionary *_resourceObjectsByResourceType;
 }
 
-@property(copy, nonatomic) NSDictionary *resourceObjectsByResourceType; // @synthesize resourceObjectsByResourceType=_resourceObjectsByResourceType;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *resourceObjectsByResourceType; // @synthesize resourceObjectsByResourceType=_resourceObjectsByResourceType;
 
 @end
 

@@ -17,10 +17,10 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *subjectConsumerSecret; // @synthesize subjectConsumerSecret=_subjectConsumerSecret;
 @property(retain, nonatomic) NSString *subjectConsumerKey; // @synthesize subjectConsumerKey=_subjectConsumerKey;
 @property(retain, nonatomic) NSNumber *sessions; // @synthesize sessions=_sessions;
-- (void).cxx_destruct;
 
 @end
 

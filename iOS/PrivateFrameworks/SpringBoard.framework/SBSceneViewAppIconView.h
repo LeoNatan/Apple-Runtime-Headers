@@ -15,10 +15,10 @@
     PLPlatterView *_shadowView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PLPlatterView *shadowView; // @synthesize shadowView=_shadowView;
 @property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(readonly, nonatomic) SBIconImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithIcon:(id)arg1;

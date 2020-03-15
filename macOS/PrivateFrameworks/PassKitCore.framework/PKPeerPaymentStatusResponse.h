@@ -17,12 +17,12 @@
     NSData *_amountHash;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *amountHash; // @synthesize amountHash=_amountHash;
 @property(readonly, copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(readonly, copy, nonatomic) NSString *transactionIdentifier; // @synthesize transactionIdentifier=_transactionIdentifier;
 @property(readonly, copy, nonatomic) NSString *paymentIdentifier; // @synthesize paymentIdentifier=_paymentIdentifier;
 @property(readonly, nonatomic) long long status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (BOOL)amountHashIsValidForAmount:(id)arg1 andCurrency:(id)arg2;
 - (id)initWithData:(id)arg1;
 

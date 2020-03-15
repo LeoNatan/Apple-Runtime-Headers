@@ -21,6 +21,7 @@
     NSMutableDictionary *_ignoredEventsByState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *ignoredEventsByState; // @synthesize ignoredEventsByState=_ignoredEventsByState;
 @property(retain, nonatomic) NSMutableDictionary *transitionTable; // @synthesize transitionTable=_transitionTable;
 @property(retain, nonatomic) NSMutableArray *enqueuedTransitions; // @synthesize enqueuedTransitions=_enqueuedTransitions;
@@ -28,7 +29,6 @@
 @property(nonatomic) __weak id <VSStateMachineDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) VSOptional *currentState; // @synthesize currentState=_currentState;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (void)enqueueEvent:(id)arg1;
 - (void)activateWithState:(id)arg1;

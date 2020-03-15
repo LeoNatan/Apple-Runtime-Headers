@@ -20,13 +20,13 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TLKLabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) struct CGSize textOffset; // @synthesize textOffset=_textOffset;
 @property(retain, nonatomic) TLKMultilineText *text; // @synthesize text=_text;
 @property(nonatomic) _Bool shouldBadge; // @synthesize shouldBadge=_shouldBadge;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)effectiveLayoutSizeFittingSize:(struct CGSize)arg1;
 - (void)tlk_updateForAppearance:(id)arg1;

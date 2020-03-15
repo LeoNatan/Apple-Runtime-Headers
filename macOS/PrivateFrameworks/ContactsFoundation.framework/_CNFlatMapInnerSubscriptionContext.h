@@ -15,9 +15,9 @@
     id <CNCancelable> _token;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id <CNCancelable> token; // @synthesize token=_token;
 @property(readonly) CNSuspendableSchedulerDecorator *decorator; // @synthesize decorator=_decorator;
-- (void).cxx_destruct;
 - (id)initWithDecorator:(id)arg1 token:(id)arg2;
 
 @end

@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)thumbnailViewForImage:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *imageFilterName; // @synthesize imageFilterName=_imageFilterName;
 @property(retain, nonatomic) NSData *filteredImageData; // @synthesize filteredImageData=_filteredImageData;
 @property(retain, nonatomic) NSData *fullscreenImageData; // @synthesize fullscreenImageData=_fullscreenImageData;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGRect cropRect; // @synthesize cropRect=_cropRect;
 @property(retain, nonatomic) NSString *recentsIdentifier; // @synthesize recentsIdentifier=_recentsIdentifier;
 @property(retain, nonatomic) NSData *thumbnailImageData; // @synthesize thumbnailImageData=_thumbnailImageData;
-- (void).cxx_destruct;
 - (void)updateTintColorIfNeeded:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

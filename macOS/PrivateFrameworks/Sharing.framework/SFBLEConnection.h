@@ -8,7 +8,7 @@
 
 #import <Sharing/WPNearbyDelegate-Protocol.h>
 
-@class CURetrier, NSMutableSet, NSString, SFBLEData, SFBLEDevice, WPNearby;
+@class CURetrier, NSMutableArray, NSMutableSet, NSString, SFBLEData, SFBLEDevice, WPNearby;
 @protocol OS_dispatch_queue;
 
 @interface SFBLEConnection : NSObject <WPNearbyDelegate>
@@ -21,13 +21,14 @@
     double _connectStartTime;
     CURetrier *_connectRetrier;
     SFBLEData *_currentData;
-    struct NSMutableArray *_dataSendQueue;
+    NSMutableArray *_dataSendQueue;
     BOOL _invalidateCalled;
     WPNearby *_wpNearby;
     struct LogCategory *_ucat;
     BOOL _bleEncrypted;
     BOOL _latencyCritical;
     BOOL _lePipeCapable;
+    unsigned int _sessionFlags;
     CDUnknownBlockType _bluetoothBandwidthChangedHandler;
     CDUnknownBlockType _bluetoothStateChangedHandler;
     CDUnknownBlockType _connectionStateChangedHandler;
@@ -37,9 +38,11 @@
     SFBLEDevice *_peerDevice;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL lePipeCapable; // @synthesize lePipeCapable=_lePipeCapable;
 @property(nonatomic) BOOL latencyCritical; // @synthesize latencyCritical=_latencyCritical;
 @property(nonatomic) BOOL bleEncrypted; // @synthesize bleEncrypted=_bleEncrypted;
+@property(nonatomic) unsigned int sessionFlags; // @synthesize sessionFlags=_sessionFlags;
 @property(retain, nonatomic) SFBLEDevice *peerDevice; // @synthesize peerDevice=_peerDevice;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
@@ -48,7 +51,6 @@
 @property(copy, nonatomic) CDUnknownBlockType bluetoothStateChangedHandler; // @synthesize bluetoothStateChangedHandler=_bluetoothStateChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType bluetoothBandwidthChangedHandler; // @synthesize bluetoothBandwidthChangedHandler=_bluetoothBandwidthChangedHandler;
 @property(nonatomic) BOOL acceptor; // @synthesize acceptor=_acceptor;
-- (void).cxx_destruct;
 - (void)nearby:(id)arg1 didReceiveData:(id)arg2 fromPeer:(id)arg3;
 - (void)nearby:(id)arg1 didSendData:(id)arg2 toPeer:(id)arg3 error:(id)arg4;
 - (void)nearby:(id)arg1 didDisconnectFromPeer:(id)arg2 error:(id)arg3;

@@ -14,9 +14,9 @@
     MPModelLibraryAlbumAppDataChangeRequest *_request;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) MPModelLibraryAlbumAppDataChangeRequest *request; // @synthesize request=_request;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
-- (void).cxx_destruct;
 - (void)execute;
 
 @end

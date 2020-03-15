@@ -28,13 +28,13 @@ __attribute__((visibility("hidden")))
 + (id)configureClass:(id)arg1;
 + (id)objectWithName:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int symptomMaxRetainTime; // @synthesize symptomMaxRetainTime;
 @property(retain, nonatomic) NSMutableArray *symptomRules; // @synthesize symptomRules;
 @property(nonatomic) unsigned int symptomSaveAdditionalId; // @synthesize symptomSaveAdditionalId;
 @property(nonatomic) unsigned int symptomSaveFlags; // @synthesize symptomSaveFlags;
 @property(retain, nonatomic) NSString *symptomName; // @synthesize symptomName;
 @property(retain, nonatomic) NSString *symptomKey; // @synthesize symptomKey;
-- (void).cxx_destruct;
 - (void)evaluateIncomingEvent:(id)arg1;
 - (int)configureInstance:(id)arg1;
 - (int)read:(id)arg1 returnedValues:(id)arg2;

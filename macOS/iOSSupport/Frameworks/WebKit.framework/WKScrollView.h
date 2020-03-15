@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
     WKWebView<UIScrollViewDelegate> *_internalDelegate;
 }
 
-@property(nonatomic) WKWebView<UIScrollViewDelegate> *internalDelegate; // @synthesize internalDelegate=_internalDelegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) WKWebView<UIScrollViewDelegate> *internalDelegate; // @synthesize internalDelegate=_internalDelegate;
 - (void)_updateZoomability;
 - (void)_setZoomEnabledInternal:(BOOL)arg1;
 - (void)setZoomEnabled:(BOOL)arg1;
@@ -44,6 +44,8 @@ __attribute__((visibility("hidden")))
 - (double)_rubberBandOffsetForOffset:(double)arg1 maxOffset:(double)arg2 minOffset:(double)arg3 range:(double)arg4 outside:(char *)arg5;
 - (void)dealloc;
 - (void)_updateDelegate;
+- (BOOL)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (id)delegate;
 - (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

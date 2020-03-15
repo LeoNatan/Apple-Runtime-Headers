@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _contentSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(retain, nonatomic) SKUIStarRatingControl *ratingView; // @synthesize ratingView=_ratingView;
 @property(retain, nonatomic) UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) _Bool completed; // @synthesize completed=_completed;
-- (void).cxx_destruct;
 - (id)_messageLabelFont;
 - (id)_titleLabelFont;
 - (void)layoutSubviews;

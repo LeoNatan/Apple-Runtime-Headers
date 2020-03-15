@@ -17,9 +17,9 @@
     NSArray *_containerItemsToDelete;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *containerItemsToDelete; // @synthesize containerItemsToDelete=_containerItemsToDelete;
 @property(retain, nonatomic) NSArray *containerItemsToUpdate; // @synthesize containerItemsToUpdate=_containerItemsToUpdate;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithContainerPersistentID:(long long)arg1 updatedItemsPersistentIDs:(id)arg2 connection:(id)arg3;
 

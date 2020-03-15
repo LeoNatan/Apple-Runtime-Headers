@@ -26,6 +26,7 @@
 + (double)_ringToTypeSpacing;
 + (double)_ringDiameter;
 + (double)_ringTopPadding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) FIUIDividerView *separatorView; // @synthesize separatorView=_separatorView;
 @property(retain, nonatomic) UILabel *secondaryLabel; // @synthesize secondaryLabel=_secondaryLabel;
 @property(retain, nonatomic) UILabel *typeLabel; // @synthesize typeLabel=_typeLabel;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) ARUIRingsView *ringsView; // @synthesize ringsView=_ringsView;
 @property(nonatomic) double currentCompletionFactor; // @synthesize currentCompletionFactor=_currentCompletionFactor;
 @property(retain, nonatomic) HKWorkout *workout; // @synthesize workout=_workout;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)animateRingWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setWorkout:(id)arg1 fillRing:(_Bool)arg2;

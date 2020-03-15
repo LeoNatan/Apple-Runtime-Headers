@@ -13,8 +13,8 @@
     id <AXMActiveSoundOutputActionHandleProvider> _handleProvider;
 }
 
-@property(retain, nonatomic) id <AXMActiveSoundOutputActionHandleProvider> handleProvider; // @synthesize handleProvider=_handleProvider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <AXMActiveSoundOutputActionHandleProvider> handleProvider; // @synthesize handleProvider=_handleProvider;
 - (void)setQuantizedRate:(int)arg1;
 @property(nonatomic) float rate;
 @property(nonatomic) float pitch;

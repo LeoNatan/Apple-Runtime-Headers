@@ -42,6 +42,7 @@
 + (struct CGImageSource *)newImageSourceForURL:(id)arg1 options:(id)arg2;
 + (struct CGImageSource *)newImageSourceForData:(id)arg1 uti:(id)arg2 options:(id)arg3;
 + (void)test_digestedDateTimeExifAttributesFromExif:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLLocation *exifLocation; // @synthesize exifLocation=_exifLocation;
 @property(retain, nonatomic) NSString *fileTypeIdentifier; // @synthesize fileTypeIdentifier=_fileTypeIdentifier;
 @property(retain, nonatomic) NSString *jsonFormattedDescription; // @synthesize jsonFormattedDescription=_jsonFormattedDescription;
@@ -61,7 +62,6 @@
 @property(retain, nonatomic) NSMutableDictionary *iptcProperties; // @synthesize iptcProperties=_iptcProperties;
 @property(retain, nonatomic) NSMutableDictionary *exifProperties; // @synthesize exifProperties=_exifProperties;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
-- (void).cxx_destruct;
 - (_Bool)convertGPSString:(id)arg1 toLatitude:(id *)arg2 longitude:(id *)arg3;
 - (void)dumpXmpProperties;
 - (void)restoreImportantMetadataFromPropertySet:(id)arg1 toSidecarSet:(id)arg2;

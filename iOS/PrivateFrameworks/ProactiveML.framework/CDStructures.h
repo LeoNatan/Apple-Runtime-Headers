@@ -10,10 +10,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct NSString {
-    Class _field1;
-};
-
 struct _NSRange {
     unsigned long long location;
     unsigned long long length;
@@ -47,6 +43,11 @@ typedef struct {
     unsigned long long count;
     unsigned long long size;
 } CDStruct_fae3dc92;
+
+typedef struct {
+    void *plan;
+    int network_index;
+} CDStruct_2bc666a5;
 
 typedef struct {
     float gaussianScaleFactor;

@@ -20,6 +20,7 @@
     int _rowIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int rowIndex; // @synthesize rowIndex=_rowIndex;
 @property(nonatomic) int tableIndex; // @synthesize tableIndex=_tableIndex;
 @property(retain, nonatomic) NSString *propertyIndex; // @synthesize propertyIndex=_propertyIndex;
@@ -28,7 +29,6 @@
 @property(nonatomic) __weak WKInterfaceController *interfaceController; // @synthesize interfaceController=_interfaceController;
 @property(retain, nonatomic) NSMutableArray *deferredValuesToSet; // @synthesize deferredValuesToSet=_deferredValuesToSet;
 @property(copy, nonatomic) NSString *interfaceProperty; // @synthesize interfaceProperty=_interfaceProperty;
-- (void).cxx_destruct;
 - (void)setSemanticContentAttribute:(int)arg1;
 - (void)setRotation:(float)arg1;
 - (void)setVerticalAlignment:(int)arg1;

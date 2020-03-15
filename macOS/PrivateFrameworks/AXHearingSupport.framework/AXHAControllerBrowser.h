@@ -22,9 +22,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *updateDeviceBlocks; // @synthesize updateDeviceBlocks=_updateDeviceBlocks;
 @property(retain, nonatomic) AXHearingSlaveController *slaveController; // @synthesize slaveController=_slaveController;
-- (void).cxx_destruct;
 - (void)writePayload:(id)arg1 toControllers:(id)arg2;
 - (void)writeValue:(id)arg1 forProperty:(unsigned long long)arg2 forControllers:(id)arg3;
 - (void)writeValue:(id)arg1 forProperty:(unsigned long long)arg2 forDeviceID:(id)arg3;

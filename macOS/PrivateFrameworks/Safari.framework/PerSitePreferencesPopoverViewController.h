@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSArray *_checkBoxElements;
 }
 
-@property(copy, nonatomic) NSArray *checkBoxElements; // @synthesize checkBoxElements=_checkBoxElements;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *checkBoxElements; // @synthesize checkBoxElements=_checkBoxElements;
 - (void)updateView;
 
 @end

@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSArray *_encodedQueryableColumns;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *encodedQueryableColumns; // @synthesize encodedQueryableColumns=_encodedQueryableColumns;
 @property(readonly, nonatomic) HMBLocalSQLQueryTable *queryTable; // @synthesize queryTable=_queryTable;
 @property(readonly, nonatomic) NSString *modelType; // @synthesize modelType=_modelType;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned int recordRow; // @synthesize recordRow=_recordRow;
 @property(readonly, nonatomic) HMBModel *update; // @synthesize update=_update;
 @property(readonly, nonatomic) HMBModel *previous; // @synthesize previous=_previous;
-- (void).cxx_destruct;
 - (id)initWithPrevious:(id)arg1 update:(id)arg2 recordRow:(unsigned int)arg3 itemRow:(unsigned int)arg4 modelSchema:(id)arg5 modelType:(id)arg6 externalID:(id)arg7 externalData:(id)arg8 queryTable:(id)arg9;
 
 @end

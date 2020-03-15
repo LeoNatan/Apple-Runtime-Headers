@@ -20,6 +20,7 @@
     NSMapTable *_undoGroupOldPropertiesPerAnnotation;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMapTable *undoGroupOldPropertiesPerAnnotation; // @synthesize undoGroupOldPropertiesPerAnnotation=_undoGroupOldPropertiesPerAnnotation;
 @property _Bool undoGroupHasChangesToMultipleProperties; // @synthesize undoGroupHasChangesToMultipleProperties=_undoGroupHasChangesToMultipleProperties;
 @property(retain) NSString *undoGroupPresentablePropertyName; // @synthesize undoGroupPresentablePropertyName=_undoGroupPresentablePropertyName;
@@ -28,7 +29,6 @@
 @property __weak AKController *controller; // @synthesize controller=_controller;
 @property _Bool externalSourceTrackingChanged; // @synthesize externalSourceTrackingChanged=_externalSourceTrackingChanged;
 @property(retain) NSUndoManager *undoManager; // @synthesize undoManager=_undoManager;
-- (void).cxx_destruct;
 - (void)observePageControllerRequestsEnableRegistration:(id)arg1;
 - (void)observePageControllerRequestsDisableRegistration:(id)arg1;
 - (void)_endEditingOfTextIfAnnotationsDeleted:(id)arg1;

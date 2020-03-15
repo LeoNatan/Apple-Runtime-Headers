@@ -20,13 +20,13 @@
     PGManager *_manager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PGManager *manager; // @synthesize manager=_manager;
 @property(retain, nonatomic) NSNumber *contentScoreNumber; // @synthesize contentScoreNumber=_contentScoreNumber;
 @property(retain, nonatomic) NSNumber *isSmartInterestingNumber; // @synthesize isSmartInterestingNumber=_isSmartInterestingNumber;
 @property(retain, nonatomic) NSNumber *isInterestingNumber; // @synthesize isInterestingNumber=_isInterestingNumber;
 @property(retain, nonatomic) CLSInvestigationPhotoKitFeeder *feeder; // @synthesize feeder=_feeder;
 @property(retain, nonatomic) CLSClueCollection *clueCollection; // @synthesize clueCollection=_clueCollection;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double behavioralScore;
 @property(readonly, nonatomic) unsigned long long numberOfRegularGemItems;
 @property(readonly, nonatomic) unsigned long long numberOfShinyGemItems;

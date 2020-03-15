@@ -16,9 +16,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)containerWithObject:(void *)arg1 destructor:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType destructor; // @synthesize destructor=_destructor;
 @property(nonatomic) const void *cppObjectPtr; // @synthesize cppObjectPtr=_cppObjectPtr;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)invalidate;

@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _targetFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double targetContentAlpha; // @synthesize targetContentAlpha=_targetContentAlpha;
 @property(nonatomic) struct CGRect targetFrame; // @synthesize targetFrame=_targetFrame;
 @property(retain, nonatomic) UIView *transitionView; // @synthesize transitionView=_transitionView;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) PXImportItemViewModel *importItem; // @synthesize importItem=_importItem;
 @property(retain, nonatomic) UIImage *snapshotImage; // @synthesize snapshotImage=_snapshotImage;
 @property(nonatomic) struct CGRect initialFrame; // @synthesize initialFrame=_initialFrame;
-- (void).cxx_destruct;
 - (id)initWithInitialFrame:(struct CGRect)arg1 snapshotImage:(id)arg2 importItem:(id)arg3 indexPath:(struct PXSimpleIndexPath)arg4;
 
 @end

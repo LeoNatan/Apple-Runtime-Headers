@@ -23,6 +23,7 @@
     NSDateComponents *_eventFilterEndDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateComponents *eventFilterEndDate; // @synthesize eventFilterEndDate=_eventFilterEndDate;
 @property(retain, nonatomic) NSDateComponents *eventFilterStartDate; // @synthesize eventFilterStartDate=_eventFilterStartDate;
 @property(nonatomic) _Bool fallbackOnMultiGetError; // @synthesize fallbackOnMultiGetError=_fallbackOnMultiGetError;
@@ -32,7 +33,6 @@
 @property(nonatomic) _Bool getScheduleChanges; // @synthesize getScheduleChanges=_getScheduleChanges;
 @property(nonatomic) _Bool getScheduleTags; // @synthesize getScheduleTags=_getScheduleTags;
 @property(retain, nonatomic) id <CalDAVCalendar> calendar; // @synthesize calendar=_calendar;
-- (void).cxx_destruct;
 - (id)initWithFolderURL:(id)arg1 previousCTag:(id)arg2 previousSyncToken:(id)arg3 getScheduleTags:(_Bool)arg4 getScheduleChanges:(_Bool)arg5 accountInfoProvider:(id)arg6 taskManager:(id)arg7;
 - (id)initWithFolderURL:(id)arg1 previousCTag:(id)arg2 previousSyncToken:(id)arg3 actions:(id)arg4 getScheduleTags:(_Bool)arg5 getScheduleChanges:(_Bool)arg6 accountInfoProvider:(id)arg7 taskManager:(id)arg8 appSpecificCalendarItemClass:(Class)arg9;
 - (id)copyAdditionalResourcePropertiesToFetch;

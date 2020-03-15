@@ -17,12 +17,12 @@
     NSArray *_dialogCPhraseTimings;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *dialogCPhraseTimings; // @synthesize dialogCPhraseTimings=_dialogCPhraseTimings;
 @property(copy, nonatomic) NSArray *dialogBPhraseTimings; // @synthesize dialogBPhraseTimings=_dialogBPhraseTimings;
 @property(copy, nonatomic) NSArray *dialogAWordTimings; // @synthesize dialogAWordTimings=_dialogAWordTimings;
 @property(copy, nonatomic) NSString *dialogAText; // @synthesize dialogAText=_dialogAText;
 @property(copy, nonatomic) NSArray *introWordTimings; // @synthesize introWordTimings=_introWordTimings;
-- (void).cxx_destruct;
 
 @end
 

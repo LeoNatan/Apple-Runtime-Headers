@@ -19,13 +19,13 @@
     UILabel *_separatorLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool alignLogosToEdges; // @synthesize alignLogosToEdges=_alignLogosToEdges;
 @property(retain, nonatomic) UILabel *separatorLabel; // @synthesize separatorLabel=_separatorLabel;
 @property(retain, nonatomic) TVImageView *rightImageView; // @synthesize rightImageView=_rightImageView;
 @property(retain, nonatomic) TVImageView *leftImageView; // @synthesize leftImageView=_leftImageView;
 @property(retain, nonatomic) TVImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 @property(retain, nonatomic) TVLHeadToHeadBannerElement *bannerElement; // @synthesize bannerElement=_bannerElement;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithHeadToHeadBannerElement:(id)arg1;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_transitionName;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int transitionFrameDuration; // @synthesize transitionFrameDuration=_transitionFrameDuration;
 @property(copy, nonatomic) NSString *transitionName; // @synthesize transitionName=_transitionName;
-- (void).cxx_destruct;
 - (unsigned long long)numberOfAvailableClips;
 - (unsigned long long)_maximumNumberOfContainedClips;
 - (unsigned long long)_idealNumberOfContainedClips;

@@ -17,11 +17,11 @@
     NSObject<OS_os_transaction> *_openTransaction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_os_transaction> *openTransaction; // @synthesize openTransaction=_openTransaction;
 @property(retain, nonatomic) NSArray *recordIDsToDelete; // @synthesize recordIDsToDelete=_recordIDsToDelete;
 @property(retain, nonatomic) NSArray *recordsToUpdate; // @synthesize recordsToUpdate=_recordsToUpdate;
 @property(retain, nonatomic) CKServerChangeToken *serverChangeToken; // @synthesize serverChangeToken=_serverChangeToken;
-- (void).cxx_destruct;
 
 @end
 

@@ -16,10 +16,10 @@
     NSMutableDictionary *__stagedPackagesByIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *_stagedPackagesByIdentifier; // @synthesize _stagedPackagesByIdentifier=__stagedPackagesByIdentifier;
 @property(readonly, nonatomic) NSMutableArray *_stagedIdentifiersInOrder; // @synthesize _stagedIdentifiersInOrder=__stagedIdentifiersInOrder;
 @property(nonatomic) __weak id <AEPackageTransportDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)stagedPackages;
 - (id)stagedPackageForIdentifier:(id)arg1;
 - (id)orderedStagedIdentifiers;

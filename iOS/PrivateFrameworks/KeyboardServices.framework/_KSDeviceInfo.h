@@ -21,12 +21,12 @@
 + (id)ksDeviceWithName:(id)arg1 needsUpgrade:(_Bool)arg2;
 + (id)ksDecviceWithName:(id)arg1 swVersion:(id)arg2 model:(id)arg3 modelDisplayName:(id)arg4;
 + (id)ksDecviceWithiCloudDeviceInfo:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsUpdate; // @synthesize needsUpdate=_needsUpdate;
 @property(copy, nonatomic) NSString *modelDisplayName; // @synthesize modelDisplayName=_modelDisplayName;
 @property(copy, nonatomic) NSString *model; // @synthesize model=_model;
 @property(copy, nonatomic) NSString *swVersion; // @synthesize swVersion=_swVersion;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 
 @end
 

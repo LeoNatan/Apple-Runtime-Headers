@@ -22,6 +22,7 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain) RBSAssertion *initializationAssertions; // @synthesize initializationAssertions=_initializationAssertions;
 @property(retain) RBSProcessHandle *spotlightProcessHandle; // @synthesize spotlightProcessHandle=_spotlightProcessHandle;
@@ -29,7 +30,6 @@
 @property(retain) FBSDisplayLayoutMonitor *layoutMonitor; // @synthesize layoutMonitor=_layoutMonitor;
 @property(retain) NSHashTable *foregroundScenes; // @synthesize foregroundScenes=_foregroundScenes;
 @property(retain) NSHashTable *managedScenes; // @synthesize managedScenes=_managedScenes;
-- (void).cxx_destruct;
 - (void)applyAssertionAsNeeded;
 - (void)sceneWillBackground:(id)arg1;
 - (void)sceneWillForeground:(id)arg1;

@@ -25,12 +25,12 @@
 + (id)_instructionFont;
 + (id)doubleClickToApproveViewWithFrame:(struct CGRect)arg1;
 + (id)doubleClickToApproveView;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *pillImageView; // @synthesize pillImageView=_pillImageView;
 @property(readonly, nonatomic) NPKDoubleClickToApproveLabel *instructionLabel; // @synthesize instructionLabel=_instructionLabel;
 @property(readonly, nonatomic) UIStackView *contentStackView; // @synthesize contentStackView=_contentStackView;
 @property(nonatomic) unsigned int contentAlignment; // @synthesize contentAlignment=_contentAlignment;
 @property(retain, nonatomic) UILayoutGuide *topAscenderLayoutGuide; // @synthesize topAscenderLayoutGuide=_topAscenderLayoutGuide;
-- (void).cxx_destruct;
 - (int)_stackViewAlignmentFromContentAlignment:(unsigned int)arg1;
 - (void)_stopBounceAnimationIfNecessary;
 - (void)stopBounceAnimationIfNecessary;

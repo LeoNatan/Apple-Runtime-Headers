@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     double _sizeFactor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double sizeFactor; // @synthesize sizeFactor=_sizeFactor;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(nonatomic) BOOL isLocal; // @synthesize isLocal=_isLocal;
 @property(nonatomic) int requestID; // @synthesize requestID=_requestID;
 @property(retain, nonatomic) PHAssetResource *resource; // @synthesize resource=_resource;
 @property(retain, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

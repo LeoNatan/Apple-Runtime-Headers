@@ -14,9 +14,9 @@
     NSDictionary *_standardResults;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *standardResults; // @synthesize standardResults=_standardResults;
 @property(readonly, nonatomic) HFCharacteristicValueDisplayMetadata *displayMetadata; // @synthesize displayMetadata=_displayMetadata;
-- (void).cxx_destruct;
 - (id)initWithDisplayMetadata:(id)arg1 standardResults:(id)arg2;
 
 @end

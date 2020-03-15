@@ -23,6 +23,7 @@
 }
 
 + (BOOL)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(nonatomic) double switchValue; // @synthesize switchValue=_switchValue;
 @property(nonatomic) double clippedValue; // @synthesize clippedValue=_clippedValue;
 @property(retain, nonatomic) HUIconView *decorationIconView; // @synthesize decorationIconView=_decorationIconView;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) UIView *wellView; // @synthesize wellView=_wellView;
 @property(copy, nonatomic) HUQuickControlSwitchViewProfile *profile; // @synthesize profile=_profile;
 @property(nonatomic) unsigned long long reachabilityState; // @synthesize reachabilityState=_reachabilityState;
-- (void).cxx_destruct;
 - (void)_updateUIForReachabilityState:(unsigned long long)arg1;
 - (void)_createSupplementaryValueLabelIfNecessary;
 - (BOOL)_createDecorationIconViewIfNecessary;

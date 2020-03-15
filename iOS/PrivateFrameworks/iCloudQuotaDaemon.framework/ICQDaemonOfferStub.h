@@ -14,8 +14,8 @@
     ICQDaemonOfferConditions *_conditionsWhenChosen;
 }
 
-@property(copy, nonatomic) ICQDaemonOfferConditions *conditionsWhenChosen; // @synthesize conditionsWhenChosen=_conditionsWhenChosen;
 - (void).cxx_destruct;
+@property(copy, nonatomic) ICQDaemonOfferConditions *conditionsWhenChosen; // @synthesize conditionsWhenChosen=_conditionsWhenChosen;
 @property(readonly, nonatomic) ICQDaemonOfferCriteria *criteria;
 @property(readonly, nonatomic, getter=isBuddyOffer) _Bool buddyOffer;
 @property(readonly, nonatomic) NSString *offerId;

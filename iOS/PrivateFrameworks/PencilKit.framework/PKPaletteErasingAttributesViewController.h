@@ -14,8 +14,8 @@
 }
 
 + (double)_preferredContentSizeWidth;
-@property(nonatomic) __weak id <PKPaletteErasingAttributesViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PKPaletteErasingAttributesViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (struct CGSize)preferredContentSize;
 @property(nonatomic) long long eraserType;
 - (_Bool)_canShowWhileLocked;

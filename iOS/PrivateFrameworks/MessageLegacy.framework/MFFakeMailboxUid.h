@@ -16,11 +16,11 @@
     NSString *_fakeURLString;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool fakeIsSpecialMailboxUid; // @synthesize fakeIsSpecialMailboxUid=_fakeIsSpecialMailboxUid;
 @property(copy, nonatomic) NSString *fakeURLString; // @synthesize fakeURLString=_fakeURLString;
 @property(copy, nonatomic) NSString *fakeFullPath; // @synthesize fakeFullPath=_fakeFullPath;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)store;
 - (_Bool)isStore;
 - (_Bool)isSpecialMailboxUid;

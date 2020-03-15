@@ -16,11 +16,11 @@
     VUICollectionChangeSet *_updateChangeSet;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUICollectionChangeSet *updateChangeSet; // @synthesize updateChangeSet=_updateChangeSet;
 @property(readonly, copy, nonatomic) NSIndexSet *destinationIndexes; // @synthesize destinationIndexes=_destinationIndexes;
 @property(readonly, copy, nonatomic) NSIndexSet *sourceIndexes; // @synthesize sourceIndexes=_sourceIndexes;
 @property(readonly, nonatomic) unsigned long long changeKind; // @synthesize changeKind=_changeKind;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 - (id)initWithChangeKind:(unsigned long long)arg1 sourceIndexes:(id)arg2 destinationIndexes:(id)arg3;

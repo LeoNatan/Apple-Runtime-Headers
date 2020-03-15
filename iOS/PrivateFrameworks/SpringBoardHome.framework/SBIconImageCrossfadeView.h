@@ -22,11 +22,11 @@
     struct CGPoint _stretchAnchorPoint;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) struct CGPoint stretchAnchorPoint; // @synthesize stretchAnchorPoint=_stretchAnchorPoint;
 @property(nonatomic) _Bool performsTrueCrossfade; // @synthesize performsTrueCrossfade=_performsTrueCrossfade;
 @property(nonatomic) _Bool masksCorners; // @synthesize masksCorners=_masksCorners;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *crossfadeView;
 @property(readonly, nonatomic) SBIconImageView *iconImageView;
 - (void)applyCornerRadius:(double)arg1;

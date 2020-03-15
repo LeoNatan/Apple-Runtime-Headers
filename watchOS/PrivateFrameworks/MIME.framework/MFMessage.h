@@ -44,8 +44,8 @@
 + (id)messageWithRFC822Data:(id)arg1 withParentPart:(id)arg2;
 + (id)messageWithRFC822Data:(id)arg1;
 + (Class)dataMessageStoreToUse;
-@property(retain, nonatomic) MFMimePart *parentPart; // @synthesize parentPart=_parentPart;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MFMimePart *parentPart; // @synthesize parentPart=_parentPart;
 - (id)additionalHeadersForForward;
 - (id)additionalHeadersForReply;
 - (_Bool)isLibraryMessage;

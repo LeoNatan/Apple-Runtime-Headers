@@ -14,9 +14,9 @@
     NSArray *_partialRecoveryBottleIDs;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *partialRecoveryBottleIDs; // @synthesize partialRecoveryBottleIDs=_partialRecoveryBottleIDs;
 @property(retain) NSArray *preferredBottleIDs; // @synthesize preferredBottleIDs=_preferredBottleIDs;
-- (void).cxx_destruct;
 
 @end
 

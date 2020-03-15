@@ -20,6 +20,7 @@
     struct AudioStreamBasicDescription _audioBasicDescription;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_f128470a *audioRecorderQueue; // @synthesize audioRecorderQueue=_audioRecorderQueue;
 @property(nonatomic) struct AudioStreamBasicDescription audioBasicDescription; // @synthesize audioBasicDescription=_audioBasicDescription;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *audioDispatchQueue; // @synthesize audioDispatchQueue=_audioDispatchQueue;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) NSDate *lastAudioDate; // @synthesize lastAudioDate=_lastAudioDate;
 @property(nonatomic) _Bool resumed; // @synthesize resumed=_resumed;
 @property(copy, nonatomic) CDUnknownBlockType appAudioOutputHandler; // @synthesize appAudioOutputHandler=_appAudioOutputHandler;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)resumeWithProcessID:(int)arg1;
 - (_Bool)handleStartAudioQueueFailed:(int)arg1 didFailHandler:(CDUnknownBlockType)arg2;

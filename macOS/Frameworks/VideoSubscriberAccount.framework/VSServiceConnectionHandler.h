@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     id <VSServiceConnectionHandlerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <VSServiceConnectionHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)_didFinish;
 
 @end

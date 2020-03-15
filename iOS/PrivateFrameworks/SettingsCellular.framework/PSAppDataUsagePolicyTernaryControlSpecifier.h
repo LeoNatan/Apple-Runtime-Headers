@@ -14,8 +14,8 @@
     NSString *_displayName;
 }
 
-@property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 - (void)setCellularUsagePolicy:(id)arg1;
 - (id)cellularUsagePolicy;
 - (void)finishInitializing:(unsigned long long)arg1;

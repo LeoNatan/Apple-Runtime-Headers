@@ -22,8 +22,8 @@
 
 + (id)sharedInstance;
 + (id)new;
-@property(nonatomic) __weak id <UIDraggingSystemMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <UIDraggingSystemMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (oneway void)dragDidEndWithSystemSession:(id)arg1;
 - (oneway void)dragDidBeginWithSystemSession:(id)arg1 info:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)xpcQueue_acceptNewConnection:(id)arg1;

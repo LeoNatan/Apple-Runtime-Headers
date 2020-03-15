@@ -25,6 +25,7 @@
 + (long long)photoAndDefaultProhibitedSources;
 + (long long)defaultProhibitedSources;
 + (id)os_log;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL liveUpdating; // @synthesize liveUpdating=_liveUpdating;
 @property(readonly, nonatomic) CNAvatarCacheChangeListener *changeHistoryListener; // @synthesize changeHistoryListener=_changeHistoryListener;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(readonly, nonatomic) id <CNUIPRLikenessResolver> likenessResolver; // @synthesize likenessResolver=_likenessResolver;
 @property(readonly, nonatomic) CNObservable *contactStoreChangeNotificationWatcher; // @synthesize contactStoreChangeNotificationWatcher=_contactStoreChangeNotificationWatcher;
-- (void).cxx_destruct;
 - (void)updateContactsWithIdentifiers:(id)arg1;
 - (id)oneShotQueryForLikenessOfContact:(id)arg1;
 - (id)refetchContact:(id)arg1;

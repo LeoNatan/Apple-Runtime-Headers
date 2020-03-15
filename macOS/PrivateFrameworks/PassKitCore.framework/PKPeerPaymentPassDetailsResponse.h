@@ -20,6 +20,7 @@
     PKPaymentRemoteCredential *_remoteCredential;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKPaymentRemoteCredential *remoteCredential; // @synthesize remoteCredential=_remoteCredential;
 @property(readonly, copy, nonatomic) NSString *ownershipTokenIdentifier; // @synthesize ownershipTokenIdentifier=_ownershipTokenIdentifier;
 @property(readonly, copy, nonatomic) NSString *passSerialNumber; // @synthesize passSerialNumber=_passSerialNumber;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) long long status; // @synthesize status=_status;
 @property(readonly, nonatomic) long long cardType; // @synthesize cardType=_cardType;
 @property(readonly, copy, nonatomic) NSString *provisioningIdentifier; // @synthesize provisioningIdentifier=_provisioningIdentifier;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 
 @end

@@ -27,10 +27,10 @@
 + (void)studentDidAuthenticate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)setActiveStudentIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (id)studentDaemonConnection;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL userExpectsReconnect; // @synthesize userExpectsReconnect=_userExpectsReconnect;
 @property(nonatomic, getter=isConnected) BOOL connected; // @synthesize connected=_connected;
 @property(nonatomic) long long maxConnectionAttempts; // @synthesize maxConnectionAttempts=_maxConnectionAttempts;
-- (void).cxx_destruct;
 - (void)client:(id)arg1 didReceiveNotificationWithName:(id)arg2 userInfo:(id)arg3;
 - (void)clientDidDisconnect:(id)arg1;
 - (void)client:(id)arg1 didInterruptWithError:(id)arg2;

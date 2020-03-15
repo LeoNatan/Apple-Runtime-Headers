@@ -22,10 +22,10 @@
 + (id)iconForApplicationIdentifier:(id)arg1;
 + (id)iconAtPath:(id)arg1;
 + (id)iconNamed:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *path; // @synthesize path=_path;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -16,11 +16,11 @@
     NSData *_wrappedPrivateKeys;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *wrappedPrivateKeys; // @synthesize wrappedPrivateKeys=_wrappedPrivateKeys;
 @property(retain, nonatomic) TPPeerDynamicInfo *dynamicInfo; // @synthesize dynamicInfo=_dynamicInfo;
 @property(retain, nonatomic) TPPeerStableInfo *stableInfo; // @synthesize stableInfo=_stableInfo;
 @property(retain, nonatomic) TPPeerPermanentInfo *permanentInfo; // @synthesize permanentInfo=_permanentInfo;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSSet *trustedPeerIDs;
 - (long long)updateDynamicInfo:(id)arg1;

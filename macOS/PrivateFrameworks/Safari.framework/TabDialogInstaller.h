@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSView *_hostingView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak NSView *hostingView; // @synthesize hostingView=_hostingView;
 @property(readonly, nonatomic) __weak BrowserViewController *browserViewController; // @synthesize browserViewController=_browserViewController;
-- (void).cxx_destruct;
 - (id)_layoutConstraintsForTabDialogView:(id)arg1 andDimmingView:(id)arg2 placement:(long long)arg3 verticalOffset:(double)arg4;
 - (void)_deactivateWebViewAndInstallDimmingView:(id)arg1;
 @property(readonly, nonatomic) NSView<TabDialogView> *tabDialogView;

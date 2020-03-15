@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <TSReading/TSDMagicMoveMatching-Protocol.h>
+#import <TSReading/TSDRepTextContaining-Protocol.h>
 
-@class CALayer, NSArray, NSDictionary, TSDCanvas, TSDInteractiveCanvasController, TSDKnobTracker, TSDLayout, TSDLayoutGeometry, TSDTextureContext, TSDTextureSet, TSDTilingBackgroundQueue;
+@class CALayer, NSArray, NSDictionary, NSString, TSDCanvas, TSDInteractiveCanvasController, TSDKnobTracker, TSDLayout, TSDLayoutGeometry, TSDTextureContext, TSDTextureSet, TSDTilingBackgroundQueue;
 @protocol OS_dispatch_queue, TSDContainerRep;
 
-@interface TSDRep : NSObject <TSDMagicMoveMatching>
+@interface TSDRep : NSObject <TSDMagicMoveMatching, TSDRepTextContaining>
 {
     TSDCanvas *mCanvas;
     TSDRep<TSDContainerRep> *mParentRep;
@@ -287,7 +288,7 @@
 @property(readonly, nonatomic) TSDLayout *layout; // @synthesize layout=mLayout;
 @property(readonly, nonatomic) TSDInteractiveCanvasController *interactiveCanvasController;
 - (_Bool)i_hasInteractiveCanvasController;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
 - (id)subviewsController;
@@ -295,6 +296,11 @@
 - (_Bool)allowTrackingContainedRep:(id)arg1;
 - (void)addTrackingAboveChildren:(id)arg1;
 - (void)addTracking:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

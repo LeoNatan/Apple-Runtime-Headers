@@ -17,12 +17,12 @@
     HFItemManager *__debug_owningItemManager;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool _debug_isChildItem; // @synthesize _debug_isChildItem=__debug_isChildItem;
 @property(nonatomic) __weak HFItemManager *_debug_owningItemManager; // @synthesize _debug_owningItemManager=__debug_owningItemManager;
 @property(nonatomic) __weak NAFuture *cancellableInFlightUpdateFuture; // @synthesize cancellableInFlightUpdateFuture=_cancellableInFlightUpdateFuture;
 @property(nonatomic) unsigned long long loadingState; // @synthesize loadingState=_loadingState;
 @property(retain, nonatomic) NSDictionary *latestResults; // @synthesize latestResults=_latestResults;
-- (void).cxx_destruct;
 - (id)_finalOutcomeForSubclassOutcome:(id)arg1 previousResults:(id)arg2 updateOptions:(id)arg3;
 - (id)description;
 - (id)debugDescription;

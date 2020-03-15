@@ -27,6 +27,7 @@
     NSString *_phoneNumber;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(readonly, nonatomic) NSString *cellularProviderName; // @synthesize cellularProviderName=_cellularProviderName;
 @property(readonly, nonatomic) NSString *silentSMSNumber; // @synthesize silentSMSNumber=_silentSMSNumber;
@@ -42,7 +43,6 @@
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic, getter=isFamilySubscription) _Bool familySubscription; // @synthesize familySubscription=_familySubscription;
 @property(readonly, nonatomic) long long carrierBundlingStatusType; // @synthesize carrierBundlingStatusType=_carrierBundlingStatusType;
-- (void).cxx_destruct;
 - (id)initWithEligibilityDictionary:(id)arg1 cellularProviderName:(id)arg2 phoneNumber:(id)arg3;
 
 @end

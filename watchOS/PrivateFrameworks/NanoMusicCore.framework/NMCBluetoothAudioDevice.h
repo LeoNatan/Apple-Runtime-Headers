@@ -14,8 +14,8 @@
     _Bool _hasSystemRoute;
 }
 
-@property(nonatomic) _Bool hasSystemRoute; // @synthesize hasSystemRoute=_hasSystemRoute;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool hasSystemRoute; // @synthesize hasSystemRoute=_hasSystemRoute;
 - (_Bool)_addressMatchesRouteUID:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

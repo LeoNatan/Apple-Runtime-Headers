@@ -15,8 +15,8 @@
     BOOL _usesAdaptiveSimilarStacking;
 }
 
-@property(nonatomic) BOOL usesAdaptiveSimilarStacking; // @synthesize usesAdaptiveSimilarStacking=_usesAdaptiveSimilarStacking;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL usesAdaptiveSimilarStacking; // @synthesize usesAdaptiveSimilarStacking=_usesAdaptiveSimilarStacking;
 - (id)itemsNeedingSceneprintInTimeClusters:(id)arg1;
 - (id)deduplicatedItemsWithItems:(id)arg1 debugInfo:(id)arg2 progressBlock:(CDUnknownBlockType)arg3;
 - (id)sceneprintByItemIdentifierWithItems:(id)arg1;

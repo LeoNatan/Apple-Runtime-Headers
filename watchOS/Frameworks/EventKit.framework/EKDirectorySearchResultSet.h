@@ -16,11 +16,11 @@
     NSSet *_people;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *people; // @synthesize people=_people;
 @property(retain, nonatomic) NSSet *resources; // @synthesize resources=_resources;
 @property(retain, nonatomic) NSSet *groups; // @synthesize groups=_groups;
 @property(retain, nonatomic) NSSet *locations; // @synthesize locations=_locations;
-- (void).cxx_destruct;
 
 @end
 

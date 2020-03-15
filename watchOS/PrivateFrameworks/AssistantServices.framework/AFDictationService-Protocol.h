@@ -20,6 +20,7 @@
 - (oneway void)endSession;
 - (oneway void)preheatWithRecordDeviceIdentifier:(NSString *)arg1;
 - (oneway void)preheat;
+- (oneway void)sendSpeechCorrectionInfo:(AFSpeechCorrectionInfo *)arg1 interactionIdentifier:(NSString *)arg2;
 - (oneway void)sendSpeechCorrectionInfo:(AFSpeechCorrectionInfo *)arg1 forCorrectionContext:(NSDictionary *)arg2;
 - (oneway void)updateSpeechOptions:(AFSpeechRequestOptions *)arg1;
 - (oneway void)addRecordedSpeechSampleData:(NSData *)arg1;

@@ -16,9 +16,9 @@
     NSArray *_nodes;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *nodes; // @synthesize nodes=_nodes;
 @property long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)snapshotItem:(long long)arg1;
 - (id)iterateNext;
 @property(readonly, nonatomic) long long snapshotLength;

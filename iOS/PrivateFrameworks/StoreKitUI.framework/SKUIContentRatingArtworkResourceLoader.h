@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     UIImage *_placeholderImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIImageDataConsumer *imageDataConsumer; // @synthesize imageDataConsumer=_imageDataConsumer;
 @property(readonly, nonatomic) SKUIResourceLoader *artworkLoader; // @synthesize artworkLoader=_loader;
-- (void).cxx_destruct;
 - (id)_loadImage:(id)arg1;
 - (id)_urlForContentRating:(id)arg1 clientContext:(id)arg2;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;

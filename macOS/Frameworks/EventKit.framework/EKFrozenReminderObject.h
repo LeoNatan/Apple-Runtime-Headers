@@ -22,8 +22,8 @@
 + (Class)frozenClass;
 + (BOOL)canCommitSelf;
 + (id)uniqueIdentifierForREMObject:(id)arg1;
-@property(copy, nonatomic) NSArray *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *path; // @synthesize path=_path;
 - (id)preFrozenRelationshipObjects;
 - (BOOL)canBeConvertedToFullObject;
 - (BOOL)isNew;

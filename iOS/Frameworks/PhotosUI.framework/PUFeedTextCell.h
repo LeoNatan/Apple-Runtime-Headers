@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _iconPadding;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldUseAccessibilityLayout; // @synthesize shouldUseAccessibilityLayout=_shouldUseAccessibilityLayout;
 @property(retain, nonatomic, setter=_setButton:) UIButton *_button; // @synthesize _button=__button;
 @property(retain, nonatomic, setter=_setIconImageView:) UIImageView *_iconImageView; // @synthesize _iconImageView=__iconImageView;
@@ -57,7 +58,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long numberOfTextLines; // @synthesize numberOfTextLines=_numberOfTextLines;
 @property(retain, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
-- (void).cxx_destruct;
 - (struct CGSize)_iconSize;
 - (id)_labelBackgroundColor;
 - (void)_updateLabelsBackgroundColor;

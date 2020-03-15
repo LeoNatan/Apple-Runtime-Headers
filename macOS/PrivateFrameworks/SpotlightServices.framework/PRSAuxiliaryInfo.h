@@ -18,12 +18,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int align; // @synthesize align=_align;
 @property(retain, nonatomic) SFColor *bottom_text_color; // @synthesize bottom_text_color=_bottom_text_color;
 @property(retain, nonatomic) NSString *bottom_text; // @synthesize bottom_text=_bottom_text;
 @property(retain, nonatomic) NSString *middle_text; // @synthesize middle_text=_middle_text;
 @property(retain, nonatomic) NSString *top_text; // @synthesize top_text=_top_text;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1;

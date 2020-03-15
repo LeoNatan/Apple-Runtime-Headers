@@ -33,6 +33,7 @@
 }
 
 + (Class)layoutAttributesClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *layoutAttributesByIndexPath; // @synthesize layoutAttributesByIndexPath=_layoutAttributesByIndexPath;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(nonatomic) struct CGSize cellSize; // @synthesize cellSize=_cellSize;
@@ -42,7 +43,6 @@
 @property(nonatomic) double parallaxFactor; // @synthesize parallaxFactor=_parallaxFactor;
 @property(nonatomic) double interitemSpacing; // @synthesize interitemSpacing=_interitemSpacing;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
-- (void).cxx_destruct;
 - (id)_parentCellForView:(id)arg1;
 - (void)_sendWillCenterNotificationIfNeccessary:(id)arg1;
 - (void)_evaluateCenterCellIndexTransitionCheck;

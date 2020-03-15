@@ -15,10 +15,10 @@
     double _radius;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double radius; // @synthesize radius=_radius;
 @property(readonly, nonatomic) __weak EKDayOccurrenceView *occurrenceView; // @synthesize occurrenceView=_occurrenceView;
 @property(retain, nonatomic) UIColor *baseColor; // @synthesize baseColor=_baseColor;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)willMoveToSuperview:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 occurrenceView:(id)arg2;

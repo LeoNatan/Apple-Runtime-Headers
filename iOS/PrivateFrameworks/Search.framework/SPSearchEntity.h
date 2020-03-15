@@ -18,9 +18,9 @@
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property _Bool hasWords; // @synthesize hasWords=_hasWords;
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (id)initWithContactIdentifier:(id)arg1;
 - (id)initWithBundleIdentifier:(id)arg1 appName:(id)arg2;
 - (id)initWithQueryString:(id)arg1 tokenText:(id)arg2;

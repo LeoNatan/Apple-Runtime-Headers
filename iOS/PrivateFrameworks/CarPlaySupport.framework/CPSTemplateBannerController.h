@@ -22,11 +22,11 @@
     NSMutableDictionary *_bannerSources;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *bannerSources; // @synthesize bannerSources=_bannerSources;
 @property(retain, nonatomic) NSMutableDictionary *connections; // @synthesize connections=_connections;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *connectionQueue; // @synthesize connectionQueue=_connectionQueue;
 @property(retain, nonatomic) BSServiceConnectionListener *listener; // @synthesize listener=_listener;
-- (void).cxx_destruct;
 - (id)_connectionForBannerSource:(id)arg1;
 - (void)_connectionQueue_removeConnection:(id)arg1;
 - (void)_connectionQueue_addConnection:(id)arg1;

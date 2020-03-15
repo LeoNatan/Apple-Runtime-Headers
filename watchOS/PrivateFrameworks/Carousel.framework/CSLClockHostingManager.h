@@ -22,12 +22,12 @@
     CSLClockHostView *_activeHostView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLClockHostView *activeHostView; // @synthesize activeHostView=_activeHostView;
 @property(retain, nonatomic) NSMapTable *viewMap; // @synthesize viewMap=_viewMap;
 @property(retain, nonatomic) FBScene *scene; // @synthesize scene=_scene;
 @property(nonatomic) __weak id <CSLClockHostingManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CSLClockManager *clockManager; // @synthesize clockManager=_clockManager;
-- (void).cxx_destruct;
 - (void)hostViewLayerHostingStateDidChange:(id)arg1;
 - (void)hostViewDidMoveToWindow:(id)arg1;
 - (void)hostViewDidInvalidate:(id)arg1;

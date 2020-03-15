@@ -13,10 +13,10 @@
     NSInputStream *_inputStream;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSInputStream *inputStream; // @synthesize inputStream=_inputStream;
 @property(readonly, nonatomic) unsigned long long length; // @synthesize length=_length;
 @property(readonly, nonatomic) unsigned long long offset; // @synthesize offset=_offset;
-- (void).cxx_destruct;
 - (_Bool)_setCFClientFlags:(unsigned long long)arg1 callback:(CDUnknownFunctionPointerType)arg2 context:(CDStruct_e097db04 *)arg3;
 - (void)_unscheduleFromCFRunLoop:(struct __CFRunLoop *)arg1 forMode:(const struct __CFString *)arg2;
 - (void)_scheduleInCFRunLoop:(struct __CFRunLoop *)arg1 forMode:(const struct __CFString *)arg2;

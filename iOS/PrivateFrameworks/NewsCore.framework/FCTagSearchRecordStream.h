@@ -19,12 +19,12 @@
     NSMutableSet *_encounteredRecordIDs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *encounteredRecordIDs; // @synthesize encounteredRecordIDs=_encounteredRecordIDs;
 @property(nonatomic, getter=isFinished) _Bool finished; // @synthesize finished=_finished;
 @property(nonatomic) _Bool fetching; // @synthesize fetching=_fetching;
 @property(retain, nonatomic) CKQueryCursor *cursor; // @synthesize cursor=_cursor;
 @property(copy, nonatomic) CDUnknownBlockType operationConstructor; // @synthesize operationConstructor=_operationConstructor;
-- (void).cxx_destruct;
 - (id)fetchMoreResultsWithLimit:(unsigned long long)arg1 qualityOfService:(long long)arg2 callbackQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)init;
 

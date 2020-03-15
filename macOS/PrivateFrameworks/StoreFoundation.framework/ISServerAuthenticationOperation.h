@@ -18,11 +18,11 @@
 }
 
 + (id)operationWithDialog:(id)arg1 storeClient:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSURL *redirectURL; // @synthesize redirectURL=_redirectURL;
 @property(readonly) ISDialog *dialog; // @synthesize dialog=_dialog;
 @property(retain) NSNumber *authenticatedAccountDSID; // @synthesize authenticatedAccountDSID=_authenticatedAccountDSID;
 @property(retain) ISAuthenticationContext *authenticationContext; // @synthesize authenticationContext=_authenticationContext;
-- (void).cxx_destruct;
 - (BOOL)_shouldAuthenticateForButton:(id)arg1;
 - (void)_sendClientToURL:(id)arg1;
 - (BOOL)_handleSelectedButton:(id)arg1;

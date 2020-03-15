@@ -26,10 +26,10 @@
     _Bool _invalidated;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setSceneManager:) FBSceneManager *_sceneManager; // @synthesize _sceneManager;
 @property(nonatomic) __weak id <UIExternalScenePairingObserverDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak FBScene *scene; // @synthesize scene=_scene;
-- (void).cxx_destruct;
 - (void)_updateScenePairingState;
 - (void)_updateExternalScenes;
 - (void)sceneManager:(id)arg1 didDestroyScene:(id)arg2;

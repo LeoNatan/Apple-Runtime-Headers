@@ -21,12 +21,12 @@
     PHProjectTypeDescriptionSourceInvalidatorProxy *_invalidator;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak PHProjectTypeDescriptionSourceInvalidatorProxy *invalidator; // @synthesize invalidator=_invalidator;
 @property(readonly, nonatomic) id <PHProjectTypeDescriptionDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(nonatomic) __weak id <PHProjectTypeDescriptionSourceServiceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)requestFooterTextForProjectTypeLevel:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)requestTypeDescriptionForProjectType:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)requestSubtypesForProjectType:(id)arg1 reply:(CDUnknownBlockType)arg2;

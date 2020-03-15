@@ -23,9 +23,9 @@
     CDPRemoteValidationEscapeOffer *_escapeOffer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CDPRemoteValidationEscapeOffer *escapeOffer; // @synthesize escapeOffer=_escapeOffer;
 @property(readonly, nonatomic) CDPRemoteDeviceSecretValidator *validator; // @synthesize validator=_validator;
-- (void).cxx_destruct;
 - (void)enableUserInteractionAndStopSpinner;
 - (void)disableUserInteractionAndStartSpinner;
 - (void)didCancelEnteringPIN;

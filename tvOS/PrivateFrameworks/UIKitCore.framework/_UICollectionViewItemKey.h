@@ -23,11 +23,11 @@ __attribute__((visibility("hidden")))
 + (id)collectionItemKeyForDecorationViewOfKind:(id)arg1 andIndexPath:(id)arg2;
 + (id)collectionItemKeyForSupplementaryViewOfKind:(id)arg1 andIndexPath:(id)arg2;
 + (id)collectionItemKeyForCellWithIndexPath:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isClone; // @synthesize isClone=_isClone;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyAsClone:(_Bool)arg1;

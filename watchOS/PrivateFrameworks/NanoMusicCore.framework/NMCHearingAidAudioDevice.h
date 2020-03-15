@@ -14,9 +14,9 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic, getter=isTransferring) _Bool transferring; // @synthesize transferring=_transferring;
-- (void).cxx_destruct;
 - (void)connect;
 - (id)initWithName:(id)arg1;
 

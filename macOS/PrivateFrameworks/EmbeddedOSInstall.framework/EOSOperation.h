@@ -17,12 +17,12 @@
     NSDate *_finishedDate;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDate *finishedDate; // @synthesize finishedDate=_finishedDate;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain) NSNumber *originalEstimatedTime; // @synthesize originalEstimatedTime=_originalEstimatedTime;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) EOSRestoreRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (BOOL)isFinished;
 - (id)activityObject;
 - (void)start;

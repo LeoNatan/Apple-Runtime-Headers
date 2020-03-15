@@ -29,6 +29,15 @@ __attribute__((visibility("hidden")))
     unsigned int _roundTripTimeMilliseconds;
     unsigned int _packetLossPercentage;
     unsigned int _packetLossPercentageVideo;
+    unsigned int _sumPLR;
+    unsigned int _sumPLRVideo;
+    unsigned int _sumOverUtilizedBandwidth;
+    unsigned int _sumUnderUtilizedBandwidth;
+    unsigned int _sumOverShootSendBitrate;
+    unsigned int _sumUnderShootSendBitrate;
+    unsigned int _sumWorstRecentRTTInMillisecond;
+    unsigned int _sumWorstRecentBurstLoss;
+    unsigned int _countPeriodicTaskUpdate;
     unsigned int _totalPacketsReceived;
     unsigned int _totalPacketsSent;
     unsigned int _totalBytesSent;
@@ -110,6 +119,8 @@ __attribute__((visibility("hidden")))
 - (void)getRealTimeStatsForServerBasedRxOnly:(struct __CFDictionary *)arg1;
 - (void)getRealTimeStatsForServerBasedTxOnly:(struct __CFDictionary *)arg1;
 - (void)registerPeriodicTask;
+- (void)resetStatsForPeriodicTaskReport;
+- (void)accumulateStatsForPeriodicTaskUpdate;
 - (void)periodicTask:(void *)arg1;
 @property(readonly) id reportingAgent;
 - (void)configure:(struct AVCRateControlConfig)arg1;

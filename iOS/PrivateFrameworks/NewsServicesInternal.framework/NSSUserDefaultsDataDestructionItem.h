@@ -17,10 +17,10 @@
     NSSet *_stickyKeys;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *stickyKeys; // @synthesize stickyKeys=_stickyKeys;
 @property(copy, nonatomic) NSString *domainName; // @synthesize domainName=_domainName;
 @property(retain, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithUserDefaults:(id)arg1 domainName:(id)arg2 stickyKeys:(id)arg3;
 - (id)init;

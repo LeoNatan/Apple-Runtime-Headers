@@ -25,6 +25,7 @@
     HSConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HSConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) _Bool _hasPendingUpdateRequest; // @synthesize _hasPendingUpdateRequest=__hasPendingUpdateRequest;
 @property(readonly, nonatomic) long long connectionType; // @synthesize connectionType=_connectionType;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) unsigned int version; // @synthesize version=_version;
 @property(readonly, copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)_sendUpdateRequest;
 - (void)_onQueue_ensureConnection;
 @property(readonly, nonatomic) NSString *deviceGUID;

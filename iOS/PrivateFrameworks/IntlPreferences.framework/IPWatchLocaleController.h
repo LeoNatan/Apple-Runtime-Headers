@@ -15,10 +15,10 @@
     NSArray *_systemLanguages;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *systemLanguages; // @synthesize systemLanguages=_systemLanguages;
 @property(retain, nonatomic) NPSManager *syncManager; // @synthesize syncManager=_syncManager;
 @property(retain, nonatomic) NPSDomainAccessor *gizmoGlobalDomain; // @synthesize gizmoGlobalDomain=_gizmoGlobalDomain;
-- (void).cxx_destruct;
 - (void)mirrorLanguagesAndLocaleToWatch;
 - (void)initializeMirrorSettings;
 - (void)setLocale:(id)arg1;

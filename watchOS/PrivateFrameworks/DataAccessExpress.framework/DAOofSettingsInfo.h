@@ -15,9 +15,9 @@
     id <DAOofResponseDelegate> _consumer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <DAOofResponseDelegate> consumer; // @synthesize consumer=_consumer;
 @property(retain, nonatomic) NSString *requestID; // @synthesize requestID=_requestID;
-- (void).cxx_destruct;
 
 @end
 

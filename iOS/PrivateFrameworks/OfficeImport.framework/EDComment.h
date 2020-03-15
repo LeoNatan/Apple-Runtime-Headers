@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     EDString *_author;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool visible; // @synthesize visible=_visible;
 @property(retain, nonatomic) EDString *author; // @synthesize author=_author;
 @property(nonatomic) int columnIndex; // @synthesize columnIndex=_columnIndex;
 @property(nonatomic) int rowIndex; // @synthesize rowIndex=_rowIndex;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

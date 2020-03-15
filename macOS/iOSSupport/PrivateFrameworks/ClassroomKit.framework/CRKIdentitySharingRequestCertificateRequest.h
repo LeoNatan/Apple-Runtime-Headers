@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSString *recipient; // @synthesize recipient=_recipient;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *recipient; // @synthesize recipient=_recipient;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

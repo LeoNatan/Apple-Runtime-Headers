@@ -15,17 +15,21 @@
 {
     _Bool _wantsPreview;
     _Bool _hasRefreshedPreviewAfterError;
+    AVCaptureDevice *_currentInputDevice;
+    NSArray *_inputDevices;
     NSObject<OS_dispatch_queue> *_serialQueue;
     id <TUVideoDeviceControllerProvider><TUVideoEffectsProvider> _provider;
 }
 
 + (int)_tuOrientationForVideoOrientation:(int)arg1;
 + (int)_videoOrientationForTUOrientation:(int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasRefreshedPreviewAfterError; // @synthesize hasRefreshedPreviewAfterError=_hasRefreshedPreviewAfterError;
 @property(nonatomic) _Bool wantsPreview; // @synthesize wantsPreview=_wantsPreview;
 @property(readonly, nonatomic) id <TUVideoDeviceControllerProvider><TUVideoEffectsProvider> provider; // @synthesize provider=_provider;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
-- (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *inputDevices; // @synthesize inputDevices=_inputDevices;
+@property(retain, nonatomic) AVCaptureDevice *currentInputDevice; // @synthesize currentInputDevice=_currentInputDevice;
 - (void)provider:(id)arg1 cameraZoomAvailabilityDidChange:(_Bool)arg2;
 - (void)captureDevicesChangedForProvider:(id)arg1;
 - (void)didStopPreviewForProvider:(id)arg1;
@@ -50,9 +54,7 @@
 @property(retain, nonatomic) CALayer *localBackLayer;
 @property(retain, nonatomic) CALayer *localFrontLayer;
 @property(readonly, nonatomic, getter=isPreviewRunning) _Bool previewRunning;
-@property(readonly, copy, nonatomic) NSArray *inputDevices;
 @property(nonatomic) int currentVideoOrientation;
-@property(retain, nonatomic) AVCaptureDevice *currentInputDevice;
 - (id)debugDescription;
 - (id)init;
 - (id)initWithProvider:(id)arg1 serialQueue:(id)arg2;

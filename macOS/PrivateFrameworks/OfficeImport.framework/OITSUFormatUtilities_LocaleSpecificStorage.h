@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)localeSpecificStorageForLocale:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *formatPercentageStringWithParens; // @synthesize formatPercentageStringWithParens=_formatPercentageStringWithParens;
 @property(readonly) NSString *formatCurrencyStringWithParens; // @synthesize formatCurrencyStringWithParens=_formatCurrencyStringWithParens;
 @property(readonly) NSString *formatScientificStringWithParens; // @synthesize formatScientificStringWithParens=_formatScientificStringWithParens;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSString *formatDecimalStringRedOnly; // @synthesize formatDecimalStringRedOnly=_formatDecimalStringRedOnly;
 @property(readonly) NSString *formatDecimalStringMinus; // @synthesize formatDecimalStringMinus=_formatDecimalStringMinus;
 @property(readonly) NSString *formatDecimalString; // @synthesize formatDecimalString=_formatDecimalString;
-- (void).cxx_destruct;
 - (id)initWithLocale:(id)arg1;
 
 @end

@@ -19,10 +19,10 @@
 }
 
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *suggestedContacts; // @synthesize suggestedContacts=_suggestedContacts;
 @property(retain, nonatomic) TCSSuggestions *suggestions; // @synthesize suggestions=_suggestions;
 @property(nonatomic) __weak id <TCSSuggestionsDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_handleDeviceFirstUnlock;
 - (void)_handlePersonNamePreferencesChangeNotification;
 - (void)_handleContactStoreDidChange:(id)arg1;

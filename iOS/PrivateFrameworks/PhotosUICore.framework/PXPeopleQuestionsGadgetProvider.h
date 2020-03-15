@@ -14,8 +14,8 @@
 }
 
 + (id)_gadgetForQuestion:(id)arg1;
-@property(retain, nonatomic) PXForYouPeopleQuestionsDataSource *dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PXForYouPeopleQuestionsDataSource *dataSource; // @synthesize dataSource=_dataSource;
 - (unsigned long long)estimatedNumberOfGadgets;
 - (void)generateGadgets;
 @property(readonly, copy, nonatomic) NSString *localizedTitle;

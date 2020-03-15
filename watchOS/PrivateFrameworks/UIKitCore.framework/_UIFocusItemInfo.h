@@ -34,9 +34,9 @@ __attribute__((visibility("hidden")))
 
 + (id)infoWithView:(id)arg1;
 + (id)infoWithItem:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UIView *containingView; // @synthesize containingView=_containingView;
 @property(readonly, nonatomic) __weak id <UIFocusItem> item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)invalidateFocusedRegion;
 - (struct CGRect)focusedRectInCoordinateSpace:(id)arg1;
 - (id)_focusedRegionInCoordinateSpace:(id)arg1;

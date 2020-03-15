@@ -10,6 +10,7 @@
 {
 }
 
+- (void)visitUndoableSaveCNRequestCommand:(id)arg1;
 - (void)visitSaveCNRequestCommand:(id)arg1;
 - (void)visitSaveRequestCommand:(id)arg1;
 - (void)visitUndoableCommand:(id)arg1;

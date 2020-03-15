@@ -24,8 +24,8 @@
 + (CDUnknownBlockType)_binderForDictionary:(id)arg1;
 + (id)journalForInMemoryDb;
 + (id)journalWithName:(id)arg1;
-@property(readonly, nonatomic) _Bool journaling; // @synthesize journaling=_journaling;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool journaling; // @synthesize journaling=_journaling;
 - (_Bool)stopJournaling;
 - (_Bool)startJournaling;
 - (_Bool)deleteAllJournaledQueries;

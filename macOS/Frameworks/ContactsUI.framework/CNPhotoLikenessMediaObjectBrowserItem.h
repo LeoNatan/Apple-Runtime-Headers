@@ -18,9 +18,9 @@
 + (id)findIconImageFromMediaObject:(id)arg1;
 + (id)findThumbnailImageFromMediaObject:(id)arg1;
 + (id)findItunesArtworkImageFromMediaObject:(id)arg1;
+- (void).cxx_destruct;
 @property unsigned long long imageVersion; // @synthesize imageVersion=_imageVersion;
 @property(retain) MLMediaObject *mediaObject; // @synthesize mediaObject=_mediaObject;
-- (void).cxx_destruct;
 - (id)imageTitle;
 - (id)imageUID;
 - (id)imageRepresentation;

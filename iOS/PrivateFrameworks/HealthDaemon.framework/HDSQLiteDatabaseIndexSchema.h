@@ -15,10 +15,10 @@
     NSArray *_columns;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isUnique; // @synthesize isUnique=_isUnique;
 @property(retain, nonatomic) NSArray *columns; // @synthesize columns=_columns;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

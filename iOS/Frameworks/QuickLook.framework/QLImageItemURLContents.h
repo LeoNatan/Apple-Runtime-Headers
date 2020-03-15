@@ -17,8 +17,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)imageItemContentsWithImage:(id)arg1 imageURL:(id)arg2;
-@property(copy, nonatomic) NSURL *imageURL; // @synthesize imageURL=_imageURL;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSURL *imageURL; // @synthesize imageURL=_imageURL;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

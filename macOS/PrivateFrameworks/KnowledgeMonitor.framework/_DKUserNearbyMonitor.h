@@ -25,6 +25,7 @@
 
 + (id)eventStream;
 + (id)entitlements;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int discoveryFlags; // @synthesize discoveryFlags=_discoveryFlags;
 @property(nonatomic) unsigned long long activeConsoleUser; // @synthesize activeConsoleUser=_activeConsoleUser;
 @property(nonatomic) int loginNotifyToken; // @synthesize loginNotifyToken=_loginNotifyToken;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(nonatomic) BOOL sensorTrackingEnabled; // @synthesize sensorTrackingEnabled=_sensorTrackingEnabled;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)synchronouslyReflectCurrentValue;
 - (void)deactivate;
 - (void)stop;

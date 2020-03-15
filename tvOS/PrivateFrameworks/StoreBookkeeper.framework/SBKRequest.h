@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 + (long long)bodyContentEncodingType;
 + (long long)bodyContentType;
 + (id)requestWithRequestURL:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ISDataProvider *responseDataProvider; // @synthesize responseDataProvider=_responseDataProvider;
 @property(retain, nonatomic) NSData *bodyData; // @synthesize bodyData=_bodyData;
 @property(nonatomic) _Bool includeDeviceGUID; // @synthesize includeDeviceGUID=_includeDeviceGUID;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long method; // @synthesize method=_method;
 @property(readonly, nonatomic, getter=isConcurrent) _Bool concurrent; // @synthesize concurrent=_concurrent;
 @property(retain, nonatomic) SBKTransaction *transaction; // @synthesize transaction=_transaction;
-- (void).cxx_destruct;
 - (id)newURLOperation;
 - (id)_defaultHeaderFields;
 - (_Bool)acceptsGzipEncoding;

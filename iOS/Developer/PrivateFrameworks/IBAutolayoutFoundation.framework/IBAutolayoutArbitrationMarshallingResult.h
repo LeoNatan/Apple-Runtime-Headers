@@ -13,8 +13,8 @@
     IBAutolayoutArbitrationResult *_arbitrationResult;
 }
 
-@property(retain, nonatomic) IBAutolayoutArbitrationResult *arbitrationResult; // @synthesize arbitrationResult=_arbitrationResult;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IBAutolayoutArbitrationResult *arbitrationResult; // @synthesize arbitrationResult=_arbitrationResult;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
 

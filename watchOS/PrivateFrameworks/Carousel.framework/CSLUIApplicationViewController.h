@@ -58,9 +58,9 @@
 + (id)_applicationButtonHandler;
 + (void)initializeButtonHandler;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool sceneForegroundingSuspended; // @synthesize sceneForegroundingSuspended=_sceneForegroundingSuspended;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (void)backlight:(id)arg1 aotEnabled:(_Bool)arg2;
 - (_Bool)sessionCouldImpactScreenTimeOverlay:(id)arg1;
 - (_Bool)hasAOTSession;

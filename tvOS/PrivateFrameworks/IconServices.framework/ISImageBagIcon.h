@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     ISImageCache *_imageCache;
 }
 
+- (void).cxx_destruct;
 @property(retain) ISImageCache *imageCache; // @synthesize imageCache=_imageCache;
 - (id)decorations;
 @property(readonly) NSArray *images; // @synthesize images=_images;
-- (void).cxx_destruct;
 - (void)getCGImageForImageDescriptor:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (struct CGImage *)CGImageForImageDescriptor:(id)arg1;
 - (void)getImageForImageDescriptor:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -18,7 +18,7 @@
 - (id)resolveSourceNodeForPipelineState:(id)arg1 foundScale:(CDStruct_912cb5d2 *)arg2 error:(out id *)arg3;
 - (id)sourceNodeForPipelineState:(id)arg1 error:(out id *)arg2;
 - (id)preparedSourceNodeForPipelineState:(id)arg1 pipelineSettings:(id)arg2 sourceSettings:(id)arg3 error:(out id *)arg4;
-- (id)initWithSettings:(id)arg1 inputs:(struct NSDictionary *)arg2;
+- (id)initWithSettings:(id)arg1 inputs:(id)arg2;
 - (id)initWithAssetIdentifier:(id)arg1;
 
 // Remaining properties

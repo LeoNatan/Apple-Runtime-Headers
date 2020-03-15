@@ -27,13 +27,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long daysSinceLastView; // @synthesize daysSinceLastView=_daysSinceLastView;
 @property(nonatomic) BOOL remoteUser; // @synthesize remoteUser=_remoteUser;
 @property(nonatomic) BOOL hasPasscode; // @synthesize hasPasscode=_hasPasscode;
 @property(nonatomic) BOOL isManaged; // @synthesize isManaged=_isManaged;
 @property(retain, nonatomic) NSString *familyMemberType; // @synthesize familyMemberType=_familyMemberType;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

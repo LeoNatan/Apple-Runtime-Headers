@@ -15,10 +15,10 @@
     unsigned long long _size;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isManuallyAdded) _Bool manuallyAdded; // @synthesize manuallyAdded=_manuallyAdded;
 @property(readonly, nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(readonly, nonatomic) NSNumber *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 size:(unsigned long long)arg2 manuallyAdded:(_Bool)arg3;

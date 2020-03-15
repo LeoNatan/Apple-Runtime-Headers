@@ -16,9 +16,9 @@
     NSString *_databaseName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *databaseName; // @synthesize databaseName=_databaseName;
 @property(copy, nonatomic) NSString *basePath; // @synthesize basePath=_basePath;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_databasePathWithDatabaseName:(id)arg1;
 @property(readonly, nonatomic) const char *databaseFileSystemPath;

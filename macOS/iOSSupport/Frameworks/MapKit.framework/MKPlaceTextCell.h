@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_bottomConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *bottomConstraint; // @synthesize bottomConstraint=_bottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *topConstraint; // @synthesize topConstraint=_topConstraint;
 @property(retain, nonatomic) _MKUILabel *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *text;
 - (void)_contentSizeDidChange;
 - (id)initWithFrame:(struct CGRect)arg1;

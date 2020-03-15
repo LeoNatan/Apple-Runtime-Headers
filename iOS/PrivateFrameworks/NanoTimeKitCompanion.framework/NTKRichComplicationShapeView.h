@@ -29,11 +29,11 @@
     long long _filterStyle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long filterStyle; // @synthesize filterStyle=_filterStyle;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) NSArray *gradientColors; // @synthesize gradientColors=_gradientColors;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
-- (void).cxx_destruct;
 - (id)shapeLayer;
 - (id)gradientLayer;
 - (id)device;

@@ -19,12 +19,12 @@
 }
 
 + (id)os_log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNResult *result; // @synthesize result=_result;
 @property(readonly, nonatomic) NSMutableArray *delegateAccounts; // @synthesize delegateAccounts=_delegateAccounts;
 @property(readonly, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(readonly, nonatomic) id <CNDelegateAccountSink> accountSink; // @synthesize accountSink=_accountSink;
 @property(readonly, nonatomic) id <CNDelegateAccountSource> accountSource; // @synthesize accountSource=_accountSource;
-- (void).cxx_destruct;
 - (void)updateDelegateAccounts;
 - (void)loadDefaultSinkIfNecessary;
 - (void)loadDelegateAccountsFromSource;

@@ -15,8 +15,8 @@
 
 + (id)cameraFromDictionary:(id)arg1 assetsPath:(id)arg2;
 + (id)stickerCameraCache;
-@property(retain, nonatomic) SCNNode *node; // @synthesize node=_node;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SCNNode *node; // @synthesize node=_node;
 - (id)buildNode;
 - (id)initWithScene:(id)arg1 cameraName:(id)arg2;
 

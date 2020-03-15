@@ -14,9 +14,9 @@
     UILabel *__titleLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *_titleLabel; // @synthesize _titleLabel=__titleLabel;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 @property(retain, nonatomic) NSString *text;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -13,8 +13,8 @@
     NSArray *_accessibilityChildren;
 }
 
-- (void)setAccessibilityChildren:(id)arg1;
 - (void).cxx_destruct;
+- (void)setAccessibilityChildren:(id)arg1;
 - (BOOL)accessibilityPerformScrollToVisible;
 - (id)_supplementaryViewForIndex:(unsigned long long)arg1;
 - (id)siblingBelowItem:(id)arg1;

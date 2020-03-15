@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     UIView *_actionsListView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *actionsListView; // @synthesize actionsListView=_actionsListView;
 @property(retain, nonatomic) UIView *headerContainerView; // @synthesize headerContainerView=_headerContainerView;
 @property(nonatomic) double borderMargin; // @synthesize borderMargin=_borderMargin;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(nonatomic) __weak id <CNAvatarCardViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak CNAvatarCardController *cardController; // @synthesize cardController=_cardController;
-- (void).cxx_destruct;
 - (void)contactActionsController:(id)arg1 didSelectAction:(id)arg2;
 @property _Bool transitioningImageVisible;
 @property(readonly, nonatomic) struct CGRect transitioningImageFrame;

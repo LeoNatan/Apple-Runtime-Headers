@@ -13,8 +13,8 @@
     EDPersistenceDatabase *_database;
 }
 
-@property(readonly, nonatomic) EDPersistenceDatabase *database; // @synthesize database=_database;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) EDPersistenceDatabase *database; // @synthesize database=_database;
 - (id)mailboxDatabaseIDsForMailboxObjectIDs:(id)arg1 createIfNecessary:(BOOL)arg2;
 - (id)initWithMailboxProvider:(id)arg1 database:(id)arg2;
 

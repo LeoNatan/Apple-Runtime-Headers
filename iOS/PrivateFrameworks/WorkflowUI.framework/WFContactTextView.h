@@ -24,6 +24,7 @@
     WFVariableInputCoordinator *_variableCoordinator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFVariableInputCoordinator *variableCoordinator; // @synthesize variableCoordinator=_variableCoordinator;
 @property(copy, nonatomic) NSSet *supportedPersonProperties; // @synthesize supportedPersonProperties=_supportedPersonProperties;
 @property(nonatomic) _Bool allowsTextEntry; // @synthesize allowsTextEntry=_allowsTextEntry;
@@ -33,7 +34,6 @@
 @property(nonatomic) __weak id <WFVariableUIDelegate> variableUIDelegate; // @synthesize variableUIDelegate=_variableUIDelegate;
 @property(nonatomic) __weak id <WFVariableProvider> variableProvider; // @synthesize variableProvider=_variableProvider;
 @property(nonatomic) _Bool variablesDisabled; // @synthesize variablesDisabled=_variablesDisabled;
-- (void).cxx_destruct;
 - (void)updateDoneButtonPresence;
 @property(nonatomic) long long returnKeyType;
 - (void)updateAllowedVariableTypes;

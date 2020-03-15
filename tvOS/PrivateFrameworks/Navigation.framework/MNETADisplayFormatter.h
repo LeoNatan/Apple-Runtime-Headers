@@ -19,11 +19,11 @@
     NSDate *_displayETA;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *displayETA; // @synthesize displayETA=_displayETA;
 @property(readonly, nonatomic) double displayRemainingTime; // @synthesize displayRemainingTime=_displayRemainingTime;
 @property(nonatomic) double remainingTime; // @synthesize remainingTime=_remainingTime;
 @property(nonatomic) __weak id <MNETADisplayFormatterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_displayDateWithRemainingTime:(double)arg1;
 - (double)_displayTimeIntervalForTimeInterval:(double)arg1;
 - (void)_updateTimerFired;

@@ -25,12 +25,12 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *clientBundleID; // @synthesize clientBundleID=_clientBundleID;
 @property(nonatomic) _Bool shouldForce; // @synthesize shouldForce=_shouldForce;
 @property(nonatomic) _Bool avoidUI; // @synthesize avoidUI=_avoidUI;
 @property(retain, nonatomic) NSString *accountType; // @synthesize accountType=_accountType;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

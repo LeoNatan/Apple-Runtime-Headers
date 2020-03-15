@@ -14,9 +14,9 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) CalCalDAVTaskManager *taskManager; // @synthesize taskManager=_taskManager;
-- (void).cxx_destruct;
 - (id)init;
 - (void)dealloc;
 

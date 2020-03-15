@@ -14,9 +14,9 @@
     NSMutableArray *_jsonArray;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *jsonArray; // @synthesize jsonArray=_jsonArray;
 @property(retain, nonatomic) NSString *jsonFilePath; // @synthesize jsonFilePath=_jsonFilePath;
-- (void).cxx_destruct;
 - (id)messageDictionariesFromItemsInChat:(id)arg1 withEventKey:(id)arg2;
 - (void)writeDataToJSONFile:(id)arg1;
 - (id)currentJsonArray;

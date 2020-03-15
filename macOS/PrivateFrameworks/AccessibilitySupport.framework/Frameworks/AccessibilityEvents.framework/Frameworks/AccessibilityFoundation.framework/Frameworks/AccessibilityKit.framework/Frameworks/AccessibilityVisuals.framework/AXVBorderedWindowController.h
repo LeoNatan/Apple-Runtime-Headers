@@ -15,10 +15,10 @@
     AXKElementController *__windowElementController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXKElementController *_windowElementController; // @synthesize _windowElementController=__windowElementController;
 @property(retain, nonatomic) AXKElementController *_elementController; // @synthesize _elementController=__elementController;
 @property(readonly, nonatomic) AXVBorderedWindow *borderedWindow; // @synthesize borderedWindow=_borderedWindow;
-- (void).cxx_destruct;
 - (void)_handleElementDestroyed:(id)arg1;
 - (void)_handleElementResized:(id)arg1;
 - (void)_handleElementMoved:(id)arg1;

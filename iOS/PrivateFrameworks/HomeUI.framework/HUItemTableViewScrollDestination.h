@@ -14,9 +14,9 @@
     HFItem *_item;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isAnimated) _Bool animated; // @synthesize animated=_animated;
 @property(readonly, nonatomic) HFItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (id)initWithItem:(id)arg1 animated:(_Bool)arg2;
 
 @end

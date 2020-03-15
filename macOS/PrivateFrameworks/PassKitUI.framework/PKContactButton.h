@@ -15,9 +15,9 @@
 }
 
 + (id)contactViewWithPhone:(id)arg1 email:(id)arg2 website:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSString *value; // @synthesize value=_value;
 @property(readonly) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)_popOverContent;
 - (id)_contactURL;
 - (id)_buttonTitle;

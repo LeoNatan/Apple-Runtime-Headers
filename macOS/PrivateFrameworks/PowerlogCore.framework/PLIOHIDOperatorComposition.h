@@ -17,12 +17,12 @@
     PLOperator *_operator;
 }
 
+- (void).cxx_destruct;
 @property(retain) PLOperator *operator; // @synthesize operator=_operator;
 @property(copy, nonatomic) CDUnknownBlockType operatorBlock; // @synthesize operatorBlock=_operatorBlock;
 @property(retain) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(retain) NSArray *serviceClients; // @synthesize serviceClients=_serviceClients;
 @property struct __IOHIDEventSystemClient *eventSystemClient; // @synthesize eventSystemClient=_eventSystemClient;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)dictionaryForKey:(id)arg1;
 - (double)doubleForKey:(id)arg1;

@@ -17,9 +17,9 @@
     NSArray *_sections;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (void)alertTextFieldDidChange:(id)arg1;
 - (void)showNameStep;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

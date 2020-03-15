@@ -15,10 +15,10 @@
     NSSet *_dataSources;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *dataSources; // @synthesize dataSources=_dataSources;
 @property(nonatomic) double panning; // @synthesize panning=_panning;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) BOOL isMonoOutput;
 - (void)prepareNextSamples:(unsigned long long)arg1;

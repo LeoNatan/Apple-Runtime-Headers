@@ -15,10 +15,10 @@
     NSMutableSet *_zoneBuilderItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *zoneBuilderItems; // @synthesize zoneBuilderItems=_zoneBuilderItems;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 - (id)_zoneSuggestions;
 - (id)invalidationReasons;
 - (id)items;

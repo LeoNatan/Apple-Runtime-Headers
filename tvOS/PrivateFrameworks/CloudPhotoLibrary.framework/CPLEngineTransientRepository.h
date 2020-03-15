@@ -20,8 +20,8 @@
 + (id)orderedClassesForChangesForLargeSync;
 + (id)orderedClassesForChanges;
 + (id)orderedClassesForDelete;
-@property(nonatomic) unsigned long long maximumCountOfRecordsInBatches; // @synthesize maximumCountOfRecordsInBatches=_maximumCountOfRecordsInBatches;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long maximumCountOfRecordsInBatches; // @synthesize maximumCountOfRecordsInBatches=_maximumCountOfRecordsInBatches;
 - (_Bool)openWithError:(id *)arg1;
 - (_Bool)resetTransientRepositoryForScopeWithIdentifier:(id)arg1 error:(id *)arg2;
 - (unsigned long long)countOfUnmingledRecords;

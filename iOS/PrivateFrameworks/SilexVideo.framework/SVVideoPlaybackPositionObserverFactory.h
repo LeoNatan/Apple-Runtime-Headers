@@ -17,9 +17,9 @@
     id <SVPlayerTimeControlStatusObserverFactory> _timeControlStatusObserverFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVPlayerTimeControlStatusObserverFactory> timeControlStatusObserverFactory; // @synthesize timeControlStatusObserverFactory=_timeControlStatusObserverFactory;
 @property(readonly, nonatomic) id <SVPlayerItemObserverFactory> playerItemObserverFactory; // @synthesize playerItemObserverFactory=_playerItemObserverFactory;
-- (void).cxx_destruct;
 - (id)createPlaybackPositionObserverForVideo:(id)arg1;
 - (id)initWithPlayerItemObserverFactory:(id)arg1 timeControlStatusObserverFactory:(id)arg2;
 

@@ -19,7 +19,7 @@
 + (id)kextTags;
 + (id)_kextTagsWithKextInfo:(id)arg1;
 - (void).cxx_destruct;
-- (struct NSDictionary *)auxData;
+- (id)auxData;
 - (BOOL)_isAlive;
 - (BOOL)_populateTask;
 - (void)_addWiredData:(struct mach_memory_info *)arg1 withCount:(unsigned int)arg2 zoneNames:(struct mach_zone_name *)arg3 zoneCount:(unsigned int)arg4 toArray:(id)arg5;

@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
     NSString *_leadingDigits;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL leadingZeroPossible; // @synthesize leadingZeroPossible=_leadingZeroPossible;
 @property(retain, nonatomic) NSString *leadingDigits; // @synthesize leadingDigits=_leadingDigits;
 @property(nonatomic) BOOL mainCountryForCode; // @synthesize mainCountryForCode=_mainCountryForCode;
@@ -67,7 +68,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NBPhoneNumberDesc *mobile; // @synthesize mobile=_mobile;
 @property(retain, nonatomic) NBPhoneNumberDesc *fixedLine; // @synthesize fixedLine=_fixedLine;
 @property(retain, nonatomic) NBPhoneNumberDesc *generalDesc; // @synthesize generalDesc=_generalDesc;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

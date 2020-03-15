@@ -28,6 +28,7 @@
 + (id)voiceInfoForLanguageCode:(id)arg1;
 + (id)allVoicesForSiriSessionLanguage:(id)arg1;
 + (long long)genderForVSSpeechGender:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool wasInitalizedFromDictionaryRepresentation; // @synthesize wasInitalizedFromDictionaryRepresentation=_wasInitalizedFromDictionaryRepresentation;
 @property(nonatomic) long long gender; // @synthesize gender=_gender;
 @property(readonly, nonatomic) NSString *masteredVersion; // @synthesize masteredVersion=_masteredVersion;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) long long footprint; // @synthesize footprint=_footprint;
 @property(nonatomic) _Bool isCustom; // @synthesize isCustom=_isCustom;
 @property(readonly, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
-- (void).cxx_destruct;
 - (id)footprintString;
 - (id)genderString;
 - (id)copyWithZone:(struct _NSZone *)arg1;

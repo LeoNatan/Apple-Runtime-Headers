@@ -23,6 +23,7 @@
     NSValue *_editingFrameValue;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSValue *editingFrameValue; // @synthesize editingFrameValue=_editingFrameValue;
 @property(nonatomic) _Bool isInEditingMode; // @synthesize isInEditingMode=_isInEditingMode;
 @property(retain, nonatomic) UICollectionViewLayoutAttributes *rightShadowDecorationAttr; // @synthesize rightShadowDecorationAttr=_rightShadowDecorationAttr;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) UICollectionViewLayoutAttributes *titleSupplementaryAttr; // @synthesize titleSupplementaryAttr=_titleSupplementaryAttr;
 @property(nonatomic) __weak id <CKAvatarPickerLayoutDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long layoutMode; // @synthesize layoutMode=_layoutMode;
-- (void).cxx_destruct;
 - (_Bool)_shouldShowContactNames;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;

@@ -13,8 +13,8 @@
     UIImage *_asset;
 }
 
-@property(retain, nonatomic) UIImage *asset; // @synthesize asset=_asset;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImage *asset; // @synthesize asset=_asset;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidLoad;
 - (id)initWithAsset:(id)arg1;

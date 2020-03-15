@@ -21,8 +21,8 @@
     CSLNavigationTransactionAnimatorHelper *_helper;
 }
 
-@property(readonly, nonatomic) CSLNavigationTransactionAnimatorHelper *helper; // @synthesize helper=_helper;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CSLNavigationTransactionAnimatorHelper *helper; // @synthesize helper=_helper;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (id)disappearingOpacityAnimationWithReferenceLayer:(id)arg1;
 - (id)disappearingTransformAnimationWithReferenceLayer:(id)arg1;

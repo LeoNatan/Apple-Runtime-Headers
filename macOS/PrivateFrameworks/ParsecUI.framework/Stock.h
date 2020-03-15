@@ -52,6 +52,7 @@
 + (id)PercentFormatter;
 + (id)urlForStock:(id)arg1;
 + (id)urlForStockSymbol:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double timeMetadataLastUpdated; // @synthesize timeMetadataLastUpdated=_timeMetadataLastUpdated;
 @property(nonatomic) double timeQuoteLastUpdated; // @synthesize timeQuoteLastUpdated=_timeQuoteLastUpdated;
 @property(retain, nonatomic) StockDataSource *dataSource; // @synthesize dataSource=_dataSource;
@@ -74,7 +75,6 @@
 @property(retain, nonatomic) NSString *shortCompanyName; // @synthesize shortCompanyName=_shortCompanyName;
 @property(retain, nonatomic) NSString *companyName; // @synthesize companyName=_companyName;
 @property(retain, nonatomic) NSString *symbol; // @synthesize symbol=_symbol;
-- (void).cxx_destruct;
 - (void)_updatePricePrecision;
 - (void)updateMetadataWithDictionary:(id)arg1 forTime:(double)arg2;
 - (void)updateQuoteWithDictionary:(id)arg1 forTime:(double)arg2;

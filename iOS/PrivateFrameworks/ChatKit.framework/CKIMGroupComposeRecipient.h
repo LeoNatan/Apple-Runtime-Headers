@@ -21,13 +21,13 @@
 }
 
 + (id)composeRecipientWithConversation:(id)arg1 searchTerm:(id)arg2 matchingRecipient:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *detailsString; // @synthesize detailsString=_detailsString;
 @property(retain, nonatomic) CKIMComposeRecipient *matchingRecipient; // @synthesize matchingRecipient=_matchingRecipient;
 @property(retain, nonatomic) NSDate *lastMessageDate; // @synthesize lastMessageDate=_lastMessageDate;
 @property(retain, nonatomic) NSArray *handles; // @synthesize handles=_handles;
 @property(readonly, nonatomic) NSArray *composeRecipients; // @synthesize composeRecipients=_composeRecipients;
 @property(retain, nonatomic) NSString *conversationGUID; // @synthesize conversationGUID=_conversationGUID;
-- (void).cxx_destruct;
 - (id)address;
 - (id)compositeName;
 - (_Bool)isRemovableFromSearchResults;

@@ -17,9 +17,9 @@
     NSXPCListener *_xpcListener;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSXPCListener *xpcListener; // @synthesize xpcListener=_xpcListener;
 @property(readonly, nonatomic) __weak id <STStatusDomainServerHandle> serverHandle; // @synthesize serverHandle=_serverHandle;
-- (void).cxx_destruct;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)dealloc;
 - (id)initWithServerHandle:(id)arg1;

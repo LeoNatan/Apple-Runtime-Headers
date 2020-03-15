@@ -24,6 +24,7 @@
 
 + (id)requestWithPredicate:(id)arg1 requestDate:(id)arg2 details:(id)arg3 source:(id)arg4 reason:(unsigned long long)arg5 reasonOverride:(unsigned long long)arg6;
 + (id)requestWithPredicate:(id)arg1 requestDate:(id)arg2 source:(id)arg3 reason:(unsigned long long)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long reasonOverride; // @synthesize reasonOverride=_reasonOverride;
 @property(readonly, nonatomic) unsigned long long reason; // @synthesize reason=_reason;
 @property(readonly, copy, nonatomic) DNDModeAssertionSource *source; // @synthesize source=_source;
@@ -31,7 +32,6 @@
 @property(readonly, copy, nonatomic) NSDate *requestDate; // @synthesize requestDate=_requestDate;
 @property(readonly, copy, nonatomic) DNDSModeAssertionInvalidationPredicate *predicate; // @synthesize predicate=_predicate;
 @property(readonly, copy, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;

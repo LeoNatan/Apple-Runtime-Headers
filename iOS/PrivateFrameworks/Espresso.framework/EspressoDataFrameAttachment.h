@@ -18,12 +18,12 @@
 }
 
 + (id)fromDict:(id)arg1 frameStorage:(id)arg2;
+- (void).cxx_destruct;
 @property unsigned long long size; // @synthesize size=_size;
 @property unsigned long long offset; // @synthesize offset=_offset;
 @property void *rawPointer; // @synthesize rawPointer=_rawPointer;
 @property(retain) NSString *filePath; // @synthesize filePath=_filePath;
 @property _Bool disabled; // @synthesize disabled=_disabled;
-- (void).cxx_destruct;
 - (void)loadFromDict:(id)arg1 frameStorage:(id)arg2;
 
 @end

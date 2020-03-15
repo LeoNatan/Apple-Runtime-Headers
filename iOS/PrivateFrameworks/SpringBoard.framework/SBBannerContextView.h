@@ -17,9 +17,9 @@
     UIView<SBUIBannerView> *_bannerView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) UIView<SBUIBannerView> *bannerView; // @synthesize bannerView=_bannerView;
 @property(readonly, nonatomic) SBUIBannerContext *bannerContext; // @synthesize bannerContext=_bannerContext;
-- (void).cxx_destruct;
 - (void)noteDidDismissWithReason:(int)arg1;
 - (void)noteWillDismissWithReason:(int)arg1;
 - (void)noteDidAppear;

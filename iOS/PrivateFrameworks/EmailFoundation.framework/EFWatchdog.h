@@ -18,8 +18,8 @@
 }
 
 + (id)log;
-@property(readonly, copy, nonatomic) NSString *monitoredBundleIdentifier; // @synthesize monitoredBundleIdentifier=_monitoredBundleIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *monitoredBundleIdentifier; // @synthesize monitoredBundleIdentifier=_monitoredBundleIdentifier;
 - (void)quitMonitor:(id)arg1 userClosedLastSceneOfApplicationWithBundleID:(id)arg2;
 - (void)invalidate;
 - (void)start;

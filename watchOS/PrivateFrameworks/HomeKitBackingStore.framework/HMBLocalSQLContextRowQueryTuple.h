@@ -14,9 +14,9 @@
     NSData *_queryData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *queryData; // @synthesize queryData=_queryData;
 @property(readonly, nonatomic) unsigned int queryRow; // @synthesize queryRow=_queryRow;
-- (void).cxx_destruct;
 - (id)initWithQueryRow:(unsigned int)arg1 data:(id)arg2;
 
 @end

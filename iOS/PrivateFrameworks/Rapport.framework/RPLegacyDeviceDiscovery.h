@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CUMobileDeviceDiscovery, CUWiFiScanner, NSData, NSSet, NSString, SFDeviceDiscovery;
+@class CUMobileDeviceDiscovery, CUWiFiScanner, NSData, NSMutableDictionary, NSSet, NSString, SFDeviceDiscovery;
 @protocol OS_dispatch_queue;
 
 @interface RPLegacyDeviceDiscovery : NSObject
@@ -16,7 +16,7 @@
     _Bool _activateCompleted;
     NSData *_blePayloadFilterData;
     NSData *_blePayloadFilterMask;
-    struct NSMutableDictionary *_devices;
+    NSMutableDictionary *_devices;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
     _Bool _verifyDevices;
@@ -47,6 +47,7 @@
     CDUnknownBlockType _timeoutHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType timeoutHandler; // @synthesize timeoutHandler=_timeoutHandler;
 @property(copy, nonatomic) CDUnknownBlockType scanStateChangedHandler; // @synthesize scanStateChangedHandler=_scanStateChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
@@ -67,7 +68,6 @@
 @property(copy, nonatomic) NSSet *deviceFilter; // @synthesize deviceFilter=_deviceFilter;
 @property(nonatomic) unsigned char deviceActionType; // @synthesize deviceActionType=_deviceActionType;
 @property(nonatomic) unsigned int changeFlags; // @synthesize changeFlags=_changeFlags;
-- (void).cxx_destruct;
 - (void)_wifiHandleDeviceChanged:(id)arg1 changes:(unsigned int)arg2;
 - (void)_wifiHandleDeviceLost:(id)arg1;
 - (void)_wifiHandleDeviceFound:(id)arg1;

@@ -20,10 +20,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *modifyingConnectionsQueue; // @synthesize modifyingConnectionsQueue=_modifyingConnectionsQueue;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain, nonatomic) NSMutableArray *connections; // @synthesize connections=_connections;
-- (void).cxx_destruct;
 - (void)passcodePromptConnectionHandlerLostConnection:(id)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)dealloc;

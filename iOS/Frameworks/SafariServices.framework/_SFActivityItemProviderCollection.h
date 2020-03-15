@@ -22,6 +22,7 @@
     _SFActivityItemProvider *_downloadProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _SFActivityItemProvider *downloadProvider; // @synthesize downloadProvider=_downloadProvider;
 @property(retain, nonatomic) _SFActivityItemProvider *javaScriptExtensionProvider; // @synthesize javaScriptExtensionProvider=_javaScriptExtensionProvider;
 @property(retain, nonatomic) _SFPrintActivityItemProvider *printProvider; // @synthesize printProvider=_printProvider;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool displayingStandaloneImage; // @synthesize displayingStandaloneImage=_displayingStandaloneImage;
 @property(nonatomic) _Bool displayingDigitalHealthLockoutView; // @synthesize displayingDigitalHealthLockoutView=_displayingDigitalHealthLockoutView;
 @property(readonly, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
-- (void).cxx_destruct;
 - (id)activityItemProvidersWithCustomizationController:(id)arg1;
 @property(readonly, nonatomic) _SFActivityItemProvider *webArchiveProvider; // @synthesize webArchiveProvider=_webArchiveProvider;
 @property(readonly, nonatomic) _SFActivityItemProvider *standaloneImageProvider; // @synthesize standaloneImageProvider=_standaloneImageProvider;

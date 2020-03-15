@@ -19,11 +19,11 @@
     NSArray *_attributeLocations;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *attributeLocations; // @synthesize attributeLocations=_attributeLocations;
 @property(readonly, nonatomic) long long count; // @synthesize count=_count;
 @property(readonly, nonatomic) long long capacity; // @synthesize capacity=_capacity;
 @property(readonly, nonatomic) NUGLVertexLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (void)_growToCapacity:(long long)arg1 context:(id)arg2;
 - (struct _NSRange)writeVertexData:(long long)arg1 context:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (struct _NSRange)bufferRangeForVertexRange:(struct _NSRange)arg1;

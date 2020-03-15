@@ -13,8 +13,8 @@
     HMDBackingStoreModelObject *_modelChange;
 }
 
-@property(retain, nonatomic) HMDBackingStoreModelObject *modelChange; // @synthesize modelChange=_modelChange;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HMDBackingStoreModelObject *modelChange; // @synthesize modelChange=_modelChange;
 - (void)main;
 - (id)initWithModelChange:(id)arg1;
 

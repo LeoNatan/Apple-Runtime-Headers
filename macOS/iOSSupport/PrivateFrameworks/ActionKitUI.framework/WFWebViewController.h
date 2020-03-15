@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     WKWebView *_webView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
 @property(nonatomic) __weak id <WFWebViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)done;
 - (void)cancel;
 - (void)loadView;

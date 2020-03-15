@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     id <SVSPagerViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SVSPagerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSViewController *activePageViewController; // @synthesize activePageViewController=_activePageViewController;
-- (void).cxx_destruct;
 - (id)_viewControllerForPageView:(id)arg1;
 - (void)pagerViewDidChangeTransitionState:(id)arg1;
 - (void)pagerView:(id)arg1 didActivatePageView:(id)arg2 oldActivePageView:(id)arg3;

@@ -15,24 +15,28 @@
 {
     _Bool _blacklisted;
     _Bool _needsStationProcessing;
+    _Bool _appletStateDirty;
     NSNumber *_historySequenceNumber;
     NSDecimalNumber *_balance;
     NSNumber *_loyaltyBalance;
     NSString *_currency;
     NSDate *_expirationDate;
+    NSArray *_balances;
     NSArray *_enrouteTransitTypes;
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(nonatomic) _Bool appletStateDirty; // @synthesize appletStateDirty=_appletStateDirty;
 @property(nonatomic) _Bool needsStationProcessing; // @synthesize needsStationProcessing=_needsStationProcessing;
 @property(copy, nonatomic) NSArray *enrouteTransitTypes; // @synthesize enrouteTransitTypes=_enrouteTransitTypes;
+@property(copy, nonatomic) NSArray *balances; // @synthesize balances=_balances;
 @property(copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(copy, nonatomic) NSString *currency; // @synthesize currency=_currency;
 @property(copy, nonatomic) NSNumber *loyaltyBalance; // @synthesize loyaltyBalance=_loyaltyBalance;
 @property(copy, nonatomic) NSDecimalNumber *balance; // @synthesize balance=_balance;
 @property(copy, nonatomic) NSNumber *historySequenceNumber; // @synthesize historySequenceNumber=_historySequenceNumber;
 @property(nonatomic, getter=isBlacklisted) _Bool blacklisted; // @synthesize blacklisted=_blacklisted;
-- (void).cxx_destruct;
 - (void)addEnrouteTransitType:(id)arg1;
 - (id)transitPassPropertiesWithPaymentApplication:(id)arg1;
 - (void)_resolveTransactionsFromState:(id)arg1 toState:(id)arg2 withHistoryRecords:(id)arg3 concreteTransactions:(id *)arg4 ephemeralTransaction:(id *)arg5;

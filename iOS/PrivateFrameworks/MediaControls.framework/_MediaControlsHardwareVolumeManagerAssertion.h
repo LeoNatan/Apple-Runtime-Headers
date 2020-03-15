@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     MediaControlsHardwareVolumeManager *_volumeManager;
 }
 
-@property(nonatomic) __weak MediaControlsHardwareVolumeManager *volumeManager; // @synthesize volumeManager=_volumeManager;
 - (void).cxx_destruct;
+@property(nonatomic) __weak MediaControlsHardwareVolumeManager *volumeManager; // @synthesize volumeManager=_volumeManager;
 - (void)dealloc;
 - (void)invalidate;
 

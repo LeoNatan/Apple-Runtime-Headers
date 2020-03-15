@@ -15,9 +15,9 @@
 }
 
 + (id)issueThumbnailWithAssetHandle:(id)arg1 thumbnailSize:(struct CGSize)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize thumbnailSize; // @synthesize thumbnailSize=_thumbnailSize;
 @property(retain, nonatomic) FCAssetHandle *thumbnailAssetHandle; // @synthesize thumbnailAssetHandle=_thumbnailAssetHandle;
-- (void).cxx_destruct;
 
 @end
 

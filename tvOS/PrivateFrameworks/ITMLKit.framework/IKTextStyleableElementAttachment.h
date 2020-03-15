@@ -13,8 +13,8 @@
     IKTextElement *_textElement;
 }
 
-@property(readonly, nonatomic) __weak IKTextElement *textElement; // @synthesize textElement=_textElement;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak IKTextElement *textElement; // @synthesize textElement=_textElement;
 - (id)initWithTextElement:(id)arg1;
 
 @end

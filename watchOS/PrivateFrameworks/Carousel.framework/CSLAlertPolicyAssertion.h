@@ -11,8 +11,8 @@
     CDUnknownBlockType _deallocHandler;
 }
 
-@property(readonly, nonatomic) CDUnknownBlockType deallocHandler; // @synthesize deallocHandler=_deallocHandler;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDUnknownBlockType deallocHandler; // @synthesize deallocHandler=_deallocHandler;
 - (void)dealloc;
 - (id)initWithDeallocHandler:(CDUnknownBlockType)arg1;
 

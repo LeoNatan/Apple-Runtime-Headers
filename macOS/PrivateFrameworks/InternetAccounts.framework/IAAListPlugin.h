@@ -29,8 +29,8 @@
     NSImageView *_appSelectionImage;
 }
 
-@property unsigned long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
+@property unsigned long long style; // @synthesize style=_style;
 - (void)cancel:(id)arg1;
 - (void)help:(id)arg1;
 - (void)back:(id)arg1;

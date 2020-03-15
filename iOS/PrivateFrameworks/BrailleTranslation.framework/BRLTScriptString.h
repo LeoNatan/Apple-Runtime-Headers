@@ -18,11 +18,11 @@
     struct _NSRange _focus;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *tokenRanges; // @synthesize tokenRanges=_tokenRanges;
 @property(readonly, nonatomic) struct _NSRange focus; // @synthesize focus=_focus;
 @property(readonly, nonatomic) struct _NSRange selection; // @synthesize selection=_selection;
 @property(readonly, nonatomic) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (struct _NSRange)forwardEditingAtomForCursorLocation:(unsigned long long)arg1;
 - (struct _NSRange)forwardEditingAtom;
 - (struct _NSRange)backwardEditingAtom;

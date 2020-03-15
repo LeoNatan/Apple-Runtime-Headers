@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)shouldWrapView:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILayoutGuide *sizingLayoutGuide; // @synthesize sizingLayoutGuide=_sizingLayoutGuide;
 @property(nonatomic) float sizingPriority; // @synthesize sizingPriority=_sizingPriority;
 @property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_geometryChanges:(id)arg1 forAncestor:(id)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

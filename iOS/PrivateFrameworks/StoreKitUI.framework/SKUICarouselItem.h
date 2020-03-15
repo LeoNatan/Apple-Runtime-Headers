@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     id <SKUIArtworkProviding> _artworkProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SKUIArtworkProviding> artworkProvider; // @synthesize artworkProvider=_artworkProvider;
 @property(readonly, nonatomic) SKUILink *link; // @synthesize link=_link;
 @property(readonly, nonatomic) long long carouselItemIdentifier; // @synthesize carouselItemIdentifier=_carouselItemIdentifier;
 @property(readonly, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_setLinkItem:(id)arg1;
 - (id)artworkForSize:(struct CGSize)arg1;

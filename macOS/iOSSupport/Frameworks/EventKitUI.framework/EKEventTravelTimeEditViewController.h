@@ -48,11 +48,11 @@
 + (id)_cannotProvideDirectionsLocalizedString;
 + (id)_startingLocationLocalizedString;
 + (id)_travelTimeLocalizedString;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EKStructuredLocation *destinationStructuredLocation; // @synthesize destinationStructuredLocation=_destinationStructuredLocation;
 @property(retain, nonatomic) EKStructuredLocation *originStructuredLocation; // @synthesize originStructuredLocation=_originStructuredLocation;
 @property(retain, nonatomic) NSDate *arrivalDate; // @synthesize arrivalDate=_arrivalDate;
 @property(nonatomic) double selectedTravelTime; // @synthesize selectedTravelTime=_selectedTravelTime;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

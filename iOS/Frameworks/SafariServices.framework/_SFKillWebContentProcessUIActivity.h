@@ -13,8 +13,8 @@
     id <_SFKillWebContentProcessUIActivityDelegate> _webProcessDelegate;
 }
 
-@property(nonatomic) __weak id <_SFKillWebContentProcessUIActivityDelegate> webProcessDelegate; // @synthesize webProcessDelegate=_webProcessDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_SFKillWebContentProcessUIActivityDelegate> webProcessDelegate; // @synthesize webProcessDelegate=_webProcessDelegate;
 - (void)performActivity;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 - (id)_systemImageName;

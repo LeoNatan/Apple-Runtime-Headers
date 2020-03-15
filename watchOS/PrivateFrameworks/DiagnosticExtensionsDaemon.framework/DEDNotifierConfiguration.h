@@ -23,13 +23,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)archivedClasses;
+- (void).cxx_destruct;
 @property _Bool userNotificationShouldPlaySound; // @synthesize userNotificationShouldPlaySound=_userNotificationShouldPlaySound;
 @property(retain) NSString *sendActionLabel; // @synthesize sendActionLabel=_sendActionLabel;
 @property(retain) NSString *reviewActionLabel; // @synthesize reviewActionLabel=_reviewActionLabel;
 @property(retain) NSString *localizedNotificationBody; // @synthesize localizedNotificationBody=_localizedNotificationBody;
 @property(retain) NSString *localizedNotificationTitle; // @synthesize localizedNotificationTitle=_localizedNotificationTitle;
 @property(retain) NSString *hostAppIdentifier; // @synthesize hostAppIdentifier=_hostAppIdentifier;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

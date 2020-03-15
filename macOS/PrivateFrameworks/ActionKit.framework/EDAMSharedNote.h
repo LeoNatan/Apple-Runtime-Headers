@@ -20,13 +20,13 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *serviceAssigned; // @synthesize serviceAssigned=_serviceAssigned;
 @property(retain, nonatomic) NSNumber *serviceUpdated; // @synthesize serviceUpdated=_serviceUpdated;
 @property(retain, nonatomic) NSNumber *serviceCreated; // @synthesize serviceCreated=_serviceCreated;
 @property(retain, nonatomic) NSNumber *privilege; // @synthesize privilege=_privilege;
 @property(retain, nonatomic) EDAMIdentity *recipientIdentity; // @synthesize recipientIdentity=_recipientIdentity;
 @property(retain, nonatomic) NSNumber *sharerUserID; // @synthesize sharerUserID=_sharerUserID;
-- (void).cxx_destruct;
 
 @end
 

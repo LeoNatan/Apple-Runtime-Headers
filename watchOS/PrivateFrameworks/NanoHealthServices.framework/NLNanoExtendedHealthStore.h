@@ -20,11 +20,11 @@
     id <NLActivityCarouselServiceProvider> _carouselServiceProvider;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NLActivityCarouselServiceProvider> carouselServiceProvider; // @synthesize carouselServiceProvider=_carouselServiceProvider;
 @property(nonatomic) __weak id <NLActivityCoachingAlertObserver> coachingAlertObserver; // @synthesize coachingAlertObserver=_coachingAlertObserver;
 @property(nonatomic) __weak id <NLPredictedActivityAlertObserver> predictedActivityAlertObserver; // @synthesize predictedActivityAlertObserver=_predictedActivityAlertObserver;
 @property(nonatomic) __weak id <NLActivitySedentaryAlertObserver> sedentaryAlertObserver; // @synthesize sedentaryAlertObserver=_sedentaryAlertObserver;
-- (void).cxx_destruct;
 - (void)daemonDidStart;
 - (void)connectionInterrupted;
 - (id)exportedInterface;

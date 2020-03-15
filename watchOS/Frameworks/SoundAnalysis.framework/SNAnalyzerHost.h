@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     int _requestState;
 }
 
-@property(nonatomic) int requestState; // @synthesize requestState=_requestState;
 - (void).cxx_destruct;
+@property(nonatomic) int requestState; // @synthesize requestState=_requestState;
 - (void)primeAnalyzerGraph;
 @property(readonly, nonatomic) shared_ptr_f6ac7592 graph;
 @property(readonly, nonatomic) id sharedProcessorConfiguration;

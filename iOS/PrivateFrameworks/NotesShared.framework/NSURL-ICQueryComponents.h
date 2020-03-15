@@ -15,6 +15,7 @@
 @property(readonly, nonatomic) _Bool ic_isReachable;
 @property(readonly, nonatomic) long long ic_fileSize;
 @property(readonly, nonatomic) NSString *ic_UTI;
+- (_Bool)ic_isSafeFileURLForAttachment;
 @property(readonly, nonatomic) _Bool ic_isSupportedAsAttachment;
 @property(readonly, nonatomic) _Bool ic_isWebURL;
 @property(readonly, nonatomic) _Bool ic_isAppStoreURL;

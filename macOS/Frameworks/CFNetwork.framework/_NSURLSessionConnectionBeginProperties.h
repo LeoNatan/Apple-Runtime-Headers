@@ -17,8 +17,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) __CFN_ConnectionMetrics *_metrics; // @synthesize _metrics=__metrics;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __CFN_ConnectionMetrics *_metrics; // @synthesize _metrics=__metrics;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic, getter=isProxyConfigured) BOOL proxyConfigured;

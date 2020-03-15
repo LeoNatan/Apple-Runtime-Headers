@@ -17,10 +17,10 @@
     UITabBar *_tabBar;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITabBar *tabBar; // @synthesize tabBar=_tabBar;
 @property(retain, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
 @property(retain, nonatomic) id delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (void)syncTabBarItems;
 - (void)dealloc;

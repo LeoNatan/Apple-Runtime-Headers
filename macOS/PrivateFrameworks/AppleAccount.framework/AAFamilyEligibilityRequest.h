@@ -14,8 +14,8 @@
 }
 
 + (Class)responseClass;
-@property(retain, nonatomic) SSAccount *iTunesAccount; // @synthesize iTunesAccount=_iTunesAccount;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SSAccount *iTunesAccount; // @synthesize iTunesAccount=_iTunesAccount;
 - (id)urlRequest;
 - (id)urlString;
 

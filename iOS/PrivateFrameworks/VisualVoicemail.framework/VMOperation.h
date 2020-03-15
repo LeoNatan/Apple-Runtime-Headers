@@ -15,9 +15,9 @@
     NSProgress *_progress;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)performSynchronousBlock:(CDUnknownBlockType)arg1;
 - (void)configureProgressWithUnitCount:(long long)arg1;
 - (id)init;

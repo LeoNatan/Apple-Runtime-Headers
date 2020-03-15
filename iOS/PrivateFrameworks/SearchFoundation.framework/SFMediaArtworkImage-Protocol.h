@@ -11,6 +11,7 @@
 @protocol SFMediaArtworkImage <SFImage>
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
+@property(copy, nonatomic) NSString *universalLibraryID;
 @property(nonatomic) int mediaEntityType;
 @property(copy, nonatomic) NSString *spotlightIdentifier;
 @property(copy, nonatomic) NSString *persistentID;

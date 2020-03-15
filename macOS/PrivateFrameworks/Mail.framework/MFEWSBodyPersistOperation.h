@@ -16,10 +16,10 @@
     NSDictionary *_calendarEventsByMessage;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *calendarEventsByMessage; // @synthesize calendarEventsByMessage=_calendarEventsByMessage;
 @property(readonly, copy, nonatomic) NSDictionary *bodiesByMessage; // @synthesize bodiesByMessage=_bodiesByMessage;
 @property(nonatomic) __weak id <MFEWSBodyPersistOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)main;
 - (id)init;
 - (id)initWithBodiesByMessage:(id)arg1 calendarEventsByMessage:(id)arg2;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     BRLTSLoopbackTranslationService *_loopbackService;
 }
 
-@property(retain, nonatomic) BRLTSLoopbackTranslationService *loopbackService; // @synthesize loopbackService=_loopbackService;
 - (void).cxx_destruct;
+@property(retain, nonatomic) BRLTSLoopbackTranslationService *loopbackService; // @synthesize loopbackService=_loopbackService;
 - (_Bool)isLoopback;
 - (id)initWithServiceIdentifier:(id)arg1 connection:(id)arg2 loopbackService:(id)arg3;
 

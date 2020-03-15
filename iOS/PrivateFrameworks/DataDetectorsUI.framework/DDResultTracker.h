@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
     // Error parsing type: ^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}, name: referenceResult
 }
 
+- (void).cxx_destruct;
 @property unsigned long long maximumDistance; // @synthesize maximumDistance;
 @property unsigned long long maximumDistanceForEmails; // @synthesize maximumDistanceForEmails;
 @property(readonly) unsigned int totalCountRemaining; // @synthesize totalCountRemaining;
-- (void).cxx_destruct;
 - (id)results;
 -     // Error parsing type: B24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: addResultIfAppropriate:
 - (void)dealloc;

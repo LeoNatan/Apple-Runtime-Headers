@@ -48,6 +48,7 @@
     NSMutableDictionary *_atoms;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *atoms; // @synthesize atoms=_atoms;
 @property(nonatomic) int hideLastAtomComma; // @synthesize hideLastAtomComma=_hideLastAtomComma;
 @property(nonatomic, getter=isSeparatorHidden) _Bool separatorHidden; // @synthesize separatorHidden=_separatorHidden;
@@ -62,7 +63,6 @@
 @property(nonatomic) double inputDelay; // @synthesize inputDelay=_inputDelay;
 @property(nonatomic) long long maxRecipients; // @synthesize maxRecipients=_maxRecipients;
 @property(nonatomic) _Bool editable; // @synthesize editable=_editable;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)_tapGestureRecognized:(id)arg1;
 - (void)didMoveToSuperview;

@@ -11,8 +11,8 @@
     UIView *_fixedSizeView;
 }
 
-@property(readonly, nonatomic) UIView *fixedSizeView; // @synthesize fixedSizeView=_fixedSizeView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *fixedSizeView; // @synthesize fixedSizeView=_fixedSizeView;
 - (void)layoutSubviews;
 - (id)initWithFixedSizeView:(id)arg1;
 

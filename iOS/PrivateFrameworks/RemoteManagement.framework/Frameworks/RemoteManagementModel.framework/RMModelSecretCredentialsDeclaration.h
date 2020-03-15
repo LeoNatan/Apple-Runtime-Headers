@@ -16,11 +16,11 @@
 + (id)buildRequiredOnlyWithSecret:(id)arg1;
 + (id)buildWithSecret:(id)arg1;
 + (id)allowedPayloadKeys;
-@property(copy, nonatomic) NSString *payloadSecret; // @synthesize payloadSecret=_payloadSecret;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *payloadSecret; // @synthesize payloadSecret=_payloadSecret;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)serializePayloadWithType:(short)arg1;
-- (_Bool)loadPayload:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
+- (id)serializeWithType:(short)arg1;
+- (_Bool)loadFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
 
 @end
 

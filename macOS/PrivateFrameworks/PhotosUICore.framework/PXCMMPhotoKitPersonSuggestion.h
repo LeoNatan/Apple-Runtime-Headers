@@ -24,12 +24,12 @@
 + (id)personSuggestionWithPerson:(id)arg1 keyFaceFetchResult:(id)arg2;
 + (id)personSuggestionWithPerson:(id)arg1;
 + (id)_contactFetchQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXRecipientTransport *bestTransport; // @synthesize bestTransport=_bestTransport;
 @property(readonly, nonatomic) PHFetchResult *keyAssetFetchResult; // @synthesize keyAssetFetchResult=_keyAssetFetchResult;
 @property(readonly, nonatomic) PHFetchResult *keyFaceFetchResult; // @synthesize keyFaceFetchResult=_keyFaceFetchResult;
 @property(readonly, nonatomic) PHPerson *person; // @synthesize person=_person;
 @property(readonly, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) unsigned long long hash;

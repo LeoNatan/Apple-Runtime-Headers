@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
     NSDate *_lastUsedDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isOffByDefault; // @synthesize isOffByDefault=_isOffByDefault;
 @property(retain, nonatomic) NSDate *lastUsedDate; // @synthesize lastUsedDate=_lastUsedDate;
 @property(readonly, nonatomic, getter=isSupported) BOOL supported; // @synthesize supported=_supported;
@@ -66,7 +67,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSString *nameForPerSitePreferencesPopover; // @synthesize nameForPerSitePreferencesPopover=_nameForPerSitePreferencesPopover;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (BOOL)updateHostPolicy:(id)arg1 knownToUsePlugIn:(BOOL)arg2;
 - (void)setEligibleForWhitelistedAskPolicy:(BOOL)arg1;
 @property(readonly, nonatomic) NSArray *nonBlockHostPolicies;

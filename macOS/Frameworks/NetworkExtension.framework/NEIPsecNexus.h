@@ -13,8 +13,8 @@
     NSArray *_nexusInstances;
 }
 
-@property(retain, nonatomic) NSArray *nexusInstances; // @synthesize nexusInstances=_nexusInstances;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *nexusInstances; // @synthesize nexusInstances=_nexusInstances;
 - (void)setRemotePacketProxy:(id)arg1;
 - (BOOL)setDefaultInputHandler:(struct nw_protocol *)arg1;
 - (id)initWithName:(id)arg1 delegate:(id)arg2 enableWithChannelCount:(unsigned int)arg3 netifRingSize:(unsigned int)arg4 kernelPipeTxRingSize:(unsigned int)arg5 kernelPipeRxRingSize:(unsigned int)arg6;

@@ -13,8 +13,8 @@
     CALayer *_backgroundCircleLayer;
 }
 
-@property(nonatomic) __weak CALayer *backgroundCircleLayer; // @synthesize backgroundCircleLayer=_backgroundCircleLayer;
 - (void).cxx_destruct;
+@property(nonatomic) __weak CALayer *backgroundCircleLayer; // @synthesize backgroundCircleLayer=_backgroundCircleLayer;
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

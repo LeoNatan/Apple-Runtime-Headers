@@ -13,9 +13,9 @@
 }
 
 + (id)execute:(CDUnknownBlockType)arg1 delay:(double)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)invoke;
 - (id)initWithBlock:(CDUnknownBlockType)arg1 delay:(double)arg2;

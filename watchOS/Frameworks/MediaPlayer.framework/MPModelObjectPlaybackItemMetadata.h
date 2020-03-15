@@ -23,9 +23,9 @@
 + (id)requiredProperties;
 + (_Bool)_shouldRespectStoreCellularDataSetting;
 + (_Bool)_shouldRespectMusicCellularDataSetting;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MPModelPlaybackPosition *playbackPosition; // @synthesize playbackPosition=_playbackPosition;
 @property(nonatomic) __weak id <MPModelObjectPlaybackItemMetadataDelegate> modelObjectDelegate; // @synthesize modelObjectDelegate=_modelObjectDelegate;
-- (void).cxx_destruct;
 - (id)_cachedLocalPlaybackAssetFilePathWithIntegrityCheck:(_Bool)arg1 returningAssetQuality:(unsigned int *)arg2 protectionType:(unsigned int *)arg3 usesPurchaseBundle:(_Bool *)arg4;
 - (void)_invalidateModelObjectPlaybackItemMetadata;
 @property(readonly, nonatomic) MPModelStoreAsset *storeAsset;

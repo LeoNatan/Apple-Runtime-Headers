@@ -20,10 +20,10 @@
 + (id)keyPathsForValuesAffectingIsExecuting;
 + (id)dataConsumerQueue;
 + (id)URLSession;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *dataConsumerQueue; // @synthesize dataConsumerQueue=_dataConsumerQueue;
 @property(readonly, nonatomic) id <ASKResourceDataConsumer> dataConsumer; // @synthesize dataConsumer=_dataConsumer;
 @property(readonly, nonatomic) NSURLSessionDataTask *task; // @synthesize task=_task;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)start;
 - (void)setQueuePriority:(long long)arg1;

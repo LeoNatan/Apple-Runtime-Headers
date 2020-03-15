@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)snapshotWithSectionCountsProvider:(CDUnknownBlockType)arg1 topBottomSeparatorProvider:(CDUnknownBlockType)arg2 displaysAdditionalSeparators:(BOOL)arg3;
-@property(readonly, nonatomic) BOOL displaysAdditionalSeparators; // @synthesize displaysAdditionalSeparators=_displaysAdditionalSeparators;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL displaysAdditionalSeparators; // @synthesize displaysAdditionalSeparators=_displaysAdditionalSeparators;
 - (BOOL)hasBottomSeparatorInSection:(long long)arg1;
 - (BOOL)hasTopSeparatorInSection:(long long)arg1;
 - (id)initWithSectionCountsProvider:(CDUnknownBlockType)arg1 topBottomSeparatorProvider:(CDUnknownBlockType)arg2 displaysAdditionalSeparators:(BOOL)arg3;

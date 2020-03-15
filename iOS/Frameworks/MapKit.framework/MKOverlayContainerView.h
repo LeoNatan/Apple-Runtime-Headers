@@ -22,10 +22,12 @@ __attribute__((visibility("hidden")))
     MKMapView *_mapView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak MKMapView *mapView; // @synthesize mapView=_mapView;
 @property(nonatomic) double mapZoomScale; // @synthesize mapZoomScale=_mapZoomScale;
 @property(nonatomic) __weak id <MKOverlayContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
+- (_Bool)_overlaySpansGlobeAndReplacesMapContent;
+- (void)_updateShowsAppleLogoIfNeeded;
 - (void)didMoveToWindow;
 - (void)_insertDrawable:(id)arg1 forOverlay:(id)arg2 atIndex:(long long)arg3 level:(long long)arg4;
 - (void)_updateContentScale:(id)arg1;

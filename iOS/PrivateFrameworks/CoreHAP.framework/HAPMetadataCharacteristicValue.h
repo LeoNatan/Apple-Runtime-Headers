@@ -19,13 +19,13 @@
 }
 
 + (id)initWithDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *validValues; // @synthesize validValues=_validValues;
 @property(retain, nonatomic) NSNumber *maxLength; // @synthesize maxLength=_maxLength;
 @property(retain, nonatomic) NSNumber *minLength; // @synthesize minLength=_minLength;
 @property(retain, nonatomic) NSNumber *stepValue; // @synthesize stepValue=_stepValue;
 @property(retain, nonatomic) NSNumber *maxValue; // @synthesize maxValue=_maxValue;
 @property(retain, nonatomic) NSNumber *minValue; // @synthesize minValue=_minValue;
-- (void).cxx_destruct;
 - (void)dump;
 - (id)description;
 - (id)generateDictionary;

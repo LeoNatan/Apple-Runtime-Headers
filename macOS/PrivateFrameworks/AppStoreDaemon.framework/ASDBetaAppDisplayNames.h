@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *primaryLocale; // @synthesize primaryLocale=_primaryLocale;
 @property(copy) NSDictionary *localizedNames; // @synthesize localizedNames=_localizedNames;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

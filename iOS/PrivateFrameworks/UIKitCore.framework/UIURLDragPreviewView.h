@@ -26,10 +26,10 @@
 + (id)viewWithTitle:(id)arg1 URLText:(id)arg2;
 + (id)viewWithURL:(id)arg1;
 + (id)viewWithTitle:(id)arg1 URL:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *urlText; // @synthesize urlText=_urlText;
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (id)initWithFrame:(struct CGRect)arg1;
 

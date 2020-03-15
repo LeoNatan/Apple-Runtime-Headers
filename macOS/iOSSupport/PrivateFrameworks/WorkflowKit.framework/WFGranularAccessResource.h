@@ -14,8 +14,8 @@
 }
 
 + (Class)perWorkflowStateClass;
-@property(retain, nonatomic) WFGranularAccessResourcePerWorkflowState *stateForRequestedEntries; // @synthesize stateForRequestedEntries=_stateForRequestedEntries;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFGranularAccessResourcePerWorkflowState *stateForRequestedEntries; // @synthesize stateForRequestedEntries=_stateForRequestedEntries;
 - (id)updatedPerWorkflowStateForAuthorizationChoice:(BOOL)arg1 overridingPreviouslyDeterminedAuthorizations:(BOOL)arg2;
 - (unsigned long long)workflowLevelStatus;
 - (void)setCurrentPerWorkflowState:(id)arg1;

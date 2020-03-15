@@ -8,11 +8,12 @@
 
 #import <AccessibilitySharedSupport/AXSSMotionTrackingCameraManagerDelegate-Protocol.h>
 #import <AccessibilitySharedSupport/AXSSMotionTrackingHIDManagerDelegate-Protocol.h>
+#import <AccessibilitySharedSupport/AXSSMotionTrackingVideoFileInputManagerDelegate-Protocol.h>
 
-@class AXSSMotionTrackingCameraManager, AXSSMotionTrackingHIDManager, AXSSMotionTrackingInput, AXSSMotionTrackingInputConfiguration, NSArray, NSMutableArray, NSString;
+@class AXSSMotionTrackingCameraManager, AXSSMotionTrackingHIDManager, AXSSMotionTrackingInput, AXSSMotionTrackingInputConfiguration, AXSSMotionTrackingVideoFileInputManager, NSArray, NSMutableArray, NSString;
 @protocol AXSSMotionTrackingInputManagerDelegate;
 
-@interface AXSSMotionTrackingInputManager : NSObject <AXSSMotionTrackingCameraManagerDelegate, AXSSMotionTrackingHIDManagerDelegate>
+@interface AXSSMotionTrackingInputManager : NSObject <AXSSMotionTrackingCameraManagerDelegate, AXSSMotionTrackingVideoFileInputManagerDelegate, AXSSMotionTrackingHIDManagerDelegate>
 {
     BOOL __monitoring;
     AXSSMotionTrackingInputConfiguration *_configuration;
@@ -23,12 +24,17 @@
     NSMutableArray *__allCameraInputs;
     AXSSMotionTrackingHIDManager *__hidManager;
     NSMutableArray *__hidInputs;
+    AXSSMotionTrackingVideoFileInputManager *__videoFileInputManager;
+    NSMutableArray *__videoFileInputs;
     NSMutableArray *__compatibleInputs;
     NSMutableArray *__allInputs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *_allInputs; // @synthesize _allInputs=__allInputs;
 @property(retain, nonatomic) NSMutableArray *_compatibleInputs; // @synthesize _compatibleInputs=__compatibleInputs;
+@property(retain, nonatomic) NSMutableArray *_videoFileInputs; // @synthesize _videoFileInputs=__videoFileInputs;
+@property(retain, nonatomic) AXSSMotionTrackingVideoFileInputManager *_videoFileInputManager; // @synthesize _videoFileInputManager=__videoFileInputManager;
 @property(retain, nonatomic) NSMutableArray *_hidInputs; // @synthesize _hidInputs=__hidInputs;
 @property(retain, nonatomic) AXSSMotionTrackingHIDManager *_hidManager; // @synthesize _hidManager=__hidManager;
 @property(retain, nonatomic) NSMutableArray *_allCameraInputs; // @synthesize _allCameraInputs=__allCameraInputs;
@@ -37,9 +43,9 @@
 @property(nonatomic) BOOL _monitoring; // @synthesize _monitoring=__monitoring;
 @property(nonatomic) __weak id <AXSSMotionTrackingInputManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) AXSSMotionTrackingInput *inputToUse; // @synthesize inputToUse=_inputToUse;
-- (void).cxx_destruct;
 - (void)_inputUpdated;
 - (id)_compatibleCameraInputMatchingCaptureDeviceUniqueID:(id)arg1;
+- (void)motionTrackingVideoFileInputManager:(id)arg1 updatedVideoFileInputNames:(id)arg2;
 - (void)motionTrackingHIDManager:(id)arg1 updatedDevices:(id)arg2;
 - (void)motionTrackingCameraManager:(id)arg1 updatedCompatibleCaptureDevices:(id)arg2;
 @property(readonly, nonatomic) BOOL _supportsHIDInputs;

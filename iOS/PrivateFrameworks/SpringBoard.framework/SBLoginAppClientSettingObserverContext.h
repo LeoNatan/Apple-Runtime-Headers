@@ -14,9 +14,9 @@
     SBSUILoginUISceneClientSettings *_updatedClientSettings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBSUILoginUISceneClientSettings *updatedClientSettings; // @synthesize updatedClientSettings=_updatedClientSettings;
 @property(retain, nonatomic) UIApplicationSceneSettings *settings; // @synthesize settings=_settings;
-- (void).cxx_destruct;
 
 @end
 

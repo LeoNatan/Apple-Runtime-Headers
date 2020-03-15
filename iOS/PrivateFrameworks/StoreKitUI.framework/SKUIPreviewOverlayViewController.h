@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
     UITapGestureRecognizer *_tapGestureRecognizer;
 }
 
-@property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 - (void).cxx_destruct;
+@property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 - (double)_overlayWidth;
 - (id)_layoutCache;
 - (void)_tapAction:(id)arg1;

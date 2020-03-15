@@ -15,10 +15,10 @@
     MCMessage *_message;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MCMessage *message; // @synthesize message=_message;
 @property(retain, nonatomic) id content; // @synthesize content=_content;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)objectSpecifier;
 
 @end

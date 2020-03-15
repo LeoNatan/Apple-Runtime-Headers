@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _actionFilter;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType actionFilter; // @synthesize actionFilter=_actionFilter;
 @property(readonly, nonatomic) UIBarButtonItem *barButtonItem; // @synthesize barButtonItem=_barButtonItem;
-- (void).cxx_destruct;
 - (void)_invoke:(id)arg1 forEvent:(id)arg2;
 @property(readonly, nonatomic) SEL proxyAction;
 - (id)initWithBarButtonItem:(id)arg1;

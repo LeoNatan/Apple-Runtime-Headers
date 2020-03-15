@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)processWithID:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double score; // @synthesize score=_score;
 @property(nonatomic) double powerScore; // @synthesize powerScore=_powerScore;
 @property(nonatomic) double cpuUsage; // @synthesize cpuUsage=_cpuUsage;
 @property(nonatomic) double residentSize; // @synthesize residentSize=_residentSize;
 @property(nonatomic) unsigned long long age; // @synthesize age=_age;
 @property(readonly) unsigned long long pid; // @synthesize pid=_pid;
-- (void).cxx_destruct;
 - (id)urls;
 - (double)doubleForKey:(id)arg1;
 - (void)addURL:(id)arg1 visitTime:(id)arg2;

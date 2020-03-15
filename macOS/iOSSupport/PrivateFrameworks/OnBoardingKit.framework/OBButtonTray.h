@@ -25,6 +25,7 @@
     NSLayoutConstraint *_stackViewTrailingConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewTrailingConstraint; // @synthesize stackViewTrailingConstraint=_stackViewTrailingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewLeadingConstraint; // @synthesize stackViewLeadingConstraint=_stackViewLeadingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewBottomConstraint; // @synthesize stackViewBottomConstraint=_stackViewBottomConstraint;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSMutableArray *buttons; // @synthesize buttons=_buttons;
 @property(nonatomic) __weak UIViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
 @property(nonatomic) long long backdropStyle; // @synthesize backdropStyle=_backdropStyle;
-- (void).cxx_destruct;
 - (id)_captionFont;
 - (void)_updateTrayVisibility;
 - (void)_setUpBackdrops;

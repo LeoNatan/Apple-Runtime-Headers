@@ -33,12 +33,12 @@
 
 + (id)sharedInstance;
 + (_Bool)reachabilitySupported;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIPanGestureRecognizer *dismissPanGestureRecognizer; // @synthesize dismissPanGestureRecognizer=_dismissPanGestureRecognizer;
 @property(readonly, nonatomic) SBScreenEdgePanGestureRecognizer *dismissEdgeGestureRecognizer; // @synthesize dismissEdgeGestureRecognizer=_dismissEdgeGestureRecognizer;
 @property(readonly, nonatomic) _Bool reachabilityModeActive; // @synthesize reachabilityModeActive=_reachabilityModeActive;
 @property(readonly, nonatomic) double effectiveReachabilityYOffset; // @synthesize effectiveReachabilityYOffset=_effectiveReachabilityYOffset;
 @property(readonly, nonatomic) SBReachabilityGestureRecognizer *reachabilityGestureRecognizer; // @synthesize reachabilityGestureRecognizer=_reachabilityGestureRecognizer;
-- (void).cxx_destruct;
 - (void)homeGestureParticipantOwningHomeGestureDidChange:(id)arg1;
 - (id)viewForSystemGestureRecognizer:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;

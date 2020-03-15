@@ -20,12 +20,12 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
 @property(readonly, nonatomic) unsigned int zoneRow; // @synthesize zoneRow=_zoneRow;
 @property(nonatomic) __weak HMBLocalSQLContext *owner; // @synthesize owner=_owner;
 @property(readonly, nonatomic) HMFActivity *activity; // @synthesize activity=_activity;
 @property(nonatomic) unsigned int blockRow; // @synthesize blockRow=_blockRow;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (id)abort;
 - (id)commit:(id)arg1;

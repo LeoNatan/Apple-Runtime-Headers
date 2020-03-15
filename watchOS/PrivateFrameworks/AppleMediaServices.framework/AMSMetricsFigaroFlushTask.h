@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     int _requestCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int requestCount; // @synthesize requestCount=_requestCount;
 @property(retain, nonatomic) AMSPromise *currentCancellablePromise; // @synthesize currentCancellablePromise=_currentCancellablePromise;
 @property(retain, nonatomic) NSString *topic; // @synthesize topic=_topic;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <AMSMetricsDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 @property(readonly, nonatomic) _Bool cancelled; // @synthesize cancelled=_cancelled;
-- (void).cxx_destruct;
 - (_Bool)_shouldClearEventsDespiteError:(id)arg1 result:(id)arg2;
 - (id)_postBatch:(id)arg1 error:(id *)arg2;
 - (id)_nextBatchWithConfig:(id)arg1 error:(id *)arg2;

@@ -19,9 +19,9 @@
 + (id)recordIDWithZoneID:(id)arg1;
 + (id)properties;
 + (id)recordType;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL migratedVoiceShortcuts; // @synthesize migratedVoiceShortcuts=_migratedVoiceShortcuts;
 @property(readonly, nonatomic) CKRecordID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithZoneID:(id)arg1;
 
 // Remaining properties

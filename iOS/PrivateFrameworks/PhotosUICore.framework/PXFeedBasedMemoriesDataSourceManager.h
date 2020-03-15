@@ -17,10 +17,10 @@
     struct _NSRange _dataSourceRange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXMemoriesFeedDataSource *childDataSource; // @synthesize childDataSource=_childDataSource;
 @property(readonly, nonatomic) PXMemoriesFeedWidgetDataSourceManager *childDataSourceManager; // @synthesize childDataSourceManager=_childDataSourceManager;
 @property(nonatomic) struct _NSRange dataSourceRange; // @synthesize dataSourceRange=_dataSourceRange;
-- (void).cxx_destruct;
 - (id)_adjustChangedIndexSetIfNeeded:(id)arg1;
 - (id)_adjustChangeDetailsIfNeeded:(id)arg1 previousDataSource:(id)arg2 newDataSource:(id)arg3;
 - (id)_adjustDataSourceIfNeeded:(id)arg1;

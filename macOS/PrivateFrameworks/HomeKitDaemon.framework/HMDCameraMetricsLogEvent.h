@@ -15,10 +15,10 @@
     HMDAccessory *_accessory;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL isLocal; // @synthesize isLocal=_isLocal;
 @property(readonly, nonatomic) __weak HMDAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly, nonatomic) HMDCameraSessionID *sessionID; // @synthesize sessionID=_sessionID;
-- (void).cxx_destruct;
 - (id)initWithMetricUUID:(id)arg1 sessionID:(id)arg2 cameraAccessory:(id)arg3 isLocal:(BOOL)arg4;
 
 @end

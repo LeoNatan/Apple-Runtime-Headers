@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     WDProfile *_profile;
 }
 
-@property(readonly, nonatomic) __weak WDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak WDProfile *profile; // @synthesize profile=_profile;
 - (void)_handleURL:(id)arg1;
 - (void)userNotificationCenter:(id)arg1 didReceiveNotificationResponse:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)userNotificationCenter:(id)arg1 willPresentNotification:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;

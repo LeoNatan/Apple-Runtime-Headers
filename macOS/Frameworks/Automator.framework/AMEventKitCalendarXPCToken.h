@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain) NSString *calendarIdentifier; // @synthesize calendarIdentifier=_calendarIdentifier;
 - (void).cxx_destruct;
+@property(retain) NSString *calendarIdentifier; // @synthesize calendarIdentifier=_calendarIdentifier;
 - (id)_am_convertFromXPCWithWorkflow:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

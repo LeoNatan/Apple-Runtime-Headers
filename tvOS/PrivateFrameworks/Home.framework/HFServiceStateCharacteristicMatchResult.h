@@ -20,9 +20,9 @@
 
 + (id)na_identity;
 + (id)matchResultByMergingResults:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *characteristicsByServiceUUID; // @synthesize characteristicsByServiceUUID=_characteristicsByServiceUUID;
 @property(readonly, copy, nonatomic) NSSet *services; // @synthesize services=_services;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;

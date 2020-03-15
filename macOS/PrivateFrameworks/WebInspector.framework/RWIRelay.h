@@ -26,11 +26,11 @@
     NSMutableDictionary *_driverInterfaces;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *driverInterfaces; // @synthesize driverInterfaces=_driverInterfaces;
 @property(readonly, nonatomic) NSMutableDictionary *clientConnections; // @synthesize clientConnections=_clientConnections;
 @property(readonly, nonatomic) NSMutableDictionary *applicationConnections; // @synthesize applicationConnections=_applicationConnections;
 @property(nonatomic) id <RWIRelayDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_receivedAutomaticInspectionCandidate:(id)arg1 connection:(id)arg2;
 - (void)_receivedProxyApplicationSetupResponseMessage:(id)arg1 connection:(id)arg2;
 - (void)_receivedListingMessage:(id)arg1 connection:(id)arg2;

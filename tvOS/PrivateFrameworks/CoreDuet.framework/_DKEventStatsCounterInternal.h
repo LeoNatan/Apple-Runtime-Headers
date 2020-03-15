@@ -21,11 +21,11 @@
     NSString *_domain;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(readonly, nonatomic) NSArray *typeValues; // @synthesize typeValues=_typeValues;
 @property(readonly, nonatomic) NSString *eventType; // @synthesize eventType=_eventType;
 @property(readonly, nonatomic) NSString *eventName; // @synthesize eventName=_eventName;
-- (void).cxx_destruct;
 - (unsigned long long)countWithTypeValue:(id)arg1 success:(_Bool)arg2;
 - (void)incrementCountByNumber:(unsigned long long)arg1 typeValue:(id)arg2 success:(_Bool)arg3;
 - (long long)indexOfTypeValue:(id)arg1 success:(_Bool)arg2;

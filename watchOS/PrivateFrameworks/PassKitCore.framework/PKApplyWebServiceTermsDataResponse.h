@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *termsDataFileName; // @synthesize termsDataFileName=_termsDataFileName;
 @property(retain, nonatomic) NSData *termsData; // @synthesize termsData=_termsData;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1;

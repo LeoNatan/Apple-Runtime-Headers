@@ -25,10 +25,10 @@
 + (id)serverInterface;
 + (id)conceptStore;
 + (id)taskServerIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKTaskServerProxyProvider *proxyProvider; // @synthesize proxyProvider=_proxyProvider;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
-- (void).cxx_destruct;
 - (void)connectionInvalidated;
 - (id)remoteInterface;
 - (id)exportedInterface;
@@ -43,7 +43,6 @@
 - (_Bool)breakAssociationFromSample:(id)arg1 toConcept:(id)arg2;
 - (_Bool)makeAssociationFromSample:(id)arg1 toConcept:(id)arg2;
 - (_Bool)loadRelationshipsForConcept:(id)arg1;
-- (id)displayNameForCodingSystemWithID:(long long)arg1 value:(id)arg2;
 - (id)conceptsWithRelationship:(id)arg1 fromNodeWithID:(id)arg2;
 - (id)conceptsWithRelationship:(id)arg1 toNode:(id)arg2;
 - (id)_unitTest_conceptForName:(id)arg1;
@@ -52,8 +51,6 @@
 - (id)conceptForIdentifier:(id)arg1;
 - (id)conceptsWithAttribute:(long long)arg1 matchingValue:(id)arg2;
 - (void)_startTaskServerIfNeeded;
-- (id)resolveDisplayNamesForCodingContexts:(id)arg1;
-- (id)resolveConceptForContext:(id)arg1;
 - (id)ontologyVersionWithError:(id *)arg1;
 - (id)initWithHealthStore:(id)arg1;
 - (id)init;

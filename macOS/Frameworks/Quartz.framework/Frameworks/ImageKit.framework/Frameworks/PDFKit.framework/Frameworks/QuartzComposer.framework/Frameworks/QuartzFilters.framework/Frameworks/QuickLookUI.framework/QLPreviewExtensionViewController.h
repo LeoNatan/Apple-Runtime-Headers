@@ -15,9 +15,9 @@
     QLPreviewExtensionContext *_extensionContext;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak QLPreviewExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 @property(nonatomic) int mode; // @synthesize mode;
-- (void).cxx_destruct;
 - (struct CGRect)sourceFrame;
 - (void)getImageRepresentationWithFrame:(struct CGRect)arg1 completion:(CDUnknownBlockType)arg2;
 - (struct CGRect)borderFrame;

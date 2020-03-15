@@ -13,8 +13,8 @@
     _CDInteractionStore *_store;
 }
 
-@property(retain) _CDInteractionStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
+@property(retain) _CDInteractionStore *store; // @synthesize store=_store;
 - (id)inSeedPredicateForSeed:(id)arg1;
 - (id)recentPredicateForDate:(id)arg1 lambda:(float)arg2 lookAheadWeeks:(int)arg3;
 - (void)tuneUsingSettings:(id)arg1 heartBeatHandler:(id)arg2;

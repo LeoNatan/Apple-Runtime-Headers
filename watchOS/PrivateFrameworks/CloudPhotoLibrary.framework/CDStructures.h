@@ -27,10 +27,6 @@ struct CGSize {
     float height;
 };
 
-struct NSData {
-    Class _field1;
-};
-
 #pragma mark Typedef'd Structures
 
 typedef struct {

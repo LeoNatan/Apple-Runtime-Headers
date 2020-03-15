@@ -71,6 +71,7 @@ __attribute__((visibility("hidden")))
 + (unsigned long long)activeFlowsCountForType:(long long)arg1;
 + (unsigned long long)allActiveFlowsCount;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL networkActivityMapRolledOver; // @synthesize networkActivityMapRolledOver=_networkActivityMapRolledOver;
 @property(nonatomic) BOOL networkActivityMapShouldNotBeCounted; // @synthesize networkActivityMapShouldNotBeCounted=_networkActivityMapShouldNotBeCounted;
 @property(nonatomic) unsigned long long networkActivityMapPart2; // @synthesize networkActivityMapPart2=_networkActivityMapPart2;
@@ -97,7 +98,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *ownerKey; // @synthesize ownerKey=_ownerKey;
 @property(nonatomic) long long ifType; // @synthesize ifType=_ifType;
 @property(nonatomic) unsigned int ifIndex; // @synthesize ifIndex=_ifIndex;
-- (void).cxx_destruct;
 - (void)_updateScoreholder:(struct scoreHolder *)arg1;
 - (void)_takeSnapshot;
 @property(nonatomic) unsigned int trafficClassFlags; // @synthesize trafficClassFlags=_trafficClassFlags;

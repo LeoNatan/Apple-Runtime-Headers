@@ -18,9 +18,9 @@
     double _timerCoalesce;
 }
 
+- (void).cxx_destruct;
 @property double timerCoalesce; // @synthesize timerCoalesce=_timerCoalesce;
 @property double timerLeeway; // @synthesize timerLeeway=_timerLeeway;
-- (void).cxx_destruct;
 - (void)dispatchAt:(unsigned long long)arg1 queue:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (void)dispatchAfter:(double)arg1 queue:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (void)_dispatchItemsThrough:(unsigned long long)arg1;

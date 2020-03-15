@@ -20,8 +20,8 @@
 + (id)serverContactBuilderWithResultFactory:(id)arg1;
 + (id)suggestedContactBuilderWithResultFactory:(id)arg1;
 + (id)localContactBuilderWithResultFactory:(id)arg1;
-@property unsigned long long builtContactType; // @synthesize builtContactType=_builtContactType;
 - (void).cxx_destruct;
+@property unsigned long long builtContactType; // @synthesize builtContactType=_builtContactType;
 - (CDUnknownBlockType)buildAggregateTransform;
 - (CDUnknownBlockType)build;
 - (CDUnknownBlockType)makeTransformForProperty:(id)arg1;

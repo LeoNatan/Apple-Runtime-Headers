@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) _TVPlayer *presentedPlayer; // @synthesize presentedPlayer=_presentedPlayer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _TVPlayer *presentedPlayer; // @synthesize presentedPlayer=_presentedPlayer;
 - (id)_viewControllerForPlayer:(id)arg1 remove:(_Bool)arg2;
 - (void)_playbackStateDidChange:(id)arg1;
 - (id)viewControllerForPlayer:(id)arg1;

@@ -20,8 +20,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)decendingSpecificityBundleIDsForBundleID:(id)arg1;
-@property(retain, nonatomic) NSDictionary *bundleIDMapping; // @synthesize bundleIDMapping=_bundleIDMapping;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *bundleIDMapping; // @synthesize bundleIDMapping=_bundleIDMapping;
 - (id)jsonEncodableObject;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

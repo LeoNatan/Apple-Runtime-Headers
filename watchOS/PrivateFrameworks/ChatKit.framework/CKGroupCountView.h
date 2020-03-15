@@ -15,8 +15,8 @@
     unsigned int _count;
 }
 
-@property(nonatomic) unsigned int count; // @synthesize count=_count;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int count; // @synthesize count=_count;
 - (void)preferredContentSizeChanged:(id)arg1;
 - (float)textBaselineFrameOriginY;
 - (void)setTextBaselineFrameOriginY:(float)arg1;

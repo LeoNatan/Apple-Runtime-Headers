@@ -30,9 +30,9 @@
 
 + (id)_loadThumbnailForURL:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 wantsBorder:(_Bool *)arg4 generatedThumbnail:(_Bool *)arg5;
 + (id)_loadDocumentIconForURL:(id)arg1 size:(struct CGSize)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *itemsToMove; // @synthesize itemsToMove=_itemsToMove;
 @property(nonatomic) __weak id <_UIDocumentTargetSelectionControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setItemsToMove:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)_setIconViewImage:(id)arg1 border:(_Bool)arg2;

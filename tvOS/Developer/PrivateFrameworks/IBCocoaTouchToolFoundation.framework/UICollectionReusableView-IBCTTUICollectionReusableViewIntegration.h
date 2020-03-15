@@ -7,5 +7,6 @@
 #import <UIKit/UICollectionReusableView.h>
 
 @interface UICollectionReusableView (IBCTTUICollectionReusableViewIntegration)
+- (id)initWithMarshalledValues:(id)arg1 orderedKeys:(id)arg2 ignoredKeys:(id)arg3 globalMarshallingContext:(id)arg4;
 @end
 

@@ -21,13 +21,13 @@
     NSMutableDictionary *_liveContentOverlays;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *liveContentOverlays; // @synthesize liveContentOverlays=_liveContentOverlays;
 @property(retain, nonatomic) SBFloatingApplicationLiveContentWindow *recycledApplicationSceneLiveContentWindow; // @synthesize recycledApplicationSceneLiveContentWindow=_recycledApplicationSceneLiveContentWindow;
 @property(copy, nonatomic) NSString *keyboardFocusSceneID; // @synthesize keyboardFocusSceneID=_keyboardFocusSceneID;
 @property(nonatomic) __weak id <SBSwitcherLiveContentOverlayCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long containerOrientation; // @synthesize containerOrientation=_containerOrientation;
 @property(nonatomic, getter=areLiveContentOverlayUpdatesSuspended) _Bool liveContentOverlayUpdatesSuspended; // @synthesize liveContentOverlayUpdatesSuspended=_liveContentOverlayUpdatesSuspended;
-- (void).cxx_destruct;
 - (_Bool)_isLayoutElementBlockedForScreenTimeExpiration:(id)arg1;
 - (_Bool)_shouldAnimateAddingLiveContentOverlayForTransitionContext:(id)arg1;
 - (void)_removeApplicationSceneLiveContentOverlay:(id)arg1 forAppLayout:(id)arg2;

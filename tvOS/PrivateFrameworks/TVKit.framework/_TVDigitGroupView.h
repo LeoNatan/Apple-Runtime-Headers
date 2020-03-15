@@ -20,11 +20,11 @@
 }
 
 + (_Bool)automaticallyNotifiesObserversOfText;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSecure) _Bool secure; // @synthesize secure=_secure;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(readonly, nonatomic) NSIndexSet *separatorIndexes; // @synthesize separatorIndexes=_separatorIndexes;
 @property(readonly, nonatomic) unsigned long long numberOfDigits; // @synthesize numberOfDigits=_numberOfDigits;
-- (void).cxx_destruct;
 - (void)_setupSubviews;
 - (void)_updateDigits;
 - (void)reset;

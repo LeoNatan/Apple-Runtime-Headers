@@ -19,6 +19,7 @@
     AXFTextPosition *__inputMarkingSessionEndPosition;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXFTextPosition *_inputMarkingSessionEndPosition; // @synthesize _inputMarkingSessionEndPosition=__inputMarkingSessionEndPosition;
 @property(retain, nonatomic) AXFTextPosition *_inputMarkingSessionStartPosition; // @synthesize _inputMarkingSessionStartPosition=__inputMarkingSessionStartPosition;
 @property(retain, nonatomic) AXKElementController *_textElementController; // @synthesize _textElementController=__textElementController;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) AXFTextRange *inputMarkingSessionRange; // @synthesize inputMarkingSessionRange=_inputMarkingSessionRange;
 @property(nonatomic, getter=isInputMarkingSessionActive) BOOL inputMarkingSessionActive; // @synthesize inputMarkingSessionActive=_inputMarkingSessionActive;
 @property(nonatomic, getter=isStarted) BOOL started; // @synthesize started=_started;
-- (void).cxx_destruct;
 - (void)_inlineSessionEnded:(id)arg1;
 - (void)_inlineSessionStarted:(id)arg1;
 - (void)_selectedTextChangedNotification:(id)arg1;

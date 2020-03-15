@@ -14,9 +14,9 @@
     NSArray *_pronunciations;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *pronunciations; // @synthesize pronunciations=_pronunciations;
 @property(copy, nonatomic) NSString *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (struct TokenProns)_quasarProns;
 - (id)initWithToken:(id)arg1 pronunciations:(id)arg2;
 

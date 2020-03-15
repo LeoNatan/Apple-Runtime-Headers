@@ -14,8 +14,8 @@
 }
 
 + (id)settingsURL;
-@property(readonly, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(readonly, nonatomic) BOOL isEnabledForBundle;
 @property(readonly, nonatomic) BOOL isEnabledForDevice;
 @property(readonly, nonatomic) BOOL isSupported;

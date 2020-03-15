@@ -8,7 +8,7 @@
 
 #import <UIKitMacHelper/UINSDocumentPickerViewController-Protocol.h>
 
-@class NSArray, NSMovePanel, NSOpenPanel, NSSavePanel, NSString, UINSWindow;
+@class NSArray, NSOpenPanel, NSSavePanel, NSString, UINSWindow;
 
 __attribute__((visibility("hidden")))
 @interface UINSDocumentPickerViewController : NSObject <UINSDocumentPickerViewController>
@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     NSSavePanel *_savePanel;
     NSArray *_urls;
     NSString *_utiForFirstURL;
-    NSMovePanel *_movePanel;
+    NSOpenPanel *_movePanel;
     BOOL _allowsMultipleSelection;
 }
 

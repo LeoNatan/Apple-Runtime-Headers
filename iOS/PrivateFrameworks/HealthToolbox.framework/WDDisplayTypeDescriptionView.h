@@ -30,8 +30,8 @@ __attribute__((visibility("hidden")))
 + (id)_descriptionHeadingFontForStyle:(unsigned long long)arg1;
 + (id)_metricsForStyle:(unsigned long long)arg1;
 + (double)minimumHeightForStyle:(unsigned long long)arg1;
-@property(nonatomic) _Bool showAttributionText; // @synthesize showAttributionText=_showAttributionText;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool showAttributionText; // @synthesize showAttributionText=_showAttributionText;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 - (void)_setupUI;
 - (void)_updateFont;

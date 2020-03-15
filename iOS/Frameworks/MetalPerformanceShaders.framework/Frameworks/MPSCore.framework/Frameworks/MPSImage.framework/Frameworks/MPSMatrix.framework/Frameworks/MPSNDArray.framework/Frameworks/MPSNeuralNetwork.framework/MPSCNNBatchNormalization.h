@@ -11,10 +11,10 @@
 
 @interface MPSCNNBatchNormalization : MPSCNNKernel
 {
-    // Error parsing type: ^{MPSAutoBuffer={atomic<void *>=A^v}Q@@{?=QQ}}, name: _gamma
-    // Error parsing type: ^{MPSAutoBuffer={atomic<void *>=A^v}Q@@{?=QQ}}, name: _beta
-    // Error parsing type: ^{MPSAutoBuffer={atomic<void *>=A^v}Q@@{?=QQ}}, name: _meanDS
-    // Error parsing type: ^{MPSAutoBuffer={atomic<void *>=A^v}Q@@{?=QQ}}, name: _varDS
+    // Error parsing type: ^{MPSAutoBuffer={atomic<void *>={__cxx_atomic_impl<void *, std::__1::__cxx_atomic_base_impl<void *> >=A^v}}Q@@{?=QQ}}, name: _gamma
+    // Error parsing type: ^{MPSAutoBuffer={atomic<void *>={__cxx_atomic_impl<void *, std::__1::__cxx_atomic_base_impl<void *> >=A^v}}Q@@{?=QQ}}, name: _beta
+    // Error parsing type: ^{MPSAutoBuffer={atomic<void *>={__cxx_atomic_impl<void *, std::__1::__cxx_atomic_base_impl<void *> >=A^v}}Q@@{?=QQ}}, name: _meanDS
+    // Error parsing type: ^{MPSAutoBuffer={atomic<void *>={__cxx_atomic_impl<void *, std::__1::__cxx_atomic_base_impl<void *> >=A^v}}Q@@{?=QQ}}, name: _varDS
     id <MPSCNNBatchNormalizationDataSource> _dataSource;
     _Bool _stateNeedsToLoad;
     MPSNNNeuronDescriptor *_fusedNeuronDescriptor;
@@ -41,12 +41,12 @@
 - (id)temporaryResultStateForCommandBuffer:(id)arg1 sourceImage:(id)arg2 sourceStates:(id)arg3 destinationImage:(id)arg4;
 - (id)resultStateForSourceImage:(id)arg1 sourceStates:(id)arg2 destinationImage:(id)arg3;
 - (void)dealloc;
-- (struct NSArray *)encodeBatchToCommandBuffer:(id)arg1 sourceImages:(struct NSArray *)arg2 batchNormalizationState:(id)arg3;
+- (id)encodeBatchToCommandBuffer:(id)arg1 sourceImages:(id)arg2 batchNormalizationState:(id)arg3;
 - (id)encodeToCommandBuffer:(id)arg1 sourceImage:(id)arg2 batchNormalizationState:(id)arg3;
-- (void)encodeBatchToCommandBuffer:(id)arg1 sourceImages:(struct NSArray *)arg2 batchNormalizationState:(id)arg3 destinationImages:(struct NSArray *)arg4;
+- (void)encodeBatchToCommandBuffer:(id)arg1 sourceImages:(id)arg2 batchNormalizationState:(id)arg3 destinationImages:(id)arg4;
 - (void)encodeToCommandBuffer:(id)arg1 sourceImage:(id)arg2 batchNormalizationState:(id)arg3 destinationImage:(id)arg4;
-- (struct NSArray *)encodeBatchToCommandBuffer:(id)arg1 sourceImages:(struct NSArray *)arg2 destinationStates:(struct NSArray **)arg3 destinationStateIsTemporary:(_Bool)arg4;
-- (void)encodeBatchToCommandBuffer:(id)arg1 sourceImages:(struct NSArray *)arg2 destinationStates:(struct NSArray *)arg3 destinationImages:(struct NSArray *)arg4;
+- (id)encodeBatchToCommandBuffer:(id)arg1 sourceImages:(id)arg2 destinationStates:(id *)arg3 destinationStateIsTemporary:(_Bool)arg4;
+- (void)encodeBatchToCommandBuffer:(id)arg1 sourceImages:(id)arg2 destinationStates:(id)arg3 destinationImages:(id)arg4;
 - (id)encodeToCommandBuffer:(id)arg1 sourceImage:(id)arg2 destinationState:(id *)arg3 destinationStateIsTemporary:(_Bool)arg4;
 - (void)encodeToCommandBuffer:(id)arg1 sourceImage:(id)arg2 destinationState:(id)arg3 destinationImage:(id)arg4;
 - (id)initWithDevice:(id)arg1 dataSource:(id)arg2;

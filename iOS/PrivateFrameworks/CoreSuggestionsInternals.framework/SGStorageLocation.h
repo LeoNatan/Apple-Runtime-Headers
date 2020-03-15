@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *handle; // @synthesize handle=_handle;
 @property(readonly, nonatomic) double quality; // @synthesize quality=_quality;
 @property(readonly, nonatomic) double accuracy; // @synthesize accuracy=_accuracy;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) NSString *address; // @synthesize address=_address;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) int locationType; // @synthesize locationType=_locationType;
-- (void).cxx_destruct;
 - (id)geocodedLocationWithLatitude:(double)arg1 longitude:(double)arg2 accuracy:(double)arg3 handle:(id)arg4;
 - (id)geocodedLocationWithLabel:(id)arg1 address:(id)arg2 latitude:(double)arg3 longitude:(double)arg4 accuracy:(double)arg5 handle:(id)arg6;
 - (id)geocodeHandle;

@@ -19,13 +19,15 @@
 + (unsigned long long)_cgEventFlagsFromDownKeys:(id)arg1;
 + (unsigned long long)_cgEventFlagsForModifier:(unsigned long long)arg1;
 + (id)shared;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *_downKeys; // @synthesize _downKeys=__downKeys;
 @property(nonatomic) unsigned long long _cgEventFlags; // @synthesize _cgEventFlags=__cgEventFlags;
 @property(nonatomic) unsigned int _eventTapLocation; // @synthesize _eventTapLocation=__eventTapLocation;
-- (void).cxx_destruct;
 - (struct __CGEventSource *)_eventSource;
 - (BOOL)isKeySynthesizedDown:(unsigned long long)arg1;
+- (void)synthesizeKeyUp:(unsigned long long)arg1 markupHandler:(CDUnknownBlockType)arg2;
 - (void)synthesizeKeyUp:(unsigned long long)arg1;
+- (void)synthesizeKeyDown:(unsigned long long)arg1 markupHandler:(CDUnknownBlockType)arg2;
 - (void)synthesizeKeyDown:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)_initWithEventTapLocation:(unsigned int)arg1;

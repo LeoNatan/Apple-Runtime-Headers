@@ -26,6 +26,7 @@
     _Bool _shouldReplaceRootViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldReplaceRootViewController; // @synthesize shouldReplaceRootViewController=_shouldReplaceRootViewController;
 @property(nonatomic) _Bool shouldExcludeFromNavigationHistory; // @synthesize shouldExcludeFromNavigationHistory=_shouldExcludeFromNavigationHistory;
 @property(nonatomic) _Bool shouldDisplayInOverlay; // @synthesize shouldDisplayInOverlay=_shouldDisplayInOverlay;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSArray *expectedClientIdentifiers; // @synthesize expectedClientIdentifiers=_expectedClientIdentifiers;
 @property(retain, nonatomic) NSString *copyright; // @synthesize copyright=_copyright;
 @property(retain, nonatomic) NSArray *allowedOrientations; // @synthesize allowedOrientations=_allowedOrientations;
-- (void).cxx_destruct;
 - (id)_newNavigationMenusFromArray:(id)arg1;
 - (id)_newNavigationHistoryItemsFromArray:(id)arg1;
 - (id)_newNavigationButtonsFromArray:(id)arg1;

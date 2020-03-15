@@ -19,8 +19,8 @@
 + (id)scratchpadBySettingModifiedContact:(id)arg1 onExistingEditInScratchpad:(id)arg2;
 + (id)scratchpadByAddingUneditedContact:(id)arg1 toScratchpad:(id)arg2;
 + (id)emptyScratchpad;
-@property(readonly, nonatomic) NSSet *edits; // @synthesize edits=_edits;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *edits; // @synthesize edits=_edits;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

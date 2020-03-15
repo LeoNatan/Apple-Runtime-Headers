@@ -13,8 +13,8 @@
     RTDefaultsManager *_defaultsManager;
 }
 
-@property(retain, nonatomic) RTDefaultsManager *defaultsManager; // @synthesize defaultsManager=_defaultsManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) RTDefaultsManager *defaultsManager; // @synthesize defaultsManager=_defaultsManager;
 - (_Bool)_deviceSeed:(id)arg1 belongsToGroupId:(id)arg2 seedId:(id)arg3 modValue:(id)arg4 low:(id)arg5 high:(id)arg6;
 - (id)_objectForKey:(id)arg1 expectedClass:(Class)arg2 inDictionary:(id)arg3;
 - (_Bool)processAssetsAtPath:(id)arg1 intoPath:(id)arg2 outError:(id *)arg3;

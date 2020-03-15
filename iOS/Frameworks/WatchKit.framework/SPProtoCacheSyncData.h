@@ -17,10 +17,10 @@
     SPProtoCacheAssets *_transientCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SPProtoCacheAssets *transientCache; // @synthesize transientCache=_transientCache;
 @property(retain, nonatomic) SPProtoCacheAssets *permanentCache; // @synthesize permanentCache=_permanentCache;
 @property(retain, nonatomic) NSString *cacheIdentifier; // @synthesize cacheIdentifier=_cacheIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

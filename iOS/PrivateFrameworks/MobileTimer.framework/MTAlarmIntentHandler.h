@@ -14,8 +14,8 @@
 }
 
 + (id)createUserInfoWithIntentName:(id)arg1 alarmIDString:(id)arg2 time:(id)arg3 label:(id)arg4;
-@property(readonly, nonatomic) MTAlarmManager *alarmManager; // @synthesize alarmManager=_alarmManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MTAlarmManager *alarmManager; // @synthesize alarmManager=_alarmManager;
 - (id)initWithAlarmManager:(id)arg1;
 
 @end

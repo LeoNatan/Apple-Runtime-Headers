@@ -13,8 +13,8 @@
     HMDBackingStoreCacheShareGroup *_record;
 }
 
-@property(retain, nonatomic) HMDBackingStoreCacheShareGroup *record; // @synthesize record=_record;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HMDBackingStoreCacheShareGroup *record; // @synthesize record=_record;
 - (id)mainReturningError;
 - (id)initWithShareGroup:(id)arg1 resultBlock:(CDUnknownBlockType)arg2;
 

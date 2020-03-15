@@ -16,10 +16,10 @@
 }
 
 + (id)defaults;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *homeScreenDefaultsStoreWrapper; // @synthesize homeScreenDefaultsStoreWrapper=_homeScreenDefaultsStoreWrapper;
 @property(readonly, nonatomic) NSMutableDictionary *lockScreenDefaultsStoreWrapper; // @synthesize lockScreenDefaultsStoreWrapper=_lockScreenDefaultsStoreWrapper;
 @property(readonly, nonatomic) SBWallpaperDefaults *defaultsStore; // @synthesize defaultsStore=_defaultsStore;
-- (void).cxx_destruct;
 - (_Bool)proceduralUserSetForVariant:(long long)arg1;
 - (void)setProceduralUserSet:(_Bool)arg1 forLocations:(long long)arg2;
 - (id)proceduralOptionsForVariant:(long long)arg1;

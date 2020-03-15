@@ -7,6 +7,7 @@
 #import <Accounts/ACAccount.h>
 
 @interface ACAccount (AppleAccountUI)
+- (_Bool)aaui_isRemotelyManaged;
 - (_Bool)aaui_isRestrictedForDataclass:(id)arg1;
 - (long long)aaui_compositeNameFormat;
 - (id)aaui_compositeName;

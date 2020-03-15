@@ -13,11 +13,12 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _placeholderImageBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType placeholderImageBlock; // @synthesize placeholderImageBlock=_placeholderImageBlock;
 @property(nonatomic) long long placeholderAssetType; // @synthesize placeholderAssetType=_placeholderAssetType;
-- (void).cxx_destruct;
 - (void)_updatePlaceholderImageIfNeeded;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)didMoveToWindow;
 - (_Bool)canBecomeFocused;
 
 @end

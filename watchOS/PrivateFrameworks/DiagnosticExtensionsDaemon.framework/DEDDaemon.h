@@ -24,6 +24,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) DEDController *controller; // @synthesize controller=_controller;
 @property(retain) DEDDiagnosticCollector *_diagnosticCollector; // @synthesize _diagnosticCollector=__diagnosticCollector;
 @property(retain) NSObject<OS_dispatch_queue> *diskAccessQueue; // @synthesize diskAccessQueue=_diskAccessQueue;
@@ -32,7 +33,6 @@
 @property(retain) NSOperationQueue *backgroundOpQueue; // @synthesize backgroundOpQueue=_backgroundOpQueue;
 @property(retain) DEDConfiguration *config; // @synthesize config=_config;
 @property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
-- (void).cxx_destruct;
 - (id)_blockOnFakeSysidagnoseWithIdentifer:(id)arg1 withBugSession:(id)arg2;
 - (void)_logOperations;
 - (void)_streamOperationStatus;

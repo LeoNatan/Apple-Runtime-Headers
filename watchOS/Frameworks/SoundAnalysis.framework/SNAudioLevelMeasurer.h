@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     float _inputSensitivity;
 }
 
-@property(readonly, nonatomic) float inputSensitivity; // @synthesize inputSensitivity=_inputSensitivity;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) float inputSensitivity; // @synthesize inputSensitivity=_inputSensitivity;
 - (id)sharedProcessorConfiguration;
 @property(readonly, nonatomic) struct Box *resultsBox;
 - (_Bool)adaptToSystemConfiguration:(id)arg1 error:(id *)arg2;

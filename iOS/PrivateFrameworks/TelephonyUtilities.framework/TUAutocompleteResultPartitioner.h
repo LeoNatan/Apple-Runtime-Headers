@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)sourceTypeIsFoundOnServers:(unsigned long long)arg1;
 + (_Bool)sourceTypeIsFoundInMail:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *foundOnServersResultsArray; // @synthesize foundOnServersResultsArray=_foundOnServersResultsArray;
 @property(retain, nonatomic) NSMutableArray *foundInMailResultsArray; // @synthesize foundInMailResultsArray=_foundInMailResultsArray;
 @property(retain, nonatomic) NSMutableArray *normalResultsArray; // @synthesize normalResultsArray=_normalResultsArray;
 @property __weak TUSearchController *searchController; // @synthesize searchController=_searchController;
-- (void).cxx_destruct;
 - (void)addResult:(id)arg1;
 - (id)init;
 - (id)searchResults;

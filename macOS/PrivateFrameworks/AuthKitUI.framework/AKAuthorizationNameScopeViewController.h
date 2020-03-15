@@ -29,6 +29,7 @@
     NSString *_internalValueString;
 }
 
+- (void).cxx_destruct;
 @property BOOL internalIsEditingName; // @synthesize internalIsEditingName=_internalIsEditingName;
 @property(copy) NSString *internalValueString; // @synthesize internalValueString=_internalValueString;
 @property(copy) NSString *internalScopeString; // @synthesize internalScopeString=_internalScopeString;
@@ -42,7 +43,6 @@
 @property BOOL hasClearButton; // @synthesize hasClearButton=_hasClearButton;
 @property unsigned long long fieldType; // @synthesize fieldType=_fieldType;
 @property __weak id <AKAuthorizationNameScopeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_delegate_didEndEditingFieldAtIndex:(unsigned long long)arg1;
 - (void)_delegate_didChangeEditableFieldAtIndex:(unsigned long long)arg1;
 - (void)_delegate_didSelectEditClear:(BOOL)arg1;

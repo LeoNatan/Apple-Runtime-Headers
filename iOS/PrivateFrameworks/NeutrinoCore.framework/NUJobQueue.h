@@ -18,8 +18,8 @@
     long long _stage;
 }
 
-@property(readonly) long long stage; // @synthesize stage=_stage;
 - (void).cxx_destruct;
+@property(readonly) long long stage; // @synthesize stage=_stage;
 - (void)_finishedPriorityQueue:(id)arg1;
 - (void)finishedPriorityQueue:(id)arg1;
 - (void)_startRunningIfNeeded;

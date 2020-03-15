@@ -16,10 +16,10 @@
     TIMecabraEnvironment *_mecabraEnvironment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPrediction) _Bool prediction; // @synthesize prediction=_prediction;
 @property(nonatomic, getter=isPartialCandidate) _Bool partialCandidate; // @synthesize partialCandidate=_partialCandidate;
 @property(retain, nonatomic) TIMecabraEnvironment *mecabraEnvironment; // @synthesize mecabraEnvironment=_mecabraEnvironment;
-- (void).cxx_destruct;
 - (void)perform;
 - (void)cancel;
 - (void)dealloc;

@@ -15,9 +15,9 @@
     NSSet *_sessionsToRecover;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *sessionsToRecover; // @synthesize sessionsToRecover=_sessionsToRecover;
 @property(nonatomic) __weak id <CSLSessionXPCServerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_lock_endRecoveredSession:(id)arg1;
 - (void)_lock_cancelRecoveredSession:(id)arg1;
 - (void)_lock_rescheduleRecoveredSession:(id)arg1;

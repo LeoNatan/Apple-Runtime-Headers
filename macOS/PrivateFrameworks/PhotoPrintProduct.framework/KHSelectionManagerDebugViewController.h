@@ -16,8 +16,8 @@
     KHSelectionManager *_selectionManager;
 }
 
-@property(readonly) KHSelectionManager *selectionManager; // @synthesize selectionManager=_selectionManager;
 - (void).cxx_destruct;
+@property(readonly) KHSelectionManager *selectionManager; // @synthesize selectionManager=_selectionManager;
 - (void)selectionManager:(id)arg1 didRemoveSelections:(id)arg2;
 - (void)selectionManager:(id)arg1 didModifySelections:(id)arg2;
 - (void)selectionManager:(id)arg1 didTouchSelections:(id)arg2;

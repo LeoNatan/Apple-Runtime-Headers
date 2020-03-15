@@ -40,8 +40,8 @@
 - (_Bool)endUsingWithError:(id *)arg1;
 - (void)endUsing:(void (^)(NSError *))arg1;
 - (_Bool)useBundle:(NSString *)arg1 error:(id *)arg2;
-- (_Bool)beginUsingWithSubsystemOptions:(struct NSDictionary *)arg1 error:(id *)arg2;
-- (void)beginUsingWithSubsystemOptions:(struct NSDictionary *)arg1 completion:(void (^)(NSError *))arg2;
+- (_Bool)beginUsingWithSubsystemOptions:(NSDictionary *)arg1 error:(id *)arg2;
+- (void)beginUsingWithSubsystemOptions:(NSDictionary *)arg1 completion:(void (^)(NSError *))arg2;
 - (_Bool)beginUsingWithError:(id *)arg1;
 - (void)beginUsing:(void (^)(NSError *))arg1;
 @end

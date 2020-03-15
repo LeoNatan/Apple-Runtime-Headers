@@ -29,6 +29,7 @@
 
 + (id)classesForKey;
 + (id)serializedProperties;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;
 @property(retain, nonatomic) NSArray *alarms; // @synthesize alarms=_alarms;
 @property(retain, nonatomic) NSArray *attendees; // @synthesize attendees=_attendees;
@@ -44,7 +45,6 @@
 @property(copy, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(copy, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(copy, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)createEventInEventStore:(id)arg1;
 - (void)_initRecurrenceRules:(id)arg1;
 - (void)_initAttachments:(id)arg1;

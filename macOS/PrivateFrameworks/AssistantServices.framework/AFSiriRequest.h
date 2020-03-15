@@ -18,9 +18,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setRefId:) NSString *_refId; // @synthesize _refId=__refId;
 @property(copy, nonatomic, setter=_setOriginatingAceID:) NSString *_originatingAceID; // @synthesize _originatingAceID;
-- (void).cxx_destruct;
 - (BOOL)_makeAppFrontmost;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

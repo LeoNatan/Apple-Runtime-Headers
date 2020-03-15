@@ -23,6 +23,7 @@
     NSString *_modelDisplayName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *modelDisplayName; // @synthesize modelDisplayName=_modelDisplayName;
 @property(readonly, nonatomic) NSString *modelLargePhotoURL1x; // @synthesize modelLargePhotoURL1x=_modelLargePhotoURL1x;
 @property(readonly, nonatomic) NSString *modelLargePhotoURL2x; // @synthesize modelLargePhotoURL2x=_modelLargePhotoURL2x;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) NSString *osVersion; // @synthesize osVersion=_osVersion;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *model; // @synthesize model=_model;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 
 @end

@@ -12,6 +12,7 @@
     // Error parsing type: , name: action
     // Error parsing type: , name: alternateAction
     // Error parsing type: , name: enabled
+    // Error parsing type: , name: accessibilityDescription
 }
 
 @end

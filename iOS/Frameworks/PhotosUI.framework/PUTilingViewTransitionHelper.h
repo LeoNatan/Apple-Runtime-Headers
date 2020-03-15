@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 + (void)unregisterTransitionEndPoint:(id)arg1 forViewController:(id)arg2;
 + (void)registerTransitionEndPoint:(id)arg1 forViewController:(id)arg2;
 + (id)transitionEndPointWithViewController:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *transitionPausingCall; // @synthesize transitionPausingCall=_transitionPausingCall;
 @property(nonatomic, setter=_setInteractionOptions:) unsigned long long _interactionOptions; // @synthesize _interactionOptions=__interactionOptions;
 @property(nonatomic, setter=_setEndPointOwningTilingView:) __weak id <PUTilingViewControllerTransitionEndPoint> _endPointOwningTilingView; // @synthesize _endPointOwningTilingView=__endPointOwningTilingView;
@@ -58,7 +59,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak PUViewControllerTransition<PUTilingViewControllerTransition><PUInterruptibleViewControllerTransition> *transition; // @synthesize transition=_transition;
 @property(readonly, nonatomic) double dismissalDuration; // @synthesize dismissalDuration=_dismissalDuration;
 @property(readonly, nonatomic) double presentationDuration; // @synthesize presentationDuration=_presentationDuration;
-- (void).cxx_destruct;
 - (void)_transferView:(id)arg1 toSuperview:(id)arg2;
 - (long long)_barStyleForEndPoint:(id)arg1;
 - (_Bool)_endPointUsesTransientTilingView:(id)arg1;

@@ -22,6 +22,7 @@
 +     // Error parsing type: 24@0:816, name: skewForRollPitch:
 +     // Error parsing type: {?=[4]}24@0:816, name: rotationMatrixForRollPitch:
 +     // Error parsing type: 16@0:8, name: staticRollPitch
+- (void).cxx_destruct;
 // Error parsing type for property currentRollPitch:
 // Property attributes: T,N,V_currentRollPitch
 
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) SCNNode *textContainerNode; // @synthesize textContainerNode=_textContainerNode;
 @property(retain, nonatomic) SCNNode *cameraNode; // @synthesize cameraNode=_cameraNode;
 @property(retain, nonatomic) SCNNode *lightNode; // @synthesize lightNode=_lightNode;
-- (void).cxx_destruct;
 - (void)resetScene;
 - (id)init;
 

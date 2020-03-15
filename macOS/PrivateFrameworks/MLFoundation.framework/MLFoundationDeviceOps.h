@@ -12,9 +12,9 @@
     id _secondarySource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id secondarySource; // @synthesize secondarySource=_secondarySource;
 @property(retain, nonatomic) id source; // @synthesize source=_source;
-- (void).cxx_destruct;
 
 @end
 

@@ -19,10 +19,10 @@
     CDUnknownBlockType _sessionCompletion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType sessionCompletion; // @synthesize sessionCompletion=_sessionCompletion;
 @property(readonly, copy, nonatomic) NSUUID *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (id)sessionDescriptor;
 - (void)endPromptTransactionWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)beginPromptTransactionWithCompletion:(CDUnknownBlockType)arg1;

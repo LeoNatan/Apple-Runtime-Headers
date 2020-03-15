@@ -13,8 +13,8 @@
     id <EKLayoutContainerViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <EKLayoutContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <EKLayoutContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)layoutSubviews;
 
 @end

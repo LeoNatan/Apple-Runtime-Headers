@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UILabel *_messageLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)setupConstraints;
 - (void)setupSubviews;
 - (id)init;

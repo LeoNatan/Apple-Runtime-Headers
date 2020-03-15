@@ -17,9 +17,9 @@
     NSString *_path;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
 @property(retain, nonatomic) NSString *startState; // @synthesize startState=_startState;
-- (void).cxx_destruct;
 - (void)setDataFor:(id)arg1 to:(id)arg2;
 - (id)dataFor:(id)arg1;
 - (id)edgesFromState:(id)arg1;

@@ -17,12 +17,12 @@
     NSDate *_timeStamp;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *timeStamp; // @synthesize timeStamp=_timeStamp;
 @property(readonly, copy, nonatomic) NSString *handle; // @synthesize handle=_handle;
 @property(readonly, copy, nonatomic) NSString *guid; // @synthesize guid=_guid;
 @property(readonly, copy, nonatomic) NSString *displayCode; // @synthesize displayCode=_displayCode;
 @property(readonly, copy, nonatomic) NSString *code; // @synthesize code=_code;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

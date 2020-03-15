@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UILabel *_subtitleLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *subtitleString;
 @property(retain, nonatomic) NSString *titleString;
 - (id)initWithFrame:(struct CGRect)arg1;

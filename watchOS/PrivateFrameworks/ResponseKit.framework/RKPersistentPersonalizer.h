@@ -23,6 +23,7 @@
 
 + (void)removeAllDynamicModelsInDirectory:(id)arg1;
 + (id)nonEmptyStringsPredicate;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *synonyms; // @synthesize synonyms=_synonyms;
 @property(retain) NSDate *lastDynamicDataCreationCheckDate; // @synthesize lastDynamicDataCreationCheckDate=_lastDynamicDataCreationCheckDate;
 @property(retain) NSDate *lastObservedDynamicDataCreationDate; // @synthesize lastObservedDynamicDataCreationDate=_lastObservedDynamicDataCreationDate;
@@ -30,7 +31,6 @@
 @property(retain) NSLocale *languageLocale; // @synthesize languageLocale=_languageLocale;
 @property(retain) NSString *languageID; // @synthesize languageID=_languageID;
 @property(retain) NSURL *dynamicDataURL; // @synthesize dynamicDataURL=_dynamicDataURL;
-- (void).cxx_destruct;
 - (void)flushDynamicData;
 - (id)headwordsForSynonymPrefix:(id)arg1;
 - (id)headwordsForSynonym:(id)arg1;

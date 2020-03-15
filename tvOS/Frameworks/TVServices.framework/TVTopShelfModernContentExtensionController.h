@@ -8,12 +8,13 @@
 
 #import <TVServices/TVTopShelfContentExtensionControlling-Protocol.h>
 
-@class NSExtension, NSString, NSXPCConnection;
+@class NSExtension, NSMutableArray, NSString, NSXPCConnection;
 @protocol OS_dispatch_queue, TVTopShelfContentExtensionControllingDelegate;
 
 @interface TVTopShelfModernContentExtensionController : NSObject <TVTopShelfContentExtensionControlling>
 {
     _Bool _invalidated;
+    _Bool _settingUpConnection;
     int _topShelfItemsDidChangeNotifyToken;
     id <TVTopShelfContentExtensionControllingDelegate> _delegate;
     NSString *_containingBundleIdentifier;
@@ -21,24 +22,29 @@
     NSExtension *_extension;
     NSObject<OS_dispatch_queue> *_serialDispatchQueue;
     NSXPCConnection *_connection;
+    NSMutableArray *_pendingRequestBlocks;
 }
 
 + (_Bool)_connectionHasPrivateEntitlement:(id)arg1;
 + (_Bool)pluginHasTopShelfExtension:(id)arg1;
-@property(nonatomic) int topShelfItemsDidChangeNotifyToken; // @synthesize topShelfItemsDidChangeNotifyToken=_topShelfItemsDidChangeNotifyToken;
+- (void).cxx_destruct;
+@property(nonatomic) _Bool settingUpConnection; // @synthesize settingUpConnection=_settingUpConnection;
+@property(retain, nonatomic) NSMutableArray *pendingRequestBlocks; // @synthesize pendingRequestBlocks=_pendingRequestBlocks;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
+@property(nonatomic) int topShelfItemsDidChangeNotifyToken; // @synthesize topShelfItemsDidChangeNotifyToken=_topShelfItemsDidChangeNotifyToken;
 @property(nonatomic, getter=isInvalidated) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialDispatchQueue; // @synthesize serialDispatchQueue=_serialDispatchQueue;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property(readonly, copy, nonatomic) NSString *extensionPointIdentifier; // @synthesize extensionPointIdentifier=_extensionPointIdentifier;
 @property(readonly, copy, nonatomic) NSString *containingBundleIdentifier; // @synthesize containingBundleIdentifier=_containingBundleIdentifier;
 @property(nonatomic) __weak id <TVTopShelfContentExtensionControllingDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_invalidate;
 - (void)_resetConnection;
 - (void)_completeExtensionRequest;
 - (void)_stopObservingTopShelfContentDistributedNotifications;
 - (void)_startObservingTopShelfContentDistributedNotifications;
+- (void)_startExtensionRequestWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_setupConnection;
 - (void)_performWithExtensionConnectionHelper:(CDUnknownBlockType)arg1;
 - (void)_performWithExtensionConnection:(CDUnknownBlockType)arg1;
 - (void)_handleRequestInterrupted;

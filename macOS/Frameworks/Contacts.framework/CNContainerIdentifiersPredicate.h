@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSArray *_identifiers;
 }
 
-@property(readonly, copy, nonatomic) NSArray *identifiers; // @synthesize identifiers=_identifiers;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *identifiers; // @synthesize identifiers=_identifiers;
 - (id)cn_persistenceFilterRequest;
 - (id)cn_coreDataPredicate;
 - (id)cn_topLevelFilter;

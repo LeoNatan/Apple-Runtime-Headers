@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     SCRCUserDefaults *__userDefaults;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
 @property(nonatomic, setter=_setIOConnection:) unsigned int _ioConnection; // @synthesize _ioConnection=__ioConnection;
 @property(copy, nonatomic, setter=_setDevices:) NSArray *_devices; // @synthesize _devices=__devices;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setEchoLockKeysEnabled:) BOOL _isEchoLockKeysEnabled; // @synthesize _isEchoLockKeysEnabled=__isEchoLockKeysEnabled;
 @property(nonatomic, setter=_setCapsLockKeyPressed:) BOOL isCapsLockKeyPressed; // @synthesize isCapsLockKeyPressed=_isCapsLockKeyPressed;
 @property(nonatomic, setter=setVOModifierPreference:) long long voModifierPreference; // @synthesize voModifierPreference=_voModifierPreference;
-- (void).cxx_destruct;
 - (unsigned int)_openIOConnection;
 - (id)newScancodeMatchingDictionaryWithScancode:(unsigned long long)arg1;
 - (id)_createDeviceMatchingDictionaryWithUsagePage:(unsigned long long)arg1 usage:(unsigned long long)arg2;

@@ -33,6 +33,7 @@
 }
 
 + (_Bool)useWallpaperPickerCell;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numberOfWallpapersFittingInWidth; // @synthesize numberOfWallpapersFittingInWidth=_numberOfWallpapersFittingInWidth;
 @property(retain, nonatomic) NSIndexPath *selectedIndexPath; // @synthesize selectedIndexPath=_selectedIndexPath;
 @property(retain, nonatomic) UIDropInteraction *dropInteraction; // @synthesize dropInteraction=_dropInteraction;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic) double preferedHeight; // @synthesize preferedHeight=_preferedHeight;
 @property(retain, nonatomic) NSArray *namedWallpapers; // @synthesize namedWallpapers=_namedWallpapers;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
-- (void).cxx_destruct;
 - (void)updateScrolling;
 - (id)wallpaperForIndexPath:(id)arg1;
 @property(readonly) HFWallpaper *selectedWallpaper;

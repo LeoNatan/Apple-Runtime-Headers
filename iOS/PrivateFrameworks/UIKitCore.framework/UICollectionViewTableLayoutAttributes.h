@@ -43,6 +43,7 @@
 
 + (long long)automaticValueOptionsForRepresentedElementCategory:(unsigned long long)arg1;
 + (void)applyValuesFromAttributes:(id)arg1 toAttributes:(id)arg2 valueOptions:(long long)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool floating; // @synthesize floating=_floating;
 @property(nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(nonatomic) struct UIEdgeInsets margins; // @synthesize margins=_margins;
@@ -69,7 +70,6 @@
 @property(nonatomic) _Bool separatorInsetIsRelativeToCellEdges; // @synthesize separatorInsetIsRelativeToCellEdges=_separatorInsetIsRelativeToCellEdges;
 @property(nonatomic) struct UIEdgeInsets separatorInset; // @synthesize separatorInset=_separatorInset;
 @property(nonatomic) long long separatorStyle; // @synthesize separatorStyle=_separatorStyle;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

@@ -16,9 +16,9 @@
     NSString *_subTestName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *subTestName; // @synthesize subTestName=_subTestName;
 @property(readonly, nonatomic) NSString *testName; // @synthesize testName=_testName;
-- (void).cxx_destruct;
 - (id)description;
 - (void)didComplete;
 - (void)willCommit;

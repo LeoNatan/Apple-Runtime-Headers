@@ -96,6 +96,7 @@
     iCloudTouchBarController *_touchBarController;
 }
 
+- (void).cxx_destruct;
 @property(retain) iCloudTouchBarController *touchBarController; // @synthesize touchBarController=_touchBarController;
 @property(retain, nonatomic) CDPStateUIController *cdpStateUIController; // @synthesize cdpStateUIController=_cdpStateUIController;
 @property(retain) NSImage *displayImage; // @synthesize displayImage=_displayImage;
@@ -125,7 +126,6 @@
 @property(copy) NSString *parentURL; // @synthesize parentURL=_parentURL;
 @property(copy) NSString *url; // @synthesize url=_url;
 @property(copy) NSString *viewName; // @synthesize viewName=_viewName;
-- (void).cxx_destruct;
 - (void)button3Pressed:(id)arg1;
 - (void)button2Pressed:(id)arg1;
 - (void)button1Pressed:(id)arg1;

@@ -16,8 +16,8 @@
     NSString *_configuration;
 }
 
-@property(readonly, copy, nonatomic) NSString *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) NSString *executableScript;
 @property(readonly, nonatomic) WKUserScript *userScript; // @synthesize userScript;
 @property(readonly, nonatomic) BOOL queueable;

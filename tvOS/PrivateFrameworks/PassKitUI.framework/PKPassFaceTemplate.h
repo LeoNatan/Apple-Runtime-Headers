@@ -16,11 +16,11 @@
     struct CGSize _barcodeMaxSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *bucketTemplates; // @synthesize bucketTemplates=_bucketTemplates;
 @property(retain, nonatomic) PKPassFieldTemplate *defaultFieldTemplate; // @synthesize defaultFieldTemplate=_defaultFieldTemplate;
 @property(nonatomic) struct CGSize barcodeMaxSize; // @synthesize barcodeMaxSize=_barcodeMaxSize;
 @property(nonatomic) double barcodeBottomInset; // @synthesize barcodeBottomInset=_barcodeBottomInset;
-- (void).cxx_destruct;
 - (id)templateForBucketAtIndex:(unsigned long long)arg1;
 - (void)addBucketTemplate:(id)arg1;
 

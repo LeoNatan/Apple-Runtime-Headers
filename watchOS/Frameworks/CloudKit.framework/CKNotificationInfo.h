@@ -35,6 +35,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)notificationInfo;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *collapseIDKey; // @synthesize collapseIDKey=_collapseIDKey;
 @property(copy, nonatomic) NSString *category; // @synthesize category=_category;
 @property(nonatomic) _Bool shouldSendMutableContent; // @synthesize shouldSendMutableContent=_shouldSendMutableContent;
@@ -53,7 +54,6 @@
 @property(copy, nonatomic) NSArray *alertLocalizationArgs; // @synthesize alertLocalizationArgs=_alertLocalizationArgs;
 @property(copy, nonatomic) NSString *alertLocalizationKey; // @synthesize alertLocalizationKey=_alertLocalizationKey;
 @property(copy, nonatomic) NSString *alertBody; // @synthesize alertBody=_alertBody;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

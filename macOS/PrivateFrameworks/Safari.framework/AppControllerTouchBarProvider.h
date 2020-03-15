@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     NSButton *_newPrivateBrowsingWindowButton;
 }
 
-@property(nonatomic) __weak id <AppControllerTouchBarProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AppControllerTouchBarProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_openNewPrivateBrowsingWindow:(id)arg1;
 - (void)_openNewWindow:(id)arg1;
 @property(readonly, nonatomic) NSButton *newPrivateBrowsingWindowButton; // @synthesize newPrivateBrowsingWindowButton=_newPrivateBrowsingWindowButton;

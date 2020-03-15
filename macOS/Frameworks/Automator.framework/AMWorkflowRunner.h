@@ -46,6 +46,7 @@
 
 + (id)progressForWorkflow:(id)arg1;
 + (id)_operationKeysToObserve;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *actionOperationObservedList; // @synthesize actionOperationObservedList=_actionOperationObservedList;
 @property(retain) AMFFeedController *feedController; // @synthesize feedController=_feedController;
 @property(retain) NSMapTable *childProgressesByAction; // @synthesize childProgressesByAction=_childProgressesByAction;
@@ -73,7 +74,6 @@
 @property(retain, nonatomic) AMWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(retain) NSString *workflowID; // @synthesize workflowID=_workflowID;
 @property(retain) NSString *currentRunUUID; // @synthesize currentRunUUID=_currentRunUUID;
-- (void).cxx_destruct;
 - (void)clearWorkflowProgress;
 - (void)completeWorkflowProgress;
 - (void)completeProgressForAction:(id)arg1;

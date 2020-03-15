@@ -9,7 +9,7 @@
 #import <HomeKitDaemon/HMDBackingStoreObjectProtocol-Protocol.h>
 #import <HomeKitDaemon/NSSecureCoding-Protocol.h>
 
-@class HMDHome, MPPlaybackArchive, NSMutableSet, NSNumber, NSSet, NSString;
+@class HMDHome, MPPlaybackArchive, NSArray, NSMutableSet, NSNumber, NSSet, NSString;
 
 @interface HMDMediaPlaybackAction : HMDAction <NSSecureCoding, HMDBackingStoreObjectProtocol>
 {
@@ -26,6 +26,7 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)isPlaybackActionValidWithProfiles:(id)arg1 state:(int)arg2 volume:(id)arg3;
 + (id)actionWithDictionaryRepresentation:(id)arg1 home:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *profileUUIDs; // @synthesize profileUUIDs=_profileUUIDs;
 @property(nonatomic) __weak HMDHome *home; // @synthesize home=_home;
 @property(nonatomic) _Bool encodePlaybackArchiveForExecution; // @synthesize encodePlaybackArchiveForExecution=_encodePlaybackArchiveForExecution;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) MPPlaybackArchive *playbackArchive; // @synthesize playbackArchive=_playbackArchive;
 @property(retain, nonatomic) NSNumber *volume; // @synthesize volume=_volume;
 @property(copy, nonatomic) NSSet *mediaProfiles; // @synthesize mediaProfiles=_mediaProfiles;
-- (void).cxx_destruct;
 - (id)modelObjectWithUpdatedMediaProfiles:(id)arg1;
 - (id)modelObjectWithChangeType:(unsigned int)arg1 version:(int)arg2;
 - (Class)modelClass;
@@ -43,6 +43,8 @@
 - (void)_processPlaybackActionModelUpdated:(id)arg1 message:(id)arg2;
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
+@property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) NSArray *characteristicWriteRequests;
 - (id)validate;
 - (void)executeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)dictionaryRepresentation;
@@ -53,7 +55,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

@@ -24,6 +24,7 @@
     NNMKSQLiteConnection *_database;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NNMKSQLiteConnection *database; // @synthesize database=_database;
 @property(readonly, nonatomic) _Bool recreatedFromScratch; // @synthesize recreatedFromScratch=_recreatedFromScratch;
 @property(nonatomic) unsigned long long currentDatabaseSchemaVersion; // @synthesize currentDatabaseSchemaVersion=_currentDatabaseSchemaVersion;
@@ -36,7 +37,6 @@
 @property(nonatomic) NSNumber *supportsWebKit; // @synthesize supportsWebKit=_supportsWebKit;
 @property(nonatomic) unsigned long long fullSyncVersion; // @synthesize fullSyncVersion=_fullSyncVersion;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (_Bool)hasMailboxSyncedActive;
 - (void)_insureTransactionFor:(CDUnknownBlockType)arg1;
 - (id)_ungroupGroupedValue:(id)arg1;

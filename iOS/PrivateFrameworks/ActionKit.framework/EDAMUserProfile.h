@@ -23,6 +23,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *role; // @synthesize role=_role;
 @property(retain, nonatomic) NSString *photoUrl; // @synthesize photoUrl=_photoUrl;
 @property(retain, nonatomic) NSNumber *photoLastUpdated; // @synthesize photoLastUpdated=_photoLastUpdated;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSString *email; // @synthesize email=_email;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSNumber *id; // @synthesize id=_id;
-- (void).cxx_destruct;
 
 @end
 

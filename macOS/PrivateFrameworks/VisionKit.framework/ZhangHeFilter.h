@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (struct NSImage *)zhangHeFilter:(struct NSImage *)arg1;
++ (id)zhangHeFilter:(id)arg1;
 
 @end
 

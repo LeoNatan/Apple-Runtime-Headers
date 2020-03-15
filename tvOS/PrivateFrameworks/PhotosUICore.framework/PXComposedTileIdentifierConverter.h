@@ -15,8 +15,8 @@
     NSArray *_converters;
 }
 
-@property(readonly, copy, nonatomic) NSArray *converters; // @synthesize converters=_converters;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *converters; // @synthesize converters=_converters;
 - (_Bool)reverseTransformTileIdentifier:(struct PXTileIdentifier *)arg1;
 - (_Bool)transformTileIdentifier:(struct PXTileIdentifier *)arg1 group:(unsigned long long *)arg2;
 - (id)initWithTileIdentifierConverters:(id)arg1;

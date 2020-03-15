@@ -34,6 +34,7 @@
 }
 
 + (id)interestedChangeKeys;
+- (void).cxx_destruct;
 @property(retain) NSOperationQueue *availabilityRequestQueue; // @synthesize availabilityRequestQueue=_availabilityRequestQueue;
 @property(retain) NSString *currentEditingString; // @synthesize currentEditingString=_currentEditingString;
 @property BOOL ignoreNextEmptySuggestion; // @synthesize ignoreNextEmptySuggestion=_ignoreNextEmptySuggestion;
@@ -50,7 +51,6 @@
 @property(retain) NSView *editingView; // @synthesize editingView=_editingView;
 @property(retain) EKUITokenField *roomTokenField; // @synthesize roomTokenField=_roomTokenField;
 @property(retain) NSStackView *stackView; // @synthesize stackView=_stackView;
-- (void).cxx_destruct;
 - (void)_commitAttendeesPreservingTokenSelection;
 - (void)removeAttendee:(id)arg1;
 - (void)toggleOptional:(id)arg1;

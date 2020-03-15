@@ -21,6 +21,7 @@
     NSArray *_attachments;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isFromMe; // @synthesize isFromMe=_isFromMe;
 @property(retain, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;
 @property(retain, nonatomic) NSArray *consumedSessionPayloads; // @synthesize consumedSessionPayloads=_consumedSessionPayloads;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) id dataDetectedResult; // @synthesize dataDetectedResult=_dataDetectedResult;
 @property(copy, nonatomic) NSString *messageGUID; // @synthesize messageGUID=_messageGUID;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

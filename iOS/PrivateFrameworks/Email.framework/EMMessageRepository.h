@@ -30,12 +30,12 @@
 + (id)remoteInterface;
 + (id)signpostLog;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EMMailboxRepository *mailboxRepository; // @synthesize mailboxRepository=_mailboxRepository;
 @property(retain, nonatomic) NSCache *queryCountCache; // @synthesize queryCountCache=_queryCountCache;
 @property(readonly, nonatomic) EMBlockedSenderManager *blockedSenderManager; // @synthesize blockedSenderManager=_blockedSenderManager;
 @property(readonly, nonatomic) id <EMVIPManager> vipManager; // @synthesize vipManager=_vipManager;
 @property(retain) EMRemoteConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)_broadcastMessageListItemChangesToObservers:(CDUnknownBlockType)arg1;
 - (void)_vipsDidChange:(id)arg1;
 - (void)_blockedSendersDidChange:(id)arg1;
@@ -49,7 +49,9 @@
 - (void)resetAllPrecomputedThreadScopes;
 - (void)resetPrecomputedThreadScopesForMailboxObjectID:(id)arg1;
 - (void)resetPrecomputedThreadScopesForMailboxType:(long long)arg1;
-- (void)_updateObserversForChangeAction:(id)arg1;
+- (void)_updateObserversForDeletedObjectIDs:(id)arg1;
+- (void)_updateObserversForFlagChangeAction:(id)arg1;
+- (void)_updateObserversForAction:(id)arg1;
 - (id)_undoActionForConversationAction:(id)arg1;
 - (id)performMessageChangeActionReturningUndoAction:(id)arg1;
 - (void)performMessageChangeAction:(id)arg1;

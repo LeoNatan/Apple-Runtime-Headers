@@ -19,6 +19,7 @@
     double _timestamp;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly) double scoreUncertainty; // @synthesize scoreUncertainty=_scoreUncertainty;
 @property(readonly) double score; // @synthesize score=_score;
@@ -26,7 +27,6 @@
 @property(readonly) PRRangeMeasurement *range; // @synthesize range=_range;
 @property(readonly) long long proximity; // @synthesize proximity=_proximity;
 @property(readonly) NSData *btAddress; // @synthesize btAddress=_btAddress;
-- (void).cxx_destruct;
 - (id)initWithValues:(id)arg1 proximity:(long long)arg2 range:(id)arg3 angle:(id)arg4 score:(double)arg5 scoreUncertainty:(double)arg6;
 - (id)init;
 

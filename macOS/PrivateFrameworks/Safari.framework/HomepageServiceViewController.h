@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSTextField *_homepageField;
 }
 
-@property(nonatomic) __weak NSTextField *homepageField; // @synthesize homepageField=_homepageField;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSTextField *homepageField; // @synthesize homepageField=_homepageField;
 - (void)performHomepageUpdateOnlyIfFieldIsFirstResponder:(BOOL)arg1 handlerToUnblockUserInteraction:(CDUnknownBlockType)arg2;
 - (id)_readOnlySandboxFileExtensionTokenForURL:(id)arg1;
 - (void)takeHomepageFrom:(id)arg1;

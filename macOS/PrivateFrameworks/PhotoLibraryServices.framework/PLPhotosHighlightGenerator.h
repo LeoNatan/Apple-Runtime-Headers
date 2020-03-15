@@ -38,6 +38,7 @@
 + (BOOL)_shouldUpdateKeyAssetForParentHighlight:(id)arg1 withKeyAssetObjectID:(id)arg2;
 + (BOOL)assetEligibleForRecents:(id)arg1;
 + (void)updateTitleForHighlights:(id)arg1 forKind:(unsigned short)arg2 forceUpdateLocale:(BOOL)arg3 dateRangeTitleGenerator:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *highlightsNeedingNewKeyAsset; // @synthesize highlightsNeedingNewKeyAsset=_highlightsNeedingNewKeyAsset;
 @property(nonatomic) __weak id <PLMomentGenerationDataManagement><PLHighlightItemModelReader> dataManager; // @synthesize dataManager=_dataManager;
 @property(nonatomic) BOOL didCallBeginGeneration; // @synthesize didCallBeginGeneration=_didCallBeginGeneration;
@@ -48,7 +49,6 @@
 @property(readonly, nonatomic) PLDateRangeTitleGenerator *dateRangeTitleGenerator; // @synthesize dateRangeTitleGenerator=_dateRangeTitleGenerator;
 @property(readonly, nonatomic) PLLocalCreationDateCreator *localCreationDateCreator; // @synthesize localCreationDateCreator=_localCreationDateCreator;
 @property(readonly, nonatomic) PLFrequentLocationManager *frequentLocationManager; // @synthesize frequentLocationManager=_frequentLocationManager;
-- (void).cxx_destruct;
 - (id)_collectMomentsRequiringReprocessingFromMoments:(id)arg1 withAllMoments:(id)arg2;
 - (id)_highlightMomentClustersForMoments:(id)arg1 excludingMomentIds:(id)arg2;
 - (void)_setLastHighlightTitlesUpdateDay:(id)arg1;

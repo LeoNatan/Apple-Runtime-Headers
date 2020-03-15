@@ -17,9 +17,9 @@
     id <SPExtensionConnectionDelegate> _appDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SPExtensionConnectionDelegate> appDelegate; // @synthesize appDelegate=_appDelegate;
 @property(copy, nonatomic) NSString *hostClientIdentifier; // @synthesize hostClientIdentifier=_hostClientIdentifier;
-- (void).cxx_destruct;
 - (void)extensionConnectionDidPreventPlaybackUntilAudioRoutePicked:(id)arg1;
 - (void)extensionConnection:(id)arg1 firstUnlock:(_Bool)arg2;
 - (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 presentViewControllers:(id)arg3 initializationContextIDs:(id)arg4;

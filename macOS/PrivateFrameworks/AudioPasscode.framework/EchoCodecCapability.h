@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct _NSRange hpfCutOffFreqRange; // @synthesize hpfCutOffFreqRange=_hpfCutOffFreqRange;
 @property(readonly, nonatomic) NSArray *algorithmVersionNumbers; // @synthesize algorithmVersionNumbers=_algorithmVersionNumbers;
 @property(readonly, nonatomic) struct _NSRange numFrameRepeatRange; // @synthesize numFrameRepeatRange=_numFrameRepeatRange;
 @property(readonly, nonatomic) struct _NSRange frameSizeRange; // @synthesize frameSizeRange=_frameSizeRange;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

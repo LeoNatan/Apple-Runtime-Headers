@@ -16,8 +16,8 @@
     NSData *_serverChangeTokenData;
 }
 
-@property(readonly, nonatomic) NSData *serverChangeTokenData; // @synthesize serverChangeTokenData=_serverChangeTokenData;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSData *serverChangeTokenData; // @synthesize serverChangeTokenData=_serverChangeTokenData;
 - (id)description;
 - (void)_setServerChangeTokenData:(id)arg1;
 - (void)_addHistoryTombstone:(id)arg1;

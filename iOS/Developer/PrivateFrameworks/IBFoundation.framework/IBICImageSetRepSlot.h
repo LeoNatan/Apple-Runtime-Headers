@@ -6,7 +6,7 @@
 
 #import <IBFoundation/IBICImageSlot.h>
 
-@class IBICColorSpace, IBICContrastAppearance, IBICGraphicsFeatureSet, IBICHeightClass, IBICIdiom, IBICLanguageDirection, IBICLocale, IBICLuminosityAppearance, IBICMemoryClass, IBICScale, IBICScreenWidth, IBICSubtype, IBICVibrancyAppearance, IBICWidthClass;
+@class IBICAppearanceSpecification, IBICColorSpace, IBICContrastAppearance, IBICGraphicsFeatureSet, IBICHeightClass, IBICIdiom, IBICLanguageDirection, IBICLocale, IBICLuminosityAppearance, IBICMemoryClass, IBICScale, IBICScreenWidth, IBICSubtype, IBICVibrancyAppearance, IBICWidthClass;
 
 @interface IBICImageSetRepSlot : IBICImageSlot
 {
@@ -37,6 +37,7 @@
 + (id)slotFilterUnionedWithStandardUniversalCounterpart:(_Bool)arg1 idioms:(id)arg2 subtypes:(id)arg3 scales:(id)arg4 screenWidths:(id)arg5 widthClasses:(id)arg6 heightClasses:(id)arg7 memoryClasses:(id)arg8 graphicsFeatureSets:(id)arg9 colorSpaces:(id)arg10 languageDirections:(id)arg11 luminositySlots:(id)arg12 contrastSlots:(id)arg13 vibrancySlots:(id)arg14 localeSlots:(id)arg15;
 + (Class)assetRepClass;
 + (Class)assetSetClass;
+- (void).cxx_destruct;
 @property(readonly) IBICVibrancyAppearance *vibrancyAppearance; // @synthesize vibrancyAppearance=_vibrancyAppearance;
 @property(readonly) IBICContrastAppearance *contrastAppearance; // @synthesize contrastAppearance=_contrastAppearance;
 @property(readonly) IBICLuminosityAppearance *luminosityAppearance; // @synthesize luminosityAppearance=_luminosityAppearance;
@@ -51,9 +52,9 @@
 @property(readonly) IBICScale *scale; // @synthesize scale=_scale;
 @property(readonly) IBICSubtype *subtype; // @synthesize subtype=_subtype;
 @property(readonly) IBICIdiom *idiom; // @synthesize idiom=_idiom;
-- (void).cxx_destruct;
 - (_Bool)hasUnspecifiedLocale;
 - (_Bool)hasUnspecifiedAppearance;
+@property(readonly) IBICAppearanceSpecification *appearanceSpecification;
 - (id)outputFileNameGivenBaseName:(id)arg1 andExtension:(id)arg2;
 - (id)detailAreaPath;
 - (long long)compareDisplayOrder:(id)arg1;

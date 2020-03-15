@@ -15,10 +15,10 @@
     NSMutableDictionary *_transformedItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *transformedItems; // @synthesize transformedItems=_transformedItems;
 @property(copy, nonatomic) CDUnknownBlockType transformationBlock; // @synthesize transformationBlock=_transformationBlock;
 @property(retain, nonatomic) HFItemProvider *sourceProvider; // @synthesize sourceProvider=_sourceProvider;
-- (void).cxx_destruct;
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;

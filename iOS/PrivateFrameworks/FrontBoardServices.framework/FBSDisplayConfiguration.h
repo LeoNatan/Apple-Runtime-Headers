@@ -40,6 +40,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long tags; // @synthesize tags=_tags;
 @property(readonly, nonatomic) unsigned int seed; // @synthesize seed=_noEqual_seed;
 @property(readonly, nonatomic) double latency; // @synthesize latency=_latency;
@@ -56,7 +57,6 @@
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSString *hardwareIdentifier; // @synthesize hardwareIdentifier=_hardwareIdentifier;
 @property(readonly, copy, nonatomic) FBSDisplayIdentity *identity; // @synthesize identity=_identity;
-- (void).cxx_destruct;
 - (double)orientation;
 - (unsigned int)displayID;
 - (_Bool)supportsExtendedColor;

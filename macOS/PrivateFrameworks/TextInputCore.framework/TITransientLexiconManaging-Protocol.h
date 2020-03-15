@@ -12,11 +12,11 @@
 @property(readonly, nonatomic) const struct _LXLexicon *namedEntityPhraseLexicon;
 @property(readonly, nonatomic) const struct _LXLexicon *namedEntityLexicon;
 - (void)debugLogEntities;
-- (void)getOnce:(void (^)(struct NSDictionary *))arg1;
+- (void)getOnce:(void (^)(NSDictionary *))arg1;
 - (BOOL)searchForWordCaseInsensitive:(NSString *)arg1;
 - (BOOL)searchForWord:(NSString *)arg1;
-- (void)removeContactObserver:(void (^)(struct NSDictionary *))arg1;
-- (void (^)(struct NSDictionary *))addContactObserver:(void (^)(struct NSDictionary *))arg1;
+- (void)removeContactObserver:(void (^)(NSDictionary *))arg1;
+- (void (^)(NSDictionary *))addContactObserver:(void (^)(NSDictionary *))arg1;
 - (void)loadLexicons;
 @end
 

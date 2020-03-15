@@ -16,10 +16,10 @@
 }
 
 + (id)referenceWithBundleId:(id)arg1 domainId:(id)arg2 itemIds:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, nonatomic) NSString *domainIdentifier; // @synthesize domainIdentifier=_domainIdentifier;
 @property(readonly, nonatomic) NSArray *itemIdentifiers; // @synthesize itemIdentifiers=_itemIdentifiers;
-- (void).cxx_destruct;
 - (id)initWithBundleId:(id)arg1 domainId:(id)arg2 itemIds:(id)arg3;
 
 @end

@@ -6,9 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsUI2/TSSavedModuleType-Protocol.h>
-
-@interface TSSavedModule : NSObject <TSSavedModuleType>
+@interface TSSavedModule : NSObject
 {
     // Error parsing type: , name: resolver
 }

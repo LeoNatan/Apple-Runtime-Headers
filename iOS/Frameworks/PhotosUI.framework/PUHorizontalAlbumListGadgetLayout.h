@@ -13,8 +13,8 @@
     id <PUHorizontalAlbumListGadgetLayoutDelegate> _horizontalLayoutDelegate;
 }
 
-@property(nonatomic) __weak id <PUHorizontalAlbumListGadgetLayoutDelegate> horizontalLayoutDelegate; // @synthesize horizontalLayoutDelegate=_horizontalLayoutDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PUHorizontalAlbumListGadgetLayoutDelegate> horizontalLayoutDelegate; // @synthesize horizontalLayoutDelegate=_horizontalLayoutDelegate;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 @property(readonly, nonatomic) struct CGSize albumCellSize;
 - (id)initWithHorizontalLayoutDelegate:(id)arg1;

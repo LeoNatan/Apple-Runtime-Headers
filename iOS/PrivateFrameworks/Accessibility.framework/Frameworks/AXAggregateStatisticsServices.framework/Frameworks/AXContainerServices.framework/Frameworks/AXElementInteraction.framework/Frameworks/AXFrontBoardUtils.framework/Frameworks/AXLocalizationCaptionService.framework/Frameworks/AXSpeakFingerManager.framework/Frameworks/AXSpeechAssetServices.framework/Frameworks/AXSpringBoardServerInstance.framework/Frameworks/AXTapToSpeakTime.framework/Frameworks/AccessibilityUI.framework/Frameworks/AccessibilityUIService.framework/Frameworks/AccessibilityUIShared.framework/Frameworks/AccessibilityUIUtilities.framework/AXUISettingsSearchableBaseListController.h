@@ -20,10 +20,10 @@
     NSArray *_allSpecifiers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *allSpecifiers; // @synthesize allSpecifiers=_allSpecifiers;
 @property(retain, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
 @property(retain, nonatomic) UISearchController *searchController; // @synthesize searchController=_searchController;
-- (void).cxx_destruct;
 - (_Bool)shouldShowSpecifier:(id)arg1 withSearchText:(id)arg2;
 - (id)makeSpecifiers;
 - (_Bool)_specifierIsGroupSpecifier:(id)arg1;

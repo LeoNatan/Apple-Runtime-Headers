@@ -13,8 +13,8 @@
     PUICActivityIndicatorView *_activityIndicatorView;
 }
 
-@property(retain, nonatomic) PUICActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PUICActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 - (void)setAnimating:(_Bool)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

@@ -21,11 +21,11 @@
 + (id)_color:(id)arg1 darkenedToPercentage:(double)arg2 withFinalAlpha:(double)arg3;
 + (id)sharedProvider;
 + (id)backgroundImageCache;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EKDayOccurrenceStringGenerator *stringGenerator; // @synthesize stringGenerator=_stringGenerator;
 @property(readonly, nonatomic) NSMutableDictionary *pendingRequests; // @synthesize pendingRequests=_pendingRequests;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *drawingQueue; // @synthesize drawingQueue=_drawingQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *lookupQueue; // @synthesize lookupQueue=_lookupQueue;
-- (void).cxx_destruct;
 - (void)_lookupQueue_removeRequestId:(long long)arg1;
 - (id)_lookupQueue_activeRequestForId:(long long)arg1;
 - (void)_lookupQueue_enqueueRequest:(id)arg1;

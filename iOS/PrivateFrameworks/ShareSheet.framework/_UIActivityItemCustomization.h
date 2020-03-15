@@ -19,11 +19,11 @@
 + (id)actionCustomizationWithTitle:(id)arg1 identifier:(id)arg2 footerText:(id)arg3 handler:(CDUnknownBlockType)arg4;
 + (id)pickerCustomizationWithIdentifier:(id)arg1 options:(id)arg2 selectedOptionIndex:(long long)arg3 footerText:(id)arg4 valueChangedHandler:(CDUnknownBlockType)arg5;
 + (id)switchCustomizationWithTitle:(id)arg1 identifier:(id)arg2 footerText:(id)arg3 value:(_Bool)arg4 valueChangedHandler:(CDUnknownBlockType)arg5;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy, nonatomic) NSString *footerText; // @synthesize footerText=_footerText;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)_initWithTitle:(id)arg1 identifier:(id)arg2 footerText:(id)arg3;
 
 @end

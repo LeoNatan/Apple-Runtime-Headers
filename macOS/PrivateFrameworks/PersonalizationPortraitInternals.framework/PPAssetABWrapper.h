@@ -18,9 +18,9 @@
 + (id)filesystemPathForNonPlistCommonAssetDataRelativePath:(id)arg1 abGroupIdentifier:(id *)arg2;
 + (id)dictionaryForNonWatchAssetDataRelativePath:(id)arg1 abGroupIdentifier:(id *)arg2;
 + (id)dictionaryForCommonAssetDataRelativePath:(id)arg1 abGroupIdentifier:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *abGroupOverride; // @synthesize abGroupOverride=_abGroupOverride;
 @property(readonly, nonatomic) BOOL nonWatchOnly; // @synthesize nonWatchOnly=_nonWatchOnly;
-- (void).cxx_destruct;
 - (id)initWithABGroupOverride:(id)arg1 nonWatchOnly:(BOOL)arg2;
 - (id)initNonWatchAssetWithABGroupOverride:(id)arg1;
 - (id)initCommonAssetWithABGroupOverride:(id)arg1;

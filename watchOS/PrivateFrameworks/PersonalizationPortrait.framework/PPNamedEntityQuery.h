@@ -35,6 +35,7 @@
 + (id)_excludingAlgorithmsDescription:(id)arg1;
 + (id)_matchingCategoriesDescription:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool orderByName; // @synthesize orderByName=_orderByName;
 @property(nonatomic) unsigned int locationConsumer; // @synthesize locationConsumer=_locationConsumer;
 @property(retain, nonatomic) NSString *matchingEntityTrie; // @synthesize matchingEntityTrie=_matchingEntityTrie;
@@ -51,7 +52,6 @@
 @property(retain, nonatomic) NSDate *toDate; // @synthesize toDate=_toDate;
 @property(retain, nonatomic) NSDate *fromDate; // @synthesize fromDate=_fromDate;
 @property(nonatomic) unsigned int limit; // @synthesize limit=_limit;
-- (void).cxx_destruct;
 - (id)customizedDescription;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

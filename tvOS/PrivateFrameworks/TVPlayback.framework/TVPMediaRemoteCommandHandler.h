@@ -21,13 +21,13 @@
     id <TVPPlayback> _player;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isRespondingToRemoteControlEvents) _Bool respondingToRemoteControlEvents; // @synthesize respondingToRemoteControlEvents=_respondingToRemoteControlEvents;
 @property(nonatomic) __weak id <TVPPlayback> player; // @synthesize player=_player;
 @property(retain, nonatomic) TVPMediaRemoteCommandProxyTarget *remoteCommandTarget; // @synthesize remoteCommandTarget=_remoteCommandTarget;
 @property(nonatomic) _Bool skipEnabled; // @synthesize skipEnabled=_skipEnabled;
 @property(nonatomic) _Bool shuffleEnabled; // @synthesize shuffleEnabled=_shuffleEnabled;
 @property(nonatomic) _Bool repeatEnabled; // @synthesize repeatEnabled=_repeatEnabled;
-- (void).cxx_destruct;
 - (long long)_processPlayQueueCommandWithBlock:(CDUnknownBlockType)arg1;
 - (id)_allAudioMediaTypes;
 - (long long)_selectDefaultAudioOption;

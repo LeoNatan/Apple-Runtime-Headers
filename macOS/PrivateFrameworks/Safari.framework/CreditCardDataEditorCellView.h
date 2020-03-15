@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSTextField *_expirationDateField;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isVirtualCard; // @synthesize isVirtualCard=_isVirtualCard;
 @property(nonatomic) __weak NSTextField *expirationDateField; // @synthesize expirationDateField=_expirationDateField;
 @property(nonatomic) __weak NSTextField *cardholderNameField; // @synthesize cardholderNameField=_cardholderNameField;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSTextField *creditCardNameField; // @synthesize creditCardNameField=_creditCardNameField;
 @property(nonatomic) __weak NSImageView *creditCardIconImageView; // @synthesize creditCardIconImageView=_creditCardIconImageView;
 @property(nonatomic) __weak id <CreditCardDataEditorCellViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)control:(id)arg1 textShouldBeginEditing:(id)arg2;
 - (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;
 - (BOOL)control:(id)arg1 textShouldEndEditing:(id)arg2;

@@ -32,6 +32,7 @@
 + (_Bool)supportsSecureCoding;
 + (void)deleteAllLocalKeychainVirtualCards;
 + (void)queryKeychainForVirtualCards:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) PKVirtualCardCredentials *keychainCardCredentials; // @synthesize keychainCardCredentials=_keychainCardCredentials;
 @property(nonatomic) _Bool requiresAuthentication; // @synthesize requiresAuthentication=_requiresAuthentication;
 @property(nonatomic) _Bool supportsLocalStorage; // @synthesize supportsLocalStorage=_supportsLocalStorage;
@@ -46,7 +47,6 @@
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(copy, nonatomic) NSString *cardholderName; // @synthesize cardholderName=_cardholderName;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

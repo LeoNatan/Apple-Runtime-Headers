@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     unsigned long long _size;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(readonly, nonatomic) NSDate *dateAdded; // @synthesize dateAdded=_dateAdded;
 @property(readonly, nonatomic) NSDate *dateLastViewed; // @synthesize dateLastViewed=_dateLastViewed;
 @property(readonly, nonatomic) NSURL *folderURL; // @synthesize folderURL=_folderURL;
-- (void).cxx_destruct;
 - (id)initWithFolderURL:(id)arg1 dateLastViewed:(id)arg2 dateAdded:(id)arg3;
 
 @end

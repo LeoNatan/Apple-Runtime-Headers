@@ -15,8 +15,8 @@
     CNDonationExtensionRequestHandler *_requestHandler;
 }
 
-@property(retain, nonatomic) CNDonationExtensionRequestHandler *requestHandler; // @synthesize requestHandler=_requestHandler;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNDonationExtensionRequestHandler *requestHandler; // @synthesize requestHandler=_requestHandler;
 - (void)redonateAllValuesWithReason:(unsigned long long)arg1;
 - (void)renewExpirationDateForDonatedValue:(id)arg1 acknowledgementHandler:(CDUnknownBlockType)arg2;
 - (id)hostContext;

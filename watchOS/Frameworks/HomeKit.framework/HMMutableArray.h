@@ -16,8 +16,8 @@
 
 + (id)array;
 + (id)arrayWithArray:(id)arg1;
-@property(readonly, copy, nonatomic) NSMutableArray *internal; // @synthesize internal=_internal;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSMutableArray *internal; // @synthesize internal=_internal;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)containsObject:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1;

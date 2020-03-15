@@ -15,9 +15,9 @@
 }
 
 + (id)specWithLocation:(id)arg1 regionRadius:(double)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double regionRadius; // @synthesize regionRadius=_regionRadius;
 @property(readonly, nonatomic) CLLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)initWithLocation:(id)arg1 regionRadius:(double)arg2;
 
 @end

@@ -22,6 +22,7 @@
     NSURL *_refreshURL;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *refreshURL; // @synthesize refreshURL=_refreshURL;
 @property(nonatomic) double refreshInterval; // @synthesize refreshInterval=_refreshInterval;
 @property(nonatomic) _Bool shouldShowDescriptionOnChapterSkip; // @synthesize shouldShowDescriptionOnChapterSkip=_shouldShowDescriptionOnChapterSkip;
@@ -32,7 +33,6 @@
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSArray *chapters; // @synthesize chapters=_chapters;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)nearestChapterForDate:(id)arg1;
 - (id)chapterForDate:(id)arg1;
 - (id)nearestChapterForTime:(double)arg1;

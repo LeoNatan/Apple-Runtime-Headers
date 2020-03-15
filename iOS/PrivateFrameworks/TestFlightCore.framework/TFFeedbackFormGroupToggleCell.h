@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     TFFeedbackEntryGroupToggle *_groupToggleEntry;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TFFeedbackEntryGroupToggle *groupToggleEntry; // @synthesize groupToggleEntry=_groupToggleEntry;
 @property(readonly, nonatomic) UISwitch *toggleSwitch; // @synthesize toggleSwitch=_toggleSwitch;
-- (void).cxx_destruct;
 - (void)didUpdateToggleSwitchValue:(id)arg1;
 - (void)setDisplayedDataGroupInclusionBool:(_Bool)arg1;
 - (unsigned long long)displayableDataType;

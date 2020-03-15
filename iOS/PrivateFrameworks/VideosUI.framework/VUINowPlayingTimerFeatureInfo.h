@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSDate *_backgroundedDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *backgroundedDate; // @synthesize backgroundedDate=_backgroundedDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) __weak NSTimer *oneTimeTimer; // @synthesize oneTimeTimer=_oneTimeTimer;
 @property(nonatomic) __weak NSTimer *repeatingTimer; // @synthesize repeatingTimer=_repeatingTimer;
-- (void).cxx_destruct;
 
 @end
 

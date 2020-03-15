@@ -23,9 +23,9 @@
 + (id)errorForInvalidKeyEncoding;
 + (unsigned char)byteChecksumOfData:(id)arg1;
 + (id)keyedDataDeserializedFrom:(void *)arg1 maxSize:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSData *data; // @synthesize data=_data;
 @property(readonly) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (unsigned long long)serializeData:(id)arg1 withChecksum:(unsigned char)arg2 to:(void *)arg3;
 - (unsigned long long)serializeTo:(void *)arg1 maxSize:(unsigned long long)arg2;
 - (unsigned long long)sizeWhenSerialized;

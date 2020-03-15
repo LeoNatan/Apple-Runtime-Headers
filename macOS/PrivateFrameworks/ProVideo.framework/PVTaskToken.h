@@ -15,10 +15,10 @@
     unsigned long long _tokenId;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL returned; // @synthesize returned=_returned;
 @property(readonly, nonatomic) unsigned long long tokenId; // @synthesize tokenId=_tokenId;
 @property(readonly, nonatomic) __weak PVTaskTokenPool *pool; // @synthesize pool=_pool;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithPool:(id)arg1 tokenId:(unsigned long long)arg2;
 - (void)returnToPool;

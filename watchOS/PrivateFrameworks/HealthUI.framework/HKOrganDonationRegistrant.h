@@ -42,6 +42,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)organDonationRegistrantWithDemographicsInformation:(id)arg1;
 + (id)organDonationRegistrantWithJSONDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasEdits; // @synthesize hasEdits=_hasEdits;
 @property(retain, nonatomic) NSString *dob; // @synthesize dob=_dob;
 @property(retain, nonatomic) NSString *sex; // @synthesize sex=_sex;
@@ -56,7 +57,6 @@
 @property(retain, nonatomic) NSString *firstname; // @synthesize firstname=_firstname;
 @property(retain, nonatomic) NSString *email; // @synthesize email=_email;
 @property(nonatomic) __weak id <HKOrganDonationRegistrantDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dataEntryItemDidUpdateValue:(id)arg1;
 - (id)_stateChoiceValues;
 - (id)_stateChoiceDisplayNames;

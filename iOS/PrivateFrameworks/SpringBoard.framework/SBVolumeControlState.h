@@ -22,6 +22,7 @@
     NSString *_activeVolumeCategoryName;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=setShowingLockScreenMediaControls:) _Bool isShowingLockScreenMediaControls; // @synthesize isShowingLockScreenMediaControls=_isShowingLockScreenMediaControls;
 @property(nonatomic, setter=setHostingAppOnLockScreen:) _Bool isHostingAppOnLockScreen; // @synthesize isHostingAppOnLockScreen=_isHostingAppOnLockScreen;
 @property(nonatomic, setter=setUILocked:) _Bool isUILocked; // @synthesize isUILocked=_isUILocked;
@@ -30,7 +31,6 @@
 @property(nonatomic, setter=setCurrentRouteHasVolumeControl:) _Bool currentRouteHasVolumeControl; // @synthesize currentRouteHasVolumeControl=_currentRouteHasVolumeControl;
 @property(nonatomic, setter=setAudioPlayingSomewhere:) _Bool isAudioPlayingSomewhere; // @synthesize isAudioPlayingSomewhere=_isAudioPlayingSomewhere;
 @property(copy, nonatomic) NSString *activeVolumeCategoryName; // @synthesize activeVolumeCategoryName=_activeVolumeCategoryName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

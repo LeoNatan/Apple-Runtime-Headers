@@ -20,11 +20,11 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *siriSessions; // @synthesize siriSessions=_siriSessions;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *xpcServer; // @synthesize xpcServer=_xpcServer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (id)sessionForIdentifier:(id)arg1;
 - (void)handleStopStreamMsg:(id)arg1;
 - (void)handleStartStreamMsg:(id)arg1;

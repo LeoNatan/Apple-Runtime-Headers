@@ -24,6 +24,7 @@
 }
 
 + (id)sharedSystemPathMonitor;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_source> *mptcpWatcher; // @synthesize mptcpWatcher=_mptcpWatcher;
 @property struct tcp_connection_fallback_watch_s *fallbackWatcher; // @synthesize fallbackWatcher=_fallbackWatcher;
 @property(retain) NSObject<OS_dispatch_source> *smoothingTimer; // @synthesize smoothingTimer=_smoothingTimer;
@@ -34,7 +35,6 @@
 @property(nonatomic, getter=isVPNActive) BOOL vpnActive; // @synthesize vpnActive=_vpnActive;
 @property(nonatomic, getter=isEthernetPrimary) BOOL ethernetPrimary; // @synthesize ethernetPrimary=_ethernetPrimary;
 @property(nonatomic, getter=isWiFiPrimary) BOOL wifiPrimary; // @synthesize wifiPrimary=_wifiPrimary;
-- (void).cxx_destruct;
 - (void)updateVPNMonitor;
 - (void)registerForVPNNotifications;
 - (void)stopWatchingApplicationStates;

@@ -24,6 +24,7 @@
 }
 
 + (_Bool)shouldShowCarDNDUseSiriHeaderViewController;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_contextProvider, setter=_setContextProvider:) SiriUICarDNDContextProvider *contextProvider; // @synthesize contextProvider=_contextProvider;
 @property(retain, nonatomic, getter=_siriOrbImageView, setter=_setSiriOrbImageView:) UIImageView *siriOrbImageView; // @synthesize siriOrbImageView=_siriOrbImageView;
 @property(retain, nonatomic, getter=_localizedSubtitle, setter=_setLocalizedSubtitle:) NSString *localizedSubtitle; // @synthesize localizedSubtitle=_localizedSubtitle;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic, getter=_subtitleLabel, setter=_setSubtitleLabel:) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic, getter=_titleLabel, setter=_setTitleLabel:) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) __weak id <SiriUICarDNDDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)contextProvided:(id)arg1;
 - (_Bool)_canShowWhileLocked;
 - (void)_sendCardAppearedAnalyticsEvent;

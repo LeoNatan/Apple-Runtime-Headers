@@ -25,12 +25,12 @@
 
 + (id)_contactDescriptors;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *plistURL; // @synthesize plistURL=_plistURL;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *notificationQueue; // @synthesize notificationQueue=_notificationQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(readonly, nonatomic) NSUbiquitousKeyValueStore *keyValueStore; // @synthesize keyValueStore=_keyValueStore;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-- (void).cxx_destruct;
 - (id)_contactFromContacts:(id)arg1 matchingMostAddresses:(id)arg2;
 - (id)_contactForName:(id)arg1 emailAddresses:(id)arg2;
 - (id)_validatedCloudVIPFromStore:(id)arg1 withCloudKey:(id)arg2;

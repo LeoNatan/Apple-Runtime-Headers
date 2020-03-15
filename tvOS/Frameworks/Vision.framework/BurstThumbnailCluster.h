@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_imageProps;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *imageProps; // @synthesize imageProps=_imageProps;
 @property(retain) NSMutableArray *burstImages; // @synthesize burstImages=_burstImages;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property struct __CVBuffer *imagePixelBuffer; // @synthesize imagePixelBuffer=_imagePixelBuffer;
-- (void).cxx_destruct;
 - (float)computeMergeCost:(id)arg1:(int *)arg2:(int)arg3;
 - (void)addItemsFromCluster:(id)arg1;
 - (void)dealloc;

@@ -18,12 +18,12 @@
     ISIcon *_isIcon;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ISIcon *isIcon; // @synthesize isIcon=_isIcon;
 @property(readonly, nonatomic) id <CUIKIconGenerator> iconGenerator; // @synthesize iconGenerator=_iconGenerator;
 @property(readonly, nonatomic) long long format; // @synthesize format=_format;
 @property(readonly, copy, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 @property(readonly, copy, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (void)getCGImageForImageDescriptor:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (struct CGImage *)CGImageForImageDescriptor:(id)arg1;
 - (void)getImageForImageDescriptor:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -7,27 +7,41 @@
 #import <SafariServices/_SFPasswordTableViewController.h>
 
 #import <SafariServices/SFAddPasswordViewControllerDelegate-Protocol.h>
+#import <SafariServices/SFPasswordDetailViewControllerDelegate-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString, UIBarButtonItem, WBSAutoFillQuirksManager;
+@class NSArray, NSMutableArray, NSString, SFSharablePassword, UIBarButtonItem, WBSAutoFillQuirksManager, WBSPasswordEvaluator, WBSSavedPasswordAuditor, WBSSavedPasswordStore, _SFSiteMetadataManager;
 
-@interface _SFEditablePasswordTableViewController : _SFPasswordTableViewController <SFAddPasswordViewControllerDelegate>
+@interface _SFEditablePasswordTableViewController : _SFPasswordTableViewController <SFAddPasswordViewControllerDelegate, SFPasswordDetailViewControllerDelegate>
 {
-    NSMutableArray *_savedPasswordsBySection;
-    NSArray *_savedPasswordsMatchingSearchPattern;
+    NSMutableArray *_cellDataBySection;
+    NSArray *_allPasswordCellData;
+    NSArray *_cellDataMatchingSearchPattern;
     UIBarButtonItem *_addBarButtonItem;
     UIBarButtonItem *_editBarButtonItem;
     UIBarButtonItem *_cancelBarButtonItem;
     UIBarButtonItem *_deleteBarButtonItem;
     WBSAutoFillQuirksManager *_autoFillQuirksManager;
+    WBSSavedPasswordStore *_passwordStore;
+    WBSSavedPasswordAuditor *_savedPasswordAuditor;
+    unsigned long long _persona;
+    _SFSiteMetadataManager *_siteMetadataManager;
+    SFSharablePassword *_receivedSharablePasswordRequiringPromptBeforeSaving;
+    _Bool _hasBeenAuthenticated;
+    _Bool _hasEverShownSectionHeaders;
+    WBSPasswordEvaluator *_passwordEvaluator;
 }
 
 - (void).cxx_destruct;
+- (id)passwordEvaluatorForPasswordDetailViewController:(id)arg1;
+- (id)passwordAuditorForPasswordDetailViewController:(id)arg1;
 - (void)_deletePasswordsAtIndexPaths:(id)arg1;
-- (id)_passwordForIndexPath:(id)arg1;
+- (id)_passwordCellDataForIndexPath:(id)arg1;
 - (void)_reloadPasswords;
+- (void)_reloadPasswordsAndTableViewData;
 - (void)_updateMatchingPasswords;
 - (void)searchPatternDidUpdate;
 - (void)addPasswordViewControllerDidFinish:(id)arg1 withSavedPassword:(id)arg2;
+- (void)handleContextMenuDeleteForIndexPath:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;
@@ -46,9 +60,19 @@
 - (id)_deletePasswordActionTitle;
 - (void)_cancelBarButtonItemTapped:(id)arg1;
 - (void)_addBarButtonItemTapped:(id)arg1;
+- (void)dealloc;
+- (void)updateUserAuthenticationState:(_Bool)arg1;
+- (id)_passwordCellDataForUser:(id)arg1 highLevelDomain:(id)arg2;
+- (void)processSharablePasswordWithResourceDictionary:(id)arg1;
+- (void)showConflictAlertForSharablePasswordIfNecessary;
+- (id)_savePasswordIfPossibleAndGetController:(id)arg1;
+- (id)_sharablePasswordFromResourceDictionary:(id)arg1;
+- (id)passwordControllerForQuery:(id)arg1 queryBundleID:(id)arg2 authenticationRequirementsMet:(_Bool)arg3;
+- (id)additionalViewControllersToPushHandlingURLResourceDictionary:(id)arg1 didAuthenticate:(_Bool)arg2;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (id)navigationItem;
+- (id)initWithSiteMetadataManager:(id)arg1 autoFillQuirksManager:(id)arg2 persona:(unsigned long long)arg3;
 - (id)initWithSiteMetadataManager:(id)arg1 autoFillQuirksManager:(id)arg2;
 
 // Remaining properties

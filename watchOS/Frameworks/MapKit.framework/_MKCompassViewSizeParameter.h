@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     float _textOffsetFromCenter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float textOffsetFromCenter; // @synthesize textOffsetFromCenter=_textOffsetFromCenter;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(nonatomic) float diameter; // @synthesize diameter=_diameter;
 @property(copy, nonatomic) NSString *imageNamePart; // @synthesize imageNamePart=_imageNamePart;
-- (void).cxx_destruct;
 
 @end
 

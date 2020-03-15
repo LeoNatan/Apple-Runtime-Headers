@@ -14,9 +14,9 @@
     NSMutableAttributedString *_displayString;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isOptionalParticipant) _Bool optionalParticipant; // @synthesize optionalParticipant=_optionalParticipant;
 @property(retain, nonatomic) NSMutableAttributedString *displayString; // @synthesize displayString=_displayString;
-- (void).cxx_destruct;
 
 @end
 

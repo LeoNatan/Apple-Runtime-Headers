@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 + (id)_valueLabelFontSingleLine;
 + (double)_titleLabelTopToFirstBaseline;
 + (id)_titleLabelFont;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *subtitleBottomConstraint; // @synthesize subtitleBottomConstraint=_subtitleBottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *valueRightAlignConstraint; // @synthesize valueRightAlignConstraint=_valueRightAlignConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *valueLeftAlignConstraint; // @synthesize valueLeftAlignConstraint=_valueLeftAlignConstraint;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (id)_generateValueDisplayAttributedStringWithValueFont:(id)arg1 unitFont:(id)arg2;
 - (id)_generateValueDisplayAttributedString;
 - (void)setValue:(id)arg1 unit:(id)arg2;

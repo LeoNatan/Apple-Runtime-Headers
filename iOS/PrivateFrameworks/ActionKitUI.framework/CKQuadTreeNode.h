@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     struct CGRect _bounds;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSValue *point; // @synthesize point=_point;
 @property(readonly, nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
-- (void).cxx_destruct;
 - (id)objectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)visit:(CDUnknownBlockType)arg1;

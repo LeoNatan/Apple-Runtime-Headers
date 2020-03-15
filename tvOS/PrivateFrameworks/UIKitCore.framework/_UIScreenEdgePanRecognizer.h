@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
     id <_UIScreenEdgePanRecognizerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property id <_UIScreenEdgePanRecognizerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long recognizedRegion; // @synthesize recognizedRegion=_recognizedRegion;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGPoint _lastTouchLocation; // @synthesize _lastTouchLocation;
 @property(readonly, nonatomic) _Bool hasRecordedData; // @synthesize hasRecordedData=_hasRecordedData;
 @property(nonatomic) _Bool shouldUseGrapeFlags; // @synthesize shouldUseGrapeFlags=_shouldUseGrapeFlags;
-- (void).cxx_destruct;
 - (unsigned long long)_targetEdges;
 - (void)_idleTimerElapsed:(id)arg1;
 - (void)_longPressTimerElapsed:(id)arg1;

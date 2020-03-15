@@ -13,8 +13,8 @@
     NSSet *_gmailLabels;
 }
 
-@property(copy, nonatomic) NSSet *gmailLabels; // @synthesize gmailLabels=_gmailLabels;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSSet *gmailLabels; // @synthesize gmailLabels=_gmailLabels;
 - (id)description;
 
 @end

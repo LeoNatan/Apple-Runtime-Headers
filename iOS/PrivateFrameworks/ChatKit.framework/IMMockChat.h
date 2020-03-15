@@ -18,13 +18,13 @@
     unsigned long long _mockUnreadMessageCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mockUnreadMessageCount; // @synthesize mockUnreadMessageCount=_mockUnreadMessageCount;
 @property(retain, nonatomic) NSArray *extraParticipants; // @synthesize extraParticipants=_extraParticipants;
 @property(retain, nonatomic) IMMessage *lastMockIMMessage; // @synthesize lastMockIMMessage=_lastMockIMMessage;
 @property(retain, nonatomic) IMHandle *outgoingHandle; // @synthesize outgoingHandle=_outgoingHandle;
 @property(retain, nonatomic) IMHandle *incomingHandle; // @synthesize incomingHandle=_incomingHandle;
 @property(retain, nonatomic) NSArray *mockChatItems; // @synthesize mockChatItems=_mockChatItems;
-- (void).cxx_destruct;
 - (id)_chatItemFromMockItemInfo:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)_messageFromMockItemInfo:(id)arg1;
 - (void)appendMockItemWithInfo:(id)arg1;

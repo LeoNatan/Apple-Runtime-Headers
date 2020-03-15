@@ -15,9 +15,9 @@
 }
 
 + (id)defaultProvider;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<SGSuggestionsServiceEventsProtocol> *service; // @synthesize service=_service;
 @property(nonatomic) _Bool suggestionsFrameworkAvailable; // @synthesize suggestionsFrameworkAvailable=_suggestionsFrameworkAvailable;
-- (void).cxx_destruct;
 - (_Bool)eventsFoundInMailEnabled;
 - (void)rejectSGEventWithRecordID:(id)arg1;
 - (void)confirmSGEventWithRecordID:(id)arg1;

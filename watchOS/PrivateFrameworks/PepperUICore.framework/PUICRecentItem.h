@@ -14,9 +14,9 @@
     struct UIEdgeInsets _insets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets insets; // @synthesize insets=_insets;
 @property(retain, nonatomic) UIImageView *recentItemImageView; // @synthesize recentItemImageView=_recentItemImageView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

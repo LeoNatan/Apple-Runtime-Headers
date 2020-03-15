@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSSet *_exclusionReasons;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *exclusionReasons; // @synthesize exclusionReasons=_exclusionReasons;
 @property(copy, nonatomic) NSSet *purgeReasons; // @synthesize purgeReasons=_purgeReasons;
-- (void).cxx_destruct;
 - (void)removeAllIdentifiers;
 - (void)removeIdentifier:(id)arg1;
 - (void)addIdentifiers:(id)arg1 withReasons:(id)arg2;

@@ -14,9 +14,9 @@
     PKPaymentPassAction *_action;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPaymentPassAction *action; // @synthesize action=_action;
 @property(retain, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
-- (void).cxx_destruct;
 - (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 appleAccountInformation:(id)arg3;
 
 @end

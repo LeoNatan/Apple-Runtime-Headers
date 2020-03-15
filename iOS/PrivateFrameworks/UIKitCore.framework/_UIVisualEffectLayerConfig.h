@@ -16,10 +16,10 @@
 }
 
 + (id)layerWithFillColor:(id)arg1 opacity:(double)arg2 filterType:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(readonly, nonatomic) NSString *filterType; // @synthesize filterType=_filterType;
 @property(readonly, nonatomic) double opacity; // @synthesize opacity=_opacity;
-- (void).cxx_destruct;
 - (id)description;
 - (void)deconfigureLayerView:(id)arg1;
 - (void)configureLayerView:(id)arg1;

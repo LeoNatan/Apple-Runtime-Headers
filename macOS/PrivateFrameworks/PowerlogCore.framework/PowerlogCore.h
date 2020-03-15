@@ -26,11 +26,11 @@
 + (void)setupCore;
 + (id)sharedCore;
 + (BOOL)sharedCoreStarted;
+- (void).cxx_destruct;
 @property(readonly) PLCoreService *services; // @synthesize services=_services;
 @property(readonly) PLCoreAgent *agents; // @synthesize agents=_agents;
 @property(readonly) PLCoreStorage *storage; // @synthesize storage=_storage;
 @property(readonly) NSDate *launchDate; // @synthesize launchDate=_launchDate;
-- (void).cxx_destruct;
 - (void)didRecieveMemoryPressureWarning;
 - (void)stopCore;
 - (void)startCore;

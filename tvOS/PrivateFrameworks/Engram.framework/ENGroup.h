@@ -20,10 +20,10 @@
 
 + (id)sortedGroupsFromGroups:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _ENGroupInfo *groupInfo; // @synthesize groupInfo=_groupInfo;
 @property(retain, nonatomic) id <ENCypher> cypher; // @synthesize cypher=_cypher;
 @property(readonly, nonatomic) ENGroupID *groupID; // @synthesize groupID=_groupID;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) NSData *sharedApplicationData;

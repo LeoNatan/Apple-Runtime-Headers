@@ -16,29 +16,31 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_callbackQueue;
     NSObject<OS_dispatch_group> *_providersLoadedGroup;
     id _matchingContext;
-    struct NSMutableDictionary *_alternateContentsURLDictionary;
+    NSMutableDictionary *_alternateContentsURLDictionary;
     NSMapTable *_sessionQueueForExtensionIdentifier;
     FPDPushConnection *_pushConnection;
     FPDServer *_server;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FPDPushConnection *pushConnection; // @synthesize pushConnection=_pushConnection;
 @property(nonatomic) __weak FPDServer *server; // @synthesize server=_server;
-- (void).cxx_destruct;
 - (id)clouddocsExtensionIdentifier;
 - (void)dropLegacyDaemonCoreSpotlightIndexIfNeeded;
 - (id)allProviders;
 - (id)_deserializedAlternateContentsDictionary;
-- (void)_serializeAlternateContentsURLDictionary:(struct NSMutableDictionary *)arg1;
+- (void)_serializeAlternateContentsURLDictionary:(id)arg1;
 - (void)_loadAlternateContentsDictionary;
 - (id)alternateContentsDictionaryForProviderIdentifier:(id)arg1;
 - (id)alternateContentsURLForItemID:(id)arg1;
 - (void)setAlternateContentsURL:(id)arg1 forItemID:(id)arg2;
-- (id)providerWithTopLevelBundleIdentifier:(id)arg1;
+- (id)defaultProviderWithTopLevelBundleIdentifier:(id)arg1;
+- (id)providersWithTopLevelBundleIdentifier:(id)arg1;
 - (id)domainForActionOperationLocator:(id)arg1;
 - (id)_domainForURL:(id)arg1;
 - (id)domainForURL:(id)arg1;
 - (id)domainFromItemID:(id)arg1;
+- (id)domainWithID:(id)arg1;
 - (id)providerWithIdentifier:(id)arg1;
 - (id)providerDomainsByID;
 - (id)nonEvictableSizeByProviderDomain;
@@ -49,7 +51,7 @@ __attribute__((visibility("hidden")))
 - (void)migrateEnabledStateIfNecessary:(id)arg1;
 - (void)loadProvidersAndMonitorWithUpdateHandler:(CDUnknownBlockType)arg1;
 - (void)_garbageCollectRemovedProvidersForInstalledProviderIdentifiers:(id)arg1;
-- (void)garbageCollectDomainOwnedDirectoriesAtURL:(id)arg1 isUserData:(BOOL)arg2 installedProviderIdentifiers:(id)arg3;
+- (void)garbageCollectDomainsWithIdentifiers:(id)arg1 fromDirectory:(id)arg2 isUserData:(BOOL)arg3;
 - (id)xattrForName:(id)arg1 url:(id)arg2;
 - (void)afterFirstDiscovery;
 - (id)initWithServer:(id)arg1;

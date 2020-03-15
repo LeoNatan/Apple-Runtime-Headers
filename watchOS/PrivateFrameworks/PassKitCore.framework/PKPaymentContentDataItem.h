@@ -15,8 +15,8 @@
 
 + (_Bool)supportsMultipleItems;
 + (int)dataType;
-@property(readonly, nonatomic) PKPaymentContentItem *contentItem; // @synthesize contentItem=_contentItem;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKPaymentContentItem *contentItem; // @synthesize contentItem=_contentItem;
 - (_Bool)isValidWithError:(id *)arg1;
 - (id)initWithContentItem:(id)arg1;
 

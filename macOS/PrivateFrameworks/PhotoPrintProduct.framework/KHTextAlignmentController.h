@@ -19,12 +19,12 @@
     KHFrame *_frame;
 }
 
+- (void).cxx_destruct;
 @property(retain) KHFrame *frame; // @synthesize frame=_frame;
 @property(retain) KHTextView *textView; // @synthesize textView=_textView;
 @property(retain) NSSegmentedControl *verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;
 @property(retain) NSSegmentedControl *paragraphAlignment; // @synthesize paragraphAlignment=_paragraphAlignment;
 @property(retain) NSPopUpButton *columnCount; // @synthesize columnCount=_columnCount;
-- (void).cxx_destruct;
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)columnChosen:(id)arg1;
 - (void)vAlignChosen:(id)arg1;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     id <UISplitViewControllerImpl> _impl;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_hasBeenUsed) BOOL hasBeenUsed; // @synthesize hasBeenUsed=_hasBeenUsed;
 @property(nonatomic, getter=_impl, setter=_setImpl:) __weak id <UISplitViewControllerImpl> impl; // @synthesize impl=_impl;
-- (void).cxx_destruct;
 - (void)_wasUsed;
 - (SEL)action;
 - (id)target;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, NTKTaskScheduler, PCPersistentTimer;
+@class NSMutableDictionary, NSString, NTKTaskScheduler, PCPersistentTimer;
 @protocol NTKRemoteComplicationUpdateSchedulerDelegate;
 
 @interface NTKRemoteComplicationUpdateScheduler : NSObject
@@ -14,14 +14,14 @@
     NSMutableDictionary *_clientIdentifierToRequestDate;
     NTKTaskScheduler *_taskScheduler;
     PCPersistentTimer *_checkForNextUpdateTimer;
-    struct NSString *_scheduledTaskToken;
+    NSString *_scheduledTaskToken;
     double _minimumTimeIntervalBetweenUpdates;
     unsigned int _coalesceUpdatesToMinute;
     NSObject<NTKRemoteComplicationUpdateSchedulerDelegate> *_delegate;
 }
 
-@property(nonatomic) __weak NSObject<NTKRemoteComplicationUpdateSchedulerDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSObject<NTKRemoteComplicationUpdateSchedulerDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void)_handleSignificantTimeChange;
 - (void)_performRequestedUpdatesAndResetTimer;
 - (void)_scheduleTask:(id)arg1;

@@ -23,12 +23,12 @@
 + (_Bool)validateConfiguration:(id)arg1 client:(id)arg2 error:(id *)arg3;
 + (Class)configurationClass;
 + (id)requiredEntitlements;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDSeriesBuilderEntity *persistentEntity; // @synthesize persistentEntity=_persistentEntity;
 @property(retain, nonatomic) HKSeriesSample *seriesSample; // @synthesize seriesSample=_seriesSample;
 @property(nonatomic, setter=queue_setState:) long long queue_state; // @synthesize queue_state=_queue_state;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) HKSeriesBuilderConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)connectionInvalidated;
 - (id)remoteInterface;
 - (id)exportedInterface;

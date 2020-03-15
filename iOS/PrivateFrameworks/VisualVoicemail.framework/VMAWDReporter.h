@@ -16,9 +16,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AWDServerConnection *serverConnection; // @synthesize serverConnection=_serverConnection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)reportVoicemailTranscriptionFailedWithReason:(unsigned long long)arg1;
 - (void)reportVoicemailTranscriptionCompleted;
 - (void)reportVoicemailTranscriptionAttempted;

@@ -20,12 +20,12 @@
     NSArray *_constraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(retain, nonatomic) UISlider *slider; // @synthesize slider=_slider;
 @property(nonatomic) BOOL showValue; // @synthesize showValue=_showValue;
 @property(nonatomic) __weak id <HUSliderValueTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_setupAutoLayoutConstraints;
 @property(nonatomic, getter=isDisabled) BOOL disabled;
 @property(retain, nonatomic) UIImage *maximumValueImage;

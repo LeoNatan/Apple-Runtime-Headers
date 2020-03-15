@@ -18,11 +18,11 @@
     unsigned long long _order;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasTimestamp; // @synthesize hasTimestamp=_hasTimestamp;
 @property(nonatomic) unsigned long long order; // @synthesize order=_order;
 @property(retain, nonatomic) TISKTap *tap; // @synthesize tap=_tap;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (BOOL)isValidCandidate:(id)arg1;
 - (BOOL)isMissingATouch;
 - (void)reportInterKeyTiming:(id)arg1 previousEvent:(id)arg2;

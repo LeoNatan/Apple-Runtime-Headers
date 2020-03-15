@@ -13,8 +13,8 @@
     CBUUID *_UUID;
 }
 
-@property(readonly, nonatomic) CBUUID *UUID; // @synthesize UUID=_UUID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CBUUID *UUID; // @synthesize UUID=_UUID;
 - (id)initWithUUID:(id)arg1;
 
 @end

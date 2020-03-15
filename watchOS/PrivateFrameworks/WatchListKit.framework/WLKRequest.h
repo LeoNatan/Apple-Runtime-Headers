@@ -13,8 +13,8 @@
     NSString *_caller;
 }
 
-@property(retain, nonatomic) NSString *caller; // @synthesize caller=_caller;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *caller; // @synthesize caller=_caller;
 
 @end
 

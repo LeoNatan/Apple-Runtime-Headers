@@ -20,13 +20,13 @@
     BOOL _isPreferredForName;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL isPreferredForName; // @synthesize isPreferredForName=_isPreferredForName;
 @property(readonly) BOOL showName; // @synthesize showName=_showName;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly) BOOL unified; // @synthesize unified=_unified;
 @property(readonly, copy, nonatomic) NSString *accountName; // @synthesize accountName=_accountName;
 @property(readonly, copy, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

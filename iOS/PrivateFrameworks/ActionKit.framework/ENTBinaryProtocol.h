@@ -19,11 +19,11 @@
     id <ENTTransport> _transport;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int messageSizeLimit; // @synthesize messageSizeLimit=_messageSizeLimit;
 @property(nonatomic) _Bool strictWrite; // @synthesize strictWrite=_strictWrite;
 @property(nonatomic) _Bool strictRead; // @synthesize strictRead=_strictRead;
 @property(retain, nonatomic) id <ENTTransport> transport; // @synthesize transport=_transport;
-- (void).cxx_destruct;
 - (void)writeBool:(_Bool)arg1;
 - (void)writeListEnd;
 - (void)writeListBeginWithElementType:(int)arg1 size:(int)arg2;

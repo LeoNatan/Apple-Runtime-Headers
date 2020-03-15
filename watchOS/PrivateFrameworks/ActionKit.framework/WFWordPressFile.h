@@ -20,11 +20,11 @@
 
 + (id)fileIdJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, copy, nonatomic) NSString *filename; // @synthesize filename=_filename;
 @property(readonly, copy, nonatomic) NSNumber *fileId; // @synthesize fileId=_fileId;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

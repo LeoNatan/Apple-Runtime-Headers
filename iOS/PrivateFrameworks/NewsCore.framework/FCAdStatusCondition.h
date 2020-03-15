@@ -15,9 +15,9 @@
 }
 
 + (id)adStatusConditionsFromConditionsArray:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithStatusConditionType:(unsigned long long)arg1 identifier:(id)arg2;
 
 @end

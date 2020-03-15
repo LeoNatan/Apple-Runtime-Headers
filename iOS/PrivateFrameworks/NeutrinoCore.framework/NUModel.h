@@ -31,8 +31,8 @@
 + (id)requiredAttributes;
 + (id)supportedAttributes;
 + (id)deserializeFromDictionary:(id)arg1 error:(out id *)arg2;
-@property(readonly, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
 - (_Bool)serializeAttribute:(id)arg1 value:(id)arg2 intoDictionary:(id)arg3 error:(out id *)arg4;
 - (_Bool)validateAttribute:(id)arg1 value:(id)arg2 error:(out id *)arg3;
 - (_Bool)validateAttributes:(out id *)arg1;

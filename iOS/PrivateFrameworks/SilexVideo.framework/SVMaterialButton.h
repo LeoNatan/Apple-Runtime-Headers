@@ -13,8 +13,8 @@
     AVBackgroundView *_backgroundView;
 }
 
-@property(readonly, nonatomic) AVBackgroundView *backgroundView; // @synthesize backgroundView=_backgroundView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) AVBackgroundView *backgroundView; // @synthesize backgroundView=_backgroundView;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

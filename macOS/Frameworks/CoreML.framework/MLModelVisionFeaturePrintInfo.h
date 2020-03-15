@@ -14,9 +14,9 @@
     MLModel *_postVisionFeaturePrintModel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MLModel *postVisionFeaturePrintModel; // @synthesize postVisionFeaturePrintModel=_postVisionFeaturePrintModel;
 @property(nonatomic) long long version; // @synthesize version=_version;
-- (void).cxx_destruct;
 
 @end
 

@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     id <PUPhotoCommentEntryViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PUPhotoCommentEntryViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, retain, nonatomic) UIButton *postButton; // @synthesize postButton=_postButton;
 @property(readonly, retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 @property(readonly, retain, nonatomic) UILabel *placeholderLabel; // @synthesize placeholderLabel=_placeholderLabel;
-- (void).cxx_destruct;
 - (void)textViewDidEndEditing:(id)arg1;
 - (void)textViewDidBeginEditing:(id)arg1;
 - (_Bool)textViewShouldEndEditing:(id)arg1;

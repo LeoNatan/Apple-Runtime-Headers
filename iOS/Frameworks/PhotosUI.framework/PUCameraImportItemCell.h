@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)alphaForSelectedCells;
+- (void).cxx_destruct;
 @property(nonatomic) long long thumbnailRequestID; // @synthesize thumbnailRequestID=_thumbnailRequestID;
 @property(nonatomic) struct CGRect scaledDisplayRect; // @synthesize scaledDisplayRect=_scaledDisplayRect;
 @property(nonatomic) _Bool needsBadgeUpdate; // @synthesize needsBadgeUpdate=_needsBadgeUpdate;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool needsThumbnailRefresh; // @synthesize needsThumbnailRefresh=_needsThumbnailRefresh;
 @property(retain, nonatomic) PXImportItemViewModel *representedImportItem; // @synthesize representedImportItem=_representedImportItem;
 @property(nonatomic) __weak id <PUCameraImportItemCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateDebugLabel:(id)arg1;
 - (id)accessibilityCustomActions;
 - (void)accessibilityElementDidBecomeFocused;

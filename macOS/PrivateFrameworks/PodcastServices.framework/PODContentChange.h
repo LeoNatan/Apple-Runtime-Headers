@@ -19,10 +19,10 @@
 
 + (Class)entityDataClass;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PODContentChangeEntityData *entityData; // @synthesize entityData=_entityData;
 @property(readonly, nonatomic) long long entitySyncID; // @synthesize entitySyncID=_entitySyncID;
 @property(readonly, nonatomic) long long changeType; // @synthesize changeType=_changeType;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithDeletedEntitySyncID:(long long)arg1;

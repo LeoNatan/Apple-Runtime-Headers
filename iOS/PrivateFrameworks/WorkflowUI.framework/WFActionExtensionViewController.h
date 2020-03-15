@@ -19,11 +19,11 @@
     WFRunWorkflowToolbar *_toolbar;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFRunWorkflowToolbar *toolbar; // @synthesize toolbar=_toolbar;
 @property(retain, nonatomic) WFRunWorkflowViewController *workflowViewController; // @synthesize workflowViewController=_workflowViewController;
 @property(nonatomic) __weak id <WFActionExtensionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSDictionary *eventDictionary; // @synthesize eventDictionary=_eventDictionary;
-- (void).cxx_destruct;
 - (void)handoffWithWorkflowControllerState:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)runWorkflowToolbarForWorkflowViewController:(id)arg1;
 - (_Bool)workflowViewController:(id)arg1 handleUnsupportedUserInterfaceForAction:(id)arg2 currentState:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

@@ -25,6 +25,7 @@
 
 + (id)intentDescription;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *bookingDate; // @synthesize bookingDate=_bookingDate;
 @property(copy) NSString *guestProvidedSpecialRequestText; // @synthesize guestProvidedSpecialRequestText=_guestProvidedSpecialRequestText;
 @property(copy) INRestaurantOffer *selectedOffer; // @synthesize selectedOffer=_selectedOffer;
@@ -33,7 +34,6 @@
 @property unsigned long long partySize; // @synthesize partySize=_partySize;
 @property(copy) NSDateComponents *bookingDateComponents; // @synthesize bookingDateComponents=_bookingDateComponents;
 @property(copy) INRestaurant *restaurant; // @synthesize restaurant=_restaurant;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;

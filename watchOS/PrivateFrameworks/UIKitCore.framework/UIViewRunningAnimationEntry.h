@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     id <UIViewAnimationComposing> _composer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <UIViewAnimationComposing> composer; // @synthesize composer=_composer;
 @property(nonatomic) __weak UIViewAnimationState *animationState; // @synthesize animationState=_animationState;
 @property(nonatomic) _Bool running; // @synthesize running=_running;
-- (void).cxx_destruct;
 - (void)performWithoutLock:(CDUnknownBlockType)arg1;
 - (void)performWithLock:(CDUnknownBlockType)arg1;
 - (void)setCompletionCallback:(CDUnknownBlockType)arg1;

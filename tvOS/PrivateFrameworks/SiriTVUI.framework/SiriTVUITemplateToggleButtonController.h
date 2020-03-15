@@ -15,10 +15,10 @@
     UIImage *_offButtonPlaceHolderImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *offButtonPlaceHolderImage; // @synthesize offButtonPlaceHolderImage=_offButtonPlaceHolderImage;
 @property(retain, nonatomic) UIImage *onButtonPlaceHolderImage; // @synthesize onButtonPlaceHolderImage=_onButtonPlaceHolderImage;
 @property(nonatomic, getter=_currentState, setter=_setCurrentState:) _Bool currentState; // @synthesize currentState=_currentState;
-- (void).cxx_destruct;
 - (id)_placeHolderImageForSize:(struct CGSize)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_buttonPressed:(id)arg1;

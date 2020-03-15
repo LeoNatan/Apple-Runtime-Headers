@@ -24,6 +24,7 @@
 
 + (id)_thumbnailCreationOperationQueue;
 + (id)_thumbnailFetchOperationQueue;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool imageIsPlaceholder; // @synthesize imageIsPlaceholder=_imageIsPlaceholder;
 @property(retain, nonatomic) PXPlacesImageCache *imageCache; // @synthesize imageCache=_imageCache;
 @property(retain, nonatomic) UIImageView *countLabelBackgroundImageView; // @synthesize countLabelBackgroundImageView=_countLabelBackgroundImageView;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) id extendedTraitObserver; // @synthesize extendedTraitObserver=_extendedTraitObserver;
 @property(retain, nonatomic) PKExtendedTraitCollection *extendedTraitCollection; // @synthesize extendedTraitCollection=_extendedTraitCollection;
 @property(copy, nonatomic) CDUnknownBlockType displayCompletion; // @synthesize displayCompletion=_displayCompletion;
-- (void).cxx_destruct;
 - (id)renderToImage;
 - (void)_hideCountLabel;
 - (void)_showCountLabel;

@@ -11,5 +11,6 @@
 @protocol AVTStickerRecord <NSObject>
 @property(readonly, copy, nonatomic) NSString *stickerConfigurationIdentifier;
 @property(readonly, copy, nonatomic) NSString *avatarRecordIdentifier;
+@property(readonly, copy, nonatomic) NSString *identifier;
 @end
 

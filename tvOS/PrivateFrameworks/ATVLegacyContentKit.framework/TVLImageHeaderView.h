@@ -27,13 +27,13 @@
 + (id)titleColor;
 + (id)subtitleFont;
 + (id)subtitleColor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVImageProxy *headerImageProxy; // @synthesize headerImageProxy=_headerImageProxy;
 @property(retain, nonatomic) UIImage *headerImage; // @synthesize headerImage=_headerImage;
 @property(nonatomic) _Bool useUberImageLayout; // @synthesize useUberImageLayout=_useUberImageLayout;
 @property(nonatomic) struct UIEdgeInsets imageInsets; // @synthesize imageInsets=_imageInsets;
 @property(nonatomic) long long horizontalAlignment; // @synthesize horizontalAlignment=_horizontalAlignment;
 @property(readonly, nonatomic) TVLImageHeaderElement *imageHeaderElement; // @synthesize imageHeaderElement=_imageHeaderElement;
-- (void).cxx_destruct;
 - (double)shadowHeight;
 - (id)headerImageURL;
 - (void)setHeaderImageProxy:(id)arg1 completion:(CDUnknownBlockType)arg2;

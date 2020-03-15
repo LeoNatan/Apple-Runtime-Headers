@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     float _height;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float height; // @synthesize height=_height;
 @property(readonly, nonatomic) UITableViewCell *cell; // @synthesize cell=_cell;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCell:(id)arg1 height:(float)arg2;

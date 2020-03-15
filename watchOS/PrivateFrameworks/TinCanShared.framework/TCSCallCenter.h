@@ -18,8 +18,8 @@
     id <TCSCallCenterDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <TCSCallCenterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <TCSCallCenterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)remoteUplinkMuteChanged:(id)arg1;
 - (void)callConnected:(id)arg1;
 - (void)callStatusChanged:(id)arg1;

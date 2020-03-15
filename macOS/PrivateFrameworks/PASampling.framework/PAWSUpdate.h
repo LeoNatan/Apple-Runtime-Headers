@@ -38,8 +38,8 @@
 @property(readonly) double frameEndTime;
 - (void)populateReferencesUsingBufferPosition:(const void *)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
 - (unsigned long long)sizeInBytesForSerializedVersion;
-- (BOOL)addSelfToBufferAtPosition:(void *)arg1 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg2;
-- (void)addSelfToSerializationDictionary:(struct NSMutableDictionary *)arg1;
+- (BOOL)addSelfToBufferAtPosition:(void *)arg1 withCompletedSerializationDictionary:(id)arg2;
+- (void)addSelfToSerializationDictionary:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

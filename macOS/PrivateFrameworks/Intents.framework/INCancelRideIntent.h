@@ -15,8 +15,8 @@
 
 + (id)intentDescription;
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy) NSString *rideIdentifier; // @synthesize rideIdentifier=_rideIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *rideIdentifier; // @synthesize rideIdentifier=_rideIdentifier;
 - (id)_dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

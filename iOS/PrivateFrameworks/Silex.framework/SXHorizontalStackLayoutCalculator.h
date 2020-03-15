@@ -23,6 +23,7 @@
     double _combinedMinimumWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double combinedMinimumWidth; // @synthesize combinedMinimumWidth=_combinedMinimumWidth;
 @property(nonatomic) double combinedMaximumWidth; // @synthesize combinedMaximumWidth=_combinedMaximumWidth;
 @property(readonly, nonatomic) NSMutableDictionary *maximumWidths; // @synthesize maximumWidths=_maximumWidths;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) NSMutableArray *sortedItems; // @synthesize sortedItems=_sortedItems;
 @property(readonly, nonatomic) NSMutableArray *flexibleItems; // @synthesize flexibleItems=_flexibleItems;
 @property(readonly, nonatomic) NSMutableArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (id)layoutForComponentWidth:(double)arg1;
 - (void)addItemWithMinimumWidth:(double)arg1 maximumWidth:(double)arg2 identifier:(id)arg3;
 - (void)addFlexibleItemWithIdentifier:(id)arg1;

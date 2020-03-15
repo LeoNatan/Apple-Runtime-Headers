@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     UIColor *_textColor;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(copy, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
 @property(readonly, nonatomic) float promptHeight;

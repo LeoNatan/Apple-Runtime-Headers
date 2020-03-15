@@ -15,8 +15,8 @@
     NSMutableDictionary *_appliances;
 }
 
-@property(retain) NSMutableDictionary *appliances; // @synthesize appliances=_appliances;
 - (void).cxx_destruct;
+@property(retain) NSMutableDictionary *appliances; // @synthesize appliances=_appliances;
 - (void)provideTopShelfItems:(CDUnknownBlockType)arg1;
 @property(readonly) NSArray *topShelfItems;
 @property(readonly) long long topShelfStyle;

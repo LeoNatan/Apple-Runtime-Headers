@@ -29,6 +29,7 @@
     id <FCAssetKeyManagerType> _assetKeyManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <FCAssetKeyManagerType> assetKeyManager; // @synthesize assetKeyManager=_assetKeyManager;
 @property(retain, nonatomic) FCCKContentDatabase *contentDatabase; // @synthesize contentDatabase=_contentDatabase;
 @property(retain) FCFeedDatabase *feedDatabase; // @synthesize feedDatabase=_feedDatabase;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) FCTagListRecordSource *tagListRecordSource; // @synthesize tagListRecordSource=_tagListRecordSource;
 @property(retain, nonatomic) FCTagRecordSource *tagRecordSource; // @synthesize tagRecordSource=_tagRecordSource;
 @property(retain, nonatomic) FCArticleRecordSource *articleRecordSource; // @synthesize articleRecordSource=_articleRecordSource;
-- (void).cxx_destruct;
 - (void)enableFlushingWithFlushingThreshold:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSArray *recordSources;
 - (id)init;

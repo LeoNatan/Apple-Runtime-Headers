@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
     double _selectionProgress;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double selectionProgress; // @synthesize selectionProgress=_selectionProgress;
 @property(retain, nonatomic) UIImage *selectedImage; // @synthesize selectedImage=_selectedImage;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_positionBadge;
 - (void)_setBadgeValue:(id)arg1;
 - (void)tintColorDidChange;

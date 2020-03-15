@@ -21,8 +21,8 @@
     id <PXDeferrableDataSourceManagerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PXDeferrableDataSourceManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PXDeferrableDataSourceManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)resumeDataSourceChanges;
 - (void)_setPendingDataSource:(id)arg1 changeDetailsArray:(id)arg2;

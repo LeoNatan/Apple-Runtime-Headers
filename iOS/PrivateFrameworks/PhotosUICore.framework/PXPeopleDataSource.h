@@ -26,6 +26,7 @@
     CDUnknownBlockType _reloadBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType reloadBlock; // @synthesize reloadBlock=_reloadBlock;
 @property(retain, nonatomic) PHFetchResult *objects; // @synthesize objects=_objects;
 @property(readonly, nonatomic) _Bool useAsynchronousLoad; // @synthesize useAsynchronousLoad=_useAsynchronousLoad;
@@ -39,7 +40,6 @@
 @property(nonatomic) __weak id <PXPeopleDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long maximumNumberOfMembers; // @synthesize maximumNumberOfMembers=_maximumNumberOfMembers;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)_asyncLoadImageForItem:(id)arg1 targetSize:(struct CGSize)arg2 withCompletionBlock:(CDUnknownBlockType)arg3 fastDisplayBlock:(CDUnknownBlockType)arg4;
 - (id)_itemsArrayFromObjects:(id)arg1;
 - (void)stopListeningForChanges;

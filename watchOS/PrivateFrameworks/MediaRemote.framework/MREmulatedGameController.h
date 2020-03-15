@@ -14,15 +14,15 @@
     MRGameControllerDaemonProxy *_remote;
     int _profile;
     id <MREmulatedGameControllerDelegate> _delegate;
-    struct NSObject *_controller;
+    NSObject *_controller;
     double _buttonAUpDelay;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *controller; // @synthesize controller=_controller;
 @property(nonatomic) __weak id <MREmulatedGameControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double buttonAUpDelay; // @synthesize buttonAUpDelay=_buttonAUpDelay;
 @property(readonly, nonatomic) int profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)_handleGameControllerDidChange:(id)arg1;
 - (void)sendGameControllerEvent:(id)arg1;
 - (void)dealloc;

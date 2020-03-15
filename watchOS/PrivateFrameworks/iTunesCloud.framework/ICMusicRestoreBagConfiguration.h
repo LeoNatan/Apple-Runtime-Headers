@@ -16,11 +16,11 @@
     NSURL *_restoreURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldGZip; // @synthesize shouldGZip=_shouldGZip;
 @property(readonly, copy, nonatomic) NSURL *restoreURL; // @synthesize restoreURL=_restoreURL;
 @property(readonly, copy, nonatomic) NSArray *allowedMatchStatus; // @synthesize allowedMatchStatus=_allowedMatchStatus;
 @property(readonly, copy, nonatomic) NSArray *allowedKinds; // @synthesize allowedKinds=_allowedKinds;
-- (void).cxx_destruct;
 - (id)initWithServerConfiguration:(id)arg1;
 
 @end

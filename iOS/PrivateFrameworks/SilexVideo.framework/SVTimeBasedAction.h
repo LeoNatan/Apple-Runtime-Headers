@@ -12,9 +12,9 @@
     CDUnknownBlockType _block;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(readonly, nonatomic) double time; // @synthesize time=_time;
-- (void).cxx_destruct;
 - (id)initWithTime:(double)arg1 block:(CDUnknownBlockType)arg2;
 
 @end

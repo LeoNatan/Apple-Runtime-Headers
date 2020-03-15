@@ -13,8 +13,8 @@
     PXPlacesMapView *_mapView;
 }
 
-@property __weak PXPlacesMapView *mapView; // @synthesize mapView=_mapView;
 - (void).cxx_destruct;
+@property __weak PXPlacesMapView *mapView; // @synthesize mapView=_mapView;
 - (long long)segmentIndexFor:(unsigned long long)arg1;
 - (void)mapTypeChanged:(id)arg1;
 - (void)tapped3dButton:(id)arg1;

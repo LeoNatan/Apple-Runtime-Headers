@@ -16,10 +16,10 @@
     NSString *_key;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 @property(nonatomic) __weak id <WFCloudKitItem> item; // @synthesize item=_item;
 @property(retain, nonatomic) NSURL *assetURL; // @synthesize assetURL=_assetURL;
-- (void).cxx_destruct;
 - (void)start;
 - (id)initWithAssetURL:(id)arg1 item:(id)arg2 key:(id)arg3;
 

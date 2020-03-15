@@ -17,9 +17,9 @@
     id <CRCardSection> _cardSection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CRCardSection> cardSection; // @synthesize cardSection=_cardSection;
 @property(copy, nonatomic) NSSet *parameters; // @synthesize parameters=_cardSectionParameters;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isWildCardSection;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

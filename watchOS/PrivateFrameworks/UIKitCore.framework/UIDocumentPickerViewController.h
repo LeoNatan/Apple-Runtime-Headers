@@ -24,6 +24,7 @@
     NSArray *_uploadURLs;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isContentManaged, setter=_setIsContentManaged:) _Bool isContentManaged; // @synthesize isContentManaged=_isContentManaged;
 @property(copy, nonatomic) NSArray *uploadURLs; // @synthesize uploadURLs=_uploadURLs;
 @property(retain, nonatomic, getter=_childViewController, setter=_setChildViewController:) UIViewController *childViewController; // @synthesize childViewController=_childViewController;
@@ -34,7 +35,6 @@
 @property(nonatomic) __weak id <UIDocumentPickerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=_ignoreApplicationEntitlementForImport, setter=_setIgnoreApplicationEntitlementForImport:) _Bool _ignoreApplicationEntitlementForImport; // @synthesize _ignoreApplicationEntitlementForImport;
 @property(retain, nonatomic) NSMutableArray *_securityScopedURLs; // @synthesize _securityScopedURLs;
-- (void).cxx_destruct;
 - (void)_consumeSandboxExtensionForURL:(id)arg1;
 - (void)_didTapCancel;
 - (void)_callDelegateWithSelectedURLsAndDismiss:(id)arg1;

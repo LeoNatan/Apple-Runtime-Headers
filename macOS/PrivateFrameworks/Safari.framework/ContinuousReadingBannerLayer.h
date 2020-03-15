@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 
 + (double)footerBannerSeparatorHeight;
 + (double)bannerHeight;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSAttributedString *secondaryTextTitle; // @synthesize secondaryTextTitle=_secondaryTextTitle;
 @property(copy, nonatomic) NSAttributedString *primaryTextTitle; // @synthesize primaryTextTitle=_primaryTextTitle;
 @property(retain, nonatomic) NSImage *secondaryIcon; // @synthesize secondaryIcon=_secondaryIcon;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long bannerType; // @synthesize bannerType=_bannerType;
 @property(readonly, nonatomic) unsigned long long bannerLocation; // @synthesize bannerLocation=_bannerLocation;
 @property(nonatomic) double scaleFactor; // @synthesize scaleFactor=_scaleFactor;
-- (void).cxx_destruct;
 - (id)_textAttributesForSecondaryTextLayer;
 - (id)_textAttributesForPrimaryTextLayer;
 - (id)_fontForSecondaryTextLayer;

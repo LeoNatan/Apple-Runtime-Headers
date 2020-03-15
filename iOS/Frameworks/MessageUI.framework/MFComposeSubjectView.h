@@ -27,12 +27,12 @@
     double _trailingButtonMidlineInsetFromLayoutMargin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isContentVariationButtonSelected) _Bool contentVariationButtonSelected; // @synthesize contentVariationButtonSelected=_contentVariationButtonSelected;
 @property(nonatomic) double trailingButtonMidlineInsetFromLayoutMargin; // @synthesize trailingButtonMidlineInsetFromLayoutMargin=_trailingButtonMidlineInsetFromLayoutMargin;
 @property(readonly, nonatomic) UIButton *contentVariationButton; // @synthesize contentVariationButton=_contentVariationButton;
 @property(readonly, nonatomic) UIButton *notifyButton; // @synthesize notifyButton=_notifyButton;
 @property(readonly, nonatomic) UITextView *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 - (void)_textInputDidChange:(id)arg1;
 - (_Bool)_canBecomeFirstResponder;
 - (_Bool)endEditing:(_Bool)arg1;

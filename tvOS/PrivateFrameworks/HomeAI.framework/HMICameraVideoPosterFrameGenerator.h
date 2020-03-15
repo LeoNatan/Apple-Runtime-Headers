@@ -19,10 +19,10 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) HMICameraVideoPosterFrameGeneratorInput *input; // @synthesize input=_input;
 @property(retain) NSMutableArray *posterFramesInternal; // @synthesize posterFramesInternal=_posterFramesInternal;
 @property CDStruct_1b6d18a9 nextGenerationTime; // @synthesize nextGenerationTime=_nextGenerationTime;
-- (void).cxx_destruct;
 - (_Bool)willHandleFramesFromVideoResource:(id)arg1;
 - (_Bool)handleVideoFrame:(id)arg1 error:(id *)arg2;
 - (void)startHandlingFrames;

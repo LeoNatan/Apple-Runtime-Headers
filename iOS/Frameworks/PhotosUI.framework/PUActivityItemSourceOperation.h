@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     NSString *_activityType;
 }
 
+- (void).cxx_destruct;
 @property(getter=_pu_isCancelled, setter=_pu_setCancelled:) _Bool _pu_cancelled; // @synthesize _pu_cancelled=__pu_cancelled;
 @property(readonly, copy) NSString *activityType; // @synthesize activityType=_activityType;
 @property(readonly, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
 @property(readonly) __weak id <PUActivityItemSourceOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, getter=pu_isCancelled) _Bool pu_cancelled;
 - (void)pu_cancel;
 - (void)main;

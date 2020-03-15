@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)sectionsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) CKDPAsset *manifest; // @synthesize manifest=_manifest;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

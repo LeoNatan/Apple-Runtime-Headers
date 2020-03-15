@@ -20,11 +20,11 @@
     NSDictionary *_responseDictionary;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
 @property(readonly, copy, nonatomic) NSArray *responseArray; // @synthesize responseArray=_responseArray;
 @property(copy, nonatomic) NSArray *sortedSupportedSizesArray; // @synthesize sortedSupportedSizesArray=_sortedSupportedSizesArray;
 @property(copy, nonatomic) NSArray *sortedResponseArray; // @synthesize sortedResponseArray=_sortedResponseArray;
-- (void).cxx_destruct;
 - (_Bool)_hasOriginalSize;
 - (void)_sortSupportedSizesArray;
 - (void)_sortResponseArray;

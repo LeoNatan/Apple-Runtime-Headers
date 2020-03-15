@@ -23,8 +23,8 @@
 + (id)ownedTypes;
 + (BOOL)supportedTypeMustBeDeterminedByInstance:(id)arg1;
 + (id)itemWithMapItem:(id)arg1 fromQueryLocation:(id)arg2;
-@property(retain, nonatomic) CLLocation *queryLocation; // @synthesize queryLocation=_queryLocation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CLLocation *queryLocation; // @synthesize queryLocation=_queryLocation;
 - (BOOL)canGenerateRepresentationForType:(id)arg1;
 - (void)generateObjectRepresentations:(CDUnknownBlockType)arg1 options:(id)arg2 forClass:(Class)arg3;
 @property(readonly, nonatomic) MKMapItem *mapItem;

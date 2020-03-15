@@ -25,6 +25,7 @@
 
 + (id)_commentLabelFont;
 + (id)_nameLabelFont;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showSpinner; // @synthesize showSpinner=_showSpinner;
 @property(retain, nonatomic) UIActivityIndicatorView *spinner; // @synthesize spinner=_spinner;
 @property(retain, nonatomic) NSArray *removableConstraints; // @synthesize removableConstraints=_removableConstraints;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) UILabel *commentLabel; // @synthesize commentLabel=_commentLabel;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property BOOL hideStatus; // @synthesize hideStatus=_hideStatus;
-- (void).cxx_destruct;
 - (id)_statusImageViewSymbolConfiguration;
 - (void)updateCommonElements:(id)arg1 statusImage:(id)arg2;
 - (void)updateWithParticipantForSorting:(id)arg1 availabilityType:(long long)arg2 showSpinner:(BOOL)arg3 animated:(BOOL)arg4;

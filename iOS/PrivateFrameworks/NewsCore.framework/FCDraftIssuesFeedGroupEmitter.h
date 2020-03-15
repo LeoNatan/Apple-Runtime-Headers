@@ -16,8 +16,8 @@
 }
 
 + (id)groupEmitterIdentifier;
-@property(retain, nonatomic) NSString *issueListID; // @synthesize issueListID=_issueListID;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *issueListID; // @synthesize issueListID=_issueListID;
 @property(readonly, nonatomic) _Bool shouldEmitContentInFavoritesOnlyMode;
 @property(readonly, nonatomic) _Bool emitsSingletonGroups;
 @property(readonly, copy, nonatomic) NSSet *emittableGroupTypes;

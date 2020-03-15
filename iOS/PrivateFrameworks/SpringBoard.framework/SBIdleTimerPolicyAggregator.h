@@ -24,10 +24,10 @@
     SBDeviceUnlockAggdLogger *_logger;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setIdleTimer:) id <SBIdleTimer> idleTimer; // @synthesize idleTimer=_idleTimer;
 @property(readonly, nonatomic, getter=_backlightController) SBBacklightController *backlightController; // @synthesize backlightController=_backlightController;
 @property(readonly, nonatomic, getter=_logger) SBDeviceUnlockAggdLogger *logger; // @synthesize logger=_logger;
-- (void).cxx_destruct;
 - (void)idleTimerGlobalCoordinator:(id)arg1 didActivateIdleTimer:(id)arg2;
 - (void)idleTimerDidWarn:(id)arg1;
 - (void)idleTimerDidResetForUserAttention:(id)arg1;

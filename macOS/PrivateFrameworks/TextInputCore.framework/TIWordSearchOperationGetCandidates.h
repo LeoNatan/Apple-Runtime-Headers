@@ -27,6 +27,7 @@
     TIWordSearch *_wordSearch;
 }
 
+- (void).cxx_destruct;
 @property(retain) TIWordSearch *wordSearch; // @synthesize wordSearch=_wordSearch;
 @property(retain, nonatomic) TIKeyboardCandidate *candidateAfterSegmentBreak; // @synthesize candidateAfterSegmentBreak=_candidateAfterSegmentBreak;
 @property(readonly, nonatomic) TIMecabraIMLogger *logger; // @synthesize logger=_logger;
@@ -42,7 +43,6 @@
 @property(readonly, nonatomic) MCAcceptCandidateInput *lastAcceptCandidateInput; // @synthesize lastAcceptCandidateInput=_lastAcceptCandidateInput;
 @property(readonly, nonatomic) MCKeyboardInput *keyboardInput; // @synthesize keyboardInput=_keyboardInput;
 @property(readonly, nonatomic) NSString *inputString; // @synthesize inputString=_inputString;
-- (void).cxx_destruct;
 - (void)completeSearchOnMainThreadWithResults:(id)arg1;
 - (void)perform;
 - (void)checkForCachedResults;

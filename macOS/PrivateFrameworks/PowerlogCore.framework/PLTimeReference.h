@@ -20,12 +20,12 @@
 
 + (id)hourBucketOffsetKeyFromEntryDefinitionKey:(id)arg1;
 + (id)defaultsKeyFromEntryDefinitionKey:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double hourBucketOffset; // @synthesize hourBucketOffset=_hourBucketOffset;
 @property(retain) NSString *entryDefinitionKey; // @synthesize entryDefinitionKey=_entryDefinitionKey;
 @property long long timeReferenceType; // @synthesize timeReferenceType=_timeReferenceType;
 @property(retain) id <PLTimeReferenceManager> timeManager; // @synthesize timeManager=_timeManager;
 @property(nonatomic) double offset; // @synthesize offset=_offset;
-- (void).cxx_destruct;
 - (void)registerForTimeZoneChangedNotification;
 - (void)registerForDayChangedNotification;
 - (void)writeOffsetToDefaults;

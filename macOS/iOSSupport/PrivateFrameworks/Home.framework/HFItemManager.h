@@ -54,6 +54,7 @@
 }
 
 + (BOOL)_canReloadDuringUnitTests;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NAFuture *firstFullUpdateFuture; // @synthesize firstFullUpdateFuture=_firstFullUpdateFuture;
 @property(retain, nonatomic) HFItemManagerBatchedDelegateAdapter *batchedDelegateAdapterDisallowingReads; // @synthesize batchedDelegateAdapterDisallowingReads=_batchedDelegateAdapterDisallowingReads;
 @property(retain, nonatomic) HFItemManagerBatchedDelegateAdapter *batchedDelegateAdapterAllowingReads; // @synthesize batchedDelegateAdapterAllowingReads=_batchedDelegateAdapterAllowingReads;
@@ -74,7 +75,6 @@
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) HFItem *sourceItem; // @synthesize sourceItem=_sourceItem;
 @property(nonatomic) __weak id <HFItemManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_debug_itemManagerDescription;
 - (void)settingsInvalidatedForNotificationCenter:(id)arg1;
 - (void)temperatureUnitObserver:(id)arg1 didChangeTemperatureUnit:(BOOL)arg2;
@@ -179,6 +179,7 @@
 - (void)endDisableExternalUpdatesWithReason:(id)arg1;
 - (void)disableExternalUpdatesWithReason:(id)arg1;
 - (void)_updateExternalUpdatesEnabled:(BOOL)arg1 reloadItems:(BOOL)arg2;
+- (id)matchingItemForHomeKitObject:(id)arg1;
 - (id)childItemsForItem:(id)arg1 ofClass:(Class)arg2 conformingToProtocol:(id)arg3;
 - (id)childItemsForItem:(id)arg1 ofClass:(Class)arg2;
 - (id)childItemsForItem:(id)arg1;

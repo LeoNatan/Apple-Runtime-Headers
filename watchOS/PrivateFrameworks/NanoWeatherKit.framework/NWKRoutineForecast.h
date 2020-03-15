@@ -13,7 +13,7 @@
 
 @interface NWKRoutineForecast : NSObject <NSSecureCoding, NSCopying>
 {
-    struct NSDictionary *_forecastsForRoutineLocations;
+    NSDictionary *_forecastsForRoutineLocations;
     NWKRoutineLocation *_currentRoutineLocation;
     NSDate *_createdDate;
     unsigned int _updateToken;
@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *interestingHourlyForecastedConditions; // @synthesize interestingHourlyForecastedConditions=_interestingHourlyForecastedConditions;
 @property(nonatomic) unsigned int updateToken; // @synthesize updateToken=_updateToken;
 @property(readonly, nonatomic) NSDate *createdDate; // @synthesize createdDate=_createdDate;
 @property(readonly, nonatomic) NWKRoutineLocation *currentRoutineLocation; // @synthesize currentRoutineLocation=_currentRoutineLocation;
 @property(retain, nonatomic) NSDictionary *forecastsForRoutineLocations; // @synthesize forecastsForRoutineLocations=_forecastsForRoutineLocations;
-- (void).cxx_destruct;
 - (void)_generateSummaryDetails;
 - (_Bool)_doConditionsExceedThreshold:(id)arg1;
 - (void)_fetchInterestingHourlyForecastedData:(CDUnknownBlockType)arg1;
@@ -34,7 +34,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
-- (id)initWithForecastsForRoutineLocations:(struct NSDictionary *)arg1 currentRoutineLocation:(id)arg2;
+- (id)initWithForecastsForRoutineLocations:(id)arg1 currentRoutineLocation:(id)arg2;
 
 @end
 

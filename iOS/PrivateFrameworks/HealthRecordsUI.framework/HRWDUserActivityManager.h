@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_policies;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *policies; // @synthesize policies=_policies;
 @property(nonatomic) _Bool recordActivities; // @synthesize recordActivities=_recordActivities;
-- (void).cxx_destruct;
 - (_Bool)_restoreActivityFromPolicies:(id)arg1;
 - (void)addPolicy:(id)arg1;
 - (void)decodeRestorableStateWithCoder:(id)arg1;

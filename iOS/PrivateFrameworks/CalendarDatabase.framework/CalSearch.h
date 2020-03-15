@@ -33,11 +33,11 @@
     _Bool _shouldMatchLocationsOnlyForEventSearch;
 }
 
+- (void).cxx_destruct;
 @property _Bool shouldMatchLocationsOnlyForEventSearch; // @synthesize shouldMatchLocationsOnlyForEventSearch=_shouldMatchLocationsOnlyForEventSearch;
 @property _Bool searchAttendees; // @synthesize searchAttendees=_searchAttendees;
 @property _Bool searchLocations; // @synthesize searchLocations=_searchLocations;
 @property _Bool searchParticipants; // @synthesize searchParticipants=_searchParticipants;
-- (void).cxx_destruct;
 - (void)_deleteSearchContext:(struct CalEventOccurrenceSearchContext *)arg1;
 - (struct CalEventOccurrenceSearchContext *)_createSearchContext;
 - (void)_getApplicationSearchResults:(struct CalEventOccurrenceSearchContext *)arg1;

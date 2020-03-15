@@ -23,8 +23,8 @@
 + (id)keyPathsForValuesAffectingVideoLayerGravity;
 + (id)keyPathsForValuesAffectingPlayerLayer;
 + (Class)layerClass;
-@property(retain, nonatomic) AVPlayerLayer *pictureInPicturePlayerLayer; // @synthesize pictureInPicturePlayerLayer=_pictureInPicturePlayerLayer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AVPlayerLayer *pictureInPicturePlayerLayer; // @synthesize pictureInPicturePlayerLayer=_pictureInPicturePlayerLayer;
 - (void)stopRoutingVideoToPictureInPicturePlayerLayerView;
 - (void)startRoutingVideoToPictureInPicturePlayerLayerView;
 @property(readonly, nonatomic) AVPictureInPicturePlayerLayerView *pictureInPicturePlayerLayerView;

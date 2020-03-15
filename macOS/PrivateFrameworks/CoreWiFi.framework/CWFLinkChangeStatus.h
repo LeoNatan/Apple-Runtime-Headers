@@ -25,6 +25,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) float CCA; // @synthesize CCA=_CCA;
 @property(nonatomic) long long noise; // @synthesize noise=_noise;
 @property(nonatomic) long long RSSI; // @synthesize RSSI=_RSSI;
@@ -34,7 +35,6 @@
 @property(nonatomic, getter=isLinkDown) BOOL linkDown; // @synthesize linkDown=_linkDown;
 @property(copy, nonatomic) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
 @property(copy, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

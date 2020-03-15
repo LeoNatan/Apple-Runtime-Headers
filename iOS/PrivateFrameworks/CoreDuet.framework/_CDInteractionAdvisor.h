@@ -17,8 +17,8 @@
 }
 
 + (id)interactionAdvisor;
-@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 - (void)tuneSocialAdvisorUsingSettings:(id)arg1 heartBeatHandler:(id)arg2;
 - (id)adviseInteractionsForKeywordsInString:(id)arg1 usingSettings:(id)arg2;
 - (id)adviseSocialInteractionsForDate:(id)arg1 andSeedContacts:(id)arg2 usingSettings:(id)arg3;

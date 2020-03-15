@@ -55,6 +55,7 @@ typedef struct {
     double imageHeight;
     double imageWidth;
     int frameCount;
+    _Bool color;
     char *fileName;
-} CDStruct_65a63019;
+} CDStruct_e77567cc;
 

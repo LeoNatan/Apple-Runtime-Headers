@@ -33,6 +33,7 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)_configureFormatter:(id)arg1 fallbackIndex:(unsigned long long)arg2 style:(long long)arg3;
 + (id)textProviderWithDate:(id)arg1 style:(long long)arg2 units:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool pauseTimerAtZero; // @synthesize pauseTimerAtZero=_pauseTimerAtZero;
 @property(nonatomic) _Bool wantsSubseconds; // @synthesize wantsSubseconds=_wantsSubseconds;
 @property(nonatomic) _Bool showLeadingMinutes; // @synthesize showLeadingMinutes=_showLeadingMinutes;
@@ -44,7 +45,6 @@
 @property(nonatomic) unsigned long long calendarUnits; // @synthesize calendarUnits=_calendarUnits;
 @property(nonatomic) long long relativeDateStyle; // @synthesize relativeDateStyle=_relativeDateStyle;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)JSONObjectRepresentation;
 - (id)_initWithJSONObjectRepresentation:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

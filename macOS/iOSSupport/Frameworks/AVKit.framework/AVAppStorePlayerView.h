@@ -31,6 +31,7 @@
     AVObservationController *_observationController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVObservationController *observationController; // @synthesize observationController=_observationController;
 @property(retain, nonatomic) NSMutableDictionary *videoGravityForLayoutClassDictionary; // @synthesize videoGravityForLayoutClassDictionary=_videoGravityForLayoutClassDictionary;
 @property(retain, nonatomic) AVAppStorePlayerLayerView *playerLayerView; // @synthesize playerLayerView=_playerLayerView;
@@ -49,7 +50,6 @@
 @property(nonatomic) BOOL showsMinimalPlaybackControlsWhenEmbeddedInline; // @synthesize showsMinimalPlaybackControlsWhenEmbeddedInline=_showsMinimalPlaybackControlsWhenEmbeddedInline;
 @property(nonatomic) BOOL updatesNowPlayingInfoCenter; // @synthesize updatesNowPlayingInfoCenter=_updatesNowPlayingInfoCenter;
 @property(nonatomic) BOOL showsPlaybackControls; // @synthesize showsPlaybackControls=_showsPlaybackControls;
-- (void).cxx_destruct;
 - (void)_prominentPlayButtonTouchUpInside:(id)arg1;
 - (void)_makePlayerViewControllerWithPlayer:(id)arg1;
 - (void)_makePlayerLayerViewWithPlayer:(id)arg1;

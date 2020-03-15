@@ -28,6 +28,7 @@
     UIBarButtonItem *_filterAssetsBtn;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *filterAssetsBtn; // @synthesize filterAssetsBtn=_filterAssetsBtn;
 @property(retain, nonatomic) id <PXPlacesMapGeotaggableInfoDelegate> geotaggableInfoDelegate; // @synthesize geotaggableInfoDelegate=_geotaggableInfoDelegate;
 @property(retain) PHAsset<PXPlacesGeotaggable> *selectedGeotaggable; // @synthesize selectedGeotaggable=_selectedGeotaggable;
@@ -38,7 +39,6 @@
 @property(nonatomic) __weak UIViewController *pxOneUpPresentationViewController; // @synthesize pxOneUpPresentationViewController=_pxOneUpPresentationViewController;
 @property(nonatomic) __weak id <PXPlacesMapBarButtonsDelegate> barButtonsDelegate; // @synthesize barButtonsDelegate=_barButtonsDelegate;
 @property(nonatomic) __weak id <PXPlacesAssetsSelectionDelegate> assetSelectionDelegate; // @synthesize assetSelectionDelegate=_assetSelectionDelegate;
-- (void).cxx_destruct;
 - (void)ppt_performPlacesZoomTest:(id)arg1 iterations:(long long)arg2 delay:(double)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)ppt_performPlacesScrollTest:(id)arg1 iterations:(long long)arg2 screenDelta:(long long)arg3 delay:(double)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)didEnterForeground:(id)arg1;

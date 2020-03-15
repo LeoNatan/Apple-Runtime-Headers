@@ -29,6 +29,7 @@
     int _playerState;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool skippedMetadata; // @synthesize skippedMetadata=_skippedMetadata;
 @property(nonatomic) int playerState; // @synthesize playerState=_playerState;
 @property(copy, nonatomic) NSString *queueIdentifier; // @synthesize queueIdentifier=_queueIdentifier;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) MPCMediaRemoteController *controller; // @synthesize controller=_controller;
 @property(retain, nonatomic) MPCFuture *controllerFuture; // @synthesize controllerFuture=_controllerFuture;
 @property(retain, nonatomic) NSArray *invalidationObservers; // @synthesize invalidationObservers=_invalidationObservers;
-- (void).cxx_destruct;
 - (id)_stateDumpObject;
 - (id)operationsForSessionRequest:(id)arg1;
 - (id)operationsForPlayerRequest:(id)arg1;
@@ -60,12 +60,14 @@
 - (id)playerModelObject:(id)arg1 propertySet:(id)arg2 atIndexPath:(id)arg3 chain:(id)arg4;
 - (_Bool)playerItemIsPlaceholder:(_Bool)arg1 atIndexPath:(id)arg2 chain:(id)arg3;
 - (int)playerItemEditingStyleFlags:(int)arg1 atIndexPath:(id)arg2 chain:(id)arg3;
+- (id)playerItemExplicitBadge:(id)arg1 atIndexPath:(id)arg2 chain:(id)arg3;
 - (id)playerItemLocalizedDurationString:(id)arg1 atIndexPath:(id)arg2 chain:(id)arg3;
 - (CDStruct_fce57115)playerItemDuration:(CDStruct_fce57115)arg1 atIndexPath:(id)arg2 chain:(id)arg3;
 - (unsigned int)playerNumberOfItems:(unsigned int)arg1 inSection:(unsigned int)arg2 chain:(id)arg3;
 - (unsigned int)playerNumberOfSections:(unsigned int)arg1 chain:(id)arg2;
 - (int)playerUpNextItemCount:(int)arg1 chain:(id)arg2;
 - (int)playerLastChangeDirection:(int)arg1 chain:(id)arg2;
+- (int)playerQueueEndAction:(int)arg1 chain:(id)arg2;
 - (int)playerShuffleType:(int)arg1 chain:(id)arg2;
 - (int)playerRepeatType:(int)arg1 chain:(id)arg2;
 - (int)playerState:(int)arg1 chain:(id)arg2;

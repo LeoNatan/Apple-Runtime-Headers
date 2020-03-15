@@ -14,9 +14,9 @@
     NSMutableDictionary *_metrics;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *metrics; // @synthesize metrics=_metrics;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)description;
 - (void)submitMetrics;
 - (id)objectForKey:(id)arg1;

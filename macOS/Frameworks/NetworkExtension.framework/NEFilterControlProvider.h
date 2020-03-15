@@ -17,8 +17,8 @@
 }
 
 - (void).cxx_destruct;
-@property(copy) NSDictionary *URLAppendStringMap;
-@property(copy) NSDictionary *remediationMap;
+@property(copy) NSDictionary *URLAppendStringMap; // @synthesize URLAppendStringMap=_URLAppendStringMap;
+@property(copy) NSDictionary *remediationMap; // @synthesize remediationMap=_remediationMap;
 - (void)notifyRulesChanged;
 - (void)handleRemediationForFlow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)handleNewFlow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

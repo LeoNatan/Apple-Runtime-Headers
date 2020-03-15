@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     long long _stopValue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long stopValue; // @synthesize stopValue=_stopValue;
 @property(readonly, nonatomic) NSDate *startValueDate; // @synthesize startValueDate=_startValueDate;
 @property(readonly, nonatomic) long long startValue; // @synthesize startValue=_startValue;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long dateFormatType; // @synthesize dateFormatType=_dateFormatType;
 @property(readonly, nonatomic) long long counterType; // @synthesize counterType=_counterType;
 @property(readonly, nonatomic) double changeRatePerSecond; // @synthesize changeRatePerSecond=_changeRatePerSecond;
-- (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (long long)currentNumberValue;
 @property(readonly, nonatomic) SKUIImageViewElement *backgroundImageElement;

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     double _rightEdgeInset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double rightEdgeInset; // @synthesize rightEdgeInset=_rightEdgeInset;
 @property(nonatomic) double leftEdgeInset; // @synthesize leftEdgeInset=_leftEdgeInset;
 @property(nonatomic) double interColumnSpacing; // @synthesize interColumnSpacing=_interColumnSpacing;
 @property(copy, nonatomic) NSArray *columns; // @synthesize columns=_columns;
-- (void).cxx_destruct;
 - (id)viewElementsForTrack:(id)arg1 columnIndex:(long long)arg2;
 - (void)enumerateColumnsForTrack:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateColumnsForHeader:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;

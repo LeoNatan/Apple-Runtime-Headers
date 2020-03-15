@@ -21,12 +21,12 @@
 
 + (id)properties;
 + (id)recordType;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) WFFileRepresentation *assetDataFile; // @synthesize assetDataFile=_assetDataFile;
 @property(nonatomic) long long contentVersion; // @synthesize contentVersion=_contentVersion;
 @property(nonatomic) long long compatibilityVersion; // @synthesize compatibilityVersion=_compatibilityVersion;
 @property(readonly, nonatomic) CKRecordID *identifier; // @synthesize identifier;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

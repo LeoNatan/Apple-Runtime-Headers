@@ -18,13 +18,13 @@
     BOOL _variableHasUnsavedChanges;
 }
 
+- (void).cxx_destruct;
 @property __weak AMVariablesEditorPanel *_editorPanel; // @synthesize _editorPanel;
 @property(retain) AMVariablesEditorView *_variableEditorView; // @synthesize _variableEditorView;
 @property BOOL variableHasUnsavedChanges; // @synthesize variableHasUnsavedChanges=_variableHasUnsavedChanges;
 @property __weak AMWorkflowView *workflowView; // @synthesize workflowView=_workflowView;
 @property(retain, nonatomic) AMVariable *tempVariable; // @synthesize tempVariable=_tempVariable;
 @property(retain, nonatomic) AMVariable *variable; // @synthesize variable=_variable;
-- (void).cxx_destruct;
 - (void)ok:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)willClose;

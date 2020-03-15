@@ -22,9 +22,9 @@
     BCULayerRenderer *_renderer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BCULayerRenderer *renderer; // @synthesize renderer=_renderer;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)newOperationWithImage:(struct CGImage *)arg1 size:(struct CGSize)arg2 contentsScale:(double)arg3 priority:(float)arg4 options:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (id)_coverLayerWithImage:(struct CGImage *)arg1 size:(struct CGSize)arg2;
 - (id)_layerWithImage:(struct CGImage *)arg1 size:(struct CGSize)arg2 scale:(double)arg3 shadow:(id)arg4;

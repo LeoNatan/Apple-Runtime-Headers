@@ -17,12 +17,12 @@
     AKCardViewDataSource *_dataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AKCardViewDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) NSMutableArray *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) CNPublishingSubject *cardStateObservable; // @synthesize cardStateObservable=_cardStateObservable;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(nonatomic) BOOL editingRestricted; // @synthesize editingRestricted=_editingRestricted;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CNObservable *contactCardStateObservable;
 @property(readonly, nonatomic) BOOL canEditContact;
 @property(readonly, nonatomic) BOOL canSelectContact;

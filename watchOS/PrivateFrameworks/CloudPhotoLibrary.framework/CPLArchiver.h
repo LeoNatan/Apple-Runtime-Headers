@@ -26,9 +26,9 @@
 + (id)archivedPropertyListWithRootObject:(id)arg1;
 + (id)archivedDataWithRootObject:(id)arg1;
 + (void)_initializeSmallKeyMapping;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id archiveCursor; // @synthesize archiveCursor=_archiveCursor;
 @property(readonly, nonatomic) _Bool forDisplay; // @synthesize forDisplay=_forDisplay;
-- (void).cxx_destruct;
 - (struct CGRect)decodeRectForKey:(id)arg1;
 - (struct CGSize)decodeSizeForKey:(id)arg1;
 - (struct CGPoint)decodePointForKey:(id)arg1;

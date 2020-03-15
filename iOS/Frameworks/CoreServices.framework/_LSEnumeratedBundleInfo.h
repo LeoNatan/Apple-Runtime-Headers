@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_bundleID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isPlaceholder; // @synthesize isPlaceholder=_isPlaceholder;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithBundleID:(id)arg1 isPlaceholder:(_Bool)arg2;

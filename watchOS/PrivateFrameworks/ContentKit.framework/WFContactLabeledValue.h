@@ -16,9 +16,9 @@
 
 + (id)localizedStringForLabel:(id)arg1;
 + (id)labeledValueWithLabel:(id)arg1 value:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id value; // @synthesize value=_value;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithLabel:(id)arg1 value:(id)arg2;
 

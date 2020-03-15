@@ -24,6 +24,7 @@
     id <MTLTexture> _colorCube;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <MTLTexture> colorCube; // @synthesize colorCube=_colorCube;
 @property(readonly, nonatomic) id <MTLTexture> TRCLUTs; // @synthesize TRCLUTs=_TRCLUTs;
 @property(readonly, nonatomic) id <MTLBuffer> params; // @synthesize params=_params;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) struct CGColorSpace *destinationColorSpace; // @synthesize destinationColorSpace=_destinationColorSpace;
 @property(readonly, nonatomic) struct CGColorSpace *sourceColorSpace; // @synthesize sourceColorSpace=_sourceColorSpace;
 @property(readonly, nonatomic) id <MTLDevice> device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (_Bool)_compactProgramWithConversionInfo:(struct CGColorConversionInfo *)arg1 cubeSize:(int)arg2 cubeOnly:(_Bool)arg3;
 - (_Bool)_generateProgram;
 - (id)description;

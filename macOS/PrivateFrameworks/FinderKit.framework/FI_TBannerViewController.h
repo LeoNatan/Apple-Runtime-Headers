@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
     NSButton *_learnMoreButton;
 }
 
-@property(nonatomic) int type; // @synthesize type=_type;
-@property(getter=isButtonEnabled) _Bool buttonEnabled; // @synthesize buttonEnabled=_isButtonEnabled;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) int type; // @synthesize type=_type;
+@property(getter=isButtonEnabled) _Bool buttonEnabled; // @synthesize buttonEnabled=_isButtonEnabled;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodesChanged:(const vector_614ab7ad *)arg2 inObservedNode:(const struct TFENode *)arg3;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 openSyncCompleted:(const struct TFENode *)arg2;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodesDeleted:(const struct TFENodeVector *)arg2 fromObservedNode:(const struct TFENode *)arg3;

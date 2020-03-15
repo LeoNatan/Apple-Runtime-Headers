@@ -18,9 +18,9 @@
 
 + (id)commandEventWithCommandType:(unsigned int)arg1 accessory:(id)arg2;
 + (id)uuid;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak HMDHAPAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly, nonatomic) unsigned int commandType; // @synthesize commandType=_commandType;
-- (void).cxx_destruct;
 - (id)initWithCommandType:(unsigned int)arg1 accessory:(id)arg2;
 - (id)metricForAWD;
 - (unsigned int)AWDMessageType;

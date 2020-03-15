@@ -7,13 +7,14 @@
 #import <objc/NSObject.h>
 
 #import <Safari/NSMenuDelegate-Protocol.h>
+#import <Safari/NSMenuItemValidation-Protocol.h>
 #import <Safari/NSSharingServiceDelegate-Protocol.h>
 #import <Safari/NSSharingServicePickerDelegate-Protocol.h>
 
 @class NSImage, NSMenu, NSSharingServicePicker, NSString, NSWindow;
 
 __attribute__((visibility("hidden")))
-@interface BrowserShareManager : NSObject <NSSharingServiceDelegate, NSSharingServicePickerDelegate, NSMenuDelegate>
+@interface BrowserShareManager : NSObject <NSMenuDelegate, NSMenuItemValidation, NSSharingServiceDelegate, NSSharingServicePickerDelegate>
 {
     struct HashMap<unsigned long long, WTF::RetainPtr<BrowserSharingOperation>, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WTF::RetainPtr<BrowserSharingOperation>>> _browserSharingOperationMap;
     BOOL _isShowingSharingServicePicker;
@@ -28,6 +29,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedManager;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMenu *shareSubmenuInToolbarOverflowMenu; // @synthesize shareSubmenuInToolbarOverflowMenu=_shareSubmenuInToolbarOverflowMenu;
 @property(retain, nonatomic) NSMenu *shareSubmenuInFileMenu; // @synthesize shareSubmenuInFileMenu=_shareSubmenuInFileMenu;
 @property(retain, nonatomic) NSImage *transitionImage; // @synthesize transitionImage=_transitionImage;
@@ -36,8 +39,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSSharingServicePicker *sharingServicePickerForShareSubmenuInToolbarOverflowMenu; // @synthesize sharingServicePickerForShareSubmenuInToolbarOverflowMenu=_sharingServicePickerForShareSubmenuInToolbarOverflowMenu;
 @property(retain, nonatomic) NSSharingServicePicker *sharingServicePickerForShareSubmenuInFileMenu; // @synthesize sharingServicePickerForShareSubmenuInFileMenu=_sharingServicePickerForShareSubmenuInFileMenu;
 @property(retain, nonatomic) NSSharingServicePicker *sharingServicePicker; // @synthesize sharingServicePicker=_sharingServicePicker;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)menuHasKeyEquivalent:(id)arg1 forEvent:(id)arg2 target:(id *)arg3 action:(SEL *)arg4;
 - (void)menuNeedsUpdate:(id)arg1;

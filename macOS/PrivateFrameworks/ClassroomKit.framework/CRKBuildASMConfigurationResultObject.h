@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSDictionary *asmConfiguration; // @synthesize asmConfiguration=_asmConfiguration;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *asmConfiguration; // @synthesize asmConfiguration=_asmConfiguration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

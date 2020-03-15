@@ -27,6 +27,7 @@
 + (id)variantWithFormat:(long long)arg1 imagePath:(id)arg2;
 + (id)variantWithFormat:(long long)arg1 imageData:(id)arg2;
 + (id)_variantWithFormat:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPrecomposed) _Bool precomposed; // @synthesize precomposed=_precomposed;
 @property(copy, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
 @property(copy, nonatomic) NSString *bundlePath; // @synthesize bundlePath=_bundlePath;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSString *imagePath; // @synthesize imagePath=_imagePath;
 @property(copy, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 @property(nonatomic) long long format; // @synthesize format=_format;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -16,8 +16,8 @@
     NSString *_widgetSectionIdsExposed;
 }
 
-@property(retain, nonatomic) NSString *widgetSectionIdsExposed; // @synthesize widgetSectionIdsExposed=_widgetSectionIdsExposed;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *widgetSectionIdsExposed; // @synthesize widgetSectionIdsExposed=_widgetSectionIdsExposed;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -24,13 +24,13 @@
     id <HUStepperCellDelegate> _stepperCellDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HUStepperCellDelegate> stepperCellDelegate; // @synthesize stepperCellDelegate=_stepperCellDelegate;
 @property(copy, nonatomic) NSNumber *stepValue; // @synthesize stepValue=_stepValue;
 @property(copy, nonatomic) NSNumber *stepperValue; // @synthesize stepperValue=_stepperValue;
 @property(copy, nonatomic) NSNumber *maximumValue; // @synthesize maximumValue=_maximumValue;
 @property(copy, nonatomic) NSNumber *minimumValue; // @synthesize minimumValue=_minimumValue;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
-- (void).cxx_destruct;
 - (id)textFieldValue:(id)arg1;
 - (id)stringValueForSpecifier:(id)arg1;
 - (double)maximumValueForSpecifier:(id)arg1;

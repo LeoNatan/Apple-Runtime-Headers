@@ -16,9 +16,9 @@
 
 + (id)formatAsYouTubeTime:(double)arg1;
 + (_Bool)parseYouTubeTimeFormat:(id)arg1 outTime:(double *)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(copy, nonatomic) NSString *videoID; // @synthesize videoID=_videoID;
-- (void).cxx_destruct;
 
 @end
 

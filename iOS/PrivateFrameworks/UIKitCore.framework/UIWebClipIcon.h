@@ -16,11 +16,11 @@
     NSURL *_url;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(nonatomic) struct CGSize bestSize; // @synthesize bestSize=_bestSize;
 @property(nonatomic, getter=isSiteWide) _Bool siteWide; // @synthesize siteWide=_siteWide;
 @property(nonatomic, getter=isPrecomposed) _Bool precomposed; // @synthesize precomposed=_precomposed;
-- (void).cxx_destruct;
 - (long long)compare:(id)arg1 preferringDeviceIconSizes:(_Bool)arg2;
 
 @end

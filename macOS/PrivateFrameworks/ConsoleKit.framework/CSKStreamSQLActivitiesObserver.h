@@ -34,6 +34,7 @@
     NSSortDescriptor *_lastUsedSortDescriptor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSortDescriptor *lastUsedSortDescriptor; // @synthesize lastUsedSortDescriptor=_lastUsedSortDescriptor;
 @property(retain, nonatomic) CSKActivity *currentActivity; // @synthesize currentActivity=_currentActivity;
 @property(nonatomic) unsigned long long rootActivitiesCount; // @synthesize rootActivitiesCount=_rootActivitiesCount;
@@ -49,7 +50,6 @@
 @property(nonatomic) CSKDatabaseHandle *sortDBHandle; // @synthesize sortDBHandle=_sortDBHandle;
 @property(nonatomic) CSKDatabaseHandle *searchDBHandle; // @synthesize searchDBHandle=_searchDBHandle;
 @property(nonatomic) CSKDatabaseHandle *readDBHandle; // @synthesize readDBHandle=_readDBHandle;
-- (void).cxx_destruct;
 - (void)_removeActivities:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)_appendActivities:(id)arg1 direction:(unsigned long long)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (long long)_addActivityToChildrenMap:(id)arg1;

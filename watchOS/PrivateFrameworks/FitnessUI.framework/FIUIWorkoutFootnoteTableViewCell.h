@@ -18,9 +18,9 @@
 }
 
 + (float)preferredHeight;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *footnoteText; // @synthesize footnoteText=_footnoteText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 

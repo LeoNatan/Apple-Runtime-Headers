@@ -20,8 +20,8 @@
     HDProfile *_profile;
 }
 
-@property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (_Bool)_queue_performPendingWriteOperationsWithError:(id *)arg1;
 - (_Bool)_performPendingWriteRecords:(id)arg1 transaction:(id)arg2 accessibilityError:(id)arg3 error:(id *)arg4;
 - (void)flushPendingWriteQueueWithCompletion:(CDUnknownBlockType)arg1;

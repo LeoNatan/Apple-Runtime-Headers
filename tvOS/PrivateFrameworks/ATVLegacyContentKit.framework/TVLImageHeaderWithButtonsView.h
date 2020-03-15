@@ -21,12 +21,12 @@
     TVLImageHeaderWithButtonsElement *_feedElement;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isPartOfOptionDialog; // @synthesize isPartOfOptionDialog=_isPartOfOptionDialog;
 @property(retain, nonatomic) TVLImageHeaderWithButtonsElement *feedElement; // @synthesize feedElement=_feedElement;
 @property(nonatomic) double horizontalInset; // @synthesize horizontalInset=_horizontalInset;
 @property(nonatomic) __weak id <TVLImageHeaderWithButtonsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
-- (void).cxx_destruct;
 - (void)_buttonSelected:(id)arg1;
 - (id)preferredFocusEnvironments;
 - (_Bool)canBecomeFocused;

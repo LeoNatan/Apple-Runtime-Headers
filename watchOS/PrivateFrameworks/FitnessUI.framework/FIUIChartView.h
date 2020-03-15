@@ -37,6 +37,7 @@
     struct UIEdgeInsets _contentBufferEdgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *highlightedYValue; // @synthesize highlightedYValue=_highlightedYValue;
 @property(retain, nonatomic) NSNumber *maxYValue; // @synthesize maxYValue=_maxYValue;
 @property(retain, nonatomic) NSNumber *minYValue; // @synthesize minYValue=_minYValue;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) id <FIUIChartAxisDescriptor> yAxisDescriptor; // @synthesize yAxisDescriptor=_yAxisDescriptor;
 @property(retain, nonatomic) FIUIChartTimeAxisDescriptor *xAxisDescriptor; // @synthesize xAxisDescriptor=_xAxisDescriptor;
 @property(nonatomic) __weak id <FIUIChartDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)maxYValueForChartSeries:(id)arg1;
 - (id)minYValueForChartSeries:(id)arg1;
 - (id)maxXValueForChartSeries:(id)arg1;

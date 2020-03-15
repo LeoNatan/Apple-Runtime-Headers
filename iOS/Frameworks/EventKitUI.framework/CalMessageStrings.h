@@ -17,12 +17,12 @@
     EKCalendarEventInvitationNotificationAttendee *_importantAttendee;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EKCalendarEventInvitationNotificationAttendee *importantAttendee; // @synthesize importantAttendee=_importantAttendee;
 @property(readonly, nonatomic) _Bool timeProposals; // @synthesize timeProposals=_timeProposals;
 @property(readonly, nonatomic) long long comments; // @synthesize comments=_comments;
 @property(readonly, nonatomic) NSArray *bodyStrings; // @synthesize bodyStrings=_bodyStrings;
 @property(readonly, nonatomic) NSArray *titleStrings; // @synthesize titleStrings=_titleStrings;
-- (void).cxx_destruct;
 - (id)initWithTitles:(id)arg1 bodyStrings:(id)arg2 comments:(long long)arg3 timeProposals:(_Bool)arg4 importantAttendee:(id)arg5;
 
 @end

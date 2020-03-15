@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     UIImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)_resetMinMaxZoomScales;
 - (void)_recoverFromResize;
 - (void)_prepareToResize;

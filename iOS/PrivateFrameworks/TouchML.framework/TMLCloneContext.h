@@ -16,11 +16,11 @@
     NSString *_apiObjectKey;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *apiObjectKey; // @synthesize apiObjectKey=_apiObjectKey;
 @property(nonatomic) JSValue *apiObject; // @synthesize apiObject=_apiObject;
 @property(nonatomic) JSContext *jsContext; // @synthesize jsContext=_jsContext;
 @property(readonly, nonatomic) TMLMetaContext *metaContext; // @synthesize metaContext=_metaContext;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) TMLMetaObject *rootObject;
 - (id)initWithMetaContext:(id)arg1;
 

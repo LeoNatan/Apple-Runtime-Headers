@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     CDStruct_1b6d18a9 _playDuration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setShouldPlayAfterPreparation:) _Bool _shouldPlayAfterPreparation; // @synthesize _shouldPlayAfterPreparation=__shouldPlayAfterPreparation;
 @property(nonatomic, getter=_isPreparing, setter=_setPreparing:) _Bool preparing; // @synthesize preparing=_preparing;
 @property(nonatomic, getter=isPlayingBeyondPhoto, setter=_setPlayingBeyondPhoto:) _Bool playingBeyondPhoto; // @synthesize playingBeyondPhoto=_playingBeyondPhoto;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double photoTransitionDuration; // @synthesize photoTransitionDuration=_photoTransitionDuration;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 playDuration; // @synthesize playDuration=_playDuration;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 playbackEndTime; // @synthesize playbackEndTime=_playbackEndTime;
-- (void).cxx_destruct;
 - (void)cancelSettleToPhoto;
 - (void)_didReachTransitionToPhotoTime;
 - (void)_didReachTransitionTime;

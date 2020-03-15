@@ -16,9 +16,9 @@
     CDUnknownBlockType _accessAllowedCompletionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType accessAllowedCompletionBlock; // @synthesize accessAllowedCompletionBlock=_accessAllowedCompletionBlock;
 @property(copy) CDUnknownBlockType allowAccessCompletionBlock; // @synthesize allowAccessCompletionBlock=_allowAccessCompletionBlock;
-- (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)main;
 - (id)initWithURL:(id)arg1 allowAccess:(_Bool)arg2;

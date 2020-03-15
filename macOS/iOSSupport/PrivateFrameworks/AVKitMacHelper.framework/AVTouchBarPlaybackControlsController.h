@@ -92,9 +92,9 @@ __attribute__((visibility("hidden")))
 + (BOOL)automaticallyNotifiesObserversOfTiming;
 + (id)keyPathsForValuesAffectingContentDuration;
 + (BOOL)automaticallyNotifiesObserversOfContentDuration;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVAssetTrack *currentAudioTrack; // @synthesize currentAudioTrack=_currentAudioTrack;
 @property(retain, nonatomic) AVWaveform *audioWaveform; // @synthesize audioWaveform=_audioWaveform;
-- (void).cxx_destruct;
 - (void)_updateCurrentAudioTrackAndWaveformIfNeeded;
 - (void)cancelThumbnailGenerationForRequestType:(long long)arg1;
 - (void)generateTouchBarThumbnailsForTimes:(id)arg1 tolerance:(double)arg2 size:(struct CGSize)arg3 requestType:(long long)arg4 thumbnailHandler:(CDUnknownBlockType)arg5;

@@ -18,11 +18,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sessionToken; // @synthesize sessionToken=_sessionToken;
 @property(nonatomic) _Bool usesPixels; // @synthesize usesPixels=_usesPixels;
 @property(nonatomic) unsigned int maxHeight; // @synthesize maxHeight=_maxHeight;
 @property(nonatomic) unsigned int maxWidth; // @synthesize maxWidth=_maxWidth;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

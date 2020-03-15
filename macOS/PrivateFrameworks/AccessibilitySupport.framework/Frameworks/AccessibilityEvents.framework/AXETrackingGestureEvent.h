@@ -17,12 +17,12 @@
     NSArray *_touchingTouches;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *touchingTouches; // @synthesize touchingTouches=_touchingTouches;
 @property(readonly, nonatomic) NSArray *allTouches; // @synthesize allTouches=_allTouches;
 @property(readonly, nonatomic) BOOL isSynthetic; // @synthesize isSynthetic=_isSynthetic;
 @property(readonly, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) unsigned long long source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (id)_nameOfSource:(unsigned long long)arg1;
 - (id)initWithTouches:(id)arg1 eventSource:(unsigned long long)arg2 isSynthetic:(BOOL)arg3 previousGestureEvent:(id)arg4;
 - (id)initWithTouches:(id)arg1 eventSource:(unsigned long long)arg2 isSynthetic:(BOOL)arg3;

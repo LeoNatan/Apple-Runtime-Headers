@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface BRCSharedDatabaseSyncOperation : _BRCOperation <BRCOperationSubclass>
 {
     BRCServerChangeState *_changeState;
+    CDUnknownBlockType _shareDBSyncCompletionBlock;
 }
 
 + (id)queue;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType shareDBSyncCompletionBlock; // @synthesize shareDBSyncCompletionBlock=_shareDBSyncCompletionBlock;
 - (void)main;
 - (void)_performFetchChangedZones;
 - (void)_performAfterRegisteringForPushes:(CDUnknownBlockType)arg1;

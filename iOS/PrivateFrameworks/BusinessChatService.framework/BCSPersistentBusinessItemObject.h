@@ -15,10 +15,10 @@
     NSDate *_lastRetrievedDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *lastRetrievedDate; // @synthesize lastRetrievedDate=_lastRetrievedDate;
 @property(readonly, nonatomic) NSDate *TTLDate; // @synthesize TTLDate=_TTLDate;
 @property(readonly, nonatomic) BCSBusinessItem *businessItem; // @synthesize businessItem=_businessItem;
-- (void).cxx_destruct;
 - (id)initWithBusinessItem:(id)arg1 lastRetrievedDate:(id)arg2 TTLDate:(id)arg3;
 
 @end

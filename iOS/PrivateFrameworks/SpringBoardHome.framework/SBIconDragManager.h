@@ -24,9 +24,9 @@
 + (void)enumerateMedusaPlatterDragPreviewsInDragItems:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 + (void)enumerateAppDragContextsInDragItems:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 + (void)cancelAllDrags;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBIconDraggingEditContext *draggingEditContext; // @synthesize draggingEditContext=_draggingEditContext;
 @property(nonatomic) __weak SBHIconManager *iconManager; // @synthesize iconManager=_iconManager;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

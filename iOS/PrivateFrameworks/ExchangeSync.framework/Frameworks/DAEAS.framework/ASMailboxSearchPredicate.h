@@ -13,8 +13,8 @@
     NSPredicate *_predicate;
 }
 
-@property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 - (id)getString;
 - (id)getStringForPredicate:(id)arg1;
 - (id)getStringForCompoundPredicate:(id)arg1;

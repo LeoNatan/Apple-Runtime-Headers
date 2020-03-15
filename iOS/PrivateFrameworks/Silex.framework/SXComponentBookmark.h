@@ -15,8 +15,8 @@
     NSString *_componentIdentifier;
 }
 
-@property(readonly, copy, nonatomic) NSString *componentIdentifier; // @synthesize componentIdentifier=_componentIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *componentIdentifier; // @synthesize componentIdentifier=_componentIdentifier;
 - (id)initWithComponentIdentifier:(id)arg1;
 
 // Remaining properties

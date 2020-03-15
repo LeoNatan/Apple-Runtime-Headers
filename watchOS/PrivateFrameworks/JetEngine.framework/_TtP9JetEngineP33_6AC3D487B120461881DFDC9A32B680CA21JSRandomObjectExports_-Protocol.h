@@ -6,11 +6,11 @@
 
 #import <JetEngine/JSExport-Protocol.h>
 
-@class NSString;
+@class JSValue;
 
 @protocol _TtP9JetEngineP33_6AC3D487B120461881DFDC9A32B680CA21JSRandomObjectExports_ <JSExport>
-- (NSString *)nextUUID;
-- (double)nextNumber;
-- (_Bool)nextBoolean;
+- (JSValue *)nextUUID;
+- (JSValue *)nextNumber;
+- (JSValue *)nextBoolean;
 @end
 

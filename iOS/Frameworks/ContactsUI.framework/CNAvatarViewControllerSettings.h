@@ -28,6 +28,7 @@
 + (id)defaultSettingsWithCacheSize:(unsigned long long)arg1 threeDTouchEnabled:(_Bool)arg2;
 + (id)defaultSettings;
 + (_Bool)threeDTouchEnabledDefaultValue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PRPersonaStore *personaStore; // @synthesize personaStore=_personaStore;
 @property(retain, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(retain, nonatomic) id <CNUILikenessRendering> likenessRenderer; // @synthesize likenessRenderer=_likenessRenderer;
@@ -35,7 +36,6 @@
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(nonatomic) _Bool threeDTouchEnabled; // @synthesize threeDTouchEnabled=_threeDTouchEnabled;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-- (void).cxx_destruct;
 - (id)initWithLikenessResolver:(id)arg1 likenessRenderer:(id)arg2 contactStore:(id)arg3 threeDTouchEnabled:(_Bool)arg4 schedulerProvider:(id)arg5;
 
 @end

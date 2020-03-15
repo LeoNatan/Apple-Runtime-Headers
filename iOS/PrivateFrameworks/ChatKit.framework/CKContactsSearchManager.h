@@ -25,6 +25,7 @@
     NSString *_searchText;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
 @property(retain, nonatomic) NSNumber *currentSearchTaskID; // @synthesize currentSearchTaskID=_currentSearchTaskID;
 @property(retain, nonatomic) NSMutableArray *searchResults; // @synthesize searchResults=_searchResults;
@@ -34,7 +35,6 @@
 @property(nonatomic) _Bool suppressGroupSuggestions; // @synthesize suppressGroupSuggestions=_suppressGroupSuggestions;
 @property(retain, nonatomic) NSArray *enteredRecipients; // @synthesize enteredRecipients=_enteredRecipients;
 @property(nonatomic) __weak id <CKContactsSearchManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)getSupplementalGroupsForSearchQuery:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)createAutocompelteGroupMembersFromParticipants:(id)arg1;
 - (id)participantMatchResultsForSearchTerm:(id)arg1;

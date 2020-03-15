@@ -34,9 +34,9 @@
 }
 
 + (double)defaultHeight;
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets contentEdgeInsets; // @synthesize contentEdgeInsets=_contentEdgeInsets;
 @property(copy, nonatomic) NSAttributedString *attributedTitle; // @synthesize attributedTitle=_attributedTitle;
-- (void).cxx_destruct;
 - (void)_updateBorderAndBackgroundContainerViewTinting;
 - (struct CGSize)_titleLabelSize;
 - (void)_setNeedsReloadCorneredImages;

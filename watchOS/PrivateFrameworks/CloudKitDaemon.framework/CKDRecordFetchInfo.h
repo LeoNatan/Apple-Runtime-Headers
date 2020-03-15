@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     double _startDate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreErrors; // @synthesize ignoreErrors=_ignoreErrors;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *recordReadySource; // @synthesize recordReadySource=_recordReadySource;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
 @property(nonatomic) unsigned int fetchOrder; // @synthesize fetchOrder=_fetchOrder;
 @property(readonly, nonatomic) double startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)description;
 - (id)CKPropertiesDescription;
 - (void)performCallback;

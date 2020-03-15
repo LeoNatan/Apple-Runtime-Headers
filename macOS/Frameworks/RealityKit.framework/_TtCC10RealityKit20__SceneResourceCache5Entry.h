@@ -8,7 +8,7 @@
 
 @interface _TtCC10RealityKit20__SceneResourceCache5Entry : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: assetBundle
+    // Error parsing type: , name: entryHolder
 }
 
 @end

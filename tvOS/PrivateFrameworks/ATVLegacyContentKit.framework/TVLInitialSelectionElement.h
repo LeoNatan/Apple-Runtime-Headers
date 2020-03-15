@@ -14,9 +14,9 @@
     NSDate *_relevanceDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *relevanceDate; // @synthesize relevanceDate=_relevanceDate;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;
 

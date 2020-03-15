@@ -21,9 +21,9 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *parseRules; // @synthesize parseRules=_parseRules;
 @property(retain, nonatomic) NSNumber *foundStatus; // @synthesize foundStatus=_foundStatus;
-- (void).cxx_destruct;
 - (void)unknownToken:(int)arg1 receivedForCodePage:(int)arg2;
 - (id)asParseRules;
 - (id)initWithCodePage:(int)arg1 statusToken:(int)arg2;

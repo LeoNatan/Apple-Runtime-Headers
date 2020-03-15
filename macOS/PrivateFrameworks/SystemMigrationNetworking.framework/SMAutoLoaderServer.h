@@ -25,6 +25,7 @@
 
 + (id)sha256hashString:(id)arg1 withSalt:(id)arg2;
 + (id)supportedCommandIDs;
+- (void).cxx_destruct;
 @property(retain) SMNNetworkSession *session; // @synthesize session=_session;
 @property(retain) NSObject<OS_dispatch_source> *batteryLogSource; // @synthesize batteryLogSource=_batteryLogSource;
 @property(retain) NSURL *systemPath; // @synthesize systemPath=_systemPath;
@@ -33,7 +34,6 @@
 @property(retain) NSMutableDictionary *txtRecord; // @synthesize txtRecord=_txtRecord;
 @property(copy) CDUnknownBlockType statusUpdateBlock; // @synthesize statusUpdateBlock=_statusUpdateBlock;
 @property(retain) NSString *secretPassword; // @synthesize secretPassword=_secretPassword;
-- (void).cxx_destruct;
 - (BOOL)shouldAcceptPeerCertificates:(id)arg1;
 - (id)localCertificates;
 - (void)session:(id)arg1 benchmarkedSoftAP:(double)arg2 infrastructureSample:(double)arg3;

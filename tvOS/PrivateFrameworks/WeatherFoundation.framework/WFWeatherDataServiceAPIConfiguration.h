@@ -18,10 +18,10 @@
     NSString *_environment;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *environment; // @synthesize environment=_environment;
 @property(retain, nonatomic) id <WFForecastDataParser> forecastParser; // @synthesize forecastParser=_forecastParser;
 @property(retain, nonatomic) Class forecastRequestFormatterClass; // @synthesize forecastRequestFormatterClass=_forecastRequestFormatterClass;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isValid;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)hostUrl;

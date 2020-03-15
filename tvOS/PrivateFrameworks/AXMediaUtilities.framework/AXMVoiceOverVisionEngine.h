@@ -20,6 +20,7 @@
     AXMCaptionDetectorNode *_captionDetector;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak AXMCaptionDetectorNode *captionDetector; // @synthesize captionDetector=_captionDetector;
 @property(nonatomic) __weak AXMProminentObjectsDetectorNode *prominentObjectsDetector; // @synthesize prominentObjectsDetector=_prominentObjectsDetector;
 @property(nonatomic) __weak AXMTraitDetectorNode *traitDetector; // @synthesize traitDetector=_traitDetector;
@@ -28,7 +29,6 @@
 @property(nonatomic) __weak AXMTextDetectorNode *textDetector; // @synthesize textDetector=_textDetector;
 @property(nonatomic) __weak AXMImageNode *imageNode; // @synthesize imageNode=_imageNode;
 @property(nonatomic) __weak AXMScreenCaptureNode *captureNode; // @synthesize captureNode=_captureNode;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1;
 - (id)init;
 

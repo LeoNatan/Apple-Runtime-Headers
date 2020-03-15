@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 + (id)secondaryColor;
 + (void)setPrimaryColor:(id)arg1;
 + (id)primaryColor;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hidden; // @synthesize hidden=_hidden;
 @property(nonatomic) unsigned long long color; // @synthesize color=_color;
 @property(nonatomic) _Bool hasProcessedSegments; // @synthesize hasProcessedSegments=_hasProcessedSegments;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long visualAmplitudeHeightInterpolatingFrames; // @synthesize visualAmplitudeHeightInterpolatingFrames=_visualAmplitudeHeightInterpolatingFrames;
 @property(nonatomic) double amplitude; // @synthesize amplitude=_amplitude;
 @property(nonatomic) long long sliceIndex; // @synthesize sliceIndex=_sliceIndex;
-- (void).cxx_destruct;
 @property(nonatomic) double visualAmplitudeHeight;
 - (void)setFrame:(struct CGRect)arg1;
 @property(readonly, nonatomic) UIColor *uiColorDimmed;

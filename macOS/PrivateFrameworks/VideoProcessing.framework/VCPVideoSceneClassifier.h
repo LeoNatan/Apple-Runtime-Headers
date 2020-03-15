@@ -19,8 +19,8 @@
     NSArray *_sceneResults;
 }
 
-@property(retain) NSArray *sceneResults; // @synthesize sceneResults=_sceneResults;
 - (void).cxx_destruct;
+@property(retain) NSArray *sceneResults; // @synthesize sceneResults=_sceneResults;
 @property(readonly) NSDictionary *frameScenes;
 - (id)results;
 - (int)finishAnalysisPass:(CDStruct_e83c9415)arg1;

@@ -18,9 +18,9 @@
 }
 
 + (BOOL)canGenerateUUIDWithoutEntitlements;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(readonly, nonatomic) PHChangeRequestHelper *helper; // @synthesize helper=_helper;
-- (void).cxx_destruct;
 - (BOOL)prepareForServicePreflightCheck:(id *)arg1;
 - (BOOL)prepareForPhotoLibraryCheck:(id)arg1 error:(id *)arg2;
 - (id)initWithXPCDict:(id)arg1 request:(id)arg2 clientAuthorization:(id)arg3;

@@ -19,9 +19,9 @@
 + (id)linkJSONTransformer;
 + (id)postIdJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *link; // @synthesize link=_link;
 @property(readonly, copy, nonatomic) NSNumber *postId; // @synthesize postId=_postId;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

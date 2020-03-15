@@ -16,11 +16,11 @@
     NSString *_targetFilenameOverride;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *targetFilenameOverride; // @synthesize targetFilenameOverride=_targetFilenameOverride;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(retain, nonatomic) BKAssetMetadataFileManager *manager; // @synthesize manager=_manager;
 @property(retain, nonatomic) BKAssetMetadata *sourceMetadata; // @synthesize sourceMetadata=_sourceMetadata;
-- (void).cxx_destruct;
 - (void)cancel;
 - (id)executeWithTargetDirectory:(id)arg1 error:(id *)arg2;
 - (id)initWithSourceMetadata:(id)arg1 manager:(id)arg2;

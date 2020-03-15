@@ -13,8 +13,8 @@
     NSString *_stringValue;
 }
 
-@property(readonly, copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 - (void)bindTo:(struct sqlite3_stmt *)arg1 withSQLIndex:(int)arg2;
 - (id)initWithString:(id)arg1;
 

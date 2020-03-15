@@ -15,8 +15,8 @@
     float _progress;
 }
 
-@property(nonatomic) float progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(nonatomic) float progress; // @synthesize progress=_progress;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 progressBarVisible:(_Bool)arg2;

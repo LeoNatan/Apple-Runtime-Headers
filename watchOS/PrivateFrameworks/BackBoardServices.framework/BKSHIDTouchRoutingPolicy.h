@@ -17,8 +17,8 @@
 
 + (void)inspectChangesWithOldPolicy:(id)arg1 newPolicy:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) BSMutableSettings *settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
+@property(retain, nonatomic) BSMutableSettings *settings; // @synthesize settings=_settings;
 @property(copy, nonatomic) NSArray *contextIDsToExcludeFromHitTesting;
 @property(copy, nonatomic) NSArray *contextIDsToAlwaysSendTouches;
 @property(nonatomic, getter=shouldAvoidHitTesting) _Bool avoidHitTesting;

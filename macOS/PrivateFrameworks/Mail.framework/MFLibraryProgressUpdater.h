@@ -15,8 +15,8 @@
     NSProgress *_progress;
 }
 
-@property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void)setFractionDone:(double)arg1;
 - (id)init;
 - (id)initWithProgress:(id)arg1;

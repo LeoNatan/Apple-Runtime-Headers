@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)audioPropertiesForFetcher:(id)arg1;
-@property(readonly, retain, nonatomic) LPAudio *audio; // @synthesize audio=_audio;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) LPAudio *audio; // @synthesize audio=_audio;
 - (id)initWithAudio:(id)arg1 fetcher:(id)arg2;
 
 @end

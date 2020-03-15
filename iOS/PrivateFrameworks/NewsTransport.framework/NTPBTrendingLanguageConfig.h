@@ -17,9 +17,9 @@
 }
 
 + (Class)trendingTopicsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *trendingTopics; // @synthesize trendingTopics=_trendingTopics;
 @property(retain, nonatomic) NSString *languageTag; // @synthesize languageTag=_languageTag;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

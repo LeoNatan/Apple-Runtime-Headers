@@ -19,12 +19,12 @@
 
 + (id)scheduledBlock:(CDUnknownBlockType)arg1 delay:(double)arg2 queue:(id)arg3;
 + (id)scheduledMainQueueBlock:(CDUnknownBlockType)arg1 delay:(double)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timerSource; // @synthesize timerSource=_timerSource;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) _Bool canceled; // @synthesize canceled=_canceled;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(nonatomic) double delay; // @synthesize delay=_delay;
-- (void).cxx_destruct;
 - (void)_handleTimerFire;
 - (void)cancel;
 - (void)resetWithDelay:(double)arg1;

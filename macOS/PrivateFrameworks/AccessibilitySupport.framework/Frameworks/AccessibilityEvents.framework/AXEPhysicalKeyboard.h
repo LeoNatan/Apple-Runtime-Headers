@@ -19,12 +19,12 @@
 }
 
 + (id)sharedAggregateInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPointerArray *_listeners; // @synthesize _listeners=__listeners;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *_physicalKeyboardQueue; // @synthesize _physicalKeyboardQueue=__physicalKeyboardQueue;
 @property(retain, nonatomic) HIDManager *_hidManager; // @synthesize _hidManager=__hidManager;
 @property(retain, nonatomic) HIDEventSystemClient *_hidEventSystemClient; // @synthesize _hidEventSystemClient=__hidEventSystemClient;
 @property(readonly, nonatomic) BOOL isFnDown; // @synthesize isFnDown=_isFnDown;
-- (void).cxx_destruct;
 - (void)_signalUsage:(unsigned long long)arg1 page:(unsigned long long)arg2 stateChanged:(BOOL)arg3 serviceClient:(id)arg4;
 - (void)_signalKey:(unsigned long long)arg1 stateChanged:(BOOL)arg2 serviceClient:(id)arg3;
 - (id)attachedKeyboardIDs;

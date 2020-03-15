@@ -20,9 +20,9 @@
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak UIViewController<_UIDocumentPickerRemoteViewControllerContaining> *publicController; // @synthesize publicController=_publicController;
-- (void).cxx_destruct;
 - (void)_tintColorDidChangeToColor:(id)arg1;
 - (void)_stitchFileCreationAtURL:(id)arg1;
 - (void)setPreferredContentSize:(struct CGSize)arg1;

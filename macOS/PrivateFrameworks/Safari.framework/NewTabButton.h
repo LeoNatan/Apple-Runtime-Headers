@@ -30,10 +30,10 @@ __attribute__((visibility("hidden")))
 + (double)width;
 + (id)installNewTabButtonInView:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL forcesActiveWindowState; // @synthesize forcesActiveWindowState=_forcesActiveWindowState;
 @property(nonatomic, getter=isSyncedWithOtherButton) BOOL syncedWithOtherButton; // @synthesize syncedWithOtherButton=_syncedWithOtherButton;
 @property(nonatomic) __weak id <ButtonInTabSyncGroupDelegate> buttonInTabSyncGroupDelegate; // @synthesize buttonInTabSyncGroupDelegate=_buttonInTabSyncGroupDelegate;
-- (void).cxx_destruct;
 - (void)setHighlightStateToPressed:(BOOL)arg1 hovered:(BOOL)arg2;
 - (unsigned long long)_draggedTextOperationForDraggingInfo:(id)arg1;
 - (unsigned long long)_draggedURLOperationForDraggingInfo:(id)arg1;

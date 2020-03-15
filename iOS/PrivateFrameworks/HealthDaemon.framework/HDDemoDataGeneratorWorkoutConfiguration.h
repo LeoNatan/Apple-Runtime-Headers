@@ -32,6 +32,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long swimmingStrokeStyle; // @synthesize swimmingStrokeStyle=_swimmingStrokeStyle;
 @property(nonatomic) double swimmingRestSegmentTime; // @synthesize swimmingRestSegmentTime=_swimmingRestSegmentTime;
 @property(nonatomic) double swimmingSwimSegmentTime; // @synthesize swimmingSwimSegmentTime=_swimmingSwimSegmentTime;
@@ -48,7 +49,6 @@
 @property(nonatomic) unsigned long long goalType; // @synthesize goalType=_goalType;
 @property(nonatomic) _Bool indoor; // @synthesize indoor=_indoor;
 @property(nonatomic) unsigned long long activityType; // @synthesize activityType=_activityType;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)createdFromNSKeyedUnarchiver;

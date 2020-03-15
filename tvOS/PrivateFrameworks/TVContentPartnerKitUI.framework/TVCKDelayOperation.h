@@ -17,9 +17,9 @@
 }
 
 + (id)delayOperationWithDelay:(double)arg1;
+- (void).cxx_destruct;
 @property(readonly) double tolerance; // @synthesize tolerance=_tolerance;
 @property(readonly) double delay; // @synthesize delay=_delay;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)executionDidBegin;
 - (void)_cancelTimer;

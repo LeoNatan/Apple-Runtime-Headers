@@ -24,10 +24,10 @@
 
 + (struct CGRect)platterFrameWithContentBounds:(struct CGRect)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int borderStyle; // @synthesize borderStyle=_borderStyle;
 @property(nonatomic) __weak UIView<CSLUIHexIconView> *icon; // @synthesize icon=_icon;
 @property(nonatomic) __weak UIView *containedView; // @synthesize containedView=_containedView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGPoint)_iconPosition;
 - (void)setWhiteningValue:(float)arg1;

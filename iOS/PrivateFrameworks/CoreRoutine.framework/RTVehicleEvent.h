@@ -29,6 +29,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool locationFinalized; // @synthesize locationFinalized=_locationFinalized;
 @property(nonatomic) _Bool confirmed; // @synthesize confirmed=_confirmed;
 @property(copy, nonatomic) RTLocationOfInterest *nearbyLocationOfInterest; // @synthesize nearbyLocationOfInterest=_nearbyLocationOfInterest;
@@ -42,7 +43,6 @@
 @property(copy, nonatomic) NSString *vehicleIdentifier; // @synthesize vehicleIdentifier=_vehicleIdentifier;
 @property(copy, nonatomic) RTLocation *location; // @synthesize location=_location;
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

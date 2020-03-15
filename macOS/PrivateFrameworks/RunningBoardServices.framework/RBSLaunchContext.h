@@ -32,6 +32,7 @@
 + (BOOL)supportsBSXPCSecureCoding;
 + (id)contextWithIdentity:(id)arg1;
 + (id)context;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *requiredSequenceNumber; // @synthesize requiredSequenceNumber=_requiredSequenceNumber;
 @property(copy, nonatomic) NSUUID *requiredCacheUUID; // @synthesize requiredCacheUUID=_requiredCacheUUID;
 @property(copy, nonatomic, setter=_setAdditionalEnvironment:) NSDictionary *_additionalEnvironment; // @synthesize _additionalEnvironment=__additionalEnvironment;
@@ -46,7 +47,6 @@
 @property(nonatomic) unsigned long long executionOptions; // @synthesize executionOptions=_executionOptions;
 @property(copy, nonatomic) NSArray *arguments; // @synthesize arguments=_arguments;
 @property(copy, nonatomic) RBSProcessIdentity *identity; // @synthesize identity=_identity;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *machServices;
 @property(copy, nonatomic) NSDictionary *environment;
 @property(copy, nonatomic) NSString *executablePath;

@@ -9,7 +9,7 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/HMFMessageReceiver-Protocol.h>
 
-@class HMDHome, HMFMessageDispatcher, NSArray, NSMutableArray, NSObject, NSString, NSUUID;
+@class HMDHome, HMFLogEventSession, HMFMessageDispatcher, NSArray, NSMutableArray, NSObject, NSString, NSUUID;
 @protocol OS_dispatch_queue;
 
 @interface HMDAssistantCommandHelper : HMFObject <HMFMessageReceiver, HMFLogging>
@@ -27,9 +27,12 @@
     NSArray *_requests;
     NSArray *_mediaRequests;
     NSMutableArray *_mediaResponses;
+    HMFLogEventSession *_logEventSession;
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
+@property(retain, nonatomic) HMFLogEventSession *logEventSession; // @synthesize logEventSession=_logEventSession;
 @property(retain, nonatomic) NSMutableArray *mediaResponses; // @synthesize mediaResponses=_mediaResponses;
 @property(retain, nonatomic) NSArray *mediaRequests; // @synthesize mediaRequests=_mediaRequests;
 @property(retain, nonatomic) NSArray *requests; // @synthesize requests=_requests;
@@ -43,7 +46,6 @@
 @property(retain, nonatomic) NSUUID *messageId; // @synthesize messageId=_messageId;
 @property(copy, nonatomic) CDUnknownBlockType mediaResponseHandler; // @synthesize mediaResponseHandler=_mediaResponseHandler;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
-- (void).cxx_destruct;
 - (void)removeResponses:(id)arg1;
 - (void)addActionSetRequest:(id)arg1 actionSet:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)addWriteRequests:(id)arg1 home:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -59,7 +61,7 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
 - (void)dealloc;
-- (id)initWithQueue:(id)arg1 msgDispatcher:(id)arg2;
+- (id)initWithQueue:(id)arg1 msgDispatcher:(id)arg2 logEventSession:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

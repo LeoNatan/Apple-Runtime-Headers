@@ -27,6 +27,7 @@
     NSLayoutConstraint *_notNowToTrailingConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *notNowToTrailingConstraint; // @synthesize notNowToTrailingConstraint=_notNowToTrailingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *avatarToLeadingConstraint; // @synthesize avatarToLeadingConstraint=_avatarToLeadingConstraint;
 @property(nonatomic) __weak UIButton *notNowButton; // @synthesize notNowButton=_notNowButton;
@@ -38,7 +39,6 @@
 @property(nonatomic) __weak id <PXWidgetDelegate> widgetDelegate; // @synthesize widgetDelegate=_widgetDelegate;
 @property(retain, nonatomic) PXWidgetSpec *spec; // @synthesize spec=_spec;
 @property(retain, nonatomic) PXPhotosDetailsContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)_updateAndSetDescriptionFont;
 - (void)_dismissWithAnimation:(_Bool)arg1;
 - (void)_suggestionsDidFinish:(id)arg1;

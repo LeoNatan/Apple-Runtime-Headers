@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PBSOSUpdateDescriptor *descriptor; // @synthesize descriptor=_descriptor;
 @property(retain, nonatomic) PBSOSUpdateOperationProgress *progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)totalSpaceConsumed;
 - (id)copyWithZone:(struct _NSZone *)arg1;

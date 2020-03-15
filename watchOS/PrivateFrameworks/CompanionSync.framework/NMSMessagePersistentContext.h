@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *targetDeviceIDs; // @synthesize targetDeviceIDs=_targetDeviceIDs;
 @property(nonatomic) _Bool processAcked; // @synthesize processAcked=_processAcked;
 @property(nonatomic) _Bool sendAcked; // @synthesize sendAcked=_sendAcked;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy, nonatomic) NSString *idsIdentifier; // @synthesize idsIdentifier=_idsIdentifier;
 @property(nonatomic) unsigned short messageID; // @synthesize messageID=_messageID;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

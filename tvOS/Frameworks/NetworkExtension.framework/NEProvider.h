@@ -21,11 +21,11 @@
 + (_Bool)isNEProviderBundle:(id)arg1 forExtensionPoint:(id)arg2;
 + (_Bool)isRunningInProvider;
 + (void)startSystemExtensionMode;
+- (void).cxx_destruct;
 @property(retain) NSString *appName; // @synthesize appName=_appName;
 @property(retain) NEExtensionProviderContext *context; // @synthesize context=_context;
 @property(retain) NWPathEvaluator *defaultPathEvaluator; // @synthesize defaultPathEvaluator=_defaultPathEvaluator;
 @property(retain) NWPath *defaultPath; // @synthesize defaultPath=_defaultPath;
-- (void).cxx_destruct;
 - (void)displayMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)createUDPSessionToEndpoint:(id)arg1 fromEndpoint:(id)arg2;
 - (id)createTCPConnectionToEndpoint:(id)arg1 enableTFO:(_Bool)arg2 initialData:(id)arg3 enableMultipath:(_Bool)arg4 enableTLS:(_Bool)arg5 TLSParameters:(id)arg6 delegate:(id)arg7 URL:(id)arg8;

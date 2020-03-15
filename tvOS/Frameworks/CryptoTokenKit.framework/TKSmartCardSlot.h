@@ -25,6 +25,7 @@
     long long _previousState;
 }
 
+- (void).cxx_destruct;
 @property _Bool securePINChangeSupported; // @synthesize securePINChangeSupported=_securePINChangeSupported;
 @property _Bool securePINVerificationSupported; // @synthesize securePINVerificationSupported=_securePINVerificationSupported;
 @property long long powerState; // @synthesize powerState=_powerState;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain) TKSmartCardATR *ATR; // @synthesize ATR=_ATR;
 @property long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)userInteractionForStringEntry;
 - (id)userInteractionForConfirmation;
 - (id)screen;

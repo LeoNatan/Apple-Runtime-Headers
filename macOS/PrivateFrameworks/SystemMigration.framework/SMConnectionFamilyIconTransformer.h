@@ -15,8 +15,8 @@
 
 + (BOOL)allowsReverseTransformation;
 + (Class)transformedValueClass;
-@property(retain) SMConnectionFamilyIconTypeTransformer *connectionFamilyIconTypeTransformer; // @synthesize connectionFamilyIconTypeTransformer=_connectionFamilyIconTypeTransformer;
 - (void).cxx_destruct;
+@property(retain) SMConnectionFamilyIconTypeTransformer *connectionFamilyIconTypeTransformer; // @synthesize connectionFamilyIconTypeTransformer=_connectionFamilyIconTypeTransformer;
 - (id)transformedValue:(id)arg1;
 - (id)init;
 

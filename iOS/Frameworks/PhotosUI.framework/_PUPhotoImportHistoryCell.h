@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     PHAsset *_asset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int currentImageRequestToken; // @synthesize currentImageRequestToken=_currentImageRequestToken;
 @property(retain, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)_updateBorderColor;
 - (void)prepareForReuse;
 - (void)layoutSubviews;

@@ -193,6 +193,8 @@
 }
 
 + (id)sharedSettings;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldFreezeLayoutCamera; // @synthesize shouldFreezeLayoutCamera=_shouldFreezeLayoutCamera;
 @property(nonatomic) BOOL shouldUseSDFSuperSampling; // @synthesize shouldUseSDFSuperSampling=_shouldUseSDFSuperSampling;
 @property(nonatomic) float sdfGlyphSuperSampleKernelSize; // @synthesize sdfGlyphSuperSampleKernelSize=_sdfGlyphSuperSampleKernelSize;
@@ -368,8 +370,6 @@
 @property(nonatomic) BOOL paintSelectedMapTiles; // @synthesize paintSelectedMapTiles=_paintSelectedMapTiles;
 @property(nonatomic) BOOL paintMapTiles; // @synthesize paintMapTiles=_paintMapTiles;
 @property(nonatomic) BOOL disableOverlayTextConsole; // @synthesize disableOverlayTextConsole=_disableOverlayTextConsole;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)removeTileToPaint;
 - (void)addTileToPaint:(struct GEOTileSetRegion)arg1;
 - (void)clearFootprintsToSuppress;

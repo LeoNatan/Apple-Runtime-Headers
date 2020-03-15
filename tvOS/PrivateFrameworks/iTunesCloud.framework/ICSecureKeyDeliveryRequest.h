@@ -25,6 +25,7 @@
     CDUnknownBlockType _serverPlaybackContextDataCreationHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldIncludeDeviceGUID; // @synthesize shouldIncludeDeviceGUID=_shouldIncludeDeviceGUID;
 @property(copy, nonatomic) CDUnknownBlockType serverPlaybackContextDataCreationHandler; // @synthesize serverPlaybackContextDataCreationHandler=_serverPlaybackContextDataCreationHandler;
 @property(nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSURL *keyServerURL; // @synthesize keyServerURL=_keyServerURL;
 @property(copy, nonatomic) NSString *contentURI; // @synthesize contentURI=_contentURI;
 @property(copy, nonatomic) NSURL *certificateURL; // @synthesize certificateURL=_certificateURL;
-- (void).cxx_destruct;
 - (void)performWithResponseHandler:(CDUnknownBlockType)arg1;
 - (void)configureUsingAssetResourceLoadingRequest:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

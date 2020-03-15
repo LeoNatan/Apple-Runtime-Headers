@@ -15,8 +15,8 @@
 }
 
 + (id)requiredProperties;
-@property(retain, nonatomic) MPModelSong *song; // @synthesize song=_song;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPModelSong *song; // @synthesize song=_song;
 - (void)_invalidateModelObjectPlaybackItemMetadata;
 - (id)storeAsset;
 - (id)playbackPosition;

@@ -38,6 +38,7 @@
 
 + (id)labelWithOptions:(unsigned int)arg1 forDevice:(id)arg2;
 + (id)labelWithOptions:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CLKUITimeLabelStyle *style; // @synthesize style=_style;
 @property(nonatomic) _Bool showSeconds; // @synthesize showSeconds=_showSeconds;
 @property(copy, nonatomic) CDUnknownBlockType didResizeHandler; // @synthesize didResizeHandler=_didResizeHandler;
@@ -47,7 +48,6 @@
 @property(readonly, nonatomic) CLKTimeFormatter *timeFormatter; // @synthesize timeFormatter=_timeFormatter;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) unsigned int options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (void)_fadeTransitionLabels;
 - (void)_scaleTransitionLabels;
 - (void)_cancelAnimation;

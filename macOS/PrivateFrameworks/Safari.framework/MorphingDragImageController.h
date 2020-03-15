@@ -37,8 +37,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)dragTabWithDraggingItem:(id)arg1 tabButtonImage:(id)arg2 pinnedTabButtonImage:(id)arg3 windowImage:(id)arg4 fromView:(id)arg5 at:(struct CGPoint)arg6 source:(id)arg7;
-@property(readonly, nonatomic) NSWindow *dragWindow; // @synthesize dragWindow=_dragWindow;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSWindow *dragWindow; // @synthesize dragWindow=_dragWindow;
 - (id)detachWindowForTearOffTabWindow:(id)arg1;
 - (void)_morphToDragImage:(id)arg1;
 - (void)_updateDragImageForCurrentDragState;

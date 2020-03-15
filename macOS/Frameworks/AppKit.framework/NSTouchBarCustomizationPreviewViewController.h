@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
     id _preCursorDraggedTree;
 }
 
+- (void).cxx_destruct;
 @property BOOL forcesReducedMetricsCompression; // @synthesize forcesReducedMetricsCompression=_forcesReducedMetricsCompression;
 @property struct CGRect systemTrayRect; // @synthesize systemTrayRect=_systemTrayRect;
 @property struct CGRect expandedControlStripRect; // @synthesize expandedControlStripRect=_expandedControlStripRect;
@@ -56,7 +57,6 @@ __attribute__((visibility("hidden")))
 @property struct CGRect escKeyRect; // @synthesize escKeyRect=_escKeyRect;
 @property(retain) NSFunctionRow *functionRow; // @synthesize functionRow=_functionRow;
 @property __weak id <NSTouchBarCustomizationPreviewViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)shouldRemoveItemAtIndex:(long long)arg1 inSection:(long long)arg2 whenInRect:(struct CGRect)arg3;
 - (BOOL)isItemInRectInTrash:(struct CGRect)arg1;
 - (id)indexPathForInsertingItemWithFrame:(struct CGRect)arg1 withApproximateIndex:(id)arg2;

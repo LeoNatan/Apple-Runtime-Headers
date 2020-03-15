@@ -18,6 +18,7 @@
     BOOL _supportsBooks;
     BOOL _supportsMovies;
     BOOL _supportsTVShows;
+    BOOL _supportsPodcasts;
     BOOL _supportsRentals;
     BOOL _supportsHDVideos;
     BOOL _supportsPlaylistFolders;
@@ -83,6 +84,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *phoneNumber2; // @synthesize phoneNumber2=_phoneNumber2;
 @property(retain, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(retain, nonatomic) NSString *mobileEquipmentIdentifier; // @synthesize mobileEquipmentIdentifier=_mobileEquipmentIdentifier;
@@ -145,13 +147,13 @@
 @property(nonatomic) BOOL supportsPlaylistFolders; // @synthesize supportsPlaylistFolders=_supportsPlaylistFolders;
 @property(nonatomic) BOOL supportsHDVideos; // @synthesize supportsHDVideos=_supportsHDVideos;
 @property(nonatomic) BOOL supportsRentals; // @synthesize supportsRentals=_supportsRentals;
+@property(nonatomic) BOOL supportsPodcasts; // @synthesize supportsPodcasts=_supportsPodcasts;
 @property(nonatomic) BOOL supportsTVShows; // @synthesize supportsTVShows=_supportsTVShows;
 @property(nonatomic) BOOL supportsMovies; // @synthesize supportsMovies=_supportsMovies;
 @property(nonatomic) BOOL supportsBooks; // @synthesize supportsBooks=_supportsBooks;
 @property(nonatomic) BOOL supportsAudiobooks; // @synthesize supportsAudiobooks=_supportsAudiobooks;
 @property(nonatomic) BOOL supportsVideo; // @synthesize supportsVideo=_supportsVideo;
 @property(nonatomic) BOOL supportsAudio; // @synthesize supportsAudio=_supportsAudio;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

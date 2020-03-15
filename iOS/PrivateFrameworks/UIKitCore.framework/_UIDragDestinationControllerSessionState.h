@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     id <UIDropSession> _dropSession;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <UIDropSession> dropSession; // @synthesize dropSession=_dropSession;
 @property(nonatomic) int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isDragging;
 @property(readonly, nonatomic) _Bool isReordering;
 @property(readonly, nonatomic) _Bool isActive;

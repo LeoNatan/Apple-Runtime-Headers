@@ -17,9 +17,9 @@
 }
 
 + (int)_stickerSizeFromString:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *stickers; // @synthesize stickers=_stickers;
 @property(readonly, nonatomic) int stickerSize; // @synthesize stickerSize=_stickerSize;
-- (void).cxx_destruct;
 - (id)stickerBrowserView:(id)arg1 stickerAtIndex:(int)arg2;
 - (int)numberOfStickersInStickerBrowserView:(id)arg1;
 - (void)_loadStickerPackWithURL:(id)arg1;

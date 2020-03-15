@@ -25,6 +25,7 @@
     NSArray *_cachedAccounts;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *cachedAccounts; // @synthesize cachedAccounts=_cachedAccounts;
 @property(retain, nonatomic) NSMutableDictionary *cachedRestrictedStoreInfos; // @synthesize cachedRestrictedStoreInfos=_cachedRestrictedStoreInfos;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *cacheQueue; // @synthesize cacheQueue=_cacheQueue;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) id <CADManagedConfigurationHandler> managedConfigHandler; // @synthesize managedConfigHandler=_managedConfigHandler;
 @property(readonly, nonatomic) id <CADACAccountsProvider> accountsProvider; // @synthesize accountsProvider=_accountsProvider;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (_Bool)_mayShowLocalAccountsForAction:(unsigned long long)arg1;
 - (id)_filteredAccountsForAction:(unsigned long long)arg1 withUnfilteredAccounts:(id)arg2;
 - (id)_restrictedCalStoreInfosForAction:(unsigned long long)arg1;

@@ -8,7 +8,7 @@
 
 #import <CoreUtils/CUReadWriteRequestable-Protocol.h>
 
-@class CBScalablePipe, CBScalablePipeManager, CUReadRequest, CUWriteRequest, NSString, NSUUID;
+@class CBScalablePipe, CBScalablePipeManager, CUReadRequest, CUWriteRequest, NSMutableArray, NSString, NSUUID;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface CUBluetoothScalablePipe : NSObject <CUReadWriteRequestable>
@@ -31,11 +31,11 @@
     struct channel_ring_desc *_btWriteRing;
     int _channelFD;
     CUReadRequest *_readRequestCurrent;
-    struct NSMutableArray *_readRequests;
+    NSMutableArray *_readRequests;
     NSObject<OS_dispatch_source> *_readSource;
     BOOL _readSuspended;
     CUWriteRequest *_writeRequestCurrent;
-    struct NSMutableArray *_writeRequests;
+    NSMutableArray *_writeRequests;
     NSObject<OS_dispatch_source> *_writeSource;
     BOOL _writeSuspended;
     int _peerHostState;
@@ -50,6 +50,7 @@
     CDUnknownBlockType _stateChangedHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType stateChangedHandler; // @synthesize stateChangedHandler=_stateChangedHandler;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
 @property(nonatomic) int priority; // @synthesize priority=_priority;
@@ -60,7 +61,6 @@
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_completeWriteRequest:(id)arg1 error:(id)arg2;
 - (void)_abortWritesWithError:(id)arg1;
 - (unsigned long long)_writeBytes:(const char *)arg1 length:(unsigned long long)arg2;

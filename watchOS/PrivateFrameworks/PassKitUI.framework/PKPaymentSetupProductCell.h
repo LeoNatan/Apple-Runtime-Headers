@@ -16,10 +16,10 @@
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool drawsTopSeperator; // @synthesize drawsTopSeperator=_drawsTopSeperator;
 @property(nonatomic) float textLabelOffset; // @synthesize textLabelOffset=_textLabelOffset;
 @property(retain, nonatomic) PKPaymentSetupProduct *product; // @synthesize product=_product;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)layoutSubviews;
 - (void)_updateDisplay;

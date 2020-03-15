@@ -6,15 +6,13 @@
 
 #import <CoreCDPUI/CDPWatchOSPassphraseEntryViewController.h>
 
-@class CDPLocalDeviceSecretHandler;
-
 @interface CDPWatchOSLocalSecretEntryViewController : CDPWatchOSPassphraseEntryViewController
 {
-    CDPLocalDeviceSecretHandler *_handler;
+    CDUnknownBlockType _completionBlock;
 }
 
-@property(retain, nonatomic) CDPLocalDeviceSecretHandler *handler; // @synthesize handler=_handler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 - (void)enableUserInteractionAndStopSpinner;
 - (void)disableUserInteractionAndStartSpinner;
 - (void)passphraseEntered:(id)arg1;

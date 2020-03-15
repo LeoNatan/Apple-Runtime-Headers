@@ -28,6 +28,7 @@
 + (BOOL)isFanDuckingEnabled;
 + (BOOL)isAudioDucked;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property BOOL isSiriUIVisible; // @synthesize isSiriUIVisible=_isSiriUIVisible;
 @property(nonatomic) unsigned int savedBluetoothOutputVolumeDevice; // @synthesize savedBluetoothOutputVolumeDevice=_savedBluetoothOutputVolumeDevice;
 @property(nonatomic) float savedBluetoothOutputVolume; // @synthesize savedBluetoothOutputVolume=_savedBluetoothOutputVolume;
@@ -37,7 +38,6 @@
 @property(retain) NSTimer *bluetoothAudioResumeTimer; // @synthesize bluetoothAudioResumeTimer=_bluetoothAudioResumeTimer;
 @property BOOL isAudioPaused; // @synthesize isAudioPaused=_isAudioPaused;
 @property BOOL isAcousticIDRecording; // @synthesize isAcousticIDRecording=_isAcousticIDRecording;
-- (void).cxx_destruct;
 - (void)restoreBluetoothVolumeOutputForDevice:(unsigned int)arg1;
 - (void)stashBluetoothVolumeForOutputDevice:(unsigned int)arg1;
 - (BOOL)setBluetoothAudioFormat:(unsigned int)arg1 forDevice:(unsigned int)arg2;

@@ -24,12 +24,12 @@
 + (BOOL)canSendSubject;
 + (BOOL)canSendText;
 + (id)log;
+- (void).cxx_destruct;
 @property(copy, nonatomic) MSMessage *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *subject; // @synthesize subject=_subject;
 @property(copy, nonatomic) NSString *body; // @synthesize body=_body;
 @property(copy, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
 @property(nonatomic) id <MFMessageComposeViewControllerDelegate> messageComposeDelegate; // @synthesize messageComposeDelegate=_messageComposeDelegate;
-- (void).cxx_destruct;
 - (void)messageComposeViewControllerHelper:(id)arg1 didFinishWithResult:(long long)arg2;
 - (void)_createPathIfNotExist;
 - (id)_attachmentMarzipanDirectoryPathWithFileName:(id)arg1;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSString *_parentGroupIdentifier;
 }
 
-@property(readonly, copy, nonatomic) NSString *parentGroupIdentifier; // @synthesize parentGroupIdentifier=_parentGroupIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *parentGroupIdentifier; // @synthesize parentGroupIdentifier=_parentGroupIdentifier;
 - (struct __CFArray *)cn_copyGroupsInAddressBook:(void *)arg1 error:(struct __CFError **)arg2;
 - (id)initWithParentGroupIdentifier:(id)arg1;
 

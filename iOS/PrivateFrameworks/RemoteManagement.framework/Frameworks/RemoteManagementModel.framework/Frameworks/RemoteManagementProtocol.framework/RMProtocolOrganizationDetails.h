@@ -17,14 +17,14 @@
 }
 
 + (id)requestWithName:(id)arg1 email:(id)arg2 URL:(id)arg3 proof:(id)arg4;
+- (void).cxx_destruct;
 @property(copy, nonatomic) RMProtocolOrganizationDetails_Proof *detailsProof; // @synthesize detailsProof=_detailsProof;
 @property(copy, nonatomic) NSString *detailsURL; // @synthesize detailsURL=_detailsURL;
 @property(copy, nonatomic) NSString *detailsEmail; // @synthesize detailsEmail=_detailsEmail;
 @property(copy, nonatomic) NSString *detailsName; // @synthesize detailsName=_detailsName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)serializePayloadWithType:(short)arg1;
-- (_Bool)loadPayload:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
+- (id)serializeWithType:(short)arg1;
+- (_Bool)loadFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
 
 @end
 

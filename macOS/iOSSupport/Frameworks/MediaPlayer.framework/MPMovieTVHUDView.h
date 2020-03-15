@@ -15,8 +15,8 @@
     MPAVController *_player;
 }
 
-@property(retain, nonatomic) MPAVController *player; // @synthesize player=_player;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPAVController *player; // @synthesize player=_player;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
 - (void)animationDidStop:(id)arg1;
 - (void)_fadeOut;

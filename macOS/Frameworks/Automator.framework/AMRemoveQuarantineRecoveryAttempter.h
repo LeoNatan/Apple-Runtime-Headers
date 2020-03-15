@@ -15,9 +15,9 @@
 }
 
 + (id)removeQuarantineRecoveryAttempterWithRecoveryOptionIndex:(unsigned long long)arg1 url:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *_url; // @synthesize _url=__url;
 @property(nonatomic) unsigned long long _recoveryOptionIndex; // @synthesize _recoveryOptionIndex=__recoveryOptionIndex;
-- (void).cxx_destruct;
 - (void)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2 delegate:(id)arg3 didRecoverSelector:(SEL)arg4 contextInfo:(void *)arg5;
 - (BOOL)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2;
 - (BOOL)_removeQuarantine;

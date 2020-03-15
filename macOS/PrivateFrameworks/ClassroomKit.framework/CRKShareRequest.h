@@ -21,6 +21,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sourceBundleIdentifier; // @synthesize sourceBundleIdentifier=_sourceBundleIdentifier;
 @property(retain, nonatomic) NSDictionary *sandboxExtensions; // @synthesize sandboxExtensions=_sandboxExtensions;
 @property(retain, nonatomic) NSData *previewImageData; // @synthesize previewImageData=_previewImageData;
@@ -29,7 +30,6 @@
 @property(copy, nonatomic) NSString *targetIdentifier; // @synthesize targetIdentifier=_targetIdentifier;
 @property(copy, nonatomic) NSString *targetType; // @synthesize targetType=_targetType;
 @property(copy, nonatomic) DMFControlGroupIdentifier *courseIdentifier; // @synthesize courseIdentifier=_courseIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

@@ -15,8 +15,8 @@
     CalEventOccurrence *_regularOccurrence;
 }
 
-@property(retain, nonatomic) CalEventOccurrence *regularOccurrence; // @synthesize regularOccurrence=_regularOccurrence;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CalEventOccurrence *regularOccurrence; // @synthesize regularOccurrence=_regularOccurrence;
 - (id)summary;
 - (id)makeEntityFromOccurrence;
 - (void)restore;

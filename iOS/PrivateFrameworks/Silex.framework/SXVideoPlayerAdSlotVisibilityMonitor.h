@@ -13,8 +13,8 @@
     SVKeyValueObserver *_observer;
 }
 
-@property(readonly, nonatomic) SVKeyValueObserver *observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SVKeyValueObserver *observer; // @synthesize observer=_observer;
 - (id)initWithVideoPlayerViewController:(id)arg1 videoAdSlotVisiblePercentageProvider:(id)arg2;
 
 @end

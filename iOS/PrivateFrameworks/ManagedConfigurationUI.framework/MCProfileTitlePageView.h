@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     UIButton *_cancelButton;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(readonly, nonatomic) UIButton *infoButton; // @synthesize infoButton=_infoButton;
 @property(readonly, nonatomic) UIButton *installButton; // @synthesize installButton=_installButton;
 @property(readonly, nonatomic) UIView *bottomBarView; // @synthesize bottomBarView=_bottomBarView;
 @property(readonly, nonatomic) UIView *topBarView; // @synthesize topBarView=_topBarView;
-- (void).cxx_destruct;
 - (void)showBottomView:(_Bool)arg1 animated:(_Bool)arg2;
 - (id)_createBottomView;
 - (id)_createInfoButton;

@@ -6,9 +6,7 @@
 
 #import <TeaCharts/TCSparklineAssembly.h>
 
-#import <TeaCharts/NFAssembly-Protocol.h>
-
-@interface TCSparklineAssembly (TeaCharts) <NFAssembly>
+@interface TCSparklineAssembly (TeaCharts)
 - (void)loadInRegistry:(id)arg1;
 @end
 

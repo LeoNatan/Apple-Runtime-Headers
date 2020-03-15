@@ -15,10 +15,10 @@
     NSArray *_dictionaries;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL didInitialized; // @synthesize didInitialized=_didInitialized;
 @property(retain, nonatomic) NSArray *dictionaries; // @synthesize dictionaries=_dictionaries;
 @property(retain, nonatomic) NSTableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (void)awakeFromNib;
 
 @end

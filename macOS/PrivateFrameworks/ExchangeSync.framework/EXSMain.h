@@ -19,12 +19,12 @@
     EXSMaintenanceActivity *_maintenanceActivity;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) EXSMaintenanceActivity *maintenanceActivity; // @synthesize maintenanceActivity=_maintenanceActivity;
 @property(retain, nonatomic) EXSNotificationController *notificationController; // @synthesize notificationController=_notificationController;
 @property(retain, nonatomic) EXSXPCServiceDelegate *delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSXPCListener *xpcListener; // @synthesize xpcListener=_xpcListener;
 @property(retain, nonatomic) EXSSyncEngine *syncEngine; // @synthesize syncEngine=_syncEngine;
-- (void).cxx_destruct;
 - (void)notificationDeliveredForSyncNow;
 - (void)startXPCListener;
 - (void)shutdown;

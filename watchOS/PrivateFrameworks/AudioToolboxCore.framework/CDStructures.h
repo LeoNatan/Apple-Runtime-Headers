@@ -169,10 +169,14 @@ struct ParameterAutomationEvent;
 
 struct ParameterMap {
     id _field1;
-    _Bool _field2;
-    struct vector<AUv3InstanceBase::ScopeElementIDObj, std::__1::allocator<AUv3InstanceBase::ScopeElementIDObj>> _field3;
+    struct OpaqueAudioComponentInstance *_field2;
+    _Bool _field3;
     struct vector<AUv3InstanceBase::ScopeElementIDObj, std::__1::allocator<AUv3InstanceBase::ScopeElementIDObj>> _field4;
-    id _field5;
+    struct vector<AUv3InstanceBase::ScopeElementIDObj, std::__1::allocator<AUv3InstanceBase::ScopeElementIDObj>> _field5;
+    struct vector<AUv3InstanceBase::ScopeElementIDObj, std::__1::allocator<AUv3InstanceBase::ScopeElementIDObj>> _field6;
+    id _field7;
+    void *_field8;
+    struct map<unsigned long, AUParameterGroup *, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, AUParameterGroup *>>> _field9;
 };
 
 struct PropertyListener;
@@ -236,6 +240,18 @@ struct map<unsigned int, RemoteAUHandleInfo, std::__1::less<unsigned int>, std::
             unsigned long __value_;
         } __pair3_;
     } __tree_;
+};
+
+struct map<unsigned long, AUParameterGroup *, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, AUParameterGroup *>>> {
+    struct __tree<std::__1::__value_type<unsigned long, AUParameterGroup *>, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, AUParameterGroup *>, std::__1::less<unsigned long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long, AUParameterGroup *>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned long, AUParameterGroup *>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, AUParameterGroup *>, std::__1::less<unsigned long>, true>> {
+            unsigned long _field1;
+        } _field3;
+    } _field1;
 };
 
 struct set<AUObserverController::AddressOriginator, std::__1::less<AUObserverController::AddressOriginator>, std::__1::allocator<AUObserverController::AddressOriginator>> {

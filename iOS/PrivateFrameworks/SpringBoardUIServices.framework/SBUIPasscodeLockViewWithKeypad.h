@@ -22,11 +22,11 @@
     _Bool _hasPerformedLayoutOnce;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *statusSubtitleView; // @synthesize statusSubtitleView=_statusSubtitleView;
 @property(retain, nonatomic) UILabel *statusTitleView; // @synthesize statusTitleView=_statusTitleView;
 @property(retain, nonatomic) NSString *lastCharacterBeforeBackspace; // @synthesize lastCharacterBeforeBackspace=_lastCharacterBeforeBackspace;
 @property(nonatomic, getter=_undoInputOnTouchCancellation, setter=_setUndoInputOnTouchCancellation:) _Bool undoInputOnTouchCancellation; // @synthesize undoInputOnTouchCancellation=_undoInputOnTouchCancellation;
-- (void).cxx_destruct;
 - (void)passcodeEntryFieldTextDidChange:(id)arg1;
 - (_Bool)passcodeEntryField:(id)arg1 shouldInsertText:(id)arg2;
 - (void)passcodeEntryFieldDidCancelEntry:(id)arg1;

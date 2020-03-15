@@ -15,9 +15,9 @@
 }
 
 + (id)currentMailVersionDirectoryName;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *persistenceInfo; // @synthesize persistenceInfo=_persistenceInfo;
 @property(readonly, nonatomic) NSURL *mailLibraryDirectory; // @synthesize mailLibraryDirectory=_mailLibraryDirectory;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *v4MigratedAccountDirectories;
 - (id)previousMailVersionDirectoryNamesForVersionDirectoryName:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *allVersionDirectoryNames;

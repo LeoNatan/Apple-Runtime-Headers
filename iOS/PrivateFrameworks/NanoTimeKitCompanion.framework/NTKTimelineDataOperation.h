@@ -20,9 +20,9 @@
 
 + (id)operationWithRemoteDataSource:(id)arg1 complication:(id)arg2;
 + (id)operationWithLocalDataSource:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool canceled; // @synthesize canceled=_canceled;
 @property(readonly, nonatomic) _Bool started; // @synthesize started=_started;
-- (void).cxx_destruct;
 - (id)_finalizedValidEntries:(id)arg1;
 - (_Bool)_validateTemplate:(id)arg1;
 - (_Bool)_validateEntry:(id)arg1;

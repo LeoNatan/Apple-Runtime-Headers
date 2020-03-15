@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     NSURL *_validationURL;
 }
 
-@property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 - (void)_validateWithBodyDictionary:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)_finishValidationWithResponse:(id)arg1 error:(id)arg2 attemptNumber:(long long)arg3 block:(CDUnknownBlockType)arg4;
 - (void)validateGift:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;

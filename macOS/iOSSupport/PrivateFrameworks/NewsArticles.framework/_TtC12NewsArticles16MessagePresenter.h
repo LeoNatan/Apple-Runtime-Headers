@@ -6,10 +6,8 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsArticles/SXMessagePresenter-Protocol.h>
-
 __attribute__((visibility("hidden")))
-@interface _TtC12NewsArticles16MessagePresenter : NSObject <SXMessagePresenter>
+@interface _TtC12NewsArticles16MessagePresenter : NSObject
 {
 }
 

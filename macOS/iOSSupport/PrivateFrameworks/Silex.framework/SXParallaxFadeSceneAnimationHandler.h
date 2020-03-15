@@ -17,12 +17,12 @@
     unsigned long long _attachmentType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long attachmentType; // @synthesize attachmentType=_attachmentType;
 @property(nonatomic) double alphaDistance; // @synthesize alphaDistance=_alphaDistance;
 @property(nonatomic) double scrollDistance; // @synthesize scrollDistance=_scrollDistance;
 @property(retain, nonatomic) SXComponentView *headerComponentView; // @synthesize headerComponentView=_headerComponentView;
 @property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
-- (void).cxx_destruct;
 - (BOOL)shouldFinishAtEndOfScrollView;
 - (id)componentViewToAnimate;
 - (double)factorForVisibileBounds:(struct CGRect)arg1 andAbsoluteComponentRect:(struct CGRect)arg2;

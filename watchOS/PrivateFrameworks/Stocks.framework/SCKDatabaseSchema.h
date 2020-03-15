@@ -16,11 +16,11 @@
     int _security;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int security; // @synthesize security=_security;
 @property(copy, nonatomic) NSArray *zoneSchemas; // @synthesize zoneSchemas=_zoneSchemas;
 @property(readonly, nonatomic) int environment; // @synthesize environment=_environment;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)schemaForZoneName:(id)arg1;
 @property(readonly, nonatomic) _Bool requiresDeviceToDeviceEncryption;
 @property(readonly, copy, nonatomic) NSArray *zoneIDs;

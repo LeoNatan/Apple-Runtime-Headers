@@ -9,13 +9,13 @@
 __attribute__((visibility("hidden")))
 @interface _UICollectionAvailableDimensionalLayoutSpace : NSObject
 {
-    int _axis;
+    unsigned long long _axis;
     struct CGSize _size;
 }
 
-@property(readonly, nonatomic) int axis; // @synthesize axis=_axis;
+@property(readonly, nonatomic) unsigned long long axis; // @synthesize axis=_axis;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
-- (id)initWithSize:(struct CGSize)arg1 axis:(int)arg2;
+- (id)initWithSize:(struct CGSize)arg1 axis:(unsigned long long)arg2;
 
 @end
 

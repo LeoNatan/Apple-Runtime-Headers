@@ -68,6 +68,7 @@
 
 + (id)newAppIconConfiguration;
 + (id)newStandardConfiguration;
+- (void).cxx_destruct;
 @property(nonatomic) double fullBleedOffset; // @synthesize fullBleedOffset=_fullBleedOffset;
 @property(nonatomic) BOOL fullBleedCenteredGrowth; // @synthesize fullBleedCenteredGrowth=_fullBleedCenteredGrowth;
 @property(nonatomic) double unpressedDuration; // @synthesize unpressedDuration=_unpressedDuration;
@@ -120,7 +121,6 @@
 @property(nonatomic) double overlayDepth; // @synthesize overlayDepth=_overlayDepth;
 @property(nonatomic) double maximumParallaxDepth; // @synthesize maximumParallaxDepth=_maximumParallaxDepth;
 @property(nonatomic) unsigned long long maximumParallaxImages; // @synthesize maximumParallaxImages=_maximumParallaxImages;
-- (void).cxx_destruct;
 - (void)_highContrastFocusIndicatorChanged:(id)arg1;
 @property(readonly, copy, nonatomic) _UIFocusAnimationConfiguration *focusAnimationConfiguration;
 - (BOOL)isEqual:(id)arg1;

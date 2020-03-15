@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 + (id)specializedMetadataProviderForMetadata:(id)arg1 withContext:(id)arg2;
 + (id)specializedMetadataProviderForResourceWithContext:(id)arg1;
 + (id)specializedMetadataProviderForURLWithContext:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) LPMetadataProviderSpecializationContext *context; // @synthesize context=_context;
 @property(nonatomic) __weak id <LPMetadataProviderSpecializationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *URL;
 - (void)cancel;
 - (void)start;

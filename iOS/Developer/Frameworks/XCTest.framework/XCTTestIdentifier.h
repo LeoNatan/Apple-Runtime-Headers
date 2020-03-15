@@ -24,13 +24,15 @@
 + (id)minimumEquivalentIdentifiers:(id)arg1;
 + (id)testIdentifiersForStringIdentifiers:(id)arg1 inBundleWithName:(id)arg2;
 + (_Bool)supportsSecureCoding;
++ (id)identifierForTestCase:(id)arg1;
 + (id)identifierForClass:(Class)arg1;
++ (id)bundleNameForClass:(Class)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *bundleAgnosticStringRepresentation; // @synthesize bundleAgnosticStringRepresentation=_bundleAgnosticStringRepresentation;
 @property(readonly) NSString *stringRepresentation; // @synthesize stringRepresentation=_stringRepresentation;
 @property(readonly) NSString *methodName; // @synthesize methodName=_methodName;
 @property(readonly) NSString *className; // @synthesize className=_className;
 @property(readonly) NSString *bundleName; // @synthesize bundleName=_bundleName;
-- (void).cxx_destruct;
 @property(readonly) XCTTestIdentifier *classIdentifier;
 @property(readonly) XCTTestIdentifier *bundleIdentifier;
 @property(readonly) unsigned long long type;

@@ -22,6 +22,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *complicationTransferIdentifier; // @synthesize complicationTransferIdentifier=_complicationTransferIdentifier;
 @property(copy) NSString *transferIdentifier; // @synthesize transferIdentifier=_transferIdentifier;
 @property(retain) NSError *transferError; // @synthesize transferError=_transferError;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) WCUserInfo *userInfoStorage; // @synthesize userInfoStorage=_userInfoStorage;
 @property(nonatomic, getter=isTransferring) BOOL transferring; // @synthesize transferring=_transferring;
 @property(nonatomic, getter=isCurrentComplicationInfo) BOOL currentComplicationInfo; // @synthesize currentComplicationInfo=_currentComplicationInfo;
-- (void).cxx_destruct;
 - (id)protobufData;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -22,6 +22,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMFOSTransaction *snapshotCATransaction; // @synthesize snapshotCATransaction=_snapshotCATransaction;
 @property(readonly, nonatomic) BOOL externalFilePath; // @synthesize externalFilePath=_externalFilePath;
 @property(readonly, nonatomic) NSNumber *aspectRatio; // @synthesize aspectRatio=_aspectRatio;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) NSDate *snapshotTimestamp; // @synthesize snapshotTimestamp=_snapshotTimestamp;
 @property(readonly, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(readonly, nonatomic) NSString *directory; // @synthesize directory=_directory;
-- (void).cxx_destruct;
 - (BOOL)prepareParametersWithFilePath:(id)arg1 snapshotData:(id)arg2 directory:(id)arg3 snapshotTimestamp:(id)arg4 resize:(BOOL)arg5 writeBack:(BOOL)arg6;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

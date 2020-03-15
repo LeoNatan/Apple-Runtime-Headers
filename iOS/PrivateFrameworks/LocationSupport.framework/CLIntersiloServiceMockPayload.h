@@ -16,11 +16,11 @@
     NSDictionary *_outputDictionary;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool inUse; // @synthesize inUse=_inUse;
 @property(readonly, nonatomic) NSDictionary *outputDictionary; // @synthesize outputDictionary=_outputDictionary;
 @property(readonly, nonatomic) NSDictionary *inputDictionary; // @synthesize inputDictionary=_inputDictionary;
 @property(readonly, nonatomic) XCTestExpectation *expectation; // @synthesize expectation=_expectation;
-- (void).cxx_destruct;
 - (void)setOutput:(id)arg1 forKey:(id)arg2;
 - (id)initWithExpectation:(id)arg1 inputDictionary:(id)arg2;
 

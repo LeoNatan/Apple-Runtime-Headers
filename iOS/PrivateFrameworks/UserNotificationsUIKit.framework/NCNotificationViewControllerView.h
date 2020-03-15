@@ -16,8 +16,8 @@
     PLPlatterView *_contentView;
 }
 
-@property(nonatomic) __weak PLPlatterView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak PLPlatterView *contentView; // @synthesize contentView=_contentView;
 - (void)_updateStackDimmingVisualStyling;
 - (struct CGSize)contentSizeForSize:(struct CGSize)arg1;
 - (struct CGSize)sizeThatFitsContentWithSize:(struct CGSize)arg1;

@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL shouldCollectPowerWifiStats; // @synthesize shouldCollectPowerWifiStats=_shouldCollectPowerWifiStats;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *logDumpQueue; // @synthesize logDumpQueue=_logDumpQueue;
-- (void).cxx_destruct;
 - (id)createTodaysStatisticDictionaryIfNeeded;
 - (void)_noteSyncEndedForDurationKey:(id)arg1 dateKey:(id)arg2;
 - (void)noteAHDASyncEnded;

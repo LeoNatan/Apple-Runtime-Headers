@@ -18,10 +18,10 @@
     id <SVVideoPlaybackPolicy> _playbackPolicy;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoPlaybackPolicy> playbackPolicy; // @synthesize playbackPolicy=_playbackPolicy;
 @property(readonly, nonatomic) id <SVVideoPlaybackController> playbackController; // @synthesize playbackController=_playbackController;
 @property(readonly, nonatomic) id <SVVisibilityMonitoring> visibilityMonitor; // @synthesize visibilityMonitor=_visibilityMonitor;
-- (void).cxx_destruct;
 - (void)videoPlayerDidBecomeInvisible;
 - (id)initWithPlayerVisibilityMonitor:(id)arg1 playbackController:(id)arg2 playbackPolicy:(id)arg3;
 - (id)init;

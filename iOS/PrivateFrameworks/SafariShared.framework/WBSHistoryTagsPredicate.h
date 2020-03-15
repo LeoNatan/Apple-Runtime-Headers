@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long sortOrder; // @synthesize sortOrder=_sortOrder;
 @property(nonatomic) unsigned long long minimumItemCount; // @synthesize minimumItemCount=_minimumItemCount;
 @property(nonatomic) unsigned long long limit; // @synthesize limit=_limit;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) unsigned long long tagType; // @synthesize tagType=_tagType;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)statementForDatabase:(id)arg1 cache:(id)arg2 fetchOptions:(unsigned long long)arg3 error:(id *)arg4;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -22,11 +22,11 @@
 + (id)sharedInstance;
 + (id)STConversation;
 + (BOOL)isContactLimitsFeatureEnabled;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMCommLimitsPolicyCache *policyCache; // @synthesize policyCache=_policyCache;
 @property(retain, nonatomic) NSSet *emergencyNumbersSet; // @synthesize emergencyNumbersSet=_emergencyNumbersSet;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *screenTimeDispatchQueue; // @synthesize screenTimeDispatchQueue=_screenTimeDispatchQueue;
 @property(retain, nonatomic) TUCallProviderManager *callProviderManager; // @synthesize callProviderManager=_callProviderManager;
-- (void).cxx_destruct;
 - (void)providersChangedForProviderManager:(id)arg1;
 - (id)conversationContextForChat:(id)arg1;
 - (void)registerForScreenTimeNotifications;

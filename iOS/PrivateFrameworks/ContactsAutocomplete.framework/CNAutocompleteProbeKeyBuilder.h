@@ -16,10 +16,10 @@
 }
 
 + (id)builderWithKey:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *suffixes; // @synthesize suffixes=_suffixes;
 @property(retain, nonatomic) NSArray *prefixes; // @synthesize prefixes=_prefixes;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)build;
 - (id)addDuetModelID;
 - (id)prefixedSearch;

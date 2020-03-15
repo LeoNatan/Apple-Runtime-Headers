@@ -26,11 +26,11 @@
 + (int)iconSizeForContentSizeCategory:(id)arg1;
 + (int)shieldSizeForContentSizeCategory:(id)arg1;
 + (id)stringAttributesForFont:(id)arg1 lineBreakMode:(int)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MKArtworkDataSourceCache *artworkCache; // @synthesize artworkCache=_artworkCache;
 @property(nonatomic) float spaceBetweenShields; // @synthesize spaceBetweenShields=_spaceBetweenShields;
 @property(copy, nonatomic) NSArray *labelItems; // @synthesize labelItems=_labelItems;
 @property(nonatomic) int shieldSize; // @synthesize shieldSize=_shieldSize;
-- (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange;
 - (void)_setFont:(id)arg1 custom:(_Bool)arg2;
 - (void)setFont:(id)arg1;

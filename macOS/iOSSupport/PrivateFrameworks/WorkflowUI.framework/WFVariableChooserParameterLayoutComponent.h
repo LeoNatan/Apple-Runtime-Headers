@@ -6,7 +6,7 @@
 
 #import <ComponentKit/CKCompositeComponent.h>
 
-@class CKComponent, WFParameter, WFTextTokenChooser, WFVariable;
+@class CKComponent, WFParameter, WFVariable;
 @protocol WFComponentNavigationContext, WFVariableProvider, WFVariableUIDelegate;
 
 @interface WFVariableChooserParameterLayoutComponent : CKCompositeComponent
@@ -19,7 +19,6 @@
     id <WFComponentNavigationContext> _navigationContext;
     BOOL _chooserCanClear;
     CDUnknownBlockType _updateBlock;
-    WFTextTokenChooser *_chooser;
 }
 
 + (id)newWithLabel:(id)arg1 labelsToAlignTo:(id)arg2 parameter:(id)arg3 variable:(id)arg4 updateBlock:(CDUnknownBlockType)arg5 options:(struct WFParameterComponentOptions)arg6 chooserCanClear:(BOOL)arg7 variableProvider:(id)arg8 variableUIDelegate:(id)arg9 navigationContext:(id)arg10 controlResistance:(const struct WFCompressionResistance *)arg11 controlComponent:(id)arg12;

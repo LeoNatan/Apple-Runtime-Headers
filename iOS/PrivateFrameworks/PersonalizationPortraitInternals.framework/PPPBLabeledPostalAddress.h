@@ -23,6 +23,7 @@
     NSString *_subLocality;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *isoCountryCode; // @synthesize isoCountryCode=_isoCountryCode;
 @property(retain, nonatomic) NSString *country; // @synthesize country=_country;
 @property(retain, nonatomic) NSString *postalCode; // @synthesize postalCode=_postalCode;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSString *subLocality; // @synthesize subLocality=_subLocality;
 @property(retain, nonatomic) NSString *street; // @synthesize street=_street;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

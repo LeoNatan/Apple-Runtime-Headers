@@ -41,6 +41,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *senderIdentityCapabilitiesStateByUUID; // @synthesize senderIdentityCapabilitiesStateByUUID=_senderIdentityCapabilitiesStateByUUID;
 @property(nonatomic, getter=isEmergencyCallbackPossible) BOOL emergencyCallbackPossible; // @synthesize emergencyCallbackPossible=_emergencyCallbackPossible;
 @property(nonatomic, getter=isEmergencyCallbackModeEnabled) BOOL emergencyCallbackModeEnabled; // @synthesize emergencyCallbackModeEnabled=_emergencyCallbackModeEnabled;
@@ -65,7 +66,6 @@
 @property(nonatomic) BOOL supportsCellularData; // @synthesize supportsCellularData=_supportsCellularData;
 @property(nonatomic) BOOL supportsBasebandCalling; // @synthesize supportsBasebandCalling=_supportsBasebandCalling;
 @property(nonatomic) BOOL supportsPrimaryCalling; // @synthesize supportsPrimaryCalling=_supportsPrimaryCalling;
-- (void).cxx_destruct;
 - (id)publiclyAccessibleCopyWithZone:(struct _NSZone *)arg1;
 - (id)publiclyAccessibleCopy;
 - (id)copyWithZone:(struct _NSZone *)arg1;

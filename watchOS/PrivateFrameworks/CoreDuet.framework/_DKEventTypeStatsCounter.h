@@ -16,8 +16,8 @@
 }
 
 + (id)counterInCollection:(id)arg1 withEventName:(id)arg2 eventType:(id)arg3 eventTypePossibleValues:(id)arg4;
-@property(retain) _DKEventStatsCounterInternal *internal; // @synthesize internal=_internal;
 - (void).cxx_destruct;
+@property(retain) _DKEventStatsCounterInternal *internal; // @synthesize internal=_internal;
 - (unsigned int)countWithTypeValue:(id)arg1;
 - (void)incrementCountByNumber:(unsigned int)arg1 typeValue:(id)arg2;
 - (id)typeValues;

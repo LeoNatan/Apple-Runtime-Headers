@@ -15,10 +15,10 @@
     FCCKPrivateDatabase *_database;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL handleIdentityLoss; // @synthesize handleIdentityLoss=_handleIdentityLoss;
 @property(nonatomic) BOOL skipPreflight; // @synthesize skipPreflight=_skipPreflight;
 @property(retain, nonatomic) FCCKPrivateDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (void)runChildCKOperation:(id)arg1 destination:(long long)arg2;
 - (BOOL)canRetryWithError:(id)arg1 retryAfter:(id *)arg2;
 - (unsigned long long)maxRetries;

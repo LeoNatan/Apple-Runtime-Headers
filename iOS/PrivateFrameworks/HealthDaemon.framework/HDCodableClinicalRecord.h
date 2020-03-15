@@ -18,10 +18,10 @@
     HDCodableSample *_sample;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableFHIRResourceForAPI *fHIRResource; // @synthesize fHIRResource=_fHIRResource;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) HDCodableSample *sample; // @synthesize sample=_sample;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

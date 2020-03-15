@@ -53,8 +53,8 @@
     id <PKSpendingSummaryViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PKSpendingSummaryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PKSpendingSummaryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_reportTappedButtonWithTag:(id)arg1;
 - (void)invalidatedSummariesAvailable;
 - (void)invalidatedSpendingSummaryOfType:(unsigned int)arg1 startingWithDate:(id)arg2;

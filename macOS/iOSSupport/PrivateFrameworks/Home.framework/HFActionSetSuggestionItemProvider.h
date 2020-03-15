@@ -21,6 +21,7 @@
     NSSet *_customSuggestionItems;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasProvidedStaticSuggestionItems; // @synthesize hasProvidedStaticSuggestionItems=_hasProvidedStaticSuggestionItems;
 @property(retain, nonatomic) NSSet *customSuggestionItems; // @synthesize customSuggestionItems=_customSuggestionItems;
 @property(retain, nonatomic) NSSet *staticSuggestionItems; // @synthesize staticSuggestionItems=_staticSuggestionItems;
@@ -29,7 +30,6 @@
 @property(nonatomic) BOOL includeExistingActionSets; // @synthesize includeExistingActionSets=_includeExistingActionSets;
 @property(copy, nonatomic) HFItem<HFServiceLikeItem> *serviceLikeItem; // @synthesize serviceLikeItem=_serviceLikeItem;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)items;
 - (id)reloadItems;
 - (id)_builtInActionSetOfType:(id)arg1;

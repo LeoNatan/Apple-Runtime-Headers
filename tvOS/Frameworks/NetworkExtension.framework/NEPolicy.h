@@ -17,10 +17,10 @@
     NSArray *_conditions;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *conditions; // @synthesize conditions=_conditions;
 @property(retain) NEPolicyResult *result; // @synthesize result=_result;
 @property unsigned int order; // @synthesize order=_order;
-- (void).cxx_destruct;
 - (_Bool)addTLVsToMessage:(id)arg1;
 - (_Bool)validate;
 - (id)description;

@@ -30,6 +30,7 @@
 
 + (void)_setupTextStyleImages:(id)arg1;
 + (id)_buildFontFamilyMenuOperationQueue;
+- (void).cxx_destruct;
 @property BOOL buildingFontFamilyMenu; // @synthesize buildingFontFamilyMenu=_buildingFontFamilyMenu;
 @property(retain) AKTextAttributesUIItemDelegate *textAttributesUIItemDelegate; // @synthesize textAttributesUIItemDelegate=_textAttributesUIItemDelegate;
 @property(retain) AKFontChooserUIItemDelegate *fontUIItemDelegate; // @synthesize fontUIItemDelegate=_fontUIItemDelegate;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) NSTextField *fontSizeText; // @synthesize fontSizeText=_fontSizeText;
 @property(retain, nonatomic) NSPopUpButton *fontFacePopup; // @synthesize fontFacePopup=_fontFacePopup;
 @property(retain, nonatomic) NSPopUpButton *fontFamilyPopup; // @synthesize fontFamilyPopup=_fontFamilyPopup;
-- (void).cxx_destruct;
 - (void)sendTextAttributesAction;
 - (void)sendFontAction;
 - (void)_updateFontFacePopupForFaceName:(id)arg1;

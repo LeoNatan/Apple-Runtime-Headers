@@ -17,10 +17,10 @@
 
 + (double)_spacingAdjustmentFontSize;
 + (id)timeMarkerFontForSizeClass:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *currentTimeLabel; // @synthesize currentTimeLabel=_currentTimeLabel;
 @property(nonatomic) _Bool showsLine; // @synthesize showsLine=_showsLine;
 @property(nonatomic) _Bool showsThumb; // @synthesize showsThumb=_showsThumb;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGRect)_lineFrame;
 @property(readonly, nonatomic) struct CGRect currentTimeFrame;

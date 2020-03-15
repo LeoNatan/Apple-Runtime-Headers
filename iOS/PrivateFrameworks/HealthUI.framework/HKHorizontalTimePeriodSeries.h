@@ -20,12 +20,12 @@
     NSDictionary *_valueLabels;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *valueLabels; // @synthesize valueLabels=_valueLabels;
 @property(retain, nonatomic) NSArray *enumerationValueOrdering; // @synthesize enumerationValueOrdering=_enumerationValueOrdering;
 @property(nonatomic) double lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(retain, nonatomic) UIImage *selectedPointMarkerImage; // @synthesize selectedPointMarkerImage=_selectedPointMarkerImage;
-- (void).cxx_destruct;
 - (struct CGPoint)renderPositionForLabel:(id)arg1 rect:(struct CGRect)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint)arg4 constantOffset:(double)arg5 isHorizontal:(_Bool)arg6 optionalOffset:(struct CGPoint)arg7;
 - (id)findAxisLabelsInModelRange:(id)arg1 zoomScale:(double)arg2;
 - (id)_generateAxisLabels;

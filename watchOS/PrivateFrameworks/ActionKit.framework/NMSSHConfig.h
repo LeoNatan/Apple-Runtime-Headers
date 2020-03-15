@@ -14,8 +14,8 @@
 }
 
 + (id)configFromFile:(id)arg1;
-@property(retain, nonatomic) NSArray *hostConfigs; // @synthesize hostConfigs=_hostConfigs;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *hostConfigs; // @synthesize hostConfigs=_hostConfigs;
 - (_Bool)host:(id)arg1 matchesSubpattern:(id)arg2;
 - (int)host:(id)arg1 matchesPatternList:(id)arg2;
 - (id)hostConfigForHost:(id)arg1;

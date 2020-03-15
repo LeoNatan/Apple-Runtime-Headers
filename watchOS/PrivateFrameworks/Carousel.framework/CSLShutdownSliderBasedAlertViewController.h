@@ -35,9 +35,9 @@
     id <CSLObliterationViewControllerDelegate> _containerDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CSLObliterationViewControllerDelegate> containerDelegate; // @synthesize containerDelegate=_containerDelegate;
 @property(nonatomic) __weak id <CSLObliterationViewControllerOwnerDelegate> alertProviderDelegate; // @synthesize alertProviderDelegate=_alertProviderDelegate;
-- (void).cxx_destruct;
 - (void)animateSliderToCompletion:(CDUnknownBlockType)arg1;
 - (void)actionSliderDidCancelSlide:(id)arg1;
 - (void)actionSliderDidCompleteSlide:(id)arg1;

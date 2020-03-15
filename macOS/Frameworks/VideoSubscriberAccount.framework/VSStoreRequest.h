@@ -20,11 +20,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 @property(copy, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property(copy, nonatomic) NSString *bagKey; // @synthesize bagKey=_bagKey;
 @property(copy, nonatomic) NSString *methodName; // @synthesize methodName=_methodName;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

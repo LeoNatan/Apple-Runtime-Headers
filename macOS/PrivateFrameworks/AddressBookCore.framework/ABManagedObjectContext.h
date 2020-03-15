@@ -20,12 +20,12 @@
 }
 
 + (id)abUniqueIDsPredicate:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL unlockOnDealloc; // @synthesize unlockOnDealloc=_unlockOnDealloc;
 @property BOOL sendsChangeNotifications; // @synthesize sendsChangeNotifications=_sendsChangeNotifications;
 @property BOOL writeChangesToServer; // @synthesize writeChangesToServer=_writeChangesToServer;
 @property int aggregateMultiValueMode; // @synthesize aggregateMultiValueMode=_aggregateMultiValueMode;
 @property(retain) id <ABAccountCollection> ab_accountCollection; // @synthesize ab_accountCollection=_ab_accountCollection;
-- (void).cxx_destruct;
 - (void)_ab_sendAssistantChangeNotificationsForInsertedIdentifiers:(id)arg1 updatedIdentifiers:(id)arg2 deletedIdentifiers:(id)arg3;
 - (void)_ab_markRecordsForDeletion:(id)arg1;
 - (id)_ab_deletedRecords;

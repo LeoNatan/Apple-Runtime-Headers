@@ -18,22 +18,29 @@
     KTContextVerifier *_verifier;
 }
 
+- (void).cxx_destruct;
 @property(retain) KTContextVerifier *verifier; // @synthesize verifier=_verifier;
 @property(retain) KTLogClient *logClient; // @synthesize logClient=_logClient;
 @property(retain) TransparencyManagedDataStore *dataStore; // @synthesize dataStore=_dataStore;
 @property(retain) KTApplicationPublicKeyStore *applicationKeyStore; // @synthesize applicationKeyStore=_applicationKeyStore;
 @property(retain) TransparencyTranscript *transcript; // @synthesize transcript=_transcript;
 @property(retain) NSString *applicationID; // @synthesize applicationID=_applicationID;
-- (void).cxx_destruct;
 - (id)copyState;
 - (BOOL)runDutyCycleForActivity:(id)arg1;
 - (BOOL)checkDeferActivity:(id)arg1;
+- (void)handlePendingSTHs:(id *)arg1;
+- (void)handleSTHsWithUnverifiedSignature:(id *)arg1;
+- (void)failExpiredSTHs:(id *)arg1;
+- (BOOL)handleConsistencyProofDownloadRecord:(id)arg1 error:(id *)arg2;
+- (void)downloadConsistencyProof:(id *)arg1;
 - (void)handleGarbageCollection:(id)arg1 error:(id *)arg2;
+- (void)garbageCollectSTHs:(id *)arg1;
 - (void)handleSMTsWithUnverifiedSignature:(id *)arg1;
 - (void)handleURIsWithPendingSMTs:(id)arg1 error:(id *)arg2;
+- (void)validateKTSMTsMerged:(id)arg1 request:(id)arg2;
 - (void)handlePendingQueryRequests:(id)arg1 error:(id *)arg2;
 - (unsigned long long)handleKTRequest:(id)arg1 queryResponse:(id)arg2 error:(id *)arg3;
-- (void)validateKTSMTsMerged:(id)arg1 uri:(id)arg2 uuid:(id)arg3 accountId:(id)arg4;
+- (void)downloadQueryResponse:(id)arg1 uuid:(id)arg2 accountId:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)clearState:(CDUnknownBlockType)arg1;
 - (unsigned long long)validateEnrollmentWithAnalytics:(id)arg1 transparentData:(id *)arg2 error:(id *)arg3;
 - (unsigned long long)validateEnrollment:(id)arg1 transparentData:(id *)arg2 error:(id *)arg3;

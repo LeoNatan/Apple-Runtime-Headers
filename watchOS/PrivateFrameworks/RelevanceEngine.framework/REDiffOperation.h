@@ -18,11 +18,11 @@
 + (id)deleteWithItem:(id)arg1 atIndex:(int)arg2;
 + (id)insertWithItem:(id)arg1 atIndex:(int)arg2;
 + (id)reloadWithItem:(id)arg1 atIndex:(int)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id item; // @synthesize item=_item;
 @property(readonly, nonatomic) int fromIndex; // @synthesize fromIndex=_fromIndex;
 @property(readonly, nonatomic) int toIndex; // @synthesize toIndex=_toIndex;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithType:(unsigned int)arg1 item:(id)arg2 toIndex:(int)arg3 fromIndex:(int)arg4;
 

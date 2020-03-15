@@ -24,6 +24,7 @@
     _Bool _runtimeHasStableABI;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool runtimeHasStableABI; // @synthesize runtimeHasStableABI=_runtimeHasStableABI;
 @property(readonly, nonatomic) VMUMutableClassInfo *unownedExtraDataLayout; // @synthesize unownedExtraDataLayout=_unownedExtraDataLayout;
 @property(readonly, nonatomic) VMUMutableClassInfo *sideTableLayout; // @synthesize sideTableLayout=_sideTableLayout;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) unsigned long long nativeWeakReferencePointerMask; // @synthesize nativeWeakReferencePointerMask=_nativeWeakReferencePointerMask;
 @property(readonly, nonatomic) unsigned long long nativeWeakReferenceMarkerValue; // @synthesize nativeWeakReferenceMarkerValue=_nativeWeakReferenceMarkerValue;
 @property(readonly, nonatomic) unsigned long long nativeWeakReferenceMarkerMask; // @synthesize nativeWeakReferenceMarkerMask=_nativeWeakReferenceMarkerMask;
-- (void).cxx_destruct;
 - (id)initWithSwiftCore:(struct _CSTypeRef)arg1 memoryReader:(CDUnknownBlockType)arg2;
 
 @end

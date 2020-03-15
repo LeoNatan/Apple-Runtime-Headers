@@ -30,6 +30,7 @@
 + (BOOL)supportsSecureCoding;
 + (id)setOfStatesFromDevices:(id)arg1;
 + (id)deviceStateFromDevice:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *disconnectError; // @synthesize disconnectError=_disconnectError;
 @property(nonatomic) long long disconnectReason; // @synthesize disconnectReason=_disconnectReason;
 @property(copy, nonatomic) _TVRCKeyboardState *keyboardState; // @synthesize keyboardState=_keyboardState;
@@ -43,7 +44,6 @@
 @property(nonatomic) long long connectionType; // @synthesize connectionType=_connectionType;
 @property(nonatomic) unsigned long long pairingCapability; // @synthesize pairingCapability=_pairingCapability;
 @property(nonatomic) long long connectionState; // @synthesize connectionState=_connectionState;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

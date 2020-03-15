@@ -7,13 +7,14 @@
 #import <SafariServices/SFPasswordServiceViewController.h>
 
 #import <SafariServices/SFPasswordPickerServiceViewControllerProtocol-Protocol.h>
+#import <SafariServices/UIPresentationControllerDelegatePrivate-Protocol.h>
 #import <SafariServices/_SFAuthenticationClient-Protocol.h>
 #import <SafariServices/_SFAuthenticationContextDelegate-Protocol.h>
 
 @class NSArray, NSString, NSURL, SFPasswordPickerViewController, _ASIncomingCallObserver, _SFAuthenticationContext;
 
 __attribute__((visibility("hidden")))
-@interface SFPasswordPickerServiceViewController : SFPasswordServiceViewController <_SFAuthenticationClient, _SFAuthenticationContextDelegate, SFPasswordPickerServiceViewControllerProtocol>
+@interface SFPasswordPickerServiceViewController : SFPasswordServiceViewController <UIPresentationControllerDelegatePrivate, _SFAuthenticationClient, _SFAuthenticationContextDelegate, SFPasswordPickerServiceViewControllerProtocol>
 {
     SFPasswordPickerViewController *_passwordPickerViewController;
     _Bool _presentInPopover;
@@ -42,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)_authenticateAndSetPresentCredentialsHandlerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_fillCredential:(id)arg1 needsAuthentication:(_Bool)arg2;
 - (void)authenticateToPresentInPopover:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)presentationControllerDidDismiss:(id)arg1;
 - (void)_authenticateToViewOtherPasswordsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_dismiss;
 - (void)viewDidAppear:(_Bool)arg1;

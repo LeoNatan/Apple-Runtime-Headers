@@ -24,6 +24,7 @@
     double _lastUsedTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isReadOnly) _Bool readOnly; // @synthesize readOnly=_readOnly;
 @property(nonatomic) _Bool inUseByOperation; // @synthesize inUseByOperation=_inUseByOperation;
 @property(nonatomic) _Bool terminable; // @synthesize terminable=_terminable;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) ML3Client *client; // @synthesize client=_client;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) ML3MusicLibrary *library; // @synthesize library=_library;
-- (void).cxx_destruct;
 - (void)unlock;
 - (void)lock;
 - (id)_relinquishConnection;

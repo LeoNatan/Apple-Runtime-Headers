@@ -14,9 +14,9 @@
     NSArray *_additionalProperties;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *additionalProperties; // @synthesize additionalProperties=_additionalProperties;
 @property(readonly, copy, nonatomic) NSArray *EWSFolderIds; // @synthesize EWSFolderIds=_EWSFolderIds;
-- (void).cxx_destruct;
 - (id)newResponseOperationWithGateway:(id)arg1 errorHandler:(id)arg2;
 @property(retain, nonatomic) MFEWSGetFolderResponseOperation *responseOperation;
 - (id)prepareRequest;

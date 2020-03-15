@@ -21,6 +21,7 @@
 }
 
 + (id)resultFromResponse:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mEmailAddresses; // @synthesize mEmailAddresses=_mEmailAddresses;
 @property(retain, nonatomic) NSMutableArray *mCUAddresses; // @synthesize mCUAddresses=_mCUAddresses;
 @property(retain, nonatomic) NSArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(retain, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSString *emailAddress;
 @property(readonly, nonatomic) NSString *preferredCUAddress;

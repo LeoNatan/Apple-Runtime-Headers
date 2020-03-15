@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     CKDCancelTokenGroup *_cancelTokens;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDCancelTokenGroup *cancelTokens; // @synthesize cancelTokens=_cancelTokens;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *group; // @synthesize group=_group;
 @property(retain, nonatomic) CKDMMCSRequestOptions *MMCSRequestOptions; // @synthesize MMCSRequestOptions=_MMCSRequestOptions;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CKDMMCSItem *MMCSManifestItem; // @synthesize MMCSManifestItem=_MMCSManifestItem;
 @property(readonly, nonatomic) CKPackage *package; // @synthesize package=_package;
 @property(retain) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (void)cancel;
 @property(readonly, nonatomic) NSString *recordKey;
 @property(readonly, nonatomic) long long uploadRank;

@@ -17,11 +17,11 @@
 }
 
 + (id)name;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL findsAnchorClosestIndex; // @synthesize findsAnchorClosestIndex=_findsAnchorClosestIndex;
 @property(nonatomic) BOOL skipsFiltering; // @synthesize skipsFiltering=_skipsFiltering;
 @property(readonly, copy, nonatomic) CSKStreamDataBatch *dataBatch; // @synthesize dataBatch=_dataBatch;
 @property(readonly, nonatomic) __weak CSKStreamObserver *observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (long long)_searchEntityIndexCloseToIdentifier:(long long)arg1 inEntities:(id)arg2 indexIsIdentifier:(char *)arg3;
 - (CDUnknownBlockType)handler;
 - (void)notifyObserverForObserverDataBatch:(id)arg1;

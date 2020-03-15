@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_labels;
 }
 
-@property(copy, nonatomic) NSArray *labels; // @synthesize labels=_labels;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *labels; // @synthesize labels=_labels;
 - (void)setTextColor:(id)arg1;
 - (id)initWithStrings:(id)arg1 labelsFont:(id)arg2 labelsSpacing:(double)arg3 labelsNumberOfLines:(long long)arg4;
 

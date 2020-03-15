@@ -14,9 +14,9 @@
     NSString *_keyPath;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(nonatomic) __weak NSObject *object; // @synthesize object=_object;
-- (void).cxx_destruct;
 
 @end
 

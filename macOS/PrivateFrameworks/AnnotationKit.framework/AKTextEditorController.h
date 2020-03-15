@@ -29,6 +29,7 @@
     NSUndoManager *_textViewUndoManager;
 }
 
+- (void).cxx_destruct;
 @property BOOL isInAdjustAnnotationFrameToFitText; // @synthesize isInAdjustAnnotationFrameToFitText=_isInAdjustAnnotationFrameToFitText;
 @property BOOL isInEndEditing; // @synthesize isInEndEditing=_isInEndEditing;
 @property(retain) NSUndoManager *textViewUndoManager; // @synthesize textViewUndoManager=_textViewUndoManager;
@@ -42,7 +43,6 @@
 @property __weak AKController *controller; // @synthesize controller=_controller;
 @property __weak AKAnnotation<AKTextAnnotationProtocol> *annotation; // @synthesize annotation=_annotation;
 @property(retain) NSTextView *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 - (void)_updateTextView:(id)arg1 withFrame:(struct CGRect)arg2 andOrientation:(long long)arg3 additionalRotation:(double)arg4;
 - (struct CGRect)_editorFrameForTextBoundsInModel:(struct CGRect)arg1;
 - (void)_adjustEditorToFitAnnotation:(id)arg1 withText:(id)arg2;

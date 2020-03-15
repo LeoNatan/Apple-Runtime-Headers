@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_runningProgresses;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *runningProgresses; // @synthesize runningProgresses=_runningProgresses;
 @property(retain, nonatomic) _UICompoundObjectMap *capturedProperties; // @synthesize capturedProperties=_capturedProperties;
 @property(copy, nonatomic) CDUnknownBlockType stabilizedCallback; // @synthesize stabilizedCallback=_stabilizedCallback;
 @property(copy, nonatomic) CDUnknownBlockType presentationValueChangedCallback; // @synthesize presentationValueChangedCallback=_presentationValueChangedCallback;
 @property(copy, nonatomic) CDUnknownBlockType modelValueChangedCallback; // @synthesize modelValueChangedCallback=_modelValueChangedCallback;
-- (void).cxx_destruct;
 - (void)performWithLock:(CDUnknownBlockType)arg1;
 - (void)progressInvalidated:(id)arg1;
 - (void)modelValueUpdatedForProgress:(id)arg1;

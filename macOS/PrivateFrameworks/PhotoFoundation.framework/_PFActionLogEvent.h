@@ -15,10 +15,10 @@
     NSDate *_eventDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDate *eventDate; // @synthesize eventDate=_eventDate;
 @property(readonly) unsigned long long actionId; // @synthesize actionId=_actionId;
 @property(readonly) Class actionClass; // @synthesize actionClass=_actionClass;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithAction:(id)arg1;
 - (id)initWithEventLog:(id)arg1;

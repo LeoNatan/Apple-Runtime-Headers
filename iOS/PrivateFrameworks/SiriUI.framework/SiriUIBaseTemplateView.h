@@ -17,9 +17,9 @@
     id <SiriUITemplateModel> _dataSource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SiriUITemplateModel> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <SiriUITemplatedView> templatedSuperview; // @synthesize templatedSuperview=_templatedSuperview;
-- (void).cxx_destruct;
 - (void)removeFromTemplatedSuperview;
 - (double)desiredHeight;
 - (void)reloadData;

@@ -30,13 +30,13 @@ __attribute__((visibility("hidden")))
     unsigned int _mode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool drawingEnabled; // @synthesize drawingEnabled;
 @property(nonatomic) unsigned int mode; // @synthesize mode=_mode;
 @property(nonatomic) float drawingScale; // @synthesize drawingScale=_drawingScale;
 @property(nonatomic) _Bool scaleDrawingToFitCanvas; // @synthesize scaleDrawingToFitCanvas;
 @property(nonatomic) __weak id <DKInkRendererDelegate> delegate; // @synthesize delegate;
 @property(retain, nonatomic) UIColor *inkColor; // @synthesize inkColor=_inkColor;
-- (void).cxx_destruct;
 - (void)rendererDidFinishAnimatingDrawing:(id)arg1;
 - (void)teardown;
 - (void)addPointsFromBrushPointQueueWithSegmentLength:(unsigned int)arg1;
@@ -56,7 +56,7 @@ __attribute__((visibility("hidden")))
 - (void)addPoint:(CDStruct_4ad0e195)arg1;
 - (void)beginStroke;
 - (void)dealloc;
-- (id)snapshot;
+- (id)snapshotImage;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) _Bool initialized;
 - (_Bool)canBecomeFirstResponder;

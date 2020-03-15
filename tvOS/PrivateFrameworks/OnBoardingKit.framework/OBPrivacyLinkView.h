@@ -17,12 +17,12 @@
     NSString *_buttonText;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *buttonText; // @synthesize buttonText=_buttonText;
 @property(readonly) NSString *captionText; // @synthesize captionText=_captionText;
 @property(readonly) UILabel *captionView; // @synthesize captionView=_captionView;
 @property(readonly) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(readonly) OBPrivacyLinkButton *linkButton; // @synthesize linkButton=_linkButton;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)_captionTextColor;
 - (id)initWithCaption:(id)arg1 buttonText:(id)arg2 image:(id)arg3 imageSize:(struct CGSize)arg4 useLargeIcon:(_Bool)arg5;

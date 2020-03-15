@@ -17,11 +17,11 @@
     SBIdleTimerProxy *_idleTimerProxy;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBIdleTimerProxy *idleTimerProxy; // @synthesize idleTimerProxy=_idleTimerProxy;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(retain, nonatomic) id <SBFIdleTimerBehaviorProviding> behavior; // @synthesize behavior=_behavior;
 @property(readonly, nonatomic) __weak id <SBIdleTimerProviding> provider; // @synthesize provider=_provider;
-- (void).cxx_destruct;
 - (id)initWithProvider:(id)arg1 behavior:(id)arg2 reason:(id)arg3 idleTimerProxy:(id)arg4;
 
 @end

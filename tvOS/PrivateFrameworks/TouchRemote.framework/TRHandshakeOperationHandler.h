@@ -15,8 +15,8 @@
     CDUnknownBlockType _handshakeHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType handshakeHandler; // @synthesize handshakeHandler=_handshakeHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType handshakeHandler; // @synthesize handshakeHandler=_handshakeHandler;
 - (void)_handleHandshakeRequest:(id)arg1 withResponseHandler:(CDUnknownBlockType)arg2;
 - (void)registerMessageHandlersForSession:(id)arg1;
 - (id)initWithHandshakeHandler:(CDUnknownBlockType)arg1;

@@ -18,10 +18,10 @@
     double _code;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double code; // @synthesize code=_code;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

@@ -24,9 +24,9 @@
 + (struct CGSize)_maxLegibilityImageSizeForLabelSize:(struct CGSize)arg1;
 + (id)imageWithParameters:(id)arg1;
 + (id)imageWithParameters:(id)arg1 pool:(id)arg2 legibilityPool:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *legibilityImage; // @synthesize legibilityImage=_legibilityImage;
 @property(readonly, copy, nonatomic) SBIconLabelImageParameters *parameters; // @synthesize parameters=_parameters;
-- (void).cxx_destruct;
 - (id)description;
 - (double)baselineOffsetFromBottom;
 - (struct UIEdgeInsets)alignmentRectInsets;

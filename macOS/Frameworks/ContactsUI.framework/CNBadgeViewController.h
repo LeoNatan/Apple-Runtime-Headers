@@ -14,9 +14,9 @@
     NSImageView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)loadView;
 - (id)init;
 

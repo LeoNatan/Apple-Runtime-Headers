@@ -20,8 +20,8 @@
 + (id)stringFromStartDate:(id)arg1 endDate:(id)arg2 type:(unsigned long long)arg3 showLongMonthFormatIfNeeded:(_Bool)arg4;
 + (id)stringFromStartDate:(id)arg1 endDate:(id)arg2 type:(unsigned long long)arg3;
 + (id)_dateFormatForDateFormatterType:(unsigned long long)arg1 displayYear:(_Bool)arg2 displayLongMonth:(_Bool)arg3;
-@property(nonatomic) _Bool alwaysShowYear; // @synthesize alwaysShowYear=_alwaysShowYear;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool alwaysShowYear; // @synthesize alwaysShowYear=_alwaysShowYear;
 @property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property(readonly, nonatomic) NSCalendar *gmtCalendar; // @synthesize gmtCalendar=_gmtCalendar;
 @property(readonly, nonatomic) NSDateIntervalFormatter *dateIntervalFormatter; // @synthesize dateIntervalFormatter=_dateIntervalFormatter;

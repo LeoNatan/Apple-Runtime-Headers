@@ -16,9 +16,9 @@
     NSMutableArray *_exceptions;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasTerminalException; // @synthesize hasTerminalException=_hasTerminalException;
 @property(readonly, nonatomic) NSMutableArray *exceptions; // @synthesize exceptions=_exceptions;
-- (void).cxx_destruct;
 - (void)logErrors:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSMutableArray *criticalExceptions;
 @property(readonly, nonatomic) NSMutableArray *terminalExceptions;

@@ -18,11 +18,11 @@
     SecureBackup *_sb;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) SecureBackup *sb; // @synthesize sb=_sb;
 @property(copy, nonatomic) NSString *recordID; // @synthesize recordID=_recordID;
 @property(retain, nonatomic) NSDictionary *escrowRecord; // @synthesize escrowRecord=_escrowRecord;
 @property(copy, nonatomic) NSString *recordLabel; // @synthesize recordLabel=_recordLabel;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *recoveryPassphrase;
 @property(readonly, copy, nonatomic) NSString *dsid;
 - (id)validateInput;

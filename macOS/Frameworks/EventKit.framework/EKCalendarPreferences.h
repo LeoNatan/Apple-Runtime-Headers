@@ -15,8 +15,8 @@
 }
 
 + (id)calendarPreferences;
-@property(retain) CalPreferences *calPreferences; // @synthesize calPreferences=_calPreferences;
 - (void).cxx_destruct;
+@property(retain) CalPreferences *calPreferences; // @synthesize calPreferences=_calPreferences;
 - (void)_updateDisplayOrderForSources:(id)arg1 key:(id)arg2;
 - (unsigned long long)_displayOrderForSourceWithIdentifier:(id)arg1 key:(id)arg2;
 - (void)updateDisplayOrderForAccountsWithSourceIdentifiers:(id)arg1;

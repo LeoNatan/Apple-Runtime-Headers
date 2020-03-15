@@ -18,8 +18,8 @@
     unsigned long long _offsetInFile;
 }
 
-@property(readonly) unsigned long long offsetInFile; // @synthesize offsetInFile=_offsetInFile;
 - (void).cxx_destruct;
+@property(readonly) unsigned long long offsetInFile; // @synthesize offsetInFile=_offsetInFile;
 - (void)seekToFileOffset:(unsigned long long)arg1;
 - (const void *)dataOfLength:(unsigned long long)arg1;
 - (id)initWithMemoryMappedPath:(id)arg1 error:(id *)arg2;

@@ -16,11 +16,11 @@
     struct NSEdgeInsets _padding;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXCompositeEditorialLayoutSpec *editorialLayoutSpec; // @synthesize editorialLayoutSpec=_editorialLayoutSpec;
 @property(nonatomic) BOOL useSaliency; // @synthesize useSaliency=_useSaliency;
 @property(nonatomic) struct NSEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) double interTileSpacing; // @synthesize interTileSpacing=_interTileSpacing;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

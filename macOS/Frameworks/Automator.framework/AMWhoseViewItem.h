@@ -32,6 +32,7 @@
     NSArray *_topLevelObjects;
 }
 
+- (void).cxx_destruct;
 @property __weak AMLevelIndicator *_ratingIndicator; // @synthesize _ratingIndicator;
 @property __weak NSDatePicker *_datePicker; // @synthesize _datePicker;
 @property __weak NSProgressIndicator *_progressIndicator; // @synthesize _progressIndicator;
@@ -52,7 +53,6 @@
 @property(retain) NSButton *removeButton; // @synthesize removeButton=_removeButton;
 @property(retain) NSButton *addButton; // @synthesize addButton=_addButton;
 @property(nonatomic) __weak NSView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)changeValue:(id)arg1;
 - (void)changeQualifier:(id)arg1;
 - (void)changeProperty:(id)arg1;

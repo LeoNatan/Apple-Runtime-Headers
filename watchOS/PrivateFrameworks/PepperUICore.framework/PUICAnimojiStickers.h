@@ -17,10 +17,10 @@
 
 + (id)_assetBundle;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(retain, nonatomic) NSArray *orderedAllIdentifiers; // @synthesize orderedAllIdentifiers=_orderedAllIdentifiers;
 @property(retain, nonatomic) NSDictionary *stickerPacks; // @synthesize stickerPacks=_stickerPacks;
-- (void).cxx_destruct;
 - (void)_load;
 - (id)init;
 

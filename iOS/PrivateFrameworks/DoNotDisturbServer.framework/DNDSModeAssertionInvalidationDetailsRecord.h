@@ -17,8 +17,8 @@
 
 + (id)recordForInvalidationDetails:(id)arg1;
 + (id)recordForDictionary:(id)arg1 keys:(const CDStruct_0a6492a9 *)arg2;
-@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (id)object;
 - (id)dictionaryWithKeys:(const CDStruct_0a6492a9 *)arg1 options:(unsigned long long)arg2;
 

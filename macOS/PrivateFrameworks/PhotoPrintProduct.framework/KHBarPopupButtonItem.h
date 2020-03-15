@@ -16,9 +16,9 @@
 }
 
 + (id)popupButtonWithImage:(id)arg1 menu:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSPopUpButton *popupButton; // @synthesize popupButton=_popupButton;
 @property(readonly) NSMenu *menu; // @synthesize menu=_menu;
-- (void).cxx_destruct;
 - (void)showMenu:(id)arg1;
 @property(nonatomic) unsigned long long arrowPosition;
 @property(readonly, nonatomic) NSButton *noArrowButton;

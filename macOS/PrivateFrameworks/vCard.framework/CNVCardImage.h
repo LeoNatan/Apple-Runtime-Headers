@@ -19,10 +19,10 @@
 }
 
 + (struct CGSize)sizeOfImageData:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(readonly, copy, nonatomic) NSDictionary *cropRects; // @synthesize cropRects=_cropRects;
 @property(readonly, copy, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)describePropertiesWithBuilder:(id)arg1;

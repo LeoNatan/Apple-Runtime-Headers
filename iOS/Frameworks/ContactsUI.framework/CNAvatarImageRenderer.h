@@ -16,10 +16,10 @@
 }
 
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(readonly, nonatomic) id <CNUILikenessRendering> renderer; // @synthesize renderer=_renderer;
 @property(readonly, nonatomic) id <CNUIPRLikenessResolver> resolver; // @synthesize resolver=_resolver;
-- (void).cxx_destruct;
 - (id)renderMonogramForContact:(id)arg1 color:(id)arg2 scope:(id)arg3 prohibitedSources:(long long)arg4;
 - (id)renderMonogramForString:(id)arg1 color:(id)arg2 scope:(id)arg3 prohibitedSources:(long long)arg4;
 - (id)loadingPlaceholderImageProvider;

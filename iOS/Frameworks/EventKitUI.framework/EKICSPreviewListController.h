@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     id <EKICSPreviewListDelegate> _listDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showWeekNumbers; // @synthesize showWeekNumbers=_showWeekNumbers;
 @property(nonatomic) __weak id <EKICSPreviewListDelegate> listDelegate; // @synthesize listDelegate=_listDelegate;
 @property(nonatomic) _Bool allowsSubitems; // @synthesize allowsSubitems=_allowsSubitems;
 @property(nonatomic) _Bool allowsImport; // @synthesize allowsImport=_allowsImport;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

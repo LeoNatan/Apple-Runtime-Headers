@@ -19,11 +19,11 @@
     struct CGSize _pendingSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_pendingSize, setter=_setPendingSize:) struct CGSize pendingSize; // @synthesize pendingSize=_pendingSize;
 @property(readonly, nonatomic) WGWidgetHostingViewController *widgetHost; // @synthesize widgetHost=_widgetHost;
 @property(nonatomic) __weak id <WGWidgetHostingViewControllerDelegate><WGWidgetListItemViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSString *widgetIdentifier; // @synthesize widgetIdentifier=_widgetIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)_addWidgetHostIfNecessary;
 - (id)_platterViewIfLoaded;

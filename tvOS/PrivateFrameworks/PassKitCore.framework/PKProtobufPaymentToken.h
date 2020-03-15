@@ -21,6 +21,7 @@
     NSString *_transactionIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *retryNonce; // @synthesize retryNonce=_retryNonce;
 @property(retain, nonatomic) NSString *redeemURL; // @synthesize redeemURL=_redeemURL;
 @property(retain, nonatomic) NSData *paymentData; // @synthesize paymentData=_paymentData;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSString *network; // @synthesize network=_network;
 @property(retain, nonatomic) NSString *instrumentName; // @synthesize instrumentName=_instrumentName;
 @property(retain, nonatomic) PKProtobufPaymentMethod *paymentMethod; // @synthesize paymentMethod=_paymentMethod;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

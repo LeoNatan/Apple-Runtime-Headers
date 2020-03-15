@@ -15,10 +15,10 @@
     NSString *_word;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *word; // @synthesize word=_word;
 @property(readonly) NSString *builtInLMIdentifier; // @synthesize builtInLMIdentifier=_builtInLMIdentifier;
 @property(readonly) NSString *commandIdentifier; // @synthesize commandIdentifier=_commandIdentifier;
-- (void).cxx_destruct;
 - (id)initWithGrammarDataWord:(id)arg1 lmIdentifer:(id)arg2 commandIdentifier:(id)arg3;
 
 @end

@@ -63,6 +63,7 @@
     unsigned int _namedEntityCharacterLength;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int namedEntityCharacterLength; // @synthesize namedEntityCharacterLength=_namedEntityCharacterLength;
 @property(readonly, nonatomic) PPSourceStats *sourceStats; // @synthesize sourceStats=_sourceStats;
 @property(readonly, nonatomic) NSDate *scoringDate; // @synthesize scoringDate=_scoringDate;
@@ -112,7 +113,6 @@
 @property(readonly, nonatomic) float minScore; // @synthesize minScore=_minScore;
 @property(readonly, nonatomic) float maxScore; // @synthesize maxScore=_maxScore;
 @property(readonly, nonatomic) unsigned int uniqueAlgorithmCount; // @synthesize uniqueAlgorithmCount=_uniqueAlgorithmCount;
-- (void).cxx_destruct;
 - (float)computeModelScoreWithScoreInterpreter:(id)arg1;
 - (id)computeModelScoreAndReturnFeaturesWithScoreInterpreter:(id)arg1;
 - (id)generateScoreDict;

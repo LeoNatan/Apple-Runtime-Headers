@@ -20,8 +20,8 @@
 
 + (_Bool)isEnabled;
 + (void)initialize;
-@property(readonly, nonatomic) __weak id <UILargeContentViewerInteractionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <UILargeContentViewerInteractionDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_viewControllerForAccessibilityHUDGestureManager:(id)arg1;
 - (_Bool)_accessibilityHUDGestureManager:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_accessibilityHUDGestureManager:(id)arg1 gestureLiftedAtPoint:(struct CGPoint)arg2;

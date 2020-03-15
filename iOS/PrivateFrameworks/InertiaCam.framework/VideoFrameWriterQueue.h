@@ -32,6 +32,7 @@
     CDStruct_1b6d18a9 endTime;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long drainTarget; // @synthesize drainTarget=_drainTarget;
 @property(retain) NSConditionLock *drainConditionLock; // @synthesize drainConditionLock=_drainConditionLock;
 @property unsigned int drainMaximum; // @synthesize drainMaximum=_drainMaximum;
@@ -51,7 +52,6 @@
 @property(retain, nonatomic) AVAssetWriterInput *writerInput; // @synthesize writerInput;
 @property(retain, nonatomic) AVAssetWriter *videoWriter; // @synthesize videoWriter;
 @property(retain, nonatomic) AVAssetWriterInputPixelBufferAdaptor *inputAdaptor; // @synthesize inputAdaptor;
-- (void).cxx_destruct;
 - (void)DrainIfAbove:(unsigned int)arg1 downTo:(unsigned int)arg2;
 - (void)StartWatchingForFrames;
 - (void)FrameRequestCallback;

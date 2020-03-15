@@ -14,8 +14,8 @@
 }
 
 + (id)new;
-@property(readonly, nonatomic) _DKSyncContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _DKSyncContext *context; // @synthesize context=_context;
 - (id)initWithContext:(id)arg1;
 - (id)init;
 

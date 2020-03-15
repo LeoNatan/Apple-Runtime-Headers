@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSString *_serviceName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *serviceInstance; // @synthesize serviceInstance=_serviceInstance;
 @property(retain, nonatomic) NSString *serviceBuild; // @synthesize serviceBuild=_serviceBuild;
 @property(retain, nonatomic) NSString *partition; // @synthesize partition=_partition;
 @property(retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

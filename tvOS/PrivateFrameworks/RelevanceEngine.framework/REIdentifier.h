@@ -17,10 +17,10 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSString *section; // @synthesize section=_section;
 @property(readonly, nonatomic) NSString *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (unsigned short)characterAtIndex:(unsigned long long)arg1;

@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <webrtc/WK_RTCVideoDecoderFactory-Protocol.h>
+#import <webrtc/RTCVideoDecoderFactory-Protocol.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface WK_RTCDefaultVideoDecoderFactory : NSObject <WK_RTCVideoDecoderFactory>
+@interface WK_RTCDefaultVideoDecoderFactory : NSObject <RTCVideoDecoderFactory>
 {
 }
 

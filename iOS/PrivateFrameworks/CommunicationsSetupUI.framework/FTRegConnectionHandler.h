@@ -18,12 +18,12 @@
     CDStruct_34e8bc21 _handlerFlags;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *_logName; // @synthesize _logName;
 @property(copy, nonatomic, setter=_setListenerID:) NSString *_listenerID; // @synthesize _listenerID;
 @property(nonatomic) unsigned int caps; // @synthesize caps=_caps;
 @property(nonatomic) long long serviceType; // @synthesize serviceType=_serviceType;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)_handleDaemonDisconnected:(id)arg1;
 - (void)_handleDaemonConnected:(id)arg1;
 - (void)_disconnectFromDaemon;

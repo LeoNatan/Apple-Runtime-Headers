@@ -18,9 +18,9 @@
     unsigned int _dateStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int dateStyle; // @synthesize dateStyle=_dateStyle;
 @property(nonatomic) unsigned int density; // @synthesize density=_density;
-- (void).cxx_destruct;
 - (struct CGPoint)_dateComplicationCenterOffset;
 - (struct CGPoint)_dateComplicationRightAlignment;
 - (void)_updateDateComplicationPositionIfNecessary;

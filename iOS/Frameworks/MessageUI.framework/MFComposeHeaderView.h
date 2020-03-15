@@ -23,10 +23,10 @@
 + (double)separatorHeight;
 + (double)preferredHeight;
 + (id)defaultFont;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsHighlightWhenTouched; // @synthesize showsHighlightWhenTouched=_showsHighlightWhenTouched;
 @property(readonly, nonatomic) MFHeaderLabelView *labelView; // @synthesize labelView=_labelView;
 @property(copy, nonatomic) NSString *navTitle; // @synthesize navTitle=_navTitle;
-- (void).cxx_destruct;
 - (struct CGRect)_exclusionRectForView:(id)arg1 alongEdge:(unsigned long long)arg2;
 - (struct UIEdgeInsets)_recipientViewEdgeInsets;
 - (id)_baseAttributes;

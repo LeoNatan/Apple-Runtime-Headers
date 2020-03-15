@@ -19,8 +19,8 @@
     NSString *_IPAddress;
 }
 
-@property(copy, nonatomic) NSString *IPAddress; // @synthesize IPAddress=_IPAddress;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *IPAddress; // @synthesize IPAddress=_IPAddress;
 - (void)networkDidChange;
 - (void)networkDidChangeDebounced;
 - (void)unsubscribeFromNetworkChangeNotifications;

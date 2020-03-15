@@ -22,8 +22,8 @@
     id <SiriUIVideoPlayerViewControllerDelegate> _videoPlayerControllerDelegate;
 }
 
-@property(nonatomic) __weak id <SiriUIVideoPlayerViewControllerDelegate> videoPlayerControllerDelegate; // @synthesize videoPlayerControllerDelegate=_videoPlayerControllerDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SiriUIVideoPlayerViewControllerDelegate> videoPlayerControllerDelegate; // @synthesize videoPlayerControllerDelegate=_videoPlayerControllerDelegate;
 - (_Bool)_canShowWhileLocked;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_restoreAudioPlaybackCategoryAndOptions;

@@ -31,13 +31,13 @@
 
 + (BOOL)adoptsDefaultGridLayoutMargins;
 + (id)createTriggerSummaryViewControllerForHome:(id)arg1 withTriggerActionSetBuilder:(id)arg2 andTriggerActionBuilderEditorDelegate:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUTriggerActionFlow *flow; // @synthesize flow=_flow;
 @property(nonatomic) BOOL isEditingExistingTrigger; // @synthesize isEditingExistingTrigger=_isEditingExistingTrigger;
 @property(retain, nonatomic) HUForwardingTriggerActionBuilderDelegate *forwardingTriggerActionBuilderDelegate; // @synthesize forwardingTriggerActionBuilderDelegate=_forwardingTriggerActionBuilderDelegate;
 @property(nonatomic) BOOL viewHasAppeared; // @synthesize viewHasAppeared=_viewHasAppeared;
 @property(nonatomic) __weak id <HUTriggerEditorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) HFTriggerBuilder *triggerBuilder; // @synthesize triggerBuilder=_triggerBuilder;
-- (void).cxx_destruct;
 - (id)mediaSelectionViewControllerMessageForMediaActionPlayUnavailable:(id)arg1;
 - (id)mediaSelectionViewController:(id)arg1 messageForMediaPickerUnavailableReason:(long long)arg2;
 - (void)homeComposeViewController:(id)arg1 didFinishWithHomeWorkflow:(id)arg2;
@@ -70,7 +70,6 @@
 - (void)_setTriggerEnabled:(BOOL)arg1;
 - (void)_deleteTrigger:(id)arg1 indexPath:(id)arg2;
 - (void)_addAction:(id)arg1;
-- (void)_preloadShortcutHomeManager;
 - (void)_testTrigger;
 - (void)_cancelShortcutEditor:(id)arg1;
 - (void)_showShortcutEditorForTriggerBuilderItem:(id)arg1;

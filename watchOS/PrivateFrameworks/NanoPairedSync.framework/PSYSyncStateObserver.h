@@ -17,9 +17,9 @@
     id <PSYSyncStateObserverDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PSYSyncStateObserverDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PSYWatchSyncState *syncState; // @synthesize syncState=_syncState;
-- (void).cxx_destruct;
 - (id)_defaultSyncState;
 - (void)_refreshSyncState;
 - (void)_syncStateDidChangeExternally;

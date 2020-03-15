@@ -22,9 +22,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) BSMutableIntegerMap *clientsByPID; // @synthesize clientsByPID=_clientsByPID;
 @property(retain, nonatomic) BSMutableIntegerMap *registrationsByButtonKind; // @synthesize registrationsByButtonKind=_registrationsByButtonKind;
-- (void).cxx_destruct;
 - (void)systemServiceServer:(id)arg1 client:(id)arg2 acquireAssertionOfType:(long long)arg3 forReason:(id)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (void)systemServiceServer:(id)arg1 client:(id)arg2 fetchHapticTypeForButtonKind:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)systemServiceServer:(id)arg1 client:(id)arg2 setHapticType:(long long)arg3 buttonKind:(long long)arg4;

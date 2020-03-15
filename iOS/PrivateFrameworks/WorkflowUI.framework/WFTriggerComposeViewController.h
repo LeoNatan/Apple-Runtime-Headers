@@ -14,9 +14,9 @@
     unsigned long long _mode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(nonatomic) __weak id <WFTriggerComposeViewControllerDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (void)didTapNext:(id)arg1;
 - (id)doneBarButtonItem;
 - (void)dismissForTutorial:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;

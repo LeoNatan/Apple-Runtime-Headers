@@ -6,9 +6,7 @@
 
 #import <NewsArticles/NAReportConcernDetailAssembly.h>
 
-#import <NewsArticles/NFAssembly-Protocol.h>
-
-@interface NAReportConcernDetailAssembly (NewsArticles) <NFAssembly>
+@interface NAReportConcernDetailAssembly (NewsArticles)
 - (void)loadInRegistry:(id)arg1;
 @end
 

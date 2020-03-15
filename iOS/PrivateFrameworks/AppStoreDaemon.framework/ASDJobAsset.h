@@ -31,6 +31,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *variantID; // @synthesize variantID=_variantID;
 @property(copy, nonatomic) NSString *storeDownloadKey; // @synthesize storeDownloadKey=_storeDownloadKey;
 @property(copy, nonatomic) NSData *sinfs; // @synthesize sinfs=_sinfs;
@@ -46,7 +47,6 @@
 @property(copy, nonatomic) NSNumber *bytesTotal; // @synthesize bytesTotal=_bytesTotal;
 @property(copy, nonatomic) NSString *assetURL; // @synthesize assetURL=_assetURL;
 @property(copy, nonatomic) NSString *assetType; // @synthesize assetType=_assetType;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

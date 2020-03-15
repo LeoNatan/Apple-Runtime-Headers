@@ -60,6 +60,7 @@
 + (Class)topicResultFeedIdsType;
 + (Class)searchResultsType;
 + (Class)nonSelectedResultFeedIdType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *topResultTopicId; // @synthesize topResultTopicId=_topResultTopicId;
 @property(retain, nonatomic) NSString *topResultChannelId; // @synthesize topResultChannelId=_topResultChannelId;
 @property(retain, nonatomic) NSString *topResultArticleId; // @synthesize topResultArticleId=_topResultArticleId;
@@ -82,7 +83,6 @@
 @property(retain, nonatomic) NSString *selectedResultFeedId; // @synthesize selectedResultFeedId=_selectedResultFeedId;
 @property(retain, nonatomic) NSString *selectedResultString; // @synthesize selectedResultString=_selectedResultString;
 @property(retain, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

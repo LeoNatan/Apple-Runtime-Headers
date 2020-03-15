@@ -17,12 +17,12 @@
     NSMapTable *_methods;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *methods; // @synthesize methods=_methods;
 @property(retain, nonatomic) NSMapTable *properties; // @synthesize properties=_properties;
 @property(retain, nonatomic) NSHashTable *conformedProtocols; // @synthesize conformedProtocols=_conformedProtocols;
 @property(retain, nonatomic) NSArray *conformedInterfaces; // @synthesize conformedInterfaces=_conformedInterfaces;
 @property(retain, nonatomic) _REInterfaceKey *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 
 @end
 

@@ -19,8 +19,8 @@
 }
 
 + (void)initialize;
-@property(nonatomic) _Bool updateFileCount; // @synthesize updateFileCount=_updateFileCount;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool updateFileCount; // @synthesize updateFileCount=_updateFileCount;
 - (void)setProgressDidSetupHandler:(CDUnknownBlockType)arg1;
 - (void)stopTrackingIfStarted;
 - (void)startTrackingFileURL:(id)arg1 kind:(id)arg2;

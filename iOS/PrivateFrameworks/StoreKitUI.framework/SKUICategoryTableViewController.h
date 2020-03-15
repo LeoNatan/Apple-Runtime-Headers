@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     _Bool _childrenHaveArtwork;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *selectedURL; // @synthesize selectedURL=_selectedURL;
 @property(nonatomic, getter=isRoot) _Bool root; // @synthesize root=_isRoot;
 @property(nonatomic) long long numberOfHiddenRows; // @synthesize numberOfHiddenRows=_numberOfHiddenRows;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(retain, nonatomic) SKUICategory *category; // @synthesize category=_category;
 @property(retain, nonatomic) SKUICategoryArtworkLoader *artworkLoader; // @synthesize artworkLoader=_artworkLoader;
-- (void).cxx_destruct;
 - (void)_recordClickEventForIndexPath:(id)arg1 category:(id)arg2 actionType:(id)arg3;
 - (id)_metricsLocationsToPushIndexPath:(id)arg1;
 - (long long)_metricsLocationPostionForIndexPath:(id)arg1;

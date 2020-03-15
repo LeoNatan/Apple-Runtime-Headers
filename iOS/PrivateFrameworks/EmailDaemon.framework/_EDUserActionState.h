@@ -21,6 +21,7 @@
     long long _row;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long row; // @synthesize row=_row;
 @property(copy, nonatomic) NSString *messageListType; // @synthesize messageListType=_messageListType;
 @property(copy, nonatomic) NSString *cellStyle; // @synthesize cellStyle=_cellStyle;
@@ -29,7 +30,6 @@
 @property(nonatomic) _Bool scrolledToEnd; // @synthesize scrolledToEnd=_scrolledToEnd;
 @property(retain, nonatomic) id <ECMessage> message; // @synthesize message=_message;
 @property(retain, nonatomic) NSDate *viewingStarted; // @synthesize viewingStarted=_viewingStarted;
-- (void).cxx_destruct;
 
 @end
 

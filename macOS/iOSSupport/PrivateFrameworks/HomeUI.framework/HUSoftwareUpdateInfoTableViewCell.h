@@ -18,9 +18,9 @@
     HUSoftwareUpdateInfoView *_infoView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUSoftwareUpdateInfoView *infoView; // @synthesize infoView=_infoView;
 @property(nonatomic) __weak id <HUResizableCellDelegate> resizingDelegate; // @synthesize resizingDelegate=_resizingDelegate;
-- (void).cxx_destruct;
 - (void)didUpdateRequiredHeightForSoftwareUpdateInfoView:(id)arg1;
 - (void)updateUIWithAnimation:(BOOL)arg1;
 @property(retain, nonatomic) HFItem *item;

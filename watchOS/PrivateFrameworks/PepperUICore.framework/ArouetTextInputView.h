@@ -41,6 +41,7 @@
     CDStruct_55c8205d __lastTransactionChange;
 }
 
+- (void).cxx_destruct;
 @property CDStruct_55c8205d _lastTransactionChange; // @synthesize _lastTransactionChange=__lastTransactionChange;
 @property int _textChangesDepth; // @synthesize _textChangesDepth=__textChangesDepth;
 @property(nonatomic, setter=_setSelectionOutlineVisibleOverflowDirections:) unsigned int _selectionOutlineVisibleOverflowDirections; // @synthesize _selectionOutlineVisibleOverflowDirections=__selectionOutlineVisibleOverflowDirections;
@@ -65,7 +66,6 @@
 @property(nonatomic) struct _NSRange textSelectionRange; // @synthesize textSelectionRange=_textSelectionRange;
 @property(copy, nonatomic) NSString *displayedText; // @synthesize displayedText=_displayedText;
 @property(retain, nonatomic) ArouetLanguageSpec *languageSpec; // @synthesize languageSpec=_languageSpec;
-- (void).cxx_destruct;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)textPreviewViewDidLayout:(id)arg1;

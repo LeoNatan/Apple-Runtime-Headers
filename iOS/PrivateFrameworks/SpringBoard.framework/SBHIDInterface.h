@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 - (void)resetProximityCalibration;
 @property(nonatomic, getter=isProximityDetectionEnabled) _Bool proximityDetectionEnabled;
+- (id)suspendMultitouchForSource:(long long)arg1 reason:(id)arg2;
 - (id)suspendProximityDetectionAndMultitouchForSource:(long long)arg1 disableTapToWake:(_Bool)arg2 reason:(id)arg3;
 - (id)suspendProximityDetectionForSource:(long long)arg1 reason:(id)arg2;
 - (void)reevaluateHIDLockAssertionsForSource:(long long)arg1;

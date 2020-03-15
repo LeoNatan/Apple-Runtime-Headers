@@ -23,6 +23,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)entityName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *deviceIdentifiers; // @synthesize deviceIdentifiers=_deviceIdentifiers;
 @property(retain, nonatomic) _DKEventStream *stream; // @synthesize stream=_stream;
 @property(nonatomic) unsigned long long countOverAllValues; // @synthesize countOverAllValues=_countOverAllValues;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSDateInterval *interval; // @synthesize interval=_interval;
 @property(retain, nonatomic) NSDictionary *histogram; // @synthesize histogram=_histogram;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

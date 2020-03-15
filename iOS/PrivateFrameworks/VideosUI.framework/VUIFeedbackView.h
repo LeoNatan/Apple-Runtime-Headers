@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 + (id)headerImageViewWithString:(id)arg1 layout:(id)arg2 existingView:(id)arg3;
 + (id)headerSubtitleLabelWithString:(id)arg1 layout:(id)arg2 existingView:(id)arg3;
 + (id)headerTitleViewWithString:(id)arg1 layout:(id)arg2 existingView:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUILabel *prototypeHeaderLabel; // @synthesize prototypeHeaderLabel=_prototypeHeaderLabel;
 @property(retain, nonatomic) VUILabel *prototypeSubtitleLabel; // @synthesize prototypeSubtitleLabel=_prototypeSubtitleLabel;
 @property(nonatomic) struct CGSize sourceBadgeSize; // @synthesize sourceBadgeSize=_sourceBadgeSize;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUILabel *headerSubtitleLabel; // @synthesize headerSubtitleLabel=_headerSubtitleLabel;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) VUIFeedbackLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)prepareForCellReuse;

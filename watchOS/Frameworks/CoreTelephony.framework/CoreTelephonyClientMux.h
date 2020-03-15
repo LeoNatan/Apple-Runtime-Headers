@@ -13,7 +13,7 @@
 __attribute__((visibility("hidden")))
 @interface CoreTelephonyClientMux : NSObject <MuxNotificationSinkDelegate>
 {
-    struct map<__weak id, (anonymous namespace)::DelegateContext, std::__1::less<__weak id>, std::__1::allocator<std::__1::pair<const __weak id, (anonymous namespace)::DelegateContext>>> _delegates;
+    struct map<__unsafe_unretained id, (anonymous namespace)::DelegateContext, std::__1::less<__unsafe_unretained id>, std::__1::allocator<std::__1::pair<const __unsafe_unretained id, (anonymous namespace)::DelegateContext>>> _delegates;
     NSSet *_currentSelectorSet;
     NSXPCConnection *_connection;
     struct queue _xpcQueue;
@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
     NSError *_reconnectError;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *reconnectError; // @synthesize reconnectError=_reconnectError;
 @property(retain, nonatomic) MuxNotificationSink *notificationSink; // @synthesize notificationSink=_notificationSink;
 @property(retain, nonatomic) NSXPCListenerEndpoint *endpoint; // @synthesize endpoint=_endpoint;
 @property(nonatomic) struct queue xpcQueue; // @synthesize xpcQueue=_xpcQueue;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)_connection;
 - (void)_ensureConnectionSetup_sync:(_Bool)arg1;
 - (void)_ensureConnectionSetup_sync;

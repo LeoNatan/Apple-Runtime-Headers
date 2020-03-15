@@ -22,12 +22,12 @@
     NSDictionary *_resultingOverrideBagDictionary;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *resultingOverrideBagDictionary; // @synthesize resultingOverrideBagDictionary=_resultingOverrideBagDictionary;
 @property(copy, nonatomic) NSString *referer; // @synthesize referer=_referer;
 @property(nonatomic) _Bool isAutomaticUpdate; // @synthesize isAutomaticUpdate=_isAutomaticUpdate;
 @property(nonatomic) _Bool includeCleanTracksOnly; // @synthesize includeCleanTracksOnly=_includeCleanTracksOnly;
 @property(nonatomic) _Bool disableArtworkLoading; // @synthesize disableArtworkLoading=_disableArtworkLoading;
-- (void).cxx_destruct;
 - (id)_updateModel:(id)arg1 withChangeDictionary:(id)arg2 changeType:(long long *)arg3 loadArtworkSynchronously:(_Bool)arg4;
 - (id)_stationSortOrderForChanges:(id)arg1;
 - (id)_sortedChangesByType:(id)arg1;

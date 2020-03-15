@@ -28,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *keyUpdatedStateNumber; // @synthesize keyUpdatedStateNumber=_keyUpdatedStateNumber;
 @property(nonatomic) double keyUpdatedTime; // @synthesize keyUpdatedTime=_keyUpdatedTime;
 @property(retain, nonatomic) NSData *broadcastKey; // @synthesize broadcastKey=_broadcastKey;
@@ -41,7 +42,6 @@
 @property(nonatomic) unsigned long long previousProtocolVersion; // @synthesize previousProtocolVersion=_previousProtocolVersion;
 @property(nonatomic) unsigned long long advertisedProtocolVersion; // @synthesize advertisedProtocolVersion=_advertisedProtocolVersion;
 @property(readonly, nonatomic) NSUUID *peripheralUUID; // @synthesize peripheralUUID=_peripheralUUID;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

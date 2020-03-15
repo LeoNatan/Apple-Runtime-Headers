@@ -15,10 +15,10 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isPeerNotNearbyError; // @synthesize isPeerNotNearbyError=_isPeerNotNearbyError;
 @property(nonatomic) BOOL isPeerConnectionError; // @synthesize isPeerConnectionError=_isPeerConnectionError;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 
 @end
 

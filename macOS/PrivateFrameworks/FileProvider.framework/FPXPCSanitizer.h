@@ -14,8 +14,8 @@
 }
 
 + (id)permittedErrorDomains;
-@property(readonly, nonatomic) NSString *providerIdentifier; // @synthesize providerIdentifier=_providerIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *providerIdentifier; // @synthesize providerIdentifier=_providerIdentifier;
 - (id)init;
 - (id)initWithProviderDomainIdentifier:(id)arg1;
 

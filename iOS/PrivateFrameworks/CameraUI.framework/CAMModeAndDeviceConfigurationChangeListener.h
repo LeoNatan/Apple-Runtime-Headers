@@ -13,10 +13,10 @@
     CDUnknownBlockType _handler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(nonatomic) long long desiredDevicePosition; // @synthesize desiredDevicePosition=_desiredDevicePosition;
 @property(nonatomic) long long desiredMode; // @synthesize desiredMode=_desiredMode;
-- (void).cxx_destruct;
 
 @end
 

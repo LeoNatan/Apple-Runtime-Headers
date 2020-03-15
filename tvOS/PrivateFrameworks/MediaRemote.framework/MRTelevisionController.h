@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)externalDeviceClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _MRTelevisionControllerBlockCallback *removalCallback; // @synthesize removalCallback=_removalCallback;
 @property(retain, nonatomic) _MRTelevisionControllerBlockCallback *discoveryCallback; // @synthesize discoveryCallback=_discoveryCallback;
-- (void).cxx_destruct;
 - (void)externalDeviceController:(id)arg1 didRemoveDevice:(id)arg2;
 - (void)externalDeviceController:(id)arg1 didDiscoverDevice:(id)arg2;
 - (id)init;

@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     double _creationTimestamp;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double creationTimestamp; // @synthesize creationTimestamp=_creationTimestamp;
 @property(readonly, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) NSString *process; // @synthesize process=_process;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic, getter=isExpired) _Bool expired;
 - (id)initWithProcess:(id)arg1 reason:(id)arg2 creationTimestamp:(double)arg3;

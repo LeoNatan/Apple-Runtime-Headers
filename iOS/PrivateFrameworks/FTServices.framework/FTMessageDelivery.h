@@ -25,11 +25,11 @@
 + (id)alloc;
 + (Class)APNSMessageDeliveryClass;
 + (Class)HTTPMessageDeliveryClass;
+- (void).cxx_destruct;
 @property _Bool retryInAirplaneMode; // @synthesize retryInAirplaneMode=_retryInAirplaneMode;
 @property unsigned long long maxConcurrentMessages; // @synthesize maxConcurrentMessages=_maxConcurrentMessages;
 @property _Bool logToRegistration; // @synthesize logToRegistration=_logToRegistration;
 @property(copy) NSString *userAgent; // @synthesize userAgent=_userAgent;
-- (void).cxx_destruct;
 - (void)_signMessage:(id)arg1 useDataSignatures:(_Bool)arg2 body:(id)arg3 queryString:(id)arg4 intoDictionary:(id)arg5;
 - (void)networkStateChanged;
 @property(readonly) long long maxLargeMessageSize;

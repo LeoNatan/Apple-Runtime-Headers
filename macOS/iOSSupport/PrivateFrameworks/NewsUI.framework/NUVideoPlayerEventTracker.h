@@ -20,11 +20,11 @@
     NSMutableArray *_eventTrackers;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isVideoPlayerVisible) BOOL videoPlayerIsVisible; // @synthesize videoPlayerIsVisible=_videoPlayerIsVisible;
 @property(nonatomic, getter=hasVideoPlayerViewAppeared) BOOL videoPlayerViewHasAppeared; // @synthesize videoPlayerViewHasAppeared=_videoPlayerViewHasAppeared;
 @property(nonatomic, getter=isHostProcessForeground) BOOL hostProcessIsForeground; // @synthesize hostProcessIsForeground=_hostProcessIsForeground;
 @property(readonly, nonatomic) NSMutableArray *eventTrackers; // @synthesize eventTrackers=_eventTrackers;
-- (void).cxx_destruct;
 - (void)_updateVideoPlayerVisibilityIfNeeded;
 - (void)_performBlockForEventTrackersRespondingToSelector:(SEL)arg1 block:(CDUnknownBlockType)arg2;
 - (void)sessionWillEnd;

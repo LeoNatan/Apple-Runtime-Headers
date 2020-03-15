@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)avatarEdgeLengthForTraitCollection:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorView; // @synthesize separatorView=_separatorView;
 @property(retain, nonatomic) UIButton *labelButton; // @synthesize labelButton=_labelButton;
 @property(retain, nonatomic) CNMeCardSharingAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;
 @property(retain, nonatomic) id <CNMeCardSharingAvatarProvider> avatarProvider; // @synthesize avatarProvider=_avatarProvider;
 @property(nonatomic) __weak id <CNMeCardSharingSettingsHeaderViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)avatarViewControllerWasTapped:(id)arg1;
 - (void)avatarViewControllerDidUpdateImage:(id)arg1;
 - (void)labelButtonTapped:(id)arg1;

@@ -13,8 +13,8 @@
     FCFileCoordinatedDictionary *_fileCoordinatedDictionary;
 }
 
-@property(retain, nonatomic) FCFileCoordinatedDictionary *fileCoordinatedDictionary; // @synthesize fileCoordinatedDictionary=_fileCoordinatedDictionary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FCFileCoordinatedDictionary *fileCoordinatedDictionary; // @synthesize fileCoordinatedDictionary=_fileCoordinatedDictionary;
 - (void)dequeueTransactionsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)peekAtTransactionsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)enqueueTransaction:(id)arg1 withMaxTransactionCount:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;

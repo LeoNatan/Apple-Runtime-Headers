@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     int _fetchState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int fetchState; // @synthesize fetchState=_fetchState;
 @property(readonly) NSArray *likedByFriends; // @synthesize likedByFriends=_likedByFriends;
 @property(readonly) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)unlikeWithCompletion:(CDUnknownBlockType)arg1;
 - (void)likeWithCompletion:(CDUnknownBlockType)arg1;

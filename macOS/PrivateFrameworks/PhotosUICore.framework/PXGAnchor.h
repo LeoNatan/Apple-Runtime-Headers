@@ -37,6 +37,7 @@
     struct NSEdgeInsets _padding;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isAutoInvalidated) BOOL autoInvalidated; // @synthesize autoInvalidated=_autoInvalidated;
 @property(nonatomic) BOOL needsUpdate; // @synthesize needsUpdate=_needsUpdate;
 @property(copy, nonatomic) CDUnknownBlockType customOffset; // @synthesize customOffset=_customOffset;
@@ -55,7 +56,6 @@
 @property(readonly, nonatomic) __weak PXGLayout *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
 @property(nonatomic) __weak id <PXGAnchorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *diagnosticDescription;
 - (void)_enumerateSpriteConstraintsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateSpritesWithEnumerationOptions:(unsigned long long)arg1 referencingOptions:(unsigned long long)arg2 usingBlock:(CDUnknownBlockType)arg3;

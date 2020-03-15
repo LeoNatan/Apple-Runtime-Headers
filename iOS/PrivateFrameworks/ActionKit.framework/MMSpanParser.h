@@ -21,6 +21,7 @@
     MMElement *_blockElement;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool parseStrong; // @synthesize parseStrong=_parseStrong;
 @property(nonatomic) _Bool parseLinks; // @synthesize parseLinks=_parseLinks;
 @property(nonatomic) _Bool parseImages; // @synthesize parseImages=_parseImages;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSMutableArray *elements; // @synthesize elements=_elements;
 @property(readonly, nonatomic) MMHTMLParser *htmlParser; // @synthesize htmlParser=_htmlParser;
 @property(readonly, nonatomic) unsigned long long extensions; // @synthesize extensions=_extensions;
-- (void).cxx_destruct;
 - (id)_stringWithBackslashEscapesRemoved:(id)arg1;
 - (id)_parseLeftAngleBracketWithScanner:(id)arg1;
 - (id)_parseBackslashWithScanner:(id)arg1;

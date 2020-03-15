@@ -14,8 +14,8 @@
     NSView<CalUIAXMiniMonthProxyDelegate> *_delegate;
 }
 
-@property __weak NSView<CalUIAXMiniMonthProxyDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak NSView<CalUIAXMiniMonthProxyDelegate> *delegate; // @synthesize delegate=_delegate;
 - (struct CGRect)accessibilityFrame;
 - (id)accessibilityFocusedUIElement;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;

@@ -22,13 +22,13 @@
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSLocking> _screenInfoCacheLock; // @synthesize _screenInfoCacheLock=__screenInfoCacheLock;
 @property(nonatomic) BOOL _started; // @synthesize _started=__started;
 @property(nonatomic) struct CGRect totalScreenBounds; // @synthesize totalScreenBounds=_totalScreenBounds;
 @property(retain, nonatomic) AXFScreen *mainScreen; // @synthesize mainScreen=_mainScreen;
 @property(retain, nonatomic) NSArray *screens; // @synthesize screens=_screens;
 @property(nonatomic) __weak id <AXFScreenSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_refreshScreenInfos;
 - (void)_activeDisplayDidChange:(id)arg1;
 - (void)_didChangeScreenParameters:(id)arg1;

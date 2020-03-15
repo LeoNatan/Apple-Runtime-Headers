@@ -29,6 +29,7 @@
 }
 
 + (id)defaultOptionsForCellSizeSubclass:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long cellSizeSubclass; // @synthesize cellSizeSubclass=_cellSizeSubclass;
 @property(nonatomic) double cellScaleFactor; // @synthesize cellScaleFactor=_cellScaleFactor;
 @property(nonatomic) _Bool drawsBorderForOnState; // @synthesize drawsBorderForOnState=_drawsBorderForOnState;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) UIVisualEffect *vibrancyEffect; // @synthesize vibrancyEffect=_vibrancyEffect;
 @property(copy, nonatomic) HUGridCellBackgroundDisplayOptions *backgroundDisplayOptions; // @synthesize backgroundDisplayOptions=_backgroundDisplayOptions;
 @property(nonatomic) unsigned long long contentColorStyle; // @synthesize contentColorStyle=_contentColorStyle;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCellSizeSubclass:(long long)arg1;
 

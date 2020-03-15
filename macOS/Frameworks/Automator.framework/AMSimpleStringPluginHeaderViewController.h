@@ -13,8 +13,8 @@
     NSString *_headerViewString;
 }
 
-@property(retain) NSString *headerViewString; // @synthesize headerViewString=_headerViewString;
 - (void).cxx_destruct;
+@property(retain) NSString *headerViewString; // @synthesize headerViewString=_headerViewString;
 - (void)loadView;
 - (id)initWithHeaderViewString:(id)arg1;
 

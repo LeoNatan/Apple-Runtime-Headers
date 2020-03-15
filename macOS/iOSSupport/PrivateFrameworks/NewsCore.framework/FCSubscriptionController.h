@@ -24,6 +24,7 @@
     id <FCCoreConfigurationManager> _configurationManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
 @property(retain, nonatomic) id <FCPurchaseProviderType> purchaseProvider; // @synthesize purchaseProvider=_purchaseProvider;
 @property(retain, nonatomic) FCNotificationController *notificationController; // @synthesize notificationController=_notificationController;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) FCThreadSafeMutableDictionary *subscribedTagsByTagID; // @synthesize subscribedTagsByTagID=_subscribedTagsByTagID;
 @property(retain, nonatomic) FCTagController *tagController; // @synthesize tagController=_tagController;
 @property(retain, nonatomic) FCSubscriptionList *subscriptionList; // @synthesize subscriptionList=_subscriptionList;
-- (void).cxx_destruct;
 - (void)_handleNonTagSubscriptionType:(unsigned long long)arg1 addedSubscriptionsByType:(id)arg2 removedSubscriptionsByType:(id)arg3 changedSubscriptionsByType:(id)arg4 eventInitiationLevel:(long long)arg5;
 - (void)_handleTagSubscriptionsAdded:(id)arg1 tagSubscriptionsChanged:(id)arg2 tagSubscriptionsMoved:(id)arg3 tagSubscriptionsRemoved:(id)arg4 eventInitiationLevel:(long long)arg5;
 - (void)_notifyOfTagsWithNotificationSupport:(id)arg1;

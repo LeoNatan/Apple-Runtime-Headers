@@ -21,13 +21,13 @@
     UILongPressGestureRecognizer *_insertLongPressGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool rulerEnabled; // @synthesize rulerEnabled=_rulerEnabled;
 @property(retain, nonatomic) UILongPressGestureRecognizer *insertLongPressGestureRecognizer; // @synthesize insertLongPressGestureRecognizer=_insertLongPressGestureRecognizer;
 @property(nonatomic) __weak id <UITextViewDrawingDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PKTiledView *tiledView; // @synthesize tiledView=_tiledView;
 @property(nonatomic) _Bool addBottomPadding; // @synthesize addBottomPadding=_addBottomPadding;
 @property(nonatomic) __weak UITextView *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;

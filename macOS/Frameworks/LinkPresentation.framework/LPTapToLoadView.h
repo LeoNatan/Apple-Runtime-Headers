@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
     id <LPTapToLoadViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <LPTapToLoadViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <LPTapToLoadViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)animateOutWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_animateToProgressView;

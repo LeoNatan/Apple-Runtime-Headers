@@ -27,6 +27,7 @@
     unsigned int _lastReason;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastReason; // @synthesize lastReason=_lastReason;
 @property(nonatomic) int currentState; // @synthesize currentState=_currentState;
 @property(nonatomic) int previousState; // @synthesize previousState=_previousState;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) NSMutableDictionary *minimumBrightnessAssertions; // @synthesize minimumBrightnessAssertions=_minimumBrightnessAssertions;
 @property(readonly, nonatomic) NSMutableDictionary *assertions; // @synthesize assertions=_assertions;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)_requestRejectedWithDescription:(id)arg1;
 - (_Bool)_entitlementCheckForReason:(unsigned int)arg1 isAssertion:(_Bool)arg2;
 - (_Bool)_backlightAccessEntitlementCheckFor:(SEL)arg1;

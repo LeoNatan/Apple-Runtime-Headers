@@ -39,13 +39,13 @@ __attribute__((visibility("hidden")))
 + (id)protocolHeaders;
 + (id)protocolVersion;
 + (id)zeroSizeFileSignature;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDMMCSEngineContext *MMCSEngineContext; // @synthesize MMCSEngineContext=_MMCSEngineContext;
 @property(nonatomic) long long checkoutCount; // @synthesize checkoutCount=_checkoutCount;
 @property(nonatomic) BOOL didDrop; // @synthesize didDrop=_didDrop;
 @property(nonatomic) __weak CKDClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(retain, nonatomic) CKDAssetCache *assetCache; // @synthesize assetCache=_assetCache;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)getSectionItem:(id)arg1 operation:(id)arg2 options:(id)arg3 progress:(CDUnknownBlockType)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)_contextToGetSectionItem:(id)arg1 operation:(id)arg2 options:(id)arg3 progress:(CDUnknownBlockType)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)putSectionItem:(id)arg1 operation:(id)arg2 options:(id)arg3 progress:(CDUnknownBlockType)arg4 completionHandler:(CDUnknownBlockType)arg5;

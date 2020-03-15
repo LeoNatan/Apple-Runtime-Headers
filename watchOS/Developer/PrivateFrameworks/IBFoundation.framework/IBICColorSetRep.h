@@ -22,11 +22,11 @@
 + (id)assetRepWithSlot:(id)arg1 fileName:(id)arg2 explicitlyUnassigned:(_Bool)arg3;
 + (id)assetRepWithRepIdentifier:(id)arg1;
 + (id)createDefaultInstancesForUnitTesting;
+- (void).cxx_destruct;
 @property(nonatomic) long long componentInterpretation; // @synthesize componentInterpretation=_componentInterpretation;
 @property(copy, nonatomic) NSString *referenceColorPlatform; // @synthesize referenceColorPlatform=_referenceColorPlatform;
 @property(copy, nonatomic) NSString *referenceColorName; // @synthesize referenceColorName=_referenceColorName;
 @property(retain, nonatomic) IBICColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)populateIssues:(id)arg1 context:(id)arg2;
 - (_Bool)isDraggable;
 - (id)copyUsingSlot:(id)arg1 andFileName:(id)arg2;

@@ -20,12 +20,12 @@
     PHFetchResult *_mergeCandidateFetchResult;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) PHFetchResult *mergeCandidateFetchResult; // @synthesize mergeCandidateFetchResult=_mergeCandidateFetchResult;
 @property(copy, nonatomic) NSArray *mergeCandidates; // @synthesize mergeCandidates=_mergeCandidates;
 @property(nonatomic) unsigned long long flowType; // @synthesize flowType=_flowType;
 @property(nonatomic) unsigned long long suggestionFetchType; // @synthesize suggestionFetchType=_suggestionFetchType;
 @property(nonatomic) unsigned long long initialPageLimit; // @synthesize initialPageLimit=_initialPageLimit;
-- (void).cxx_destruct;
 - (void)photoLibraryDidChange:(id)arg1;
 - (void)stopListeningForLibraryChanges;
 - (void)startListeningForLibraryChanges;

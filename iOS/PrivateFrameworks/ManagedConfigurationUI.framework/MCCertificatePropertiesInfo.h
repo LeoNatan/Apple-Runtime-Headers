@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSArray *_keyValueSections;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *keyValueSections; // @synthesize keyValueSections=_keyValueSections;
 @property(retain, nonatomic) NSArray *sectionTitles; // @synthesize sectionTitles=_sectionTitles;
 @property(retain, nonatomic) NSArray *sections; // @synthesize sections=_sections;
-- (void).cxx_destruct;
 - (id)_sendablePropertiesFromTrust:(struct __SecTrust *)arg1;
 - (id)_copyPropertiesFromTrust:(struct __SecTrust *)arg1;
 - (id)_sendablePropertiesFromProperties:(id)arg1;

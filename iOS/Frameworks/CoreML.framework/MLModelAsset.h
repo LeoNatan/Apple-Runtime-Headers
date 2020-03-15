@@ -21,11 +21,11 @@
 + (id)modelAssetWithSpecification:(struct _MLModelSpecification *)arg1 error:(id *)arg2;
 + (id)modelAssetWithURL:(id)arg1 configuration:(id)arg2 error:(id *)arg3;
 + (id)modelAssetWithURL:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MLModelConfiguration *loadConfiguration; // @synthesize loadConfiguration=_loadConfiguration;
 @property(retain) NSObject<MLModeling> *asset; // @synthesize asset=_asset;
 @property _Bool ranLoad; // @synthesize ranLoad=_ranLoad;
 @property(readonly) NSURL *compiledURL; // @synthesize compiledURL=_compiledURL;
-- (void).cxx_destruct;
 - (id)regressorWithError:(id *)arg1;
 @property(readonly, nonatomic) id <MLRegressor> regressor;
 - (id)classifierWithError:(id *)arg1;

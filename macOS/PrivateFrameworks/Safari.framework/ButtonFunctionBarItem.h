@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSButton *_button;
 }
 
-@property(readonly, nonatomic) NSButton *button; // @synthesize button=_button;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSButton *button; // @synthesize button=_button;
 - (id)initWithCoder:(id)arg1;
 - (void)setAccessibilityTitleAndCustomizationLabel:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 title:(id)arg2 image:(id)arg3 target:(id)arg4 action:(SEL)arg5;

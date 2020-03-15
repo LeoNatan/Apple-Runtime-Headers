@@ -136,6 +136,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isDiagnosticsUsageEnabled; // @synthesize isDiagnosticsUsageEnabled=_isDiagnosticsUsageEnabled;
 @property(nonatomic) BOOL isStoreDemoModeEnabled; // @synthesize isStoreDemoModeEnabled=_isStoreDemoModeEnabled;
 @property(nonatomic) BOOL signedIntoITunes; // @synthesize signedIntoITunes=_signedIntoITunes;
@@ -201,7 +202,6 @@
 @property(retain, nonatomic) NSString *osVersion; // @synthesize osVersion=_osVersion;
 @property(retain, nonatomic) NSString *devicePlatform; // @synthesize devicePlatform=_devicePlatform;
 @property(retain, nonatomic) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

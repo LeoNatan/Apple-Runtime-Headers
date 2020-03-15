@@ -23,6 +23,7 @@
     int _column2Alignment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useNoColumnPadding; // @synthesize useNoColumnPadding=_useNoColumnPadding;
 @property(nonatomic) int column2Alignment; // @synthesize column2Alignment=_column2Alignment;
 @property(copy, nonatomic) CLKImageProvider *row3ImageProvider; // @synthesize row3ImageProvider=_row3ImageProvider;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) CLKTextProvider *row2Column1TextProvider; // @synthesize row2Column1TextProvider=_row2Column1TextProvider;
 @property(copy, nonatomic) CLKTextProvider *row1Column2TextProvider; // @synthesize row1Column2TextProvider=_row1Column2TextProvider;
 @property(copy, nonatomic) CLKTextProvider *row1Column1TextProvider; // @synthesize row1Column1TextProvider=_row1Column1TextProvider;
-- (void).cxx_destruct;
 - (void)_enumerateIntegerKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateImageProviderKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateTextProviderKeysWithBlock:(CDUnknownBlockType)arg1;

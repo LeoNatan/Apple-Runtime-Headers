@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_senderRules;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *senderRules; // @synthesize senderRules=_senderRules;
 @property(retain, nonatomic) NSMutableDictionary *receiverRules; // @synthesize receiverRules=_receiverRules;
 @property(retain, nonatomic) NSMutableDictionary *sharedTripGroupSessionInfo; // @synthesize sharedTripGroupSessionInfo=_sharedTripGroupSessionInfo;
 @property(retain, nonatomic) MSPGroupSessionStorage *senderSession; // @synthesize senderSession=_senderSession;
 @property(nonatomic) __weak id <MSPSharedTripStorageDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_saveSendingRules;
 - (void)_saveSenderSession;
 - (void)_loadSenderSession;

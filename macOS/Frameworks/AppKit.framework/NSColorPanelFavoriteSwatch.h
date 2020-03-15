@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     SEL _action;
 }
 
+- (void).cxx_destruct;
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (BOOL)_viewControllerSupports10_10Features;
 - (void)performClick:(id)arg1;
 - (void)mouseUp:(id)arg1;

@@ -33,11 +33,11 @@ __attribute__((visibility("hidden")))
     HKInteractiveChartViewController *_interactiveChartViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKInteractiveChartViewController *interactiveChartViewController; // @synthesize interactiveChartViewController=_interactiveChartViewController;
 @property(retain, nonatomic) UIFont *bodyFont; // @synthesize bodyFont=_bodyFont;
 @property(retain, nonatomic) NSMutableArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) WDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)productViewControllerDidFinish:(id)arg1;
 - (void)appsCell:(id)arg1 showStorePageWithStoreID:(id)arg2;
 - (void)_displayAppWithStoreID:(id)arg1;

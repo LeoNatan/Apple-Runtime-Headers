@@ -26,10 +26,10 @@
 + (id)inspectableValueCollectionRangeWithMin:(id)arg1;
 + (id)inspectableValueCollectionRangeWithMin:(id)arg1 max:(id)arg2;
 + (id)inspectableValueCollectionSingleWithValue:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *elementTags; // @synthesize elementTags=_elementTags;
 @property(readonly, nonatomic) NSArray *collection; // @synthesize collection=_collection;
 @property(readonly, nonatomic) long long collectionType; // @synthesize collectionType=_collectionType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

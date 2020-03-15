@@ -16,10 +16,10 @@
 }
 
 + (id)_createUpdatedAccount:(id)arg1 usingAuthenticationResults:(id)arg2 option:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int credentialSource; // @synthesize credentialSource=_credentialSource;
 @property(readonly, nonatomic) NSDictionary *authenticationResults; // @synthesize authenticationResults=_authenticationResults;
 @property(readonly, nonatomic) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)initWithAccount:(id)arg1 authenticationResults:(id)arg2 credentialSource:(unsigned int)arg3 options:(id)arg4;
 
 @end

@@ -39,12 +39,13 @@
     NSURL *_libraryURL;
 }
 
-@property(readonly, nonatomic) NSURL *libraryURL; // @synthesize libraryURL=_libraryURL;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *libraryURL; // @synthesize libraryURL=_libraryURL;
 - (id)clientDebugDescription;
 - (void)invalidateConnectionWithReason:(id)arg1;
 - (BOOL)_prepareToRunDaemonJob:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) PLLibraryServicesManager *libraryServicesManager;
+- (void)bindToPhotoLibraryURL:(id)arg1 sandboxExtension:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)bindToPhotoLibraryURL:(id)arg1 bookmark:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (id)_waitForLibraryServicesForDaemonJob;
 - (void)runDaemonJob:(id)arg1 isSerial:(BOOL)arg2 withReply:(CDUnknownBlockType)arg3;

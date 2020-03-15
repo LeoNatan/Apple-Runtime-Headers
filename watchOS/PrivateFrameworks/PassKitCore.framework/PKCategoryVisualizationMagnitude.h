@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double magnitude; // @synthesize magnitude=_magnitude;
 @property(nonatomic) int bucket; // @synthesize bucket=_bucket;
 @property(copy, nonatomic) NSString *passUniqueIdentifier; // @synthesize passUniqueIdentifier=_passUniqueIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

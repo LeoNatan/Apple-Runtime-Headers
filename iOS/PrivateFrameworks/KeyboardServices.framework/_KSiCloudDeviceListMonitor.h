@@ -20,6 +20,7 @@
 }
 
 + (id)iCloudDeviceListMonitor;
+- (void).cxx_destruct;
 @property(nonatomic) long long minorVersForCloudKitSynciOS; // @synthesize minorVersForCloudKitSynciOS=_minorVersForCloudKitSynciOS;
 @property(nonatomic) long long majorVersForCloudKitSynciOS; // @synthesize majorVersForCloudKitSynciOS=_majorVersForCloudKitSynciOS;
 @property(nonatomic) long long minorSubversionForCloudKitSyncMacOS; // @synthesize minorSubversionForCloudKitSyncMacOS=_minorSubversionForCloudKitSyncMacOS;
@@ -27,7 +28,6 @@
 @property(nonatomic) long long majorVersForCloudKitSyncMacOS; // @synthesize majorVersForCloudKitSyncMacOS=_majorVersForCloudKitSyncMacOS;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
-- (void).cxx_destruct;
 - (void)isAccountCompatibleForCloudKitSyncingWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)queryMigrationState;
 - (void)fetchICloudDevicesWithCompletionBlock:(CDUnknownBlockType)arg1;

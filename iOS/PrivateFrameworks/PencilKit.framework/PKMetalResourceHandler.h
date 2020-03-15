@@ -61,12 +61,12 @@
 + (id)inkBundle;
 + (id)sharedResourceHandlerWithDevice:(id)arg1;
 + (id)sharedResourceHandlerWithDevice:(id)arg1 pixelFormat:(unsigned long long)arg2 paintAndParticlePixelFormat:(unsigned long long)arg3 stencilPixelFormat:(unsigned long long)arg4;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long stencilPixelFormat; // @synthesize stencilPixelFormat=_stencilPixelFormat;
 @property(readonly, nonatomic) unsigned long long paintAndParticlePixelFormat; // @synthesize paintAndParticlePixelFormat=_paintAndParticlePixelFormat;
 @property(readonly, nonatomic) unsigned long long pixelFormat; // @synthesize pixelFormat=_pixelFormat;
 @property(readonly, nonatomic) id <MTLDevice> device; // @synthesize device=_device;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)_signpostLog;
 - (id)newGPUBufferWithLength:(unsigned long long)arg1 outOffset:(unsigned long long *)arg2;
 - (id)newBufferWithLength:(unsigned long long)arg1 bytes:(const void *)arg2 outOffset:(unsigned long long *)arg3;

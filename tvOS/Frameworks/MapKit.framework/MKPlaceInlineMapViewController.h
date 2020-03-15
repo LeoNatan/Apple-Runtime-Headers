@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)inlineMapWithMapItem:(id)arg1 options:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MKMapCamera *mapCamera; // @synthesize mapCamera=_mapCamera;
 @property(nonatomic) _Bool useWindowTrait; // @synthesize useWindowTrait=_useWindowTrait;
 @property(nonatomic) __weak _MKPlaceViewController *owner; // @synthesize owner=_owner;
 @property(nonatomic, getter=isBottomHairlineHidden) _Bool bottomHairlineHidden; // @synthesize bottomHairlineHidden=_bottomHairlineHidden;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
-- (void).cxx_destruct;
 - (long long)preferredUserInterfaceStyle;
 - (id)traitCollectionForSnapshot;
 - (void)_launchMaps;

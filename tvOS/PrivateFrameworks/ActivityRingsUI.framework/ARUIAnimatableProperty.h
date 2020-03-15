@@ -18,10 +18,10 @@
     id _endValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id currentValue; // @synthesize currentValue=_currentValue;
 @property(retain, nonatomic) id endValue; // @synthesize endValue=_endValue;
 @property(retain, nonatomic) id startValue; // @synthesize startValue=_startValue;
-- (void).cxx_destruct;
 - (_Bool)isFinishedAnimating;
 - (void)update:(double)arg1;
 - (void)removeAllPropertyAnimations;

@@ -18,11 +18,11 @@
     AXMSoundComponent *_soundComponent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float pitch; // @synthesize pitch=_pitch;
 @property(nonatomic) float rate; // @synthesize rate=_rate;
 @property(nonatomic) __weak AXMSoundComponent *soundComponent; // @synthesize soundComponent=_soundComponent;
 @property(nonatomic) __weak AXMActiveSound *activeSound; // @synthesize activeSound=_activeSound;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)setQuantizedRate:(long long)arg1;
 - (id)init;

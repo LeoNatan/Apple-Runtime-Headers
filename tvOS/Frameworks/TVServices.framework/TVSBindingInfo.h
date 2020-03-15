@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _updateHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
 @property(readonly, copy, nonatomic) NSDictionary *bindingOptions; // @synthesize bindingOptions=_bindingOptions;
 @property(readonly, copy, nonatomic) NSString *observedKeyPath; // @synthesize observedKeyPath=_observedKeyPath;
 @property(readonly, nonatomic) id observedObject; // @synthesize observedObject=_observedObject;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithObservedObject:(id)arg1 observedKeyPath:(id)arg2 bindingOptions:(id)arg3 updateHandler:(CDUnknownBlockType)arg4;
 

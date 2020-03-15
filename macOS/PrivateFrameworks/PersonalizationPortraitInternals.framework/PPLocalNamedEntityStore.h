@@ -31,11 +31,11 @@
 + (void)_filterBlacklistedNamedEntityRecords:(id)arg1;
 + (id)_loadScoreInterpreter;
 + (void)sortAndTruncate:(id)arg1 queryLimit:(unsigned long long)arg2;
-+ (struct PPScoredItem *)scoredEntityFromRecords:(id)arg1 scoringDate:(id)arg2 perRecordDecayRate:(float)arg3 decayRate:(float)arg4 sourceStats:(id)arg5 scoreInterpreter:(id)arg6;
++ (id)scoredEntityFromRecords:(id)arg1 scoringDate:(id)arg2 perRecordDecayRate:(float)arg3 decayRate:(float)arg4 sourceStats:(id)arg5 scoreInterpreter:(id)arg6;
 + (id)_aggregateRecords:(id)arg1 scoringDate:(id)arg2 perRecordDecayRate:(float)arg3 decayRate:(float)arg4;
 + (id)defaultStore;
-@property(readonly, nonatomic) PPNamedEntityStorage *storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PPNamedEntityStorage *storage; // @synthesize storage=_storage;
 - (id)_mapsSearchQueryResultWithError:(id *)arg1;
 - (void)_registerMapsQueryPrefetching;
 - (id)getScoredNamedEntityFeaturesWithNamedEntity:(id)arg1 excludingSourceBundleId:(id)arg2 decayRate:(double)arg3 error:(id *)arg4 strictFiltering:(BOOL)arg5 scoreInterpreter:(id)arg6;

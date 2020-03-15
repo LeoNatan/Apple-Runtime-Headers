@@ -21,10 +21,10 @@
 }
 
 + (_Bool)accessibilityIsSingleCelled;
-@property(retain, nonatomic) FI_TTagEditorController *controller; // @synthesize controller=_controller;
-@property __weak NSObject<FITagEditorDelegate> *delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FI_TTagEditorController *controller; // @synthesize controller=_controller;
+@property __weak NSObject<FITagEditorDelegate> *delegate; // @synthesize delegate=_delegate;
 - (BOOL)accessibilityIsIgnored;
 - (void)selectText:(id)arg1;
 - (void)setSelectable:(_Bool)arg1;

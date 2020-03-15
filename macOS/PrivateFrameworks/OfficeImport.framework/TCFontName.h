@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_fullName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
 @property(readonly, nonatomic) NSString *styleName; // @synthesize styleName=_styleName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDictionary:(id)arg1;
 - (id)equivalentDictionary;

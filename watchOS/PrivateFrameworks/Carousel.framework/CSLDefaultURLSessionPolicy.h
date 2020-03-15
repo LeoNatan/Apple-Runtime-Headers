@@ -24,6 +24,7 @@
     double _backgroundLeeway;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPlayingLocally) _Bool playingLocally; // @synthesize playingLocally=_playingLocally;
 @property(nonatomic, getter=isNavigating) _Bool navigating; // @synthesize navigating=_navigating;
 @property(readonly, nonatomic) _Bool isEligibleForDefaultURLSession; // @synthesize isEligibleForDefaultURLSession=_isEligibleForDefaultURLSession;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 @property(nonatomic) double backgroundLeeway; // @synthesize backgroundLeeway=_backgroundLeeway;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (void)_updateEligibility;
 - (void)setHasFinishTaskAssertion:(_Bool)arg1 date:(id)arg2;

@@ -23,12 +23,12 @@
 + (_Bool)isBluetoothConnected:(long long)arg1;
 + (_Bool)isBluetoothPoweredOn:(long long)arg1;
 + (id)sharedDiscoveryManager;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool bluetoothIsScanning; // @synthesize bluetoothIsScanning=_bluetoothIsScanning;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *discoveryQueue; // @synthesize discoveryQueue=_discoveryQueue;
 @property(retain, nonatomic) CBCentralManager *central; // @synthesize central=_central;
 @property(nonatomic) id <PPDiscoveryManagerDelegate> discoveryDelegate; // @synthesize discoveryDelegate=_discoveryDelegate;
 @property(nonatomic) long long signalLimitOverride; // @synthesize signalLimitOverride=_signalLimitOverride;
-- (void).cxx_destruct;
 - (void)centralManager:(id)arg1 didDiscoverPeripheral:(id)arg2 advertisementData:(id)arg3 RSSI:(id)arg4;
 - (void)centralManagerDidUpdateState:(id)arg1;
 - (void)updateFromBTState:(long long)arg1;

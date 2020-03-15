@@ -41,6 +41,7 @@
 }
 
 + (id)spBeaconKeyFromTestKey:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) WPDPendingCompletions *pendingTokenCompletions; // @synthesize pendingTokenCompletions=_pendingTokenCompletions;
 @property(retain) WPDPendingCompletions *pendingKeyCompletions; // @synthesize pendingKeyCompletions=_pendingKeyCompletions;
 @property(retain) NSDate *testBeaconKeysUpdated; // @synthesize testBeaconKeysUpdated=_testBeaconKeysUpdated;
@@ -68,7 +69,6 @@
 @property(readonly) __weak NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain) NSData *beaconKey; // @synthesize beaconKey=_beaconKey;
 @property BOOL isTestMode; // @synthesize isTestMode=_isTestMode;
-- (void).cxx_destruct;
 - (void)updateTestBeaconState:(id)arg1;
 - (void)updateTestBeaconExtended:(id)arg1;
 - (void)updateTestBeaconStatus:(id)arg1;

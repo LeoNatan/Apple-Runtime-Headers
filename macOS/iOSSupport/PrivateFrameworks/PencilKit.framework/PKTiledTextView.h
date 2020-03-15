@@ -14,9 +14,9 @@
     UIButton *_tapToRadarButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *tapToRadarButton; // @synthesize tapToRadarButton=_tapToRadarButton;
 @property(retain, nonatomic) PKAttachmentView *standInEndAttachmentView; // @synthesize standInEndAttachmentView=_standInEndAttachmentView;
-- (void).cxx_destruct;
 - (id)saveTempData:(id)arg1 name:(id)arg2;
 - (void)appendPath:(id)arg1 attachmentString:(id)arg2;
 - (void)_tapToRadarButtonTapped:(id)arg1;

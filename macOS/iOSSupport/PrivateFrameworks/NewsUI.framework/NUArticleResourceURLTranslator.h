@@ -16,8 +16,8 @@
     id <FCNewsAppConfigurationManager> _appConfigurationManager;
 }
 
-@property(readonly, nonatomic) id <FCNewsAppConfigurationManager> appConfigurationManager; // @synthesize appConfigurationManager=_appConfigurationManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <FCNewsAppConfigurationManager> appConfigurationManager; // @synthesize appConfigurationManager=_appConfigurationManager;
 - (id)defaultURLForEndpoint:(long long)arg1;
 - (long long)endpointForScheme:(id)arg1;
 - (id)translateFileURLForURL:(id)arg1;

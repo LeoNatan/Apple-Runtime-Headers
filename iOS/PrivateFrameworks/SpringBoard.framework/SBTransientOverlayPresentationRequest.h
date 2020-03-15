@@ -19,11 +19,11 @@
     SBTransientOverlayViewController *_viewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBTransientOverlayViewController *viewController; // @synthesize viewController=_viewController;
 @property(readonly, nonatomic) _Bool shouldDismissSiri; // @synthesize shouldDismissSiri=_shouldDismissSiri;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic, getter=isAnimated) _Bool animated; // @synthesize animated=_animated;
-- (void).cxx_destruct;
 - (id)_copyWithClass:(Class)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

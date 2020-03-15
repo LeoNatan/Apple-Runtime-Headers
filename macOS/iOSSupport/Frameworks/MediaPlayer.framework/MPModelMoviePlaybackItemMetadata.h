@@ -15,8 +15,8 @@
 }
 
 + (id)requiredProperties;
-@property(retain, nonatomic) MPModelMovie *movie; // @synthesize movie=_movie;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPModelMovie *movie; // @synthesize movie=_movie;
 - (void)_invalidateModelObjectPlaybackItemMetadata;
 - (id)storeAsset;
 - (id)playbackPosition;

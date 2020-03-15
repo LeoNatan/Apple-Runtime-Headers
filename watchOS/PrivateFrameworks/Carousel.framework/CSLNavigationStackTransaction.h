@@ -15,9 +15,9 @@
     id <UIViewControllerAnimatedTransitioning> _animator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <UIViewControllerAnimatedTransitioning> animator; // @synthesize animator=_animator;
 @property(retain, nonatomic) CSLViewControllerTransitionContext *transitionContext; // @synthesize transitionContext=_transitionContext;
-- (void).cxx_destruct;
 - (id)_customizedDescriptionProperties;
 - (_Bool)_canBeInterrupted;
 - (void)configureView:(id)arg1 inContainerView:(id)arg2 withFrame:(struct CGRect)arg3;

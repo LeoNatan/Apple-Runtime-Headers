@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_attributePrefix;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *attributePrefix; // @synthesize attributePrefix=_attributePrefix;
 @property(copy, nonatomic) NSString *elementPrefix; // @synthesize elementPrefix=_elementPrefix;
-- (void).cxx_destruct;
 
 @end
 

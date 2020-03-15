@@ -14,9 +14,9 @@
     NSMutableSet *_accumulatedIdentifiersForMomentNodesRelatedToDeletedPersons;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *accumulatedIdentifiersForMomentNodesRelatedToDeletedPersons; // @synthesize accumulatedIdentifiersForMomentNodesRelatedToDeletedPersons=_accumulatedIdentifiersForMomentNodesRelatedToDeletedPersons;
 @property(retain, nonatomic) NSMutableSet *accumulatedIdentifiersForMomentNodesRelatedToUpdatedPersons; // @synthesize accumulatedIdentifiersForMomentNodesRelatedToUpdatedPersons=_accumulatedIdentifiersForMomentNodesRelatedToUpdatedPersons;
-- (void).cxx_destruct;
 - (id)_momentNodesFromPersonNodes:(id)arg1;
 - (void)_accumulateMomentIdentifiersInto:(id)arg1 forPersonNodes:(id)arg2;
 - (void)accumulateDetailsForDeletedPersonNodes:(id)arg1;

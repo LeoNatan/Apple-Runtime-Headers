@@ -41,6 +41,7 @@
     struct CGPoint _location;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIInteractionProgress *interactionProgressForPresentation; // @synthesize interactionProgressForPresentation=_interactionProgressForPresentation;
 @property(retain, nonatomic) _UIStatesFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
 @property(nonatomic) __weak id <UIViewControllerPreviewing_Internal> previewingContext; // @synthesize previewingContext=_previewingContext;
@@ -62,7 +63,6 @@
 @property(nonatomic) __weak UIView *sourceView; // @synthesize sourceView=_sourceView;
 @property(nonatomic) struct CGPoint location; // @synthesize location=_location;
 @property(nonatomic) __weak id <UIPreviewInteractionControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)previewInteraction:(id)arg1 didUpdateCommitTransition:(double)arg2 ended:(_Bool)arg3;
 - (_Bool)previewInteractionShouldBegin:(id)arg1;
 - (void)previewInteractionDidCancel:(id)arg1;

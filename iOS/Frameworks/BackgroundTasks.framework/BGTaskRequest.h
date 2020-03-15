@@ -17,9 +17,9 @@
 }
 
 + (id)_requestFromActivity:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSDate *earliestBeginDate; // @synthesize earliestBeginDate=_earliestBeginDate;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_initWithIdentifier:(id)arg1;
 

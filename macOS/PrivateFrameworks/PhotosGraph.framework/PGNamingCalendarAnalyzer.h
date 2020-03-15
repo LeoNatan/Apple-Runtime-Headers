@@ -15,8 +15,8 @@
     PGGraphNamingProcessor *_processor;
 }
 
-@property(readonly, nonatomic) __weak PGGraphNamingProcessor *processor; // @synthesize processor=_processor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak PGGraphNamingProcessor *processor; // @synthesize processor=_processor;
 - (void)findCalendarMatchesFromEventUniversalStartDateTime:(id)arg1 eventUniversalEndDateTime:(id)arg2 personAttendees:(id)arg3 graph:(id)arg4 momentNodes:(id)arg5;
 - (void)runAnalysisWithProgressBlock:(CDUnknownBlockType)arg1;
 - (id)initWithNamingProcessor:(id)arg1;

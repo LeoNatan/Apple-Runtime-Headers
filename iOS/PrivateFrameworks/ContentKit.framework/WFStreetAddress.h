@@ -34,6 +34,7 @@
 + (id)streetAddressWithTextCheckingResult:(id)arg1;
 + (_Bool)stringContainsStreetAddresses:(id)arg1;
 + (id)streetAddressesInString:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) NSString *isoCountryCode; // @synthesize isoCountryCode=_isoCountryCode;
 @property(readonly, nonatomic) NSString *country; // @synthesize country=_country;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) NSString *city; // @synthesize city=_city;
 @property(readonly, nonatomic) NSString *subLocality; // @synthesize subLocality=_subLocality;
 @property(readonly, nonatomic) CLPlacemark *placemark; // @synthesize placemark=_placemark;
-- (void).cxx_destruct;
 - (id)wfSerializedRepresentation;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

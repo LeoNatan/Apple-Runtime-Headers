@@ -23,11 +23,11 @@
 }
 
 + (id)xpcInterface;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *calloutQueue; // @synthesize calloutQueue=_calloutQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) __weak BBObserver *observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (void)getObserverDebugInfo:(CDUnknownBlockType)arg1;
 - (void)noteServerReceivedResponseForBulletin:(id)arg1;
 - (void)updateSectionParameters:(id)arg1 forSectionID:(id)arg2;

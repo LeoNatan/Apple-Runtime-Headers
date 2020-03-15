@@ -20,13 +20,13 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 @property(retain, nonatomic) NSString *subject; // @synthesize subject=_subject;
 @property(retain, nonatomic) NSArray *ccAddresses; // @synthesize ccAddresses=_ccAddresses;
 @property(retain, nonatomic) NSArray *toAddresses; // @synthesize toAddresses=_toAddresses;
 @property(retain, nonatomic) EDAMNote *note; // @synthesize note=_note;
 @property(retain, nonatomic) NSString *guid; // @synthesize guid=_guid;
-- (void).cxx_destruct;
 
 @end
 

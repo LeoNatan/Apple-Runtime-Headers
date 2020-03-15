@@ -16,11 +16,11 @@
     NSImageView *_iconImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(retain) NSTextField *labelTextField; // @synthesize labelTextField=_labelTextField;
 @property(retain) NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
 @property(retain) NSImageView *checkmarkImageView; // @synthesize checkmarkImageView=_checkmarkImageView;
-- (void).cxx_destruct;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 - (id)init;

@@ -18,9 +18,9 @@
     double _highlightedAlpha;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double highlightedAlpha; // @synthesize highlightedAlpha=_highlightedAlpha;
 @property(nonatomic) double unhighlightedAlpha; // @synthesize unhighlightedAlpha=_unhighlightedAlpha;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)setHighlighted:(_Bool)arg1;

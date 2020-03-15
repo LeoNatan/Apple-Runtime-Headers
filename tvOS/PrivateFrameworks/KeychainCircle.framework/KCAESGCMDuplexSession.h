@@ -25,6 +25,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)sessionAsReceiver:(id)arg1 context:(unsigned long long)arg2;
 + (id)sessionAsSender:(id)arg1 context:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property CDStruct_60067b7e *receive; // @synthesize receive=_receive;
 @property CDStruct_60067b7e *send; // @synthesize send=_send;
 @property(retain) NSData *secret; // @synthesize secret=_secret;
@@ -33,7 +34,6 @@
 @property unsigned long long epoch; // @synthesize epoch=_epoch;
 @property unsigned long long piggybackingVersion; // @synthesize piggybackingVersion=_piggybackingVersion;
 @property(retain) NSString *pairingUUID; // @synthesize pairingUUID=_pairingUUID;
-- (void).cxx_destruct;
 - (void)finalize;
 - (id)decryptAndVerify:(id)arg1 error:(id *)arg2;
 - (id)encrypt:(id)arg1 error:(id *)arg2;

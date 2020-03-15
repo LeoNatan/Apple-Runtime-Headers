@@ -18,12 +18,12 @@
     NSString *_openActivityTargetApplicationIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *openActivityTargetApplicationIdentifier; // @synthesize openActivityTargetApplicationIdentifier=_openActivityTargetApplicationIdentifier;
 @property(retain, nonatomic) id <_UIDICActivityViewControllerDelegate> documentInteractionActivityDelegateRetained; // @synthesize documentInteractionActivityDelegateRetained=_documentInteractionActivityDelegateRetained;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(nonatomic) _Bool isPerformingActivity; // @synthesize isPerformingActivity=_isPerformingActivity;
 @property(nonatomic) __weak UIDocumentInteractionController<_UIDICActivityViewControllerDelegate> *documentInteractionActivityDelegate; // @synthesize documentInteractionActivityDelegate=_documentInteractionActivityDelegate;
-- (void).cxx_destruct;
 - (void)_handleDidFinishPerformingActivityType:(id)arg1 completed:(_Bool)arg2 resultItems:(id)arg3 activityError:(id)arg4;
 - (void)_willPerformInServiceActivityType:(id)arg1 activitySpecificMetadata:(id)arg2;
 - (void)_performActivity:(id)arg1;

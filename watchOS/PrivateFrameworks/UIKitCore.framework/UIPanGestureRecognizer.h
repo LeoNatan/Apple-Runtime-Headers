@@ -38,11 +38,11 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)_shouldDefaultToTouches;
 + (float)_defaultHysteresis;
+- (void).cxx_destruct;
 @property(readonly, getter=_previousVelocitySample) UIPanGestureVelocitySample *_previousVelocitySample; // @synthesize _previousVelocitySample;
 @property(readonly, getter=_velocitySample) UIPanGestureVelocitySample *_velocitySample; // @synthesize _velocitySample;
 @property(nonatomic) unsigned int maximumNumberOfTouches; // @synthesize maximumNumberOfTouches=_maximumNumberOfTouches;
 @property(nonatomic) unsigned int minimumNumberOfTouches; // @synthesize minimumNumberOfTouches=_minimumNumberOfTouches;
-- (void).cxx_destruct;
 - (void)_updateDigitizerLocationWithEvent:(id)arg1;
 - (struct CGPoint)_digitizerLocation;
 - (void)_ignoreTouches:(id)arg1 forEvent:(id)arg2;
@@ -68,7 +68,7 @@
 - (float)_translationDistanceInSceneInSelfAxis:(struct CGPoint)arg1;
 - (void)_centroidMovedTo:(struct CGPoint)arg1 atTime:(double)arg2;
 - (struct CGPoint)_adjustSceneReferenceLocation:(struct CGPoint)arg1;
-- (struct CGPoint)_shiftPanLocationToNewSceneReferenceLocation:(struct CGPoint)arg1 lockingToAxis:(int)arg2;
+- (struct CGPoint)_shiftPanLocationToNewSceneReferenceLocation:(struct CGPoint)arg1 lockingToAxis:(unsigned int)arg2;
 - (struct UIOffset)_offsetInViewFromSceneReferenceLocation:(struct CGPoint)arg1 toSceneReferenceLocation:(struct CGPoint)arg2;
 - (void)_touchesListChangedFrom:(id)arg1 to:(id)arg2;
 - (struct CGPoint)velocityInView:(id)arg1;

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_alertActionText;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *alertActionText; // @synthesize alertActionText=_alertActionText;
 @property(readonly, copy, nonatomic) NSString *alertBody; // @synthesize alertBody=_alertBody;
 @property(readonly, copy, nonatomic) NSString *alertTitle; // @synthesize alertTitle=_alertTitle;
 @property(readonly, copy, nonatomic) NSArray *urlArguments; // @synthesize urlArguments=_urlArguments;
-- (void).cxx_destruct;
 - (BOOL)_parsePayloadDictionary:(id)arg1 error:(id *)arg2;
 - (id)initWithNotificationPayloadDictionary:(id)arg1 error:(id *)arg2;
 

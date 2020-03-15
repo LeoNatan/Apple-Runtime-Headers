@@ -17,11 +17,11 @@
 }
 
 + (id)stringDrawingInfoWithString:(id)arg1 color:(id)arg2 font:(id)arg3 size:(struct CGSize)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(retain, nonatomic) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 
 @end
 

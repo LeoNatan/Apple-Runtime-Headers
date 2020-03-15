@@ -19,6 +19,7 @@
     NSDictionary *_sceneIdentifiersByMomentNodeIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *sceneIdentifiersByMomentNodeIdentifier; // @synthesize sceneIdentifiersByMomentNodeIdentifier=_sceneIdentifiersByMomentNodeIdentifier;
 @property(retain) NSArray *prefetchedAssets; // @synthesize prefetchedAssets=_prefetchedAssets;
 @property(retain) NSDate *referenceDate; // @synthesize referenceDate=_referenceDate;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSArray *moodHistory; // @synthesize moodHistory=_moodHistory;
 @property(nonatomic) unsigned long long memorySubcategory; // @synthesize memorySubcategory=_memorySubcategory;
 @property(nonatomic) unsigned long long memoryCategory; // @synthesize memoryCategory=_memoryCategory;
-- (void).cxx_destruct;
 
 @end
 

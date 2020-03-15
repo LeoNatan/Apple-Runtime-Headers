@@ -7,13 +7,12 @@
 #import <UIKit/UIViewController.h>
 
 #import <VideosUI/TVShelfViewLayoutDelegate-Protocol.h>
-#import <VideosUI/UICollectionViewDataSource-Protocol.h>
 #import <VideosUI/UICollectionViewDelegate-Protocol.h>
 
 @class NSIndexPath, NSString, UICollectionView, UIView, VUIShelfView;
 
 __attribute__((visibility("hidden")))
-@interface VUIShelfViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, TVShelfViewLayoutDelegate>
+@interface VUIShelfViewController : UIViewController <UICollectionViewDelegate, TVShelfViewLayoutDelegate>
 {
     _Bool _shouldUpdateBeforeLayout;
     UICollectionView *_collectionView;
@@ -23,12 +22,12 @@ __attribute__((visibility("hidden")))
     NSIndexPath *_focusedIndexPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *focusedIndexPath; // @synthesize focusedIndexPath=_focusedIndexPath;
 @property(retain, nonatomic) VUIShelfView *containerView; // @synthesize containerView=_containerView;
 @property(readonly, nonatomic) long long gridStyle; // @synthesize gridStyle=_gridStyle;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 - (void)_updateCollectionViewLayout:(_Bool)arg1;
 - (void)_snapTargetContentOffset:(inout struct CGPoint *)arg1 toItemIndexPath:(id)arg2 atItemOffset:(struct CGPoint)arg3;
 - (id)_findSnappingItemFromContentOffset:(inout struct CGPoint *)arg1 withVelocity:(struct CGPoint)arg2;
@@ -40,8 +39,6 @@ __attribute__((visibility("hidden")))
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
-- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
-- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)loadView;
 - (id)initWithGridStyle:(long long)arg1;
 

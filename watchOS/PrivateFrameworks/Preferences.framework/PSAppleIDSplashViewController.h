@@ -37,9 +37,9 @@
     _Bool _shouldShowCreateAppleIDButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowCreateAppleIDButton; // @synthesize shouldShowCreateAppleIDButton=_shouldShowCreateAppleIDButton;
 @property(nonatomic, setter=setPresentedModally:) _Bool isPresentedModally; // @synthesize isPresentedModally=_isPresentedModally;
-- (void).cxx_destruct;
 - (void)_cancelPasswordDelegateIfNecessary;
 - (void)context:(id)arg1 needsPasswordWithCompletion:(CDUnknownBlockType)arg2;
 - (void)remoteUIControllerDidDismiss:(id)arg1;

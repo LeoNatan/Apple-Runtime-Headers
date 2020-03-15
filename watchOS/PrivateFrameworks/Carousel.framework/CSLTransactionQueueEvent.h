@@ -17,10 +17,10 @@
 }
 
 + (id)eventWithName:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_voucher> *voucher; // @synthesize voucher=_voucher;
 @property(nonatomic) _Bool eventHandlerCalled; // @synthesize eventHandlerCalled=_eventHandlerCalled;
 @property(readonly, nonatomic, getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_eventHandlerCalled;
 - (void)_begin;

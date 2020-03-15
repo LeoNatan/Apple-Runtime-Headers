@@ -16,11 +16,11 @@
     CalDAVPrincipalSearchPropertySet *_serverSupportSet;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CalDAVPrincipalSearchPropertySet *serverSupportSet; // @synthesize serverSupportSet=_serverSupportSet;
 @property(retain, nonatomic) NSSet *searchStrings; // @synthesize searchStrings=_searchStrings;
 @property(retain, nonatomic) NSSet *searchTypes; // @synthesize searchTypes=_searchTypes;
 @property(retain, nonatomic) id searchContext; // @synthesize searchContext=_searchContext;
-- (void).cxx_destruct;
 - (id)searchItems;
 - (id)extraAttributes;
 - (id)initWithSearchStrings:(id)arg1 searchTypes:(id)arg2 serverSupportSet:(id)arg3 atURL:(id)arg4;

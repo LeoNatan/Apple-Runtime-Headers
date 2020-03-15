@@ -20,8 +20,8 @@
 + (id)_allDayLocalizedString;
 + (id)_noonLocalizedString;
 + (double)xMidpointForCalendarDot;
-@property(nonatomic) _Bool showWeekNumber; // @synthesize showWeekNumber=_showWeekNumber;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool showWeekNumber; // @synthesize showWeekNumber=_showWeekNumber;
 - (void)setNeedsDisplay;
 @property(readonly, nonatomic) _Bool reusable;
 @property(nonatomic) _Bool indentsForDots;

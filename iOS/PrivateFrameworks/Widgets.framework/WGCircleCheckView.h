@@ -14,9 +14,9 @@
     WGCheckView *_checkView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_checkView) WGCheckView *checkView; // @synthesize checkView=_checkView;
 @property(retain, nonatomic, getter=_circleView) UIImageView *circleView; // @synthesize circleView=_circleView;
-- (void).cxx_destruct;
 - (void)_setFrozen:(_Bool)arg1;
 - (_Bool)_isFrozen;
 - (void)_setChecked:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;

@@ -22,13 +22,13 @@
     NSLock *_localLocationLock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLock *localLocationLock; // @synthesize localLocationLock=_localLocationLock;
 @property(retain, nonatomic) WFLocation *locked_localLocation; // @synthesize locked_localLocation=_locked_localLocation;
 @property(retain, nonatomic) NWKForecastManager *forecastManager; // @synthesize forecastManager=_forecastManager;
 @property(nonatomic) __weak id <NWKLocalLocationMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned int loggingCategory; // @synthesize loggingCategory=_loggingCategory;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *operationQueue; // @synthesize operationQueue=_operationQueue;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) WFLocation *localLocation;
 - (void)manager:(id)arg1 updatedTimeZone:(id)arg2 forLocation:(id)arg3;
 - (void)manager:(id)arg1 updatedLocalLocationFrom:(id)arg2 to:(id)arg3;

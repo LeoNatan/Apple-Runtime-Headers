@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSString *_environment;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *environment; // @synthesize environment=_environment;
 @property(retain, nonatomic) NSString *containerName; // @synthesize containerName=_containerName;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

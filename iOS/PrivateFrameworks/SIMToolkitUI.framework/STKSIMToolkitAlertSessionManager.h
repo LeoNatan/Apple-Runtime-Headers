@@ -26,9 +26,9 @@
     STKSIMToolkitAlertSession *_currentSession;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_queue_setCurrentSession:) STKSIMToolkitAlertSession *currentSession; // @synthesize currentSession=_currentSession;
 @property(retain, nonatomic, setter=_setListItemsProvider:) id <STKTelephonyListItemsProvider> _listItemsProvider; // @synthesize _listItemsProvider;
-- (void).cxx_destruct;
 - (void)_queue_startListening;
 - (id)_newSessionBehaviorFromOptions:(id)arg1;
 - (id)_listItemsFromCTItems:(id)arg1;

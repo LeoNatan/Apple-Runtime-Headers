@@ -26,6 +26,7 @@
 }
 
 + (id)appIconFetchQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) REUIDonatedElementProperties *properties; // @synthesize properties=_properties;
 @property(retain, nonatomic) REUISiriShortcutPerformingViewController *confirmationViewController; // @synthesize confirmationViewController=_confirmationViewController;
 @property(retain, nonatomic) REBlurredContainerController *containerViewController; // @synthesize containerViewController=_containerViewController;
@@ -36,7 +37,6 @@
 @property(nonatomic) __weak id <REUISiriActionsPerformerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool forceExecution; // @synthesize forceExecution=_forceExecution;
 @property(readonly, nonatomic) UIImage *appIcon; // @synthesize appIcon=_appIcon;
-- (void).cxx_destruct;
 - (void)_reset;
 - (void)_handleDismissAnimation:(unsigned int)arg1;
 - (void)_handleConfirm;

@@ -25,6 +25,7 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *ExtendedProperty; // @synthesize ExtendedProperty=_ExtendedProperty;
 @property(retain, nonatomic) EWSEffectiveRightsType *EffectiveRights; // @synthesize EffectiveRights=_EffectiveRights;
 @property(nonatomic) BOOL ChildFolderCountSpecified; // @synthesize ChildFolderCountSpecified=_ChildFolderCountSpecified;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSString *FolderClass; // @synthesize FolderClass=_FolderClass;
 @property(retain, nonatomic) EWSFolderIdType *ParentFolderId; // @synthesize ParentFolderId=_ParentFolderId;
 @property(retain, nonatomic) EWSFolderIdType *FolderId; // @synthesize FolderId=_FolderId;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

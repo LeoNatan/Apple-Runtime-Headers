@@ -13,8 +13,8 @@
     SFSession *_session;
 }
 
-@property(retain) SFSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
+@property(retain) SFSession *session; // @synthesize session=_session;
 - (void)connectToNearbyDevice:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)invalidate;
 - (void)sendResponse:(id)arg1;

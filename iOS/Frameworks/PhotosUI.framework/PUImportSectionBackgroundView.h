@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UIView *_bottomStrokeView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsBottomStrokeViewUpdate; // @synthesize needsBottomStrokeViewUpdate=_needsBottomStrokeViewUpdate;
 @property(retain, nonatomic) UIView *bottomStrokeView; // @synthesize bottomStrokeView=_bottomStrokeView;
 @property(retain, nonatomic) UIColor *bottomStrokeColor; // @synthesize bottomStrokeColor=_bottomStrokeColor;
 @property(nonatomic) double strokeWidth; // @synthesize strokeWidth=_strokeWidth;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (_Bool)needsStroke;
 - (void)updateBottomStrokeViewIfNeeded;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     long long _style;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKUIComposeTextFieldListViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long composeReviewStyle; // @synthesize composeReviewStyle=_style;
-- (void).cxx_destruct;
 - (void)_updateValidity;
 - (void)composeTextFieldValidityChanged:(id)arg1;
 - (id)textForFieldAtIndex:(unsigned long long)arg1;

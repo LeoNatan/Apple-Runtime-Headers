@@ -20,6 +20,7 @@
     SXFormattedText *_notes;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) SXFormattedText *notes; // @synthesize notes=_notes;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(copy, nonatomic) NSString *location; // @synthesize location=_location;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(copy, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, copy, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)initWithStartDate:(id)arg1;
 
 @end

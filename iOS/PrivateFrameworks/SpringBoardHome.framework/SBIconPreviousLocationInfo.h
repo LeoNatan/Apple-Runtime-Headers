@@ -14,9 +14,9 @@
     NSString *_folderName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *folderName; // @synthesize folderName=_folderName;
 @property(nonatomic) __weak SBFolder *folder; // @synthesize folder=_folder;
-- (void).cxx_destruct;
 
 @end
 

@@ -23,10 +23,10 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ASAuthorizationControllerPresentationContextProviding> presentationContextProvider; // @synthesize presentationContextProvider=_presentationContextProvider;
 @property(nonatomic) __weak id <ASAuthorizationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSArray *authorizationRequests; // @synthesize authorizationRequests=_authorizationRequests;
-- (void).cxx_destruct;
 - (void)authorization:(id)arg1 presentViewController:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)authorization:(id)arg1 didCompleteWithError:(id)arg2;
 - (void)authorization:(id)arg1 didCompleteWithHTTPResponse:(id)arg2 httpBody:(id)arg3;

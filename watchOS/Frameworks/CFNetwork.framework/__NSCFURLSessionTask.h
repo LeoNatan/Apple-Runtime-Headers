@@ -31,6 +31,8 @@
     NSError *_error;
     double _startTime;
     NSData *__TCPConnectionMetadata;
+    unsigned short __TLSMinimumSupportedProtocolVersion;
+    unsigned short __TLSMaximumSupportedProtocolVersion;
     unsigned short _TLSNegotiatedCipherSuite;
     float _priorityHint;
     long long _priorityValue;
@@ -93,6 +95,7 @@
     _Bool _requiresSecureHTTPSProxyConnection;
     _Bool _preventsAppSSO;
     _Bool _appSSOFallback;
+    _Bool _appleIDContextRedirect;
     _Bool _shouldPipelineHTTP;
     _Bool _shouldUsePipelineHeuristics;
     _Bool _shouldSkipPipelineProbe;
@@ -154,6 +157,8 @@
 - (void)set_trailers:(id)arg1;
 - (id)_trailers;
 - (unsigned short)_TLSNegotiatedCipherSuite;
+- (unsigned short)_TLSMaximumSupportedProtocolVersion;
+- (unsigned short)_TLSMinimumSupportedProtocolVersion;
 - (void)set_TCPConnectionMetadata:(id)arg1;
 - (id)_TCPConnectionMetadata;
 - (void)set_DuetActivityProperties:(id)arg1;
@@ -225,6 +230,8 @@
 - (struct _CFHSTSPolicy *)_cfHSTS;
 - (void)set_pathToDownloadTaskFile:(id)arg1;
 - (id)_pathToDownloadTaskFile;
+- (void)set_appleIDContextRedirect:(_Bool)arg1;
+- (_Bool)_appleIDContextRedirect;
 - (void)set_appSSOFallback:(_Bool)arg1;
 - (_Bool)_appSSOFallback;
 - (void)set_preventsAppSSO:(_Bool)arg1;
@@ -332,6 +339,8 @@
 - (id)_boundInterfaceIdentifier;
 - (void)set_boundInterfaceIdentifier:(id)arg1;
 - (void)set_TLSNegotiatedCipherSuite:(unsigned short)arg1;
+- (void)set_TLSMaximumSupportedProtocolVersion:(unsigned short)arg1;
+- (void)set_TLSMinimumSupportedProtocolVersion:(unsigned short)arg1;
 - (double)_timeWindowDuration;
 - (void)set_timeWindowDuration:(double)arg1;
 - (double)_timeWindowDelay;

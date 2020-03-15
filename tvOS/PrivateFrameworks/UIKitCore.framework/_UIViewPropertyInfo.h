@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)viewPropertyInfoWithValue:(id)arg1 previousValue:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <UIVectorOperatable> value; // @synthesize value=_value;
 @property(retain, nonatomic) id <UIVectorOperatable> previousValue; // @synthesize previousValue=_previousValue;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

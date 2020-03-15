@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)responseStatusForStatusCodeNumber:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) _Bool isPuntedError; // @synthesize isPuntedError=_isPuntedError;
 @property(readonly) _Bool shouldFileRadar; // @synthesize shouldFileRadar=_shouldFileRadar;
 @property(readonly) _Bool isError; // @synthesize isError=_isError;
 @property(readonly) _Bool isRecoverable; // @synthesize isRecoverable=_isRecoverable;
 @property(readonly, copy) NSString *consoleDescription; // @synthesize consoleDescription=_consoleDescription;
 @property(readonly) long long statusCode; // @synthesize statusCode=_statusCode;
-- (void).cxx_destruct;
 @property(readonly) _Bool isGenericError;
 @property(readonly) _Bool isValidationError;
 @property(readonly) _Bool isAuthenticationError;

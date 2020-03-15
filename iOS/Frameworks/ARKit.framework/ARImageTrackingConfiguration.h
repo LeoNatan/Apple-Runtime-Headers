@@ -18,13 +18,13 @@
 + (_Bool)supportsFrameSemantics:(unsigned long long)arg1;
 + (_Bool)isSupported;
 + (id)new;
+- (void).cxx_destruct;
 @property(nonatomic) long long maximumNumberOfTrackedImages; // @synthesize maximumNumberOfTrackedImages=_maximumNumberOfTrackedImages;
 @property(copy, nonatomic) NSSet *trackingImages; // @synthesize trackingImages=_trackingImages;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (void)createTechniquesWithParallelTechniques:(id)arg1 serialTechniques:(id)arg2;
+- (void)createTechniques:(id)arg1;
 - (id)init;
 
 // Remaining properties

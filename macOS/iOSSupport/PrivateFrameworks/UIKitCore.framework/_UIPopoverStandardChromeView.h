@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 + (struct UIEdgeInsets)contentViewInsets;
 + (double)arrowBase;
 + (double)arrowHeight;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *rightCapRimShadowView; // @synthesize rightCapRimShadowView=_rightCapRimShadowView;
 @property(readonly, nonatomic) UIView *leftCapRimShadowView; // @synthesize leftCapRimShadowView=_leftCapRimShadowView;
 @property(readonly, nonatomic) UIView *arrowRimShadowView; // @synthesize arrowRimShadowView=_arrowRimShadowView;
@@ -49,7 +50,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak UIView *viewToMaskWhenContentExtendsOverArrow; // @synthesize viewToMaskWhenContentExtendsOverArrow;
 @property(nonatomic, getter=isDebugModeEnabled) BOOL debugModeEnabled; // @synthesize debugModeEnabled=_debugMode;
 @property(nonatomic) BOOL useShortMode; // @synthesize useShortMode;
-- (void).cxx_destruct;
 - (void)setArrowVisible:(BOOL)arg1 animated:(BOOL)arg2;
 @property(nonatomic, getter=isArrowVisible) BOOL arrowVisible;
 @property(copy, nonatomic) UIColor *arrowBackgroundColor;

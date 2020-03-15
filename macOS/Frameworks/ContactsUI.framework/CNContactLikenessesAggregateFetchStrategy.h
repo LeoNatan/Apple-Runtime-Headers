@@ -17,8 +17,8 @@
 
 + (id)aggregateContactLikenessModelFromModels:(id)arg1;
 + (id)contactLikenessModelObservablesFromFetchStrategies:(id)arg1;
-@property(retain, nonatomic) NSArray *fetchStrategies; // @synthesize fetchStrategies=_fetchStrategies;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *fetchStrategies; // @synthesize fetchStrategies=_fetchStrategies;
 @property(readonly, copy) NSString *description;
 - (id)contactLikenessesModel;
 - (id)initWithFetchStrategies:(id)arg1;

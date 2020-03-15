@@ -19,11 +19,11 @@
     id <AKAuthorizationPaneViewControllerDelegate> _paneDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AKAuthorizationPaneViewControllerDelegate> paneDelegate; // @synthesize paneDelegate=_paneDelegate;
 @property(nonatomic) __weak id <AKAuthorizationContainerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) AKAuthorizationPresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
 @property(retain, nonatomic) UIViewController *rootViewController; // @synthesize rootViewController=_rootViewController;
-- (void).cxx_destruct;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)_setPaneDelegate:(id)arg1 forViewController:(id)arg2;
 - (void)_clearPaneDelegateForViewController:(id)arg1;

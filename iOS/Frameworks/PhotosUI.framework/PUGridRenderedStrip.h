@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     struct _NSRange _visualItemRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *_sideExtendedContentView; // @synthesize _sideExtendedContentView=__sideExtendedContentView;
 @property(nonatomic, setter=_setNeedsRendering:) _Bool _needsRendering; // @synthesize _needsRendering=__needsRendering;
 @property(readonly, nonatomic) UIView *topContentView; // @synthesize topContentView=_topContentView;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGSize interItemSpacing; // @synthesize interItemSpacing=_interItemSpacing;
 @property(nonatomic) double itemContentScale; // @synthesize itemContentScale=_itemContentScale;
 @property(nonatomic) struct CGSize itemSize; // @synthesize itemSize=_itemSize;
-- (void).cxx_destruct;
 - (_Bool)_disableRasterizeInAnimations;
 - (void)applyLayoutAttributes:(id)arg1;
 - (void)_updateExtendedContents;

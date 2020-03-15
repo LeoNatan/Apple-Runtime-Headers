@@ -11,7 +11,7 @@
 #import <LocalAuthenticationUI/LAUIDelegate-Protocol.h>
 #import <LocalAuthenticationUI/LAUIUserPasswordFieldRemoteProtocol-Protocol.h>
 
-@class LAContext, LAUIAuthenticationSheetWindow, LAUIUserPasswordViewController, NSButton, NSColor, NSData, NSDictionary, NSError, NSImageView, NSMutableArray, NSMutableDictionary, NSPopUpButton, NSString, NSTextField, NSView, NSWindow;
+@class LAContext, LAUIAuthenticationSheetWindow, LAUIUserPasswordViewController, NSButton, NSColor, NSData, NSDictionary, NSError, NSImageView, NSMutableArray, NSMutableDictionary, NSPopUpButton, NSString, NSTextField, NSView, NSWindow, NSXPCConnection;
 @protocol AuthenticationHintsProvider, LAUIAuthenticationSheetDelegate;
 
 @interface LAUIAuthenticationSheetController : NSViewController <LAUIUserPasswordFieldRemoteProtocol, LAUIDelegate, LAUIAuthenticationSheetWindowDelegate, AuthenticationHintsDelegate>
@@ -29,6 +29,8 @@
     BOOL _isKeyWindow;
     id <AuthenticationHintsProvider> _watchProvider;
     id <AuthenticationHintsProvider> _smartCardProvider;
+    NSXPCConnection *_watchConnection;
+    NSXPCConnection *_smartCardConnection;
     BOOL _smartCardActivated;
     BOOL _smartCardInserted;
     BOOL _watchActivated;
@@ -84,6 +86,7 @@
     NSButton *_usePasswordButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSButton *usePasswordButton; // @synthesize usePasswordButton=_usePasswordButton;
 @property(nonatomic) __weak NSButton *unlockButton; // @synthesize unlockButton=_unlockButton;
 @property(nonatomic) __weak NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
@@ -119,7 +122,6 @@
 @property(nonatomic, getter=isUserNameFieldEnabled) BOOL enableUserNameField; // @synthesize enableUserNameField=_enableUserNameField;
 @property(nonatomic) BOOL canAuthenticateAsAnyAdmin; // @synthesize canAuthenticateAsAnyAdmin=_canAuthenticateAsAnyAdmin;
 @property(nonatomic) __weak id <LAUIAuthenticationSheetDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)_wasCanceledOnWatch:(id)arg1;
 - (void)event:(long long)arg1 eventHints:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (id)_longNameForShortName:(id)arg1;
@@ -146,7 +148,7 @@
 - (void)windowDidBecomeKey:(id)arg1;
 - (void)updateSheetIcon;
 - (void)updateTitles;
-- (id)_createProviderWithServiceName:(id)arg1 options:(unsigned long long)arg2;
+- (id)_createProviderWithServiceName:(id)arg1 options:(unsigned long long)arg2 connection:(id *)arg3;
 @property(retain, nonatomic) NSString *usePasswordButtonTitle; // @synthesize usePasswordButtonTitle=_usePasswordButtonTitle;
 @property(retain, nonatomic) NSString *unlockButtonTitle; // @synthesize unlockButtonTitle=_unlockButtonTitle;
 @property(retain, nonatomic) NSColor *authSubTitleColor; // @synthesize authSubTitleColor=_authSubTitleColor;

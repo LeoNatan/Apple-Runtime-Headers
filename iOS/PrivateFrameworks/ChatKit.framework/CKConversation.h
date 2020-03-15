@@ -21,6 +21,7 @@
     _Bool _hasLoadedAllMessages;
     _Bool _isReportedAsSpam;
     _Bool _wasKnownSender;
+    _Bool _hasSetWasKnownSender;
     _Bool _holdWasKnownSenderUpdates;
     int _wasDetectedAsSMSSpam;
     int _wasDetectedAsiMessageSpam;
@@ -55,7 +56,9 @@
 + (_Bool)_sms_canSendMessageWithMediaObjectTypes:(int *)arg1 phoneNumber:(id)arg2 simID:(id)arg3 errorCode:(long long *)arg4;
 + (long long)_sms_maxAttachmentCountForPhoneNumber:(id)arg1 simID:(id)arg2;
 + (_Bool)_sms_mediaObjectPassesRestriction:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool holdWasKnownSenderUpdates; // @synthesize holdWasKnownSenderUpdates=_holdWasKnownSenderUpdates;
+@property(nonatomic) _Bool hasSetWasKnownSender; // @synthesize hasSetWasKnownSender=_hasSetWasKnownSender;
 @property(nonatomic) _Bool wasKnownSender; // @synthesize wasKnownSender=_wasKnownSender;
 @property(retain, nonatomic) NSDate *dateLastViewed; // @synthesize dateLastViewed=_dateLastViewed;
 @property(retain, nonatomic) NSNumber *businessConversation; // @synthesize businessConversation=_businessConversation;
@@ -71,8 +74,9 @@
 @property(nonatomic) unsigned int limitToLoad; // @synthesize limitToLoad=_limitToLoad;
 @property(retain, nonatomic) IMChat *chat; // @synthesize chat=_chat;
 @property(copy, nonatomic) NSArray *pendingHandles; // @synthesize pendingHandles=_pendingHandles;
-- (void).cxx_destruct;
+- (id)contactNameByHandle;
 - (_Bool)isBlockedByCommunicationLimits;
+- (_Bool)_unknownFilteringEnabled;
 - (void)updateWasKnownSender;
 - (_Bool)isKnownSender;
 - (id)copyForPendingConversation;

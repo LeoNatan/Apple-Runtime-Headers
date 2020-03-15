@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSSet *_removedCanonicalIDs;
 }
 
-@property(copy, nonatomic) NSSet *removedCanonicalIDs; // @synthesize removedCanonicalIDs=_removedCanonicalIDs;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSSet *removedCanonicalIDs; // @synthesize removedCanonicalIDs=_removedCanonicalIDs;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

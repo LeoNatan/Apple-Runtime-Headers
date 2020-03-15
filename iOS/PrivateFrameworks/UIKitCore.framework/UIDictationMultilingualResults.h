@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_dominantLanguage;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *dominantLanguage; // @synthesize dominantLanguage=_dominantLanguage;
 @property(copy, nonatomic) NSArray *phrases; // @synthesize phrases=_phrases;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

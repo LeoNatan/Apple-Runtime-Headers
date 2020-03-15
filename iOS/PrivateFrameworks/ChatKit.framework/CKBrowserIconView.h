@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_pieImageForPercentComplete:(double)arg1 size:(struct CGSize)arg2 center:(struct CGPoint)arg3 radius:(double)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(nonatomic) double animationEndPercentComplete; // @synthesize animationEndPercentComplete=_animationEndPercentComplete;
 @property(nonatomic) double animationStartPercentComplete; // @synthesize animationStartPercentComplete=_animationStartPercentComplete;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool animating; // @synthesize animating=_animating;
 @property(nonatomic) double percentComplete; // @synthesize percentComplete=_percentComplete;
 @property(retain, nonatomic) UIImage *iconImage; // @synthesize iconImage=_iconImage;
-- (void).cxx_destruct;
 - (void)_onDisplayLink:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;

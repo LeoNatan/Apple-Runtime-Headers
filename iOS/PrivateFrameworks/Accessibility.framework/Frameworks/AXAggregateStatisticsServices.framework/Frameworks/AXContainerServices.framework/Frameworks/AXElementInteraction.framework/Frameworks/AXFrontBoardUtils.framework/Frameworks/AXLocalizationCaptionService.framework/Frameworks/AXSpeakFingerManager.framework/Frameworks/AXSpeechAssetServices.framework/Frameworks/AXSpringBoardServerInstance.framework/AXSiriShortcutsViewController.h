@@ -17,9 +17,9 @@
     APUIShortLookViewController *_shortLookViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) APUIShortLookViewController *shortLookViewController; // @synthesize shortLookViewController=_shortLookViewController;
 @property(nonatomic) __weak id <AXSiriShortcutsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)shortLookViewController:(id)arg1 didCompleteActionWithResult:(long long)arg2;
 - (void)shortLookViewController:(id)arg1 didDismissLongLookWithReason:(long long)arg2 actionCompleted:(_Bool)arg3 shouldClearAction:(_Bool)arg4;

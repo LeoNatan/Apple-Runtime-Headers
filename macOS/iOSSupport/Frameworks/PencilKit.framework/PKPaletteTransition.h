@@ -21,6 +21,7 @@
     UIViewFloatAnimatableProperty *_expandedToCollapsedAnimatableProperty;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewFloatAnimatableProperty *expandedToCollapsedAnimatableProperty; // @synthesize expandedToCollapsedAnimatableProperty=_expandedToCollapsedAnimatableProperty;
 @property(retain, nonatomic) UIViewFloatAnimatableProperty *rotationAngleAnimatableProperty; // @synthesize rotationAngleAnimatableProperty=_rotationAngleAnimatableProperty;
 @property(retain, nonatomic) NSArray *_remainingTransitionStages; // @synthesize _remainingTransitionStages=__remainingTransitionStages;
@@ -29,7 +30,6 @@
 @property(nonatomic, setter=_setTargetVisualState:) long long targetVisualState; // @synthesize targetVisualState=_targetVisualState;
 @property(readonly, nonatomic) long long initialVisualState; // @synthesize initialVisualState=_initialVisualState;
 @property(nonatomic) __weak id <PKPaletteTransitionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_handleExpandedToCollapsedAnimatablePropertyPresentationValueChanged;
 - (void)_handleRotationAnimatablePropertyPresentationValueChanged;
 - (void)paletteDidBeginResizingAnimation;

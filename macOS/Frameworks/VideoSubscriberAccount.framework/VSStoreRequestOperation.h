@@ -15,9 +15,9 @@
     VSOptional *_result;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSOptional *result; // @synthesize result=_result;
 @property(copy, nonatomic) VSStoreRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)executionDidBegin;
 - (BOOL)_isFirstToFinish;

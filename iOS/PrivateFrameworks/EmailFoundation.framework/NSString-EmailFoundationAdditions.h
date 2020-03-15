@@ -24,6 +24,7 @@
 - (_Bool)ef_isUnsignedIntegerString;
 - (_Bool)ef_isWebAddress;
 - (const void *)ef_lossyDefaultCStringBytes;
+- (id)ef_stringByApplyingJavaScriptArguments:(id)arg1;
 - (id)ef_stringByReplacingPercentEscapesUsingEncoding:(unsigned long long)arg1;
 - (id)ef_stringByAddingPercentEscapesUsingEncoding:(unsigned long long)arg1;
 - (id)ef_stringWithNoExtraSpaces;

@@ -29,9 +29,9 @@
 
 + (id)describeAlgorithm:(unsigned short)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *extractionOsBuild; // @synthesize extractionOsBuild=_extractionOsBuild;
 @property(readonly, nonatomic) NSArray *contextualNamedEntities; // @synthesize contextualNamedEntities=_contextualNamedEntities;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long extractionAssetVersion;
 @property(readonly, nonatomic) double sentimentScore;
 @property(readonly, nonatomic) double decayRate;

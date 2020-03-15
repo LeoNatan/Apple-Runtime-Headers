@@ -17,12 +17,12 @@
     NSLayoutConstraint *_counterWidthConstraint;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSLayoutConstraint *counterWidthConstraint; // @synthesize counterWidthConstraint=_counterWidthConstraint;
 @property(retain) UXLabel *label; // @synthesize label=_label;
 @property(retain) PXAnimatedCounter *counter; // @synthesize counter=_counter;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) NSFont *font; // @synthesize font=_font;
-- (void).cxx_destruct;
 - (void)_updateConstraintsForText;
 - (void)setText:(id)arg1 withAnimationStyle:(long long)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (struct CGSize)intrinsicContentSize;

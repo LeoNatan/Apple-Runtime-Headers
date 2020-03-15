@@ -15,9 +15,9 @@
 }
 
 + (id)bulletinWithBulletin:(id)arg1 icon:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CUISNotificationCenterIcon *icon; // @synthesize icon=_icon;
 @property(nonatomic) float cellHeight; // @synthesize cellHeight=_cellHeight;
-- (void).cxx_destruct;
 - (id)initWithBulletin:(id)arg1 icon:(id)arg2;
 
 @end

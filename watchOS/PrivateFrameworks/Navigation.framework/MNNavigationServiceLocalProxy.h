@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _navigationServiceActivePredictingBlock;
 }
 
-@property(nonatomic) __weak id <MNNavigationServiceClientInterface> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MNNavigationServiceClientInterface> delegate; // @synthesize delegate=_delegate;
 - (void)navigationSessionManager:(id)arg1 didReceiveTransitUpdates:(id)arg2;
 - (void)navigationSessionManager:(id)arg1 willSendTransitUpdateRequestForRouteIDs:(id)arg2;
 - (void)navigationSessionManager:(id)arg1 didUpdateTracePlaybackDetails:(id)arg2;

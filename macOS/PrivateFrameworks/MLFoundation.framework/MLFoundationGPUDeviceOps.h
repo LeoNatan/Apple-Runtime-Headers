@@ -36,6 +36,7 @@
 + (id)deviceOpsWithForwardKernel:(id)arg1 gradientKernel:(id)arg2 secondaryGradientKernel:(id)arg3;
 + (id)deviceOpsWithForwardKernel:(id)arg1 gradientKernel:(id)arg2;
 + (id)new;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id matrixToImageCopyKernel; // @synthesize matrixToImageCopyKernel=_matrixToImageCopyKernel;
 @property(retain, nonatomic) id imageToMatrixCopyKernel; // @synthesize imageToMatrixCopyKernel=_imageToMatrixCopyKernel;
 @property(retain, nonatomic) NSMutableArray *rnnBuffers; // @synthesize rnnBuffers=_rnnBuffers;
@@ -56,7 +57,6 @@
 @property(readonly, nonatomic) id secondaryGradientKernel; // @synthesize secondaryGradientKernel=_secondaryGradientKernel;
 @property(readonly, nonatomic) id gradientKernel; // @synthesize gradientKernel=_gradientKernel;
 @property(readonly, nonatomic) id forwardKernel; // @synthesize forwardKernel=_forwardKernel;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (id)initWithForwardKernel:(id)arg1 gradientKernel:(id)arg2 secondaryGradientKernel:(id)arg3 forwardStatistics:(id)arg4 gradientStatistics:(id)arg5;

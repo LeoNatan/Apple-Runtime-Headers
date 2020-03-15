@@ -34,6 +34,7 @@
     struct CLLocationCoordinate2D _centerCoordinate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isFacing) _Bool facing; // @synthesize facing=_facing;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(nonatomic) struct CLLocationCoordinate2D centerCoordinate; // @synthesize centerCoordinate=_centerCoordinate;
@@ -58,7 +59,6 @@
 @property(nonatomic) float distance; // @synthesize distance=_distance;
 @property(readonly, nonatomic) NUSpheroid *parent; // @synthesize parent=_parent;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)setCenter:(struct CGPoint)arg1;
 - (void)_updateCamera;
 - (void)setCenterCoordinate:(struct CLLocationCoordinate2D)arg1 animated:(_Bool)arg2;

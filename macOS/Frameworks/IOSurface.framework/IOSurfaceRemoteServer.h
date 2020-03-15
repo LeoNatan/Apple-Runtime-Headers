@@ -16,10 +16,10 @@
     NSMutableArray *_clients;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *clients; // @synthesize clients=_clients;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *listener; // @synthesize listener=_listener;
-- (void).cxx_destruct;
 - (void)_handleClientDisconnected:(id)arg1;
 - (void)_handleClientConnection:(id)arg1;
 - (void)shutdown;

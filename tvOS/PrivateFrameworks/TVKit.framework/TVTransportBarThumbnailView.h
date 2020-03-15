@@ -28,6 +28,7 @@
     struct CGSize _scrubImageSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize scrubImageSize; // @synthesize scrubImageSize=_scrubImageSize;
 @property(nonatomic) long long scrubPreviewMode; // @synthesize scrubPreviewMode=_scrubPreviewMode;
 @property(retain, nonatomic) NSLayoutConstraint *labelOffsetConstraint; // @synthesize labelOffsetConstraint=_labelOffsetConstraint;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) UIFont *labelFont; // @synthesize labelFont=_labelFont;
 @property(copy, nonatomic) NSString *labelString; // @synthesize labelString=_labelString;
 @property(nonatomic) __weak id <TVTransportBarThumbnailViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (void)_placeBorder;
 - (void)_removeBorder;

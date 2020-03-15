@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
     id <AVVolumeButtonDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <AVVolumeButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property __weak AVControlsViewController *controlsViewController; // @synthesize controlsViewController=_controlsViewController;
-- (void).cxx_destruct;
 - (void)_hideVolumeSlider;
 - (void)volumeSliderChanged:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;

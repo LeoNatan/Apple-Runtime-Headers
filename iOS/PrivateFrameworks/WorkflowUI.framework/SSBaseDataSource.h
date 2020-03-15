@@ -31,6 +31,7 @@
 
 + (id)indexPathArrayWithRange:(struct _NSRange)arg1 inSection:(long long)arg2;
 + (id)indexPathArrayWithIndexSet:(id)arg1 inSection:(long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) long long cachedSeparatorStyle; // @synthesize cachedSeparatorStyle=_cachedSeparatorStyle;
 @property(copy, nonatomic) CDUnknownBlockType collectionSupplementaryConfigureBlock; // @synthesize collectionSupplementaryConfigureBlock=_collectionSupplementaryConfigureBlock;
 @property(copy, nonatomic) CDUnknownBlockType collectionSupplementaryCreationBlock; // @synthesize collectionSupplementaryCreationBlock=_collectionSupplementaryCreationBlock;
@@ -45,7 +46,6 @@
 @property(copy, nonatomic) CDUnknownBlockType cellCreationBlock; // @synthesize cellCreationBlock=_cellCreationBlock;
 @property(copy, nonatomic) CDUnknownBlockType cellConfigureBlock; // @synthesize cellConfigureBlock=_cellConfigureBlock;
 @property(nonatomic) __weak Class cellClass; // @synthesize cellClass=_cellClass;
-- (void).cxx_destruct;
 - (void)reloadData;
 - (void)reloadSectionsAtIndexes:(id)arg1;
 - (void)deleteSectionsAtIndexes:(id)arg1;

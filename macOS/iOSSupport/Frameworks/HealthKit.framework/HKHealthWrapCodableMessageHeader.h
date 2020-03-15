@@ -30,6 +30,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *studyUUID; // @synthesize studyUUID=_studyUUID;
 @property(nonatomic) BOOL compressed; // @synthesize compressed=_compressed;
 @property(nonatomic) int trailingSHALength; // @synthesize trailingSHALength=_trailingSHALength;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSData *encryptionIdentity; // @synthesize encryptionIdentity=_encryptionIdentity;
 @property(retain, nonatomic) NSData *encryptedMessageKey; // @synthesize encryptedMessageKey=_encryptedMessageKey;
 @property(nonatomic) long long version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

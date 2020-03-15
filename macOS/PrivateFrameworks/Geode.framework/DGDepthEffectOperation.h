@@ -17,9 +17,9 @@
 + (id)attributes;
 + (id)outputKeys;
 + (id)inputKeys;
+- (void).cxx_destruct;
 @property(nonatomic) double aperture; // @synthesize aperture=_aperture;
 @property(copy, nonatomic) NSDictionary *depthInfo; // @synthesize depthInfo=_depthInfo;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double defaultAperture;
 - (id)settingsDictionary;
 - (BOOL)applySettingsDictionary:(id)arg1;

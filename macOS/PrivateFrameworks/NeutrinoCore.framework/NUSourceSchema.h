@@ -13,7 +13,7 @@
 + (id)requiredAttributes;
 + (id)supportedAttributes;
 + (id)identifier;
-- (struct NSArray *)schemaDependencies;
+- (id)schemaDependencies;
 - (BOOL)serializeIntoDictionary:(id)arg1 error:(out id *)arg2;
 - (id)deserializeAssetIdentifierFromDictionary:(id)arg1 error:(out id *)arg2;
 - (BOOL)serializeAssetIdentifier:(id)arg1 intoDictionary:(id)arg2 error:(out id *)arg3;

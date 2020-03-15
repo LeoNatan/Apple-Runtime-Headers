@@ -19,9 +19,9 @@
 + (id)itemWithType:(id)arg1 UUIDValue:(id)arg2;
 + (id)itemWithType:(id)arg1 numberValue:(id)arg2;
 + (id)itemWithType:(id)arg1 stringValue:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *normalizedValue; // @synthesize normalizedValue=_normalizedValue;
 @property(retain, nonatomic) BMItemType *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (unsigned long long)hash;

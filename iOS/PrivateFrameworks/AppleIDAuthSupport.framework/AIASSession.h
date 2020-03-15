@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSURLSession *_URLSession;
 }
 
+- (void).cxx_destruct;
 @property _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(retain) NSURLSession *URLSession; // @synthesize URLSession=_URLSession;
 @property(retain) NSMutableDictionary *taskMap; // @synthesize taskMap=_taskMap;
-- (void).cxx_destruct;
 - (void)invalidateAndCancel;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;

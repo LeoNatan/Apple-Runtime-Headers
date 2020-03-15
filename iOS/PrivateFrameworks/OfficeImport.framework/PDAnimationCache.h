@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 + (void)loadAnimationCache:(id)arg1 pdAnimation:(id)arg2 state:(id)arg3;
 + (void)mapAnimationInfo:(id)arg1 cacheData:(id)arg2 state:(id)arg3;
 + (void)mapCommonData:(id)arg1 cacheData:(id)arg2 state:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PDBuild *build; // @synthesize build=mBuild;
 @property(nonatomic) int level; // @synthesize level=mLevel;
 @property(nonatomic) _Bool isHead; // @synthesize isHead=mIsHead;
@@ -59,7 +60,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int presetId; // @synthesize presetId=mPresetId;
 @property(nonatomic) int nodeType; // @synthesize nodeType=mNodeType;
 @property(retain, nonatomic) PDAnimationTarget *target; // @synthesize target=mTarget;
-- (void).cxx_destruct;
 - (id)initWithAnimationInfo:(id)arg1;
 
 @end

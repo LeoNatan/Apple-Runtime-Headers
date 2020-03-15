@@ -15,9 +15,9 @@
 }
 
 + (id)parseBuffer:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) REScriptASTNode *expression; // @synthesize expression=_expression;
 @property(readonly, nonatomic) REScriptToken *binaryOperator; // @synthesize binaryOperator=_binaryOperator;
-- (void).cxx_destruct;
 - (id)dependencies;
 - (id)initWithOperator:(id)arg1 expression:(id)arg2;
 

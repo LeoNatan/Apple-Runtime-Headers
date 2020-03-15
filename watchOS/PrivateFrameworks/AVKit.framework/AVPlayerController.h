@@ -143,6 +143,7 @@
 + (id)keyPathsForValuesAffectingHasMediaSelectionOptions;
 + (id)keyPathsForValuesAffectingMaximumVideoResolution;
 + (id)keyPathsForValuesAffectingUsesExternalPlaybackWhileExternalScreenIsActive;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool touchBarRequiresLinearPlayback; // @synthesize touchBarRequiresLinearPlayback=_touchBarRequiresLinearPlayback;
 @property(nonatomic) double defaultPlaybackRate; // @synthesize defaultPlaybackRate=_defaultPlaybackRate;
 @property(readonly, nonatomic) NSObject<OS_dispatch_source> *seekTimer; // @synthesize seekTimer=_seekTimer;
@@ -180,7 +181,6 @@
 @property(nonatomic, getter=isAtMaxTime) _Bool atMaxTime; // @synthesize atMaxTime=_atMaxTime;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)_prepareAssetForInspectionIfNeeded;
 - (id)scanningDelays;
 - (void)_updateRateForScrubbingAndSeeking;

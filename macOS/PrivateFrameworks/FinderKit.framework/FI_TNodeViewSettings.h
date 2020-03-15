@@ -93,6 +93,8 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingNodeHasCustomViewStyle;
 + (id)keyPathsForValuesAffectingNodeCustomViewStyleIndex;
 + (id)keyPathsForValuesAffectingShowDefaultsButton;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool userHasChangedListViewSort; // @synthesize userHasChangedListViewSort=_userHasChangedListViewSort;
 @property(nonatomic) struct CGPoint listViewScrollPosition; // @synthesize listViewScrollPosition=_listViewScrollPosition;
 @property(nonatomic) _Bool listViewSortOrderAscending; // @synthesize listViewSortOrderAscending=_listViewSortOrderAscending;
@@ -125,8 +127,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool isAppCentric; // @synthesize isAppCentric=_isAppCentric;
 @property(nonatomic) _Bool isLinen; // @synthesize isLinen=_isLinen;
 @property(readonly, nonatomic) struct TFENode node; // @synthesize node=_node;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) int columnViewArrangeBy; // @dynamic columnViewArrangeBy;
 @property(nonatomic) _Bool columnViewShowPreviewColumn; // @dynamic columnViewShowPreviewColumn;
 @property(nonatomic) _Bool columnViewShowIconPreview; // @dynamic columnViewShowIconPreview;

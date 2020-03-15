@@ -24,12 +24,12 @@ __attribute__((visibility("hidden")))
 + (id)repeatingRotationAnimation;
 + (id)spinnerAnimationGroup;
 + (struct CGImage *)spinnerImageWithSize:(struct CGSize)arg1 color:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *overlayLayer; // @synthesize overlayLayer=_overlayLayer;
 @property(retain, nonatomic) CALayer *mainLayer; // @synthesize mainLayer=_mainLayer;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(retain, nonatomic) CAAnimationGroup *animations; // @synthesize animations=_animations;
 @property(nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
-- (void).cxx_destruct;
 - (id)_animationToOpacity:(double)arg1;
 - (void)_removeAnimations;
 - (void)_addAnimations;

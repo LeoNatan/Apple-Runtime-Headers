@@ -26,13 +26,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)canShowCommentsForAsset:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setNeedsUpdateTableViewScrollPosition:) _Bool _needsUpdateTableViewScrollPosition; // @synthesize _needsUpdateTableViewScrollPosition=__needsUpdateTableViewScrollPosition;
 @property(readonly, nonatomic) PUCommentsTableDataController *_tableDataController; // @synthesize _tableDataController=__tableDataController;
 @property(readonly, nonatomic) UITableView *_tableView; // @synthesize _tableView=__tableView;
 @property(readonly, nonatomic) PUAssetViewModel *assetViewModel; // @synthesize assetViewModel=_assetViewModel;
 @property(readonly, nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(nonatomic) __weak id <PUAccessoryContentViewControllerDelegate> accessoryContentViewControllerDelegate; // @synthesize accessoryContentViewControllerDelegate=_accessoryContentViewControllerDelegate;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 @property(readonly, nonatomic) struct CGSize minimumContentSize;

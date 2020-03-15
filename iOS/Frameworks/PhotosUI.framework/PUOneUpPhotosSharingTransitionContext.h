@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     PUAssetReference *_currentAssetReference;
 }
 
-@property(retain, nonatomic) PUAssetReference *currentAssetReference; // @synthesize currentAssetReference=_currentAssetReference;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PUAssetReference *currentAssetReference; // @synthesize currentAssetReference=_currentAssetReference;
 - (id)keyAssetIndexPath;
 
 @end

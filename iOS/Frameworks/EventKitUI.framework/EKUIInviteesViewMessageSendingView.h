@@ -11,8 +11,8 @@
     UIView *_composeView;
 }
 
-@property(retain, nonatomic) UIView *composeView; // @synthesize composeView=_composeView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *composeView; // @synthesize composeView=_composeView;
 - (void)layoutSubviews;
 
 @end

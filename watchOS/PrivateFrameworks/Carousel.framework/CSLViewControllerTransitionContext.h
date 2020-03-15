@@ -30,6 +30,7 @@
     struct CGAffineTransform _targetTransform;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect finalFrameForToViewController; // @synthesize finalFrameForToViewController=_finalFrameForToViewController;
 @property(nonatomic) struct CGRect initialFrameForToViewController; // @synthesize initialFrameForToViewController=_initialFrameForToViewController;
 @property(retain, nonatomic) UIView *toView; // @synthesize toView=_toView;
@@ -46,7 +47,6 @@
 @property(nonatomic, getter=isAnimated) _Bool animated; // @synthesize animated=_animated;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic, getter=isComplete) _Bool complete; // @synthesize complete=_complete;
-- (void).cxx_destruct;
 - (struct CGRect)finalFrameForViewController:(id)arg1;
 - (struct CGRect)initialFrameForViewController:(id)arg1;
 - (id)viewForKey:(id)arg1;

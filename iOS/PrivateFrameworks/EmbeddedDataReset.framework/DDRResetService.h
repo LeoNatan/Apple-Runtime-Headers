@@ -25,6 +25,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *observerQueue; // @synthesize observerQueue=_observerQueue;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
@@ -33,7 +34,6 @@
 @property(nonatomic) int currentResetState; // @synthesize currentResetState=_currentResetState;
 @property(retain, nonatomic) NSXPCConnection *observerNonLaunchingXPCConnection; // @synthesize observerNonLaunchingXPCConnection=_observerNonLaunchingXPCConnection;
 @property(retain, nonatomic) NSXPCConnection *dataResetXPCConnection; // @synthesize dataResetXPCConnection=_dataResetXPCConnection;
-- (void).cxx_destruct;
 - (void)sync;
 - (void)didCompleteDataResetMode:(long long)arg1 withError:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)didBeginDataResetWithMode:(long long)arg1;

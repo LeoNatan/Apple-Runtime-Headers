@@ -15,9 +15,9 @@
     id <SCKZoneStore> _store;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SCKZoneStore> store; // @synthesize store=_store;
 @property(readonly, nonatomic) SCKZoneSchema *schema; // @synthesize schema=_schema;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isDirty) _Bool dirty;
 @property(readonly, nonatomic) _Bool needsFirstSync;
 @property(readonly, copy, nonatomic) SCKZoneDiff *clientDiff;

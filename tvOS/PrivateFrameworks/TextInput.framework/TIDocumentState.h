@@ -30,12 +30,12 @@
 + (id)unboundedDocumentStateForTestingWithContextBefore:(id)arg1 selectedText:(id)arg2 contextAfter:(id)arg3;
 + (id)documentStateForTestingWithContextBefore:(id)arg1 selectedText:(id)arg2 contextAfter:(id)arg3;
 + (id)documentStateForTestingWithText:(id)arg1 selectedRange:(struct _NSRange)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct _NSRange selectedRangeInMarkedText; // @synthesize selectedRangeInMarkedText=_selectedRangeInMarkedText;
 @property(readonly, nonatomic) NSString *contextAfterInput; // @synthesize contextAfterInput=_contextAfterInput;
 @property(readonly, nonatomic) NSString *selectedText; // @synthesize selectedText=_selectedText;
 @property(readonly, nonatomic) NSString *markedText; // @synthesize markedText=_markedText;
 @property(readonly, nonatomic) NSString *contextBeforeInput; // @synthesize contextBeforeInput=_contextBeforeInput;
-- (void).cxx_destruct;
 - (_Bool)documentIsEmpty;
 - (id)description;
 - (unsigned long long)hash;

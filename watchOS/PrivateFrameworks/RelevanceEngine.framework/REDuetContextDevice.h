@@ -16,9 +16,9 @@
 
 + (id)companionDevice;
 + (id)localDevice;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int deviceType; // @synthesize deviceType=_deviceType;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithUUID:(id)arg1 type:(unsigned int)arg2;

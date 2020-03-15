@@ -41,6 +41,7 @@
 + (id)systemPrintersPKGIDs;
 + (id)pathOverridesPlistPath;
 + (id)userDataCategories;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *progressInfoDelegates; // @synthesize progressInfoDelegates=_progressInfoDelegates;
 @property(retain) NSMutableDictionary *preliminaryPathGroupSizeDelegates; // @synthesize preliminaryPathGroupSizeDelegates=_preliminaryPathGroupSizeDelegates;
 @property(retain) NSMutableArray *preliminaryUserSizeDelegates; // @synthesize preliminaryUserSizeDelegates=_preliminaryUserSizeDelegates;
@@ -63,7 +64,6 @@
 @property(retain, nonatomic) SMPathsCache *cache; // @synthesize cache=_cache;
 @property(retain) SMPathsDirectoryClassifier *filesystemClassifier; // @synthesize filesystemClassifier=_filesystemClassifier;
 @property(retain) SMPathsDirectoryClassifier *preliminaryClassifier; // @synthesize preliminaryClassifier=_preliminaryClassifier;
-- (void).cxx_destruct;
 - (id)pathingReport:(BOOL)arg1;
 - (void)addLocalRedirectPathFrom:(id)arg1 to:(id)arg2;
 - (id)redirectForSourcePath:(id)arg1;

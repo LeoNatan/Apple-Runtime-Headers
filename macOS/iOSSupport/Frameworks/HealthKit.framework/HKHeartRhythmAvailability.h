@@ -33,10 +33,11 @@
 + (BOOL)isAtrialFibrillationDetectionSettingEnabled;
 + (long long)currentElectrocardiogramOnboardingVersion;
 + (BOOL)_isElectrocardiogramDisabledWithDataSource:(id)arg1;
-+ (id)electrocardiogramAppBundleID;
 + (BOOL)shouldInstallWatchApp;
-+ (BOOL)_isRunningSeed;
++ (id)featureAvailabilityUserDefaults;
++ (id)currentDeviceRegionCode;
 + (BOOL)isHeartRateEnabledInPrivacy;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKWatchAppAvailability *ecgAppAvailability; // @synthesize ecgAppAvailability=_ecgAppAvailability;
 @property(retain, nonatomic) HKMobileCountryCodeManager *mobileCountryCodeManager; // @synthesize mobileCountryCodeManager=_mobileCountryCodeManager;
 @property(nonatomic) int userCharacteristicsDidChangeNotificationToken; // @synthesize userCharacteristicsDidChangeNotificationToken=_userCharacteristicsDidChangeNotificationToken;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) NSUserDefaults *heartRhythmUserDefaults; // @synthesize heartRhythmUserDefaults=_heartRhythmUserDefaults;
 @property(retain, nonatomic) HKKeyValueDomain *keyValueDomain; // @synthesize keyValueDomain=_keyValueDomain;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
-- (void).cxx_destruct;
 - (void)resetAtrialFibrillationDetectionOnboarding;
 @property(readonly, nonatomic, getter=isAtrialFibrillationDetectionDisabled) BOOL atrialFibrillationDetectionDisabled;
 - (void)_resetIsAtrialFibrillationDetectionDisabledCacheWithLock:(BOOL)arg1;
@@ -59,6 +59,7 @@
 @property(readonly, nonatomic) NSDate *electrocardiogramFirstOnboardingCompletedDate;
 @property(readonly, nonatomic, getter=isElectrocardiogramRecordingDisabled) BOOL electrocardiogramRecordingDisabled;
 - (void)_resetIsElectrocardiogramDisabledCacheWithLock:(BOOL)arg1;
+- (void)setAllowInstallingElectrocardiogramWatchApp:(BOOL)arg1;
 - (void)resetElectrocardiogramOnboarding;
 @property(nonatomic, getter=isElectrocardiogramFirstRecordingCompleted) BOOL electrocardiogramFirstRecordingCompleted;
 - (void)_setElectrocardiogramOnboardingCompletedForVersion:(long long)arg1 inCountryCode:(id)arg2;

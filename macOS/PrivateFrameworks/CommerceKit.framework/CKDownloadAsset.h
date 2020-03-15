@@ -24,6 +24,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSArray *clearHashes; // @synthesize clearHashes=_clearHashes;
 @property(retain) NSArray *hashes; // @synthesize hashes=_hashes;
 @property unsigned long long chunkSize; // @synthesize chunkSize=_chunkSize;
@@ -32,7 +33,6 @@
 @property(retain) NSString *appliesToVersionIdentifier; // @synthesize appliesToVersionIdentifier=_appliesToVersionIdentifier;
 @property(copy) NSString *md5; // @synthesize md5=_md5;
 @property(readonly) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

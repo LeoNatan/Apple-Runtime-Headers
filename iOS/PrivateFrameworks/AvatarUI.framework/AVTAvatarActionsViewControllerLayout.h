@@ -20,11 +20,11 @@
 
 + (double)heightForButtonsViewWithButtonCount:(long long)arg1;
 + (double)buttonHeight;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <AVTViewLayoutInfo> avtViewLayout; // @synthesize avtViewLayout=_avtViewLayout;
 @property(readonly, nonatomic) long long buttonCount; // @synthesize buttonCount=_buttonCount;
 @property(readonly, nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
 @property(readonly, nonatomic) struct CGSize containerSize; // @synthesize containerSize=_containerSize;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect userInfoFrame;
 @property(readonly, nonatomic) struct CGRect avatarContainerViewFrame;
 @property(readonly, nonatomic) struct CGRect actionButtonsViewFrame;

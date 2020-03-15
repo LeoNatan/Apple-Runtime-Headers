@@ -16,11 +16,11 @@
     NSString *_uniqueIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(readonly, nonatomic) NSArray *outputDevices; // @synthesize outputDevices=_outputDevices;
 @property(readonly, nonatomic) unsigned int volumeControlCapabilities; // @synthesize volumeControlCapabilities=_volumeControlCapabilities;
 @property(readonly, nonatomic) float volume; // @synthesize volume=_volume;
-- (void).cxx_destruct;
 - (void)notifyVolumeCapabilitiesDidChange:(unsigned int)arg1 outputDevice:(id)arg2;
 - (void)notifyVolumeDidChange:(float)arg1 outputDevice:(id)arg2;
 - (void)notifyOutputDeviceRemoved:(id)arg1;

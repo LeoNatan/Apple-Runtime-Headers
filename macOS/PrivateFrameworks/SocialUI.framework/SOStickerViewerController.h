@@ -25,6 +25,7 @@
     NSMenuItem *_deleteStickersMenuItem;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMenuItem *deleteStickersMenuItem; // @synthesize deleteStickersMenuItem=_deleteStickersMenuItem;
 @property(retain) NSLayoutConstraint *preferredScrollViewHeightConstraint; // @synthesize preferredScrollViewHeightConstraint=_preferredScrollViewHeightConstraint;
 @property(retain) NSTableView *stickerTableView; // @synthesize stickerTableView=_stickerTableView;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSPopover *popover; // @synthesize popover=_popover;
 @property(retain, nonatomic) IMMessagePartChatItem *chatItem; // @synthesize chatItem=_chatItem;
 @property(nonatomic) __weak id <SOStickerViewerControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)viewDidDisappear;
 - (double)_preferredScrollViewHeightConstraintConstant;

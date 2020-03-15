@@ -30,6 +30,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int subscriptionResult; // @synthesize subscriptionResult=_subscriptionResult;
 @property(readonly, nonatomic) NSArray *dataUsage; // @synthesize dataUsage=_dataUsage;
 @property(readonly, nonatomic) NSArray *homeCountryList; // @synthesize homeCountryList=_homeCountryList;
@@ -39,13 +40,12 @@
 @property(nonatomic) int planStatus; // @synthesize planStatus=_planStatus;
 @property(readonly, nonatomic) NSString *planDescription; // @synthesize planDescription=_planDescription;
 @property(readonly, nonatomic) int planType; // @synthesize planType=_planType;
-@property(nonatomic) NSString *carrierName; // @synthesize carrierName=_carrierName;
+@property(retain, nonatomic) NSString *carrierName; // @synthesize carrierName=_carrierName;
 @property(readonly, nonatomic) double billingEndDate; // @synthesize billingEndDate=_billingEndDate;
 @property(readonly, nonatomic) double billingStartDate; // @synthesize billingStartDate=_billingStartDate;
 @property(readonly, nonatomic) _Bool autoRenew; // @synthesize autoRenew=_autoRenew;
 @property(readonly, nonatomic) NSString *iccid; // @synthesize iccid=_iccid;
 - (id)description;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

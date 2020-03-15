@@ -34,6 +34,7 @@
     NSObject<OS_dispatch_queue> *_externalQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *externalQueue; // @synthesize externalQueue=_externalQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *leashDispatchSourceTimer; // @synthesize leashDispatchSourceTimer=_leashDispatchSourceTimer;
 @property(nonatomic) __weak id <NFMLLeashBreakDelegate> leashDelegate; // @synthesize leashDelegate=_leashDelegate;
@@ -49,7 +50,6 @@
 @property(copy, nonatomic) NSString *leashIdentifier; // @synthesize leashIdentifier=_leashIdentifier;
 @property(copy, nonatomic) NSString *serviceUUID; // @synthesize serviceUUID=_serviceUUID;
 @property(nonatomic) long long leashMode; // @synthesize leashMode=_leashMode;
-- (void).cxx_destruct;
 - (void)scalablePipeManager:(id)arg1 pipeDidDisconnect:(id)arg2 error:(id)arg3;
 - (void)scalablePipeManager:(id)arg1 pipeDidConnect:(id)arg2;
 - (void)scalablePipeManager:(id)arg1 didUnregisterEndpoint:(id)arg2;

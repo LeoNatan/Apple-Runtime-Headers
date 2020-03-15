@@ -20,10 +20,10 @@
 
 + (id)decodedNamedLayerImageFromNamedLayerImage:(id)arg1;
 + (id)namedLayerImageFromNamedLayerImage:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<UINamedLayerImage> *namedLayerImage; // @synthesize namedLayerImage=_namedLayerImage;
 @property(retain, nonatomic) UIImage *decodedImage; // @synthesize decodedImage=_decodedImage;
 @property(nonatomic) int blendMode; // @synthesize blendMode=_blendMode;
-- (void).cxx_destruct;
 - (id)imageObj;
 @property(nonatomic) _Bool fixedFrame;
 @property(readonly, nonatomic) double opacity;

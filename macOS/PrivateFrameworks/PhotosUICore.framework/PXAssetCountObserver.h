@@ -20,10 +20,10 @@
     PHFetchResult *_fetchResult;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHFetchResult *fetchResult; // @synthesize fetchResult=_fetchResult;
 @property(nonatomic) unsigned long long numberOfAssets; // @synthesize numberOfAssets=_numberOfAssets;
 @property(nonatomic) __weak id <PXAssetCountObserverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1 withPreparedInfo:(id)arg2;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
 - (void)_serialQueue_observeInternalFetchPredicate:(id)arg1;

@@ -27,6 +27,7 @@
     unsigned long long _connectionPriority;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long connectionPriority; // @synthesize connectionPriority=_connectionPriority;
 @property(nonatomic) BOOL monitorState; // @synthesize monitorState=_monitorState;
 @property(readonly, nonatomic) NSMapTable *cachedServiceSignatures; // @synthesize cachedServiceSignatures=_cachedServiceSignatures;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NSNumber *statusFlags; // @synthesize statusFlags=_statusFlags;
 @property(retain, nonatomic) CBPeripheral *peripheral; // @synthesize peripheral=_peripheral;
 @property(readonly, nonatomic) double lastSeen; // @synthesize lastSeen=_lastSeen;
-- (void).cxx_destruct;
 - (id)description;
 - (void)updatePairedPeripheralConfiguration:(BOOL)arg1 connectionPriority:(unsigned long long)arg2;
 - (id)initRecentlySeenPairedBTLEPeripheral:(id)arg1 statusFlags:(id)arg2 stateNumber:(id)arg3 category:(id)arg4 configNumber:(id)arg5 identifier:(id)arg6 advertisementFormat:(unsigned long long)arg7 setupHash:(id)arg8;

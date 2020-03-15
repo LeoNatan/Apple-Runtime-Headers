@@ -14,8 +14,8 @@
 }
 
 + (id)sharedManager;
-@property(retain, nonatomic) AXUIClient *containerServerClient; // @synthesize containerServerClient=_containerServerClient;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AXUIClient *containerServerClient; // @synthesize containerServerClient=_containerServerClient;
 - (void)deleteFileAtAccessibilityContainerPath:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)writeData:(id)arg1 toFileAtAccessibilityContainerPath:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)readDataForFileAtAccessibilityContainerPath:(id)arg1 completion:(CDUnknownBlockType)arg2;

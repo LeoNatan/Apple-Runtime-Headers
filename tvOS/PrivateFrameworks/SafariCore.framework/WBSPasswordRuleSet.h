@@ -19,12 +19,12 @@
 
 + (id)ruleSetWithAllowedRule:(id)arg1 requiredRules:(id)arg2 maxConsecutiveRule:(id)arg3 minLengthRule:(id)arg4 maxLengthRule:(id)arg5;
 + (id)ruleSetWithAllowedRule:(id)arg1 requiredRules:(id)arg2 maxConsecutiveRule:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WBSMaxLengthPasswordRule *maxLengthRule; // @synthesize maxLengthRule=_maxLengthRule;
 @property(readonly, nonatomic) WBSMinLengthPasswordRule *minLengthRule; // @synthesize minLengthRule=_minLengthRule;
 @property(readonly, nonatomic) WBSMaxConsecutivePasswordRule *maxConsecutiveRule; // @synthesize maxConsecutiveRule=_maxConsecutiveRule;
 @property(readonly, copy, nonatomic) NSArray *requiredRules; // @synthesize requiredRules=_requiredRules;
 @property(readonly, nonatomic) WBSAllowedPasswordRule *allowedRule; // @synthesize allowedRule=_allowedRule;
-- (void).cxx_destruct;
 - (id)initWithAllowedRule:(id)arg1 requiredRules:(id)arg2 maxConsecutiveRule:(id)arg3 minLengthRule:(id)arg4 maxLengthRule:(id)arg5;
 
 @end

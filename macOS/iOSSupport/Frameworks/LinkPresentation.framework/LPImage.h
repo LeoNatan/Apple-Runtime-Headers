@@ -39,12 +39,12 @@
 + (id)_PDFImageNamed:(id)arg1 template:(BOOL)arg2;
 + (id)_PNGImageNamed:(id)arg1 template:(BOOL)arg2;
 + (id)_PNGImageNamed:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *platformImage; // @synthesize platformImage=_platformImage;
 @property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(retain, nonatomic, setter=_setDarkInterfaceAlternativeImage:) LPImage *_darkInterfaceAlternativeImage; // @synthesize _darkInterfaceAlternativeImage;
 @property(retain, nonatomic) NSArray *_remoteURLsForEmailCompatibleOutput; // @synthesize _remoteURLsForEmailCompatibleOutput;
 @property(nonatomic, getter=_isFallbackIcon) BOOL _fallbackIcon; // @synthesize _fallbackIcon;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL _hasTransparency;
 - (id)_asTemplate;
 @property(readonly, retain, nonatomic) NSItemProvider *_itemProvider;

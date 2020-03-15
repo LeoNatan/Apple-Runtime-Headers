@@ -16,10 +16,10 @@
     id <SKUISwooshViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKUISwooshViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)unhideImages;
 - (void)setImage:(id)arg1 forItemAtIndex:(long long)arg2;
 - (id)popImageViewForItemAtIndex:(long long)arg1;

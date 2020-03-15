@@ -16,8 +16,8 @@
 + (id)backgroundImage;
 + (double)defaultHeightForOrientation:(long long)arg1;
 + (double)defaultHeight;
-@property(readonly) UIImageView *shadowView; // @synthesize shadowView=_shadowView;
 - (void).cxx_destruct;
+@property(readonly) UIImageView *shadowView; // @synthesize shadowView=_shadowView;
 - (void)setOrientation:(long long)arg1;
 - (void)setOrientation:(long long)arg1 updateFrame:(BOOL)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;

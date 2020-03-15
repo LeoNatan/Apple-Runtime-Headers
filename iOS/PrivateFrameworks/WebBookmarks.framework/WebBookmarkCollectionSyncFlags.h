@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_lockSyncHoldRequestorPointers;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool unlockSyncRequested; // @synthesize unlockSyncRequested=_unlockSyncRequested;
 @property(readonly, nonatomic) NSMutableSet *lockSyncHoldRequestorPointers; // @synthesize lockSyncHoldRequestorPointers=_lockSyncHoldRequestorPointers;
 @property(nonatomic) _Bool postSyncNotificationWhenUnlocking; // @synthesize postSyncNotificationWhenUnlocking=_postSyncNotificationWhenUnlocking;
 @property(nonatomic) long long syncNotificationType; // @synthesize syncNotificationType=_syncNotificationType;
 @property(nonatomic) int syncLockFileDescriptor; // @synthesize syncLockFileDescriptor=_syncLockFileDescriptor;
 @property(readonly, nonatomic) _Bool syncAllowed; // @synthesize syncAllowed=_syncAllowed;
-- (void).cxx_destruct;
 - (id)initWithSyncAllowed:(_Bool)arg1;
 
 @end

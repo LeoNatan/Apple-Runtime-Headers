@@ -22,12 +22,12 @@
     id <MTLDevice> _metalDevice;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <MTLDevice> metalDevice; // @synthesize metalDevice=_metalDevice;
 @property(readonly, nonatomic) id <NURenderer> lowPriorityRenderer; // @synthesize lowPriorityRenderer=_lowPriorityRenderer;
 @property(readonly, nonatomic) id <NURenderer> renderer; // @synthesize renderer=_renderer;
 @property(readonly, nonatomic) NSString *model; // @synthesize model=_model;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)clearCaches;
 - (id)_newLowPriorityRenderer:(out id *)arg1;
 - (id)_lowPriorityRenderer:(out id *)arg1;

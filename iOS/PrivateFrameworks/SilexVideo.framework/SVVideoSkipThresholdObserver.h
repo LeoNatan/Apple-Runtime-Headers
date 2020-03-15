@@ -19,10 +19,10 @@
     id <SVVideoLoadingStateObserving> _loadingStateObserver;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoLoadingStateObserving> loadingStateObserver; // @synthesize loadingStateObserver=_loadingStateObserver;
 @property(readonly, nonatomic) id <SVVideoSkipThreshold> thresholdProvider; // @synthesize thresholdProvider=_thresholdProvider;
 @property(copy, nonatomic, setter=onChange:) CDUnknownBlockType block; // @synthesize block;
-- (void).cxx_destruct;
 - (void)loadingCompletedWithThreshold:(double)arg1;
 @property(readonly, nonatomic) _Bool loading; // @synthesize loading=_loading;
 - (id)initWithLoadingStateObserver:(id)arg1 thresholdProvider:(id)arg2;

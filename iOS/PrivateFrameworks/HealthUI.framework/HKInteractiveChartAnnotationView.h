@@ -18,12 +18,12 @@
     long long _context;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long context; // @synthesize context=_context;
 @property(retain, nonatomic) UIStackView *marginStack; // @synthesize marginStack=_marginStack;
 @property(retain, nonatomic) UIStackView *containerStack; // @synthesize containerStack=_containerStack;
 @property(retain, nonatomic) UIStackView *columnStack; // @synthesize columnStack=_columnStack;
 @property(nonatomic) __weak id <HKInteractiveChartAnnotationViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)_createSeparatorView;
 - (void)reloadData;
 - (void)lowerPriorityConstraint:(id)arg1;

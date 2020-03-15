@@ -31,6 +31,7 @@
     NSObject<OS_voucher> *_voucher;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_voucher> *voucher; // @synthesize voucher=_voucher;
 @property BOOL connectablePacket; // @synthesize connectablePacket=_connectablePacket;
 @property(retain) CBPeripheralManager *sendDataManager; // @synthesize sendDataManager=_sendDataManager;
@@ -47,7 +48,6 @@
 @property(nonatomic, getter=fetchConnectionType) long long connectionType; // @synthesize connectionType=_connectionType;
 @property(retain, nonatomic) NSMutableSet *subscribedCharacteristics; // @synthesize subscribedCharacteristics=_subscribedCharacteristics;
 @property(nonatomic) __weak WPDClient *client; // @synthesize client=_client;
-- (void).cxx_destruct;
 - (void)resetData;
 - (void)readyForDataTransfer;
 - (id)getCharacteristicWithUUID:(id)arg1 inService:(id)arg2 forPeripheral:(id)arg3;

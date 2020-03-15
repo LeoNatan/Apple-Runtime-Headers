@@ -20,10 +20,10 @@
 + (_Bool)supportsSecureCoding;
 + (id)numericConstraintWithEnumeratedNumbers:(id)arg1;
 + (id)numericConstraintWithMinNumber:(id)arg1 maxNumber:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *enumeratedNumbers; // @synthesize enumeratedNumbers=_enumeratedNumbers;
 @property(retain, nonatomic) NSNumber *maxNumber; // @synthesize maxNumber=_maxNumber;
 @property(retain, nonatomic) NSNumber *minNumber; // @synthesize minNumber=_minNumber;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

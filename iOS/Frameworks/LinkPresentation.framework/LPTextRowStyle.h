@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     long long _balancingMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long balancingMode; // @synthesize balancingMode=_balancingMode;
 @property(readonly, nonatomic) LPTextViewStyle *trailing; // @synthesize trailing=_trailing;
 @property(readonly, nonatomic) LPTextViewStyle *leading; // @synthesize leading=_leading;
-- (void).cxx_destruct;
 - (void)applyToAllTextViewStyles:(CDUnknownBlockType)arg1;
 - (id)right;
 - (id)left;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 + (void)squeezeShape:(id)arg1 strides:(id)arg2 resultingShape:(id *)arg3 resultingStrides:(id *)arg4;
 + (BOOL)isSqueezableShape:(id)arg1 dimensions:(id)arg2;
 + (BOOL)isSqueezableShape:(id)arg1;
-@property(readonly, nonatomic) MLMultiArray *parent; // @synthesize parent=_parent;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MLMultiArray *parent; // @synthesize parent=_parent;
 - (id)initSqueezingMultiArray:(id)arg1 dimensions:(id)arg2 error:(id *)arg3;
 - (id)initSlicingMultiArray:(id)arg1 origin:(id)arg2 shape:(id)arg3 squeeze:(BOOL)arg4 error:(id *)arg5;
 

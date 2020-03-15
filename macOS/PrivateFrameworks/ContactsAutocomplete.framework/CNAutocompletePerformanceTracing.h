@@ -16,9 +16,9 @@
     NSMutableArray *_pendingLogs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pendingLogs; // @synthesize pendingLogs=_pendingLogs;
 @property(retain, nonatomic) CNTracedLogger *logger; // @synthesize logger=_logger;
-- (void).cxx_destruct;
 - (void)sendData;
 - (void)recordNumberOfCalendarServerResults:(unsigned long long)arg1 inTimeInterval:(double)arg2;
 - (void)recordNumberOfSupplementalResults:(unsigned long long)arg1 inTimeInterval:(double)arg2;

@@ -16,11 +16,11 @@
     UIActivityIndicatorView *_spinnerView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIActivityIndicatorView *spinnerView; // @synthesize spinnerView=_spinnerView;
 @property(readonly, nonatomic) UIImageView *disclosureView; // @synthesize disclosureView=_disclosureView;
 @property(readonly, nonatomic) UIImageView *signalStrengthView; // @synthesize signalStrengthView=_signalStrengthView;
 @property(readonly, nonatomic) UIImageView *padlockView; // @synthesize padlockView=_padlockView;
-- (void).cxx_destruct;
 - (void)setTintColor:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

@@ -23,13 +23,13 @@
     struct PXSimpleIndexPath _highlightedMemoryIndexPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXCollectionTileLayoutTemplate *_tileLayoutTemplate; // @synthesize _tileLayoutTemplate=__tileLayoutTemplate;
 @property(readonly, nonatomic) PXSectionedLayoutSnapshot *layoutSnapshot; // @synthesize layoutSnapshot=_layoutSnapshot;
 @property(nonatomic) __weak id <PXMemoriesFeedTilingLayoutDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PXIndexPathSet *selectedMemoryIndexPaths; // @synthesize selectedMemoryIndexPaths=_selectedMemoryIndexPaths;
 @property(nonatomic) struct PXSimpleIndexPath highlightedMemoryIndexPath; // @synthesize highlightedMemoryIndexPath=_highlightedMemoryIndexPath;
 @property(retain, nonatomic) PXMemoriesSpec *spec; // @synthesize spec=_spec;
-- (void).cxx_destruct;
 - (void)_invalidateSelectionTilesWithTag:(id)arg1;
 - (struct CGRect)_contentsRectForItemAtIndexPath:(struct PXSimpleIndexPath)arg1 forAspectRatio:(double)arg2;
 - (long long)_itemKindForTileKind:(long long)arg1;

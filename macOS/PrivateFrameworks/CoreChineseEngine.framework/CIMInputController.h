@@ -17,10 +17,10 @@
     CIMBaseEngine *_inputModeEngine;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CIMBaseEngine *inputModeEngine; // @synthesize inputModeEngine=_inputModeEngine;
 @property(retain, nonatomic) Class engineClass; // @synthesize engineClass=_engineClass;
 @property(retain, nonatomic) IMKKeyboardInputController *keyboardInputController; // @synthesize keyboardInputController=_keyboardInputController;
-- (void).cxx_destruct;
 - (void)radarButtonPressed;
 - (void)setInputMode:(id)arg1 client:(id)arg2;
 - (void)menuItemAction:(id)arg1;

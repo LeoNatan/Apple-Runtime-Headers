@@ -19,9 +19,9 @@
     NSString *_recoveryKey;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *recoveryKey; // @synthesize recoveryKey=_recoveryKey;
 @property(copy, nonatomic) NSDictionary *recoveredInfo; // @synthesize recoveredInfo=_recoveredInfo;
-- (void).cxx_destruct;
 - (id)_cdpErrorFromAuthKitError:(id)arg1;
 - (void)generateRecoveryKey:(CDUnknownBlockType)arg1;
 - (void)confirmRecoveryKey:(id)arg1 completion:(CDUnknownBlockType)arg2;

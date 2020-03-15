@@ -16,11 +16,11 @@
     NSArray *_updateChanges;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *updateChanges; // @synthesize updateChanges=_updateChanges;
 @property(copy, nonatomic) NSArray *moveChanges; // @synthesize moveChanges=_moveChanges;
 @property(retain, nonatomic) VUICollectionChange *insertChange; // @synthesize insertChange=_insertChange;
 @property(retain, nonatomic) VUICollectionChange *deleteChange; // @synthesize deleteChange=_deleteChange;
-- (void).cxx_destruct;
 - (id)_changesKinds;
 - (id)description;
 - (_Bool)containsOnlyChangeKind:(unsigned long long)arg1;

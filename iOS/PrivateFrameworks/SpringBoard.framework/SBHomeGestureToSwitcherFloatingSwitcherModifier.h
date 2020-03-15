@@ -15,10 +15,10 @@
     SBFluidSwitcherAnimationSettings *_animationSettings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBFluidSwitcherAnimationSettings *animationSettings; // @synthesize animationSettings=_animationSettings;
 @property(retain, nonatomic) SBAppLayout *selectedAppLayout; // @synthesize selectedAppLayout=_selectedAppLayout;
 @property(retain, nonatomic) SBSwitcherModifier *multitaskingModifier; // @synthesize multitaskingModifier=_multitaskingModifier;
-- (void).cxx_destruct;
 - (id)layoutSettings;
 - (_Bool)wantsMinificationFilter;
 - (long long)liveContentRasterizationStyle;

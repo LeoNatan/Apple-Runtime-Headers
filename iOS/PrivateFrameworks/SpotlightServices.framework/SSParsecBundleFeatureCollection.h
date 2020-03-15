@@ -24,6 +24,7 @@
     NSNumber *_maxScoreRelRank;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *maxScoreRelRank; // @synthesize maxScoreRelRank=_maxScoreRelRank;
 @property(retain, nonatomic) NSNumber *maxScoreAbsRank; // @synthesize maxScoreAbsRank=_maxScoreAbsRank;
 @property(retain, nonatomic) NSNumber *blockIdValue; // @synthesize blockIdValue=_blockIdValue;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSNumber *originalOrderAbsRank; // @synthesize originalOrderAbsRank=_originalOrderAbsRank;
 @property(retain, nonatomic) NSNumber *maxScore; // @synthesize maxScore=_maxScore;
 @property(retain, nonatomic) NSNumber *numResults; // @synthesize numResults=_numResults;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

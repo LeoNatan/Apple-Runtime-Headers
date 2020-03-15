@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSDictionary *_packageUUIDToExpectedProperties;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool temporary; // @synthesize temporary=_temporary;
 @property(retain, nonatomic) NSDictionary *packageUUIDToExpectedProperties; // @synthesize packageUUIDToExpectedProperties=_packageUUIDToExpectedProperties;
 @property(retain, nonatomic) NSDictionary *assetUUIDToExpectedProperties; // @synthesize assetUUIDToExpectedProperties=_assetUUIDToExpectedProperties;
 @property(retain, nonatomic) NSArray *assetsToUpload; // @synthesize assetsToUpload=_assetsToUpload;
-- (void).cxx_destruct;
 
 @end
 

@@ -17,10 +17,10 @@
     NSString *_thumbnailImageUrl;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *logoImageUrl; // @synthesize logoImageUrl=_logoImageUrl;
 @property(retain, nonatomic) NSString *thumbnailImageUrl; // @synthesize thumbnailImageUrl=_thumbnailImageUrl;
 @property(retain, nonatomic) NSString *digitalCardImageUrl; // @synthesize digitalCardImageUrl=_digitalCardImageUrl;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

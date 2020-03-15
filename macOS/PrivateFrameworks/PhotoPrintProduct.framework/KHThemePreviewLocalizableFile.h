@@ -15,10 +15,10 @@
     NSMutableDictionary *_localizableDictionary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *localizableDictionary; // @synthesize localizableDictionary=_localizableDictionary;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
-- (void).cxx_destruct;
 - (id)getLocalizedKey:(id)arg1;
 - (id)kh_localizedStringForKey:(id)arg1 countryCode:(id)arg2;
 - (id)kh_localizedStringForKey:(id)arg1;

@@ -17,10 +17,10 @@
     double _cellAvatarDiameter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double cellAvatarDiameter; // @synthesize cellAvatarDiameter=_cellAvatarDiameter;
 @property(nonatomic) double cellWidth; // @synthesize cellWidth=_cellWidth;
 @property(retain, nonatomic) HFHomeBuilder *homeBuilder; // @synthesize homeBuilder=_homeBuilder;
-- (void).cxx_destruct;
 - (void)_presentAccountUnavailableAlert;
 - (double)_horizontalInset;
 - (double)_verticalInset;

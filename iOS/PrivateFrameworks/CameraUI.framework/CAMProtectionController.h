@@ -21,13 +21,13 @@
 
 + (_Bool)isCameraPerformingHighPriorityDiskActivity;
 + (id)pathForProtectNebulaDaemonWritesIndicator;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int _nebulaDaemonWriteProtectionFileDescriptor; // @synthesize _nebulaDaemonWriteProtectionFileDescriptor=__nebulaDaemonWriteProtectionFileDescriptor;
 @property(readonly, nonatomic) NSMutableSet *_nebulaDaemonWriteProtectionInflightIdentifiers; // @synthesize _nebulaDaemonWriteProtectionInflightIdentifiers=__nebulaDaemonWriteProtectionInflightIdentifiers;
 @property(readonly, nonatomic) NSMutableDictionary *_burstProcessingProtectionFileDescriptorsByIdentifier; // @synthesize _burstProcessingProtectionFileDescriptorsByIdentifier=__burstProcessingProtectionFileDescriptorsByIdentifier;
 @property(readonly, nonatomic) NSMutableDictionary *_persistenceProtectionFileDescriptorsByType; // @synthesize _persistenceProtectionFileDescriptorsByType=__persistenceProtectionFileDescriptorsByType;
 @property(readonly, nonatomic) NSCountedSet *_persistenceProtectionInflightRequestsByType; // @synthesize _persistenceProtectionInflightRequestsByType=__persistenceProtectionInflightRequestsByType;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_protectionQueue; // @synthesize _protectionQueue=__protectionQueue;
-- (void).cxx_destruct;
 - (void)_protectionQueueAbortProtectionForNebulaDaemonWritesForReason:(id)arg1;
 - (void)_protectionQueueStopProtectingNebulaDaemonWritesForIdentifier:(id)arg1 closeFile:(_Bool)arg2;
 - (void)_protectionQueueStartProtectingNebulaDaemonWritesForIdentifier:(id)arg1;

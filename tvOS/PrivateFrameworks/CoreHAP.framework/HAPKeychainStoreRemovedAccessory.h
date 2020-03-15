@@ -15,10 +15,10 @@
     NSError *_removeError;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *removeError; // @synthesize removeError=_removeError;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, nonatomic) NSString *accessoryName; // @synthesize accessoryName=_accessoryName;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 creationDate:(id)arg2;
 - (id)description;
 

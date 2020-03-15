@@ -18,11 +18,11 @@
     TVCKStoreMetadataRequestCompletionHandler *_completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak TVCKStoreMetadataRequestCompletionHandler *completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) SSLookupRequest *lookupRequest; // @synthesize lookupRequest=_lookupRequest;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) SSLookupResponse *response; // @synthesize response=_response;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)start;
 - (_Bool)isExecuting;

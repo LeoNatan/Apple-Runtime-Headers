@@ -14,9 +14,9 @@
     NSString *_tableName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *tableName; // @synthesize tableName=_tableName;
 @property(readonly, nonatomic) EFSQLColumnSchema *column; // @synthesize column=_column;
-- (void).cxx_destruct;
 - (_Bool)resolveWithSchema:(id)arg1;
 - (id)description;
 - (id)initWithColumn:(id)arg1 tableName:(id)arg2;

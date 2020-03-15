@@ -15,9 +15,9 @@
 }
 
 + (id)rectTransformationRequestWithRect:(struct CGRect)arg1 parameters:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) XCUITransformParameters *transformParameters; // @synthesize transformParameters=_transformParameters;
 @property(readonly) struct CGRect rect; // @synthesize rect=_rect;
-- (void).cxx_destruct;
 @property(readonly) NSArray *axParameterRepresentation;
 
 @end

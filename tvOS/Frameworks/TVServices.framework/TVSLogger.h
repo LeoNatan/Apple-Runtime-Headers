@@ -22,13 +22,13 @@
 
 + (void)initializeLoggingWithDomain:(id)arg1 persistentComponents:(id)arg2;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *profileTimes; // @synthesize profileTimes=_profileTimes;
 @property(nonatomic) _Bool allComponentsEnabled; // @synthesize allComponentsEnabled=_allComponentsEnabled;
 @property(retain, nonatomic) NSMutableDictionary *enabledComponents; // @synthesize enabledComponents=_enabledComponents;
 @property(nonatomic) int logLevel; // @synthesize logLevel=_logLevel;
 @property(copy, nonatomic) NSArray *persistentComponents; // @synthesize persistentComponents=_persistentComponents;
 @property(retain, nonatomic) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (void)_logFrom:(void *)arg1 toLog:(id)arg2 asType:(unsigned char)arg3 shouldForce:(_Bool)arg4 atLevel:(int)arg5 toComponent:(id)arg6 withFormat:(id)arg7 andArguments:(struct __va_list_tag [1])arg8;
 - (void)_logForComponent:(id)arg1 level:(int)arg2 message:(id)arg3;
 - (void)_logForComponent:(id)arg1 level:(int)arg2 format:(id)arg3 list:(struct __va_list_tag [1])arg4;

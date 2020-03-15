@@ -31,6 +31,7 @@
 + (id)overriddenStyleAttributes;
 + (id)styleAttributesForStatusBar:(id)arg1 style:(int)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *imageNamePrefixes; // @synthesize imageNamePrefixes=_imageNamePrefixes;
 @property(copy, nonatomic) UIColor *imageDimmedTintColor; // @synthesize imageDimmedTintColor=_imageDimmedTintColor;
 @property(copy, nonatomic) UIColor *imageTintColor; // @synthesize imageTintColor=_imageTintColor;
@@ -44,7 +45,6 @@
 @property(copy, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) int mode; // @synthesize mode=_mode;
 @property(readonly, nonatomic) int style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)fontForStyle:(int)arg1;
 - (id)styleAttributesWithOverrides:(id)arg1;
 - (id)description;

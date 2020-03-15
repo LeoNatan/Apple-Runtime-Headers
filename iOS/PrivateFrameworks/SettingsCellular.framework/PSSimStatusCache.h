@@ -21,10 +21,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *simStatusDict; // @synthesize simStatusDict=_simStatusDict;
 @property(copy) CTXPCServiceSubscriptionInfo *subscriptionInfo; // @synthesize subscriptionInfo=_subscriptionInfo;
 @property(retain, nonatomic) CoreTelephonyClient *coreTelephonyClient; // @synthesize coreTelephonyClient=_coreTelephonyClient;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isDualSimCapable;
 - (void)simStatusDidChange:(id)arg1 status:(id)arg2;
 - (id)simStatus:(id)arg1;

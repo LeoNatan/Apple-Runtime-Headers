@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _outputChangeHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setShouldUpdateOutput:) _Bool _shouldUpdateOutput; // @synthesize _shouldUpdateOutput=__shouldUpdateOutput;
 @property(nonatomic, setter=_setPerformingInputChanges:) _Bool isPerformingInputChanges; // @synthesize isPerformingInputChanges=_isPerformingInputChanges;
 @property(copy, nonatomic) CDUnknownBlockType outputChangeHandler; // @synthesize outputChangeHandler=_outputChangeHandler;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) id <ISVitalitySettings> settings; // @synthesize settings=_settings;
-- (void).cxx_destruct;
 - (void)updateOutput;
 - (void)invalidateOutput;
 - (void)performInputChanges:(CDUnknownBlockType)arg1;

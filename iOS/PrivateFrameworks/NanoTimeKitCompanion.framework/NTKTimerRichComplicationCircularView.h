@@ -6,7 +6,7 @@
 
 #import <NanoTimeKitCompanion/NTKRichComplicationCircularBaseView.h>
 
-@class NSDate, NTKColoringLabel, NTKRichComplicationDialView, UIImageView;
+@class NSDate, NSNumber, NTKColoringLabel, NTKRichComplicationDialView, UIImageView;
 
 @interface NTKTimerRichComplicationCircularView : NTKRichComplicationCircularBaseView
 {
@@ -16,7 +16,7 @@
     NTKColoringLabel *_timerLabel;
     NSDate *_timerDate;
     double _timerDuration;
-    struct NSNumber *_updateToken;
+    NSNumber *_updateToken;
     struct {
         long long numberTicks;
         struct CGSize tickSize;

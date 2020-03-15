@@ -16,10 +16,10 @@
     struct __SecTrust *_trust;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct __SecTrust *trust; // @synthesize trust=_trust;
 @property(readonly, copy, nonatomic) NSString *sender; // @synthesize sender=_sender;
 @property(readonly, nonatomic) unsigned long long certificateType; // @synthesize certificateType=_certificateType;
-- (void).cxx_destruct;
 - (void)removeCertificateFromKeychain;
 - (void)saveCertificateToKeychain;
 @property(readonly, nonatomic) unsigned long long keychainStatus;

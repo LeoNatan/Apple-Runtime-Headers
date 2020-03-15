@@ -34,6 +34,7 @@
 + (long long)_fontSizeParameterForContentSizeCategory:(id)arg1;
 + (id)defaultFontForContentSizeCategory:(id)arg1 languageInsets:(struct UIEdgeInsets *)arg2;
 + (struct UIEdgeInsets)insetsForFont:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) NSString *overrideText; // @synthesize overrideText=_overrideText;
 @property(nonatomic) struct UIEdgeInsets textInsets; // @synthesize textInsets=_textInsets;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) Class iconViewClass; // @synthesize iconViewClass=_iconViewClass;
 @property(retain, nonatomic) SBIconView *iconView; // @synthesize iconView=_iconView;
 @property(readonly, nonatomic) SBIcon *icon; // @synthesize icon=_icon;
-- (void).cxx_destruct;
 - (_Bool)_hasValidInputs;
 - (id)_fontWithLanguageInsets:(struct UIEdgeInsets *)arg1;
 - (struct CGSize)_maxSize;

@@ -14,9 +14,9 @@
     CUISAlertPolicy *_policyTemplate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CUISAlertPolicy *policyTemplate; // @synthesize policyTemplate=_policyTemplate;
 @property(readonly, nonatomic) NSString *alertServiceName; // @synthesize alertServiceName=_alertServiceName;
-- (void).cxx_destruct;
 - (unsigned int)presentationRuleForExistingAlertItem:(id)arg1 incomingAlertItem:(id)arg2;
 - (_Bool)hasPresentationRuleForExistingAlertItem:(id)arg1 incomingAlertItem:(id)arg2;
 - (id)initWithAlertServiceName:(id)arg1;

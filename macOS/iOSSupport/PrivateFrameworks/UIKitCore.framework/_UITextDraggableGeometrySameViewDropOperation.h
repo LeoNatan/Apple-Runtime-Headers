@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     unsigned long long _operation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long operation; // @synthesize operation=_operation;
 @property(retain, nonatomic) NSAttributedString *text; // @synthesize text=_text;
 @property(retain, nonatomic) UITextRange *targetRange; // @synthesize targetRange=_targetRange;
 @property(retain, nonatomic) NSArray *sourceRanges; // @synthesize sourceRanges=_sourceRanges;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

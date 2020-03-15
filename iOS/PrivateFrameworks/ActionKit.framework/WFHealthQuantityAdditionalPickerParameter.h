@@ -14,8 +14,8 @@
     HKQuantityType *_quantityType;
 }
 
-@property(retain, nonatomic) HKQuantityType *quantityType; // @synthesize quantityType=_quantityType;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HKQuantityType *quantityType; // @synthesize quantityType=_quantityType;
 - (_Bool)supportsImportQuestions;
 - (id)localizedLabelForPossibleState:(id)arg1;
 - (id)localizedLabel;

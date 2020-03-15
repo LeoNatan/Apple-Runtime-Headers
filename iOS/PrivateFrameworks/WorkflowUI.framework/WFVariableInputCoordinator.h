@@ -34,6 +34,7 @@
     struct CGRect _previousFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect previousFrame; // @synthesize previousFrame=_previousFrame;
 @property(nonatomic) _Bool undocked; // @synthesize undocked=_undocked;
 @property(retain, nonatomic) WFVariableSuggester *variableSuggester; // @synthesize variableSuggester=_variableSuggester;
@@ -50,7 +51,6 @@
 @property(nonatomic) __weak id <WFVariableProvider> variableProvider; // @synthesize variableProvider=_variableProvider;
 @property(nonatomic) __weak id <WFVariableTypingContext> variableTypingContext; // @synthesize variableTypingContext=_variableTypingContext;
 @property(nonatomic) __weak UIResponder<WFInputViewMutable> *responder; // @synthesize responder=_responder;
-- (void).cxx_destruct;
 - (void)variableSuggesterSuggestionsDidChange:(id)arg1;
 - (void)variableShortcutsTrayDidSelectMagicVariable:(id)arg1;
 - (void)variableShortcutsTray:(id)arg1 didSelectVariable:(id)arg2;

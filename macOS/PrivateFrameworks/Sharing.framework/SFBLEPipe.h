@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CBCentralManager, CBScalablePipe, CBScalablePipeManager, NSData, NSDate, NSMutableData, NSString, SFBLEData;
+@class CBCentralManager, CBScalablePipe, CBScalablePipeManager, NSData, NSDate, NSMutableArray, NSMutableData, NSMutableDictionary, NSString, SFBLEData;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface SFBLEPipe : NSObject
@@ -30,13 +30,13 @@
     unsigned long long _btWriteLen;
     unsigned long long _btWriteOffset;
     const char *_btWritePtr;
-    struct NSMutableArray *_btWriteQueue;
+    NSMutableArray *_btWriteQueue;
     struct channel_ring_desc *_btWriteRing;
     NSObject<OS_dispatch_source> *_btWriteSource;
     BOOL _btWriteSuspended;
     CBScalablePipe *_btPipe;
     CBScalablePipeManager *_btPipeManager;
-    struct NSMutableDictionary *_frameHandlers;
+    NSMutableDictionary *_frameHandlers;
     BOOL _invalidateCalled;
     NSDate *_lastDisconnectDate;
     struct LogCategory *_ucat;
@@ -49,6 +49,7 @@
     CDUnknownBlockType _invalidationHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL manualConnect; // @synthesize manualConnect=_manualConnect;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
@@ -56,7 +57,6 @@
 @property(copy, nonatomic) CDUnknownBlockType frameHandler; // @synthesize frameHandler=_frameHandler;
 @property(copy, nonatomic) CDUnknownBlockType connectionStateChangedHandler; // @synthesize connectionStateChangedHandler=_connectionStateChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType bluetoothStateChangedHandler; // @synthesize bluetoothStateChangedHandler=_bluetoothStateChangedHandler;
-- (void).cxx_destruct;
 - (void)centralManager:(id)arg1 didDisconnectPeripheral:(id)arg2 error:(id)arg3;
 - (void)centralManager:(id)arg1 didFailToConnectPeripheral:(id)arg2 error:(id)arg3;
 - (void)centralManager:(id)arg1 didConnectPeripheral:(id)arg2;

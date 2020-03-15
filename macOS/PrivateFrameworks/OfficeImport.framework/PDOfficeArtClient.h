@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     int mInheritedTextStylePlaceholderType;
 }
 
-@property(nonatomic) int inheritedTextStylePlaceholderType; // @synthesize inheritedTextStylePlaceholderType=mInheritedTextStylePlaceholderType;
 - (void).cxx_destruct;
+@property(nonatomic) int inheritedTextStylePlaceholderType; // @synthesize inheritedTextStylePlaceholderType=mInheritedTextStylePlaceholderType;
 @property(readonly, copy) NSString *description;
 - (void)setHasOleChart:(BOOL)arg1;
 - (BOOL)hasOleChart;

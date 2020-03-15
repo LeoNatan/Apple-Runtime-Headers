@@ -14,9 +14,9 @@
     id _maximumRelativeValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id maximumRelativeValue; // @synthesize maximumRelativeValue=_maximumRelativeValue;
 @property(retain, nonatomic) id minimumRelativeValue; // @synthesize minimumRelativeValue=_minimumRelativeValue;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) long long type;
 @property(readonly, nonatomic) NSString *keyPath;

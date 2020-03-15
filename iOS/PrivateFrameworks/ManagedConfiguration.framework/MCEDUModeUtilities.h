@@ -10,6 +10,14 @@
 {
 }
 
++ (unsigned long long)_getDiskSize;
++ (unsigned long long)getDiskAvailableSize;
++ (id)_configureResidentUsersNumberForSharedDeviceImmediately:(id)arg1;
++ (id)_configureQuotaSizeForSharedDeviceImmediately:(id)arg1;
++ (_Bool)isFirstSetupBuddyDone;
++ (id)configureResidentUsersNumberForSharedDevice:(id)arg1;
++ (id)configureQuotaSizeForSharedDevice:(id)arg1;
++ (id)configureToSharedDevice;
 + (_Bool)isEphemeralMultiUser;
 
 @end

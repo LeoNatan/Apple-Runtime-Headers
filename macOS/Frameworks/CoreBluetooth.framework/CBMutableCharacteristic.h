@@ -15,10 +15,10 @@
     NSNumber *_ID;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSNumber *ID; // @synthesize ID=_ID;
 @property(nonatomic) unsigned long long permissions; // @synthesize permissions=_permissions;
 @property(readonly, retain) NSArray *subscribedCentrals; // @synthesize subscribedCentrals=_subscribedCentrals;
-- (void).cxx_destruct;
 - (id)description;
 - (void)handlePowerNotOn;
 - (BOOL)handleCentralUnsubscribed:(id)arg1;

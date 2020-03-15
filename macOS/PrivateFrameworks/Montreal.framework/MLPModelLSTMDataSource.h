@@ -22,13 +22,13 @@
     unsigned long long _lstmOutputSize;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property unsigned long long lstmOutputSize; // @synthesize lstmOutputSize=_lstmOutputSize;
 @property unsigned long long lstmInputSize; // @synthesize lstmInputSize=_lstmInputSize;
 @property unsigned long long rows; // @synthesize rows=_rows;
 @property unsigned long long columns; // @synthesize columns=_columns;
 @property unsigned long long weightID; // @synthesize weightID=_weightID;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)loadWithInitialWeights_0:(float *)arg1 initialWeights_1:(float *)arg2 bias_0:(float *)arg3 bias_1:(float *)arg4 weightAttributes:(unsigned long long)arg5;
 - (id)label;
 - (void)checkpoint;

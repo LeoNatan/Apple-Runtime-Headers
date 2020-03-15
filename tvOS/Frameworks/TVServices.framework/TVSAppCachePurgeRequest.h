@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requiresAppTermination; // @synthesize requiresAppTermination=_requiresAppTermination;
 @property(nonatomic) long long cacheType; // @synthesize cacheType=_cacheType;
 @property(nonatomic) long long urgency; // @synthesize urgency=_urgency;
 @property(readonly, nonatomic) NSURL *cacheURL; // @synthesize cacheURL=_cacheURL;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithPropertyListRepresentation:(id)arg1;

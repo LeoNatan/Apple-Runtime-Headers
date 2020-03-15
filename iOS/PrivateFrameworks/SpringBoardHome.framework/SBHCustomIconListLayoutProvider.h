@@ -17,9 +17,9 @@
     id <SBIconListLayout> _defaultLayout;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SBIconListLayout> defaultLayout; // @synthesize defaultLayout=_defaultLayout;
 @property(readonly, copy, nonatomic) NSDictionary *listLayouts; // @synthesize listLayouts=_listLayouts;
-- (void).cxx_destruct;
 - (id)layoutForIconLocation:(id)arg1;
 - (id)init;
 - (id)initWithListLayouts:(id)arg1;

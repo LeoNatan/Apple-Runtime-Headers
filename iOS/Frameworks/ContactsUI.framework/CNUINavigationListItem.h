@@ -27,6 +27,7 @@
 + (id)navigationListItemsForUserActionListModel:(id)arg1;
 + (id)localizedLabelForActionItem:(id)arg1 usingPropertyLabel:(_Bool)arg2;
 + (id)navigationListItemForContactProperty:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(nonatomic) __weak CNUINavigationListItem *defaultItem; // @synthesize defaultItem=_defaultItem;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak CNUINavigationListItem *parent; // @synthesize parent=_parent;
 @property(retain, nonatomic) id <CNUINavigationListItemContent> content; // @synthesize content=_content;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 image:(id)arg2;
 - (id)initWithTitle:(id)arg1;
 - (id)init;

@@ -14,9 +14,9 @@
     NSURL *_url;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(retain) NSString *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)load:(out id *)arg1;
 - (id)initWithURL:(id)arg1;

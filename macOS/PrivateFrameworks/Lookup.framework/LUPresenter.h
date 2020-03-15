@@ -29,11 +29,11 @@
 + (BOOL)windowIsMain:(id)arg1;
 + (id)windowAtScreenLocation:(struct CGPoint)arg1;
 + (id)sharedPresenter;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint displayedTermOrigin; // @synthesize displayedTermOrigin=_displayedTermOrigin;
 @property(retain, nonatomic) NSAttributedString *displayedTerm; // @synthesize displayedTerm=_displayedTerm;
 @property(retain, nonatomic) NSPopover *resultsPopover; // @synthesize resultsPopover=_resultsPopover;
 @property(retain, nonatomic) LUSearchTermIndicator *searchTermIndicator; // @synthesize searchTermIndicator=_searchTermIndicator;
-- (void).cxx_destruct;
 - (void)dataDetectorsUIActionWillStart;
 - (void)dataDetectorsUIActionDidEnd;
 - (void)popoverDidClose:(id)arg1;

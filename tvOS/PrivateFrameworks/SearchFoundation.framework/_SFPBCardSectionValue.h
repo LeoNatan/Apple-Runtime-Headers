@@ -53,6 +53,7 @@
     _SFPBCompactRowCardSection *_compactRowCardSection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _SFPBCompactRowCardSection *compactRowCardSection; // @synthesize compactRowCardSection=_compactRowCardSection;
 @property(retain, nonatomic) _SFPBMapPlaceCardSection *mapPlaceCardSection; // @synthesize mapPlaceCardSection=_mapPlaceCardSection;
 @property(retain, nonatomic) _SFPBMediaRemoteControlCardSection *mediaRemoteControlCardSection; // @synthesize mediaRemoteControlCardSection=_mediaRemoteControlCardSection;
@@ -91,7 +92,6 @@
 @property(retain, nonatomic) _SFPBKeyValueDataCardSection *keyValueDataCardSection; // @synthesize keyValueDataCardSection=_keyValueDataCardSection;
 @property(retain, nonatomic) _SFPBDescriptionCardSection *descriptionCardSection; // @synthesize descriptionCardSection=_descriptionCardSection;
 @property(retain, nonatomic) _SFPBAppLinkCardSection *appLinkCardSection; // @synthesize appLinkCardSection=_appLinkCardSection;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

@@ -17,8 +17,8 @@
 }
 
 + (id)contactImage;
-@property(nonatomic) __weak id <SGContactSuggestionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SGContactSuggestionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)contactPopoverController:(id)arg1 didIgnoreSuggestedContact:(id)arg2;
 - (void)contactPopoverController:(id)arg1 didCommitSuggestedContact:(id)arg2;
 - (id)suggestionPrimaryAction;

@@ -15,9 +15,9 @@
 }
 
 + (id)descriptorWithClass:(Class)arg1 propertyName:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *propertyName; // @synthesize propertyName=_propertyName;
 @property(readonly, nonatomic) Class objectClass; // @synthesize objectClass=_objectClass;
-- (void).cxx_destruct;
 
 @end
 

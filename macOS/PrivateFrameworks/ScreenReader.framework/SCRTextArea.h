@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     CDStruct_97f7034d _command;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SCRElement *magicPressElement; // @synthesize magicPressElement=_magicPressElement;
 @property(nonatomic) CDStruct_97f7034d command; // @synthesize command=_command;
 @property(retain, nonatomic, setter=_setWordEchoHelper:) SCRTextDelayedWordEchoHelper *_wordEchoHelper; // @synthesize _wordEchoHelper=__wordEchoHelper;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, setter=_setLastValueChange:) SCRTextAreaChange *_lastValueChange; // @synthesize _lastValueChange=__lastValueChange;
 @property(nonatomic, getter=isObservingTextValueChangedNotification) BOOL observingTextValueChangedNotification; // @synthesize observingTextValueChangedNotification=_observingTextValueChangedNotification;
 @property(nonatomic, getter=isObservingSelectedTextChangedNotification) BOOL observingSelectedTextChangedNotification; // @synthesize observingSelectedTextChangedNotification=_observingSelectedTextChangedNotification;
-- (void).cxx_destruct;
 - (BOOL)textSelectionUpdateInProgress;
 - (BOOL)advanceInsertionPointWithDirection:(long long)arg1 granularity:(long long)arg2 uiElement:(id)arg3 outputRequest:(id)arg4;
 - (BOOL)_advanceInsertionPointWithDirection:(long long)arg1 granularity:(long long)arg2 uiElement:(id)arg3 outputRequest:(id)arg4;
@@ -76,7 +76,7 @@ __attribute__((visibility("hidden")))
 - (id)newOutputRequest;
 - (void)moveInsertionToElement:(id)arg1 affinity:(long long)arg2;
 - (id)validatedTextMarkerRangeForUIElement:(id)arg1;
-- (void)handleTextChangesWithUIElement:(id)arg1 changes:(struct NSArray *)arg2 secure:(BOOL)arg3;
+- (void)handleTextChangesWithUIElement:(id)arg1 changes:(id)arg2 secure:(BOOL)arg3;
 - (void)handleTextSelectionWithUIElement:(id)arg1 command:(CDStruct_97f7034d)arg2 lastSelectedTextMarkerRange:(id)arg3 selectedTextMarkerRange:(id)arg4;
 - (void)handleTextNavigationWithUIElement:(id)arg1 command:(CDStruct_97f7034d)arg2 lastSelectedTextMarkerRange:(id)arg3 selectedTextMarkerRange:(id)arg4 outputRequest:(id)arg5;
 - (void)handleTextBoundaryWithUIElement:(id)arg1 command:(CDStruct_97f7034d)arg2 outputRequest:(id)arg3;

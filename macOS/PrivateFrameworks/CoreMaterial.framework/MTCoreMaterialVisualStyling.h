@@ -24,10 +24,10 @@
     NSDictionary *_filterProperties;
 }
 
+- (void).cxx_destruct;
 - (id)filterProperties;
 - (id)filterType;
 - (id)compositingFilter;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic, getter=_composedFilter) CAFilter *composedFilter;
 - (void)_processFilteringDescription:(id)arg1;

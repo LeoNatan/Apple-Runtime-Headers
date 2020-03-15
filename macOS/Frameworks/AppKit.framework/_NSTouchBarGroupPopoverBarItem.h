@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
-@property __weak NSButtonGroupTouchBarItem *groupBarItem; // @synthesize groupBarItem=_groupBarItem;
 - (void).cxx_destruct;
+@property __weak NSButtonGroupTouchBarItem *groupBarItem; // @synthesize groupBarItem=_groupBarItem;
 - (BOOL)isVisible;
 
 @end

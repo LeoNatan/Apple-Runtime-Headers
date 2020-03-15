@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     LPTextView *_quote;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) LPTextView *quote; // @synthesize quote=_quote;
 @property(retain, nonatomic) LPCaptionBarView *mediaBottomCaptionBar; // @synthesize mediaBottomCaptionBar=_mediaBottomCaptionBar;
 @property(retain, nonatomic) LPCaptionBarView *mediaTopCaptionBar; // @synthesize mediaTopCaptionBar=_mediaTopCaptionBar;
 @property(retain, nonatomic) UIView *mediaBackground; // @synthesize mediaBackground=_mediaBackground;
 @property(retain, nonatomic) LPComponentView *media; // @synthesize media=_media;
 @property(retain, nonatomic) LPCaptionBarView *captionBar; // @synthesize captionBar=_captionBar;
-- (void).cxx_destruct;
 
 @end
 

@@ -27,9 +27,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_completions;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *completions; // @synthesize completions=_completions;
 @property(retain) SBKTaskAssertion *taskAssertion; // @synthesize taskAssertion=_taskAssertion;
-- (void).cxx_destruct;
 - (void)invokeTaskCompletionBlocksWithBlock:(CDUnknownBlockType)arg1;
 - (void)addTaskCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)invalidate;

@@ -20,13 +20,13 @@
     UIButton *_linkButton;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIButton *linkButton; // @synthesize linkButton=_linkButton;
 @property(readonly, nonatomic) PKTableHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(readonly, nonatomic) UIImageView *customImageView; // @synthesize customImageView=_customImageView;
 @property(readonly, nonatomic) long long context; // @synthesize context=_context;
 @property(readonly, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
 @property(readonly, nonatomic) PKPaymentSetupMoreInfoItem *moreInfoItem; // @synthesize moreInfoItem=_moreInfoItem;
-- (void).cxx_destruct;
 - (void)_linkButtonTapped:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithMoreInfoItem:(id)arg1 paymentPass:(id)arg2 context:(long long)arg3;

@@ -18,10 +18,10 @@
 }
 
 + (id)responderWithSuccessHandler:(CDUnknownBlockType)arg1 failureHandler:(CDUnknownBlockType)arg2 invalidHandler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType invalidHandler; // @synthesize invalidHandler=_invalidHandler;
 @property(copy, nonatomic) CDUnknownBlockType failureHandler; // @synthesize failureHandler=_failureHandler;
 @property(copy, nonatomic) CDUnknownBlockType successHandler; // @synthesize successHandler=_successHandler;
-- (void).cxx_destruct;
 - (void)handleInvalidAuthenticationRequest:(id)arg1;
 - (void)handleFailedAuthenticationRequest:(id)arg1 error:(id)arg2;
 - (void)handleSuccessfulAuthenticationRequest:(id)arg1;

@@ -18,12 +18,12 @@
 }
 
 + (id)stringForSource:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain, nonatomic) NSError *eventError; // @synthesize eventError=_eventError;
 @property(readonly, nonatomic) NSUUID *eventType; // @synthesize eventType=_eventType;
 @property(nonatomic, getter=isSubmitted) _Bool submitted; // @synthesize submitted=_submitted;
-- (void).cxx_destruct;
 @property(readonly) double durationInMilliseconds;
 - (void)submitAtDate:(id)arg1 error:(id)arg2;
 - (id)initWithEventType:(id)arg1;

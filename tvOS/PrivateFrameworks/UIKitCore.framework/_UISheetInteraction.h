@@ -17,6 +17,7 @@
 {
     _Bool _enabled;
     _Bool _horizontalRubberBandingEnabled;
+    _Bool _verticalPanningEnabled;
     NSArray *_detents;
     long long _indexOfCurrentDetent;
     double _rubberBandExtentBeyondMinimumOffset;
@@ -33,10 +34,12 @@
     struct CGPoint _currentOffset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewPropertyAnimator *propertyAnimator; // @synthesize propertyAnimator=_propertyAnimator;
 @property(nonatomic) double unconstrainedOffset; // @synthesize unconstrainedOffset=_unconstrainedOffset;
 @property(nonatomic) double offsetWhenGestureBegan; // @synthesize offsetWhenGestureBegan=_offsetWhenGestureBegan;
 @property(retain, nonatomic) id dragSource; // @synthesize dragSource=_dragSource;
+@property(nonatomic) _Bool verticalPanningEnabled; // @synthesize verticalPanningEnabled=_verticalPanningEnabled;
 @property(nonatomic) _Bool horizontalRubberBandingEnabled; // @synthesize horizontalRubberBandingEnabled=_horizontalRubberBandingEnabled;
 @property(readonly, nonatomic) UIPanGestureRecognizer *backgroundGestureRecognizer; // @synthesize backgroundGestureRecognizer=_backgroundGestureRecognizer;
 @property(readonly, nonatomic) NSMutableArray *registeredPanGestureRecognizers; // @synthesize registeredPanGestureRecognizers=_registeredPanGestureRecognizers;
@@ -49,7 +52,7 @@
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) long long indexOfCurrentDetent; // @synthesize indexOfCurrentDetent=_indexOfCurrentDetent;
 @property(copy, nonatomic) NSArray *detents; // @synthesize detents=_detents;
-- (void).cxx_destruct;
+- (id)_currentDragPanGesture;
 - (void)draggingCancelledInSource:(id)arg1;
 - (void)draggingEndedInSource:(id)arg1 withVelocity:(double)arg2;
 - (void)draggingChangedInSource:(id)arg1 withTranslation:(struct CGPoint)arg2 animateChange:(_Bool)arg3;
@@ -60,6 +63,7 @@
 - (_Bool)_descendentScrollView:(id)arg1 shouldPreserveStartOffset:(struct CGPoint)arg2;
 - (struct CGPoint)_scrollView:(id)arg1 adjustedUnconstrainedOffsetForUnconstrainedOffset:(struct CGPoint)arg2 startOffset:(struct CGPoint)arg3 horizontalVelocity:(inout double *)arg4 verticalVelocity:(inout double *)arg5 animator:(out id *)arg6;
 - (void)handlePan:(id)arg1;
+- (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (void)updateRegisteredPanGestureRecognizerEnabled:(id)arg1;
 - (void)unregisterPanGestureRecognizer:(id)arg1;

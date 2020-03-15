@@ -17,12 +17,12 @@
     WFRowOfIconsView *_actionsIconsView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFRowOfIconsView *actionsIconsView; // @synthesize actionsIconsView=_actionsIconsView;
 @property(readonly, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) HUTriggerIconView *homeTriggerIconView; // @synthesize homeTriggerIconView=_homeTriggerIconView;
 @property(retain, nonatomic) UIImageView *triggerIconView; // @synthesize triggerIconView=_triggerIconView;
 @property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
-- (void).cxx_destruct;
 - (void)setHomeActionIcons:(id)arg1;
 - (void)setActionIcons:(id)arg1;
 - (void)setHomeTriggerIcon:(id)arg1;

@@ -40,11 +40,11 @@
     NSObject<OS_dispatch_queue> *_workQueueForStreamTask;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) __NSCFURLLocalStreamTaskWorkRead *currentReadTask; // @synthesize currentReadTask=_currentReadTask;
 @property(retain, nonatomic) __NSCFURLLocalStreamTaskWorkWrite *currentWriteTask; // @synthesize currentWriteTask=_currentWriteTask;
 @property(copy) NSData *_initialDataPayload; // @synthesize _initialDataPayload=__initialDataPayload;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)_onSessionQueue_cleanupAndBreakCycles;
 - (void)_onSessionQueue_disavow;
 - (void)_onqueue_adjustLoadingPoolPriority;

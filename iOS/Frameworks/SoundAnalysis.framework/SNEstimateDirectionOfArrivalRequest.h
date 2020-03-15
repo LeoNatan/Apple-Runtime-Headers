@@ -18,8 +18,8 @@
     NSArray *_spatialSpectrum;
 }
 
-@property(readonly, nonatomic) NSArray *spatialSpectrum; // @synthesize spatialSpectrum=_spatialSpectrum;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *spatialSpectrum; // @synthesize spatialSpectrum=_spatialSpectrum;
 @property(readonly, nonatomic) float azimuth;
 @property(readonly, nonatomic) __weak id <SNAnalyzing> analyzer;
 - (id)init;

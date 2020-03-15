@@ -41,6 +41,7 @@
     _Bool _preflightCTag;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nextCTag; // @synthesize nextCTag=_nextCTag;
 @property(readonly, nonatomic) NSDictionary *folderURLToChildrenURLOrder; // @synthesize folderURLToChildrenURLOrder=_folderURLToChildrenURLOrder;
 @property(retain, nonatomic) NSString *previousSyncToken; // @synthesize previousSyncToken=_previousSyncToken;
@@ -48,7 +49,6 @@
 @property(readonly, nonatomic) NSString *previousCTag; // @synthesize previousCTag=_previousCTag;
 @property(readonly, nonatomic) NSURL *folderURL; // @synthesize folderURL=_folderURL;
 @property(nonatomic) unsigned long long multiGetBatchSize; // @synthesize multiGetBatchSize=_multiGetBatchSize;
-- (void).cxx_destruct;
 - (_Bool)shouldSyncChildWithResourceType:(id)arg1;
 - (id)dataContentType;
 - (id)copyFolderMultiGetTaskWithURLs:(id)arg1;

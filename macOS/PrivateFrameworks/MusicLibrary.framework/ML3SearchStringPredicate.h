@@ -16,9 +16,9 @@
 
 + (id)predicateWithConcatenatedProperties:(id)arg1 searchString:(id)arg2;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(copy, nonatomic) NSArray *properties; // @synthesize properties=_properties;
-- (void).cxx_destruct;
 - (BOOL)isDynamicForEntityClass:(Class)arg1;
 - (id)databaseStatementParameters;
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;

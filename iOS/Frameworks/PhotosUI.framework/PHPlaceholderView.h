@@ -17,12 +17,12 @@
     UILabel *__appleTVMessageLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setAppleTVMessageLabel:) UILabel *_appleTVMessageLabel; // @synthesize _appleTVMessageLabel=__appleTVMessageLabel;
 @property(retain, nonatomic, setter=_setAirPlayLabel:) UILabel *_airPlayLabel; // @synthesize _airPlayLabel=__airPlayLabel;
 @property(retain, nonatomic, setter=_setImageView:) UIImageView *_imageView; // @synthesize _imageView=__imageView;
 @property(retain, nonatomic, setter=_setContainer:) UIView *_container; // @synthesize _container=__container;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)_appleTVMessage;
 - (void)_setup;
 - (id)initWithType:(long long)arg1;

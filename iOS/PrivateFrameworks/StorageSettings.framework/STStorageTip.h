@@ -15,10 +15,10 @@
     PSSpecifier *_specifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PSSpecifier *infoSpecifier; // @synthesize infoSpecifier=_infoSpecifier;
 @property(retain) PSSpecifier *specifier; // @synthesize specifier=_specifier;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)reload;
 @property(retain, nonatomic) NSString *representedApp;
 @property(retain, nonatomic) UIImage *icon;

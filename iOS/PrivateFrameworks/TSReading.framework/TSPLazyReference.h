@@ -23,11 +23,11 @@
 }
 
 + (id)referenceForObject:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isWeak; // @synthesize isWeak=_isWeak;
 @property(nonatomic) __weak TSPComponent *component; // @synthesize component=_component;
 @property(readonly, nonatomic) long long identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id <TSPLazyReferenceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (void)resetIdentifier;
 - (_Bool)discardStrongObjectIfPossible;

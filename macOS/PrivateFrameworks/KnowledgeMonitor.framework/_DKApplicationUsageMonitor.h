@@ -18,10 +18,10 @@
 + (id)_eventWithBundleIdentifier:(id)arg1 startDate:(id)arg2;
 + (BOOL)shouldMergeUnchangedEvents;
 + (id)eventStream;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *activeApplicationEvents; // @synthesize activeApplicationEvents=_activeApplicationEvents;
 @property unsigned long long activityNotificationHandle; // @synthesize activityNotificationHandle=_activityNotificationHandle;
 @property void *notificationID; // @synthesize notificationID=_notificationID;
-- (void).cxx_destruct;
 - (void)invalidateInstantState;
 - (void)synchronouslyReflectCurrentValue;
 - (void)stop;

@@ -8,7 +8,7 @@
 
 #import <VideosUI/VUIRentalExpirationLabelDelegate-Protocol.h>
 
-@class NSString, UIImage, _TVStackingPosterView;
+@class NSString, TVImageLayout, UIImage, VUILabel, VUIRentalExpirationLabel, _TVStackingPosterView;
 
 __attribute__((visibility("hidden")))
 @interface VUITVLockupViewCell : TVContainerCollectionViewCell <VUIRentalExpirationLabelDelegate>
@@ -16,13 +16,21 @@ __attribute__((visibility("hidden")))
     _TVStackingPosterView *_stackingPosterView;
     UIImage *_placeholderImage;
     NSString *_placeholderImageString;
+    TVImageLayout *_imageLayout;
+    VUILabel *_titleLabel;
+    VUIRentalExpirationLabel *_rentalExpirationLabel;
 }
 
 + (void)configureLockupCell:(id)arg1 withMedia:(id)arg2 width:(double)arg3 artworkDictionary:(id)arg4 forMetrics:(_Bool)arg5;
+- (void).cxx_destruct;
+@property(retain, nonatomic) VUIRentalExpirationLabel *rentalExpirationLabel; // @synthesize rentalExpirationLabel=_rentalExpirationLabel;
+@property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(retain, nonatomic) TVImageLayout *imageLayout; // @synthesize imageLayout=_imageLayout;
 @property(retain, nonatomic) NSString *placeholderImageString; // @synthesize placeholderImageString=_placeholderImageString;
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 @property(retain, nonatomic) _TVStackingPosterView *stackingPosterView; // @synthesize stackingPosterView=_stackingPosterView;
-- (void).cxx_destruct;
+- (id)_rentalExpirationLabelForMediaEntity:(id)arg1;
+- (id)_titleLabelForMediaEntity:(id)arg1;
 - (struct CGSize)_layoutWithSize:(struct CGSize)arg1 metricsOnly:(_Bool)arg2;
 - (id)_placeholderImageWithLayout:(id)arg1;
 - (id)selectingView;
@@ -30,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)updateArtworkWithDictionary:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

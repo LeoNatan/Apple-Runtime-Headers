@@ -20,13 +20,13 @@
 
 + (id)sharedManager;
 + (void)setSharedClassName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property __weak ScreenSaverConfigurationViewController *configurationViewViewController; // @synthesize configurationViewViewController=_configurationViewViewController;
 @property(retain) NSMutableArray *viewControllers; // @synthesize viewControllers=_viewControllers;
 @property BOOL isPreview; // @synthesize isPreview=_isPreview;
 @property BOOL isAnimating; // @synthesize isAnimating=_isAnimating;
-- (void).cxx_destruct;
 - (void)stopAnimation;
 - (void)startAnimation;
 - (void)configurationViewViewControllerDidAwake:(id)arg1;

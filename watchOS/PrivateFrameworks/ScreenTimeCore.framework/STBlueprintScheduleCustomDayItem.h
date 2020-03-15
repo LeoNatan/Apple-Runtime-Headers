@@ -17,10 +17,10 @@
     unsigned int _day;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int day; // @synthesize day=_day;
 @property(retain, nonatomic) NSDateComponents *endTime; // @synthesize endTime=_endTime;
 @property(retain, nonatomic) NSDateComponents *startTime; // @synthesize startTime=_startTime;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

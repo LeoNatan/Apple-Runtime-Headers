@@ -20,13 +20,13 @@
     NSString *_csFamilyUUID;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *csFamilyUUID; // @synthesize csFamilyUUID=_csFamilyUUID;
 @property BOOL isDisallowedForCSOperations; // @synthesize isDisallowedForCSOperations=_isDisallowedForCSOperations;
 @property BOOL isConverting; // @synthesize isConverting=_isConverting;
 @property BOOL isEncrypted; // @synthesize isEncrypted=_isEncrypted;
 @property(retain) NSString *csLVGUUID; // @synthesize csLVGUUID=_csLVGUUID;
 @property(retain) NSString *csDiskUUID; // @synthesize csDiskUUID=_csDiskUUID;
-- (void).cxx_destruct;
 - (id)copyRootEncyrptionContext;
 - (BOOL)changeDiskOldPassword:(id)arg1 toNewPassword:(id)arg2 withHint:(id)arg3;
 - (BOOL)establishReserveKEK:(id)arg1;

@@ -16,11 +16,12 @@
     id <UIViewControllerTransitioningDelegate> _paymentTransitioningDelegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <UIViewControllerTransitioningDelegate> paymentTransitioningDelegate; // @synthesize paymentTransitioningDelegate=_paymentTransitioningDelegate;
 @property(readonly, nonatomic) PKPaymentAuthorizationServiceViewController *authorizationViewController; // @synthesize authorizationViewController=_authorizationViewController;
-- (void).cxx_destruct;
 - (id)_backgroundColorForModalFormSheet;
 - (void)traitCollectionDidChange:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 - (id)initWithLayoutStyle:(int)arg1 paymentRequest:(id)arg2;
 - (id)initWithStyle:(unsigned int)arg1;
 - (id)init;

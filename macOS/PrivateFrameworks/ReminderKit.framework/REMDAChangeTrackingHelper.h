@@ -23,6 +23,7 @@
 }
 
 + (BOOL)shouldIgnoreChangeOfModelClassProperties:(Class)arg1 withChangeObject:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cached_updatedModelObjectResultsByModelClassName; // @synthesize cached_updatedModelObjectResultsByModelClassName=_cached_updatedModelObjectResultsByModelClassName;
 @property(retain, nonatomic) NSMutableDictionary *cached_insertedModelObjectResultsByModelClassName; // @synthesize cached_insertedModelObjectResultsByModelClassName=_cached_insertedModelObjectResultsByModelClassName;
 @property(retain, nonatomic) REMObjectID *cached_remAccountObjectID; // @synthesize cached_remAccountObjectID=_cached_remAccountObjectID;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) REMChangeToken *sinceToken; // @synthesize sinceToken=_sinceToken;
 @property(retain, nonatomic) REMChangeSet *changeSet; // @synthesize changeSet=_changeSet;
 @property(readonly, nonatomic) id <REMDAAccountProviding> account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)_rem_accountObjectID;
 - (id)_rem_changeTracking;
 - (id)_rem_changeTrackingClientName;

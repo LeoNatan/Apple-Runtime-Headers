@@ -23,6 +23,7 @@
     SXTextTangierStorage *_storage;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SXTextTangierStorage *storage; // @synthesize storage=_storage;
 @property(readonly, nonatomic, getter=isAttachedToBodyText) BOOL attachedToBodyText; // @synthesize attachedToBodyText;
 @property(readonly, nonatomic, getter=isInlineWithText) BOOL inlineWithText; // @synthesize inlineWithText;
@@ -31,7 +32,6 @@
 @property(nonatomic) NSObject<TSDContainerInfo> *parentInfo; // @synthesize parentInfo;
 @property(nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment; // @synthesize owningAttachment;
 @property(copy, nonatomic) TSDInfoGeometry *geometry; // @synthesize geometry;
-- (void).cxx_destruct;
 - (id)copyWithContext:(id)arg1;
 - (id)childInfos;
 - (BOOL)isThemeContent;

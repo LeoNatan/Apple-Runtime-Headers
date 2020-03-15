@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSSet *_leafItems;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *leafItems; // @synthesize leafItems=_leafItems;
 @property(retain, nonatomic) TVCKStoreLookupItem *requestedItem; // @synthesize requestedItem=_requestedItem;
-- (void).cxx_destruct;
 
 @end
 

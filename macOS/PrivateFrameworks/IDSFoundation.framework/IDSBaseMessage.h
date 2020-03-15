@@ -60,6 +60,7 @@
     NSDate *_responseReceived;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *responseReceived; // @synthesize responseReceived=_responseReceived;
 @property(retain, nonatomic) NSDate *requestEnd; // @synthesize requestEnd=_requestEnd;
 @property(retain, nonatomic) NSDate *requestStart; // @synthesize requestStart=_requestStart;
@@ -103,7 +104,6 @@
 @property unsigned long long uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(retain, setter=_setCachedBody:) NSDictionary *_cachedBody; // @synthesize _cachedBody;
 @property(setter=_setUsingOutgoingPush:) BOOL _usingOutgoingPush; // @synthesize _usingOutgoingPush;
-- (void).cxx_destruct;
 - (void)logFailureInfo;
 - (void)handleResponseDictionary:(id)arg1;
 - (void)handleResponseStatus:(unsigned long long)arg1;

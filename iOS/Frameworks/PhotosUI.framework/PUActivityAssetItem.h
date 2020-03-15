@@ -18,10 +18,10 @@
 }
 
 + (id)itemsForAssets:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool excludeLocation; // @synthesize excludeLocation=_excludeLocation;
 @property(nonatomic) _Bool excludeLiveness; // @synthesize excludeLiveness=_excludeLiveness;
 @property(readonly, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

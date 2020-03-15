@@ -26,9 +26,10 @@
 
 + (id)allSupportedInternalOnlyProperties;
 + (id)allSupportedPropertiesIncludingInternalOnlyProperties:(_Bool)arg1;
-@property(readonly, nonatomic) MPPropertySet *requestedPropertySet; // @synthesize requestedPropertySet=_requestedPropertySet;
 - (void).cxx_destruct;
-- (id)modelObjectWithTitle:(id)arg1 loadAdditionalContentURL:(id)arg2 uniformContentItemType:(long long)arg3 isMemberOfChartSet:(_Bool)arg4 isBrick:(_Bool)arg5 displaysAsGridCellInCarPlay:(_Bool)arg6 previouslyRetrievedNestedResponse:(id)arg7 onlyContainsEditorialElements:(_Bool)arg8;
+@property(readonly, nonatomic) MPPropertySet *requestedPropertySet; // @synthesize requestedPropertySet=_requestedPropertySet;
+- (id)modelObjectWithTitle:(id)arg1 loadAdditionalContentURL:(id)arg2 uniformContentItemType:(long long)arg3 isMemberOfChartSet:(_Bool)arg4 isBrick:(_Bool)arg5 displaysAsGridCellInCarPlay:(_Bool)arg6 previouslyRetrievedNestedResponse:(id)arg7 onlyContainsEditorialElements:(_Bool)arg8 featuredContentKind:(long long)arg9 modelObject:(id)arg10;
+- (id)modelObjectWithTitle:(id)arg1 loadAdditionalContentURL:(id)arg2 uniformContentItemType:(long long)arg3 isMemberOfChartSet:(_Bool)arg4 isBrick:(_Bool)arg5 displaysAsGridCellInCarPlay:(_Bool)arg6 previouslyRetrievedNestedResponse:(id)arg7 onlyContainsEditorialElements:(_Bool)arg8 featuredContentKind:(long long)arg9;
 - (id)modelObjectWithTitle:(id)arg1 loadAdditionalContentURL:(id)arg2 uniformContentItemType:(long long)arg3 isMemberOfChartSet:(_Bool)arg4 isBrick:(_Bool)arg5 previouslyRetrievedNestedResponse:(id)arg6;
 @property(readonly, nonatomic) MPPropertySet *requestedPropertySetExcludingInternalOnlyProperties;
 - (id)initWithRequestedPropertySet:(id)arg1;

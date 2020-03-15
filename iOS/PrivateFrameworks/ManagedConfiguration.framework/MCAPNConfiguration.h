@@ -22,6 +22,7 @@
     NSNumber *_allowedProtocolMaskInDomesticRoaming;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *allowedProtocolMaskInDomesticRoaming; // @synthesize allowedProtocolMaskInDomesticRoaming=_allowedProtocolMaskInDomesticRoaming;
 @property(retain, nonatomic) NSNumber *allowedProtocolMaskInRoaming; // @synthesize allowedProtocolMaskInRoaming=_allowedProtocolMaskInRoaming;
 @property(retain, nonatomic) NSNumber *allowedProtocolMask; // @synthesize allowedProtocolMask=_allowedProtocolMask;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSString *password; // @synthesize password=_password;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)localizedAuthenticationType;
 - (id)description;
 - (id)stubDictionary;

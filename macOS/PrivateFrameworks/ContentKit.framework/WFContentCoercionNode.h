@@ -17,9 +17,9 @@
 + (id)coercionNodeWithItemOrItemClass:(id)arg1 parent:(id)arg2;
 + (id)coercionNodeWithItemClass:(Class)arg1 parent:(id)arg2;
 + (id)coercionNodeWithItem:(id)arg1 parent:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFContentCoercionNode *parent; // @synthesize parent=_parent;
 @property(readonly, nonatomic) id itemOrItemClass; // @synthesize itemOrItemClass=_itemOrItemClass;
-- (void).cxx_destruct;
 - (id)continueCoercionUsingPathEnumerator:(id)arg1 contentItems:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (id)runCoercionSynchronouslyWithOptions:(id)arg1 error:(id *)arg2;
 - (void)continueCoercionUsingPathEnumerator:(id)arg1 contentItems:(id)arg2 options:(id)arg3 error:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;

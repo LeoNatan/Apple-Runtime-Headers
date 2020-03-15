@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UIScrollView *_scrollView;
 }
 
-@property(readonly, nonatomic) SKUIDeveloperInfo *developerInfo; // @synthesize developerInfo=_developerInfo;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SKUIDeveloperInfo *developerInfo; // @synthesize developerInfo=_developerInfo;
 - (void)loadView;
 - (id)initWithDeveloperInfo:(id)arg1;
 

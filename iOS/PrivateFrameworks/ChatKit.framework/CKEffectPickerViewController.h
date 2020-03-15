@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     struct CGRect _sendButtonFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKEffectPickerView *pickerView; // @synthesize pickerView=_pickerView;
 @property(nonatomic) struct CGPoint balloonViewOrigin; // @synthesize balloonViewOrigin=_balloonViewOrigin;
 @property(nonatomic) struct CGRect sendButtonFrame; // @synthesize sendButtonFrame=_sendButtonFrame;
 @property(copy, nonatomic) NSAttributedString *text; // @synthesize text=_text;
 @property(nonatomic) id <CKEffectPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)effectSelectedWithIdentifier:(id)arg1;
 - (void)touchUpInsideCloseButton;
 - (void)effectPickerViewDidFinishAnimatingIn:(id)arg1;

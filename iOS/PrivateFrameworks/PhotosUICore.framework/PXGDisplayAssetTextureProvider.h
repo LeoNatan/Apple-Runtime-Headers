@@ -40,11 +40,11 @@
 }
 
 + (CDUnknownBlockType)defaultMediaVersionHandlerWithDataSourceBeforeChanges:(id)arg1 dataSourceAfterChanges:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool videoRequestsAllowed; // @synthesize videoRequestsAllowed=_videoRequestsAllowed;
 @property double displayLinkLastTargetTimestamp; // @synthesize displayLinkLastTargetTimestamp=_displayLinkLastTargetTimestamp;
 @property(retain, nonatomic) id <PXGDisplayAssetPixelBufferSourcesProvider> pixelBufferSourcesProvider; // @synthesize pixelBufferSourcesProvider=_pixelBufferSourcesProvider;
 @property(readonly, nonatomic) PXMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
-- (void).cxx_destruct;
 - (void)_workQueue_cancelTextureRequests:(id)arg1;
 - (void)_cancelationQueue_cancelImageRequests:(id)arg1;
 - (void)cancelTextureRequests:(id)arg1;

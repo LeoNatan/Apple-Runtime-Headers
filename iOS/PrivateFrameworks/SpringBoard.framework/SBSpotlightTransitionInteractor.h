@@ -19,9 +19,9 @@
     long long _completionCurve;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long completionCurve; // @synthesize completionCurve=_completionCurve;
 @property(nonatomic) double completionSpeed; // @synthesize completionSpeed=_completionSpeed;
-- (void).cxx_destruct;
 - (void)startInteractiveTransition:(id)arg1;
 - (void)cancelTransition;
 - (void)finishInteractiveTransition;

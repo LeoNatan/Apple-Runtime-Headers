@@ -16,8 +16,8 @@
     NSSet *_solutionSpace;
 }
 
-@property(readonly) NSSet *solutionSpace; // @synthesize solutionSpace=_solutionSpace;
 - (void).cxx_destruct;
+@property(readonly) NSSet *solutionSpace; // @synthesize solutionSpace=_solutionSpace;
 - (id)cumulativeTagsPropagatedToItem:(id)arg1;
 - (id)cumulativeTagsPropagatedByItem:(id)arg1;
 - (id)acceptedTagsForItem:(id)arg1;

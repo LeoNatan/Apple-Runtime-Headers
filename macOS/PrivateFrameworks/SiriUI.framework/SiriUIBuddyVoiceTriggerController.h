@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     SiriUIBuddyController *_parentController;
 }
 
-@property __weak SiriUIBuddyController *parentController; // @synthesize parentController=_parentController;
 - (void).cxx_destruct;
+@property __weak SiriUIBuddyController *parentController; // @synthesize parentController=_parentController;
 - (void)didCloseLid;
 - (BOOL)hasCompletedTraining;
 @property(readonly) BOOL shouldShowPane;

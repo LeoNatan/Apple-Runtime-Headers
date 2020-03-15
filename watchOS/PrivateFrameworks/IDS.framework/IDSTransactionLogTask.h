@@ -11,8 +11,8 @@
     CDUnknownBlockType _completionBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 - (void)_completeWithError:(id)arg1;
 
 @end

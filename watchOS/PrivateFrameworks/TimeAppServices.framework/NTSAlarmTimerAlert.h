@@ -17,11 +17,11 @@
     id _content;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool nightstand; // @synthesize nightstand=_nightstand;
 @property(readonly, nonatomic) id content; // @synthesize content=_content;
 @property(readonly, nonatomic) NSDate *fireDate; // @synthesize fireDate=_fireDate;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

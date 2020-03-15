@@ -27,6 +27,7 @@
     id <BCCloudDataMapper> _dataMapper;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <BCCloudDataMapper> dataMapper; // @synthesize dataMapper=_dataMapper;
 @property(nonatomic) __weak BCCloudKitController *cloudKitController; // @synthesize cloudKitController=_cloudKitController;
 @property(nonatomic) _Bool signalDataChangedTransaction; // @synthesize signalDataChangedTransaction=_signalDataChangedTransaction;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *responseQueue; // @synthesize responseQueue=_responseQueue;
 @property(retain, nonatomic) BCCloudDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak NSManagedObjectContext *moc; // @synthesize moc=_moc;
-- (void).cxx_destruct;
 - (void)dissociateCloudDataFromSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getChangesSince:(id)arg1 forEntityClass:(Class)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchCloudDataIncludingDeleted:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;

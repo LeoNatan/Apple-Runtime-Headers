@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface CNUIFamilyMemberDowntimeContactDataSource : NSObject
 {
+    _Bool _isShowingFamilyMemberContacts;
     _Bool _meContactNeedsUpdate;
     NSString *_filterString;
     CNContactStore *_store;
@@ -23,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)isErrorPossiblyRelatedToExtraStores:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *requiredKeys; // @synthesize requiredKeys=_requiredKeys;
 @property(retain, nonatomic) NSMutableArray *selectedContactItems; // @synthesize selectedContactItems=_selectedContactItems;
 @property(retain, nonatomic) NSArray *sections; // @synthesize sections=_sections;
@@ -31,8 +33,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CNContact *meContact; // @synthesize meContact=_meContact;
 @property(nonatomic) _Bool meContactNeedsUpdate; // @synthesize meContactNeedsUpdate=_meContactNeedsUpdate;
 @property(retain, nonatomic) CNContactStore *store; // @synthesize store=_store;
+@property(nonatomic) _Bool isShowingFamilyMemberContacts; // @synthesize isShowingFamilyMemberContacts=_isShowingFamilyMemberContacts;
 @property(copy, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
-- (void).cxx_destruct;
 - (id)preferredForNameMeContactWithKeysToFetch:(id)arg1;
 - (id)preferredForNameMeContactIdentifier;
 - (id)completeContactFromContact:(id)arg1 fromMainStoreOnly:(_Bool)arg2 keysToFetch:(id)arg3;

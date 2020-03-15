@@ -38,6 +38,7 @@
 
 + (id)assertionWithIdentifier:(id)arg1 target:(id)arg2 explanation:(id)arg3 attributes:(id)arg4 originator:(id)arg5 context:(id)arg6;
 + (id)assertionWithDescriptor:(id)arg1 target:(id)arg2 originator:(id)arg3 context:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id plugInHoldToken; // @synthesize plugInHoldToken=_plugInHoldToken;
 @property(readonly, copy, nonatomic) RBAssertionIntransientState *intransientState; // @synthesize intransientState=_intransientState;
 @property(readonly, copy) NSString *description; // @synthesize description=_description;
@@ -47,7 +48,6 @@
 @property(readonly, copy, nonatomic) RBSAssertionIdentifier *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) RBSProcessIdentifier *originator; // @synthesize originator=_originator;
 @property(readonly, copy, nonatomic) RBConcreteTarget *target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (id)_initWithTarget:(id)arg1 identifier:(id)arg2 explanation:(id)arg3 attributes:(id)arg4 originator:(id)arg5 context:(id)arg6;
 - (id)captureState;
 @property(readonly, copy, nonatomic) NSString *stateCaptureTitle;

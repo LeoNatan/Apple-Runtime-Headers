@@ -35,6 +35,7 @@
 + (BOOL)shouldMergeUnchangedEvents;
 + (id)entitlements;
 + (id)eventStream;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *eventQueue; // @synthesize eventQueue=_eventQueue;
 @property(retain) NSDate *dateAtLastClockChange; // @synthesize dateAtLastClockChange=_dateAtLastClockChange;
 @property unsigned long long machTimeAtLastClockChange; // @synthesize machTimeAtLastClockChange=_machTimeAtLastClockChange;
@@ -48,7 +49,6 @@
 @property(copy, nonatomic) CDUnknownBlockType shutdownHandler; // @synthesize shutdownHandler;
 @property(copy, nonatomic) CDUnknownBlockType historicalHandler; // @synthesize historicalHandler;
 @property(copy, nonatomic) CDUnknownBlockType instantHandler; // @synthesize instantHandler;
-- (void).cxx_destruct;
 - (void)systemClockDidChange:(id)arg1;
 - (void)update;
 - (void)invalidateInstantState;

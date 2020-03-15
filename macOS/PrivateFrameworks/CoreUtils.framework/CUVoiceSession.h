@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CUVoiceRequest, NSString;
+@class CUVoiceRequest, NSMutableArray, NSString;
 @protocol OS_dispatch_queue;
 
 @interface CUVoiceSession : NSObject
@@ -15,18 +15,18 @@
     BOOL _invalidateCalled;
     BOOL _invalidateDone;
     unsigned int _invalidateFlags;
-    struct NSMutableArray *_requests;
+    NSMutableArray *_requests;
     struct LogCategory *_ucat;
-    struct NSMutableArray *_voiceRequests;
+    NSMutableArray *_voiceRequests;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     CDUnknownBlockType _invalidationHandler;
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_completeRequest:(id)arg1 error:(id)arg2;
 - (void)_completeAllRequestsWithError:(id)arg1;
 - (void)stopSpeaking;

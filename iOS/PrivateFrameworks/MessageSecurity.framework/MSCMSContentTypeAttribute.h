@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)contentTypeAttributeWithOID:(id)arg1;
-@property(retain) MSOID *contentType; // @synthesize contentType=_contentType;
 - (void).cxx_destruct;
+@property(retain) MSOID *contentType; // @synthesize contentType=_contentType;
 - (id)initWithOID:(id)arg1;
 - (id)encodeAttributeWithError:(id *)arg1;
 - (id)initWithAttribute:(id)arg1 error:(id *)arg2;

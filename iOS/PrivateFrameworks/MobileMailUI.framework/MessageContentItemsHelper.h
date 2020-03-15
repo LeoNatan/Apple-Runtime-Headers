@@ -15,7 +15,7 @@
 {
     NSMutableDictionary *_elementIDToContentID;
     NSMutableDictionary *_elementIDToWKAttachmentID;
-    NSMutableDictionary *_contentIDToDownloadFutures;
+    NSMutableDictionary *_contentIDToTask;
     NSMutableSet *_inlinedImageContentIDs;
     _Bool _didComputeMailDropProperties;
     long long _totalUnstartedMailDropDownloadSize;
@@ -31,6 +31,7 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType maildropProgressHandler; // @synthesize maildropProgressHandler=_maildropProgressHandler;
 @property(nonatomic) _Bool allMailDropsDownloaded; // @synthesize allMailDropsDownloaded=_allMailDropsDownloaded;
 @property(nonatomic) unsigned long long totalMailDropDownloadSize; // @synthesize totalMailDropDownloadSize=_totalMailDropDownloadSize;
@@ -38,7 +39,6 @@
 @property(nonatomic) __weak id <ContentRepresentationHandlingDelegate> representationHandler; // @synthesize representationHandler=_representationHandler;
 @property(retain, nonatomic) NSArray *contentItems; // @synthesize contentItems=_contentItems;
 @property(retain, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
-- (void).cxx_destruct;
 - (void)downloadAllMailDropAttachments;
 - (id)startDownloadForContentItem:(id)arg1 userInitiated:(_Bool)arg2;
 - (void)inlineImageFinishedDownloading:(id)arg1;
@@ -48,8 +48,7 @@
 - (long long)displayStateForContentItem:(id)arg1;
 - (void)_injectAttachmentViewForElementWithSourceAttributeValue:(id)arg1 forContentItem:(id)arg2;
 - (void)updateDragItemProvider:(id)arg1 forElementID:(id)arg2;
-- (id)_futureForContentItem:(id)arg1 networkUsage:(long long)arg2 progress:(id *)arg3;
-- (id)_futureForContentItem:(id)arg1;
+- (id)_futureForContentItem:(id)arg1 networkUsage:(long long)arg2 invokerID:(id)arg3 previouslyInvoked:(_Bool *)arg4 progress:(id *)arg5;
 - (id)futureForContentItem:(id)arg1 download:(_Bool)arg2;
 - (void)showMenuForContentItem:(id)arg1 rect:(struct CGRect)arg2 view:(id)arg3;
 - (void)displayViewerForContentItem:(id)arg1 rect:(struct CGRect)arg2 view:(id)arg3;
@@ -63,6 +62,7 @@
 - (void)associateElementID:(id)arg1 withContentID:(id)arg2;
 @property(readonly, copy) NSString *debugDescription;
 - (id)initWithWebView:(id)arg1 contentItemHandler:(id)arg2;
+- (id)_representationTypeForContentItem:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *description;

@@ -23,6 +23,7 @@
     HDCodableMedicalCoding *_statusCoding;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *issueDate; // @synthesize issueDate=_issueDate;
 @property(retain, nonatomic) NSData *effectiveEndDate; // @synthesize effectiveEndDate=_effectiveEndDate;
 @property(retain, nonatomic) HDCodableMedicalCoding *statusCoding; // @synthesize statusCoding=_statusCoding;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSString *panelName; // @synthesize panelName=_panelName;
 @property(retain, nonatomic) HDCodableMedicalCodingList *diagnosticTestCodings; // @synthesize diagnosticTestCodings=_diagnosticTestCodings;
 @property(retain, nonatomic) HDCodableMedicalRecord *medicalRecord; // @synthesize medicalRecord=_medicalRecord;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

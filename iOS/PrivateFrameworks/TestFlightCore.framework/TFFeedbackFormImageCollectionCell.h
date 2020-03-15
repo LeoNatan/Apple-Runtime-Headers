@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 + (struct CGSize)_sizeForImages:(id)arg1 fittingSize:(struct CGSize)arg2 inTraitEnvironment:(id)arg3;
 + (struct UIEdgeInsets)_imageViewInsetsInTraitEnvironment:(id)arg1;
 + (struct CGSize)sizeForEntry:(id)arg1 dataSource:(id)arg2 fittingSize:(struct CGSize)arg3 inTraitEnvironment:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *imageViews; // @synthesize imageViews=_imageViews;
 @property(retain, nonatomic) TFFeedbackEntryImageCollection *imageCollectionEntry; // @synthesize imageCollectionEntry=_imageCollectionEntry;
-- (void).cxx_destruct;
 - (id)_createImageView;
 - (void)_setupImagesViewsForImages:(id)arg1;
 - (void)setDisplayedDataImageCollection:(id)arg1;

@@ -13,8 +13,8 @@
     id <EFSQLExpressable> _bitExpression;
 }
 
-@property(readonly, nonatomic) id <EFSQLExpressable> bitExpression; // @synthesize bitExpression=_bitExpression;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <EFSQLExpressable> bitExpression; // @synthesize bitExpression=_bitExpression;
 - (void)bitExpressionWithKeyColumn:(id)arg1;
 - (id)initWithTableRelationship:(id)arg1 whereExpression:(id)arg2 previousExpressionGenerator:(id)arg3 bitExpression:(id)arg4;
 

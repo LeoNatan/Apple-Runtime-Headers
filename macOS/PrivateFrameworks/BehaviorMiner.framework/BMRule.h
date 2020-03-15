@@ -10,21 +10,21 @@
 
 @interface BMRule : NSObject
 {
-    struct NSSet *_antecedent;
-    struct NSSet *_consequent;
+    NSSet *_antecedent;
+    NSSet *_consequent;
     double _support;
     double _confidence;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double confidence; // @synthesize confidence=_confidence;
 @property(nonatomic) double support; // @synthesize support=_support;
 @property(retain, nonatomic) NSSet *consequent; // @synthesize consequent=_consequent;
 @property(retain, nonatomic) NSSet *antecedent; // @synthesize antecedent=_antecedent;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
-- (id)initWithAntecedent:(struct NSSet *)arg1 consequent:(struct NSSet *)arg2 support:(double)arg3 confidence:(double)arg4;
+- (id)initWithAntecedent:(id)arg1 consequent:(id)arg2 support:(double)arg3 confidence:(double)arg4;
 
 @end
 

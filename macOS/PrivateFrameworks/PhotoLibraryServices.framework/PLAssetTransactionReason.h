@@ -14,8 +14,8 @@
 }
 
 + (id)transactionReason:(id)arg1;
-@property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
 
 @end
 

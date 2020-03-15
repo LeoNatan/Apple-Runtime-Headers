@@ -6,7 +6,7 @@
 
 #import <MapsSuggestions/MapsSuggestionsObject-Protocol.h>
 
-@class MapsSuggestionsEntry, MapsSuggestionsManager;
+@class MapsSuggestionsEntry, MapsSuggestionsManager, NSArray, NSDictionary;
 @protocol MapsSuggestionsDeduper, MapsSuggestionsFilter, MapsSuggestionsImprover;
 
 @protocol MapsSuggestionsStrategy <MapsSuggestionsObject>
@@ -22,6 +22,6 @@
 - (void)addPreFilter:(id <MapsSuggestionsFilter>)arg1;
 - (_Bool)postFiltersKept:(MapsSuggestionsEntry *)arg1;
 - (_Bool)preFiltersKept:(MapsSuggestionsEntry *)arg1;
-- (struct NSArray *)topSuggestionsWithSourceEntries:(struct NSDictionary *)arg1 error:(id *)arg2;
+- (NSArray *)topSuggestionsWithSourceEntries:(NSDictionary *)arg1 error:(id *)arg2;
 @end
 

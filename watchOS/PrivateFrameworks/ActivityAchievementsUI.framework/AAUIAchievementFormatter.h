@@ -16,11 +16,11 @@
     int _style;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int style; // @synthesize style=_style;
 @property(retain, nonatomic) AAUIAchievementLocalizationProvider *locProvider; // @synthesize locProvider=_locProvider;
 @property(retain, nonatomic) ACHAchievement *achievement; // @synthesize achievement=_achievement;
 @property(nonatomic) _Bool formatsForFriend; // @synthesize formatsForFriend=_formatsForFriend;
-- (void).cxx_destruct;
 - (id)localizedAttributedShortenedBacksideString;
 - (id)localizedAttributedBacksideString;
 - (id)localizedAttributedBacksideStringWithDateSizeVariant:(int)arg1;

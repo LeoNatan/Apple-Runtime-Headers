@@ -17,12 +17,12 @@
 }
 
 + (id)newWithAttributes:(const struct WFTagFieldAttributes *)arg1 updateBlock:(CDUnknownBlockType)arg2 variableBlock:(CDUnknownBlockType)arg3 navigationContext:(id)arg4 size:(const struct CKComponentSize *)arg5;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <WFComponentNavigationContext> navigationContext; // @synthesize navigationContext=_navigationContext;
 @property(readonly, nonatomic) CDUnknownBlockType variableBlock; // @synthesize variableBlock=_variableBlock;
 @property(readonly, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
 @property(readonly, nonatomic) struct WFTagFieldAttributes attributes; // @synthesize attributes=_attributes;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 
 @end
 

@@ -41,6 +41,7 @@
     struct UIEdgeInsets _textAlignmentInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *overlay; // @synthesize overlay=_overlay;
 @property(retain, nonatomic) CKManualUpdater *displayUpdater; // @synthesize displayUpdater=_displayUpdater;
 @property(nonatomic) _Bool animationPaused; // @synthesize animationPaused=_animationPaused;
@@ -66,7 +67,6 @@
 @property(nonatomic) _Bool hasTail; // @synthesize hasTail=_hasTail;
 @property(nonatomic) BOOL orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) __weak id <CKBalloonViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateRasterizationForInvisibleInkEffect;
 @property(nonatomic) struct CKBalloonDescriptor_t balloonDescriptor; // @dynamic balloonDescriptor;
 - (void)prepareForAcknowledgementDismissal;

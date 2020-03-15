@@ -21,12 +21,12 @@
 }
 
 + (double)preferredHeight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *infoButton; // @synthesize infoButton=_infoButton;
 @property(readonly, nonatomic) __weak WFModuleTitleView *titleView; // @synthesize titleView=_titleView;
 @property(nonatomic) __weak id <WFActionDrawerActionTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak WFDragGestureRecognizer *dragRecognizer; // @synthesize dragRecognizer=_dragRecognizer;
 @property(readonly, nonatomic) WFAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)infoButtonPressed;
 - (BOOL)isAccessibilityElement;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;

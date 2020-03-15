@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSArray *_rejectedKeys;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *rejectedKeys; // @synthesize rejectedKeys=_rejectedKeys;
 @property(readonly, nonatomic) NSArray *putOKKeys; // @synthesize putOKKeys=_putOKKeys;
 @property(readonly, nonatomic) NSArray *peerPutItems; // @synthesize peerPutItems=_peerPutItems;
 @property(readonly, nonatomic) NSString *domainVersion; // @synthesize domainVersion=_domainVersion;
 @property(readonly, nonatomic) _Bool success; // @synthesize success=_success;
-- (void).cxx_destruct;
 - (id)_initWithSuccess:(_Bool)arg1 domainVersion:(id)arg2 peerPutItems:(id)arg3 putOKKeys:(id)arg4 rejectedKeys:(id)arg5;
 
 @end

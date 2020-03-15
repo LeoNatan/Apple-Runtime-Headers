@@ -6,9 +6,9 @@
 
 #import <Safari/NSObject-Protocol.h>
 
-@class DownloadsManager, NSURL;
+@class DownloadsManager, NSURL, WKSecurityOrigin;
 
 @protocol DownloadsManagerDecisionResponder <NSObject>
-- (void)downloadsManager:(DownloadsManager *)arg1 allowDownloadOnPage:(const struct Page *)arg2 originatingURL:(NSURL *)arg3 withDecisionHandler:(void (^)(BOOL))arg4;
+- (void)downloadsManager:(DownloadsManager *)arg1 allowDownloadOnPage:(const struct Page *)arg2 fromSecurityOrigin:(WKSecurityOrigin *)arg3 originatingURL:(NSURL *)arg4 withDecisionHandler:(void (^)(BOOL))arg5;
 @end
 

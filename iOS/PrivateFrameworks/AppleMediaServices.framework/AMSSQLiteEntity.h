@@ -33,9 +33,9 @@ __attribute__((visibility("hidden")))
 + (id)maxValueForProperty:(id)arg1 predicate:(id)arg2 onConnection:(id)arg3;
 + (id)countForProperty:(id)arg1 predicate:(id)arg2 onConnection:(id)arg3;
 + (id)anyOnConnection:(id)arg1 predicate:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long persistentID; // @synthesize persistentID=_persistentID;
 @property(readonly, nonatomic) AMSSQLiteConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (_Bool)_deleteRowFromTable:(id)arg1 usingColumn:(id)arg2;
 - (id)_copyTableClusteredValuesWithValues:(id)arg1;
 - (id)valueForProperty:(id)arg1;

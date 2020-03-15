@@ -20,13 +20,13 @@
 
 + (Class)_adornmentClassForAnnotation:(id)arg1;
 + (id)newAdornmentLayerForAnnotation:(id)arg1 withPageController:(id)arg2;
+- (void).cxx_destruct;
 @property BOOL isObservingEventHandling; // @synthesize isObservingEventHandling=_isObservingEventHandling;
 @property(retain) CALayer *handleContainerLayer; // @synthesize handleContainerLayer=_handleContainerLayer;
 @property BOOL isObservingAnnotation; // @synthesize isObservingAnnotation=_isObservingAnnotation;
 @property double currentScaleFactor; // @synthesize currentScaleFactor=_currentScaleFactor;
 @property __weak AKPageController *pageController; // @synthesize pageController=_pageController;
 @property(retain) AKAnnotation *annotation; // @synthesize annotation=_annotation;
-- (void).cxx_destruct;
 - (void)_stopObservingAnnotationEventHandlers;
 - (void)_startObservingAnnotationEventHandlers;
 - (void)_stopObservingAnnotation;

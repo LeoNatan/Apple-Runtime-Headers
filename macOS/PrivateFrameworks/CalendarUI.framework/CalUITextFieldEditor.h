@@ -14,9 +14,9 @@
     id <CalUITextFieldEditorDelegate> _calUITextFieldDelegate;
 }
 
+- (void).cxx_destruct;
 @property BOOL shouldAllowVibrancy; // @synthesize shouldAllowVibrancy=_shouldAllowVibrancy;
 @property __weak id <CalUITextFieldEditorDelegate> calUITextFieldDelegate; // @synthesize calUITextFieldDelegate=_calUITextFieldDelegate;
-- (void).cxx_destruct;
 - (BOOL)isRichText;
 - (BOOL)writeSelectionToPasteboard:(id)arg1 type:(id)arg2;
 - (BOOL)readSelectionFromPasteboard:(id)arg1;

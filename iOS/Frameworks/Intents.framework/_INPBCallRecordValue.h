@@ -31,6 +31,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) _Bool unseen; // @synthesize unseen=_unseen;
 @property(retain, nonatomic) _INPBInteger *numberOfCalls; // @synthesize numberOfCalls=_numberOfCalls;
@@ -40,7 +41,6 @@
 @property(nonatomic) int callType; // @synthesize callType=_callType;
 @property(retain, nonatomic) _INPBCallMetrics *callMetrics; // @synthesize callMetrics=_callMetrics;
 @property(nonatomic) int callCapability; // @synthesize callCapability=_callCapability;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

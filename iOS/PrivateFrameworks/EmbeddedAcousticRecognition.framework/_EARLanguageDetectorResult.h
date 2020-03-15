@@ -14,9 +14,9 @@
     NSDictionary *_confidences;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isConfident; // @synthesize isConfident=_isConfident;
 @property(copy, nonatomic) NSDictionary *confidences; // @synthesize confidences=_confidences;
-- (void).cxx_destruct;
 
 @end
 

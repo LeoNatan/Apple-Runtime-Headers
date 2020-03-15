@@ -20,8 +20,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) __weak id <PUICRemoteStatusBarGlobalContextDelegate> globalContextDelegate; // @synthesize globalContextDelegate=_globalContextDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PUICRemoteStatusBarGlobalContextDelegate> globalContextDelegate; // @synthesize globalContextDelegate=_globalContextDelegate;
 - (void)setHidden:(_Bool)arg1;
 - (void)setNetworkActivityIndicatorAnimating:(_Bool)arg1;
 - (void)setSuppressDisconnectedIndicator:(_Bool)arg1;

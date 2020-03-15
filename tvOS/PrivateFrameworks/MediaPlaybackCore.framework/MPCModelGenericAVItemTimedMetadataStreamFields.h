@@ -17,12 +17,12 @@
     NSArray *_artworkDictionaries;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *artworkDictionaries; // @synthesize artworkDictionaries=_artworkDictionaries;
 @property(nonatomic, getter=isExplicitContent) _Bool explicitContent; // @synthesize explicitContent=_explicitContent;
 @property(copy, nonatomic) NSString *album; // @synthesize album=_album;
 @property(copy, nonatomic) NSString *artist; // @synthesize artist=_artist;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 

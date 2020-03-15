@@ -17,10 +17,10 @@
 
 + (id)_valuePredicateInCompoundPredicate:(id)arg1;
 + (id)_characteristicPredicateInCompoundPredicate:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id value; // @synthesize value=_value;
 @property(readonly, nonatomic) unsigned int operatorType; // @synthesize operatorType=_operatorType;
 @property(readonly, nonatomic) HMCharacteristic *characteristic; // @synthesize characteristic=_characteristic;
-- (void).cxx_destruct;
 - (id)initWithCharacteristic:(id)arg1 operatorType:(unsigned int)arg2 value:(id)arg3;
 - (id)initWithPredicate:(id)arg1;
 

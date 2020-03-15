@@ -22,11 +22,11 @@
     NSArray *_colors;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *colors; // @synthesize colors=_colors;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) long long scrollDirection; // @synthesize scrollDirection=_scrollDirection;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (_Bool)wantsInkUpdate;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;

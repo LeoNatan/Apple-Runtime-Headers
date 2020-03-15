@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSArray *objectIDs; // @synthesize objectIDs=_objectIDs;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *objectIDs; // @synthesize objectIDs=_objectIDs;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

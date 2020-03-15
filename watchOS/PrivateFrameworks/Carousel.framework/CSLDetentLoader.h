@@ -26,6 +26,7 @@
 
 + (_Bool)canLoadDentents;
 + (void)load;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *loadedHapticAssetsToSlots; // @synthesize loadedHapticAssetsToSlots=_loadedHapticAssetsToSlots;
 @property(retain, nonatomic) NSMutableDictionary *loadedAudioAssetsToSlots; // @synthesize loadedAudioAssetsToSlots=_loadedAudioAssetsToSlots;
 @property(nonatomic) int nextSlot; // @synthesize nextSlot=_nextSlot;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak NSObject<CSLDetentLoaderDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(retain) NSArray *detents; // @synthesize detents=_detents;
-- (void).cxx_destruct;
 - (id)_loadDetentConfigurations;
 - (id)_loadDetentConfigurationDictionariesFromDefaults;
 - (id)_defaultDetentConfiguration;

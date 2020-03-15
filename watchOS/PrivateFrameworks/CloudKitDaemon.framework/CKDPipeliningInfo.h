@@ -20,6 +20,7 @@
     NSMutableArray *_perRequestCallbackBlocks;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isCancelled; // @synthesize isCancelled=_isCancelled;
 @property(retain, nonatomic) NSMutableArray *perRequestCallbackBlocks; // @synthesize perRequestCallbackBlocks=_perRequestCallbackBlocks;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *perRequestCallbackQueue; // @synthesize perRequestCallbackQueue=_perRequestCallbackQueue;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *perRequestCallbackGroup; // @synthesize perRequestCallbackGroup=_perRequestCallbackGroup;
 @property(nonatomic) __weak id <CKDOperationPipelining> operation; // @synthesize operation=_operation;
 @property(retain, nonatomic) id <CKDURLRequestPipelining> request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)cancelAndDisablePerRequestCallbackBlocks;
 - (void)disablePerRequestCallbackBlocks;
 - (void)addPerRequestCallbackBlock:(CDUnknownBlockType)arg1;

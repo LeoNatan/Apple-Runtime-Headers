@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
 
 + (id)speakerImageForVolumeLevel:(unsigned int)arg1;
 + (unsigned int)volumeLevelFromVolumeValue:(float)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int currentLevel; // @synthesize currentLevel=_currentLevel;
 @property(retain, nonatomic) id <NACVolumeController> volumeController; // @synthesize volumeController=_volumeController;
 @property(retain, nonatomic) PUICCrownInputSequencer *crownInputSequencer; // @synthesize crownInputSequencer=_crownInputSequencer;
-- (void).cxx_destruct;
 - (void)volumeControllerDidUpdateVolumeControlAvailibility:(id)arg1;
 - (void)volumeControllerDidUpdateVolumeValue:(id)arg1;
 - (void)crownInputSequencer:(id)arg1 offsetDidReachBoundary:(int)arg2;

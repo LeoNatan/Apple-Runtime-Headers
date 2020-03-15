@@ -26,6 +26,7 @@
     IKViewElement *_viewElement;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(copy, nonatomic) UIColor *highlightColor; // @synthesize highlightColor=_highlightColor;
 @property(retain, nonatomic) UILabel *titleView; // @synthesize titleView=_titleView;
@@ -33,7 +34,6 @@
 @property(nonatomic) long long vibrantLabelThemeOverride; // @synthesize vibrantLabelThemeOverride=_vibrantLabelThemeOverride;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
 @property(readonly, nonatomic) long long backdropStyle; // @synthesize backdropStyle=_backdropStyle;
-- (void).cxx_destruct;
 - (void)_updateShadowForLabel:(id)arg1 inFocus:(_Bool)arg2;
 - (void)_playButtonAction:(id)arg1;
 - (void)_selectButtonAction:(id)arg1;

@@ -21,6 +21,7 @@
     IPLanguage *_language;
 }
 
+- (void).cxx_destruct;
 @property BOOL truncateLanguageNames; // @synthesize truncateLanguageNames=_truncateLanguageNames;
 @property BOOL capitalizeLanguageNames; // @synthesize capitalizeLanguageNames=_capitalizeLanguageNames;
 @property BOOL canDrag; // @synthesize canDrag=_canDrag;
@@ -30,7 +31,6 @@
 @property __weak NSTextField *primaryLanguageLabel; // @synthesize primaryLanguageLabel=_primaryLanguageLabel;
 @property __weak NSTextField *localizedLanguageTextField; // @synthesize localizedLanguageTextField=_localizedLanguageTextField;
 @property __weak NSLayoutConstraint *textFieldTrailingConstraint; // @synthesize textFieldTrailingConstraint=_textFieldTrailingConstraint;
-- (void).cxx_destruct;
 - (void)updateLanguageNames;
 - (void)initializeDefaultValues;
 - (void)resetCursorRects;

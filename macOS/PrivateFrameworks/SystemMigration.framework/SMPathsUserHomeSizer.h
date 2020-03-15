@@ -16,10 +16,10 @@
     NSObject<OS_dispatch_queue> *_cacheQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *cacheQueue; // @synthesize cacheQueue=_cacheQueue;
 @property(retain) SMSystem_Daemon *system; // @synthesize system=_system;
 @property(retain) NSURL *cacheLocation; // @synthesize cacheLocation=_cacheLocation;
-- (void).cxx_destruct;
 - (unsigned long long)latestFSEventForHome:(id)arg1 since:(unsigned long long)arg2;
 - (BOOL)user:(id)arg1 needsSizeUpdated:(id)arg2 latestEvent:(unsigned long long *)arg3;
 - (unsigned long long)calculateSizeForUser:(id)arg1;

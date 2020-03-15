@@ -16,10 +16,10 @@
     NSView *_colorView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSView *colorView; // @synthesize colorView=_colorView;
 @property(nonatomic) __weak id <PXSampleGadgetViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (BOOL)isFlipped;
 - (void)layout;
 - (id)initWithFrame:(struct CGRect)arg1;

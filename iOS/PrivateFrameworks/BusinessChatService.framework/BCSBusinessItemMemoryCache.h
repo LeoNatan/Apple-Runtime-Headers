@@ -16,10 +16,10 @@
 }
 
 + (id)sharedCache;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *lastFetchedBusinessItemIconData; // @synthesize lastFetchedBusinessItemIconData=_lastFetchedBusinessItemIconData;
 @property(retain, nonatomic) BCSBusinessItem *bizItemForLastFetchedIcon; // @synthesize bizItemForLastFetchedIcon=_bizItemForLastFetchedIcon;
 @property(retain, nonatomic) BCSBusinessItem *lastFetchedBusinessItem; // @synthesize lastFetchedBusinessItem=_lastFetchedBusinessItem;
-- (void).cxx_destruct;
 - (void)deleteCache;
 - (void)setLastFetchedBusinesIconData:(id)arg1 withMatchingBusinessItem:(id)arg2;
 - (id)lastFetchedBusinessItemIconDataForBizItem:(id)arg1;

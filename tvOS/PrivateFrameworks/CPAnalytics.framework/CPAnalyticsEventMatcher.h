@@ -15,10 +15,10 @@
     NSArray *_conditionalChecks;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *conditionalChecks; // @synthesize conditionalChecks=_conditionalChecks;
 @property(readonly, nonatomic) NSDictionary *eventPropertiesToMatch; // @synthesize eventPropertiesToMatch=_eventPropertiesToMatch;
 @property(readonly, nonatomic) NSString *eventKeyToMatch; // @synthesize eventKeyToMatch=_eventKeyToMatch;
-- (void).cxx_destruct;
 - (id)_validateAndParseConditionalChecks:(id)arg1;
 - (id)_validateAndParseEventProperties:(id)arg1;
 - (id)_validateAndParseEventKey:(id)arg1;

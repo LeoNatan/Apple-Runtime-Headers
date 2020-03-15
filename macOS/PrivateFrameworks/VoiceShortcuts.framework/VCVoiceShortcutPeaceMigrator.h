@@ -15,8 +15,8 @@
 
 + (void)migrateFromCloudKitIntoDatabaseIfNecessary:(id)arg1;
 + (void)fetchMigrationFlagWithCompletion:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
 - (BOOL)saveRecord:(id)arg1 error:(id *)arg2;
 - (BOOL)migrateFromManagedObjectContext:(id)arg1 error:(id *)arg2;
 - (id)initWithDatabase:(id)arg1;

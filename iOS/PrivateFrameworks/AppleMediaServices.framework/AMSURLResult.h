@@ -18,13 +18,13 @@
     id _object;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id object; // @synthesize object=_object;
 @property(retain, nonatomic) NSURLSessionTask *task; // @synthesize task=_task;
 @property(retain, nonatomic) NSURLResponse *response; // @synthesize response=_response;
 @property(readonly, nonatomic) NSURLSessionTaskMetrics *taskMetrics; // @synthesize taskMetrics=_taskMetrics;
 @property(retain, nonatomic) NSString *logUUID; // @synthesize logUUID=_logUUID;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long responseStatusCode;
 @property(readonly, nonatomic) NSDictionary *responseHeaders;
 @property(readonly, nonatomic) NSString *responseCorrelationId;

@@ -17,12 +17,12 @@
     long long _nodeID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak HDSimpleGraphNode *node; // @synthesize node=_node;
 @property(nonatomic) long long nodeID; // @synthesize nodeID=_nodeID;
 @property(copy, nonatomic) NSString *valueType; // @synthesize valueType=_valueType;
 @property(copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDatabase:(id)arg1 rowID:(long long)arg2 key:(id)arg3 value:(id)arg4 valueType:(id)arg5 nodeID:(long long)arg6 node:(id)arg7;
 - (id)init;

@@ -17,12 +17,12 @@
     UIMorphingLabel *_label;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_label) UIMorphingLabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSString *labelText; // @synthesize labelText=_labelText;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(retain, nonatomic) NSString *currentSizeCategory; // @synthesize currentSizeCategory=_currentSizeCategory;
 @property(nonatomic) unsigned long long coachingCondition; // @synthesize coachingCondition=_coachingCondition;
-- (void).cxx_destruct;
 - (void)_resizeLabelToFirstSizeCategoryThatFits;
 - (void)_contentSizeCategoryChanged;
 - (void)_updateLabelTextForCurrentCoachingConditionAnimated:(_Bool)arg1;

@@ -17,10 +17,10 @@
     int _buttonStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int buttonStyle; // @synthesize buttonStyle=_buttonStyle;
 @property(nonatomic) __weak id actionTarget; // @synthesize actionTarget=_actionTarget;
 @property(nonatomic) SEL actionSelector; // @synthesize actionSelector=_actionSelector;
-- (void).cxx_destruct;
 - (id)interfaceDescriptionForDynamicCreation;
 - (id)initWithStyle:(int)arg1 target:(id)arg2 action:(SEL)arg3;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;

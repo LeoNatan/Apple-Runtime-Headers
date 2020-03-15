@@ -18,8 +18,8 @@
     id <TVRCKeyboardControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <TVRCKeyboardControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <TVRCKeyboardControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_setCurrentState:(id)arg1;
 - (void)sendReturnKey;
 @property(copy, nonatomic) NSString *text;

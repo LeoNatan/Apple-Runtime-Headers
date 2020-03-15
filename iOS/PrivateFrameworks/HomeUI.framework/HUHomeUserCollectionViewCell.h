@@ -18,9 +18,9 @@
 }
 
 + (id)_requiredKeyDescriptors;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUContactView *contactView; // @synthesize contactView=_contactView;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)_createSubviews;
 @property(nonatomic) double avatarDiameter; // @dynamic avatarDiameter;
 - (void)updateUIWithAnimation:(_Bool)arg1;

@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *passcode; // @synthesize passcode=_passcode;
 @property(copy, nonatomic) NSString *lockedByLabel; // @synthesize lockedByLabel=_lockedByLabel;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

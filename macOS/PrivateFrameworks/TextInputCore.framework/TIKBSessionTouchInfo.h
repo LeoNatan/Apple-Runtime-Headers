@@ -14,9 +14,9 @@
     unsigned long long _layoutId;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long layoutId; // @synthesize layoutId=_layoutId;
 @property(retain, nonatomic) TIKeyboardTouchEvent *touch; // @synthesize touch=_touch;
-- (void).cxx_destruct;
 
 @end
 

@@ -16,8 +16,8 @@
     id <NUBufferImage> _image;
 }
 
-@property(retain) id <NUBufferImage> image; // @synthesize image=_image;
 - (void).cxx_destruct;
+@property(retain) id <NUBufferImage> image; // @synthesize image=_image;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -38,6 +38,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *coverImagePath; // @synthesize coverImagePath=_coverImagePath;
 @property(copy, nonatomic) NSString *itunesuAssetID; // @synthesize itunesuAssetID=_itunesuAssetID;
 @property(retain, nonatomic) NSDate *lastUserAccessDate; // @synthesize lastUserAccessDate=_lastUserAccessDate;
@@ -60,7 +61,6 @@
 @property(copy, nonatomic) NSString *storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
 @property(copy, nonatomic) NSString *legacyUniqueIdentifier; // @synthesize legacyUniqueIdentifier=_legacyUniqueIdentifier;
 @property(copy, nonatomic) NSString *temporaryIdentifier; // @synthesize temporaryIdentifier=_temporaryIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_cloudDictionaryRepresentation;
 - (void)_setFileURL:(id)arg1;

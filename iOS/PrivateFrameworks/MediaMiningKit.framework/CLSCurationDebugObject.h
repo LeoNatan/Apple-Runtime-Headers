@@ -17,9 +17,9 @@
 }
 
 + (id)stringForState:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSArray *stateHistory; // @synthesize stateHistory=_stateHistory;
 @property(readonly) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)timestamp;
 - (id)dictionaryRepresentation;
 - (void)endTentativeSectionWithSuccess:(_Bool)arg1;

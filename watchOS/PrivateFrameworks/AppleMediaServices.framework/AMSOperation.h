@@ -19,11 +19,11 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) _Bool success; // @synthesize success=_success;
 @property(readonly, nonatomic) AMSBinaryPromise *promise; // @synthesize promise=_promise;
 @property(nonatomic) __weak AMSOperation *parentOperation; // @synthesize parentOperation=_parentOperation;
-- (void).cxx_destruct;
 - (void)unlock;
 - (void)lock;
 - (void)runSubOperation:(id)arg1 onQueue:(id)arg2;

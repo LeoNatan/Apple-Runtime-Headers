@@ -28,9 +28,8 @@
     PHContentEditingInputRequestOptions *_options;
 }
 
-+ (long long)type;
-@property(readonly, nonatomic) PHContentEditingInputRequestOptions *options; // @synthesize options=_options;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PHContentEditingInputRequestOptions *options; // @synthesize options=_options;
 - (id)_errorFromAssetMediaResult:(id)arg1;
 - (void)processMediaResult:(id)arg1 forRequest:(id)arg2;
 - (void)_finishIfAllCompleteWithRequest:(id)arg1;
@@ -40,6 +39,7 @@
 - (id)initialRequests;
 - (void)cancel;
 - (_Bool)isNetworkAccessAllowed;
+- (long long)type;
 - (void)_setVideoResourceURLsForFlippingRendersIfNeeded;
 - (void)_prepareAndAddFlippingRenderURLRequestsToChildRequestsIfNeeded:(id)arg1 forBaseVersion:(long long)arg2;
 - (id)_resourceRequestForAssetResource:(id)arg1 wantsURLOnly:(_Bool)arg2 progress:(id)arg3;
@@ -48,7 +48,6 @@
 - (id)_assetResourceForType:(long long)arg1;
 - (id)_assetResources;
 - (long long)_assetResourceTypeForImageWithBaseVersion:(long long)arg1;
-- (_Bool)_canRenderMediaForResult:(id)arg1;
 - (void)_prepareAndAddMediaRequestsToChildRequests:(id)arg1;
 - (id)_baseMediaRequestsForBaseVersion:(long long)arg1 error:(id *)arg2;
 - (void)_renderTemporaryVideoForObjectBuilder:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;

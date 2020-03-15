@@ -16,10 +16,10 @@
     _Bool _parentWantsCellNeedsLayout;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UIView *parentCellView; // @synthesize parentCellView=_cell;
 @property(readonly, nonatomic) __weak UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)setSelected:(_Bool)arg1;
 - (void)setNeedsLayout;
 - (void)setHighlighted:(_Bool)arg1;

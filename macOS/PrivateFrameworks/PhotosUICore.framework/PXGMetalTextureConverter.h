@@ -26,6 +26,7 @@
     PXGColorProgramLibrary *_colorProgramLibrary;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXGColorProgramLibrary *colorProgramLibrary; // @synthesize colorProgramLibrary=_colorProgramLibrary;
 @property(readonly, nonatomic) struct CGColorSpace *destinationColorSpace; // @synthesize destinationColorSpace=_destinationColorSpace;
 @property(readonly, nonatomic) BOOL hasExtendedColorTarget; // @synthesize hasExtendedColorTarget=_hasExtendedColorTarget;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) PXGImageTexture *transparentTexture; // @synthesize transparentTexture=_transparentTexture;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *processingQueue; // @synthesize processingQueue=_processingQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *requestQueue; // @synthesize requestQueue=_requestQueue;
-- (void).cxx_destruct;
 - (id)createTextureAtlasManagerForImageDataSpec:(CDStruct_1b544862)arg1;
 @property(readonly, nonatomic) BOOL supportsTextureAtlas;
 - (id)createPayloadTextureFromPayload:(id)arg1;

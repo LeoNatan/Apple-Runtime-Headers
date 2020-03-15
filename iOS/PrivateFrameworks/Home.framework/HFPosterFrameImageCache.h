@@ -14,8 +14,8 @@
 }
 
 + (id)keyForCameraClipIdentifierString:(id)arg1 withOffset:(float)arg2;
-@property(retain, nonatomic) BSUIMappedImageCache *imageCache; // @synthesize imageCache=_imageCache;
 - (void).cxx_destruct;
+@property(retain, nonatomic) BSUIMappedImageCache *imageCache; // @synthesize imageCache=_imageCache;
 - (void)purgeAllImages;
 - (id)imageForCameraClipIdentifierString:(id)arg1 withOffset:(float)arg2;
 - (void)addImage:(id)arg1 forCameraClipIdentifierString:(id)arg2 withOffset:(float)arg3;

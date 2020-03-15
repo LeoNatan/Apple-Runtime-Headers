@@ -14,9 +14,9 @@
     UIImage *_disabledImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *disabledImage; // @synthesize disabledImage=_disabledImage;
 @property(retain, nonatomic) UIImage *enabledImage; // @synthesize enabledImage=_enabledImage;
-- (void).cxx_destruct;
 - (void)setEnabled:(_Bool)arg1;
 - (id)initWithImage:(id)arg1 disabledImage:(id)arg2 style:(long long)arg3 target:(id)arg4 action:(SEL)arg5;
 

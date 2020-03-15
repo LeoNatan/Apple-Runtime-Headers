@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     long long _visibilityPriority;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long visibilityPriority; // @synthesize visibilityPriority=_visibilityPriority;
 @property(readonly, copy, nonatomic) NSString *targetIndexBarEntryID; // @synthesize targetIndexBarEntryID=_targetIndexBarEntryID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUIViewElement *childElement;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;

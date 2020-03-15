@@ -17,11 +17,11 @@
 }
 
 + (id)eventsWithTransactions:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isUnread) _Bool unread; // @synthesize unread=_unread;
 @property(readonly, copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSString *eventType; // @synthesize eventType=_eventType;
-- (void).cxx_destruct;
 - (_Bool)isEqualToActivityEvent:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

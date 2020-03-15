@@ -17,9 +17,9 @@
 + (id)contextAnnotationMap;
 + (id)annotationsForContext:(struct CGContext *)arg1;
 + (void)addLabel:(id)arg1 boundingRect:(struct CGRect)arg2 withContext:(struct CGContext *)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect boundingRect; // @synthesize boundingRect=_boundingRect;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithLabel:(id)arg1 boundingRect:(struct CGRect)arg2;
 

@@ -17,9 +17,9 @@
 
 + (void)setAutomaticallyRemoveOldTrashItems:(BOOL)arg1;
 + (_Bool)automaticallyRemoveOldTrashItems;
+- (void).cxx_destruct;
 @property(retain, nonatomic) FIBrowseBySizeGutsController *controller; // @synthesize controller=_controller;
 @property id <_FIBrowseBySizeViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)endPreviewPanelControl:(id)arg1;
 - (void)beginPreviewPanelControl:(id)arg1;
 - (BOOL)acceptsPreviewPanelControl:(id)arg1;

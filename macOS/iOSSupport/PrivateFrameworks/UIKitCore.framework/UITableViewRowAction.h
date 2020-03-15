@@ -20,12 +20,12 @@
 }
 
 + (id)rowActionWithStyle:(long long)arg1 title:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_handler) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(copy, nonatomic) UIVisualEffect *backgroundEffect; // @synthesize backgroundEffect=_backgroundEffect;
 @property(copy, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)_setButton:(id)arg1;
 - (id)_button;
 - (id)copyWithZone:(struct _NSZone *)arg1;

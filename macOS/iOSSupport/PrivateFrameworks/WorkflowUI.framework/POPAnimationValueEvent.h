@@ -12,9 +12,9 @@
     id _velocity;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id velocity; // @synthesize velocity=_velocity;
 @property(readonly, nonatomic) id value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (void)_appendDescription:(id)arg1;
 - (id)initWithType:(unsigned long long)arg1 time:(double)arg2 value:(id)arg3;
 

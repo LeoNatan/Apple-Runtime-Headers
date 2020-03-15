@@ -23,13 +23,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long requestRevision; // @synthesize requestRevision=_requestRevision;
 @property struct CGRect userFacingBBox; // @synthesize userFacingBBox=_userFacingBBox;
 @property struct _Geometry2D_rect2D_ alignedBBox; // @synthesize alignedBBox=_alignedBBox;
 @property(retain) NSData *pointsData; // @synthesize pointsData=_pointsData;
 @property unsigned long long pointCount; // @synthesize pointCount=_pointCount;
 @property(readonly) float confidence; // @synthesize confidence=_confidence;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

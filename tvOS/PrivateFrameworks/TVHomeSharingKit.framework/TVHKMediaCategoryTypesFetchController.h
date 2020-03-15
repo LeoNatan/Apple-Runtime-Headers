@@ -15,9 +15,9 @@
     NSMutableArray *_mutableMediaCategoryTypes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mutableMediaCategoryTypes; // @synthesize mutableMediaCategoryTypes=_mutableMediaCategoryTypes;
 @property(nonatomic) __weak id <TVHKMediaCategoryTypesFetchControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_notifyFetchDidFailWithError:(id)arg1;
 - (void)_notifyFetchDidCompleteWithResult:(id)arg1;
 - (void)_handleContentsChangeFetchControllerOperationDidCompleteWithResult:(id)arg1 error:(id)arg2;

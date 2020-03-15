@@ -27,11 +27,11 @@ __attribute__((visibility("hidden")))
     _Bool _needsReloadOnDidAppear;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *footerView; // @synthesize footerView=_footerView;
 @property(nonatomic) __weak id <SKUIOnboardingAffiliationCirclesDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(copy, nonatomic) NSArray *affiliationItems; // @synthesize affiliationItems=_affiliationItems;
-- (void).cxx_destruct;
 - (double)_topLayoutMargin;
 - (long long)_titlePositionForAffinityCount:(long long)arg1;
 - (void)_sendAffilationItemsDidChange;

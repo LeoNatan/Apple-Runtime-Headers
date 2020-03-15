@@ -17,9 +17,9 @@
     NSUndoManager *_undoManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUndoManager *undoManager; // @synthesize undoManager=_undoManager;
 @property(readonly, nonatomic) id <PUEditingExtensionUndoButtonHost> buttonHost; // @synthesize buttonHost=_buttonHost;
-- (void).cxx_destruct;
 - (void)_updateButtonState;
 - (void)_unregisterForUndoManagerNotifications:(id)arg1;
 - (void)_registerForUndoManagerNotifications:(id)arg1;

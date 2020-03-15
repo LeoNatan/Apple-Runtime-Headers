@@ -21,13 +21,13 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) long long TotalItemsInView; // @synthesize TotalItemsInView=_TotalItemsInView;
 @property(nonatomic) long long IncludesLastItemInRange; // @synthesize IncludesLastItemInRange=_IncludesLastItemInRange;
 @property(nonatomic) long long AbsoluteDenominator; // @synthesize AbsoluteDenominator=_AbsoluteDenominator;
 @property(nonatomic) long long NumeratorOffset; // @synthesize NumeratorOffset=_NumeratorOffset;
 @property(nonatomic) long long IndexedPagingOffset; // @synthesize IndexedPagingOffset=_IndexedPagingOffset;
 @property(copy, nonatomic) NSArray *Mailbox; // @synthesize Mailbox=_Mailbox;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

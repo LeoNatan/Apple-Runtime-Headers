@@ -22,10 +22,10 @@
     CDUnknownBlockType _progressHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(nonatomic) _Bool needsCDPRepair; // @synthesize needsCDPRepair=_needsCDPRepair;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_handleRequest:(id)arg1 flags:(unsigned int)arg2 session:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;
 - (void)_handleInfoExchange:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
 - (void)_handleSessionEnded:(id)arg1;

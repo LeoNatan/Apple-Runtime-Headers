@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *loadingProxies; // @synthesize loadingProxies=_loadingProxies;
 @property(retain, nonatomic) NSMutableDictionary *loadingRequestsByURL; // @synthesize loadingRequestsByURL=_loadingRequestsByURL;
-- (void).cxx_destruct;
 - (void)_updatePriorityForRequest:(id)arg1;
 - (void)cancelProxy:(id)arg1;
 - (void)loadProxy:(id)arg1 onlyIfCached:(_Bool)arg2;

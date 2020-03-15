@@ -15,10 +15,10 @@
     NSArray *_detectionObjects;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *detectionObjects; // @synthesize detectionObjects=_detectionObjects;
 @property(readonly) _Bool finishedLoadingObjects; // @synthesize finishedLoadingObjects=_finishedLoadingObjects;
 @property(readonly) NSDictionary *referenceObjecteMap; // @synthesize referenceObjecteMap=_referenceObjecteMap;
-- (void).cxx_destruct;
 - (id)initWithDetectionObjects:(id)arg1;
 
 @end

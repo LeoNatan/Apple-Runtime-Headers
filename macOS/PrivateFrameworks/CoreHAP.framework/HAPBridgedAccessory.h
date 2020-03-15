@@ -15,8 +15,8 @@
     HAPCharacteristic *_reachabilityCharacteristic;
 }
 
-@property(nonatomic) __weak HAPCharacteristic *reachabilityCharacteristic; // @synthesize reachabilityCharacteristic=_reachabilityCharacteristic;
 - (void).cxx_destruct;
+@property(nonatomic) __weak HAPCharacteristic *reachabilityCharacteristic; // @synthesize reachabilityCharacteristic=_reachabilityCharacteristic;
 - (void)accessoryServer:(id)arg1 didUpdateValueForCharacteristic:(id)arg2;
 - (id)accessoryServerDidRequestCharacteristicsToRegisterForNotifications:(id)arg1;
 - (BOOL)mergeObject:(id)arg1;

@@ -64,6 +64,7 @@
 + (id)memoryInfosWithOptions:(id)arg1 photoLibrary:(id)arg2;
 + (id)_fetchOptionsForTransientMemoryAssetsWithOptions:(id)arg1;
 + (id)transientMemoryWithInfo:(id)arg1 photoLibrary:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHMemoryFeature *blacklistedFeature; // @synthesize blacklistedFeature=_blacklistedFeature;
 @property(readonly, nonatomic) NSData *assetListPredicate; // @synthesize assetListPredicate=_assetListPredicate;
 @property(readonly, nonatomic) NSDate *lastMoviePlayedDate; // @synthesize lastMoviePlayedDate=_lastMoviePlayedDate;
@@ -78,11 +79,11 @@
 @property(readonly, nonatomic) unsigned long long notificationState; // @synthesize notificationState=_notificationState;
 @property(readonly, nonatomic) unsigned long long subcategory; // @synthesize subcategory=_subcategory;
 @property(readonly, nonatomic) unsigned long long category; // @synthesize category=_category;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *photosGraphProperties; // @synthesize photosGraphProperties=_photosGraphProperties;
 @property(readonly, nonatomic) BOOL isGreat;
 @property(readonly, nonatomic) BOOL isStellar;
 @property(readonly, nonatomic) BOOL isMustSee;
+- (id)presentationHints;
 @property(readonly, nonatomic) NSDictionary *musicGenreDistribution;
 - (id)meaningLabels;
 - (id)moodKeywords;

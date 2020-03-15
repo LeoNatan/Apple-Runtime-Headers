@@ -11,6 +11,7 @@
 
 @protocol WBSHistoryStoreDelegate <WBSHistoryLoaderDelegate>
 - (void)historyStoreWasCleared:(id <WBSHistoryStore>)arg1;
+- (void)historyStore:(id <WBSHistoryStore>)arg1 didRemoveHostnames:(NSArray *)arg2;
 - (void)historyStore:(id <WBSHistoryStore>)arg1 didRemoveVisits:(NSArray *)arg2;
 - (void)historyStore:(id <WBSHistoryStore>)arg1 didRemoveItems:(NSArray *)arg2;
 - (void)historyStore:(id <WBSHistoryStore>)arg1 didAddVisits:(NSArray *)arg2;

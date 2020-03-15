@@ -20,10 +20,10 @@
     SVWeakObjectCache *_players;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SVWeakObjectCache *players; // @synthesize players=_players;
 @property(readonly, nonatomic) id <SVVideoViewControllerProviding> videoViewControllerProvider; // @synthesize videoViewControllerProvider=_videoViewControllerProvider;
 @property(readonly, nonatomic) id <SVPlayerFactory> playerFactory; // @synthesize playerFactory=_playerFactory;
-- (void).cxx_destruct;
 - (void)muteStateChanged:(id)arg1;
 - (void)willTransitionToVideo:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (id)playerForVideo:(id)arg1;

@@ -6,9 +6,11 @@
 
 #import <ContactsPersistence/ABCDRecord.h>
 
-@class ABCDContactIndex, ABCDNote, NSData, NSDate, NSDateComponents, NSDictionary, NSNumber, NSSet, NSString;
+#import <ContactsPersistence/ABCDContainedRecord-Protocol.h>
 
-@interface ABCDContact : ABCDRecord
+@class ABCDContactIndex, ABCDNote, CNCDContainer, NSData, NSDate, NSDateComponents, NSDictionary, NSNumber, NSSet, NSString;
+
+@interface ABCDContact : ABCDRecord <ABCDContainedRecord>
 {
 }
 
@@ -17,6 +19,7 @@
 + (id)preferredPhotoSortDescriptors;
 + (id)preferredNameSortDescriptors;
 + (id)_table;
++ (id)os_log;
 + (id)abEntityName;
 @property(retain, nonatomic) NSData *cropRectHash; // @dynamic cropRectHash;
 @property(retain, nonatomic) NSString *cropRectID; // @dynamic cropRectID;
@@ -34,6 +37,10 @@
 @property(nonatomic) BOOL isCompany;
 - (id)objectForKey:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (BOOL)validateForDelete:(id *)arg1;
+- (BOOL)validateForUpdate:(id *)arg1;
+- (BOOL)validateForInsert:(id *)arg1;
+- (BOOL)validateForGuardianRestrictions:(id *)arg1;
 - (BOOL)propertyHasChanged:(id)arg1;
 - (id)attributedStringValue;
 - (BOOL)hasUserImageChanges;
@@ -79,6 +86,7 @@
 // Remaining properties
 @property(retain, nonatomic) NSSet *alertTones; // @dynamic alertTones;
 @property(retain, nonatomic) ABCDContactIndex *contactIndex; // @dynamic contactIndex;
+@property(retain, nonatomic) CNCDContainer *container; // @dynamic container;
 @property(retain, nonatomic) NSString *department; // @dynamic department;
 @property(retain, nonatomic) NSString *downtimeWhitelist; // @dynamic downtimeWhitelist;
 @property(retain, nonatomic) NSSet *emailAddresses; // @dynamic emailAddresses;

@@ -11,8 +11,8 @@
     CDUnknownBlockType _removeButtonBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType removeButtonBlock; // @synthesize removeButtonBlock=_removeButtonBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType removeButtonBlock; // @synthesize removeButtonBlock=_removeButtonBlock;
 - (void)_handleContinueButtonClick;
 - (id)init;
 

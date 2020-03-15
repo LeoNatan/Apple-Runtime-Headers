@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CABasicAnimation *_toAnimation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CABasicAnimation *toAnimation; // @synthesize toAnimation=_toAnimation;
 @property(retain, nonatomic) CABasicAnimation *fromAnimation; // @synthesize fromAnimation=_fromAnimation;
-- (void).cxx_destruct;
 
 @end
 

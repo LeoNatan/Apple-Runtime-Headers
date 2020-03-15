@@ -17,10 +17,10 @@
     NSNumber *_endZoomLevel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *endZoomLevel; // @synthesize endZoomLevel=_endZoomLevel;
 @property(retain, nonatomic) NSNumber *startZoomLevel; // @synthesize startZoomLevel=_startZoomLevel;
 @property(nonatomic) int centersBeforeZooming; // @synthesize centersBeforeZooming=_centersBeforeZooming;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

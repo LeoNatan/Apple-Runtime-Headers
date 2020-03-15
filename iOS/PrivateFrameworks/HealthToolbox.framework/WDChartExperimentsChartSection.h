@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     HKHealthChartFactory *_healthChartFactory;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKHealthChartFactory *healthChartFactory; // @synthesize healthChartFactory=_healthChartFactory;
 @property(retain, nonatomic) WDActivityQueryTestController *activityQueryTestController; // @synthesize activityQueryTestController=_activityQueryTestController;
 @property(retain, nonatomic) HKInteractiveChartOverlayViewController *heartRateController; // @synthesize heartRateController=_heartRateController;
 @property(retain, nonatomic) HKHeartbeatSequenceChartViewController *heartbeatSequenceForUpdate; // @synthesize heartbeatSequenceForUpdate=_heartbeatSequenceForUpdate;
 @property(retain, nonatomic) NSMutableArray *viewControllers; // @synthesize viewControllers=_viewControllers;
-- (void).cxx_destruct;
 - (void)activityQueryTest:(id)arg1;
 - (id)cellForRow:(unsigned long long)arg1 table:(id)arg2;
 - (unsigned long long)numberOfRows;

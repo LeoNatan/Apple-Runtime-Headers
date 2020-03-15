@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     int _configChangedToken;
 }
 
-@property(nonatomic) __weak id <_GEONetworkDefaultsServerProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_GEONetworkDefaultsServerProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)updateNetworkDefaults:(CDUnknownBlockType)arg1;
 - (void)_networkDefaultsDidChange;
 - (void)dealloc;

@@ -13,8 +13,8 @@
     NSArray *_devices;
 }
 
-@property(readonly, nonatomic) NSArray *devices; // @synthesize devices=_devices;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *devices; // @synthesize devices=_devices;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 
 @end

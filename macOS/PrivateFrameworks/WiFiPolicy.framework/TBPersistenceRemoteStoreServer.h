@@ -16,11 +16,11 @@
     NSDictionary *_serverOptions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *serverOptions; // @synthesize serverOptions=_serverOptions;
 @property(retain, nonatomic) NSURL *modelURL; // @synthesize modelURL=_modelURL;
 @property(retain, nonatomic) NSURL *storeURL; // @synthesize storeURL=_storeURL;
 @property(retain, nonatomic) NSXPCStoreServer *xpcStoreServer; // @synthesize xpcStoreServer=_xpcStoreServer;
-- (void).cxx_destruct;
 - (void)startListening;
 - (id)initWithStoreURL:(id)arg1 modelURL:(id)arg2 options:(id)arg3;
 

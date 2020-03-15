@@ -13,8 +13,8 @@
     UNNotification *_notification;
 }
 
-@property(readonly, copy, nonatomic) UNNotification *notification; // @synthesize notification=_notification;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) UNNotification *notification; // @synthesize notification=_notification;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)initWithXPCDictionary:(id)arg1;

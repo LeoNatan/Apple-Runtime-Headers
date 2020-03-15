@@ -17,12 +17,12 @@
     _Bool _clippedBack;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool clippedBack; // @synthesize clippedBack=_clippedBack;
 @property(readonly, nonatomic) _Bool clippedFront; // @synthesize clippedFront=_clippedFront;
 @property(readonly, nonatomic) unsigned long long mapEdgeOffset; // @synthesize mapEdgeOffset=_mapEdgeOffset;
 @property(readonly, nonatomic) shared_ptr_92bc9970 mapEdge; // @synthesize mapEdge=_mapEdge;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_c8b5ad3f *feature;
 @property(readonly, nonatomic) struct PolylineCoordinate routeOffsetB;
 @property(readonly, nonatomic) struct PolylineCoordinate routeOffsetA;

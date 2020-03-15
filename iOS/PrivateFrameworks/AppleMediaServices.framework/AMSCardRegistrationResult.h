@@ -15,10 +15,10 @@
     NSURL *_paymentServicesURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *paymentServicesURL; // @synthesize paymentServicesURL=_paymentServicesURL;
 @property(readonly, nonatomic) NSURL *brokerURL; // @synthesize brokerURL=_brokerURL;
 @property(readonly, nonatomic) NSData *cardData; // @synthesize cardData=_cardData;
-- (void).cxx_destruct;
 - (id)initWithCardRegistrationResponse:(id)arg1;
 
 @end

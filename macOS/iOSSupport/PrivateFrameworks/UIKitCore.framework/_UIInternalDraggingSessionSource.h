@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _centroid;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIDruidSourceConnection *druidConnection; // @synthesize druidConnection=_druidConnection;
 @property(readonly, nonatomic) unsigned long long outsideAppSourceOperationMask; // @synthesize outsideAppSourceOperationMask=_outsideAppSourceOperationMask;
 @property(readonly, nonatomic) unsigned long long withinAppSourceOperationMask; // @synthesize withinAppSourceOperationMask=_withinAppSourceOperationMask;
@@ -53,7 +54,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak UIView *sourceView; // @synthesize sourceView=_sourceView;
 @property(nonatomic) __weak UIDragEvent *dragEvent; // @synthesize dragEvent=_dragEvent;
 @property(nonatomic) __weak id <_UIDraggingSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_sendDataTransferFinished;
 - (void)_sendDidMove;
 - (void)_sendDidEndWithOperation:(unsigned long long)arg1;

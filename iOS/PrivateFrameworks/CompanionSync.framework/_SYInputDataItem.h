@@ -16,11 +16,11 @@
     CDUnknownBlockType _callback;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(readonly, nonatomic) NSMutableData *data; // @synthesize data=_data;
 @property(nonatomic) unsigned long long length; // @synthesize length=_length;
 @property(nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long lengthRemaining;
 - (id)initWithLength:(unsigned long long)arg1 callback:(CDUnknownBlockType)arg2;
 

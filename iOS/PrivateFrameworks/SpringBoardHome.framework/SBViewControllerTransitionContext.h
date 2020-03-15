@@ -45,13 +45,13 @@
     id _userInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) _Bool wantsAnimation; // @synthesize wantsAnimation=_wantsAnimation;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) __weak id <SBViewControllerTransitionContextDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct CGAffineTransform targetTransform; // @synthesize targetTransform=_targetTransform;
 @property(nonatomic) long long presentationStyle; // @synthesize presentationStyle=_presentationStyle;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

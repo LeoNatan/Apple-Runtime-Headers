@@ -6,22 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSAttributedString;
-
 __attribute__((visibility("hidden")))
 @interface WebRevealHighlight : NSObject
 {
     Function_15535652 _clearTextIndicator;
-    struct CGRect _highlightRect;
     BOOL _useDefaultHighlight;
-    NSAttributedString *_attributedString;
+    RetainPtr_7794a625 _attributedString;
+    struct CGRect _highlightRect;
 }
 
-@property(readonly, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
-@property(readonly, nonatomic) BOOL useDefaultHighlight; // @synthesize useDefaultHighlight=_useDefaultHighlight;
-@property(readonly, nonatomic) struct CGRect highlightRect; // @synthesize highlightRect=_highlightRect;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) RetainPtr_7794a625 attributedString; // @synthesize attributedString=_attributedString;
+@property(readonly, nonatomic) BOOL useDefaultHighlight; // @synthesize useDefaultHighlight=_useDefaultHighlight;
+@property(readonly, nonatomic) struct CGRect highlightRect; // @synthesize highlightRect=_highlightRect;
 - (void)revealContext:(id)arg1 stopHighlightingItem:(id)arg2;
 - (BOOL)revealContext:(id)arg1 shouldUseDefaultHighlightForItem:(id)arg2;
 - (void)revealContext:(id)arg1 drawRectsForItem:(id)arg2;

@@ -15,9 +15,9 @@
     float _weight;
 }
 
+- (void).cxx_destruct;
 @property float weight; // @synthesize weight=_weight;
 @property(retain) NSMutableDictionary *scoresForMembers; // @synthesize scoresForMembers=_scoresForMembers;
-- (void).cxx_destruct;
 - (id)rankedMembersPassingThreshold:(double)arg1;
 - (id)rankedCandidates:(id)arg1;
 - (id)rankedMembers;

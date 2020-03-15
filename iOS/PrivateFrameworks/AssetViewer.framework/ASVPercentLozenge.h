@@ -14,9 +14,9 @@
     UIViewPropertyAnimator *_percentLozengeAnimator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewPropertyAnimator *percentLozengeAnimator; // @synthesize percentLozengeAnimator=_percentLozengeAnimator;
 @property(retain, nonatomic) NSNumberFormatter *percentageFormatter; // @synthesize percentageFormatter=_percentageFormatter;
-- (void).cxx_destruct;
 - (id)lozengeFont;
 - (void)setHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (struct CGSize)intrinsicContentSize;

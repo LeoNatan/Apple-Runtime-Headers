@@ -31,12 +31,12 @@
     NSMutableDictionary *_delayedElements;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_delayedElements) NSMutableDictionary *delayedElements; // @synthesize delayedElements=_delayedElements;
 @property(readonly, nonatomic, getter=_activeElements) NSMutableArray *activeElements; // @synthesize activeElements=_activeElements;
 @property(readonly, nonatomic, getter=_elementQueue) AFQueue *elementQueue; // @synthesize elementQueue=_elementQueue;
 @property(retain, nonatomic) id <AFUISpeechSynthesisDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <AFUISpeechSynthesisLocalDelegate> localDelegate; // @synthesize localDelegate=_localDelegate;
-- (void).cxx_destruct;
 - (void)_setSiriClientStateManager:(id)arg1;
 - (void)_setSynthesizer:(id)arg1;
 - (void)_processProvisionalElements;

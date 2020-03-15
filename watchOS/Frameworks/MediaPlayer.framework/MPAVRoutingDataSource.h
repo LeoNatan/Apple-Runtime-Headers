@@ -16,10 +16,10 @@
     int _filterMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int filterMode; // @synthesize filterMode=_filterMode;
 @property(readonly, nonatomic) _Bool devicePresenceDetected; // @synthesize devicePresenceDetected=_devicePresenceDetected;
 @property(nonatomic) int discoveryMode; // @synthesize discoveryMode=_discoveryMode;
-- (void).cxx_destruct;
 - (void)_superclassUnregisterNotifications;
 - (void)_superclassRegisterNotifications;
 - (void)_activeAudioRouteDidChangeNotification:(id)arg1;

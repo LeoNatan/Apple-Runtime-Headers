@@ -13,8 +13,8 @@
     NSString *_name;
 }
 
-@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (void)dealloc;
 
 @end

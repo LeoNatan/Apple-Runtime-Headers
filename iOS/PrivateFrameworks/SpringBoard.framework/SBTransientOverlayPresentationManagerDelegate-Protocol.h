@@ -10,6 +10,7 @@
 @protocol BSInvalidatable, CSExternalBehaviorProviding;
 
 @protocol SBTransientOverlayPresentationManagerDelegate <NSObject>
+- (_Bool)isKeyboardVisibleForSpringBoardForTransientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1;
 - (_Bool)defaultShouldAutorotateForTransientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1;
 - (long long)defaultPreferredInterfaceOrientationForPresentationForTransientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1;
 - (unsigned long long)defaultSupportedInterfaceOrientationsForTransientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1;

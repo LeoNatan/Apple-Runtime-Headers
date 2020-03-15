@@ -37,6 +37,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL genius; // @synthesize genius=_genius;
 @property(retain, nonatomic) NSData *smartCriteria; // @synthesize smartCriteria=_smartCriteria;
 @property(nonatomic) BOOL reverseLimitOrder; // @synthesize reverseLimitOrder=_reverseLimitOrder;
@@ -48,7 +49,6 @@
 @property(nonatomic) BOOL limited; // @synthesize limited=_limited;
 @property(nonatomic) BOOL filtered; // @synthesize filtered=_filtered;
 @property(nonatomic) BOOL dynamic; // @synthesize dynamic=_dynamic;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

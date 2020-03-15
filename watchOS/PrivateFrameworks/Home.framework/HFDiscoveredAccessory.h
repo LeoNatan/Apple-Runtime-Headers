@@ -25,6 +25,7 @@
 }
 
 + (id)discoveredAccessoryFromSetupDescription:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int certificationStatus; // @synthesize certificationStatus=_certificationStatus;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) unsigned int status; // @synthesize status=_status;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) HMAccessory *accessory; // @synthesize accessory=_accessory;
 @property(retain, nonatomic) HMAccessoryCategory *category; // @synthesize category=_category;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)_descriptionForStatus:(unsigned int)arg1;
 - (id)identify;
 @property(readonly, nonatomic) _Bool requiresSoftwareUpdate;

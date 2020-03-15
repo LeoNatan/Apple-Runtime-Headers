@@ -21,10 +21,10 @@
     id <CSLApplicationIconDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CSLApplicationIconDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool valid; // @synthesize valid=_valid;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *iconImage;
 @property(readonly, nonatomic, getter=isInstalling) _Bool installing;
 @property(readonly, nonatomic) double percentComplete;

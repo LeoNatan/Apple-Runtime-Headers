@@ -15,9 +15,9 @@
 }
 
 + (id)stateChangedNotificationName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CDBDataProtectionObserver *dataProtectionObserver; // @synthesize dataProtectionObserver=_dataProtectionObserver;
 @property(copy, nonatomic) CDUnknownBlockType stateChangedCallback; // @synthesize stateChangedCallback=_stateChangedCallback;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool dataIsAccessible;
 - (void)_dataProtectionStateChanged;
 - (id)init;

@@ -16,9 +16,9 @@
     HKQuantityType *_quantityType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) HKQuantityType *quantityType; // @synthesize quantityType=_quantityType;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (id)orderedSourceIDsWithUnorderedIDs:(id)arg1;
 - (id)sourceForSourceID:(long long)arg1;
 - (id)initWithProfile:(id)arg1 quantityType:(id)arg2;

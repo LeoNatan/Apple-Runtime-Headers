@@ -17,12 +17,12 @@
     NSNumber *_frameResynch;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *frameResynch; // @synthesize frameResynch=_frameResynch;
 @property(copy, nonatomic) NSNumber *duration; // @synthesize duration=_duration;
 @property(copy, nonatomic) NSNumber *heuristic; // @synthesize heuristic=_heuristic;
 @property(copy, nonatomic) NSNumber *encodingDrain; // @synthesize encodingDrain=_encodingDrain;
 @property(copy, nonatomic) NSNumber *encodingDelay; // @synthesize encodingDelay=_encodingDelay;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

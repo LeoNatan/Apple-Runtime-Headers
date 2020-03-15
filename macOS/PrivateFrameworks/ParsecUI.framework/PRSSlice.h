@@ -20,6 +20,7 @@
     double _floatValue;
 }
 
+- (void).cxx_destruct;
 @property double floatValue; // @synthesize floatValue=_floatValue;
 @property(retain) NSImage *image; // @synthesize image=_image;
 @property(retain) NSString *stringValue2; // @synthesize stringValue2=_stringValue2;
@@ -28,7 +29,6 @@
 @property(retain) NSString *sliceType; // @synthesize sliceType=_sliceType;
 @property BOOL stringValueFontIsLarge; // @synthesize stringValueFontIsLarge=_stringValueFontIsLarge;
 @property(getter=isUnderlined) BOOL underlined; // @synthesize underlined=_underlined;
-- (void).cxx_destruct;
 
 @end
 

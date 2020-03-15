@@ -13,8 +13,8 @@
     PXGLayout *_layout;
 }
 
-@property(readonly, nonatomic) __weak PXGLayout *layout; // @synthesize layout=_layout;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak PXGLayout *layout; // @synthesize layout=_layout;
 - (void)performActionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithActionType:(id)arg1 viewModel:(id)arg2;
 - (id)initWithViewModel:(id)arg1 layout:(id)arg2;

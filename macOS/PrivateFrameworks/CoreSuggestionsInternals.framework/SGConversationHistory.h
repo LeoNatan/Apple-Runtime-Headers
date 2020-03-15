@@ -14,9 +14,9 @@
     NSString *_likelyLanguage;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *likelyLanguage; // @synthesize likelyLanguage=_likelyLanguage;
 @property(readonly) NSArray *messages; // @synthesize messages=_messages;
-- (void).cxx_destruct;
 - (id)initWithMessages:(id)arg1;
 
 @end

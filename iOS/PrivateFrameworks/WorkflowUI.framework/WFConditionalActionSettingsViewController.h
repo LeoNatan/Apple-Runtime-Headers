@@ -16,8 +16,8 @@
     UITableView *_tableView;
 }
 
-@property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

@@ -15,9 +15,9 @@
     NFUnfairLock *_lock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NFUnfairLock *lock; // @synthesize lock=_lock;
 @property(readonly, copy, nonatomic) CDUnknownBlockType constructor; // @synthesize constructor=_constructor;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id value; // @synthesize value=_value;
 - (id)initWithConstructor:(CDUnknownBlockType)arg1;
 

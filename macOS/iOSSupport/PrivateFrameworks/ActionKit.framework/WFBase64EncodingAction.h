@@ -10,6 +10,7 @@
 {
 }
 
++ (BOOL)outputIsExemptFromTaintTrackingInheritance;
 - (BOOL)setParameterState:(id)arg1 forKey:(id)arg2;
 - (id)outputContentClasses;
 - (id)inputContentClasses;

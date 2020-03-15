@@ -16,8 +16,8 @@
     id <HDFitnessMachinePairingManagerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <HDFitnessMachinePairingManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <HDFitnessMachinePairingManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)permitConnectionForFitnessMachineSessionUUID:(id)arg1 activityType:(unsigned long long)arg2 withConnectionUUID:(id)arg3;
 - (void)setActivityType:(unsigned long long)arg1;
 - (void)forbidConnectionForFitnessMachineSessionUUID:(id)arg1 withConnectionUUID:(id)arg2;

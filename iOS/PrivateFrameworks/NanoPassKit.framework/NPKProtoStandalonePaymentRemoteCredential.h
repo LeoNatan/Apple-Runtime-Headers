@@ -25,6 +25,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
 @property(nonatomic) unsigned int rank; // @synthesize rank=_rank;
 @property(retain, nonatomic) NPKProtoStandalonePaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSString *passURL; // @synthesize passURL=_passURL;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NPKProtoStandalonePaymentCredential *paymentCredential; // @synthesize paymentCredential=_paymentCredential;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -37,6 +37,7 @@
     NSArray *_lastProcessedEndpoints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *lastProcessedEndpoints; // @synthesize lastProcessedEndpoints=_lastProcessedEndpoints;
 @property(retain, nonatomic) NSArray *lastProcessedOutputDevices; // @synthesize lastProcessedOutputDevices=_lastProcessedOutputDevices;
 @property(nonatomic) unsigned long long updatesReceived; // @synthesize updatesReceived=_updatesReceived;
@@ -58,7 +59,6 @@
 @property(nonatomic) BOOL useWeakMatching; // @synthesize useWeakMatching=_useWeakMatching;
 @property(retain, nonatomic) MRAVRoutingDiscoverySession *discoverySession; // @synthesize discoverySession=_discoverySession;
 @property(readonly, nonatomic) unsigned int endpointFeatures; // @synthesize endpointFeatures=_endpointFeatures;
-- (void).cxx_destruct;
 - (void)_onQueue_endSearch;
 - (void)_onQueue_concludeSearch;
 - (void)_onQueue_cancelSearch;

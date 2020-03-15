@@ -30,6 +30,7 @@
 + (void)registerControllerClass:(Class)arg1 applicationIdentifier:(id)arg2 role:(id)arg3 subrole:(id)arg4 predicate:(CDUnknownBlockType)arg5;
 + (void)registerControllerClass:(Class)arg1 role:(id)arg2 subrole:(id)arg3;
 + (void)registerControllerBaseClass:(Class)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXKElementController *menuControllerSubMenuController; // @synthesize menuControllerSubMenuController=_menuControllerSubMenuController;
 @property(retain, nonatomic) AXKElementController *menuControllerSelectedItem; // @synthesize menuControllerSelectedItem=_menuControllerSelectedItem;
 @property(nonatomic) BOOL isMenuController; // @synthesize isMenuController=_isMenuController;
@@ -42,7 +43,6 @@
 @property(nonatomic) __weak AXKElementController *parentController; // @synthesize parentController=_parentController;
 @property(retain, nonatomic) AXFUIElement *representedElement; // @synthesize representedElement=_representedElement;
 @property(readonly, nonatomic) __weak AXKApplicationController *applicationController; // @synthesize applicationController=_applicationController;
-- (void).cxx_destruct;
 - (void)performSelector:(SEL)arg1 withObject:(id)arg2 afterDelay:(double)arg3;
 - (void)performSelector:(SEL)arg1 withObject:(id)arg2 afterDelay:(double)arg3 inModes:(id)arg4;
 - (void)_menuControllerSelectedChildrenChangedHandler:(id)arg1;

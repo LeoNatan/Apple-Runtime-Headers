@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_sortedActionDates;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *sortedActionDates; // @synthesize sortedActionDates=_sortedActionDates;
 @property(retain) NSLock *instanceLock; // @synthesize instanceLock=_instanceLock;
 @property(readonly) double timeInterval; // @synthesize timeInterval=_timeInterval;
 @property(readonly) unsigned long long maximum; // @synthesize maximum=_maximum;
-- (void).cxx_destruct;
 - (void)locked_addDate:(id)arg1;
 - (void)locked_removeDatesBefore:(id)arg1;
 - (unsigned long long)locked_indexOfFirstAfter:(id)arg1;

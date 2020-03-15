@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *title; // @synthesize title=_title;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)report;
 - (id)initWithTitle:(id)arg1 identifier:(id)arg2;
 

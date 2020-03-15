@@ -11,7 +11,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)blockingUIStringsTable;
 + (id)bundle;
 
 @end

@@ -14,9 +14,9 @@
     NSData *_setupHash;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *setupHash; // @synthesize setupHash=_setupHash;
 @property(readonly, nonatomic) BOOL pairingPresent; // @synthesize pairingPresent=_pairingPresent;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

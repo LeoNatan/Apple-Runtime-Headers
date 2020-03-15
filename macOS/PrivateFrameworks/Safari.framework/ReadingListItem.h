@@ -27,12 +27,12 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingUnread;
 + (id)keyPathsForValuesAffectingHasDefaultSiteIcon;
 + (id)keyPathsForValuesAffectingIcon;
+- (void).cxx_destruct;
 @property(retain) NSImage *lastRetrievedFallbackIcon; // @synthesize lastRetrievedFallbackIcon=_lastRetrievedFallbackIcon;
 @property(nonatomic) BOOL hasDefaultSiteIcon; // @synthesize hasDefaultSiteIcon=_hasDefaultSiteIcon;
 @property(readonly, nonatomic) WebBookmarkLeaf *bookmark; // @synthesize bookmark=_bookmark;
 @property(nonatomic) BOOL isReaderAvailable; // @synthesize isReaderAvailable=_isReaderAvailable;
 @property(nonatomic) BOOL isFetchInProgress; // @synthesize isFetchInProgress=_isFetchInProgress;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)removeNonSyncAttributeValueForKey:(id)arg1;

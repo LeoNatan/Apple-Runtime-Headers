@@ -30,6 +30,7 @@
     struct UIEdgeInsets _tappableEdgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setCachedValueLabelWidth:) double _cachedValueLabelWidth; // @synthesize _cachedValueLabelWidth=__cachedValueLabelWidth;
 @property(readonly, nonatomic) double _cachedSymbolLabelWidth; // @synthesize _cachedSymbolLabelWidth=__cachedSymbolLabelWidth;
 @property(readonly, nonatomic) double _cachedSpaceWidth; // @synthesize _cachedSpaceWidth=__cachedSpaceWidth;
@@ -47,7 +48,6 @@
 @property(nonatomic) _Bool shouldShowApertureValue; // @synthesize shouldShowApertureValue=_shouldShowApertureValue;
 @property(nonatomic) double apertureValue; // @synthesize apertureValue=_apertureValue;
 @property(nonatomic) __weak id <CEKApertureButtonDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_setLayer:(id)arg1 highlighted:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)_rotateView:(id)arg1 withInterfaceOrientation:(long long)arg2 animated:(_Bool)arg3;
 - (void)_setCenterAndBoundsForView:(id)arg1 frame:(struct CGRect)arg2;

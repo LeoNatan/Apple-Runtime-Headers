@@ -32,6 +32,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3;
 @property(readonly) UIPrintPageRenderer *pageRenderer; // @synthesize pageRenderer=_pageRenderer;
 @property(readonly) UISimpleTextPrintFormatter *printFormatter; // @synthesize printFormatter=_printFormatter;
+- (_Bool)canClickToToggleFullscreen;
+- (_Bool)canToggleFullScreen;
 - (_Bool)automaticallyUpdateScrollViewIndicatorInset;
 - (_Bool)automaticallyUpdateScrollViewContentInset;
 - (_Bool)automaticallyUpdateScrollViewContentOffset;

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     double _radius;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double radius; // @synthesize radius=_radius;
 @property(retain, nonatomic) PKPhysicsBody *physicsBody; // @synthesize physicsBody=_physicsBody;
 @property(nonatomic) struct CGPoint center; // @synthesize center=_center;
 @property(nonatomic) double bufferSize; // @synthesize bufferSize=_bufferSize;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

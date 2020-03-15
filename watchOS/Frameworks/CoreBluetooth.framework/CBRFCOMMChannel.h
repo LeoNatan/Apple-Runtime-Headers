@@ -17,12 +17,12 @@
     CBUUID *_serviceUUID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CBUUID *serviceUUID; // @synthesize serviceUUID=_serviceUUID;
 @property(readonly, nonatomic) NSOutputStream *outputStream; // @synthesize outputStream=_outputStream;
 @property(readonly, nonatomic) NSInputStream *inputStream; // @synthesize inputStream=_inputStream;
 @property(readonly, nonatomic) CBClassicPeer *peer; // @synthesize peer=_peer;
 @property(readonly, nonatomic) int socketFD; // @synthesize socketFD=_socketFD;
-- (void).cxx_destruct;
 - (id)initWithPeer:(id)arg1 info:(id)arg2;
 
 @end

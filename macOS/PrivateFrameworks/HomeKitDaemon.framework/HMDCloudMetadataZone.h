@@ -16,8 +16,8 @@
 + (void)createMetadataZoneWithName:(id)arg1 owner:(id)arg2 cacheZone:(id)arg3 cloudCache:(id)arg4 completion:(CDUnknownBlockType)arg5;
 + (id)zoneSubscriptionName:(id)arg1;
 + (id)zoneRootRecordName;
-@property(retain, nonatomic) HMDCloudRecord *metadataRecord; // @synthesize metadataRecord=_metadataRecord;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HMDCloudRecord *metadataRecord; // @synthesize metadataRecord=_metadataRecord;
 - (void)setServerChangeToken:(id)arg1;
 
 @end

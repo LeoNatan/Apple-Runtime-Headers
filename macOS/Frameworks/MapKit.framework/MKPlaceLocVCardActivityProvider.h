@@ -15,8 +15,8 @@
     CNContact *_contact;
 }
 
-@property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 - (id)initWithMapItem:(id)arg1 contact:(id)arg2;
 
 // Remaining properties

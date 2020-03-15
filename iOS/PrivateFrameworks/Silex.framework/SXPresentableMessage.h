@@ -14,9 +14,9 @@
     NSString *_message;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(readonly, copy, nonatomic) NSString *recipient; // @synthesize recipient=_recipient;
-- (void).cxx_destruct;
 - (id)initWithRecipient:(id)arg1 message:(id)arg2;
 
 @end

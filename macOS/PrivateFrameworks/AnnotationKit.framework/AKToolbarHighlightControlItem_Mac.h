@@ -17,10 +17,10 @@
     unsigned long long _displayMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) unsigned long long displayMode; // @synthesize displayMode=_displayMode;
 @property(retain) NSSegmentedControl<AKUserInterfaceItem> *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
-- (void).cxx_destruct;
 - (id)_createHighlightsMenuWithItemTarget:(id)arg1 itemAction:(SEL)arg2;
 - (void)_configureForDisplayMode:(unsigned long long)arg1;
 - (id)alternateImage;

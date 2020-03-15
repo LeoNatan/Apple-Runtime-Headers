@@ -23,12 +23,12 @@
     HUTVViewingProfilesEditorItemManager *_tvVPEditorItemManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUTVViewingProfilesEditorItemManager *tvVPEditorItemManager; // @synthesize tvVPEditorItemManager=_tvVPEditorItemManager;
 @property(retain, nonatomic) OBLinkTrayButton *customizeButton; // @synthesize customizeButton=_customizeButton;
 @property(retain, nonatomic) OBTrayButton *useTVVPButton; // @synthesize useTVVPButton=_useTVVPButton;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)moduleController:(id)arg1 textFieldForVisibleItem:(id)arg2;

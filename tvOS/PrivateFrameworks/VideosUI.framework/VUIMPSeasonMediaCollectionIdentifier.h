@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (id)seasonIdentifierWithMediaItem:(id)arg1;
 + (id)requiredMPPropertyNames;
-@property(copy, nonatomic) NSNumber *seasonNumber; // @synthesize seasonNumber=_seasonNumber;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSNumber *seasonNumber; // @synthesize seasonNumber=_seasonNumber;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

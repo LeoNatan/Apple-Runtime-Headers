@@ -17,8 +17,8 @@
 
 + (id)layerWithShape:(id)arg1;
 + (id)new;
-@property(readonly, nonatomic) NSArray *shape; // @synthesize shape=_shape;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *shape; // @synthesize shape=_shape;
 @property(readonly, copy) NSString *description;
 - (unsigned long long)computeResultSizeFromSourceSize:(unsigned long long)arg1 dimension:(unsigned long long)arg2;
 - (BOOL)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;

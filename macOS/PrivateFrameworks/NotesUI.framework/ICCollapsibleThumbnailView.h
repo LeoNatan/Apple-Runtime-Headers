@@ -11,16 +11,16 @@
 @interface ICCollapsibleThumbnailView : ICCollapsibleBaseView
 {
     BOOL _showAsMovie;
-    struct NSImage *_image;
+    NSImage *_image;
     unsigned long long _imageScaling;
     ICImageAndMovieThumbnailView *_thumbnailView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICImageAndMovieThumbnailView *thumbnailView; // @synthesize thumbnailView=_thumbnailView;
 @property(nonatomic) BOOL showAsMovie; // @synthesize showAsMovie=_showAsMovie;
 @property(nonatomic) unsigned long long imageScaling; // @synthesize imageScaling=_imageScaling;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (BOOL)accessibilityIgnoresInvertColors;
 - (void)performSetup;
 

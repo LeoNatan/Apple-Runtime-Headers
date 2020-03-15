@@ -17,9 +17,9 @@
     _SFQuickLookDocument *_quickLookDocument;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasFinishedWriting; // @synthesize hasFinishedWriting=_hasFinishedWriting;
 @property(readonly, nonatomic) _SFQuickLookDocument *quickLookDocument; // @synthesize quickLookDocument=_quickLookDocument;
-- (void).cxx_destruct;
 - (void)writeDataAndClose:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithFileName:(id)arg1 uti:(id)arg2;
 @property(copy, nonatomic) NSString *filePathAccessedOnDispatchQueue;

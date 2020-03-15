@@ -18,10 +18,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSArray *monthlyResetArray; // @synthesize monthlyResetArray=_monthlyResetArray;
 @property(retain, nonatomic) NSDictionary *usageVectors; // @synthesize usageVectors=_usageVectors;
 @property(retain) DSIDRecord *activeDSIDRecord; // @synthesize activeDSIDRecord=_activeDSIDRecord;
-- (void).cxx_destruct;
 - (id)retrieveDeviceIDs;
 - (void)logIDs:(id)arg1;
 - (id)deviceIdentifiers;

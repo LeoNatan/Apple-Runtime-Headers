@@ -15,8 +15,8 @@
     SignpostSupportSubsystemCategoryFilterEntry *_entry;
 }
 
-@property(retain, nonatomic) SignpostSupportSubsystemCategoryFilterEntry *entry; // @synthesize entry=_entry;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SignpostSupportSubsystemCategoryFilterEntry *entry; // @synthesize entry=_entry;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy, nonatomic) NSString *category;
 @property(readonly, copy, nonatomic) NSString *subsystem;

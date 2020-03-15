@@ -16,9 +16,9 @@
     NSMutableDictionary *_loadedChildItems;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *screenshots; // @synthesize screenshots=_screenshots;
 @property(readonly, nonatomic) SKUIScreenshot *primaryScreenshot; // @synthesize primaryScreenshot=_primaryScreenshot;
-- (void).cxx_destruct;
 - (id)childItemIdentifiers;
 - (id)childItemForIdentifier:(id)arg1;
 - (id)loadedChildItems;

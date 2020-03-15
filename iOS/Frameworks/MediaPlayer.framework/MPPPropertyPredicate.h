@@ -20,10 +20,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int comparisonType; // @synthesize comparisonType=_comparisonType;
 @property(retain, nonatomic) MPPMediaPredicateValue *value; // @synthesize value=_value;
 @property(retain, nonatomic) NSString *property; // @synthesize property=_property;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

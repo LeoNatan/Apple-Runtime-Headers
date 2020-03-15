@@ -31,6 +31,7 @@
 }
 
 + (id)defaultContext;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CalDAVDBChangeTrackingHelper *changeTracker; // @synthesize changeTracker=_changeTracker;
 @property(nonatomic) unsigned long long localItems; // @synthesize localItems=_localItems;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
@@ -49,7 +50,6 @@
 @property(nonatomic) _Bool wasDueToPush; // @synthesize wasDueToPush=_wasDueToPush;
 @property(nonatomic) _Bool wasUserRequested; // @synthesize wasUserRequested=_wasUserRequested;
 @property(nonatomic) _Bool isForced; // @synthesize isForced=_isForced;
-- (void).cxx_destruct;
 
 @end
 

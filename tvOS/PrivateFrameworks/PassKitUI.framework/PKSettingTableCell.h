@@ -15,10 +15,10 @@
     UISwitch *_settingSwitch;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UISwitch *settingSwitch; // @synthesize settingSwitch=_settingSwitch;
 @property(readonly, nonatomic) SEL action; // @synthesize action=_action;
 @property(readonly, nonatomic) id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
 @property(nonatomic, getter=isOn) _Bool on;
 - (void)dealloc;

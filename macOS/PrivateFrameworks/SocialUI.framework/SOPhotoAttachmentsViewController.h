@@ -13,8 +13,8 @@
     IKImageBrowserView *_imageBrowserView;
 }
 
-@property(retain) IKImageBrowserView *imageBrowserView; // @synthesize imageBrowserView=_imageBrowserView;
 - (void).cxx_destruct;
+@property(retain) IKImageBrowserView *imageBrowserView; // @synthesize imageBrowserView=_imageBrowserView;
 - (void)loadView;
 - (void)chatDisplayControllerWillChange:(id)arg1;
 - (void)attachmentsDidChange;

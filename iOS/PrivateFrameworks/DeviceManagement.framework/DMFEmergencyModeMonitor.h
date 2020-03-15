@@ -13,9 +13,10 @@
     NSXPCConnection *_xpcConnection;
 }
 
++ (id)remoteInterface;
 + (id)sharedMonitor;
-@property(readonly, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void)emergencyModeStatusWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)emergencyModeStatusWithError:(id *)arg1;
 - (_Bool)disableEmergencyModeWithError:(id *)arg1;

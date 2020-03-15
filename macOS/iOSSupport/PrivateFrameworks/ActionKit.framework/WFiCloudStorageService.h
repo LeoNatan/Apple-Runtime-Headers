@@ -9,7 +9,7 @@
 #import <ActionKit/UIDocumentPickerDelegate-Protocol.h>
 #import <ActionKit/WFFileStorageService-Protocol.h>
 
-@class NSMapTable, NSProgress, NSString;
+@class NSMapTable, NSProgress, NSString, WFContentSource;
 
 @interface WFiCloudStorageService : NSObject <UIDocumentPickerDelegate, WFFileStorageService>
 {
@@ -23,17 +23,19 @@
 + (void)createDocumentsDirectoryIfNecessary;
 + (id)containerName;
 + (id)containerIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSProgress *progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) NSMapTable *documentPickerCompletionTable; // @synthesize documentPickerCompletionTable=_documentPickerCompletionTable;
-- (void).cxx_destruct;
 - (void)documentPickerWasCancelled:(id)arg1;
 - (void)documentPicker:(id)arg1 didPickDocumentsAtURLs:(id)arg2;
+@property(readonly, nonatomic) WFContentSource *contentSource;
+@property(readonly, nonatomic) NSString *associatedAppBundleIdentifier;
 @property(readonly, nonatomic) BOOL supportsJumpingToSubdirectoryInUI;
 @property(readonly, nonatomic) NSString *storageLocationPrefix;
 @property(readonly, nonatomic) Class accessResourceClass;
 @property(readonly, nonatomic) Class objectRepresentationClass;
 @property(readonly, nonatomic) BOOL hasPublicURLs;
-- (void)completeOperationForDocumentPicker:(id)arg1 withFiles:(id)arg2 error:(id)arg3;
+- (void)completeOperationForDocumentPicker:(id)arg1 withFileItems:(id)arg2 error:(id)arg3;
 - (void)presentDocumentPicker:(id)arg1 withUserInterface:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)searchFiles:(id)arg1 inPath:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)appendText:(id)arg1 toPath:(id)arg2 options:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) __weak IKDOMElement *domElement; // @synthesize domElement=_domElement;
-- (void).cxx_destruct;
 - (void)mutateWithDOMElement:(id)arg1;
 - (_Bool)passesForDataItem:(id)arg1 default:(_Bool)arg2;
 @property(readonly, copy, nonatomic) NSSet *dependentPathStrings; // @synthesize dependentPathStrings=_dependentPathStrings;

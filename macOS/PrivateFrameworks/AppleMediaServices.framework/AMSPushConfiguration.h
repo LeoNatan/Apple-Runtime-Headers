@@ -14,9 +14,9 @@
     NSSet *_enabledActionTypes;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSSet *enabledActionTypes; // @synthesize enabledActionTypes=_enabledActionTypes;
 @property(retain) NSString *userNotificationExtensionId; // @synthesize userNotificationExtensionId=_userNotificationExtensionId;
-- (void).cxx_destruct;
 - (id)initWithEnabledActionTypes:(id)arg1;
 
 @end

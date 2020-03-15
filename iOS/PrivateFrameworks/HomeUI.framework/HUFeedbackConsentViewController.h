@@ -16,10 +16,10 @@
     id <HUFeedbackConsentViewControllerDelegate> _consentDelegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <HUFeedbackConsentViewControllerDelegate> consentDelegate; // @synthesize consentDelegate=_consentDelegate;
 @property(nonatomic) _Bool isFamilyAndFriendsConsent; // @synthesize isFamilyAndFriendsConsent=_isFamilyAndFriendsConsent;
 @property(retain, nonatomic) WKWebView *consentView; // @synthesize consentView=_consentView;
-- (void).cxx_destruct;
 - (id)consentFormFilePath;
 - (void)dealloc;
 - (id)htmlString;

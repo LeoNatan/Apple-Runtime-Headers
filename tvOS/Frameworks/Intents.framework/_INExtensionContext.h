@@ -24,8 +24,8 @@
 + (id)_extensionAuxiliaryVendorProtocol;
 + (id)_extensionAuxiliaryHostProtocol;
 + (void)initialize;
-@property(retain, nonatomic) id activeHandlerForIntent; // @synthesize activeHandlerForIntent=_activeHandlerForIntent;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id activeHandlerForIntent; // @synthesize activeHandlerForIntent=_activeHandlerForIntent;
 - (oneway void)cancelTransactionDueToTimeout;
 - (oneway void)completeTransaction;
 - (oneway void)handleIntent:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

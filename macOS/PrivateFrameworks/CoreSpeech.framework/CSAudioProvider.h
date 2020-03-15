@@ -54,6 +54,7 @@
     unsigned long long _circularBufferStartSampleCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long circularBufferStartSampleCount; // @synthesize circularBufferStartSampleCount=_circularBufferStartSampleCount;
 @property(nonatomic) unsigned long long circularBufferStartHostTime; // @synthesize circularBufferStartHostTime=_circularBufferStartHostTime;
 @property(retain, nonatomic) NSUUID *stopRecordingWatchDogToken; // @synthesize stopRecordingWatchDogToken=_stopRecordingWatchDogToken;
@@ -85,7 +86,6 @@
 @property(retain, nonatomic) CSAudioRecorder *audioRecorder; // @synthesize audioRecorder=_audioRecorder;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *recordQueue; // @synthesize recordQueue=_recordQueue;
 @property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (BOOL)_shouldHandleStartPendingOnStopping:(unsigned long long)arg1 withStopReason:(long long)arg2;
 - (void)_clearDidStopRecordingDelegateWatchDog;
 - (void)_scheduleDidStopRecordingDelegateWatchDog:(id)arg1;
@@ -99,6 +99,7 @@
 - (void)_handleAudioSystemFailure;
 - (void)CSAudioServerCrashMonitorDidReceiveServerRestart:(id)arg1;
 - (void)CSAudioServerCrashMonitorDidReceiveServerCrash:(id)arg1;
+- (void)remoteRecorderDidDetectedTwoShotAtTime:(double)arg1;
 - (void)audioRecorderDisconnected:(id)arg1;
 - (void)audioRecorderBuiltInAudioStreamInvalidated:(id)arg1 error:(id)arg2;
 - (void)notifyProviderContextChanged;

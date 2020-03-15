@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     UIView *_addingSubview;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *addingSubview; // @synthesize addingSubview=_addingSubview;
 @property(nonatomic) _Bool backgroundIsDimmed; // @synthesize backgroundIsDimmed=_backgroundIsDimmed;
 @property(retain, nonatomic) UIColor *dimmingColor; // @synthesize dimmingColor=_dimmingColor;
-- (void).cxx_destruct;
 - (void)crossFade;
 - (id)_basicAnimationWithKeyPath:(id)arg1;
 - (void)didMoveToWindow;

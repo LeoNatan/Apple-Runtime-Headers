@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)builderWithContact:(id)arg1 avatarStore:(id)arg2 environment:(id)arg3 contactViewCache:(id)arg4 photoPickerConfiguration:(id)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNUIContactsEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) CNContactViewCache *contactViewCache; // @synthesize contactViewCache=_contactViewCache;
 @property(readonly, nonatomic) id <AVTAvatarStore> avatarStore; // @synthesize avatarStore=_avatarStore;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool includeAddPhotoItem; // @synthesize includeAddPhotoItem=_includeAddPhotoItem;
 @property(nonatomic) _Bool includeUnifiedContactImages; // @synthesize includeUnifiedContactImages=_includeUnifiedContactImages;
 @property(nonatomic) _Bool includeContactImage; // @synthesize includeContactImage=_includeContactImage;
-- (void).cxx_destruct;
 - (id)build;
 - (id)animojiContentGroup;
 - (id)photoContentGroup;

@@ -17,8 +17,8 @@
 
 + (id)remoteInterface;
 + (id)log;
-@property(retain) EMRemoteConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain) EMRemoteConnection *connection; // @synthesize connection=_connection;
 - (void)reindexAllSearchableItemsWithAcknowledgementHandler:(CDUnknownBlockType)arg1;
 - (void)reindexSearchableItemsWithIdentifiers:(id)arg1 acknowledgementHandler:(CDUnknownBlockType)arg2;
 - (id)initWithRemoteConnection:(id)arg1;

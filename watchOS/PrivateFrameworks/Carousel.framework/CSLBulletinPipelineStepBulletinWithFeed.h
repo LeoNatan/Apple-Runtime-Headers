@@ -15,9 +15,9 @@
 }
 
 + (id)activeBulletinWithBulletin:(id)arg1 feed:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int feed; // @synthesize feed=_feed;
 @property(retain, nonatomic) CSLBulletin *bulletin; // @synthesize bulletin=_bulletin;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -16,9 +16,9 @@
     NSDictionary *_value;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *value; // @synthesize value=_value;
 @property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *properties;
 - (id)initWithKey:(id)arg1 value:(id)arg2;
 

@@ -22,6 +22,7 @@
     UIViewPropertyAnimator *_playbackProgressAnimator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewPropertyAnimator *playbackProgressAnimator; // @synthesize playbackProgressAnimator=_playbackProgressAnimator;
 @property(retain, nonatomic) UIVisualEffectView *playbackProgressView; // @synthesize playbackProgressView=_playbackProgressView;
 @property(readonly, nonatomic) UIView *loadingProgressView; // @synthesize loadingProgressView=_loadingProgressView;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) id <SVVideoPlaybackProgressObserving> playbackProgressObserver; // @synthesize playbackProgressObserver=_playbackProgressObserver;
 @property(readonly, nonatomic) id <SVVideoLoadingProgressObserverFactory> loadingProgressObserverFactory; // @synthesize loadingProgressObserverFactory=_loadingProgressObserverFactory;
 @property(readonly, nonatomic) id <SVVideoPlaybackProgressObserverFactory> playbackProgressObserverFactory; // @synthesize playbackProgressObserverFactory=_playbackProgressObserverFactory;
-- (void).cxx_destruct;
 - (void)resetToPlaybackProgress:(double)arg1 animated:(_Bool)arg2;
 - (void)startUpdatingLoadingProgressWithObserver:(id)arg1;
 - (void)startUpdatingPlaybackProgressWithObserver:(id)arg1;

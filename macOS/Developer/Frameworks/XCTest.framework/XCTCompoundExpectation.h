@@ -8,21 +8,22 @@
 
 #import <XCTest/XCTestExpectationDelegate-Protocol.h>
 
-@class NSArray, NSString, _XCTCompoundExpectationImplementation;
+@class NSArray, NSString;
 
 @interface XCTCompoundExpectation : XCTestExpectation <XCTestExpectationDelegate>
 {
-    id _internalCompoundExpectation;
+    unsigned long long _logicalType;
+    NSArray *_subexpectations;
 }
 
-@property(readonly) _XCTCompoundExpectationImplementation *internalCompoundExpectation; // @synthesize internalCompoundExpectation=_internalCompoundExpectation;
 - (void).cxx_destruct;
+@property(readonly, copy) NSArray *subexpectations; // @synthesize subexpectations=_subexpectations;
+@property(readonly) unsigned long long logicalType; // @synthesize logicalType=_logicalType;
 - (void)didFulfillExpectation:(id)arg1;
 - (void)cleanup;
 - (BOOL)_queue_validateSubexpectationsFulfillment;
 - (void)_updateFulfilledState;
-@property(readonly, copy) NSArray *subexpectations;
-@property(readonly) unsigned long long logicalType;
+- (void)dealloc;
 - (id)initWithLogicalType:(unsigned long long)arg1 subexpectations:(id)arg2;
 
 // Remaining properties

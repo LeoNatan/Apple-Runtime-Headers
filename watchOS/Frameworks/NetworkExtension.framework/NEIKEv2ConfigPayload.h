@@ -14,8 +14,8 @@
 }
 
 + (id)copyTypeDescription;
-@property(retain) NEIKEv2ConfigurationMessage *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(retain) NEIKEv2ConfigurationMessage *configuration; // @synthesize configuration=_configuration;
 - (_Bool)parsePayloadData;
 - (id)createConfigAttributeFromData:(id)arg1 attributeName:(id)arg2 attributeLen:(unsigned short)arg3 attributeType:(unsigned int)arg4 customType:(unsigned int)arg5;
 - (_Bool)generatePayloadData;

@@ -13,8 +13,8 @@
     NSArray *_subitems;
 }
 
-@property(copy, nonatomic) NSArray *subitems; // @synthesize subitems=_subitems;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *subitems; // @synthesize subitems=_subitems;
 - (id)_ourBackingItem;
 
 @end

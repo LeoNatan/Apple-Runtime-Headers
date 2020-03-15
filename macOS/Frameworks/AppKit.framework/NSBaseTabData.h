@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSTabBarItem *_tabBarItem;
 }
 
-@property(retain) NSTabBarItem *tabBarItem; // @synthesize tabBarItem=_tabBarItem;
 - (void).cxx_destruct;
+@property(retain) NSTabBarItem *tabBarItem; // @synthesize tabBarItem=_tabBarItem;
 - (void)dispose;
 
 @end

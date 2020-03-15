@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     UIView *_maskView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;
 @property(retain, nonatomic) NSLayoutConstraint *bannerImageViewHeightConstraint; // @synthesize bannerImageViewHeightConstraint=_bannerImageViewHeightConstraint;
 @property(retain, nonatomic) UIImageView *vignetteImageView; // @synthesize vignetteImageView=_vignetteImageView;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak UIView *installedView; // @synthesize installedView=_installedView;
 @property(nonatomic) unsigned long long vignetteType; // @synthesize vignetteType=_vignetteType;
 @property(readonly, nonatomic) IKDocumentBannerElement *bannerElement; // @synthesize bannerElement=_bannerElement;
-- (void).cxx_destruct;
 - (void)_updateVignetteImage;
 - (void)installBannerOnView:(id)arg1 anchoredToScrollView:(id)arg2;
 - (void)_doAllSetup;

@@ -17,8 +17,8 @@
     NSMenu *_contextMenu;
 }
 
-@property(readonly) NSMenu *contextMenu; // @synthesize contextMenu=_contextMenu;
 - (void).cxx_destruct;
+@property(readonly) NSMenu *contextMenu; // @synthesize contextMenu=_contextMenu;
 - (id)contactsForDonatedEntries:(id)arg1;
 - (id)contactsForCuratedEntries:(id)arg1;
 - (id)contactsForEntries:(id)arg1;

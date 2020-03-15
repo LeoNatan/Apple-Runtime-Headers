@@ -26,6 +26,7 @@
 
 + (id)visualElementForTraitCollection:(id)arg1;
 + (void)setVisualElementProvider:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_alwaysShowOnOffLabel, setter=_setAlwaysShowsOnOffLabel:) BOOL alwaysShowOnOffLabel; // @synthesize alwaysShowOnOffLabel=_alwaysShowOnOffLabel;
 @property(retain, nonatomic) UISwitchVisualElement *visualElement; // @synthesize visualElement=_visualElement;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) UIImage *onImage; // @synthesize onImage=_onImage;
 @property(retain, nonatomic) UIColor *thumbTintColor; // @synthesize thumbTintColor=_thumbTintColor;
 @property(retain, nonatomic) UIColor *onTintColor; // @synthesize onTintColor=_onTintColor;
-- (void).cxx_destruct;
 - (void)_showingOnOffLabelChanged;
 - (BOOL)_shouldShowOnOffLabels;
 - (void)tintColorDidChange;

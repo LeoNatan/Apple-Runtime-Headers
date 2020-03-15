@@ -35,6 +35,7 @@
     DACoreDAVLogger *_coreDAVLogger;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DACoreDAVLogger *coreDAVLogger; // @synthesize coreDAVLogger=_coreDAVLogger;
 @property(retain, nonatomic) NSMutableSet *searchTaskSet; // @synthesize searchTaskSet=_searchTaskSet;
 @property(nonatomic) _Bool isSpinning; // @synthesize isSpinning=_isSpinning;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) NSMutableSet *mMovedItemURLStrings; // @synthesize mMovedItemURLStrings=_movedItemURLStrings;
 @property(retain, nonatomic) NSMutableDictionary *mItemIDsToMoveActions; // @synthesize mItemIDsToMoveActions=_itemIDsToMoveActions;
 @property(retain, nonatomic) NSMutableDictionary *mPrincipals; // @synthesize mPrincipals=_principals;
-- (void).cxx_destruct;
 - (_Bool)addressIsAccountOwner:(id)arg1;
 - (void)coreDAVTransmittedDataFinished;
 - (void)coreDAVLogTransmittedDataPartial:(id)arg1;
@@ -100,7 +100,7 @@
 - (id)spinnerIdentifiers;
 - (void)_updateCalendarStore:(_Bool)arg1;
 - (_Bool)_updateCalendarStoreNoDBOpen:(_Bool)arg1;
-- (void)_rem_updateAccount:(_Bool)arg1;
+- (void)_rem_createAccountStore_whichReallyShouldNotHappen;
 - (_Bool)_rem_updateAccountProperties;
 @property(copy, nonatomic) NSString *calendarHomeSyncToken;
 - (id)_calendarConstraintsPath;

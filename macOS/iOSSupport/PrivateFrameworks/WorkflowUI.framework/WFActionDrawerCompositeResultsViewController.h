@@ -20,13 +20,13 @@
     UITableView *_tableView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(readonly, nonatomic) NSArray *userActivitySections; // @synthesize userActivitySections=_userActivitySections;
 @property(readonly, nonatomic) NSArray *appSections; // @synthesize appSections=_appSections;
 @property(readonly, nonatomic) NSArray *actionSections; // @synthesize actionSections=_actionSections;
 @property(readonly, nonatomic) NSArray *suggestionSections; // @synthesize suggestionSections=_suggestionSections;
 @property(readonly, nonatomic) WFActionDrawerResults *results; // @synthesize results=_results;
-- (void).cxx_destruct;
 - (id)convertDonationsToActionsForSections:(id)arg1;
 - (id)categorizeResults:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;

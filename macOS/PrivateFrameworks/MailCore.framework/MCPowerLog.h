@@ -15,9 +15,9 @@
     NSObject<OS_dispatch_queue> *_logQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *logQueue; // @synthesize logQueue=_logQueue;
 @property(readonly, copy, nonatomic) NSString *eventName; // @synthesize eventName=_eventName;
-- (void).cxx_destruct;
 - (void)_logEventWithDictionary:(id)arg1;
 - (void)logEventWithDictionary:(id)arg1;
 - (id)initWithEventName:(id)arg1;

@@ -17,8 +17,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)logCategory;
-@property(readonly) CKRecordID *userRecordID; // @synthesize userRecordID=_userRecordID;
 - (void).cxx_destruct;
+@property(readonly) CKRecordID *userRecordID; // @synthesize userRecordID=_userRecordID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)hash;

@@ -19,10 +19,10 @@
 }
 
 + (void)launchWorkoutAppIfNeededWithFitnessMachineSessionUUID:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) __weak id <HDWatchAppStateMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool appIsActive; // @synthesize appIsActive=_appIsActive;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)initWithFirstPartyWorkoutApp;

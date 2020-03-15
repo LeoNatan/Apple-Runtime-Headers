@@ -15,14 +15,14 @@ __attribute__((visibility("hidden")))
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned long long delayInSeconds; // @synthesize delayInSeconds=_delayInSeconds;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithDelayInSeconds:(unsigned long long)arg1 name:(id)arg2;
+- (id)initWithEventType:(unsigned long long)arg1 delayInSeconds:(unsigned long long)arg2 name:(id)arg3;
 - (id)initWithEventType:(unsigned long long)arg1;
 
 @end

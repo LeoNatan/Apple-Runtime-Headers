@@ -24,10 +24,10 @@
 
 + (id)listingForDevice:(id)arg1 withFilename:(id)arg2 andColor:(id)arg3;
 + (id)listingForDevice:(id)arg1 withFilename:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long endBehavior; // @synthesize endBehavior=_endBehavior;
 @property(retain, nonatomic) NSArray *attributes; // @synthesize attributes=_attributes;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 - (void)discardAssets;

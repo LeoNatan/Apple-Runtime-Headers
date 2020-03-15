@@ -24,6 +24,7 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool webProcessPluginNeedsUpdate; // @synthesize webProcessPluginNeedsUpdate=_webProcessPluginNeedsUpdate;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSURL *loadingURL; // @synthesize loadingURL=_loadingURL;
@@ -32,7 +33,6 @@
 @property(nonatomic) __weak id <MFMailWebProcessDelegate> webProcessDelegate; // @synthesize webProcessDelegate=_webProcessDelegate;
 @property(readonly, nonatomic) MFWebViewDictionary *webViewConstants; // @synthesize webViewConstants=_webViewConstants;
 @property(retain, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
-- (void).cxx_destruct;
 - (void)webProcessBrowserContextControllerDidBecomeAvailable;
 - (void)_reconveneWebProcessBundle;
 - (void)requestWebViewLoadWithContentRepresentation:(id)arg1;

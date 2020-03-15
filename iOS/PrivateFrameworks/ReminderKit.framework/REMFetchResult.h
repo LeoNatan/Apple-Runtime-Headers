@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) REMFetchResultToken *fetchResultToken; // @synthesize fetchResultToken=_fetchResultToken;
 @property(readonly, nonatomic) REMFetchMetadata *metadata; // @synthesize metadata=_metadata;
 @property(readonly, nonatomic) NSArray *fetchedReminderStorages; // @synthesize fetchedReminderStorages=_fetchedReminderStorages;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) NSArray *requestedObjectIDs; // @synthesize requestedObjectIDs=_requestedObjectIDs;
 @property(readonly, nonatomic) long long count; // @synthesize count=_count;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -21,14 +21,15 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)passUpgradeRequestFromDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *fields; // @synthesize fields=_fields;
 @property(readonly, nonatomic) NSArray *paymentApplicationIdentifiers; // @synthesize paymentApplicationIdentifiers=_paymentApplicationIdentifiers;
-@property(readonly, nonatomic) NSString *secureElementIdentifier; // @synthesize secureElementIdentifier=_secureElementIdentifier;
+@property(copy, nonatomic) NSString *secureElementIdentifier; // @synthesize secureElementIdentifier=_secureElementIdentifier;
 @property(readonly, nonatomic) PKOSVersionRequirement *minimumOSVersion; // @synthesize minimumOSVersion=_minimumOSVersion;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)asDictionary;
 - (id)initWithDictionary:(id)arg1;
 
 @end

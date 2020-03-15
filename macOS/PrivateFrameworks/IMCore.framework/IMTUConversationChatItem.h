@@ -13,8 +13,8 @@
     IMHandle *_conversationInitiator;
 }
 
-@property(readonly, nonatomic) IMHandle *conversationInitiator; // @synthesize conversationInitiator=_conversationInitiator;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IMHandle *conversationInitiator; // @synthesize conversationInitiator=_conversationInitiator;
 - (BOOL)canDelete;
 @property(readonly, nonatomic) NSDate *time;
 @property(readonly, nonatomic) BOOL isFromMe;

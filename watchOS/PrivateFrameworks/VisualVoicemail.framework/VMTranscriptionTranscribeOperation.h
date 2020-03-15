@@ -20,12 +20,12 @@
     double _timeout;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VMVoicemailTranscript *transcript; // @synthesize transcript=_transcript;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
 @property(copy) CDUnknownBlockType transcribeOperationCompletion; // @synthesize transcribeOperationCompletion=_transcribeOperationCompletion;
 @property double timeout; // @synthesize timeout=_timeout;
 @property double duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (void)speechRecognitionTask:(id)arg1 didProcessAudioDuration:(double)arg2;
 - (void)speechRecognitionTask:(id)arg1 didFinishSuccessfully:(_Bool)arg2;
 - (void)speechRecognitionTask:(id)arg1 didFinishRecognition:(id)arg2;

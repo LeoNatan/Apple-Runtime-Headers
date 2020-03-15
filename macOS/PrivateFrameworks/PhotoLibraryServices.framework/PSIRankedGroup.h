@@ -14,9 +14,9 @@
     double _score;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double score; // @synthesize score=_score;
 @property(readonly, nonatomic) PSIGroup *group; // @synthesize group=_group;
-- (void).cxx_destruct;
 - (id)initWithGroup:(id)arg1 score:(double)arg2;
 
 @end

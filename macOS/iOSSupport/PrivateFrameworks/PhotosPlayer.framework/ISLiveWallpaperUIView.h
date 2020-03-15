@@ -16,11 +16,11 @@
     NSTimer *_updateTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *updateTimer; // @synthesize updateTimer=_updateTimer;
 @property(nonatomic) double force; // @synthesize force=_force;
 @property(nonatomic) BOOL touching; // @synthesize touching=_touching;
 @property(readonly, nonatomic) UIGestureRecognizer *playbackGestureRecognizer; // @synthesize playbackGestureRecognizer=_playbackGestureRecognizer;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_updatePlayer;
 - (void)_handlePlaybackRecognizer:(id)arg1;

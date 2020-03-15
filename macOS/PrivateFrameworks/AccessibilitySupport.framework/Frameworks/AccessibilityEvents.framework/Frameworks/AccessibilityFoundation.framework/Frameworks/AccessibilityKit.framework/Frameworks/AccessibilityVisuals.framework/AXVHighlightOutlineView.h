@@ -21,6 +21,7 @@
     struct CGRect __preScaledBoundingFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setMaskingLayer:) CAShapeLayer *_maskingLayer; // @synthesize _maskingLayer=__maskingLayer;
 @property(nonatomic, setter=_setPreScaledBoundingFrame:) struct CGRect _preScaledBoundingFrame; // @synthesize _preScaledBoundingFrame=__preScaledBoundingFrame;
 @property(retain, nonatomic, setter=_setPreScaledRects:) NSArray *_preScaledRects; // @synthesize _preScaledRects=__preScaledRects;
@@ -30,7 +31,6 @@
 @property(nonatomic) BOOL screenShotWhileScaled; // @synthesize screenShotWhileScaled=_screenShotWhileScaled;
 @property(nonatomic) double scaleFactor; // @synthesize scaleFactor=_scaleFactor;
 @property(nonatomic) BOOL hasHighlightOutline; // @synthesize hasHighlightOutline=_hasHighlightOutline;
-- (void).cxx_destruct;
 - (struct CGPoint)_originToCenterRectInMainWindow:(struct CGRect)arg1;
 - (BOOL)_shouldUseScreenShotLayer;
 - (id)takeScreenShotOfBoundedContent;

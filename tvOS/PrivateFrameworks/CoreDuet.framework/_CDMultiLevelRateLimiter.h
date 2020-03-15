@@ -22,9 +22,9 @@
     NSMutableArray *_balances;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long numOfRateLimitPolicies; // @synthesize numOfRateLimitPolicies=_numberOfRateLimitPolicies;
 @property(readonly, retain, nonatomic) NSDate *lastRecorded; // @synthesize lastRecorded=_lastRecorded;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)recordTimeAndRefillIfNeededRaw;
 - (_Bool)debited;

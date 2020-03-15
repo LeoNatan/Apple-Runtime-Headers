@@ -24,10 +24,10 @@
 + (BOOL)menuBarBuilt;
 + (void)setMenuBarBuilt:(BOOL)arg1;
 + (id)mainMenu;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL menuChangeShouldRebuildMenu; // @synthesize menuChangeShouldRebuildMenu=_menuChangeShouldRebuildMenu;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) long long type; // @synthesize type;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)_validate;
 - (id)initWithTitle:(id)arg1;

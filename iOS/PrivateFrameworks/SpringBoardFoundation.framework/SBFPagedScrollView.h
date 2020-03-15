@@ -17,11 +17,11 @@
     struct _NSRange _visiblePageRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool gestureEnabled; // @synthesize gestureEnabled=_gestureEnabled;
 @property(nonatomic) struct _NSRange visiblePageRange; // @synthesize visiblePageRange=_visiblePageRange;
 @property(nonatomic) unsigned long long currentPageIndex; // @synthesize currentPageIndex=_currentPageIndex;
 @property(copy, nonatomic) NSArray *pageViews; // @synthesize pageViews=_pageViews;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)_bs_didEndScrolling;
 - (void)_bs_didScrollWithContext:(CDStruct_3b09cf25)arg1;

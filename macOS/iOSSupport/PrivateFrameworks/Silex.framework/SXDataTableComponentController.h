@@ -24,6 +24,7 @@
     id <SXDOMObjectProviding> _DOMObjectProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXDOMObjectProviding> DOMObjectProvider; // @synthesize DOMObjectProvider=_DOMObjectProvider;
 @property(retain, nonatomic) SXDataRecordValueTransformerFactory *recordValueTransformerFactory; // @synthesize recordValueTransformerFactory=_recordValueTransformerFactory;
 @property(retain, nonatomic) NSArray *records; // @synthesize records=_records;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) __weak id <SXDataTableComponentControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) SXDataTableDictionary *textLayouters; // @synthesize textLayouters=_textLayouters;
 @property(readonly, nonatomic) SXDataTableDictionary *cellObjects; // @synthesize cellObjects=_cellObjects;
-- (void).cxx_destruct;
 - (double)convertConvertibleValue:(struct _SXConvertibleValue)arg1;
 - (id)component;
 - (double)minimumWidthForStorage:(id)arg1 usingStringEnumeration:(unsigned long long)arg2;

@@ -18,13 +18,13 @@
     struct _TIRevisionHistoryTokenIterator _originalIterator;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *branchTokens; // @synthesize branchTokens=_branchTokens;
 @property(nonatomic) unsigned long long mergedTokenIndex; // @synthesize mergedTokenIndex=_mergedTokenIndex;
 @property(nonatomic) unsigned long long branchedTokenIndex; // @synthesize branchedTokenIndex=_branchedTokenIndex;
 @property(nonatomic) unsigned long long revisedDocumentLocation; // @synthesize revisedDocumentLocation=_revisedDocumentLocation;
 @property(nonatomic) struct _TIRevisionHistoryTokenIterator originalIterator; // @synthesize originalIterator=_originalIterator;
 @property(nonatomic) struct _NSRange originalSelectedTokenRange; // @synthesize originalSelectedTokenRange=_originalSelectedTokenRange;
-- (void).cxx_destruct;
 - (id)initWithTokenIterator:(struct _TIRevisionHistoryTokenIterator)arg1;
 - (id)init;
 

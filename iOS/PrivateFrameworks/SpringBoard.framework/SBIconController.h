@@ -100,6 +100,7 @@
 
 + (id)sharedInstanceIfExists;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *appIconForceTouchWindows; // @synthesize appIconForceTouchWindows=_appIconForceTouchWindows;
 @property(readonly, nonatomic) long long currentIconListIndex; // @synthesize currentIconListIndex=_currentIconListIndex;
 @property(nonatomic, setter=_setIgnoreMutatingIconListsOnApplicationInstall:) _Bool _ignoreMutatingIconListsOnApplicationInstall; // @synthesize _ignoreMutatingIconListsOnApplicationInstall=__ignoreMutatingIconListsOnApplicationInstall;
@@ -130,7 +131,6 @@
 @property(retain, nonatomic) SBHomeScreenTodayViewController *todayViewController; // @synthesize todayViewController=_todayViewController;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(readonly, nonatomic) SBHIconManager *iconManager; // @synthesize iconManager=_iconManager;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

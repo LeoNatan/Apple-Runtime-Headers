@@ -20,9 +20,9 @@
     NSString *_headerSubtitle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *headerSubtitle; // @synthesize headerSubtitle=_headerSubtitle;
 @property(retain, nonatomic) NSString *headerTitle; // @synthesize headerTitle=_headerTitle;
-- (void).cxx_destruct;
 - (void)_terminateFlow;
 - (void)_handleCancelButtonTapped:(id)arg1;
 - (void)_showNavigationBarSpinner:(_Bool)arg1;

@@ -15,10 +15,10 @@
     NSMutableArray *datesSeen;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *datesSeen; // @synthesize datesSeen;
 @property unsigned long long count; // @synthesize count;
 @property(readonly) NSString *note; // @synthesize note;
-- (void).cxx_destruct;
 - (id)description;
 - (void)increment;
 - (id)initWithMessage:(id)arg1;

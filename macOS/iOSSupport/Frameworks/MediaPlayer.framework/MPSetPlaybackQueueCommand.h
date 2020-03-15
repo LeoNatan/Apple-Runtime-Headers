@@ -19,8 +19,8 @@
     long long _upNextItemCount;
 }
 
-@property(nonatomic) long long upNextItemCount; // @synthesize upNextItemCount=_upNextItemCount;
 - (void).cxx_destruct;
+@property(nonatomic) long long upNextItemCount; // @synthesize upNextItemCount=_upNextItemCount;
 - (id)_mediaRemoteCommandInfoOptions;
 - (void)setSupportedSharedQueue:(BOOL)arg1;
 - (void)unregisterSupportedCustomQueueIdentifier:(id)arg1;

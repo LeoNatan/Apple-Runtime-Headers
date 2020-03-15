@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UITextField *_blogField;
 }
 
-@property(readonly, nonatomic) __weak UITextField *blogField; // @synthesize blogField=_blogField;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak UITextField *blogField; // @synthesize blogField=_blogField;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (void)loginWithUsername:(id)arg1 password:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

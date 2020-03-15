@@ -14,9 +14,9 @@
     BOOL _delay;
 }
 
+- (void).cxx_destruct;
 @property BOOL delay; // @synthesize delay=_delay;
 @property(retain, nonatomic) NSArray *launchArguments; // @synthesize launchArguments=_launchArguments;
-- (void).cxx_destruct;
 - (id)inputPayload;
 - (id)description;
 - (id)initWithLaunchArguments:(id)arg1 shouldDelay:(BOOL)arg2;

@@ -14,9 +14,9 @@
     id <CSLNavigationStackContainerViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isBackgroundColorFrozen) _Bool backgroundColorFrozen; // @synthesize backgroundColorFrozen=_backgroundColorFrozen;
 @property(nonatomic) __weak id <CSLNavigationStackContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setBackgroundColor:(id)arg1;
 - (void)_movePairedView:(id)arg1 aboveView:(id)arg2;
 - (void)_movePairedViewIfNeededForView:(id)arg1;

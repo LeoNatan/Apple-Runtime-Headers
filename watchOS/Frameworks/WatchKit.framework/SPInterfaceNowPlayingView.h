@@ -32,6 +32,7 @@
     struct CGSize _cachedSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float heightForIB; // @synthesize heightForIB=_heightForIB;
 @property(nonatomic) float widthForIB; // @synthesize widthForIB=_widthForIB;
 @property(nonatomic) _Bool placeholderViewIsVisible; // @synthesize placeholderViewIsVisible=_placeholderViewIsVisible;
@@ -50,7 +51,6 @@
 @property(copy, nonatomic) NSString *stringsFileName; // @synthesize stringsFileName=_stringsFileName;
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(retain, nonatomic) NSDictionary *itemDescriptionForIB; // @synthesize itemDescriptionForIB=_itemDescriptionForIB;
-- (void).cxx_destruct;
 - (id)_nowPlayingStandinImage;
 - (void)prepareInterfaceItemForIB;
 - (void)layoutSubviews;

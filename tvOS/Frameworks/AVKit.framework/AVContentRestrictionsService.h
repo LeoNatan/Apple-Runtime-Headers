@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)shared;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isRequestingAccess) _Bool requestingAccess; // @synthesize requestingAccess=_requestingAccess;
 @property(retain, nonatomic) id requestToken; // @synthesize requestToken=_requestToken;
 @property(nonatomic, getter=hasProfileRestrictingTVShows) _Bool profileRestrictingTVShows; // @synthesize profileRestrictingTVShows=_profileRestrictingTVShows;
 @property(nonatomic, getter=hasProfileRestrictingMovies) _Bool profileRestrictingMovies; // @synthesize profileRestrictingMovies=_profileRestrictingMovies;
 @property(nonatomic, getter=isPresentingPasscodePrompt) _Bool presentingPasscodePrompt; // @synthesize presentingPasscodePrompt=_presentingPasscodePrompt;
-- (void).cxx_destruct;
 - (void)_updateProfileRestrictions;
 @property(readonly, nonatomic) PBSRestrictionService *restrictionService;
 - (void)cancelRequest:(id)arg1;

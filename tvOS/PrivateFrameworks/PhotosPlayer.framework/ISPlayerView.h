@@ -46,6 +46,7 @@
 }
 
 + (void)setAllowPlayerReuse:(_Bool)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize dimensionsOfReservedVideoMemory; // @synthesize dimensionsOfReservedVideoMemory=_dimensionsOfReservedVideoMemory;
 @property(nonatomic) unsigned long long playbackStyle; // @synthesize playbackStyle=_playbackStyle;
 @property(readonly, nonatomic) NSMutableSet *_activeGestures; // @synthesize _activeGestures=__activeGestures;
@@ -61,7 +62,6 @@
 @property(nonatomic, setter=_setPlaybackState:) long long playbackState; // @synthesize playbackState=_playbackState;
 @property(readonly, nonatomic) _Bool isReadyForDisplay; // @synthesize isReadyForDisplay=_isReadyForDisplay;
 @property(nonatomic) _Bool audioMuted; // @synthesize audioMuted=_audioMuted;
-- (void).cxx_destruct;
 - (id)videoPlayerForPlayer:(id)arg1;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_updateReadyForDisplayIfNeeded;

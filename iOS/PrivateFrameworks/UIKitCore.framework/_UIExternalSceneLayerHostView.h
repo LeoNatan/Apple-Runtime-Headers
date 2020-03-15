@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     id <UIScenePresenter> _presenter;
 }
 
-@property(readonly, nonatomic) FBScene *targetScene; // @synthesize targetScene=_targetScene;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) FBScene *targetScene; // @synthesize targetScene=_targetScene;
 - (void)externalScenePairingObserver:(id)arg1 pairingsDidChange:(id)arg2;
 - (void)_updateHostingState;
 - (void)_updateTargetScene;

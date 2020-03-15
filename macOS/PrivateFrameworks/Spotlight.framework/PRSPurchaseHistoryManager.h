@@ -16,8 +16,8 @@
 }
 
 + (id)getSharedPurchaseHistoryManager;
-@property(retain) NSMutableSet *setOfPurchasedAdamIds; // @synthesize setOfPurchasedAdamIds=_setOfPurchasedAdamIds;
 - (void).cxx_destruct;
+@property(retain) NSMutableSet *setOfPurchasedAdamIds; // @synthesize setOfPurchasedAdamIds=_setOfPurchasedAdamIds;
 - (void)daapPurchaseHistory:(id)arg1 didChangeWithItemsAdded:(id)arg2 changed:(id)arg3 removed:(id)arg4;
 - (BOOL)doesPurchasedItemSetContainAdamIds:(id)arg1;
 - (void)initPurchaseHistory;

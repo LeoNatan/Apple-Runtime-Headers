@@ -18,9 +18,9 @@
 
 + (BOOL)isABCEnabled;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <SDRDiagnosticReporterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)getAutoBugCaptureConfiguration:(CDUnknownBlockType)arg1;
 - (void)purgeAutoBugCaptureFilesWithSubPaths:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)getAllDiagnosticCasesWithReply:(CDUnknownBlockType)arg1;

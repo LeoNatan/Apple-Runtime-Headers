@@ -22,6 +22,7 @@
     CKAudioAnalyzer *_audioAnalyzer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKAudioAnalyzer *audioAnalyzer; // @synthesize audioAnalyzer=_audioAnalyzer;
 @property(retain, nonatomic) AVVoiceController *voiceController; // @synthesize voiceController=_voiceController;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *powerUpdateTimer; // @synthesize powerUpdateTimer=_powerUpdateTimer;
@@ -29,7 +30,6 @@
 @property(copy, nonatomic) NSDictionary *recordSettings; // @synthesize recordSettings=_recordSettings;
 @property(nonatomic, setter=_setActivationMode:) long long _activationMode; // @synthesize _activationMode=__activationMode;
 @property(nonatomic) __weak id <CKVoiceControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)messageSent:(id)arg1;
 - (void)stopUpdatingPower;
 - (void)startUpdatingPower;

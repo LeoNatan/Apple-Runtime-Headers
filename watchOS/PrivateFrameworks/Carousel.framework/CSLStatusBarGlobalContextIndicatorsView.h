@@ -21,11 +21,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) int writingDirection; // @synthesize writingDirection=_writingDirection;
 @property(readonly, nonatomic) PUICActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 @property(readonly, nonatomic) PUICStatusView *statusView; // @synthesize statusView=_statusView;
 @property(nonatomic) __weak id <CSLStatusBarGlobalContextIndicatorsViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)activityIndicatorViewDidAnimateOut:(id)arg1;
 - (void)activityIndicatorViewWillAnimateOut:(id)arg1 duration:(double)arg2;
 - (void)activityIndicatorViewDidAnimateIn:(id)arg1;

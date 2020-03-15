@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 
 + (id)layoutWithCardViewElement:(id)arg1 context:(id)arg2;
 + (_Bool)allowsViewElement:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUICardViewElement *cardViewElement; // @synthesize cardViewElement=_cardViewElement;
 @property(readonly, nonatomic) SKUIViewElementLayoutContext *layoutContext; // @synthesize layoutContext=_layoutContext;
-- (void).cxx_destruct;
 - (double)topInsetForViewElement:(id)arg1 previousViewElement:(id)arg2 width:(double)arg3;
 - (struct CGSize)sizeForViewElement:(id)arg1 width:(double)arg2;
 @property(readonly, nonatomic) long long layoutStyle;

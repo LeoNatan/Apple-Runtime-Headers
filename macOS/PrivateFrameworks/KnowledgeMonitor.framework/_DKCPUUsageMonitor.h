@@ -20,12 +20,12 @@
 
 + (id)entitlements;
 + (id)eventStream;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastCPUUsageLevel; // @synthesize lastCPUUsageLevel=_lastCPUUsageLevel;
 @property(nonatomic) unsigned long long lastSysTick; // @synthesize lastSysTick=_lastSysTick;
 @property(nonatomic) unsigned long long lastIdleTick; // @synthesize lastIdleTick=_lastIdleTick;
 @property(nonatomic) unsigned long long lastUserTick; // @synthesize lastUserTick=_lastUserTick;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
-- (void).cxx_destruct;
 - (void)synchronouslyReflectCurrentValue;
 - (unsigned long long)getCurrentCPUUsageLevel;
 - (unsigned long long)getCPUUsageLevelFromPercentage:(unsigned long long)arg1;

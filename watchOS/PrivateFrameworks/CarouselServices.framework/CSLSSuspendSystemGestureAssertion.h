@@ -17,9 +17,9 @@
 
 + (id)assertionProvider;
 + (void)setAssertionProvider:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoresForegroundStatus; // @synthesize ignoresForegroundStatus=_ignoresForegroundStatus;
 @property(nonatomic) unsigned int edgeFlags; // @synthesize edgeFlags=_edgeFlags;
-- (void).cxx_destruct;
 - (void)_takeAssertion;
 - (void)invalidate;
 - (void)dealloc;

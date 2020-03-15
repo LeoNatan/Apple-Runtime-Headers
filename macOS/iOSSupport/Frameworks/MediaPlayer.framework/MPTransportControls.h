@@ -40,6 +40,7 @@
 + (long long)buttonType;
 + (Class)buttonClass;
 + (unsigned long long)defaultVisibleParts;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL registeredForPlayerNotifications; // @synthesize registeredForPlayerNotifications=_registeredForPlayerNotifications;
 @property(nonatomic) unsigned long long visibleParts; // @synthesize visibleParts=_visibleParts;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
@@ -48,7 +49,6 @@
 @property(nonatomic) unsigned long long disabledParts; // @synthesize disabledParts=_disabledParts;
 @property(nonatomic) unsigned long long desiredParts; // @synthesize desiredParts=_desiredParts;
 @property(nonatomic) BOOL allowsWirelessPlayback; // @synthesize allowsWirelessPlayback=_allowsWirelessPlayback;
-- (void).cxx_destruct;
 - (void)_updateEnabledStates:(BOOL)arg1;
 - (void)_updateTintColorForPart:(unsigned long long)arg1;
 - (void)_updatePlayButtonImage;

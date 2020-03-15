@@ -16,10 +16,10 @@
 }
 
 + (id)numberRandomizerWithRange:(unsigned long long)arg1 epsilon:(double)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _DPLaplaceNoiseGenerator *generator; // @synthesize generator=_generator;
 @property(readonly, nonatomic) double epsilon; // @synthesize epsilon=_epsilon;
 @property(readonly, nonatomic) unsigned long long range; // @synthesize range=_range;
-- (void).cxx_destruct;
 - (id)description;
 - (id)randomize:(id)arg1;
 - (id)initWithRange:(unsigned long long)arg1 epsilon:(double)arg2;

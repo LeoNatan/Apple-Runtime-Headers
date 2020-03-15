@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _rowFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double availableSpace; // @synthesize availableSpace=_availableSpace;
 @property(nonatomic) _Bool fixedItemSize; // @synthesize fixedItemSize=_fixedItemSize;
 @property(nonatomic) _Bool complete; // @synthesize complete=_complete;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGRect rowFrame; // @synthesize rowFrame=_rowFrame;
 @property(nonatomic) struct CGSize rowSize; // @synthesize rowSize=_rowSize;
 @property(nonatomic) __weak _UIFlowLayoutSection *section; // @synthesize section=_section;
-- (void).cxx_destruct;
 - (long long)indexOfNearestItemAtPoint:(struct CGPoint)arg1;
 - (id)copyFromSection:(id)arg1;
 - (id)snapshot;

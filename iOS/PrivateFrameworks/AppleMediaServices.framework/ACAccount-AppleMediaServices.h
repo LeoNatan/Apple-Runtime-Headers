@@ -18,12 +18,18 @@
 + (id)_defaultValueForAccountFlag:(id)arg1;
 - (_Bool)ams_valueForAccountFlag:(id)arg1;
 - (void)ams_setValue:(_Bool)arg1 forAccountFlag:(id)arg2;
+- (void)ams_setPrivateListeningEnabled:(_Bool)arg1 forHomeUserIdentifier:(id)arg2;
+- (_Bool)ams_isPrivateListeningEnabledForHomeUserIdentifier:(id)arg1;
+@property(readonly, nonatomic, getter=ams_isPrivateListeningEnabled) _Bool ams_privateListeningEnabled;
 - (void)ams_setHomeUserID:(id)arg1;
+- (void)ams_setHomeIdentifier:(id)arg1;
 - (void)ams_setHomeID:(id)arg1;
 - (void)ams_removeHomeUserIdentifier:(id)arg1;
 - (_Bool)ams_postAccountFlagsWithBagContract:(id)arg1;
 - (id)ams_secureToken;
+- (id)ams_homeUserIdentifiers;
 - (id)ams_homeUserID;
+- (id)ams_homeIdentifier;
 - (id)ams_homeID;
 - (void)ams_addHomeUserIdentifier:(id)arg1;
 - (void)_setAccountProperty:(id)arg1 forKey:(id)arg2 dataProtectionClass:(unsigned long long)arg3 expectedClass:(Class)arg4;
@@ -49,11 +55,9 @@
 - (_Bool)ams_addCookies:(id)arg1;
 - (id)ams_storefrontForMediaType:(id)arg1;
 - (void)ams_setStorefront:(id)arg1 forMediaType:(id)arg2;
-- (void)ams_setPrivateListeningEnabled:(_Bool)arg1 forHomeUserIdentifier:(id)arg2;
 - (void)ams_setActive:(_Bool)arg1 forMediaType:(id)arg2;
 - (void)ams_setAccountFlagValue:(id)arg1 forAccountFlag:(id)arg2;
 - (long long)ams_mergePrivacyAcknowledgement:(id)arg1;
-- (_Bool)ams_isPrivateListeningEnabledForHomeUserIdentifier:(id)arg1;
 - (_Bool)ams_isDuplicate:(id)arg1;
 - (_Bool)ams_isActiveForMediaType:(id)arg1;
 - (_Bool)ams_encryptAccountFlags;
@@ -71,9 +75,9 @@
 - (void)ams_setLastName:(id)arg1;
 - (void)ams_setInGoodStanding:(_Bool)arg1;
 - (void)ams_setiCloudFamily:(_Bool)arg1;
-- (void)ams_setHomeIdentifier:(id)arg1;
 - (void)ams_setFirstName:(id)arg1;
 - (void)ams_setDSID:(id)arg1;
+- (void)ams_setDemoAccount:(_Bool)arg1;
 - (void)ams_setCreditsString:(id)arg1;
 - (void)ams_setBiometricsState:(long long)arg1;
 - (void)ams_setAltDSID:(id)arg1;
@@ -90,7 +94,6 @@
 @property(readonly, nonatomic) NSString *ams_lastName;
 - (_Bool)ams_isValidPayment;
 @property(readonly, nonatomic, getter=ams_isSandboxAccount) _Bool ams_sandboxAccount;
-@property(readonly, nonatomic, getter=ams_isPrivateListeningEnabled) _Bool ams_privateListeningEnabled;
 @property(readonly, nonatomic, getter=ams_isManagedAppleID) _Bool ams_managedAppleID;
 @property(readonly, nonatomic, getter=ams_isLocalAccount) _Bool ams_localAccount;
 @property(readonly, nonatomic, getter=ams_isiTunesAccount) _Bool ams_iTunesAccount;
@@ -100,8 +103,6 @@
 @property(readonly, nonatomic, getter=ams_isiCloudAccount) _Bool ams_iCloudAccount;
 @property(readonly, nonatomic, getter=ams_isHSA2) _Bool ams_HSA2;
 @property(readonly, nonatomic, getter=ams_isDemoAccount) _Bool ams_demoAccount;
-- (id)ams_homeUserIdentifiers;
-- (id)ams_homeIdentifier;
 @property(readonly, nonatomic) NSString *ams_fullName;
 @property(nonatomic, setter=ams_setFreePasswordPromptSetting:) unsigned long long ams_freePasswordPromptSetting;
 @property(readonly, nonatomic) NSString *ams_firstName;

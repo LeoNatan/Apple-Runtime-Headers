@@ -41,6 +41,7 @@
     HDUnitPreferencesManager *_unitPreferencesManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HDUnitPreferencesManager *unitPreferencesManager; // @synthesize unitPreferencesManager=_unitPreferencesManager;
 @property(readonly, nonatomic) HDMigrationManager *migrationManager; // @synthesize migrationManager=_migrationManager;
 @property(readonly, nonatomic) HDMedicalIDDataManager *medicalIDDataManager; // @synthesize medicalIDDataManager=_medicalIDDataManager;
@@ -61,7 +62,6 @@
 @property(readonly, nonatomic) HDDataManager *dataManager; // @synthesize dataManager=_dataManager;
 @property(readonly, nonatomic) HDCloudSyncManager *cloudSyncManager; // @synthesize cloudSyncManager=_cloudSyncManager;
 @property(readonly, nonatomic) __weak HDDaemon *daemon; // @synthesize daemon=_daemon;
-- (void).cxx_destruct;
 - (id)_newCloudSyncManager;
 - (id)_newUserCharacteristicsManager;
 - (id)_newAWDSubmissionManager;

@@ -15,9 +15,9 @@
     TVLAudioAssetElement *_videoAssetElement;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVLAudioAssetElement *videoAssetElement; // @synthesize videoAssetElement=_videoAssetElement;
 @property(readonly, nonatomic) TVLAudioAssetElement *audioAssetElement; // @synthesize audioAssetElement=_audioAssetElement;
-- (void).cxx_destruct;
 - (void)cleanUpMediaItem;
 - (void)loadStreamingKeyForRequest:(id)arg1;
 - (_Bool)isEqualToMediaItem:(id)arg1;

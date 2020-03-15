@@ -23,12 +23,12 @@
 }
 
 + (void)test_setMaxBufferSize:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long outBufferSize; // @synthesize outBufferSize=_outBufferSize;
 @property(nonatomic) _Bool validateCRC; // @synthesize validateCRC=_validateCRC;
 @property(nonatomic) unsigned int CRC; // @synthesize CRC=_CRC;
 @property(nonatomic) unsigned long long remainingUncompressedSize; // @synthesize remainingUncompressedSize=_remainingUncompressedSize;
 @property(retain, nonatomic) id <BUStreamReadChannel> readChannel; // @synthesize readChannel=_readChannel;
-- (void).cxx_destruct;
 - (void)close;
 - (void)handleFailureWithHandler:(CDUnknownBlockType)arg1 error:(id)arg2;
 - (_Bool)processData:(id)arg1 inflateResult:(int *)arg2 CRC:(unsigned int *)arg3 isDone:(_Bool)arg4 handler:(CDUnknownBlockType)arg5;

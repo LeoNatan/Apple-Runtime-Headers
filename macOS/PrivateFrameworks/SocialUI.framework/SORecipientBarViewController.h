@@ -36,6 +36,7 @@
     CNContactPicker *_contactPicker;
 }
 
+- (void).cxx_destruct;
 @property BOOL reloadContactPicker; // @synthesize reloadContactPicker=_reloadContactPicker;
 @property(retain) CNContactPicker *contactPicker; // @synthesize contactPicker=_contactPicker;
 @property(retain) NSLayoutConstraint *recipientActionsViewTrailingMarginConstraint; // @synthesize recipientActionsViewTrailingMarginConstraint=_recipientActionsViewTrailingMarginConstraint;
@@ -55,7 +56,6 @@
 @property(retain) SOTokenFieldController *recipientTokenFieldController; // @synthesize recipientTokenFieldController=_recipientTokenFieldController;
 @property(retain) NSTextField *toLabel; // @synthesize toLabel=_toLabel;
 @property(retain) SOProgressBarViewController *progressBarViewController; // @synthesize progressBarViewController=_progressBarViewController;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)_redrawImage:(id)arg1 toSize:(struct CGSize)arg2;
 - (void)_updateBanner;

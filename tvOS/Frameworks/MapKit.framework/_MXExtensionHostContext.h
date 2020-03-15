@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <_MXExtensionURLHandling> _URLHandlingDelegate;
 }
 
-@property(nonatomic) __weak id <_MXExtensionURLHandling> URLHandlingDelegate; // @synthesize URLHandlingDelegate=_URLHandlingDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_MXExtensionURLHandling> URLHandlingDelegate; // @synthesize URLHandlingDelegate=_URLHandlingDelegate;
 - (void)openURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 // Remaining properties

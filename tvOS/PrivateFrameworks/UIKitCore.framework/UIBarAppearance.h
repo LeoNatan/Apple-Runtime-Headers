@@ -20,9 +20,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long idiom; // @synthesize idiom=_idiom;
 @property(nonatomic, setter=_setChangeObserver:) __weak id <_UIBarAppearanceChangeObserver> _changeObserver; // @synthesize _changeObserver;
-- (void).cxx_destruct;
 @property(copy, nonatomic) UIVibrancyEffect *shadowEffect;
 @property(copy, nonatomic) UIColor *shadowColor;
 @property(retain, nonatomic) UIImage *shadowImage;

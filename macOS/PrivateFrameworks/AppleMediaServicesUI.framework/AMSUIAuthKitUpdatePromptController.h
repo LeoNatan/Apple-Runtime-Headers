@@ -14,13 +14,13 @@
 __attribute__((visibility("hidden")))
 @interface AMSUIAuthKitUpdatePromptController : NSObject <AKAppleIDAuthenticationDelegate, AMSAuthKitUpdateController>
 {
-    struct NSViewController *_presentingViewController;
+    NSViewController *_presentingViewController;
 }
 
 + (id)_createAuthenticationController;
 + (Class)_authKitAuthenticationContextClass;
-@property(readonly) NSViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 - (void).cxx_destruct;
+@property(readonly) NSViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 - (void)_handleAuthKitError:(id)arg1 options:(id)arg2;
 - (id)_createAuthenticationContextForAccount:(id)arg1 options:(id)arg2;
 - (id)performAuthKitUpdateForAccount:(id)arg1 options:(id)arg2;

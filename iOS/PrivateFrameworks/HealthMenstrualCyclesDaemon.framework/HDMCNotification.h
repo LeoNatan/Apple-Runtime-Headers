@@ -16,9 +16,9 @@
     NSString *_category;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *category; // @synthesize category=_category;
 @property(readonly, nonatomic) long long dayIndex; // @synthesize dayIndex=_dayIndex;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -30,6 +30,7 @@
 }
 
 + (Class)subscribedChannelIdsType;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isAmplifyUser; // @synthesize isAmplifyUser=_isAmplifyUser;
 @property(nonatomic) BOOL isBundlePurchaser; // @synthesize isBundlePurchaser=_isBundlePurchaser;
 @property(nonatomic) BOOL isStoreDemoModeEnabled; // @synthesize isStoreDemoModeEnabled=_isStoreDemoModeEnabled;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSString *userStorefrontId; // @synthesize userStorefrontId=_userStorefrontId;
 @property(retain, nonatomic) NSString *userId; // @synthesize userId=_userId;
 @property(retain, nonatomic) NSMutableArray *subscribedChannelIds; // @synthesize subscribedChannelIds=_subscribedChannelIds;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

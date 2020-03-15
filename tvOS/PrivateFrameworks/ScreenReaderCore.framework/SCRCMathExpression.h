@@ -17,8 +17,8 @@
 + (Class)_classForExpressionType:(id)arg1;
 + (id)mathExpressionWithDictionary:(id)arg1;
 + (void)setPathToSegmentOrderingPlist:(id)arg1;
-@property(nonatomic) __weak SCRCMathExpression *parent; // @synthesize parent=_parent;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SCRCMathExpression *parent; // @synthesize parent=_parent;
 @property(readonly, nonatomic) _Bool canBeWrappedInLatexMathIndicators;
 - (id)latexDescriptionForChildrenJoinedByString:(id)arg1;
 - (id)latexIdentifierForFenceOperator:(id)arg1 isClosingOperator:(_Bool)arg2;

@@ -16,11 +16,11 @@
     unsigned int _state;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
 @property(readonly, nonatomic) NSMutableSet *recentlyMigratedObjectIDs; // @synthesize recentlyMigratedObjectIDs=_recentlyMigratedObjectIDs;
 @property(readonly, nonatomic) NSMutableSet *objectIDsToMigrate; // @synthesize objectIDsToMigrate=_objectIDsToMigrate;
 @property(readonly, nonatomic) EMThreadScope *threadScope; // @synthesize threadScope=_threadScope;
-- (void).cxx_destruct;
 - (id)deleteObjectIDsToMigrate:(id)arg1;
 - (_Bool)changeObjectIDsToMigrate:(id)arg1;
 - (_Bool)addObjectIDs:(id)arg1;

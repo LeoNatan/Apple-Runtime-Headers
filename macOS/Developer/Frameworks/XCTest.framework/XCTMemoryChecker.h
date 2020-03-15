@@ -16,10 +16,10 @@
     DTXConnection *_dtxConnection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DTXConnection *dtxConnection; // @synthesize dtxConnection=_dtxConnection;
 @property(retain) NSMutableSet *markedAddresses; // @synthesize markedAddresses=_markedAddresses;
-@property id <XCTMemoryCheckerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
+@property __weak id <XCTMemoryCheckerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)createGraphForNewObjectsInGeneration:(id)arg1 withPreviousGeneration:(id)arg2;
 - (void)assertNoObjectAbandonmentBetweenGeneration:(id)arg1 and:(id)arg2;
 - (id)acquireGenerationMemoryGraphForApplication:(id)arg1 withError:(id *)arg2;
@@ -44,7 +44,6 @@
 - (void)_markInvalid:(id)arg1;
 - (void)_assertInvalidObjectsDeallocatedAfterScope:(CDUnknownBlockType)arg1;
 - (id)_getGraphType:(long long)arg1 forPID:(int)arg2 withError:(id *)arg3;
-- (void)dealloc;
 - (id)initWithDelegate:(id)arg1;
 - (id)init;
 

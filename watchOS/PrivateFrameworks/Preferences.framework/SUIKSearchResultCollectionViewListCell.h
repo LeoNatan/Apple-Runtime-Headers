@@ -17,11 +17,11 @@
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSSearchableItem *searchableItem; // @synthesize searchableItem=_searchableItem;
 @property(retain, nonatomic) UILayoutGuide *simulatedImageViewLayoutGuide; // @synthesize simulatedImageViewLayoutGuide=_simulatedImageViewLayoutGuide;
 @property(retain, nonatomic) UILabel *detailTextLabel; // @synthesize detailTextLabel=_detailTextLabel;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
-- (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)configureWithSearchableItem:(id)arg1;
 - (void)prepareForReuse;

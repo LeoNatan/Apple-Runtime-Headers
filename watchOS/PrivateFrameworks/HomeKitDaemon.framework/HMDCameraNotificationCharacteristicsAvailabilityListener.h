@@ -21,12 +21,12 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) HMDNotificationRegistration *notificationRegistration; // @synthesize notificationRegistration=_notificationRegistration;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly) __weak HMDHAPAccessory *accessory; // @synthesize accessory=_accessory;
 @property __weak id <HMDCameraNotificationCharacteristicsAvailabilityListenerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSSet *availableCharacteristics; // @synthesize availableCharacteristics=_availableCharacteristics;
-- (void).cxx_destruct;
 - (void)handleServicesUpdated:(id)arg1;
 - (void)handleCharacteristicsUpdated:(id)arg1;
 - (void)_notifyDelegate;

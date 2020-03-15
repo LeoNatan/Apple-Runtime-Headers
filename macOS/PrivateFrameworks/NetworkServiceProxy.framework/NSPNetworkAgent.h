@@ -28,6 +28,7 @@
 + (id)agentFromData:(id)arg1;
 + (id)agentType;
 + (id)agentDomain;
+- (void).cxx_destruct;
 @property(retain) NSData *agentData; // @synthesize agentData=_agentData;
 @property(retain) NSData *keybag; // @synthesize keybag=_keybag;
 @property(retain) NSPAppRule *appRule; // @synthesize appRule=_appRule;
@@ -38,7 +39,6 @@
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active;
 @property(copy, nonatomic) NSString *agentDescription; // @synthesize agentDescription;
 @property(copy, nonatomic) NSUUID *agentUUID; // @synthesize agentUUID;
-- (void).cxx_destruct;
 - (void)parseAgentData;
 - (id)copyAgentData;
 - (BOOL)isEqual:(id)arg1;

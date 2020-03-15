@@ -13,8 +13,8 @@
     NSString *_reason;
 }
 
-@property(readonly, nonatomic) NSString *reason; // @synthesize reason=_reason;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *reason; // @synthesize reason=_reason;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)initWithDelay:(double)arg1 validator:(CDUnknownBlockType)arg2 reason:(id)arg3;
 - (long long)type;

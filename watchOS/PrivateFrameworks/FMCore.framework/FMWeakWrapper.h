@@ -14,9 +14,9 @@
     unsigned int _objectHash;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int objectHash; // @synthesize objectHash=_objectHash;
 @property(nonatomic) __weak id object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

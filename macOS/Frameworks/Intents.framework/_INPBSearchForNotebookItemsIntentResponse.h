@@ -28,12 +28,12 @@
 + (Class)tasksType;
 + (Class)taskListsType;
 + (Class)notesType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *tasks; // @synthesize tasks=_tasks;
 @property(copy, nonatomic) NSArray *taskLists; // @synthesize taskLists=_taskLists;
 @property(nonatomic) int sortType; // @synthesize sortType=_sortType;
 @property(copy, nonatomic) NSArray *notes; // @synthesize notes=_notes;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

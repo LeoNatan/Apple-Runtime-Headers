@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     UIView *_channelImageBackgroundView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isEntitled; // @synthesize isEntitled=_isEntitled;
 @property(retain, nonatomic) UIView *channelImageBackgroundView; // @synthesize channelImageBackgroundView=_channelImageBackgroundView;
 @property(retain, nonatomic) VUIButton *versionsButton; // @synthesize versionsButton=_versionsButton;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _TVImageView *logoView; // @synthesize logoView=_logoView;
 @property(retain, nonatomic) _TVImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) VUIOfferLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

@@ -16,8 +16,8 @@
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
-@property(retain, nonatomic) NSArray *notificationSettings; // @synthesize notificationSettings=_notificationSettings;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *notificationSettings; // @synthesize notificationSettings=_notificationSettings;
 - (id)payloadDescriptionKeyValueSections;
 - (id)stubDictionary;
 - (id)validatedNotificationSettings:(id)arg1 outError:(id *)arg2;

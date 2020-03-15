@@ -21,6 +21,7 @@
     NSDate *_lastRetryDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastRetryDate; // @synthesize lastRetryDate=_lastRetryDate;
 @property(nonatomic) unsigned long long retryCountForRequestingMissingHeadersInBatchedResponse; // @synthesize retryCountForRequestingMissingHeadersInBatchedResponse=_retryCountForRequestingMissingHeadersInBatchedResponse;
 @property(retain, nonatomic) NSMutableDictionary *batchedRequestByMailboxId; // @synthesize batchedRequestByMailboxId=_batchedRequestByMailboxId;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NNMKSyncController *syncController; // @synthesize syncController=_syncController;
 @property(retain, nonatomic) NNMKResendScheduler *resendScheduler; // @synthesize resendScheduler=_resendScheduler;
 @property(nonatomic) __weak id <NNMKBatchRequestHandlerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_rescheduleFetchTimeout;
 - (void)cancelFetchTimeout;
 - (void)reset;

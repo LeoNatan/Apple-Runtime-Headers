@@ -15,8 +15,8 @@
     _MRAudioDataBlockProtobuf *_dataBlock;
 }
 
-@property(retain, nonatomic) _MRAudioDataBlockProtobuf *dataBlock; // @synthesize dataBlock=_dataBlock;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _MRAudioDataBlockProtobuf *dataBlock; // @synthesize dataBlock=_dataBlock;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

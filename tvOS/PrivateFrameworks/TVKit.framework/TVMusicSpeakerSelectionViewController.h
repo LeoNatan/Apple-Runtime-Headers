@@ -22,12 +22,12 @@
     NSString *_lastFocusedRouteID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lastFocusedRouteID; // @synthesize lastFocusedRouteID=_lastFocusedRouteID;
 @property(retain, nonatomic) NSArray *otherRoutes; // @synthesize otherRoutes=_otherRoutes;
 @property(retain, nonatomic) NSArray *knownRoutes; // @synthesize knownRoutes=_knownRoutes;
 @property(retain, nonatomic) TVPAudioRoutingController *routingController; // @synthesize routingController=_routingController;
 @property(retain, nonatomic) TVTableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (id)_indexPathForAudioRouteID:(id)arg1;
 - (id)_indexPathForAudioRoute:(id)arg1;
 - (id)_routeForIndexPath:(id)arg1;

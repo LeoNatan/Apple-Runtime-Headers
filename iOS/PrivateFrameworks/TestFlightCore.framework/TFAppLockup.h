@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     TFIconArtwork *_iconArtwork;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TFIconArtwork *iconArtwork; // @synthesize iconArtwork=_iconArtwork;
 @property(readonly, copy, nonatomic) NSArray *subtitles; // @synthesize subtitles=_subtitles;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 subtitles:(id)arg2 iconArtwork:(id)arg3;
 
 @end

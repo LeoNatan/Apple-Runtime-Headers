@@ -23,12 +23,12 @@
     CDStruct_11e5c17e _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDPBMessageHeaders *headers; // @synthesize headers=_headers;
 @property(nonatomic) long long messageId; // @synthesize messageId=_messageId;
 @property(nonatomic) long long conversationId; // @synthesize conversationId=_conversationId;
 @property(nonatomic) long long mailboxId; // @synthesize mailboxId=_mailboxId;
 @property(nonatomic) long long accountId; // @synthesize accountId=_accountId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

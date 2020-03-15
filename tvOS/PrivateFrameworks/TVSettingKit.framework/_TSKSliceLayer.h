@@ -14,8 +14,8 @@
 }
 
 + (_Bool)needsDisplayForKey:(id)arg1;
-@property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 - (void)drawInContext:(struct CGContext *)arg1;
 - (id)actionForKey:(id)arg1;
 - (id)initWithLayer:(id)arg1;

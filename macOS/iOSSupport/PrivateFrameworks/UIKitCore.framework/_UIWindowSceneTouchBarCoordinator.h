@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initializeTouchBarConnections;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_scene, setter=_setScene:) __weak UIScene *_scene; // @synthesize _scene;
 @property(nonatomic, getter=isTouchBarAvailable) BOOL touchBarAvailable; // @synthesize touchBarAvailable=_touchBarAvailable;
-- (void).cxx_destruct;
 - (void)unregisterFallbackTouchBarProvider:(id)arg1;
 - (void)registerFallbackTouchBarProvider:(id)arg1;
 - (void)setNeedsUpdate;

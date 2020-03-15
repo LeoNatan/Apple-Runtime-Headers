@@ -13,8 +13,8 @@
     NSString *_title;
 }
 
-@property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 - (BOOL)_isMatchForSource:(id)arg1 andTitle:(id)arg2;
 - (id)dictionary;
 - (id)initWithDictionary:(id)arg1;

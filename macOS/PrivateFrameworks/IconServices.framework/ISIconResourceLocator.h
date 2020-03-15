@@ -22,11 +22,11 @@
 + (id)resourceLocatorWithType:(id)arg1;
 + (id)resourceLocatorWithLSIconResourceLocator:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *preferedResourceName; // @synthesize preferedResourceName=_preferedResourceName;
 @property(copy) NSDictionary *iconsDictionary; // @synthesize iconsDictionary=_iconsDictionary;
 @property(copy) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain) NSURL *resourceDirectoryURL; // @synthesize resourceDirectoryURL=_resourceDirectoryURL;
-- (void).cxx_destruct;
 @property(readonly) BOOL allowLocalizedIcon; // @dynamic allowLocalizedIcon;
 - (id)description;
 - (id)initWithCoder:(id)arg1;

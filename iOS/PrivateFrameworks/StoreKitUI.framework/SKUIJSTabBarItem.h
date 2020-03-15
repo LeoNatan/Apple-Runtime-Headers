@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     SKUITabBarItem *_tabBarItem;
 }
 
-@property(readonly, nonatomic) SKUITabBarItem *tabBarItem; // @synthesize tabBarItem=_tabBarItem;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SKUITabBarItem *tabBarItem; // @synthesize tabBarItem=_tabBarItem;
 @property(readonly, nonatomic) NSString *title;
 @property(retain, nonatomic) NSString *badgeValue;
 @property(readonly, nonatomic) NSString *rootURL;

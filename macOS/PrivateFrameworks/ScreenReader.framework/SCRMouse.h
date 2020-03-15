@@ -49,11 +49,11 @@ __attribute__((visibility("hidden")))
     SCRCUserDefaults *__userDefaults;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setUserDefaults:) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
 @property(retain) SCRTextMarkerRange *lastHoverTextMarkerRange; // @synthesize lastHoverTextMarkerRange=_lastHoverTextMarkerRange;
 @property(retain) SCRUIElement *lastContainerAreaUIElement; // @synthesize lastContainerAreaUIElement=_lastContainerAreaUIElement;
 @property(retain) SCRUIElement *lastUIElementUnderMouse; // @synthesize lastUIElementUnderMouse=_lastUIElementUnderMouse;
-- (void).cxx_destruct;
 - (void)setIsReverseDnD:(BOOL)arg1;
 - (void)handleGuideSelectionIndex:(unsigned long long)arg1 target:(id)arg2 request:(id)arg3;
 - (BOOL)cancelMouseEvent;

@@ -31,13 +31,13 @@
     NSSet *_enrolledControlGroupIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowUnenrolledSessions; // @synthesize allowUnenrolledSessions=_allowUnenrolledSessions;
 @property(nonatomic) _Bool allowInvitationSessions; // @synthesize allowInvitationSessions=_allowInvitationSessions;
 @property(copy, nonatomic) NSSet *enrolledControlGroupIdentifiers; // @synthesize enrolledControlGroupIdentifiers=_enrolledControlGroupIdentifiers;
 @property(copy, nonatomic) NSSet *organizationUUIDs; // @synthesize organizationUUIDs=_organizationUUIDs;
 @property(nonatomic) __weak id <CRKInvitationSessionBrowserDelegate> invitationSessionDelegate; // @synthesize invitationSessionDelegate=_invitationSessionDelegate;
 @property(nonatomic) __weak id <CRKClassSessionBrowserDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)delegateDidRemoveInvitationSession:(id)arg1;
 - (void)delegateLostConnectionToInvitationSession:(id)arg1;
 - (void)delegateDidFindInvitationSession:(id)arg1 transport:(id)arg2;

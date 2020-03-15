@@ -13,11 +13,11 @@
     vector_e654105b _prevPoints;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) vector_80ea899f prevPoints; // @synthesize prevPoints=_prevPoints;
 @property(nonatomic) float spacing; // @synthesize spacing=_spacing;
 @property(nonatomic) unsigned int width; // @synthesize width=_width;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)clear;
 - (void)flush;
 -     // Error parsing type: v16@0:4^8L12, name: addPoints:count:

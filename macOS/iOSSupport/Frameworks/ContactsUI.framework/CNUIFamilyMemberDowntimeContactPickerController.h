@@ -38,6 +38,7 @@
 
 + (id)familyCircle;
 + (id)descriptorForContactPropertiesSupportingPredicateEvaluation;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL initialSelectionPerformed; // @synthesize initialSelectionPerformed=_initialSelectionPerformed;
 @property(readonly, nonatomic) CNContact *preferredForNameMeContact; // @synthesize preferredForNameMeContact=_preferredForNameMeContact;
 @property(readonly, nonatomic) NSArray *allFamilyMembers; // @synthesize allFamilyMembers=_allFamilyMembers;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) BOOL shouldPreselectFamilyMemberContacts; // @synthesize shouldPreselectFamilyMemberContacts=_shouldPreselectFamilyMemberContacts;
 @property(nonatomic) __weak id <CNUIFamilyMemberDowntimeContactPickerControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (BOOL)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 propertyKey:(id)arg3 propertyIdentifier:(id)arg4;
 - (void)searchBarCancelButtonClicked:(id)arg1;
@@ -84,7 +84,7 @@
 - (void)setupUI;
 - (void)viewDidLoad;
 - (void)dealloc;
-- (id)initWithChildFamilyMember:(id)arg1 allFamilyMembers:(id)arg2 contactStore:(id)arg3 editingStrategy:(id)arg4;
+- (id)initWithChildFamilyMember:(id)arg1 allFamilyMembers:(id)arg2 contactStore:(id)arg3 editingStrategy:(id)arg4 showingFamilyMemberContacts:(BOOL)arg5;
 - (id)initWithChildFamilyMember:(id)arg1 allFamilyMembers:(id)arg2 contactStore:(id)arg3;
 
 // Remaining properties

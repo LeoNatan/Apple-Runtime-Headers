@@ -17,11 +17,11 @@
     UIBarButtonItem *_selectButtonItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *selectButtonItem; // @synthesize selectButtonItem=_selectButtonItem;
 @property(readonly, nonatomic) NSMutableOrderedSet *selectedClassesSet; // @synthesize selectedClassesSet=_selectedClassesSet;
 @property(readonly, nonatomic) NSOrderedSet *contentClasses; // @synthesize contentClasses=_contentClasses;
 @property(nonatomic) __weak id <WFContentClassesViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

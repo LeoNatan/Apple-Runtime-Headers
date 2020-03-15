@@ -14,9 +14,9 @@
     NSString *_disabledReason;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *disabledReason; // @synthesize disabledReason=_disabledReason;
 @property(readonly, nonatomic) _Bool disabled; // @synthesize disabled=_disabled;
-- (void).cxx_destruct;
 - (void)_updateColor;
 - (void)_setTitle:(id)arg1;
 - (void)setSelected:(_Bool)arg1;

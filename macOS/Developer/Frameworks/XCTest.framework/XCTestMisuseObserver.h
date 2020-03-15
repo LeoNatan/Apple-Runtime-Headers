@@ -17,10 +17,10 @@
     XCTestCase *_currentTestCase;
 }
 
+- (void).cxx_destruct;
 @property(retain) XCTestCase *currentTestCase; // @synthesize currentTestCase=_currentTestCase;
 @property(readonly) NSMutableArray *testSuiteStack; // @synthesize testSuiteStack=_testSuiteStack;
 @property(readonly, copy) CDUnknownBlockType warningLogHandler; // @synthesize warningLogHandler=_warningLogHandler;
-- (void).cxx_destruct;
 - (void)testCaseDidFinish:(id)arg1;
 - (void)testCase:(id)arg1 didFailWithDescription:(id)arg2 inFile:(id)arg3 atLine:(unsigned long long)arg4;
 - (void)testCaseWillStart:(id)arg1;

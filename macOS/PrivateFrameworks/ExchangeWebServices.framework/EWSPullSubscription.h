@@ -14,9 +14,9 @@
     EWSExchangeServiceBindingTask *_pullTask;
 }
 
+- (void).cxx_destruct;
 @property BOOL shouldPull; // @synthesize shouldPull=_shouldPull;
 @property(retain) EWSExchangeServiceBindingTask *pullTask; // @synthesize pullTask=_pullTask;
-- (void).cxx_destruct;
 - (void)exchangeServiceBindingTaskCompleted:(id)arg1;
 - (void)exchangeServiceBindingTask:(id)arg1 didFailWithError:(id)arg2;
 - (void)exchangeServiceBindingTask:(id)arg1 didReceiveResponse:(id)arg2;

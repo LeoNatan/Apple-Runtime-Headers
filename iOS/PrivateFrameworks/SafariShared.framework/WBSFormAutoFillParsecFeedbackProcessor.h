@@ -20,8 +20,8 @@
     id <WBSFormAutoFillFeedbackDomainPolicyProvider> _domainPolicyProvider;
 }
 
-@property(retain, nonatomic) id <WBSFormAutoFillFeedbackDomainPolicyProvider> domainPolicyProvider; // @synthesize domainPolicyProvider=_domainPolicyProvider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <WBSFormAutoFillFeedbackDomainPolicyProvider> domainPolicyProvider; // @synthesize domainPolicyProvider=_domainPolicyProvider;
 - (id)_feedbackWithCorrectionSet:(id)arg1 includeOrigin:(_Bool)arg2;
 - (void)_getFeedbackWithCorrectionSet:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)sendFeedbackWithCorrectionSet:(id)arg1;

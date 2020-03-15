@@ -18,9 +18,9 @@
 }
 
 + (Class)recordsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *records; // @synthesize records=_records;
 @property(retain, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;

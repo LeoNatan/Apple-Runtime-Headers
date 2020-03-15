@@ -13,8 +13,8 @@
     NSString *_text;
 }
 
-@property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;
 - (id)_initWithItem:(id)arg1 text:(id)arg2;
 
 @end

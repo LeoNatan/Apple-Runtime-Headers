@@ -16,11 +16,11 @@
     MKRouteStepPolyline *_polyline;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_geoComposedRouteStep) GEOComposedRouteStep *geoComposedRouteStep; // @synthesize geoComposedRouteStep=_geoComposedRouteStep;
 @property(readonly, nonatomic) unsigned long long transportType; // @synthesize transportType=_transportType;
 @property(readonly, nonatomic) NSString *instructions; // @synthesize instructions=_instructions;
 @property(readonly, nonatomic) MKPolyline *polyline; // @synthesize polyline=_polyline;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double distance;
 @property(readonly, nonatomic) NSString *notice;
 - (id)_initWithGEOComposedRouteStep:(id)arg1 instructions:(id)arg2 transportType:(unsigned long long)arg3 polyline:(id)arg4;

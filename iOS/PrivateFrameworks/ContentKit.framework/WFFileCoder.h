@@ -20,11 +20,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)sharedDirectoryFileArchiver;
+- (void).cxx_destruct;
 @property(nonatomic) long long targetPlatform; // @synthesize targetPlatform=_targetPlatform;
 @property(nonatomic) long long deletionResponsibility; // @synthesize deletionResponsibility=_deletionResponsibility;
 @property(copy, nonatomic) NSURL *sharedTemporaryDirectory; // @synthesize sharedTemporaryDirectory=_sharedTemporaryDirectory;
 @property(copy, nonatomic) NSURL *sharedDirectory; // @synthesize sharedDirectory=_sharedDirectory;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)waitForFileAvailabilityWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -27,13 +27,13 @@
 + (id)dateStringForReminder:(id)arg1;
 + (id)sharedTodayDateFormatter;
 + (id)sharedDateFormatter;
+- (void).cxx_destruct;
 @property __weak id <RNCTableCellViewController> controller; // @synthesize controller=_controller;
 @property(retain) NSDictionary *viewMetrics; // @synthesize viewMetrics=_viewMetrics;
 @property(retain) RNCTextField *dueField; // @synthesize dueField=_dueField;
 @property(retain) RNCTextField *title; // @synthesize title=_title;
 @property(retain) NSButton *checkBox; // @synthesize checkBox=_checkBox;
 @property(retain) EKReminder *reminder; // @synthesize reminder=_reminder;
-- (void).cxx_destruct;
 - (void)checkBoxAction:(id)arg1;
 - (void)layout;
 - (void)addConstraints;

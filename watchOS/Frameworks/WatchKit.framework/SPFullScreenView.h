@@ -15,8 +15,8 @@
     SPDigitalTimeLabel *_timeLabel;
 }
 
-@property(retain, nonatomic) SPDigitalTimeLabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SPDigitalTimeLabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 - (void)layoutSubviews;
 - (void)timeFormatterTextDidChange:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -14,8 +14,8 @@
 }
 
 + (id)userInfoTccTokenName;
-@property(readonly, nonatomic) id <CalAgentTCCChecker> tccChecker; // @synthesize tccChecker=_tccChecker;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <CalAgentTCCChecker> tccChecker; // @synthesize tccChecker=_tccChecker;
 - (id)_userInfoForContext:(id)arg1;
 - (id)_cachedTCCResultForUserInfo:(id)arg1;
 - (id)restrictingWritePredicateForEntity:(id)arg1 fromClientWithContext:(id)arg2;

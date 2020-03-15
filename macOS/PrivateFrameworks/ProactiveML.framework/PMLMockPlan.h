@@ -15,27 +15,27 @@
     PMLTrainingStore *_store;
     BOOL _returnValue;
     BOOL _didRun;
-    struct NSString *_planId;
+    NSString *_planId;
     unsigned long long _version;
 }
 
 + (id)lastDeserializedPlansMap;
 + (void)clearLastDeserializedPlans;
-+ (void)setLastDeserializedPlanWithId:(struct NSString *)arg1 toPlan:(id)arg2;
-+ (id)lastDeserializedPlanWithId:(struct NSString *)arg1;
++ (void)setLastDeserializedPlanWithId:(id)arg1 toPlan:(id)arg2;
++ (id)lastDeserializedPlanWithId:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL didRun; // @synthesize didRun=_didRun;
 @property unsigned long long version; // @synthesize version=_version;
 @property(readonly, nonatomic) NSString *planId; // @synthesize planId=_planId;
-- (void).cxx_destruct;
 - (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
 - (id)toPlistWithChunks:(id)arg1;
 - (id)runWhile:(CDUnknownBlockType)arg1 didFinish:(char *)arg2;
-- (id)initWithPlanId:(struct NSString *)arg1 store:(id)arg2;
-- (id)initWithPlanId:(struct NSString *)arg1;
+- (id)initWithPlanId:(id)arg1 store:(id)arg2;
+- (id)initWithPlanId:(id)arg1;
 - (id)initWithVersion:(unsigned long long)arg1;
-- (id)initWithPlanId:(struct NSString *)arg1 version:(unsigned long long)arg2;
-- (id)initWithPlanId:(struct NSString *)arg1 version:(unsigned long long)arg2 returningAfterRunning:(BOOL)arg3;
-- (id)initWithPlanId:(struct NSString *)arg1 store:(id)arg2 version:(unsigned long long)arg3 returningAfterRunning:(BOOL)arg4;
+- (id)initWithPlanId:(id)arg1 version:(unsigned long long)arg2;
+- (id)initWithPlanId:(id)arg1 version:(unsigned long long)arg2 returningAfterRunning:(BOOL)arg3;
+- (id)initWithPlanId:(id)arg1 store:(id)arg2 version:(unsigned long long)arg3 returningAfterRunning:(BOOL)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -20,10 +20,10 @@
     _Bool _hasDeactivated;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasDeactivated; // @synthesize hasDeactivated=_hasDeactivated;
 @property(readonly, nonatomic) NSString *personID; // @synthesize personID=_personID;
 @property(retain, nonatomic) NSMutableDictionary *_userManifest; // @synthesize _userManifest;
-- (void).cxx_destruct;
 - (void)protocol:(id)arg1 didReceiveRetryAfterDate:(id)arg2;
 - (void)_forget;
 - (void)_abort;

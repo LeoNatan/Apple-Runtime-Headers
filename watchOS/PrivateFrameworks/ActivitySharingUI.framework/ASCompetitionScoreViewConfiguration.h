@@ -49,6 +49,7 @@
 + (id)gizmoTodayScoreConfiguration;
 + (id)gizmoTotalScoreFriendDetailConfiguration;
 + (id)gizmoTotalScoreConfiguration;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool wantsScaledBaselineAlignment; // @synthesize wantsScaledBaselineAlignment=_wantsScaledBaselineAlignment;
 @property(nonatomic) float opponentScoreViewWidth; // @synthesize opponentScoreViewWidth=_opponentScoreViewWidth;
 @property(nonatomic) float minimumMiddleMargin; // @synthesize minimumMiddleMargin=_minimumMiddleMargin;
@@ -77,7 +78,6 @@
 @property(nonatomic) _Bool showsScoreTypeHeader; // @synthesize showsScoreTypeHeader=_showsScoreTypeHeader;
 @property(nonatomic) float headerBaselineOffset; // @synthesize headerBaselineOffset=_headerBaselineOffset;
 @property(retain, nonatomic) UIFont *headerFont; // @synthesize headerFont=_headerFont;
-- (void).cxx_destruct;
 
 @end
 

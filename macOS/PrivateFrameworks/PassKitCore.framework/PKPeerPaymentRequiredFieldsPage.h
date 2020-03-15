@@ -15,10 +15,10 @@
     NSString *_localizedDescription;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
 @property(copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(retain, nonatomic) NSArray *requiredFields; // @synthesize requiredFields=_requiredFields;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1 fieldOptions:(id)arg2;
 
 @end

@@ -61,12 +61,12 @@
 + (id)_loadOrCreatePeerIDForDB:(struct sqlite3 *)arg1;
 + (_Bool)_tableEmpty:(id)arg1 db:(struct sqlite3 *)arg2;
 + (id)sharedPersistentStoreForService:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _SYSharedServiceDB *sharedDB; // @synthesize sharedDB=_sharedDB;
 @property(nonatomic) _Bool cachedVersionStale; // @synthesize cachedVersionStale=_cachedVersionStale;
 @property(nonatomic) unsigned long long cachedChangedSyncIDsVersion; // @synthesize cachedChangedSyncIDsVersion=_cachedChangedSyncIDsVersion;
 @property(retain, nonatomic) NSSet *cachedChangedSyncIDs; // @synthesize cachedChangedSyncIDs=_cachedChangedSyncIDs;
 @property(nonatomic) double unfinishedSyncTimeout; // @synthesize unfinishedSyncTimeout=_unfinishedSyncTimeout;
-- (void).cxx_destruct;
 - (void)changeTrackingToggled:(_Bool)arg1;
 - (void)clearAllChanges;
 - (_Bool)objectChanged:(id)arg1 sinceVersion:(unsigned long long)arg2;

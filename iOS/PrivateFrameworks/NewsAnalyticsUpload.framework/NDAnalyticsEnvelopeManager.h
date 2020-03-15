@@ -24,6 +24,7 @@
     id <NDAnalyticsEnvelopeTracker> _envelopeTracker;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NDAnalyticsEnvelopeTracker> envelopeTracker; // @synthesize envelopeTracker=_envelopeTracker;
 @property(retain, nonatomic) NFMutexLock *keyValueStoreLock; // @synthesize keyValueStoreLock=_keyValueStoreLock;
 @property(retain, nonatomic) FCKeyValueStore *lastUploadDatesByContentType; // @synthesize lastUploadDatesByContentType=_lastUploadDatesByContentType;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NDAnalyticsPayloadUploader *payloadUploader; // @synthesize payloadUploader=_payloadUploader;
 @property(retain, nonatomic) NDAnalyticsPayloadAssembler *payloadAssembler; // @synthesize payloadAssembler=_payloadAssembler;
 @property(retain, nonatomic) NDAnalyticsEnvelopeStore *envelopeStore; // @synthesize envelopeStore=_envelopeStore;
-- (void).cxx_destruct;
 - (id)_handleOutcomeOfUploadAttemptWithPayload:(id)arg1 success:(_Bool)arg2 error:(id)arg3 willRetry:(_Bool)arg4 hitEndpoint:(_Bool)arg5;
 - (id)_handleDroppedEnvelopesForLocalReasons:(id)arg1;
 - (id)_lastUploadDatesByContentType;

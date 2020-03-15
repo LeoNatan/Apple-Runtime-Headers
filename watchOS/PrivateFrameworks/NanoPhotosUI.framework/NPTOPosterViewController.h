@@ -50,6 +50,7 @@
     int _viewState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int viewState; // @synthesize viewState=_viewState;
 @property(retain, nonatomic) NPTOLocketReader *reader; // @synthesize reader=_reader;
 @property(nonatomic) int photosTall; // @synthesize photosTall=_photosTall;
@@ -59,7 +60,6 @@
 @property(retain, nonatomic) AnimatableCrownInputSequencer *crown; // @synthesize crown=_crown;
 @property(retain, nonatomic) UIScrollView *scroller; // @synthesize scroller=_scroller;
 @property(retain, nonatomic) NPTOLocket1UpView *oneUp; // @synthesize oneUp=_oneUp;
-- (void).cxx_destruct;
 - (_Bool)photoFaceHasBeenEdited;
 - (void)getSelectedPhotoFacePhoto:(id *)arg1 contentOffset:(struct CGPoint *)arg2 zoomScale:(float *)arg3;
 - (void)savePhotoForWatchFaceInDirectory:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSString *_modelType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *modelType; // @synthesize modelType=_modelType;
 @property(readonly, nonatomic) unsigned int pushBlockRow; // @synthesize pushBlockRow=_pushBlockRow;
 @property(readonly, nonatomic) NSData *pushData; // @synthesize pushData=_pushData;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSData *externalID; // @synthesize externalID=_externalID;
 @property(readonly, nonatomic) NSData *externalData; // @synthesize externalData=_externalData;
 @property(readonly, nonatomic) unsigned int recordRow; // @synthesize recordRow=_recordRow;
-- (void).cxx_destruct;
 - (id)attributeDescriptions;
 - (id)initWithStatement:(struct sqlite3_stmt *)arg1 returning:(unsigned int)arg2;
 - (id)initWithRecordRow:(unsigned int)arg1 externalID:(id)arg2 externalData:(id)arg3 modelID:(id)arg4 modelEncoding:(unsigned int)arg5 modelData:(id)arg6 modelSchema:(id)arg7 modelType:(id)arg8 pushEncoding:(unsigned int)arg9 pushData:(id)arg10 pushBlockRow:(unsigned int)arg11;

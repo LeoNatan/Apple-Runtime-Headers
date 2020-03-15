@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     ACAccountStore *_accountStore;
 }
 
-@property(readonly, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 - (id)accountWithIdentifier:(id)arg1;
 - (id)accounts;
 - (id)initWithAccountStore:(id)arg1;

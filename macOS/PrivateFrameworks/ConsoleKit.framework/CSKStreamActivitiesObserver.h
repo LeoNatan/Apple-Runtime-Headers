@@ -21,6 +21,7 @@
     NSMutableDictionary *_identifiersMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *identifiersMap; // @synthesize identifiersMap=_identifiersMap;
 @property(retain, nonatomic) NSMutableDictionary *childrenMap; // @synthesize childrenMap=_childrenMap;
 @property(retain, nonatomic) NSMutableArray *allRootActivities; // @synthesize allRootActivities=_allRootActivities;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) CDUnknownBlockType removalCompletion; // @synthesize removalCompletion=_removalCompletion;
 @property(copy, nonatomic) CDUnknownBlockType additionCompletion; // @synthesize additionCompletion=_additionCompletion;
 @property(copy, nonatomic) CDUnknownBlockType resetCompletion; // @synthesize resetCompletion=_resetCompletion;
-- (void).cxx_destruct;
 - (void)_removeActivities:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)_appendActivities:(id)arg1 direction:(unsigned long long)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (long long)_addActivityToChildrenMap:(id)arg1;

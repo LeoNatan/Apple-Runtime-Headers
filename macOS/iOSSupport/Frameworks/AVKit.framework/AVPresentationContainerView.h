@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL willBeginOrientationChange; // @synthesize willBeginOrientationChange=_willBeginOrientationChange;
 @property(nonatomic) long long toOrientation; // @synthesize toOrientation=_toOrientation;
 @property(nonatomic) long long fromOrientation; // @synthesize fromOrientation=_fromOrientation;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL wantsAppearanceConfigValues; // @synthesize wantsAppearanceConfigValues=_wantsAppearanceConfigValues;
 @property(nonatomic) __weak UIView *presentationContainerContentView; // @synthesize presentationContainerContentView=_presentationContainerContentView;
 @property(nonatomic, getter=isCounterRotatingContentView) BOOL counterRotatingContentView; // @synthesize counterRotatingContentView=_counterRotatingContentView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setClipsToBounds:(BOOL)arg1;
 - (void)setBackgroundColor:(id)arg1;

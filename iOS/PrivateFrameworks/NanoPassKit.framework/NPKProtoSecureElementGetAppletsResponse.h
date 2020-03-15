@@ -22,10 +22,10 @@
 
 + (Class)appletsBytesType;
 + (Class)cardAIDsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *appletsBytes; // @synthesize appletsBytes=_appletsBytes;
 @property(retain, nonatomic) NSMutableArray *cardAIDs; // @synthesize cardAIDs=_cardAIDs;
 @property(nonatomic) _Bool pending; // @synthesize pending=_pending;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

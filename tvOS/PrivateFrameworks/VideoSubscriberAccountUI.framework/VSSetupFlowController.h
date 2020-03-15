@@ -34,6 +34,7 @@
     VSDevice *_currentDevice;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSDevice *currentDevice; // @synthesize currentDevice=_currentDevice;
 @property(copy, nonatomic) CDUnknownBlockType goingBackActivationCompletionBlock; // @synthesize goingBackActivationCompletionBlock=_goingBackActivationCompletionBlock;
 @property(nonatomic) _Bool notifyDelegateFromActivation; // @synthesize notifyDelegateFromActivation=_notifyDelegateFromActivation;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) VSPreferences *preferences; // @synthesize preferences=_preferences;
 @property(nonatomic) _Bool isInSTBMode; // @synthesize isInSTBMode=_isInSTBMode;
 @property(nonatomic) __weak id <VSSetupFlowControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)supportedAppsViewControllerDidFinish:(id)arg1;
 - (void)identityProviderViewController:(id)arg1 didAuthenticateAccount:(id)arg2 forRequest:(id)arg3;
 - (void)identityProviderViewController:(id)arg1 didFinishRequest:(id)arg2 withResult:(id)arg3;

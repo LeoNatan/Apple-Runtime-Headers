@@ -17,12 +17,12 @@
     CDUnknownBlockType _itemSearchBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType itemSearchBlock; // @synthesize itemSearchBlock=_itemSearchBlock;
 @property(copy, nonatomic) NSAttributedString *attributedName; // @synthesize attributedName=_attributedName;
 @property(nonatomic) long long systemRotorType; // @synthesize systemRotorType;
 @property(nonatomic) __weak id targetElement; // @synthesize targetElement;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name;
 - (id)initWithSystemType:(long long)arg1 itemSearchBlock:(CDUnknownBlockType)arg2;
 - (id)initWithAttributedName:(id)arg1 itemSearchBlock:(CDUnknownBlockType)arg2;

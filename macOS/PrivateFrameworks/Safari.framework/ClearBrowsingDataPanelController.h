@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)runModalPanelWithScope:(long long)arg1 fromTrigger:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTextField *informativeTextField; // @synthesize informativeTextField=_informativeTextField;
 @property(nonatomic) __weak NSPopUpButton *timePeriodPopUp; // @synthesize timePeriodPopUp=_timePeriodPopUp;
 @property(nonatomic) __weak NSTextField *messageTextField; // @synthesize messageTextField=_messageTextField;
-- (void).cxx_destruct;
 - (void)_clearBrowsingData;
 - (void)_setUpPanel;
 - (void)helpButtonClicked:(id)arg1;

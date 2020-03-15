@@ -13,18 +13,27 @@
 
 @interface HKHealthRecordsStore : NSObject <HKHealthRecordsStoreInterface, _HKXPCExportable>
 {
+    struct os_unfair_lock_s _ivarLock;
     HKPluginProxyProvider *_proxyProvider;
     long long _lastKnownIngestionState;
     HKObserverSet *_ingestionStateChangeObservers;
     HKObserverSet *_accountStateChangeObservers;
+    HKObserverSet *_chrSupportedStateChangeObservers;
+    CDUnknownBlockType _unitTesting_didCallReestablishProxyConnectionIfObserversArePresent;
 }
 
+- (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType unitTesting_didCallReestablishProxyConnectionIfObserversArePresent; // @synthesize unitTesting_didCallReestablishProxyConnectionIfObserversArePresent=_unitTesting_didCallReestablishProxyConnectionIfObserversArePresent;
+@property(retain, nonatomic) HKObserverSet *chrSupportedStateChangeObservers; // @synthesize chrSupportedStateChangeObservers=_chrSupportedStateChangeObservers;
 @property(retain, nonatomic) HKObserverSet *accountStateChangeObservers; // @synthesize accountStateChangeObservers=_accountStateChangeObservers;
 @property(retain, nonatomic) HKObserverSet *ingestionStateChangeObservers; // @synthesize ingestionStateChangeObservers=_ingestionStateChangeObservers;
-- (void).cxx_destruct;
 - (void)connectionInvalidated;
 - (id)remoteInterface;
 - (id)exportedInterface;
+- (void)_executeCheapCallOnPluginServerProxy:(id)arg1;
+- (void)_establishProxyConnection;
+- (void)_reestablishProxyConnectionIfObserversArePresentWithPluginServerProxy:(id)arg1;
+- (void)_establishProxyConnectionIfNoObserversArePresent;
 - (CDUnknownBlockType)_actionCompletionWithObjectOnClientQueue:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)_actionCompletionOnClientQueue:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)_objectCompletionOnClientQueue:(CDUnknownBlockType)arg1;
@@ -34,7 +43,10 @@
 - (void)registerAppSourceForClinicalUnlimitedAuthorizationModeConfirmation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)notifyForNewHealthRecordsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)badgeForNewHealthRecordsWithCompletion:(CDUnknownBlockType)arg1;
-- (void)createStaticAccountWithTitle:(id)arg1 subtitle:(id)arg2 description:(id)arg3 onlyIfNeededForSimulatedGatewayID:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)createStaticAccountWithTitle:(id)arg1 subtitle:(id)arg2 description:(id)arg3 countryCode:(id)arg4 onlyIfNeededForSimulatedGatewayID:(id)arg5 completion:(CDUnknownBlockType)arg6;
+- (void)clientRemote_healthRecordsSupportedDidChangeTo:(BOOL)arg1;
+- (void)removeHealthRecordsSupportedChangeListener:(id)arg1;
+- (void)addHealthRecordsSupportedChangeListener:(id)arg1;
 - (void)clientRemote_accountDidChange:(id)arg1 changeType:(long long)arg2;
 - (void)removeAccountStateChangeListener:(id)arg1;
 - (void)addAccountStateChangeListener:(id)arg1;
@@ -53,10 +65,6 @@
 - (void)fetchClinicalOptInDataCollectionFilePathsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)resetClinicalOptInDataCollectionAnchorsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)triggerClinicalOptInDataCollectionForReason:(long long)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)performCodingTasks:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)conceptForCodings:(id)arg1 preferredSystems:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)displayStringForMedicalCodingSystem:(id)arg1 code:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)displayStringForMedicalCodingSystem:(id)arg1 code:(id)arg2 version:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)stringifyExtractionFailureReasonsForRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchFHIRJSONDocumentWithAccountIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchExportedPropertiesForHealthRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -81,13 +89,13 @@
 - (void)fetchAccountsForGateways:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAllAccountsWithCompletion:(CDUnknownBlockType)arg1;
 - (id)allAccountsWithError:(id *)arg1;
+@property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) HKHealthStore *healthStore;
 - (id)initWithHealthStore:(id)arg1;
 - (void)_hk_shouldPromptForOptInClinicalDataCollection:(CDUnknownBlockType)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

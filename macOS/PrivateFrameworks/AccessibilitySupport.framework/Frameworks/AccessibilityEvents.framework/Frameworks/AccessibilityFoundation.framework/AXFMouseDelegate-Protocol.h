@@ -16,6 +16,8 @@
 @property(nonatomic) BOOL keepCursorImageSynchronizedWithSystem;
 @property(nonatomic) double cursorScale;
 @property(nonatomic) struct CGPoint currentLocation;
+- (void)scrollWheelByDelta:(struct CGPoint)arg1 unit:(unsigned int)arg2 markupHandler:(void (^)(struct __CGEvent *))arg3;
+- (void)scrollWheelByDelta:(struct CGPoint)arg1 unit:(unsigned int)arg2;
 - (void)performMouseAction:(long long)arg1 atPoint:(struct CGPoint)arg2 markupHandler:(void (^)(struct __CGEvent *))arg3 withCompletion:(void (^)(void))arg4;
 - (void)performMouseAction:(long long)arg1 atPoint:(struct CGPoint)arg2 withCompletion:(void (^)(void))arg3;
 - (void)clickButton:(long long)arg1 count:(unsigned long long)arg2 withModifiers:(unsigned long long)arg3 markupHandler:(void (^)(struct __CGEvent *))arg4;

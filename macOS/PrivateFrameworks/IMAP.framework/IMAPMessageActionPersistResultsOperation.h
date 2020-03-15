@@ -16,10 +16,10 @@
     id <IMAPMessageActionPersistResultsOperationDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <IMAPMessageActionPersistResultsOperationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) ECLocalMessageActionResults *results; // @synthesize results=_results;
 @property(readonly, nonatomic) ECLocalMessageAction *messageAction; // @synthesize messageAction=_messageAction;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithDataSource:(id)arg1;
 - (id)initWithMessageAction:(id)arg1 results:(id)arg2 dataSource:(id)arg3;

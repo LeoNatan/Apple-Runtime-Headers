@@ -16,8 +16,8 @@
 }
 
 + (_Bool)isSupportedEntityType:(long long)arg1;
-@property(readonly, nonatomic) SGIdentityKey *identityKey; // @synthesize identityKey=_identityKey;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SGIdentityKey *identityKey; // @synthesize identityKey=_identityKey;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqualToPseudoContactKey:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

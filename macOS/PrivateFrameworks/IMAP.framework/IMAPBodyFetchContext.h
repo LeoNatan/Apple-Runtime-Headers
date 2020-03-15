@@ -16,8 +16,8 @@
     IMAPTaskManager *_taskManager;
 }
 
-@property(readonly, nonatomic) IMAPTaskManager *taskManager; // @synthesize taskManager=_taskManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IMAPTaskManager *taskManager; // @synthesize taskManager=_taskManager;
 - (void)cacheBodiesForMessages:(id)arg1;
 - (id)init;
 - (id)initWithTaskManager:(id)arg1;

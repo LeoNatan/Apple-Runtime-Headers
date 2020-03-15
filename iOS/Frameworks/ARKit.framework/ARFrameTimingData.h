@@ -14,8 +14,8 @@
     double _videoLatency;
 }
 
-@property(nonatomic) double videoLatency; // @synthesize videoLatency=_videoLatency;
 - (void).cxx_destruct;
+@property(nonatomic) double videoLatency; // @synthesize videoLatency=_videoLatency;
 - (void)addTimestamp:(double)arg1 forDataOfClass:(Class)arg2;
 @property(readonly, nonatomic) NSDictionary *timestamps;
 - (id)init;

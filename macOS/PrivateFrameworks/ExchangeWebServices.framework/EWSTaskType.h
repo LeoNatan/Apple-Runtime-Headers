@@ -43,6 +43,7 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL TotalWorkSpecified; // @synthesize TotalWorkSpecified=_TotalWorkSpecified;
 @property(nonatomic) long long TotalWork; // @synthesize TotalWork=_TotalWork;
 @property(copy, nonatomic) NSString *StatusDescription; // @synthesize StatusDescription=_StatusDescription;
@@ -73,7 +74,6 @@
 @property(retain, nonatomic) NSDateComponents *AssignedTime; // @synthesize AssignedTime=_AssignedTime;
 @property(nonatomic) BOOL ActualWorkSpecified; // @synthesize ActualWorkSpecified=_ActualWorkSpecified;
 @property(nonatomic) long long ActualWork; // @synthesize ActualWork=_ActualWork;
-- (void).cxx_destruct;
 
 @end
 

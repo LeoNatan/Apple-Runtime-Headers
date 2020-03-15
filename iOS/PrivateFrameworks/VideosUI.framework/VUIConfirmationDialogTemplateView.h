@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIView *_cardView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIVisualEffectView *backdropView; // @synthesize backdropView=_backdropView;
 @property(retain, nonatomic) UIView *cardView; // @synthesize cardView=_cardView;
-- (void).cxx_destruct;
 - (void)_configureSubviews;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

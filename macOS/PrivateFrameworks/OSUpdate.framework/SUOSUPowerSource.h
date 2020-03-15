@@ -12,9 +12,9 @@
     CDUnknownBlockType _stateChangeBlock;
 }
 
+- (void).cxx_destruct;
 @property int notifyToken; // @synthesize notifyToken=_notifyToken;
 @property(copy) CDUnknownBlockType stateChangeBlock; // @synthesize stateChangeBlock=_stateChangeBlock;
-- (void).cxx_destruct;
 - (void)stopObservingStateChanges;
 - (void)startObservingStateChangesWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly) BOOL lowBattery;

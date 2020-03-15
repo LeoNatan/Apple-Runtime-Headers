@@ -13,8 +13,8 @@
     MCAttachment *_messageAttachment;
 }
 
-@property(readonly, nonatomic) MCAttachment *messageAttachment; // @synthesize messageAttachment=_messageAttachment;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MCAttachment *messageAttachment; // @synthesize messageAttachment=_messageAttachment;
 @property(retain) MCFileWrapper *fileWrapper;
 - (id)initWithFileWrapper:(id)arg1;
 - (id)initWithData:(id)arg1 ofType:(id)arg2;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_websiteIdentifier;
 }
 
-@property(readonly, nonatomic) NSString *websiteIdentifier; // @synthesize websiteIdentifier=_websiteIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *websiteIdentifier; // @synthesize websiteIdentifier=_websiteIdentifier;
 - (void)centerDelegateDidFinishRequest:(id)arg1;
 - (id)initWithWebsiteIdentifier:(id)arg1;
 

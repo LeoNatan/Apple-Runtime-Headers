@@ -16,10 +16,10 @@
     id <RWIDriverInterfaceDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <RWIDriverInterfaceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)_changeInterfaceState:(BOOL)arg1;
 - (BOOL)stop;
 - (BOOL)start:(id *)arg1;

@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     HKHealthServicesManager *_healthServicesManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKHealthServicesManager *healthServicesManager; // @synthesize healthServicesManager=_healthServicesManager;
 @property(copy, nonatomic) CDUnknownBlockType bluetoothStatusHandler; // @synthesize bluetoothStatusHandler=_bluetoothStatusHandler;
 @property(retain, nonatomic) NSMutableSet *sessionsEnded; // @synthesize sessionsEnded=_sessionsEnded;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableSet *discoveriesEnded; // @synthesize discoveriesEnded=_discoveriesEnded;
 @property(retain, nonatomic) NSMutableDictionary *discoveries; // @synthesize discoveries=_discoveries;
 @property(nonatomic) __weak HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
-- (void).cxx_destruct;
 - (void)clientRemote_deliverSessionCharacteristics:(id)arg1 forService:(id)arg2 toClient:(unsigned int)arg3 withError:(id)arg4;
 - (void)clientRemote_deliverSessionHealthServiceStatus:(int)arg1 toClient:(unsigned int)arg2 finished:(_Bool)arg3 withError:(id)arg4;
 - (void)clientRemote_deliverDiscoveryHealthService:(id)arg1 toClient:(unsigned int)arg2 finished:(_Bool)arg3 withError:(id)arg4;

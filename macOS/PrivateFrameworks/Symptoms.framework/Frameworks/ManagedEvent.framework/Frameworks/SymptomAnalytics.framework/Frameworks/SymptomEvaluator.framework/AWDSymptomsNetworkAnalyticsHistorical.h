@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long dnsCompleteFailures; // @synthesize dnsCompleteFailures=_dnsCompleteFailures;
 @property(nonatomic) unsigned long long dnsPartialFailures; // @synthesize dnsPartialFailures=_dnsPartialFailures;
 @property(nonatomic) unsigned long long secsSinceLastTrimmed; // @synthesize secsSinceLastTrimmed=_secsSinceLastTrimmed;
@@ -60,7 +61,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long epochs; // @synthesize epochs=_epochs;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

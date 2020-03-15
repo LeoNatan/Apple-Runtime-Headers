@@ -15,8 +15,8 @@
     _Bool _needsStateReset;
 }
 
-@property(readonly, nonatomic) _Bool needsStateReset; // @synthesize needsStateReset=_needsStateReset;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool needsStateReset; // @synthesize needsStateReset=_needsStateReset;
 @property(readonly, nonatomic) long long numberOfSplits;
 @property(readonly, nonatomic) SKUIToolbarViewElement *toolbarElement;
 @property(readonly, nonatomic) SKUINavigationBarViewElement *navigationBarElement;

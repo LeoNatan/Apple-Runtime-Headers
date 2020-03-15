@@ -14,9 +14,9 @@
     double _score;
 }
 
+- (void).cxx_destruct;
 @property(readonly) double score; // @synthesize score=_score;
 @property(readonly) NSDictionary *zeroKeyword; // @synthesize zeroKeyword=_zeroKeyword;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithKeyword:(id)arg1 score:(double)arg2;
 

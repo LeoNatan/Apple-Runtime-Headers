@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) WLKStoredConfiguration *storedConfiguration; // @synthesize storedConfiguration=_storedConfiguration;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WLKStoredConfiguration *storedConfiguration; // @synthesize storedConfiguration=_storedConfiguration;
 - (void)_setStoredConfiguration:(id)arg1;
 - (void)_handleAccountChange:(id)arg1;
 - (void)_handleLibraryChange:(id)arg1;

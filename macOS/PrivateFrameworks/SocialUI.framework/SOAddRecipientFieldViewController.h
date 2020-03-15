@@ -55,6 +55,7 @@
 + (void)_presentUnregisteredErrorForHandle:(id)arg1;
 + (id)activeLegacyIMAccountsForABProperty:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldShowDowntimeErrorAppearance; // @synthesize shouldShowDowntimeErrorAppearance=_shouldShowDowntimeErrorAppearance;
 @property(retain, nonatomic) NSColor *textFieldNormalColor; // @synthesize textFieldNormalColor=_textFieldNormalColor;
 @property(nonatomic) BOOL isBlockedForDowntime; // @synthesize isBlockedForDowntime=_isBlockedForDowntime;
@@ -77,7 +78,6 @@
 @property BOOL skipCompletionRebuilding; // @synthesize skipCompletionRebuilding=_skipCompletionRebuilding;
 @property(retain, nonatomic) CNExtendedAutocompleteResultWindow *completionWindow; // @synthesize completionWindow=_completionWindow;
 @property(retain, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 - (void)viewDidLayout;

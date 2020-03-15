@@ -26,6 +26,7 @@
     struct _NSRange _range;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <TSDRepDirectLayerHosting> directLayerHost; // @synthesize directLayerHost=_directLayerHost;
 @property(readonly, nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(readonly, nonatomic) SXTextTangierFlowStorage *storage; // @synthesize storage=_storage;
@@ -36,7 +37,6 @@
 @property(nonatomic) NSObject<TSDContainerInfo> *parentInfo; // @synthesize parentInfo;
 @property(nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment; // @synthesize owningAttachment;
 @property(copy, nonatomic) TSDInfoGeometry *geometry; // @synthesize geometry;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasSpeakableContent;
 - (id)copyWithContext:(id)arg1;
 - (id)childInfos;

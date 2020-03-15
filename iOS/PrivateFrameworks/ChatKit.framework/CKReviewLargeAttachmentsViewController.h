@@ -16,11 +16,11 @@ __attribute__((visibility("hidden")))
     NSArray *_attachments;
 }
 
-@property(retain, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;
 - (id)_previewItem;
 - (void)_populateAttachmentData;
-- (struct NSString *)attachmentClass;
+- (id)attachmentClass;
 - (void)previewControllerDidDismiss:(id)arg1;
 - (void)didSelectModelObjectAtIndex:(unsigned long long)arg1;
 - (void)deleteModelObjectAndUnderlyingData:(id)arg1;

@@ -16,8 +16,8 @@
 }
 
 + (id)sharedInstanceForServiceIdentifier:(id)arg1;
-@property(readonly, nonatomic) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
 - (long long)numberOfScheduledQueries;
 - (void)queryDestinations:(id)arg1 updateHandler:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_addDestinationsToQuery:(id)arg1 updateHandler:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;

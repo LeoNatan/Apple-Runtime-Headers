@@ -20,12 +20,12 @@
     CDStruct_8286c7c8 _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPasscode; // @synthesize hasPasscode=_hasPasscode;
 @property(nonatomic) _Bool isManaging; // @synthesize isManaging=_isManaging;
 @property(nonatomic) _Bool isManaged; // @synthesize isManaged=_isManaged;
 @property(retain, nonatomic) NSString *familyMemberType; // @synthesize familyMemberType=_familyMemberType;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

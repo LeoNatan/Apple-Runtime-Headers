@@ -34,6 +34,7 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EWSSingleRecipientType *ReceivedRepresenting; // @synthesize ReceivedRepresenting=_ReceivedRepresenting;
 @property(retain, nonatomic) EWSSingleRecipientType *ReceivedBy; // @synthesize ReceivedBy=_ReceivedBy;
 @property(copy, nonatomic) NSArray *ReplyTo; // @synthesize ReplyTo=_ReplyTo;
@@ -53,7 +54,6 @@
 @property(copy, nonatomic) NSArray *CcRecipients; // @synthesize CcRecipients=_CcRecipients;
 @property(copy, nonatomic) NSArray *ToRecipients; // @synthesize ToRecipients=_ToRecipients;
 @property(retain, nonatomic) EWSSingleRecipientType *Sender; // @synthesize Sender=_Sender;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *allowedElementKeys;
 @property(readonly, nonatomic) BOOL elementsNeedRedaction;
 

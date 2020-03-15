@@ -19,10 +19,10 @@
     struct CGRect _totalScreenBounds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect totalScreenBounds; // @synthesize totalScreenBounds=_totalScreenBounds;
 @property(retain, nonatomic) AXFScreen *mainScreen; // @synthesize mainScreen=_mainScreen;
 @property(nonatomic) __weak id <AXFScreenSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)start;
 @property(retain, nonatomic) NSArray *screens; // @synthesize screens=_screens;

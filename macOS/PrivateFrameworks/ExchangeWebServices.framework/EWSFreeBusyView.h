@@ -19,11 +19,11 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EWSWorkingHours *WorkingHours; // @synthesize WorkingHours=_WorkingHours;
 @property(copy, nonatomic) NSArray *CalendarEventArray; // @synthesize CalendarEventArray=_CalendarEventArray;
 @property(copy, nonatomic) NSString *MergedFreeBusy; // @synthesize MergedFreeBusy=_MergedFreeBusy;
 @property(nonatomic) long long FreeBusyViewType; // @synthesize FreeBusyViewType=_FreeBusyViewType;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

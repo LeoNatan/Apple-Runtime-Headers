@@ -16,9 +16,9 @@
     NSData *_customData;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSData *customData; // @synthesize customData=_customData;
 @property unsigned long long customType; // @synthesize customType=_customType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 

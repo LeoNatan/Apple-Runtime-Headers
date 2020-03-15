@@ -21,6 +21,7 @@
     long long _scaleMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double stopTime; // @synthesize stopTime=_stopTime;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) long long scaleMode; // @synthesize scaleMode=_scaleMode;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSString *movieTitle; // @synthesize movieTitle=_movieTitle;
 @property(retain, nonatomic) NSString *movieSubtitle; // @synthesize movieSubtitle=_movieSubtitle;
 @property(retain, nonatomic) NSDictionary *AVURLAssetOptions; // @synthesize AVURLAssetOptions=_AVURLAssetOptions;
-- (void).cxx_destruct;
 - (void)didMoveToWindow;
 @property(readonly, nonatomic) AVPlayerLayer *playerLayer;
 @property(readonly, nonatomic) struct CGRect movieContentFrame;

@@ -17,9 +17,9 @@
     UIActivityIndicatorView *_spinnerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIActivityIndicatorView *spinnerView; // @synthesize spinnerView=_spinnerView;
 @property(retain, nonatomic) UILabel *detailTextLabel; // @synthesize detailTextLabel=_detailTextLabel;
-- (void).cxx_destruct;
 - (double)desiredHeight;
 - (void)reloadData;
 - (void)layoutSubviews;

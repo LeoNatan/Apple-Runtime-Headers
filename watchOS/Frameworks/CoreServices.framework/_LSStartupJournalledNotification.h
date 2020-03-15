@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSArray *_proxies;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool plugins; // @synthesize plugins=_plugins;
 @property(readonly, nonatomic) NSArray *proxies; // @synthesize proxies=_proxies;
 @property(readonly, nonatomic) int notification; // @synthesize notification=_notification;
-- (void).cxx_destruct;
 - (id)initWithNotification:(int)arg1 appProxies:(id)arg2 plugins:(_Bool)arg3;
 
 @end

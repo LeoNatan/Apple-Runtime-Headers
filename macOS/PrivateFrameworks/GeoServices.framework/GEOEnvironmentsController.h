@@ -18,8 +18,8 @@
     id <GEOEnvironmentsControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <GEOEnvironmentsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <GEOEnvironmentsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)activeEnvironment;
 - (void)removeCustomEnvironment:(id)arg1;
 - (void)addCustomEnvironment:(id)arg1;

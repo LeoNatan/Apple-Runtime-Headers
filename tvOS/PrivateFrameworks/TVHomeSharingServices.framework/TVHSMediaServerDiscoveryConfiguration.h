@@ -20,10 +20,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)disabledMediaServerDiscoveryConfiguration;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *homeSharingAccountName; // @synthesize homeSharingAccountName=_homeSharingAccountName;
 @property(readonly, copy, nonatomic) NSString *homeSharingGroupIdentifier; // @synthesize homeSharingGroupIdentifier=_homeSharingGroupIdentifier;
 @property(readonly, nonatomic) unsigned long long discoveryMode; // @synthesize discoveryMode=_discoveryMode;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

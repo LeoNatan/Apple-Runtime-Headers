@@ -13,8 +13,8 @@
     AKAppleIDAuthenticationContext *_context;
 }
 
-@property(retain, nonatomic) AKAppleIDAuthenticationContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AKAppleIDAuthenticationContext *context; // @synthesize context=_context;
 - (void)_revokeDeviceTrust;
 - (void)_handleInvalidMasterTokenWithSubErrorCode:(long long)arg1;
 - (void)handleResponseError:(id)arg1;

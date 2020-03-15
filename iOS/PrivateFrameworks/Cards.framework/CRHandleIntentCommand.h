@@ -13,8 +13,8 @@
     INIntent *_intent;
 }
 
-@property(copy, nonatomic) INIntent *intent; // @synthesize intent=_intent;
 - (void).cxx_destruct;
+@property(copy, nonatomic) INIntent *intent; // @synthesize intent=_intent;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)payload;
 

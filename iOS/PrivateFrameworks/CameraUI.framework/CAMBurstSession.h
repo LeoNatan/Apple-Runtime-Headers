@@ -16,11 +16,11 @@
     CIBurstImageSet *__burstImageSet;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CIBurstImageSet *_burstImageSet; // @synthesize _burstImageSet=__burstImageSet;
 @property(nonatomic, getter=_isFinalized, setter=_setFinalized:) _Bool finalized; // @synthesize finalized=_finalized;
 @property(nonatomic, setter=_setCount:) unsigned long long count; // @synthesize count=_count;
 @property(nonatomic, setter=_setEstimatedCount:) unsigned long long estimatedCount; // @synthesize estimatedCount=_estimatedCount;
-- (void).cxx_destruct;
 - (void)addStillImageLocalPersistenceResult:(id)arg1 withFaces:(id)arg2;
 - (void)addStillImageCaptureResult:(id)arg1;
 - (id)performBurstAnalysisForDevice:(long long)arg1;

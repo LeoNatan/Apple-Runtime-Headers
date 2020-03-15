@@ -22,8 +22,8 @@
 
 + (id)sharedInstance;
 + (void)initialize;
-@property(readonly, nonatomic) UIFont *idealFont; // @synthesize idealFont=_idealFont;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIFont *idealFont; // @synthesize idealFont=_idealFont;
 - (id)dynamicallySizedStringForTitle:(id)arg1 width:(float)arg2;
 @property(readonly, nonatomic) UIImage *whiteOverlayImage;
 @property(readonly, nonatomic) UIImage *shadowImage;

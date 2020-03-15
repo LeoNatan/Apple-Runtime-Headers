@@ -27,6 +27,7 @@
     CSSearchQuery *_query;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showingAttachments; // @synthesize showingAttachments=_showingAttachments;
 @property(nonatomic) BOOL showingRecipients; // @synthesize showingRecipients=_showingRecipients;
 @property(nonatomic) BOOL showingAccounts; // @synthesize showingAccounts=_showingAccounts;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSMutableSet *allRecipients; // @synthesize allRecipients=_allRecipients;
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (id)accountFromUsername:(id)arg1;
 - (void)didSelectContacts:(id)arg1 ofType:(unsigned long long)arg2;
 - (void)triggerTextConfigurationViewControllerDidCancel:(id)arg1;

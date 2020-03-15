@@ -74,6 +74,7 @@ __attribute__((visibility("hidden")))
     NSString *_t_syncBlockedUntilOSName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool _t_syncUpBlocked; // @synthesize _t_syncUpBlocked;
 @property(readonly, nonatomic) _Bool _t_syncDownBlocked; // @synthesize _t_syncDownBlocked;
 @property(readonly, nonatomic) NSDictionary *parentsOfCZMFaults; // @synthesize parentsOfCZMFaults=_parentsOfCZMFaults;
@@ -93,7 +94,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BRCPQLConnection *db; // @synthesize db=_db;
 @property(retain, nonatomic) id <BRCClientZoneDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool activated; // @synthesize activated=_activated;
-- (void).cxx_destruct;
 - (void)waitForCrossZoneMoveProcessingWithCompletion:(CDUnknownBlockType)arg1;
 - (void)itemCrossZoneMoved:(id)arg1 toParentID:(id)arg2;
 - (void)itemMovedIntoShareInThisZone:(id)arg1 associatedItemID:(id)arg2;
@@ -158,8 +158,8 @@ __attribute__((visibility("hidden")))
 - (long long)serverRankByItemID:(id)arg1 db:(id)arg2;
 - (id)serverItemByRank:(long long)arg1;
 - (long long)serverRankByItemID:(id)arg1;
-- (struct PQLResultSet *)itemsParentedToThisZoneButLivingInAnOtherZone;
-- (struct PQLResultSet *)allItems;
+- (id)itemsParentedToThisZoneButLivingInAnOtherZone;
+- (id)allItems;
 - (_Bool)_resetItemsTable;
 - (_Bool)dumpTablesToContext:(id)arg1 includeAllItems:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)dumpStatusToContext:(id)arg1 error:(id *)arg2;
@@ -201,12 +201,12 @@ __attribute__((visibility("hidden")))
 - (void)setSyncStateBits:(unsigned int)arg1;
 @property(readonly) unsigned int syncState;
 - (void)didClearOutOfQuota;
-- (struct PQLResultSet *)_faultsEnumeratorFromRow:(unsigned long long)arg1 batchSize:(unsigned long long)arg2;
+- (id)_faultsEnumeratorFromRow:(unsigned long long)arg1 batchSize:(unsigned long long)arg2;
 - (void)_enumerateFaultsWithBlock:(CDUnknownBlockType)arg1 rowID:(unsigned long long)arg2 batchSize:(unsigned long long)arg3;
 - (void)enumerateFaultsAsyncWithBlock:(CDUnknownBlockType)arg1 batchSize:(unsigned long long)arg2;
-- (struct PQLResultSet *)documentsNotIdleEnumeratorWithDB:(id)arg1;
-- (struct PQLResultSet *)itemsWithInFlightDiffsEnumerator;
-- (struct PQLResultSet *)itemsEnumeratorWithDB:(id)arg1;
+- (id)documentsNotIdleEnumeratorWithDB:(id)arg1;
+- (id)itemsWithInFlightDiffsEnumerator;
+- (id)itemsEnumeratorWithDB:(id)arg1;
 - (_Bool)existsByParentID:(id)arg1 andLogicalName:(id)arg2 db:(id)arg3;
 - (_Bool)existsByParentID:(id)arg1 andLogicalName:(id)arg2;
 - (id)faultByParentID:(id)arg1 andPhysicalName:(id)arg2 db:(id)arg3;

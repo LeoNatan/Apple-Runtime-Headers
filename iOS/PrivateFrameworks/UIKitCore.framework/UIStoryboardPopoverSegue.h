@@ -18,12 +18,12 @@
     struct CGRect _anchorRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setAnchorRect:) struct CGRect _anchorRect; // @synthesize _anchorRect;
 @property(retain, nonatomic, setter=_setAnchorBarButtonItem:) UIBarButtonItem *_anchorBarButtonItem; // @synthesize _anchorBarButtonItem;
 @property(retain, nonatomic, setter=_setAnchorView:) UIView *_anchorView; // @synthesize _anchorView;
 @property(nonatomic, setter=_setPermittedArrowDirections:) unsigned long long _permittedArrowDirections; // @synthesize _permittedArrowDirections;
 @property(copy, nonatomic, setter=_setPassthroughViews:) NSArray *_passthroughViews; // @synthesize _passthroughViews;
-- (void).cxx_destruct;
 - (void)perform;
 @property(readonly, nonatomic) UIPopoverController *popoverController; // @synthesize popoverController=_popoverController;
 

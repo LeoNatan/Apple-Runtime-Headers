@@ -17,8 +17,8 @@
 
 + (id)contextSystem;
 + (id)mainSystem;
-@property(readonly, nonatomic) _Bool shouldAutomaticallyRebuild; // @synthesize shouldAutomaticallyRebuild=_shouldAutomaticallyRebuild;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool shouldAutomaticallyRebuild; // @synthesize shouldAutomaticallyRebuild=_shouldAutomaticallyRebuild;
 - (void)setNeedsRevalidate;
 - (void)setNeedsRebuild;
 - (void)_automaticallyRebuildIfNeeded;

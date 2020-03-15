@@ -18,10 +18,10 @@
     long long _presentationPageIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long presentationPageIndex; // @synthesize presentationPageIndex=_presentationPageIndex;
 @property(retain) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
 @property(readonly, nonatomic) UIPageViewController *pageViewController; // @synthesize pageViewController=_pageViewController;
-- (void).cxx_destruct;
 - (void)_updateNavigationItemForCurrentViewController:(id)arg1;
 - (void)pageViewController:(id)arg1 didFinishAnimating:(_Bool)arg2 previousViewControllers:(id)arg3 transitionCompleted:(_Bool)arg4;
 - (long long)presentationIndexForPageViewController:(id)arg1;

@@ -19,6 +19,7 @@
     SGContactDetail *_photoPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SGContactDetail *photoPath; // @synthesize photoPath=_photoPath;
 @property(retain, nonatomic) SGContactDetail *birthday; // @synthesize birthday=_birthday;
 @property(retain, nonatomic) NSArray *socialProfiles; // @synthesize socialProfiles=_socialProfiles;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSArray *phoneNumbers; // @synthesize phoneNumbers=_phoneNumbers;
 @property(retain, nonatomic) NSArray *postalAddresses; // @synthesize postalAddresses=_postalAddresses;
 @property(retain, nonatomic) NSArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
-- (void).cxx_destruct;
 
 @end
 

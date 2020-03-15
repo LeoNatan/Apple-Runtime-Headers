@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
 
 + (double)currentTime;
 + (void)sleep:(double)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *responseActionToMetadata; // @synthesize responseActionToMetadata=_responseActionToMetadata;
 @property(copy, nonatomic) NSSet *actionsToThrottle; // @synthesize actionsToThrottle=_actionsToThrottle;
 @property(nonatomic) double minimumRetryTime; // @synthesize minimumRetryTime=_minimumRetryTime;
 @property(nonatomic) double maximumThrottleTime; // @synthesize maximumThrottleTime=_maximumThrottleTime;
 @property(nonatomic) int minimumThrottleCount; // @synthesize minimumThrottleCount=_minimumThrottleCount;
 @property(nonatomic) double throttlePeriod; // @synthesize throttlePeriod=_throttlePeriod;
-- (void).cxx_destruct;
 - (double)throttleTimeForCount:(int)arg1 isRetry:(_Bool)arg2;
 - (void)gateResponseAction:(int)arg1 isRetry:(_Bool)arg2 currentTime:(double)arg3;
 - (void)gateResponseAction:(int)arg1 isRetry:(_Bool)arg2;

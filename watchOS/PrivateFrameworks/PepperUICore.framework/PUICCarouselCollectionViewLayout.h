@@ -26,11 +26,11 @@
 }
 
 + (Class)invalidationContextClass;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PUICCarouselCollectionViewLayoutDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) float estimatedRowHeight; // @synthesize estimatedRowHeight=_estimatedRowHeight;
 @property(nonatomic) float rowHeight; // @synthesize rowHeight=_rowHeight;
 @property(nonatomic) float itemSpacing; // @synthesize itemSpacing=_itemSpacing;
-- (void).cxx_destruct;
 - (struct CGPoint)snappingPositionForProposedContentOffset:(struct CGPoint)arg1;
 - (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1;
 - (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1 withScrollingVelocity:(struct CGPoint)arg2;

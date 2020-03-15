@@ -41,6 +41,7 @@
 + (id)calculateFixedImageAssetForType:(unsigned char)arg1 size:(struct CGSize)arg2;
 + (Class)itemViewClass;
 + (id)_keysToLoadAndTest;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IPAVideoPlaybackSettings *streamingPlaybackSettings; // @synthesize streamingPlaybackSettings=_streamingPlaybackSettings;
 @property(copy, nonatomic) NSString *videoGravity; // @synthesize videoGravity=_videoGravity;
 @property(nonatomic, getter=isMuted) BOOL muted; // @synthesize muted=_muted;
@@ -49,7 +50,6 @@
 @property(nonatomic, getter=isStreamingVideoResource) BOOL streamingVideoResource; // @synthesize streamingVideoResource=_streamingVideoResource;
 @property(nonatomic) BOOL shouldAttemptStreamingVideoResource; // @synthesize shouldAttemptStreamingVideoResource=_shouldAttemptStreamingVideoResource;
 @property __weak id <PAAVItemViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)submitRequestForImageForCurrentFrameWithCompletionQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (struct CGImage *)imageForCurrentFrame;
 - (void)setPosterFrameForCurrentTime;

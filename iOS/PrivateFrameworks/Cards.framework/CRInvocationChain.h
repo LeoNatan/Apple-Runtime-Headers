@@ -16,9 +16,9 @@
     NSPointerArray *_chainedObjects;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_chainedObjects, setter=_setChainedObjects:) NSPointerArray *chainedObjects; // @synthesize chainedObjects=_chainedObjects;
 @property(nonatomic) __weak id <CRInvocationChainDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_isEligibleForSelector:(SEL)arg1;
 - (void)_enumerateChainedObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)_addChainedObject:(id)arg1;

@@ -11,8 +11,8 @@
     CDUnknownBlockType _invocationBlock;
 }
 
-@property(copy) CDUnknownBlockType invocationBlock; // @synthesize invocationBlock=_invocationBlock;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType invocationBlock; // @synthesize invocationBlock=_invocationBlock;
 - (id)initWithType:(id)arg1 invocationBlock:(CDUnknownBlockType)arg2;
 
 @end

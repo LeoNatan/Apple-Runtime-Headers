@@ -21,13 +21,13 @@
     TVSMMonogramView *_monogramView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TVSMMonogramView *monogramView; // @synthesize monogramView=_monogramView;
 @property(nonatomic) _Bool showSelection; // @synthesize showSelection=_showSelection;
 @property(copy, nonatomic) NSPersonNameComponents *nameComponents; // @synthesize nameComponents=_nameComponents;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) __weak id <TVSMModuleContentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_buttonPressed:(id)arg1;
 - (void)loadView;
 

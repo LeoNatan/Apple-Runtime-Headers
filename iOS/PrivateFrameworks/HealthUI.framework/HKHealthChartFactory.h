@@ -24,6 +24,7 @@
 }
 
 + (id)_standardIdentifierMappings;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *identifierToDisplayTypeMapping; // @synthesize identifierToDisplayTypeMapping=_identifierToDisplayTypeMapping;
 @property(readonly, nonatomic) HKSampleTypeDateRangeController *sampleTypeDateRangeController; // @synthesize sampleTypeDateRangeController=_sampleTypeDateRangeController;
 @property(readonly, nonatomic) _HKWheelchairUseCharacteristicCache *wheelchairUseCharacteristicCache; // @synthesize wheelchairUseCharacteristicCache=_wheelchairUseCharacteristicCache;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) HKUnitPreferenceController *unitPreferenceController; // @synthesize unitPreferenceController=_unitPreferenceController;
 @property(readonly, nonatomic) HKDisplayTypeController *displayTypeController; // @synthesize displayTypeController=_displayTypeController;
 @property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
-- (void).cxx_destruct;
 - (id)_mapTypeIdentifierToDisplayType:(id)arg1;
 - (id)_customTypeIdentifierController:(id)arg1 displayDate:(id)arg2 secondaryIdentifier:(id)arg3;
 - (id)CHRRoomApplicationItems;

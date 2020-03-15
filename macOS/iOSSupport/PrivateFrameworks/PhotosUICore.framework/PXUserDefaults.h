@@ -21,11 +21,14 @@
     NSNumber *_allPhotosCaptionsVisible;
     NSNumber *_didShowCurationFooter;
     NSNumber *_didShowCompletedCurationFooterAnimation;
+    NSDate *_surveyQuestionsHideDate;
     id <PXUserDefaultsDataSource> _dataSource;
 }
 
 + (id)standardUserDefaults;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <PXUserDefaultsDataSource> dataSource; // @synthesize dataSource=_dataSource;
+@property(copy, nonatomic) NSDate *surveyQuestionsHideDate; // @synthesize surveyQuestionsHideDate=_surveyQuestionsHideDate;
 @property(copy, nonatomic) NSNumber *didShowCompletedCurationFooterAnimation; // @synthesize didShowCompletedCurationFooterAnimation=_didShowCompletedCurationFooterAnimation;
 @property(copy, nonatomic) NSNumber *didShowCurationFooter; // @synthesize didShowCurationFooter=_didShowCurationFooter;
 @property(copy, nonatomic) NSNumber *allPhotosCaptionsVisible; // @synthesize allPhotosCaptionsVisible=_allPhotosCaptionsVisible;
@@ -34,7 +37,6 @@
 @property(copy, nonatomic) NSNumber *daysMarginScale; // @synthesize daysMarginScale=_daysMarginScale;
 @property(copy, nonatomic) NSNumber *curatedLibraryZoomLevel; // @synthesize curatedLibraryZoomLevel=_curatedLibraryZoomLevel;
 @property(readonly, nonatomic) double defaultUserInterfaceTimeoutDuration; // @synthesize defaultUserInterfaceTimeoutDuration=_defaultUserInterfaceTimeoutDuration;
-- (void).cxx_destruct;
 - (BOOL)_isDateStillValid:(id)arg1;
 @property(copy, nonatomic) NSNumber *allPhotosColumns; // @synthesize allPhotosColumns=_allPhotosColumns;
 - (id)initWithDataSource:(id)arg1;

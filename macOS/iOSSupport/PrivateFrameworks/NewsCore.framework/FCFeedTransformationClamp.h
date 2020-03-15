@@ -17,8 +17,8 @@
 
 + (id)transformationWithFeedRange:(id)arg1;
 + (id)transformationWithDateRange:(id)arg1;
-@property(retain, nonatomic) FCFeedRange *feedRange; // @synthesize feedRange=_feedRange;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FCFeedRange *feedRange; // @synthesize feedRange=_feedRange;
 - (id)transformFeedItems:(id)arg1;
 
 // Remaining properties

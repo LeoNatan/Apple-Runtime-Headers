@@ -12,9 +12,9 @@
     CDUnknownBlockType _artworkValueTransformer;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType artworkValueTransformer; // @synthesize artworkValueTransformer=_artworkValueTransformer;
 @property(copy, nonatomic) CDUnknownBlockType valueTransformer; // @synthesize valueTransformer=_valueTransformer;
-- (void).cxx_destruct;
 
 @end
 

@@ -17,9 +17,9 @@
 
 + (_Bool)canAddPaymentPass;
 + (Class)_desiredClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKAddPaymentPassRequestConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) __weak id <PKAddPaymentPassControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dismissWithCompletion:(CDUnknownBlockType)arg1;
 - (void)presentWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithRequestConfiguration:(id)arg1 delegate:(id)arg2;

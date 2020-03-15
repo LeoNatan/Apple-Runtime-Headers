@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     _TVShadowViewElement *_parent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak _TVShadowViewElement *parent; // @synthesize parent=_parent;
 @property(copy, nonatomic) NSArray *children; // @synthesize children=_children;
 @property(copy, nonatomic) _TVShadowViewElementID *elementID; // @synthesize elementID=_elementID;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 

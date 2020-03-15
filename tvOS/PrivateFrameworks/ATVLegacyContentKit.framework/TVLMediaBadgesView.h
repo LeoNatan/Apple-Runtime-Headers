@@ -19,12 +19,12 @@
     UIImageView *_closeCaptionView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *closeCaptionView; // @synthesize closeCaptionView=_closeCaptionView;
 @property(retain, nonatomic) UIImageView *audioFormatImageView; // @synthesize audioFormatImageView=_audioFormatImageView;
 @property(retain, nonatomic) UIImageView *videoFormatImageView; // @synthesize videoFormatImageView=_videoFormatImageView;
 @property(retain, nonatomic) NSMutableSet *imageProxies; // @synthesize imageProxies=_imageProxies;
 @property(retain, nonatomic) TVLMediaBadgesElement *mediaBadgesElement; // @synthesize mediaBadgesElement=_mediaBadgesElement;
-- (void).cxx_destruct;
 - (void)loadImages;
 - (void)updateWithFeedElement:(id)arg1;
 - (id)currentFeedElement;

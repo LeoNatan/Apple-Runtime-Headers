@@ -18,10 +18,10 @@
 }
 
 + (id)searchWithCalendars:(id)arg1 searchTerm:(id)arg2 store:(id)arg3 callback:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(retain) EKEventStore *store; // @synthesize store=_store;
 @property(copy) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(retain) CalAutoCompleteOperation *acOperation; // @synthesize acOperation=_acOperation;
-- (void).cxx_destruct;
 - (id)searchTerm;
 - (void)setCNAutocompleteStore:(id)arg1;
 - (void)updatedAutoComplete:(id)arg1;

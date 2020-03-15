@@ -17,6 +17,7 @@
 + (id)getMetadataForAsset:(id)arg1;
 - (void).cxx_destruct;
 - (BOOL)processPairingForGroupIDs:(id)arg1 inContext:(id)arg2 duplicateDetection:(BOOL)arg3 error:(id *)arg4;
+- (BOOL)processPairingForEntireLibraryInContext:(id)arg1 error:(id *)arg2;
 - (id)init;
 
 @end

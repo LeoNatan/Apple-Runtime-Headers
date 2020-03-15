@@ -23,11 +23,11 @@
 + (id)_CAPIBaseURLStringFromConfiguration:(id)arg1;
 + (id)_errorByUpdatingRetryStatusForError:(id)arg1;
 + (id)_errorForStatus:(long long)arg1 url:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCAsyncSerialQueue *requestSerialQueue; // @synthesize requestSerialQueue=_requestSerialQueue;
 @property(copy) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
-- (void).cxx_destruct;
 - (void)performHTTPRequestWithURL:(id)arg1 valuesByHTTPHeaderField:(id)arg2 method:(id)arg3 data:(id)arg4 contentType:(id)arg5 priority:(float)arg6 requiresMescalSigning:(BOOL)arg7 callbackQueue:(id)arg8 completion:(CDUnknownBlockType)arg9;
 - (void)performHTTPRequestWithURL:(id)arg1 method:(id)arg2 data:(id)arg3 contentType:(id)arg4 priority:(float)arg5 requiresMescalSigning:(BOOL)arg6 callbackQueue:(id)arg7 completion:(CDUnknownBlockType)arg8;
 - (id)initWithConfigurationManager:(id)arg1 sourceApplicationBundleIdentifier:(id)arg2;

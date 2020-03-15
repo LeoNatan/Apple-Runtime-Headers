@@ -41,6 +41,7 @@
 + (id)sharedCropInteractionContext;
 + (id)_cropModelWithInputExtent:(struct CGRect)arg1 orientation:(long long)arg2 cropOperation:(id)arg3;
 + (id)_cropModelWithRenderDescription:(id)arg1 inputExtent:(struct CGRect)arg2;
+- (void).cxx_destruct;
 @property(readonly) CropInteractionContext *currentInteractionContext; // @synthesize currentInteractionContext=_currentInteractionContext;
 @property(readonly, nonatomic) CDStruct_5e758c1a viewAspectRatio; // @synthesize viewAspectRatio=_viewAspectRatio;
 @property(readonly, nonatomic) struct CGRect inputExtent; // @synthesize inputExtent=_inputExtent;
@@ -49,7 +50,6 @@
 @property(readonly, nonatomic) PAImageItemViewMode *normalMode; // @synthesize normalMode=_normalMode;
 @property(readonly, nonatomic) PAImageItemViewMode *cropMode; // @synthesize cropMode=_cropMode;
 @property(readonly, nonatomic) PAImageItemViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (CDStruct_5e758c1a)originalAspectRatio;
 - (CDStruct_5e758c1a)freeFormAspectRatio;
 - (BOOL)aspectRatioIsFreeForm;

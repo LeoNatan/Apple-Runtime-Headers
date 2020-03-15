@@ -16,9 +16,9 @@
     NSMutableArray *_items;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(copy, nonatomic) NSMutableArray *indexBaskets; // @synthesize indexBaskets=_indexBaskets;
-- (void).cxx_destruct;
 - (id)minePatternsWithMinSupport:(unsigned long long)arg1 constrainedToPatternsWithTypes:(id)arg2;
 - (id)getItemIndexSetsWithMinSupport:(double)arg1 itemIndexSets:(id)arg2;
 - (id)supportOfItemIndexSet:(id)arg1;

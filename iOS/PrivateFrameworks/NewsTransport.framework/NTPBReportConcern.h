@@ -44,6 +44,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *userId; // @synthesize userId=_userId;
 @property(nonatomic) _Bool isUserSubscribedToFeed; // @synthesize isUserSubscribedToFeed=_isUserSubscribedToFeed;
 @property(retain, nonatomic) NSString *feedPresentationSearchString; // @synthesize feedPresentationSearchString=_feedPresentationSearchString;
@@ -55,7 +56,6 @@
 @property(retain, nonatomic) NSString *concernComments; // @synthesize concernComments=_concernComments;
 @property(retain, nonatomic) NSString *clientId; // @synthesize clientId=_clientId;
 @property(nonatomic) int reportVersion; // @synthesize reportVersion=_reportVersion;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -14,9 +14,9 @@
     NSMutableArray *_sessions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *sessions; // @synthesize sessions=_sessions;
 @property(readonly, nonatomic) _Bool enforceSinglePlaybackSession; // @synthesize enforceSinglePlaybackSession=_enforceSinglePlaybackSession;
-- (void).cxx_destruct;
 - (id)_createSessionForPlayer:(id)arg1;
 - (void)_reportForSession:(id)arg1 state:(id)arg2 reason:(id)arg3;
 - (_Bool)_isTransitionValidForPlayer:(id)arg1 fromState:(id)arg2 toState:(id)arg3;

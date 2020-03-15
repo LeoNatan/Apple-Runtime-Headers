@@ -15,12 +15,12 @@ __attribute__((visibility("hidden")))
     function_b1fce659 _sortByCompletionHandler;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property function_b1fce659 sortByCompletionHandler; // @synthesize sortByCompletionHandler=_sortByCompletionHandler;
 @property _Bool checkChildrenForTagsChanged; // @synthesize checkChildrenForTagsChanged=_checkChildrenForTagsChanged;
 @property _Bool groupByChanged; // @synthesize groupByChanged=_groupByChanged;
 @property _Bool sortByChanged; // @synthesize sortByChanged=_sortByChanged;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 
 @end
 

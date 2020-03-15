@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     UIWindow *_cachedMainWindow;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIWindow *cachedMainWindow; // @synthesize cachedMainWindow=_cachedMainWindow;
 @property(retain, nonatomic) UIView *progressView; // @synthesize progressView=_progressView;
-- (void).cxx_destruct;
 - (void)willRemoveSubview:(id)arg1;
 - (void)setShowing:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)addProgressView:(id)arg1;

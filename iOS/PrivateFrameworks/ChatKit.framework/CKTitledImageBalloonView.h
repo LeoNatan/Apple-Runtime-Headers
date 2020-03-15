@@ -15,9 +15,9 @@
     UILabel *_titleLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *chevron; // @synthesize chevron=_chevron;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *title;
 - (void)setOrientation:(BOOL)arg1;
 - (void)tapGestureRecognized:(id)arg1;

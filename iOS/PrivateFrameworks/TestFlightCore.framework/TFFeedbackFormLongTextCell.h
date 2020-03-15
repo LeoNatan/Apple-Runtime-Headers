@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
 + (struct CGSize)_sizeToFitText:(id)arg1 fittingSize:(struct CGSize)arg2 inTraitEnvironment:(id)arg3;
 + (struct UIEdgeInsets)_textViewInsetsInTraitEnvironment:(id)arg1;
 + (struct CGSize)sizeForEntry:(id)arg1 dataSource:(id)arg2 fittingSize:(struct CGSize)arg3 inTraitEnvironment:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TFFeedbackEntryLongText *longTextEntry; // @synthesize longTextEntry=_longTextEntry;
 @property(readonly, nonatomic) UITextView *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 - (void)_prepareForDisplayWithTraitCollection:(id)arg1;
 - (void)_updateCellHeightForTextUpdatesInTableView:(id)arg1;
 - (void)_updateCellHeightForTextIfNecessary;

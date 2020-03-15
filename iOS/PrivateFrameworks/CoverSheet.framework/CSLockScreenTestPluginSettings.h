@@ -31,6 +31,7 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property _Bool disableOnUnlock; // @synthesize disableOnUnlock=_disableOnUnlock;
 @property(retain) NSString *subtitleValue; // @synthesize subtitleValue=_subtitleValue;
 @property _Bool hideSubtitle; // @synthesize hideSubtitle=_hideSubtitle;
@@ -49,7 +50,6 @@
 @property long long presentationStyle; // @synthesize presentationStyle=_presentationStyle;
 @property _Bool enableLostModePlugin; // @synthesize enableLostModePlugin=_enableLostModePlugin;
 @property _Bool enablePlugin; // @synthesize enablePlugin=_enablePlugin;
-- (void).cxx_destruct;
 - (void)setDefaultValues;
 
 @end

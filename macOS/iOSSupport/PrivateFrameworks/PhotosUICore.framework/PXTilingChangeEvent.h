@@ -17,12 +17,12 @@
     struct UIEdgeInsets _contentInset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXTilingLayoutInvalidationContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 @property(readonly, nonatomic) struct CGSize referenceSize; // @synthesize referenceSize=_referenceSize;
 @property(readonly, nonatomic) PXTilingLayout *layout; // @synthesize layout=_layout;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithLayoutInvalidationContext:(id)arg1;
 - (id)initWithCoordinateSpaceChange;

@@ -18,11 +18,11 @@
     double _minimumConfidence;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double minimumConfidence; // @synthesize minimumConfidence=_minimumConfidence;
 @property(retain, nonatomic) RTLocation *referenceLocation; // @synthesize referenceLocation=_referenceLocation;
 @property(nonatomic) double windowDuration; // @synthesize windowDuration=_windowDuration;
 @property(retain, nonatomic) NSDate *referenceDate; // @synthesize referenceDate=_referenceDate;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)evaluatePredictedDate:(id)arg1;
 - (id)init;

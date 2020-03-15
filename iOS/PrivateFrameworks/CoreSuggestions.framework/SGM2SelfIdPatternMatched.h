@@ -26,11 +26,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int messageIndex; // @synthesize messageIndex=_messageIndex;
 @property(nonatomic) unsigned int nameTokens; // @synthesize nameTokens=_nameTokens;
 @property(retain, nonatomic) NSString *patternHash; // @synthesize patternHash=_patternHash;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

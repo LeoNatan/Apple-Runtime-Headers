@@ -74,6 +74,7 @@
 + (id)settingsForPrivateStyle:(long long)arg1 graphicsQuality:(long long)arg2;
 + (id)settingsForStyle:(long long)arg1 graphicsQuality:(long long)arg2;
 + (id)settingsPreservingHintsFromSettings:(id)arg1 graphicsQuality:(long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool appliesTintAndBlurSettings; // @synthesize appliesTintAndBlurSettings=_appliesTintAndBlurSettings;
 @property(retain, nonatomic) NSValue *colorOffsetMatrix; // @synthesize colorOffsetMatrix=_colorOffsetMatrix;
 @property(nonatomic) double colorOffsetAlpha; // @synthesize colorOffsetAlpha=_colorOffsetAlpha;
@@ -127,7 +128,6 @@
 @property(nonatomic) long long graphicsQuality; // @synthesize graphicsQuality=_graphicsQuality;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) _UIBackdropView *backdrop; // @synthesize backdrop=_backdrop;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) UIColor *combinedTintColor;
 - (void)computeOutputSettingsUsingModel:(id)arg1;

@@ -26,12 +26,12 @@ __attribute__((visibility("hidden")))
 + (unsigned long long)frameRateMicroseconds;
 + (BOOL)prefersTrackingUntilMouseUp;
 + (id)makeSidebarItemCellForView:(id)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain) FI_TMouseOverButton *button; // @synthesize button=_button;
 @property(nonatomic) _Bool isEditing; // @synthesize isEditing=_isEditing;
 @property(readonly, nonatomic) int actionKind; // @synthesize actionKind=_actionKind;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)nextAnimationFrame;
 - (void)updateLayer;
 - (void)viewWillDraw;

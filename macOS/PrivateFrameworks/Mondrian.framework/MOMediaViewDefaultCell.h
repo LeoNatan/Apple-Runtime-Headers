@@ -30,9 +30,9 @@
 + (id)thumbnailEmptyImage;
 + (void)clearColorCaches;
 + (struct CGColor *)thumbnailEmptyColor;
+- (void).cxx_destruct;
 @property(nonatomic) double thumbnailCornerRadius; // @synthesize thumbnailCornerRadius=_thumbnailCornerRadius;
 @property(readonly, nonatomic) NSView *thumbnailView; // @synthesize thumbnailView=_thumbnailView;
-- (void).cxx_destruct;
 - (BOOL)mediaViewCellThumbnailViewWantsTransparentThumbnailBackground:(id)arg1;
 - (struct CGColor *)thumbnailEmptyColorForMediaViewCellThumbnailView:(id)arg1;
 - (id)thumbnailEmptyImageForMediaViewCellThumbnailView:(id)arg1;

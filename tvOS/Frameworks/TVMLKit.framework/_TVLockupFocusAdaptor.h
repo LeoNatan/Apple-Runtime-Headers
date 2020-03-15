@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIView *_selectingView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *selectingView; // @synthesize selectingView=_selectingView;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
-- (void).cxx_destruct;
 - (void)_playButtonAction:(id)arg1;
 - (void)_selectButtonAction:(id)arg1;
 - (void)_showPressState;

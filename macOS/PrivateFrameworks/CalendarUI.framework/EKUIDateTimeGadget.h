@@ -17,9 +17,9 @@
 }
 
 + (id)interestedChangeKeys;
+- (void).cxx_destruct;
 @property BOOL shouldSuppressMiniCal; // @synthesize shouldSuppressMiniCal=_shouldSuppressMiniCal;
 @property(retain) IIDatePickerWithMiniCal *datePicker; // @synthesize datePicker=_datePicker;
-- (void).cxx_destruct;
 - (double)preferredControlWidth;
 - (double)baselineOffset;
 - (double)pixelsBetweenLabelAndControl;

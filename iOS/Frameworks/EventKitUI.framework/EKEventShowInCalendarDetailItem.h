@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     NSDate *_proposedTime;
 }
 
-@property(retain, nonatomic) NSDate *proposedTime; // @synthesize proposedTime=_proposedTime;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *proposedTime; // @synthesize proposedTime=_proposedTime;
 - (id)detailViewControllerWithFrame:(struct CGRect)arg1 forSubitemAtIndex:(unsigned long long)arg2;
 - (id)_dayPreviewViewController;
 - (void)_datesForPreviewViewControllerWithStartDate:(id *)arg1 endDate:(id *)arg2;

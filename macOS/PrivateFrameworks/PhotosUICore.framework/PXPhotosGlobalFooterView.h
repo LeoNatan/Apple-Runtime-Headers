@@ -39,11 +39,11 @@
 + (id)extendedTitleTextAttributes;
 + (id)titleTextAttributes;
 + (id)attributedStringForInputString:(id)arg1 actionTitle:(id)arg2 textAttributes:(id)arg3 linkTextAttributes:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXPhotosGlobalFooterViewLayoutDelegate> layoutDelegate; // @synthesize layoutDelegate=_layoutDelegate;
 @property(nonatomic) __weak id <PXPhotosGlobalFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PXFooterViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(readonly, nonatomic) double currentHeight; // @synthesize currentHeight=_currentHeight;
-- (void).cxx_destruct;
 - (BOOL)textView:(id)arg1 clickedOnLink:(id)arg2 atIndex:(unsigned long long)arg3;
 - (struct CGSize)_performLayoutInWidth:(double)arg1 updateSubviewFrames:(BOOL)arg2;
 - (void)layout;

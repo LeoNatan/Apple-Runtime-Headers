@@ -13,8 +13,8 @@
     NSDictionary *_responseDictionary;
 }
 
-@property(readonly, nonatomic) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
 @property(readonly, nonatomic) NSArray *responseDataItems;
 - (id)initWithResult:(id)arg1;
 

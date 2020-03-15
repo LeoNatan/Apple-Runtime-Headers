@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)copyICloudDriveComponentDisplayMetadata;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id icon; // @synthesize icon=_icon;
 @property(readonly, copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, copy, nonatomic) NSAttributedString *alternateDisplayName; // @synthesize alternateDisplayName=_alternateDisplayName;
 @property(readonly, copy, nonatomic) NSAttributedString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDisplayName:(id)arg1 suffix:(id)arg2 url:(id)arg3 icon:(id)arg4;
 

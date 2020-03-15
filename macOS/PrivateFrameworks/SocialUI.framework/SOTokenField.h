@@ -14,8 +14,8 @@
     BOOL _needsRefresh;
 }
 
-@property(nonatomic) BOOL needsRefresh; // @synthesize needsRefresh=_needsRefresh;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL needsRefresh; // @synthesize needsRefresh=_needsRefresh;
 - (BOOL)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
 - (void)mouseExited:(id)arg1;
 - (struct CGSize)intrinsicContentSize;

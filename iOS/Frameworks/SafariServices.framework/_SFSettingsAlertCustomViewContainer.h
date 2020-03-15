@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     long long _defaultBackgroundMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long defaultBackgroundMode; // @synthesize defaultBackgroundMode=_defaultBackgroundMode;
 @property(nonatomic) _Bool hidesSeparator; // @synthesize hidesSeparator=_hidesSeparator;
 @property(nonatomic) __weak _SFSettingsAlertItem *item; // @synthesize item=_item;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long backgroundMode;
 - (id)initWithContentView:(id)arg1;
 

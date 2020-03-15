@@ -42,6 +42,7 @@
     CLLocation *_currentLocation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLLocation *currentLocation; // @synthesize currentLocation=_currentLocation;
 @property(nonatomic) int currentAppLocationAuthorizationStatus; // @synthesize currentAppLocationAuthorizationStatus=_currentAppLocationAuthorizationStatus;
 @property(retain, nonatomic) CLLocationManager *locationManager; // @synthesize locationManager=_locationManager;
@@ -63,7 +64,6 @@
 @property(retain, nonatomic) WFLocationValue *value; // @synthesize value=_value;
 @property(readonly, nonatomic) unsigned long long pickerType; // @synthesize pickerType=_pickerType;
 @property(nonatomic) __weak id <WFLocationPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (void)resetSearchResults;
 - (id)mapRadiusView:(id)arg1 overlayForRadius:(double)arg2;

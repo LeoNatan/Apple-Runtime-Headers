@@ -14,8 +14,8 @@
 }
 
 + (id)testPrefix;
-@property(retain, nonatomic) NSDictionary *testOptions; // @synthesize testOptions=_testOptions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *testOptions; // @synthesize testOptions=_testOptions;
 - (void)runTest:(id)arg1;
 
 @end

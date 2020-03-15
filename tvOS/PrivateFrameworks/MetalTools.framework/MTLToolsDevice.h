@@ -36,6 +36,7 @@
 }
 
 + (void)registerDevices;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MTLToolsPointerArray *indirectCommandBuffers; // @synthesize indirectCommandBuffers=_indirectCommandBuffers;
 @property(readonly, nonatomic) MTLToolsPointerArray *argumentEncoders; // @synthesize argumentEncoders=_argumentEncoders;
 @property(readonly, nonatomic) MTLToolsPointerArray *indirectArgumentEncoders; // @synthesize indirectArgumentEncoders=_indirectArgumentEncoders;
@@ -55,7 +56,6 @@
 @property(readonly, nonatomic) MTLToolsPointerArray *heaps; // @synthesize heaps=_heaps;
 @property(readonly) unsigned long long memorySize; // @synthesize memorySize=_memorySize;
 @property(readonly, getter=isIntegrated) _Bool integrated; // @synthesize integrated=_integrated;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool supportsFloat16BCubicFiltering;
 @property(readonly, nonatomic) _Bool supportsForceSeamsOnCubemaps;
 @property(readonly, nonatomic) _Bool supportsTexture2DMultisampleArray;

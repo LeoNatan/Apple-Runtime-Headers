@@ -22,13 +22,13 @@
     AKAuthorizationPresentationContext *_presentationContext;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsAccountPassword; // @synthesize needsAccountPassword=_needsAccountPassword;
 @property(nonatomic, getter=isEmailExpanded) _Bool emailExpanded; // @synthesize emailExpanded=_emailExpanded;
 @property(nonatomic, getter=isEditingName) _Bool editingName; // @synthesize editingName=_editingName;
 @property(readonly, nonatomic) AKAuthorizationPresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
 @property(nonatomic) _Bool editableScopeChoicesChanged; // @synthesize editableScopeChoicesChanged=_editableScopeChoicesChanged;
 @property(readonly, nonatomic) AKAuthorizationScopeChoices *editableScopeChoices; // @synthesize editableScopeChoices=_editableScopeChoices;
-- (void).cxx_destruct;
 - (void)passwordAuthenticationCompletedWithResults:(id)arg1 error:(id)arg2;
 - (id)init;
 - (void)receivedNumericEntry:(id)arg1;

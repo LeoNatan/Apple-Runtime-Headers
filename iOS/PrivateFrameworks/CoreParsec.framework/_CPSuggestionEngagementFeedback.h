@@ -18,9 +18,9 @@
     _CPSearchSuggestionForFeedback *_suggestion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _CPSearchSuggestionForFeedback *suggestion; // @synthesize suggestion=_suggestion;
 @property(nonatomic) unsigned long long timestamp;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

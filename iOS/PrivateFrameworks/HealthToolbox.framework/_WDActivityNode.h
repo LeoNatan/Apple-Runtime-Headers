@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     id <WDUserActivityResponder> _nextResponder;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <WDUserActivityResponder> nextResponder; // @synthesize nextResponder=_nextResponder;
 @property(nonatomic) __weak id <WDUserActivityResponder> responder; // @synthesize responder=_responder;
-- (void).cxx_destruct;
 - (id)_nextNode;
 - (void)addActivitiesToArray:(id)arg1 currentNode:(id)arg2;
 - (id)transitionActivityForResponder:(id)arg1 newResponder:(id)arg2 transitionDictionary:(id)arg3;

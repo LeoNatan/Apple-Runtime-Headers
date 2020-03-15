@@ -38,6 +38,7 @@
 + (id)defaultsArrayFromCriteria:(id)arg1;
 + (id)criteriaFromDefaultsArray:(id)arg1 removingRecognizedKeys:(BOOL)arg2;
 + (id)criteriaFromDefaultsArray:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *uniqueId; // @synthesize uniqueId=_uniqueId;
 @property BOOL originatedFromSearchSuggestion; // @synthesize originatedFromSearchSuggestion=_originatedFromSearchSuggestion;
 @property unsigned long long knownLimit; // @synthesize knownLimit=_knownLimit;
@@ -48,7 +49,6 @@
 @property(copy) NSString *expression; // @synthesize expression=_expression;
 @property(copy) NSString *name; // @synthesize name=_name;
 @property int specialMailboxType; // @synthesize specialMailboxType=_specialMailboxType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL containsJunkMailboxCriterion;
 - (BOOL)isEqualToCriterion:(id)arg1;
 - (BOOL)isValid:(id *)arg1 options:(unsigned int)arg2;

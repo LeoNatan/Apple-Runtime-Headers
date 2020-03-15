@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _whichError;
 }
 
-@property(readonly, nonatomic) unsigned long long whichError; // @synthesize whichError=_whichError;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long whichError; // @synthesize whichError=_whichError;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

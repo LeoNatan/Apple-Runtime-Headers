@@ -14,9 +14,9 @@
     CDUnknownBlockType _eventHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isRunningEvent; // @synthesize isRunningEvent=_isRunningEvent;
 @property(readonly, copy, nonatomic) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
-- (void).cxx_destruct;
 - (void)didCompleteEvent;
 - (void)stop;
 - (void)scheduleEvent;

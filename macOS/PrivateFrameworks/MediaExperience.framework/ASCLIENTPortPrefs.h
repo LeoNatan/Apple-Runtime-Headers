@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)polarPatternsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *polarPatterns; // @synthesize polarPatterns=_polarPatterns;
 @property(nonatomic) unsigned int dataSourceID; // @synthesize dataSourceID=_dataSourceID;
 @property(retain, nonatomic) NSString *portUID; // @synthesize portUID=_portUID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

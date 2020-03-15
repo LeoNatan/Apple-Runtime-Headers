@@ -20,8 +20,8 @@
 
 + (id)remoteInterface;
 + (id)plistURL;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *operationQueue; // @synthesize operationQueue=_operationQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *operationQueue; // @synthesize operationQueue=_operationQueue;
 - (id)_vipsDictionary;
 - (void)_loadVIPs;
 - (void)saveVIPs:(id)arg1;

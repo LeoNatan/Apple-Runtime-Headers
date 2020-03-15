@@ -16,8 +16,8 @@
 }
 
 + (id)withDictionary:(id)arg1;
-@property(retain, nonatomic) NSMutableDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (long long)httpContentLength;
 - (id)httpContentType;
 - (id)httpInputStream;

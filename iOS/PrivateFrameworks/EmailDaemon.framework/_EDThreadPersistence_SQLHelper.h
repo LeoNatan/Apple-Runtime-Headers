@@ -14,9 +14,9 @@
     _EDThreadPersistence_StatementCache *_cache;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _EDThreadPersistence_StatementCache *cache; // @synthesize cache=_cache;
 @property(readonly, nonatomic) EDPersistenceDatabaseConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (_Bool)executeSQL:(id)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (_Bool)executeSQL:(id)arg1 indexBindings:(id)arg2 errorHandler:(CDUnknownBlockType)arg3;
 - (_Bool)executeSelectSQL:(id)arg1 bindings:(CDUnknownBlockType)arg2 errorHandler:(CDUnknownBlockType)arg3 rowHandler:(CDUnknownBlockType)arg4;

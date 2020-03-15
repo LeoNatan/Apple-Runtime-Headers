@@ -35,6 +35,7 @@
     struct UIEdgeInsets _outlineInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int deleteEdge; // @synthesize deleteEdge=_deleteEdge;
 @property(nonatomic) _Bool allowsDelete; // @synthesize allowsDelete=_allowsDelete;
 @property(nonatomic) _Bool allowsSelect; // @synthesize allowsSelect=_allowsSelect;
@@ -50,7 +51,6 @@
 @property(nonatomic) float outlineStrokeWidth; // @synthesize outlineStrokeWidth=_outlineStrokeWidth;
 @property(retain, nonatomic) UIColor *outlineColor; // @synthesize outlineColor=_outlineColor;
 @property(nonatomic) int layoutRule; // @synthesize layoutRule=_layoutRule;
-- (void).cxx_destruct;
 - (void)_tearDownOutlineBackingView;
 - (void)_setUpOutlineBackingView;
 - (void)_handleTap:(id)arg1;

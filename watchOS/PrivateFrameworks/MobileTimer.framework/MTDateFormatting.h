@@ -19,9 +19,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool timeDesignatorAppearsBeforeTime; // @synthesize timeDesignatorAppearsBeforeTime=_timeDesignatorAppearsBeforeTime;
 @property(readonly, nonatomic) _Bool use24HourTime; // @synthesize use24HourTime=_use24HourTime;
-- (void).cxx_destruct;
 - (id)timeDesignatorForDate:(id)arg1 timeZone:(id)arg2;
 - (id)timeDesignatorForDate:(id)arg1;
 - (id)localizedTimeStringFromDate:(id)arg1 forTimeZone:(id)arg2 timeDesignator:(out id *)arg3;

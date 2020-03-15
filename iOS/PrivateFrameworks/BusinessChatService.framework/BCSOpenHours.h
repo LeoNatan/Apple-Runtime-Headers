@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSTimeZone *localTimeZone; // @synthesize localTimeZone=_localTimeZone;
 @property(readonly, nonatomic) NSDictionary *timeRanges; // @synthesize timeRanges=_timeRanges;
-- (void).cxx_destruct;
 - (void)_printOpenHoursForTheWeek;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_convertDateToLocalTimeZoneWithDate:(id)arg1 timeZone:(id)arg2;

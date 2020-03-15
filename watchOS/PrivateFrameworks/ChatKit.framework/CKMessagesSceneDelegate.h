@@ -20,15 +20,17 @@
     CKSceneDelegateState *_storedState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowRegistrationOverride; // @synthesize shouldShowRegistrationOverride=_shouldShowRegistrationOverride;
 @property(retain, nonatomic) CKSceneDelegateState *storedState; // @synthesize storedState=_storedState;
 @property(nonatomic, getter=isLocked) _Bool locked; // @synthesize locked=_locked;
 @property(nonatomic, getter=isSuspended) _Bool suspended; // @synthesize suspended=_suspended;
 @property(readonly, nonatomic) CKMessagesController *messagesController; // @synthesize messagesController=_messagesController;
-- (void).cxx_destruct;
 - (id)_oldInputContextIdentifiers;
 - (void)_clearOldInputContextIdentifiersIfNeeded;
 - (id)sharedConversationList;
+- (_Bool)_messageFilteringEnabled;
+- (_Bool)_shouldShowInboxView;
 - (void)messagesController:(id)arg1 didUpdateCurrentConversation:(id)arg2;
 - (id)canActivatePredicate;
 - (id)prefersToActivatePredicate;

@@ -27,6 +27,8 @@ __attribute__((visibility("hidden")))
     id <NFTagF> _tagF;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NFTagF> tagF; // @synthesize tagF=_tagF;
 @property(readonly, nonatomic) id <NFTagB> tagB; // @synthesize tagB=_tagB;
 @property(readonly, nonatomic) id <NFTagA> tagA; // @synthesize tagA=_tagA;
@@ -36,8 +38,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSData *UID; // @synthesize UID=_UID;
 @property(readonly, copy, nonatomic) NSData *AppData; // @synthesize AppData=_AppData;
 @property(readonly, nonatomic) unsigned int technology; // @synthesize technology=_technology;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)initWithType:(unsigned int)arg1 tagID:(id)arg2;
 - (id)initWithType:(unsigned int)arg1;
 - (BOOL)isEqualToNFTag:(id)arg1;

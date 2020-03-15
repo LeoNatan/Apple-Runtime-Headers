@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVObservationController *observationController; // @synthesize observationController=_observationController;
 @property(nonatomic) __weak AVPlayerLayer *activeSourcePlayerLayer; // @synthesize activeSourcePlayerLayer=_activeSourcePlayerLayer;
-- (void).cxx_destruct;
 - (void)stopShowingContentFromActiveSourcePlayerLayer;
 - (void)startShowingContentFromSourcePlayerLayer:(id)arg1;
 - (void)dealloc;

@@ -15,10 +15,10 @@
     CDUnknownBlockType _saveDatabaseSubscriptionCompletionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType saveDatabaseSubscriptionCompletionBlock; // @synthesize saveDatabaseSubscriptionCompletionBlock=_saveDatabaseSubscriptionCompletionBlock;
 @property(copy, nonatomic) CKNotificationInfo *notificationInfo; // @synthesize notificationInfo=_notificationInfo;
 @property(copy, nonatomic) NSString *subscriptionID; // @synthesize subscriptionID=_subscriptionID;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (_Bool)validateOperation;

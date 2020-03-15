@@ -13,8 +13,8 @@
     IMHandle *_sender;
 }
 
-@property(readonly, nonatomic) IMHandle *sender; // @synthesize sender=_sender;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IMHandle *sender; // @synthesize sender=_sender;
 - (id)_initWithItem:(id)arg1 sender:(id)arg2;
 @property(readonly, copy, nonatomic) NSString *title;
 - (id)copyWithZone:(struct _NSZone *)arg1;

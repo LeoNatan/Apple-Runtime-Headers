@@ -22,13 +22,13 @@
 
 + (id)layoutRuleForDevice:(id)arg1 withReferenceFrame:(struct CGRect)arg2 horizontalLayout:(long long)arg3 verticalLayout:(long long)arg4 clip:(_Bool)arg5 transform:(struct CGAffineTransform)arg6;
 + (id)layoutRuleForDevice:(id)arg1 withReferenceFrame:(struct CGRect)arg2 horizontalLayout:(long long)arg3 verticalLayout:(long long)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGAffineTransform transform; // @synthesize transform=_transform;
 @property(nonatomic) _Bool clipsToReferenceFrame; // @synthesize clipsToReferenceFrame=_clipsToReferenceFrame;
 @property(nonatomic) long long verticalLayout; // @synthesize verticalLayout=_verticalLayout;
 @property(nonatomic) long long horizontalLayout; // @synthesize horizontalLayout=_horizontalLayout;
 @property(nonatomic) struct CGRect referenceFrame; // @synthesize referenceFrame=_referenceFrame;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (id)description;
 - (void)validate;
 - (id)copyWithZone:(struct _NSZone *)arg1;

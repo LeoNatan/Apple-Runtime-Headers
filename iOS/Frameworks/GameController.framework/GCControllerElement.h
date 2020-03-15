@@ -14,9 +14,9 @@
     GCController *_controller;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak GCController *controller; // @synthesize controller=_controller;
 @property(nonatomic) __weak GCControllerElement *collection; // @synthesize collection=_collection;
-- (void).cxx_destruct;
 - (_Bool)_setValue:(float)arg1 queue:(id)arg2;
 - (_Bool)_setValue:(float)arg1;
 @property(readonly, nonatomic, getter=isAnalog) _Bool analog;

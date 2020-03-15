@@ -13,8 +13,8 @@
     id <SiriUIAccessibilityStashDelegate> _accessibilityStashDelegate;
 }
 
-@property(nonatomic) __weak id <SiriUIAccessibilityStashDelegate> accessibilityStashDelegate; // @synthesize accessibilityStashDelegate=_accessibilityStashDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SiriUIAccessibilityStashDelegate> accessibilityStashDelegate; // @synthesize accessibilityStashDelegate=_accessibilityStashDelegate;
 - (id)accessibilityLinkedUIElements;
 - (id)accessibilityIdentifier;
 - (void)accessibilityPerformAction:(id)arg1;

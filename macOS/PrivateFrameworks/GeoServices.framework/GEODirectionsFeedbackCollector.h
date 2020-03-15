@@ -18,9 +18,9 @@
     BOOL _hasEnteredPreArrivalMode;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEODirectionsFeedback *currentDirectionsFeedback; // @synthesize currentDirectionsFeedback=_currentDirectionsFeedback;
 @property(retain, nonatomic) GEODirectionsFeedbackLogMessage *currentFeedbackLogMessage; // @synthesize currentFeedbackLogMessage=_currentFeedbackLogMessage;
-- (void).cxx_destruct;
 - (id)description;
 - (void)endFeedbackSessionWithTracePath:(id)arg1;
 - (void)changeNavigationType:(int)arg1;

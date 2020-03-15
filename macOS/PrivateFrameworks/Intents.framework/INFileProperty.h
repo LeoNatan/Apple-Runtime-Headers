@@ -24,6 +24,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) NSNumber *quantity; // @synthesize quantity=_quantity;
 @property(readonly, copy) NSString *value; // @synthesize value=_value;
 @property(readonly, copy) INPerson *person; // @synthesize person=_person;
@@ -31,7 +32,6 @@
 @property(readonly, copy) NSString *type; // @synthesize type=_type;
 @property(readonly, copy) NSString *qualifier; // @synthesize qualifier=_qualifier;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

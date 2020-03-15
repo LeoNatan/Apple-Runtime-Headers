@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_prefixStack;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_prefixStack) NSMutableArray *prefixStack; // @synthesize prefixStack=_prefixStack;
 @property(retain, nonatomic, getter=_statements) NSMutableArray *statements; // @synthesize statements=_statements;
 @property(copy, nonatomic) CDUnknownBlockType fallbackMessagePrefixHandler; // @synthesize fallbackMessagePrefixHandler=_fallbackMessagePrefixHandler;
 @property(nonatomic) unsigned long long currentIndentLevel; // @synthesize currentIndentLevel=_currentIndentLevel;
-- (void).cxx_destruct;
 - (void)decrementIndentLevelAndPopMessagePrefix;
 - (void)incrementIndentLevelAndPushMessagePrefix:(id)arg1;
 - (id)_messagePrefixAtIndentLevel:(unsigned long long)arg1;

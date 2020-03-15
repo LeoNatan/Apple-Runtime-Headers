@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) AFTriggerlessListeningOptions *triggerlessListeningOptions; // @synthesize triggerlessListeningOptions=_triggerlessListeningOptions;
 - (void).cxx_destruct;
+@property(copy, nonatomic) AFTriggerlessListeningOptions *triggerlessListeningOptions; // @synthesize triggerlessListeningOptions=_triggerlessListeningOptions;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

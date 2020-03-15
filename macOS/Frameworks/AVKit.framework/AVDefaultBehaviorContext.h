@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     AVPlayerView *_playerView;
 }
 
-@property(readonly, nonatomic) __weak AVPlayerView *playerView; // @synthesize playerView=_playerView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak AVPlayerView *playerView; // @synthesize playerView=_playerView;
 - (id)initWithAVKitOwner:(id)arg1;
 
 // Remaining properties

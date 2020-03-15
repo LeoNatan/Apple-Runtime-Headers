@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     NSString *_namedCornerStyle;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *namedCornerStyle; // @synthesize namedCornerStyle=_namedCornerStyle;
 @property(copy, nonatomic) IKColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(nonatomic) struct IKCornerRadii cornerRadii; // @synthesize cornerRadii=_cornerRadii;
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 @property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
 @property(copy, nonatomic) IKColor *borderColor; // @synthesize borderColor=_borderColor;
-- (void).cxx_destruct;
 - (_Bool)_usesBackgroundWithAlpha:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)bezierPathWithBounds:(struct CGRect)arg1;

@@ -44,8 +44,8 @@
 }
 
 + (id)observerWithObserver:(id)arg1;
-@property(readonly, nonatomic) __weak id <FBSceneManagerObserver> observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <FBSceneManagerObserver> observer; // @synthesize observer=_observer;
 - (id)_privateDelegate;
 - (id)_internalObserver;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

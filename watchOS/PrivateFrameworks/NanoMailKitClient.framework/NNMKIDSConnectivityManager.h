@@ -20,12 +20,12 @@
     NSObject<OS_dispatch_queue> *_executionQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *executionQueue; // @synthesize executionQueue=_executionQueue;
 @property(retain, nonatomic) IDSService *idsService; // @synthesize idsService=_idsService;
 @property(nonatomic) _Bool connected; // @synthesize connected=_connected;
 @property(nonatomic) unsigned int connectivityState; // @synthesize connectivityState=_connectivityState;
 @property(nonatomic) __weak id <NNMKIDSConnectivityObserver> observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (unsigned int)_connectivityState;
 - (_Bool)_isConnected:(unsigned int)arg1;
 - (void)_handleConnectionChange;

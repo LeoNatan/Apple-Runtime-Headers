@@ -22,6 +22,7 @@
     GKNicknameSuggestionViewMac *_suggestionsView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isSettingsView; // @synthesize isSettingsView=_isSettingsView;
 @property(retain, nonatomic) GKNicknameSuggestionViewMac *suggestionsView; // @synthesize suggestionsView=_suggestionsView;
 @property(retain, nonatomic) NSArray *suggestedNicknames; // @synthesize suggestedNicknames=_suggestedNicknames;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSMutableDictionary *analyticsPayload; // @synthesize analyticsPayload=_analyticsPayload;
 @property __weak id <GKNicknameControllerMacDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL shouldShakeTextFieldOnError; // @synthesize shouldShakeTextFieldOnError=_shouldShakeTextFieldOnError;
-- (void).cxx_destruct;
 - (void)shakeNicknameTextFieldWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)enableOrDisableNicknameEditing;
 - (void)displayNicknameSuggestions;

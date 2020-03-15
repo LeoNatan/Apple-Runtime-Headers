@@ -14,9 +14,9 @@
     NSMutableArray *_updatedContent;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *updatedContent; // @synthesize updatedContent=_updatedContent;
 @property(retain, nonatomic) NSMutableArray *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (void)cleanupState;
 
 @end

@@ -26,10 +26,10 @@
     id <NTKTritiumToolControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property _Bool isRunningCommand; // @synthesize isRunningCommand=_isRunningCommand;
 @property(nonatomic) __weak id <NTKTritiumToolControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NTKFace *face; // @synthesize face=_face;
-- (void).cxx_destruct;
 - (void)statusBarDidChange;
 - (void)handleTritiumToolCommand:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

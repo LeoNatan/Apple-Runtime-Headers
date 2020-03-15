@@ -13,8 +13,8 @@
     REScriptSymbolTable *_table;
 }
 
-@property(readonly, nonatomic) REScriptSymbolTable *table; // @synthesize table=_table;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) REScriptSymbolTable *table; // @synthesize table=_table;
 - (id)_errorForUnsupportedNode:(id)arg1;
 - (id)buildObjectWithBinaryExpressionListNode:(id)arg1 previousExpression:(id)arg2 error:(id *)arg3;
 - (id)buildObjectWithTopLevelBinaryExpressionListNode:(id)arg1 error:(id *)arg2;

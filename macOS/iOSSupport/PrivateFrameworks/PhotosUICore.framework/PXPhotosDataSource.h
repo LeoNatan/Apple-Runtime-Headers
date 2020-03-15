@@ -67,6 +67,7 @@
 + (id)backgroundFetchingGroup;
 + (id)_sharedPrefetchQueue;
 + (id)_curationSharedBackgroundQueue;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL allowNextChangeDeliveryOnAllRunLoopModes; // @synthesize allowNextChangeDeliveryOnAllRunLoopModes=_allowNextChangeDeliveryOnAllRunLoopModes;
 @property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(nonatomic, setter=_setPreviousCollectionsCount:) unsigned long long _previousCollectionsCount; // @synthesize _previousCollectionsCount=__previousCollectionsCount;
@@ -82,7 +83,6 @@
 @property(retain, nonatomic) PHFetchResult *collectionListFetchResult; // @synthesize collectionListFetchResult=_collectionListFetchResult;
 @property(readonly, nonatomic) unsigned long long versionIdentifier; // @synthesize versionIdentifier=_versionIdentifier;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
 - (BOOL)_isCurationEnabled;

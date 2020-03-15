@@ -24,6 +24,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)newWithBuilder:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, nonatomic) double fadeOutDuration; // @synthesize fadeOutDuration=_fadeOutDuration;
 @property(readonly, nonatomic) double fadeInDuration; // @synthesize fadeInDuration=_fadeInDuration;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) long long numberOfLoops; // @synthesize numberOfLoops=_numberOfLoops;
 @property(readonly, copy, nonatomic) NSData *itemData; // @synthesize itemData=_itemData;
 @property(readonly, copy, nonatomic) NSURL *itemURL; // @synthesize itemURL=_itemURL;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

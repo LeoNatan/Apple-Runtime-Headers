@@ -45,6 +45,7 @@
     id _eventMonitor;
 }
 
+- (void).cxx_destruct;
 @property(retain) id eventMonitor; // @synthesize eventMonitor=_eventMonitor;
 @property(retain) AKLineStylesViewController_Mac *lineStylesViewController; // @synthesize lineStylesViewController=_lineStylesViewController;
 @property(retain) AKTextAttributesViewController *textAttributesViewController; // @synthesize textAttributesViewController=_textAttributesViewController;
@@ -72,7 +73,6 @@
 @property(retain) NSView *lineStyleButton; // @synthesize lineStyleButton=_lineStyleButton;
 @property(retain) NSView *textToolButton; // @synthesize textToolButton=_textToolButton;
 @property(retain) NSView *shapesButton; // @synthesize shapesButton=_shapesButton;
-- (void).cxx_destruct;
 - (void)sidecarConnectionUpdated:(id)arg1;
 - (void)sidecarDevicesUpdated:(id)arg1;
 - (void)windowWillCloseNotification:(id)arg1;

@@ -17,10 +17,10 @@
 
 + (BOOL)privatizationSupported;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType privatizer; // @synthesize privatizer=_privatizer;
 @property(nonatomic) long long version; // @synthesize version=_version;
 @property(copy, nonatomic) NSString *privatizationIdentifier; // @synthesize privatizationIdentifier=_privatizationIdentifier;
-- (void).cxx_destruct;
 - (id)encryptedDataWithPublicKey:(id)arg1 data:(id)arg2 error:(id *)arg3;
 - (id)_encryptedDataWithPublicKey:(id)arg1 noiseable:(id)arg2 error:(id *)arg3;
 - (id)encryptedDataWithPublicKey:(id)arg1 inPlaceDataFloatNumbers:(float *)arg2 count:(unsigned long long)arg3 error:(id *)arg4;

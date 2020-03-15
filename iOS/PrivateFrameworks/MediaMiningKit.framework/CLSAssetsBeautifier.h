@@ -22,6 +22,7 @@
 }
 
 + (id)beautifier;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *identifiersOfRequiredItems; // @synthesize identifiersOfRequiredItems=_identifiersOfRequiredItems;
 @property(nonatomic) _Bool usesKMeans; // @synthesize usesKMeans=_usesKMeans;
 @property(nonatomic) _Bool usesVision; // @synthesize usesVision=_usesVision;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool enableIntermediateNaturalClustering; // @synthesize enableIntermediateNaturalClustering=_enableIntermediateNaturalClustering;
 @property(nonatomic) _Bool enableNetworkAccess; // @synthesize enableNetworkAccess=_enableNetworkAccess;
 @property(nonatomic) _Bool enableStatisticalSampling; // @synthesize enableStatisticalSampling=_enableStatisticalSampling;
-- (void).cxx_destruct;
 - (id)requiredItemsInItems:(id)arg1;
 - (_Bool)itemIsRequired:(id)arg1;
 - (id)rankSimilarItems:(id)arg1;

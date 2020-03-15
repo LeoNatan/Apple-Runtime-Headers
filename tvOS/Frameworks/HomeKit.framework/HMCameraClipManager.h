@@ -24,6 +24,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) NSHashTable *observers; // @synthesize observers=_observers;
 @property(readonly) NSMutableDictionary *videoAssetContextsByClipUUID; // @synthesize videoAssetContextsByClipUUID=_videoAssetContextsByClipUUID;
 @property(readonly) NSMutableDictionary *clipsByFetchUUID; // @synthesize clipsByFetchUUID=_clipsByFetchUUID;
@@ -31,7 +32,6 @@
 @property(readonly, copy) NSUUID *profileUniqueIdentifier; // @synthesize profileUniqueIdentifier=_profileUniqueIdentifier;
 @property(readonly) _HMContext *context; // @synthesize context=_context;
 @property(readonly) HMFUnfairLock *lock; // @synthesize lock=_lock;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
 - (id)logIdentifier;

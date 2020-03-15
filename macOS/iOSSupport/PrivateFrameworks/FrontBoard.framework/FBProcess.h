@@ -51,6 +51,7 @@
 }
 
 + (id)calloutQueue;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FBWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(readonly, nonatomic) RBSProcessIdentity *identity; // @synthesize identity=_identity;
 @property(readonly, nonatomic) BSProcessHandle *handle; // @synthesize handle=_handle;
@@ -61,7 +62,6 @@
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, copy, nonatomic) FBProcessExecutionContext *executionContext; // @synthesize executionContext=_executionContext;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

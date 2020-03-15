@@ -18,8 +18,8 @@
 
 + (id)localeFromJSValue:(struct OpaqueJSValue *)arg1 context:(struct OpaqueJSContext *)arg2;
 + (void)addClassDefinitionInContext:(struct OpaqueJSContext *)arg1;
-@property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 - (void)_jsFinalize;
 - (struct OpaqueJSValue *)jsObjectRef;
 - (id)initWithLocale:(id)arg1 context:(struct OpaqueJSContext *)arg2;

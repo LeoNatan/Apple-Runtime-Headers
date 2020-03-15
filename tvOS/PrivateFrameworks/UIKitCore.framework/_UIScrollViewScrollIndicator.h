@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
 
 + (double)_expandedIndicatorDimension;
 + (double)indicatorDimension;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
 @property(retain, nonatomic) UIView *roundedFillView; // @synthesize roundedFillView=_roundedFillView;
 @property(nonatomic) _Bool expandedForDirectManipulation; // @synthesize expandedForDirectManipulation=_expandedForDirectManipulation;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_layoutFillViewAnimated:(_Bool)arg1;
 - (struct CGRect)_offsetFillViewRectForExpandedState:(struct CGRect)arg1;

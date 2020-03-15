@@ -14,9 +14,9 @@
     HMDCameraSessionID *_remoteRequestHandlerSessionID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMDCameraSessionID *remoteRequestHandlerSessionID; // @synthesize remoteRequestHandlerSessionID=_remoteRequestHandlerSessionID;
 @property(readonly, nonatomic) __weak HMDCameraPowerAssertionHandler *assertionHandler; // @synthesize assertionHandler=_assertionHandler;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithPowerAssertionHandler:(id)arg1 remoteRequestHandlerSessionID:(id)arg2;
 

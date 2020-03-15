@@ -24,6 +24,7 @@
     struct UIEdgeInsets _insets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFocusContainerGuide *containerGuide; // @synthesize containerGuide=_containerGuide;
 @property(retain, nonatomic) TVLHeaderWithCountAndButtonsElement *feedElement; // @synthesize feedElement=_feedElement;
 @property(retain, nonatomic) UILabel *countLabel; // @synthesize countLabel=_countLabel;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
 @property(nonatomic) long long count; // @synthesize count=_count;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_buttonSelected:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (_Bool)canBecomeFocused;

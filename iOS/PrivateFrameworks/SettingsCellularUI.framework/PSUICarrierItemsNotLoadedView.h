@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     UILayoutGuide *_layoutGuide;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILayoutGuide *layoutGuide; // @synthesize layoutGuide=_layoutGuide;
 @property(retain, nonatomic) UIButton *retryButton; // @synthesize retryButton=_retryButton;
 @property(retain, nonatomic) UITextView *linkTextView; // @synthesize linkTextView=_linkTextView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIActivityIndicatorView *spinner; // @synthesize spinner=_spinner;
-- (void).cxx_destruct;
 - (double)preferredHeightForWidth:(double)arg1 inTableView:(id)arg2;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 - (void)setLinkText:(id)arg1 url:(id)arg2;

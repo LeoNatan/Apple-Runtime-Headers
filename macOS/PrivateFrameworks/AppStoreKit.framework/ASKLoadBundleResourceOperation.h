@@ -14,9 +14,9 @@
     NSArray *_searchBundles;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *searchBundles; // @synthesize searchBundles=_searchBundles;
 @property(readonly, copy, nonatomic) NSString *resourceName; // @synthesize resourceName=_resourceName;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithResourceName:(id)arg1 searchBundles:(id)arg2;
 

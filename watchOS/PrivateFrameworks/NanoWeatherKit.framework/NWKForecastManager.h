@@ -32,6 +32,7 @@
     NWKRoutineForecastConnection *_routineForecastConnection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isInMetricObservationMode) _Bool metricObservationMode; // @synthesize metricObservationMode=_metricObservationMode;
 @property(retain, nonatomic) NWKRoutineForecastConnection *routineForecastConnection; // @synthesize routineForecastConnection=_routineForecastConnection;
 @property(retain, nonatomic) NWKLocationConnection *locationConnection; // @synthesize locationConnection=_locationConnection;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) WFLocation *selectedLocation; // @synthesize selectedLocation=_selectedLocation;
 @property(retain, nonatomic) WFLocation *localLocation; // @synthesize localLocation=_localLocation;
 @property(retain, nonatomic) NSArray *staticLocations; // @synthesize staticLocations=_staticLocations;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *forecastConnections;
 - (void)_updateLocationInCachedForecast:(id)arg1;
 - (void)_removeForecastContainerForLocation:(id)arg1;

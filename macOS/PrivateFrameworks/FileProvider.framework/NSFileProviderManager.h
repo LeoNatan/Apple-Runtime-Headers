@@ -7,12 +7,12 @@
 #import <objc/NSObject.h>
 
 @class NSArray, NSFileProviderDomain, NSMutableDictionary, NSString, NSURL, NSXPCConnection, _FPFilePresenterObserver;
-@protocol FPDDaemon, FPDDomainServicing><NSXPCProxyCreating, OS_dispatch_queue, OS_dispatch_semaphore, OS_dispatch_source;
+@protocol FPDDaemon, FPDDomainServicing><FPXPCAutomaticErrorProxy, OS_dispatch_queue, OS_dispatch_semaphore, OS_dispatch_source;
 
 @interface NSFileProviderManager : NSObject
 {
     NSObject<OS_dispatch_semaphore> *_sem;
-    id <FPDDomainServicing><NSXPCProxyCreating> _remoteFileProvider;
+    id <FPDDomainServicing><FPXPCAutomaticErrorProxy> _remoteFileProvider;
     NSObject<OS_dispatch_queue> *_connectionQueue;
     NSXPCConnection<FPDDaemon> *_connection;
     _FPFilePresenterObserver *_presentedFileObserver;
@@ -30,7 +30,7 @@
 
 + (id)managerForDomain:(id)arg1;
 + (void)getDomainsWithCompletionHandler:(CDUnknownBlockType)arg1;
-+ (void)getDomainsForProviderIdentifier:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
++ (void)getDomainsForProviderIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (void)removeAllDomainsForProviderIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (void)removeDomain:(id)arg1 forProviderIdentifier:(id)arg2 options:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (void)addDomain:(id)arg1 forProviderIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -43,9 +43,10 @@
 + (BOOL)writePlaceholderAtURL:(id)arg1 withMetadata:(id)arg2 error:(id *)arg3;
 + (BOOL)writePlaceholderAtURL:(id)arg1 withDictionary:(id)arg2 error:(id *)arg3;
 + (id)defaultManager;
++ (void)registerDomainServicer:(id)arg1 forDomain:(id)arg2;
 + (void)importDomain:(id)arg1 fromDirectoryAtURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-@property(copy) NSArray *presentedFiles; // @synthesize presentedFiles=_presentedFiles;
 - (void).cxx_destruct;
+@property(copy) NSArray *presentedFiles; // @synthesize presentedFiles=_presentedFiles;
 - (void)removeAllDomainsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getDomainsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)removeDomain:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -66,8 +67,8 @@
 - (void)signalEnumeratorForContainerItemIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)itemIDForIdentifier:(id)arg1;
 - (id)_connection;
-- (void)fetchRemoteFileProviderSynchronously:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)remoteFileProviderWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)fetchDomainServicerSynchronously:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)domainServicerWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)_initWithProviderIdentifier:(id)arg1 groupName:(id)arg2 domain:(id)arg3;
 - (id)_initWithProviderIdentifier:(id)arg1 domain:(id)arg2;
 - (id)_initWithProviderIdentifier:(id)arg1 groupName:(id)arg2;

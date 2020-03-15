@@ -16,12 +16,14 @@
     int _mediaEntityType;
     NSString *_persistentID;
     NSString *_spotlightIdentifier;
+    NSString *_universalLibraryID;
 }
 
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSString *universalLibraryID; // @synthesize universalLibraryID=_universalLibraryID;
 @property(nonatomic) int mediaEntityType; // @synthesize mediaEntityType=_mediaEntityType;
 @property(copy, nonatomic) NSString *spotlightIdentifier; // @synthesize spotlightIdentifier=_spotlightIdentifier;
 @property(copy, nonatomic) NSString *persistentID; // @synthesize persistentID=_persistentID;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

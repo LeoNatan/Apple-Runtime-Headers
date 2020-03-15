@@ -22,13 +22,13 @@
 + (void)setupPowerManagement;
 + (id)sharedInstance;
 + (void)load;
+- (void).cxx_destruct;
 @property(nonatomic) int sleepStateNotificationToken; // @synthesize sleepStateNotificationToken=_sleepStateNotificationToken;
 @property(nonatomic) unsigned long long sleepState; // @synthesize sleepState=_sleepState;
 @property(nonatomic) _Bool needsDisplayWakeOnPowerOn; // @synthesize needsDisplayWakeOnPowerOn=_needsDisplayWakeOnPowerOn;
 @property(retain, nonatomic) NSTimer *powerAssertionTimer; // @synthesize powerAssertionTimer=_powerAssertionTimer;
 @property(nonatomic) _Bool deviceSleptManually; // @synthesize deviceSleptManually=_deviceSleptManually;
 @property(nonatomic, getter=isDeviceAsleep) _Bool deviceAsleep; // @synthesize deviceAsleep=_deviceAsleep;
-- (void).cxx_destruct;
 - (void)_dropPowerAssertions:(id)arg1;
 - (void)_handleIOPMCallbackMessage:(unsigned int)arg1 argument:(void *)arg2;
 - (void)_releaseSystemActivityAssertion;

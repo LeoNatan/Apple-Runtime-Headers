@@ -15,10 +15,10 @@
     struct CGPoint _drawingOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint drawingOffset; // @synthesize drawingOffset=_drawingOffset;
 @property(retain, nonatomic) NUIContainerStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain, nonatomic) NSArray *iconImages; // @synthesize iconImages=_iconImages;
-- (void).cxx_destruct;
 - (double)preferredWidth;
 @property(nonatomic) double iconPadding;
 - (id)initWithFrame:(struct CGRect)arg1;

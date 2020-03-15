@@ -17,9 +17,9 @@
     SearchUIMapsViewController *_mapViewController;
 }
 
+- (void).cxx_destruct;
 @property BOOL alreadyDispatchedOnMainQueue; // @synthesize alreadyDispatchedOnMainQueue=_alreadyDispatchedOnMainQueue;
 @property(retain) SearchUIMapsViewController *mapViewController; // @synthesize mapViewController=_mapViewController;
-- (void).cxx_destruct;
 - (void)placeViewController:(id)arg1 requestPasscodeUnlockWithCompletion:(CDUnknownBlockType)arg2;
 - (id)embeddedViewController;
 - (void)placeViewControllerDidUpdateHeight:(id)arg1;

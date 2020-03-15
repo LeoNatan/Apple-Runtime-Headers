@@ -47,11 +47,11 @@
 
 + (id)addRecordController;
 + (id)errorDescriptionForProposedUnixName:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain) NSDictionary *createAccountOptions; // @synthesize createAccountOptions=_createAccountOptions;
 @property(retain) NSPopover *passwordPolicyPopover; // @synthesize passwordPolicyPopover=_passwordPolicyPopover;
 @property(retain) NSWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
-- (void).cxx_destruct;
 - (void)agepresetAction:(id)arg1;
 - (void)help:(id)arg1;
 - (void)fvtmCancel:(id)arg1;

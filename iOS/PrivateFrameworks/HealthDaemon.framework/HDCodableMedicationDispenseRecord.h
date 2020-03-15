@@ -24,6 +24,7 @@
     HDCodableMedicalCoding *_statusCoding;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableCodedQuantity *daysSupplyQuantity; // @synthesize daysSupplyQuantity=_daysSupplyQuantity;
 @property(retain, nonatomic) HDCodableMedicalCoding *statusCoding; // @synthesize statusCoding=_statusCoding;
 @property(retain, nonatomic) NSData *earliestDosageDate; // @synthesize earliestDosageDate=_earliestDosageDate;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) HDCodableCodedQuantity *quantityDispensed; // @synthesize quantityDispensed=_quantityDispensed;
 @property(retain, nonatomic) HDCodableMedicalCodingList *medicationCodings; // @synthesize medicationCodings=_medicationCodings;
 @property(retain, nonatomic) HDCodableMedicalRecord *medicalRecord; // @synthesize medicalRecord=_medicalRecord;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

@@ -14,9 +14,9 @@
     PKVerificationChannel *_verificationChannel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKVerificationChannel *verificationChannel; // @synthesize verificationChannel=_verificationChannel;
 @property(retain, nonatomic) PKPaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithRequestContext:(id)arg1;
 

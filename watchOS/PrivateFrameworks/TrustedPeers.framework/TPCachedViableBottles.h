@@ -14,9 +14,9 @@
     NSArray *_partialBottles;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain) NSArray *partialBottles; // @synthesize partialBottles=_partialBottles;
 @property(readonly, retain) NSArray *viableBottles; // @synthesize viableBottles=_viableBottles;
-- (void).cxx_destruct;
 - (id)initWithViableBottles:(id)arg1 partialBottles:(id)arg2;
 
 @end

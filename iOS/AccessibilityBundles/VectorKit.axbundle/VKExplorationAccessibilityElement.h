@@ -14,9 +14,9 @@
     AXVKExplorationVertexElement *_vertex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isExplorationElement; // @synthesize isExplorationElement=_isExplorationElement;
 @property(retain, nonatomic) AXVKExplorationVertexElement *vertex; // @synthesize vertex=_vertex;
-- (void).cxx_destruct;
 - (_Bool)accessibilityActivate;
 - (id)initWithAccessibilityContainer:(id)arg1 andVertex:(id)arg2;
 - (struct CGRect)accessibilityFrame;

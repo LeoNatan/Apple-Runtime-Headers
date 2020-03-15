@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_details;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *details; // @synthesize details=_details;
 @property(retain, nonatomic) SKUIReportAConcernReason *selectedReason; // @synthesize selectedReason=_selectedReason;
 @property(nonatomic) long long itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
 @property(copy, nonatomic) NSURL *reportConcernURL; // @synthesize reportConcernURL=_reportConcernURL;
-- (void).cxx_destruct;
 
 @end
 

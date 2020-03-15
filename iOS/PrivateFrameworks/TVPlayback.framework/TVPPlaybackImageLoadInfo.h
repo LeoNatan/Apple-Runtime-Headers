@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     CDStruct_1b6d18a9 _requestedCMTime;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dateBasedHandler; // @synthesize dateBasedHandler=_dateBasedHandler;
 @property(copy, nonatomic) CDUnknownBlockType timeBasedHandler; // @synthesize timeBasedHandler=_timeBasedHandler;
 @property(nonatomic) struct CGSize maxSize; // @synthesize maxSize=_maxSize;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSDate *requestedDate; // @synthesize requestedDate=_requestedDate;
 @property(nonatomic) double requestedTime; // @synthesize requestedTime=_requestedTime;
 @property(retain, nonatomic) id identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)callCompletionHandlerWithImage:(id)arg1 actualCMTime:(CDStruct_1b6d18a9)arg2 actualDate:(id)arg3;
 - (id)description;
 

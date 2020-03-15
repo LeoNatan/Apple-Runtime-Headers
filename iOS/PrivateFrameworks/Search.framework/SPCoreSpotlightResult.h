@@ -29,6 +29,7 @@
     // Error parsing type: T, name: _buddyScore
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(retain, nonatomic) NSDate *contentCreationDate; // @synthesize contentCreationDate=_contentCreationDate;
 @property(retain, nonatomic) NSArray *launchDates; // @synthesize launchDates=_launchDates;
@@ -46,7 +47,6 @@
 // Property attributes: TT,V_buddyScore
 
 @property(retain) NSString *relatedUniqueIdentifier; // @synthesize relatedUniqueIdentifier=_relatedUniqueIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)debugDescription;
 - (Class)classForCoder;

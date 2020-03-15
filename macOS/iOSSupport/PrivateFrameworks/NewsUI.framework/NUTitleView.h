@@ -21,6 +21,7 @@
     NSObject<OS_dispatch_semaphore> *_lingerSemaphore;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *lingerSemaphore; // @synthesize lingerSemaphore=_lingerSemaphore;
 @property(readonly, nonatomic) NUAnimationQueue *animationQueue; // @synthesize animationQueue=_animationQueue;
 @property(readonly, nonatomic) NUFadeViewAnimator *fadeAnimator; // @synthesize fadeAnimator=_fadeAnimator;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NUCrossFadeTitleView *titleView; // @synthesize titleView=_titleView;
 @property(nonatomic) __weak id <NUTitleViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id <NUTitleViewStyler> styler; // @synthesize styler=_styler;
-- (void).cxx_destruct;
 - (id)createMaskingLayerForTranslation;
 - (void)finishDisplayingTitleViewUpdate:(id)arg1 finished:(CDUnknownBlockType)arg2;
 - (void)titleViewHandleTapGuesture;

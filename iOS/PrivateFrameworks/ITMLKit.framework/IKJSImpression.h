@@ -25,13 +25,13 @@
 
 + (id)impressionsMapForViewElements:(id)arg1 appContext:(id)arg2 timestamp:(long long)arg3 existingImpressionsMap:(id)arg4;
 + (id)impressionsMapForViewElements:(id)arg1 appContext:(id)arg2 timestamp:(long long)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) long long indexInParent; // @synthesize indexInParent=_indexInParent;
 @property(retain, nonatomic) NSMutableArray *mutableChildren; // @synthesize mutableChildren=_mutableChildren;
 @property(retain, nonatomic) NSMutableArray *mutableTimestamps; // @synthesize mutableTimestamps=_mutableTimestamps;
 @property(copy, nonatomic) NSString *metricsData; // @synthesize metricsData=_metricsData;
 @property(copy, nonatomic) NSString *metricsTag; // @synthesize metricsTag=_metricsTag;
 @property(nonatomic) __weak IKJSImpression *parentImpression; // @synthesize parentImpression=_parentImpression;
-- (void).cxx_destruct;
 - (void)addChild:(id)arg1;
 - (void)addTimestamp:(long long)arg1;
 - (void)linkReferences;

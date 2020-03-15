@@ -15,10 +15,10 @@
     UIView *_errorIconBackgroundView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *errorIconBackgroundView; // @synthesize errorIconBackgroundView=_errorIconBackgroundView;
 @property(retain, nonatomic) UIImageView *errorIconView; // @synthesize errorIconView=_errorIconView;
 @property(retain, nonatomic) UILabel *errorLabel; // @synthesize errorLabel=_errorLabel;
-- (void).cxx_destruct;
 - (void)_setUpViews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithCoder:(id)arg1;

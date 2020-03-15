@@ -14,8 +14,8 @@
 }
 
 + (id)parseBuffer:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) NSArray *expressions; // @synthesize expressions=_expressions;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *expressions; // @synthesize expressions=_expressions;
 - (id)dependencies;
 - (id)initWithExpressions:(id)arg1;
 

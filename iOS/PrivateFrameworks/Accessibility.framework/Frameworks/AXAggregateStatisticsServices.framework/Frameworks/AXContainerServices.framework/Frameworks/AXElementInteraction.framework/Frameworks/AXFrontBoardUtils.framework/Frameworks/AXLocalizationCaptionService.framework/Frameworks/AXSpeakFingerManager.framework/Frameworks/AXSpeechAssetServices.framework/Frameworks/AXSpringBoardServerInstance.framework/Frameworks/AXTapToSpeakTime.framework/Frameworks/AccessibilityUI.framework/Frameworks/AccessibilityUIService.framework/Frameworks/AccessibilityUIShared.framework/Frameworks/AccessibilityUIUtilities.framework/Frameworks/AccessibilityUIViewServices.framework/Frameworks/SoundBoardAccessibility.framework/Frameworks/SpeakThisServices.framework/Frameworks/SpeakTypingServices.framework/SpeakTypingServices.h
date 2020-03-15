@@ -16,8 +16,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) AXUIClient *speakTypingClient; // @synthesize speakTypingClient=_speakTypingClient;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AXUIClient *speakTypingClient; // @synthesize speakTypingClient=_speakTypingClient;
 - (void)connectionWithServiceWasInterruptedForUserInterfaceClient:(id)arg1;
 - (void)initializeServerConnection;
 - (id)_clientIdentifier;

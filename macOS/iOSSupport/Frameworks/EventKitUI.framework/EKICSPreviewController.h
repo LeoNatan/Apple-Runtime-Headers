@@ -31,6 +31,7 @@
     unsigned long long _actionsState;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int eventUID; // @synthesize eventUID=_eventUID;
 @property(nonatomic) BOOL allowsToDos; // @synthesize allowsToDos=_allowsToDos;
 @property(nonatomic) BOOL allowsInvalidProperties; // @synthesize allowsInvalidProperties=_allowsInvalidProperties;
@@ -39,7 +40,6 @@
 @property(nonatomic) BOOL allowsEditing; // @synthesize allowsEditing=_allowsEditing;
 @property(nonatomic) BOOL allowsImport; // @synthesize allowsImport=_allowsImport;
 @property(nonatomic) __weak id <EKICSPreviewControllerDelegate> previewDelegate; // @synthesize previewDelegate=_previewDelegate;
-- (void).cxx_destruct;
 - (void)eventViewController:(id)arg1 didCompleteWithAction:(long long)arg2;
 - (BOOL)eventViewControllerShouldAlwaysShowNavBar:(id)arg1;
 - (BOOL)eventViewControllerShouldDismissSelf:(id)arg1;

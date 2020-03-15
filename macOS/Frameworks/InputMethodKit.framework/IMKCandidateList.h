@@ -15,8 +15,8 @@
 
 + (id)candidateListWithCandidates:(id)arg1;
 + (id)candidateListWithTextFrom:(id)arg1;
-@property(readonly, nonatomic) NSArray *candidates; // @synthesize candidates=_candidates;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *candidates; // @synthesize candidates=_candidates;
 @property(readonly, nonatomic) BOOL hasCandidate;
 - (id)initWithCandidates:(id)arg1;
 - (id)initWithTextFrom:(id)arg1;

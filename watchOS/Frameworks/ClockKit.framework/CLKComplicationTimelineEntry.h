@@ -23,10 +23,10 @@
 + (_Bool)supportsSecureCoding;
 + (id)entryWithDate:(id)arg1 complicationTemplate:(id)arg2 timelineAnimationGroup:(id)arg3;
 + (id)entryWithDate:(id)arg1 complicationTemplate:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *timelineAnimationGroup; // @synthesize timelineAnimationGroup=_timelineAnimationGroup;
 @property(copy, nonatomic) CLKComplicationTemplate *complicationTemplate; // @synthesize complicationTemplate=_complicationTemplate;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
 - (id)initWithCoder:(id)arg1;

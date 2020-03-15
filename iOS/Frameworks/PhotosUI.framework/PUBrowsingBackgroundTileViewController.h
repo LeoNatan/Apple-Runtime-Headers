@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     _UIContentUnavailableView *__emptyPlaceholderView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setEmptyPlaceholderView:) _UIContentUnavailableView *_emptyPlaceholderView; // @synthesize _emptyPlaceholderView=__emptyPlaceholderView;
 @property(copy, nonatomic, setter=_setNextColorUpdateAnimatorBlock:) CDUnknownBlockType _nextColorUpdateAnimatorBlock; // @synthesize _nextColorUpdateAnimatorBlock=__nextColorUpdateAnimatorBlock;
 @property(nonatomic, setter=_setNeedsUpdateColor:) _Bool _needsUpdateColor; // @synthesize _needsUpdateColor=__needsUpdateColor;
 @property(retain, nonatomic) PUBrowsingViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(nonatomic) _Bool shouldDisplayEmptyPlaceholder; // @synthesize shouldDisplayEmptyPlaceholder=_shouldDisplayEmptyPlaceholder;
 @property(retain, nonatomic) UIColor *backgroundColorOverride; // @synthesize backgroundColorOverride=_backgroundColorOverride;
-- (void).cxx_destruct;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (void)_updateEmptyPlaceholderAnimated:(_Bool)arg1;
 - (void)_updateColorIfNeeded;

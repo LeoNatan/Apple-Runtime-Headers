@@ -17,9 +17,9 @@
 }
 
 + (id)decode:(const struct ProtobufCMessage *)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *functionBody; // @synthesize functionBody=_functionBody;
 @property(readonly, nonatomic) NSString *functionName; // @synthesize functionName=_functionName;
-- (void).cxx_destruct;
 - (void)encode:(struct ProtobufCMessage *)arg1;
 - (id)initWithName:(id)arg1 body:(id)arg2;
 

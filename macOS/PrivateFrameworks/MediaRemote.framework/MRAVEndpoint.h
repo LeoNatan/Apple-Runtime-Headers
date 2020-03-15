@@ -21,13 +21,13 @@
     NSString *_uniqueIdentifier;
 }
 
-+ (void)_modifyOutputDevices:(id)arg1 inGroup:(id)arg2 queue:(id)arg3 modifyDevices:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
++ (void)_modifyOutputDevices:(id)arg1 inGroup:(id)arg2 analytics:(id)arg3 queue:(id)arg4 modifyDevices:(CDUnknownBlockType)arg5 completion:(CDUnknownBlockType)arg6;
 + (id)_notificationSerialQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(retain, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(nonatomic, getter=isProxyGroupPlayer) BOOL proxyGroupPlayer; // @synthesize proxyGroupPlayer=_proxyGroupPlayer;
 @property(readonly, nonatomic) long long connectionType; // @synthesize connectionType=_connectionType;
-- (void).cxx_destruct;
 - (id)_initiatorStringWithInitiator:(id)arg1 uid:(id)arg2;
 - (void)_callAllCompletionHandlersWithError:(id)arg1;
 - (void)_externalDeviceConnectionStateDidChangeNotification:(id)arg1;

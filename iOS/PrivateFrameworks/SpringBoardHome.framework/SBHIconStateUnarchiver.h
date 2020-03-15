@@ -16,10 +16,10 @@
 }
 
 + (void)_getFolderDisplayName:(id *)arg1 defaultDisplayName:(id *)arg2 forRepresentation:(id)arg3 iconSource:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBHIconModel *iconSource; // @synthesize iconSource=_iconSource;
 @property(readonly, nonatomic) id archive; // @synthesize archive=_archive;
 @property(nonatomic) _Bool removesEmptyFolders; // @synthesize removesEmptyFolders=_removesEmptyFolders;
-- (void).cxx_destruct;
 - (id)_listFromRepresentation:(id)arg1 withMaxIconCount:(unsigned long long)arg2 identifier:(id)arg3 context:(id)arg4 overflow:(id)arg5;
 - (id)_folderFromRepresentation:(id)arg1 withContext:(id)arg2;
 - (void)_getFolderDisplayName:(id *)arg1 defaultDisplayName:(id *)arg2 forRepresentation:(id)arg3;

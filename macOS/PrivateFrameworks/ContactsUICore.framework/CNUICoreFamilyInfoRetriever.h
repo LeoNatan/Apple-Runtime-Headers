@@ -26,12 +26,12 @@
 + (id)familyCircleFromRequest:(id)arg1 schedulerProvider:(id)arg2;
 + (id)meContactFromStore:(id)arg1 schedulerProvider:(id)arg2;
 + (id)keysToFetch;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNFuture *familyFuture; // @synthesize familyFuture=_familyFuture;
 @property(readonly, nonatomic) BOOL matchFamilyMembersWithContacts; // @synthesize matchFamilyMembersWithContacts=_matchFamilyMembersWithContacts;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(readonly, nonatomic) FAFetchFamilyCircleRequest *fetchFamilyCircleRequest; // @synthesize fetchFamilyCircleRequest=_fetchFamilyCircleRequest;
 @property(readonly, nonatomic) id <CNUICoreContactStoreFacade> mainContactStore; // @synthesize mainContactStore=_mainContactStore;
-- (void).cxx_destruct;
 - (id)createFamilyFuture;
 - (id)familyInfo;
 - (id)initWithMainContactStoreFacade:(id)arg1 fetchFamilyCircleRequest:(id)arg2 matchFamilyMembersWithContacts:(BOOL)arg3 schedulerProvider:(id)arg4;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     PHVideoScrubberView *_photosScrubber;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool touchGestureIsActive; // @synthesize touchGestureIsActive=_touchGestureIsActive;
 @property(getter=isUserInteractingWithScrubber) _Bool userInteractingWithScrubber; // @synthesize userInteractingWithScrubber=_userInteractingWithScrubber;
-- (void).cxx_destruct;
 - (void)_updateUserInteractingWithScrubberIfNeeded;
 - (void)didBeginTouchingVideoScrubberView:(id)arg1;
 - (void)didEndTouchingVideoScrubberView:(id)arg1;

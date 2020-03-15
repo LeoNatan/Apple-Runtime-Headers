@@ -29,10 +29,10 @@
 + (id)nonLocalizedForwardPrefix;
 + (id)nonLocalizedReplyPrefix;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _ECSubjectFormatterContext *forwardContext; // @synthesize forwardContext=_forwardContext;
 @property(retain, nonatomic) _ECSubjectFormatterContext *replyContext; // @synthesize replyContext=_replyContext;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)_localizedPrefixForSubjectFromSubject:(id)arg1;
 - (_Bool)getObjectValue:(out id *)arg1 forString:(id)arg2 errorDescription:(out id *)arg3;
 - (id)stringForObjectValue:(id)arg1;

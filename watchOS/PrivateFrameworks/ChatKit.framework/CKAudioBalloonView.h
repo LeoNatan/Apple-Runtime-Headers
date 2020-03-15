@@ -21,6 +21,7 @@
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKWaveformProgressView *waveformProgressView; // @synthesize waveformProgressView=_waveformProgressView;
 @property(retain, nonatomic) CKAudioProgressView *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) UILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
@@ -28,7 +29,6 @@
 @property(nonatomic, getter=isPlaying) _Bool playing; // @synthesize playing=_playing;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) double time; // @synthesize time=_time;
-- (void).cxx_destruct;
 - (void)updateProgress;
 - (void)updateTimeString;
 @property(nonatomic) int waveformContentMode;

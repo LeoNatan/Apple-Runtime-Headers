@@ -18,13 +18,13 @@
     NSIndexSet *_backwardIndentationLevelsWithVerticalLine;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexSet *backwardIndentationLevelsWithVerticalLine; // @synthesize backwardIndentationLevelsWithVerticalLine=_backwardIndentationLevelsWithVerticalLine;
 @property(nonatomic) unsigned long long indentationLevel; // @synthesize indentationLevel=_indentationLevel;
 @property(nonatomic) unsigned long long dot; // @synthesize dot=_dot;
 @property(nonatomic) unsigned long long bottomConnection; // @synthesize bottomConnection=_bottomConnection;
 @property(nonatomic) unsigned long long topConnection; // @synthesize topConnection=_topConnection;
 @property(nonatomic) __weak NSOutlineView *outlineView; // @synthesize outlineView=_outlineView;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)mouseDown:(id)arg1;
 - (void)configureFromDrawRect:(struct CGRect)arg1;

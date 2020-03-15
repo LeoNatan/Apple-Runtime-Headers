@@ -26,9 +26,9 @@
     NSString *_overrideRoutingContextUID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *overrideRoutingContextUID; // @synthesize overrideRoutingContextUID=_overrideRoutingContextUID;
 @property(nonatomic) __weak id <AVRoutePickerViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGRect)_normalizedRectInWindow;
 - (id)_defaultActiveTintColor;
 - (_Bool)_isAirPlayActive;

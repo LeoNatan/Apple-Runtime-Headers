@@ -18,9 +18,9 @@
 }
 
 + (id)cellIdentifier;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) id <AVTAvatarRecord> avatarRecord; // @synthesize avatarRecord=_avatarRecord;
-- (void).cxx_destruct;
 - (void)configureCell:(id)arg1 imageProvider:(id)arg2;
 - (id)initWithAvatarRecord:(id)arg1 environment:(id)arg2;
 

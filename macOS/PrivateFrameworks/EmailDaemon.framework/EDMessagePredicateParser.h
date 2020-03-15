@@ -14,8 +14,8 @@
 }
 
 + (id)parserForPredicate:(id)arg1 queryParser:(id)arg2;
-@property(readonly, nonatomic) EDMessageQueryParser *queryParser; // @synthesize queryParser=_queryParser;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) EDMessageQueryParser *queryParser; // @synthesize queryParser=_queryParser;
 - (id)parseResultsFromPredicate:(id)arg1;
 - (id)initWithQueryParser:(id)arg1;
 

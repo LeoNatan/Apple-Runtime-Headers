@@ -23,8 +23,8 @@
     id <TSKDiffableDataSourceProxy> _dataSourceProxy;
 }
 
-@property(nonatomic) __weak id <TSKDiffableDataSourceProxy> dataSourceProxy; // @synthesize dataSourceProxy=_dataSourceProxy;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <TSKDiffableDataSourceProxy> dataSourceProxy; // @synthesize dataSourceProxy=_dataSourceProxy;
 - (void)tableView:(id)arg1 moveRowAtIndexPath:(id)arg2 toIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
 - (long long)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(long long)arg3;

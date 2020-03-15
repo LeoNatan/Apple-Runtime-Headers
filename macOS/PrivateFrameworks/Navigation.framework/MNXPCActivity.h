@@ -23,6 +23,7 @@
 }
 
 + (void)checkInActivity:(id)arg1 codeBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *scheduledDate; // @synthesize scheduledDate=_scheduledDate;
 @property(readonly, nonatomic) unsigned long long networkRequirements; // @synthesize networkRequirements=_networkRequirements;
 @property(readonly, nonatomic) unsigned long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) BOOL shouldWakeDevice; // @synthesize shouldWakeDevice=_shouldWakeDevice;
 @property(readonly, nonatomic) BOOL repeat; // @synthesize repeat=_repeat;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (BOOL)_needsNetworkRequirement:(unsigned long long)arg1;

@@ -18,9 +18,9 @@
 + (void)cacheUserAgent:(id)arg1 forBundleIdentifier:(id)arg2;
 + (id)cachedUserAgentForBundleIdentifier:(id)arg1;
 + (id)_sharedCache;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AMSProcessInfo *processInfo; // @synthesize processInfo=_processInfo;
 @property(readonly, nonatomic) AMSMappedBundleInfo *bundleInfo; // @synthesize bundleInfo=_bundleInfo;
-- (void).cxx_destruct;
 - (id)_sharedComponentParentheticalWithFairPlayDeviceType:(id)arg1;
 - (id)_sharedComponentFrameworkVersion;
 - (id)_sharedComponentFairPlayDeviceType;

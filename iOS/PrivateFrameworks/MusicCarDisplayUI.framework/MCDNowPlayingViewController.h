@@ -34,6 +34,7 @@
     CDUnknownBlockType _albumViewControllerProvider;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType albumViewControllerProvider; // @synthesize albumViewControllerProvider=_albumViewControllerProvider;
 @property(retain, nonatomic) UITableViewController *playbackQueueViewController; // @synthesize playbackQueueViewController=_playbackQueueViewController;
 @property(retain, nonatomic) id <MCDNowPlayingContentManagerProtocol> contentManager; // @synthesize contentManager=_contentManager;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) UIBarButtonItem *backButton; // @synthesize backButton=_backButton;
 @property(retain, nonatomic) _MCDNowPlayingViewController *nowPlayingViewController; // @synthesize nowPlayingViewController=_nowPlayingViewController;
 @property(nonatomic) _Bool showNavigationBar; // @synthesize showNavigationBar=_showNavigationBar;
-- (void).cxx_destruct;
 - (void)session:(id)arg1 didUpdateConfiguration:(id)arg2;
 - (void)_invalidateActivityTimer;
 - (void)_setupActivityTimer;

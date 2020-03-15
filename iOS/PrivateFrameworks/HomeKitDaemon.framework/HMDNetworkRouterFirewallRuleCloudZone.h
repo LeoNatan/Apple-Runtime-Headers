@@ -21,10 +21,10 @@
 + (unsigned long long)__maxSizeForCKRecordNetworkDeclarationsSignature;
 + (unsigned long long)__maxSizeForCKRecordNetworkDeclarations;
 + (unsigned long long)__maxSizeFromPreferenceWithKey:(id)arg1 defaultValue:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *signatureVerificationPublicKeys; // @synthesize signatureVerificationPublicKeys=_signatureVerificationPublicKeys;
 @property(readonly, nonatomic) NSSet *watchedRecordIDs; // @synthesize watchedRecordIDs=_watchedRecordIDs;
 @property(readonly, nonatomic) _Bool useAnonymousRequests; // @synthesize useAnonymousRequests=_useAnonymousRequests;
-- (void).cxx_destruct;
 - (void)__retryFetchWithFetchInfo:(id)arg1;
 - (_Bool)__canRecoverFromError:(id)arg1 fetchInfo:(id)arg2;
 - (_Bool)__commitLocalChanges:(id)arg1 error:(id *)arg2;

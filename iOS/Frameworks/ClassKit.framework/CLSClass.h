@@ -26,6 +26,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)relations;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
 @property(copy, nonatomic) NSString *tempObjectID; // @synthesize tempObjectID=_tempObjectID;
 @property _Bool isEditable; // @synthesize isEditable=_isEditable;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSString *iconID; // @synthesize iconID=_iconID;
 @property(nonatomic) long long source; // @synthesize source=_source;
 @property(copy, nonatomic) NSString *className; // @synthesize className=_className;
-- (void).cxx_destruct;
 - (void)removePerson:(id)arg1 withRole:(unsigned long long)arg2;
 - (void)addPerson:(id)arg1 withRole:(unsigned long long)arg2;
 - (id)dictionaryRepresentation;

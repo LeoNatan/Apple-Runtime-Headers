@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_accountExternalIdentifier;
 }
 
-@property(readonly, nonatomic) NSString *accountExternalIdentifier; // @synthesize accountExternalIdentifier=_accountExternalIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *accountExternalIdentifier; // @synthesize accountExternalIdentifier=_accountExternalIdentifier;
 - (BOOL)evaluateWithObject:(id)arg1 substitutionVariables:(id)arg2;
 - (BOOL)evaluateWithObject:(id)arg1;
 - (id)initWithAccountExternalIdentifier:(id)arg1;

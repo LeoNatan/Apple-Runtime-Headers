@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 + (struct UIEdgeInsets)initialAlignmentRectInsets;
 + (struct CGSize)initialIntrinsicSize;
 + (struct CGSize)initialSize;
+- (void).cxx_destruct;
 @property(nonatomic) double maximumValue; // @synthesize maximumValue=_maximumValue;
 @property(nonatomic) double minimumValue; // @synthesize minimumValue=_minimumValue;
 @property(nonatomic) __weak id <UIStepperControl> stepperControl; // @synthesize stepperControl=_stepperControl;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic, getter=isContinuous) BOOL continuous; // @synthesize continuous=_continuous;
 @property(nonatomic) BOOL autorepeat; // @synthesize autorepeat=_autorepeat;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1 forControl:(id)arg2;
 - (struct UIEdgeInsets)alignmentRectInsetsForControl:(id)arg1;
 - (struct CGSize)intrinsicSizeWithinSize:(struct CGSize)arg1 forControl:(id)arg2;

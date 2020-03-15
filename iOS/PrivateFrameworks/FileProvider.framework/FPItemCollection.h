@@ -50,6 +50,7 @@
 + (id)activeCollections;
 + (id)_bouncedItem:(id)arg1 withinItems:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FPPacer *updatePacer; // @synthesize updatePacer=_updatePacer;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *updateQueue; // @synthesize updateQueue=_updateQueue;
 @property(nonatomic) _Bool observing; // @synthesize observing=_observing;
@@ -62,7 +63,6 @@
 @property(readonly, nonatomic, getter=isImmutable) _Bool immutable; // @synthesize immutable=_immutable;
 @property(nonatomic) __weak id <FPItemCollectionMinimalDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isGathering) _Bool gathering; // @synthesize gathering=_gathering;
-- (void).cxx_destruct;
 - (void)_setObserving:(_Bool)arg1;
 - (void)_replaceContentsWithVendorItems:(id)arg1;
 @property(retain, nonatomic) NSPredicate *itemFilteringPredicate;

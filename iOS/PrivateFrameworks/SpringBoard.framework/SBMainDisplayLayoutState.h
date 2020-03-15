@@ -19,13 +19,13 @@
 }
 
 + (long long)_defaultInterfaceOrientation;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *inlineAppExposeOverlayElements; // @synthesize inlineAppExposeOverlayElements=_inlineAppExposeOverlayElements;
 @property(readonly, nonatomic, getter=isFloatingSwitcherVisible) _Bool floatingSwitcherVisible; // @synthesize floatingSwitcherVisible=_floatingSwitcherVisible;
 @property(readonly, nonatomic) NSString *bundleIDShowingAppExpose; // @synthesize bundleIDShowingAppExpose=_bundleIDShowingAppExpose;
 @property(readonly, nonatomic) long long unlockedEnvironmentMode; // @synthesize unlockedEnvironmentMode=_unlockedEnvironmentMode;
 @property(readonly, nonatomic) long long floatingConfiguration; // @synthesize floatingConfiguration=_floatingConfiguration;
 @property(readonly, nonatomic) long long spaceConfiguration; // @synthesize spaceConfiguration=_spaceConfiguration;
-- (void).cxx_destruct;
 - (long long)interfaceOrientation;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

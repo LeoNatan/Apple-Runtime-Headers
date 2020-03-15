@@ -6,8 +6,6 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary;
-
 @interface FCPersonalizationItemScoringConfig : NSObject
 {
     double _baselineRatePrior;
@@ -22,15 +20,13 @@
     double _globalScoreCoefficient;
     double _globalScoreCoefficientHalfLife;
     double _globalScoreCoefficientInitialMultiplier;
-    double _globalScoreToCtrIntercept;
-    double _globalScoreToCtrSlope;
-    double _realTimeUserFeedbackCoefficient;
-    double _realTimeUserFeedbackPublishDateHalfLifeCoefficient;
-    NSDictionary *_realTimeUserFeedbackTagCoefficients;
-    double _cohortMembershipCtrCeiling;
-    double _cohortMembershipCurvature;
     double _cohortMembershipFavoritedBoost;
-    double _cohortMembershipMinWeightedImpressions;
+    double _cohortMembershipGlobalWeight;
+    double _cohortMembershipUserBaseline;
+    double _cohortMembershipPreBaselineCurvature;
+    double _cohortMembershipPostBaselineCurvature;
+    double _cohortMembershipDilutionFactor;
+    double _cohortMembershipPaddingFactor;
     double _subscribedTopicsScoreCoefficient;
     double _ctrWithSubscribedChannel;
     double _ctrWithZeroSubscribed;
@@ -49,7 +45,6 @@
     double _channelTopicDiversificationPenalty;
     double _channelTopicDiversificationPenaltyHalfLife;
     double _firstPassHalfLifeCoefficient;
-    double _firstPassRealTimeUserFeedbackPublishDateHalfLifeCoefficient;
     double _firstPassDiversificationPenalty;
     double _firstPassArticleFilter;
     double _bundlePaidMultiplierForFreeUsers;
@@ -78,7 +73,6 @@
 @property(readonly, nonatomic) double bundlePaidMultiplierForFreeUsers; // @synthesize bundlePaidMultiplierForFreeUsers=_bundlePaidMultiplierForFreeUsers;
 @property(readonly, nonatomic) double firstPassArticleFilter; // @synthesize firstPassArticleFilter=_firstPassArticleFilter;
 @property(readonly, nonatomic) double firstPassDiversificationPenalty; // @synthesize firstPassDiversificationPenalty=_firstPassDiversificationPenalty;
-@property(readonly, nonatomic) double firstPassRealTimeUserFeedbackPublishDateHalfLifeCoefficient; // @synthesize firstPassRealTimeUserFeedbackPublishDateHalfLifeCoefficient=_firstPassRealTimeUserFeedbackPublishDateHalfLifeCoefficient;
 @property(readonly, nonatomic) double firstPassHalfLifeCoefficient; // @synthesize firstPassHalfLifeCoefficient=_firstPassHalfLifeCoefficient;
 @property(readonly, nonatomic) double channelTopicDiversificationPenaltyHalfLife; // @synthesize channelTopicDiversificationPenaltyHalfLife=_channelTopicDiversificationPenaltyHalfLife;
 @property(readonly, nonatomic) double channelTopicDiversificationPenalty; // @synthesize channelTopicDiversificationPenalty=_channelTopicDiversificationPenalty;
@@ -97,15 +91,13 @@
 @property(readonly, nonatomic) double ctrWithZeroSubscribed; // @synthesize ctrWithZeroSubscribed=_ctrWithZeroSubscribed;
 @property(readonly, nonatomic) double ctrWithSubscribedChannel; // @synthesize ctrWithSubscribedChannel=_ctrWithSubscribedChannel;
 @property(readonly, nonatomic) double subscribedTopicsScoreCoefficient; // @synthesize subscribedTopicsScoreCoefficient=_subscribedTopicsScoreCoefficient;
-@property(readonly, nonatomic) double cohortMembershipMinWeightedImpressions; // @synthesize cohortMembershipMinWeightedImpressions=_cohortMembershipMinWeightedImpressions;
+@property(readonly, nonatomic) double cohortMembershipPaddingFactor; // @synthesize cohortMembershipPaddingFactor=_cohortMembershipPaddingFactor;
+@property(readonly, nonatomic) double cohortMembershipDilutionFactor; // @synthesize cohortMembershipDilutionFactor=_cohortMembershipDilutionFactor;
+@property(readonly, nonatomic) double cohortMembershipPostBaselineCurvature; // @synthesize cohortMembershipPostBaselineCurvature=_cohortMembershipPostBaselineCurvature;
+@property(readonly, nonatomic) double cohortMembershipPreBaselineCurvature; // @synthesize cohortMembershipPreBaselineCurvature=_cohortMembershipPreBaselineCurvature;
+@property(readonly, nonatomic) double cohortMembershipUserBaseline; // @synthesize cohortMembershipUserBaseline=_cohortMembershipUserBaseline;
+@property(readonly, nonatomic) double cohortMembershipGlobalWeight; // @synthesize cohortMembershipGlobalWeight=_cohortMembershipGlobalWeight;
 @property(readonly, nonatomic) double cohortMembershipFavoritedBoost; // @synthesize cohortMembershipFavoritedBoost=_cohortMembershipFavoritedBoost;
-@property(readonly, nonatomic) double cohortMembershipCurvature; // @synthesize cohortMembershipCurvature=_cohortMembershipCurvature;
-@property(readonly, nonatomic) double cohortMembershipCtrCeiling; // @synthesize cohortMembershipCtrCeiling=_cohortMembershipCtrCeiling;
-@property(readonly, nonatomic) NSDictionary *realTimeUserFeedbackTagCoefficients; // @synthesize realTimeUserFeedbackTagCoefficients=_realTimeUserFeedbackTagCoefficients;
-@property(readonly, nonatomic) double realTimeUserFeedbackPublishDateHalfLifeCoefficient; // @synthesize realTimeUserFeedbackPublishDateHalfLifeCoefficient=_realTimeUserFeedbackPublishDateHalfLifeCoefficient;
-@property(readonly, nonatomic) double realTimeUserFeedbackCoefficient; // @synthesize realTimeUserFeedbackCoefficient=_realTimeUserFeedbackCoefficient;
-@property(readonly, nonatomic) double globalScoreToCtrSlope; // @synthesize globalScoreToCtrSlope=_globalScoreToCtrSlope;
-@property(readonly, nonatomic) double globalScoreToCtrIntercept; // @synthesize globalScoreToCtrIntercept=_globalScoreToCtrIntercept;
 @property(readonly, nonatomic) double globalScoreCoefficientInitialMultiplier; // @synthesize globalScoreCoefficientInitialMultiplier=_globalScoreCoefficientInitialMultiplier;
 @property(readonly, nonatomic) double globalScoreCoefficientHalfLife; // @synthesize globalScoreCoefficientHalfLife=_globalScoreCoefficientHalfLife;
 @property(readonly, nonatomic) double globalScoreCoefficient; // @synthesize globalScoreCoefficient=_globalScoreCoefficient;
@@ -118,10 +110,9 @@
 @property(readonly, nonatomic) double democratizationFactor; // @synthesize democratizationFactor=_democratizationFactor;
 @property(readonly, nonatomic) double decayFactor; // @synthesize decayFactor=_decayFactor;
 @property(readonly, nonatomic) double baselineRatePrior; // @synthesize baselineRatePrior=_baselineRatePrior;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)initWithConfigurationSet:(long long)arg1 configurableValues:(id)arg2;
-- (id)initWithBaselineRatePrior:(double)arg1 decayFactor:(double)arg2 democratizationFactor:(double)arg3 halfLifeCoefficient:(double)arg4 subscribedChannelScoreCoefficient:(double)arg5 ctrWithSubscribedChannel:(double)arg6 mutedVoteCoefficient:(double)arg7 personalizationCoefficient:(double)arg8 publisherAggregateWeight:(double)arg9 articleLengthAggregateWeight:(double)arg10 globalScoreCoefficient:(double)arg11 globalScoreCoefficientHalfLife:(double)arg12 globalScoreCoefficientInitialMultiplier:(double)arg13 globalScoreToCtrIntercept:(double)arg14 globalScoreToCtrSlope:(double)arg15 realTimeUserFeedbackCoefficient:(double)arg16 realTimeUserFeedbackPublishDateHalfLifeCoefficient:(double)arg17 realTimeUserFeedbackTagCoefficients:(id)arg18 cohortMembershipCtrCeiling:(double)arg19 cohortMembershipCurvature:(double)arg20 cohortMembershipFavoritedBoost:(double)arg21 cohortMembershipMinWeightedImpressions:(double)arg22 subscribedTopicsScoreCoefficient:(double)arg23 ctrWithZeroSubscribed:(double)arg24 ctrWithOneSubscribed:(double)arg25 ctrWithTwoSubscribed:(double)arg26 ctrWithThreeSubscribed:(double)arg27 autofavoritedVoteCoefficient:(double)arg28 ctrWithZeroAutofavorited:(double)arg29 ctrWithOneAutofavorited:(double)arg30 ctrWithTwoAutofavorited:(double)arg31 ctrWithThreeAutofavorited:(double)arg32 diversificationInitialPenalty:(double)arg33 diversificationPenalty:(double)arg34 diversificationPenaltyHalfLife:(double)arg35 channelTopicDiversificationInitialPenalty:(double)arg36 channelTopicDiversificationPenalty:(double)arg37 channelTopicDiversificationPenaltyHalfLife:(double)arg38 firstPassHalfLifeCoefficient:(double)arg39 firstPassRealTimeUserFeedbackPublishDateHalfLifeCoefficient:(double)arg40 firstPassDiversificationPenalty:(double)arg41 firstPassArticleFilter:(double)arg42 bundlePaidMultiplierForFreeUsers:(double)arg43 bundlePaidMultiplierForTrialUsers:(double)arg44 bundlePaidMultiplierForPaidUsers:(double)arg45 bundleFreeMultiplierForFreeUsers:(double)arg46 bundleFreeMultiplierForTrialUsers:(double)arg47 bundleFreeMultiplierForPaidUsers:(double)arg48 featuredMultiplierForFreeUsers:(double)arg49 featuredMultiplierForTrialUsers:(double)arg50 featuredMultiplierForPaidUsers:(double)arg51 headlineSeenPenalty:(double)arg52 articleReadPenalty:(double)arg53;
+- (id)initWithBaselineRatePrior:(double)arg1 decayFactor:(double)arg2 democratizationFactor:(double)arg3 halfLifeCoefficient:(double)arg4 subscribedChannelScoreCoefficient:(double)arg5 ctrWithSubscribedChannel:(double)arg6 mutedVoteCoefficient:(double)arg7 personalizationCoefficient:(double)arg8 publisherAggregateWeight:(double)arg9 articleLengthAggregateWeight:(double)arg10 globalScoreCoefficient:(double)arg11 globalScoreCoefficientHalfLife:(double)arg12 globalScoreCoefficientInitialMultiplier:(double)arg13 cohortMembershipFavoritedBoost:(double)arg14 cohortMembershipGlobalWeight:(double)arg15 cohortMembershipUserBaseline:(double)arg16 cohortMembershipPreBaselineCurvature:(double)arg17 cohortMembershipPostBaselineCurvature:(double)arg18 cohortMembershipDilutionFactor:(double)arg19 cohortMembershipPaddingFactor:(double)arg20 subscribedTopicsScoreCoefficient:(double)arg21 ctrWithZeroSubscribed:(double)arg22 ctrWithOneSubscribed:(double)arg23 ctrWithTwoSubscribed:(double)arg24 ctrWithThreeSubscribed:(double)arg25 autofavoritedVoteCoefficient:(double)arg26 ctrWithZeroAutofavorited:(double)arg27 ctrWithOneAutofavorited:(double)arg28 ctrWithTwoAutofavorited:(double)arg29 ctrWithThreeAutofavorited:(double)arg30 diversificationInitialPenalty:(double)arg31 diversificationPenalty:(double)arg32 diversificationPenaltyHalfLife:(double)arg33 channelTopicDiversificationInitialPenalty:(double)arg34 channelTopicDiversificationPenalty:(double)arg35 channelTopicDiversificationPenaltyHalfLife:(double)arg36 firstPassHalfLifeCoefficient:(double)arg37 firstPassDiversificationPenalty:(double)arg38 firstPassArticleFilter:(double)arg39 bundlePaidMultiplierForFreeUsers:(double)arg40 bundlePaidMultiplierForTrialUsers:(double)arg41 bundlePaidMultiplierForPaidUsers:(double)arg42 bundleFreeMultiplierForFreeUsers:(double)arg43 bundleFreeMultiplierForTrialUsers:(double)arg44 bundleFreeMultiplierForPaidUsers:(double)arg45 featuredMultiplierForFreeUsers:(double)arg46 featuredMultiplierForTrialUsers:(double)arg47 featuredMultiplierForPaidUsers:(double)arg48 headlineSeenPenalty:(double)arg49 articleReadPenalty:(double)arg50;
 
 @end
 

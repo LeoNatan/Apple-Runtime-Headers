@@ -31,12 +31,12 @@
     id <FBSceneMonitorDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) FBSceneMonitorBehaviors *behaviors; // @synthesize behaviors=_givenMonitorBehaviors;
 @property(readonly, nonatomic) FBSSceneSettings *sceneSettings; // @synthesize sceneSettings=_sceneSettings;
 @property(nonatomic) __weak id <FBSceneMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
 @property(readonly, nonatomic) FBScene *scene; // @synthesize scene=_scene;
-- (void).cxx_destruct;
 - (void)sceneManagerDidEndSceneUpdateSynchronization:(id)arg1;
 - (void)sceneManagerWillBeginSceneUpdateSynchronization:(id)arg1;
 - (void)sceneManager:(id)arg1 didDestroyScene:(id)arg2;

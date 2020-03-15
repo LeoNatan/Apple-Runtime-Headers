@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     _SFFormMetadataController *_formMetadataController;
 }
 
-@property(retain, nonatomic) _SFFormMetadataController *formMetadataController; // @synthesize formMetadataController=_formMetadataController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _SFFormMetadataController *formMetadataController; // @synthesize formMetadataController=_formMetadataController;
 - (void)clearAutoFillMetadata;
 - (void)collectMetadataForTextField:(id)arg1 inFrame:(id)arg2 atURL:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)collectFormMetadataForPrefillingAtURL:(id)arg1;

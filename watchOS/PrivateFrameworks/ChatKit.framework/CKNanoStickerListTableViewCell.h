@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSString *_attributionDescriptionLabelText;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *attributionDescriptionLabelText; // @synthesize attributionDescriptionLabelText=_attributionDescriptionLabelText;
 @property(retain, nonatomic) UILabel *attributionLabel; // @synthesize attributionLabel=_attributionLabel;
 @property(retain, nonatomic) UILabel *attributionDescriptionLabel; // @synthesize attributionDescriptionLabel=_attributionDescriptionLabel;
 @property(retain, nonatomic) UIImageView *stickerImageView; // @synthesize stickerImageView=_stickerImageView;
 @property(retain, nonatomic) UILabel *dateLabel; // @synthesize dateLabel=_dateLabel;
 @property(retain, nonatomic) UILabel *senderLabel; // @synthesize senderLabel=_senderLabel;
-- (void).cxx_destruct;
 - (_Bool)hasAttributionText;
 - (_Bool)hasSenderNameText;
 - (float)attributionOffsetFromPrefix;

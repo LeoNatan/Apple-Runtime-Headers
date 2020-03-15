@@ -16,9 +16,9 @@
     REFeatureTransformer *_transformer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) REFeatureTransformer *transformer; // @synthesize transformer=_transformer;
 @property(readonly, nonatomic) REFeatureSet *features; // @synthesize features=_features;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_computeHash;
 - (void)_replaceDependentFeature:(id)arg1 withFeature:(id)arg2;

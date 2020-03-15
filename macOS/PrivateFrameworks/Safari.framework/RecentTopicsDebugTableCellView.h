@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSTextField *_descriptionField;
 }
 
-@property(nonatomic) __weak NSTextField *descriptionField; // @synthesize descriptionField=_descriptionField;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSTextField *descriptionField; // @synthesize descriptionField=_descriptionField;
 
 @end
 

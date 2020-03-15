@@ -24,6 +24,7 @@
 + (void)drawImage:(id)arg1 withCenterRect:(struct CGRect)arg2 inRect:(struct CGRect)arg3 withLeftEndCap:(BOOL)arg4 rightEndCap:(BOOL)arg5;
 + (id)ninePartImageBySlicingImage:(id)arg1 withCenterRect:(struct CGRect)arg2 withLeftEndCap:(BOOL)arg3 rightEndCap:(BOOL)arg4;
 + (id)_imageByCroppingImage:(id)arg1 withFrame:(struct CGRect)arg2;
+- (void).cxx_destruct;
 @property(retain) NSImage *bottomRight; // @synthesize bottomRight=_bottomRight;
 @property(retain) NSImage *bottomCenter; // @synthesize bottomCenter=_bottomCenter;
 @property(retain) NSImage *bottomLeft; // @synthesize bottomLeft=_bottomLeft;
@@ -33,7 +34,6 @@
 @property(retain) NSImage *topRight; // @synthesize topRight=_topRight;
 @property(retain) NSImage *topCenter; // @synthesize topCenter=_topCenter;
 @property(retain) NSImage *topLeft; // @synthesize topLeft=_topLeft;
-- (void).cxx_destruct;
 - (void)drawInRect:(struct CGRect)arg1;
 
 @end

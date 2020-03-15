@@ -11,12 +11,13 @@
 #import <PassKitUI/PKPaymentServiceDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentVerificationControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPeerPaymentAccountResolutionControllerDelegate-Protocol.h>
+#import <PassKitUI/PKSubcredentialProvisioningFlowControllerDelegate-Protocol.h>
 #import <PassKitUI/PKSwitchSpinnerTableCellDelegate-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSString, PKAccountService, PKExpressPassController, PKPaymentPreference, PKPaymentPreferenceCard, PKPaymentPreferencesViewController, PKPaymentSetupAboutViewController, PKPaymentVerificationController, PKPaymentWebService, PKPeerPaymentAccount, PKPeerPaymentAccountResolutionController, PKPeerPaymentWebService, PSSpecifier;
+@class NSArray, NSDictionary, NSMutableDictionary, NSSet, NSString, PKAccountService, PKExpressPassController, PKPaymentPreference, PKPaymentPreferenceCard, PKPaymentPreferencesViewController, PKPaymentSetupAboutViewController, PKPaymentVerificationController, PKPaymentWebService, PKPeerPaymentAccount, PKPeerPaymentAccountResolutionController, PKPeerPaymentWebService, PSSpecifier;
 @protocol PKPassLibraryDataProvider, PKPassbookPeerPaymentSettingsDelegate, PKPassbookSettingsDataSource, PKPassbookSettingsDelegate, PKPaymentDataProvider, PKPaymentOptionsProtocol;
 
-@interface PKPassbookSettingsController : NSObject <PKPaymentServiceDelegate, PKPeerPaymentAccountResolutionControllerDelegate, PKPaymentDataProviderDelegate, PKSwitchSpinnerTableCellDelegate, PKPaymentVerificationControllerDelegate, PKPaymentPassTableCellDelegate>
+@interface PKPassbookSettingsController : NSObject <PKPaymentServiceDelegate, PKPeerPaymentAccountResolutionControllerDelegate, PKPaymentDataProviderDelegate, PKSwitchSpinnerTableCellDelegate, PKSubcredentialProvisioningFlowControllerDelegate, PKPaymentVerificationControllerDelegate, PKPaymentPassTableCellDelegate>
 {
     id <PKPassbookSettingsDataSource> _dataSource;
     id <PKPassLibraryDataProvider> _passLibraryDataProvider;
@@ -64,11 +65,16 @@
     NSMutableDictionary *_latestTransitBalanceModel;
     id <PKPaymentDataProvider> _companionPaymentDataProvider;
     int _notifyToken;
+    NSSet *_credentialInvitations;
+    NSDictionary *_credentialInvitationForPass;
+    NSSet *_passesThatMayRequestCredentialInvitations;
     id <PKPassbookSettingsDelegate> _delegate;
 }
 
-@property(nonatomic) id <PKPassbookSettingsDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) id <PKPassbookSettingsDelegate> delegate; // @synthesize delegate=_delegate;
+- (void)userCanceledPairingWithSubcredentialProvisioningFlowController:(id)arg1;
+- (void)subcredentialProvisioningFlowController:(id)arg1 didFinishWithPass:(id)arg2 error:(id)arg3;
 - (void)_updateCardSpecifier:(id)arg1 withAccountStateForPaymentPass:(id)arg2;
 - (void)_updateBalancesWithServerBalances:(id)arg1 transitPassProperties:(id)arg2 forPassWithUniqueIdentifier:(id)arg3;
 - (void)_fetchBalancesAndTransitPassPropertiesForPass:(id)arg1 withDataProvider:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -78,6 +84,7 @@
 - (void)_setCardAddProvisioningButtonEnabled:(_Bool)arg1 forPaymentPass:(id)arg2;
 - (void)_requestDelegatePresentViewController:(id)arg1;
 - (void)_handleProvisioningError:(id)arg1 viewController:(id)arg2;
+- (void)_presentCredentialSetupViewControllerForPaymentPass:(id)arg1 invitation:(id)arg2 shouldRequestInvitation:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_presentPaymentSetupViewController:(id)arg1 paymentPass:(id)arg2;
 - (void)verifyButtonPressedForPaymentPass:(id)arg1;
 - (void)addButtonPressedForPaymentPass:(id)arg1;
@@ -148,8 +155,10 @@
 - (id)rendererStateForPaymentPass:(id)arg1;
 - (id)passWithUniqueIdentifier:(id)arg1;
 - (void)refreshPeerPaymentStatus;
+- (void)_updateCredentialInvitaionMapping;
 - (void)_updateTransitExpressPassIdentifiersWithReload:(_Bool)arg1;
 - (id)_fallbackExpressTransitFooterText;
+- (void)_refreshCredentialInvitationsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)refreshExpressTransitCard;
 - (void)refreshDefaultCard;
 - (void)_refreshPasses;
@@ -159,6 +168,7 @@
 - (id)_restrictedModeSpecifier;
 - (id)_settingsSpecifiers;
 - (id)_bridgeSpecifiers;
+- (void)_refreshCompanionGroupSpecififiers;
 - (void)_updateCompanionGroupSpecifier;
 - (void)_updateCardsGroupSpecifier;
 - (void)_updateAddButtonSpecifier;

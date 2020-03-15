@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int observationValue; // @synthesize observationValue=_observationValue;
 @property(copy, nonatomic) SPEstimatedLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) SPAdvertisement *advertisement; // @synthesize advertisement=_advertisement;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

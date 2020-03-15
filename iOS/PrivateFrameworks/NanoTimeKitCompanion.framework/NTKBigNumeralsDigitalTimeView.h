@@ -9,7 +9,7 @@
 #import <NanoTimeKitCompanion/CLKTimeFormatterObserver-Protocol.h>
 #import <NanoTimeKitCompanion/NTKTimeView-Protocol.h>
 
-@class CLKDevice, NSDate, NSString, NTKBigNumeralsTimeComponentLabel;
+@class CLKDevice, NSDate, NSNumber, NSString, NTKBigNumeralsTimeComponentLabel;
 
 @interface NTKBigNumeralsDigitalTimeView : UIView <CLKTimeFormatterObserver, NTKTimeView>
 {
@@ -17,7 +17,7 @@
     NTKBigNumeralsTimeComponentLabel *_topLabel;
     NTKBigNumeralsTimeComponentLabel *_bottomLabel;
     NSDate *_overrideDate;
-    struct NSNumber *_timerToken;
+    NSNumber *_timerToken;
     _Bool _frozen;
     _Bool _showingStatus;
     unsigned long long _style;
@@ -25,13 +25,12 @@
     unsigned long long _color;
 }
 
-+ (long long)uiSensitivity;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long color; // @synthesize color=_color;
 @property(readonly, nonatomic) unsigned long long typeface; // @synthesize typeface=_typeface;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(nonatomic) _Bool showingStatus; // @synthesize showingStatus=_showingStatus;
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
-- (void).cxx_destruct;
 - (void)cleanupTransition;
 - (void)applyTransitionFraction:(double)arg1 fromColor:(unsigned long long)arg2 toColor:(unsigned long long)arg3;
 - (void)applyColor:(unsigned long long)arg1;

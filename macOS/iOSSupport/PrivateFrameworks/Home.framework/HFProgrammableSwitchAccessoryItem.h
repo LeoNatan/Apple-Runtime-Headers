@@ -19,9 +19,9 @@
     id <HFCharacteristicValueSource> _valueSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
 @property(retain, nonatomic) HMAccessory *accessory; // @synthesize accessory=_accessory;
-- (void).cxx_destruct;
 - (id)namingComponentForHomeKitObject;
 - (id)currentStateActionBuildersForHome:(id)arg1;
 - (BOOL)actionsMayRequireDeviceUnlock;

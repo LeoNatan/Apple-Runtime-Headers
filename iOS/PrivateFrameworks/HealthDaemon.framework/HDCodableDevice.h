@@ -27,6 +27,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double creationDate; // @synthesize creationDate=_creationDate;
 @property(retain, nonatomic) NSData *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) NSString *fDAUDI; // @synthesize fDAUDI=_fDAUDI;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSString *model; // @synthesize model=_model;
 @property(retain, nonatomic) NSString *manufacturer; // @synthesize manufacturer=_manufacturer;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

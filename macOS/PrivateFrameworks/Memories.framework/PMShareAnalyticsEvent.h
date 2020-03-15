@@ -16,9 +16,9 @@
     NSString *_orientation;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *orientation; // @synthesize orientation=_orientation;
 @property(copy, nonatomic) NSString *activityType; // @synthesize activityType=_activityType;
-- (void).cxx_destruct;
 - (void)sendToCoreAnalytics;
 - (id)eventName;
 - (id)eventPayload;

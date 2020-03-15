@@ -24,12 +24,12 @@ __attribute__((visibility("hidden")))
 
 + (id)configureClass:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property unsigned int coalescedReportPending; // @synthesize coalescedReportPending=_coalescedReportPending;
 @property(retain) mbufRecord *lastReport; // @synthesize lastReport=_lastReport;
 @property(retain) AWDLibnetcoreStatsReport *kernelStatisticsReport; // @synthesize kernelStatisticsReport=_kernelStatisticsReport;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain) NWStatisticsManager *nwStatManager; // @synthesize nwStatManager=_nwStatManager;
-- (void).cxx_destruct;
 - (int)read:(id)arg1 returnedValues:(id)arg2;
 - (int)configureInstance:(id)arg1;
 @property(readonly, copy) NSString *description;

@@ -21,9 +21,9 @@
 }
 
 + (struct CGSize)preferredSize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *glyphView; // @synthesize glyphView=_glyphView;
 @property(nonatomic) long long status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (void)_updateImageViewIfNeeded;
 - (void)_invalidateImageView;
 - (void)didApplyGeometry:(struct PXTileGeometry)arg1 withUserData:(id)arg2;

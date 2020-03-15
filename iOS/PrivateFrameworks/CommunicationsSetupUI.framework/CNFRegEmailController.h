@@ -19,8 +19,8 @@
     _Bool _validating;
 }
 
-@property(copy, nonatomic) NSString *pendingAlias; // @synthesize pendingAlias=_pendingAlias;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *pendingAlias; // @synthesize pendingAlias=_pendingAlias;
 - (void)_setupEventHandlers;
 - (void)_buildSpecifierCache:(id)arg1;
 - (void)_buildCheckMailSpecifierCache:(id)arg1;

@@ -18,13 +18,13 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property BOOL multipleVariants; // @synthesize multipleVariants=_multipleVariants;
 @property(retain) NSString *sessionUUID; // @synthesize sessionUUID=_sessionUUID;
 @property BOOL isAppleInternal; // @synthesize isAppleInternal=_isAppleInternal;
 @property(retain) NSString *client; // @synthesize client=_client;
 @property(retain) OSPRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)__submitToInstallerDiagnostics;
 - (void)_submitToInstallerDiagnostics;
 - (id)_summaryForLogging;

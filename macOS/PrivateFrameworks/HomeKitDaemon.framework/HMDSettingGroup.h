@@ -21,13 +21,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *groupsInternal; // @synthesize groupsInternal=_groupsInternal;
 @property(retain) NSMutableSet *settingsInternal; // @synthesize settingsInternal=_settingsInternal;
 @property(copy) NSString *keyPath; // @synthesize keyPath=_keyPath;
 - (id)name;
 - (id)parentIdentifier;
 - (id)identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)addGroup:(id)arg1;

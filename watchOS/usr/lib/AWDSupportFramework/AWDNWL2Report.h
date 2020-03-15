@@ -8,22 +8,41 @@
 
 #import <AWDSupportFramework/NSCopying-Protocol.h>
 
+@class NSString;
+
 @interface AWDNWL2Report : PBCodable <NSCopying>
 {
+    int _cellularBandInfo;
+    int _cellularBandwidth;
+    int _cellularBars;
+    NSString *_cellularCellType;
     int _cellularLqm;
+    int _cellularMcc;
+    int _cellularMnc;
+    int _cellularPid;
     int _cellularPowerCostDownload;
     int _cellularPowerCostUpload;
     int _cellularRadioTechnology;
+    int _cellularTac;
+    int _cellularUarfcn;
     int _wifiLqm;
     int _wifiRadioTechnology;
     int _wifiRssi;
     _Bool _cellularKnownGood;
     _Bool _wifiKnownGood;
     struct {
+        unsigned int cellularBandInfo:1;
+        unsigned int cellularBandwidth:1;
+        unsigned int cellularBars:1;
         unsigned int cellularLqm:1;
+        unsigned int cellularMcc:1;
+        unsigned int cellularMnc:1;
+        unsigned int cellularPid:1;
         unsigned int cellularPowerCostDownload:1;
         unsigned int cellularPowerCostUpload:1;
         unsigned int cellularRadioTechnology:1;
+        unsigned int cellularTac:1;
+        unsigned int cellularUarfcn:1;
         unsigned int wifiLqm:1;
         unsigned int wifiRadioTechnology:1;
         unsigned int wifiRssi:1;
@@ -32,6 +51,15 @@
     } _has;
 }
 
+@property(nonatomic) int cellularBars; // @synthesize cellularBars=_cellularBars;
+@property(nonatomic) int cellularTac; // @synthesize cellularTac=_cellularTac;
+@property(nonatomic) int cellularBandwidth; // @synthesize cellularBandwidth=_cellularBandwidth;
+@property(retain, nonatomic) NSString *cellularCellType; // @synthesize cellularCellType=_cellularCellType;
+@property(nonatomic) int cellularBandInfo; // @synthesize cellularBandInfo=_cellularBandInfo;
+@property(nonatomic) int cellularPid; // @synthesize cellularPid=_cellularPid;
+@property(nonatomic) int cellularUarfcn; // @synthesize cellularUarfcn=_cellularUarfcn;
+@property(nonatomic) int cellularMcc; // @synthesize cellularMcc=_cellularMcc;
+@property(nonatomic) int cellularMnc; // @synthesize cellularMnc=_cellularMnc;
 @property(nonatomic) _Bool wifiKnownGood; // @synthesize wifiKnownGood=_wifiKnownGood;
 @property(nonatomic) int wifiRssi; // @synthesize wifiRssi=_wifiRssi;
 @property(nonatomic) int wifiLqm; // @synthesize wifiLqm=_wifiLqm;
@@ -46,6 +74,15 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasCellularBars;
+@property(nonatomic) _Bool hasCellularTac;
+@property(nonatomic) _Bool hasCellularBandwidth;
+@property(readonly, nonatomic) _Bool hasCellularCellType;
+@property(nonatomic) _Bool hasCellularBandInfo;
+@property(nonatomic) _Bool hasCellularPid;
+@property(nonatomic) _Bool hasCellularUarfcn;
+@property(nonatomic) _Bool hasCellularMcc;
+@property(nonatomic) _Bool hasCellularMnc;
 - (int)StringAsWifiRadioTechnology:(id)arg1;
 - (id)wifiRadioTechnologyAsString:(int)arg1;
 @property(nonatomic) _Bool hasWifiRadioTechnology;
@@ -67,6 +104,7 @@
 @property(nonatomic) _Bool hasCellularPowerCostDownload;
 @property(nonatomic) int cellularPowerCostDownload; // @synthesize cellularPowerCostDownload=_cellularPowerCostDownload;
 @property(nonatomic) _Bool hasCellularLqm;
+- (void)dealloc;
 
 @end
 

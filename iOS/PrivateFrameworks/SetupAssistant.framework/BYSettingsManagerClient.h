@@ -13,8 +13,8 @@
     NSXPCConnection *_connection;
 }
 
-@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void)_connectToDaemon;
 - (_Bool)hasStashedValuesOnDisk;
 - (id)init;

@@ -39,12 +39,12 @@
 + (id)logCategory;
 + (long long)compareElectionVersions:(id)arg1 otherVersion:(id)arg2;
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property(nonatomic) long long lastAtHomeLevel; // @synthesize lastAtHomeLevel=_lastAtHomeLevel;
 @property(nonatomic, getter=isConfirming) _Bool confirming; // @synthesize confirming=_confirming;
 @property(nonatomic) __weak HMDHome *home; // @synthesize home=_home;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property __weak id <HMDResidentDeviceManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_removeResidentDeviceWithModel:(id)arg1 message:(id)arg2;
 - (void)_addResidentDeviceWithModel:(id)arg1 message:(id)arg2;
 - (void)updatePrimaryResidentWithUUID:(id)arg1 actions:(id)arg2;

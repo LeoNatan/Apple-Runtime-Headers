@@ -19,13 +19,13 @@
     _Bool _observerReceiving;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNScheduler> resourceLock; // @synthesize resourceLock=_resourceLock;
 @property(readonly, nonatomic) id <CNScheduler> downstream; // @synthesize downstream=_downstream;
 @property(readonly, nonatomic) NSMutableArray *tokens; // @synthesize tokens=_tokens;
 @property(readonly, nonatomic) CNQueue *decorators; // @synthesize decorators=_decorators;
 @property(nonatomic, getter=isObserverReceiving) _Bool observerReceiving; // @synthesize observerReceiving=_observerReceiving;
 @property(nonatomic, getter=isOperatorReceiving) _Bool operatorReceiving; // @synthesize operatorReceiving=_operatorReceiving;
-- (void).cxx_destruct;
 - (id)initWithSchedulerProvider:(id)arg1;
 
 @end

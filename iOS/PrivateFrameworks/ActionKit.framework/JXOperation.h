@@ -16,10 +16,10 @@
     NSObject<OS_dispatch_queue> *_stateQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *stateQueue; // @synthesize stateQueue=_stateQueue;
 @property _Bool isFinished; // @synthesize isFinished=_isFinished;
 @property _Bool isExecuting; // @synthesize isExecuting=_isExecuting;
-- (void).cxx_destruct;
 - (void)startAndWaitUntilFinished;
 - (void)finish;
 - (void)willFinish;

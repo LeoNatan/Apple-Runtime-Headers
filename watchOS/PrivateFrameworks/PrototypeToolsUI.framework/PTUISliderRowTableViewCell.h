@@ -6,17 +6,24 @@
 
 #import <PrototypeToolsUI/PTUIRowTableViewCell.h>
 
-@class _PTSAccessorySlider;
+#import <PrototypeToolsUI/PTUINumericKeypadDelegate-Protocol.h>
 
-@interface PTUISliderRowTableViewCell : PTUIRowTableViewCell
+@class UILabel, UISlider;
+
+@interface PTUISliderRowTableViewCell : PTUIRowTableViewCell <PTUINumericKeypadDelegate>
 {
-    _PTSAccessorySlider *_slider;
+    UISlider *_slider;
+    UILabel *_label;
 }
 
 - (void).cxx_destruct;
+- (void)numericKeypadWillDismiss:(id)arg1;
+- (void)numericKeypadDidUpdateValue:(id)arg1;
+- (void)labelTapped;
 - (void)_valueChanged:(id)arg1;
 - (void)updateDisplayedValue;
 - (void)updateCellCharacteristics;
+- (void)updateLabel;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 
 @end

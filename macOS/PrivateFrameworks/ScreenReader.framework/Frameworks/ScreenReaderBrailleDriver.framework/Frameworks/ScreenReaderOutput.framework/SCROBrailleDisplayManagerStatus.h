@@ -17,12 +17,12 @@
     long long _masterStatusCellIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL anyUnreadAnnouncements; // @synthesize anyUnreadAnnouncements=_anyUnreadAnnouncements;
 @property(nonatomic) BOOL currentAnnouncementUnread; // @synthesize currentAnnouncementUnread=_currentAnnouncementUnread;
 @property(nonatomic) long long masterStatusCellIndex; // @synthesize masterStatusCellIndex=_masterStatusCellIndex;
 @property(nonatomic) int virtualAlignment; // @synthesize virtualAlignment=_virtualAlignment;
 @property(retain, nonatomic) NSData *aggregatedData; // @synthesize aggregatedData=_aggregatedData;
-- (void).cxx_destruct;
 
 @end
 

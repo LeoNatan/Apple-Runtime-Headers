@@ -15,6 +15,7 @@
 + (id)safeCategoryTargetClassName;
 - (id)_accessibilityHitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (long long)_accessibilitySortPriority;
+- (struct CGPoint)accessibilityActivationPoint;
 
 @end
 

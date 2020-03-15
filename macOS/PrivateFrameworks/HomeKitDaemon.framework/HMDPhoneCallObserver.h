@@ -16,8 +16,8 @@
 }
 
 + (id)sharedPhoneCallObserver;
-@property(retain, nonatomic) CXCallObserver *observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CXCallObserver *observer; // @synthesize observer=_observer;
 - (void)callObserver:(id)arg1 callChanged:(id)arg2;
 - (BOOL)isActiveCall:(id)arg1;
 - (void)startObserving;

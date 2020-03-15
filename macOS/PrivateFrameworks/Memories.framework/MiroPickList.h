@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     NSArray *_frozenAdjustedPickOrder;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL calculatingPickOrder; // @synthesize calculatingPickOrder=_calculatingPickOrder;
 @property(retain, nonatomic) NSArray *frozenAdjustedPickOrder; // @synthesize frozenAdjustedPickOrder=_frozenAdjustedPickOrder;
 @property(retain, nonatomic) NSArray *frozenSourceOrder; // @synthesize frozenSourceOrder=_frozenSourceOrder;
@@ -52,7 +53,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSSet *photosCuratedAssetIDs; // @synthesize photosCuratedAssetIDs=_photosCuratedAssetIDs;
 @property(retain, nonatomic) NSSet *disallowedAssetIDs; // @synthesize disallowedAssetIDs=_disallowedAssetIDs;
 @property(retain, nonatomic) NSSet *requiredAssetIDs; // @synthesize requiredAssetIDs=_requiredAssetIDs;
-- (void).cxx_destruct;
 - (void)updateAssetsWithSpecialInfo;
 - (id)classifications;
 - (id)people;

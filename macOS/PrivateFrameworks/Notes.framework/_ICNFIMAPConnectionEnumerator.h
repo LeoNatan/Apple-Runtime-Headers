@@ -18,8 +18,8 @@
     id _lastObjectKey;
 }
 
-@property(retain, nonatomic) id lastObjectKey; // @synthesize lastObjectKey=_lastObjectKey;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id lastObjectKey; // @synthesize lastObjectKey=_lastObjectKey;
 - (id)nextObject;
 - (id)init;
 - (id)initWithConnectionDictionary:(id)arg1;

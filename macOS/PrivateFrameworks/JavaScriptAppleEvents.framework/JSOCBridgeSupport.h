@@ -16,8 +16,8 @@
     JSExportNames *_exportNames;
 }
 
-@property(readonly) JSExportNames *exportNames; // @synthesize exportNames=_exportNames;
 - (void).cxx_destruct;
+@property(readonly) JSExportNames *exportNames; // @synthesize exportNames=_exportNames;
 - (id)functionPointerForFunctionWithName:(id)arg1;
 - (id)functionPointerForTarget:(id)arg1 selector:(SEL)arg2 superclassDepth:(unsigned long long)arg3;
 - (id)typeForClass:(Class)arg1 selector:(SEL)arg2;

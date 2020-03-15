@@ -124,10 +124,11 @@
 - (void)blockingImportICSDocument:(id)arg1 importOptionsForInsert:(unsigned long long)arg2 importOptionsForUpdate:(unsigned long long)arg3 processEvents:(BOOL)arg4 processReminders:(BOOL)arg5 progressBlock:(CDUnknownBlockType)arg6 abortForIssueBlock:(CDUnknownBlockType)arg7 finishBlock:(CDUnknownBlockType)arg8;
 - (BOOL)importICSDocument:(id)arg1 importOptionsForInsert:(unsigned long long)arg2 importOptionsForUpdate:(unsigned long long)arg3 processEvents:(BOOL)arg4 processReminders:(BOOL)arg5 callbackQueue:(id)arg6 progressBlock:(CDUnknownBlockType)arg7 abortForIssueBlock:(CDUnknownBlockType)arg8 finishBlock:(CDUnknownBlockType)arg9 shouldSaveOnSuccess:(BOOL)arg10 synchronousFinishBlock:(BOOL)arg11;
 - (BOOL)importICSDocument:(id)arg1 importOptionsForInsert:(unsigned long long)arg2 importOptionsForUpdate:(unsigned long long)arg3 processEvents:(BOOL)arg4 processReminders:(BOOL)arg5 callbackQueue:(id)arg6 progressBlock:(CDUnknownBlockType)arg7 abortForIssueBlock:(CDUnknownBlockType)arg8 finishBlock:(CDUnknownBlockType)arg9;
-- (BOOL)_importCleanedDocument:(id)arg1 importOptionsForInsert:(unsigned long long)arg2 importOptionsForUpdate:(unsigned long long)arg3 sharedUIDsToImport:(id)arg4 resultObjectIDs:(struct NSMutableDictionary **)arg5 progressBlock:(CDUnknownBlockType)arg6 abortForIssueBlock:(CDUnknownBlockType)arg7;
+- (BOOL)_importCleanedDocument:(id)arg1 importOptionsForInsert:(unsigned long long)arg2 importOptionsForUpdate:(unsigned long long)arg3 sharedUIDsToImport:(id)arg4 resultObjectIDs:(id *)arg5 progressBlock:(CDUnknownBlockType)arg6 abortForIssueBlock:(CDUnknownBlockType)arg7;
 - (id)handleDuplicatedUIDSFromThisCalendar:(id)arg1 context:(id)arg2;
 - (void)moveEventsAndMastersWithDuplicatedUIDSFromOtherCalendars:(id)arg1 sharedUIDS:(id)arg2;
 - (id)calendarsToCheckForDuplicatedUIDS;
+- (void)_cleanAttachments:(id)arg1 depth:(int)arg2;
 - (void)_cleanComponent:(id)arg1;
 - (BOOL)_containsDangerousAlarms:(id)arg1;
 - (BOOL)_componentIsDangerousAlarm:(id)arg1;

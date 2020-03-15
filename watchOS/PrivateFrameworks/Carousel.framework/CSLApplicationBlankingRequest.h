@@ -18,13 +18,13 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool performContentTransition; // @synthesize performContentTransition=_performContentTransition;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(copy, nonatomic) CDUnknownBlockType brightnessRamp; // @synthesize brightnessRamp=_brightnessRamp;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(nonatomic, getter=isAnimated) _Bool animated; // @synthesize animated=_animated;
 @property(retain, nonatomic) FBScene *scene; // @synthesize scene=_scene;
-- (void).cxx_destruct;
 
 @end
 

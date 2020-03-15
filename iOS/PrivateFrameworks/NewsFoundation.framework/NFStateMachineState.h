@@ -18,13 +18,13 @@
     CDUnknownBlockType _didEnterBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didEnterBlock; // @synthesize didEnterBlock=_didEnterBlock;
 @property(copy, nonatomic) CDUnknownBlockType didExitBlock; // @synthesize didExitBlock=_didExitBlock;
 @property(copy, nonatomic) CDUnknownBlockType willEnterBlock; // @synthesize willEnterBlock=_willEnterBlock;
 @property(copy, nonatomic) CDUnknownBlockType willExitBlock; // @synthesize willExitBlock=_willExitBlock;
 @property(copy, nonatomic) CDUnknownBlockType canTryBlock; // @synthesize canTryBlock=_canTryBlock;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)onDidEnter:(CDUnknownBlockType)arg1;
 - (id)onWillEnter:(CDUnknownBlockType)arg1;
 - (id)onDidExit:(CDUnknownBlockType)arg1;

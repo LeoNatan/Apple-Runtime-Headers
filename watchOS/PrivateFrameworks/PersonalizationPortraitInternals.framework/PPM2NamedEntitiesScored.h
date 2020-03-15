@@ -22,6 +22,7 @@
     CDStruct_68ee747f _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool error; // @synthesize error=_error;
 @property(nonatomic) _Bool exclusionSpec; // @synthesize exclusionSpec=_exclusionSpec;
 @property(nonatomic) _Bool timeLimited; // @synthesize timeLimited=_timeLimited;
@@ -29,7 +30,6 @@
 @property(nonatomic) _Bool limitHit; // @synthesize limitHit=_limitHit;
 @property(nonatomic) unsigned int resultSizeLog10; // @synthesize resultSizeLog10=_resultSizeLog10;
 @property(retain, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

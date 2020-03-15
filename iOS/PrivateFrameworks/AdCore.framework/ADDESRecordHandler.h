@@ -23,8 +23,11 @@
     double _pTTR;
     NSString *_obfuscationID;
     NSDictionary *_usageVectors;
+    NSString *_addendum;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSString *addendum; // @synthesize addendum=_addendum;
 @property(retain, nonatomic) NSDictionary *usageVectors; // @synthesize usageVectors=_usageVectors;
 @property(retain, nonatomic) NSString *obfuscationID; // @synthesize obfuscationID=_obfuscationID;
 @property(nonatomic) double pTTR; // @synthesize pTTR=_pTTR;
@@ -38,7 +41,6 @@
 @property(retain, nonatomic) DESRecordStore *recordStore; // @synthesize recordStore=_recordStore;
 @property(retain, nonatomic) NSString *requestID; // @synthesize requestID=_requestID;
 @property(retain, nonatomic) NSUUID *recordIdentifier; // @synthesize recordIdentifier=_recordIdentifier;
-- (void).cxx_destruct;
 - (void)writeDESRecord;
 - (void)performAfterWrite:(CDUnknownBlockType)arg1;
 - (id)recordData;

@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     double _selectedItemWidthOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double selectedItemWidthOffset; // @synthesize selectedItemWidthOffset=_selectedItemWidthOffset;
 @property(nonatomic) double offsetAfter; // @synthesize offsetAfter=_offsetAfter;
 @property(nonatomic) double offsetBefore; // @synthesize offsetBefore=_offsetBefore;
 @property(nonatomic) _Bool needsUpdateLayout; // @synthesize needsUpdateLayout=_needsUpdateLayout;
 @property(retain, nonatomic) NSIndexPath *selectedIndexPath; // @synthesize selectedIndexPath=_selectedIndexPath;
 @property(nonatomic) long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned long long)arg3;
 - (void)_updateLayoutMetrics;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;

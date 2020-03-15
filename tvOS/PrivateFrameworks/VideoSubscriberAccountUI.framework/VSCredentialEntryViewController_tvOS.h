@@ -24,12 +24,12 @@ __attribute__((visibility("hidden")))
     UIViewController *_currentChildViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasAppeared; // @synthesize hasAppeared=_hasAppeared;
 @property(retain, nonatomic) UIViewController *currentChildViewController; // @synthesize currentChildViewController=_currentChildViewController;
 @property(nonatomic) __weak id <VSAuthenticationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) VSViewModel *viewModel;
 @property(nonatomic, getter=isCancellationAllowed) _Bool cancellationAllowed; // @synthesize cancellationAllowed=_cancellationAllowed;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)credentialEntryPickerViewControllerDidCancel:(id)arg1;
 - (void)credentialEntryPickerViewController:(id)arg1 pickerDidSelectRow:(unsigned long long)arg2;

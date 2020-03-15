@@ -17,9 +17,9 @@
     BOOL __didConfigureForPause;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setDidConfigureForPause:) BOOL _didConfigureForPause; // @synthesize _didConfigureForPause=__didConfigureForPause;
 @property(nonatomic) BOOL showAsPause; // @synthesize showAsPause=_showAsPause;
-- (void).cxx_destruct;
 - (void)_handleTap:(id)arg1;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
 - (long long)style;

@@ -16,11 +16,11 @@
     NSString *_serverVerifiableEncoding;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *serverVerifiableEncoding; // @synthesize serverVerifiableEncoding=_serverVerifiableEncoding;
 @property(readonly, nonatomic) NSData *signature; // @synthesize signature=_signature;
 @property(readonly, nonatomic) IDSAuthenticationCertificate *authenticationCertificate; // @synthesize authenticationCertificate=_authenticationCertificate;
 @property(readonly, nonatomic) NSString *subscriptionIdentifier; // @synthesize subscriptionIdentifier=_subscriptionIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithSubscriptionIdentifier:(id)arg1 authenticationCertificate:(id)arg2 signature:(id)arg3 serverVerifiableEncoding:(id)arg4;
 

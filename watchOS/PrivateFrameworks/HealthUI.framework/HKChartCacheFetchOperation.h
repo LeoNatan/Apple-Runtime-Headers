@@ -13,8 +13,8 @@
     id <NSCopying> _identifier;
 }
 
-@property(retain, nonatomic) id <NSCopying> identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <NSCopying> identifier; // @synthesize identifier=_identifier;
 
 @end
 

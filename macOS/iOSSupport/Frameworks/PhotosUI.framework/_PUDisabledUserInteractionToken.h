@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     long long _reason;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long reason; // @synthesize reason=_reason;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     UIView *_contentView;
 }
 
-@property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) struct NSDirectionalEdgeInsets edgeInsets;
 - (void)layoutSubviews;
 - (id)initWithContentView:(id)arg1;

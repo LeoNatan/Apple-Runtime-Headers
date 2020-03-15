@@ -17,7 +17,6 @@
 - (void)recoverFromCrashIfNeeded;
 - (void)importFileSystemAssetsWithReason:(NSString *)arg1 reply:(void (^)(void))arg2;
 - (void)getPhotoLibraryStoreXPCListenerEndpointWithReply:(void (^)(NSXPCListenerEndpoint *))arg1;
-- (void)shutdownPhotoLibraryDatabaseWithReply:(void (^)(NSError *))arg1;
 - (NSProgress *)postOpenProgressWithReply:(void (^)(NSError *))arg1;
 - (NSProgress *)upgradePhotoLibraryDatabaseWithOptions:(unsigned long long)arg1 reply:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)openPhotoLibraryDatabaseWithReply:(void (^)(NSDictionary *, NSError *))arg1;

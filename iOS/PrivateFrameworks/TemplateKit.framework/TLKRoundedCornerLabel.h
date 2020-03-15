@@ -14,9 +14,9 @@
     UIView *_borderView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *borderView; // @synthesize borderView=_borderView;
 @property(nonatomic) _Bool large; // @synthesize large=_large;
-- (void).cxx_destruct;
 - (void)tlk_updateForAppearance:(id)arg1;
 - (id)initWithProminence:(unsigned long long)arg1;
 

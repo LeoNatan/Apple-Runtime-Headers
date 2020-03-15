@@ -24,8 +24,8 @@
 + (_Bool)shouldDecodeHeaderForKey:(id)arg1;
 + (_Bool)isStructuredHeaderKey:(id)arg1;
 + (id)basicHeaders;
-@property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, copy) NSString *description;
 - (void)appendHeaderData:(id)arg1 andRecipients:(id)arg2;
 - (id)encodedHeaders;

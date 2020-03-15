@@ -32,6 +32,7 @@
 
 + (id)keyPathsForValuesAffectingEffectiveFilter;
 + (_Bool)isErrorPossiblyRelatedToExtraStores:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *localizedSectionIndices; // @synthesize localizedSectionIndices=_localizedSectionIndices;
 @property(nonatomic) _Bool meContactNeedsUpdate; // @synthesize meContactNeedsUpdate=_meContactNeedsUpdate;
 @property(copy, nonatomic) CNContact *meContact; // @synthesize meContact=_meContact;
@@ -42,7 +43,6 @@
 @property(copy, nonatomic) CNContactStoreFilter *filter; // @synthesize filter=_filter;
 @property(nonatomic) __weak id <CNContactDataSourceDelegate> delegate; // @synthesize delegate;
 @property(retain, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *indexSectionsArray;
 @property(readonly, nonatomic) NSDictionary *localizedSectionHeaders;
 @property(readonly, nonatomic) NSDictionary *sectionHeadersDictionary;

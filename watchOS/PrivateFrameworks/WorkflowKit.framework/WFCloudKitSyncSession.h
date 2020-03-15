@@ -28,11 +28,11 @@
 + (void)setSyncEnabled:(_Bool)arg1;
 + (_Bool)isSyncEnabled;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CKRecordID *userRecordID; // @synthesize userRecordID=_userRecordID;
 @property(readonly, nonatomic) CKRecordZoneID *recordZoneID; // @synthesize recordZoneID=_recordZoneID;
 @property(readonly, nonatomic) CKDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) CKContainer *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (_Bool)pushChangesToCloudKit:(id)arg1 deletes:(id)arg2 ordering:(id)arg3 outSuccessfulChanges:(out id *)arg4 outSuccessfulDeletes:(out id *)arg5 outOrderingSaved:(_Bool *)arg6 database:(id)arg7 error:(id *)arg8;
 - (_Bool)saveIncomingChanges:(id)arg1 incomingDeletes:(id)arg2 conflicts:(id)arg3 mergedOrderedWorkflowIDs:(id)arg4 sentChanges:(id)arg5 sentDeletes:(id)arg6 sentOrdering:(_Bool)arg7 saveOrderingLocally:(_Bool)arg8 isOrderingEnabled:(_Bool)arg9 localWorkflowsToDelete:(id)arg10 workflowIDsToRename:(id)arg11 preSyncHashes:(id)arg12 serverChangeToken:(id)arg13 inDatabase:(id)arg14;
 - (_Bool)buildOutgoingChangesFromDatabase:(id)arg1 sendAllChanges:(_Bool)arg2 outChangedWorkflows:(out id *)arg3 outPreSyncHashes:(out id *)arg4 outDeletedWorkflowIDs:(out id *)arg5 outOrderedWorkflowIDs:(out id *)arg6;

@@ -36,11 +36,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)_isInternalTableView;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool generatorActivated; // @synthesize generatorActivated=_generatorActivated;
 @property(getter=_playsFeedback, setter=_setPlaysFeedback:) _Bool playsFeedback; // @synthesize playsFeedback=_playsFeedback;
 @property(nonatomic) int lastSelectedRow; // @synthesize lastSelectedRow=_lastSelectedRow;
 @property(nonatomic) struct CGRect selectionBarRect; // @synthesize selectionBarRect=_selectionBarRect;
-- (void).cxx_destruct;
 - (_Bool)_shouldWrapCells;
 @property(retain, nonatomic, getter=_textColor, setter=_setTextColor:) UIColor *_textColor;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;

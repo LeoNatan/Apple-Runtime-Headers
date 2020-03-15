@@ -17,10 +17,10 @@
 }
 
 + (id)newLabel;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSTextField *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(readonly, nonatomic) NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) NSTextField *stateLabel; // @synthesize stateLabel=_stateLabel;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

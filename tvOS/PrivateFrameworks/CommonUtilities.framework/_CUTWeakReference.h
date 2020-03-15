@@ -12,9 +12,9 @@
     unsigned long long _objectAddress;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long objectAddress; // @synthesize objectAddress=_objectAddress;
 @property(nonatomic) __weak id object; // @synthesize object=_object;
-- (void).cxx_destruct;
 
 @end
 

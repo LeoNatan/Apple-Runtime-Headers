@@ -15,10 +15,10 @@
     NSArray *_facedAssets;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *facedAssets; // @synthesize facedAssets=_facedAssets;
 @property(retain) NSArray *curatedAssets; // @synthesize curatedAssets=_curatedAssets;
 @property(readonly) PGGraphPersonNode *personNode; // @synthesize personNode=_personNode;
-- (void).cxx_destruct;
 - (id)uuid;
 - (id)initWithPersonNode:(id)arg1 momentNodes:(id)arg2;
 

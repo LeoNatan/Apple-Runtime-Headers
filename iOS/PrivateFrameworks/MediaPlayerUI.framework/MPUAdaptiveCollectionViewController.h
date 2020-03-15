@@ -15,8 +15,8 @@
     NSMutableDictionary *_sizeClassToClassMap;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *sizeClassToClassMap; // @synthesize sizeClassToClassMap=_sizeClassToClassMap;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *sizeClassToClassMap; // @synthesize sizeClassToClassMap=_sizeClassToClassMap;
 - (void)_updateViewControllerIfNecessary;
 - (void)_restoreTopVisibleIndexPath:(id)arg1;
 - (id)_indexPathOfTopVisibleItem;

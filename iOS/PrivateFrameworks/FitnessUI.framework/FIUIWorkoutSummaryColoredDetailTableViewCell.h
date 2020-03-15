@@ -29,10 +29,10 @@
 
 + (double)rowHeightWithSecondMetric;
 + (double)rowHeightWithNoDataString:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *optionalButtonView; // @synthesize optionalButtonView=_optionalButtonView;
 @property(retain, nonatomic) UIButton *customAccessoryButton; // @synthesize customAccessoryButton=_customAccessoryButton;
 @property(nonatomic) _Bool showBackgroundButton; // @synthesize showBackgroundButton=_showBackgroundButton;
-- (void).cxx_destruct;
 - (void)setNoDataString:(id)arg1 textColor:(id)arg2;
 - (void)setSecondMetricTitle:(id)arg1 detailString:(id)arg2 detailColor:(id)arg3;
 - (void)setDetailString:(id)arg1 suffixString:(id)arg2 textColor:(id)arg3 shouldForceLTRForDetailString:(_Bool)arg4;

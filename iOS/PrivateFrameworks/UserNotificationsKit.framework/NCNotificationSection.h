@@ -13,8 +13,8 @@
     NSMutableDictionary *_requests;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *requests; // @synthesize requests=_requests;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *requests; // @synthesize requests=_requests;
 @property(readonly, nonatomic) unsigned long long notificationRequestsCount;
 - (id)notificationRequestMatchingNotificationIdentifier:(id)arg1;
 - (_Bool)removeNotificationRequest:(id)arg1;

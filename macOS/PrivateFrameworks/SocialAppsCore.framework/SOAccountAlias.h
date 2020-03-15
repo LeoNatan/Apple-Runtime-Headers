@@ -21,6 +21,7 @@
     SOAccountAliasController *_controller;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak SOAccountAliasController *controller; // @synthesize controller=_controller;
 @property(nonatomic) BOOL initialized; // @synthesize initialized=_initialized;
 @property(copy, nonatomic) NSDictionary *failureInfo; // @synthesize failureInfo=_failureInfo;
@@ -28,7 +29,6 @@
 @property(nonatomic) int verificationState; // @synthesize verificationState=_verificationState;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (long long)validationErrorReason;
 - (id)localizedValidationFalure;
 - (void)deactivate;

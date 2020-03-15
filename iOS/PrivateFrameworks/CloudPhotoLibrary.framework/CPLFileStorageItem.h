@@ -18,11 +18,11 @@
     NSDate *_lastAccessDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *lastAccessDate; // @synthesize lastAccessDate=_lastAccessDate;
 @property(readonly, nonatomic, getter=isMarkedForDelete) _Bool markedForDelete; // @synthesize markedForDelete=_markedForDelete;
 @property(readonly, nonatomic, getter=isOriginal) _Bool original; // @synthesize original=_original;
 @property(readonly, nonatomic) CPLResourceIdentity *identity; // @synthesize identity=_identity;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -16,8 +16,8 @@
 }
 
 + (id)groupWithAction:(id)arg1;
-@property(retain, nonatomic) NSSet *actions; // @synthesize actions=_actions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSet *actions; // @synthesize actions=_actions;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

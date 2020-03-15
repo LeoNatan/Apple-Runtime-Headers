@@ -27,11 +27,11 @@
     NSString *_username;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 @property(copy, nonatomic) NSURL *authURL; // @synthesize authURL=_authURL;
 @property(retain, nonatomic) NSObject<SL_OOPAuthFlowDelegate> *authFlowDelegate; // @synthesize authFlowDelegate=_authFlowDelegate;
 @property(nonatomic) __weak id <SL_OOPAWebViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateNavigationPromptWithActiveURL:(id)arg1;
 - (void)_cancelButtonTapped:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

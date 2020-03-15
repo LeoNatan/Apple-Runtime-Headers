@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     struct CGRect finalFrameForContainerView;
 }
 
-@property(readonly, nonatomic) struct CGRect finalFrameForContainerView; // @synthesize finalFrameForContainerView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct CGRect finalFrameForContainerView; // @synthesize finalFrameForContainerView;
 @property(readonly, nonatomic) unsigned int edgeForHidingNavigationBar;
 @property(readonly, nonatomic) _Bool forceObeyNavigationBarInsets;
 @property(readonly, nonatomic) _Bool animatorShouldLayoutPresentationViews;

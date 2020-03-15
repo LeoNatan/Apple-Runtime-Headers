@@ -17,11 +17,11 @@
 }
 
 + (id)packageTypeIdentifier;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *lastModifiedDate; // @synthesize lastModifiedDate=_lastModifiedDate;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) UIImage *artworkImage; // @synthesize artworkImage=_artworkImage;
 @property(copy, nonatomic) MPNowPlayingContentItem *contentItem; // @synthesize contentItem=_contentItem;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)writeWithError:(id *)arg1;

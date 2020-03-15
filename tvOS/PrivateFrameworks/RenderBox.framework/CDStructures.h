@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSObject, NSURL, NSXMLParser, RBDevice, RBDisplayList, RBFill, RBShape;
+@class NSError, NSObject, NSURL, NSXMLParser, RBDevice, RBDisplayList, RBFill, RBShape;
 
 #pragma mark Function Pointers
 
@@ -325,6 +325,10 @@ struct list<RB::refcounted_ptr<RB::Texture>, std::__1::allocator<RB::refcounted_
     struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<RB::refcounted_ptr<RB::Texture>, void *>>> {
         unsigned long long _field1;
     } _field2;
+};
+
+struct objc_ptr<NSError *> {
+    NSError *_p;
 };
 
 struct objc_ptr<NSObject<OS_dispatch_queue>*> {

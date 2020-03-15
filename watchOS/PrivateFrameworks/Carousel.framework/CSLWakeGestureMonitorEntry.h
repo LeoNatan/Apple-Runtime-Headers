@@ -17,10 +17,10 @@
     NSXPCConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool wantsUnfilteredGesturesWhenScreenOff; // @synthesize wantsUnfilteredGesturesWhenScreenOff=_wantsUnfilteredGesturesWhenScreenOff;
 @property(nonatomic) _Bool wantsUnfilteredGestures; // @synthesize wantsUnfilteredGestures=_wantsUnfilteredGestures;
 @property(readonly, nonatomic) __weak NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)wakeGestureRecognized:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;

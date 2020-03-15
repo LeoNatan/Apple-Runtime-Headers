@@ -64,6 +64,7 @@
 + (id)_participantsTextViewFont;
 + (id)_proposedByFont;
 + (id)_timeLabelFont;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect andMoreBoundingRect; // @synthesize andMoreBoundingRect=_andMoreBoundingRect;
 @property(retain, nonatomic) UITapGestureRecognizer *tappedMoreRecognizer; // @synthesize tappedMoreRecognizer=_tappedMoreRecognizer;
 @property(retain, nonatomic) NSArray *busyParticipants; // @synthesize busyParticipants=_busyParticipants;
@@ -103,7 +104,6 @@
 @property(nonatomic) _Bool checked; // @synthesize checked=_checked;
 @property(copy, nonatomic) CDUnknownBlockType showAllConflictedParticipantsTapped; // @synthesize showAllConflictedParticipantsTapped=_showAllConflictedParticipantsTapped;
 @property(copy, nonatomic) CDUnknownBlockType showPreviewOfEventAtTime; // @synthesize showPreviewOfEventAtTime=_showPreviewOfEventAtTime;
-- (void).cxx_destruct;
 - (_Bool)_everyoneCanAttend;
 - (_Bool)_textWillFit:(id)arg1;
 - (id)_busyImageAttributedStringForColor:(id)arg1;

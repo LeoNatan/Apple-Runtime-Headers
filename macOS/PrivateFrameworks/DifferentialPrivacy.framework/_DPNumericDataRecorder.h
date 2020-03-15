@@ -13,8 +13,8 @@
     id <_DPDataRecorder><_DPDataRecorderKeyProperties> _recorder;
 }
 
-@property(readonly, nonatomic) id <_DPDataRecorder><_DPDataRecorderKeyProperties> recorder; // @synthesize recorder=_recorder;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <_DPDataRecorder><_DPDataRecorderKeyProperties> recorder; // @synthesize recorder=_recorder;
 - (id)initWithKey:(id)arg1 databaseDirectoryPath:(id)arg2 readOnly:(BOOL)arg3;
 - (id)description;
 - (BOOL)record:(id)arg1;

@@ -13,8 +13,8 @@
     NSCache *_cache;
 }
 
-@property(readonly, nonatomic) NSCache *cache; // @synthesize cache=_cache;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSCache *cache; // @synthesize cache=_cache;
 - (void)clearCacheForService:(id)arg1;
 - (void)setAccounts:(id)arg1 forService:(id)arg2;
 - (void)setNumberOfAccounts:(id)arg1 forService:(id)arg2;

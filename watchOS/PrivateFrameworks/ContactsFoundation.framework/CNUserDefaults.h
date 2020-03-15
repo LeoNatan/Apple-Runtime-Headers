@@ -18,8 +18,8 @@
 + (id)preferencesWithApplicationID:(id)arg1;
 + (id)standardPreferences;
 + (id)inMemoryPreferences;
-@property(copy) NSDictionary *registeredDefaults; // @synthesize registeredDefaults=_registeredDefaults;
 - (void).cxx_destruct;
+@property(copy) NSDictionary *registeredDefaults; // @synthesize registeredDefaults=_registeredDefaults;
 - (_Bool)userHasOptedInToPreference:(id)arg1;
 - (_Bool)userHasOptedOutOfPreference:(id)arg1;
 - (void)setDouble:(double)arg1 forKey:(id)arg2;

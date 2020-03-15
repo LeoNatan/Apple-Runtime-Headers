@@ -24,6 +24,7 @@
     double _userInitationTimestamp;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long remainingDiskUsageThreshold; // @synthesize remainingDiskUsageThreshold=_remainingDiskUsageThreshold;
 @property(readonly, nonatomic) long long maximumRecordedFileSize; // @synthesize maximumRecordedFileSize=_maximumRecordedFileSize;
 @property(readonly, nonatomic) double maximumRecordedDuration; // @synthesize maximumRecordedDuration=_maximumRecordedDuration;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) long long torchMode; // @synthesize torchMode=_torchMode;
 @property(readonly, nonatomic) long long captureVideoConfiguration; // @synthesize captureVideoConfiguration=_captureVideoConfiguration;
 @property(readonly, nonatomic) __weak id <CAMVideoCaptureRequestDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)description;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

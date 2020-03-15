@@ -17,8 +17,8 @@
     struct OpaqueFigEndpoint *_figEndpoint;
 }
 
-@property __weak AVOutputDevice *parentOutputDevice; // @synthesize parentOutputDevice=_parentDevice;
 - (void).cxx_destruct;
+@property __weak AVOutputDevice *parentOutputDevice; // @synthesize parentOutputDevice=_parentDevice;
 - (void)configureUsingBlock:(CDUnknownBlockType)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) _Bool canRelayCommunicationChannel;
 @property(readonly, nonatomic) _Bool canCommunicateWithAllLogicalDeviceMembers;
@@ -40,6 +40,7 @@
 - (void)setCurrentBluetoothListeningMode:(id)arg1;
 @property(readonly, nonatomic) NSString *currentBluetoothListeningMode;
 @property(readonly, nonatomic) NSArray *availableBluetoothListeningModes;
+@property(readonly, nonatomic) long long HAPConformance;
 @property(readonly, nonatomic) _Bool supportsBluetoothSharing;
 @property(readonly, nonatomic) _Bool presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
 @property(readonly, nonatomic) _Bool canFetchMediaDataFromSender;

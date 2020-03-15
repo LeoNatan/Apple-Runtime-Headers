@@ -7,14 +7,21 @@
 #import <objc/NSObject.h>
 
 #import <iCloudQuotaUI/ICQPageDelegate-Protocol.h>
+#import <iCloudQuotaUI/ICQServerHookDelegate-Protocol.h>
+#import <iCloudQuotaUI/RemoteUIControllerDelegate-Protocol.h>
 #import <iCloudQuotaUI/UINavigationControllerDelegate-Protocol.h>
 
-@class ICQAlertController, ICQOffer, ICQUpgradeFlowOptions, ICQUpgradeOfferViewController, NSDictionary, NSString, UINavigationController;
+@class AAUIRemoteUIController, AAUIServerUIHookHandler, ICQAlertController, ICQOffer, ICQUpgradeFlowOptions, ICQUpgradeOfferViewController, NSDictionary, NSString, UINavigationController;
 @protocol ICQUpgradeFlowManagerDelegate;
 
-@interface ICQUpgradeFlowManager : NSObject <UINavigationControllerDelegate, ICQPageDelegate>
+@interface ICQUpgradeFlowManager : NSObject <UINavigationControllerDelegate, ICQPageDelegate, RemoteUIControllerDelegate, ICQServerHookDelegate>
 {
+    CDUnknownBlockType _didComplete;
+    _Bool _didReceiveiTunesCode;
+    _Bool _didCompleteICQAction;
     ICQUpgradeOfferViewController *_busyOfferViewController;
+    int _renewCredentialsCount;
+    AAUIServerUIHookHandler *_serverHookHandler;
     _Bool _shouldNavigationControllerBeDismissed;
     _Bool _completedFamilySetup;
     ICQOffer *_offer;
@@ -23,15 +30,15 @@
     id <ICQUpgradeFlowManagerDelegate> _delegate;
     UINavigationController *_hostingNavigationController;
     ICQAlertController *_upgradeAlertController;
+    AAUIRemoteUIController *_remoteUIController;
 }
 
 + (_Bool)shouldSubclassShowForOffer:(id)arg1;
-+ (void)removeActiveFlowManager:(id)arg1;
-+ (void)addActiveFlowManager:(id)arg1;
-+ (id)activeFlowManagers;
 + (Class)subclassForOfferType:(long long)arg1;
 + (_Bool)shouldShowForOffer:(id)arg1;
 + (void)needsToRunWithCompletion:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
+@property(retain, nonatomic) AAUIRemoteUIController *remoteUIController; // @synthesize remoteUIController=_remoteUIController;
 @property(nonatomic) _Bool completedFamilySetup; // @synthesize completedFamilySetup=_completedFamilySetup;
 @property(retain, nonatomic) ICQAlertController *upgradeAlertController; // @synthesize upgradeAlertController=_upgradeAlertController;
 @property(retain, nonatomic) UINavigationController *hostingNavigationController; // @synthesize hostingNavigationController=_hostingNavigationController;
@@ -40,12 +47,20 @@
 @property(copy, nonatomic) ICQUpgradeFlowOptions *flowOptions; // @synthesize flowOptions=_flowOptions;
 @property(retain, nonatomic) NSDictionary *bindings; // @synthesize bindings=_bindings;
 @property(readonly, nonatomic) ICQOffer *offer; // @synthesize offer=_offer;
-- (void).cxx_destruct;
 - (void)_sendDelegateDidPresentViewController:(id)arg1;
 - (void)_sendDelegateComplete;
 - (void)_sendDelegateCancel;
 - (void)_initiateFamilySetupFlow;
 - (void)_simulateDoneButton;
+- (void)dismissUpgradeFlowWithSuccess:(_Bool)arg1;
+- (void)showUpgradeFailurePage;
+- (void)showNetworkFailurePage;
+- (void)remoteUIControllerDidDismiss:(id)arg1;
+- (void)remoteUIController:(id)arg1 didDismissModalNavigationWithObjectModels:(id)arg2;
+- (void)remoteUIController:(id)arg1 willPresentModalNavigationController:(id)arg2;
+- (void)remoteUIController:(id)arg1 didFinishLoadWithError:(id)arg2;
+- (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(unsigned long long *)arg3;
+- (void)remoteUIController:(id)arg1 shouldLoadRequest:(id)arg2 redirectResponse:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)sender:(id)arg1 action:(long long)arg2 parameters:(id)arg3;
 - (unsigned long long)navigationControllerSupportedInterfaceOrientations:(id)arg1;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;
@@ -56,8 +71,12 @@
 - (_Bool)needsNetwork;
 - (void)_performPageButtonActionWithParameters:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initSubclassWithOffer:(id)arg1;
+- (id)_ICQNavigationControllerWithRootViewController:(id)arg1;
+- (_Bool)_shouldPresentRemoteFlow;
+- (id)_whitelistedInProcessClients;
 - (void)_openURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_setBusyOfferViewController:(id)arg1;
+- (void)_configurePresentingViewController:(id)arg1;
 - (void)beginFlowWithPresentingViewController:(id)arg1;
 - (void)_addAlertActionForAlertSpec:(id)arg1 buttonIndex:(long long)arg2;
 - (void)_tappedAlertLink:(id)arg1;

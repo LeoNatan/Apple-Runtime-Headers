@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     ML3StatementCacheNode *_next;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ML3StatementCacheNode *next; // @synthesize next=_next;
 @property(copy, nonatomic) NSObject<NSCopying> *dictionaryKey; // @synthesize dictionaryKey=_dictionaryKey;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDictionaryKey:(id)arg1;
 

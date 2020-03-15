@@ -21,12 +21,12 @@
 }
 
 + (long long)cellStyle;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *updateStatusLabelVerticalConstraint; // @synthesize updateStatusLabelVerticalConstraint=_updateStatusLabelVerticalConstraint;
 @property(readonly, nonatomic) PSWebContainerView *releaseNotesSummaryView; // @synthesize releaseNotesSummaryView=_releaseNotesSummaryView;
 @property(readonly, nonatomic) UILabel *updateStatusLabel; // @synthesize updateStatusLabel=_updateStatusLabel;
 @property(readonly, nonatomic) UIProgressView *progressBar; // @synthesize progressBar=_progressBar;
 @property(retain, nonatomic) UIImageView *gearBackgroundImageView; // @synthesize gearBackgroundImageView=_gearBackgroundImageView;
-- (void).cxx_destruct;
 - (id)newUpdateStatusLabel;
 - (id)newProgressBar;
 - (id)newGearBackgroundImageView;

@@ -16,10 +16,10 @@
 }
 
 + (id)name;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) __weak CSKStreamData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) unsigned long long removalCount; // @synthesize removalCount=_removalCount;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)handler;
 - (id)initWithData:(id)arg1 removalCount:(unsigned long long)arg2;
 - (id)init;

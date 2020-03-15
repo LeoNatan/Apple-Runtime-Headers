@@ -25,6 +25,7 @@
     NUIContainerStackView *_fteImages;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NUIContainerStackView *fteImages; // @synthesize fteImages=_fteImages;
 @property(retain, nonatomic) NSTextView *fteText; // @synthesize fteText=_fteText;
 @property(retain, nonatomic) NSLayoutConstraint *verticalCentering; // @synthesize verticalCentering=_verticalCentering;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSArray *supportedDomains; // @synthesize supportedDomains=_supportedDomains;
 @property(nonatomic) unsigned long long sizeClass; // @synthesize sizeClass=_sizeClass;
 @property(nonatomic) __weak id <SearchUIFirstTimeExperienceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)viewDidLayout;
 - (void)firstTimeExperienceContinueButtonPressed:(id)arg1;
 - (void)loadView;

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _tomatoFreshness;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long tomatoFreshness; // @synthesize tomatoFreshness=_tomatoFreshness;
 @property(nonatomic) float tomatoRating; // @synthesize tomatoRating=_tomatoRating;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)init;
 

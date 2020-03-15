@@ -14,8 +14,8 @@
 }
 
 + (id)standardTimingParameters;
-@property(copy, nonatomic) UICubicTimingParameters *springCubicTimingParameters; // @synthesize springCubicTimingParameters=_springCubicTimingParameters;
 - (void).cxx_destruct;
+@property(copy, nonatomic) UICubicTimingParameters *springCubicTimingParameters; // @synthesize springCubicTimingParameters=_springCubicTimingParameters;
 - (id)cubicTimingParameters;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

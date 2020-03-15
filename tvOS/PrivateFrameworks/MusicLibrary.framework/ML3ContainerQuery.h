@@ -16,9 +16,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *limitedPersistentIDs; // @synthesize limitedPersistentIDs=_limitedPersistentIDs;
 @property(readonly, nonatomic) ML3Container *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (id)enumerationDatabaseResultForSQL:(id)arg1 onConnection:(id)arg2 withParameters:(id)arg3;
 - (id)selectPersistentIDsSQLAndProperties:(id)arg1 ordered:(_Bool)arg2;
 - (id)selectPersistentIDsSQLAndPropertiesForResultSet:(id)arg1 ordered:(_Bool)arg2;

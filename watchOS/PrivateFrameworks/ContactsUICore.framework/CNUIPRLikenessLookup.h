@@ -26,12 +26,12 @@
 + (id)basicMonogramObservableFromString:(id)arg1 color:(id)arg2;
 + (id)basicMonogramObservableForContactFuture:(id)arg1 monogramColor:(id)arg2;
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNUIPlaceholderProviderFactory> placeholderProviderFactory; // @synthesize placeholderProviderFactory=_placeholderProviderFactory;
 @property(retain, nonatomic) CNUIMeContactMonitor *meMonitor; // @synthesize meMonitor=_meMonitor;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(nonatomic) int prohibitedSources; // @synthesize prohibitedSources=_prohibitedSources;
-- (void).cxx_destruct;
 - (id)photoFutureForContactFuture:(id)arg1 photoFuture:(id)arg2 allowingFallbackForMeCard:(_Bool)arg3;
 - (id)photoFutureForContactFuture:(id)arg1 scheduler:(id)arg2;
 - (_Bool)isMeContact:(id)arg1;

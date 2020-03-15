@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) long long interfaceType; // @synthesize interfaceType=_interfaceType;
 @property(readonly, nonatomic) struct _AMDevice *deviceRef; // @synthesize deviceRef=_deviceRef;
-- (void).cxx_destruct;
 - (void)performWithSession:(CDUnknownBlockType)arg1;
 - (BOOL)_stopSession;
 - (BOOL)_startSession;

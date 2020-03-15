@@ -21,6 +21,7 @@
     struct CGPoint _currentLocation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long currentDownButton; // @synthesize currentDownButton=_currentDownButton;
 @property(nonatomic) double cursorScale; // @synthesize cursorScale=_cursorScale;
 @property(nonatomic) struct CGPoint currentLocation; // @synthesize currentLocation=_currentLocation;
@@ -28,7 +29,8 @@
 @property(readonly, nonatomic) struct CGSize cursorImageSize; // @synthesize cursorImageSize;
 @property(retain, nonatomic) AXFMouseCursorImage *cursorImage; // @synthesize cursorImage;
 @property(nonatomic) BOOL accumulateClickCount; // @synthesize accumulateClickCount;
-- (void).cxx_destruct;
+- (void)scrollWheelByDelta:(struct CGPoint)arg1 unit:(unsigned int)arg2 markupHandler:(CDUnknownBlockType)arg3;
+- (void)scrollWheelByDelta:(struct CGPoint)arg1 unit:(unsigned int)arg2;
 - (void)performMouseAction:(long long)arg1 atPoint:(struct CGPoint)arg2;
 - (void)performMouseAction:(long long)arg1 atPoint:(struct CGPoint)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)performMouseAction:(long long)arg1 atPoint:(struct CGPoint)arg2 markupHandler:(CDUnknownBlockType)arg3 withCompletion:(CDUnknownBlockType)arg4;

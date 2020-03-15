@@ -54,6 +54,7 @@
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *serviceProviderRoamingEnabledNum; // @synthesize serviceProviderRoamingEnabledNum=_serviceProviderRoamingEnabledNum;
 @property(retain, nonatomic) NSNumber *isHotspotNum; // @synthesize isHotspotNum=_isHotspotNum;
 @property(retain, nonatomic) NSNumber *proxyPACFallbackAllowedNum; // @synthesize proxyPACFallbackAllowedNum=_proxyPACFallbackAllowedNum;
@@ -93,7 +94,6 @@
 @property(nonatomic) _Bool captiveBypass; // @synthesize captiveBypass=_captiveBypass;
 @property(nonatomic) _Bool isHidden; // @synthesize isHidden=_isHidden;
 @property(retain, nonatomic) NSString *ssid; // @synthesize ssid=_ssid;
-- (void).cxx_destruct;
 - (id)filterForUserEnrollmentOutError:(id *)arg1;
 - (id)userInputFields;
 - (id)installationWarnings;

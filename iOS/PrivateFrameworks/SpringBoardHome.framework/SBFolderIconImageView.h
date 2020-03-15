@@ -30,13 +30,13 @@
     unsigned long long _currentBackgroundStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentBackgroundStyle; // @synthesize currentBackgroundStyle=_currentBackgroundStyle;
 @property(readonly, nonatomic) _Bool hasCustomBackgroundView; // @synthesize hasCustomBackgroundView=_hasCustomBackgroundView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(readonly, nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
 @property(readonly, nonatomic) unsigned long long currentPageIndex; // @synthesize currentPageIndex=_currentPageIndex;
 @property(nonatomic) unsigned long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
-- (void).cxx_destruct;
 - (void)fulfillGridImageForPageElement:(id)arg1;
 - (id)representedListLayout;
 - (void)_showRightMinigrid;

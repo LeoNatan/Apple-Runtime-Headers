@@ -29,6 +29,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)knownKeys;
+- (void).cxx_destruct;
 @property(copy) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property long long woeid; // @synthesize woeid=_woeid;
 @property(copy) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
@@ -40,7 +41,6 @@
 @property(copy) NSString *state; // @synthesize state=_state;
 @property(copy) NSString *county; // @synthesize county=_county;
 @property(copy) NSString *city; // @synthesize city=_city;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

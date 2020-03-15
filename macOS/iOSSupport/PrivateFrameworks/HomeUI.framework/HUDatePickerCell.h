@@ -15,9 +15,9 @@
     UIDatePicker *_datePicker;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIDatePicker *datePicker; // @synthesize datePicker=_datePicker;
 @property(nonatomic) __weak id <HUDatePickerCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_valueChanged:(id)arg1;
 @property(retain, nonatomic) NSDateComponents *timeComponents;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

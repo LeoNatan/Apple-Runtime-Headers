@@ -41,6 +41,7 @@
 + (id)predicateForUnflaggedMessages;
 + (id)predicateForFlaggedMessages;
 + (id)predicateForVIPMessages;
++ (id)predicateForMessagesWithSender:(id)arg1;
 + (id)predicateForMessagesWithThreadScope:(id)arg1;
 + (id)predicateForMessagesWithMailboxScope:(id)arg1;
 + (id)predicateForExcludingMessagesInMailboxesWithObjectIDs:(id)arg1;

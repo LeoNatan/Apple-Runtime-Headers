@@ -37,6 +37,7 @@
 + (id)stateWithPAStyleTaskPrivateData:(id)arg1 donatingUniquePids:(id)arg2;
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_d3db2f02 *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property unsigned long long ssFlags; // @synthesize ssFlags=_ssFlags;
 @property(retain) NSSet *donatingUniquePids; // @synthesize donatingUniquePids=_donatingUniquePids;
 @property unsigned long long terminatedThreadsCycles; // @synthesize terminatedThreadsCycles=_terminatedThreadsCycles;
@@ -53,7 +54,6 @@
 @property unsigned long long startSampleIndex; // @synthesize startSampleIndex=_startSampleIndex;
 @property(retain) SATimestamp *endTimestamp; // @synthesize endTimestamp=_endTimestamp;
 @property(retain) SATimestamp *startTimestamp; // @synthesize startTimestamp=_startTimestamp;
-- (void).cxx_destruct;
 - (id)initWithStartTimestamp:(id)arg1 endTimestamp:(id)arg2 startSampleIndex:(unsigned long long)arg3 endSampleIndex:(unsigned long long)arg4;
 - (id)initWithStackshotTaskV1:(const struct task_snapshot *)arg1 machTimebase:(struct mach_timebase_info)arg2 startTimestamp:(id)arg3 endTimestamp:(id)arg4 startSampleIndex:(unsigned long long)arg5 endSampleIndex:(unsigned long long)arg6;
 - (id)initWithKCDataDeltaTask:(const struct task_delta_snapshot_v2 *)arg1 andTerminatedThreadsInstructionCycles:(const struct instrs_cycles_snapshot *)arg2 machTimebase:(struct mach_timebase_info)arg3 andDonatingUniquePids:(id)arg4 startTimestamp:(id)arg5 endTimestamp:(id)arg6 startSampleIndex:(unsigned long long)arg7 endSampleIndex:(unsigned long long)arg8;
@@ -82,9 +82,9 @@
 - (unsigned long long)sampleCountInSampleIndexRangeStart:(unsigned long long)arg1 end:(unsigned long long)arg2;
 - (id)debugDescriptionWithTask:(id)arg1;
 - (void)applyPAStyleSampleTimestamp:(id)arg1;
-- (void)populateReferencesUsingBuffer:(const CDStruct_d3db2f02 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(struct NSMutableDictionary *)arg3 andDataBufferDictionary:(struct NSMutableDictionary *)arg4;
-- (void)addSelfToSerializationDictionary:(struct NSMutableDictionary *)arg1;
-- (BOOL)addSelfToBuffer:(CDStruct_d3db2f02 *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg3;
+- (void)populateReferencesUsingBuffer:(const CDStruct_d3db2f02 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(id)arg3 andDataBufferDictionary:(id)arg4;
+- (void)addSelfToSerializationDictionary:(id)arg1;
+- (BOOL)addSelfToBuffer:(CDStruct_d3db2f02 *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(id)arg3;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 
 // Remaining properties

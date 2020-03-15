@@ -16,8 +16,8 @@
 }
 
 + (id)mockPaddingValues;
-@property(retain, nonatomic) NSArray *inputItems; // @synthesize inputItems=_inputItems;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *inputItems; // @synthesize inputItems=_inputItems;
 - (void)_iterateEditorialConfigurationsForItemsCount:(long long)arg1 itemsIncrement:(long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_iterateGridConfigurationsForItemsCount:(long long)arg1 itemsIncrement:(long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (struct CGRect)generatedLayout:(id)arg1 bestCropRectForInputItemAtIndex:(unsigned int)arg2 withAspectRatio:(double)arg3;

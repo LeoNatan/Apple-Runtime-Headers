@@ -21,8 +21,8 @@
 }
 
 + (id)presenter;
-@property(readonly, nonatomic) UINavigationController *modalRootViewController; // @synthesize modalRootViewController=_modalRootViewController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UINavigationController *modalRootViewController; // @synthesize modalRootViewController=_modalRootViewController;
 - (void)_dismissAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_isDismissing;
 - (void)_configureModalController:(id)arg1 withFromController:(id)arg2 andConfiguration:(id)arg3;

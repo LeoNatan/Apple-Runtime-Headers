@@ -16,10 +16,10 @@
     CDUnknownBlockType _operationBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType operationBlock; // @synthesize operationBlock=_operationBlock;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)main;
 - (id)description;
 - (id)initWithBlock:(CDUnknownBlockType)arg1 clientQueue:(id)arg2;

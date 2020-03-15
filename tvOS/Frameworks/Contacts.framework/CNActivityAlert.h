@@ -21,11 +21,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) _Bool ignoreMute; // @synthesize ignoreMute=_ignoreMute;
 @property(copy, nonatomic) NSString *vibration; // @synthesize vibration=_vibration;
 @property(copy, nonatomic) NSString *sound; // @synthesize sound=_sound;
-- (void).cxx_destruct;
 - (_Bool)isValid:(id *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

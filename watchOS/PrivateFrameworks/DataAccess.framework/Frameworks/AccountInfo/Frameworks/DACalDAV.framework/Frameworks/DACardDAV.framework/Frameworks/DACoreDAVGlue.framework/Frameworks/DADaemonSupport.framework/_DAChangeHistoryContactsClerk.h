@@ -14,8 +14,8 @@
 }
 
 + (id)os_log;
-@property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (id)identifiersOfAllRegisterdClients;
 - (void)registerClientWithIdentifier:(id)arg1 forContainer:(id)arg2;
 - (void)unregisterClientWithIdentifier:(id)arg1 forContainer:(id)arg2;

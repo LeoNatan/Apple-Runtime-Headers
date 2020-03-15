@@ -18,9 +18,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int color; // @synthesize color=_color;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (long long)localizedStandardCompare:(id)arg1;
 - (long long)localizedCompare:(id)arg1;
 - (BOOL)isEqualToTag:(id)arg1;

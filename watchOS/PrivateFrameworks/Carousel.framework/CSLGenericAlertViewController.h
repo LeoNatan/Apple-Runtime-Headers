@@ -22,13 +22,13 @@
     NSArray *_alertActionItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *alertActionItems; // @synthesize alertActionItems=_alertActionItems;
 @property(nonatomic) _Bool hasCalledDismiss; // @synthesize hasCalledDismiss=_hasCalledDismiss;
 @property(nonatomic) _Bool hasBeenActivated; // @synthesize hasBeenActivated=_hasBeenActivated;
 @property(retain, nonatomic) CUISAlertSheetController *alertSheetViewController; // @synthesize alertSheetViewController=_alertSheetViewController;
 @property(nonatomic) __weak id <CSLGenericAlertViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) CSLGenericAlertItem *alertItem; // @synthesize alertItem=_alertItem;
-- (void).cxx_destruct;
 - (void)actionContentControllerCancel:(id)arg1;
 - (double)alertTransitionDuration:(id)arg1;
 - (void)animateAlertTransition:(id)arg1;

@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSArray *listIDs; // @synthesize listIDs=_listIDs;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *listIDs; // @synthesize listIDs=_listIDs;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -13,8 +13,8 @@
     UIView *_optionView;
 }
 
-@property(retain, nonatomic) UIView *optionView; // @synthesize optionView=_optionView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *optionView; // @synthesize optionView=_optionView;
 - (void)_applyContentAlpha;
 - (void)setRotationFromFront:(double)arg1;
 - (void)applyContentTransform:(struct CGAffineTransform)arg1;

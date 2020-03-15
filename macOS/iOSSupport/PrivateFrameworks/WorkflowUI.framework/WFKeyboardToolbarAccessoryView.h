@@ -13,8 +13,8 @@
     UIToolbar *_toolbar;
 }
 
-@property(readonly, nonatomic) UIToolbar *toolbar; // @synthesize toolbar=_toolbar;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIToolbar *toolbar; // @synthesize toolbar=_toolbar;
 - (void)drawRoundedRectangleInRect:(struct CGRect)arg1 withContext:(struct CGContext *)arg2 color:(id)arg3 radius:(double)arg4;
 - (id)buttonImageWithSize:(struct CGSize)arg1;
 - (id)fixedSpaceItemOfWidth:(double)arg1;

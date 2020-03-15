@@ -21,13 +21,13 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSProgress *fileProgress; // @synthesize fileProgress=_fileProgress;
 @property(retain, nonatomic) NSProgress *overallProgress; // @synthesize overallProgress=_overallProgress;
 @property(nonatomic) unsigned long long approximateSize; // @synthesize approximateSize=_approximateSize;
 @property(readonly, nonatomic) NSURL *compressedFileURL; // @synthesize compressedFileURL=_compressedFileURL;
 @property(readonly, nonatomic) long long archiveType; // @synthesize archiveType=_archiveType;
 @property(readonly, nonatomic) NSData *archiveData; // @synthesize archiveData=_archiveData;
-- (void).cxx_destruct;
 - (void)getCompressedData:(id *)arg1 compressedFileURL:(id *)arg2 archiveType:(long long *)arg3;
 - (id)preferredFilename;
 - (id)addRegularFileWithContents:(id)arg1 preferredFilename:(id)arg2;

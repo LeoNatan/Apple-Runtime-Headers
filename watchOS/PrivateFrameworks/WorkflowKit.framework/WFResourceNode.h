@@ -19,10 +19,10 @@
 }
 
 + (id)nodesWithDefinitions:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <WFResourceNodeDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSArray *subnodes; // @synthesize subnodes=_subnodes;
 @property(readonly, nonatomic) WFResource *resource; // @synthesize resource=_resource;
-- (void).cxx_destruct;
 - (void)resourceNodeAvailabilityChanged:(id)arg1;
 - (void)dealloc;
 - (void)resourceUpdated;

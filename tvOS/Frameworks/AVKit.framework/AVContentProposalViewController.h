@@ -22,6 +22,7 @@
     UITapGestureRecognizer *_menuGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *menuGestureRecognizer; // @synthesize menuGestureRecognizer=_menuGestureRecognizer;
 @property(retain, nonatomic) UITapGestureRecognizer *selectPlayerGestureRecognizer; // @synthesize selectPlayerGestureRecognizer=_selectPlayerGestureRecognizer;
 @property(retain, nonatomic) AVFocusProxyView *playerFocusProxyView; // @synthesize playerFocusProxyView=_playerFocusProxyView;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSDate *dateOfAutomaticAcceptance; // @synthesize dateOfAutomaticAcceptance=_dateOfAutomaticAcceptance;
 @property(nonatomic) __weak AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
 @property(retain, nonatomic) AVContentProposal *contentProposal; // @synthesize contentProposal=_contentProposal;
-- (void).cxx_destruct;
 - (void)rejectProposalAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)acceptProposalAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)hideProposalAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;

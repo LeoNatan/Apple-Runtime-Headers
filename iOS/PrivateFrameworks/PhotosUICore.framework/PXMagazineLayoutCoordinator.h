@@ -21,6 +21,7 @@
     unsigned long long _currentIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool stop; // @synthesize stop=_stop;
 @property(nonatomic) unsigned long long currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(retain, nonatomic) PXMagazineRectArray *currentLayout; // @synthesize currentLayout=_currentLayout;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) _Bool stopIfAnyGoodLayout; // @synthesize stopIfAnyGoodLayout=_stopIfAnyGoodLayout;
 @property(readonly, nonatomic) double tileAspectRatio; // @synthesize tileAspectRatio=_tileAspectRatio;
 @property(readonly, nonatomic) NSArray *paddingInputs; // @synthesize paddingInputs=_paddingInputs;
-- (void).cxx_destruct;
 - (id)currentBestLayout;
 - (unsigned long long)currentLayoutsCount;
 - (double)scoreOfLayout:(id)arg1;

@@ -14,8 +14,8 @@
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
-@property(nonatomic) __weak id <RTManagedConfigurationObserver> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <RTManagedConfigurationObserver> delegate; // @synthesize delegate=_delegate;
 - (_Bool)isFindMyCarAllowed;
 - (_Bool)isDiagnosticsAndUsageAllowed;
 - (_Bool)effectiveBoolValueForSetting:(id)arg1;

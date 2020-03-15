@@ -26,10 +26,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id lastContent; // @synthesize lastContent=_lastContent;
 @property(retain) id <QLPreviewItemURLProvider> urlProvider; // @synthesize urlProvider=_urlProvider;
 @property(retain) NSItemProvider *itemProvider; // @synthesize itemProvider=_itemProvider;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)newItemProvider;

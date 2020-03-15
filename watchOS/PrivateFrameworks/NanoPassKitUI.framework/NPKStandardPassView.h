@@ -41,6 +41,7 @@
 
 + (id)stretchableBackgroundImageWithColor:(id)arg1 nubColor:(id)arg2;
 + (id)stretchableBackgroundImageWithColor:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPaymentService *paymentService; // @synthesize paymentService=_paymentService;
 @property(retain, nonatomic) PUICButton *accessoryButton; // @synthesize accessoryButton=_accessoryButton;
 @property(retain, nonatomic) NPKUIAssertion *barcodeAssertion; // @synthesize barcodeAssertion=_barcodeAssertion;
@@ -64,7 +65,6 @@
 @property(nonatomic) _Bool isTransitioningToListView; // @synthesize isTransitioningToListView=_isTransitioningToListView;
 @property(nonatomic) _Bool addBufferAtBottomOfPass; // @synthesize addBufferAtBottomOfPass=_addBufferAtBottomOfPass;
 @property(nonatomic) _Bool showNotificationNub; // @synthesize showNotificationNub=_showNotificationNub;
-- (void).cxx_destruct;
 - (void)_transitionFromBarcodeDisplay:(id)arg1;
 - (float)_logoHeight;
 - (float)_logoBackgroundHeight;

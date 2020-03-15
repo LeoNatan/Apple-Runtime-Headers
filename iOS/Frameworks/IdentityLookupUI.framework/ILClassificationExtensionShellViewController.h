@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     UIBarButtonItem *_doneButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain, nonatomic) UIViewController *extensionViewController; // @synthesize extensionViewController=_extensionViewController;
 @property(nonatomic) _Bool enableFinishOption; // @synthesize enableFinishOption=_enableFinishOption;
 @property(nonatomic) __weak id <ILClassificationExtensionShellViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)userDidCancel;
 - (void)userDidFinish;
 - (void)displayExtensionViewController:(id)arg1 forExtension:(id)arg2;

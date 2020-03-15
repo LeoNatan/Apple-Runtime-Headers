@@ -20,6 +20,7 @@
     NUTitleViewUpdate *_update;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NUTitleViewUpdate *update; // @synthesize update=_update;
 @property(readonly, nonatomic) NUCrossFadeViewAnimator *animator; // @synthesize animator=_animator;
 @property(nonatomic) unsigned long long displayValueType; // @synthesize displayValueType=_displayValueType;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) UIImageView *titleImageView; // @synthesize titleImageView=_titleImageView;
 @property(retain, nonatomic) id <NUTitleViewStyler> styler; // @synthesize styler=_styler;
-- (void).cxx_destruct;
 - (id)_applyStylesToTextAndGlyph:(id)arg1 styleType:(unsigned long long)arg2;
 - (id)_applyStylesToText:(id)arg1 styleType:(unsigned long long)arg2;
 - (id)applyStylesToValueFromTitleViewUpdate:(id)arg1;

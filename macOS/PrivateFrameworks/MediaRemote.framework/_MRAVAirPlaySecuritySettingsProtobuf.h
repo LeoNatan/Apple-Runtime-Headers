@@ -19,8 +19,8 @@
     } _has;
 }
 
-@property(retain, nonatomic) NSString *password; // @synthesize password=_password;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *password; // @synthesize password=_password;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

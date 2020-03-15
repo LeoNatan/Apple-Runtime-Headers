@@ -14,9 +14,9 @@
     ADCountdownButton *_closeButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ADCountdownButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(nonatomic) __weak ADInterstitialAd *interstitialAd; // @synthesize interstitialAd=_interstitialAd;
-- (void).cxx_destruct;
 - (BOOL)shouldTestVisibilityAtPoint:(struct CGPoint)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;

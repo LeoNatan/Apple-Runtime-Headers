@@ -14,7 +14,6 @@
 @property(copy, nonatomic) NSSet *customDataClasses;
 @property float advanceFramesPerSecondMultiplier;
 @property(readonly) long long nextFrameIndex;
-@property(nonatomic) unsigned long long forcePlaybackFramesPerSecond;
 @property(readonly, nonatomic) _Bool finishedReplaying;
 @property(readonly, nonatomic, getter=isSynchronousMode) _Bool synchronousMode;
 @property(readonly, nonatomic) _Bool isReplayingManually;
@@ -27,6 +26,7 @@
 @property(readonly, nonatomic) NSString *osVersion;
 @property(readonly, nonatomic) NSString *deviceModel;
 @property(readonly, nonatomic) NSURL *sequenceURL;
+@property(readonly, nonatomic) long long replayMode;
 @property __weak id <ARReplaySensorDelegate> replaySensorDelegate;
 @property(nonatomic) __weak id <ARSensorDelegate> delegate;
 - (void)endInterruption;
@@ -39,6 +39,7 @@
 - (void)advanceFrame;
 - (id)initWithSequenceURL:(NSURL *)arg1 manualReplay:(_Bool)arg2 synchronousMode:(_Bool)arg3;
 - (id)initWithSequenceURL:(NSURL *)arg1 manualReplay:(_Bool)arg2;
+- (id)initWithSequenceURL:(NSURL *)arg1 replayMode:(long long)arg2;
 - (id)initWithDataFromFile:(NSString *)arg1;
 @end
 

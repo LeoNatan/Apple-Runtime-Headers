@@ -29,6 +29,7 @@
 + (id)_bulkDownload:(BOOL)arg1 forThemeProviders:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 + (id)bulkDownloadAndPrepareThemePreviewsForUse:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 + (id)bulkDownloadAndPrepareThemesForUse:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain) NSError *lastError; // @synthesize lastError=_lastError;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
 @property(nonatomic) __weak id <KHThemeManagerSource> source; // @synthesize source=_source;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSString *themeBundleIdentifier; // @synthesize themeBundleIdentifier=_themeBundleIdentifier;
 @property(readonly) NSString *themePreviewIdentifier; // @synthesize themePreviewIdentifier=_themePreviewIdentifier;
 @property(readonly) NSString *themeIdentifier; // @synthesize themeIdentifier=_themeIdentifier;
-- (void).cxx_destruct;
 @property(readonly) NSBundle *themePreviewBundle;
 @property(readonly) NSBundle *themeBundle;
 @property(readonly) NSSet *productCodes;

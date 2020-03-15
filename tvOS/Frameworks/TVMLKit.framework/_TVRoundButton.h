@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_buttonContentWithFrame:(struct CGRect)arg1 blurEffectStyle:(long long)arg2 blurEnabled:(_Bool)arg3;
-@property(nonatomic) _Bool shouldPunchThroughImage; // @synthesize shouldPunchThroughImage=_shouldPunchThroughImage;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool shouldPunchThroughImage; // @synthesize shouldPunchThroughImage=_shouldPunchThroughImage;
 - (void)_updateFocusStateWithCoordinator:(id)arg1;
 - (void)_updateFloaingViewFocusState:(_Bool)arg1 coordinator:(id)arg2;
 - (void)_updateFloatingViewFocusStateIfNeeded;

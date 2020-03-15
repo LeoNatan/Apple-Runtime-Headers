@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSString *_serviceName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(retain, nonatomic) id exportedObject; // @synthesize exportedObject=_exportedObject;
 @property(retain, nonatomic) NSXPCInterface *interface; // @synthesize interface=_interface;
 @property(retain, nonatomic) FPXExtensionContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 
 // Remaining properties

@@ -16,8 +16,8 @@
     NSObject<OS_dispatch_queue> *_concurrentQueue;
 }
 
-@property(retain, nonatomic) NSMapTable *map; // @synthesize map=_map;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMapTable *map; // @synthesize map=_map;
 - (id)copyLinkedOperationForOperationWithName:(id)arg1 inputPayload:(id)arg2;
 - (void)load;
 - (id)description;

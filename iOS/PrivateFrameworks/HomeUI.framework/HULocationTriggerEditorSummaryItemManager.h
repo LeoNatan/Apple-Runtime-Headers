@@ -23,12 +23,12 @@
 + (id)usersListFooterSectionID;
 + (id)usersListSectionID;
 + (id)usersHeaderSectionID;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFItem *usersInstructionsItem; // @synthesize usersInstructionsItem=_usersInstructionsItem;
 @property(retain, nonatomic) HFItem *locationItem; // @synthesize locationItem=_locationItem;
 @property(readonly, nonatomic) HUTriggerConditionEditorItemModule *conditionEditorModule; // @synthesize conditionEditorModule=_conditionEditorModule;
 @property(readonly, nonatomic) HUPresenceUserPickerItemModule *userPickerModule; // @synthesize userPickerModule=_userPickerModule;
 @property(readonly, nonatomic) HFLocationTriggerBuilder *triggerBuilder; // @synthesize triggerBuilder=_triggerBuilder;
-- (void).cxx_destruct;
 - (void)userPickerModule:(id)arg1 didUpdatePresenceEvent:(id)arg2;
 - (_Bool)_hasCustomLocation;
 - (_Bool)_canEditLocation;

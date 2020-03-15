@@ -14,9 +14,9 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isAsserted) _Bool asserted; // @synthesize asserted=_asserted;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_releaseAssertion;
 - (void)_takeAssertion;
 - (void)releaseAssertion;

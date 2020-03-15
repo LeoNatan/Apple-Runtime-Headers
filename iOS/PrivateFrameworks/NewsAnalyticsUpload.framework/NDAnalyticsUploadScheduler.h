@@ -24,6 +24,7 @@
     FCBalancedCounter *_backgroundSessionLaunchEventCounter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCBalancedCounter *backgroundSessionLaunchEventCounter; // @synthesize backgroundSessionLaunchEventCounter=_backgroundSessionLaunchEventCounter;
 @property(retain, nonatomic) NSURLSession *backgroundSession; // @synthesize backgroundSession=_backgroundSession;
 @property(retain, nonatomic) NSOperationQueue *backgroundSessionQueue; // @synthesize backgroundSessionQueue=_backgroundSessionQueue;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) FCDateRange *deliveryWindow; // @synthesize deliveryWindow=_deliveryWindow;
 @property(retain, nonatomic) NFMutexLock *lock; // @synthesize lock=_lock;
 @property(nonatomic) __weak id <NDAnalyticsUploadSchedulerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_uploadWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_scheduleBackgroundUploadInWindow:(id)arg1;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;

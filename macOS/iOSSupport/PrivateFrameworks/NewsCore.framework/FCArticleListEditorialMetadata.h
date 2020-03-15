@@ -14,9 +14,9 @@
     NSDictionary *_articleMetadata;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *articleMetadata; // @synthesize articleMetadata=_articleMetadata;
 @property(retain, nonatomic) NSDate *publishDate; // @synthesize publishDate=_publishDate;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 
 @end

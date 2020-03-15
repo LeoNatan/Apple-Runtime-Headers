@@ -16,11 +16,11 @@
     CDUnknownBlockType _changeHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType changeHandler; // @synthesize changeHandler=_changeHandler;
 @property(readonly, nonatomic) int notificationToken; // @synthesize notificationToken=_notificationToken;
 @property(readonly, nonatomic) STAskForTimeRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) STAskForTimeClient *askForTimeClient; // @synthesize askForTimeClient=_askForTimeClient;
-- (void).cxx_destruct;
 - (void)cancelOutstandingRequestsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)checkRequestForAdditionalTimeWithResponseHandler:(CDUnknownBlockType)arg1;
 - (void)_approveExceptionForRequest:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

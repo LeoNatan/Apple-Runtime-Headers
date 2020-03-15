@@ -25,11 +25,11 @@
     NSString *_localProductType;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *localProductType; // @synthesize localProductType=_localProductType;
 @property(copy, nonatomic) NSString *localSystemBuild; // @synthesize localSystemBuild=_localSystemBuild;
 @property(retain, nonatomic) HDDatabaseValueCache *originProvenanceByPersistentID; // @synthesize originProvenanceByPersistentID=_originProvenanceByPersistentID;
 @property(retain, nonatomic) HDDatabaseValueCache *persistentIDsByProvenanceKey; // @synthesize persistentIDsByProvenanceKey=_persistentIDsByProvenanceKey;
-- (void).cxx_destruct;
 - (id)diagnosticDescription;
 - (void)setDeviceNoneID:(id)arg1;
 @property(readonly, nonatomic) NSNumber *deviceNoneID;

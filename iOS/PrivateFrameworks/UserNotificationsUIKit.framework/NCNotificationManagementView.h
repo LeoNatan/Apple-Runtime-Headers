@@ -24,9 +24,9 @@
     _Bool _isCriticalAlert;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NCNotificationManagementBlueButton *onOffToggleButton; // @synthesize onOffToggleButton=_onOffToggleButton;
 @property(readonly, nonatomic) NCNotificationManagementBlueButton *deliveryButton; // @synthesize deliveryButton=_deliveryButton;
-- (void).cxx_destruct;
 - (id)visualStylingProviderForCategory:(long long)arg1;
 - (void)_dynamicUserInterfaceTraitDidChange;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

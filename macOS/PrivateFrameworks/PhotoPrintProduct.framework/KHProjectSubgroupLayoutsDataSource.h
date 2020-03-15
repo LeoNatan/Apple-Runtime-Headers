@@ -15,9 +15,9 @@
 }
 
 + (long long)physicalNumberOfItemsInProjectSubgroup:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *observedLayouts; // @synthesize observedLayouts=_observedLayouts;
 @property(readonly, nonatomic) KHProjectSubgroup *projectSubgroup; // @synthesize projectSubgroup=_projectSubgroup;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)layoutAtIndexPath:(id)arg1;
 - (id)indexPathForLayout:(id)arg1;

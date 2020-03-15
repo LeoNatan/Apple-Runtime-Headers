@@ -21,13 +21,13 @@
     struct CGRect _sourceRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *sourceViewController; // @synthesize sourceViewController=_sourceViewController;
 @property(nonatomic) struct CGRect sourceRect; // @synthesize sourceRect=_sourceRect;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(copy, nonatomic) NSSet *controlItems; // @synthesize controlItems=_controlItems;
 @property(retain, nonatomic) HFItem<NSCopying> *item; // @synthesize item=_item;
 @property(nonatomic) unsigned long long colorStyle; // @synthesize colorStyle=_colorStyle;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

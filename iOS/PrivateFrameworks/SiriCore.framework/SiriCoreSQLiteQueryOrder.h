@@ -16,9 +16,9 @@
     NSArray *_columnNames;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *columnNames; // @synthesize columnNames=_columnNames;
 @property(readonly, nonatomic) long long mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithColumnNames:(id)arg1 mode:(long long)arg2;
 

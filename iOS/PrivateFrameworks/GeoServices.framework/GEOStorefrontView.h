@@ -15,10 +15,10 @@
     struct GEOOrientedPosition _lookAt;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct GEOOrientedPosition lookAt; // @synthesize lookAt=_lookAt;
 @property(readonly, nonatomic) GEOStorefrontImagery *imageryInfo; // @synthesize imageryInfo=_imageryInfo;
 @property(readonly, nonatomic) unsigned long long identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithStorefrontView:(id)arg1;
 - (id)init;
 

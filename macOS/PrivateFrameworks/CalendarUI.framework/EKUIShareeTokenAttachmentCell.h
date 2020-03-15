@@ -13,8 +13,8 @@
     EKUIShareesGadget *_shareeGadget;
 }
 
-@property(retain) EKUIShareesGadget *shareeGadget; // @synthesize shareeGadget=_shareeGadget;
 - (void).cxx_destruct;
+@property(retain) EKUIShareesGadget *shareeGadget; // @synthesize shareeGadget=_shareeGadget;
 - (BOOL)shouldShowToken;
 - (id)stringForRepresentedObject;
 - (id)imageForRepresentedObject;

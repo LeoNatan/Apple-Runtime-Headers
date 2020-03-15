@@ -15,8 +15,8 @@
     NSIndexPath *_preferedIndexPath;
 }
 
-@property(retain, nonatomic) NSIndexPath *preferedIndexPath; // @synthesize preferedIndexPath=_preferedIndexPath;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSIndexPath *preferedIndexPath; // @synthesize preferedIndexPath=_preferedIndexPath;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;

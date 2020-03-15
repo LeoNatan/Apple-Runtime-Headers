@@ -16,9 +16,9 @@
     CDUnknownBlockType _finalizeTransitionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType finalizeTransitionHandler; // @synthesize finalizeTransitionHandler=_finalizeTransitionHandler;
 @property(copy, nonatomic) CDUnknownBlockType startTransitionHandler; // @synthesize startTransitionHandler=_startTransitionHandler;
-- (void).cxx_destruct;
 - (void)finalizeTransitionWithContextProvider:(id)arg1;
 - (void)startTransitionWithContextProvider:(id)arg1;
 

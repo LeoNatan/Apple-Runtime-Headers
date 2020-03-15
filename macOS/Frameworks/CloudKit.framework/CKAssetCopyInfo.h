@@ -20,12 +20,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *senderID; // @synthesize senderID=_senderID;
 @property(copy, nonatomic) NSURL *assetURL; // @synthesize assetURL=_assetURL;
 @property(copy, nonatomic) NSData *assetKey; // @synthesize assetKey=_assetKey;
 @property(copy, nonatomic) NSData *referenceSignature; // @synthesize referenceSignature=_referenceSignature;
 @property(copy, nonatomic) NSData *fileSignature; // @synthesize fileSignature=_fileSignature;
-- (void).cxx_destruct;
 - (id)description;
 - (id)CKDescriptionPropertiesWithPublic:(BOOL)arg1 private:(BOOL)arg2 shouldExpand:(BOOL)arg3;
 - (id)initWithCoder:(id)arg1;

@@ -13,8 +13,8 @@
     UNNotificationResponse *_response;
 }
 
-@property(readonly, retain, nonatomic) UNNotificationResponse *response; // @synthesize response=_response;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) UNNotificationResponse *response; // @synthesize response=_response;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)initWithXPCDictionary:(id)arg1;

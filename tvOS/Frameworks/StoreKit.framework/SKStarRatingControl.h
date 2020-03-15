@@ -20,8 +20,8 @@
     float _value;
 }
 
-@property(nonatomic) double starWidth; // @synthesize starWidth=_starWidth;
 - (void).cxx_destruct;
+@property(nonatomic) double starWidth; // @synthesize starWidth=_starWidth;
 - (void)_updateValueForPoint:(struct CGPoint)arg1;
 - (id)_newExplanationLabel;
 - (struct CGRect)_foregroundImageClipBounds;

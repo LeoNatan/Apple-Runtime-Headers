@@ -14,9 +14,9 @@
     MCActivityMonitor *_monitor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MCActivityMonitor *monitor; // @synthesize monitor=_monitor;
 @property(retain, nonatomic) MCActivityMonitor *parentMonitor; // @synthesize parentMonitor=_parentMonitor;
-- (void).cxx_destruct;
 - (void)executeOperation;
 @property(readonly, copy, nonatomic) NSString *activityString;
 - (void)main;

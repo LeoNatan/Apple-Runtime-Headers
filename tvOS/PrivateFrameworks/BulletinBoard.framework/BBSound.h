@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *songPath; // @synthesize songPath=_songPath;
 @property(copy, nonatomic) NSDictionary *vibrationPattern; // @synthesize vibrationPattern=_vibrationPattern;
 @property(nonatomic) unsigned int systemSoundID; // @synthesize systemSoundID=_systemSoundID;
@@ -36,7 +37,6 @@
 @property(nonatomic) double maxDuration; // @synthesize maxDuration=_maxDuration;
 @property(copy, nonatomic) NSString *audioCategory; // @synthesize audioCategory=_audioCategory;
 @property(copy, nonatomic) TLAlertConfiguration *alertConfiguration; // @synthesize alertConfiguration=_alertConfiguration;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) _Bool ignoreRingerSwitch;
 @property(readonly, copy, nonatomic) NSString *vibrationIdentifier;

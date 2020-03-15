@@ -31,6 +31,7 @@
     NSData *_leadingVideoItemSessionID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int parentFeedType; // @synthesize parentFeedType=_parentFeedType;
 @property(readonly, copy, nonatomic) NSData *leadingVideoItemSessionID; // @synthesize leadingVideoItemSessionID=_leadingVideoItemSessionID;
 @property(readonly, copy, nonatomic) NSString *referringSourceApplication; // @synthesize referringSourceApplication=_referringSourceApplication;
@@ -48,7 +49,6 @@
 @property(readonly, nonatomic) int newsProductType; // @synthesize newsProductType=_newsProductType;
 @property(readonly, nonatomic) int adLocation; // @synthesize adLocation=_adLocation;
 @property(readonly, nonatomic) int adType; // @synthesize adType=_adType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithAdType:(int)arg1 adLocation:(int)arg2 newsProductType:(int)arg3 mediaEngagePlayLocation:(int)arg4 mediaEngageCompletePlayLocation:(int)arg5 articleHostViewType:(int)arg6 supplementalEventOptions:(unsigned long long)arg7 groupType:(int)arg8 groupViewExposureID:(id)arg9 linkTapLocationType:(int)arg10 articleViewPresentationReason:(int)arg11 autoPlayArticleViewPresentationReason:(int)arg12 widgetEngagement:(id)arg13 referringURLString:(id)arg14 referringSourceApplication:(id)arg15 leadingVideoItemSessionID:(id)arg16 parentFeedType:(int)arg17;
 - (id)init;

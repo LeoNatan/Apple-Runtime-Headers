@@ -15,10 +15,10 @@
     long long _transportationMode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long transportationMode; // @synthesize transportationMode=_transportationMode;
 @property(readonly, nonatomic) NSDateInterval *transitionInterval; // @synthesize transitionInterval=_transitionInterval;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

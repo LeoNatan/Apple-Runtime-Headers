@@ -6,20 +6,26 @@
 
 #import <objc/NSObject.h>
 
+@class NSString;
+
 @interface TVPMediaItemSkipInfo : NSObject
 {
     unsigned long long _type;
     double _start;
     double _duration;
     double _target;
+    NSString *_localizedTitle;
 }
 
+- (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(readonly, nonatomic) double target; // @synthesize target=_target;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) double start; // @synthesize start=_start;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 - (id)_typeDescription;
 - (id)description;
+- (id)initWithType:(unsigned long long)arg1 start:(double)arg2 duration:(double)arg3 target:(double)arg4 localizedTitle:(id)arg5;
 - (id)initWithType:(unsigned long long)arg1 start:(double)arg2 duration:(double)arg3 target:(double)arg4;
 
 @end

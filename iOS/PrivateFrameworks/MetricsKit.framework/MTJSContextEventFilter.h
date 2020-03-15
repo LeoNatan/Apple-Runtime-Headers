@@ -19,12 +19,12 @@
     NSOperationQueue *_operationQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) NSError *lastError; // @synthesize lastError=_lastError;
 @property(retain, nonatomic) JSContext *jsContext; // @synthesize jsContext=_jsContext;
 @property(retain, nonatomic) NSString *functionName; // @synthesize functionName=_functionName;
 @property(retain, nonatomic) NSString *script; // @synthesize script=_script;
-- (void).cxx_destruct;
 - (id)apply:(id)arg1;
 - (void)_applyFilter:(id)arg1 promise:(id)arg2;
 - (id)initWithJSContext:(id)arg1 functionName:(id)arg2 operationQueue:(id)arg3;

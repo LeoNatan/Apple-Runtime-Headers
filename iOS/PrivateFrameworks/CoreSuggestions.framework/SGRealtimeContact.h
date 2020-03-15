@@ -25,13 +25,13 @@
 + (id)realtimeContactForFields:(id)arg1 updatedFields:(int)arg2 addedToCuratedContact:(id)arg3;
 + (id)realtimeContactForNewContact:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isHarvested; // @synthesize isHarvested=_isHarvested;
 @property(readonly, nonatomic) SGExtractionInfo *extractionInfo; // @synthesize extractionInfo=_extractionInfo;
 @property(readonly, nonatomic) NSString *cnContactIdentifier; // @synthesize cnContactIdentifier=_cnContactIdentifier;
 @property(readonly, nonatomic) SGContact *contact; // @synthesize contact=_contact;
 @property(readonly, nonatomic) int updatedFields; // @synthesize updatedFields=_updatedFields;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)setCnContactIdentifier:(id)arg1;
 - (void)setExtractionInfo;

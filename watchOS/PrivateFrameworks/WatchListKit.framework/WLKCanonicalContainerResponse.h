@@ -20,6 +20,7 @@
     NSArray *_channels;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *channels; // @synthesize channels=_channels;
 @property(readonly, copy, nonatomic) NSDictionary *defaultSeason; // @synthesize defaultSeason=_defaultSeason;
 @property(readonly, copy, nonatomic) WLKBasicEpisodeMetadata *currentEpisode; // @synthesize currentEpisode=_currentEpisode;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) unsigned int contentType; // @synthesize contentType=_contentType;
 @property(readonly, copy, nonatomic) NSString *canonicalID; // @synthesize canonicalID=_canonicalID;
 @property(readonly, copy, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 

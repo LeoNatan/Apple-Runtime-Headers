@@ -20,10 +20,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long bedtimeBehaviorEnabledSetting; // @synthesize bedtimeBehaviorEnabledSetting=_bedtimeBehaviorEnabledSetting;
 @property(readonly, copy, nonatomic) DNDScheduleTimePeriod *timePeriod; // @synthesize timePeriod=_timePeriod;
 @property(readonly, nonatomic) unsigned long long scheduleEnabledSetting; // @synthesize scheduleEnabledSetting=_scheduleEnabledSetting;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

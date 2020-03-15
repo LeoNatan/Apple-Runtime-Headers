@@ -25,9 +25,9 @@
 + (id)addressesWithTextCheckingResult:(id)arg1;
 + (BOOL)stringContainsEmailAddresses:(id)arg1;
 + (id)emailAddressesInString:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) NSString *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (id)wfSerializedRepresentation;
 @property(readonly, copy, nonatomic) NSString *wfName;
 - (id)copyWithZone:(struct _NSZone *)arg1;

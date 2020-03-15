@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool sawADropout; // @synthesize sawADropout=_sawADropout;
 @property(readonly, nonatomic) unsigned long long startDropoutCount; // @synthesize startDropoutCount=_startDropoutCount;
 @property(readonly, nonatomic) long long interruptionCount; // @synthesize interruptionCount=_interruptionCount;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) double activityProgress; // @synthesize activityProgress=_activityProgress;
 @property(readonly, nonatomic) PSYActivityInfo *activityInfo; // @synthesize activityInfo=_activityInfo;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;

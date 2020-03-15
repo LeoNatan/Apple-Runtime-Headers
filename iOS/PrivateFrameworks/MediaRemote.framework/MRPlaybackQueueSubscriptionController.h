@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath; // @synthesize playerPath=_playerPath;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath; // @synthesize playerPath=_playerPath;
 - (void)_removeRequestID:(id)arg1;
 - (void)invalidate;
 - (id)filteredContentItemsBySubscriptionsForContentItems:(id)arg1;
 - (void)enumerateFilteredContentItemsBySubscriptionsForContentItems:(id)arg1 block:(CDUnknownBlockType)arg2;
-- (id)requestForSubscribedContentItemIdentifier:(struct NSString *)arg1;
+- (id)requestForSubscribedContentItemIdentifier:(id)arg1;
 - (void)subscribeToPlaybackQueue:(id)arg1 forRequest:(id)arg2;
 - (void)augmentCommandOptions:(id)arg1 forCommand:(unsigned int)arg2;
 - (id)offsetForIdentifier:(id)arg1;

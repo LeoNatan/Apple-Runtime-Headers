@@ -15,9 +15,9 @@
     _Bool _shouldDeleteTemporaryFileOnDeallocation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, copy, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)description;
 - (id)dataSourcePathForDataRange:(struct _NSRange)arg1 error:(id *)arg2;
 - (void)dealloc;

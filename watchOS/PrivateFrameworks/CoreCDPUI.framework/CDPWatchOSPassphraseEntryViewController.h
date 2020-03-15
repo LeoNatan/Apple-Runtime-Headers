@@ -31,6 +31,7 @@
     CDPRemoteValidationEscapeOffer *_escapeOffer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CDPRemoteValidationEscapeOffer *escapeOffer; // @synthesize escapeOffer=_escapeOffer;
 @property(nonatomic) _Bool hideCancelButton; // @synthesize hideCancelButton=_hideCancelButton;
 @property(nonatomic) _Bool secureEntry; // @synthesize secureEntry=_secureEntry;
@@ -42,7 +43,6 @@
 @property(copy, nonatomic) NSString *subLabelText; // @synthesize subLabelText=_subLabelText;
 @property(copy, nonatomic) NSString *detailText; // @synthesize detailText=_detailText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-- (void).cxx_destruct;
 - (void)canceledInputEntry;
 - (void)receivedInputEntry:(id)arg1;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;

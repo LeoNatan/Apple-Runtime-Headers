@@ -27,13 +27,13 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *payloadFilterBlackList; // @synthesize payloadFilterBlackList=_payloadFilterBlackList;
 @property(copy, nonatomic) NSArray *payloadFilterWhiteList; // @synthesize payloadFilterWhiteList=_payloadFilterWhiteList;
 @property(copy, nonatomic) NSArray *payloadSiteWhiteList; // @synthesize payloadSiteWhiteList=_payloadSiteWhiteList;
 @property(copy, nonatomic) NSNumber *payloadWhiteListEnabled; // @synthesize payloadWhiteListEnabled=_payloadWhiteListEnabled;
 @property(copy, nonatomic) NSNumber *payloadUseContentFilter; // @synthesize payloadUseContentFilter=_payloadUseContentFilter;
 @property(copy, nonatomic) NSNumber *payloadRestrictWeb; // @synthesize payloadRestrictWeb=_payloadRestrictWeb;
-- (void).cxx_destruct;
 - (id)synthesizeProfileOutUUIDs:(id)arg1 withOldUUIDs:(id)arg2 assetProviders:(id)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;

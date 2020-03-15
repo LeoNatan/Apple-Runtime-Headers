@@ -18,8 +18,8 @@
 
 + (id)secureSentinelRecordID;
 + (id)sentinelRecordID;
-@property(retain, nonatomic) id <FCCKDatabaseMigrator> encryptionMigrator; // @synthesize encryptionMigrator=_encryptionMigrator;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <FCCKDatabaseMigrator> encryptionMigrator; // @synthesize encryptionMigrator=_encryptionMigrator;
 - (void)_associateChildOperation:(id)arg1;
 - (void)_handleIdentityLossWithDatabase:(id)arg1 sentinel:(id)arg2 secureSentinel:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (BOOL)_shouldHandleIdentityLossWithSentinel:(id)arg1 secureSentinel:(id)arg2 error:(id)arg3;

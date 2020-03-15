@@ -18,12 +18,12 @@
 }
 
 + (id)providerWithConnectionInfo:(id)arg1 errorHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastLifecycleCheckin; // @synthesize lastLifecycleCheckin=_lastLifecycleCheckin;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(copy, nonatomic) CDUnknownBlockType aliveHandler; // @synthesize aliveHandler=_aliveHandler;
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(retain, nonatomic) CalXPCConnectionInfo *info; // @synthesize info=_info;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (void)updateConnectionInfo:(id)arg1;

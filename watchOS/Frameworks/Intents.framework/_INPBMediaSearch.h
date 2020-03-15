@@ -35,6 +35,7 @@
 + (_Bool)supportsSecureCoding;
 + (Class)moodNamesType;
 + (Class)genreNamesType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int sortOrder; // @synthesize sortOrder=_sortOrder;
 @property(retain, nonatomic) _INPBDateTimeRange *releaseDate; // @synthesize releaseDate=_releaseDate;
@@ -46,7 +47,6 @@
 @property(copy, nonatomic) NSArray *genreNames; // @synthesize genreNames=_genreNames;
 @property(retain, nonatomic) _INPBString *artistName; // @synthesize artistName=_artistName;
 @property(retain, nonatomic) _INPBString *albumName; // @synthesize albumName=_albumName;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

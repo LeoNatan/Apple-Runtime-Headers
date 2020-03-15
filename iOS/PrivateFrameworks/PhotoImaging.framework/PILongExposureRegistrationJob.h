@@ -15,10 +15,10 @@
     CDStruct_996ac03c _guideExtent;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VNImageHomographicAlignmentObservation *observation; // @synthesize observation=_observation;
 @property(retain, nonatomic) CIImage *stillImage; // @synthesize stillImage=_stillImage;
 @property(nonatomic) CDStruct_996ac03c guideExtent; // @synthesize guideExtent=_guideExtent;
-- (void).cxx_destruct;
 - (id)result;
 - (_Bool)render:(out id *)arg1;
 - (_Bool)prepare:(out id *)arg1;

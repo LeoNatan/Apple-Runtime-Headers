@@ -21,8 +21,8 @@
 + (id)asDelay:(double)arg1 onQueue:(id)arg2 withValue:(id)arg3;
 + (id)asDelay:(double)arg1 withError:(id)arg2;
 + (id)asDelay:(double)arg1 withValue:(id)arg2;
-@property(retain, nonatomic) NFPromiseSeal *seal; // @synthesize seal=_seal;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NFPromiseSeal *seal; // @synthesize seal=_seal;
 @property(readonly) CDUnknownBlockType delayOn;
 @property(readonly) CDUnknownBlockType delay;
 @property(readonly) CDUnknownBlockType resolveOn;

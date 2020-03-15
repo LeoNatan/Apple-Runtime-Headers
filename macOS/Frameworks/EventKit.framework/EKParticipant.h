@@ -39,11 +39,11 @@
 + (id)participantWithName:(id)arg1 emailAddress:(id)arg2 phoneNumber:(id)arg3 url:(id)arg4;
 + (id)participantWithName:(id)arg1 url:(id)arg2;
 + (Class)classForParticipantInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic) NSString *scheduleStatusString; // @synthesize scheduleStatusString=_scheduleStatusString;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *comment; // @synthesize comment=_comment;
-- (void).cxx_destruct;
 - (BOOL)isLocationRoom;
 @property(readonly, nonatomic) long long participantScheduleStatus;
 @property(copy, nonatomic) NSString *phoneNumber;

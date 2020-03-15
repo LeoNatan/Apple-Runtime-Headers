@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     _Bool _animating;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(readonly, nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
-- (void).cxx_destruct;
 - (void)_removeAnimations;
 - (void)_addAnimations;
 - (void)_updateImagesForTraitCollection:(id)arg1;

@@ -54,6 +54,7 @@
     struct CGPoint _anchorMemoryOrigin;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setNewMemoriesRequestCompletion:) CDUnknownBlockType _newMemoriesRequestCompletion; // @synthesize _newMemoriesRequestCompletion=__newMemoriesRequestCompletion;
 @property(nonatomic, getter=_isRequestingNewMemories, setter=_setRequestingNewMemories:) BOOL _requestingNewMemories; // @synthesize _requestingNewMemories=__requestingNewMemories;
 @property(nonatomic, setter=_setRefreshRetryCount:) long long _refreshRetryCount; // @synthesize _refreshRetryCount=__refreshRetryCount;
@@ -77,7 +78,6 @@
 @property(readonly, nonatomic) PXMemoriesSpecManager *specManager; // @synthesize specManager=_specManager;
 @property(readonly, nonatomic) PXMemoriesFeedDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
 @property(readonly, nonatomic) PXTilingController *tilingController; // @synthesize tilingController=_tilingController;
-- (void).cxx_destruct;
 - (void)_scrollToTargetMemoryUUIDWhenReady:(id)arg1;
 - (id)memoriesFeedTilingLayout:(id)arg1 titleFontNameForItemAtIndexPath:(struct PXSimpleIndexPath)arg2;
 - (struct CGRect)memoriesFeedTilingLayout:(id)arg1 contentsRectForItemAtIndexPath:(struct PXSimpleIndexPath)arg2 forAspectRatio:(double)arg3;

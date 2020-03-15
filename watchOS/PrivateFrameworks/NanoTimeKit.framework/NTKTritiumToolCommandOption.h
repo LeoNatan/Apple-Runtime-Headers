@@ -33,6 +33,7 @@
 + (id)choicesOptionWithKey:(id)arg1 choices:(id)arg2 keyDescription:(id)arg3;
 + (id)boolOptionWithKey:(id)arg1 keyDescription:(id)arg2;
 + (id)rawStringOptionWithKey:(id)arg1 keyDescription:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool valid; // @synthesize valid=_valid;
 @property(nonatomic) _Bool optional; // @synthesize optional=_optional;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
@@ -45,7 +46,6 @@
 @property(readonly, nonatomic) NSString *keyDescription; // @synthesize keyDescription=_keyDescription;
 @property(readonly, nonatomic) NSString *key; // @synthesize key=_key;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

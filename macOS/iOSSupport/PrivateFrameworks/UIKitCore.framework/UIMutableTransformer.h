@@ -13,8 +13,8 @@
     id <UIMutableTransformerDelegate> _delegate;
 }
 
-@property(nonatomic, setter=_setDelegate:) __weak id <UIMutableTransformerDelegate> _delegate; // @synthesize _delegate;
 - (void).cxx_destruct;
+@property(nonatomic, setter=_setDelegate:) __weak id <UIMutableTransformerDelegate> _delegate; // @synthesize _delegate;
 - (void)_updateTransform;
 - (void)_ensureTransformsStructuresExists;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

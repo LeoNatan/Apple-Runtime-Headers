@@ -50,6 +50,7 @@
     OS_xpc_remote_listener *_listener;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) OS_xpc_remote_listener *listener; // @synthesize listener=_listener;
 @property(nonatomic) _Bool send_in_progress; // @synthesize send_in_progress=_send_in_progress;
 @property(nonatomic) int type; // @synthesize type=_type;
@@ -57,7 +58,6 @@
 @property(copy, nonatomic) CDUnknownBlockType event_handler; // @synthesize event_handler=_event_handler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *target_queue; // @synthesize target_queue=_target_queue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internal_queue; // @synthesize internal_queue=_internal_queue;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 // Remaining properties

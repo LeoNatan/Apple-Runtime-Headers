@@ -18,11 +18,11 @@
     unsigned int _optionFlags;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int optionFlags; // @synthesize optionFlags=_optionFlags;
 @property(readonly, nonatomic) NSString *statusText; // @synthesize statusText=_statusText;
 @property(readonly, nonatomic) NSString *rawStatusText; // @synthesize rawStatusText=_rawStatusText;
 @property(retain, nonatomic) IMBalloonPluginDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isFromMe;
 @property(readonly, retain, nonatomic) NSString *type;
 - (void)configureStatusTextWithAccount:(id)arg1;

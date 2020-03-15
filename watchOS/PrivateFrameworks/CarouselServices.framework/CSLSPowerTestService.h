@@ -19,10 +19,10 @@
     NSObject<CSLSPowerTestDelegate> *_delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject<CSLSPowerTestDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *connectionQueue; // @synthesize connectionQueue=_connectionQueue;
-- (void).cxx_destruct;
 - (void)testStarted:(id)arg1 error:(id)arg2;
 - (void)startTest:(id)arg1;
 - (void)_attemptConnection;

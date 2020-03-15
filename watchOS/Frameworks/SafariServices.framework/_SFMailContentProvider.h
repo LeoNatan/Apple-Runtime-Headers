@@ -14,9 +14,9 @@
     id <_SFMailContentProviderDataSource> _dataSource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool restrictAddingPDFContent; // @synthesize restrictAddingPDFContent=_restrictAddingPDFContent;
 @property(nonatomic) __weak id <_SFMailContentProviderDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)getMailComposeViewControllerWithMailToURL:(id)arg1 contentURL:(id)arg2 preferredContentType:(int)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)prepareMailComposeViewController:(id)arg1 withMailToURL:(id)arg2 contentURL:(id)arg3 preferredContentType:(int)arg4 completionHandler:(CDUnknownBlockType)arg5;
 

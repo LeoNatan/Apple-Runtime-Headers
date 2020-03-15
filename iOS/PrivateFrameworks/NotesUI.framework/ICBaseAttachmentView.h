@@ -17,12 +17,12 @@
     struct CGSize _attachmentContentSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSRegularExpression *highlightPatternRegex; // @synthesize highlightPatternRegex=_highlightPatternRegex;
 @property(nonatomic) struct CGSize attachmentContentSize; // @synthesize attachmentContentSize=_attachmentContentSize;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 @property(nonatomic) __weak ICTextAttachment *textAttachment; // @synthesize textAttachment=_textAttachment;
 @property(nonatomic) __weak ICAttachment *attachment; // @synthesize attachment=_attachment;
-- (void).cxx_destruct;
 - (void)attachmentWillBeDeleted:(id)arg1;
 - (void)attachmentPreviewImagesDidUpdate:(id)arg1;
 - (void)mediaDidLoad:(id)arg1;

@@ -12,12 +12,12 @@ __attribute__((visibility("hidden")))
 @interface ISCacheImage : ISConcreteImage
 {
     NSUUID *_uuid;
-    struct NSData *_validationToken;
+    NSData *_validationToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSData *validationToken; // @synthesize validationToken=_validationToken;
 @property(retain) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 @property _Bool placeholder; // @dynamic placeholder;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithData:(id)arg1 scale:(double)arg2;

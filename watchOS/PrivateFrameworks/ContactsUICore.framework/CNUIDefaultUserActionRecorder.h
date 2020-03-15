@@ -17,9 +17,9 @@
     id <CNUIDefaultUserActionRecorderEventFactory> _eventFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNUIDefaultUserActionRecorderEventFactory> eventFactory; // @synthesize eventFactory=_eventFactory;
 @property(readonly, nonatomic) CRRecentContactsLibrary *library; // @synthesize library=_library;
-- (void).cxx_destruct;
 - (void)recordUserAction:(id)arg1;
 - (id)initWithRecentsLibrary:(id)arg1 eventFactory:(id)arg2;
 - (id)init;

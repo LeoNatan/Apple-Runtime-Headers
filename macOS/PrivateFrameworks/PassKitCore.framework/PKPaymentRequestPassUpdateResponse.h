@@ -14,9 +14,9 @@
     unsigned long long _appletState;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long appletState; // @synthesize appletState=_appletState;
 @property(readonly, copy, nonatomic) NSString *passURL; // @synthesize passURL=_passURL;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 
 @end

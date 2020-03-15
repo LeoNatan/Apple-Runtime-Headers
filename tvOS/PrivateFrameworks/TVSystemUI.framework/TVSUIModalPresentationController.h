@@ -14,9 +14,9 @@
     long long _blurStyle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long blurStyle; // @synthesize blurStyle=_blurStyle;
 @property(readonly, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
-- (void).cxx_destruct;
 - (void)_animateWithCoordinator:(id)arg1 isPresenting:(_Bool)arg2;
 - (void)_configureSubviews;
 - (void)dismissalTransitionWillBegin;

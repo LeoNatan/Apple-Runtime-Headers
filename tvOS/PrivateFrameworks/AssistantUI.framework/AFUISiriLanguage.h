@@ -17,11 +17,11 @@
     id <AFUISiriLanguageDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_setupAssistantHasCompletedInitialRunAvailable) _Bool setupAssistantHasCompletedInitialRunAvailable; // @synthesize setupAssistantHasCompletedInitialRunAvailable=_setupAssistantHasCompletedInitialRunAvailable;
 @property(nonatomic) _Bool setupAssistantHasCompletedInitialRunChecked; // @synthesize setupAssistantHasCompletedInitialRunChecked=_setupAssistantHasCompletedInitialRunChecked;
 @property(readonly, nonatomic, getter=_delegate) __weak id <AFUISiriLanguageDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic, setter=_setSpokenLanguageCode:) NSString *spokenLanguageCode; // @synthesize spokenLanguageCode=_spokenLanguageCode;
-- (void).cxx_destruct;
 - (id)_computeSpokenLanguageCode;
 - (void)_updateSpokenLanguageCode;
 - (void)_spokenLanguageDidChange:(id)arg1;

@@ -24,8 +24,8 @@
 - (_Bool)_allowSiteSpecificQuirksToOverrideCompatibilityMode;
 - (id)_customNavigatorPlatform;
 - (void)_setCustomNavigatorPlatform:(id)arg1;
-- (id)_customJavaScriptUserAgentAsSiteSpecificQuirks;
-- (void)_setCustomJavaScriptUserAgentAsSiteSpecificQuirks:(id)arg1;
+- (id)_customUserAgentAsSiteSpecificQuirks;
+- (void)_setCustomUserAgentAsSiteSpecificQuirks:(id)arg1;
 - (id)_customUserAgent;
 - (void)_setCustomUserAgent:(id)arg1;
 - (void)_setWebsiteDataStore:(id)arg1;

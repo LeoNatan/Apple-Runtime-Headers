@@ -15,10 +15,10 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) CDUnknownBlockType allAssetsDownloadCompletion; // @synthesize allAssetsDownloadCompletion=_allAssetsDownloadCompletion;
 @property(copy, nonatomic) CDUnknownBlockType assetDownloadCompletion; // @synthesize assetDownloadCompletion=_assetDownloadCompletion;
-- (void).cxx_destruct;
 - (id)_assetQueryForType:(unsigned long long)arg1 forDevice:(id)arg2 atlasDetails:(id)arg3;
 - (id)_assetQueryForDeviceAttributes:(unsigned long long)arg1 deviceAttributes:(id)arg2 atlasDetails:(id)arg3;
 - (unsigned long long)hardwareGenerationForProductType:(id)arg1;

@@ -14,9 +14,9 @@
     NSString *_provisioningMethod;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *provisioningMethod; // @synthesize provisioningMethod=_provisioningMethod;
 @property(copy, nonatomic) NSString *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
-- (void).cxx_destruct;
 - (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 appleAccountInformation:(id)arg3;
 - (id)initWithProductIdentifier:(id)arg1 provisioningMethod:(id)arg2;
 

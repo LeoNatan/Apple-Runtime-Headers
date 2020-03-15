@@ -16,11 +16,11 @@
     NSString *_requestedOperation;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *requestedOperation; // @synthesize requestedOperation=_requestedOperation;
 @property(copy, nonatomic) NSString *nonce; // @synthesize nonce=_nonce;
 @property(copy, nonatomic) NSString *state; // @synthesize state=_state;
 @property(copy, nonatomic) NSArray *requestedScopes; // @synthesize requestedScopes=_requestedScopes;
-- (void).cxx_destruct;
 
 @end
 

@@ -16,10 +16,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic, setter=setNeedsAlertPresentationAfterOTAUpdate:) _Bool needsAlertPresentationAfterOTAUpdate; // @synthesize needsAlertPresentationAfterOTAUpdate=_needsAlertPresentationAfterOTAUpdate;
 @property(readonly, retain, nonatomic) NSNumber *passcodeRequiredDays; // @synthesize passcodeRequiredDays=_passcodeRequiredDays;
 @property(readonly, nonatomic) _Bool alertAfterDownload; // @synthesize alertAfterDownload=_alertAfterDownload;
-- (void).cxx_destruct;
 - (void)_setBooleanPreferenceForKey:(id)arg1 value:(_Bool)arg2;
 - (void *)_copyPreferenceForKey:(struct __CFString *)arg1 ofType:(unsigned long long)arg2;
 - (id)_copyNumberPreferenceForKey:(id)arg1;

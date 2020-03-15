@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     CKMediaObject *_mediaObject;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CKMediaObject *mediaObject; // @synthesize mediaObject=_mediaObject;
 @property(readonly, nonatomic) UIView *roundedCornerView; // @synthesize roundedCornerView=_roundedCornerView;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) CSLSAlertSuppressionAssertion *alertSuppressionAssertion; // @synthesize alertSuppressionAssertion=_alertSuppressionAssertion;
-- (void).cxx_destruct;
 - (void)presentFromViewController:(id)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

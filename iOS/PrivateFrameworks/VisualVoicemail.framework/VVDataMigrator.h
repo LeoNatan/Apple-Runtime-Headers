@@ -17,10 +17,10 @@
 
 + (id)homeDirectory;
 + (id)carrierServiceName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *isoCountryCode; // @synthesize isoCountryCode=_isoCountryCode;
 @property(copy, nonatomic) NSString *searchHint; // @synthesize searchHint=_searchHint;
 @property(copy, nonatomic) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
-- (void).cxx_destruct;
 - (void)performIMAPFilePathMigration;
 - (void)performMigrationIfNecessary;
 - (void)createFoldersIfNecessary;

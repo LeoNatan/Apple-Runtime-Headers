@@ -16,11 +16,11 @@
     IDSProtobuf *_idsProtobuf;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDSProtobuf *idsProtobuf; // @synthesize idsProtobuf=_idsProtobuf;
 @property(readonly, nonatomic) unsigned long long sessionState; // @synthesize sessionState=_sessionState;
 @property(readonly, nonatomic) long long sequenceNumberError; // @synthesize sequenceNumberError=_sequenceNumberError;
 @property(retain, nonatomic) PBCodable *protobuf; // @synthesize protobuf=_protobuf;
-- (void).cxx_destruct;
 - (id)initWithIDSProtobuf:(id)arg1 sequenceNumberManager:(id)arg2;
 - (id)initWithProtobuf:(id)arg1 type:(unsigned short)arg2 isResponse:(_Bool)arg3 sequenceNumberManager:(id)arg4;
 

@@ -14,8 +14,8 @@
 }
 
 + (id)sharedTextDetector;
-@property(retain) NSArray *_typeDictionaries; // @synthesize _typeDictionaries;
 - (void).cxx_destruct;
+@property(retain) NSArray *_typeDictionaries; // @synthesize _typeDictionaries;
 - (id)init;
 - (id)matchesInString:(id)arg1 withType:(id)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) NSArray *supportedTypeIdentifiers;

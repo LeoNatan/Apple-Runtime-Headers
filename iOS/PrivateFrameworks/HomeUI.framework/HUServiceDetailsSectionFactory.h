@@ -11,8 +11,8 @@
     CDUnknownBlockType _customComparator;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType customComparator; // @synthesize customComparator=_customComparator;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType customComparator; // @synthesize customComparator=_customComparator;
 - (CDUnknownBlockType)serviceDetailsItemComparatorForSectionIdentifier:(id)arg1;
 - (id)buildServiceDetailsItemSectionForSourceItem:(id)arg1 sectionIdentifier:(id)arg2 items:(id)arg3;
 

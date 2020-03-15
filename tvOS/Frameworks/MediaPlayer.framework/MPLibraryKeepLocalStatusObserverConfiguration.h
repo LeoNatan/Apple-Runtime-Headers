@@ -14,9 +14,9 @@
     MPModelObject *_identifyingModelObject;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPModelObject *identifyingModelObject; // @synthesize identifyingModelObject=_identifyingModelObject;
 @property(nonatomic) long long enableState; // @synthesize enableState=_enableState;
-- (void).cxx_destruct;
 
 @end
 

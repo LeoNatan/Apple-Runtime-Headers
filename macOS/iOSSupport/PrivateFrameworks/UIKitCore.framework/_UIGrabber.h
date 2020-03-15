@@ -8,6 +8,7 @@
 
 @interface _UIGrabber : UIControl
 {
+    struct CGPoint _initialLocation;
 }
 
 - (void)layoutSubviews;

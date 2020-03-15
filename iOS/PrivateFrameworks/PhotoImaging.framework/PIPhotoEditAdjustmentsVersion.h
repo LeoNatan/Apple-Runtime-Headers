@@ -18,11 +18,11 @@
 
 + (id)versionFromString:(id)arg1;
 + (id)versionWithMajor:(unsigned long long)arg1 minor:(unsigned long long)arg2 subMinor:(unsigned long long)arg3 platform:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *platform; // @synthesize platform=_platform;
 @property(readonly, nonatomic) unsigned long long subMinorVersion; // @synthesize subMinorVersion=_subMinorVersion;
 @property(readonly, nonatomic) unsigned long long minorVersion; // @synthesize minorVersion=_minorVersion;
 @property(readonly, nonatomic) unsigned long long majorVersion; // @synthesize majorVersion=_majorVersion;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqualToAdjustmentVersion:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

@@ -26,12 +26,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long maximumNumberOfPointsPerDay; // @synthesize maximumNumberOfPointsPerDay=_maximumNumberOfPointsPerDay;
 @property(retain, nonatomic) ASCodableCloudKitDateComponents *durationDateComponents; // @synthesize durationDateComponents=_durationDateComponents;
 @property(retain, nonatomic) ASCodableCloudKitDateComponents *startDateComponents; // @synthesize startDateComponents=_startDateComponents;
 @property(nonatomic) long long currentCacheIndex; // @synthesize currentCacheIndex=_currentCacheIndex;
 @property(retain, nonatomic) NSData *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

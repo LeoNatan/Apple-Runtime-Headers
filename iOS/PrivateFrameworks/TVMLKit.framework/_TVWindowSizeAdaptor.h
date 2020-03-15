@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     UIWindow *_window;
 }
 
-@property(readonly, nonatomic) __weak UIWindow *window; // @synthesize window=_window;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak UIWindow *window; // @synthesize window=_window;
 - (unsigned long long)_supportedOrientations;
 - (_Bool)_shouldSwapDimensions;
 - (_Bool)update;

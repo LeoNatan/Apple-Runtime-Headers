@@ -24,10 +24,10 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_group> *_internalInitializeGroup;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BTMAgentConnection *internalAgentConnection; // @synthesize internalAgentConnection=_internalAgentConnection;
 @property(readonly, retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly) NSHashTable *observers; // @synthesize observers=_internalObservers;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)removeAllItems;
 - (BOOL)moveItem:(id)arg1 afterItem:(id)arg2 error:(id *)arg3;

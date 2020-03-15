@@ -17,9 +17,9 @@
     id <CNUIPRLikenessProvider> _likeness;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNUIPRLikenessProvider> likeness; // @synthesize likeness=_likeness;
 @property(readonly, copy, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)updateLikeness:(id)arg1 contact:(id)arg2;
 - (void)removeDelegates:(id)arg1;
 - (void)addDelegate:(id)arg1;

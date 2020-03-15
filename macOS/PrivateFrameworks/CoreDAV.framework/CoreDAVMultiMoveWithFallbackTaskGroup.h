@@ -22,6 +22,7 @@
     NSMutableArray *_outstandingSourceURLsToMove;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *outstandingSourceURLsToMove; // @synthesize outstandingSourceURLsToMove=_outstandingSourceURLsToMove;
 @property(readonly, nonatomic) NSMutableSet *destinationURLs; // @synthesize destinationURLs=_destinationURLs;
 @property(readonly, nonatomic) NSMutableDictionary *destinationEntityETags; // @synthesize destinationEntityETags=_destinationEntityETags;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) int overwrite; // @synthesize overwrite=_overwrite;
 @property(readonly, nonatomic) NSURL *destinationURL; // @synthesize destinationURL=_destinationURL;
 @property(readonly, nonatomic) NSSet *sourceURLs; // @synthesize sourceURLs=_sourceURLs;
-- (void).cxx_destruct;
 - (void)_completedPutTask:(id)arg1 sourceURL:(id)arg2;
 - (void)_completedMoveTask:(id)arg1 sourceURL:(id)arg2;
 - (id)_eTagFromTaskResponseHeaders:(id)arg1;

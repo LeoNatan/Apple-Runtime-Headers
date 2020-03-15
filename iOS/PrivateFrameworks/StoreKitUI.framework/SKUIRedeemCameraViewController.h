@@ -17,11 +17,11 @@
     id <SKUIRedeemViewCameraOverrideDelegate> _cameraOverrideDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKUIRedeemViewCameraOverrideDelegate> cameraOverrideDelegate; // @synthesize cameraOverrideDelegate=_cameraOverrideDelegate;
 @property(nonatomic) __weak id <SKUIRedeemCameraViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *initialCode; // @synthesize initialCode=_initialCode;
 @property(readonly, nonatomic) long long category; // @synthesize category;
-- (void).cxx_destruct;
 - (id)initWithRedeemCategory:(long long)arg1;
 
 @end

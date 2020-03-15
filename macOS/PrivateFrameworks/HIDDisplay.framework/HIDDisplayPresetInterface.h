@@ -14,8 +14,8 @@
     NSArray *_presets;
 }
 
-@property(readonly) NSArray *presets; // @synthesize presets=_presets;
 - (void).cxx_destruct;
+@property(readonly) NSArray *presets; // @synthesize presets=_presets;
 - (id)capabilities;
 - (long long)getCurrentPresetIndex:(id *)arg1;
 - (BOOL)setCurrentPresetIndex:(long long)arg1 error:(id *)arg2;

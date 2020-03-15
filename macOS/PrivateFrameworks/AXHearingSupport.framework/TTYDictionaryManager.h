@@ -15,8 +15,8 @@
 }
 
 + (id)availableDictionaryAssetsUsingRemoteInfo:(BOOL)arg1;
-@property(retain, nonatomic) NSArray *availableDictionaries; // @synthesize availableDictionaries=_availableDictionaries;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *availableDictionaries; // @synthesize availableDictionaries=_availableDictionaries;
 - (id)_ttyDictionaryAsset;
 - (BOOL)_isStalledAutoDownloadAsset:(id)arg1;
 - (void)deactivateTTYDictionary;

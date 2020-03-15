@@ -18,8 +18,8 @@
 }
 
 + (id)logCategory;
-@property(readonly, nonatomic) HMDeviceSetupSession *setupSession; // @synthesize setupSession=_setupSession;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HMDeviceSetupSession *setupSession; // @synthesize setupSession=_setupSession;
 - (id)logIdentifier;
 - (void)setupSession:(id)arg1 didReceiveExchangeData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setupSession:(id)arg1 didCloseWithError:(id)arg2;

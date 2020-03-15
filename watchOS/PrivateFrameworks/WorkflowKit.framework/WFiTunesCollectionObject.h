@@ -18,10 +18,10 @@
 }
 
 + (id)JSONKeyPathsByPropertyKey;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *trackCount; // @synthesize trackCount=_trackCount;
 @property(readonly, nonatomic) NSString *genre; // @synthesize genre=_genre;
 @property(readonly, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

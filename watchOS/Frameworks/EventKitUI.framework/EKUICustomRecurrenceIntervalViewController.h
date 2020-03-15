@@ -20,11 +20,11 @@
     CDUnknownBlockType _changeBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType changeBlock; // @synthesize changeBlock=_changeBlock;
 @property(nonatomic) _Bool maximumInterval; // @synthesize maximumInterval=_maximumInterval;
 @property(nonatomic) int interval; // @synthesize interval=_interval;
 @property(nonatomic) int frequency; // @synthesize frequency=_frequency;
-- (void).cxx_destruct;
 - (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
 - (id)pickerView:(id)arg1 titleForRow:(int)arg2 forComponent:(int)arg3;
 - (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;

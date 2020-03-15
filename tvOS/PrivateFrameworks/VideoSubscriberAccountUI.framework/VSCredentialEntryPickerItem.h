@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_itemId;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *itemId; // @synthesize itemId=_itemId;
 @property(copy, nonatomic) NSString *itemValue; // @synthesize itemValue=_itemValue;
 @property(copy, nonatomic) NSString *itemName; // @synthesize itemName=_itemName;
-- (void).cxx_destruct;
 
 @end
 

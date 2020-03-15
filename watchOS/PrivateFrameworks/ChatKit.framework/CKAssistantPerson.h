@@ -14,9 +14,9 @@
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSString *internalGUID; // @synthesize internalGUID=_internalGUID;
-- (void).cxx_destruct;
 
 @end
 

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UIViewPropertyAnimator *_animator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewPropertyAnimator *animator; // @synthesize animator=_animator;
 @property(nonatomic) double minimumDuration; // @synthesize minimumDuration=_minimumDuration;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(retain, nonatomic) NSDate *showDate; // @synthesize showDate=_showDate;
-- (void).cxx_destruct;
 - (void)hide;
 - (void)show;
 - (id)initWithView:(id)arg1 minimumDuration:(double)arg2;

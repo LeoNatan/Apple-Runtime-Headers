@@ -17,12 +17,12 @@
     WFCalendarSubstitutableState *_allCalendarsState;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFCalendarSubstitutableState *allCalendarsState; // @synthesize allCalendarsState=_allCalendarsState;
 @property(retain, nonatomic) NSArray *calendarStates; // @synthesize calendarStates=_calendarStates;
 @property(retain, nonatomic) id defaultSerializedCalendarRepresentation; // @synthesize defaultSerializedCalendarRepresentation=_defaultSerializedCalendarRepresentation;
 @property(readonly, nonatomic) unsigned int entityType; // @synthesize entityType=_entityType;
 @property(readonly, nonatomic) _Bool allowsAllCalendars; // @synthesize allowsAllCalendars=_allowsAllCalendars;
-- (void).cxx_destruct;
 - (id)accessoryColorForPossibleState:(id)arg1;
 - (id)localizedLabelForPossibleState:(id)arg1;
 - (id)possibleStates;

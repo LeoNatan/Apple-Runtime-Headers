@@ -17,8 +17,8 @@
 }
 
 + (id)currentNotificationSettingsCenter;
-@property(nonatomic) __weak id <UNNotificationSettingsCenterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <UNNotificationSettingsCenterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)settingsServiceConnection:(id)arg1 didUpdateNotificationSystemSettings:(id)arg2;
 - (void)settingsServiceConnection:(id)arg1 didUpdateNotificationSourcesWithIdentifiers:(id)arg2;
 - (void)setNotificationSystemSettings:(id)arg1;

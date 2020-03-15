@@ -20,6 +20,7 @@
     NSString *_userTyping;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAccepted) _Bool accepted; // @synthesize accepted=_accepted;
 @property(nonatomic) unsigned int usageTrackingMask; // @synthesize usageTrackingMask=_usageTrackingMask;
 @property(nonatomic) unsigned int usageLearningMask; // @synthesize usageLearningMask=_usageLearningMask;
@@ -28,7 +29,6 @@
 @property(nonatomic) struct TITokenID tokenID; // @synthesize tokenID=_tokenID;
 @property(nonatomic) unsigned long long offset; // @synthesize offset=_offset;
 @property(copy, nonatomic) NSString *tokenInputString; // @synthesize tokenInputString=_tokenInputString;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

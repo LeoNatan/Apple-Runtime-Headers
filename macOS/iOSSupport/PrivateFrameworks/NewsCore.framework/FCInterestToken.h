@@ -13,8 +13,8 @@
 
 + (id)interestTokenWithRemoveInterestBlock:(CDUnknownBlockType)arg1;
 + (id)interestTokenWithCallbackQueue:(id)arg1 removeInterestBlock:(CDUnknownBlockType)arg2;
-@property(copy, nonatomic) CDUnknownBlockType removeInterestBlock; // @synthesize removeInterestBlock=_removeInterestBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType removeInterestBlock; // @synthesize removeInterestBlock=_removeInterestBlock;
 - (void)dealloc;
 - (id)initWithCallbackQueue:(id)arg1 removeInterestBlock:(CDUnknownBlockType)arg2;
 - (id)init;

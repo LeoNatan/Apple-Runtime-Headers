@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     WFRemoteFileListView *_fileListView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak WFRemoteFileListView *fileListView; // @synthesize fileListView=_fileListView;
 @property(readonly, nonatomic) __weak id <WFRemoteFileListViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSArray *files; // @synthesize files=_files;
-- (void).cxx_destruct;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)updateContentInset;

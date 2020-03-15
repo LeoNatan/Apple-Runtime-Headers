@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _comparisonOptions;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long comparisonOptions; // @synthesize comparisonOptions=_comparisonOptions;
 @property(retain, nonatomic) id <VTKColorDifferenceStrategy> strategy; // @synthesize strategy=_strategy;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)_downscalesImages;
 - (BOOL)_drawAAInResults;

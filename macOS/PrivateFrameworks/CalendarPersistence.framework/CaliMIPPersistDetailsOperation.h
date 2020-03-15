@@ -20,6 +20,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSString *organizerName; // @synthesize organizerName=_organizerName;
 @property(retain) NSString *eventTitle; // @synthesize eventTitle=_eventTitle;
 @property(retain) NSTimeZone *eventTimeZone; // @synthesize eventTimeZone=_eventTimeZone;
@@ -27,7 +28,6 @@
 @property BOOL eventIsFloating; // @synthesize eventIsFloating=_eventIsFloating;
 @property BOOL eventIsAllDay; // @synthesize eventIsAllDay=_eventIsAllDay;
 @property(retain) NSData *attachment; // @synthesize attachment=_attachment;
-- (void).cxx_destruct;
 - (id)attachmentInContext:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

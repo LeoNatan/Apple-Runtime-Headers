@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSDate *_nextStateChangeDate;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *nextStateChangeDate; // @synthesize nextStateChangeDate=_nextStateChangeDate;
 @property(nonatomic) BOOL shouldBeacon; // @synthesize shouldBeacon=_shouldBeacon;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithShouldBeacon:(BOOL)arg1 nextStateChangeDate:(id)arg2;
 

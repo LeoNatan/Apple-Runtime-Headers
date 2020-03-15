@@ -15,10 +15,10 @@
     PAHistogramParameters *_params;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PAHistogramParameters *parameters; // @synthesize parameters=_params;
 @property(readonly, nonatomic) unsigned long long numberOfSamples; // @synthesize numberOfSamples=_samples;
 @property(readonly, nonatomic) unsigned int numberOfChannels; // @synthesize numberOfChannels=_channels;
-- (void).cxx_destruct;
 - (void)unpackChannelData:(unsigned long long)arg1 withOpenGLBlock:(CDUnknownBlockType)arg2 context:(id)arg3;
 - (void)packChannelData:(unsigned long long)arg1 withOpenGLBlock:(CDUnknownBlockType)arg2 context:(id)arg3;
 - (void)writeChannelData:(unsigned long long)arg1 withBlock:(CDUnknownBlockType)arg2;

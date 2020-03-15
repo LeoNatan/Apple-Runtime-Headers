@@ -25,9 +25,9 @@
 + (id)_locationFromImageProperties:(id)arg1;
 + (id)_creationDateFromImageProperties:(id)arg1;
 + (id)_exifDateFormatter;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *uniformTypeIdentifier; // @synthesize uniformTypeIdentifier=_uniformTypeIdentifier;
 @property(readonly, copy, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isAnimatedImage;
 @property(readonly, nonatomic) _Bool canPlayPhotoIris;
 @property(readonly, nonatomic) _Bool canPlayLoopingVideo;

@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _block;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(nonatomic) double prevCurrentTime; // @synthesize prevCurrentTime=_prevCurrentTime;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(retain, nonatomic) CKInternalAudioPlayer *audioPlayer; // @synthesize audioPlayer=_audioPlayer;
 @property(nonatomic) __weak id <CKAudioPlayerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CKMediaObject *mediaObject; // @synthesize mediaObject=_mediaObject;
-- (void).cxx_destruct;
 - (void)displayLinkFired:(id)arg1;
 - (void)internalAudioPlayerDidPrepareAudioForPlaying:(id)arg1 successfully:(_Bool)arg2;
 - (void)internalAudioPlayerDidFinishPlaying:(id)arg1 successfully:(_Bool)arg2;

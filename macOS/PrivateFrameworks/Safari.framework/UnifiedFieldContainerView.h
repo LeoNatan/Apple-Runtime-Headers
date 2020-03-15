@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
-@property(retain, nonatomic) UnifiedField *unifiedField; // @synthesize unifiedField=_unifiedField;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UnifiedField *unifiedField; // @synthesize unifiedField=_unifiedField;
 - (id)accessibilityChildren;
 - (void)_finishInitialization;
 - (BOOL)allowsVibrancy;

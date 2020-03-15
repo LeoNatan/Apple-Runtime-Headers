@@ -15,10 +15,10 @@
     NSData *_closeReason;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSData *closeReason; // @synthesize closeReason=_closeReason;
 @property(readonly) int closeCode; // @synthesize closeCode=_closeCode;
 @property int maximumMessageSize; // @synthesize maximumMessageSize=_maximumMessageSize;
-- (void).cxx_destruct;
 - (void)cancelWithCloseCode:(int)arg1 reason:(id)arg2;
 - (void)sendPingWithPongReceiveHandler:(CDUnknownBlockType)arg1;
 - (void)receiveMessageWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -38,6 +38,7 @@
 + (id)defaultArticleSoftPaywallWithLandingPageArticleID:(id)arg1;
 + (id)defaultArticleSharedHardPaywallWithLandingPageArticleID:(id)arg1;
 + (id)defaultArticleHardPaywallWithLandingPageArticleID:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCPaywallTopOffsetConfiguration *paywallTopOffsetConfig; // @synthesize paywallTopOffsetConfig=_paywallTopOffsetConfig;
 @property(retain, nonatomic) FCPaywallVisualSpecConfiguration *visualSpecConfig; // @synthesize visualSpecConfig=_visualSpecConfig;
 @property(retain, nonatomic) FCSubscriptionButtonConfiguration *subscriptionButtonConfig; // @synthesize subscriptionButtonConfig=_subscriptionButtonConfig;
@@ -47,7 +48,6 @@
 @property(copy, nonatomic) NSString *descriptionTrial; // @synthesize descriptionTrial=_descriptionTrial;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) unsigned long long paywallType; // @synthesize paywallType=_paywallType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

@@ -15,10 +15,10 @@
     double _widthToCornerRadiusRatio;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double widthToCornerRadiusRatio; // @synthesize widthToCornerRadiusRatio=_widthToCornerRadiusRatio;
 @property(readonly, nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(readonly, nonatomic) HUIntrinsicSizeDescriptor *sizeDescriptor; // @synthesize sizeDescriptor=_sizeDescriptor;
-- (void).cxx_destruct;
 - (id)initWithSizeDescriptor:(id)arg1 cornerRadius:(double)arg2 widthToCornerRadiusRatio:(double)arg3;
 
 @end

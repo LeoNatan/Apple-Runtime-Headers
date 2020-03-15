@@ -15,8 +15,8 @@
     CLCircularRegion *_region;
 }
 
-@property(copy, nonatomic) CLCircularRegion *region; // @synthesize region=_region;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CLCircularRegion *region; // @synthesize region=_region;
 @property(readonly, copy) NSString *description;
 - (_Bool)isRegionAtHome:(id)arg1;
 - (id)buildNewEventFromCurrentState;

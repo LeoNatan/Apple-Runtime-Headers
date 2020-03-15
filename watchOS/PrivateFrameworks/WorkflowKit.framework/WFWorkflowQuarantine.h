@@ -16,9 +16,9 @@
     NSDate *_importDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *importDate; // @synthesize importDate=_importDate;
 @property(readonly, copy, nonatomic) NSString *sourceAppIdentifier; // @synthesize sourceAppIdentifier=_sourceAppIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)serializedRepresentation;

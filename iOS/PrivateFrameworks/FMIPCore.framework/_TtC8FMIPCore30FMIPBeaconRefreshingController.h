@@ -9,8 +9,8 @@
 @interface _TtC8FMIPCore30FMIPBeaconRefreshingController : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: delegate
-    // Error parsing type: , name: beaconManager
     // Error parsing type: , name: beacons
+    // Error parsing type: , name: unknownBeacons
     // Error parsing type: , name: ownerSession
     // Error parsing type: , name: refreshQueue
     // Error parsing type: , name: callbackInterval

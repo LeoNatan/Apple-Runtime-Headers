@@ -14,9 +14,9 @@
     NSString *_actionType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *actionType; // @synthesize actionType=_actionType;
 @property(retain, nonatomic) NSString *actionLabel; // @synthesize actionLabel=_actionLabel;
-- (void).cxx_destruct;
 - (id)initWithLabel:(id)arg1 type:(id)arg2;
 
 @end

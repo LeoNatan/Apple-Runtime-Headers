@@ -52,6 +52,7 @@
 - (void)noteProvisioningDidBegin;
 - (void)noteProvisioningUserInterfaceDidDisappear;
 - (void)noteProvisioningUserInterfaceDidAppear;
+- (void)registrationSupportedInCurrentRegionWithCompletion:(void (^)(int))arg1;
 - (void)paymentSupportedInCurrentRegion:(void (^)(int))arg1;
 - (void)didRegisterWithRegionMap:(NSDictionary *)arg1 primaryRegionTopic:(NSString *)arg2;
 - (void)deleteApplicationWithAID:(NSString *)arg1;

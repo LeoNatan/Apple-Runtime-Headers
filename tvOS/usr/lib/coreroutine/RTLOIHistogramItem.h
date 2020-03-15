@@ -16,11 +16,11 @@
     long long _numOfEvents;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long numOfEvents; // @synthesize numOfEvents=_numOfEvents;
 @property(nonatomic) double probability; // @synthesize probability=_probability;
 @property(nonatomic) double timeOfStay; // @synthesize timeOfStay=_timeOfStay;
 @property(retain, nonatomic) RTLocationOfInterest *locationOfInterest; // @synthesize locationOfInterest=_locationOfInterest;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithLocationOfInterest:(id)arg1 timeOfStay:(double)arg2 andNumOfEvents:(long long)arg3;
 

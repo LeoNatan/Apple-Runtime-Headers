@@ -15,10 +15,10 @@
     NSNotificationCenter *_notificationCenter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(readonly, nonatomic) __weak NSObject *object; // @synthesize object=_object;
 @property(readonly, copy, nonatomic) NSString *notification; // @synthesize notification=_notification;
-- (void).cxx_destruct;
 - (void)teardownObservanceForBuffer:(id)arg1;
 - (void)setupObservanceForBuffer:(id)arg1;
 - (void)fulfillWithChange:(id)arg1;

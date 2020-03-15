@@ -18,8 +18,8 @@
 }
 
 + (Class)behaviorContextClass;
-@property(nonatomic) __weak AVHomeIPCameraBehaviorContext *behaviorContext; // @synthesize behaviorContext=_behaviorContext;
 - (void).cxx_destruct;
+@property(nonatomic) __weak AVHomeIPCameraBehaviorContext *behaviorContext; // @synthesize behaviorContext=_behaviorContext;
 - (void)playbackControlsDidUpdateVisibilityOfLoadingIndicator:(_Bool)arg1;
 - (void)didRemoveFromContext:(id)arg1;
 - (void)willRemoveFromContext:(id)arg1;

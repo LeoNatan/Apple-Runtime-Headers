@@ -18,13 +18,13 @@
     NSDictionary *_messageDetails;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *messageDetails; // @synthesize messageDetails=_messageDetails;
 @property(nonatomic) int message; // @synthesize message=_message;
 @property(retain, nonatomic) NSDictionary *renderedImage; // @synthesize renderedImage=_renderedImage;
 @property(retain, nonatomic) NSDictionary *captureImage; // @synthesize captureImage=_captureImage;
 @property(nonatomic) long long currentPrimaryComponentID; // @synthesize currentPrimaryComponentID=_currentPrimaryComponentID;
 @property(nonatomic) long long progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 

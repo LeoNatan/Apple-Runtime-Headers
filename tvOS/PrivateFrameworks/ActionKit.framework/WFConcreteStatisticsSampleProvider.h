@@ -16,8 +16,8 @@
     NSObject<WFStatisticsSampleProvider> *_sampleProvider;
 }
 
-@property(retain, nonatomic) NSObject<WFStatisticsSampleProvider> *sampleProvider; // @synthesize sampleProvider=_sampleProvider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<WFStatisticsSampleProvider> *sampleProvider; // @synthesize sampleProvider=_sampleProvider;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;

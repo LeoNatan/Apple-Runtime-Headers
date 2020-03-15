@@ -17,9 +17,9 @@
     id <_CNObservableTakeUntilInputObserverDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly) __weak id <_CNObservableTakeUntilInputObserverDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) id <CNObserver> observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (void)observerDidFailWithError:(id)arg1;
 - (void)observerDidComplete;
 - (void)observerDidReceiveResult:(id)arg1;

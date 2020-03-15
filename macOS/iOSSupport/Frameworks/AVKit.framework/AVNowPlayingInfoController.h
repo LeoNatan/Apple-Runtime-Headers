@@ -30,11 +30,11 @@ __attribute__((visibility("hidden")))
 + (void *)_createMediaRemoteLanguageOptionWithAVMediaSelectionOption:(id)arg1;
 + (void *)_createMediaRemoteLanguageOptionGroupWithAVMediaSelectionOptions:(id)arg1;
 + (void)sharedNowPlayingInfoControllerWithCompletion:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak AVPlayerController *playerControllerToActivateAfterDelay; // @synthesize playerControllerToActivateAfterDelay=_playerControllerToActivateAfterDelay;
 @property(retain, nonatomic) AVPlayerController *playerController; // @synthesize playerController=_playerController;
 @property(copy, nonatomic) NSString *overrideParentApplicationDisplayIdentifier; // @synthesize overrideParentApplicationDisplayIdentifier=_overrideParentApplicationDisplayIdentifier;
 @property(nonatomic) BOOL requiresLinearPlayback; // @synthesize requiresLinearPlayback=_requiresLinearPlayback;
-- (void).cxx_destruct;
 - (id)_currentLanguageOptions;
 - (id)_availableLanguageOptions;
 - (unsigned int)_handleRemoteCommand:(unsigned int)arg1 options:(id)arg2;

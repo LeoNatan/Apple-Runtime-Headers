@@ -14,9 +14,9 @@
     NSArray *_representedSegments;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *representedSegments; // @synthesize representedSegments=_representedSegments;
 @property(copy, nonatomic) NSSet *possibleTitles; // @synthesize possibleTitles=_possibleTitles;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1;
 
 @end

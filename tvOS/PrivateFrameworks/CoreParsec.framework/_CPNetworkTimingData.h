@@ -46,6 +46,7 @@
 }
 
 + (id)startMetricsForNormalization;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int secureConnectStart; // @synthesize secureConnectStart=_secureConnectStart;
 @property(nonatomic) unsigned int responseEnd; // @synthesize responseEnd=_responseEnd;
 @property(nonatomic) unsigned int responseStart; // @synthesize responseStart=_responseStart;
@@ -76,7 +77,6 @@
 @property(nonatomic) _Bool connectionRace; // @synthesize connectionRace=_connectionRace;
 @property(copy, nonatomic) NSData *peerAddress; // @synthesize peerAddress=_peerAddress;
 @property(copy, nonatomic) NSString *interfaceIdentifier; // @synthesize interfaceIdentifier=_interfaceIdentifier;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

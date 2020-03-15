@@ -9,8 +9,8 @@
 #import <PassKitUI/PKDashboardDataSource-Protocol.h>
 #import <PassKitUI/PKDashboardTransactionFetcherDelegate-Protocol.h>
 
-@class CNContact, NSArray, NSCalendar, NSDateFormatter, NSString, PKAccount, PKCurrencyAmount, PKDashboardTransactionFetcher, PKInstallmentPlan, PKMerchant, PKPaymentPass, PKPaymentTransaction, PKPaymentTransactionGroup, PKPeerPaymentContactResolver;
-@protocol PKDashboardDataSourceDelegate;
+@class CNContact, NSArray, NSCalendar, NSDateFormatter, NSString, PKAccount, PKAccountServiceAccountResolutionController, PKCurrencyAmount, PKDashboardTransactionFetcher, PKInstallmentPlan, PKMerchant, PKPaymentPass, PKPaymentTransaction, PKPaymentTransactionGroup, PKPeerPaymentContactResolver, PKTransactionReceipt;
+@protocol PKDashboardDataSourceDelegate, PKPaymentDataProvider;
 
 @interface PKTransactionHistoryDataSource : NSObject <PKDashboardTransactionFetcherDelegate, PKDashboardDataSource>
 {
@@ -21,10 +21,15 @@
     PKPaymentTransaction *_featuredTransaction;
     PKPaymentTransactionGroup *_selectedTransactions;
     PKInstallmentPlan *_associatedInstallmentPlan;
+    PKTransactionReceipt *_associatedReceipt;
+    NSArray *_featuredTransactionActions;
     NSArray *_actionItems;
+    PKAccountServiceAccountResolutionController *_resolutionController;
+    id <PKPaymentDataProvider> _dataProvider;
     _Bool _contentIsLoaded;
     _Bool _contactLoaded;
     _Bool _transactionHistoryLoaded;
+    _Bool _associatedReceiptLoaded;
     NSArray *_transactionHistory;
     NSDateFormatter *_formatterTitle;
     NSDateFormatter *_formatterMonth;
@@ -38,17 +43,20 @@
     PKCurrencyAmount *_footerSecondaryTotal;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKCurrencyAmount *footerSecondaryTotal; // @synthesize footerSecondaryTotal=_footerSecondaryTotal;
 @property(readonly, nonatomic) PKCurrencyAmount *footerTotal; // @synthesize footerTotal=_footerTotal;
 @property(readonly, nonatomic) PKPaymentTransactionGroup *group; // @synthesize group=_group;
 @property(readonly, nonatomic) PKMerchant *merchant; // @synthesize merchant=_merchant;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
+- (void)_updateInstallmentPlan;
+- (void)_handleAccountsChangedNotification:(id)arg1;
 - (id)_contactKeysToFetch;
 - (void)_handleTransactionHistoryUpdated:(id)arg1;
 - (void)_notifyContentLoadedIfNecessary;
 - (void)_reloadTransactions;
+- (void)_loadTransactionReceipt;
 - (void)_loadContact;
 - (id)_headerItem;
 - (id)_transactionItemForTransaction:(id)arg1;
@@ -65,6 +73,8 @@
 - (id)navigationBarTitle;
 @property(readonly, nonatomic) NSString *footerSecondaryTitle;
 @property(readonly, nonatomic) NSString *footerTitle;
+- (void)dealloc;
+- (id)initWithInstallmentPlan:(id)arg1 payemntPass:(id)arg2 account:(id)arg3;
 - (id)initWithTransactionGroup:(id)arg1 paymentPass:(id)arg2 account:(id)arg3 transactionHistory:(id)arg4;
 - (id)initWithFetcher:(id)arg1 paymentPass:(id)arg2 account:(id)arg3 featuredTransaction:(id)arg4 selectedTransactions:(id)arg5 transactionHistory:(id)arg6 type:(unsigned int)arg7;
 

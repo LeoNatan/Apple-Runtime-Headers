@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedProvider;
-@property(readonly, nonatomic) NSMutableDictionary *entriesForClassNames; // @synthesize entriesForClassNames=_entriesForClassNames;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *entriesForClassNames; // @synthesize entriesForClassNames=_entriesForClassNames;
 - (void)registerSerializableContentClasses;
 - (id)entryConsideringSuperclassesForClass:(Class)arg1;
 - (id)objectOfClass:(Class)arg1 withSerializedRepresentation:(id)arg2;

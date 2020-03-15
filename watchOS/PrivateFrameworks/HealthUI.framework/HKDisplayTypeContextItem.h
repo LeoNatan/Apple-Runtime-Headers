@@ -21,6 +21,7 @@
     HKUIMetricColors *_selectedMetricColors;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKUIMetricColors *selectedMetricColors; // @synthesize selectedMetricColors=_selectedMetricColors;
 @property(retain, nonatomic) HKUIMetricColors *metricColors; // @synthesize metricColors=_metricColors;
 @property(copy, nonatomic) NSString *dateString; // @synthesize dateString=_dateString;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSString *unit; // @synthesize unit=_unit;
 @property(nonatomic) _Bool infoHidden; // @synthesize infoHidden=_infoHidden;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (_Bool)isEqualToContextItem:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

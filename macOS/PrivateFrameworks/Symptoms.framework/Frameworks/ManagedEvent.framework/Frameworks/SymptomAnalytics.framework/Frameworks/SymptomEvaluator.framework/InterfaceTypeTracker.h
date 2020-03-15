@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSDate *_madePrimaryDate;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDate *madePrimaryDate; // @synthesize madePrimaryDate=_madePrimaryDate;
 @property(retain) NetworkAnalyticsStateRelay *stateRelay; // @synthesize stateRelay=_stateRelay;
 @property(retain) NWUsageTargetSelector *targetFlowsNewWiFi; // @synthesize targetFlowsNewWiFi=_targetFlowsNewWiFi;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(retain) NSArray *daemonCheck; // @synthesize daemonCheck=_daemonCheck;
 @property(retain) NSArray *neverNote; // @synthesize neverNote=_neverNote;
 @property(retain) NSArray *alwaysNote; // @synthesize alwaysNote=_alwaysNote;
-- (void).cxx_destruct;
 - (void)configurePolicies:(id)arg1;
 - (void)getNetworkActivity:(CDUnknownBlockType)arg1;
 - (void)noteFlow:(id)arg1 withOwner:(id)arg2 snapshot:(id)arg3;

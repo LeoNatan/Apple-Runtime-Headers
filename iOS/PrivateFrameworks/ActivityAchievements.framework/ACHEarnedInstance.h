@@ -23,11 +23,11 @@
 
 + (id)_allTemplateUniqueNames;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *createdDate; // @synthesize createdDate=_createdDate;
 @property(retain, nonatomic) HKQuantity *value; // @synthesize value=_value;
 @property(nonatomic) unsigned long long key; // @synthesize key=_key;
 @property(nonatomic) unsigned char creatorDevice; // @synthesize creatorDevice=_creatorDevice;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *templateUniqueName;
 @property(retain, nonatomic) NSDateComponents *earnedDateComponents;
 - (void)encodeWithCoder:(id)arg1;

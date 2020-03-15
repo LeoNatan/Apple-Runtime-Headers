@@ -21,13 +21,13 @@
 }
 
 + (Class)appleLanguagesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *appleLanguages; // @synthesize appleLanguages=_appleLanguages;
 @property(retain, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
 @property(retain, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
 @property(retain, nonatomic) NSData *warranty; // @synthesize warranty=_warranty;
 @property(retain, nonatomic) NSData *multiterms; // @synthesize multiterms=_multiterms;
 @property(retain, nonatomic) NSData *license; // @synthesize license=_license;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

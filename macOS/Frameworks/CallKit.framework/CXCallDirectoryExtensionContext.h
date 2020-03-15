@@ -26,6 +26,7 @@
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType remoteObjectProxyGenerator; // @synthesize remoteObjectProxyGenerator=_remoteObjectProxyGenerator;
 @property(nonatomic) BOOL hasQueriedIsIncremental; // @synthesize hasQueriedIsIncremental=_hasQueriedIsIncremental;
 @property(nonatomic) long long pendingIdentificationEntryChangeType; // @synthesize pendingIdentificationEntryChangeType=_pendingIdentificationEntryChangeType;
@@ -34,7 +35,6 @@
 @property(nonatomic) long long pendingBlockingEntryChangeType; // @synthesize pendingBlockingEntryChangeType=_pendingBlockingEntryChangeType;
 @property(retain, nonatomic) CXCallDirectoryMutablePhoneNumberEntryData *pendingBlockingEntryData; // @synthesize pendingBlockingEntryData=_pendingBlockingEntryData;
 @property(nonatomic) __weak id <CXCallDirectoryExtensionContextDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (oneway void)requestFailedWithError:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)completeRequestWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)removeAllIdentificationEntries;

@@ -15,8 +15,8 @@
 
 + (id)defaultMainTextColorForCharacteristicType:(id)arg1;
 + (Class)valueClass;
-@property(readonly, copy, nonatomic) NSString *characteristicType; // @synthesize characteristicType=_characteristicType;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *characteristicType; // @synthesize characteristicType=_characteristicType;
 - (void)getStatus:(out id *)arg1 mainTextColor:(out id *)arg2 supplementaryDescription:(out id *)arg3 withBatchReadResponse:(id)arg4;
 - (id)resultsForBatchReadResponse:(id)arg1;
 - (id)characteristicValuesForValue:(id)arg1;

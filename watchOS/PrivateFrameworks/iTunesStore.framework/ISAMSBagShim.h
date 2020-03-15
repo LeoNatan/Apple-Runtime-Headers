@@ -17,10 +17,10 @@
     int _type;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) ISURLBag *URLBag; // @synthesize URLBag=_URLBag;
 @property(retain, nonatomic) SSBag *bag; // @synthesize bag=_bag;
-- (void).cxx_destruct;
 - (id)_bagValueForKey:(id)arg1 valueType:(unsigned int)arg2;
 - (id)stringForKey:(id)arg1;
 - (id)integerForKey:(id)arg1;

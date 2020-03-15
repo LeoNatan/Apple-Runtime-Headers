@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <BaseBoard/BSTransaction.h>
+#import <FrontBoardServices/BSTransaction.h>
 
 @class BKSAnimationFenceHandle, HBUILaunchAnimationContext, HBUILaunchScreenSaverAnimationDescription, NSHashTable;
 
@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSHashTable *_appGridViewsToRestore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *appGridViewsToRestore; // @synthesize appGridViewsToRestore=_appGridViewsToRestore;
 @property(readonly, nonatomic) HBUILaunchScreenSaverAnimationDescription *appGridAnimation; // @synthesize appGridAnimation=_appGridAnimation;
 @property(readonly, nonatomic) HBUILaunchScreenSaverAnimationDescription *topShelfAnimation; // @synthesize topShelfAnimation=_topShelfAnimation;
 @property(readonly, nonatomic) HBUILaunchAnimationContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) BKSAnimationFenceHandle *animationDidCompleteFence; // @synthesize animationDidCompleteFence=_animationDidCompleteFence;
-- (void).cxx_destruct;
 - (void)willInterruptTransaction:(id)arg1;
 - (_Bool)_canBeInterrupted;
 - (void)_didComplete;

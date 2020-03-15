@@ -21,11 +21,11 @@
 + (double)subtitleLabelToLunarDateLabelBaselineDifferenceY;
 + (CDStruct_91d2e2b9)dateTimeLunarDateFontMetrics;
 + (id)dateTimeLunarDateFont;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useCompactDateFormat; // @synthesize useCompactDateFormat=_useCompactDateFormat;
 @property(nonatomic) double alignmentPercent; // @synthesize alignmentPercent=_alignmentPercent;
 @property(retain, nonatomic) SBFLockScreenAlternateDateLabel *alternateDateLabel; // @synthesize alternateDateLabel=_alternateDateLabel;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (double)_lunarDateLabelYOffsetFromDateLabel;
 - (void)_updateDateLabelForCompact;

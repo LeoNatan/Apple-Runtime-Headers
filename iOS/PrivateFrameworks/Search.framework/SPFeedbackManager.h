@@ -20,9 +20,9 @@
 + (void)bumpPriorityOnQueue:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 + (void)flushFeedbackWithCompletion:(CDUnknownBlockType)arg1;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *feedbackQueue; // @synthesize feedbackQueue=_feedbackQueue;
 @property(retain, nonatomic) NSObject<SFFeedbackListener> *feedbackListener; // @synthesize feedbackListener=_feedbackListener;
-- (void).cxx_destruct;
 - (void)reportFeedback:(id)arg1 queryId:(long long)arg2;
 - (void)didReportUserResponseFeedback:(id)arg1;
 - (void)cardViewDidAppear:(id)arg1;

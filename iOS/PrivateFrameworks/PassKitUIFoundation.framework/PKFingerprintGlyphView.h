@@ -36,20 +36,20 @@
     id <PKFingerprintGlyphViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PKFingerprintGlyphViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) CALayer *contentLayer; // @synthesize contentLayer=_contentLayer;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(nonatomic) _Bool fadeOnRecognized; // @synthesize fadeOnRecognized=_fadeOnRecognized;
 @property(copy, nonatomic) UIColor *secondaryColor; // @synthesize secondaryColor=_secondaryColor;
 @property(copy, nonatomic) UIColor *primaryColor; // @synthesize primaryColor=_primaryColor;
-- (void).cxx_destruct;
 - (id)pathStateForLayer:(id)arg1;
 - (void)setPathState:(id)arg1 forLayer:(id)arg2;
-- (void)_applyColor:(struct UIColor *)arg1 toShapeLayers:(id)arg2 animated:(_Bool)arg3;
+- (void)_applyColor:(id)arg1 toShapeLayers:(id)arg2 animated:(_Bool)arg3;
 - (void)_applySecondaryColorAnimated:(_Bool)arg1;
-- (void)setSecondaryColor:(struct UIColor *)arg1 animated:(_Bool)arg2;
+- (void)setSecondaryColor:(id)arg1 animated:(_Bool)arg2;
 - (void)_applyPrimaryColorAnimated:(_Bool)arg1;
-- (void)setPrimaryColor:(struct UIColor *)arg1 animated:(_Bool)arg2;
+- (void)setPrimaryColor:(id)arg1 animated:(_Bool)arg2;
 - (void)_setProgress:(double)arg1 withDuration:(double)arg2 forShapeLayerAtIndex:(unsigned long long)arg3;
 - (void)setProgress:(double)arg1 withDuration:(double)arg2;
 - (void)setContentLayerOpacity:(double)arg1 withDuration:(double)arg2;

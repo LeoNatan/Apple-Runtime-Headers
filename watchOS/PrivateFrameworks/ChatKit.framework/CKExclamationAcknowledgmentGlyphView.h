@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CKAcknowledgmentGlyphImageView *_rightExclamationGlyph;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKAcknowledgmentGlyphImageView *rightExclamationGlyph; // @synthesize rightExclamationGlyph=_rightExclamationGlyph;
 @property(retain, nonatomic) CKAcknowledgmentGlyphImageView *leftExclamationGlyph; // @synthesize leftExclamationGlyph=_leftExclamationGlyph;
-- (void).cxx_destruct;
 - (double)animationDuration;
 - (void)animateWithBeginTime:(double)arg1 completionDelay:(double)arg2 completion:(CDUnknownBlockType)arg3;
 - (struct CGPoint)glyphOffset;

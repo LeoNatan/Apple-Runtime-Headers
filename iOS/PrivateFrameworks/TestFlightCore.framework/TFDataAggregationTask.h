@@ -27,12 +27,12 @@ __attribute__((visibility("hidden")))
 + (id)snapshotTasksForSession:(id)arg1;
 + (id)regionInfoTask;
 + (id)watchInfoTask;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *providedEntryIdentifiers; // @synthesize providedEntryIdentifiers=_providedEntryIdentifiers;
 @property(readonly, copy, nonatomic) NSString *logKey; // @synthesize logKey=_logKey;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) CDUnknownBlockType extractValuesBlock; // @synthesize extractValuesBlock=_extractValuesBlock;
 @property(copy, nonatomic) CDUnknownBlockType loadDataBlock; // @synthesize loadDataBlock=_loadDataBlock;
-- (void).cxx_destruct;
 - (void)extractDataPropertiesFromData:(id)arg1 intoDataContainer:(id)arg2;
 - (void)loadDataOnQueue:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (id)description;

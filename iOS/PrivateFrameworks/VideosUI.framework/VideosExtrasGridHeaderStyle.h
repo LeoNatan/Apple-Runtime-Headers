@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _insets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *subtitleColor; // @synthesize subtitleColor=_subtitleColor;
 @property(retain, nonatomic) UIColor *titleColor; // @synthesize titleColor=_titleColor;
 @property(retain, nonatomic) NSDictionary *subtitleDefaultFontAttributes; // @synthesize subtitleDefaultFontAttributes=_subtitleDefaultFontAttributes;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *titleTextStyle; // @synthesize titleTextStyle=_titleTextStyle;
 @property(nonatomic) struct UIEdgeInsets insets; // @synthesize insets=_insets;
 @property(nonatomic) _Bool showsImage; // @synthesize showsImage=_showsImage;
-- (void).cxx_destruct;
 
 @end
 

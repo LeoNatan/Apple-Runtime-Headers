@@ -16,10 +16,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TIAutocorrectionList *refinements; // @synthesize refinements=_refinements;
 @property(retain, nonatomic) TIKeyboardState *keyboardState; // @synthesize keyboardState=_keyboardState;
 @property(retain, nonatomic) TIKeyboardCandidate *candidate; // @synthesize candidate=_candidate;
-- (void).cxx_destruct;
 - (void)replaceDocumentState:(id)arg1;
 - (id)shortDescription;
 - (void)removeContextFromKeyboardState;

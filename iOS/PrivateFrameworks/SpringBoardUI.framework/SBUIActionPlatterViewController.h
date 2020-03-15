@@ -27,13 +27,13 @@
     id <SBUIActionPlatterViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBUIActionPlatterViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long imagePosition; // @synthesize imagePosition=_imagePosition;
 @property(nonatomic) _Bool reversesActions; // @synthesize reversesActions=_reversesActions;
 @property(readonly, nonatomic) __weak UILongPressGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 @property(nonatomic) unsigned long long systemInteractionStartIndex; // @synthesize systemInteractionStartIndex=_systemInteractionStartIndex;
 @property(readonly, copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)_handleLongPressGestureRecognizer:(id)arg1;
 - (void)_updateKeylineViews;

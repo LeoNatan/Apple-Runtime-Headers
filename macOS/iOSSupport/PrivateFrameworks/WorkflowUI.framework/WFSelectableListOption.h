@@ -15,10 +15,10 @@
     id _value;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(readonly, nonatomic) id value; // @synthesize value=_value;
 @property(readonly, copy, nonatomic) NSString *displayTitle; // @synthesize displayTitle=_displayTitle;
-- (void).cxx_destruct;
 - (id)initWithDisplayTitle:(id)arg1 value:(id)arg2;
 
 @end

@@ -17,12 +17,12 @@
     NSString *_buttonString;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *buttonString; // @synthesize buttonString=_buttonString;
 @property(retain, nonatomic) NSString *subTitleString; // @synthesize subTitleString=_subTitleString;
 @property(retain, nonatomic) NSString *titleString; // @synthesize titleString=_titleString;
 @property(retain, nonatomic) AVPlayerItem *secondaryPlayerItem; // @synthesize secondaryPlayerItem=_secondaryPlayerItem;
 @property(retain, nonatomic) AVPlayerItem *primaryPlayerItem; // @synthesize primaryPlayerItem=_primaryPlayerItem;
-- (void).cxx_destruct;
 
 @end
 

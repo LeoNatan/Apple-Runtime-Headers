@@ -15,10 +15,10 @@
     NSIndexSet *_sections;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSIndexSet *sections; // @synthesize sections=_sections;
 @property(readonly, copy, nonatomic) NSArray *resultsControllers; // @synthesize resultsControllers=_resultsControllers;
 @property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (void)removeObserver:(id)arg1 forSection:(unsigned int)arg2;
 - (void)removeObserver:(id)arg1;
 - (void)addUpdateObserver:(id)arg1 selector:(SEL)arg2 forSection:(unsigned int)arg3;

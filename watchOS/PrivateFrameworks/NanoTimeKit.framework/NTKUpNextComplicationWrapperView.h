@@ -11,8 +11,8 @@
     UIView *_wrappedView;
 }
 
-@property(readonly, nonatomic) UIView *wrappedView; // @synthesize wrappedView=_wrappedView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *wrappedView; // @synthesize wrappedView=_wrappedView;
 - (void)layoutSubviews;
 - (void)setWrappedView:(id)arg1;
 

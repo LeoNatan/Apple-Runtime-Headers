@@ -14,8 +14,8 @@
 + (id)_detentWithContainerViewBlock:(CDUnknownBlockType)arg1;
 + (id)_mediumDetent;
 + (id)_largeDetent;
-@property(readonly, nonatomic) CDUnknownBlockType _internalBlock; // @synthesize _internalBlock=__internalBlock;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDUnknownBlockType _internalBlock; // @synthesize _internalBlock=__internalBlock;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithInternalBlock:(CDUnknownBlockType)arg1;
 

@@ -47,6 +47,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setShouldAlwaysEnableMultitouchTimerAtTouchesBegin:) _Bool _shouldAlwaysEnableMultitouchTimerAtTouchesBegin; // @synthesize _shouldAlwaysEnableMultitouchTimerAtTouchesBegin=__shouldAlwaysEnableMultitouchTimerAtTouchesBegin;
 @property(nonatomic) _Bool _prefersToBeExclusiveWithCompetingLongPressGestureRecognizers; // @synthesize _prefersToBeExclusiveWithCompetingLongPressGestureRecognizers=__prefersToBeExclusiveWithCompetingLongPressGestureRecognizers;
 @property(nonatomic) double lastTouchTime; // @synthesize lastTouchTime=_lastTouchTime;
@@ -61,7 +62,6 @@
 @property(nonatomic) double delay; // @synthesize delay=_minimumPressDuration;
 @property(nonatomic) unsigned int numberOfTouchesRequired; // @synthesize numberOfTouchesRequired=_numberOfTouchesRequired;
 @property(retain, nonatomic) NSArray *touches; // @synthesize touches=_touches;
-- (void).cxx_destruct;
 - (_Bool)canPreventGestureRecognizer:(id)arg1;
 - (void)_centroidMovedTo:(struct CGPoint)arg1 atTime:(double)arg2 physicalTouch:(id)arg3;
 - (struct CGPoint)_adjustSceneReferenceLocation:(struct CGPoint)arg1;
@@ -94,6 +94,7 @@
 @property(readonly, nonatomic) struct CGPoint _centroidScreen;
 @property(readonly, nonatomic) struct CGPoint centroid;
 - (struct CGPoint)_centroidInView:(id)arg1;
+- (void)_appendSubclassDescription:(id)arg1;
 - (int)_finalStateForRecognition;
 - (void)_interactionsEndedWithValidTouches:(_Bool)arg1;
 - (void)_resetImpulseQuietness;

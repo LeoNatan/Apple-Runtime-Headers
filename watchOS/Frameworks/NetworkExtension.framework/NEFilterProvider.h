@@ -16,8 +16,8 @@
 }
 
 + (id)descriptionForAction:(int)arg1;
-@property(retain) NEFilterProviderConfiguration *filterConfiguration; // @synthesize filterConfiguration=_filterConfiguration;
 - (void).cxx_destruct;
+@property(retain) NEFilterProviderConfiguration *filterConfiguration; // @synthesize filterConfiguration=_filterConfiguration;
 - (void)handleReport:(id)arg1;
 - (void)stopFilterWithReason:(int)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)startFilterWithCompletionHandler:(CDUnknownBlockType)arg1;

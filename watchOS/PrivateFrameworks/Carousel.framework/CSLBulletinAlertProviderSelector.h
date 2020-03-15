@@ -27,6 +27,7 @@
 }
 
 + (id)sharedAlertProviderSelector;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLBulletinSpokenAlertProvider *spokenAlertProvider; // @synthesize spokenAlertProvider=_spokenAlertProvider;
 @property(copy, nonatomic) CDUnknownBlockType customerProvidersByUniversalSectionIDGetter; // @synthesize customerProvidersByUniversalSectionIDGetter=_customerProvidersByUniversalSectionIDGetter;
 @property(copy, nonatomic) CDUnknownBlockType customerProvidersBySectionIDGetter; // @synthesize customerProvidersBySectionIDGetter=_customerProvidersBySectionIDGetter;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) BBObserver *pipelineObserver; // @synthesize pipelineObserver=_pipelineObserver;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *pipelineQueue; // @synthesize pipelineQueue=_pipelineQueue;
 @property(nonatomic) __weak id <CSLBulletinPipelineStepActorDelegate> pipelineStep; // @synthesize pipelineStep=_pipelineStep;
-- (void).cxx_destruct;
 - (void)notificationCenterViewController:(id)arg1 activateAlertForItem:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)sectionVisibilityUpdatedForSectionID:(id)arg1 visibility:(int)arg2;
 - (void)invalidateBulletinIDs:(id)arg1;

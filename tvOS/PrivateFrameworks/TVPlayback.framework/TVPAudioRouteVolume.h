@@ -14,9 +14,9 @@
     NSString *_category;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float stepSize; // @synthesize stepSize=_stepSize;
 @property(readonly, nonatomic) NSString *category; // @synthesize category=_category;
-- (void).cxx_destruct;
 - (void)_volumeDidChange:(id)arg1;
 - (void)_mediaServerDied:(id)arg1;
 - (void)_listenForAVSystemControllerNotifications;

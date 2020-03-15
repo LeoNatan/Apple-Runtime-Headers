@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     SKUIReviewMetadata *_review;
 }
 
-@property(nonatomic) __weak id <SKUIComposeReviewFormDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SKUIComposeReviewFormDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_submit;
 - (void)_cancel;
 - (void)composeReviewViewValidityChanged:(id)arg1;

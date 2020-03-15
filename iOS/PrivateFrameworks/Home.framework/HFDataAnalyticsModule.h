@@ -15,9 +15,9 @@
     HFDataAnalyticsLogItemProvider *_logItemProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFDataAnalyticsLogItemProvider *logItemProvider; // @synthesize logItemProvider=_logItemProvider;
 @property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
-- (void).cxx_destruct;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;
 - (id)itemProviders;
 - (id)initWithItemUpdater:(id)arg1 mediaProfileContainer:(id)arg2;

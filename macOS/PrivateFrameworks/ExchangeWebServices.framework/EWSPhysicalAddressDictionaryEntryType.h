@@ -21,13 +21,13 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *Key; // @synthesize Key=_Key;
 @property(copy, nonatomic) NSString *PostalCode; // @synthesize PostalCode=_PostalCode;
 @property(copy, nonatomic) NSString *CountryOrRegion; // @synthesize CountryOrRegion=_CountryOrRegion;
 @property(copy, nonatomic) NSString *State; // @synthesize State=_State;
 @property(copy, nonatomic) NSString *City; // @synthesize City=_City;
 @property(copy, nonatomic) NSString *Street; // @synthesize Street=_Street;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

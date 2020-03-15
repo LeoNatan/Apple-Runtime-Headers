@@ -23,6 +23,7 @@
 
 + (id)defaultPreferredLocalizations;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSCache *bannerImageCache; // @synthesize bannerImageCache=_bannerImageCache;
 @property(readonly, nonatomic) NSCache *workflowCache; // @synthesize workflowCache=_workflowCache;
 @property(readonly, nonatomic) NSCache *pageCache; // @synthesize pageCache=_pageCache;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) CKDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) CKContainer *container; // @synthesize container=_container;
 @property(readonly, nonatomic) _Bool performExpensiveFetchOperations; // @synthesize performExpensiveFetchOperations=_performExpensiveFetchOperations;
-- (void).cxx_destruct;
 - (void)uploadWorkflow:(id)arg1 withName:(id)arg2 shortDescription:(id)arg3 longDescription:(id)arg4 private:(_Bool)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)deleteBanner:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)deleteCollection:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

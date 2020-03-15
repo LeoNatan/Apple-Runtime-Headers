@@ -24,6 +24,7 @@
 
 + (id)_postalAddressFromPlacemark:(id)arg1;
 + (_Bool)supportsRecyclingForCardSection:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MKMapSnapshotter *mapSnapshotter; // @synthesize mapSnapshotter=_mapSnapshotter;
 @property(retain, nonatomic) TLKImageView *snapshotView; // @synthesize snapshotView=_snapshotView;
 @property(retain, nonatomic) TLKStackView *labelsStackView; // @synthesize labelsStackView=_labelsStackView;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) MKPinAnnotationView *pinAnnotationView; // @synthesize pinAnnotationView=_pinAnnotationView;
 @property(retain, nonatomic) TLKLabel *footnoteLabel; // @synthesize footnoteLabel=_footnoteLabel;
 @property(retain, nonatomic) TLKLabel *footnoteDescriptorLabel; // @synthesize footnoteDescriptorLabel=_footnoteDescriptorLabel;
-- (void).cxx_destruct;
 - (id)_uiColorFromSFColor:(id)arg1;
 - (id)_clLocationFromSFLatLng:(id)arg1;
 - (void)sendMapFeedbackWithTriggerEvent:(unsigned long long)arg1 placemarkData:(id)arg2;

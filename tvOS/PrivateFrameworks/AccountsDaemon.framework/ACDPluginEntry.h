@@ -8,7 +8,7 @@
 
 #import <AccountsDaemon/ACDPluginEntryProtocol-Protocol.h>
 
-@class NSBundle, NSSet;
+@class NSBundle, NSSet, NSString;
 
 __attribute__((visibility("hidden")))
 @interface ACDPluginEntry : NSObject <ACDPluginEntryProtocol>
@@ -16,19 +16,22 @@ __attribute__((visibility("hidden")))
     id _principalObject;
     NSSet *_supportedAccountTypes;
     NSSet *_supportedDataclasses;
+    NSString *_identifier;
     struct {
         unsigned int principalObject:1;
         unsigned int supportedAccountTypes:1;
         unsigned int supportedDataclasses:1;
+        unsigned int identifier:1;
     } _fetchedFlags;
     NSBundle *_bundle;
 }
 
-@property(readonly, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 - (id)debugDescription;
 - (id)description;
 - (_Bool)principalObjectRespondsToSelector:(SEL)arg1;
+@property(readonly, nonatomic) NSString *identifier;
 @property(readonly, nonatomic) id principalObject;
 @property(readonly, nonatomic) NSSet *supportedDataclasses;
 @property(readonly, nonatomic) NSSet *supportedAccountTypes;

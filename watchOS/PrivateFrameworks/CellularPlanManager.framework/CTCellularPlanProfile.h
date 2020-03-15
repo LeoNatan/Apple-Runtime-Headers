@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *iccid; // @synthesize iccid=_iccid;
 @property(copy, nonatomic) NSData *profileId; // @synthesize profileId=_profileId;
 @property(nonatomic) _Bool requiresUserConsent; // @synthesize requiresUserConsent=_requiresUserConsent;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool isDisableNotAllowed; // @synthesize isDisableNotAllowed=_isDisableNotAllowed;
 @property(nonatomic) _Bool isBootstrap; // @synthesize isBootstrap=_isBootstrap;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

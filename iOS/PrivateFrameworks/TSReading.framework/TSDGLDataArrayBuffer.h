@@ -30,10 +30,10 @@
     unsigned long long _currentBufferIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentBufferIndex; // @synthesize currentBufferIndex=_currentBufferIndex;
 @property(readonly, nonatomic) unsigned long long bufferCount; // @synthesize bufferCount=_bufferCount;
 @property(readonly, nonatomic) unsigned long long GLDataBufferEntrySize; // @synthesize GLDataBufferEntrySize=_GLDataBufferEntrySize;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)setGLPoint4D:(CDStruct_f2e236b6)arg1 forAttribute:(id)arg2 atIndex:(unsigned long long)arg3;
 - (CDStruct_f2e236b6)GLPoint4DForAttribute:(id)arg1 atIndex:(unsigned long long)arg2;

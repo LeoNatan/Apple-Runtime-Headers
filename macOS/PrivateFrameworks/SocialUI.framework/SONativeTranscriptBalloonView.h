@@ -20,9 +20,9 @@
     NSView *_contentView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) struct IMBalloonDescriptor_t balloonDescriptor; // @synthesize balloonDescriptor=_balloonDescriptor;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct NSEdgeInsets edgeInsets; // @dynamic edgeInsets;
 - (id)backgroundMaskLayer;
 - (void)sizeToFitWithMaximumWidth:(double)arg1;

@@ -38,8 +38,8 @@
 + (Class)_relevanceProviderClass;
 + (id)providerManagerClasses;
 + (void)setProviderManagerClassesLoadingBlock:(CDUnknownBlockType)arg1;
-@property(retain, nonatomic) REFeatureSet *supportedFeatures; // @synthesize supportedFeatures=_supportedFeatures;
 - (void).cxx_destruct;
+@property(retain, nonatomic) REFeatureSet *supportedFeatures; // @synthesize supportedFeatures=_supportedFeatures;
 - (void)_loadLoggingHeader;
 - (void)_accessQueue_scheduleUpdate:(id)arg1;
 - (void)_accessQueue_resetTimer;

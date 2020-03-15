@@ -33,13 +33,13 @@
 + (id)eventWithEventType:(unsigned int)arg1 time:(double)arg2 parameters:(const struct AVHapticPlayerFixedParameter *)arg3 count:(int)arg4;
 + (id)eventWithEventType:(unsigned int)arg1 time:(double)arg2 duration:(double)arg3;
 + (id)eventWithEventType:(unsigned int)arg1 time:(double)arg2;
+- (void).cxx_destruct;
 @property(readonly) float value; // @synthesize value=_value;
 @property(readonly) int fixedParamCount; // @synthesize fixedParamCount=_fixedParamCount;
 @property(readonly) unsigned int eventCategory; // @synthesize eventCategory=_eventCategory;
 @property(readonly) _Bool isParameter; // @synthesize isParameter=_isParameter;
 @property(readonly) double duration; // @synthesize duration=_duration;
 @property(readonly) double time; // @synthesize time=_time;
-- (void).cxx_destruct;
 @property(readonly) AVHapticPlayerParameterCurve *parameterCurve;
 @property(readonly) struct AVHapticPlayerFixedParameter *fixedParams;
 @property(readonly) unsigned int paramType;

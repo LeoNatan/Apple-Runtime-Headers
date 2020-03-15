@@ -18,12 +18,12 @@
 }
 
 + (id)newWithParameter:(id)arg1 state:(id)arg2 updateBlock:(CDUnknownBlockType)arg3 options:(struct WFParameterComponentOptions)arg4 variableProvider:(id)arg5 variableUIDelegate:(id)arg6 navigationContext:(id)arg7 labelsToAlignTo:(id)arg8;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *value; // @synthesize value=_value;
 @property(readonly, nonatomic) CKComponent *switchComponent; // @synthesize switchComponent=_switchComponent;
 @property(readonly, nonatomic) WFVariableChooserParameterLayoutComponent *layoutComponent; // @synthesize layoutComponent=_layoutComponent;
 - (CDUnknownBlockType)updateBlock;
 - (id)parameter;
-- (void).cxx_destruct;
 - (void)presentTokenChooser:(id)arg1;
 - (void)switchValueChanged:(id)arg1;
 

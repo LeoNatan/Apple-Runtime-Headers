@@ -37,6 +37,7 @@
 }
 
 + (id)detailsForTrafficIncidentAlert:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isAutomaticReroute; // @synthesize isAutomaticReroute=_isAutomaticReroute;
 @property(nonatomic) double distanceToIncident; // @synthesize distanceToIncident=_distanceToIncident;
 @property(nonatomic) double etaTimestamp; // @synthesize etaTimestamp=_etaTimestamp;
@@ -52,7 +53,6 @@
 @property(nonatomic) unsigned int alertType; // @synthesize alertType=_alertType;
 @property(retain, nonatomic) NSData *etaResponseID; // @synthesize etaResponseID=_etaResponseID;
 @property(retain, nonatomic) NSData *alertID; // @synthesize alertID=_alertID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

@@ -35,6 +35,7 @@
     NSSet *_meDevices;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *meDevices; // @synthesize meDevices=_meDevices;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *specifiersQueue; // @synthesize specifiersQueue=_specifiersQueue;
 @property(nonatomic) _Bool isAccessibilitySize; // @synthesize isAccessibilitySize=_isAccessibilitySize;
@@ -55,7 +56,6 @@
 @property(retain, nonatomic) NSArray *deviceSpecifiers; // @synthesize deviceSpecifiers=_deviceSpecifiers;
 @property(retain, nonatomic) NSArray *familySpecifiers; // @synthesize familySpecifiers=_familySpecifiers;
 @property(retain, nonatomic) NSArray *followersSpecifiers; // @synthesize followersSpecifiers=_followersSpecifiers;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateFindMyDeviceStatus;
 - (void)saveActiveDeviceSelection;

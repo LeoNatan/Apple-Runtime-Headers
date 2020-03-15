@@ -26,13 +26,13 @@
     id _transitCardDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id transitCardDelegate; // @synthesize transitCardDelegate=_transitCardDelegate;
 @property(nonatomic) __weak id placeCardDelegate; // @synthesize placeCardDelegate=_placeCardDelegate;
 @property(nonatomic) _Bool isCurrentLocation; // @synthesize isCurrentLocation=_isCurrentLocation;
 @property(nonatomic) _Bool showContactActions; // @synthesize showContactActions=_showContactActions;
 @property(nonatomic) _Bool placeInShortcuts; // @synthesize placeInShortcuts=_placeInShortcuts;
 @property(nonatomic) _Bool placeInBookmarks; // @synthesize placeInBookmarks=_placeInBookmarks;
-- (void).cxx_destruct;
 - (void)openURL:(id)arg1;
 - (void)performAction:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)_isCurrentLocationOrDroppedPin;

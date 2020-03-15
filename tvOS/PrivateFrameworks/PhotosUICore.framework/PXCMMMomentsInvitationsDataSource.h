@@ -13,8 +13,8 @@
     PXCMMMomentsInvitationsDataSourceState *__state;
 }
 
-@property(readonly, nonatomic) PXCMMMomentsInvitationsDataSourceState *_state; // @synthesize _state=__state;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXCMMMomentsInvitationsDataSourceState *_state; // @synthesize _state=__state;
 - (struct PXSimpleIndexPath)indexPathForObjectReference:(id)arg1;
 - (id)invitationForObjectID:(id)arg1;
 - (id)objectIDAtItemIndexPath:(struct PXSimpleIndexPath)arg1;

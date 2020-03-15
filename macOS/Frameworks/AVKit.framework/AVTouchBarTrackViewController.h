@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)keyPathsForValuesAffectingTouchBarTrackView;
-@property(retain) id <AVTouchBarTrackControlling><AVTimeControlling> playerController; // @synthesize playerController=_playerController;
 - (void).cxx_destruct;
+@property(retain) id <AVTouchBarTrackControlling><AVTimeControlling> playerController; // @synthesize playerController=_playerController;
 - (Class)_trackViewClass;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)loadView;

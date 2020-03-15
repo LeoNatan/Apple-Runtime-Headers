@@ -21,11 +21,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)newWithBuilder:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSOrderedSet *notifiedFiringAlarmIDs; // @synthesize notifiedFiringAlarmIDs=_notifiedFiringAlarmIDs;
 @property(readonly, copy, nonatomic) NSDictionary *alarmsByID; // @synthesize alarmsByID=_alarmsByID;
 @property(readonly, copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) unsigned long long generation; // @synthesize generation=_generation;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

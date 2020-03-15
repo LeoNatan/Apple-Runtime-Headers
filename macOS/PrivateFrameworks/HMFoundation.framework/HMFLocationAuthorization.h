@@ -29,10 +29,10 @@
 + (id)sharedAuthorization;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) CLLocationManager *internal; // @synthesize internal=_internal;
 @property(readonly) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(readonly, copy) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)mark;

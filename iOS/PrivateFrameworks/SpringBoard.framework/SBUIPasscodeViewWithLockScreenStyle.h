@@ -15,8 +15,8 @@
     SBUIBackgroundView *_backgroundView;
 }
 
-@property(readonly, nonatomic) UIView<SBUIPasscodeLockView> *passcodeView; // @synthesize passcodeView=_passcodeView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView<SBUIPasscodeLockView> *passcodeView; // @synthesize passcodeView=_passcodeView;
 - (void)setBlurEnabled:(_Bool)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1 includeBlur:(_Bool)arg2 passcodeViewGenerator:(CDUnknownBlockType)arg3;

@@ -19,11 +19,11 @@
     IMScheduledUpdater *_triggerUpdater;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMScheduledUpdater *triggerUpdater; // @synthesize triggerUpdater=_triggerUpdater;
 @property(retain, nonatomic) NSMutableArray *effectQueue; // @synthesize effectQueue=_effectQueue;
 @property(retain, nonatomic) IMFullScreenEffectPlayer *currentEffectPlayer; // @synthesize currentEffectPlayer=_currentEffectPlayer;
 @property(nonatomic) __weak id <IMFullScreenEffectManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)willStartFullScreenEffect:(id)arg1;
 - (void)endHoldingUpdatesForKey:(id)arg1;
 - (void)beginHoldingUpdatesForKey:(id)arg1;

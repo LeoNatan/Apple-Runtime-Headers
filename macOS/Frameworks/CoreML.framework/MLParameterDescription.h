@@ -23,10 +23,10 @@
 + (id)parameterDescriptionForKey:(id)arg1 stringParameterSpec:(const struct StringParameter *)arg2;
 + (id)parameterDescriptionForKey:(id)arg1 doubleParameterSpec:(const struct DoubleParameter *)arg2;
 + (id)parameterDescriptionForKey:(id)arg1 int64ParameterSpec:(const struct Int64Parameter *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MLNumericConstraint *numericConstraint; // @synthesize numericConstraint=_numericConstraint;
 @property(retain, nonatomic) id defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(retain, nonatomic) MLParameterKey *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -17,9 +17,9 @@
     NSHashTable *_observers;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool scrolling; // @synthesize scrolling=_scrolling;
 @property(readonly, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
-- (void).cxx_destruct;
 - (void)didStopScrolling;
 - (void)didScroll;
 - (void)willStartScrolling;

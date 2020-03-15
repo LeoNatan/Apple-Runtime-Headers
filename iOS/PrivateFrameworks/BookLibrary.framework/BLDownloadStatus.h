@@ -36,6 +36,7 @@
     NSString *_assetKind;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool canPause; // @synthesize canPause=_canPause;
 @property(copy, nonatomic) NSString *assetKind; // @synthesize assetKind=_assetKind;
 @property(copy, nonatomic) NSString *thumbnailImageURL; // @synthesize thumbnailImageURL=_thumbnailImageURL;
@@ -58,7 +59,6 @@
 @property(copy, nonatomic) NSString *downloadID; // @synthesize downloadID=_downloadID;
 @property(copy, nonatomic) NSString *permLink; // @synthesize permLink=_permLink;
 @property(retain, nonatomic) NSNumber *storeID; // @synthesize storeID=_storeID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

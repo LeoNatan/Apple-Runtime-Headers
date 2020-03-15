@@ -16,11 +16,11 @@
     NSSet *_genericAppAdamIDs;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *genericAppAdamIDs; // @synthesize genericAppAdamIDs=_genericAppAdamIDs;
 @property(copy, nonatomic) NSSet *personalAppAdamIDs; // @synthesize personalAppAdamIDs=_personalAppAdamIDs;
 @property(copy, nonatomic) NSArray *allChannelMappings; // @synthesize allChannelMappings=_allChannelMappings;
 @property(copy, nonatomic) NSSet *personalChannelIDs; // @synthesize personalChannelIDs=_personalChannelIDs;
-- (void).cxx_destruct;
 - (void)_updateAdamIDs;
 - (id)init;
 

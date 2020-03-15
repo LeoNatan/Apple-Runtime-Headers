@@ -15,8 +15,8 @@
     NSString *__content;
 }
 
-@property(copy, nonatomic) NSString *_content; // @synthesize _content=__content;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *_content; // @synthesize _content=__content;
 - (id)substringWithRange:(id)arg1;
 @property(readonly, nonatomic) AXFTextRange *contentRange;
 - (id)initWithString:(id)arg1;

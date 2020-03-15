@@ -15,10 +15,10 @@
     NSString *_detail;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *detail; // @synthesize detail=_detail;
 @property(readonly, nonatomic) int parent; // @synthesize parent=_parent;
 @property(readonly, nonatomic) int row; // @synthesize row=_row;
-- (void).cxx_destruct;
 - (id)initWithRow:(id)arg1;
 
 @end

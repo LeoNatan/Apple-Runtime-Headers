@@ -18,9 +18,9 @@
 }
 
 + (id)bufferObserver:(id)arg1 schedulerProvider:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNSuspendableSchedulerDecorator *observerScheduler; // @synthesize observerScheduler=_observerScheduler;
 @property(readonly, nonatomic) id <CNObserver> observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (void)observerDidFailWithError:(id)arg1;
 - (void)observerDidComplete;
 - (void)observerDidReceiveResult:(id)arg1;

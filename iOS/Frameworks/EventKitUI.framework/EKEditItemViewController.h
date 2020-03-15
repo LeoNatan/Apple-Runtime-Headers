@@ -23,11 +23,11 @@ __attribute__((visibility("hidden")))
     _Bool _showsDoneButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsDoneButton; // @synthesize showsDoneButton=_showsDoneButton;
 @property(nonatomic) _Bool modal; // @synthesize modal=_modal;
 @property(nonatomic) unsigned long long subitem; // @synthesize subitem=_subitem;
 @property(nonatomic) __weak id <EKEditItemViewControllerDelegate> editDelegate; // @synthesize editDelegate=_editDelegate;
-- (void).cxx_destruct;
 - (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (double)marginForTableView:(id)arg1;

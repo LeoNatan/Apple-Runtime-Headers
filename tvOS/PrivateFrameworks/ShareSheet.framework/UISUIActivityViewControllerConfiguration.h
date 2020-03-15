@@ -48,6 +48,7 @@
 
 + (void)_unitTest_SetDisableExcludingSourceApplicationFromOpenActivities:(_Bool)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool _unitTest_disableExcludingSourceApplicationFromOpenActivities; // @synthesize _unitTest_disableExcludingSourceApplicationFromOpenActivities=__unitTest_disableExcludingSourceApplicationFromOpenActivities;
 @property(nonatomic) long long sharingStyle; // @synthesize sharingStyle=_sharingStyle;
 @property(nonatomic) long long excludedActivityCategories; // @synthesize excludedActivityCategories=_excludedActivityCategories;
@@ -80,7 +81,6 @@
 @property(retain, nonatomic) NSArray *activityItemValueClassNames; // @synthesize activityItemValueClassNames=_activityItemValueClassNames;
 @property(retain, nonatomic) NSArray *hostActivityConfigurations; // @synthesize hostActivityConfigurations=_hostActivityConfigurations;
 @property(nonatomic) double preferredWidth; // @synthesize preferredWidth=_preferredWidth;
-- (void).cxx_destruct;
 - (id)availableActivityItemValueClasses;
 - (id)_contextForMatchingActivityItems:(id)arg1 activityItemValues:(id)arg2 activityItemValueClasses:(id)arg3;
 - (id)contextForMatchingByActivityItems:(id)arg1 itemValues:(id)arg2;

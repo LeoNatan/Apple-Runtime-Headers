@@ -21,6 +21,7 @@
     struct UIEdgeInsets _sectionInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICPaperStyleHeaderView *headerViewMeasuringCell; // @synthesize headerViewMeasuringCell=_headerViewMeasuringCell;
 @property(nonatomic) struct UIEdgeInsets sectionInsets; // @synthesize sectionInsets=_sectionInsets;
 @property(nonatomic) struct CGSize itemSize; // @synthesize itemSize=_itemSize;
@@ -28,7 +29,6 @@
 @property(nonatomic) double itemSpacing; // @synthesize itemSpacing=_itemSpacing;
 @property(nonatomic) _Bool needsUpdateItemSpacing; // @synthesize needsUpdateItemSpacing=_needsUpdateItemSpacing;
 @property(nonatomic) _Bool forPreferences; // @synthesize forPreferences=_forPreferences;
-- (void).cxx_destruct;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
 - (double)collectionView:(id)arg1 layout:(id)arg2 minimumInteritemSpacingForSectionAtIndex:(long long)arg3;

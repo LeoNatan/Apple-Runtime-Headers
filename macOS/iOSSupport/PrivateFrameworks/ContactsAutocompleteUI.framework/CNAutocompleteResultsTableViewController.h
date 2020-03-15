@@ -29,6 +29,7 @@
 }
 
 + (void)dispatchMainIfNecessary:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isDeviceLocked; // @synthesize isDeviceLocked=_isDeviceLocked;
 @property(nonatomic) BOOL hasPerformedRecipientExpansion; // @synthesize hasPerformedRecipientExpansion=_hasPerformedRecipientExpansion;
 @property(nonatomic) BOOL inDisambiguationMode; // @synthesize inDisambiguationMode=_inDisambiguationMode;
@@ -37,7 +38,6 @@
 @property(nonatomic, getter=isDeferringTableViewUpdates) BOOL deferTableViewUpdates; // @synthesize deferTableViewUpdates=_deferTableViewUpdates;
 @property(copy, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
 @property(nonatomic) __weak id <CNAutocompleteResultsTableViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 trailingSwipeActionsConfigurationForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)didTapInfoButtonForCell:(id)arg1;

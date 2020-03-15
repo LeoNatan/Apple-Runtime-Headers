@@ -21,10 +21,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *aid; // @synthesize aid=_aid;
 @property(retain, nonatomic) NSData *digestToSign; // @synthesize digestToSign=_digestToSign;
 @property(retain, nonatomic) NSData *dataToSign; // @synthesize dataToSign=_dataToSign;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

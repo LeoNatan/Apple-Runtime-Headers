@@ -35,6 +35,7 @@
 + (Class)classForType:(id)arg1;
 + (id)type;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_player, setter=_setPlayer:) id <_UIFeedbackPlayer> player; // @synthesize player=_player;
 @property(nonatomic, getter=_coordinateSpace, setter=_setCoordinateSpace:) __weak id <UICoordinateSpace> coordinateSpace; // @synthesize coordinateSpace=_coordinateSpace;
 @property(nonatomic, getter=_eventToken, setter=_setEventToken:) unsigned long long eventToken; // @synthesize eventToken=_eventToken;
@@ -49,7 +50,6 @@
 @property(nonatomic) long long audioOutputMode; // @synthesize audioOutputMode=_audioOutputMode;
 @property(readonly, nonatomic) _UIFeedbackParameters *hapticParameters; // @synthesize hapticParameters=_hapticParameters;
 @property(readonly, nonatomic) _UIFeedbackParameters *audioParameters; // @synthesize audioParameters=_audioParameters;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_effectiveFeedbackData) NSArray *effectiveFeedbackData;
 - (id)description;
 - (void)stop;

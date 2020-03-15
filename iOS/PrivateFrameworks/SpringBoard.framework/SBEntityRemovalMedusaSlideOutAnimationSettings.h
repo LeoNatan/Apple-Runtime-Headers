@@ -21,6 +21,7 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBEntityRemovalMedusaDefaultAnimationSettings *defaultAnimationSettings; // @synthesize defaultAnimationSettings=_defaultAnimationSettings;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *toBeRemovedSlideOutAnimationSettings; // @synthesize toBeRemovedSlideOutAnimationSettings=_toBeRemovedSlideOutAnimationSettings;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *toBeMadeFullscreenScaleResetAnimationSettings; // @synthesize toBeMadeFullscreenScaleResetAnimationSettings=_toBeMadeFullscreenScaleResetAnimationSettings;
@@ -29,7 +30,6 @@
 @property(nonatomic) double toBeRemovedSlideOutAnimationDelay; // @synthesize toBeRemovedSlideOutAnimationDelay=_toBeRemovedSlideOutAnimationDelay;
 @property(nonatomic) double toBeMadeFullScreenScaleResetAnimationDelay; // @synthesize toBeMadeFullScreenScaleResetAnimationDelay=_toBeMadeFullScreenScaleResetAnimationDelay;
 @property(nonatomic) double toBeMadeFullScreenPushInScale; // @synthesize toBeMadeFullScreenPushInScale=_toBeMadeFullScreenPushInScale;
-- (void).cxx_destruct;
 - (void)setDefaultValues;
 
 @end

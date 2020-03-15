@@ -14,8 +14,8 @@
 }
 
 + (id)avatarImageRenderer;
-@property(retain, nonatomic) NSString *letters; // @synthesize letters=_letters;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *letters; // @synthesize letters=_letters;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)loadImageWithCompletionHandler:(CDUnknownBlockType)arg1;

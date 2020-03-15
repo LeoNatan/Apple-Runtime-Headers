@@ -22,9 +22,9 @@
 }
 
 + (id)subtitleLanguages;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool disableAlternateTextTrackRendering; // @synthesize disableAlternateTextTrackRendering=_disableAlternateTextTrackRendering;
 @property(retain, nonatomic) NSArray *outOfBandTextTracks; // @synthesize outOfBandTextTracks=_outOfBandTextTracks;
-- (void).cxx_destruct;
 - (void)_suppressAVFSubtitleRendering;
 - (id)_currentTextTrackAccordingToAVF;
 - (id)_keyForTrackType:(unsigned long long)arg1;

@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSDate *lastEnteredForegroundDate; // @synthesize lastEnteredForegroundDate=_lastEnteredForegroundDate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *lastEnteredForegroundDate; // @synthesize lastEnteredForegroundDate=_lastEnteredForegroundDate;
 - (void)_enteredForeground:(id)arg1;
 - (id)init;
 

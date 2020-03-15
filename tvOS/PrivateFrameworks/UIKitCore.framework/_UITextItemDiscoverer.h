@@ -8,19 +8,19 @@
 
 #import <UIKitCore/_UITextItemDiscoverable-Protocol.h>
 
-@class NSString, UIView, _UIBoundingTextRectsSolver;
+@class NSString, UIView;
 @protocol UICoordinateSpace, _UITextContent;
 
 __attribute__((visibility("hidden")))
 @interface _UITextItemDiscoverer : NSObject <_UITextItemDiscoverable>
 {
-    _UIBoundingTextRectsSolver *_rectSolver;
     UIView<_UITextContent> *_view;
 }
 
-@property(readonly, nonatomic) __weak UIView<_UITextContent> *view; // @synthesize view=_view;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak UIView<_UITextContent> *view; // @synthesize view=_view;
 - (struct _NSRange)_nsrangeForTextRange:(id)arg1;
+- (id)_anyTextItemConstrainedToLineAtPoint:(struct CGPoint)arg1;
 - (_Bool)hasTextItemsOfType:(long long)arg1 inTextRange:(id)arg2;
 - (id)textItemsOfType:(long long)arg1 inTextRange:(id)arg2;
 - (id)visibleTextRange;

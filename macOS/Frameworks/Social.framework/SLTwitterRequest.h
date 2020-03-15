@@ -24,11 +24,11 @@
 
 + (float)retryDelayForRetryCount:(int)arg1;
 + (BOOL)responseIsTimestampOutOfBounds:(id)arg1 data:(id)arg2 JSONResponseObject:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) long long requestMethod; // @synthesize requestMethod=_requestMethod;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_url;
-- (void).cxx_destruct;
 - (void)performJSONRequestWithHandler:(CDUnknownBlockType)arg1;
 - (void)setApplicationID:(id)arg1;
 - (id)timestampSkewStorageDelegate;

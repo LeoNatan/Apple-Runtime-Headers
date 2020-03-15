@@ -18,11 +18,11 @@
     NSProgress *_progress;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property _Bool userInitiatedDelete; // @synthesize userInitiatedDelete=_userInitiatedDelete;
 @property __weak PXImportController *importController; // @synthesize importController=_importController;
 @property(readonly, nonatomic) NSString *sessionUuid; // @synthesize sessionUuid=_sessionUuid;
-- (void).cxx_destruct;
 - (void)sendActionProgress:(double)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)stopObservingDeleteProgress;

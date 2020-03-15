@@ -13,8 +13,8 @@
     NSNumber *_requestedQualityOfService;
 }
 
-@property(retain) NSNumber *requestedQualityOfService; // @synthesize requestedQualityOfService=_requestedQualityOfService;
 - (void).cxx_destruct;
+@property(retain) NSNumber *requestedQualityOfService; // @synthesize requestedQualityOfService=_requestedQualityOfService;
 
 @end
 

@@ -18,10 +18,10 @@
     PKDrawing *_drawing;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKDrawing *drawing; // @synthesize drawing=_drawing;
 @property(retain, nonatomic) CHTitleQuery *titleQuery; // @synthesize titleQuery=_titleQuery;
 @property(nonatomic) __weak id <PKTitleQueryDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)queryDidUpdateResult:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *transcribedTitle;
 - (void)dealloc;

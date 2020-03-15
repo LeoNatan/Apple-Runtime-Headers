@@ -19,10 +19,10 @@
     struct CGSize _drawableSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize drawableSize; // @synthesize drawableSize=_drawableSize;
 @property(readonly, nonatomic) id <MTLDevice> device; // @synthesize device=_device;
 @property(readonly, nonatomic) unsigned long long pixelFormat; // @synthesize pixelFormat=_pixelFormat;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool framebufferOnly;
 @property(readonly, nonatomic) CALayer *layer; // @dynamic layer;
 - (void)_didDraw;

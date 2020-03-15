@@ -26,6 +26,7 @@
 + (id)components:(id)arg1 subLocality:(id)arg2 city:(id)arg3 subAdministrativeArea:(id)arg4 state:(id)arg5 postalCode:(id)arg6 country:(id)arg7 isoCountryCode:(id)arg8;
 + (id)components:(id)arg1 city:(id)arg2 state:(id)arg3 postalCode:(id)arg4 country:(id)arg5;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *isoCountryCode; // @synthesize isoCountryCode=_isoCountryCode;
 @property(readonly, nonatomic) NSString *country; // @synthesize country=_country;
 @property(readonly, nonatomic) NSString *postalCode; // @synthesize postalCode=_postalCode;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) NSString *city; // @synthesize city=_city;
 @property(readonly, nonatomic) NSString *subLocality; // @synthesize subLocality=_subLocality;
 @property(readonly, nonatomic) NSString *street; // @synthesize street=_street;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqualToPostalAddressComponents:(id)arg1;

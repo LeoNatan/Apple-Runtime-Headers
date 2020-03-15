@@ -28,6 +28,7 @@
 }
 
 + (id)interestedChangeKeys;
+- (void).cxx_destruct;
 @property __weak EKAttachment *selectedAttachment; // @synthesize selectedAttachment=_selectedAttachment;
 @property(retain) NSDictionary *viewMetrics; // @synthesize viewMetrics=_viewMetrics;
 @property(retain) NSArray *attachmentConstraints; // @synthesize attachmentConstraints=_attachmentConstraints;
@@ -36,7 +37,6 @@
 @property(retain) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 @property(retain) EKUITextButton *addButton; // @synthesize addButton=_addButton;
 @property(retain) NSArray *attachments; // @synthesize attachments=_attachments;
-- (void).cxx_destruct;
 - (void)removeAttachment:(id)arg1;
 - (id)seamlessOpener:(id)arg1 transitionImageForPreviewItem:(id)arg2 contentRect:(struct CGRect *)arg3;
 - (struct CGRect)seamlessOpener:(id)arg1 sourceFrameOnScreenForPreviewItem:(id)arg2;

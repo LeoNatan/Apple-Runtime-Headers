@@ -17,12 +17,12 @@
     NSUUID *_token;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSUUID *token; // @synthesize token=_token;
 @property(copy, nonatomic) MPSectionedCollection *relatedModelObjects; // @synthesize relatedModelObjects=_relatedModelObjects;
 @property(copy, nonatomic) MPSectionedCollection *modelObjects; // @synthesize modelObjects=_modelObjects;
 @property(nonatomic) long long keepLocalState; // @synthesize keepLocalState=_keepLocalState;
 @property(nonatomic) long long addState; // @synthesize addState=_addState;
-- (void).cxx_destruct;
 
 @end
 

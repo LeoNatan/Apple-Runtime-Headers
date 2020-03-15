@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSData *resultData; // @synthesize resultData=_resultData;
 @property unsigned short resultSW; // @synthesize resultSW=_resultSW;
 @property(retain) NSArray *PINMessageIndices; // @synthesize PINMessageIndices=_PINMessageIndices;
 @property unsigned int PINCompletion; // @synthesize PINCompletion=_PINCompletion;
-- (void).cxx_destruct;
 @property(retain) NSLocale *locale;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_serverRecordType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *serverRecordType; // @synthesize serverRecordType=_serverRecordType;
 @property(nonatomic) _Bool serverRecordHasNoProtectionData; // @synthesize serverRecordHasNoProtectionData=_serverRecordHasNoProtectionData;
-- (void).cxx_destruct;
 - (_Bool)_savePCSDataToCache;
 - (_Bool)_decryptPCS;
 - (_Bool)_decryptRecordPCSInSharedDatabase;

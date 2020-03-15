@@ -16,10 +16,10 @@
     NSOrderedSet *_orderedOcclusions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSOrderedSet *orderedOcclusions; // @synthesize orderedOcclusions=_orderedOcclusions;
 @property(nonatomic) double level; // @synthesize level=_level;
 @property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

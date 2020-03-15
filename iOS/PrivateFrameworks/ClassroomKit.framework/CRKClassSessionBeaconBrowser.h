@@ -17,11 +17,11 @@
     NSSet *_organizationUUIDs;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isBrowsing; // @synthesize isBrowsing=_isBrowsing;
 @property(nonatomic) _Bool allowInvitationSessions; // @synthesize allowInvitationSessions=_allowInvitationSessions;
 @property(copy, nonatomic) NSSet *organizationUUIDs; // @synthesize organizationUUIDs=_organizationUUIDs;
 @property(nonatomic) __weak id <CRKClassSessionBeaconBrowserDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)stateDictionary;
 - (void)increaseScanFrequencyForDuration:(double)arg1;
 - (void)stopBrowsing;

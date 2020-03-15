@@ -17,12 +17,12 @@
     NSObject<OS_dispatch_source> *__currentTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setCurrentTimer:) NSObject<OS_dispatch_source> *_currentTimer; // @synthesize _currentTimer=__currentTimer;
 @property(readonly, copy, nonatomic) CDUnknownBlockType _handler; // @synthesize _handler=__handler;
 @property(nonatomic, setter=_setFired:) _Bool fired; // @synthesize fired=_fired;
 @property(readonly, nonatomic) double interval; // @synthesize interval=_interval;
 @property(readonly, nonatomic) double delay; // @synthesize delay=_delay;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)start;
 - (id)initWithDelay:(double)arg1 interval:(double)arg2 handler:(CDUnknownBlockType)arg3;

@@ -21,9 +21,11 @@
     NSMutableArray *_notes;
 }
 
++ (BOOL)isApplePath:(id)arg1 orBundle:(id)arg2;
 - (void).cxx_destruct;
+- (id)reportUsedImagesLegacyInfo;
 - (id)reportUsedImages;
-- (id)searchFrame:(unsigned long long)arg1 in:(id)arg2 result:(char *)arg3;
+- (id)searchFrame:(unsigned long long)arg1 in:(id)arg2 result:(id *)arg3;
 - (void)appendNotesTo:(id)arg1;
 - (BOOL)isAddressInTargetedCache:(unsigned long long)arg1;
 - (void)targetSharedCache:(unsigned char [16])arg1 withSlide:(unsigned long long)arg2 atBaseAddress:(unsigned long long)arg3;

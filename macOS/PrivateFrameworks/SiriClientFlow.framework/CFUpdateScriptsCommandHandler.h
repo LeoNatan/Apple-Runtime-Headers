@@ -23,6 +23,7 @@
     CDUnknownBlockType _updateScriptsCompletion;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType updateScriptsCompletion; // @synthesize updateScriptsCompletion=_updateScriptsCompletion;
 @property(retain) CFScriptDownloadManager *downloadManager; // @synthesize downloadManager=_downloadManager;
 @property(retain) NSObject<OS_dispatch_queue> *updateScriptsQueue; // @synthesize updateScriptsQueue=_updateScriptsQueue;
@@ -30,7 +31,6 @@
 @property unsigned long long scriptsUpdateCount; // @synthesize scriptsUpdateCount=_scriptsUpdateCount;
 @property(retain) NSString *scriptsCachePath; // @synthesize scriptsCachePath=_scriptsCachePath;
 @property(retain) id <CFScripting> clientScripter; // @synthesize clientScripter=_clientScripter;
-- (void).cxx_destruct;
 - (void)performWithCompletion:(CDUnknownBlockType)arg1;
 - (id)cachePath;
 - (void)scriptSavedToFilePath:(id)arg1 forScript:(id)arg2;

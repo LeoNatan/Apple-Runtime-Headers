@@ -28,6 +28,7 @@
     NSString *_genericActionParameterTitle;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *genericActionParameterTitle; // @synthesize genericActionParameterTitle=_genericActionParameterTitle;
 @property(retain, nonatomic) INIntent *genericIntent; // @synthesize genericIntent=_genericIntent;
 @property(retain, nonatomic) WFAction *genericAction; // @synthesize genericAction=_genericAction;
@@ -38,7 +39,6 @@
 @property(nonatomic) __weak UIViewController *containingViewController; // @synthesize containingViewController=_containingViewController;
 @property(nonatomic) long long cellType; // @synthesize cellType=_cellType;
 @property(nonatomic) __weak id <WFActionDrawerSiriSuggestionsCollectionViewManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_configureCell:(id)arg1 withGenericIntent:(id)arg2 cellType:(long long)arg3 genericParameterTitle:(id)arg4;
 - (void)_configureCell:(id)arg1 withDonation:(id)arg2 cellType:(long long)arg3;
 - (void)mediaPicker:(id)arg1 didPickMediaItems:(id)arg2;

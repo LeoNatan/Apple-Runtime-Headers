@@ -13,8 +13,8 @@
     TSKernelClock *_clock;
 }
 
-@property(nonatomic) __weak TSKernelClock *clock; // @synthesize clock=_clock;
 - (void).cxx_destruct;
+@property(nonatomic) __weak TSKernelClock *clock; // @synthesize clock=_clock;
 
 @end
 

@@ -52,6 +52,7 @@
 
 + (_Bool)hasUserLocation;
 + (struct CGSize)annotationImageSize;
+- (void).cxx_destruct;
 @property(nonatomic) long long currentTrackingMode; // @synthesize currentTrackingMode=_currentTrackingMode;
 @property(retain, nonatomic) _MKUserTrackingButton *userTrackingButton; // @synthesize userTrackingButton=_userTrackingButton;
 @property(nonatomic) _Bool mapTypeLoaded; // @synthesize mapTypeLoaded=_mapTypeLoaded;
@@ -83,7 +84,6 @@
 @property(nonatomic) _Bool shouldZoomToFitMeAndLocations; // @synthesize shouldZoomToFitMeAndLocations=_shouldZoomToFitMeAndLocations;
 @property(nonatomic) _Bool shouldZoomToFitNewLocations; // @synthesize shouldZoomToFitNewLocations=_shouldZoomToFitNewLocations;
 @property(nonatomic) __weak id <FMFMapViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateAllAnnotationsDueToAddressBookUpdate;
 - (id)_internalAnnotationTintColor;
 - (id)_selectedHandleAnnotation;

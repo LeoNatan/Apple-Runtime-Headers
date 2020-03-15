@@ -35,6 +35,7 @@
 }
 
 + (id)_defaultValidationReportFormatter;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_focusedGuide) __weak UIFocusGuide *focusedGuide; // @synthesize focusedGuide=_focusedGuide;
 @property(retain, nonatomic, getter=_validationReport, setter=_setValidationReport:) _UIDebugIssueReport *validationReport; // @synthesize validationReport=_validationReport;
 @property(retain, nonatomic, getter=_preferredFocusReport, setter=_setPreferredFocusReport:) _UIDebugLogReport *preferredFocusReport; // @synthesize preferredFocusReport=_preferredFocusReport;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic, getter=_focusMovement) _UIFocusMovementInfo *focusMovement; // @synthesize focusMovement=_focusMovement;
 @property(readonly, copy, nonatomic, getter=_sourceItemInfo) _UIFocusItemInfo *sourceItemInfo; // @synthesize sourceItemInfo=_sourceItemInfo;
 @property(readonly, nonatomic, getter=_request) id <_UIFocusUpdateRequesting> request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)description;
 - (id)debugQuickLookObject;
 @property(readonly, nonatomic, getter=_regionMapSnapshotsVisualRepresentation) UIImage *regionMapSnapshotsVisualRepresentation; // @synthesize regionMapSnapshotsVisualRepresentation=_regionMapSnapshotsVisualRepresentation;

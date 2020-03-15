@@ -15,8 +15,8 @@
     id <MLBatchProvider> _provider;
 }
 
-@property(retain) id <MLBatchProvider> provider; // @synthesize provider=_provider;
 - (void).cxx_destruct;
+@property(retain) id <MLBatchProvider> provider; // @synthesize provider=_provider;
 @property(readonly, nonatomic) long long count;
 - (id)featuresAtIndex:(long long)arg1;
 - (id)initWithBatchProvider:(id)arg1;

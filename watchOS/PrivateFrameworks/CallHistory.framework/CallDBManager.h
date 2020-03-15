@@ -20,12 +20,12 @@
 + (id)getDBLocationIsSandboxed:(_Bool)arg1 isTemporary:(_Bool)arg2 error:(unsigned char *)arg3;
 + (id)dataStoreName;
 + (id)modelURL;
+- (void).cxx_destruct;
 @property(retain) id deviceUnlockNotificationRef; // @synthesize deviceUnlockNotificationRef=_deviceUnlockNotificationRef;
 @property unsigned char notifyDataStoreChangeReason; // @synthesize notifyDataStoreChangeReason=_notifyDataStoreChangeReason;
 @property unsigned char dataStoreType; // @synthesize dataStoreType=_dataStoreType;
 @property _Bool deviceUnlocked; // @synthesize deviceUnlocked=_deviceUnlocked;
 @property(retain, nonatomic) DBManager *dbManager; // @synthesize dbManager=_dbManager;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)handleTemporaryCreated;
 - (void)handlePermanentCreated;

@@ -14,8 +14,8 @@
     NSManagedObjectContext *_managedObjectContext;
 }
 
-@property(retain, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 - (BOOL)saveIfPossible;
 - (BOOL)isProtectedDataAvailable;
 - (void)contentDidUpdate:(id)arg1;

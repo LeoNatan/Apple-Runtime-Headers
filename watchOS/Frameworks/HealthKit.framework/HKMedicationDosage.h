@@ -19,9 +19,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)dosageWithInstruction:(id)arg1 timingPeriod:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) HKMedicalDateInterval *timingPeriod; // @synthesize timingPeriod=_timingPeriod;
 @property(readonly, copy, nonatomic) NSString *instruction; // @synthesize instruction=_instruction;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

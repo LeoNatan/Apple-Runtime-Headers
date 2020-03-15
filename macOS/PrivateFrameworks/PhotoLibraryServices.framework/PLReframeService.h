@@ -19,8 +19,8 @@
     NSObject<OS_dispatch_queue> *_serializationQueue;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serializationQueue; // @synthesize serializationQueue=_serializationQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serializationQueue; // @synthesize serializationQueue=_serializationQueue;
 - (id)enqueueReframeRequestForAssetUUID:(id)arg1 imageConversionClient:(id)arg2 videoConversionClient:(id)arg3 isOnDemand:(BOOL)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)photoLibrary;
 - (id)initWithLibraryBundle:(id)arg1;

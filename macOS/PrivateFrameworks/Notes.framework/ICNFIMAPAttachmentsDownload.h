@@ -13,8 +13,8 @@
     id <ICNFIMAPMessage> _message;
 }
 
-@property(retain) id <ICNFIMAPMessage> message; // @synthesize message=_message;
 - (void).cxx_destruct;
+@property(retain) id <ICNFIMAPMessage> message; // @synthesize message=_message;
 - (void)saveCompletedDownloads;
 - (id)createCopy;
 - (id)initWithIMAPMessage:(id)arg1;

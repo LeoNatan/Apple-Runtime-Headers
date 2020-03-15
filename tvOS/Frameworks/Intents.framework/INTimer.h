@@ -24,13 +24,13 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) double remainingTime; // @synthesize remainingTime=_remainingTime;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, copy, nonatomic) INSpeakableString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

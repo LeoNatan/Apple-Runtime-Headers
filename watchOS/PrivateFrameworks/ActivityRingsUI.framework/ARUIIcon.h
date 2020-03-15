@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _frameSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int currentFrameIndex; // @synthesize currentFrameIndex=_currentFrameIndex;
 @property(nonatomic) int frameCount; // @synthesize frameCount=_frameCount;
 @property(nonatomic) int frameColumns; // @synthesize frameColumns=_frameColumns;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) float size; // @synthesize size=_size;
 @property(nonatomic) struct CGPoint position; // @synthesize position=_position;
-- (void).cxx_destruct;
 - (id)_newAnimatablePropertyForType:(unsigned int)arg1;
 - (void)addAnimation:(id)arg1 forRingGroupPropertyType:(unsigned int)arg2;
 - (_Bool)isDrawable;

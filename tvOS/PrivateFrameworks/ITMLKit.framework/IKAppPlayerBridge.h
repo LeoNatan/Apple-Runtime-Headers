@@ -29,6 +29,7 @@
 }
 
 + (id)makeFeatureJSObjectForFeature:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) _Bool showsResumeMenu; // @synthesize showsResumeMenu=_showsResumeMenu;
 @property(copy, nonatomic) NSDictionary *contextMenuData; // @synthesize contextMenuData=_contextMenuData;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) IKAppPlaylistBridge *playlist; // @synthesize playlist=_playlist;
 @property(readonly, copy, nonatomic) NSString *featureName; // @synthesize featureName=_featureName;
 @property(readonly, nonatomic) __weak IKAppContext *appContext; // @synthesize appContext=_appContext;
-- (void).cxx_destruct;
 - (void)_evaluateDelegateBlockSync:(CDUnknownBlockType)arg1;
 - (void)dispatchEvent:(id)arg1 userInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)stopObservingEvent:(id)arg1;

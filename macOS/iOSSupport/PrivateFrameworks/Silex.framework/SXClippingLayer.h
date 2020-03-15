@@ -15,10 +15,10 @@
     struct CGRect _contentFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect contentFrame; // @synthesize contentFrame=_contentFrame;
 @property(nonatomic) unsigned long long clippingMode; // @synthesize clippingMode=_clippingMode;
 @property(retain, nonatomic) CALayer *contentLayer; // @synthesize contentLayer=_contentLayer;
-- (void).cxx_destruct;
 - (void)layoutForMasking;
 - (void)layoutForContentsRect;
 - (void)layoutSublayers;

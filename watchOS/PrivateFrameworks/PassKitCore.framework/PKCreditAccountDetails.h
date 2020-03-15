@@ -30,6 +30,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *installmentPlans; // @synthesize installmentPlans=_installmentPlans;
 @property(retain, nonatomic) PKCreditAccountRates *rates; // @synthesize rates=_rates;
 @property(retain, nonatomic) PKCreditAccountSummary *accountSummary; // @synthesize accountSummary=_accountSummary;
@@ -47,7 +48,6 @@
 @property(copy, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
 @property(copy, nonatomic) NSDate *createdDate; // @synthesize createdDate=_createdDate;
 @property(copy, nonatomic) NSDate *lastUpdatedDate; // @synthesize lastUpdatedDate=_lastUpdatedDate;
-- (void).cxx_destruct;
 - (int)numberOfActiveStatementedInstallments;
 - (int)numberOfActiveInstallments;
 @property(readonly, copy, nonatomic) PKCurrencyAmount *totalBalance;

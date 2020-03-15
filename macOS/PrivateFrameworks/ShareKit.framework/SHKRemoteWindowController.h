@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _dimFrame;
 }
 
+- (void).cxx_destruct;
 @property BOOL noSourceWindow; // @synthesize noSourceWindow=_noSourceWindow;
 @property BOOL disableServiceWindowPresentation; // @synthesize disableServiceWindowPresentation=_disableServiceWindowPresentation;
 @property(retain) SHKBlurWindow *blurWindow; // @synthesize blurWindow=_blurWindow;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property __weak SHKSharingService *service; // @synthesize service=_service;
 @property __weak SHKMarzipanRemoteViewController *marzipanRemoteViewController; // @synthesize marzipanRemoteViewController=_marzipanRemoteViewController;
 @property __weak SHKRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
-- (void).cxx_destruct;
 @property struct CGRect blurFrame;
 - (void)windowDidResignMain:(id)arg1;
 - (void)windowDidResignKey:(id)arg1;

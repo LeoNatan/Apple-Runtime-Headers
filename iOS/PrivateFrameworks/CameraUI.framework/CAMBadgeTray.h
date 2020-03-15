@@ -19,11 +19,11 @@
     NSMutableDictionary *__badgeMap;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *_badgeMap; // @synthesize _badgeMap=__badgeMap;
 @property(retain, nonatomic) NSString *contentSize; // @synthesize contentSize=_contentSize;
 @property(nonatomic) unsigned long long visibleBadges; // @synthesize visibleBadges=_visibleBadges;
 @property(nonatomic) __weak id <CAMBadgeTrayDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)badgeViewDidChangeIntrinsicContentSize:(id)arg1;
 - (void)_updateBadgesVisibilityForVisibleBadges:(unsigned long long)arg1;
 - (void)_loadBadgesIfNeededForTypes:(unsigned long long)arg1;

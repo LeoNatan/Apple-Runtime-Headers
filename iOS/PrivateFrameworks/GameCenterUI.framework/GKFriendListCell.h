@@ -17,12 +17,12 @@
     NSLayoutConstraint *_friendNameTopConstraint;
 }
 
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *friendNameTopConstraint; // @synthesize friendNameTopConstraint=_friendNameTopConstraint;
 @property __weak NSLayoutConstraint *friendPhotoTopConstraint; // @synthesize friendPhotoTopConstraint=_friendPhotoTopConstraint;
 @property __weak UILabel *friendLastPlayedGame; // @synthesize friendLastPlayedGame=_friendLastPlayedGame;
 @property __weak UILabel *friendName; // @synthesize friendName=_friendName;
 @property __weak GKDashboardPlayerPhotoView *friendPhoto; // @synthesize friendPhoto=_friendPhoto;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)setPlayer:(id)arg1;
 - (void)awakeFromNib;

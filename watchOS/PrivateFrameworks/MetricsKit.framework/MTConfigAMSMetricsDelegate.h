@@ -16,8 +16,8 @@
     id <AMSBagProtocol> _bag;
 }
 
-@property(retain, nonatomic) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 - (id)sources;
 - (id)initWithAMSBag:(id)arg1;
 

@@ -21,13 +21,13 @@
     float _epsilon;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float epsilon; // @synthesize epsilon=_epsilon;
 @property(nonatomic) float deceleration; // @synthesize deceleration=_deceleration;
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic) float targetValue; // @synthesize targetValue=_targetValue;
 @property(nonatomic) float currentValue; // @synthesize currentValue=_currentValue;
 @property(nonatomic) __weak id <CSLInertialAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_animate:(float)arg1;
 - (void)_tick:(id)arg1;
 - (void)_updateDisplayLink;

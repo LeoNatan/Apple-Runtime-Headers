@@ -22,13 +22,13 @@
 }
 
 + (id)noteFont;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AKNoteStickyView *noteView; // @synthesize noteView=_noteView;
 @property(retain, nonatomic) NSTextView *textView; // @synthesize textView=_textView;
 @property(nonatomic) BOOL clickEligible; // @synthesize clickEligible=_clickEligible;
 @property(nonatomic) __weak id <AKNoteMarginViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *noteText; // @synthesize noteText=_noteText;
 @property(retain, nonatomic) AKAnnotationTheme *theme; // @synthesize theme=_theme;
-- (void).cxx_destruct;
 - (void)stickyViewWasClicked:(id)arg1;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;

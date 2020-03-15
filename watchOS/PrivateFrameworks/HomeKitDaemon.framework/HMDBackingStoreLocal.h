@@ -62,10 +62,10 @@
 
 + (id)logCategory;
 + (void)cleanDatastoreFilesAt:(id)arg1 everything:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *storeCache; // @synthesize storeCache=_storeCache;
 @property(retain, nonatomic) NSMutableArray *zoneCache; // @synthesize zoneCache=_zoneCache;
 @property(readonly, nonatomic) NSString *datastoreFile; // @synthesize datastoreFile=_datastoreFile;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (id)_deleteLog:(long long)arg1;
 - (id)_updateLog:(long long)arg1 mask:(long long)arg2 set:(long long)arg3;

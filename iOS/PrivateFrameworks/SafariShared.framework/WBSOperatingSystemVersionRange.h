@@ -16,10 +16,10 @@
 }
 
 + (id)defaultCloudBookmarksEligibleOperatingSystemRanges;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_f6aba300 maximumVersion; // @synthesize maximumVersion=_maximumVersion;
 @property(readonly, nonatomic) CDStruct_f6aba300 minimumVersion; // @synthesize minimumVersion=_minimumVersion;
 @property(readonly, nonatomic) NSString *family; // @synthesize family=_family;
-- (void).cxx_destruct;
 - (_Bool)includesOperatingSystemVersion:(CDStruct_f6aba300)arg1 inFamily:(id)arg2;
 - (id)initWithFamily:(id)arg1 minimumVersion:(CDStruct_f6aba300)arg2 maximumVersion:(CDStruct_f6aba300)arg3;
 

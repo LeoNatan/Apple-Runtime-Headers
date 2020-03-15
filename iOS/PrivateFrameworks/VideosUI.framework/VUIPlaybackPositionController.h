@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
-@property(nonatomic, getter=isRunning) _Bool running; // @synthesize running=_running;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isRunning) _Bool running; // @synthesize running=_running;
 - (void)_onQueue_updateEntityWithPlaybackPositionInfo:(id)arg1 forTrack:(id)arg2;
 - (void)_onQueue_endCapturingEvents;
 - (void)_onQueue_beginCapturingEvents;

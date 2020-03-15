@@ -25,10 +25,10 @@
     ICDelegationServiceSecuritySettings *_securitySettings;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ICDelegationServiceSecuritySettings *securitySettings; // @synthesize securitySettings=_securitySettings;
 @property(readonly, nonatomic) long long role; // @synthesize role=_role;
 @property(nonatomic) __weak id <ICDelegationServicePairingSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_sendData:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_receivedData:(id)arg1;
 - (_Bool)_deriveEncryptionKeysReturningError:(id *)arg1;

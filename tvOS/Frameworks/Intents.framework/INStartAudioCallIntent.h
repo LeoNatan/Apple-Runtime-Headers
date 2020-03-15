@@ -40,7 +40,7 @@
 - (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
-- (id)_subtitleForLanguage:(id)arg1 fromBundleURL:(id)arg2;
+- (id)_subtitleWithLocalizer:(id)arg1 fromBundleURL:(id)arg2;
 - (id)initWithContacts:(id)arg1;
 - (void)setUseSpeaker:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool useSpeaker;

@@ -18,11 +18,11 @@
     NSTimer *_timeoutTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *timeoutTimer; // @synthesize timeoutTimer=_timeoutTimer;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain) SymbolValidator *validator; // @synthesize validator=_validator;
 @property double timeoutDuration; // @synthesize timeoutDuration=_timeoutDuration;
-- (void).cxx_destruct;
 - (void)symbolValidator:(id)arg1 didFailWithError:(id)arg2;
 - (void)symbolValidator:(id)arg1 didValidateSymbols:(id)arg2;
 - (void)cleanUpAndReportResult:(id)arg1;

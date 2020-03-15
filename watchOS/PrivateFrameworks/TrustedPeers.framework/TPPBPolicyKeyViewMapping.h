@@ -17,9 +17,9 @@
 }
 
 + (id)TPPBPolicyKeyViewMappingWithView:(id)arg1 matchingRule:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *view; // @synthesize view=_view;
 @property(retain, nonatomic) TPPBDictionaryMatchingRule *matchingRule; // @synthesize matchingRule=_matchingRule;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

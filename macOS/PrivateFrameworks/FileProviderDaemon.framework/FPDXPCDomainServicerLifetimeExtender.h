@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _stopBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType stopBlock; // @synthesize stopBlock=_stopBlock;
 @property(retain) NSString *prettyDescription; // @synthesize prettyDescription=_prettyDescription;
 @property int requestEffectivePID; // @synthesize requestEffectivePID=_requestEffectivePID;
-- (void).cxx_destruct;
 - (void)stopExtendingLifetime;
 
 // Remaining properties

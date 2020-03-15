@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) PUEditableMediaProviderVideoAssetNode *currentVideoNode; // @synthesize currentVideoNode=_currentVideoNode;
 @property(readonly, nonatomic) PUEditableMediaProviderImageDataNode *currentImageNode; // @synthesize currentImageNode=_currentImageNode;
 @property(readonly, nonatomic) PUPhotoEditBaseMediaNode *baseMediaNode; // @synthesize baseMediaNode=_baseMediaNode;
 @property(readonly, nonatomic) PUEditableMediaProviderAdjustmentDataNode *adjustmentNode; // @synthesize adjustmentNode=_adjustmentNode;
-- (void).cxx_destruct;
 - (void)run;
 - (id)initWithAdjustmentNode:(id)arg1 baseMediaNode:(id)arg2 currentImageNode:(id)arg3 currentVideoNode:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 

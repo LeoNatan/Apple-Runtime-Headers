@@ -27,10 +27,10 @@
 + (void)performSyncBlock:(CDUnknownBlockType)arg1;
 + (void)performAsyncBlock:(CDUnknownBlockType)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property __weak NSOperation *previousOperation; // @synthesize previousOperation=_previousOperation;
 @property(readonly) NSObject<OS_dispatch_queue> *underlyingQueue; // @synthesize underlyingQueue=_underlyingQueue;
 @property(readonly) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (void)addDependentOperationWithBlock:(CDUnknownBlockType)arg1;

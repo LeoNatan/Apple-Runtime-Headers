@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSData *vol_uuid; // @synthesize vol_uuid=_vol_uuid;
 @property(retain) NSURL *lastSeenURL; // @synthesize lastSeenURL=_lastSeenURL;
 @property(retain) NSDate *lastHitDate; // @synthesize lastHitDate=_lastHitDate;
 @property long long size; // @synthesize size=_size;
 @property unsigned long long documentID; // @synthesize documentID=_documentID;
-- (void).cxx_destruct;
 @property(readonly) NSString *unparsedVolumeUUID;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

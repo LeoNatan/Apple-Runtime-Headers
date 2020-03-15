@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_channelID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
 @property(retain, nonatomic) NSString *itemType; // @synthesize itemType=_itemType;
 @property(retain, nonatomic) NSString *itemID; // @synthesize itemID=_itemID;
-- (void).cxx_destruct;
 - (void)performWithTargetResponder:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithContextData:(id)arg1;
 

@@ -48,6 +48,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (void)setRSSIEstimatorInfo:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool triggered; // @synthesize triggered=_triggered;
 @property(nonatomic) _Bool tempPaired; // @synthesize tempPaired=_tempPaired;
 @property(retain, nonatomic) RPIdentity *rpIdentity; // @synthesize rpIdentity=_rpIdentity;
@@ -77,7 +78,6 @@
 @property(copy, nonatomic) NSData *bluetoothAddress; // @synthesize bluetoothAddress=_bluetoothAddress;
 @property(copy, nonatomic) NSDictionary *advertisementFields; // @synthesize advertisementFields=_advertisementFields;
 @property(copy, nonatomic) NSData *advertisementData; // @synthesize advertisementData=_advertisementData;
-- (void).cxx_destruct;
 - (_Bool)updateRSSI:(long long)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -13,8 +13,8 @@
     EKUIPopUpButton *_repeatPicker;
 }
 
-@property(retain) EKUIPopUpButton *repeatPicker; // @synthesize repeatPicker=_repeatPicker;
 - (void).cxx_destruct;
+@property(retain) EKUIPopUpButton *repeatPicker; // @synthesize repeatPicker=_repeatPicker;
 - (void)repeatChanged:(id)arg1;
 - (void)updateWithChanges:(id)arg1;
 - (id)control;

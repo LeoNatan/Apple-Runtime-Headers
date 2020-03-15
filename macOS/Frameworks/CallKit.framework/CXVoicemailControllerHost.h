@@ -22,13 +22,13 @@
     NSMutableSet *_connections;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *connections; // @synthesize connections=_connections;
 @property(retain, nonatomic) NSMutableDictionary *voicemailUUIDToVoicemailMap; // @synthesize voicemailUUIDToVoicemailMap=_voicemailUUIDToVoicemailMap;
 @property(retain, nonatomic) NSXPCListener *xpcListener; // @synthesize xpcListener=_xpcListener;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <CXVoicemailControllerHostDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)voicemailControllerHostConnection:(id)arg1 requestTransaction:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)voicemailControllerHostConnection:(id)arg1 requestVoicemails:(CDUnknownBlockType)arg2;
 - (void)voicemailControllerHostConnectionInvalidated:(id)arg1;

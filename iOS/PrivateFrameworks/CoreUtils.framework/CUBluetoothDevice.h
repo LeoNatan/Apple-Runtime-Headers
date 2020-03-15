@@ -27,6 +27,7 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool present; // @synthesize present=_present;
 @property(nonatomic) _Bool supportsAACPService; // @synthesize supportsAACPService=_supportsAACPService;
 @property(nonatomic) unsigned int productIdentifier; // @synthesize productIdentifier=_productIdentifier;
@@ -42,7 +43,6 @@
 @property(nonatomic) unsigned int connectedServices; // @synthesize connectedServices=_connectedServices;
 @property(copy, nonatomic) NSString *addressString; // @synthesize addressString=_addressString;
 @property(nonatomic) CDStruct_83abfce7 address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

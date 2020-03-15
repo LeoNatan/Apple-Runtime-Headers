@@ -6,10 +6,12 @@
 
 #import <UIKit/UIView.h>
 
-@class CADisplayLink;
+#import <TVPlayback/TVPMusicNowPlayingBackgroundProvider-Protocol.h>
+
+@class CADisplayLink, NSString, UIImage;
 @protocol TVPMusicNowPlayingSnapshotBackgroundViewDelegate;
 
-@interface TVPMusicNowPlayingSnapshotBackgroundView : UIView
+@interface TVPMusicNowPlayingSnapshotBackgroundView : UIView <TVPMusicNowPlayingBackgroundProvider>
 {
     id <TVPMusicNowPlayingSnapshotBackgroundViewDelegate> _delegate;
     UIView *_targetView;
@@ -17,16 +19,25 @@
     UIView *_currentSnapshot;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *currentSnapshot; // @synthesize currentSnapshot=_currentSnapshot;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(retain, nonatomic) UIView *targetView; // @synthesize targetView=_targetView;
 @property(nonatomic) __weak id <TVPMusicNowPlayingSnapshotBackgroundViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateSnapshot;
 - (void)_updateSnapshot:(id)arg1;
 - (void)didMoveToWindow;
 - (void)_updateSnapshotTimer;
+@property(readonly, nonatomic) UIView *view;
 - (void)dealloc;
+
+// Remaining properties
+@property(readonly, nonatomic, getter=isBlurDisabled) _Bool blurDisabled;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(retain, nonatomic) UIImage *image;
+@property(readonly) Class superclass;
 
 @end
 

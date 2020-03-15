@@ -15,11 +15,11 @@ __attribute__((visibility("hidden")))
     _Bool _inBatchUpdate;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isDimmed) _Bool dimmed; // @synthesize dimmed=_dimmed;
 @property(nonatomic, getter=isInBatchUpdate) _Bool inBatchUpdate; // @synthesize inBatchUpdate=_inBatchUpdate;
 @property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)updateTagsImage;
 - (void)setTags:(const vector_12bd641b *)arg1;
 - (vector_12bd641b)tags;

@@ -16,10 +16,10 @@
 }
 
 + (id)sharedHelper;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) NSMutableArray *blocks; // @synthesize blocks=_blocks;
 @property(nonatomic) unsigned int count; // @synthesize count=_count;
-- (void).cxx_destruct;
 - (void)_performBlocks;
 - (void)_scheduleTimerWithTimeInterval:(double)arg1;
 - (void)_invalidateTimer;

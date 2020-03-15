@@ -16,11 +16,11 @@
     NSMutableString *_cipherText;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableString *cipherText; // @synthesize cipherText=_cipherText;
 @property long long keyLength; // @synthesize keyLength=_keyLength;
 @property(copy, nonatomic) NSString *cipher; // @synthesize cipher=_cipher;
 @property(copy, nonatomic) NSString *hint; // @synthesize hint=_hint;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

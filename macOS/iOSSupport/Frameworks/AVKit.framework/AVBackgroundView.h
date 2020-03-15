@@ -15,10 +15,10 @@
     AVBackdropView *_backdropView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVBackdropView *backdropView; // @synthesize backdropView=_backdropView;
 @property(nonatomic, getter=isCircular) BOOL circular; // @synthesize circular=_circular;
 @property(nonatomic) BOOL automaticallyDrawsRoundedCorners; // @synthesize automaticallyDrawsRoundedCorners=_automaticallyDrawsRoundedCorners;
-- (void).cxx_destruct;
 - (BOOL)_isContainedInOverlappingBackgroundView;
 - (void)_ensureOrRemoveBackdropView;
 - (void)didMoveToWindow;

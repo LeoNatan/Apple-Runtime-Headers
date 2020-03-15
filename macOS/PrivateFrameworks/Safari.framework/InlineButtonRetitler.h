@@ -16,14 +16,14 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)cellClass;
-@property(readonly) NSButton *button; // @synthesize button=_button;
 - (void).cxx_destruct;
+@property(readonly) NSButton *button; // @synthesize button=_button;
+- (void)_cleanUp;
 - (void)resizeToFitTextWithMaximumWidth:(double)arg1;
 - (void)cancelEditing;
 - (void)finishEditing;
 - (BOOL)beginEditingButton:(id)arg1 withTitle:(id)arg2;
 - (id)init;
-- (void)_cleanUp;
 
 @end
 

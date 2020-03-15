@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSURL *cidURL; // @synthesize cidURL=_cidURL;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSURL *cidURL; // @synthesize cidURL=_cidURL;
 @property(readonly, nonatomic) NSString *attachmentIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -22,10 +22,10 @@
 + (_Bool)_anyStringIn:(id)arg1 matches:(id)arg2 acceptUnspecifiedValue:(_Bool)arg3;
 + (_Bool)_string:(id)arg1 matches:(id)arg2 acceptUnspecifiedValue:(_Bool)arg3;
 + (id)assetAttributesWithType:(id)arg1 inputModeLevel:(id)arg2 region:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *region; // @synthesize region=_region;
 @property(readonly, nonatomic) NSString *inputModeLevel; // @synthesize inputModeLevel=_inputModeLevel;
 @property(readonly, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (_Bool)containMatchingAttributes:(id)arg1;
 - (_Bool)containMatchingRegionIn:(id)arg1 shouldLenientlyMatchRegion:(CDUnknownBlockType)arg2;
 - (_Bool)containMatchingInputModeLevelIn:(id)arg1;

@@ -39,6 +39,7 @@
     SidecarStream *_markupStream;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SidecarStream *markupStream; // @synthesize markupStream=_markupStream;
 @property(retain) NSMutableSet *observedAnnotations; // @synthesize observedAnnotations=_observedAnnotations;
 @property(retain) NSMutableSet *observedPageModelControllers; // @synthesize observedPageModelControllers=_observedPageModelControllers;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) SidecarRequest *request; // @synthesize request=_request;
 @property(nonatomic) __weak id <AKSidecarControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL shouldObserveEdits; // @synthesize shouldObserveEdits=_shouldObserveEdits;
-- (void).cxx_destruct;
 - (void)sidecarRequest:(id)arg1 receivedItems:(id)arg2;
 - (void)_sendDictionary:(id)arg1;
 - (void)_selectionChangedOnPageController:(id)arg1;

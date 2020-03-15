@@ -50,6 +50,7 @@
     struct CGSize _cachedTableViewContentSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) _Bool isInInterfaceBuilder; // @synthesize isInInterfaceBuilder=_isInInterfaceBuilder;
 @property(nonatomic) _Bool checkedIsInNotificationUI; // @synthesize checkedIsInNotificationUI=_checkedIsInNotificationUI;
@@ -83,7 +84,6 @@
 @property(retain, nonatomic) NSDictionary *itemDescriptionForIB; // @synthesize itemDescriptionForIB=_itemDescriptionForIB;
 @property(nonatomic) _Bool pagingScroll; // @synthesize pagingScroll=_pagingScroll;
 @property(nonatomic) int index; // @synthesize index=_index;
-- (void).cxx_destruct;
 - (void)prepareInterfaceItemForIB;
 - (void)_performScrollTest:(id)arg1;
 - (void)action:(id)arg1 value:(id)arg2;

@@ -16,8 +16,8 @@
     unsigned long long _minimumThumbnailSize;
 }
 
-@property(retain) QLExtension *extension; // @synthesize extension=_extension;
 - (void).cxx_destruct;
+@property(retain) QLExtension *extension; // @synthesize extension=_extension;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long minimumThumbnailSize;
 @property(readonly) BOOL isThumbnailGeneratorDisabled;

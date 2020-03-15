@@ -15,10 +15,10 @@
     TLKMultilineText *_multilineText;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool automaticUrlification; // @synthesize automaticUrlification=_automaticUrlification;
 @property(retain, nonatomic) TLKMultilineText *multilineText; // @synthesize multilineText=_multilineText;
 @property(nonatomic) unsigned long long prominence; // @synthesize prominence=_prominence;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (_Bool)_usesNonVibrantAppearance;
 - (void)updateAttributedString;

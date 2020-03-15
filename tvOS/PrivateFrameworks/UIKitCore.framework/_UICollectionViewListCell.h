@@ -30,10 +30,10 @@
 }
 
 + (id)_createVisualProviderForCell:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_accessoryManager) UICellAccessoryManager *accessoryManager; // @synthesize accessoryManager=_accessoryManager;
 @property(readonly, nonatomic, getter=_constants) id <UITableConstants> constants; // @synthesize constants=_constants;
 @property(nonatomic) long long selectionStyle; // @synthesize selectionStyle=_selectionStyle;
-- (void).cxx_destruct;
 - (void)_reorderControlDidEndReordering:(id)arg1 cancelled:(_Bool)arg2;
 - (void)_reorderControl:(id)arg1 didMoveToPoint:(struct CGPoint)arg2;
 - (void)_reorderControlDidBeginReordering:(id)arg1;

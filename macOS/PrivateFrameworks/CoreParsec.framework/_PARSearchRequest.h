@@ -52,8 +52,11 @@ __attribute__((visibility("hidden")))
     NSString *_lookupAppBundleId;
     NSString *_lookupHintDomain;
     NSString *_siriLocale;
+    long long _exp;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) long long exp; // @synthesize exp=_exp;
 @property(nonatomic) BOOL seedBuild; // @synthesize seedBuild=_seedBuild;
 @property(nonatomic) BOOL internalBuild; // @synthesize internalBuild=_internalBuild;
 @property(nonatomic) BOOL hsEnabled; // @synthesize hsEnabled=_hsEnabled;
@@ -92,7 +95,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *secretKey; // @synthesize secretKey=_secretKey;
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;
 @property(nonatomic) int queryType; // @synthesize queryType=_queryType;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

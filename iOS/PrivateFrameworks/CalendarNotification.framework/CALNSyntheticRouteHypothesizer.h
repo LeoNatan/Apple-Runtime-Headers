@@ -16,9 +16,9 @@
     CDUnknownBlockType _updateHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
 @property(retain, nonatomic) CADRouteHypothesis *currentCADRouteHypothesis; // @synthesize currentCADRouteHypothesis;
-- (void).cxx_destruct;
 - (void)didPostUINotification:(unsigned long long)arg1;
 - (void)stopHypothesizing;
 - (void)startHypothesizingWithUpdateHandler:(CDUnknownBlockType)arg1;

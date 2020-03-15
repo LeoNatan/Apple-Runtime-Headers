@@ -29,10 +29,10 @@
     id <TVCKBackgroundShelfViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool emptyShelf; // @synthesize emptyShelf=_emptyShelf;
 @property(nonatomic) _Bool relatedContentOnly; // @synthesize relatedContentOnly=_relatedContentOnly;
 @property(nonatomic) __weak id <TVCKBackgroundShelfViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)shelfViewController:(id)arg1 updateRelatedView:(id)arg2;
 - (id)_wrappingView;
 - (void)_configureWithRelatedElement:(id)arg1 relatedView:(id)arg2;

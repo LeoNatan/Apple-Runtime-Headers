@@ -21,9 +21,9 @@
     MTMaterialView *_backgroundView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool propagatesPresentingViewTransform; // @synthesize propagatesPresentingViewTransform=_propagatesPresentingViewTransform;
 @property(nonatomic) __weak MTMaterialView *backgroundView; // @synthesize backgroundView=_backgroundView;
-- (void).cxx_destruct;
 - (void)_configureTransitionContextWithFromView:(id)arg1 toView:(id)arg2 containerView:(id)arg3;
 - (id)_animator;
 - (id)_newAnimator;

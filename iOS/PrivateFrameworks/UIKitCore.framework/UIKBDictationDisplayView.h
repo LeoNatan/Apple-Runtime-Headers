@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIDictationView *_dictationView;
 }
 
-@property(retain, nonatomic) UIDictationView *dictationView; // @synthesize dictationView=_dictationView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIDictationView *dictationView; // @synthesize dictationView=_dictationView;
 - (void)removeFromSuperview;
 - (void)prepareForDisplay;
 - (void)updateForKeyplane:(id)arg1 key:(id)arg2;

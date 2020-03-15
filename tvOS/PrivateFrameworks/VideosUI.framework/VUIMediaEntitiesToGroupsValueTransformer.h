@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)allowsReverseTransformation;
 + (Class)transformedValueClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool performDefaultSort; // @synthesize performDefaultSort=_performDefaultSort;
 @property(copy, nonatomic) CDUnknownBlockType groupsSortComparator; // @synthesize groupsSortComparator=_groupsSortComparator;
 @property(copy, nonatomic) NSString *sortIndexKeyPath; // @synthesize sortIndexKeyPath=_sortIndexKeyPath;
 @property(copy, nonatomic) NSString *identifierKeyPath; // @synthesize identifierKeyPath=_identifierKeyPath;
-- (void).cxx_destruct;
 - (id)transformedValue:(id)arg1;
 - (id)initWithIdentifierKeyPath:(id)arg1;
 - (id)init;

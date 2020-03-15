@@ -19,6 +19,7 @@
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *keyMapping; // @synthesize keyMapping=_keyMapping;
 @property(nonatomic) double totalKeyHeight; // @synthesize totalKeyHeight=_totalKeyHeight;
 @property(nonatomic) double totalKeyWidth; // @synthesize totalKeyWidth=_totalKeyWidth;
@@ -26,7 +27,6 @@
 @property(nonatomic) double minX; // @synthesize minX=_minX;
 @property(retain) NSMutableArray *keys; // @synthesize keys=_keys;
 @property(readonly) struct CGSize size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (id)description;
 - (void)addKey:(id)arg1;
 - (id)init;

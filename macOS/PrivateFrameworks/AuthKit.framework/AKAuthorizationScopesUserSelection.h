@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL makePrivateEmail; // @synthesize makePrivateEmail=_makePrivateEmail;
 @property(copy, nonatomic) AKUserInformation *userInformation; // @synthesize userInformation=_userInformation;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

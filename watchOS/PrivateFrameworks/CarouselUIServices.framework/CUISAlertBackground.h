@@ -17,9 +17,9 @@
     CDUnknownBlockType _didChangeHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didChangeHandler; // @synthesize didChangeHandler=_didChangeHandler;
 @property(retain, nonatomic) id <CUISAlertBackgroundProvider> backgroundProvider; // @synthesize backgroundProvider=_backgroundProvider;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 - (void)backgroundDidChange;

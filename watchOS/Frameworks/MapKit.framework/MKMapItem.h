@@ -79,6 +79,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)ticketForMapsDataString:(id)arg1 name:(id)arg2;
 + (void)_fillOutRequest:(id)arg1 withMapsDataString:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_preloadedTransitInfo) id <MKTransitInfoPreload> preloadedTransitInfo; // @synthesize preloadedTransitInfo=_preloadedTransitInfo;
 @property(copy, nonatomic) NSString *pointOfInterestCategory; // @synthesize pointOfInterestCategory=_pointOfInterestCategory;
 @property(retain, nonatomic) _MKPlaceReservationInfo *reservationInfo; // @synthesize reservationInfo=_reservationInfo;
@@ -90,7 +91,6 @@
 @property(readonly, nonatomic) GEOPlace *place; // @synthesize place=_place;
 @property(readonly, nonatomic) MKMapItemMetadata *metadata; // @synthesize metadata=_metadata;
 @property(nonatomic) _Bool isCurrentLocation; // @synthesize isCurrentLocation=_isCurrentLocation;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_hasCorrectedHomeWorkAddress) _Bool hasCorrectedHomeWorkAddress;
 @property(readonly, nonatomic, getter=_hasCorrectedHomeWorkCoordinate) _Bool hasCorrectedHomeWorkCoordinate;
 @property(readonly, nonatomic, getter=_externalTransitStationCode) NSData *externalTransitStationCode;

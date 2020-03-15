@@ -9,14 +9,14 @@
 #import <InAppMessages/IAMWebProcessDelegate-Protocol.h>
 #import <InAppMessages/WKNavigationDelegate-Protocol.h>
 
-@class IAMWebView, ICIAMApplicationMessage, NSArray, NSString, _WKRemoteObjectInterface;
+@class IAMWebView, ICInAppMessageEntry, NSArray, NSString, _WKRemoteObjectInterface;
 @protocol IAMWebMessageControllerDelegate, IAMWebProcessProxy;
 
 @interface IAMWebMessageController : NSObject <WKNavigationDelegate, IAMWebProcessDelegate>
 {
     id <IAMWebProcessProxy> _webProcessProxy;
     _WKRemoteObjectInterface *_remoteObjectInterface;
-    ICIAMApplicationMessage *_message;
+    ICInAppMessageEntry *_messageEntry;
     _Bool _isGlobalJSOAvailable;
     _Bool _didMainNavigationFinish;
     _Bool _hasSentContentPages;
@@ -26,13 +26,13 @@
     CDUnknownBlockType _loadCompletion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType loadCompletion; // @synthesize loadCompletion=_loadCompletion;
 @property(retain, nonatomic) NSArray *contentPages; // @synthesize contentPages=_contentPages;
 @property(nonatomic) __weak id <IAMWebMessageControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)webProcessJSODidCallClose;
 - (void)webProcessJSODidCallOpen:(id)arg1 options:(id)arg2;
-- (void)webProcessJSODidCallPerformAction:(id)arg1;
+- (void)webProcessJSODidCallPerformAction:(id)arg1 options:(id)arg2;
 - (void)webProcessJSODidReportEvent:(id)arg1;
 - (void)webProcessPlugInBrowserContextControllerGlobalObjectIsAvailableForFrame;
 - (void)webProcessPlugInWillDestroyBrowserContextController;
@@ -41,10 +41,10 @@
 - (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (void)_checkReadyForLoadCompletion;
-- (void)_createJSOContentPages:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (void)_createJSOContentPages:(id)arg1 fromMessageEntry:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (void)_callLoadCompletionWithError:(id)arg1;
 - (void)unregisterExportedObjectInterface;
-- (void)loadMessage:(id)arg1 withWebArchiveURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)loadMessageFromMessageEntry:(id)arg1 withWebArchiveURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) IAMWebView *webView; // @synthesize webView=_webView;
 - (id)init;
 

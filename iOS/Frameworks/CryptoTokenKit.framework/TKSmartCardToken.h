@@ -15,10 +15,10 @@
     id _keepAlive;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id keepAlive; // @synthesize keepAlive=_keepAlive;
 @property(readonly, nonatomic) TKSmartCard *smartCard; // @synthesize smartCard=_smartCard;
 @property(readonly) NSData *AID; // @synthesize AID=_AID;
-- (void).cxx_destruct;
 - (id)initWithSmartCard:(id)arg1 AID:(id)arg2 instanceID:(id)arg3 tokenDriver:(id)arg4;
 
 @end

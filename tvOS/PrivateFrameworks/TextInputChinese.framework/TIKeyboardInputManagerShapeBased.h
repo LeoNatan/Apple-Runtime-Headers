@@ -18,9 +18,9 @@
     _Bool _previousActionWasAutoConfirmation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool previousActionWasAutoConfirmation; // @synthesize previousActionWasAutoConfirmation=_previousActionWasAutoConfirmation;
 @property(retain, nonatomic) NSString *remainingInput; // @synthesize remainingInput=_remainingInput;
-- (void).cxx_destruct;
 - (id)searchStringForMarkedText;
 - (id)formattedSearchString;
 - (id)markedTextWithAutoconvertedCandidates;

@@ -28,12 +28,12 @@
 
 + (Class)topicIdType;
 + (Class)channelIdType;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool fromPersonalizeNews; // @synthesize fromPersonalizeNews=_fromPersonalizeNews;
 @property(retain, nonatomic) NSMutableArray *topicIds; // @synthesize topicIds=_topicIds;
 @property(retain, nonatomic) NSMutableArray *channelIds; // @synthesize channelIds=_channelIds;
 @property(nonatomic) int totalTopicSelections; // @synthesize totalTopicSelections=_totalTopicSelections;
 @property(nonatomic) int totalChannelSelections; // @synthesize totalChannelSelections=_totalChannelSelections;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

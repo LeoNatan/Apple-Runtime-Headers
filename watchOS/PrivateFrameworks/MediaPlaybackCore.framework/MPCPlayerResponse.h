@@ -19,12 +19,12 @@
 }
 
 + (id)builderProtocol;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView<MPCVideoView> *videoView; // @synthesize videoView=_videoView;
 @property(retain, nonatomic) MPCPlayerPath *playerPath; // @synthesize playerPath=_playerPath;
 @property(readonly, nonatomic) MPCMediaRemoteController *controller; // @synthesize controller=_controller;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
 @property(readonly, nonatomic) MPCPlayerResponseTracklist *tracklist; // @synthesize tracklist=_tracklist;
-- (void).cxx_destruct;
 - (id)_commandRequestForMediaRemoteCommand:(unsigned int)arg1;
 - (id)_stateDumpObject;
 - (id)stop;

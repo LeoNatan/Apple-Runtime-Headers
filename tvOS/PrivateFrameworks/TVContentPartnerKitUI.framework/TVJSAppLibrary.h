@@ -17,8 +17,8 @@
     NSArray *_installedAppInfo;
 }
 
-@property(copy, nonatomic) NSArray *installedAppInfo; // @synthesize installedAppInfo=_installedAppInfo;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *installedAppInfo; // @synthesize installedAppInfo=_installedAppInfo;
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)applicationsDidInstall:(id)arg1;
 - (void)_notifyJSAppInfoDidChange;

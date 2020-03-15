@@ -16,9 +16,9 @@
     struct CGRect _typographicBounds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect typographicBounds; // @synthesize typographicBounds=_typographicBounds;
 @property(readonly, nonatomic) SXTextView *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 - (struct CGRect)absoluteTextViewFrame;
 - (id)accessibilityContextualLabelForTextView:(id)arg1;
 - (id)accessibilityCustomRotorMembershipForTextView:(id)arg1;

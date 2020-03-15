@@ -26,11 +26,11 @@
 }
 
 + (id)makeFeatureJSObjectForFeature:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak IKViewElement *menuBarElement; // @synthesize menuBarElement=_menuBarElement;
 @property(nonatomic) __weak id <IKAppMenuBarDocumentDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSString *featureName; // @synthesize featureName=_featureName;
 @property(readonly, nonatomic) __weak IKAppContext *appContext; // @synthesize appContext=_appContext;
-- (void).cxx_destruct;
 - (void)_evaluateDelegateBlockSync:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) IKViewElement *selectedMenuItem;
 - (id)_menuItemElementForEntityUniqueIdentifier:(id)arg1;

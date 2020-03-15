@@ -37,6 +37,7 @@
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) double timeFinish; // @synthesize timeFinish=_timeFinish;
 @property(nonatomic) double timeTransfer; // @synthesize timeTransfer=_timeTransfer;
@@ -44,7 +45,6 @@
 @property(nonatomic) double timeStart; // @synthesize timeStart=_timeStart;
 @property(readonly, nonatomic) id <SidecarMessage> message; // @synthesize message=_message;
 @property __weak id <SidecarRequestDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)accept;
 - (id)sessionForDevice:(id)arg1;
 - (void)sidecarServiceTerminate;

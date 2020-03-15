@@ -16,9 +16,9 @@
     NSMutableDictionary *_positions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *positions; // @synthesize positions=_positions;
 @property(readonly, nonatomic) NSMutableDictionary *widths; // @synthesize widths=_widths;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)setPosition:(double)arg1 forIdentifier:(id)arg2;
 - (void)setWidth:(double)arg1 forIdentifier:(id)arg2;

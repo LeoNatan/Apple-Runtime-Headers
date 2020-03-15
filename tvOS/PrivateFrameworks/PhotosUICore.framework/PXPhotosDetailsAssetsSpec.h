@@ -24,6 +24,7 @@
 }
 
 + (_Bool)shouldUsePhoneLayoutWithTraitCollection:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXWidgetSpec *_widgetSpec; // @synthesize _widgetSpec=__widgetSpec;
 @property(readonly, nonatomic) unsigned long long detailsOptions; // @synthesize detailsOptions=_detailsOptions;
 @property(readonly, nonatomic) long long gridContentMode; // @synthesize gridContentMode=_gridContentMode;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) long long editorialNumberOfColumns; // @synthesize editorialNumberOfColumns=_editorialNumberOfColumns;
 @property(readonly, nonatomic) _Bool shouldShowTitle; // @synthesize shouldShowTitle=_shouldShowTitle;
 @property(readonly, nonatomic) struct UIEdgeInsets contentGuideInsets; // @synthesize contentGuideInsets=_contentGuideInsets;
-- (void).cxx_destruct;
 - (void)_computeGridWithExtendedTraitCollection:(id)arg1;
 - (void)_computeEditorialWithExtendedTraitCollection:(id)arg1;
 - (void)_computeSpecWithExtendedTraitCollection:(id)arg1;

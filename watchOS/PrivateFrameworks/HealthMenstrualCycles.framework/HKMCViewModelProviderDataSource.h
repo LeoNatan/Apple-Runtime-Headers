@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     NSMutableIndexSet *_canceledDayIndexes;
 }
 
-@property(nonatomic) __weak id <HKMCViewModelProviderDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <HKMCViewModelProviderDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)dealloc;
 - (void)_startObservingDaySummaryUpdates;
 - (void)cancelFetchForDaySummariesInDayIndexRange:(CDStruct_800a618e)arg1;

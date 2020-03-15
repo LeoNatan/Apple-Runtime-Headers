@@ -20,12 +20,12 @@
 
 + (id)earliestAllowedRawLocationDateWithReferenceDate:(id)arg1;
 + (id)purgeTypeToString:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RTXPCActivityManager *xpcActivityManager; // @synthesize xpcActivityManager=_xpcActivityManager;
 @property(retain, nonatomic) NSArray *purgers; // @synthesize purgers=_purgers;
 @property(retain, nonatomic) RTDarwinNotificationHelper *notificationHelper; // @synthesize notificationHelper=_notificationHelper;
 @property(nonatomic) long long pressureState; // @synthesize pressureState=_pressureState;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *memoryWarningDispatchSource; // @synthesize memoryWarningDispatchSource=_memoryWarningDispatchSource;
-- (void).cxx_destruct;
 - (void)_handleLanguageChangeNotification;
 - (void)handleLanguageChangeNotification;
 - (void)_purgeWithType:(long long)arg1 referenceDate:(id)arg2 handler:(CDUnknownBlockType)arg3;

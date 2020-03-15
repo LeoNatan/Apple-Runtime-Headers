@@ -16,10 +16,10 @@
 }
 
 + (Class)layoutAccessibilityClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *pagingAttributes; // @synthesize pagingAttributes=_pagingAttributes;
 @property(nonatomic) long long pagingType; // @synthesize pagingType=_pagingType;
 @property(retain, nonatomic) NSIndexPath *selectedIndexPath; // @synthesize selectedIndexPath=_selectedIndexPath;
-- (void).cxx_destruct;
 - (void)applyParallaxToAttributes:(id)arg1;
 - (void)_applyTransformForAttributes:(id)arg1;
 - (void)_updateOffScreenAttributes:(id)arg1;

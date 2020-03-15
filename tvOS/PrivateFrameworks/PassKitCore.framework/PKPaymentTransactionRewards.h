@@ -19,8 +19,8 @@
 
 + (id)_rewardsItemsSetFromJsonString:(id)arg1;
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSArray *rewardsItems; // @synthesize rewardsItems=_rewardsItems;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *rewardsItems; // @synthesize rewardsItems=_rewardsItems;
 - (id)description;
 - (_Bool)isEqualToRewards:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
@@ -29,7 +29,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)itemType;
-- (id)recordTypesAndNames;
+- (id)recordTypesAndNamesIncludingServerData:(_Bool)arg1;
 - (void)encodeServerAndDeviceDataWithCloudStoreCoder:(id)arg1;
 - (void)encodeWithCloudStoreCoder:(id)arg1;
 - (id)initWithCloudStoreCoder:(id)arg1;

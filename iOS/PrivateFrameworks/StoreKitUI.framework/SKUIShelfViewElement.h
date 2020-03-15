@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _shelfItemViewElementValidator;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType shelfItemViewElementValidator; // @synthesize shelfItemViewElementValidator=_shelfItemViewElementValidator;
 @property(readonly, nonatomic) NSString *slideshowTitle; // @synthesize slideshowTitle=_slideshowTitle;
 @property(readonly, nonatomic) long long numberOfRows; // @synthesize numberOfRows=_numberOfRows;
-- (void).cxx_destruct;
 - (long long)pageComponentType;
 - (void)enumerateChildrenUsingBlock:(CDUnknownBlockType)arg1;
 - (id)applyUpdatesWithElement:(id)arg1;

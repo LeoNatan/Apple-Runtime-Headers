@@ -14,9 +14,9 @@
     NSArray *_counterNames;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *counterNames; // @synthesize counterNames=_counterNames;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithMetricName:(id)arg1 counterNames:(id)arg2;
 
 @end

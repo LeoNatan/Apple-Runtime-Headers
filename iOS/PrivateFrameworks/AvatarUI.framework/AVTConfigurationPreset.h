@@ -13,10 +13,10 @@
     CDStruct_597dd055 _settingKind;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isDefaultPreset) _Bool defaultPreset; // @synthesize defaultPreset=_defaultPreset;
 @property(readonly, nonatomic) id preset; // @synthesize preset=_preset;
 @property(readonly, nonatomic) CDStruct_597dd055 settingKind; // @synthesize settingKind=_settingKind;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

@@ -20,12 +20,12 @@
     NSString *_summary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *summary; // @synthesize summary=_summary;
 @property(retain, nonatomic) NSURL *calendarURL; // @synthesize calendarURL=_calendarURL;
 @property(retain, nonatomic) NSSet *shareesToSet; // @synthesize shareesToSet=_shareesToSet;
 @property(retain, nonatomic) NSSet *shareesToRemove; // @synthesize shareesToRemove=_shareesToRemove;
 @property(retain, nonatomic) NSMutableSet *invalidSharees; // @synthesize invalidSharees=_invalidSharees;
-- (void).cxx_destruct;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (id)generateModificationMessageBody;
 - (void)startTaskGroup;

@@ -31,9 +31,9 @@
 + (id)rangeWithRange:(id)arg1;
 + (id)rangeWithStartDate:(id)arg1 duration:(double)arg2;
 + (id)rangeWithStartDate:(id)arg1 endDate:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)midnightsForRangeInTimeZoneString:(id)arg1;
 - (id)_calculateMidnightsInCalendar:(id)arg1;
 - (id)midpoint;

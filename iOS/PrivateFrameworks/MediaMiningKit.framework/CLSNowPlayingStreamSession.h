@@ -16,10 +16,10 @@
 }
 
 + (id)playbackStreamSessionDateSortDescriptors;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *events; // @synthesize events=_events;
 @property(readonly, nonatomic) NSDate *localStartDate; // @synthesize localStartDate=_localStartDate;
 @property(readonly, nonatomic) NSDate *localEndDate; // @synthesize localEndDate=_localEndDate;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)initWithDataCluster:(id)arg1;

@@ -28,6 +28,7 @@
     NSMutableSet *_exposedGalleryItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *exposedGalleryItems; // @synthesize exposedGalleryItems=_exposedGalleryItems;
 @property(retain, nonatomic) SXMosaicGalleryLayouter *galleryLayouter; // @synthesize galleryLayouter=_galleryLayouter;
 @property(nonatomic) _Bool loadedAtleastOneImage; // @synthesize loadedAtleastOneImage=_loadedAtleastOneImage;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) UIView *galleryView; // @synthesize galleryView=_galleryView;
 @property(readonly, nonatomic) SXFullscreenCanvasController *fullScreenCanvasController; // @synthesize fullScreenCanvasController=_fullScreenCanvasController;
 @property(readonly, nonatomic) id <SXGalleryItemImageViewFactory> imageViewFactory; // @synthesize imageViewFactory=_imageViewFactory;
-- (void).cxx_destruct;
 - (_Bool)allowHierarchyRemoval;
 - (void)willSubmitMediaExposureEvent:(id)arg1;
 - (_Bool)shouldSubmitMediaExposureEventForExposedBounds:(struct CGRect)arg1;

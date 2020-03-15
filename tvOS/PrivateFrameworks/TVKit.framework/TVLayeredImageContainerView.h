@@ -15,10 +15,10 @@
     UIView *_overlayView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isLayeredImageLoaded) _Bool layeredImageLoaded; // @synthesize layeredImageLoaded=_layeredImageLoaded;
 @property(retain, nonatomic) TVLayeredImageProxy *layeredImageProxy; // @synthesize layeredImageProxy=_layeredImageProxy;
 @property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
-- (void).cxx_destruct;
 - (void)_loadLayeredImage;
 @property(readonly, nonatomic) _UIStackedImageContainerLayer *layeredImageContainerLayer;
 - (void)setPressed:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

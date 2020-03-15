@@ -15,9 +15,11 @@ __attribute__((visibility("hidden")))
     id _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak AMSURLSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
+- (void)forwardInvocation:(id)arg1;
+- (id)methodSignatureForSelector:(SEL)arg1;
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (void)invalidate;

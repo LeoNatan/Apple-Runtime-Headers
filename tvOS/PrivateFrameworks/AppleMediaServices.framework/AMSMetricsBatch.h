@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSArray *_skippedEvents;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *skippedEvents; // @synthesize skippedEvents=_skippedEvents;
 @property(retain, nonatomic) NSURL *reportURL; // @synthesize reportURL=_reportURL;
 @property(retain, nonatomic) NSArray *events; // @synthesize events=_events;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool containsLoadURL; // @synthesize containsLoadURL=_containsLoadURL;
 @property(retain, nonatomic) NSString *canaryIdentifier; // @synthesize canaryIdentifier=_canaryIdentifier;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 
 @end
 

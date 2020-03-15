@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)configureJSContext:(id)arg1;
-@property(retain, nonatomic) CSSubscriptionManager *subscriptionManager; // @synthesize subscriptionManager=_subscriptionManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CSSubscriptionManager *subscriptionManager; // @synthesize subscriptionManager=_subscriptionManager;
 - (void)unregisterAllSubscriptions;
 - (void)unregisterSubscription:(id)arg1;
 - (void)registerSubscription:(id)arg1:(id)arg2;

@@ -14,8 +14,8 @@
     NUCGImageSourceNode *_sourceNode;
 }
 
-@property(retain) NUCGImageSourceNode *sourceNode; // @synthesize sourceNode=_sourceNode;
 - (void).cxx_destruct;
+@property(retain) NUCGImageSourceNode *sourceNode; // @synthesize sourceNode=_sourceNode;
 - (id)_evaluateImageWithSourceOptions:(id)arg1 subsampleFactor:(long long *)arg2 error:(out id *)arg3;
 - (_Bool)canPropagateOriginalAuxiliaryData;
 - (id)_evaluateAuxiliaryImageForType:(long long)arg1 error:(out id *)arg2;

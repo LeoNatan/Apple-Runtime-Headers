@@ -15,10 +15,10 @@
     MPModelKind *_itemKind;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPModelKind *itemKind; // @synthesize itemKind=_itemKind;
 @property(retain, nonatomic) MPMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
 @property(retain, nonatomic) MPModelObject *modelObject; // @synthesize modelObject=_modelObject;
-- (void).cxx_destruct;
 - (id)newOperationWithResponseHandler:(CDUnknownBlockType)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

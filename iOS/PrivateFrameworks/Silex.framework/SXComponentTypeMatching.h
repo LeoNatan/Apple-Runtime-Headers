@@ -13,8 +13,8 @@
     NSMutableArray *_descriptions;
 }
 
-@property(readonly, nonatomic) NSMutableArray *descriptions; // @synthesize descriptions=_descriptions;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableArray *descriptions; // @synthesize descriptions=_descriptions;
 - (void)removeDescription:(id)arg1;
 - (void)addDescription:(id)arg1;
 - (id)match:(id)arg1;

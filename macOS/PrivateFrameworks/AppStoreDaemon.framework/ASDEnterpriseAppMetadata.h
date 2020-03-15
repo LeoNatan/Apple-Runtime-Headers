@@ -19,9 +19,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSURL *manifestURL; // @synthesize manifestURL=_manifestURL;
 @property BOOL hideUserPrompts; // @synthesize hideUserPrompts=_hideUserPrompts;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

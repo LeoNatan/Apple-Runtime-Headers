@@ -20,9 +20,9 @@
 
 + (unsigned long long)scheduledTypeForTriggerType:(unsigned long long)arg1;
 + (id)scheduledObjectForScheduleable:(id)arg1 trigger:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) MTTrigger *trigger; // @synthesize trigger=_trigger;
 @property(copy, nonatomic) id <MTScheduleable> scheduleable; // @synthesize scheduleable=_scheduleable;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqualToScheduledObject:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

@@ -14,9 +14,9 @@
     double _uncertaintyThreshold;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double uncertaintyThreshold; // @synthesize uncertaintyThreshold=_uncertaintyThreshold;
 @property(readonly, nonatomic) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDateInterval:(id)arg1 uncertaintyThreshold:(double)arg2;
 - (id)init;

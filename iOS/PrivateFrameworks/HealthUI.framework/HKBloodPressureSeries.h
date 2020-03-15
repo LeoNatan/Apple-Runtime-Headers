@@ -20,9 +20,9 @@
 + (struct CGRect)_rectCenteredAt:(struct CGPoint)arg1 width:(double)arg2;
 + (void)_drawSystolicSymbolWithColor:(id)arg1 atLocation:(struct CGPoint)arg2 width:(double)arg3 context:(struct CGContext *)arg4;
 + (id)defaultSeriesWithSystolicColor:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKBloodPressureSeriesPresentationStyle *unselectedPresentationStyle; // @synthesize unselectedPresentationStyle=_unselectedPresentationStyle;
 @property(retain, nonatomic) HKBloodPressureSeriesPresentationStyle *selectedPresentationStyle; // @synthesize selectedPresentationStyle=_selectedPresentationStyle;
-- (void).cxx_destruct;
 - (_Bool)blockCoordinate:(id)arg1 greaterThan:(id)arg2;
 - (_Bool)blockCoordinate:(id)arg1 lessThan:(id)arg2;
 - (_Bool)blockCoordinateIsVisibleInsideOfChartRect:(struct CGRect)arg1 blockCoordinate:(id)arg2;

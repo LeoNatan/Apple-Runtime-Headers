@@ -27,6 +27,7 @@
 + (id)defaultZoneWithRecords:(id)arg1 staticRecordNames:(id)arg2 staticRecordNameMigrationBlacklist:(id)arg3 shouldUseSecureContainer:(_Bool)arg4;
 + (id)zoneWithClientName:(id)arg1 serverName:(id)arg2 records:(id)arg3 staticRecordNames:(id)arg4 shouldEncryptRecordNames:(_Bool)arg5 shouldUseZoneWidePCS:(_Bool)arg6 shouldUseSecureContainer:(_Bool)arg7;
 + (id)zoneWithClientName:(id)arg1 serverName:(id)arg2 records:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldUseSecureContainer; // @synthesize shouldUseSecureContainer=_shouldUseSecureContainer;
 @property(readonly, nonatomic) _Bool shouldUseZoneWidePCS; // @synthesize shouldUseZoneWidePCS=_shouldUseZoneWidePCS;
 @property(readonly, nonatomic) _Bool supportsRecordFieldEncryption; // @synthesize supportsRecordFieldEncryption=_supportsRecordFieldEncryption;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) _Bool isDefaultZone; // @synthesize isDefaultZone=_isDefaultZone;
 @property(readonly, copy, nonatomic) NSString *serverZoneName; // @synthesize serverZoneName=_serverZoneName;
 @property(readonly, copy, nonatomic) NSString *clientZoneName; // @synthesize clientZoneName=_clientZoneName;
-- (void).cxx_destruct;
 - (void)enumerateRecordSchemasWithBlock:(CDUnknownBlockType)arg1;
 - (_Bool)shouldDecryptServerRecordName:(id)arg1;
 - (_Bool)shouldEncryptClientRecordName:(id)arg1;

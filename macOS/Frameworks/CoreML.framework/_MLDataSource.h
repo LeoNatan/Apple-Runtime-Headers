@@ -15,8 +15,8 @@
     NSDictionary *_dataTensorDictionary;
 }
 
-@property(retain, nonatomic) NSDictionary *dataTensorDictionary; // @synthesize dataTensorDictionary=_dataTensorDictionary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *dataTensorDictionary; // @synthesize dataTensorDictionary=_dataTensorDictionary;
 - (unsigned long long)numberOfDataPoints;
 - (id)dataPointAtIndex:(unsigned long long)arg1 error:(id *)arg2;
 - (id)initWithMLFeatureProvider:(id)arg1 forPrediction:(BOOL)arg2 neuralNetworkEngine:(id)arg3 error:(id *)arg4;

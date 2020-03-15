@@ -14,8 +14,8 @@
 }
 
 + (id)prototypes;
-@property(retain, nonatomic) NSRegularExpression *regularExpression; // @synthesize regularExpression=_regularExpression;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSRegularExpression *regularExpression; // @synthesize regularExpression=_regularExpression;
 
 @end
 

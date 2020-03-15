@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
     UISwipeGestureRecognizer *_rightSwipeGesture;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) UISwipeGestureRecognizer *rightSwipeGesture; // @synthesize rightSwipeGesture=_rightSwipeGesture;
 @property(readonly, retain, nonatomic) UISwipeGestureRecognizer *leftSwipeGesture; // @synthesize leftSwipeGesture=_leftSwipeGesture;
 @property(readonly, retain, nonatomic) UITapGestureRecognizer *rightTapGesture; // @synthesize rightTapGesture=_rightTapGesture;
@@ -55,7 +56,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak UIView *gestureTargetView; // @synthesize gestureTargetView=_gestureTargetView;
 @property(nonatomic) __weak id <_TVTumblerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <_TVTumblerViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_markItemViewForReuse:(id)arg1;
 - (void)_markItemViewForInUse:(id)arg1 forIndex:(long long)arg2;
 - (id)_itemViewAtIndex:(long long)arg1;

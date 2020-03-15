@@ -18,11 +18,11 @@
 }
 
 + (id)contextWithConsumer:(id)arg1 text:(id)arg2 operations:(id)arg3 searchQueries:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *searchQueries; // @synthesize searchQueries=_searchQueries;
 @property(readonly, nonatomic) NSMutableSet *operations; // @synthesize operations=_operations;
 @property(readonly, nonatomic) NSString *text; // @synthesize text=_text;
 @property(readonly, nonatomic) id <MFContactsSearchConsumer> consumer; // @synthesize consumer=_consumer;
-- (void).cxx_destruct;
 - (_Bool)consumerRespondsToCallbacks;
 - (_Bool)done;
 

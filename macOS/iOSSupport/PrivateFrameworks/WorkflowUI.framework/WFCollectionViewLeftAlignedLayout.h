@@ -14,9 +14,9 @@
     NSMutableDictionary *_sectionInsetCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *sectionInsetCache; // @synthesize sectionInsetCache=_sectionInsetCache;
 @property(retain, nonatomic) NSMutableDictionary *frameCache; // @synthesize frameCache=_frameCache;
-- (void).cxx_destruct;
 - (void)invalidateLayout;
 - (id)leftAlignedAttributesForAttribute:(id)arg1 sectionInset:(struct UIEdgeInsets)arg2;
 - (struct UIEdgeInsets)sectionInsetForItemAtIndex:(long long)arg1;

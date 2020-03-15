@@ -14,9 +14,9 @@
     NSButton *_addButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSButton *_addButton; // @synthesize _addButton;
 @property(nonatomic) __weak NSButton *_cancelButton; // @synthesize _cancelButton;
-- (void).cxx_destruct;
 - (void)cancelAction:(id)arg1;
 - (void)addAction:(id)arg1;
 

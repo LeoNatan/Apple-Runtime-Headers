@@ -14,9 +14,9 @@
     UIButton *_noNumberButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *noNumberButton; // @synthesize noNumberButton=_noNumberButton;
 @property(nonatomic) int context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)setButtonsEnabled:(_Bool)arg1;
 - (_Bool)isBuddyiPad;
 - (void)layoutSubviews;

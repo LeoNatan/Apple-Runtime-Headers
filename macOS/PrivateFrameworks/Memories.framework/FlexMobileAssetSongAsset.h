@@ -14,9 +14,9 @@
     NSString *_mobileAssetPropertyType;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *mobileAssetPropertyType; // @synthesize mobileAssetPropertyType=_mobileAssetPropertyType;
 @property(readonly) NSString *mobileAssetTypeIdentifier; // @synthesize mobileAssetTypeIdentifier=_mobileAssetTypeIdentifier;
-- (void).cxx_destruct;
 - (long long)compatibilityVersionForAssetLocation:(unsigned long long)arg1;
 - (long long)contentVersionForAssetLocation:(unsigned long long)arg1;
 - (id)_assetCachedMetadata;

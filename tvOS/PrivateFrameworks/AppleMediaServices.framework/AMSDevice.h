@@ -44,6 +44,12 @@
 + (id)deviceGUID;
 + (id)compatibleProductType;
 + (id)buildVersion;
++ (void)stopListeningForDeviceLanguageChange;
++ (void)startListeningForDeviceLanguageChangeWithBagContract:(id)arg1;
++ (id)language;
++ (_Bool)_shouldPostOffersUpdatedNotification:(id)arg1 oldOffers:(id)arg2;
++ (_Bool)_setRawDeviceOffers:(id)arg1 offersStore:(id)arg2;
++ (void)_setDeviceEligibilityKeepingExistingDeviceOffers:(id)arg1 offersStore:(id)arg2;
 + (void)_performAuth;
 + (id)_notificationIdFromFollowUpId:(id)arg1 account:(id)arg2;
 + (id)_followUpItemWithIdentifier:(id)arg1 account:(id)arg2 priority:(long long)arg3 bag:(id)arg4;
@@ -56,10 +62,11 @@
 + (_Bool)shouldPresentSetupOffersForAccount:(id)arg1 issues:(long long *)arg2;
 + (_Bool)shouldPresentSetupOffersForAccount:(id)arg1;
 + (void)setDeviceOffersCheckEncodingForRequestParameters:(id)arg1;
++ (void)saveDeviceOffers:(id)arg1;
 + (void)saveDeviceOfferEligibility:(id)arg1;
 + (_Bool)saveDeviceOffersForAccount:(id)arg1 response:(id)arg2 logKey:(id)arg3;
 + (void)removeDeviceOfferWithIdentifier:(id)arg1 account:(id)arg2 bag:(id)arg3 logKey:(id)arg4;
-+ (void)registerCompanionWithSerialNumber:(id)arg1;
++ (void)registerCompanionWithSerialNumber:(id)arg1 bag:(id)arg2;
 + (_Bool)postDeviceOfferFollowUpWithIdentifier:(id)arg1 account:(id)arg2 priority:(long long)arg3 bag:(id)arg4 logKey:(id)arg5;
 + (_Bool)postAllDeviceOfferFollowUpsForAccount:(id)arg1 priority:(long long)arg2 bag:(id)arg3 logKey:(id)arg4;
 + (id)deviceOffersForType:(unsigned long long)arg1;
@@ -69,11 +76,9 @@
 + (_Bool)expressedIntent;
 + (id)deviceOffers;
 + (void)removeDeviceOfferWithIdentifier:(id)arg1 account:(id)arg2 bagContract:(id)arg3 logKey:(id)arg4;
++ (void)registerCompanionWithSerialNumber:(id)arg1;
 + (_Bool)postDeviceOfferFollowUpWithIdentifier:(id)arg1 account:(id)arg2 priority:(long long)arg3 bagContract:(id)arg4 logKey:(id)arg5;
 + (_Bool)postAllDeviceOfferFollowUpsForAccount:(id)arg1 priority:(long long)arg2 bagContract:(id)arg3 logKey:(id)arg4;
-+ (void)stopListeningForDeviceLanguageChange;
-+ (void)startListeningForDeviceLanguageChangeWithBagContract:(id)arg1;
-+ (id)language;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

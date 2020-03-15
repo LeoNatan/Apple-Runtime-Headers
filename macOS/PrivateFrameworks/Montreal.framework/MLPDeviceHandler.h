@@ -16,19 +16,19 @@
     unsigned long long _dataLayout;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long dataLayout; // @synthesize dataLayout=_dataLayout;
 @property(readonly) id <MTLCommandQueue> commandQueue; // @synthesize commandQueue=_commandQueue;
 @property(readonly) id <MTLDevice> device; // @synthesize device=_device;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (float)uniformRandWithParamA:(float)arg1 paramB:(float)arg2;
 - (id)matrixToVector:(id)arg1;
 - (id)vectorWithLength:(unsigned long long)arg1 cmdBuf:(id)arg2;
-- (id)matrixFromImages:(struct NSArray *)arg1 i2mKernel:(id)arg2 cmdBuf:(id)arg3;
-- (id)tempMatrixFromImages:(struct NSArray *)arg1 i2mKernel:(id)arg2 cmdBuf:(id)arg3;
+- (id)matrixFromImages:(id)arg1 i2mKernel:(id)arg2 cmdBuf:(id)arg3;
+- (id)tempMatrixFromImages:(id)arg1 i2mKernel:(id)arg2 cmdBuf:(id)arg3;
 - (id)matrixWithRows:(unsigned long long)arg1 columns:(unsigned long long)arg2 cmdBuf:(id)arg3;
 - (id)tempMatrixWithRows:(unsigned long long)arg1 columns:(unsigned long long)arg2 cmdBuf:(id)arg3;
-- (struct NSArray *)imageBatchFromMatrix:(id)arg1 m2iKernel:(id)arg2 cmdBuf:(id)arg3 width:(unsigned long long)arg4 height:(unsigned long long)arg5 channels:(unsigned long long)arg6;
+- (id)imageBatchFromMatrix:(id)arg1 m2iKernel:(id)arg2 cmdBuf:(id)arg3 width:(unsigned long long)arg4 height:(unsigned long long)arg5 channels:(unsigned long long)arg6;
 - (id)imageFromMatrix:(id)arg1 m2iKernel:(id)arg2 cmdBuf:(id)arg3 width:(unsigned long long)arg4 height:(unsigned long long)arg5 featureChannels:(unsigned long long)arg6;
 - (id)imageFromData:(id)arg1 width:(unsigned long long)arg2 height:(unsigned long long)arg3 featureChannels:(unsigned long long)arg4;
 - (void)importDataFromGPU:(id)arg1 cmdBuf:(id)arg2;

@@ -12,9 +12,9 @@
     UIViewController *_userDefaultsViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *userDefaultsViewController; // @synthesize userDefaultsViewController=_userDefaultsViewController;
 @property(retain, nonatomic) UIViewController *navigationController; // @synthesize navigationController=_navigationController;
-- (void).cxx_destruct;
 - (void)_loadNavigationController;
 - (void)viewDidLoad;
 - (id)initWithUserDefaultsViewController:(id)arg1;

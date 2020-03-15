@@ -54,8 +54,8 @@
 + (id)NatureEmoji;
 + (id)PeopleEmoji;
 + (id)PrepopulatedEmoji;
-@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (id)emojiTokensForLocaleData:(id)arg1;
 @property(readonly, nonatomic) NSString *shortLocalizedName;
 @property(readonly, nonatomic) NSString *localizedName;

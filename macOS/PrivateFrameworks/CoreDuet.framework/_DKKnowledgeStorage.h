@@ -36,12 +36,12 @@
 + (id)storageWithDirectory:(id)arg1 readOnly:(BOOL)arg2 localOnly:(BOOL)arg3;
 + (id)storageWithDirectory:(id)arg1 readOnly:(BOOL)arg2;
 + (id)storeWithDirectory:(id)arg1 readOnly:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _DKPreferences *defaults; // @synthesize defaults=_defaults;
 @property(readonly, nonatomic) _DKCoreDataStorage *storage; // @synthesize storage=_storage;
 @property(readonly, nonatomic) BOOL localOnly; // @synthesize localOnly=_localOnly;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *executionQueue; // @synthesize executionQueue=_executionQueue;
 @property(retain) _DKTombstonePolicy *tombstonePolicy; // @synthesize tombstonePolicy=_tombstonePolicy;
-- (void).cxx_destruct;
 - (id)syncStorageAssertion;
 - (id)sourceDeviceIdentity;
 - (void)configureDeviceUUID;

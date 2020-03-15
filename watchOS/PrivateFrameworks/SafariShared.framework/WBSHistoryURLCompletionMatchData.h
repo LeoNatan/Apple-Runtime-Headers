@@ -21,7 +21,7 @@
 @property(readonly, nonatomic) _Bool lastVisitWasFailure;
 @property(readonly, nonatomic) double lastVisitedTimeInterval;
 @property(readonly, nonatomic) _Bool containsBookmark;
-- (float)topSitesScoreForPageTitleAtIndex:(unsigned int)arg1 atTime:(double)arg2;
+- (float)topSitesScoreForPageTitleAtTime:(double)arg1;
 - (float)topSitesScoreForURLStringAtIndex:(unsigned int)arg1 atTime:(double)arg2;
 - (_Bool)matchesAutocompleteTrigger:(id)arg1;
 - (void)enumeratePageTitlesUsingBlock:(CDUnknownBlockType)arg1;
@@ -31,8 +31,9 @@
 - (id)userVisibleURLStringForPageTitleAtIndex:(unsigned int)arg1;
 - (id)userVisibleURLStringAtIndex:(unsigned int)arg1;
 @property(readonly, nonatomic) NSString *originalURLString;
+@property(readonly, nonatomic) _Bool shouldPreload;
 - (id)matchDataByMergingWithMatchData:(id)arg1;
--     // Error parsing type: @12@0:4^{HistoryURLCompletionItem={atomic<unsigned int>=AI}iii{vector<WTF::RefPtr<SafariShared::HistoryURLCompletionItem, WTF::DumbPtrTraits<SafariShared::HistoryURLCompletionItem> >, std::__1::allocator<WTF::RefPtr<SafariShared::HistoryURLCompletionItem, WTF::DumbPtrTraits<SafariShared::HistoryURLCompletionItem> > > >=^{RefPtr<SafariShared::HistoryURLCompletionItem, WTF::DumbPtrTraits<SafariShared::HistoryURLCompletionItem> >}^{RefPtr<SafariShared::HistoryURLCompletionItem, WTF::DumbPtrTraits<SafariShared::HistoryURLCompletionItem> >}{__compressed_pair<WTF::RefPtr<SafariShared::HistoryURLCompletionItem, WTF::DumbPtrTraits<SafariShared::HistoryURLCompletionItem> > *, std::__1::allocator<WTF::RefPtr<SafariShared::HistoryURLCompletionItem, WTF::DumbPtrTraits<SafariShared::HistoryURLCompletionItem> > > >=^{RefPtr<SafariShared::HistoryURLCompletionItem, WTF::DumbPtrTraits<SafariShared::HistoryURLCompletionItem> >}}}^{HistoryURLCompletionItem}@@di{vector<int, std::__1::allocator<int> >=^i^i{__compressed_pair<int *, std::__1::allocator<int> >=^i}}{vector<int, std::__1::allocator<int> >=^i^i{__compressed_pair<int *, std::__1::allocator<int> >=^i}}@BB}8, name: initWithCompletionItem:
+-     // Error parsing type: @12@0:4^{HistoryURLCompletionItem={atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}iii{vector<WTF::RefPtr<SafariShared::HistoryURLCompletionItem, WTF::DumbPtrTraits<SafariShared::HistoryURLCompletionItem> >, std::__1::allocator<WTF::RefPtr<SafariShared::HistoryURLCompletionItem, WTF::DumbPtrTraits<SafariShared::HistoryURLCompletionItem> > > >=^{RefPtr<SafariShared::HistoryURLCompletionItem, WTF::DumbPtrTraits<SafariShared::HistoryURLCompletionItem> >}^{RefPtr<SafariShared::HistoryURLCompletionItem, WTF::DumbPtrTraits<SafariShared::HistoryURLCompletionItem> >}{__compressed_pair<WTF::RefPtr<SafariShared::HistoryURLCompletionItem, WTF::DumbPtrTraits<SafariShared::HistoryURLCompletionItem> > *, std::__1::allocator<WTF::RefPtr<SafariShared::HistoryURLCompletionItem, WTF::DumbPtrTraits<SafariShared::HistoryURLCompletionItem> > > >=^{RefPtr<SafariShared::HistoryURLCompletionItem, WTF::DumbPtrTraits<SafariShared::HistoryURLCompletionItem> >}}}^{HistoryURLCompletionItem}@@di{vector<int, std::__1::allocator<int> >=^i^i{__compressed_pair<int *, std::__1::allocator<int> >=^i}}{vector<int, std::__1::allocator<int> >=^i^i{__compressed_pair<int *, std::__1::allocator<int> >=^i}}@BB}8, name: initWithCompletionItem:
 - (id)init;
 
 // Remaining properties

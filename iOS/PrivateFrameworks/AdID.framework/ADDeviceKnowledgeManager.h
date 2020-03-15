@@ -18,10 +18,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *refreshInterval; // @synthesize refreshInterval=_refreshInterval;
 @property(retain, nonatomic) ADBackgroundTaskRequest *xpc_task; // @synthesize xpc_task=_xpc_task;
 @property(nonatomic) _Bool taskIsRunning; // @synthesize taskIsRunning=_taskIsRunning;
-- (void).cxx_destruct;
 - (void)processDeviceData:(CDUnknownBlockType)arg1;
 - (void)scheduleDeviceDataProcessing:(double)arg1;
 - (void)checkOnTask:(id)arg1 activity:(id)arg2;

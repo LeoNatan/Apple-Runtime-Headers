@@ -14,9 +14,9 @@
     double _outerRadius;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double outerRadius; // @synthesize outerRadius=_outerRadius;
 @property(readonly, nonatomic) HUIntrinsicSizeDescriptor *sizeDescriptor; // @synthesize sizeDescriptor=_sizeDescriptor;
-- (void).cxx_destruct;
 - (id)initWithSizeDescriptor:(id)arg1 outerRadius:(double)arg2;
 
 @end

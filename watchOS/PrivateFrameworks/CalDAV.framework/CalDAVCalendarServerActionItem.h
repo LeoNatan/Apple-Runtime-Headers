@@ -16,11 +16,11 @@
     CalDAVCalendarServerReplyItem *_reply;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CalDAVCalendarServerReplyItem *reply; // @synthesize reply=_reply;
 @property(retain, nonatomic) CalDAVCalendarServerCancelItem *cancel; // @synthesize cancel=_cancel;
 @property(retain, nonatomic) CalDAVCalendarServerUpdateItem *update; // @synthesize update=_update;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *create; // @synthesize create=_create;
-- (void).cxx_destruct;
 - (id)copyParseRules;
 - (id)init;
 

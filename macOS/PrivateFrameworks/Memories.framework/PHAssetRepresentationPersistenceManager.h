@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 
 + (void)purgeSharedInstance;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHAssetRepresentation *pendingAssetRepresentation; // @synthesize pendingAssetRepresentation=_pendingAssetRepresentation;
 @property(retain, nonatomic) NSMutableDictionary *requestedDownloadsDict; // @synthesize requestedDownloadsDict=_requestedDownloadsDict;
 @property(retain, nonatomic) NSMutableDictionary *recentDownloadsDict; // @synthesize recentDownloadsDict=_recentDownloadsDict;
@@ -60,7 +61,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long cellularAuthorization; // @synthesize cellularAuthorization=_cellularAuthorization;
 @property(nonatomic) unsigned long long reachabilityStatus; // @synthesize reachabilityStatus=_reachabilityStatus;
 @property(nonatomic, getter=isOnline) BOOL online; // @synthesize online=_online;
-- (void).cxx_destruct;
 - (void)downloadOperation:(id)arg1 didProgess:(double)arg2;
 - (void)downloadOperationDidFinish:(id)arg1;
 - (void)downloadOperationDidStart:(id)arg1;

@@ -18,11 +18,11 @@
     PKAccount *_account;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isFeaturedTransaction; // @synthesize isFeaturedTransaction=_isFeaturedTransaction;
 @property(retain, nonatomic) PKAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
 @property(readonly, nonatomic) PKPaymentTransaction *transaction; // @synthesize transaction=_transaction;
-- (void).cxx_destruct;
 - (id)initWithPaymentPass:(id)arg1 transaction:(id)arg2 account:(id)arg3;
 
 // Remaining properties

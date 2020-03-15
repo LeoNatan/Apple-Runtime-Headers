@@ -33,6 +33,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double condenserDate; // @synthesize condenserDate=_condenserDate;
 @property(nonatomic) long long condenserVersion; // @synthesize condenserVersion=_condenserVersion;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
@@ -42,7 +43,6 @@
 @property(nonatomic) double creationDate; // @synthesize creationDate=_creationDate;
 @property(retain, nonatomic) NSData *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) long long persistentID; // @synthesize persistentID=_persistentID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

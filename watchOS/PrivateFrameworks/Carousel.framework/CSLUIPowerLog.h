@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain) NSNumber *mode; // @synthesize mode=_mode;
 - (void).cxx_destruct;
+@property(retain) NSNumber *mode; // @synthesize mode=_mode;
 - (void)powerLogSettingChanged:(id)arg1;
 
 @end

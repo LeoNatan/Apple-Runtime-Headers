@@ -22,13 +22,13 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NFUnfairLock *lock; // @synthesize lock=_lock;
 @property(readonly, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(readonly, nonatomic) FCBoostableOperationThrottler *operationThrottler; // @synthesize operationThrottler=_operationThrottler;
 @property(readonly, copy, nonatomic) FCFetchedValueDescriptor *descriptor; // @synthesize descriptor=_descriptor;
 @property(copy, nonatomic) id <NFCopying> value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (unsigned long long)_cachePolicyForOptions:(unsigned long long)arg1;
 - (unsigned long long)_optionsForCachePolicy:(unsigned long long)arg1;
 - (void)_handleError:(id)arg1;

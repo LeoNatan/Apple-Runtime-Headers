@@ -6,7 +6,7 @@
 
 #import <RemoteManagementModel/RMModelPayloadBase.h>
 
-@class NSString, RMProtocolOrganizationDetails, RMProtocolSupportedFeatures;
+@class NSArray, NSString, RMProtocolOrganizationDetails, RMProtocolServerCapabilities;
 
 @interface RMProtocolEnrollResponse : RMModelPayloadBase
 {
@@ -15,22 +15,22 @@
     NSString *_responseOrganizationDetailsToken;
     RMProtocolOrganizationDetails *_responseOrganizationDetails;
     NSString *_responseCapabilitiesToken;
-    NSString *_responseVersion;
-    RMProtocolSupportedFeatures *_responseSupportedFeatures;
+    RMProtocolServerCapabilities *_responseCapabilities;
+    NSArray *_responseStatusItems;
 }
 
-+ (id)requestWithPushTopic:(id)arg1 pushEnvironment:(id)arg2 organizationDetailsToken:(id)arg3 organizationDetails:(id)arg4 capabilitiesToken:(id)arg5 version:(id)arg6 supportedFeatures:(id)arg7;
-@property(copy, nonatomic) RMProtocolSupportedFeatures *responseSupportedFeatures; // @synthesize responseSupportedFeatures=_responseSupportedFeatures;
-@property(copy, nonatomic) NSString *responseVersion; // @synthesize responseVersion=_responseVersion;
++ (id)requestWithPushTopic:(id)arg1 pushEnvironment:(id)arg2 organizationDetailsToken:(id)arg3 organizationDetails:(id)arg4 capabilitiesToken:(id)arg5 capabilities:(id)arg6 statusItems:(id)arg7;
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *responseStatusItems; // @synthesize responseStatusItems=_responseStatusItems;
+@property(copy, nonatomic) RMProtocolServerCapabilities *responseCapabilities; // @synthesize responseCapabilities=_responseCapabilities;
 @property(copy, nonatomic) NSString *responseCapabilitiesToken; // @synthesize responseCapabilitiesToken=_responseCapabilitiesToken;
 @property(copy, nonatomic) RMProtocolOrganizationDetails *responseOrganizationDetails; // @synthesize responseOrganizationDetails=_responseOrganizationDetails;
 @property(copy, nonatomic) NSString *responseOrganizationDetailsToken; // @synthesize responseOrganizationDetailsToken=_responseOrganizationDetailsToken;
 @property(copy, nonatomic) NSString *responsePushEnvironment; // @synthesize responsePushEnvironment=_responsePushEnvironment;
 @property(copy, nonatomic) NSString *responsePushTopic; // @synthesize responsePushTopic=_responsePushTopic;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)serializePayloadWithType:(short)arg1;
-- (_Bool)loadPayload:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
+- (id)serializeWithType:(short)arg1;
+- (_Bool)loadFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
 
 @end
 

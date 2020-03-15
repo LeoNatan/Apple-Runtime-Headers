@@ -15,10 +15,10 @@
     unsigned long long _generation;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long generation; // @synthesize generation=_generation;
 @property(readonly, nonatomic) CPLRecordChange *record; // @synthesize record=_record;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CPLRecordStatus *status;
 - (id)initWithRecord:(id)arg1 generation:(unsigned long long)arg2 date:(id)arg3;
 

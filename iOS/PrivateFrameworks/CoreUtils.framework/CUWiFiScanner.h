@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface CUWiFiScanner : NSObject
 {
     _Bool _activateCalled;
-    struct NSMutableDictionary *_devices;
+    NSMutableDictionary *_devices;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
     _Bool _scanning;
@@ -31,6 +31,7 @@
     CDUnknownBlockType _invalidationHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(copy, nonatomic) CDUnknownBlockType deviceChangedHandler; // @synthesize deviceChangedHandler=_deviceChangedHandler;
@@ -41,7 +42,6 @@
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) unsigned int changeFlags; // @synthesize changeFlags=_changeFlags;
-- (void).cxx_destruct;
 - (void)_scanWiFiProcessResult:(id)arg1;
 - (void)_scanWiFiFinished:(id)arg1 status:(int)arg2;
 - (void)_scanWiFiStart;

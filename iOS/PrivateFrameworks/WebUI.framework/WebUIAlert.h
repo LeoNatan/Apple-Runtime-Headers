@@ -24,6 +24,7 @@
     NSArray *_titles;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *titles; // @synthesize titles=_titles;
 @property(retain, nonatomic) NSArray *identities; // @synthesize identities=_identities;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
@@ -34,7 +35,6 @@
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(copy, nonatomic) CDUnknownBlockType actionHandler; // @synthesize actionHandler=_actionHandler;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id selectedIdentity;
 - (void)setSelectedTableItemIndex:(long long)arg1;
 - (int)actionForButtonTag:(long long)arg1;

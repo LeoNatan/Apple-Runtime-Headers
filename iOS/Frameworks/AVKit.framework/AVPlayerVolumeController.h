@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)volumeController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVObservationController *keyValueObservationController; // @synthesize keyValueObservationController=_keyValueObservationController;
 @property(nonatomic, getter=isChangingVolume) _Bool changingVolume; // @synthesize changingVolume=_changingVolume;
 @property(retain, nonatomic) AVPlayerController *playerController; // @synthesize playerController=_playerController;
-- (void).cxx_destruct;
 - (void)endChangingVolume;
 - (void)beginChangingVolumeForWindowSceneSessionID:(id)arg1;
 - (void)setClientWithIdentifier:(id)arg1 prefersSystemVolumeHUDHidden:(_Bool)arg2 forWindowSceneSessionWithIdentifier:(id)arg3;

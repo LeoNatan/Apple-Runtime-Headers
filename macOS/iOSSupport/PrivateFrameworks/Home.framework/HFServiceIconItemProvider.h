@@ -16,11 +16,11 @@
     NSSet *_iconItems;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *iconItems; // @synthesize iconItems=_iconItems;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(copy, nonatomic) NSString *serviceSubtype; // @synthesize serviceSubtype=_serviceSubtype;
 @property(copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
-- (void).cxx_destruct;
 - (id)items;
 - (id)reloadItems;
 - (id)copyWithZone:(struct _NSZone *)arg1;

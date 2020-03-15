@@ -31,12 +31,12 @@
     PKPGSVTransitionInterstitialView *_trailingInterstitialItemView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=wasDragged) _Bool dragged; // @synthesize dragged=_dragged;
 @property(retain, nonatomic) PKPGSVTransitionInterstitialView *trailingInterstitialItemView; // @synthesize trailingInterstitialItemView=_trailingInterstitialItemView;
 @property(retain, nonatomic) PKPGSVTransitionInterstitialView *leadingInterstitialItemView; // @synthesize leadingInterstitialItemView=_leadingInterstitialItemView;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic, getter=isPresenting) _Bool presenting; // @synthesize presenting=_presenting;
-- (void).cxx_destruct;
 - (void)_clearNavigationItems;
 - (void)_moveGroupView:(id)arg1 toView:(id)arg2 belowView:(id)arg3;
 - (double)_contentOffsetAnimationDurationForCollectionView:(id)arg1;

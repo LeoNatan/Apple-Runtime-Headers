@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)allowsReverseTransformation;
 + (Class)transformedValueClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType groupsSortComparator; // @synthesize groupsSortComparator=_groupsSortComparator;
 @property(retain, nonatomic) NSValueTransformer *identifierTitleTransformer; // @synthesize identifierTitleTransformer=_identifierTitleTransformer;
 @property(copy, nonatomic) NSString *identifierKeyPath; // @synthesize identifierKeyPath=_identifierKeyPath;
-- (void).cxx_destruct;
 - (id)transformedValue:(id)arg1;
 - (id)initWithIdentifierKeyPath:(id)arg1;
 - (id)init;

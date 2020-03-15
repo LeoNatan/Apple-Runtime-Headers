@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _margins;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets margins; // @synthesize margins=_margins;
 @property(nonatomic) struct UIEdgeInsets partialMargins; // @synthesize partialMargins=_partialMargins;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (id)preferredFocusEnvironments;
 - (_Bool)canBecomeFocused;
 - (void)prepareForReuse;

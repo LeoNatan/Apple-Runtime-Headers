@@ -24,10 +24,10 @@
     CDUnknownBlockType _setupLaterHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool upgradeRequiredToAddNewPass; // @synthesize upgradeRequiredToAddNewPass=_upgradeRequiredToAddNewPass;
 @property(copy, nonatomic) CDUnknownBlockType setupLaterHandler; // @synthesize setupLaterHandler=_setupLaterHandler;
 @property(copy, nonatomic) CDUnknownBlockType continuationHandler; // @synthesize continuationHandler=_continuationHandler;
-- (void).cxx_destruct;
 - (void)_showSpinner:(_Bool)arg1;
 - (id)paymentSetupMarker;
 - (void)explanationViewDidSelectContinue:(id)arg1;

@@ -18,11 +18,11 @@
     NSLock *_dataProvidersLock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLock *dataProvidersLock; // @synthesize dataProvidersLock=_dataProvidersLock;
 @property(nonatomic) __weak id <BLTBulletinActionResponder> responseDelegate; // @synthesize responseDelegate=_responseDelegate;
 @property(retain, nonatomic) BLTDataProviderConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSMutableDictionary *dataProviders; // @synthesize dataProviders=_dataProviders;
-- (void).cxx_destruct;
 - (void)removeSectionWithSectionID:(id)arg1;
 - (void)withdrawBulletinsInSection:(id)arg1;
 - (void)withdrawBulletinsNotInList:(id)arg1;

@@ -6,10 +6,12 @@
 
 #import <UIKit/UIView.h>
 
-@class PKPass;
+#import <NanoPassKitUI/NPKPassViewDisplayBehaviorProtocol-Protocol.h>
+
+@class NSString, PKPass;
 @protocol NPKPassViewDelegate;
 
-@interface NPKPassView : UIView
+@interface NPKPassView : UIView <NPKPassViewDisplayBehaviorProtocol>
 {
     _Bool _showFullPass;
     _Bool _isSelectedPass;
@@ -31,6 +33,7 @@
 + (void)setCaching:(_Bool)arg1;
 + (_Bool)resolveForeignReferences;
 + (void)setResolveForeignReferences:(_Bool)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) int uiWorkStackCount; // @synthesize uiWorkStackCount=_uiWorkStackCount;
 @property(nonatomic) _Bool pendingHeightChangeCallback; // @synthesize pendingHeightChangeCallback=_pendingHeightChangeCallback;
 @property(nonatomic) _Bool updateNeedsHeightChange; // @synthesize updateNeedsHeightChange=_updateNeedsHeightChange;
@@ -43,7 +46,6 @@
 @property(nonatomic) _Bool hideAccessoryIfPossible; // @synthesize hideAccessoryIfPossible=_hideAccessoryIfPossible;
 @property(nonatomic) _Bool isSelectedPass; // @synthesize isSelectedPass=_isSelectedPass;
 @property(nonatomic) _Bool showFullPass; // @synthesize showFullPass=_showFullPass;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (_Bool)handleTapAtPoint:(struct CGPoint)arg1 andScrollWithBehavior:(int *)arg2 toOffset:(struct CGPoint *)arg3;
 - (_Bool)shouldShowAccessoryButton;
@@ -59,6 +61,14 @@
 - (void)_performUIWork:(CDUnknownBlockType)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_setPass:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(nonatomic) _Bool shrink;
+@property(readonly) Class superclass;
+@property(nonatomic) _Bool useRasterizedPass;
 
 @end
 

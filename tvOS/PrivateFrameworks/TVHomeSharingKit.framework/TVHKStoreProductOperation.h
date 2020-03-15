@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSOperation *_currentSubOperation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperation *currentSubOperation; // @synthesize currentSubOperation=_currentSubOperation;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSDictionary *response; // @synthesize response=_response;
 @property(nonatomic) unsigned long long storefrontID; // @synthesize storefrontID=_storefrontID;
 @property(nonatomic) unsigned long long storeID; // @synthesize storeID=_storeID;
-- (void).cxx_destruct;
 - (void)_handleProductResponse:(id)arg1;
 - (void)_startFetchProductOperationWithURL:(id)arg1;
 - (id)_productURLFromLookupResults:(id)arg1 forStoreID:(id)arg2;

@@ -14,19 +14,19 @@
 {
     _Bool _critical;
     NSString *_name;
-    struct NSDictionary *_jsonDictionary;
+    NSDictionary *_jsonDictionary;
 }
 
 + (id)__transportProtocolToString:(unsigned char)arg1;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *jsonDictionary; // @synthesize jsonDictionary=_jsonDictionary;
 @property(readonly, nonatomic, getter=isCritical) _Bool critical; // @synthesize critical=_critical;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *prettyJSONDictionary;
 - (id)attributeDescriptions;
-- (id)initWithJSONDictionary:(struct NSDictionary *)arg1 critical:(_Bool)arg2;
-- (id)initWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(_Bool)arg3;
+- (id)initWithJSONDictionary:(id)arg1 critical:(_Bool)arg2;
+- (id)initWithJSONDictionary:(id)arg1 name:(id)arg2 critical:(_Bool)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

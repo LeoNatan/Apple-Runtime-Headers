@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
-@property(retain, nonatomic) CKCDPCodeServiceRequestServiceClientConfig *config; // @synthesize config=_config;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKCDPCodeServiceRequestServiceClientConfig *config; // @synthesize config=_config;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

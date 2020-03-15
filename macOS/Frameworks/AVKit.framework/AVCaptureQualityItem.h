@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSString *_sessionPreset;
 }
 
-@property(readonly, copy) NSString *sessionPreset; // @synthesize sessionPreset=_sessionPreset;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *sessionPreset; // @synthesize sessionPreset=_sessionPreset;
 - (BOOL)applyToSession:(id)arg1;
 @property(readonly, copy) NSString *localizedName;
 @property(readonly, copy) NSString *identifier;

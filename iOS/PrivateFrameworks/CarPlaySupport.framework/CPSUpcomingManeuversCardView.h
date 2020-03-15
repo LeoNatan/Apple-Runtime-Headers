@@ -4,15 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <CarPlaySupport/CPSInheritedBackgroundColorView.h>
+#import <UIKit/UIView.h>
 
 #import <CarPlaySupport/CPSNavigationDisplaying-Protocol.h>
 
-@class CPSHairlineView, NSArray, NSMutableArray, NSMutableDictionary, NSString;
+@class CPSCardPlatterView, CPSHairlineView, NSArray, NSMutableArray, NSMutableDictionary, NSString;
 
-@interface CPSUpcomingManeuversCardView : CPSInheritedBackgroundColorView <CPSNavigationDisplaying>
+@interface CPSUpcomingManeuversCardView : UIView <CPSNavigationDisplaying>
 {
+    _Bool _usesDefaultBackgroundColor;
     _Bool _saveManeuversToDisk;
+    CPSCardPlatterView *_platterView;
     NSArray *_maneuvers;
     NSMutableDictionary *_currentTravelEstimatesForManeuverIdentifiers;
     NSArray *_maneuverStyles;
@@ -21,6 +23,7 @@
     CPSHairlineView *_hairlineView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool saveManeuversToDisk; // @synthesize saveManeuversToDisk=_saveManeuversToDisk;
 @property(readonly, nonatomic) CPSHairlineView *hairlineView; // @synthesize hairlineView=_hairlineView;
 @property(readonly, nonatomic) NSMutableArray *verticalConstraints; // @synthesize verticalConstraints=_verticalConstraints;
@@ -28,17 +31,18 @@
 @property(readonly, nonatomic) NSArray *maneuverStyles; // @synthesize maneuverStyles=_maneuverStyles;
 @property(retain, nonatomic) NSMutableDictionary *currentTravelEstimatesForManeuverIdentifiers; // @synthesize currentTravelEstimatesForManeuverIdentifiers=_currentTravelEstimatesForManeuverIdentifiers;
 @property(readonly, nonatomic) NSArray *maneuvers; // @synthesize maneuvers=_maneuvers;
-- (void).cxx_destruct;
+@property(retain, nonatomic) CPSCardPlatterView *platterView; // @synthesize platterView=_platterView;
+@property(nonatomic) _Bool usesDefaultBackgroundColor; // @synthesize usesDefaultBackgroundColor=_usesDefaultBackgroundColor;
+- (void)sizeToFitSize:(struct CGSize)arg1;
 - (void)_updateVerticalConstraints;
 - (void)updateEstimates:(id)arg1 forManeuver:(id)arg2;
 - (void)showManeuvers:(id)arg1 usingDisplayStyles:(id)arg2;
+- (void)_updateSecondaryManeuverBackgroundColor;
 - (struct CGSize)intrinsicContentSize;
-- (void)_resetToFull;
-- (void)layoutSubviews;
-- (void)_clearManeuvers;
-- (void)backgroundColorDidChange;
+- (void)_updateHairlineViewBackgroundColor;
+- (id)_secondaryManeuverViewIfExists;
 - (id)_maneuverViews;
-- (id)init;
+- (id)initWithFrame:(struct CGRect)arg1 backgroundColor:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

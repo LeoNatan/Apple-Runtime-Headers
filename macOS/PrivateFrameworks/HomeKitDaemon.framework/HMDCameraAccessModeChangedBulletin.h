@@ -18,11 +18,11 @@
 
 + (id)bulletinForAccessMode:(unsigned long long)arg1 camera:(id)arg2 home:(id)arg3 changeReason:(unsigned long long)arg4 changeDate:(id)arg5;
 + (id)localizedMessageForCameraAccessModeChange:(unsigned long long)arg1 changeReason:(unsigned long long)arg2 camera:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy) NSDate *dateOfOccurrence; // @synthesize dateOfOccurrence=_dateOfOccurrence;
 @property(readonly, copy) NSString *threadIdentifier; // @synthesize threadIdentifier=_threadIdentifier;
 @property(readonly, copy) NSString *body; // @synthesize body=_body;
 @property(readonly, copy) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 body:(id)arg2 threadIdentifier:(id)arg3 dateOfOccurrence:(id)arg4;
 
 @end

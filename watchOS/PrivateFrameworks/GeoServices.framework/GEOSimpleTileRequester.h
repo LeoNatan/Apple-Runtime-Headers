@@ -30,14 +30,15 @@
     GEOTileKeyMap *_tileLoaderCreateTimes;
     unsigned int _highestRunningOperationPriority;
     geo_isolater *_highestRunningOperationPriorityIsolation;
+    GEOTileKeyMap *_priorities;
     _Bool _includeReasonHeader;
     _Bool _allowTLSSessionTicketUse;
     _Bool _allowTCPFastOpen;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) GEOTileRequestBalancer *balancer; // @synthesize balancer=_balancer;
 @property(readonly, nonatomic) NSObject<OS_os_activity> *activity; // @synthesize activity=_activity;
-- (void).cxx_destruct;
 - (id)operationsForKey:(const struct _GEOTileKey *)arg1;
 - (id)removeOperationsForKey:(const struct _GEOTileKey *)arg1;
 - (_Bool)_isRunningOperation:(id)arg1;

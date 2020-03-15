@@ -38,6 +38,7 @@
 + (id)paletteForColor:(unsigned int)arg1 bleed:(unsigned int)arg2;
 + (id)paletteForColor:(unsigned int)arg1 style:(unsigned int)arg2;
 + (id)voltColor;
+- (void).cxx_destruct;
 @property(nonatomic) float smallDotsColorBrightness; // @synthesize smallDotsColorBrightness=_smallDotsColorBrightness;
 @property(nonatomic) float smallNumbersColorBrightness; // @synthesize smallNumbersColorBrightness=_smallNumbersColorBrightness;
 @property(retain, nonatomic) UIColor *largeNumbersTritiumOutlineColor; // @synthesize largeNumbersTritiumOutlineColor=_largeNumbersTritiumOutlineColor;
@@ -59,7 +60,11 @@
 @property(readonly, nonatomic) UIColor *handsColor; // @synthesize handsColor=_handsColor;
 @property(readonly, nonatomic) UIColor *numbersColor; // @synthesize numbersColor=_numbersColor;
 @property(readonly, nonatomic) unsigned int color; // @synthesize color=_color;
-- (void).cxx_destruct;
+- (id)tritiumOutlineColorForNumberVictoryAnalogTimeElement:(unsigned int)arg1;
+- (id)tritiumFillColorForNumberVictoryAnalogTimeElement:(unsigned int)arg1;
+- (id)colorForLogoWithStyle:(unsigned int)arg1;
+- (id)colorForNumberVictoryAnalogTimeElement:(unsigned int)arg1;
+- (id)colorForDotVictoryAnalogTimeElement:(unsigned int)arg1;
 - (id)initWithColor:(unsigned int)arg1 bleed:(unsigned int)arg2;
 
 // Remaining properties

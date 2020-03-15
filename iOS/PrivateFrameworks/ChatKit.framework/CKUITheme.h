@@ -18,13 +18,13 @@
     UIColor *_detailsCellStaticTextColor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *detailsCellStaticTextColor; // @synthesize detailsCellStaticTextColor=_detailsCellStaticTextColor;
 @property(readonly, nonatomic) UIColor *searchResultsSeperatorColor; // @synthesize searchResultsSeperatorColor=_searchResultsSeperatorColor;
 @property(readonly, nonatomic) UIColor *transcriptNavBarTextColor; // @synthesize transcriptNavBarTextColor=_transcriptNavBarTextColor;
 @property(readonly, nonatomic) long long businessStatusBarStyle; // @synthesize businessStatusBarStyle=_businessStatusBarStyle;
 @property(readonly, nonatomic) UIColor *darkAppTintColor; // @synthesize darkAppTintColor=_darkAppTintColor;
 @property(nonatomic) long long HUDStyle; // @synthesize HUDStyle=_HUDStyle;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *carplayChevronFocusColor;
 @property(readonly, nonatomic) UIColor *carplayChevronColor;
 @property(readonly, nonatomic) UIColor *carplayDateLabelFocusColor;

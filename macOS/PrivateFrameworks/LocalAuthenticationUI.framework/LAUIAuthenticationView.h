@@ -26,6 +26,7 @@
 }
 
 + (struct CGRect)defaultRect;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSView *view; // @synthesize view=_view;
 @property(readonly, nonatomic) NSImageView *imageView; // @synthesize imageView=_imageView;
 @property(readonly, nonatomic) LAPKGlyphWrapper *glyphWrapper; // @synthesize glyphWrapper=_glyphWrapper;
@@ -35,7 +36,6 @@
 @property(nonatomic) BOOL idleWhenDone; // @synthesize idleWhenDone=_idleWhenDone;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) __weak id <LAUIAuthenticationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)localizedCallerName;
 - (id)callerIconBundlePath;
 - (void)biometryState:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;

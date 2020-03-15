@@ -15,8 +15,9 @@
     WFWorkflowController *_workflowController;
 }
 
-@property(nonatomic) __weak WFWorkflowController *workflowController; // @synthesize workflowController=_workflowController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak WFWorkflowController *workflowController; // @synthesize workflowController=_workflowController;
+- (id)targetDataInfo;
 - (id)workflowController:(id)arg1 userInterfaceForAction:(id)arg2;
 - (_Bool)workflowController:(id)arg1 handleUnsupportedEnvironmentForAction:(id)arg2 currentState:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (_Bool)workflowController:(id)arg1 handleUnsupportedUserInterfaceForAction:(id)arg2 currentState:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

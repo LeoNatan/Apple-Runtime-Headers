@@ -24,12 +24,12 @@
 + (_Bool)supportsQuicklook;
 + (unsigned long long)recencyRankedTargetResultCount;
 + (_Bool)useRecencyRankedSearchForMode:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *currentZKWSuggestions; // @synthesize currentZKWSuggestions=_currentZKWSuggestions;
 @property(retain, nonatomic) _PSSuggester *zkwSuggester; // @synthesize zkwSuggester=_zkwSuggester;
 @property(nonatomic) _Bool searchTerminated; // @synthesize searchTerminated=_searchTerminated;
 @property(retain, nonatomic) NSSet *intermediaryResults; // @synthesize intermediaryResults=_intermediaryResults;
 @property(nonatomic) _Bool gotResults; // @synthesize gotResults=_gotResults;
-- (void).cxx_destruct;
 - (id)layoutGroupWithEnvironment:(id)arg1;
 - (_Bool)applyLayoutMarginsToLayoutGroup;
 - (_Bool)wantsHeaderSection;

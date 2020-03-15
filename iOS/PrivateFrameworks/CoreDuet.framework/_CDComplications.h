@@ -20,8 +20,8 @@
 
 + (id)initializeForAdmissionChecking:(_Bool)arg1;
 + (id)sharedComplication;
-@property(copy) NSDictionary *activeComplications; // @synthesize activeComplications=_activeComplications;
 - (void).cxx_destruct;
+@property(copy) NSDictionary *activeComplications; // @synthesize activeComplications=_activeComplications;
 - (id)CDAttributeForComplication:(id)arg1 error:(id *)arg2;
 - (void)meteringStoppedOnComplication:(id)arg1 costDictionary:(id)arg2 onDate:(id)arg3;
 - (void)meteringUpdateOnComplication:(id)arg1 costDictionary:(id)arg2 onDate:(id)arg3;

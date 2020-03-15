@@ -13,8 +13,8 @@
     NTPBVanityURLMapping *_vanityURLMapping;
 }
 
-@property(readonly, copy, nonatomic) NTPBVanityURLMapping *vanityURLMapping; // @synthesize vanityURLMapping=_vanityURLMapping;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NTPBVanityURLMapping *vanityURLMapping; // @synthesize vanityURLMapping=_vanityURLMapping;
 - (void)_standardizeResultPath:(id)arg1;
 - (id)_pathWithTrailingForwardSlashWithPath:(id)arg1;
 - (id)_standardizedMappingPathWithPath:(id)arg1;

@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct CGSize)playButtonTileSize;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setShouldSuppressButtonUpdates:) _Bool _shouldSuppressButtonUpdates; // @synthesize _shouldSuppressButtonUpdates=__shouldSuppressButtonUpdates;
 @property(nonatomic, setter=_setShouldShowPlayButton:) _Bool _shouldShowPlayButton; // @synthesize _shouldShowPlayButton=__shouldShowPlayButton;
 @property(retain, nonatomic, setter=_setPlayButton:) UIView<PXVideoOverlayButton> *_playButton; // @synthesize _playButton=__playButton;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PUAssetViewModel *assetViewModel; // @synthesize assetViewModel=_assetViewModel;
 @property(retain, nonatomic) PUBrowsingViewModel *browsingViewModel; // @synthesize browsingViewModel=_browsingViewModel;
 @property(nonatomic) __weak id <PUPlayButtonTileViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (void)_setShouldShowPlayButton:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_updateButtonAnimated:(_Bool)arg1;

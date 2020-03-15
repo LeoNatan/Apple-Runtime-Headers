@@ -15,10 +15,10 @@
     double _tint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double tint; // @synthesize tint=_tint;
 @property(nonatomic) double temperature; // @synthesize temperature=_temperature;
 @property(retain, nonatomic) CIImage *inputImage; // @synthesize inputImage=_inputImage;
-- (void).cxx_destruct;
 - (void)setInputVectorsForFilter:(id)arg1;
 - (id)outputImage;
 

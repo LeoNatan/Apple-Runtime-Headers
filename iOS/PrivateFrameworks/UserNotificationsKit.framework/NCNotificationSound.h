@@ -24,6 +24,7 @@
     TLAlertConfiguration *_alertConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) TLAlertConfiguration *alertConfiguration; // @synthesize alertConfiguration=_alertConfiguration;
 @property(readonly, copy, nonatomic) NSString *songPath; // @synthesize songPath=_songPath;
 @property(readonly, copy, nonatomic) NSDictionary *controllerAttributes; // @synthesize controllerAttributes=_controllerAttributes;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) unsigned long long soundBehavior; // @synthesize soundBehavior=_soundBehavior;
 @property(readonly, nonatomic) unsigned int systemSoundID; // @synthesize systemSoundID=_systemSoundID;
 @property(readonly, nonatomic) long long soundType; // @synthesize soundType=_soundType;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

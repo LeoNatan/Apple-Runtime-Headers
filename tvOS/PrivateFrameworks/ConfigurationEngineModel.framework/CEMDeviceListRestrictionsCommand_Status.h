@@ -18,9 +18,9 @@
 + (id)buildWithGlobalRestrictions:(id)arg1 withProfileRestrictions:(id)arg2;
 + (id)allowedReasons;
 + (id)allowedStatusKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CEMDeviceListRestrictionsCommand_StatusProfileRestrictions *statusProfileRestrictions; // @synthesize statusProfileRestrictions=_statusProfileRestrictions;
 @property(copy, nonatomic) CEMDeviceListRestrictionsCommand_StatusRestrictionsDictionary *statusGlobalRestrictions; // @synthesize statusGlobalRestrictions=_statusGlobalRestrictions;
-- (void).cxx_destruct;
 - (id)serializePayload;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;
 

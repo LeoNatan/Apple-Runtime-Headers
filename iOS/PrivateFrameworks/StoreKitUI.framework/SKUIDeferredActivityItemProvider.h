@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)placeholderItem;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType itemProvider; // @synthesize itemProvider=_itemProvider;
 @property(retain) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 @property(readonly, copy) SKUIProductPageItem *productPageItem; // @synthesize productPageItem=_productPageItem;
 - (id)initWithProductPageItemProvider:(CDUnknownBlockType)arg1 clientContext:(id)arg2;
 - (id)initWithProductPageItem:(id)arg1 clientContext:(id)arg2;

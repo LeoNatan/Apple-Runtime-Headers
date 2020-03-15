@@ -33,6 +33,7 @@
 + (id)_descriptionForTrafficSide:(unsigned long long)arg1;
 + (id)_descriptionForManeuverType:(unsigned long long)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(copy, nonatomic) NSSet *junctionElementAngles; // @synthesize junctionElementAngles=_junctionElementAngles;
 @property(copy, nonatomic) NSMeasurement *junctionExitAngle; // @synthesize junctionExitAngle=_junctionExitAngle;
@@ -47,7 +48,7 @@
 @property(copy, nonatomic) NSArray *instructionVariants; // @synthesize instructionVariants=_instructionVariants;
 @property(retain, nonatomic) UIImage *junctionImage; // @synthesize junctionImage=_junctionImage;
 @property(retain, nonatomic) CPImageSet *symbolSet; // @synthesize symbolSet=_symbolSet;
-- (void).cxx_destruct;
+- (_Bool)isEqual:(id)arg1;
 @property(retain, nonatomic) UIImage *symbolImage;
 - (id)description;
 @property(readonly) NSArray *stringInstructionVariants;

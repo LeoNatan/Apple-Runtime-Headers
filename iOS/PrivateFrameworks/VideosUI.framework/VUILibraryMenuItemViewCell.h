@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     VUISeparatorView *_bottomSeparatorView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hideChevron; // @synthesize hideChevron=_hideChevron;
 @property(readonly, nonatomic) VUISeparatorView *bottomSeparatorView; // @synthesize bottomSeparatorView=_bottomSeparatorView;
 @property(retain, nonatomic) VUISeparatorView *topSeparatorView; // @synthesize topSeparatorView=_topSeparatorView;
 @property(readonly, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

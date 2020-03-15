@@ -37,6 +37,7 @@
     struct UIEdgeInsets _actionInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *frozenView; // @synthesize frozenView=_frozenView;
 @property(readonly, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) NSLayoutConstraint *centerYConstraint; // @synthesize centerYConstraint=_centerYConstraint;
@@ -59,7 +60,6 @@
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) struct UIEdgeInsets actionInsets; // @synthesize actionInsets=_actionInsets;
 @property(retain, nonatomic) _UIStatusBarAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (id)displayItemForHUDAtLocation:(struct CGPoint)arg1;
 @property(readonly, copy, nonatomic) NSDictionary *displayItemAbsoluteFrames;
 @property(readonly, nonatomic) _UIStatusBarDisplayItem *overflowedDisplayItem;

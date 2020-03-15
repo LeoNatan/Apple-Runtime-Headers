@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, VMUClassInfo, VMUClassInfoMap, VMUNonOverlappingRangeArray, VMUSwiftRuntimeInfo, VMUTaskMemoryScanner;
+@class NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, VMUClassInfo, VMUClassInfoMap, VMUNonOverlappingRangeArray, VMURangeArray, VMUSwiftRuntimeInfo, VMUTaskMemoryScanner;
 
 @interface VMUObjectIdentifier : NSObject
 {
@@ -21,6 +21,8 @@
     VMUSwiftRuntimeInfo *_swiftRuntimeInfoStableABI;
     VMUSwiftRuntimeInfo *_swiftRuntimeInfoPreABI;
     _Bool _debugSwiftRemoteMirror;
+    unsigned int _objectContentLevel;
+    VMURangeArray *_readonlyRegionRanges;
     VMUClassInfoMap *_realizedIsaToClassInfo;
     VMUClassInfoMap *_unrealizedClassInfos;
     VMUClassInfoMap *_cfTypeIDToClassInfo;
@@ -51,6 +53,7 @@
     unsigned long _taggedPointerObfuscator;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned int objcABI; // @synthesize objcABI=_objcABI;
 @property(readonly, nonatomic) struct _CSTypeRef symbolicator; // @synthesize symbolicator=_symbolicator;
 @property(readonly, nonatomic) unsigned long taggedPointerMask; // @synthesize taggedPointerMask=_taggedPointerMask;
@@ -59,8 +62,9 @@
 @property(readonly, nonatomic) VMUSwiftRuntimeInfo *swiftRuntimeInfoPreABI; // @synthesize swiftRuntimeInfoPreABI=_swiftRuntimeInfoPreABI;
 @property(readonly, nonatomic) VMUClassInfoMap *realizedClasses; // @synthesize realizedClasses=_realizedIsaToClassInfo;
 @property(readonly, nonatomic) CDUnknownBlockType memoryReader; // @synthesize memoryReader=_memoryReader;
+@property(retain, nonatomic) VMURangeArray *readonlyRegionRanges; // @synthesize readonlyRegionRanges=_readonlyRegionRanges;
+@property(nonatomic) unsigned int objectContentLevel; // @synthesize objectContentLevel=_objectContentLevel;
 @property(readonly) _Bool needToValidateAddressRange; // @synthesize needToValidateAddressRange=_needToValidateAddressRange;
-- (void).cxx_destruct;
 - (id)initWithTask:(unsigned int)arg1;
 @property(readonly) _Bool hasSwiftReflection;
 @property(readonly) _Bool hasSwiftContent;
@@ -117,11 +121,12 @@
 - (id)labelForNSURL:(void *)arg1 length:(unsigned int)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)labelForNSConcreteAttributedString:(void *)arg1 length:(unsigned int)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)labelForNSCFStringAtRemoteAddress:(unsigned int)arg1 printDetail:(_Bool)arg2;
-- (id)labelForNSString:(void *)arg1 mappedSize:(unsigned int)arg2 remoteAddress:(unsigned int)arg3 printDetail:(_Bool)arg4;
+- (id)labelForNSString:(void *)arg1 mappedSize:(unsigned int)arg2 remoteAddress:(unsigned long long)arg3 printDetail:(_Bool)arg4;
 - (id)labelForNSString:(void *)arg1 length:(unsigned int)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)uniquifyStringLabel:(id)arg1 stringType:(int)arg2 printDetail:(_Bool)arg3;
 - (id)classNameForTaggedPointer:(void *)arg1;
 - (id)labelForTaggedPointer:(void *)arg1;
+- (_Bool)_remoteAddressIsOKtoRead:(unsigned long long)arg1;
 - (id)objectLabelHandlerForRemoteIsa:(unsigned int)arg1;
 - (void)buildIsaToObjectLabelHandlerMap;
 - (id)osMajorMinorVersionString;
@@ -138,6 +143,7 @@
 - (id)classInfoForMemory:(void *)arg1 length:(unsigned int)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)classInfoForMemory:(void *)arg1 length:(unsigned int)arg2;
 - (id)classInfoForNonobjectMemory:(void *)arg1 length:(unsigned int)arg2;
+- (id)classInfoForObjCClassStructurePointerType:(unsigned int)arg1;
 - (unsigned int)classInfoIndexForObjCClassStructurePointerType:(unsigned int)arg1;
 - (void)_generateClassInfosForObjCClassStructurePointerTypes;
 - (id)_classInfoWithPthreadType:(id)arg1;

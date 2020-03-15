@@ -25,11 +25,11 @@
 - (_Bool)isPlaceholderItemForContentItemID:(NSString *)arg1;
 - (MPAVItem *)itemForContentItemID:(NSString *)arg1;
 - (NSString *)contentItemIDWithCurrentItemOffset:(int)arg1 mode:(int)arg2 didReachEnd:(_Bool *)arg3;
+- (NSString *)contentItemIDAtIndex:(int)arg1;
 - (void)jumpToContentItemID:(NSString *)arg1;
 - (void)jumpToFirstContentItem;
 - (void)reshuffle;
 - (void)player:(MPAVController *)arg1 currentItemDidChangeFromItem:(MPAVItem *)arg2 toItem:(MPAVItem *)arg3;
-- (void)handlePlaybackFailureForItem:(MPAVItem *)arg1;
 - (void)removeContentItemID:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)moveContentItemID:(NSString *)arg1 afterContentItemID:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)addPlaybackContext:(MPPlaybackContext *)arg1 atPosition:(int)arg2 jumpToIt:(_Bool)arg3 userModification:(_Bool)arg4 completion:(void (^)(NSError *))arg5;

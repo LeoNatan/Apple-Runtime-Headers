@@ -16,11 +16,11 @@
     HDSQLiteEntityForeignKey *_foreignKey;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HDSQLiteEntityForeignKey *foreignKey; // @synthesize foreignKey=_foreignKey;
 @property(readonly, nonatomic) unsigned char keyPathType; // @synthesize keyPathType=_keyPathType;
 @property(readonly, copy, nonatomic) NSString *columnType; // @synthesize columnType=_columnType;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_columnNameAndTypeString;
 - (id)creationSQL;

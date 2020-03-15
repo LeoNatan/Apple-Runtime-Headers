@@ -28,6 +28,7 @@
     struct CGRect _contentsRect;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *videoGravity; // @synthesize videoGravity=_videoGravity;
 @property(nonatomic) BOOL allowsEdgeAntialiasing; // @synthesize allowsEdgeAntialiasing=_allowsEdgeAntialiasing;
 @property(nonatomic) struct CGRect contentsRect; // @synthesize contentsRect=_contentsRect;
@@ -35,7 +36,6 @@
 @property(nonatomic) BOOL placeholderVisible; // @synthesize placeholderVisible=_placeholderVisible;
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 @property(retain, nonatomic) PXVideoSession *videoSession; // @synthesize videoSession=_videoSession;
-- (void).cxx_destruct;
 - (void)_updateEdgeAntialiasing;
 - (void)_updatePlaceholderVisibility;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;

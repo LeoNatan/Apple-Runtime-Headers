@@ -14,9 +14,9 @@
     NSDate *_dateRecorded;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *dateRecorded; // @synthesize dateRecorded=_dateRecorded;
 @property(readonly, nonatomic) float score; // @synthesize score=_score;
-- (void).cxx_destruct;
 - (id)initWithScore:(float)arg1;
 
 @end

@@ -15,10 +15,10 @@
     NSData *_optionsData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *optionsData; // @synthesize optionsData=_optionsData;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) unsigned long long blockRow; // @synthesize blockRow=_blockRow;
-- (void).cxx_destruct;
 - (id)initWithBlockRow:(unsigned long long)arg1 type:(unsigned long long)arg2 options:(id)arg3;
 
 @end

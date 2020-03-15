@@ -25,11 +25,11 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadLoginWindowModulePath; // @synthesize payloadLoginWindowModulePath=_payloadLoginWindowModulePath;
 @property(copy, nonatomic) NSNumber *payloadLoginWindowIdleTime; // @synthesize payloadLoginWindowIdleTime=_payloadLoginWindowIdleTime;
 @property(copy, nonatomic) NSNumber *payloadAskForPasswordDelay; // @synthesize payloadAskForPasswordDelay=_payloadAskForPasswordDelay;
 @property(copy, nonatomic) NSNumber *payloadAskForPassword; // @synthesize payloadAskForPassword=_payloadAskForPassword;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

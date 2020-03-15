@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <PXActivityItemSourceController> _itemSourceController;
 }
 
-@property(nonatomic) __weak id <PXActivityItemSourceController> itemSourceController; // @synthesize itemSourceController=_itemSourceController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PXActivityItemSourceController> itemSourceController; // @synthesize itemSourceController=_itemSourceController;
 - (_Bool)_itemIsVideoAtURL:(id)arg1;
 - (void)performActivity;
 - (void)prepareWithActivityItems:(id)arg1;

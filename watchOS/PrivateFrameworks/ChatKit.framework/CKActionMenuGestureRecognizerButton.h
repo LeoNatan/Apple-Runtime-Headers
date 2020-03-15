@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)actionMenuGestureRecognizerButtonWithButton:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *gestureDidBeginDate; // @synthesize gestureDidBeginDate=_gestureDidBeginDate;
 @property(nonatomic) __weak id <CKActionMenuGestureRecognizerButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(retain, nonatomic) CKActionMenuGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
-- (void).cxx_destruct;
 - (void)gestureRecognized:(id)arg1;
 - (void)touchUpOutsideButton:(id)arg1;
 - (void)touchUpInsideButton:(id)arg1;

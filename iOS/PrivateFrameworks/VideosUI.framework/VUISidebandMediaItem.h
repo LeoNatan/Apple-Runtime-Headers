@@ -17,12 +17,13 @@ __attribute__((visibility("hidden")))
     VUISidebandMediaItemAssetController *_assetController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUISidebandMediaItemAssetController *assetController; // @synthesize assetController=_assetController;
 @property(retain, nonatomic) VUIVideoManagedObject *videoManagedObject; // @synthesize videoManagedObject=_videoManagedObject;
-- (void).cxx_destruct;
 - (void)_videoManagedObjectPlaybackExpirationWillChange:(id)arg1;
 - (id)imageLoadParamsWithImageType:(unsigned long long)arg1;
 - (id)downloadExpirationDate;
+- (id)episodeIndexInSeries;
 - (id)episodeNumber;
 - (id)seasonIdentifier;
 - (id)seasonTitle;

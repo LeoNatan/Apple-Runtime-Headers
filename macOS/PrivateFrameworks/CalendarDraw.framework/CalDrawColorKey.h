@@ -18,8 +18,8 @@
 + (id)colorKeyForConstantColor:(id)arg1;
 + (id)colorKeyForNSColor:(id)arg1;
 + (id)colorKeyForCGColor:(struct CGColor *)arg1;
-@property(copy) NSString *styleRef; // @synthesize styleRef=_styleRef;
 - (void).cxx_destruct;
+@property(copy) NSString *styleRef; // @synthesize styleRef=_styleRef;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;

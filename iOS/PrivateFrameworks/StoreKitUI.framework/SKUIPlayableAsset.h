@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     long long _storeItemIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long storeItemIdentifier; // @synthesize storeItemIdentifier=_storeItemIdentifier;
 @property(nonatomic) _Bool shouldUseITunesStoreSecureKeyDelivery; // @synthesize shouldUseITunesStoreSecureKeyDelivery=_shouldUseITunesStoreSecureKeyDelivery;
 @property(nonatomic) double playbackDuration; // @synthesize playbackDuration=_playbackDuration;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isITunesStream) _Bool ITunesStream; // @synthesize ITunesStream=_ITunesStream;
 @property(nonatomic) double initialPlaybackTime; // @synthesize initialPlaybackTime=_initialPlaybackTime;
 @property(copy, nonatomic) NSURL *contentURL; // @synthesize contentURL=_contentURL;
-- (void).cxx_destruct;
 - (id)initWithVideo:(id)arg1;
 - (id)initWithVideoViewElement:(id)arg1 assetViewElement:(id)arg2;
 - (id)initWithContentURL:(id)arg1;

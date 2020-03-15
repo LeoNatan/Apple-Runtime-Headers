@@ -29,6 +29,7 @@
     NSNumber *_linkediTunesDSID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isAskToBuyEnabled; // @synthesize isAskToBuyEnabled=_isAskToBuyEnabled;
 @property(nonatomic) _Bool areParentalControlsEnabled; // @synthesize areParentalControlsEnabled=_areParentalControlsEnabled;
 @property(copy, nonatomic) NSNumber *linkediTunesDSID; // @synthesize linkediTunesDSID=_linkediTunesDSID;
@@ -46,7 +47,6 @@
 @property(copy, nonatomic) NSString *appleID; // @synthesize appleID=_appleID;
 @property(copy, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(copy, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
-- (void).cxx_destruct;
 
 @end
 

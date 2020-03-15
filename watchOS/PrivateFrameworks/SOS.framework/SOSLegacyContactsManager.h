@@ -16,8 +16,8 @@
 + (_Bool)authorizedToUseContactStore;
 + (id)contactStore;
 + (void)preloadContactStoreIfNecessary;
-@property(retain, nonatomic) FKFriendsManager *friendsManager; // @synthesize friendsManager=_friendsManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FKFriendsManager *friendsManager; // @synthesize friendsManager=_friendsManager;
 - (void)contactStoreDidChange;
 - (id)_contactFromFriend:(id)arg1;
 - (id)_SOSFormattedDestinationForFriend:(id)arg1 withDestinationNumber:(id)arg2;

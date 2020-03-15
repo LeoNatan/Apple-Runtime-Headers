@@ -19,12 +19,12 @@
     double _rightContentMargin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldUseExpandedContentStyle; // @synthesize shouldUseExpandedContentStyle=_shouldUseExpandedContentStyle;
 @property(nonatomic) _Bool hasBeenDisplayed; // @synthesize hasBeenDisplayed=_hasBeenDisplayed;
 @property(nonatomic) double rightContentMargin; // @synthesize rightContentMargin=_rightContentMargin;
 @property(nonatomic) double leftContentMargin; // @synthesize leftContentMargin=_leftContentMargin;
 @property(retain, nonatomic) CNCardGroupItem *cardGroupItem; // @synthesize cardGroupItem=_cardGroupItem;
-- (void).cxx_destruct;
 - (double)minCellHeight;
 - (void)updateConstraints;
 - (id)variableConstraints;

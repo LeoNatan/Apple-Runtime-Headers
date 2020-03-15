@@ -24,6 +24,7 @@
 }
 
 + (id)os_log;
+- (void).cxx_destruct;
 @property(retain) NSImageView *cameraOff; // @synthesize cameraOff=_cameraOff;
 @property(retain, nonatomic) CNCameraChangeWatcher *cameraWatcher; // @synthesize cameraWatcher=_cameraWatcher;
 @property(nonatomic) long long setupResult; // @synthesize setupResult=_setupResult;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) AVCaptureStillImageOutput *stillImageOutput; // @synthesize stillImageOutput=_stillImageOutput;
 @property(retain, nonatomic) AVCaptureDeviceInput *videoDeviceInput; // @synthesize videoDeviceInput=_videoDeviceInput;
 @property(retain, nonatomic) _CNCameraSessionState *sessionState; // @synthesize sessionState=_sessionState;
-- (void).cxx_destruct;
 - (BOOL)nts_updateVideoInputForDevice:(id)arg1;
 - (void)captureDeviceDidChange:(id)arg1;
 - (void)takePhotoWithCompletionBlock:(CDUnknownBlockType)arg1;

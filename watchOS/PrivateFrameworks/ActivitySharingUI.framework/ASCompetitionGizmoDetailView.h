@@ -23,8 +23,8 @@
     _Bool _isInteractionEnabled;
 }
 
-@property(nonatomic) _Bool isInteractionEnabled; // @synthesize isInteractionEnabled=_isInteractionEnabled;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool isInteractionEnabled; // @synthesize isInteractionEnabled=_isInteractionEnabled;
 - (_Bool)supportsSmackTalkReply;
 - (void)setFriend:(id)arg1 competition:(id)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

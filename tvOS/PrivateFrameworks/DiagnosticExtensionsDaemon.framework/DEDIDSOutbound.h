@@ -23,11 +23,11 @@
 
 + (id)archivedClasses;
 + (id)sessionWithID:(id)arg1 withDeviceAtAddress:(id)arg2 connection:(id)arg3;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(retain) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(retain) NSString *deviceAddress; // @synthesize deviceAddress=_deviceAddress;
 @property __weak DEDIDSConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)didCancelSession:(id)arg1;
 - (void)syncSessionStatusWithSession:(id)arg1;
 - (void)cancelNotificationForSession:(id)arg1;

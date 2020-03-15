@@ -17,10 +17,10 @@
     _TVStackedVideoPlayerLayerContainerView *_playerContainerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TVStackedVideoPlayerLayerContainerView *playerContainerView; // @synthesize playerContainerView=_playerContainerView;
 @property(retain, nonatomic) _TVStackedImageView *previewImageView; // @synthesize previewImageView=_previewImageView;
 @property(retain, nonatomic) _TVStackedMediaDocumentEntry *entry; // @synthesize entry=_entry;
-- (void).cxx_destruct;
 - (void)_teardownPlayerLayer;
 - (id)player;
 - (void)_finishPreviewToVideoTransition;

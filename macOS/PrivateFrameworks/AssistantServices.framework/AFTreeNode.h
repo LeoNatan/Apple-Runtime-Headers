@@ -18,10 +18,10 @@
 }
 
 + (id)absoluteIndexPathsForTreeNodes:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_childNodes) NSMutableArray *childNodes; // @synthesize childNodes=_childNodes;
 @property(nonatomic, setter=_setParentNode:) __weak AFTreeNode *parentNode; // @synthesize parentNode=_parentNode;
 @property(retain, nonatomic) id item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)enumerateDescendentNodesUsingBlock:(CDUnknownBlockType)arg1;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (void)enumerateChildNodesUsingBlock:(CDUnknownBlockType)arg1;

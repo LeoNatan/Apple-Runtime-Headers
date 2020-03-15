@@ -30,6 +30,7 @@
     NSURL *_alternateHLSKeyCertificateURL;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *alternateHLSKeyCertificateURL; // @synthesize alternateHLSKeyCertificateURL=_alternateHLSKeyCertificateURL;
 @property(copy, nonatomic) NSURL *alternateHLSKeyServerURL; // @synthesize alternateHLSKeyServerURL=_alternateHLSKeyServerURL;
 @property(copy, nonatomic) NSURL *alternateHLSPlaylistURL; // @synthesize alternateHLSPlaylistURL=_alternateHLSPlaylistURL;
@@ -46,7 +47,6 @@
 @property(nonatomic) _Bool didStartLeaseSession; // @synthesize didStartLeaseSession=_didStartLeaseSession;
 @property(nonatomic) unsigned long long assetQuality; // @synthesize assetQuality=_assetQuality;
 @property(copy, nonatomic) NSString *assetFlavor; // @synthesize assetFlavor=_assetFlavor;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 

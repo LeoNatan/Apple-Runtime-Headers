@@ -52,6 +52,7 @@
     iCloudTouchBarController *_touchBarController;
 }
 
+- (void).cxx_destruct;
 @property(retain) iCloudTouchBarController *touchBarController; // @synthesize touchBarController=_touchBarController;
 @property int numericPassphraseLength; // @synthesize numericPassphraseLength=_numericPassphraseLength;
 @property BOOL usingNumericPassphrase; // @synthesize usingNumericPassphrase=_usingNumericPassphrase;
@@ -73,7 +74,6 @@
 @property NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property(retain) NSString *accountID; // @synthesize accountID=_accountID;
 @property id delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)mmCSCSetupControllerDidCancel:(id)arg1;
 - (void)mmCSCSetupControllerDidOptOut:(id)arg1;
 - (void)mmCSCSetupControllerDidEnd:(id)arg1;

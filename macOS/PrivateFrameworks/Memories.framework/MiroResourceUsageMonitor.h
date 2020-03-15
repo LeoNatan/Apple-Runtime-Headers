@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 
 + (long long)_getResidentMemoryKBytes:(long long *)arg1;
 + (id)sharedResourceUsageMonitor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *_isolationQueue; // @synthesize _isolationQueue=__isolationQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *_pollingTimer; // @synthesize _pollingTimer=__pollingTimer;
 @property(nonatomic) long long _maxResidentMemoryKBytes; // @synthesize _maxResidentMemoryKBytes=__maxResidentMemoryKBytes;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long _initialResidentMemoryKBytes; // @synthesize _initialResidentMemoryKBytes=__initialResidentMemoryKBytes;
 @property(nonatomic) double _timeStart; // @synthesize _timeStart=__timeStart;
 @property(nonatomic) struct rusage _rusageStart; // @synthesize _rusageStart=__rusageStart;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long memoryUsage;
 @property(readonly, nonatomic) double processorUsage;
 - (BOOL)isRunning;

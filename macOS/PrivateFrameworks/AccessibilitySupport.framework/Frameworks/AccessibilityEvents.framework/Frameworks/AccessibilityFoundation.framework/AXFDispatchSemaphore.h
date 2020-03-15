@@ -13,8 +13,8 @@
     NSObject<OS_dispatch_semaphore> *__semaphore;
 }
 
-@property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *_semaphore; // @synthesize _semaphore=__semaphore;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *_semaphore; // @synthesize _semaphore=__semaphore;
 - (BOOL)waitWithTimeout:(long long)arg1;
 - (void)wait;
 - (void)signal;

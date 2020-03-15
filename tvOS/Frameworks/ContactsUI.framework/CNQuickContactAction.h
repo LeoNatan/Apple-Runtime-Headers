@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(nonatomic) __weak id <CNQuickContactActionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CNContactAction *contactAction; // @synthesize contactAction=_contactAction;
-- (void).cxx_destruct;
 - (void)actionWasCanceled:(id)arg1;
 - (void)actionDidFinish:(id)arg1;
 - (id)storeForAction:(id)arg1;

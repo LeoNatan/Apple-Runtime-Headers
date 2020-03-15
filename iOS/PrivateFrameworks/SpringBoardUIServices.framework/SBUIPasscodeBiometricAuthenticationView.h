@@ -35,6 +35,7 @@
     NSLayoutConstraint *_faceIDLabelFaceIDReasonBaselineConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *faceIDLabelFaceIDReasonBaselineConstraint; // @synthesize faceIDLabelFaceIDReasonBaselineConstraint=_faceIDLabelFaceIDReasonBaselineConstraint;
 @property(retain, nonatomic) UILayoutGuide *faceIDLabelAndReasonLayoutGuide; // @synthesize faceIDLabelAndReasonLayoutGuide=_faceIDLabelAndReasonLayoutGuide;
 @property(retain, nonatomic) UILayoutGuide *faceIDLabelAndReasonHelperGuide; // @synthesize faceIDLabelAndReasonHelperGuide=_faceIDLabelAndReasonHelperGuide;
@@ -57,7 +58,6 @@
 @property(nonatomic) __weak id <SBUIPasscodeBiometricAuthenticationViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <SBUIPasscodeBiometricAuthenticationViewLayoutDelegate> layoutDelegate; // @synthesize layoutDelegate=_layoutDelegate;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)_noteContentSizeCategoryDidChange;
 - (double)_leadingForFaceIDReason;
 - (void)_emergencyCallButtonHit;

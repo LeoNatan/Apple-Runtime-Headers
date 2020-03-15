@@ -19,11 +19,11 @@
 }
 
 + (_Bool)enablesTransportButtons;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNStarkContactNameView *contactNameView; // @synthesize contactNameView=_contactNameView;
 @property(retain, nonatomic) NSArray *activatedConstraints; // @synthesize activatedConstraints=_activatedConstraints;
 @property(retain, nonatomic) CNCardiMessageEmailGroup *iMessageEmailGroup; // @synthesize iMessageEmailGroup=_iMessageEmailGroup;
 @property(retain, nonatomic) CNPropertyBestIDSValueQuery *bestiMessageQuery; // @synthesize bestiMessageQuery=_bestiMessageQuery;
-- (void).cxx_destruct;
 - (void)queryComplete;
 - (void)_initiateBestiMessagePropertyQuery;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;

@@ -13,8 +13,8 @@
     NSMutableArray *_inProgressSaveRequests;
 }
 
-@property(retain, nonatomic) NSMutableArray *inProgressSaveRequests; // @synthesize inProgressSaveRequests=_inProgressSaveRequests;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *inProgressSaveRequests; // @synthesize inProgressSaveRequests=_inProgressSaveRequests;
 - (id)_firstMatchInSaveRequests:(CDUnknownBlockType)arg1;
 - (id)_latestSaveInProgressReminderForObjectID:(id)arg1 fallbackAccount:(id)arg2 fallbackList:(id)arg3 fallbackParentList:(id)arg4 fallbackParentReminder:(id)arg5 saveRequest:(id)arg6;
 - (id)_latestSaveInProgressListForObjectID:(id)arg1 fallbackAccount:(id)arg2 fallbackParentList:(id)arg3 saveRequest:(id)arg4;

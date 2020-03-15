@@ -46,6 +46,7 @@
 + (id)_compositionLoadedFromMetadataURL:(id)arg1 savedRecording:(id)arg2;
 + (id)_compositionLoadedFromMetadataURL:(id)arg1 composedAVURL:(id)arg2 savedRecordingUUID:(id)arg3 creationDate:(id)arg4 createIfNeeded:(_Bool)arg5;
 + (id)_unitTestingCompositionWithDecomposedFragments:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *composedFragmentsMutex; // @synthesize composedFragmentsMutex=_composedFragmentsMutex;
 @property(nonatomic) _Bool readonly; // @synthesize readonly=_readonly;
 @property(nonatomic) double cachedComposedAVURLDuration; // @synthesize cachedComposedAVURLDuration=_cachedComposedAVURLDuration;
@@ -56,7 +57,6 @@
 @property(readonly, nonatomic) NSURL *composedAVURL; // @synthesize composedAVURL=_composedAVURL;
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(retain, nonatomic) NSString *savedRecordingUUID; // @synthesize savedRecordingUUID=_savedRecordingUUID;
-- (void).cxx_destruct;
 - (id)rcs_repairDecomposedFragmentMetadataIfNecessary;
 - (void)rcs_composeToFinalDestinationAndDeleteDecomposedFragments:(_Bool)arg1 composeWaveform:(_Bool)arg2 canGenerateWaveformByProcessingAVURL:(_Bool)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)_eaccess_repairDecomposedFragmentMetadataIfNecessaryAndSave:(_Bool)arg1;

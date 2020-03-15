@@ -18,10 +18,10 @@
     double __preferredHeightPhase;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setPreferredHeight:) double _preferredHeightPhase; // @synthesize _preferredHeightPhase=__preferredHeightPhase;
 @property(readonly, nonatomic) UIView *_view; // @synthesize _view=__view;
 @property(nonatomic) __weak id <PXWidgetDelegate> widgetDelegate; // @synthesize widgetDelegate=_widgetDelegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *localizedTitle;
 @property(readonly, nonatomic) NSObject<PXAnonymousView> *contentView;
 - (double)preferredContentHeightForWidth:(double)arg1;

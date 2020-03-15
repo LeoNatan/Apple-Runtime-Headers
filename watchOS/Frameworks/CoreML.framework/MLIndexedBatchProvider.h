@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSArray *_indices;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *indices; // @synthesize indices=_indices;
 @property(retain, nonatomic) id <MLBatchProvider> fullBatch; // @synthesize fullBatch=_fullBatch;
-- (void).cxx_destruct;
 - (id)featuresAtIndex:(int)arg1;
 @property(readonly, nonatomic) int count;
 - (id)initWithBatch:(id)arg1 indices:(id)arg2 error:(id *)arg3;

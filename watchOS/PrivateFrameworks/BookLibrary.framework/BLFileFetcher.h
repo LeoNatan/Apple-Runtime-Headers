@@ -15,10 +15,10 @@
     BLAudiobookCacheDirectoryUtils *_cacheDirectoryUtils;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BLAudiobookCacheDirectoryUtils *cacheDirectoryUtils; // @synthesize cacheDirectoryUtils=_cacheDirectoryUtils;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
 @property(readonly, nonatomic) NSURLSessionConfiguration *URLSessionConfiguration; // @synthesize URLSessionConfiguration=_URLSessionConfiguration;
-- (void).cxx_destruct;
 - (_Bool)_movePlaylistFileFromFileURL:(id)arg1 toFileURL:(id)arg2 error:(id *)arg3;
 - (id)setupDownloadTaskForFetchingURL:(id)arg1 forMediaItem:(id)arg2 isSegment:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)initAllowCellularAccess:(_Bool)arg1 requiresPluggedIn:(_Bool)arg2 cacheDirectoryUtils:(id)arg3;

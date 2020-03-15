@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsUpdatingActiveConnection; // @synthesize allowsUpdatingActiveConnection=_allowsUpdatingActiveConnection;
 @property(readonly, nonatomic) NSMutableOrderedSet *connections; // @synthesize connections=_connections;
 @property(readonly, nonatomic) NSMutableOrderedSet *secondScreens; // @synthesize secondScreens=_secondScreens;
 @property(readonly, nonatomic) AVObservationController *observationController; // @synthesize observationController=_observationController;
-- (void).cxx_destruct;
 - (void)_insertConnection:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)_updateActiveConnection;
 - (id)_targetScreen;

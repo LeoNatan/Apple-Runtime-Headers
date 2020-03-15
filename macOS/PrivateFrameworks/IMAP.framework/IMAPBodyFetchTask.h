@@ -46,6 +46,7 @@
 }
 
 + (id)signpostLog;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL dataSourceIsInboxOrAllMail; // @synthesize dataSourceIsInboxOrAllMail=_dataSourceIsInboxOrAllMail;
 @property(retain, nonatomic) IMAPSyncBodiesOperation *userRequestedSyncBodiesOperation; // @synthesize userRequestedSyncBodiesOperation=_userRequestedSyncBodiesOperation;
 @property(nonatomic) BOOL gettingMessagesToFetch; // @synthesize gettingMessagesToFetch=_gettingMessagesToFetch;
@@ -55,7 +56,6 @@
 @property(nonatomic) BOOL needToCheckForIncompleteMessages; // @synthesize needToCheckForIncompleteMessages=_needToCheckForIncompleteMessages;
 @property(nonatomic) unsigned int uidNext; // @synthesize uidNext=_uidNext;
 @property(readonly, nonatomic) id <IMAPMessageDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)syncAttachmentsOperation:(id)arg1 syncedAttachmentsForDownloads:(id)arg2;
 - (void)getAttachmentsDownloadsOperation:(id)arg1 gotDownloads:(id)arg2 missedMessages:(id)arg3;
 - (void)persistBodiesOperation:(id)arg1 persistedDownloads:(id)arg2;

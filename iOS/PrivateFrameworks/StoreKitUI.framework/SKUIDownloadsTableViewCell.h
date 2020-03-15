@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     SKUIDownloadsCellView *_cellView;
 }
 
-@property(readonly, nonatomic) SKUIDownloadsCellView *cellView; // @synthesize cellView=_cellView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SKUIDownloadsCellView *cellView; // @synthesize cellView=_cellView;
 - (void)layoutSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

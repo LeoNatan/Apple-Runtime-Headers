@@ -15,9 +15,9 @@
     NSUUID *_transitionID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *transitionID; // @synthesize transitionID=_transitionID;
 @property(readonly, nonatomic) unsigned long long transitionPhase; // @synthesize transitionPhase=_transitionPhase;
-- (void).cxx_destruct;
 - (id)handleTimerEvent:(id)arg1;
 - (id)handleGestureEvent:(id)arg1;
 - (id)_handleTransitionEvent:(id)arg1;

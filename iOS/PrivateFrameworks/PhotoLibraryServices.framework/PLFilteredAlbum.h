@@ -23,25 +23,25 @@
     NSMutableOrderedSet *_weak_assets;
     _Bool isObservingContextChanges;
     int filter;
-    struct NSObject *_backingAlbum;
+    NSObject<PLAlbumProtocol> *_backingAlbum;
     NSPredicate *predicate;
     NSArray *_filterParameters;
 }
 
-+ (id)filteredIndexesInAlbum:(struct NSObject *)arg1 predicate:(id)arg2;
++ (id)filteredIndexesInAlbum:(id)arg1 predicate:(id)arg2;
 + (id)descriptionForAlbumFilter:(int)arg1 parameters:(id)arg2;
 + (id)predicateForAlbumFilter:(int)arg1 parameters:(id)arg2 photoLibrary:(id)arg3;
-+ (struct NSObject *)unfilteredAlbum:(struct NSObject *)arg1;
-+ (struct NSObject *)filteredAlbum:(struct NSObject *)arg1 intersectFilter:(int)arg2;
-+ (struct NSObject *)filteredAlbum:(struct NSObject *)arg1 predicate:(id)arg2;
-+ (struct NSObject *)filteredAlbum:(struct NSObject *)arg1 filter:(int)arg2 parameters:(id)arg3;
-+ (struct NSObject *)filteredAlbum:(struct NSObject *)arg1 filter:(int)arg2;
++ (id)unfilteredAlbum:(id)arg1;
++ (id)filteredAlbum:(id)arg1 intersectFilter:(int)arg2;
++ (id)filteredAlbum:(id)arg1 predicate:(id)arg2;
++ (id)filteredAlbum:(id)arg1 filter:(int)arg2 parameters:(id)arg3;
++ (id)filteredAlbum:(id)arg1 filter:(int)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *filterParameters; // @synthesize filterParameters=_filterParameters;
 @property(nonatomic) _Bool isObservingContextChanges; // @synthesize isObservingContextChanges;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate;
 @property(nonatomic) int filter; // @synthesize filter;
 @property(retain, nonatomic) NSObject<PLAlbumProtocol> *backingAlbum; // @synthesize backingAlbum=_backingAlbum;
-- (void).cxx_destruct;
 - (void)insertInternalUserEditableAssets:(id)arg1 atIndexes:(id)arg2 customExportsInfo:(id)arg3 trimmedVideoPathInfo:(id)arg4 commentText:(id)arg5;
 - (void)replaceFilteredAssetsAtIndexes:(id)arg1 withFilteredValues:(id)arg2;
 - (void)replaceObjectInFilteredAssetsAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
@@ -61,9 +61,9 @@
 @property(readonly, copy, nonatomic) id <NSObject><NSCopying> cachedIndexMapState;
 @property(readonly, copy, nonatomic) NSIndexSet *filteredIndexes;
 @property(readonly, nonatomic) PLIndexMapper *indexMapper;
-- (id)initWithBackingAlbum:(struct NSObject *)arg1 filter:(int)arg2 parameters:(id)arg3;
-- (id)initWithBackingAlbum:(struct NSObject *)arg1 predicate:(id)arg2;
-- (void)_commonInitWithBackingAlbum:(struct NSObject *)arg1 predicate:(id)arg2;
+- (id)initWithBackingAlbum:(id)arg1 filter:(int)arg2 parameters:(id)arg3;
+- (id)initWithBackingAlbum:(id)arg1 predicate:(id)arg2;
+- (void)_commonInitWithBackingAlbum:(id)arg1 predicate:(id)arg2;
 - (void)reducePendingItemsCountBy:(unsigned long long)arg1;
 @property(nonatomic) int pendingItemsType;
 @property(nonatomic) int pendingItemsCount;

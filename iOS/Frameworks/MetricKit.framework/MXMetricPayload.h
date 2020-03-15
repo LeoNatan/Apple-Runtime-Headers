@@ -32,6 +32,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) MXMetaData *metaData; // @synthesize metaData=_metaData;
 @property(retain) NSArray *signpostMetrics; // @synthesize signpostMetrics=_signpostMetrics;
 @property(retain) MXDisplayMetric *displayMetrics; // @synthesize displayMetrics=_displayMetrics;
@@ -49,7 +50,6 @@
 @property(readonly) NSDate *timeStampBegin; // @synthesize timeStampBegin=_timeStampBegin;
 @property(readonly) _Bool includesMultipleApplicationVersions; // @synthesize includesMultipleApplicationVersions=_includesMultipleApplicationVersions;
 @property(readonly) NSString *latestApplicationVersion; // @synthesize latestApplicationVersion=_latestApplicationVersion;
-- (void).cxx_destruct;
 - (id)toDictionary;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

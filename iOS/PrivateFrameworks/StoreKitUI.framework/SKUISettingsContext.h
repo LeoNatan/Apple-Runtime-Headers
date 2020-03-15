@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     SKUIClientContext *_clientContext;
 }
 
-@property(nonatomic) __weak SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 - (void)_registerClass:(Class)arg1 forReuseIdentifier:(id)arg2;
 - (void)_registerReuseClasses;
 - (id)_dequeueReusableSettingDescriptionWithReuseIdentifier:(id)arg1 forViewElement:(id)arg2 parent:(id)arg3;

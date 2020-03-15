@@ -15,8 +15,8 @@
     NCNotificationDispatcher *_dispatcher;
 }
 
-@property(retain, nonatomic) NCNotificationDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NCNotificationDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
 - (void)withdrawNotificationRequestForCardItem:(id)arg1;
 - (void)modifyNotificationRequestForCardItem:(id)arg1;
 - (void)postNotificationRequestForCardItem:(id)arg1;

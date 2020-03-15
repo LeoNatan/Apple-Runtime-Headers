@@ -16,10 +16,10 @@
     MPStoreOfferMediaItemCollection *_mergedCollection;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MPStoreOfferMediaItemCollection *mergedCollection; // @synthesize mergedCollection=_mergedCollection;
 @property(readonly, nonatomic) MPStoreOfferMediaItemCollection *offeredCollection; // @synthesize offeredCollection=_offeredCollection;
 @property(readonly, nonatomic) long long preferredStoreOfferVariant; // @synthesize preferredStoreOfferVariant=_preferredStoreOfferVariant;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *localItems;
 @property(readonly, nonatomic) MPStoreOfferMediaItemCollection *itemsWithCompletionsCollection;
 - (id)initWithOfferedCollection:(id)arg1 localItemsQuery:(id)arg2 preferredStoreOfferVariant:(long long)arg3;

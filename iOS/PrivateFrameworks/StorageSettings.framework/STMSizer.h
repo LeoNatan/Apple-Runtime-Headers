@@ -17,8 +17,8 @@
     NSArray *_rootPaths;
 }
 
-@property(retain, nonatomic) NSArray *rootPaths; // @synthesize rootPaths=_rootPaths;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *rootPaths; // @synthesize rootPaths=_rootPaths;
 - (void)processEvents:(id)arg1;
 - (void)setEvent:(id)arg1 forItem:(id)arg2;
 - (void)startSizing:(id)arg1;

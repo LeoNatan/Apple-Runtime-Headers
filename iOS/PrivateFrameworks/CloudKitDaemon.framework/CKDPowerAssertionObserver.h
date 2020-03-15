@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedObserver;
-@property(retain, nonatomic) NSMapTable *operationsHoldingPowerAssertionsByID; // @synthesize operationsHoldingPowerAssertionsByID=_operationsHoldingPowerAssertionsByID;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMapTable *operationsHoldingPowerAssertionsByID; // @synthesize operationsHoldingPowerAssertionsByID=_operationsHoldingPowerAssertionsByID;
 - (id)CKStatusReportArray;
 - (void)operationDidReleasePowerAssertion:(id)arg1;
 - (void)operationDidAcquirePowerAssertion:(id)arg1;

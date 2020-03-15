@@ -14,9 +14,9 @@
     NSDictionary *_sourceUIDsToDestinationUIDs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *sourceUIDsToDestinationUIDs; // @synthesize sourceUIDsToDestinationUIDs=_sourceUIDsToDestinationUIDs;
 @property(nonatomic) unsigned int uidValidity; // @synthesize uidValidity=_uidValidity;
-- (void).cxx_destruct;
 
 @end
 

@@ -14,9 +14,9 @@
     unsigned long long _reentryCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long reentryCount; // @synthesize reentryCount=_reentryCount;
 @property(retain, nonatomic) id <PXLayoutPerformer> performer; // @synthesize performer=_performer;
-- (void).cxx_destruct;
 
 @end
 

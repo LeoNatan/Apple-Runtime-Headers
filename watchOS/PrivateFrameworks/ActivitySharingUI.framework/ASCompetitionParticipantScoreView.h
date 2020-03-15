@@ -26,6 +26,7 @@
     float _scoreRightMargin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float scoreRightMargin; // @synthesize scoreRightMargin=_scoreRightMargin;
 @property(nonatomic) float scoreLeftMargin; // @synthesize scoreLeftMargin=_scoreLeftMargin;
 @property(nonatomic) _Bool secondaryScoreEnabled; // @synthesize secondaryScoreEnabled=_secondaryScoreEnabled;
@@ -35,7 +36,6 @@
 @property(nonatomic) unsigned int primaryScore; // @synthesize primaryScore=_primaryScore;
 @property(nonatomic) float nameFontSizeReduction; // @synthesize nameFontSizeReduction=_nameFontSizeReduction;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)_updateSecondaryScoreLabel;
 - (void)_updatePrimaryScoreLabelWithFontSizeReduction:(float)arg1;
 - (void)_updateNameLabelWithFontSizeReduction:(float)arg1;

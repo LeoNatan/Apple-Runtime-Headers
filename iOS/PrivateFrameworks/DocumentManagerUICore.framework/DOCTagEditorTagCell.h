@@ -14,9 +14,9 @@
     DOCLargeTagView *_tagView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DOCLargeTagView *tagView; // @synthesize tagView=_tagView;
 @property(nonatomic) _Bool mixedSelection; // @synthesize mixedSelection=_mixedSelection;
-- (void).cxx_destruct;
 - (void)updateStyle;
 - (void)setSelected:(_Bool)arg1;
 @property(retain, nonatomic) DOCTag *tagValue; // @dynamic tagValue;

@@ -19,8 +19,8 @@
     BOOL _shouldAttemptToDownloadConfiguration;
 }
 
-@property(nonatomic) BOOL shouldAttemptToDownloadConfiguration; // @synthesize shouldAttemptToDownloadConfiguration=_shouldAttemptToDownloadConfiguration;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL shouldAttemptToDownloadConfiguration; // @synthesize shouldAttemptToDownloadConfiguration=_shouldAttemptToDownloadConfiguration;
 - (BOOL)isStreamlinedLoginDisallowedOnURL:(id)arg1;
 - (BOOL)isAutomaticLoginDisallowedOnURL:(id)arg1;
 - (id)_domainsIneligibleForPasswordAuditingFromCurrentSnapshot;

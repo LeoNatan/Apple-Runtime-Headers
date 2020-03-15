@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     id <UIViewControllerContextTransitioning> _context;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <UIViewControllerContextTransitioning> context; // @synthesize context=_context;
 @property(retain, nonatomic) UIAlertController *alertController; // @synthesize alertController=_alertController;
-- (void).cxx_destruct;
 - (void)interactionProgress:(id)arg1 didEnd:(_Bool)arg2;
 - (void)interactionProgressDidUpdate:(id)arg1;
 - (void)startInteractiveTransition:(id)arg1;

@@ -9,15 +9,18 @@
 #import <SafariShared/WBSFormAutoFillFeedbackDomainPolicyProvider-Protocol.h>
 
 @class NSString;
+@protocol WBSCrowdsourcedFeedbackWhitelist;
 
 @interface WBSFormAutoFillParsecDomainPolicyProvider : NSObject <WBSFormAutoFillFeedbackDomainPolicyProvider>
 {
+    id <WBSCrowdsourcedFeedbackWhitelist> _feedbackWhitelist;
 }
 
-- (id)_correctionsStore;
+- (void).cxx_destruct;
 - (void)autoFillFeedbackProcessor:(id)arg1 determineWhetherToSendFeedbackForDomain:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
 - (void)getLastPolicyRetrievalURLStringWithResultHandler:(CDUnknownBlockType)arg1;
 - (void)setPoliciesWithJSONData:(id)arg1 retrievalURLString:(id)arg2;
+- (id)initWithFeedbackWhitelist:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

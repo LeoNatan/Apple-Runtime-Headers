@@ -14,9 +14,9 @@
     NSString *_bundleIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain) NSString *badgeValue; // @synthesize badgeValue=_badgeValue;
-- (void).cxx_destruct;
 - (id)uniqueKey;
 - (void)run;
 

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     UIView *_customView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool customViewFlipsHorizontalAxis; // @synthesize customViewFlipsHorizontalAxis=_customViewFlipsHorizontalAxis;
 @property(retain, nonatomic) UIView *customView; // @synthesize customView=_customView;
-- (void).cxx_destruct;
 - (void)finalizeHighlightForPreviewingContext:(id)arg1;
 - (id)highlightShouldBeginInContainerView:(id)arg1 presentationContainerView:(id)arg2 previewingContext:(id)arg3;
 - (void)prepareHighlightWithPreviewingContext:(id)arg1;

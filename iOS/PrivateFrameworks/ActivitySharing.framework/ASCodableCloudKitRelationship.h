@@ -32,6 +32,7 @@
 
 + (Class)eventsType;
 + (Class)addressesType;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int supportedWatchFeatures; // @synthesize supportedWatchFeatures=_supportedWatchFeatures;
 @property(nonatomic) unsigned int supportedPhoneFeatures; // @synthesize supportedPhoneFeatures=_supportedPhoneFeatures;
 @property(nonatomic) long long eventCount; // @synthesize eventCount=_eventCount;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) NSString *outgoingHandshakeToken; // @synthesize outgoingHandshakeToken=_outgoingHandshakeToken;
 @property(retain, nonatomic) NSString *incomingHandshakeToken; // @synthesize incomingHandshakeToken=_incomingHandshakeToken;
 @property(retain, nonatomic) NSData *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

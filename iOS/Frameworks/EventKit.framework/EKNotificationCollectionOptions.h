@@ -15,10 +15,10 @@
     NSString *_externalIDTag;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *externalIDTag; // @synthesize externalIDTag=_externalIDTag;
 @property(readonly, nonatomic) NSString *externalID; // @synthesize externalID=_externalID;
 @property(readonly, nonatomic) EKSource *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithExternalID:(id)arg1 externalIDTag:(id)arg2 inSource:(id)arg3;
 

@@ -19,12 +19,12 @@
     UILabel *_titleLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showSpinner; // @synthesize showSpinner=_showSpinner;
 @property(nonatomic) _Bool showDisclosureIndicator; // @synthesize showDisclosureIndicator=_showDisclosureIndicator;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) PKTransactionMapView *mapView; // @synthesize mapView=_mapView;
 @property(retain, nonatomic) PKDashboardTransactionMapItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (float)maxWidthForTransactionCellInWidth:(float)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

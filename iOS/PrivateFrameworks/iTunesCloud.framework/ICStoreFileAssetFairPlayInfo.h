@@ -15,8 +15,8 @@
     NSDictionary *_responseSinfDictionary;
 }
 
-@property(readonly, copy, nonatomic) NSDictionary *responseSinfDictionary; // @synthesize responseSinfDictionary=_responseSinfDictionary;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *responseSinfDictionary; // @synthesize responseSinfDictionary=_responseSinfDictionary;
 @property(readonly, copy, nonatomic) NSDictionary *purchaseBundleSinfDictionary;
 @property(readonly, copy, nonatomic) NSData *sinf2Data;
 @property(readonly, copy, nonatomic) NSData *sinfData;

@@ -17,6 +17,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)validate:(id)arg1 width:(unsigned long long *)arg2 height:(unsigned long long *)arg3;
 - (unsigned long long)getSamplePositions:(CDStruct_6e3f967a *)arg1 count:(unsigned long long)arg2;
 - (void)setSamplePositions:(const CDStruct_6e3f967a *)arg1 count:(unsigned long long)arg2;
+- (void)setRasterizationRateMap:(id)arg1;
+- (id)rasterizationRateMap;
 - (unsigned long long)defaultRasterSampleCount;
 - (void)setDefaultRasterSampleCount:(unsigned long long)arg1;
 - (BOOL)openGLModeEnabled;

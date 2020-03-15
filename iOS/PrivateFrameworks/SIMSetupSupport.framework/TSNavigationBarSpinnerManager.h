@@ -16,10 +16,10 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *previousRightBarButtonItems; // @synthesize previousRightBarButtonItems=_previousRightBarButtonItems;
 @property(retain) NSMutableDictionary *previousLeftBarButtonItems; // @synthesize previousLeftBarButtonItems=_previousLeftBarButtonItems;
 @property(retain) NSMutableDictionary *navigationItems; // @synthesize navigationItems=_navigationItems;
-- (void).cxx_destruct;
 - (void)stopSpinnerInNavigationItem:(id)arg1 withIdentifier:(id)arg2;
 - (void)stopSpinnerForIdentifier:(id)arg1;
 - (void)startSpinnerInNavigationItem:(id)arg1 withIdentifier:(id)arg2;

@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
     BOOL _isObserving;
 }
 
+- (void).cxx_destruct;
 @property NSUserInterfaceCompressionOptions *compressibleOptions; // @synthesize compressibleOptions=_compressibleOptions;
 @property long long alignment; // @synthesize alignment=_alignment;
 @property BOOL trailingSegmentSelected; // @synthesize trailingSegmentSelected=_trailingSegmentSelected;
@@ -62,7 +63,6 @@ __attribute__((visibility("hidden")))
 @property __weak NSSegmentItem *segmentItemData; // @synthesize segmentItemData=_segmentItemData;
 @property BOOL drawsBezel; // @synthesize drawsBezel=_drawsBezel;
 @property __weak NSSegmentedCell *parentCell; // @synthesize parentCell=_parentCell;
-- (void).cxx_destruct;
 - (id)_preferredAppearanceForSegmentLabelView:(id)arg1;
 - (id)_preferredAppearanceForSegmentImageView:(id)arg1;
 - (int)_vibrancyBlendModeForSegmentLabelView:(id)arg1 proposedBlendMode:(int)arg2;

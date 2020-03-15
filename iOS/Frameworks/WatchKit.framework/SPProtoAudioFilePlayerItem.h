@@ -22,6 +22,7 @@
     SPProtoAudioFilePlayerUpdateContainedIdentifier *_upsertWithAsset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SPProtoAudioFilePlayerItemSetCurrentTime *setItemCurrentTime; // @synthesize setItemCurrentTime=_setItemCurrentTime;
 @property(retain, nonatomic) SPProtoObjectMessage *notifyFailedToPlayToEndTime; // @synthesize notifyFailedToPlayToEndTime=_notifyFailedToPlayToEndTime;
 @property(retain, nonatomic) SPProtoObjectMessage *notifyDidPlayToEndTime; // @synthesize notifyDidPlayToEndTime=_notifyDidPlayToEndTime;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) SPProtoAudioFilePlayerStatus *setStatus; // @synthesize setStatus=_setStatus;
 @property(retain, nonatomic) SPProtoObjectMessage *destroy; // @synthesize destroy=_destroy;
 @property(retain, nonatomic) SPProtoAudioFilePlayerUpdateContainedIdentifier *upsertWithAsset; // @synthesize upsertWithAsset=_upsertWithAsset;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

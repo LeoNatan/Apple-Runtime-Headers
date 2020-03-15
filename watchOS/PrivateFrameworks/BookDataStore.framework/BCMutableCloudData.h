@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *localRecordID; // @synthesize localRecordID=_localRecordID;
 @property(nonatomic) __weak id <BCCloudDataPrivacyDelegate> privacyDelegate; // @synthesize privacyDelegate=_privacyDelegate;
 @property(copy, nonatomic) CKRecord *systemFields; // @synthesize systemFields=_systemFields;
@@ -31,7 +32,6 @@
 @property(nonatomic) long long syncGeneration; // @synthesize syncGeneration=_syncGeneration;
 @property(nonatomic) long long editGeneration; // @synthesize editGeneration=_editGeneration;
 @property(nonatomic) _Bool deletedFlag; // @synthesize deletedFlag=_deletedFlag;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly) unsigned int hash;

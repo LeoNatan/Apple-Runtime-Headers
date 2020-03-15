@@ -17,12 +17,12 @@
     double _targetTimestamp;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double targetTimestamp; // @synthesize targetTimestamp=_targetTimestamp;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) SEL selector; // @synthesize selector=_selector;
 @property(readonly, nonatomic) __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double currentMediaTime;
 @property(nonatomic) BOOL paused;
 - (void)_tick:(struct __CVDisplayLink *)arg1;

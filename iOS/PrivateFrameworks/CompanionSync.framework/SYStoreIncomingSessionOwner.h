@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)syncSession:(id)arg1 applyChanges:(struct NSArray *)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)syncSession:(id)arg1 applyChanges:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)syncSession:(id)arg1 resetDataStoreWithError:(id *)arg2;
 - (_Bool)isResetSync;
 - (id)initWithIncomingSession:(id)arg1;

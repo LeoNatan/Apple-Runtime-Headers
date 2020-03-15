@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) WFFileRepresentation *file; // @synthesize file=_file;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WFFileRepresentation *file; // @synthesize file=_file;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)MIMEType;

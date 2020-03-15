@@ -24,6 +24,7 @@
     struct CGRect _borderedFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CATextLayer *_titleLayer; // @synthesize _titleLayer=__titleLayer;
 @property(retain, nonatomic) CAShapeLayer *_highlightShapeLayer; // @synthesize _highlightShapeLayer=__highlightShapeLayer;
 @property(retain, nonatomic) CAShapeLayer *_borderShapeLayer; // @synthesize _borderShapeLayer=__borderShapeLayer;
@@ -36,7 +37,6 @@
 @property(nonatomic) double highlightRatio; // @synthesize highlightRatio=_highlightRatio;
 @property(nonatomic) double borderThickness; // @synthesize borderThickness=_borderThickness;
 @property(nonatomic) unsigned long long borderStyle; // @synthesize borderStyle=_borderStyle;
-- (void).cxx_destruct;
 - (void)_updateBorderShapeLayers;
 - (void)layoutSublayers;
 - (void)setBorderColor:(struct CGColor *)arg1;

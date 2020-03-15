@@ -15,8 +15,8 @@
     id <CSLConnectionStatusAirplaneModeDisconnectionAssertionDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSLConnectionStatusAirplaneModeDisconnectionAssertionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLConnectionStatusAirplaneModeDisconnectionAssertionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)reschedule;
 - (id)initWithDelegate:(id)arg1 timeout:(double)arg2 callbackQueue:(id)arg3;
 

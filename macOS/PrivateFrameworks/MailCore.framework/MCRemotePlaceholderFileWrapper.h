@@ -13,8 +13,8 @@
     NSURL *_URL;
 }
 
-@property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 - (unsigned long long)approximateSizeAllowingDiskIO:(BOOL)arg1;
 - (id)symbolicLinkDestinationURL;
 - (BOOL)isRemotelyAccessed;

@@ -23,12 +23,12 @@
 }
 
 + (id)sharedOperationQueue;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowAppStoreLookup; // @synthesize allowAppStoreLookup=_allowAppStoreLookup;
 @property(nonatomic) _Bool allowLocalLookup; // @synthesize allowLocalLookup=_allowLocalLookup;
 @property(copy, nonatomic) CDUnknownBlockType perAppBundleCompletion; // @synthesize perAppBundleCompletion=_perAppBundleCompletion;
 @property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) NSArray *appBundleIDs; // @synthesize appBundleIDs=_appBundleIDs;
-- (void).cxx_destruct;
 - (void)_perAppBundleCompletion:(id)arg1 iconData:(id)arg2 contentType:(id)arg3 error:(id)arg4;
 - (void)_retrieveIconsFromAppStore;
 - (void)_retrieveIconsFromLocalDevice;

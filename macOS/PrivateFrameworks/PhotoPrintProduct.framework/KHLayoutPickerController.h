@@ -26,6 +26,7 @@
     NSMutableArray *_layoutInfoCache;
 }
 
+- (void).cxx_destruct;
 @property BOOL useSquareCell; // @synthesize useSquareCell=_useSquareCell;
 @property(retain) NSMutableArray *layoutInfoCache; // @synthesize layoutInfoCache=_layoutInfoCache;
 @property BOOL ignoreSelectionChange; // @synthesize ignoreSelectionChange=_ignoreSelectionChange;
@@ -33,7 +34,6 @@
 @property id <KHLayoutPickerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak NSArray *selectedCollectionItems; // @synthesize selectedCollectionItems=_selectedCollectionItems;
 @property(retain, nonatomic) NSArray *projectLayouts; // @synthesize projectLayouts=_projectLayouts;
-- (void).cxx_destruct;
 - (void)treatmentPicker:(id)arg1 didSelectTreatment:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)projectLayoutsToChangeForMaster:(id)arg1;

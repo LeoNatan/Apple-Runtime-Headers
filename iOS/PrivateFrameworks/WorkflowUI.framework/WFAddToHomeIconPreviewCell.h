@@ -15,9 +15,9 @@
 }
 
 + (double)defaultRowHeight;
+- (void).cxx_destruct;
 @property(nonatomic) __weak UILabel *iconLabel; // @synthesize iconLabel=_iconLabel;
 @property(nonatomic) __weak UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
-- (void).cxx_destruct;
 - (void)configureIcon:(id)arg1;
 - (void)configureName:(id)arg1;
 - (void)configureWithName:(id)arg1 icon:(id)arg2;

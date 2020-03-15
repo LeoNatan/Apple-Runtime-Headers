@@ -23,10 +23,10 @@
     NSObject<OS_dispatch_queue> *_fixedPriorityQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long localRevision; // @synthesize localRevision=_localRevision;
 @property(readonly, nonatomic) long long revision; // @synthesize revision=_revision;
 @property(readonly, nonatomic) ML3Query *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (unsigned long long)entityLimit;
 - (void)enumerateSectionsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumeratePersistentIDsUsingBlock:(CDUnknownBlockType)arg1;

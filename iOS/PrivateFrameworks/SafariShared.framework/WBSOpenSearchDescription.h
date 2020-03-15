@@ -16,11 +16,11 @@
     WBSOpenSearchURLTemplate *_urlTemplateForSuggestionsInXML;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WBSOpenSearchURLTemplate *urlTemplateForSuggestionsInXML; // @synthesize urlTemplateForSuggestionsInXML=_urlTemplateForSuggestionsInXML;
 @property(readonly, nonatomic) WBSOpenSearchURLTemplate *urlTemplateForSuggestionsInJSON; // @synthesize urlTemplateForSuggestionsInJSON=_urlTemplateForSuggestionsInJSON;
 @property(readonly, nonatomic) WBSOpenSearchURLTemplate *searchURLTemplate; // @synthesize searchURLTemplate=_searchURLTemplate;
 @property(readonly, nonatomic) NSString *descriptionDocumentURLString; // @synthesize descriptionDocumentURLString=_descriptionDocumentURLString;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)dictionaryRepresentation;

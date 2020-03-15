@@ -14,9 +14,9 @@
     UIViewController *_contentViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(readonly, nonatomic) HUInstructionsItem *instructionsItem; // @synthesize instructionsItem=_instructionsItem;
-- (void).cxx_destruct;
 - (id)childViewControllersToPreload;
 - (_Bool)shouldHideFooterBelowSection:(long long)arg1;
 - (_Bool)shouldHideHeaderAboveSection:(long long)arg1;

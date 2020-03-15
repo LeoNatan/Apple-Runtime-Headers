@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     BOOL _cellNeedsDisplay;
 }
 
+- (void).cxx_destruct;
 @property BOOL cellNeedsDisplay; // @synthesize cellNeedsDisplay=_cellNeedsDisplay;
 @property(retain, nonatomic) NSCell *mouseCell; // @synthesize mouseCell=_mouseCell;
 @property long long mouseCol; // @synthesize mouseCol=_mouseCol;
 @property long long mouseRow; // @synthesize mouseRow=_mouseRow;
-- (void).cxx_destruct;
 
 @end
 

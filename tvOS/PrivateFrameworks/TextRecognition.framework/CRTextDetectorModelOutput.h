@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     MLMultiArray *_geometry_output;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MLMultiArray *geometry_output; // @synthesize geometry_output=_geometry_output;
 @property(retain, nonatomic) MLMultiArray *f_score_act_sigmoid_output; // @synthesize f_score_act_sigmoid_output=_f_score_act_sigmoid_output;
-- (void).cxx_destruct;
 - (id)featureValueForName:(id)arg1;
 @property(readonly, nonatomic) NSSet *featureNames;
 - (id)initWithF_score_act_sigmoid_output:(id)arg1 geometry_output:(id)arg2;

@@ -23,6 +23,7 @@
 + (double)_insetPaddingForStyle:(long long)arg1;
 + (struct CGSize)faceSizeForSize:(struct CGSize)arg1 style:(long long)arg2;
 + (struct CGSize)sizeForFaceSize:(struct CGSize)arg1 style:(long long)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *highlightView; // @synthesize highlightView=_highlightView;
 @property(retain, nonatomic) UIView *faceContainer; // @synthesize faceContainer=_faceContainer;
 @property(retain, nonatomic) CAShapeLayer *outline; // @synthesize outline=_outline;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) UIView *faceView; // @synthesize faceView=_faceView;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) struct CGSize faceSize; // @synthesize faceSize=_faceSize;
-- (void).cxx_destruct;
 - (void)_updateOutlineColor;
 - (double)_outlineLineWidth;
 - (void)traitCollectionDidChange:(id)arg1;

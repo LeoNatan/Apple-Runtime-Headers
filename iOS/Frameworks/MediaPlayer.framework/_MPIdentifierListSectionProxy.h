@@ -17,10 +17,10 @@
     NSMutableArray *_mutableItemIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mutableItemIdentifiers; // @synthesize mutableItemIdentifiers=_mutableItemIdentifiers;
 @property(readonly, nonatomic) __weak MPSectionedIdentifierList *sectionedIdentifierList; // @synthesize sectionedIdentifierList=_sectionedIdentifierList;
 @property(readonly, copy, nonatomic) NSString *sectionIdentifier; // @synthesize sectionIdentifier=_sectionIdentifier;
-- (void).cxx_destruct;
 - (void)applyChanges:(id)arg1 itemLookupBlock:(CDUnknownBlockType)arg2;
 @property(readonly, copy, nonatomic) NSArray *itemIdentifiers;
 - (void)updateItem:(id)arg1;

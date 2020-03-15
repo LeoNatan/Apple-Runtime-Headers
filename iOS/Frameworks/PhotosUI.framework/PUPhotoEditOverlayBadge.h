@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _insets;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct UIEdgeInsets insets; // @synthesize insets=_insets;
 @property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (void)_updateLabel;
 - (id)initWithFrame:(struct CGRect)arg1;

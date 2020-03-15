@@ -16,11 +16,11 @@
     NSString *_subtypeContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *subtypeContext; // @synthesize subtypeContext=_subtypeContext;
 @property(retain, nonatomic) NSString *subtype; // @synthesize subtype=_subtype;
 @property(nonatomic) _Bool ignoreRateLimiting; // @synthesize ignoreRateLimiting=_ignoreRateLimiting;
 @property(retain, nonatomic) NSArray *events; // @synthesize events=_events;
-- (void).cxx_destruct;
 - (_Bool)rateLimitingAllowsABCReport;
 - (void)report;
 @property(readonly, nonatomic) NSString *type;

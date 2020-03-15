@@ -21,9 +21,9 @@
 + (id)_stringForType:(unsigned int)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)triggerWithDate:(id)arg1 triggerType:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *triggerDate; // @synthesize triggerDate=_triggerDate;
 @property(nonatomic) unsigned int triggerType; // @synthesize triggerType=_triggerType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isWakeUpRelated;
 @property(readonly, nonatomic) _Bool isBedtimeRelated;
 @property(readonly, nonatomic) _Bool isEvent;

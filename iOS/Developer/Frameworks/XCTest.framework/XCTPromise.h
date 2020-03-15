@@ -17,6 +17,7 @@
     XCTestExpectation *_expectation;
 }
 
+- (void).cxx_destruct;
 // Error parsing type for property promiseFulfilled:
 // Property attributes: T{atomic_flag=AB},R,V_promiseFulfilled
 
@@ -24,7 +25,6 @@
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) id value; // @synthesize value=_value;
 @property(readonly, copy) NSString *promiseDescription; // @synthesize promiseDescription=_promiseDescription;
-- (void).cxx_destruct;
 - (void)fulfillWithValue:(id)arg1 error:(id)arg2;
 - (void)fulfillWithError:(id)arg1;
 - (void)fulfillWithValue:(id)arg1;

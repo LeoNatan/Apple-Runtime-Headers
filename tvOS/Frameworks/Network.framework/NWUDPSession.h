@@ -24,6 +24,7 @@
 }
 
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NWParameters *parameters; // @synthesize parameters=_parameters;
 @property unsigned long long internalMTU; // @synthesize internalMTU=_internalMTU;
 @property(copy) CDUnknownBlockType readHandler; // @synthesize readHandler=_readHandler;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NWEndpoint *resolvedEndpoint; // @synthesize resolvedEndpoint=_resolvedEndpoint;
 @property(readonly) NWEndpoint *endpoint; // @synthesize endpoint=_endpoint;
 @property(nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *localPort;
 - (void)cancel;
 - (void)writeDatagram:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

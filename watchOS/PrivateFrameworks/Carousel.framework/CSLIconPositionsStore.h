@@ -16,8 +16,8 @@
     id <CSLIconPostionsStoreDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSLIconPostionsStoreDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLIconPostionsStoreDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)positionsChanged;
 - (void)_saveLocalPositions:(id)arg1 usingKey:(id)arg2;
 - (void)_savePositions:(id)arg1 usingKey:(id)arg2;

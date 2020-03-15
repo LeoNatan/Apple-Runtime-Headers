@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *objects; // @synthesize objects=_objects;
 @property(copy, nonatomic) NSDictionary *flags; // @synthesize flags=_flags;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithFlags:(id)arg1 objects:(id)arg2;

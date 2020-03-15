@@ -24,6 +24,7 @@
     unsigned long long _placeCountTotal;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long placeCountTotal; // @synthesize placeCountTotal=_placeCountTotal;
 @property(nonatomic) unsigned long long placeCountDevice; // @synthesize placeCountDevice=_placeCountDevice;
 @property(nonatomic) unsigned long long visitCountTotal; // @synthesize visitCountTotal=_visitCountTotal;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSDate *trainVisitsStop; // @synthesize trainVisitsStop=_trainVisitsStop;
 @property(readonly, nonatomic) NSDate *trainVisitsStart; // @synthesize trainVisitsStart=_trainVisitsStart;
 @property(nonatomic) _Bool trainedVisits; // @synthesize trainedVisits=_trainedVisits;
-- (void).cxx_destruct;
 - (id)description;
 - (double)latency;
 - (void)stopTrainingVisits;

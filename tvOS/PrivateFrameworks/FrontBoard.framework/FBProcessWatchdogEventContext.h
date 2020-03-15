@@ -19,11 +19,11 @@
 }
 
 + (id)contextForEvent:(long long)arg1 settings:(id)arg2 transitionContext:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FBSceneUpdateContext *sceneUpdateContext; // @synthesize sceneUpdateContext=_sceneUpdateContext;
 @property(readonly, nonatomic) __weak FBSSceneTransitionContext *sceneTransitionContext; // @synthesize sceneTransitionContext=_sceneTransitionContext;
 @property(readonly, nonatomic) FBSSceneSettings *sceneSettings; // @synthesize sceneSettings=_sceneSettings;
 @property(readonly, nonatomic) long long event; // @synthesize event=_event;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

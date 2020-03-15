@@ -24,12 +24,12 @@
 + (id)JSONKeyPathsByPropertyKey;
 + (id)allowedSecureCodingClassesByPropertyKey;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *notes; // @synthesize notes=_notes;
 @property(readonly, nonatomic) NSArray *keywords; // @synthesize keywords=_keywords;
 @property(readonly, nonatomic) NSString *text; // @synthesize text=_text;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *wfName;
 
 // Remaining properties

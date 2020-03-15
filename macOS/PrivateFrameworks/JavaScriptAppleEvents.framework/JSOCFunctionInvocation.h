@@ -15,8 +15,8 @@
     JSOCFunctionPointer *_functionPointer;
 }
 
-@property(readonly, retain) JSOCFunctionPointer *functionPointer; // @synthesize functionPointer=_functionPointer;
 - (void).cxx_destruct;
+@property(readonly, retain) JSOCFunctionPointer *functionPointer; // @synthesize functionPointer=_functionPointer;
 - (void)invoke;
 - (void)getReturnValue:(void *)arg1;
 - (void)setArgument:(void *)arg1 atIndex:(long long)arg2;

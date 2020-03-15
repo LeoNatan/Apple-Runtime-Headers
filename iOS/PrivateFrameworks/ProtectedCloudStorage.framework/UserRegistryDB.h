@@ -34,6 +34,7 @@
     NSString *_dsid;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *dsid; // @synthesize dsid=_dsid;
 @property(retain) NSObject<OS_os_log> *oslog; // @synthesize oslog=_oslog;
 @property struct sqlite3_stmt *queryWatches; // @synthesize queryWatches=_queryWatches;
@@ -55,7 +56,6 @@
 @property struct sqlite3_stmt *replaceStatment; // @synthesize replaceStatment=_replaceStatment;
 @property struct sqlite3_stmt *recordIDStatment; // @synthesize recordIDStatment=_recordIDStatment;
 @property struct sqlite3 *sqliteHandle; // @synthesize sqliteHandle=_sqliteHandle;
-- (void).cxx_destruct;
 - (id)missingKeysFromDevice:(id)arg1 type:(int)arg2;
 - (id)syncDevices;
 - (_Bool)syncedKeyToDevice:(id)arg1 type:(int)arg2 device:(id)arg3;

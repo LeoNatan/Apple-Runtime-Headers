@@ -35,11 +35,11 @@
     double _fadeOutRadius;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double fadeOutRadius; // @synthesize fadeOutRadius=_fadeOutRadius;
 @property(nonatomic) double firstRippleInitialRadius; // @synthesize firstRippleInitialRadius=_firstRippleInitialRadius;
 @property(nonatomic) double fingerMovingSpeed; // @synthesize fingerMovingSpeed=_fingerMovingSpeed;
 @property(nonatomic) double fingerStillSpeed; // @synthesize fingerStillSpeed=_fingerStillSpeed;
-- (void).cxx_destruct;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

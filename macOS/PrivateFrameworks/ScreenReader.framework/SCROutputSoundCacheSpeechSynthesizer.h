@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     NSString *_spokenString;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *spokenString; // @synthesize spokenString=_spokenString;
 @property(copy, nonatomic) NSString *category; // @synthesize category=_category;
 @property(retain, nonatomic) id action; // @synthesize action=_action;
 @property(retain, nonatomic) id owner; // @synthesize owner=_owner;
 @property(retain, nonatomic) SCRSound *sound; // @synthesize sound=_sound;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)unlockSynthesizer;
 - (void)lockSynthesizer;
 - (void)stopSpeaking;

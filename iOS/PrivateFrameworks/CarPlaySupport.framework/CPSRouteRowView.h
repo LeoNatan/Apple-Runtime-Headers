@@ -22,6 +22,7 @@
     UIStackView *_labelStackView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIStackView *labelStackView; // @synthesize labelStackView=_labelStackView;
 @property(nonatomic) __weak id <CPSRouteRowInteracting> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
 @property(retain, nonatomic) CPSInvisibleButton *rowButton; // @synthesize rowButton=_rowButton;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) UIImageView *checkmarkView; // @synthesize checkmarkView=_checkmarkView;
 @property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) CPRouteChoice *representedRouteChoice; // @synthesize representedRouteChoice=_representedRouteChoice;
-- (void).cxx_destruct;
 - (void)_updateAppearance;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)handleRowSelection:(id)arg1;

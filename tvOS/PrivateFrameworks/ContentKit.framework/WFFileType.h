@@ -29,9 +29,9 @@
 + (id)typeWithUTType:(const struct __CFString *)arg1;
 + (id)typeWithString:(id)arg1;
 + (id)cachedFileTypeForUTType:(const struct __CFString *)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *OSType; // @synthesize OSType=_OSType;
 @property(readonly, nonatomic) NSString *pboardType; // @synthesize pboardType=_pboardType;
-- (void).cxx_destruct;
 - (id)conformingTypesWithTagClass:(const struct __CFString *)arg1 tag:(id)arg2;
 - (id)preferredTagWithClass:(const struct __CFString *)arg1;
 - (void)encodeWithCoder:(id)arg1;

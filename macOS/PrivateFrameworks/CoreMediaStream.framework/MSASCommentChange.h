@@ -15,10 +15,10 @@
     MSASComment *_comment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(nonatomic) int deletionIndex; // @synthesize deletionIndex=_deletionIndex;
 @property(retain, nonatomic) MSASComment *comment; // @synthesize comment=_comment;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

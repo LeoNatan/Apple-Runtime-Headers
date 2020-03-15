@@ -18,13 +18,13 @@
     unsigned long long _resendInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long resendInterval; // @synthesize resendInterval=_resendInterval;
 @property(nonatomic) _Bool receivedOldMessages; // @synthesize receivedOldMessages=_receivedOldMessages;
 @property(retain, nonatomic) NSMutableArray *messageIdsWithDefaultPriority; // @synthesize messageIdsWithDefaultPriority=_messageIdsWithDefaultPriority;
 @property(retain, nonatomic) NSMutableArray *messageIdsWithNotificationPriority; // @synthesize messageIdsWithNotificationPriority=_messageIdsWithNotificationPriority;
 @property(retain, nonatomic) NNMKProtoMessageAdditions *protoMessagesWithDefaultPriority; // @synthesize protoMessagesWithDefaultPriority=_protoMessagesWithDefaultPriority;
 @property(retain, nonatomic) NNMKProtoMessageAdditions *protoMessagesWithNotificationPriority; // @synthesize protoMessagesWithNotificationPriority=_protoMessagesWithNotificationPriority;
-- (void).cxx_destruct;
 
 @end
 

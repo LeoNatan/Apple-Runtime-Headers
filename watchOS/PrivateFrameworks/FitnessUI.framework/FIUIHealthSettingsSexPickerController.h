@@ -11,8 +11,8 @@
     CDUnknownBlockType _sexUpdateHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType sexUpdateHandler; // @synthesize sexUpdateHandler=_sexUpdateHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType sexUpdateHandler; // @synthesize sexUpdateHandler=_sexUpdateHandler;
 - (void)setBiologicalSex:(int)arg1;
 - (int)_biologicalSexForRow:(int)arg1;
 - (void)_updateWithBiologicalSex:(int)arg1;

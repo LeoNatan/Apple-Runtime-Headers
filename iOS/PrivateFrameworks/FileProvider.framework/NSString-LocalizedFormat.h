@@ -27,6 +27,8 @@
 - (id)fp_representableHFSFileNameWithSuffix:(id)arg1 addedExtension:(id)arg2 makeDotFile:(_Bool)arg3;
 - (const char *)fp_fileSystemRepresentation;
 - (id)fp_bouncedNameWithIndex:(long long)arg1;
+- (id)fp_obfuscatedPath;
+- (id)fp_alwaysObfuscatedPath;
 - (id)fp_prettyPath;
 - (id)fp_prettyPathWithObfuscation:(_Bool)arg1;
 - (id)fp_alwaysObfuscatedFilename;

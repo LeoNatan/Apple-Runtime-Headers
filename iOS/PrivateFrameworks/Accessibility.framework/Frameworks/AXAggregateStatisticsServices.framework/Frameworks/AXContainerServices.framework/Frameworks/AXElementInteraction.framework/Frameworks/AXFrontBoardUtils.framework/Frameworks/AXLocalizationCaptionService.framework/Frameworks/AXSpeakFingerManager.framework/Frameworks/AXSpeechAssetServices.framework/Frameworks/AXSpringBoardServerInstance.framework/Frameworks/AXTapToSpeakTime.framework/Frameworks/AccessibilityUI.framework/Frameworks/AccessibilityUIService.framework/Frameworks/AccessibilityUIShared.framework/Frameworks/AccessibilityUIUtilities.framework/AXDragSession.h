@@ -20,8 +20,8 @@
     id <AXDragSessionDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <AXDragSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AXDragSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)setManager:(id)arg1;
 - (id)manager;
 - (void)moveToPoint:(struct CGPoint)arg1 forRequestor:(id)arg2 completion:(CDUnknownBlockType)arg3;

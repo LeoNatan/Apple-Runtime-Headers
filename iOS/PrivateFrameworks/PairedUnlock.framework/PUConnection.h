@@ -20,9 +20,11 @@
 }
 
 + (void)syncPasscodeState;
++ (id)clientInterface;
++ (id)serverInterface;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType remoteDeviceRemoveLockoutHandler; // @synthesize remoteDeviceRemoveLockoutHandler=_remoteDeviceRemoveLockoutHandler;
 @property __weak id <PUConnectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)remoteDeviceDidRemoveLockout:(_Bool)arg1 error:(id)arg2;
 - (void)didGetRemoteDeviceState:(id)arg1 error:(id)arg2;
 - (void)remoteDeviceDidUnlock;

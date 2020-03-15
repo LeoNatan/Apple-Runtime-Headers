@@ -14,8 +14,8 @@
     UIImage *_image;
 }
 
-@property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 - (void)_crossfadeToImage:(id)arg1;
 - (void)_configureIconImageView:(id)arg1;
 - (void)setImage:(id)arg1 animated:(_Bool)arg2;

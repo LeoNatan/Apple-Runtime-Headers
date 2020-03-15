@@ -21,12 +21,12 @@
     UIStatusBar *_statusBar;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_statusBar, setter=_setStatusBar:) UIStatusBar *statusBar; // @synthesize statusBar=_statusBar;
 @property(retain, nonatomic) UIView *siriSetupView; // @synthesize siriSetupView=_siriSetupView;
 @property(nonatomic) _Bool lastTimeShown; // @synthesize lastTimeShown=_lastTimeShown;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(nonatomic) __weak id <AFUISiriSetupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (unsigned long long)supportedInterfaceOrientations;

@@ -16,8 +16,8 @@
     id <GKLeaderboardViewControllerDelegate> _leaderboardDelegate;
 }
 
-@property __weak id <GKLeaderboardViewControllerDelegate> leaderboardDelegate; // @synthesize leaderboardDelegate=_leaderboardDelegate;
 - (void).cxx_destruct;
+@property __weak id <GKLeaderboardViewControllerDelegate> leaderboardDelegate; // @synthesize leaderboardDelegate=_leaderboardDelegate;
 - (BOOL)remoteViewControllerRequestingDismiss:(id)arg1;
 @property long long timeScope; // @synthesize timeScope=_timeScope;
 @property(copy) NSString *category; // @synthesize category=_category;

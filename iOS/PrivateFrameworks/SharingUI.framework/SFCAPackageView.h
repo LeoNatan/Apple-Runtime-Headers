@@ -18,10 +18,10 @@
 }
 
 + (id)keyPathsForValuesAffectingPackageRootLayer;
+- (void).cxx_destruct;
 @property(readonly) NSMutableArray *completionHandlers; // @synthesize completionHandlers=_completionHandlers;
 @property(retain) CAStateController *stateController; // @synthesize stateController=_stateController;
 @property(readonly) float duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (void)stateController:(id)arg1 transitionDidStop:(id)arg2 completed:(_Bool)arg3;
 - (id)_getStateWithName:(id)arg1;
 - (void)animateToStateName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

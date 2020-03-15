@@ -16,9 +16,9 @@
     _Bool _active;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
 @property(nonatomic) _Bool usesShortTextWidth; // @synthesize usesShortTextWidth=_usesShortTextWidth;
-- (void).cxx_destruct;
 - (id)_inactiveTextColor;
 - (id)_activeTextColor;
 - (id)_inactiveFont;

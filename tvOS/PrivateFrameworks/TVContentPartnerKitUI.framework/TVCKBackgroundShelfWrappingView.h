@@ -14,11 +14,11 @@
     double _height;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double height; // @synthesize height=_height;
 @property(retain, nonatomic) UIView *relatedView; // @synthesize relatedView=_relatedView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UIView *shelfView; // @synthesize shelfView=_shelfView;
-- (void).cxx_destruct;
 - (id)preferredFocusEnvironments;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

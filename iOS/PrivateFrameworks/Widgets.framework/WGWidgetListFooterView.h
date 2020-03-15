@@ -25,12 +25,12 @@
     id <WGWidgetListFooterViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <WGWidgetListFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool shouldSizeContent; // @synthesize shouldSizeContent=_shouldSizeContent;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(nonatomic) long long layoutMode; // @synthesize layoutMode=_layoutMode;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *materialGroupNameBase;
 - (void)traitCollectionDidChange:(id)arg1;
 - (_Bool)textView:(id)arg1 shouldInteractWithTextAttachment:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;

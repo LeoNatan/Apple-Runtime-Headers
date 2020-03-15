@@ -16,8 +16,8 @@
     id <WBSTabOrderProvider> _tabOrderProvider;
 }
 
-@property(nonatomic) __weak id <WBSTabOrderProvider> tabOrderProvider; // @synthesize tabOrderProvider=_tabOrderProvider;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <WBSTabOrderProvider> tabOrderProvider; // @synthesize tabOrderProvider=_tabOrderProvider;
 - (id)_nextNonClosedTabAdjacentToIndex:(unsigned int)arg1 inAscendingOrder:(_Bool)arg2;
 - (unsigned int)_relationConsideringUserPreferenceForRelation:(unsigned int)arg1 isBlankTab:(_Bool)arg2;
 - (id)_insertionHintWithTabToInsertAfter:(id)arg1 relation:(unsigned int)arg2;
@@ -37,6 +37,7 @@
 - (id)tabToInsertNewBlankTabAfter;
 - (unsigned int)_indexOfLastRelatedTab;
 - (unsigned int)_indexOfTabToInsertNewTabAfter;
+- (id)_tabInsertionHintForNewTabAfterTab:(id)arg1 relation:(unsigned int)arg2;
 - (id)_tabInsertionHintForPosition:(unsigned int)arg1 isBlankTab:(_Bool)arg2;
 - (id)tabInsertionHintForPosition:(unsigned int)arg1;
 - (id)tabToInsertNewTabAfterForPosition:(unsigned int)arg1;

@@ -12,6 +12,6 @@
 - (void)didChooseColor:(id)arg1;
 - (void)setColor:(NSColor *)arg1;
 - (void)invalidate;
-- (void)setAndShowPicker:(struct WebColorPickerMac *)arg1 withColor:(NSColor *)arg2 suggestions:(Vector_abdbc3db *)arg3;
+- (void)setAndShowPicker:(struct WebColorPickerMac *)arg1 withColor:(NSColor *)arg2 suggestions:(Vector_5cc906f5 *)arg3;
 @end
 

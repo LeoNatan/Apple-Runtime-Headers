@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIImageView *_imageView;
 }
 
-@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;

@@ -23,6 +23,7 @@
     NSString *_searchTerm;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *searchTerm; // @synthesize searchTerm=_searchTerm;
 @property(retain) MKSearchCompletion *searchCompletion; // @synthesize searchCompletion=_searchCompletion;
 @property long long proximity; // @synthesize proximity=_proximity;
@@ -34,7 +35,6 @@
 @property(retain) NSArray *addressStrings; // @synthesize addressStrings=_addressStrings;
 @property(retain) NSData *mapKitHandle; // @synthesize mapKitHandle=_mapKitHandle;
 @property(retain) NSString *displayString; // @synthesize displayString=_displayString;
-- (void).cxx_destruct;
 - (id)singleLineAddress;
 - (id)addressString;
 - (id)keyForMatchingDuplicates;

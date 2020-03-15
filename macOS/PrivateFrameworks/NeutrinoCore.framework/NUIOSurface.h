@@ -17,11 +17,11 @@
 }
 
 + (id)_internalFormatForPixelFormat:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct __IOSurface *IOSurfaceRef; // @synthesize IOSurfaceRef=_IOSurfaceRef;
 @property(readonly, nonatomic) NUPixelFormat *internalFormat; // @synthesize internalFormat=_internalFormat;
 @property(readonly, nonatomic) NUPixelFormat *format; // @synthesize format=_format;
 @property(readonly, nonatomic) CDStruct_912cb5d2 size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (id)newRenderDestination;
 - (BOOL)write:(CDUnknownBlockType)arg1;
 - (BOOL)read:(CDUnknownBlockType)arg1;

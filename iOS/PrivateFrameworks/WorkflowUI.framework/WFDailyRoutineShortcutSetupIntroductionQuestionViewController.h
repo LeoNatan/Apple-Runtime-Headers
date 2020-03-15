@@ -17,9 +17,9 @@
     WFDailyRoutineShortcutSetupIntroductionQuestion *_question;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFDailyRoutineShortcutSetupIntroductionQuestion *question; // @synthesize question=_question;
 @property(nonatomic) __weak id <WFDailyRoutineShortcutSetupQuestionChildViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didSelectContinueButton;
 @property(readonly, nonatomic) _Bool parentShouldShowSkipButton;
 - (id)initWithQuestion:(id)arg1;

@@ -15,10 +15,10 @@
     ICNFMCMimePart *_currentPart;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICNFMCMimePart *currentPart; // @synthesize currentPart=_currentPart;
 @property(nonatomic) BOOL isFirstIteration; // @synthesize isFirstIteration=_isFirstIteration;
 @property(readonly, nonatomic) BOOL onlyAttachments; // @synthesize onlyAttachments=_onlyAttachments;
-- (void).cxx_destruct;
 - (id)nextObject;
 - (id)init;
 - (id)initWithMimeBody:(id)arg1 onlyAttachments:(BOOL)arg2;

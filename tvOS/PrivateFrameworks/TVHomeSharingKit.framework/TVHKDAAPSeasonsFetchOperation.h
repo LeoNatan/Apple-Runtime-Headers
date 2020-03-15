@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     TVHKMediaEntityIdentifier *_sourceShowIdentifier;
 }
 
-@property(copy, nonatomic) TVHKMediaEntityIdentifier *sourceShowIdentifier; // @synthesize sourceShowIdentifier=_sourceShowIdentifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) TVHKMediaEntityIdentifier *sourceShowIdentifier; // @synthesize sourceShowIdentifier=_sourceShowIdentifier;
 - (id)_episodesFetchRequest;
 - (id)_mediaEntitiesWithFetchedEpisodes:(id)arg1 andMediaEntityCache:(id)arg2;
 - (id)_mediaEntityCacheWithFetchCache:(id)arg1;

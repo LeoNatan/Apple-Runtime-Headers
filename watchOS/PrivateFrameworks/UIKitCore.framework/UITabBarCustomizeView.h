@@ -30,9 +30,9 @@ __attribute__((visibility("hidden")))
     UINavigationBar *_navigationBar;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UINavigationBar *navigationBar; // @synthesize navigationBar=_navigationBar;
 @property(retain, nonatomic) NSArray *availableItems; // @synthesize availableItems=_availableItems;
-- (void).cxx_destruct;
 - (void)tabBarTouchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)tabBarTouchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)tabBarTouchesMoved:(id)arg1 withEvent:(id)arg2;

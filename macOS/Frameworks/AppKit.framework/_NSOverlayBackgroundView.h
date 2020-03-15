@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     BOOL _pressed;
 }
 
+- (void).cxx_destruct;
 @property double paletteScaleFactor; // @synthesize paletteScaleFactor=_paletteScaleFactor;
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(setter=setDarkened:) BOOL darkened; // @synthesize darkened=_darkened;
 @property double backgroundScaleFactor; // @synthesize backgroundScaleFactor=_backgroundScaleFactor;
 @property(retain) id backgroundImageRef; // @synthesize backgroundImageRef=_backgroundImageRef;
-- (void).cxx_destruct;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDragged:(id)arg1;
 - (void)mouseDown:(id)arg1;

@@ -16,9 +16,9 @@
 
 + (id)orCompoundPropertyValidationRuleWithRules:(id)arg1;
 + (id)andCompoundPropertyValidationRuleWithRules:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *rules; // @synthesize rules=_rules;
 @property(nonatomic) int compoundType; // @synthesize compoundType=_compoundType;
-- (void).cxx_destruct;
 - (id)currentValuesOfObject:(id)arg1;
 - (id)keyPaths;
 - (id)predicate;

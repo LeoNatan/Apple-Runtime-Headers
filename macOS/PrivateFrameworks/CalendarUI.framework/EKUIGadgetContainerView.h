@@ -14,8 +14,8 @@
     EKUIGadgetContainer *_container;
 }
 
-@property __weak EKUIGadgetContainer *container; // @synthesize container=_container;
 - (void).cxx_destruct;
+@property __weak EKUIGadgetContainer *container; // @synthesize container=_container;
 - (struct CGSize)intrinsicContentSize;
 - (BOOL)isFlipped;
 - (void)keyDown:(id)arg1;

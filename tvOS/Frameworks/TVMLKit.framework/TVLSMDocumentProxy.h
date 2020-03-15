@@ -18,17 +18,19 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) _TVStackedMediaDocument *lsmDocument; // @synthesize lsmDocument=_lsmDocument;
 @property(readonly, nonatomic) long long intent; // @synthesize intent=_intent;
 @property(readonly, copy, nonatomic) NSURL *previewURL; // @synthesize previewURL=_previewURL;
 @property(readonly, copy, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (void)didCompleteWithDocument:(id)arg1 error:(id)arg2;
 - (_Bool)isAvailable;
 - (_Bool)isLoading;
 - (void)cancel;
 - (void)loadWithCompletion:(CDUnknownBlockType)arg1;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)initWithBaseURL:(id)arg1 previewURL:(id)arg2 intent:(long long)arg3;
 - (id)initWithBaseURL:(id)arg1 previewURL:(id)arg2;

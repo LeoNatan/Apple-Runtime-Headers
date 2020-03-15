@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
 + (void *)newAddressBookWithURL:(id)arg1;
 + (void *)newInMemoryAddressBook;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool addressBookIsShared; // @synthesize addressBookIsShared=_addressBookIsShared;
 @property(readonly, nonatomic) NSObject<OS_dispatch_source> *memoryMonitoringSource; // @synthesize memoryMonitoringSource=_memoryMonitoringSource;
 @property(readonly, copy, nonatomic) CDUnknownBlockType addressBookProvider; // @synthesize addressBookProvider=_addressBookProvider;
 @property(readonly, nonatomic) NSMutableSet *addressBookPool; // @synthesize addressBookPool=_addressBookPool;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
-- (void).cxx_destruct;
 - (void)flushPool;
 - (void)performAsynchronousWorkWithInvalidatedAddressBook:(CDUnknownBlockType)arg1;
 - (id)resultWithInvalidatedAddressBook:(CDUnknownBlockType)arg1;

@@ -15,10 +15,10 @@
     CALayer *_connectivityDotLayer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CALayer *connectivityDotLayer; // @synthesize connectivityDotLayer=_connectivityDotLayer;
 @property(readonly, nonatomic) CALayer *connectivityDotBackingLayer; // @synthesize connectivityDotBackingLayer=_connectivityDotBackingLayer;
 @property(readonly, nonatomic) CALayer *noServicePillLayer; // @synthesize noServicePillLayer=_noServicePillLayer;
-- (void).cxx_destruct;
 - (void)layoutSublayers;
 - (id)init;
 

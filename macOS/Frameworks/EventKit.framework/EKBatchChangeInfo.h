@@ -15,10 +15,10 @@
     NSString *_currentUID;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *currentUID; // @synthesize currentUID=_currentUID;
 @property(retain) NSString *originalUID; // @synthesize originalUID=_originalUID;
 @property BOOL changePending; // @synthesize changePending=_changePending;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (id)relatedIdentifier:(id)arg1;

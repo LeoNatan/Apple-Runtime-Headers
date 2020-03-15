@@ -13,8 +13,8 @@
     PKAutocompleteViewController *_controller;
 }
 
-@property(nonatomic) __weak PKAutocompleteViewController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+@property(nonatomic) __weak PKAutocompleteViewController *controller; // @synthesize controller=_controller;
 - (BOOL)canBecomeKeyWindow;
 
 @end

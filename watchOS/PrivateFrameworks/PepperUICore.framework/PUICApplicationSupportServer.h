@@ -13,8 +13,8 @@
     id <PUICApplicationSupportServerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PUICApplicationSupportServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PUICApplicationSupportServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_handleMessage_classicModeConfigurationForClient:(id)arg1 withMessage:(id)arg2;
 - (void)noteDidReceiveMessage:(id)arg1 withType:(long long)arg2 fromClient:(id)arg3;
 - (id)initWithCalloutQueue:(id)arg1;

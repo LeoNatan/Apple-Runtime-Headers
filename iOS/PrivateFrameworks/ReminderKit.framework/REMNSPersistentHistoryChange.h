@@ -20,12 +20,12 @@
 + (_Bool)supportsSecureCoding;
 + (id)stringForChangeType:(long long)arg1;
 + (id)shortStringForChangeType:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly) __weak NSPersistentHistoryChange *persistentHistoryChange; // @synthesize persistentHistoryChange=_persistentHistoryChange;
 @property(retain) _REMNSPersistentHistoryChangeStorage *storage; // @synthesize storage=_storage;
 @property(retain, nonatomic) NSArray *coalescedChanges; // @synthesize coalescedChanges=_coalescedChanges;
 @property(nonatomic) _Bool isCoalesced; // @synthesize isCoalesced=_isCoalesced;
 @property(nonatomic) __weak REMChangeTransaction *internal_ChangeTransaction; // @synthesize internal_ChangeTransaction=_internal_ChangeTransaction;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyForCoalescing;

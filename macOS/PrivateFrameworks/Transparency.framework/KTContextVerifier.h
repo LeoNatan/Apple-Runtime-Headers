@@ -21,11 +21,13 @@
 + (void)addDeviceIdVRFOutput:(id)arg1 toLoggableDatas:(id)arg2 forDeviceId:(id)arg3;
 + (void)addClientDataVRFOutput:(id)arg1 toLoggableDatas:(id)arg2 forClientData:(id)arg3;
 + (long long)verifyMutation:(id)arg1 record:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) KTLogClient *logClient; // @synthesize logClient=_logClient;
 @property(retain) NSString *applicationID; // @synthesize applicationID=_applicationID;
 @property(retain) TransparencyManagedDataStore *dataStore; // @synthesize dataStore=_dataStore;
 @property(retain) KTApplicationPublicKeyStore *applicationKeyStore; // @synthesize applicationKeyStore=_applicationKeyStore;
-- (void).cxx_destruct;
+- (void)verifySTHs:(id)arg1;
+- (BOOL)verifyConsistencyProofResponse:(id)arg1 startRevision:(long long)arg2 error:(id *)arg3;
 - (BOOL)verifyInclusionProof:(id)arg1 mapLeaf:(id *)arg2 error:(id *)arg3;
 - (BOOL)verifyResponseAccountId:(id)arg1 requestAccountId:(id)arg2 error:(id *)arg3;
 - (BOOL)verifyUriWitness:(id)arg1 uri:(id)arg2 error:(id *)arg3;
@@ -37,6 +39,7 @@
 - (void)verifyKTSMTs:(id)arg1;
 - (void)deleteSMT:(id)arg1 error:(id)arg2;
 - (void)failSMTsIfOverMMD:(id)arg1 proof:(id)arg2 underlyingError:(id)arg3 errorCode:(long long)arg4;
+- (BOOL)areSMTsOverMMD:(id)arg1;
 - (void)reportVerifySMTFailure:(id)arg1 error:(id)arg2;
 - (BOOL)verifySMTs:(id)arg1 request:(id)arg2 error:(id *)arg3;
 - (id)initWithApplicationKeyStore:(id)arg1 dataStore:(id)arg2 applicationID:(id)arg3;

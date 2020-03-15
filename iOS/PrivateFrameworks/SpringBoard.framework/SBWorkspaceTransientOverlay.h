@@ -13,8 +13,8 @@
     SBTransientOverlayViewController *_viewController;
 }
 
-@property(readonly, nonatomic) SBTransientOverlayViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SBTransientOverlayViewController *viewController; // @synthesize viewController=_viewController;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (CDUnknownBlockType)_generator;
 - (id)initWithViewController:(id)arg1;

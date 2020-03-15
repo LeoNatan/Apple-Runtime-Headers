@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     NSArray *_themes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *themes; // @synthesize themes=_themes;
 @property(readonly, nonatomic) NSString *storeFrontName; // @synthesize storeFrontName=_storeFrontName;
 @property(readonly, nonatomic) NSString *senderEmailAddress; // @synthesize senderEmailAddress=_senderEmailAddress;
@@ -43,7 +44,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long currencySymbolPosition; // @synthesize currencySymbolPosition=_currencySymbolPosition;
 @property(readonly, nonatomic) NSString *currencySymbol; // @synthesize currencySymbol=_currencySymbol;
 @property(readonly, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_setLogoImage:(id)arg1 forCharity:(id)arg2;
 - (void)_setHeaderImage:(id)arg1 forTheme:(id)arg2;
 - (void)_loadThemeImages;

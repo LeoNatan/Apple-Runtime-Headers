@@ -13,8 +13,8 @@
     id <SiriUIActivityViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SiriUIActivityViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SiriUIActivityViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end

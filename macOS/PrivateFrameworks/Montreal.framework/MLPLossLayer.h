@@ -19,6 +19,7 @@
     MPSMatrixCopy *_matrixSingleCopyFilter;
 }
 
+- (void).cxx_destruct;
 @property(retain) MPSMatrixCopy *matrixSingleCopyFilter; // @synthesize matrixSingleCopyFilter=_matrixSingleCopyFilter;
 @property(retain) MPSMatrixCopy *matrixLargeCopyFilter; // @synthesize matrixLargeCopyFilter=_matrixLargeCopyFilter;
 @property(retain) MPSMatrixNeuron *negativeNeuron; // @synthesize negativeNeuron=_negativeNeuron;
@@ -26,18 +27,17 @@
 @property(retain) MPSMatrixSoftMax *matrixSoftMax; // @synthesize matrixSoftMax=_matrixSoftMax;
 @property(retain) MPSNDArrayReductionSum *reductionSum; // @synthesize reductionSum=_reductionSum;
 @property(retain) MPSNDArrayMultiplication *multiplication; // @synthesize multiplication=_multiplication;
-- (void).cxx_destruct;
 - (id)generateNode:(id)arg1 model:(id)arg2 weightIter:(unsigned long long *)arg3;
-- (struct NSArray *)seqBackward:(id)arg1 dataBatch:(id)arg2 inputGradient:(struct NSArray *)arg3;
-- (struct NSArray *)backward:(id)arg1 inputGradient:(struct NSArray *)arg2;
-- (struct NSArray *)seqForward:(id)arg1 input:(struct NSArray *)arg2 dataBatch:(id)arg3 runInference:(BOOL)arg4;
+- (id)seqBackward:(id)arg1 dataBatch:(id)arg2 inputGradient:(id)arg3;
+- (id)backward:(id)arg1 inputGradient:(id)arg2;
+- (id)seqForward:(id)arg1 input:(id)arg2 dataBatch:(id)arg3 runInference:(BOOL)arg4;
 - (id)seqInferenceForward:(id)arg1 inputMatrix:(id)arg2 dataBatch:(id)arg3;
 - (id)seqTrainingForward:(id)arg1 subMatrix:(id)arg2 reductionSumResults:(id)arg3 alphaVec:(id)arg4 labels:(id)arg5 rowOffset:(unsigned long long)arg6 computeNRows:(unsigned long long)arg7 computeLossGradient:(BOOL)arg8;
 - (id)seqTrainingForward:(id)arg1 inputMatrix:(id)arg2 dataBatch:(id)arg3 computeLossGradient:(BOOL)arg4;
 - (id)seqForward:(id)arg1 inputMatrix:(id)arg2 dataBatch:(id)arg3 runInference:(BOOL)arg4;
-- (struct NSArray *)imageInferenceForward:(id)arg1 input:(struct NSArray *)arg2 lossLabels:(id)arg3;
-- (struct NSArray *)imageTrainingForward:(id)arg1 input:(struct NSArray *)arg2 lossLabels:(id)arg3;
-- (struct NSArray *)forward:(id)arg1 input:(struct NSArray *)arg2 labels:(id)arg3 runInference:(BOOL)arg4;
+- (id)imageInferenceForward:(id)arg1 input:(id)arg2 lossLabels:(id)arg3;
+- (id)imageTrainingForward:(id)arg1 input:(id)arg2 lossLabels:(id)arg3;
+- (id)forward:(id)arg1 input:(id)arg2 labels:(id)arg3 runInference:(BOOL)arg4;
 - (void)createKernel;
 - (void)updatePreviousLayer:(id)arg1 nextLayer:(id)arg2 network:(id)arg3;
 - (id)initWithName:(id)arg1 parameters:(CDStruct_96916c69 *)arg2;

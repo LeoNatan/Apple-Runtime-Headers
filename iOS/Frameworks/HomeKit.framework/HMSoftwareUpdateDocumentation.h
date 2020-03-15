@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) NSNumber *licenseAgreementVersion; // @synthesize licenseAgreementVersion=_licenseAgreementVersion;
 @property(readonly, copy) HMHTMLDocument *licenseAgreement; // @synthesize licenseAgreement=_licenseAgreement;
 @property(readonly, copy) HMHTMLDocument *releaseNotes; // @synthesize releaseNotes=_releaseNotes;
 @property(readonly, copy) HMHTMLDocument *releaseNotesSummary; // @synthesize releaseNotesSummary=_releaseNotesSummary;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

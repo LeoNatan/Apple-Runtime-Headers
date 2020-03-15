@@ -21,8 +21,8 @@
 
 + (id)_mockEvent;
 + (BOOL)shouldUseMockService;
-@property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 - (void)_serviceStatusDidChange:(id)arg1;
 - (void)_deliverMockServiceStatus;
 - (void)performAction:(long long)arg1;

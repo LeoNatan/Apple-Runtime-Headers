@@ -18,9 +18,9 @@
 }
 
 + (id)loggingContextWithSubsystem:(id)arg1 category:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *subsystem; // @synthesize subsystem=_subsystem;
 @property(readonly, copy, nonatomic) NSString *category; // @synthesize category=_category;
-- (void).cxx_destruct;
 - (void)setupASL;
 - (id)loggingName;
 - (id)aslQueue;

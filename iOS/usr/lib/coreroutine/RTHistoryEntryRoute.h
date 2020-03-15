@@ -19,6 +19,7 @@
     RTMapItem *_destinationMapItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool navigationWasInterrupted; // @synthesize navigationWasInterrupted=_navigationWasInterrupted;
 @property(readonly, nonatomic) RTMapItem *destinationMapItem; // @synthesize destinationMapItem=_destinationMapItem;
 @property(readonly, nonatomic) RTLocation *destinationLocation; // @synthesize destinationLocation=_destinationLocation;
@@ -26,7 +27,6 @@
 @property(readonly, nonatomic) RTLocation *originLocation; // @synthesize originLocation=_originLocation;
 @property(readonly, nonatomic) NSDate *usageDate; // @synthesize usageDate=_usageDate;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithIdentifier:(id)arg1 usageDate:(id)arg2 originLocation:(id)arg3 originMapItem:(id)arg4 destinationLocation:(id)arg5 destinationMapItem:(id)arg6 navigationWasInterrupted:(_Bool)arg7;
 - (id)init;

@@ -22,13 +22,13 @@
 + (id)standardStoreOptions;
 + (id)oldManagedObjectModel;
 + (id)managedObjectModel;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool abortAfterReplacingDatabase; // @synthesize abortAfterReplacingDatabase=_abortAfterReplacingDatabase;
 @property(nonatomic) unsigned long long fakeFreeDiskSpace; // @synthesize fakeFreeDiskSpace=_fakeFreeDiskSpace;
 @property(retain, nonatomic) NSMergePolicy *mergePolicy; // @synthesize mergePolicy=_mergePolicy;
 @property(retain, nonatomic) NSString *storeType; // @synthesize storeType=_storeType;
 @property(retain, nonatomic) NSURL *storeURL; // @synthesize storeURL=_storeURL;
 @property(retain, nonatomic) NSDictionary *storeOptions; // @synthesize storeOptions=_storeOptions;
-- (void).cxx_destruct;
 - (void)vacuumStoreWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)vacuumStore;
 - (void)backupPersistentStore;

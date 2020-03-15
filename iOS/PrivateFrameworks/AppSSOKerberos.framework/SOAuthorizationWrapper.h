@@ -16,8 +16,8 @@
     CDUnknownBlockType _authorizationCompletion;
 }
 
-@property(copy) CDUnknownBlockType authorizationCompletion; // @synthesize authorizationCompletion=_authorizationCompletion;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType authorizationCompletion; // @synthesize authorizationCompletion=_authorizationCompletion;
 - (void)authorization:(id)arg1 didCompleteWithError:(id)arg2;
 - (void)authorization:(id)arg1 didCompleteWithHTTPResponse:(id)arg2 httpBody:(id)arg3;
 - (void)authorization:(id)arg1 didCompleteWithHTTPAuthorizationHeaders:(id)arg2;

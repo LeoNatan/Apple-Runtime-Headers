@@ -16,9 +16,9 @@
     float _buttonAlpha;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float buttonAlpha; // @synthesize buttonAlpha=_buttonAlpha;
 @property(nonatomic) float buttonScale; // @synthesize buttonScale=_buttonScale;
-- (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
 @property(nonatomic) float buttonCornerRadius;
 @property(nonatomic, getter=isCircle) _Bool circle;

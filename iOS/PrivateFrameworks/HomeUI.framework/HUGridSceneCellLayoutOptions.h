@@ -19,13 +19,13 @@
 }
 
 + (id)defaultOptionsForCellSizeSubclass:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numberOfTitleLines; // @synthesize numberOfTitleLines=_numberOfTitleLines;
 @property(nonatomic) double cellHeight; // @synthesize cellHeight=_cellHeight;
 @property(retain, nonatomic) UIFont *descriptionFont; // @synthesize descriptionFont=_descriptionFont;
 @property(nonatomic) double titleDescriptionLineSpacing; // @synthesize titleDescriptionLineSpacing=_titleDescriptionLineSpacing;
 @property(nonatomic) double titleInterLineSpacing; // @synthesize titleInterLineSpacing=_titleInterLineSpacing;
 @property(nonatomic) double iconInnerHorizontalMargin; // @synthesize iconInnerHorizontalMargin=_iconInnerHorizontalMargin;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

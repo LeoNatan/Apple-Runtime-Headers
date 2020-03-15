@@ -21,13 +21,13 @@
     UITapGestureRecognizer *__directionChangeGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UITapGestureRecognizer *_directionChangeGestureRecognizer; // @synthesize _directionChangeGestureRecognizer=__directionChangeGestureRecognizer;
 @property(nonatomic, setter=_setCaptureOrientation:) long long _captureOrientation; // @synthesize _captureOrientation=__captureOrientation;
 @property(retain, nonatomic, setter=_setMotionManager:) CMMotionManager *_motionManager; // @synthesize _motionManager=__motionManager;
 @property(readonly, nonatomic) CUCaptureController *_captureController; // @synthesize _captureController=__captureController;
 @property(nonatomic, getter=isPainting, setter=_setPainting:) _Bool painting; // @synthesize painting=_painting;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
-- (void).cxx_destruct;
 - (void)panoramaConfigurationDidChangeWithDirection:(long long)arg1;
 - (void)updateToContentSize:(id)arg1;
 - (void)_updateWithAccelerometerData:(id)arg1 captureOrientation:(long long)arg2;

@@ -16,10 +16,10 @@
     NNMKSyncController *_syncController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NNMKSyncController *syncController; // @synthesize syncController=_syncController;
 @property(nonatomic) __weak id <NNMKResendSchedulerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long initialSyncResendInterval; // @synthesize initialSyncResendInterval=_initialSyncResendInterval;
-- (void).cxx_destruct;
 - (void)_resendSendingProgressForComposedMessageWithId:(id)arg1 forIDSIdentifier:(id)arg2 newResendInterval:(unsigned long long)arg3;
 - (void)_resendPendingAccountWithIds:(id)arg1 forIDSIdentifier:(id)arg2 newResendInterval:(unsigned long long)arg3;
 - (void)_resendPendingMessageContentWithId:(id)arg1 sentBecauseUserRequested:(_Bool)arg2 idsIdentifier:(id)arg3 newResendInterval:(unsigned long long)arg4;

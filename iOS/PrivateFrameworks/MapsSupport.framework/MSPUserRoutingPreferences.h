@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long defaultDisabledTransitModes; // @synthesize defaultDisabledTransitModes=_defaultDisabledTransitModes;
 @property(readonly, nonatomic) _Bool avoidHighways; // @synthesize avoidHighways=_avoidHighways;
 @property(readonly, nonatomic) _Bool avoidTolls; // @synthesize avoidTolls=_avoidTolls;
 @property(readonly, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (id)createUserPreferences;
 - (id)copy;
 - (void)encodeWithCoder:(id)arg1;

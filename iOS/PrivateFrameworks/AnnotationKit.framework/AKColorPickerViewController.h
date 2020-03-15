@@ -19,12 +19,12 @@
     long long _tag;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long tag; // @synthesize tag=_tag;
 @property(retain, nonatomic) AKColorPaletteView *colorPalette; // @synthesize colorPalette=_colorPalette;
 @property(nonatomic) __weak AKController *controller; // @synthesize controller=_controller;
 @property(nonatomic) long long colorAttributeTag; // @synthesize colorAttributeTag=_colorAttributeTag;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)syncTextAttributesToUI:(id)arg1;
 - (id)convertTextAttributes:(id)arg1;
 - (void)valueChanged:(id)arg1;

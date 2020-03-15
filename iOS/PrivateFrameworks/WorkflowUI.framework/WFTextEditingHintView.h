@@ -15,10 +15,10 @@
     UILabel *_hintLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UILabel *hintLabel; // @synthesize hintLabel=_hintLabel;
 @property(nonatomic) __weak UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(copy, nonatomic) NSString *hintText; // @synthesize hintText=_hintText;
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

@@ -18,16 +18,17 @@
 + (id)deserializeLoggableDatas:(id)arg1 error:(id *)arg2;
 + (id)serializeLoggableDatas:(id)arg1;
 + (void)reportCoreDataEventForEntity:(id)arg1 write:(_Bool)arg2 code:(int)arg3 underlyingError:(id)arg4;
+- (void).cxx_destruct;
 // Error parsing type for property sequenceId:
 // Property attributes: TAq,V_sequenceId
 
 @property(retain) NSPersistentContainer *persistentContainer; // @synthesize persistentContainer=_persistentContainer;
-- (void).cxx_destruct;
 - (void)performBlock:(CDUnknownBlockType)arg1;
 - (void)performBlockAndWait:(CDUnknownBlockType)arg1;
+- (_Bool)performAndWaitForDownloadId:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (_Bool)performAndWaitForRequestId:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
-- (void)performOnRequestsForPredicate:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
-- (void)performOnBatchesOfEntity:(id)arg1 predicate:(id)arg2 error:(id *)arg3 block:(CDUnknownBlockType)arg4;
+- (void)performOnRequestsForPredicate:(id)arg1 enforceMax:(_Bool)arg2 error:(id *)arg3 block:(CDUnknownBlockType)arg4;
+- (void)performOnBatchesOfEntity:(id)arg1 predicate:(id)arg2 enforceMax:(_Bool)arg3 error:(id *)arg4 block:(CDUnknownBlockType)arg5;
 - (id)copyStatistics:(id *)arg1;
 - (_Bool)clearStateForApplication:(id)arg1 error:(id *)arg2;
 - (_Bool)persistAndRefaultObjects:(id)arg1 error:(id *)arg2;
@@ -48,11 +49,30 @@
 - (_Bool)resetRequestsToPending:(id)arg1 error:(id *)arg2;
 - (_Bool)deleteSTHs:(id)arg1 logBeginMsLessThan:(unsigned long long)arg2 error:(id *)arg3;
 - (void)garbageCollectRequests:(id)arg1 olderThan:(id)arg2 error:(id *)arg3;
+- (void)gargabeCollectEntity:(id)arg1 predicate:(id)arg2 error:(id *)arg3;
 - (void)deleteCompletedRequest:(id)arg1;
 - (_Bool)clearState:(id *)arg1;
 - (void)deleteObjectSet:(id)arg1;
 - (void)deleteObject:(id)arg1;
+- (id)downloadRecords:(id *)arg1;
+- (_Bool)setResponse:(id)arg1 downloadId:(id)arg2 error:(id *)arg3;
+- (_Bool)deleteDownloadRecord:(id)arg1 error:(id *)arg2;
+- (_Bool)deleteDownloadRecordById:(id)arg1 error:(id *)arg2;
+- (_Bool)hasPendingDownloadForUUID:(id)arg1 error:(id *)arg2;
+- (id)fetchDownloadRecordById:(id)arg1 error:(id *)arg2;
+- (id)fetchDownloadRecord:(id)arg1 error:(id *)arg2;
+- (id)createDownloadRecord:(id)arg1;
 - (id)createSignedTreeHeadFailure;
+- (void)garbageCollectSTHs:(id)arg1 logBeginMs:(unsigned long long)arg2 olderThan:(id)arg3 error:(id *)arg4;
+- (void)performForSTHsWithUnverifiedSignature:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
+- (void)performForPendingSTHs:(id)arg1 olderThan:(id)arg2 error:(id *)arg3 block:(CDUnknownBlockType)arg4;
+- (_Bool)populateMissingLogHeadHashes:(id *)arg1;
+- (id)unverifiedRevisions:(id)arg1 logBeginMs:(unsigned long long)arg2 error:(id *)arg3;
+- (id)latestVerifiedTreeHeadRevision:(id)arg1 logBeginMs:(unsigned long long)arg2 error:(id *)arg3;
+- (id)fetchTreeHeadsWithoutHash:(id)arg1 application:(id)arg2 logBeginTime:(long long)arg3 logType:(long long)arg4 revision:(long long)arg5 error:(id *)arg6;
+- (id)fetchTreeHead:(id)arg1 application:(id)arg2 logBeginTime:(long long)arg3 logType:(long long)arg4 revision:(long long)arg5 error:(id *)arg6;
+- (_Bool)haveTreeHead:(id)arg1 application:(id)arg2 logBeginTime:(long long)arg3 logType:(long long)arg4 revision:(long long)arg5 error:(id *)arg6;
+- (id)createTreeHead:(id)arg1 application:(id)arg2 logBeginTime:(long long)arg3 logHeadHash:(id)arg4 logType:(long long)arg5 revision:(long long)arg6;
 - (id)createTreeHead;
 - (id)createSignedMutationTimestampsFailure;
 - (void)performForPendingSMTs:(id)arg1 uri:(id)arg2 accountId:(id)arg3 error:(id *)arg4 block:(CDUnknownBlockType)arg5;

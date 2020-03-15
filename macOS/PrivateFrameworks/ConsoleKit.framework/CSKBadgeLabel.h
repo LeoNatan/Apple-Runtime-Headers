@@ -17,12 +17,12 @@
     NSParagraphStyle *_paragrapheStyle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSParagraphStyle *paragrapheStyle; // @synthesize paragrapheStyle=_paragrapheStyle;
 @property(retain, nonatomic) NSColor *labelBackgroundColor; // @synthesize labelBackgroundColor=_labelBackgroundColor;
 @property(retain, nonatomic) NSColor *labelColor; // @synthesize labelColor=_labelColor;
 @property(retain, nonatomic) NSFont *labelFont; // @synthesize labelFont=_labelFont;
 @property(copy, nonatomic) NSString *labelString; // @synthesize labelString=_labelString;
-- (void).cxx_destruct;
 - (id)_labelAttributes;
 - (struct CGRect)_labelRectForLabelSize:(struct CGSize)arg1 containerRect:(struct CGRect)arg2;
 - (struct CGSize)intrinsicContentSize;

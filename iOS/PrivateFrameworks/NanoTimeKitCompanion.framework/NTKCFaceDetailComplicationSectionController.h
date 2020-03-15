@@ -22,13 +22,13 @@
 }
 
 + (_Bool)hasComplicationsForFace:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *richComplicationSlots; // @synthesize richComplicationSlots=_richComplicationSlots;
 @property(retain, nonatomic) NTKCFaceDetailComplicationsHiddenCell *hiddenCell; // @synthesize hiddenCell=_hiddenCell;
 @property(retain, nonatomic) NTKCFaceDetailComplicationPickerCell *dismissingPickerCell; // @synthesize dismissingPickerCell=_dismissingPickerCell;
 @property(retain, nonatomic) NTKCFaceDetailComplicationPickerCell *pickerCell; // @synthesize pickerCell=_pickerCell;
 @property(retain, nonatomic) NTKFaceView *faceView; // @synthesize faceView=_faceView;
 @property(nonatomic) __weak id <NTKCFaceDetailComplicationSectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)complicationPickerCell:(id)arg1 didSelectComplication:(id)arg2;
 - (void)_refreshPickerCellIfNeededForSelectedRow:(long long)arg1;
 - (void)_dequeuePickerCellForRow:(long long)arg1;

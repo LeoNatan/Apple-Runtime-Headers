@@ -22,6 +22,7 @@
     double _lastSilencePosterior;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double lastSilencePosterior; // @synthesize lastSilencePosterior=_lastSilencePosterior;
 @property(nonatomic) _Bool isAnalyzeMode; // @synthesize isAnalyzeMode=_isAnalyzeMode;
 @property(nonatomic) _Bool hasReported; // @synthesize hasReported=_hasReported;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) EARCaesuraSilencePosteriorGenerator *caesuraSPG; // @synthesize caesuraSPG=_caesuraSPG;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <CSSPGEndpointAnalyzerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)silenceDurationEstimateAvailable:(float *)arg1 numEstimates:(unsigned long long)arg2 clientProcessedAudioMs:(float)arg3;
 - (void)clientSilenceFeaturesAvailable:(id)arg1;
 - (void)addAudio:(id)arg1 numSamples:(unsigned long long)arg2;

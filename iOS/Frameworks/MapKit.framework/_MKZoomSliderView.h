@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     double _lastTrackShadowImageScale;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(nonatomic) double zoomFraction; // @synthesize zoomFraction=_zoomFraction;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)didMoveToWindow;

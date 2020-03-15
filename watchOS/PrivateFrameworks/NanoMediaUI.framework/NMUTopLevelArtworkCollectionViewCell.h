@@ -22,9 +22,9 @@
     UILabel *_textLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(readonly, nonatomic) NMUMarqueeView *marqueeView; // @synthesize marqueeView=_marqueeView;
-- (void).cxx_destruct;
 - (void)_handleTextChanged;
 - (void)_resetMarqueeContentAndPosition;
 - (void)_resetMarqueeContentAndPositionWithTextWidth:(float)arg1;

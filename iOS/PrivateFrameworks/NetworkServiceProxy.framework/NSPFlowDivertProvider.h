@@ -13,8 +13,8 @@
     NSPManager *_manager;
 }
 
-@property(retain) NSPManager *manager; // @synthesize manager=_manager;
 - (void).cxx_destruct;
+@property(retain) NSPManager *manager; // @synthesize manager=_manager;
 - (_Bool)handleNewFlow:(id)arg1;
 - (void)stopProxyWithReason:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)startProxyWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

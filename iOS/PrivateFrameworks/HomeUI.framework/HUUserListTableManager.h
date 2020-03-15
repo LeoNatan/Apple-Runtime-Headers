@@ -28,6 +28,7 @@
     CNContactStore *_contactStore;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) NSIndexPath *selectedIndexPath; // @synthesize selectedIndexPath=_selectedIndexPath;
 @property(nonatomic) _Bool allowsEditing; // @synthesize allowsEditing=_allowsEditing;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSArray *invitations; // @synthesize invitations=_invitations;
 @property(retain, nonatomic) NSArray *users; // @synthesize users=_users;
 @property(nonatomic) __weak id <HUUserListManagerTableDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateEditingRows;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;

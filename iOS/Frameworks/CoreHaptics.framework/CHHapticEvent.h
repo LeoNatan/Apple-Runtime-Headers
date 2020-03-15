@@ -20,12 +20,12 @@
     double _fullDuration;
 }
 
+- (void).cxx_destruct;
 @property(readonly) double fullDuration; // @synthesize fullDuration=_fullDuration;
 @property(readonly) NSString *type; // @synthesize type=_type;
 @property double duration; // @synthesize duration=_duration;
 @property double relativeTime; // @synthesize relativeTime=_time;
 @property(readonly) NSArray *eventParameters; // @synthesize eventParameters=_eventParams;
-- (void).cxx_destruct;
 - (_Bool)resolveExternalResources:(id)arg1 error:(id *)arg2;
 @property(readonly) NSArray *parameterCurves;
 @property(readonly) NSArray *parameters;

@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSArray *_groups;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *groups; // @synthesize groups=_groups;
 @property(retain, nonatomic) NSDictionary *sourcesByKind; // @synthesize sourcesByKind=_sourcesByKind;
 @property(retain, nonatomic) NSArray *multipleGroupsPeopleSources; // @synthesize multipleGroupsPeopleSources=_multipleGroupsPeopleSources;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CNUIContactsEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(nonatomic) __weak id <CNUIPeopleGroupsDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)isSyntheticGroup:(id)arg1;
 - (id)peopleInGroup:(id)arg1 withKeysToFetch:(id)arg2;
 - (id)groupAtIndexPath:(id)arg1;

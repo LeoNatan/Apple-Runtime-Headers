@@ -21,6 +21,7 @@
     CDPDevice *_cdpDevice;
 }
 
+- (void).cxx_destruct;
 @property BOOL isCurrentDevice; // @synthesize isCurrentDevice=_isCurrentDevice;
 @property(retain) CDPDevice *cdpDevice; // @synthesize cdpDevice=_cdpDevice;
 @property(retain) NSImage *deviceIcon; // @synthesize deviceIcon=_deviceIcon;
@@ -28,7 +29,6 @@
 @property(retain) NSString *model; // @synthesize model=_model;
 @property(retain) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
 @property(retain) NSString *localizedName; // @synthesize localizedName=_localizedName;
-- (void).cxx_destruct;
 - (unsigned long long)localSecretType;
 
 // Remaining properties

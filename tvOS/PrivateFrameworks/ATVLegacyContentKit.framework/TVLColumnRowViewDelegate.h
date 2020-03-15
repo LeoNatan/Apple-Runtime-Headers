@@ -15,8 +15,8 @@
     TVLTableElement *_tableElement;
 }
 
-@property(retain) TVLTableElement *tableElement; // @synthesize tableElement=_tableElement;
 - (void).cxx_destruct;
+@property(retain) TVLTableElement *tableElement; // @synthesize tableElement=_tableElement;
 - (double)headerHeightForColumnRowView:(id)arg1;
 - (double)columnRowView:(id)arg1 heightForRow:(long long)arg2;
 - (double)columnRowView:(id)arg1 widthForColumn:(long long)arg2;

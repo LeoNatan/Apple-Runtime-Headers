@@ -14,8 +14,8 @@
 }
 
 + (BOOL)canHandleURL:(id)arg1;
-@property(retain) CalFTPOperation *ftpOperation; // @synthesize ftpOperation=_ftpOperation;
 - (void).cxx_destruct;
+@property(retain) CalFTPOperation *ftpOperation; // @synthesize ftpOperation=_ftpOperation;
 - (void)abortOperation;
 - (void)ftpOperationDidFinish:(id)arg1;
 - (void)unpublishDataWithAutomatic:(BOOL)arg1;

@@ -19,12 +19,12 @@
     int _blurStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int blurStyle; // @synthesize blurStyle=_blurStyle;
 @property(retain, nonatomic) CUISAlertBackground *background; // @synthesize background=_background;
 @property(nonatomic, getter=isObservingBackgroundChanges) _Bool observingBackgroundChanges; // @synthesize observingBackgroundChanges=_observingBackgroundChanges;
 @property(retain, nonatomic) UIImageView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) _Bool observesBackgroundChanges; // @synthesize observesBackgroundChanges=_observesBackgroundChanges;
-- (void).cxx_destruct;
 - (_Bool)postsDidMoveToWindowNotification;
 - (id)snapshotImage;
 - (id)alertViewController;

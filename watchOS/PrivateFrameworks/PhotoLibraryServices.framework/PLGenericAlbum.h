@@ -33,7 +33,7 @@
 + (id)allAlbumsRegisteredWithManagedObjectContext:(id)arg1;
 + (id)allSyncedAlbumsInManagedObjectContext:(id)arg1;
 + (id)allAlbumsInManagedObjectContext:(id)arg1;
-+ (struct NSObject *)albumFromGroupURL:(id)arg1 photoLibrary:(id)arg2;
++ (id)albumFromGroupURL:(id)arg1 photoLibrary:(id)arg2;
 + (id)insertNewSyncedFolderWithTitle:(id)arg1 intoLibrary:(id)arg2;
 + (id)insertNewFolderWithTitle:(id)arg1 intoLibrary:(id)arg2;
 + (id)insertNewLegacyFaceAlbumIntoLibrary:(id)arg1;
@@ -94,14 +94,14 @@
 + (id)albumsWithCloudGUID:(id)arg1 inLibrary:(id)arg2;
 + (id)albumWithCloudGUID:(id)arg1 inLibrary:(id)arg2;
 + (id)_predicateForSupportedAlbumTypes;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didRegisteredWithUserInterfaceContext; // @synthesize didRegisteredWithUserInterfaceContext;
 @property(nonatomic) _Bool isRegisteredForChanges; // @synthesize isRegisteredForChanges;
-- (void).cxx_destruct;
 - (void)enumerateDerivedIndexMappers:(CDUnknownBlockType)arg1;
 - (_Bool)hasDerivedIndexMappers;
 - (void)enumerateDerivedAlbums:(CDUnknownBlockType)arg1;
 - (void)unregisterAllDerivedAlbums;
-- (void)registerDerivedAlbum:(struct NSObject *)arg1;
+- (void)registerDerivedAlbum:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)_prettyDescription;
 - (id)_compactDebugDescription;

@@ -19,6 +19,7 @@
     long long _modelBComputeUnit;
 }
 
+- (void).cxx_destruct;
 @property long long modelBComputeUnit; // @synthesize modelBComputeUnit=_modelBComputeUnit;
 @property long long modelAComputeUnit; // @synthesize modelAComputeUnit=_modelAComputeUnit;
 @property(retain, nonatomic) NSString *modelBPath; // @synthesize modelBPath=_modelBPath;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSArray *imageInputs; // @synthesize imageInputs=_imageInputs;
 @property(nonatomic) unsigned long long monteCarloCount; // @synthesize monteCarloCount=_monteCarloCount;
 @property(nonatomic) unsigned int seed; // @synthesize seed=_seed;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

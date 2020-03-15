@@ -13,8 +13,8 @@
     id <PLXPCProxyCreating><PLXPCAsyncProxyCreating> _proxyFactory;
 }
 
-@property(readonly) id <PLXPCProxyCreating><PLXPCAsyncProxyCreating> proxyFactory; // @synthesize proxyFactory=_proxyFactory;
 - (void).cxx_destruct;
+@property(readonly) id <PLXPCProxyCreating><PLXPCAsyncProxyCreating> proxyFactory; // @synthesize proxyFactory=_proxyFactory;
 - (id)initWithQueue:(id)arg1 proxyCreating:(id)arg2 proxyGetter:(SEL)arg3;
 
 @end

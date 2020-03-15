@@ -18,9 +18,9 @@
 
 + (id)sharedInstance;
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(readonly, nonatomic) id <EMVIPManager> vipManager; // @synthesize vipManager=_vipManager;
-- (void).cxx_destruct;
 - (void)_addressBookDidChange:(id)arg1;
 - (void)_vipsDidChange:(id)arg1;
 @property(readonly, copy) EAEmailAddressSet *addressesForVIPSenders;

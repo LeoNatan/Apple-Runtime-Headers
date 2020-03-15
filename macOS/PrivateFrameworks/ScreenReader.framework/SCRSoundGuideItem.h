@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_sound;
 }
 
-@property(copy, nonatomic) NSString *sound; // @synthesize sound=_sound;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *sound; // @synthesize sound=_sound;
 - (void)addBrailleDescriptionToRequest:(id)arg1;
 - (void)addDisplayTitleToRequest:(id)arg1;
 - (id)initWithTitle:(id)arg1 key:(id)arg2 modifier:(unsigned long long)arg3 guide:(id)arg4 subguide:(id)arg5 target:(id)arg6 action:(id)arg7 tag:(long long)arg8 info:(id)arg9;

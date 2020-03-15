@@ -39,6 +39,7 @@
 + (id)allOperatorTablesToTrimConditionsForTrimDate:(id)arg1;
 + (id)storageQueueNameForEntryKey:(id)arg1;
 + (id)storageQueueNameForClass:(Class)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *processIDCache; // @synthesize processIDCache=_processIDCache;
 @property(retain) NSObject<OS_dispatch_queue> *utilityQueue; // @synthesize utilityQueue=_utilityQueue;
 @property(retain) NSObject<OS_dispatch_queue> *backgroundQueue; // @synthesize backgroundQueue=_backgroundQueue;
@@ -60,7 +61,6 @@
 @property(retain) NSString *uuid; // @synthesize uuid=_uuid;
 @property BOOL storageReady; // @synthesize storageReady=_storageReady;
 @property(retain) PLSQLiteConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)willSwitchUser;
 - (void)logMessage:(id)arg1 fromFile:(id)arg2 fromFunction:(id)arg3 fromLineNumber:(long long)arg4;
 - (id)aggregateEntriesForKey:(id)arg1 withBucketLength:(double)arg2 inTimeIntervalRange:(struct _PLTimeIntervalRange)arg3;

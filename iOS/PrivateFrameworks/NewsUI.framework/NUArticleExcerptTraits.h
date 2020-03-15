@@ -28,6 +28,7 @@
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NUTrait *bottomMaringTrait; // @synthesize bottomMaringTrait=_bottomMaringTrait;
 @property(retain, nonatomic) NUTrait *readMoreMinTopMarginTrait; // @synthesize readMoreMinTopMarginTrait=_readMoreMinTopMarginTrait;
 @property(retain, nonatomic) NUTrait *excerptMarginTrait; // @synthesize excerptMarginTrait=_excerptMarginTrait;
@@ -42,7 +43,6 @@
 @property(readonly, nonatomic) double topMarginAboveHeadlineDate; // @synthesize topMarginAboveHeadlineDate=_topMarginAboveHeadlineDate;
 @property(readonly, nonatomic) double topMarginAboveHeadlineTitle; // @synthesize topMarginAboveHeadlineTitle=_topMarginAboveHeadlineTitle;
 @property(readonly, nonatomic) double hairlineSeparatorHeight; // @synthesize hairlineSeparatorHeight=_hairlineSeparatorHeight;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double bottomMargin;
 @property(readonly, nonatomic) double minTopMaginAboveReadMoreButton;
 @property(readonly, nonatomic) double contentMargin;

@@ -25,6 +25,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *placemark; // @synthesize placemark=_placemark;
 @property(copy, nonatomic) NSString *administrativeArea; // @synthesize administrativeArea=_administrativeArea;
 @property(copy, nonatomic) NSString *stateCode; // @synthesize stateCode=_stateCode;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
 @property(copy, nonatomic) NSString *country; // @synthesize country=_country;
 @property(copy, nonatomic) NSString *formattedAddressLines; // @synthesize formattedAddressLines=_formattedAddressLines;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

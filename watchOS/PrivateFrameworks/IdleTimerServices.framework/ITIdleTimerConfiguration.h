@@ -22,11 +22,11 @@
 
 + (_Bool)supportsBSXPCSecureCoding;
 + (id)configurationToDisableIdleTimer;
+- (void).cxx_destruct;
 @property(copy, nonatomic, getter=_idleEventHandlerBlock, setter=_setIdleEventHandlerBlock:) CDUnknownBlockType idleEventHandlerBlock; // @synthesize idleEventHandlerBlock=_idleEventHandlerBlock;
 @property(nonatomic, getter=_idleEventMask, setter=_setIdleEventMask:) unsigned int idleEventMask; // @synthesize idleEventMask=_idleEventMask;
 @property(readonly, copy, nonatomic, getter=_identifier) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) _Bool disablesTimer; // @synthesize disablesTimer=_disablesTimer;
-- (void).cxx_destruct;
 - (id)_copyWithNewIdentifier;
 - (void)encodeWithBSXPCCoder:(id)arg1;
 - (id)initWithBSXPCCoder:(id)arg1;

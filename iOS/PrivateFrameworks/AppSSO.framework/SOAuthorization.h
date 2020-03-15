@@ -23,9 +23,9 @@
 
 + (_Bool)canPerformAuthorizationWithURL:(id)arg1 responseCode:(long long)arg2 useInternalExtensions:(_Bool)arg3;
 + (_Bool)canPerformAuthorizationWithURL:(id)arg1 responseCode:(long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool enableEmbeddedAuthorizationViewController; // @synthesize enableEmbeddedAuthorizationViewController=_enableEmbeddedAuthorizationViewController;
 @property __weak id <SOAuthorizationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)viewControllerDidCancel:(id)arg1;
 - (void)presentAuthorizationViewControllerWithHints:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)authorizationDidCompleteWithCredential:(id)arg1 error:(id)arg2;

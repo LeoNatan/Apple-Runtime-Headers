@@ -13,8 +13,8 @@
     GKUITheme *_theme;
 }
 
-@property(retain, nonatomic) GKUITheme *theme; // @synthesize theme=_theme;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GKUITheme *theme; // @synthesize theme=_theme;
 - (id)initWithTheme:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

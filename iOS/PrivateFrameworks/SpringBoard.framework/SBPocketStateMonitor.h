@@ -20,8 +20,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) long long pocketState; // @synthesize pocketState=_pocketState;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long pocketState; // @synthesize pocketState=_pocketState;
 - (void)pocketStateManager:(id)arg1 didUpdateState:(long long)arg2;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

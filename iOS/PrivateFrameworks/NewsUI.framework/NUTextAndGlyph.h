@@ -15,10 +15,10 @@
     UIImage *_glyph;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *glyph; // @synthesize glyph=_glyph;
 @property(readonly, nonatomic) NSString *text; // @synthesize text=_text;
 @property(readonly, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithText:(id)arg1 glyph:(id)arg2;
 - (id)initWithAttributedText:(id)arg1 glyph:(id)arg2;

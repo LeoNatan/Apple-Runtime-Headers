@@ -18,9 +18,9 @@
 + (void)performChangeImmediately:(CDUnknownBlockType)arg1;
 + (void)performSuppressingChangeNotifications:(CDUnknownBlockType)arg1;
 + (BOOL)isSuppressingChangeNotifications;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPMediaItemArtwork *artwork; // @synthesize artwork=_artwork;
 @property(readonly, nonatomic) void *_mediaRemoteContentItem; // @synthesize _mediaRemoteContentItem;
-- (void).cxx_destruct;
 - (void)_loadArtwork:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_postItemChangedNotificationWithDeltaBlock:(CDUnknownBlockType)arg1;
 @property(nonatomic, getter=isPlayable) BOOL playable;

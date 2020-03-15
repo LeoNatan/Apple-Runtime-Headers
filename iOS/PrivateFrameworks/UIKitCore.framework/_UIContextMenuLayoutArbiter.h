@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     CDStruct_6f807b77 _menuAnchor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIContextMenuLayoutArbiterInput *currentInput; // @synthesize currentInput=_currentInput;
 @property(nonatomic) unsigned long long currentLayout; // @synthesize currentLayout=_currentLayout;
 @property(nonatomic) __weak UIView *containerView; // @synthesize containerView=_containerView;
-- (void).cxx_destruct;
 - (void)_drawContentBoundsDebugUI:(struct CGRect)arg1;
 - (id)_accessoryPositionsForBaseLayout:(id)arg1;
 - (struct CGRect)_computedMenuBoundsForContentBounds:(struct CGRect)arg1 predictedPreviewFrame:(struct CGRect)arg2;

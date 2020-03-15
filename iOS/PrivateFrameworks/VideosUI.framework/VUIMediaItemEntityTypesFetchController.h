@@ -15,9 +15,9 @@
     VUIMediaItemEntityTypesFetchResponse *_response;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIMediaItemEntityTypesFetchResponse *response; // @synthesize response=_response;
 @property(nonatomic) __weak id <VUIMediaItemEntityTypesFetchControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_updateResponseWithResult:(id)arg1 replaceContentsOnNilChanges:(_Bool)arg2;
 - (void)_notifyFetchDidFailWithError:(id)arg1;
 - (void)_notifyFetchDidCompleteWithResult:(id)arg1;

@@ -21,6 +21,7 @@
     NSDictionary *_eventData;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *eventData; // @synthesize eventData=_eventData;
 @property(nonatomic) unsigned long long eventType; // @synthesize eventType=_eventType;
 @property(readonly, nonatomic) MNLocation *location; // @synthesize location=_location;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) unsigned long long stage; // @synthesize stage=_stage;
 @property(readonly, nonatomic) unsigned long long stepIndex; // @synthesize stepIndex=_stepIndex;
 @property(readonly, nonatomic) double timeSinceStartOfRoute; // @synthesize timeSinceStartOfRoute=_timeSinceStartOfRoute;
-- (void).cxx_destruct;
 - (id)shieldToText:(id)arg1;
 - (id)instructionsFromSignDescription:(id)arg1;
 - (id)stringByInstructions:(id)arg1;

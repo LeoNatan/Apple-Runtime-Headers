@@ -13,8 +13,8 @@
     id <FCContentContext> _context;
 }
 
-@property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
 - (id)headlinesFetchOperationForArticleIDs:(id)arg1 ignoreCacheForArticleIDs:(id)arg2;
 - (id)headlinesFetchOperationForArticleIDs:(id)arg1;
 - (id)articleWithHeadline:(id)arg1;

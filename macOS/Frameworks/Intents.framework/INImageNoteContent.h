@@ -19,8 +19,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, setter=_setImage:) INImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
+@property(copy, setter=_setImage:) INImage *image; // @synthesize image=_image;
 - (id)_dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

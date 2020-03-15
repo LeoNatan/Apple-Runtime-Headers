@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 {
     _Bool _disableLoadURLMetrics;
     _Bool _knownToBeTrusted;
+    _Bool _remoteSecuritySigningEnabled;
     _Bool _disableResponseDecoding;
     _Bool _shouldSetCookiesFromResponse;
     _Bool _shouldSetStorefrontFromResponse;
@@ -36,12 +37,14 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_userInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) _Bool shouldSetStorefrontFromResponse; // @synthesize shouldSetStorefrontFromResponse=_shouldSetStorefrontFromResponse;
 @property(nonatomic) _Bool shouldSetCookiesFromResponse; // @synthesize shouldSetCookiesFromResponse=_shouldSetCookiesFromResponse;
 @property(nonatomic) int reversePushType; // @synthesize reversePushType=_reversePushType;
 @property(nonatomic) _Bool disableResponseDecoding; // @synthesize disableResponseDecoding=_disableResponseDecoding;
 @property(retain, nonatomic) id <AMSResponseDecoding> responseDecoder; // @synthesize responseDecoder=_responseDecoder;
+@property(nonatomic) _Bool remoteSecuritySigningEnabled; // @synthesize remoteSecuritySigningEnabled=_remoteSecuritySigningEnabled;
 @property(retain, nonatomic) AMSPurchaseContext *purchaseContext; // @synthesize purchaseContext=_purchaseContext;
 @property(nonatomic) int mescalType; // @synthesize mescalType=_mescalType;
 @property(nonatomic) int maxRetryCount; // @synthesize maxRetryCount=_maxRetryCount;
@@ -55,7 +58,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int anisetteType; // @synthesize anisetteType=_anisetteType;
 @property(retain, nonatomic) NSDictionary *additionalMetrics; // @synthesize additionalMetrics=_additionalMetrics;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;

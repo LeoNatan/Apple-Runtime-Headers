@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     id <ManagedPlugInsEditorPlugInCellViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ManagedPlugInsEditorPlugInCellViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak NSTextField *plugInVersionTextField; // @synthesize plugInVersionTextField=_plugInVersionTextField;
 @property(nonatomic) __weak NSButton *checkBox; // @synthesize checkBox=_checkBox;
-- (void).cxx_destruct;
 - (void)_updatePlugInVersionTextFieldTextColor;
 - (void)setBackgroundStyle:(long long)arg1;
 - (void)didToggleCheckBox:(id)arg1;

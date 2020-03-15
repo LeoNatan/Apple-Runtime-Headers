@@ -18,9 +18,9 @@
 
 + (Class)passIDsType;
 + (Class)identifiersType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *passIDs; // @synthesize passIDs=_passIDs;
 @property(retain, nonatomic) NSMutableArray *identifiers; // @synthesize identifiers=_identifiers;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

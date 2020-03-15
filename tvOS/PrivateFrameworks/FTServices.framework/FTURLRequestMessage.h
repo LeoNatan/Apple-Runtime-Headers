@@ -23,6 +23,7 @@
     NSDictionary *_timingData;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *timingData; // @synthesize timingData=_timingData;
 @property(copy, nonatomic) NSNumber *responseStatusCode; // @synthesize responseStatusCode=_responseStatusCode;
 @property(copy, nonatomic) NSData *responseBody; // @synthesize responseBody=_responseBody;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSDictionary *requestHeaders; // @synthesize requestHeaders=_requestHeaders;
 @property(copy, nonatomic) NSURL *requestURL; // @synthesize requestURL=_requestURL;
 @property(nonatomic) unsigned long long requestType; // @synthesize requestType=_requestType;
-- (void).cxx_destruct;
 - (void)handleResponseStatus:(unsigned long long)arg1;
 - (void)handleResponseBody:(id)arg1;
 - (void)handleResponseHeaders:(id)arg1;

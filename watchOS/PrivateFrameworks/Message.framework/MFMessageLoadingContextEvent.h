@@ -21,6 +21,7 @@
     MFMimeBody *_loadedBody;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MFMimeBody *loadedBody; // @synthesize loadedBody=_loadedBody;
 @property(retain, nonatomic) MFMimePart *loadedPart; // @synthesize loadedPart=_loadedPart;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool hasLoadedCompleteBody; // @synthesize hasLoadedCompleteBody=_hasLoadedCompleteBody;
 @property(copy, nonatomic) NSArray *content; // @synthesize content=_content;
 @property(nonatomic) __weak MFMessageLoadingContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MFMailMessage *message;
 - (id)debugDescription;
 - (id)description;

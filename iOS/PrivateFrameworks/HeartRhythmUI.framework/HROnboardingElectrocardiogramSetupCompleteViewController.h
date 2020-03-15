@@ -27,6 +27,7 @@
     NSLayoutYAxisAnchor *_viewBottomAnchor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutYAxisAnchor *viewBottomAnchor; // @synthesize viewBottomAnchor=_viewBottomAnchor;
 @property(retain, nonatomic) NSLayoutConstraint *contentViewBottomConstraint; // @synthesize contentViewBottomConstraint=_contentViewBottomConstraint;
 @property(retain, nonatomic) HRStackedButtonView *stackedButtonView; // @synthesize stackedButtonView=_stackedButtonView;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) HKElectrocardiogram *electrocardiogram; // @synthesize electrocardiogram=_electrocardiogram;
 @property(retain, nonatomic) HKAnchoredObjectQuery *electrocardiogramQuery; // @synthesize electrocardiogramQuery=_electrocardiogramQuery;
 @property(nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)_subheadlineFont;
 - (id)_bodyFont;
 - (id)_bodyFontTextStyle;

@@ -33,6 +33,7 @@
 + (id)sharedInstance;
 + (_Bool)isWatchKitSupportUnknown:(id)arg1;
 + (_Bool)isInvalidWatchKitAction:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *transactionsInProgress; // @synthesize transactionsInProgress=_transactionsInProgress;
 @property(readonly, nonatomic) CSLTransactionQueue *snapshotQueue; // @synthesize snapshotQueue=_snapshotQueue;
 @property(retain, nonatomic) CSLAppPrelauncher *prelauncher; // @synthesize prelauncher=_prelauncher;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) CSLSnapshotActivityManager *snapshotActivityManager; // @synthesize snapshotActivityManager=_snapshotActivityManager;
 @property(retain, nonatomic) CSLSafeMutableDictionary *snapshotCompletionBlocks; // @synthesize snapshotCompletionBlocks=_snapshotCompletionBlocks;
 @property(nonatomic) double intervalBetweenSnapshots; // @synthesize intervalBetweenSnapshots=_intervalBetweenSnapshots;
-- (void).cxx_destruct;
 - (void)_recordSnapshotRequestedForBundleID:(id)arg1 reason:(unsigned int)arg2 scheduleItem:(id)arg3;
 - (void)_recordSnapshotForBundleID:(id)arg1 error:(id)arg2;
 - (void)getScheduleWithCallbackQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;

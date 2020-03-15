@@ -22,13 +22,13 @@
     NSArray *_wordTimings;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *wordTimings; // @synthesize wordTimings=_wordTimings;
 @property(copy, nonatomic) CDUnknownBlockType wordHandler; // @synthesize wordHandler=_wordHandler;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_processWord;
 - (void)_processNextWord;
 - (void)invalidate;

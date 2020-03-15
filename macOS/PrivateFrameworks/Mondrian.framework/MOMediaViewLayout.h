@@ -16,8 +16,8 @@
     BOOL _enableStickiness;
 }
 
-@property(readonly, nonatomic) __weak MOMediaView *mediaView; // @synthesize mediaView=_mediaView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak MOMediaView *mediaView; // @synthesize mediaView=_mediaView;
 - (BOOL)validateValue:(id *)arg1 forKeyPath:(id)arg2 error:(id *)arg3;
 - (id)valueForKeyPath:(id)arg1;
 - (void)setValue:(id)arg1 forKeyPath:(id)arg2;

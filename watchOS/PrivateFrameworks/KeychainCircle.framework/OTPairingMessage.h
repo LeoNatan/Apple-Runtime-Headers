@@ -8,22 +8,20 @@
 
 #import <KeychainCircle/NSCopying-Protocol.h>
 
-@class OTApplicantToSponsorRound2M1, OTSOSMessage, OTSponsorToApplicantRound1M2, OTSponsorToApplicantRound2M2;
+@class OTApplicantToSponsorRound2M1, OTSponsorToApplicantRound1M2, OTSponsorToApplicantRound2M2;
 
 __attribute__((visibility("hidden")))
 @interface OTPairingMessage : PBCodable <NSCopying>
 {
     OTSponsorToApplicantRound1M2 *_epoch;
     OTApplicantToSponsorRound2M1 *_prepare;
-    OTSOSMessage *_sosPairingMessage;
     OTSponsorToApplicantRound2M2 *_voucher;
 }
 
-@property(retain, nonatomic) OTSOSMessage *sosPairingMessage; // @synthesize sosPairingMessage=_sosPairingMessage;
+- (void).cxx_destruct;
 @property(retain, nonatomic) OTSponsorToApplicantRound2M2 *voucher; // @synthesize voucher=_voucher;
 @property(retain, nonatomic) OTApplicantToSponsorRound2M1 *prepare; // @synthesize prepare=_prepare;
 @property(retain, nonatomic) OTSponsorToApplicantRound1M2 *epoch; // @synthesize epoch=_epoch;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -33,7 +31,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(readonly, nonatomic) _Bool hasSosPairingMessage;
 @property(readonly, nonatomic) _Bool hasVoucher;
 @property(readonly, nonatomic) _Bool hasPrepare;
 @property(readonly, nonatomic) _Bool hasEpoch;

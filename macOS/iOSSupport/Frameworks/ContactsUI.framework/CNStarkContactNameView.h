@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     CNAvatarViewController *_avatarViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;
 @property(readonly, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)setupConstraints;
 - (void)setupAvatar;
 - (void)setupNameLabel;

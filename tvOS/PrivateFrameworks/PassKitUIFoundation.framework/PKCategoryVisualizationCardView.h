@@ -39,12 +39,12 @@
     NSSet *_magnitudes;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isBlurDisabled) _Bool blurDisabled; // @synthesize blurDisabled=_blurDisabled;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic, getter=isMotionEnabled) _Bool motionEnabled; // @synthesize motionEnabled=_motionEnabled;
 @property(readonly, copy, nonatomic) NSSet *magnitudes; // @synthesize magnitudes=_magnitudes;
 @property(copy, nonatomic) NSArray *bucketColors; // @synthesize bucketColors=_bucketColors;
-- (void).cxx_destruct;
 - (void)_stopMotionUpdates;
 - (void)_startMotionUpdates;
 - (void)motionManager:(id)arg1 didReceiveMotion:(id)arg2;

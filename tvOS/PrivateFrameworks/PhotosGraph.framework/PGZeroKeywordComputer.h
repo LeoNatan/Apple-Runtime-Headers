@@ -15,9 +15,9 @@
 }
 
 + (id)zeroKeywordLog;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PGSearchComputationCache *searchComputationCache; // @synthesize searchComputationCache=_searchComputationCache;
 @property(readonly) PGGraph *graph; // @synthesize graph=_graph;
-- (void).cxx_destruct;
 - (id)densestCloseLocationNodeForNode:(id)arg1 locationMask:(unsigned long long)arg2;
 - (id)meaningNodeZeroKeywordForDisplayMeaningNode:(id)arg1 collectionUUIDsToAvoid:(id)arg2;
 - (id)_tripZeroKeywordWithScore:(out double *)arg1;

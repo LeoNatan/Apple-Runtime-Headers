@@ -6,7 +6,7 @@
 
 #import <ComponentKit/CKCompositeComponent.h>
 
-@class NSArray, NSDictionary, NSObject, NSSet, NSString, WFTextTokenChooser, WFVariable;
+@class NSArray, NSDictionary, NSObject, NSSet, NSString, WFVariable;
 @protocol NSCopying, WFComponentNavigationContext, WFVariableProvider, WFVariableUIDelegate;
 
 @interface WFRowTemplateItemEnumerationComponent : CKCompositeComponent
@@ -22,7 +22,6 @@
     id <WFVariableProvider> _variableProvider;
     id <WFVariableUIDelegate> _variableUIDelegate;
     id <WFComponentNavigationContext> _navigationContext;
-    WFTextTokenChooser *_textTokenChooser;
 }
 
 + (id)newWithPossibleValues:(id)arg1 labels:(id)arg2 selectedValue:(id)arg3 prompt:(id)arg4 identifier:(id)arg5 updateBlock:(CDUnknownBlockType)arg6 options:(struct WFRowTemplateItemEnumerationComponentOptions)arg7 size:(const struct CKComponentSize *)arg8 variableProvider:(id)arg9 variableUIDelegate:(id)arg10 navigationContext:(id)arg11;

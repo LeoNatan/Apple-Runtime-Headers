@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_baselineConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *baselineConstraint; // @synthesize baselineConstraint=_baselineConstraint;
 @property(retain, nonatomic) UILabel *dateTextLabel; // @synthesize dateTextLabel=_dateTextLabel;
 @property(retain, nonatomic) UILabel *subtitleTextLabel; // @synthesize subtitleTextLabel=_subtitleTextLabel;
 @property(retain, nonatomic) UILabel *mainTextLabel; // @synthesize mainTextLabel=_mainTextLabel;
-- (void).cxx_destruct;
 - (void)_updateForCurrentSizeCategory;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)setupConstraints;

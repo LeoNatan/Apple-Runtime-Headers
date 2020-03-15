@@ -18,11 +18,11 @@
 }
 
 + (id)sharedPerfChecker;
+- (void).cxx_destruct;
 @property BOOL underThermalPressure; // @synthesize underThermalPressure=_underThermalPressure;
 @property BOOL underMemoryPressure; // @synthesize underMemoryPressure=_underMemoryPressure;
 @property(retain) NSObject<OS_dispatch_queue> *serialUtilityQueue; // @synthesize serialUtilityQueue=_serialUtilityQueue;
 @property(retain) NSDictionary *perfCheckerErrors; // @synthesize perfCheckerErrors=_perfCheckerErrors;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (long long)triage:(id)arg1;
 - (void)checkFramerateOfAnimationScenario:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

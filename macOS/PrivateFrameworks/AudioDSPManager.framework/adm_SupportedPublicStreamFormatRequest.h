@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
-@property(nonatomic) vector_66ffd461 portDescriptions; // @synthesize portDescriptions=_portDescriptions;
-@property(nonatomic) struct DeviceDescription deviceDescription; // @synthesize deviceDescription;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) vector_66ffd461 portDescriptions; // @synthesize portDescriptions=_portDescriptions;
+@property(nonatomic) struct DeviceDescription deviceDescription; // @synthesize deviceDescription;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

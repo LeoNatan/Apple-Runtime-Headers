@@ -20,10 +20,10 @@
     unsigned long long __spacerTag;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setSpacerTag:) unsigned long long _spacerTag; // @synthesize _spacerTag=__spacerTag;
 @property(nonatomic) __weak id <IBUIViewAutolayoutGuideDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long systemType; // @synthesize systemType=_systemType;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (unsigned long long)ibAmbiguityStatusForRepresentationOfItem:(id)arg1 inEngine:(id)arg2;
 - (void)ibDidMapCopyOfReceiver:(id)arg1 intoLayoutEngine:(id)arg2;

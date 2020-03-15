@@ -19,9 +19,9 @@
 }
 
 + (id)writableTypeIdentifiersForItemProvider;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSURL *imageURL; // @synthesize imageURL=_imageURL;
-- (void).cxx_destruct;
 - (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_commonInit;
 - (id)initWithImageURL:(id)arg1;

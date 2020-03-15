@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSString *displayNameInternal; // @synthesize displayNameInternal=_displayNameInternal;
 @property(nonatomic) _Bool isWebClip; // @synthesize isWebClip=_isWebClip;
 @property(retain, nonatomic) NSString *shortVersion; // @synthesize shortVersion=_shortVersion;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(retain, nonatomic) NSMutableArray *keywords; // @synthesize keywords=_keywords;
 @property(retain, nonatomic) NSString *displayIdentifier; // @synthesize displayIdentifier=_displayIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *longDisplayName;
 @property(retain, nonatomic) NSString *displayName;
 @property(readonly, nonatomic) _Bool displayNameLoaded;

@@ -24,10 +24,10 @@
     long long _contentMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long contentMode; // @synthesize contentMode=_contentMode;
 @property(retain, nonatomic) PXLayoutSnapshot *layoutSnapshot; // @synthesize layoutSnapshot=_layoutSnapshot;
 @property(nonatomic) __weak id <PXEngineDrivenAssetsTilingLayoutDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGRect)_contentsRectForItemAtIndexPath:(struct PXSimpleIndexPath)arg1 forAspectRatio:(double)arg2;
 - (double)_zPositionForItemAtIndexPath:(struct PXSimpleIndexPath)arg1;
 - (double)_aspectRatioForItemAtIndexPath:(struct PXSimpleIndexPath)arg1;

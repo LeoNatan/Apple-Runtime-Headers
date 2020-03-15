@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *classes; // @synthesize classes=_classes;
 @property(readonly, copy, nonatomic) NSString *classGroupName; // @synthesize classGroupName=_classGroupName;
-- (void).cxx_destruct;
 - (id)initWithClassGroupDictionary:(id)arg1 classesDictionaryByClassID:(id)arg2;
 - (id)initWithGroupName:(id)arg1 classes:(id)arg2;
 - (_Bool)isEqualToLKClassGroup:(id)arg1;

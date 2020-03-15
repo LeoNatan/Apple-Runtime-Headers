@@ -13,8 +13,8 @@
     NSXPCConnection *_serviceConnection;
 }
 
-@property(retain) NSXPCConnection *serviceConnection; // @synthesize serviceConnection=_serviceConnection;
 - (void).cxx_destruct;
+@property(retain) NSXPCConnection *serviceConnection; // @synthesize serviceConnection=_serviceConnection;
 - (id)_synchronousService;
 - (id)_connectToService;
 - (BOOL)startReportingLogsFromNVRAMStateWithErrorCheck:(BOOL)arg1;

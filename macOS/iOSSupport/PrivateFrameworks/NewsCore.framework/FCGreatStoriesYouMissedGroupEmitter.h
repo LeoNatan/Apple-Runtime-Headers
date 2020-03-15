@@ -20,9 +20,9 @@
 + (id)groupEmitterIdentifier;
 + (BOOL)greatStoriesMayEmit:(id)arg1;
 + (void)setShouldEmitOverride:(BOOL)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long limit; // @synthesize limit=_limit;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL shouldEmitContentInFavoritesOnlyMode;
 @property(readonly, nonatomic) long long requiredForYouContentTypes;
 @property(readonly, nonatomic) BOOL emitsSingletonGroups;

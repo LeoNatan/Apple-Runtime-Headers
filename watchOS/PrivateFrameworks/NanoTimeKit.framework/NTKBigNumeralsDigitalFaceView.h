@@ -10,7 +10,6 @@
 {
 }
 
-+ (int)uiSensitivity;
 - (id)tritium_createFaceAnimator;
 - (void)tritium_unloadContentViews;
 - (void)tritium_loadContentViews;

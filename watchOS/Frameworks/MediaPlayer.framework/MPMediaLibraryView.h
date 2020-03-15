@@ -17,10 +17,10 @@
     unsigned int _filteringOptions;
 }
 
-@property(readonly, nonatomic) unsigned int filteringOptions; // @synthesize filteringOptions=_filteringOptions;
-@property(readonly, nonatomic) MPMediaLibrary *library; // @synthesize library=_library;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int filteringOptions; // @synthesize filteringOptions=_filteringOptions;
+@property(readonly, nonatomic) MPMediaLibrary *library; // @synthesize library=_library;
 - (shared_ptr_56e9c9de)_performCoreQuery:(shared_ptr_34add297)arg1 error:(id *)arg2;
 - (void)performCoreSearchQuery:(shared_ptr_299ddd6f)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)performCoreQuery:(shared_ptr_34add297)arg1 withCompletion:(CDUnknownBlockType)arg2;

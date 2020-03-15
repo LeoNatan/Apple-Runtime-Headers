@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     PXContextualNotification *_contextualNotification;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXContextualNotification *contextualNotification; // @synthesize contextualNotification=_contextualNotification;
 @property(retain, nonatomic) PUOneUpSuggestion *suggestion; // @synthesize suggestion=_suggestion;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 
 @end
 

@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     unsigned int _pageCount;
 }
 
-@property(nonatomic) unsigned int pageCount; // @synthesize pageCount=_pageCount;
-@property(nonatomic) unsigned int currentPageNumber; // @synthesize currentPageNumber=_currentPageNumber;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int pageCount; // @synthesize pageCount=_pageCount;
+@property(nonatomic) unsigned int currentPageNumber; // @synthesize currentPageNumber=_currentPageNumber;
 - (void)_makeRoundedCorners;
 - (void)_updateLabel;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

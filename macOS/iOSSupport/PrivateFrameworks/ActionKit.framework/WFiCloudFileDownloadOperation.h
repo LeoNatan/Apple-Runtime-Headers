@@ -20,6 +20,7 @@
     NSMetadataQuery *_query;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMetadataQuery *query; // @synthesize query=_query;
 @property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) NSFileCoordinator *fileCoordinator; // @synthesize fileCoordinator=_fileCoordinator;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(nonatomic, getter=isFinished) BOOL finished; // @synthesize finished=_finished;
 @property(nonatomic, getter=isExecuting) BOOL executing; // @synthesize executing=_executing;
-- (void).cxx_destruct;
 - (BOOL)isAsynchronous;
 - (void)finishRunningWithFiles:(id)arg1 error:(id)arg2;
 - (void)queryDidUpdate:(id)arg1;

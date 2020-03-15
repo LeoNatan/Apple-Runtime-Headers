@@ -23,12 +23,12 @@
 + (id)displayNameForUndoablePropertyChangeWithKey:(id)arg1;
 + (id)keyPathsForValuesAffectingDrawingBounds;
 + (id)keyPathsForValuesAffectingHitTestBounds;
+- (void).cxx_destruct;
 @property BOOL hasShadow; // @synthesize hasShadow=_hasShadow;
 @property long long brushStyle; // @synthesize brushStyle=_brushStyle;
 @property(getter=isDashed) BOOL dashed; // @synthesize dashed=_dashed;
 @property(retain) NSColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property double strokeWidth; // @synthesize strokeWidth=_strokeWidth;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)keysForValuesToObserveForRedrawing;

@@ -6,35 +6,21 @@
 
 #import <SafariServices/_SFBrowserContentViewController.h>
 
-#import <SafariServices/SFBrowserActionGroupDelegate-Protocol.h>
-
-@class NSString, NSTimer, NSURL, SFBrowserActionGroup, WKWebsiteDataStore, _SFNavigationBarItem;
-@protocol SFWatchWebViewControllerDelegate;
+@class NSURL, WKWebsiteDataStore, _SFNavigationBarItem;
 
 __attribute__((visibility("hidden")))
-@interface SFWatchWebViewController : _SFBrowserContentViewController <SFBrowserActionGroupDelegate>
+@interface SFWatchWebViewController : _SFBrowserContentViewController
 {
-    SFBrowserActionGroup *_actionGroup;
     int _blankingViewState;
     WKWebsiteDataStore *_websiteDataStore;
     NSURL *_handoffURL;
-    NSTimer *_unresponsiveWebProcessTimer;
-    CDUnknownBlockType _unresponsiveWebProcessBlock;
     _SFNavigationBarItem *_navigationBarItem;
-    id <SFWatchWebViewControllerDelegate> _delegate;
 }
 
 + (void)clearWebsiteData;
 + (void)initialize;
-@property(nonatomic) __weak id <SFWatchWebViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, nonatomic) _SFNavigationBarItem *navigationBarItem; // @synthesize navigationBarItem=_navigationBarItem;
 - (void).cxx_destruct;
-- (void)browserActionGroupInvokedReaderAction:(id)arg1;
-- (void)browserActionGroupInvokedStopAction:(id)arg1;
-- (void)browserActionGroupInvokedReloadAction:(id)arg1;
-- (void)browserActionGroupInvokedForwardAction:(id)arg1;
-- (void)browserActionGroupInvokedBackAction:(id)arg1;
-- (id)actionController;
+@property(readonly, nonatomic) _SFNavigationBarItem *navigationBarItem; // @synthesize navigationBarItem=_navigationBarItem;
 - (void)webViewControllerDidChangeEstimatedProgress:(id)arg1;
 - (void)webViewControllerReaderDidBecomeReady:(id)arg1;
 - (void)webViewController:(id)arg1 didFinishNavigation:(id)arg2;
@@ -42,21 +28,10 @@ __attribute__((visibility("hidden")))
 - (void)webViewController:(id)arg1 didCommitNavigation:(id)arg2;
 - (void)webViewControllerDidFirstVisuallyNonEmptyLayout:(id)arg1;
 - (void)webViewControllerDidDetermineReaderAvailability:(id)arg1 dueTo:(int)arg2;
-- (void)webViewControllerWebProcessDidBecomeResponsive:(id)arg1;
-- (void)_executeUnresponsiveWebProcessBlock;
-- (void)_terminateUnresponsiveWebProcess;
-- (void)_doAfterTerminatingUnrepsonsiveWebProcess:(CDUnknownBlockType)arg1;
-- (void)_updateBarItems;
 - (void)_updateBlockAllCookiesPreference;
-- (void)updateBottombarOffset:(float)arg1 topBarHeight:(float)arg2;
-- (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)didUpdateNavigationBarItem:(id)arg1;
-- (float)_nanoDynamicBarAnimatorDefaultHeight;
 - (id)_hostAppBundleId;
 - (unsigned int)_persona;
-- (id)webViewConfiguration;
-- (id)websiteDataStore;
 - (void)prewarmWebProcess;
 - (void)loadRequest:(id)arg1;
 - (void)loadRequestAndResetState:(id)arg1;
@@ -66,14 +41,7 @@ __attribute__((visibility("hidden")))
 - (void)loadView;
 - (void)dealloc;
 - (void)_clearWebSiteDataAndReload;
-- (id)newProcessPool;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

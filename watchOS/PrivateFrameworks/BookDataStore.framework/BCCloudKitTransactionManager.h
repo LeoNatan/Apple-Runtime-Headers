@@ -20,11 +20,11 @@
     BDSServiceProxy *_serviceProxy;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BDSServiceProxy *serviceProxy; // @synthesize serviceProxy=_serviceProxy;
 @property(retain, nonatomic) NSMutableDictionary *transactions; // @synthesize transactions=_transactions;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *transactionAccessQueue; // @synthesize transactionAccessQueue=_transactionAccessQueue;
 @property(nonatomic) __weak BCCloudKitController *cloudKitController; // @synthesize cloudKitController=_cloudKitController;
-- (void).cxx_destruct;
 - (void)transactionCompleted:(id)arg1;
 - (void)signalFetchChangesTransactionInService:(id)arg1;
 - (void)signalFetchChangesTransaction:(id)arg1;

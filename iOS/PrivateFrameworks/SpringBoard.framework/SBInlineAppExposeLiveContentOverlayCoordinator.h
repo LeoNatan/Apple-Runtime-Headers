@@ -24,10 +24,10 @@
     id <SBSwitcherLiveContentOverlayCoordinatorDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBSwitcherLiveContentOverlayCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=areLiveContentOverlayUpdatesSuspended) _Bool liveContentOverlayUpdatesSuspended; // @synthesize liveContentOverlayUpdatesSuspended=_liveContentOverlayUpdatesSuspended;
 @property(nonatomic) long long containerOrientation; // @synthesize containerOrientation=_containerOrientation;
-- (void).cxx_destruct;
 - (id)_appLayoutFromLayoutState:(id)arg1;
 - (void)_removeLiveContentOverlay;
 - (void)_addLiveContentOverlay:(id)arg1 forAppLayout:(id)arg2 animated:(_Bool)arg3;

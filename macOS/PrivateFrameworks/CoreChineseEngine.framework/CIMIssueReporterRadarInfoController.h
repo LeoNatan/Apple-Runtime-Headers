@@ -17,10 +17,10 @@
     CIMDebugLogger *_debugLogger;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain) CIMDebugLogger *debugLogger; // @synthesize debugLogger=_debugLogger;
 @property(retain) NSArray *userWordKeyPairs; // @synthesize userWordKeyPairs=_userWordKeyPairs;
 @property(readonly, retain) CIMIssueReporterCandidateState *candidateState; // @synthesize candidateState=_candidateState;
-- (void).cxx_destruct;
 @property(readonly, copy) NSURL *temporaryPlistURL; // @synthesize temporaryPlistURL=_temporaryPlistURL;
 - (void)createAdditionalDebugInfoPlist;
 - (id)inputModeStringForMecabraInputMethodType:(int)arg1;

@@ -13,8 +13,8 @@
     TVStackedMediaView *_stackedMediaView;
 }
 
-@property(readonly, nonatomic) TVStackedMediaView *stackedMediaView; // @synthesize stackedMediaView=_stackedMediaView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) TVStackedMediaView *stackedMediaView; // @synthesize stackedMediaView=_stackedMediaView;
 - (void)setHighlighted:(_Bool)arg1;
 @property(readonly, nonatomic) TVImageProxy *fallbackImageProxy;
 @property(readonly, nonatomic) TVLSMDocumentProxy *lsmDocumentProxy;

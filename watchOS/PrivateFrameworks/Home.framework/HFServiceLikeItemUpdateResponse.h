@@ -15,10 +15,10 @@
     NSDictionary *_standardResults;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *standardResults; // @synthesize standardResults=_standardResults;
 @property(readonly, nonatomic) HFCharacteristicBatchReadResponse *readResponse; // @synthesize readResponse=_readResponse;
 @property(readonly, nonatomic) HFCharacteristicValueDisplayMetadata *displayMetadata; // @synthesize displayMetadata=_displayMetadata;
-- (void).cxx_destruct;
 - (id)initWithDisplayMetadata:(id)arg1 readResponse:(id)arg2 standardResults:(id)arg3;
 
 @end

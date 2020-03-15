@@ -23,11 +23,11 @@
     NSDate *__lastAdditionalContentRequestDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setLastAdditionalContentRequestDate:) NSDate *_lastAdditionalContentRequestDate; // @synthesize _lastAdditionalContentRequestDate=__lastAdditionalContentRequestDate;
 @property(nonatomic) __weak id <PXMemoriesFeedScrollFilterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PXMemoriesSpec *spec; // @synthesize spec=_spec;
 @property(readonly, nonatomic) PXScrollViewController *scrollViewController; // @synthesize scrollViewController=_scrollViewController;
-- (void).cxx_destruct;
 - (void)scrollViewControllerDidScroll:(id)arg1;
 - (id)initWithScrollViewController:(id)arg1;
 

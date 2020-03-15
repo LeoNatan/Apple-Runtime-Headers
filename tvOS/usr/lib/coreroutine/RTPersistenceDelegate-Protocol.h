@@ -6,7 +6,7 @@
 
 #import <coreroutine/NSObject-Protocol.h>
 
-@class NSCloudKitMirroringDelegateOptions, NSDictionary, NSError, NSManagedObjectContext, NSManagedObjectModel, NSPersistentStoreCoordinator, NSSet, NSString, RTPersistenceManager, RTPersistenceMigrator, RTPersistenceMirroringManager, RTPersistenceStore;
+@class NSDictionary, NSError, NSManagedObjectContext, NSManagedObjectModel, NSPersistentStoreCoordinator, NSSet, NSString, RTPersistenceManager, RTPersistenceMigrator, RTPersistenceMirroringManager, RTPersistenceStore;
 @protocol RTPersistenceModelProvider;
 
 @protocol RTPersistenceDelegate <NSObject>
@@ -22,7 +22,6 @@
 
 @optional
 - (_Bool)purgeExpiredRecordsFromPersistenceStore:(RTPersistenceStore *)arg1 withContext:(NSManagedObjectContext *)arg2 error:(id *)arg3;
-- (void)persistenceStore:(RTPersistenceStore *)arg1 willBeginMirroringWithOptions:(NSCloudKitMirroringDelegateOptions *)arg2;
 - (void)persistenceMigrator:(RTPersistenceMigrator *)arg1 didFinishMigratingStore:(RTPersistenceStore *)arg2 withModelProvider:(id <RTPersistenceModelProvider>)arg3;
 - (void)persistenceMigrator:(RTPersistenceMigrator *)arg1 didStartMigratingStore:(RTPersistenceStore *)arg2 withModelProvider:(id <RTPersistenceModelProvider>)arg3;
 - (_Bool)importSourceStore:(RTPersistenceStore *)arg1 sourceCoordinator:(NSPersistentStoreCoordinator *)arg2 destinationStore:(RTPersistenceStore *)arg3 destinationCoordinator:(NSPersistentStoreCoordinator *)arg4 managedObjectModel:(NSManagedObjectModel *)arg5 configuration:(NSString *)arg6 error:(id *)arg7;

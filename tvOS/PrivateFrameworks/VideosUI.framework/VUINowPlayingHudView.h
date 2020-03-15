@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _userInteractionEventHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType userInteractionEventHandler; // @synthesize userInteractionEventHandler=_userInteractionEventHandler;
 @property(retain, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
 @property(copy, nonatomic) CDUnknownBlockType buttonHandler; // @synthesize buttonHandler=_buttonHandler;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _TVImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) VUINowPlayingHudViewLayout *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) VUINowPlayingHudKeys *hudModel; // @synthesize hudModel=_hudModel;
-- (void).cxx_destruct;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)_updateAppearance;
 - (void)traitCollectionDidChange:(id)arg1;

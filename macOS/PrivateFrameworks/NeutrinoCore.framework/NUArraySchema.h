@@ -20,11 +20,11 @@
 + (long long)deserializeContentTypeFromDictionary:(id)arg1 error:(out id *)arg2;
 + (id)deserializeFromDictionary:(id)arg1 error:(out id *)arg2;
 + (id)supportedAttributes;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NUPattern *pattern; // @synthesize pattern=_pattern;
 @property(readonly, nonatomic) long long contentType; // @synthesize contentType=_contentType;
 @property(readonly, nonatomic) NSDictionary *contents; // @synthesize contents=_aliasToIdentifier;
-- (void).cxx_destruct;
-- (struct NSArray *)schemaDependencies;
+- (id)schemaDependencies;
 - (BOOL)serializeIntoDictionary:(id)arg1 error:(out id *)arg2;
 - (id)deserializeArray:(id)arg1 error:(out id *)arg2;
 - (id)serializeArray:(id)arg1 error:(out id *)arg2;
@@ -44,7 +44,7 @@
 - (BOOL)validateAttribute:(id)arg1 value:(id)arg2 error:(out id *)arg3;
 - (BOOL)validateAttributes:(out id *)arg1;
 - (BOOL)isValid:(out id *)arg1;
-- (id)initWithIdentifier:(id)arg1 contentType:(long long)arg2 contents:(struct NSDictionary *)arg3 pattern:(id)arg4 attributes:(id)arg5;
+- (id)initWithIdentifier:(id)arg1 contentType:(long long)arg2 contents:(id)arg3 pattern:(id)arg4 attributes:(id)arg5;
 - (id)initWithIdentifier:(id)arg1 attributes:(id)arg2;
 - (long long)type;
 

@@ -16,9 +16,9 @@
     NSData *_content;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *content; // @synthesize content=_content;
 @property(readonly, nonatomic) UIWebView *webView; // @synthesize webView=_webView;
-- (void).cxx_destruct;
 - (_Bool)uiWebView:(id)arg1 previewIsAllowedForPosition:(struct CGPoint)arg2;
 - (_Bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
 - (double)heightForWidth:(double)arg1;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UIImageView *_imageView;
 }
 
-@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (void)animationEnded:(_Bool)arg1;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

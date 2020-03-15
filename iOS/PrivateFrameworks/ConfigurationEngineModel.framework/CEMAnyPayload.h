@@ -14,8 +14,8 @@
 }
 
 + (id)buildFromDictionary:(id)arg1;
-@property(copy) NSDictionary *payloadKeys; // @synthesize payloadKeys=_payloadKeys;
 - (void).cxx_destruct;
+@property(copy) NSDictionary *payloadKeys; // @synthesize payloadKeys=_payloadKeys;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (id)serializePayload;

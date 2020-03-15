@@ -19,10 +19,10 @@
 
 + (id)stateForClass:(Class)arg1 stateName:(id)arg2;
 + (Class)registerState:(id)arg1 forClass:(Class)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOrderedSet *propertyKeys; // @synthesize propertyKeys=_propertyKeys;
 @property(readonly, nonatomic) NSString *tmlStateExtends; // @synthesize tmlStateExtends=_tmlStateExtends;
 @property(readonly, nonatomic) NSString *tmlStateName; // @synthesize tmlStateName=_tmlStateName;
-- (void).cxx_destruct;
 - (void)leaveStateToState:(id)arg1;
 - (void)enterStateFromState:(id)arg1;
 - (id)tmlIdentifier;

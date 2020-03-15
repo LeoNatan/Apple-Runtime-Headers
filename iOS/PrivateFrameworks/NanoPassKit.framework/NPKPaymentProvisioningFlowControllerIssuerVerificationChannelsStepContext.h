@@ -14,9 +14,9 @@
     NSArray *_verificationChannels;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *verificationChannels; // @synthesize verificationChannels=_verificationChannels;
 @property(retain, nonatomic) PKPaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithRequestContext:(id)arg1;
 

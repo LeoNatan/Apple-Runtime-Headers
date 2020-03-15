@@ -24,6 +24,7 @@
 }
 
 + (_Bool)shouldLoadWallpaperBundleAtURL:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *_darkAppearanceWallpapers; // @synthesize _darkAppearanceWallpapers=__darkAppearanceWallpapers;
 @property(retain, nonatomic) NSMutableDictionary *_defaultAppearanceWallpapers; // @synthesize _defaultAppearanceWallpapers=__defaultAppearanceWallpapers;
 @property(retain, nonatomic) NSURL *_bundleURL; // @synthesize _bundleURL=__bundleURL;
@@ -35,7 +36,6 @@
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) unsigned long long identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) unsigned long long version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (id)_liveWallpaperWithMetadataDictionary:(id)arg1 wallpaperAppearance:(id)arg2;
 - (id)_stillWallpaperWithMetadataDictionary:(id)arg1 wallpaperAppearance:(id)arg2;
 - (id)_processCommonFileBackedWallpaperMetadataWithDictionary:(id)arg1 wallpaperAppearance:(id)arg2;

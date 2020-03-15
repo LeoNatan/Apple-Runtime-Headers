@@ -26,10 +26,10 @@
     CDUnknownBlockType _firstConnectionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType firstConnectionBlock; // @synthesize firstConnectionBlock=_firstConnectionBlock;
 @property(copy, nonatomic) CDUnknownBlockType defaultMessageHandler; // @synthesize defaultMessageHandler=_defaultMessageHandler;
 @property(copy, nonatomic) CDUnknownBlockType disconnectHandler; // @synthesize disconnectHandler=_disconnectHandler;
-- (void).cxx_destruct;
 - (void)setHandlerForMessageName:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)dealloc;
 - (id)initListenerWithServiceName:(id)arg1;

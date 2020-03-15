@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     UIPopoverController *_popoverController;
 }
 
-@property(nonatomic) __weak id <SKUIMenuPopoverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SKUIMenuPopoverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_destroyPopoverController;
 - (void)popoverController:(id)arg1 willRepositionPopoverToRect:(inout struct CGRect *)arg2 inView:(inout id *)arg3;
 - (void)popoverControllerDidDismissPopover:(id)arg1;

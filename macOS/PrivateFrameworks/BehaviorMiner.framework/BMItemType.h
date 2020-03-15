@@ -60,12 +60,12 @@
 + (id)interactionDirection;
 + (id)interactionMechanism;
 + (id)connectedToExternalAudioOutput;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType valueExtractBlock; // @synthesize valueExtractBlock=_valueExtractBlock;
 @property(retain, nonatomic) _DKEventStream *eventStream; // @synthesize eventStream=_eventStream;
 @property(nonatomic) long long edge; // @synthesize edge=_edge;
 @property(retain, nonatomic) Class valueClass; // @synthesize valueClass=_valueClass;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)extractEventFromDKEvent:(id)arg1;
 - (id)extractItemFromDKEvent:(id)arg1;
 - (id)extractValueFromDKEvent:(id)arg1;

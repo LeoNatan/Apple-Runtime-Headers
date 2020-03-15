@@ -19,10 +19,10 @@
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVTImageTransitioningContainerView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) id <AVTAvatarRecord> avatar; // @synthesize avatar=_avatar;
 @property(retain, nonatomic) AVTView *avtView; // @synthesize avtView=_avtView;
-- (void).cxx_destruct;
 - (id)liveView;
 - (void)applyFullAlpha;
 - (void)applyBaseAlpha;

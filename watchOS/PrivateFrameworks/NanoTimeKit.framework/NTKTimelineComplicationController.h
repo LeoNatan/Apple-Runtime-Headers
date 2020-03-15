@@ -17,11 +17,11 @@
 }
 
 + (_Bool)_isLegacy;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CLKComplicationTemplate *lockedTemplate; // @synthesize lockedTemplate=_lockedTemplate;
 @property(readonly, nonatomic) CLKComplicationTemplate *privacyTemplate; // @synthesize privacyTemplate=_privacyTemplate;
 @property(nonatomic) _Bool ignoreNewTemplates; // @synthesize ignoreNewTemplates=_ignoreNewTemplates;
 @property(readonly, nonatomic) CLKComplicationTemplate *alwaysOnTemplate; // @synthesize alwaysOnTemplate=_alwaysOnTemplate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CLKComplicationTemplate *activeDisplayTemplate;
 - (id)tritium_tritiumOverrideTemplate;
 - (id)tritium_complicationEntryTemplateAtDate:(id)arg1;

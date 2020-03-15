@@ -16,8 +16,8 @@
     NUColorSpace *_colorSpace;
 }
 
-@property(retain, nonatomic) NUColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NUColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
 @property(copy, nonatomic) NUHistogramParameters *parameters;
 - (void)submit:(CDUnknownBlockType)arg1;
 - (id)newRenderJob;

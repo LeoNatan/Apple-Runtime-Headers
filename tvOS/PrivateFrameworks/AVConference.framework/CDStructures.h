@@ -79,10 +79,6 @@ struct ConnectionStatsHistory {
     unsigned char connectionStatsRatio[2][5];
 };
 
-struct NSString {
-    Class _field1;
-};
-
 struct OWRDList {
     double time[100];
     double owrd[100];

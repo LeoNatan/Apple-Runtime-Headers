@@ -22,6 +22,7 @@
 
 + (id)shortDescription;
 + (void)createShareGroupWithRootRecordName:(id)arg1 owner:(id)arg2 cloudGroup:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *recordNames; // @synthesize recordNames=_recordNames;
 @property(retain, nonatomic) HMDBackingStoreCacheShareGroup *backingStoreShareGroup; // @synthesize backingStoreShareGroup=_backingStoreShareGroup;
 @property(retain, nonatomic) CKShare *share; // @synthesize share=_share;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) NSUUID *ownerID; // @synthesize ownerID=_ownerID;
 @property(nonatomic) __weak HMDCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
 @property(nonatomic) __weak HMDCloudCache *cache; // @synthesize cache=_cache;
-- (void).cxx_destruct;
 - (void)shareOnlyDeleteCloudRecord:(id)arg1;
 - (void)shareOnlyUpdateCloudRecord:(id)arg1;
 - (void)deleteCloudRecord:(id)arg1;

@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _fetchMediaEntitiesBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType fetchMediaEntitiesBlock; // @synthesize fetchMediaEntitiesBlock=_fetchMediaEntitiesBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType fetchMediaEntitiesBlock; // @synthesize fetchMediaEntitiesBlock=_fetchMediaEntitiesBlock;
 - (id)_mediaEntityFetchResponseWithMediaEntities:(id)arg1;
 - (id)_sortHeadersForMediaEntities:(id)arg1;
 - (_Bool)_shouldGenerateSortHeaders;

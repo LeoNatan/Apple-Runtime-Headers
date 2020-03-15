@@ -19,6 +19,7 @@
     struct UIEdgeInsets _headerPadding;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *dataViews; // @synthesize dataViews=_dataViews;
 @property(retain, nonatomic) UIView *headerContentView; // @synthesize headerContentView=_headerContentView;
 @property(nonatomic) struct UIEdgeInsets headerPadding; // @synthesize headerPadding=_headerPadding;
@@ -26,7 +27,6 @@
 @property(nonatomic) double lineSpacing; // @synthesize lineSpacing=_lineSpacing;
 @property(nonatomic) double width; // @synthesize width=_width;
 @property(copy, nonatomic) NSString *group; // @synthesize group=_group;
-- (void).cxx_destruct;
 
 @end
 

@@ -16,8 +16,8 @@
 + (id)title;
 + (BOOL)isSupported;
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) AXMScreenGrabber *screenGrabber; // @synthesize screenGrabber=_screenGrabber;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AXMScreenGrabber *screenGrabber; // @synthesize screenGrabber=_screenGrabber;
 - (void)triggerWithScreenCaptureRegion:(struct CGRect)arg1 interfaceOrientation:(long long)arg2 options:(id)arg3 cacheKey:(id)arg4 resultHandler:(CDUnknownBlockType)arg5;
 - (void)produceImage:(id)arg1;
 - (void)nodeInitialize;

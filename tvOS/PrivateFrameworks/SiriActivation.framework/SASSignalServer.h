@@ -21,12 +21,12 @@
 + (id)serviceQuality;
 + (id)interface;
 + (id)serverForConnection:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SASSignalServerDelegate> weak_delegate; // @synthesize weak_delegate=_weak_delegate;
 @property(retain, nonatomic) NSMutableArray *waitForConnectBlocks; // @synthesize waitForConnectBlocks=_waitForConnectBlocks;
 @property(nonatomic) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(retain, nonatomic) BSServiceConnection<BSServiceConnectionHost> *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) BSServiceConnectionEndpointInjector *workspaceServiceInjector; // @synthesize workspaceServiceInjector=_workspaceServiceInjector;
-- (void).cxx_destruct;
 - (oneway void)buttonLongPressFromButtonIdentifier:(id)arg1 context:(id)arg2;
 - (oneway void)buttonTapFromButtonIdentifier:(id)arg1;
 - (oneway void)buttonUpFromButtonIdentifier:(id)arg1 timestamp:(id)arg2;

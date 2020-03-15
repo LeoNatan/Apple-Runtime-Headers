@@ -19,12 +19,17 @@
 - (void)pauseDownloadWithID:(NSNumber *)arg1;
 - (void)cancelDownloadWithID:(NSNumber *)arg1;
 - (void)addDownloadWithID:(NSNumber *)arg1;
+- (void)restoreCompletedTransactionsForUsername:(NSString *)arg1 client:(NSDictionary *)arg2 reply:(void (^)(NSArray *, NSError *))arg3;
 - (void)restoreCompletedTransactionsToQueue:(NSString *)arg1 forUsername:(NSString *)arg2 withClient:(NSDictionary *)arg3 replyBlock:(void (^)(BOOL, NSError *))arg4;
+- (void)processPayment:(NSDictionary *)arg1 forClient:(NSDictionary *)arg2 reply:(void (^)(NSDictionary *, NSError *))arg3;
+- (void)finishPaymentWithIdentifier:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)finishPaymentWithIdentifier:(NSString *)arg1;
 - (void)addPaymentToQueue:(NSString *)arg1 withInfo:(NSDictionary *)arg2 client:(NSDictionary *)arg3;
 - (void)requestProductsWithIdentifiers:(NSArray *)arg1 client:(NSDictionary *)arg2 replyBlock:(void (^)(NSArray *, NSArray *, NSError *))arg3;
 - (void)requestProductReview;
 - (void)forceSandboxForBundleIdentifier:(NSString *)arg1 untilDate:(NSDate *)arg2;
 - (void)checkServerQueueForQueue:(NSString *)arg1 withClient:(NSDictionary *)arg2;
+- (void)checkServerQueueForClient:(NSDictionary *)arg1 reply:(void (^)(NSArray *, NSError *))arg2;
+- (void)checkForMessages;
 @end
 

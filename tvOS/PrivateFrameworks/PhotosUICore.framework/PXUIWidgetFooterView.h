@@ -35,6 +35,7 @@
     struct UIEdgeInsets _contentInsets;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIFocusGuide *_focusGuide; // @synthesize _focusGuide=__focusGuide;
 @property(readonly, nonatomic) UIView *_trailingSeparator; // @synthesize _trailingSeparator=__trailingSeparator;
 @property(readonly, nonatomic) UIView *_leadingSeparator; // @synthesize _leadingSeparator=__leadingSeparator;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(copy, nonatomic) NSString *disclosureTitle; // @synthesize disclosureTitle=_disclosureTitle;
 @property(nonatomic) __weak id <PXUIWidgetFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateFocusGuideIfNeeded;
 - (void)_invalidateFocusGuide;
 - (void)_updateSeparatorsIfNeeded;

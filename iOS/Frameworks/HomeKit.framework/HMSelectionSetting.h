@@ -13,8 +13,8 @@
     NSArray *_items;
 }
 
-@property(readonly, copy) NSArray *items; // @synthesize items=_items;
 - (void).cxx_destruct;
+@property(readonly, copy) NSArray *items; // @synthesize items=_items;
 - (id)valueForUpdate:(id)arg1;
 - (id)internalValue;
 - (_Bool)isKindOfClass:(Class)arg1;

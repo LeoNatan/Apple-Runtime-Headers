@@ -56,6 +56,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *boxedHideDismissActionInCarPlay; // @synthesize boxedHideDismissActionInCarPlay=_boxedHideDismissActionInCarPlay;
 @property(retain, nonatomic) NSNumber *boxedSuppressDelayForForwardedBulletins; // @synthesize boxedSuppressDelayForForwardedBulletins=_boxedSuppressDelayForForwardedBulletins;
 @property(retain, nonatomic) NSNumber *boxedPlaysMediaWhenRaised; // @synthesize boxedPlaysMediaWhenRaised=_boxedPlaysMediaWhenRaised;
@@ -96,7 +97,6 @@
 @property(copy, nonatomic) NSString *subtypeSummaryFormat; // @synthesize subtypeSummaryFormat=_subtypeSummaryFormat;
 @property(copy, nonatomic) NSString *hiddenPreviewsBodyPlaceholder; // @synthesize hiddenPreviewsBodyPlaceholder=_hiddenPreviewsBodyPlaceholder;
 @property(nonatomic) __weak BBSectionSubtypeParameters *fallbackParameters; // @synthesize fallbackParameters=_fallbackParameters;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)hash;

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     MKPlaceCardActionItem *_actionRowItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MKPlaceCardActionItem *actionRowItem; // @synthesize actionRowItem=_actionRowItem;
 @property(nonatomic) __weak id <MKActionRowItemViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)handlePress;
 - (void)dealloc;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

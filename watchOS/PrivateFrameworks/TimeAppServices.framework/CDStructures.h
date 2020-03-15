@@ -8,9 +8,3 @@
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
-#pragma mark Named Structures
-
-struct NSNumber {
-    Class _field1;
-};
-

@@ -26,13 +26,13 @@
 }
 
 + (id)activeWebPageExtensionItemForURL:(id)arg1 withPreviewImageHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *currentExtensionIdentifier; // @synthesize currentExtensionIdentifier=_currentExtensionIdentifier;
 @property(readonly, nonatomic) NSArray *activityItemProviders; // @synthesize activityItemProviders=_activityItemProviders;
 @property(retain, nonatomic) NSURL *sharingURL; // @synthesize sharingURL=_sharingURL;
 @property(retain, nonatomic) _SFActivityItemCustomizationController *customizationController; // @synthesize customizationController=_customizationController;
 @property(nonatomic) __weak id <_SFActivityViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak _SFSafariSharingExtensionController *sharingExtensionController; // @synthesize sharingExtensionController=_sharingExtensionController;
-- (void).cxx_destruct;
 - (void)customizationControllerCustomizationsDidChange:(id)arg1;
 - (void)_processJavaScriptFinalizeReturnedItems:(id)arg1 forExtension:(id)arg2;
 - (id)_extensionItemForExtensionActivity:(id)arg1;

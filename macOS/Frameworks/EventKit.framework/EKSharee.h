@@ -30,9 +30,9 @@
 + (id)shareeWithName:(id)arg1 phoneNumber:(id)arg2;
 + (id)shareeWithName:(id)arg1 emailAddress:(id)arg2 phoneNumber:(id)arg3;
 + (id)shareeWithName:(id)arg1 emailAddress:(id)arg2;
+- (void).cxx_destruct;
 - (void)setManagedObjectID:(id)arg1;
 @property(readonly, nonatomic) NSManagedObjectID *managedObjectID;
-- (void).cxx_destruct;
 - (id)ABPersonInAddressBook:(id)arg1;
 - (id)existingContact;
 - (id)newContact;

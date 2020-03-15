@@ -21,8 +21,8 @@
     NSMutableDictionary *_switcherServiceViewControllerMap;
 }
 
-@property(nonatomic) __weak id <SBFluidSwitcherPageContentViewProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBFluidSwitcherPageContentViewProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_relinquishTransientOverlayViewController:(id)arg1 forPageContentView:(id)arg2;
 - (void)_applyTransientOverlayViewController:(id)arg1 toPageContentView:(id)arg2;
 - (id)_viewForService:(id)arg1 appLayout:(id)arg2;

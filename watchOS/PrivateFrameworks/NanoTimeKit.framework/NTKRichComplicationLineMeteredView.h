@@ -13,8 +13,8 @@
     NSArray *_meterLayers;
 }
 
-@property(retain, nonatomic) NSArray *meterLayers; // @synthesize meterLayers=_meterLayers;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *meterLayers; // @synthesize meterLayers=_meterLayers;
 - (struct CGPoint)_pointAtProgress:(float)arg1;
 - (void)colorMetersWithProgress:(float)arg1;
 - (void)_updateGradient;

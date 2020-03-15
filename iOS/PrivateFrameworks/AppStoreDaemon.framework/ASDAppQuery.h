@@ -39,8 +39,8 @@
 + (id)queryForBundleIDs:(id)arg1;
 + (id)queryForBetaApps;
 + (id)queryForBeagleApps;
-@property(readonly) NSPredicate *predicate; // @synthesize predicate=_predicate;
 - (void).cxx_destruct;
+@property(readonly) NSPredicate *predicate; // @synthesize predicate=_predicate;
 - (void)_sendResultsChangedWithResults:(id)arg1;
 - (void)_handleNotificationUnregisteredWithUserInfo:(id)arg1;
 - (void)_handleNotificationRegisteredWithUserInfo:(id)arg1;

@@ -17,10 +17,10 @@
 
 + (id)storageReminderFromEntity:(id)arg1 withOrigin:(id)arg2;
 + (id)storageReminderFromEntity:(id)arg1 withStore:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *sourceKey; // @synthesize sourceKey=_sourceKey;
 @property(readonly, nonatomic) SGStorageLocation *dueStorageLocation; // @synthesize dueStorageLocation=_dueStorageLocation;
 @property(readonly, nonatomic) SGDuplicateKey *duplicateKey; // @synthesize duplicateKey=_duplicateKey;
-- (void).cxx_destruct;
 - (id)toReminder;
 - (id)description;
 - (unsigned long long)hash;

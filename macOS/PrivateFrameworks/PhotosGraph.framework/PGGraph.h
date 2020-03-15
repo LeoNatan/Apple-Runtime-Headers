@@ -94,6 +94,7 @@
 + (BOOL)location:(struct CLLocationCoordinate2D)arg1 isCloseToLocation:(struct CLLocationCoordinate2D)arg2;
 + (id)aggregateKeyByPublicEventCategoryLabel;
 + (id)aggregateKeyByMeaningLabel;
+- (void).cxx_destruct;
 @property BOOL canWrite; // @synthesize canWrite=_canWrite;
 @property(nonatomic) __weak NSObject<OS_dispatch_queue> *graphQueue; // @synthesize graphQueue=_graphQueue;
 @property(readonly, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
@@ -105,7 +106,6 @@
 @property(nonatomic) long long numberOfUtilityAssets; // @synthesize numberOfUtilityAssets=_numberOfUtilityAssets;
 @property(retain, nonatomic) CLSFocusPeopleCache *focusPeopleIngestCache; // @synthesize focusPeopleIngestCache=_focusPeopleIngestCache;
 @property __weak PGManager *manager; // @synthesize manager=_manager;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long librarySizeRange;
 @property(readonly, nonatomic) unsigned long long numberOfAssets;
 - (void)uncacheHighlightNodeForHighlightUUID:(id)arg1 checkExistence:(BOOL)arg2;
@@ -206,6 +206,14 @@
 - (id)_eventNodesForDateComponents:(id)arg1 error:(id *)arg2;
 - (void)_enumerateMomentForMomentNode:(id)arg1 paddingTime:(double)arg2 enumerationBlock:(CDUnknownBlockType)arg3;
 - (BOOL)_enumerateEventNodesForAssetCollection:(id)arg1 paddingTime:(double)arg2 error:(id *)arg3 enumerationBlock:(CDUnknownBlockType)arg4;
+- (id)addMomentNodeWithProperties:(id)arg1;
+- (id)momentNodeForUUID:(id)arg1;
+- (void)enumerateMomentNodesWithBlock:(CDUnknownBlockType)arg1;
+- (id)meaningfulMomentNodesSortedByDate;
+- (id)momentNodesSortedByDateFromMomentNodes:(id)arg1;
+- (id)momentNodesSortedByDate;
+- (id)momentNodes;
+- (unsigned long long)numberOfMomentNodes;
 - (id)connectPublicEventNode:(id)arg1 withBusinessNode:(id)arg2;
 - (id)insertBusiness:(id)arg1 fromEventNode:(id)arg2;
 - (id)insertPOIWithFeeder:(id)arg1 fromMomentNode:(id)arg2 isNearHomeOrWork:(BOOL)arg3;
@@ -237,6 +245,7 @@
 - (void)enumerateCelebratedHolidayNodesUsingBlock:(CDUnknownBlockType)arg1;
 - (id)bestFittingAreaNodeFromAreaNodes:(id)arg1;
 - (double)libraryDuration;
+- (id)businessNodes;
 - (id)celebratedHolidayNodes;
 - (id)allMomentNodes;
 - (id)allTimeYearsNodes;

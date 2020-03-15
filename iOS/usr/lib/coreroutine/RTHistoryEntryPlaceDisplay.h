@@ -16,11 +16,11 @@
     RTMapItem *_mapItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RTMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(readonly, nonatomic) RTLocation *location; // @synthesize location=_location;
 @property(readonly, nonatomic) NSDate *usageDate; // @synthesize usageDate=_usageDate;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithIdentifier:(id)arg1 usageDate:(id)arg2 location:(id)arg3 mapItem:(id)arg4;
 - (id)init;

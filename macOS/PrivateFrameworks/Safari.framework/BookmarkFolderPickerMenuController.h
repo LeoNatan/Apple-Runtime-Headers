@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     BookmarksController *_bookmarksController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BookmarksController *bookmarksController; // @synthesize bookmarksController=_bookmarksController;
 @property(nonatomic) __weak id <BookmarkFolderPickerMenuControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_favoritesMenuItemIcon;
 - (id)_bookmarkMenuItemIcon;
 - (id)_addMenuItemsForBookmarkFolder:(id)arg1 toMenu:(id)arg2 indentationLevel:(unsigned long long)arg3 shouldDisableMenuItems:(BOOL)arg4 disablingMenuItemsForDescendantsOfBookmarkFolder:(id)arg5;

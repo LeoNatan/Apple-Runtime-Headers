@@ -16,9 +16,9 @@
 
 + (id)encodedDataWithDictionary:(id)arg1;
 + (id)decodeDictionaryFromData:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CRDictionary *underlyingDictionary; // @synthesize underlyingDictionary=_underlyingDictionary;
 @property(retain, nonatomic) CRDocument *underlyingDocument; // @synthesize underlyingDocument=_underlyingDocument;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)mergeWithMergableDictionary:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;

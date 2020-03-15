@@ -16,9 +16,9 @@
     NSWindow *_window;
 }
 
+- (void).cxx_destruct;
 @property __weak NSWindow *window; // @synthesize window=_window;
 @property __weak NSPreferencePane *prefPane; // @synthesize prefPane=_prefPane;
-- (void).cxx_destruct;
 - (id)windowWillReturnFieldEditor:(id)arg1 toObject:(id)arg2;
 - (void)invalidate;
 - (void)loadView;

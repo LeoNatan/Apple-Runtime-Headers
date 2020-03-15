@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSArray *_advisoryDisabledTimeRanges;
 }
 
-@property(copy, nonatomic) NSArray *advisoryDisabledTimeRanges; // @synthesize advisoryDisabledTimeRanges=_advisoryDisabledTimeRanges;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *advisoryDisabledTimeRanges; // @synthesize advisoryDisabledTimeRanges=_advisoryDisabledTimeRanges;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 @property(nonatomic, getter=isSkippable) _Bool skippable;

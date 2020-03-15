@@ -15,8 +15,8 @@
     NSString *_routeUID;
 }
 
-@property(retain, nonatomic) NSString *routeUID; // @synthesize routeUID=_routeUID;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *routeUID; // @synthesize routeUID=_routeUID;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

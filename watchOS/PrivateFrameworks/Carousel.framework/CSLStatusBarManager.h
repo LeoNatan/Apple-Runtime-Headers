@@ -35,8 +35,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) CSLStatusBarGlobalContext *statusBarGlobalContext; // @synthesize statusBarGlobalContext=_statusBarGlobalContext;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CSLStatusBarGlobalContext *statusBarGlobalContext; // @synthesize statusBarGlobalContext=_statusBarGlobalContext;
 - (void)server:(id)arg1 globalContextForBundleID:(id)arg2 setTimeStyle:(unsigned int)arg3;
 - (void)server:(id)arg1 globalContextForBundleID:(id)arg2 setNetworkActivityIndicatorAnimating:(_Bool)arg3;
 - (void)server:(id)arg1 globalContextForBundleID:(id)arg2 setSuppressDisconnectedIndicator:(_Bool)arg3;

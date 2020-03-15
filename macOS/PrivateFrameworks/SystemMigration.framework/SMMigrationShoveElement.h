@@ -14,8 +14,8 @@
     NSObject<SMShoveElementDelegate> *_delegate;
 }
 
-@property __weak NSObject<SMShoveElementDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak NSObject<SMShoveElementDelegate> *delegate; // @synthesize delegate=_delegate;
 - (double)estimatedTimeToComplete;
 - (id)run;
 

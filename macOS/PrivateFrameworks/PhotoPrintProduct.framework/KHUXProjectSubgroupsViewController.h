@@ -28,12 +28,12 @@
     KHLayoutThumbnailManager *_thumbnailManager;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL tableViewUpdating; // @synthesize tableViewUpdating=_tableViewUpdating;
 @property(readonly, nonatomic) NSMenu *actionMenu; // @synthesize actionMenu=_actionMenu;
 @property(readonly, nonatomic) KHLayoutThumbnailManager *thumbnailManager; // @synthesize thumbnailManager=_thumbnailManager;
 @property(retain, nonatomic) KHUXPrintsCollectionViewController *detailViewController; // @synthesize detailViewController=_detailViewController;
 @property(readonly, nonatomic) KHPrintsProjectBundleController *projectBundleController; // @synthesize projectBundleController=_projectBundleController;
-- (void).cxx_destruct;
 - (void)projectBundleControllerDidChangeContent:(id)arg1;
 - (void)projectBundleControllerWillChangeContent:(id)arg1;
 - (void)projectBundleController:(id)arg1 didChangeProjectSubgroupAtIndex:(id)arg2 forChangeType:(unsigned long long)arg3;

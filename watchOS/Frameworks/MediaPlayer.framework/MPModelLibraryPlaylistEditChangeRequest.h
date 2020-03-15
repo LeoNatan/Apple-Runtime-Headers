@@ -29,6 +29,7 @@
 }
 
 + (id)requiredPlaylistEntryProperties;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool didSetPlaylistUserImage; // @synthesize didSetPlaylistUserImage=_didSetPlaylistUserImage;
 @property(retain, nonatomic) MPModelPlaylist *playlist; // @synthesize playlist=_playlist;
 @property(nonatomic) _Bool shouldCreatePlaylist; // @synthesize shouldCreatePlaylist=_shouldCreatePlaylist;
@@ -43,7 +44,6 @@
 @property(copy, nonatomic) NSString *playlistDescription; // @synthesize playlistDescription=_playlistDescription;
 @property(copy, nonatomic) MPSectionedCollection *playlistEntries; // @synthesize playlistEntries=_playlistEntries;
 @property(retain, nonatomic) MPMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
-- (void).cxx_destruct;
 - (id)newOperationWithLocalPersistenceResponseHandler:(CDUnknownBlockType)arg1 completeResponseHandler:(CDUnknownBlockType)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;

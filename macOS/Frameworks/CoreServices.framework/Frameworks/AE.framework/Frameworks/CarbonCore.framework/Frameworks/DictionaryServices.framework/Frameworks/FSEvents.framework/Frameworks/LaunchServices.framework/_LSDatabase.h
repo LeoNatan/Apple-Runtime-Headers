@@ -25,11 +25,11 @@
 + (void)setSeedingInProgress:(BOOL)arg1;
 + (unsigned int)sessionStatus;
 + (id)headerTableName;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue;
 @property(readonly, nonatomic) struct __CSStore *store; // @synthesize store;
 @property(readonly, nonatomic) unsigned int userID; // @synthesize userID=uid;
 @property(readonly, nonatomic) FSNode *node; // @synthesize node;
-- (void).cxx_destruct;
 - (void)claimDidChange:(unsigned int)arg1;
 - (void)applicationDidChange:(unsigned int)arg1;
 @property(nonatomic) BOOL typeDeclarationsChanged;

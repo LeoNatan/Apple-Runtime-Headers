@@ -16,10 +16,10 @@
 }
 
 + (struct CGColorSpace *)colorSpace;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IOSurface *ioSurface; // @synthesize ioSurface=_ioSurface;
 @property(readonly, nonatomic) unsigned int ioSurfaceID; // @synthesize ioSurfaceID=_ioSurfaceID;
 @property(readonly, nonatomic) _Bool shouldRequestAsynchronously; // @synthesize shouldRequestAsynchronously=_shouldRequestAsynchronously;
-- (void).cxx_destruct;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
 - (_Bool)requiresSynchronousResultProcessing;

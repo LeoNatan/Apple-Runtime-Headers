@@ -15,10 +15,10 @@
     double _maximumPossibleMemoryDuration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double maximumPossibleMemoryDuration; // @synthesize maximumPossibleMemoryDuration=_maximumPossibleMemoryDuration;
 @property(retain, nonatomic) NSArray *featuredPeople; // @synthesize featuredPeople=_featuredPeople;
 @property(nonatomic) __weak VEKProduction *production; // @synthesize production=_production;
-- (void).cxx_destruct;
 - (id)memoryClassificationKeys;
 - (BOOL)memoryClassificationBased;
 - (double)titleCardDuration;

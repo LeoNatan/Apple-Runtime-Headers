@@ -18,12 +18,12 @@
     long long _threadScopeDatabaseID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _EDThreadPersistence_SQLHelper *sqlHelper; // @synthesize sqlHelper=_sqlHelper;
 @property(readonly, nonatomic) NSArray *wrappedMessages; // @synthesize wrappedMessages=_wrappedMessages;
 @property(readonly, nonatomic) EMThreadObjectID *threadObjectID; // @synthesize threadObjectID=_threadObjectID;
 @property(readonly, nonatomic) long long threadScopeDatabaseID; // @synthesize threadScopeDatabaseID=_threadScopeDatabaseID;
 @property(readonly, nonatomic) EDMessagePersistence *messagePersistence; // @synthesize messagePersistence=_messagePersistence;
-- (void).cxx_destruct;
 - (id)_iterateNewestUnreadWrappedMessagesInWrappedMessages:(id)arg1 iteratorBlock:(CDUnknownBlockType)arg2;
 - (id)_displayWrappedMessageWithNewestReadWrappedMessage:(id *)arg1;
 - (id)_newestUnreadWrappedMessagesWithNewestReadWrappedMessage:(id *)arg1;

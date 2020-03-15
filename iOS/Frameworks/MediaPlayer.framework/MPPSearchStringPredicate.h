@@ -16,9 +16,9 @@
     NSString *_searchString;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *properties; // @synthesize properties=_properties;
 @property(retain, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     AVControlItem *_interactiveOverlayItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVControlItem *interactiveOverlayItem; // @synthesize interactiveOverlayItem=_interactiveOverlayItem;
 @property(nonatomic) _Bool waitingForNextStream; // @synthesize waitingForNextStream=_waitingForNextStream;
 @property(nonatomic) _Bool allowsPictureInPicturePlayback; // @synthesize allowsPictureInPicturePlayback=_allowsPictureInPicturePlayback;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool includeInteractiveOverlay; // @synthesize includeInteractiveOverlay=_includeInteractiveOverlay;
 @property(nonatomic) _Bool includeInfoViews; // @synthesize includeInfoViews=_includeInfoViews;
 @property(nonatomic) _Bool includeTransportBar; // @synthesize includeTransportBar=_includeTransportBar;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)_descriptionOfBooleanProperty:(id)arg1;
 - (id)_descriptionOfTrueBooleanProperty:(id)arg1;

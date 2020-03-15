@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     VSDevice *_currentDevice;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSDevice *currentDevice; // @synthesize currentDevice=_currentDevice;
 @property(retain, nonatomic) NSOperationQueue *privateQueue; // @synthesize privateQueue=_privateQueue;
 @property(retain, nonatomic) VSStoreURLBag *bag; // @synthesize bag=_bag;
 @property(retain, nonatomic) VSOptional *result; // @synthesize result=_result;
 @property(retain, nonatomic) VSOptional *preferences; // @synthesize preferences=_preferences;
 @property(retain, nonatomic) VSOptional *storage; // @synthesize storage=_storage;
-- (void).cxx_destruct;
 - (void)executionDidBegin;
 - (void)_checkForSupportedAppsButtonWithFlow:(id)arg1;
 - (void)_checkForSupportedAppsButton;
@@ -37,7 +37,6 @@ __attribute__((visibility("hidden")))
 - (void)_fetchProviderForAccount:(id)arg1;
 - (void)_fetchAllProviders;
 - (void)_loadProviderAppDescriptionWithFlow:(id)arg1;
-- (id)createVSImageLoadOperationForProvider:(id)arg1 withFlow:(id)arg2;
 - (id)createAppDescriptionFetchOperationForProvider:(id)arg1 withFlow:(id)arg2;
 - (void)_fetchAllProvidersIfNeeded;
 - (void)_getSTBProviderFromAllProviders:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

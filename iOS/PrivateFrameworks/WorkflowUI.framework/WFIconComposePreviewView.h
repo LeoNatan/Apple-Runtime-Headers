@@ -13,8 +13,8 @@
     WFWorkflowIconDrawer *_iconDrawer;
 }
 
-@property(retain, nonatomic) WFWorkflowIconDrawer *iconDrawer; // @synthesize iconDrawer=_iconDrawer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFWorkflowIconDrawer *iconDrawer; // @synthesize iconDrawer=_iconDrawer;
 - (struct CGSize)intrinsicContentSize;
 - (void)setIcon:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;

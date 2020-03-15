@@ -17,9 +17,9 @@
     NSLayoutConstraint *_fm_workaround_height_constraint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needToInvalidateTitleLableIntrinsicContentSize; // @synthesize needToInvalidateTitleLableIntrinsicContentSize=_needToInvalidateTitleLableIntrinsicContentSize;
 @property(retain, nonatomic) NSLayoutConstraint *fm_workaround_height_constraint; // @synthesize fm_workaround_height_constraint=_fm_workaround_height_constraint;
-- (void).cxx_destruct;
 - (void)setContentEdgeInsets:(struct UIEdgeInsets)arg1;
 - (void)updateConstraints;
 - (void)traitCollectionDidChange:(id)arg1;

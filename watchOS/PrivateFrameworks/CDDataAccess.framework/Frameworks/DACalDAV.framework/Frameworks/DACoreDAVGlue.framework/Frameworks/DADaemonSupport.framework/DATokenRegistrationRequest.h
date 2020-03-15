@@ -28,6 +28,7 @@
 }
 
 + (id)requestWithToken:(id)arg1 pushKey:(id)arg2 wrapper:(id)arg3 onBehalfOf:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool finished; // @synthesize finished=_finished;
 @property(retain, nonatomic) AKAppleIDSession *hsa2Session; // @synthesize hsa2Session=_hsa2Session;
 @property(retain, nonatomic) NSURLSessionDataTask *task; // @synthesize task=_task;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSString *onBehalfOfBundleIdentifier; // @synthesize onBehalfOfBundleIdentifier=_onBehalfOfBundleIdentifier;
 @property(nonatomic) __weak DARefreshWrapper *wrapper; // @synthesize wrapper=_wrapper;
 @property(nonatomic) __weak id <DATokenRegistrationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)sendRegistrationRequestForAccount:(id)arg1;
 - (void)_reallyHandleAuthenticationChallenge:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)_canAuthenticateAgainstProtectionSpace:(id)arg1;

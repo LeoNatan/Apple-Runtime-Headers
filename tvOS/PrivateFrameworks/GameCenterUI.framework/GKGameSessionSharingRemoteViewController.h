@@ -22,9 +22,9 @@
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
 + (id)dashboardExtension;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property(nonatomic) __weak id <GKGameSessionSharingRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (oneway void)finishWithError:(id)arg1;
 - (oneway void)setupWithSession:(id)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;

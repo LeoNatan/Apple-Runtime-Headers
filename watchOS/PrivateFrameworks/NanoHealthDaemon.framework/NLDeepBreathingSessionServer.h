@@ -24,6 +24,7 @@
     int _serverState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int serverState; // @synthesize serverState=_serverState;
 @property(readonly, nonatomic) _HKDeepBreathingSessionConfiguration *sessionConfiguration; // @synthesize sessionConfiguration=_sessionConfiguration;
 @property(readonly, nonatomic) __weak id <HDDeepBreathingSessionServerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) id <NSXPCProxyCreating> client; // @synthesize client=_client;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *healthLiteQueue; // @synthesize healthLiteQueue=_healthLiteQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)_endSessionTransaction;
 - (void)_beginSessionTransaction;
 - (id)_transactionIdentifier;

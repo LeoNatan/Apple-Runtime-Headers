@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     unsigned int _monitoredScenarioTriggerTypes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool registered; // @synthesize registered=_registered;
 @property(readonly, nonatomic) unsigned int monitoredScenarioTriggerTypes; // @synthesize monitoredScenarioTriggerTypes=_monitoredScenarioTriggerTypes;
 @property(readonly, copy, nonatomic) NSDictionary *scenarioTriggerHandlers; // @synthesize scenarioTriggerHandlers=__scenarioTriggerHandlers;
-- (void).cxx_destruct;
 - (void)onScenarioTriggers:(id)arg1 error:(id)arg2;
 - (id)stopMonitoringForScenarioTriggerTypes:(unsigned int)arg1;
 - (id)startMonitoringForScenarioTriggerTypes:(unsigned int)arg1 handler:(CDUnknownBlockType)arg2;

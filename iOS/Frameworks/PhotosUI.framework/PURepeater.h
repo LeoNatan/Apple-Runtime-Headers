@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) double timeInterval; // @synthesize timeInterval=_timeInterval;
-- (void).cxx_destruct;
 - (void)_fire;
 - (void)stop;
 - (void)start;

@@ -21,13 +21,13 @@
 }
 
 + (double)defaultHeight;
+- (void).cxx_destruct;
 @property(retain) PRSCardSection *cardSection; // @synthesize cardSection=_cardSection;
 @property(retain) SFPunchout *punchout; // @synthesize punchout=_punchout;
 @property(nonatomic) BOOL undoUnderline; // @synthesize undoUnderline=_undoUnderline;
 @property(nonatomic, getter=isUnderlined) BOOL underlined; // @synthesize underlined=_underlined;
 @property double viewWidth; // @synthesize viewWidth=_viewWidth;
 @property __weak id <PRSSliceViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)awakeFromNib;
 - (void)viewClosed;
 - (BOOL)handleMouseUp:(id)arg1 alternatePunchout:(id)arg2;

@@ -35,6 +35,7 @@
 }
 
 + (id)eventHandler;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(copy, nonatomic) CDUnknownBlockType messageHandler; // @synthesize messageHandler=_messageHandler;
 @property(copy, nonatomic) CDUnknownBlockType noMoreChildrenHandler; // @synthesize noMoreChildrenHandler=_noMoreChildrenHandler;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *targetQueue; // @synthesize targetQueue=_targetQueue;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)connectionDisconnected:(id)arg1;
 - (void)connectionInitialized:(id)arg1 withActiveXPCConnection:(id)arg2 xpcConnectionTargetQueue:(id)arg3;
 - (void)connectionInvalidated:(id)arg1;

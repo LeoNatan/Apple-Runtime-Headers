@@ -29,6 +29,7 @@
 
 + (_Bool)currentPersonaMatchesPath:(id)arg1;
 + (id)currentPersona;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long userPersonaType; // @synthesize userPersonaType=_userPersonaType;
 @property(copy, nonatomic) NSString *userPersonaNickName; // @synthesize userPersonaNickName=_userPersonaNickName;
 @property(copy, nonatomic) NSString *userPersonaUniqueString; // @synthesize userPersonaUniqueString=_userPersonaUniqueString;
@@ -39,7 +40,6 @@
 @property(nonatomic) unsigned int uid; // @synthesize uid=_uid;
 @property(nonatomic) _Bool isDefaultPersona; // @synthesize isDefaultPersona=_isDefaultPersona;
 @property(nonatomic) _Bool isSystemPersona; // @synthesize isSystemPersona=_isSystemPersona;
-- (void).cxx_destruct;
 - (_Bool)isEqualToPersona:(id)arg1;
 - (_Bool)commitChangesWithError:(id *)arg1;
 - (_Bool)commitChanges;

@@ -21,13 +21,13 @@
     HFItem<HFServiceLikeItem> *_serviceLikeItem;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasEverHadValidSuggestion; // @synthesize hasEverHadValidSuggestion=_hasEverHadValidSuggestion;
 @property(nonatomic) BOOL persistAddedSuggestions; // @synthesize persistAddedSuggestions=_persistAddedSuggestions;
 @property(nonatomic) BOOL includeExistingActionSets; // @synthesize includeExistingActionSets=_includeExistingActionSets;
 @property(copy, nonatomic) HFItem<HFServiceLikeItem> *serviceLikeItem; // @synthesize serviceLikeItem=_serviceLikeItem;
 @property(readonly, nonatomic) HMActionSet *actionSet; // @synthesize actionSet=_actionSet;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 @property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject;
 - (id)initWithHome:(id)arg1 actionSet:(id)arg2;

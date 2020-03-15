@@ -15,13 +15,16 @@
     NTKOlympusColorPalette *_olympusPalette;
 }
 
-@property(retain, nonatomic) NTKOlympusColorPalette *olympusPalette; // @synthesize olympusPalette=_olympusPalette;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NTKOlympusColorPalette *olympusPalette; // @synthesize olympusPalette=_olympusPalette;
 @property(readonly, nonatomic) _Bool hasWhiteElements;
 @property(readonly, nonatomic) UIColor *analogDotColor;
 @property(readonly, nonatomic) UIColor *logoColor;
 @property(readonly, nonatomic) UIColor *numbersColor;
 @property(readonly, nonatomic) UIColor *backgroundColor;
+- (id)colorForLogoWithStyle:(unsigned long long)arg1;
+- (id)colorForNumberVictoryAnalogTimeElement:(unsigned long long)arg1;
+- (id)colorForDotVictoryAnalogTimeElement:(unsigned long long)arg1;
 - (id)initWithOlympusPalette:(id)arg1 alternatePalette:(id)arg2;
 - (id)initWithOlympusPalette:(id)arg1;
 

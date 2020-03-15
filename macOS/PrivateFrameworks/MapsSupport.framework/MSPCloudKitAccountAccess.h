@@ -25,10 +25,10 @@
 + (long long)defaultEnvironment;
 + (BOOL)hasCloudKitEntitlement;
 + (BOOL)useLongLivedOperations;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL disableDeviceToDeviceEncryption; // @synthesize disableDeviceToDeviceEncryption=_disableDeviceToDeviceEncryption;
 @property(retain, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property(nonatomic) BOOL useSecureContainer; // @synthesize useSecureContainer=_useSecureContainer;
-- (void).cxx_destruct;
 - (id)description;
 - (void)fetchDeviceToDeviceEncryptionStatus:(CDUnknownBlockType)arg1;
 - (void)fetchAccountStatus:(CDUnknownBlockType)arg1;

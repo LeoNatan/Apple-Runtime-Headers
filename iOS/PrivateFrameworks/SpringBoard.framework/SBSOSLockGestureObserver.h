@@ -25,12 +25,12 @@
     long long _configuration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSOSEnabled, setter=setSOSEnabled:) _Bool sosEnabled; // @synthesize sosEnabled=_sosEnabled;
 @property(nonatomic, getter=isGestureLoggingEnabled) _Bool gestureLoggingEnabled; // @synthesize gestureLoggingEnabled=_gestureLoggingEnabled;
 @property(readonly, nonatomic) long long configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) __weak id <SBSOSLockGestureObserverDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SBPressSequenceObserver *sosLockPressSequenceObserver; // @synthesize sosLockPressSequenceObserver=_sosLockPressSequenceObserver;
-- (void).cxx_destruct;
 - (double)_watchdogInterval;
 - (double)_intervalThatSucceeds;
 - (unsigned long long)_numberOfPressesThatActivate;

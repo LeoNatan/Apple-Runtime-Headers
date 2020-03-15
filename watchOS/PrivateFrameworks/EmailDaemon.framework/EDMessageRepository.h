@@ -12,7 +12,7 @@
 #import <EmailDaemon/EMMessageRepositoryInterface-Protocol.h>
 
 @class EDConversationPersistence, EDFetchController, EDMailboxPersistence, EDMailboxPredictionController, EDMessageChangeManager, EDMessagePersistence, EDPersistenceHookRegistry, EDThreadPersistence, EDVIPManager, NSConditionLock, NSHashTable, NSMutableDictionary, NSString;
-@protocol EDRemoteSearchProvider, EMUserProfileProvider, OS_dispatch_queue;
+@protocol EDRemoteSearchProvider, EDResumable, EMUserProfileProvider, OS_dispatch_queue;
 
 @interface EDMessageRepository : NSObject <EDAccountChangeHookResponder, EDThreadQueryHandlerDelegate, EMMessageRepositoryInterface, EFLoggable>
 {
@@ -34,10 +34,13 @@
     EDVIPManager *_vipManager;
     id <EDRemoteSearchProvider> _remoteSearchProvider;
     EDFetchController *_fetchController;
+    id <EDResumable> _observerResumer;
 }
 
 + (id)signpostLog;
 + (id)log;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) id <EDResumable> observerResumer; // @synthesize observerResumer=_observerResumer;
 @property(readonly, nonatomic) EDFetchController *fetchController; // @synthesize fetchController=_fetchController;
 @property(readonly, nonatomic) id <EDRemoteSearchProvider> remoteSearchProvider; // @synthesize remoteSearchProvider=_remoteSearchProvider;
 @property(readonly, nonatomic) EDVIPManager *vipManager; // @synthesize vipManager=_vipManager;
@@ -53,7 +56,6 @@
 @property(retain, nonatomic) NSHashTable *handlerTokens; // @synthesize handlerTokens=_handlerTokens;
 @property(retain, nonatomic) NSMutableDictionary *threadQueryHandlers; // @synthesize threadQueryHandlers=_threadQueryHandlers;
 @property(retain, nonatomic) NSMutableDictionary *queryHandlers; // @synthesize queryHandlers=_queryHandlers;
-- (void).cxx_destruct;
 - (void)_resetUpdateThrottlersWithLogMessage:(id)arg1;
 - (void)loadOlderMessagesForMailboxes:(id)arg1;
 - (id)mailboxPredictionController;
@@ -93,7 +95,7 @@
 - (void)performQuery:(id)arg1 limit:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)test_tearDown;
 - (void)dealloc;
-- (id)initWithMessagePersistence:(id)arg1 conversationPersistence:(id)arg2 threadPersistence:(id)arg3 messageChangeManager:(id)arg4 hookRegistry:(id)arg5 mailboxPersistence:(id)arg6 remoteSearchProvider:(id)arg7 userProfileProvider:(id)arg8 vipManager:(id)arg9 fetchController:(id)arg10;
+- (id)initWithMessagePersistence:(id)arg1 conversationPersistence:(id)arg2 threadPersistence:(id)arg3 messageChangeManager:(id)arg4 hookRegistry:(id)arg5 mailboxPersistence:(id)arg6 remoteSearchProvider:(id)arg7 userProfileProvider:(id)arg8 vipManager:(id)arg9 fetchController:(id)arg10 observerResumer:(id)arg11;
 - (unsigned long long)signpostID;
 
 // Remaining properties

@@ -23,13 +23,13 @@
 
 + (id)colorMap;
 + (void)registerColorNameMap:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long gradientDirectionType; // @synthesize gradientDirectionType=_gradientDirectionType;
 @property(nonatomic) long long gradientType; // @synthesize gradientType=_gradientType;
 @property(copy, nonatomic) NSArray *gradientColors; // @synthesize gradientColors=_gradientColors;
 @property(readonly, copy, nonatomic) NSArray *gradientPoints; // @synthesize gradientPoints=_gradientPoints;
 @property(nonatomic) long long colorType; // @synthesize colorType=_colorType;
 @property(copy, nonatomic) NSString *colorMapKey; // @synthesize colorMapKey=_colorMapKey;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (void)setGradientColors:(id)arg1 andPoints:(id)arg2;

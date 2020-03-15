@@ -18,9 +18,9 @@
 + (void)migrateUserDefaultKeysIfNecessary:(id)arg1 fromUIKitDefaultsToUserDefaults:(id)arg2;
 + (id)updatedActivityIdentifiersUserOrderWithPreviousOrder:(id)arg1 someSortedActivityIdentifiers:(id)arg2;
 + (id)builtinActivityOrder;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUserDefaults *underlyingUserDefaults; // @synthesize underlyingUserDefaults=_underlyingUserDefaults;
 @property(copy, nonatomic) NSString *activityDefaultsKey; // @synthesize activityDefaultsKey=_activityDefaultsKey;
-- (void).cxx_destruct;
 - (id)_userDefaultsDictionary;
 - (void)_setUserDefaultsDictionary:(id)arg1;
 - (id)applicationExtensionForActivity:(id)arg1;

@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _viewBridgeConnectionErrorHandler;
 }
 
-@property(copy) CDUnknownBlockType viewBridgeConnectionErrorHandler; // @synthesize viewBridgeConnectionErrorHandler=_viewBridgeConnectionErrorHandler;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType viewBridgeConnectionErrorHandler; // @synthesize viewBridgeConnectionErrorHandler=_viewBridgeConnectionErrorHandler;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (id)serviceViewControllerInterface;
 

@@ -29,6 +29,7 @@
     CDUnknownBlockType _secondaryLinkHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType secondaryLinkHandler; // @synthesize secondaryLinkHandler=_secondaryLinkHandler;
 @property(copy, nonatomic) NSString *secondaryLinkTitle; // @synthesize secondaryLinkTitle=_secondaryLinkTitle;
 @property(nonatomic) _Bool displaySecondaryLink; // @synthesize displaySecondaryLink=_displaySecondaryLink;
@@ -41,7 +42,6 @@
 @property(copy, nonatomic) NSString *contentType; // @synthesize contentType=_contentType;
 @property(copy, nonatomic) NSString *localizedContentTitle; // @synthesize localizedContentTitle=_localizedContentTitle;
 @property(readonly, nonatomic) id <WLKInstallable> installable; // @synthesize installable=_installable;
-- (void).cxx_destruct;
 - (void)_finishInstallationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_updateWithInstallProgress:(double)arg1;
 - (void)_dismissAppInstallWithCompletion:(CDUnknownBlockType)arg1;

@@ -22,11 +22,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLEcoModeConfirmationAlertViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) __weak id <CSLEcoModeConfirmationAlertProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <CUISAlertProviderDelegate> alertProviderDelegate; // @synthesize alertProviderDelegate=_alertProviderDelegate;
 @property(nonatomic) unsigned int style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)requestUITriggerWithRegistration:(id)arg1 UITriggerName:(id)arg2 withDictionary:(id)arg3 withReason:(int)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (void)dismissAlertViewController:(id)arg1 shouldEnterEcoMode:(_Bool)arg2;
 - (void)present;

@@ -12,7 +12,7 @@
 {
     struct refcounted_ptr<RB::Device> _device;
     struct objc_ptr<NSObject<OS_dispatch_queue>*> _queue;
-    // Error parsing type: {atomic<unsigned int>="__a_"AI}, name: _pending_collect
+    // Error parsing type: {atomic<unsigned int>="__a_"{__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >="__a_value"AI}}, name: _pending_collect
 }
 
 + (id)sharedDefaultDevice;

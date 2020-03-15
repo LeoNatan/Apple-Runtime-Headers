@@ -44,6 +44,7 @@
 
 + (id)headerText;
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNSharingProfileLogger *logger; // @synthesize logger=_logger;
 @property(retain, nonatomic) CNAvatarEditingManager *posePicker; // @synthesize posePicker=_posePicker;
 @property(retain, nonatomic) CNPhotoPickerVariantsManager *variantsManager; // @synthesize variantsManager=_variantsManager;
@@ -65,7 +66,6 @@
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(nonatomic) _Bool delegateDoesRespondToOnboardingResultSelector; // @synthesize delegateDoesRespondToOnboardingResultSelector=_delegateDoesRespondToOnboardingResultSelector;
 @property(nonatomic) __weak id <CNMeCardSharingOnboardingEditViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)photoPicker:(id)arg1 didUpdatePhotoForContact:(id)arg2 withContactImage:(id)arg3;
 - (void)photoPickerDidCancel:(id)arg1;
 - (void)avatarCarouselViewControllerDidUpdateCenterMostItem:(id)arg1;

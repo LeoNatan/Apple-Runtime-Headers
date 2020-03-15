@@ -16,10 +16,10 @@
 }
 
 + (id)interestedChangeKeys;
+- (void).cxx_destruct;
 @property(retain) NSArray *existingConstraints; // @synthesize existingConstraints=_existingConstraints;
 @property(retain) NSMutableArray *alarmGadgets; // @synthesize alarmGadgets=_alarmGadgets;
 @property BOOL showingNewAlarm; // @synthesize showingNewAlarm=_showingNewAlarm;
-- (void).cxx_destruct;
 - (BOOL)updateWithDiff:(id)arg1;
 - (double)preferredWidth;
 - (BOOL)isEditable;

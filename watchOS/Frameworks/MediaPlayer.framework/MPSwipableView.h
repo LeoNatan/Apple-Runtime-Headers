@@ -22,10 +22,10 @@
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int simultaneousGestureTypes; // @synthesize simultaneousGestureTypes=_simultaneousGestureTypes;
 @property(nonatomic) int enabledGestureTypes; // @synthesize enabledGestureTypes=_enabledGestureTypes;
 @property(nonatomic) __weak id <MPSwipableViewDelegate> swipeDelegate; // @synthesize swipeDelegate=_swipeDelegate;
-- (void).cxx_destruct;
 - (void)_updateGestureRecognizersForEnabledTypes;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_pinchGestureRecognized:(id)arg1;

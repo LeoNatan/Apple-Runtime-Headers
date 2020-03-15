@@ -26,6 +26,7 @@
 
 + (BOOL)supportsNotificationName:(id)arg1;
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double authorizationChangeExitTimeInterval; // @synthesize authorizationChangeExitTimeInterval=_authorizationChangeExitTimeInterval;
 @property(retain, nonatomic) AFPreferences *siriPreferences; // @synthesize siriPreferences=_siriPreferences;
 @property(retain, nonatomic) RTDarwinNotificationHelper *notificationHelper; // @synthesize notificationHelper=_notificationHelper;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) RTInvocationDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
 @property(retain, nonatomic) RTAccount *account; // @synthesize account=_account;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
-- (void).cxx_destruct;
 - (void)_onDefaultsUpdate:(id)arg1;
 - (void)onDefaultsUpdate:(id)arg1;
 - (void)_handleSiriCloudSyncPreferenceChangedNotification;

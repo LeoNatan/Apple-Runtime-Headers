@@ -32,6 +32,7 @@
 }
 
 + (id)sharedURLSession;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *maxAge; // @synthesize maxAge=_maxAge;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) unsigned long long responseSize; // @synthesize responseSize=_responseSize;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) NSString *HTTPMethod; // @synthesize HTTPMethod=_HTTPMethod;
 @property(retain, nonatomic) NSData *HTTPBody; // @synthesize HTTPBody=_HTTPBody;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (void)resetForRetry;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;

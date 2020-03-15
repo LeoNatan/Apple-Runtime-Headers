@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (CDUnknownBlockType)_objectCompletionOnMainQueue:(CDUnknownBlockType)arg1 cancellationToken:(id)arg2;
 + (CDUnknownBlockType)_logoCompletionOnMainQueue:(CDUnknownBlockType)arg1 cancellationToken:(id)arg2;
-@property(readonly, nonatomic) HKHealthRecordsStore *healthRecordsStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HKHealthRecordsStore *healthRecordsStore;
 @property(readonly, nonatomic) HKHealthStore *healthStore;
 - (id)_orderAccountsForDisplay:(id)arg1;
 - (id)_createLoginSafariViewControllerForURL:(id)arg1 error:(id *)arg2;

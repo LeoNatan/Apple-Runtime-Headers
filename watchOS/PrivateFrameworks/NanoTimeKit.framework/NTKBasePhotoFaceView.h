@@ -43,11 +43,11 @@
 + (id)_saveSidecarPhotoAnalysis:(id)arg1;
 + (id)_analysisForPhoto:(id)arg1 dateAlignment:(unsigned int)arg2;
 + (id)_temporaryDirectory;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isNoPhotosViewVisible) _Bool noPhotosViewVisible; // @synthesize noPhotosViewVisible=_noPhotosViewVisible;
 @property(readonly, nonatomic) _Bool isInteractive; // @synthesize isInteractive=_isInteractive;
 @property(readonly, nonatomic) NPTOImageView *posterImageView; // @synthesize posterImageView=_posterImageView;
 @property(readonly, nonatomic) UIView *cornerView; // @synthesize cornerView=_cornerView;
-- (void).cxx_destruct;
 - (void)_endScrubbingAnimationFromUIViewAnimateWithDuration;
 - (void)_startScrubbingAnimationFromUIViewAnimateWithDuration;
 - (void)_applyScrubbingForegroundColor:(id)arg1 shadowColor:(id)arg2;

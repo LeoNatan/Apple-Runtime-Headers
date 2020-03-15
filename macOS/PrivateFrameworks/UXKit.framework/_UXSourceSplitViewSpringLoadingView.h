@@ -13,9 +13,9 @@
     CDUnknownBlockType _canSpringLoadHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType canSpringLoadHandler; // @synthesize canSpringLoadHandler=_canSpringLoadHandler;
 @property(copy) CDUnknownBlockType springLoadingHandler; // @synthesize springLoadingHandler=_springLoadingHandler;
-- (void).cxx_destruct;
 - (BOOL)prepareForDragOperation:(id)arg1;
 - (void)_unSpringLoad;
 - (void)_springLoad;

@@ -6,9 +6,7 @@
 
 #import <swiftCore/_TtCs12_SwiftObject.h>
 
-#import <NewsUI2/TSForYouMagazineFeedManagerType-Protocol.h>
-
-@interface _TtC7NewsUI225ForYouMagazineFeedManager : _TtCs12_SwiftObject <TSForYouMagazineFeedManagerType>
+@interface _TtC7NewsUI225ForYouMagazineFeedManager : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: magazineFeedServiceConfigFetcher
     // Error parsing type: , name: magazineFeedService

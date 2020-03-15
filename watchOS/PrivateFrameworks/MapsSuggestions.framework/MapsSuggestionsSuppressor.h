@@ -8,11 +8,11 @@
 
 #import <MapsSuggestions/MapsSuggestionsObject-Protocol.h>
 
-@class MapsSuggestionsQueue, NSString;
+@class MapsSuggestionsQueue, NSMutableDictionary, NSString;
 
 @interface MapsSuggestionsSuppressor : NSObject <MapsSuggestionsObject>
 {
-    struct NSMutableDictionary *_suppressionEntries;
+    NSMutableDictionary *_suppressionEntries;
     NSString *_suppressionEntriesFilePath;
     MapsSuggestionsQueue *_queue;
 }

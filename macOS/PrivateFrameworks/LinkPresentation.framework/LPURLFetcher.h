@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     Class _responseClass;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) Class responseClass; // @synthesize responseClass=_responseClass;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (void)_completedWithData:(id)arg1 MIMEType:(id)arg2 error:(id)arg3;
 - (void)_failedWithErrorCode:(long long)arg1 underlyingError:(id)arg2;
 - (void)cancel;

@@ -20,12 +20,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appBundleId; // @synthesize appBundleId=_appBundleId;
 @property(nonatomic) long long lookupSelectionType; // @synthesize lookupSelectionType=_lookupSelectionType;
 @property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(copy, nonatomic) NSString *queryContext; // @synthesize queryContext=_queryContext;
 @property(copy, nonatomic) NSString *queryString; // @synthesize queryString=_queryString;
-- (void).cxx_destruct;
 - (unsigned int)nwActivityLabel;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

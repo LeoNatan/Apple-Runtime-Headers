@@ -16,9 +16,10 @@
     NSArray *_detectedObjects;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *detectedObjects; // @synthesize detectedObjects=_detectedObjects;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
+- (id)mergeOverlappingDetectionsWithThreshold:(float)arg1;
 @property(readonly, copy) NSString *description;
 - (id)transformToCVPixelBuffer:(struct __CVBuffer *)arg1 depthBuffer:(struct __CVBuffer *)arg2;
 

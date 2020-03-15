@@ -20,11 +20,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool observingApplicationWorkspace; // @synthesize observingApplicationWorkspace=_observingApplicationWorkspace;
 @property(retain, nonatomic) NSMutableArray *installations; // @synthesize installations=_installations;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSMutableArray *observers; // @synthesize observers=_observers;
-- (void).cxx_destruct;
 - (void)applicationStateDidChange:(id)arg1;
 - (void)applicationsDidFailToInstall:(id)arg1;
 - (void)applicationsDidInstall:(id)arg1;

@@ -19,9 +19,9 @@
 
 + (id)versionedFileIdentifierWithThumbnailRequest:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) QLCacheFileIdentifier *fileIdentifier; // @synthesize fileIdentifier=_fileIdentifier;
 @property(readonly) QLThumbnailVersion *version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

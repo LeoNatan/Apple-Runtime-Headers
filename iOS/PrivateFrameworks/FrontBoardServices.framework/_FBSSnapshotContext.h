@@ -20,13 +20,13 @@
     _Bool _allowsProtectedContent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsProtectedContent; // @synthesize allowsProtectedContent=_allowsProtectedContent;
 @property(nonatomic) struct CGSize snapshotSize; // @synthesize snapshotSize=_snapshotSize;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic, getter=isOpaque) _Bool opaque; // @synthesize opaque=_opaque;
 @property(readonly, nonatomic) NSOrderedSet *layers; // @synthesize layers=_layers;
 @property(readonly, nonatomic) FBSDisplayConfiguration *displayConfiguration; // @synthesize displayConfiguration=_displayConfiguration;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithDisplayConfiguration:(id)arg1 layers:(id)arg2;
 - (id)initWithDisplayConfiguration:(id)arg1 layer:(id)arg2;

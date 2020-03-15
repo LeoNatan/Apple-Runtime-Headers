@@ -16,8 +16,8 @@
     id <KHScrollViewDelegate> _kh_delegate;
 }
 
-@property(nonatomic) __weak id <KHScrollViewDelegate> kh_delegate; // @synthesize kh_delegate=_kh_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <KHScrollViewDelegate> kh_delegate; // @synthesize kh_delegate=_kh_delegate;
 - (void)magnifyWithEvent:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

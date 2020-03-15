@@ -16,8 +16,8 @@
     unsigned int _lightType;
 }
 
-@property(nonatomic) unsigned int lightType; // @synthesize lightType=_lightType;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int lightType; // @synthesize lightType=_lightType;
 -     // Error parsing type: 8@0:4, name: position
 - (void)setTransform:(id)arg1;
 - (struct CGColor *)irradianceAtPoint:(struct CGColorSpace *)arg1 colorSpace: /* Error: Ran out of types for this method. */;

@@ -22,13 +22,13 @@
     BOOL _attemptedCDPEnable;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL attemptedCDPEnable; // @synthesize attemptedCDPEnable=_attemptedCDPEnable;
 @property(retain, nonatomic) id <CDPStateUIProviderInternal> uiProvider; // @synthesize uiProvider=_uiProvider;
 @property(retain, nonatomic) CDPContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) CDPDPCSController *pcsController; // @synthesize pcsController=_pcsController;
 @property(retain, nonatomic) CDPDCircleController *circleController; // @synthesize circleController=_circleController;
 @property(retain, nonatomic) CDPDSecureBackupController *secureBackupController; // @synthesize secureBackupController=_secureBackupController;
-- (void).cxx_destruct;
 - (id)secureChannelContextForController:(id)arg1;
 - (id)contextForController:(id)arg1;
 - (void)circleController:(id)arg1 secureBackupRecordsArePresentWithCompletion:(CDUnknownBlockType)arg2;
@@ -52,6 +52,7 @@
 - (void)_authenticatedRepairCloudDataProtectionStateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_refreshAndAuthenticateWithContext:(id)arg1;
 - (void)_performInteractivelyAuthenticatedRepair:(CDUnknownBlockType)arg1;
+- (void)_performSilentlyAuthenticatedRepair:(CDUnknownBlockType)arg1;
 - (void)repairCloudDataProtectionStateWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_predicateForRecordUpgradeCheck;
 - (id)_predicateForRecordUpgradeCheckIgnoringBottled;

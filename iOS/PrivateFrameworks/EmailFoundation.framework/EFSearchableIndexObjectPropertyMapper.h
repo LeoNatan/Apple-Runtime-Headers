@@ -16,9 +16,9 @@
     NSArray *_attributes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *attributes; // @synthesize attributes=_attributes;
 @property(copy, nonatomic) NSDictionary *children; // @synthesize children=_children;
-- (void).cxx_destruct;
 - (id)childForKey:(id)arg1;
 - (id)initWithAttributes:(id)arg1;
 - (id)initWithChildren:(id)arg1 attributes:(id)arg2;

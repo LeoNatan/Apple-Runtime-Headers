@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSString *_UUIDOfRootBookmarkList;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *UUIDOfRootBookmarkList; // @synthesize UUIDOfRootBookmarkList=_UUIDOfRootBookmarkList;
 @property(readonly, nonatomic) NSArray *frequentlyVisitedSites; // @synthesize frequentlyVisitedSites=_frequentlyVisitedSites;
-- (void).cxx_destruct;
 - (void)_touchIconsCacheWillPurge:(id)arg1;
 - (void)_titleOfFrequentlyVisitedSiteDidChange:(id)arg1;
 - (void)_frequentlyVisitedSitesDidChange:(id)arg1;

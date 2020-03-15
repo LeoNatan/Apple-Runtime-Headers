@@ -18,9 +18,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL cacheDelegateResponses; // @synthesize cacheDelegateResponses=_cacheDelegateResponses;
 @property(retain, nonatomic) id <PVHostApplicationDelegate> hostApplicationDelegate; // @synthesize hostApplicationDelegate=_hostApplicationDelegate;
-- (void).cxx_destruct;
 - (unsigned int)getMaxGlyphResolution;
 - (_Bool)wantsToCacheTopLevelGroupRender;
 - (_Bool)wantsToIncludeTrailingWhitespaceInParagraphLineWidth;

@@ -28,6 +28,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *consoleWarningMessages; // @synthesize consoleWarningMessages=_consoleWarningMessages;
 @property(nonatomic) unsigned long long numberOfValidationWarnings; // @synthesize numberOfValidationWarnings=_numberOfValidationWarnings;
 @property(nonatomic) unsigned long long numberOfValidations; // @synthesize numberOfValidations=_numberOfValidations;
@@ -42,7 +43,6 @@
 @property(nonatomic) _Bool shouldReportToServer; // @synthesize shouldReportToServer=_shouldReportToServer;
 @property(nonatomic) _Bool shouldCrashOnError; // @synthesize shouldCrashOnError=_shouldCrashOnError;
 @property(nonatomic) _Bool shouldLogToConsole; // @synthesize shouldLogToConsole=_shouldLogToConsole;
-- (void).cxx_destruct;
 - (void)sendValidationSuccessForProcessName:(id)arg1;
 - (void)sendFailedTestCase:(id)arg1 withTag:(id)arg2 overrideProcessName:(id)arg3;
 - (void)sendFailedAssertionWithErrorMessage:(id)arg1 overrideProcessName:(id)arg2;

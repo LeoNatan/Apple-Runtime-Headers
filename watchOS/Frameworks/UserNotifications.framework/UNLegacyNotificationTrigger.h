@@ -21,13 +21,13 @@
 + (_Bool)supportsSecureCoding;
 + (id)triggerWithDate:(id)arg1 timeZone:(id)arg2 repeatInterval:(unsigned int)arg3 repeatCalendar:(id)arg4;
 + (id)triggerWithDate:(id)arg1 timeZone:(id)arg2 remainingRepeatCount:(int)arg3 totalRepeatCount:(int)arg4 repeatInterval:(unsigned int)arg5 repeatCalendar:(id)arg6;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int repeatInterval; // @synthesize repeatInterval=_repeatInterval;
 @property(nonatomic) int totalRepeatCount; // @synthesize totalRepeatCount=_totalRepeatCount;
 @property(nonatomic) int remainingRepeatCount; // @synthesize remainingRepeatCount=_remainingRepeatCount;
 @property(copy, nonatomic) NSCalendar *repeatCalendar; // @synthesize repeatCalendar=_repeatCalendar;
 @property(copy, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (double)_retroactiveTriggerHysteresis;

@@ -19,10 +19,10 @@
     PACanvasItemView *_canvasViewImpl;
 }
 
+- (void).cxx_destruct;
 @property(retain) PACanvasItemView *canvasViewImpl; // @synthesize canvasViewImpl=_canvasViewImpl;
 @property(copy) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(readonly, getter=isReady) BOOL ready; // @synthesize ready=_ready;
-- (void).cxx_destruct;
 - (void)positionDecorations;
 - (void)detachFromCanvasView;
 - (void)attachToCanvasView;

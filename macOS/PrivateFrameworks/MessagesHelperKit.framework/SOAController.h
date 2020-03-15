@@ -27,6 +27,7 @@
 + (id)remoteReceiverProtocol;
 + (id)receiverProtocol;
 + (Class)receiverClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *controllerQueue; // @synthesize controllerQueue=_controllerQueue;
 @property BOOL markedForDestruction; // @synthesize markedForDestruction=_markedForDestruction;
 @property(retain) NSMutableDictionary *controllerProperties; // @synthesize controllerProperties=_controllerProperties;
@@ -34,7 +35,6 @@
 @property(retain) NSMutableArray *connections; // @synthesize connections=_connections;
 @property(retain) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain) SOAReceiver *receiver; // @synthesize receiver=_receiver;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)mainInvalidate;
 - (void)dealloc;

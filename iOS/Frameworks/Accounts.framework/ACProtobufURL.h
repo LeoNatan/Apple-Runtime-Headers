@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSString *_value;
 }
 
-@property(retain, nonatomic) NSString *value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *value; // @synthesize value=_value;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

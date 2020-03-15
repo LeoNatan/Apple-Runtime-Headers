@@ -31,11 +31,11 @@ __attribute__((visibility("hidden")))
     unsigned long long _maxCountOfBatchesInFlight;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long inFlightSize; // @synthesize inFlightSize=_inFlightSize;
 @property(nonatomic) unsigned long long maxCountOfBatchesInFlight; // @synthesize maxCountOfBatchesInFlight=_maxCountOfBatchesInFlight;
 @property(readonly, nonatomic) BOOL isCancelled; // @synthesize isCancelled=_isCancelled;
 @property(copy, nonatomic) CDUnknownBlockType streamDidBecomeReadyToTransferRecords; // @synthesize streamDidBecomeReadyToTransferRecords=_streamDidBecomeReadyToTransferRecords;
-- (void).cxx_destruct;
 - (void)suspend;
 - (void)close;
 - (void)cancel;

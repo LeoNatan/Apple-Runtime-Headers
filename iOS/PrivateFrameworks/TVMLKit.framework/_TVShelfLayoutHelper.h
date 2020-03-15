@@ -24,13 +24,13 @@ __attribute__((visibility("hidden")))
     double _tallestColumnHeight;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double tallestColumnHeight; // @synthesize tallestColumnHeight=_tallestColumnHeight;
 @property(readonly, nonatomic) double tallestHeaderHeight; // @synthesize tallestHeaderHeight=_tallestHeaderHeight;
 @property(readonly, nonatomic) double tallestInsetBottom; // @synthesize tallestInsetBottom=_tallestInsetBottom;
 @property(readonly, nonatomic) double tallestInsetTop; // @synthesize tallestInsetTop=_tallestInsetTop;
 @property(readonly, nonatomic) long long actualRowCount; // @synthesize actualRowCount=_actualRowCount;
 @property(readonly, nonatomic) __weak _TVShelfViewLayout *shelfViewLayout; // @synthesize shelfViewLayout=_shelfViewLayout;
-- (void).cxx_destruct;
 - (void)_freeBuffers;
 - (void)_compute;
 - (struct CGRect)frameForItemAtIndexPath:(id)arg1;

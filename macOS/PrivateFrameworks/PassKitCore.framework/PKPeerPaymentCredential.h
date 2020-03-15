@@ -18,12 +18,12 @@
     NSString *_pendingPaymentSenderAddress;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *pendingPaymentSenderAddress; // @synthesize pendingPaymentSenderAddress=_pendingPaymentSenderAddress;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(retain, nonatomic) PKCurrencyAmount *amount; // @synthesize amount=_amount;
 @property(retain, nonatomic) PKPeerPaymentPassDetailsResponse *passDetailsResponse; // @synthesize passDetailsResponse=_passDetailsResponse;
 @property(readonly, nonatomic) PKPeerPaymentAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *pendingPaymentSenderName;
 @property(readonly, copy, nonatomic) NSString *ownershipTokenIdentifier;
 - (id)longDescription;

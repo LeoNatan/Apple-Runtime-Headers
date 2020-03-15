@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     struct vector<LabelNavJunctionInfo, geo::StdAllocator<LabelNavJunctionInfo, mdm::Allocator>> _junctionInfos;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) const shared_ptr_702c344d *tile; // @synthesize tile=_tile;
 @property(readonly, retain, nonatomic) NSMutableArray *oppositeCarriagewayJunctions; // @synthesize oppositeCarriagewayJunctions=_oppositeCarriagewayJunctions;
 @property(nonatomic) _Bool oppositeCarriagewayJunctionsValid; // @synthesize oppositeCarriagewayJunctionsValid=_oppositeCarriagewayJunctionsValid;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)findOppositeCarriagewayJunctionsWithRouteFeatures:(unordered_map_0cbeac3c *)arg1 distanceThreshold:(double)arg2;
 - (void)appendNavJunctionsInWorldRect:(const Box_3d7e3c2c *)arg1 junctions:(id)arg2;
 - (void)initializeJunctionInfos;

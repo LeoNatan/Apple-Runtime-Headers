@@ -84,6 +84,7 @@
 + (id)identifierCode;
 + (id)propertySetsForPropertyFetchHints:(unsigned long long)arg1;
 + (unsigned long long)propertyFetchHintsForPropertySets:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned short lipMakeupType; // @synthesize lipMakeupType=_lipMakeupType;
 @property(readonly, nonatomic) unsigned short eyeMakeupType; // @synthesize eyeMakeupType=_eyeMakeupType;
 @property(readonly, nonatomic) unsigned short glassesType; // @synthesize glassesType=_glassesType;
@@ -124,7 +125,6 @@
 @property(readonly, nonatomic) double centerY; // @synthesize centerY=_centerY;
 @property(readonly, nonatomic) double centerX; // @synthesize centerX=_centerX;
 @property(readonly, nonatomic) double size; // @synthesize size=_size;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isConfirmedFaceCropGenerationPending) BOOL confirmedFaceCropGenerationPending;
 - (id)faceClusteringProperties;
 - (id)_createPropertyObjectOfClass:(Class)arg1;

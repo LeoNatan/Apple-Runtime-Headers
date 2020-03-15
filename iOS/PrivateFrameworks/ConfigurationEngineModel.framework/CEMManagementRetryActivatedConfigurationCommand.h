@@ -21,9 +21,9 @@
 + (id)allowedPayloadKeys;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadConfigurationIdentifier; // @synthesize payloadConfigurationIdentifier=_payloadConfigurationIdentifier;
 @property(copy, nonatomic) NSString *payloadActivationIdentifier; // @synthesize payloadActivationIdentifier=_payloadActivationIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

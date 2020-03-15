@@ -30,6 +30,7 @@
     CDStruct_e83c9415 _trimRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsUntrimmed; // @synthesize showsUntrimmed=_showsUntrimmed;
 @property(copy, nonatomic) NSArray *pipelineFiltersBeforeSeek; // @synthesize pipelineFiltersBeforeSeek=_pipelineFiltersBeforeSeek;
 @property(nonatomic) _Bool didLoopVideoBeforeSeek; // @synthesize didLoopVideoBeforeSeek=_didLoopVideoBeforeSeek;
@@ -44,7 +45,6 @@
 @property(copy, nonatomic) NSArray *fullVideoPipelineFilters; // @synthesize fullVideoPipelineFilters=_fullVideoPipelineFilters;
 @property(nonatomic) __weak id <PXTrimToolPlayerWrapperNUMediaViewPlayerItemSource> playerItemSource; // @synthesize playerItemSource=_playerItemSource;
 @property(nonatomic) __weak id <PXTrimToolPlayerObserver> playerObserver; // @synthesize playerObserver=_playerObserver;
-- (void).cxx_destruct;
 - (void)stopPeriodicTimeObserver;
 - (void)startPeriodicTimeObserver;
 - (void)pause;

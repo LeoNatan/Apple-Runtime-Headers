@@ -16,9 +16,9 @@
 
 + (id)notificationFromRemoteNotificationDictionary:(id)arg1;
 + (Class)__class;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *subscriptionID; // @synthesize subscriptionID=_subscriptionID;
 @property(readonly, nonatomic) long long notificationType; // @synthesize notificationType=_notificationType;
-- (void).cxx_destruct;
 
 @end
 

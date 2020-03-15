@@ -16,9 +16,10 @@
     NSDate *_expirationDate;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(copy, nonatomic) NSString *body; // @synthesize body=_body;
-- (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy, nonatomic) NSData *serializedData;
@@ -30,7 +31,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) Class superclass;
 
 @end

@@ -16,9 +16,9 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) ADInterstitialAd *interstitial; // @synthesize interstitial=_interstitial;
-- (void).cxx_destruct;
 - (void)interstitialAdDidUnload:(id)arg1;
 - (void)interstitialAd:(id)arg1 didFailWithError:(id)arg2;
 - (void)interstitialAdDidLoad:(id)arg1;

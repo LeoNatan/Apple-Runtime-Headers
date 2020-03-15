@@ -13,8 +13,8 @@
     NSDictionary *_definition;
 }
 
-@property(readonly, nonatomic) NSDictionary *definition; // @synthesize definition=_definition;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *definition; // @synthesize definition=_definition;
 - (void)getStringRepresentation:(CDUnknownBlockType)arg1 withInput:(id)arg2 parameters:(id)arg3;
 - (void)getContentCollection:(CDUnknownBlockType)arg1 withInput:(id)arg2 parameters:(id)arg3;
 @property(readonly, nonatomic) NSOrderedSet *contentItemClasses;

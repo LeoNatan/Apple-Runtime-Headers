@@ -15,6 +15,7 @@
 + (id)acui_specifierForAppWithBundleID:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4;
 + (id)acui_linkListCellSpecifierForDataclass:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4 detail:(Class)arg5;
 + (id)acui_specifierForDataclass:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4;
++ (id)acui_specifierIconForAccountTypeIdentifier:(id)arg1;
 + (id)acui_iconForDataclass:(id)arg1;
 + (id)_bundle;
 - (id)acui_appBundleID;

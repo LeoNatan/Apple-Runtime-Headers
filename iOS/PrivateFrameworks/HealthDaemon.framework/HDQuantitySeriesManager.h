@@ -15,8 +15,8 @@
     HDProfile *_profile;
 }
 
-@property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void)_notifyForValues:(id)arg1 series:(id)arg2 anchor:(id)arg3 journaled:(_Bool)arg4;
 - (id)_observersForType:(id)arg1;
 - (void)removeObserver:(id)arg1 forType:(id)arg2;

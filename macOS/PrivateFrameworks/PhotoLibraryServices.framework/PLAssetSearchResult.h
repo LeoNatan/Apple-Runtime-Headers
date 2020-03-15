@@ -13,8 +13,8 @@
     NSDate *_sortDate;
 }
 
-@property(readonly, nonatomic) NSDate *sortDate; // @synthesize sortDate=_sortDate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDate *sortDate; // @synthesize sortDate=_sortDate;
 @property(readonly, nonatomic) NSArray *assetUUIDs;
 - (unsigned long long)assetCount;
 - (id)keyAssetUUID;

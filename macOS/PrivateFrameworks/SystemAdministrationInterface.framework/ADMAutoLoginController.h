@@ -20,6 +20,7 @@
 }
 
 + (id)sharedAutoLoginController;
+- (void).cxx_destruct;
 @property(retain) ADMLoginPrefs *loginPrefs; // @synthesize loginPrefs=_loginPrefs;
 @property long long guestUserIndex; // @synthesize guestUserIndex=_guestUserIndex;
 @property(retain) NSTextField *autologinSheetPasswordLabel; // @synthesize autologinSheetPasswordLabel=_autologinSheetPasswordLabel;
@@ -27,7 +28,6 @@
 @property(retain) NSSecureTextField *autologinSheetPassword; // @synthesize autologinSheetPassword=_autologinSheetPassword;
 @property(retain) NSPopUpButton *autologinSheetPopUp; // @synthesize autologinSheetPopUp=_autologinSheetPopUp;
 @property(retain) NSWindow *autologinSheet; // @synthesize autologinSheet=_autologinSheet;
-- (void).cxx_destruct;
 - (void)autologinSheetCancel:(id)arg1;
 - (void)autologinUserDidChange:(id)arg1;
 - (void)autologinSheetOk:(id)arg1;

@@ -21,6 +21,7 @@
     NSMutableSet *_browseAssertions;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *browseAssertions; // @synthesize browseAssertions=_browseAssertions;
 @property(retain) NWRemoteConnectionDirector *connectionDirector; // @synthesize connectionDirector=_connectionDirector;
 @property(retain) NSData *flowDivertTokenHMACKey; // @synthesize flowDivertTokenHMACKey=_flowDivertTokenHMACKey;
@@ -29,7 +30,6 @@
 @property(retain) NEFlowDivertFileHandle *flowDivertControl; // @synthesize flowDivertControl=_flowDivertControl;
 @property struct _NEFlowDirector *flowDivertDirector; // @synthesize flowDivertDirector=_flowDivertDirector;
 @property(nonatomic) BOOL supportsBrowseRequests; // @synthesize supportsBrowseRequests=_supportsBrowseRequests;
-- (void).cxx_destruct;
 - (void)handleUnassertFromClient:(id)arg1;
 - (void)handleAssertFromClient:(id)arg1;
 - (BOOL)setDiscoveredEndpoints:(id)arg1 forClient:(id)arg2;

@@ -18,8 +18,8 @@
 }
 
 + (id)sessionWithConfiguration:(id)arg1 uploader:(id)arg2 queue:(id)arg3;
-@property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
 - (id)_responseForFinishedTask:(id)arg1;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;

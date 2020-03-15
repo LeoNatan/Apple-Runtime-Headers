@@ -39,6 +39,7 @@
     struct UIEdgeInsets _originalContentInset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double zoomStartScale; // @synthesize zoomStartScale=_zoomStartScale;
 @property(nonatomic) struct CGPoint textViewContentOffsetStartLocation; // @synthesize textViewContentOffsetStartLocation=_textViewContentOffsetStartLocation;
 @property(nonatomic) struct CGPoint zoomStartLocationInAttachment; // @synthesize zoomStartLocationInAttachment=_zoomStartLocationInAttachment;
@@ -61,7 +62,6 @@
 @property(nonatomic) double zoomScale; // @synthesize zoomScale=_zoomScale;
 @property(nonatomic) __weak NSTextAttachment *textAttachment; // @synthesize textAttachment=_textAttachment;
 @property(readonly, nonatomic) UIView *tileScaleView; // @synthesize tileScaleView=_tileScaleView;
-- (void).cxx_destruct;
 - (void)resetZoom;
 - (void)drawingDataDidChange:(id)arg1;
 - (id)dataForTextAttachment:(id)arg1;

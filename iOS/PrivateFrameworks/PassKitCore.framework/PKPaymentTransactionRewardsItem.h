@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long eligibleValueUnit; // @synthesize eligibleValueUnit=_eligibleValueUnit;
 @property(retain, nonatomic) NSDecimalNumber *eligibleValue; // @synthesize eligibleValue=_eligibleValue;
 @property(retain, nonatomic) PKCurrencyAmount *currencyAmount; // @synthesize currencyAmount=_currencyAmount;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqualToRewardsItem:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

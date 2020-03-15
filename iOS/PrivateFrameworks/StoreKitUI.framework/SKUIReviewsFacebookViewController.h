@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     SKUIReviewsFacebookView *_facebookView;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) SKUIFacebookLikeStatus *facebookLikeStatus; // @synthesize facebookLikeStatus=_facebookLikeStatus;
 @property(nonatomic) __weak id <SKUIReviewsFacebookViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_reloadFacebookView;
 - (void)_changeStatusToUserLiked:(_Bool)arg1;
 - (void)_toggleLike:(id)arg1;

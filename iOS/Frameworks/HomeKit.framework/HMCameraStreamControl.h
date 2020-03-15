@@ -18,8 +18,8 @@
     _HMCameraStreamControl *_streamControl;
 }
 
-@property(retain, nonatomic) _HMCameraStreamControl *streamControl; // @synthesize streamControl=_streamControl;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _HMCameraStreamControl *streamControl; // @synthesize streamControl=_streamControl;
 - (void)cameraStreamControl:(id)arg1 didStopStream:(id)arg2;
 - (void)cameraStreamControlDidStartStream:(id)arg1;
 - (void)stopStream;

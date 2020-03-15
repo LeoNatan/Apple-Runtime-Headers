@@ -16,8 +16,8 @@
     id <FCAppleAccount> _appleAccount;
 }
 
-@property(readonly, nonatomic) id <FCAppleAccount> appleAccount; // @synthesize appleAccount=_appleAccount;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <FCAppleAccount> appleAccount; // @synthesize appleAccount=_appleAccount;
 @property(readonly, nonatomic) NSString *storeFrontIdentifier;
 - (id)initWithAppleAccount:(id)arg1;
 

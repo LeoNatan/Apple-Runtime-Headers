@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     unsigned long long _samplingStartTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long samplingStartTime; // @synthesize samplingStartTime=_samplingStartTime;
 @property(nonatomic) unsigned long long cumulativeSamplingTime; // @synthesize cumulativeSamplingTime=_cumulativeSamplingTime;
 @property(nonatomic) _Bool pollingClient; // @synthesize pollingClient=_pollingClient;
 @property(nonatomic) unsigned long long samplingInterval; // @synthesize samplingInterval=_samplingInterval;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 
 @end
 

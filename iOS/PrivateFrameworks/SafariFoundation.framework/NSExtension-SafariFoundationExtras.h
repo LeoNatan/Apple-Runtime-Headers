@@ -9,6 +9,7 @@
 @class NSString;
 
 @interface NSExtension (SafariFoundationExtras)
+- (void)_sf_addHandlerForRequestIdentifier:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 @property(readonly, copy, nonatomic) NSString *sf_bundleIdentifierForContainingApp;
 @end
 

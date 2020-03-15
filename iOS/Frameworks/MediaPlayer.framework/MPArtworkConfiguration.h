@@ -14,8 +14,8 @@
 }
 
 + (id)systemConfiguration;
-@property(retain, nonatomic) ML3ArtworkConfiguration *artworkConfiguration; // @synthesize artworkConfiguration=_artworkConfiguration;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ML3ArtworkConfiguration *artworkConfiguration; // @synthesize artworkConfiguration=_artworkConfiguration;
 - (id)description;
 - (id)sizesToAutogenerateForMediaType:(unsigned long long)arg1 artworkType:(long long)arg2;
 - (id)supportedSizesForMediaType:(unsigned long long)arg1 artworkType:(long long)arg2;

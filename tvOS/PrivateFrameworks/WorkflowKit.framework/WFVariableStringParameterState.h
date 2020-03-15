@@ -17,12 +17,11 @@
 }
 
 + (Class)processingValueClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long userInputInsertionIndex; // @synthesize userInputInsertionIndex=_userInputInsertionIndex;
 @property(readonly, copy, nonatomic) WFVariableString *variableString; // @synthesize variableString=_variableString;
-- (void).cxx_destruct;
 - (id)parameterStateByRemovingAskVariablesAndPopulatingInsertionIndex;
-- (void)processWithVariableSource:(id)arg1 parameter:(id)arg2 isInputParameter:(_Bool)arg3 userInputRequiredHandler:(CDUnknownBlockType)arg4 valueHandler:(CDUnknownBlockType)arg5;
-- (void)processWithVariableSource:(id)arg1 parameter:(id)arg2 userInputRequiredHandler:(CDUnknownBlockType)arg3 valueHandler:(CDUnknownBlockType)arg4;
+- (void)processWithContext:(id)arg1 userInputRequiredHandler:(CDUnknownBlockType)arg2 valueHandler:(CDUnknownBlockType)arg3;
 - (id)containedVariables;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

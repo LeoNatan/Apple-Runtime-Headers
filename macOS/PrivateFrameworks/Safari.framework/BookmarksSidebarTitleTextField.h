@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     BookmarksSidebarTableCellView *_bookmarksSidebarTableCellView;
 }
 
-@property(nonatomic) __weak BookmarksSidebarTableCellView *bookmarksSidebarTableCellView; // @synthesize bookmarksSidebarTableCellView=_bookmarksSidebarTableCellView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak BookmarksSidebarTableCellView *bookmarksSidebarTableCellView; // @synthesize bookmarksSidebarTableCellView=_bookmarksSidebarTableCellView;
 - (void)bookmarksSidebarTitleTextViewResignFirstResponder;
 - (void)bookmarksSidebarTitleTextViewBecameFirstResponder;
 - (struct NSEdgeInsets)alignmentRectInsets;

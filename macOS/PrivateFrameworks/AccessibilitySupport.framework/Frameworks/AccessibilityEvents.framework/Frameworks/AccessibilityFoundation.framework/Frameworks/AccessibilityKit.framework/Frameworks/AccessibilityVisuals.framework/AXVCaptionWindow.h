@@ -18,12 +18,12 @@
     NSTextView *__captionTextHistoryTextView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setCaptionTextHistoryTextView:) NSTextView *_captionTextHistoryTextView; // @synthesize _captionTextHistoryTextView=__captionTextHistoryTextView;
 @property(retain, nonatomic, setter=_setCaptionTextHistoryWindow:) NSWindow *_captionTextHistoryWindow; // @synthesize _captionTextHistoryWindow=__captionTextHistoryWindow;
 @property(nonatomic, setter=_setNumberOfCaptionTextLinesToShow:) long long _numberOfCaptionTextLinesToShow; // @synthesize _numberOfCaptionTextLinesToShow=__numberOfCaptionTextLinesToShow;
 @property(retain, nonatomic, setter=_setCaptionTextView:) AXVCaptionTextView *_captionTextView; // @synthesize _captionTextView=__captionTextView;
 @property(nonatomic) __weak id <AXVCaptionWindowActionDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;
-- (void).cxx_destruct;
 - (long long)_numberOfCaptionTextLinesToShowForHeight:(double)arg1;
 - (double)_lineHeightForTextView:(id)arg1;
 - (double)_heightToShowNumberOfLines:(long long)arg1;

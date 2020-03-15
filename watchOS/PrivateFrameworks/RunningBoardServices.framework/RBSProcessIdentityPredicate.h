@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsBSXPCSecureCoding;
-@property(readonly, nonatomic) RBSProcessIdentity *identity; // @synthesize identity=_identity;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) RBSProcessIdentity *identity; // @synthesize identity=_identity;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;
 - (id)description;

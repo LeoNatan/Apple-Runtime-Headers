@@ -23,11 +23,11 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) BLTSectionInfoList *sectionInfoList; // @synthesize sectionInfoList=_sectionInfoList;
 @property(readonly, nonatomic) BLTSectionInfoStore *sectionInfoStore; // @synthesize sectionInfoStore=_sectionInfoStore;
 @property(nonatomic) __weak id <BLTSettingSyncDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)watchKitAppList:(id)arg1 added:(id)arg2 removed:(id)arg3;
 - (void)_handleReceivedRemoveSectionInfoForSectionID:(id)arg1;
 - (void)_handleReceivedUpdatedSectionInfoForSectionID:(id)arg1;

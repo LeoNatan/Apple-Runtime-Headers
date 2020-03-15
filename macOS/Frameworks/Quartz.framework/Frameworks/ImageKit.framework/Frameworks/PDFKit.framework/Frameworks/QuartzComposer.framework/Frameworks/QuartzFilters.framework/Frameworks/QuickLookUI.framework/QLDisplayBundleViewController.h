@@ -33,6 +33,7 @@
 + (id)keyPathsForValuesAffectingProgress;
 + (id)keyPathsForValuesAffectingCurrentPage;
 + (id)keyPathsForValuesAffectingOverlayFrame;
+- (void).cxx_destruct;
 @property(retain) STLockoutViewController *lockoutViewController; // @synthesize lockoutViewController=_lockoutViewController;
 @property(retain) QLMarkupController *markupController; // @synthesize markupController=_markupController;
 @property struct CGRect customRolloverFrame; // @synthesize customRolloverFrame=_customRolloverFrame;
@@ -43,7 +44,6 @@
 @property(retain) QLOverlayBorderView *borderView; // @synthesize borderView=_borderView;
 @property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak QLDisplayBundle *displayBundle; // @synthesize displayBundle=_displayBundle;
-- (void).cxx_destruct;
 - (void)didSave:(BOOL)arg1 toURL:(id)arg2;
 - (void)editOccuredOnPage:(long long)arg1;
 - (void)markupBecameDirty:(BOOL)arg1;

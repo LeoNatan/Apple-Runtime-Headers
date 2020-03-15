@@ -30,6 +30,7 @@
 + (id)imageWithURL:(id)arg1 assetWidth:(unsigned long long)arg2 assetHeight:(unsigned long long)arg3 imageCreationOptions:(id)arg4 adjustmentVersion:(id)arg5 creationDate:(id)arg6;
 + (id)imageWithCIImage:(id)arg1 assetWidth:(unsigned long long)arg2 assetHeight:(unsigned long long)arg3 orientation:(unsigned int)arg4 adjustmentVersion:(id)arg5 creationDate:(id)arg6;
 + (id)imageWithCGImage:(struct CGImage *)arg1 orientation:(unsigned int)arg2 adjustmentVersion:(id)arg3 creationDate:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 @property(readonly, copy, nonatomic) NSURL *imageURL; // @synthesize imageURL=_imageURL;
 @property(readonly, nonatomic) struct CGImage *CGImage; // @synthesize CGImage=_CGImage;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic) unsigned long long width; // @synthesize width=_width;
 @property(readonly, nonatomic) unsigned long long assetHeight; // @synthesize assetHeight=_assetHeight;
 @property(readonly, nonatomic) unsigned long long assetWidth; // @synthesize assetWidth=_assetWidth;
-- (void).cxx_destruct;
 - (struct CGRect)imageRectForNormalizedRect:(struct CGRect)arg1;
 - (void)dealloc;
 - (id)initWithURL:(id)arg1 assetWidth:(unsigned long long)arg2 assetHeight:(unsigned long long)arg3 imageCreationOptions:(id)arg4 adjustmentVersion:(id)arg5 creationDate:(id)arg6;

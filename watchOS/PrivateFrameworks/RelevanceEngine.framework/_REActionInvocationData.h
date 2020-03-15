@@ -15,10 +15,10 @@
     unsigned int _count;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int count; // @synthesize count=_count;
 @property(nonatomic) _Bool remote; // @synthesize remote=_remote;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 
 @end
 

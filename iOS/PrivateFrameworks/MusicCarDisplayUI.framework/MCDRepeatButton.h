@@ -14,9 +14,9 @@
     UIImage *_repeatOneImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *repeatOneImage; // @synthesize repeatOneImage=_repeatOneImage;
 @property(retain, nonatomic) UIImage *repeatImage; // @synthesize repeatImage=_repeatImage;
-- (void).cxx_destruct;
 - (void)setRepeatType:(long long)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

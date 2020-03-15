@@ -25,13 +25,13 @@
 + (_Bool)eraseAllDataAtLocationName:(id)arg1 error:(id *)arg2;
 + (void)ABInitialize;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ABSAddressBookContextStorage *sources; // @synthesize sources=_sources;
 @property(retain, nonatomic) ABSAddressBookContextStorage *groups; // @synthesize groups=_groups;
 @property(readonly, nonatomic) ABSBulkFaultHandler *faultHandler; // @synthesize faultHandler=_faultHandler;
 @property(readonly, nonatomic) CNFuture *storeFuture; // @synthesize storeFuture=_storeFuture;
 @property(readonly) ABSChangeCallbacks *changeCallbacks; // @synthesize changeCallbacks=_changeCallbacks;
 @property(retain, nonatomic) ABSAddressBookContextStorage *contacts; // @synthesize contacts=_contacts;
-- (void).cxx_destruct;
 - (int)saveSequenceCount;
 - (id)uniqueDatabaseVersionIdentifier;
 - (id)groupsInSource:(id)arg1;

@@ -29,6 +29,7 @@
 
 + (id)logCategory;
 + (id)calculateUpdatedTokenFrom:(id)arg1 updates:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NAFuture *shutdownFuture; // @synthesize shutdownFuture=_shutdownFuture;
 @property(nonatomic) _Bool hasStartedUp; // @synthesize hasStartedUp=_hasStartedUp;
 @property(readonly, nonatomic) HMBLocalSQLContext *sql; // @synthesize sql=_sql;
@@ -41,11 +42,11 @@
 @property(readonly, nonatomic) id <HMBLocalZoneID> zoneID; // @synthesize zoneID=_zoneID;
 @property(readonly, nonatomic) HMBModelContainer *modelContainer; // @synthesize modelContainer=_modelContainer;
 @property(nonatomic) __weak HMBLocalDatabase *localDatabase; // @synthesize localDatabase=_localDatabase;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)logIdentifier;
 - (_Bool)shouldLogPrivateInformation;
 - (id)shutdown;
+- (id)removeOrphanedModelsOfTypes:(id)arg1 options:(id)arg2;
 - (id)removeAllModelsOfTypes:(id)arg1 options:(id)arg2;
 - (id)removeModelsAndChildModelsWithIDs:(id)arg1 options:(id)arg2;
 - (id)remove:(id)arg1 options:(id)arg2;
@@ -91,6 +92,7 @@
 - (id)fetchItemsInBlock:(id)arg1 error:(id *)arg2;
 - (id)fetchReadyBlocksWithType:(unsigned int)arg1 error:(id *)arg2;
 - (unsigned int)insertBlockToRemoveAllModelsAndChildModelsWithType:(unsigned int)arg1 modelIDs:(id)arg2 options:(id)arg3 error:(id *)arg4;
+- (unsigned int)insertBlockToRemoveOrphanedModelsWithType:(unsigned int)arg1 modelTypes:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (unsigned int)insertBlockToRemoveAllModelsWithType:(unsigned int)arg1 modelTypes:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (unsigned int)insertBlockWithType:(unsigned int)arg1 options:(id)arg2 items:(id)arg3 error:(id *)arg4;
 - (id)createInputBlockWithType:(unsigned int)arg1 error:(id *)arg2;

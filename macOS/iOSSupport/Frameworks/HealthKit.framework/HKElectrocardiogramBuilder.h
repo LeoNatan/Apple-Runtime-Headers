@@ -15,10 +15,10 @@
     HKQuantity *_frequency;
 }
 
-@property(retain, nonatomic) HKQuantity *frequency; // @synthesize frequency=_frequency;
-@property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HKQuantity *frequency; // @synthesize frequency=_frequency;
+@property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 - (id)finishWithDevice:(id)arg1 metadata:(id)arg2;
 - (void)addValue:(float)arg1 lead:(unsigned long long)arg2;
 - (id)initWithStartDate:(id)arg1 frequency:(id)arg2;

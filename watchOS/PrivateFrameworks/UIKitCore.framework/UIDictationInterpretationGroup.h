@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isLowConfidence; // @synthesize isLowConfidence=_isLowConfidence;
 @property(readonly, nonatomic) NSArray *interpretations; // @synthesize interpretations=_interpretations;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) UIDictationInterpretation *bestInterpretation;
 @property(readonly, nonatomic) double bestConfidenceScore;

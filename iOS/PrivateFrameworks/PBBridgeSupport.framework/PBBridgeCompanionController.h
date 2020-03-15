@@ -51,6 +51,7 @@
 + (id)displayNameWithFirstName:(id)arg1 lastName:(id)arg2;
 + (void)iCloudFirstName:(id *)arg1 lastName:(id *)arg2;
 + (void)meCardFirstName:(id *)arg1 lastName:(id *)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) int activationRetries; // @synthesize activationRetries=_activationRetries;
 @property(nonatomic) _Bool selectedPairedUnlock; // @synthesize selectedPairedUnlock=_selectedPairedUnlock;
 @property(nonatomic) _Bool passcodeSet; // @synthesize passcodeSet=_passcodeSet;
@@ -81,7 +82,6 @@
 @property(nonatomic) __weak id <PBBridgeConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <RUILoaderDelegate> ruiDelegate; // @synthesize ruiDelegate=_ruiDelegate;
 @property(retain, nonatomic) RUIStyle *remoteUIStyle; // @synthesize remoteUIStyle=_remoteUIStyle;
-- (void).cxx_destruct;
 - (void)sendBuysOnWatchUsername:(id)arg1 andPassword:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (id)reporterForConnection:(id)arg1;
 - (void)setReporter:(id)arg1 forConnection:(id)arg2;

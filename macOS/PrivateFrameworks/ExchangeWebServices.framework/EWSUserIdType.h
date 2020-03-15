@@ -19,11 +19,11 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) long long DistinguishedUser; // @synthesize DistinguishedUser=_DistinguishedUser;
 @property(copy, nonatomic) NSString *DisplayName; // @synthesize DisplayName=_DisplayName;
 @property(copy, nonatomic) NSString *PrimarySmtpAddress; // @synthesize PrimarySmtpAddress=_PrimarySmtpAddress;
 @property(copy, nonatomic) NSString *SID; // @synthesize SID=_SID;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

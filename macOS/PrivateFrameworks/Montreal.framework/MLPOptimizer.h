@@ -15,9 +15,9 @@
 }
 
 + (id)optimizerWithNetwork:(id)arg1 momentum:(CDUnknownBlockType)arg2 velocity:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(readonly) __weak MLPNetwork *network; // @synthesize network=_network;
 @property(readonly) MPSNNOptimizer *mpsOptimizer; // @synthesize mpsOptimizer=_mpsOptimizer;
-- (void).cxx_destruct;
 - (void)updateLearningRate:(float)arg1;
 - (void)encodeToCommandBuffer:(id)arg1 inputGradientMatrix:(id)arg2 inputValuesMatrix:(id)arg3;
 - (void)encodeToCommandBuffer:(id)arg1 inputGradientVector:(id)arg2 inputValuesVector:(id)arg3;

@@ -18,9 +18,9 @@
 
 + (void)unregisterStandaloneApplier:(id)arg1;
 + (void)registerStandaloneApplier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (BOOL)complete:(BOOL)arg1;
 - (BOOL)_hasCompleted;
 - (BOOL)cancel;

@@ -21,9 +21,9 @@
     id <PHAssetCollectionDataSource> _dataSource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PHAssetCollectionDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) long long options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)_shouldUniqueAssets;
 - (void)_endSelectionChange;

@@ -24,6 +24,7 @@
     NSString *_assistantDeviceIntendedRecognitionLanguage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *assistantDeviceIntendedRecognitionLanguage; // @synthesize assistantDeviceIntendedRecognitionLanguage=_assistantDeviceIntendedRecognitionLanguage;
 @property(retain, nonatomic) NSDictionary *usageOptions; // @synthesize usageOptions=_usageOptions;
 @property(nonatomic) unsigned long long languageOnboardingFlowType; // @synthesize languageOnboardingFlowType=_languageOnboardingFlowType;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) UIViewController<HUConfigurationViewController> *initialViewController; // @synthesize initialViewController=_initialViewController;
 @property(retain, nonatomic) NAFuture *onboardingFuture; // @synthesize onboardingFuture=_onboardingFuture;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)processUserInput:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)_determineNextViewControllerWithPriorResults:(id)arg1;

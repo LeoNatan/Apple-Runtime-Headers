@@ -26,10 +26,10 @@
 + (struct CGAffineTransform)transformForState:(long long)arg1 position:(long long)arg2 device:(id)arg3;
 + (id)layoutRuleForState:(long long)arg1 position:(long long)arg2 faceBounds:(struct CGRect)arg3 forDevice:(id)arg4 narrowTopSlots:(_Bool)arg5;
 + (struct CGSize)viewSizeForDevice:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double outerComponentRotationInDegree; // @synthesize outerComponentRotationInDegree=_outerComponentRotationInDegree;
 @property(nonatomic) double innerComponentRotationInDegree; // @synthesize innerComponentRotationInDegree=_innerComponentRotationInDegree;
 @property(nonatomic) long long position; // @synthesize position=_position;
-- (void).cxx_destruct;
 - (void)_transitToHighlightState:(_Bool)arg1 fraction:(double)arg2;
 - (void)_editingDidEnd;
 - (void)_setWhistlerAnalogEditingTransitonFraction:(double)arg1 direction:(long long)arg2 position:(long long)arg3;

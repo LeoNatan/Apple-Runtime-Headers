@@ -22,12 +22,12 @@
 + (id)defaultPropertyValues;
 + (id)requiredProperties;
 + (id)primaryKey;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) _Bool shouldPrompt; // @synthesize shouldPrompt=_shouldPrompt;
 @property(copy, nonatomic) NSData *triggerData; // @synthesize triggerData=_triggerData;
 @property(copy, nonatomic) NSString *workflowID; // @synthesize workflowID=_workflowID;
 @property(copy, nonatomic) NSString *triggerID; // @synthesize triggerID=_triggerID;
-- (void).cxx_destruct;
 - (id)trigger;
 - (void)coordinatePropertyUpdatesForRecord:(id)arg1 duringBlock:(CDUnknownBlockType)arg2;
 - (id)descriptor;

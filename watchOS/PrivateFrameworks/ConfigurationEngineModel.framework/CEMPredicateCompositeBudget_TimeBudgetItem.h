@@ -17,9 +17,9 @@
 + (id)buildRequiredOnlyWithSeconds:(id)arg1;
 + (id)buildWithSeconds:(id)arg1 withDays:(id)arg2;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *payloadDays; // @synthesize payloadDays=_payloadDays;
 @property(copy, nonatomic) NSNumber *payloadSeconds; // @synthesize payloadSeconds=_payloadSeconds;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

@@ -22,12 +22,12 @@
 }
 
 + (id)dismissControlWithMaterialRecipe:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_backgroundMaterialView) MTMaterialView *backgroundMaterialView; // @synthesize backgroundMaterialView=_backgroundMaterialView;
 @property(retain, nonatomic, getter=_glyphView) UIImageView *glyphView; // @synthesize glyphView=_glyphView;
 @property(nonatomic, getter=isBlurEnabled) _Bool blurEnabled; // @synthesize blurEnabled=_blurEnabled;
 @property(nonatomic) long long visualStyle; // @synthesize visualStyle=_visualStyle;
 @property(readonly, nonatomic) long long materialRecipe; // @synthesize materialRecipe=_materialRecipe;
-- (void).cxx_destruct;
 - (void)_configureBackgroundMaterialViewIfNecessary;
 - (void)_configureMaterialView:(id *)arg1 ifNecessaryWithConfiguration:(long long)arg2 positioningAtIndex:(unsigned long long)arg3;
 - (void)_configureGlyphViewIfNecessaryWithImage:(id)arg1;

@@ -37,6 +37,7 @@
 
 + (Class)complicationsType;
 + (Class)reasonsType;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int invalidatedFramesUpTo6MinutesCount; // @synthesize invalidatedFramesUpTo6MinutesCount=_invalidatedFramesUpTo6MinutesCount;
 @property(nonatomic) unsigned int invalidatedFramesUpTo5MinutesCount; // @synthesize invalidatedFramesUpTo5MinutesCount=_invalidatedFramesUpTo5MinutesCount;
 @property(nonatomic) unsigned int invalidatedFramesUpTo4MinutesCount; // @synthesize invalidatedFramesUpTo4MinutesCount=_invalidatedFramesUpTo4MinutesCount;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) NSMutableArray *reasons; // @synthesize reasons=_reasons;
 @property(nonatomic) unsigned int invalidationCount; // @synthesize invalidationCount=_invalidationCount;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

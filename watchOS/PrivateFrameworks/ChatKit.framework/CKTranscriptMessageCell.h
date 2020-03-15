@@ -15,9 +15,9 @@
 }
 
 + (float)failureButtonWidthPlusSpacing;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *failureButton; // @synthesize failureButton=_failureButton;
 @property(nonatomic) _Bool wantsContactImageLayout; // @synthesize wantsContactImageLayout=_wantsContactImageLayout;
-- (void).cxx_destruct;
 - (id)contactImageView;
 @property(readonly, nonatomic) _Bool failureButtonAdjustsContentAlignmentRect;
 @property(nonatomic) _Bool failed;

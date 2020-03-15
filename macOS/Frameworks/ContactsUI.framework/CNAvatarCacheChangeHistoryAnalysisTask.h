@@ -18,13 +18,13 @@
     NSArray *_identifiers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *identifiers; // @synthesize identifiers=_identifiers;
 @property(retain, nonatomic) NSData *finalToken; // @synthesize finalToken=_finalToken;
 @property(retain, nonatomic) CNResult *enumerator; // @synthesize enumerator=_enumerator;
 @property(retain, nonatomic) CNChangeHistoryFetchRequest *request; // @synthesize request=_request;
 @property(readonly, nonatomic) NSData *startingToken; // @synthesize startingToken=_startingToken;
 @property(readonly, nonatomic) CNContactStore *store; // @synthesize store=_store;
-- (void).cxx_destruct;
 - (void)extractIdentifiers;
 - (void)executeRequest;
 - (void)makeRequest;

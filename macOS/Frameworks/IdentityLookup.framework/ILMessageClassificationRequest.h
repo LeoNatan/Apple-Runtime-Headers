@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSArray *messageCommunications; // @synthesize messageCommunications=_messageCommunications;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *messageCommunications; // @synthesize messageCommunications=_messageCommunications;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)hash;

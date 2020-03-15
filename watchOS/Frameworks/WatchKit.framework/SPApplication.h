@@ -29,10 +29,10 @@
 + (_Bool)_wantsApplicationBehaviorAsExtension;
 + (void)setRunningWKUnitTestApp;
 + (id)sharedSPApplication;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *extensionResumeTestOptions; // @synthesize extensionResumeTestOptions=_extensionResumeTestOptions;
 @property(retain, nonatomic) NSString *extensionResumeTestName; // @synthesize extensionResumeTestName=_extensionResumeTestName;
 @property(nonatomic) double applicationDidFinishLaunchingTime; // @synthesize applicationDidFinishLaunchingTime=_applicationDidFinishLaunchingTime;
-- (void).cxx_destruct;
 - (void)didReceiveNonClockKitEvent;
 - (void)handleWatchActions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)runTest:(id)arg1 options:(id)arg2;

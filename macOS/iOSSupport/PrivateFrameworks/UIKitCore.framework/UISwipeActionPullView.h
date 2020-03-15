@@ -31,6 +31,7 @@
     struct UIEdgeInsets _contentInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(nonatomic) BOOL autosizesButtons; // @synthesize autosizesButtons=_autosizesButtons;
 @property(nonatomic) BOOL buttonsUnderlapSwipedView; // @synthesize buttonsUnderlapSwipedView=_buttonsUnderlapSwipedView;
@@ -39,7 +40,6 @@
 @property(nonatomic) id <UISwipeActionPullViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) double currentOffset; // @synthesize currentOffset=_currentOffset;
 @property(readonly, nonatomic) unsigned long long cellEdge; // @synthesize cellEdge=_cellEdge;
-- (void).cxx_destruct;
 - (id)description;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_unpressedButton:(id)arg1;

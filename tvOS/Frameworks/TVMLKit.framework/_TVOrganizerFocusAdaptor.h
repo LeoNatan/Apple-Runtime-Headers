@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     _UIFloatingContentView *_selectingView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIFloatingContentView *selectingView; // @synthesize selectingView=_selectingView;
 @property(readonly, nonatomic, getter=isFocused) _Bool focused; // @synthesize focused=_focused;
-- (void).cxx_destruct;
 - (void)_playButtonAction:(id)arg1;
 - (void)_selectButtonAction:(id)arg1;
 - (void)layoutSubviews;

@@ -13,6 +13,7 @@
 __attribute__((visibility("hidden")))
 @interface VUIProductBannerView : UIView <VUIRentalExpirationLabelDelegate>
 {
+    _Bool _isFocusable;
     _Bool _cardUIEnabled;
     IKViewElement *_viewElement;
     VUIProductBannerLayout *_layout;
@@ -20,6 +21,7 @@ __attribute__((visibility("hidden")))
     VUILabel *_logoTextView;
     VUILabel *_subTextView;
     VUILabel *_episodeInfoView;
+    _TVImageView *_logoTextGradientView;
     _TVImageView *_coverArtImageView;
     _TVImageView *_decorationImageView;
     _TVImageView *_decorationImageGradientView;
@@ -29,6 +31,7 @@ __attribute__((visibility("hidden")))
     VUIProductBannerCastInfoView *_castInfoView;
     VUIMediaTagsView *_tagsView;
     VUILabel *_disclaimerTextView;
+    VUILabel *_promoTextView;
     VUILabel *_availabilityTextView;
     _TVImageView *_availabilityImageView;
     double _cardInsets;
@@ -37,13 +40,16 @@ __attribute__((visibility("hidden")))
     UIFocusContainerGuide *_containerGuide;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFocusContainerGuide *containerGuide; // @synthesize containerGuide=_containerGuide;
 @property(nonatomic) _Bool cardUIEnabled; // @synthesize cardUIEnabled=_cardUIEnabled;
 @property(retain, nonatomic) UIView *lastFocusedView; // @synthesize lastFocusedView=_lastFocusedView;
 @property(nonatomic) double cardShowcaseFactor; // @synthesize cardShowcaseFactor=_cardShowcaseFactor;
 @property(nonatomic) double cardInsets; // @synthesize cardInsets=_cardInsets;
+@property(nonatomic) _Bool isFocusable; // @synthesize isFocusable=_isFocusable;
 @property(retain, nonatomic) _TVImageView *availabilityImageView; // @synthesize availabilityImageView=_availabilityImageView;
 @property(retain, nonatomic) VUILabel *availabilityTextView; // @synthesize availabilityTextView=_availabilityTextView;
+@property(retain, nonatomic) VUILabel *promoTextView; // @synthesize promoTextView=_promoTextView;
 @property(retain, nonatomic) VUILabel *disclaimerTextView; // @synthesize disclaimerTextView=_disclaimerTextView;
 @property(retain, nonatomic) VUIMediaTagsView *tagsView; // @synthesize tagsView=_tagsView;
 @property(retain, nonatomic) VUIProductBannerCastInfoView *castInfoView; // @synthesize castInfoView=_castInfoView;
@@ -53,13 +59,14 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _TVImageView *decorationImageGradientView; // @synthesize decorationImageGradientView=_decorationImageGradientView;
 @property(retain, nonatomic) _TVImageView *decorationImageView; // @synthesize decorationImageView=_decorationImageView;
 @property(retain, nonatomic) _TVImageView *coverArtImageView; // @synthesize coverArtImageView=_coverArtImageView;
+@property(retain, nonatomic) _TVImageView *logoTextGradientView; // @synthesize logoTextGradientView=_logoTextGradientView;
 @property(retain, nonatomic) VUILabel *episodeInfoView; // @synthesize episodeInfoView=_episodeInfoView;
 @property(retain, nonatomic) VUILabel *subTextView; // @synthesize subTextView=_subTextView;
 @property(retain, nonatomic) VUILabel *logoTextView; // @synthesize logoTextView=_logoTextView;
 @property(retain, nonatomic) _TVImageView *logoImageView; // @synthesize logoImageView=_logoImageView;
 @property(retain, nonatomic) VUIProductBannerLayout *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
+- (_Bool)canBecomeFocused;
 - (void)_tvOS_layoutSubviews;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

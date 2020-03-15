@@ -46,6 +46,7 @@
 + (long long)_activityStyle;
 + (id)_activityImageForActionRepresentationImage:(id)arg1;
 + (unsigned long long)_xpcAttributes;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *activityUUID; // @synthesize activityUUID=_activityUUID;
 @property(nonatomic) unsigned long long indexInApplicationDefinedActivities; // @synthesize indexInApplicationDefinedActivities=_indexInApplicationDefinedActivities;
 @property(retain, nonatomic) NSArray *preferredLocalizations; // @synthesize preferredLocalizations=_preferredLocalizations;
@@ -53,7 +54,6 @@
 @property(nonatomic) long long maxPreviews; // @synthesize maxPreviews=_maxPreviews;
 @property(copy, nonatomic) CDUnknownBlockType didFinishPerformingActivityHandler; // @synthesize didFinishPerformingActivityHandler=_didFinishPerformingActivityHandler;
 @property(copy, nonatomic) CDUnknownBlockType activityCompletionWithItemsHandler; // @synthesize activityCompletionWithItemsHandler=_activityCompletionWithItemsHandler;
-- (void).cxx_destruct;
 - (void)prepareWithActivityExtensionItemData:(id)arg1;
 - (id)_actionBundleImageConfiguration;
 - (id)_actionImage;

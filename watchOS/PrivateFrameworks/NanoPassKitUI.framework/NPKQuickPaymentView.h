@@ -13,8 +13,8 @@
     UIView *_pageIndicatorViewBackdrop;
 }
 
-@property(retain, nonatomic) UIView *pageIndicatorViewBackdrop; // @synthesize pageIndicatorViewBackdrop=_pageIndicatorViewBackdrop;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *pageIndicatorViewBackdrop; // @synthesize pageIndicatorViewBackdrop=_pageIndicatorViewBackdrop;
 - (_Bool)_shouldProvideActionController;
 - (void)animationCoordinatorDidAddOrRemoveViews:(id)arg1;
 - (void)_updateViewsForUserInteraction:(_Bool)arg1;

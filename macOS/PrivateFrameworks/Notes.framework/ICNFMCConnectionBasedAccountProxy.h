@@ -17,8 +17,8 @@
 
 + (id)accountTypeString;
 + (void)saveAccountInfoToDefaults;
-@property(copy) NSString *primitiveSessionPassword; // @synthesize primitiveSessionPassword=_primitiveSessionPassword;
 - (void).cxx_destruct;
+@property(copy) NSString *primitiveSessionPassword; // @synthesize primitiveSessionPassword=_primitiveSessionPassword;
 - (BOOL)isServerReachable;
 - (BOOL)canAuthenticateWithScheme:(id)arg1;
 - (id)authenticatedConnection;

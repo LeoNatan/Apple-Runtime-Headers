@@ -26,6 +26,7 @@
 }
 
 + (id)namedEntityRecordWithName:(id)arg1 phoneticName:(id)arg2 type:(unsigned char)arg3 languageIdentifier:(id)arg4 contentCreationDate:(id)arg5 detectionDate:(id)arg6 score:(double)arg7 source:(unsigned char)arg8 sourceIdentifier:(id)arg9 donorBundleIdentifier:(id)arg10 detectionAlgorithm:(unsigned int)arg11;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int detectionAlgorithm; // @synthesize detectionAlgorithm=_detectionAlgorithm;
 @property(readonly, nonatomic) NSString *donorBundleIdentifier; // @synthesize donorBundleIdentifier=_donorBundleIdentifier;
 @property(retain, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) unsigned char source; // @synthesize source=_source;
 @property(readonly, nonatomic) NSString *phoneticName; // @synthesize phoneticName=_phoneticName;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 phoneticName:(id)arg2 type:(unsigned char)arg3 languageIdentifier:(id)arg4 contentCreationDate:(id)arg5 detectionDate:(id)arg6 score:(double)arg7 source:(unsigned char)arg8 sourceIdentifier:(id)arg9 donorBundleIdentifier:(id)arg10 detectionAlgorithm:(unsigned int)arg11;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToNamedEntityRecord:(id)arg1;

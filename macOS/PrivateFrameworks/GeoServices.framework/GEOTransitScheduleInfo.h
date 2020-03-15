@@ -32,6 +32,7 @@
 - (id)description;
 @property(retain, nonatomic) GEOTransitEntry *entry;
 @property(readonly, nonatomic) BOOL hasEntry;
+- (id)routingParameters;
 - (id)windowStartDate;
 - (id)staticDepartureDate;
 - (unsigned long long)lineID;

@@ -27,6 +27,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_spellCheckingType, setter=_setSpellCheckingType:) long long spellCheckingType; // @synthesize spellCheckingType=_spellCheckingType;
 @property(nonatomic, getter=_autocorrectionType, setter=_setAutocorrectionType:) long long autocorrectionType; // @synthesize autocorrectionType=_autocorrectionType;
 @property(nonatomic, getter=_autocapitalizationType, setter=_setAutocapitalizationType:) long long autocapitalizationType; // @synthesize autocapitalizationType=_autocapitalizationType;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
 @property(retain, nonatomic) TVRCPINEntryAttributes *PINEntryAttributes; // @synthesize PINEntryAttributes=_PINEntryAttributes;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToAttributes:(id)arg1;

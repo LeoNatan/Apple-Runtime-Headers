@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     NSError *_syncError;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *syncError; // @synthesize syncError=_syncError;
 @property(retain, nonatomic) NSNumber *syncStatus; // @synthesize syncStatus=_syncStatus;
 @property(retain, nonatomic) NSDate *completionDate; // @synthesize completionDate=_completionDate;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *syncGroup; // @synthesize syncGroup=_syncGroup;
 @property(nonatomic, getter=isManatee) _Bool manatee; // @synthesize manatee=_manatee;
 @property(retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
-- (void).cxx_destruct;
 - (void)waitOnSyncWithQueue:(id)arg1 handler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) unsigned long long state;
 

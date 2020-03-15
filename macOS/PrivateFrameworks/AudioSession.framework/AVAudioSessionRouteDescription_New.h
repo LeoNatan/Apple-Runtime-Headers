@@ -15,9 +15,9 @@
     NSArray *_outputs;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *outputs; // @synthesize outputs=_outputs;
 @property(readonly, nonatomic) NSArray *inputs; // @synthesize inputs=_inputs;
-- (void).cxx_destruct;
 - (BOOL)isEqualToRoute:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

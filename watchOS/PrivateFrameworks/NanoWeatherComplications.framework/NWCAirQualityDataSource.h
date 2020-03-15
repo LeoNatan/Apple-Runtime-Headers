@@ -15,8 +15,8 @@
 
 + (id)bundleIdentifier;
 + (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
-@property(retain, nonatomic) NSDate *lastReportedStaleEntryDate; // @synthesize lastReportedStaleEntryDate=_lastReportedStaleEntryDate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *lastReportedStaleEntryDate; // @synthesize lastReportedStaleEntryDate=_lastReportedStaleEntryDate;
 @property(readonly, nonatomic) NWCAirQualityTemplateFormatter *formatter;
 - (id)templateForAirQualityObservations:(id)arg1 currentObservations:(id)arg2 hourlyForecastedConditions:(id)arg3 dailyForecastedConditions:(id)arg4;
 - (id)launchQuery;

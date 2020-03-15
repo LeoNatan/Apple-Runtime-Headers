@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSDate *_dateSent;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *dateSent; // @synthesize dateSent=_dateSent;
 @property(copy, nonatomic) NSURL *attachmentURL; // @synthesize attachmentURL=_attachmentURL;
 @property(copy, nonatomic) NSString *bodyText; // @synthesize bodyText=_bodyText;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *senderAddress; // @synthesize senderAddress=_senderAddress;
 @property(nonatomic) _Bool outbound; // @synthesize outbound=_outbound;
 @property(copy, nonatomic) NSURL *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)createSiriContext;
 - (id)modelObject;

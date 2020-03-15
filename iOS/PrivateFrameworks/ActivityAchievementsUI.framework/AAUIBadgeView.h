@@ -60,12 +60,12 @@
 + (double)badgeAspectRatio;
 + (double)screenScaleMaximum;
 + (double)screenScaleMultiple;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *pauseByNotificationQueueOverride; // @synthesize pauseByNotificationQueueOverride=_pauseByNotificationQueueOverride;
 @property(nonatomic) __weak id <AAUIBadgeViewDelegate> badgeDelegate; // @synthesize badgeDelegate=_badgeDelegate;
 @property(copy, nonatomic) CDUnknownBlockType shortenedBadgeBacksideStringProvider; // @synthesize shortenedBadgeBacksideStringProvider=_shortenedBadgeBacksideStringProvider;
 @property(retain, nonatomic) AAUIBadgeModelConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) _Bool verticalPanningDisabled; // @synthesize verticalPanningDisabled=_verticalPanningDisabled;
-- (void).cxx_destruct;
 - (void)_pauseByNotification:(id)arg1;
 - (void)render360RotationPNGSequenceWithNumberOfFrames:(unsigned long long)arg1;
 - (void)setFixedBadgeAngle:(double)arg1;

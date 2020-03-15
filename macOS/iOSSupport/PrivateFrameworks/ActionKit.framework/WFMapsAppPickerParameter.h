@@ -16,9 +16,9 @@
     NSOrderedSet *_supportedAppIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOrderedSet *supportedAppIdentifiers; // @synthesize supportedAppIdentifiers=_supportedAppIdentifiers;
 - (id)possibleStates;
-- (void).cxx_destruct;
 - (void)appRegistry:(id)arg1 installStatusChangedForApp:(id)arg2;
 - (void)removeObservers;
 - (void)addObservers;

@@ -17,9 +17,9 @@
 }
 
 + (double)defaultHeight;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showsTopKeyline; // @synthesize showsTopKeyline=_showsTopKeyline;
 @property(readonly, nonatomic) NSButton *button; // @synthesize button=_button;
-- (void).cxx_destruct;
 - (void)layout;
 - (id)initWithFrame:(struct CGRect)arg1;
 

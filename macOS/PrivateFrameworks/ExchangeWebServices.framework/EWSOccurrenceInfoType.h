@@ -19,11 +19,11 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateComponents *OriginalStart; // @synthesize OriginalStart=_OriginalStart;
 @property(retain, nonatomic) NSDateComponents *End; // @synthesize End=_End;
 @property(retain, nonatomic) NSDateComponents *Start; // @synthesize Start=_Start;
 @property(retain, nonatomic) EWSItemIdType *ItemId; // @synthesize ItemId=_ItemId;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

@@ -26,6 +26,7 @@
     NSLayoutConstraint *_rightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *rightConstraint; // @synthesize rightConstraint=_rightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *leftConstraint; // @synthesize leftConstraint=_leftConstraint;
 @property(retain, nonatomic) UITextField *textField; // @synthesize textField=_textField;
@@ -35,7 +36,6 @@
 @property(nonatomic) __weak id <HUNameAndIconEditorCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)updateUIWithAnimation:(_Bool)arg1;
 - (void)_handleIconButtonTap:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

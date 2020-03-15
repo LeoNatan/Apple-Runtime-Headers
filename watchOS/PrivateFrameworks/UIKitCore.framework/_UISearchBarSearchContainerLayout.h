@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _visibleCancelButtonSearchFieldLayoutFrame;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType delegateSearchFieldFrameForProposedFrame; // @synthesize delegateSearchFieldFrameForProposedFrame=_delegateSearchFieldFrameForProposedFrame;
 @property(nonatomic) struct UIOffset searchFieldBackgroundPositionAdjustment; // @synthesize searchFieldBackgroundPositionAdjustment=_searchFieldBackgroundPositionAdjustment;
 @property(nonatomic) float searchBarReadableWidth; // @synthesize searchBarReadableWidth=_searchBarReadableWidth;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) UISearchBarTextField *searchField; // @synthesize searchField=_searchField;
 @property(nonatomic) __weak id <_UISearchBarContainerSublayoutDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)applyLayout;
 - (void)updateLayout;
 - (float)searchFieldHeightUpdatingShrinkageAndFadeAlphas;

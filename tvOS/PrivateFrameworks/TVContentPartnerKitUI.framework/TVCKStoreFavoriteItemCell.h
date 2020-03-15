@@ -25,6 +25,7 @@
 + (void)_configureCell:(id)arg1 withStackImageURL:(id)arg2 imageFormat:(long long)arg3 assetType:(long long)arg4 imageSize:(struct CGSize)arg5;
 + (void)_configureCell:(id)arg1 withCompiledArchiveImageURL:(id)arg2 assetType:(long long)arg3 imageSize:(struct CGSize)arg4;
 + (id)_formattedStringForBadgeCount:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVCKBadgeOverlayView *badgeOverlayView; // @synthesize badgeOverlayView=_badgeOverlayView;
 @property(nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
 @property(nonatomic) __weak id <TVCKStoreFavoriteItemCellDelegate> delegate; // @synthesize delegate=_delegate;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSURL *imageURL; // @synthesize imageURL=_imageURL;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(nonatomic) unsigned long long contentCategory; // @synthesize contentCategory=_contentCategory;
-- (void).cxx_destruct;
 - (double)_maxTitleWidthWithFocus:(_Bool)arg1;
 - (id)_animatedTitleLabel;
 - (Class)_labelClass;

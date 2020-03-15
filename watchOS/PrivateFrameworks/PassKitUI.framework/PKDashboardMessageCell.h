@@ -23,6 +23,7 @@
     CDUnknownBlockType _actionOnDismiss;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType actionOnDismiss; // @synthesize actionOnDismiss=_actionOnDismiss;
 @property(retain, nonatomic) UIImage *dismissImage; // @synthesize dismissImage=_dismissImage;
 @property(retain, nonatomic) UIImage *iconImage; // @synthesize iconImage=_iconImage;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) UILabel *labelMessage; // @synthesize labelMessage=_labelMessage;
 @property(readonly, nonatomic) UILabel *labelTitle; // @synthesize labelTitle=_labelTitle;
 @property(nonatomic) _Bool smallDevice; // @synthesize smallDevice=_smallDevice;
-- (void).cxx_destruct;
 - (struct CGSize)_layoutWithBounds:(struct CGRect)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

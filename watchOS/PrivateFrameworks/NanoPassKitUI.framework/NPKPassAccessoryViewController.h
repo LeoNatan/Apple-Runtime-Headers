@@ -18,11 +18,11 @@
 }
 
 + (id)passAccessoryViewControllerForPass:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLSButtonHandler *buttonHandler; // @synthesize buttonHandler=_buttonHandler;
 @property(retain, nonatomic) UITapGestureRecognizer *tapRecognizer; // @synthesize tapRecognizer=_tapRecognizer;
 @property(retain, nonatomic) NPKUIAssertion *fullScreenAssertion; // @synthesize fullScreenAssertion=_fullScreenAssertion;
 @property(nonatomic) __weak id <NPKPassAccessoryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)accessoryImageViewForSize:(struct CGSize)arg1;
 - (void)_unregisterForButtonSinglePress;
 - (void)_registerForButtonSinglePress;

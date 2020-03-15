@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     double _maxSleepInterval;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *throttleDate; // @synthesize throttleDate=_throttleDate;
 @property(nonatomic) unsigned int attemptNumber; // @synthesize attemptNumber=_attemptNumber;
 @property(nonatomic) double maxSleepInterval; // @synthesize maxSleepInterval=_maxSleepInterval;
 @property(nonatomic) double baseSleepInterval; // @synthesize baseSleepInterval=_baseSleepInterval;
-- (void).cxx_destruct;
 - (double)_calculateThrottleInterval;
 - (void)throttle;
 - (_Bool)shouldThrottle;

@@ -44,6 +44,7 @@
     HDWorkoutServer *_workoutServer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDWorkoutServer *workoutServer; // @synthesize workoutServer=_workoutServer;
 @property(retain, nonatomic) HDUtilityServer *utilityServer; // @synthesize utilityServer=_utilityServer;
 @property(retain, nonatomic) HDStaticSyncServer *staticSyncServer; // @synthesize staticSyncServer=_staticSyncServer;
@@ -61,7 +62,6 @@
 @property(readonly, copy, nonatomic) HKHealthStoreConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) HDProfile *profile; // @synthesize profile=_profile;
 @property(readonly, nonatomic) __weak HDDaemon *daemon; // @synthesize daemon=_daemon;
-- (void).cxx_destruct;
 - (void)remote_getIsFeatureSetAvailable:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_getHealthRecordsPlugin;
 - (void)remote_containerAppExtensionEntitlementsWithCompletion:(CDUnknownBlockType)arg1;

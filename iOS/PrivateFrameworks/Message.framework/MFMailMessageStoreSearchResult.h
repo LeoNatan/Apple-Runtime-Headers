@@ -14,9 +14,9 @@
     NSMutableDictionary *_mailboxToRemoteIdDictionary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *mailboxToRemoteIdDictionary; // @synthesize mailboxToRemoteIdDictionary=_mailboxToRemoteIdDictionary;
 @property(retain, nonatomic) NSDate *continueOffset; // @synthesize continueOffset=_continueOffset;
-- (void).cxx_destruct;
 - (void)enumerateMailboxesAndRemoteIDsUsingBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) unsigned long long count;
 - (void)addRemoteID:(id)arg1 mailbox:(id)arg2;

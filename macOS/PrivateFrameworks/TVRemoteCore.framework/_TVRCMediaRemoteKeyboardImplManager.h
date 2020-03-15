@@ -16,8 +16,8 @@
     _TVRCMRTelevisionWrapper *_television;
 }
 
-@property(retain, nonatomic) _TVRCMRTelevisionWrapper *television; // @synthesize television=_television;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _TVRCMRTelevisionWrapper *television; // @synthesize television=_television;
 - (id)keyboardImpl;
 - (id)initWithTelevisionSystemVersion:(id)arg1;
 

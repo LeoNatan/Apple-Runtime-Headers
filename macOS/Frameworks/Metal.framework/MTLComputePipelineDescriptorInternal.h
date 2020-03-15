@@ -31,6 +31,14 @@ __attribute__((visibility("hidden")))
 - (void)setThreadGroupSizeIsMultipleOfThreadExecutionWidth:(BOOL)arg1;
 - (id)pipelineLibrary;
 - (void)setPipelineLibrary:(id)arg1;
+- (void)setDynamicLibraries:(id)arg1;
+- (id)dynamicLibraries;
+- (void)setInsertLibraries:(id)arg1;
+- (id)insertLibraries;
+- (void)setBinaryLibraries:(id)arg1;
+- (id)binaryLibraries;
+- (void)setBinaryArchives:(id)arg1;
+- (id)binaryArchives;
 - (id)driverCompilerOptions;
 - (void)setDriverCompilerOptions:(id)arg1;
 - (id)stageInputDescriptor;

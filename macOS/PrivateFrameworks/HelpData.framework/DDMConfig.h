@@ -15,9 +15,9 @@
 }
 
 + (id)sharedConfig;
+- (void).cxx_destruct;
 @property(retain) NSMapTable *productTable; // @synthesize productTable=_productTable;
 @property(retain) NSDictionary *configDict; // @synthesize configDict=_configDict;
-- (void).cxx_destruct;
 @property(readonly) NSURL *supportSiteURL;
 - (id)bookIDForProductName:(id)arg1;
 - (id)ddmConfigForBookID:(id)arg1;

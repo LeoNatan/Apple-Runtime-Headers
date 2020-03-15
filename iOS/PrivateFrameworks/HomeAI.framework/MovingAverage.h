@@ -16,11 +16,11 @@
     unsigned long long _windowSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long windowSize; // @synthesize windowSize=_windowSize;
 @property(retain, nonatomic) NSMutableArray *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
 @property double movingAverage; // @synthesize movingAverage=_movingAverage;
-- (void).cxx_destruct;
 - (double)movingAverageForInterval:(double)arg1 defaultValue:(double)arg2;
 - (void)addNumber:(id)arg1;
 - (id)initWithWindowSize:(unsigned long long)arg1;

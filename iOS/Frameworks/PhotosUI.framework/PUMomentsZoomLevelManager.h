@@ -20,10 +20,10 @@
     PUCollectionViewIntermediateDataSource *_sharedIntermediateDataSource;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PUCollectionViewIntermediateDataSource *sharedIntermediateDataSource; // @synthesize sharedIntermediateDataSource=_sharedIntermediateDataSource;
 @property(retain, nonatomic) PUSessionInfo *sessionInfo; // @synthesize sessionInfo=_sessionInfo;
 @property(readonly, nonatomic) PUZoomableGridViewControllerSpec *zoomableGridSpec; // @synthesize zoomableGridSpec=_zoomableGridSpec;
-- (void).cxx_destruct;
 - (void)photosDataSource:(id)arg1 didReceivePhotoLibraryChange:(id)arg2;
 - (void)_defaultsDidChange:(id)arg1;
 - (void)zoomLevelInfo:(id)arg1 didInvalidateLayoutWithContext:(id)arg2;

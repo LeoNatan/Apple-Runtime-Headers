@@ -8,7 +8,7 @@
 
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSDate, NSDictionary, NSString, PKEnteredValueActionItem;
+@class NSArray, NSDate, NSDictionary, NSString, PKEnteredValueActionItem, PKTransitCommutePlan;
 
 @interface PKPaymentPassAction : NSObject <NSSecureCoding>
 {
@@ -22,6 +22,9 @@
     NSString *_actionDescription;
     NSString *_confirmationTitle;
     NSString *_relevantPropertyIdentifier;
+    NSString *_associatedEnteredValueIdentifier;
+    NSString *_associatedPlanIdentifier;
+    PKTransitCommutePlan *_associatedPlan;
     NSDate *_availableFrom;
     NSDate *_availableUntil;
     NSString *_unavailableBeforeReason;
@@ -37,6 +40,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *selectedActionItems; // @synthesize selectedActionItems=_selectedActionItems;
 @property(readonly, copy, nonatomic) NSString *footerText; // @synthesize footerText=_footerText;
 @property(readonly, copy, nonatomic) NSString *headerText; // @synthesize headerText=_headerText;
@@ -49,6 +53,9 @@
 @property(readonly, copy, nonatomic) NSString *unavailableBeforeReason; // @synthesize unavailableBeforeReason=_unavailableBeforeReason;
 @property(readonly, copy, nonatomic) NSDate *availableUntil; // @synthesize availableUntil=_availableUntil;
 @property(readonly, copy, nonatomic) NSDate *availableFrom; // @synthesize availableFrom=_availableFrom;
+@property(copy, nonatomic) PKTransitCommutePlan *associatedPlan; // @synthesize associatedPlan=_associatedPlan;
+@property(copy, nonatomic) NSString *associatedPlanIdentifier; // @synthesize associatedPlanIdentifier=_associatedPlanIdentifier;
+@property(copy, nonatomic) NSString *associatedEnteredValueIdentifier; // @synthesize associatedEnteredValueIdentifier=_associatedEnteredValueIdentifier;
 @property(readonly, copy, nonatomic) NSString *relevantPropertyIdentifier; // @synthesize relevantPropertyIdentifier=_relevantPropertyIdentifier;
 @property(readonly, nonatomic) BOOL featured; // @synthesize featured=_featured;
 @property(readonly, copy, nonatomic) NSString *confirmationTitle; // @synthesize confirmationTitle=_confirmationTitle;
@@ -57,10 +64,10 @@
 @property(readonly, nonatomic) BOOL hasRemoteContent; // @synthesize hasRemoteContent=_hasRemoteContent;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(readonly, nonatomic) BOOL isActionAvailable;
 - (id)actionUpdatedWithDictionary:(id)arg1;
 - (void)_processLocalizableStrings:(CDUnknownBlockType)arg1;
 - (id)_localizableKeys;

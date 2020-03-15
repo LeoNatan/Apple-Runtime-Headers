@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_proxyWithResponder:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_UITextLoupeResponderProxyDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak UIResponder *responder; // @synthesize responder=_responder;
-- (void).cxx_destruct;
 - (void)selectToHere:(id)arg1;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (id)nextResponder;

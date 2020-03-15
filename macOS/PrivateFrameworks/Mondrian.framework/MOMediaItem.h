@@ -32,6 +32,7 @@
 + (id)urlForScheme:(id)arg1 host:(id)arg2 pathComponents:(id)arg3;
 + (id)urlForScheme:(id)arg1 host:(id)arg2 path:(id)arg3;
 + (id)operationWithBlock:(CDUnknownBlockType)arg1 cancellationBlock:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(nonatomic) struct CGSize bestResolution; // @synthesize bestResolution=_bestResolution;
@@ -40,7 +41,6 @@
 @property BOOL needsReload; // @synthesize needsReload=_needsReload;
 @property(copy, nonatomic) NSString *filename; // @synthesize filename=_filename;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (long long)compareForThumbnailOrdering:(id)arg1 resolution:(unsigned long long)arg2 direction:(unsigned long long)arg3 pivot:(id)arg4;
 - (BOOL)hasThumbnailImageReadyForResolution:(unsigned long long)arg1;
 - (BOOL)hasThumbnailImageReadyForResolution:(unsigned long long)arg1 size:(struct CGSize)arg2 mode:(unsigned long long)arg3 colorSpace:(id)arg4;

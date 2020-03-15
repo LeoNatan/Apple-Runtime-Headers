@@ -15,9 +15,9 @@
 }
 
 + (id)chartPointOffsetWithValue:(id)arg1 continuation:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool continuation; // @synthesize continuation=_continuation;
 @property(readonly, nonatomic) NSNumber *value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)initWithValue:(id)arg1 continuation:(_Bool)arg2;
 
 @end

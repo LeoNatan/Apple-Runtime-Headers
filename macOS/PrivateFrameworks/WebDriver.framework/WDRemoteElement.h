@@ -21,8 +21,8 @@
 + (id)elementFromIdentifier:(id)arg1 inSession:(id)arg2;
 + (id)elementFromAutomationPayload:(id)arg1 inSession:(id)arg2;
 + (id)elementFromClientPayload:(id)arg1 inSession:(id)arg2;
-@property(readonly, copy, nonatomic) NSString *nodeHandle; // @synthesize nodeHandle=_nodeHandle;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *nodeHandle; // @synthesize nodeHandle=_nodeHandle;
 - (unsigned long long)hash;
 - (BOOL)isEqualToElement:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

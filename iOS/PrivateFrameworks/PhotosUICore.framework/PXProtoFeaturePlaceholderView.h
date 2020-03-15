@@ -17,9 +17,9 @@
     double _preferredStatusWidth;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double preferredStatusWidth; // @synthesize preferredStatusWidth=_preferredStatusWidth;
 @property(readonly, copy, nonatomic) NSString *statusDescription; // @synthesize statusDescription=_statusDescription;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_setStatusDescription:(id)arg1;
 - (void)_updateStatusDescription;

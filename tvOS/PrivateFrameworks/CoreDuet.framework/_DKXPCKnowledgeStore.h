@@ -21,8 +21,8 @@
 
 + (id)XPCUserKnowledgeStore;
 + (id)XPCKnowledgeStore;
-@property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (_Bool)confirmConnectionWithError:(id *)arg1;
 - (id)deviceUUID;
 - (id)sourceDeviceIdentityWithError:(id *)arg1;

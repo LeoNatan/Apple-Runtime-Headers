@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_localizedDisplayName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *localizedDisplayName; // @synthesize localizedDisplayName=_localizedDisplayName;
 @property(retain, nonatomic) HKUnit *unit; // @synthesize unit=_unit;
-- (void).cxx_destruct;
 
 @end
 

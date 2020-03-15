@@ -31,6 +31,7 @@
     NSString *_storedNodeIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *storedNodeIdentifier; // @synthesize storedNodeIdentifier=_storedNodeIdentifier;
 @property(nonatomic) double highestScoringRelativeScoreMultiplier; // @synthesize highestScoringRelativeScoreMultiplier=_highestScoringRelativeScoreMultiplier;
 @property(nonatomic) double topicScoreWeight; // @synthesize topicScoreWeight=_topicScoreWeight;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) NSSet *displayedElements; // @synthesize displayedElements=_displayedElements;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSSet *identifiers; // @synthesize identifiers=_identifiers;
-- (void).cxx_destruct;
 - (void)calculateScoreWithTopicScoreProvider:(CDUnknownBlockType)arg1;
 - (void)calculateNonLeafScoresWithTopicProvider:(CDUnknownBlockType)arg1;
 - (id)calculateLeafScoresWithTopicScoreProvider:(CDUnknownBlockType)arg1;

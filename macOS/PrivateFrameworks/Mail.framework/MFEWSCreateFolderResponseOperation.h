@@ -13,8 +13,8 @@
     NSString *_createdFolderId;
 }
 
-@property(copy) NSString *createdFolderId; // @synthesize createdFolderId=_createdFolderId;
 - (void).cxx_destruct;
+@property(copy) NSString *createdFolderId; // @synthesize createdFolderId=_createdFolderId;
 - (void)executeOperation;
 - (void)prepareToExecuteWithResponse:(id)arg1 forRequestOperation:(id)arg2;
 @property(retain) EWSCreateFolderResponseType *response;

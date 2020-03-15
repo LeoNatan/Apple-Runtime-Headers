@@ -34,6 +34,7 @@
 
 + (id)properties;
 + (id)recordType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *iconGlyph; // @synthesize iconGlyph=_iconGlyph;
 @property(retain, nonatomic) NSNumber *iconColor; // @synthesize iconColor=_iconColor;
 @property(readonly, nonatomic) WFFileRepresentation *iconFile; // @synthesize iconFile=_iconFile;
@@ -48,7 +49,6 @@
 @property(readonly, nonatomic) NSString *shortDescription; // @synthesize shortDescription=_shortDescription;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) CKRecordID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *propertiesForEventLogging;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

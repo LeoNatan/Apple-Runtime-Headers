@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSMutableDictionary, NSString;
 
 __attribute__((visibility("hidden")))
 @interface _SYSharedServiceDB : NSObject
@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     struct os_unfair_lock_s _lock;
     struct sqlite3 *_db;
     NSString *_name;
-    struct NSMutableDictionary *_schemaSetupCallbacks;
+    NSMutableDictionary *_schemaSetupCallbacks;
 }
 
 + (id)sharedInstanceForServiceName:(id)arg1;

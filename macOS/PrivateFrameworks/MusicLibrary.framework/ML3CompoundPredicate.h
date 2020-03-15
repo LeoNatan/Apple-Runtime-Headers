@@ -15,8 +15,8 @@
 
 + (id)predicateMatchingPredicates:(id)arg1;
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSArray *predicates; // @synthesize predicates=_predicates;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *predicates; // @synthesize predicates=_predicates;
 - (BOOL)containsPropertyPredicate:(id)arg1 matchingValue:(id)arg2 usingComparison:(int)arg3;
 - (id)spotlightPredicate;
 - (BOOL)isDynamicForEntityClass:(Class)arg1;

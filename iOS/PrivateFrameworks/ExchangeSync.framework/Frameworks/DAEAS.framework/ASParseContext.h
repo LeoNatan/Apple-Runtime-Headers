@@ -30,6 +30,7 @@
     ASTrafficLogger *_trafficLogger;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ASTrafficLogger *trafficLogger; // @synthesize trafficLogger=_trafficLogger;
 @property(retain, nonatomic) NSString *logFilePath; // @synthesize logFilePath=_logFilePath;
 @property(retain, nonatomic) NSFileHandle *logFileHandle; // @synthesize logFileHandle=_logFileHandle;
@@ -48,7 +49,6 @@
 @property(nonatomic) int codePage; // @synthesize codePage=_codePage;
 @property(nonatomic) long long curOffset; // @synthesize curOffset=_curOffset;
 @property(nonatomic) int streamingState; // @synthesize streamingState=_streamingState;
-- (void).cxx_destruct;
 - (void)invalidateBuffers;
 - (void)flushLogs;
 - (int)numTokensStreamableForNextStringSizeOfTerminator:(int *)arg1;

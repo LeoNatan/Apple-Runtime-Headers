@@ -16,11 +16,11 @@
     NSDate *__playbackStartDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setPlaybackStartDate:) NSDate *_playbackStartDate; // @synthesize _playbackStartDate=__playbackStartDate;
 @property(nonatomic, setter=_setDisplayLink:) ISDisplayLink *_displayLink; // @synthesize _displayLink=__displayLink;
 @property(nonatomic, setter=_setPlaybackReaquestID:) long long _playbackRequestID; // @synthesize _playbackRequestID=__playbackRequestID;
 @property(nonatomic, getter=isTouchActive) BOOL touchActive; // @synthesize touchActive=_touchActive;
-- (void).cxx_destruct;
 - (void)reset;
 - (void)_handleDisplayLink;
 - (void)didPerformChanges;

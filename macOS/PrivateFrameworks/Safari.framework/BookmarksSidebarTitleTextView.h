@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     BookmarksSidebarTitleTextField *_bookmarksSidebarTitleTextField;
 }
 
-@property(nonatomic) __weak BookmarksSidebarTitleTextField *bookmarksSidebarTitleTextField; // @synthesize bookmarksSidebarTitleTextField=_bookmarksSidebarTitleTextField;
 - (void).cxx_destruct;
+@property(nonatomic) __weak BookmarksSidebarTitleTextField *bookmarksSidebarTitleTextField; // @synthesize bookmarksSidebarTitleTextField=_bookmarksSidebarTitleTextField;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (id)init;

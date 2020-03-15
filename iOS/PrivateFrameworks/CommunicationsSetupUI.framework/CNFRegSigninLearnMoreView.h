@@ -24,9 +24,9 @@
     CNFRegSplashSignInController *_controller;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) CNFRegSplashSignInController *controller; // @synthesize controller=_controller;
 @property(nonatomic) long long serviceType; // @synthesize serviceType=_serviceType;
-- (void).cxx_destruct;
 - (void)_learnMorePressed:(id)arg1;
 - (double)preferredHeightForWidth:(double)arg1;
 - (void)layoutSubviews;

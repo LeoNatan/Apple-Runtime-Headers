@@ -44,10 +44,10 @@
 + (id)URLForSearch:(id)arg1 at:(CDStruct_c3b9c2ee)arg2 span:(CDStruct_c3b9c2ee)arg3;
 + (id)URLForSearch:(id)arg1 near:(CDStruct_c3b9c2ee)arg2;
 + (id)URLForSearch:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEOMuninViewState *muninViewState; // @synthesize muninViewState=_muninViewState;
 @property(retain, nonatomic) GEOURLExtraStorage *extraStorage; // @synthesize extraStorage=_extraStorage;
 @property(retain, nonatomic) GEOURLCollectionStorage *collectionStorage; // @synthesize collectionStorage=_collectionStorage;
-- (void).cxx_destruct;
 - (void)_removeParametersAllBut:(id)arg1;
 - (id)_stringForCoordinateSpanPointer:(CDStruct_c3b9c2ee *)arg1;
 - (id)_stringForCoordinate2DPointer:(CDStruct_c3b9c2ee *)arg1;

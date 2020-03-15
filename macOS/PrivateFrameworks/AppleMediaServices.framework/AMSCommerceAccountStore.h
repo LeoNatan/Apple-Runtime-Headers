@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)accountStoreWithClientIdentifier:(id)arg1 accountStore:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) ACAccountStore *underlyingAccountStore; // @synthesize underlyingAccountStore=_underlyingAccountStore;
 @property(retain) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(retain) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property long long accountStoreType; // @synthesize accountStoreType=_accountStoreType;
-- (void).cxx_destruct;
 - (id)_defaultsStorefrontKeyForDSID:(id)arg1;
 - (id)_defaultsPrimaryAccountKey;
 - (id)_defaultsKnownAccountsKey;

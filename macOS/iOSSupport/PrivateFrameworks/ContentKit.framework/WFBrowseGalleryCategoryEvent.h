@@ -15,9 +15,9 @@
 }
 
 + (Class)codableEventClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *galleryCategoryIdentifier; // @synthesize galleryCategoryIdentifier=_galleryCategoryIdentifier;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 
 @end
 

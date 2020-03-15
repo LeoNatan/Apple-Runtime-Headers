@@ -27,6 +27,7 @@
 + (struct CGRect)_convertRect:(struct CGRect)arg1 fromPageControllerModelSpace:(id)arg2 toDrawingInCanvasViewSpace:(id)arg3;
 + (id)newDrawingUndoTargetWithPageController:(id)arg1;
 + (id)newAKInkOverlayViewForCurrentPlatformWithPageController:(id)arg1 drawingUndoTarget:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect previousPageRectInAKModel; // @synthesize previousPageRectInAKModel=_previousPageRectInAKModel;
 @property(nonatomic) __weak id <PKRulerHostingDelegate> rulerHostingDelegate; // @synthesize rulerHostingDelegate=_rulerHostingDelegate;
 @property struct CGSize canvasSizeInPKDrawingSpace; // @synthesize canvasSizeInPKDrawingSpace=_canvasSizeInPKDrawingSpace;
@@ -34,7 +35,6 @@
 @property(retain) PKCanvasView *canvasView; // @synthesize canvasView=_canvasView;
 @property __weak id drawingUndoTarget; // @synthesize drawingUndoTarget=_drawingUndoTarget;
 @property __weak AKPageController *pageController; // @synthesize pageController=_pageController;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIGestureRecognizer *pinchGestureRecognizer;
 @property(readonly, nonatomic) UIGestureRecognizer *drawingGestureRecognizer;
 - (void)canvasViewDrawingDidChange:(id)arg1;

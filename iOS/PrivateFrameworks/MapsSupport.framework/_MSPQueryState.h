@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_identifiers;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *identifiers; // @synthesize identifiers=_identifiers;
 @property(readonly) NSArray *contents; // @synthesize contents=_contents;
-- (void).cxx_destruct;
 - (id)stateByMovingObjectAtIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
 - (id)stateByDeletingObjectsAtIndexes:(id)arg1;
 - (id)stateByDeletingObjectAtIndex:(unsigned long long)arg1;

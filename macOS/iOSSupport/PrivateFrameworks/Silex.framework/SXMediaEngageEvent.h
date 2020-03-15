@@ -24,6 +24,7 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) double volume; // @synthesize volume=_volume;
 @property(nonatomic) BOOL muted; // @synthesize muted=_muted;
@@ -36,7 +37,6 @@
 @property(nonatomic) unsigned long long mediaPlayMethod; // @synthesize mediaPlayMethod=_mediaPlayMethod;
 @property(nonatomic) double mediaTimePlayed; // @synthesize mediaTimePlayed=_mediaTimePlayed;
 @property(nonatomic) unsigned long long userAction; // @synthesize userAction=_userAction;
-- (void).cxx_destruct;
 
 @end
 

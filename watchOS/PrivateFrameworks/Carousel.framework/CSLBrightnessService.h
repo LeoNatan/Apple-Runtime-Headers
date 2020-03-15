@@ -20,11 +20,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *fractionToDelay; // @synthesize fractionToDelay=_fractionToDelay;
 @property(nonatomic) double idleInterval; // @synthesize idleInterval=_idleInterval;
 @property(retain, nonatomic) CSLClientConnections *clientConnections; // @synthesize clientConnections=_clientConnections;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
-- (void).cxx_destruct;
 - (void)calculateBrightness:(id)arg1 renderTime:(unsigned long long)arg2;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)dealloc;

@@ -12,10 +12,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 struct Mutex;
 
-struct NSArray {
-    Class _field1;
-};
-
 struct Options {
     int _field1;
     _Bool _field2;

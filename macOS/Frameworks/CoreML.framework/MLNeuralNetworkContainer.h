@@ -34,6 +34,8 @@
 
 + (id)containerFromCompiledArchive:(struct _MLModelInputArchiver *)arg1 modelVersionInfo:(id)arg2 compilerVersionInfo:(id)arg3 configuration:(id)arg4 error:(id *)arg5;
 + (id)containerFromFilePath:(id)arg1 inputLayerNames:(id)arg2 outputLayerNames:(id)arg3 parameters:(id)arg4;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) map_7c549560 optionalInputTypes; // @synthesize optionalInputTypes=_optionalInputTypes;
 @property(nonatomic) int engine; // @synthesize engine=_engine;
 @property(nonatomic) int precision; // @synthesize precision=_precision;
@@ -54,8 +56,6 @@
 @property(readonly, retain, nonatomic) NSArray *outputLayerNames; // @synthesize outputLayerNames=_outputLayerNames;
 @property(readonly, retain, nonatomic) NSArray *inputLayerNames; // @synthesize inputLayerNames=_inputLayerNames;
 @property(retain, nonatomic) NSString *modelFilePath; // @synthesize modelFilePath=_modelFilePath;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)initWithFeatureDescriptions:(id)arg1 transformDesc:(id)arg2 outputLayerNames:(id)arg3 parameters:(id)arg4 configurations:(id)arg5 classScoreVectorName:(id)arg6 classLabels:(id)arg7 hasBidirectionalLayer:(BOOL)arg8 hasOptionalInputSequenceConcat:(BOOL)arg9 hasDynamicLayer:(BOOL)arg10;
 - (id)initWithFilePath:(id)arg1 inputLayerNames:(id)arg2 outputLayerNames:(id)arg3 parameters:(id)arg4;
 

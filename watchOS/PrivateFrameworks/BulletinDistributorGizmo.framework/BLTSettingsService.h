@@ -25,6 +25,7 @@
 }
 
 + (id)sharedSettingsService;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSMutableSet *applicationInfoObservers; // @synthesize applicationInfoObservers=_applicationInfoObservers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *settingsApplicationInfoQueue; // @synthesize settingsApplicationInfoQueue=_settingsApplicationInfoQueue;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSMutableArray *allowsNotificationsObservers; // @synthesize allowsNotificationsObservers=_allowsNotificationsObservers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *settingsAllowsNotificationsInfosQueue; // @synthesize settingsAllowsNotificationsInfosQueue=_settingsAllowsNotificationsInfosQueue;
 @property(retain, nonatomic) NSMutableDictionary *settingsAllowsNotificationsInfos; // @synthesize settingsAllowsNotificationsInfos=_settingsAllowsNotificationsInfos;
-- (void).cxx_destruct;
 - (void)removeApplicationInfoObserver:(id)arg1;
 - (void)addApplicationInfoObserver:(id)arg1;
 - (void)applicationInfoForBundleID:(id)arg1 iconSize:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;

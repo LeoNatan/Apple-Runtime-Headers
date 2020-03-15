@@ -20,12 +20,12 @@
 }
 
 + (_Bool)complainAboutSloppyTextureUsage;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool resourceTrackingChecksummingForceAll; // @synthesize resourceTrackingChecksummingForceAll=_resourceTrackingChecksummingForceAll;
 @property(readonly, nonatomic) _Bool resourceTrackingChecksummingEnabled; // @synthesize resourceTrackingChecksummingEnabled=_resourceTrackingChecksummingEnabled;
 @property(nonatomic) unsigned int frameNum; // @synthesize frameNum=_frameNum;
 @property(readonly, nonatomic) _Bool resourceTrackingEnabled; // @synthesize resourceTrackingEnabled=_resourceTrackingEnabled;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)eventSignaled:(id)arg1 value:(unsigned long long)arg2;
 - (id)newSharedEventWithHandle:(id)arg1;
 - (id)newSharedEventWithMachPort:(unsigned int)arg1;

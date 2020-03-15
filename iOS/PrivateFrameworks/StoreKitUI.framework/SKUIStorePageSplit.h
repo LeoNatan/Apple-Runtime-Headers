@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     double _widthFraction;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double widthFraction; // @synthesize widthFraction=_widthFraction;
 @property(retain, nonatomic) SKUIStorePageSectionContext *sectionContext; // @synthesize sectionContext=_sectionContext;
 @property(copy, nonatomic) NSArray *pageComponents; // @synthesize pageComponents=_pageComponents;
 @property(nonatomic) long long numberOfPageSections; // @synthesize numberOfPageSections=_numberOfPageSections;
 @property(copy, nonatomic) UIColor *dividerColor; // @synthesize dividerColor=_dividerColor;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

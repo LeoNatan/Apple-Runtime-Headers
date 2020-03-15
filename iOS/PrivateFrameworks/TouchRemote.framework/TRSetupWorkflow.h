@@ -25,6 +25,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TROperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(retain, nonatomic) NSSet *unauthenticatedAccountServices; // @synthesize unauthenticatedAccountServices=_unauthenticatedAccountServices;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) CDUnknownBlockType networkStageStartedHandler; // @synthesize networkStageStartedHandler=_networkStageStartedHandler;
 @property(copy, nonatomic) CDUnknownBlockType configurationStageStartedHandler; // @synthesize configurationStageStartedHandler=_configurationStageStartedHandler;
 @property(copy, nonatomic) CDUnknownBlockType startedHandler; // @synthesize startedHandler=_startedHandler;
-- (void).cxx_destruct;
 - (void)_releaseHandlers;
 - (void)_abortSetupWithErrorCode:(long long)arg1 userInfo:(id)arg2;
 - (void)_performCompletionOperation;

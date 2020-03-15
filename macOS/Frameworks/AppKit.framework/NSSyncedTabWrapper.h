@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     BOOL _snapshotIsDisabled;
 }
 
+- (void).cxx_destruct;
 @property BOOL snapshotIsDisabled; // @synthesize snapshotIsDisabled=_snapshotIsDisabled;
 @property(retain) NSWindow *window; // @synthesize window=_window;
-- (void).cxx_destruct;
 - (void)dispose;
 
 @end

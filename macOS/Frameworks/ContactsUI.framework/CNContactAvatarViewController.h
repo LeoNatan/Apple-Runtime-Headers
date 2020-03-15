@@ -18,16 +18,17 @@
     CNContact *_contact;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL didCreateConstraints; // @synthesize didCreateConstraints=_didCreateConstraints;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) CNAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;
-- (void).cxx_destruct;
 - (BOOL)shouldBeIncludedInKeyViewLoop;
 - (void)setLikeness:(id)arg1;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (double)customSpacingAfterWidget;
 - (void)mouseUp:(id)arg1;
 - (void)setPropertyKeysToDisplay:(id)arg1;
+- (void)setStyleProvider:(id)arg1;
 - (void)clearContactImage;
 - (void)beginEditingContactImage;
 - (double)desiredHeight;

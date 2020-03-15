@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     float _starWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long userRating; // @synthesize userRating=_userRating;
 @property(nonatomic) float starWidth; // @synthesize starWidth=_starWidth;
 @property(nonatomic) float starSpacing; // @synthesize starSpacing=_starSpacing;
-- (void).cxx_destruct;
 - (void)_updateUserRatingWithTouch:(id)arg1;
 - (double)_unfilledStarsMinX;
 - (double)_unfilledStarsWidth;

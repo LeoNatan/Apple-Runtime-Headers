@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     id __fontSizeObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setFontSizeObserver:) id _fontSizeObserver; // @synthesize _fontSizeObserver=__fontSizeObserver;
 @property(nonatomic, setter=_setVisualsFontSize:) double _visualsFontSize; // @synthesize _visualsFontSize=__visualsFontSize;
 @property(retain, nonatomic, setter=_setUserDefaults:) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
-- (void).cxx_destruct;
 - (void)setVisualsFontSizeValue:(id)arg1;
 @property(nonatomic) double visualsFontSize;
 - (id)initWithUserDefaults:(id)arg1;

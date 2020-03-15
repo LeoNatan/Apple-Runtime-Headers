@@ -14,9 +14,9 @@
     MRCryptoPairingSessionBlockDelegate *_pairingDelegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MRCryptoPairingSessionBlockDelegate *pairingDelegate; // @synthesize pairingDelegate=_pairingDelegate;
 @property(retain, nonatomic) MRCoreUtilsPairingSession *pairingSession; // @synthesize pairingSession=_pairingSession;
-- (void).cxx_destruct;
 - (_Bool)_useSystemPairing;
 - (_Bool)deleteIdentityWithError:(id *)arg1;
 - (id)decryptData:(id)arg1 withError:(id *)arg2;

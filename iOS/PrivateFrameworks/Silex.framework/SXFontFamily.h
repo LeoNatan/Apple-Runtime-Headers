@@ -16,9 +16,9 @@
     NSSet *_fontFaces;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *fontFaces; // @synthesize fontFaces=_fontFaces;
 @property(readonly, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)fontFaceWithAttributes:(id)arg1 size:(long long)arg2;
 - (id)initWithFamilyName:(id)arg1 faces:(id)arg2;

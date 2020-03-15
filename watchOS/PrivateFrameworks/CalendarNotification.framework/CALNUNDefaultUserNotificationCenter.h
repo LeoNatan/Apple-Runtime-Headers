@@ -16,8 +16,8 @@
     UNUserNotificationCenter *_userNotificationCenter;
 }
 
-@property(readonly, nonatomic) UNUserNotificationCenter *userNotificationCenter; // @synthesize userNotificationCenter=_userNotificationCenter;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UNUserNotificationCenter *userNotificationCenter; // @synthesize userNotificationCenter=_userNotificationCenter;
 - (id)notificationSettingsForTopics;
 - (id)notificationSettings;
 - (void)setWantsNotificationResponsesDelivered;

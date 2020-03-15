@@ -14,9 +14,9 @@
     CKDatabase *_database;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CKDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) CKContainer *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (void)parseRecord:(id)arg1 intoItem:(id)arg2 allKeys:(_Bool)arg3;
 - (id)extractRecordDictFromRecordIfNecessary:(id)arg1 recordType:(id)arg2;
 - (id)recordsFromQueryResponse:(id)arg1;

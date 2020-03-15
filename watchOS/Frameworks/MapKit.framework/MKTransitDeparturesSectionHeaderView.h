@@ -26,8 +26,8 @@ __attribute__((visibility("hidden")))
 
 + (id)_buttonFont:(unsigned int)arg1;
 + (id)_font:(unsigned int)arg1;
-@property(readonly, nonatomic) MKButtonWithTargetArgument *button; // @synthesize button=_button;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MKButtonWithTargetArgument *button; // @synthesize button=_button;
 @property(copy, nonatomic) NSString *text;
 - (void)_updateConstraintValues;
 - (void)_contentSizeCategoryDidChange;

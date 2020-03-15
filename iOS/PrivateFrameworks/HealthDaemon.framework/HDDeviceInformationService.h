@@ -23,6 +23,7 @@
 + (id)implementedProperties;
 + (id)serviceUUID;
 + (long long)serviceType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pendingDeviceInformationLoadedBlocks; // @synthesize pendingDeviceInformationLoadedBlocks=_pendingDeviceInformationLoadedBlocks;
 @property(nonatomic) _Bool deviceInformationHasBeenLoaded; // @synthesize deviceInformationHasBeenLoaded=_deviceInformationHasBeenLoaded;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSMutableDictionary *propertyValues; // @synthesize propertyValues=_propertyValues;
 @property(retain, nonatomic) NSMutableDictionary *characteristics; // @synthesize characteristics=_characteristics;
 @property(nonatomic) _Bool fetchLimitedCharacteristics; // @synthesize fetchLimitedCharacteristics=_fetchLimitedCharacteristics;
-- (void).cxx_destruct;
 - (id)_propertyValueForCharacteristic:(id)arg1;
 - (void)_queue_peripheral:(id)arg1 didUpdateValueForCharacteristic:(id)arg2 error:(id)arg3;
 - (void)peripheral:(id)arg1 didUpdateValueForCharacteristic:(id)arg2 updateTime:(id)arg3 error:(id)arg4;

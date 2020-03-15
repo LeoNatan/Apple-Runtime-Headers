@@ -14,8 +14,8 @@
 }
 
 + (id)reuseIdentifier;
-@property(retain, nonatomic) UIImageView *categoryImageView; // @synthesize categoryImageView=_categoryImageView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImageView *categoryImageView; // @synthesize categoryImageView=_categoryImageView;
 - (void)setCategoryImage:(id)arg1;
 - (void)prepareForReuse;
 - (void)_commonInit;

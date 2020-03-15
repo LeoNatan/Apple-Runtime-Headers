@@ -13,8 +13,8 @@
     NSArray *_motionEffects;
 }
 
-@property(copy, nonatomic) NSArray *motionEffects; // @synthesize motionEffects=_motionEffects;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *motionEffects; // @synthesize motionEffects=_motionEffects;
 
 @end
 

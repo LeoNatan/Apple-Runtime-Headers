@@ -14,9 +14,9 @@
     NSString *_toneIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *toneIdentifier; // @synthesize toneIdentifier=_toneIdentifier;
 @property(readonly, nonatomic) long long statusCode; // @synthesize statusCode=_statusCode;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithStatusCode:(long long)arg1 toneIdentifier:(id)arg2;
 

@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 + (Class)referenceSignatureType;
 + (Class)fileSignatureType;
 + (id)options;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL skipWriteMissingAssetStatusRecord; // @synthesize skipWriteMissingAssetStatusRecord=_skipWriteMissingAssetStatusRecord;
 @property(retain, nonatomic) NSString *affectedRecordType; // @synthesize affectedRecordType=_affectedRecordType;
 @property(nonatomic) BOOL isPackage; // @synthesize isPackage=_isPackage;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int listIndex; // @synthesize listIndex=_listIndex;
 @property(retain, nonatomic) NSString *fieldName; // @synthesize fieldName=_fieldName;
 @property(retain, nonatomic) CKDPRecordIdentifier *brokenAssetRecordID; // @synthesize brokenAssetRecordID=_brokenAssetRecordID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

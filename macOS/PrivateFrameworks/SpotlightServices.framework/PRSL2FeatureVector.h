@@ -32,6 +32,7 @@
 + (id)contextWithFeatureOrder:(id)arg1 withInflation:(unsigned long long)arg2 withInflatedIndexToSize:(id)arg3;
 + (struct __CFSet *)getL2FeatureSet;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) struct _opaque_pthread_mutex_t featureDataLock; // @synthesize featureDataLock=_featureDataLock;
 @property(retain, nonatomic) NSDictionary *roundTripFeatures; // @synthesize roundTripFeatures=_roundTripFeatures;
 // Error parsing type for property indexScore:
@@ -43,7 +44,6 @@
 @property(nonatomic) float withinBundleScore; // @synthesize withinBundleScore=_withinBundleScore;
 @property(nonatomic) float experimentalScore; // @synthesize experimentalScore=_experimentalScore;
 @property(nonatomic) float originalL2Score; // @synthesize originalL2Score=_originalL2Score;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
@@ -54,7 +54,7 @@
 - (id)_dictionaryRepresentationWithoutDefaultValues:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (void)setScores:(float *)arg1 forFeatures:(unsigned short *)arg2 count:(unsigned long long)arg3;
-- (float *)getAllScores:(float [1485])arg1;
+- (float *)getAllScores:(float [1526])arg1;
 - (float)scoreForFeature:(unsigned short)arg1;
 @property(readonly, nonatomic) BOOL receiverIsVip;
 @property(readonly, nonatomic) BOOL senderIsVip;

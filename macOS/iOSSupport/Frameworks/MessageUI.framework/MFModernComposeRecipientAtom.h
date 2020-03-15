@@ -18,8 +18,8 @@
     id <MFComposeRecipientAtomDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <MFComposeRecipientAtomDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MFComposeRecipientAtomDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)moveRight:(id)arg1;
 - (void)moveLeft:(id)arg1;
 - (id)keyCommands;

@@ -33,9 +33,9 @@
     id <PKDashboardMessagesViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PKDashboardMessagesViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSOrderedSet *messages; // @synthesize messages=_messages;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_pageControlChanged:(id)arg1;
 - (unsigned int)_primaryIndexAtOffset:(struct CGPoint)arg1;

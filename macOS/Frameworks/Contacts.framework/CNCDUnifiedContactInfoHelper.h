@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSManagedObjectContext *_context;
 }
 
-@property(readonly, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;
 - (id)infosForContactIdentifiers:(id)arg1;
 - (id)infosForUnifiedContactIdentifiers:(id)arg1;
 - (id)insertNewInfoForContactWithIdentifier:(id)arg1;

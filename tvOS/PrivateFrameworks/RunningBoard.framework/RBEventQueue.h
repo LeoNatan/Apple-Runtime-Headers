@@ -21,8 +21,8 @@
     _Bool _dirtyDuringModify;
 }
 
-@property(readonly, nonatomic) NSArray *events; // @synthesize events=_eventQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *events; // @synthesize events=_eventQueue;
 - (id)_createTimerWithInterval:(double)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_queue_startEventTimer;
 - (void)_queue_stopEventTimer;

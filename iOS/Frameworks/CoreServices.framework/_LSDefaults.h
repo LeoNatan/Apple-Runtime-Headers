@@ -38,13 +38,13 @@
 + (id)systemGroupContainerURL;
 + (id)systemContainerURL;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly) _Bool hasPersistentPreferences; // @synthesize hasPersistentPreferences=_hasPersistentPreferences;
 @property(readonly, getter=isInEducationMode) _Bool inEducationMode; // @synthesize inEducationMode=_inEducationMode;
 @property(getter=isServer) _Bool server; // @synthesize server=_isServer;
 @property(readonly, nonatomic, getter=isAppleInternal) _Bool appleInternal; // @synthesize appleInternal=_appleInternal;
 @property(readonly, nonatomic, getter=isInXCTestRigInsecure) _Bool inXCTestRigInsecure; // @synthesize inXCTestRigInsecure=_inXCTestRigInsecure;
 @property(readonly, getter=isInSyncBubble) _Bool inSyncBubble; // @synthesize inSyncBubble=_inSyncBubble;
-- (void).cxx_destruct;
 - (id)debugDescription;
 @property(readonly) NSData *HMACSecret;
 @property(readonly, getter=isRegionChina) _Bool regionChina; // @dynamic regionChina;

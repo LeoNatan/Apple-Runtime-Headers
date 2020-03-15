@@ -20,11 +20,11 @@
     NSURL *_photoLibraryURL;
 }
 
-+ (id)clientToServiceBookmarkForURL:(id)arg1;
++ (id)clientToServiceSandboxExtensionForURL:(id)arg1;
 + (unsigned long long)maxBindAttemptCount;
+- (void).cxx_destruct;
 @property(readonly, copy) NSURL *photoLibraryURL; // @synthesize photoLibraryURL=_photoLibraryURL;
 @property(readonly) id <PLXPCProxyCreating> proxyFactory; // @synthesize proxyFactory=_proxyFactory;
-- (void).cxx_destruct;
 - (void)_connectionInterrupted:(id)arg1;
 - (_Bool)_isResultAnInterruptionError:(id)arg1;
 - (id)_attemptBindToPhotoLibrary;

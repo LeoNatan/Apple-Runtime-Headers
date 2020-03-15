@@ -20,12 +20,12 @@
     CTXPCServiceSubscriptionContext *_subscriptionContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CTXPCServiceSubscriptionContext *subscriptionContext; // @synthesize subscriptionContext=_subscriptionContext;
 @property(readonly, nonatomic) TPSCallingLineIdRestrictionRequestController *requestController; // @synthesize requestController=_requestController;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(nonatomic, getter=isEditable) _Bool editable; // @synthesize editable=_editable;
 @property(nonatomic) __weak id <TPSCallingLineIdRestrictionControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)requestController:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)requestStateChange:(long long)arg1;
 - (void)requestStateForSubscriptionContext:(id)arg1;

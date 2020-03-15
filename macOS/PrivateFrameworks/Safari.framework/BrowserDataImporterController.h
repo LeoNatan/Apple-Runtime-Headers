@@ -8,7 +8,7 @@
 
 #import <Safari/BrowserBookmarkImporterDelegate-Protocol.h>
 
-@class BrowserBookmarkImporter, BrowserCredentialImporter, BrowserHistoryImporter, NSBundle, NSString, NSURL, NSXPCConnection;
+@class BrowserBookmarkImporter, BrowserCredentialImporter, BrowserDataDirectories, BrowserHistoryImporter, NSArray, NSString, NSURL, NSXPCConnection;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _dataTypesThatFailed;
     BOOL _importHasBeenCanceled;
     unsigned long long _numberOfResumptionAttempts;
-    NSString *_sourceBrowserBundleIdentifier;
+    NSURL *_sourceBrowserBundleURL;
     unsigned long long _cachedDataTypes;
-    NSBundle *_cachedBundle;
+    BrowserDataDirectories *_cachedBrowserDataDirectories;
     NSXPCConnection *_browserDataImporterServiceConnection;
     BrowserBookmarkImporter *_bookmarkImporter;
     BrowserHistoryImporter *_historyImporter;
@@ -30,11 +30,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) BrowserCredentialImporter *credentialImporter; // @synthesize credentialImporter=_credentialImporter;
 @property(retain, nonatomic) BrowserHistoryImporter *historyImporter; // @synthesize historyImporter=_historyImporter;
 @property(retain, nonatomic) BrowserBookmarkImporter *bookmarkImporter; // @synthesize bookmarkImporter=_bookmarkImporter;
 @property(retain, nonatomic) NSXPCConnection *browserDataImporterServiceConnection; // @synthesize browserDataImporterServiceConnection=_browserDataImporterServiceConnection;
-- (void).cxx_destruct;
 - (void)_postCompletionNotificationsAndResetState;
 - (void)_invalidateBrowserDataImporterServiceConnectionIfPossible;
 - (id)_existingBrowserDataImporterServiceConnection;
@@ -47,9 +47,9 @@ __attribute__((visibility("hidden")))
 - (BOOL)_importHasBeenCanceledOnAccessQueue;
 - (BOOL)_importHasBeenCanceled;
 - (id)undoControllerForBookmarkImporter:(id)arg1;
-- (id)_firefoxApplicationBundle;
 - (id)_chromeApplicationBundle;
-@property(readonly, nonatomic) NSURL *firefoxBundleURL;
+@property(readonly, nonatomic) NSArray *browserBundleURLs;
+@property(readonly, nonatomic) NSArray *firefoxBundleURLs;
 @property(readonly, nonatomic) NSURL *chromeBundleURL;
 @property(readonly, nonatomic) BOOL canImportFromFirefox;
 @property(readonly, nonatomic) BOOL canImportFromChrome;
@@ -58,16 +58,12 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL canResumeInterruptedImport;
 - (void)cancelImport;
 - (void)abandonInterruptedImport;
-- (void)_resumeInterruptedImportForTestDrive:(BOOL)arg1;
-- (void)resumeInterruptedImportForTestDrive:(BOOL)arg1;
+- (id)_sourceBrowserDataDirectoriesInImportState:(id)arg1;
+- (id)_sourceBrowserBundleInImportState:(id)arg1;
+- (void)_resumeInterruptedImport;
 - (void)resumeInterruptedImport;
-- (void)_importDataTypes:(unsigned long long)arg1 fromBrowserWithApplicationBundle:(id)arg2;
-- (void)performTestDriveImport;
-- (void)cacheTestDriveImportOfDataTypes:(unsigned long long)arg1 fromBrowserWithApplicationBundle:(id)arg2;
-- (void)performTestDriveImportOfDataTypes:(unsigned long long)arg1 fromBrowserWithApplicationBundle:(id)arg2;
-- (void)importDataTypes:(unsigned long long)arg1 fromBrowserWithApplicationBundle:(id)arg2;
-- (void)importDataTypesFromFirefox:(unsigned long long)arg1;
-- (void)importDataTypesFromChrome:(unsigned long long)arg1;
+- (void)_importDataTypes:(unsigned long long)arg1 forBrowserDataDirectories:(id)arg2;
+- (void)importDataTypes:(unsigned long long)arg1 forBrowserDataDirectories:(id)arg2;
 - (id)init;
 
 // Remaining properties

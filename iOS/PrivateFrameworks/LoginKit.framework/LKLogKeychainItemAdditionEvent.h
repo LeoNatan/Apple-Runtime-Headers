@@ -14,8 +14,8 @@
 }
 
 + (id)eventFromLKLogEvent:(id)arg1;
-@property(readonly, nonatomic) NSString *keychainItemAdded; // @synthesize keychainItemAdded=_keychainItemAdded;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *keychainItemAdded; // @synthesize keychainItemAdded=_keychainItemAdded;
 - (id)dictionary;
 - (void)setKeychainItemAdded:(id)arg1;
 

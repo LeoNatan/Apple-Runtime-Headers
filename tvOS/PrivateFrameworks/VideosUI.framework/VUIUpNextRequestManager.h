@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSMutableDictionary *ongoingCanonicalIDOperationDictionary; // @synthesize ongoingCanonicalIDOperationDictionary=_ongoingCanonicalIDOperationDictionary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *ongoingCanonicalIDOperationDictionary; // @synthesize ongoingCanonicalIDOperationDictionary=_ongoingCanonicalIDOperationDictionary;
 - (void)sendRequestForCanonicalID:(id)arg1 action:(unsigned long long)arg2;
 - (id)init;
 - (id)_init;

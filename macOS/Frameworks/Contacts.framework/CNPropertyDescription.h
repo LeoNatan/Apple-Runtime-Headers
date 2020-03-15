@@ -24,12 +24,12 @@
 + (BOOL)supportsSecureCoding;
 + (void)computeDiffFromContact:(id)arg1 toContact:(id)arg2 andApplyToCoreDataContact:(id)arg3;
 + (id)propertyDescriptionLog;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isNonnull; // @synthesize isNonnull=_isNonnull;
 @property(readonly, copy, nonatomic) CDUnknownBlockType valueForKeyTransform; // @synthesize valueForKeyTransform=_valueForKeyTransform;
 @property(readonly, nonatomic) SEL writeSelector; // @synthesize writeSelector=_writeSelector;
 @property(readonly, nonatomic) SEL readSelector; // @synthesize readSelector=_readSelector;
 @property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)resetGuardianManagedValueOnContact:(id)arg1;
 - (id)stringForIndexingForContact:(id)arg1;
 - (id)CNValueForContact:(id)arg1;

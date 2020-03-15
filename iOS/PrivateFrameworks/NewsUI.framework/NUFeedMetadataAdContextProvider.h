@@ -15,8 +15,8 @@
     FCFeedDescriptor *_feedDescriptor;
 }
 
-@property(readonly, nonatomic) FCFeedDescriptor *feedDescriptor; // @synthesize feedDescriptor=_feedDescriptor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) FCFeedDescriptor *feedDescriptor; // @synthesize feedDescriptor=_feedDescriptor;
 - (id)adContextValueForKeyPath:(id)arg1;
 - (id)initWithFeedDescriptor:(id)arg1;
 

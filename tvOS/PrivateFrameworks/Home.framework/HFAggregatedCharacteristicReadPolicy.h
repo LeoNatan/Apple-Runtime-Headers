@@ -17,8 +17,8 @@
     NSArray *_policies;
 }
 
-@property(readonly, nonatomic) NSArray *policies; // @synthesize policies=_policies;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *policies; // @synthesize policies=_policies;
 - (unsigned long long)evaluateWithCharacteristic:(id)arg1 traits:(out id *)arg2;
 @property(readonly, copy) NSString *description;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

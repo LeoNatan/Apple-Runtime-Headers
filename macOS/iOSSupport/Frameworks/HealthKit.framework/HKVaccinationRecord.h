@@ -39,18 +39,12 @@
 + (BOOL)_isConcreteObjectClass;
 + (BOOL)supportsEquivalence;
 + (BOOL)supportsSecureCoding;
-+ (id)_newVaccinationRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(BOOL)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(long long)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 vaccinationCodings:(id)arg11 expirationDate:(id)arg12 doseNumber:(id)arg13 doseQuantity:(id)arg14 performer:(id)arg15 bodySiteCodings:(id)arg16 reaction:(id)arg17 notGiven:(BOOL)arg18 administrationDate:(id)arg19 statusCoding:(id)arg20 patientReported:(BOOL)arg21 routeCodings:(id)arg22 reasonsCodings:(id)arg23 reasonsNotGivenCodings:(id)arg24 config:(CDUnknownBlockType)arg25;
-+ (id)vaccinationRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(BOOL)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(long long)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 vaccinationCodings:(id)arg11 expirationDate:(id)arg12 doseNumber:(id)arg13 doseQuantity:(id)arg14 performer:(id)arg15 bodySiteCodings:(id)arg16 reaction:(id)arg17 notGiven:(BOOL)arg18 administrationDate:(id)arg19 statusCoding:(id)arg20 patientReported:(BOOL)arg21 routeCodings:(id)arg22 reasonsCodings:(id)arg23 reasonsNotGivenCodings:(id)arg24;
++ (id)_newVaccinationRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(BOOL)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(long long)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 country:(id)arg11 state:(unsigned long long)arg12 vaccinationCodings:(id)arg13 expirationDate:(id)arg14 doseNumber:(id)arg15 doseQuantity:(id)arg16 performer:(id)arg17 bodySiteCodings:(id)arg18 reaction:(id)arg19 notGiven:(BOOL)arg20 administrationDate:(id)arg21 statusCoding:(id)arg22 patientReported:(BOOL)arg23 routeCodings:(id)arg24 reasonsCodings:(id)arg25 reasonsNotGivenCodings:(id)arg26 config:(CDUnknownBlockType)arg27;
++ (id)vaccinationRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(BOOL)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(long long)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 country:(id)arg11 state:(unsigned long long)arg12 vaccinationCodings:(id)arg13 expirationDate:(id)arg14 doseNumber:(id)arg15 doseQuantity:(id)arg16 performer:(id)arg17 bodySiteCodings:(id)arg18 reaction:(id)arg19 notGiven:(BOOL)arg20 administrationDate:(id)arg21 statusCoding:(id)arg22 patientReported:(BOOL)arg23 routeCodings:(id)arg24 reasonsCodings:(id)arg25 reasonsNotGivenCodings:(id)arg26;
 + (id)defaultDisplayString;
 + (id)cachedConceptRelationshipKeyPaths;
 + (id)indexableConceptKeyPaths;
-+ (id)vaccinationCodingsPreferredSystems;
-+ (id)statusCodingPreferredSystems;
-+ (id)routeCodingsPreferredSystems;
-+ (id)reasonsNotGivenCodingsPreferredSystems;
-+ (id)reasonsCodingsPreferredSystems;
-+ (id)bodySiteCodingsPreferredSystems;
-+ (id)vaccinationRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(BOOL)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(long long)arg7 device:(id)arg8 metadata:(id)arg9 vaccinationCodings:(id)arg10 expirationDate:(id)arg11 doseNumber:(id)arg12 doseQuantity:(id)arg13 performer:(id)arg14 bodySiteCodings:(id)arg15 reaction:(id)arg16 notGiven:(BOOL)arg17 administrationDate:(id)arg18 statusCoding:(id)arg19 patientReported:(BOOL)arg20 routeCodings:(id)arg21 reasonsCodings:(id)arg22 reasonsNotGivenCodings:(id)arg23;
++ (id)vaccinationRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(BOOL)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(long long)arg7 device:(id)arg8 metadata:(id)arg9 country:(id)arg10 state:(unsigned long long)arg11 vaccinationCodings:(id)arg12 expirationDate:(id)arg13 doseNumber:(id)arg14 doseQuantity:(id)arg15 performer:(id)arg16 bodySiteCodings:(id)arg17 reaction:(id)arg18 notGiven:(BOOL)arg19 administrationDate:(id)arg20 statusCoding:(id)arg21 patientReported:(BOOL)arg22 routeCodings:(id)arg23 reasonsCodings:(id)arg24 reasonsNotGivenCodings:(id)arg25;
 - (void).cxx_destruct;
 @property(readonly, copy) HKVaccinationRecordType *vaccinationRecordType;
 - (id)_validateConfigurationWithOptions:(unsigned long long)arg1;
@@ -112,20 +106,13 @@
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)init;
-- (id)medicalRecordPreferredSystems;
 - (id)medicalRecordCodings;
-- (id)indexKeywords;
 - (BOOL)applyConcepts:(id)arg1 forKeyPath:(id)arg2 error:(id *)arg3;
 - (id)codingsForKeyPath:(id)arg1 error:(id *)arg2;
-- (id)vaccinationCodingsTasks;
-- (id)statusCodingTasks;
-- (id)routeCodingsTasks;
-- (id)reasonsNotGivenCodingsTasks;
-- (id)reasonsCodingsTasks;
-- (id)bodySiteCodingsTasks;
 
 // Remaining properties
 @property(readonly) NSUUID *UUID;
+@property(readonly, copy, nonatomic) NSString *country;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy, nonatomic) NSLocale *locale;

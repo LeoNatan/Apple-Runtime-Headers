@@ -16,11 +16,11 @@
     NSMutableArray *_dataFeaturesExtractedInContextAndMain;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *dataFeaturesExtractedInContextAndMain; // @synthesize dataFeaturesExtractedInContextAndMain=_dataFeaturesExtractedInContextAndMain;
 @property _Bool followProposal; // @synthesize followProposal=_followProposal;
 @property(retain) NSMutableArray *detectedEventsInContext; // @synthesize detectedEventsInContext=_detectedEventsInContext;
 @property(retain) NSArray *contextMessageUnits; // @synthesize contextMessageUnits=_contextMessageUnits;
-- (void).cxx_destruct;
 - (id)commonComponentsForConfidence;
 - (id)eventSpecificComponentsForConfidence:(id)arg1;
 - (double)experimentalConfidenceForEvent:(id)arg1 experimentalBaseConfidence:(double)arg2;

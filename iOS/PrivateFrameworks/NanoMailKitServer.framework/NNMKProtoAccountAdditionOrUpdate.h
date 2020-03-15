@@ -30,6 +30,7 @@
 
 + (Class)mailboxesType;
 + (Class)emailType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *parentId; // @synthesize parentId=_parentId;
 @property(retain, nonatomic) NSString *localId; // @synthesize localId=_localId;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
@@ -40,7 +41,6 @@
 @property(nonatomic) _Bool shouldArchive; // @synthesize shouldArchive=_shouldArchive;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) NSString *accountId; // @synthesize accountId=_accountId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

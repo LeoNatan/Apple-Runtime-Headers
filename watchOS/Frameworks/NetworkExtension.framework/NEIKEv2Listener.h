@@ -26,6 +26,7 @@
     id <NEIKEv2PacketDelegate> _packetDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NEIKEv2PacketDelegate> packetDelegate; // @synthesize packetDelegate=_packetDelegate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <NEIKEv2ListenerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NEIPSecSASession *saSession; // @synthesize saSession=_saSession;
 @property(retain, nonatomic) NEIKEv2IKESAConfiguration *ikeConfig; // @synthesize ikeConfig=_ikeConfig;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *listenerQueue; // @synthesize listenerQueue=_listenerQueue;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)dealloc;
 - (id)initWithListenerIKEConfig:(id)arg1 kernelSASessionName:(id)arg2 packetDelegate:(id)arg3 listenerQueue:(id)arg4 delegate:(id)arg5 delegateQueue:(id)arg6;

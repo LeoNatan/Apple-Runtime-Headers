@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _preferredBackgroundInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIContextMenuLayoutArbiterOutput *expandedLayout; // @synthesize expandedLayout=_expandedLayout;
 @property(copy, nonatomic) CDUnknownBlockType accessoryAnimationBlock; // @synthesize accessoryAnimationBlock=_accessoryAnimationBlock;
 @property(copy, nonatomic) CDUnknownBlockType backgroundAnimationBlock; // @synthesize backgroundAnimationBlock=_backgroundAnimationBlock;
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak _UIPreviewPlatterPresentationController *presentationController; // @synthesize presentationController=_presentationController;
 @property(nonatomic) __weak id <_UIPreviewPlatterPresentationAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) UITargetedPreview *sourcePreview; // @synthesize sourcePreview=_sourcePreview;
-- (void).cxx_destruct;
 - (void)_setBackgroundVisible:(BOOL)arg1;
 - (id)_actionsView;
 - (id)_platterView;

@@ -15,8 +15,8 @@
     NSMutableArray *_accessHandlers;
 }
 
-@property(readonly, nonatomic) NSMutableArray *accessHandlers; // @synthesize accessHandlers=_accessHandlers;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableArray *accessHandlers; // @synthesize accessHandlers=_accessHandlers;
 - (void)reset;
 - (id)restrictedCalendarRowIDsForAction:(unsigned int)arg1;
 - (_Bool)isActionAllowed:(unsigned int)arg1 forAccountIdentifier:(id)arg2;

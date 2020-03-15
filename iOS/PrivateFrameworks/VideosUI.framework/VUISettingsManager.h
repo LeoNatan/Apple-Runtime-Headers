@@ -16,10 +16,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *preferredVideoFormat; // @synthesize preferredVideoFormat=_preferredVideoFormat;
 @property(copy, nonatomic) NSNumber *maxTVShowRank; // @synthesize maxTVShowRank=_maxTVShowRank;
 @property(copy, nonatomic) NSNumber *maxMovieRank; // @synthesize maxMovieRank=_maxMovieRank;
-- (void).cxx_destruct;
 - (id)_restrictionsMaximumEffectiveTVShowRanking;
 - (id)_restrictionsMaximumEffectiveMovieRanking;
 - (unsigned long long)_preferredVideoFormat;
@@ -27,6 +27,7 @@
 - (_Bool)_hasPreferredVideoFormatChanged;
 - (_Bool)_hasRestrictionsChanged;
 - (void)_sendSettingsValuesToJS;
+@property(readonly, nonatomic, getter=isAppInstallationAllowed) _Bool appInstallationAllowed;
 - (id)preferencesJSONData;
 - (void)checkAndUpdateSettings;
 - (id)init;

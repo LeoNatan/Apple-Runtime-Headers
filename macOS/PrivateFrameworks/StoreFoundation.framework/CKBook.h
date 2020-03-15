@@ -39,6 +39,7 @@
 
 + (id)_imageFetchQueue;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSNumber *jaliscoItemIdentifier; // @synthesize jaliscoItemIdentifier=_jaliscoItemIdentifier;
 @property(copy) NSURL *coverImageURL; // @synthesize coverImageURL=_coverImageURL;
 @property(retain) NSMutableDictionary *externalMetadata; // @synthesize externalMetadata=_externalMetadata;
@@ -61,7 +62,6 @@
 @property(copy) NSString *title; // @synthesize title=_title;
 @property BOOL isLocal; // @synthesize isLocal=_isLocal;
 @property(copy) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)getItemIdentifier;
 @property(readonly) BOOL isPreorder;
 @property(readonly) SSPurchase *updatePurchase;

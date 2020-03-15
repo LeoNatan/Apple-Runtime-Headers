@@ -19,10 +19,10 @@
 }
 
 + (id)acquireAssertionForConnection:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) RBSAssertion *assertion; // @synthesize assertion=_assertion;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 @property(readonly, nonatomic) FBProcess *process; // @synthesize process=_process;
-- (void).cxx_destruct;
 - (void)assertion:(id)arg1 didInvalidateWithError:(id)arg2;
 - (void)invalidate;
 - (void)_acquire;

@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     NSMutableIndexSet *_messageSet;
 }
 
-@property(retain, nonatomic) NSMutableIndexSet *messageSet; // @synthesize messageSet=_messageSet;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableIndexSet *messageSet; // @synthesize messageSet=_messageSet;
 - (_Bool)handleMessage:(id)arg1;
 
 // Remaining properties

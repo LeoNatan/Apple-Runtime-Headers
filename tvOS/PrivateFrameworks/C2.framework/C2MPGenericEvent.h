@@ -26,11 +26,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)metricType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *metrics; // @synthesize metrics=_metrics;
 @property(nonatomic) unsigned long long timestampEnd; // @synthesize timestampEnd=_timestampEnd;
 @property(nonatomic) unsigned long long timestampStart; // @synthesize timestampStart=_timestampStart;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

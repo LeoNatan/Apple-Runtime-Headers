@@ -6,12 +6,13 @@
 
 #import <AppKit/NSViewController.h>
 
+#import <Safari/NSControlTextEditingDelegate-Protocol.h>
 #import <Safari/NSPopoverDelegate-Protocol.h>
 
 @class BookmarksUndoController, NSButton, NSPopover, NSString, NSTextField, WebBookmarkLeaf;
 
 __attribute__((visibility("hidden")))
-@interface BookmarkAddressEditingPopoverViewController : NSViewController <NSPopoverDelegate>
+@interface BookmarkAddressEditingPopoverViewController : NSViewController <NSPopoverDelegate, NSControlTextEditingDelegate>
 {
     NSPopover *_popover;
     WebBookmarkLeaf *_bookmark;
@@ -22,11 +23,11 @@ __attribute__((visibility("hidden")))
     NSButton *_doneButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(nonatomic) __weak NSTextField *addressField; // @synthesize addressField=_addressField;
 @property(retain, nonatomic) BookmarksUndoController *undoController; // @synthesize undoController=_undoController;
 @property(copy, nonatomic) CDUnknownBlockType popoverDidCloseHandler; // @synthesize popoverDidCloseHandler=_popoverDidCloseHandler;
-- (void).cxx_destruct;
 - (void)controlTextDidEndEditing:(id)arg1;
 - (void)controlTextDidChange:(id)arg1;
 - (void)doneEditing:(id)arg1;

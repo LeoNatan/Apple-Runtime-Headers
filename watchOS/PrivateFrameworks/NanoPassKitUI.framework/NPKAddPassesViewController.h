@@ -23,6 +23,7 @@
     CDUnknownBlockType _finishScrollingBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType finishScrollingBlock; // @synthesize finishScrollingBlock=_finishScrollingBlock;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) NSArray *addButtons; // @synthesize addButtons=_addButtons;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSArray *passViews; // @synthesize passViews=_passViews;
 @property(retain, nonatomic) NSArray *passes; // @synthesize passes=_passes;
 @property(nonatomic) id <NPKAddPassesViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)passDatas;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)_dismissUIWithAdd:(_Bool)arg1;

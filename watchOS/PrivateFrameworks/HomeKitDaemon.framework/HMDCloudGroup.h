@@ -20,13 +20,13 @@
 
 + (id)shortDescription;
 + (void)createGroupWithRootRecordName:(id)arg1 owner:(id)arg2 subscriptionName:(id)arg3 cloudZone:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *objectIDToRecordNameMap; // @synthesize objectIDToRecordNameMap=_objectIDToRecordNameMap;
 @property(retain, nonatomic) HMDBackingStoreCacheGroup *backingStoreGroup; // @synthesize backingStoreGroup=_backingStoreGroup;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSUUID *ownerID; // @synthesize ownerID=_ownerID;
 @property(nonatomic) __weak HMDCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
 @property(nonatomic) __weak HMDCloudCache *cache; // @synthesize cache=_cache;
-- (void).cxx_destruct;
 - (void)deleteCloudRecord:(id)arg1;
 - (void)deleteCloudRecordNames:(id)arg1;
 - (void)updateCloudRecord:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -24,13 +24,13 @@
 + (id)allowedDecodableClasses;
 + (id)requestWithTranslation:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int clientType; // @synthesize clientType=_clientType;
 @property(retain, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property(nonatomic) unsigned int actionType; // @synthesize actionType=_actionType;
 @property(nonatomic) unsigned int attributeType; // @synthesize attributeType=_attributeType;
 @property(nonatomic) unsigned int requestType; // @synthesize requestType=_requestType;
 @property(retain, nonatomic) AXPTranslationObject *translation; // @synthesize translation=_translation;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

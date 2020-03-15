@@ -17,8 +17,8 @@
 
 + (id)nowButtonTitle;
 + (id)laterButtonTitle;
-@property(copy, nonatomic) NSURL *accountURL; // @synthesize accountURL=_accountURL;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSURL *accountURL; // @synthesize accountURL=_accountURL;
 - (void)takeAction;
 - (void)notNow;
 - (void)configure:(_Bool)arg1 requirePasscodeForActions:(_Bool)arg2;

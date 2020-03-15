@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
     SKUIPinnedFooterView *_pinnedFooterView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIPinnedFooterView *pinnedFooterView; // @synthesize pinnedFooterView=_pinnedFooterView;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(retain, nonatomic) NSIndexPath *activeIndexPath; // @synthesize activeIndexPath=_activeIndexPath;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak id <SKUIRedeemIdManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (long long)_autoCapitalizationTypeForIndexPath:(id)arg1;
 - (long long)_returnKeyTypeForIndexPath:(id)arg1;
 - (long long)_keyboardTypeForIndexPath:(id)arg1;

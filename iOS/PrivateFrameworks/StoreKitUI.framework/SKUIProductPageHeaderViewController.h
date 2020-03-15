@@ -38,12 +38,12 @@ __attribute__((visibility("hidden")))
     _Bool _performArtistActionOnLoad;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(readonly, nonatomic) SKUIItem *item; // @synthesize item=_item;
 @property(nonatomic) __weak id <SKUIProductPageHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(nonatomic) _Bool askPermission; // @synthesize askPermission=_askPermission;
-- (void).cxx_destruct;
 - (void)_showSynthesizedItemStateWithFlag:(unsigned long long)arg1 animated:(_Bool)arg2;
 - (void)_showAskPermissionBanner;
 - (void)_showActivityViewControllerFromView:(id)arg1;

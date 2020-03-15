@@ -16,11 +16,11 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) _Bool exhaustedRequestRange; // @synthesize exhaustedRequestRange=_exhaustedRequestRange;
 @property(copy, nonatomic) NSArray *feedItems; // @synthesize feedItems=_feedItems;
 @property(copy, nonatomic) NSString *feedID; // @synthesize feedID=_feedID;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) FCFeedRange *feedRange;
 - (id)feedResponseByMergingWithResponse:(id)arg1;
 

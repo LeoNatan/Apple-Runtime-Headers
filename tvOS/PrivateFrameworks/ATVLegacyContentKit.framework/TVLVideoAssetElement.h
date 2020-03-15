@@ -29,6 +29,7 @@
 }
 
 + (id)_videoAssetElementForDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TVLXMLElement *xml; // @synthesize xml=_xml;
 @property(nonatomic) _Bool optimizeDownloadForHighLatency; // @synthesize optimizeDownloadForHighLatency=_optimizeDownloadForHighLatency;
 @property(nonatomic) float upNextPresentationDurationSec; // @synthesize upNextPresentationDurationSec=_upNextPresentationDurationSec;
@@ -44,7 +45,6 @@
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *serviceId; // @synthesize serviceId=_serviceId;
 @property(copy, nonatomic) NSString *externalID; // @synthesize externalID=_externalID;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;

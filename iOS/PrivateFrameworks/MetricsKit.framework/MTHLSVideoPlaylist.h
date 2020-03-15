@@ -17,10 +17,10 @@
     NSArray *_mainFeatureMetricsData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *mainFeatureMetricsData; // @synthesize mainFeatureMetricsData=_mainFeatureMetricsData;
 @property(retain, nonatomic) NSMutableArray *rollItems; // @synthesize rollItems=_rollItems;
 @property(nonatomic) unsigned long long startPosition; // @synthesize startPosition=_startPosition;
-- (void).cxx_destruct;
 - (long long)indexOfLastRollItemWithStartBeforePosition:(unsigned long long)arg1;
 - (id)mainFeatureItemWithStartOverallPosition:(unsigned long long)arg1;
 - (void)addRollItem:(id)arg1;

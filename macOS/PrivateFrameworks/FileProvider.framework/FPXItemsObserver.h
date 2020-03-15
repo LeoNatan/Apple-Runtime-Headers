@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSData *_syncAnchor;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSData *syncAnchor; // @synthesize syncAnchor=_syncAnchor;
 @property(copy) CDUnknownBlockType finishedBlock; // @synthesize finishedBlock=_finishedBlock;
-- (void).cxx_destruct;
 - (void)finishEnumeratingWithError:(id)arg1;
 - (void)finishEnumeratingUpToPage:(id)arg1;
 - (void)didEnumerateItems:(id)arg1;

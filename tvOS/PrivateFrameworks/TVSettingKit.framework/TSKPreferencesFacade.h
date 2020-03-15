@@ -14,8 +14,8 @@
     NSString *_domain;
 }
 
-@property(readonly, copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 - (id)valueForUndefinedKey:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)initWithDomain:(id)arg1 notifyChanges:(_Bool)arg2;

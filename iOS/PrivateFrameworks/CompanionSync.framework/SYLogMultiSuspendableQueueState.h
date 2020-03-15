@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *target; // @synthesize target=_target;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 @property(nonatomic) int resumeCount; // @synthesize resumeCount=_resumeCount;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

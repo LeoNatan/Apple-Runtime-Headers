@@ -19,6 +19,7 @@
     UIColor *_labelColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *labelColor; // @synthesize labelColor=_labelColor;
 @property(nonatomic) _Bool isViewCreated; // @synthesize isViewCreated=_isViewCreated;
 @property(retain, nonatomic) NSMutableArray *constraints; // @synthesize constraints=_constraints;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) UIImageView *conditionImageView; // @synthesize conditionImageView=_conditionImageView;
 @property(retain, nonatomic) UILabel *natualLanguageDescriptionLabel; // @synthesize natualLanguageDescriptionLabel=_natualLanguageDescriptionLabel;
 @property(retain, nonatomic) WATodayAutoupdatingLocationModel *todayModel; // @synthesize todayModel=_todayModel;
-- (void).cxx_destruct;
 - (id)_conditionsImage;
 - (id)_temperature;
 - (void)updateView;

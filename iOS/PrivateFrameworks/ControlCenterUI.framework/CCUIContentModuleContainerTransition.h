@@ -17,10 +17,10 @@
     struct CGRect _contentRestOverrideFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect contentRestOverrideFrame; // @synthesize contentRestOverrideFrame=_contentRestOverrideFrame;
 @property(nonatomic, getter=isAppearanceTransition) _Bool appearanceTransition; // @synthesize appearanceTransition=_appearanceTransition;
 @property(nonatomic) __weak CCUIContentModuleContainerViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (void)transitionDidEnd:(_Bool)arg1;
 - (void)performTransitionFromView:(id)arg1 toView:(id)arg2 containerView:(id)arg3;
 - (void)prepareTransitionFromView:(id)arg1 toView:(id)arg2 containerView:(id)arg3;

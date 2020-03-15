@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_group> *_throwAnimationGroup;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *throwAnimationGroup; // @synthesize throwAnimationGroup=_throwAnimationGroup;
 @property(retain, nonatomic) CAEmitterLayer *dustEmitter; // @synthesize dustEmitter=_dustEmitter;
 @property(nonatomic) __weak id <CKSendAnimationManager> animationDelegate; // @synthesize animationDelegate=_animationDelegate;
-- (void).cxx_destruct;
 - (void)_beginGentleAnimationWithContext:(id)arg1;
 - (void)_beginFocusAnimationWithContext:(id)arg1;
 - (void)_beginLoudAnimationsWithContext:(id)arg1;

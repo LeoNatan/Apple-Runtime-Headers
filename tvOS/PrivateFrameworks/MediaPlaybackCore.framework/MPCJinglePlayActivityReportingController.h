@@ -26,10 +26,10 @@
     SSVPlayActivityController *_playActivityController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldReportPlayActivityEvents; // @synthesize shouldReportPlayActivityEvents=_shouldReportPlayActivityEvents;
 @property(nonatomic) _Bool shouldReportAggregateTimePlayActivityEvents; // @synthesize shouldReportAggregateTimePlayActivityEvents=_shouldReportAggregateTimePlayActivityEvents;
 @property(readonly, nonatomic) SSVPlayActivityController *playActivityController; // @synthesize playActivityController=_playActivityController;
-- (void).cxx_destruct;
 - (void)_clearNonCatalogAggregatePlayActivityEventData;
 - (id)_captureNonCatalogAggregatePlayActivityEventWithNonCatalogAggregateEndTime:(double)arg1;
 - (void)_applicationWillTerminateNotification:(id)arg1;

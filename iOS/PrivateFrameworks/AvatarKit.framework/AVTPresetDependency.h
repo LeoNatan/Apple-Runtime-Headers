@@ -15,10 +15,10 @@
     NSString *variantName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *variantName; // @synthesize variantName;
 @property(retain, nonatomic) AVTPreset *preset; // @synthesize preset;
 @property(nonatomic) long long category; // @synthesize category;
-- (void).cxx_destruct;
 - (id)debugDescription;
 
 @end

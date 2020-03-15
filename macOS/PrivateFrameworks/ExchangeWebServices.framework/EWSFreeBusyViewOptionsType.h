@@ -18,10 +18,10 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) long long RequestedView; // @synthesize RequestedView=_RequestedView;
 @property(nonatomic) long long MergedFreeBusyIntervalInMinutes; // @synthesize MergedFreeBusyIntervalInMinutes=_MergedFreeBusyIntervalInMinutes;
 @property(retain, nonatomic) EWSDuration *TimeWindow; // @synthesize TimeWindow=_TimeWindow;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

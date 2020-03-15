@@ -14,9 +14,9 @@
     UILabel *_footnoteLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *footnoteLabel; // @synthesize footnoteLabel=_footnoteLabel;
 @property(retain, nonatomic) UIView *textEntryView; // @synthesize textEntryView=_textEntryView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

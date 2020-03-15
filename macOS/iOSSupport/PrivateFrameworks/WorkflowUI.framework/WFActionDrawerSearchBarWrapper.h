@@ -13,8 +13,8 @@
     UISearchBar *_searchBar;
 }
 
-@property(readonly, nonatomic) UISearchBar *searchBar; // @synthesize searchBar=_searchBar;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UISearchBar *searchBar; // @synthesize searchBar=_searchBar;
 - (id)initWithSearchBar:(id)arg1;
 
 @end

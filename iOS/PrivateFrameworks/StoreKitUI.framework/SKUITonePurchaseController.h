@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     UIViewController *_parentViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_showContactPicker;
 - (void)_presentViewController:(id)arg1;
 - (void)_finishWithTonePurchase:(id)arg1;

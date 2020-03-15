@@ -17,9 +17,9 @@
     HKQuantitySample *_mostRecentHeartRate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKQuantitySample *mostRecentHeartRate; // @synthesize mostRecentHeartRate=_mostRecentHeartRate;
 @property(readonly, nonatomic) __weak id <NTKHeartRateModelDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)manager:(id)arg1 receivedLatestHeartRateSample:(id)arg2;
 - (id)initWithDelegate:(id)arg1;
 

@@ -19,10 +19,10 @@
 }
 
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIAlertController *alertController; // @synthesize alertController=_alertController;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) __weak id <CNUIFavoritesEntryPickerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)contactActionsViewController:(id)arg1 didSelectAction:(id)arg2;
 - (id)viewController;
 - (id)initWithContact:(id)arg1;

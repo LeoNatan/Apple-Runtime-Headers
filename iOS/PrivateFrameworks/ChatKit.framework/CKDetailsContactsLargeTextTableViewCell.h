@@ -16,9 +16,9 @@
 
 + (double)estimatedHeight;
 + (double)preferredHeight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *buttonsTopConstraint; // @synthesize buttonsTopConstraint=_buttonsTopConstraint;
 @property(retain, nonatomic) UIStackView *buttonStackView; // @synthesize buttonStackView=_buttonStackView;
-- (void).cxx_destruct;
 - (void)_updateVisibleButtons;
 - (void)configureWithViewModel:(id)arg1;
 - (void)setShowsLocation:(_Bool)arg1;

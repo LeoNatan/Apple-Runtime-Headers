@@ -18,13 +18,13 @@
     HKHealthStore *_healthStore;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(retain, nonatomic) HKWeekdayHeaderPaletteView *weekdayHeaderPaletteView; // @synthesize weekdayHeaderPaletteView=_weekdayHeaderPaletteView;
 @property(retain, nonatomic) _UINavigationControllerPalette *containingPalette; // @synthesize containingPalette=_containingPalette;
 @property(retain, nonatomic) NSPredicate *additionalSamplePredicate; // @synthesize additionalSamplePredicate=_additionalSamplePredicate;
 @property(retain, nonatomic) UIColor *sampleColor; // @synthesize sampleColor=_sampleColor;
 @property(retain, nonatomic) HKSampleType *sampleType; // @synthesize sampleType=_sampleType;
-- (void).cxx_destruct;
 - (void)didTapTodayButton;
 - (void)calendarScrollViewController:(id)arg1 accessoryViewForDate:(id)arg2 accessoryViewCompletion:(CDUnknownBlockType)arg3;
 - (void)dismissViewController:(id)arg1;

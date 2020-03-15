@@ -15,8 +15,8 @@
     NSString *_authToken;
 }
 
-@property(retain, nonatomic) NSString *authToken; // @synthesize authToken=_authToken;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *authToken; // @synthesize authToken=_authToken;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

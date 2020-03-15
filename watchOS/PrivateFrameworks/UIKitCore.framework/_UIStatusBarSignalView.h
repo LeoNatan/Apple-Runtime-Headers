@@ -22,6 +22,7 @@
 }
 
 + (struct CGSize)_intrinsicContentSizeForNumberOfBars:(int)arg1 iconSize:(int)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) int iconSize; // @synthesize iconSize=_iconSize;
 @property(nonatomic) _Bool smallSize; // @synthesize smallSize=_smallSize;
 @property(copy, nonatomic) UIColor *activeColor; // @synthesize activeColor=_activeColor;
@@ -29,7 +30,6 @@
 @property(nonatomic) int signalMode; // @synthesize signalMode=_signalMode;
 @property(nonatomic) int numberOfActiveBars; // @synthesize numberOfActiveBars=_numberOfActiveBars;
 @property(nonatomic) int numberOfBars; // @synthesize numberOfBars=_numberOfBars;
-- (void).cxx_destruct;
 - (void)applyStyleAttributes:(id)arg1;
 - (void)_updateFromMode:(int)arg1;
 - (void)_updateActiveBars;

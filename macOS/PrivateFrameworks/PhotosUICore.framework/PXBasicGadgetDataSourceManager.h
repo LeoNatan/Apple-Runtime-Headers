@@ -13,8 +13,8 @@
     NSArray *_providers;
 }
 
-@property(copy, nonatomic) NSArray *providers; // @synthesize providers=_providers;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *providers; // @synthesize providers=_providers;
 - (id)gadgetProviders;
 - (id)initWithProviders:(id)arg1;
 

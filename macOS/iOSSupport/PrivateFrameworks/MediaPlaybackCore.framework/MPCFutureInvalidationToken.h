@@ -15,8 +15,8 @@
     MPCFuture *_future;
 }
 
-@property(retain, nonatomic) MPCFuture *future; // @synthesize future=_future;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPCFuture *future; // @synthesize future=_future;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)viewControllerWithDataSource:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *dateTrailingMargin; // @synthesize dateTrailingMargin=_dateTrailingMargin;
 @property(retain, nonatomic) NSLayoutConstraint *fromLeadingMargin; // @synthesize fromLeadingMargin=_fromLeadingMargin;
 @property(retain, nonatomic) NSLayoutConstraint *ignoreTrailingMargin; // @synthesize ignoreTrailingMargin=_ignoreTrailingMargin;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <CNContactSuggestionViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) CNPropertyCell *propertyCell; // @synthesize propertyCell=_propertyCell;
 @property(retain, nonatomic) CNPropertySuggestionAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)showSource:(id)arg1;
 - (void)ignore:(id)arg1;
 - (void)addToContact:(id)arg1;

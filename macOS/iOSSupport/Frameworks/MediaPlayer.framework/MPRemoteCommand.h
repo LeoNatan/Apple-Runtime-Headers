@@ -20,12 +20,12 @@
     id <MPRemoteCommandDelegate_Private> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MPRemoteCommandDelegate_Private> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned int mediaRemoteCommandType; // @synthesize mediaRemoteCommandType=_mediaRemoteCommandType;
 @property(nonatomic, getter=isObserving) BOOL observing; // @synthesize observing=_observing;
 @property(nonatomic) __weak id <MPRemoteCommandDelegate_Internal> commandCenterDelegate; // @synthesize commandCenterDelegate=_commandCenterDelegate;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (id)_mediaRemoteCommandInfoOptions;
 - (id)newSeekCommandEventWithType:(unsigned long long)arg1;
 - (id)newCommandEventWithCommandType:(unsigned int)arg1 options:(id)arg2;

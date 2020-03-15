@@ -15,10 +15,10 @@
     NSArray *_supplementaryItems;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *supplementaryItems; // @synthesize supplementaryItems=_supplementaryItems;
 @property(copy, nonatomic) NSArray *boundarySupplementaryItems; // @synthesize boundarySupplementaryItems=_boundarySupplementaryItems;
 @property(readonly, nonatomic) int scrollDirection; // @synthesize scrollDirection=_scrollDirection;
-- (void).cxx_destruct;
 - (id)initWithLayoutSection:(id)arg1 scrollDirection:(int)arg2;
 - (id)initWithLayoutSectionProvider:(CDUnknownBlockType)arg1;
 - (id)initWithLayoutSectionProvider:(CDUnknownBlockType)arg1 scrollDirection:(int)arg2;

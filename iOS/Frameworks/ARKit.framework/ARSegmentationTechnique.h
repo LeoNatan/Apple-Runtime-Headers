@@ -18,6 +18,7 @@
 }
 
 - (void).cxx_destruct;
+- (id)_fullDescription;
 - (void)_endMLCreateResultSignpostWithTimestamp:(double)arg1;
 - (void)_startMLCreateResultSignpostWithTimestamp:(double)arg1 orientation:(long long)arg2 outputSize:(struct CGSize)arg3;
 - (void)_endMLRunNetworkSignpostWithTimestamp:(double)arg1;

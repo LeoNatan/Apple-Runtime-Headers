@@ -16,10 +16,10 @@
 }
 
 + (id)entityName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *plainSequence; // @synthesize plainSequence=_plainSequence;
 @property(nonatomic) short sequenceHashIndex; // @synthesize sequenceHashIndex=_sequenceHashIndex;
 @property(retain, nonatomic) NSData *sequence; // @synthesize sequence=_sequence;
-- (void).cxx_destruct;
 - (id)jsonString;
 - (BOOL)copyFromManagedObject:(id)arg1;
 - (BOOL)copyToManagedObject:(id)arg1;

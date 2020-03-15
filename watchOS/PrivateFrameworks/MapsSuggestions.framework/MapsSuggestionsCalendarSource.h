@@ -26,6 +26,7 @@
 
 + (unsigned int)disposition;
 + (_Bool)isEnabled;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MapsSuggestionsCanKicker *changedNotificationCanKicker; // @synthesize changedNotificationCanKicker=_changedNotificationCanKicker;
 @property(retain, nonatomic) NSSet *setOfEventReservationSubtypes; // @synthesize setOfEventReservationSubtypes=_setOfEventReservationSubtypes;
 @property(retain, nonatomic) MapsSuggestionsNetworkRequester *requester; // @synthesize requester=_requester;
@@ -35,11 +36,10 @@
 @property(retain, nonatomic) EKCalendarVisibilityManager *calVisibilityManager; // @synthesize calVisibilityManager=_calVisibilityManager;
 @property(retain, nonatomic) EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
 @property _Bool suspended; // @synthesize suspended=_suspended;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)removeEntry:(id)arg1 behavior:(int)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)canProduceEntriesOfType:(int)arg1;
-- (id)_predicateForPeriod:(struct NSDateInterval *)arg1;
+- (id)_predicateForPeriod:(id)arg1;
 - (int)_entryTypeFromSchema:(id)arg1;
 - (_Bool)_addRestaurantReservationFieldsToEntry:(id)arg1 fromSchemaOrgDictionary:(id)arg2 event:(id)arg3;
 - (_Bool)_addCalendarEventFieldsToEntry:(id)arg1 event:(id)arg2;
@@ -47,8 +47,8 @@
 - (_Bool)_addCarRentalFieldsToEntry:(id)arg1 event:(id)arg2;
 - (_Bool)_addHotelFieldsToEntry:(id)arg1 fromSchemaOrgDictionary:(id)arg2 event:(id)arg3;
 - (_Bool)_addTravelFlightFieldsToEntry:(id)arg1 fromSchemaOrgDictionary:(id)arg2 event:(id)arg3;
-- (_Bool)_createEntriesWithinPeriod:(struct NSDateInterval *)arg1 location:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (_Bool)suggestionsEntriesAtLocation:(id)arg1 period:(struct NSDateInterval *)arg2 handler:(CDUnknownBlockType)arg3;
+- (_Bool)_createEntriesWithinPeriod:(id)arg1 location:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (_Bool)suggestionsEntriesAtLocation:(id)arg1 period:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (double)updateSuggestionEntries;
 - (void)stop;
 - (void)_callUpdateSuggestionEntries;

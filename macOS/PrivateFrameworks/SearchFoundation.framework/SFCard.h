@@ -42,6 +42,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic, getter=_originalCardData, setter=_setOriginalCardData:) NSData *originalCardData; // @synthesize originalCardData=_originalCardData;
 @property(copy, nonatomic) NSArray *entityProtobufMessages; // @synthesize entityProtobufMessages=_entityProtobufMessages;
 @property(nonatomic) BOOL flexibleSectionOrder; // @synthesize flexibleSectionOrder=_flexibleSectionOrder;
@@ -61,7 +62,6 @@
 @property(copy) NSArray *cardSections; // @synthesize cardSections=_cardSections;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
@@ -74,7 +74,6 @@
 - (void)loadCardSectionsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)loadCardSectionsWithCompletionAndErrorHandler:(CDUnknownBlockType)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (void)recursiveSetQueryId:(unsigned long long)arg1;
 - (id)initWithProtobuf:(id)arg1;
 
 // Remaining properties

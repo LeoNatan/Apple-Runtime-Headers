@@ -22,6 +22,7 @@
 }
 
 + (id)modulatorWithBudgets:(id)arg1 persistence:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(retain, nonatomic) _DKPredictionTimeline *usage; // @synthesize usage=_usage;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSDate *lastModulationDate; // @synthesize lastModulationDate=_lastModulationDate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) id <_DASBudgetPersisting> persistence; // @synthesize persistence=_persistence;
-- (void).cxx_destruct;
 - (void)updateCapacity:(double)arg1 forBudgetWithName:(id)arg2;
 - (void)_queue_modulateBudgets;
 - (id)usageTimeline;

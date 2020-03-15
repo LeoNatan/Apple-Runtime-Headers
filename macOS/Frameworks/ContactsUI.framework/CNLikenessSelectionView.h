@@ -13,8 +13,8 @@
     NSImage *_selectionImage;
 }
 
-@property(retain, nonatomic) NSImage *selectionImage; // @synthesize selectionImage=_selectionImage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSImage *selectionImage; // @synthesize selectionImage=_selectionImage;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 - (id)init;

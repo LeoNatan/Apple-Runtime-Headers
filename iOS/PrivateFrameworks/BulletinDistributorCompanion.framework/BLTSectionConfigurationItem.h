@@ -31,6 +31,7 @@
     NSNumber *_watchVersionThatUsesAttachmentURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *watchVersionThatUsesAttachmentURL; // @synthesize watchVersionThatUsesAttachmentURL=_watchVersionThatUsesAttachmentURL;
 @property(nonatomic) _Bool overrideAppliesToCoordinationOptOut; // @synthesize overrideAppliesToCoordinationOptOut=_overrideAppliesToCoordinationOptOut;
 @property(nonatomic) _Bool optOutOfSettingsCoordination; // @synthesize optOutOfSettingsCoordination=_optOutOfSettingsCoordination;
@@ -50,7 +51,6 @@
 @property(nonatomic) _Bool alwaysSyncSettings; // @synthesize alwaysSyncSettings=_alwaysSyncSettings;
 @property(nonatomic) _Bool optOutOfAttachmentTransmission; // @synthesize optOutOfAttachmentTransmission=_optOutOfAttachmentTransmission;
 @property unsigned long long coordinationType; // @synthesize coordinationType=_coordinationType;
-- (void).cxx_destruct;
 - (_Bool)updateCoordinationType:(unsigned long long)arg1;
 - (_Bool)hasDisplayedCriticalBulletins;
 - (unsigned long long)coordinationTypeWithSubtype:(long long)arg1;

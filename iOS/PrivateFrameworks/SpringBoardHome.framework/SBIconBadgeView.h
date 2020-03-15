@@ -30,9 +30,9 @@
 + (id)backgroundImageCache;
 + (double)_textPadding;
 + (struct CGPoint)_textOffset;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SBIconListLayout> listLayout; // @synthesize listLayout=_listLayout;
 @property(retain, nonatomic) SBFParallaxSettings *parallaxSettings; // @synthesize parallaxSettings=_parallaxSettings;
-- (void).cxx_destruct;
 - (void)_applyParallaxSettings;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)_resizeForTextImage:(id)arg1;

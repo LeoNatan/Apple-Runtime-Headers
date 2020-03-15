@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_rearrangeObjects:(id)arg1 forCurrentIndex:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *buffer; // @synthesize buffer=_buffer;
 @property unsigned long long currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(retain) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
-- (void).cxx_destruct;
 - (id)_flush;
 - (id)description;
 - (id)flush;

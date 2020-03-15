@@ -17,10 +17,11 @@
     NSData *_mediaData;
     NSDictionary *_metadata;
     NSString *_mediaFilenameExtension;
-    struct NSImage *_image;
+    NSImage *_image;
     NSAttributedString *_attributedContentText;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSAttributedString *attributedContentText; // @synthesize attributedContentText=_attributedContentText;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSString *mediaFilenameExtension; // @synthesize mediaFilenameExtension=_mediaFilenameExtension;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSURL *mediaURL; // @synthesize mediaURL=_mediaURL;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) ICAttachment *attachment; // @synthesize attachment=_attachment;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) BOOL isVideo;
 @property(readonly, nonatomic) BOOL isPhoto;

@@ -27,6 +27,7 @@
     struct CGSize _minSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isMovie; // @synthesize isMovie=_isMovie;
 @property(nonatomic) _Bool showAsFileIcon; // @synthesize showAsFileIcon=_showAsFileIcon;
 @property(nonatomic) unsigned long long imageScaling; // @synthesize imageScaling=_imageScaling;
@@ -40,7 +41,6 @@
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) struct CGSize minSize; // @synthesize minSize=_minSize;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)main;
 - (void)addCompletionBlock:(CDUnknownBlockType)arg1;
 - (_Bool)isMatchingOperationForCacheKey:(id)arg1 cache:(id)arg2;

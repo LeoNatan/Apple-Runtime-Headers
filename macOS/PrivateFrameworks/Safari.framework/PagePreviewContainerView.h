@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     PagePreviewViewController *_previewViewController;
 }
 
-@property(nonatomic) __weak PagePreviewViewController *previewViewController; // @synthesize previewViewController=_previewViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak PagePreviewViewController *previewViewController; // @synthesize previewViewController=_previewViewController;
 - (BOOL)accessibilityPerformPress;
 - (id)accessibilityLabel;
 - (id)accessibilityRoleDescription;

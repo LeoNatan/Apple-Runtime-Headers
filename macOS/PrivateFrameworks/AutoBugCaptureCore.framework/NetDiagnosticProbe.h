@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_netDiagsTaskDict;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *netDiagsTaskDict; // @synthesize netDiagsTaskDict=_netDiagsTaskDict;
 @property(retain, nonatomic) NSString *ndFilePath; // @synthesize ndFilePath=_ndFilePath;
 @property(retain, nonatomic) NSString *taskName; // @synthesize taskName=_taskName;
-- (void).cxx_destruct;
 - (BOOL)netDiagnosticsTaskInProgress:(CDUnknownBlockType)arg1;
 - (BOOL)stopNetDiagnosticsTask:(CDUnknownBlockType)arg1;
 - (void)cancelTest:(CDUnknownBlockType)arg1;

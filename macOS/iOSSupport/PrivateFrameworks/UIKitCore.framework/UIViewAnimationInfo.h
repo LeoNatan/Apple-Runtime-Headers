@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_lockingQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *lockingQueue; // @synthesize lockingQueue=_lockingQueue;
 @property(retain, nonatomic) NSMutableDictionary *isPartOfHigherOrderProperty; // @synthesize isPartOfHigherOrderProperty=_isPartOfHigherOrderProperty;
 @property(retain, nonatomic) NSMutableDictionary *modifierGroupRequestHandlers; // @synthesize modifierGroupRequestHandlers=_modifierGroupRequestHandlers;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableDictionary *animatableProperties; // @synthesize animatableProperties=_animatableProperties;
 @property(copy, nonatomic) CDUnknownBlockType invalidationBlock; // @synthesize invalidationBlock=_invalidationBlock;
 @property __weak UIView *owningView; // @synthesize owningView=_owningView;
-- (void).cxx_destruct;
 - (void)performWithLock:(CDUnknownBlockType)arg1;
 - (void)setModifierGroupRequestHandler:(id)arg1 forKey:(id)arg2;
 - (id)modifierGroupRequestHandlerForKey:(id)arg1;

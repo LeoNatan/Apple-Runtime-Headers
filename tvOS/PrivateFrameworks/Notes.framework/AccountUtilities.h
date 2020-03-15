@@ -19,10 +19,10 @@
 }
 
 + (id)sharedAccountUtilities;
+- (void).cxx_destruct;
 @property(retain) NSLock *updateAccountInfosLock; // @synthesize updateAccountInfosLock=_updateAccountInfosLock;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *backgroundDispatchGroup; // @synthesize backgroundDispatchGroup=_backgroundDispatchGroup;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
-- (void).cxx_destruct;
 - (void)updateAccountInfos;
 - (id)localAccountDisplayName;
 - (_Bool)localNotesExist;

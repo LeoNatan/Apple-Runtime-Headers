@@ -21,6 +21,7 @@
     NSNumber *_purchaseID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL suppressErrorDialogs; // @synthesize suppressErrorDialogs=_suppressErrorDialogs;
 @property(copy, nonatomic) NSNumber *purchaseID; // @synthesize purchaseID=_purchaseID;
 @property(nonatomic) BOOL ignoresPreviousClaimAttempts; // @synthesize ignoresPreviousClaimAttempts=_ignoresPreviousClaimAttempts;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) NSArray *bundleIdentifiers; // @synthesize bundleIdentifiers=_bundleIdentifiers;
 @property(copy, nonatomic) NSData *clientAuditTokenData; // @synthesize clientAuditTokenData=_clientAuditTokenData;
 @property(copy, nonatomic) NSNumber *accountID; // @synthesize accountID=_accountID;
-- (void).cxx_destruct;
 - (id)initWithClaimStyle:(long long)arg1;
 - (id)initWithBundleIdentifiers:(id)arg1;
 - (id)init;

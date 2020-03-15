@@ -18,9 +18,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long rotorKnobCount; // @synthesize rotorKnobCount=_rotorKnobCount;
 @property(copy, nonatomic) NSString *rotorTitle; // @synthesize rotorTitle=_rotorTitle;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)_isEqualToRotorInfo:(id)arg1;
 - (unsigned long long)hash;

@@ -15,9 +15,9 @@
 }
 
 + (id)startStateWithDelegate:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak NSObject<CSLChargingManagerStateDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CDUnknownBlockType postTransitionBlock; // @synthesize postTransitionBlock=_postTransitionBlock;
-- (void).cxx_destruct;
 - (void)logTransitionFrom:(id)arg1 to:(id)arg2 event:(int)arg3;
 - (id)transitionToOnAC;
 - (id)executeTransitionForEvent:(int)arg1;

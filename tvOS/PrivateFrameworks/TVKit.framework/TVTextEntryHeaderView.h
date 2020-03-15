@@ -17,12 +17,12 @@
     UILabel *_messageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *messageView; // @synthesize messageView=_messageView;
 @property(retain, nonatomic) UILabel *titleView; // @synthesize titleView=_titleView;
 @property(retain, nonatomic) NSAttributedString *message; // @synthesize message=_message;
 @property(retain, nonatomic) NSAttributedString *title; // @synthesize title=_title;
 @property(retain, nonatomic) TVImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGRect)_messageViewFrameWithBounds:(struct CGRect)arg1;
 - (struct CGRect)_imageViewFrameWithBounds:(struct CGRect)arg1;

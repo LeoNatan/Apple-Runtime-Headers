@@ -17,9 +17,9 @@
 }
 
 + (id)sharedListener;
-@property(nonatomic) BOOL isStandardEvent; // @synthesize isStandardEvent=_isStandardEvent;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL isStandardEvent; // @synthesize isStandardEvent=_isStandardEvent;
 - (void)releaseWritableResourcesForValue:(unsigned long long)arg1;
 - (void)retainWritableResourcesForValue:(unsigned long long)arg1;
 - (void)_retainWritableResourcesForValue:(unsigned long long)arg1;

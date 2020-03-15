@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     int _type;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 @property(readonly, nonatomic) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)performSync;
 - (id)initWithData:(id)arg1 type:(int)arg2 account:(id)arg3 bag:(id)arg4;
 

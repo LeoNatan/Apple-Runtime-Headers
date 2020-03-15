@@ -17,10 +17,10 @@
     NSString *_loggingConsent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL allowUserAttachmentSelection; // @synthesize allowUserAttachmentSelection=_allowUserAttachmentSelection;
 @property(nonatomic) BOOL canGenerateNewAttachment; // @synthesize canGenerateNewAttachment=_canGenerateNewAttachment;
 @property(copy, nonatomic) NSString *loggingConsent; // @synthesize loggingConsent=_loggingConsent;
-- (void).cxx_destruct;
 - (id)_getHostname;
 - (id)filesInDir:(id)arg1 matchingPattern:(id)arg2 excludingPattern:(id)arg3;
 - (id)attachmentsForParameters:(id)arg1;

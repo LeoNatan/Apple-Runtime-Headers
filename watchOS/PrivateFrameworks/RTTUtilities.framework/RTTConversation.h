@@ -22,10 +22,10 @@
 + (id)conversationWithCall:(id)arg1;
 + (void)conversationWithCall:(id)arg1 withCallback:(CDUnknownBlockType)arg2;
 + (void)conversationWithCallUID:(id)arg1 withCallback:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TUCall *call; // @synthesize call=_call;
 @property(retain, nonatomic) NSMutableArray *utterances; // @synthesize utterances=_utterances;
 @property(retain, nonatomic) NSString *callIdentifier; // @synthesize callIdentifier=_callIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (void)cleanup;
 - (unsigned int)utteranceCountForMe:(_Bool)arg1;

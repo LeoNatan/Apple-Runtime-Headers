@@ -26,6 +26,7 @@
     struct _NSRange __brailleCellRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setWidthOfWindowStackViewLeadingButton:) double _widthOfWindowStackViewLeadingButton; // @synthesize _widthOfWindowStackViewLeadingButton=__widthOfWindowStackViewLeadingButton;
 @property(nonatomic, setter=_setVisibleBrailleWordViewCount:) long long _visibleBrailleWordViewCount; // @synthesize _visibleBrailleWordViewCount=__visibleBrailleWordViewCount;
 @property(retain, nonatomic, setter=_setBrailleWordViews:) NSMutableArray *_brailleWordViews; // @synthesize _brailleWordViews=__brailleWordViews;
@@ -40,7 +41,6 @@
 @property(nonatomic, setter=_setBrailleCellRange:) struct _NSRange _brailleCellRange; // @synthesize _brailleCellRange=__brailleCellRange;
 @property(retain, nonatomic, setter=_setBrailleWithTransliteration:) NSAttributedString *_brailleWithTransliteration; // @synthesize _brailleWithTransliteration=__brailleWithTransliteration;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
-- (void).cxx_destruct;
 - (void)_updateBrailleWindowHistoryStrings;
 - (void)_printAverageTimeToUpdateBrailleInfoWithStartTime:(double)arg1;
 - (void)_scrollContentViewToBeginning;

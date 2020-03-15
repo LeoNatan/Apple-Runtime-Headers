@@ -19,8 +19,8 @@
 + (id)extensionRunnerClassWhitelist;
 + (id)_extensionAuxiliaryVendorProtocol;
 + (id)_extensionAuxiliaryHostProtocol;
-@property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 - (void)suspend;
 - (void)performActivity:(id)arg1;
 - (id)createExtensionRunnerWithClassName:(id)arg1;

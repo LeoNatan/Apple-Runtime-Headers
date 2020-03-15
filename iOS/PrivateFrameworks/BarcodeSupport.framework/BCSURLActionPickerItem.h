@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     id <BCSCodePayload> _codePayload;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <BCSCodePayload> codePayload; // @synthesize codePayload=_codePayload;
 @property(readonly, nonatomic) LSAppLink *appLink; // @synthesize appLink=_appLink;
-- (void).cxx_destruct;
 - (id)actionURL;
 - (id)targetApplicationBundleIdentifier;
 - (void)performAction;

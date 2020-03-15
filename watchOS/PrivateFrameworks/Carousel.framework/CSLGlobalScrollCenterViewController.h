@@ -49,6 +49,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *dimmingView; // @synthesize dimmingView=_dimmingView;
 @property(retain, nonatomic) UIView *preferredGestureView; // @synthesize preferredGestureView=_preferredGestureView;
 @property(nonatomic) UIViewController<CSLGlobalScrollCenterContainee> *activeViewController; // @synthesize activeViewController=_activeViewController;
@@ -56,7 +57,6 @@
 @property(nonatomic) UIViewController<CSLGlobalScrollCenterContainee> *topViewController; // @synthesize topViewController=_topViewController;
 @property(nonatomic) __weak id <CSLGlobalScrollCenterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) int gestureFlags; // @synthesize gestureFlags=_gestureFlags;
-- (void).cxx_destruct;
 - (_Bool)stateMachineShouldPerformAnimatedScrolling:(id)arg1;
 - (void)stateMachine:(id)arg1 willBeginFromGesture:(unsigned int)arg2;
 - (void)stateMachineCancelScrollGesture:(id)arg1;

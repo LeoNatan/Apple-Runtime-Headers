@@ -23,8 +23,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) CSLModalAppManager *modalAppManager; // @synthesize modalAppManager=_modalAppManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CSLModalAppManager *modalAppManager; // @synthesize modalAppManager=_modalAppManager;
 - (void)_startModalAppWithOptions:(id)arg1;
 - (void)_modalAppStopped;
 - (oneway void)terminateModalAppWithBundleIdentifier:(id)arg1;

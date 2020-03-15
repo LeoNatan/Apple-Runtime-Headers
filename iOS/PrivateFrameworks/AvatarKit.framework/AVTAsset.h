@@ -30,6 +30,7 @@
     _Bool _imageMirror;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *ao; // @synthesize ao=_ao;
 @property(readonly) _Bool imageMirror; // @synthesize imageMirror=_imageMirror;
 @property(readonly) struct CGSize imageOffset; // @synthesize imageOffset=_imageOffset;
@@ -42,7 +43,6 @@
 @property(readonly) NSArray *morphVariants; // @synthesize morphVariants=_morphVariants;
 @property(readonly) NSString *uid; // @synthesize uid=_uid;
 @property(readonly) long long componentType; // @synthesize componentType=_componentType;
-- (void).cxx_destruct;
 - (id)resourceForCaching:(_Bool)arg1;
 - (id)cachedResource;
 - (id)instantiateResource;

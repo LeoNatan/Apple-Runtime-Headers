@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     NSDictionary *_mappingDictionary;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *mappingDictionary; // @synthesize mappingDictionary=_mappingDictionary;
 @property(copy, nonatomic) NSOrderedSet *orderedKeys; // @synthesize orderedKeys=_orderedKeys;
 @property(nonatomic) __weak id <VUIOrderedItemsMapDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long dataSourceType; // @synthesize dataSourceType=_dataSourceType;
-- (void).cxx_destruct;
 - (id)_identifierForMediaItem:(id)arg1 withProperty:(id)arg2;
 - (void)_generateStoreIdentiferToIndexMapping:(id)arg1 generatesDifferentials:(_Bool)arg2;
 - (void)updateEntities:(id)arg1;

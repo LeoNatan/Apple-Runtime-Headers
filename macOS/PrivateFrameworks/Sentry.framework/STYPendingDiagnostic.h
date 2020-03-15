@@ -14,9 +14,9 @@
     unsigned long long _taskIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
 @property(readonly) NSURL *diagnosticUploadRequestFile; // @synthesize diagnosticUploadRequestFile=_diagnosticUploadRequestFile;
-- (void).cxx_destruct;
 - (BOOL)saveMetadata:(id)arg1;
 - (id)initWithURL:(id)arg1 uploadTaskIdentifier:(unsigned long long)arg2;
 - (id)initWithURL:(id)arg1;

@@ -21,12 +21,12 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)actionWithTitle:(id)arg1 image:(id)arg2 identifier:(id)arg3 handler:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(nonatomic) unsigned int attributes; // @synthesize attributes=_attributes;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *discoverabilityTitle; // @synthesize discoverabilityTitle=_discoverabilityTitle;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_validatedLeafWithAlternate:(id)arg1 target:(id)arg2 validation:(id)arg3;

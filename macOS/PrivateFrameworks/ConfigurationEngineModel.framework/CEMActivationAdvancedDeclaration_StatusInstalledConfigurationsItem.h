@@ -17,9 +17,9 @@
 + (id)buildRequiredOnlyWithIdentifier:(id)arg1 withServerHash:(id)arg2;
 + (id)buildWithIdentifier:(id)arg1 withServerHash:(id)arg2;
 + (id)allowedStatusKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *statusServerHash; // @synthesize statusServerHash=_statusServerHash;
 @property(copy, nonatomic) NSString *statusIdentifier; // @synthesize statusIdentifier=_statusIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayload;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

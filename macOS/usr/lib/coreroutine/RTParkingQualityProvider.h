@@ -14,9 +14,9 @@
     unsigned long long _parkingQualityIndicator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long parkingQualityIndicator; // @synthesize parkingQualityIndicator=_parkingQualityIndicator;
 @property(retain, nonatomic) NSMutableArray *movingHistorgram; // @synthesize movingHistorgram=_movingHistorgram;
-- (void).cxx_destruct;
 - (unsigned long long)parkingQualityToLocationQuality:(unsigned long long)arg1;
 - (unsigned long long)classifySamples:(id)arg1;
 - (unsigned long long)calculateParkingQualityWithLocations:(id)arg1 parkingTimestamp:(double)arg2;

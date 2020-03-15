@@ -14,9 +14,9 @@
     _Bool _authenticated;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool authenticated; // @synthesize authenticated=_authenticated;
 @property(nonatomic) __weak id <SBMesaUnlockTriggerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

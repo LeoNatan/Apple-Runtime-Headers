@@ -27,6 +27,7 @@
 }
 
 + (id)actionWithNavigationType:(unsigned int)arg1 animated:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isComplete; // @synthesize isComplete=_isComplete;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) IOSSHLApplication *exitedApplication; // @synthesize exitedApplication=_exitedApplication;
@@ -39,7 +40,6 @@
 @property(nonatomic) unsigned int navigationType; // @synthesize navigationType=_navigationType;
 @property(nonatomic, getter=isInteractive) int interactive; // @synthesize interactive=_interactive;
 @property(nonatomic, getter=isAnimated) _Bool animated; // @synthesize animated=_animated;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

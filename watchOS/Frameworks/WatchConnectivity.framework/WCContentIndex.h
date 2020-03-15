@@ -19,12 +19,12 @@
     id _lastGenerationIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id lastGenerationIdentifier; // @synthesize lastGenerationIdentifier=_lastGenerationIdentifier;
 @property(retain, nonatomic) NSMutableArray *cachedContentIndex; // @synthesize cachedContentIndex=_cachedContentIndex;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) NSURL *itemURL; // @synthesize itemURL=_itemURL;
 @property(nonatomic) _Bool invalidated; // @synthesize invalidated=_invalidated;
-- (void).cxx_destruct;
 - (void)presentedItemDidMoveToURL:(id)arg1;
 - (void)presentedItemDidChange;
 @property(readonly, retain) NSOperationQueue *presentedItemOperationQueue;

@@ -29,8 +29,8 @@
 + (id)vortexField;
 + (id)dragField;
 + (_Bool)_isPrimitiveBehavior;
-@property(retain, nonatomic) UIRegion *region; // @synthesize region=_region;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIRegion *region; // @synthesize region=_region;
 - (void)_dissociate;
 - (void)_associate;
 @property(nonatomic) double animationSpeed;

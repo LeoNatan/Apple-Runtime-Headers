@@ -13,8 +13,8 @@
     PXGView *_gridView;
 }
 
-@property(readonly, nonatomic) PXGView *gridView; // @synthesize gridView=_gridView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXGView *gridView; // @synthesize gridView=_gridView;
 - (void)performAction;
 - (_Bool)canPerformAction;
 - (id)title;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUPhotoKitTrashActionPerformer *trashActionPerformer; // @synthesize trashActionPerformer=_trashActionPerformer;
 @property(retain, nonatomic) NSDictionary *fetchResultsByAssetCollection; // @synthesize fetchResultsByAssetCollection=_fetchResultsByAssetCollection;
-- (void).cxx_destruct;
 - (_Bool)assetActionPerformer:(id)arg1 dismissViewController:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)assetActionPerformer:(id)arg1 presentViewController:(id)arg2;
 - (_Bool)shouldShowConfirmation;

@@ -31,6 +31,7 @@
     unsigned long long _numberOfMatchesFromAccountKey;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long numberOfMatchesFromAccountKey; // @synthesize numberOfMatchesFromAccountKey=_numberOfMatchesFromAccountKey;
 @property(readonly, nonatomic) unsigned long long numberOfMatchesFromCloudKit; // @synthesize numberOfMatchesFromCloudKit=_numberOfMatchesFromCloudKit;
 @property(readonly, nonatomic) unsigned long long numberOfCandidateDevices; // @synthesize numberOfCandidateDevices=_numberOfCandidateDevices;
@@ -48,7 +49,6 @@
 @property(readonly, nonatomic) NSString *cloudKitErrorDomain; // @synthesize cloudKitErrorDomain=_cloudKitErrorDomain;
 @property(readonly, nonatomic) _Bool cloudKitSuccess; // @synthesize cloudKitSuccess=_cloudKitSuccess;
 @property(readonly, nonatomic) unsigned long long keyTransparencyVersion; // @synthesize keyTransparencyVersion=_keyTransparencyVersion;
-- (void).cxx_destruct;
 @property(readonly) unsigned short rtcType;
 @property(readonly) NSDictionary *dictionaryRepresentation;
 @property(readonly) NSString *name;

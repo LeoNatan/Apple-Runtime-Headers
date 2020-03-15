@@ -35,11 +35,11 @@
 
 + (struct _xmlDoc *)_documentWithXMLStr:(id)arg1 lsInput:(id)arg2 error:(id *)arg3;
 + (void)_resetUpdatesForNode:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setDocumentURI:) NSString *_documentURI; // @synthesize _documentURI=__documentURI;
 @property(nonatomic) unsigned long long itmlIDSequence; // @synthesize itmlIDSequence=_itmlIDSequence;
 @property(nonatomic, getter=isEmbeddedScriptExecuted) _Bool embeddedScriptExecuted; // @synthesize embeddedScriptExecuted=_embeddedScriptExecuted;
 @property(nonatomic) __weak id <IKJSDOMDocumentAppBridge> appBridge; // @synthesize appBridge=_appBridge;
-- (void).cxx_destruct;
 - (void)_executeEmbeddedScriptWithExtraInfo:(id)arg1;
 - (void)_updateITMLIDRecursivelyForNodePtr:(struct _xmlNode *)arg1;
 - (void)swapITMLIDForNode:(id)arg1 withITMLIDForNode:(id)arg2;

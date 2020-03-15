@@ -10,8 +10,8 @@
 {
 }
 
-+ (struct NSFont *)searchItalicTitleLabelFont;
-+ (struct NSFont *)searchTitleLabelFont;
++ (id)searchItalicTitleLabelFont;
++ (id)searchTitleLabelFont;
 + (id)searchDefaultTitleAttributes;
 + (id)searchItalicTitleAttributes;
 

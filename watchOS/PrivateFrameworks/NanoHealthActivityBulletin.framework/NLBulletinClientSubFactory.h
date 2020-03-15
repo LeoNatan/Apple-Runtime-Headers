@@ -19,11 +19,11 @@
     NSDictionary *_responseUserInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *responseUserInfo; // @synthesize responseUserInfo=_responseUserInfo;
 @property(readonly, nonatomic) int responseOptions; // @synthesize responseOptions=_responseOptions;
 @property(readonly, nonatomic) int scrollBehavior; // @synthesize scrollBehavior=_scrollBehavior;
 @property(nonatomic) __weak id <NLBulletinClientFactoryDelegate> clientFactoryDelegate; // @synthesize clientFactoryDelegate=_clientFactoryDelegate;
-- (void).cxx_destruct;
 - (void)textReplySuggestionsForLanguage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dismissedWithReason:(int)arg1 dwelltime:(double)arg2;
 - (void)clientViewControllerDidSelectPresentQuickboard:(id)arg1 forFriend:(id)arg2;

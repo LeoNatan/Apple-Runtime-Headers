@@ -11,6 +11,7 @@
 @protocol TVCarouselViewDelegate <NSObject>
 
 @optional
+- (void)carouselView:(_TVCarouselView *)arg1 didCenterItemAtIndex:(unsigned long long)arg2;
 - (void)carouselView:(_TVCarouselView *)arg1 didPlayItemAtIndex:(unsigned long long)arg2;
 - (void)carouselView:(_TVCarouselView *)arg1 didFocusItemAtIndex:(unsigned long long)arg2;
 - (void)carouselViewDidScroll:(_TVCarouselView *)arg1;

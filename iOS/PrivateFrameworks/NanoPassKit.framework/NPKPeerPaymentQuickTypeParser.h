@@ -14,9 +14,9 @@
     NSSet *_allowedPayloadIDs;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *allowedPayloadIDs; // @synthesize allowedPayloadIDs=_allowedPayloadIDs;
 @property(readonly, nonatomic) NSSet *supportedCurrencyCodes; // @synthesize supportedCurrencyCodes=_supportedCurrencyCodes;
-- (void).cxx_destruct;
 - (id)parsePayload:(id)arg1 payloadID:(id)arg2 maxCount:(unsigned long long)arg3;
 - (id)parsePayload:(id)arg1 payloadID:(id)arg2;
 - (id)initWithSupportedCurrencyCodes:(id)arg1 allowedPayloadIDs:(id)arg2;

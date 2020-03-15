@@ -15,10 +15,10 @@
     NSArray *_suggestions;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool dryRun; // @synthesize dryRun=_dryRun;
 @property(readonly, copy, nonatomic) NSArray *suggestions; // @synthesize suggestions=_suggestions;
 @property(readonly, copy, nonatomic) NSString *chatGuidEngaged; // @synthesize chatGuidEngaged=_chatGuidEngaged;
-- (void).cxx_destruct;
 - (id)reasonForSuggestionIndex:(unsigned int)arg1;
 - (id)reasonTypeForSuggestionIndex:(unsigned int)arg1;
 - (int)feedbackActionTypeForSuggestionIndex:(unsigned int)arg1;

@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     BOOL _visibleToUser;
 }
 
-@property(nonatomic) BOOL visibleToUser; // @synthesize visibleToUser=_visibleToUser;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL visibleToUser; // @synthesize visibleToUser=_visibleToUser;
 - (void)_didReceiveSnapshot;
 - (void)_cancelSnapshotRequestIfNeeded;
 - (void)_requestSnapshotFromWebView;

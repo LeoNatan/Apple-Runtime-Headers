@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSDictionary *stateDictionary; // @synthesize stateDictionary=_stateDictionary;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *stateDictionary; // @synthesize stateDictionary=_stateDictionary;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

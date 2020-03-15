@@ -15,8 +15,8 @@
     NSAttributedString *_descriptionString;
 }
 
-@property(retain, nonatomic) NSAttributedString *descriptionString; // @synthesize descriptionString=_descriptionString;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSAttributedString *descriptionString; // @synthesize descriptionString=_descriptionString;
 - (id)initWithDescription:(id)arg1;
 
 // Remaining properties

@@ -22,10 +22,10 @@
     NSError *_sendChangesError;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSError *sendChangesError; // @synthesize sendChangesError=_sendChangesError;
 @property(readonly, nonatomic) long long sendChangesStatus; // @synthesize sendChangesStatus=_sendChangesStatus;
 @property(readonly, nonatomic) long long currentAnchor; // @synthesize currentAnchor=_currentAnchor;
-- (void).cxx_destruct;
 - (long long)_sendChanges:(id)arg1 error:(id *)arg2;
 - (_Bool)sendCodableObjects:(id)arg1 resultAnchor:(long long)arg2 done:(_Bool)arg3 error:(id *)arg4;
 - (id)initWithSyncEntityClass:(Class)arg1 anchorRange:(struct HDSyncAnchorRange)arg2 session:(id)arg3 requiredAnchorMap:(id)arg4;

@@ -18,9 +18,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKMetric *MMCSMetrics; // @synthesize MMCSMetrics=_MMCSMetrics;
 @property(retain, nonatomic) CKMetric *cloudKitMetrics; // @synthesize cloudKitMetrics=_cloudKitMetrics;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (void)unionMetrics:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

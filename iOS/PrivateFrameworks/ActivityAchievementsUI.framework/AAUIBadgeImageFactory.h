@@ -18,12 +18,12 @@
     NSObject<OS_dispatch_queue> *_imageCreationQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *imageCreationQueue; // @synthesize imageCreationQueue=_imageCreationQueue;
 @property(retain, nonatomic) AAUIBadgeView *unearnedBadgeView; // @synthesize unearnedBadgeView=_unearnedBadgeView;
 @property(retain, nonatomic) AAUIBadgeView *earnedBadgeView; // @synthesize earnedBadgeView=_earnedBadgeView;
 @property(retain, nonatomic) AAUIAchievementResourceProvider *resourceProvider; // @synthesize resourceProvider=_resourceProvider;
 @property(retain, nonatomic) NSMutableDictionary *cache; // @synthesize cache=_cache;
-- (void).cxx_destruct;
 - (id)generateImageForConfiguration:(id)arg1 size:(struct CGSize)arg2 unearned:(_Bool)arg3;
 - (void)clearAllCachedImages;
 - (_Bool)hasCachedThumbnailImageForAchievement:(id)arg1 size:(struct CGSize)arg2;

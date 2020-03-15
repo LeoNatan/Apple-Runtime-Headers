@@ -16,8 +16,8 @@
     HFColorCollection *_colorCollection;
 }
 
-@property(readonly, nonatomic) HFColorCollection *colorCollection; // @synthesize colorCollection=_colorCollection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HFColorCollection *colorCollection; // @synthesize colorCollection=_colorCollection;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

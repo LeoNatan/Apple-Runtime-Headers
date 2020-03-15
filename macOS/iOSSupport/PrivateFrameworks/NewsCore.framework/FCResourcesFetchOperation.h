@@ -19,13 +19,13 @@
     NSArray *_resources;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *resources; // @synthesize resources=_resources;
 @property(readonly, nonatomic) BOOL downloadAssets; // @synthesize downloadAssets=_downloadAssets;
 @property(readonly, nonatomic) NSArray *resourceIDs; // @synthesize resourceIDs=_resourceIDs;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(nonatomic) long long cacheLifetimeHint; // @synthesize cacheLifetimeHint=_cacheLifetimeHint;
-- (void).cxx_destruct;
 - (BOOL)_shoudUsePermanentURLForResourceID:(id)arg1;
 - (id)completeFetchOperation;
 - (id)downloadAssetsWithCompletion:(CDUnknownBlockType)arg1;

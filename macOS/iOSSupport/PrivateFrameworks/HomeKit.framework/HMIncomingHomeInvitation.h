@@ -17,9 +17,9 @@
 + (BOOL)supportsSecureCoding;
 + (id)homeInvitationsFromData:(id)arg1 homeManager:(id)arg2;
 + (id)homeInvitationsFromEncodedData:(id)arg1 homeManager:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak HMHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(readonly, nonatomic) HMUser *inviter; // @synthesize inviter=_inviter;
-- (void).cxx_destruct;
 - (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -17,9 +17,9 @@
     ICSQLiteStatement *_strongSelf;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct sqlite3_stmt *sqlite3_stmt; // @synthesize sqlite3_stmt=_statement;
 @property(readonly, nonatomic) ICSQLiteConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (int)clearBindings;
 - (void)bindStringCopy:(id)arg1 atPosition:(int)arg2;
 - (void)bindString:(id)arg1 atPosition:(int)arg2;

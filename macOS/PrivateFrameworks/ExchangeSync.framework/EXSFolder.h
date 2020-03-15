@@ -23,6 +23,7 @@
     NSString *_internalParentFolderID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *internalParentFolderID; // @synthesize internalParentFolderID=_internalParentFolderID;
 @property(copy, nonatomic) NSString *internalChangeKey; // @synthesize internalChangeKey=_internalChangeKey;
 @property(copy, nonatomic) NSString *internalID; // @synthesize internalID=_internalID;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(nonatomic) long long accountID; // @synthesize accountID=_accountID;
 @property(nonatomic) long long folderID; // @synthesize folderID=_folderID;
-- (void).cxx_destruct;
 - (id)description;
 - (void)updateWithChangeItem:(id)arg1;
 - (id)initWithChangeItem:(id)arg1;

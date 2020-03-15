@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_itemsByGroupTuple;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *itemsByGroupTuple; // @synthesize itemsByGroupTuple=_itemsByGroupTuple;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *itemsByGroupTuple; // @synthesize itemsByGroupTuple=_itemsByGroupTuple;
 - (void)addItem:(id)arg1;
 - (id)allItemGroups;
 @property(readonly, nonatomic) NSError *error;

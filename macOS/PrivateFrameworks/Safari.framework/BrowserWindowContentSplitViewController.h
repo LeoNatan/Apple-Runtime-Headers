@@ -30,11 +30,11 @@ __attribute__((visibility("hidden")))
     id <BrowserWindowContentSplitViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <BrowserWindowContentSplitViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSView *sidebarClipView; // @synthesize sidebarClipView=_sidebarClipView;
 @property(retain, nonatomic) SidebarViewController *sidebarViewController; // @synthesize sidebarViewController=_sidebarViewController;
 @property(copy, nonatomic) NSString *lastDisplayedSidebarBookmarkListUUID; // @synthesize lastDisplayedSidebarBookmarkListUUID=_lastDisplayedSidebarBookmarkListUUID;
-- (void).cxx_destruct;
 - (id)_performanceOperationName;
 - (BOOL)_splitView:(id)arg1 canLiveCollapseArrangedSubview:(id)arg2;
 - (void)splitViewItem:(id)arg1 didChangeCollapsed:(BOOL)arg2 animated:(BOOL)arg3;

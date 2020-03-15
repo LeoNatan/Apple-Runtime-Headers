@@ -18,10 +18,10 @@
     CDStruct_996ac03c _stabCropRect;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic) CDStruct_996ac03c stabCropRect; // @synthesize stabCropRect=_stabCropRect;
 @property(readonly, copy, nonatomic) NSArray *keyframes; // @synthesize keyframes=_keyframes;
-- (void).cxx_destruct;
 - (id)initWithKeyframes:(id)arg1 confidence:(double)arg2 stabCropRect:(CDStruct_996ac03c)arg3;
 
 // Remaining properties

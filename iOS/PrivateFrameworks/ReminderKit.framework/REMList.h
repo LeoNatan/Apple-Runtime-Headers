@@ -35,11 +35,11 @@
 + (CDUnknownBlockType)rem_DA_fetchByObjectIDBlock;
 + (_Bool)rem_DA_supportsLazyDelete;
 + (_Bool)rem_DA_supportsFetching;
+- (void).cxx_destruct;
 @property(retain, nonatomic) REMList *parentList; // @synthesize parentList=_parentList;
 @property(readonly, nonatomic) REMAccount *account; // @synthesize account=_account;
 @property(copy, nonatomic) REMListStorage *storage; // @synthesize storage=_storage;
 @property(readonly, nonatomic) REMStore *store; // @synthesize store=_store;
-- (void).cxx_destruct;
 - (void)hack_overrideReminderIDsOrderingWithOrderedObjectIDs:(id)arg1;
 @property(readonly, nonatomic) NSString *externalIdentifierForMarkedForDeletionObject;
 @property(readonly, nonatomic) REMObjectID *remObjectID;

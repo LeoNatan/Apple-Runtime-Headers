@@ -16,9 +16,9 @@
     NSURL *_url;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)activityViewControllerLinkPresentationMetadata:(id)arg1;
 - (id)initWithChannel:(id)arg1;
 

@@ -24,9 +24,9 @@
 + (id)sharedInstanceIfExists;
 + (id)sharedInstance;
 + (id)sharedInstanceCreateIfNecessary:(_Bool)arg1;
+- (void).cxx_destruct;
 @property(readonly) _Bool isUILocked; // @synthesize isUILocked=_isUILocked;
 @property(nonatomic) __weak id <CUISAlertProviderDelegate> alertProviderDelegate; // @synthesize alertProviderDelegate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 - (void)backlight:(id)arg1 willBeOn:(_Bool)arg2 forReason:(unsigned int)arg3;

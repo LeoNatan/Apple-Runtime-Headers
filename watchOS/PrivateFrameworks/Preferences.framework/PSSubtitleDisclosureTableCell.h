@@ -14,8 +14,8 @@
 }
 
 + (int)cellStyle;
-@property(retain, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 - (_Bool)canReload;

@@ -36,10 +36,10 @@
 + (void)initialize;
 + (id)mt_implicitlyAnimatableKeys;
 + (id)mt_animatableKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType defaultBackdropScaleAdjustment; // @synthesize defaultBackdropScaleAdjustment=_defaultBackdropScaleAdjustment;
 @property(nonatomic, getter=isReduceMotionEnabled) _Bool reduceMotionEnabled; // @synthesize reduceMotionEnabled=_reduceMotionEnabled;
 @property(nonatomic, getter=isReduceTransparencyEnabled) _Bool reduceTransparencyEnabled; // @synthesize reduceTransparencyEnabled=_reduceTransparencyEnabled;
-- (void).cxx_destruct;
 - (_Bool)_needsPruning;
 - (_Bool)_didValueChangeForKey:(id)arg1 withPendingChange:(id)arg2;
 - (_Bool)_isDelegateManagingInterpolation;

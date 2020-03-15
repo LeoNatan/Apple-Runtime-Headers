@@ -14,9 +14,9 @@
     double _uncertainty;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double uncertainty; // @synthesize uncertainty=_uncertainty;
 @property(readonly, nonatomic) CLLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (double)distanceFromLocation:(id)arg1 withTypeRadius:(double)arg2;
 - (id)description;
 - (id)initWithLocation:(id)arg1 uncertainty:(double)arg2;

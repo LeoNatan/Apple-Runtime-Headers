@@ -30,6 +30,7 @@
     _Bool _hasPendingProcessChange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *persistentProperties; // @synthesize persistentProperties=_persistentProperties;
 @property(readonly, nonatomic) NSDictionary *properties; // @synthesize properties=_properties;
 @property(readonly, nonatomic) _Bool hasPostedSetupComplete; // @synthesize hasPostedSetupComplete=_postedSetupComplete;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) NSArray *handlers; // @synthesize handlers=_handlers;
 @property(nonatomic, setter=_setHidingDisconnect:) _Bool _hidingDisconnect; // @synthesize _hidingDisconnect;
 @property(readonly, nonatomic) NSMutableDictionary *_contexts; // @synthesize _contexts;
-- (void).cxx_destruct;
 - (void)oneTimeCodesDidChange:(id)arg1;
 - (void)pendingNicknamesOrHandledNicknamesDidChange;
 - (void)updatePersonalNickname:(id)arg1;
@@ -50,7 +50,6 @@
 - (void)updateNicknameData:(id)arg1;
 - (void)nicknameRequestResponse:(id)arg1 encodedNicknameData:(id)arg2;
 - (void)receivedUrgentRequestForMessages:(id)arg1;
-- (void)returnMOCEnabledState:(unsigned int)arg1;
 - (void)updateCloudKitStateWithDictionary:(id)arg1;
 - (void)updateCloudKitState;
 - (void)didAttemptToDisableAllDevicesResult:(_Bool)arg1;

@@ -24,8 +24,8 @@
     UIResponder *_previousFirstResponder;
 }
 
-@property(nonatomic) __weak UIResponder *previousFirstResponder; // @synthesize previousFirstResponder=_previousFirstResponder;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIResponder *previousFirstResponder; // @synthesize previousFirstResponder=_previousFirstResponder;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (void)animateTransition:(id)arg1;

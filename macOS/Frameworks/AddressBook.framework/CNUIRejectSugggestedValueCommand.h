@@ -14,12 +14,12 @@
     CNContactStore *_contactStore;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) CNLabeledValue *valueToReject; // @synthesize valueToReject=_valueToReject;
-- (void).cxx_destruct;
 - (void)executeWithCNSaveRequest:(id)arg1;
-- (id)initWithContactStore:(id)arg1 suggestedValueToReject:(id)arg2;
-- (id)initWithContactStore:(id)arg1;
+- (id)initWithContactStore:(id)arg1 suggestedValueToReject:(id)arg2 ignoresGuardianRestrictions:(BOOL)arg3;
+- (id)initWithContactStore:(id)arg1 ignoresGuardianRestrictions:(BOOL)arg2;
 
 @end
 

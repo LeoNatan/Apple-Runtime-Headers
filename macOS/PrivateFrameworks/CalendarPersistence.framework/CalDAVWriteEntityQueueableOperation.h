@@ -29,6 +29,7 @@
 }
 
 + (id)_addRecurrenceSet:(id)arg1 toICSData:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSData *icsData; // @synthesize icsData=_icsData;
 @property(retain) NSDate *sliceDate; // @synthesize sliceDate=_sliceDate;
 @property(retain) NSString *sliceChildLocalUID; // @synthesize sliceChildLocalUID=_sliceChildLocalUID;
@@ -39,7 +40,6 @@
 @property(retain) NSString *eTag; // @synthesize eTag=_eTag;
 @property(nonatomic) BOOL clearedSyncMalfunctionProperties; // @synthesize clearedSyncMalfunctionProperties=_clearedSyncMalfunctionProperties;
 @property(retain) CoreDAVGetTask *currentlyRunningGetEntityTask; // @synthesize currentlyRunningGetEntityTask=_currentlyRunningGetEntityTask;
-- (void).cxx_destruct;
 @property(readonly) BOOL shouldHaveTagsUpdated;
 - (id)_otherWriteOperationsToSameSharedUID;
 - (void)finishOperation;

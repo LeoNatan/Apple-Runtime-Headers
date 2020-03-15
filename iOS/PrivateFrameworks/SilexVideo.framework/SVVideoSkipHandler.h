@@ -18,10 +18,10 @@
     id <SVVideoVisiblePercentageManager> _visiblePercentageManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoVisiblePercentageManager> visiblePercentageManager; // @synthesize visiblePercentageManager=_visiblePercentageManager;
 @property(readonly, nonatomic) id <SVVisibilityReporting> visiblityReporter; // @synthesize visiblityReporter=_visiblityReporter;
 @property(readonly, nonatomic) id <SVVideoQueueProviding> queueProvider; // @synthesize queueProvider=_queueProvider;
-- (void).cxx_destruct;
 - (void)skipToVideo:(id)arg1 animated:(_Bool)arg2;
 - (id)initWithQueueProvider:(id)arg1 visibiltyReporter:(id)arg2 visiblePercentageManager:(id)arg3;
 

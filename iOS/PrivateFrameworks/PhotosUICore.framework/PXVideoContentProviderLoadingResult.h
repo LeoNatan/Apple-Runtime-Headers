@@ -15,10 +15,10 @@
     long long _priority;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long priority; // @synthesize priority=_priority;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) AVPlayerItem *playerItem; // @synthesize playerItem=_playerItem;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithPlayerItem:(id)arg1 error:(id)arg2 priority:(long long)arg3;
 

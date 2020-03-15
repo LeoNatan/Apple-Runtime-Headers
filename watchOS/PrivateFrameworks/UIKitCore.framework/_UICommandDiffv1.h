@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 + (id)diffWithChanges:(id)arg1;
-@property(readonly, nonatomic) NSOrderedSet *changes; // @synthesize changes=_changes;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSOrderedSet *changes; // @synthesize changes=_changes;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedContract;
-@property(retain, nonatomic) SSURLBag *bag; // @synthesize bag=_bag;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SSURLBag *bag; // @synthesize bag=_bag;
 @property(readonly, nonatomic) AMSBagValue *commerceUIURLPatterns;
 - (id)init;
 

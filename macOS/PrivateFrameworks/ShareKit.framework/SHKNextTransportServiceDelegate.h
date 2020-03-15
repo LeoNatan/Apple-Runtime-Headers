@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _didFailCompletionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType didFailCompletionBlock; // @synthesize didFailCompletionBlock=_didFailCompletionBlock;
 @property(copy) CDUnknownBlockType didShareCompletionBlock; // @synthesize didShareCompletionBlock=_didShareCompletionBlock;
 @property(retain) NSSharingService *originalSharingService; // @synthesize originalSharingService=_originalSharingService;
 @property(retain) NSObject<NSSharingServiceDelegate> *originalDelegate; // @synthesize originalDelegate=_originalDelegate;
-- (void).cxx_destruct;
 - (id)sharingService:(id)arg1 sourceWindowForShareItems:(id)arg2 sharingContentScope:(long long *)arg3;
 - (void)sharingService:(id)arg1 didShareItems:(id)arg2;
 - (void)sharingService:(id)arg1 didFailToShareItems:(id)arg2 error:(id)arg3;

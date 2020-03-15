@@ -20,9 +20,9 @@
 + (id)objectIDWithUUID:(id)arg1;
 + (id)newObjectID;
 + (id)cdEntityName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *storage; // @synthesize storage=_storage;
 @property(retain, nonatomic) REMObjectID *remObjectID; // @synthesize remObjectID;
-- (void).cxx_destruct;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)initWithREMObjectID:(id)arg1;

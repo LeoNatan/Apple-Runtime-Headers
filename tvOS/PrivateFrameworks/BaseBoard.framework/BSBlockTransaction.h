@@ -14,8 +14,8 @@
     CDUnknownBlockType _block;
 }
 
-@property(copy, nonatomic) NSString *debugName; // @synthesize debugName=_debugName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *debugName; // @synthesize debugName=_debugName;
 - (id)_graphNodeDebugName;
 - (id)_descriptionProem;
 - (_Bool)_canBeInterrupted;

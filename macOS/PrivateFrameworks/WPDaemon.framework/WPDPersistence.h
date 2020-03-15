@@ -16,10 +16,10 @@
     NSString *_bootUUID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bootUUID; // @synthesize bootUUID=_bootUUID;
 @property(nonatomic) BOOL systemFirstUnlocked; // @synthesize systemFirstUnlocked=_systemFirstUnlocked;
 @property(nonatomic) BOOL needsInit; // @synthesize needsInit=_needsInit;
-- (void).cxx_destruct;
 - (void)writeStringProperty:(id)arg1 Value:(id)arg2;
 - (id)readStringPropertyValue:(id)arg1;
 - (void)writeBoolProperty:(id)arg1 Value:(BOOL)arg2;

@@ -20,13 +20,13 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *webApiUrlPrefix; // @synthesize webApiUrlPrefix=_webApiUrlPrefix;
 @property(retain, nonatomic) NSString *noteStoreUrl; // @synthesize noteStoreUrl=_noteStoreUrl;
 @property(retain, nonatomic) NSNumber *updateSequenceNum; // @synthesize updateSequenceNum=_updateSequenceNum;
 @property(retain, nonatomic) NSString *guid; // @synthesize guid=_guid;
 @property(retain, nonatomic) NSString *shardId; // @synthesize shardId=_shardId;
 @property(retain, nonatomic) NSNumber *inAccountUserId; // @synthesize inAccountUserId=_inAccountUserId;
-- (void).cxx_destruct;
 
 @end
 

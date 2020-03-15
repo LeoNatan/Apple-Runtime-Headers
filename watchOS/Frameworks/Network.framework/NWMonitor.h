@@ -32,6 +32,7 @@
 + (id)copySavedMonitorForNetworkDescriptionArray:(id)arg1 endpoint:(id)arg2 parameters:(id)arg3;
 + (void)initialize;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
+- (void).cxx_destruct;
 @property unsigned int mID; // @synthesize mID=_mID;
 @property(retain) NWInterface *interface; // @synthesize interface=_interface;
 @property(retain) NSURL *lastProbeURL; // @synthesize lastProbeURL=_lastProbeURL;
@@ -42,7 +43,6 @@
 @property(retain) NSArray *networkDescriptionArray; // @synthesize networkDescriptionArray=_networkDescriptionArray;
 @property(retain) NWNetworkDescription *bestAvailableNetworkDescription; // @synthesize bestAvailableNetworkDescription=_bestAvailableNetworkDescription;
 @property int status; // @synthesize status=_status;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *privateDescription;
 @property(readonly, copy) NSString *description;
 - (id)descriptionWithIndent:(int)arg1 showFullContent:(_Bool)arg2;

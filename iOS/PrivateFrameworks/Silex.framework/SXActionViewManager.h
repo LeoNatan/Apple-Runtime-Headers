@@ -16,8 +16,8 @@
     id <SXViewControllerPresenting> _viewControllerPresenter;
 }
 
-@property(readonly, nonatomic) id <SXViewControllerPresenting> viewControllerPresenter; // @synthesize viewControllerPresenter=_viewControllerPresenter;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SXViewControllerPresenting> viewControllerPresenter; // @synthesize viewControllerPresenter=_viewControllerPresenter;
 - (void)presentActivityGroup:(id)arg1 action:(id)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)initWithViewControllerPresenting:(id)arg1;
 

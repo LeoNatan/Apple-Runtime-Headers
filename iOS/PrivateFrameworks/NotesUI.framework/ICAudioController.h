@@ -17,10 +17,10 @@
 
 + (id)sharedAudioController;
 + (void)pauseIfPlaying;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *playbackTimeObserver; // @synthesize playbackTimeObserver=_playbackTimeObserver;
 @property(retain, nonatomic) ICAttachment *currentAttachment; // @synthesize currentAttachment=_currentAttachment;
 @property(retain, nonatomic) AVPlayer *currentPlayer; // @synthesize currentPlayer=_currentPlayer;
-- (void).cxx_destruct;
 - (void)updateNowPlayingInfo;
 - (void)updateTime:(double)arg1 duration:(double)arg2;
 - (void)notifyStopped;

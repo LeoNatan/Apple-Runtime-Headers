@@ -16,8 +16,8 @@
     MSPTransitStorageLine *_transitLineStorage;
 }
 
-@property(retain, nonatomic) MSPTransitStorageLine *transitLineStorage; // @synthesize transitLineStorage=_transitLineStorage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MSPTransitStorageLine *transitLineStorage; // @synthesize transitLineStorage=_transitLineStorage;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;

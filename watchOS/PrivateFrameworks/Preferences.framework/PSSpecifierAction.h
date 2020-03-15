@@ -17,9 +17,9 @@
 + (id)actionWithTarget:(id)arg1 getterSelector:(SEL)arg2 setterSelector:(SEL)arg3;
 + (id)actionWithGetter:(CDUnknownBlockType)arg1 setter:(CDUnknownBlockType)arg2;
 + (id)actionWithBoolDetailClass:(Class)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType setter; // @synthesize setter=_setter;
 @property(copy, nonatomic) CDUnknownBlockType getter; // @synthesize getter=_getter;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

@@ -13,8 +13,8 @@
     UIImageView *_imageView;
 }
 
-@property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (struct CGSize)intrinsicContentSize;
 - (void)setCornerRadius:(double)arg1;
 - (id)initWithDiameter:(double)arg1;

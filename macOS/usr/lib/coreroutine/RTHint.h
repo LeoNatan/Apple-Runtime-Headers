@@ -16,10 +16,10 @@
 }
 
 + (id)hintSourceToString:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) long long source; // @synthesize source=_source;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

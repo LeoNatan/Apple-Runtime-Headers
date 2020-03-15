@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     VSViewControllerFactory *_viewControllerFactory;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSViewControllerFactory *viewControllerFactory; // @synthesize viewControllerFactory=_viewControllerFactory;
 @property(nonatomic) _Bool hasRequestedPresentation; // @synthesize hasRequestedPresentation=_hasRequestedPresentation;
 @property(nonatomic) _Bool hasRetriedOnce; // @synthesize hasRetriedOnce=_hasRetriedOnce;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VSOptional *currentRequest; // @synthesize currentRequest=_currentRequest;
 @property(retain, nonatomic) NSMutableDictionary *requestsByID; // @synthesize requestsByID=_requestsByID;
 @property(nonatomic) __weak id <VSViewServiceHostViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_addRemoteViewControllerAsChildViewController;
 - (void)_removeRemoteViewControllerAsChildViewController;
 - (void)_connectToViewServiceForRequest:(id)arg1;

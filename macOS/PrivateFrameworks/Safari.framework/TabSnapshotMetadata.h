@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_URLString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *URLString; // @synthesize URLString=_URLString;
 @property(readonly, copy, nonatomic) NSString *filename; // @synthesize filename=_filename;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-- (void).cxx_destruct;
 - (id)initWithSQLiteRow:(id)arg1;
 - (id)initWithUniqueIdentifier:(id)arg1 creationDate:(id)arg2 filename:(id)arg3 URLString:(id)arg4;
 

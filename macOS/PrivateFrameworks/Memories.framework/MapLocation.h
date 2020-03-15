@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 + (id)mapLocationWithLocation:(id)arg1;
 + (id)mapLocationWithMapItem:(id)arg1;
 + (id)objectFromPlist:(id)arg1 inProject:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isResolved) BOOL resolved; // @synthesize resolved=_resolved;
 @property(nonatomic, getter=isResolving) BOOL resolving; // @synthesize resolving=_resolving;
 @property(retain, nonatomic) NSMutableArray *completionHandlers; // @synthesize completionHandlers=_completionHandlers;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double latitude; // @synthesize latitude=_latitude;
 @property(retain, nonatomic) NSString *customName; // @synthesize customName=_customName;
 @property(nonatomic) int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

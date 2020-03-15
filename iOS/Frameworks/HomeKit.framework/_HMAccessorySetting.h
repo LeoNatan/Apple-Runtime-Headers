@@ -37,14 +37,14 @@
 + (id)_encodedConstraintsToAdd:(id)arg1;
 + (id)_encodedConstraintsToRemove:(id)arg1;
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
-@property(retain, nonatomic) HMAccessorySettings *accessorySettings; // @synthesize accessorySettings=_accessorySettings;
+@property(nonatomic) __weak HMAccessorySettings *accessorySettings; // @synthesize accessorySettings=_accessorySettings;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly) unsigned long long properties; // @synthesize properties=_properties;
 @property(readonly) long long type; // @synthesize type=_type;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property __weak id <_HMAccesorySettingDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;

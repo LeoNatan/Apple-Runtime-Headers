@@ -26,13 +26,13 @@
 + (id)photosGraphPeopleSuggestionsDataSourceManagerWithAssetCollection:(id)arg1;
 + (id)mockDataSourceManagerFromPeopleInPhotosInAssetCollection:(id)arg1;
 + (id)sharedWorkerQueue;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasFinishedLoadingFinalDataSource; // @synthesize hasFinishedLoadingFinalDataSource=_hasFinishedLoadingFinalDataSource;
 @property(nonatomic) _Bool hasStartedLoadingFinalDataSource; // @synthesize hasStartedLoadingFinalDataSource=_hasStartedLoadingFinalDataSource;
 @property(retain, nonatomic) PXUpdater *updater; // @synthesize updater=_updater;
 @property(retain, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
 @property(retain) NSMutableOrderedSet *_remainingPeopleToFetch; // @synthesize _remainingPeopleToFetch=__remainingPeopleToFetch;
 @property(retain, nonatomic) PXCMMPhotoKitPeopleSuggestionsDataSourceState *_state; // @synthesize _state=__state;
-- (void).cxx_destruct;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1 withPreparedInfo:(id)arg2;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
 - (void)_handleFinishedFetchingBatch:(id)arg1 preparedChangeDetails:(id)arg2 forFetchResult:(id)arg3;

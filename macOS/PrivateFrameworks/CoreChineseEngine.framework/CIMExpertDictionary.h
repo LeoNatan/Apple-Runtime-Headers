@@ -16,10 +16,10 @@
 }
 
 + (id)dictionaryWithDefaultsKey:(id)arg1 enabled:(BOOL)arg2 inputSourceIdentifier:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) NSString *defaultsKey; // @synthesize defaultsKey=_defaultsKey;
 @property(copy, nonatomic) NSString *inputSourceIdentifier; // @synthesize inputSourceIdentifier=_inputSourceIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *name;
 - (id)initWithDefaultsKey:(id)arg1 enabled:(BOOL)arg2 inputSourceIdentifier:(id)arg3;
 

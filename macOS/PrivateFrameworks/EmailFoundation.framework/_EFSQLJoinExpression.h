@@ -21,12 +21,12 @@
     id <EFSQLExpressable> _joinConstraint;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isLeftOuter; // @synthesize isLeftOuter=_isLeftOuter;
 @property(readonly, nonatomic) id <EFSQLExpressable> joinConstraint; // @synthesize joinConstraint=_joinConstraint;
 @property(readonly, copy, nonatomic) NSString *tableAlias; // @synthesize tableAlias=_tableAlias;
 @property(readonly, copy, nonatomic) NSString *tableName; // @synthesize tableName=_tableName;
 @property(readonly, nonatomic) __weak EFSQLSelectStatement *select; // @synthesize select=_select;
-- (void).cxx_destruct;
 - (void)orderByColumn:(id)arg1 ascending:(BOOL)arg2;
 - (void)groupByColumn:(id)arg1;
 - (void)addResultColumn:(id)arg1;

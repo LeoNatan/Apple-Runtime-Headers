@@ -23,8 +23,8 @@
 + (void)removeDetectorWithName:(id)arg1;
 + (id)detectorWithName:(id)arg1;
 + (id)newDetectorWithName:(id)arg1 stallDetectedBlock:(CDUnknownBlockType)arg2 stallWarningBlock:(CDUnknownBlockType)arg3;
-@property(nonatomic) _Bool verboseLogging; // @synthesize verboseLogging=_verboseLogging;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool verboseLogging; // @synthesize verboseLogging=_verboseLogging;
 - (void)forceTriggerStallDetectedBlockWithEventName:(id)arg1;
 - (void)reset;
 - (void)consumeBytes:(int)arg1;

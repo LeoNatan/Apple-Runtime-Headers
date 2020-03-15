@@ -12,15 +12,17 @@
 {
     NSMutableArray *_mapItems;
     NSMutableArray *_signalPacks;
+    NSMutableArray *_entries;
 }
 
 - (void).cxx_destruct;
 - (unsigned int)_count;
 - (void)_removeObjectsAtIndex:(unsigned int)arg1;
 - (_Bool)_popRow;
-- (id)signalPackForMapItem:(struct GEOMapItemStorage *)arg1;
-- (id)_containsSignalPackForMapItem:(struct GEOMapItemStorage *)arg1;
-- (_Bool)insertMapItem:(struct GEOMapItemStorage *)arg1 signalPack:(id)arg2;
+- (id)signalPackForMapItem:(id)arg1;
+- (id)_containsSignalPackForMapItem:(id)arg1;
+- (void)_removeExpiredEntries;
+- (_Bool)insertMapItem:(id)arg1 signalPack:(id)arg2 entry:(id)arg3;
 - (id)init;
 
 @end

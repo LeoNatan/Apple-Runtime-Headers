@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     VUIEventDataSource *_contextMenuEventDataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIEventDataSource *contextMenuEventDataSource; // @synthesize contextMenuEventDataSource=_contextMenuEventDataSource;
 @property(retain, nonatomic) VUIEventDataSource *playEventDataSource; // @synthesize playEventDataSource=_playEventDataSource;
 @property(retain, nonatomic) VUIEventDataSource *selectEventDataSource; // @synthesize selectEventDataSource=_selectEventDataSource;
-- (void).cxx_destruct;
 - (id)initWithRouterData:(id)arg1 viewElement:(id)arg2;
 
 @end

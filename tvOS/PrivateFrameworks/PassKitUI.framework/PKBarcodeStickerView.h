@@ -24,9 +24,9 @@
 + (struct CGSize)_sizeForBarcode:(id)arg1;
 + (struct PKBarcodeQuietZone)_quiteZoneForBarcode:(id)arg1;
 + (long long)validityStateForPass:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *matteView; // @synthesize matteView=_matteView;
 @property(nonatomic) long long validity; // @synthesize validity=_validity;
-- (void).cxx_destruct;
 - (id)barcodeImage;
 - (void)_updateDrawBarcode;
 - (void)layoutSubviews;

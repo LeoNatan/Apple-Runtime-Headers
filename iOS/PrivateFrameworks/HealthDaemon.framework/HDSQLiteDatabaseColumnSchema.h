@@ -21,6 +21,7 @@
     long long _deletionAction;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long deletionAction; // @synthesize deletionAction=_deletionAction;
 @property(copy, nonatomic) NSString *foreignKeyTargetColumn; // @synthesize foreignKeyTargetColumn=_foreignKeyTargetColumn;
 @property(copy, nonatomic) NSString *foreignKeyTargetTable; // @synthesize foreignKeyTargetTable=_foreignKeyTargetTable;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool isAutoincrement; // @synthesize isAutoincrement=_isAutoincrement;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

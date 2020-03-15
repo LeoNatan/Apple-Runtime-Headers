@@ -13,8 +13,8 @@
     NSButton *_extendActionButton;
 }
 
-@property(nonatomic) __weak NSButton *extendActionButton; // @synthesize extendActionButton=_extendActionButton;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSButton *extendActionButton; // @synthesize extendActionButton=_extendActionButton;
 
 @end
 

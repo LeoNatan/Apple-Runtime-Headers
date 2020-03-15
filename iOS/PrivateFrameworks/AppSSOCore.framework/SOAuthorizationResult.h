@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _authorizationHandleCredentialCompletion;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType authorizationHandleCredentialCompletion; // @synthesize authorizationHandleCredentialCompletion=_authorizationHandleCredentialCompletion;
 @property(copy) CDUnknownBlockType authorizationHandleResponseCompletion; // @synthesize authorizationHandleResponseCompletion=_authorizationHandleResponseCompletion;
-- (void).cxx_destruct;
 - (void)authorization:(id)arg1 didCompleteWithHTTPAuthorizationHeaders:(id)arg2;
 - (void)authorization:(id)arg1 didCompleteWithHTTPResponse:(id)arg2 httpBody:(id)arg3;
 - (void)authorization:(id)arg1 didCompleteWithError:(id)arg2;

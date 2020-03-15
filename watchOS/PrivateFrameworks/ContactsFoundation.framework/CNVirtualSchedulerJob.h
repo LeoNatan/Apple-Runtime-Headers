@@ -13,9 +13,9 @@
 }
 
 + (id)jobWithTime:(unsigned int)arg1 block:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy) CDUnknownBlockType block; // @synthesize block=_block;
 @property unsigned int time; // @synthesize time=_time;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithTime:(unsigned int)arg1 block:(CDUnknownBlockType)arg2;
 

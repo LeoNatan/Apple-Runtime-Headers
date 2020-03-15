@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingRepresentedDataSource;
 + (BOOL)automaticallyNotifiesObserversOfRepresentedDataSource;
 + (BOOL)accessInstanceVariablesDirectly;
-@property __weak id <_NSQuickActionTouchBarItemDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <_NSQuickActionTouchBarItemDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)dealloc;
 - (void)buttonPressed:(id)arg1;
 @property(readonly) _NSQuickActionTouchBarItemDataSource *representedDataSource;

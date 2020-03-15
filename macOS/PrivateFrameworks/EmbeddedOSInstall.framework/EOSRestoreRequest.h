@@ -65,6 +65,7 @@
 + (BOOL)supportsSecureCoding;
 + (void)_printUsageForExecutableNamed:(id)arg1;
 + (id)requestWithArgs:(const char **)arg1 length:(int)arg2;
+- (void).cxx_destruct;
 @property BOOL restoreAfterBootFailure; // @synthesize restoreAfterBootFailure=_restoreAfterBootFailure;
 @property(retain) EOSDiagnosticSummary *diagnosticSummary; // @synthesize diagnosticSummary=_diagnosticSummary;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
@@ -113,7 +114,6 @@
 @property BOOL usePreflightContainerIfExists; // @synthesize usePreflightContainerIfExists=_usePreflightContainerIfExists;
 @property BOOL restore; // @synthesize restore=_restore;
 @property BOOL personalize; // @synthesize personalize=_personalize;
-- (void).cxx_destruct;
 - (id)_setFromBootArgsString:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

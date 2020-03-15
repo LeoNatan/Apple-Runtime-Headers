@@ -16,11 +16,11 @@
     NSDate *_queryEndDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *queryEndDate; // @synthesize queryEndDate=_queryEndDate;
 @property(retain, nonatomic) NSDate *queryStartDate; // @synthesize queryStartDate=_queryStartDate;
 @property(nonatomic) _Bool fillMissing; // @synthesize fillMissing=_fillMissing;
 @property(nonatomic) long long groupingOption; // @synthesize groupingOption=_groupingOption;
-- (void).cxx_destruct;
 
 @end
 

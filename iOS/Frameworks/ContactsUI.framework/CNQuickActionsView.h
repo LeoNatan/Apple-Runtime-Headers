@@ -41,6 +41,7 @@
 + (_Bool)hasActionsForContact:(id)arg1;
 + (id)descriptorForRequiredKeys;
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNQuickActionsManager *actionsManager; // @synthesize actionsManager=_actionsManager;
 @property(retain, nonatomic) CNQuickAction *performingAction; // @synthesize performingAction=_performingAction;
 @property(retain, nonatomic) CNContactActionsController *actionsController; // @synthesize actionsController=_actionsController;
@@ -57,7 +58,6 @@
 @property(nonatomic) _Bool sortsWithDuet; // @synthesize sortsWithDuet=_sortsWithDuet;
 @property(copy, nonatomic) NSArray *categories; // @synthesize categories=_categories;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)contactActionsController:(id)arg1 didSelectAction:(id)arg2;
 - (void)performAction:(id)arg1;
 - (void)showDisambiguationControllerWithDataSource:(id)arg1 actionType:(id)arg2 onController:(id)arg3 sourceView:(id)arg4;

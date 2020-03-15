@@ -41,7 +41,7 @@
 - (void)setROISelector:(SEL)arg1;
 - (id)applyWithExtent:(struct CGRect)arg1 roiCallback:(CDUnknownBlockType)arg2 arguments:(id)arg3;
 - (id)applyWithExtent:(struct CGRect)arg1 roiCallback:(CDUnknownBlockType)arg2 arguments:(id)arg3 options:(id)arg4;
--     // Error parsing type: i32@0:8@16^{Kernel=^^?{atomic<unsigned int>=AI}**B^{SerialIntArray}^{SerialStringArray}^{__CFString}ii{ISize=QQ}BBBBBB}24, name: _outputFormatUsingDictionary:andKernel:
+-     // Error parsing type: i32@0:8@16^{Kernel=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}**B^{SerialIntArray}^{SerialStringArray}^{__CFString}ii{ISize=QQ}BBBBBB}24, name: _outputFormatUsingDictionary:andKernel:
 - (BOOL)_isValidOutputPixelFormat:(int)arg1;
 @property(readonly) NSString *name;
 @property(nonatomic) struct CGSize outputGroupSize;

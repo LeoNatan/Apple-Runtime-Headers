@@ -17,11 +17,11 @@
 }
 
 + (id)companionModel;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *snoozeDate; // @synthesize snoozeDate=_snoozeDate;
 @property(retain, nonatomic) NSDate *fireDate; // @synthesize fireDate=_fireDate;
 @property(retain, nonatomic) NSString *alarmLabel; // @synthesize alarmLabel=_alarmLabel;
 @property(nonatomic) unsigned int entryType; // @synthesize entryType=_entryType;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_largeUtilityInactiveImageProvider;
 - (id)_extraLargeAlarmInactiveImageProvider;

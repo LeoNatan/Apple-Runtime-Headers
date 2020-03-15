@@ -24,11 +24,11 @@ __attribute__((visibility("hidden")))
     struct CGRect _handwritingFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect handwritingFrame; // @synthesize handwritingFrame=_handwritingFrame;
 @property(readonly, nonatomic) double maxTimeout; // @synthesize maxTimeout=_maxTimeout;
 @property(readonly, nonatomic) double minTimeout; // @synthesize minTimeout=_minTimeout;
 @property(readonly, nonatomic) _Bool autoConfirmationEnabled; // @synthesize autoConfirmationEnabled=_autoConfirmationEnabled;
-- (void).cxx_destruct;
 - (void)updatePreferences;
 - (double)timeoutForNextPage;
 - (double)smoothValueFromArray:(id)arg1;

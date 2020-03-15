@@ -38,6 +38,7 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadAllowAutoUnlock; // @synthesize payloadAllowAutoUnlock=_payloadAllowAutoUnlock;
 @property(copy, nonatomic) NSNumber *payloadAllowPasscodeModification; // @synthesize payloadAllowPasscodeModification=_payloadAllowPasscodeModification;
 @property(copy, nonatomic) NSNumber *payloadAllowFingerprintModification; // @synthesize payloadAllowFingerprintModification=_payloadAllowFingerprintModification;
@@ -55,7 +56,6 @@
 @property(copy, nonatomic) NSNumber *payloadMaxFailedAttempts; // @synthesize payloadMaxFailedAttempts=_payloadMaxFailedAttempts;
 @property(copy, nonatomic) NSNumber *payloadForcePIN; // @synthesize payloadForcePIN=_payloadForcePIN;
 @property(copy, nonatomic) NSNumber *payloadAllowSimple; // @synthesize payloadAllowSimple=_payloadAllowSimple;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

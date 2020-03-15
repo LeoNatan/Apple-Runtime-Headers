@@ -19,9 +19,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) __weak CSLAppSwitcherViewController *appSwitcherViewController; // @synthesize appSwitcherViewController=_appSwitcherViewController;
 @property(nonatomic) __weak UIView *containerView; // @synthesize containerView=_containerView;
-- (void).cxx_destruct;
 - (void)_dismissAnimated:(_Bool)arg1 withReason:(unsigned int)arg2 actionConfiguration:(CDUnknownBlockType)arg3;
 - (void)dismissAnimated:(_Bool)arg1 withReason:(unsigned int)arg2;
 - (void)_presentAnimated:(_Bool)arg1 withReason:(unsigned int)arg2 actionConfiguration:(CDUnknownBlockType)arg3;

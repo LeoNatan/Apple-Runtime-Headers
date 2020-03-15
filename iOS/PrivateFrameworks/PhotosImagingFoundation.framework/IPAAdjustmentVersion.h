@@ -20,10 +20,10 @@
 + (id)versionForMajor:(unsigned long long)arg1 minor:(unsigned long long)arg2 platform:(id)arg3;
 + (id)validatePlatformString:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *platform; // @synthesize platform=_platform;
 @property(readonly, nonatomic) unsigned long long minorVersion; // @synthesize minorVersion=_minorVersion;
 @property(readonly, nonatomic) unsigned long long majorVersion; // @synthesize majorVersion=_majorVersion;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (_Bool)isEqualToAdjustmentVersion:(id)arg1;

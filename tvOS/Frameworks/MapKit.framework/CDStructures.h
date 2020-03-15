@@ -76,10 +76,6 @@ struct Matrix<double, 2, 1> {
     double _e[2];
 };
 
-struct NSArray {
-    Class _field1;
-};
-
 struct UIEdgeInsets {
     double top;
     double left;
@@ -90,10 +86,6 @@ struct UIEdgeInsets {
 struct UIOffset {
     double horizontal;
     double vertical;
-};
-
-struct UIViewController {
-    Class _field1;
 };
 
 struct _GEOFlyoverKey {

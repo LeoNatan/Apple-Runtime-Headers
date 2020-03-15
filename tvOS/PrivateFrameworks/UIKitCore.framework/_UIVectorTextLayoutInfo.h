@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     struct CGAffineTransform _coordinateAdjustment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct __CTFrame *frame; // @synthesize frame=_frame;
 @property(nonatomic) struct CGAffineTransform coordinateAdjustment; // @synthesize coordinateAdjustment=_coordinateAdjustment;
 @property(retain, nonatomic) _UIVectorTextLayoutParameters *parameters; // @synthesize parameters=_parameters;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (double)scale;
 

@@ -18,10 +18,10 @@
 
 + (id)dbFileName;
 + (id)sharedCache;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *delegateWrappersByOperationID; // @synthesize delegateWrappersByOperationID=_delegateWrappersByOperationID;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cacheDelegateQueue; // @synthesize cacheDelegateQueue=_cacheDelegateQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cacheQueue; // @synthesize cacheQueue=_cacheQueue;
-- (void).cxx_destruct;
 - (void)registerCacheEvictionActivity;
 - (id)_locked_operationInfoForID:(id)arg1;
 - (void)registerAttemptForOperationWithID:(id)arg1;

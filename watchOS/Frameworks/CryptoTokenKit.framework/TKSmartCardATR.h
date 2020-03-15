@@ -15,9 +15,9 @@
     NSData *_historicalBytes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *historicalBytes; // @synthesize historicalBytes=_historicalBytes;
 @property(readonly, nonatomic) NSData *bytes; // @synthesize bytes=_bytes;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *historicalRecords;
 - (id)description;
 - (id)_formatHexData:(id)arg1 to:(id)arg2;

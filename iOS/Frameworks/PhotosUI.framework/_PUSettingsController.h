@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _searchBarButtonItemFactory;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType searchBarButtonItemFactory; // @synthesize searchBarButtonItemFactory=_searchBarButtonItemFactory;
 @property(copy, nonatomic) CDUnknownBlockType dismissButtonFactory; // @synthesize dismissButtonFactory=_dismissButtonFactory;
 @property(copy, nonatomic) CDUnknownBlockType onViewDidDisappearBlock; // @synthesize onViewDidDisappearBlock=_onViewDidDisappearBlock;
 @property(readonly, nonatomic) _UISettings *rootSettings; // @synthesize rootSettings=_rootSettings;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UINavigationController *searchNavigationController; // @synthesize searchNavigationController=_searchNavigationController;
 - (void)handleSearchBarButtonItem:(id)arg1;
 - (void)_updateNavigationItemOfViewController:(id)arg1;

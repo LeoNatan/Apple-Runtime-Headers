@@ -19,8 +19,8 @@
 + (_Bool)supportsSecureCoding;
 + (id)byDayValueFromICSString:(id)arg1;
 + (int)weekdayFromICSString:(id)arg1;
-@property(nonatomic) int weekday; // @synthesize weekday=_weekday;
 - (void).cxx_destruct;
+@property(nonatomic) int weekday; // @synthesize weekday=_weekday;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(retain, nonatomic) NSNumber *number;

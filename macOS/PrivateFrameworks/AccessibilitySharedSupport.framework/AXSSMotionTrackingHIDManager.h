@@ -18,12 +18,12 @@
     NSMutableArray *__devices;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *_devices; // @synthesize _devices=__devices;
 @property(retain, nonatomic) HIDManager *_hidManager; // @synthesize _hidManager=__hidManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *_hidManagerDispatchQueue; // @synthesize _hidManagerDispatchQueue=__hidManagerDispatchQueue;
 @property(nonatomic) BOOL _monitoring; // @synthesize _monitoring=__monitoring;
 @property(nonatomic) __weak id <AXSSMotionTrackingHIDManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_deviceNotification:(id)arg1 added:(BOOL)arg2;
 @property(readonly, copy, nonatomic) NSArray *devices;
 - (void)stopMonitoring;

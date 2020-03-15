@@ -34,6 +34,7 @@
 + (id)categoryWithIdentifier:(id)arg1 actions:(id)arg2 intentIdentifiers:(id)arg3 hiddenPreviewsBodyPlaceholder:(id)arg4 options:(unsigned long long)arg5;
 + (id)categoryWithIdentifier:(id)arg1 actions:(id)arg2 minimalActions:(id)arg3 intentIdentifiers:(id)arg4 options:(unsigned long long)arg5;
 + (id)categoryWithIdentifier:(id)arg1 actions:(id)arg2 intentIdentifiers:(id)arg3 options:(unsigned long long)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long listPriority; // @synthesize listPriority=_listPriority;
 @property(readonly, nonatomic) unsigned long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
@@ -45,7 +46,6 @@
 @property(readonly, copy, nonatomic) UNNotificationAction *alternateAction; // @synthesize alternateAction=_alternateAction;
 @property(readonly, copy, nonatomic) NSArray *minimalActions; // @synthesize minimalActions=_minimalActions;
 @property(readonly, copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

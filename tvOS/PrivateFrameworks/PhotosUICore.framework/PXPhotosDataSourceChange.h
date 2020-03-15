@@ -29,10 +29,10 @@
     PHChange *_originatingPhotoLibraryChange;
 }
 
+- (void).cxx_destruct;
 @property(readonly) __weak PHChange *originatingPhotoLibraryChange; // @synthesize originatingPhotoLibraryChange=_originatingPhotoLibraryChange;
 @property(readonly, nonatomic) NSIndexSet *sectionsWithKeyAssetChanges; // @synthesize sectionsWithKeyAssetChanges=_sectionsWithKeyAssetChanges;
 @property(readonly) PXSectionedDataSourceChangeDetails *sectionedDataSourceChangeDetails; // @synthesize sectionedDataSourceChangeDetails=_sectionedDataSourceChangeDetails;
-- (void).cxx_destruct;
 - (id)indexPathAfterRevertingIncrementalChangeDetailsFromIndexPath:(id)arg1;
 - (id)indexPathAfterApplyingIncrementalChangesToIndexPath:(id)arg1;
 - (_Bool)affectsSectionsInRange:(struct _NSRange)arg1;

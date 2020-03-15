@@ -18,16 +18,6 @@
     NSSet *_requiredServices;
 }
 
-+ (id)privacyLink:(id)arg1;
-+ (id)_privacyLinkWithInfoDictionary:(id)arg1;
-+ (id)usageDescription:(id)arg1;
-+ (id)_usageDescriptionWithInfoDictionary:(id)arg1;
-+ (id)studyName:(id)arg1;
-+ (id)appName:(id)arg1;
-+ (id)_studyNameWithInfoDictionary:(id)arg1 bundleId:(id)arg2;
-+ (id)_appNameWithInfoDictionary:(id)arg1 bundleId:(id)arg2;
-+ (id)infoDictionaryForBundle:(id)arg1;
-+ (_Bool)isValidString:(id)arg1;
 + (void)initialize;
 @property(copy, nonatomic) NSSet *requiredServices; // @synthesize requiredServices=_requiredServices;
 @property(copy, nonatomic) NSDictionary *perCategoryDetailDescription; // @synthesize perCategoryDetailDescription=_perCategoryDetailDescription;
@@ -38,7 +28,6 @@
 - (void)crashWithMessage:(id)arg1;
 - (void)verifyRequiredInfoPlistContentForRequestedServices:(id)arg1;
 - (void)dealloc;
-- (id)initWithInfoDictionary:(id)arg1 bundleIdentifier:(id)arg2;
 - (id)initWithBundle:(id)arg1;
 
 @end

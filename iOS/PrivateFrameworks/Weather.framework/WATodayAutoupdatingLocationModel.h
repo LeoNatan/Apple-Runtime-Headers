@@ -23,6 +23,7 @@
     CDUnknownBlockType _WeatherLocationManagerGenerator;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType WeatherLocationManagerGenerator; // @synthesize WeatherLocationManagerGenerator=_WeatherLocationManagerGenerator;
 @property(retain, nonatomic) WeatherPreferences *preferences; // @synthesize preferences=_preferences;
 @property(nonatomic) _Bool stopUpdateIfNeeded; // @synthesize stopUpdateIfNeeded=_stopUpdateIfNeeded;
@@ -31,7 +32,6 @@
 @property(nonatomic) _Bool locationServicesActive; // @synthesize locationServicesActive=_locationServicesActive;
 @property(nonatomic) _Bool isLocationTrackingEnabled; // @synthesize isLocationTrackingEnabled=_isLocationTrackingEnabled;
 @property(retain, nonatomic) WeatherLocationManager *locationManager; // @synthesize locationManager=_locationManager;
-- (void).cxx_destruct;
 - (void)_persistStateWithModel:(id)arg1;
 - (_Bool)_reloadForecastData:(_Bool)arg1;
 - (void)ubiquitousDefaultsDidChange:(id)arg1;

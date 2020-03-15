@@ -15,9 +15,9 @@
     unsigned long long _unitStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long unitStyle; // @synthesize unitStyle=_unitStyle;
 @property(nonatomic) unsigned long long units; // @synthesize units=_units;
-- (void).cxx_destruct;
 - (_Bool)isPartialStringValid:(id *)arg1 proposedSelectedRange:(struct _NSRange *)arg2 originalString:(id)arg3 originalSelectedRange:(struct _NSRange)arg4 errorDescription:(id *)arg5;
 - (_Bool)getObjectValue:(id *)arg1 forString:(id)arg2 errorDescription:(id *)arg3;
 - (double)distanceFromString:(id)arg1;

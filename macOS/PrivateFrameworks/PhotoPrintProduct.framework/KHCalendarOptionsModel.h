@@ -20,13 +20,13 @@
 
 + (id)countriesWithNationalHolidays;
 + (id)defaultOptionsModel;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showBirthdaysFromContacts; // @synthesize showBirthdaysFromContacts=_showBirthdaysFromContacts;
 @property(retain, nonatomic) NSArray *showCalendars; // @synthesize showCalendars=_showCalendars;
 @property(nonatomic) unsigned long long numberOfMonths; // @synthesize numberOfMonths=_numberOfMonths;
 @property(nonatomic) unsigned long long startCalendarYear; // @synthesize startCalendarYear=_startCalendarYear;
 @property(nonatomic) unsigned long long startMonthIndex; // @synthesize startMonthIndex=_startMonthIndex;
 @property(retain, nonatomic) NSCalendar *baseCalendar; // @synthesize baseCalendar=_baseCalendar;
-- (void).cxx_destruct;
 - (id)dictionary;
 @property(readonly, nonatomic) NSDate *calendarStartDate;
 @property(readonly, nonatomic) unsigned long long minimumNumberOfMonths;

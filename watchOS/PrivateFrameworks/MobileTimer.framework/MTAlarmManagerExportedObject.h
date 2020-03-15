@@ -15,8 +15,8 @@
     MTAlarmManager *_alarmManager;
 }
 
-@property(readonly, nonatomic) __weak MTAlarmManager *alarmManager; // @synthesize alarmManager=_alarmManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak MTAlarmManager *alarmManager; // @synthesize alarmManager=_alarmManager;
 - (void)nextAlarmChanged:(id)arg1;
 - (void)alarmDismissed:(id)arg1;
 - (void)alarmFired:(id)arg1;

@@ -23,6 +23,7 @@
     UIButton *_okayButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *okayButton; // @synthesize okayButton=_okayButton;
 @property(retain, nonatomic) UIButton *learnMoreButton; // @synthesize learnMoreButton=_learnMoreButton;
 @property(retain, nonatomic) UIButton *alternateChoiceButton; // @synthesize alternateChoiceButton=_alternateChoiceButton;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) BPSWatchView *watchView; // @synthesize watchView=_watchView;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (_Bool)wantsOkayPillButton;
 - (_Bool)wantsToShowWatchHW;
 - (_Bool)wantsLearnMoreButton;

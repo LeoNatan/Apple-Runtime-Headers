@@ -20,11 +20,11 @@
 }
 
 + (Class)libraryWorkflowCellClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFDatabaseResult *allWorkflows; // @synthesize allWorkflows=_allWorkflows;
 @property(retain, nonatomic) UISearchBar *legacySearchBar; // @synthesize legacySearchBar=_legacySearchBar;
 @property(nonatomic, getter=isSearching) _Bool searching; // @synthesize searching=_searching;
 @property(copy, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
-- (void).cxx_destruct;
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (void)visibleWorkflowsQueryChanged;

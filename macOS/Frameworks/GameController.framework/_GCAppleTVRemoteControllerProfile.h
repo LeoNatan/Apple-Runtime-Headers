@@ -30,8 +30,8 @@
 }
 
 + (int)updateDevice:(struct __IOHIDDevice *)arg1 withButtonDebounceTime:(unsigned char)arg2 withDelay:(BOOL)arg3;
-@property(nonatomic) unsigned long long owner; // @synthesize owner=_owner;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long owner; // @synthesize owner=_owner;
 - (void)setAllowsRotation:(BOOL)arg1;
 - (id)menuButton;
 - (void)toggleSuspendResume;

@@ -16,11 +16,11 @@
     NSString *_priorityAssetUUID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *priorityAssetUUID; // @synthesize priorityAssetUUID=_priorityAssetUUID;
 @property(retain, nonatomic) NSArray *representedObjects; // @synthesize representedObjects=_representedObjects;
 @property(retain, nonatomic) NSArray *searchTokens; // @synthesize searchTokens=_searchTokens;
 @property(copy, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *searchTermsString;
 - (void)_generateRelatedSearchObjects;
 - (_Bool)isEqual:(id)arg1;

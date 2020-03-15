@@ -17,11 +17,11 @@
     double _outlineInset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL dottedOutline; // @synthesize dottedOutline=_dottedOutline;
 @property(nonatomic) double outlineInset; // @synthesize outlineInset=_outlineInset;
 @property(nonatomic) double outlineWidth; // @synthesize outlineWidth=_outlineWidth;
 @property(retain, nonatomic) NSColor *outlineColor; // @synthesize outlineColor=_outlineColor;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)updateLayer;
 - (id)hitTest:(struct CGPoint)arg1;

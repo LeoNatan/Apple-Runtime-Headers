@@ -4,14 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <NanoPassKit/NSObject-Protocol.h>
+#import <NanoPassKit/NPKTransitItemField-Protocol.h>
 
-@class NSString;
+@class NSString, PKPaymentBalance;
 
-@protocol NPKBalanceField <NSObject>
+@protocol NPKBalanceField <NPKTransitItemField>
+@property(readonly, nonatomic) PKPaymentBalance *balance;
 @property(readonly, nonatomic) _Bool isPrimaryBalance;
-@property(readonly, nonatomic) NSString *identifier;
 @property(readonly, nonatomic) NSString *formattedValue;
-@property(readonly, nonatomic) NSString *label;
 @end
 

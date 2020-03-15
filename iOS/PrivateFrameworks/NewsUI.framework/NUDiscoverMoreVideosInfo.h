@@ -16,8 +16,8 @@
     NTPBDiscoverMoreVideosInfo *_discoverMoreVideosInfo;
 }
 
-@property(readonly, copy, nonatomic) NTPBDiscoverMoreVideosInfo *discoverMoreVideosInfo; // @synthesize discoverMoreVideosInfo=_discoverMoreVideosInfo;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NTPBDiscoverMoreVideosInfo *discoverMoreVideosInfo; // @synthesize discoverMoreVideosInfo=_discoverMoreVideosInfo;
 @property(readonly, nonatomic) NSString *subtitle;
 @property(readonly, nonatomic) NSString *title;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSArray *_windows;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *windows; // @synthesize windows=_windows;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

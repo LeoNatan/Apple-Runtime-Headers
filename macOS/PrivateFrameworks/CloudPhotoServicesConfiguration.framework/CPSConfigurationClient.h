@@ -32,6 +32,7 @@
 + (BOOL)isLegacyMyPhotoStreamEnabled;
 + (id)legacyMyPhotoStreamLibraryIdentifier;
 + (BOOL)hasUnimportedAssets;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType pendingStartCompletionHandler; // @synthesize pendingStartCompletionHandler=_pendingStartCompletionHandler;
 @property(retain) NSObject<OS_dispatch_queue> *isolationQueue; // @synthesize isolationQueue=_isolationQueue;
 @property(retain) NSMutableDictionary *pendingRequests; // @synthesize pendingRequests=_pendingRequests;
@@ -40,7 +41,6 @@
 @property(retain) NSArray *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSObject<CPSStatusInformation> *cachedStatusInformation; // @synthesize cachedStatusInformation=_cachedStatusInformation;
 @property(retain) NSSet *statusProperties; // @synthesize statusProperties=_statusProperties;
-- (void).cxx_destruct;
 - (void)didChangeSystemPhotoLibraryStatus;
 - (void)didChangeLoggedInAccountStatus;
 - (void)didChangePreferencesForServiceIdentifiers:(id)arg1;

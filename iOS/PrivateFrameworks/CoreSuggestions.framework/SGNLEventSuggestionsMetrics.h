@@ -28,9 +28,9 @@
 + (void)recordInteractionForEventWithInterface:(unsigned short)arg1 actionType:(unsigned short)arg2 harvestedEKEvent:(id)arg3 curatedEKEvent:(id)arg4;
 + (void)recordInteractionForEventWithInterface:(unsigned short)arg1 actionType:(unsigned short)arg2 harvestedSGEvent:(id)arg3 curatedEKEvent:(id)arg4;
 + (id)instance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SGMNLEventInBanner *nlEvent; // @synthesize nlEvent=_nlEvent;
 @property(retain, nonatomic) SGMDDLinkShown *ddLinkShown; // @synthesize ddLinkShown=_ddLinkShown;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -25,6 +25,7 @@
     unsigned int __PSKnnModelRecencyMarginToRetainShares;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int _PSKnnModelRecencyMarginToRetainShares; // @synthesize _PSKnnModelRecencyMarginToRetainShares=__PSKnnModelRecencyMarginToRetainShares;
 @property(nonatomic) unsigned int _PSKnnModelRecencyMarginToPromoteSharesMatchingBundleId; // @synthesize _PSKnnModelRecencyMarginToPromoteSharesMatchingBundleId=__PSKnnModelRecencyMarginToPromoteSharesMatchingBundleId;
 @property(nonatomic) unsigned int _PSKnnModelRecencyMarginToPromoteShares; // @synthesize _PSKnnModelRecencyMarginToPromoteShares=__PSKnnModelRecencyMarginToPromoteShares;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) _CDInteractionStore *interactionStore; // @synthesize interactionStore=_interactionStore;
 @property(readonly, nonatomic) id <_DKKnowledgeQuerying> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
 @property(readonly, nonatomic) unsigned int k; // @synthesize k=_k;
-- (void).cxx_destruct;
 - (id)extractNearestNeighborsForMapsQueryResult:(id)arg1 andNeighbors:(id)arg2 frequencyOnly:(_Bool)arg3;
 - (id)featuresFromMapsFeedbackEvents:(id)arg1;
 - (id)mapsShareEtaDefaultKnnSuggestions:(id)arg1 maxSuggestions:(unsigned int)arg2;

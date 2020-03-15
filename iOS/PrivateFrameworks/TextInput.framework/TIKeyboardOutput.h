@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *customInfo; // @synthesize customInfo=_customInfo;
 @property(nonatomic) _Bool shouldSendCurrentLocation; // @synthesize shouldSendCurrentLocation=_shouldSendCurrentLocation;
 @property(copy, nonatomic) NSIndexSet *handwritingStrokesToDelete; // @synthesize handwritingStrokesToDelete=_handwritingStrokesToDelete;
@@ -37,7 +38,6 @@
 @property(nonatomic) _Bool unmarkIfNecessary; // @synthesize unmarkIfNecessary=_unmarkIfNecessary;
 @property(copy, nonatomic) NSString *textToCommit; // @synthesize textToCommit=_textToCommit;
 @property(retain, nonatomic) TIKeyboardCandidate *acceptedCandidate; // @synthesize acceptedCandidate=_acceptedCandidate;
-- (void).cxx_destruct;
 - (void)deleteForward;
 - (void)deleteForward:(unsigned long long)arg1;
 - (void)insertTextAfterSelection:(id)arg1;

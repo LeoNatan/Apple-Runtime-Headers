@@ -16,9 +16,9 @@
 
 + (id)operationWithSystemLanguage:(id)arg1;
 + (id)operationWithLanguage:(id)arg1 diagnostics:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXMDiagnostics *diagnostics; // @synthesize diagnostics=_diagnostics;
 @property(readonly, nonatomic) AXMLanguage *language; // @synthesize language=_language;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSLocale *lexiconLocale;
 - (id)_initWithLanguage:(id)arg1 diagnostics:(id)arg2;
 

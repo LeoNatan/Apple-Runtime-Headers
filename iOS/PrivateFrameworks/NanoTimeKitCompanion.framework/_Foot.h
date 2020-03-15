@@ -16,11 +16,11 @@
     NSMutableArray *_texs;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char state; // @synthesize state=_state;
 @property(nonatomic) BOOL frameDisplayTime60th; // @synthesize frameDisplayTime60th=_frameDisplayTime60th;
 @property(nonatomic) BOOL animFrame; // @synthesize animFrame=_animFrame;
 @property(retain, nonatomic) NSMutableArray *texs; // @synthesize texs=_texs;
-- (void).cxx_destruct;
 
 @end
 

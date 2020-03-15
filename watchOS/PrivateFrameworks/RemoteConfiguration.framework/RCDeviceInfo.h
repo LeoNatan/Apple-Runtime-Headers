@@ -21,13 +21,13 @@
 }
 
 + (id)defaultDeviceInfo;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *osVersion; // @synthesize osVersion=_osVersion;
 @property(readonly, copy, nonatomic) NSString *appVersion; // @synthesize appVersion=_appVersion;
 @property(readonly, nonatomic) int dstOffset; // @synthesize dstOffset=_dstOffset;
 @property(readonly, nonatomic) int utcOffset; // @synthesize utcOffset=_utcOffset;
 @property(readonly, copy, nonatomic) NSString *deviceType; // @synthesize deviceType=_deviceType;
 @property(readonly, copy, nonatomic) NSArray *preferredLanguages; // @synthesize preferredLanguages=_preferredLanguages;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;

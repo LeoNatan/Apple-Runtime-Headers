@@ -29,6 +29,7 @@
     struct CGSize _maskingSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize maskingSize; // @synthesize maskingSize=_maskingSize;
 @property(nonatomic) _Bool maskingPathStartsFromHourHand; // @synthesize maskingPathStartsFromHourHand=_maskingPathStartsFromHourHand;
 @property(retain, nonatomic) NTKOlympusTimeContentView *overlayContentView; // @synthesize overlayContentView=_overlayContentView;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) __weak id <NTKOlympusViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen;
-- (void).cxx_destruct;
 - (_Bool)_maskingPathStartsFromHourHandForDate:(id)arg1;
 - (void)openVictoryAppFromRect:(struct CGRect)arg1;
 - (void)olympusContentView:(id)arg1 didHandleLogoTouchUpInsideFromRect:(struct CGRect)arg2;

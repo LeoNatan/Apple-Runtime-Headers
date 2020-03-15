@@ -22,6 +22,7 @@
     NSMutableArray *_mutableLibraryItems;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isCreatingAvatar; // @synthesize isCreatingAvatar=_isCreatingAvatar;
 @property(readonly, nonatomic) NSMutableArray *mutableLibraryItems; // @synthesize mutableLibraryItems=_mutableLibraryItems;
 @property(readonly, nonatomic) AVTAvatarLibraryCreateNewItem *createNewItem; // @synthesize createNewItem=_createNewItem;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) AVTViewSessionProvider *viewSessionProvider; // @synthesize viewSessionProvider=_viewSessionProvider;
 @property(readonly, nonatomic) id <AVTAvatarStoreInternal> avatarStore; // @synthesize avatarStore=_avatarStore;
 @property(nonatomic) __weak id <AVTAvatarLibraryModelDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)avatarEditorViewControllerDidCancel:(id)arg1;
 - (void)avatarEditorViewController:(id)arg1 didFinishWithAvatarRecord:(id)arg2;
 - (void)presetShareSheetWithRecords:(id)arg1 fromItem:(id)arg2;

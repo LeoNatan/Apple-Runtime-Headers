@@ -17,12 +17,12 @@
     BKAssetMetadataIOTask *_copyingSubtask;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BKAssetMetadataIOTask *copyingSubtask; // @synthesize copyingSubtask=_copyingSubtask;
 @property(nonatomic) BOOL moveOriginalBook; // @synthesize moveOriginalBook=_moveOriginalBook;
 @property(copy, nonatomic) NSString *interimFilenameOverride; // @synthesize interimFilenameOverride=_interimFilenameOverride;
 @property(retain, nonatomic) BKAssetMetadata *assetToUpdate; // @synthesize assetToUpdate=_assetToUpdate;
 @property(retain, nonatomic) NSURL *temporaryDirectory; // @synthesize temporaryDirectory=_temporaryDirectory;
-- (void).cxx_destruct;
 - (id)_subtaskTargetDirectoryWithInstalltDirectory:(id)arg1 error:(id *)arg2;
 - (void)cancel;
 - (id)executeWithTargetDirectory:(id)arg1 error:(id *)arg2;

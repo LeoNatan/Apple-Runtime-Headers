@@ -17,11 +17,11 @@
     CDUnknownBlockType _awaitTest;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType awaitTest; // @synthesize awaitTest=_awaitTest;
 @property(retain) NSObject<OS_dispatch_semaphore> *awaitSemaphore; // @synthesize awaitSemaphore=_awaitSemaphore;
 @property(retain) NSError *scriptError; // @synthesize scriptError=_scriptError;
 @property(retain) NSObject<OS_dispatch_queue> *executionQueue; // @synthesize executionQueue=_executionQueue;
-- (void).cxx_destruct;
 - (void)_reset;
 - (void)_busyCheckForDisplayLink:(id)arg1;
 - (void)runWithCompletionBlock:(CDUnknownBlockType)arg1;

@@ -16,11 +16,11 @@
     long long _orientation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) CALayer *imageLayer; // @synthesize imageLayer=_imageLayer;
 @property(nonatomic) double imageOpacity; // @synthesize imageOpacity=_imageOpacity;
-- (void).cxx_destruct;
 - (_Bool)accessibilityIgnoresInvertColors;
 - (void)setImage:(id)arg1 orientation:(long long)arg2;
 - (void)setFrame:(struct CGRect)arg1;

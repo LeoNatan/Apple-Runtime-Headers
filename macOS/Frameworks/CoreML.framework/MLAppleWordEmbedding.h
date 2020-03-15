@@ -18,8 +18,8 @@
 
 + (BOOL)saveAppleWordEmbeddingModelToURL:(id)arg1 wordEmbeddingParameters:(id)arg2 error:(id *)arg3;
 + (id)loadModelFromSpecification:(struct _MLModelSpecification *)arg1 configuration:(id)arg2 error:(id *)arg3;
-@property(readonly) MLAppleWordEmbeddingParameters *parameters; // @synthesize parameters=_parameters;
 - (void).cxx_destruct;
+@property(readonly) MLAppleWordEmbeddingParameters *parameters; // @synthesize parameters=_parameters;
 - (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)initWithParameters:(id)arg1 modelDescription:(id)arg2 nlpHandle:(id)arg3 configuration:(id)arg4 error:(id *)arg5;
 

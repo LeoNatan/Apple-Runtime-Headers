@@ -17,12 +17,12 @@
     NSString *_designatedPSUUID;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *designatedPSUUID; // @synthesize designatedPSUUID=_designatedPSUUID;
 @property(retain) NSArray *volumeUUIDs; // @synthesize volumeUUIDs=_volumeUUIDs;
 @property(retain) NSArray *physicalStoreUUIDs; // @synthesize physicalStoreUUIDs=_physicalStoreUUIDs;
 @property BOOL isFusion; // @synthesize isFusion=_isFusion;
 @property(retain) NSString *apfsUUID; // @synthesize apfsUUID=_apfsUUID;
-- (void).cxx_destruct;
 - (void)removeAPFSVolumeGroup:(id)arg1 completetionBlock:(CDUnknownBlockType)arg2;
 - (void)createAPFSVolumeGroupWithDisks:(id)arg1 completetionBlock:(CDUnknownBlockType)arg2;
 - (void)removeContainerWithProgressBlock:(CDUnknownBlockType)arg1 completetionBlock:(CDUnknownBlockType)arg2;

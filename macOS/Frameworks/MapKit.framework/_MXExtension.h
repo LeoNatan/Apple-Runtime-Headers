@@ -14,9 +14,9 @@
     _MXExtensionProvider *_provider;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak _MXExtensionProvider *provider; // @synthesize provider=_provider;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)_containingAppIdentifer;
 - (id)siblingExtensions;
 - (BOOL)_isIntentExtension;

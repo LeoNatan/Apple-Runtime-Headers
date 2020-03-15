@@ -16,9 +16,9 @@
     NSFileManager *_fileManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSFileManager *fileManager; // @synthesize fileManager=_fileManager;
 @property(retain, nonatomic) NSURL *directoryURL; // @synthesize directoryURL=_directoryURL;
-- (void).cxx_destruct;
 - (id)URLForKey:(id)arg1;
 - (BOOL)isKeyValid:(id)arg1;
 - (BOOL)removeAllDataWithError:(id *)arg1;

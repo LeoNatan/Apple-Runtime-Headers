@@ -10,11 +10,11 @@
 
 @interface NUChoicePattern : NUPattern
 {
-    struct NSArray *_choices;
+    NSArray *_choices;
 }
 
-@property(readonly) NSArray *choices; // @synthesize choices=_choices;
 - (void).cxx_destruct;
+@property(readonly) NSArray *choices; // @synthesize choices=_choices;
 - (_Bool)match:(id)arg1 location:(unsigned long long *)arg2 count:(unsigned long long *)arg3;
 - (_Bool)isEqualToChoicePattern:(id)arg1;
 - (_Bool)isEqualToPattern:(id)arg1;

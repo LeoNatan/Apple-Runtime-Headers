@@ -13,8 +13,8 @@
     NSSet *_stagedEvents;
 }
 
-@property(retain, nonatomic) NSSet *stagedEvents; // @synthesize stagedEvents=_stagedEvents;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSet *stagedEvents; // @synthesize stagedEvents=_stagedEvents;
 - (id)_updateExecuteOnce;
 - (id)_updateRecurrences;
 - (id)_updateEvents;

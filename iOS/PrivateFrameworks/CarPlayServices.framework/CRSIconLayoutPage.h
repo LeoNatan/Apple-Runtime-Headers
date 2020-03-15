@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSArray *icons; // @synthesize icons=_icons;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *icons; // @synthesize icons=_icons;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

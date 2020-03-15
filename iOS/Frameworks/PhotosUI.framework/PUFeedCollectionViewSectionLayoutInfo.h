@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _margins;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long numberOfTilesOmitted; // @synthesize numberOfTilesOmitted=_numberOfTilesOmitted;
 @property(retain, nonatomic) id groupID; // @synthesize groupID=_groupID;
 @property(nonatomic) long long lastJoinedSection; // @synthesize lastJoinedSection=_lastJoinedSection;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGSize headerSize; // @synthesize headerSize=_headerSize;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(nonatomic) struct CGPoint origin; // @synthesize origin=_origin;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect frame;
 - (id)init;
 

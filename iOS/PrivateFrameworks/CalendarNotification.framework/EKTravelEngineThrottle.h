@@ -24,6 +24,7 @@
 
 + (double)emissionThresholdTimeInterval;
 + (double)_requestHypothesisRefreshInterval;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PCPersistentTimer *emissionTimer; // @synthesize emissionTimer=_emissionTimer;
 @property(retain, nonatomic) NSDate *nextEmissionDate; // @synthesize nextEmissionDate=_nextEmissionDate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *throttleQueue; // @synthesize throttleQueue=_throttleQueue;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) CDUnknownBlockType cancelHypothesisRequestRefreshBlock; // @synthesize cancelHypothesisRequestRefreshBlock=_cancelHypothesisRequestRefreshBlock;
 @property(copy, nonatomic) CDUnknownBlockType requestHypothesisRefreshBlock; // @synthesize requestHypothesisRefreshBlock=_requestHypothesisRefreshBlock;
 @property(retain) NSString *eventExternalURL; // @synthesize eventExternalURL=_eventExternalURL;
-- (void).cxx_destruct;
 - (void)_significantTimeChangeNotificationReceived;
 - (void)_unregisterForNotificationObservation;
 - (void)_registerForNotificationObservation;

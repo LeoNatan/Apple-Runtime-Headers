@@ -18,8 +18,8 @@
 }
 
 + (void)requestViewControllerWithConnectionHandler:(CDUnknownBlockType)arg1;
-@property __weak id <LAUIUserPasswordFieldRemoteProtocol> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <LAUIUserPasswordFieldRemoteProtocol> delegate; // @synthesize delegate=_delegate;
 - (void)didShowAccountUnblocked;
 - (void)didShowAccountBackoffBlocked;
 - (void)setSkipCredentialsVerification:(BOOL)arg1;

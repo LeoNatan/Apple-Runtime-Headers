@@ -35,6 +35,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDAMPricingModel *pricingModel; // @synthesize pricingModel=_pricingModel;
 @property(retain, nonatomic) EDAMSubscriptionInfo *subscriptionInfo; // @synthesize subscriptionInfo=_subscriptionInfo;
 @property(retain, nonatomic) EDAMAccountLimits *accountLimits; // @synthesize accountLimits=_accountLimits;
@@ -56,7 +57,6 @@
 @property(retain, nonatomic) NSString *email; // @synthesize email=_email;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 @property(retain, nonatomic) NSNumber *id; // @synthesize id=_id;
-- (void).cxx_destruct;
 
 @end
 

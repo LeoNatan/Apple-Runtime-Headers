@@ -17,12 +17,12 @@
     double _score;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *interactions; // @synthesize interactions=_interactions;
 @property double score; // @synthesize score=_score;
 @property double rank; // @synthesize rank=_rank;
 @property(retain) NSString *interactionBundleID; // @synthesize interactionBundleID=_interactionBundleID;
 @property(retain) _CDContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

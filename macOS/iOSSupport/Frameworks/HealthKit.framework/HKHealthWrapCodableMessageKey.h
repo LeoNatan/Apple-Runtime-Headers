@@ -16,9 +16,9 @@
     NSData *_key;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *iv; // @synthesize iv=_iv;
 @property(retain, nonatomic) NSData *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

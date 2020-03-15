@@ -100,6 +100,7 @@ __attribute__((visibility("hidden")))
     _Bool _alwaysOnAudioRedundancyEnabled;
     _Bool _cellularAllowRedLowBitratesEnabled;
     _Bool _wifiAllowRedLowBitratesEnabled;
+    struct tagVCMemoryPool *_audioBundlePool;
 }
 
 @property(nonatomic) unsigned char mediaControlInfoVersion; // @synthesize mediaControlInfoVersion=_mediaControlInfoVersion;

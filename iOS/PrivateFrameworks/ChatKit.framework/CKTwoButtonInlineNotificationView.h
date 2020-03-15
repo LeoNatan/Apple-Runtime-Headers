@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     UIView *_rightGrayoutView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *rightGrayoutView; // @synthesize rightGrayoutView=_rightGrayoutView;
 @property(retain, nonatomic) UIView *leftGrayoutView; // @synthesize leftGrayoutView=_leftGrayoutView;
 @property(retain, nonatomic) UIView *verticalDivider; // @synthesize verticalDivider=_verticalDivider;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) UILabel *headerLabel; // @synthesize headerLabel=_headerLabel;
 @property(retain, nonatomic) UIButton *failureButton; // @synthesize failureButton=_failureButton;
-- (void).cxx_destruct;
 - (void)_handleContentSizeCategoryDidChange:(id)arg1;
 - (void)_handleTouchUpOutside:(id)arg1;
 - (void)_handleTouchUpInside:(id)arg1;

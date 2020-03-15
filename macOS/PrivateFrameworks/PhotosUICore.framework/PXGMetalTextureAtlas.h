@@ -46,6 +46,7 @@
 }
 
 + (unsigned int)maxCapacityForThumbnailSize:(struct CGSize)arg1 pixelFormat:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int capacity; // @synthesize capacity=_capacity;
 @property(readonly, nonatomic) struct CGSize thumbnailSize; // @synthesize thumbnailSize=_thumbnailSize;
 @property(readonly, nonatomic) unsigned long long pixelFormat; // @synthesize pixelFormat=_pixelFormat;
@@ -53,7 +54,6 @@
 @property(nonatomic) long long renderPipelineIndex; // @synthesize renderPipelineIndex=_renderPipelineIndex;
 @property(readonly, nonatomic) PXGColorProgram *colorProgram; // @synthesize colorProgram=_colorProgram;
 @property(readonly, nonatomic) id <MTLTexture> texture; // @synthesize texture=_texture;
-- (void).cxx_destruct;
 - (void)_syncQueue_checkinThumbnailIndex:(unsigned int)arg1;
 - (unsigned int)_syncQueue_checkoutNextThumbnailIndex;
 - (void)_syncQueue_resizeStorageIfNeeded;

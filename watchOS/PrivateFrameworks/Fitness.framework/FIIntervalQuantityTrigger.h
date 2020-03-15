@@ -17,8 +17,8 @@
     NSDate *_triggeredDate;
 }
 
-@property(readonly, nonatomic) NSDate *triggeredDate; // @synthesize triggeredDate=_triggeredDate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDate *triggeredDate; // @synthesize triggeredDate=_triggeredDate;
 - (id)description;
 @property(readonly, nonatomic) HKQuantityType *quantityType; // @dynamic quantityType;
 @property(readonly, nonatomic) _Bool triggered; // @dynamic triggered;

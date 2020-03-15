@@ -24,6 +24,7 @@
     unsigned long long _policyStateSerialNumber;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long policyStateSerialNumber; // @synthesize policyStateSerialNumber=_policyStateSerialNumber;
 @property(readonly, nonatomic) _Bool suppressStateChangesForObscured; // @synthesize suppressStateChangesForObscured=_suppressStateChangesForObscured;
 @property(readonly, nonatomic) _Bool suppressReadyStateForLock; // @synthesize suppressReadyStateForLock=_suppressReadyStateForLock;
@@ -36,7 +37,6 @@
 @property(readonly, copy, nonatomic) NSSet *foregroundIneligibleBundleIDs; // @synthesize foregroundIneligibleBundleIDs=_foregroundIneligibleBundleIDs;
 @property(readonly, copy, nonatomic) NSSet *foregroundEligibleBundleIDs; // @synthesize foregroundEligibleBundleIDs=_foregroundEligibleBundleIDs;
 @property(readonly, copy, nonatomic) NSString *routeName; // @synthesize routeName=_routeName;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool anyAppIsPlaying;
 @property(readonly, nonatomic) _Bool anyPlayingAppIsForeground;
 @property(readonly, nonatomic) _Bool anyReadyAppIsForeground;

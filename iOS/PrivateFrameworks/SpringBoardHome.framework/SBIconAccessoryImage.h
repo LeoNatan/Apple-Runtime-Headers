@@ -15,8 +15,8 @@
     NSString *_countedMapKey;
 }
 
-@property(copy, nonatomic) NSString *countedMapKey; // @synthesize countedMapKey=_countedMapKey;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *countedMapKey; // @synthesize countedMapKey=_countedMapKey;
 - (id)initWithImage:(id)arg1;
 
 // Remaining properties

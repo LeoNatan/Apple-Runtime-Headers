@@ -16,8 +16,8 @@
 }
 
 + (id)bookmarkWithWebClip:(id)arg1;
-@property(readonly, nonatomic) UIWebClip *webClip; // @synthesize webClip=_webClip;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIWebClip *webClip; // @synthesize webClip=_webClip;
 - (_Bool)icon:(id)arg1 launchFromLocation:(id)arg2 context:(id)arg3;
 - (_Bool)iconCompleteUninstall:(id)arg1;
 - (_Bool)iconSupportsUninstall:(id)arg1;

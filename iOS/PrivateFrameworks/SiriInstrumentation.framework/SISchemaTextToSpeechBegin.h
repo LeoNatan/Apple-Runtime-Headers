@@ -6,17 +6,19 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-@class NSData, NSString;
+@class NSData, NSString, SISchemaHardwareInterfaceIdentifier;
 
 @interface SISchemaTextToSpeechBegin : PBCodable
 {
     int _audioOutputRoute;
     NSString *_aceID;
+    SISchemaHardwareInterfaceIdentifier *_hardwareInterfaceVendorID;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) SISchemaHardwareInterfaceIdentifier *hardwareInterfaceVendorID; // @synthesize hardwareInterfaceVendorID=_hardwareInterfaceVendorID;
 @property(nonatomic) int audioOutputRoute; // @synthesize audioOutputRoute=_audioOutputRoute;
 @property(copy, nonatomic) NSString *aceID; // @synthesize aceID=_aceID;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

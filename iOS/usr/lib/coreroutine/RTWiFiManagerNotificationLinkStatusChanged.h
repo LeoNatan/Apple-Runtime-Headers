@@ -14,9 +14,9 @@
     NSArray *_accessPoints;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *accessPoints; // @synthesize accessPoints=_accessPoints;
 @property(readonly, nonatomic) unsigned long long linkStatus; // @synthesize linkStatus=_linkStatus;
-- (void).cxx_destruct;
 - (id)initWithLinkStatus:(unsigned long long)arg1 accessPoints:(id)arg2;
 
 @end

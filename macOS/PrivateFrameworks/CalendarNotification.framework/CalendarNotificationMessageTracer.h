@@ -15,8 +15,8 @@
 
 + (id)_eventTypeProperties;
 + (void)messageTraceEventType:(unsigned long long)arg1;
-@property(retain, nonatomic) PETScalarEventTracker *predictionTracker; // @synthesize predictionTracker=_predictionTracker;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PETScalarEventTracker *predictionTracker; // @synthesize predictionTracker=_predictionTracker;
 
 @end
 

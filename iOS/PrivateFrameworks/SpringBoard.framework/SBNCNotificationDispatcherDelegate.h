@@ -15,8 +15,8 @@
     SBNotificationBannerDestination *_bannerDestination;
 }
 
-@property(nonatomic) __weak SBNotificationBannerDestination *bannerDestination; // @synthesize bannerDestination=_bannerDestination;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SBNotificationBannerDestination *bannerDestination; // @synthesize bannerDestination=_bannerDestination;
 - (_Bool)_isPushOrLocalNotificationRequest:(id)arg1;
 - (void)_requestAuthenticationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dispatcher:(id)arg1 launchBackgroundApplicationForAction:(id)arg2 notificationRequest:(id)arg3 fromDestination:(id)arg4 withParameters:(id)arg5;

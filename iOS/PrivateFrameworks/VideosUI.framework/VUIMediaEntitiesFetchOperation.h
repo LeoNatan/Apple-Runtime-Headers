@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
 + (id)_timeIntervalNumberForObject:(id)arg1;
 + (id)_mpOrderingDirectionMappingForSortDirectionMapping:(id)arg1;
 + (id)_mpPropertiesForProperties:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(retain, nonatomic) NSString *mediaEntitySubtype; // @synthesize mediaEntitySubtype=_mediaEntitySubtype;
 @property(retain, nonatomic) IKAppContext *appContext; // @synthesize appContext=_appContext;
 @property(retain, nonatomic) NSString *mediaCollectionType; // @synthesize mediaCollectionType=_mediaCollectionType;
 @property(retain, nonatomic) NSString *mediaCategory; // @synthesize mediaCategory=_mediaCategory;
 @property(copy, nonatomic) NSArray *mediaEntities; // @synthesize mediaEntities=_mediaEntities;
-- (void).cxx_destruct;
 - (void)_addPrefetchPropertiesToMediaQuery:(id)arg1 prefetchProperties:(id)arg2;
 - (void)_setSortOrderingForMediaQuery:(id)arg1 withSortProperties:(id)arg2 sortDirectionMapping:(id)arg3;
 - (void)_addPredicatesToMediaQuery:(id)arg1 withFilters:(id)arg2;

@@ -16,8 +16,8 @@
 
 + (id)_sharedImageLoader;
 + (void)initialize;
-@property(copy, nonatomic) INImage *intentsImage; // @synthesize intentsImage=_intentsImage;
 - (void).cxx_destruct;
+@property(copy, nonatomic) INImage *intentsImage; // @synthesize intentsImage=_intentsImage;
 - (void)loadImageDataWithCompletionAndErrorHandler:(CDUnknownBlockType)arg1;
 - (void)loadImageDataWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (struct CGSize)size;

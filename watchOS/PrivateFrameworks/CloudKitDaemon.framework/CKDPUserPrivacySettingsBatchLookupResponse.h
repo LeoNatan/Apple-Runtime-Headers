@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)containerPrivacySettingsType;
-@property(retain, nonatomic) NSMutableArray *containerPrivacySettings; // @synthesize containerPrivacySettings=_containerPrivacySettings;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *containerPrivacySettings; // @synthesize containerPrivacySettings=_containerPrivacySettings;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     NSArray *mEquivalentDrawables;
 }
 
-@property(retain, nonatomic) NSArray *equivalentDrawables; // @synthesize equivalentDrawables=mEquivalentDrawables;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *equivalentDrawables; // @synthesize equivalentDrawables=mEquivalentDrawables;
 - (id)description;
 - (id)styleDefinition;
 - (id)colorTransform;

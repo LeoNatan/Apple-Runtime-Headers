@@ -27,12 +27,12 @@
     ICUserIdentityStore *_userIdentityStore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ICUserIdentityStore *userIdentityStore; // @synthesize userIdentityStore=_userIdentityStore;
 @property(readonly, copy, nonatomic) NSArray *userIdentities; // @synthesize userIdentities=_userIdentities;
 @property(readonly, copy, nonatomic) ICRequestContext *requestContext; // @synthesize requestContext=_requestContext;
 @property(readonly, nonatomic) ICDelegationProviderNetService *netService; // @synthesize netService=_netService;
 @property(readonly, copy, nonatomic) NSArray *delegationAccountUUIDs; // @synthesize delegationAccountUUIDs=_delegationAccountUUIDs;
-- (void).cxx_destruct;
 - (void)_startDelegation;
 - (void)_finishWithError:(id)arg1;
 - (void)_handleStartDelegationResponse:(id)arg1;

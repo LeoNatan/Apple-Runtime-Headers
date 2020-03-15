@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     BOOL _hasFullScreenAppearance;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasFullScreenAppearance; // @synthesize hasFullScreenAppearance=_hasFullScreenAppearance;
 @property(nonatomic) BOOL hasAlternateAppearance; // @synthesize hasAlternateAppearance=_hasAlternateAppearance;
 @property(nonatomic, getter=isRemoved) BOOL removed; // @synthesize removed=_removed;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (void)updateButtonAppearance;
 @property(readonly, nonatomic) AVButton *customButton;

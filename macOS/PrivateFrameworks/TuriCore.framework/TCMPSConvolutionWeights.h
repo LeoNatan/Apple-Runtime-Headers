@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     id <MTLBuffer> weightBuffer;
     id <MTLBuffer> biasBuffer;
     id <MTLCommandQueue> cq;
+    BOOL _updateWeights;
     MPSCNNConvolutionWeightsAndBiasesState *_state;
     id <TCMPSConvolutionWeightsOptimizing> _optimizer;
     MPSVector *_weightMomentumVector;
@@ -39,14 +40,15 @@ __attribute__((visibility("hidden")))
     MPSVector *_biasVelocityVector;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL updateWeights; // @synthesize updateWeights=_updateWeights;
 @property(readonly, nonatomic) MPSVector *biasVelocityVector; // @synthesize biasVelocityVector=_biasVelocityVector;
 @property(readonly, nonatomic) MPSVector *biasMomentumVector; // @synthesize biasMomentumVector=_biasMomentumVector;
 @property(readonly, nonatomic) MPSVector *weightVelocityVector; // @synthesize weightVelocityVector=_weightVelocityVector;
 @property(readonly, nonatomic) MPSVector *weightMomentumVector; // @synthesize weightMomentumVector=_weightMomentumVector;
 @property(readonly, nonatomic) id <TCMPSConvolutionWeightsOptimizing> optimizer; // @synthesize optimizer=_optimizer;
 @property(readonly, nonatomic) MPSCNNConvolutionWeightsAndBiasesState *state; // @synthesize state=_state;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)label;
 - (void)loadBias:(float *)arg1;
 - (void)loadWeight:(float *)arg1;
@@ -60,12 +62,13 @@ __attribute__((visibility("hidden")))
 - (float *)biasTerms;
 - (void *)weights;
 - (id)descriptor;
-- (unsigned long long)bias_size;
-- (unsigned long long)weight_size;
+- (unsigned long long)biasSize;
+- (unsigned long long)weightSize;
 - (void)setLearningRate:(float)arg1;
 - (unsigned int)dataType;
 - (id)copyWithZone:(struct _NSZone *)arg1 device:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithKernelWidth:(unsigned long long)arg1 kernelHeight:(unsigned long long)arg2 inputFeatureChannels:(unsigned long long)arg3 outputFeatureChannels:(unsigned long long)arg4 neuronType:(int)arg5 strideX:(unsigned long long)arg6 strideY:(unsigned long long)arg7 neuronA:(float)arg8 neuronB:(float)arg9 kernelParamsBinaryName:(const char *)arg10 device:(id)arg11 cmd_queue:(id)arg12 updateWeights:(BOOL)arg13 init_weight_ptr:(float *)arg14 init_bias_ptr:(float *)arg15 optimizerOptions:(struct OptimizerOptions)arg16;
 - (id)initWithKernelWidth:(unsigned long long)arg1 kernelHeight:(unsigned long long)arg2 inputFeatureChannels:(unsigned long long)arg3 outputFeatureChannels:(unsigned long long)arg4 neuronType:(int)arg5 strideX:(unsigned long long)arg6 strideY:(unsigned long long)arg7 neuronA:(float)arg8 neuronB:(float)arg9 kernelParamsBinaryName:(const char *)arg10 device:(id)arg11 cmd_queue:(id)arg12 init_weight_ptr:(float *)arg13 init_bias_ptr:(float *)arg14 optimizerOptions:(struct OptimizerOptions)arg15;
 - (id)initWithKernelWidth:(unsigned long long)arg1 kernelHeight:(unsigned long long)arg2 inputFeatureChannels:(unsigned long long)arg3 outputFeatureChannels:(unsigned long long)arg4 neuronType:(int)arg5 neuronA:(float)arg6 neuronB:(float)arg7 stride:(unsigned long long)arg8 kernelParamsBinaryName:(const char *)arg9 device:(id)arg10 cmd_queue:(id)arg11 init_weight_ptr:(float *)arg12 init_bias_ptr:(float *)arg13 optimizerOptions:(struct OptimizerOptions)arg14;
 

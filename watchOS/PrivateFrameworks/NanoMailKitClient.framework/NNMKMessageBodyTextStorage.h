@@ -18,13 +18,13 @@
     UIFont *_cachedSystemFont;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *cachedSystemFont; // @synthesize cachedSystemFont=_cachedSystemFont;
 @property(retain, nonatomic) UIFont *cachedBoldItalicSystemFont; // @synthesize cachedBoldItalicSystemFont=_cachedBoldItalicSystemFont;
 @property(retain, nonatomic) UIFont *cachedItalicSystemFont; // @synthesize cachedItalicSystemFont=_cachedItalicSystemFont;
 @property(retain, nonatomic) UIFont *cachedBoldSystemFont; // @synthesize cachedBoldSystemFont=_cachedBoldSystemFont;
 @property(retain, nonatomic) NSMutableDictionary *cachedScaledValuesByValue; // @synthesize cachedScaledValuesByValue=_cachedScaledValuesByValue;
 @property(retain, nonatomic) NSMutableAttributedString *enclosedAttributedString; // @synthesize enclosedAttributedString=_enclosedAttributedString;
-- (void).cxx_destruct;
 - (void)setAttributes:(id)arg1 range:(struct _NSRange)arg2;
 - (void)replaceCharactersInRange:(struct _NSRange)arg1 withString:(id)arg2;
 - (unsigned int)length;

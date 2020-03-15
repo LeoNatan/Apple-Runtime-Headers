@@ -23,6 +23,7 @@
     NSData *_data;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(readonly, nonatomic) unsigned short priority; // @synthesize priority=_priority;
 @property(nonatomic) unsigned short streamID; // @synthesize streamID=_streamID;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) BOOL shouldEncrypt; // @synthesize shouldEncrypt=_shouldEncrypt;
 @property(readonly, nonatomic) BOOL encrypted; // @synthesize encrypted=_encrypted;
 @property(readonly, nonatomic) unsigned char versionNumber; // @synthesize versionNumber=_versionNumber;
-- (void).cxx_destruct;
 - (id)_nonHeaderData;
 @property(readonly, nonatomic) NSData *data;
 - (unsigned char)command;

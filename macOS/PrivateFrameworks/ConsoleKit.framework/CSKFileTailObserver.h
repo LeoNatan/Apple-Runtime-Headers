@@ -21,6 +21,7 @@
     NSString *_userTmpDirPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *userTmpDirPath; // @synthesize userTmpDirPath=_userTmpDirPath;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *coalescerQueue; // @synthesize coalescerQueue=_coalescerQueue;
 @property(retain, nonatomic) CSKCoalescer *coalescer; // @synthesize coalescer=_coalescer;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSFileHandle *fileHandle; // @synthesize fileHandle=_fileHandle;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *eventDataQueue; // @synthesize eventDataQueue=_eventDataQueue;
 @property(copy, nonatomic) CDUnknownBlockType eventDataHandler; // @synthesize eventDataHandler=_eventDataHandler;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)observerWillStart;
 - (id)_fetchLatestData;

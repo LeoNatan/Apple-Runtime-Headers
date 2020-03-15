@@ -16,11 +16,11 @@
     NSString *_backdropGroupName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *backdropGroupName; // @synthesize backdropGroupName=_backdropGroupName;
 @property(nonatomic) BOOL observesTime; // @synthesize observesTime=_observesTime;
 @property(retain, nonatomic) UIPanelBorderReplicatingView *replicatingView; // @synthesize replicatingView=_replicatingView;
 @property(nonatomic) long long statusBarAvoidance; // @synthesize statusBarAvoidance=_statusBarAvoidance;
-- (void).cxx_destruct;
 - (BOOL)mouseDownCanMoveWindow;
 - (id)_cachedBackdropGroupName;
 - (void)layoutSubviews;

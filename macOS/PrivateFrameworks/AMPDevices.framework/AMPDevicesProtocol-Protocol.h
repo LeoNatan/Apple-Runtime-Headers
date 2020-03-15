@@ -67,6 +67,7 @@
 - (void)fetchAccessibilityPrefsForDevice:(AMPDevice *)arg1 withReply:(void (^)(AMPDeviceAccessibilityPrefs *, NSError *))arg2;
 - (void)setSyncPrefs:(AMPDeviceSyncPrefs *)arg1 forDevice:(AMPDevice *)arg2 withReply:(void (^)(NSError *, BOOL))arg3;
 - (void)fetchSettingsForDevice:(AMPDevice *)arg1 withReply:(void (^)(AMPDeviceInfo *, AMPDeviceSyncPrefs *, NSError *))arg2;
-- (void)configureNewDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
+- (void)completeSetupForDevice:(AMPDevice *)arg1 didAcceptLicenseAgreement:(BOOL)arg2 didAcceptWarrantyInfo:(BOOL)arg3 withReply:(void (^)(NSError *))arg4;
+- (void)fetchSetupInfoForDevice:(AMPDevice *)arg1 withReply:(void (^)(AMPDeviceSetupInfo *, NSError *))arg2;
 @end
 

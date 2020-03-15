@@ -18,13 +18,13 @@
     struct IONotificationPort *_ioNotificationPortRef;
 }
 
+- (void).cxx_destruct;
 @property struct IONotificationPort *ioNotificationPortRef; // @synthesize ioNotificationPortRef=_ioNotificationPortRef;
 @property unsigned int ioConnection; // @synthesize ioConnection=_ioConnection;
 @property unsigned int debugLoggingMask; // @synthesize debugLoggingMask=_debugLoggingMask;
 @property unsigned long long endpointAddress; // @synthesize endpointAddress=_endpointAddress;
 @property unsigned long long deviceAddress; // @synthesize deviceAddress=_deviceAddress;
 @property(retain) IOUSBHostInterface *hostInterface; // @synthesize hostInterface=_hostInterface;
-- (void).cxx_destruct;
 - (id)initWithHostInterface:(id)arg1 endpointAddress:(unsigned long long)arg2 ioConnection:(unsigned int)arg3 ioNotificationPortRef:(struct IONotificationPort *)arg4 deviceAddress:(unsigned long long)arg5;
 
 @end

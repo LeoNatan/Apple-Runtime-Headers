@@ -23,6 +23,7 @@
     UIViewController *_originalPresentingViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *originalPresentingViewController; // @synthesize originalPresentingViewController=_originalPresentingViewController;
 @property(retain, nonatomic) CKNanoReplyViewController *keepAlive; // @synthesize keepAlive=_keepAlive;
 @property(retain, nonatomic) CKNanoSendController *sendController; // @synthesize sendController=_sendController;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSString *smartReplyContext; // @synthesize smartReplyContext=_smartReplyContext;
 @property(copy, nonatomic) CDUnknownBlockType messageForReplyBlock; // @synthesize messageForReplyBlock=_messageForReplyBlock;
 @property(nonatomic) __weak id <CKNanoReplyViewControllerDismissalDelegate> dismissalDelegate; // @synthesize dismissalDelegate=_dismissalDelegate;
-- (void).cxx_destruct;
 - (void)primaryLanguageDidChange:(id)arg1;
 - (void)didSelectListItem:(int)arg1;
 - (void)updateTrayButtonsBackgroundColor;

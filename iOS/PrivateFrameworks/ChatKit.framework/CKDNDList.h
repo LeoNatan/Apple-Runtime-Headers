@@ -14,8 +14,8 @@
 }
 
 + (id)sharedList;
-@property(retain, nonatomic) NPSManager *syncManager; // @synthesize syncManager=_syncManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NPSManager *syncManager; // @synthesize syncManager=_syncManager;
 - (void)_handleDNDListChanged;
 - (void)performMigrationIfNecessary;
 - (void)syncToPairedDeviceIncludingVersion:(_Bool)arg1;

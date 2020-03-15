@@ -35,10 +35,10 @@
 + (double)currentMachTimeInterval;
 + (id)lastSystemWakeDate;
 + (id)_backgroundUpdateQueue;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool disableSystemWaking; // @synthesize disableSystemWaking=_disableSystemWaking;
 @property(nonatomic) double earlyFireConstantInterval; // @synthesize earlyFireConstantInterval=_earlyFireConstantInterval;
 @property(nonatomic) double minimumEarlyFireProportion; // @synthesize minimumEarlyFireProportion=_minimumEarlyFireProportion;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (double)_nextForcedAlignmentAbsoluteTime;
 - (void)interfaceManagerInternetReachabilityChanged:(id)arg1;

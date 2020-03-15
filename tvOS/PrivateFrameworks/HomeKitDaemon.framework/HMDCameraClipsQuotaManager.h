@@ -21,9 +21,9 @@
 + (id)_quotaErrorFromServerError:(id)arg1;
 + (id)_quotaServerErrorFromServerError:(id)arg1;
 + (id)defaultManager;
+- (void).cxx_destruct;
 @property(readonly, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(readonly) HMBCloudDatabase *cloudDatabase; // @synthesize cloudDatabase=_cloudDatabase;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (id)database:(id)arg1 willRemoveOwnedZoneWithName:(id)arg2;
 - (id)_addFunctionInvokeOperationWithFunctionName:(id)arg1 serializedRequest:(id)arg2;

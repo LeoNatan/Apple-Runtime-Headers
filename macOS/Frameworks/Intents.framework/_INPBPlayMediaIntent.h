@@ -15,6 +15,7 @@
 @interface _INPBPlayMediaIntent : PBCodable <_INPBPlayMediaIntent, NSSecureCoding, NSCopying>
 {
     struct {
+        unsigned int parsecCategory:1;
         unsigned int playShuffled:1;
         unsigned int playbackQueueLocation:1;
         unsigned int playbackRepeatMode:1;
@@ -24,6 +25,7 @@
     BOOL _playShuffled;
     BOOL _resumePlayback;
     BOOL __encodeLegacyGloryData;
+    int _parsecCategory;
     int _playbackQueueLocation;
     int _playbackRepeatMode;
     NSArray *_alternativeResults;
@@ -52,6 +54,7 @@
 + (Class)bucketType;
 + (Class)audioSearchResultsType;
 + (Class)alternativeResultsType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBString *showTitle; // @synthesize showTitle=_showTitle;
 @property(nonatomic) BOOL resumePlayback; // @synthesize resumePlayback=_resumePlayback;
@@ -62,6 +65,7 @@
 @property(nonatomic) int playbackRepeatMode; // @synthesize playbackRepeatMode=_playbackRepeatMode;
 @property(nonatomic) int playbackQueueLocation; // @synthesize playbackQueueLocation=_playbackQueueLocation;
 @property(nonatomic) BOOL playShuffled; // @synthesize playShuffled=_playShuffled;
+@property(nonatomic) int parsecCategory; // @synthesize parsecCategory=_parsecCategory;
 @property(retain, nonatomic) _INPBString *musicArtistName; // @synthesize musicArtistName=_musicArtistName;
 @property(retain, nonatomic) _INPBString *mediaUserContext; // @synthesize mediaUserContext=_mediaUserContext;
 @property(retain, nonatomic) _INPBMediaSearch *mediaSearch; // @synthesize mediaSearch=_mediaSearch;
@@ -75,7 +79,6 @@
 @property(retain, nonatomic) _INPBString *audiobookAuthor; // @synthesize audiobookAuthor=_audiobookAuthor;
 @property(copy, nonatomic) NSArray *audioSearchResults; // @synthesize audioSearchResults=_audioSearchResults;
 @property(copy, nonatomic) NSArray *alternativeResults; // @synthesize alternativeResults=_alternativeResults;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
@@ -97,6 +100,9 @@
 - (id)playbackQueueLocationAsString:(int)arg1;
 @property(nonatomic) BOOL hasPlaybackQueueLocation;
 @property(nonatomic) BOOL hasPlayShuffled;
+- (int)StringAsParsecCategory:(id)arg1;
+- (id)parsecCategoryAsString:(int)arg1;
+@property(nonatomic) BOOL hasParsecCategory;
 @property(readonly, nonatomic) BOOL hasMusicArtistName;
 @property(readonly, nonatomic) BOOL hasMediaUserContext;
 @property(readonly, nonatomic) BOOL hasMediaSearch;

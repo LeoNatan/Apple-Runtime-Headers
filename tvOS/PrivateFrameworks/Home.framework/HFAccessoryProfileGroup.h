@@ -18,9 +18,9 @@
 + (id)_groupIdentifierForProfile:(id)arg1 options:(id)arg2;
 + (id)_groupProfilesKeyedByIdentifier:(id)arg1 options:(id)arg2;
 + (id)groupProfiles:(id)arg1 options:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSNumber *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 @property(readonly, copy, nonatomic) NSArray *profiles; // @synthesize profiles=_profiles;
-- (void).cxx_destruct;
 - (id)initWithProfiles:(id)arg1 groupIdentifier:(id)arg2;
 
 @end

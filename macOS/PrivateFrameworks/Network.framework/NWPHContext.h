@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSObject<OS_xpc_object> *_reply;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_xpc_object> *reply; // @synthesize reply=_reply;
 @property(retain) NSObject<OS_xpc_object> *request; // @synthesize request=_request;
 @property(retain) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) int pid;
 - (id)initWithRequest:(id)arg1 onConnection:(id)arg2;
 

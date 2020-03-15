@@ -28,6 +28,7 @@
 }
 
 + (id)sharedNetworkReachability;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NFLazy *networkInfo; // @synthesize networkInfo=_networkInfo;
 @property(nonatomic) BOOL accessRestrictedBecauseOfDeviceAbandoned; // @synthesize accessRestrictedBecauseOfDeviceAbandoned=_accessRestrictedBecauseOfDeviceAbandoned;
 @property(nonatomic) BOOL accessRestrictedBecauseOfCountry; // @synthesize accessRestrictedBecauseOfCountry=_accessRestrictedBecauseOfCountry;
@@ -41,7 +42,6 @@
 @property(nonatomic) BOOL isLowDataModeEnabled; // @synthesize isLowDataModeEnabled=_isLowDataModeEnabled;
 @property(nonatomic) BOOL isNetworkReachableViaWiFi; // @synthesize isNetworkReachableViaWiFi=_isNetworkReachableViaWiFi;
 @property(nonatomic) BOOL isNetworkReachable; // @synthesize isNetworkReachable=_isNetworkReachable;
-- (void).cxx_destruct;
 - (long long)_cellularRadioAccessTechnologyFromString:(id)arg1;
 @property(readonly, nonatomic) BOOL isCloudKitReachable;
 - (void)removeObserver:(id)arg1;

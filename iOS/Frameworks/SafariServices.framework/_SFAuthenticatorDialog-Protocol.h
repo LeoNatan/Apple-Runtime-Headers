@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSString;
+@class NSString, _WKWebAuthenticationPanel;
 
 @protocol _SFAuthenticatorDialog
 @property(readonly, nonatomic) NSString *relyingPartyID;
-- (void)transitionToState:(int)arg1;
+- (void)transitionToState:(int)arg1 forPanel:(_WKWebAuthenticationPanel *)arg2;
 @end
 

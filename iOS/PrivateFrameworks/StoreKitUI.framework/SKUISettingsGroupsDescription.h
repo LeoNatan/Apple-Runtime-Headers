@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     id <SKUISettingsGroupsDescriptionDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKUISettingsGroupsDescriptionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_updatedEditsValid;
 - (void)_presentViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_gatherEditableSettings;

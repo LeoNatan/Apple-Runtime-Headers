@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
 
 + (void)_loadDefaultValue:(double *)arg1 forKey:(struct __CFString *)arg2;
 + (void)_loadDefaults;
+- (void).cxx_destruct;
 @property(nonatomic) double minimumIntervalFallbackStateTimeout; // @synthesize minimumIntervalFallbackStateTimeout=_minimumIntervalFallbackStateTimeout;
 @property(nonatomic) _Bool usingServerStatsAggressively; // @synthesize usingServerStatsAggressively=_usingServerStatsAggressively;
 @property(nonatomic) double serverStatsMaxKeepAliveInterval; // @synthesize serverStatsMaxKeepAliveInterval=_serverStatsMaxKeepAliveInterval;
@@ -53,7 +54,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double lastSuccessfulKeepAliveInterval; // @synthesize lastSuccessfulKeepAliveInterval=_lastSuccessfulKeepAliveInterval;
 @property(readonly, nonatomic) double currentKeepAliveInterval; // @synthesize currentKeepAliveInterval=_currentKeepAliveInterval;
 @property(readonly, nonatomic) unsigned long long countOfGrowthActions; // @synthesize countOfGrowthActions=_countOfGrowthActions;
-- (void).cxx_destruct;
 - (id)_stringForMode:(int)arg1;
 - (id)_stringForStage:(int)arg1;
 - (id)_stringForAction:(int)arg1;

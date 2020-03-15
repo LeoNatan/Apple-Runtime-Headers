@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSDictionary *observingInstructorIdentifiersByCourseCourseIdentifiers; // @synthesize observingInstructorIdentifiersByCourseCourseIdentifiers=_observingInstructorIdentifiersByCourseCourseIdentifiers;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *observingInstructorIdentifiersByCourseCourseIdentifiers; // @synthesize observingInstructorIdentifiersByCourseCourseIdentifiers=_observingInstructorIdentifiersByCourseCourseIdentifiers;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

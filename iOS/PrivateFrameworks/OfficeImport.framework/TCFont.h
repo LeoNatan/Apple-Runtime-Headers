@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)fontWithFont:(id)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) TCFontFamily *family; // @synthesize family=_family;
 @property(readonly, nonatomic) struct TCFontStyling styling; // @synthesize styling=_styling;
 @property(readonly, nonatomic) NSString *psName; // @synthesize psName=_psName;
 @property(readonly, nonatomic) NSDictionary *namesByLanguage; // @synthesize namesByLanguage=_namesByLanguage;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)localizedFontName;
 - (int)preferredLanguage;
 - (id)description;

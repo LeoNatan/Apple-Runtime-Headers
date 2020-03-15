@@ -17,8 +17,8 @@
     UIViewPropertyAnimator *_propertyAnimator;
 }
 
-@property(readonly, nonatomic, getter=isPresenting) _Bool presenting; // @synthesize presenting=_presenting;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isPresenting) _Bool presenting; // @synthesize presenting=_presenting;
 - (id)_contentModuleContainingViewController;
 - (id)_newPropertyAnimator;
 - (void)animationEnded:(_Bool)arg1;

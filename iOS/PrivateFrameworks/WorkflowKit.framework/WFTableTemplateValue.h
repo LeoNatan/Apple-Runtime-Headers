@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *rows; // @synthesize rows=_rows;
 @property(readonly, nonatomic) long long compoundType; // @synthesize compoundType=_compoundType;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCompoundType:(long long)arg1 rows:(id)arg2;

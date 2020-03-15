@@ -7,26 +7,29 @@
 #import <objc/NSObject.h>
 
 #import <VideoSubscriberAccount/VSDeveloperServiceProtocol-Protocol.h>
+#import <VideoSubscriberAccount/VSRemoteNotifierDelegate-Protocol.h>
 
 @class NSString, VSPersistentContainer, VSRemoteNotifier;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
-@interface VSDeveloperModeStore : NSObject <VSDeveloperServiceProtocol>
+@interface VSDeveloperModeStore : NSObject <VSRemoteNotifierDelegate, VSDeveloperServiceProtocol>
 {
     VSPersistentContainer *_persistentContainer;
     NSObject<OS_dispatch_queue> *_settingsQueue;
     VSRemoteNotifier *_serviceChangeRemoteNotifier;
     VSRemoteNotifier *_settingsChangeRemoteNotifier;
     VSRemoteNotifier *_providersChangeRemoteNotifier;
+    VSRemoteNotifier *_accountStoreChangeRemoteNotifier;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) VSRemoteNotifier *accountStoreChangeRemoteNotifier; // @synthesize accountStoreChangeRemoteNotifier=_accountStoreChangeRemoteNotifier;
 @property(retain, nonatomic) VSRemoteNotifier *providersChangeRemoteNotifier; // @synthesize providersChangeRemoteNotifier=_providersChangeRemoteNotifier;
 @property(retain, nonatomic) VSRemoteNotifier *settingsChangeRemoteNotifier; // @synthesize settingsChangeRemoteNotifier=_settingsChangeRemoteNotifier;
 @property(retain, nonatomic) VSRemoteNotifier *serviceChangeRemoteNotifier; // @synthesize serviceChangeRemoteNotifier=_serviceChangeRemoteNotifier;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *settingsQueue; // @synthesize settingsQueue=_settingsQueue;
 @property(retain, nonatomic) VSPersistentContainer *persistentContainer; // @synthesize persistentContainer=_persistentContainer;
-- (void).cxx_destruct;
 - (void)updateDeveloperSettings:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchDeveloperSettingsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)removeDeveloperIdentityProviderWithUniqueID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -13,8 +13,8 @@
     id <WFDynamicTagFieldDataSource> _dataSource;
 }
 
-@property(nonatomic) __weak id <WFDynamicTagFieldDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <WFDynamicTagFieldDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (id)suggestedTags;
 
 @end

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2 person:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isHiding; // @synthesize isHiding=_isHiding;
 @property(retain, nonatomic) PUAssetHidingHelper *assetHidingHelper; // @synthesize assetHidingHelper=_assetHidingHelper;
-- (void).cxx_destruct;
 - (void)performBackgroundTask;
 - (void)performUserInteractionTask;
 

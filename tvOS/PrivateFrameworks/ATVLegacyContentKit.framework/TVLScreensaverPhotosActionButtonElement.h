@@ -13,8 +13,8 @@
     NSString *_photoCollectionID;
 }
 
-@property(copy, nonatomic) NSString *photoCollectionID; // @synthesize photoCollectionID=_photoCollectionID;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *photoCollectionID; // @synthesize photoCollectionID=_photoCollectionID;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;
 

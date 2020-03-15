@@ -18,11 +18,11 @@
 }
 
 + (id)contextWithCell:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool valid; // @synthesize valid=_valid;
 @property(nonatomic) long long originalSelectionStyle; // @synthesize originalSelectionStyle=_originalSelectionStyle;
 @property(readonly, nonatomic) _Bool animateUnhighlight; // @synthesize animateUnhighlight=_animateUnhighlight;
 @property(nonatomic) __weak UITableViewCell *cell; // @synthesize cell=_cell;
-- (void).cxx_destruct;
 - (void)_killTimer;
 - (void)invalidate;
 - (void)_timerFired;

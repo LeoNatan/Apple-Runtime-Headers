@@ -16,11 +16,11 @@
     NSDictionary *_styleKeyValues;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *styleKeyValues; // @synthesize styleKeyValues=_styleKeyValues;
 @property(nonatomic) _Bool hasUserSetRating; // @synthesize hasUserSetRating=_hasUserSetRating;
 @property(copy, nonatomic) NSString *rightLabel; // @synthesize rightLabel=_rightLabel;
 @property(nonatomic) float ratingPercentage; // @synthesize ratingPercentage=_ratingPercentage;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *labelColor;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;

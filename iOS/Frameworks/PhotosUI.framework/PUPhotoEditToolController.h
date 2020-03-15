@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _ppt_didBecomeActiveToolBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType ppt_didBecomeActiveToolBlock; // @synthesize ppt_didBecomeActiveToolBlock=_ppt_didBecomeActiveToolBlock;
 @property(retain, nonatomic) PFSlowMotionTimeRangeMapper *slowMotionTimeMapper; // @synthesize slowMotionTimeMapper=_slowMotionTimeMapper;
 @property(retain, nonatomic) NSMutableArray *mutableEditActionActivites; // @synthesize mutableEditActionActivites=_mutableEditActionActivites;
@@ -63,7 +64,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) id <PUEditableAsset> asset; // @synthesize asset=_asset;
 @property(readonly, nonatomic) long long layoutOrientation;
 @property(copy, nonatomic) NSString *backdropViewGroupName; // @synthesize backdropViewGroupName=_backdropViewGroupName;
-- (void).cxx_destruct;
 - (id)_newTimeMapper;
 - (CDStruct_1b6d18a9)displayedTimeForOriginalAssetTime:(CDStruct_1b6d18a9)arg1;
 - (CDStruct_1b6d18a9)originalAssetTimeForDisplayedTime:(CDStruct_1b6d18a9)arg1;

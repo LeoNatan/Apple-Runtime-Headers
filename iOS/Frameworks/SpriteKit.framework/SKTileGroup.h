@@ -23,9 +23,9 @@
 + (id)tileGroupWithRules:(id)arg1;
 + (id)tileGroupWithTileDefinition:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) __weak SKTileSet *parentSet; // @synthesize parentSet=_parentSet;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)findTileDefinitionIDsForAdjacencyData:(unsigned long long)arg1 tileSetType:(unsigned long long)arg2;
 - (unsigned long long)findTileDefinitionIndexForAdjacencyData:(unsigned long long)arg1 tileSetType:(unsigned long long)arg2;
 - (id)initWithRules:(id)arg1;

@@ -24,6 +24,7 @@
     unsigned int _presentationState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsDismissalAfterPresentation; // @synthesize needsDismissalAfterPresentation=_needsDismissalAfterPresentation;
 @property(nonatomic) unsigned int presentationState; // @synthesize presentationState=_presentationState;
 @property(retain, nonatomic) CSLAlertSheetViewController *alertViewController; // @synthesize alertViewController=_alertViewController;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) __weak id <CSLStuckTransactionDialogDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)requestCrash;
 - (void)_dismissIfNeeded;
 - (void)dismiss;

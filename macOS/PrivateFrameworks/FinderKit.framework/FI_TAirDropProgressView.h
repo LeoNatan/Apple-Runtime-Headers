@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     _Bool _pressed;
 }
 
-@property(nonatomic) _Bool pressed; // @synthesize pressed=_pressed;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool pressed; // @synthesize pressed=_pressed;
 - (BOOL)layer:(id)arg1 shouldInheritContentsScale:(double)arg2 fromWindow:(id)arg3;
 - (_Bool)shouldShowProgressLayer;
 - (void)resetProgress;

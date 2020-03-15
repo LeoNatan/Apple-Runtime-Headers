@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 + (_Bool)_preventsAppearanceProxyCustomization;
 + (id)_titleForNavigationOnly;
 + (id)_titleForInfo;
-@property(nonatomic) _Bool suppressDescription; // @synthesize suppressDescription=_suppressDescription;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool suppressDescription; // @synthesize suppressDescription=_suppressDescription;
 - (id)_navigationFlowLayout;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)loadView;

@@ -15,10 +15,10 @@
     MNNavigationStateManager *_stateManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak MNNavigationStateManager *stateManager; // @synthesize stateManager=_stateManager;
 @property(readonly, nonatomic) double suggestionUpdateFrequency; // @synthesize suggestionUpdateFrequency=_suggestionUpdateFrequency;
 @property(readonly, nonatomic) double locationUpdateInterval; // @synthesize locationUpdateInterval=_locationUpdateInterval;
-- (void).cxx_destruct;
 - (BOOL)_isSelectorValidForForwarding:(SEL)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;

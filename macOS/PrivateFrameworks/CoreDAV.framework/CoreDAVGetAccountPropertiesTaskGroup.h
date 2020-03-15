@@ -28,6 +28,7 @@
     NSMutableSet *_redirectHistory;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldIgnoreHomeSetOnDifferentHost; // @synthesize shouldIgnoreHomeSetOnDifferentHost=_shouldIgnoreHomeSetOnDifferentHost;
 @property(readonly, nonatomic) NSSet *principalSearchProperties; // @synthesize principalSearchProperties=_principalSearchProperties;
 @property(nonatomic) BOOL fetchPrincipalSearchProperties; // @synthesize fetchPrincipalSearchProperties=_fetchPrincipalSearchProperties;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) NSURL *resourceID; // @synthesize resourceID=_resourceID;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) NSURL *principalURL; // @synthesize principalURL=_principalURL;
-- (void).cxx_destruct;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (void)searchPropertySetTask:(id)arg1 completetWithPropertySearchSet:(id)arg2 error:(id)arg3;
 - (void)processPrincipalHeaders:(id)arg1;

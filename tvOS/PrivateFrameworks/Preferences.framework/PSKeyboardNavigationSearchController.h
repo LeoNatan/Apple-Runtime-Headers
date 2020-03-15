@@ -15,9 +15,9 @@
     PSKeyboardNavigationSearchBar *searchBar;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PSKeyboardNavigationSearchBar *searchBar; // @synthesize searchBar;
 @property(retain, nonatomic) UIViewController<PSKeyboardNavigationSearchResultsController> *searchResultsController; // @synthesize searchResultsController;
-- (void).cxx_destruct;
 - (void)_upArrowKeyPressed;
 - (void)_downArrowKeyPressed;
 - (void)_escapeKeyPressed;

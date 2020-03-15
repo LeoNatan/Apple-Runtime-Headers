@@ -16,9 +16,9 @@
     IKCSSDeclarationList *_declarationList;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IKCSSDeclarationList *declarationList; // @synthesize declarationList=_declarationList;
 @property(retain, nonatomic) IKCSSSelectorList *selectorList; // @synthesize selectorList=_selectorList;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) IKCSSMediaQuery *mediaQuery;
 - (id)copyWithZone:(struct _NSZone *)arg1;

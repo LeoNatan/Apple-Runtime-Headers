@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     id <UnifiedFieldButtonHostViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <UnifiedFieldButtonHostViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <UnifiedFieldButtonHostViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)accordionHost:(id)arg1 viewWillBeRemoved:(BOOL)arg2;
 - (void)_updateExpandedButtonHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)accordionHost:(id)arg1 viewWasInserted:(BOOL)arg2 viewDidExpand:(BOOL)arg3;

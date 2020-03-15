@@ -143,6 +143,7 @@
 }
 
 + (id)defaultPersonWithBiologicalSex:(int)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _HKMedicalIDData *medicalIDData; // @synthesize medicalIDData=_medicalIDData;
 @property(nonatomic) int resultsTrackingType; // @synthesize resultsTrackingType=_resultsTrackingType;
 @property(nonatomic) int nutritionTrackingType; // @synthesize nutritionTrackingType=_nutritionTrackingType;
@@ -273,7 +274,6 @@
 @property(copy, nonatomic) NSString *personDescription; // @synthesize personDescription=_personDescription;
 @property(copy, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(copy, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
-- (void).cxx_destruct;
 - (void)updateMedicalIDData;
 - (void)setHighFidelityGeneration:(_Bool)arg1;
 - (void)applyProfileType:(int)arg1;

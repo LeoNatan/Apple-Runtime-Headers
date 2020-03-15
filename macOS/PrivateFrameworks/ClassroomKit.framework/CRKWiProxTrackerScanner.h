@@ -24,6 +24,7 @@
     NSMutableSet *_zonesPendingReentry;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isInRescanOffInterval) BOOL inRescanOffInterval; // @synthesize inRescanOffInterval=_inRescanOffInterval;
 @property(retain, nonatomic) NSMutableSet *zonesPendingReentry; // @synthesize zonesPendingReentry=_zonesPendingReentry;
 @property(retain, nonatomic) NSMutableSet *enteredZones; // @synthesize enteredZones=_enteredZones;
@@ -32,7 +33,6 @@
 @property(nonatomic) __weak id <CRKWiProxTrackerScannerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WPDeviceScanner *deviceScanner; // @synthesize deviceScanner=_deviceScanner;
 @property(retain, nonatomic) WPZoneTracker *zoneTracker; // @synthesize zoneTracker=_zoneTracker;
-- (void).cxx_destruct;
 - (void)scheduleRescanInterval;
 - (void)finishedRescanInterval;
 - (void)ensurePassiveScanAlways;

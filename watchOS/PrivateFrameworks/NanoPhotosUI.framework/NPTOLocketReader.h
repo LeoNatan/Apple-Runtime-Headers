@@ -19,11 +19,11 @@
     NPTOWatchCollection *_watchCollection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isAlbumContentsInvalid; // @synthesize isAlbumContentsInvalid=_isAlbumContentsInvalid;
 @property(retain, nonatomic) NPTOWatchCollection *watchCollection; // @synthesize watchCollection=_watchCollection;
 @property(retain, nonatomic) PHFetchResult *albumContents; // @synthesize albumContents=_albumContents;
 @property(copy, nonatomic) CDUnknownBlockType albumContentsLoaderBlock; // @synthesize albumContentsLoaderBlock=_albumContentsLoaderBlock;
-- (void).cxx_destruct;
 - (unsigned int)indexOfPhotoWithIdentifier:(id)arg1;
 @property(readonly, nonatomic) unsigned int numberOfTotalPhotos; // @dynamic numberOfTotalPhotos;
 @property(readonly, nonatomic) unsigned int numberOfLoadedPhotos; // @dynamic numberOfLoadedPhotos;

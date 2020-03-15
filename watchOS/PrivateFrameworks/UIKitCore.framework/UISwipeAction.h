@@ -17,11 +17,11 @@
 }
 
 + (id)swipeActionWithStyle:(int)arg1 title:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) _Bool resetsSwipedRow; // @synthesize resetsSwipedRow=_resetsSwipedRow;
 @property(nonatomic) _Bool canBeTriggeredBySwipe; // @synthesize canBeTriggeredBySwipe=_canBeTriggeredBySwipe;
 @property(copy, nonatomic) UIVisualEffect *backgroundEffect; // @synthesize backgroundEffect=_backgroundEffect;
-- (void).cxx_destruct;
 - (void)resetSwipedRow;
 @property(copy, nonatomic) UIImage *icon;
 @property(copy, nonatomic) UIColor *color;

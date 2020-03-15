@@ -21,13 +21,13 @@
 }
 
 + (void)_configureFloatingContentViewAppearance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) UIImageView *contentImageView; // @synthesize contentImageView=_contentImageView;
 @property(readonly, nonatomic) UIVisualEffectView *floatingContentEffectView; // @synthesize floatingContentEffectView=_floatingContentEffectView;
 @property(readonly, nonatomic) _UIFloatingContentView *floatingContentView; // @synthesize floatingContentView=_floatingContentView;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)updateAppearanceForLockupViewState:(unsigned long long)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -14,9 +14,9 @@
     NSArray *_enabledMediaKinds;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *enabledMediaKinds; // @synthesize enabledMediaKinds=_enabledMediaKinds;
 @property(readonly) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)initWithAccount:(id)arg1 andEnabledMediaKinds:(id)arg2;
 
 @end

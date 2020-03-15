@@ -16,9 +16,9 @@
     CDUnknownBlockType _start;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType start; // @synthesize start=_start;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (void)animationDidStart:(id)arg1;
 

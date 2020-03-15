@@ -14,9 +14,9 @@
     NSString *_logKey;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *logKey; // @synthesize logKey=_logKey;
 @property(retain, nonatomic) SSAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)_sendLogoutRequest;
 - (id)_sbsyncData;
 - (void)_disableBookkeeper;

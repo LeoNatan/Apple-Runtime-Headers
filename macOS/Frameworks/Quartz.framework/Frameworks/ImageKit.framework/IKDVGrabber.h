@@ -8,14 +8,14 @@
 
 #import <ImageKit/AVCaptureVideoDataOutputSampleBufferDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, NSTimer;
+@class AVCaptureSession, NSMutableArray, NSString, NSTimer;
 
 __attribute__((visibility("hidden")))
 @interface IKDVGrabber : NSObject <AVCaptureVideoDataOutputSampleBufferDelegate>
 {
     NSMutableArray *_listeners;
     struct __CVBuffer *_currentImage;
-    struct AVCaptureSession *_session;
+    AVCaptureSession *_session;
     char *_baseAddr;
     long long _length;
     struct CGImage *_imageRef;
@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)cameraIsBusy;
-+ (struct AVCaptureDevice *)captureDevice;
++ (id)captureDevice;
 + (BOOL)hasCameraAccess;
 + (BOOL)canPotentiallyHaveCameraAccess;
 + (void)releaseSharedDVGrabber;

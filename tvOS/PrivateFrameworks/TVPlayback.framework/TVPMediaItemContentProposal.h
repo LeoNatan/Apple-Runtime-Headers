@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     TVImageProxy *_imageProxy;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool loadingStarted; // @synthesize loadingStarted=_loadingStarted;
 @property(retain, nonatomic) TVImageProxy *imageProxy; // @synthesize imageProxy=_imageProxy;
 @property(retain, nonatomic) NSArray *metadata; // @synthesize metadata=_metadata;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSNumber *automaticAcceptanceInterval; // @synthesize automaticAcceptanceInterval=_automaticAcceptanceInterval;
 @property(nonatomic) double presentationTime; // @synthesize presentationTime=_presentationTime;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool needsLoading;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

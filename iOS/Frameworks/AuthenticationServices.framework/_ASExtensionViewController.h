@@ -20,9 +20,9 @@
     NSExtension *_extension;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property(nonatomic) _Bool dismissOnBackground; // @synthesize dismissOnBackground=_dismissOnBackground;
-- (void).cxx_destruct;
 - (id)childViewControllerForWhitePointAdaptivityStyle;
 - (id)childViewControllerForStatusBarStyle;
 - (id)childViewControllerForStatusBarHidden;
@@ -36,6 +36,7 @@
 - (void)_beginRequestWithConnectionHandler:(CDUnknownBlockType)arg1;
 - (void)_requestDidFailWithError:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_setRemoteViewController:(id)arg1;
+- (void)_extensionRequestDidFinish:(_Bool)arg1;
 - (id)initWithExtension:(id)arg1;
 
 // Remaining properties

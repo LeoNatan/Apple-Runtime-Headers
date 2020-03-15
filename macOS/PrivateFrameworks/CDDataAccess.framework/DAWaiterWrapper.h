@@ -16,11 +16,11 @@
     int _waiterNum;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int waiterNum; // @synthesize waiterNum=_waiterNum;
 @property(nonatomic) long long dataclasses; // @synthesize dataclasses=_dataclasses;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) id <DADataclassLockWatcher> waiter; // @synthesize waiter=_waiter;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

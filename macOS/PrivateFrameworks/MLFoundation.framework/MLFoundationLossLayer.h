@@ -18,9 +18,9 @@
 
 + (id)layerWithLossDescriptor:(id)arg1;
 + (id)new;
+- (void).cxx_destruct;
 @property(copy, nonatomic) MLFoundationTensor *lossLabels; // @synthesize lossLabels=_lossLabels;
 @property(readonly, nonatomic) MLFoundationLossDescriptor *lossDescriptor; // @synthesize lossDescriptor=_lossDescriptor;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (unsigned long long)computeResultSizeFromSourceSize:(unsigned long long)arg1 dimension:(unsigned long long)arg2;
 - (BOOL)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;

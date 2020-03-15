@@ -28,11 +28,11 @@
     UIButton *_infoButton;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIButton *infoButton; // @synthesize infoButton=_infoButton;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(retain, nonatomic) UIView *regulatoryInfoView; // @synthesize regulatoryInfoView=_regulatoryInfoView;
 @property(retain, nonatomic) UIView *activationInfoView; // @synthesize activationInfoView=_activationInfoView;
-- (void).cxx_destruct;
 - (void)_updateLegibilitySettings;
 - (void)_adjustTitleVisibilityForInfoViews;
 - (void)_removeNormalAnimationForKeyPath:(id)arg1 onLayer:(id)arg2;

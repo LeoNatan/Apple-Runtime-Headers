@@ -22,6 +22,7 @@
     BOOL _vertical;
 }
 
+- (void).cxx_destruct;
 @property double value; // @synthesize value=_value;
 @property BOOL vertical; // @synthesize vertical=_vertical;
 @property(retain) NSArray *highlightedRanges; // @synthesize highlightedRanges=_highlightedRanges;
@@ -30,7 +31,6 @@
 @property BOOL pressed; // @synthesize pressed=_pressed;
 @property BOOL drawTrack; // @synthesize drawTrack=_drawTrack;
 @property BOOL drawThumb; // @synthesize drawThumb=_drawThumb;
-- (void).cxx_destruct;
 - (void)getMetricsForProposedRect:(struct CGRect)arg1 outNominalRect:(struct CGRect *)arg2 outExtent:(struct CGRect *)arg3;
 - (void)renderInContext:(struct CGContext *)arg1 withRect:(struct CGRect)arg2;
 - (id)thumbDictionary;

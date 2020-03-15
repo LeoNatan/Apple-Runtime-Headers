@@ -19,10 +19,10 @@
 }
 
 + (id)visitorWithJSONObject:(id)arg1 delegate:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(readonly, copy, nonatomic) NSArray *allKeyPathComponents; // @synthesize allKeyPathComponents=_allKeyPathComponents;
 @property(readonly, copy, nonatomic) NSString *currentKeyPath; // @synthesize currentKeyPath=_currentKeyPath;
-- (void).cxx_destruct;
 - (long long)_visitPrimitive:(id)arg1;
 - (long long)_visitArray:(id)arg1;
 - (long long)_visitDictionary:(id)arg1;

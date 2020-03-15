@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_members;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *members; // @synthesize members=_members;
 @property(readonly, nonatomic) NSDictionary *namesByLanguage; // @synthesize namesByLanguage=_namesByLanguage;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDictionary:(id)arg1;
 - (id)equivalentDictionary;

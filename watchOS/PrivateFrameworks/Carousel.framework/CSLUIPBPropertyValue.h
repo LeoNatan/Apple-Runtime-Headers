@@ -21,6 +21,7 @@
     NSData *_uUIDValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrayValues; // @synthesize arrayValues=_arrayValues;
 @property(retain, nonatomic) CSLUIPBPropertyValue *dictionaryKey; // @synthesize dictionaryKey=_dictionaryKey;
 @property(retain, nonatomic) CSLUIPBSize *sizeValue; // @synthesize sizeValue=_sizeValue;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSData *uUIDValue; // @synthesize uUIDValue=_uUIDValue;
 @property(retain, nonatomic) CSLUIPBNumber *numberValue; // @synthesize numberValue=_numberValue;
 @property(retain, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

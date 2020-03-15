@@ -14,8 +14,8 @@
     NSString *_queryString;
 }
 
-@property(readonly) NSString *queryString; // @synthesize queryString=_queryString;
 - (void).cxx_destruct;
+@property(readonly) NSString *queryString; // @synthesize queryString=_queryString;
 - (void)dealloc;
 - (BOOL)matches:(id)arg1;
 - (id)mutableFilterResults:(id)arg1;

@@ -24,6 +24,7 @@
 + (id)_requiredCapabilitiesForInfoDictionary:(id)arg1;
 + (id)_supportedDeviceFamiliesForBundleInfoDictionary:(id)arg1;
 + (id)metadataForBundleAtURL:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *moduleBundleURL; // @synthesize moduleBundleURL=_moduleBundleURL;
 @property(readonly, nonatomic) unsigned long long visibilityPreference; // @synthesize visibilityPreference=_visibilityPreference;
 @property(readonly, copy, nonatomic) NSString *associatedBundleMinimumVersion; // @synthesize associatedBundleMinimumVersion=_associatedBundleMinimumVersion;
@@ -31,7 +32,6 @@
 @property(readonly, copy, nonatomic) NSSet *requiredDeviceCapabilities; // @synthesize requiredDeviceCapabilities=_requiredDeviceCapabilities;
 @property(readonly, copy, nonatomic) NSSet *supportedDeviceFamilies; // @synthesize supportedDeviceFamilies=_supportedDeviceFamilies;
 @property(readonly, copy, nonatomic) NSString *moduleIdentifier; // @synthesize moduleIdentifier=_moduleIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

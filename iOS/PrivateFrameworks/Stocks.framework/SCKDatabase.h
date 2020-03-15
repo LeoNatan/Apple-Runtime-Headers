@@ -26,6 +26,7 @@
     NSMutableDictionary *_zoneSnapshotsByZoneName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *zoneSnapshotsByZoneName; // @synthesize zoneSnapshotsByZoneName=_zoneSnapshotsByZoneName;
 @property long long status; // @synthesize status=_status;
 @property(nonatomic) struct os_unfair_lock_s observersLock; // @synthesize observersLock=_observersLock;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) id <SCKContainerProxying> container; // @synthesize container=_container;
 @property(retain, nonatomic) id <SCKDatabaseStoreCoordinator> storeCoordinator; // @synthesize storeCoordinator=_storeCoordinator;
 @property(retain, nonatomic) SCKDatabaseSchema *schema; // @synthesize schema=_schema;
-- (void).cxx_destruct;
 - (id)_sanitizeErrorForClients:(id)arg1;
 - (void)_runCKOperation:(id)arg1;
 - (void)_recoverFromIdentityLossWithCompletion:(CDUnknownBlockType)arg1;

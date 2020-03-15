@@ -22,13 +22,13 @@
 
 + (unsigned long long)timeWithDelay:(double)arg1 fromClock:(unsigned long long)arg2;
 + (id)providerWithScheduler:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isPerforming; // @synthesize isPerforming=_isPerforming;
 @property(readonly, nonatomic) _Bool isStarted; // @synthesize isStarted=_isStarted;
 @property(readonly, nonatomic) CNQueue *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) unsigned long long stopTime; // @synthesize stopTime=_stopTime;
 @property(readonly, nonatomic) unsigned long long nextSchedulableTick; // @synthesize nextSchedulableTick=_nextSchedulableTick;
 @property(readonly) unsigned long long clock; // @synthesize clock=_clock;
-- (void).cxx_destruct;
 - (_Bool)hasJobsScheduled;
 - (void)stop;
 - (_Bool)_performJobs;

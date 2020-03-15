@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     id _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
 @property(copy, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *credentialAndProtectionSpacePairs; // @synthesize credentialAndProtectionSpacePairs=_credentialAndProtectionSpacePairs;
 @property(retain, nonatomic) NSDictionary *credentialsByProtectionSpace; // @synthesize credentialsByProtectionSpace=_credentialsByProtectionSpace;
 @property(nonatomic) BOOL ignoreNotifications; // @synthesize ignoreNotifications=_ignoreNotifications;
-- (void).cxx_destruct;
 - (BOOL)includesPasswordInSortCriteria;
 - (void)stopMonitoringCredentials;
 - (void)startMonitoringCredentials;

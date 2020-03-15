@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     DOMRange *_domRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_domRange) DOMRange *domRange; // @synthesize domRange=_domRange;
 @property(readonly, nonatomic) __weak UIResponder<UITextInputPrivate> *document; // @synthesize document=_document;
 @property(readonly, nonatomic) BOOL isCommitting; // @synthesize isCommitting=_isCommitting;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UITextRange *initialExtent; // @synthesize initialExtent=_initialExtent;
 @property(nonatomic) long long granularity; // @synthesize granularity=_granularity;
 @property(retain, nonatomic) UITextRange *base; // @synthesize base=_base;
-- (void).cxx_destruct;
 - (void)smartExtendRangedSelection:(int)arg1 downstream:(BOOL)arg2;
 - (void)setGranularRangedSelectionWithExtentPoint:(struct CGPoint)arg1;
 - (void)setRangedSelectionWithExtentPoint:(struct CGPoint)arg1;

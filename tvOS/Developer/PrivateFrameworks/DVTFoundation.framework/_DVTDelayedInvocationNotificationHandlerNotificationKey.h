@@ -16,9 +16,9 @@
     id _object;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id object; // @synthesize object=_object;
 @property(readonly, nonatomic) NSString *notificationName; // @synthesize notificationName=_notificationName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;

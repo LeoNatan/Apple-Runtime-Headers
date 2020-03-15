@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSObject<OS_os_log> *defaultLogObject; // @synthesize defaultLogObject=_defaultLogObject;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_os_log> *defaultLogObject; // @synthesize defaultLogObject=_defaultLogObject;
 - (id)init;
 
 @end

@@ -18,8 +18,8 @@
     id <SBRemoteTransientOverlaySessionManagerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SBRemoteTransientOverlaySessionManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBRemoteTransientOverlaySessionManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_existingSessionsWithDefinition:(id)arg1 options:(long long)arg2;
 - (id)_createSessionWithDefinition:(id)arg1;
 - (id)sessionsWithDefinition:(id)arg1 options:(long long)arg2;

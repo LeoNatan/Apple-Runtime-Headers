@@ -28,6 +28,7 @@
 + (id)_outlineImage;
 + (id)integerFormatter;
 + (id)decimalFormatter;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setNeedsUpdateValueText:) _Bool _needsUpdateValueText; // @synthesize _needsUpdateValueText=__needsUpdateValueText;
 @property(nonatomic, setter=_setValueLabelSize:) struct CGSize _valueLabelSize; // @synthesize _valueLabelSize=__valueLabelSize;
 @property(readonly, nonatomic) UILabel *_valueLabel; // @synthesize _valueLabel=__valueLabel;
@@ -36,7 +37,6 @@
 @property(nonatomic, getter=isShowingValue) _Bool showingValue; // @synthesize showingValue=_showingValue;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) __weak id <CAMControlStatusIndicatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)selectedByAccessibilityHUDManager:(id)arg1;
 - (id)hudItemForAccessibilityHUDManager:(id)arg1;
 - (void)setShowingValue:(_Bool)arg1 animated:(_Bool)arg2;

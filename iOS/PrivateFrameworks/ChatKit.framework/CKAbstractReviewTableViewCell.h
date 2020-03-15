@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UILabel *_sizeLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *sizeLabel; // @synthesize sizeLabel=_sizeLabel;
 @property(retain, nonatomic) UILabel *lastModifiedLabel; // @synthesize lastModifiedLabel=_lastModifiedLabel;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(nonatomic) unsigned long long size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 @property(retain, nonatomic) NSString *subheadingText;
 @property(retain, nonatomic) NSString *mainText;

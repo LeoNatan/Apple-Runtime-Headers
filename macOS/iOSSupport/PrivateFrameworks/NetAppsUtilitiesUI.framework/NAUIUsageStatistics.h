@@ -18,8 +18,8 @@
 
 + (id)sharedUsageStatisticsForDomain:(id)arg1;
 + (id)voiceMemoUsageStatistics;
-@property(readonly, nonatomic) NSString *usageStatisticsDomain; // @synthesize usageStatisticsDomain=_usageStatisticsDomain;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *usageStatisticsDomain; // @synthesize usageStatisticsDomain=_usageStatisticsDomain;
 - (void)_incrementUsageCountForEventWithUsageStatisticName:(id)arg1 statisticType:(long long)arg2;
 - (void)_pushDistributionStatisticNamed:(id)arg1 value:(double)arg2;
 - (id)_eventKeyForUsageStatisticName:(id)arg1 groupingKey:(id)arg2;

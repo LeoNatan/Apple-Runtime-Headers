@@ -24,6 +24,7 @@
     MMInfoCapacityPopoverViewController *_toolTipPopoverViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain) MMInfoCapacityPopoverViewController *toolTipPopoverViewController; // @synthesize toolTipPopoverViewController=_toolTipPopoverViewController;
 @property(retain) NSPopover *toolTipPopover; // @synthesize toolTipPopover=_toolTipPopover;
 @property(retain) NSLayoutConstraint *requiredHeightLayoutConstraint; // @synthesize requiredHeightLayoutConstraint=_requiredHeightLayoutConstraint;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSMutableArray *categories; // @synthesize categories=_categories;
 @property(nonatomic, setter=setQuotaInfoDictionary:) NSDictionary *quotaDictionary; // @synthesize quotaDictionary=_quotaDictionary;
 @property unsigned long long capacity; // @synthesize capacity=_capacity;
-- (void).cxx_destruct;
 - (BOOL)isVoiceOverEnabled;
 - (void)createPopover;
 - (struct CGRect)rectForItem:(id)arg1;

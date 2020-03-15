@@ -82,6 +82,8 @@
 @property(readonly) unsigned long long _textGlyphColorTemperature;
 @property(readonly) double _textGlyphBrightnessMultiplier;
 - (id)imageNamed:(id)arg1;
+- (int)_blendModeForAttributedString:(id)arg1;
+- (BOOL)_allowsVibrancyForForegroundColorsInAttributedString:(id)arg1;
 - (BOOL)_allowsVibrancyForColor:(id)arg1;
 @property(readonly) BOOL allowsVibrancy;
 - (BOOL)shouldBeArchived;

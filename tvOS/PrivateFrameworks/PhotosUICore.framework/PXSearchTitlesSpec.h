@@ -10,8 +10,8 @@
 {
 }
 
-+ (struct UIFont *)searchItalicTitleLabelFont;
-+ (struct UIFont *)searchTitleLabelFont;
++ (id)searchItalicTitleLabelFont;
++ (id)searchTitleLabelFont;
 + (id)searchDefaultTitleAttributes;
 + (id)searchItalicTitleAttributes;
 

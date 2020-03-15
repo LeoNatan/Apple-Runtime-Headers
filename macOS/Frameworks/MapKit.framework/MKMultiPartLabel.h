@@ -23,12 +23,12 @@
     _MKMultiPartLabelMetrics *_data;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _MKMultiPartLabelMetrics *data; // @synthesize data=_data;
 @property(nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(retain, nonatomic) NSColor *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) NSFont *font; // @synthesize font=_font;
 @property(retain, nonatomic) MKMultiPartAttributedString *multiPartString; // @synthesize multiPartString=_multiPartString;
-- (void).cxx_destruct;
 - (BOOL)allowsVibrancy;
 - (struct CGRect)frameForAlignmentRect:(struct CGRect)arg1;
 - (struct CGRect)alignmentRectForFrame:(struct CGRect)arg1;

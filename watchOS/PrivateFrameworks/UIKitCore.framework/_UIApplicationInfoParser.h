@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
     int _supportedUserInterfaceStyle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int supportedUserInterfaceStyle; // @synthesize supportedUserInterfaceStyle=_supportedUserInterfaceStyle;
 @property(readonly, nonatomic) _Bool supportedOnLockScreen; // @synthesize supportedOnLockScreen=_supportedOnLockScreen;
 @property(readonly, copy, nonatomic) NSDictionary *sceneConfigurations; // @synthesize sceneConfigurations=_sceneConfigurations;
@@ -60,7 +61,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) int launchingInterfaceOrientationForSpringBoard; // @synthesize launchingInterfaceOrientationForSpringBoard=_launchingInterfaceOrientationForSpringBoard;
 @property(readonly, nonatomic) int interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(readonly, nonatomic) int requestedStatusBarStyle; // @synthesize requestedStatusBarStyle=_requestedStatusBarStyle;
-- (void).cxx_destruct;
 - (_Bool)_isLinkedOnOrAfterYukon;
 - (void)_computeSupportedUserInterfaceStyleFromInfo:(id)arg1;
 - (void)_computeSupportedInterfaceOrientationsWithInfo:(id)arg1;

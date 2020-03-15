@@ -15,8 +15,8 @@
 }
 
 + (id)shared;
-@property(readonly) NSXPCConnection *_serviceConnection; // @synthesize _serviceConnection=__serviceConnection;
 - (void).cxx_destruct;
+@property(readonly) NSXPCConnection *_serviceConnection; // @synthesize _serviceConnection=__serviceConnection;
 - (void)dealloc;
 - (id)_sampleWithProxyMetric:(id)arg1 timeout:(double)arg2 stopReason:(unsigned int *)arg3;
 - (_Bool)wake;

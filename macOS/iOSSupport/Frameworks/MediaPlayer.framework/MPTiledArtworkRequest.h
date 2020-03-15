@@ -26,6 +26,7 @@
     id <NSCopying> _revisionIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) id <NSCopying> revisionIdentifier; // @synthesize revisionIdentifier=_revisionIdentifier;
 @property(copy, nonatomic) id <NSCopying> namespaceIdentifier; // @synthesize namespaceIdentifier=_namespaceIdentifier;
 @property(copy, nonatomic) id <NSCopying> entityIdentifier; // @synthesize entityIdentifier=_entityIdentifier;
@@ -34,7 +35,6 @@
 @property(nonatomic) unsigned long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
 @property(nonatomic) BOOL allowsSynchronousArtworkCatalogsBlockExecution; // @synthesize allowsSynchronousArtworkCatalogsBlockExecution=_allowsSynchronousArtworkCatalogsBlockExecution;
 @property(copy, nonatomic) CDUnknownBlockType artworkCatalogsBlock; // @synthesize artworkCatalogsBlock=_artworkCatalogsBlock;
-- (void).cxx_destruct;
 - (BOOL)hasExistingArtworkCatalogsWithCount:(long long)arg1;
 - (id)existingArtworkCatalogsWithCount:(long long)arg1;
 - (id)artworkCatalogsWithCount:(unsigned long long)arg1;

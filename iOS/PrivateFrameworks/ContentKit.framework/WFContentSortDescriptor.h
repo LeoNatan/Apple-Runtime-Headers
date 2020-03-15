@@ -19,10 +19,10 @@
 
 + (id)randomSortDescriptor;
 + (id)sortDescriptorWithProperty:(id)arg1 ascending:(_Bool)arg2 comparator:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool ascending; // @synthesize ascending=_ascending;
 @property(readonly, copy, nonatomic) CDUnknownBlockType comparator; // @synthesize comparator=_comparator;
 @property(readonly, nonatomic) WFContentProperty *property; // @synthesize property=_property;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *containedProperties;
 - (id)description;
 - (id)initWithProperty:(id)arg1 ascending:(_Bool)arg2 comparator:(CDUnknownBlockType)arg3;

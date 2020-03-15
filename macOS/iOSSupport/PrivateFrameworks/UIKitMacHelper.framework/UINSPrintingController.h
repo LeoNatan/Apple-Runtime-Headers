@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_currentPrintInfoDictionaryForPrintOperation:(id)arg1;
-@property(retain, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
 - (void)_abortModalPrintOperation;
 - (void)_runModalPrintOperation:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_printOperationDidRun:(id)arg1 success:(BOOL)arg2 contextInfo:(void *)arg3;

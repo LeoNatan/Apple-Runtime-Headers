@@ -34,6 +34,7 @@
     // Error parsing type: , name: _baseColor
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize drawableSize; // @synthesize drawableSize=_drawableSize;
 @property(retain, nonatomic) RPDFireworksRenderProgram *renderProgram; // @synthesize renderProgram=_renderProgram;
 @property(nonatomic) int maximumParticleCount; // @synthesize maximumParticleCount=_maximumParticleCount;
@@ -60,7 +61,6 @@
 // Error parsing type for property emitterPosition:
 // Property attributes: T,N,V_emitterPosition
 
-- (void).cxx_destruct;
 - (void)drawWithSize:(struct CGSize)arg1 animationTime:(double)arg2 context:(id)arg3;
 - (void)dealloc;
 - (void)updateProjectionMatrix:(struct CGSize)arg1;

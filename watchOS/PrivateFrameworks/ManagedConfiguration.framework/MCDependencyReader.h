@@ -20,10 +20,10 @@
 + (void)setSystemStoragePath:(id)arg1 userStoragePath:(id)arg2;
 + (id)userStoragePath;
 + (id)systemStoragePath;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *memberQueueUserDomainsDict; // @synthesize memberQueueUserDomainsDict=_memberQueueUserDomainsDict;
 @property(retain, nonatomic) NSMutableDictionary *memberQueueSystemDomainsDict; // @synthesize memberQueueSystemDomainsDict=_memberQueueSystemDomainsDict;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *memberQueue; // @synthesize memberQueue=_memberQueue;
-- (void).cxx_destruct;
 - (void)invalidateCache;
 - (void)memberQueueRereadUserDomainsDict;
 - (void)memberQueueRereadSystemDomainsDict;

@@ -30,9 +30,10 @@
 @property(readonly, nonatomic) NSString *uniqueName;
 - (void)cancelCapturingAnalytics;
 - (void)capturePredictedTransportationMode:(int)arg1;
-- (void)captureActualTransportationMode:(int)arg1 originMapItem:(struct GEOMapItemStorage *)arg2 destinationMapItem:(struct GEOMapItemStorage *)arg3;
-- (BOOL)predictedTransportModeForDestinationMapItem:(struct GEOMapItemStorage *)arg1 originCoordinate:(struct CLLocationCoordinate2D)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)storeSignalPack:(id)arg1 forMapItem:(struct GEOMapItemStorage *)arg2;
+- (void)captureActualTransportationMode:(int)arg1 originMapItem:(id)arg2 destinationMapItem:(id)arg3;
+- (void)_overrideTempPredictedTransportModeForCarPlay:(id)arg1;
+- (BOOL)predictedTransportModeForDestinationMapItem:(id)arg1 originCoordinate:(struct CLLocationCoordinate2D)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)storeSignalPack:(id)arg1 forMapItem:(id)arg2 andEntry:(id)arg3;
 - (BOOL)predictedTransportModeForDestinationEntry:(id)arg1 originCoordinate:(struct CLLocationCoordinate2D)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)dealloc;
 - (id)init;

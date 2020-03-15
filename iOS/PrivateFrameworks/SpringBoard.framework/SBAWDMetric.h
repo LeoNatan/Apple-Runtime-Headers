@@ -13,8 +13,8 @@
     id <SBAWDMetricDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SBAWDMetricDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBAWDMetricDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)configureWithData:(id)arg1;
 - (unsigned long long)metricID;
 - (Class)dataClass;

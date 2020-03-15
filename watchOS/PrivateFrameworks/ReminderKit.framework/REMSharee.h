@@ -41,6 +41,7 @@
 + (CDUnknownBlockType)rem_DA_fetchByObjectIDBlock;
 + (_Bool)rem_DA_supportsLazyDelete;
 + (_Bool)rem_DA_supportsFetching;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) REMObjectID *listID; // @synthesize listID=_listID;
 @property(readonly, nonatomic) REMObjectID *accountID; // @synthesize accountID=_accountID;
 @property(readonly, nonatomic) REMObjectID *objectID; // @synthesize objectID=_objectID;
@@ -54,7 +55,6 @@
 @property(readonly, nonatomic) NSString *middleName; // @synthesize middleName=_middleName;
 @property(readonly, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)formattedName;
 @property(readonly, nonatomic) REMObjectID *remObjectID;
 @property(readonly, copy) NSString *debugDescription;

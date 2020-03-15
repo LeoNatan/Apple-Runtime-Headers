@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)ruleIdentifier;
-@property(retain, nonatomic) NSString *modelNumberPrefix; // @synthesize modelNumberPrefix=_modelNumberPrefix;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *modelNumberPrefix; // @synthesize modelNumberPrefix=_modelNumberPrefix;
 - (_Bool)evaluate;
 - (void)processUserInfo:(id)arg1;
 

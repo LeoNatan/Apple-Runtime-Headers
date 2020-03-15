@@ -17,10 +17,10 @@
 
 + (id)bulletinAttachmentWithData:(id)arg1 url:(id)arg2;
 + (id)bulletinAttachmentWithImage:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 
 @end
 

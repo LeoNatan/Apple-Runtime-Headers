@@ -19,10 +19,10 @@
     HUAccessorySettingsProfileModuleController *_profileModuleController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUAccessorySettingsProfileModuleController *profileModuleController; // @synthesize profileModuleController=_profileModuleController;
 @property(retain, nonatomic) HUAccessorySettingsProfileModule *profileModule; // @synthesize profileModule=_profileModule;
 @property(readonly, copy, nonatomic) HFAccessorySettingGroupItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (id)settingsProfileModule:(id)arg1 wantsProfileItemDeleted:(id)arg2;
 - (void)accessorySettingsProfileModuleController:(id)arg1 needsNavigationToController:(id)arg2;
 - (id)hu_preloadContent;

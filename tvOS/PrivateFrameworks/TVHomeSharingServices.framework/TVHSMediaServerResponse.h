@@ -20,10 +20,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)_mediaServerResponseWithURLResponse:(id)arg1 data:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(copy, nonatomic) NSString *MIMEType; // @synthesize MIMEType=_MIMEType;
 @property(nonatomic) unsigned long long HTTPStatusCode; // @synthesize HTTPStatusCode=_HTTPStatusCode;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

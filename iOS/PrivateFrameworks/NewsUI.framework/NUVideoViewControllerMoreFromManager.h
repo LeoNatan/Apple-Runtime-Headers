@@ -17,8 +17,8 @@
     id <NUVideoCallToActionURLProviding> _callToActionURLProvider;
 }
 
-@property(readonly, nonatomic) id <NUVideoCallToActionURLProviding> callToActionURLProvider; // @synthesize callToActionURLProvider=_callToActionURLProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <NUVideoCallToActionURLProviding> callToActionURLProvider; // @synthesize callToActionURLProvider=_callToActionURLProvider;
 - (id)_callToActionTitleForVideoItem:(id)arg1;
 - (id)actionTitleForVideo:(id)arg1;
 - (CDUnknownBlockType)moreFromLogoForVideo:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;

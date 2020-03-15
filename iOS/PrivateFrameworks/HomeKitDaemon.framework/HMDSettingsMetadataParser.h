@@ -18,8 +18,8 @@
 }
 
 + (id)logCategory;
-@property(readonly) __weak id <HMDSettingsControllerDependency> dependency; // @synthesize dependency=_dependency;
 - (void).cxx_destruct;
+@property(readonly) __weak id <HMDSettingsControllerDependency> dependency; // @synthesize dependency=_dependency;
 - (id)logIdentifier;
 - (id)modelsFromMetadata:(id)arg1;
 - (id)initWithDependency:(id)arg1;

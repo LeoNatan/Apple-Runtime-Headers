@@ -26,12 +26,12 @@ __attribute__((visibility("hidden")))
 + (id)logCategory;
 + (id)handlerWithReceiver:(id)arg1 name:(id)arg2 policies:(id)arg3 selector:(SEL)arg4;
 + (id)handlerWithReceiver:(id)arg1 name:(id)arg2 policies:(id)arg3 handler:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(readonly, copy) NSArray *policies; // @synthesize policies=_policies;
 @property(readonly, copy) HMFMessageDestination *destination; // @synthesize destination=_destination;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly) __weak id <HMFMessageReceiver> receiver; // @synthesize receiver=_receiver;
 @property(readonly) unsigned long long hash; // @synthesize hash=_hash;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (BOOL)isEqual:(id)arg1;

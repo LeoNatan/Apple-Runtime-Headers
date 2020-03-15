@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSArray *MCCAndMNCs; // @synthesize MCCAndMNCs=_MCCAndMNCs;
 @property(copy) NSArray *naiRealmNames; // @synthesize naiRealmNames=_naiRealmNames;
 @property(copy) NSArray *roamingConsortiumOIs; // @synthesize roamingConsortiumOIs=_roamingConsortiumOIs;
 @property(getter=isRoamingEnabled) _Bool roamingEnabled; // @synthesize roamingEnabled=_roamingEnabled;
 @property(readonly) NSString *domainName; // @synthesize domainName=_domainName;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

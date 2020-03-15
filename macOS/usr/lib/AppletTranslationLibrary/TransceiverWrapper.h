@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)withTransceiver:(id)arg1;
+- (void).cxx_destruct;
 - (BOOL)applyScript:(id)arg1 ignoreSW:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)applyScript:(id)arg1 error:(id *)arg2;
 - (id)transceiveAndGetAllData:(id)arg1 withGetMoreData:(id)arg2 withMoreDataSW:(unsigned short)arg3 withError:(id *)arg4;

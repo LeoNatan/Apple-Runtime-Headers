@@ -11,8 +11,8 @@
     id _content;
 }
 
-@property(readonly, nonatomic) id content; // @synthesize content=_content;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id content; // @synthesize content=_content;
 - (long long)countForCollection:(id)arg1;
 - (id)collectionListForSection:(long long)arg1;
 - (id)collectionAtIndexPath:(id)arg1;

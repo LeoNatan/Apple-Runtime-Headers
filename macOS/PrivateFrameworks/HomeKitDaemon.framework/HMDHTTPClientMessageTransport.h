@@ -27,12 +27,12 @@
 
 + (id)logCategory;
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMFHTTPClient *client; // @synthesize client=_client;
 @property(readonly, nonatomic) HMDHTTPDevice *remoteDevice; // @synthesize remoteDevice=_remoteDevice;
 @property(readonly, nonatomic) HMFNetService *netService; // @synthesize netService=_netService;
 @property(readonly, copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property __weak id <HMDHTTPClientMessageTransportDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)netService:(id)arg1 didUpdateTXTRecord:(id)arg2;
 - (id)logIdentifier;
 - (void)clientDidBecomeUnreachable:(id)arg1;

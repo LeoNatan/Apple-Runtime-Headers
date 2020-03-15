@@ -20,10 +20,10 @@
 + (id)resourceObjectWithJSONObject:(id)arg1 sourceURL:(id)arg2 FHIRVersion:(id)arg3 receivedDate:(id)arg4 extractionHints:(unsigned long long)arg5 error:(id *)arg6;
 + (id)resourceObjectWithJSONObject:(id)arg1 serverBaseURL:(id)arg2 FHIRVersion:(id)arg3 receivedDate:(id)arg4 error:(id *)arg5;
 + (id)resourceObjectWithResourceData:(id)arg1 receivedDate:(id)arg2 extractionHints:(unsigned long long)arg3 error:(id *)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long extractionHints; // @synthesize extractionHints=_extractionHints;
 @property(readonly, copy, nonatomic) NSDate *receivedDate; // @synthesize receivedDate=_receivedDate;
 @property(readonly, copy, nonatomic) HKFHIRIdentifier *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

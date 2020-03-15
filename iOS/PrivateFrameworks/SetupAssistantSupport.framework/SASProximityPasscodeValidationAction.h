@@ -16,9 +16,9 @@
 
 + (id)actionFromDictionary:(id)arg1;
 + (unsigned long long)actionID;
+- (void).cxx_destruct;
 @property _Bool passcodeValid; // @synthesize passcodeValid=_passcodeValid;
 @property(retain) NSString *passcode; // @synthesize passcode=_passcode;
-- (void).cxx_destruct;
 - (void)setResponseFromData:(id)arg1;
 - (id)responsePayload;
 - (id)requestPayload;

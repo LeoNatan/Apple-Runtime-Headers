@@ -22,6 +22,7 @@
     FCBoostableOperationThrottler *_fetchThrottler;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCBoostableOperationThrottler *fetchThrottler; // @synthesize fetchThrottler=_fetchThrottler;
 @property(retain, nonatomic) NFMutexLock *accessLock; // @synthesize accessLock=_accessLock;
 @property(retain, nonatomic) NSMapTable *fetchOperationsByGroup; // @synthesize fetchOperationsByGroup=_fetchOperationsByGroup;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSHashTable *fetchGroups; // @synthesize fetchGroups=_fetchGroups;
 @property unsigned long long maxConcurrentFetchCount; // @synthesize maxConcurrentFetchCount=_maxConcurrentFetchCount;
 @property(nonatomic) __weak id <FCFetchCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)beginFetchesIfNeededWithLock;
 - (void)cancelFetchesIfNeededWithLock;
 - (void)removeFetchGroup:(id)arg1;

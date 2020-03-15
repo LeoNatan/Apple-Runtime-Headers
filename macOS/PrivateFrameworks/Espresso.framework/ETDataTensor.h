@@ -22,6 +22,8 @@
     struct vImage_Buffer _imageBuffer;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property shared_ptr_acd4b298 blob; // @synthesize blob=_blob;
 @property struct float_buffer_t float_buffer; // @synthesize float_buffer=_float_buffer;
 @property vector_fc1f6154 allocatedImageData; // @synthesize allocatedImageData=_allocatedImageData;
@@ -32,8 +34,6 @@
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSArray *dataArray; // @synthesize dataArray=_dataArray;
 @property(nonatomic) void *dataPointer; // @synthesize dataPointer=_dataPointer;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithBlobContainer:(shared_ptr_f15d0389)arg1;
 - (id)initWithCVPixelBuffer:(struct __CVBuffer *)arg1 imageParameters:(id)arg2 error:(id *)arg3;

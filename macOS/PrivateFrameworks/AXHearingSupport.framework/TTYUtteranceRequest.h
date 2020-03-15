@@ -16,10 +16,10 @@
 }
 
 + (id)utteranceRequestWithIndex:(unsigned long long)arg1 forString:(id)arg2 inCellPath:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSIndexPath *cellIndexPath; // @synthesize cellIndexPath=_cellIndexPath;
 @property(retain, nonatomic) NSString *string; // @synthesize string=_string;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

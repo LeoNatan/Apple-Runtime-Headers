@@ -19,11 +19,11 @@
     id <SVVideoPlaybackController> _playbackController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoPlaybackController> playbackController; // @synthesize playbackController=_playbackController;
 @property(readonly, nonatomic) id <SVVideoViewControllerProviding> videoViewControllerProvider; // @synthesize videoViewControllerProvider=_videoViewControllerProvider;
 @property(readonly, copy, nonatomic) NUDiscoverMoreVideosInfo *discoverMoreVideosInfo; // @synthesize discoverMoreVideosInfo=_discoverMoreVideosInfo;
 @property(readonly, nonatomic) id <NUURLHandling> URLHandler; // @synthesize URLHandler=_URLHandler;
-- (void).cxx_destruct;
 - (void)handleInteraction;
 - (id)initWithURLHandler:(id)arg1 discoverMoreVideosInfo:(id)arg2 videoViewControllerProvider:(id)arg3 playbackController:(id)arg4;
 - (id)init;

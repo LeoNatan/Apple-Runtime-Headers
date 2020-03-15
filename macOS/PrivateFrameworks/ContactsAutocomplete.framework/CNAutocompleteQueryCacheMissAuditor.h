@@ -14,9 +14,9 @@
     NSArray *_cachedResults;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *cachedResults; // @synthesize cachedResults=_cachedResults;
 @property(retain) CNAutocompleteQueryCacheMissLogger *logger; // @synthesize logger=_logger;
-- (void).cxx_destruct;
 - (void)didReturnLiveResults:(id)arg1;
 - (void)didReturnCachedResults:(id)arg1;
 - (id)description;

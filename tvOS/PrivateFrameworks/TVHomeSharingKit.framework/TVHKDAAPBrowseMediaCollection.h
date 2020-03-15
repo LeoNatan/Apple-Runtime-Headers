@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     TVHKDAAPBrowseMediaCollectionIdentifier *_browseMediaCollectionIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) TVHKDAAPBrowseMediaCollectionIdentifier *browseMediaCollectionIdentifier; // @synthesize browseMediaCollectionIdentifier=_browseMediaCollectionIdentifier;
 - (id)type;
-- (void).cxx_destruct;
 - (unsigned long long)imageNonPersistentID;
 - (unsigned long long)persistentID;
 - (unsigned long long)nonPersistentID;

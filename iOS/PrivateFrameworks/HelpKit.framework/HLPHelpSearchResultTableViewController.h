@@ -16,9 +16,9 @@
     UIView *_footerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) NSArray *searchResults; // @synthesize searchResults=_searchResults;
-- (void).cxx_destruct;
 - (void)preferSeparatorValue:(double)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

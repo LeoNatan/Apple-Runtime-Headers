@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     UIView *_superview;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL windowAppearsKey; // @synthesize windowAppearsKey=_windowAppearsKey;
 @property(nonatomic) __weak UIView *superview; // @synthesize superview=_superview;
 @property(nonatomic) __weak UIWindow *window; // @synthesize window=_window;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL allowsBlurring; // @synthesize allowsBlurring=_allowsBlurring;
 @property(nonatomic) BOOL allowsDithering; // @synthesize allowsDithering=_allowsDithering;
 @property(readonly, nonatomic) UIVisualEffectView *effectView; // @synthesize effectView=_effectView;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithHost:(id)arg1;

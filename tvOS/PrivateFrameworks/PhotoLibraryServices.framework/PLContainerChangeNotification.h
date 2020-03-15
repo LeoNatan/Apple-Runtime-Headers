@@ -23,9 +23,9 @@
     _Bool _countDidChange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) struct __CFArray *movedFromIndexes; // @synthesize movedFromIndexes=_movedFromIndexes;
 @property(readonly, nonatomic) NSIndexSet *movedIndexes; // @synthesize movedIndexes=_movedIndexes;
-- (void).cxx_destruct;
 - (unsigned long long)snapshotIndexForContainedObject:(id)arg1;
 @property(readonly, nonatomic) NSArray *changedObjects;
 @property(readonly, nonatomic) NSArray *insertedObjects;

@@ -20,11 +20,11 @@
     CSLEcoModeConfirmationView *_confirmationView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak CSLEcoModeConfirmationView *confirmationView; // @synthesize confirmationView=_confirmationView;
 @property(nonatomic) _Bool hasCalledDismiss; // @synthesize hasCalledDismiss=_hasCalledDismiss;
 @property(nonatomic) __weak id <CSLEcoModeConfirmationAlertViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned int style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (double)alertTransitionDuration:(id)arg1;
 - (void)animateAlertTransition:(id)arg1;
 - (void)_destroyTopLevelViews;

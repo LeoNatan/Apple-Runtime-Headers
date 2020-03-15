@@ -20,8 +20,8 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy) INPerson *triggerContact; // @synthesize triggerContact=_triggerContact;
 - (void).cxx_destruct;
+@property(readonly, copy) INPerson *triggerContact; // @synthesize triggerContact=_triggerContact;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

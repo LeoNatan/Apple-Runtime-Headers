@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     ML3StatementCacheNode *_lastNode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ML3StatementCacheNode *lastNode; // @synthesize lastNode=_lastNode;
 @property(readonly, nonatomic) ML3StatementCacheNode *firstNode; // @synthesize firstNode=_firstNode;
-- (void).cxx_destruct;
 - (void)deleteAllNodes;
 - (void)deleteOldestNode;
 - (id)oldestNode;

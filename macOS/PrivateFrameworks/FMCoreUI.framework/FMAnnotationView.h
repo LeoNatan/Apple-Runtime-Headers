@@ -32,6 +32,7 @@
 + (void)setLargeAnnotationBorderVisible:(BOOL)arg1;
 + (void)setImagePadding:(double)arg1;
 + (void)preloadAssets;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(nonatomic) BOOL hasPhotoImage; // @synthesize hasPhotoImage=_hasPhotoImage;
 @property(nonatomic) BOOL isShowingLargeSelectedAnnotation; // @synthesize isShowingLargeSelectedAnnotation=_isShowingLargeSelectedAnnotation;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) CAShapeLayer *smallRingLayer; // @synthesize smallRingLayer=_smallRingLayer;
 @property(nonatomic) BOOL isDelayed; // @synthesize isDelayed=_isDelayed;
 @property(nonatomic) BOOL shouldPreventLargeAnnotationState; // @synthesize shouldPreventLargeAnnotationState=_shouldPreventLargeAnnotationState;
-- (void).cxx_destruct;
 - (void)invertColorStatusDidChange:(id)arg1;
 - (id)hitTest:(struct CGPoint)arg1;
 @property(retain, nonatomic) id <FMAnnotation><MKAnnotation> annotation; // @dynamic annotation;

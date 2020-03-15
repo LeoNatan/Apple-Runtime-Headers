@@ -20,12 +20,12 @@
     id <HKGraphSeriesBlockCoordinateInfo> _userInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <HKGraphSeriesBlockCoordinateInfo> userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) long long markStyle; // @synthesize markStyle=_markStyle;
 @property(nonatomic) _Bool groupToPrevious; // @synthesize groupToPrevious=_groupToPrevious;
 @property(retain, nonatomic) NSNumber *yValue; // @synthesize yValue=_yValue;
 @property(retain, nonatomic) NSDate *xValue; // @synthesize xValue=_xValue;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)allYValues;
 - (id)maxYValue;

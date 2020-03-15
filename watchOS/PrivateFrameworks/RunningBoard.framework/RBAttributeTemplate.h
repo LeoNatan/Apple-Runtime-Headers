@@ -16,9 +16,9 @@
     NSDictionary *_properties;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *properties; // @synthesize properties=_properties;
 @property(retain, nonatomic) NSString *className; // @synthesize className=_className;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

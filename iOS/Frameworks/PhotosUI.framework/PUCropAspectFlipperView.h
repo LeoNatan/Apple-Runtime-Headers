@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     long long _layoutOrientation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) long long layoutOrientation; // @synthesize layoutOrientation=_layoutOrientation;
 @property(nonatomic) long long aspectRatioOrientation; // @synthesize aspectRatioOrientation=_aspectRatioOrientation;
 @property(nonatomic) __weak id <PUCropAspectViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)aspectRatioButtonPressed:(id)arg1;
 - (id)initWithLayoutOrientation:(long long)arg1;
 

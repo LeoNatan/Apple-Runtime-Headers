@@ -15,10 +15,10 @@
     NSNumber *_value;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *value; // @synthesize value=_value;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) HKValueRange *dateRange; // @synthesize dateRange=_dateRange;
-- (void).cxx_destruct;
 - (id)initWithRange:(id)arg1 type:(long long)arg2 value:(id)arg3;
 
 @end

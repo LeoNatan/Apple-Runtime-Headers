@@ -17,12 +17,12 @@
     double _destinationLongitude;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double destinationLongitude; // @synthesize destinationLongitude=_destinationLongitude;
 @property(nonatomic) double destinationLatitude; // @synthesize destinationLatitude=_destinationLatitude;
 @property(retain, nonatomic) NSString *destinationName; // @synthesize destinationName=_destinationName;
 @property(nonatomic) double originLongitude; // @synthesize originLongitude=_originLongitude;
 @property(nonatomic) double originLatitude; // @synthesize originLatitude=_originLatitude;
-- (void).cxx_destruct;
 - (id)initWithRouteSummary:(id)arg1;
 
 @end

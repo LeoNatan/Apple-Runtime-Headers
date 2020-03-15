@@ -15,10 +15,10 @@
     NSArray *_userRatings;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *userRatings; // @synthesize userRatings=_userRatings;
 @property(retain, nonatomic) TVLHeaderElement *imageHeader; // @synthesize imageHeader=_imageHeader;
 @property(copy, nonatomic) NSString *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)_stylesForKeyPath:(id)arg1;
 @property(readonly, nonatomic) UIColor *subtitleColor;

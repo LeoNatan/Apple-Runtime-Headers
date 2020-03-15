@@ -21,12 +21,12 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property _Bool runRemotely; // @synthesize runRemotely=_runRemotely;
 @property(readonly) NSMapTable *requests; // @synthesize requests=_requests;
 @property(readonly, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
 @property int nextRequestID; // @synthesize nextRequestID=_nextRequestID;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
 - (_Bool)cancelRequest:(int)arg1;
 - (int)requestAnalysisForAssetData:(id)arg1 withProperties:(id)arg2 andCompletionHandler:(CDUnknownBlockType)arg3;
 - (int)getNextRequestID;

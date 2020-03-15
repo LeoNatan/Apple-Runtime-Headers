@@ -17,11 +17,11 @@
     NSString *_headerFieldKey;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *headerFieldKey; // @synthesize headerFieldKey=_headerFieldKey;
 @property(nonatomic) _Bool useAltDSID; // @synthesize useAltDSID=_useAltDSID;
 @property(readonly, nonatomic) ACAccount *grandSlamAccount; // @synthesize grandSlamAccount=_grandSlamAccount;
 @property(readonly, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
-- (void).cxx_destruct;
 - (_Bool)signURLRequest:(id)arg1 isUserInitiated:(_Bool)arg2;
 - (_Bool)signURLRequest:(id)arg1;
 - (id)initWithAppleAccount:(id)arg1 grandSlamAccount:(id)arg2 accountStore:(id)arg3 appTokenID:(id)arg4;

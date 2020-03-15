@@ -16,9 +16,9 @@
     NSLayoutConstraint *_itemTableViewHeightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *itemTableViewHeightConstraint; // @synthesize itemTableViewHeightConstraint=_itemTableViewHeightConstraint;
 @property(retain, nonatomic) HUItemTableViewController *itemTableViewController; // @synthesize itemTableViewController=_itemTableViewController;
-- (void).cxx_destruct;
 - (id)hu_preloadContent;
 - (void)updateViewConstraints;
 - (void)viewWillLayoutSubviews;

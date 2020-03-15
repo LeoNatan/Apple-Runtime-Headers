@@ -13,8 +13,8 @@
     NSURL *_redirectURL;
 }
 
-@property(retain, nonatomic) NSURL *redirectURL; // @synthesize redirectURL=_redirectURL;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSURL *redirectURL; // @synthesize redirectURL=_redirectURL;
 - (id)initWithDictionary:(id)arg1;
 
 @end

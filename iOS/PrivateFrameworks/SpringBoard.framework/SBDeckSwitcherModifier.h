@@ -24,8 +24,8 @@
     id <SBFluidSwitcherScrollProvidingDelegate> _scrollDelegate;
 }
 
-@property(nonatomic) __weak id <SBFluidSwitcherScrollProvidingDelegate> scrollDelegate; // @synthesize scrollDelegate=_scrollDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBFluidSwitcherScrollProvidingDelegate> scrollDelegate; // @synthesize scrollDelegate=_scrollDelegate;
 - (void)_applyPrototypeSettings;
 - (double)titleOpacityForIndex:(unsigned long long)arg1 scrollProgress:(double)arg2;
 - (double)_unscaledCardCornerRadius;

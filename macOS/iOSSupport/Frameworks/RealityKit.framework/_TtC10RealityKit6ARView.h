@@ -6,6 +6,8 @@
 
 #import <UIKit/UIView.h>
 
+@class NSArray;
+
 @interface _TtC10RealityKit6ARView : UIView
 {
     // Error parsing type: , name: _scene
@@ -23,6 +25,8 @@
     // Error parsing type: , name: useCAMetalLayer
     // Error parsing type: , name: pauseEngineOnLeaveForeground
     // Error parsing type: , name: __renderGraphEmitter
+    // Error parsing type: , name: __forceLocalizedProbes
+    // Error parsing type: , name: __parallaxBackgroundProbe
     // Error parsing type: , name: layerHandle
     // Error parsing type: , name: updateSubscription
     // Error parsing type: , name: renderSubscription
@@ -36,6 +40,8 @@
 }
 
 - (void).cxx_destruct;
+- (float)distanceInMetersFromEntityAccessibilityWrapper:(id)arg1;
+@property(nonatomic, readonly) NSArray *entityAccessibilityWrappers;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;

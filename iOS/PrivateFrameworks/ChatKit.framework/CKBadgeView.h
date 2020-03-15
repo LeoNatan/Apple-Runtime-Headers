@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UILabel *_countLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *countLabel; // @synthesize countLabel=_countLabel;
 @property(nonatomic) unsigned long long value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

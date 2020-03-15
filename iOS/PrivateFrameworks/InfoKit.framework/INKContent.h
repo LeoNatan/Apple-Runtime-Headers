@@ -20,10 +20,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)classSet;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSArray *dismissalEvents; // @synthesize dismissalEvents=_dismissalEvents;
 @property(readonly, nonatomic) long long customizationID; // @synthesize customizationID=_customizationID;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

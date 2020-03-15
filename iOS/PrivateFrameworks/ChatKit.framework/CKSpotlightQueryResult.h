@@ -18,11 +18,11 @@
     LPLinkMetadata *_linkMetadata;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) LPLinkMetadata *linkMetadata; // @synthesize linkMetadata=_linkMetadata;
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
 @property(retain, nonatomic) CSSearchableItem *item; // @synthesize item=_item;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *previewItemTitle;
 @property(readonly, nonatomic) NSURL *previewItemURL;
 @property(readonly, nonatomic) NSString *messageGUID;

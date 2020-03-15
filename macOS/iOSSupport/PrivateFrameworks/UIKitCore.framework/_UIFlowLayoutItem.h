@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     struct CGRect _itemFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect itemFrame; // @synthesize itemFrame=_itemFrame;
 @property(nonatomic) __weak _UIFlowLayoutRow *rowObject; // @synthesize rowObject=_rowObject;
 @property(nonatomic) __weak _UIFlowLayoutSection *section; // @synthesize section=_section;
-- (void).cxx_destruct;
 @property(nonatomic) BOOL sizeHasBeenSet;
 @property(nonatomic, getter=isPositionEstimated) BOOL positionEstimated;
 @property(nonatomic, getter=isSizeEstimated) BOOL sizeEstimated;

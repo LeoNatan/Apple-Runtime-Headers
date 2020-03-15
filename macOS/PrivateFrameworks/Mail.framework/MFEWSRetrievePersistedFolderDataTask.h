@@ -18,8 +18,8 @@
     id <MFEWSMailboxDataCache> _cache;
 }
 
-@property(readonly, nonatomic) id <MFEWSMailboxDataCache> cache; // @synthesize cache=_cache;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <MFEWSMailboxDataCache> cache; // @synthesize cache=_cache;
 - (void)recalculatePriorities;
 - (id)nextPersistenceOperation;
 - (id)nextNetworkOperation;

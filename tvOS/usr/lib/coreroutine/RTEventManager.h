@@ -19,11 +19,11 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool accessToEventsGranted; // @synthesize accessToEventsGranted=_accessToEventsGranted;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) id eventStore; // @synthesize eventStore=_eventStore;
 @property(retain, nonatomic) RTInvocationDispatcher *invocationDispatcher; // @synthesize invocationDispatcher=_invocationDispatcher;
-- (void).cxx_destruct;
 - (void)fetchEventsBetweenStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_fetchEventsBetweenStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_fetchEventsBetweenStartDate:(id)arg1 andEndDate:(id)arg2 includeSuggestions:(_Bool)arg3 withHandler:(CDUnknownBlockType)arg4;

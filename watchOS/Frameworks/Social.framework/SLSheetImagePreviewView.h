@@ -16,9 +16,9 @@
 }
 
 + (id)fallbackPreviewImage;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *principalAttachments; // @synthesize principalAttachments=_principalAttachments;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (_Bool)generatePreviewImageFromAttachments;

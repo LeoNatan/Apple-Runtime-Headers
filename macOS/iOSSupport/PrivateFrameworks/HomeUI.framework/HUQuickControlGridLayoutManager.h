@@ -17,11 +17,11 @@
     NSMutableArray *_sectionSettingsArray;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *sectionSettingsArray; // @synthesize sectionSettingsArray=_sectionSettingsArray;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) HFItemManager<HUQuickControlCollectionItemManaging> *itemManager; // @synthesize itemManager=_itemManager;
 @property(retain, nonatomic) HUQuickControlCollectionViewControllerLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
-- (void).cxx_destruct;
 - (id)_viewProfilesForSection:(unsigned long long)arg1;
 - (unsigned long long)_mostImportantItemTypeForSection:(unsigned long long)arg1;
 @property(readonly, nonatomic) long long viewSizeSubclass;

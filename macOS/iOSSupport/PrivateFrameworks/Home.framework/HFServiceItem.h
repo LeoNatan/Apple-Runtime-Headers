@@ -24,9 +24,9 @@
 + (Class)itemClassForService:(id)arg1;
 + (id)_serviceTypeToServiceItemClassMap;
 + (id)supportedServiceTypes;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMService *service; // @synthesize service=_service;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
-- (void).cxx_destruct;
 - (id)_allRepresentedServices;
 - (id)controlDescriptionForCharacteristic:(id)arg1 withValue:(id)arg2;
 - (id)descriptionForCharacteristic:(id)arg1 withValue:(id)arg2;

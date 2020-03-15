@@ -28,6 +28,7 @@
     struct CGAffineTransform _transform;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSShadow *shadow; // @synthesize shadow=_shadow;
 @property(readonly, nonatomic) struct CGContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) double descent; // @synthesize descent=_descent;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic, getter=isTruncated) _Bool truncated; // @synthesize truncated=_truncated;
 @property(readonly, nonatomic) NSString *string; // @synthesize string=_string;
 @property(readonly, nonatomic) struct _NSRange stringRange; // @synthesize stringRange=_stringRange;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_transformBy:(struct CGAffineTransform)arg1;
 - (void)scaleVerticallyBy:(double)arg1;

@@ -22,6 +22,7 @@
     struct UIEdgeInsets _footerPadding;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets footerPadding; // @synthesize footerPadding=_footerPadding;
 @property(retain, nonatomic) UIView *footerView; // @synthesize footerView=_footerView;
 @property(nonatomic) _Bool useTitleRow; // @synthesize useTitleRow=_useTitleRow;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) SiriTVUITabularDataCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(readonly, nonatomic) SiriTVUITabularDataCollectionView *titleCollectionView; // @synthesize titleCollectionView=_titleCollectionView;
 @property(nonatomic) _Bool hasPriorityLayout; // @synthesize hasPriorityLayout;
-- (void).cxx_destruct;
 - (id)_collectionViewLayout;
 - (id)preferredFocusEnvironments;
 - (_Bool)canBecomeFocused;

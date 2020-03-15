@@ -18,8 +18,8 @@
 + (id)_findBestMatchingConditionsForPredicates:(id)arg1;
 + (id)_flattenedSubpredicatesForAndPredicate:(id)arg1;
 + (id)conditionCollectionForPredicate:(id)arg1;
-@property(retain, nonatomic) NSArray *conditions; // @synthesize conditions=_conditions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *conditions; // @synthesize conditions=_conditions;
 @property(readonly, copy, nonatomic) NSPredicate *predicate;
 - (void)removeCondition:(id)arg1;
 - (void)addCondition:(id)arg1;

@@ -14,9 +14,9 @@
     NewMSPQuery *_itemQuery;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NewMSPQuery *itemQuery; // @synthesize itemQuery=_itemQuery;
 @property(retain, nonatomic) MSPFavoritesContainer *itemContainer; // @synthesize itemContainer=_itemContainer;
-- (void).cxx_destruct;
 - (void)queryContentsDidChange:(id)arg1 contentsVersion:(unsigned long long)arg2;
 - (void)removeObjects:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeObject:(id)arg1 completion:(CDUnknownBlockType)arg2;

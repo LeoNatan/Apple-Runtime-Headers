@@ -13,8 +13,8 @@
     IBLayoutConstraint *_constraintInDocument;
 }
 
-@property(retain, nonatomic) IBLayoutConstraint *constraintInDocument; // @synthesize constraintInDocument=_constraintInDocument;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IBLayoutConstraint *constraintInDocument; // @synthesize constraintInDocument=_constraintInDocument;
 - (double)priority;
 - (id)makeRepresentingConstraintWithProvider:(id)arg1;
 - (unsigned long long)hash;

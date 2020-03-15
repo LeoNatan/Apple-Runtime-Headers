@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) id anchor; // @synthesize anchor=_anchor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id anchor; // @synthesize anchor=_anchor;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;

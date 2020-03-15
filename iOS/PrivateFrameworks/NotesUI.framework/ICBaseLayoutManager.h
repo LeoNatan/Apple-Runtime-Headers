@@ -14,8 +14,8 @@
 }
 
 + (id)defaultLinkTextAttributes;
-@property(nonatomic) __weak UITextView *textView; // @synthesize textView=_textView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UITextView *textView; // @synthesize textView=_textView;
 - (double)bulletYOffsetForCharacterAtIndex:(unsigned long long)arg1;
 - (void)drawBulletsForListRange:(struct _NSRange)arg1 paragraphStyle:(id)arg2 atPoint:(struct CGPoint)arg3;
 - (void)drawListStylesForCharacterRange:(struct _NSRange)arg1 atPoint:(struct CGPoint)arg2;

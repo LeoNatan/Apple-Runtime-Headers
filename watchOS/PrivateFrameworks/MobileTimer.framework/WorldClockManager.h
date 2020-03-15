@@ -18,9 +18,9 @@
 
 + (id)sharedManagerWithPreferences:(id)arg1;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastModified; // @synthesize lastModified;
 @property(readonly, nonatomic) NSArray *cities; // @synthesize cities=_cities;
-- (void).cxx_destruct;
 - (void)_notifyNano;
 - (void)moveCityFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (void)removeAllCities;

@@ -16,8 +16,10 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-@property(readonly, nonatomic) struct CompletionListItem *completionListItem;
-- (id)initWithCompletionListItem:(struct CompletionListItem *)arg1;
+// Error parsing type for property completionListItem:
+// Property attributes: T^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@},R,N
+
+-     // Error parsing type: @24@0:8^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16, name: initWithCompletionListItem:
 
 @end
 

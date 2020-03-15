@@ -25,10 +25,6 @@ struct CGSize {
     double height;
 };
 
-struct NSNumber {
-    Class _field1;
-};
-
 struct _NSRange {
     unsigned long long location;
     unsigned long long length;

@@ -22,6 +22,7 @@
 }
 
 + (id)localizedNameForName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool checkWeekends; // @synthesize checkWeekends=_checkWeekends;
 @property(readonly, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(nonatomic) __weak id <CLSHolidayCalendarEventDateRuleDelegate> dateRuleDelegate; // @synthesize dateRuleDelegate=_dateRuleDelegate;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) NSArray *dateRules; // @synthesize dateRules=_dateRules;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)_isMatchingOnlyLocalDate:(id)arg1;

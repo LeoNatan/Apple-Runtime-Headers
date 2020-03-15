@@ -21,11 +21,11 @@
 + (id)animationWithParameters:(id)arg1 delay:(double)arg2 speed:(double)arg3 animations:(CDUnknownBlockType)arg4;
 + (id)animationWithParameters:(id)arg1 delay:(double)arg2 animations:(CDUnknownBlockType)arg3;
 + (id)animationWithParameters:(id)arg1 animations:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType animations; // @synthesize animations=_animations;
 @property(readonly, nonatomic) double speed; // @synthesize speed=_speed;
 @property(readonly, nonatomic) double delay; // @synthesize delay=_delay;
 @property(readonly, copy, nonatomic) id <CCUIAnimationParameters> parameters; // @synthesize parameters=_parameters;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_initWithParameters:(id)arg1 delay:(double)arg2 speed:(double)arg3 animations:(CDUnknownBlockType)arg4;
 

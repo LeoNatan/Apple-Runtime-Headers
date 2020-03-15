@@ -28,5 +28,6 @@
 - (void)audioStreamWithRequest:(CSAudioStreamRequest *)arg1 streamName:(NSString *)arg2 completion:(void (^)(CSAudioStream *, NSError *))arg3;
 - (CSAudioStream *)audioStreamWithRequest:(CSAudioStreamRequest *)arg1 streamName:(NSString *)arg2 error:(id *)arg3;
 - (_Bool)setCurrentContext:(CSAudioRecordContext *)arg1 error:(id *)arg2;
+- (NSString *)UUID;
 @end
 

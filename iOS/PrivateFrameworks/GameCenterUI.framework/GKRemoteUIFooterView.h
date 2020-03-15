@@ -21,6 +21,7 @@
     double _paragraphMargin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 @property(nonatomic) _Bool shouldApplyGameCenterTheme; // @synthesize shouldApplyGameCenterTheme=_shouldApplyGameCenterTheme;
 @property(nonatomic) double paragraphMargin; // @synthesize paragraphMargin=_paragraphMargin;
@@ -28,7 +29,6 @@
 @property(nonatomic) double rightMargin; // @synthesize rightMargin=_rightMargin;
 @property(nonatomic) double leftMargin; // @synthesize leftMargin=_leftMargin;
 @property(retain, nonatomic) GKLabel *textLabel; // @synthesize textLabel=_textLabel;
-- (void).cxx_destruct;
 - (id)attributedStringForString:(id)arg1 withStyle:(id)arg2;
 - (double)footerHeightForWidth:(double)arg1 inTableView:(id)arg2;
 - (id)initWithAttributes:(id)arg1;

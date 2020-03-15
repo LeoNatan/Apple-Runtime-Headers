@@ -24,6 +24,7 @@
 + (id)alertWithPreferredStyle:(int)arg1;
 + (id)alertWithError:(id)arg1 confirmationHandler:(CDUnknownBlockType)arg2;
 + (id)alertWithError:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool prefersItemPickerSheetPresentation; // @synthesize prefersItemPickerSheetPresentation=_prefersItemPickerSheetPresentation;
 @property(retain, nonatomic) NSMutableArray *mutableTextFieldConfigurationHandlers; // @synthesize mutableTextFieldConfigurationHandlers=_mutableTextFieldConfigurationHandlers;
 @property(retain, nonatomic) NSMutableArray *mutableButtons; // @synthesize mutableButtons=_mutableButtons;
@@ -32,7 +33,6 @@
 @property(nonatomic) int preferredStyle; // @synthesize preferredStyle=_preferredStyle;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)dismissWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)addTextFieldWithConfigurationHandler:(CDUnknownBlockType)arg1;
 @property(copy, nonatomic) NSArray *buttons;

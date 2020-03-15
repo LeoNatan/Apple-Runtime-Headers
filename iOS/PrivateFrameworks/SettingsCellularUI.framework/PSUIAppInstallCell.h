@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)specifierForAppWithDescription:(id)arg1 target:(id)arg2 action:(SEL)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) NSLayoutConstraint *installButtonHeightConstraint; // @synthesize installButtonHeightConstraint=_installButtonHeightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *installButtonWidthConstraint; // @synthesize installButtonWidthConstraint=_installButtonWidthConstraint;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(nonatomic) int installState; // @synthesize installState=_installState;
-- (void).cxx_destruct;
 - (void)_updateCellWithInstallState;
 - (void)layoutSubviews;
 - (void)updateConstraints;

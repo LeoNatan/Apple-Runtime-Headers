@@ -6,9 +6,7 @@
 
 #import <swiftCore/_TtCs12_SwiftObject.h>
 
-#import <NewsUI2/TSBridgedNewsActivityFactoryType-Protocol.h>
-
-@interface _TtC7NewsUI226BridgedNewsActivityFactory : _TtCs12_SwiftObject <TSBridgedNewsActivityFactoryType>
+@interface _TtC7NewsUI226BridgedNewsActivityFactory : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: tagService
     // Error parsing type: , name: headlineService

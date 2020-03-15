@@ -16,9 +16,9 @@
     NSColorPickerTouchBarItem *_colorBarItem;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSColorPickerTouchBarItem *colorBarItem; // @synthesize colorBarItem=_colorBarItem;
 @property(copy) NSColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)syncTextAttributesToUI:(id)arg1;
 - (id)convertTextAttributes:(id)arg1;
 @property(readonly) long long tag;

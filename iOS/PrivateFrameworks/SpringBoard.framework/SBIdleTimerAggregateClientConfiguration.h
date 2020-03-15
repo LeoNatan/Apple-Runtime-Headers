@@ -18,10 +18,10 @@
     SBIdleTimerTimeoutPrecedenceSettings *_maxExpirationTimeoutSettings;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBIdleTimerTimeoutPrecedenceSettings *maxExpirationTimeoutSettings; // @synthesize maxExpirationTimeoutSettings=_maxExpirationTimeoutSettings;
 @property(readonly, nonatomic) SBIdleTimerTimeoutPrecedenceSettings *minExpirationTimeoutSettings; // @synthesize minExpirationTimeoutSettings=_minExpirationTimeoutSettings;
 @property(readonly, nonatomic) SBIdleTimerConfigurationDisablesTimerSetting *disableTimerSetting; // @synthesize disableTimerSetting=_disableTimerSetting;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

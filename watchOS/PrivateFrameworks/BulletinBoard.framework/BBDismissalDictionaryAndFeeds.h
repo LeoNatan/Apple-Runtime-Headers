@@ -14,9 +14,9 @@
     double _dismissalTimeInterval;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *dismissalHash; // @synthesize dismissalHash=_dismissalHash;
 @property(readonly, nonatomic) double dismissalTimeInterval; // @synthesize dismissalTimeInterval=_dismissalTimeInterval;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)matchDismissalDictionary:(id)arg1;
 - (id)initWithDismissalDictionary:(id)arg1 andFeeds:(unsigned int)arg2;

@@ -13,9 +13,9 @@
 @interface PXWidgetBarSpec : NSObject <NSCopying>
 {
     BOOL _shouldUseSingleLine;
-    struct NSColor *_textColor;
-    struct NSFont *_primaryFont;
-    struct NSFont *_secondaryFont;
+    NSColor *_textColor;
+    NSFont *_primaryFont;
+    NSFont *_secondaryFont;
     double _distanceBetweenTopAndFirstBaseline;
     double _distanceBetweenLastBaselineAndBottom;
     double _minimumDistanceBetweenTopAndFirstAscender;
@@ -25,6 +25,7 @@
     struct NSEdgeInsets _contentInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double horizontalSpacingBetweenTitleAndSubtitle; // @synthesize horizontalSpacingBetweenTitleAndSubtitle=_horizontalSpacingBetweenTitleAndSubtitle;
 @property(nonatomic) double distanceBetweenTitleBaselineAndSubtitleBaseline; // @synthesize distanceBetweenTitleBaselineAndSubtitleBaseline=_distanceBetweenTitleBaselineAndSubtitleBaseline;
 @property(nonatomic) double minimumDistanceBetweenLastDescenderAndBottom; // @synthesize minimumDistanceBetweenLastDescenderAndBottom=_minimumDistanceBetweenLastDescenderAndBottom;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSFont *secondaryFont; // @synthesize secondaryFont=_secondaryFont;
 @property(retain, nonatomic) NSFont *primaryFont; // @synthesize primaryFont=_primaryFont;
 @property(retain, nonatomic) NSColor *textColor; // @synthesize textColor=_textColor;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_key;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 @property(retain, nonatomic) NSString *parentClassName; // @synthesize parentClassName=_parentClassName;
-- (void).cxx_destruct;
 
 @end
 

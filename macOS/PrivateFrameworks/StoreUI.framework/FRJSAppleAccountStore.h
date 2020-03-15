@@ -16,9 +16,9 @@
     CKStoreAccount *_primaryStoreAccount;
 }
 
+- (void).cxx_destruct;
 @property(readonly) CKStoreAccount *primaryStoreAccount; // @synthesize primaryStoreAccount=_primaryStoreAccount;
 @property(readonly) CKAccountStore *accountStore; // @synthesize accountStore=_accountStore;
-- (void).cxx_destruct;
 - (void)accountStore:(id)arg1 primaryAccountChanged:(id)arg2;
 - (id)_accountForDSID:(id)arg1;
 - (id)_getAccounts;

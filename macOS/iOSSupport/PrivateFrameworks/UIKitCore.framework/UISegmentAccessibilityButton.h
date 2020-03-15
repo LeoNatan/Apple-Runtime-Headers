@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)buttonWithSegment:(id)arg1;
-@property(retain, nonatomic) UISegment *segment; // @synthesize segment=_segment;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UISegment *segment; // @synthesize segment=_segment;
 - (id)hitTest:(struct CGPoint)arg1 forEvent:(struct __GSEvent *)arg2;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;

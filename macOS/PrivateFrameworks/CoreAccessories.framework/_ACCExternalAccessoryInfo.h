@@ -23,6 +23,7 @@
     unsigned long long _destinationSharingOptions;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long destinationSharingOptions; // @synthesize destinationSharingOptions=_destinationSharingOptions;
 @property(retain) NSString *ppid; // @synthesize ppid=_ppid;
 @property(retain) NSString *hardwareRevision; // @synthesize hardwareRevision=_hardwareRevision;
@@ -34,7 +35,6 @@
 @property(retain) NSString *name; // @synthesize name=_name;
 @property(retain) NSString *primaryUUID; // @synthesize primaryUUID=_primaryUUID;
 @property(retain) NSDictionary *fullAccessoryInfo; // @synthesize fullAccessoryInfo=_fullAccessoryInfo;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyAccessoryInfo;

@@ -13,8 +13,8 @@
     AXSSInterDeviceSearchResult *_device;
 }
 
-@property(retain, nonatomic) AXSSInterDeviceSearchResult *device; // @synthesize device=_device;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AXSSInterDeviceSearchResult *device; // @synthesize device=_device;
 - (id)init;
 
 @end

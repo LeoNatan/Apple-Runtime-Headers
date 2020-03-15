@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     CKRecord *_record;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKRecord *record; // @synthesize record=_record;
 @property(retain, nonatomic) NSString *etag; // @synthesize etag=_etag;
 @property(retain, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)CKPropertiesDescription;
 

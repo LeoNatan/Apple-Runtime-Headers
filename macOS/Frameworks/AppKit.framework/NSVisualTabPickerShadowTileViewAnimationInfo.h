@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_animationKey;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *animationKey; // @synthesize animationKey=_animationKey;
 @property(readonly, nonatomic) CALayer *layerForAnimation; // @synthesize layerForAnimation=_layerForAnimation;
-- (void).cxx_destruct;
 - (id)initWithLayerForAnimation:(id)arg1 animationKey:(id)arg2;
 
 @end

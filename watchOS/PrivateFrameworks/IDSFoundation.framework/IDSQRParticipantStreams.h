@@ -17,11 +17,11 @@
 }
 
 + (id)streamWithParticipantID:(id)arg1 streamArray:(id)arg2 anyParticipant:(_Bool)arg3 anyStream:(_Bool)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool anyStream; // @synthesize anyStream=_anyStream;
 @property(readonly, nonatomic) _Bool anyParticipant; // @synthesize anyParticipant=_anyParticipant;
 @property(readonly) NSMutableArray *streamArray; // @synthesize streamArray=_streamArray;
 @property(readonly) NSNumber *participantID; // @synthesize participantID=_participantID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithParticipantID:(id)arg1 streamArray:(id)arg2 anyParticipant:(_Bool)arg3 anyStream:(_Bool)arg4;
 

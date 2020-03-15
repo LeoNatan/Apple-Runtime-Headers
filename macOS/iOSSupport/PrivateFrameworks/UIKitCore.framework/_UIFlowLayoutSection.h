@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _footerFrame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct _NSRange validItemRange; // @synthesize validItemRange=_validItemRange;
 @property(readonly, nonatomic) long long indexOfIncompleteRow; // @synthesize indexOfIncompleteRow=_indexOfIncompleteRow;
 @property(readonly, nonatomic) long long itemsByRowCount; // @synthesize itemsByRowCount=_itemsByRowCount;
@@ -69,7 +70,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double verticalInterstice; // @synthesize verticalInterstice=_verticalInterstice;
 @property(readonly, nonatomic) NSMutableArray *rows; // @synthesize rows=_rows;
 @property(readonly, nonatomic) NSMutableArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (id)rowsInRect:(struct CGRect)arg1;
 - (void)addInvalidatedIndexPath:(id)arg1;
 - (void)setSize:(struct CGSize)arg1 forItemAtIndexPath:(id)arg2 invalidationContext:(id)arg3;

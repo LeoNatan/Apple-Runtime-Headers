@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     BRCZoneRowID *_zoneRowID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BRCZoneRowID *zoneRowID; // @synthesize zoneRowID=_zoneRowID;
 @property(readonly, nonatomic) long long intID; // @synthesize intID=_intID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToIntAndZoneJobIdentifier:(id)arg1;

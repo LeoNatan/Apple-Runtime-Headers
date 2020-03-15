@@ -20,13 +20,13 @@
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool canExpand; // @synthesize canExpand=_canExpand;
 @property(retain, nonatomic) NSString *laidOutContentSizeCategory; // @synthesize laidOutContentSizeCategory=_laidOutContentSizeCategory;
 @property(nonatomic) double laidOutWidth; // @synthesize laidOutWidth=_laidOutWidth;
 @property(retain, nonatomic) UIButton *moreButton; // @synthesize moreButton=_moreButton;
 @property(nonatomic) __weak id <NTKCFaceDetailExpandableDescriptionCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool expanded; // @synthesize expanded=_expanded;
-- (void).cxx_destruct;
 - (void)_fontSizeDidChange;
 - (void)_moreTapped;
 - (id)_moreButton;

@@ -16,10 +16,10 @@
     id <SUOSULaterDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <SUOSULaterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSDate *estimatedFireDate; // @synthesize estimatedFireDate=_estimatedFireDate;
 @property BOOL isArmed; // @synthesize isArmed=_isArmed;
-- (void).cxx_destruct;
 - (BOOL)isMaintenanceDarkWake;
 - (BOOL)isDarkWake;
 - (BOOL)onACPower;

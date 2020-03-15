@@ -18,11 +18,11 @@
 }
 
 + (id)changesNotifier;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(nonatomic) BOOL meCardChanged; // @synthesize meCardChanged=_meCardChanged;
 @property(retain, nonatomic) NSDictionary *changes; // @synthesize changes=_changes;
 @property(readonly, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)sendRecordsDidChange;
 - (void)sendMeDidChange;
 - (void)sendDidChangeNotifications;

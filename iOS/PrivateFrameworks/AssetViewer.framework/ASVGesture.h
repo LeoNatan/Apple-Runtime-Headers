@@ -16,6 +16,7 @@
     // Error parsing type: , name: _latestAssetLocationOnScreen
 }
 
+- (void).cxx_destruct;
 // Error parsing type for property latestAssetLocationOnScreen:
 // Property attributes: T,N,V_latestAssetLocationOnScreen
 
@@ -24,7 +25,6 @@
 
 @property(nonatomic) _Bool firstTouchWasOnAsset; // @synthesize firstTouchWasOnAsset=_firstTouchWasOnAsset;
 @property(nonatomic) __weak id <ASVGestureDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)finishGesture;
 - (void)updateGesture;
 - (id)initWithDataSource:(id)arg1;

@@ -27,6 +27,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)requiredHTTPHeadersForStreamingAssetVersion:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSArray *videoSegments; // @synthesize videoSegments=_videoSegments;
 @property(readonly, copy) HMCameraClipEncryptionContext *encryptionContext; // @synthesize encryptionContext=_encryptionContext;
 @property(readonly, copy) NSString *streamingAssetVersion; // @synthesize streamingAssetVersion=_streamingAssetVersion;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-- (void).cxx_destruct;
 @property(readonly) BOOL canAskForUserFeedback;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -17,10 +17,10 @@
     double _capHeight;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double capHeight; // @synthesize capHeight=_capHeight;
 @property(readonly, nonatomic) double baseline; // @synthesize baseline=_baseline;
 @property(readonly, nonatomic) NSData *pdfData; // @synthesize pdfData=_pdfData;
-- (void).cxx_destruct;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
 - (id)initWithPDFData:(id)arg1 baseline:(double)arg2 capHeight:(double)arg3;

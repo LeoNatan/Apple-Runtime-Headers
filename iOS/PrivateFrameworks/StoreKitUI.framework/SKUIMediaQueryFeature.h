@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsFeatureName:(id)arg1;
-@property(readonly, nonatomic) NSString *featureName; // @synthesize featureName=_featureName;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *featureName; // @synthesize featureName=_featureName;
 @property(readonly, nonatomic) NSArray *requiredKeys;
 @property(readonly, nonatomic) NSArray *notificationNames;
 - (_Bool)evaluateWithValues:(id)arg1;

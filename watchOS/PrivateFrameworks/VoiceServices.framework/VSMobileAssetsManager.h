@@ -29,8 +29,8 @@
 + (id)queryForLanguage:(id)arg1 forType:(long)arg2 voicename:(id)arg3 gender:(long)arg4 footprint:(long)arg5 returnTypes:(int)arg6;
 + (id)preinstallAssetsDirectory;
 + (id)sharedManager;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *assetQueryQueue; // @synthesize assetQueryQueue=_assetQueryQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *assetQueryQueue; // @synthesize assetQueryQueue=_assetQueryQueue;
 - (void)populateVoiceData:(id)arg1 fromAsset:(id)arg2;
 - (id)voiceDataFromAsset:(id)arg1;
 - (id)_localVoiceForLanguage:(id)arg1 gender:(long)arg2;
@@ -62,6 +62,7 @@
 - (void)amendVoiceWithDefaultSettings:(id)arg1;
 - (id)selectVoiceResourceAssetForLanguage:(id)arg1;
 - (id)_installedVoiceResourceAssetForLanguage:(id)arg1;
+- (id)builtInVoices;
 - (id)selectPreinstalledVoiceForLanguage:(id)arg1 gender:(long)arg2;
 - (id)preinstalledVoicesForLanguage:(id)arg1 gender:(long)arg2;
 - (id)voiceAssetFromPreinstallMetadata:(id)arg1;

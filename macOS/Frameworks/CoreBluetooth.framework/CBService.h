@@ -18,13 +18,13 @@
     NSNumber *_endHandle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *endHandle; // @synthesize endHandle=_endHandle;
 @property(readonly, nonatomic) NSNumber *startHandle; // @synthesize startHandle=_startHandle;
 @property(retain) NSArray *characteristics; // @synthesize characteristics=_characteristics;
 @property(retain) NSArray *includedServices; // @synthesize includedServices=_includedServices;
 @property(nonatomic) BOOL isPrimary; // @synthesize isPrimary=_isPrimary;
 @property(readonly, nonatomic) CBPeripheral *peripheral; // @synthesize peripheral=_peripheral;
-- (void).cxx_destruct;
 - (id)handleCharacteristicsDiscovered:(id)arg1;
 - (id)handleIncludedServicesDiscovered:(id)arg1;
 - (void)invalidate;

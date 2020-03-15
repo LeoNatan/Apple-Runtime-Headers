@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     unsigned int _messageBufferLimit;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int messageBufferLimit; // @synthesize messageBufferLimit=_messageBufferLimit;
 @property(retain, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
-- (void).cxx_destruct;
 - (void)_writeLogMessageFromActions:(id)arg1 includingPartNumber:(_Bool)arg2;
 - (id)_logMessageFromPendingLogActions:(id)arg1 includingPartNumber:(_Bool)arg2;
 - (void)_addAction:(id)arg1 toPendingActions:(id)arg2 limit:(unsigned int)arg3;

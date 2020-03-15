@@ -13,8 +13,8 @@
     UIImage *_image;
 }
 
-@property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

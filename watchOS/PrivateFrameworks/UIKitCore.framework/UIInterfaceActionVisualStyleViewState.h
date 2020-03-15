@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     UIColor *_tintColor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(readonly, nonatomic) UIScreen *screen; // @synthesize screen=_screen;
 @property(readonly, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
-- (void).cxx_destruct;
 - (_Bool)_stateEqualToVisualStyleViewState:(id)arg1;
 - (void)_collectStateFromVisualStyleViewState:(id)arg1;
 - (void)_collectStateFromScreen:(id)arg1;

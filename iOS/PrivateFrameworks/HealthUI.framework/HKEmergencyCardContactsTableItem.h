@@ -23,9 +23,9 @@
     HKCoreTelephonyUtilities *_coreTelephonyUtilities;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKCoreTelephonyUtilities *coreTelephonyUtilities; // @synthesize coreTelephonyUtilities=_coreTelephonyUtilities;
 @property(nonatomic) __weak id <HKEmergencyCardContactUpdateDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)titleForHeader;
 - (id)viewOnlyTitle;
 - (id)titleForFooter;

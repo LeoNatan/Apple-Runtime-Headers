@@ -33,10 +33,10 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly) BOOL isRenderingImage; // @synthesize isRenderingImage=_isRenderingImage;
 @property(readonly) BOOL isLoadingMasterImage; // @synthesize isLoadingMasterImage=_isLoadingMasterImage;
-- (void).cxx_destruct;
 - (void)updateOrientation;
 - (void)setupAssetClient:(id)arg1 forMode:(id)arg2 key:(id)arg3;
 - (void)_didLoadModeWithSuccess:(BOOL)arg1;

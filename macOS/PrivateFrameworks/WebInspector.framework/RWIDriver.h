@@ -20,6 +20,7 @@
     id <RWIDriverSessionProvider> _sessionProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <RWIDriverSessionProvider> sessionProvider; // @synthesize sessionProvider=_sessionProvider;
 @property(readonly, nonatomic) RWITarget *target; // @synthesize target=_target;
 @property(readonly, nonatomic, getter=isRegistered) BOOL registered; // @synthesize registered=_registered;
@@ -27,7 +28,6 @@
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id <RWIDriverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)start;
 - (id)sessionWithIdentifier:(id)arg1;

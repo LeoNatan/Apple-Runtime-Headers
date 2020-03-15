@@ -18,12 +18,12 @@
 }
 
 + (id)parseChannelsFromPayload:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int environmentHash; // @synthesize environmentHash=_environmentHash;
 @property(copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(nonatomic) _Bool filtered; // @synthesize filtered=_filtered;
 @property(retain, nonatomic) NSDictionary *channels; // @synthesize channels=_channels;
 @property(retain, nonatomic) NSArray *orderedChannels; // @synthesize orderedChannels=_orderedChannels;
-- (void).cxx_destruct;
 - (_Bool)isValidForFiltered:(_Bool)arg1;
 - (id)initWithDictionary:(id)arg1 expirationDate:(id)arg2 environmentHash:(unsigned int)arg3 filtered:(_Bool)arg4;
 

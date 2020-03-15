@@ -29,9 +29,9 @@
 + (double)_keyboardAccessoryViewHeight;
 + (double)_textFieldHeight;
 + (id)_textFieldFont;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SiriUIKeyboardViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UITextField *textField; // @synthesize textField=_textField;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (double)_visibleHeightFromNotification:(id)arg1;
 - (void)_keyboardWillHide:(id)arg1;

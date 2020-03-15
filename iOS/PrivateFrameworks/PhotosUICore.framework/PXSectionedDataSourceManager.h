@@ -15,8 +15,8 @@
     PXSectionedChangeDetailsRepository *_changeHistory;
 }
 
-@property(readonly, nonatomic) PXSectionedChangeDetailsRepository *changeHistory; // @synthesize changeHistory=_changeHistory;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXSectionedChangeDetailsRepository *changeHistory; // @synthesize changeHistory=_changeHistory;
 @property(readonly, nonatomic) PXSectionedDataSource *dataSource;
 - (id)createInitialDataSource;
 - (id)queryObserversInterestingObjectReferences;

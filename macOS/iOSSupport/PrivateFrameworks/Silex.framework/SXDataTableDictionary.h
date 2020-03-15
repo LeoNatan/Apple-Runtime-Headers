@@ -19,11 +19,11 @@
 }
 
 + (id)dataTableDictionaryWithRows:(unsigned long long)arg1 andColumns:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *storage; // @synthesize storage=_storage;
 @property(retain, nonatomic) NSMutableIndexSet *indexes; // @synthesize indexes=_indexes;
 @property(readonly, nonatomic) unsigned long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
 @property(readonly, nonatomic) unsigned long long numberOfRows; // @synthesize numberOfRows=_numberOfRows;
-- (void).cxx_destruct;
 - (id)description;
 - (id)arrayWithObject:(id)arg1 forCount:(unsigned long long)arg2;
 - (unsigned long long)indexForIndexPath:(CDStruct_2fea82da)arg1;

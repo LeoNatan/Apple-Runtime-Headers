@@ -18,9 +18,9 @@
     AXThreadTimerTask *_task;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool automaticallyCancelPendingBlockUponSchedulingNewBlock; // @synthesize automaticallyCancelPendingBlockUponSchedulingNewBlock=_automaticallyCancelPendingBlockUponSchedulingNewBlock;
 @property(retain, nonatomic) AXThreadTimerTask *task; // @synthesize task=_task;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isActive) _Bool active;
 @property(readonly, nonatomic, getter=isPending) _Bool pending;
 @property(readonly, nonatomic, getter=isCancelled) _Bool cancelled;

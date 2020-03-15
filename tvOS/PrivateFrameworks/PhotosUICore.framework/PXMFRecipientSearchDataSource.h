@@ -13,8 +13,8 @@
     NSArray *_searchResults;
 }
 
-@property(readonly, nonatomic) NSArray *searchResults; // @synthesize searchResults=_searchResults;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *searchResults; // @synthesize searchResults=_searchResults;
 - (id)objectAtIndexPath:(struct PXSimpleIndexPath)arg1;
 - (long long)numberOfSubitemsInItem:(long long)arg1 section:(long long)arg2;
 - (long long)numberOfItemsInSection:(long long)arg1;

@@ -48,6 +48,7 @@
 }
 
 + (id)_legacyModeMapping;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long activeMechanisms; // @synthesize activeMechanisms=_activeMechanisms;
 @property(nonatomic) unsigned long long enabledMechanisms; // @synthesize enabledMechanisms=_enabledMechanisms;
 @property(nonatomic) __weak NSRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
@@ -70,7 +71,6 @@
 @property(retain, nonatomic) NSString *authHint; // @synthesize authHint=_authHint;
 @property(retain, nonatomic) NSString *authSubTitle; // @synthesize authSubTitle=_authSubTitle;
 @property(retain, nonatomic) NSString *authTitle; // @synthesize authTitle=_authTitle;
-- (void).cxx_destruct;
 - (void)placeHolderTextFieldDidBecomeFirstResponder:(id)arg1;
 - (void)_axSetupAccessibility;
 - (void)_axSpeakHintIfNecessary:(id)arg1;

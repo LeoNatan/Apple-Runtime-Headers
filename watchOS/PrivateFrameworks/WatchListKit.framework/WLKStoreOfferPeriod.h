@@ -14,9 +14,9 @@
     NSNumber *_duration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)_offerPeriodForString:(id)arg1;
 - (id)initWithString:(id)arg1;
 

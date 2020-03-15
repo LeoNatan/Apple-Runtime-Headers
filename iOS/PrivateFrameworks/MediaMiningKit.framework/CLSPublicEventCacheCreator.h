@@ -16,11 +16,11 @@
     double _queryRadius;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool simulatesTimeout; // @synthesize simulatesTimeout=_simulatesTimeout;
 @property(readonly, nonatomic) double queryRadius; // @synthesize queryRadius=_queryRadius;
 @property(readonly, nonatomic) unsigned long long maximumBatchSize; // @synthesize maximumBatchSize=_maximumBatchSize;
 @property(readonly, nonatomic) CLSPublicEventCache *cache; // @synthesize cache=_cache;
-- (void).cxx_destruct;
 - (id)_queryEventsForTimeLocationTuples:(id)arg1 invalidationTokens:(out id *)arg2 progressBlock:(CDUnknownBlockType)arg3 error:(id *)arg4;
 - (id)createCacheForTimeLocationTuples:(id)arg1 progressBlock:(CDUnknownBlockType)arg2;
 - (id)initWithCache:(id)arg1 queryRadius:(double)arg2;

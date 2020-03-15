@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_monitorQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *monitorQueue; // @synthesize monitorQueue=_monitorQueue;
 @property(nonatomic) struct __IOPMConnection *powerManagementConnection; // @synthesize powerManagementConnection=_powerManagementConnection;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(nonatomic) __weak id <SPPowerMonitorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)claimWakeWithReason:(id)arg1;
 - (void)stopMonitoring;
 - (void)startMonitoring;

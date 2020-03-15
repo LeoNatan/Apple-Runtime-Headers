@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     BOOL _shouldHideSeparator;
 }
 
-@property(nonatomic) BOOL shouldHideSeparator; // @synthesize shouldHideSeparator=_shouldHideSeparator;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL shouldHideSeparator; // @synthesize shouldHideSeparator=_shouldHideSeparator;
 - (void)_updateSeparatorForSelectedOrEmphasizedChange;
 - (void)_removeSeparator;
 - (void)_addSeparator;

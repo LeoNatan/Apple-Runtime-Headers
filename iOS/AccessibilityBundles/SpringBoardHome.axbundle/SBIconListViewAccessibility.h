@@ -15,7 +15,6 @@
 + (id)safeCategoryTargetClassName;
 - (double)_accessibilityMaxFuzzyHitTestDistance;
 - (_Bool)_accessibilityHitTestShouldFallbackToNearestChild;
-- (_Bool)_allowsFocusToLeaveViaHeading:(unsigned long long)arg1;
 - (_Bool)_accessibilityIsListViewEmptyForDragAndDrop;
 - (id)_accessibilityEmptyListDropString;
 - (id)accessibilityDropPointDescriptors;

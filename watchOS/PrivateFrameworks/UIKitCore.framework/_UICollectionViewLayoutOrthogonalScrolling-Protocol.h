@@ -19,7 +19,7 @@
 - (struct CGRect)_orthogonalScrollingContentRectForSection:(int)arg1;
 - (struct CGRect)_orthogonalScrollingLayoutRectForSection:(int)arg1;
 - (float)_orthogonalScrollingDecelerationRateForSection:(int)arg1;
-- (int)_orthogonalScrollingAxis;
+- (unsigned int)_orthogonalScrollingAxis;
 - (struct CGPoint)_orthogonalScrollingTargetContentOffsetForOffset:(struct CGPoint)arg1 section:(int)arg2;
 - (_Bool)_orthogonalScrollingUsesTargetContentOffsetForSection:(int)arg1;
 - (_Bool)_orthogonalScrollingShouldCenterCustomPagingSizeForSection:(int)arg1;

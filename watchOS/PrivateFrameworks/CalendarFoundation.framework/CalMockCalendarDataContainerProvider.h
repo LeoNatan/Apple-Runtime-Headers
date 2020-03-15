@@ -15,8 +15,8 @@
     NSURL *_calendarDataContainerURL;
 }
 
-@property(retain, nonatomic) NSURL *calendarDataContainerURL; // @synthesize calendarDataContainerURL=_calendarDataContainerURL;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSURL *calendarDataContainerURL; // @synthesize calendarDataContainerURL=_calendarDataContainerURL;
 - (id)containerForPersonaIdentifier:(id)arg1;
 
 // Remaining properties

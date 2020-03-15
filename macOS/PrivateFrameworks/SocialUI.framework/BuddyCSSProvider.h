@@ -15,10 +15,10 @@
     NSMutableSet *_visibleIMHandles;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *visibleIMHandles; // @synthesize visibleIMHandles=_visibleIMHandles;
 @property(nonatomic, setter=setIconSize:) unsigned int iconSize; // @synthesize iconSize=_iconSize;
 @property(nonatomic) TranscriptStyleController *styleController; // @synthesize styleController=_styleController;
-- (void).cxx_destruct;
 - (id)_personiconUrlForID:(id)arg1 accountGUID:(id)arg2 iconSize:(unsigned long long)arg3 hostPath:(id)arg4;
 - (void)updateInfoForIMHandle:(id)arg1 force:(BOOL)arg2;
 - (void)updateInfoForIMHandle:(id)arg1;

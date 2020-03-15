@@ -16,11 +16,11 @@
     BLHLSKey *_key;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BLHLSKey *key; // @synthesize key=_key;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) BLHLSMap *map; // @synthesize map=_map;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithURL:(id)arg1 duration:(double)arg2 map:(id)arg3 key:(id)arg4;
 

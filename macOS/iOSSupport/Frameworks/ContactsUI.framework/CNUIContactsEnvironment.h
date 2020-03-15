@@ -38,6 +38,7 @@
 
 + (id)makeCurrentEnvironment;
 + (id)currentEnvironment;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContactsEnvironment *cnEnvironment; // @synthesize cnEnvironment=_cnEnvironment;
 @property(retain, nonatomic) CNHealthStoreManager *healthStoreManager; // @synthesize healthStoreManager=_healthStoreManager;
 @property(retain, nonatomic) CNCollation *collation; // @synthesize collation=_collation;
@@ -61,7 +62,6 @@
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) CNUISchedulerProvider *defaultSchedulerProvider; // @synthesize defaultSchedulerProvider=_defaultSchedulerProvider;
 @property(retain, nonatomic) id <CNUIApplicationLaunchCheckin> launchCheckinRegistrar; // @synthesize launchCheckinRegistrar=_launchCheckinRegistrar;
-- (void).cxx_destruct;
 - (id)nts_lazyHealthStoreManager;
 - (void)dealloc;
 - (struct UCollator *)nts_lazySortCollator;

@@ -17,9 +17,9 @@
 
 + (void)_performAction:(id)arg1 messageRepository:(id)arg2 undoManager:(id)arg3 actionName:(id)arg4;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MSMessageListItemSelection *messageListItemSelection; // @synthesize messageListItemSelection=_messageListItemSelection;
 @property(readonly, nonatomic) __weak id <MSTriageActionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)performWithUndoManager:(id)arg1 actionName:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_changeAction;
 @property(readonly, nonatomic) EMMessageRepository *messageRepository;

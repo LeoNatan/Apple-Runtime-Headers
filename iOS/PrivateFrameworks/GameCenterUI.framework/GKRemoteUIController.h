@@ -43,6 +43,7 @@
 }
 
 + (id)remoteUIController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) GKLocalPlayer *playerForRemoteUI; // @synthesize playerForRemoteUI=_playerForRemoteUI;
 @property(nonatomic) _Bool isServerAuthenticated; // @synthesize isServerAuthenticated=_isServerAuthenticated;
 @property(retain, nonatomic) NSString *alias; // @synthesize alias=_alias;
@@ -67,7 +68,6 @@
 @property(nonatomic) _Bool loading; // @synthesize loading=_loading;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (void)auxiliaryView:(id)arg1 pressedLink:(id)arg2 attributes:(id)arg3;
 - (void)auxiliaryView:(id)arg1 pressedButton:(id)arg2 attributes:(id)arg3;
 - (id)objectModel:(id)arg1 tableFooterViewForAttributes:(id)arg2 page:(id)arg3;

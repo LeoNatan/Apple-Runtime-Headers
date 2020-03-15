@@ -18,9 +18,9 @@
     UIImage *_currentImage;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int displayedIndex; // @synthesize displayedIndex=_displayedIndex;
 @property(readonly, nonatomic) unsigned int maxIndex; // @synthesize maxIndex=_maxIndex;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)clearCaches;
 - (void)displayImageForPercentage:(float)arg1;

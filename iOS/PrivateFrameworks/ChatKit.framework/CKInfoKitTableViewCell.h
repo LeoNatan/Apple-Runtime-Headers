@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)identifier;
-@property(retain, nonatomic) INKContentView *infoKitContentView; // @synthesize infoKitContentView=_infoKitContentView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) INKContentView *infoKitContentView; // @synthesize infoKitContentView=_infoKitContentView;
 - (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

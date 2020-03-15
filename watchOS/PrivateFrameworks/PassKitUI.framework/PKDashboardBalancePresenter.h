@@ -17,8 +17,8 @@
     int _cellStyle;
 }
 
-@property(nonatomic) int cellStyle; // @synthesize cellStyle=_cellStyle;
 - (void).cxx_destruct;
+@property(nonatomic) int cellStyle; // @synthesize cellStyle=_cellStyle;
 - (_Bool)_shouldInset;
 - (void)traitCollectionDidChangeFromTrait:(id)arg1 toTrait:(id)arg2 inCollectionView:(id)arg3;
 - (void)_updateMessageView:(id)arg1 withItem:(id)arg2;

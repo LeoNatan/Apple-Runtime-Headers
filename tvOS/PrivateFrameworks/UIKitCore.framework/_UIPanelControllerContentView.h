@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIPanelController *__panelController;
 }
 
-@property(nonatomic, getter=_panelController, setter=_setPanelController:) __weak UIPanelController *_panelController; // @synthesize _panelController=__panelController;
 - (void).cxx_destruct;
+@property(nonatomic, getter=_panelController, setter=_setPanelController:) __weak UIPanelController *_panelController; // @synthesize _panelController=__panelController;
 
 @end
 

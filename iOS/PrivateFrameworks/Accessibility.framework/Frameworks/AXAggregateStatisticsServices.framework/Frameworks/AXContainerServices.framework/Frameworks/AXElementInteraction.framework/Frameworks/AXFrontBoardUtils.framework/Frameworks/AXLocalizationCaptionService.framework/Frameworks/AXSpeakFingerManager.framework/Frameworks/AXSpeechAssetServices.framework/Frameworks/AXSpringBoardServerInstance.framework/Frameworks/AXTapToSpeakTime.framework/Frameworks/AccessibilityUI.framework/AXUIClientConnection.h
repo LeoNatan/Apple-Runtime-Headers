@@ -21,6 +21,7 @@
 }
 
 + (id)sharedClientConnection;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *stateObserverQueue; // @synthesize stateObserverQueue=_stateObserverQueue;
 @property(retain, nonatomic) NSHashTable *stateObservers; // @synthesize stateObservers=_stateObservers;
 @property(retain, nonatomic) AXAccessQueue *registeredClientsAccessQueue; // @synthesize registeredClientsAccessQueue=_registeredClientsAccessQueue;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) AXAccessQueue *connectionAccessQueue; // @synthesize connectionAccessQueue=_connectionAccessQueue;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(nonatomic, getter=isConnected) _Bool connected; // @synthesize connected=_connected;
-- (void).cxx_destruct;
 - (void)unregisterConnectionStateObserver:(id)arg1;
 - (void)registerConnectionStateObserver:(id)arg1;
 - (void)_broadcastConnectedStateChange;

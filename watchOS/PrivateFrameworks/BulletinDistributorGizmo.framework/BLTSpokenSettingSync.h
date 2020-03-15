@@ -22,6 +22,7 @@
     NSURL *_remoteSettingStoreURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *remoteSettingStoreURL; // @synthesize remoteSettingStoreURL=_remoteSettingStoreURL;
 @property(retain, nonatomic) BLTSettingSyncServer *syncServer; // @synthesize syncServer=_syncServer;
 @property(retain, nonatomic) BBSettingsGateway *settingsGateway; // @synthesize settingsGateway=_settingsGateway;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSDate *localGlobalSpokenSettingDate; // @synthesize localGlobalSpokenSettingDate=_localGlobalSpokenSettingDate;
 @property(nonatomic) _Bool remoteGlobalSpokenSettingEnabled; // @synthesize remoteGlobalSpokenSettingEnabled=_remoteGlobalSpokenSettingEnabled;
 @property(nonatomic) _Bool localGlobalSpokenSettingEnabled; // @synthesize localGlobalSpokenSettingEnabled=_localGlobalSpokenSettingEnabled;
-- (void).cxx_destruct;
 - (void)_queue_synchronizeSettingsWithLocalEnabled:(_Bool)arg1;
 - (void)_queue_setNewLocalStateFromRemote:(_Bool)arg1;
 - (void)_queue_resolveState;

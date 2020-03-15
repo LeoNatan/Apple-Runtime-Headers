@@ -18,11 +18,11 @@
     NSMutableArray *_fontFamilyProviders;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *fontFamilyProviders; // @synthesize fontFamilyProviders=_fontFamilyProviders;
 @property(readonly, nonatomic) NSCache *fontToAttributeIndex; // @synthesize fontToAttributeIndex=_fontToAttributeIndex;
 @property(readonly, nonatomic) NSCache *attributeToFontIndex; // @synthesize attributeToFontIndex=_attributeToFontIndex;
 @property(readonly, nonatomic) NSDictionary *fonts; // @synthesize fonts=_fonts;
-- (void).cxx_destruct;
 - (id)fontsForFamilyProviders:(id)arg1;
 - (id)fontAttributesForFontName:(id)arg1;
 - (id)fontNameForFontAttributes:(id)arg1 size:(long long)arg2;

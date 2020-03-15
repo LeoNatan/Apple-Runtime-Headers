@@ -12,16 +12,16 @@
 {
     BOOL _showAsFileIcon;
     BOOL _isMovie;
-    struct NSImage *_image;
+    NSImage *_image;
     unsigned long long _imageScaling;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isMovie; // @synthesize isMovie=_isMovie;
 @property(nonatomic) BOOL showAsFileIcon; // @synthesize showAsFileIcon=_showAsFileIcon;
 @property(nonatomic) unsigned long long imageScaling; // @synthesize imageScaling=_imageScaling;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
-- (id)initWithImage:(struct NSImage *)arg1 imageScaling:(unsigned long long)arg2 showAsFileIcon:(BOOL)arg3 isMovie:(BOOL)arg4;
+- (id)initWithImage:(id)arg1 imageScaling:(unsigned long long)arg2 showAsFileIcon:(BOOL)arg3 isMovie:(BOOL)arg4;
 
 @end
 

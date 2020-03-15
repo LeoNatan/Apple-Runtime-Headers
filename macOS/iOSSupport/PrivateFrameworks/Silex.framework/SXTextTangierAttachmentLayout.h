@@ -13,8 +13,8 @@
     TSDWrapPolygon *_polygon;
 }
 
-@property(retain, nonatomic) TSDWrapPolygon *polygon; // @synthesize polygon=_polygon;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TSDWrapPolygon *polygon; // @synthesize polygon=_polygon;
 - (void)storeActualPosition;
 - (struct CGRect)boundsInRoot;
 - (struct CGRect)boundsInfluencingExteriorWrap;

@@ -19,8 +19,8 @@
 
 + (id)loadSpecifiersFromPlist:(id)arg1 inBundle:(id)arg2 target:(id)arg3 stringsTable:(id)arg4;
 + (id)sharedInstance;
-@property(readonly, nonatomic) NSMutableArray *specifiers; // @synthesize specifiers=_specifiers;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableArray *specifiers; // @synthesize specifiers=_specifiers;
 - (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
 - (id)readPreferenceValue:(id)arg1;
 - (id)specifierForID:(id)arg1;

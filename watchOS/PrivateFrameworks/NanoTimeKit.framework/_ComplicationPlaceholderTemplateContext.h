@@ -18,9 +18,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)currentContext;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *localeIdentifier; // @synthesize localeIdentifier=_localeIdentifier;
 @property(readonly, nonatomic) NSString *preferredLocalizationIdentifier; // @synthesize preferredLocalizationIdentifier=_preferredLocalizationIdentifier;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;

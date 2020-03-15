@@ -28,6 +28,7 @@
     NSArray *_excludeScopes;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *excludeScopes; // @synthesize excludeScopes=_excludeScopes;
 @property(retain) NSArray *scopes; // @synthesize scopes=_scopes;
 @property(retain) NSArray *sortingAttributeNames; // @synthesize sortingAttributeNames=_sortingAttributeNames;
@@ -44,7 +45,6 @@
 @property BOOL matchesFinderFilesOnly; // @synthesize matchesFinderFilesOnly=_matchesFinderFilesOnly;
 @property unsigned long long maxCount; // @synthesize maxCount=_maxCount;
 @property unsigned long long searchId; // @synthesize searchId=_searchId;
-- (void).cxx_destruct;
 
 @end
 

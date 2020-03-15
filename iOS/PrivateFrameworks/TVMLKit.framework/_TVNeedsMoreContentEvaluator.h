@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     double _threshold;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double threshold; // @synthesize threshold=_threshold;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) long long axis; // @synthesize axis=_axis;
 @property(readonly, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (void)reset;
 - (void)evaluateForState:(long long)arg1;
 - (id)initWithScrollView:(id)arg1 axis:(long long)arg2;

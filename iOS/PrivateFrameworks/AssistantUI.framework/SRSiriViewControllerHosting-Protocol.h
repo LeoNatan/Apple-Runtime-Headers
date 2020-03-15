@@ -9,7 +9,7 @@
 @class NSDictionary, NSString, NSURL, SASRequestOptions;
 
 @protocol SRSiriViewControllerHosting <NSObject>
-- (void)serviceViewControllerRequestsDismissal:(void (^)(_Bool))arg1;
+- (void)serviceViewControllerRequestsDismissalWithDismissalReason:(unsigned long long)arg1 completion:(void (^)(_Bool))arg2;
 - (void)serviceViewControllerRequestsPresentation:(void (^)(_Bool))arg1;
 - (void)serviceDidRequestCurrentTextInput:(void (^)(NSString *))arg1;
 - (void)serviceDidEndTaptoEdit;
@@ -54,7 +54,7 @@
 - (void)serviceDidReadBulletinWithIdentifier:(NSString *)arg1;
 - (void)serviceBulletinWithIdentifier:(NSString *)arg1 replyHandler:(void (^)(AFBulletin *))arg2;
 - (void)serviceStartGuidedAccess;
-- (void)serviceRequestsDismissalWithDelayForTTS:(_Bool)arg1 userInfo:(NSDictionary *)arg2;
+- (void)serviceRequestsDismissalWithDelayForTTS:(_Bool)arg1 userInfo:(NSDictionary *)arg2 withDismissalReason:(unsigned long long)arg3;
 - (void)serviceRequestsActivationSourceWithReplyHandler:(void (^)(long long))arg1;
 
 @optional

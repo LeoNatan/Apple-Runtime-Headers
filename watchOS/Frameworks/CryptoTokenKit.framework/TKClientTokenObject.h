@@ -19,13 +19,13 @@
     NSDictionary *_keychainAttributes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *keychainAttributes; // @synthesize keychainAttributes=_keychainAttributes;
 @property(readonly, nonatomic) NSData *publicKey; // @synthesize publicKey=_publicKey;
 @property(readonly, nonatomic) NSData *value; // @synthesize value=_value;
 @property(readonly, nonatomic) NSData *accessControl; // @synthesize accessControl=_accessControl;
 @property(readonly, nonatomic) NSData *objectID; // @synthesize objectID=_objectID;
 @property(readonly, nonatomic) TKClientTokenSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (_Bool)deleteWithError:(id *)arg1;
 - (_Bool)commitKeyWithError:(id *)arg1;
 - (_Bool)bumpKeyWithError:(id *)arg1;

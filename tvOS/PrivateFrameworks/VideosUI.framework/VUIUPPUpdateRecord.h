@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     VUIUniversalPlaybackPositionRecord *_uppRecord;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIUniversalPlaybackPositionRecord *uppRecord; // @synthesize uppRecord=_uppRecord;
 @property(retain, nonatomic) VUIBookmarkKey *bookmarkKey; // @synthesize bookmarkKey=_bookmarkKey;
-- (void).cxx_destruct;
 
 @end
 

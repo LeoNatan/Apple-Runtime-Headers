@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     NSString *_statusKey;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *statusKey; // @synthesize statusKey=_statusKey;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *statusDictionary;
 @property(readonly, nonatomic) NSString *status;
 - (void)noteRequestForResource:(id)arg1 successful:(_Bool)arg2 prunedSize:(unsigned long long)arg3;

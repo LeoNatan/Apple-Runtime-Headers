@@ -41,6 +41,7 @@
 + (Class)supportedProtocolsType;
 + (Class)requiredFieldsType;
 + (Class)regionsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *requestedProvisioningMethods; // @synthesize requestedProvisioningMethods=_requestedProvisioningMethods;
 @property(retain, nonatomic) NSMutableArray *paymentOptions; // @synthesize paymentOptions=_paymentOptions;
 @property(nonatomic) _Bool suppressPendingPurchases; // @synthesize suppressPendingPurchases=_suppressPendingPurchases;
@@ -57,7 +58,6 @@
 @property(retain, nonatomic) NSString *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
 @property(retain, nonatomic) NSMutableArray *regions; // @synthesize regions=_regions;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

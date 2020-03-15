@@ -16,10 +16,10 @@
     CXCallDirectoryManager *_callDirectoryManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CXCallDirectoryManager *callDirectoryManager; // @synthesize callDirectoryManager=_callDirectoryManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(nonatomic) __weak id <TUDynamicCallDisplayContextDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_initializeAsynchronousStateWithCall:(id)arg1;
 - (void)_initializeSynchronousStateWithCall:(id)arg1 contactIdentifier:(id)arg2 contactsDataProvider:(id)arg3;

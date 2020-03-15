@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_contentItems;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsCoercion; // @synthesize allowsCoercion=_allowsCoercion;
 @property(retain, nonatomic) NSArray *contentItems; // @synthesize contentItems=_contentItems;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

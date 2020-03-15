@@ -19,11 +19,11 @@
     NSString *_numberText;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *numberText; // @synthesize numberText=_numberText;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(nonatomic) unsigned long long badgeNumber; // @synthesize badgeNumber=_badgeNumber;
-- (void).cxx_destruct;
 - (struct CGSize)_numberLabelSizeForText:(id)arg1 withAttributes:(id)arg2;
 - (id)_numberImageForNumberText:(id)arg1 withAttributes:(id)arg2;
 - (id)_numberAttributedStringWithNumberText:(id)arg1 attributes:(id)arg2;

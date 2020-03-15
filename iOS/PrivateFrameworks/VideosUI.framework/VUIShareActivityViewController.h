@@ -19,16 +19,13 @@ __attribute__((visibility("hidden")))
     NSString *_itemSubtitle;
 }
 
-+ (void)_prepareShareSheet:(id *)arg1 applicationActivities:(id *)arg2 inViewElement:(id)arg3;
-+ (id)configureViewWithElement:(id)arg1;
 + (void)shareMediaWithShareSheet:(id)arg1;
 + (void)shareMediaItem:(id)arg1 title:(id)arg2 subtitle:(id)arg3 imageURLStr:(id)arg4 sourceView:(id)arg5;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *itemSubtitle; // @synthesize itemSubtitle=_itemSubtitle;
 @property(retain, nonatomic) NSString *itemTitle; // @synthesize itemTitle=_itemTitle;
 @property(retain, nonatomic) NSURL *itemImageURL; // @synthesize itemImageURL=_itemImageURL;
-- (void).cxx_destruct;
 - (void)_prepareActivity:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)updateWithViewElement:(id)arg1;
 - (id)initWithActivityItems:(id)arg1 applicationActivities:(id)arg2;
 
 @end

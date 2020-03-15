@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSDictionary *_weights;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *weights; // @synthesize weights=_weights;
 @property(nonatomic) unsigned long long outputChannels; // @synthesize outputChannels=_outputChannels;
 @property(retain, nonatomic) MLFoundationTensor *inputTensor; // @synthesize inputTensor=_inputTensor;
-- (void).cxx_destruct;
 - (id)addCommonLayersWithIndex:(unsigned long long)arg1 outputChannels:(unsigned long long)arg2 source:(id)arg3 graph:(id)arg4;
 - (id)batchNormLayerForIndex:(unsigned long long)arg1;
 - (id)convLayerForIndex:(unsigned long long)arg1 outputChannels:(unsigned long long)arg2;

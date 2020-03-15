@@ -14,9 +14,9 @@
     _Bool _ackReceived;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ackReceived; // @synthesize ackReceived=_ackReceived;
 @property(retain, nonatomic) APSOutgoingMessageCheckpointTrace *checkpointTrace; // @synthesize checkpointTrace=_checkpointTrace;
-- (void).cxx_destruct;
 - (void)setPushFlags:(unsigned int)arg1;
 - (unsigned int)pushFlags;
 @property(nonatomic) unsigned int ackTimestamp;

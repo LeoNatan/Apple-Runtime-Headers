@@ -17,9 +17,9 @@
 + (id)defaultPreferenceStore;
 + (id)preferenceStoreWithSecurityApplicationGroupIdentifier:(id)arg1;
 + (id)pathnameForStoreFilename:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *store; // @synthesize store=_store;
 @property(retain, nonatomic) NSString *pathname; // @synthesize pathname=_pathname;
-- (void).cxx_destruct;
 - (void)load;
 - (void)removeAllItems;
 - (void)save;

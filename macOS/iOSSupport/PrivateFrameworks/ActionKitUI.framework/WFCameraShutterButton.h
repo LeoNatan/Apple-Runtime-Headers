@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CAShapeLayer *_buttonLayer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak CAShapeLayer *buttonLayer; // @synthesize buttonLayer=_buttonLayer;
 @property(nonatomic) __weak CAShapeLayer *outlineLayer; // @synthesize outlineLayer=_outlineLayer;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (BOOL)isAccessibilityElement;

@@ -16,8 +16,8 @@
     NSDictionary *_urlsToResults;
 }
 
-@property(readonly, retain, nonatomic) NSDictionary *urlsToResults; // @synthesize urlsToResults=_urlsToResults;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) NSDictionary *urlsToResults; // @synthesize urlsToResults=_urlsToResults;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (id)requestBody;

@@ -32,6 +32,7 @@
 
 + (id)_moduleWithSectionTitle:(id)arg1;
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(nonatomic) double inertialProjectionDeceleration; // @synthesize inertialProjectionDeceleration=_inertialProjectionDeceleration;
 @property(nonatomic) double inertialTargetSmoothingRatio; // @synthesize inertialTargetSmoothingRatio=_inertialTargetSmoothingRatio;
 @property(nonatomic) double trackingResponseSmoothing; // @synthesize trackingResponseSmoothing=_trackingResponseSmoothing;
@@ -48,7 +49,6 @@
 @property(nonatomic) double deceleration; // @synthesize deceleration=_deceleration;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) long long behaviorType; // @synthesize behaviorType=_behaviorType;
-- (void).cxx_destruct;
 - (double)_effectiveTrackingRetargetImpulse;
 - (double)_effectiveTrackingResponse;
 - (double)_effectiveTrackingDampingRatio;

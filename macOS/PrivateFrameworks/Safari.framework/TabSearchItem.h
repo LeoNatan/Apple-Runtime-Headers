@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 
 + (id)itemWithRepresentedObject:(id)arg1;
 + (id)itemWithTitle:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
-- (void).cxx_destruct;
 
 @end
 

@@ -28,9 +28,9 @@
     NSString *_searchText;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool usesNarrowLayout; // @synthesize usesNarrowLayout=_usesNarrowLayout;
 @property(copy, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
-- (void).cxx_destruct;
 - (_Bool)_keyboardIsSplit;
 - (_Bool)_updateEditing:(_Bool)arg1;
 - (void)_doUpdateSearchText;

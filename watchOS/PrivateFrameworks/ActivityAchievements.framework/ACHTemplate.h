@@ -23,6 +23,7 @@
     unsigned char _duplicateRemovalStrategy;
     unsigned char _earnDateStrategy;
     _Bool _displaysEarnedInstanceCount;
+    _Bool _availableOnPairedDevice;
     unsigned int _key;
     NSString *_uniqueName;
     unsigned int _version;
@@ -47,9 +48,13 @@
     HKUnit *_canonicalUnit;
     unsigned int _displayOrder;
     NSArray *_availableSuffixes;
+    unsigned int _mobileAssetVersion;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(nonatomic) unsigned int mobileAssetVersion; // @synthesize mobileAssetVersion=_mobileAssetVersion;
+@property(nonatomic) _Bool availableOnPairedDevice; // @synthesize availableOnPairedDevice=_availableOnPairedDevice;
 @property(retain, nonatomic) NSArray *availableSuffixes; // @synthesize availableSuffixes=_availableSuffixes;
 @property(nonatomic) _Bool displaysEarnedInstanceCount; // @synthesize displaysEarnedInstanceCount=_displaysEarnedInstanceCount;
 @property(nonatomic) unsigned int displayOrder; // @synthesize displayOrder=_displayOrder;
@@ -80,7 +85,6 @@
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
 @property(retain, nonatomic) NSString *uniqueName; // @synthesize uniqueName=_uniqueName;
 @property(nonatomic) unsigned int key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCodable:(id)arg1;

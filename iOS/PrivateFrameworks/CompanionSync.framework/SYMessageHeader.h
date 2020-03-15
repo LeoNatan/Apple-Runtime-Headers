@@ -23,13 +23,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(nonatomic) unsigned long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
 @property(retain, nonatomic) SYVectorClock *state; // @synthesize state=_state;
 @property(retain, nonatomic) SYPeer *sender; // @synthesize sender=_sender;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -16,10 +16,10 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasImage; // @synthesize hasImage=_hasImage;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(readonly, nonatomic) UITextView *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 - (id)_attributedTextWithBoldText:(id)arg1 andRegularText:(id)arg2;
 - (void)layoutSubviews;
 - (void)setBoldText:(id)arg1 regularText:(id)arg2 image:(id)arg3;

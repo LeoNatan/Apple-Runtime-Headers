@@ -23,13 +23,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property(nonatomic) unsigned int identityType; // @synthesize identityType=_identityType;
 @property(retain, nonatomic) NSString *refreshToken; // @synthesize refreshToken=_refreshToken;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

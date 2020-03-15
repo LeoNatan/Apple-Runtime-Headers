@@ -18,9 +18,9 @@
 }
 
 + (id)implWithService:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TVRCHMServiceWrapper *service; // @synthesize service=_service;
 @property(nonatomic) __weak _TVRXDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)service:(id)arg1 updatedName:(id)arg2;
 - (void)disconnectedFromService:(id)arg1 error:(id)arg2;
 - (void)connectedToService:(id)arg1;

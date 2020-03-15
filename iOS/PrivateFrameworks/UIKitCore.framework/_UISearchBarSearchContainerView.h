@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     _UISearchBarSearchContainerLayout *_layout;
 }
 
-@property(retain, nonatomic) _UISearchBarSearchContainerLayout *layout; // @synthesize layout=_layout;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _UISearchBarSearchContainerLayout *layout; // @synthesize layout=_layout;
 - (void)setNeedsLayout;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

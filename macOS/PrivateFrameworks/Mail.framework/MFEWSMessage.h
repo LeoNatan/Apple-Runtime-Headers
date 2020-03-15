@@ -50,6 +50,7 @@
 + (BOOL)messageTypeForEWSItemClass:(id)arg1;
 + (long long)flagsForEWSItemType:(id)arg1;
 + (id)newMessageWithEWSItemType:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long libraryID; // @synthesize libraryID=_libraryID;
 @property(retain) MFLibraryCalendarEvent *associatedCalendarEvent; // @synthesize associatedCalendarEvent=_associatedCalendarEvent;
 @property(retain) NSData *fetchedBodyData; // @synthesize fetchedBodyData=_fetchedBodyData;
@@ -57,7 +58,6 @@
 @property(copy, nonatomic) NSString *itemId; // @synthesize itemId=_itemId;
 @property(retain) MCMessageHeaders *headers; // @synthesize headers=_headers;
 @property(retain) NSData *headerData; // @synthesize headerData=_headerData;
-- (void).cxx_destruct;
 - (void)setHeaderAndBodyFromFullData:(id)arg1;
 - (BOOL)isEditable;
 - (id)remoteID;

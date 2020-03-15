@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     id <PUAccessoryContentViewControllerDelegate> _accessoryContentViewControllerDelegate;
 }
 
-@property(nonatomic) __weak id <PUAccessoryContentViewControllerDelegate> accessoryContentViewControllerDelegate; // @synthesize accessoryContentViewControllerDelegate=_accessoryContentViewControllerDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PUAccessoryContentViewControllerDelegate> accessoryContentViewControllerDelegate; // @synthesize accessoryContentViewControllerDelegate=_accessoryContentViewControllerDelegate;
 - (void)scrollViewControllerContentBoundsDidChange:(id)arg1;
 - (void)scrollViewControllerDidScroll:(id)arg1;
 - (struct UIEdgeInsets)px_safeAreaInsets;

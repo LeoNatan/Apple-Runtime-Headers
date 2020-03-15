@@ -26,8 +26,8 @@
     _Bool _padBottom;
 }
 
-@property(nonatomic) _Bool padBottom; // @synthesize padBottom=_padBottom;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool padBottom; // @synthesize padBottom=_padBottom;
 - (double)_trailingMargin;
 - (double)_leadingMargin;
 - (void)rebuildConstraints;

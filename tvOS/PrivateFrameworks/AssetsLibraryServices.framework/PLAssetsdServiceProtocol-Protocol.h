@@ -10,6 +10,7 @@
 
 @protocol PLAssetsdServiceProtocol <PLAssetsdServiceCreating>
 - (void)bindToPhotoLibraryURL:(NSURL *)arg1 bookmark:(NSData *)arg2 withReply:(void (^)(NSError *))arg3;
+- (void)bindToPhotoLibraryURL:(NSURL *)arg1 sandboxExtension:(NSData *)arg2 withReply:(void (^)(NSError *))arg3;
 - (void)runDaemonJob:(PLDaemonJob *)arg1 isSerial:(_Bool)arg2 withReply:(void (^)(NSError *, PLDaemonJobReply *))arg3;
 - (void)runDaemonJob:(PLDaemonJob *)arg1 isSerial:(_Bool)arg2;
 @end

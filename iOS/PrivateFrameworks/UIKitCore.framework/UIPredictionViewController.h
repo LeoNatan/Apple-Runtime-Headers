@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     TIAutocorrectionList *_cachedAutocorrectionList;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TIAutocorrectionList *cachedAutocorrectionList; // @synthesize cachedAutocorrectionList=_cachedAutocorrectionList;
 @property(readonly, nonatomic) TUIPredictionView *predictionView; // @synthesize predictionView=_predictionView;
-- (void).cxx_destruct;
 - (void)predictionView:(id)arg1 didSelectCandidate:(id)arg2;
 - (void)autocorrectionControllerDidClearAutocorrections:(id)arg1;
 - (void)autocorrectionController:(id)arg1 didUpdateAutocorrectionList:(id)arg2;

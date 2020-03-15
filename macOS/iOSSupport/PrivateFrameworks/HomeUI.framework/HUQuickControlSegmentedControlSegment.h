@@ -19,11 +19,11 @@
 + (double)borderInset;
 + (id)highlightedColor;
 + (id)selectedColor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) unsigned long long roundedCorners; // @synthesize roundedCorners=_roundedCorners;
 @property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(nonatomic, getter=isHighlighted) BOOL highlighted; // @synthesize highlighted=_highlighted;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_setupConstraints;
 - (void)_updateBackgroundColor;

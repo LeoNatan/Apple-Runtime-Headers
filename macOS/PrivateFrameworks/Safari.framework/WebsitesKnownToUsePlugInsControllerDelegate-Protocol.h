@@ -7,6 +7,6 @@
 @class WebsitesKnownToUsePlugInsController;
 
 @protocol WebsitesKnownToUsePlugInsControllerDelegate
-- (BOOL)userHasFlashOrSilverlightInstalledForWebsitesKnownToUsePlugInsController:(WebsitesKnownToUsePlugInsController *)arg1;
+- (BOOL)userHasFlashInstalledForWebsitesKnownToUsePlugInsController:(WebsitesKnownToUsePlugInsController *)arg1;
 @end
 

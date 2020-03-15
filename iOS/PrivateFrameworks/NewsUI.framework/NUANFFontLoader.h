@@ -22,6 +22,7 @@
     id <NUFontRegistration> _fontRegistration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NUFontRegistration> fontRegistration; // @synthesize fontRegistration=_fontRegistration;
 @property(readonly, nonatomic) FCAsyncOnceOperation *asyncOnceOperation; // @synthesize asyncOnceOperation=_asyncOnceOperation;
 @property(readonly, nonatomic) NSMutableArray *fontResourcesRegistered; // @synthesize fontResourcesRegistered=_fontResourcesRegistered;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) FCFlintResourceManager *flintResourceManager; // @synthesize flintResourceManager=_flintResourceManager;
 @property(readonly, nonatomic) FCFlintManifest *flintManifest; // @synthesize flintManifest=_flintManifest;
 @property(nonatomic) long long relativePriority; // @synthesize relativePriority=_relativePriority;
-- (void).cxx_destruct;
 - (id)asyncLoadFontsOnceWithCompletion:(CDUnknownBlockType)arg1;
 - (id)loadFontsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)unregisterFontsWithCompletion:(CDUnknownBlockType)arg1;

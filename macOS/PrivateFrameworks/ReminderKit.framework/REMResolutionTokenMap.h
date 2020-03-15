@@ -13,13 +13,13 @@
 
 @interface REMResolutionTokenMap : NSObject <NSSecureCoding, NSCopying>
 {
-    struct NSMutableDictionary *_map;
+    NSMutableDictionary *_map;
 }
 
 + (id)mapWithData:(id)arg1;
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSMutableDictionary *map; // @synthesize map=_map;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *map; // @synthesize map=_map;
 - (id)debugDescription;
 - (id)archivedData;
 - (id)getTokenKeys;
@@ -35,7 +35,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
-- (id)initWithMap:(struct NSMutableDictionary *)arg1;
+- (id)initWithMap:(id)arg1;
 
 @end
 

@@ -27,6 +27,7 @@
 }
 
 + (id)utilitiesEventsListenerInterface;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *otherUserSizeProgressQueue; // @synthesize otherUserSizeProgressQueue=_otherUserSizeProgressQueue;
 @property(retain) NSObject<OS_dispatch_queue> *otherUserSizeQueue; // @synthesize otherUserSizeQueue=_otherUserSizeQueue;
 @property(retain) NSObject<OS_dispatch_queue> *deletionProgressQueue; // @synthesize deletionProgressQueue=_deletionProgressQueue;
@@ -37,7 +38,6 @@
 @property(retain) NSXPCConnection *daemonConnection; // @synthesize daemonConnection=_daemonConnection;
 @property(retain) NSXPCInterface *exportedInterface; // @synthesize exportedInterface=_exportedInterface;
 @property(retain) NSXPCInterface *daemonInterface; // @synthesize daemonInterface=_daemonInterface;
-- (void).cxx_destruct;
 - (void)cumulativeOtherUsersSize:(unsigned long long)arg1;
 - (void)obtainTotalSizeOfOtherUsersOnSystemWithCompletionBlock:(CDUnknownBlockType)arg1 userFilterBlock:(CDUnknownBlockType)arg2 andProgressBlock:(CDUnknownBlockType)arg3 recalculationPermitted:(BOOL)arg4;
 - (void)obtainTotalSizeOfOtherUsersOnSystemWithCompletionBlock:(CDUnknownBlockType)arg1 andProgressBlock:(CDUnknownBlockType)arg2 recalculationPermitted:(BOOL)arg3;

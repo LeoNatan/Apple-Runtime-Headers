@@ -19,11 +19,11 @@
     NSMutableArray *_queuedExecutableScripts;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL readyToExecuteScripts; // @synthesize readyToExecuteScripts=_readyToExecuteScripts;
 @property(readonly, nonatomic) NSMutableArray *queuedExecutableScripts; // @synthesize queuedExecutableScripts=_queuedExecutableScripts;
 @property(readonly, nonatomic) id <SWLogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
-- (void).cxx_destruct;
 - (void)executeQueuedScripts;
 - (void)queueExecutableScript:(id)arg1;
 - (void)executeScript:(id)arg1;

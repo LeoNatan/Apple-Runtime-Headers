@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *genreID; // @synthesize genreID=_genreID;
 @property(copy, nonatomic) NSString *genre; // @synthesize genre=_genre;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

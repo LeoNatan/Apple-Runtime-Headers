@@ -15,10 +15,10 @@
     NSOperation *_requestTimeoutOperation;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSOperation *requestTimeoutOperation; // @synthesize requestTimeoutOperation=_requestTimeoutOperation;
 @property(retain) NSOperation *requestFailureOperation; // @synthesize requestFailureOperation=_requestFailureOperation;
 @property(retain) NSOperation *requestSuccessOperation; // @synthesize requestSuccessOperation=_requestSuccessOperation;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)executionDidBegin;
 - (void)_cleanupOperationsAndFinishExecutionIfPossible;

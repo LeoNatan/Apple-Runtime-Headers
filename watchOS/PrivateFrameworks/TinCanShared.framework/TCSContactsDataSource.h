@@ -28,13 +28,13 @@
 }
 
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *sortedInvitees; // @synthesize sortedInvitees=_sortedInvitees;
 @property(retain, nonatomic) NSArray *sortedInviters; // @synthesize sortedInviters=_sortedInviters;
 @property(retain, nonatomic) NSArray *sortedContacts; // @synthesize sortedContacts=_sortedContacts;
 @property(readonly, nonatomic) TCSContacts *contacts; // @synthesize contacts=_contacts;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(nonatomic) __weak id <TCSContactsDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_handleDeviceFirstUnlock;
 - (void)_handlePersonNamePreferencesChangeNotification;
 - (void)_handleContactStoreDidChange:(id)arg1;

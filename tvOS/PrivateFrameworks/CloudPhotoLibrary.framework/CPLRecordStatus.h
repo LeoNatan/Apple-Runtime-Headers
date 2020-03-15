@@ -31,9 +31,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long generation; // @synthesize generation=_generation;
 @property(readonly, nonatomic) CPLRecordChange *record; // @synthesize record=_record;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSString *statusDescription;
 - (void)encodeWithCoder:(id)arg1;

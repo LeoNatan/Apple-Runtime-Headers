@@ -12,7 +12,6 @@
 {
     NSString *_containerIdentifier;
     NSNumber *_ckAssetThresholdBytes;
-    BOOL _useEncryptedStorage;
     BOOL _initializeSchema;
     BOOL _automaticallyDownloadFileBackedFutures;
     BOOL _automaticallyScheduleImportAndExportOperations;
@@ -26,6 +25,7 @@
     PFCloudKitMetricsClient *_metricsClient;
     PFCloudKitMetadataPurger *_metadataPurger;
     NSString *_apsConnectionMachServiceName;
+    BOOL _useDeviceToDeviceEncryption;
     BOOL _useDaemon;
     BOOL _useTestDaemon;
     BOOL _preserveLegacyRecordMetadataBehavior;
@@ -47,9 +47,10 @@
 @property(retain, nonatomic) CKContainerOptions *containerOptions; // @synthesize containerOptions=_containerOptions;
 @property(retain, nonatomic) NSNumber *operationMemoryThresholdBytes; // @synthesize operationMemoryThresholdBytes=_operationMemoryThresholdBytes;
 @property(retain, nonatomic) NSNumber *ckAssetThresholdBytes; // @synthesize ckAssetThresholdBytes=_ckAssetThresholdBytes;
-@property(nonatomic) BOOL useEncryptedStorage; // @synthesize useEncryptedStorage=_useEncryptedStorage;
+@property(nonatomic) BOOL useDeviceToDeviceEncryption; // @synthesize useDeviceToDeviceEncryption=_useDeviceToDeviceEncryption;
 @property(nonatomic) BOOL initializeSchema; // @synthesize initializeSchema=_initializeSchema;
 @property(retain, nonatomic) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
+@property(nonatomic) BOOL useEncryptedStorage;
 - (id)description;
 - (void)dealloc;
 - (id)copy;

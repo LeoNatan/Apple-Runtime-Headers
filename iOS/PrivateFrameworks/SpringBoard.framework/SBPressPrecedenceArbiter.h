@@ -16,8 +16,8 @@
     NSArray *_hardwareButtons;
 }
 
-@property(retain, nonatomic) NSArray *hardwareButtons; // @synthesize hardwareButtons=_hardwareButtons;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *hardwareButtons; // @synthesize hardwareButtons=_hardwareButtons;
 - (unsigned long long)_currentButtonPriority;
 - (void)_applyButtonPriority:(unsigned long long)arg1;
 - (void)_updateButtonPrioritiesForClientIsPlayingNotification:(id)arg1;

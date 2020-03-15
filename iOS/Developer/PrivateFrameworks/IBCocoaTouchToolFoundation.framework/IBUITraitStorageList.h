@@ -17,10 +17,10 @@
     NSString *_topLevelObjectID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *descendantObjectIDs; // @synthesize descendantObjectIDs=_descendantObjectIDs;
 @property(readonly, copy, nonatomic) NSArray *traitStorages; // @synthesize traitStorages=_traitStorages;
 @property(readonly, copy, nonatomic) NSString *topLevelObjectID; // @synthesize topLevelObjectID=_topLevelObjectID;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)descriptionWithLocale:(id)arg1 indent:(unsigned long long)arg2;
 - (id)uiTraitStorageListWithObjectIDTable:(id)arg1;

@@ -25,12 +25,12 @@
 + (id)title;
 + (_Bool)isSupported;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXMVisionAnalysisOptions *analysisOptions; // @synthesize analysisOptions=_analysisOptions;
 @property(nonatomic) __weak AVCaptureSession *captureSession; // @synthesize captureSession=_captureSession;
 @property(nonatomic) __weak id <AXMAVCaptureSessionNodeFrameDelegate> frameDelegate; // @synthesize frameDelegate=_frameDelegate;
 @property(nonatomic) __weak id <AXMAVCaptureSessionNodeDelegate> captureSessionNodeDelegate; // @synthesize captureSessionNodeDelegate=_captureSessionNodeDelegate;
 @property(retain, nonatomic) AXMCaptureVideoDataOutput *axVideoDataOutput; // @synthesize axVideoDataOutput=_axVideoDataOutput;
-- (void).cxx_destruct;
 - (void)captureSessionNode:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer *)arg2 fromConnection:(id)arg3;
 - (void)captureOutput:(id)arg1 didDropSampleBuffer:(struct opaqueCMSampleBuffer *)arg2 fromConnection:(id)arg3;
 - (void)triggerWithSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 interfaceOrientation:(long long)arg2 mirrored:(_Bool)arg3 options:(id)arg4 userContext:(id)arg5;

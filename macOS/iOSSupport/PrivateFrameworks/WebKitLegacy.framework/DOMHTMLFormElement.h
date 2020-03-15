@@ -29,6 +29,7 @@
 @property(copy) NSString *action;
 @property(copy) NSString *acceptCharset;
 - (int)structuralComplexityContribution;
+- (int)structuralComplexityContribution;
 
 @end
 

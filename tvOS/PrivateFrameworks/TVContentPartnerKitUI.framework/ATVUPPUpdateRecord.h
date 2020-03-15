@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     TVCKUniversalPlaybackPositionRecord *_uppRecord;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVCKUniversalPlaybackPositionRecord *uppRecord; // @synthesize uppRecord=_uppRecord;
 @property(retain, nonatomic) TVCKBookmarkKey *bookmarkKey; // @synthesize bookmarkKey=_bookmarkKey;
-- (void).cxx_destruct;
 
 @end
 

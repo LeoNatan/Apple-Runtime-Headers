@@ -17,8 +17,8 @@
     CDStruct_9ab06576 _has;
 }
 
-@property(retain, nonatomic) CKDPResponseOperationResultError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKDPResponseOperationResultError *error; // @synthesize error=_error;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

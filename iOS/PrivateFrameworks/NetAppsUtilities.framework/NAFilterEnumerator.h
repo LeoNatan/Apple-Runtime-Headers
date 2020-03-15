@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _filter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
 @property(readonly, nonatomic) NSEnumerator *enumerator; // @synthesize enumerator=_enumerator;
-- (void).cxx_destruct;
 - (id)allObjects;
 - (id)nextObject;
 - (id)initWithEnumerator:(id)arg1 filter:(CDUnknownBlockType)arg2;

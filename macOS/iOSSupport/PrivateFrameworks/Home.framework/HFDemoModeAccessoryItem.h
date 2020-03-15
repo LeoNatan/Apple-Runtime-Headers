@@ -21,9 +21,9 @@
 }
 
 + (id)accessoryItemForAccessory:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *configInfo; // @synthesize configInfo=_configInfo;
 @property(nonatomic) __weak HMAccessory *accessory; // @synthesize accessory=_accessory;
-- (void).cxx_destruct;
 - (id)namingComponentForHomeKitObject;
 - (BOOL)isMediaSystemDemoType;
 @property(readonly, nonatomic) NSSet *services;

@@ -13,8 +13,8 @@
     id <CALNCoreLocationProvider> _coreLocationProvider;
 }
 
-@property(readonly, nonatomic) id <CALNCoreLocationProvider> coreLocationProvider; // @synthesize coreLocationProvider=_coreLocationProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <CALNCoreLocationProvider> coreLocationProvider; // @synthesize coreLocationProvider=_coreLocationProvider;
 - (void)markAsHavingReceivedLocation;
 @property(readonly, nonatomic) _Bool allowsLocationAlerts;
 - (id)initWithCoreLocationProvider:(id)arg1;

@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 + (_Bool)supportsSecureCoding;
 + (id)futureWithError:(id)arg1;
 + (id)futureWithResult:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) id <NSObject><NSSecureCoding> result; // @synthesize result=_result;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithError:(id)arg1;

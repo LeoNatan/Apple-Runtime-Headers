@@ -51,6 +51,7 @@
 + (id)_iconImageForRoute:(id)arg1;
 + (id)_iconImageForIdentifier:(id)arg1;
 + (id)_sharedSerialQueue;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool representsLongFormVideoContent; // @synthesize representsLongFormVideoContent=_representsLongFormVideoContent;
 @property(copy, nonatomic) NSString *representedBundleID; // @synthesize representedBundleID=_representedBundleID;
 @property(copy, nonatomic) NSString *presentedBundleID; // @synthesize presentedBundleID=_presentedBundleID;
@@ -63,7 +64,6 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) MPAVRoutingDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <MPAVRoutingControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_stateDumpObject;
 - (_Bool)removePickedRoute:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)removePickedRoute:(id)arg1;

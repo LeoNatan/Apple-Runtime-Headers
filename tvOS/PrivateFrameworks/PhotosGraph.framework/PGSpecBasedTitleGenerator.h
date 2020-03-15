@@ -21,12 +21,12 @@
     unsigned long long _lineBreakBehavior;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lineBreakBehavior; // @synthesize lineBreakBehavior=_lineBreakBehavior;
 @property __weak id <PGSpecBasedTitleGeneratorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PGTitleSpecCollection *specCollection; // @synthesize specCollection=_specCollection;
 @property(retain, nonatomic) NSSet *features; // @synthesize features=_features;
 @property(retain, nonatomic) NSSet *moments; // @synthesize moments=_moments;
-- (void).cxx_destruct;
 - (id)titleSpec:(id)arg1 inputForArgument:(id)arg2;
 - (id)_titleFromSpecs:(id)arg1;
 - (id)_title;

@@ -27,13 +27,13 @@
 + (id)infoWithClass:(Class)arg1 logging:(unsigned long long)arg2 readOnly:(id)arg3;
 + (id)infoWithClass:(Class)arg1 logging:(unsigned long long)arg2;
 + (id)infoWithClass:(Class)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool defaultValueSet; // @synthesize defaultValueSet=_defaultValueSet;
 @property(readonly, nonatomic) id defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(retain, nonatomic) HMFVersion *unavailable; // @synthesize unavailable=_unavailable;
 @property(retain, nonatomic) HMFVersion *readOnly; // @synthesize readOnly=_readOnly;
 @property(readonly, nonatomic) unsigned long long logging; // @synthesize logging=_logging;
 @property(readonly, nonatomic) Class classObj; // @synthesize classObj=_classObj;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithClass:(Class)arg1 logging:(unsigned long long)arg2 readOnly:(id)arg3 unavailable:(id)arg4 defaultSet:(_Bool)arg5 defaultValue:(id)arg6;
 

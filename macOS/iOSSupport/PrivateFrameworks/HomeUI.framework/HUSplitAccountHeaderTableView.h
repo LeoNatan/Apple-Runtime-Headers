@@ -19,15 +19,15 @@
     id <HUSplitAccountDelegate> _splitAccountDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HUSplitAccountDelegate> splitAccountDelegate; // @synthesize splitAccountDelegate=_splitAccountDelegate;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) ACAccount *mediaAccount; // @synthesize mediaAccount=_mediaAccount;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (double)tableViewHeight;
-- (double)_maxTitleAndDescriptionCellHeight;
+- (double)tableViewHeightForWidth:(double)arg1;
+- (double)_maxTitleAndDescriptionCellHeightForWidth:(double)arg1;
 - (double)_buttonTitleTextHeight;
 - (id)_buttonTitleTextFont;
 - (double)_titleHeight;

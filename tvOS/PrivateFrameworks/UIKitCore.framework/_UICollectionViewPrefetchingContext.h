@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)prefetchingContextWithItems:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dataAccessQueue; // @synthesize dataAccessQueue=_dataAccessQueue;
 @property(retain, nonatomic) NSMutableDictionary *itemsDict; // @synthesize itemsDict=_itemsDict;
 @property(retain, nonatomic) NSMutableOrderedSet *items; // @synthesize items=_items;
 @property(retain, nonatomic) NSArray *remainingIndexPaths; // @synthesize remainingIndexPaths=_remainingIndexPaths;
-- (void).cxx_destruct;
 - (id)_items;
 - (void)_invalidateRemainingIndexPaths;
 - (id)popNextItem;

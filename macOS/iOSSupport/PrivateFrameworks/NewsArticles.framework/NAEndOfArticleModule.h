@@ -6,9 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsArticles/NAEndOfArticleModuleType-Protocol.h>
-
-@interface NAEndOfArticleModule : NSObject <NAEndOfArticleModuleType>
+@interface NAEndOfArticleModule : NSObject
 {
     // Error parsing type: , name: resolver
     // Error parsing type: , name: tracker

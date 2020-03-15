@@ -28,6 +28,7 @@
 + (id)entityName;
 + (id)keyPathFromPrimaryObject;
 + (id)propertySetName;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) short audioClassification; // @synthesize audioClassification=_audioClassification;
 @property(readonly, nonatomic) unsigned int faceCount; // @synthesize faceCount=_faceCount;
 @property(readonly, nonatomic) float activityScore; // @synthesize activityScore=_activityScore;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) struct CGRect bestPlaybackRect; // @synthesize bestPlaybackRect=_bestPlaybackRect;
 @property(readonly, nonatomic) CDStruct_e83c9415 bestVideoTimeRange; // @synthesize bestVideoTimeRange=_bestVideoTimeRange;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 bestKeyFrameTime; // @synthesize bestKeyFrameTime=_bestKeyFrameTime;
-- (void).cxx_destruct;
 - (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(_Bool)arg3;
 - (void)initWithDefaultValues;
 

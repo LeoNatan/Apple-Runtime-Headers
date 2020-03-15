@@ -22,13 +22,13 @@
     NSURL *_soundURL;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float currentVolume; // @synthesize currentVolume=_currentVolume;
 @property(readonly, nonatomic) _Bool hasHapticTrack; // @synthesize hasHapticTrack=_hasHapticTrack;
 @property(readonly, nonatomic) NSURL *soundURL; // @synthesize soundURL=_soundURL;
 @property(nonatomic) _Bool started; // @synthesize started=_started;
 @property(retain, nonatomic) IMAudioController *audioController; // @synthesize audioController=_audioController;
 @property(nonatomic) __weak id <IMFullScreenEffectSoundPlayerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_supportsSoundEffects;
 - (void)_audioSessionOptionsWillChange:(id)arg1;
 - (void)audioController:(id)arg1 didPrepareToPlayContentAtURL:(id)arg2 successfully:(_Bool)arg3;

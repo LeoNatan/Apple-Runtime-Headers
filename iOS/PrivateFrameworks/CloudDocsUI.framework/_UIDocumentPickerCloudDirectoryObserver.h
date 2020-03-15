@@ -25,13 +25,13 @@
     NSOperationQueue *_queryWorkerQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool afterInitialUpdate; // @synthesize afterInitialUpdate=_afterInitialUpdate;
 @property(retain, nonatomic) NSOperationQueue *queryWorkerQueue; // @synthesize queryWorkerQueue=_queryWorkerQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queryQueue; // @synthesize queryQueue=_queryQueue;
 @property(retain, nonatomic) NSDate *lastSnapshotDate; // @synthesize lastSnapshotDate=_lastSnapshotDate;
 @property(retain, nonatomic) NSArray *scopes; // @synthesize scopes=_scopes;
 @property(retain, nonatomic) NSMetadataQuery *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)callUpdateHandler:(id)arg1 changeDictionary:(id)arg2;
 - (id)isVisiblePredicate;

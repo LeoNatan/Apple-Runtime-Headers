@@ -13,8 +13,8 @@
     MAAsset *_mobileAsset;
 }
 
-@property(readonly) MAAsset *mobileAsset; // @synthesize mobileAsset=_mobileAsset;
 - (void).cxx_destruct;
+@property(readonly) MAAsset *mobileAsset; // @synthesize mobileAsset=_mobileAsset;
 - (BOOL)contentUpdateAvaliable;
 - (unsigned long long)assetStatus;
 - (long long)compatibilityVersionForAssetLocation:(unsigned long long)arg1;

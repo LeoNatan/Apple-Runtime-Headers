@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sirilandView;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPageTransitionKeylineVisible) BOOL pageTransitionKeylineVisible; // @synthesize pageTransitionKeylineVisible=_pageTransitionKeylineVisible;
 @property(nonatomic) BOOL masksContent; // @synthesize masksContent=_masksContent;
 @property(readonly, nonatomic, getter=isShowingDeviceLockView) BOOL showingDeviceLockView; // @synthesize showingDeviceLockView=_showingDeviceLockView;
 @property(retain, nonatomic) NSView *conversationView; // @synthesize conversationView=_conversationView;
 @property(nonatomic) struct UIOffset topChevronOffset; // @synthesize topChevronOffset=_topChevronOffset;
-- (void).cxx_destruct;
 - (BOOL)isFlipped;
 @property(retain, nonatomic) NSView *errorView;
 - (void)layout;

@@ -77,7 +77,7 @@ struct _VMURegionNode {
     void *_field2;
     unsigned long long _field3;
     struct _VMURegionNode *_field4;
-    struct *_field5;
+    CDStruct_183601bc *_field5;
     unsigned int _field6;
     unsigned long long _field7;
     unsigned long long _field8;
@@ -233,4 +233,12 @@ typedef struct {
 typedef struct {
     unsigned long long _field1;
 } CDStruct_69d7cc99;
+
+typedef struct CDStruct_183601bc;
+
+typedef struct {
+    CDStruct_183601bc *_field1;
+    CDStruct_8b65991f _field2;
+    CDStruct_183601bc *_field3;
+} CDStruct_3aaebc0a;
 

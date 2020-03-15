@@ -20,13 +20,13 @@
     NSMutableDictionary *_preflightPathToSizeMap;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *preflightPathToSizeMap; // @synthesize preflightPathToSizeMap=_preflightPathToSizeMap;
 @property(retain) NSMutableDictionary *topLevelPathToSizeMap; // @synthesize topLevelPathToSizeMap=_topLevelPathToSizeMap;
 @property __weak SMSystem_Daemon *system; // @synthesize system=_system;
 @property(retain) NSURL *path; // @synthesize path=_path;
 @property __weak NSArray *updateClients; // @synthesize updateClients=_updateClients;
 @property _Bool shallowScanOnly; // @synthesize shallowScanOnly=_shallowScanOnly;
-- (void).cxx_destruct;
 - (void)processUserHome;
 - (unsigned long long)sizeOfDirectory:(id)arg1;
 @property(readonly) NSDirectoryEnumerator<SMPathEnumerationProtocol> *allFilesEnumerator;

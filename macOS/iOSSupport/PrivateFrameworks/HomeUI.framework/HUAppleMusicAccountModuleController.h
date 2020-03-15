@@ -20,6 +20,7 @@
     NSMapTable *_itemToCellMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *itemToCellMap; // @synthesize itemToCellMap=_itemToCellMap;
 @property(nonatomic) __weak HUButtonCell *activeAuthCell; // @synthesize activeAuthCell=_activeAuthCell;
 @property(retain, nonatomic) NAFuture *loginFuture; // @synthesize loginFuture=_loginFuture;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) NAFuture *logoutFuture; // @synthesize logoutFuture=_logoutFuture;
 @property(nonatomic) __weak HUButtonCell *logoutButton; // @synthesize logoutButton=_logoutButton;
 @property(nonatomic) __weak id <HUAppleMusicAccountModuleControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_authenticationContextForAccessory:(id)arg1 account:(id)arg2;
 - (void)_reloadForAuthEvent;
 - (void)_updateModuleState:(unsigned long long)arg1 notifyDelegate:(BOOL)arg2;

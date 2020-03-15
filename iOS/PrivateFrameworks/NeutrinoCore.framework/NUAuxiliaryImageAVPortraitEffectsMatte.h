@@ -16,9 +16,9 @@
     AVPortraitEffectsMatte *_avPortraitEffectsMatte;
 }
 
+- (void).cxx_destruct;
 @property(readonly) AVPortraitEffectsMatte *avPortraitEffectsMatte; // @synthesize avPortraitEffectsMatte=_avPortraitEffectsMatte;
 @property(readonly) long long auxiliaryImageType; // @synthesize auxiliaryImageType=_auxiliaryImageType;
-- (void).cxx_destruct;
 - (struct __CVBuffer *)cvPixelBufferRef;
 - (unsigned int)pixelFormatType;
 - (id)dictionaryRepresentationForAuxiliaryDataType:(id *)arg1;

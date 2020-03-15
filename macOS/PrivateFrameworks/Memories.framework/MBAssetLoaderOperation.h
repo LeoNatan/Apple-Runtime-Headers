@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _preCompletionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType preCompletionBlock; // @synthesize preCompletionBlock=_preCompletionBlock;
 @property(retain, nonatomic) AVAsset *asset; // @synthesize asset=_asset;
 @property(retain, nonatomic) NSURL *identifierURL; // @synthesize identifierURL=_identifierURL;
 @property(retain, nonatomic) NSArray *prefetchKeys; // @synthesize prefetchKeys=_prefetchKeys;
 @property(getter=isExecuting) BOOL executing; // @synthesize executing;
 @property(getter=isFinished) BOOL finished; // @synthesize finished;
-- (void).cxx_destruct;
 - (void)finish;
 - (void)start;
 - (BOOL)isConcurrent;

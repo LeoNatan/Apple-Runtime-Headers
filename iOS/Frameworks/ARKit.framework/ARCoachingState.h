@@ -13,8 +13,8 @@
     ARCoachingOverlayView *_view;
 }
 
-@property(nonatomic) __weak ARCoachingOverlayView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
+@property(nonatomic) __weak ARCoachingOverlayView *view; // @synthesize view=_view;
 - (id)doAction:(long long)arg1;
 - (void)exit;
 - (void)enter;

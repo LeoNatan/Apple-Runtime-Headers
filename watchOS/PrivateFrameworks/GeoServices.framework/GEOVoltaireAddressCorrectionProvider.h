@@ -25,6 +25,7 @@
 + (id)acUpdateURL;
 + (_Bool)acInitNeedsProxy;
 + (id)acInitURL;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType updateErrorHandler; // @synthesize updateErrorHandler=_updateErrorHandler;
 @property(copy, nonatomic) CDUnknownBlockType updateFinishedHandler; // @synthesize updateFinishedHandler=_updateFinishedHandler;
 @property(copy, nonatomic) CDUnknownBlockType initErrorHandler; // @synthesize initErrorHandler=_initErrorHandler;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) GEOProtobufSessionTask *updateTask; // @synthesize updateTask=_updateTask;
 @property(retain, nonatomic) GEOProtobufSessionTask *initializationTask; // @synthesize initializationTask=_initializationTask;
 @property(readonly, nonatomic) GEOProtobufSession *protobufSession; // @synthesize protobufSession=_protobufSession;
-- (void).cxx_destruct;
 - (void)cancelRequest;
 - (void)startUpdateRequest:(id)arg1 finished:(CDUnknownBlockType)arg2 error:(CDUnknownBlockType)arg3;
 - (void)startInitRequest:(id)arg1 finished:(CDUnknownBlockType)arg2 error:(CDUnknownBlockType)arg3;

@@ -47,8 +47,8 @@
 }
 
 + (long long)activitySummaryIndexForAggdRingCountReportingForDate:(id)arg1;
-@property(readonly, nonatomic) FITypicalDayActivityModel *typicalDayModel; // @synthesize typicalDayModel=_typicalDayModel;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) FITypicalDayActivityModel *typicalDayModel; // @synthesize typicalDayModel=_typicalDayModel;
 - (_Bool)enumerateActivitySummariesFromDateComponents:(id)arg1 toDateComponents:(id)arg2 error:(id *)arg3 handler:(CDUnknownBlockType)arg4;
 - (unsigned int)totalMoveGoalsAttempted;
 - (double)bestMoveValue;

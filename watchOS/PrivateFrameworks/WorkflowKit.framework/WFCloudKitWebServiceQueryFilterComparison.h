@@ -15,10 +15,10 @@
     NSString *_value;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *value; // @synthesize value=_value;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *recordKey; // @synthesize recordKey=_recordKey;
-- (void).cxx_destruct;
 - (id)stringRepresentationWithRecordType:(id)arg1;
 
 @end

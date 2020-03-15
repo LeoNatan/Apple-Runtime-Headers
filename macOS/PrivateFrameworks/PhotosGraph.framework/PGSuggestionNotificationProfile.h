@@ -21,8 +21,8 @@
 
 + (double)_requiredTimeIntervalFromLastNotificationForUserType:(unsigned char)arg1;
 + (unsigned char)_requiredNotificationQualityForUserType:(unsigned char)arg1;
-@property(nonatomic) NSObject<OS_os_log> *loggingConnection; // @synthesize loggingConnection=_loggingConnection;
 - (void).cxx_destruct;
+@property(nonatomic) NSObject<OS_os_log> *loggingConnection; // @synthesize loggingConnection=_loggingConnection;
 - (unsigned char)notificationQualityForEnrichableEvent:(id)arg1;
 - (unsigned char)notificationQualityForHighlightNode:(id)arg1;
 - (void)_determineUserTypeAndEligibility;

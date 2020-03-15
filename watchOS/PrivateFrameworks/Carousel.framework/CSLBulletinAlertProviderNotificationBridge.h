@@ -19,9 +19,9 @@
 }
 
 + (id)alertProviderNotificationBridgeWithProvider:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CUISNotificationCustomAlertProvider> provider; // @synthesize provider=_provider;
 @property(nonatomic) __weak id <CUISBulletinAlternativeAlertProviderDelegate> bulletinDelegate; // @synthesize bulletinDelegate=_bulletinDelegate;
-- (void).cxx_destruct;
 - (void)alertProvider:(id)arg1 requestsPerformAction:(id)arg2 forNotification:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)alertProvider:(id)arg1 requestClearNotifications:(id)arg2;
 - (void)sectionVisibilityUpdatedForSectionID:(id)arg1 visible:(_Bool)arg2;

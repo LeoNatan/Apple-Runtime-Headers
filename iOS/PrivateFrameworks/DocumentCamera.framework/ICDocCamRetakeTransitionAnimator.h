@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(retain, nonatomic) UIImage *retakeImage; // @synthesize retakeImage=_retakeImage;
 @property(nonatomic) _Bool presenting; // @synthesize presenting=_presenting;
-- (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
 - (id)makeUIImageFromCIImage:(id)arg1;
 - (double)transitionDuration:(id)arg1;

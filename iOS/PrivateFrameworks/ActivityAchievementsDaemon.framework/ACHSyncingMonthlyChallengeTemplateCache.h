@@ -17,12 +17,12 @@
     HDKeyValueDomain *_keyValueDomain;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) HDKeyValueDomain *keyValueDomain; // @synthesize keyValueDomain=_keyValueDomain;
-@property(retain, nonatomic) NSCalendar *gregorianCalendar; // @synthesize gregorianCalendar=_gregorianCalendar;
-@property(retain, nonatomic) HDProfile *profile; // @synthesize profile=_profile;
+@property(copy, nonatomic) NSCalendar *gregorianCalendar; // @synthesize gregorianCalendar=_gregorianCalendar;
+@property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 @property(copy, nonatomic) HDDatabaseTransactionContext *databaseContext; // @synthesize databaseContext=_databaseContext;
-- (void).cxx_destruct;
 - (id)templateForDateComponents:(id)arg1 error:(id *)arg2;
 - (id)allCachedTemplatesWithError:(id *)arg1;
 - (_Bool)cacheTemplate:(id)arg1 error:(id *)arg2;

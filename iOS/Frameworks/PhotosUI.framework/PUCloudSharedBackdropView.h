@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     _Bool _hasRoundedCorners;
 }
 
-@property(nonatomic) _Bool hasRoundedCorners; // @synthesize hasRoundedCorners=_hasRoundedCorners;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool hasRoundedCorners; // @synthesize hasRoundedCorners=_hasRoundedCorners;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1 asMask:(_Bool)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;

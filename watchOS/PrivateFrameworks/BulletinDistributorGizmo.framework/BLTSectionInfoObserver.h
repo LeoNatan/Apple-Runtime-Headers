@@ -20,8 +20,8 @@
     id <BLTSectionInfoObserverDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <BLTSectionInfoObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <BLTSectionInfoObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)observer:(id)arg1 removeSection:(id)arg2;
 - (void)observer:(id)arg1 updateSectionInfo:(id)arg2;
 - (void)_reloadSectionInfosWithCompletion:(CDUnknownBlockType)arg1;

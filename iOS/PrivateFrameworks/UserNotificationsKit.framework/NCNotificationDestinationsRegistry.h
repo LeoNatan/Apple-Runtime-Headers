@@ -10,16 +10,16 @@
 
 @interface NCNotificationDestinationsRegistry : NSObject
 {
-    struct NSMutableDictionary *_destinations;
-    struct NSMutableDictionary *_activeDestinations;
-    struct NSMutableDictionary *_readyDestinations;
+    NSMutableDictionary *_destinations;
+    NSMutableDictionary *_activeDestinations;
+    NSMutableDictionary *_readyDestinations;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *readyDestinations; // @synthesize readyDestinations=_readyDestinations;
 @property(retain, nonatomic) NSMutableDictionary *activeDestinations; // @synthesize activeDestinations=_activeDestinations;
 @property(retain, nonatomic) NSMutableDictionary *destinations; // @synthesize destinations=_destinations;
-- (void).cxx_destruct;
-- (id)_destinationsForRequestDestinations:(id)arg1 inDestinationDict:(struct NSMutableDictionary *)arg2;
+- (id)_destinationsForRequestDestinations:(id)arg1 inDestinationDict:(id)arg2;
 - (id)readyDestinationsForRequestDestinations:(id)arg1;
 - (void)setDestination:(id)arg1 ready:(_Bool)arg2;
 @property(readonly, nonatomic) unsigned long long count;

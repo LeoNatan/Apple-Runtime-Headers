@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
 - (id)_descriptionWithIncludeItem:(BOOL)arg1;
 - (id)description;
 - (id)descriptionWithItem:(BOOL)arg1;

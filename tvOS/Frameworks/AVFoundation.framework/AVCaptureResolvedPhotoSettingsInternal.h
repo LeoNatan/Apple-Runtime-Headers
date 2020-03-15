@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     _Bool EV0PhotoDeliveryEnabled;
     _Bool stillImageStabilizationEnabled;
     _Bool squareCropEnabled;
+    CDStruct_79c71658 deferredPhotoProxyDimensions;
     NSArray *photoManifest;
 }
 

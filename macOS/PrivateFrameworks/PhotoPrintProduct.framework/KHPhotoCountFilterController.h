@@ -17,12 +17,12 @@
     NSTextField *_photoCountTitle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextField *photoCountTitle; // @synthesize photoCountTitle=_photoCountTitle;
 @property(retain, nonatomic) NSSlider *photoCountSlider; // @synthesize photoCountSlider=_photoCountSlider;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) unsigned long long currentPhotoCount; // @synthesize currentPhotoCount=_currentPhotoCount;
 @property(retain, nonatomic) NSArray *photoCounts; // @synthesize photoCounts=_photoCounts;
-- (void).cxx_destruct;
 - (void)sliderUpdated:(id)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

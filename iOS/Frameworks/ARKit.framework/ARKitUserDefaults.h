@@ -12,6 +12,7 @@
 
 + (void)synchronize;
 + (id)resolutionDictionaryForKey:(id)arg1;
++ (id)listForKey:(id)arg1;
 + (float)floatForKey:(id)arg1;
 + (long long)integerForKey:(id)arg1;
 + (id)numberForKey:(id)arg1;
@@ -21,10 +22,18 @@
 + (void)setValue:(id)arg1 forKey:(id)arg2;
 + (void)setObject:(id)arg1 forKey:(id)arg2;
 + (id)valueForKey:(id)arg1;
++ (id)objectForKey:(id)arg1 useCache:(_Bool)arg2;
 + (id)objectForKey:(id)arg1;
++ (id)objectForKeySlow:(id)arg1;
 + (void)removeObjectForKey:(id)arg1;
 + (void)removeAllKeys;
 + (id)keysWhitelistedForProcessEnvironmentOverride;
++ (void)clearUserDefaultsCache;
++ (void)cacheObject:(id)arg1 forKey:(id)arg2;
++ (void)removeCachedObjectForKey:(id)arg1;
++ (id)cachedObjectForKey:(id)arg1;
++ (_Bool)shouldUseCache;
++ (id)userDefaultsCache;
 + (id)defaultValues;
 
 @end

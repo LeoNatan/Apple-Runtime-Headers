@@ -15,9 +15,9 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <ASAuthorizationCredential> credential; // @synthesize credential=_credential;
 @property(readonly, nonatomic) id <ASAuthorizationProvider> provider; // @synthesize provider=_provider;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)initWithProvider:(id)arg1 credential:(id)arg2;

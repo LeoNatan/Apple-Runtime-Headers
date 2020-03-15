@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     long long _selectedTitleIndex;
 }
 
-@property(nonatomic) long long selectedTitleIndex; // @synthesize selectedTitleIndex=_selectedTitleIndex;
 - (void).cxx_destruct;
+@property(nonatomic) long long selectedTitleIndex; // @synthesize selectedTitleIndex=_selectedTitleIndex;
 - (void)_reloadSelectedButton;
 @property(readonly, nonatomic) double edgePadding;
 - (void)_buttonAction:(id)arg1;

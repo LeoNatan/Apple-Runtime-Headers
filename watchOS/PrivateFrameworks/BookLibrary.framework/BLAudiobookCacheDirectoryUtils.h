@@ -19,8 +19,8 @@
 + (_Bool)storeDemoMode;
 + (id)appDirectoryUtils;
 + (id)mediaDirectoryUtils;
-@property(readonly, nonatomic) NSURL *purchasesDirectory; // @synthesize purchasesDirectory=_purchasesDirectory;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *purchasesDirectory; // @synthesize purchasesDirectory=_purchasesDirectory;
 - (id)URLForPlaylist:(id)arg1 inBaseDirectory:(id)arg2;
 - (id)URLForSegment:(id)arg1 inSegmentDirectory:(id)arg2;
 - (id)segmentDirectoryForMediaItem:(id)arg1;

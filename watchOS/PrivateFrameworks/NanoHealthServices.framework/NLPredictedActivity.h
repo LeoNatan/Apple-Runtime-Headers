@@ -27,13 +27,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)stringForPredictionType:(int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int predictionType; // @synthesize predictionType=_predictionType;
 @property(readonly, nonatomic) int swimmingLocationType; // @synthesize swimmingLocationType=_swimmingLocationType;
 @property(readonly, nonatomic) unsigned int activityType; // @synthesize activityType=_activityType;
 @property(readonly, nonatomic) int locationType; // @synthesize locationType=_locationType;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool activityHasAlternateLocation;
 - (id)_stringForState:(int)arg1;
 - (void)setState:(int)arg1;

@@ -19,13 +19,13 @@
 }
 
 + (void)drawBorderLinesInContext:(struct CGContext *)arg1 bounds:(struct CGRect)arg2 borderEdges:(int)arg3 borderLineWidth:(float)arg4 borderLineColor:(id)arg5 borderInsets:(struct UIEdgeInsets)arg6;
+- (void).cxx_destruct;
 @property(nonatomic) float minimumWidth; // @synthesize minimumWidth=_minimumWidth;
 @property(nonatomic) float minimumHeight; // @synthesize minimumHeight=_minimumHeight;
 @property(nonatomic) struct UIEdgeInsets borderInsets; // @synthesize borderInsets=_borderInsets;
 @property(retain, nonatomic) UIColor *borderLineColor; // @synthesize borderLineColor=_borderLineColor;
 @property(nonatomic) float borderWidth; // @synthesize borderWidth=_borderWidth;
 @property(nonatomic) int edges; // @synthesize edges=_edges;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (void)_initFields;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     struct CGPoint _coordinateSystemOrigin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint coordinateSystemOrigin; // @synthesize coordinateSystemOrigin=_coordinateSystemOrigin;
 @property(nonatomic) __weak id <PUTilingCoordinateSystem> parentCoordinateSystem; // @synthesize parentCoordinateSystem=_parentCoordinateSystem;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -18,11 +18,11 @@
 
 + (id)timingInfoArrayWithSerializableArray:(id)arg1;
 + (id)serializableArrayWithTimingInfoArray:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *wordID; // @synthesize wordID=_wordID;
 @property(nonatomic) struct _NSRange textRange; // @synthesize textRange=_textRange;
 @property(nonatomic) double timeOffset; // @synthesize timeOffset=_timeOffset;
 @property(copy, nonatomic) NSString *localizedText; // @synthesize localizedText=_localizedText;
-- (void).cxx_destruct;
 - (id)dictionary;
 - (id)initWithDictionary:(id)arg1;
 

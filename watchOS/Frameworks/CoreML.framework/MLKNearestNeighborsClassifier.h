@@ -37,6 +37,7 @@
 + (id)compiledVersionForSpecification:(struct _MLModelSpecification *)arg1 options:(id)arg2 error:(id *)arg3;
 + (id)compileSpecification:(struct _MLModelSpecification *)arg1 toArchive:(struct _MLModelOutputArchiver *)arg2 options:(id)arg3 error:(id *)arg4;
 + (id)loadModelFromCompiledArchive:(struct _MLModelInputArchiver *)arg1 modelVersionInfo:(id)arg2 compilerVersionInfo:(id)arg3 configuration:(id)arg4 error:(id *)arg5;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nearestDistancesFeatureName; // @synthesize nearestDistancesFeatureName=_nearestDistancesFeatureName;
 @property(retain, nonatomic) NSString *nearestLabelsFeatureName; // @synthesize nearestLabelsFeatureName=_nearestLabelsFeatureName;
 @property(nonatomic) int weightingScheme; // @synthesize weightingScheme=_weightingScheme;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) NSDictionary *updateParameters; // @synthesize updateParameters=_updateParameters;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *progressHandlersDispatchQueue; // @synthesize progressHandlersDispatchQueue=_progressHandlersDispatchQueue;
 @property(retain, nonatomic) MLUpdateProgressHandlers *progressHandlers; // @synthesize progressHandlers=_progressHandlers;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)parameterValueForKey:(id)arg1 error:(id *)arg2;

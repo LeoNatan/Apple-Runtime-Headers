@@ -15,8 +15,8 @@
     id _trust;
 }
 
-@property(readonly) id trust; // @synthesize trust=_trust;
 - (void).cxx_destruct;
+@property(readonly) id trust; // @synthesize trust=_trust;
 - (void)respondWithDecisionToAllowUntrustedConnection:(_Bool)arg1;
 - (id)initWithConnection:(id)arg1 trust:(struct __SecTrust *)arg2;
 - (void)dealloc;

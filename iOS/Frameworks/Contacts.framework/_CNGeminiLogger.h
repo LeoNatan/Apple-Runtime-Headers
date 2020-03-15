@@ -16,8 +16,8 @@
     NSObject<OS_os_log> *_log;
 }
 
-@property(readonly, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 - (void)fetchSortedResultsForInteraction:(id)arg1 error:(id)arg2;
 - (void)fetchedSortedResults:(id)arg1 forInteraction:(id)arg2;
 - (void)updateSubscriptionInfoError:(id)arg1;

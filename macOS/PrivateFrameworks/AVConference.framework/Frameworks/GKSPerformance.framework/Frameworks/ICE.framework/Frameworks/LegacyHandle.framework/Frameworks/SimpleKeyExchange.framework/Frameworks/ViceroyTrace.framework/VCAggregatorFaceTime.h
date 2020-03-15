@@ -38,6 +38,12 @@ __attribute__((visibility("hidden")))
     double _callAverageVideoFECSendBitrate;
     double _callAverageTotalVideoRecvBitrate;
     double _callAverageRTT;
+    double _callAverageAbnormalRTT;
+    unsigned int _callAbnormalRTTCount;
+    double _callAverageAbnormalPLR;
+    unsigned int _callAbnormalPLRCount;
+    double _callAverageAbnormalBPL;
+    unsigned int _callAbnormalBPLCount;
     double _callPoorConnectionTotalLength;
     double _callPoorConnectionMaxLength;
     unsigned int _callPoorConnectionFrequency;
@@ -87,6 +93,10 @@ __attribute__((visibility("hidden")))
     unsigned int _videoFrameNonFECCompleteCounter;
     unsigned int _encodedVideoFrameCounter;
     unsigned int _captureVideoFrameCounter;
+    unsigned int _overshootSendBitrate;
+    unsigned int _undershootSendBitrate;
+    unsigned int _overUtilizedBandwidth;
+    unsigned int _underUtilizedBandwidth;
     unsigned int _negotiatedSwitches;
     unsigned int _remoteSwitches;
     unsigned int _lastReportedTotalCellDupTxDataBytes;

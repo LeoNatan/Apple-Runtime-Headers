@@ -19,11 +19,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *notificationsToTimeReferences; // @synthesize notificationsToTimeReferences=_notificationsToTimeReferences;
 @property(retain) NSDictionary *timeReferences; // @synthesize timeReferences=_timeReferences;
 @property __weak PLSQLiteConnection *connection; // @synthesize connection=_connection;
 @property __weak PLStorageOperator *storageOperator; // @synthesize storageOperator=_storageOperator;
-- (void).cxx_destruct;
 - (void)logTimeEntry;
 - (int)bucketTimeStampForDate:(id)arg1 withTimeReference:(long long)arg2 withBucketInterval:(int)arg3;
 - (double)hourBucketBaseSnapOffsetWithMonotonicTime:(long long)arg1;

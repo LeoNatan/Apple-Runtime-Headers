@@ -19,13 +19,13 @@
     CDUnknownBlockType _genericCompletionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType genericCompletionBlock; // @synthesize genericCompletionBlock=_genericCompletionBlock;
 @property(retain, nonatomic) NURenderContext *renderContext; // @synthesize renderContext=_renderContext;
 @property(readonly) NSObject<OS_dispatch_queue> *responseQueue; // @synthesize responseQueue=_responseQueue;
 @property(retain) NUPriority *priority; // @synthesize priority=_priority;
 @property(nonatomic) _Bool shouldCoalesceUpdates; // @synthesize shouldCoalesceUpdates=_shouldCoalesceUpdates;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)submitGenericRequest:(id)arg1;
 - (void)submitGenericRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)cancel;

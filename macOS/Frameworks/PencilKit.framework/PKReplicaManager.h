@@ -23,8 +23,8 @@
 
 + (id)sharedReplicaManager;
 + (BOOL)isSingleRunningApp;
-@property(nonatomic) BOOL testMode; // @synthesize testMode=_testMode;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL testMode; // @synthesize testMode=_testMode;
 - (void)_resetAllReplicaUUIDs;
 - (id)description;
 - (void)_saveStateImmediately;

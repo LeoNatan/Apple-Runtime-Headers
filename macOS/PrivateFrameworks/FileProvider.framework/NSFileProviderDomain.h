@@ -13,6 +13,7 @@
 @interface NSFileProviderDomain : NSObject <NSSecureCoding>
 {
     BOOL _disconnected;
+    BOOL _userEnabled;
     BOOL _hidden;
     BOOL _containsPhotos;
     BOOL _isEnterpriseDomain;
@@ -26,17 +27,18 @@
 
 + (id)domainFromPlistDictionary:(id)arg1 identifier:(id)arg2;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isEnterpriseDomain; // @synthesize isEnterpriseDomain=_isEnterpriseDomain;
 @property(retain, nonatomic) NSString *personaIdentifier; // @synthesize personaIdentifier=_personaIdentifier;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) BOOL containsPhotos; // @synthesize containsPhotos=_containsPhotos;
 @property(copy, nonatomic) NSString *symLinkName; // @synthesize symLinkName=_symLinkName;
-@property(nonatomic, getter=isHidden) BOOL hidden; // @synthesize hidden=_hidden;
+@property(getter=isHidden) BOOL hidden; // @synthesize hidden=_hidden;
+@property(nonatomic) BOOL userEnabled; // @synthesize userEnabled=_userEnabled;
 @property(getter=isDisconnected) BOOL disconnected; // @synthesize disconnected=_disconnected;
 @property(readonly, copy) NSString *pathRelativeToDocumentStorage; // @synthesize pathRelativeToDocumentStorage=_pathRelativeToDocumentStorage;
 @property(readonly, copy) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)plistDictionary;
 - (id)initWithCoder:(id)arg1;

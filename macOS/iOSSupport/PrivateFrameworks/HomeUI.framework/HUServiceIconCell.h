@@ -17,10 +17,10 @@
 }
 
 + (BOOL)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasConfiguredConstraints; // @synthesize hasConfiguredConstraints=_hasConfiguredConstraints;
 @property(readonly, nonatomic) HUIconView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) id <HFIconDescriptor> iconDescriptor; // @synthesize iconDescriptor=_iconDescriptor;
-- (void).cxx_destruct;
 - (void)_updateBackgroundColor;
 - (void)updateConstraints;
 - (void)setSelected:(BOOL)arg1;

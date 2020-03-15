@@ -14,19 +14,19 @@ __attribute__((visibility("hidden")))
     NSPrintOperation *_printOperation;
     struct RetainPtr<NSView> _wkView;
     struct RefPtr<WebKit::WebFrameProxy, WTF::DumbPtrTraits<WebKit::WebFrameProxy>> _webFrame;
-    struct Vector<WebCore::IntRect, 0, WTF::CrashOnOverflow, 16> _printingPageRects;
+    struct Vector<WebCore::IntRect, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> _printingPageRects;
     double _totalScaleFactorForPrinting;
     struct HashMap<WebCore::IntRect, WTF::RefPtr<WebKit::ShareableBitmap, WTF::DumbPtrTraits<WebKit::ShareableBitmap>>, WTF::IntHash<WebCore::IntRect>, WTF::HashTraits<WebCore::IntRect>, WTF::HashTraits<WTF::RefPtr<WebKit::ShareableBitmap, WTF::DumbPtrTraits<WebKit::ShareableBitmap>>>> _pagePreviews;
-    struct Vector<unsigned char, 0, WTF::CrashOnOverflow, 16> _printedPagesData;
+    struct Vector<unsigned char, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> _printedPagesData;
     struct RetainPtr<PDFDocument> _printedPagesPDFDocument;
-    struct Vector<WTF::Vector<WTF::RetainPtr<PDFDestination>, 0, WTF::CrashOnOverflow, 16>, 0, WTF::CrashOnOverflow, 16> _linkDestinationsPerPage;
+    struct Vector<WTF::Vector<WTF::RetainPtr<PDFDestination>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> _linkDestinationsPerPage;
     unsigned long long _expectedComputedPagesCallback;
     struct HashMap<unsigned long long, WebCore::IntRect, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebCore::IntRect>> _expectedPreviewCallbacks;
     unsigned long long _latestExpectedPreviewCallback;
     unsigned long long _expectedPrintCallback;
     BOOL _isPrintingFromSecondaryThread;
-    // Error parsing type: {Lock="m_byte"{Atomic<unsigned char>="value"{atomic<unsigned char>="__a_"AC}}}, name: _printingCallbackMutex
-    // Error parsing type: {Condition="m_hasWaiters"{Atomic<bool>="value"{atomic<bool>="__a_"AB}}}, name: _printingCallbackCondition
+    // Error parsing type: {Lock="m_byte"{Atomic<unsigned char>="value"{atomic<unsigned char>="__a_"{__cxx_atomic_impl<unsigned char, std::__1::__cxx_atomic_base_impl<unsigned char> >="__a_value"AC}}}}, name: _printingCallbackMutex
+    // Error parsing type: {Condition="m_hasWaiters"{Atomic<bool>="value"{atomic<bool>="__a_"{__cxx_atomic_impl<bool, std::__1::__cxx_atomic_base_impl<bool> >="__a_value"AB}}}}, name: _printingCallbackCondition
     NSTimer *_autodisplayResumeTimer;
 }
 

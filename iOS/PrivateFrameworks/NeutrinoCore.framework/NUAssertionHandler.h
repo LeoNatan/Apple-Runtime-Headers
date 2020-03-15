@@ -15,8 +15,8 @@
 
 + (_Bool)runningUnitTests;
 + (id)currentHandler;
-@property(retain) id <NUAssertionPolicyHandler> policy; // @synthesize policy=_policy;
 - (void).cxx_destruct;
+@property(retain) id <NUAssertionPolicyHandler> policy; // @synthesize policy=_policy;
 - (void)handleFailureInFunction:(id)arg1 file:(id)arg2 lineNumber:(long long)arg3 description:(id)arg4;
 - (void)handleFailureInMethod:(SEL)arg1 object:(id)arg2 file:(id)arg3 lineNumber:(long long)arg4 description:(id)arg5;
 - (void)continueAfterAssertInFunction:(id)arg1 file:(id)arg2 lineNumber:(unsigned long long)arg3 description:(id)arg4 arguments:(struct __va_list_tag [1])arg5;

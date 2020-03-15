@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 
 + (id)generateNewKeyWithAccess:(id)arg1 forceNoSEP:(BOOL)arg2 error:(id *)arg3;
 + (id)generateNewKeyWithAccess:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain) NSString *keychainTag; // @synthesize keychainTag=_keychainTag;
 @property(readonly) int keyStore; // @synthesize keyStore=_keyStore;
 @property(readonly) id <P256PrivateKeyProtocol> key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)protobuffer;
 - (id)description;
 - (id)keyIdentifier;

@@ -21,6 +21,7 @@
     NAFuture *_finishExecutingBatchFuture;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NAFuture *finishExecutingBatchFuture; // @synthesize finishExecutingBatchFuture=_finishExecutingBatchFuture;
 @property(retain, nonatomic) NAFuture *startExecutingBatchFuture; // @synthesize startExecutingBatchFuture=_startExecutingBatchFuture;
 @property(nonatomic) SEL batchedSenderSelector; // @synthesize batchedSenderSelector=_batchedSenderSelector;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSMutableSet *uncommittedBatchingReasons; // @synthesize uncommittedBatchingReasons=_uncommittedBatchingReasons;
 @property(retain, nonatomic) id <HFCharacteristicReadPolicy> readPolicy; // @synthesize readPolicy=_readPolicy;
 @property(readonly, nonatomic) __weak HFItemManager *itemManager; // @synthesize itemManager=_itemManager;
-- (void).cxx_destruct;
 - (void)_reset;
 - (void)_executeBatch;
 - (id)_itemProvidersToReloadForInvalidationReasons:(id)arg1;

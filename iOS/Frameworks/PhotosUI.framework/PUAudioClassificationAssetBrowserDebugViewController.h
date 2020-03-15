@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_audioClassificationName;
 }
 
-@property(copy, nonatomic) NSString *audioClassificationName; // @synthesize audioClassificationName=_audioClassificationName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *audioClassificationName; // @synthesize audioClassificationName=_audioClassificationName;
 - (id)_cloneAsset:(id)arg1 toDirectory:(id)arg2;
 - (_Bool)_writeDiagnosticsToURL:(id)arg1 incorrectAssets:(id)arg2;
 - (void)_fileRadarWithIncorrectAssets:(id)arg1;

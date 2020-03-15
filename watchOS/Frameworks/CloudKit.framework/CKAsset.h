@@ -73,6 +73,7 @@
 + (id)_openUnencryptedWithOpenInfo:(id)arg1 genCountCheck:(_Bool)arg2 error:(id *)arg3;
 + (int)errorCodeFromPOSIXCode:(int)arg1;
 + (id)assetWithFileURL:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) int uploadRank; // @synthesize uploadRank=_uploadRank;
 @property(retain, nonatomic) NSDictionary *assetChunkerOptions; // @synthesize assetChunkerOptions=_assetChunkerOptions;
 @property(retain, nonatomic) CKAssetReference *assetReference; // @synthesize assetReference=_assetReference;
@@ -121,7 +122,6 @@
 @property(copy, nonatomic) NSString *recordKey; // @synthesize recordKey=_recordKey;
 @property(nonatomic) __weak CKRecord *record; // @synthesize record=_record;
 @property(retain, nonatomic) NSString *downloadURLTemplate; // @synthesize downloadURLTemplate=_downloadURLTemplate;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(copy, nonatomic) NSURL *nullableFileURL;

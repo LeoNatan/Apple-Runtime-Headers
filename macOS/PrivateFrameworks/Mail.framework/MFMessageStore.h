@@ -44,13 +44,13 @@
 + (id)descriptionOfOpenStores;
 + (unsigned long long)numberOfCurrentlyOpenStores;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL forceInvalidation; // @synthesize forceInvalidation=_forceInvalidation;
 @property BOOL isReadOnly; // @synthesize isReadOnly=_isReadOnly;
 @property(readonly, nonatomic) MCInvocationQueue *openAndCloseMailboxQueue; // @synthesize openAndCloseMailboxQueue=_openAndCloseMailboxQueue;
 @property(readonly, nonatomic) NSOperationQueue *deleteQueue; // @synthesize deleteQueue=_deleteQueue;
 @property(retain) MCActivityMonitor *openMonitor; // @synthesize openMonitor=_openMonitor;
 @property BOOL hasUnsavedChangesToMessageData; // @synthesize hasUnsavedChangesToMessageData=_hasUnsavedChangesToMessageData;
-- (void).cxx_destruct;
 - (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(BOOL)arg2 isEncrypted:(BOOL)arg3 forMessage:(id)arg4;
 - (id)attachmentsDirectoryForMessage:(id)arg1 partNumber:(id)arg2;
 - (id)attachmentsDirectoryForMessage:(id)arg1;

@@ -15,8 +15,8 @@
     CDUnknownBlockType _languageUpdated;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType languageUpdated; // @synthesize languageUpdated=_languageUpdated;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType languageUpdated; // @synthesize languageUpdated=_languageUpdated;
 - (_Bool)shouldCacheObject:(id)arg1;
 - (void)noteObject:(id)arg1 forLanguage:(id)arg2;
 - (void)willLoadLanguage:(id)arg1;

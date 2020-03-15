@@ -20,9 +20,9 @@
 + (Class)headerClass;
 + (id)cellReuseIdentifier;
 + (Class)cellClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showHeader; // @synthesize showHeader=_showHeader;
 @property(copy, nonatomic) NSString *language; // @synthesize language=_language;
-- (void).cxx_destruct;
 - (void)configureHeaderView:(id)arg1;
 - (void)configureCell:(id)arg1 forItem:(int)arg2;
 - (int)numberOfItems;

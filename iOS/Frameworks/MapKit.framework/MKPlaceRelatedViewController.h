@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)placeRelatedViewControllerFor:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_MKInfoCardAnalyticsDelegate> analyticsDelegate; // @synthesize analyticsDelegate=_analyticsDelegate;
 @property(nonatomic) __weak id <MKPlaceRelatedViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
-- (void).cxx_destruct;
 - (void)_captureSeeAllAction;
 - (void)_captureTapActionWithMapItem:(id)arg1;
 - (void)sectionView:(id)arg1 didSelectRow:(id)arg2 atIndex:(unsigned long long)arg3;

@@ -22,11 +22,11 @@
     CDUnknownBlockType _promptForPINHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType promptForPINHandler; // @synthesize promptForPINHandler=_promptForPINHandler;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) CUMobileDevice *peerDevice; // @synthesize peerDevice=_peerDevice;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (id)_waitForPairedCounterpartDevice:(id)arg1 error:(id *)arg2;
 - (BOOL)_enableWirelessSupport:(id)arg1 error:(id *)arg2;
 - (void)_unpairWithCompletion:(CDUnknownBlockType)arg1;

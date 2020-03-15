@@ -17,9 +17,9 @@
 }
 
 + (id)magazineGenreWithGenre:(id)arg1 localizedDescription:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
 @property(copy, nonatomic) NSString *genre; // @synthesize genre=_genre;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

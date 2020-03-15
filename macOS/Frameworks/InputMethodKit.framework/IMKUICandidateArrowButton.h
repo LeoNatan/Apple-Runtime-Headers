@@ -16,11 +16,11 @@
     BOOL _visible;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL pointsUpwards; // @synthesize pointsUpwards=_pointsUpwards;
 @property(nonatomic) BOOL visible; // @synthesize visible=_visible;
 @property(retain, nonatomic) NSImage *arrowImageUp; // @synthesize arrowImageUp=_arrowImageUp;
 @property(retain, nonatomic) NSImage *arrowImageDown; // @synthesize arrowImageDown=_arrowImageDown;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)isFlipped;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     NSImage *_backgroundImage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL usesAppKitBannerView; // @synthesize usesAppKitBannerView=_usesAppKitBannerView;
 @property(nonatomic) BOOL usesBehindWindowBlending; // @synthesize usesBehindWindowBlending=_usesBehindWindowBlending;
 @property(retain, nonatomic) NSImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSColor *bottomBorderColor; // @synthesize bottomBorderColor=_bottomBorderColor;
 @property(nonatomic) BOOL hasBottomBorder; // @synthesize hasBottomBorder=_hasBottomBorder;
 @property BOOL mouseDownCanMoveWindow; // @synthesize mouseDownCanMoveWindow=_mouseDownCanMoveWindow;
-- (void).cxx_destruct;
 - (BOOL)isAccessibilityElement;
 - (id)accessibilityRole;
 - (void)_windowChangedKeyState;

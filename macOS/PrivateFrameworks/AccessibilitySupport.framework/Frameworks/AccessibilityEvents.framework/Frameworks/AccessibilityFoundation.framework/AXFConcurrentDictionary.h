@@ -14,9 +14,9 @@
     AXFDispatchQueue *__queue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AXFDispatchQueue *_queue; // @synthesize _queue=__queue;
 @property(readonly, nonatomic) NSMutableDictionary *_storage; // @synthesize _storage=__storage;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;

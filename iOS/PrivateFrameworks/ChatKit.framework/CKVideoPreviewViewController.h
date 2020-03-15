@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     AVPlayerLayer *_avPlayerLayer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool reachedEnd; // @synthesize reachedEnd=_reachedEnd;
 @property(retain, nonatomic) AVPlayerLayer *avPlayerLayer; // @synthesize avPlayerLayer=_avPlayerLayer;
 @property(retain, nonatomic) AVPlayer *avPlayer; // @synthesize avPlayer=_avPlayer;
 @property(retain, nonatomic) AVPlayerItem *avPlayerItem; // @synthesize avPlayerItem=_avPlayerItem;
 @property(nonatomic) _Bool redisplayStatusBar; // @synthesize redisplayStatusBar=_redisplayStatusBar;
 @property(nonatomic) __weak id <CKVideoPreviewViewControllerDelegate> videoPreviewDelegate; // @synthesize videoPreviewDelegate=_videoPreviewDelegate;
-- (void).cxx_destruct;
 - (void)videoDidReachEnd:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)pause;

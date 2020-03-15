@@ -18,10 +18,10 @@
 
 + (id)contextControlItem;
 + (id)controlItemWithImage:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isSelected) _Bool selected;
 - (id)buttonView;
 - (id)initWithType:(long long)arg1;

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_messages;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *messages; // @synthesize messages=_messages;
 @property(nonatomic) __weak id <VSMessageQueueDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)removeAllMessages;
 - (void)addMessage:(id)arg1;
 - (id)init;

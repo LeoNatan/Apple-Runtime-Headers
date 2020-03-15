@@ -35,6 +35,7 @@
     double _elapsedTime;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *progressRingProgressLayer; // @synthesize progressRingProgressLayer=_progressRingProgressLayer;
 @property(retain, nonatomic) CAShapeLayer *progressRingTrackLayer; // @synthesize progressRingTrackLayer=_progressRingTrackLayer;
 @property(nonatomic, getter=isHidingAllControls) _Bool hidingAllControls; // @synthesize hidingAllControls=_hidingAllControls;
@@ -53,7 +54,6 @@
 @property(readonly, nonatomic) NMUNowPlayingArtworkView *artworkView; // @synthesize artworkView=_artworkView;
 @property(nonatomic) __weak id <NMUNowPlayingViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <NMUNowPlayingViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_handleControlEventTouchUpInside:(id)arg1;
 - (id)_buttonForPlacement:(unsigned int)arg1;
 - (float)_lastLineBaseLineOffset;

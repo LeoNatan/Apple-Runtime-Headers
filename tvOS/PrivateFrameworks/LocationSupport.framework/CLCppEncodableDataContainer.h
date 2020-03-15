@@ -17,10 +17,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)containerWithObject:(void *)arg1 cppDataEncoder:(CDUnknownBlockType)arg2 destructor:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType encoder; // @synthesize encoder=_encoder;
 @property(copy, nonatomic) id compatibilityInfo; // @synthesize compatibilityInfo=_compatibilityInfo;
 @property(copy, nonatomic) NSData *serialized; // @synthesize serialized=_serialized;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;

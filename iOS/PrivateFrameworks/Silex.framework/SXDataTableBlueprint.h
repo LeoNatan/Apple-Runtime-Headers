@@ -21,6 +21,7 @@
     struct UIEdgeInsets _tableInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long dataOrientation; // @synthesize dataOrientation=_dataOrientation;
 @property(readonly, nonatomic) SXDataTableDictionary *columnDividers; // @synthesize columnDividers=_columnDividers;
 @property(readonly, nonatomic) SXDataTableDictionary *rowDividers; // @synthesize rowDividers=_rowDividers;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) struct UIEdgeInsets tableInsets; // @synthesize tableInsets=_tableInsets;
 @property(readonly, nonatomic) unsigned long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
 @property(readonly, nonatomic) unsigned long long numberOfRows; // @synthesize numberOfRows=_numberOfRows;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isRectValid:(struct CGRect)arg1;
 - (struct CGRect)rectForColumnAtIndex:(unsigned long long)arg1;

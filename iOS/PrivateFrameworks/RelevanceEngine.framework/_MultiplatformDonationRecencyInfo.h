@@ -16,11 +16,11 @@
     NSDate *_localDonationCreationDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *localDonationCreationDate; // @synthesize localDonationCreationDate=_localDonationCreationDate;
 @property(retain, nonatomic) NSDate *remoteDonationCreationDate; // @synthesize remoteDonationCreationDate=_remoteDonationCreationDate;
 @property(copy, nonatomic) NSString *localBundleIdentifier; // @synthesize localBundleIdentifier=_localBundleIdentifier;
 @property(copy, nonatomic) NSString *remoteBundleIdentifier; // @synthesize remoteBundleIdentifier=_remoteBundleIdentifier;
-- (void).cxx_destruct;
 - (id)identifierForMostRecentData;
 
 @end

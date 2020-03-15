@@ -155,6 +155,8 @@
 - (void)_updateRoutingForMessageGUID:(id)arg1 chatGUID:(id)arg2 error:(unsigned int)arg3 account:(id)arg4;
 - (void)_handleRoutingWithDictionary:(id)arg1;
 - (void)_markChatAsDowngraded:(id)arg1;
+- (void)_removeChatGuidFromCoreDuet:(id)arg1;
+- (Class)spotlightItemRecorderClass;
 - (void)didChangeMemberStatus:(int)arg1 forHandle:(id)arg2 fromHandle:(id)arg3 unformattedNumber:(id)arg4 countryCode:(id)arg5 forChat:(id)arg6 style:(unsigned char)arg7 account:(id)arg8 destinationCallerID:(id)arg9;
 - (void)didChangeMemberStatus:(int)arg1 forHandle:(id)arg2 fromHandle:(id)arg3 unformattedNumber:(id)arg4 countryCode:(id)arg5 forChat:(id)arg6 style:(unsigned char)arg7 account:(id)arg8;
 - (void)didChangeMemberStatus:(int)arg1 forHandle:(id)arg2 fromHandle:(id)arg3 unformattedNumber:(id)arg4 countryCode:(id)arg5 forChat:(id)arg6 style:(unsigned char)arg7;

@@ -21,13 +21,13 @@
 
 + (id)cornerRadiusMaskForDevice:(id)arg1 maxCornerRadius:(double)arg2 screenScale:(double)arg3;
 + (id)_loadQueue;
+- (void).cxx_destruct;
 @property(retain) id <MTLTexture> atomicTexture; // @synthesize atomicTexture=_atomicTexture;
 @property(readonly, nonatomic) long long byteSize; // @synthesize byteSize=_byteSize;
 @property(readonly, nonatomic) long long numberOfSlices; // @synthesize numberOfSlices=_numberOfSlices;
 @property(readonly, nonatomic) double maxCornerRadius; // @synthesize maxCornerRadius=_maxCornerRadius;
 @property(readonly, nonatomic) double screenScale; // @synthesize screenScale=_screenScale;
 @property(readonly, nonatomic) long long texturePixelSide; // @synthesize texturePixelSide=_texturePixelSide;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id <MTLTexture> texture;
 - (void)_loadCornerRadiusTexture;
 - (id)init;

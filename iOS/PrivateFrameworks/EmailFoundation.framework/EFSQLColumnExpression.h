@@ -20,9 +20,9 @@
 + (id)allColumns;
 + (id)column:(id)arg1;
 + (id)table:(id)arg1 column:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *tableName; // @synthesize tableName=_tableName;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)doesNotMatchMask:(id)arg1;
 - (id)matchesMask:(id)arg1;
 - (id)concatenate:(id)arg1;

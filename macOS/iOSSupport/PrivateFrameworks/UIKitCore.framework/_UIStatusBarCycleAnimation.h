@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_completionHandlers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *completionHandlers; // @synthesize completionHandlers=_completionHandlers;
 @property(nonatomic) BOOL visible; // @synthesize visible=_visible;
 @property(retain, nonatomic) NSArray *stoppingLayerAnimations; // @synthesize stoppingLayerAnimations=_stoppingLayerAnimations;
 @property(nonatomic) BOOL stopsAfterReversing; // @synthesize stopsAfterReversing=_stopsAfterReversing;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) NSArray *layerAnimations; // @synthesize layerAnimations=_layerAnimations;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)_sendCompletionsWithFinished:(BOOL)arg1;
 - (void)_stopStoppingAnimations;

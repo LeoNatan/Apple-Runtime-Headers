@@ -17,9 +17,9 @@
     CDStruct_996ac03c _extent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_996ac03c extent; // @synthesize extent=_extent;
 @property(copy, nonatomic) VNImageHomographicAlignmentObservation *observation; // @synthesize observation=_observation;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

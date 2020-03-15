@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     VSAccountStore *_accountStore;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(copy, nonatomic) NSArray *unsavedAccounts; // @synthesize unsavedAccounts=_unsavedAccounts;
 @property(retain, nonatomic) VSOptional *result; // @synthesize result=_result;
-- (void).cxx_destruct;
 - (void)executionDidBegin;
 - (void)_didSaveAccounts:(id)arg1 withResult:(BOOL)arg2 error:(id)arg3;
 - (id)initWithUnsavedAccounts:(id)arg1 accountStore:(id)arg2;

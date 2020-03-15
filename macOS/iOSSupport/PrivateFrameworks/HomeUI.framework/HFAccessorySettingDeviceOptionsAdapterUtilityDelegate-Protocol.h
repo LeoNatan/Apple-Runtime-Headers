@@ -7,6 +7,6 @@
 #import <HomeUI/NSObject-Protocol.h>
 
 @protocol HFAccessorySettingDeviceOptionsAdapterUtilityDelegate <NSObject>
-- (void)currentAccessoryReachableOverRapportUpdated:(BOOL)arg1;
+- (void)accessoryReachableOverRapport:(BOOL)arg1;
 @end
 

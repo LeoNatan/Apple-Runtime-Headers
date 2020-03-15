@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_backgroundEffectSettings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *backgroundEffectSettings; // @synthesize backgroundEffectSettings=_backgroundEffectSettings;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) PVEffect *backgroundEffect;
 @property(readonly, nonatomic) NSString *effectID;

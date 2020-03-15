@@ -16,10 +16,10 @@
     id <ML3DatabaseModuleContext> _context;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <ML3DatabaseModuleContext> context; // @synthesize context=_context;
 @property(readonly, nonatomic) struct sqlite3_module *moduleMethods; // @synthesize moduleMethods=_moduleMethods;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithName:(id)arg1 moduleMethods:(struct sqlite3_module *)arg2;
 

@@ -6,12 +6,17 @@
 
 #import <Intents/INIntent.h>
 
-@interface WFSetAppearanceIntent : INIntent
+#import <ActionKit/WFSettingIntent-Protocol.h>
+
+@interface WFSetAppearanceIntent : INIntent <WFSettingIntent>
 {
 }
 
+- (void)applyWithSettingsClient:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) Class settingsClientClass;
 
 // Remaining properties
 @property(nonatomic) long long style; // @dynamic style;
+
 @end
 

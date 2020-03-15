@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (int)isPredominatelyDownload;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDProtocolTranslator *translator; // @synthesize translator=_translator;
 @property(copy, nonatomic) NSArray *responseRecords; // @synthesize responseRecords=_responseRecords;
 @property(copy, nonatomic) NSData *serializedResponse; // @synthesize serializedResponse=_serializedResponse;
@@ -60,7 +61,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType replaceWireSerializations; // @synthesize replaceWireSerializations=_replaceWireSerializations;
 @property(copy, nonatomic) CDUnknownBlockType initialResponseReceivedCallback; // @synthesize initialResponseReceivedCallback=_initialResponseReceivedCallback;
 @property(copy, nonatomic) CDUnknownBlockType replaceLocalSerializationsBlobs; // @synthesize replaceLocalSerializationsBlobs=_replaceLocalSerializationsBlobs;
-- (void).cxx_destruct;
 - (void)main;
 - (void)_postflightRecords;
 - (void)_getDeserializedRecords;

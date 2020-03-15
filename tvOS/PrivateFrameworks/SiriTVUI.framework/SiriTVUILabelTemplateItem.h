@@ -13,8 +13,8 @@
     NSDictionary *_attributedTexts;
 }
 
-@property(copy, nonatomic) NSDictionary *attributedTexts; // @synthesize attributedTexts=_attributedTexts;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *attributedTexts; // @synthesize attributedTexts=_attributedTexts;
 - (id)initWithAttributedTexts:(id)arg1;
 - (id)init;
 

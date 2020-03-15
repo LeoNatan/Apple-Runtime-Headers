@@ -7,6 +7,7 @@
 @class CTXPCServiceSubscriptionContext, NSDictionary, NSString;
 
 @protocol CTXPCServiceCapabilitiesInterface
+- (void)wifiCallingCTFollowUpComplete:(NSDictionary *)arg1 withCompletion:(void (^)(NSError *))arg2;
 - (void)context:(CTXPCServiceSubscriptionContext *)arg1 removePhoneServicesDevice:(NSString *)arg2 withCompletion:(void (^)(NSError *))arg3;
 - (void)context:(CTXPCServiceSubscriptionContext *)arg1 addPhoneServicesDevice:(NSString *)arg2 withCompletion:(void (^)(NSError *))arg3;
 - (void)getPhoneServicesDeviceInfo:(void (^)(NSDictionary *, NSError *))arg1;

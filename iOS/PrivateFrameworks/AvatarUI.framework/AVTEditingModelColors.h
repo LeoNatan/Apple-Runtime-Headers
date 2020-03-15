@@ -13,18 +13,18 @@
 @interface AVTEditingModelColors : NSObject <NSCopying>
 {
     AVTAvatarColorVariationStore *_variationStore;
-    struct NSDictionary *_storage;
+    NSDictionary *_storage;
 }
 
 + (void)createColorsForPaletteCategory:(long long)arg1 inCache:(id)arg2 withDerivedPaletteCategories:(id)arg3;
 + (id)buildAllColors;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *storage; // @synthesize storage=_storage;
 @property(retain, nonatomic) AVTAvatarColorVariationStore *variationStore; // @synthesize variationStore=_variationStore;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)colorsForSettingKind:(CDStruct_597dd055)arg1;
 - (id)colorForSettingKind:(CDStruct_597dd055)arg1 identifier:(id)arg2;
-- (id)initWithStorage:(struct NSDictionary *)arg1 variationStore:(id)arg2;
+- (id)initWithStorage:(id)arg1 variationStore:(id)arg2;
 - (id)init;
 
 @end

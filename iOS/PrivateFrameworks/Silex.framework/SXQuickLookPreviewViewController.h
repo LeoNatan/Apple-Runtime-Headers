@@ -19,10 +19,10 @@
     SXQuickLookTransitionContext *_transitionContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SXQuickLookTransitionContext *transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(readonly, nonatomic) id <SXMediaSharingPolicyProvider> mediaSharingPolicyProvider; // @synthesize mediaSharingPolicyProvider=_mediaSharingPolicyProvider;
 @property(readonly, nonatomic) SXQuickLookFile *file; // @synthesize file=_file;
-- (void).cxx_destruct;
 - (id)previewController:(id)arg1 previewItemAtIndex:(long long)arg2;
 - (long long)numberOfPreviewItemsInPreviewController:(id)arg1;
 - (_Bool)previewController:(id)arg1 canShareItem:(id)arg2;

@@ -13,8 +13,8 @@
     NSArray *_entries;
 }
 
-@property(readonly) NSArray *entries; // @synthesize entries=_entries;
 - (void).cxx_destruct;
+@property(readonly) NSArray *entries; // @synthesize entries=_entries;
 - (id)machineIDsInStatus:(unsigned long long)arg1;
 - (id)description;
 - (id)entryFor:(id)arg1;

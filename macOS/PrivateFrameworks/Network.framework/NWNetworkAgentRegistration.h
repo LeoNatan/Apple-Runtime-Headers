@@ -23,13 +23,13 @@
 + (BOOL)removeActiveAssertionFromNetworkAgent:(id)arg1;
 + (BOOL)addActiveAssertionToNetworkAgent:(id)arg1;
 + (int)newRegistrationFileDescriptor;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_source> *readSource; // @synthesize readSource=_readSource;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property int registrationSocket; // @synthesize registrationSocket=_registrationSocket;
 @property(retain) NSUUID *registeredUUID; // @synthesize registeredUUID=_registeredUUID;
 @property(retain) NSObject<NWNetworkAgent> *networkAgent; // @synthesize networkAgent=_networkAgent;
 @property Class networkAgentClass; // @synthesize networkAgentClass=_networkAgentClass;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long useCount;
 - (BOOL)assignResolvedEndpoints:(id)arg1 toClient:(id)arg2;
 - (BOOL)assignDiscoveredEndpoints:(id)arg1 toClient:(id)arg2;

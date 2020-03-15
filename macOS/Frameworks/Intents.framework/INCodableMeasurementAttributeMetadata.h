@@ -17,17 +17,17 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL supportsNegativeNumbers; // @synthesize supportsNegativeNumbers=_supportsNegativeNumbers;
 @property(nonatomic) double defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(retain, nonatomic) NSOrderedSet *defaultUnits; // @synthesize defaultUnits=_defaultUnits;
 @property(retain, nonatomic) NSUnit *unit; // @synthesize unit=_unit;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)_defaultUnitWithNames:(id)arg1;
 - (id)_unitWithUnitName:(id)arg1;
 - (Class)_unitClass;
-- (id)dictionaryRepresentationForLanguage:(id)arg1;
+- (id)dictionaryRepresentationWithLocalizer:(id)arg1;
 - (void)updateWithDictionary:(id)arg1;
 
 @end

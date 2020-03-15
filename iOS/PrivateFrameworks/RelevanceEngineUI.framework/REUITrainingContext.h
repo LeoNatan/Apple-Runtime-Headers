@@ -15,8 +15,8 @@
     _Bool _resetsWhenResignsCurrent;
 }
 
-@property(nonatomic) _Bool resetsWhenResignsCurrent; // @synthesize resetsWhenResignsCurrent=_resetsWhenResignsCurrent;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool resetsWhenResignsCurrent; // @synthesize resetsWhenResignsCurrent=_resetsWhenResignsCurrent;
 - (_Bool)performSimulationCommand:(id)arg1 withOptions:(id)arg2;
 - (void)_willResignCurrent;
 - (id)_lowerElementsThanElement:(id)arg1;

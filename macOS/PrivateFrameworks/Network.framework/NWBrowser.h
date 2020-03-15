@@ -18,11 +18,11 @@
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSSet *internalDiscoveredEndpoints; // @synthesize internalDiscoveredEndpoints=_internalDiscoveredEndpoints;
 @property(readonly) NSObject<OS_nw_browser> *internalBrowser; // @synthesize internalBrowser=_internalBrowser;
 @property(readonly) NWParameters *parameters; // @synthesize parameters=_parameters;
 @property(readonly) NWBrowseDescriptor *descriptor; // @synthesize descriptor=_descriptor;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *discoveredEndpoints;
 - (id)copyDiscoveredEndpoints;
 - (void)dealloc;

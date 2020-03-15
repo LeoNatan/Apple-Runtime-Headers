@@ -20,10 +20,10 @@
     void *_externalDevice;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) void *externalDevice; // @synthesize externalDevice=_externalDevice;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType receivedCustomDataHandler; // @synthesize receivedCustomDataHandler=_receivedCustomDataHandler;
-- (void).cxx_destruct;
 - (void)_connectionStateDidChange:(unsigned int)arg1 error:(id)arg2;
 - (void)_connectionDidReceiveCustomData:(id)arg1;
 - (void)resignActiveOriginWithCompletionHandler:(CDUnknownBlockType)arg1;

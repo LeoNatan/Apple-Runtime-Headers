@@ -20,13 +20,13 @@
     NSProgress *_parentProgress;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSProgress *parentProgress; // @synthesize parentProgress=_parentProgress;
 @property(retain, nonatomic) NSFileHandle *fileHandle; // @synthesize fileHandle=_fileHandle;
 @property(retain, nonatomic) NSLock *journalLock; // @synthesize journalLock=_journalLock;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(nonatomic) __weak id <HDDatabaseJournalDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)_unitTesting_journalFiles;
 - (void)_unitTesting_closeCurrentJournalFile;
 - (_Bool)_performPostJournalMergeWithVersion:(unsigned int)arg1 profile:(id)arg2 transaction:(id)arg3 error:(id *)arg4;

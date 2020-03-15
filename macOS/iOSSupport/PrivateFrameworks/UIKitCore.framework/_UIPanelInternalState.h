@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _splitterDragStartPointInContentView;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) UISlidingBarStateRequest *specificSplitterPositionStateRequest; // @synthesize specificSplitterPositionStateRequest=_specificSplitterPositionStateRequest;
 @property(nonatomic) double splitterDragXOffsetInBorderView; // @synthesize splitterDragXOffsetInBorderView=_splitterDragXOffsetInBorderView;
 @property(nonatomic) struct CGPoint splitterDragStartPointInContentView; // @synthesize splitterDragStartPointInContentView=_splitterDragStartPointInContentView;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIViewController *trailingViewController; // @synthesize trailingViewController=_trailingViewController;
 @property(retain, nonatomic) UIViewController *leadingViewController; // @synthesize leadingViewController=_leadingViewController;
 @property(retain, nonatomic) UIViewController *mainViewController; // @synthesize mainViewController=_mainViewController;
-- (void).cxx_destruct;
 - (id)_stateForInteractiveRequest:(id)arg1 withAffectedSides:(long long)arg2 inPossibleStates:(id)arg3;
 - (id)computePossibleStatesGivenParentView:(id)arg1 withSize:(struct CGSize)arg2;
 - (id)_allowedTrailingWidthsForParentWidth:(double)arg1;

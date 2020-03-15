@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)ruleIdentifier;
-@property(retain, nonatomic) NSString *onboardingCountryCode; // @synthesize onboardingCountryCode=_onboardingCountryCode;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *onboardingCountryCode; // @synthesize onboardingCountryCode=_onboardingCountryCode;
 - (_Bool)evaluate;
 - (void)processUserInfo:(id)arg1;
 

@@ -27,6 +27,7 @@
 
 + (id)sharedInstance;
 + (BOOL)adShouldCreateADSession;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ADDeviceInfo *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
 @property(nonatomic) BOOL applicationCanRecieveAds; // @synthesize applicationCanRecieveAds=_applicationCanRecieveAds;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *adSpaceQueue; // @synthesize adSpaceQueue=_adSpaceQueue;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSMutableArray *adSpaces; // @synthesize adSpaces=_adSpaces;
 @property(nonatomic) BOOL appExtensionCanReceiveAds; // @synthesize appExtensionCanReceiveAds=_appExtensionCanReceiveAds;
 @property(nonatomic) BOOL applicationCanReceiveBackgroundAds; // @synthesize applicationCanReceiveBackgroundAds=_applicationCanReceiveBackgroundAds;
-- (void).cxx_destruct;
 - (void)adAnalyticsEventReceived:(id)arg1;
 - (void)_appDidEnterBackground;
 - (void)_appDidBecomeActive;

@@ -27,8 +27,8 @@
 }
 
 + (id)errorForUnpublishOperation:(id)arg1;
-@property(retain) NSManagedObjectID *nodeID; // @synthesize nodeID=_nodeID;
 - (void).cxx_destruct;
+@property(retain) NSManagedObjectID *nodeID; // @synthesize nodeID=_nodeID;
 - (void)publishOperation:(id)arg1 progressedToCurrentUnits:(unsigned long long)arg2 totalUnits:(unsigned long long)arg3;
 - (void)publishOperation:(id)arg1 didFinishWithError:(id)arg2;
 - (void)setLastOperationError:(id)arg1;

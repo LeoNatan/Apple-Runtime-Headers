@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     double _authSectionHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double authSectionHeight; // @synthesize authSectionHeight=_authSectionHeight;
 @property(retain, nonatomic) AKInlineSignInViewController *inlineSignInViewController; // @synthesize inlineSignInViewController=_inlineSignInViewController;
 @property(retain, nonatomic) MCSignInPageAuthenticationCell *cell; // @synthesize cell=_cell;
-- (void).cxx_destruct;
 - (double)heightForRowAtIndex:(unsigned long long)arg1;
 - (double)heightForHeader;
 - (id)titleForHeader;

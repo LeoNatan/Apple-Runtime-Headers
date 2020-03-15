@@ -29,7 +29,7 @@
     struct CGPoint _preciseLocationInWindow;
     struct CGPoint _precisePreviousLocationInWindow;
     double _previousPressure;
-    unsigned char _pathIndex;
+    long long _pathIndex;
     unsigned char _pathIdentity;
     double _pathMajorRadius;
     double _majorRadiusTolerance;
@@ -46,6 +46,7 @@
         unsigned int _deliversUpdatesInTouchesMoved:1;
         unsigned int _isPredictedTouch:1;
         unsigned int _didDispatchAsEnded:1;
+        unsigned int _isPointerTouch:1;
         unsigned int _analyticsUsedByAllowedGesture:1;
     } _touchFlags;
     _UITouchPredictor *_touchPredictor;
@@ -69,6 +70,7 @@
 }
 
 + (id)_createTouchesWithGSEvent:(struct __GSEvent *)arg1 phase:(long long)arg2 view:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) double initialTouchTimestamp; // @synthesize initialTouchTimestamp=_initialTouchTimestamp;
 @property(readonly, nonatomic) double azimuthAngleInWindow; // @synthesize azimuthAngleInWindow=_azimuthAngleInWindow;
 @property(nonatomic, setter=_setAzimuthAngleInCADisplay:) double azimuthAngleInCADisplay; // @synthesize azimuthAngleInCADisplay=_azimuthAngleInCADisplay;
@@ -91,11 +93,12 @@
 @property(nonatomic, setter=_setDisplacement:) struct CGSize _displacement; // @synthesize _displacement;
 @property(readonly, nonatomic) double _pressure; // @synthesize _pressure;
 @property(nonatomic, setter=_setPathIdentity:) unsigned char _pathIdentity; // @synthesize _pathIdentity;
-@property(nonatomic, setter=_setPathIndex:) unsigned char _pathIndex; // @synthesize _pathIndex;
+@property(nonatomic, setter=_setPathIndex:) long long _pathIndex; // @synthesize _pathIndex;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 @property(nonatomic, getter=_isAnalyticsUsedByAllowedGesture, setter=_setAnalyticsUsedByAllowedGesture:) BOOL _analyticsUsedByAllowedGesture;
+@property(nonatomic, setter=_setIsPointerTouch:) BOOL _isPointerTouch;
 - (void)_clearForReenteringHoverInWindow:(id)arg1;
+- (id)_rehitTestWithEvent:(id)arg1 constrainingToCurrentWindow:(BOOL)arg2;
 - (id)_rehitTest;
 - (void)_willBeDispatchedAsEnded;
 - (BOOL)_isStationaryRelativeToTouches:(id)arg1;

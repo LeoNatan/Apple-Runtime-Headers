@@ -14,9 +14,9 @@
     NSArray *_rowsLayouts;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *rowsLayouts; // @synthesize rowsLayouts=_rowsLayouts;
 @property(nonatomic) double spaceBetweenRows; // @synthesize spaceBetweenRows=_spaceBetweenRows;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

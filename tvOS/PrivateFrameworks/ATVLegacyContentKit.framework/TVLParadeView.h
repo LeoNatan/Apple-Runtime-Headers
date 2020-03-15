@@ -15,8 +15,8 @@
     TVLParadePreviewElement *_paradeElement;
 }
 
-@property(retain, nonatomic) TVLParadePreviewElement *paradeElement; // @synthesize paradeElement=_paradeElement;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TVLParadePreviewElement *paradeElement; // @synthesize paradeElement=_paradeElement;
 @property(nonatomic, getter=isPreviewPaused) _Bool previewPaused;
 - (void)updateWithFeedElement:(id)arg1;
 - (id)currentFeedElement;

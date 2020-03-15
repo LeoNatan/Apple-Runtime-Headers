@@ -53,7 +53,7 @@
 - (BOOL)needsReordering;
 - (void)setNeedsReordering;
 @property(readonly, copy, nonatomic) CDUnknownBlockType albumsSortingComparator;
-- (BOOL)albumHasFixedOrder:(struct NSObject *)arg1;
+- (BOOL)albumHasFixedOrder:(id)arg1;
 - (BOOL)canEditAlbums;
 - (short)albumListType;
 - (BOOL)hasAtLeastOneAlbum;

@@ -19,8 +19,8 @@
 }
 
 + (id)volumeControlWithDecibelValue:(float)arg1 minimumValue:(float)arg2 maximumValue:(float)arg3 isSettable:(BOOL)arg4 forElement:(unsigned int)arg5 inScope:(unsigned int)arg6 withPlugin:(id)arg7;
-@property(readonly, nonatomic, getter=isSettable) BOOL settable; // @synthesize settable=_settable;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isSettable) BOOL settable; // @synthesize settable=_settable;
 - (id)driverClassName;
 - (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;
 - (BOOL)changeScalarValue:(float)arg1;

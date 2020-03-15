@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     id <NSObject><NSCopying> _modelCachingIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) id <NSObject><NSCopying> modelCachingIdentifier; // @synthesize modelCachingIdentifier=_modelCachingIdentifier;
 @property(nonatomic) unsigned long long imageCropAndScaleOption; // @synthesize imageCropAndScaleOption=_imageCropAndScaleOption;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)updateWithPropertiesOfModel:(id)arg1;
 - (id)initWithRequestClass:(Class)arg1;

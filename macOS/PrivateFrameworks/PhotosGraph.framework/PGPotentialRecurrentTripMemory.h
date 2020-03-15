@@ -13,8 +13,8 @@
     NSSet *_tripLocationNodes;
 }
 
-@property(readonly) NSSet *tripLocationNodes; // @synthesize tripLocationNodes=_tripLocationNodes;
 - (void).cxx_destruct;
+@property(readonly) NSSet *tripLocationNodes; // @synthesize tripLocationNodes=_tripLocationNodes;
 - (id)initWithTripLocationNodes:(id)arg1 momentNodes:(id)arg2;
 
 @end

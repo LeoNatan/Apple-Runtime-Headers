@@ -23,6 +23,7 @@
 }
 
 + (id)secureCodedPropertyKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *historicalRanks; // @synthesize historicalRanks=_historicalRanks;
 @property(nonatomic) long long averageScore; // @synthesize averageScore=_averageScore;
 @property(nonatomic) long long latestScore; // @synthesize latestScore=_latestScore;
@@ -33,7 +34,6 @@
 @property(nonatomic) long long tournamentsPlayed; // @synthesize tournamentsPlayed=_tournamentsPlayed;
 @property(retain, nonatomic) GKPlayerInternal *player; // @synthesize player=_player;
 @property(retain, nonatomic) NSString *tournamentDefinitionID; // @synthesize tournamentDefinitionID=_tournamentDefinitionID;
-- (void).cxx_destruct;
 
 @end
 

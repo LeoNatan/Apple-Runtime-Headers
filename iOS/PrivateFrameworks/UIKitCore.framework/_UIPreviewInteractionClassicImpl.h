@@ -46,11 +46,11 @@ __attribute__((visibility("hidden")))
     UIPreviewInteraction *_previewInteraction;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIPreviewInteraction *previewInteraction; // @synthesize previewInteraction=_previewInteraction;
 @property(retain, nonatomic) id <_UIPreviewInteractionTouchForceProviding> touchForceProvider; // @synthesize touchForceProvider=_touchForceProvider;
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(nonatomic) __weak id <UIPreviewInteractionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_endViewControllerPresentationObserving;
 - (void)_prepareForViewControllerPresentationObserving;
 - (id)_gestureRecognizerForExclusionRelationship;

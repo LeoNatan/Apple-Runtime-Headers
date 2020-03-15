@@ -14,8 +14,8 @@
 }
 
 + (id)loaderWithBundle:(id)arg1;
-@property(readonly, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 - (id)loadViewController;
 @property(readonly, copy, nonatomic) NSString *localizedTitle;
 - (id)initWithBundle:(id)arg1;

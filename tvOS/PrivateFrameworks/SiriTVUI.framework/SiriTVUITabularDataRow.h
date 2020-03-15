@@ -13,8 +13,8 @@
     NSArray *_actions;
 }
 
-@property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 
 @end
 

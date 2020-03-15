@@ -14,9 +14,9 @@
     NSString *_invitationStatusString;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *invitationStatusString; // @synthesize invitationStatusString=_invitationStatusString;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

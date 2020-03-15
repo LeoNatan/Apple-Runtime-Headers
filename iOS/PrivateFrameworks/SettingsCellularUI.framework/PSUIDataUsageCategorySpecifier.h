@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     unsigned long long _type;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) PSDataUsageStatisticsCache *statisticsCache; // @synthesize statisticsCache=_statisticsCache;
 @property(retain, nonatomic) NSArray *subcategorySpecifiers; // @synthesize subcategorySpecifiers=_subcategorySpecifiers;
 @property(nonatomic) __weak id <PSBillingPeriodSource> billingPeriodSource; // @synthesize billingPeriodSource=_billingPeriodSource;
-- (void).cxx_destruct;
 - (id)dataUsageString;
 - (unsigned long long)dataUsage;
 - (id)initWithType:(unsigned long long)arg1 subSpecifiers:(id)arg2;

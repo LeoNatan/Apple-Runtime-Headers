@@ -22,6 +22,7 @@
     IMKUICandidateStepperView *_stepperView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMKUICandidateStepperView *stepperView; // @synthesize stepperView=_stepperView;
 @property(nonatomic) BOOL showsStepper; // @synthesize showsStepper=_showsStepper;
 @property(retain, nonatomic) IMKUICandidateLineLayout *lineLayout; // @synthesize lineLayout=_lineLayout;
@@ -29,7 +30,6 @@
 @property(nonatomic) long long lineIndex; // @synthesize lineIndex=_lineIndex;
 @property(retain, nonatomic) NSMutableDictionary *candidateIdentifierToViewMap; // @synthesize candidateIdentifierToViewMap=_candidateIdentifierToViewMap;
 @property(retain, nonatomic) IMKUICandidateBarView *candidateBar; // @synthesize candidateBar=_candidateBar;
-- (void).cxx_destruct;
 - (id)candidatesSelectableByKeyboard;
 - (void)moveToEnd;
 - (void)moveToBeginning;

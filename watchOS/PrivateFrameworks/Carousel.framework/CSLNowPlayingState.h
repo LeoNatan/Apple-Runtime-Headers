@@ -18,12 +18,12 @@
 }
 
 + (id)nowPlayingStateForNMRNowPlayingState:(id)arg1 origin:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isInterrupted) _Bool interrupted; // @synthesize interrupted=_interrupted;
 @property(readonly, nonatomic) void *originRef; // @synthesize originRef=_originRef;
 @property(readonly, nonatomic, getter=isPlayingRadio) _Bool playingRadio; // @synthesize playingRadio=_playingRadio;
 @property(readonly, nonatomic) _Bool playing; // @synthesize playing=_playing;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (void)setOriginRef:(void *)arg1;

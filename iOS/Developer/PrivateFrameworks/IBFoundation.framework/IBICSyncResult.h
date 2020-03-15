@@ -14,9 +14,9 @@
     NSMutableArray *_issues;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *issues; // @synthesize issues=_issues;
 @property(readonly) NSArray *errors; // @synthesize errors=_errors;
-- (void).cxx_destruct;
 - (id)description;
 - (void)addIssues:(id)arg1;
 - (void)addIssue:(id)arg1;

@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *DAAPPersistentItemID; // @synthesize DAAPPersistentItemID=_DAAPPersistentItemID;
 @property(copy, nonatomic) NSNumber *userID; // @synthesize userID=_userID;
 @property(copy, nonatomic) NSNumber *rentalKeyID; // @synthesize rentalKeyID=_rentalKeyID;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

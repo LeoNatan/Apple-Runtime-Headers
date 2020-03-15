@@ -9,7 +9,7 @@
 #import <FileProviderDaemon/FPDDomainIndexerDelegate-Protocol.h>
 #import <FileProviderDaemon/FPDFileCoordinationProviderDelegate-Protocol.h>
 
-@class FPDDomainIndexer, FPDProvider, FPPacer, FPProviderDomain, NSArray, NSData, NSDictionary, NSFileProviderDomain, NSMutableDictionary, NSNumber, NSOperationQueue, NSString, NSURL;
+@class FPDDomainIndexer, FPDProvider, FPPacer, FPProviderDomain, NSArray, NSData, NSDictionary, NSFileProviderDomain, NSMutableDictionary, NSOperationQueue, NSString, NSURL;
 @protocol FPDDomainBackend, FPDDomainIndexChangeDelegate, FPDExtensionSessionProtocol, OS_dispatch_queue, OS_dispatch_source, OS_os_log;
 
 @interface FPDDomain : NSObject <FPDFileCoordinationProviderDelegate, FPDDomainIndexerDelegate>
@@ -28,15 +28,12 @@
     NSURL *_previouslyAccessedSecurityScopedURL;
     FPPacer *_rootCreationPacer;
     BOOL _started;
-    BOOL _userEnabled;
     BOOL _ejectable;
     BOOL _unableToStartup;
-    BOOL _forceNoFPFSForTesting;
     id <FPDDomainIndexChangeDelegate> _indexChangeDelegate;
     NSString *_identifier;
     NSFileProviderDomain *_nsDomainOrNilForDefault;
     NSFileProviderDomain *_nsDomain;
-    NSNumber *_shouldDropIndexOrNil;
     NSObject<OS_dispatch_queue> *_serialQueue;
     NSObject<OS_os_log> *_log;
     NSArray *_extensionStorageURLs;
@@ -48,9 +45,11 @@
     NSMutableDictionary *_filePresenters;
     FPDDomainIndexer *_indexer;
     NSData *_fpfsRootBookmarkData;
+    Class _fpfsTestingBackendClass;
 }
 
-@property(nonatomic) BOOL forceNoFPFSForTesting; // @synthesize forceNoFPFSForTesting=_forceNoFPFSForTesting;
+- (void).cxx_destruct;
+@property(retain, nonatomic) Class fpfsTestingBackendClass; // @synthesize fpfsTestingBackendClass=_fpfsTestingBackendClass;
 @property(retain, nonatomic) NSData *fpfsRootBookmarkData; // @synthesize fpfsRootBookmarkData=_fpfsRootBookmarkData;
 @property(retain, nonatomic) FPDDomainIndexer *indexer; // @synthesize indexer=_indexer;
 @property(retain, nonatomic) NSMutableDictionary *filePresenters; // @synthesize filePresenters=_filePresenters;
@@ -63,16 +62,13 @@
 @property(readonly, nonatomic) NSArray *extensionStorageURLs; // @synthesize extensionStorageURLs=_extensionStorageURLs;
 @property(readonly, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
-@property(retain, nonatomic) NSNumber *shouldDropIndexOrNil; // @synthesize shouldDropIndexOrNil=_shouldDropIndexOrNil;
 @property(nonatomic) BOOL unableToStartup; // @synthesize unableToStartup=_unableToStartup;
 @property(nonatomic) BOOL ejectable; // @synthesize ejectable=_ejectable;
-@property(nonatomic) BOOL userEnabled; // @synthesize userEnabled=_userEnabled;
 @property(readonly, nonatomic) NSFileProviderDomain *nsDomain; // @synthesize nsDomain=_nsDomain;
 @property(retain, nonatomic) NSFileProviderDomain *nsDomainOrNilForDefault; // @synthesize nsDomainOrNilForDefault=_nsDomainOrNilForDefault;
 @property(nonatomic) BOOL started; // @synthesize started=_started;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id <FPDDomainIndexChangeDelegate> indexChangeDelegate; // @synthesize indexChangeDelegate=_indexChangeDelegate;
-- (void).cxx_destruct;
 - (void)dumpStateTo:(id)arg1 limitNumberOfItems:(BOOL)arg2;
 - (void)dumpInternalStateTo:(id)arg1 request:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (long long)nonEvictableSpace;
@@ -104,13 +100,9 @@
 - (id)_physicalURLForURL:(id)arg1;
 - (id)_providedItemsOperationQueue;
 - (id)_fileReactorID;
+- (void)extensionIndexerDidFinishIndexing:(id)arg1;
 - (void)extensionIndexer:(id)arg1 didIndexOneBatchWithError:(id)arg2 updatedItems:(id)arg3 deletedIDs:(id)arg4 anchor:(id)arg5 anchorPersisted:(CDUnknownBlockType)arg6;
 - (void)extensionIndexer:(id)arg1 didChangeNeedsAuthentification:(BOOL)arg2;
-- (BOOL)checkFPFSRootReachable;
-- (id)resolveFPFSRootURL;
-- (BOOL)saveBookmarkDataForFPFSRoot;
-- (void)clearFPFSRootBookmark;
-- (BOOL)saveBookmarkDataForURL:(id)arg1;
 - (void)cleanupDomainKeepingArchiveFolder:(BOOL)arg1;
 - (void)invalidateSession;
 - (void)invalidate;
@@ -123,8 +115,8 @@
 - (void)createRootURLWithCompletion:(CDUnknownBlockType)arg1;
 - (BOOL)createRootByImportingDirectoryAtURL:(id)arg1 error:(id *)arg2;
 - (void)finishSetup;
+@property(nonatomic) BOOL userEnabled; // @dynamic userEnabled;
 @property(readonly, nonatomic) FPProviderDomain *providerDomain;
-@property(readonly, nonatomic) FPDDomain *domainIfNotDisabledByFPFSSettings;
 @property(readonly, nonatomic) NSString *fp_prettyDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSString *providerDomainID;

@@ -22,9 +22,9 @@
 + (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKeyName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *finishBlocks; // @synthesize finishBlocks=_finishBlocks;
 @property(retain, nonatomic) NSString *rightBarButton; // @synthesize rightBarButton=_rightBarButton;
-- (void).cxx_destruct;
 - (id)scriptAttributeKeys;
 - (id)attributeKeys;
 - (id)_className;

@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
 + (struct CGSize)_appIconSize;
 + (double)_appIconRadius;
 + (id)_progressMaskImage;
+- (void).cxx_destruct;
 @property(nonatomic) double installProgress; // @synthesize installProgress=_installProgress;
 @property(retain, nonatomic) UIImage *appIcon; // @synthesize appIcon=_appIcon;
-- (void).cxx_destruct;
 - (void)setWaiting;
 - (void)finishInstallationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)progressViewCanBeRemoved:(id)arg1;

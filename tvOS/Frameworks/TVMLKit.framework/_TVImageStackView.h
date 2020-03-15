@@ -32,11 +32,11 @@
 + (struct CGSize)_scaledSizeForSize:(struct CGSize)arg1 selectionStyle:(long long)arg2;
 + (id)imageStackViewWithSize:(struct CGSize)arg1;
 + (id)imageStackViewWithImageStack:(id)arg1 size:(struct CGSize)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isImageLoaded) _Bool imageLoaded; // @synthesize imageLoaded=_imageLoaded;
 @property(retain, nonatomic) UIView *unmaskedOverlayView; // @synthesize unmaskedOverlayView=_unmaskedOverlayView;
 @property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
 @property(nonatomic, getter=_layerStackRetainsImageStack, setter=_setLayerStackRetainsImageStack:) _Bool _layerStackRetainsImageStack; // @synthesize _layerStackRetainsImageStack;
-- (void).cxx_destruct;
 - (id)_preferredConfigurationForFocusAnimation:(long long)arg1 inContext:(id)arg2;
 - (void)_updateStackedImageConfiguration;
 - (double)_unpressedDuration;

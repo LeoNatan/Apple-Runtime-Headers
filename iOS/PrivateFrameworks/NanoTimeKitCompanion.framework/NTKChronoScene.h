@@ -25,6 +25,7 @@
     SKEffectNode *_timeMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool rasterizeForEditing; // @synthesize rasterizeForEditing=_rasterizeForEditing;
 @property(readonly, nonatomic) SKEffectNode *timeMode; // @synthesize timeMode=_timeMode;
 @property(readonly, nonatomic) SKEffectNode *chronoMode; // @synthesize chronoMode=_chronoMode;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) NTKChronoPalette *palette; // @synthesize palette=_palette;
 @property(retain, nonatomic) NTKChronoLowerSubDial *lowerSubdial; // @synthesize lowerSubdial=_lowerSubdial;
 @property(retain, nonatomic) NTKChronoUpperSubDial *upperSubdial; // @synthesize upperSubdial=_upperSubdial;
-- (void).cxx_destruct;
 - (id)auxiliaryScrubbingObscuredNodes;
 - (id)scrubbingObscuredCollectionNodes;
 - (id)_chronoVariantForTimeScale:(unsigned long long)arg1;

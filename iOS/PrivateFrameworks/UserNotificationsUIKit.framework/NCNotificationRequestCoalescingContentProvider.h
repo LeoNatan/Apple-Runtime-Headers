@@ -17,10 +17,10 @@
     NCNotificationSummaryBuilder *_overridenSummaryBuilder;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NCNotificationSummaryBuilder *overridenSummaryBuilder; // @synthesize overridenSummaryBuilder=_overridenSummaryBuilder;
 @property(nonatomic, getter=isDeviceAuthenticated) _Bool deviceAuthenticated; // @synthesize deviceAuthenticated=_deviceAuthenticated;
 @property(retain, nonatomic) NSMutableArray *coalescedNotificationRequests; // @synthesize coalescedNotificationRequests=_coalescedNotificationRequests;
-- (void).cxx_destruct;
 - (id)_localizedStringWithPlaceholderFormat:(id)arg1 count:(unsigned long long)arg2;
 - (void)_updateSummaryText;
 - (unsigned long long)_indexOfMatchingNotificationRequest:(id)arg1;

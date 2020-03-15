@@ -17,10 +17,10 @@
 
 + (id)managerForBundle:(id)arg1;
 + (id)mainManager;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *pluginBundles; // @synthesize pluginBundles=_pluginBundles;
 @property(readonly, copy, nonatomic) NSString *pluginDirectory; // @synthesize pluginDirectory=_pluginDirectory;
 @property(readonly, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

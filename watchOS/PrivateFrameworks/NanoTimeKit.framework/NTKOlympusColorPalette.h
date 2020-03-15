@@ -37,6 +37,7 @@
 }
 
 + (id)paletteForColor:(unsigned int)arg1 dial:(unsigned int)arg2 style:(unsigned int)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *circularDialSubtickColor; // @synthesize circularDialSubtickColor=_circularDialSubtickColor;
 @property(retain, nonatomic) UIColor *cornerComplicationsAccentColor; // @synthesize cornerComplicationsAccentColor=_cornerComplicationsAccentColor;
 @property(retain, nonatomic) UIColor *secondaryTextTritiumColor; // @synthesize secondaryTextTritiumColor=_secondaryTextTritiumColor;
@@ -59,7 +60,6 @@
 @property(nonatomic) unsigned int dial; // @synthesize dial=_dial;
 @property(nonatomic) unsigned int style; // @synthesize style=_style;
 @property(nonatomic) unsigned int color; // @synthesize color=_color;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isBlackBackground;
 - (_Bool)isEqual:(id)arg1;
 - (id)circularDialFillColor;

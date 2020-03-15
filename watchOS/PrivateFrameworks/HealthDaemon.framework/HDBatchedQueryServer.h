@@ -12,9 +12,9 @@
     CDUnknownBlockType _unitTest_queryServerWillSendBatchHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType unitTest_queryServerWillSendBatchHandler; // @synthesize unitTest_queryServerWillSendBatchHandler=_unitTest_queryServerWillSendBatchHandler;
 @property(copy, nonatomic) CDUnknownBlockType unitTest_queryServerObjectEnumerationHandler; // @synthesize unitTest_queryServerObjectEnumerationHandler=_unitTest_queryServerObjectEnumerationHandler;
-- (void).cxx_destruct;
 - (int)batchObjectsWithEnumerator:(id)arg1 includeDeletedObjects:(_Bool)arg2 error:(id *)arg3 batchHandler:(CDUnknownBlockType)arg4;
 - (int)batchObjectsWithEnumerator:(id)arg1 error:(id *)arg2 handler:(CDUnknownBlockType)arg3;
 

@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSIndexPath *_translatedSourceIndexPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_translatedSourceIndexPath, setter=_setTranslatedSourceIndexPath:) NSIndexPath *translatedSourceIndexPath; // @synthesize translatedSourceIndexPath=_translatedSourceIndexPath;
 @property(retain, nonatomic) NSIndexPath *sourceIndexPath; // @synthesize sourceIndexPath=_sourceIndexPath;
 @property(retain, nonatomic) UIDragItem *dragItem; // @synthesize dragItem=_dragItem;
-- (void).cxx_destruct;
 - (void)_translateSourceIndexPath:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) struct CGSize previewSize;
 - (id)initWithDragItem:(id)arg1 sourceIndexPath:(id)arg2;

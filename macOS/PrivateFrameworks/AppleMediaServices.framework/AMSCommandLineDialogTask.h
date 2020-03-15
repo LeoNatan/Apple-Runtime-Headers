@@ -16,11 +16,11 @@
     double _dialogPadding;
 }
 
+- (void).cxx_destruct;
 @property double dialogPadding; // @synthesize dialogPadding=_dialogPadding;
 @property double minimumDialogWidth; // @synthesize minimumDialogWidth=_minimumDialogWidth;
 @property double maximumDialogWidth; // @synthesize maximumDialogWidth=_maximumDialogWidth;
 @property(readonly) AMSDialogRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)_printMessage:(id)arg1;
 - (id)_getUserInput;
 - (id)_gatherTextfieldInput;

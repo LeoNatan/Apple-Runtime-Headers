@@ -22,12 +22,12 @@
     unsigned int _numberOfFields;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool secureEntry; // @synthesize secureEntry=_secureEntry;
 @property(nonatomic) unsigned int numberOfFields; // @synthesize numberOfFields=_numberOfFields;
 @property(copy, nonatomic) NSString *entryTitle; // @synthesize entryTitle=_entryTitle;
 @property(nonatomic) _Bool requireLocalPasscode; // @synthesize requireLocalPasscode=_requireLocalPasscode;
 @property(nonatomic) __weak id <AKNumericCodeEntryControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)passcodeViewController:(id)arg1 didVerifyPasscode:(id)arg2;
 - (void)passcodeViewController:(id)arg1 didComplete:(_Bool)arg2;
 - (void)didCancelPasscodeEntryView:(id)arg1;

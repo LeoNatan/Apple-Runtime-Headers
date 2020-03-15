@@ -21,6 +21,7 @@
     id <CNFuture> _duetResultsFuture;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNFuture> duetResultsFuture; // @synthesize duetResultsFuture=_duetResultsFuture;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *syncQueue; // @synthesize syncQueue=_syncQueue;
 @property(retain, nonatomic) CNAutocompleteUsageMonitor *usageMonitor; // @synthesize usageMonitor=_usageMonitor;
@@ -29,7 +30,6 @@
 @property(nonatomic) unsigned long long currentBatch; // @synthesize currentBatch=_currentBatch;
 @property(retain, nonatomic) CNAutocompleteFetchRequest *currentRequest; // @synthesize currentRequest=_currentRequest;
 @property(readonly, nonatomic) id <CNAutocompleteProbeProvider> probeProvider; // @synthesize probeProvider=_probeProvider;
-- (void).cxx_destruct;
 - (void)_resetState;
 - (void)didSelectResult:(id)arg1 atSortedIndex:(unsigned long long)arg2;
 - (void)didReceiveResults:(id)arg1 forRequest:(id)arg2;

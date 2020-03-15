@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
-@property(copy, nonatomic) NSString *processingQueueName; // @synthesize processingQueueName=_processingQueueName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *processingQueueName; // @synthesize processingQueueName=_processingQueueName;
 - (void)shutdownClient:(id)arg1;
 - (void)processQuery:(id)arg1 concurrentCount:(int)arg2 dataClient:(id)arg3 priority:(long long)arg4 withCompletionQueue:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)executeFirstQuery:(id)arg1 dataClient:(id)arg2;

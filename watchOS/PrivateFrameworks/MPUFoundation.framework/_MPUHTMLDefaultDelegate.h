@@ -15,8 +15,8 @@
     NSDictionary *_defaultAttributes;
 }
 
-@property(retain, nonatomic) NSDictionary *defaultAttributes; // @synthesize defaultAttributes=_defaultAttributes;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *defaultAttributes; // @synthesize defaultAttributes=_defaultAttributes;
 - (id)parser:(id)arg1 prependStringForTagName:(id)arg2;
 - (id)defaultAttributesForParser:(id)arg1;
 - (id)parser:(id)arg1 attributesForTagName:(id)arg2 tagAttributes:(id)arg3 currentState:(id)arg4;

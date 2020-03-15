@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *imageSubtitle; // @synthesize imageSubtitle=_imageSubtitle;
 @property(copy, nonatomic) NSString *imageTitle; // @synthesize imageTitle=_imageTitle;
 @property(retain, nonatomic) NSString *mediaType; // @synthesize mediaType=_mediaType;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSString *trailingCaption; // @synthesize trailingCaption=_trailingCaption;
 @property(copy, nonatomic) NSString *subcaption; // @synthesize subcaption=_subcaption;
 @property(copy, nonatomic) NSString *caption; // @synthesize caption=_caption;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSURL *mediaFileURL; // @synthesize mediaFileURL=_mediaFileURL;
 - (unsigned int)hash;

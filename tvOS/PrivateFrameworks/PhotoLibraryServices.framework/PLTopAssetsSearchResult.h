@@ -13,8 +13,8 @@
     PSITopAssetsResult *_topAssetsResults;
 }
 
-@property(readonly, nonatomic) PSITopAssetsResult *topAssetsResults; // @synthesize topAssetsResults=_topAssetsResults;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PSITopAssetsResult *topAssetsResults; // @synthesize topAssetsResults=_topAssetsResults;
 @property(readonly, nonatomic) NSArray *assetUUIDs;
 @property(readonly, nonatomic) unsigned long long assetCount;
 - (id)initWithTopAssetsResult:(id)arg1;

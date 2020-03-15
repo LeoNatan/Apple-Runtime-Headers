@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     id _accessibilityOverrideParent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id accessibilityOverrideParent; // @synthesize accessibilityOverrideParent=_accessibilityOverrideParent;
 @property(readonly, nonatomic) NSSearchField *searchField; // @synthesize searchField=_searchField;
 @property(nonatomic) __weak id <SidebarSearchFieldViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)accessibilityParent;
 - (id)accessibilityRole;
 - (BOOL)isAccessibilityElement;

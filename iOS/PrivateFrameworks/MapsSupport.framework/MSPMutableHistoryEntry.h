@@ -24,11 +24,11 @@
 + (Class)mutableObjectClass;
 + (id)immutableObjectProtocol;
 + (Class)immutableObjectClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MSPHistoryEntryStorage *storage; // @synthesize storage=_storage;
 @property(readonly, nonatomic, getter=_isImmutable) _Bool immutable; // @synthesize immutable=_immutable;
 @property(copy, nonatomic) NSDate *usageDate; // @synthesize usageDate=_usageDate;
 - (id)storageIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)debugTitle;
 - (void)_noteWillMutate;

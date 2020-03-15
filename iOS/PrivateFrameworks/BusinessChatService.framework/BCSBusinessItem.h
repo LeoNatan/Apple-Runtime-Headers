@@ -33,6 +33,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)_businessItemsFromChatSuggestMessageDictionary:(id)arg1;
 + (id)_businessItemsFromChatSuggestJSONObj:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *visibilityItems; // @synthesize visibilityItems=_visibilityItems;
 @property(readonly, nonatomic) BCSOpenHours *callingOpenHours; // @synthesize callingOpenHours=_callingOpenHours;
 @property(readonly, nonatomic) BCSOpenHours *messagingOpenHours; // @synthesize messagingOpenHours=_messagingOpenHours;
@@ -48,7 +49,6 @@
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(readonly, copy, nonatomic) NSString *bizID; // @synthesize bizID=_bizID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)_selectedVisibilityItemForLanguage:(id)arg1 country:(id)arg2;

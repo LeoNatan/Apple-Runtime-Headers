@@ -14,9 +14,9 @@
     NSString *_rollOverText;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *rollOverText; // @synthesize rollOverText=_rollOverText;
 @property(retain) NSURL *focusURL; // @synthesize focusURL=_focusURL;
-- (void).cxx_destruct;
 - (BOOL)hasFocusURL;
 - (BOOL)supportsFocus;
 - (id)rollOverString;

@@ -34,6 +34,7 @@
 + (id)deferrableActivityTypes;
 + (id)activityTypes;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *indexingEnabledForActivityTypes; // @synthesize indexingEnabledForActivityTypes=_indexingEnabledForActivityTypes;
 @property(retain, nonatomic) NSMutableDictionary *activities; // @synthesize activities=_activities;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *indexingStateQueue; // @synthesize indexingStateQueue=_indexingStateQueue;
@@ -42,7 +43,6 @@
 @property(readonly, nonatomic) EDSearchableIndexBudgetConfiguration *budgetConfiguration; // @synthesize budgetConfiguration=_budgetConfiguration;
 @property(readonly, nonatomic) __weak id <EDSearchableIndexSchedulable> schedulable; // @synthesize schedulable=_schedulable;
 @property(nonatomic, getter=isScheduling) _Bool scheduling; // @synthesize scheduling=_scheduling;
-- (void).cxx_destruct;
 - (_Bool)hasAvailableIndexingBudgetForSearchableIndexSchedulable:(id)arg1;
 - (long long)budgetedItemCountRemainingForSearchableIndexSchedulable:(id)arg1;
 - (double)budgetedTimeRemainingForSearchableIndexSchedulable:(id)arg1;

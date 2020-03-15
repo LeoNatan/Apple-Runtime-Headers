@@ -16,9 +16,9 @@
     CDStruct_d58201db _size;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NUPixelFormat *format; // @synthesize format=_format;
 @property(readonly, nonatomic) CDStruct_912cb5d2 size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (void)copyRect:(CDStruct_996ac03c)arg1 toBuffer:(id)arg2 atPoint:(CDStruct_912cb5d2)arg3 context:(id)arg4;
 - (void)read:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)draw:(id)arg1 block:(CDUnknownBlockType)arg2;

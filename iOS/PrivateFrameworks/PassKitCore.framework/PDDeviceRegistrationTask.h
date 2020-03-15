@@ -10,15 +10,17 @@
 
 @interface PDDeviceRegistrationTask : NSObject
 {
-    _Bool _shouldForce;
+    _Bool _shouldForceApplePay;
+    _Bool _shouldForcePeerPayment;
     NSMutableArray *_completionHandlers;
     NSString *_reason;
 }
 
-@property(nonatomic) _Bool shouldForce; // @synthesize shouldForce=_shouldForce;
+- (void).cxx_destruct;
+@property(nonatomic) _Bool shouldForcePeerPayment; // @synthesize shouldForcePeerPayment=_shouldForcePeerPayment;
+@property(nonatomic) _Bool shouldForceApplePay; // @synthesize shouldForceApplePay=_shouldForceApplePay;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(retain, nonatomic) NSMutableArray *completionHandlers; // @synthesize completionHandlers=_completionHandlers;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

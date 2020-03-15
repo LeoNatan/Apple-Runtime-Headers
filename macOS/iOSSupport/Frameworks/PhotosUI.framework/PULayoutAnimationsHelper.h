@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 + (double)stackedTransitionAnimationPreferredDurationUsingSpringAnimations:(BOOL)arg1;
 + (CDUnknownBlockType)stackedTransitionAnimationsForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 shouldUseSpringAnimations:(BOOL)arg3;
 + (double)zoomTransitionAnimationPreferredDurationWhenZoomingIn:(BOOL)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldAnimateTemporaryImageView; // @synthesize shouldAnimateTemporaryImageView=_shouldAnimateTemporaryImageView;
 @property(readonly, nonatomic) __weak PUSectionedGridLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (void)_applyDefaultLayoutAttributes:(id)arg1 toView:(id)arg2;
 - (void)_configureAnimationsForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
 - (id)_adjustDecorationViewAnimation:(id)arg1 forReusableView:(id)arg2 toLayoutAttributes:(id)arg3;

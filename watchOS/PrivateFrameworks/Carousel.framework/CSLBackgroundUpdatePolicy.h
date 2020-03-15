@@ -30,6 +30,7 @@
 
 + (id)defaultBackgroundUpdatePolicy;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long stateHandler; // @synthesize stateHandler=_stateHandler;
 @property(nonatomic, getter=isInitialized) _Bool intialized; // @synthesize intialized=_intialized;
 @property(nonatomic) __weak NSUserDefaults *originalDefaults; // @synthesize originalDefaults=_originalDefaults;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *observerSyncQueue; // @synthesize observerSyncQueue=_observerSyncQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) CSLObserverSet *observerSet; // @synthesize observerSet=_observerSet;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

@@ -14,9 +14,9 @@
     struct CGRect _maskOvalFrame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CAShapeLayer *_shapeLayer; // @synthesize _shapeLayer=__shapeLayer;
 @property(nonatomic) struct CGRect maskOvalFrame; // @synthesize maskOvalFrame=_maskOvalFrame;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

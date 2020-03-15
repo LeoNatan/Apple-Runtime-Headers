@@ -16,10 +16,10 @@
     SBAuthenticationFeedback *_feedback;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBAuthenticationFeedback *feedback; // @synthesize feedback=_feedback;
 @property(readonly, nonatomic) id request; // @synthesize request=_request;
 @property(readonly, nonatomic) id <SBBiometricUnlockBehavior> behavior; // @synthesize behavior=_behavior;
-- (void).cxx_destruct;
 - (id)initWithBehavior:(id)arg1 request:(id)arg2 feedback:(id)arg3;
 
 @end

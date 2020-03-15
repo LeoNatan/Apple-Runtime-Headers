@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _eventHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
 @property(readonly, copy, nonatomic) NSString *hardwareAddress; // @synthesize hardwareAddress=_hardwareAddress;
 @property(readonly, copy, nonatomic) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
-- (void).cxx_destruct;
 - (id)__hardwareAddress;
 - (id)__networkInterfaceHardwareAddress;
 - (id)__networkStackHardwareAddress;

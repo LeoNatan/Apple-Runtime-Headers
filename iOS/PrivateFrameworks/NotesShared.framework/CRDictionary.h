@@ -19,10 +19,10 @@
     long long _removeClock;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long removeClock; // @synthesize removeClock=_removeClock;
 @property(retain, nonatomic) NSMapTable *contents; // @synthesize contents=_contents;
 @property(nonatomic) __weak CRDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)tombstone;
 - (void)walkGraph:(CDUnknownBlockType)arg1;

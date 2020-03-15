@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
 + (float)defaultHeight;
 + (float)defaultTopOffset;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) __weak _SFBrowserView *browserView; // @synthesize browserView=_browserView;
 @property(nonatomic) float maximumHeight; // @synthesize maximumHeight=_maximumHeight;
-- (void).cxx_destruct;
 - (void)fluidProgressViewDidShowProgress:(id)arg1;
 - (void)fluidProgressViewWillShowProgress:(id)arg1;
 - (void)updateWithDomain:(id)arg1 isSecure:(_Bool)arg2 showsNotSecureAnotation:(_Bool)arg3;

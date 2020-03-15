@@ -19,8 +19,8 @@
 + (id)_keyForDestination:(long long)arg1;
 + (id)tokenByAddingCKToken:(id)arg1 forDestination:(long long)arg2 toToken:(id)arg3;
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSDictionary *changeTokensByDestinationKey; // @synthesize changeTokensByDestinationKey=_changeTokensByDestinationKey;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *changeTokensByDestinationKey; // @synthesize changeTokensByDestinationKey=_changeTokensByDestinationKey;
 - (id)changeTokenForDestination:(long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

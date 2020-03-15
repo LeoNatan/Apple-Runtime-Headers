@@ -13,8 +13,8 @@
     id <MFBlockedSenderBannerViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <MFBlockedSenderBannerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MFBlockedSenderBannerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_bannerDismissed:(id)arg1;
 - (void)_titleControlTapped:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

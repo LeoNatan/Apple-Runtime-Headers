@@ -14,11 +14,11 @@
     CDUnknownBlockType _changeComparator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowMoves; // @synthesize allowMoves=_allowMoves;
 @property(copy, nonatomic) CDUnknownBlockType changeComparator; // @synthesize changeComparator=_changeComparator;
 @property(copy, nonatomic) CDUnknownBlockType hashGenerator; // @synthesize hashGenerator=_hashGenerator;
 @property(copy, nonatomic) CDUnknownBlockType equalComparator; // @synthesize equalComparator=_equalComparator;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

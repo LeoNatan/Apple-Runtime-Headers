@@ -43,10 +43,10 @@
 + (id)bookTypeForAssetAtURL:(id)arg1;
 + (long long)assetTypeForFileExtension:(id)arg1;
 + (long long)assetTypeForAssetAtURL:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *backingURL; // @synthesize backingURL=_backingURL;
 @property(nonatomic) long long assetType; // @synthesize assetType=_assetType;
 @property(retain, nonatomic) NSMutableDictionary *backingDictionary; // @synthesize backingDictionary=_backingDictionary;
-- (void).cxx_destruct;
 - (id)rating;
 - (id)purchaseDate;
 - (id)lastOpenDate;

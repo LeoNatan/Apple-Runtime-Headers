@@ -34,6 +34,7 @@
     NSArray *_localProxyCalls;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasServerLaunched; // @synthesize hasServerLaunched=_hasServerLaunched;
 @property(copy, nonatomic) NSArray *localProxyCalls; // @synthesize localProxyCalls=_localProxyCalls;
 @property(readonly, nonatomic) TUCallNotificationManager *callNotificationManager; // @synthesize callNotificationManager=_callNotificationManager;
@@ -48,7 +49,6 @@
 @property(nonatomic) __weak TUCallCenter *callCenter; // @synthesize callCenter=_callCenter;
 @property(readonly, nonatomic) TUCallServicesClientCapabilities *callServicesClientCapabilities; // @synthesize callServicesClientCapabilities=_callServicesClientCapabilities;
 @property(nonatomic) __weak id <TUCallServicesXPCServer> server; // @synthesize server=_server;
-- (void).cxx_destruct;
 - (oneway void)handleNotificationName:(id)arg1 forCallWithUniqueProxyIdentifier:(id)arg2 userInfo:(id)arg3;
 - (oneway void)resetCallProvisionalStates;
 - (oneway void)_handleCurrentCallsChanged:(id)arg1 callsDisconnected:(id)arg2;

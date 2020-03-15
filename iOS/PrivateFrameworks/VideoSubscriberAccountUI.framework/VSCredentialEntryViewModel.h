@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     VSExpressionEvaluator *_buttonExpressionEvaluator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSExpressionEvaluator *buttonExpressionEvaluator; // @synthesize buttonExpressionEvaluator=_buttonExpressionEvaluator;
 @property(nonatomic) __weak id <VSCredentialEntryViewModelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *additionalMessage; // @synthesize additionalMessage=_additionalMessage;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSURL *linkURL; // @synthesize linkURL=_linkURL;
 @property(retain, nonatomic) VSCredentialEntryPicker *picker; // @synthesize picker=_picker;
 @property(retain, nonatomic) NSArray *credentialEntryFields; // @synthesize credentialEntryFields=_credentialEntryFields;
-- (void).cxx_destruct;
 - (void)clearFieldsAfterUsername;
 - (void)pickerDidSelectRow:(unsigned long long)arg1;
 - (void)buttonTappedAtIndex:(unsigned long long)arg1;

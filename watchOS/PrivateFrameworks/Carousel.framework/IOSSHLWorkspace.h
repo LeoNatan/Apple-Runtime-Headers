@@ -53,9 +53,9 @@
 + (_Bool)signatureTrustedForApplication:(id)arg1;
 + (void)_shutdownTasks;
 + (_Bool)isAppWithBundleIDRunning:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isUnderLock) _Bool underLock; // @synthesize underLock=_underLock;
 @property(nonatomic) __weak id <IOSSHLWorkspaceUIDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)queueDidClearCurrentTransaction:(id)arg1;
 - (void)activateSystemService;
 - (void)UIStateDidUpdateExternally;
@@ -94,7 +94,7 @@
 - (void)monitor:(id)arg1 watchKitAppDidLaunch:(id)arg2;
 - (void)handleExitTransitionForApplication:(id)arg1 eventLabel:(id)arg2;
 - (void)_sceneEligibleProcessDidExit:(id)arg1 exitReason:(unsigned int)arg2 terminationReason:(int)arg3;
-- (void)applicationProcessDidExit:(id)arg1 withContext:(struct FBProcessExitContext *)arg2;
+- (void)applicationProcessDidExit:(id)arg1 withContext:(id)arg2;
 - (void)applicationProcessDidLaunch:(id)arg1;
 - (void)_processDidLaunch:(id)arg1;
 - (void)applicationProcessWillLaunch:(id)arg1;

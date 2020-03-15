@@ -17,10 +17,10 @@
     NSString *_userSegmentationRefreshRate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *userSegmentationRefreshRate; // @synthesize userSegmentationRefreshRate=_userSegmentationRefreshRate;
 @property(retain, nonatomic) NSString *userSegmentationApiModMax; // @synthesize userSegmentationApiModMax=_userSegmentationApiModMax;
 @property(retain, nonatomic) NSString *userSegmentationApiModThreshold; // @synthesize userSegmentationApiModThreshold=_userSegmentationApiModThreshold;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

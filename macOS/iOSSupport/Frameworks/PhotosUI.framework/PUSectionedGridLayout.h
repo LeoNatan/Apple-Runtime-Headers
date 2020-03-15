@@ -104,6 +104,7 @@
 }
 
 + (Class)invalidationContextClass;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL usesAspectItems; // @synthesize usesAspectItems=_usesAspectItems;
 @property(nonatomic) BOOL usesRenderedStripTopExtendersForTransitions; // @synthesize usesRenderedStripTopExtendersForTransitions=_usesRenderedStripTopExtendersForTransitions;
 @property(nonatomic) double cropAmount; // @synthesize cropAmount=_cropAmount;
@@ -141,7 +142,6 @@
 @property(nonatomic) BOOL sectionHeadersEnabled; // @synthesize sectionHeadersEnabled=_sectionHeadersEnabled;
 @property(copy, nonatomic) NSString *sectionHeaderElementKind; // @synthesize sectionHeaderElementKind=_sectionHeaderElementKind;
 @property(copy, nonatomic) NSSet *hiddenItemIndexPaths; // @synthesize hiddenItemIndexPaths=_hiddenItemIndexPaths;
-- (void).cxx_destruct;
 - (void)endInsertingItem;
 - (void)beginInsertingItemAtIndexPath:(id)arg1;
 - (id)reorderedIndexPath:(id)arg1;

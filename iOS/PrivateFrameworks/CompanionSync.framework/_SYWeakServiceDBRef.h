@@ -14,9 +14,9 @@
     _SYSharedServiceDB *_db;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak _SYSharedServiceDB *db; // @synthesize db=_db;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithServiceName:(id)arg1;
 
 @end

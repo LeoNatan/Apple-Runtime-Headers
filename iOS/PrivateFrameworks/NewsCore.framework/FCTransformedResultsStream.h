@@ -17,9 +17,9 @@
     CDUnknownBlockType _asyncTransformBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType asyncTransformBlock; // @synthesize asyncTransformBlock=_asyncTransformBlock;
 @property(retain, nonatomic) id <FCStreaming> stream; // @synthesize stream=_stream;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isFinished) _Bool finished;
 - (id)fetchMoreResultsWithLimit:(unsigned long long)arg1 qualityOfService:(long long)arg2 callbackQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)initWithStream:(id)arg1 asyncTransformBlock:(CDUnknownBlockType)arg2;

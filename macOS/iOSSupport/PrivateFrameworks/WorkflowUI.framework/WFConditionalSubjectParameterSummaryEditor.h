@@ -19,10 +19,10 @@
 }
 
 + (unsigned long long)variableResultTypeForParameter:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(nonatomic) __weak UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 @property(retain, nonatomic) WFTextTokenChooser *chooser; // @synthesize chooser=_chooser;
-- (void).cxx_destruct;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (void)presentationControllerDidDismiss:(id)arg1;
 - (id)contextHome;

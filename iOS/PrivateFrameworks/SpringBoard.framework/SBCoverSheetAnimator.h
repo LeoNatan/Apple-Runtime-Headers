@@ -23,6 +23,7 @@
     UIWindow *_coverSheetWindow;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIWindow *coverSheetWindow; // @synthesize coverSheetWindow=_coverSheetWindow;
 @property(nonatomic, getter=isTransitioning) _Bool transitioning; // @synthesize transitioning=_transitioning;
 @property(retain, nonatomic) SBHUnlockSettings *unlockSettings; // @synthesize unlockSettings=_unlockSettings;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) SBWindowSelfHostWrapper *coverSheetWindowHostWrapper; // @synthesize coverSheetWindowHostWrapper=_coverSheetWindowHostWrapper;
 @property(retain, nonatomic) SBIconZoomAnimator *iconAnimator; // @synthesize iconAnimator=_iconAnimator;
 @property(retain, nonatomic) SBLockToAppStatusBarAnimator *statusBarAnimator; // @synthesize statusBarAnimator=_statusBarAnimator;
-- (void).cxx_destruct;
 - (void)_setWallpaperToLocked:(_Bool)arg1 duration:(double)arg2;
 - (void)_prepareIconAnimatorIncludingLockScreen:(_Bool)arg1;
 - (void)_updateCoverSheetHosting;

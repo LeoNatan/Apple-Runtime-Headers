@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 - (id)_iconName;
 - (id)_glyphName;
 - (id)_kernelExtensionName;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 - (id)parentIdentifiers;
 - (id)tagSpecification;
 - (id)version;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)_isWildcard;

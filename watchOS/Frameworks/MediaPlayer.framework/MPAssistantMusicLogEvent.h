@@ -16,9 +16,9 @@
     NSString *_siriSessionIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *siriSessionIdentifier; // @synthesize siriSessionIdentifier=_siriSessionIdentifier;
 @property(nonatomic) unsigned int sessionID; // @synthesize sessionID=_sessionID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *eventPayload;
 @property(readonly, nonatomic) int eventCode;
 @property(readonly, nonatomic) NSString *eventName;

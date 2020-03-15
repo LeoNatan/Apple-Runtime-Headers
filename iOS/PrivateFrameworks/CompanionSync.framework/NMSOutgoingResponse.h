@@ -28,6 +28,7 @@
     IDSMessageContext *_idsContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDSMessageContext *idsContext; // @synthesize idsContext=_idsContext;
 @property(retain, nonatomic) id pbResponse; // @synthesize pbResponse=_pbResponse;
 @property(copy, nonatomic) NSString *idsIdentifier; // @synthesize idsIdentifier=_idsIdentifier;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(nonatomic) __weak NMSIncomingRequest *request; // @synthesize request=_request;
 @property(copy, nonatomic) NSSet *targetDeviceIDs; // @synthesize targetDeviceIDs;
-- (void).cxx_destruct;
 - (id)CPObfuscatedDescriptionObject;
 @property(readonly, copy) NSString *description;
 - (id)_makePBResponse;

@@ -11,7 +11,7 @@
 @class NSString;
 
 @interface NFFolder (ICLegacyFolder) <ICLegacyFolder>
-- (id)newNoteInContext:(struct NSManagedObjectContext *)arg1;
+- (id)newNoteInContext:(id)arg1;
 - (id)changes;
 - (id)parentFolder;
 - (id)title;

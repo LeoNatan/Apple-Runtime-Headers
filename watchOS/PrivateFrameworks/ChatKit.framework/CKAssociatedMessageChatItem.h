@@ -13,8 +13,8 @@
     NSString *_timestampString;
 }
 
-@property(copy, nonatomic) NSString *timestampString; // @synthesize timestampString=_timestampString;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *timestampString; // @synthesize timestampString=_timestampString;
 - (_Bool)wantsDrawerLayout;
 - (id)loadTimestampString;
 @property(readonly, nonatomic) struct _NSRange associatedMessageRange;

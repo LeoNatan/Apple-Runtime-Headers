@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     NSNumber *_flowId;
 }
 
+- (void).cxx_destruct;
 @property _Bool isMultiColumn; // @synthesize isMultiColumn=_isMultiColumn;
 @property(retain) NSNumber *flowId; // @synthesize flowId=_flowId;
 @property(retain) NSNumber *flowSequence; // @synthesize flowSequence=_flowSequence;
 @property __weak WDAContent *parent; // @synthesize parent=mParent;
 @property __weak WDDocument *document; // @synthesize document=mDocument;
-- (void).cxx_destruct;
 - (id)description;
 - (void)setNextTextBoxId:(unsigned long long)arg1;
 - (unsigned long long)nextTextBoxId;

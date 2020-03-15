@@ -13,8 +13,8 @@
     PETScalarEventTracker *_tracker;
 }
 
-@property(readonly, nonatomic) PETScalarEventTracker *tracker; // @synthesize tracker=_tracker;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PETScalarEventTracker *tracker; // @synthesize tracker=_tracker;
 - (void)trackEventWithScalar:(unsigned long long)arg1 app:(struct SGMBannerDisplayApp_)arg2 extracted:(struct SGMBannerExtractionType_)arg3 selfId:(struct SGMTypeSafeBool_)arg4 extractionModelVersion:(unsigned long long)arg5 contactDetail:(struct SGMContactDetailType_)arg6;
 - (id)init;
 

@@ -18,12 +18,12 @@
     long long _selectedOptionIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long selectedOptionIndex; // @synthesize selectedOptionIndex=_selectedOptionIndex;
 @property(readonly, nonatomic) WFVariableConfigurationOption *defaultOption; // @synthesize defaultOption=_defaultOption;
 @property(readonly, nonatomic) NSArray *options; // @synthesize options=_options;
 @property(readonly, copy, nonatomic) NSString *userIdentifier; // @synthesize userIdentifier=_userIdentifier;
 @property(nonatomic) __weak id <WFVariableConfigurationOptionsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

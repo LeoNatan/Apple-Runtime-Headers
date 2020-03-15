@@ -61,6 +61,7 @@ __attribute__((visibility("hidden")))
 + (id)timelineSummaryCategoryTitleItemWithCategoryType:(long long)arg1;
 + (id)timelineSummaryCategoryTitleItem;
 + (id)recordCardItem;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *recordCount; // @synthesize recordCount=_recordCount;
 @property(retain, nonatomic) HKConcept *concept; // @synthesize concept=_concept;
 @property(retain, nonatomic) NSString *headerString; // @synthesize headerString=_headerString;
@@ -86,7 +87,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long separatorStyle; // @synthesize separatorStyle=_separatorStyle;
 @property(nonatomic) _Bool extraTopPadding; // @synthesize extraTopPadding=_extraTopPadding;
 @property(nonatomic) long long displayItemType;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

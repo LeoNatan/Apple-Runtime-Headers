@@ -18,8 +18,8 @@
 }
 
 + (id)defaultBudget;
-@property(nonatomic) __weak CSLActivityScheduler *scheduler; // @synthesize scheduler=_scheduler;
 - (void).cxx_destruct;
+@property(nonatomic) __weak CSLActivityScheduler *scheduler; // @synthesize scheduler=_scheduler;
 - (void)_reloadBaseBudget;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_refreshBudget;

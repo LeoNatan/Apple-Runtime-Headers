@@ -13,8 +13,8 @@
     id <aura_VirtualPort> virtualPort;
 }
 
-@property(nonatomic) __weak id <aura_VirtualPort> virtualPort; // @synthesize virtualPort;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <aura_VirtualPort> virtualPort; // @synthesize virtualPort;
 
 @end
 

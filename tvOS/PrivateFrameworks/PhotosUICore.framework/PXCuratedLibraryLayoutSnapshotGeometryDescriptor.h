@@ -19,11 +19,11 @@
     struct CGRect _visibleRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint offset; // @synthesize offset=_offset;
 @property(readonly, nonatomic) long long zoomLevel; // @synthesize zoomLevel=_zoomLevel;
 @property(readonly, nonatomic) unsigned long long skimmingDataSourceIdentifier; // @synthesize skimmingDataSourceIdentifier=_skimmingDataSourceIdentifier;
 @property(readonly, nonatomic) unsigned long long dataSourceIdentifier; // @synthesize dataSourceIdentifier=_dataSourceIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (void)compactifySectionsBeyondVisibleRectWithAnchorSection:(long long)arg1;
 - (void)extrapolateSectionsBetween:(long long)arg1 and:(long long)arg2 withAnchorSection:(long long)arg3;

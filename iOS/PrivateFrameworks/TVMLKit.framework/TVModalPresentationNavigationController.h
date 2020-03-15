@@ -22,9 +22,9 @@
     TVModalPresentationConfiguration *_configuration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVModalPresentationConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) __weak UIAlertController *containingAlertController; // @synthesize containingAlertController=_containingAlertController;
-- (void).cxx_destruct;
 - (void)updatePreferredFocusedViewStateForFocus:(_Bool)arg1;
 - (void)_dismissForLastViewController:(_Bool)arg1;
 - (id)popViewControllerAnimated:(_Bool)arg1;

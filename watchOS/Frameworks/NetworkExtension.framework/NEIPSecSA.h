@@ -38,6 +38,7 @@
     unsigned long long _natKeepaliveOffloadIntervalSeconds;
 }
 
+- (void).cxx_destruct;
 @property unsigned int internalSAID; // @synthesize internalSAID=_internalSAID;
 @property _Bool sequencePerTrafficClass; // @synthesize sequencePerTrafficClass=_sequencePerTrafficClass;
 @property unsigned short natTraversalSrcPort; // @synthesize natTraversalSrcPort=_natTraversalSrcPort;
@@ -62,7 +63,6 @@
 @property int mode; // @synthesize mode=_mode;
 @property(readonly) int direction; // @synthesize direction=_direction;
 @property unsigned int spi; // @synthesize spi=_spi;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)invalidate;
 - (id)createDictionary;

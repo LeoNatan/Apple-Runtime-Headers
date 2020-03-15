@@ -22,11 +22,11 @@
     float _currentTouchForceMultiplier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool respectsSystemGestureTouchFiltering; // @synthesize respectsSystemGestureTouchFiltering=_respectsSystemGestureTouchFiltering;
 @property(nonatomic) float currentTouchForceMultiplier; // @synthesize currentTouchForceMultiplier=_currentTouchForceMultiplier;
 @property(nonatomic) __weak id <_UIForceLevelClassifierDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) int currentForceLevel; // @synthesize currentForceLevel=_currentForceLevel;
-- (void).cxx_destruct;
 - (void)_notifyDelegateOfProgress:(float)arg1 toForceLevel:(int)arg2;
 - (id)observableForProgressToForceLevel:(int)arg1 minimumRequiredForceLevel:(int)arg2;
 - (id)observableForProgressToForceLevel:(int)arg1;

@@ -20,11 +20,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)paymentUpdateResponseWithProtobuf:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *selectedAID; // @synthesize selectedAID=_selectedAID;
 @property(readonly, nonatomic) long long status; // @synthesize status=_status;
 @property(readonly, nonatomic) NSArray *shippingMethods; // @synthesize shippingMethods=_shippingMethods;
 @property(readonly, nonatomic) NSArray *paymentSummaryItems; // @synthesize paymentSummaryItems=_paymentSummaryItems;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPaymentSummaryItems:(id)arg1 shippingMethods:(id)arg2 status:(long long)arg3 selectedAID:(id)arg4;

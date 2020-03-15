@@ -26,6 +26,7 @@
     NEIKEv2AuthenticationProtocol *_authenticationProtocol;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NEIKEv2AuthenticationProtocol *authenticationProtocol; // @synthesize authenticationProtocol=_authenticationProtocol;
 @property(retain) NEIKEv2DHProtocol *chosenDHProtocol; // @synthesize chosenDHProtocol=_chosenDHProtocol;
 @property(retain) NEIKEv2PRFProtocol *chosenPRFProtocol; // @synthesize chosenPRFProtocol=_chosenPRFProtocol;
@@ -38,7 +39,6 @@
 @property(retain) NSArray *prfProtocols; // @synthesize prfProtocols=_prfProtocols;
 @property(retain) NSArray *integrityProtocols; // @synthesize integrityProtocols=_integrityProtocols;
 @property(retain) NSArray *encryptionProtocols; // @synthesize encryptionProtocols=_encryptionProtocols;
-- (void).cxx_destruct;
 - (BOOL)isAValidResponse;
 - (unsigned long long)lifetimeSecondsBeyondSoftLifetimeForInitiator:(BOOL)arg1;
 - (unsigned long long)softLifetimeSecondsForInitiator:(BOOL)arg1;

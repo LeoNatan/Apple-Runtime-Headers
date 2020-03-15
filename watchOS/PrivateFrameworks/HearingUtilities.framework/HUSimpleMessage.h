@@ -15,9 +15,9 @@
 }
 
 + (id)messageWithPayload:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSDictionary *payload; // @synthesize payload=_payload;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithPayload:(id)arg1;
 

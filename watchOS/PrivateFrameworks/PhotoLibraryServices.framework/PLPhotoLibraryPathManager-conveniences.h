@@ -28,12 +28,11 @@
 - (id)URLForMetadataWithExtension:(id)arg1 forMediaInMainDirectory:(id)arg2 withFilename:(id)arg3;
 - (id)assetPathForMutationsDirectoryWithDirectory:(id)arg1 filename:(id)arg2;
 - (id)recordRebuildReason;
+- (int)lastRebuildReason;
 - (void)setSqliteErrorForReason:(int)arg1 allowsExit:(_Bool)arg2;
 - (void)removeSqliteErrorIndicatorFile;
 - (_Bool)_createSqliteErrorIndicatorFileWithRebuildReason:(int)arg1;
 - (id)_rebuildDateFormatter;
 - (_Bool)sqliteErrorIndicatorFileExists;
-- (id)_rebuidHistoryFilePath;
-- (id)_sqliteErrorIndicatorFilePath;
 @end
 

@@ -277,16 +277,6 @@ struct GEOThrottleKey {
     unsigned int _field1;
 };
 
-struct GEOTileKeyList {
-    Class _field1;
-    void *_field2;
-    void *_field3;
-    id _field4;
-    unsigned long long _field5;
-    unsigned long long _field6;
-    unsigned long long _field7;
-};
-
 struct GEOTileLabelLine {
     double _field1;
     struct GEOLabelLineRange _field2;
@@ -409,10 +399,6 @@ struct Matrix<float, 4, 1> {
 };
 
 struct Message;
-
-struct NSDictionary {
-    Class _field1;
-};
 
 struct Path<std::__1::shared_ptr<geo::MapEdge>> {
     struct GeoCoordinates _field1;
@@ -1249,6 +1235,24 @@ typedef struct {
 } CDStruct_5df41632;
 
 typedef struct {
+    unsigned int has_connectEnd:1;
+    unsigned int has_connectStart:1;
+    unsigned int has_domainLookupEnd:1;
+    unsigned int has_domainLookupStart:1;
+    unsigned int has_fetchStart:1;
+    unsigned int has_requestEnd:1;
+    unsigned int has_requestStart:1;
+    unsigned int has_responseEnd:1;
+    unsigned int has_responseStart:1;
+    unsigned int has_secureConnectEnd:1;
+    unsigned int has_secureConnectStart:1;
+    unsigned int has_protocolName:1;
+    unsigned int has_resourceFetchType:1;
+    unsigned int has_proxyConnection:1;
+    unsigned int has_reusedConnection:1;
+} CDStruct_60b58840;
+
+typedef struct {
     unsigned int has_supportedLanguagesVersion:1;
     unsigned int has_timeToLiveSeconds:1;
     unsigned int read_unknownFields:1;
@@ -1572,24 +1576,6 @@ typedef struct {
 } CDStruct_21580383;
 
 // Ambiguous groups
-typedef struct {
-    unsigned int has_connectEnd:1;
-    unsigned int has_connectStart:1;
-    unsigned int has_domainLookupEnd:1;
-    unsigned int has_domainLookupStart:1;
-    unsigned int has_fetchStart:1;
-    unsigned int has_requestEnd:1;
-    unsigned int has_requestStart:1;
-    unsigned int has_responseEnd:1;
-    unsigned int has_responseStart:1;
-    unsigned int has_secureConnectEnd:1;
-    unsigned int has_secureConnectStart:1;
-    unsigned int has_protocolName:1;
-    unsigned int has_resourceFetchType:1;
-    unsigned int has_proxyConnection:1;
-    unsigned int has_reusedConnection:1;
-} CDStruct_60b58840;
-
 typedef struct {
     unsigned int has_junctionType:1;
     unsigned int has_maneuverType:1;

@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, retain, nonatomic) ENGroup *underlyingGroup; // @synthesize underlyingGroup=_underlyingGroup;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) ENGroup *underlyingGroup; // @synthesize underlyingGroup=_underlyingGroup;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)groupID;

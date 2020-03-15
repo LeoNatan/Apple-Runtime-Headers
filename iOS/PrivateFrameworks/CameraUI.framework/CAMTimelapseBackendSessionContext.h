@@ -16,11 +16,11 @@
     NSArray *_filesToWrite;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *filesToWrite; // @synthesize filesToWrite=_filesToWrite;
 @property(retain, nonatomic) NSArray *filesToDelete; // @synthesize filesToDelete=_filesToDelete;
 @property(retain, nonatomic) CAMTimelapseState *state; // @synthesize state=_state;
 @property(readonly, nonatomic) NSString *timelapseUUID; // @synthesize timelapseUUID=_timelapseUUID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 - (id)initWithTimelapseUUID:(id)arg1;

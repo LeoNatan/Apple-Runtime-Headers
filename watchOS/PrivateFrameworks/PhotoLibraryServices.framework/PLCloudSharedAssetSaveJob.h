@@ -39,6 +39,7 @@
 + (void)assetsdProcessMetadataForAssetCollections:(id)arg1 inAlbum:(id)arg2 personID:(id)arg3 info:(id)arg4 libraryServicesManager:(id)arg5;
 + (void)processMetadataForAssetCollections:(id)arg1 inAlbum:(id)arg2 personID:(id)arg3 info:(id)arg4;
 + (id)newCloudSharedAssetSaveJobFromAProcessThatIsNotAssetsd;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *mstreamdInfoDictionary; // @synthesize mstreamdInfoDictionary=_mstreamdInfoDictionary;
 @property(nonatomic) long long jobType; // @synthesize jobType=_jobType;
 @property(retain, nonatomic) NSArray *cloudAssetGUIDsToDelete; // @synthesize cloudAssetGUIDsToDelete=_cloudAssetGUIDsToDelete;
@@ -51,7 +52,6 @@
 @property(nonatomic) unsigned int currentCloudAssetMediaAssetType; // @synthesize currentCloudAssetMediaAssetType=_currentCloudAssetMediaAssetType;
 @property(retain, nonatomic) NSString *currentCloudAssetGUID; // @synthesize currentCloudAssetGUID=_currentCloudAssetGUID;
 @property(retain, nonatomic) NSString *currentFilePath; // @synthesize currentFilePath=_currentFilePath;
-- (void).cxx_destruct;
 - (unsigned int)_insertionIndexForAsset:(id)arg1 inAlbum:(id)arg2;
 - (void)executeDaemonOperationReplaceRecentlyUploadedOriginalJobType;
 - (void)executeDaemonOperationDeleteAssetJobType;

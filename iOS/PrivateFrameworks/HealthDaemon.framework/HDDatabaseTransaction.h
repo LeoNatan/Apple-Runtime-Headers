@@ -23,11 +23,11 @@
     HDDatabaseTransactionContext *_rootContext;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool performingMigration; // @synthesize performingMigration=_performingMigration;
 @property(readonly, copy, nonatomic) HDDatabaseTransactionContext *rootContext; // @synthesize rootContext=_rootContext;
 @property(readonly, nonatomic) HDSQLiteDatabase *protectedDatabase; // @synthesize protectedDatabase=_protectedDatabase;
 @property(readonly, nonatomic) HDSQLiteDatabase *unprotectedDatabase; // @synthesize unprotectedDatabase=_unprotectedDatabase;
-- (void).cxx_destruct;
 - (void)transactionDidEndWithError:(id)arg1;
 - (void)onCommit:(CDUnknownBlockType)arg1 orRollback:(CDUnknownBlockType)arg2;
 - (_Bool)performWithContext:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3 inaccessibilityHandler:(CDUnknownBlockType)arg4;

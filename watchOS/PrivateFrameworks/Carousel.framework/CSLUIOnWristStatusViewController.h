@@ -14,9 +14,9 @@
     CSLPITimer *_loggingTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLPITimer *loggingTimer; // @synthesize loggingTimer=_loggingTimer;
 @property(retain, nonatomic) UIWindow *window; // @synthesize window=_window;
-- (void).cxx_destruct;
 - (void)_logOnWristDuration:(int)arg1;
 - (id)_getSunriseDate;
 - (void)loggingTimerFired;

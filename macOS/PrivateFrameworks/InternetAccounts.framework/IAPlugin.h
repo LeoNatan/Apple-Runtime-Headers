@@ -15,10 +15,10 @@
     IAProvider *_provider;
 }
 
+- (void).cxx_destruct;
 @property(retain) IAProvider *provider; // @synthesize provider=_provider;
 @property(retain) IAAccount *account; // @synthesize account=_account;
 @property(retain) NSBundle *bundle; // @synthesize bundle=_bundle;
-- (void).cxx_destruct;
 - (BOOL)isSocial;
 - (long long)authType;
 - (Class)authenticatorClass;

@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     struct CGRect _initialPinchRect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setRotationFilter:) PUValueFilter *_rotationFilter; // @synthesize _rotationFilter=__rotationFilter;
 @property(nonatomic, setter=_setTouchesNeedUpdate:) _Bool _touchesNeedUpdate; // @synthesize _touchesNeedUpdate=__touchesNeedUpdate;
 @property(nonatomic) struct CGRect initialPinchRect; // @synthesize initialPinchRect=_initialPinchRect;
 @property(nonatomic) double rotationHysteresisDegrees; // @synthesize rotationHysteresisDegrees=_rotationHysteresisDegrees;
-- (void).cxx_destruct;
 - (void)_updateIfNeeded;
 - (double)adjustedScaleVelocityInView:(id)arg1;
 - (double)adjustedRotationVelocityInView:(id)arg1;

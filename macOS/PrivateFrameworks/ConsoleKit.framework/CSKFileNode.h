@@ -17,11 +17,11 @@
 }
 
 + (id)nodeWithName:(id)arg1 children:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mutableChildren; // @synthesize mutableChildren=_mutableChildren;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) BOOL isDirectory; // @synthesize isDirectory=_isDirectory;
-- (void).cxx_destruct;
 - (id)children;
 - (void)addChild:(id)arg1;
 

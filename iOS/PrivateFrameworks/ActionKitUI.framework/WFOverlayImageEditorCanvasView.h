@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     UIImageView *_overlayImageView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UIImageView *overlayImageView; // @synthesize overlayImageView=_overlayImageView;
 @property(readonly, nonatomic) __weak UIImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 @property(readonly, nonatomic) __weak UIRotationGestureRecognizer *rotateRecognizer; // @synthesize rotateRecognizer=_rotateRecognizer;
 @property(readonly, nonatomic) WFOverlayImageTransform *imageTransform; // @synthesize imageTransform=_imageTransform;
 @property(nonatomic) _Bool rotationEnabled; // @synthesize rotationEnabled=_rotationEnabled;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)reset;
 - (void)setOverlayImageOpacity:(double)arg1;

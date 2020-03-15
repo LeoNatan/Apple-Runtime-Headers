@@ -30,6 +30,7 @@
 + (Class)classForKeyedUnarchiver;
 + (void)addObjectToGlobalCache:(id)arg1;
 + (id)objectForIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <FRJSMessagingDelegate> messagingDelegate; // @synthesize messagingDelegate=_messagingDelegate;
 @property(nonatomic) BOOL isBundleObject; // @synthesize isBundleObject=_isBundleObject;
 @property(retain, nonatomic) NSMutableArray *registeredFunctions; // @synthesize registeredFunctions=_registeredFunctions;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) NSUUID *objectID; // @synthesize objectID=_objectID;
 @property(nonatomic) __weak id <FRJSObjectDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *javaScriptClassName; // @synthesize javaScriptClassName=_javaScriptClassName;
-- (void).cxx_destruct;
 - (id)callFunction:(id)arg1 withArguments:(id)arg2;
 - (void)_addFunction:(id)arg1 sendMessage:(BOOL)arg2;
 - (void)addFunctions:(id)arg1;

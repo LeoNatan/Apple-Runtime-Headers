@@ -23,10 +23,10 @@
     NSString *_identity;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *identity; // @synthesize identity=_identity;
 @property(copy, nonatomic) NSURL *keyServerURL; // @synthesize keyServerURL=_keyServerURL;
 @property(copy, nonatomic) NSURL *keyCertificateURL; // @synthesize keyCertificateURL=_keyCertificateURL;
-- (void).cxx_destruct;
 - (void)contentKeySession:(id)arg1 contentKeyRequest:(id)arg2 didFailWithError:(id)arg3;
 - (void)contentKeySession:(id)arg1 didProvidePersistableContentKeyRequest:(id)arg2;
 - (void)contentKeySession:(id)arg1 didProvideContentKeyRequest:(id)arg2;

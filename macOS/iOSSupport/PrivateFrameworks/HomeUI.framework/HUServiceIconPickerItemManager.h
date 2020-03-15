@@ -13,8 +13,8 @@
     HFServiceBuilder *_serviceBuilder;
 }
 
-@property(readonly, nonatomic) HFServiceBuilder *serviceBuilder; // @synthesize serviceBuilder=_serviceBuilder;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HFServiceBuilder *serviceBuilder; // @synthesize serviceBuilder=_serviceBuilder;
 - (CDUnknownBlockType)_comparatorForSectionIdentifier:(id)arg1;
 - (id)_buildItemProvidersForHome:(id)arg1;
 - (id)_serviceType;

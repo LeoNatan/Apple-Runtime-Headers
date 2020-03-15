@@ -24,13 +24,13 @@
 + (_Bool)supportsSecureCoding;
 + (void)deletePasteboardDataFiles;
 + (id)rootCacheDirectoryPathForPasteboard:(_Bool)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *identifierToDataDictionary; // @synthesize identifierToDataDictionary=_identifierToDataDictionary;
 @property(readonly, nonatomic) NSMutableArray *allURLs; // @synthesize allURLs=_allURLs;
 @property(readonly, nonatomic) NSString *objectIdentifier; // @synthesize objectIdentifier=_objectIdentifier;
 @property(readonly, nonatomic) NSURL *cacheDirectoryURL; // @synthesize cacheDirectoryURL=_cacheDirectoryURL;
 @property(readonly, nonatomic) ICDataCryptor *dataCryptor; // @synthesize dataCryptor=_dataCryptor;
 @property(nonatomic) unsigned long long accumulatedDataSize; // @synthesize accumulatedDataSize=_accumulatedDataSize;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)verifyDataFiles;

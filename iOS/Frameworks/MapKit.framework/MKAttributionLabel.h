@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     _Bool _useDarkText;
 }
 
-@property(nonatomic) unsigned long long mapType; // @synthesize mapType=_mapType;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long mapType; // @synthesize mapType=_mapType;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)sizeToFit;
 - (void)traitCollectionDidChange:(id)arg1;

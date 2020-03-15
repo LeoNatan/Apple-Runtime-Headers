@@ -19,8 +19,8 @@
 
 + (_Bool)supportsBSXPCSecureCoding;
 + (id)descriptor;
-@property(nonatomic) unsigned long long values; // @synthesize values=_values;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long values; // @synthesize values=_values;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

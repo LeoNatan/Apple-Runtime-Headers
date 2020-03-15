@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 + (void)withPendingLaunchEvent:(CDUnknownBlockType)arg1;
 + (void)createPendingLaunchEvent;
 + (void)resetPendingLaunchEventForTesting;
-@property(readonly, copy, nonatomic) NSDictionary *templateMetrics; // @synthesize templateMetrics=_templateMetrics;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *templateMetrics; // @synthesize templateMetrics=_templateMetrics;
 - (void)populateObjectInspector:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)appendPropertiesToBody:(id)arg1;

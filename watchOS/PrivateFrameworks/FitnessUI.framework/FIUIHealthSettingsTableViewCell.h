@@ -15,8 +15,8 @@
     id <FIUIHealthSettingsForceUpdatable> _forceUpdatable;
 }
 
-@property(nonatomic) __weak id <FIUIHealthSettingsForceUpdatable> forceUpdatable; // @synthesize forceUpdatable=_forceUpdatable;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <FIUIHealthSettingsForceUpdatable> forceUpdatable; // @synthesize forceUpdatable=_forceUpdatable;
 - (_Bool)resignFirstResponder;
 - (_Bool)canResignFirstResponder;
 - (_Bool)becomeFirstResponder;

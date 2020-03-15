@@ -6,12 +6,12 @@
 
 #import <UIKit/UIView.h>
 
-@class NSString, UIButton, UIImageView, UILabel, _SFBarTheme, _UIBackdropView;
+@class NSString, UIButton, UILabel, UIVisualEffectView, _SFBarTheme;
 
 @interface _SFCrashBanner : UIView
 {
-    _UIBackdropView *_backdrop;
-    UIImageView *_closeButtonOverlayImageView;
+    UIVisualEffectView *_backdrop;
+    UIVisualEffectView *_contentEffectView;
     UIView *_separator;
     UILabel *_label;
     struct CGSize _cachedLabelLayoutSize;
@@ -19,9 +19,9 @@
     UIButton *_closeButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) _SFBarTheme *theme; // @synthesize theme=_theme;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)_layoutCloseButton;

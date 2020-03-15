@@ -18,8 +18,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(nonatomic, setter=_setLaunchToForeground:) BOOL _launchToForeground; // @synthesize _launchToForeground=__launchToForeground;
 - (void).cxx_destruct;
+@property(nonatomic, setter=_setLaunchToForeground:) BOOL _launchToForeground; // @synthesize _launchToForeground=__launchToForeground;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)_makeAppFrontmost;

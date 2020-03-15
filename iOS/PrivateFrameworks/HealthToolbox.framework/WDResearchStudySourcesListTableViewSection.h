@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_researchSources;
 }
 
-@property(copy, nonatomic) NSArray *researchSources; // @synthesize researchSources=_researchSources;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *researchSources; // @synthesize researchSources=_researchSources;
 - (void)didSelectRow:(unsigned long long)arg1 representedByCell:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (id)_sourceCellForRow:(unsigned long long)arg1 tableView:(id)arg2;
 - (id)cellForRow:(unsigned long long)arg1 table:(id)arg2;

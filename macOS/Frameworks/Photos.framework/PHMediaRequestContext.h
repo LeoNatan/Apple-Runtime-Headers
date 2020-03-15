@@ -8,16 +8,16 @@
 
 #import <Photos/PHAdjustmentDataRequestDelegate-Protocol.h>
 #import <Photos/PHImageRequestDelegate-Protocol.h>
-#import <Photos/PHResourceAvailabilityChangeRequestDelegate-Protocol.h>
 #import <Photos/PHResourceRepairRequestDelegate-Protocol.h>
-#import <Photos/PHVideoChoosingAndAvailabilityRequestDelegate-Protocol.h>
 #import <Photos/PHVideoRequestDelegate-Protocol.h>
+#import <Photos/PLTrackableRequestDelegate-Protocol.h>
 
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSProgress, NSString, PHAsset, PHImageDisplaySpec, PHImageResourceChooser;
 @protocol PHMediaRequestContextDelegate;
 
-@interface PHMediaRequestContext : NSObject <PHResourceAvailabilityChangeRequestDelegate, PHVideoChoosingAndAvailabilityRequestDelegate, PHImageRequestDelegate, PHVideoRequestDelegate, PHAdjustmentDataRequestDelegate, PHResourceRepairRequestDelegate>
+@interface PHMediaRequestContext : NSObject <PLTrackableRequestDelegate, PHImageRequestDelegate, PHVideoRequestDelegate, PHAdjustmentDataRequestDelegate, PHResourceRepairRequestDelegate>
 {
+    CDUnknownBlockType _resultHandler;
     // Error parsing type: AQ, name: _nextID
     // Error parsing type: Ai, name: _repairAttemptCount
     struct os_unfair_lock_s _lock;
@@ -36,17 +36,15 @@
     PHAsset *_asset;
     PHImageDisplaySpec *_displaySpec;
     PHImageResourceChooser *_imageResourceChooser;
-    CDUnknownBlockType _resultHandler;
 }
 
 + (id)chooserQueue;
-+ (long long)type;
 + (id)contentEditingInputRequestContextWithRequestID:(int)arg1 managerID:(unsigned long long)arg2 asset:(id)arg3 options:(id)arg4 useRAWAsUnadjustedBase:(BOOL)arg5 resultHandler:(CDUnknownBlockType)arg6;
 + (id)livePhotoRequestContextWithRequestID:(int)arg1 managerID:(unsigned long long)arg2 asset:(id)arg3 livePhotoRequestOptions:(id)arg4 displaySpec:(id)arg5 resultHandler:(CDUnknownBlockType)arg6;
 + (id)videoRequestContextWithRequestID:(int)arg1 managerID:(unsigned long long)arg2 asset:(id)arg3 videoRequestOptions:(id)arg4 intent:(long long)arg5 resultHandler:(CDUnknownBlockType)arg6;
 + (id)imageRequestContextWithRequestID:(int)arg1 managerID:(unsigned long long)arg2 asset:(id)arg3 imageRequestOptions:(id)arg4 displaySpec:(id)arg5 resultHandler:(CDUnknownBlockType)arg6;
 + (void)initialize;
-@property(readonly, copy, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHImageResourceChooser *imageResourceChooser; // @synthesize imageResourceChooser=_imageResourceChooser;
 @property(retain, nonatomic) PHImageDisplaySpec *displaySpec; // @synthesize displaySpec=_displaySpec;
 @property(readonly, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
@@ -55,10 +53,11 @@
 @property(nonatomic) unsigned long long signpostLayoutID; // @synthesize signpostLayoutID=_signpostLayoutID;
 @property(nonatomic) unsigned long long signpostID; // @synthesize signpostID=_signpostID;
 @property(nonatomic) __weak id <PHMediaRequestContextDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)adjustmentDataRequest:(id)arg1 didReportProgress:(double)arg2 completed:(BOOL)arg3 error:(id)arg4;
-- (void)videoChoosingAndAvailabilityRequest:(id)arg1 didFinishWithVideoURL:(id)arg2 info:(id)arg3 error:(id)arg4;
-- (void)videoChoosingAndAvailabilityRequest:(id)arg1 didReportProgress:(double)arg2 completed:(BOOL)arg3 error:(id)arg4;
+- (void)trackableResourceRepairRequest:(id)arg1 didFinishWithSuccess:(BOOL)arg2;
+- (void)trackableDownloadRequest:(id)arg1 didFinishWithSuccess:(BOOL)arg2 url:(id)arg3 data:(id)arg4 info:(id)arg5 error:(id)arg6;
+- (void)trackableVideoChoosingAndAvailabilityRequest:(id)arg1 didFinishWithVideoURL:(id)arg2 info:(id)arg3 error:(id)arg4;
+- (void)trackableRequest:(id)arg1 didReportProgress:(double)arg2 completed:(BOOL)arg3 error:(id)arg4;
 - (BOOL)videoRequest:(id)arg1 didStartVideoChoosingRequestForSize:(struct CGSize)arg2;
 - (void)imageRequest:(id)arg1 isRequestingScheduledWorkBlock:(CDUnknownBlockType)arg2;
 - (void)imageRequest:(id)arg1 isQueryingCacheAndDidWait:(char *)arg2 didFindImage:(char *)arg3 resultHandler:(CDUnknownBlockType)arg4;
@@ -71,7 +70,6 @@
 - (void)resourceAvailabilityChangeRequest:(id)arg1 didReportProgress:(double)arg2 completed:(BOOL)arg3 error:(id)arg4;
 - (void)resourceRepairRequest:(id)arg1 didFinishWithSuccess:(BOOL)arg2;
 - (BOOL)representsShareableHighQualityResource;
-@property(readonly, nonatomic) long long type;
 - (BOOL)isCancelled;
 - (void)cancel;
 - (void)start;
@@ -89,6 +87,7 @@
 - (BOOL)isNetworkAccessAllowed;
 - (BOOL)isSynchronous;
 - (unsigned long long)nextRequestIndex;
+@property(readonly, nonatomic) long long type;
 - (BOOL)_makeAvailabilityRequest:(id)arg1 forResource:(id)arg2;
 - (void)_setupProgressIfNeeded;
 - (void)_registerAndStartRequests:(id)arg1;

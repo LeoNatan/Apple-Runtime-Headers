@@ -13,8 +13,8 @@
     NSMutableDictionary *_notificationSections;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *notificationSections; // @synthesize notificationSections=_notificationSections;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *notificationSections; // @synthesize notificationSections=_notificationSections;
 @property(readonly, nonatomic) unsigned long long notificationRequestsCount;
 @property(readonly, nonatomic) unsigned long long sectionsCount;
 - (id)notificationRequestMatchingNotificationIdentifier:(id)arg1 sectionIdentifier:(id)arg2;

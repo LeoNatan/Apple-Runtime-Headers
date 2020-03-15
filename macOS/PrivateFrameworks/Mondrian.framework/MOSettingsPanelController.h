@@ -25,6 +25,7 @@
 }
 
 + (id)panelControllerForMediaView:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSView *optionsView; // @synthesize optionsView=_optionsView;
 @property(retain) NSTextField *liveScrollingAutomationStepsTextField; // @synthesize liveScrollingAutomationStepsTextField=_liveScrollingAutomationStepsTextField;
 @property(retain) NSTextField *liveScrollingAutomationLapsTextField; // @synthesize liveScrollingAutomationLapsTextField=_liveScrollingAutomationLapsTextField;
@@ -37,7 +38,6 @@
 @property(retain) NSMutableArray *cellRepresentations; // @synthesize cellRepresentations=_cellRepresentations;
 @property(retain) NSMutableArray *layoutPresets; // @synthesize layoutPresets=_layoutPresets;
 @property(nonatomic) __weak MOMediaView *mediaView; // @synthesize mediaView=_mediaView;
-- (void).cxx_destruct;
 - (void)automateLiveScrollingWithRecording:(id)arg1;
 - (void)automateLiveScrollingWithLapsAndSteps:(id)arg1;
 - (void)clearMonitoringStatistics:(id)arg1;

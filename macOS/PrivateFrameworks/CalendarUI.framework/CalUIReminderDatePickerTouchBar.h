@@ -29,6 +29,7 @@
     CalUIReminderTimeWheelViewController *_timeWheel;
 }
 
+- (void).cxx_destruct;
 @property BOOL isUpdatingDayScrubber; // @synthesize isUpdatingDayScrubber=_isUpdatingDayScrubber;
 @property BOOL suppressScrollingDateChangeUpdates; // @synthesize suppressScrollingDateChangeUpdates=_suppressScrollingDateChangeUpdates;
 @property BOOL timeWheelIsLiveScrolling; // @synthesize timeWheelIsLiveScrolling=_timeWheelIsLiveScrolling;
@@ -40,7 +41,6 @@
 @property(retain) NSTouchBar *touchBar; // @synthesize touchBar=_touchBar;
 @property __weak id <CalUIReminderDatePickerTouchBarDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSDate *reminderDate; // @synthesize reminderDate=_reminderDate;
-- (void).cxx_destruct;
 - (void)scrubber:(id)arg1 didSelectItemAtIndex:(long long)arg2;
 - (long long)_indexForDate:(id)arg1;
 - (id)_dateForIndex:(long long)arg1;

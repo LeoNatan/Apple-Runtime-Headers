@@ -27,6 +27,7 @@
 + (id)requestForOpusRecordSettingsWithContext:(id)arg1;
 + (id)requestForLpcmRecordSettingsWithContext:(id)arg1;
 + (id)defaultRequestWithContext:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isSiri; // @synthesize isSiri=_isSiri;
 @property(nonatomic) unsigned int encoderBitRate; // @synthesize encoderBitRate=_encoderBitRate;
 @property(nonatomic) unsigned int numberOfChannels; // @synthesize numberOfChannels=_numberOfChannels;
@@ -37,7 +38,6 @@
 @property(nonatomic) BOOL useCustomizedRecordSettings; // @synthesize useCustomizedRecordSettings=_useCustomizedRecordSettings;
 @property(nonatomic) BOOL requiresHistoricalBuffer; // @synthesize requiresHistoricalBuffer=_requiresHistoricalBuffer;
 @property(retain, nonatomic) CSAudioRecordContext *recordContext; // @synthesize recordContext=_recordContext;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *xpcObject;
 - (id)initWithXPCObject:(id)arg1;
 

@@ -15,9 +15,9 @@
 }
 
 + (int)actionID;
+- (void).cxx_destruct;
 @property(retain) NSArray *paths; // @synthesize paths=_paths;
 @property BOOL sizeDirectories; // @synthesize sizeDirectories=_sizeDirectories;
-- (void).cxx_destruct;
 - (BOOL)expectsAResult;
 - (id)requestPayload;
 - (BOOL)isEqual:(id)arg1;

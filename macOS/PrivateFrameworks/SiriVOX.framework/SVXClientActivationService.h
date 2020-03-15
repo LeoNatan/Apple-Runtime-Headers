@@ -22,8 +22,8 @@
     id <SVXClientActivationServiceDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SVXClientActivationServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SVXClientActivationServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_preheatTimerArrivedWithToken:(id)arg1;
 - (void)_stopPreheatTimer;
 - (void)_startPreheatTimer;

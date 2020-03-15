@@ -16,11 +16,11 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) NSArray *authorizationRecords; // @synthesize authorizationRecords=_authorizationRecords;
 @property(readonly, copy, nonatomic) NSArray *samples; // @synthesize samples=_samples;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *samplesRequiringAuthorization;
 - (void)invokeCompletionHandlerWithAuthorizedSamples:(id)arg1 error:(id)arg2;
 - (void)invokeCompletionWithSuccess:(_Bool)arg1 sourceEntity:(id)arg2 profile:(id)arg3 error:(id)arg4;

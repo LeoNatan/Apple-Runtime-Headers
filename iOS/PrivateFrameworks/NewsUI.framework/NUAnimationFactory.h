@@ -15,8 +15,8 @@
     CAMediaTimingFunction *_mediaTimingFunction;
 }
 
-@property(readonly, nonatomic) CAMediaTimingFunction *mediaTimingFunction; // @synthesize mediaTimingFunction=_mediaTimingFunction;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CAMediaTimingFunction *mediaTimingFunction; // @synthesize mediaTimingFunction=_mediaTimingFunction;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 - (id)_timingFunctionForAnimation;
 - (id)initWithMediaTimingFunction:(id)arg1;

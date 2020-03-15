@@ -18,10 +18,10 @@
     id <NUVideoAdProviderFactory> _videoAdProviderFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NUVideoAdProviderFactory> videoAdProviderFactory; // @synthesize videoAdProviderFactory=_videoAdProviderFactory;
 @property(readonly, nonatomic) id <NUVideoProviderFactory> videoProviderFactory; // @synthesize videoProviderFactory=_videoProviderFactory;
 @property(readonly, nonatomic) NUVideoViewControllerAdConfiguration *adConfiguration; // @synthesize adConfiguration=_adConfiguration;
-- (void).cxx_destruct;
 - (id)createQueueWithVideoItems:(id)arg1;
 - (id)initWithAdConfiguration:(id)arg1 videoProviderFactory:(id)arg2 videoAdProviderFactory:(id)arg3;
 - (id)init;

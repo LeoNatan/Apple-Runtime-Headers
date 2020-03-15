@@ -14,9 +14,9 @@
     NSArray *_galleryImageIds;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *galleryImageIds; // @synthesize galleryImageIds=_galleryImageIds;
 @property(nonatomic) unsigned long long galleryImageCount; // @synthesize galleryImageCount=_galleryImageCount;
-- (void).cxx_destruct;
 
 @end
 

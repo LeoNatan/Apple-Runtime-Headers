@@ -13,8 +13,8 @@
     NUIOSurface *_surface;
 }
 
-@property(retain) NUIOSurface *surface; // @synthesize surface=_surface;
 - (void).cxx_destruct;
+@property(retain) NUIOSurface *surface; // @synthesize surface=_surface;
 - (unsigned int)createWithContext:(id)arg1;
 - (id)initWithSurface:(id)arg1 device:(id)arg2;
 

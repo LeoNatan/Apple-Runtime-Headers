@@ -18,11 +18,11 @@
     NSObject<OS_dispatch_queue> *_serialWorkQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct os_unfair_lock_s workPendingLock; // @synthesize workPendingLock=_workPendingLock;
 @property(nonatomic) _Bool workPending; // @synthesize workPending=_workPending;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialWorkQueue; // @synthesize serialWorkQueue=_serialWorkQueue;
 @property(nonatomic) __weak id <RCOperationThrottlerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property _Bool suspended;
 - (void)tickleWithCompletion:(CDUnknownBlockType)arg1;
 - (void)tickle;

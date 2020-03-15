@@ -25,8 +25,8 @@
 }
 
 + (id)_emptySimpleHistogram;
-@property(nonatomic) __weak id <FITypicalDayActivityModelDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <FITypicalDayActivityModelDelegate> delegate; // @synthesize delegate=_delegate;
 - (int)_bucketIndexForDate:(id)arg1 startOfDay:(id)arg2 bucketDates:(id)arg3;
 - (id)_bucketDateForIndex:(unsigned int)arg1 startOfDay:(id)arg2;
 - (_Bool)_queue_enumerateActivitySummariesOrderedByCacheIndexWithCalendar:(id)arg1 error:(id *)arg2 handler:(CDUnknownBlockType)arg3;

@@ -28,10 +28,10 @@
     CDUnknownBlockType _responseHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(copy, nonatomic) NSDictionary *destinationContexts; // @synthesize destinationContexts=_destinationContexts;
 @property(retain, nonatomic) UISystemNavigationAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

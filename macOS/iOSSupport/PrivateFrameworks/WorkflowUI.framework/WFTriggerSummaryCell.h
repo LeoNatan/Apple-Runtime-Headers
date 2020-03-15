@@ -14,9 +14,9 @@
     WFTrigger *_trigger;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFTrigger *trigger; // @synthesize trigger=_trigger;
 @property(retain, nonatomic) WFConfiguredTriggerRecord *triggerRecord; // @synthesize triggerRecord=_triggerRecord;
-- (void).cxx_destruct;
 - (void)updateUI;
 - (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

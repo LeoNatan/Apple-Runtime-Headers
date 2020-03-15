@@ -18,10 +18,10 @@
     id <SXTransitionableComponentView> _componentView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL usesThumbnail; // @synthesize usesThumbnail=_usesThumbnail;
 @property(readonly, nonatomic) id <SXTransitionableComponentView> componentView; // @synthesize componentView=_componentView;
 @property(readonly, nonatomic) unsigned long long transitionType; // @synthesize transitionType=_transitionType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isTransitionable;
 @property(readonly, nonatomic) struct CGRect transitionContentFrame;
 @property(readonly, nonatomic) struct CGRect transitionContainerFrame;

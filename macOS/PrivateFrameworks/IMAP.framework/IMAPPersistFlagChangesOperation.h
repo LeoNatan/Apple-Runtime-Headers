@@ -15,9 +15,9 @@
     NSDictionary *_flagChangesByServerMessage;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *flagChangesByServerMessage; // @synthesize flagChangesByServerMessage=_flagChangesByServerMessage;
 @property(readonly, nonatomic) __weak id <IMAPPersistFlagChangesOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)main;
 - (id)description;
 - (id)initWithDataSource:(id)arg1;

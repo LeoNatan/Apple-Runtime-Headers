@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)makeFeatureJSObjectForFeature:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <VSMessagePortFeatureDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak IKAppContext *appContext; // @synthesize appContext=_appContext;
 @property(readonly, copy, nonatomic) NSString *featureName; // @synthesize featureName=_featureName;
-- (void).cxx_destruct;
 - (void)messagePort:(id)arg1 didReceiveMessage:(id)arg2;
 - (id)initWithDOMNode:(id)arg1 featureName:(id)arg2;
 

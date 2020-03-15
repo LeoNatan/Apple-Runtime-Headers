@@ -18,13 +18,13 @@
     NSURL *_tvURL;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL clickable; // @synthesize clickable=_clickable;
 @property(retain) NSURL *tvURL; // @synthesize tvURL=_tvURL;
 @property __weak NSLayoutConstraint *imageAspectRatioConstraint; // @synthesize imageAspectRatioConstraint=_imageAspectRatioConstraint;
 @property __weak NSTextField *trailingTextField; // @synthesize trailingTextField=_trailingTextField;
 @property __weak NSTextField *leadingTextField; // @synthesize leadingTextField=_leadingTextField;
 @property __weak NSImageView *tvImage; // @synthesize tvImage=_tvImage;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *trailingTextColor;
 @property(retain, nonatomic) NSFont *trailingFont;
 @property(retain, nonatomic) NSString *trailingString;

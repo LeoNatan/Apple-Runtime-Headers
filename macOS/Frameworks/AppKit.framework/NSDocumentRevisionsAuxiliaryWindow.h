@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     id _customAccessibilityParent;
 }
 
-@property __weak id customAccessibilityParent; // @synthesize customAccessibilityParent=_customAccessibilityParent;
 - (void).cxx_destruct;
+@property __weak id customAccessibilityParent; // @synthesize customAccessibilityParent=_customAccessibilityParent;
 - (id)accessibilityParentAttribute;
 - (id)accessibilityChildrenAttribute;
 - (BOOL)_shouldAutoFlattenLayerTree;

@@ -17,10 +17,10 @@
     HFPowerStateControlItem *_primaryPowerStateControlItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFPowerStateControlItem *primaryPowerStateControlItem; // @synthesize primaryPowerStateControlItem=_primaryPowerStateControlItem;
 @property(readonly, nonatomic) HFMultiStateValueSet *targetModeValueSet; // @synthesize targetModeValueSet=_targetModeValueSet;
 @property(readonly, nonatomic) NSString *targetModeCharacteristicType; // @synthesize targetModeCharacteristicType=_targetModeCharacteristicType;
-- (void).cxx_destruct;
 - (id)toggleValue;
 - (id)characteristicValuesForValue:(id)arg1;
 - (id)valueForCharacteristicValues:(id)arg1;

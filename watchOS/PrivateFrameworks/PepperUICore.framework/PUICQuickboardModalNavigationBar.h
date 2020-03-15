@@ -20,6 +20,7 @@
     const struct SpecValues *_specValues;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) const struct SpecValues *specValues; // @synthesize specValues=_specValues;
 @property(nonatomic) __weak UIButton *visibleTrailingButton; // @synthesize visibleTrailingButton=_visibleTrailingButton;
 @property(nonatomic) __weak UIButton *visibleLeadingButton; // @synthesize visibleLeadingButton=_visibleLeadingButton;
@@ -27,7 +28,6 @@
 @property(nonatomic) __weak UIButton *visibleBackButton; // @synthesize visibleBackButton=_visibleBackButton;
 @property(nonatomic) __weak UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(nonatomic) __weak id <PUICQuickboardModalNavigationBarDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)presentRightActionButton:(id)arg1 transition:(unsigned int)arg2;
 - (void)presentLeadingView:(id)arg1 transition:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)configureLeadingButton:(id)arg1;

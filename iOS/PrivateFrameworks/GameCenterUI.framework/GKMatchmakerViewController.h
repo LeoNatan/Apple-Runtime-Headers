@@ -25,6 +25,7 @@
 }
 
 + (_Bool)_preventsAppearanceProxyCustomization;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIAlertController *alertController; // @synthesize alertController=_alertController;
 @property(retain, nonatomic) NSMutableArray *hostedPlayers; // @synthesize hostedPlayers=_hostedPlayers;
 @property(retain, nonatomic) GKMatch *match; // @synthesize match=_match;
@@ -33,7 +34,6 @@
 @property(nonatomic, getter=isHosted) _Bool hosted; // @synthesize hosted=_hosted;
 @property(retain, nonatomic) GKMatchRequest *matchRequest; // @synthesize matchRequest=_matchRequest;
 @property(nonatomic) id <GKMatchmakerViewControllerDelegate> matchmakerDelegate; // @synthesize matchmakerDelegate;
-- (void).cxx_destruct;
 - (void)applicationWillEnterForeground:(id)arg1;
 - (void)authenticationChanged:(id)arg1;
 - (void)playersToInvite:(id)arg1;

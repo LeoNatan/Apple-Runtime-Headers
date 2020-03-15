@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *privateKeyData; // @synthesize privateKeyData=_privateKeyData;
 @property(copy, nonatomic) NSData *certificateData; // @synthesize certificateData=_certificateData;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

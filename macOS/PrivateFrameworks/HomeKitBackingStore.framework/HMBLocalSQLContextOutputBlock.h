@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMFActivity *activity; // @synthesize activity=_activity;
 @property(nonatomic) unsigned long long blockRow; // @synthesize blockRow=_blockRow;
 @property(readonly, nonatomic) unsigned long long zoneRow; // @synthesize zoneRow=_zoneRow;
 @property(nonatomic) __weak HMBLocalSQLContext *owner; // @synthesize owner=_owner;
-- (void).cxx_destruct;
 - (id)abort;
 - (id)commit:(id)arg1;
 - (id)updateModelID:(id)arg1 modelEncoding:(unsigned long long)arg2 modelData:(id)arg3;

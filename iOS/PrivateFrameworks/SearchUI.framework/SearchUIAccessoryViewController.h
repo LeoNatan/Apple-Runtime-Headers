@@ -21,11 +21,11 @@
 
 + (_Bool)supportsRowModel:(id)arg1;
 + (Class)accessoryViewClassForRowModel:(id)arg1;
+- (void).cxx_destruct;
 @property __weak id <SearchUIAccessoryViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <SearchUIFeedbackDelegate> feedbackDelegate; // @synthesize feedbackDelegate;
 @property(retain, nonatomic) UIView *view; // @synthesize view;
 @property(retain, nonatomic) SearchUIDetailedRowModel *rowModel; // @synthesize rowModel;
-- (void).cxx_destruct;
 - (void)updateWithContacts:(id)arg1;
 @property(readonly) unsigned long long type;
 - (_Bool)shouldTopAlignForAccessibilityContentSizes;

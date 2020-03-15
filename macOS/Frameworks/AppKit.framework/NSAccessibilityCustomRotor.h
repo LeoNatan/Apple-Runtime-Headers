@@ -17,9 +17,9 @@
     id <NSAccessibilityElementLoading> _itemLoadingDelegate;
 }
 
+- (void).cxx_destruct;
 @property long long type; // @synthesize type=_type;
 @property(copy) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_defaultLabelForType:(long long)arg1;
 @property __weak id <NSAccessibilityElementLoading> itemLoadingDelegate; // @dynamic itemLoadingDelegate;

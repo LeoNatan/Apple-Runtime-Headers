@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedVisualizer;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *engineLayers; // @synthesize engineLayers=_engineLayers;
 @property(retain, nonatomic) UIWindow *visualFeedbackWindow; // @synthesize visualFeedbackWindow=_visualFeedbackWindow;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_showVisualForFeedback:(id)arg1;
 - (void)cancelVisualForFeedback:(id)arg1;

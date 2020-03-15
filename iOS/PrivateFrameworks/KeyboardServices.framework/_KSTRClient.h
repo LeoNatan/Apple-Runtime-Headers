@@ -17,9 +17,9 @@
     long long _generation;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasReadAccess; // @synthesize hasReadAccess=_hasReadAccess;
 @property(nonatomic) long long generation; // @synthesize generation=_generation;
-- (void).cxx_destruct;
 - (void)queryTextReplacementsWithPredicate:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)queryTextReplacementEntriesWithReply:(CDUnknownBlockType)arg1;
 - (void)cancelPendingUpdatesWithReply:(CDUnknownBlockType)arg1;

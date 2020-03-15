@@ -39,6 +39,7 @@
     IKViewElementStyleFactory *_styleFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isImplicitlyUpdated) _Bool implicitlyUpdated; // @synthesize implicitlyUpdated=_implicitlyUpdated;
 @property(retain, nonatomic) IKViewElementStyleFactory *styleFactory; // @synthesize styleFactory=_styleFactory;
 @property(readonly, nonatomic) __weak IKJSObject *owner; // @synthesize owner=_owner;
@@ -57,7 +58,6 @@
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) __weak IKDOMDocument *jsDocument; // @synthesize jsDocument=_jsDocument;
 @property(readonly) __weak IKAppContext *appContext; // @synthesize appContext=_appContext;
-- (void).cxx_destruct;
 - (void)_resetImplicitUpdates;
 - (_Bool)markImplicitlyUpdated;
 - (void)popTrackingImplictUpdates;

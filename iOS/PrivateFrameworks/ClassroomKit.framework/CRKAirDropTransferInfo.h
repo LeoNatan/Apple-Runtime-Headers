@@ -21,6 +21,7 @@
     NSString *_itemsDescription;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *itemsDescription; // @synthesize itemsDescription=_itemsDescription;
 @property(copy, nonatomic) NSString *sourceBundleIdentifier; // @synthesize sourceBundleIdentifier=_sourceBundleIdentifier;
 @property(copy, nonatomic) NSArray *files; // @synthesize files=_files;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSString *senderName; // @synthesize senderName=_senderName;
 @property(nonatomic) _Bool hideProgress; // @synthesize hideProgress=_hideProgress;
 @property(nonatomic) _Bool autoAccept; // @synthesize autoAccept=_autoAccept;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, copy, nonatomic) NSDictionary *dictionaryRepresentation;
 - (void)addFiles:(id)arg1;

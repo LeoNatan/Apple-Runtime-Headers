@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSDate *_messageDate;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *summary; // @synthesize summary=_summary;
 @property(retain, nonatomic) NSDate *messageDate; // @synthesize messageDate=_messageDate;
 @property(copy, nonatomic) NSString *messageGUID; // @synthesize messageGUID=_messageGUID;
 @property(copy, nonatomic) NSString *chatGUID; // @synthesize chatGUID=_chatGUID;
-- (void).cxx_destruct;
 - (long long)compare:(id)arg1;
 - (id)initWithMessageGUID:(id)arg1 chatGUID:(id)arg2 messageTime:(id)arg3 summery:(id)arg4;
 

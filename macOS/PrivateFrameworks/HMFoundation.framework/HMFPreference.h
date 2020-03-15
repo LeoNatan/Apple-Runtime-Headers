@@ -18,11 +18,11 @@
 }
 
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property(readonly) __weak HMFPreference *parent; // @synthesize parent=_parent;
 @property(copy) id <NSObject> value; // @synthesize value=_value;
 @property(readonly) unsigned long long options; // @synthesize options=_options;
 @property(readonly) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *dataValue;
 @property(readonly, copy, nonatomic) NSString *stringValue;
 @property(readonly, copy, nonatomic) NSNumber *numberValue;

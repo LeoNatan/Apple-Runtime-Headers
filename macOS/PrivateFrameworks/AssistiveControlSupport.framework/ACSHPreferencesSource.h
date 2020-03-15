@@ -13,8 +13,8 @@
     NSDictionary *__preferenceDefaults;
 }
 
-@property(copy, nonatomic) NSDictionary *_preferenceDefaults; // @synthesize _preferenceDefaults=__preferenceDefaults;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *_preferenceDefaults; // @synthesize _preferenceDefaults=__preferenceDefaults;
 - (id)copyPreferenceNumberForKey:(id)arg1;
 - (id)copyPreferenceStringForKey:(id)arg1;
 - (void)setPreferenceValue:(id)arg1 forKey:(id)arg2;

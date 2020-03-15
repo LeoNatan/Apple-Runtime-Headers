@@ -42,6 +42,7 @@
 }
 
 + (id)_parentOrPresentingViewControllerFor:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SXVideoPlayerViewControllerManager *videoPlayerViewControllerManager; // @synthesize videoPlayerViewControllerManager=_videoPlayerViewControllerManager;
 @property(nonatomic) _Bool isShowingDeferredHardPayall; // @synthesize isShowingDeferredHardPayall=_isShowingDeferredHardPayall;
 @property(nonatomic) unsigned long long presentationMode; // @synthesize presentationMode=_presentationMode;
@@ -63,7 +64,6 @@
 @property(nonatomic) __weak id <SXAnalyticsReporting> analyticsReporting; // @synthesize analyticsReporting=_analyticsReporting;
 @property(nonatomic) long long contentScale; // @synthesize contentScale=_contentScale;
 @property(nonatomic) __weak id <NULoadingDelegate> loadingDelegate; // @synthesize loadingDelegate=_loadingDelegate;
-- (void).cxx_destruct;
 - (void)updateTextSelectionForPaywallPresentation;
 - (_Bool)isPreviewingOrShowingHardPaywall;
 - (_Bool)accessibilityShouldScrollForScrollViewController:(id)arg1 defaultValue:(_Bool)arg2;

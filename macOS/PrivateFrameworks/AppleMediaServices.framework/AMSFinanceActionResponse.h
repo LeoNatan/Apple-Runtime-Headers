@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
 
 + (id)actionWithUpdatedCreditString:(id)arg1 account:(id)arg2 taskInfo:(id)arg3;
 + (id)actionWithActionDictionary:(id)arg1 taskInfo:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSURL *URL; // @synthesize URL=_URL;
 @property(retain) AMSURLTaskInfo *taskInfo; // @synthesize taskInfo=_taskInfo;
 @property long long kind; // @synthesize kind=_kind;
 @property(retain) NSString *creditString; // @synthesize creditString=_creditString;
 @property(retain) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)_performOpenURL;
 - (id)_performGotoURL;
 - (id)_performCreditDisplayUpdate;

@@ -16,11 +16,11 @@
     NSString *_sessionID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(nonatomic) long long feedType; // @synthesize feedType=_feedType;
 @property(nonatomic) unsigned long long fixedArticleCount; // @synthesize fixedArticleCount=_fixedArticleCount;
 @property(retain, nonatomic) FCDateRange *dateRange; // @synthesize dateRange=_dateRange;
-- (void).cxx_destruct;
 
 @end
 

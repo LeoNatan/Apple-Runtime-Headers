@@ -23,6 +23,7 @@
     id <SVVideoTimePlayedTracking> _timePlayedTracker;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SVVideoTimePlayedTracking> timePlayedTracker; // @synthesize timePlayedTracker=_timePlayedTracker;
 @property(retain, nonatomic) id <SVVideoVolumeObserving> volumeObserver; // @synthesize volumeObserver=_volumeObserver;
 @property(retain, nonatomic) id <SVVideoPlaybackProgressObserving> playbackProgressObserver; // @synthesize playbackProgressObserver=_playbackProgressObserver;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) id <SVVideoTimePlayedTrackerFactory> timePlayedTrackerFactory; // @synthesize timePlayedTrackerFactory=_timePlayedTrackerFactory;
 @property(readonly, nonatomic) id <SVVideoVolumeObserverFactory> volumeObserverFactory; // @synthesize volumeObserverFactory=_volumeObserverFactory;
 @property(readonly, nonatomic) id <SVVideoPlaybackProgressObserverFactory> playbackProgressObserverFactory; // @synthesize playbackProgressObserverFactory=_playbackProgressObserverFactory;
-- (void).cxx_destruct;
 - (id)mutableMetadataForVideo:(id)arg1;
 - (id)metadataForVideo:(id)arg1;
 - (void)willTransitionToVideo:(id)arg1 withTransitionCoordinator:(id)arg2;

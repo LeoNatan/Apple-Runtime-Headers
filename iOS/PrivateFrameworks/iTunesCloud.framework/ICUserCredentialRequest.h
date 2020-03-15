@@ -19,12 +19,12 @@
     double _timeoutInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double timeoutInterval; // @synthesize timeoutInterval=_timeoutInterval;
 @property(nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(readonly, copy, nonatomic) ICClientInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(readonly, nonatomic) ICUserIdentityStore *identityStore; // @synthesize identityStore=_identityStore;
 @property(readonly, copy, nonatomic) ICUserIdentity *identity; // @synthesize identity=_identity;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithIdentity:(id)arg1 identityStore:(id)arg2 clientInfo:(id)arg3;
 

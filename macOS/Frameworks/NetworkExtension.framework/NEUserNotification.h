@@ -20,12 +20,12 @@
 + (void)promptForLocalAuthenticationWithReason:(id)arg1 completionQueue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (BOOL)shouldPromptForLocalAuthentication;
 + (id)createLAContext;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(retain) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain) id notificationSource; // @synthesize notificationSource=_notificationSource;
 @property(retain) id notification; // @synthesize notification=_notification;
 @property BOOL isBanner; // @synthesize isBanner=_isBanner;
-- (void).cxx_destruct;
 - (id)initObsoleteAlertWithAppName:(id)arg1;
 - (id)initAddConfigurationsForApp:(id)arg1 warningHeader:(id)arg2 warning:(id)arg3;
 - (void)cancel;

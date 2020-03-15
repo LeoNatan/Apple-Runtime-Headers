@@ -17,8 +17,8 @@
     id <SKUINavigationStackObserver> _navigationStackObserver;
 }
 
-@property(nonatomic) __weak id <SKUINavigationStackObserver> navigationStackObserver; // @synthesize navigationStackObserver=_navigationStackObserver;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SKUINavigationStackObserver> navigationStackObserver; // @synthesize navigationStackObserver=_navigationStackObserver;
 - (void)_observedNavigationStackDidChange;
 - (void)scrollingTabBarBottomInsetAdjustmentDidChange;
 - (void)popToNavigationStackRootContentAnimated:(_Bool)arg1 withBehavior:(long long)arg2;

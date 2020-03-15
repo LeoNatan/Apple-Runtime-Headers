@@ -29,6 +29,7 @@
     NSMutableArray *_yearlyMonthButtons;
 }
 
+- (void).cxx_destruct;
 @property int yearlyOrdinalDayValue; // @synthesize yearlyOrdinalDayValue=_yearlyOrdinalDayValue;
 @property int yearlyOrdinalValue; // @synthesize yearlyOrdinalValue=_yearlyOrdinalValue;
 @property BOOL yearlyByDaySwitch; // @synthesize yearlyByDaySwitch=_yearlyByDaySwitch;
@@ -46,7 +47,6 @@
 @property long long weeklyIntervalValue; // @synthesize weeklyIntervalValue=_weeklyIntervalValue;
 @property long long dailyIntervalValue; // @synthesize dailyIntervalValue=_dailyIntervalValue;
 @property long long frequencySelectorValue; // @synthesize frequencySelectorValue=_frequencySelectorValue;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (void)reset;

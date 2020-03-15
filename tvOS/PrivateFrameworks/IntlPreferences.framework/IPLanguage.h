@@ -18,10 +18,10 @@
 + (id)IPLanguagesWithLanguages:(id)arg1 normalize:(_Bool)arg2;
 + (id)languageWithIdentifier:(id)arg1 normalize:(_Bool)arg2;
 + (id)languageWithIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *localizedStringForName; // @synthesize localizedStringForName=_localizedStringForName;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) IPLanguage *minimizedLanguage;
 - (id)description;
 - (unsigned long long)hash;

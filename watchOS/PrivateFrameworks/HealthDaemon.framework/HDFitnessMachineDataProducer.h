@@ -25,8 +25,8 @@
     HDProfile *_profile;
 }
 
-@property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
+@property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void)_queue_detachHealthServiceSession;
 - (void)_queue_sendEurotasData:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_queue_generateEurotasData;

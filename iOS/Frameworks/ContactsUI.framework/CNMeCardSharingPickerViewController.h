@@ -41,6 +41,7 @@
 }
 
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) UISwitch *shareSwitch; // @synthesize shareSwitch=_shareSwitch;
 @property(retain, nonatomic) OBLinkTrayButton *laterButton; // @synthesize laterButton=_laterButton;
@@ -62,7 +63,6 @@
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(nonatomic) __weak id <CNMeCardSharingPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (void)sharingEnabledDataSource:(id)arg1 didChangeEnabledState:(_Bool)arg2;
 - (void)photoPicker:(id)arg1 didUpdatePhotoForContact:(id)arg2 withContactImage:(id)arg3;
 - (void)photoPickerDidCancel:(id)arg1;

@@ -15,8 +15,8 @@
     BLTPBBulletinSummary *_bulletin;
 }
 
-@property(retain, nonatomic) BLTPBBulletinSummary *bulletin; // @synthesize bulletin=_bulletin;
 - (void).cxx_destruct;
+@property(retain, nonatomic) BLTPBBulletinSummary *bulletin; // @synthesize bulletin=_bulletin;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

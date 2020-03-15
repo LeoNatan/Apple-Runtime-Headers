@@ -14,9 +14,9 @@
     unsigned long long _maxPayloadSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maxPayloadSize; // @synthesize maxPayloadSize=_maxPayloadSize;
 @property(retain, nonatomic) id <NDAnalyticsPayloadAssemblerConfigProvider> configProvider; // @synthesize configProvider=_configProvider;
-- (void).cxx_destruct;
 - (void)_fetchAnalyticsEnvelopeContentTypeConfigsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)assemblePayloadsWithEntries:(id)arg1 lastUploadDatesByContentType:(id)arg2 droppedEnvelopeReasonsToUpload:(id)arg3 envelopeSizeByEntry:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)determinePayloadDeliveryWindowForEntries:(id)arg1 withLastUploadDatesByContentType:(id)arg2 completion:(CDUnknownBlockType)arg3;

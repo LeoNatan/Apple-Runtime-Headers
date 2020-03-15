@@ -21,10 +21,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) ICRadioPlaybackHistoryItem *currentTrack; // @synthesize currentTrack=_currentTrack;
 @property(readonly, nonatomic) long long numberOfSkips; // @synthesize numberOfSkips=_numberOfSkips;
 @property(readonly, copy, nonatomic) NSString *stationIdentifier; // @synthesize stationIdentifier=_stationIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

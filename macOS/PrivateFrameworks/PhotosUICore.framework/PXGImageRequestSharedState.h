@@ -17,12 +17,12 @@
     struct CGSize _targetSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double screenScale; // @synthesize screenScale=_screenScale;
 @property(readonly, nonatomic) struct CGSize targetSize; // @synthesize targetSize=_targetSize;
 @property(readonly, nonatomic) unsigned long long presentationStyles; // @synthesize presentationStyles=_presentationStyles;
 @property(readonly, nonatomic) id <PXGDisplayAssetRequestObserver> observer; // @synthesize observer=_observer;
 @property(readonly, nonatomic) id <PXDisplayAssetFetchResult> displayAssetFetchResult; // @synthesize displayAssetFetchResult=_displayAssetFetchResult;
-- (void).cxx_destruct;
 - (id)initWithDisplayAssetFetchResult:(id)arg1 observer:(id)arg2 presentationStyles:(unsigned long long)arg3 targetSize:(struct CGSize)arg4 screenScale:(double)arg5;
 
 @end

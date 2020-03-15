@@ -16,10 +16,10 @@
     NSTimer *_dataFlushTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTimer *dataFlushTimer; // @synthesize dataFlushTimer=_dataFlushTimer;
 @property(readonly) int mecabraInputMethodType; // @synthesize mecabraInputMethodType=_mecabraInputMethodType;
 @property(copy) NSDictionary *activeSessionLog; // @synthesize activeSessionLog=_activeSessionLog;
-- (void).cxx_destruct;
 - (void)startDynamicLogTimer;
 - (void)flushDynamicLogs;
 @property(readonly, copy) NSURL *dynamicDictionaryDirectoryURL; // @synthesize dynamicDictionaryDirectoryURL=_dynamicDictionaryDirectoryURL;

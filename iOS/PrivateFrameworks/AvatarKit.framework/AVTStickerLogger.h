@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 - (void)logErrorShaderModifiers:(id)arg1 cantBeRemovedFromAvatar:(id)arg2 errors:(id)arg3;
 - (void)logRemovingShaderModifiers:(id)arg1 fromAvatar:(id)arg2 wereApplied:(_Bool)arg3;
 - (void)logShaderModifier:(id)arg1 notRemovedFromAvatar:(id)arg2 reason:(id)arg3;

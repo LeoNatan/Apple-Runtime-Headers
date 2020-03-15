@@ -16,9 +16,9 @@
     NSArray *_columns;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *columns; // @synthesize columns=_columns;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 columns:(id)arg2;
 
 // Remaining properties

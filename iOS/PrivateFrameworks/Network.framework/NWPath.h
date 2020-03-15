@@ -20,8 +20,8 @@
 + (id)createStringFromStatus:(long long)arg1;
 + (id)pathForClientID:(id)arg1;
 + (id)allClientIDs;
-@property(readonly) NSObject<OS_nw_path> *internalPath; // @synthesize internalPath=_internalPath;
 - (void).cxx_destruct;
+@property(readonly) NSObject<OS_nw_path> *internalPath; // @synthesize internalPath=_internalPath;
 - (id)createProtocolBufferObject;
 @property(readonly, nonatomic, getter=isEligibleForCrazyIvan46) _Bool eligibleForCrazyIvan46;
 @property(readonly, nonatomic) _Bool supportsDNS;

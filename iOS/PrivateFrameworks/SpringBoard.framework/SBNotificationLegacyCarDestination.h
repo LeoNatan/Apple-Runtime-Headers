@@ -20,9 +20,9 @@
     SBStarkNotificationSceneComponentManager *_sceneComponentManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBStarkNotificationSceneComponentManager *sceneComponentManager; // @synthesize sceneComponentManager=_sceneComponentManager;
 @property(nonatomic) __weak id <NCNotificationDestinationDelegate> delegate;
-- (void).cxx_destruct;
 - (void)agent:(id)arg1 didDismissNotificationRequest:(id)arg2;
 - (void)agent:(id)arg1 willPresentNotificationRequest:(id)arg2;
 - (void)agent:(id)arg1 executeAction:(id)arg2 forNotificationRequest:(id)arg3;

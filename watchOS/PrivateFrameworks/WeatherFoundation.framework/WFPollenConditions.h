@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int treeIndex; // @synthesize treeIndex=_treeIndex;
 @property(nonatomic) unsigned int ragweedIndex; // @synthesize ragweedIndex=_ragweedIndex;
 @property(nonatomic) unsigned int grassIndex; // @synthesize grassIndex=_grassIndex;
 @property(nonatomic) unsigned int timeOfDay; // @synthesize timeOfDay=_timeOfDay;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

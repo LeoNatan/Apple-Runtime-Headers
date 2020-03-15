@@ -13,8 +13,8 @@
     PKAccountPaymentFundingSource *_fundingSource;
 }
 
-@property(readonly, copy, nonatomic) PKAccountPaymentFundingSource *fundingSource; // @synthesize fundingSource=_fundingSource;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) PKAccountPaymentFundingSource *fundingSource; // @synthesize fundingSource=_fundingSource;
 - (id)initWithData:(id)arg1;
 
 @end

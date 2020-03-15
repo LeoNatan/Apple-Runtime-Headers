@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
     NSString *_completedQuery;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *completedQuery; // @synthesize completedQuery=_completedQuery;
 @property(copy, nonatomic) NSString *correctedQuery; // @synthesize correctedQuery=_correctedQuery;
 @property(copy, nonatomic) NSString *intendedQuery; // @synthesize intendedQuery=_intendedQuery;
@@ -66,7 +67,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *canonicalId; // @synthesize canonicalId=_canonicalId;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

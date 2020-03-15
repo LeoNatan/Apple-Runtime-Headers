@@ -40,6 +40,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLSceneActionRetryMonitor *retryMonitor; // @synthesize retryMonitor=_retryMonitor;
 @property(retain, nonatomic) CSLSceneActionConditionsMonitor *conditionsMonitor; // @synthesize conditionsMonitor=_conditionsMonitor;
 @property(retain, nonatomic) CSLDiagnosticSession *diagnosticSession; // @synthesize diagnosticSession=_diagnosticSession;
@@ -63,7 +64,6 @@
 @property(readonly, nonatomic) FBSProcessExecutionPolicy *executionPolicy; // @synthesize executionPolicy=_executionPolicy;
 @property(readonly, nonatomic) __weak id <FBSSceneHandle> scene; // @synthesize scene=_scene;
 @property(readonly, nonatomic) __weak BSAction<CSLAssertionAction> *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (id)_terminationContextForSessionError:(id)arg1;
 - (void)_queue_failWithError:(id)arg1;
 - (void)_queue_complete;

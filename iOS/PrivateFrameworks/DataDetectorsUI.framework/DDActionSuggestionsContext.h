@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_bundleIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain) NSString *coreSpotlightUniqueIdentifier; // @synthesize coreSpotlightUniqueIdentifier=_coreSpotlightUniqueIdentifier;
-- (void).cxx_destruct;
 
 @end
 

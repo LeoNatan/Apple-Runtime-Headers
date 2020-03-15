@@ -15,6 +15,8 @@
 @interface EDSearchableIndexItem : NSObject <EFLoggable, EDIndexableItem>
 {
     CSSearchableItem *_searchableItem;
+    _Bool _isEncrypted;
+    _Bool _includeEncryptedBody;
     _Bool _fetchBody;
     _Bool _hasCompleteData;
     NSString *_identifier;
@@ -33,14 +35,16 @@
 + (id)itemWithMessage:(id)arg1 bodyData:(id)arg2 fetchBody:(_Bool)arg3;
 + (id)log;
 + (id)csIdentifierForMailbox:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasCompleteData; // @synthesize hasCompleteData=_hasCompleteData;
 @property(readonly, nonatomic) _Bool fetchBody; // @synthesize fetchBody=_fetchBody;
+@property(nonatomic) _Bool includeEncryptedBody; // @synthesize includeEncryptedBody=_includeEncryptedBody;
+@property(nonatomic) _Bool isEncrypted; // @synthesize isEncrypted=_isEncrypted;
 @property(retain, nonatomic) NSData *bodyData; // @synthesize bodyData=_bodyData;
 @property(readonly, nonatomic) id <EDIndexableMessage> message; // @synthesize message=_message;
 @property(readonly, nonatomic) unsigned long long itemInstantiationTime; // @synthesize itemInstantiationTime=_itemInstantiationTime;
 @property(nonatomic) int indexingType; // @synthesize indexingType=_indexingType;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool alwaysMarkAsIndexed;
 - (id)searchableItem;
 - (void)_addStaticAttributesToAttributeSet:(id)arg1;

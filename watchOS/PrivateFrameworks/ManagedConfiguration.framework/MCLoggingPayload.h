@@ -16,8 +16,8 @@
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
-@property(readonly, nonatomic) NSDictionary *loggingPayload; // @synthesize loggingPayload=_loggingPayload;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *loggingPayload; // @synthesize loggingPayload=_loggingPayload;
 - (id)title;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id *)arg3;

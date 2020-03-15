@@ -6,13 +6,16 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-@class NSData;
+@class NSData, SISchemaHardwareInterfaceIdentifier;
 
 @interface SISchemaAudioFirstBufferRecorded : PBCodable
 {
     int _audioInputRoute;
+    SISchemaHardwareInterfaceIdentifier *_hardwareInterfaceVendorID;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) SISchemaHardwareInterfaceIdentifier *hardwareInterfaceVendorID; // @synthesize hardwareInterfaceVendorID=_hardwareInterfaceVendorID;
 @property(nonatomic) int audioInputRoute; // @synthesize audioInputRoute=_audioInputRoute;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;

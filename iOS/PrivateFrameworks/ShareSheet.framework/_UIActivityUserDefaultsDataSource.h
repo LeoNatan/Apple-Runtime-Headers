@@ -13,8 +13,8 @@
     id <_UIActivityUserDefaultsDataSourceProxy> _dataSourceProxy;
 }
 
-@property(nonatomic) __weak id <_UIActivityUserDefaultsDataSourceProxy> dataSourceProxy; // @synthesize dataSourceProxy=_dataSourceProxy;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_UIActivityUserDefaultsDataSourceProxy> dataSourceProxy; // @synthesize dataSourceProxy=_dataSourceProxy;
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
 - (_Bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 moveRowAtIndexPath:(id)arg2 toIndexPath:(id)arg3;

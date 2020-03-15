@@ -25,8 +25,8 @@
 
 + (id)borderColor;
 + (float)borderWidth;
-@property(nonatomic, getter=isContentSuppressed) _Bool contentSuppressed; // @synthesize contentSuppressed=_contentSuppressed;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isContentSuppressed) _Bool contentSuppressed; // @synthesize contentSuppressed=_contentSuppressed;
 - (void)_updateMagnitudesWithStyle:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateContent;
 - (void)_updateContentIfPossible;

@@ -13,8 +13,8 @@
     VSOptional *_result;
 }
 
-@property(retain) VSOptional *result; // @synthesize result=_result;
 - (void).cxx_destruct;
+@property(retain) VSOptional *result; // @synthesize result=_result;
 - (void)executionDidBegin;
 - (void)_finishWithResult:(int)arg1 bytes:(char *)arg2 length:(unsigned int)arg3;
 - (void)_finishWithError:(id)arg1;

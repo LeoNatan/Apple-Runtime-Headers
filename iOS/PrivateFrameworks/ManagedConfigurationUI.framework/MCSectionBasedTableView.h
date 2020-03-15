@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UITableView *_tableView;
 }
 
-@property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 - (void)layoutSubviews;
 - (id)_createTableView;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -14,9 +14,9 @@
     UILabel *_label;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UILabel *label; // @synthesize label=_label;
 @property(nonatomic) __weak UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
-- (void).cxx_destruct;
 - (void)setActivityIndicatorHidden:(_Bool)arg1;
 @property(copy, nonatomic) NSString *title;
 - (id)init;

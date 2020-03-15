@@ -25,6 +25,7 @@
 }
 
 + (id)defaultScheduler;
+- (void).cxx_destruct;
 @property(readonly) NSHashTable *observers; // @synthesize observers=_observers;
 @property(readonly, nonatomic) NSMutableDictionary *activityTimerMap; // @synthesize activityTimerMap=_activityTimerMap;
 @property(readonly, nonatomic) NSMutableSet *runningActivities; // @synthesize runningActivities=_runningActivities;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) id <CSLActivityTimerSource> timerSource; // @synthesize timerSource=_timerSource;
 @property(readonly, nonatomic) id <CSLActivityDateSource> dateSource; // @synthesize dateSource=_dateSource;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)_queue_performLaunchActivity:(id)arg1;
 - (void)_queue_cancelExistingTimersForActivity:(id)arg1;
 - (void)_queue_performObserverBlock:(CDUnknownBlockType)arg1;

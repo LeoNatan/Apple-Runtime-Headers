@@ -12,9 +12,9 @@
     CDUnknownBlockType _taskCompleteBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType taskCompleteBlock; // @synthesize taskCompleteBlock=_taskCompleteBlock;
 @property(nonatomic, getter=isComplete) _Bool complete; // @synthesize complete=_complete;
-- (void).cxx_destruct;
 - (void)markAsComplete:(_Bool)arg1;
 
 @end

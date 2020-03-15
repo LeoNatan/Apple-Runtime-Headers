@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <UINSAccessibilityInfo> _accessibilityInfo;
 }
 
-@property(copy, nonatomic) id <UINSAccessibilityInfo> accessibilityInfo; // @synthesize accessibilityInfo=_accessibilityInfo;
 - (void).cxx_destruct;
+@property(copy, nonatomic) id <UINSAccessibilityInfo> accessibilityInfo; // @synthesize accessibilityInfo=_accessibilityInfo;
 - (void)prepareItem;
 - (id)menuFormRepresentation;
 @property(readonly, copy, nonatomic) NSString *identifier;

@@ -28,11 +28,11 @@
 
 + (id)newHierarchyTokenFromParentToken:(id)arg1;
 + (long long)defaultClientVersion;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak MPAVController *player; // @synthesize player=_player;
 @property(readonly, nonatomic) long long clientVersion; // @synthesize clientVersion=_clientVersion;
 @property(readonly, nonatomic) int clientType; // @synthesize clientType=_clientType;
 @property(readonly, copy, nonatomic) NSString *clientName; // @synthesize clientName=_clientName;
-- (void).cxx_destruct;
 - (id)_uniqueIdentifierForAVItem:(id)arg1;
 - (void)_setPerceivedTotalStartupTimeForItem:(id)arg1 withSummaryEvent:(id)arg2;
 - (id)_reportingSessionForAVItem:(id)arg1;

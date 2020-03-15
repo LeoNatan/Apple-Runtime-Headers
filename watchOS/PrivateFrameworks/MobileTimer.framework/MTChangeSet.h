@@ -17,9 +17,9 @@
 + (id)changeSetWithChangesFromObject:(id)arg1 toObject:(id)arg2 inProperties:(id)arg3;
 + (id)changeSetWithChangesFromObject:(id)arg1 toObject:(id)arg2;
 + (id)dictionaryFromChanges:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *changeDictionary; // @synthesize changeDictionary=_changeDictionary;
 @property(retain, nonatomic) NSSet *changedProperties; // @synthesize changedProperties=_changedProperties;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_deserializer;
 - (id)deserializedChangedValueForProperty:(id)arg1 hasProperty:(_Bool *)arg2;

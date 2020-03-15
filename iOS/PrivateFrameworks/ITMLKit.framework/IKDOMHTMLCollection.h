@@ -15,8 +15,8 @@
     IKDOMNode *_parentNode;
 }
 
-@property(nonatomic) __weak IKDOMNode *parentNode; // @synthesize parentNode=_parentNode;
 - (void).cxx_destruct;
+@property(nonatomic) __weak IKDOMNode *parentNode; // @synthesize parentNode=_parentNode;
 - (id)item:(unsigned long long)arg1;
 @property(readonly) unsigned long long length;
 - (id)initWithAppContext:(id)arg1 node:(id)arg2;

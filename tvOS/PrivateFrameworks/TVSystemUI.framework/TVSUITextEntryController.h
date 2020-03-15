@@ -24,13 +24,13 @@
     UISystemInputViewController *_systemInputViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UISystemInputViewController *systemInputViewController; // @synthesize systemInputViewController=_systemInputViewController;
 @property(retain, nonatomic) UIView *bottomAccessoryView; // @synthesize bottomAccessoryView=_bottomAccessoryView;
 @property(retain, nonatomic) UIView *topAccessoryView; // @synthesize topAccessoryView=_topAccessoryView;
 @property(readonly, nonatomic) UILabel *textFieldHeaderLabel; // @synthesize textFieldHeaderLabel=_textFieldHeaderLabel;
 @property(readonly, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 @property(nonatomic) __weak id <TVSUITextEntryControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool textFieldAllowsFocus;
 - (void)_doneButtonPressed:(id)arg1;
 - (void)systemInputViewControllerDidAcceptRecentInput:(id)arg1;

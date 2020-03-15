@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     _TVImageView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TVImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) VUILabel *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 
 @end
 

@@ -19,11 +19,11 @@
     NSArray *_layoutConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *layoutConstraints; // @synthesize layoutConstraints=_layoutConstraints;
 @property(retain, nonatomic) AVTColorSlider *slider; // @synthesize slider=_slider;
 @property(nonatomic) __weak id <AVTAvatarColorSliderContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) AVTAvatarAttributeEditorSectionColorItem *sectionItem; // @synthesize sectionItem=_sectionItem;
-- (void).cxx_destruct;
 - (void)colorSlider:(id)arg1 didFinishSelectingValue:(double)arg2;
 - (void)colorSlider:(id)arg1 valueChanged:(double)arg2;
 - (void)updateSliderWithColorPreset:(id)arg1 animated:(_Bool)arg2;

@@ -14,9 +14,9 @@
     NSTextField *__titleTextField;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setTitleTextField:) NSTextField *_titleTextField; // @synthesize _titleTextField=__titleTextField;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-- (void).cxx_destruct;
 - (void)_updateTitleTextFieldFrame;
 - (void)setFrame:(struct CGRect)arg1;
 

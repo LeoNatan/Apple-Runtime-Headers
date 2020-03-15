@@ -18,11 +18,11 @@
     NSURL *_url;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSURL *publishedURL; // @synthesize publishedURL=_publishedURL;
 @property(nonatomic) int action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)finishWithError:(id)arg1;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (void)startTaskGroup;

@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     id <MNTimeballServiceProxyDelegate> _delegate;
 }
 
-@property(nonatomic) id <MNTimeballServiceProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) id <MNTimeballServiceProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didReceiveUpdate:(id)arg1 forDestination:(id)arg2;
 - (void)didReceiveError:(id)arg1 forDestination:(id)arg2;
 - (void)completedUpdateForHandlerID:(id)arg1;

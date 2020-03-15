@@ -24,7 +24,6 @@
     NSDecimalNumber *_remainingMinimumPayment;
     NSDecimalNumber *_remainingMinimumPaymentExcludedFromInterestCalculation;
     NSDecimalNumber *_installmentBalance;
-    NSDate *_paymentDueDate;
     NSDate *_lastPaymentDate;
     long long _cyclesPastDue;
     unsigned long long _balanceStatus;
@@ -35,9 +34,12 @@
     NSDecimalNumber *_pastDueAmount;
     PKCreditAccountStatement *_currentStatement;
     NSDecimalNumber *_adjustedBalance;
+    NSDate *_paymentDueDate;
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSDate *paymentDueDate; // @synthesize paymentDueDate=_paymentDueDate;
 @property(copy, nonatomic) NSDecimalNumber *adjustedBalance; // @synthesize adjustedBalance=_adjustedBalance;
 @property(retain, nonatomic) PKCreditAccountStatement *currentStatement; // @synthesize currentStatement=_currentStatement;
 @property(nonatomic) BOOL autoPayEnabled; // @synthesize autoPayEnabled=_autoPayEnabled;
@@ -51,7 +53,6 @@
 @property(nonatomic) unsigned long long balanceStatus; // @synthesize balanceStatus=_balanceStatus;
 @property(nonatomic) long long cyclesPastDue; // @synthesize cyclesPastDue=_cyclesPastDue;
 @property(copy, nonatomic) NSDate *lastPaymentDate; // @synthesize lastPaymentDate=_lastPaymentDate;
-@property(copy, nonatomic) NSDate *paymentDueDate; // @synthesize paymentDueDate=_paymentDueDate;
 @property(copy, nonatomic) NSDecimalNumber *installmentBalance; // @synthesize installmentBalance=_installmentBalance;
 @property(copy, nonatomic) NSDecimalNumber *remainingMinimumPaymentExcludedFromInterestCalculation; // @synthesize remainingMinimumPaymentExcludedFromInterestCalculation=_remainingMinimumPaymentExcludedFromInterestCalculation;
 @property(copy, nonatomic) NSDecimalNumber *remainingMinimumPayment; // @synthesize remainingMinimumPayment=_remainingMinimumPayment;
@@ -60,7 +61,6 @@
 @property(copy, nonatomic) NSDecimalNumber *currentBalance; // @synthesize currentBalance=_currentBalance;
 @property(copy, nonatomic) NSDecimalNumber *availableCredit; // @synthesize availableCredit=_availableCredit;
 @property(copy, nonatomic) NSDecimalNumber *creditLimit; // @synthesize creditLimit=_creditLimit;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (unsigned long long)hash;

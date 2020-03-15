@@ -23,13 +23,13 @@
     NSArray *_touchIgnoreRects;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *touchIgnoreRects; // @synthesize touchIgnoreRects=_touchIgnoreRects;
 @property(retain, nonatomic) SBIconPageIndicatorImageSetCache *imageSetCache; // @synthesize imageSetCache=_imageSetCache;
 @property(nonatomic) __weak id <SBIconListPageControlDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isLegibilityEnabled) _Bool legibilityEnabled; // @synthesize legibilityEnabled=_legibilityEnabled;
 @property(nonatomic) _Bool shouldShowSearchIndicator; // @synthesize shouldShowSearchIndicator=_shouldShowSearchIndicator;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
-- (void).cxx_destruct;
 - (void)_transitionIndicator:(id)arg1 toEnabled:(_Bool)arg2 index:(long long)arg3;
 - (void)_invalidateIndicators;
 - (id)_indicatorViewEnabled:(_Bool)arg1 index:(long long)arg2;

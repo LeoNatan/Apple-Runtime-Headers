@@ -28,6 +28,8 @@ __attribute__((visibility("hidden")))
     NSURL *_apiURL;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *apiURL; // @synthesize apiURL=_apiURL;
 @property(retain, nonatomic) NSString *authorizationToken; // @synthesize authorizationToken=_authorizationToken;
 @property(retain, nonatomic) NSArray *allowedDomains; // @synthesize allowedDomains=_allowedDomains;
@@ -37,8 +39,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *websiteIdentifier; // @synthesize websiteIdentifier=_websiteIdentifier;
 @property(retain, nonatomic) NSDate *dateAdded; // @synthesize dateAdded=_dateAdded;
 @property(retain, nonatomic) NSString *deviceToken; // @synthesize deviceToken=_deviceToken;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)_completePendingRequest;
 - (void)userNotificationCenter:(id)arg1 didFailToRegisterForRemoteNotificationsWithError:(id)arg2;
 - (void)userNotificationCenter:(id)arg1 didRegisterForRemoteNotificationsWithDeviceToken:(id)arg2;

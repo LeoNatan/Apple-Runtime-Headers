@@ -20,6 +20,7 @@
     CAMPreciseTimer *__timer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CAMPreciseTimer *_timer; // @synthesize _timer=__timer;
 @property(nonatomic) long long remaining; // @synthesize remaining=_remaining;
 @property(readonly, nonatomic) long long maximumCount; // @synthesize maximumCount=_maximumCount;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) double interval; // @synthesize interval=_interval;
 @property(readonly, nonatomic) __weak id <CAMCaptureRequestIntervalometerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CAMCaptureRequest *prototypeRequest; // @synthesize prototypeRequest=_prototypeRequest;
-- (void).cxx_destruct;
 - (void)manuallyGenerateRequest;
 - (void)stopGeneratingRequests;
 - (void)startGeneratingRequests;

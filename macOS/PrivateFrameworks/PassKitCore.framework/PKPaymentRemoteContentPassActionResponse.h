@@ -13,8 +13,8 @@
     PKPaymentPassAction *_updatedAction;
 }
 
-@property(retain, nonatomic) PKPaymentPassAction *updatedAction; // @synthesize updatedAction=_updatedAction;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKPaymentPassAction *updatedAction; // @synthesize updatedAction=_updatedAction;
 - (id)initWithExistingAction:(id)arg1 data:(id)arg2;
 
 @end

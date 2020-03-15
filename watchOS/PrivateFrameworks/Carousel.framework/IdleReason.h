@@ -14,9 +14,9 @@
     double _seconds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double seconds; // @synthesize seconds=_seconds;
 @property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (int)compare:(id)arg1;
 - (id)description;
 - (id)init;

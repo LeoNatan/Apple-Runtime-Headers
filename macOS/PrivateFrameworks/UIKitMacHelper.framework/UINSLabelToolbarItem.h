@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     NSString *_text;
 }
 
-@property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 - (void)prepareItem;
 - (id)initWithIdentifier:(id)arg1;
 

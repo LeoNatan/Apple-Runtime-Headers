@@ -54,6 +54,7 @@
 + (Class)frozenClass;
 + (id)sourceWithEventStore:(id)arg1;
 + (id)sourceWithCalendarSource:(id)arg1 eventStore:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *delegatedAccountOwnerStoreID; // @synthesize delegatedAccountOwnerStoreID=_delegatedAccountOwnerStoreID;
 @property(readonly, nonatomic) NSSet *calendars; // @synthesize calendars=_calendars;
 @property(readonly, nonatomic) BOOL requiresOpeningAttachmentAsLink; // @synthesize requiresOpeningAttachmentAsLink;
@@ -80,7 +81,6 @@
 @property(readonly, nonatomic) BOOL isDelegate; // @synthesize isDelegate;
 @property(readonly, nonatomic) int displayOrder; // @synthesize displayOrder;
 @property(readonly, copy, nonatomic) NSString *externalSourceIdentifier; // @synthesize externalSourceIdentifier;
-- (void).cxx_destruct;
 - (id)_defaultSchedulingCalendar;
 - (id)_createSubscribedSourceConstraints;
 - (id)_createBirthdaySourceConstraints;

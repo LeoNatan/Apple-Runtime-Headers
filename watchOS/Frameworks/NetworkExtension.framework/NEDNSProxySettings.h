@@ -22,11 +22,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSData *publicKey; // @synthesize publicKey=_publicKey;
 @property(retain) NSString *domain; // @synthesize domain=_domain;
 @property(readonly) NSArray *servers; // @synthesize servers=_servers;
 @property(readonly) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 - (_Bool)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

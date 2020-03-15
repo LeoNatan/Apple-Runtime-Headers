@@ -25,11 +25,11 @@
 + (id)candidateWithCandidate:(id)arg1 forInput:(id)arg2;
 + (id)candidateWithCandidate:(id)arg1 forInput:(id)arg2 extensionCandidate:(BOOL)arg3;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long *cursorMovement; // @synthesize cursorMovement=_cursorMovement;
 @property(nonatomic, getter=isExtensionCandidate) BOOL extensionCandidate; // @synthesize extensionCandidate=_extensionCandidate;
 @property(copy, nonatomic) NSString *input; // @synthesize input=_input;
 @property(copy, nonatomic) NSString *candidate; // @synthesize candidate=_candidate;
-- (void).cxx_destruct;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCandidateResultSetCoder:(id)arg1;
 - (id)candidateByReplacingWithCandidate:(id)arg1 input:(id)arg2;

@@ -14,9 +14,9 @@
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) unsigned long long prominence; // @synthesize prominence=_prominence;
-- (void).cxx_destruct;
 - (void)addTarget:(id)arg1 action:(SEL)arg2;
 @property(retain, nonatomic) UIFont *font;
 - (void)tlk_updateForAppearance:(id)arg1;

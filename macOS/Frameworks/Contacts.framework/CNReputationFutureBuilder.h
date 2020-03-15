@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     CNFuture *_scoreFuture;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNFuture *scoreFuture; // @synthesize scoreFuture=_scoreFuture;
 @property(readonly, nonatomic) CNReputationLogger *logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) CNReputationContactsAdapter *contactsAdapter; // @synthesize contactsAdapter=_contactsAdapter;
 @property(readonly, nonatomic) CNReputationCoreRecentsAdapter *coreRecentsAdapter; // @synthesize coreRecentsAdapter=_coreRecentsAdapter;
 @property(readonly, copy, nonatomic) CNReputationHandle *handle; // @synthesize handle=_handle;
-- (void).cxx_destruct;
 - (id)build;
 - (id)contactsTrustForPhoneNumber:(id)arg1;
 - (void)addContactsTrustForPhoneNumber;

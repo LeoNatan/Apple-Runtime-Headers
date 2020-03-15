@@ -16,10 +16,10 @@
     NSArray *_conflictTarget;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *conflictTarget; // @synthesize conflictTarget=_conflictTarget;
 @property(readonly, nonatomic) EFSQLUpdateStatement *updateStatement; // @synthesize updateStatement=_updateStatement;
 @property(readonly, nonatomic) EFSQLInsertStatement *insertStatement; // @synthesize insertStatement=_insertStatement;
-- (void).cxx_destruct;
 - (id)excludedColumnExpressionForColumnName:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *queryString;
 @property(readonly, nonatomic) BOOL isEmpty;

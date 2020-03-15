@@ -20,12 +20,12 @@
     _TVRCMediaRemoteKeyboardAdapter *_adapter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TVRCMediaRemoteKeyboardAdapter *adapter; // @synthesize adapter=_adapter;
 @property(retain, nonatomic) TVRCKeyboardAttributes *currentAttributes; // @synthesize currentAttributes=_currentAttributes;
 @property(nonatomic) BOOL editing; // @synthesize editing=_editing;
 @property(retain, nonatomic) _TVRCMRTelevisionWrapper *television; // @synthesize television=_television;
 @property(nonatomic) __weak _TVRXKeyboardController *keyboardController; // @synthesize keyboardController=_keyboardController;
-- (void).cxx_destruct;
 - (void)keyboardAdapter:(id)arg1 receivedUnexpectedTextUpdate:(id)arg2;
 - (void)_sessionAttributesDidChange:(id)arg1;
 - (void)_sessionTextDidChange:(id)arg1;

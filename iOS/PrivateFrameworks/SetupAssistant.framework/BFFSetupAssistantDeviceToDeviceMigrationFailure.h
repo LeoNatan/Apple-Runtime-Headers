@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool inAppleStore; // @synthesize inAppleStore=_inAppleStore;
 @property(nonatomic) int connectionType; // @synthesize connectionType=_connectionType;
 @property(retain, nonatomic) NSString *targetDeviceProductVersion; // @synthesize targetDeviceProductVersion=_targetDeviceProductVersion;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long errorCode; // @synthesize errorCode=_errorCode;
 @property(retain, nonatomic) NSString *errorDomain; // @synthesize errorDomain=_errorDomain;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

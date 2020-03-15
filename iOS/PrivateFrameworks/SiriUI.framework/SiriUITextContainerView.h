@@ -19,8 +19,8 @@
 + (double)_distanceFromBaselineToBottomWithFont:(id)arg1 textContainerStyle:(CDStruct_c3b3c0f9)arg2;
 + (struct CGRect)_textBoundingRectWithSize:(struct CGSize)arg1 text:(id)arg2 font:(id)arg3 textContainerStyle:(CDStruct_c3b3c0f9)arg4;
 + (struct CGSize)sizeThatFits:(struct CGSize)arg1 text:(id)arg2 font:(id)arg3 textContainerStyle:(CDStruct_c3b3c0f9)arg4;
-@property(nonatomic) CDStruct_c3b3c0f9 textContainerStyle; // @synthesize textContainerStyle=_textContainerStyle;
 - (void).cxx_destruct;
+@property(nonatomic) CDStruct_c3b3c0f9 textContainerStyle; // @synthesize textContainerStyle=_textContainerStyle;
 @property(retain, nonatomic) UIColor *textColor;
 @property(nonatomic) long long textAlignment;
 @property(retain, nonatomic) UIFont *font;

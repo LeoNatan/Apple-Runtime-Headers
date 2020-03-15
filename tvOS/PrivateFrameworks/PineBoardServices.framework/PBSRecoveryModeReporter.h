@@ -17,8 +17,8 @@
 + (id)pathsToPreserveAcrossObliteration;
 + (id)reportedActions;
 + (void)reportAction:(id)arg1;
-@property(retain, nonatomic) NSMutableArray *actions; // @synthesize actions=_actions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *actions; // @synthesize actions=_actions;
 - (void)_reportAction:(id)arg1;
 - (id)_actionFilePath;
 - (id)init;

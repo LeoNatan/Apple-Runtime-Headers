@@ -23,11 +23,11 @@
     float _progressDirection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float progressDirection; // @synthesize progressDirection=_progressDirection;
 @property(nonatomic) float progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) CALayer *smallTickLayer; // @synthesize smallTickLayer=_smallTickLayer;
 @property(readonly, nonatomic) CALayer *largeTickLayer; // @synthesize largeTickLayer=_largeTickLayer;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_updateTicksRotationTransform;
 - (void)setLargeTicksTransformAngle:(double)arg1;

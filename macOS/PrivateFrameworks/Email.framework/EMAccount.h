@@ -20,11 +20,11 @@
 + (id)sortDescriptorForNameAscending:(BOOL)arg1;
 + (id)predicateForDeliveryAccounts;
 + (id)predicateForReceivingAccounts;
+- (void).cxx_destruct;
 @property(readonly, getter=isPrimaryiCloudAccount) BOOL primaryiCloudAccount; // @synthesize primaryiCloudAccount=_primaryiCloudAccount;
 @property(readonly, copy) NSString *hostname; // @synthesize hostname=_hostname;
 @property(readonly, copy) NSString *username; // @synthesize username=_username;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)ef_publicDescription;
 

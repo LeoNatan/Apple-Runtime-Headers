@@ -18,8 +18,8 @@
     SBSwitcherModifierStackSnapshot *_stackSnapshot;
 }
 
-@property(retain, nonatomic) SBSwitcherModifierStackSnapshot *stackSnapshot; // @synthesize stackSnapshot=_stackSnapshot;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SBSwitcherModifierStackSnapshot *stackSnapshot; // @synthesize stackSnapshot=_stackSnapshot;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

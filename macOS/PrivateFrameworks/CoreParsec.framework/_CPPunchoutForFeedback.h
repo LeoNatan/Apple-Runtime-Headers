@@ -21,11 +21,11 @@
     unsigned long long _whichBundleid;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long whichBundleid; // @synthesize whichBundleid=_whichBundleid;
 @property(copy, nonatomic) NSArray *urls; // @synthesize urls=_urls;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

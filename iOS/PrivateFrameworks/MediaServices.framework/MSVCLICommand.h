@@ -15,9 +15,9 @@
     NSArray *_options;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *options; // @synthesize options=_options;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)valueForOption:(id)arg1;
 - (_Bool)containsOption:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *optionsDictionary;

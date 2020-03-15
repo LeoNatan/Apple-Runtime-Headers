@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     PSUICellularPlanManagerCache *_planManagerCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PSUICellularPlanManagerCache *planManagerCache; // @synthesize planManagerCache=_planManagerCache;
 @property(retain, nonatomic) CTCellularPlanManager *cellularPlanManager; // @synthesize cellularPlanManager=_cellularPlanManager;
 @property(nonatomic) __weak PSListController *listController; // @synthesize listController=_listController;
 @property(nonatomic) __weak PSSpecifier *groupSpecifier; // @synthesize groupSpecifier=_groupSpecifier;
 @property(retain, nonatomic) CTCellularPlanPendingTransfer *planPendingTransfer; // @synthesize planPendingTransfer=_planPendingTransfer;
 @property(retain, nonatomic) PSSpecifier *parentSpecifier; // @synthesize parentSpecifier=_parentSpecifier;
-- (void).cxx_destruct;
 - (void)addSpecifierForHeaderString:(id)arg1;
 - (id)cancelConsentRequestSpecifier;
 - (id)activatePlanSpecifier;

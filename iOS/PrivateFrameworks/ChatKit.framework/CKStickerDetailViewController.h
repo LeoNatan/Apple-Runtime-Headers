@@ -22,12 +22,12 @@
     UIVisualEffectView *_visualEffectView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
 @property(retain, nonatomic) CKStickerDetailNavigationBar *navigationBar; // @synthesize navigationBar=_navigationBar;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) NSArray *chatItems; // @synthesize chatItems=_chatItems;
 @property(nonatomic) __weak id <CKStickerDetailViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_viewButtonTapped:(id)arg1;
 - (_Bool)constrainToPresentingVCBounds;
 - (_Bool)preserveModalPresentationStyle;

@@ -25,9 +25,9 @@
 
 + (id)decodedDataFromQuotedPrintableData:(id)arg1;
 + (id)decodedDataFromData:(id)arg1 encoding:(int)arg2;
+- (void).cxx_destruct;
 @property unsigned long long formEncoding; // @synthesize formEncoding;
 @property __weak id delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (int)numberOfBytesToLeavePendingWithData:(id)arg1 length:(unsigned long long)arg2 encoding:(int)arg3;
 - (int)findContentEnd:(id)arg1 fromOffset:(int)arg2;
 - (int)findHeaderEnd:(id)arg1 fromOffset:(int)arg2;

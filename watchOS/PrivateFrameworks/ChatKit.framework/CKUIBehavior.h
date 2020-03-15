@@ -33,6 +33,7 @@
 + (id)fontWithStyle:(id)arg1 adjustedForMaxSizeCategory:(id)arg2;
 + (id)orderedContentSizeCategories;
 + (id)sharedBehaviors;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *whatsNewViewApplePayImage; // @synthesize whatsNewViewApplePayImage=_whatsNewViewApplePayImage;
 @property(readonly, nonatomic) float whatsNewViewBulletPointTextTrailingAnchorLayoutConstraintConstant; // @synthesize whatsNewViewBulletPointTextTrailingAnchorLayoutConstraintConstant=_whatsNewViewBulletPointTextTrailingAnchorLayoutConstraintConstant;
 @property(readonly, nonatomic) float whatsNewViewBulletPointSymbolLeadingAnchorLayoutConstraintConstant; // @synthesize whatsNewViewBulletPointSymbolLeadingAnchorLayoutConstraintConstant=_whatsNewViewBulletPointSymbolLeadingAnchorLayoutConstraintConstant;
@@ -51,7 +52,6 @@
 @property(readonly, nonatomic) UIImage *dndActionImage; // @synthesize dndActionImage=_dndActionImage;
 @property(readonly, nonatomic) Class navigationBarClass; // @synthesize navigationBarClass=_navigationBarClass;
 @property(nonatomic) int HUDStyle; // @synthesize HUDStyle=_HUDStyle;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *carplayComposeButtonImage;
 @property(readonly, nonatomic) UIImage *carplayChevronImage;
 @property(readonly, nonatomic) UIFont *searchIndexingSubtitleFont;

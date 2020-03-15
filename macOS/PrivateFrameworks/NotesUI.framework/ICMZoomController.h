@@ -30,12 +30,12 @@
 + (id)globalZoomFactors;
 + (long long)globalZoomFactorIndex;
 + (void)setGlobalZoomFactorIndex:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long savedZoomFactorIndex; // @synthesize savedZoomFactorIndex=_savedZoomFactorIndex;
 @property(retain, nonatomic) NSHashTable *delegates; // @synthesize delegates=_delegates;
 @property(nonatomic) BOOL onlyAcceptsCustomZooms; // @synthesize onlyAcceptsCustomZooms=_onlyAcceptsCustomZooms;
 @property(nonatomic) double attachmentBrickZoomFactor; // @synthesize attachmentBrickZoomFactor=_attachmentBrickZoomFactor;
 @property(nonatomic) long long localZoomFactorIndex; // @synthesize localZoomFactorIndex=_localZoomFactorIndex;
-- (void).cxx_destruct;
 - (void)removeDelegate:(id)arg1;
 - (void)notifyDelegates;
 - (void)addDelegate:(id)arg1;

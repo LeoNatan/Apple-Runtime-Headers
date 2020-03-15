@@ -36,6 +36,7 @@
 }
 
 + (id)internalPlayer;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVPlayerItem *currentPlayerItem; // @synthesize currentPlayerItem=_currentPlayerItem;
 @property(readonly, nonatomic) AVPlayer *player; // @synthesize player=_player;
 @property(nonatomic) __weak id <TVPlayerInternalDelegate> internalDelegate; // @synthesize internalDelegate=_internalDelegate;
@@ -45,7 +46,6 @@
 @property(readonly, nonatomic) _Bool isInternalPlayer; // @synthesize isInternalPlayer=_isInternalPlayer;
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo;
 @property(nonatomic) long long resumeMenuBehavior; // @synthesize resumeMenuBehavior=_resumeMenuBehavior;
-- (void).cxx_destruct;
 - (void)_startPlaybackAtResumeTime;
 - (void)playerViewController:(id)arg1 willTransitionToVisibilityOfTransportBar:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
 - (void)skipToPreviousItemForPlayerViewController:(id)arg1;

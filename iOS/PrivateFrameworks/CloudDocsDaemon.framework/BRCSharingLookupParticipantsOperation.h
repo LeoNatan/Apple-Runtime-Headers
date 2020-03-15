@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)main;
 - (id)createActivity;
-- (_Bool)shouldRetryForError:(id)arg1;
 - (id)initWithUserIdentities:(id)arg1 session:(id)arg2;
 
 // Remaining properties

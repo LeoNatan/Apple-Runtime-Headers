@@ -20,11 +20,11 @@
 }
 
 + (Class)initialAccountType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *dateSynced; // @synthesize dateSynced=_dateSynced;
 @property(nonatomic) unsigned int fullSyncVersion; // @synthesize fullSyncVersion=_fullSyncVersion;
 @property(retain, nonatomic) NSString *initialSyncVersion; // @synthesize initialSyncVersion=_initialSyncVersion;
 @property(retain, nonatomic) NSMutableArray *initialAccounts; // @synthesize initialAccounts=_initialAccounts;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

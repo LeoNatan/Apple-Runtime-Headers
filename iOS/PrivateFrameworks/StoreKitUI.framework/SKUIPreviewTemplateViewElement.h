@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_previewURLString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *previewURLString; // @synthesize previewURLString=_previewURLString;
 @property(readonly, nonatomic) long long itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUILockupViewElement *previewLockup;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;

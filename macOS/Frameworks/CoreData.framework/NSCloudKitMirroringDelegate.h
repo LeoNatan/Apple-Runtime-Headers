@@ -49,6 +49,7 @@
 + (id)makeACopyOfTheStoreAtURL:(id)arg1 withCoordinator:(id)arg2 error:(id *)arg3;
 + (void)printRepresentativeSchemaForModelAtURL:(id)arg1 orStoreAtURL:(id)arg2 withConfiguration:(id)arg3;
 + (void)printMetadataForStoreAtURL:(id)arg1 withConfiguration:(id)arg2 operateOnACopy:(BOOL)arg3;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSCloudKitMirroringRequestManager *requestManager; // @synthesize requestManager=_requestManager;
 @property(readonly, nonatomic) BOOL hadObservedStore; // @synthesize hadObservedStore=_hadObservedStore;
 @property(readonly, nonatomic) PFCloudKitExporterOptions *exporterOptions; // @synthesize exporterOptions=_exporterOptions;
@@ -66,7 +67,6 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_semaphore> *cloudKitQueueSemaphore; // @synthesize cloudKitQueueSemaphore=_cloudKitQueueSemaphore;
 @property(readonly, nonatomic) NSString *ckDatabaseName; // @synthesize ckDatabaseName=_ckDatabaseName;
 @property(readonly, copy, nonatomic) NSCloudKitMirroringDelegateOptions *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (void)fetchChangesAndUpdateObservedStore;
 - (void)checkForNewChanges;
 - (void)_setAppDeactivateObserver:(id)arg1;

@@ -15,9 +15,9 @@
 }
 
 + (id)sliceWithValue:(double)arg1 fillColor:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(readonly) double value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)initWithValue:(double)arg1 fillColor:(id)arg2;
 
 @end

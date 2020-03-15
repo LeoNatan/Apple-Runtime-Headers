@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSMutableData *_journalData;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSMutableData *journalData; // @synthesize journalData=_journalData;
 @property(readonly) NSDate *lastUpdate; // @synthesize lastUpdate=_lastUpdate;
 @property(readonly) NSString *journalName; // @synthesize journalName=_journalName;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithJournalName:(id)arg1 lastUpdate:(id)arg2 journalData:(id)arg3;

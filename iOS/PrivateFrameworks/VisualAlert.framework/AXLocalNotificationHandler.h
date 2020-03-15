@@ -11,8 +11,8 @@
     id _opaqueObserver;
 }
 
-@property(retain, nonatomic, setter=_setOpaqueObserver:) id _opaqueObserver; // @synthesize _opaqueObserver;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setOpaqueObserver:) id _opaqueObserver; // @synthesize _opaqueObserver;
 - (id)_notificationTypeDescription;
 - (void)_stopObserving;
 - (void)_startObserving;

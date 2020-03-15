@@ -35,6 +35,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)archivedClasses;
+- (void).cxx_destruct;
 @property(retain) NSString *followupNotificationActionTitle; // @synthesize followupNotificationActionTitle=_followupNotificationActionTitle;
 @property(retain) NSURL *followupNotificationActionURL; // @synthesize followupNotificationActionURL=_followupNotificationActionURL;
 @property _Bool followupUseSpringboardNotification; // @synthesize followupUseSpringboardNotification=_followupUseSpringboardNotification;
@@ -53,7 +54,6 @@
 @property(retain) NSString *localizedNotificationBody; // @synthesize localizedNotificationBody=_localizedNotificationBody;
 @property(retain) NSString *localizedNotificationTitle; // @synthesize localizedNotificationTitle=_localizedNotificationTitle;
 @property(retain) NSString *hostAppIdentifier; // @synthesize hostAppIdentifier=_hostAppIdentifier;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

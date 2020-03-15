@@ -16,9 +16,9 @@
     IMBalloonPluginDataSource *_dataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMBalloonPluginDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) NSData *typingIndicatorIcon; // @synthesize typingIndicatorIcon=_typingIndicatorIcon;
-- (void).cxx_destruct;
 - (id)_initWithItem:(id)arg1 dataSource:(id)arg2;
 @property(readonly, retain, nonatomic) NSString *type;
 

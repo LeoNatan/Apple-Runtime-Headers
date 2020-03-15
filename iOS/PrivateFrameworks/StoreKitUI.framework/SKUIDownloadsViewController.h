@@ -24,8 +24,8 @@
 }
 
 + (long long)_sizeClassForSize:(struct CGSize)arg1;
-@property(copy) NSArray *downloads; // @synthesize downloads=_downloads;
 - (void).cxx_destruct;
+@property(copy) NSArray *downloads; // @synthesize downloads=_downloads;
 - (void)_setArtwork:(id)arg1 forURLString:(id)arg2;
 - (void)_reloadManagerFromServer;
 - (void)_reloadBadge;

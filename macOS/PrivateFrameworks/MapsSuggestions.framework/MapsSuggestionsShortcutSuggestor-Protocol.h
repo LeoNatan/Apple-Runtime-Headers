@@ -7,6 +7,6 @@
 #import <MapsSuggestions/NSObject-Protocol.h>
 
 @protocol MapsSuggestionsShortcutSuggestor <NSObject>
-- (BOOL)suggestShortcutsOfType:(long long)arg1 handler:(void (^)(struct NSArray *, NSError *))arg2;
+- (BOOL)suggestShortcutsOfType:(long long)arg1 handler:(void (^)(NSArray *, NSError *))arg2;
 @end
 

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CURetrier, NSMutableSet, SFBLEData, SFBLEDevice;
+@class CURetrier, NSMutableArray, NSMutableSet, SFBLEData, SFBLEDevice;
 @protocol OS_dispatch_queue;
 
 @interface SFBLEConnection : NSObject
@@ -19,12 +19,13 @@
     double _connectStartTime;
     CURetrier *_connectRetrier;
     SFBLEData *_currentData;
-    struct NSMutableArray *_dataSendQueue;
+    NSMutableArray *_dataSendQueue;
     _Bool _invalidateCalled;
     struct LogCategory *_ucat;
     _Bool _bleEncrypted;
     _Bool _latencyCritical;
     _Bool _lePipeCapable;
+    unsigned int _sessionFlags;
     CDUnknownBlockType _bluetoothBandwidthChangedHandler;
     CDUnknownBlockType _bluetoothStateChangedHandler;
     CDUnknownBlockType _connectionStateChangedHandler;
@@ -34,9 +35,11 @@
     SFBLEDevice *_peerDevice;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool lePipeCapable; // @synthesize lePipeCapable=_lePipeCapable;
 @property(nonatomic) _Bool latencyCritical; // @synthesize latencyCritical=_latencyCritical;
 @property(nonatomic) _Bool bleEncrypted; // @synthesize bleEncrypted=_bleEncrypted;
+@property(nonatomic) unsigned int sessionFlags; // @synthesize sessionFlags=_sessionFlags;
 @property(retain, nonatomic) SFBLEDevice *peerDevice; // @synthesize peerDevice=_peerDevice;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
@@ -45,7 +48,6 @@
 @property(copy, nonatomic) CDUnknownBlockType bluetoothStateChangedHandler; // @synthesize bluetoothStateChangedHandler=_bluetoothStateChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType bluetoothBandwidthChangedHandler; // @synthesize bluetoothBandwidthChangedHandler=_bluetoothBandwidthChangedHandler;
 @property(nonatomic) _Bool acceptor; // @synthesize acceptor=_acceptor;
-- (void).cxx_destruct;
 - (_Bool)removeClient:(id)arg1;
 - (void)addClient:(id)arg1;
 - (void)_cleanupQueuedData:(int)arg1;

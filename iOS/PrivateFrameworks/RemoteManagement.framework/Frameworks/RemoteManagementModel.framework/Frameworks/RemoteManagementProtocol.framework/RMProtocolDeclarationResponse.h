@@ -18,15 +18,15 @@
 }
 
 + (id)requestWithType:(id)arg1 identifier:(id)arg2 description:(id)arg3 serverToken:(id)arg4 payload:(id)arg5;
+- (void).cxx_destruct;
 @property(copy, nonatomic) RMModelAnyPayload *responsePayload; // @synthesize responsePayload=_responsePayload;
 @property(copy, nonatomic) NSString *responseServerToken; // @synthesize responseServerToken=_responseServerToken;
 @property(copy, nonatomic) NSString *responseDescription; // @synthesize responseDescription=_responseDescription;
 @property(copy, nonatomic) NSString *responseIdentifier; // @synthesize responseIdentifier=_responseIdentifier;
 @property(copy, nonatomic) NSString *responseType; // @synthesize responseType=_responseType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)serializePayloadWithType:(short)arg1;
-- (_Bool)loadPayload:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
+- (id)serializeWithType:(short)arg1;
+- (_Bool)loadFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
 
 @end
 

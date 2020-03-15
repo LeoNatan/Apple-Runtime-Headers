@@ -27,12 +27,12 @@
 + (id)actionSheetControllerWithActions:(id)arg1 title:(id)arg2;
 + (id)actionSheetControllerWithGroups:(id)arg1;
 + (id)actionSheetController;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool blurredCellBackground; // @synthesize blurredCellBackground=_blurredCellBackground;
 @property(retain, nonatomic) NSIndexPath *lastSelectedIndexPath; // @synthesize lastSelectedIndexPath=_lastSelectedIndexPath;
 @property(retain, nonatomic) PUICTableView *tableView; // @synthesize tableView=_tableView;
 @property(copy, nonatomic) NSArray *groups; // @synthesize groups=_groups;
 @property(nonatomic) _Bool allowsMultipleSelection; // @synthesize allowsMultipleSelection=_allowsMultipleSelection;
-- (void).cxx_destruct;
 - (void)textInputValueCancelled:(id)arg1;
 - (void)textField:(id)arg1 textInputValueDidChange:(id)arg2;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;

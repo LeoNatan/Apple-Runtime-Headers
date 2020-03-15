@@ -17,10 +17,10 @@
     MKAttributedStringBlendingConfiguration *_blendingConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MKAttributedStringBlendingConfiguration *blendingConfiguration; // @synthesize blendingConfiguration=_blendingConfiguration;
 @property(nonatomic) long long blendingMode; // @synthesize blendingMode=_blendingMode;
 @property(copy, nonatomic) NSAttributedString *attributedStringValue; // @synthesize attributedStringValue=_attributedStringValue;
-- (void).cxx_destruct;
 - (void)setSubviewsContentCompressionResistancePriority:(float)arg1 forOrientation:(long long)arg2;
 - (id)lastBaselineAnchor;
 - (id)firstBaselineAnchor;

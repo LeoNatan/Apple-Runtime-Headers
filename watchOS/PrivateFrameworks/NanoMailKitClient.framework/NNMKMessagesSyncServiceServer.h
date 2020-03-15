@@ -13,8 +13,8 @@
     id <NNMKMessagesSyncServiceServerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <NNMKMessagesSyncServiceServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NNMKMessagesSyncServiceServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)connectivityChanged;
 - (void)spaceBecameAvailable;
 - (void)readProtobufData:(id)arg1 type:(unsigned int)arg2;

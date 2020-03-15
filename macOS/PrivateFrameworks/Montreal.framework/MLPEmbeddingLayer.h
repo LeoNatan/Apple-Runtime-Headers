@@ -29,6 +29,8 @@
     MPSVector *_offsetVector;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain) MPSVector *offsetVector; // @synthesize offsetVector=_offsetVector;
 @property(retain) MPSMatrixCopy *matrixCopyFilter; // @synthesize matrixCopyFilter=_matrixCopyFilter;
 @property(retain) MPSMatrixSum *sumFilter; // @synthesize sumFilter=_sumFilter;
@@ -42,13 +44,11 @@
 @property(retain) MPSMatrixCopy *matrixCopy; // @synthesize matrixCopy=_matrixCopy;
 @property unsigned long long embeddingDimension; // @synthesize embeddingDimension=_embeddingDimension;
 @property unsigned long long vocabSize; // @synthesize vocabSize=_vocabSize;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)generateNode:(id)arg1 model:(id)arg2 weightIter:(unsigned long long *)arg3;
 - (void)seqBackward:(id)arg1 inputGradientMatrix:(id)arg2 matrixIter:(unsigned long long)arg3;
-- (struct NSArray *)seqBackward:(id)arg1 dataBatch:(id)arg2 inputGradient:(struct NSArray *)arg3;
-- (struct NSArray *)seqForward:(id)arg1 input:(struct NSArray *)arg2 dataBatch:(id)arg3 runInference:(BOOL)arg4;
-- (struct NSArray *)forward:(id)arg1 input:(struct NSArray *)arg2 labels:(id)arg3 runInference:(BOOL)arg4;
+- (id)seqBackward:(id)arg1 dataBatch:(id)arg2 inputGradient:(id)arg3;
+- (id)seqForward:(id)arg1 input:(id)arg2 dataBatch:(id)arg3 runInference:(BOOL)arg4;
+- (id)forward:(id)arg1 input:(id)arg2 labels:(id)arg3 runInference:(BOOL)arg4;
 - (void)createKernel;
 @property(readonly) NSArray *mlpOptimizers;
 - (id)initWithName:(id)arg1 inputLength:(unsigned long long)arg2 vocabSize:(unsigned long long)arg3 embeddingDimension:(unsigned long long)arg4;

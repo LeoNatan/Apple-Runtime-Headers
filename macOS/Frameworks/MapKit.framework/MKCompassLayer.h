@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     long long _usage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL wants2dText; // @synthesize wants2dText=_wants2dText;
 @property(nonatomic) long long usage; // @synthesize usage=_usage;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize preferredSize;
 - (void)updateAppearance;
 - (void)updateDisplay;

@@ -22,9 +22,9 @@
     MLULookupItemContent *_previewContent;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MLULookupItemContent *previewContent; // @synthesize previewContent=_previewContent;
 @property(retain) NSDictionary *documentProperties; // @synthesize documentProperties=_documentProperties;
-- (void).cxx_destruct;
 - (void)commitWithTransitionForPreviewViewController:(id)arg1 inViewController:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (unsigned long long)commitType;
 - (void)commit;

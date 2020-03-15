@@ -24,6 +24,7 @@
     id <MFAutocompleteResultsTableViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldDimIrrelevantInformation; // @synthesize shouldDimIrrelevantInformation=_shouldDimIrrelevantInformation;
 @property(nonatomic) _Bool shouldHighlightCompleteMatches; // @synthesize shouldHighlightCompleteMatches=_shouldHighlightCompleteMatches;
 @property(nonatomic, getter=isDeferringTableViewUpdates) _Bool deferTableViewUpdates; // @synthesize deferTableViewUpdates=_deferTableViewUpdates;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) NSArray *directoryServerRecipients; // @synthesize directoryServerRecipients=_serverSearchResults;
 @property(readonly, nonatomic) NSArray *suggestedRecipients; // @synthesize suggestedRecipients=_suggestedSearchResults;
 @property(readonly, nonatomic) NSArray *contactRecipients; // @synthesize contactRecipients=_searchResults;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

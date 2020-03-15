@@ -27,6 +27,7 @@
 
 + (id)_contactForAddress:(id)arg1 recipientKind:(long long)arg2;
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(readonly, copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(retain, nonatomic) PXRecipientTransport *suggestedTransport; // @synthesize suggestedTransport=_suggestedTransport;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) NSSet *allEmails; // @synthesize allEmails=_allEmails;
 @property(readonly, copy, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(readonly, copy, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) unsigned long long hash;

@@ -13,6 +13,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (void)handleKeyWebEvent:(id)arg1;
 - (id)_accessibilitySpeakThisString;
 - (id)_accessibilityHitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (struct CGRect)accessibilityFrame;
@@ -58,7 +59,7 @@
 - (void)paste:(id)arg1;
 - (void)cut:(id)arg1;
 - (void)copy:(id)arg1;
-- (void)setSelectedDOMRange:(id)arg1 affinity:(int)arg2;
+- (void)setSelectedDOMRange:(id)arg1 affinity:(unsigned long long)arg2;
 - (void)webView:(id)arg1 willShowFullScreenForPlugInView:(id)arg2;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2 forFrame:(id)arg3;
 - (void)stopLoading:(id)arg1;

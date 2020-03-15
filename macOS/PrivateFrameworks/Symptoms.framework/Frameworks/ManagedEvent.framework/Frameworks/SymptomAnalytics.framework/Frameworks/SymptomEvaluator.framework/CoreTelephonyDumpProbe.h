@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)dateTimeStringFromCTDumpFolderPrefix:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL gotFilteredOut; // @synthesize gotFilteredOut=_gotFilteredOut;
 @property(nonatomic) BOOL observingCoreTelephonyDumpEnd; // @synthesize observingCoreTelephonyDumpEnd=_observingCoreTelephonyDumpEnd;
 @property(nonatomic) BOOL observingCoreTelephonyDumpBegin; // @synthesize observingCoreTelephonyDumpBegin=_observingCoreTelephonyDumpBegin;
@@ -57,7 +58,6 @@ __attribute__((visibility("hidden")))
 @property(retain) id <CoreTelephonyDumpProbeDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double endDumpTimeout; // @synthesize endDumpTimeout=_endDumpTimeout;
 @property(nonatomic) double startDumpTimeout; // @synthesize startDumpTimeout=_startDumpTimeout;
-- (void).cxx_destruct;
 - (id)probeOutputFilePaths;
 - (void)netDiagnosticTaskStatusChangedFor:(id)arg1 toStatus:(int)arg2;
 - (BOOL)startCoreTelephonyDumpArchive:(id)arg1;

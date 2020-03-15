@@ -6,11 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <ConversationKit/UIInteraction-Protocol.h>
-
 @class UIView;
 
-@interface _TtC15ConversationKit14TapInteraction : NSObject <UIInteraction>
+@interface _TtC15ConversationKit14TapInteraction : NSObject
 {
     // Error parsing type: , name: view
     // Error parsing type: , name: tapGestureRecognizer

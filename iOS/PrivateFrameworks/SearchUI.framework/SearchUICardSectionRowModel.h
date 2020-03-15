@@ -12,9 +12,9 @@
     Class _customCardSectionViewClass;
 }
 
+- (void).cxx_destruct;
 @property(readonly) Class customCardSectionViewClass; // @synthesize customCardSectionViewClass=_customCardSectionViewClass;
 @property(nonatomic) _Bool isInline; // @synthesize isInline=_isInline;
-- (void).cxx_destruct;
 - (id)description;
 - (double)leadingSeparatorImageInset;
 - (int)separatorStyle;

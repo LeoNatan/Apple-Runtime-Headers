@@ -33,6 +33,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)predictedItemFromQuickTypeItem:(id)arg1 trigger:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *operationData; // @synthesize operationData=_operationData;
 @property(readonly, nonatomic) NSString *targetBundleID; // @synthesize targetBundleID=_targetBundleID;
 @property(readonly, nonatomic) double score; // @synthesize score=_score;
@@ -49,7 +50,6 @@
 @property(nonatomic) unsigned char itemType; // @synthesize itemType=_itemType;
 @property(readonly, nonatomic) _ICProactiveTrigger *trigger; // @synthesize trigger=_trigger;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)isEqualToPredictedItem:(id)arg1;
 - (_Bool)hasScoreSimilarToItem:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

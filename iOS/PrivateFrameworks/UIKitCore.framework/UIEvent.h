@@ -14,15 +14,16 @@
     struct __IOHIDEvent *_hidEvent;
     UIScreen *_cachedScreen;
     NSMutableSet *_eventObservers;
+    _Bool _hasValidModifiers;
     double _timestamp;
     UIEventEnvironment *_eventEnvironment;
     double __initialTouchTimestamp;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double _initialTouchTimestamp; // @synthesize _initialTouchTimestamp=__initialTouchTimestamp;
 @property(nonatomic) __weak UIEventEnvironment *eventEnvironment; // @synthesize eventEnvironment=_eventEnvironment;
 @property(nonatomic, setter=_setTimestamp:) double timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)_wasDeliveredToGestureRecognizers;
 - (void)_gestureRecognizerNoLongerNeedsSendEvent:(id)arg1;
 - (_Bool)_sendEventToGestureRecognizer:(id)arg1;
@@ -38,10 +39,12 @@
 - (id)_screen;
 - (id)_initWithEnvironment:(id)arg1;
 - (id)_init;
+- (_Bool)_isPhysicalKeyEvent;
 - (_Bool)_isTouchRoutingPolicyBased;
 - (struct CGPoint)_digitizerLocation;
 - (_Bool)_isKeyDown;
 - (unsigned long long)_clickCount;
+- (long long)_keyModifierFlags;
 - (long long)_modifierFlags;
 - (id)_unmodifiedInput;
 - (id)_modifiedInput;
@@ -54,6 +57,7 @@
 - (void)_setHIDEvent:(struct __IOHIDEvent *)arg1;
 - (struct __GSEvent *)_gsEvent;
 - (void)_setGSEvent:(struct __GSEvent *)arg1;
+- (id)_cloneEvent;
 - (id)_initWithEvent:(struct __GSEvent *)arg1 touches:(id)arg2;
 - (id)predictedTouchesForTouch:(id)arg1;
 - (id)coalescedTouchesForTouch:(id)arg1;

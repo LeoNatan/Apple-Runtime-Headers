@@ -55,6 +55,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)filteringContext;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUAssetTransitionInfo *_assetTransitionInfo; // @synthesize _assetTransitionInfo=__assetTransitionInfo;
 @property(retain, nonatomic) PUPhotosSharingTransitionContext *_photosSharingTransitionContext; // @synthesize _photosSharingTransitionContext=__photosSharingTransitionContext;
 @property(retain, nonatomic, setter=_setTransitionLayout:) UICollectionViewLayout *_transitionLayout; // @synthesize _transitionLayout=__transitionLayout;
@@ -81,7 +82,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) PUAvalancheReviewControllerSpec *_spec; // @synthesize _spec=__spec;
 @property(readonly, nonatomic) id <PLAssetContainerList> avalancheContainerList; // @synthesize avalancheContainerList=_avalancheContainerList;
 @property(nonatomic) id <PUAvalancheReviewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updatePreheatedAssets;
 - (void)_resetPreheating;
 - (void)oneUpAssetTransition:(id)arg1 requestTransitionContextWithCompletion:(CDUnknownBlockType)arg2;

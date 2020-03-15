@@ -31,8 +31,8 @@
 }
 
 + (id)currentStatusProvider;
-@property(readonly, nonatomic) PXCPLState *state; // @synthesize state=_state;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXCPLState *state; // @synthesize state=_state;
 - (void)assetCountObserver:(id)arg1 didChangeNumberOfAssets:(long long)arg2;
 - (void)statusDidChange:(id)arg1;
 - (void)syncWithCloudPhotoLibrary;

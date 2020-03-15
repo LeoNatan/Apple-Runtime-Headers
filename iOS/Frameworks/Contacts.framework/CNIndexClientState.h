@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 + (id)clientStateWithData:(id)arg1 logger:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) long long fullSyncOffset; // @synthesize fullSyncOffset=_fullSyncOffset;
 @property(retain, nonatomic) CNChangeHistoryAnchor *fullSyncSnapshotAnchor; // @synthesize fullSyncSnapshotAnchor=_fullSyncSnapshotAnchor;
 @property(nonatomic) _Bool isFullSyncDone; // @synthesize isFullSyncDone=_isFullSyncDone;
 @property(nonatomic) long long indexVersion; // @synthesize indexVersion=_indexVersion;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

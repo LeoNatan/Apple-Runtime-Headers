@@ -22,9 +22,9 @@
 + (void)initializeAssetLibraryWithCachePath:(id)arg1 purgeCacheOnLoad:(_Bool)arg2;
 + (void)initializeAssetLibraryWithCachePath:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *registeredGroups; // @synthesize registeredGroups=_registeredGroups;
 @property(copy, nonatomic) NSString *cachePath; // @synthesize cachePath=_cachePath;
-- (void).cxx_destruct;
 - (void)_setImageAsset:(id)arg1 forKey:(id)arg2 inGroupOfType:(long long)arg3 expiryDate:(id)arg4 overWrite:(_Bool)arg5 tags:(id)arg6;
 - (id)groupWithGroupType:(long long)arg1;
 - (void)unRegisterGroup:(long long)arg1;

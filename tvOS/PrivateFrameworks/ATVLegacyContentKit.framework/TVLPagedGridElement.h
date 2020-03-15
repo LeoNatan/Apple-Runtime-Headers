@@ -13,8 +13,8 @@
     NSArray *_grids;
 }
 
-@property(retain, nonatomic) NSArray *grids; // @synthesize grids=_grids;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *grids; // @synthesize grids=_grids;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;
 

@@ -56,6 +56,7 @@
 + (Class)frozenClass;
 + (id)eventWithEventStore:(id)arg1;
 + (id)_locationStringForLocations:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSString *futureLocalUidForSliceChild; // @synthesize futureLocalUidForSliceChild=_futureLocalUidForSliceChild;
 @property(nonatomic) BOOL isPhantom; // @synthesize isPhantom=_isPhantom;
 @property(retain, nonatomic) NSDate *sliceDate; // @synthesize sliceDate=_sliceDate;
@@ -66,7 +67,6 @@
 - (void)setSliceParentID:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *sliceParentID;
 @property(readonly, nonatomic) unsigned long long participantsStatus; // @synthesize participantsStatus;
-- (void).cxx_destruct;
 - (void)willSave;
 - (BOOL)_reset;
 - (BOOL)isRedetached;

@@ -27,6 +27,7 @@
 
 + (_Bool)isTagAllowedInContentStoreFront:(id)arg1;
 + (_Bool)isTagAllowed:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *prefetchedTags; // @synthesize prefetchedTags=_prefetchedTags;
 @property(retain, nonatomic) FCOperationThrottler *tagPrefetchThrottler; // @synthesize tagPrefetchThrottler=_tagPrefetchThrottler;
 @property(retain, nonatomic) NSCache *fastCache; // @synthesize fastCache=_fastCache;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) FCTagRecordSource *tagRecordSource; // @synthesize tagRecordSource=_tagRecordSource;
 @property(retain, nonatomic) FCAssetManager *assetManager; // @synthesize assetManager=_assetManager;
 @property(retain, nonatomic) FCCKContentDatabase *contentDatabase; // @synthesize contentDatabase=_contentDatabase;
-- (void).cxx_destruct;
 - (id)jsonEncodableObject;
 - (void)operationThrottler:(id)arg1 performAsyncOperationWithCompletion:(CDUnknownBlockType)arg2;
 - (void)configurationManager:(id)arg1 configurationDidChange:(id)arg2;
@@ -53,6 +53,7 @@
 - (void)fetchTagsForTagIDs:(id)arg1 qualityOfService:(long long)arg2 callbackQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)fetchTagsForTagIDs:(id)arg1 maximumCachedAge:(double)arg2 qualityOfService:(long long)arg3 callbackQueue:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)fetchTagForTagID:(id)arg1 maximumCachedAge:(double)arg2 qualityOfService:(long long)arg3 callbackQueue:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (id)fetchOperationForTagsIncludingChildrenWithIDs:(id)arg1 softMaxAge:(double)arg2;
 - (id)fetchOperationForTagsWithIDs:(id)arg1 includeChildren:(_Bool)arg2;
 - (id)fetchOperationForTagsWithIDs:(id)arg1 includeParents:(_Bool)arg2;
 - (id)fetchOperationForTagsWithIDs:(id)arg1;

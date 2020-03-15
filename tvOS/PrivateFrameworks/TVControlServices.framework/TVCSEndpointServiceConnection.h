@@ -17,9 +17,9 @@
     NSXPCConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) __weak id <TVCSEndpointServiceConnectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_handleConnectionInterruption;
 - (void)_handleConnectionInvalidation;
 - (void)pairableEndpointsDidChange:(id)arg1;

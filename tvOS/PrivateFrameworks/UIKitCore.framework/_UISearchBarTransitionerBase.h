@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     _UISearchBarTransitionContext *_transitionContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UISearchBarTransitionContext *transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(readonly, nonatomic) __weak UIView *searchBar; // @synthesize searchBar=_searchBar;
 @property(readonly, nonatomic) _UISearchBarLayout *activeLayout; // @synthesize activeLayout=_activeLayout;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)complete;
 - (void)animate;

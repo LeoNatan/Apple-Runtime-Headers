@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     struct CGSize _pillSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIStatusBarPillView *pillView; // @synthesize pillView=_pillView;
 @property(nonatomic) struct CGSize pillSize; // @synthesize pillSize=_pillSize;
-- (void).cxx_destruct;
 - (id)viewForIdentifier:(id)arg1;
 - (void)_create_pillView;
 - (_Bool)_pulsingForVoiceControlType:(int)arg1;

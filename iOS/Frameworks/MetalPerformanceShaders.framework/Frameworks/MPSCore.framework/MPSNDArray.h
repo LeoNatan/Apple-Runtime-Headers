@@ -18,9 +18,9 @@
     unsigned long long _numberOfDimensions;
     unsigned int _dataType;
     NSString *_label;
-    // Error parsing type: ^{MPSDevice=^^?^{MPSDevice}@^{MPSDeviceFreeList}{atomic<MTLLibraryNode *>=A^{MTLLibraryNode}}[2[2[2{atomic<void *>=A^v}]]][563{MPSPixelCapabilities=b1b1b1b1b1b2b1b8}]{atomic<void *>=A^v}Ii{MPSGPUInfo=b8b8b8b16b4b20}[106{atomic<MPSLibrary *>=A^{MPSLibrary}}]}, name: _device
+    // Error parsing type: ^{MPSDevice=^^?^{MPSDevice}@^{MPSDeviceFreeList}{atomic<MTLLibraryNode *>={__cxx_atomic_impl<MTLLibraryNode *, std::__1::__cxx_atomic_base_impl<MTLLibraryNode *> >=A^{MTLLibraryNode}}}[2[2[2{atomic<void *>={__cxx_atomic_impl<void *, std::__1::__cxx_atomic_base_impl<void *> >=A^v}}]]][563{MPSPixelCapabilities=b1b1b1b1b1b2b1b8}]{atomic<void *>={__cxx_atomic_impl<void *, std::__1::__cxx_atomic_base_impl<void *> >=A^v}}Ii{MPSGPUInfo=b8b8b8b16b4b20}[107{atomic<MPSLibrary *>={__cxx_atomic_impl<MPSLibrary *, std::__1::__cxx_atomic_base_impl<MPSLibrary *> >=A^{MPSLibrary}}}]}, name: _device
     MPSNDArray *_parent;
-    // Error parsing type: {MPSAutoBuffer="_buffer"{atomic<void *>="__a_"A^v}"_requestedSize"Q"_device"@"<MTLDevice>""_cache"@"MPSCommandBufferImageCache""_resourceSize"{?="size"Q"align"Q}}, name: _buffer
+    // Error parsing type: {MPSAutoBuffer="_buffer"{atomic<void *>="__a_"{__cxx_atomic_impl<void *, std::__1::__cxx_atomic_base_impl<void *> >="__a_value"A^v}}"_requestedSize"Q"_device"@"<MTLDevice>""_cache"@"MPSCommandBufferImageCache""_resourceSize"{?="size"Q"align"Q}}, name: _buffer
     unsigned long long _offset;
     unsigned long long _rowBytes;
     struct MPSLibrary *_library;
@@ -28,12 +28,12 @@
 
 + (id)defaultAllocator;
 + (const struct MPSLibraryInfo *)libraryInfo;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) MPSNDArray *parent; // @synthesize parent=_parent;
 @property(readonly, nonatomic) unsigned long long numberOfDimensions; // @synthesize numberOfDimensions=_numberOfDimensions;
 @property(readonly, nonatomic) unsigned int dataType; // @synthesize dataType=_dataType;
 @property(copy) NSString *label; // @synthesize label=_label;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)printNDArray;
 - (unsigned long long)offset;
 - (id)buffer;
@@ -42,9 +42,9 @@
 - (void)readBytes:(void *)arg1 strideBytes:(long long *)arg2;
 - (void)makeStrideBytesInArray:(long long *)arg1;
 -     // Error parsing type: 16@0:8, name: makeStrideBytes
-- (void)importDataWithCommandBuffer:(id)arg1 fromImages:(struct NSArray *)arg2 offset:(struct MPSImageCoordinate)arg3;
-- (void)exportDataWithCommandBuffer:(id)arg1 toImages:(struct NSArray *)arg2 offset:(struct MPSImageCoordinate)arg3;
-- (void)copyDataWithCommandBuffer:(id)arg1 images:(struct NSArray *)arg2 offset:(struct MPSImageCoordinate)arg3 imageToArray:(_Bool)arg4;
+- (void)importDataWithCommandBuffer:(id)arg1 fromImages:(id)arg2 offset:(struct MPSImageCoordinate)arg3;
+- (void)exportDataWithCommandBuffer:(id)arg1 toImages:(id)arg2 offset:(struct MPSImageCoordinate)arg3;
+- (void)copyDataWithCommandBuffer:(id)arg1 images:(id)arg2 offset:(struct MPSImageCoordinate)arg3 imageToArray:(_Bool)arg4;
 - (void)importDataWithCommandBuffer:(id)arg1 fromBuffer:(id)arg2 sourceDataType:(unsigned int)arg3 offset:(unsigned long long)arg4 rowStrides:(long long *)arg5;
 - (void)exportDataWithCommandBuffer:(id)arg1 toBuffer:(id)arg2 destinationDataType:(unsigned int)arg3 offset:(unsigned long long)arg4 rowStrides:(long long *)arg5 lengths:(unsigned long long *)arg6 numLengths:(unsigned long long)arg7 flatteningLevel:(unsigned long long)arg8;
 - (void)encodeCopyWithCommandBuffer:(id)arg1 toBuffer:(id)arg2 destinationDataType:(unsigned int)arg3 destinationOffsetBytes:(unsigned long long)arg4 destinationStrideBytes:(long long *)arg5;

@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (id)_filterImage:(id)arg1 size:(struct CGSize)arg2;
 - (void)updatePreviewLayerContentForThumbnailsAndFilteredImages:(id)arg1;
 - (void)updatePreviewLayerContent;
+- (struct CGSize)sizeForPreviewLayerWithIndex:(long long)arg1;
 - (struct CGPoint)positionForPreviewLayerWithIndex:(long long)arg1;
 - (long long)numberOfPreviewLayersForWidth:(double)arg1;
 - (BOOL)allPreviewLayersHaveContent;

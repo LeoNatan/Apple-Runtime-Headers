@@ -14,9 +14,9 @@
     id <REMSaveRequestTrackedValue> _template;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <REMSaveRequestTrackedValue> template; // @synthesize template=_template;
 @property(nonatomic) __weak id <REMSaveRequestTrackedValue> weakValue; // @synthesize weakValue=_weakValue;
-- (void).cxx_destruct;
 - (id)valueWithoutPerformingCopy;
 - (id)valueForSaveRequest:(id)arg1;
 - (id)initWithValue:(id)arg1;

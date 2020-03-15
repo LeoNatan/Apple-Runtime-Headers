@@ -18,10 +18,10 @@
 + (id)buildRequiredOnly;
 + (id)buildWithApps:(id)arg1 withWebSites:(id)arg2 withCategories:(id)arg3;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *payloadCategories; // @synthesize payloadCategories=_payloadCategories;
 @property(copy, nonatomic) NSArray *payloadWebSites; // @synthesize payloadWebSites=_payloadWebSites;
 @property(copy, nonatomic) NSArray *payloadApps; // @synthesize payloadApps=_payloadApps;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

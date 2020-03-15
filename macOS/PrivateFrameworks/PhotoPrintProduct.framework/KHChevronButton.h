@@ -14,8 +14,8 @@
     double _animationDuration;
 }
 
-@property(nonatomic) double animationDuration; // @synthesize animationDuration=_animationDuration;
 - (void).cxx_destruct;
+@property(nonatomic) double animationDuration; // @synthesize animationDuration=_animationDuration;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (void)setState:(int)arg1 animated:(BOOL)arg2;

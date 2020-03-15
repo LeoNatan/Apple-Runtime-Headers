@@ -14,9 +14,9 @@
     long long _distance;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long distance; // @synthesize distance=_distance;
 @property(retain, nonatomic) NSString *value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

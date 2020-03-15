@@ -16,8 +16,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 - (unsigned int)_clientTypeForConnection:(id)arg1;
 - (_Bool)_shouldAcceptNewConnectionWithEntitlements:(unsigned int)arg1;
 - (_Bool)_connection:(id)arg1 hasEntitlement:(id)arg2;

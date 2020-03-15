@@ -21,11 +21,11 @@
 + (Class)trialMessagesType;
 + (Class)unaggregatedMessagesType;
 + (Class)aggregatedMessagesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *trialMessages; // @synthesize trialMessages=_trialMessages;
 @property(retain, nonatomic) NSMutableArray *unaggregatedMessages; // @synthesize unaggregatedMessages=_unaggregatedMessages;
 @property(retain, nonatomic) NSMutableArray *aggregatedMessages; // @synthesize aggregatedMessages=_aggregatedMessages;
 @property(retain, nonatomic) PETMetadata *metadata; // @synthesize metadata=_metadata;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

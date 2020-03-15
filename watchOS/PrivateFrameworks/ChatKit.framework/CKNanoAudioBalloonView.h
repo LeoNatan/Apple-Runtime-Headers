@@ -26,6 +26,7 @@
 + (id)playImage;
 + (id)pauseImage;
 + (id)sharedVolumeControlView;
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIStackView *innerStackView; // @synthesize innerStackView=_innerStackView;
 @property(nonatomic) __weak UIStackView *outerStackView; // @synthesize outerStackView=_outerStackView;
 @property(retain, nonatomic) CKWaveformProgressView *waveformProgressView; // @synthesize waveformProgressView=_waveformProgressView;
@@ -35,7 +36,6 @@
 @property(nonatomic, getter=isPlaying) _Bool playing; // @synthesize playing=_playing;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) double time; // @synthesize time=_time;
-- (void).cxx_destruct;
 - (void)updateProgress;
 - (void)updateTimeString;
 - (void)updateVolumeControlVisibility;

@@ -14,9 +14,9 @@
     struct _NSRange _characterRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange characterRange; // @synthesize characterRange=_characterRange;
 @property(retain, nonatomic) TTParagraphStyle *paragraph; // @synthesize paragraph=_paragraph;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

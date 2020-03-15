@@ -17,11 +17,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSMeasurement *cumulativeCellularDownload; // @synthesize cumulativeCellularDownload=_cumulativeCellularDownload;
 @property(readonly) NSMeasurement *cumulativeCellularUpload; // @synthesize cumulativeCellularUpload=_cumulativeCellularUpload;
 @property(readonly) NSMeasurement *cumulativeWifiDownload; // @synthesize cumulativeWifiDownload=_cumulativeWifiDownload;
 @property(readonly) NSMeasurement *cumulativeWifiUpload; // @synthesize cumulativeWifiUpload=_cumulativeWifiUpload;
-- (void).cxx_destruct;
 - (id)toDictionary;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

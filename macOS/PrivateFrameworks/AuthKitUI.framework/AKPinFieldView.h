@@ -35,12 +35,12 @@
 
 + (struct CGSize)viewSizeWithLength:(int)arg1 chunkingStyle:(unsigned long long)arg2;
 + (struct CGSize)digitViewSizeWithLength:(int)arg1;
+- (void).cxx_destruct;
 @property unsigned long long chunkingStyle; // @synthesize chunkingStyle=_chunkingStyle;
 @property(retain) NSButton *nextButtonResponder; // @synthesize nextButtonResponder=_nextButtonResponder;
 @property BOOL supportsRTL; // @synthesize supportsRTL=_supportsRTL;
 @property(nonatomic) BOOL echosBullets; // @synthesize echosBullets=_echosBullets;
 @property(nonatomic) __weak id <AKPinFieldViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (int)activeInputIndex;
 - (struct CGRect)rectForIndex:(int)arg1;
 - (void)handleTextChange;

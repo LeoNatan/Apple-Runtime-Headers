@@ -21,9 +21,9 @@
     NSString *_pluginMode;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *pluginMode; // @synthesize pluginMode=_pluginMode;
 @property(nonatomic) __weak id <TVCKSearchSiriContextDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_sendMetricsWithCategory:(id)arg1 info:(id)arg2;
 - (void)_fetchNextBatch:(id)arg1;
 - (void)_didPlayContentItemInPartialScreenPluginMode:(id)arg1;

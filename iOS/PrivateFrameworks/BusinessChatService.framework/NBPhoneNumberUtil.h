@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 
 + (void)initialize;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NBRegExMatcher *matcher; // @synthesize matcher=_matcher;
 @property(retain, nonatomic) NBMetadataHelper *helper; // @synthesize helper=_helper;
 @property(retain, nonatomic) NSRegularExpression *VALID_ALPHA_PHONE_PATTERN; // @synthesize VALID_ALPHA_PHONE_PATTERN=_VALID_ALPHA_PHONE_PATTERN;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSLock *lockPatternCache; // @synthesize lockPatternCache=_lockPatternCache;
 @property(retain, nonatomic) NSMutableDictionary *entireStringRegexCache; // @synthesize entireStringRegexCache=_entireStringRegexCache;
 @property(retain, nonatomic) NSLock *entireStringCacheLock; // @synthesize entireStringCacheLock=_entireStringCacheLock;
-- (void).cxx_destruct;
 - (_Bool)matchesEntirely:(id)arg1 string:(id)arg2;
 - (_Bool)canBeInternationallyDialled:(id)arg1;
 - (_Bool)canBeInternationallyDialled:(id)arg1 error:(id *)arg2;

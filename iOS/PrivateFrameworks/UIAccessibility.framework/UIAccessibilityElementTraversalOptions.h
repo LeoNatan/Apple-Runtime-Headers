@@ -32,6 +32,7 @@
 + (id)voiceOverOptionsIncludingElementsFromOpaqueProviders:(_Bool)arg1;
 + (id)defaultVoiceOverOptions;
 + (id)options;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldIncludeStatusBarWindow; // @synthesize shouldIncludeStatusBarWindow=_shouldIncludeStatusBarWindow;
 @property(nonatomic) _Bool forSpeakScreen; // @synthesize forSpeakScreen=_forSpeakScreen;
 @property(retain, nonatomic) NSArray *allowedViewsForTraversal; // @synthesize allowedViewsForTraversal=_allowedViewsForTraversal;
@@ -47,7 +48,6 @@
 @property(copy, nonatomic) CDUnknownBlockType leafNodePredicate; // @synthesize leafNodePredicate=_leafNodePredicate;
 @property(nonatomic) long long direction; // @synthesize direction=_direction;
 @property(nonatomic) _Bool shouldReturnScannerGroups; // @synthesize shouldReturnScannerGroups=_shouldReturnScannerGroups;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

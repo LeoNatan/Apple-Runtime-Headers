@@ -17,9 +17,9 @@
 + (BOOL)isSuggestionsSupported;
 + (id)storeIdentifier;
 + (id)storeInfoClasses;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNSiriIntelligenceSettingsProtocol> siriIntelligenceSettings; // @synthesize siriIntelligenceSettings=_siriIntelligenceSettings;
 @property(retain, nonatomic) id <SGSuggestionsServiceContactsProtocol> suggestionService; // @synthesize suggestionService=_suggestionService;
-- (void).cxx_destruct;
 - (BOOL)executeSaveRequest:(id)arg1 error:(id *)arg2;
 - (BOOL)_processSuggestions:(id)arg1 error:(id *)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (id)unifiedContactsMatchingPredicate:(id)arg1 keysToFetch:(id)arg2 error:(id *)arg3;

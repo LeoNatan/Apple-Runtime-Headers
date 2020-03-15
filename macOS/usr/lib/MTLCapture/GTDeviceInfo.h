@@ -29,6 +29,7 @@
 @property(readonly, nonatomic) NSString *metalVersion;
 @property(readonly, nonatomic) NSString *build;
 @property(readonly, nonatomic) NSString *version;
+- (id)_systemDevicePathForPath:(id)arg1;
 @property(readonly, nonatomic) NSString *productType;
 @property(readonly, nonatomic) NSString *name;
 @property(readonly, nonatomic) unsigned long long runtimeIdentifier;

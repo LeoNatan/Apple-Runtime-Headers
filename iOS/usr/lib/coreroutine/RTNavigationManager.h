@@ -18,11 +18,11 @@
     RTAuthorizationManager *_authorizationManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTAuthorizationManager *authorizationManager; // @synthesize authorizationManager=_authorizationManager;
 @property(retain, nonatomic) GEONavigationRouteSummary *routeSummary; // @synthesize routeSummary=_routeSummary;
 @property(nonatomic) _Bool monitorRouteSummary; // @synthesize monitorRouteSummary=_monitorRouteSummary;
 @property(retain, nonatomic) GEONavigationListener *navigationListener; // @synthesize navigationListener=_navigationListener;
-- (void).cxx_destruct;
 - (void)navigationListener:(id)arg1 didUpdateRouteSummary:(id)arg2;
 - (void)onAuthorizationNotification:(id)arg1;
 - (void)internalRemoveObserver:(id)arg1 name:(id)arg2;

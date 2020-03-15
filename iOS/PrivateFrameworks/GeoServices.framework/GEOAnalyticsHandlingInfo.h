@@ -12,8 +12,10 @@
 {
     long long _logMsgType;
     long long _persistCount;
-    long long _uploadSuccessCount;
-    long long _uploadSuccessByteCount;
+    long long _uploadSuccessCountOnWifi;
+    long long _uploadSuccessByteCountOnWifi;
+    long long _uploadSuccessCountOnCellular;
+    long long _uploadSuccessByteCountOnCellular;
     long long _uploadFailureCount;
     long long _dbExpireCount;
 }
@@ -21,8 +23,10 @@
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) long long dbExpireCount; // @synthesize dbExpireCount=_dbExpireCount;
 @property(nonatomic) long long uploadFailureCount; // @synthesize uploadFailureCount=_uploadFailureCount;
-@property(nonatomic) long long uploadSuccessByteCount; // @synthesize uploadSuccessByteCount=_uploadSuccessByteCount;
-@property(nonatomic) long long uploadSuccessCount; // @synthesize uploadSuccessCount=_uploadSuccessCount;
+@property(nonatomic) long long uploadSuccessByteCountOnCellular; // @synthesize uploadSuccessByteCountOnCellular=_uploadSuccessByteCountOnCellular;
+@property(nonatomic) long long uploadSuccessCountOnCellular; // @synthesize uploadSuccessCountOnCellular=_uploadSuccessCountOnCellular;
+@property(nonatomic) long long uploadSuccessByteCountOnWifi; // @synthesize uploadSuccessByteCountOnWifi=_uploadSuccessByteCountOnWifi;
+@property(nonatomic) long long uploadSuccessCountOnWifi; // @synthesize uploadSuccessCountOnWifi=_uploadSuccessCountOnWifi;
 @property(nonatomic) long long persistCount; // @synthesize persistCount=_persistCount;
 @property(nonatomic) long long logMsgType; // @synthesize logMsgType=_logMsgType;
 - (void)encodeWithCoder:(id)arg1;

@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     NSTextField *_titleTextField;
     NSImageView *_siteIconImageView;
     NSStackView *_headerContentStackView;
+    BOOL _reloadDataOnLayout;
     NSView *_thumbnailView;
     RolloverImageButton *_closeButton;
     VisualTabPickerMuteButton *_muteButton;
@@ -28,13 +29,13 @@ __attribute__((visibility("hidden")))
     long long _muteButtonState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long muteButtonState; // @synthesize muteButtonState=_muteButtonState;
 @property(nonatomic, getter=isMuteButtonVisible) BOOL muteButtonVisible; // @synthesize muteButtonVisible=_muteButtonVisible;
 @property(nonatomic) BOOL visibleToUser; // @synthesize visibleToUser=_visibleToUser;
 @property(nonatomic, getter=isCloseButtonVisible) BOOL closeButtonVisible; // @synthesize closeButtonVisible=_closeButtonVisible;
 @property(nonatomic) __weak id <VisualTabPickerThumbnailDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <VisualTabPickerThumbnailDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (BOOL)accessibilityPerformPress;
 - (id)accessibilityLabel;
 - (id)accessibilityRole;
@@ -44,6 +45,8 @@ __attribute__((visibility("hidden")))
 - (void)_updateCloseButtonImages;
 - (void)_createCloseButton;
 - (void)updateIcon;
+- (void)layout;
+- (void)_reloadData;
 - (void)reloadData;
 - (id)_createTitleTextField;
 - (void)_updateLayout;

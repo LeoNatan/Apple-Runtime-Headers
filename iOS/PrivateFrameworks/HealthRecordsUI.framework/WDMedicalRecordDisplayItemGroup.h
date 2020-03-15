@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 
 + (id)displayItemGroupWithDisplayItems:(id)arg1;
 + (id)displayItemGroupWithDaySummary:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) WDMedicalRecordDaySummary *daySummary; // @synthesize daySummary=_daySummary;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (long long)numberOfDisplayItems;
 - (id)displayItemAtIndex:(long long)arg1;
 @property(readonly, copy, nonatomic) NSArray *displayItems;

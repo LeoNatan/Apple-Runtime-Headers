@@ -14,9 +14,9 @@
     NSMutableSet *_days;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *days; // @synthesize days=_days;
 @property(nonatomic) long long month; // @synthesize month=_month;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)debugDescription;

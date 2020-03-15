@@ -18,10 +18,10 @@
 }
 
 + (Class)topicCohortsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *sourceChannelCohorts; // @synthesize sourceChannelCohorts=_sourceChannelCohorts;
 @property(retain, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *globalCohorts; // @synthesize globalCohorts=_globalCohorts;
 @property(retain, nonatomic) NSMutableArray *topicCohorts; // @synthesize topicCohorts=_topicCohorts;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -16,8 +16,8 @@
 }
 
 + (id)groupEmitterIdentifier;
-@property(retain, nonatomic) NSString *channelIdentifier; // @synthesize channelIdentifier=_channelIdentifier;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *channelIdentifier; // @synthesize channelIdentifier=_channelIdentifier;
 @property(readonly, nonatomic) _Bool shouldEmitContentInFavoritesOnlyMode;
 @property(readonly, nonatomic) _Bool emitsSingletonGroups;
 @property(readonly, copy, nonatomic) NSSet *emittableGroupTypes;

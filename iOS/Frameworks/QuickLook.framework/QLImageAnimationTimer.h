@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedTimer;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(retain, nonatomic) NSMutableSet *observers; // @synthesize observers=_observers;
-- (void).cxx_destruct;
 - (void)animationTimerFired:(id)arg1;
 - (void)removeAnimationTimerObserver:(id)arg1;
 - (void)addAnimationTimerObserver:(id)arg1;

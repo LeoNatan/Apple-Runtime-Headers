@@ -15,10 +15,10 @@
     double _timestamp;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(retain, nonatomic) THAButton *button; // @synthesize button=_button;
-- (void).cxx_destruct;
 - (id)serialize;
 
 @end

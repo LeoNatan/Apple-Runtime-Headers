@@ -16,7 +16,7 @@
     // Error parsing type: , name: pixelLength
     // Error parsing type: , name: cache
     // Error parsing type: , name: scaleFactorOverride
-    // Error parsing type: , name: $__lazy_storage_$_oversizeCharacterOutsets
+    // Error parsing type: , name: $__lazy_storage_$_pixelMargins
 }
 
 @end

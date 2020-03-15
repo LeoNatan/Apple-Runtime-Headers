@@ -17,9 +17,9 @@
 }
 
 + (id)loadModelFromSpecification:(struct _MLModelSpecification *)arg1 configuration:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MLFeatureValue *scaleValue; // @synthesize scaleValue=_scaleValue;
 @property(readonly, nonatomic) MLFeatureValue *shiftValue; // @synthesize shiftValue=_shiftValue;
-- (void).cxx_destruct;
 - (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)initWith:(id)arg1 scaleValue:(id)arg2 dataTransformerName:(id)arg3 inputDescription:(id)arg4 outputDescription:(id)arg5 orderedInputFeatureNames:(id)arg6 orderedOutputFeatureNames:(id)arg7 configuration:(id)arg8 error:(id *)arg9;
 

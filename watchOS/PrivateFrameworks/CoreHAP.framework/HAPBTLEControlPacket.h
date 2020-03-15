@@ -18,11 +18,11 @@
 
 + (id)shortDescription;
 + (id)packetWithSerializedData:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isContinuationPacket) _Bool continuationPacket; // @synthesize continuationPacket=_continuationPacket;
 @property(readonly, copy, nonatomic) NSData *payload; // @synthesize payload=_payload;
 @property(readonly, nonatomic) HAPBTLETransactionIdentifier *transactionIdentifier; // @synthesize transactionIdentifier=_transactionIdentifier;
 @property(readonly, nonatomic) unsigned char type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)serialize;
 - (id)description;
 - (id)debugDescription;
