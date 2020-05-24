@@ -26,8 +26,10 @@ __attribute__((visibility("hidden")))
 - (void)parseTransitPioneer:(id)arg1 file1E:(id)arg2 file1A:(id)arg3 into:(id)arg4;
 - (void)parseTransitApollo:(id)arg1 file1E:(id)arg2 file1A:(id)arg3 into:(id)arg4;
 - (void)parseTransitKepler:(id)arg1 file1E:(id)arg2 file1A:(id)arg3 into:(id)arg4;
+- (void)parseTransitSettingBased:(id)arg1 file1E:(id)arg2 file1A:(id)arg3 ctx:(id)arg4 into:(id)arg5;
+- (id)getStationCode:(id)arg1 codeSetting:(id)arg2 cityCode:(id)arg3;
 - (id)resolveTransitModality:(unsigned char)arg1;
-- (void)parseTransit:(id)arg1 file1E:(id)arg2 file1A:(id)arg3 into:(id)arg4;
+- (void)parseTransit:(id)arg1 file1E:(id)arg2 file1A:(id)arg3 ctx:(id)arg4 into:(id)arg5;
 - (id)parseFile18:(id)arg1;
 - (id)getHistory:(id)arg1 error:(id *)arg2;
 - (id)getState:(id)arg1;
@@ -35,9 +37,12 @@ __attribute__((visibility("hidden")))
 - (unsigned short)convertWalletSNtoAppletSN:(id)arg1;
 - (void)addFakeBusTxnGuangdong:(id)arg1 history:(id)arg2 cityCode:(id)arg3;
 - (void)removeDoubleMetroTapGuangdong:(id)arg1 history:(id)arg2 cityCode:(id)arg3;
+- (id)findNextCappPuchaseEntry:(id)arg1 history:(id)arg2;
 - (id)adjustHistory:(id)arg1;
 - (void)removeEnRouteForSingleTapBusGuangdong:(id)arg1 history:(id)arg2 cityCode:(id)arg3;
-- (void)adjustState:(id)arg1 latestTransaction:(id)arg2;
+- (void)setMetroEntryWithLocalLog:(id)arg1 ctx:(id)arg2;
+- (_Bool)isMetroEntry:(id)arg1 cityCode:(id)arg2 setting:(id)arg3 error:(id *)arg4;
+- (void)adjustState:(id)arg1 latestTransaction:(id)arg2 ctx:(id)arg3;
 - (id)getAppletStateAndHistory:(id)arg1 withError:(id *)arg2;
 - (id)getAppletStateAndHistory:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withError:(id *)arg5;
 - (id)GetAppletProperties:(id)arg1 withPackage:(id)arg2 withModule:(id)arg3 withTransceiver:(id)arg4 withError:(id *)arg5;

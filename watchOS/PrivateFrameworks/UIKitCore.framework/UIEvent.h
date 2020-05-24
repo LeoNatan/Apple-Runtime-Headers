@@ -43,6 +43,9 @@
 - (_Bool)_isTouchRoutingPolicyBased;
 - (struct CGPoint)_digitizerLocation;
 - (_Bool)_isKeyDown;
+@property(readonly, nonatomic) int buttonMask;
+@property(readonly, nonatomic) int modifierFlags;
+- (int)_buttonMask;
 - (unsigned int)_clickCount;
 - (int)_keyModifierFlags;
 - (int)_modifierFlags;

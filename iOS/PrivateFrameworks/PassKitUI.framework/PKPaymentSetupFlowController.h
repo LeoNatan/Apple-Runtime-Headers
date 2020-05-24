@@ -23,6 +23,7 @@
 @property(readonly, nonatomic) id <PKPaymentSetupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long setupContext; // @synthesize setupContext=_setupContext;
 @property(readonly, nonatomic) PKPaymentProvisioningController *provisioningController; // @synthesize provisioningController=_provisioningController;
+- (id)_onboardingViewControllerForProduct:(id)arg1;
 - (id)_educationViewControllerShouldShow;
 - (id)_offerOptionalExpressModeSetup;
 - (id)_offerMakeDefaultViewController;

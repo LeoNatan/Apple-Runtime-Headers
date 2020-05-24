@@ -18,13 +18,16 @@
     BOOL _hidesSourceView;
     BOOL _avoidAnimation;
     BOOL _wantsSuppressedMask;
+    unsigned int _coordinateSpaceSourceContextID;
     UIColor *_backgroundColor;
     UIBezierPath *_outline;
+    unsigned long long _coordinateSpaceSourceLayerRenderID;
     double _originalRotation;
     long long _previewMode;
     struct CGPoint _contentOffset;
     struct CGSize _contentSize;
     struct CGPoint _originalCenter;
+    struct CGPoint _originalCenterInCoordinateSpace;
     struct CGPoint _liftAnchorPoint;
     struct CGSize _viewScaleFactor;
 }
@@ -39,6 +42,9 @@
 @property(nonatomic) struct CGPoint liftAnchorPoint; // @synthesize liftAnchorPoint=_liftAnchorPoint;
 @property(nonatomic) long long previewMode; // @synthesize previewMode=_previewMode;
 @property(nonatomic) double originalRotation; // @synthesize originalRotation=_originalRotation;
+@property(nonatomic) unsigned long long coordinateSpaceSourceLayerRenderID; // @synthesize coordinateSpaceSourceLayerRenderID=_coordinateSpaceSourceLayerRenderID;
+@property(nonatomic) unsigned int coordinateSpaceSourceContextID; // @synthesize coordinateSpaceSourceContextID=_coordinateSpaceSourceContextID;
+@property(nonatomic) struct CGPoint originalCenterInCoordinateSpace; // @synthesize originalCenterInCoordinateSpace=_originalCenterInCoordinateSpace;
 @property(nonatomic) struct CGPoint originalCenter; // @synthesize originalCenter=_originalCenter;
 @property(copy, nonatomic) UIBezierPath *outline; // @synthesize outline=_outline;
 @property(nonatomic) BOOL hidesSourceView; // @synthesize hidesSourceView=_hidesSourceView;

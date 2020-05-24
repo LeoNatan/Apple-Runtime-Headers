@@ -28,6 +28,7 @@
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_edgePanChanged:(id)arg1;
 - (void)_tapRecognized:(id)arg1;
+- (_Bool)gestureRecognizerContainsPointerEvent:(id)arg1;
 - (void)unregisterGrabber:(id)arg1;
 - (void)registerGrabber:(id)arg1;
 - (id)init;

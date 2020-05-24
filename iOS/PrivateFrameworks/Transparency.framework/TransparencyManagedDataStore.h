@@ -6,25 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@class NSManagedObjectContext, NSPersistentContainer;
+@class NSManagedObjectContext, TransparencyManagedDataStoreController;
 
 @interface TransparencyManagedDataStore : NSObject
 {
+    _Bool _permanentContext;
+    TransparencyManagedDataStoreController *_controller;
     NSManagedObjectContext *_context;
-    NSPersistentContainer *_persistentContainer;
-    // Error parsing type: Aq, name: _sequenceId
+    long long _contextRefCount;
 }
 
 + (id)deserializeLoggableDatas:(id)arg1 error:(id *)arg2;
 + (id)serializeLoggableDatas:(id)arg1;
 + (void)reportCoreDataEventForEntity:(id)arg1 write:(_Bool)arg2 code:(long long)arg3 underlyingError:(id)arg4;
 - (void).cxx_destruct;
-// Error parsing type for property sequenceId:
-// Property attributes: TAq,V_sequenceId
-
-@property(retain) NSPersistentContainer *persistentContainer; // @synthesize persistentContainer=_persistentContainer;
+@property long long contextRefCount; // @synthesize contextRefCount=_contextRefCount;
+@property _Bool permanentContext; // @synthesize permanentContext=_permanentContext;
+@property(retain) NSManagedObjectContext *context; // @synthesize context=_context;
+@property __weak TransparencyManagedDataStoreController *controller; // @synthesize controller=_controller;
 - (void)performBlock:(CDUnknownBlockType)arg1;
 - (void)performBlockAndWait:(CDUnknownBlockType)arg1;
+- (void)releaseContext;
+- (id)retainContext;
 - (_Bool)performAndWaitForDownloadId:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (_Bool)performAndWaitForRequestId:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (void)performOnRequestsForPredicate:(id)arg1 enforceMax:(_Bool)arg2 error:(id *)arg3 block:(CDUnknownBlockType)arg4;
@@ -54,6 +57,8 @@
 - (_Bool)clearState:(id *)arg1;
 - (void)deleteObjectSet:(id)arg1;
 - (void)deleteObject:(id)arg1;
+- (id)requestIds:(id *)arg1;
+- (void)createKTRequestID:(id)arg1 request:(id)arg2;
 - (id)downloadRecords:(id *)arg1;
 - (_Bool)setResponse:(id)arg1 downloadId:(id)arg2 error:(id *)arg3;
 - (_Bool)deleteDownloadRecord:(id)arg1 error:(id *)arg2;
@@ -66,6 +71,7 @@
 - (void)garbageCollectSTHs:(id)arg1 logBeginMs:(unsigned long long)arg2 olderThan:(id)arg3 error:(id *)arg4;
 - (void)performForSTHsWithUnverifiedSignature:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (void)performForPendingSTHs:(id)arg1 olderThan:(id)arg2 error:(id *)arg3 block:(CDUnknownBlockType)arg4;
+- (_Bool)populateExistingRequestsToLookupTable:(id *)arg1;
 - (_Bool)populateMissingLogHeadHashes:(id *)arg1;
 - (id)unverifiedRevisions:(id)arg1 logBeginMs:(unsigned long long)arg2 error:(id *)arg3;
 - (id)latestVerifiedTreeHeadRevision:(id)arg1 logBeginMs:(unsigned long long)arg2 error:(id *)arg3;
@@ -86,7 +92,10 @@
 - (id)fetchRequestsForURI:(id)arg1 error:(id *)arg2;
 - (id)fetchRequestForUUID:(id)arg1 error:(id *)arg2;
 - (id)treeHeadsForApplication:(id)arg1 error:(id *)arg2;
+- (id)createRequestWithUri:(id)arg1 application:(id)arg2 accountID:(id)arg3 serverData:(id)arg4 syncedData:(id)arg5 queryRequest:(id)arg6 queryResponse:(id)arg7 type:(unsigned long long)arg8 clientId:(id)arg9 error:(id *)arg10;
 - (id)createRequestWithUri:(id)arg1 application:(id)arg2 accountID:(id)arg3 serverData:(id)arg4 syncedData:(id)arg5 queryRequest:(id)arg6 queryResponse:(id)arg7 type:(unsigned long long)arg8 error:(id *)arg9;
+- (id)createRequestWithUri:(id)arg1 application:(id)arg2 accountID:(id)arg3 serverData:(id)arg4 queryRequest:(id)arg5 queryResponse:(id)arg6 type:(unsigned long long)arg7 error:(id *)arg8;
+- (id)createRequestWithUri:(id)arg1 application:(id)arg2 accountID:(id)arg3 serverData:(id)arg4 type:(unsigned long long)arg5 error:(id *)arg6;
 - (id)createRequest;
 - (unsigned long long)signedTreeHeadFailureCount:(id *)arg1;
 - (id)signedTreeHeadFailures:(id *)arg1;
@@ -100,10 +109,8 @@
 - (id)requestFailures:(id *)arg1;
 - (unsigned long long)requestCount:(id *)arg1;
 - (id)requests:(id *)arg1;
-- (id)init;
-@property(readonly, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;
-- (long long)currentSequenceId:(id *)arg1;
-- (id)bundleURL;
+- (id)initWithController:(id)arg1;
+- (id)initWithController:(id)arg1 context:(id)arg2;
 
 @end
 

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PassKitCore/PKImage.h>
+#import <PassKit/PKImage.h>
 
 @interface PKImage (NanoPassKit)
 - (id)resizedImageWithSize:(struct CGSize)arg1 shouldCover:(_Bool)arg2;

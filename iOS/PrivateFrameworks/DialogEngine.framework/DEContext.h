@@ -15,6 +15,7 @@
 
 + (id)globalParameters;
 @property void *This; // @synthesize This=_This;
+- (void)registerMorphunDataPathFor:(id)arg1 path:(id)arg2;
 @property(readonly) NSString *locale;
 @property(readonly) NSString *loadStatus;
 - (void)setTemplateDir:(id)arg1;
@@ -24,6 +25,7 @@
 - (void)addVariable:(id)arg1;
 - (_Bool)load:(id)arg1 locale:(id)arg2;
 - (void)dealloc;
+- (id)initWithPtr:(struct Context *)arg1;
 - (id)init;
 
 @end

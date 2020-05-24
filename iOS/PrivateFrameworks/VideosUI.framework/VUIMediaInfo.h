@@ -6,7 +6,7 @@
 
 #import <TVMLKit/TVMediaInfo.h>
 
-@class IKAppContext, TVImageProxy, TVPPlaylist;
+@class IKAppContext, NSString, TVImageProxy, TVPPlaylist;
 
 __attribute__((visibility("hidden")))
 @interface VUIMediaInfo : TVMediaInfo
@@ -26,10 +26,12 @@ __attribute__((visibility("hidden")))
     IKAppContext *_appContext;
     double _playbackDelayInterval;
     TVImageProxy *_alphaImageProxy;
+    NSString *_alphaLayerAccessibilityText;
 }
 
 - (void).cxx_destruct;
 @property(nonatomic) _Bool overridesStartTimeWithResumeTime; // @synthesize overridesStartTimeWithResumeTime=_overridesStartTimeWithResumeTime;
+@property(retain, nonatomic) NSString *alphaLayerAccessibilityText; // @synthesize alphaLayerAccessibilityText=_alphaLayerAccessibilityText;
 @property(retain, nonatomic) TVImageProxy *alphaImageProxy; // @synthesize alphaImageProxy=_alphaImageProxy;
 @property(nonatomic) double playbackDelayInterval; // @synthesize playbackDelayInterval=_playbackDelayInterval;
 @property(nonatomic) _Bool allowsPictureInPicture; // @synthesize allowsPictureInPicture=_allowsPictureInPicture;

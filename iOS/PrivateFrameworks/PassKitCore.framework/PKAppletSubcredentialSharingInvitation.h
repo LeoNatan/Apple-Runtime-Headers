@@ -26,7 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)invitationFromSharedCredential:(id)arg1 withCredential:(id)arg2;
++ (id)invitationFromSharedCredential:(id)arg1 withCredential:(id)arg2 pass:(id)arg3;
 - (void).cxx_destruct;
 @property(nonatomic, getter=isForWatch) _Bool forWatch; // @synthesize forWatch=_forWatch;
 @property(copy, nonatomic) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;

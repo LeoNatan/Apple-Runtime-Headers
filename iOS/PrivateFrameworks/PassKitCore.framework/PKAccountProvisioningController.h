@@ -48,7 +48,7 @@
 - (void)_stopPassActivationObserver;
 - (void)_startPassActivationObserver;
 - (id)_notificationDidChangeNames;
-- (void)_provisionAccountCredenital:(id)arg1 provisoningController:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_provisionAccountCredenital:(id)arg1 provisioningController:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_processRemainingTasks;
 - (void)provisionAccountPassToWatchAsDefault:(_Bool)arg1;
 - (void)addToIDMS;

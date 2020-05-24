@@ -11,6 +11,7 @@
 }
 
 + (struct CGPoint)anchorPoint:(id)arg1;
+- (struct CGRect)accessibilityFrameForMark:(id)arg1 layer:(id)arg2;
 - (id)updateMark:(id)arg1;
 - (id)enterMark:(id)arg1;
 - (id)updateTextLayer:(id)arg1 withMark:(id)arg2;

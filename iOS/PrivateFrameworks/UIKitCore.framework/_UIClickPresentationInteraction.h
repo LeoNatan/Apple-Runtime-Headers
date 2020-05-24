@@ -109,6 +109,7 @@
 - (_Bool)_beginDragIfPossibleWithTouch:(id)arg1 previewProvider:(CDUnknownBlockType)arg2 fenceHandler:(CDUnknownBlockType)arg3;
 - (void)_attemptDragLiftAtLocation:(struct CGPoint)arg1 useDefaultLiftAnimation:(_Bool)arg2;
 - (id)_clickDragDriver;
+- (id)_candidateInteractionsForAssociation;
 - (void)_associateWithActiveDragInteraction;
 - (void)_cancelAllDrivers;
 - (void)_refreshAllDrivers;

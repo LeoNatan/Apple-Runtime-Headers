@@ -26,8 +26,6 @@
 @property(readonly, nonatomic) NSSet *personNodes; // @synthesize personNodes=_personNodes;
 @property(readonly, nonatomic) NSSet *loveEmojis; // @synthesize loveEmojis=_loveEmojis;
 - (unsigned long long)numberOfEmojis:(id)arg1 inText:(id)arg2;
-- (id)_cnPostalAddressFromAddressComponents:(id)arg1;
-- (id)locationFromAddressComponents:(id)arg1;
 - (id)addressComponentFromText:(id)arg1 usingDataDetector:(id)arg2;
 - (BOOL)_isInterestingGroupChatWithPersons:(id)arg1;
 - (void)runWithGraphUpdate:(id)arg1 progressBlock:(CDUnknownBlockType)arg2;

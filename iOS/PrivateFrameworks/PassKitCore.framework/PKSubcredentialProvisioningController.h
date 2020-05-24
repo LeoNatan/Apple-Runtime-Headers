@@ -52,7 +52,7 @@
 @property(readonly, nonatomic) PKAppletSubcredential *addedCredential;
 - (void)transitionToState:(long long)arg1 withOperation:(id)arg2 error:(id)arg3;
 - (void)cleanUpProvisioningAfterError:(_Bool)arg1;
-- (void)finishProvisioningWithError:(id)arg1;
+- (void)finishProvisioningWithError:(id)arg1 state:(long long)arg2;
 - (void)cancelProvisioningWithCompletion:(CDUnknownBlockType)arg1;
 - (void)startProvisioningWithConfiguration:(id)arg1;
 - (id)init;

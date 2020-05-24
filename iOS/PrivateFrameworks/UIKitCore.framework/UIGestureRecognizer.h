@@ -9,12 +9,15 @@
 #import <UIKitCore/_UIDraggable-Protocol.h>
 #import <UIKitCore/_UIExcludable-Protocol.h>
 #import <UIKitCore/_UIForceLevelClassifierDelegate-Protocol.h>
+#import <UIKitCore/_UIHoverable-Protocol.h>
+#import <UIKitCore/_UIScrollable-Protocol.h>
 #import <UIKitCore/_UITouchable-Protocol.h>
+#import <UIKitCore/_UITransformable-Protocol.h>
 
 @class NSArray, NSMutableArray, NSMutableSet, NSObservation, NSObservationSource, NSSet, NSString, UIGestureEnvironment, UIView, _UIForceLevelClassifier, _UITouchForceObservable;
 @protocol UIGestureRecognizerDelegate;
 
-@interface UIGestureRecognizer : NSObject <_UIForceLevelClassifierDelegate, _UIExcludable, _UITouchable, _UIDraggable>
+@interface UIGestureRecognizer : NSObject <_UIForceLevelClassifierDelegate, _UIExcludable, _UIScrollable, _UIHoverable, _UITransformable, _UITouchable, _UIDraggable>
 {
     struct {
         unsigned int delegateShouldBegin:1;
@@ -189,9 +192,25 @@
 - (_Bool)_delegateShouldReceiveTouchesEvent:(id)arg1;
 - (_Bool)_delegateShouldReceiveEvent:(id)arg1;
 - (id)_gatherViewsToQueryForDelegateCall;
+- (void)_hoverCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)_hoverExited:(id)arg1 withEvent:(id)arg2;
+- (void)_hoverMoved:(id)arg1 withEvent:(id)arg2;
+- (void)_hoverEntered:(id)arg1 withEvent:(id)arg2;
+- (void)__hoverCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)__hoverExited:(id)arg1 withEvent:(id)arg2;
+- (void)__hoverMoved:(id)arg1 withEvent:(id)arg2;
+- (void)__hoverEntered:(id)arg1 withEvent:(id)arg2;
+- (long long)_defaultAllowedMouseButtons;
+- (long long)_buttonMask;
+@property(readonly, nonatomic) long long buttonMask;
 - (_Bool)_shouldReceiveTouch:(id)arg1 forEvent:(id)arg2 recognizerView:(id)arg3;
 - (long long)_modifierFlags;
 @property(readonly, nonatomic) long long modifierFlags;
+- (_Bool)_wantsHoverEvents;
+- (void)_transformChangedWithEvent:(id)arg1;
+- (_Bool)_shouldReceiveTransformEvent:(id)arg1;
+- (void)_scrollingChangedWithEvent:(id)arg1;
+- (_Bool)_shouldReceiveScrollEvent:(id)arg1;
 - (_Bool)_shouldReceiveDragEvent:(id)arg1;
 - (_Bool)_shouldReceivePress:(id)arg1;
 - (_Bool)_shouldReceivePress:(id)arg1 forPressesEvent:(id)arg2;

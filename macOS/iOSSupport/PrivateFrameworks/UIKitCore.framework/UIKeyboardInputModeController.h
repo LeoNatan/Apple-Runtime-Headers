@@ -96,7 +96,9 @@
 - (void)updateCurrentAndNextInputModes;
 - (void)updateLastUsedInputMode:(id)arg1;
 - (id)inputModeForASCIIToggleWithTraits:(id)arg1;
+- (id)inputModeLastUsedForLanguage:(id)arg1 includingExtensions:(BOOL)arg2;
 - (id)inputModeLastUsedForLanguage:(id)arg1;
+- (id)inputModeIdentifierLastUsedForLanguage:(id)arg1 includingExtensions:(BOOL)arg2;
 - (id)inputModeIdentifierLastUsedForLanguage:(id)arg1;
 - (id)nextInputModeInPreferenceListForTraits:(id)arg1;
 - (id)nextInputModeInPreferenceListForTraits:(id)arg1 updatePreference:(BOOL)arg2 skipEmoji:(BOOL)arg3;

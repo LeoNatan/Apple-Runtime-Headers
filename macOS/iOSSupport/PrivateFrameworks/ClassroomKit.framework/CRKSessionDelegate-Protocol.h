@@ -10,6 +10,7 @@
 @protocol CRKIdentity;
 
 @protocol CRKSessionDelegate <NSObject>
+- (void)session:(CRKSession *)arg1 encounteredUntrustedConnection:(void (^)(unsigned long long))arg2;
 - (void)sessionDidInvalidate:(CRKSession *)arg1;
 - (void)sessionDidDisconnect:(CRKSession *)arg1;
 - (void)sessionDidLoseBeacon:(CRKSession *)arg1;

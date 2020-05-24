@@ -176,6 +176,8 @@
 - (id)previewViewControllerAtLocation:(struct CGPoint)arg1 fromSourceView:(id)arg2;
 - (_Bool)containsPoint:(struct CGPoint)arg1 forCoordinateSpace:(id)arg2;
 - (id)imageViewBasicTileForPreviewingAtPoint:(struct CGPoint)arg1;
+@property(readonly, nonatomic) _Bool cursorInteractionEnabled;
+- (id)bestCursorTileForLiftingAtPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
 - (void)contentViewDidDisappear;
 - (void)contentViewWillAppear;
 - (void)environmentDidUpdateFocusInContext:(id)arg1;

@@ -20,6 +20,7 @@
 @property(nonatomic) long long _horizontalSizeClassFromSplitView; // @synthesize _horizontalSizeClassFromSplitView=__horizontalSizeClassFromSplitView;
 @property long long currentUserInterfaceStyle; // @synthesize currentUserInterfaceStyle=_currentUserInterfaceStyle;
 - (BOOL)needsTouchDownWorkaround;
+- (BOOL)supportsCursorInteractions;
 - (BOOL)usesVectorGlyph;
 - (BOOL)usesTitleLabelPerfOptimization;
 - (BOOL)shouldTintNavBar;

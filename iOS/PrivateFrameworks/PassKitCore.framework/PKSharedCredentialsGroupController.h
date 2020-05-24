@@ -20,17 +20,21 @@
     NSDictionary *_invitationReceiptsForCredential;
     NSDictionary *_credentialForIdentifier;
     _Bool _canSendInvitation;
+    _Bool _sharingEnabled;
     NSArray *_groups;
     PKPaymentPass *_pass;
 }
 
 - (void).cxx_destruct;
 @property(readonly, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
-@property(readonly, nonatomic) _Bool canSendInvitation; // @synthesize canSendInvitation=_canSendInvitation;
+@property(readonly, nonatomic) _Bool sharingEnabled; // @synthesize sharingEnabled=_sharingEnabled;
 @property(readonly, nonatomic) NSArray *groups; // @synthesize groups=_groups;
+@property(readonly, nonatomic) NSArray *nonLocalGroups;
+- (void)immobilizerTokenCountWithCompletion:(CDUnknownBlockType)arg1;
 - (void)parseCredentialsOnPass:(id)arg1;
 - (void)updateGroupsWithCredential:(id)arg1;
 - (void)revokeGroup:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)canSendInvitationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchContactForGroup:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)contactForGroup:(id)arg1;
 - (void)didUpdateGroups;

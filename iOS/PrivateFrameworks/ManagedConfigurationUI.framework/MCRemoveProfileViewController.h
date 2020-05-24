@@ -12,15 +12,17 @@
 #import <ManagedConfigurationUI/UIActionSheetDelegate-Protocol.h>
 #import <ManagedConfigurationUI/UITextFieldDelegate-Protocol.h>
 
-@class MCProfile, NSString, UIAlertView, UITextField;
+@class MCProfile, NSString, UITextField;
 
 __attribute__((visibility("hidden")))
 @interface MCRemoveProfileViewController : MCInstallProfileViewController <MCInteractionDelegate, MCProfileViewControllerDelegate, PSStateRestoration, UIActionSheetDelegate, UITextFieldDelegate>
 {
     _Bool _profileWantsToReEnroll;
     _Bool _actionButtonHidden;
-    UIAlertView *_activeAlert;
-    CDStruct_8422b130 _configurationFlags;
+    struct {
+        unsigned int installedThisLaunch:1;
+        unsigned int profileSuggestsReboot:1;
+    } _configurationFlags;
     MCProfile *_updatingProfile;
     UITextField *_passwordField;
 }
@@ -37,10 +39,6 @@ __attribute__((visibility("hidden")))
 - (void)_showLeaveRemoteManagementAlert;
 - (id)_mdmProfileRemovalAlertBody;
 - (_Bool)_signatureForProfile:(id)arg1 matchesProfileB:(id)arg2;
-- (void)_cancelActiveAlertController:(_Bool)arg1;
-- (void)_cancelActiveAlert:(_Bool)arg1;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
-- (void)alertViewCancel:(id)arg1;
 - (void)didCancelEnteringPIN;
 - (void)didAcceptEnteredPIN:(id)arg1;
 - (void)_performReEnroll;

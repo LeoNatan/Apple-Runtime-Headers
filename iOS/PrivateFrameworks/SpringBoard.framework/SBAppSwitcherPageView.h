@@ -25,17 +25,15 @@
     double _shadowAlpha;
     double _shadowOffset;
     struct UIRectCornerRadii _cornerRadii;
-    _Bool _isHighlighted;
-    _Bool _isShadowHighlighted;
     SBAppSwitcherPageShadowView *_shadowView;
     SBAppSwitcherSettings *_settings;
     long long _orientation;
     _Bool _shouldClipContentView;
     _Bool _shouldScaleOverlayToFillBounds;
     _Bool _needsBackgroundWallpaperTreatment;
+    unsigned long long _highlightType;
     double _switcherCardScale;
     double _darkeningAlpha;
-    double _killingDarkeningAlpha;
     double _wallpaperOverlayAlpha;
     double _lighteningAlpha;
     struct CGSize _overlayViewSize;
@@ -47,7 +45,6 @@
 @property(nonatomic) double lighteningAlpha; // @synthesize lighteningAlpha=_lighteningAlpha;
 @property(nonatomic) double wallpaperOverlayAlpha; // @synthesize wallpaperOverlayAlpha=_wallpaperOverlayAlpha;
 @property(nonatomic) _Bool needsBackgroundWallpaperTreatment; // @synthesize needsBackgroundWallpaperTreatment=_needsBackgroundWallpaperTreatment;
-@property(nonatomic) double killingDarkeningAlpha; // @synthesize killingDarkeningAlpha=_killingDarkeningAlpha;
 @property(nonatomic) double darkeningAlpha; // @synthesize darkeningAlpha=_darkeningAlpha;
 @property(readonly, nonatomic) SBAppSwitcherPageShadowView *_shadowView; // @synthesize _shadowView;
 @property(readonly, nonatomic) UIView *_overlayClippingView; // @synthesize _overlayClippingView;
@@ -57,6 +54,7 @@
 @property(nonatomic) struct CGSize overlayViewSize; // @synthesize overlayViewSize=_overlayViewSize;
 @property(nonatomic) struct CGRect contentClippingFrame; // @synthesize contentClippingFrame=_contentClippingFrame;
 @property(nonatomic) _Bool shouldClipContentView; // @synthesize shouldClipContentView=_shouldClipContentView;
+@property(nonatomic) unsigned long long highlightType; // @synthesize highlightType=_highlightType;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) struct UIRectCornerRadii cornerRadii; // @synthesize cornerRadii=_cornerRadii;
 @property(nonatomic) double shadowOffset; // @synthesize shadowOffset=_shadowOffset;
@@ -72,11 +70,9 @@
 - (void)_setupShadowView;
 - (void)_updateShadow;
 - (void)invalidate;
-@property(nonatomic, getter=isShadowHighlighted) _Bool shadowHighlighted;
 - (void)_updateLighteningAlpha;
 - (void)_updateWallpaperOverlayAlpha;
 - (void)_updateDimmingViewAlpha;
-@property(nonatomic, getter=isHighlighted) _Bool highlighted;
 @property(nonatomic) double contentAlpha;
 @property(nonatomic) double overlayAlpha;
 - (void)setOverlay:(id)arg1 animated:(_Bool)arg2;

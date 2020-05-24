@@ -393,6 +393,7 @@
 - (BOOL)isSessionSelectViewVisible;
 - (BOOL)isConnectionWindowVisible;
 - (void)showAuthenticationViewForHostName:(id)arg1 canConnectAsGuest:(BOOL)arg2 vnc:(BOOL)arg3;
+- (void)reshowConnectionAuthenticationWindow:(BOOL)arg1;
 - (void)reshowConnectionAuthenticationWindow;
 - (BOOL)isConnectionAddressViewVisible;
 - (void)showConnectionAddressWindowWithURLString:(id)arg1;
@@ -596,6 +597,7 @@
 - (id)loadCredentialsFromKeychain:(id)arg1 forAuthType:(id)arg2;
 - (int)removeCredentialsFromKeychainWithAuthType:(id)arg1 accountName:(id)arg2;
 - (struct __SecKeychainItem *)findCredentialInKeychainForAuthType:(id)arg1 inRequestedAccountName:(id)arg2 outAccountName:(id *)arg3;
+- (id)convertKeychainArrayToDictionaries:(id)arg1;
 - (id)standardizedKeychainIdentityWithPort:(id *)arg1;
 - (id)standardizedUserInputString:(id)arg1 port:(id *)arg2;
 - (void)ssSession:(id)arg1 wantsCredentialsForAuthenticationTypes:(id)arg2;

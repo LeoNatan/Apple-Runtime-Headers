@@ -93,6 +93,7 @@
 - (void)_clearDidStartRecordingDelegateWatchDog;
 - (void)_schduleDidStartRecordingDelegateWatchDogWithToken:(id)arg1;
 - (void)_scheduleDidStartRecordingDelegateWatchDog;
+- (void)_holdRecordingExceptionIfNeeded:(BOOL)arg1;
 - (void)_releaseRecordingTransactionIfNeeded;
 - (void)_holdRecordingTransactionIfNeeded;
 - (id)_streamStateName:(unsigned long long)arg1;
@@ -178,6 +179,7 @@
 - (BOOL)setCurrentContext:(id)arg1 error:(id *)arg2;
 - (void)setAudioProviderDelegate:(id)arg1;
 - (void)start;
+- (void)dealloc;
 - (id)initWithAudioStreamHandleId:(unsigned long long)arg1 audioRecorder:(id)arg2;
 
 // Remaining properties

@@ -89,6 +89,8 @@
 - (id)platterViewController:(id)arg1 presentingViewForPresentedViewController:(id)arg2;
 - (void)platterViewController:(id)arg1 willToggleRoutingPicker:(_Bool)arg2;
 - (void)platterViewController:(id)arg1 didToggleRoutingPicker:(_Bool)arg2;
+- (_Bool)shouldExpandModuleOnTouch:(id)arg1;
+@property(readonly, nonatomic) _Bool shouldPerformHoverInteraction;
 - (void)dismissPresentedContentAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)canDismissPresentedContent;
 @property(readonly, nonatomic) _Bool providesOwnPlatter;

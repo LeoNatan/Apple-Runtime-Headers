@@ -92,7 +92,8 @@ __attribute__((visibility("hidden")))
 - (id)createDomainServicerForProviderDomainID:(id)arg1 enumerateEntitlementRequired:(BOOL)arg2 error:(id *)arg3;
 - (id)providerForIdentifier:(id)arg1 enumerateEntitlementRequired:(BOOL)arg2 error:(id *)arg3;
 - (id)providersForCurrentConnection;
-- (id)defaultProviderForCurrentConnection;
+- (void)_forceRegistrationForContainingBundle:(id)arg1;
+- (id)defaultProviderForCurrentConnection:(id *)arg1;
 - (BOOL)clientHasSandboxAccessToFile:(id)arg1;
 - (BOOL)_isNonSandboxedConnection;
 - (void)invalidate;

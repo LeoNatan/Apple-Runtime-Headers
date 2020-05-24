@@ -10,11 +10,12 @@
 {
 }
 
+- (struct CGRect)accessibilityFrameForMark:(id)arg1 layer:(id)arg2;
 - (id)updateMark:(id)arg1;
 - (id)enterMark:(id)arg1;
 - (id)drawMark:(id)arg1 withLayer:(id)arg2;
 - (struct CATransform3D)transformForMark:(id)arg1;
-- (struct CGPath *)pathForMark:(id)arg1;
+- (struct CGPath *)newPathForMark:(id)arg1;
 
 @end
 

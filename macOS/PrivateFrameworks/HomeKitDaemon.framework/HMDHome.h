@@ -607,7 +607,6 @@
 - (void)_removeAccessoryWithUUID:(id)arg1 message:(id)arg2;
 - (void)_removeAccessory:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)removeAccessory:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_removeReachableAccessory:(id)arg1 hapAccessory:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_removeAccessoriesForPrimaryAccessory:(id)arg1 error:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_sendRemoveCompletionStatusForHMDAccessories:(id)arg1 withCompletion:(CDUnknownBlockType)arg2 error:(id)arg3;
 - (void)_notifyClientOfNewlyAddedAccessories:(id)arg1 requestMessage:(id)arg2;

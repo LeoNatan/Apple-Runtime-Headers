@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (void)itemCreated:(id)arg1;
 - (id)orderedDisplayItemPlacementsInRegionWithIdentifier:(id)arg1;
 - (id)setupInContainerView:(id)arg1;
+@property(readonly, nonatomic) _Bool supportsIndirectPointerTouchActions;
 
 // Remaining properties
 @property(readonly, nonatomic) _Bool canFixupDisplayItemAttributes;

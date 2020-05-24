@@ -7,12 +7,16 @@
 #import <ChatKit/UITableViewDelegate-Protocol.h>
 #import <ChatKit/UITableViewFocusDelegateLegacy-Protocol.h>
 
-@class NSArray, NSIndexPath, NSString, UIColor, UITableView, UITableViewCell, UIView, _UITableViewCellActionButton;
+@class NSArray, NSIndexPath, NSString, UIColor, UITableView, UITableViewCell, UIView, _UICursorRegion, _UICursorStyle, _UITableViewCellActionButton;
 @protocol UIContextMenuInteractionCommitAnimating, UISpringLoadedInteractionContext;
 
 @protocol UITableViewDelegatePrivate <UITableViewDelegate, UITableViewFocusDelegateLegacy>
 
 @optional
+- (void)_tableView:(UITableView *)arg1 cursorWillExitRowAtIndexPath:(NSIndexPath *)arg2;
+- (void)_tableView:(UITableView *)arg1 cursorWillEnterRowAtIndexPath:(NSIndexPath *)arg2;
+- (_UICursorStyle *)_tableView:(UITableView *)arg1 cursorStyleForModifiers:(long long)arg2 atIndexPath:(NSIndexPath *)arg3;
+- (_UICursorRegion *)_tableView:(UITableView *)arg1 cursorRegionForRowAtIndexPath:(NSIndexPath *)arg2 defaultRegion:(_UICursorRegion *)arg3;
 - (void)tableView:(UITableView *)arg1 willCommitMenuWithAnimator:(id <UIContextMenuInteractionCommitAnimating>)arg2;
 - (void)tableView:(UITableView *)arg1 didEndSwipingRowAtIndexPath:(NSIndexPath *)arg2;
 - (void)tableView:(UITableView *)arg1 willBeginSwipingRowAtIndexPath:(NSIndexPath *)arg2;

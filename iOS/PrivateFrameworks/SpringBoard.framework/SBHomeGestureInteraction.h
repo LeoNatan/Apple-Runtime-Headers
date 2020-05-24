@@ -10,7 +10,7 @@
 #import <SpringBoard/SBTouchTemplateGestureRecognizerDelegate-Protocol.h>
 #import <SpringBoard/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSSet, NSString, SBHomeGesturePanGestureRecognizer, UIGestureRecognizer;
+@class NSSet, NSString, SBFluidScrunchGestureRecognizer, SBHomeGesturePanGestureRecognizer, SBIndirectPanGestureRecognizer, UIGestureRecognizer;
 @protocol SBHomeGestureInteractionDelegate;
 
 @interface SBHomeGestureInteraction : NSObject <UIGestureRecognizerDelegate, SBSystemGestureRecognizerDelegate, SBTouchTemplateGestureRecognizerDelegate>
@@ -18,11 +18,15 @@
     _Bool _enabled;
     long long _recognizedGestureType;
     SBHomeGesturePanGestureRecognizer *_screenEdgePanGestureRecognizer;
+    SBIndirectPanGestureRecognizer *_indirectPanGestureRecognizer;
+    SBFluidScrunchGestureRecognizer *_scrunchGestureRecognizer;
     id <SBHomeGestureInteractionDelegate> _delegate;
 }
 
 - (void).cxx_destruct;
 @property(nonatomic) __weak id <SBHomeGestureInteractionDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) SBFluidScrunchGestureRecognizer *scrunchGestureRecognizer; // @synthesize scrunchGestureRecognizer=_scrunchGestureRecognizer;
+@property(retain, nonatomic) SBIndirectPanGestureRecognizer *indirectPanGestureRecognizer; // @synthesize indirectPanGestureRecognizer=_indirectPanGestureRecognizer;
 @property(retain, nonatomic) SBHomeGesturePanGestureRecognizer *screenEdgePanGestureRecognizer; // @synthesize screenEdgePanGestureRecognizer=_screenEdgePanGestureRecognizer;
 @property(nonatomic) long long recognizedGestureType; // @synthesize recognizedGestureType=_recognizedGestureType;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
@@ -41,6 +45,8 @@
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)viewForSystemGestureRecognizer:(id)arg1;
 - (void)_handleGestureRecognizer:(id)arg1;
+- (void)_configureScrunchGestureRecognizer;
+- (void)_configureIndirectPanGestureRecognizer;
 - (void)_configureScreenEdgePanGestureRecognizer;
 - (void)_configureGestureRecognizers;
 - (void)dealloc;

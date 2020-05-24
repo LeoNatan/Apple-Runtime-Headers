@@ -189,6 +189,7 @@
 - (void)logEventForwardDisplay;
 - (unsigned long long)getBacklightEnabledTimestamp:(unsigned int)arg1;
 - (void)logEventForwardALSLux:(unsigned long long)arg1;
+- (void)logEventPointKeyboardBrightness:(double)arg1 withDate:(id)arg2;
 - (void)logEventPointKeyboardBrightness:(double)arg1;
 - (void)logEventPointUserBrightnessCommitted:(double)arg1;
 - (void)logEventPointDisplayForBlock:(id)arg1 isActive:(BOOL)arg2;

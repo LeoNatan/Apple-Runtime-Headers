@@ -14,15 +14,15 @@ __attribute__((visibility("hidden")))
     int _fd;
     NSString *_path;
     unsigned long long _fileID;
-    unsigned int _genCount;
+    unsigned long long _genCount;
 }
 
 - (void).cxx_destruct;
 - (id)description;
-- (BOOL)verifyTreeIdentityWithError:(id *)arg1;
+- (id)verifyTreeIdentityWithError:(id *)arg1;
 - (void)dealloc;
 - (id)initAtPath:(id)arg1 error:(id *)arg2;
-- (unsigned int)retrieveDirstatGenCountWithError:(id *)arg1;
+- (unsigned long long)retrieveDirstatGenCountWithError:(id *)arg1;
 - (BOOL)maintainDirstatWithError:(id *)arg1;
 - (unsigned long long)retrieveFileIDWithError:(id *)arg1;
 

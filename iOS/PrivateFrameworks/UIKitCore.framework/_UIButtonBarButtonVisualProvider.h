@@ -15,6 +15,16 @@
     _UIButtonBarButton *_button;
 }
 
+- (void)pointerWillExit:(id)arg1;
+- (void)pointerWillEnter:(id)arg1;
+- (void)cursorWillExit:(id)arg1;
+- (void)cursorWillEnter:(id)arg1;
+- (_Bool)shouldLift;
+- (id)matchingPointerShapeForView:(id)arg1 rect:(struct CGRect)arg2 inContainer:(id)arg3;
+- (id)pointerShapeInContainer:(id)arg1;
+- (id)contentCursorInContainer:(id)arg1;
+- (id)pointerPreviewParameters;
+- (_Bool)useLocalPointerInteraction;
 - (void)resetButtonHasHighlighted;
 - (struct UIEdgeInsets)buttonAlignmentRectInsets:(id)arg1;
 - (struct CGSize)buttonIntrinsicContentSize:(id)arg1;

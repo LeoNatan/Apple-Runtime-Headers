@@ -7,5 +7,6 @@
 #import <UIKit/UIButton.h>
 
 @interface UIButton (SBUIAdditions)
+- (void)sbui_removeCursorInteraction;
 @end
 

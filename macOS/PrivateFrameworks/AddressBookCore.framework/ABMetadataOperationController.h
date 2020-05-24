@@ -25,6 +25,7 @@
 }
 
 + (BOOL)currentProcessIsWhitelistedForMetadataValidation;
++ (_Bool)waitForOperations:(id)arg1 toFinishWithTimeout:(double)arg2;
 + (BOOL)waitUntilAllOperationsAreFinishedWithTimeout:(double)arg1;
 + (void)waitUntilAllOperationsAreFinished;
 + (void)cancelAllOperations;

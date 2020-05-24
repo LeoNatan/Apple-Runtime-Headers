@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSURL, PKAppletSubcredential, PKAppletSubcredentialEncryptedRequest;
+@class NSData, NSURL, PKAppletSubcredential, PKAppletSubcredentialEncryptedRequest, PKAppletSubcredentialSharingInvitation;
 @protocol OS_dispatch_queue;
 
 @interface PKSubcredentialProvisioningOperationContext : NSObject
@@ -16,9 +16,11 @@
     PKAppletSubcredential *_addedCredential;
     PKAppletSubcredentialEncryptedRequest *_registrationData;
     NSData *_trackingAttestation;
+    PKAppletSubcredentialSharingInvitation *_sentInvitation;
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKAppletSubcredentialSharingInvitation *sentInvitation; // @synthesize sentInvitation=_sentInvitation;
 @property(retain, nonatomic) NSData *trackingAttestation; // @synthesize trackingAttestation=_trackingAttestation;
 @property(retain, nonatomic) PKAppletSubcredentialEncryptedRequest *registrationData; // @synthesize registrationData=_registrationData;
 @property(retain, nonatomic) PKAppletSubcredential *addedCredential; // @synthesize addedCredential=_addedCredential;

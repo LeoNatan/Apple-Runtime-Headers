@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool isActive;
 - (void)finish;
 - (void)start;
+@property(readonly, nonatomic) NSDictionary *stitchedItemsByParentID;
 @property(readonly, nonatomic) NSDictionary *stitchedFieldsAndItemsByItemIDs;
 @property(readonly, nonatomic) NSArray *placeholderReplacementsIDs;
 @property(readonly, nonatomic) NSArray *placeholderItems;

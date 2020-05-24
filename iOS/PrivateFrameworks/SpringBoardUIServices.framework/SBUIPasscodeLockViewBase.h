@@ -124,6 +124,7 @@
 - (void)_clearBrightnessChangeTimer;
 - (_Bool)_proudLockShowingBiometricStates;
 - (void)_noteScreenBrightnessDidChange;
+- (void)_noteBottomFaceHasBeenOccluded;
 - (void)_playAuthenticationFeedbackForSuccess:(_Bool)arg1 jiggleLock:(_Bool)arg2;
 - (void)_noteDeviceHasBeenUnlockedOnceSinceBoot:(_Bool)arg1;
 - (void)_resetForFailedPasscode:(_Bool)arg1;

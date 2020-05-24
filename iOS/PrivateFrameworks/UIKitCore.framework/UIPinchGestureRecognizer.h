@@ -39,6 +39,9 @@
 - (void)_endOrFail;
 - (void)_cancelOrFail;
 - (void)_applyScale:(double)arg1 atLocation:(struct CGPoint)arg2 touchDistance:(double)arg3 withEvent:(id)arg4;
+- (struct CGPoint)locationInView:(id)arg1;
+- (void)_transformChangedWithEvent:(id)arg1;
+- (_Bool)_shouldReceiveTransformEvent:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

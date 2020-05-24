@@ -15,12 +15,11 @@
 #import <ManagedConfigurationUI/MCUISignInViewControllerDelegate-Protocol.h>
 #import <ManagedConfigurationUI/PSStateRestoration-Protocol.h>
 #import <ManagedConfigurationUI/UIAdaptivePresentationControllerDelegate-Protocol.h>
-#import <ManagedConfigurationUI/UIAlertViewDelegate-Protocol.h>
 
 @class MCInstallProfileQuestionViewController, MCProfile, MCProfileViewController, NSArray, NSData, NSSManager, NSString, UIAlertController;
 @protocol MCInstallProfileDelegate;
 
-@interface MCInstallProfileViewController : UIViewController <MCUISignInViewControllerDelegate, UIAdaptivePresentationControllerDelegate, MCInstallationConsentDelegate, MCInstallationWarningDelegate, MCProfileQuestionsControllerDelegate, PSStateRestoration, UIAlertViewDelegate, DevicePINControllerDelegate, MCProfileViewControllerDelegate, MCInteractionDelegate>
+@interface MCInstallProfileViewController : UIViewController <MCUISignInViewControllerDelegate, UIAdaptivePresentationControllerDelegate, MCInstallationConsentDelegate, MCInstallationWarningDelegate, MCProfileQuestionsControllerDelegate, PSStateRestoration, DevicePINControllerDelegate, MCProfileViewControllerDelegate, MCInteractionDelegate>
 {
     MCInstallProfileQuestionViewController *_questionsController;
     CDUnknownBlockType _didAppearBlock;

@@ -34,7 +34,7 @@
 - (void)paymentAuthorizationCoordinator:(id)arg1 didAuthorizePayment:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)paymentAuthorizationCoordinatorDidFinish:(id)arg1;
 - (void)subcredentialProvisioningController:(id)arg1 didFinishWithPass:(id)arg2;
-- (void)subcredentialProvisioningController:(id)arg1 didFinishWithError:(id)arg2;
+- (void)subcredentialProvisioningController:(id)arg1 didFinishWithError:(id)arg2 inState:(long long)arg3;
 - (void)subcredentialProvisioningConfiguration:(id)arg1 requestUserAuthWithCompletion:(CDUnknownBlockType)arg2;
 - (void)explanationViewDidSelectSetupLater:(id)arg1;
 - (void)explanationViewDidSelectContinue:(id)arg1;

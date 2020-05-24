@@ -41,6 +41,7 @@
 - (void)_setUserIntentRequired:(_Bool)arg1;
 @property(readonly, nonatomic, getter=isPassAuthorized) _Bool passAuthorized;
 - (void)invalidate;
+- (void)coachingStateDidChange;
 - (void)didBecomeHiddenAnimated:(_Bool)arg1;
 - (void)willBecomeHiddenAnimated:(_Bool)arg1;
 - (void)didBecomeVisibleAnimated:(_Bool)arg1;

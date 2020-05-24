@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: paywallView
     // Error parsing type: , name: imageCache
     // Error parsing type: , name: assetManager
+    // Error parsing type: , name: applicationStateManager
     // Error parsing type: , name: isBeingUsedAsPlugin
     // Error parsing type: , name: pluggableDelegate
     // Error parsing type: , name: purchasingSpinnerViewControllerFactory

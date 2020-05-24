@@ -46,6 +46,7 @@
 - (id)logIdentifier;
 - (_Bool)shouldLogPrivateInformation;
 - (id)shutdown;
+- (id)removeOrphanedModelsOfTypes:(id)arg1 options:(id)arg2;
 - (id)removeAllModelsOfTypes:(id)arg1 options:(id)arg2;
 - (id)removeModelsAndChildModelsWithIDs:(id)arg1 options:(id)arg2;
 - (id)remove:(id)arg1 options:(id)arg2;
@@ -91,6 +92,7 @@
 - (id)fetchItemsInBlock:(id)arg1 error:(id *)arg2;
 - (id)fetchReadyBlocksWithType:(unsigned long long)arg1 error:(id *)arg2;
 - (unsigned long long)insertBlockToRemoveAllModelsAndChildModelsWithType:(unsigned long long)arg1 modelIDs:(id)arg2 options:(id)arg3 error:(id *)arg4;
+- (unsigned long long)insertBlockToRemoveOrphanedModelsWithType:(unsigned long long)arg1 modelTypes:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (unsigned long long)insertBlockToRemoveAllModelsWithType:(unsigned long long)arg1 modelTypes:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (unsigned long long)insertBlockWithType:(unsigned long long)arg1 options:(id)arg2 items:(id)arg3 error:(id *)arg4;
 - (id)createInputBlockWithType:(unsigned long long)arg1 error:(id *)arg2;

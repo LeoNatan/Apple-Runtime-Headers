@@ -88,6 +88,7 @@
 @property(readonly, nonatomic) BOOL corryBarHideDiscoverMoreInterstitialForNonOnboardedUsers;
 @property(readonly, nonatomic) long long corryBarMaxArticleCountForSingleArticle;
 @property(readonly, nonatomic) long long corryBarMaxArticleCountForArticleList;
+@property(readonly, nonatomic) long long articleReadCountThreshold;
 @property(readonly, nonatomic) NSString *translationMapResourceID;
 @property(readonly, nonatomic) NSString *localAreasMappingResourceId;
 @property(readonly, nonatomic) NSString *personalizationFavorabilityResourceId;
@@ -120,6 +121,7 @@
 @property(readonly, nonatomic) long long autoScrollToTopFeedTimeout;
 @property(readonly, nonatomic) NSArray *onboardingFeedIDs;
 @property(readonly, nonatomic) BOOL isExpired;
+@property(readonly, nonatomic) BOOL enableCacheFallbackForArticleRecirculation;
 @property(readonly, nonatomic) long long entitlementsCacheRecoveryAttemptDurationInSeconds;
 @property(readonly, nonatomic) long long subscriptionsGracePeriodForTokenVerificationSeconds;
 @property(readonly, nonatomic) long long subscriptionsPlacardGlobalMaximumPerDay;

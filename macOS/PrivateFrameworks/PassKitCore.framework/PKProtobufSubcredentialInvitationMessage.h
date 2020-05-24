@@ -13,15 +13,17 @@
 @interface PKProtobufSubcredentialInvitationMessage : PBCodable <NSCopying>
 {
     NSString *_dataString;
-    NSString *_invitation;
+    NSString *_phoneInvitation;
     int _status;
     unsigned int _version;
+    NSString *_watchInvitation;
     CDStruct_47fe53f2 _has;
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *watchInvitation; // @synthesize watchInvitation=_watchInvitation;
 @property(retain, nonatomic) NSString *dataString; // @synthesize dataString=_dataString;
-@property(retain, nonatomic) NSString *invitation; // @synthesize invitation=_invitation;
+@property(retain, nonatomic) NSString *phoneInvitation; // @synthesize phoneInvitation=_phoneInvitation;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -32,12 +34,13 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasWatchInvitation;
 @property(readonly, nonatomic) BOOL hasDataString;
 - (int)StringAsStatus:(id)arg1;
 - (id)statusAsString:(int)arg1;
 @property(nonatomic) BOOL hasStatus;
 @property(nonatomic) int status; // @synthesize status=_status;
-@property(readonly, nonatomic) BOOL hasInvitation;
+@property(readonly, nonatomic) BOOL hasPhoneInvitation;
 
 @end
 

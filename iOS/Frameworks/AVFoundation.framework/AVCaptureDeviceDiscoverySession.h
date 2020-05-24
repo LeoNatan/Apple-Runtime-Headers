@@ -22,6 +22,8 @@
 + (id)allVirtualDeviceTypes;
 + (id)allAudioDevices;
 + (id)allAudioDeviceTypes;
++ (id)allPointCloudDevices;
++ (id)allPointCloudDeviceTypes;
 + (id)allVideoDevices;
 + (id)allVideoDeviceTypes;
 + (id)allDevices;

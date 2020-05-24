@@ -26,6 +26,12 @@
 
 + (id)tritiumColor;
 + (id)paletteForColor:(unsigned int)arg1;
++ (id)blancSecondHandColor;
++ (id)blancDialTextColor;
++ (id)zeusBlancColor;
++ (id)noirDualToneHandInlayTextColor;
++ (id)noirDualToneBackgroundColor;
++ (id)noirDualToneSplitColor;
 + (id)noirSecondHandColor;
 + (id)noirHandStrokeColor;
 + (id)noirColor;

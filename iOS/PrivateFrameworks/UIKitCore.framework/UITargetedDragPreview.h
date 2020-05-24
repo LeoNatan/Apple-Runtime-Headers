@@ -31,7 +31,6 @@
 - (id)retargetedPreviewWithTarget:(id)arg1;
 - (void)takeLiftAnchorPoint:(struct CGPoint)arg1 fromView:(id)arg2;
 - (id)imageComponent;
-@property(readonly, nonatomic) CDUnknownBlockType _duiPreviewProvider;
 @property(readonly, nonatomic) _DUIPreview *_duiPreview;
 @property(readonly, nonatomic) id <_UIDragPreviewProvider> _dragPreviewProvider;
 - (id)initWithView:(id)arg1 parameters:(id)arg2 target:(id)arg3;

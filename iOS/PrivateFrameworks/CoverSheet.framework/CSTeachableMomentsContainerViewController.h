@@ -9,7 +9,7 @@
 #import <CoverSheet/CAAnimationDelegate-Protocol.h>
 #import <CoverSheet/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CSHomeAffordanceViewController, CSTeachableMomentsContainerView, NSMutableDictionary, NSString, NSTimer;
+@class CSHomeAffordanceViewController, CSTeachableMomentsContainerView, NSMutableDictionary, NSString, NSTimer, UITapGestureRecognizer;
 @protocol SBDashBoardHomeAffordanceAnimationViewProviding, SBUIBiometricResource;
 
 @interface CSTeachableMomentsContainerViewController : CSCoverSheetViewControllerBase <CAAnimationDelegate, UIGestureRecognizerDelegate>
@@ -23,11 +23,13 @@
     id <SBUIBiometricResource> _biometricResource;
     NSTimer *_fireOffAnimationTimer;
     NSMutableDictionary *_cachedLegibilityLabels;
+    UITapGestureRecognizer *_homeAffordanceClickGestureRecognizer;
 }
 
 + (id)_animationKeyForKeyPath:(id)arg1 iteration:(unsigned long long)arg2 reset:(_Bool)arg3;
 + (void)_addRepeatedAnimationWithProvider:(CDUnknownBlockType)arg1 toLayer:(id)arg2;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UITapGestureRecognizer *homeAffordanceClickGestureRecognizer; // @synthesize homeAffordanceClickGestureRecognizer=_homeAffordanceClickGestureRecognizer;
 @property(nonatomic) _Bool controlCenterCoachingIsHidden; // @synthesize controlCenterCoachingIsHidden=_controlCenterCoachingIsHidden;
 @property(retain, nonatomic) NSMutableDictionary *cachedLegibilityLabels; // @synthesize cachedLegibilityLabels=_cachedLegibilityLabels;
 @property(nonatomic) _Bool updateTextLabelOnNextAnimation; // @synthesize updateTextLabelOnNextAnimation=_updateTextLabelOnNextAnimation;
@@ -67,6 +69,8 @@
 - (void)_setupTimerWithDelay:(double)arg1;
 - (void)_setupTimer;
 - (void)_setControlCenterTutorsHidden:(_Bool)arg1;
+- (void)_homeAffordanceClickRecognized:(id)arg1;
+- (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 @property(readonly, nonatomic) CSTeachableMomentsContainerView *teachableMomentsContainerView;
 - (void)_updateLegibilitySettings;
 - (_Bool)handleEvent:(id)arg1;

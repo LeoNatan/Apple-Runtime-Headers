@@ -8,16 +8,15 @@
 
 @interface _TtCO8VideosUI15ImageDescriptorP33_5F44B378E4B755AED772E9F34358B5225Image : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: fallbackImage
-    // Error parsing type: , name: $__lazy_storage_$_layoutDictionary
-    // Error parsing type: , name: isTemplated
+    // Error parsing type: , name: src
+    // Error parsing type: , name: darkSrc
     // Error parsing type: , name: isResource
-    // Error parsing type: , name: $__lazy_storage_$_src
-    // Error parsing type: , name: $__lazy_storage_$_darkSrc
-    // Error parsing type: , name: $__lazy_storage_$_crop
-    // Error parsing type: , name: $__lazy_storage_$_format
-    // Error parsing type: , name: $__lazy_storage_$_placeHolderSrc
+    // Error parsing type: , name: isTemplated
+    // Error parsing type: , name: crop
+    // Error parsing type: , name: format
     // Error parsing type: , name: themeString
+    // Error parsing type: , name: placeHolderSrc
+    // Error parsing type: , name: layoutDictionary
 }
 
 @end

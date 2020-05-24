@@ -9,6 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface _TtCC8VideosUI17VerticalStackView10FooterView : UIView
 {
+    // Error parsing type: , name: viewModel
     // Error parsing type: , name: subviewElements
     // Error parsing type: , name: $__lazy_storage_$_viewLayout
 }

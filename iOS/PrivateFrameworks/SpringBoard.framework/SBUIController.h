@@ -100,6 +100,7 @@
 - (void)externalChargingAccessoriesChanged;
 - (void)ACPowerChanged;
 - (void)possiblyWakeForPowerStatusChangeWithUnlockSource:(int)arg1;
+- (void)setCursorInteractionsEnabled:(_Bool)arg1;
 - (_Bool)isConnectedToChargeIncapablePowerSource;
 @property(readonly, nonatomic, getter=isConnectedToExternalChargingSource) _Bool connectedToExternalChargingSource;
 @property(readonly, nonatomic, getter=isOnAC) _Bool onAC;
@@ -117,6 +118,7 @@
 - (_Bool)handleHomeButtonDoublePressDown;
 - (void)_backgroundContrastDidChange:(id)arg1;
 - (void)_reduceMotionStatusDidChange:(id)arg1;
+- (_Bool)handleHomeButtonSinglePressUpWithSourceType:(unsigned long long)arg1;
 - (_Bool)handleHomeButtonSinglePressUp;
 - (_Bool)disableAppSwitchForcePressDueToHomeButtonForce;
 - (_Bool)dissmissAlertItemsAndSheetsIfPossible;

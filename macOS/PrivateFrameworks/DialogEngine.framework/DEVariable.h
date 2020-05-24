@@ -18,8 +18,8 @@
 @property shared_ptr_695b9c0c This; // @synthesize This=_This;
 - (id)toString:(int)arg1;
 - (BOOL)isEmpty;
-@property NSString *type;
-@property NSString *name;
+@property(retain) NSString *type;
+@property(retain) NSString *name;
 - (shared_ptr_695b9c0c *)getSharedPtr;
 - (id)initWithSharedPtr:(shared_ptr_695b9c0c *)arg1;
 - (id)init;

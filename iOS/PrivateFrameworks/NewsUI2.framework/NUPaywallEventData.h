@@ -13,11 +13,13 @@
     // Error parsing type: , name: channel
     // Error parsing type: , name: feedData
     // Error parsing type: , name: groupData
+    // Error parsing type: , name: referral
+    // Error parsing type: , name: qToken
 }
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)initWithPaywallViewData:(id)arg1 headline:(id)arg2 channel:(id)arg3 feed:(id)arg4 paywallGroupData:(id)arg5;
+- (id)initWithPaywallViewData:(id)arg1 headline:(id)arg2 channel:(id)arg3 feed:(id)arg4 paywallGroupData:(id)arg5 referral:(id)arg6 qToken:(id)arg7;
 
 @end
 

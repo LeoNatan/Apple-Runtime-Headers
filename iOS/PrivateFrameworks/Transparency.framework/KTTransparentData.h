@@ -24,6 +24,7 @@
 @property(retain) NSData *uriVRFOutput; // @synthesize uriVRFOutput=_uriVRFOutput;
 @property(retain) NSData *inclusionProof; // @synthesize inclusionProof=_inclusionProof;
 @property(retain) NSMutableArray *accounts; // @synthesize accounts=_accounts;
+- (id)earliestAddedDate:(id)arg1;
 - (_Bool)validateAndUpdateWithServerLoggableDatas:(id)arg1 accountId:(id)arg2 error:(id *)arg3;
 - (_Bool)validateActiveClientDatasForAccountId:(id)arg1 error:(id *)arg2;
 - (_Bool)validateOtherAccountIDsInactiveForAccountId:(id)arg1 error:(id *)arg2;

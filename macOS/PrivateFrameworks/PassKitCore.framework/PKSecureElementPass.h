@@ -30,6 +30,8 @@
     NSString *_sanitizedPrimaryAccountNumber;
     NSString *_associatedAccountServiceAccountIdentifier;
     NSString *_issuerCountryCode;
+    NSString *_topLeftBackgroundTitle;
+    NSString *_topRightBackgroundTitle;
     NSSet *_paymentApplications;
     NSSet *_devicePaymentApplications;
     PKPaymentApplication *_devicePrimaryPaymentApplication;
@@ -74,6 +76,8 @@
 @property(retain, nonatomic) PKPaymentApplication *devicePrimaryPaymentApplication; // @synthesize devicePrimaryPaymentApplication=_devicePrimaryPaymentApplication;
 @property(copy, nonatomic) NSSet *devicePaymentApplications; // @synthesize devicePaymentApplications=_devicePaymentApplications;
 @property(copy, nonatomic) NSSet *paymentApplications; // @synthesize paymentApplications=_paymentApplications;
+@property(copy, nonatomic) NSString *topRightBackgroundTitle; // @synthesize topRightBackgroundTitle=_topRightBackgroundTitle;
+@property(copy, nonatomic) NSString *topLeftBackgroundTitle; // @synthesize topLeftBackgroundTitle=_topLeftBackgroundTitle;
 @property(nonatomic, getter=isPaymentOptionSelectable) BOOL paymentOptionSelectable; // @synthesize paymentOptionSelectable=_paymentOptionSelectable;
 @property(nonatomic) BOOL supportsSerialNumberBasedProvisioning; // @synthesize supportsSerialNumberBasedProvisioning=_supportsSerialNumberBasedProvisioning;
 @property(copy, nonatomic) NSString *issuerCountryCode; // @synthesize issuerCountryCode=_issuerCountryCode;
@@ -124,6 +128,8 @@
 - (BOOL)hasCredentials;
 - (BOOL)hasImmediateAutomaticSelectionCriterion;
 - (BOOL)isOctopusPass;
+- (BOOL)needsHardcodedReminderOptions;
+- (BOOL)isChinaTransitCredential;
 - (BOOL)isSuicaPass;
 - (BOOL)isTransitPass;
 - (BOOL)isAccessPass;

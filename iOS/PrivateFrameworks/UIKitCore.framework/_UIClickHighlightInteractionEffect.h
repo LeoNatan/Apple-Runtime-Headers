@@ -18,18 +18,20 @@ __attribute__((visibility("hidden")))
     _Bool _isActive;
     UITargetedPreview *_targetedPreview;
     _UIAnchoredClickHighlightPlatterView *_highlightPlatter;
+    UITargetedPreview *_continuationPreview;
     CDUnknownBlockType _completionBlock;
 }
 
 - (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
+@property(retain, nonatomic) UITargetedPreview *continuationPreview; // @synthesize continuationPreview=_continuationPreview;
 @property(retain, nonatomic) _UIAnchoredClickHighlightPlatterView *highlightPlatter; // @synthesize highlightPlatter=_highlightPlatter;
 @property(retain, nonatomic) UITargetedPreview *targetedPreview; // @synthesize targetedPreview=_targetedPreview;
 - (void)_completeHighlightEffect;
 - (void)_createHighlightPlatter;
 - (void)interaction:(id)arg1 didChangeWithContext:(id)arg2;
 @property(readonly, nonatomic) UITargetedPreview *targetedPreviewForEffectContinuation;
-- (id)initWithTargetedPreview:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)initWithTargetedPreview:(id)arg1 continuingFromPreview:(id)arg2 completion:(CDUnknownBlockType)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

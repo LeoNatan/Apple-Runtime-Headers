@@ -14,7 +14,7 @@
 - (id)enterMultiMark:(id)arg1;
 - (id)drawMark:(id)arg1 withLayer:(id)arg2;
 - (struct CATransform3D)transformForMark:(id)arg1;
-- (struct CGPath *)pathForMark:(id)arg1;
+- (struct CGPath *)newPathForMark:(id)arg1;
 - (_Bool)isMultiItemMark;
 
 @end

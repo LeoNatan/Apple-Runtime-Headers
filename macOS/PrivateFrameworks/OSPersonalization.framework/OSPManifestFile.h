@@ -10,6 +10,7 @@
 {
 }
 
++ (id)globalSignedManifestPathForFile:(id)arg1 device:(id)arg2 variant:(id)arg3;
 + (id)globalSignedManifestPathForFile:(id)arg1 device:(id)arg2;
 + (id)personalizedManifestPathForFile:(id)arg1 device:(id)arg2;
 

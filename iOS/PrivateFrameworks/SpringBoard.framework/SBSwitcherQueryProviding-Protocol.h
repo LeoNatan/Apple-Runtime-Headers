@@ -57,6 +57,7 @@
 - (double)reopenClosedWindowsButtonAlpha;
 - (double)plusButtonAlpha;
 - (NSString *)appExposeAccessoryButtonsBundleIdentifier;
+- (_Bool)wantsHomeScreenCursorInteractions;
 - (_Bool)isHomeScreenContentRequired;
 - (long long)wallpaperStyle;
 - (_Bool)isWallpaperRequiredForSwitcher;
@@ -65,6 +66,7 @@
 - (_Bool)isContainerStatusBarVisible;
 - (_Bool)shouldRubberbandHomeGrabberView;
 - (_Bool)isHomeGrabberVisible;
+- (_Bool)isItemContainerCursorInteractionEnabled;
 - (_Bool)isTetheredScrollingEnabled;
 - (_Bool)isScrollEnabled;
 - (_Bool)itemContainersAllowContentViewTouches;

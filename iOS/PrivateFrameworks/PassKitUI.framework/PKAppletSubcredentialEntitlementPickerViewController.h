@@ -6,24 +6,37 @@
 
 #import <PassKitUI/PKPaymentSetupTableViewController.h>
 
-@class NSArray, PKAppletSubcredentialSharingRequest, PKPaymentPass;
+#import <PassKitUI/PKSubcredentialMessageComposeViewControllerDelegate-Protocol.h>
 
-@interface PKAppletSubcredentialEntitlementPickerViewController : PKPaymentSetupTableViewController
+@class NSArray, NSString, PKAppletSubcredentialSharingRequest, PKPaymentPass, PKSharedCredentialsGroupController, PKSubcredentialMessageComposeViewController;
+
+@interface PKAppletSubcredentialEntitlementPickerViewController : PKPaymentSetupTableViewController <PKSubcredentialMessageComposeViewControllerDelegate>
 {
     PKPaymentPass *_pass;
+    PKSharedCredentialsGroupController *_groupController;
     PKAppletSubcredentialSharingRequest *_sharingRequest;
     NSArray *_supportedEntitlements;
     long long _selectedEntitlementIndex;
+    _Bool _isSharing;
+    PKSubcredentialMessageComposeViewController *_messageComposeViewController;
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKSubcredentialMessageComposeViewController *messageComposeViewController; // @synthesize messageComposeViewController=_messageComposeViewController;
+- (void)messageComposeViewControllerDidFinishWithResult:(_Bool)arg1;
 - (void)handleSharedButton;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)viewDidLoad;
-- (id)initWithSharingRequest:(id)arg1;
+- (id)initWithSharedCredentialsGroupController:(id)arg1 sharingRequest:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

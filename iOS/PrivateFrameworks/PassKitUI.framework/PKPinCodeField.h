@@ -8,7 +8,7 @@
 
 #import <PassKitUI/UIKeyInput-Protocol.h>
 
-@class NSArray, NSCharacterSet, NSMutableString, NSString, UITextInputPasswordRules;
+@class NSArray, NSCharacterSet, NSMutableString, NSString, UILabel, UITextInputPasswordRules;
 @protocol PKPinCodeFieldDelegate;
 
 @interface PKPinCodeField : UIView <UIKeyInput>
@@ -19,12 +19,15 @@
     double _fontHeight;
     NSArray *_numberLabels;
     NSArray *_dashViews;
+    UILabel *_hyphenLabel;
     _Bool _keyboardOverrideEnabled;
+    _Bool _hyphenatePinCode;
     id <PKPinCodeFieldDelegate> _delegate;
 }
 
 - (void).cxx_destruct;
 @property(nonatomic) __weak id <PKPinCodeFieldDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) _Bool hyphenatePinCode; // @synthesize hyphenatePinCode=_hyphenatePinCode;
 @property(nonatomic) long long keyboardType;
 - (void)deleteBackward;
 - (void)insertText:(id)arg1;

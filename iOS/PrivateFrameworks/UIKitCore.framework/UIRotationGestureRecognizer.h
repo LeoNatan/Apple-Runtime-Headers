@@ -29,6 +29,9 @@
 - (void).cxx_destruct;
 - (void)_endOrFail;
 - (void)_cancelOrFail;
+- (struct CGPoint)locationInView:(id)arg1;
+- (void)_transformChangedWithEvent:(id)arg1;
+- (_Bool)_shouldReceiveTransformEvent:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

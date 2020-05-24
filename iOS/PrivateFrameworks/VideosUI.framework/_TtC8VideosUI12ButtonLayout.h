@@ -8,10 +8,8 @@
 
 @interface _TtC8VideosUI12ButtonLayout : _TtC8VideosUI10ViewLayout
 {
-    // Error parsing type: , name: buttonType
-    // Error parsing type: , name: buttonTitleStyle
-    // Error parsing type: , name: $__lazy_storage_$_imageLayout
-    // Error parsing type: , name: $__lazy_storage_$_textLayout
+    // Error parsing type: , name: $__lazy_storage_$_buttonType
+    // Error parsing type: , name: $__lazy_storage_$_buttonTitleStyle
     // Error parsing type: , name: $__lazy_storage_$_vuiButtonLayout
 }
 

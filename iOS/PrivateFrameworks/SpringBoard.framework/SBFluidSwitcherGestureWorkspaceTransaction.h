@@ -20,6 +20,8 @@
     _Bool _hasCompletedFirstCACommitSinceTransactionBeganForPPT;
     id <BSInvalidatable> _deferOrientationUpdatesAssertion;
     long long _numberOfAppLayoutsTraveledWithArcSwipe;
+    _Bool _isPointerTouch;
+    double _digitizerSurfaceHeightForLastGestureEvent;
     _Bool _shouldCancelGestureUponInterruption;
     _Bool _hasCompletedAtLeastOneGesture;
     SBFluidSwitcherViewController *_switcherViewController;

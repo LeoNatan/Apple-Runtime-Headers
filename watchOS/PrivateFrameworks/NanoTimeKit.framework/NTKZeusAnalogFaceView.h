@@ -16,6 +16,7 @@
     _Bool _isHandsVisibleInColorEditing;
     _Bool _isStatusBarIconShadowNeeded;
     NTKZeusColorPalette *_palette;
+    unsigned int _faceColor;
     UIView *_cornerView;
     struct CGRect _upperComplicationOverrideFrame;
     struct CGRect _lowerComplicationOverrideFrame;

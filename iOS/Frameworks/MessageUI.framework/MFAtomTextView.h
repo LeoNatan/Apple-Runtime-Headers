@@ -206,6 +206,7 @@
 @property(nonatomic) long long autocorrectionType; // @dynamic autocorrectionType;
 @property(readonly, nonatomic) UITextPosition *beginningOfDocument; // @dynamic beginningOfDocument;
 @property(nonatomic) _Bool contentsIsSingleValue;
+@property(readonly, nonatomic) long long cursorBehavior;
 @property(readonly, copy) NSString *debugDescription;
 @property(nonatomic) _Bool deferBecomingResponder;
 @property(readonly, copy) NSString *description;

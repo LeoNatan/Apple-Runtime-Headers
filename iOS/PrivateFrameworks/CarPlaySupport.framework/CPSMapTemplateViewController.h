@@ -193,7 +193,7 @@
 - (void)viewSafeAreaInsetsDidChange;
 - (id)_tripDidBegin:(id)arg1 withEstimates:(id)arg2 forIdentifier:(id)arg3;
 - (_Bool)canAnimateNavigationAlert;
-- (void)navigationAlertQueue:(id)arg1 shouldRemoveAlertView:(id)arg2 animated:(_Bool)arg3 dismissalContext:(unsigned long long)arg4;
+- (void)navigationAlertQueue:(id)arg1 shouldRemoveAlertView:(id)arg2 animated:(_Bool)arg3 dismissalContext:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)navigationAlertQueue:(id)arg1 shouldDisplayAlertView:(id)arg2 animated:(_Bool)arg3;
 - (void)_setNavigationAlertView:(id)arg1 visible:(_Bool)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)updateNavigationAlert:(id)arg1;

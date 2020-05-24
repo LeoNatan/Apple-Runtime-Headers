@@ -35,6 +35,7 @@
     struct CGPoint _swipeVelocity;
     struct CGPoint _previousSwipeVelocity;
     NSError *_swipeVelocityError;
+    long long _allowedScrollTypesMask;
 }
 
 + (void)_setPanGestureRecognizersEnabled:(_Bool)arg1;
@@ -42,6 +43,7 @@
 + (_Bool)_shouldDefaultToTouches;
 + (double)_defaultHysteresis;
 - (void).cxx_destruct;
+@property(nonatomic) long long allowedScrollTypesMask; // @synthesize allowedScrollTypesMask=_allowedScrollTypesMask;
 @property(readonly, getter=_previousVelocitySample) UIPanGestureVelocitySample *_previousVelocitySample; // @synthesize _previousVelocitySample;
 @property(readonly, getter=_velocitySample) UIPanGestureVelocitySample *_velocitySample; // @synthesize _velocitySample;
 @property(nonatomic) unsigned long long maximumNumberOfTouches; // @synthesize maximumNumberOfTouches=_maximumNumberOfTouches;

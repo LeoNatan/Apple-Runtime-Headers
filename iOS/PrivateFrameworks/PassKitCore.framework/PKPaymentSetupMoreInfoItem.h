@@ -10,10 +10,19 @@
 
 @interface PKPaymentSetupMoreInfoItem : NSObject
 {
+    _Bool _hideAlternativeAction;
+    NSString *_nextActionOverride;
+    NSString *_doneActionOverride;
+    NSString *_alternativeActionOverride;
+    _Bool _hasAlternativeAction;
     NSString *_title;
     NSString *_body;
     NSString *_linkText;
     NSURL *_linkURL;
+    long long _type;
+    NSString *_nextAction;
+    NSString *_doneAction;
+    NSString *_alternativeAction;
     NSURL *_imageURL;
     NSData *_imageData;
 }
@@ -21,10 +30,16 @@
 - (void).cxx_destruct;
 @property(copy, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 @property(readonly, copy, nonatomic) NSURL *imageURL; // @synthesize imageURL=_imageURL;
+@property(readonly, copy, nonatomic) NSString *alternativeAction; // @synthesize alternativeAction=_alternativeAction;
+@property(readonly, copy, nonatomic) NSString *doneAction; // @synthesize doneAction=_doneAction;
+@property(readonly, copy, nonatomic) NSString *nextAction; // @synthesize nextAction=_nextAction;
+@property(readonly, nonatomic) _Bool hasAlternativeAction; // @synthesize hasAlternativeAction=_hasAlternativeAction;
+@property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSURL *linkURL; // @synthesize linkURL=_linkURL;
 @property(readonly, copy, nonatomic) NSString *linkText; // @synthesize linkText=_linkText;
 @property(readonly, copy, nonatomic) NSString *body; // @synthesize body=_body;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
+- (void)_updateActionStrings;
 - (id)initWithMoreInfoDictionary:(id)arg1 imageData:(id)arg2;
 - (id)initWithMoreInfoDictionary:(id)arg1;
 

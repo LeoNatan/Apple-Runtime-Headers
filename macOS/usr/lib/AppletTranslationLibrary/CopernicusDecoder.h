@@ -28,9 +28,10 @@ __attribute__((visibility("hidden")))
 - (id)processEndOfTransaction:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withError:(id *)arg5;
 - (id)GetAppletProperties:(id)arg1 withPackage:(id)arg2 withModule:(id)arg3 withTransceiver:(id)arg4 withError:(id *)arg5;
 - (id)getAppletStateAndHistory:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withError:(id *)arg5;
-- (id)handleFailure:(unsigned char)arg1 eventData:(id)arg2 appletAID:(id)arg3 error:(id *)arg4;
-- (id)handleUserAuthRequired:(id)arg1 appletAID:(id)arg2 error:(id *)arg3;
+- (id)handleFailure:(unsigned char)arg1 appletAID:(id)arg2 error:(id *)arg3;
+- (id)handleFailureWithImmediateExit:(unsigned char)arg1 appletAID:(id)arg2 error:(id *)arg3;
 - (id)handleControlFlow:(id)arg1 appletAID:(id)arg2 error:(id *)arg3;
+- (id)handleEventInDummy:(unsigned char)arg1 eventData:(id)arg2 appletAID:(id)arg3 error:(id *)arg4;
 - (id)handleEventInFast:(unsigned char)arg1 eventData:(id)arg2 appletAID:(id)arg3 error:(id *)arg4;
 - (id)handleEventInStandard:(unsigned char)arg1 eventData:(id)arg2 appletAID:(id)arg3 error:(id *)arg4;
 - (id)handleEventInIdle:(unsigned char)arg1 eventData:(id)arg2 appletAID:(id)arg3 error:(id *)arg4;

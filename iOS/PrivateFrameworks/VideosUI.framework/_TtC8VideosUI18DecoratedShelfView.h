@@ -6,30 +6,22 @@
 
 #import <UIKit/UIView.h>
 
+@class NSArray;
+
 __attribute__((visibility("hidden")))
 @interface _TtC8VideosUI18DecoratedShelfView : UIView
 {
-    // Error parsing type: , name: willHost
-    // Error parsing type: , name: willRelinquish
-    // Error parsing type: , name: shelfView
-    // Error parsing type: , name: shelfRowMetrics
-    // Error parsing type: , name: backgroundMediaController
-    // Error parsing type: , name: backgroundViewModel
     // Error parsing type: , name: viewModel
-    // Error parsing type: , name: verticalStackView
-    // Error parsing type: , name: logoGradientView
-    // Error parsing type: , name: logoImageView
-    // Error parsing type: , name: $__lazy_storage_$_platterView
-    // Error parsing type: , name: $__lazy_storage_$_gradientLayer
-    // Error parsing type: , name: $__lazy_storage_$_opacityMaskLayer
+    // Error parsing type: , name: headerView
+    // Error parsing type: , name: contentView
 }
 
 - (void).cxx_destruct;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
-- (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
+@property(nonatomic, readonly) NSArray *preferredFocusEnvironments;
 
 @end
 

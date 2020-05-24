@@ -51,10 +51,13 @@
 @property(readonly, nonatomic) NSArray *recentlyVisitedIssueIDs;
 @property(readonly, nonatomic) NSString *mostRecentlyVisitedIssueID;
 - (id)lastRemovedFromMyMagazinesDateForIssueWithID:(id)arg1;
+- (id)lastSeenDateForIssueWithID:(id)arg1;
 - (id)lastEngagedDateForIssueWithID:(id)arg1;
 - (id)lastVisitedDateForIssueWithID:(id)arg1;
 - (id)bookmarkForLastVisitToIssueWithID:(id)arg1;
 - (void)markIssueAsRemovedFromMyMagazinesWithID:(id)arg1;
+- (BOOL)hasIssueWithIDBeenSeen:(id)arg1;
+- (void)markIssueAsSeenWithID:(id)arg1;
 - (BOOL)hasIssueWithIDBeenEngaged:(id)arg1;
 - (void)markIssueAsEngagedWithID:(id)arg1;
 - (BOOL)hasIssueWithIDBeenBadged:(id)arg1;

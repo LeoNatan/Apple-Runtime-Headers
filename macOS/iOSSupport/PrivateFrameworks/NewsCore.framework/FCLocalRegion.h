@@ -11,14 +11,17 @@
 @interface FCLocalRegion : NSObject
 {
     NSString *_identifier;
-    NSArray *_tagIds;
+    NSArray *_autoFavoriteTagIDs;
+    NSArray *_localVersionedTagIDs;
     NSString *_name;
 }
 
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-@property(retain, nonatomic) NSArray *tagIds; // @synthesize tagIds=_tagIds;
+@property(retain, nonatomic) NSArray *localVersionedTagIDs; // @synthesize localVersionedTagIDs=_localVersionedTagIDs;
+@property(retain, nonatomic) NSArray *autoFavoriteTagIDs; // @synthesize autoFavoriteTagIDs=_autoFavoriteTagIDs;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+- (id)description;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 

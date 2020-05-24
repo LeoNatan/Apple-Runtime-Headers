@@ -62,6 +62,7 @@
 - (void)cancel;
 - (BOOL)waitForConnectionReturningError:(id *)arg1;
 - (BOOL)sendActionToAffirmMigrationHasCompleted;
+- (id)cummulativeDescriptionFromError:(id)arg1;
 - (BOOL)sendAction:(id)arg1 error:(id *)arg2;
 - (void)setConnected:(BOOL)arg1;
 - (BOOL)copyPath:(id)arg1 toPath:(id)arg2;

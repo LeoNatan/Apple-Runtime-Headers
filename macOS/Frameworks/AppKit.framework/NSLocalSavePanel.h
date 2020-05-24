@@ -70,7 +70,8 @@
         unsigned int delegate_panel_newDocumentCustomization:1;
         unsigned int delegate_panel_customActionInvoked:1;
         unsigned int delegate_safeToCall:1;
-        unsigned int reserved:2;
+        unsigned int usingDefaultSaveName:1;
+        unsigned int reserved:1;
     } _spFlags;
     NSSavePanelAuxiliary *_spAuxiliaryStorage;
     unsigned int _unused:1;

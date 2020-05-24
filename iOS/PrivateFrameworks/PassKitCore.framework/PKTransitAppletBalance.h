@@ -27,8 +27,12 @@
 @property(copy, nonatomic) NSString *currency; // @synthesize currency=_currency;
 @property(copy, nonatomic) NSDecimalNumber *balance; // @synthesize balance=_balance;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+- (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
+- (_Bool)isEqualToBalance:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) _Bool isCurrency;
 - (void)_setIdentifierFromObject:(id)arg1;

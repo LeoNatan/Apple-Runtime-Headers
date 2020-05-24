@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CADisplayLink, NSMutableArray, NSMutableDictionary;
+@class CADisplayLink, NSMutableArray, NSMutableDictionary, NSMutableSet;
 @protocol UIEventFetcherSink;
 
 __attribute__((visibility("hidden")))
@@ -39,9 +39,13 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_latestMoveDragEventsBySessionID;
     double _latestMoveDragEventTimestamp;
     double _latestMoveDragEventResendTimestamp;
+    NSMutableSet *_contextIDsNeedingHoverEventResend;
+    NSMutableDictionary *_latestHoverEventsByContextID;
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *latestHoverEventsByContextID; // @synthesize latestHoverEventsByContextID=_latestHoverEventsByContextID;
+@property(retain, nonatomic) NSMutableSet *contextIDsNeedingHoverEventResend; // @synthesize contextIDsNeedingHoverEventResend=_contextIDsNeedingHoverEventResend;
 @property(nonatomic) double latestMoveDragEventResendTimestamp; // @synthesize latestMoveDragEventResendTimestamp=_latestMoveDragEventResendTimestamp;
 @property(nonatomic) double latestMoveDragEventTimestamp; // @synthesize latestMoveDragEventTimestamp=_latestMoveDragEventTimestamp;
 @property(retain, nonatomic) NSMutableDictionary *latestMoveDragEventsBySessionID; // @synthesize latestMoveDragEventsBySessionID=_latestMoveDragEventsBySessionID;
@@ -50,6 +54,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double commitTimeForTouchEvents; // @synthesize commitTimeForTouchEvents=_commitTimeForTouchEvents;
 @property(nonatomic) _Bool needsSignalOnDisplayLink; // @synthesize needsSignalOnDisplayLink=_needsSignalOnDisplayLink;
 @property(retain, nonatomic) id <UIEventFetcherSink> eventFetcherSink; // @synthesize eventFetcherSink=_eventFetcherSink;
+- (void)_setLatestHoverEvent:(struct __IOHIDEvent *)arg1 forContextID:(unsigned int)arg2;
+- (struct __IOHIDEvent *)_latestHoverEventForContextID:(unsigned int)arg1;
 - (void)_removeHIDGameControllerEventObserver;
 - (void)_setHIDGameControllerEventObserver:(CDUnknownBlockType)arg1 onQueue:(id)arg2;
 - (void)_removeHIDEventObserver;
@@ -57,6 +63,8 @@ __attribute__((visibility("hidden")))
 - (void)signalEventsAvailableWithReason:(unsigned long long)arg1 filteredEventCount:(long long)arg2;
 - (void)filterEvents;
 - (void)drainEventsIntoEnvironment:(id)arg1;
+- (void)_resendHoverEventForContextIDInternal:(unsigned int)arg1;
+- (void)_resendHoverEventForContextID:(unsigned int)arg1;
 - (void)_receiveHIDEventInternal:(struct __IOHIDEvent *)arg1;
 - (void)_receiveHIDEvent:(struct __IOHIDEvent *)arg1;
 @property(readonly, nonatomic) struct __CFRunLoop *_eventFetchRunLoop;

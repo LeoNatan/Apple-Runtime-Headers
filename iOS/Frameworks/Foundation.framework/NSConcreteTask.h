@@ -6,7 +6,7 @@
 
 #import <Foundation/NSTask.h>
 
-@class NSMutableDictionary, NSObject, NSPort;
+@class NSMutableDictionary, NSObject;
 @protocol OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_dictionary;
     CDUnknownBlockType _terminationHandler;
     NSObject<OS_dispatch_source> *_dsrc;
-    NSPort *_tmpPort;
     long long _suspendCount;
     int _pid;
     // Error parsing type: AQ, name: __exitRunningInfo

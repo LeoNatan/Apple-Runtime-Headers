@@ -10,6 +10,9 @@
 {
     // Error parsing type: , name: tracker
     // Error parsing type: , name: paywallModel
+    // Error parsing type: , name: articleData
+    // Error parsing type: , name: campaignData
+    // Error parsing type: , name: adReferralData
 }
 
 @end

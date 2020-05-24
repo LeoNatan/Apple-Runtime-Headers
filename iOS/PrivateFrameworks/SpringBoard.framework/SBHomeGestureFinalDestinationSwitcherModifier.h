@@ -34,6 +34,7 @@
     _Bool _scrunchInitiated;
     _Bool _continuingGesture;
     long long _touchType;
+    _Bool _isMouseEvent;
     id <SBHomeGestureFinalDestinationSwitcherModifierDelegate> _finalDestinationDelegate;
     _Bool _hasSeenAccelerationDipForAppSwitcher;
     NSString *_finalDestinationReason;

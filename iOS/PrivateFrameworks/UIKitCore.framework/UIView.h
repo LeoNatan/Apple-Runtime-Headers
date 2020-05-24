@@ -886,6 +886,8 @@
 @property(readonly, nonatomic) UIView *_ui_superview;
 @property(nonatomic) struct CGRect _ui_frame;
 @property(readonly, nonatomic) struct CGRect _ui_bounds;
+- (double)_uimorphingView_getInitialAlpha;
+- (void)_uimorphingView_setInitialAlpha:(double)arg1;
 - (long long)compareTextEffectsOrdering:(id)arg1;
 - (int)textEffectsVisibilityLevelInKeyboardWindow;
 - (int)textEffectsVisibilityLevel;
@@ -1511,6 +1513,8 @@
 - (id)_viewControllerForAncestor;
 - (id)_initWithMaskImage:(id)arg1;
 - (id)_initWithLayer:(id)arg1;
+- (id)_cursorInteraction;
+- (_Bool)_allowAssistanceInSubtree;
 - (id)_firstAncestorInteractionConformingToProtocol:(id)arg1;
 - (_Bool)_canAddInteraction:(id)arg1;
 - (void)setInteractions:(id)arg1;

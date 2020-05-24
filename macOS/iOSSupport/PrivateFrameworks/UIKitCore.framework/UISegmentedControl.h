@@ -6,6 +6,7 @@
 
 #import <UIKitCore/UIControl.h>
 
+#import <UIKitCore/CAAnimationDelegate-Protocol.h>
 #import <UIKitCore/NSCoding-Protocol.h>
 #import <UIKitCore/UIPopoverPresentationControllerDelegate-Protocol.h>
 #import <UIKitCore/_UIBasicAnimationFactory-Protocol.h>
@@ -13,7 +14,7 @@
 
 @class NSMutableArray, NSString, UIColor, UIImageView, UIKeyCommand, UILongPressGestureRecognizer, UISegment, UIVibrancyEffect, UIView, _UIHostedFocusSystem;
 
-@interface UISegmentedControl : UIControl <_UIBasicAnimationFactory, UIPopoverPresentationControllerDelegate, _UIHostedFocusSystemDelegate, NSCoding>
+@interface UISegmentedControl : UIControl <_UIBasicAnimationFactory, UIPopoverPresentationControllerDelegate, _UIHostedFocusSystemDelegate, CAAnimationDelegate, NSCoding>
 {
     UIView *_selectionIndicatorView;
     UIImageView *_selectionImageView;
@@ -21,6 +22,7 @@
     long long _selectedSegment;
     long long _highlightedSegment;
     long long _selectionIndicatorSegment;
+    long long _hoveredSegment;
     UIView *_removedSegment;
     UISegment *_focusedSegment;
     long long _barStyle;
@@ -44,6 +46,10 @@
         unsigned int appearanceNeedsUpdate:1;
         unsigned int selectionIndicatorDragged:1;
         unsigned int useInnerSegmentSpacing:1;
+        unsigned int useDynamicShadow:1;
+        unsigned int animatingOutDynamicShadow:1;
+        unsigned int animatingSeleciton:1;
+        unsigned int animatingHoverOut:1;
     } _segmentedControlFlags;
     UIKeyCommand *_selectNextCellCommand;
     UIKeyCommand *_selectPreviousCellCommand;
@@ -70,7 +76,9 @@
 + (BOOL)_useShadowForSelectedTintColor:(id)arg1 traitCollection:(id)arg2;
 + (struct CGColor *)_backgroundPrimaryColorSelected:(BOOL)arg1 highlighted:(BOOL)arg2 traitCollection:(id)arg3 tintColor:(id)arg4;
 + (BOOL)_selectFocusedSegmentAfterFocusUpdate;
++ (BOOL)_cursorInteractionEnabled;
 + (double)_selectionOffsetAdjustmentForSegment:(id)arg1;
++ (BOOL)_updateDynamicShadowView:(id)arg1 withAnimationDelegate:(id)arg2 useDynamicShadow:(BOOL)arg3 animated:(BOOL)arg4;
 + (id)_selectionOpacityAnimationFromValue:(float)arg1 toValue:(float)arg2;
 + (id)_selectionPopAnimationForKey:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3;
 + (struct CATransform3D)_highlightSelectionTransform;
@@ -142,6 +150,10 @@
 - (void)setEnabled:(BOOL)arg1;
 - (void)_setEnabled:(BOOL)arg1 forcePropagateToSegments:(BOOL)arg2;
 - (BOOL)useBlockyMagnificationInClassic;
+- (void)cursorInteraction:(id)arg1 willExitRegion:(id)arg2 withAnimator:(id)arg3;
+- (void)cursorInteraction:(id)arg1 willEnterRegion:(id)arg2 withAnimator:(id)arg3;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 - (BOOL)_shouldConsumeEventWithPresses:(id)arg1;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
@@ -155,13 +167,18 @@
 - (int)_closestSegmentIndexAtPoint:(struct CGPoint)arg1;
 - (id)_segmentAtIndex:(int)arg1;
 - (BOOL)pointMostlyInside:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (void)hoverOnSegment:(long long)arg1;
+- (void)hoverOffSegment:(long long)arg1;
+- (void)_setHoverOnSegment:(long long)arg1 hovered:(BOOL)arg2;
 - (void)highlightSegment:(int)arg1;
 - (void)_setHighlightedSegmentHighlighted:(BOOL)arg1;
 - (BOOL)shouldTrack;
 - (void)layoutSubviews;
 - (void)_updateSelectionIndicator;
 - (void)_updateSelectionToSegment:(id)arg1 highlight:(BOOL)arg2 shouldAnimate:(BOOL)arg3 sameSegment:(BOOL)arg4;
+- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)_insertSelectionViewForSegment:(id)arg1;
+- (void)_updateDynamicShadow:(BOOL)arg1 animated:(BOOL)arg2;
 - (long long)_segmentIndexToHighlight:(char *)arg1;
 - (BOOL)_disableSlidingControl;
 - (struct UIEdgeInsets)alignmentRectInsets;
@@ -206,6 +223,8 @@
 - (void)insertSegmentWithTitle:(id)arg1 atIndex:(unsigned long long)arg2 animated:(BOOL)arg3;
 - (void)_setUsesNewAnimations:(BOOL)arg1;
 - (BOOL)_usesNewAnimations;
+@property(getter=_animatingOutDynamicShadow, setter=_setAnimatingOutDynamicShdaow:) BOOL animatingOutDynamicShadow;
+@property(readonly, getter=_useDynamicShadow) BOOL useDynamicShadow;
 - (BOOL)transparentBackground;
 - (void)setTransparentBackground:(BOOL)arg1;
 - (long long)barStyle;

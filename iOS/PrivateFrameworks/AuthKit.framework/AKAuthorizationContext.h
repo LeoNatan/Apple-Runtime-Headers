@@ -46,6 +46,7 @@
 - (id)initWithCoder:(id)arg1;
 
 // Remaining properties
+@property(nonatomic) long long authenticationMode;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;

@@ -110,6 +110,7 @@ __attribute__((visibility("hidden")))
 - (void)_cleanUpEverythingPlaybackRelated;
 - (void)_cleanUpEverything;
 - (void)_setPlaylist:(id)arg1;
+- (void)loadAlphaImageProxy;
 - (void)_setAlphaImageProxy:(id)arg1;
 - (void)_setImageProxies:(id)arg1;
 - (void)_updateMediaInfo;

@@ -77,6 +77,7 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (_Bool)_shouldUseTallHeight;
+- (void)_addLaserEffectToButton:(id)arg1;
 - (void)clearAllItemViews;
 - (void)removeButtonViewsIfNeeded;
 - (void)_tearDownButtonContainer;

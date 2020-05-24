@@ -62,6 +62,7 @@
 - (void)scheduleReplacementsForText:(id)arg1;
 - (void)scheduleReplacementsWithOptions:(unsigned long long)arg1;
 - (void)scheduleChineseTransliterationForText:(id)arg1;
+- (long long)currentCursorBehavior;
 - (void)scrollSelectionToVisible:(BOOL)arg1;
 - (BOOL)wantsLinkInteraction;
 - (BOOL)containerIsBrowserView;

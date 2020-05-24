@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
         _Bool didUpdateHighlightProgress;
         _Bool shouldDelayGesture;
     } _delegateImplements;
+    unsigned long long _behavior;
     _Bool _cancelsTouchesInView;
     _Bool _reachedClickDownThreshold;
     id <_UIClickInteractionDriverDelegate> _delegate;
@@ -44,11 +45,13 @@ __attribute__((visibility("hidden")))
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)_notifyDelegateOfUpdatedClickDownProgress:(double)arg1 forceAdjustedClickDownDuration:(double)arg2;
 - (void)_updateForActiveGestureRecognizer;
 - (void)_asyncGestureBegan;
 - (void)_handleGestureRecognizer:(id)arg1;
 @property(readonly, nonatomic) double clickTimeoutDuration;
+@property(nonatomic) unsigned long long behavior;
 @property(readonly, nonatomic) unsigned long long inputPrecision;
 - (struct CGPoint)locationInCoordinateSpace:(id)arg1;
 - (void)cancelInteraction;

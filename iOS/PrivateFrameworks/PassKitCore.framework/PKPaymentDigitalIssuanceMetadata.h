@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSString;
+@class NSArray, NSDictionary, NSSet, NSString;
 
 @interface PKPaymentDigitalIssuanceMetadata : NSObject
 {
@@ -18,9 +18,11 @@
     NSString *_action;
     NSString *_merchantID;
     NSArray *_defaultSuggestions;
+    NSSet *_serviceProviderSupportedCountries;
 }
 
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSSet *serviceProviderSupportedCountries; // @synthesize serviceProviderSupportedCountries=_serviceProviderSupportedCountries;
 @property(readonly, copy, nonatomic) NSArray *defaultSuggestions; // @synthesize defaultSuggestions=_defaultSuggestions;
 @property(readonly, copy, nonatomic) NSString *merchantID; // @synthesize merchantID=_merchantID;
 @property(readonly, copy, nonatomic) NSString *action; // @synthesize action=_action;

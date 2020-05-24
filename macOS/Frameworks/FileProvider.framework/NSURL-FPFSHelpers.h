@@ -7,6 +7,7 @@
 #import <Foundation/NSURL.h>
 
 @interface NSURL (FPFSHelpers)
++ (id)fp_uniqueTempFolderWithError:(id *)arg1;
 + (id)fp_supportDirectory;
 + (id)fp_cloudStorageDirectory;
 + (id)fp_tempDirectory;
@@ -58,7 +59,6 @@
 - (BOOL)fp_matchesCloudDocsURL:(id)arg1;
 - (BOOL)fp_matchesFileProviderURL:(id)arg1;
 - (id)fp_moveToTempFolderWithFilename:(id)arg1 error:(id *)arg2;
-- (id)fp_createTempFolderWithError:(id *)arg1;
 - (id)fp_directorySizeWithError:(id *)arg1;
 - (BOOL)fp_associateThumbnailFromDocumentAtURL:(id)arg1 error:(id *)arg2;
 - (void)fp_attachSecurityScopeFromURL:(id)arg1;
@@ -74,7 +74,7 @@
 - (id)fp_relativePathOf:(id)arg1;
 - (id)fp_scopeDescription;
 - (id)fp_shortDescription;
-- (id)fp_issueSandboxExtensionOfClass:(const char *)arg1 error:(id *)arg2;
+- (id)fp_issueSandboxExtensionOfClass:(const char *)arg1 report:(BOOL)arg2 error:(id *)arg3;
 - (id)fp_copyToTempFolderWithFilename:(id)arg1 queue:(id)arg2 precomputedItemSize:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)fp_copyToURL:(id)arg1 queue:(id)arg2 precomputedItemSize:(unsigned long long)arg3 replacePlaceholder:(BOOL)arg4 completion:(CDUnknownBlockType)arg5;
 - (BOOL)fp_removeFileProviderXattrsWithError:(id *)arg1;

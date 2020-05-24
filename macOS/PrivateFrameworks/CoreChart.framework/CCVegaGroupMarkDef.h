@@ -10,10 +10,11 @@
 {
 }
 
+- (struct CGRect)accessibilityFrameForMark:(id)arg1 layer:(id)arg2;
 - (id)updateMark:(id)arg1;
 - (id)enterMark:(id)arg1;
 - (void)updateLayer:(id)arg1 withMark:(id)arg2;
-- (struct CGPath *)createGroupPath:(id)arg1;
+- (struct CGPath *)newGroupPath:(id)arg1;
 
 @end
 

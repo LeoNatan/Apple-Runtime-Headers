@@ -231,6 +231,7 @@
 - (int)checkLegacyBootSupport:(char *)arg1;
 - (unsigned int)supportedNetBootProtocols;
 - (int)preBootEnvironment;
+- (int)checkPrebootContentForMacOSAPFSVolume:(struct DMUDSPrivRec *)arg1 isValidForBoot:(char *)arg2;
 - (int)checkBootabilityOnThisMachine_actualsimplepartition_:(struct __DADisk *)arg1 isBootable:(char *)arg2;
 - (int)checkAbilityToMakeBootable_actualsimplepartition_:(struct __DADisk *)arg1 onAnyMachine:(BOOL)arg2 atAll:(char *)arg3 yesButDestructively:(char *)arg4;
 - (int)cryptoStateForDisk:(struct __DADisk *)arg1 options:(id)arg2 details:(id *)arg3;

@@ -22,6 +22,7 @@
 - (_Bool)switcherContentController:(id <SBSwitcherContentViewControlling>)arg1 shouldResignActiveForStartOfTransition:(SBLayoutStateTransitionContext *)arg2;
 - (void)switcherContentControllerEndTethering:(id <SBSwitcherContentViewControlling>)arg1;
 - (void)switcherContentControllerBeginTethering:(id <SBSwitcherContentViewControlling>)arg1;
+- (void)switcherContentController:(id <SBSwitcherContentViewControlling>)arg1 setCursorInteractionsEnabled:(_Bool)arg2;
 - (void)switcherContentController:(id <SBSwitcherContentViewControlling>)arg1 setContainerStatusBarHidden:(_Bool)arg2 animationDuration:(double)arg3;
 - (void)switcherContentController:(id <SBSwitcherContentViewControlling>)arg1 handlePlusButtonActionForBundleIdentifier:(NSString *)arg2;
 - (void)switcherContentController:(id <SBSwitcherContentViewControlling>)arg1 setWallpaperStyle:(long long)arg2;

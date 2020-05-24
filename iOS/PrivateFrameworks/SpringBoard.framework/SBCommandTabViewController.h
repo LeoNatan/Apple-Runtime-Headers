@@ -8,7 +8,7 @@
 
 #import <SpringBoard/SBIconViewDelegate-Protocol.h>
 
-@class MTMaterialShadowView, NSLayoutConstraint, NSMutableArray, NSMutableOrderedSet, NSString, SBIconController, SBIconModel, SBIconView, UILabel, UIPanGestureRecognizer, UIStackView, UIView;
+@class MTMaterialShadowView, NSLayoutConstraint, NSMutableArray, NSMutableOrderedSet, NSString, SBIconController, SBIconModel, SBIconView, UIHoverGestureRecognizer, UILabel, UIPanGestureRecognizer, UIStackView, UIView;
 @protocol SBCommandTabViewControllerDelegate;
 
 @interface SBCommandTabViewController : UIViewController <SBIconViewDelegate>
@@ -29,6 +29,8 @@
     UIStackView *_stackView;
     SBIconView *_homeIconView;
     UIPanGestureRecognizer *_panGestureRecognizer;
+    UIHoverGestureRecognizer *_hoverGestureRecognizer;
+    struct CGPoint _lastHoverLocation;
     _Bool _isTouchDown;
     _Bool _isIconSelected;
     id <SBCommandTabViewControllerDelegate> _delegate;

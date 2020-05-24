@@ -13,7 +13,7 @@
 #import <UIKitCore/UIScrollViewDelayedTouchesBeganGestureRecognizerClient-Protocol.h>
 #import <UIKitCore/_UIScrollToTopView-Protocol.h>
 
-@class CADisplayLink, NSArray, NSHashTable, NSISVariable, NSMutableDictionary, NSString, NSTimer, UIGestureRecognizer, UILayoutGuide, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRefreshControl, UIScrollViewDelayedTouchesBeganGestureRecognizer, UIScrollViewDirectionalPressGestureRecognizer, UIScrollViewKnobLongPressGestureRecognizer, UIScrollViewPanGestureRecognizer, UIScrollViewPinchGestureRecognizer, UISwipeGestureRecognizer, UIViewAnimationState, _UIAutoScrollAssistant, _UIClickFeedbackGenerator, _UIDragAutoScrollGestureRecognizer, _UIFocusFastScrollingController, _UIFocusFastScrollingIndexBarView, _UIFocusFastScrollingRequest, _UIScrollViewScrollIndicator, _UIStaticScrollBar, _UIZoomEdgeFeedbackGenerator;
+@class CADisplayLink, NSArray, NSHashTable, NSISVariable, NSMutableDictionary, NSString, NSTimer, UIDelayedAction, UIGestureRecognizer, UIHoverGestureRecognizer, UILayoutGuide, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIPointerRegion, UIRefreshControl, UIScrollViewDelayedTouchesBeganGestureRecognizer, UIScrollViewDirectionalPressGestureRecognizer, UIScrollViewKnobLongPressGestureRecognizer, UIScrollViewPanGestureRecognizer, UIScrollViewPinchGestureRecognizer, UIScrollViewScrollAnimation, UISwipeGestureRecognizer, UIViewAnimationState, _UIAutoScrollAssistant, _UIClickFeedbackGenerator, _UIDragAutoScrollGestureRecognizer, _UIFocusFastScrollingController, _UIFocusFastScrollingIndexBarView, _UIFocusFastScrollingRequest, _UIScrollViewScrollIndicator, _UIStaticScrollBar, _UIZoomEdgeFeedbackGenerator;
 @protocol UICoordinateSpace, UIFocusItem, UIScrollViewDelegate, _UIScrollViewLayoutObserver, _UIScrollViewScrollableAncestor;
 
 @interface UIScrollView : UIView <UIGestureRecognizerDelegate, UIScrollViewDelayedTouchesBeganGestureRecognizerClient, _UIScrollToTopView, UIIndexBarAccessoryViewDelegate, NSCoding, UIFocusItemScrollableContainer>
@@ -59,7 +59,7 @@
     id *_shadows;
     NSHashTable *_scrollNotificationObservers;
     double _contentOffsetAnimationDuration;
-    id _animation;
+    UIScrollViewScrollAnimation *_animation;
     id _zoomAnimation;
     UIViewAnimationState *_zoomAnimationState;
     UIScrollViewPinchGestureRecognizer *_pinch;
@@ -78,6 +78,11 @@
     double _fastScrollMultiplier;
     double _fastScrollStartMultiplier;
     double _fastScrollEndTime;
+    double _discreteFastScrollLastHighVelocityEventTime;
+    long long _discreteFastScrollCount;
+    double _discreteFastScrollMultiplier;
+    double _discreteFastScrollStartMultiplier;
+    double _discreteFastScrollEndTime;
     struct CGPoint _rotationCenterPoint;
     double _accuracy;
     unsigned long long _zoomAnimationCount;
@@ -120,6 +125,10 @@
     struct UIEdgeInsets _knobRelativeContentInsets;
     _UIClickFeedbackGenerator *_knobFeedbackGenerator;
     UIScrollViewKnobLongPressGestureRecognizer *_knobLongPressGestureRecognizer;
+    UIScrollViewKnobLongPressGestureRecognizer *_knobPointerLongPressGestureRecognizer;
+    UIHoverGestureRecognizer *_knobHoverGestureRecognizer;
+    UIDelayedAction *_trackpadScrollInterruptionDelayedAction;
+    double _lastScrollInterruptionByPointerEventTime;
     double _intervalBetweenPanGestures;
     double _lastPanGestureEndTime;
     struct {
@@ -219,8 +228,15 @@
         unsigned int shouldAdjustLayoutToMergeWithBar:1;
         unsigned int shouldClampBounceVelocity:1;
         unsigned int focusFastScrollingDisabled:1;
+        unsigned int hoveringInVerticalIndicatorTrack:1;
+        unsigned int hoveringInHorizontalIndicatorTrack:1;
+        unsigned int hasPendingHideScrollIndicators:1;
+        unsigned int supportsPointerDragScrolling:1;
     } _scrollViewFlags;
     NSTimer *_trackingWatchdogTimer;
+    unsigned long long _currentScrollDeviceCategory;
+    UIPointerRegion *_scrollingPointerRegion;
+    unsigned long long _scrollingPointerRegionGenerationID;
     _Bool _useContentDimensionVariablesForConstraintLowering;
     id _scrollTestParameters;
     long long _keyboardDismissMode;
@@ -353,12 +369,14 @@
 - (_Bool)_isAutomaticContentOffsetAdjustmentEnabled;
 - (void)_setAutomaticContentOffsetAdjustmentEnabled:(_Bool)arg1;
 - (void)_updateScrollAnimationForChangedTargetOffset:(struct CGPoint)arg1;
+- (void)_setContentOffset:(struct CGPoint)arg1 animated:(_Bool)arg2 animationCurve:(int)arg3 animationAdjustsForContentOffsetDelta:(_Bool)arg4 animation:(id)arg5 animationConfigurator:(CDUnknownBlockType)arg6;
 - (void)_setContentOffset:(struct CGPoint)arg1 animated:(_Bool)arg2 animationCurve:(int)arg3 animationAdjustsForContentOffsetDelta:(_Bool)arg4 animation:(id)arg5;
 - (void)_setContentOffset:(struct CGPoint)arg1 animated:(_Bool)arg2 animationCurve:(int)arg3 animationAdjustsForContentOffsetDelta:(_Bool)arg4;
 - (void)_setContentOffset:(struct CGPoint)arg1 animated:(_Bool)arg2 animationCurve:(int)arg3;
 - (void)_setAbsoluteContentOffset:(struct CGPoint)arg1 animated:(_Bool)arg2;
 - (void)_setContentOffset:(struct CGPoint)arg1 animation:(id)arg2;
 - (void)_setContentOffsetWithDecelerationAnimation:(struct CGPoint)arg1;
+- (void)_setContentOffset:(struct CGPoint)arg1 duration:(double)arg2 animationCurve:(int)arg3 animationConfigurator:(CDUnknownBlockType)arg4;
 - (void)_setContentOffset:(struct CGPoint)arg1 duration:(double)arg2 animationCurve:(int)arg3;
 - (struct CGSize)_contentSizeOrDeferredContentSize;
 - (struct CGPoint)_contentOffsetOrDeferredContentOffset;
@@ -378,6 +396,7 @@
 - (void)_addScrollViewScrollObserver:(id)arg1;
 - (_Bool)_isScrollViewScrollObserver:(id)arg1;
 - (_Bool)_resetScrollingForGestureEvent:(id)arg1;
+- (void)_resetDiscreteFastScroll;
 - (_Bool)_beginTrackingWithEvent:(id)arg1;
 - (void)_resetScrollingWithUIEvent:(id)arg1;
 - (void)_stopScrollingAndZoomingAnimations;
@@ -395,6 +414,7 @@
 - (double)_offsetForRubberBandOffset:(double)arg1 maxOffset:(double)arg2 minOffset:(double)arg3 range:(double)arg4;
 - (double)_offsetWithoutDecorationForRubberBandOffset:(double)arg1 maxOffset:(double)arg2 minOffset:(double)arg3 range:(double)arg4;
 - (double)_rubberBandOffsetForOffset:(double)arg1 maxOffset:(double)arg2 minOffset:(double)arg3 range:(double)arg4 outside:(_Bool *)arg5;
+- (double)_currentRubberBandCoefficient;
 - (double)_rubberBandOffsetWithoutDecorationForOffset:(double)arg1 maxOffset:(double)arg2 minOffset:(double)arg3 range:(double)arg4 outside:(_Bool *)arg5;
 - (void)_clearParentAdjustment;
 - (_Bool)_shouldTrackImmediatelyWhileDecelerating;
@@ -474,6 +494,8 @@
 - (void)_unregisterForSpringBoardBlankedScreenNotification;
 - (void)_registerForSpringBoardBlankedScreenNotification;
 - (void)_prepareToPageWithHorizontalVelocity:(double)arg1 verticalVelocity:(double)arg2;
+- (void)_endScrollingCursorOverrideIfNecessary;
+- (void)_beginScrollingCursorOverrideIfNecessary;
 - (void)_runLoopModePopped:(id)arg1;
 - (void)_popTrackingRunLoopModeIfNecessaryForReason:(id)arg1;
 - (void)_bumpTrackingWatchdogTimer;
@@ -582,6 +604,8 @@
 - (void)_handleDirectionalScrollToOffset:(struct CGPoint)arg1 clampingToBounds:(_Bool)arg2;
 - (void)_handleDirectionalPress:(id)arg1;
 - (void)_handleDirectionalPageWithHorizontalVelocity:(double)arg1 verticalVelocity:(double)arg2;
+- (void)_setSupportsPointerDragScrolling:(_Bool)arg1;
+- (_Bool)_supportsPointerDragScrolling;
 - (void)_setAutoScrollTouchInsets:(struct UIEdgeInsets)arg1;
 - (struct UIEdgeInsets)_autoScrollTouchInsets;
 - (_Bool)_isAutoScrollEnabled;
@@ -589,6 +613,9 @@
 - (void)_handleAutoScroll:(id)arg1;
 - (void)_stopAutoScrollAssistant;
 - (_Bool)_shouldAutoScroll;
+- (_Bool)_isPoint:(struct CGPoint)arg1 inExpandedIndicatorForAxis:(unsigned long long)arg2 containerRect:(struct CGRect)arg3;
+- (void)_handleKnobHoverGesture:(id)arg1;
+- (void)_trackpadInterruptScroll:(id)arg1;
 - (void)_didEndDirectManipulationWithScrubbingDirection:(long long)arg1;
 - (void)_didBeginDirectManipulationWithScrubbingDirection:(long long)arg1;
 - (void)_beginDirectManipulationIfNecessaryWithGestureRecognizer:(id)arg1;

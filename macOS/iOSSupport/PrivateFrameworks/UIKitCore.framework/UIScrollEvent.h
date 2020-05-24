@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) struct CGVector nonAcceleratedDelta;
 @property(readonly) struct CGVector acceleratedDelta;
 - (struct CGPoint)locationInView:(id)arg1;
+@property(readonly, nonatomic, getter=_scrollDeviceCategory) unsigned long long scrollDeviceCategory;
 @property(readonly, nonatomic, getter=_scrollType) unsigned long long scrollType;
 - (long long)subtype;
 - (long long)type;

@@ -20,10 +20,11 @@
 - (id)getValidationWarnings;
 - (id)getValidationErrors;
 - (void)addPhrase:(id)arg1;
+- (id)getDialogs;
 - (id)getParameters;
-@property NSString *localeFilename;
-@property NSString *id;
-@property NSString *paramsFilename;
+@property(retain) NSString *localeFilename;
+@property(retain) NSString *id;
+@property(retain) NSString *paramsFilename;
 - (void)addCondition:(id)arg1;
 - (id)getRoot;
 - (shared_ptr_ab06ee6d)getSharedPtr;

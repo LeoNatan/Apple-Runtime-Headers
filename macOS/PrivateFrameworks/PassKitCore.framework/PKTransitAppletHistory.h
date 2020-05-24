@@ -15,6 +15,7 @@
     BOOL _blacklisted;
     long long _source;
     NSString *_serviceProvider;
+    NSNumber *_serverRefreshIdentifier;
     NSString *_currency;
     NSDecimalNumber *_balance;
     NSNumber *_loyaltyBalance;
@@ -36,6 +37,7 @@
 @property(copy, nonatomic) NSDecimalNumber *balance; // @synthesize balance=_balance;
 @property(copy, nonatomic) NSString *currency; // @synthesize currency=_currency;
 @property(nonatomic, getter=isBlacklisted) BOOL blacklisted; // @synthesize blacklisted=_blacklisted;
+@property(copy, nonatomic) NSNumber *serverRefreshIdentifier; // @synthesize serverRefreshIdentifier=_serverRefreshIdentifier;
 @property(copy, nonatomic) NSString *serviceProvider; // @synthesize serviceProvider=_serviceProvider;
 @property(nonatomic) long long source; // @synthesize source=_source;
 @property(readonly, nonatomic, getter=isInStation) BOOL inStation; // @dynamic inStation;

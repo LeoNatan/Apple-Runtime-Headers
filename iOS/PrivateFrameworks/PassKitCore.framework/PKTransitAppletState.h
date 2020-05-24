@@ -17,6 +17,7 @@
     _Bool _needsStationProcessing;
     _Bool _appletStateDirty;
     NSNumber *_historySequenceNumber;
+    NSNumber *_serverRefreshIdentifier;
     NSDecimalNumber *_balance;
     NSNumber *_loyaltyBalance;
     NSString *_currency;
@@ -35,14 +36,16 @@
 @property(copy, nonatomic) NSString *currency; // @synthesize currency=_currency;
 @property(copy, nonatomic) NSNumber *loyaltyBalance; // @synthesize loyaltyBalance=_loyaltyBalance;
 @property(copy, nonatomic) NSDecimalNumber *balance; // @synthesize balance=_balance;
+@property(copy, nonatomic) NSNumber *serverRefreshIdentifier; // @synthesize serverRefreshIdentifier=_serverRefreshIdentifier;
 @property(copy, nonatomic) NSNumber *historySequenceNumber; // @synthesize historySequenceNumber=_historySequenceNumber;
 @property(nonatomic, getter=isBlacklisted) _Bool blacklisted; // @synthesize blacklisted=_blacklisted;
 - (void)addEnrouteTransitType:(id)arg1;
 - (id)transitPassPropertiesWithPaymentApplication:(id)arg1;
-- (void)_resolveTransactionsFromState:(id)arg1 toState:(id)arg2 withHistoryRecords:(id)arg3 concreteTransactions:(id *)arg4 ephemeralTransaction:(id *)arg5;
+- (void)_resolveTransactionsFromState:(id)arg1 toState:(id)arg2 withHistoryRecords:(id)arg3 concreteTransactions:(id *)arg4 ephemeralTransaction:(id *)arg5 balanceLabels:(id)arg6;
 - (id)updatedEnrouteTransitTypesFromExistingTypes:(id)arg1 newTypes:(id)arg2;
+- (id)processUpdateWithAppletHistory:(id)arg1 concreteTransactions:(id *)arg2 ephemeralTransaction:(id *)arg3 mutatedBalances:(id *)arg4 balanceLabelDictionary:(id)arg5;
+- (id)processUpdateWithAppletHistory:(id)arg1 concreteTransactions:(id *)arg2 ephemeralTransaction:(id *)arg3 mutatedBalances:(id *)arg4;
 - (id)processUpdateWithAppletHistory:(id)arg1 concreteTransactions:(id *)arg2 ephemeralTransaction:(id *)arg3;
-- (id)processUpdateWithAppletHistory:(id)arg1 concreteTransactions:(id *)arg2 ephemeralTransactions:(id *)arg3;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic, getter=isInStation) _Bool inStation; // @dynamic inStation;

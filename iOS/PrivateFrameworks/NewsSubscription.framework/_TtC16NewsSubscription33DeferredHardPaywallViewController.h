@@ -18,6 +18,7 @@
     // Error parsing type: , name: purchasingSpinnerViewControllerFactory
     // Error parsing type: , name: paywallApplicationStateMonitor
     // Error parsing type: , name: eventHandlerDelegate
+    // Error parsing type: , name: applicationStateManager
 }
 
 - (void).cxx_destruct;

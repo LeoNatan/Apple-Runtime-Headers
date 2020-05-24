@@ -31,6 +31,7 @@
 @property(nonatomic) _Bool accessibilityShortcutEnabled; // @synthesize accessibilityShortcutEnabled=_accessibilityShortcutEnabled;
 @property(nonatomic) int carPlayConnectionState; // @synthesize carPlayConnectionState=_carPlayConnectionState;
 @property(retain, nonatomic) SASLockStateMonitor *lockStateMonitor; // @synthesize lockStateMonitor=_lockStateMonitor;
+- (_Bool)isConnectedToEyesFreeDevice;
 - (_Bool)siriIsSupported;
 - (_Bool)siriIsRestricted;
 - (_Bool)siriIsEnabled;

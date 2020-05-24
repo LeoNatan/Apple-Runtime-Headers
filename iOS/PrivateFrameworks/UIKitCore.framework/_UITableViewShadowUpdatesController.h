@@ -71,6 +71,10 @@ __attribute__((visibility("hidden")))
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)indexPathForElementWithModelIdentifier:(id)arg1 inView:(id)arg2;
 - (id)modelIdentifierForElementAtIndexPath:(id)arg1 inView:(id)arg2;
+- (void)_tableView:(id)arg1 cursorWillExitRowAtIndexPath:(id)arg2;
+- (void)_tableView:(id)arg1 cursorWillEnterRowAtIndexPath:(id)arg2;
+- (id)_tableView:(id)arg1 cursorStyleForModifiers:(long long)arg2 atIndexPath:(id)arg3;
+- (id)_tableView:(id)arg1 cursorRegionForRowAtIndexPath:(id)arg2 defaultRegion:(id)arg3;
 - (void)tableView:(id)arg1 willPerformPreviewActionForMenuWithConfiguration:(id)arg2 animator:(id)arg3;
 - (void)tableView:(id)arg1 willCommitMenuWithAnimator:(id)arg2;
 - (id)tableView:(id)arg1 previewForDismissingContextMenuWithConfiguration:(id)arg2;

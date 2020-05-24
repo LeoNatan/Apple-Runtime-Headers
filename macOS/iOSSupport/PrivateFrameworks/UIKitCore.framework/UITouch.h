@@ -48,12 +48,15 @@
         unsigned int _didDispatchAsEnded:1;
         unsigned int _isPointerTouch:1;
         unsigned int _analyticsUsedByAllowedGesture:1;
+        unsigned int _isRestingTouch:1;
+        unsigned int _isTapToClick:1;
     } _touchFlags;
     _UITouchPredictor *_touchPredictor;
     BOOL _eaten;
     BOOL _needsForceUpdate;
     BOOL _hasForceUpdate;
     unsigned char _forceStage;
+    BOOL __expectedToBecomeDrag;
     double _timestamp;
     long long _forceCorrelationToken;
     double _maximumPossiblePressure;
@@ -71,6 +74,7 @@
 
 + (id)_createTouchesWithGSEvent:(struct __GSEvent *)arg1 phase:(long long)arg2 view:(id)arg3;
 - (void).cxx_destruct;
+@property(nonatomic, getter=_expectedToBecomeDrag, setter=_setExpectedToBecomeDrag:) BOOL _expectedToBecomeDrag; // @synthesize _expectedToBecomeDrag=__expectedToBecomeDrag;
 @property(nonatomic) double initialTouchTimestamp; // @synthesize initialTouchTimestamp=_initialTouchTimestamp;
 @property(readonly, nonatomic) double azimuthAngleInWindow; // @synthesize azimuthAngleInWindow=_azimuthAngleInWindow;
 @property(nonatomic, setter=_setAzimuthAngleInCADisplay:) double azimuthAngleInCADisplay; // @synthesize azimuthAngleInCADisplay=_azimuthAngleInCADisplay;
@@ -96,6 +100,8 @@
 @property(nonatomic, setter=_setPathIndex:) long long _pathIndex; // @synthesize _pathIndex;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic, getter=_isAnalyticsUsedByAllowedGesture, setter=_setAnalyticsUsedByAllowedGesture:) BOOL _analyticsUsedByAllowedGesture;
+@property(nonatomic, setter=_setIsTapToClick:) BOOL _isTapToClick;
+@property(nonatomic, setter=_setIsRestingTouch:) BOOL _isRestingTouch;
 @property(nonatomic, setter=_setIsPointerTouch:) BOOL _isPointerTouch;
 - (void)_clearForReenteringHoverInWindow:(id)arg1;
 - (id)_rehitTestWithEvent:(id)arg1 constrainingToCurrentWindow:(BOOL)arg2;

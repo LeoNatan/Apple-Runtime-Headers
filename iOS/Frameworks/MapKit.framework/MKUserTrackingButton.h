@@ -15,6 +15,8 @@
 
 + (id)userTrackingButtonWithMapView:(id)arg1;
 - (void).cxx_destruct;
+- (void)removeInteraction:(id)arg1;
+- (void)addInteraction:(id)arg1;
 - (void)_intrinsicContentSizeInvalidatedForChildView:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;

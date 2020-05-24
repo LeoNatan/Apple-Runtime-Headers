@@ -9,25 +9,27 @@
 #import <PassKitCore/NSCopying-Protocol.h>
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class PKCurrencyAmount;
+@class NSString, PKCurrencyAmount;
 
 @interface PKTransactionAmount : NSObject <NSCopying, NSSecureCoding>
 {
+    NSString *_label;
     PKCurrencyAmount *_amount;
 }
 
 + (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 @property(retain, nonatomic) PKCurrencyAmount *amount; // @synthesize amount=_amount;
+@property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)initWithCurrencyAmount:(id)arg1;
+- (id)initWithCurrencyAmount:(id)arg1 label:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithTransitAppletAmount:(id)arg1;
 
 @end
 

@@ -7,5 +7,8 @@
 #import <UIKit/UIView.h>
 
 @interface UIView (DOCExtensions)
+- (void)doc_setCursorInteractionStyle:(long long)arg1;
+- (void)_doc_setCursorInteractionStyleOptions:(long long)arg1;
+- (long long)_doc_cursorInteractionStyleOptions;
 @end
 

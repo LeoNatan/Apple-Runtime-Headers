@@ -83,7 +83,6 @@
 - (id)_preferredAudioConfigurationOverride;
 - (id)_preferredVideoConfigurationOverride;
 - (id)_recordingGeneralConfiguration;
-- (void)handleCharacteristicNotificationRegisteredWithRemoteGateway:(id)arg1;
 - (void)handleCameraProfileSettingsDidWriteToAccessory:(id)arg1;
 - (void)handleCharacteristicValueUpdated:(id)arg1;
 - (void)handleCharacteristicsUpdated:(id)arg1;

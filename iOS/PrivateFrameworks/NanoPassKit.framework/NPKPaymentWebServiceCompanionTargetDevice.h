@@ -63,12 +63,20 @@
 - (void)_acquireAssertionOfType:(unsigned long long)arg1;
 - (void)consistencyCheck;
 - (_Bool)willPassWithUniqueIdentifierAutomaticallyBecomeDefault:(id)arg1;
+- (void)handleCredentialsChange:(id)arg1;
+- (void)removeSharingInvitationResponse:(id)arg1;
+- (void)paymentWebService:(id)arg1 removeSharingInvitation:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (void)revokeCredentialsResponse:(id)arg1;
+- (void)revokeCredentialsWithIdentifiers:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)registerCredentialsResponse:(id)arg1;
+- (void)registerCredentialsWithIdentifiers:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateSubcredentialMetadataResponse:(id)arg1;
 - (void)paymentWebService:(id)arg1 updateMetadataOnPass:(id)arg2 withCredential:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)requestSubcredentialInvitationResponse:(id)arg1;
 - (void)paymentWebService:(id)arg1 requestSubcredentialInvitation:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setAccountAttestationAnonymizationSaltResponse:(id)arg1;
 - (void)paymentWebService:(id)arg1 setAccountAttestationAnonymizationSalt:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (void)fetchOrInitializeAccountAttestationAnonymizationSaltRequest:(id)arg1;
 - (void)accountAttestationAnonymizationSaltResponse:(id)arg1;
 - (void)paymentWebService:(id)arg1 accountAttestationAnonymizationSaltWithCompletion:(CDUnknownBlockType)arg2;
 - (void)handleAcceptSubcredentialProvisioningRequest:(id)arg1;
@@ -209,6 +217,7 @@
 - (id)deviceClass;
 - (id)deviceName;
 - (id)deviceDescriptionForPaymentWebService:(id)arg1;
+- (id)paymentWebService:(id)arg1 supportedRegionFeatureOfType:(long long)arg2;
 - (int)registrationSupportedInCurrentRegionForWebService:(id)arg1;
 - (int)paymentSupportedInCurrentRegionForWebService:(id)arg1;
 - (id)paymentWebService:(id)arg1 filterVerificationChannels:(id)arg2;

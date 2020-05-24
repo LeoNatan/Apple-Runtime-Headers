@@ -10,12 +10,13 @@
 #import <SpringBoard/SBDeviceApplicationSceneStatusBarBreadcrumbProviderObserver-Protocol.h>
 #import <SpringBoard/SBMainDisplaySceneLayoutStatusBarViewDataSource-Protocol.h>
 #import <SpringBoard/SBSceneHandleObserver-Protocol.h>
+#import <SpringBoard/SBSystemCursorInteractionDelegate-Protocol.h>
 #import <SpringBoard/TFBetaLaunchHandleActivationDelegate-Protocol.h>
 
 @class FBScene, NSArray, NSLayoutConstraint, NSMutableSet, NSObject, NSString, SBFHomeGrabberSettings, SBHomeGrabberRotationView, SBHomeGrabberView, SBKeyboardHomeAffordanceAssertion, SBMainDisplayLayoutState, SBMainDisplaySceneLayoutGestureManager, SBMainDisplaySceneLayoutStatusBarView, SBMedusaSettings, SBOrientationTransformWrapperView, SBSceneHandleBlockObserver, SBSeparatorView, UIApplicationSceneClientSettingsDiffInspector, UIView;
 @protocol BSInvalidatable, OS_dispatch_queue;
 
-@interface SBMainDisplaySceneLayoutViewController : SBSceneLayoutViewController <SBMainDisplaySceneLayoutStatusBarViewDataSource, PTSettingsKeyObserver, SBSceneHandleObserver, TFBetaLaunchHandleActivationDelegate, SBDeviceApplicationSceneStatusBarBreadcrumbProviderObserver>
+@interface SBMainDisplaySceneLayoutViewController : SBSceneLayoutViewController <SBMainDisplaySceneLayoutStatusBarViewDataSource, PTSettingsKeyObserver, SBSceneHandleObserver, TFBetaLaunchHandleActivationDelegate, SBDeviceApplicationSceneStatusBarBreadcrumbProviderObserver, SBSystemCursorInteractionDelegate>
 {
     SBMainDisplaySceneLayoutGestureManager *_gestureManager;
     NSMutableSet *_pushPopTransformReasons;
@@ -62,6 +63,9 @@
 - (struct CGRect)_separatorViewFrame;
 - (void)_createOrDestroyHomeGrabberRotationViewIfNecessary;
 - (id)_createStatusBarWithFrame:(struct CGRect)arg1 interfaceOrientation:(long long)arg2 reason:(id)arg3;
+- (id)styleForRegion:(id)arg1 forView:(id)arg2;
+- (struct UIEdgeInsets)cursorInteractionHitTestInsetsForView:(id)arg1;
+- (_Bool)shouldBeginCursorInteractionAtLocation:(struct CGPoint)arg1 forView:(id)arg2;
 - (void)statusBarBreadcrumbProviderDidUpdateDisplayProperties:(id)arg1;
 - (void)sceneHandle:(id)arg1 didUpdateSettingsWithDiff:(id)arg2 previousSettings:(id)arg3;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;

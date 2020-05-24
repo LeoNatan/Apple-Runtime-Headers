@@ -23,7 +23,8 @@
     _Bool _frontHDROnSupported;
     _Bool _previewSupportedDuringHDR;
     _Bool _modernHDRSupported;
-    _Bool _smartHDRSupported;
+    _Bool _backSmartHDRSupported;
+    _Bool _frontSmartHDRSupported;
     _Bool _HDREV0CaptureSupported;
     _Bool _backLivePhotoSupported;
     _Bool _frontLivePhotoSupported;
@@ -255,7 +256,8 @@
 @property(readonly, nonatomic, getter=isFrontLivePhotoSupported) _Bool frontLivePhotoSupported; // @synthesize frontLivePhotoSupported=_frontLivePhotoSupported;
 @property(readonly, nonatomic, getter=isBackLivePhotoSupported) _Bool backLivePhotoSupported; // @synthesize backLivePhotoSupported=_backLivePhotoSupported;
 @property(readonly, nonatomic, getter=isHDREV0CaptureSupported) _Bool HDREV0CaptureSupported; // @synthesize HDREV0CaptureSupported=_HDREV0CaptureSupported;
-@property(readonly, nonatomic, getter=isSmartHDRSupported) _Bool smartHDRSupported; // @synthesize smartHDRSupported=_smartHDRSupported;
+@property(readonly, nonatomic, getter=isFrontSmartHDRSupported) _Bool frontSmartHDRSupported; // @synthesize frontSmartHDRSupported=_frontSmartHDRSupported;
+@property(readonly, nonatomic, getter=isBackSmartHDRSupported) _Bool backSmartHDRSupported; // @synthesize backSmartHDRSupported=_backSmartHDRSupported;
 @property(readonly, nonatomic, getter=isModernHDRSupported) _Bool modernHDRSupported; // @synthesize modernHDRSupported=_modernHDRSupported;
 @property(readonly, nonatomic, getter=isPreviewDuringHDRSupported) _Bool previewSupportedDuringHDR; // @synthesize previewSupportedDuringHDR=_previewSupportedDuringHDR;
 @property(readonly, nonatomic, getter=isFrontHDROnSupported) _Bool frontHDROnSupported; // @synthesize frontHDROnSupported=_frontHDROnSupported;
@@ -350,6 +352,8 @@
 - (_Bool)isLivePhotoSupportedForDevicePosition:(long long)arg1;
 @property(readonly, nonatomic, getter=isLivePhotoSupported) _Bool livePhotoSupported;
 - (_Bool)shouldSuspendVideoHDRForHDRMode:(long long)arg1 captureMode:(long long)arg2;
+- (_Bool)isSmartHDRSupportedForMode:(long long)arg1 devicePosition:(long long)arg2;
+@property(readonly, nonatomic, getter=isSmartHDRSupported) _Bool smartHDRSupported;
 - (_Bool)isHDRSupportedForMode:(long long)arg1 devicePosition:(long long)arg2;
 - (_Bool)isHDRSupportedForDevicePosition:(long long)arg1;
 - (_Bool)isTorchSupportedForDevicePosition:(long long)arg1;

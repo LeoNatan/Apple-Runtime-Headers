@@ -10,6 +10,7 @@
 
 @interface TILabeledKeyboardCandidate : TIKeyboardCandidateSingle
 {
+    long long _transliterationType;
     _Bool _transliterationCandidate;
     NSString *_label;
 }
@@ -17,14 +18,15 @@
 + (int)type;
 + (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
-@property(readonly, nonatomic, getter=isTransliterationCandidate) _Bool transliterationCandidate; // @synthesize transliterationCandidate=_transliterationCandidate;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCandidateResultSetCoder:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
+- (_Bool)isTransliterationCandidate;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 label:(id)arg3 transliterationCandidate:(_Bool)arg4;
+- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 label:(id)arg3 transliterationType:(long long)arg4;
 - (id)initWithCandidate:(id)arg1 forInput:(id)arg2 label:(id)arg3;
 
 @end

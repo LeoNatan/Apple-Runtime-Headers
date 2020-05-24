@@ -206,6 +206,9 @@
 - (id)_focusMovementSystemForFocusEventRecognizer:(id)arg1;
 - (_Bool)_shouldRecognizeEventsInFocusEventRecognizer:(id)arg1;
 @property(readonly, nonatomic, getter=_focusResponder) __weak UIResponder *focusResponder;
+- (void)_previousFocusContainer:(id)arg1;
+- (void)_nextFocusContainer:(id)arg1;
+- (id)keyCommands;
 - (void)_removeFocusEventRecognizer;
 - (void)_installFocusEventRecognizer;
 - (_Bool)_wantsFocusEngine;

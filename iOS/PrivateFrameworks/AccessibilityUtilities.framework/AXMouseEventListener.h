@@ -26,6 +26,7 @@
 - (void)_handleMouseButtonEvent:(id)arg1;
 - (void)deviceMonitorDidDetectDeviceEvent:(id)arg1;
 - (void)mouseSettingsDidChange;
+@property(readonly, nonatomic) _Bool currentDevicesHaveAssistiveTouchCustomActions;
 - (void)endFilteringEvents;
 - (void)beginFilteringEvents;
 - (id)discoveredMouseDevices;

@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 {
     double _lastTapTimestamp;
     struct CGPoint _lastTapLocation;
-    long long _previousRepeatedGranularity;
     UITextGestureTuning *_gestureTuning;
     _Bool _indirectSelectionType;
     struct CGRect _originalCaretRect;

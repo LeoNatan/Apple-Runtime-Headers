@@ -9,8 +9,7 @@
 @interface CCVegaCurveFactoryCardinal : CCVegaCurveFactory
 {
     int _point;
-    int _line;
-    _Bool _end;
+    int _areaState;
     double _x0;
     double _y0;
     double _x1;

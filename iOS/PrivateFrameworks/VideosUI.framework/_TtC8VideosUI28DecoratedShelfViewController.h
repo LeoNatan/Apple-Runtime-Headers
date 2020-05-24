@@ -6,8 +6,10 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <VideosUI/TVAppTemplateImpressionable-Protocol.h>
+
 __attribute__((visibility("hidden")))
-@interface _TtC8VideosUI28DecoratedShelfViewController : UIViewController
+@interface _TtC8VideosUI28DecoratedShelfViewController : UIViewController <TVAppTemplateImpressionable>
 {
     // Error parsing type: , name: shelfViewController
     // Error parsing type: , name: viewElement
@@ -17,6 +19,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)impressionableElementsContainedInDocument:(id)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidAppear:(_Bool)arg1;

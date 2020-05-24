@@ -67,7 +67,7 @@ __attribute__((visibility("hidden")))
 - (void)requestVisibleItems:(CDUnknownBlockType)arg1;
 - (unsigned long long)actualDragOperationForProposedDragOperation:(unsigned long long)arg1 destinationDataOwner:(long long)arg2 forbidden:(char *)arg3;
 - (void)handOffDroppedItems:(id)arg1;
-- (void)setUpDropAnimation:(id)arg1;
+- (void)setUpDropAnimation:(id)arg1 contextID:(unsigned int *)arg2 layerRenderID:(unsigned long long *)arg3;
 - (void)takeVisibleDroppedItems:(id)arg1;
 @property(readonly, nonatomic) NSArray *preDropItemProviders;
 @property(readonly, nonatomic) unsigned long long sourceOperationMask;

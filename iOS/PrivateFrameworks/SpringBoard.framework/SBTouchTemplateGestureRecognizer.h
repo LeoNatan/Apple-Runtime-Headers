@@ -43,6 +43,7 @@
 @property(readonly, nonatomic) NSMutableDictionary *templatesForTouchType; // @synthesize templatesForTouchType=_templatesForTouchType;
 @property(readonly, nonatomic) unsigned long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(retain, nonatomic, setter=_setNoChangeCancellationTimer:) NSTimer *_noChangeCancellationTimer; // @synthesize _noChangeCancellationTimer;
+- (id)_touchesByFilteringRestingTrackpadTouches:(id)arg1;
 - (_Bool)_shouldAddNewTouchesAfterGestureRecognition;
 - (void)_reset;
 - (void)_failMeForReason:(id)arg1;

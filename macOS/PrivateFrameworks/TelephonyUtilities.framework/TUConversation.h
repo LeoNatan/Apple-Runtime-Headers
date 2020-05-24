@@ -64,6 +64,7 @@
 - (unsigned long long)hash;
 - (BOOL)isEqualToConversation:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (id)contactNamesByHandleWithContactsDataSource:(id)arg1;
 - (id)handles;
 - (id)bundleIdentifier;
 @property(readonly, nonatomic) TUContactsDataProvider *contactsDataProvider; // @synthesize contactsDataProvider=_contactsDataProvider;

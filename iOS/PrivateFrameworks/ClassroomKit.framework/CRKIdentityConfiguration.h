@@ -18,6 +18,7 @@
     unsigned int _hashingAlgorithm;
     NSString *_commonName;
     long long _keySizeInBits;
+    NSString *_emailAddress;
 }
 
 + (_Bool)defaultCreatesCertificateAuthority;
@@ -26,6 +27,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)configurationWithData:(id)arg1;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
 @property(nonatomic) _Bool addsClientAuthAndServerAuthEKUs; // @synthesize addsClientAuthAndServerAuthEKUs=_addsClientAuthAndServerAuthEKUs;
 @property(nonatomic) unsigned int hashingAlgorithm; // @synthesize hashingAlgorithm=_hashingAlgorithm;
 @property(nonatomic) _Bool createsCertificateAuthority; // @synthesize createsCertificateAuthority=_createsCertificateAuthority;

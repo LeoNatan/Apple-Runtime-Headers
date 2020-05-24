@@ -26,6 +26,7 @@
     // Error parsing type: , name: previousArticleID
     // Error parsing type: , name: previousArticleVersion
     // Error parsing type: , name: showSubscribedAlert
+    // Error parsing type: , name: adQToken
 }
 
 - (void).cxx_destruct;
@@ -37,6 +38,7 @@
 - (void)setWithExternalAnalyticsFeedReferrer:(long long)arg1;
 - (void)setWithDisplayRank:(long long)arg1;
 - (void)setWithMaximumAdRequestsForCurrentAdPreviewID:(long long)arg1;
+- (void)setWithAdQToken:(id)arg1;
 - (void)setWithAdPreviewSessionID:(id)arg1;
 - (void)setWithAdPreviewID:(id)arg1;
 - (void)setWithSourceSearchText:(id)arg1;
@@ -46,6 +48,7 @@
 - (void)setWithFeedPickerType:(int)arg1;
 - (void)setWithFeedPickerSection:(int)arg1;
 - (void)setWithPresentationReason:(int)arg1;
+@property(nonatomic, copy) NSString *adQToken;
 @property(nonatomic) BOOL showSubscribedAlert; // @synthesize showSubscribedAlert;
 @property(nonatomic, retain) NSNumber *previousArticleVersion; // @synthesize previousArticleVersion;
 @property(nonatomic, copy) NSString *previousArticleID;

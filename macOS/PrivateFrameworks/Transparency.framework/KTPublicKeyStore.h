@@ -6,30 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, TransparencyManagedDataStore;
+@class NSArray, NSDictionary, NSMutableDictionary;
 
 @interface KTPublicKeyStore : NSObject
 {
     BOOL _forceRefresh;
-    NSDictionary *_applicationKeyStores;
+    NSMutableDictionary *__applicationKeyStores;
     NSArray *_applications;
-    TransparencyManagedDataStore *_dataStore;
 }
 
 - (void).cxx_destruct;
-@property(retain) TransparencyManagedDataStore *dataStore; // @synthesize dataStore=_dataStore;
 @property BOOL forceRefresh; // @synthesize forceRefresh=_forceRefresh;
 @property(retain) NSArray *applications; // @synthesize applications=_applications;
-@property(retain) NSDictionary *applicationKeyStores; // @synthesize applicationKeyStores=_applicationKeyStores;
+@property(retain) NSMutableDictionary *_applicationKeyStores; // @synthesize _applicationKeyStores=__applicationKeyStores;
 @property(readonly) BOOL ready;
 - (void)clearApplicationState:(id)arg1 error:(id *)arg2;
 - (id)initWithDataStore:(id)arg1;
-- (BOOL)configureWithDisk:(id *)arg1;
-- (void)configureWithClient:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)configureWithClient:(id)arg1 ignoreCachedKeys:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (BOOL)configureWithDisk:(id)arg1 error:(id *)arg2;
+- (void)configureWithClient:(id)arg1 dataStore:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)configureWithClient:(id)arg1 ignoreCachedKeys:(BOOL)arg2 dataStore:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)fetchKeyStore:(id)arg1 application:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)createApplicationKeyStore:(id)arg1 keyStoreResponse:(id)arg2 error:(id *)arg3;
-- (id)createApplicationKeyStore:(id)arg1 keyStoreData:(id)arg2 error:(id *)arg3;
+- (id)createApplicationKeyStore:(id)arg1 keyStoreResponse:(id)arg2 dataStore:(id)arg3 error:(id *)arg4;
+- (id)createApplicationKeyStore:(id)arg1 keyStoreData:(id)arg2 dataStore:(id)arg3 error:(id *)arg4;
 - (BOOL)saveDiskApplicationKeyStore:(id)arg1 error:(id *)arg2;
 - (BOOL)hasApplicationPublicKeyStoreOnDisk:(id)arg1 error:(id *)arg2;
 - (BOOL)clearDiskApplicationKeyStore:(id)arg1 error:(id *)arg2;
@@ -37,6 +35,7 @@
 - (id)readPublicKeyStoreFromDisk:(id *)arg1;
 - (id)copyKeyStoreState;
 - (id)copyMetadata;
+@property(readonly) NSDictionary *applicationKeyStores;
 
 @end
 

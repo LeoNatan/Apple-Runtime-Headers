@@ -42,6 +42,7 @@
     _Bool _needsReloadedContent;
     _Bool _hasDeferredUpdate;
     _Bool _isApplyingSnapshot;
+    _Bool _isApplyingBatchUpdate;
     _Bool _isInflightScroll;
     _Bool _cancelInflightScroll;
     _Bool _isProgramaticScrollEvent;
@@ -172,6 +173,7 @@
 - (id)_sectionEnumerationOrder;
 - (void)_availableDataSourcesDidChange;
 - (void)updateCollectionViewSnapshotAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_applyCollectionViewSnapshot:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)collectionViewDeferralStateChanged;
 - (void)_ensureContentLoadedWithCompletion:(CDUnknownBlockType)arg1;
 - (void)performScrollTestNamed:(id)arg1 completion:(CDUnknownBlockType)arg2;

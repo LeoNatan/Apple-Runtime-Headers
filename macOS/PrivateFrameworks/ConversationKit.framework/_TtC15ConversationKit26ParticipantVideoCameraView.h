@@ -12,6 +12,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)layout;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

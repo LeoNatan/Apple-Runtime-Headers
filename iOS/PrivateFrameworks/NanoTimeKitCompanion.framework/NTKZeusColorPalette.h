@@ -27,6 +27,12 @@
 + (id)swatchImageForColor:(unsigned long long)arg1;
 + (id)swatchColorForColor:(unsigned long long)arg1;
 + (id)paletteForColor:(unsigned long long)arg1;
++ (id)blancSecondHandColor;
++ (id)blancDialTextColor;
++ (id)zeusBlancColor;
++ (id)noirDualToneHandInlayTextColor;
++ (id)noirDualToneBackgroundColor;
++ (id)noirDualToneSplitColor;
 + (id)noirSecondHandColor;
 + (id)noirHandStrokeColor;
 + (id)noirColor;

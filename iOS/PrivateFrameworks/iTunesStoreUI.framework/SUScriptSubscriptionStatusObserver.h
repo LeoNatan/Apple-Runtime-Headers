@@ -6,20 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSNumber, SUScriptSubscriptionStatusResponse;
-@protocol OS_dispatch_queue;
+@class ICMusicSubscriptionStatusMonitor, SUScriptSubscriptionStatusResponse;
+@protocol NSCopying, OS_dispatch_queue;
 
 @interface SUScriptSubscriptionStatusObserver : NSObject
 {
     NSObject<OS_dispatch_queue> *_accessQueue;
-    NSNumber *_lastKnownActiveAccountUniqueIdentifier;
     SUScriptSubscriptionStatusResponse *_lastKnownSubscriptionStatusResponse;
+    ICMusicSubscriptionStatusMonitor *_subscriptionStatusMonitor;
+    id <NSCopying> _subscriptionStatusMonitorObservationToken;
 }
 
 + (id)sharedObserver;
 - (void).cxx_destruct;
-- (void)_handleSubscriptionStatusDidChangeNotification:(id)arg1;
-- (void)_handleAccountStoreDidChangeNotification:(id)arg1;
+- (void)_updateWithSubscriptionStatus:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

@@ -15,6 +15,7 @@
 
 @interface FCBundleSubscriptionManager : NSObject <FCAppActivityObserving, FCBundleChannelProviderDelegate, FCBundleSubscriptionManagerType>
 {
+    _Bool _hasRunEntitlementOnce;
     id <FCBundleEntitlementsProviderType> _bundleEntitlementsProvider;
     FCPurchaseLookupRecordSource *_purchaseLookupRecordSource;
     FCBundleSubscription *_cachedSubscription;
@@ -27,6 +28,7 @@
 }
 
 - (void).cxx_destruct;
+@property(nonatomic) _Bool hasRunEntitlementOnce; // @synthesize hasRunEntitlementOnce=_hasRunEntitlementOnce;
 @property(readonly, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
 @property(retain, nonatomic) id <FCBundleChannelProviderType> bundleChannelProvider; // @synthesize bundleChannelProvider=_bundleChannelProvider;
 @property(retain, nonatomic) NFMutexLock *accessLock; // @synthesize accessLock=_accessLock;
@@ -49,6 +51,7 @@
 - (void)renewalNoticeShownWithPurchaseID:(id)arg1;
 - (id)bundleSubscriptionLookupEntry;
 - (void)updateCachedSubscriptionWithSubscription:(id)arg1;
+- (void)updateHasRunEntitlementOnce:(_Bool)arg1;
 - (void)clearBundleSubscription;
 - (void)expireBundleSubscription;
 - (void)refreshBundleSubscriptionWithCachePolicy:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;

@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 + (id)parentIdNameKeyForItem:(id)arg1;
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (id)stitchedItemsForParentID:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *stitchedFieldsAndItemsByItemIDs;
 @property(readonly, nonatomic) NSArray *allPlaceholderReplacementsIDs;
 @property(readonly, nonatomic) NSDictionary *allPlaceholderItemsByParentIdentifierAndName;

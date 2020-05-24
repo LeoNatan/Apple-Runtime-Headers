@@ -9,6 +9,7 @@
 @class AKDevice, NSDictionary, NSString;
 
 @protocol AKAuthenticationContext <NSObject>
+@property(nonatomic) long long authenticationMode;
 @property(copy, nonatomic) AKDevice *companionDevice;
 @property(copy, nonatomic) AKDevice *proxiedDevice;
 @property(copy, nonatomic) NSString *appProvidedContext;

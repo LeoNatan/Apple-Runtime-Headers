@@ -9,9 +9,7 @@
 @class NSData;
 
 @protocol CRKPrivateKey <CRKKeychainItem>
-// Error parsing type for property underlyingPrivateKey:
-// Property attributes: T^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v},R,N
-
+@property(readonly, nonatomic) struct __SecKey *underlyingPrivateKey;
 @property(readonly, copy, nonatomic) NSData *dataRepresentation;
 @end
 

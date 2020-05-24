@@ -10,6 +10,7 @@
 {
 }
 
++ (id)defaults;
 + (id)entryEventNoneDefinitionPairedDeviceConfig;
 + (id)entryEventNoneDefinitionConfig;
 + (id)entryEventNoneDefinitions;

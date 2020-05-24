@@ -86,6 +86,7 @@
 - (id)_concreteTransactionForRecordAtIndex:(unsigned long long)arg1 withBalance:(unsigned int *)arg2 historyRecords:(id)arg3 terminalState:(id)arg4 numberProcessed:(unsigned long long *)arg5 exitedShinkansen:(_Bool *)arg6;
 - (void)_resolveTransactionsFromState:(id)arg1 toState:(id)arg2 withHistoryRecords:(id)arg3 concreteTransactions:(id *)arg4 ephemeralTransaction:(id *)arg5;
 - (id)processUpdateWithAppletHistory:(id)arg1 concreteTransactions:(id *)arg2 ephemeralTransaction:(id *)arg3;
+- (id)processUpdateWithAppletHistory:(id)arg1 concreteTransactions:(id *)arg2 ephemeralTransaction:(id *)arg3 mutatedBalances:(id *)arg4 balanceLabelDictionary:(id)arg5;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, nonatomic, getter=isInShinkansenStation) _Bool inShinkansenStation; // @dynamic inShinkansenStation;

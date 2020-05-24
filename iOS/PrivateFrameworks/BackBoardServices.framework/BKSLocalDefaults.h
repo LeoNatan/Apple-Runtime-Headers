@@ -6,7 +6,7 @@
 
 #import <BaseBoard/BSAbstractDefaultDomain.h>
 
-@class NSArray, NSDictionary, NSString;
+@class NSArray, NSData, NSDictionary, NSString;
 
 @interface BKSLocalDefaults : BSAbstractDefaultDomain
 {
@@ -48,14 +48,17 @@
 @property(nonatomic) float fenceArbiterTimeoutInterval; // @dynamic fenceArbiterTimeoutInterval;
 @property(nonatomic) _Bool forceCloneMirroring; // @dynamic forceCloneMirroring;
 @property(nonatomic) __weak NSString *forceMirroredOrientation; // @dynamic forceMirroredOrientation;
+@property(retain, nonatomic) NSData *globalMouseDevicePreferences; // @dynamic globalMouseDevicePreferences;
 @property(nonatomic) _Bool hideAppleLogoOnLaunch; // @dynamic hideAppleLogoOnLaunch;
 @property(nonatomic) _Bool ignoreAccelerometerAndOrientationEvents; // @dynamic ignoreAccelerometerAndOrientationEvents;
 @property(nonatomic) _Bool ignoreTetheringPreferences; // @dynamic ignoreTetheringPreferences;
 @property(nonatomic) __weak NSArray *loggingTypesEnabled; // @dynamic loggingTypesEnabled;
+@property(nonatomic) NSArray *mouseInterpolation; // @dynamic mouseInterpolation;
 @property(nonatomic) _Bool showBuildNumber; // @dynamic showBuildNumber;
 @property(nonatomic) _Bool simulatePhoneButton; // @dynamic simulatePhoneButton;
 @property(nonatomic, getter=isSteveNoteOverscanEnabled) _Bool steveNoteOverscanEnabled; // @dynamic steveNoteOverscanEnabled;
 @property(nonatomic, getter=isSteveNoteRotationEnabled) _Bool steveNoteRotationEnabled; // @dynamic steveNoteRotationEnabled;
+@property(nonatomic) _Bool visualizeMousePointer; // @dynamic visualizeMousePointer;
 
 @end
 

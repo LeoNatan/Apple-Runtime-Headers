@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface SFNavigationBarToggleButton : UIButton
 {
+    _Bool _liftedForCursor;
     UIImageView *_defaultStateImageView;
     UIImageView *_selectedStateImageView;
     SFToggleBackgroundView *_selectedStateMaskView;
@@ -24,6 +25,7 @@ __attribute__((visibility("hidden")))
     UIColor *_glyphTintColor;
 }
 
++ (_Bool)_cursorInteractionEnabled;
 + (id)readerImage;
 + (id)formatMenuImage;
 + (struct CGSize)glyphSize;
@@ -34,6 +36,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double resizableBackgroundCornerRadius; // @synthesize resizableBackgroundCornerRadius=_resizableBackgroundCornerRadius;
 @property(nonatomic) _Bool drawsLightGlyph; // @synthesize drawsLightGlyph=_drawsLightGlyph;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
+- (void)cursorInteraction:(id)arg1 willExitRegion:(id)arg2 withAnimator:(id)arg3;
+- (void)cursorInteraction:(id)arg1 willEnterRegion:(id)arg2 withAnimator:(id)arg3;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
 - (void)setSelected:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)_updateSelectedStateView;

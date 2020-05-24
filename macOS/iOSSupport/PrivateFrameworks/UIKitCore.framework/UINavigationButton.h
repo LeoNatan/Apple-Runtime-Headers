@@ -36,6 +36,7 @@
     struct UIEdgeInsets __additionalSelectionInsets;
 }
 
++ (BOOL)_cursorInteractionEnabled;
 + (void)_resetRenderingModesForBackgroundImageView:(id)arg1 inBarStyle:(long long)arg2 isEnabled:(BOOL)arg3 withAccessibilityBackground:(BOOL)arg4 wantsBlendModeForAccessibilityBackgrounds:(BOOL)arg5 accessibilityBackgroundTintColor:(id)arg6;
 + (id)defaultFont;
 - (void).cxx_destruct;
@@ -56,6 +57,8 @@
 @property(nonatomic, setter=_setCreatedByBarButtonItem:) BOOL _createdByBarButtonItem; // @synthesize _createdByBarButtonItem;
 @property(copy, nonatomic, setter=_setStylesForSizingTitles:) NSDictionary *_stylesForSizingTitles; // @synthesize _stylesForSizingTitles;
 @property(nonatomic, setter=_setButtonItemStyle:) long long _buttonItemStyle; // @synthesize _buttonItemStyle;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 - (void)_uinavigationbar_prepareToAppearInNavigationItem:(id)arg1 onLeft:(BOOL)arg2;
 - (id)_externalUnfocusedBorderColor;
 - (BOOL)_isExternalRoundedRectButton;

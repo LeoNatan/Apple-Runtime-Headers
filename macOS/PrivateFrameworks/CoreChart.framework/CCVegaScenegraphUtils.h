@@ -13,7 +13,7 @@
 + (void)applyGradient:(id)arg1 toLayer:(id)arg2 delegate:(id)arg3;
 + (id)createOrUpdateLayer:(id)arg1 path:(struct CGPath *)arg2 gradient:(id)arg3 mode:(int)arg4 lineWidth:(double)arg5 delegate:(id)arg6;
 + (id)createOrUpdateGradientLayer:(id)arg1 existingLayer:(id)arg2 delegate:(id)arg3;
-+ (struct CGPath *)pathForRectangleMark:(id)arg1 offset:(double)arg2;
++ (struct CGPath *)newPathForRectangleMark:(id)arg1 offset:(double)arg2;
 + (void)updateShapeLayerStroke:(id)arg1 withMark:(id)arg2 delegate:(id)arg3;
 + (void)updateShapeLayerFill:(id)arg1 withMark:(id)arg2 delegate:(id)arg3;
 + (void)updateShapeLayer:(id)arg1 withMark:(id)arg2 delegate:(id)arg3;

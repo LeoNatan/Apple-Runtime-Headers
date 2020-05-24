@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (id)_highlightedView;
 - (id)actionTitleLabelColorForViewState:(id)arg1;
 - (id)actionTitleLabelFontForViewState:(id)arg1;
+- (_Bool)selectByIndirectPointerTouchRequired;
 - (_Bool)selectionFeedbackEnabled;
 - (double)verticalImageContentSpacing;
 - (double)horizontalImageContentSpacing;

@@ -41,6 +41,7 @@
 @property(readonly, nonatomic) _Bool safari_isSafariResourceURL;
 - (_Bool)safari_isMailtoURL;
 @property(readonly, nonatomic) _Bool safari_isBlobURL;
+@property(readonly, nonatomic) _Bool safari_hasCustomScheme;
 - (_Bool)safari_isDataURL;
 - (_Bool)safari_isHTTPURL;
 - (_Bool)safari_isHTTPFamilyURL;

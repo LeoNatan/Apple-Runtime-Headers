@@ -41,7 +41,7 @@
 - (void)_clearLastEventSource:(id)arg1;
 - (void)signalEventSourceChanged:(long long)arg1 fromHandler:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setKeyboardTotalDisable:(_Bool)arg1 withFence:(id)arg2 fromHandler:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)handlerRequestedFocus:(id)arg1;
+- (void)handlerRequestedFocus:(id)arg1 shouldStealKeyboard:(_Bool)arg2;
 - (void)transition:(id)arg1 eventStage:(unsigned long long)arg2 withInfo:(id)arg3 fromHandler:(id)arg4;
 - (void)processWithPID:(int)arg1 foreground:(_Bool)arg2 suspended:(_Bool)arg3;
 - (void)updateInterestedBundleIDs;

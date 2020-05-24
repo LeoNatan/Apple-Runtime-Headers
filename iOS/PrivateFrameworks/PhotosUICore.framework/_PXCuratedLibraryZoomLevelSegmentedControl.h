@@ -13,6 +13,7 @@
 
 + (double)_sectionIndicatorInsetForTraitCollection:(id)arg1 size:(int)arg2;
 + (double)_cornerRadiusForTraitCollection:(id)arg1 size:(int)arg2;
++ (_Bool)_cursorInteractionEnabled;
 @property(readonly, nonatomic) _Bool lastTouchRemainedOnSelectedSegment; // @synthesize lastTouchRemainedOnSelectedSegment=_lastTouchRemainedOnSelectedSegment;
 - (void)highlightSegment:(int)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

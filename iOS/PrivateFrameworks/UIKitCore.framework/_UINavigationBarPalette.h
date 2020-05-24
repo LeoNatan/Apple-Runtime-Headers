@@ -6,11 +6,12 @@
 
 #import <UIKitCore/UIView.h>
 
+#import <UIKitCore/UIPointerInteractionDelegate-Protocol.h>
 #import <UIKitCore/_UINavigationPalette-Protocol.h>
 
-@class NSString, UINavigationController, UINavigationItem;
+@class NSString, UINavigationController, UINavigationItem, _UIPointerInteractionAssistant;
 
-@interface _UINavigationBarPalette : UIView <_UINavigationPalette>
+@interface _UINavigationBarPalette : UIView <_UINavigationPalette, UIPointerInteractionDelegate>
 {
     _Bool _didSetMinimumHeight;
     _Bool _transitioning;
@@ -20,6 +21,8 @@
     double _preferredHeight;
     double _minimumHeight;
     UIView *_temporaryBackgroundView;
+    NSString *_assistantIdentifier;
+    _UIPointerInteractionAssistant *_assistant;
     UINavigationItem *_owningNavigationItem;
     unsigned long long __contentViewMarginType;
     long long __layoutPriority;
@@ -33,11 +36,19 @@
 @property(nonatomic) __weak UINavigationItem *owningNavigationItem; // @synthesize owningNavigationItem=_owningNavigationItem;
 @property(nonatomic, getter=isPinned) _Bool pinned; // @synthesize pinned=_pinned;
 @property(nonatomic) _Bool transitioning; // @synthesize transitioning=_transitioning;
+@property(nonatomic) __weak _UIPointerInteractionAssistant *assistant; // @synthesize assistant=_assistant;
+@property(copy, nonatomic) NSString *assistantIdentifier; // @synthesize assistantIdentifier=_assistantIdentifier;
 @property(nonatomic) _Bool didSetMinimumHeight; // @synthesize didSetMinimumHeight=_didSetMinimumHeight;
 @property(retain, nonatomic) UIView *temporaryBackgroundView; // @synthesize temporaryBackgroundView=_temporaryBackgroundView;
 @property(nonatomic) double minimumHeight; // @synthesize minimumHeight=_minimumHeight;
 @property(nonatomic) double preferredHeight; // @synthesize preferredHeight=_preferredHeight;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
+- (void)pointerInteraction:(id)arg1 willExitRegion:(id)arg2 animator:(id)arg3;
+- (void)pointerInteraction:(id)arg1 willEnterRegion:(id)arg2 animator:(id)arg3;
+- (id)pointerInteraction:(id)arg1 styleForRegion:(id)arg2;
+- (id)pointerInteraction:(id)arg1 regionForRequest:(id)arg2 defaultRegion:(id)arg3;
+- (void)_clearAssistants;
+- (void)_setAssistants;
 - (void)_setupBackgroundViewIfNecessary;
 - (void)_resetHeightConstraintConstant;
 - (void)_resetConstraintConstants:(double)arg1;

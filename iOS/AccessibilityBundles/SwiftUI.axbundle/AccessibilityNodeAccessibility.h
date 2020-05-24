@@ -22,6 +22,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (_Bool)_accessibilityScrollToVisible;
 - (void)dealloc;
 - (_Bool)conformsToProtocol:(id)arg1;
 @property(readonly, nonatomic) id <UICoordinateSpace> coordinateSpace;

@@ -10,7 +10,8 @@
 {
 }
 
-- (struct CGPath *)pathForMark:(id)arg1;
+- (struct CGRect)accessibilityFrameForMark:(id)arg1 layer:(id)arg2;
+- (struct CGPath *)newPathForMark:(id)arg1;
 
 @end
 

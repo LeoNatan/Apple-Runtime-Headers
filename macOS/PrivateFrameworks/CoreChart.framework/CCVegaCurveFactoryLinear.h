@@ -9,8 +9,7 @@
 @interface CCVegaCurveFactoryLinear : CCVegaCurveFactory
 {
     int _point;
-    int _line;
-    _Bool _end;
+    int _areaState;
 }
 
 - (void)point:(struct CGPoint)arg1;

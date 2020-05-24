@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 - (id)_createItemsOfClass:(Class)arg1 synchronouslyIfPossible:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_internalSession;
 @property(readonly, nonatomic, getter=_operationMask) unsigned long long operationMask;
+@property(readonly, nonatomic, getter=_drivenByPointer) _Bool drivenByPointer;
 - (void)requestVisibleItems:(CDUnknownBlockType)arg1;
 - (id)loadObjectsOfClass:(Class)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)canLoadObjectsOfClass:(Class)arg1;

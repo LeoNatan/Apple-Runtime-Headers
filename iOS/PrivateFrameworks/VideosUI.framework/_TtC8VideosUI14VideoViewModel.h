@@ -8,7 +8,8 @@
 
 @interface _TtC8VideosUI14VideoViewModel : _TtC8VideosUI9ViewModel
 {
-    // Error parsing type: , name: videosPlayable
+    // Error parsing type: , name: defaultVideosPlayable
+    // Error parsing type: , name: tvVideosPlayable
     // Error parsing type: , name: phoneVideosPlayable
     // Error parsing type: , name: padVideosPlayable
 }

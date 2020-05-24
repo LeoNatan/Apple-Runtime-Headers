@@ -10,7 +10,6 @@
 {
     // Error parsing type: , name: participants
     // Error parsing type: , name: participantsBeforeFocus
-    // Error parsing type: , name: participantPriorities
     // Error parsing type: , name: focusedParticipant
     // Error parsing type: , name: sashedParticipant
     // Error parsing type: , name: selectedParticipant

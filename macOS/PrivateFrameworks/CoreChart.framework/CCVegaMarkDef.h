@@ -17,6 +17,7 @@
 
 - (void).cxx_destruct;
 @property __weak CCVegaCARenderer *delegate; // @synthesize delegate;
+- (struct CGRect)accessibilityFrameForMark:(id)arg1 layer:(id)arg2;
 - (id)updateMultiMark:(id)arg1;
 - (id)enterMultiMark:(id)arg1;
 - (id)updateMark:(id)arg1;

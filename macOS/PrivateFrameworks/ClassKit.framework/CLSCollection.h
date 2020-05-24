@@ -39,6 +39,7 @@
 - (unsigned long long)childCount:(long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)mergeWithObject:(id)arg1;
 - (BOOL)validateObject:(id *)arg1;
 - (id)initWithObjectID:(id)arg1 name:(id)arg2 location:(id)arg3 type:(long long)arg4 icon:(id)arg5;
 - (id)initWithCollectionName:(id)arg1 location:(id)arg2 type:(long long)arg3 icon:(id)arg4;

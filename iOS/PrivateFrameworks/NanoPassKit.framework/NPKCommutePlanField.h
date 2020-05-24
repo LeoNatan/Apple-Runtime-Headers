@@ -26,9 +26,10 @@
 @property(readonly, nonatomic) PKPaymentPassAction *action; // @synthesize action=_action;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSString *formattedValue; // @synthesize formattedValue=_formattedValue;
-@property(readonly, nonatomic) NSString *detailLabel; // @synthesize detailLabel=_detailLabel;
+@property(readonly, nonatomic) NSString *detailLabel;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) _Bool isCountBasedCommutePlan;
 @property(readonly, nonatomic) _Bool hasPendingUpdate;
 - (id)initWithLabel:(id)arg1 detailLabel:(id)arg2 formattedValue:(id)arg3 usageDateRange:(id)arg4 identifier:(id)arg5 action:(id)arg6;
 

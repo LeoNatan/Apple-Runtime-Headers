@@ -44,6 +44,7 @@
 - (void)remoteService:(id)arg1 didInterruptConnection:(id)arg2;
 - (void)remoteService:(id)arg1 didEstablishConnection:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableMessageService:(_Bool)arg2;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithCredentials:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithBalances:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithTransitPassProperties:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didRemoveTransactionWithIdentifier:(id)arg2;
@@ -64,7 +65,6 @@
 - (id)_remoteObjectProxyWithFailureHandler:(CDUnknownBlockType)arg1;
 - (void)_sharedPaymentWebServiceContextForDevice:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)trustedDeviceEnrollmentSignatureWithAccountDSID:(id)arg1 sessionData:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (_Bool)canProvisionAccessPassWithConfiguration:(id)arg1;
 - (_Bool)canAddSecureElementPassWithConfiguration:(id)arg1;
 - (void)noteForegroundVerificationObserverActive:(_Bool)arg1;
 - (void)startBackgroundVerificationObserverForPass:(id)arg1 verificationMethod:(id)arg2;
@@ -100,6 +100,7 @@
 - (void)setDefaultCardUniqueID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removePaymentPassWithUniqueID:(id)arg1 forDevice:(id)arg2 waitForConfirmation:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)savePaymentPass:(id)arg1 forDevice:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)paymentPassWithPairedTerminalIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)paymentPassWithDeviceAccountIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)paymentPassesWithPrimaryAccountIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)paymentPassWithUniqueID:(id)arg1 synchronous:(_Bool)arg2 reply:(CDUnknownBlockType)arg3;

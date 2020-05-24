@@ -94,7 +94,7 @@
 - (void)_sendDidEncounterAuthorizationEventIfNecessary:(unsigned long long)arg1;
 - (_Bool)_passwordRequired;
 - (_Bool)_passcodeAllowed;
-- (void)_updateCoachingInstruction;
+- (_Bool)_updateCoachingInstruction;
 - (void)_updatePhysicalButtonInstruction;
 - (void)_setUserIntentRequired:(_Bool)arg1 shouldIgnorePhysicalButton:(_Bool)arg2;
 - (void)_updateUserIntentRequired;

@@ -124,7 +124,7 @@
 - (void)presentAutomaticPresentationControllerForPassWithUniqueID:(id)arg1;
 - (void)addSimulatorPassWithURL:(id)arg1;
 - (void)addVASPassWithIdentifier:(id)arg1;
-- (void)startPaymentPreflight:(id)arg1 withPaymentSetupMode:(long long)arg2 referrerIdentifier:(id)arg3 paymentNetwork:(id)arg4 transitNetworkIdentifier:(id)arg5 allowedFeatureIdentifiers:(id)arg6;
+- (void)startPaymentPreflight:(id)arg1 withPaymentSetupMode:(long long)arg2 referrerIdentifier:(id)arg3 paymentNetwork:(id)arg4 transitNetworkIdentifier:(id)arg5 allowedFeatureIdentifiers:(id)arg6 productIdentifiers:(id)arg7;
 - (void)_invalidateForType:(long long)arg1;
 - (void)partiallyInvalidate;
 - (void)invalidate;
@@ -135,9 +135,10 @@
 - (void)peerPaymentAccountResolutionController:(id)arg1 requestsDismissCurrentViewControllerAnimated:(_Bool)arg2;
 - (void)peerPaymentAccountResolutionController:(id)arg1 requestsPresentViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)presentPeerPaymentPassAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)presentSubcredentialPairingFlowWithConfig:(id)arg1 animated:(_Bool)arg2;
+- (void)presentSubcredentialPairingFlowWithConfig:(id)arg1 flowType:(long long)arg2 animated:(_Bool)arg3;
+- (_Bool)presentSubcredentialPairingFlowIfPossibleWithIssuer:(id)arg1 password:(id)arg2 animated:(_Bool)arg3;
 - (_Bool)presentSubcredentialPairingFlowIfPossibleWithAppIdentifier:(id)arg1 animated:(_Bool)arg2;
-- (void)presentSubcredentialInvitationWithIdentifier:(id)arg1 animated:(_Bool)arg2;
+- (void)presentSubcredentialInvitationWithIdentifier:(id)arg1 remoteDeviceInvitationIdentifier:(id)arg2 animated:(_Bool)arg3;
 - (void)presentDiscoveryArticleForItemWithIdentifier:(id)arg1 referrerIdentifier:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)presentDailyCashForPassUniqueIdentifier:(id)arg1 dateComponents:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)showStatementForIdentifier:(id)arg1 passUniqueIdentifier:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
@@ -158,8 +159,8 @@
 - (void)presentInstallmentPlanWithIdentifier:(id)arg1 forAccountIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)presentInstallmentPlansForFeature:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentPassWithUniqueID:(id)arg1 context:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)_setupItemForExpressUpgradeMarket:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)presentExpressUpgradeDetailForPassUniqueID:(id)arg1 marketIdentifier:(id)arg2 animated:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)_setupItemForExpressUpgradeMarket:(id)arg1 hideDisableAction:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)presentExpressUpgradeDetailForPassUniqueID:(id)arg1 marketIdentifier:(id)arg2 hideDisableAction:(unsigned long long)arg3 animated:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)presentPassDetailsWithUniqueID:(id)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)presentPassWithUniqueID:(id)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setTableModalPresentationEnabled:(_Bool)arg1 animated:(_Bool)arg2;
@@ -169,7 +170,7 @@
 - (void)presentOffscreenAnimated:(_Bool)arg1 split:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)presentOffscreenAnimated:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)presentOnscreen:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
-- (void)presentPaymentSetupInMode:(long long)arg1 referrerIdentifier:(id)arg2 paymentNetwork:(id)arg3 transitNetworkIdentifier:(id)arg4 allowedFeatureIdentifiers:(id)arg5;
+- (void)presentPaymentSetupInMode:(long long)arg1 referrerIdentifier:(id)arg2 paymentNetwork:(id)arg3 transitNetworkIdentifier:(id)arg4 allowedFeatureIdentifiers:(id)arg5 productIdentifiers:(id)arg6;
 - (void)presentInitialState;
 - (void)queuePersistentCardEmulation;
 - (void)updatePassesIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;

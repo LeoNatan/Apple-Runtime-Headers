@@ -25,6 +25,7 @@
 - (void)productViewController:(id)arg1 didFinishWithResult:(long long)arg2;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidLoad;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)clientApplicationDidEnterBackground;
 - (void)didSetAdSpace;

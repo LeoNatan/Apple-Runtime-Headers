@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (BOOL)_shouldReceiveTouch:(id)arg1 withEvent:(id)arg2;
 - (id)description;
 
 // Remaining properties

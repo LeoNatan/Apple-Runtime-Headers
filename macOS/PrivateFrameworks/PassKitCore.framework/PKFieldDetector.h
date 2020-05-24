@@ -25,6 +25,7 @@
     unsigned long long _fieldPropertieslookupSynchronizer;
     struct os_unfair_lock_s _lock;
     NSHashTable *_observers;
+    unsigned long long _enablePersistentFieldDetectionReasons;
     PKFieldProperties *_fieldProperties;
     NSObject<OS_dispatch_queue> *_fieldDetectorSerialQueue;
     NSObject<OS_dispatch_queue> *_replyQueue;
@@ -37,11 +38,14 @@
 - (void)_startLookupForFieldProperties:(id)arg1;
 - (void)_startFieldDetectSession;
 - (void)_restartFieldDetectSession;
+- (void)_setPersistentFieldDetectionEnabled:(BOOL)arg1;
+- (void)_evaulatePersistentFieldDetectionEnablementReasons;
 @property(nonatomic) __weak id <PKFieldDetectorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak PKFieldProperties *fieldProperties;
 - (void)unregisterObserver:(id)arg1;
 - (void)registerObserver:(id)arg1;
 - (void)setPersistentFieldDetectionEnabled:(BOOL)arg1;
+- (void)requestPersistentFieldDetectionEnabled:(BOOL)arg1 withReason:(unsigned long long)arg2;
 - (void)loyaltyAndPaymentSessionDidEndUnexpectedly:(id)arg1;
 - (void)loyaltyAndPaymentSession:(id)arg1 didPerformValueAddedServiceTransactions:(id)arg2;
 - (void)fieldDetectSessionDidEndUnexpectedly:(id)arg1;

@@ -10,10 +10,12 @@
 {
     // Error parsing type: , name: identifier
     // Error parsing type: , name: type
+    // Error parsing type: , name: metrics
     // Error parsing type: , name: children
     // Error parsing type: , name: childrenDictionary
     // Error parsing type: , name: viewLayout
     // Error parsing type: , name: parent
+    // Error parsing type: , name: parentViewElement
     // Error parsing type: , name: jsonDictionary
     // Error parsing type: , name: _document
 }

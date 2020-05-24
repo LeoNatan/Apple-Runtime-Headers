@@ -11,7 +11,7 @@
 #import <UIKitCore/_UINavigationBarTitleViewDataSource-Protocol.h>
 #import <UIKitCore/_UINavigationBarTransitionContextParticipant-Protocol.h>
 
-@class NSArray, NSDictionary, NSMutableArray, NSString, UIBarButtonItem, UIColor, UIImage, UIView, _UIBarButtonItemData, _UINavigationBarContentViewLayout, _UINavigationBarTransitionContext;
+@class NSArray, NSDictionary, NSMutableArray, NSString, UIBarButtonItem, UIColor, UIImage, UIView, _UIBarButtonItemData, _UINavigationBarContentViewLayout, _UINavigationBarTransitionContext, _UIPointerInteractionAssistant;
 @protocol _UINavigationBarContentViewDelegate;
 
 __attribute__((visibility("hidden")))
@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
     NSDictionary *_titleAttributes;
     UIColor *_textColor;
     double _overrideSize;
+    _UIPointerInteractionAssistant *_assistant;
     long long _requestedContentSize;
     long long _barMetrics;
     _UINavigationBarContentViewLayout *_layout;
@@ -52,6 +53,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _UINavigationBarContentViewLayout *layout; // @synthesize layout=_layout;
 @property(nonatomic) long long barMetrics; // @synthesize barMetrics=_barMetrics;
 @property(nonatomic) long long requestedContentSize; // @synthesize requestedContentSize=_requestedContentSize;
+@property(nonatomic) __weak _UIPointerInteractionAssistant *assistant; // @synthesize assistant=_assistant;
 @property(nonatomic) double overrideSize; // @synthesize overrideSize=_overrideSize;
 @property(copy, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(nonatomic) struct UIOffset titlePositionAdjustment; // @synthesize titlePositionAdjustment=_titlePositionAdjustment;

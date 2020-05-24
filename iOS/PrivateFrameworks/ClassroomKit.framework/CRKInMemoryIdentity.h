@@ -17,7 +17,7 @@
     id <CRKPrivateKey> _privateKey;
 }
 
-+ (id)identityWithConfiguration:(id)arg1;
++ (id)identityWithConfiguration:(id)arg1 validityDateInterval:(id)arg2;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) id <CRKPrivateKey> privateKey; // @synthesize privateKey=_privateKey;
 @property(readonly, nonatomic) id <CRKCertificate> certificate; // @synthesize certificate=_certificate;

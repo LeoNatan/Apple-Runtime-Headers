@@ -42,6 +42,7 @@
 - (void)archiveWebServiceContext:(id)arg1;
 - (void)handlePreferredAID:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (void)handleUpdatePaymentPassWithTypeIdentifier:(id)arg1;
+- (void)handleCredentialsUpdate:(id)arg1 forUniqueID:(id)arg2;
 - (void)handleBalanceUpdate:(id)arg1 forUniqueID:(id)arg2;
 - (void)handleRemoveTransactionsWithIdentifiers:(id)arg1;
 - (void)handleAppletState:(id)arg1 forUniqueID:(id)arg2;

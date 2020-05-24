@@ -9,15 +9,17 @@
 #import <SpringBoard/MTLumaDodgePillBackgroundLuminanceObserver-Protocol.h>
 #import <SpringBoard/PTSettingsKeyPathObserver-Protocol.h>
 #import <SpringBoard/SBAttentionAwarenessClientDelegate-Protocol.h>
+#import <SpringBoard/SBSystemCursorInteractionDelegate-Protocol.h>
 
 @class MTLumaDodgePillSettings, MTLumaDodgePillView, NSMutableSet, NSString, SBAttentionAwarenessClient, SBFHomeGrabberSettings;
 @protocol SBHomeGrabberDelegate;
 
-@interface SBHomeGrabberView : UIView <PTSettingsKeyPathObserver, SBAttentionAwarenessClientDelegate, MTLumaDodgePillBackgroundLuminanceObserver>
+@interface SBHomeGrabberView : UIView <PTSettingsKeyPathObserver, SBAttentionAwarenessClientDelegate, MTLumaDodgePillBackgroundLuminanceObserver, SBSystemCursorInteractionDelegate>
 {
     SBFHomeGrabberSettings *_settings;
     MTLumaDodgePillSettings *_pillSettings;
     MTLumaDodgePillView *_pillView;
+    UIView *_pointerHitTestBlockingView;
     SBAttentionAwarenessClient *_idleTouchAwarenessClient;
     long long _touchState;
     unsigned long long _lastActivatingToken;
@@ -31,6 +33,7 @@
     long long _style;
     unsigned long long _lastVisibilityTransitionToken;
     NSMutableSet *_outstandingVisibilityTransitionTokens;
+    _Bool _isSystemCursorInteractionEnabled;
     _Bool _suppressesBounce;
     id <SBHomeGrabberDelegate> _delegate;
     long long _colorBias;
@@ -42,12 +45,17 @@
 @property(nonatomic, getter=isEdgeProtectEnabled) _Bool edgeProtectEnabled; // @synthesize edgeProtectEnabled=_edgeProtectEnabled;
 @property(nonatomic) _Bool autoHides; // @synthesize autoHides=_autoHides;
 @property(nonatomic) __weak id <SBHomeGrabberDelegate> delegate; // @synthesize delegate=_delegate;
+- (id)styleForRegion:(id)arg1 forView:(id)arg2;
+- (id)regionAtLocation:(struct CGPoint)arg1 forView:(id)arg2;
+- (_Bool)shouldBeginCursorInteractionAtLocation:(struct CGPoint)arg1 forView:(id)arg2;
+- (struct CGRect)_cursorInteractionHitTestRect;
 - (void)lumaDodgePillDidDetectBackgroundLuminanceChange:(id)arg1;
 - (void)clientDidResetForUserAttention:(id)arg1;
 - (void)client:(id)arg1 attentionLostTimeoutDidExpire:(double)arg2 forConfigurationGeneration:(unsigned long long)arg3 withAssociatedObject:(id)arg4;
 - (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
+- (void)_setSystemCursorInteractionEnabled:(_Bool)arg1;
 - (void)_bounce;
 - (void)_noteActiveForTouchThatShouldUnhideImmediately:(_Bool)arg1;
 - (void)_invalidateInitialAutoHideTime;

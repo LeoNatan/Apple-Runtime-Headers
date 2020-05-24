@@ -9,6 +9,7 @@
 @class JSValue, NSArray, NSString;
 
 @protocol CCVegaCGContextInterface <JSExport>
+@property(retain) NSString *globalCompositeOperation;
 @property double lineDashOffset;
 @property(retain) NSString *font;
 @property(retain) NSString *textAlign;

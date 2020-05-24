@@ -6,7 +6,7 @@
 
 #import <CoverSheet/CSCoverSheetViewControllerBase.h>
 
-@class CSHomeAffordanceView, NSMutableArray, SBFHomeGrabberSettings, UIView;
+@class CSHomeAffordanceView, NSMutableArray, SBFHomeGrabberSettings, UIHoverGestureRecognizer, UIView;
 
 @interface CSHomeAffordanceViewController : CSCoverSheetViewControllerBase
 {
@@ -14,6 +14,8 @@
     NSMutableArray *_rotationWrapperViews;
     long long _orientation;
     SBFHomeGrabberSettings *_settings;
+    _Bool _suppressAnimationForPointer;
+    UIHoverGestureRecognizer *_suppressAnimationForPointerGestureRecognizer;
     CSHomeAffordanceView *_homeAffordanceView;
     struct CGPoint _homeAffordanceOffset;
 }
@@ -21,6 +23,8 @@
 - (void).cxx_destruct;
 @property(nonatomic) struct CGPoint homeAffordanceOffset; // @synthesize homeAffordanceOffset=_homeAffordanceOffset;
 @property(readonly, nonatomic) CSHomeAffordanceView *homeAffordanceView; // @synthesize homeAffordanceView=_homeAffordanceView;
+- (void)aggregateAppearance:(id)arg1;
+- (void)_handleSuppressAnimationForPointerGesture:(id)arg1;
 - (id)_addWrapperViewWithOrientation:(long long)arg1;
 - (struct CGRect)_homeAffordanceRestingFrame;
 - (void)_layoutHomeAffordance;

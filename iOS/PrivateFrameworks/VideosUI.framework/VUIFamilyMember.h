@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(retain, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
 @property(retain, nonatomic) NSNumber *memberIdentifier; // @synthesize memberIdentifier=_memberIdentifier;
+- (unsigned long long)hash;
 
 @end
 

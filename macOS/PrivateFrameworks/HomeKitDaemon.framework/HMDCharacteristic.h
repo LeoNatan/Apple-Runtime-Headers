@@ -52,7 +52,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)updateService:(id)arg1 accessory:(id)arg2;
-@property(readonly) BOOL requiresRemoteNotificationRegistration;
 - (BOOL)deregisterNotificationForClientIdentifier:(id)arg1;
 - (void)setNotificationEnabled:(BOOL)arg1 forClientIdentifier:(id)arg2;
 - (BOOL)isNotificationEnabledForClientIdentifierPrefix:(id)arg1;

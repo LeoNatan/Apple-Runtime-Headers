@@ -51,6 +51,7 @@
 @property(retain) EKUITitleCalendarCompositeGadget *titleGadget; // @synthesize titleGadget=_titleGadget;
 @property(retain) EKUIGadgetContainer *titleLocationContainer; // @synthesize titleLocationContainer=_titleLocationContainer;
 @property(retain) EKDiff *diffFromCommitted; // @synthesize diffFromCommitted=_diffFromCommitted;
+- (void)setLastSnapshottedObject:(id)arg1;
 - (BOOL)proposedEvent;
 - (void)cancelProposedEvent;
 - (id)oldEvent:(id)arg1 didUpdateTo:(id)arg2;

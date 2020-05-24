@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (id)newGroupBackgroundViewWithGroupViewState:(id)arg1;
 - (id)actionViewStateForAttachingToActionRepresentationView:(id)arg1;
 - (double)actionTitleLabelMinimumScaleFactor;
+- (_Bool)selectByIndirectPointerTouchRequired;
 - (_Bool)selectionFeedbackEnabled;
 - (_Bool)selectByPressGestureRequired;
 - (struct UIEdgeInsets)actionSequenceEdgeInsets;

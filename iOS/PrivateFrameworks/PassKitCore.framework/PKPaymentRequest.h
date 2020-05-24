@@ -60,6 +60,8 @@
     NSString *_localizedConfirmationTitle;
     NSString *_localizedBiometricConfirmationTitle;
     NSString *_localizedPasswordButtonTitle;
+    NSString *_localizedAuthorizingTitle;
+    NSString *_localizedErrorMessage;
     NSString *_shippingEditableMessage;
     PKPaymentMerchantSession *_merchantSession;
     NSString *_passTypeIdentifier;
@@ -87,6 +89,8 @@
 @property(nonatomic) _Bool requiresAddressPrecision; // @synthesize requiresAddressPrecision=_requiresAddressPrecision;
 @property(copy, nonatomic) NSString *shippingEditableMessage; // @synthesize shippingEditableMessage=_shippingEditableMessage;
 @property(nonatomic, getter=isShippingEditable) _Bool shippingEditable; // @synthesize shippingEditable=_shippingEditable;
+@property(copy, nonatomic) NSString *localizedErrorMessage; // @synthesize localizedErrorMessage=_localizedErrorMessage;
+@property(copy, nonatomic) NSString *localizedAuthorizingTitle; // @synthesize localizedAuthorizingTitle=_localizedAuthorizingTitle;
 @property(copy, nonatomic) NSString *localizedPasswordButtonTitle; // @synthesize localizedPasswordButtonTitle=_localizedPasswordButtonTitle;
 @property(copy, nonatomic) NSString *localizedBiometricConfirmationTitle; // @synthesize localizedBiometricConfirmationTitle=_localizedBiometricConfirmationTitle;
 @property(copy, nonatomic) NSString *localizedConfirmationTitle; // @synthesize localizedConfirmationTitle=_localizedConfirmationTitle;

@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUIMediaEntitiesFetchController *mediaEntitiesFetchController; // @synthesize mediaEntitiesFetchController=_mediaEntitiesFetchController;
 @property(retain, nonatomic) NSArray *homeShares; // @synthesize homeShares=_homeShares;
 @property(retain, nonatomic) VUIMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
+- (void)_notifyDelegateFetchDidComplete;
 - (void)_accountsChanged:(id)arg1;
 - (_Bool)_allFetchesHaveCompleted;
 - (void)_populateViewModel:(id)arg1;

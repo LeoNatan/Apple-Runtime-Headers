@@ -18,6 +18,7 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (BOOL)_supportAVSystemVolumeFetch;
 - (void)_startObservingSystemControllerLifecycle;
 - (void)startObservingSystemVolumes;
 - (void)systemControllerDied:(id)arg1;

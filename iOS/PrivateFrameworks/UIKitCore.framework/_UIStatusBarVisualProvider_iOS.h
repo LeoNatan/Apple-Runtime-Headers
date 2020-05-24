@@ -61,6 +61,7 @@
 - (id)setupInContainerView:(id)arg1;
 - (id)orderedDisplayItemPlacementsInRegionWithIdentifier:(id)arg1;
 - (id)styleAttributesForStyle:(long long)arg1;
+@property(readonly, nonatomic) _Bool supportsIndirectPointerTouchActions;
 - (id)init;
 
 // Remaining properties

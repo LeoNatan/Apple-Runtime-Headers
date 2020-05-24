@@ -116,6 +116,10 @@ __attribute__((visibility("hidden")))
 - (id)_collectionView:(id)arg1 itemsForBeginningDragSession:(id)arg2 atIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 cancelPrefetchingForItemsAtIndexPaths:(id)arg2;
 - (void)collectionView:(id)arg1 prefetchItemsAtIndexPaths:(id)arg2;
+- (void)_collectionView:(id)arg1 cursorWillExitItemAtIndexPath:(id)arg2;
+- (void)_collectionView:(id)arg1 cursorWillEnterItemAtIndexPath:(id)arg2;
+- (id)_collectionView:(id)arg1 cursorStyleForModifiers:(long long)arg2 atIndexPath:(id)arg3;
+- (id)_collectionView:(id)arg1 cursorRegionForItemAtIndexPath:(id)arg2 defaultRegion:(id)arg3;
 - (void)_collectionView:(id)arg1 willLayoutCell:(id)arg2 usingTemplateLayoutCell:(id)arg3 forItemAtIndexPath:(id)arg4;
 - (id)_collectionView:(id)arg1 templateLayoutCellForCellsWithReuseIdentifier:(id)arg2;
 - (id)_collectionView:(id)arg1 targetIndexPathForMoveFromItemAtIndexPath:(id)arg2 toProposedIndexPath:(id)arg3;

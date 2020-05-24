@@ -39,7 +39,7 @@
 @property(readonly, copy, nonatomic) NSString *shortName; // @synthesize shortName=_shortName;
 - (id)urlByIncorporatingGroupIdentifier:(unsigned long long)arg1 ifIsValidSearchResultsURL:(id)arg2;
 - (id)urlAttributingToSafariIfValidSearchURL:(id)arg1;
-- (id)_urlByEnsuringQueryItemInURL:(id)arg1 queryItemKey:(id)arg2 queryItemValue:(id)arg3;
+- (id)_urlByEnsuringQueryItemInURL:(id)arg1 percentEncodedQueryItemKey:(id)arg2 percentEncodedQueryItemValue:(id)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)userVisibleQueryFromSearchURL:(id)arg1 allowQueryThatLooksLikeURL:(BOOL)arg2;

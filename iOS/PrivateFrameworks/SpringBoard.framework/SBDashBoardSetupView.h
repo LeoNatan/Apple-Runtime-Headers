@@ -8,14 +8,14 @@
 
 #import <SpringBoard/CAAnimationDelegate-Protocol.h>
 
-@class CSHomeAffordanceView, NSArray, NSObject, NSString, SBUICallToActionLabel, SBUILegibilityLabel, UIButton, UILabel, _UILegibilitySettings;
+@class CSHomeAffordanceView, NSArray, NSObject, NSString, SBFTouchPassThroughView, SBUICallToActionLabel, SBUILegibilityLabel, UIButton, UILabel, _UILegibilitySettings;
 @protocol OS_dispatch_source;
 
 @interface SBDashBoardSetupView : UIView <CAAnimationDelegate>
 {
     UILabel *_titleLabel;
     UILabel *_storeRestrictedLabel;
-    UIView *_homeAffordanceContainer;
+    SBFTouchPassThroughView *_homeAffordanceContainer;
     CSHomeAffordanceView *_homeAffordanceView;
     UIView *_homeAffordanceCallToActionContainer;
     SBUILegibilityLabel *_homeAffordanceCallToActionLabel;
@@ -33,6 +33,7 @@
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(retain, nonatomic) UIView *regulatoryInfoView; // @synthesize regulatoryInfoView=_regulatoryInfoView;
 @property(retain, nonatomic) UIView *activationInfoView; // @synthesize activationInfoView=_activationInfoView;
+@property(retain, nonatomic) CSHomeAffordanceView *homeAffordanceView; // @synthesize homeAffordanceView=_homeAffordanceView;
 - (void)_updateLegibilitySettings;
 - (void)_adjustTitleVisibilityForInfoViews;
 - (void)_removeNormalAnimationForKeyPath:(id)arg1 onLayer:(id)arg2;

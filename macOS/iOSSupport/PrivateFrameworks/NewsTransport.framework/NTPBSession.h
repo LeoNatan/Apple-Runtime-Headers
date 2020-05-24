@@ -8,7 +8,7 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class NSData, NSString;
+@class NSData, NSMutableArray, NSString;
 
 @interface NTPBSession : PBCodable <NSCopying>
 {
@@ -21,6 +21,7 @@
     long long _userStartDate;
     int _ageBracket;
     float _ageBracketConfidenceLevel;
+    NSString *_appBuildNumber;
     NSData *_appProcessLifetimeId;
     NSString *_appVersion;
     NSString *_browserLanguage;
@@ -53,6 +54,7 @@
     NSString *_previousOsVersion;
     NSString *_productType;
     int _reachabilityStatus;
+    NSMutableArray *_regionIds;
     NSData *_sessionId;
     NSData *_sessionIdWatch;
     int _textSize;
@@ -136,7 +138,10 @@
     } _has;
 }
 
++ (Class)regionIdsType;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *appBuildNumber; // @synthesize appBuildNumber=_appBuildNumber;
+@property(retain, nonatomic) NSMutableArray *regionIds; // @synthesize regionIds=_regionIds;
 @property(nonatomic) BOOL isDiagnosticsUsageEnabled; // @synthesize isDiagnosticsUsageEnabled=_isDiagnosticsUsageEnabled;
 @property(nonatomic) BOOL isStoreDemoModeEnabled; // @synthesize isStoreDemoModeEnabled=_isStoreDemoModeEnabled;
 @property(nonatomic) BOOL signedIntoITunes; // @synthesize signedIntoITunes=_signedIntoITunes;
@@ -210,6 +215,11 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasAppBuildNumber;
+- (id)regionIdsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)regionIdsCount;
+- (void)addRegionIds:(id)arg1;
+- (void)clearRegionIds;
 @property(nonatomic) BOOL hasIsDiagnosticsUsageEnabled;
 @property(nonatomic) BOOL hasIsStoreDemoModeEnabled;
 @property(nonatomic) BOOL hasSignedIntoITunes;

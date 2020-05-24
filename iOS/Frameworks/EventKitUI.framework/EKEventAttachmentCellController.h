@@ -33,7 +33,11 @@
 - (void)documentInteractionControllerWillEndPreview:(id)arg1;
 - (id)documentInteractionControllerViewForPreview:(id)arg1;
 - (id)documentInteractionControllerViewControllerForPreview:(id)arg1;
+- (void)startAttachmentDownload;
+- (void)promptToDownloadAttachment;
 - (void)cellSelected;
+- (id)event;
+- (id)attachmentFilename;
 - (void)_openExternalAttachmentURLInBrowser:(id)arg1;
 - (void)_presentPreviewWithURL:(id)arg1 filename:(id)arg2;
 - (void)_presentPreviewAttachmentInPreviewWithInfo:(id)arg1;

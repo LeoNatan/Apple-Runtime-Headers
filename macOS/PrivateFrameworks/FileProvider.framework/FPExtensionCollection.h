@@ -19,7 +19,7 @@
 - (void).cxx_destruct;
 @property(copy) FPExtensionEnumerationSettings *settings; // @synthesize settings=_settings;
 - (id)description;
-@property(readonly) FPItemID *enumeratedItemID;
+- (id)enumeratedItemID;
 - (id)scopedSearchQuery;
 - (id)createDataSourceWithSortDescriptors:(id)arg1;
 - (BOOL)isCollectionValidForItem:(id)arg1;

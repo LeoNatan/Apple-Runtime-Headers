@@ -60,6 +60,7 @@
 - (BOOL)markArticleAsSeenWithHeadline:(id)arg1;
 - (BOOL)hasArticleBeenSeen:(id)arg1;
 - (BOOL)hasArticleBeenVisited:(id)arg1;
+- (BOOL)hasArticleBeenReadMoreThanThreshold:(id)arg1;
 - (BOOL)hasArticleBeenRead:(id)arg1;
 - (id)lastVisitedDateForArticleID:(id)arg1;
 - (id)consumedArticleIDsForTagID:(id)arg1 fromTime:(id)arg2;

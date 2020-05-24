@@ -6,12 +6,13 @@
 
 #import <UIKitCore/_UIBarContentView.h>
 
-@class NSLayoutConstraint, NSMapTable, _UIBarButtonItemData, _UIButtonBar;
+@class NSLayoutConstraint, NSMapTable, _UIBarButtonItemData, _UIButtonBar, _UIPointerInteractionAssistant;
 
 __attribute__((visibility("hidden")))
 @interface _UIToolbarContentView : _UIBarContentView
 {
     _UIButtonBar *_buttonBar;
+    _UIPointerInteractionAssistant *_assistant;
     NSLayoutConstraint *_buttonBarLeadingConstraint;
     NSLayoutConstraint *_buttonBarTrailingConstraint;
     NSMapTable *_absorptionTable;

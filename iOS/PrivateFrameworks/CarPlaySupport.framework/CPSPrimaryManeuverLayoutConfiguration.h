@@ -25,6 +25,8 @@
 @property(retain, nonatomic) NSAttributedString *attributedInstruction; // @synthesize attributedInstruction=_attributedInstruction;
 @property(retain, nonatomic) NSString *instruction; // @synthesize instruction=_instruction;
 @property(nonatomic) unsigned long long layout; // @synthesize layout=_layout;
+- (_Bool)isEqualToConfiguration:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (id)_layoutString;
 - (id)description;
 

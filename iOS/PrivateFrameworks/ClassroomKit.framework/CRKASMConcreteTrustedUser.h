@@ -8,25 +8,30 @@
 
 #import <ClassroomKit/CRKASMTrustedUser-Protocol.h>
 
-@class NSObject, NSString;
-@protocol CRKASMCertificateCollection, CRKASMNameComponents, CRKASMOrganization;
+@class CRKASMCertificateVendor, NSSet, NSString;
+@protocol CRKASMNameComponents, CRKASMOrganization;
 
 @interface CRKASMConcreteTrustedUser : CRKASMConcreteUser <CRKASMTrustedUser>
 {
-    NSObject<CRKASMCertificateCollection> *_certificateCollection;
+    CRKASMCertificateVendor *_certificateVendor;
 }
 
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSObject<CRKASMCertificateCollection> *certificateCollection; // @synthesize certificateCollection=_certificateCollection;
-- (id)description;
+@property(readonly, nonatomic) CRKASMCertificateVendor *certificateVendor; // @synthesize certificateVendor=_certificateVendor;
+@property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned long long)hash;
-- (id)initWithPerson:(id)arg1;
+@property(readonly) unsigned long long hash;
+- (_Bool)isEqualToConcreteTrustedUser:(id)arg1;
+@property(readonly, copy, nonatomic) NSSet *certificates;
+- (id)initWithBackingPerson:(id)arg1 certificateVendor:(id)arg2;
 
 // Remaining properties
+@property(readonly, copy, nonatomic) NSString *appleID;
+@property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy, nonatomic) NSString *identifier;
-@property(readonly, nonatomic) NSObject<CRKASMNameComponents> *nameComponents;
-@property(readonly, nonatomic) NSObject<CRKASMOrganization> *organization;
+@property(readonly, nonatomic) id <CRKASMNameComponents> nameComponents;
+@property(readonly, nonatomic) id <CRKASMOrganization> organization;
+@property(readonly) Class superclass;
 
 @end
 

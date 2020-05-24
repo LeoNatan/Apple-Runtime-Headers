@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSData, NSDictionary, NSString, NSURL, NSUUID, OSPDevice, OSPSecureBootBundle;
+@class NSArray, NSData, NSDictionary, NSString, NSURL, NSUUID, OSPDevice, OSPSecureBootBundle, OSPVolume;
 
 @interface OSPRequest : NSObject
 {
@@ -20,8 +20,10 @@
     BOOL _flattenManifestRoot;
     BOOL _shouldPersonalize;
     BOOL _forcePersonalization;
+    BOOL _authenticatedRootVolume;
     BOOL _skipPersonalizationForTesting;
     BOOL _useDummyDeviceIdentity;
+    BOOL _noERB;
     BOOL _showUsageForPersonalization;
     NSURL *_volumeURL;
     NSURL *_bundleURL;
@@ -32,10 +34,12 @@
     NSData *_appleConnectData;
     NSDictionary *_apRequestEntries;
     NSURL *_kernelCacheOverride;
+    NSDictionary *_bundleOverrides;
     OSPDevice *_device;
     OSPSecureBootBundle *_bundle;
     NSURL *_personalizedOutputURL;
     NSURL *_testPersonalizedOutputURL;
+    OSPVolume *_targetVolume;
     long long _fakePersonalizationErrorCode;
     NSURL *_signedPRDocumentPublicKeyURL;
     NSString *_kernelCacheOverrideTag;
@@ -44,18 +48,22 @@
 
 - (void).cxx_destruct;
 @property BOOL showUsageForPersonalization; // @synthesize showUsageForPersonalization=_showUsageForPersonalization;
+@property BOOL noERB; // @synthesize noERB=_noERB;
 @property(retain) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain) NSString *kernelCacheOverrideTag; // @synthesize kernelCacheOverrideTag=_kernelCacheOverrideTag;
 @property(retain) NSURL *signedPRDocumentPublicKeyURL; // @synthesize signedPRDocumentPublicKeyURL=_signedPRDocumentPublicKeyURL;
 @property BOOL useDummyDeviceIdentity; // @synthesize useDummyDeviceIdentity=_useDummyDeviceIdentity;
 @property long long fakePersonalizationErrorCode; // @synthesize fakePersonalizationErrorCode=_fakePersonalizationErrorCode;
 @property BOOL skipPersonalizationForTesting; // @synthesize skipPersonalizationForTesting=_skipPersonalizationForTesting;
+@property(retain) OSPVolume *targetVolume; // @synthesize targetVolume=_targetVolume;
+@property BOOL authenticatedRootVolume; // @synthesize authenticatedRootVolume=_authenticatedRootVolume;
 @property BOOL forcePersonalization; // @synthesize forcePersonalization=_forcePersonalization;
 @property BOOL shouldPersonalize; // @synthesize shouldPersonalize=_shouldPersonalize;
 @property(retain) NSURL *testPersonalizedOutputURL; // @synthesize testPersonalizedOutputURL=_testPersonalizedOutputURL;
 @property(retain) NSURL *personalizedOutputURL; // @synthesize personalizedOutputURL=_personalizedOutputURL;
 @property(retain) OSPSecureBootBundle *bundle; // @synthesize bundle=_bundle;
 @property(retain) OSPDevice *device; // @synthesize device=_device;
+@property(retain) NSDictionary *bundleOverrides; // @synthesize bundleOverrides=_bundleOverrides;
 @property(retain) NSURL *kernelCacheOverride; // @synthesize kernelCacheOverride=_kernelCacheOverride;
 @property BOOL flattenManifestRoot; // @synthesize flattenManifestRoot=_flattenManifestRoot;
 @property BOOL preferBuildManifest; // @synthesize preferBuildManifest=_preferBuildManifest;

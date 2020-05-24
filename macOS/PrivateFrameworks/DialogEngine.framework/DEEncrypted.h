@@ -10,6 +10,8 @@
 {
 }
 
++ (id)toEnvelope:(BOOL)arg1 iv:(id)arg2 hmac:(id)arg3 keyVersion:(id)arg4 payload:(id)arg5;
++ (id)encryptedVersionAndSize:(id)arg1 keyId:(unsigned long long)arg2 multipart:(BOOL)arg3 size:(unsigned long long *)arg4;
 + (id)versionFile:(id)arg1;
 + (BOOL)encryptFrom:(id)arg1 to:(id)arg2 keyId:(unsigned long long)arg3 multipart:(BOOL)arg4;
 + (BOOL)decryptFrom:(id)arg1 to:(id)arg2 version:(id)arg3;
@@ -21,7 +23,6 @@
 + (id)decrypt:(id)arg1;
 + (id)decrypt:(id)arg1 keyVersion:(id *)arg2;
 + (BOOL)decryptFrom:(id)arg1 to:(id)arg2 keyVersion:(id *)arg3;
-+ (id)readDataOfLength:(unsigned long long)arg1 from:(id)arg2 or:(id)arg3;
 + (id)getKeyWithVersion:(id)arg1;
 + (id)getKey:(unsigned long long)arg1;
 

@@ -16,9 +16,11 @@
     CNContact *_contact;
     PKSharedCredentialGroup *_group;
     PKSharedCredentialsGroupController *_groupController;
+    _Bool _revokingGroup;
 }
 
 - (void).cxx_destruct;
+@property(nonatomic, getter=isRevokingGroup) _Bool revokingGroup; // @synthesize revokingGroup=_revokingGroup;
 - (void)credentialGroupControllerDidUpdateGroups:(id)arg1;
 - (id)infoButton;
 - (void)showContactDetailsViewController;

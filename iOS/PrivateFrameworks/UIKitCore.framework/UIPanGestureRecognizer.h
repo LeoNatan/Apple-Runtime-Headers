@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIGestureRecognizer.h>
 
-@class NSMutableArray, UIPanGestureVelocitySample;
+@class NSArray, NSMutableArray, UIPanGestureVelocitySample;
 
 @interface UIPanGestureRecognizer : UIGestureRecognizer
 {
@@ -32,6 +32,10 @@
     unsigned int _requiresImmediateMultipleTouches:1;
     NSMutableArray *_movingTouches;
     struct CGPoint _digitizerLocation;
+    _Bool _iOSMacUseNonacceleratedDelta;
+    _Bool _iOSMacIgnoreScrollDirectionUserPreference;
+    _Bool _iOSMacScrollingEnabled;
+    long long _allowedScrollTypesMask;
 }
 
 + (void)_setPanGestureRecognizersEnabled:(_Bool)arg1;
@@ -39,10 +43,22 @@
 + (_Bool)_shouldDefaultToTouches;
 + (double)_defaultHysteresis;
 - (void).cxx_destruct;
+@property(nonatomic, getter=_iOSMacScrollingEnabled, setter=_setiOSMacScrollingEnabled:) _Bool iOSMacScrollingEnabled; // @synthesize iOSMacScrollingEnabled=_iOSMacScrollingEnabled;
+@property(nonatomic, getter=_iOSMacIgnoreScrollDirectionUserPreference, setter=_setiOSMacIgnoreScrollDirectionUserPreference:) _Bool iOSMacIgnoreScrollDirectionUserPreference; // @synthesize iOSMacIgnoreScrollDirectionUserPreference=_iOSMacIgnoreScrollDirectionUserPreference;
+@property(nonatomic, getter=_iOSMacUseNonacceleratedDelta, setter=_setiOSMacUseNonacceleratedDelta:) _Bool iOSMacUseNonacceleratedDelta; // @synthesize iOSMacUseNonacceleratedDelta=_iOSMacUseNonacceleratedDelta;
+@property(nonatomic) long long allowedScrollTypesMask; // @synthesize allowedScrollTypesMask=_allowedScrollTypesMask;
 @property(readonly, getter=_previousVelocitySample) UIPanGestureVelocitySample *_previousVelocitySample; // @synthesize _previousVelocitySample;
 @property(readonly, getter=_velocitySample) UIPanGestureVelocitySample *_velocitySample; // @synthesize _velocitySample;
 @property(nonatomic) unsigned long long maximumNumberOfTouches; // @synthesize maximumNumberOfTouches=_maximumNumberOfTouches;
 @property(nonatomic) unsigned long long minimumNumberOfTouches; // @synthesize minimumNumberOfTouches=_minimumNumberOfTouches;
+- (unsigned long long)_scrollDeviceCategory;
+- (void)_scrollingChangedWithEvent:(id)arg1;
+- (void)_processScrollPhaseChanged:(id)arg1;
+- (_Bool)isIOSMacScrollingEnabled;
+- (_Bool)_shouldReceiveScrollEvent:(id)arg1;
+@property(copy, nonatomic, getter=_allowedScrollTypes, setter=_setAllowedScrollTypes:) NSArray *allowedScrollTypes;
+- (void)_setAllowedScrollTypesMask:(long long)arg1;
+- (long long)_allowedScrollTypesMask;
 - (void)_updateDigitizerLocationWithEvent:(id)arg1;
 - (struct CGPoint)_digitizerLocation;
 - (void)_ignoreTouches:(id)arg1 forEvent:(id)arg2;

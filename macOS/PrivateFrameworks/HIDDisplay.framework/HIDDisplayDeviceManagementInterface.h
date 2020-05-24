@@ -16,7 +16,7 @@
 - (void).cxx_destruct;
 - (BOOL)getSecurityToken:(unsigned long long *)arg1 error:(id *)arg2;
 - (BOOL)setupInterface;
-- (BOOL)factoryReset:(int)arg1 securityToken:(unsigned long long)arg2 error:(id *)arg3;
+- (BOOL)factoryReset:(unsigned char)arg1 securityToken:(unsigned long long)arg2 error:(id *)arg3;
 - (id)getHIDDevices;
 - (id)initWithService:(unsigned int)arg1;
 - (id)initWithContainerID:(id)arg1;

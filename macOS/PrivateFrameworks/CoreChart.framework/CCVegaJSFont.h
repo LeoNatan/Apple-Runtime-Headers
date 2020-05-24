@@ -11,6 +11,8 @@
     struct __CTFont *_font;
 }
 
++ (id)fontDescriptorForTextStyle:(id)arg1 contentSizeCategory:(id)arg2 language:(id)arg3;
++ (id)CTTextStyleFromTextStyle:(id)arg1;
 - (void)dealloc;
 - (struct __CTFont *)CTFont;
 - (id)initWithCSSFontString:(id)arg1;

@@ -6,11 +6,13 @@
 
 #import <objc/NSObject.h>
 
+@class NSArray;
+
 @interface _JRSUIRenderer : NSObject
 {
+    NSArray *_renderers;
 }
 
-+ (void)initialize;
 - (long long)hitTest:(struct __CFDictionary *)arg1 inBounds:(struct CGRect)arg2 atPoint:(struct CGPoint)arg3;
 - (void)draw:(struct __CFDictionary *)arg1 inContext:(struct CGContext *)arg2 withBounds:(struct CGRect)arg3;
 

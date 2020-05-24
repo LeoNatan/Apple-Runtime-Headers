@@ -7,15 +7,18 @@
 #import <objc/NSObject.h>
 
 @class CNContactStore, CNFavorites, NSDictionary, NSLock;
+@protocol OS_dispatch_queue;
 
 @interface NTKPeopleComplicationContactsCache : NSObject
 {
     NSDictionary *_favoritesMapping;
     NSLock *_favoritesMappingLock;
+    NSLock *_favoritesEntriesLock;
     _Bool _hasSetupNotifications;
     NSLock *_hasSetupNotificationsLock;
     CNContactStore *_contactStore;
     CNFavorites *_favorites;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 + (id)sharedCache;

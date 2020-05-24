@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PassKitCore/PKSubcredentialProvisioningSessionOperation.h>
+#import <PassKitCore/PKSubcredentialProvisioningPairingSessionOperation.h>
 
 #import <PassKitCore/PKAppletSubcredentialPairingSessionDelegate-Protocol.h>
 
 @class NSString;
 
-@interface PKSubcredentialProvisioningPairingOperation : PKSubcredentialProvisioningSessionOperation <PKAppletSubcredentialPairingSessionDelegate>
+@interface PKSubcredentialProvisioningPairingOperation : PKSubcredentialProvisioningPairingSessionOperation <PKAppletSubcredentialPairingSessionDelegate>
 {
 }
 

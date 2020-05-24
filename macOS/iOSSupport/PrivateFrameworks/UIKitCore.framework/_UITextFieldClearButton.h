@@ -9,8 +9,13 @@
 __attribute__((visibility("hidden")))
 @interface _UITextFieldClearButton : UIButton
 {
+    BOOL _hasCustomImage;
 }
 
++ (BOOL)_cursorInteractionEnabled;
+@property(nonatomic) BOOL hasCustomImage; // @synthesize hasCustomImage=_hasCustomImage;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 - (BOOL)_shouldDefaultToTemplatesForImageViewBackground:(BOOL)arg1;
 - (BOOL)_isModernButton;
 

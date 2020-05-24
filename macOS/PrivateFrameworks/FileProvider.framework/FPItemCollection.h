@@ -9,7 +9,7 @@
 #import <FileProvider/FPCollectionDataSourceDelegate-Protocol.h>
 #import <FileProvider/FPReachabilityObserver-Protocol.h>
 
-@class FPAppRegistry, FPPacer, NSArray, NSMutableDictionary, NSMutableSet, NSPredicate, NSString, _FPItemList;
+@class FPAppRegistry, FPItemID, FPPacer, NSArray, NSMutableDictionary, NSMutableSet, NSPredicate, NSString, _FPItemList;
 @protocol FPCollectionDataSource, FPItemCollectionIndexPathBasedDelegate, FPItemCollectionItemIDBasedDelegate, FPItemCollectionMinimalDelegate, OS_dispatch_queue;
 
 @interface FPItemCollection : NSObject <FPReachabilityObserver, FPCollectionDataSourceDelegate>
@@ -35,11 +35,14 @@
     BOOL _showHiddenFiles;
     _Bool _observing;
     id <FPItemCollectionMinimalDelegate> _delegate;
+    FPItemID *_enumeratedItemID;
+    NSMutableDictionary *_dsCopyProgressTokenMap;
     NSPredicate *_additionalItemFilteringPredicate;
     NSObject<OS_dispatch_queue> *_updateQueue;
     FPPacer *_updatePacer;
 }
 
++ (void)refreshActiveCollectionsForDecorationChange;
 + (void)removeActiveCollection:(id)arg1;
 + (void)addActiveCollection:(id)arg1;
 + (void)resumeVendorEnumeration;
@@ -55,7 +58,9 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *updateQueue; // @synthesize updateQueue=_updateQueue;
 @property(nonatomic) _Bool observing; // @synthesize observing=_observing;
 @property(retain, nonatomic) NSPredicate *additionalItemFilteringPredicate; // @synthesize additionalItemFilteringPredicate=_additionalItemFilteringPredicate;
+@property(retain, nonatomic) NSMutableDictionary *dsCopyProgressTokenMap; // @synthesize dsCopyProgressTokenMap=_dsCopyProgressTokenMap;
 @property(readonly, nonatomic) id <FPCollectionDataSource> dataSource; // @synthesize dataSource=_dataSource;
+@property(readonly) FPItemID *enumeratedItemID; // @synthesize enumeratedItemID=_enumeratedItemID;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workingQueue; // @synthesize workingQueue=_workingQueue;
 @property(readonly, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(nonatomic) BOOL showHiddenFiles; // @synthesize showHiddenFiles=_showHiddenFiles;
@@ -63,6 +68,7 @@
 @property(readonly, nonatomic, getter=isImmutable) BOOL immutable; // @synthesize immutable=_immutable;
 @property(nonatomic) __weak id <FPItemCollectionMinimalDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isGathering) BOOL gathering; // @synthesize gathering=_gathering;
+- (void)_restartObservationWithReason:(id)arg1;
 - (void)_setObserving:(BOOL)arg1;
 - (void)_replaceContentsWithVendorItems:(id)arg1;
 @property(retain, nonatomic) NSPredicate *itemFilteringPredicate;

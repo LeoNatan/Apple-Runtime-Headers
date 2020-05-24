@@ -20,6 +20,7 @@
 @property(readonly, nonatomic) NSString *version; // @synthesize version=_version;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (id)description;
+@property(readonly, nonatomic) NSDictionary *sanitizedItems;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithData:(id)arg1;
 - (id)init;

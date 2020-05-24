@@ -37,7 +37,7 @@
 - (void)resolveSpeakableGroupNameForSendMessage:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)resolveContentForSendMessage:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)resolveRecipientsForSendMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (_Bool)updateSenderIdentityForChat:(id)arg1 recipients:(id)arg2;
+- (_Bool)updateSenderIdentityForNewlyCreatedChat:(id)arg1;
 - (void)handleSendMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)confirmSendMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithDataSource:(id)arg1 delegate:(id)arg2 intentIdentifier:(id)arg3;

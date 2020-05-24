@@ -12,10 +12,14 @@
     // Error parsing type: , name: $__lazy_storage_$_captionTextLayout
     // Error parsing type: , name: $__lazy_storage_$_titleTextLayout
     // Error parsing type: , name: $__lazy_storage_$_subtitleTextLayout
+    // Error parsing type: , name: $__lazy_storage_$_subBodyTextLayout
     // Error parsing type: , name: $__lazy_storage_$_bodyTextLayout
     // Error parsing type: , name: $__lazy_storage_$_imageLayout
     // Error parsing type: , name: $__lazy_storage_$_expandableViewLayout
     // Error parsing type: , name: $__lazy_storage_$_footerLayout
+    // Error parsing type: , name: $__lazy_storage_$_channelLogoLayout
+    // Error parsing type: , name: $__lazy_storage_$_buttonLayout
+    // Error parsing type: , name: $__lazy_storage_$_textualButtonViewLayout
     // Error parsing type: , name: $__lazy_storage_$_hangerViewLayout
     // Error parsing type: , name: stackType
 }

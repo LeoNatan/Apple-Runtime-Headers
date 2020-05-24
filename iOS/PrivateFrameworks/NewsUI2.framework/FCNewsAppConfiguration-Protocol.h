@@ -52,6 +52,7 @@
 @property(nonatomic, readonly) NSArray *onboardingFeedIDs;
 
 @optional
+@property(nonatomic, readonly) long long articleReadCountThreshold;
 @property(nonatomic, readonly) NSString *localAreasMappingResourceId;
 @property(nonatomic, readonly) _Bool enableLocationBasedAutofavorites;
 @property(nonatomic, readonly) long long emailSignupRequiredAppLaunchCount;

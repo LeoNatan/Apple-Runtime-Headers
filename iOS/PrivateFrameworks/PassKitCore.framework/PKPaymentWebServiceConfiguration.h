@@ -53,6 +53,7 @@
 - (id)_queue_featuresForRegion:(id)arg1;
 - (id)featuresForRegion:(id)arg1;
 - (id)_queue_globalFeaturesForOSVersion:(id)arg1 deviceClass:(id)arg2;
+- (_Bool)hasFeatureRequiringRegistrationInRegion:(id)arg1 osVersion:(id)arg2 deviceClass:(id)arg3;
 - (_Bool)hasFeaturesSupportedForRegion:(id)arg1 osVersion:(id)arg2 deviceClass:(id)arg3;
 - (id)_featuresFromDictionary:(id)arg1 withRegion:(id)arg2 osVersion:(id)arg3 deviceClass:(id)arg4;
 - (id)unsupportedRegionsForOSVersion:(id)arg1 deviceClass:(id)arg2 platform:(id)arg3;

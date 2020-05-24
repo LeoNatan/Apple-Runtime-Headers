@@ -15,6 +15,7 @@
 @property(readonly, copy, nonatomic) NSString *lastVisitedPageID;
 @property(readonly, copy, nonatomic) NSString *lastVisitedArticleID;
 @property(readonly, copy, nonatomic) NSDate *lastRemovedFromMyMagazinesDate;
+@property(readonly, copy, nonatomic) NSDate *lastSeenDate;
 @property(readonly, copy, nonatomic) NSDate *lastEngagedDate;
 @property(readonly, copy, nonatomic) NSDate *lastBadgedDate;
 @property(readonly, copy, nonatomic) NSDate *lastVisitedDate;

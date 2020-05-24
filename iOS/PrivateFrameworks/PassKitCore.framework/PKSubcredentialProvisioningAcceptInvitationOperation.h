@@ -4,11 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PassKitCore/PKSubcredentialProvisioningSessionOperation.h>
+#import <PassKitCore/PKSubcredentialProvisioningSharingSessionOperation.h>
 
-@interface PKSubcredentialProvisioningAcceptInvitationOperation : PKSubcredentialProvisioningSessionOperation
+@interface PKSubcredentialProvisioningAcceptInvitationOperation : PKSubcredentialProvisioningSharingSessionOperation
 {
-    _Bool _operationCompleted;
 }
 
 - (void)session:(id)arg1 didChangeState:(unsigned long long)arg2;

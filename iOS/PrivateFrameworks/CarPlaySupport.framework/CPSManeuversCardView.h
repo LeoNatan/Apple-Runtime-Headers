@@ -6,12 +6,13 @@
 
 #import <UIKit/UIView.h>
 
+#import <CarPlaySupport/BSInvalidatable-Protocol.h>
 #import <CarPlaySupport/CPSCardPlatterProviding-Protocol.h>
 #import <CarPlaySupport/CPSNavigationDisplaying-Protocol.h>
 
 @class CPSCardPlatterView, CPSHairlineView, CPSPrimaryManeuverView, CPSSecondaryManeuverView, NSArray, NSLayoutConstraint, NSString;
 
-@interface CPSManeuversCardView : UIView <CPSNavigationDisplaying, CPSCardPlatterProviding>
+@interface CPSManeuversCardView : UIView <CPSNavigationDisplaying, CPSCardPlatterProviding, BSInvalidatable>
 {
     _Bool _usesCustomBackgroundColor;
     CPSCardPlatterView *_cardPlatterView;
@@ -30,6 +31,7 @@
 @property(retain, nonatomic) NSArray *maneuvers; // @synthesize maneuvers=_maneuvers;
 @property(nonatomic) _Bool usesCustomBackgroundColor; // @synthesize usesCustomBackgroundColor=_usesCustomBackgroundColor;
 @property(retain, nonatomic) CPSCardPlatterView *cardPlatterView; // @synthesize cardPlatterView=_cardPlatterView;
+- (void)invalidate;
 - (void)_updateSecondaryManeuverBackgroundColor;
 - (void)_updateHairlineBackgroundColor;
 - (void)traitCollectionDidChange:(id)arg1;

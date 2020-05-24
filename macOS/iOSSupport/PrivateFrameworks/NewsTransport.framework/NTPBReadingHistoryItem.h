@@ -14,6 +14,7 @@
 {
     long long _maxVersionRead;
     long long _maxVersionSeen;
+    long long _readCount;
     NSString *_articleID;
     NSString *_deviceID;
     NTPBDate *_firstSeenDate;
@@ -24,10 +25,12 @@
     struct {
         unsigned int maxVersionRead:1;
         unsigned int maxVersionSeen:1;
+        unsigned int readCount:1;
         unsigned int flags:1;
     } _has;
 }
 
+@property(nonatomic) long long readCount; // @synthesize readCount=_readCount;
 @property(retain, nonatomic) NSString *deviceID; // @synthesize deviceID=_deviceID;
 @property(retain, nonatomic) NSString *sourceChannelTagID; // @synthesize sourceChannelTagID=_sourceChannelTagID;
 @property(nonatomic) long long maxVersionSeen; // @synthesize maxVersionSeen=_maxVersionSeen;
@@ -45,6 +48,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasReadCount;
 @property(readonly, nonatomic) BOOL hasDeviceID;
 @property(readonly, nonatomic) BOOL hasSourceChannelTagID;
 @property(nonatomic) BOOL hasMaxVersionSeen;

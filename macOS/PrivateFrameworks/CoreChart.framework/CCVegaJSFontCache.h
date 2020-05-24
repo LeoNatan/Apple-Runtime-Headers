@@ -11,8 +11,13 @@
 @interface CCVegaJSFontCache : NSObject
 {
     NSMutableDictionary *_cache;
+    NSMutableDictionary *_styleCache;
+    NSMutableDictionary *_internalNameCache;
 }
 
++ (struct __CTFont *)cacheedFontForInternalName:(id)arg1;
++ (void)cacheFont:(struct __CTFont *)arg1 forInternalName:(id)arg2;
++ (id)fontDescriptorForTextStyle:(id)arg1 contentSizeCategory:(id)arg2 language:(id)arg3;
 + (id)fontWithFontFamily:(id)arg1 fontSize:(double)arg2 fontWeight:(id)arg3 fontStyle:(id)arg4 fontVariant:(id)arg5;
 + (id)fontWithCSSFontString:(id)arg1;
 + (id)sharedCache;

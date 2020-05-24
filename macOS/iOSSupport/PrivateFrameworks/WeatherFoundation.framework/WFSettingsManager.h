@@ -29,6 +29,11 @@
 - (id)_permanentURLForRecordID:(id)arg1 containerIdentifier:(id)arg2;
 - (void)completeOnQueue:(id)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) NSString *APIVersion;
+- (void)_fetchAppConfigurationIfNeededWithCompletionQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)fetchAppConfigurationIfNeededWithCompletionQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)fetchAppConfigurationIfNeeded;
+- (void)fetchAppConfigurationIfExpired;
+- (void)clearConfigCacheOnLaunchIfRequested;
 - (void)setSettings:(id)arg1;
 @property(readonly, nonatomic) id <WFSettings> settings; // @synthesize settings=_settings;
 - (void)setUseFallback:(BOOL)arg1;

@@ -37,6 +37,10 @@ __attribute__((visibility("hidden")))
 - (void)tintColorDidChange;
 - (void)_dynamicUserInterfaceTraitDidChange;
 - (struct CGSize)intrinsicContentSize;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
+- (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (struct CGRect)_barButtonHitRect;
+- (struct CGRect)_selectedIndicatorBounds;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

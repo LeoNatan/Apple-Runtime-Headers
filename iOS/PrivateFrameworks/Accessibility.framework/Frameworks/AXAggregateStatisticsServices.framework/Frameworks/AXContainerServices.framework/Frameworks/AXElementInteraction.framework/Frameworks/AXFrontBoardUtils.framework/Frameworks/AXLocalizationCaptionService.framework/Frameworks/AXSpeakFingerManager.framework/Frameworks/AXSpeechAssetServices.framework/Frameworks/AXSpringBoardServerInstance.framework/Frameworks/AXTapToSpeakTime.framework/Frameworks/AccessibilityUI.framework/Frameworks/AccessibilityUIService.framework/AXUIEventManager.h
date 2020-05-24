@@ -10,11 +10,13 @@
 
 @interface AXUIEventManager : NSObject
 {
+    _Bool _laserEnabled;
     NSHashTable *_eventHandlers;
 }
 
 + (id)sharedEventManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool laserEnabled; // @synthesize laserEnabled=_laserEnabled;
 @property(retain, nonatomic) NSHashTable *eventHandlers; // @synthesize eventHandlers=_eventHandlers;
 - (void)unregisterEventHandler:(id)arg1;
 - (void)registerEventHandler:(id)arg1;

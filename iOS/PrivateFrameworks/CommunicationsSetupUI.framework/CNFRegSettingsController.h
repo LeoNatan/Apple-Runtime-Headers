@@ -23,6 +23,7 @@
     NSArray *_replyWithMessageGroupSpecifiers;
     NSArray *_blacklistGroupSpecifiers;
     NSArray *_receiveRelayCallsGroupSpecifiers;
+    NSArray *_GFTProminenceGroupSpecifiers;
     NSArray *_faceTimePhotosGroupSpecifiers;
     NSMutableArray *_addresses;
     NSNumber *_delayedRefreshAnimatedFlag;
@@ -80,6 +81,11 @@
 - (id)callerIdAliasSpecifiers;
 - (id)possibleCallerIdAliases;
 - (_Bool)showCallerId:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)setGFTAudioProminenceEnabled:(id)arg1 specifier:(id)arg2;
+- (id)getGFTAudioProminenceEnabledForSpecifier:(id)arg1;
+- (_Bool)shouldShowGFTProminenceSpecifiers;
+- (void)refreshGFTProminenceSettingsAnimated:(_Bool)arg1;
+- (void)showGFTProminenceSettings:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setFaceTimePhotosEnabled:(id)arg1 specifier:(id)arg2;
 - (id)getFaceTimePhotosEnabledForSpecifier:(id)arg1;
 - (_Bool)shouldShowFaceTimePhotosSpecifiers;

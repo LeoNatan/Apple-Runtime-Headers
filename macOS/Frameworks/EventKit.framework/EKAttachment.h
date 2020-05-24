@@ -45,6 +45,7 @@
 - (void)_updateUrlOnDisk:(id)arg1;
 - (void)setUrlOnServer:(id)arg1;
 - (void)_updateUrlOnServer:(id)arg1;
+- (void)download;
 - (BOOL)isCached;
 - (id)initWithAttachment:(id)arg1;
 - (id)initWithObject:(id)arg1 createPartialBackingObject:(BOOL)arg2 keepBackingObject:(BOOL)arg3 preFrozenRelationshipObjects:(id)arg4 additionalFrozenProperties:(id)arg5;

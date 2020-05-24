@@ -16,11 +16,14 @@
     id <SBIconListLayout> _listLayout;
 }
 
++ (_Bool)supportsCursorInteraction;
 + (struct UIEdgeInsets)backgroundInsets;
 - (void).cxx_destruct;
 @property(retain, nonatomic) id <SBIconListLayout> listLayout; // @synthesize listLayout=_listLayout;
 @property(nonatomic) __weak id <SBCloseBoxViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UITapGestureRecognizer *actionTapGestureRecognizer; // @synthesize actionTapGestureRecognizer=_actionTapGestureRecognizer;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 @property(readonly, nonatomic) struct UIEdgeInsets hitTestPadding;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

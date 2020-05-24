@@ -188,6 +188,8 @@
 - (_Bool)_delegateShouldReceiveTouchesEvent:(id)arg1;
 - (_Bool)_delegateShouldReceiveEvent:(id)arg1;
 - (id)_gatherViewsToQueryForDelegateCall;
+- (long long)_buttonMask;
+@property(readonly, nonatomic) long long buttonMask;
 - (_Bool)_shouldReceiveTouch:(id)arg1 forEvent:(id)arg2 recognizerView:(id)arg3;
 - (long long)_modifierFlags;
 @property(readonly, nonatomic) long long modifierFlags;

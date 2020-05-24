@@ -15,6 +15,7 @@
 - (void)dismiss;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)clientApplicationDidEnterBackground;
 - (void)didSetAdSpace;

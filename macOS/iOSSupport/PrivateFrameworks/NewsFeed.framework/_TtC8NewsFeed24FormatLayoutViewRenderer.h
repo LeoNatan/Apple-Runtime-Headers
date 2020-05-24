@@ -8,6 +8,7 @@
 
 @interface _TtC8NewsFeed24FormatLayoutViewRenderer : _TtCs12_SwiftObject
 {
+    // Error parsing type: , name: presentingViewController
     // Error parsing type: , name: viewNodeRenderer
     // Error parsing type: , name: textNodeRenderer
     // Error parsing type: , name: imageNodeRenderer

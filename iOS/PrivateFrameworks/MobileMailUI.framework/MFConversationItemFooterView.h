@@ -6,12 +6,15 @@
 
 #import <UIKit/UIView.h>
 
+#import <MobileMailUI/_UICursorInteractionDelegate-Protocol.h>
+
 @class EMCachingContactStore, MFMessageDisplayMetrics, NSString, UIButton, UIVisualEffectView;
 @protocol MFMessageFooterViewDelegate;
 
-@interface MFConversationItemFooterView : UIView
+@interface MFConversationItemFooterView : UIView <_UICursorInteractionDelegate>
 {
     _Bool _shouldArchiveByDefault;
+    _Bool _allowsCursorSnapping;
     UIVisualEffectView *_backgroundView;
     UIButton *_seeMoreButton;
     UIButton *_revealActionsButton;
@@ -35,6 +38,7 @@
 @property(nonatomic) double defaultSeeMoreButtonOriginY; // @synthesize defaultSeeMoreButtonOriginY=_defaultSeeMoreButtonOriginY;
 @property(nonatomic) double defaultTrashButtonOriginY; // @synthesize defaultTrashButtonOriginY=_defaultTrashButtonOriginY;
 @property(nonatomic) double defaultRevealActionButtonOriginY; // @synthesize defaultRevealActionButtonOriginY=_defaultRevealActionButtonOriginY;
+@property(nonatomic) _Bool allowsCursorSnapping; // @synthesize allowsCursorSnapping=_allowsCursorSnapping;
 @property(nonatomic) _Bool shouldArchiveByDefault; // @synthesize shouldArchiveByDefault=_shouldArchiveByDefault;
 @property(copy, nonatomic) NSString *senderName; // @synthesize senderName=_senderName;
 @property(retain, nonatomic) MFMessageDisplayMetrics *displayMetrics; // @synthesize displayMetrics=_displayMetrics;
@@ -42,6 +46,8 @@
 @property(retain, nonatomic) UIButton *revealActionsButton; // @synthesize revealActionsButton=_revealActionsButton;
 @property(retain, nonatomic) UIButton *seeMoreButton; // @synthesize seeMoreButton=_seeMoreButton;
 @property(retain, nonatomic) UIVisualEffectView *backgroundView; // @synthesize backgroundView=_backgroundView;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 - (void)moveOriginYByOffset:(double)arg1;
 - (void)_updateButtonsForTraitCollection:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
@@ -60,6 +66,12 @@
 - (void)_updateBackgroundView;
 - (void)setLayoutMargins:(struct UIEdgeInsets)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

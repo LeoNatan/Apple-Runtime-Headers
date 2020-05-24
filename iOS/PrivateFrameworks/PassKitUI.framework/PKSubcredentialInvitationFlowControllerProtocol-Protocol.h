@@ -6,9 +6,11 @@
 
 #import <PassKitUI/PKSubcredentialProvisioningFlowController-Protocol.h>
 
-@protocol PKSubcredentialInvitationProvisioningFlowControllerOperation, PKSubcredentialProvisioningViewModelProtocol;
+@class NSError, UIAlertController;
+@protocol PKSubcredentialInvitationFlowControllerOperation, PKSubcredentialInvitationProvisioningFlowControllerOperation, PKSubcredentialProvisioningViewModelProtocol;
 
 @protocol PKSubcredentialInvitationFlowControllerProtocol <PKSubcredentialProvisioningFlowController>
+- (UIAlertController *)alertForOperation:(id <PKSubcredentialInvitationFlowControllerOperation>)arg1 withError:(NSError *)arg2 retryHandler:(void (^)(void))arg3 cancelationHandler:(void (^)(void))arg4;
 - (id <PKSubcredentialProvisioningViewModelProtocol>)remoteDeviceProvisioningViewModelForOperation:(id <PKSubcredentialInvitationProvisioningFlowControllerOperation>)arg1;
 - (id <PKSubcredentialProvisioningViewModelProtocol>)localDeviceProvisioningViewModelForOperation:(id <PKSubcredentialInvitationProvisioningFlowControllerOperation>)arg1;
 @end

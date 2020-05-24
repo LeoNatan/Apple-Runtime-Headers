@@ -4,9 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class DMFControlGroupIdentifier, NSString;
+@class DMFControlGroupIdentifier, NSArray, NSSet, NSString;
+@protocol CRKASMLocation, CRKIdentity;
 
 @protocol CRKASMCourse
+@property(readonly, copy, nonatomic) NSSet *allTrustedUserCertificates;
+@property(readonly, copy, nonatomic) NSArray *trustedUsers;
+@property(readonly, nonatomic) id <CRKIdentity> identity;
+@property(readonly, nonatomic, getter=isEditable) BOOL editable;
+@property(readonly, nonatomic) id <CRKASMLocation> location;
 @property(readonly, nonatomic) unsigned long long color;
 @property(readonly, nonatomic) unsigned long long mascot;
 @property(readonly, copy, nonatomic) NSString *name;

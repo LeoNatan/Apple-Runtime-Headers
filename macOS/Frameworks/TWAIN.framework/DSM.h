@@ -8,6 +8,7 @@
 
 @class NSBox, NSButton, NSMutableArray, NSMutableDictionary, NSPanel, NSTableView, NSTextView;
 
+__attribute__((visibility("hidden")))
 @interface DSM : NSObject
 {
     NSPanel *_panel;
@@ -17,7 +18,6 @@
     NSTextView *_moreInfo;
     NSBox *_box;
     NSMutableDictionary *_dataSources;
-    NSMutableArray *_twainTLO;
     int _dataSourceIndex;
     NSMutableArray *_icaInfo;
     struct TW_IDENTITY *_source;
@@ -60,6 +60,7 @@
 - (unsigned short)parent;
 - (unsigned short)status;
 - (unsigned short)entry:(struct TW_IDENTITY *)arg1 destination:(struct TW_IDENTITY *)arg2 dataGroup:(unsigned int)arg3 dataArgumentType:(unsigned short)arg4 messageID:(unsigned short)arg5 dataPtr:(char *)arg6;
+- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

@@ -70,6 +70,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool shouldCancelOnAppDeactivation;
 - (void)_sendWillEndWithOperation:(unsigned long long)arg1;
 - (void)_handOffCancelledItems:(id)arg1;
+- (void)_setupAnimationForCancelledItems:(id)arg1 returningContextID:(unsigned int *)arg2 layerRenderID:(unsigned long long *)arg3;
 - (void)addPublicItems:(id)arg1;
 - (void)dragIsInsideApp;
 - (void)dragDidExitApp;

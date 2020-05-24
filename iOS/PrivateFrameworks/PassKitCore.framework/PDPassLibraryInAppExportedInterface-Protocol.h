@@ -9,7 +9,7 @@
 @class NSSet, NSString, PKPaymentRequest;
 
 @protocol PDPassLibraryInAppExportedInterface <PDPassLibraryExportedInterface>
-- (void)hasPassesWithSupportedNetworks:(NSSet *)arg1 merchantCapabilities:(unsigned long long)arg2 webDomain:(NSString *)arg3 completion:(void (^)(_Bool))arg4;
+- (void)hasPassesWithSupportedNetworks:(NSSet *)arg1 merchantCapabilities:(unsigned long long)arg2 webDomain:(NSString *)arg3 issuerCountryCodes:(NSSet *)arg4 completion:(void (^)(_Bool))arg5;
 - (void)canPresentPaymentRequest:(PKPaymentRequest *)arg1 completion:(void (^)(long long, NSString *, NSError *))arg2;
 - (void)hasInAppPrivateLabelPaymentPassesForWebDomain:(NSString *)arg1 issuerCountryCodes:(NSSet *)arg2 withHandler:(void (^)(_Bool))arg3;
 - (void)inAppPrivateLabelPaymentPassesForWebDomain:(NSString *)arg1 issuerCountryCodes:(NSSet *)arg2 withHandler:(void (^)(NSSet *))arg3;

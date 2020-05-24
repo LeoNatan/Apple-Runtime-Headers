@@ -7,7 +7,7 @@
 @class NSError, NSURL, SMCopyEngineCopier;
 
 @protocol SMCopyEngineDelegate
-- (void)copyFailedToCopyFile:(NSURL *)arg1;
+- (void)copyFailedToCopyFile:(NSURL *)arg1 shouldReportError:(BOOL)arg2;
 
 @optional
 - (void)estimatedTimeRemainingChanged:(double)arg1;

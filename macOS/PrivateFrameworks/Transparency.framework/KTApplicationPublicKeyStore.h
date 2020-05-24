@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSData, NSDictionary, NSString, TransparencyManagedDataStore, TransparencyTrustedKeyStore, VRFPublicKey;
+@class NSArray, NSData, NSDictionary, NSString, TransparencyTrustedKeyStore, VRFPublicKey;
 
 @interface KTApplicationPublicKeyStore : NSObject
 {
@@ -17,7 +17,6 @@
     unsigned long long _patLogBeginningMs;
     unsigned long long _tltLogBeginningMs;
     NSString *_application;
-    TransparencyManagedDataStore *_dataStore;
     NSData *_patConfigProof;
     NSDictionary *_trustedAppSigningKeys;
     NSArray *_trustedAppLeafs;
@@ -34,7 +33,6 @@
 @property(retain) NSDictionary *trustedAppSigningKeys; // @synthesize trustedAppSigningKeys=_trustedAppSigningKeys;
 @property int vrfType; // @synthesize vrfType=_vrfType;
 @property(retain) NSData *patConfigProof; // @synthesize patConfigProof=_patConfigProof;
-@property(retain) TransparencyManagedDataStore *dataStore; // @synthesize dataStore=_dataStore;
 @property(retain) NSString *application; // @synthesize application=_application;
 @property unsigned long long tltLogBeginningMs; // @synthesize tltLogBeginningMs=_tltLogBeginningMs;
 @property unsigned long long patLogBeginningMs; // @synthesize patLogBeginningMs=_patLogBeginningMs;
@@ -43,13 +41,13 @@
 @property(retain) VRFPublicKey *vrfKey; // @synthesize vrfKey=_vrfKey;
 - (id)createTLTApplicationPublicKeyStore;
 - (id)initWithApplication:(id)arg1 dataStore:(id)arg2 diskState:(id)arg3 error:(id *)arg4;
-- (BOOL)processDiskState:(id)arg1 error:(id *)arg2;
+- (BOOL)processDiskState:(id)arg1 dataStore:(id)arg2 error:(id *)arg3;
 - (id)initWithApplication:(id)arg1 dataStore:(id)arg2 response:(id)arg3 error:(id *)arg4;
 - (void)startLogBeginTimesSampler;
-- (BOOL)processPublicKeysResponse:(id)arg1 error:(id *)arg2;
-- (BOOL)processKeyData:(id)arg1 tltLeafs:(id)arg2 intermediates:(id)arg3 patConfigProof:(id)arg4 saveTreeHeads:(BOOL)arg5 error:(id *)arg6;
-- (BOOL)detectEpochChangeAndResetData:(unsigned long long)arg1 patLogBeginningMs:(unsigned long long)arg2 error:(id *)arg3;
-- (id)copyVRFKeyFromConfigProof:(id)arg1 saveTreeHeads:(BOOL)arg2 error:(id *)arg3;
+- (BOOL)processPublicKeysResponse:(id)arg1 dataStore:(id)arg2 error:(id *)arg3;
+- (BOOL)processKeyData:(id)arg1 tltLeafs:(id)arg2 intermediates:(id)arg3 patConfigProof:(id)arg4 dataStore:(id)arg5 saveTreeHeads:(BOOL)arg6 error:(id *)arg7;
+- (BOOL)detectEpochChangeAndResetData:(unsigned long long)arg1 patLogBeginningMs:(unsigned long long)arg2 dataStore:(id)arg3 error:(id *)arg4;
+- (id)copyVRFKeyFromConfigProof:(id)arg1 dataStore:(id)arg2 saveTreeHeads:(BOOL)arg3 error:(id *)arg4;
 - (BOOL)verifyCertificates:(id)arg1 intermediates:(id)arg2 application:(id)arg3 error:(id *)arg4;
 - (id)copyKeyStoreState;
 - (void)clearState:(id *)arg1;

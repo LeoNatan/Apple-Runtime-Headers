@@ -25,6 +25,7 @@
 - (int)purpleBuddyPIDWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (NSNumber *)focusedAppPIDWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (_Bool)isSystemAppShowingAnAlertWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
+- (_Bool)connectedDevicesRequireAssistiveTouch;
 - (void)serverInstance:(_AXSpringBoardServerInstance *)arg1 performVoiceShortcutWithIdentifier:(NSString *)arg2 bundleID:(NSString *)arg3;
 - (id)serverInstance:(_AXSpringBoardServerInstance *)arg1 splashImageForAppWithBundleIdentifier:(NSString *)arg2;
 - (void)rebootDeviceWithServerInstance:(_AXSpringBoardServerInstance *)arg1;

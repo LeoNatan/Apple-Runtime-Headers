@@ -45,10 +45,10 @@
 - (id)_fetchOptionsForCurrentSceneprintVersion;
 - (id)_randomAssetsOfCount:(unsigned long long)arg1 error:(id *)arg2;
 - (id)_sampleAssetsOfCount:(unsigned long long)arg1 fromAssetIdentifiers:(id)arg2 error:(id *)arg3;
-- (id)_datasetWithNumberOfPositiveSamples:(id)arg1 numberOfNegativeSamples:(id)arg2 error:(id *)arg3;
-- (id)unbalancedDatasetWithError:(id *)arg1;
-- (id)balancedStrictDatasetWithError:(id *)arg1;
-- (id)balancedDatasetWithError:(id *)arg1;
+- (id)_datasetForLocalIdentifiers:(id)arg1 positiveFingerprints:(id)arg2 negativeFingerprints:(id)arg3 error:(id *)arg4;
+- (id)_mergeLocalIdentifiersFromPositiveLocalIdentifiers:(id)arg1 negativeLocalIdentifiers:(id)arg2 numberOfPositiveSamples:(long long)arg3 numberOfNegativeSamples:(long long)arg4 error:(id *)arg5;
+- (id)_fingerprintsForDatasetName:(id)arg1 localIdentifiers:(id)arg2 label:(id)arg3 numberOfSamples:(long long)arg4 error:(id *)arg5;
+- (id)_targetNumberOfTrainingSamplesPerClassWithError:(id *)arg1;
 - (id)datasetWithError:(id *)arg1;
 - (id)initWithPolicy:(long long)arg1 fingerprintVersion:(long long)arg2 inputName:(id)arg3 labelName:(id)arg4 positivesDatasetName:(id)arg5 positivesSubsetName:(id)arg6 negativesDatasetName:(id)arg7 negativesSubsetName:(id)arg8 totalNumberOfSamples:(id)arg9 photoLibrary:(id)arg10;
 

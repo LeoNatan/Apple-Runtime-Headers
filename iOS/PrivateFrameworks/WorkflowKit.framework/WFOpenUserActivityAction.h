@@ -29,6 +29,7 @@
 @property(readonly, copy, nonatomic) NSData *activityImageData; // @synthesize activityImageData=_activityImageData;
 @property(readonly, copy, nonatomic) NSData *activityData; // @synthesize activityData=_activityData;
 @property(copy, nonatomic) NSString *launchOrigin; // @synthesize launchOrigin=_launchOrigin;
+- (id)metricsIdentifier;
 - (void)runAsynchronouslyWithInput:(id)arg1;
 - (id)appIdentifier;
 - (id)localizedSubtitle;

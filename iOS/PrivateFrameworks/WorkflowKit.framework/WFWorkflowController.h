@@ -56,8 +56,12 @@
 - (void)workflowController:(id)arg1 prepareToRunAction:(id)arg2 withInput:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)workflowController:(id)arg1 didFinishRunningWithError:(id)arg2 cancelled:(_Bool)arg3;
 - (void)workflowControllerWillRun:(id)arg1;
+- (void)trackRunActionEventWithKey:(id)arg1 identifier:(id)arg2 completed:(_Bool)arg3;
+- (void)logFinishActionEventWithIdentifier:(id)arg1 completed:(_Bool)arg2;
+- (void)logStartActionEventWithIdentifier:(id)arg1;
+- (void)trackRunShortcutEventWithKey:(id)arg1 completed:(_Bool)arg2;
+- (void)logFinishRunEvent:(_Bool)arg1;
 - (void)logStartEvent;
-- (void)logRunEvent:(_Bool)arg1;
 - (_Bool)action:(id)arg1 canProvideInputForParameter:(id)arg2;
 - (void)action:(id)arg1 provideInputForParameters:(id)arg2 withDefaultStates:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)autoreleaseSelf;

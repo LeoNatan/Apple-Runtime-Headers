@@ -12,6 +12,8 @@
 
 + (id)customLoader;
 + (void)setCustomLoader:(id)arg1;
++ (BOOL)forceAllowPreviewingFilesOutsideApplicationContainer;
++ (void)setForceAllowPreviewingFilesOutsideApplicationContainer:(BOOL)arg1;
 + (id)forceContentSizeCategory;
 + (void)setForceContentSizeCategory:(id)arg1;
 + (id)forceSubsampleImagesToScreenSize;

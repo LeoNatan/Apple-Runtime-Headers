@@ -132,6 +132,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)_moveWithEvent:(id)arg1;
 - (_Bool)_didRecognizeFocusMovementRequest:(id)arg1;
 - (id)_focusMovementSystem;
+- (void)_moveFocusContainerWithHeading:(unsigned int)arg1;
+- (void)_previousFocusContainer:(id)arg1;
+- (void)_nextFocusContainer:(id)arg1;
+@property(readonly, nonatomic) NSArray *keyCommands;
 - (void)_focusSystemEnabledStateDidChange:(id)arg1;
 - (void)_removeGestureRecognizers;
 - (void)_addGestureRecognizers;

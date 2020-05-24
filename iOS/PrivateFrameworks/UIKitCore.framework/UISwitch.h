@@ -44,6 +44,10 @@
 - (unsigned long long)_controlEventsForActionTriggered;
 - (void)setEnabled:(_Bool)arg1;
 - (void)setSemanticContentAttribute:(long long)arg1;
+- (void)cursorInteraction:(id)arg1 willExitRegion:(id)arg2;
+- (void)cursorInteraction:(id)arg1 willEnterRegion:(id)arg2;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 - (_Bool)_contentHuggingDefault_isUsuallyFixedHeight;
 - (_Bool)_contentHuggingDefault_isUsuallyFixedWidth;
 - (void)setFrame:(struct CGRect)arg1;

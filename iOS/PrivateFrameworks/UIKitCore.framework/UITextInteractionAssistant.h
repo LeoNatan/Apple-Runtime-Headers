@@ -8,11 +8,12 @@
 
 #import <UIKitCore/UIResponderStandardEditActions-Protocol.h>
 #import <UIKitCore/UITextInteraction_AssistantDelegate-Protocol.h>
+#import <UIKitCore/_UICursorInteractionDelegate-Protocol.h>
 
-@class NSNumber, NSString, UIFieldEditor, UIGestureRecognizer, UILongPressGestureRecognizer, UIResponder, UIScrollView, UITapGestureRecognizer, UITextChecker, UITextInteraction, UITextLinkInteraction, UITextRange, UITextSelectionView, _UIKeyboardTextSelectionController;
+@class NSNumber, NSString, UIFieldEditor, UIGestureRecognizer, UILongPressGestureRecognizer, UIResponder, UIScrollView, UITapGestureRecognizer, UITextChecker, UITextInteraction, UITextLinkInteraction, UITextRange, UITextSelectionView, _UICursorInteraction, _UIKeyboardTextSelectionController;
 @protocol UITextInput;
 
-@interface UITextInteractionAssistant : NSObject <UITextInteraction_AssistantDelegate, UIResponderStandardEditActions>
+@interface UITextInteractionAssistant : NSObject <UITextInteraction_AssistantDelegate, _UICursorInteractionDelegate, UIResponderStandardEditActions>
 {
     UIResponder<UITextInput> *_view;
     UITextSelectionView *_selectionView;
@@ -32,6 +33,9 @@
     _Bool _expectingCommit;
     _Bool _externalTextInput;
     _Bool _suppressSystemUI;
+    _UICursorInteraction *_cursorInteraction;
+    _Bool _viewConformsToCursorInteractionDelegate;
+    _Bool _automaticSelectionCommandsSuppressed;
     unsigned long long _activeSelectionInteractions;
     UITextLinkInteraction *_linkInteraction;
     UITextInteraction *_interactions;
@@ -46,6 +50,13 @@
 
 + (long long)_nextGranularityInCycle:(long long)arg1 forTouchType:(long long)arg2;
 - (void).cxx_destruct;
+- (void)cursorInteraction:(id)arg1 willExitRegion:(id)arg2;
+- (void)cursorInteraction:(id)arg1 willExitRegion:(id)arg2 withAnimator:(id)arg3;
+- (void)cursorInteraction:(id)arg1 willEnterRegion:(id)arg2;
+- (void)cursorInteraction:(id)arg1 willEnterRegion:(id)arg2 withAnimator:(id)arg3;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
+- (id)_cursorInteractionDelegate;
 @property(readonly, nonatomic, getter=isInteractiveSelectionDisabled) _Bool interactiveSelectionDisabled;
 - (id)textSelectionView;
 - (void)clearGestureRecognizers;
@@ -97,6 +108,8 @@
 - (void)notifyKeyboardSelectionChanged;
 - (void)clearSelection;
 - (void)selectAll:(id)arg1;
+- (void)setAutomaticSelectionCommandsSuppressedForPointerTouchType:(_Bool)arg1;
+- (void)showSelectionCommandsForSecondaryClickAtPoint:(struct CGPoint)arg1;
 - (_Bool)shouldSuppressSelectionCommands;
 - (void)selectWordWithoutShowingCommands;
 - (void)selectWord;
@@ -122,6 +135,7 @@
 - (void)canBeginDragCursor:(id)arg1;
 - (_Bool)useGesturesForEditableContent;
 - (void)clearGestureRecognizers:(_Bool)arg1;
+- (long long)currentCursorBehavior;
 - (_Bool)wantsLinkInteraction;
 - (_Bool)containerIsBrowserView;
 - (_Bool)containerAllowsSelectionTintOnly;

@@ -39,6 +39,8 @@ __attribute__((visibility("hidden")))
         unsigned int needsBackgroundAndContentViewUpdate:1;
         unsigned int usesAXTextSize:1;
         unsigned int selectionIndicatorDragged:1;
+        unsigned int hovered:1;
+        unsigned int animatingSelectionIndicator:1;
     } _segmentFlags;
     NSArray *_infoConstraints;
     double _requestedScaleFactor;
@@ -91,6 +93,10 @@ __attribute__((visibility("hidden")))
 @property(readonly) UIView *badgeView;
 @property(copy, nonatomic) NSString *badgeValue;
 - (void)tintColorDidChange;
+- (void)setAnimatingSelectionIndicator:(BOOL)arg1;
+- (BOOL)isAnimatingSelectionIndicator;
+- (void)setHovered:(BOOL)arg1;
+- (BOOL)isHovered;
 - (void)_setSelectionIndicatorDragged:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSelectionIndicatorDragged:(BOOL)arg1;
 - (BOOL)isSelectionIndicatorDragged;
@@ -119,6 +125,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateHighlight;
 - (void)_updateSelectionToTransform:(struct CATransform3D)arg1 infoTransform:(struct CATransform3D)arg2 hideSelection:(BOOL)arg3 shouldAnimate:(BOOL)arg4;
 - (void)_insertSelectionView;
+- (void)_updateDynamicShadow:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)_updateBackgroundAndContentViewsIfNeeded;
 - (void)updateDividerViewForChangedSegment:(id)arg1;
@@ -136,6 +143,7 @@ __attribute__((visibility("hidden")))
 - (id)_tintColorArchivingKey;
 - (id)_effectiveBackgroundView;
 - (id)_effectiveVibrancyEffect;
+- (BOOL)_effectiveUseDynamicShadow;
 - (BOOL)_effectiveDisableShadow;
 - (id)_effectiveBackgroundTintColor;
 - (id)_effectiveSelectedSegmentTintColor;

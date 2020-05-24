@@ -11,6 +11,7 @@
 
 @protocol _UIStatusBarVisualProvider <NSObject>
 + (struct CGSize)intrinsicContentSizeForOrientation:(long long)arg1;
+@property(readonly, nonatomic) _Bool supportsIndirectPointerTouchActions;
 @property(nonatomic) __weak _UIStatusBar *statusBar;
 - (_UIStatusBarStyleAttributes *)styleAttributesForStyle:(long long)arg1;
 - (NSArray *)orderedDisplayItemPlacementsInRegionWithIdentifier:(NSString *)arg1;

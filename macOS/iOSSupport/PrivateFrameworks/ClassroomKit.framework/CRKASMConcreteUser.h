@@ -14,21 +14,27 @@
 @interface CRKASMConcreteUser : NSObject <CRKASMUser>
 {
     NSString *_identifier;
-    NSObject<CRKASMNameComponents> *_nameComponents;
-    NSObject<CRKASMOrganization> *_organization;
+    NSString *_appleID;
+    id <CRKASMOrganization> _organization;
+    id <CRKASMNameComponents> _nameComponents;
     id <CRKClassKitPerson> _backingPerson;
 }
 
 - (void).cxx_destruct;
-@property(retain, nonatomic) id <CRKClassKitPerson> backingPerson; // @synthesize backingPerson=_backingPerson;
-@property(readonly, nonatomic) NSObject<CRKASMOrganization> *organization; // @synthesize organization=_organization;
-@property(readonly, nonatomic) NSObject<CRKASMNameComponents> *nameComponents; // @synthesize nameComponents=_nameComponents;
+@property(readonly, nonatomic) id <CRKClassKitPerson> backingPerson; // @synthesize backingPerson=_backingPerson;
+@property(readonly, nonatomic) id <CRKASMNameComponents> nameComponents; // @synthesize nameComponents=_nameComponents;
+@property(readonly, nonatomic) id <CRKASMOrganization> organization; // @synthesize organization=_organization;
+@property(readonly, copy, nonatomic) NSString *appleID; // @synthesize appleID=_appleID;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned long long)hash;
-- (void)updateWithPerson:(id)arg1;
-- (id)initWithPerson:(id)arg1;
+@property(readonly) unsigned long long hash;
+- (BOOL)isEqualToConcreteUser:(id)arg1;
+- (id)initWithBackingPerson:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

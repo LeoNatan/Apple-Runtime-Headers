@@ -307,6 +307,7 @@
 - (void)setFluidDismissalState:(id)arg1;
 - (void)animatedDisappearanceWithFactory:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)animatedAppearanceWithFactory:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)cancelSpeechRecordingIfNecessary;
 - (void)proximityStatusChanged:(_Bool)arg1;
 - (void)exitUITrackingMode;
 - (void)enterUITrackingMode;

@@ -34,7 +34,6 @@
 @property __weak id <HMDCameraRecordingSessionNotificationTriggerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)listener:(id)arg1 didUpdateAvailableCharacteristics:(id)arg2;
 - (id)logIdentifier;
-- (void)handleCharacteristicNotificationRegisteredWithRemoteGateway:(id)arg1;
 - (void)handleCharacteristicsValueUpdated:(id)arg1;
 - (void)handleAccessoryConfigured:(id)arg1;
 - (void)_handleObservedCharacteristicsValueUpdate:(id)arg1;

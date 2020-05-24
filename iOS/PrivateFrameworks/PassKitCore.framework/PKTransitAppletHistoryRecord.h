@@ -14,7 +14,6 @@
 @interface PKTransitAppletHistoryRecord : NSObject <NSCopying, NSSecureCoding>
 {
     unsigned long long _transitModifiers;
-    _Bool _appletStateDirty;
     NSNumber *_historySequenceNumber;
     unsigned long long _type;
     unsigned long long _subtype;
@@ -37,7 +36,6 @@
 @property(nonatomic) long long recordType; // @synthesize recordType=_recordType;
 @property(copy, nonatomic) NSString *transitDetail; // @synthesize transitDetail=_transitDetail;
 @property(copy, nonatomic) NSArray *amounts; // @synthesize amounts=_amounts;
-@property(nonatomic) _Bool appletStateDirty; // @synthesize appletStateDirty=_appletStateDirty;
 @property(copy, nonatomic) NSData *endStation; // @synthesize endStation=_endStation;
 @property(copy, nonatomic) NSData *startStation; // @synthesize startStation=_startStation;
 @property(copy, nonatomic) NSNumber *cityCode; // @synthesize cityCode=_cityCode;
@@ -59,11 +57,11 @@
 - (id)initWithCoder:(id)arg1;
 - (void)_setTransactionHistoryDetailsFromString:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (id)transactionAmounts;
+- (id)_transactionAmountsWithBalanceLabels:(id)arg1;
 @property(readonly, nonatomic) unsigned long long transitTransactionModifier;
 @property(readonly, nonatomic) long long transitTransactionSubtype;
 @property(readonly, nonatomic) long long paymentTransactionType;
-- (id)concreteTransactionWithCurrency:(id)arg1;
+- (id)concreteTransactionWithCurrency:(id)arg1 balanceLabels:(id)arg2;
 - (id)felicaHistoryRecord;
 
 @end

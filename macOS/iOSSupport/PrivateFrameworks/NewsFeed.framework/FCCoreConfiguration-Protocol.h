@@ -65,6 +65,7 @@
 @property(nonatomic, readonly) long long appConfigRefreshRate;
 
 @optional
+@property(nonatomic, readonly) BOOL enableCacheFallbackForArticleRecirculation;
 @property(nonatomic, readonly) NSString *todayFeedKnobs;
 @property(nonatomic, readonly) NSArray *aLaCartePaidSubscriptionGroupWhitelistedChannelIDs;
 @property(nonatomic, readonly) double feedLineHeightMultiplier;

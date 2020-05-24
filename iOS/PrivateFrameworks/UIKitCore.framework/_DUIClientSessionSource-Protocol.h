@@ -13,6 +13,6 @@
 - (oneway void)dragFailed;
 - (oneway void)dragEndedWithOperation:(unsigned long long)arg1;
 - (oneway void)handOffCancelledItems:(NSArray *)arg1 withFence:(BKSAnimationFenceHandle *)arg2;
-- (oneway void)checkCanHandOffCancelledItemsWithReply:(void (^)(_Bool))arg1;
+- (oneway void)checkCanHandOffCancelledItems:(NSArray *)arg1 withReply:(void (^)(_Bool, unsigned int, unsigned long long))arg2;
 @end
 

@@ -14,6 +14,7 @@
 @property(nonatomic) BOOL hasArticleBeenMarkedOffensive;
 @property(nonatomic) BOOL hasArticleBeenSeen;
 @property(nonatomic) BOOL hasArticleBeenRead;
+@property(nonatomic) long long readCount;
 @property(nonatomic) long long maxVersionSeen;
 @property(copy, nonatomic) NSDate *firstSeenAtOfMaxVersionSeen;
 @property(copy, nonatomic) NSDate *firstSeenAt;

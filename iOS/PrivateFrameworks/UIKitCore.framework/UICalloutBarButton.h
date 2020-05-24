@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     _Bool forceFlash;
 }
 
++ (_Bool)_cursorInteractionEnabled;
 + (id)buttonWithImage:(id)arg1 action:(SEL)arg2 type:(int)arg3 inView:(id)arg4;
 + (id)buttonWithTitle:(id)arg1 action:(SEL)arg2 type:(int)arg3 inView:(id)arg4;
 + (id)buttonWithTitle:(id)arg1 subtitle:(id)arg2 maxWidth:(double)arg3 action:(SEL)arg4 type:(int)arg5 inView:(id)arg6;
@@ -45,6 +46,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double contentScale; // @synthesize contentScale=m_contentScale;
 @property(readonly, nonatomic) double contentWidth; // @synthesize contentWidth=m_contentWidth;
 @property(readonly, nonatomic) SEL action; // @synthesize action=m_action;
+- (void)cursorInteraction:(id)arg1 willExitRegion:(id)arg2 withAnimator:(id)arg3;
+- (void)cursorInteraction:(id)arg1 willEnterRegion:(id)arg2 withAnimator:(id)arg3;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 - (void)flash;
 - (void)cancelFlash;
 - (void)fadeAndSendAction;

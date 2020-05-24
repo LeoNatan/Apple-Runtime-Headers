@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     BOOL _scrubbingEnabled;
     BOOL _selectByPressGestureEnabled;
     BOOL _selectionFeedbackEnabled;
+    BOOL _selectByIndirectPointerTouchEnabled;
     UIView *_trackableContainerView;
     UIScrollView *_actionsScrollView;
     NSArray *_representationViews;
@@ -48,6 +49,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UILongPressGestureRecognizer *selectionGestureRecognizer; // @synthesize selectionGestureRecognizer=_selectionGestureRecognizer;
 @property(readonly, nonatomic) struct CGPoint actionSelectionInitialLocationInContainerView; // @synthesize actionSelectionInitialLocationInContainerView=_actionSelectionInitialLocationInContainerView;
 @property(retain, nonatomic) NSArray *representationViews; // @synthesize representationViews=_representationViews;
+@property(nonatomic) BOOL selectByIndirectPointerTouchEnabled; // @synthesize selectByIndirectPointerTouchEnabled=_selectByIndirectPointerTouchEnabled;
 @property(nonatomic) BOOL selectionFeedbackEnabled; // @synthesize selectionFeedbackEnabled=_selectionFeedbackEnabled;
 @property(nonatomic) BOOL selectByPressGestureEnabled; // @synthesize selectByPressGestureEnabled=_selectByPressGestureEnabled;
 @property(nonatomic) BOOL scrubbingEnabled; // @synthesize scrubbingEnabled=_scrubbingEnabled;

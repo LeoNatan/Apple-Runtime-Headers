@@ -11,14 +11,14 @@
 @interface PKPaymentAvailableProductsRequest : PKPaymentWebServiceRequest
 {
     BOOL _ignoreCache;
-    NSString *_type;
+    NSString *_preferredLanguage;
 }
 
 - (void).cxx_destruct;
 @property(nonatomic) BOOL ignoreCache; // @synthesize ignoreCache=_ignoreCache;
-@property(copy, nonatomic) NSString *type; // @synthesize type=_type;
+@property(readonly, copy, nonatomic) NSString *preferredLanguage; // @synthesize preferredLanguage=_preferredLanguage;
 - (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 appleAccountInformation:(id)arg3;
-- (id)initWithType:(id)arg1;
+- (id)initWithPreferredLanguage:(id)arg1;
 
 @end
 

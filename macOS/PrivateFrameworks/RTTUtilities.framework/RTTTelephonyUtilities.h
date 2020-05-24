@@ -61,7 +61,7 @@
 @property unsigned long long activeContextCount; // @synthesize activeContextCount=_activeContextCount;
 @property(retain) CTXPCServiceSubscriptionContext *defaultVoiceContext; // @synthesize defaultVoiceContext=_defaultVoiceContext;
 - (BOOL)relayRTTIsSupported;
-- (void)_icloudAccountChanged;
+- (void)_processiCloudAccountForRTT;
 - (void)iCloudAccountDidChange:(id)arg1;
 - (void)iCloudRTTRelayDidChange:(id)arg1;
 - (void)didChangeOutgoingRelayCallerID;

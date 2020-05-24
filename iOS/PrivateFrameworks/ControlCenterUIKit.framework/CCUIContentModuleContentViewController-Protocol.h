@@ -12,6 +12,7 @@
 @property(readonly, nonatomic) double preferredExpandedContentHeight;
 
 @optional
+@property(readonly, nonatomic) _Bool shouldPerformHoverInteraction;
 @property(readonly, nonatomic) UIViewPropertyAnimator *customAnimator;
 @property(readonly, nonatomic) _Bool providesOwnPlatter;
 @property(readonly, nonatomic) double preferredExpandedContinuousCornerRadius;

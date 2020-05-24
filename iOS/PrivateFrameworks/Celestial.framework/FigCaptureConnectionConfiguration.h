@@ -9,7 +9,7 @@
 #import <Celestial/FigXPCCoding-Protocol.h>
 #import <Celestial/NSCopying-Protocol.h>
 
-@class FigCaptureCameraCalibrationDataSinkConfiguration, FigCaptureDepthDataSinkConfiguration, FigCaptureIrisSinkConfiguration, FigCaptureSinkConfiguration, FigCaptureSourceConfiguration, FigCaptureStillImageSinkConfiguration, FigCaptureVideoDataSinkConfiguration, FigCaptureVideoPreviewSinkConfiguration, FigCaptureVideoThumbnailSinkConfiguration, NSString;
+@class FigCaptureCameraCalibrationDataSinkConfiguration, FigCaptureDepthDataSinkConfiguration, FigCaptureIrisSinkConfiguration, FigCapturePointCloudDataSinkConfiguration, FigCaptureSinkConfiguration, FigCaptureSourceConfiguration, FigCaptureStillImageSinkConfiguration, FigCaptureVideoDataSinkConfiguration, FigCaptureVideoPreviewSinkConfiguration, FigCaptureVideoThumbnailSinkConfiguration, NSString;
 
 @interface FigCaptureConnectionConfiguration : NSObject <FigXPCCoding, NSCopying>
 {
@@ -29,6 +29,7 @@
 @property(copy, nonatomic) NSString *connectionID; // @synthesize connectionID=_connectionID;
 @property(readonly) FigCaptureCameraCalibrationDataSinkConfiguration *cameraCalibrationDataSinkConfiguration;
 @property(readonly) FigCaptureVideoThumbnailSinkConfiguration *thumbnailSinkConfiguration;
+@property(readonly) FigCapturePointCloudDataSinkConfiguration *pointCloudDataSinkConfiguration;
 @property(readonly) FigCaptureDepthDataSinkConfiguration *depthDataSinkConfiguration;
 @property(readonly) FigCaptureVideoPreviewSinkConfiguration *videoPreviewSinkConfiguration;
 @property(readonly) FigCaptureVideoDataSinkConfiguration *videoDataSinkConfiguration;

@@ -29,6 +29,7 @@
     id <UITextInteraction_AssistantDelegate> _assistantDelegate;
 }
 
++ (double)_maximumBeamSnappingLength;
 + (id)textInteractionsForSet:(long long)arg1;
 + (id)textInteractionForMode:(long long)arg1;
 - (void).cxx_destruct;

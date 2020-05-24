@@ -370,6 +370,7 @@
 - (void)_setHIDEventObserver:(CDUnknownBlockType)arg1 onQueue:(id)arg2;
 - (void)_removeHIDGameControllerEventObserver;
 - (void)_setHIDGameControllerEventObserver:(CDUnknownBlockType)arg1 onQueue:(id)arg2;
+- (void)_resendHoverEventForWindow:(id)arg1;
 - (void)_enqueueHIDEvent:(struct __IOHIDEvent *)arg1;
 - (void)_handleScreenshot;
 - (void)_updateOrientation;
@@ -399,6 +400,7 @@
 - (void)_sendWillEnterForegroundCallbacks;
 - (void)_handlePlatformSpecificActions:(id)arg1 forScene:(id)arg2 withTransitionContext:(id)arg3;
 - (void)_handleNonLaunchSpecificActions:(id)arg1 forScene:(id)arg2 withTransitionContext:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (_Bool)_supportsIndirectInputEvents;
 - (void)_cancelAllPressesForTVOnly;
 - (void)_cancelUnfinishedPressesForEvent:(id)arg1;
 - (void)_cancelUnfinishedTouchesForEvent:(id)arg1;
@@ -492,6 +494,9 @@
 - (void)_presentEditAlertController:(id)arg1;
 - (id)_remoteControlEvent;
 - (id)_hoverEventForWindow:(id)arg1;
+- (id)_hoverEventForWindowSpringBoardOnly:(id)arg1;
+- (id)_transformEventForWindow:(id)arg1;
+- (id)_scrollEventForWindow:(id)arg1;
 - (id)_dragEvents;
 - (id)_pencilEventForWindow:(id)arg1;
 - (id)_physicalKeyboardEventForWindow:(id)arg1;
@@ -710,6 +715,7 @@
 - (void)_createStatusBarWithRequestedStyle:(long long)arg1 orientation:(long long)arg2 hidden:(_Bool)arg3;
 - (void)_createStatusBarIfNeededWithOrientation:(long long)arg1;
 @property(readonly, nonatomic, getter=_hostsSystemStatusBar) _Bool hostsSystemStatusBar;
+- (_Bool)handleStatusBarHoverActionForRegion:(long long)arg1;
 - (_Bool)handleDoubleHeightStatusBarTapWithStyleOverride:(int)arg1;
 @property(nonatomic, getter=isNetworkActivityIndicatorVisible) _Bool networkActivityIndicatorVisible;
 - (_Bool)sendAction:(SEL)arg1 to:(id)arg2 from:(id)arg3 forEvent:(id)arg4;

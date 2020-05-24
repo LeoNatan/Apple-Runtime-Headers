@@ -6,20 +6,22 @@
 
 #import <Catalyst/CATTaskRequest.h>
 
-@class NSDictionary, NSSet;
+@class NSDictionary, NSString;
 
 @interface CRKSendIDSMessageRequest : CATTaskRequest
 {
+    NSString *_sourceAppleID;
+    NSString *_destinationAddress;
     NSDictionary *_message;
-    NSSet *_recipients;
 }
 
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
-@property(copy, nonatomic) NSSet *recipients; // @synthesize recipients=_recipients;
 @property(copy, nonatomic) NSDictionary *message; // @synthesize message=_message;
-- (void)encodeWithCoder:(id)arg1;
+@property(copy, nonatomic) NSString *destinationAddress; // @synthesize destinationAddress=_destinationAddress;
+@property(copy, nonatomic) NSString *sourceAppleID; // @synthesize sourceAppleID=_sourceAppleID;
 - (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 
 @end
 

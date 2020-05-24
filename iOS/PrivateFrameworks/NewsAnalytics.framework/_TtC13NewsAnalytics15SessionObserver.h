@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: sessionManager
     // Error parsing type: , name: cloudContext
+    // Error parsing type: , name: client
     // Error parsing type: , name: window
 }
 

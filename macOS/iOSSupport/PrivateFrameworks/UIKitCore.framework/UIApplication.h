@@ -402,6 +402,7 @@
 - (void)_sendWillEnterForegroundCallbacks;
 - (void)_handlePlatformSpecificActions:(id)arg1 forScene:(id)arg2 withTransitionContext:(id)arg3;
 - (void)_handleNonLaunchSpecificActions:(id)arg1 forScene:(id)arg2 withTransitionContext:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (BOOL)_supportsIndirectInputEvents;
 - (void)_cancelAllPressesForTVOnly;
 - (void)_cancelUnfinishedPressesForEvent:(id)arg1;
 - (void)_cancelUnfinishedTouchesForEvent:(id)arg1;
@@ -491,6 +492,7 @@
 - (void)_presentEditAlertController:(id)arg1;
 - (id)_remoteControlEvent;
 - (id)_hoverEventForWindow:(id)arg1;
+- (id)_hoverEventForWindowSpringBoardOnly:(id)arg1;
 - (id)_transformEventForWindow:(id)arg1;
 - (id)_scrollEventForWindow:(id)arg1;
 - (id)_dragEvents;
@@ -708,6 +710,7 @@
 - (void)_createStatusBarWithRequestedStyle:(long long)arg1 orientation:(long long)arg2 hidden:(BOOL)arg3;
 - (void)_createStatusBarIfNeededWithOrientation:(long long)arg1;
 @property(readonly, nonatomic, getter=_hostsSystemStatusBar) BOOL hostsSystemStatusBar;
+- (BOOL)handleStatusBarHoverActionForRegion:(long long)arg1;
 - (BOOL)handleDoubleHeightStatusBarTapWithStyleOverride:(int)arg1;
 @property(nonatomic, getter=isNetworkActivityIndicatorVisible) BOOL networkActivityIndicatorVisible;
 - (BOOL)sendAction:(SEL)arg1 to:(id)arg2 from:(id)arg3 forEvent:(id)arg4;
@@ -964,7 +967,6 @@
 - (BOOL)_isUIKeyCommandEvent:(id)arg1;
 - (BOOL)_sendUIKeyCommandEvent:(id)arg1;
 - (BOOL)_sendKeyEvent:(id)arg1;
-- (void)_sendPhysicalKeyboardPressEvent:(id)arg1;
 - (id)_physicalKeyEventFromUINSEvent:(id)arg1;
 - (BOOL)_keyboardEventCorrespondsToKeyCommand:(id)arg1;
 - (void)_sendFlagsChangedEvent:(id)arg1;

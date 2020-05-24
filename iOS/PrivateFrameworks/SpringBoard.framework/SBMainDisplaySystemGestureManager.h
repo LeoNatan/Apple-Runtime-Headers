@@ -13,6 +13,7 @@
 {
     SBGestureDefaults *_gestureDefaults;
     id <BSInvalidatable> _systemGestureEventDeferringRule;
+    id <BSInvalidatable> _pointerEventRoutingAssertion;
     _Bool _multitaskingGesturesEnabled;
     SBHomeGestureParticipant *_accessibilityHomeGestureParticipant;
 }

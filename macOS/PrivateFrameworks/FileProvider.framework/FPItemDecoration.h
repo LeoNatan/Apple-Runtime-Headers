@@ -26,6 +26,7 @@
 + (id)_fetchFromCacheWithIdentifier:(id)arg1 bundleIdentifier:(id)arg2;
 + (id)_loadDecorationsFromPlist:(id)arg1 bundleIdentifier:(id)arg2 bundle:(struct __CFBundle *)arg3;
 + (void)initialize;
++ (void)_invalidateCache;
 + (void)_loadBuiltinDecorationTypes;
 + (id)_decorationCache;
 - (void).cxx_destruct;

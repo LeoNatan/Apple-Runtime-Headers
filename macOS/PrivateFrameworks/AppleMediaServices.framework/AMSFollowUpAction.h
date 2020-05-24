@@ -16,6 +16,7 @@
     NSString *_label;
     AMSMetricsEvent *_metricsEvent;
     NSURL *_url;
+    NSString *_backingIdentifier;
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSObject<OS_dispatch_queue> *_actionQueue;
 }
@@ -23,6 +24,7 @@
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *actionQueue; // @synthesize actionQueue=_actionQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
+@property(retain, nonatomic) NSString *backingIdentifier; // @synthesize backingIdentifier=_backingIdentifier;
 @property(retain) NSURL *url; // @synthesize url=_url;
 @property(retain) AMSMetricsEvent *metricsEvent; // @synthesize metricsEvent=_metricsEvent;
 @property(retain) NSString *label; // @synthesize label=_label;
@@ -42,6 +44,7 @@
 @property(retain) NSString *preferredClient;
 @property(retain) NSString *parentIdentifier;
 @property(retain) NSString *logKey;
+- (id)initWithItem:(id)arg1 action:(id)arg2;
 - (id)initWithAction:(id)arg1 parentIdentifier:(id)arg2;
 - (id)initWithLabel:(id)arg1 parentIdentifier:(id)arg2;
 

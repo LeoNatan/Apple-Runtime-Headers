@@ -7,12 +7,14 @@
 #import <PhotosUICore/PXWidget-Protocol.h>
 
 @class NSObject, PXOneUpPresentation, PXPhotosDetailsContext, PXRegionOfInterest, PXUIViewControllerTransition, PXZoomAnimationCoordinator, UIFocusUpdateContext, UITraitCollection, UIViewController;
-@protocol PXAnonymousView, PXAnonymousViewController, PXUIImageViewBasicTile, UICoordinateSpace;
+@protocol PXAnonymousView, PXAnonymousViewController, PXUIImageViewBasicTile, PXUIViewBasicTile, UICoordinateSpace;
 
 @protocol PXUIWidget <PXWidget>
 
 @optional
+@property(readonly, nonatomic) _Bool cursorInteractionEnabled;
 @property(retain, nonatomic) PXOneUpPresentation *oneUpPresentation;
+- (id <PXUIViewBasicTile>)bestCursorTileForLiftingAtPoint:(struct CGPoint)arg1 inCoordinateSpace:(NSObject<UICoordinateSpace> *)arg2;
 - (id <PXUIImageViewBasicTile>)imageViewBasicTileForPreviewingAtPoint:(struct CGPoint)arg1;
 - (_Bool)containsPoint:(struct CGPoint)arg1 forCoordinateSpace:(NSObject<UICoordinateSpace> *)arg2;
 - (void)commitPreviewViewController:(UIViewController *)arg1;

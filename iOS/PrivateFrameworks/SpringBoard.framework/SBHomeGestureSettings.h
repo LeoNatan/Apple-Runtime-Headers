@@ -63,12 +63,16 @@
     double _morphTargetUnclipDuration;
     double _secondsToAllowMultipleEdges;
     double _secondsToResetSwitcherListAfterTransition;
+    double _travelDistanceForTranslatingScreenHeight;
+    double _minimumDistanceThresholdToScaleMultiplier;
     SBHomeGestureExclusionTrapezoidSettings *_exclusionTrapezoidSettings;
 }
 
 + (id)settingsControllerModule;
 - (void).cxx_destruct;
 @property(retain, nonatomic) SBHomeGestureExclusionTrapezoidSettings *exclusionTrapezoidSettings; // @synthesize exclusionTrapezoidSettings=_exclusionTrapezoidSettings;
+@property(nonatomic) double minimumDistanceThresholdToScaleMultiplier; // @synthesize minimumDistanceThresholdToScaleMultiplier=_minimumDistanceThresholdToScaleMultiplier;
+@property(nonatomic) double travelDistanceForTranslatingScreenHeight; // @synthesize travelDistanceForTranslatingScreenHeight=_travelDistanceForTranslatingScreenHeight;
 @property(nonatomic) _Bool resetSwitcherListAfterAppInteraction; // @synthesize resetSwitcherListAfterAppInteraction=_resetSwitcherListAfterAppInteraction;
 @property(nonatomic) double secondsToResetSwitcherListAfterTransition; // @synthesize secondsToResetSwitcherListAfterTransition=_secondsToResetSwitcherListAfterTransition;
 @property(nonatomic) _Bool preventMultipleEdgesAfterAppInteraction; // @synthesize preventMultipleEdgesAfterAppInteraction=_preventMultipleEdgesAfterAppInteraction;

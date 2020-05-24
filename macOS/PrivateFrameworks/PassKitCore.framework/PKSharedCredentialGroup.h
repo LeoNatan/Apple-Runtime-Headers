@@ -12,17 +12,19 @@
 
 @interface PKSharedCredentialGroup : NSObject <NSSecureCoding>
 {
-    BOOL _revoked;
+    BOOL _localGroup;
     PKAppletSubcredential *_credential;
     NSSet *_sharedCredentials;
     NSSet *_receipts;
     NSString *_recipientHandle;
     PKAppletSubcredentialEntitlement *_entitlement;
+    long long _state;
 }
 
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
-@property(readonly, nonatomic, getter=isRevoked) BOOL revoked; // @synthesize revoked=_revoked;
+@property(readonly, nonatomic, getter=isLocalGroup) BOOL localGroup; // @synthesize localGroup=_localGroup;
+@property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) PKAppletSubcredentialEntitlement *entitlement; // @synthesize entitlement=_entitlement;
 @property(readonly, nonatomic) NSString *recipientHandle; // @synthesize recipientHandle=_recipientHandle;
 @property(readonly, nonatomic) NSSet *receipts; // @synthesize receipts=_receipts;
@@ -30,7 +32,6 @@
 @property(readonly, nonatomic) PKAppletSubcredential *credential; // @synthesize credential=_credential;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-@property(readonly, nonatomic) BOOL hasBeenAccepted;
 - (void)parseGroupItems;
 - (id)initWithCredential:(id)arg1 sharedCredentials:(id)arg2 receipts:(id)arg3;
 

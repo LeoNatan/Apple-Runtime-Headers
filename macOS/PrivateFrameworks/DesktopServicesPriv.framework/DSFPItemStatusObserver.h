@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (TNSRef_090b95aa)fpError;
 - (void)collection:(id)arg1 didEncounterError:(id)arg2;
 - (void)collection:(id)arg1 didUpdateItems:(id)arg2 replaceItemsByFormerID:(id)arg3 deleteItemsWithIDs:(id)arg4;
+- (void)updateNodesFPItemsFromCollection:(const vector_a978b006 *)arg1;
 - (void)dataForCollectionShouldBeReloaded:(id)arg1;
 - (void)updateFPItems:(id)arg1;
 - (void)stopObserving;

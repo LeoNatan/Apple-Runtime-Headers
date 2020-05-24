@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 {
     UIDelayedAction *_gateTimer;
     UIDelayedAction *_cancellationTimer;
+    unsigned long long _behavior;
     _UIDragLiftGestureRecognizer *_gestureRecognizerForDragInitiation;
     _UIRelationshipGestureRecognizer *_gestureRecognizerForFailureRelationship;
     _UIRelationshipGestureRecognizer *_gestureRecognizerForExclusionRelationship;
@@ -24,6 +25,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _UIRelationshipGestureRecognizer *gestureRecognizerForExclusionRelationship; // @synthesize gestureRecognizerForExclusionRelationship=_gestureRecognizerForExclusionRelationship;
 @property(readonly, nonatomic) _UIRelationshipGestureRecognizer *gestureRecognizerForFailureRelationship; // @synthesize gestureRecognizerForFailureRelationship=_gestureRecognizerForFailureRelationship;
 @property(readonly, nonatomic) _UIDragLiftGestureRecognizer *gestureRecognizerForDragInitiation; // @synthesize gestureRecognizerForDragInitiation=_gestureRecognizerForDragInitiation;
+@property(readonly, nonatomic) unsigned long long behavior; // @synthesize behavior=_behavior;
 - (void)_gestureRecognizerFailed:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
@@ -56,6 +58,7 @@ __attribute__((visibility("hidden")))
 - (void)reset;
 - (void)detachFromView:(id)arg1;
 - (void)attachToView:(id)arg1;
+- (id)initWithBehavior:(unsigned long long)arg1;
 - (id)init;
 
 // Remaining properties

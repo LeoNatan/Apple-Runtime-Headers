@@ -46,6 +46,7 @@
 @property(readonly, nonatomic) NSArray *classMembers;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)mergeWithObject:(id)arg1;
 - (BOOL)validateObject:(id *)arg1;
 - (id)initWithLocation:(id)arg1 customName:(id)arg2;
 - (id)_init;

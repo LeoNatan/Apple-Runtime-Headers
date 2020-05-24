@@ -10,7 +10,6 @@
 
 @interface SBFluidSwitcherAnimationSettings : PTSettings
 {
-    _Bool _animateAppSelectionDimming;
     SBFFluidBehaviorSettings *_layoutSettings;
     SBFFluidBehaviorSettings *_zoomUpSettings;
     SBFFluidBehaviorSettings *_iconZoomDownSettings;
@@ -68,7 +67,6 @@
     SBFFluidBehaviorSettings *_centerZoomOpacitySettings;
     SBFFluidBehaviorSettings *_wallpaperScaleSettings;
     SBFFluidBehaviorSettings *_appSelectionSquishSettings;
-    SBFFluidBehaviorSettings *_appSelectionDimSettings;
     SBFFluidBehaviorSettings *_statusBarFadeInSettings;
     SBFFluidBehaviorSettings *_statusBarFadeOutSettings;
     double _statusBarToApexBounceAnimationDuration;
@@ -149,8 +147,6 @@
 @property(nonatomic) double statusBarToApexBounceAnimationDuration; // @synthesize statusBarToApexBounceAnimationDuration=_statusBarToApexBounceAnimationDuration;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *statusBarFadeOutSettings; // @synthesize statusBarFadeOutSettings=_statusBarFadeOutSettings;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *statusBarFadeInSettings; // @synthesize statusBarFadeInSettings=_statusBarFadeInSettings;
-@property(retain, nonatomic) SBFFluidBehaviorSettings *appSelectionDimSettings; // @synthesize appSelectionDimSettings=_appSelectionDimSettings;
-@property(nonatomic) _Bool animateAppSelectionDimming; // @synthesize animateAppSelectionDimming=_animateAppSelectionDimming;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *appSelectionSquishSettings; // @synthesize appSelectionSquishSettings=_appSelectionSquishSettings;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *wallpaperScaleSettings; // @synthesize wallpaperScaleSettings=_wallpaperScaleSettings;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *centerZoomOpacitySettings; // @synthesize centerZoomOpacitySettings=_centerZoomOpacitySettings;

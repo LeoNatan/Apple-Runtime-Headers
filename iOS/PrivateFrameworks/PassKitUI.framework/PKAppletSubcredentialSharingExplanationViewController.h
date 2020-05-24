@@ -7,23 +7,29 @@
 #import <PassKitUI/PKExplanationViewController.h>
 
 #import <PassKitUI/PKExplanationViewDelegate-Protocol.h>
+#import <PassKitUI/PKSubcredentialMessageComposeViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKViewControllerPreflightable-Protocol.h>
 
-@class NSString, PKAppletSubcredentialSharingRequest, PKHeroCardExplainationHeaderView;
+@class NSString, PKAppletSubcredentialSharingRequest, PKHeroCardExplainationHeaderView, PKSharedCredentialsGroupController, PKSubcredentialMessageComposeViewController;
 
-@interface PKAppletSubcredentialSharingExplanationViewController : PKExplanationViewController <PKExplanationViewDelegate, PKViewControllerPreflightable>
+@interface PKAppletSubcredentialSharingExplanationViewController : PKExplanationViewController <PKExplanationViewDelegate, PKSubcredentialMessageComposeViewControllerDelegate, PKViewControllerPreflightable>
 {
     PKHeroCardExplainationHeaderView *_heroCardView;
+    PKSharedCredentialsGroupController *_groupController;
     PKAppletSubcredentialSharingRequest *_sharingRequest;
+    _Bool _isSharing;
+    PKSubcredentialMessageComposeViewController *_messageComposeViewController;
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKSubcredentialMessageComposeViewController *messageComposeViewController; // @synthesize messageComposeViewController=_messageComposeViewController;
 - (void)preflightWithCompletion:(CDUnknownBlockType)arg1;
+- (void)messageComposeViewControllerDidFinishWithResult:(_Bool)arg1;
 - (void)explanationViewDidSelectSetupLater:(id)arg1;
 - (void)_openMessagesToPresentAction;
 - (void)explanationViewDidSelectContinue:(id)arg1;
 - (void)viewDidLoad;
-- (id)initWithSharingRequest:(id)arg1;
+- (id)initWithSharedCredentialsGroupController:(id)arg1 SharingRequest:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

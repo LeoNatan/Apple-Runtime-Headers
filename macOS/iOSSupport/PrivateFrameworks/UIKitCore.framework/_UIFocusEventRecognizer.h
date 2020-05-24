@@ -10,7 +10,7 @@
 #import <UIKitCore/_UIFocusEnginePanGestureRecognizerDelegate-Protocol.h>
 #import <UIKitCore/_UIFocusFastScrollingRecognizerDelegate-Protocol.h>
 
-@class CADisplayLink, NSArray, NSObservation, NSString, NSTimer, NSUserDefaults, UIMoveEvent, UIScrollView, UITapGestureRecognizer, UIView, _UIFocusEffectsController, _UIFocusEngineJoystickGestureRecognizer, _UIFocusEnginePanGestureRecognizer, _UIFocusFastScrollingRecognizer, _UIFocusMovementInfo, _UIFocusPressGestureRecognizer;
+@class CADisplayLink, NSArray, NSObservation, NSString, NSTimer, NSUserDefaults, UIMoveEvent, UIScrollView, UITapGestureRecognizer, UIView, _UIFocusEffectsController, _UIFocusEngineJoystickGestureRecognizer, _UIFocusEnginePanGestureRecognizer, _UIFocusFastScrollingRecognizer, _UIFocusLinearMovementDebugGestureRecognizer, _UIFocusLinearMovementDebugView, _UIFocusMovementInfo, _UIFocusPressGestureRecognizer;
 @protocol _UIFocusEventRecognizerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -19,6 +19,8 @@ __attribute__((visibility("hidden")))
     _UIFocusEnginePanGestureRecognizer *_panGestureRecognizer;
     UITapGestureRecognizer *_tapGestureRecognizer;
     _UIFocusPressGestureRecognizer *_selectGestureRecognizer;
+    _UIFocusLinearMovementDebugGestureRecognizer *_linearDebugGestureRecognizer;
+    _UIFocusLinearMovementDebugView *_linearDebugView;
     struct CGPoint _touchBeganPoint;
     struct CGPoint _lastKnownTouchPoint;
     struct CGPoint _previousPoints[5];
@@ -121,6 +123,9 @@ __attribute__((visibility("hidden")))
 - (int)_touchRegionForDigitizerLocation:(struct CGPoint)arg1;
 - (void)_gestureRecognizerFailed:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (BOOL)_hideLinearGroupDebugOverlayIfNecessary:(BOOL)arg1;
+- (void)_showLinearGroupDebugOverlay;
+- (void)_handleLinearDebugOverlayGesture:(id)arg1;
 - (void)_handleJoystickGesture:(id)arg1;
 - (void)_handleTapGesture:(id)arg1;
 - (void)_handlePanGesture:(id)arg1;
@@ -132,6 +137,10 @@ __attribute__((visibility("hidden")))
 - (BOOL)_moveWithEvent:(id)arg1;
 - (BOOL)_didRecognizeFocusMovementRequest:(id)arg1;
 - (id)_focusMovementSystem;
+- (void)_moveFocusContainerWithHeading:(unsigned long long)arg1;
+- (void)_previousFocusContainer:(id)arg1;
+- (void)_nextFocusContainer:(id)arg1;
+@property(readonly, nonatomic) NSArray *keyCommands;
 - (void)_focusSystemEnabledStateDidChange:(id)arg1;
 - (void)_removeGestureRecognizers;
 - (void)_addGestureRecognizers;

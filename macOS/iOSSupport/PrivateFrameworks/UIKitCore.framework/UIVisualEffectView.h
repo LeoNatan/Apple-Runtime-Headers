@@ -48,6 +48,7 @@
 @property(retain, nonatomic, setter=_setCornerMask:) _UIVisualEffectViewCornerMask *_cornerMask; // @synthesize _cornerMask=__cornerMask;
 @property(copy, nonatomic) UIVisualEffect *effect; // @synthesize effect=_effect;
 @property(readonly, nonatomic) _UIVisualEffectViewBackdropCaptureGroup *_captureGroup; // @synthesize _captureGroup;
+- (id)_environment;
 - (id)_backgroundHost;
 - (id)_contentHost;
 - (void)_setTintOpacity:(double)arg1;

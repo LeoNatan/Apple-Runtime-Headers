@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (_Bool)_shouldReceiveTouch:(id)arg1 withEvent:(id)arg2;
 - (_Bool)canPreventGestureRecognizer:(id)arg1;
 - (void)reset;
 - (struct CGPoint)locationInView:(id)arg1;

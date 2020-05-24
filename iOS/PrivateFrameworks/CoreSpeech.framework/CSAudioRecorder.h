@@ -26,6 +26,7 @@
     CSAudioFileReader *_audioFileReader;
     unsigned long long _audioFilePathIndex;
     _Bool _waitingForDidStart;
+    _Bool _holdingPrewarmException;
     NSObject<OS_dispatch_queue> *_queue;
     NSHashTable *_observers;
 }
@@ -33,6 +34,7 @@
 + (void)createSharedAudioSession;
 + (unsigned long long)_convertDeactivateOption:(unsigned long long)arg1;
 - (void).cxx_destruct;
+@property _Bool holdingPrewarmException; // @synthesize holdingPrewarmException=_holdingPrewarmException;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (id)_getRecordSettingsWithRequest:(id)arg1;
@@ -80,6 +82,11 @@
 @property(nonatomic) _Bool duckOthersOption;
 - (_Bool)deactivateAudioSession:(unsigned long long)arg1 error:(id *)arg2;
 - (_Bool)activateAudioSessionWithReason:(unsigned long long)arg1 streamHandleId:(unsigned long long)arg2 error:(id *)arg3;
+- (void)releasePrewarmMSNException;
+- (void)holdPrewarmMSNException;
+- (void)_logRecordingStopErrorIfNeeded:(long long)arg1;
+- (void)_logResourceNotAvailableErrorIfNeeded:(id)arg1;
+- (_Bool)_shouldLogResourceNotAvailableError;
 - (_Bool)prewarmAudioSessionWithStreamHandleId:(unsigned long long)arg1 error:(id *)arg2;
 - (_Bool)isNarrowBandWithStreamHandleId:(unsigned long long)arg1;
 - (id)recordSettingsWithStreamHandleId:(unsigned long long)arg1;

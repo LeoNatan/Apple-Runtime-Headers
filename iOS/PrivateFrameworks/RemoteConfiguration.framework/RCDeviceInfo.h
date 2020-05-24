@@ -20,6 +20,7 @@
     NSString *_osVersion;
 }
 
++ (id)defaultDeviceInfoWithAppVersion:(id)arg1;
 + (id)defaultDeviceInfo;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *osVersion; // @synthesize osVersion=_osVersion;

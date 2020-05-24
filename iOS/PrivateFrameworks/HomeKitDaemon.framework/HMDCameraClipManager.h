@@ -28,15 +28,19 @@
     NSHashTable *_subscribedClientConnections;
     HMBCloudZone *_cloudZone;
     HMFTimer *_cloudZoneFetchTimer;
+    HMFTimer *_clipsCleanupTimer;
     unsigned long long _fetchClipsBatchLimit;
     CDUnknownBlockType _cloudFetchTimerFactory;
+    CDUnknownBlockType _clipsCleanupTimerFactory;
 }
 
 + (id)logCategory;
 + (double)maximumClipDuration;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType clipsCleanupTimerFactory; // @synthesize clipsCleanupTimerFactory=_clipsCleanupTimerFactory;
 @property(copy) CDUnknownBlockType cloudFetchTimerFactory; // @synthesize cloudFetchTimerFactory=_cloudFetchTimerFactory;
 @property unsigned long long fetchClipsBatchLimit; // @synthesize fetchClipsBatchLimit=_fetchClipsBatchLimit;
+@property(retain) HMFTimer *clipsCleanupTimer; // @synthesize clipsCleanupTimer=_clipsCleanupTimer;
 @property(retain) HMFTimer *cloudZoneFetchTimer; // @synthesize cloudZoneFetchTimer=_cloudZoneFetchTimer;
 @property(retain) HMBCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
 @property(readonly) NSHashTable *subscribedClientConnections; // @synthesize subscribedClientConnections=_subscribedClientConnections;
@@ -50,7 +54,6 @@
 - (void)zoneManager:(id)arg1 didReceiveMessageWithUserInfo:(id)arg2;
 - (void)zoneManagerDidStop:(id)arg1;
 - (void)zoneManagerDidStart:(id)arg1;
-- (void)_cleanUpClipsLeftInProgress;
 - (_Bool)areShareModificationsEnabledForManager:(id)arg1;
 - (_Bool)manager:(id)arg1 shouldGrantWriteAccessToUser:(id)arg2;
 - (_Bool)manager:(id)arg1 shouldShareWithUser:(id)arg2;
@@ -86,6 +89,10 @@
 - (_Bool)_fetchClipsAfterDate:(id)arg1 beforeDate:(id)arg2 error:(id *)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)_notifyTransportsOfUpdatedClips:(id)arg1 removedClipUUIDs:(id)arg2;
 - (void)_notifyTransport:(id)arg1 ofFetchedClips:(id)arg2 forFetchUUID:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;
+- (void)_cleanUpOrphanedSignficantEvents;
+- (void)_cleanUpExpiredClips;
+- (void)_cleanUpIncompleteClips;
+- (void)_cleanUpClips;
 - (void)_updateCloudFetchTimer;
 - (void)_performCloudPull;
 - (id)_significantEventModelsForClipModel:(id)arg1;

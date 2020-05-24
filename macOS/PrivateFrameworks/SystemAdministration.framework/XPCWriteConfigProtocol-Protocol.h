@@ -45,6 +45,7 @@
 - (oneway void)killProcessID:(int)arg1 withSignal:(int)arg2 _withAuthorization:(NSData *)arg3;
 - (oneway void)scheduleRepeatingPowerEvent:(NSDictionary *)arg1 _withAuthorization:(NSData *)arg2;
 - (oneway void)cancelAllRepeatingPowerEvents_withAuthorization:(NSData *)arg1;
+- (oneway void)writePowerManagerSystemPowerSettings:(NSDictionary *)arg1 _withAuthorization:(NSData *)arg2;
 - (oneway void)writePowerManagerUPSSettings:(NSDictionary *)arg1 forKey:(NSString *)arg2 _withAuthorization:(NSData *)arg3;
 - (oneway void)writePowerManagerActivityProfile:(NSDictionary *)arg1 _withAuthorization:(NSData *)arg2;
 - (oneway void)setXServeLockEnclosureState:(BOOL)arg1 _withAuthorization:(NSData *)arg2;

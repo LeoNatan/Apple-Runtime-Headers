@@ -39,6 +39,7 @@
 @property(readonly, copy) NSString *pathRelativeToDocumentStorage; // @synthesize pathRelativeToDocumentStorage=_pathRelativeToDocumentStorage;
 @property(readonly, copy) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
+- (void)copyValuesFromExistingDomain:(id)arg1;
 - (id)description;
 - (id)plistDictionary;
 - (id)initWithCoder:(id)arg1;

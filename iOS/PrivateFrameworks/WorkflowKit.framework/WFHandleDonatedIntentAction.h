@@ -24,6 +24,7 @@
 @property(readonly, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 @property(readonly, nonatomic) _Bool forceExecutionOnPhone; // @synthesize forceExecutionOnPhone=_forceExecutionOnPhone;
 @property(retain, nonatomic) INIntent *intent; // @synthesize intent=_intent;
+- (id)metricsIdentifier;
 - (id)generatedIntentWithInput:(id)arg1 error:(id *)arg2;
 - (id)slots;
 - (id)intentDescription;

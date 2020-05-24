@@ -45,7 +45,7 @@
 - (BOOL)_setDownAnimation:(id)arg1 shouldDelaySetDownOfDragItem:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_setDownAnimation:(id)arg1 willAnimateSetDownOfDragItem:(id)arg2 withAnimator:(id)arg3;
 - (id)_setDownAnimation:(id)arg1 prepareForSetDownOfDragItem:(id)arg2 visibleDroppedItem:(id)arg3;
-- (id)_setDownAnimation:(id)arg1 windowSceneForSetDownOfDragItem:(id)arg2;
+- (id)_setDownAnimation:(id)arg1 windowForSetDownOfDragItem:(id)arg2;
 - (void)_prepareItemsInSessionForDrop:(id)arg1;
 - (void)_dragDestinationGestureStateChanged:(id)arg1;
 - (void)_gestureRecognizerFailed:(id)arg1;

@@ -25,6 +25,8 @@
 + (BOOL)_isManagedAttachmentCalendar:(id)arg1;
 - (void).cxx_destruct;
 @property(retain) NSData *data; // @synthesize data=_data;
+- (void)downloadSingleAttachment;
+- (void)agentDownloadSingleAttachment;
 - (id)enclosingSource;
 - (id)uniqueKeyForObject;
 - (id)uniqueIdentifier;

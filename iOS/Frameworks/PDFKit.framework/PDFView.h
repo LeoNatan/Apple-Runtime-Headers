@@ -145,6 +145,7 @@
 - (id)_dragItemsAtLocationInView:(struct CGPoint)arg1;
 - (_Bool)_shouldHandleAnnotationAtLocation:(struct CGPoint)arg1 forGestureType:(unsigned long long)arg2;
 - (id)hitTestForSubviewsOfView:(id)arg1 atLocation:(struct CGPoint)arg2 withEvent:(id)arg3;
+- (id)pointerRegionForLocation:(struct CGPoint)arg1;
 - (unsigned long long)typeForGestureRecognizer:(id)arg1;
 - (void)handleGesture:(unsigned long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3 locationOfFirstTouch:(struct CGPoint)arg4 isIndirectTouch:(_Bool)arg5;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;

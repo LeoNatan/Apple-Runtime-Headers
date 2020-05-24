@@ -8,9 +8,9 @@
 
 @interface _TtC8VideosUI14ImageViewModel : _TtC8VideosUI9ViewModel
 {
-    // Error parsing type: , name: mainImage
+    // Error parsing type: , name: defaultImage
     // Error parsing type: , name: alternateImages
-    // Error parsing type: , name: $__lazy_storage_$_imageProxyCache
+    // Error parsing type: , name: accessibilityText
 }
 
 @end

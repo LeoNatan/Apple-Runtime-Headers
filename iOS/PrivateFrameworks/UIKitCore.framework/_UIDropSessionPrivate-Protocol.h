@@ -7,6 +7,7 @@
 #import <UIKitCore/NSObject-Protocol.h>
 
 @protocol _UIDropSessionPrivate <NSObject>
+@property(readonly, nonatomic, getter=_drivenByPointer) _Bool drivenByPointer;
 - (void)requestVisibleItems:(void (^)(NSArray *, NSArray *))arg1;
 @end
 

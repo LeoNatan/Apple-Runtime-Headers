@@ -6,10 +6,9 @@
 
 #import <ClassroomKit/CRKASMUser-Protocol.h>
 
-@class NSObject;
-@protocol CRKASMCertificateCollection;
+@class NSSet;
 
 @protocol CRKASMTrustedUser <CRKASMUser>
-@property(readonly, nonatomic) NSObject<CRKASMCertificateCollection> *certificateCollection;
+@property(readonly, copy, nonatomic) NSSet *certificates;
 @end
 

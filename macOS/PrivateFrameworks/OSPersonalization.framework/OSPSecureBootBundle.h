@@ -17,6 +17,7 @@
     NSString *_buildTrain;
 }
 
++ (id)recommendedBundleForVolume:(id)arg1 variant:(id)arg2;
 + (id)recommendedBundleForVolumeMountPoint:(id)arg1 variant:(id)arg2;
 - (void).cxx_destruct;
 @property(retain) NSString *buildTrain; // @synthesize buildTrain=_buildTrain;
@@ -27,6 +28,7 @@
 - (struct __AMAuthInstall *)_amaiFromDevice:(id)arg1;
 - (id)_manifestForVariant:(id)arg1 device:(id)arg2;
 - (BOOL)_loadManifestInfo;
+- (id)firstSupportedVariantForDevice:(id)arg1;
 - (id)relativePathForEntry:(id)arg1 variant:(id)arg2 device:(id)arg3;
 - (id)additionalManifestPathsForVariant:(id)arg1 device:(id)arg2;
 - (id)additionalManifestPathForEntry:(id)arg1 variant:(id)arg2 device:(id)arg3;

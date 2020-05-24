@@ -17,11 +17,13 @@ __attribute__((visibility("hidden")))
     CCUICAPackageView *_packageView;
 }
 
++ (_Bool)_cursorInteractionEnabled;
 - (void).cxx_destruct;
 @property(retain, nonatomic) CCUICAPackageView *packageView; // @synthesize packageView=_packageView;
 @property(nonatomic, getter=isUserInterfaceStyleSwitchingEnabled) _Bool userInterfaceStyleSwitchingEnabled; // @synthesize userInterfaceStyleSwitchingEnabled=_userInterfaceStyleSwitchingEnabled;
 @property(nonatomic) long long deviceType; // @synthesize deviceType=_deviceType;
 @property(nonatomic) long long currentMode; // @synthesize currentMode=_currentMode;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
 - (void)_updateGlyphState;
 - (void)_updateGlyphPackage;
 - (id)_glyphResource;

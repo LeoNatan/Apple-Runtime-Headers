@@ -18,6 +18,7 @@
 @property(readonly, nonatomic) BOOL hasArticleBeenSeen;
 @property(readonly, nonatomic) BOOL hasArticleBeenRead;
 @property(readonly, nonatomic) unsigned long long flags;
+@property(readonly, nonatomic) long long readCount;
 @property(readonly, nonatomic) long long maxVersionSeen;
 @property(readonly, copy, nonatomic) NSDate *firstSeenAtOfMaxVersionSeen;
 @property(readonly, copy, nonatomic) NSDate *firstSeenAt;

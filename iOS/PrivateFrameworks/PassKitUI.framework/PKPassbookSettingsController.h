@@ -68,6 +68,7 @@
     NSSet *_credentialInvitations;
     NSDictionary *_credentialInvitationForPass;
     NSSet *_passesThatMayRequestCredentialInvitations;
+    _Bool _credentialSharingAllowed;
     id <PKPassbookSettingsDelegate> _delegate;
 }
 
@@ -146,6 +147,7 @@
 - (id)_passSpecifiersForPasses:(id)arg1 peerPaymentPassUniqueID:(id)arg2 showPeerPaymentSetup:(_Bool)arg3;
 - (id)_passSpecifiersForPasses:(id)arg1;
 - (void)openPaymentSetupWithMode:(long long)arg1 referrerIdentifier:(id)arg2 allowedFeatureIdentifiers:(id)arg3;
+- (id)watchPassReaderIdentifiers;
 - (long long)_paymentPreferencesStyle;
 - (void)openPeerPaymentSetupWithCurrenyAmount:(id)arg1 state:(unsigned long long)arg2 senderAddress:(id)arg3;
 - (void)addCardTappedForPaymentPassWithUniqueID:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

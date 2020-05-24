@@ -51,6 +51,7 @@ __attribute__((visibility("hidden")))
 - (void)_markAlmostDead;
 - (void)_markReserved;
 - (void)updateLocationAndMetaFromFSAtPath:(id)arg1 itemID:(id)arg2 parentGlobalID:(id)arg3 isPackageFault:(_Bool)arg4 readonlyShareChild:(_Bool)arg5;
+- (void)updateFilenameFromPath:(id)arg1;
 - (void)updateFromFSAtPath:(id)arg1 itemID:(id)arg2 parentGlobalID:(id)arg3 isPackageFault:(_Bool)arg4 readonlyShareChild:(_Bool)arg5;
 - (void)_updateMetadataFromFSAtPath:(id)arg1 itemID:(id)arg2 parentGlobalID:(id)arg3 isPackageFault:(_Bool)arg4 readonlyShareChild:(_Bool)arg5;
 - (unsigned long long)diffAgainstLocalInfo:(id)arg1;

@@ -483,6 +483,8 @@
 @property(nonatomic) _Bool assistiveTouchOpenMenuSwaggleEnabled;
 @property(nonatomic) _Bool supportsAdvancedDisplayFilters;
 @property(nonatomic) _Bool assistiveTouchAlwaysShowMenuEnabled;
+@property(nonatomic) unsigned long long laserZoomPanningStyle;
+@property(readonly, nonatomic) _Bool laserEnabled;
 - (void)clearExistingValueForPreference:(SEL)arg1;
 - (_Bool)preferenceHasExistingValue:(SEL)arg1;
 - (void)registerUpdateBlock:(CDUnknownBlockType)arg1 forRetrieveSelector:(SEL)arg2 withListener:(id)arg3;

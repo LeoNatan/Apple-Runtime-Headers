@@ -24,6 +24,7 @@
 @property(readonly, nonatomic) RTIInputSystemSourceSession *_rtiSourceSession;
 @property(nonatomic) long long _textInputSource;
 @property(readonly, nonatomic) id <UITextInputSuggestionDelegate> textInputSuggestionDelegate;
+@property(readonly, nonatomic) long long cursorBehavior;
 @property(nonatomic) long long selectionGranularity;
 - (void)removeAnnotation:(NSString *)arg1 forRange:(UITextRange *)arg2;
 - (void)replaceRange:(UITextRange *)arg1 withAnnotatedString:(NSAttributedString *)arg2 relativeReplacementRange:(struct _NSRange)arg3;

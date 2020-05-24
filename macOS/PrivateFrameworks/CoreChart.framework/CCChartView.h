@@ -6,30 +6,50 @@
 
 #import <AppKit/NSView.h>
 
-@class CCVegaRenderer, NSAppearance, NSArray, NSMutableSet, NSNumber, NSObject, NSString, NSTrackingArea;
+@class CCVegaRenderer, CCVegaWorkerClient, NSAppearance, NSArray, NSCalendar, NSDictionary, NSLocale, NSMutableSet, NSNumber, NSObject, NSString, NSTrackingArea;
 @protocol CCChartViewDelegate;
 
 @interface CCChartView : NSView
 {
     CCVegaRenderer *_renderer;
     NSString *_baseConfigType;
+    NSString *_rendererType;
     NSString *_config;
+    NSDictionary *_configDictionary;
     NSString *_spec;
+    NSDictionary *_specDictionary;
     double _zoomFactor;
     NSArray *_legacyData;
     NSMutableSet *_knownNamedDatasets;
     NSTrackingArea *_trackingArea;
     NSNumber *_scaleFactor;
     NSAppearance *_currentAppearance;
-    unsigned int _rendererType;
     _Bool _preventGestures;
     _Bool _caUpdateFromBackground;
+    CCVegaWorkerClient *_previousWorkerClient;
     NSObject<CCChartViewDelegate> *delegate;
+    NSLocale *_locale;
+    NSCalendar *_calendar;
 }
 
++ (id)compileSpecDictionary:(id)arg1 configDictionary:(id)arg2 baseConfig:(id)arg3 expressionFunctionNames:(id)arg4 error:(id *)arg5;
++ (id)compileSpec:(id)arg1 config:(id)arg2 baseConfig:(id)arg3 expressionFunctionNames:(id)arg4 error:(id *)arg5;
++ (id)configForBaseConfigType:(id)arg1;
++ (void)preloadFrameworkAssets;
++ (id)unwrapJSValue:(id)arg1;
 + (void)registerExpressionFunction:(CDUnknownBlockType)arg1 withName:(id)arg2;
++ (id)dictionaryFromJSONString:(id)arg1;
++ (id)JSONStringFromDictionary:(id)arg1;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
+@property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property __weak NSObject<CCChartViewDelegate> *delegate; // @synthesize delegate;
+- (id)accessibilityChildren;
+- (void)removeListener:(id)arg1 fromSignalWithName:(id)arg2;
+- (id)addListener:(CDUnknownBlockType)arg1 toSignalWithName:(id)arg2;
+- (void)setSignalWithName:(id)arg1 toValue:(id)arg2;
+- (id)getSignalWithName:(id)arg1;
+- (void)registerLocalExpressionFunction:(CDUnknownBlockType)arg1 withName:(id)arg2;
 @property(readonly) struct CGImage *CGImage;
 @property(nonatomic) double contentScaleFactor;
 - (id)getBenchmarkRecords;
@@ -38,7 +58,9 @@
 - (void)setNamedDataset:(id)arg1 rows:(id)arg2;
 - (void)setDefaultDataset:(id)arg1;
 @property(retain, nonatomic) NSArray *data;
+@property(retain) NSDictionary *configDictionary;
 @property(retain) NSString *config;
+@property(retain) NSDictionary *specDictionary;
 @property(retain) NSString *spec;
 @property(nonatomic) double zoomFactor;
 - (void)setFrameSize:(struct CGSize)arg1;
@@ -50,9 +72,9 @@
 - (void)triggerMouseEvent:(id)arg1 type:(id)arg2 setConsumed:(_Bool)arg3;
 - (void)triggerMouseEvent:(id)arg1 type:(id)arg2;
 - (id)eventToMouseEvent:(id)arg1;
+- (id)imageNamed:(id)arg1;
 - (id)localizedStringNamed:(id)arg1;
 - (id)colorNamed:(id)arg1;
-- (void)rendererDidSetDescription:(id)arg1;
 - (void)rendererDidUpdate;
 - (id)loadChartDataFromURL:(id)arg1 error:(id *)arg2;
 - (void)drawRect:(struct CGRect)arg1;
@@ -60,7 +82,11 @@
 - (void)lazilyInitializeRenderer;
 - (void)viewDidChangeEffectiveAppearance;
 - (void)render;
-- (void)setupWithSpec:(id)arg1 config:(id)arg2 options:(id)arg3;
+@property(retain, nonatomic) NSString *rendererType;
+@property(retain, nonatomic) NSString *baseConfig;
+@property(nonatomic) _Bool CATransactionFromBackgroundThread;
+- (void)initialize;
+- (void)dealloc;
 - (id)initWithSpec:(id)arg1 config:(id)arg2 options:(id)arg3;
 - (id)initWithSpec:(id)arg1 config:(id)arg2;
 - (id)initWithSpec:(id)arg1;

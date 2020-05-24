@@ -6,11 +6,10 @@
 
 #import <NanoPassKit/PDXPCServiceExportedInterface-Protocol.h>
 
-@class NSData, NSDate, NSError, NSString, NSURL, NSUUID, PKAccessPassProvisioningConfiguration, PKAddSecureElementPassConfiguration, PKPaymentApplication, PKPaymentBalance, PKPaymentBalanceReminder, PKPaymentCommutePlanReminder, PKPaymentPass, PKPaymentWebServiceContext, PKPeerPaymentAccount, PKPeerPaymentWebServiceContext, PKTransitCommutePlan, PKVerificationChannel;
+@class NSData, NSDate, NSError, NSString, NSURL, NSUUID, PKAddSecureElementPassConfiguration, PKPaymentApplication, PKPaymentBalance, PKPaymentBalanceReminder, PKPaymentCommutePlanReminder, PKPaymentPass, PKPaymentWebServiceContext, PKPeerPaymentAccount, PKPeerPaymentWebServiceContext, PKTransitCommutePlan, PKVerificationChannel;
 
 @protocol NPKCompanionServerProtocol <PDXPCServiceExportedInterface>
 - (void)trustedDeviceEnrollmentSignatureWithAccountDSID:(NSString *)arg1 sessionData:(NSData *)arg2 handler:(void (^)(NSString *, unsigned long long, NSData *, NSError *))arg3;
-- (_Bool)canProvisionAccessPassWithConfiguration:(PKAccessPassProvisioningConfiguration *)arg1;
 - (_Bool)canAddSecureElementPassWithConfiguration:(PKAddSecureElementPassConfiguration *)arg1;
 - (void)noteForegroundVerificationObserverActive:(_Bool)arg1;
 - (void)startBackgroundVerificationObserverForPass:(PKPaymentPass *)arg1 verificationMethod:(PKVerificationChannel *)arg2;
@@ -43,6 +42,7 @@
 - (void)setDefaultCard:(NSString *)arg1 completion:(void (^)(_Bool))arg2;
 - (void)removePaymentPassWithUniqueID:(NSString *)arg1 forPairingID:(NSUUID *)arg2 waitForConfirmation:(_Bool)arg3 completion:(void (^)(_Bool, NSError *))arg4;
 - (void)savePaymentPassAtURL:(NSURL *)arg1 withUniqueID:(NSString *)arg2 forPairingID:(NSUUID *)arg3 completion:(void (^)(_Bool))arg4;
+- (void)paymentPassWithPairedTerminalIdentifier:(NSString *)arg1 completion:(void (^)(PKPaymentPass *))arg2;
 - (void)paymentPassWithDeviceAccountIdentifier:(NSString *)arg1 completion:(void (^)(PKPaymentPass *))arg2;
 - (void)paymentPassesWithPrimaryAccountIdentifier:(NSString *)arg1 completion:(void (^)(NSSet *))arg2;
 - (void)paymentPassWithUniqueID:(NSString *)arg1 reply:(void (^)(PKPaymentPass *))arg2;

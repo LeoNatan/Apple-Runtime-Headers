@@ -22,6 +22,7 @@
     UIView *_viewToSnapshot;
     id <_UIPreviewProvider> __PreviewProvider;
     id <NSCopying><NSObject> _internalIdentifer;
+    NSArray *_transferrableAnimationKeys;
     UIView *_overridePositionTrackingView;
     NSArray *__accessoryViews;
 }
@@ -30,6 +31,7 @@
 - (void).cxx_destruct;
 @property(retain, nonatomic, getter=_accessoryViews, setter=_setAccessoryViews:) NSArray *_accessoryViews; // @synthesize _accessoryViews=__accessoryViews;
 @property(retain, nonatomic, setter=_setOverridePositionTrackingView:) UIView *overridePositionTrackingView; // @synthesize overridePositionTrackingView=_overridePositionTrackingView;
+@property(retain, nonatomic) NSArray *transferrableAnimationKeys; // @synthesize transferrableAnimationKeys=_transferrableAnimationKeys;
 @property(copy, nonatomic) id <NSCopying><NSObject> internalIdentifer; // @synthesize internalIdentifer=_internalIdentifer;
 @property(readonly, nonatomic) _Bool hasCustomTarget; // @synthesize hasCustomTarget=_hasCustomTarget;
 @property(readonly, nonatomic) _Bool sourceViewIsInViewHierarchy; // @synthesize sourceViewIsInViewHierarchy=_sourceViewIsInViewHierarchy;
@@ -43,6 +45,7 @@
 @property(nonatomic, getter=_previewMode, setter=_setPreviewMode:) long long previewMode;
 @property(nonatomic) _Bool _springboardPlatterStyle;
 @property(nonatomic, getter=_prefersUnmaskedPlatterStyle, setter=_setPrefersUnmaskedPlatterStyle:) _Bool _prefersUnmaskedPlatterStyle;
+@property(readonly, nonatomic, getter=_isVisible) _Bool _visible;
 - (id)retargetedPreviewWithTarget:(id)arg1;
 @property(readonly, nonatomic) struct CGSize size;
 - (_Bool)containsPoint:(struct CGPoint)arg1 fromView:(id)arg2;
@@ -51,7 +54,6 @@
 - (id)initWithView:(id)arg1;
 - (id)initWithView:(id)arg1 parameters:(id)arg2;
 - (id)initWithView:(id)arg1 parameters:(id)arg2 target:(id)arg3;
-- (_Bool)platterAnimator_isValidPreview;
 - (void)platterAnimator_getBounds:(struct CGRect *)arg1 center:(struct CGPoint *)arg2 transform:(struct CGAffineTransform *)arg3 forContainer:(id)arg4;
 
 @end

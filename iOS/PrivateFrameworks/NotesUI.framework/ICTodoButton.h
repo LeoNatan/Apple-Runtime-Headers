@@ -21,6 +21,8 @@
 @property(nonatomic) struct CGSize defaultSize; // @synthesize defaultSize=_defaultSize;
 @property(nonatomic) __weak ICTrackedParagraph *trackedParagraph; // @synthesize trackedParagraph=_trackedParagraph;
 @property(nonatomic, getter=isDone) _Bool done; // @synthesize done=_done;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 - (id)debugDescription;
 - (void)setDone:(_Bool)arg1 animated:(_Bool)arg2;
 - (id)init;

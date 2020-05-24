@@ -19,13 +19,16 @@
 @property(nonatomic, readonly) NSArray *recentlyVisitedIssueIDs;
 @property(nonatomic, readonly) NSString *mostRecentlyVisitedIssueID;
 - (id)lastRemovedFromMyMagazinesDateForIssueWithID:(id)arg1;
+- (id)lastSeenDateForIssueWithID:(id)arg1;
 - (id)lastEngagedDateForIssueWithID:(id)arg1;
 - (id)lastVisitedDateForIssueWithID:(id)arg1;
 - (id)bookmarkForLastVisitToIssueWithID:(id)arg1;
+- (_Bool)hasIssueWithIDBeenSeen:(id)arg1;
 - (_Bool)hasIssueWithIDBeenEngaged:(id)arg1;
 - (_Bool)hasIssueWithIDBeenBadged:(id)arg1;
 - (_Bool)hasIssueWithIDBeenVisited:(id)arg1;
 - (void)markIssueAsRemovedFromMyMagazinesWithID:(id)arg1;
+- (void)markIssueAsSeenWithID:(id)arg1;
 - (void)markIssueAsEngagedWithID:(id)arg1;
 - (void)markIssueAsBadgedWithID:(id)arg1;
 - (void)markIssueWithID:(id)arg1 asVisitedWithBookmark:(id)arg2;

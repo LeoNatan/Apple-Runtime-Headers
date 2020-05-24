@@ -20,6 +20,8 @@
 + (void)invitationFromRemoteDeviceWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void).cxx_destruct;
 @property(nonatomic) __weak id <PKSubcredentialProvisioningFlowControllerDelegate> delegate; // @synthesize delegate=_delegate;
+- (id)localizedIssuerNameForProvisioningOperation:(id)arg1;
+- (id)alertForOperation:(id)arg1 withError:(id)arg2 retryHandler:(CDUnknownBlockType)arg3 cancelationHandler:(CDUnknownBlockType)arg4;
 - (id)remoteDeviceProvisioningViewModelForOperation:(id)arg1;
 - (id)localDeviceProvisioningViewModelForOperation:(id)arg1;
 - (void)provisioningWasCanceledWithOperation:(id)arg1;

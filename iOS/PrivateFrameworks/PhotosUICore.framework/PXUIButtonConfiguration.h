@@ -9,9 +9,12 @@
 @interface PXUIButtonConfiguration : NSObject
 {
     _Bool _allowAnimatedHighlighting;
+    long long _cursorEffect;
     struct UIEdgeInsets _hitTestOutset;
 }
 
++ (id)configurationWithCursorEffect:(long long)arg1;
+@property(nonatomic) long long cursorEffect; // @synthesize cursorEffect=_cursorEffect;
 @property(nonatomic) _Bool allowAnimatedHighlighting; // @synthesize allowAnimatedHighlighting=_allowAnimatedHighlighting;
 @property(nonatomic) struct UIEdgeInsets hitTestOutset; // @synthesize hitTestOutset=_hitTestOutset;
 - (id)copyWithZone:(struct _NSZone *)arg1;

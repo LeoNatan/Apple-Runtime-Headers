@@ -39,18 +39,37 @@ struct CGAffineTransform {
 };
 
 struct CGPoint {
-    double _field1;
-    double _field2;
+    double x;
+    double y;
 };
 
 struct CGRect {
-    struct CGPoint _field1;
-    struct CGSize _field2;
+    struct CGPoint origin;
+    struct CGSize size;
 };
 
 struct CGSize {
     double width;
     double height;
+};
+
+struct deque<CCVegaAccessibilityHelperState, std::__1::allocator<CCVegaAccessibilityHelperState>> {
+    struct __split_buffer<CCVegaAccessibilityHelperState *, std::__1::allocator<CCVegaAccessibilityHelperState *>> {
+        CDStruct_183601bc **__first_;
+        CDStruct_183601bc **__begin_;
+        CDStruct_183601bc **__end_;
+        struct __compressed_pair<CCVegaAccessibilityHelperState **, std::__1::allocator<CCVegaAccessibilityHelperState *>> {
+            CDStruct_183601bc **__value_;
+        } __end_cap_;
+    } __map_;
+    unsigned long long __start_;
+    struct __compressed_pair<unsigned long, std::__1::allocator<CCVegaAccessibilityHelperState>> {
+        unsigned long long __value_;
+    } __size_;
+};
+
+struct stack<CCVegaAccessibilityHelperState, std::__1::deque<CCVegaAccessibilityHelperState, std::__1::allocator<CCVegaAccessibilityHelperState>>> {
+    struct deque<CCVegaAccessibilityHelperState, std::__1::allocator<CCVegaAccessibilityHelperState>> c;
 };
 
 #pragma mark Typedef'd Structures
@@ -68,6 +87,16 @@ typedef struct {
     double _field4;
     _Bool _field5;
 } CDStruct_0b12104d;
+
+typedef struct {
+    double _field1;
+    double _field2;
+    double _field3;
+    int _field4;
+    int _field5;
+} CDStruct_f0622df2;
+
+typedef struct CDStruct_183601bc;
 
 typedef struct {
     struct CGSize _field1;

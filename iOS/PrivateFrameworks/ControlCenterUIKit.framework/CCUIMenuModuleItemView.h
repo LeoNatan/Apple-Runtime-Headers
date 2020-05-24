@@ -6,9 +6,11 @@
 
 #import <UIKit/UIControl.h>
 
-@class BSUIEmojiLabelView, CCUIMenuModuleItem, MTVisualStylingProvider, UIView;
+#import <ControlCenterUIKit/_UICursorInteractionDelegate-Protocol.h>
 
-@interface CCUIMenuModuleItemView : UIControl
+@class BSUIEmojiLabelView, CCUIMenuModuleItem, MTVisualStylingProvider, NSString, UIView;
+
+@interface CCUIMenuModuleItemView : UIControl <_UICursorInteractionDelegate>
 {
     BSUIEmojiLabelView *_titleLabel;
     BSUIEmojiLabelView *_subtitleLabel;
@@ -59,6 +61,8 @@
 - (id)_subtitleFont;
 - (id)_titleFont;
 - (double)_separatorHeight;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 - (_Bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)didMoveToWindow;
 - (void)_setContinuousCornerRadius:(double)arg1;
@@ -71,11 +75,16 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)subtitle;
 - (id)title;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)_setSubtitle:(id)arg1;
 - (void)_setTitle:(id)arg1;
 - (id)initWithMenuItem:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

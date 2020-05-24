@@ -15,6 +15,7 @@
 #import <PhotosUICore/PXCuratedLibraryZoomLevelControlDelegate-Protocol.h>
 #import <PhotosUICore/PXMovieProviderDelegate-Protocol.h>
 #import <PhotosUICore/PXOneUpPresentationDelegate-Protocol.h>
+#import <PhotosUICore/PXPhotosCursorControllerDelegate-Protocol.h>
 #import <PhotosUICore/PXPhotosGlobalFooterViewDelegate-Protocol.h>
 #import <PhotosUICore/PXScrollViewControllerObserver-Protocol.h>
 #import <PhotosUICore/PXSwipeSelectionManagerDelegate-Protocol.h>
@@ -25,10 +26,10 @@
 #import <PhotosUICore/UIDropInteractionDelegate-Protocol.h>
 #import <PhotosUICore/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSString, PHPhotoLibrary, PXAssetReference, PXCPLServiceUI, PXChangeDirectionNumberFilter, PXContentUnavailableView, PXCuratedLibraryBarsController, PXCuratedLibrarySecondaryToolbarController, PXCuratedLibrarySkimmingController, PXCuratedLibraryViewProvider, PXCuratedLibraryZoomLevelControl, PXCuratedLibraryZoomLevelPinchFilter, PXGTransition, PXGView, PXMovieProvider, PXProgrammaticNavigationRequest, PXRelaxedScreenEdgePanGestureRecognizer, PXSwipeSelectionManager, PXTouchingUIGestureRecognizer, UIContextMenuInteraction, UIPanGestureRecognizer, UIPinchGestureRecognizer, UITapGestureRecognizer, UITargetedPreview;
+@class NSString, PHPhotoLibrary, PXAssetReference, PXCPLServiceUI, PXChangeDirectionNumberFilter, PXContentUnavailableView, PXCuratedLibraryBarsController, PXCuratedLibrarySecondaryToolbarController, PXCuratedLibrarySkimmingController, PXCuratedLibraryViewProvider, PXCuratedLibraryZoomLevelControl, PXCuratedLibraryZoomLevelPinchFilter, PXGTransition, PXGView, PXMovieProvider, PXPhotosCursorController, PXProgrammaticNavigationRequest, PXRelaxedScreenEdgePanGestureRecognizer, PXSwipeSelectionManager, PXTouchingUIGestureRecognizer, UIContextMenuInteraction, UIPanGestureRecognizer, UIPinchGestureRecognizer, UITapGestureRecognizer, UITargetedPreview;
 @protocol UIDragSession;
 
-@interface PXCuratedLibraryUIViewController : UIViewController <UIDragInteractionDelegate, UIDropInteractionDelegate, PXUserInterfaceFeatureViewController, PXScrollViewControllerObserver, PXOneUpPresentationDelegate, UIGestureRecognizerDelegate, PXSwipeSelectionManagerDelegate, PXCuratedLibrarySkimmingControllerDelegate, PXTouchingUIGestureRecognizerDelegate, PXCuratedLibraryZoomLevelControlDelegate, PXChangeObserver, PXPhotosGlobalFooterViewDelegate, PXCuratedLibraryFooterControllerDelegate, PXCuratedLibraryActionPerformerDelegate, PXMovieProviderDelegate, PXCPLServiceUIDelegate, PXCuratedLibraryUIKeyCommandDelegate, UIContextMenuInteractionDelegate>
+@interface PXCuratedLibraryUIViewController : UIViewController <PXPhotosCursorControllerDelegate, UIDragInteractionDelegate, UIDropInteractionDelegate, PXUserInterfaceFeatureViewController, PXScrollViewControllerObserver, PXOneUpPresentationDelegate, UIGestureRecognizerDelegate, PXSwipeSelectionManagerDelegate, PXCuratedLibrarySkimmingControllerDelegate, PXTouchingUIGestureRecognizerDelegate, PXCuratedLibraryZoomLevelControlDelegate, PXChangeObserver, PXPhotosGlobalFooterViewDelegate, PXCuratedLibraryFooterControllerDelegate, PXCuratedLibraryActionPerformerDelegate, PXMovieProviderDelegate, PXCPLServiceUIDelegate, PXCuratedLibraryUIKeyCommandDelegate, UIContextMenuInteractionDelegate>
 {
     _Bool _isGridViewReady;
     _Bool __previewCommitting;
@@ -50,6 +51,7 @@
     PXSwipeSelectionManager *_swipeSelectionManager;
     PXAssetReference *_navigatedAssetReference;
     PXMovieProvider *_movieProvider;
+    PXPhotosCursorController *_cursorController;
     PXCuratedLibraryZoomLevelPinchFilter *_zoomLevelPinchFilter;
     PXProgrammaticNavigationRequest *_initialNavigationRequest;
     PXCPLServiceUI *_cplServiceUI;
@@ -72,6 +74,7 @@
 @property(retain, nonatomic) PXProgrammaticNavigationRequest *initialNavigationRequest; // @synthesize initialNavigationRequest=_initialNavigationRequest;
 @property(nonatomic) _Bool isGridViewReady; // @synthesize isGridViewReady=_isGridViewReady;
 @property(readonly, nonatomic) PXCuratedLibraryZoomLevelPinchFilter *zoomLevelPinchFilter; // @synthesize zoomLevelPinchFilter=_zoomLevelPinchFilter;
+@property(readonly, nonatomic) PXPhotosCursorController *cursorController; // @synthesize cursorController=_cursorController;
 @property(retain, nonatomic) PXMovieProvider *movieProvider; // @synthesize movieProvider=_movieProvider;
 @property(retain, nonatomic) PXAssetReference *navigatedAssetReference; // @synthesize navigatedAssetReference=_navigatedAssetReference;
 @property(readonly, nonatomic) PXSwipeSelectionManager *swipeSelectionManager; // @synthesize swipeSelectionManager=_swipeSelectionManager;
@@ -132,6 +135,16 @@
 - (id)_dominantAssetCollectionReferenceForSkimming;
 - (void)_updateSkimmingSlideshowEnabled;
 - (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
+- (id)_createPreviewViewForAssetReference:(id)arg1;
+- (id)_createPreviewViewForHitTestResult:(id)arg1;
+- (id)_bestHitTestResultForCursorAtLocation:(struct CGPoint)arg1;
+- (void)cursorController:(id)arg1 didExitRegionWithRect:(struct CGRect)arg2 inCoordinateSpace:(id)arg3;
+- (void)cursorController:(id)arg1 willEnterRegionWithRect:(struct CGRect)arg2 inCoordinateSpace:(id)arg3;
+- (long long)cursorController:(id)arg1 interactionOptionsForRegionAtLocation:(struct CGPoint)arg2 inCoordinateSpace:(id)arg3;
+- (id)cursorController:(id)arg1 viewForCursorInteractionAtLocation:(struct CGPoint)arg2 inCoordinateSpace:(id)arg3;
+- (id)cursorController:(id)arg1 identifierForRegionAtLocation:(struct CGPoint)arg2 inCoordinateSpace:(id)arg3;
+- (_Bool)_shouldExposeCursorAnimations;
+- (id)cursorController:(id)arg1 regionOfInterestForCursorAtLocation:(struct CGPoint)arg2 inCoordinateSpace:(id)arg3;
 - (id)_hitTestResultForPreviewingAtLocation:(struct CGPoint)arg1;
 - (void)contextMenuInteractionDidEnd:(id)arg1;
 - (id)contextMenuInteraction:(id)arg1 previewForDismissingMenuWithConfiguration:(id)arg2;

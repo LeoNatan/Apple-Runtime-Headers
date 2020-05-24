@@ -22,6 +22,7 @@
 + (_Bool)canPerformAuthorization;
 - (void).cxx_destruct;
 - (void)establishConnectionWithNotificationHandlerEndpoint:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)primaryApplicationInformationForWebServiceWithInfo:(id)arg1 error:(id *)arg2;
 - (void)continueFetchingIconForRequestContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAppleIDAuthorizeHTMLResponseTemplateWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_appleOwnedDomains;

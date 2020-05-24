@@ -43,6 +43,7 @@
 - (void)removeStateForDomain:(long long)arg1;
 - (_Bool)addStateForDomain:(long long)arg1 domainVersion:(long long)arg2 state:(long long)arg3 flags:(unsigned long long)arg4 note:(id)arg5 assetURL:(id)arg6;
 - (_Bool)addStates:(id)arg1;
+- (void)mergeChangesFrom:(id)arg1;
 - (_Bool)addValidStates:(id)arg1;
 - (id)stateForDomain:(long long)arg1;
 - (_Bool)hasChanges;

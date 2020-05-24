@@ -8,28 +8,45 @@
 
 #import <ClassroomKit/CRKKeychain-Protocol.h>
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSString;
+@protocol CRKInMemoryKeychainDelegate;
 
 @interface CRKInMemoryKeychain : NSObject <CRKKeychain>
 {
+    id <CRKInMemoryKeychainDelegate> _delegate;
     NSMutableDictionary *_keychainItemsByPersistentID;
+    NSMutableDictionary *_passwordDatasByService;
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *passwordDatasByService; // @synthesize passwordDatasByService=_passwordDatasByService;
 @property(readonly, nonatomic) NSMutableDictionary *keychainItemsByPersistentID; // @synthesize keychainItemsByPersistentID=_keychainItemsByPersistentID;
+@property(nonatomic) __weak id <CRKInMemoryKeychainDelegate> delegate; // @synthesize delegate=_delegate;
+- (id)existingPersistentIDForItem:(id)arg1;
 - (id)addItem:(id)arg1 toAccessGroup:(id)arg2;
+- (id)validityDateIntervalForConfiguration:(id)arg1;
+- (id)itemWithPersistentID:(id)arg1 expectedProtocol:(id)arg2;
 - (id)makePrivateKeyWithData:(id)arg1;
 - (id)makeIdentityWithCertificate:(id)arg1 privateKey:(id)arg2;
 - (void)removeItemWithPersistentID:(id)arg1;
 - (id)makeCertificateWithData:(id)arg1;
 - (id)makeIdentityWithConfiguration:(id)arg1;
+- (void)enumerateKeychainUsingBlock:(CDUnknownBlockType)arg1;
+- (id)passwordForService:(id)arg1;
 - (id)privateKeyWithPersistentID:(id)arg1;
 - (id)identityWithPersistentID:(id)arg1;
 - (id)certificateWithPersistentID:(id)arg1;
+- (void)setPassword:(id)arg1 forService:(id)arg2 accessGroup:(id)arg3;
 - (id)addPrivateKey:(id)arg1 toAccessGroup:(id)arg2;
 - (id)addIdentity:(id)arg1 toAccessGroup:(id)arg2;
 - (id)addCertificate:(id)arg1 toAccessGroup:(id)arg2;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

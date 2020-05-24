@@ -60,6 +60,7 @@ __attribute__((visibility("hidden")))
 - (oneway void)willAcceptShareAtURL:(id)arg1;
 - (void)_presentAcceptDialogsWithMetadata:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)presentAcceptDialogsForShareMetadata:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)getURLForItemIdentifier:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)getShareOptionsOfItemIdentifier:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)getCreatorNameComponentsForURL:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)startOperation:(id)arg1 toCopyShareURLForShare:(id)arg2 appName:(id)arg3 reply:(CDUnknownBlockType)arg4;

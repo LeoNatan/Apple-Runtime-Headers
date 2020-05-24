@@ -20,6 +20,7 @@
     _Bool _needsAddingToLayout;
     UIView<_UIStatusBarDisplayable> *_view;
     _UIStatusBarAction *_action;
+    _UIStatusBarAction *_hoverAction;
     _UIStatusBarIdentifier *_identifier;
     _UIStatusBarItem *_item;
     UIView *_highlightView;
@@ -56,6 +57,7 @@
 @property(retain, nonatomic) UIView *highlightView; // @synthesize highlightView=_highlightView;
 @property(readonly, nonatomic) __weak _UIStatusBarItem *item; // @synthesize item=_item;
 @property(readonly, copy, nonatomic) _UIStatusBarIdentifier *identifier; // @synthesize identifier=_identifier;
+@property(retain, nonatomic) _UIStatusBarAction *hoverAction; // @synthesize hoverAction=_hoverAction;
 @property(nonatomic) struct UIEdgeInsets actionInsets; // @synthesize actionInsets=_actionInsets;
 @property(retain, nonatomic) _UIStatusBarAction *action; // @synthesize action=_action;
 - (void)applyStyleAttributes:(id)arg1;
@@ -67,10 +69,14 @@
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) id <_UIStatusBarDisplayable> displayable;
 @property(readonly, nonatomic) UIView<_UIStatusBarDisplayable> *view; // @synthesize view=_view;
+@property(readonly, nonatomic) struct CGRect absoluteHoverFrame;
+@property(readonly, nonatomic) _Bool hoverHighlightsAsRegion;
+@property(readonly, nonatomic) UIView *hoverView;
 - (id)initWithIdentifier:(id)arg1 item:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(nonatomic) struct NSDirectionalEdgeInsets extendedHoverInsets;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

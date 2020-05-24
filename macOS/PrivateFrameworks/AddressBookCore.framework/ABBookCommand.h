@@ -12,8 +12,10 @@
 
 @interface ABBookCommand : NSObject <ABCommand>
 {
+    BOOL _ignoresGuardianRestrictions;
 }
 
+@property(nonatomic) BOOL ignoresGuardianRestrictions; // @synthesize ignoresGuardianRestrictions=_ignoresGuardianRestrictions;
 - (void)visit:(id)arg1;
 - (void)execute;
 
@@ -21,7 +23,6 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(nonatomic) BOOL ignoresGuardianRestrictions;
 @property(readonly) Class superclass;
 
 @end

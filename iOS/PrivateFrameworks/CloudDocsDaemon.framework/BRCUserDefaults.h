@@ -28,6 +28,7 @@
 + (id)defaultsForMangledID:(id)arg1;
 + (id)_userDefaultsManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool reportXPCErrorOnPCSChain;
 @property(readonly, nonatomic) _Bool changeItemIDOnUnknownItem;
 @property(readonly, nonatomic) _Bool forceFailIfExistOnRevival;
 @property(readonly, nonatomic) long long delayForStuckThrottle;

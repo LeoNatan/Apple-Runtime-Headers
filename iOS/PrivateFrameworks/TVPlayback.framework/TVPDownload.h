@@ -18,6 +18,8 @@
     _Bool _allowHDR;
     _Bool _allowMultichannelAudio;
     _Bool _includeDefaultAudioOption;
+    _Bool _includeOriginalAudio;
+    _Bool _includeDeviceLanguageAudio;
     _Bool _useLegacyAudioSettings;
     _Bool _downloadIsComplete;
     NSObject<TVPMediaItem> *_mediaItem;
@@ -59,6 +61,8 @@
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) _Bool useLegacyAudioSettings; // @synthesize useLegacyAudioSettings=_useLegacyAudioSettings;
 @property(retain, nonatomic) NSArray *preferredAudioLanguageCodes; // @synthesize preferredAudioLanguageCodes=_preferredAudioLanguageCodes;
+@property(nonatomic) _Bool includeDeviceLanguageAudio; // @synthesize includeDeviceLanguageAudio=_includeDeviceLanguageAudio;
+@property(nonatomic) _Bool includeOriginalAudio; // @synthesize includeOriginalAudio=_includeOriginalAudio;
 @property(nonatomic) _Bool includeDefaultAudioOption; // @synthesize includeDefaultAudioOption=_includeDefaultAudioOption;
 @property(nonatomic) _Bool allowMultichannelAudio; // @synthesize allowMultichannelAudio=_allowMultichannelAudio;
 @property(nonatomic) _Bool allowHDR; // @synthesize allowHDR=_allowHDR;
@@ -70,6 +74,7 @@
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSObject<TVPMediaItem> *mediaItem; // @synthesize mediaItem=_mediaItem;
 - (void)_registerStateMachineHandlers;
+- (void)_addMediaSelectionOptionsIfNotAlreadyAdded:(id)arg1 toMediaSelections:(id)arg2 forMediaSelectionGroup:(id)arg3 baseMediaSelection:(id)arg4;
 - (void)_mediaItemLoaderStateDidChangeTo:(id)arg1;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 aggregateAssetDownloadTask:(id)arg2 didLoadTimeRange:(CDStruct_5c5366e1)arg3 totalTimeRangesLoaded:(id)arg4 timeRangeExpectedToLoad:(CDStruct_5c5366e1)arg5 forMediaSelection:(id)arg6;

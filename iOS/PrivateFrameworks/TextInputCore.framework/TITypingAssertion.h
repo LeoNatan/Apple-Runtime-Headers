@@ -6,17 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableSet, NSTimer;
+@class NSMutableSet, NSTimer, PSPointerClientController;
 
 @interface TITypingAssertion : NSObject
 {
     _Bool _active;
     NSMutableSet *_restingPathIndices;
     NSTimer *_timer;
+    PSPointerClientController *_pointerClientController;
 }
 
 + (id)sharedTypingAssertion;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PSPointerClientController *pointerClientController; // @synthesize pointerClientController=_pointerClientController;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 - (id)__restingPathIndices;
 - (void)touchWithReason:(long long)arg1;

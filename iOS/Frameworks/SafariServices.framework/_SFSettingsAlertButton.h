@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateTintColor;
 @property(nonatomic, getter=isEnabled) _Bool enabled;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)_hover:(id)arg1;
 - (id)_arrangedSubviews;
 - (void)updateConstraints;
 @property(readonly, nonatomic) UIView *trailingView;

@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (void)contextMenuInteraction:(id)arg1 willPerformPreviewActionForMenuWithConfiguration:(id)arg2 animator:(id)arg3;
+- (_Bool)_contextMenuInteraction:(id)arg1 failedToBeginForSecondaryClickAtLocation:(struct CGPoint)arg2;
 - (void)contextMenuInteraction:(id)arg1 willDisplayMenuForConfiguration:(id)arg2 animator:(id)arg3;
 - (id)contextMenuInteraction:(id)arg1 previewForDismissingMenuWithConfiguration:(id)arg2;
 - (id)contextMenuInteraction:(id)arg1 previewForHighlightingMenuWithConfiguration:(id)arg2;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSExtension, NSString, PDFExtensionTopView, PDFPageLabelView, PDFPanGestureRecognizer, PDFPasswordViewController, UILongPressGestureRecognizer, UIScrollView, UITapGestureRecognizer;
+@class NSExtension, NSString, PDFExtensionTopView, PDFPageLabelView, PDFPanGestureRecognizer, PDFPasswordViewController, UILongPressGestureRecognizer, UIPointerInteraction, UIScrollView, UITapGestureRecognizer;
 @protocol PDFExtensionProtocol, PDFHostViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -34,6 +34,8 @@ __attribute__((visibility("hidden")))
     UILongPressGestureRecognizer *longPressGestureRecognizer;
     PDFPanGestureRecognizer *panGestureRecognizer;
     _Bool recentGestureIsIndirectTouch;
+    UIPointerInteraction *pointerInteraction;
+    CDUnknownBlockType pdfPointerCompletionHandler;
     struct CGRect insetBoundsInDocument;
     struct CGRect scrollViewFrame;
     struct UIEdgeInsets contentInset;

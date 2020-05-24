@@ -46,6 +46,8 @@
     struct sqlite3_stmt *_selectCloudKitArchivedTransactionsStatement;
     struct sqlite3_stmt *_selectBalancesForPassStatement;
     struct sqlite3_stmt *_updateBalancesForPassStatement;
+    struct sqlite3_stmt *_selectSubcredentialsForPassStatement;
+    struct sqlite3_stmt *_updateSubcredentialsForPassStatement;
     NSObject<OS_dispatch_queue> *_dbQueue;
     _Bool _isInTransaction;
     NSMutableDictionary *_manifest;
@@ -118,6 +120,8 @@
 - (_Bool)_updatePrivateLabelAndCobrandDuringMigration:(id)arg1;
 - (_Bool)_updateNFCPayloadDuringMigration:(id)arg1;
 - (void)_enumerateAllPassesForMigration:(CDUnknownBlockType)arg1;
+- (void)_setSubcredentialsLocked:(id)arg1 forPassWithUniqueID:(id)arg2;
+- (id)_subcredentialsForPassWithUniqueIDLocked:(id)arg1;
 - (void)_setPaymentBalancesLocked:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (id)_paymentBalancesForPassWithUniqueIDLocked:(id)arg1;
 - (void)_setPendingAddValueDateLocked:(id)arg1 forPassWithUniqueID:(id)arg2;
@@ -157,6 +161,8 @@
 - (id)transactionsWithCloudKitArchivedState:(_Bool)arg1;
 - (id)currentEphemeralTransactionIdentifierForPassWithUniqueID:(id)arg1;
 - (void)setCurrentEphemeralTransactionIdentifier:(id)arg1 forPassWithUniqueID:(id)arg2;
+- (void)setSubcredentials:(id)arg1 forPassWithUniqueID:(id)arg2;
+- (id)subcredentialsForPassWithUniqueID:(id)arg1;
 - (void)setPaymentBalances:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (id)paymentBalancesForPassWithUniqueID:(id)arg1;
 - (void)setTransitAppletState:(id)arg1 forPassWithUniqueID:(id)arg2;
@@ -179,6 +185,8 @@
 - (id)_decodeObjectOfClasses:(id)arg1 fromStatement:(struct sqlite3_stmt *)arg2 column:(int)arg3;
 - (void)_performTransactionWithBlock:(CDUnknownBlockType)arg1;
 - (void)_loadInitialManifestLocked;
+- (struct sqlite3_stmt *)updateSubcredentialsForPassStatement;
+- (struct sqlite3_stmt *)selectSubcredentialsForPassStatement;
 - (struct sqlite3_stmt *)updateBalancesForPassStatement;
 - (struct sqlite3_stmt *)selectBalancesForPassStatement;
 @property(readonly) struct sqlite3_stmt *selectCloudKitArchivedTransactionsStatement;

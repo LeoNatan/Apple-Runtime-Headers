@@ -25,5 +25,8 @@
 @property(nonatomic) __weak id <_UIClickInteractionDriverDelegate> delegate;
 - (void)cancelInteraction;
 - (struct CGPoint)locationInCoordinateSpace:(id <UICoordinateSpace>)arg1;
+
+@optional
+@property(nonatomic) unsigned long long behavior;
 @end
 

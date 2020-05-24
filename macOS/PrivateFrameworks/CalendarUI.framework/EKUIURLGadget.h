@@ -13,15 +13,18 @@
 @interface EKUIURLGadget : EKUISingleTextFieldGadget <CalUIResizingTextFieldDelegate>
 {
     BOOL _mouseEntered;
+    BOOL _shouldScrollTextFieldToTop;
 }
 
 + (id)interestedChangeKeys;
+@property BOOL shouldScrollTextFieldToTop; // @synthesize shouldScrollTextFieldToTop=_shouldScrollTextFieldToTop;
 @property BOOL mouseEntered; // @synthesize mouseEntered=_mouseEntered;
 - (BOOL)performDragOperation:(id)arg1;
 - (id)claimedPboardTypes;
 - (void)mouseExitedGadgetView;
 - (void)mouseEnteredGadgetView;
 - (void)updateWithChanges:(id)arg1;
+- (void)setObject:(id)arg1;
 - (void)updateEvent;
 - (id)url;
 - (double)maxHeight;

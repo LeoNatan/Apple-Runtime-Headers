@@ -33,6 +33,7 @@
 @property(readonly, copy, nonatomic) CPImageSet *imageSet; // @synthesize imageSet=_imageSet;
 @property(readonly, copy, nonatomic) NSArray *subtitleVariants; // @synthesize subtitleVariants=_subtitleVariants;
 @property(readonly, copy, nonatomic) NSArray *titleVariants; // @synthesize titleVariants=_titleVariants;
+- (id)description;
 @property(readonly, copy, nonatomic) UIImage *image;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

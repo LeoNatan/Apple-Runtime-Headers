@@ -6,14 +6,20 @@
 
 #import <objc/NSObject.h>
 
+#import <PassKitCore/PKPaymentAuthorizationCoordinatorDelegate-Protocol.h>
+#import <PassKitCore/PKPaymentAuthorizationCoordinatorPrivateDelegate-Protocol.h>
+
+@class NSString, PKExpressAuthorizationPaymentRequestContext, PKPaymentAuthorizationCoordinator;
 @protocol PKPassLibraryDataProvider, PKPaymentDataProvider;
 
-@interface PKExpressPassController : NSObject
+@interface PKExpressPassController : NSObject <PKPaymentAuthorizationCoordinatorDelegate, PKPaymentAuthorizationCoordinatorPrivateDelegate>
 {
     id <PKPaymentDataProvider> _paymentDataProvider;
     id <PKPassLibraryDataProvider> _passLibraryDataProvider;
     _Bool _isForWatch;
     _Bool _hasSupportsExpressForAutomaticSelectionTechnologyTypeCheck;
+    PKExpressAuthorizationPaymentRequestContext *_authorizationContext;
+    PKPaymentAuthorizationCoordinator *_authorizationCoordinator;
     id _presentingViewController;
     long long _apiVersion;
 }
@@ -21,6 +27,10 @@
 - (void).cxx_destruct;
 @property(nonatomic) long long apiVersion; // @synthesize apiVersion=_apiVersion;
 @property(nonatomic) __weak id presentingViewController; // @synthesize presentingViewController=_presentingViewController;
+- (void)paymentAuthorizationCoordinator:(id)arg1 didAuthorizeContextWithHandler:(CDUnknownBlockType)arg2;
+- (void)paymentAuthorizationCoordinatorDidFinish:(id)arg1;
+- (void)paymentAuthorizationCoordinator:(id)arg1 didAuthorizePayment:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)enableExpressModeWithPass:(id)arg1 context:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)deviceUsesAutomaticAuthorization;
 - (id)expressState;
 - (void)disableExpressModeForPass:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
@@ -33,6 +43,12 @@
 - (void)conflictingExpressPassesWithPassInformation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)expressModeSupportedForPass:(id)arg1;
 - (id)initWithPaymentDataProvider:(id)arg1 passLibraryDataProvider:(id)arg2 isForWatch:(_Bool)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

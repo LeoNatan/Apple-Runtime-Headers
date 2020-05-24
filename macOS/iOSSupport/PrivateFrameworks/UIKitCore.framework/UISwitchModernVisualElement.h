@@ -9,11 +9,12 @@
 #import <UIKitCore/CAAnimationDelegate-Protocol.h>
 #import <UIKitCore/UIGestureRecognizerDelegate-Protocol.h>
 #import <UIKitCore/UISwitchMVEGestureTrackingSessionElement-Protocol.h>
+#import <UIKitCore/_UICursorInteractionDelegate-Protocol.h>
 
 @class NSString, UIColor, UIImage, UIImageView, UILongPressGestureRecognizer, UIPanGestureRecognizer, UISwitchMVEGestureTrackingSession, UIView;
 
 __attribute__((visibility("hidden")))
-@interface UISwitchModernVisualElement : UISwitchVisualElement <UIGestureRecognizerDelegate, UISwitchMVEGestureTrackingSessionElement, CAAnimationDelegate>
+@interface UISwitchModernVisualElement : UISwitchVisualElement <UIGestureRecognizerDelegate, UISwitchMVEGestureTrackingSessionElement, CAAnimationDelegate, _UICursorInteractionDelegate>
 {
     UIView *_switchWellView;
     UIView *_leftSwitchWellView;
@@ -109,6 +110,8 @@ __attribute__((visibility("hidden")))
 - (void)_switchToStaticMode:(BOOL)arg1;
 - (void)_invalidateControl;
 - (void)_dynamicUserInterfaceTraitDidChange;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 - (void)_handlePanWithGestureLocationInBounds:(struct CGPoint)arg1 horizontalTranslation:(double)arg2 gestureState:(long long)arg3 resetPanTranslationBlock:(CDUnknownBlockType)arg4;
 - (void)_handlePan:(id)arg1;
 - (void)_handleLongPressWithGestureLocationInBounds:(struct CGPoint)arg1 gestureState:(long long)arg2;

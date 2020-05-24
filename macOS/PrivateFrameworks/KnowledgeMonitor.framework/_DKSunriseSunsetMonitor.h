@@ -16,7 +16,6 @@
     BOOL _enabled;
     BOOL _awaitingLocationAfterDisabledAirplaneMode;
     int _authorizationStatus;
-    int _timeZoneToken;
     NSObject<OS_dispatch_source> *_updateTimer;
     unsigned long long _updateInterval;
     CLLocationManager *_manager;
@@ -28,7 +27,6 @@
 + (id)entitlements;
 + (id)eventStream;
 - (void).cxx_destruct;
-@property(nonatomic) int timeZoneToken; // @synthesize timeZoneToken=_timeZoneToken;
 @property struct __SCPreferences *radioPrefs; // @synthesize radioPrefs=_radioPrefs;
 @property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(nonatomic) int authorizationStatus; // @synthesize authorizationStatus=_authorizationStatus;
@@ -48,10 +46,6 @@
 - (void)unprotectedUpdateSunriseSunsetTime:(id)arg1;
 - (BOOL)currentSunriseSunsetTimes:(id)arg1 differsFromPreviousTimes:(id)arg2 byInterval:(double)arg3;
 - (id)contextDictionaryWithGeoAlmanac:(id)arg1 authorizationStatus:(int)arg2;
-- (void)handleAuthorizationStatusChange;
-- (void)handleAuthorizationStatusChangeOnStartup;
-- (BOOL)getAuthorizationStatus;
-- (BOOL)getAuthorizationStatusFromFile;
 - (void)deactivate;
 - (void)stop;
 - (void)start;

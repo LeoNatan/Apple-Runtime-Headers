@@ -8,7 +8,6 @@
 
 @interface _TtC8VideosUI8Document : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: onUIEvent
     // Error parsing type: , name: appContext
     // Error parsing type: , name: template
     // Error parsing type: , name: navigationBar

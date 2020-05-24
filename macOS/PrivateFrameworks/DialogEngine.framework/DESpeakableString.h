@@ -15,8 +15,8 @@
 
 @property struct SpeakableString *This; // @synthesize This=_This;
 - (BOOL)isEqual:(id)arg1;
-@property NSString *speak;
-@property NSString *print;
+@property(retain) NSString *speak;
+@property(retain) NSString *print;
 - (void)dealloc;
 - (id)initWithPrint:(id)arg1 speak:(id)arg2;
 - (id)init;

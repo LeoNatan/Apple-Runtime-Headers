@@ -25,12 +25,14 @@
     NSSet *_detectionImages;
     long long _maximumNumberOfTrackedImages;
     NSSet *_detectionObjects;
+    unsigned long long _sceneReconstruction;
     NSString *_slamConfiguration;
     double _minVergenceAngle;
 }
 
 + (_Bool)supportsFrameSemantics:(unsigned long long)arg1;
 + (_Bool)supportsFrontCameraFaceAnchors;
++ (_Bool)supportsSceneReconstruction:(unsigned long long)arg1;
 + (_Bool)supportsUserFaceTracking;
 + (id)supportedVideoFormatsForUltraWide;
 + (id)supportedVideoFormatsForUserFaceTracking;
@@ -45,6 +47,7 @@
 @property(nonatomic) double minVergenceAngle; // @synthesize minVergenceAngle=_minVergenceAngle;
 @property(copy, nonatomic) NSString *slamConfiguration; // @synthesize slamConfiguration=_slamConfiguration;
 @property(nonatomic) _Bool relocalizationEnabled; // @synthesize relocalizationEnabled=_relocalizationEnabled;
+@property(nonatomic) unsigned long long sceneReconstruction; // @synthesize sceneReconstruction=_sceneReconstruction;
 @property(nonatomic, getter=userFaceTrackingEnabled) _Bool userFaceTrackingEnabled; // @synthesize userFaceTrackingEnabled=_userFaceTrackingEnabled;
 @property(nonatomic, getter=isCollaborationEnabled) _Bool collaborationEnabled; // @synthesize collaborationEnabled=_collaborationEnabled;
 @property(copy, nonatomic) NSSet *detectionObjects; // @synthesize detectionObjects=_detectionObjects;

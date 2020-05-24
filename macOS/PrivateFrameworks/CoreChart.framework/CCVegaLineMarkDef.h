@@ -10,7 +10,7 @@
 {
 }
 
-- (struct CGPath *)pathForMark:(id)arg1;
+- (struct CGPath *)newPathForMark:(id)arg1;
 
 @end
 

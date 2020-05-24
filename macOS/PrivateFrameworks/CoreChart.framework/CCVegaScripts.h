@@ -16,6 +16,7 @@
 + (id)loadScriptWithName:(id)arg1 source:(id)arg2 inVirtualMachine:(id)arg3;
 + (id)stringForScriptData:(char *)arg1 length:(unsigned long long)arg2;
 + (void)evaluateBootstrapScriptsInContext:(id)arg1;
++ (void)evaluateVegaLiteScriptInContext:(id)arg1;
 
 @end
 

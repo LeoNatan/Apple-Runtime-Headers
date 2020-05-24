@@ -29,9 +29,6 @@
 @property(readonly, nonatomic) EDGmailLabelPersistence *gmailLabelPersistence; // @synthesize gmailLabelPersistence=_gmailLabelPersistence;
 @property(readonly, nonatomic) EDPersistenceDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) _Bool supportsLabels; // @synthesize supportsLabels=_supportsLabels;
-- (id)_uidExpressionForUIDs:(id)arg1 isContiguous:(_Bool)arg2;
-- (_Bool)_uidsAreContiguous:(id)arg1;
-- (id)_nextBatchForUIDs:(id)arg1 limit:(unsigned long long)arg2 returnLastEntries:(_Bool)arg3 isContiguous:(_Bool *)arg4;
 - (id)_remoteIDStringForRemoteIDArray:(id)arg1;
 - (_Bool)_addLabels:(id)arg1 removeLabels:(id)arg2 forUID:(unsigned int)arg3 connection:(id)arg4;
 - (_Bool)addLabels:(id)arg1 removeLabels:(id)arg2 toMessagesWithRemoteIDs:(id)arg3;

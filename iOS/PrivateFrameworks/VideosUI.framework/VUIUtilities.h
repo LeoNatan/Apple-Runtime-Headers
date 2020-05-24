@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)gradientLayerLocationsFromSpacings:(id)arg1 height:(double)arg2;
 + (long long)interfaceStyleFromTheme:(id)arg1 defaultInterfaceStyle:(long long)arg2;
 + (id)colorFromHexStr:(id)arg1;
 + (id)colorFromRGBStr:(id)arg1;

@@ -22,7 +22,7 @@
 {
     BOOL _editable;
     BOOL _selectable;
-    BOOL _shouldSave;
+    BOOL _shouldSaveChanges;
     BOOL _shouldShowLinkedContacts;
     BOOL _shouldShowSuggestedFields;
     BOOL _shouldShowInMapsButtons;
@@ -82,7 +82,7 @@
 @property(nonatomic) BOOL shouldShowInMapsButtons; // @synthesize shouldShowInMapsButtons=_shouldShowInMapsButtons;
 @property(nonatomic) BOOL shouldShowSuggestedFields; // @synthesize shouldShowSuggestedFields=_shouldShowSuggestedFields;
 @property(nonatomic) BOOL shouldShowLinkedContacts; // @synthesize shouldShowLinkedContacts=_shouldShowLinkedContacts;
-@property(nonatomic) BOOL shouldSave; // @synthesize shouldSave=_shouldSave;
+@property(nonatomic) BOOL shouldSaveChanges; // @synthesize shouldSaveChanges=_shouldSaveChanges;
 @property(nonatomic, getter=isSelectable) BOOL selectable; // @synthesize selectable=_selectable;
 @property(nonatomic, getter=isEditable) BOOL editable; // @synthesize editable=_editable;
 @property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
@@ -190,6 +190,7 @@
 - (void)refreshDisplayedValues;
 - (void)beginPresentationOfContact;
 - (void)setContact:(id)arg1 inParentContainer:(id)arg2;
+- (void)endEditModeIfNecessary;
 - (void)saveContactIfNecessaryAndRefreshInterface:(BOOL)arg1;
 - (void)endPresentationOfContact;
 @property(readonly, nonatomic) CNContact *editedContact;

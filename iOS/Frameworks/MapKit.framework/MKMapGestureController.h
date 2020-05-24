@@ -10,7 +10,7 @@
 #import <MapKit/UIGestureRecognizerDelegate-Protocol.h>
 #import <MapKit/_MKUserInteractionGestureRecognizerTouchObserver-Protocol.h>
 
-@class MKBasicMapView, MKCompassView, MKRotationFilter, MKScaleView, MKTiltGestureRecognizer, MKVariableDelayTapRecognizer, NSString, UIGestureRecognizer, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer, UITraitCollection, VKCompoundAnimation, VKDynamicAnimation, VKTimedAnimation, _MKDirectionalArrowRecognizer, _MKOneHandedZoomGestureRecognizer, _MKUserInteractionGestureRecognizer, _MKZoomingGestureControlConfiguration;
+@class MKBasicMapView, MKCompassView, MKRotationFilter, MKScaleView, MKTiltGestureRecognizer, MKVariableDelayTapRecognizer, NSString, UIGestureRecognizer, UIHoverGestureRecognizer, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer, UITraitCollection, VKCompoundAnimation, VKDynamicAnimation, VKTimedAnimation, _MKConditionalPanRotationGestureRecognizer, _MKConditionalPanTiltGestureRecognizer, _MKConditionalPanZoomGestureRecognizer, _MKDirectionalArrowRecognizer, _MKOneHandedZoomGestureRecognizer, _MKUserInteractionGestureRecognizer, _MKZoomingGestureControlConfiguration;
 @protocol MKMapGestureControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -29,6 +29,16 @@ __attribute__((visibility("hidden")))
     UIPanGestureRecognizer *_panGestureRecognizer;
     _MKOneHandedZoomGestureRecognizer *_oneHandedZoomGestureRecognizer;
     _MKZoomingGestureControlConfiguration *_zoomConfiguration;
+    _MKConditionalPanRotationGestureRecognizer *_conditionalDragRotationGestureRecognizer;
+    struct CGPoint _panRotateStartPoint;
+    _MKConditionalPanZoomGestureRecognizer *_conditionalDragZoomGestureRecognizer;
+    struct CGPoint _panZoomStartPoint;
+    _MKConditionalPanTiltGestureRecognizer *_conditionalDragTiltGestureRecognizer;
+    UIPanGestureRecognizer *_scaleDragGestureRecognizer;
+    _MKConditionalPanRotationGestureRecognizer *_conditionalPanRotationGestureRecognizer;
+    _MKConditionalPanZoomGestureRecognizer *_conditionalPanZoomGestureRecognizer;
+    _MKConditionalPanTiltGestureRecognizer *_conditionalPanTiltGestureRecognizer;
+    UIHoverGestureRecognizer *_hoverGestureReconizer;
     _MKDirectionalArrowRecognizer *_arrowZoomGestureRecognizer;
     VKTimedAnimation *_currentArrowAnimation;
     double _arrowZoomSpeed;
@@ -70,6 +80,9 @@ __attribute__((visibility("hidden")))
 - (_Bool)tiltGestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)handleArrowZoom:(id)arg1;
+- (void)_handleHover:(id)arg1;
+- (void)_handleZoomPan:(id)arg1;
+- (void)_handleRotationPan:(id)arg1;
 - (void)handleZoomArrowMask:(long long)arg1 speed:(double)arg2;
 - (double)variableDelayTapRecognizer:(id)arg1 shouldWaitForNextTapForDuration:(double)arg2 afterTouch:(id)arg3;
 - (void)gestureRecognizerTouchesCanceled:(id)arg1;

@@ -8,16 +8,12 @@
 
 @interface _TtC8VideosUI11ImageLayout : _TtC8VideosUI10ViewLayout
 {
-    // Error parsing type: , name: $__lazy_storage_$_tvImageLayout
-    // Error parsing type: , name: imageSize
     // Error parsing type: , name: upscaleFactor
     // Error parsing type: , name: aspectRatio
     // Error parsing type: , name: scaleMode
     // Error parsing type: , name: borderColor
     // Error parsing type: , name: borderWidth
     // Error parsing type: , name: continuousBorder
-    // Error parsing type: , name: placeholderResourceName
-    // Error parsing type: , name: cropCode
 }
 
 @end

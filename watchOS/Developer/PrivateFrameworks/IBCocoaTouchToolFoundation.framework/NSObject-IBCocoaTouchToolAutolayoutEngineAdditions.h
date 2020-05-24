@@ -33,6 +33,7 @@
 - (void)awakeAfterMarshallerDidEstablishAttributesWithContext:(id)arg1;
 - (_Bool)ibRequiresClassSwapperForObjectClassName:(id)arg1 customClassName:(id)arg2;
 - (id)initWithMarshalledValues:(id)arg1 orderedKeys:(id)arg2 ignoredKeys:(id)arg3 globalMarshallingContext:(id)arg4;
+- (void)ibSwizzledSetValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (_Bool)ibCapturePlaceholderTable:(id)arg1 forRelationship:(id)arg2 withContext:(id)arg3;
 - (id)ibAdditionalTraitStoragesWithObjectID:(id)arg1 keyPath:(id)arg2 targetOSVersion:(id)arg3 platform:(id)arg4;
 - (id)transformAfterMarshalling;

@@ -129,6 +129,7 @@ __attribute__((visibility("hidden")))
     long long _nonDestructiveCropAspectRatio;
     _Bool _geometricDistortionCorrectionEnabled;
     _Bool _globalToneMappingEnabled;
+    long long _timeOfFlightProjectorMode;
     NSData *_cameraPoseMatrix;
 }
 
@@ -156,6 +157,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)isNonDestructiveCropEnabled;
 - (void)setSpatialOverCaptureEnabled:(_Bool)arg1;
 - (_Bool)isSpatialOverCaptureEnabled;
+- (long long)timeOfFlightBankCount;
+- (void)setTimeOfFlightProjectorMode:(long long)arg1;
+- (long long)timeOfFlightProjectorMode;
+- (_Bool)isTimeOfFlightProjectorModeSupported:(long long)arg1;
 - (void)_setBravoCameraSelectionBehavior:(id)arg1;
 - (id)bravoCameraSelectionBehavior;
 - (_Bool)isHEIFSupported;

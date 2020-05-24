@@ -15,7 +15,7 @@
 #import <UIKitCore/_UIScrollerImpDelegate-Protocol.h>
 #import <UIKitCore/_UIScrollerImpPairDelegate-Protocol.h>
 
-@class CADisplayLink, NSArray, NSHashTable, NSISVariable, NSMutableDictionary, NSString, NSTimer, UIGestureRecognizer, UILayoutGuide, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRefreshControl, UIScrollViewDelayedTouchesBeganGestureRecognizer, UIScrollViewDirectionalPressGestureRecognizer, UIScrollViewPanGestureRecognizer, UIScrollViewPinchGestureRecognizer, UISwipeGestureRecognizer, UIViewAnimationState, _UIAutoScrollAssistant, _UIDragAutoScrollGestureRecognizer, _UIFocusFastScrollingController, _UIFocusFastScrollingIndexBarView, _UIFocusFastScrollingRequest, _UIScrollDynamics, _UIScrollViewScrollIndicator, _UIScrollerImpContainerView, _UIScrollerImpPair, _UIStaticScrollBar;
+@class CADisplayLink, NSArray, NSHashTable, NSISVariable, NSMutableDictionary, NSString, NSTimer, UIGestureRecognizer, UILayoutGuide, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRefreshControl, UIScrollViewDelayedTouchesBeganGestureRecognizer, UIScrollViewDirectionalPressGestureRecognizer, UIScrollViewPanGestureRecognizer, UIScrollViewPinchGestureRecognizer, UIScrollViewScrollAnimation, UISwipeGestureRecognizer, UIViewAnimationState, _UIAutoScrollAssistant, _UIDragAutoScrollGestureRecognizer, _UIFocusFastScrollingController, _UIFocusFastScrollingIndexBarView, _UIFocusFastScrollingRequest, _UIScrollDynamics, _UIScrollViewScrollIndicator, _UIScrollerImpContainerView, _UIScrollerImpPair, _UIStaticScrollBar;
 @protocol UICoordinateSpace, UIFocusItem, UIScrollViewDelegate, _UIScrollViewLayoutObserver, _UIScrollViewScrollableAncestor;
 
 @interface UIScrollView : UIView <UIGestureRecognizerDelegate, UIScrollViewDelayedTouchesBeganGestureRecognizerClient, _UIScrollerImpDelegate, _UIScrollerImpPairDelegate, _UIScrollToTopView, UIIndexBarAccessoryViewDelegate, NSCoding, UIFocusItemScrollableContainer>
@@ -61,7 +61,7 @@
     id *_shadows;
     NSHashTable *_scrollNotificationObservers;
     double _contentOffsetAnimationDuration;
-    id _animation;
+    UIScrollViewScrollAnimation *_animation;
     id _zoomAnimation;
     UIViewAnimationState *_zoomAnimationState;
     UIScrollViewPinchGestureRecognizer *_pinch;
@@ -221,6 +221,7 @@
     struct CGPoint _knobOptionScrubbingStartTranslation;
     _UIScrollDynamics *_scrollDynamics;
     double _smoothScrollTimeElapsed;
+    unsigned long long _currentScrollDeviceCategory;
     BOOL _useContentDimensionVariablesForConstraintLowering;
     id _scrollTestParameters;
     long long _keyboardDismissMode;
@@ -362,12 +363,14 @@
 - (BOOL)_isAutomaticContentOffsetAdjustmentEnabled;
 - (void)_setAutomaticContentOffsetAdjustmentEnabled:(BOOL)arg1;
 - (void)_updateScrollAnimationForChangedTargetOffset:(struct CGPoint)arg1;
+- (void)_setContentOffset:(struct CGPoint)arg1 animated:(BOOL)arg2 animationCurve:(int)arg3 animationAdjustsForContentOffsetDelta:(BOOL)arg4 animation:(id)arg5 animationConfigurator:(CDUnknownBlockType)arg6;
 - (void)_setContentOffset:(struct CGPoint)arg1 animated:(BOOL)arg2 animationCurve:(int)arg3 animationAdjustsForContentOffsetDelta:(BOOL)arg4 animation:(id)arg5;
 - (void)_setContentOffset:(struct CGPoint)arg1 animated:(BOOL)arg2 animationCurve:(int)arg3 animationAdjustsForContentOffsetDelta:(BOOL)arg4;
 - (void)_setContentOffset:(struct CGPoint)arg1 animated:(BOOL)arg2 animationCurve:(int)arg3;
 - (void)_setAbsoluteContentOffset:(struct CGPoint)arg1 animated:(BOOL)arg2;
 - (void)_setContentOffset:(struct CGPoint)arg1 animation:(id)arg2;
 - (void)_setContentOffsetWithDecelerationAnimation:(struct CGPoint)arg1;
+- (void)_setContentOffset:(struct CGPoint)arg1 duration:(double)arg2 animationCurve:(int)arg3 animationConfigurator:(CDUnknownBlockType)arg4;
 - (void)_setContentOffset:(struct CGPoint)arg1 duration:(double)arg2 animationCurve:(int)arg3;
 - (struct CGSize)_contentSizeOrDeferredContentSize;
 - (struct CGPoint)_contentOffsetOrDeferredContentOffset;
@@ -404,6 +407,7 @@
 - (double)_offsetForRubberBandOffset:(double)arg1 maxOffset:(double)arg2 minOffset:(double)arg3 range:(double)arg4;
 - (double)_offsetWithoutDecorationForRubberBandOffset:(double)arg1 maxOffset:(double)arg2 minOffset:(double)arg3 range:(double)arg4;
 - (double)_rubberBandOffsetForOffset:(double)arg1 maxOffset:(double)arg2 minOffset:(double)arg3 range:(double)arg4 outside:(char *)arg5;
+- (double)_currentRubberBandCoefficient;
 - (double)_rubberBandOffsetWithoutDecorationForOffset:(double)arg1 maxOffset:(double)arg2 minOffset:(double)arg3 range:(double)arg4 outside:(char *)arg5;
 - (void)_clearParentAdjustment;
 - (BOOL)_shouldTrackImmediatelyWhileDecelerating;

@@ -8,8 +8,11 @@
 
 @interface _TtC8VideosUI20DecoratedShelfLayout : _TtC8VideosUI10ViewLayout
 {
-    // Error parsing type: , name: $__lazy_storage_$_logoLayout
+    // Error parsing type: , name: $__lazy_storage_$_channelLogoLayout
     // Error parsing type: , name: $__lazy_storage_$_shelfLayout
+    // Error parsing type: , name: $__lazy_storage_$_verticalStackLayout
+    // Error parsing type: , name: $__lazy_storage_$_logoImageLayout
+    // Error parsing type: , name: $__lazy_storage_$_alphaImageLayout
 }
 
 - (id)copyWithZone:(void *)arg1;

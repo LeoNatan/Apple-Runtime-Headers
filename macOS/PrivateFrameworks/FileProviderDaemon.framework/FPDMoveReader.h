@@ -54,10 +54,15 @@
 - (BOOL)_enqueueItem:(id)arg1 forRoot:(id)arg2 atomically:(BOOL)arg3 useDiskWriter:(BOOL)arg4;
 - (id)_targetNameForSource:(id)arg1;
 - (id)_getTargetFolderFor:(id)arg1 root:(id)arg2 error:(id *)arg3;
+- (BOOL)_shouldCheckFileSystemBitsForRoot:(id)arg1 targetFolderURL:(id)arg2;
+- (BOOL)_shouldCheckSpaceForRoot:(id)arg1 targetFolderURL:(id)arg2;
+- (long long)_filesizeBitsSupportAtPath:(id)arg1;
+- (BOOL)_isSpaceAvailableForWrite:(long long)arg1 atTargetPath:(id)arg2;
 - (void)_progressComputationPreflight;
 - (void)_finishWithError:(id)arg1;
 - (BOOL)_isCancelled;
 - (void)start;
+- (void)verifyTargetURL:(CDUnknownBlockType)arg1;
 - (id)initWithMoveWriter:(id)arg1 operation:(id)arg2 queue:(id)arg3;
 - (id)init;
 

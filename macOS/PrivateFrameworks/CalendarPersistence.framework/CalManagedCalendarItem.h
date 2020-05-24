@@ -179,6 +179,7 @@
 - (void)_importNonManagedAttachmentsFromComponent:(id)arg1 fromDocument:(id)arg2 inCalendar:(id)arg3;
 - (void)_importNonManagedAttachment:(id)arg1 fromComponent:(id)arg2 fromDocument:(id)arg3 inCalendar:(id)arg4 withOldAttachments:(id)arg5;
 - (void)_truncateToMaxNumberOfAttachmentsIfNecessary:(id)arg1;
+- (void)_removeAttachmentsWithFileURLs:(id)arg1;
 - (void)_removeDuplicateAttachments:(id)arg1;
 - (void)_importAttachmentsFromComponent:(id)arg1 fromDocument:(id)arg2 inCalendar:(id)arg3;
 - (void)_preprocessAttachmentsFromComponent:(id)arg1;

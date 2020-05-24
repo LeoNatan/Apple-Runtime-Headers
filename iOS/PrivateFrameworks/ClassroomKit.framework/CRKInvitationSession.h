@@ -10,7 +10,5 @@
 {
 }
 
-- (_Bool)allowUntrustedConnections;
-
 @end
 

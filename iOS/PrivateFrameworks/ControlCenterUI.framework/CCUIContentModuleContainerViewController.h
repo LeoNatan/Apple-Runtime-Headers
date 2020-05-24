@@ -10,11 +10,12 @@
 #import <ControlCenterUI/CCUISafeAppearancePropagationProvider-Protocol.h>
 #import <ControlCenterUI/UIGestureRecognizerDelegate-Protocol.h>
 #import <ControlCenterUI/_UIClickPresentationInteractionDelegate-Protocol.h>
+#import <ControlCenterUI/_UICursorInteractionDelegate-Protocol.h>
 
 @class CCUIContentModuleBackgroundView, CCUIContentModuleContainerPresentationController, CCUIContentModuleContentContainerView, NSArray, NSString, UITapGestureRecognizer, UIView, _UIClickPresentationInteraction;
 @protocol CCUIContentModule, CCUIContentModuleBackgroundViewController, CCUIContentModuleContainerViewControllerDelegate, CCUIContentModuleContentViewController;
 
-@interface CCUIContentModuleContainerViewController : UIViewController <_UIClickPresentationInteractionDelegate, UIGestureRecognizerDelegate, CCUIContentModuleContainer, CCUISafeAppearancePropagationProvider>
+@interface CCUIContentModuleContainerViewController : UIViewController <_UIClickPresentationInteractionDelegate, UIGestureRecognizerDelegate, CCUIContentModuleContainer, CCUISafeAppearancePropagationProvider, _UICursorInteractionDelegate>
 {
     _Bool _expanded;
     _Bool _contentModuleProvidesOwnPlatter;
@@ -77,6 +78,8 @@
 - (void)_handleTapGestureRecognizer:(id)arg1;
 - (_Bool)_isForceTouchAvailable;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 - (void)willDismissViewController:(id)arg1;
 - (void)willPresentViewController:(id)arg1;
 - (_Bool)definesContentModuleContainer;

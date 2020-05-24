@@ -9,7 +9,7 @@
 #import <IMAssistantCore/IMAssistantMessageHandlerDataSource-Protocol.h>
 
 @class CNContactStore, NSCache, NSString;
-@protocol IMAssistantAccountDataSource, IMAssistantChatDataSource, IMAssistantContactsDataSource, IMLocationManager;
+@protocol IMAssistantAccountDataSource, IMAssistantChatDataSource, IMAssistantContactsDataSource, IMAssistantCoreTelephonySubscriptionsDataSource, IMLocationManager;
 
 @interface IMAssistantMessageHandlerDefaultDataSource : NSObject <IMAssistantMessageHandlerDataSource>
 {
@@ -29,6 +29,7 @@
 @property(readonly, nonatomic) NSCache *spiHandleToPersonCache;
 @property(readonly, nonatomic) NSCache *handleToContactIdentifierCache;
 @property(readonly, nonatomic) id <IMLocationManager> locationManagerDataSource;
+@property(readonly, nonatomic) id <IMAssistantCoreTelephonySubscriptionsDataSource> coreTelephonySubscriptionsDataSource;
 @property(readonly, nonatomic) id <IMAssistantAccountDataSource> accountDataSource;
 @property(readonly, nonatomic) id <IMAssistantContactsDataSource> contactsDataSource;
 @property(readonly, nonatomic) id <IMAssistantChatDataSource> chatDataSource;

@@ -27,6 +27,7 @@
     BOOL _allowsSimultaneousRecognitionDuringLift;
     BOOL _cancellationTimerEnabled;
     BOOL _competingLongPressOnLift;
+    BOOL _allowsPointerDragBeforeLiftDelay;
     BOOL _automaticallyAddsFailureRelationships;
     BOOL _allowsMultipleSessions;
     BOOL _additionalTouchesCancelLift;
@@ -36,9 +37,11 @@
     id <_UIDragInteractionPresentationDelegate> _presentationDelegate;
     id <UIDragInteractionEffect> _interactionEffect;
     double _liftDelay;
+    double _pointerLiftDelay;
     double _cancellationDelay;
     double _competingLongPressDelay;
     double _liftMoveHysteresis;
+    double _pointerLiftMoveHysteresis;
     long long _addItemsGestureConfiguration;
     NSArray *_allowedTouchTypes;
 }
@@ -51,11 +54,14 @@
 @property(nonatomic, getter=_addItemsGestureConfiguration, setter=_setAddItemsGestureConfiguration:) long long addItemsGestureConfiguration; // @synthesize addItemsGestureConfiguration=_addItemsGestureConfiguration;
 @property(nonatomic, getter=_allowsMultipleSessions, setter=_setAllowsMultipleSessions:) BOOL allowsMultipleSessions; // @synthesize allowsMultipleSessions=_allowsMultipleSessions;
 @property(nonatomic, getter=_automaticallyAddsFailureRelationships, setter=_setAutomaticallyAddsFailureRelationships:) BOOL automaticallyAddsFailureRelationships; // @synthesize automaticallyAddsFailureRelationships=_automaticallyAddsFailureRelationships;
+@property(nonatomic, getter=_allowsPointerDragBeforeLiftDelay, setter=_setAllowsPointerDragBeforeLiftDelay:) BOOL allowsPointerDragBeforeLiftDelay; // @synthesize allowsPointerDragBeforeLiftDelay=_allowsPointerDragBeforeLiftDelay;
+@property(nonatomic, getter=_pointerLiftMoveHysteresis, setter=_setPointerLiftMoveHysteresis:) double pointerLiftMoveHysteresis; // @synthesize pointerLiftMoveHysteresis=_pointerLiftMoveHysteresis;
 @property(nonatomic, getter=_liftMoveHysteresis, setter=_setLiftMoveHysteresis:) double liftMoveHysteresis; // @synthesize liftMoveHysteresis=_liftMoveHysteresis;
 @property(nonatomic, getter=_competingLongPressDelay, setter=_setCompetingLongPressDelay:) double competingLongPressDelay; // @synthesize competingLongPressDelay=_competingLongPressDelay;
 @property(nonatomic, getter=_competingLongPressOnLift, setter=_setCompetingLongPressOnLift:) BOOL competingLongPressOnLift; // @synthesize competingLongPressOnLift=_competingLongPressOnLift;
 @property(nonatomic, getter=_cancellationDelay, setter=_setCancellationDelay:) double cancellationDelay; // @synthesize cancellationDelay=_cancellationDelay;
 @property(nonatomic, getter=_isCancellationTimerEnabled, setter=_setCancellationTimerEnabled:) BOOL cancellationTimerEnabled; // @synthesize cancellationTimerEnabled=_cancellationTimerEnabled;
+@property(nonatomic, getter=_pointerLiftDelay, setter=_setPointerLiftDelay:) double pointerLiftDelay; // @synthesize pointerLiftDelay=_pointerLiftDelay;
 @property(nonatomic, getter=_liftDelay, setter=_setLiftDelay:) double liftDelay; // @synthesize liftDelay=_liftDelay;
 @property(retain, nonatomic) id <UIDragInteractionEffect> interactionEffect; // @synthesize interactionEffect=_interactionEffect;
 @property(nonatomic, getter=_presentationDelegate, setter=_setPresentationDelegate:) __weak id <_UIDragInteractionPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;

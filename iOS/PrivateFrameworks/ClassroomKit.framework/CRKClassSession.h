@@ -24,6 +24,7 @@
 - (id)lastMatchMessageForCurrentDate:(id)arg1;
 - (void)logBeaconFound;
 - (void)lostBeacon;
+- (id)stateDictionary;
 - (void)foundBeaconWithFlags:(unsigned short)arg1;
 - (id)initWithIdentifier:(id)arg1;
 

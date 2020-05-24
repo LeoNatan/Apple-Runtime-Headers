@@ -38,6 +38,7 @@
 - (UIView<UIInterfaceActionVisualSectionSeparatorDisplaying> *)newSectionSeparatorViewForGroupViewState:(UIInterfaceActionGroupViewState *)arg1;
 - (UIView<UIInterfaceActionVisualSeparatorDisplaying> *)newActionSeparatorViewForGroupViewState:(UIInterfaceActionGroupViewState *)arg1;
 - (id)actionViewStateForAttachingToActionRepresentationView:(UIView *)arg1;
+- (_Bool)selectByIndirectPointerTouchRequired;
 - (_Bool)selectionFeedbackEnabled;
 - (_Bool)selectByPressGestureRequired;
 - (struct CGSize)maximumActionGroupContentSize;

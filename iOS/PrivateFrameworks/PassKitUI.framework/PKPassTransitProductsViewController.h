@@ -10,7 +10,7 @@
 #import <PassKitUI/PKPaymentDataProviderDelegate-Protocol.h>
 #import <PassKitUI/PKPerformActionViewControllerDelegate-Protocol.h>
 
-@class NSString, PKPaymentPass, PKTransitBalanceModel;
+@class NSString, PKAdjustableSingleCellView, PKPaymentPass, PKTransitBalanceModel;
 @protocol PKPaymentDataProvider;
 
 @interface PKPassTransitProductsViewController : PKSectionTableViewController <PKPaymentDataProviderDelegate, PKPerformActionViewControllerDelegate, PKAccessibleLayoutObserverDelegate>
@@ -21,6 +21,7 @@
     _Bool _hasBalance;
     _Bool _hasCommutePlans;
     unsigned long long _transitType;
+    PKAdjustableSingleCellView *_sampleSingleCellView;
     PKPaymentPass *_pass;
 }
 
@@ -29,12 +30,19 @@
 - (void)performActionViewControllerDidPerformAction:(id)arg1;
 - (void)performActionViewControllerDidCancel:(id)arg1;
 - (void)accessibleLayoutForView:(id)arg1 changedFrom:(long long)arg2 to:(long long)arg3;
+- (void)_configureCell:(id)arg1 inTableView:(id)arg2 forIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)_configureView:(id)arg1 indexPath:(id)arg2 animated:(_Bool)arg3;
+- (CDUnknownBlockType)_actionHandlerForIndexPath:(id)arg1;
+- (id)_allocView;
+- (id)_topUpActionForIndexPath:(id)arg1 balanceIdentifier:(id)arg2;
+- (id)_renewActionForIndexPath:(id)arg1 commutePlanIdentifier:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;

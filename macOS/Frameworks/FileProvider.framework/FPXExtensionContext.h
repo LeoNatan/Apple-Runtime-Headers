@@ -113,7 +113,7 @@
 - (id)domainContextForIdentifier:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)sendBlacklistedProcessNamesUpdate;
-- (void)invalidate;
+- (void)fpx_invalidate;
 - (void)dealloc;
 - (void)_setTransaction:(id)arg1;
 - (void)beginRequestWithDomain:(id)arg1 alternateContentsDictionary:(id)arg2 usesFPFS:(BOOL)arg3 domainServicer:(id)arg4;

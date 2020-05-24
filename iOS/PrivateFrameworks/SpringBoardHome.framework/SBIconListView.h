@@ -10,7 +10,7 @@
 #import <SpringBoardHome/PTSettingsKeyObserver-Protocol.h>
 #import <SpringBoardHome/SBIconListModelObserver-Protocol.h>
 
-@class NSArray, NSMapTable, NSMutableArray, NSString, SBFolderIconImageCache, SBHIconImageCache, SBIconListModel, SBIconListViewDraggingDestinationDelegate, SBIconListViewIconLocationTransitionHandler, _UILegibilitySettings;
+@class NSArray, NSMapTable, NSMutableArray, NSString, SBFolderIconImageCache, SBHIconImageCache, SBHIconSettings, SBIconListModel, SBIconListViewDraggingDestinationDelegate, SBIconListViewIconLocationTransitionHandler, _UILegibilitySettings;
 @protocol SBIconListLayout, SBIconListLayoutDelegate, SBIconListLayoutProvider, SBIconListViewDragDelegate, SBIconViewProviding;
 
 @interface SBIconListView : UIView <PTSettingsKeyObserver, SBIconListModelObserver, BSDescriptionProviding>
@@ -27,6 +27,10 @@
     SBIconListViewDraggingDestinationDelegate *_draggingDelegate;
     struct __CFRunLoopObserver *_layoutRunLoopObserver;
     unsigned long long _predictedIconViewCount;
+    double _desiredLaserPaddingX;
+    double _desiredLaserPaddingY;
+    _Bool _laserPadUsesAllAvailableSpace;
+    SBHIconSettings *_iconSettings;
     _Bool _editing;
     _Bool _layoutReversed;
     _Bool _pausesIconsForScrolling;
@@ -93,6 +97,8 @@
 - (void)iconList:(id)arg1 didRemoveIcon:(id)arg2;
 - (void)iconList:(id)arg1 didReplaceIcon:(id)arg2 withIcon:(id)arg3;
 - (void)iconList:(id)arg1 didAddIcon:(id)arg2;
+- (struct UIEdgeInsets)cursorHitTestingInsetsForIconSpacing:(struct CGSize)arg1;
+- (void)_applyIconPaddingSettings;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (_Bool)_allowsFocusToLeaveViaHeading:(unsigned long long)arg1;
 - (void)willRotateWithTransitionCoordinator:(id)arg1;

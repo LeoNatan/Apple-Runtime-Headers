@@ -173,6 +173,7 @@
 - (void)_updateBackdropType;
 - (void)_updateHomeScreenContentRequirement;
 - (void)_updateWallpaperStyle;
+- (void)_updateHomeScreenCursorInteractions;
 - (void)handleReopenClosedWindowsButtonTapped:(id)arg1;
 - (void)_handlePlusButtonTapped:(id)arg1;
 - (_Bool)_shouldItemContainersUseDarkLabels;

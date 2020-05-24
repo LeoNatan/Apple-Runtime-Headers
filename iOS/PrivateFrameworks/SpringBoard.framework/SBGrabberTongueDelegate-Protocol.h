@@ -6,7 +6,7 @@
 
 #import <SpringBoard/NSObject-Protocol.h>
 
-@class SBGrabberTongue, UIGestureRecognizer, UIPanGestureRecognizer, UITouch;
+@class SBGrabberTongue, SBIndirectPanGestureRecognizer, UIGestureRecognizer, UIPanGestureRecognizer, UITouch;
 
 @protocol SBGrabberTongueDelegate <NSObject>
 - (_Bool)grabberTongue:(SBGrabberTongue *)arg1 shouldShowTongueOnFirstSwipeWithEdgeLocation:(double)arg2;
@@ -14,6 +14,8 @@
 
 @optional
 - (_Bool)shouldSuppressTongueViewForGrabberTongue:(SBGrabberTongue *)arg1;
+- (unsigned long long)indirectPanSystemGestureTypeForGrabberTongue:(SBGrabberTongue *)arg1;
+- (SBIndirectPanGestureRecognizer *)indirectPanGestureRecognizerForGrabberTongue:(SBGrabberTongue *)arg1;
 - (UIPanGestureRecognizer *)customGestureRecognizerForGrabberTongue:(SBGrabberTongue *)arg1;
 - (void)grabberTongueDidPresentInteractively:(SBGrabberTongue *)arg1 withDistance:(double)arg2 andVelocity:(double)arg3;
 - (void)grabberTongueWillPresentInteractively:(SBGrabberTongue *)arg1 withDistance:(double)arg2 andVelocity:(double)arg3;

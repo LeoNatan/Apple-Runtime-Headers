@@ -11,6 +11,7 @@
 + (id)brc_daemonAccessDisabledError;
 + (id)brc_errorWithDomain:(id)arg1 code:(long long)arg2 underlyingError:(id)arg3;
 - (int)brc_syncOperationErrorKind;
+- (id)brc_telemetryReportableErrorWithRecordName:(id *)arg1;
 - (id)brc_cloudKitErrorMessage;
 - (id)brc_description;
 - (id)brc_wrappedError;

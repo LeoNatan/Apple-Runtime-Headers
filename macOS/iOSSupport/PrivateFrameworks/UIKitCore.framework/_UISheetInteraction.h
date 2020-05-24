@@ -52,6 +52,7 @@
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) long long indexOfCurrentDetent; // @synthesize indexOfCurrentDetent=_indexOfCurrentDetent;
 @property(copy, nonatomic) NSArray *detents; // @synthesize detents=_detents;
+- (double)_currentRubberBandCoefficient;
 - (id)_currentDragPanGesture;
 - (void)draggingCancelledInSource:(id)arg1;
 - (void)draggingEndedInSource:(id)arg1 withVelocity:(double)arg2;

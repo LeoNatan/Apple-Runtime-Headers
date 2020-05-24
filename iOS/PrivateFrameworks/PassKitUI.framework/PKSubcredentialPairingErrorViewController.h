@@ -15,7 +15,6 @@
 @interface PKSubcredentialPairingErrorViewController : UIViewController <PKExplanationViewDelegate, PKSubcredentialPairingFlowControllerOperation>
 {
     PKExplanationView *_explainationView;
-    long long _errorCode;
     _Bool _isAdvancing;
     id <PKSubcredentialPairingFlowControllerProtocol> _flowController;
     PKSubcredentialPairingFlowControllerContext *_provisioningContext;
@@ -27,6 +26,7 @@
 @property(readonly, nonatomic) _Bool suppressFieldDetect;
 - (void)explanationViewDidSelectContinue:(id)arg1;
 - (void)cancelButtonPressed;
+- (void)configureExplanationViewWithError:(id)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 @property(readonly, nonatomic) unsigned long long operation;

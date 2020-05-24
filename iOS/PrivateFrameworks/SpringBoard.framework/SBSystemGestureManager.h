@@ -9,7 +9,7 @@
 #import <SpringBoard/BSDescriptionProviding-Protocol.h>
 #import <SpringBoard/UIGestureRecognizerDelegate-Protocol.h>
 
-@class FBSDisplayIdentity, NSMutableDictionary, NSMutableSet, NSSet, NSString, UIGestureRecognizer;
+@class FBSDisplayIdentity, NSMutableDictionary, NSMutableSet, NSSet, NSString, SBIndirectTouchLifecycleMonitor, UIGestureRecognizer;
 
 @interface SBSystemGestureManager : NSObject <UIGestureRecognizerDelegate, BSDescriptionProviding>
 {
@@ -24,10 +24,12 @@
     NSSet *_gesturesPreventedByStylus;
     UIGestureRecognizer *_stylusPriorityRecognizer;
     _Bool _systemGesturesDisabledForAccessibility;
+    SBIndirectTouchLifecycleMonitor *_indirectTouchLifecycleMonitor;
 }
 
 + (id)mainDisplayManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SBIndirectTouchLifecycleMonitor *indirectTouchLifecycleMonitor; // @synthesize indirectTouchLifecycleMonitor=_indirectTouchLifecycleMonitor;
 @property(retain, nonatomic) NSSet *gesturesPreventedByStylus; // @synthesize gesturesPreventedByStylus=_gesturesPreventedByStylus;
 @property(nonatomic, getter=areSystemGesturesDisabledForAccessibility) _Bool systemGesturesDisabledForAccessibility; // @synthesize systemGesturesDisabledForAccessibility=_systemGesturesDisabledForAccessibility;
 - (id)acquireSystemGestureDisableAssertionForReason:(id)arg1 exceptSystemGestureTypes:(id)arg2;

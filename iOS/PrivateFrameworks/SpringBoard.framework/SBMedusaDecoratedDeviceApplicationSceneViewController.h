@@ -10,11 +10,12 @@
 #import <SpringBoard/SBMedusaDecoratedDeviceApplicationSceneViewControlling-Protocol.h>
 #import <SpringBoard/SBMedusaDecoratedDeviceApplicationSceneViewControlling_Internal-Protocol.h>
 #import <SpringBoard/SBSceneViewStatusBarAssertionObserver-Protocol.h>
+#import <SpringBoard/SBSystemCursorInteractionDelegate-Protocol.h>
 
 @class BSCornerRadiusConfiguration, MTLumaDodgePillSettings, NSHashTable, NSMutableSet, NSString, SBApplicationBlurContentView, SBAsymmetricalCornerRadiusWrapperView, SBDeviceApplicationSceneHandle, SBDeviceApplicationSceneViewController, SBHomeGrabberView, SBInlineAppExposeContainerViewController, SBMedusaSettings, SBNubView, SBSceneHandle, SBSceneViewStatusBarAssertion, UIDropInteraction, UIView;
 @protocol SBApplicationSceneViewControllingStatusBarDelegate, SBScenePlaceholderContentContext;
 
-@interface SBMedusaDecoratedDeviceApplicationSceneViewController : UIViewController <SBSceneViewStatusBarAssertionObserver, SBInlineAppExposeContainerViewControllerDelegate, SBMedusaDecoratedDeviceApplicationSceneViewControlling_Internal, SBMedusaDecoratedDeviceApplicationSceneViewControlling>
+@interface SBMedusaDecoratedDeviceApplicationSceneViewController : UIViewController <SBSceneViewStatusBarAssertionObserver, SBInlineAppExposeContainerViewControllerDelegate, SBSystemCursorInteractionDelegate, SBMedusaDecoratedDeviceApplicationSceneViewControlling_Internal, SBMedusaDecoratedDeviceApplicationSceneViewControlling>
 {
     SBDeviceApplicationSceneHandle *_deviceApplicationSceneHandle;
     SBDeviceApplicationSceneViewController *_deviceApplicationSceneViewController;
@@ -72,6 +73,9 @@
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)loadView;
 - (void)viewWillLayoutSubviews;
+- (id)styleForRegion:(id)arg1 forView:(id)arg2;
+- (struct UIEdgeInsets)cursorInteractionHitTestInsetsForView:(id)arg1;
+- (_Bool)shouldBeginCursorInteractionAtLocation:(struct CGPoint)arg1 forView:(id)arg2;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidEndWithTransitionContext:(id)arg2;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionWillEndWithTransitionContext:(id)arg2;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidBeginWithTransitionContext:(id)arg2;

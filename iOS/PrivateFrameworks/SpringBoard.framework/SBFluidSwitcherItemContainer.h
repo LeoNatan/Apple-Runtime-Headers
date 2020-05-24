@@ -11,7 +11,7 @@
 #import <SpringBoard/UIGestureRecognizerDelegate-Protocol.h>
 #import <SpringBoard/UIScrollViewDelegate-Protocol.h>
 
-@class NSArray, NSString, SBAppSwitcherPageView, SBAppSwitcherSettings, SBFFluidBehaviorSettings, SBFailureNotifyingTapGestureRecognizer, SBFluidSwitcherIconOverlayView, SBFluidSwitcherItemContainerHeaderView, SBFluidSwitcherTouchPassThroughScrollView, UILongPressGestureRecognizer, UITapGestureRecognizer, UIView;
+@class NSArray, NSString, SBAppSwitcherPageView, SBAppSwitcherSettings, SBFFluidBehaviorSettings, SBFailureNotifyingTapGestureRecognizer, SBFluidSwitcherIconOverlayView, SBFluidSwitcherItemContainerHeaderView, SBFluidSwitcherTouchPassThroughScrollView, SBMedusaSettings, UIHoverGestureRecognizer, UILongPressGestureRecognizer, UITapGestureRecognizer, UIView;
 @protocol SBAppSwitcherPageContentView, SBFluidSwitcherItemContainerDelegate;
 
 @interface SBFluidSwitcherItemContainer : SBFTouchPassThroughView <UIScrollViewDelegate, UIGestureRecognizerDelegate, SBFailureNotifyingTapGestureRecognizerDelegate, SBAppPlatterDragSourceViewProviding>
@@ -31,17 +31,21 @@
     UITapGestureRecognizer *_doubleTapGestureRecognizer;
     SBFFluidBehaviorSettings *_squishSettings;
     SBAppSwitcherSettings *_settings;
+    SBMedusaSettings *_medusaSettings;
     _Bool _sentKillRequest;
     struct CGPoint _highlightTapDownLocation;
-    _Bool _highlighted;
     _Bool _animatingPageViewScale;
     double _killProgressForCurrentDecelerationTarget;
+    UIHoverGestureRecognizer *_hoverGestureRecognizer;
     _Bool _dragging;
     _Bool _clipsToUnobscuredMargin;
     _Bool _killable;
     _Bool _shouldScaleOverlayToFillBounds;
     _Bool _active;
     _Bool _visible;
+    _Bool _cursorInteractionEnabled;
+    _Bool _highlightedFromDirectTouch;
+    _Bool _highlightedFromCursorHover;
     double _unobscuredMargin;
     unsigned long long _killAxis;
     double _minimumTranslationForKillingContainer;
@@ -52,8 +56,11 @@
 
 + (double)preferredRestingVisibleMarginForBounds:(struct CGRect)arg1;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isHighlightedFromCursorHover) _Bool highlightedFromCursorHover; // @synthesize highlightedFromCursorHover=_highlightedFromCursorHover;
+@property(nonatomic, getter=isHighlightedFromDirectTouch) _Bool highlightedFromDirectTouch; // @synthesize highlightedFromDirectTouch=_highlightedFromDirectTouch;
 @property(copy, nonatomic) NSArray *headerItems; // @synthesize headerItems=_headerItems;
 @property(copy, nonatomic) NSString *additionalDescriptionDebugText; // @synthesize additionalDescriptionDebugText=_additionalDescriptionDebugText;
+@property(nonatomic, getter=isCursorInteractionEnabled) _Bool cursorInteractionEnabled; // @synthesize cursorInteractionEnabled=_cursorInteractionEnabled;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(nonatomic) double contentAlpha; // @synthesize contentAlpha=_contentAlpha;
@@ -76,6 +83,7 @@
 - (struct SBDragPreviewShadowParameters)initialDiffuseShadowParameters;
 - (id)initialCornerRadiusConfiguration;
 - (id)sourceView;
+- (void)_handleHoverGesture:(id)arg1;
 - (_Bool)_scrollViewShouldPanGestureTryToBegin:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)scrollViewWillBeginDragging:(id)arg1;
@@ -83,8 +91,9 @@
 - (void)gestureRecognizerTransitionedToFailed:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (struct CGAffineTransform)_squishedPageViewScaleTransform;
-@property(nonatomic, getter=isHighlighted) _Bool highlighted;
+- (double)_scaleForHighlightFromCursorHover;
+- (double)_scaleForHighlightFromDirectTouch;
+- (void)_updateTransformForCurrentHighlight;
 - (void)_handleSelectionHighlightGesture:(id)arg1;
 - (void)_handlePageViewPressDown:(id)arg1;
 - (void)_handlePageViewTap:(id)arg1;
@@ -93,8 +102,6 @@
 - (void)_updateHeaderAnimated:(_Bool)arg1;
 - (double)_scaleTransformFactor;
 - (double)_inverseScaleTransformFactor;
-- (void)_setKillingDarkeningAlpha:(double)arg1;
-- (double)_killingDarkeningAlpha;
 - (_Bool)_isTitleIconVisible;
 - (struct CGPoint)_CGPointFromScalarBasedOnKillAxis:(double)arg1;
 - (struct CGSize)_CGSizeFromLengthBasedOnKillAxis:(double)arg1;

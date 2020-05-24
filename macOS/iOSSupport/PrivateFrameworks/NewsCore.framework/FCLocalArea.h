@@ -10,18 +10,23 @@
 
 @interface FCLocalArea : NSObject
 {
+    BOOL _isBboxValid;
     NSArray *_regionIds;
     NSString *_identifier;
     NSArray *_bbox;
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL isBboxValid; // @synthesize isBboxValid=_isBboxValid;
 @property(retain, nonatomic) NSArray *bbox; // @synthesize bbox=_bbox;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSArray *regionIds; // @synthesize regionIds=_regionIds;
-- (BOOL)containsLocation:(id)arg1;
+- (id)description;
 - (BOOL)isValue:(double)arg1 betweenValue:(double)arg2 andValue:(double)arg3;
+- (BOOL)containsPointAtLatitude:(double)arg1 longitude:(double)arg2;
+- (BOOL)containsLocation:(id)arg1;
 - (id)init;
+- (id)initWithIdentifier:(id)arg1 bbox:(id)arg2 regionIDs:(id)arg3;
 - (id)initWithDictionary:(id)arg1;
 
 @end

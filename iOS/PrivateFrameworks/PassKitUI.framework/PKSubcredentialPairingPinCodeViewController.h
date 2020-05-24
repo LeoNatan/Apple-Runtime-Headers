@@ -10,13 +10,15 @@
 #import <PassKitUI/PKPinCodeFieldDelegate-Protocol.h>
 #import <PassKitUI/PKSubcredentialPairingFlowControllerOperation-Protocol.h>
 
-@class NSString, PKExplanationView, PKPinCodeField, PKSubcredentialPairingFlowControllerContext, UIBarButtonItem;
+@class NSString, PKExplanationView, PKPinCodeField, PKSubcredentialPairingFlowControllerContext, UIBarButtonItem, UILabel;
 @protocol PKSubcredentialPairingFlowControllerProtocol, PKSubcredentialProvisioningFlowController;
 
 @interface PKSubcredentialPairingPinCodeViewController : UIViewController <PKPinCodeFieldDelegate, PKExplanationViewDelegate, PKSubcredentialPairingFlowControllerOperation>
 {
     PKExplanationView *_explainationView;
     PKPinCodeField *_pinCodeView;
+    UILabel *_helpLabel;
+    struct CGSize _keyboardSize;
     UIBarButtonItem *_nextButton;
     _Bool _isAdvancing;
     PKSubcredentialPairingFlowControllerContext *_provisioningContext;
@@ -29,6 +31,7 @@
 @property(readonly, nonatomic) _Bool suppressFieldDetect;
 - (void)explanationViewDidUpdateLayout:(id)arg1;
 - (void)pinCodeTextFieldWasUpdated:(id)arg1 isComplete:(_Bool)arg2;
+- (id)localizedIssuerName;
 - (void)resetPinCode;
 - (void)cancelButtonPressed;
 - (void)nextButtonPressed;

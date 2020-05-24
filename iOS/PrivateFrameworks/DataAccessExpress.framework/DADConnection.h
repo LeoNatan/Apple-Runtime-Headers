@@ -42,6 +42,7 @@
 - (void)dealloc;
 - (id)_init;
 - (id)init;
+- (void)externalIdentificationInfoForAccountID:(id)arg1 resultsBlock:(CDUnknownBlockType)arg2;
 - (void)externalIdentificationForAccountID:(id)arg1 resultsBlock:(CDUnknownBlockType)arg2;
 - (void)_calendarDirectorySearchFinished:(id)arg1;
 - (void)_calendarDirectorySearchReturnedResults:(id)arg1;

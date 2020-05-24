@@ -404,6 +404,7 @@ struct _HDR10TMParam {
     float tm_Tmin_nits;
     float tm_Tmax_nits;
     float tm_Tend_nits;
+    float Tend_nits;
     float tm_Smin_C;
     float tm_Smax_C;
     float tm_Send_C;
@@ -851,7 +852,7 @@ typedef struct {
     struct ToneCurve_Control tcControl;
     CDStruct_d76a58a8 hdrControl;
     CDStruct_52986d3b infoFrameData;
-} CDStruct_2b0c1162;
+} CDStruct_ddd50b25;
 
 typedef struct {
     int version;

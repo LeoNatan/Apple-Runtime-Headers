@@ -50,7 +50,7 @@
 - (_Bool)isMonthlyChallengeOfTypeAvailable:(unsigned long long)arg1;
 - (_Bool)isGoalValueForMonthlyChallengeTypeValid:(unsigned long long)arg1;
 - (id)customPlaceholderValuesForTemplate:(id)arg1;
-- (id)_monthStringFromTemplateName:(id)arg1;
+- (id)_yearMonthStringFromTemplateName:(id)arg1;
 - (id)_modelsDirectoryBasePathForTemplate:(id)arg1;
 - (id)_monthlyAchievementsAssetsDirectoryBasePath;
 - (id)stickerBundleURLForTemplate:(id)arg1;

@@ -19,6 +19,7 @@
     NSLock *_logLock;
 }
 
++ (id)taskWithLaunchPath:(id)arg1 arguments:(id)arg2 currentDirectoryPath:(id)arg3 logWithPrefix:(id)arg4 qualityOfService:(unsigned int)arg5;
 @property BOOL logOnlyStandardError; // @synthesize logOnlyStandardError=_logOnlyStandardError;
 - (BOOL)_processTaskOutput:(id)arg1;
 - (void)_flushTaskOutput;

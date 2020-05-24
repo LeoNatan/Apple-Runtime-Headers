@@ -63,6 +63,8 @@
     NSArray *_allowedStorefrontIDs;
     NSArray *_relatedArticleIDs;
     NSArray *_moreFromPublisherArticleIDs;
+    NSArray *_publisherSpecifiedArticleIDs;
+    NSString *_articleRecirculationConfigJSON;
     unsigned long long _storyType;
     FCTopStoriesStyleConfiguration *_storyStyle;
     long long _minimumNewsVersion;
@@ -108,6 +110,8 @@
 - (id)storyStyle;
 - (void)setStoryType:(unsigned long long)arg1;
 - (unsigned long long)storyType;
+- (id)articleRecirculationConfigJSON;
+- (id)publisherSpecifiedArticleIDs;
 - (id)moreFromPublisherArticleIDs;
 - (id)relatedArticleIDs;
 - (_Bool)isFeatureCandidate;

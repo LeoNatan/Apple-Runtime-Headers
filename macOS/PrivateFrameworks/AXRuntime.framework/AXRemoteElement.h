@@ -25,6 +25,7 @@
 + (BOOL)registerRemoteElement:(id)arg1;
 + (id)remoteElementsForContextId:(unsigned int)arg1;
 + (id)remoteElementsForBlock:(CDUnknownBlockType)arg1;
++ (id)registeredRemoteElements;
 + (id)remoteElementForBlock:(CDUnknownBlockType)arg1;
 + (BOOL)_isSerializableAccessibilityElement;
 + (void)initialize;

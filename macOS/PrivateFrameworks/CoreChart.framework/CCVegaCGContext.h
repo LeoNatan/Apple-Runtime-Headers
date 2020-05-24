@@ -23,6 +23,7 @@
     struct CGAffineTransform _currentTransform;
     double _lineDashOffset;
     NSString *_font;
+    NSString *_globalCompositeOperation;
     struct CGContext *_bitmapContext;
     double _width;
     double _height;
@@ -68,6 +69,7 @@
 @property double lineWidth;
 @property(retain) NSString *lineJoin;
 @property(retain) NSString *lineCap;
+@property(retain) NSString *globalCompositeOperation;
 @property double globalAlpha;
 @property(retain) NSString *font;
 @property(retain) JSValue *fillStyle;

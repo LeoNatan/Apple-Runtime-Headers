@@ -24,6 +24,11 @@
 - (unsigned long long)_mapkit_countOfSet:(id)arg1 minusSubset:(id)arg2;
 @property(readonly, retain, nonatomic) MKMapView *_mapKit_mapView;
 @property(readonly, retain, nonatomic) CALayer *_mapkit_currentLayer;
+- (void)_mapkit_removeCursorInteraction;
+- (void)_mapkit_addCursorInteractionWithDelegate:(id)arg1;
+- (void)_mapkit_addCursorInteraction;
+- (id)_mapkit_currentCursorInteraction;
+@property(readonly, nonatomic) _Bool _mapkit_hasCursorInteraction;
 - (struct CGRect)_mapkit_translateRect:(struct CGRect)arg1 ifNeededFromSingleEdge:(unsigned long long)arg2;
 - (struct UIEdgeInsets)_mapkit_userInterfaceOnlySafeAreaInsets;
 @property(readonly, nonatomic) _Bool _mapkit_isDarkModeEnabled;

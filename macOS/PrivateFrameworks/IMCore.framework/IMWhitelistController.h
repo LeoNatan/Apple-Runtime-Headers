@@ -13,6 +13,7 @@
 
 @interface IMWhitelistController : NSObject <TUCallProviderManagerDelegate>
 {
+    BOOL _isRunningFromMacMessagesApp;
     TUCallProviderManager *_callProviderManager;
     NSObject<OS_dispatch_queue> *_screenTimeDispatchQueue;
     NSSet *_emergencyNumbersSet;
@@ -23,6 +24,7 @@
 + (id)STConversation;
 + (BOOL)isContactLimitsFeatureEnabled;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL isRunningFromMacMessagesApp; // @synthesize isRunningFromMacMessagesApp=_isRunningFromMacMessagesApp;
 @property(retain, nonatomic) IMCommLimitsPolicyCache *policyCache; // @synthesize policyCache=_policyCache;
 @property(retain, nonatomic) NSSet *emergencyNumbersSet; // @synthesize emergencyNumbersSet=_emergencyNumbersSet;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *screenTimeDispatchQueue; // @synthesize screenTimeDispatchQueue=_screenTimeDispatchQueue;

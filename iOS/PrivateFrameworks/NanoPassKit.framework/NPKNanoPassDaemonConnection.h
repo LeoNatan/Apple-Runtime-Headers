@@ -24,8 +24,8 @@
 - (CDUnknownBlockType)_errorHandlerWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_remoteObjectProxySynchronous:(_Bool)arg1 withFailureHandler:(CDUnknownBlockType)arg2;
 - (void)noteWillDeleteAccountsSynchronous:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)startSubcredentialProvisioningOnLocalDeviceForInvitationIdentifier:(id)arg1 metadata:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)startSubcredentialProvisioningOnRemoteDeviceForInvitationIdentifier:(id)arg1 metadata:(id)arg2;
+- (void)startSubcredentialProvisioningOnLocalDeviceMatchingInvitation:(id)arg1 shouldFetchAnonymizationSaltFromRemoteDevice:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)startSubcredentialProvisioningOnRemoteDeviceForInvitation:(id)arg1;
 - (id)init;
 
 // Remaining properties

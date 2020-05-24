@@ -41,12 +41,13 @@
 - (id)seamlessOpener:(id)arg1 transitionImageForPreviewItem:(id)arg2 contentRect:(struct CGRect *)arg3;
 - (struct CGRect)seamlessOpener:(id)arg1 sourceFrameOnScreenForPreviewItem:(id)arg2;
 - (void)updateActiveQLDelegate;
-- (void)_updateQLPanelToCurrentSelection:(id)arg1;
+- (BOOL)_updateQLPanelToCurrentSelection:(id)arg1;
 - (id)previewPanel:(id)arg1 previewItemAtIndex:(long long)arg2;
 - (long long)numberOfPreviewItemsInPreviewPanel:(id)arg1;
 - (id)previewPanel:(id)arg1 transitionImageForPreviewItem:(id)arg2 contentRect:(struct CGRect *)arg3;
 - (struct CGRect)previewPanel:(id)arg1 sourceFrameOnScreenForPreviewItem:(id)arg2;
-- (void)quickLookSelectedFiles;
+- (BOOL)quickLookSelectedFiles;
+- (id)downloadedAttachmentsForQuickLook;
 - (BOOL)_shouldShowPlusButton;
 - (BOOL)_shouldShowAddAttachmentsLabel;
 - (void)_launchFilePicker:(id)arg1;

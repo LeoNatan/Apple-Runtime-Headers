@@ -28,6 +28,8 @@
 @property(retain) NSDictionary *textAttributes; // @synthesize textAttributes=_textAttributes;
 @property BOOL resizingEnabled; // @synthesize resizingEnabled=_resizingEnabled;
 - (BOOL)readPasteboard:(id)arg1;
+- (void)_scrollToTopTextView:(id)arg1;
+- (void)scrollToTop;
 - (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)setFieldEditorAllowsVibrancy:(BOOL)arg1;

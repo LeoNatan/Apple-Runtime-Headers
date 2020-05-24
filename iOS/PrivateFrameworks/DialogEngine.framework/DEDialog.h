@@ -20,8 +20,10 @@
 - (_Bool)isSelectable:(id)arg1;
 - (_Bool)validate:(id)arg1;
 @property DESpeakableString *caption;
+- (id)getExpandedCaption:(id)arg1;
 @property DESpeakableString *content;
-@property NSString *id;
+- (id)getExpandedContent:(id)arg1;
+@property(retain) NSString *id;
 - (id)initWithSharedPtr:(shared_ptr_bd7e2fee)arg1;
 - (id)init;
 

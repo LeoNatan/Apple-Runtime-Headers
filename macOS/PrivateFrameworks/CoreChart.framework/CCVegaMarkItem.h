@@ -19,7 +19,7 @@
 
 - (void).cxx_destruct;
 @property(retain) JSValue *mark; // @synthesize mark;
-- (struct CGPath *)callShapeFunction;
+- (struct CGPath *)newPathByCallingShapeFunction;
 - (id)itemAtIndex:(unsigned long long)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) unsigned long long itemCount;
@@ -28,6 +28,9 @@
 @property(readonly) NSArray *strokeDash;
 @property(readonly) NSObject<CCVegaColorOrGradientInterface> *stroke;
 @property(readonly) NSObject<CCVegaColorOrGradientInterface> *fill;
+- (struct CGRect)bounds;
+- (_Bool)defined;
+- (_Bool)getBoolean:(id)arg1 defaultValue:(_Bool)arg2;
 - (id)getObject:(id)arg1 defaultValue:(id)arg2;
 - (id)getString:(id)arg1 defaultValue:(id)arg2;
 - (double)getDouble:(id)arg1 defaultValue:(double)arg2;

@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class MAAsset, MAAssetQuery, NSString;
+@class MAAsset, MAAssetQuery, NSLock, NSMutableArray, NSString;
 
 @interface MobileAssetUpdater : NSObject
 {
     MAAsset *_asset;
     MAAssetQuery *_query;
     NSString *_assetType;
+    NSMutableArray *_alternateAssetTypes;
     NSString *_overrideFile;
     NSString *_purgeOverrideFile;
     BOOL _assetDownloaded;
@@ -20,6 +21,7 @@
     BOOL _overrideApplied;
     BOOL _downloadOnCellularAllowed;
     CDUnknownBlockType _logger;
+    NSLock *_lock;
 }
 
 @property BOOL downloadOnCellularAllowed; // @synthesize downloadOnCellularAllowed=_downloadOnCellularAllowed;
@@ -29,6 +31,7 @@
 @property(readonly) BOOL assetDownloaded; // @synthesize assetDownloaded=_assetDownloaded;
 @property(retain) NSString *purgeOverrideFile; // @synthesize purgeOverrideFile=_purgeOverrideFile;
 @property(retain) NSString *overrideFile; // @synthesize overrideFile=_overrideFile;
+@property(copy, nonatomic) NSMutableArray *alternateAssetTypes; // @synthesize alternateAssetTypes=_alternateAssetTypes;
 @property(retain) NSString *assetType; // @synthesize assetType=_assetType;
 @property(retain) MAAssetQuery *query; // @synthesize query=_query;
 @property(retain) MAAsset *asset; // @synthesize asset=_asset;

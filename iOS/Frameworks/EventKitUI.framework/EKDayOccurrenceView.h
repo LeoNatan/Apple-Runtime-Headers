@@ -8,11 +8,12 @@
 
 #import <EventKitUI/EKDayOccurrenceTravelTimeViewMetricsDelegate-Protocol.h>
 #import <EventKitUI/NSCopying-Protocol.h>
+#import <EventKitUI/_UICursorInteractionDelegate-Protocol.h>
 
-@class EKDayOccurrenceState, EKDayOccurrenceTravelTimeView, EKEvent, NSObject, NSString, UIColor, UIImageView;
+@class EKDayOccurrenceState, EKDayOccurrenceTravelTimeView, EKEvent, NSObject, NSString, UIColor, UIImageView, _UICursorInteraction;
 @protocol EKDayOccurrenceViewDelegate;
 
-@interface EKDayOccurrenceView : UIView <NSCopying, EKDayOccurrenceTravelTimeViewMetricsDelegate>
+@interface EKDayOccurrenceView : UIView <_UICursorInteractionDelegate, NSCopying, EKDayOccurrenceTravelTimeViewMetricsDelegate>
 {
     double _visibleHeight;
     UIImageView *_eventBackgroundView;
@@ -35,6 +36,7 @@
     EKDayOccurrenceState *_currentImageState;
     unsigned long long _invalidatedRequestOptions;
     UIColor *_stagedBackgroundColor;
+    _UICursorInteraction *_cursorInteraction;
     _Bool _isVibrant;
     _Bool _visibleHeightLocked;
     _Bool _selected;
@@ -54,6 +56,7 @@
     _Bool _birthday;
     _Bool _showsTravelTime;
     _Bool _reduceLayoutProcessingForAnimation;
+    _Bool _pointerInteractionDisabled;
     _Bool _touchesAreBeingTracked;
     NSObject<EKDayOccurrenceViewDelegate> *_delegate;
     EKDayOccurrenceView *_selectedCopy;
@@ -92,6 +95,7 @@
 @property(nonatomic) _Bool touchesAreBeingTracked; // @synthesize touchesAreBeingTracked=_touchesAreBeingTracked;
 @property(readonly, nonatomic) EKDayOccurrenceState *currentImageState; // @synthesize currentImageState=_currentImageState;
 @property(nonatomic) double topYBoundaryForText; // @synthesize topYBoundaryForText=_topYBoundaryForText;
+@property(nonatomic) _Bool pointerInteractionDisabled; // @synthesize pointerInteractionDisabled=_pointerInteractionDisabled;
 @property(nonatomic) double bottomPinningProximity; // @synthesize bottomPinningProximity=_bottomPinningProximity;
 @property(nonatomic) _Bool reduceLayoutProcessingForAnimation; // @synthesize reduceLayoutProcessingForAnimation=_reduceLayoutProcessingForAnimation;
 @property(nonatomic) long long occurrenceBackgroundStyle; // @synthesize occurrenceBackgroundStyle=_occurrenceBackgroundStyle;
@@ -122,6 +126,9 @@
 @property(nonatomic) _Bool isVibrant; // @synthesize isVibrant=_isVibrant;
 @property(nonatomic) __weak EKDayOccurrenceView *selectedCopy; // @synthesize selectedCopy=_selectedCopy;
 @property(nonatomic) __weak NSObject<EKDayOccurrenceViewDelegate> *delegate; // @synthesize delegate=_delegate;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2;
+- (id)cursorInteraction:(id)arg1 regionForRequest:(id)arg2 defaultRegion:(id)arg3;
+- (void)_setUpInteraction;
 - (long long)_compareOccurrenceViewLeftToRight:(id)arg1;
 - (_Bool)_isBelowAllDayOccurrenceView:(id)arg1;
 - (_Bool)_isBelowOccurrenceView:(id)arg1 overlapToIgnore:(double)arg2;

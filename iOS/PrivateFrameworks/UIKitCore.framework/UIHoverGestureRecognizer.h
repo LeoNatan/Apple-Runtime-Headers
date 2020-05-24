@@ -13,9 +13,13 @@
     UIHoverEvent *_currentHoverEvent;
     UITouch *_currentTouch;
     _Bool _pausesWhilePanning;
+    long long _previousTrackpadFingerDownCount;
+    long long _trackpadFingerDownCount;
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=_trackpadFingerDownCount) long long trackpadFingerDownCount; // @synthesize trackpadFingerDownCount=_trackpadFingerDownCount;
+@property(readonly, nonatomic, getter=_previousTrackpadFingerDownCount) long long previousTrackpadFingerDownCount; // @synthesize previousTrackpadFingerDownCount=_previousTrackpadFingerDownCount;
 @property(nonatomic, getter=_pausesWhilePanning, setter=_setPausesWhilePanning:) _Bool pausesWhilePanning; // @synthesize pausesWhilePanning=_pausesWhilePanning;
 - (_Bool)_paused;
 - (_Bool)canBePreventedByGestureRecognizer:(id)arg1;

@@ -53,6 +53,7 @@
 @property(nonatomic) long long storeArtistID;
 @property(nonatomic) long long storeAlbumID;
 @property(nonatomic) long long numberOfChildren;
+@property(nonatomic, getter=isLoading) BOOL loading;
 @property(nonatomic, getter=isSteerable) BOOL steerable;
 @property(nonatomic, getter=isSharableItem) BOOL sharableItem;
 @property(nonatomic, getter=isAlwaysLiveItem) BOOL alwaysLiveItem;

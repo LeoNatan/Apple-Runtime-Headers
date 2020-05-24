@@ -29,6 +29,7 @@
 - (double)minViewportWidthWithValue:(id)arg1 withType:(int)arg2;
 
 // Remaining properties
+@property(readonly, nonatomic) NSString *configurationKey; // @dynamic configurationKey;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

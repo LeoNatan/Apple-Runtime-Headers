@@ -6,12 +6,13 @@
 
 #import <UIKitCore/UIView.h>
 
+#import <UIKitCore/UIPointerInteractionDelegate-Protocol.h>
 #import <UIKitCore/_UINavigationBarTransitionContextParticipant-Protocol.h>
 
-@class NSArray, NSDictionary, NSString, _UINavigationBarLargeTitleViewLayout, _UINavigationBarTransitionContext;
+@class NSArray, NSDictionary, NSString, _UINavigationBarLargeTitleViewLayout, _UINavigationBarTransitionContext, _UIPointerInteractionAssistant;
 
 __attribute__((visibility("hidden")))
-@interface _UINavigationBarLargeTitleView : UIView <_UINavigationBarTransitionContextParticipant>
+@interface _UINavigationBarLargeTitleView : UIView <UIPointerInteractionDelegate, _UINavigationBarTransitionContextParticipant>
 {
     _UINavigationBarTransitionContext *_transitionContext;
     NSArray *_titleCandidates;
@@ -19,6 +20,7 @@ __attribute__((visibility("hidden")))
     BOOL _providesExtraSpaceForExcessiveLineHeights;
     BOOL _alignAccessoryViewToTitleBaseline;
     NSDictionary *_effectiveTitleAttributes;
+    _UIPointerInteractionAssistant *_assistant;
     long long _titleType;
     NSString *_title;
     NSArray *_alternateTitles;
@@ -40,6 +42,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *alternateTitles; // @synthesize alternateTitles=_alternateTitles;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) long long titleType; // @synthesize titleType=_titleType;
+@property(nonatomic) __weak _UIPointerInteractionAssistant *assistant; // @synthesize assistant=_assistant;
 - (void)adoptNewLayout;
 - (void)adoptLayout:(id)arg1;
 - (void)clearTransitionContext;
@@ -48,6 +51,10 @@ __attribute__((visibility("hidden")))
 - (void)recordToStateForTransition:(id)arg1;
 - (void)prepareToRecordToState:(id)arg1;
 - (void)recordFromStateForTransition:(id)arg1;
+- (void)pointerInteraction:(id)arg1 willExitRegion:(id)arg2 animator:(id)arg3;
+- (void)pointerInteraction:(id)arg1 willEnterRegion:(id)arg2 animator:(id)arg3;
+- (id)pointerInteraction:(id)arg1 styleForRegion:(id)arg2;
+- (id)pointerInteraction:(id)arg1 regionForRequest:(id)arg2 defaultRegion:(id)arg3;
 - (void)_clearAssistants;
 - (void)_setAssistants;
 - (void)traitCollectionDidChange:(id)arg1;

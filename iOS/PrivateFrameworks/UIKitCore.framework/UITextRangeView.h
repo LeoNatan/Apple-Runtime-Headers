@@ -6,13 +6,14 @@
 
 #import <UIKitCore/UIView.h>
 
+#import <UIKitCore/UIPointerInteractionDelegate-Protocol.h>
 #import <UIKitCore/UITextRangeAdjustmentInteractionDelegate-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString, UIResponder, UISelectionGrabber, UITextRangeAdjustmentInteraction, UITextSelectionView, UITouch;
+@class NSArray, NSMutableArray, NSString, UIPointerInteraction, UIResponder, UISelectionGrabber, UITextRangeAdjustmentInteraction, UITextSelectionView, UITouch;
 @protocol UITextInput;
 
 __attribute__((visibility("hidden")))
-@interface UITextRangeView : UIView <UITextRangeAdjustmentInteractionDelegate>
+@interface UITextRangeView : UIView <UIPointerInteractionDelegate, UITextRangeAdjustmentInteractionDelegate>
 {
     UITextSelectionView *m_selectionView;
     UIResponder<UITextInput> *m_container;
@@ -34,6 +35,7 @@ __attribute__((visibility("hidden")))
     _Bool m_scaling;
     _Bool m_rotating;
     _Bool m_inputViewIsChanging;
+    UIPointerInteraction *_pointerInteraction;
     _Bool m_isClearingRange;
     _Bool m_shouldStayVisible;
     _Bool _baseIsStart;
@@ -66,6 +68,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGPoint basePoint; // @synthesize basePoint=m_basePoint;
 @property(nonatomic) struct CGRect endEdge; // @synthesize endEdge=m_endEdge;
 @property(nonatomic) struct CGRect startEdge; // @synthesize startEdge=m_startEdge;
+- (id)pointerInteraction:(id)arg1 styleForRegion:(id)arg2;
+- (id)pointerInteraction:(id)arg1 regionForRequest:(id)arg2 defaultRegion:(id)arg3;
 @property(readonly, nonatomic) _Bool areSelectionRectsVisible;
 - (struct CGPoint)convertFromMagnifierPoint:(struct CGPoint)arg1;
 - (struct CGPoint)magnifierPoint;

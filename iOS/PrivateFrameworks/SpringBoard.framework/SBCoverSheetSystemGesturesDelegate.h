@@ -6,17 +6,21 @@
 
 #import <objc/NSObject.h>
 
+#import <SpringBoard/SBIndirectPanGestureRecognizerOrientationProviding-Protocol.h>
 #import <SpringBoard/SBSystemGestureRecognizerDelegate-Protocol.h>
 #import <SpringBoard/SBTouchTemplateGestureRecognizerDelegate-Protocol.h>
 
-@class CSCoverSheetDismissGestureSettings, NSString, UIGestureRecognizer, UIPanGestureRecognizer, UIViewController;
+@class CSCoverSheetDismissGestureSettings, NSString, SBFluidScrunchGestureRecognizer, SBIndirectPanGestureRecognizer, UIGestureRecognizer, UIPanGestureRecognizer, UIViewController;
 @protocol SBCoverSheetSystemGestureDelegatePositionProviding;
 
-@interface SBCoverSheetSystemGesturesDelegate : NSObject <SBSystemGestureRecognizerDelegate, SBTouchTemplateGestureRecognizerDelegate>
+@interface SBCoverSheetSystemGesturesDelegate : NSObject <SBSystemGestureRecognizerDelegate, SBTouchTemplateGestureRecognizerDelegate, SBIndirectPanGestureRecognizerOrientationProviding>
 {
     int _syntheticAppearState;
     id <SBCoverSheetSystemGestureDelegatePositionProviding> _positionProvider;
     UIPanGestureRecognizer *_presentGestureRecognizer;
+    SBIndirectPanGestureRecognizer *_indirectPresentGestureRecognizer;
+    SBIndirectPanGestureRecognizer *_indirectDismissGestureRecognizer;
+    SBFluidScrunchGestureRecognizer *_scrunchDismissGestureRecognizer;
     UIViewController *_viewController;
     UIGestureRecognizer *_dismissGestureRecognizer;
     UIGestureRecognizer *_dismissAddendumGestureRecognizer;
@@ -31,6 +35,9 @@
 @property(nonatomic) __weak UIGestureRecognizer *dismissGestureRecognizer; // @synthesize dismissGestureRecognizer=_dismissGestureRecognizer;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) int syntheticAppearState; // @synthesize syntheticAppearState=_syntheticAppearState;
+@property(retain, nonatomic) SBFluidScrunchGestureRecognizer *scrunchDismissGestureRecognizer; // @synthesize scrunchDismissGestureRecognizer=_scrunchDismissGestureRecognizer;
+@property(retain, nonatomic) SBIndirectPanGestureRecognizer *indirectDismissGestureRecognizer; // @synthesize indirectDismissGestureRecognizer=_indirectDismissGestureRecognizer;
+@property(retain, nonatomic) SBIndirectPanGestureRecognizer *indirectPresentGestureRecognizer; // @synthesize indirectPresentGestureRecognizer=_indirectPresentGestureRecognizer;
 @property(retain, nonatomic) UIPanGestureRecognizer *presentGestureRecognizer; // @synthesize presentGestureRecognizer=_presentGestureRecognizer;
 @property(nonatomic) __weak id <SBCoverSheetSystemGestureDelegatePositionProviding> positionProvider; // @synthesize positionProvider=_positionProvider;
 - (_Bool)isAnyGestureActivelyRecognized;
@@ -43,6 +50,7 @@
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)viewForSystemGestureRecognizer:(id)arg1;
+- (long long)indirectPanEffectiveInterfaceOrientation;
 - (void)setPresentGestureFailureRequirements:(id)arg1;
 - (_Bool)_areAnyGesturesRecognizedInSet:(id)arg1;
 - (id)dismissGestures;

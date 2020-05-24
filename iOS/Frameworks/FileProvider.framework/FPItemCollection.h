@@ -9,7 +9,7 @@
 #import <FileProvider/FPCollectionDataSourceDelegate-Protocol.h>
 #import <FileProvider/FPReachabilityObserver-Protocol.h>
 
-@class FPAppRegistry, FPPacer, NSArray, NSMutableDictionary, NSMutableSet, NSPredicate, NSString, _FPItemList;
+@class FPAppRegistry, FPItemID, FPPacer, NSArray, NSMutableDictionary, NSMutableSet, NSPredicate, NSString, _FPItemList;
 @protocol FPCollectionDataSource, FPItemCollectionIndexPathBasedDelegate, FPItemCollectionItemIDBasedDelegate, FPItemCollectionMinimalDelegate, OS_dispatch_queue;
 
 @interface FPItemCollection : NSObject <FPReachabilityObserver, FPCollectionDataSourceDelegate>
@@ -35,6 +35,7 @@
     _Bool _showHiddenFiles;
     _Bool _observing;
     id <FPItemCollectionMinimalDelegate> _delegate;
+    FPItemID *_enumeratedItemID;
     NSPredicate *_additionalItemFilteringPredicate;
     NSObject<OS_dispatch_queue> *_updateQueue;
     FPPacer *_updatePacer;
@@ -56,6 +57,7 @@
 @property(nonatomic) _Bool observing; // @synthesize observing=_observing;
 @property(retain, nonatomic) NSPredicate *additionalItemFilteringPredicate; // @synthesize additionalItemFilteringPredicate=_additionalItemFilteringPredicate;
 @property(readonly, nonatomic) id <FPCollectionDataSource> dataSource; // @synthesize dataSource=_dataSource;
+@property(readonly) FPItemID *enumeratedItemID; // @synthesize enumeratedItemID=_enumeratedItemID;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workingQueue; // @synthesize workingQueue=_workingQueue;
 @property(readonly, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(nonatomic) _Bool showHiddenFiles; // @synthesize showHiddenFiles=_showHiddenFiles;

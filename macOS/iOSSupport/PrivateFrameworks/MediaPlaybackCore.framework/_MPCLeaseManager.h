@@ -8,16 +8,17 @@
 
 #import <MediaPlaybackCore/MPCPlaybackEngineEventObserving-Protocol.h>
 
-@class MPCPlaybackEngine, NSMutableSet, NSString;
+@class MPCPlaybackEngine, NSMutableDictionary, NSMutableSet, NSString;
 
 @interface _MPCLeaseManager : NSObject <MPCPlaybackEngineEventObserving>
 {
-    BOOL _isPreparingForImminentPlaybackIntent;
     MPCPlaybackEngine *_playbackEngine;
     NSMutableSet *_leaseEndIgnoreReasons;
+    NSMutableDictionary *_prepareCompletions;
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *prepareCompletions; // @synthesize prepareCompletions=_prepareCompletions;
 @property(retain, nonatomic) NSMutableSet *leaseEndIgnoreReasons; // @synthesize leaseEndIgnoreReasons=_leaseEndIgnoreReasons;
 @property(readonly, nonatomic) __weak MPCPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
 - (void)_updateStateForPlaybackPrevention;
@@ -28,7 +29,7 @@
 - (void)prepareForCurrentItemPlayback;
 - (void)endIgnoringLeaseEndEventsForReason:(id)arg1;
 - (void)beginIgnoringLeaseEndEventsForReason:(id)arg1;
-- (void)prepareForPlaybackWithUserIdentity:(id)arg1;
+- (void)prepareForPlaybackWithAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithPlaybackEngine:(id)arg1;
 
 // Remaining properties

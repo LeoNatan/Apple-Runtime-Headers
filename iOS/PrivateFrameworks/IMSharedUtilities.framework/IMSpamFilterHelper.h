@@ -29,9 +29,10 @@
 + (_Bool)accountCountryIsCandidateForSpamFiltering:(id)arg1;
 + (_Bool)accountRegionIsCandidateForSpamFiltering:(id)arg1;
 + (_Bool)receiverIsCandidateForSpamFiltering:(id)arg1;
++ (_Bool)isBlackholeEnabledForEligibleAccounts:(_Bool)arg1 withRecipient:(id)arg2;
 + (_Bool)isBlackholeEnabledForEligibleAccounts:(_Bool)arg1;
-+ (_Bool)shouldBlackholeGroupMessageFromSender:(id)arg1 toRecipient:(id)arg2 ifRecipientIsCandidate:(_Bool)arg3 withOtherParticipants:(id)arg4 givenHistory:(_Bool)arg5 forEligibleAccounts:(_Bool)arg6;
-+ (_Bool)shouldBlackholeMessageFromSender:(id)arg1 toRecipient:(id)arg2 ifRecipientIsCandidate:(_Bool)arg3 givenHistory:(_Bool)arg4 forEligibleAccounts:(_Bool)arg5;
++ (_Bool)shouldBlackholeGroupMessageFromSender:(id)arg1 toRecipient:(id)arg2 otherRecipients:(id)arg3 givenHistory:(_Bool)arg4 forEligibleAccounts:(_Bool)arg5;
++ (_Bool)shouldBlackholeMessageFromSender:(id)arg1 toRecipient:(id)arg2 givenHistory:(_Bool)arg3 forEligibleAccounts:(_Bool)arg4;
 + (_Bool)shouldShowSMSWarningForSender:(id)arg1 forRecipient:(id)arg2 withConversationHistory:(_Bool)arg3;
 + (_Bool)shouldDowngradeToRecipient:(id)arg1 fromSender:(id)arg2 ifCapableOfSMS:(_Bool)arg3 withConversationDowngradeState:(_Bool)arg4 andConversationHistoryState:(_Bool)arg5;
 

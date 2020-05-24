@@ -42,6 +42,7 @@
 + (id)placeholderURLForURL:(id)arg1;
 + (BOOL)writePlaceholderAtURL:(id)arg1 withMetadata:(id)arg2 error:(id *)arg3;
 + (BOOL)writePlaceholderAtURL:(id)arg1 withDictionary:(id)arg2 error:(id *)arg3;
++ (id)legacyDefaultManager;
 + (id)defaultManager;
 + (void)registerDomainServicer:(id)arg1 forDomain:(id)arg2;
 + (void)importDomain:(id)arg1 fromDirectoryAtURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -75,8 +76,9 @@
 - (id)_initWithProviderIdentifier:(id)arg1;
 - (id)enumeratorForMaterializedItems;
 - (void)reimportItemsBelowItemWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)evictItemWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setDownloadPolicy:(unsigned long long)arg1 forItemWithIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)waitForStabilizationWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)evictItemWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) unsigned long long presenceAuthorizationStatus;
 - (void)requestPresenceAuthorization;
 - (void)ingestFromCacheItemWithIdentifier:(id)arg1 requestedFields:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;

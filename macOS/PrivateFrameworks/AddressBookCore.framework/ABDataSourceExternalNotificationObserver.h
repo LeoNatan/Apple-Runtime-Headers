@@ -29,12 +29,17 @@
 - (void)postAddedExternallyNotificationFromDistributedNotification:(id)arg1;
 - (void)postChangedExternallyNotificationFromDistributedNotification:(id)arg1;
 - (void)extractUIDFromNotification:(id)arg1 andRunBlock:(CDUnknownBlockType)arg2;
+- (void)pool_distributedAccountConfigurationDidChange:(id)arg1;
 - (void)distributedAccountConfigurationDidChange:(id)arg1;
+- (void)pool_distributedSourcesInvalidated:(id)arg1;
 - (void)distributedSourcesInvalidated:(id)arg1;
 - (void)removeSourceWithExternalNotification:(id)arg1;
+- (void)pool_distributedSourceRemoved:(id)arg1;
 - (void)distributedSourceRemoved:(id)arg1;
 - (void)addSourceWithExternalNotification:(id)arg1;
+- (void)pool_distributedSourceAdded:(id)arg1;
 - (void)distributedSourceAdded:(id)arg1;
+- (void)pool_distributedSourceChanged:(id)arg1;
 - (void)distributedSourceChanged:(id)arg1;
 - (void)stopObservingNotifications;
 - (void)startObservingNotifications;

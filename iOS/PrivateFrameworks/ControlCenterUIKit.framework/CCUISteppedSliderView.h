@@ -10,7 +10,7 @@
 #import <ControlCenterUIKit/CCUIContentModuleExpandedStateListener-Protocol.h>
 #import <ControlCenterUIKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSArray, NSString, UIPanGestureRecognizer, UISelectionFeedbackGenerator, UITapGestureRecognizer;
+@class NSArray, NSString, UIHoverGestureRecognizer, UIPanGestureRecognizer, UISelectionFeedbackGenerator, UITapGestureRecognizer;
 
 @interface CCUISteppedSliderView : CCUIBaseSliderView <UIGestureRecognizerDelegate, CCUIContentModuleExpandedStateListener, CCUIContentClipping>
 {
@@ -22,6 +22,9 @@
     _Bool _valueHasBeenAdjustedForSteppedSlider;
     UIPanGestureRecognizer *_valueChangeGestureRecognizer;
     UITapGestureRecognizer *_tapGestureRecognizer;
+    unsigned long long _hoverStep;
+    _Bool _isHoverHighlighting;
+    UIHoverGestureRecognizer *_hoverGestureRecognizer;
     UISelectionFeedbackGenerator *_selectionFeedbackGenerator;
     _Bool _firstStepIsDisabled;
     _Bool _firstStepIsOff;
@@ -34,6 +37,7 @@
 @property(nonatomic) _Bool firstStepIsOff; // @synthesize firstStepIsOff=_firstStepIsOff;
 @property(nonatomic) _Bool firstStepIsDisabled; // @synthesize firstStepIsDisabled=_firstStepIsDisabled;
 @property(nonatomic) unsigned long long numberOfSteps; // @synthesize numberOfSteps=_numberOfSteps;
+- (void)_handleHoverGestureRecognizer:(id)arg1;
 - (void)_updateStepFromValue:(float)arg1 playHaptic:(_Bool)arg2 toggleCurrentStep:(_Bool)arg3;
 - (void)_updateStepFromValue:(float)arg1 playHaptic:(_Bool)arg2;
 - (void)_updateValueForPanGestureRecognizer:(id)arg1 withAbsolutePosition:(_Bool)arg2 forContinuedGesture:(_Bool)arg3;

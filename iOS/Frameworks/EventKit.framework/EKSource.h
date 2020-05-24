@@ -36,6 +36,7 @@
 - (int)managedConfigurationAccountAccess;
 @property(readonly, nonatomic) _Bool isWritable;
 @property(readonly, nonatomic) NSSet *ownerAddresses;
+@property(readonly, nonatomic) _Bool serverUsesSSL;
 @property(readonly, nonatomic) long long serverPort;
 @property(readonly, nonatomic) NSString *serverHost;
 - (void)_cacheExternalIdentificationIfNeeded;

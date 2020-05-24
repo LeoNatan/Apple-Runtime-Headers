@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
     BOOL _shouldAnimateLift;
     BOOL _preparedForLift;
     BOOL _hasBegunDrag;
-    BOOL _dragDidBeginInDruid;
     NSMutableArray *_animationBlocks;
     NSMutableArray *_completionBlocks;
     long long _state;
@@ -31,7 +30,6 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-@property(nonatomic) BOOL dragDidBeginInDruid; // @synthesize dragDidBeginInDruid=_dragDidBeginInDruid;
 @property(nonatomic) BOOL hasBegunDrag; // @synthesize hasBegunDrag=_hasBegunDrag;
 @property(retain, nonatomic) UITouch *initiationTouch; // @synthesize initiationTouch=_initiationTouch;
 @property(nonatomic) long long invocationType; // @synthesize invocationType=_invocationType;

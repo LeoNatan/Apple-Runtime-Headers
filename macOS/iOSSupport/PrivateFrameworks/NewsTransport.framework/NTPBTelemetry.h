@@ -13,6 +13,7 @@
 @interface NTPBTelemetry : PBCodable <NSCopying>
 {
     long long _appBuild;
+    NSString *_appBuildNumber;
     NSString *_appVersion;
     NSString *_carrier;
     int _contentEnvironment;
@@ -37,6 +38,7 @@
 
 + (Class)networkEventGroupsType;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *appBuildNumber; // @synthesize appBuildNumber=_appBuildNumber;
 @property(retain, nonatomic) NSMutableArray *networkEventGroups; // @synthesize networkEventGroups=_networkEventGroups;
 @property(retain, nonatomic) NSString *userStorefrontId; // @synthesize userStorefrontId=_userStorefrontId;
 @property(retain, nonatomic) NSString *userId; // @synthesize userId=_userId;
@@ -59,6 +61,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasAppBuildNumber;
 - (id)networkEventGroupsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)networkEventGroupsCount;
 - (void)addNetworkEventGroups:(id)arg1;

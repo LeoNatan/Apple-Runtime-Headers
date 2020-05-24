@@ -16,6 +16,10 @@
 + (id)_table;
 + (id)abEntityName;
 + (BOOL)_isPublicRecord;
+- (BOOL)validateForDelete:(id *)arg1;
+- (BOOL)validateForUpdate:(id *)arg1;
+- (BOOL)validateForInsert:(id *)arg1;
+- (BOOL)validateForGuardianRestrictions:(id *)arg1;
 - (id)description;
 - (id)parentGroups;
 

@@ -32,6 +32,7 @@
     unsigned int _requiresImmediateMultipleTouches:1;
     NSMutableArray *_movingTouches;
     struct CGPoint _digitizerLocation;
+    int _allowedScrollTypesMask;
 }
 
 + (void)_setPanGestureRecognizersEnabled:(_Bool)arg1;
@@ -39,6 +40,7 @@
 + (_Bool)_shouldDefaultToTouches;
 + (float)_defaultHysteresis;
 - (void).cxx_destruct;
+@property(nonatomic) int allowedScrollTypesMask; // @synthesize allowedScrollTypesMask=_allowedScrollTypesMask;
 @property(readonly, getter=_previousVelocitySample) UIPanGestureVelocitySample *_previousVelocitySample; // @synthesize _previousVelocitySample;
 @property(readonly, getter=_velocitySample) UIPanGestureVelocitySample *_velocitySample; // @synthesize _velocitySample;
 @property(nonatomic) unsigned int maximumNumberOfTouches; // @synthesize maximumNumberOfTouches=_maximumNumberOfTouches;

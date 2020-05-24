@@ -17,6 +17,8 @@ __attribute__((visibility("hidden")))
     double _accuracy;
     _Bool _adjustsForContentOffsetDelta;
     CABasicAnimation *_customAnimation;
+    _Bool _forDiscreteScroll;
+    _Bool _beingReplacedForDiscreteScroll;
 }
 
 - (void).cxx_destruct;

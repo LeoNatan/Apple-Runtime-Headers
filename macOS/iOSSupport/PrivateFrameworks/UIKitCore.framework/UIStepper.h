@@ -51,6 +51,10 @@
 - (id)backgroundImageForState:(unsigned long long)arg1;
 - (void)setBackgroundImage:(id)arg1 forState:(unsigned long long)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (void)cursorInteraction:(id)arg1 willExitRegion:(id)arg2;
+- (void)cursorInteraction:(id)arg1 willEnterRegion:(id)arg2;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 - (unsigned long long)_controlEventsForActionTriggered;
 - (void)_emitValueChanged;
 - (void)visualElementSendValueChangedEvent:(id)arg1;

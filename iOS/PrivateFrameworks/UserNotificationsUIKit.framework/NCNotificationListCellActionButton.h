@@ -34,6 +34,7 @@
 @property(copy, nonatomic) NSString *materialGroupNameBase; // @synthesize materialGroupNameBase=_materialGroupNameBase;
 @property(copy, nonatomic) NSString *preferredContentSizeCategory; // @synthesize preferredContentSizeCategory=_preferredContentSizeCategory;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
+- (void)_handleHoverGestureRecognizerEvent:(id)arg1;
 - (_Bool)adjustForContentSizeCategoryChange;
 - (void)_unHighlightButton:(id)arg1;
 - (void)_highlightButton:(id)arg1;

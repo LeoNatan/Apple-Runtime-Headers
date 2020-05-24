@@ -13,6 +13,8 @@
 
 @interface SBGestureSwitcherModifierEvent : SBSwitcherModifierEvent <SBGestureRecognizerTouchHistoryProviding>
 {
+    _Bool _pointerTouch;
+    _Bool _mouseEvent;
     _Bool _canceled;
     NSUUID *_gestureID;
     SBAppLayout *_selectedAppLayout;
@@ -35,6 +37,8 @@
 @property(nonatomic) struct CGPoint locationInContainerView; // @synthesize locationInContainerView=_locationInContainerView;
 @property(nonatomic) double lastTouchTimestamp; // @synthesize lastTouchTimestamp=_lastTouchTimestamp;
 @property(nonatomic, getter=isCanceled) _Bool canceled; // @synthesize canceled=_canceled;
+@property(nonatomic, getter=isMouseEvent) _Bool mouseEvent; // @synthesize mouseEvent=_mouseEvent;
+@property(nonatomic, getter=isPointerTouch) _Bool pointerTouch; // @synthesize pointerTouch=_pointerTouch;
 @property(nonatomic) long long touchType; // @synthesize touchType=_touchType;
 @property(nonatomic) unsigned long long phase; // @synthesize phase=_phase;
 @property(readonly, nonatomic) long long gestureType; // @synthesize gestureType=_gestureType;

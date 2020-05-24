@@ -30,6 +30,7 @@
 + (BOOL)supportHearstVoiceTrigger;
 + (id)boardID;
 + (BOOL)hasRemoteCoreSpeech;
++ (BOOL)supportLazySessionActivation;
 + (BOOL)shouldDownloadVTAssetsOnDaemon;
 + (BOOL)supportTdsrOnCS;
 + (BOOL)supportLanguageDetector;

@@ -13,6 +13,7 @@
 {
     struct os_unfair_lock_s _lock;
     NSHashTable *_observers;
+    unsigned long long _enablePersistentFieldDetectionReasons;
     PKFieldProperties *_fieldProperties;
     NSObject<OS_dispatch_queue> *_fieldDetectorSerialQueue;
     NSObject<OS_dispatch_queue> *_replyQueue;
@@ -20,11 +21,14 @@
 }
 
 - (void).cxx_destruct;
+- (void)_setPersistentFieldDetectionEnabled:(_Bool)arg1;
+- (void)_evaulatePersistentFieldDetectionEnablementReasons;
 @property(nonatomic) __weak id <PKFieldDetectorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak PKFieldProperties *fieldProperties;
 - (void)unregisterObserver:(id)arg1;
 - (void)registerObserver:(id)arg1;
 - (void)setPersistentFieldDetectionEnabled:(_Bool)arg1;
+- (void)requestPersistentFieldDetectionEnabled:(_Bool)arg1 withReason:(unsigned long long)arg2;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1;
 - (id)init;

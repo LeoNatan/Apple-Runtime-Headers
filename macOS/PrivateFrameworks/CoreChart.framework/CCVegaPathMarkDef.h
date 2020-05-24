@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (struct CATransform3D)transformForMark:(id)arg1;
-- (struct CGPath *)pathForMark:(id)arg1;
+- (struct CGPath *)newPathForMark:(id)arg1;
 
 @end
 

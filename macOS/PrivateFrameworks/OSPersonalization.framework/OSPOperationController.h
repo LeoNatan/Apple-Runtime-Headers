@@ -22,6 +22,7 @@
 @property(retain) NSObject<OS_dispatch_queue> *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain) NSMutableArray *operations; // @synthesize operations=_operations;
 @property(retain) OSPRequest *request; // @synthesize request=_request;
+- (void)_cleanUp;
 - (void)_addOperation:(id)arg1;
 - (void)_runOperations;
 - (void)personalizeWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -8,7 +8,7 @@
 
 #import <PassKitUI/PKSubcredentialLocalDevicePairingFlowControllerOperation-Protocol.h>
 
-@class NSString, PKAppletSubcredentialPairingSession, PKCredentialProvisioningView, PKSubcredentialPairingFlowControllerContext;
+@class NSString, PKAppletSubcredentialPairingSession, PKCredentialProvisioningView, PKIdleTimerAssertion, PKSubcredentialPairingFlowControllerContext;
 @protocol PKSubcredentialPairingFlowControllerProtocol, PKSubcredentialProvisioningFlowController, PKSubcredentialProvisioningViewModelProtocol;
 
 @interface PKSubcredentialPairingViewController : UIViewController <PKSubcredentialLocalDevicePairingFlowControllerOperation>
@@ -18,6 +18,7 @@
     PKCredentialProvisioningView *_provisioningView;
     _Bool _isCancelling;
     _Bool _isAdvancing;
+    PKIdleTimerAssertion *_idleTimerAssertion;
     PKSubcredentialPairingFlowControllerContext *_provisioningContext;
     id <PKSubcredentialPairingFlowControllerProtocol> _flowController;
 }
@@ -28,12 +29,15 @@
 @property(readonly, nonatomic) _Bool suppressFieldDetect;
 - (void)subcredentialProvisioningController:(id)arg1 shouldFailAfterError:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)subcredentialProvisioningController:(id)arg1 didFinishWithPass:(id)arg2;
-- (void)subcredentialProvisioningController:(id)arg1 didFinishWithError:(id)arg2;
+- (void)subcredentialProvisioningController:(id)arg1 didFinishWithError:(id)arg2 inState:(long long)arg3;
 - (void)subcredentialProvisioningController:(id)arg1 didEnterState:(long long)arg2;
+- (void)setIdleTimerDisabled:(_Bool)arg1;
+- (void)handleErrorFromDeviceRegistration:(id)arg1;
 - (void)advanceToNextState;
 - (void)startProvisioning;
 - (void)updateUIForState:(long long)arg1;
 - (void)handleCancelButton;
+- (void)hostApplicationDidEnterBackground;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillLayoutSubviews;

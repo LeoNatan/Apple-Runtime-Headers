@@ -53,9 +53,11 @@
     NSArray *_allowedPaymentNetworks;
     NSSet *_requiredTransitNetworkIdentifiers;
     NSSet *_allowedFeatureIdentifiers;
+    NSSet *_allowedProductIdentifiers;
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSet *allowedProductIdentifiers; // @synthesize allowedProductIdentifiers=_allowedProductIdentifiers;
 @property(retain, nonatomic) NSSet *allowedFeatureIdentifiers; // @synthesize allowedFeatureIdentifiers=_allowedFeatureIdentifiers;
 @property(retain, nonatomic) NSSet *requiredTransitNetworkIdentifiers; // @synthesize requiredTransitNetworkIdentifiers=_requiredTransitNetworkIdentifiers;
 @property(retain, nonatomic) NSArray *allowedPaymentNetworks; // @synthesize allowedPaymentNetworks=_allowedPaymentNetworks;

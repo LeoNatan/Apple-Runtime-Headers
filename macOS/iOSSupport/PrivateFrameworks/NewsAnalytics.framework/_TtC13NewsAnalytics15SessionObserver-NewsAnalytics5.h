@@ -7,6 +7,6 @@
 #import <NewsAnalytics/_TtC13NewsAnalytics15SessionObserver.h>
 
 @interface _TtC13NewsAnalytics15SessionObserver (NewsAnalytics5)
-- (void)pushSessionData;
+- (void)pushSessionDataWithRegionIDs:(id)arg1;
 @end
 

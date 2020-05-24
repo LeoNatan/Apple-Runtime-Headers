@@ -18,6 +18,7 @@
 - (double)innerCircleStrokeOutlineWidth;
 - (double)strokeOutlineWidth;
 - (double)strokeWidth;
+- (_Bool)useSystemFilters;
 - (UIColor *)pressedCircularProgressFillColor;
 - (UIColor *)circularProgressFillColor;
 - (UIColor *)strokeOutlineColor;

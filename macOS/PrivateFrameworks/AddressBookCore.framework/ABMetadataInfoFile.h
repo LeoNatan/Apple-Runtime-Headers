@@ -31,6 +31,7 @@
 - (BOOL)shouldRebuildDueToFileSize:(id)arg1;
 - (BOOL)isNoSuchFileError:(id)arg1;
 - (id)infoDictionaryAtPath:(id)arg1;
+- (id)description;
 - (id)initWithPath:(id)arg1 queue:(id)arg2 delegate:(id)arg3;
 
 @end

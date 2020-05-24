@@ -17,11 +17,13 @@
     NTPBDate *_lastBadgedPBDate;
     NTPBDate *_lastEngagedPBDate;
     NTPBDate *_lastRemovedFromMyMagazinesPBDate;
+    NTPBDate *_lastSeenPBDate;
     NSString *_lastVisitedArticleID;
     NTPBDate *_lastVisitedPBDate;
     NSString *_lastVisitedPageID;
 }
 
+@property(retain, nonatomic) NTPBDate *lastSeenPBDate; // @synthesize lastSeenPBDate=_lastSeenPBDate;
 @property(retain, nonatomic) NTPBDate *lastRemovedFromMyMagazinesPBDate; // @synthesize lastRemovedFromMyMagazinesPBDate=_lastRemovedFromMyMagazinesPBDate;
 @property(retain, nonatomic) NTPBDate *lastEngagedPBDate; // @synthesize lastEngagedPBDate=_lastEngagedPBDate;
 @property(retain, nonatomic) NTPBDate *lastBadgedPBDate; // @synthesize lastBadgedPBDate=_lastBadgedPBDate;
@@ -38,6 +40,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasLastSeenPBDate;
 @property(readonly, nonatomic) _Bool hasLastRemovedFromMyMagazinesPBDate;
 @property(readonly, nonatomic) _Bool hasLastEngagedPBDate;
 @property(readonly, nonatomic) _Bool hasLastBadgedPBDate;

@@ -39,6 +39,7 @@
 - (unsigned long long)hash;
 - (id)customActionForButtonNumber:(long long)arg1;
 @property(readonly, nonatomic) NSArray *buttonsWithCustomActions;
+@property(readonly, nonatomic) _Bool customActionsRequireAssistiveTouch;
 @property(readonly, nonatomic) _Bool hasCustomActions;
 - (void)setCustomAction:(id)arg1 forButtonNumber:(long long)arg2;
 - (void)setDefaultActionForButtonNumber:(long long)arg1;

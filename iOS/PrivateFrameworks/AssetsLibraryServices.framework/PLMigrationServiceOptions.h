@@ -25,6 +25,8 @@
 @property unsigned short option; // @synthesize option=_option;
 @property(copy) NSString *suggestedDestinationName; // @synthesize suggestedDestinationName=_suggestedDestinationName;
 @property(readonly) NSString *clientBundleId; // @synthesize clientBundleId=_clientBundleId;
+- (id)description;
+- (id)nameForOption:(unsigned short)arg1;
 - (_Bool)isPMSOption:(unsigned short)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

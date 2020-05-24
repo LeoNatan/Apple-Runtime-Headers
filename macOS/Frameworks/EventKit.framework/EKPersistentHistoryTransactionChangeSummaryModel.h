@@ -15,6 +15,7 @@
     EKObjectPersistentChangesModel *_accounts;
     EKObjectPersistentChangesModel *_notifications;
     EKObjectPersistentChangesModel *_attendees;
+    EKObjectPersistentChangesModel *_attachments;
     EKObjectPersistentChangesModel *_comments;
     NSMutableArray *_updatedProperties;
 }
@@ -22,6 +23,7 @@
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *updatedProperties; // @synthesize updatedProperties=_updatedProperties;
 @property(readonly, nonatomic) EKObjectPersistentChangesModel *comments; // @synthesize comments=_comments;
+@property(readonly, nonatomic) EKObjectPersistentChangesModel *attachments; // @synthesize attachments=_attachments;
 @property(readonly, nonatomic) EKObjectPersistentChangesModel *attendees; // @synthesize attendees=_attendees;
 @property(readonly, nonatomic) EKObjectPersistentChangesModel *notifications; // @synthesize notifications=_notifications;
 @property(readonly, nonatomic) EKObjectPersistentChangesModel *accounts; // @synthesize accounts=_accounts;

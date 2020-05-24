@@ -6,10 +6,12 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray, NSLayoutConstraint, UIButton, UIFont;
+#import <EventKitUI/_UICursorInteractionDelegate-Protocol.h>
+
+@class NSArray, NSLayoutConstraint, NSString, UIButton, UIFont;
 @protocol EKUIEventStatusButtonsViewDelegate;
 
-@interface EKUIEventStatusButtonsView : UIView
+@interface EKUIEventStatusButtonsView : UIView <_UICursorInteractionDelegate>
 {
     NSArray *_buttons;
     NSArray *_actions;
@@ -52,6 +54,8 @@
 - (void)_updateButtonFontsWithSize:(double)arg1;
 - (_Bool)_shouldCenterButton;
 @property(readonly, nonatomic) UIButton *centerButton;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2;
+- (id)cursorInteraction:(id)arg1 regionForRequest:(id)arg2 defaultRegion:(id)arg3;
 - (id)buttonForAction:(long long)arg1;
 - (long long)_buttonIndexForAction:(long long)arg1;
 - (long long)_actionForButton:(id)arg1;
@@ -60,9 +64,16 @@
 - (id)_horizontalConstraintStringForMiddleButtonsStartingAt:(unsigned long long)arg1 endingAt:(unsigned long long)arg2 resultingViews:(id)arg3;
 - (void)_setupConstraints;
 - (void)_setupButtons;
+- (void)findCursorInteractionWithButton:(id)arg1 actions:(CDUnknownBlockType)arg2;
 - (id)_newToolbarButton;
 - (id)initWithFrame:(struct CGRect)arg1 actions:(id)arg2 delegate:(id)arg3 centerSingleButton:(_Bool)arg4;
 - (id)initWithFrame:(struct CGRect)arg1 actions:(id)arg2 delegate:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -91,6 +91,7 @@
 - (id)committedMasterItem;
 - (id)masterItem;
 - (void)_fetchManagedAttachmentsWithSource:(id)arg1 userInitiated:(BOOL)arg2;
+- (BOOL)shouldDownloadAttachment:(id)arg1;
 - (void)_queueScanDropboxOperationUserInitiated:(BOOL)arg1;
 - (void)queueScanDropboxOperationUserInitiated;
 - (void)queueScanDropboxOperation;

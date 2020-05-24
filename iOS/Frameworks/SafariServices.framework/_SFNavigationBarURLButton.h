@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <_SFNavigationBarURLButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) _SFNavigationBarTheme *theme; // @synthesize theme=_theme;
 @property(nonatomic) double backgroundAlphaFactor; // @synthesize backgroundAlphaFactor=_backgroundAlphaFactor;
+- (void)_hover:(id)arg1;
 - (id)_accessibilityQuickSpeakContent;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;

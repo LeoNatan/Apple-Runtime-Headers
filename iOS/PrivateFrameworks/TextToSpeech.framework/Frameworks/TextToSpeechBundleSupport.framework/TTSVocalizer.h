@@ -32,7 +32,7 @@
 - (_Bool)_ttsVocalizerIsInitialized;
 - (struct __CFArray *)_ttsVocalizerLoadedResources;
 - (void)loadResource:(struct _VE_HSAFE)arg1 mimeType:(struct __CFString *)arg2 resourceURL:(struct __CFURL *)arg3 supportsAccurateWordCallbacks:(unsigned char)arg4;
-- (void)_ttsVocalizerLoadProgrammaticRules:(struct _VE_HSAFE)arg1 supportsAccurateWordCallbacks:(unsigned char)arg2;
+- (void)_ttsVocalizerLoadProgrammaticRules:(struct _VE_HSAFE)arg1 supportsAccurateWordCallbacks:(unsigned char)arg2 forTests:(unsigned char)arg3;
 - (unsigned int)_ttsVocalizerReallyLoadResource:(struct _VE_HSAFE)arg1 mimeType:(const char *)arg2 rules:(struct __CFData *)arg3 resource:(struct _VE_HSAFE *)arg4 supportsAccurateWordCallbacks:(unsigned char)arg5 resourceIdentifier:(id)arg6;
 - (unsigned int)_ttsVocalizerCopyAvailableVoiceNames:(const struct __CFArray **)arg1;
 - (unsigned int)_ttsVocalizerDestroy;

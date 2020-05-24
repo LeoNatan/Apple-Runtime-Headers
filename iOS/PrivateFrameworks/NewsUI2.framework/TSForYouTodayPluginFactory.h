@@ -14,6 +14,7 @@
     // Error parsing type: , name: tracker
     // Error parsing type: , name: layoutOptionsProvider
     // Error parsing type: , name: paidBundleConfigManager
+    // Error parsing type: , name: webEmbedViewControllerReuseManager
 }
 
 - (void).cxx_destruct;

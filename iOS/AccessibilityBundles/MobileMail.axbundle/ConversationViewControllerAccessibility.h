@@ -33,7 +33,6 @@
 - (id)_axFirstVisibleCell;
 - (id)_axFirstVisibleExpandedCell;
 - (id)_accessibilityFirstElementForFocus;
-- (id)_accessibilityFirstElementForReadFromTop;
 - (id)_axElementForFocusInCell:(id)arg1 shouldAllowCollapsedCell:(_Bool)arg2;
 - (id)accessibilityCustomRotors;
 - (void)_accessibilityLoadAccessibilityInformation;

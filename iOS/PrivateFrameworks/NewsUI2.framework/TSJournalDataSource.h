@@ -11,6 +11,7 @@
     // Error parsing type: , name: feedPersonalizer
     // Error parsing type: , name: tagController
     // Error parsing type: , name: privateDataDirectory
+    // Error parsing type: , name: paidAccessChecker
     // Error parsing type: , name: headlineModels
     // Error parsing type: , name: configModels
     // Error parsing type: , name: groupTitle
@@ -18,7 +19,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)initWithFeedPersonalizer:(id)arg1 tagController:(id)arg2 privateDataDirectory:(id)arg3 group:(id)arg4;
+- (id)initWithFeedPersonalizer:(id)arg1 tagController:(id)arg2 privateDataDirectory:(id)arg3 group:(id)arg4 paidAccessChecker:(id)arg5;
 
 @end
 

@@ -23,7 +23,8 @@
 - (void)_updateDataURL;
 @property(nonatomic) unsigned long long status;
 @property(copy, nonatomic) NSString *dataString;
-@property(copy, nonatomic) PKAppletSubcredentialSharingInvitation *invitation;
+@property(copy, nonatomic) PKAppletSubcredentialSharingInvitation *watchInvitation;
+@property(copy, nonatomic) PKAppletSubcredentialSharingInvitation *phoneInvitation;
 - (id)initWithUnderlyingMessage:(id)arg1;
 - (id)init;
 

@@ -27,6 +27,7 @@
 + (_Bool)supportJarvisVoiceTrigger;
 + (_Bool)supportHearstVoiceTrigger;
 + (_Bool)hasRemoteCoreSpeech;
++ (_Bool)supportLazySessionActivation;
 + (_Bool)shouldDownloadVTAssetsOnDaemon;
 + (_Bool)supportTdsrOnCS;
 + (_Bool)supportLanguageDetector;

@@ -20,10 +20,10 @@
     NSString *_currentActivityID;
     NSString *_contentStoreIdentifier;
     long long _displayOrder;
+    NSString *_summary;
+    NSString *_customTypeName;
     NSString *_identifier;
     long long _type;
-    NSString *_customTypeName;
-    NSString *_summary;
     NSString *_stableObjectID;
     NSString *_storeTeamID;
     NSString *_storeIdentifier;
@@ -47,8 +47,6 @@
 @property(copy, nonatomic) NSString *storeTeamID; // @synthesize storeTeamID=_storeTeamID;
 @property(copy, nonatomic) NSArray *path; // @synthesize path=_path;
 @property(copy, nonatomic) NSString *stableObjectID; // @synthesize stableObjectID=_stableObjectID;
-@property(copy, nonatomic) NSString *summary; // @synthesize summary=_summary;
-@property(copy, nonatomic) NSString *customTypeName; // @synthesize customTypeName=_customTypeName;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (id)dictionaryRepresentation;
@@ -61,6 +59,8 @@
 @property(readonly, nonatomic, getter=isActive) BOOL active;
 - (id)thumbnailBlob;
 @property(nonatomic) struct CGImage *thumbnail;
+@property(copy, nonatomic) NSString *customTypeName;
+@property(copy, nonatomic) NSString *summary;
 @property(copy, nonatomic) NSString *contentStoreIdentifier;
 @property(nonatomic) long long displayOrder;
 @property(retain, nonatomic) NSURL *universalLinkURL;

@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *providerDomainID; // @synthesize providerDomainID=_providerDomainID;
 - (void)_t_setFilePresenterObserver:(id)arg1;
 - (id)description;
+- (void)waitForStabilizationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)currentMaterializedSetSyncAnchorWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)enumerateMaterializedSetFromSyncAnchor:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)evictItemWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -10,8 +10,8 @@
 {
 }
 
-+ (struct CGPath *)areaWithPoints:(CDStruct_0b12104d *)arg1 count:(unsigned long long)arg2 interpolate:(id)arg3;
-+ (struct CGPath *)lineWithPoints:(CDStruct_2815125f *)arg1 count:(unsigned long long)arg2 interpolate:(id)arg3;
++ (struct CGPath *)newPathForAreaWithPoints:(CDStruct_0b12104d *)arg1 count:(unsigned long long)arg2 interpolate:(id)arg3;
++ (struct CGPath *)newPathForLineWithPoints:(CDStruct_2815125f *)arg1 count:(unsigned long long)arg2 interpolate:(id)arg3;
 
 @end
 

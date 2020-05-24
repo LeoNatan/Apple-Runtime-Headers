@@ -10,11 +10,12 @@
 #import <FileProviderDaemon/FPDFileCoordinationProviderDelegate-Protocol.h>
 
 @class FPDDomainIndexer, FPDProvider, FPPacer, FPProviderDomain, NSArray, NSData, NSDictionary, NSFileProviderDomain, NSMutableDictionary, NSOperationQueue, NSString, NSURL;
-@protocol FPDDomainBackend, FPDDomainIndexChangeDelegate, FPDExtensionSessionProtocol, OS_dispatch_queue, OS_dispatch_source, OS_os_log;
+@protocol FPDDomainBackend, FPDExtensionSessionProtocol, OS_dispatch_queue, OS_dispatch_source, OS_os_log;
 
 @interface FPDDomain : NSObject <FPDFileCoordinationProviderDelegate, FPDDomainIndexerDelegate>
 {
     NSMutableDictionary *_coordinatorMetadataPerURL;
+    NSMutableDictionary *_providedItemRecursiveGenCountPerURL;
     NSOperationQueue *_providedItemsOperationQueue;
     NSDictionary *_fileCoordinationProviderByURL;
     id <FPDExtensionSessionProtocol> _session;
@@ -30,7 +31,6 @@
     BOOL _started;
     BOOL _ejectable;
     BOOL _unableToStartup;
-    id <FPDDomainIndexChangeDelegate> _indexChangeDelegate;
     NSString *_identifier;
     NSFileProviderDomain *_nsDomainOrNilForDefault;
     NSFileProviderDomain *_nsDomain;
@@ -68,7 +68,6 @@
 @property(retain, nonatomic) NSFileProviderDomain *nsDomainOrNilForDefault; // @synthesize nsDomainOrNilForDefault=_nsDomainOrNilForDefault;
 @property(nonatomic) BOOL started; // @synthesize started=_started;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(nonatomic) __weak id <FPDDomainIndexChangeDelegate> indexChangeDelegate; // @synthesize indexChangeDelegate=_indexChangeDelegate;
 - (void)dumpStateTo:(id)arg1 limitNumberOfItems:(BOOL)arg2;
 - (void)dumpInternalStateTo:(id)arg1 request:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (long long)nonEvictableSpace;
@@ -94,6 +93,8 @@
 - (void)_writerWithID:(id)arg1 didFinishWritingForURL:(id)arg2;
 - (void)_cancelProvidingItemAtURL:(id)arg1 toReaderWithID:(id)arg2;
 - (void)_provideItemAtURL:(id)arg1 toReaderWithID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)setProvidedItemRecursiveGenerationCount:(id)arg1 forItemAtURL:(id)arg2;
+- (id)getProvidedItemRecursiveGenerationCountForItemAtURL:(id)arg1;
 - (id)_removeProgressForProvidingItemAtURL:(id)arg1 toReaderWithID:(id)arg2;
 - (void)_provideItemAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_siblingDelegateForURL:(id)arg1;

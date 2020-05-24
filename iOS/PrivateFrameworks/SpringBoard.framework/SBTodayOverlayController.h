@@ -28,9 +28,13 @@
     FBDisplayLayoutElement *_displayLayoutElement;
     SBAppStatusBarDateTimeAssertion *_statusBarContentAssertion;
     unsigned long long _screenEdgeSystemGestureType;
+    unsigned long long _indirectScreenEdgeSystemGestureType;
+    unsigned long long _scrunchSystemGestureType;
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long scrunchSystemGestureType; // @synthesize scrunchSystemGestureType=_scrunchSystemGestureType;
+@property(readonly, nonatomic) unsigned long long indirectScreenEdgeSystemGestureType; // @synthesize indirectScreenEdgeSystemGestureType=_indirectScreenEdgeSystemGestureType;
 @property(readonly, nonatomic) unsigned long long screenEdgeSystemGestureType; // @synthesize screenEdgeSystemGestureType=_screenEdgeSystemGestureType;
 @property(nonatomic, getter=isDismissing) _Bool dismissing; // @synthesize dismissing=_dismissing;
 @property(retain, nonatomic) SBAppStatusBarDateTimeAssertion *statusBarContentAssertion; // @synthesize statusBarContentAssertion=_statusBarContentAssertion;
@@ -77,7 +81,7 @@
 @property(readonly, nonatomic, getter=isPresented) _Bool presented;
 @property(readonly, nonatomic) double contentWidth;
 - (void)dealloc;
-- (id)initWithWindowLevel:(double)arg1 homeGestureParticipantIdentifier:(long long)arg2 screenEdgeSystemGestureType:(unsigned long long)arg3 secure:(_Bool)arg4;
+- (id)initWithWindowLevel:(double)arg1 homeGestureParticipantIdentifier:(long long)arg2 screenEdgeSystemGestureType:(unsigned long long)arg3 indirectScreenEdgeSystemGestureType:(unsigned long long)arg4 scrunchSystemGestureType:(unsigned long long)arg5 secure:(_Bool)arg6;
 
 // Remaining properties
 @property(readonly, nonatomic) double customIdleExpirationTimeout;

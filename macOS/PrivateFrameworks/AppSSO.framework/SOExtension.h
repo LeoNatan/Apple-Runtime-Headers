@@ -26,6 +26,7 @@
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToExtension:(id)arg1;
+- (BOOL)hasAssociatedDomainsApproved;
 - (BOOL)hasURLApprovedAssociatedDomain:(id)arg1;
 - (void)checkAssociatedDomains;
 @property(readonly, nonatomic) NSString *extensionBundleIdentifier;

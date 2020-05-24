@@ -67,7 +67,7 @@
 - (void)fullScreenBalloonViewController:(id)arg1 willAppearAnimated:(_Bool)arg2;
 - (void)_dismissFullScreenBubbleViewControllerWithSendAnimation:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)showFullScreenAcknowledgmentPickerForChatItem:(id)arg1 showActionMenu:(_Bool)arg2;
-- (void)showFullScreenAcknowledgmentPickerForBalloonAtIndexPath:(id)arg1 showActionMenu:(_Bool)arg2;
+- (void)showFullScreenAcknowledgmentPickerIfNeededForBalloonAtIndexPath:(id)arg1 showActionMenu:(_Bool)arg2;
 - (id)_fullScreenBalloonViewControllerWithChatItem:(id)arg1 showActionMenu:(_Bool)arg2;
 - (id)textInputContextIdentifier;
 - (void)_refreshActiveChat:(id)arg1;

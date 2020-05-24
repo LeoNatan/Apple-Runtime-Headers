@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     _Bool _fakingRequiresHighResolution;
     _Bool _supportsMultiwindow;
     _Bool _supportedOnLockScreen;
+    _Bool _supportsIndirectInputEvents;
     int _ignoredOverrides;
     long long _requestedStatusBarStyle;
     long long _interfaceOrientation;
@@ -38,6 +39,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool supportsIndirectInputEvents; // @synthesize supportsIndirectInputEvents=_supportsIndirectInputEvents;
 @property(readonly, nonatomic) long long supportedUserInterfaceStyle; // @synthesize supportedUserInterfaceStyle=_supportedUserInterfaceStyle;
 @property(readonly, nonatomic) _Bool supportedOnLockScreen; // @synthesize supportedOnLockScreen=_supportedOnLockScreen;
 @property(readonly, copy, nonatomic) NSDictionary *sceneConfigurations; // @synthesize sceneConfigurations=_sceneConfigurations;

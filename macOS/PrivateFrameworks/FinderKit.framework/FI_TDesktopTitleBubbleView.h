@@ -54,7 +54,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)setImageAttachment:(id)arg1 toolTip:(const struct TString *)arg2;
 - (_Bool)hasImageAttachment;
 - (void)removeICloudBadgeView;
-- (_Bool)setICloudBadgeClickHandler:(const function_b1fce659 *)arg1 context:(int)arg2;
+- (_Bool)setICloudBadgeClickHandler:(const function_b1fce659 *)arg1 context:(int)arg2 forBadge:(int)arg3;
 - (_Bool)isICloudBadgeVisible;
 - (void)mouseDragged:(id)arg1;
 - (void)mouseUp:(id)arg1;

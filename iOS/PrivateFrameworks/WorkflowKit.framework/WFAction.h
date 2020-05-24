@@ -26,6 +26,7 @@
     NSProgress *_progress;
     WFContentSourceTracker *_contentSourceTracker;
     NSString *_identifier;
+    NSString *_metricsIdentifier;
     NSDictionary *_definition;
     WFContentCollection *_input;
     WFContentCollection *_output;
@@ -64,6 +65,7 @@
 @property(readonly, nonatomic) WFContentCollection *input; // @synthesize input=_input;
 @property(nonatomic, getter=isRunning) _Bool running; // @synthesize running=_running;
 @property(readonly, copy, nonatomic) NSDictionary *definition; // @synthesize definition=_definition;
+@property(readonly, copy, nonatomic) NSString *metricsIdentifier; // @synthesize metricsIdentifier=_metricsIdentifier;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) WFContentSourceTracker *contentSourceTracker; // @synthesize contentSourceTracker=_contentSourceTracker;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;

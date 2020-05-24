@@ -17,14 +17,15 @@
 #import <SpringBoard/SBFIdleTimerBehaviorProviding-Protocol.h>
 #import <SpringBoard/SBGrabberTongueDelegate-Protocol.h>
 #import <SpringBoard/SBIdleTimerProviding-Protocol.h>
+#import <SpringBoard/SBIndirectPanGestureRecognizerOrientationProviding-Protocol.h>
 #import <SpringBoard/SBReachabilityObserver-Protocol.h>
 #import <SpringBoard/SBSystemGestureRecognizerDelegate-Protocol.h>
 #import <SpringBoard/UIGestureRecognizerDelegate-Protocol.h>
 
-@class BSSimpleAssertion, CCUIModularControlCenterOverlayViewController, CCUIStatusBarStyleSnapshot, FBDisplayLayoutElement, NSArray, NSHashTable, NSMutableArray, NSSet, NSString, PTSingleTestRecipe, SBAppStatusBarSettingsAssertion, SBAsynchronousRenderingAssertion, SBBarSwipeAffordanceViewController, SBControlCenterSystemAgent, SBControlCenterWindow, SBGrabberTongue, UIApplicationSceneDeactivationAssertion, UIColor, UIPanGestureRecognizer, _UILegibilitySettings;
+@class BSSimpleAssertion, CCUIModularControlCenterOverlayViewController, CCUIStatusBarStyleSnapshot, FBDisplayLayoutElement, NSArray, NSHashTable, NSMutableArray, NSSet, NSString, PTSingleTestRecipe, SBAppStatusBarSettingsAssertion, SBAsynchronousRenderingAssertion, SBBarSwipeAffordanceViewController, SBControlCenterSystemAgent, SBControlCenterWindow, SBGrabberTongue, SBIndirectPanGestureRecognizer, UIApplicationSceneDeactivationAssertion, UIColor, UIPanGestureRecognizer, _UILegibilitySettings;
 @protocol BSInvalidatable, SBIdleTimerCoordinating, UICoordinateSpace;
 
-@interface SBControlCenterController : NSObject <CCUIModularControlCenterOverlayViewControllerDelegate, SBGrabberTongueDelegate, CSExternalBehaviorProviding, CSExternalPresentationProviding, CSExternalAppearanceProviding, UIGestureRecognizerDelegate, SBSystemGestureRecognizerDelegate, SBBarSwipeAffordanceObserver, SBBarSwipeAffordanceDelegate, SBFIdleTimerBehaviorProviding, CCUIHostStatusBarStyleProvider, SBReachabilityObserver, SBIdleTimerProviding, CSCoverSheetOverlaying>
+@interface SBControlCenterController : NSObject <CCUIModularControlCenterOverlayViewControllerDelegate, SBGrabberTongueDelegate, CSExternalBehaviorProviding, CSExternalPresentationProviding, CSExternalAppearanceProviding, UIGestureRecognizerDelegate, SBSystemGestureRecognizerDelegate, SBBarSwipeAffordanceObserver, SBBarSwipeAffordanceDelegate, SBFIdleTimerBehaviorProviding, CCUIHostStatusBarStyleProvider, SBReachabilityObserver, SBIndirectPanGestureRecognizerOrientationProviding, SBIdleTimerProviding, CSCoverSheetOverlaying>
 {
     id <SBIdleTimerCoordinating> _idleTimerCoordinator;
     SBControlCenterWindow *_window;
@@ -36,6 +37,7 @@
     SBAsynchronousRenderingAssertion *_asynchronousRenderingAssertion;
     SBGrabberTongue *_grabberTongue;
     UIPanGestureRecognizer *_statusBarPullGestureRecognizer;
+    SBIndirectPanGestureRecognizer *_indirectStatusBarPullGestureRecognizer;
     UIApplicationSceneDeactivationAssertion *_resignActiveAssertion;
     FBDisplayLayoutElement *_displayLayoutElement;
     NSHashTable *_observers;
@@ -58,6 +60,7 @@
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) FBDisplayLayoutElement *displayLayoutElement; // @synthesize displayLayoutElement=_displayLayoutElement;
 @property(retain, nonatomic) UIApplicationSceneDeactivationAssertion *resignActiveAssertion; // @synthesize resignActiveAssertion=_resignActiveAssertion;
+@property(retain, nonatomic) SBIndirectPanGestureRecognizer *indirectStatusBarPullGestureRecognizer; // @synthesize indirectStatusBarPullGestureRecognizer=_indirectStatusBarPullGestureRecognizer;
 @property(retain, nonatomic) UIPanGestureRecognizer *statusBarPullGestureRecognizer; // @synthesize statusBarPullGestureRecognizer=_statusBarPullGestureRecognizer;
 @property(retain, nonatomic) SBGrabberTongue *grabberTongue; // @synthesize grabberTongue=_grabberTongue;
 @property(retain, nonatomic) SBAsynchronousRenderingAssertion *asynchronousRenderingAssertion; // @synthesize asynchronousRenderingAssertion=_asynchronousRenderingAssertion;
@@ -151,6 +154,7 @@
 - (void)presentAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dismissAnimated:(_Bool)arg1;
 - (void)presentAnimated:(_Bool)arg1;
+- (_Bool)handleIndirectStatusBarAction;
 - (_Bool)handleMenuButtonTap;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
@@ -162,6 +166,7 @@
 @property(readonly, nonatomic, getter=isPresented) _Bool presented;
 - (id)acquireWindowLevelAssertionWithPriority:(long long)arg1 windowLevel:(double)arg2 reason:(id)arg3;
 - (id)viewForSystemGestureRecognizer:(id)arg1;
+- (long long)indirectPanEffectiveInterfaceOrientation;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (void)dealloc;
 - (id)init;

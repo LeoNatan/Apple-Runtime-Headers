@@ -30,6 +30,7 @@
     NSMutableArray *_updatedActions;
 }
 
++ (_Bool)isMediaSafetyNetEnabled;
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *updatedActions; // @synthesize updatedActions=_updatedActions;
 @property(nonatomic) _Bool shouldPlayMediaAfterExpanded; // @synthesize shouldPlayMediaAfterExpanded=_shouldPlayMediaAfterExpanded;

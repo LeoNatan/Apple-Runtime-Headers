@@ -12,7 +12,9 @@
 
 @interface NSSet (CRKAdditions) <_SetOperable>
 - (id)setByCombiningWithSet:(id)arg1 operation:(SEL)arg2;
+- (id)crk_filterUsingBlock:(CDUnknownBlockType)arg1;
 - (id)crk_mapUsingBlock:(CDUnknownBlockType)arg1;
+- (id)crk_setByRemovingObject:(id)arg1;
 - (id)crk_setByIntersectingSet:(id)arg1;
 - (id)crk_setByAddingSet:(id)arg1;
 - (id)crk_setBySubtractingSet:(id)arg1;

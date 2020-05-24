@@ -18,7 +18,7 @@
 #import <SpringBoard/SBRootFolderPageStateObserver-Protocol.h>
 #import <SpringBoard/SBSystemGestureRecognizerDelegate-Protocol.h>
 
-@class NSPointerArray, NSSet, NSString, PTToggleTestRecipe, SBApplication, SBDeviceOrientationUpdateDeferralAssertion, SBFAnalyticsClient, SBFailingSystemGestureRecognizer, SBFloatingDockBehaviorAssertion, SBFloatingDockRootViewController, SBFloatingDockViewController, SBFolderController, SBIconController, SBIconListView, SBLayoutStateTransitionCoordinator, SBMainScreenActiveInterfaceOrientationWindow, SBReusableViewMap, UIViewController, _UILegibilitySettings;
+@class NSPointerArray, NSSet, NSString, PTToggleTestRecipe, SBApplication, SBDeviceOrientationUpdateDeferralAssertion, SBFAnalyticsClient, SBFailingSystemGestureRecognizer, SBFloatingDockBehaviorAssertion, SBFloatingDockRootViewController, SBFloatingDockViewController, SBFolderController, SBIconController, SBIconListView, SBIndirectPanGestureRecognizer, SBLayoutStateTransitionCoordinator, SBMainScreenActiveInterfaceOrientationWindow, SBReusableViewMap, UIHoverGestureRecognizer, UIViewController, _UILegibilitySettings;
 @protocol BSInvalidatable, SBFloatingDockControllerDelegate;
 
 @interface SBFloatingDockController : NSObject <SBFloatingDockRootViewControllerDelegate, SBFolderPresentationObserver, SBSystemGestureRecognizerDelegate, SBRootFolderPageStateObserver, SBAssistantObserver, BSDescriptionProviding, SBReusableViewMapDelegate, SBLayoutStateTransitionObserver, SBIconViewQuerying, SBIconLocationPresenting, SBIconViewProviding>
@@ -40,8 +40,11 @@
     SBReusableViewMap *_iconViewMap;
     id <BSInvalidatable> _floatingDockStateDumpHandle;
     PTToggleTestRecipe *_testRecipe;
+    _Bool _wasFloatingDockPresentedByPointer;
     SBMainScreenActiveInterfaceOrientationWindow *_floatingDockWindow;
     id <SBFloatingDockControllerDelegate> _delegate;
+    SBIndirectPanGestureRecognizer *_presentFloatingDockIndirectPanGestureRecognizer;
+    UIHoverGestureRecognizer *_dismissFloatingDockHoverGestureRecognizer;
     SBFailingSystemGestureRecognizer *_dismissFloatingDockSystemGestureRecognizer;
     SBIconController *_iconController;
     SBFloatingDockBehaviorAssertion *_activeAssertion;
@@ -54,6 +57,9 @@
 @property(nonatomic) __weak SBFloatingDockBehaviorAssertion *activeAssertion; // @synthesize activeAssertion=_activeAssertion;
 @property(readonly, nonatomic) SBIconController *iconController; // @synthesize iconController=_iconController;
 @property(readonly, nonatomic) SBFailingSystemGestureRecognizer *dismissFloatingDockSystemGestureRecognizer; // @synthesize dismissFloatingDockSystemGestureRecognizer=_dismissFloatingDockSystemGestureRecognizer;
+@property(readonly, nonatomic) UIHoverGestureRecognizer *dismissFloatingDockHoverGestureRecognizer; // @synthesize dismissFloatingDockHoverGestureRecognizer=_dismissFloatingDockHoverGestureRecognizer;
+@property(readonly, nonatomic) SBIndirectPanGestureRecognizer *presentFloatingDockIndirectPanGestureRecognizer; // @synthesize presentFloatingDockIndirectPanGestureRecognizer=_presentFloatingDockIndirectPanGestureRecognizer;
+@property(nonatomic) _Bool wasFloatingDockPresentedByPointer; // @synthesize wasFloatingDockPresentedByPointer=_wasFloatingDockPresentedByPointer;
 @property(readonly, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) __weak id <SBFloatingDockControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) SBMainScreenActiveInterfaceOrientationWindow *floatingDockWindow; // @synthesize floatingDockWindow=_floatingDockWindow;
@@ -100,6 +106,9 @@
 - (void)_presentFloatingDockIfDismissedAnimated:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_handleSystemGestureRecognizer:(id)arg1;
 - (void)registerAsSharedInstance;
+- (void)handlePresentFloatingDockHoverGesture:(id)arg1;
+- (void)_handleDismissFloatingDockHoverGesture:(id)arg1;
+- (double)_dockProgressForHoverTranslation:(double)arg1;
 - (void)_evaluateAssertions:(unsigned long long)arg1 interactive:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)_deriveActiveAssertion:(id *)arg1 dockProgress:(double *)arg2;
 - (unsigned long long)_indexOfPointerArray:(id)arg1 ofObject:(void *)arg2;

@@ -22,6 +22,7 @@
 - (void)_updateAccounts;
 - (void)_userIdentityStoreChangedNotification:(id)arg1;
 - (void)_subscriptionStatusChangedNotification:(id)arg1;
+- (id)accountForUserIdentity:(id)arg1;
 - (id)accountForHashedDSID:(id)arg1;
 - (id)accountForDSID:(id)arg1;
 @property(readonly, nonatomic) BOOL hasLoadedInitialAccounts; // @synthesize hasLoadedInitialAccounts=_hasLoadedInitialAccounts;

@@ -27,6 +27,7 @@
     BOOL _usesRandomPassphrase;
     BOOL _usesRecoveryKey;
     BOOL _suppressServerFiltering;
+    BOOL _silentDoubleRecovery;
     NSString *_appleID;
     NSString *_authToken;
     NSDate *_backOffDate;
@@ -37,6 +38,7 @@
     NSString *_emcsCred;
     NSDictionary *_emcsDict;
     NSString *_encodedMetadata;
+    NSString *_duplicateEncodedMetadata;
     NSDictionary *_escrowRecord;
     NSString *_escrowProxyURL;
     NSString *_fmipUUID;
@@ -70,6 +72,7 @@
 @property(retain, nonatomic) SESWrapper *ses; // @synthesize ses=_ses;
 @property(retain, nonatomic) EscrowPrerecord *prerecord; // @synthesize prerecord=_prerecord;
 @property(copy, nonatomic) NSString *hsa2CachedPrerecordUUID; // @synthesize hsa2CachedPrerecordUUID=_hsa2CachedPrerecordUUID;
+@property(nonatomic) BOOL silentDoubleRecovery; // @synthesize silentDoubleRecovery=_silentDoubleRecovery;
 @property(nonatomic) BOOL suppressServerFiltering; // @synthesize suppressServerFiltering=_suppressServerFiltering;
 @property(copy, nonatomic) NSString *activityUUID; // @synthesize activityUUID=_activityUUID;
 @property(copy, nonatomic) NSString *activityLabel; // @synthesize activityLabel=_activityLabel;
@@ -101,6 +104,7 @@
 @property(nonatomic) BOOL fmipRecovery; // @synthesize fmipRecovery=_fmipRecovery;
 @property(copy, nonatomic) NSString *escrowProxyURL; // @synthesize escrowProxyURL=_escrowProxyURL;
 @property(retain, nonatomic) NSDictionary *escrowRecord; // @synthesize escrowRecord=_escrowRecord;
+@property(copy, nonatomic) NSString *duplicateEncodedMetadata; // @synthesize duplicateEncodedMetadata=_duplicateEncodedMetadata;
 @property(copy, nonatomic) NSString *encodedMetadata; // @synthesize encodedMetadata=_encodedMetadata;
 @property(nonatomic) BOOL emcsMode; // @synthesize emcsMode=_emcsMode;
 @property(retain, nonatomic) NSDictionary *emcsDict; // @synthesize emcsDict=_emcsDict;
@@ -113,6 +117,7 @@
 @property(retain, nonatomic) NSDate *backOffDate; // @synthesize backOffDate=_backOffDate;
 @property(copy, nonatomic) NSString *authToken; // @synthesize authToken=_authToken;
 @property(copy, nonatomic) NSString *appleID; // @synthesize appleID=_appleID;
+- (_Bool)requiresDoubleEnrollment;
 - (void)getCertificates:(CDUnknownBlockType)arg1;
 - (id)beginHSA2PasscodeRequest:(_Bool)arg1 uuid:(id)arg2 error:(id *)arg3;
 - (id)beginHSA2PasscodeRequest:(_Bool)arg1 error:(id *)arg2;

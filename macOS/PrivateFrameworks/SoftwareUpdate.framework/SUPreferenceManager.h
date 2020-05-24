@@ -21,6 +21,7 @@
 - (BOOL)_setPreferenceObject:(id)arg1 forKey:(id)arg2 withError:(id *)arg3;
 - (id)_preferenceObjectForKey:(id)arg1 withError:(id *)arg2;
 - (BOOL)enableRecommendedSettings;
+- (BOOL)setLastRecommendedMajorOSBundleIdentifier:(id)arg1;
 - (BOOL)setBaseSystemDiskImageOverridePath:(id)arg1;
 - (BOOL)setOnlyConsiderStagedUpdatesForPredicateAndConfigDataUpdates:(BOOL)arg1;
 - (BOOL)setDisableSeedUI:(BOOL)arg1;

@@ -12,16 +12,21 @@
 {
     struct __GSEvent *_gsEvent;
     struct __IOHIDEvent *_hidEvent;
+    long long _mzModifierFlags;
+    unsigned long long _mzClickCount;
+    long long _buttonMask;
     UIScreen *_cachedScreen;
     NSMutableSet *_eventObservers;
     _Bool _hasValidModifiers;
     double _timestamp;
     UIEventEnvironment *_eventEnvironment;
+    long long _trackpadFingerDownCount;
     double __initialTouchTimestamp;
 }
 
 - (void).cxx_destruct;
 @property(readonly, nonatomic) double _initialTouchTimestamp; // @synthesize _initialTouchTimestamp=__initialTouchTimestamp;
+@property(readonly, nonatomic, getter=_trackpadFingerDownCount) long long trackpadFingerDownCount; // @synthesize trackpadFingerDownCount=_trackpadFingerDownCount;
 @property(nonatomic) __weak UIEventEnvironment *eventEnvironment; // @synthesize eventEnvironment=_eventEnvironment;
 @property(nonatomic, setter=_setTimestamp:) double timestamp; // @synthesize timestamp=_timestamp;
 - (void)_wasDeliveredToGestureRecognizers;
@@ -43,6 +48,9 @@
 - (_Bool)_isTouchRoutingPolicyBased;
 - (struct CGPoint)_digitizerLocation;
 - (_Bool)_isKeyDown;
+@property(readonly, nonatomic) long long buttonMask;
+@property(readonly, nonatomic) long long modifierFlags;
+- (long long)_buttonMask;
 - (unsigned long long)_clickCount;
 - (long long)_keyModifierFlags;
 - (long long)_modifierFlags;

@@ -13,7 +13,10 @@
 @interface UIDraggingSessionConfiguration : NSObject <NSSecureCoding>
 {
     BOOL _supportsSystemDrag;
+    BOOL _initiatedWithPointer;
+    unsigned int _coordinateSpaceSourceContextID;
     NSArray *_touchIDs;
+    unsigned long long _coordinateSpaceSourceLayerRenderID;
     UIDraggingSystemTouchRoutingPolicy *_routingPolicy;
     PBItemCollection *_itemCollection;
     NSXPCListenerEndpoint *_dataProviderEndpoint;
@@ -24,12 +27,15 @@
 
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL initiatedWithPointer; // @synthesize initiatedWithPointer=_initiatedWithPointer;
 @property(retain, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
 @property(nonatomic) BOOL supportsSystemDrag; // @synthesize supportsSystemDrag=_supportsSystemDrag;
 @property(retain, nonatomic) NSXPCListenerEndpoint *axEndpoint; // @synthesize axEndpoint=_axEndpoint;
 @property(retain, nonatomic) NSXPCListenerEndpoint *dataProviderEndpoint; // @synthesize dataProviderEndpoint=_dataProviderEndpoint;
 @property(retain, nonatomic) PBItemCollection *itemCollection; // @synthesize itemCollection=_itemCollection;
 @property(retain, nonatomic) UIDraggingSystemTouchRoutingPolicy *routingPolicy; // @synthesize routingPolicy=_routingPolicy;
+@property(nonatomic) unsigned long long coordinateSpaceSourceLayerRenderID; // @synthesize coordinateSpaceSourceLayerRenderID=_coordinateSpaceSourceLayerRenderID;
+@property(nonatomic) unsigned int coordinateSpaceSourceContextID; // @synthesize coordinateSpaceSourceContextID=_coordinateSpaceSourceContextID;
 @property(nonatomic) struct CGPoint initialCentroid; // @synthesize initialCentroid=_initialCentroid;
 @property(retain, nonatomic) NSArray *touchIDs; // @synthesize touchIDs=_touchIDs;
 - (void)encodeWithCoder:(id)arg1;

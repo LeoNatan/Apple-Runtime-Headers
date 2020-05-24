@@ -34,6 +34,7 @@
 - (void)_zoomToRect:(struct CGRect)arg1;
 - (void)_updateDocumentIsLocked;
 - (void)_setupDocumentViewSize;
+- (void)pointerRegionForLocation:(struct CGPoint)arg1;
 - (void)unlockWithPassword:(id)arg1;
 - (void)selectAll;
 - (void)copy;

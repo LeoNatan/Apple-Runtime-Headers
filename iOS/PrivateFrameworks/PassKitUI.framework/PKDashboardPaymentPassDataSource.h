@@ -136,6 +136,7 @@
 - (void)reloadAllContent;
 - (void)updateContentIsLoaded;
 - (void)groupViewDidUpdatePassView:(id)arg1;
+- (id)revokingAccessMessage;
 - (id)_messageImageWithName:(id)arg1 extension:(id)arg2;
 - (id)_messageForAMPEnrollment;
 - (id)_messagesForInstallmentPlans;
@@ -176,7 +177,6 @@
 - (_Bool)transitItemIsEnabled:(unsigned long long)arg1;
 - (long long)numberOfTransitItemsEnabled;
 - (unsigned long long)transitItemForItemIndex:(long long)arg1;
-- (_Bool)_showTiledBalances;
 - (id)itemAtIndexPath:(id)arg1;
 @property(readonly, nonatomic) NSArray *upcomingScheduledPayments;
 @property(readonly, nonatomic) NSArray *currentMonthTransactions;

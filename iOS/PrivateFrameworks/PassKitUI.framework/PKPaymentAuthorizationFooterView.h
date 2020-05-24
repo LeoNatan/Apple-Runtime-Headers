@@ -47,12 +47,14 @@
     unsigned long long _confirmationStyle;
     NSString *_biometricConfirmationTitle;
     NSString *_confirmationTitle;
+    NSString *_authorizingTitle;
     id <PKPaymentAuthorizationFooterViewDelegate> _delegate;
 }
 
 - (void).cxx_destruct;
 @property(nonatomic) __weak id <PKPaymentAuthorizationFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool occludesBodyView; // @synthesize occludesBodyView=_occludesBodyView;
+@property(retain, nonatomic) NSString *authorizingTitle; // @synthesize authorizingTitle=_authorizingTitle;
 @property(retain, nonatomic) NSString *confirmationTitle; // @synthesize confirmationTitle=_confirmationTitle;
 @property(retain, nonatomic) NSString *biometricConfirmationTitle; // @synthesize biometricConfirmationTitle=_biometricConfirmationTitle;
 @property(nonatomic) unsigned long long confirmationStyle; // @synthesize confirmationStyle=_confirmationStyle;

@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) MediaControlsContainerView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) long long selectedMode; // @synthesize selectedMode=_selectedMode;
 @property(nonatomic) long long style; // @synthesize style=_style;
+- (void)handleHoverGestureRecognizer:(id)arg1;
 - (void)_setInitialFrameForRoutingView:(id)arg1;
 - (void)_toggleRoutingPickerAnimated:(_Bool)arg1;
 - (void)_updateTimeControlVisibility:(id)arg1;

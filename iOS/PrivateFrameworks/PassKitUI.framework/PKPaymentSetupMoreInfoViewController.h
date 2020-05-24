@@ -4,48 +4,41 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIViewController.h>
+#import <PassKitUI/PKExplanationViewController.h>
 
-#import <PassKitUI/UIScrollViewDelegate-Protocol.h>
+@class NSArray, PKPaymentPass;
+@protocol PKPaymentWebServiceTargetDeviceProtocol;
 
-@class NSArray, NSString, PKPaymentPass, PKPaymentSetupMoreInfoView;
-
-@interface PKPaymentSetupMoreInfoViewController : UIViewController <UIScrollViewDelegate>
+@interface PKPaymentSetupMoreInfoViewController : PKExplanationViewController
 {
     _Bool _isFinalViewController;
     PKPaymentPass *_pass;
     NSArray *_moreInfoItems;
-    long long _context;
+    id <PKPaymentWebServiceTargetDeviceProtocol> _targetDevice;
     CDUnknownBlockType _dismissalHandler;
-    PKPaymentSetupMoreInfoView *_moreInfoView;
 }
 
 - (void).cxx_destruct;
 @property(nonatomic) _Bool isFinalViewController; // @synthesize isFinalViewController=_isFinalViewController;
-@property(readonly, retain, nonatomic) PKPaymentSetupMoreInfoView *moreInfoView; // @synthesize moreInfoView=_moreInfoView;
 @property(copy, nonatomic) CDUnknownBlockType dismissalHandler; // @synthesize dismissalHandler=_dismissalHandler;
-@property(readonly, nonatomic) long long context; // @synthesize context=_context;
+@property(readonly, nonatomic) id <PKPaymentWebServiceTargetDeviceProtocol> targetDevice; // @synthesize targetDevice=_targetDevice;
 @property(readonly, retain, nonatomic) NSArray *moreInfoItems; // @synthesize moreInfoItems=_moreInfoItems;
 @property(readonly, retain, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
+- (struct CGSize)_snapshotSize;
+- (void)_linkTapped;
+- (void)_alternateActionWithCompletion:(CDUnknownBlockType)arg1;
+- (void)explanationViewDidSelectBodyButton:(id)arg1;
+- (void)explanationViewDidSelectSetupLater:(id)arg1;
+- (void)explanationViewDidSelectContinue:(id)arg1;
 - (long long)preferredStatusBarStyle;
 - (void)_handleDismissal;
 - (void)_handlePush;
-- (void)_nextTapped:(id)arg1;
-- (void)scrollViewDidScroll:(id)arg1;
+- (void)_next;
 - (id)_nextItems;
 - (id)_currentItem;
-- (void)viewWillLayoutSubviews;
-- (void)viewDidLoad;
 - (void)loadView;
 - (unsigned long long)edgesForExtendedLayout;
-- (void)_configureNavigationItem;
-- (id)initWithMoreInfoItems:(id)arg1 paymentPass:(id)arg2 context:(long long)arg3 dismissalHandler:(CDUnknownBlockType)arg4;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)initWithMoreInfoItems:(id)arg1 paymentPass:(id)arg2 targetDevice:(id)arg3 context:(long long)arg4 dismissalHandler:(CDUnknownBlockType)arg5;
 
 @end
 

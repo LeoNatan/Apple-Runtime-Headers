@@ -26,6 +26,8 @@
 - (void)resetWillHandoffLoupeMagnifier;
 - (void)scheduleReplacementsForRange:(UITextRange *)arg1 withOptions:(unsigned long long)arg2;
 - (void)scheduleDictationReplacementsForAlternatives:(NSTextAlternatives *)arg1 range:(UITextRange *)arg2;
+- (void)setAutomaticSelectionCommandsSuppressedForPointerTouchType:(_Bool)arg1;
+- (void)showSelectionCommandsForSecondaryClickAtPoint:(struct CGPoint)arg1;
 - (void)selectWordWithoutShowingCommands;
 - (void)updateWithMagnifierTerminalPoint:(_Bool)arg1;
 - (void)setGestureRecognizers;

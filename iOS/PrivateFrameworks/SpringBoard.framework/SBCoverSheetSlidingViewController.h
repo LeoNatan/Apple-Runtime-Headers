@@ -9,7 +9,7 @@
 #import <SpringBoard/PTSettingsKeyObserver-Protocol.h>
 #import <SpringBoard/SBCoverSheetSystemGestureDelegatePositionProviding-Protocol.h>
 
-@class CSCoverSheetTransitionSettings, CSLockScreenSettings, NSObject, NSString, SBCoverSheetPositionView, SBCoverSheetSystemGesturesDelegate, SBHomeGestureSettings, SBScreenEdgePanGestureRecognizer, UIViewFloatAnimatableProperty;
+@class CSCoverSheetTransitionSettings, CSLockScreenSettings, NSObject, NSString, SBCoverSheetPositionView, SBCoverSheetSystemGesturesDelegate, SBFluidScrunchGestureRecognizer, SBHomeGestureSettings, SBIndirectPanGestureRecognizer, SBScreenEdgePanGestureRecognizer, UIViewFloatAnimatableProperty;
 @protocol OS_dispatch_group, SBCoverSheetSlidingViewControllerContentViewController, SBCoverSheetSlidingViewControllerDelegate;
 
 @interface SBCoverSheetSlidingViewController : UIViewController <SBCoverSheetSystemGestureDelegatePositionProviding, PTSettingsKeyObserver>
@@ -23,6 +23,9 @@
     id <SBCoverSheetSlidingViewControllerDelegate> _delegate;
     SBScreenEdgePanGestureRecognizer *_dismissGestureRecognizer;
     SBScreenEdgePanGestureRecognizer *_dismissAddendumGestureRecognizer;
+    SBIndirectPanGestureRecognizer *_indirectPresentGestureRecognizer;
+    SBIndirectPanGestureRecognizer *_indirectDismissGestureRecognizer;
+    SBFluidScrunchGestureRecognizer *_scrunchDismissGestureRecognizer;
     long long _dismissalSlidingMode;
     long long _dismissalTransformMode;
     SBCoverSheetSystemGesturesDelegate *_systemGesturesDelegate;
@@ -36,10 +39,12 @@
     long long _groupCount;
     CDUnknownBlockType _completionBlock;
     NSObject<OS_dispatch_group> *_completionGroup;
+    double _initialTouchOffsetFromScreenEdge;
     struct CGPoint _lastTouchLocation;
 }
 
 - (void).cxx_destruct;
+@property(nonatomic) double initialTouchOffsetFromScreenEdge; // @synthesize initialTouchOffsetFromScreenEdge=_initialTouchOffsetFromScreenEdge;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *completionGroup; // @synthesize completionGroup=_completionGroup;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(nonatomic) long long groupCount; // @synthesize groupCount=_groupCount;
@@ -58,6 +63,9 @@
 @property(retain, nonatomic) SBCoverSheetSystemGesturesDelegate *systemGesturesDelegate; // @synthesize systemGesturesDelegate=_systemGesturesDelegate;
 @property(nonatomic) long long dismissalTransformMode; // @synthesize dismissalTransformMode=_dismissalTransformMode;
 @property(nonatomic) long long dismissalSlidingMode; // @synthesize dismissalSlidingMode=_dismissalSlidingMode;
+@property(retain, nonatomic) SBFluidScrunchGestureRecognizer *scrunchDismissGestureRecognizer; // @synthesize scrunchDismissGestureRecognizer=_scrunchDismissGestureRecognizer;
+@property(retain, nonatomic) SBIndirectPanGestureRecognizer *indirectDismissGestureRecognizer; // @synthesize indirectDismissGestureRecognizer=_indirectDismissGestureRecognizer;
+@property(retain, nonatomic) SBIndirectPanGestureRecognizer *indirectPresentGestureRecognizer; // @synthesize indirectPresentGestureRecognizer=_indirectPresentGestureRecognizer;
 @property(retain, nonatomic) SBScreenEdgePanGestureRecognizer *dismissAddendumGestureRecognizer; // @synthesize dismissAddendumGestureRecognizer=_dismissAddendumGestureRecognizer;
 @property(retain, nonatomic) SBScreenEdgePanGestureRecognizer *dismissGestureRecognizer; // @synthesize dismissGestureRecognizer=_dismissGestureRecognizer;
 @property(nonatomic) __weak id <SBCoverSheetSlidingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;

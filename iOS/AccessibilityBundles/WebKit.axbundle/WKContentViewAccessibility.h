@@ -44,6 +44,7 @@
 - (_Bool)accessibilityParentDiscardsChildrenContainerGroupingBehavior;
 - (long long)accessibilityContainerType;
 - (_Bool)_accessibilityServesAsFirstResponder;
+- (unsigned long long)accessibilityTraits;
 - (_Bool)isAccessibilityElement;
 - (void)_setAccessibilityWebProcessToken:(id)arg1;
 - (void)_processDidExit;

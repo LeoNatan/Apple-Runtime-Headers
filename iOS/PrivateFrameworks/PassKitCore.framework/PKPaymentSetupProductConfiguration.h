@@ -15,17 +15,21 @@
     NSString *_partnerIdentifier;
     NSString *_productIdentifier;
     unsigned long long _type;
-    unsigned long long _state;
     NSString *_dirtyStateIdentifier;
     NSDate *_lastUpdated;
+    unsigned long long _state;
+    NSString *_notificationTitle;
+    NSString *_notificationMessage;
     unsigned long long _featureIdentifier;
 }
 
 - (void).cxx_destruct;
 @property(nonatomic) unsigned long long featureIdentifier; // @synthesize featureIdentifier=_featureIdentifier;
+@property(copy, nonatomic) NSString *notificationMessage; // @synthesize notificationMessage=_notificationMessage;
+@property(copy, nonatomic) NSString *notificationTitle; // @synthesize notificationTitle=_notificationTitle;
+@property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSDate *lastUpdated; // @synthesize lastUpdated=_lastUpdated;
 @property(copy, nonatomic) NSString *dirtyStateIdentifier; // @synthesize dirtyStateIdentifier=_dirtyStateIdentifier;
-@property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
 @property(copy, nonatomic) NSString *partnerIdentifier; // @synthesize partnerIdentifier=_partnerIdentifier;

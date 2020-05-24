@@ -20,7 +20,7 @@
     NSURLSession *_foregroundSession;
 }
 
-+ (id)createErrorFromURLResonse:(id)arg1 data:(id)arg2 error:(id)arg3;
++ (id)createErrorFromURLResonse:(id)arg1 data:(id)arg2 allowEmptyData:(_Bool)arg3 error:(id)arg4;
 - (void).cxx_destruct;
 @property(retain) NSURLSession *foregroundSession; // @synthesize foregroundSession=_foregroundSession;
 @property(retain) NSURLSession *backgroundSession; // @synthesize backgroundSession=_backgroundSession;

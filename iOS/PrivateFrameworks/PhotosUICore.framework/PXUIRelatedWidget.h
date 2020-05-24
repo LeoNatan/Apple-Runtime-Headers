@@ -80,6 +80,7 @@
 @property(readonly, nonatomic) NSObject<PXAnonymousView> *contentView;
 @property(readonly, nonatomic) long long contentViewAnchoringType;
 @property(retain, nonatomic) PXPhotosDetailsContext *context;
+@property(readonly, nonatomic) _Bool cursorInteractionEnabled;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(nonatomic, getter=isFaceModeEnabled) _Bool faceModeEnabled;

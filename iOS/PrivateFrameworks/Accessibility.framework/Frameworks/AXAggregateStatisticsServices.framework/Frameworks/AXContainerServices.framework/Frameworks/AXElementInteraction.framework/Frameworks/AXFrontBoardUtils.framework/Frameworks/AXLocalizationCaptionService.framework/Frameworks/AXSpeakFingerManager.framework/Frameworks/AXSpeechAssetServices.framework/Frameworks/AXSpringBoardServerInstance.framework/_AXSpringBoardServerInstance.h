@@ -34,6 +34,7 @@
 @property(retain, nonatomic) _AXAssertionServer *assertionServer; // @synthesize assertionServer=_assertionServer;
 @property(nonatomic) __weak id <AXSpringBoardServerInstanceDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_getSplashImageForApp:(id)arg1;
+- (id)_connectedDevicesRequireAssistiveTouch:(id)arg1;
 - (id)_performVoiceShortcut:(id)arg1;
 - (id)_activateSOSMode:(id)arg1;
 - (id)_canSetDockIconActivationMode:(id)arg1;

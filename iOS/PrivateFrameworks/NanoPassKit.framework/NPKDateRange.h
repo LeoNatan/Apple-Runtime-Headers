@@ -24,7 +24,7 @@
 @property(readonly, nonatomic) NSDate *expiryDate; // @synthesize expiryDate=_expiryDate;
 @property(readonly, nonatomic) NSString *startDateString; // @synthesize startDateString=_startDateString;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (id)initWithExpireDate:(id)arg1 formatterStyle:(unsigned long long)arg2;
+- (id)initWithStartDate:(id)arg1 expirationDate:(id)arg2 formatterStyle:(unsigned long long)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

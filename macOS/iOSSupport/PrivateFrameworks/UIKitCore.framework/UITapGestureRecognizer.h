@@ -43,6 +43,9 @@
 - (double)_allowableSeparation;
 - (void)setAllowableMovement:(double)arg1;
 - (double)allowableMovement;
+- (void)_setButtonMaskRequired:(long long)arg1;
+@property(nonatomic) long long buttonMaskRequired;
+- (long long)_buttonMaskRequired;
 @property(nonatomic) unsigned long long numberOfTouchesRequired;
 @property(nonatomic) unsigned long long numberOfTapsRequired;
 @property(readonly, nonatomic) NSArray *touches;

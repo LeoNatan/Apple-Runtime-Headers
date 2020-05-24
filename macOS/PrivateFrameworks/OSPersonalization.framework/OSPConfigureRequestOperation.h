@@ -8,12 +8,19 @@
 
 @interface OSPConfigureRequestOperation : OSPOperation
 {
+    BOOL _mountedPreboot;
+    int _prebootLockDescriptor;
 }
 
+@property int prebootLockDescriptor; // @synthesize prebootLockDescriptor=_prebootLockDescriptor;
+@property BOOL mountedPreboot; // @synthesize mountedPreboot=_mountedPreboot;
 - (BOOL)_prepareTemporaryDirectories;
 - (BOOL)_loadSecureBootBundle;
+- (BOOL)_mountPreboot;
+- (BOOL)_initializeTargetVolume;
 - (BOOL)_initializeDevice;
 - (BOOL)_preflightChecks;
+- (void)cleanUp;
 - (id)description;
 - (void)main;
 

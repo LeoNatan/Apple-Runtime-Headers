@@ -46,6 +46,7 @@
 - (void)performTriplePressUpActions;
 - (void)performDoublePressDownActions;
 - (void)performLongPressActions;
+- (void)performSinglePressUpActionsWithSourceType:(unsigned long long)arg1;
 - (void)performSinglePressUpActions;
 - (_Bool)_shouldIgnorePressesDueToProxOrIdle:(id *)arg1;
 - (_Bool)_performButtonPreflightActions;

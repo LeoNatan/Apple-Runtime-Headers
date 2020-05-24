@@ -16,6 +16,7 @@
     _Bool _supportsContactlessPayment;
     _Bool _supportsInAppPayment;
     _Bool _supportsOptionalAuthentication;
+    _Bool _supportsServiceMode;
     _Bool _requiresDeferredAuthorization;
     _Bool _inAppPINRequired;
     _Bool _auxiliary;
@@ -62,6 +63,7 @@
 @property(nonatomic) long long paymentNetworkIdentifier; // @synthesize paymentNetworkIdentifier=_paymentNetworkIdentifier;
 @property(nonatomic) _Bool requiresDeferredAuthorization; // @synthesize requiresDeferredAuthorization=_requiresDeferredAuthorization;
 @property(copy, nonatomic) NSString *appletCurrencyCode; // @synthesize appletCurrencyCode=_appletCurrencyCode;
+@property(nonatomic) _Bool supportsServiceMode; // @synthesize supportsServiceMode=_supportsServiceMode;
 @property(copy, nonatomic) NSArray *automaticSelectionCriteria; // @synthesize automaticSelectionCriteria=_automaticSelectionCriteria;
 @property(copy, nonatomic) NSArray *supportedExpressModes; // @synthesize supportedExpressModes=_supportedExpressModes;
 @property(nonatomic) _Bool supportsOptionalAuthentication; // @synthesize supportsOptionalAuthentication=_supportsOptionalAuthentication;

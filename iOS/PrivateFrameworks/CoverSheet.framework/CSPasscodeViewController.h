@@ -9,7 +9,7 @@
 #import <CoverSheet/PTSettingsKeyObserver-Protocol.h>
 #import <CoverSheet/SBUIPasscodeLockViewDelegate-Protocol.h>
 
-@class CSLockScreenPearlSettings, CSPasscodeBackgroundView, NSString, SBFAuthenticationAssertion, SBUIProudLockContainerViewController, UIColor, UIView;
+@class CSFaceOcclusionMonitor, CSLockScreenPearlSettings, CSPasscodeBackgroundView, NSString, SBFAuthenticationAssertion, SBUIProudLockContainerViewController, UIColor, UIView;
 @protocol CSCoverSheetContextProviding, CSPasscodeViewControllerDelegate, CSWallpaperColorProvider, SBUIPasscodeLockView_Internal;
 
 @interface CSPasscodeViewController : CSCoverSheetViewControllerBase <SBUIPasscodeLockViewDelegate, PTSettingsKeyObserver>
@@ -31,9 +31,11 @@
     UIColor *_wallpaperAverageColorOverride;
     id <CSCoverSheetContextProviding> _coverSheetContext;
     id <CSWallpaperColorProvider> _wallpaperColorProvider;
+    CSFaceOcclusionMonitor *_faceOcclusionMonitor;
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) CSFaceOcclusionMonitor *faceOcclusionMonitor; // @synthesize faceOcclusionMonitor=_faceOcclusionMonitor;
 @property(retain, nonatomic) id <CSWallpaperColorProvider> wallpaperColorProvider; // @synthesize wallpaperColorProvider=_wallpaperColorProvider;
 @property(retain, nonatomic) id <CSCoverSheetContextProviding> coverSheetContext; // @synthesize coverSheetContext=_coverSheetContext;
 @property(nonatomic) _Bool confirmedNotInPocket; // @synthesize confirmedNotInPocket=_confirmedNotInPocket;

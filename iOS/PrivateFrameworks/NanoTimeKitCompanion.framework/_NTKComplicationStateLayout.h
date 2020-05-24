@@ -14,10 +14,10 @@
     NTKComplicationLayoutRule *_defaultRule;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTKComplicationLayoutRule *defaultRule; // @synthesize defaultRule=_defaultRule;
 - (id)ruleForLayoutOverride:(long long)arg1;
 - (void)setRule:(id)arg1 forLayoutOverride:(long long)arg2;
-- (void)dealloc;
 
 @end
 

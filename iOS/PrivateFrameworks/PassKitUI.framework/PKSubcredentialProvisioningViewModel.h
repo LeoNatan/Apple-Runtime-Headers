@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 @property(retain, nonatomic) PKSubcredentialProvisioningConfiguration *config; // @synthesize config=_config;
 @property(retain, nonatomic) PKSubcredentialProvisioningController *provisioningController; // @synthesize provisioningController=_provisioningController;
+- (void)rescindSimilarInvitationsToSharingRequest:(id)arg1 withWebService:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setNewAuthRandomIfNecessaryWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)cancelProvisioningWithCompletion:(CDUnknownBlockType)arg1;
 - (void)startProvisioning;

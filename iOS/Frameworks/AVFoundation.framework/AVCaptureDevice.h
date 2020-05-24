@@ -44,6 +44,10 @@
 - (_Bool)isNonDestructiveCropEnabled;
 - (void)setSpatialOverCaptureEnabled:(_Bool)arg1;
 - (_Bool)isSpatialOverCaptureEnabled;
+- (long long)timeOfFlightBankCount;
+- (void)setTimeOfFlightProjectorMode:(long long)arg1;
+- (long long)timeOfFlightProjectorMode;
+- (_Bool)isTimeOfFlightProjectorModeSupported:(long long)arg1;
 - (void)_setCameraCalibrationDataDeliveryEnabled:(_Bool)arg1;
 - (void)_setDepthDataDeliveryEnabled:(_Bool)arg1;
 - (_Bool)_isDepthDataDeliveryEnabled;

@@ -103,8 +103,9 @@
 - (void)_enumerateFetchedRecordingTitles:(CDUnknownBlockType)arg1;
 - (id)_allTitles;
 - (id)enumerateExistingRecordingsSinceChangeToken:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (void)enumerateExistingRecordingsWithProperties:(id)arg1 sortDescriptors:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (void)enumerateExistingRecordingsWithBlock:(CDUnknownBlockType)arg1;
-- (void)_enumerateRecordingsWithEntityDescription:(id)arg1 propertiesToFetch:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
+- (void)_enumerateRecordingsWithEntityDescription:(id)arg1 propertiesToFetch:(id)arg2 sortDescriptors:(id)arg3 withBlock:(CDUnknownBlockType)arg4;
 - (id)recordingsWithPredicate:(id)arg1;
 - (id)recordingsWithUniqueID:(id)arg1;
 - (id)recordingWithUniqueID:(id)arg1;

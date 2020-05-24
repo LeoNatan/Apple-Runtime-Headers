@@ -23,6 +23,7 @@
     BOOL _supportsUnzippedPackages;
     BOOL _hasExplicitExtensionStorageURLs;
     BOOL _supportsPickingFolders;
+    BOOL _wantsFlattenedPackages;
     NSString *_identifier;
     NSString *_localizedName;
     NSString *_topLevelBundleIdentifier;
@@ -46,6 +47,7 @@
 @property(retain, nonatomic) NSUUID *pluginUUID; // @synthesize pluginUUID=_pluginUUID;
 @property(retain, nonatomic) NSURL *extensionBundleURL; // @synthesize extensionBundleURL=_extensionBundleURL;
 @property(retain, nonatomic) NSString *purposeIdentifier; // @synthesize purposeIdentifier=_purposeIdentifier;
+@property(nonatomic) BOOL wantsFlattenedPackages; // @synthesize wantsFlattenedPackages=_wantsFlattenedPackages;
 @property(nonatomic) BOOL supportsPickingFolders; // @synthesize supportsPickingFolders=_supportsPickingFolders;
 @property(nonatomic) BOOL hasExplicitExtensionStorageURLs; // @synthesize hasExplicitExtensionStorageURLs=_hasExplicitExtensionStorageURLs;
 @property(nonatomic) BOOL supportsUnzippedPackages; // @synthesize supportsUnzippedPackages=_supportsUnzippedPackages;

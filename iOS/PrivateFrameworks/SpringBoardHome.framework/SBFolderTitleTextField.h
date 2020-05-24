@@ -22,6 +22,7 @@
 @property(readonly, nonatomic) _Bool showingEditUI; // @synthesize showingEditUI=_showingEditUI;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(nonatomic) _Bool allowsEditing; // @synthesize allowsEditing=_allowsEditing;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 - (id)_clearButtonImage;
 - (id)_backgroundImage;
 - (void)_updateLegibility;

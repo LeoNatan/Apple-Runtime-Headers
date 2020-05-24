@@ -141,6 +141,7 @@
 - (void)fluidSwitcherGestureManager:(id)arg1 didEndGesture:(id)arg2;
 - (void)fluidSwitcherGestureManager:(id)arg1 didUpdateGesture:(id)arg2;
 - (void)fluidSwitcherGestureManager:(id)arg1 didBeginGesture:(id)arg2;
+- (void)switcherContentController:(id)arg1 setCursorInteractionsEnabled:(_Bool)arg2;
 - (void)switcherContentController:(id)arg1 setWallpaperStyle:(long long)arg2;
 - (void)switcherContentController:(id)arg1 setWallpaperScale:(double)arg2 withAnimationMode:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)switcherContentController:(id)arg1 setBackdropBlurType:(long long)arg2;

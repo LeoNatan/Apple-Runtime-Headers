@@ -18,6 +18,7 @@
 - (void)insertFeedItems:(id)arg1 ckCursor:(id)arg2 plausibleRange:(id)arg3 segmentEntity:(id)arg4 itemEntity:(id)arg5 itemIndexEntity:(id)arg6 moc:(id)arg7 indexFeatures:(_Bool)arg8;
 - (void)enumerateGapsWithBlock:(CDUnknownBlockType)arg1;
 - (id)firstSegmentFollowingFeedRange:(id)arg1;
+- (void)_visitContiguousSegmentsInRange:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)contiguousRangeInRange:(id)arg1;
 - (id)contiguousSegmentsInFeedRange:(id)arg1;
 - (void)willTurnIntoFault;

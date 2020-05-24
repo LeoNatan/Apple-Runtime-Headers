@@ -14,9 +14,11 @@
 {
     _Bool _probingTerminalPairingStatus;
     NSMutableArray *_probingCompletionBlocks;
+    CDUnknownBlockType _prewarmCompletion;
 }
 
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType prewarmCompletion; // @synthesize prewarmCompletion=_prewarmCompletion;
 @property(readonly, nonatomic) NSMutableArray *probingCompletionBlocks; // @synthesize probingCompletionBlocks=_probingCompletionBlocks;
 @property(nonatomic, getter=isProbingTerminalPairingStatus) _Bool probingTerminalPairingStatus; // @synthesize probingTerminalPairingStatus=_probingTerminalPairingStatus;
 - (void)appletSubcredentialPairingSession:(id)arg1 didFinishProbingTerminalWithResult:(_Bool)arg2;

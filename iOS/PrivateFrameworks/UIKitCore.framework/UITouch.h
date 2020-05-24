@@ -46,11 +46,16 @@
         unsigned int _deliversUpdatesInTouchesMoved:1;
         unsigned int _isPredictedTouch:1;
         unsigned int _didDispatchAsEnded:1;
+        unsigned int _isPointerTouch:1;
+        unsigned int _isRestingTouch:1;
+        unsigned int _isTapToClick:1;
     } _touchFlags;
     _UITouchPredictor *_touchPredictor;
     _Bool _eaten;
     _Bool _needsForceUpdate;
     _Bool _hasForceUpdate;
+    unsigned char _forceStage;
+    _Bool __expectedToBecomeDrag;
     double _timestamp;
     long long _forceCorrelationToken;
     double _maximumPossiblePressure;
@@ -68,12 +73,14 @@
 
 + (id)_createTouchesWithGSEvent:(struct __GSEvent *)arg1 phase:(long long)arg2 view:(id)arg3;
 - (void).cxx_destruct;
+@property(nonatomic, getter=_expectedToBecomeDrag, setter=_setExpectedToBecomeDrag:) _Bool _expectedToBecomeDrag; // @synthesize _expectedToBecomeDrag=__expectedToBecomeDrag;
 @property(nonatomic) double initialTouchTimestamp; // @synthesize initialTouchTimestamp=_initialTouchTimestamp;
 @property(readonly, nonatomic) double azimuthAngleInWindow; // @synthesize azimuthAngleInWindow=_azimuthAngleInWindow;
 @property(nonatomic, setter=_setAzimuthAngleInCADisplay:) double azimuthAngleInCADisplay; // @synthesize azimuthAngleInCADisplay=_azimuthAngleInCADisplay;
 @property(retain, nonatomic, setter=_setWindowServerHitTestWindow:) UIWindow *_windowServerHitTestWindow; // @synthesize _windowServerHitTestWindow=__windowServerHitTestWindow;
 @property(retain, nonatomic, setter=_setPhaseChangeDelegate:) id <_UITouchPhaseChangeDelegate> _phaseChangeDelegate; // @synthesize _phaseChangeDelegate=__phaseChangeDelegate;
 @property(nonatomic, setter=_setType:) long long type; // @synthesize type=_type;
+@property(nonatomic, setter=_setForceStage:) unsigned char _forceStage; // @synthesize _forceStage;
 @property(nonatomic, setter=_setHidEvent:) struct __IOHIDEvent *_hidEvent; // @synthesize _hidEvent;
 @property(nonatomic, setter=_setSenderID:) unsigned long long _senderID; // @synthesize _senderID;
 @property(nonatomic, setter=_setMaximumPossiblePressure:) double _maximumPossiblePressure; // @synthesize _maximumPossiblePressure;
@@ -91,6 +98,10 @@
 @property(nonatomic, setter=_setPathIdentity:) unsigned char _pathIdentity; // @synthesize _pathIdentity;
 @property(nonatomic, setter=_setPathIndex:) long long _pathIndex; // @synthesize _pathIndex;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
+@property(nonatomic, setter=_setIsTapToClick:) _Bool _isTapToClick;
+@property(nonatomic, setter=_setIsRestingTouch:) _Bool _isRestingTouch;
+@property(nonatomic, setter=_setIsPointerTouch:) _Bool _isPointerTouch;
+- (void)_clearForReenteringHoverInWindow:(id)arg1;
 - (id)_rehitTestWithEvent:(id)arg1 constrainingToCurrentWindow:(_Bool)arg2;
 - (id)_rehitTest;
 - (void)_willBeDispatchedAsEnded;

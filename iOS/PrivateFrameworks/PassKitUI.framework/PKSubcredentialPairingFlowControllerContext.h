@@ -12,6 +12,7 @@
 
 @interface PKSubcredentialPairingFlowControllerContext : PKSubcredentialProvisioningFlowControllerContext <NSCopying>
 {
+    _Bool _passwordManuallyEntered;
     _Bool _shouldRequestInvitation;
     PKAddCarKeyPassConfiguration *_configuration;
     PKEntitlementWhitelist *_appEntitlementWhitelist;
@@ -27,6 +28,7 @@
 @property(retain, nonatomic) PKAppletSubcredentialSharingInvitation *remoteDeviceInvitation; // @synthesize remoteDeviceInvitation=_remoteDeviceInvitation;
 @property(retain, nonatomic) PKAppletSubcredentialSharingRequest *remoteDeviceSharingRequest; // @synthesize remoteDeviceSharingRequest=_remoteDeviceSharingRequest;
 @property(retain, nonatomic) PKAppletSubcredential *credentialToShare; // @synthesize credentialToShare=_credentialToShare;
+@property(nonatomic) _Bool passwordManuallyEntered; // @synthesize passwordManuallyEntered=_passwordManuallyEntered;
 @property(retain, nonatomic) PKEntitlementWhitelist *appEntitlementWhitelist; // @synthesize appEntitlementWhitelist=_appEntitlementWhitelist;
 @property(retain, nonatomic) PKAddCarKeyPassConfiguration *configuration; // @synthesize configuration=_configuration;
 - (id)copyWithZone:(struct _NSZone *)arg1;

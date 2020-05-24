@@ -11,14 +11,14 @@
 @interface NTKZeusAnalogScene : NTKAnalogScene
 {
     NSDate *_overrideDate;
-    SKNode *_fontContainerNodes[2];
-    NSArray *_fontHourNodes[2];
+    SKNode *_fontContainerNodes[3];
+    NSArray *_fontHourNodes[3];
     SKNode *_logoContainerNode;
     SKSpriteNode *_logo1Node;
     SKSpriteNode *_logo2Node;
     SKNode *_multicolorContainerNode;
     SKSpriteNode *_multicolorBackground;
-    SKSpriteNode *_multicolorSplit[5];
+    SKSpriteNode *_multicolorSplit[6];
     double _previousCorrectionTime;
     double _currentTime;
     double _startSplitRotation;

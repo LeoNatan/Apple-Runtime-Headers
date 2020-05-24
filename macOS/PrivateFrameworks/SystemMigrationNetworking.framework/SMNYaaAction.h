@@ -6,7 +6,7 @@
 
 #import <SystemMigrationNetworking/SMNAction.h>
 
-@class NSDate, NSObject, NSSet, NSString;
+@class NSDate, NSMutableArray, NSObject, NSSet, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source, SMYaaActionDelegate;
 
 @interface SMNYaaAction : SMNAction
@@ -15,6 +15,7 @@
     int _compressionAlgorithm;
     NSString *_errorPath;
     NSString *_lastPathReceived;
+    NSMutableArray *_failedPaths;
     NSObject<SMYaaActionDelegate> *_callbackDelegate;
     CDUnknownBlockType _usernameConversionBlock;
     CDUnknownBlockType _groupnameConversionBlock;
@@ -57,6 +58,7 @@
 @property(copy) CDUnknownBlockType groupnameConversionBlock; // @synthesize groupnameConversionBlock=_groupnameConversionBlock;
 @property(copy) CDUnknownBlockType usernameConversionBlock; // @synthesize usernameConversionBlock=_usernameConversionBlock;
 @property __weak NSObject<SMYaaActionDelegate> *callbackDelegate; // @synthesize callbackDelegate=_callbackDelegate;
+@property(retain) NSMutableArray *failedPaths; // @synthesize failedPaths=_failedPaths;
 @property(retain) NSString *lastPathReceived; // @synthesize lastPathReceived=_lastPathReceived;
 @property(retain) NSString *errorPath; // @synthesize errorPath=_errorPath;
 - (void)receivedEOA;

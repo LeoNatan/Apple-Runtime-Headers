@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 + (id)parseEvent:(const CDStruct_f8c8329f *)arg1 withError:(id *)arg2;
 + (id)getTransactionsFromRecord:(const CDStruct_b9c9288f *)arg1 withCityCode:(id)arg2 withServerRefreshRequired:(id *)arg3 withStateDict:(id)arg4 withError:(id *)arg5;
 + (id)parseDalData:(id)arg1 withCityCode:(id)arg2 withStateDict:(id)arg3 withError:(id *)arg4;
++ (id)getRecords:(id)arg1 withError:(id *)arg2;
 + (id)getAppletStateAndHistory:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withError:(id *)arg5;
 + (id)getMcmDataDal:(unsigned short)arg1 withTransceiver:(id)arg2 withError:(id *)arg3;
 + (_Bool)didTransactionError:(const CDStruct_43f4e2d7 *)arg1 withTransactionResult:(unsigned short *)arg2;

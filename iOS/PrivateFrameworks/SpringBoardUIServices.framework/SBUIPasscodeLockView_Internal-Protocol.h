@@ -21,6 +21,7 @@
 - (void)_overrideBiometricMatchingEnabled:(_Bool)arg1 forReason:(NSString *)arg2;
 
 @optional
+- (void)_noteBottomFaceHasBeenOccluded;
 - (void)_noteAppearingForSmartCoverUnlock:(_Bool)arg1;
 - (void)_noteDeviceHasBeenUnlockedOnceSinceBoot:(_Bool)arg1;
 @end

@@ -8,17 +8,20 @@
 
 @interface _TtC8VideosUI10TextLayout : _TtC8VideosUI10ViewLayout
 {
-    // Error parsing type: , name: $__lazy_storage_$_vuiTextLayout
-    // Error parsing type: , name: contentSize
-    // Error parsing type: , name: fontFamily
     // Error parsing type: , name: textStyle
-    // Error parsing type: , name: textTransform
+    // Error parsing type: , name: maximumContentSizeCategory
+    // Error parsing type: , name: fontFamily
     // Error parsing type: , name: fontWeight
-    // Error parsing type: , name: fontFeature
     // Error parsing type: , name: fontSize
+    // Error parsing type: , name: fontFeature
+    // Error parsing type: , name: textTransform
     // Error parsing type: , name: textAlignment
     // Error parsing type: , name: numberOfLines
+    // Error parsing type: , name: numberOfLinesAXSmall
+    // Error parsing type: , name: numberOfLinesAXLarge
     // Error parsing type: , name: minimumScaleFactor
+    // Error parsing type: , name: letterSpacing
+    // Error parsing type: , name: alwaysFocusable
 }
 
 @end

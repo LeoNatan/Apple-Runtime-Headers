@@ -19,6 +19,7 @@
 
 + (id)sharedReachabilityMonitor;
 + (_Bool)isNetworkReachableForFlags:(unsigned int)arg1;
++ (unsigned int)getReachabilityFlagsByCheckingNetwork;
 - (void).cxx_destruct;
 @property(nonatomic) unsigned int reachabilityFlags; // @synthesize reachabilityFlags=_reachabilityFlags;
 - (void)invalidate;

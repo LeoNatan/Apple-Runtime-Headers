@@ -6,7 +6,7 @@
 
 #import <PhotosUICore/PXSettings.h>
 
-@class PXAlbumsDebugUISettings, PXApplicationSettings, PXAssetVariationsSettings, PXAssetsSceneSettings, PXCompleteMyMomentSettings, PXCuratedLibrarySettings, PXDiagnosticsSettings, PXDragAndDropSettings, PXFooterSettings, PXForYouSettings, PXGPPTSettings, PXGridKitSettings, PXGridSettings, PXImageModulationSettings, PXImportSettings, PXKeyboardSettings, PXKitSettings, PXMemoriesFeedSettings, PXMemoriesRelatedSettings, PXModelSettings, PXPeopleDetailSettings, PXPeopleUISettings, PXPhotoPickerSettings, PXPhotosDataSourceSettings, PXPhotosDetailsHeaderTileSettings, PXPhotosDetailsSettings, PXRelatedSettings, PXSearchSettings, PXSharingSettings, PXSnapBackSettings, PXTilingSettings, PXViewControllerTransitionSettings;
+@class PXAlbumsDebugUISettings, PXApplicationSettings, PXAssetVariationsSettings, PXAssetsSceneSettings, PXCompleteMyMomentSettings, PXCuratedLibrarySettings, PXCursorInteractionSettings, PXDiagnosticsSettings, PXDragAndDropSettings, PXFooterSettings, PXForYouSettings, PXGPPTSettings, PXGridKitSettings, PXGridSettings, PXImageModulationSettings, PXImportSettings, PXKeyboardSettings, PXKitSettings, PXMemoriesFeedSettings, PXMemoriesRelatedSettings, PXModelSettings, PXPeopleDetailSettings, PXPeopleUISettings, PXPhotoPickerSettings, PXPhotosDataSourceSettings, PXPhotosDetailsHeaderTileSettings, PXPhotosDetailsSettings, PXRelatedSettings, PXSearchSettings, PXSharingSettings, PXSnapBackSettings, PXTilingSettings, PXViewControllerTransitionSettings;
 
 @interface PXRootSettings : PXSettings
 {
@@ -34,6 +34,7 @@
     PXPeopleDetailSettings *_peopleDetail;
     PXPeopleUISettings *_peopleUISettings;
     PXDragAndDropSettings *_dragAndDrop;
+    PXCursorInteractionSettings *_cursorInteractionSettings;
     PXSharingSettings *_sharingSettings;
     PXAssetVariationsSettings *_variationsSettings;
     PXCompleteMyMomentSettings *_completeMyMoment;
@@ -60,6 +61,7 @@
 @property(retain, nonatomic) PXCompleteMyMomentSettings *completeMyMoment; // @synthesize completeMyMoment=_completeMyMoment;
 @property(retain, nonatomic) PXAssetVariationsSettings *variationsSettings; // @synthesize variationsSettings=_variationsSettings;
 @property(retain, nonatomic) PXSharingSettings *sharingSettings; // @synthesize sharingSettings=_sharingSettings;
+@property(retain, nonatomic) PXCursorInteractionSettings *cursorInteractionSettings; // @synthesize cursorInteractionSettings=_cursorInteractionSettings;
 @property(retain, nonatomic) PXDragAndDropSettings *dragAndDrop; // @synthesize dragAndDrop=_dragAndDrop;
 @property(retain, nonatomic) PXPeopleUISettings *peopleUISettings; // @synthesize peopleUISettings=_peopleUISettings;
 @property(retain, nonatomic) PXPeopleDetailSettings *peopleDetail; // @synthesize peopleDetail=_peopleDetail;

@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 {
     unsigned int _numberOfTouchesRequired;
     unsigned int _numberOfTapsRequired;
+    int _buttonMaskRequired;
     _Bool _continuousTapRecognition;
     NSMutableSet *_activeTouches;
     int _currentNumberOfTouches;
@@ -38,6 +39,7 @@ __attribute__((visibility("hidden")))
     unsigned int _timerOn:1;
     unsigned int _multitouchTimerOn:1;
     unsigned int _noNewTouches:1;
+    unsigned int _hasPointerTouch:1;
     _Bool _countsOnlyActiveTouches;
     id <UITapRecognizerDelegate> _delegate;
     int _exclusiveDirectionalAxis;
@@ -50,6 +52,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double minimumTapDuration; // @synthesize minimumTapDuration=_minimumTapDuration;
 @property(nonatomic) double allowableTouchTimeSeparation; // @synthesize allowableTouchTimeSeparation=_allowableTouchTimeSeparation;
 @property(nonatomic) double maximumTapDuration; // @synthesize maximumTapDuration=_maximumTapDuration;
+@property(nonatomic) int buttonMaskRequired; // @synthesize buttonMaskRequired=_buttonMaskRequired;
 @property(nonatomic) __weak id <UITapRecognizerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSArray *touches; // @synthesize touches=_touches;
 @property(nonatomic) unsigned int numberOfTouchesRequired; // @synthesize numberOfTouchesRequired=_numberOfTouchesRequired;

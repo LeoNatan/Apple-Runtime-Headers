@@ -37,7 +37,7 @@
 @property unsigned long long totalSize; // @synthesize totalSize=_totalSize;
 @property(retain) NSMutableArray *warnings; // @synthesize warnings=_warnings;
 @property unsigned long long lastCompletedPhase; // @synthesize lastCompletedPhase=_lastCompletedPhase;
-- (void)copyFailedToCopyFile:(id)arg1;
+- (void)copyFailedToCopyFile:(id)arg1 shouldReportError:(BOOL)arg2;
 @property(readonly) BOOL preflightOnly;
 - (void)addProgress:(id)arg1 forKey:(id)arg2;
 - (id)progressArrayForKey:(id)arg1;

@@ -6,11 +6,12 @@
 
 #import <PencilKit/NSObject-Protocol.h>
 
-@class UIGestureRecognizer, UIPress, UITouch;
+@class UIEvent, UIGestureRecognizer, UIPress, UITouch;
 
 @protocol UIGestureRecognizerDelegate <NSObject>
 
 @optional
+- (_Bool)gestureRecognizer:(UIGestureRecognizer *)arg1 shouldReceiveEvent:(UIEvent *)arg2;
 - (_Bool)gestureRecognizer:(UIGestureRecognizer *)arg1 shouldReceivePress:(UIPress *)arg2;
 - (_Bool)gestureRecognizer:(UIGestureRecognizer *)arg1 shouldReceiveTouch:(UITouch *)arg2;
 - (_Bool)gestureRecognizer:(UIGestureRecognizer *)arg1 shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)arg2;

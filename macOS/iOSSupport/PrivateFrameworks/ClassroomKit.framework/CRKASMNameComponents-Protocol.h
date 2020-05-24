@@ -4,10 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <ClassroomKit/NSObject-Protocol.h>
+
 @class NSString;
 
-@protocol CRKASMNameComponents
+@protocol CRKASMNameComponents <NSObject>
 @property(readonly, copy, nonatomic) NSString *monogram;
+@property(readonly, copy, nonatomic) NSString *phoneticFullName;
 @property(readonly, copy, nonatomic) NSString *fullName;
 @property(readonly, copy, nonatomic) NSString *phoneticFamilyName;
 @property(readonly, copy, nonatomic) NSString *familyName;

@@ -43,8 +43,10 @@
 - (void)requestBackgroundRegistrationForCredentialWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeSharingInvitation:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)addSubcredential:(id)arg1 fromSharingInvitation:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
-- (void)removeSharingInvitationReceiptWithIdentifier:(id)arg1 onCredential:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (void)removeSharingInvitationReceiptWithIdentifiers:(id)arg1 onCredential:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)addSharingInvitationReceipts:(id)arg1 onCredentialWithIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)revokeCredentialsWithIdentifiers:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)registerCredentialsWithIdentifiers:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateMetadataOnPassWithIdentifier:(id)arg1 credential:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)subcredentialInvitationsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)addPlaceholderPassWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;

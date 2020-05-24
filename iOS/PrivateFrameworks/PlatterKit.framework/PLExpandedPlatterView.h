@@ -11,11 +11,12 @@
 #import <PlatterKit/PLTitled-Protocol.h>
 #import <PlatterKit/UIGestureRecognizerDelegate-Protocol.h>
 #import <PlatterKit/UIScrollViewDelegate-Protocol.h>
+#import <PlatterKit/_UICursorInteractionDelegate-Protocol.h>
 
 @class MTMaterialView, NSArray, NSDate, NSString, NSTimeZone, PLInterfaceActionGroupView, PLPlatterHeaderContentView, UIButton, UIControl, UIScrollView;
 @protocol PLExpandedPlatterViewDelegate;
 
-@interface PLExpandedPlatterView : UIView <UIGestureRecognizerDelegate, UIScrollViewDelegate, PLExpandedPlatter, PLTitled, PLContentSizeCategoryAdjusting>
+@interface PLExpandedPlatterView : UIView <UIGestureRecognizerDelegate, UIScrollViewDelegate, _UICursorInteractionDelegate, PLExpandedPlatter, PLTitled, PLContentSizeCategoryAdjusting>
 {
     UIView *_headerBackgroundView;
     UIView *_headerKeyLineView;
@@ -45,6 +46,8 @@
 @property(nonatomic) _Bool clipsVisibleContentToBounds; // @synthesize clipsVisibleContentToBounds=_clipsVisibleContentToBounds;
 @property(nonatomic) struct CGSize customContentSize; // @synthesize customContentSize=_customContentSize;
 @property(readonly, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 - (_Bool)adjustForContentSizeCategoryChange;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;

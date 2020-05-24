@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <NewsCore/FCLocalAreasProvider-Protocol.h>
 #import <NewsCore/NSCopying-Protocol.h>
 #import <NewsCore/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSData, NSDictionary;
+@class NSArray, NSData, NSDictionary, NSString;
 
-@interface FCLocalAreasMapping : NSObject <NSSecureCoding, NSCopying>
+@interface FCLocalAreasMapping : NSObject <FCLocalAreasProvider, NSSecureCoding, NSCopying>
 {
     NSData *_data;
     NSDictionary *_regionMap;
@@ -26,10 +27,18 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)localVersionedTagIDsForLocation:(id)arg1;
+- (id)autoFavoriteTagIDsForLocation:(id)arg1;
 - (id)regionsForLocation:(id)arg1;
 @property(readonly, nonatomic) unsigned long long count;
 - (id)init;
 - (id)initWithData:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

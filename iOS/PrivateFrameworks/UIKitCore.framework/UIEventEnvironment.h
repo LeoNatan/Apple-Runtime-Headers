@@ -51,6 +51,12 @@ __attribute__((visibility("hidden")))
 - (void)_sendMotionCancelled:(long long)arg1;
 - (void)_sendMotionEnded:(long long)arg1;
 - (void)_sendMotionBegan:(long long)arg1;
+- (id)_transformEventForWindow:(id)arg1;
+- (id)_transformEventForHIDEvent:(struct __IOHIDEvent *)arg1;
+- (id)pencilEventForHIDEvent:(struct __IOHIDEvent *)arg1;
+- (id)_hoverEventForHIDEvent:(struct __IOHIDEvent *)arg1;
+- (id)_scrollEventForWindow:(id)arg1;
+- (id)_scrollEventForHIDEvent:(struct __IOHIDEvent *)arg1;
 - (id)_hoverEventForWindow:(id)arg1;
 - (void)_dispatchAndRemoveStaleEstimationUpdateRecordsWithEventTime:(double)arg1 upToRecord:(id)arg2;
 - (id)_estimatedTouchRecordForContextID:(id)arg1 estimationIndex:(id)arg2;

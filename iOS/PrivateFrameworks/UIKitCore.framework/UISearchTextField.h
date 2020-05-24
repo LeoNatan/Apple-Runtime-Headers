@@ -8,7 +8,7 @@
 
 #import <UIKitCore/_UISearchBarTextFieldOrMailReplacement-Protocol.h>
 
-@class NSArray, NSHashTable, NSMutableDictionary, NSString, NSValue, UIColor, UIImageView, UISearchBar, UITapGestureRecognizer, UITextRange, _UISearchBarSearchFieldBackgroundView, _UISearchBarTextFieldTokenCounter;
+@class NSArray, NSHashTable, NSMutableDictionary, NSString, NSValue, UIColor, UIHoverGestureRecognizer, UIImageView, UISearchBar, UITapGestureRecognizer, UITextRange, _UISearchBarSearchFieldBackgroundView, _UISearchBarTextFieldTokenCounter;
 
 @interface UISearchTextField : UITextField <_UISearchBarTextFieldOrMailReplacement>
 {
@@ -30,6 +30,7 @@
     NSHashTable *_knownTokenLayoutViews;
     _UISearchBarTextFieldTokenCounter *_tokenCounter;
     UITapGestureRecognizer *_tokenTapGestureRecognizer;
+    UIHoverGestureRecognizer *_hoverGestureRecognizer;
     _Bool __preventSelectionViewActivation;
     UISearchBar *_searchBar;
     UIColor *_tokenBackgroundColor;
@@ -38,6 +39,7 @@
 
 + (Class)_textPasteItemClass;
 + (_Bool)_wantsFadedEdges;
++ (Class)_canvasViewClass;
 + (Class)_fieldEditorClass;
 - (void).cxx_destruct;
 @property(nonatomic) long long _textInputSource; // @synthesize _textInputSource=__textInputSource;
@@ -111,6 +113,7 @@
 - (void)_clearBackgroundViews;
 - (void)_updateBackgroundViewsAnimated:(_Bool)arg1;
 - (void)updateForBackdropStyle:(unsigned long long)arg1;
+- (void)_hoverGestureChanged:(id)arg1;
 - (void)_applyHighlightedAnimated:(_Bool)arg1;
 - (void)_setBackgroundViewsAlpha:(double)arg1;
 - (void)_setAnimatesBackgroundCornerRadius:(_Bool)arg1;

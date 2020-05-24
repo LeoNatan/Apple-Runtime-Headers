@@ -140,6 +140,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) double preferredExpandedContinuousCornerRadius;
 @property(readonly, nonatomic) _Bool providesOwnPlatter;
+@property(readonly, nonatomic) _Bool shouldPerformHoverInteraction;
 @property(readonly) Class superclass;
 
 @end

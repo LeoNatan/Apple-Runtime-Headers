@@ -6,10 +6,12 @@
 
 #import <UIKit/UIView.h>
 
-@class DOCTag, UIFont, UILabel;
+#import <DocumentManagerUICore/UIContextMenuInteractionDelegate-Protocol.h>
+
+@class DOCTag, NSString, UIFont, UILabel;
 @protocol DOCTagViewDelegate;
 
-@interface DOCTagView : UIView
+@interface DOCTagView : UIView <UIContextMenuInteractionDelegate>
 {
     DOCTag *_tagValue;
     double _maxWidth;
@@ -34,6 +36,13 @@
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)longPressGestureRecognizer:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (id)contextMenuInteraction:(id)arg1 configurationForMenuAtLocation:(struct CGPoint)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

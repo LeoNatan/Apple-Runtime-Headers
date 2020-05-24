@@ -43,6 +43,9 @@
 - (float)_allowableSeparation;
 - (void)setAllowableMovement:(float)arg1;
 - (float)allowableMovement;
+- (void)_setButtonMaskRequired:(int)arg1;
+@property(nonatomic) int buttonMaskRequired;
+- (int)_buttonMaskRequired;
 @property(nonatomic) unsigned int numberOfTouchesRequired;
 @property(nonatomic) unsigned int numberOfTapsRequired;
 @property(readonly, nonatomic) NSArray *touches;

@@ -16,9 +16,9 @@
 + (id)getInstance;
 - (void).cxx_destruct;
 @property(retain) CCVegaCGContext *cgCanvas; // @synthesize cgCanvas;
-- (struct CGPath *)cgPathForJSFunction:(id)arg1 item:(id)arg2;
+- (struct CGPath *)newPathFromJSFunction:(id)arg1 item:(id)arg2;
 - (id)parseString:(id)arg1 rendererContext:(id)arg2;
-- (struct CGPath *)cgPathForParsedPath:(id)arg1 size:(double)arg2 rendererContext:(id)arg3;
+- (struct CGPath *)newPathFromParsedPath:(id)arg1 size:(double)arg2 rendererContext:(id)arg3;
 
 @end
 

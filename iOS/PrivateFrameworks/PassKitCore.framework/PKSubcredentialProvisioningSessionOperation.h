@@ -6,21 +6,15 @@
 
 #import <PassKitCore/PKSubcredentialProvisioningOperation.h>
 
-#import <PassKitCore/PKAppletSubcredentialPairingSessionDelegate-Protocol.h>
+#import <PassKitCore/PKSessionDelegate-Protocol.h>
 
 @class NSString;
 
-@interface PKSubcredentialProvisioningSessionOperation : PKSubcredentialProvisioningOperation <PKAppletSubcredentialPairingSessionDelegate>
+@interface PKSubcredentialProvisioningSessionOperation : PKSubcredentialProvisioningOperation <PKSessionDelegate>
 {
 }
 
-- (void)appletSubcredentialPairingSession:(id)arg1 didFinishProbingTerminalWithResult:(_Bool)arg2;
-- (void)appletSubcredentialPairingSession:(id)arg1 didFinishPreWarmWithResult:(id)arg2;
-- (void)appletSubcredentialPairingSessionDidFirstTransaction:(id)arg1 withError:(id)arg2;
-- (void)appletSubcredentialPairingSessionDidBeginPairing:(id)arg1;
-- (void)appletSubcredentialPairingSession:(id)arg1 didEndPairingWithSubcredential:(id)arg2 registrationData:(id)arg3;
-- (void)appletSubcredentialPairingSession:(id)arg1 didEndPairingWithError:(id)arg2;
-- (id)pairingSession;
+- (void)session:(id)arg1 didChangeState:(unsigned long long)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

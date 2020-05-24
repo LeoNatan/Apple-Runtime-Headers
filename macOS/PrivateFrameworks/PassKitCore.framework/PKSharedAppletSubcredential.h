@@ -13,7 +13,7 @@
 
 @interface PKSharedAppletSubcredential : NSObject <NSSecureCoding, NSCopying>
 {
-    _Bool _canBeRevoked;
+    BOOL _dataSourceCredentialManifest;
     NSString *_identifier;
     NSString *_name;
     long long _state;
@@ -23,7 +23,7 @@
 
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
-@property(nonatomic) _Bool canBeRevoked; // @synthesize canBeRevoked=_canBeRevoked;
+@property(nonatomic, getter=isDataSourceCredentialManifest) BOOL dataSourceCredentialManifest; // @synthesize dataSourceCredentialManifest=_dataSourceCredentialManifest;
 @property(retain, nonatomic) PKSharedAppletSubcredentialMetadata *metadata; // @synthesize metadata=_metadata;
 @property(retain, nonatomic) PKAppletSubcredentialEntitlement *entitlement; // @synthesize entitlement=_entitlement;
 @property(nonatomic) long long state; // @synthesize state=_state;
@@ -32,6 +32,8 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)description;
 - (id)updateWithSharedCredentialManifestItem:(id)arg1 credential:(id)arg2;
 - (id)initWithIdentifier:(id)arg1 sharingInvitationReceipt:(id)arg2;

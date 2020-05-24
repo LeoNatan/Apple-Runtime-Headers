@@ -71,6 +71,8 @@
 + (id)transactionWorkQueue;
 + (id)workQueueForKey:(id)arg1;
 + (id)workQueueForClass:(Class)arg1;
++ (long long)compareFilesByKey:(id)arg1 file1:(id)arg2 file2:(id)arg3 sortAscending:(BOOL)arg4;
++ (unsigned long long)directorySize:(id)arg1;
 + (id)extractDateStringAndUUIDStringFromFilePath:(id)arg1;
 + (int)compressWithSourceStream:(struct __sFILE *)arg1 withDestination:(struct __sFILE *)arg2 withLevel:(int)arg3;
 + (BOOL)compressWithSource:(id)arg1 withDestination:(id)arg2 withLevel:(int)arg3;

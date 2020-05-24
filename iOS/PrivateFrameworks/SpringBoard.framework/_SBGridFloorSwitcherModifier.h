@@ -52,6 +52,7 @@
 - (unsigned long long)numberOfDefaultAppLayoutsToCacheSnapshots;
 - (_Bool)isSwitcherWindowUserInteractionEnabled;
 - (_Bool)isSwitcherWindowVisible;
+- (_Bool)wantsHomeScreenCursorInteractions;
 - (_Bool)isHomeScreenContentRequired;
 - (long long)wallpaperStyle;
 - (_Bool)isWallpaperRequiredForSwitcher;
@@ -61,6 +62,7 @@
 - (_Bool)isContainerStatusBarVisible;
 - (unsigned long long)insertionStyleForInsertingAppLayout:(id)arg1;
 - (_Bool)isTetheredScrollingEnabled;
+- (_Bool)isItemContainerCursorInteractionEnabled;
 - (_Bool)isScrollEnabled;
 - (_Bool)itemContainersAllowContentViewTouches;
 - (_Bool)itemContainersUseBrightMaterial;

@@ -8,17 +8,17 @@
 
 #import <NanoPassKit/NSCopying-Protocol.h>
 
-@class NSData, NSString;
+@class NSData;
 
 @interface NPKProtoAcceptSubcredentialInvitationRequest : PBRequest <NSCopying>
 {
-    NSString *_invitationIdentifier;
+    NSData *_invitationData;
     NSData *_metadataData;
 }
 
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSData *metadataData; // @synthesize metadataData=_metadataData;
-@property(retain, nonatomic) NSString *invitationIdentifier; // @synthesize invitationIdentifier=_invitationIdentifier;
+@property(retain, nonatomic) NSData *invitationData; // @synthesize invitationData=_invitationData;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -29,7 +29,7 @@
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(readonly, nonatomic) _Bool hasMetadataData;
-@property(readonly, nonatomic) _Bool hasInvitationIdentifier;
+@property(readonly, nonatomic) _Bool hasInvitationData;
 
 @end
 

@@ -13,8 +13,12 @@
     PXUIButtonConfiguration *_configuration;
 }
 
++ (BOOL)_cursorInteractionEnabled;
 - (void).cxx_destruct;
 @property(copy, nonatomic) PXUIButtonConfiguration *configuration; // @synthesize configuration=_configuration;
+- (struct CGRect)_cursorRectForCurrentState;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 - (void)setHighlighted:(BOOL)arg1;
 - (BOOL)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -11,6 +11,8 @@
 __attribute__((visibility("hidden")))
 @interface DeviceTypeDeviceIdentity : NSObject
 {
+    BOOL _is_prodfused_demoted;
+    BOOL _is_devfused_undemoted;
     BOOL _is_dev_board;
     BOOL _is_fpga;
     BOOL _is_ipod;
@@ -36,6 +38,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL is_ipod; // @synthesize is_ipod=_is_ipod;
 @property(readonly, nonatomic) BOOL is_fpga; // @synthesize is_fpga=_is_fpga;
 @property(readonly, nonatomic) BOOL is_dev_board; // @synthesize is_dev_board=_is_dev_board;
+@property(readonly, nonatomic) BOOL is_devfused_undemoted; // @synthesize is_devfused_undemoted=_is_devfused_undemoted;
+@property(readonly, nonatomic) BOOL is_prodfused_demoted; // @synthesize is_prodfused_demoted=_is_prodfused_demoted;
 @property(readonly, copy, nonatomic) NSString *hardware_model; // @synthesize hardware_model=_hardware_model;
 @property(readonly, copy, nonatomic) NSString *device_class; // @synthesize device_class=_device_class;
 @property(readonly, copy, nonatomic) NSString *product_type; // @synthesize product_type=_product_type;

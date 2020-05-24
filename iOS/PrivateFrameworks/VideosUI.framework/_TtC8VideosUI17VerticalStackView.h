@@ -11,8 +11,8 @@ __attribute__((visibility("hidden")))
 {
     // Error parsing type: , name: platterView
     // Error parsing type: , name: $__lazy_storage_$_expandableView
-    // Error parsing type: , name: $__lazy_storage_$_footerView
     // Error parsing type: , name: $__lazy_storage_$_panelView
+    // Error parsing type: , name: footerView
     // Error parsing type: , name: layout
     // Error parsing type: , name: $__lazy_storage_$_platterContainerView
     // Error parsing type: , name: $__lazy_storage_$_hangerView
@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: initialExpandableHeight
     // Error parsing type: , name: maxExpandableHeight
     // Error parsing type: , name: scrollDraggedOffset
-    // Error parsing type: , name: isInitialState
     // Error parsing type: , name: isScrollable
+    // Error parsing type: , name: isPartiallyExpanded
 }
 
 - (void).cxx_destruct;

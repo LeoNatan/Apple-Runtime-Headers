@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
     _UIPlatterView *_updatedAppPlatterView;
     _UIPlatterView *_druidPlatterView;
     _UIPlatterContainerView *_platterContainerView;
+    _UIPlatterView *_defaultPlatterView;
     CDUnknownBlockType _positionHandler;
     CDUnknownBlockType _morphHandler;
     CDUnknownBlockType _midpointHandler;
@@ -55,6 +56,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType midpointHandler; // @synthesize midpointHandler=_midpointHandler;
 @property(copy, nonatomic) CDUnknownBlockType morphHandler; // @synthesize morphHandler=_morphHandler;
 @property(copy, nonatomic) CDUnknownBlockType positionHandler; // @synthesize positionHandler=_positionHandler;
+@property(retain, nonatomic) _UIPlatterView *defaultPlatterView; // @synthesize defaultPlatterView=_defaultPlatterView;
 @property(retain, nonatomic) _UIPlatterContainerView *platterContainerView; // @synthesize platterContainerView=_platterContainerView;
 @property(retain, nonatomic) _UIPlatterView *druidPlatterView; // @synthesize druidPlatterView=_druidPlatterView;
 @property(retain, nonatomic) _UIPlatterView *updatedAppPlatterView; // @synthesize updatedAppPlatterView=_updatedAppPlatterView;
@@ -100,6 +102,7 @@ __attribute__((visibility("hidden")))
 - (void)configureCrossfadingAnimationToTargetedPreview;
 - (void)configureSystemDefaultAnimation;
 - (void)configureAnimation;
+@property(readonly, nonatomic) UIWindow *targetContainerWindow;
 - (void)animationCompleted;
 - (void)animationReachedTarget;
 - (void)beginAnimation;

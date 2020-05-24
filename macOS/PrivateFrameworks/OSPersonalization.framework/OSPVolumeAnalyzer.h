@@ -11,11 +11,13 @@
 @interface OSPVolumeAnalyzer : NSObject
 {
     NSURL *_mountPointURL;
+    NSURL *_prebootFolderURL;
     OSPDevice *_device;
 }
 
 - (void).cxx_destruct;
 @property(retain) OSPDevice *device; // @synthesize device=_device;
+@property(retain) NSURL *prebootFolderURL; // @synthesize prebootFolderURL=_prebootFolderURL;
 @property(retain) NSURL *mountPointURL; // @synthesize mountPointURL=_mountPointURL;
 - (id)_personalizedFilePathsForRecommendedSecureBundleForManifestRootType:(id)arg1;
 - (BOOL)_rootDirectoryURLContainsRequiredPersonalizedManifests:(id)arg1 forManifestRootType:(id)arg2;

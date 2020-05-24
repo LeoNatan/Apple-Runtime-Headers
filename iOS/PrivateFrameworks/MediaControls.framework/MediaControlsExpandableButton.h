@@ -7,10 +7,11 @@
 #import <UIKit/UIControl.h>
 
 #import <MediaControls/MTVisualStylingProviderObservingPrivate-Protocol.h>
+#import <MediaControls/_UICursorInteractionDelegate-Protocol.h>
 
 @class MTVisualStylingProvider, MediaControlsExpandableButtonOption, NSArray, NSMutableArray, NSString, NSTimer, UILabel, UIView;
 
-@interface MediaControlsExpandableButton : UIControl <MTVisualStylingProviderObservingPrivate>
+@interface MediaControlsExpandableButton : UIControl <MTVisualStylingProviderObservingPrivate, _UICursorInteractionDelegate>
 {
     _Bool _expanded;
     _Bool _toggleEnabled;
@@ -33,6 +34,7 @@
     struct CGSize _maximumExpandedSize;
 }
 
++ (_Bool)_cursorInteractionEnabled;
 - (void).cxx_destruct;
 @property(retain, nonatomic) MTVisualStylingProvider *visualStylingProvider; // @synthesize visualStylingProvider=_visualStylingProvider;
 @property(nonatomic) _Bool resetTracking; // @synthesize resetTracking=_resetTracking;
@@ -63,6 +65,10 @@
 - (void)_updateSelectionVisiblity;
 - (void)_updateLabelVisualStyling;
 - (void)_updateButtonsVisiblity;
+- (void)cursorInteraction:(id)arg1 willExitRegion:(id)arg2 withAnimator:(id)arg3;
+- (void)cursorInteraction:(id)arg1 willEnterRegion:(id)arg2 withAnimator:(id)arg3;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 - (void)providedStylesDidChangeForProvider:(id)arg1;
 - (void)didTapButton:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;

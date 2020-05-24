@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     _SFWebAppViewController *_contentViewController;
     _UIAsyncInvocation *_cancelViewServiceRequest;
     _Bool _hasShownLoadingViewController;
+    _Bool _hasCustomScheme;
     LoadingViewController *_loadingViewController;
     long long _orientation;
     NSTimer *_hideSnapshotTimer;
@@ -27,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)webAppViewController:(id)arg1 viewServiceDidTerminateWithError:(id)arg2;
 - (void)webAppViewControllerDidFinishInitialLoad:(id)arg1;
 - (void)webAppViewController:(id)arg1 didChangeLoadingState:(_Bool)arg2;
+- (void)openURLWithCustomSchemeIfNeeded;
 - (void)viewDidAppear:(_Bool)arg1;
 - (id)childViewControllerForWhitePointAdaptivityStyle;
 - (id)childViewControllerForStatusBarStyle;

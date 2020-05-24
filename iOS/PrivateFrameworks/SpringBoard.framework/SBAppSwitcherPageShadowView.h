@@ -16,25 +16,28 @@
     SBMedusaSettings *_medusaSettings;
     SBFView *_diffuseShadowView;
     SBFView *_rimShadowView;
+    double _rimShadowRadius;
+    double _rimShadowOpacity;
     double _diffuseShadowRadius;
     double _diffuseShadowOpacity;
     struct CGSize _diffuseShadowOffset;
-    double _rimShadowRadius;
-    double _rimShadowOpacity;
-    double _highlightedDiffuseShadowRadius;
-    double _highlightedDiffuseShadowOpacity;
-    struct CGSize _highlightedDiffuseShadowOffset;
-    _Bool _highlighted;
+    double _diffuseShadowRadiusWhileTouched;
+    double _diffuseShadowOpacityWhileTouched;
+    struct CGSize _diffuseShadowOffsetWhileTouched;
+    double _diffuseShadowRadiusWhileCursorHovered;
+    double _diffuseShadowOpacityWhileCursorHovered;
+    struct CGSize _diffuseShadowOffsetWhileCursorHovered;
     double _switcherCardScale;
     long long _style;
+    unsigned long long _highlightType;
     double _shadowOffset;
 }
 
 - (void).cxx_destruct;
 @property(nonatomic) double shadowOffset; // @synthesize shadowOffset=_shadowOffset;
+@property(nonatomic) unsigned long long highlightType; // @synthesize highlightType=_highlightType;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) double switcherCardScale; // @synthesize switcherCardScale=_switcherCardScale;
-@property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)_updateShadowParameters;
 - (void)_applyPrototypeSettingsToConstants;

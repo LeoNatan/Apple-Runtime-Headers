@@ -29,13 +29,12 @@
 - (id)_passForTransitItem:(id)arg1 indexPath:(id)arg2;
 - (CDUnknownBlockType)_actionHandlerForItem:(id)arg1 indexPath:(id)arg2;
 - (void)_configureView:(id *)arg1 transitItem:(id)arg2 indexPath:(id)arg3 animated:(_Bool)arg4;
-- (id)_allocViewForTransitItem:(id)arg1 indexPath:(id)arg2;
-- (id)_sampleViewForTransitItem:(id)arg1 indexPath:(id)arg2;
+- (id)_allocViewForTransitItem:(id)arg1;
+- (id)_sampleViewForTransitItem:(id)arg1;
 - (void)traitCollectionDidChangeFromTrait:(id)arg1 toTrait:(id)arg2 inCollectionView:(id)arg3;
 - (struct CGSize)sizeForItem:(id)arg1 inCollectionView:(id)arg2 atIndexPath:(id)arg3;
 - (id)_topUpActionForItem:(id)arg1 indexPath:(id)arg2 balanceIdentifier:(id)arg3;
 - (id)_renewActionForItem:(id)arg1 indexPath:(id)arg2 commutePlanIdentifier:(id)arg3;
-- (unsigned long long)_cellTypeForTransitItem:(id)arg1 indexPath:(id)arg2;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 inCollectionView:(id)arg3 atIndexPath:(id)arg4;
 - (id)cellForItem:(id)arg1 inCollectionView:(id)arg2 atIndexPath:(id)arg3;
 - (id)_identifierForItem:(id)arg1;

@@ -13,6 +13,7 @@
 
 @interface PKTransitAppletAmount : NSObject <NSCopying, NSSecureCoding>
 {
+    NSString *_balanceIdentifier;
     NSString *_currency;
     long long _exponent;
     NSDecimalNumber *_amount;
@@ -23,10 +24,11 @@
 @property(copy, nonatomic) NSDecimalNumber *amount; // @synthesize amount=_amount;
 @property(nonatomic) long long exponent; // @synthesize exponent=_exponent;
 @property(copy, nonatomic) NSString *currency; // @synthesize currency=_currency;
+@property(copy, nonatomic) NSString *balanceIdentifier; // @synthesize balanceIdentifier=_balanceIdentifier;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithAmount:(id)arg1 currency:(id)arg2 exponent:(long long)arg3;
+- (id)initWithAmount:(id)arg1 currency:(id)arg2 exponent:(long long)arg3 identifier:(id)arg4;
 - (id)initWithDictionary:(id)arg1;
 
 @end

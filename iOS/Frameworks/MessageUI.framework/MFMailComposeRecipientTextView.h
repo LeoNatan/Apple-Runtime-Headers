@@ -6,16 +6,22 @@
 
 #import <ContactsAutocompleteUI/CNComposeRecipientTextView.h>
 
-@class MFComposeDisplayMetrics;
+#import <MessageUI/_UICursorInteractionDelegate-Protocol.h>
+
+@class MFComposeDisplayMetrics, NSString;
 @protocol MFMailComposeRecipientTextViewDelegate;
 
-@interface MFMailComposeRecipientTextView : CNComposeRecipientTextView
+@interface MFMailComposeRecipientTextView : CNComposeRecipientTextView <_UICursorInteractionDelegate>
 {
     MFComposeDisplayMetrics *_displayMetrics;
 }
 
 - (void).cxx_destruct;
 @property(retain, nonatomic) MFComposeDisplayMetrics *displayMetrics; // @synthesize displayMetrics=_displayMetrics;
+- (double)beamHeight;
+- (struct CGRect)cursorRectForLineContainingGlyphIndex:(unsigned long long)arg1;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 - (void)_textInputDidChange:(id)arg1;
 - (void)_displayMetricsDidChange;
 - (void)layoutMarginsDidChange;
@@ -25,7 +31,11 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties
+@property(readonly, copy) NSString *debugDescription;
 @property(nonatomic) __weak id <MFMailComposeRecipientTextViewDelegate> delegate; // @dynamic delegate;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

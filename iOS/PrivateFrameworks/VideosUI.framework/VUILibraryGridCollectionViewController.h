@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
     _Bool _hideLockupTitles;
     _Bool _forceBackButton;
     _Bool _waitingForFetch;
-    _Bool _shouldApplySnapshot;
     VUIFamilyMember *_familyMember;
     id <VUILibraryGridCollectionViewControllerDelegate> _delegate;
     long long _gridFilter;
@@ -41,7 +40,6 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-@property(nonatomic) _Bool shouldApplySnapshot; // @synthesize shouldApplySnapshot=_shouldApplySnapshot;
 @property(retain, nonatomic) NSArray *mediaEntities; // @synthesize mediaEntities=_mediaEntities;
 @property(nonatomic) _Bool waitingForFetch; // @synthesize waitingForFetch=_waitingForFetch;
 @property(retain, nonatomic) UICollectionViewDiffableDataSource *diffableDataSource; // @synthesize diffableDataSource=_diffableDataSource;
@@ -61,6 +59,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <VUILibraryGridCollectionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) VUIFamilyMember *familyMember; // @synthesize familyMember=_familyMember;
 - (void)_applySnapshotFromEntitiesAndAnimateDifferences:(_Bool)arg1;
+- (void)_applyInitialSnapshot;
 - (void)_updateCurrentViewIfNeeded;
 - (void)_updateLayout;
 - (void)_updateNavigationBarPadding;
@@ -85,11 +84,11 @@ __attribute__((visibility("hidden")))
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(_Bool)arg1;
-- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)updateWithLatestMediaEntities:(id)arg1;
+- (void)dealloc;
 - (id)initWithDataSource:(id)arg1;
 
 // Remaining properties

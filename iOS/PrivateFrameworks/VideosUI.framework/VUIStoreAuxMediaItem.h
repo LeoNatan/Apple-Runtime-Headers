@@ -18,7 +18,7 @@
     _Bool _isAudioOnly;
     _Bool _disableResumeMenu;
     _Bool _disableScrubbing;
-    _Bool _sharedPurchase;
+    _Bool _isiTunesPurchasedOrRentedContent;
     _Bool _ignoreExistingOfflineKeyData;
     _Bool _isHLS;
     _Bool _isForStartingDownload;
@@ -50,7 +50,7 @@
 @property(retain, nonatomic) VUIMutableBookmark *bookmark; // @synthesize bookmark=_bookmark;
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(nonatomic) _Bool ignoreExistingOfflineKeyData; // @synthesize ignoreExistingOfflineKeyData=_ignoreExistingOfflineKeyData;
-@property(nonatomic) _Bool sharedPurchase; // @synthesize sharedPurchase=_sharedPurchase;
+@property(nonatomic) _Bool isiTunesPurchasedOrRentedContent; // @synthesize isiTunesPurchasedOrRentedContent=_isiTunesPurchasedOrRentedContent;
 @property(nonatomic) _Bool disableScrubbing; // @synthesize disableScrubbing=_disableScrubbing;
 @property(nonatomic) _Bool disableResumeMenu; // @synthesize disableResumeMenu=_disableResumeMenu;
 @property(copy, nonatomic) NSNumber *bookmarkOverrideTime; // @synthesize bookmarkOverrideTime=_bookmarkOverrideTime;
@@ -72,7 +72,7 @@
 - (id)reportingDelegate;
 - (void)cleanUpMediaItem;
 - (void)updateBookmarkWithSuggestedTime:(double)arg1 forElapsedTime:(double)arg2 duration:(double)arg3 playbackOfMediaItemIsEnding:(_Bool)arg4;
-- (id)_replacementErrorForSharedPurchasePlaybackError:(id)arg1;
+- (id)_replacementErrorForITunesPlaybackError:(id)arg1;
 - (id)_replacementErrorForPlaybackError:(id)arg1;
 - (id)replacementErrorForPlaybackError:(id)arg1;
 - (void)prepareForLoadingWithCompletion:(CDUnknownBlockType)arg1;

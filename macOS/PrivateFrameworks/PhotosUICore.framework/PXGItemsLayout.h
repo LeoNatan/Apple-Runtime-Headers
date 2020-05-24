@@ -46,6 +46,8 @@
 - (void)beginApplyingItemChanges;
 @property(readonly, nonatomic) BOOL isApplyingItemChanges;
 - (void)_updateStylableType:(long long)arg1;
+- (void)_updateHoveredItemIfNeeded;
+- (void)_updateFocusedItemIfNeeded;
 - (void)invalidateStylableType:(long long)arg1;
 - (void)_updateLoadedItems;
 - (void)updateLoadedItemsIfNeeded;

@@ -24,7 +24,6 @@
 @property(readonly, retain) PKInstallAnalyzer *analyzer; // @synthesize analyzer=_analyzer;
 @property(readonly) PKInstallSandbox *sandbox; // @synthesize sandbox=_sandbox;
 @property(readonly) PKInstallRequest *request; // @synthesize request=_request;
-- (id)taskWithLaunchPath:(id)arg1 arguments:(id)arg2 currentDirectoryPath:(id)arg3 logWithPrefix:(id)arg4;
 - (void)logResult:(long long)arg1;
 - (id)messageTracerTernarySignature;
 - (id)messageTracerComment;

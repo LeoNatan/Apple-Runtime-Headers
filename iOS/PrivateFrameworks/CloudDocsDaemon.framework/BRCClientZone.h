@@ -95,7 +95,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <BRCClientZoneDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool activated; // @synthesize activated=_activated;
 - (void)waitForCrossZoneMoveProcessingWithCompletion:(CDUnknownBlockType)arg1;
-- (void)itemCrossZoneMoved:(id)arg1 toParentID:(id)arg2;
+- (void)itemCrossZoneMoved:(id)arg1 withLookup:(id)arg2;
 - (void)itemMovedIntoShareInThisZone:(id)arg1 associatedItemID:(id)arg2;
 - (void)_startDownloadingItemIfNecessary:(id)arg1;
 - (void)_removeItemAndProcess:(id)arg1;

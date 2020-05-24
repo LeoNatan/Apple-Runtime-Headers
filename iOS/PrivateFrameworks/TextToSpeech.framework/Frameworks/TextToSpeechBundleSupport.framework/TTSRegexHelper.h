@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, NSMutableSet, NSRegularExpression;
+@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSRegularExpression;
 @protocol OS_dispatch_queue;
 
 @interface TTSRegexHelper : NSObject
 {
     struct vector<boost::basic_regex<char, boost::regex_traits<char, boost::cpp_regex_traits<char>>>, std::__1::allocator<boost::basic_regex<char, boost::regex_traits<char, boost::cpp_regex_traits<char>>>>> _boostRegexes;
+    NSMutableArray *_nsRegexes;
     NSMutableSet *_duplicateChecker;
     NSObject<OS_dispatch_queue> *_ttsRegexQueue;
     NSMutableDictionary *_nsRules;

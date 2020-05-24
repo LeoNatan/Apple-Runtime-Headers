@@ -9,6 +9,7 @@
 @interface _TtCC8VideosUI19VerticalStackLayout16FooterViewLayout : _TtC8VideosUI10ViewLayout
 {
     // Error parsing type: , name: $__lazy_storage_$_buttonLayout
+    // Error parsing type: , name: $__lazy_storage_$_footerTextLayout
 }
 
 @end

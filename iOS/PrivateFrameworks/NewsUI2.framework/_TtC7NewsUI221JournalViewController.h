@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: tagController
     // Error parsing type: , name: journalGroup
     // Error parsing type: , name: privateDataDirectory
+    // Error parsing type: , name: paidAccessChecker
 }
 
 - (void).cxx_destruct;

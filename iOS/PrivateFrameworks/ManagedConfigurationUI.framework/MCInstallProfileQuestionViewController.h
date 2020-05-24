@@ -9,7 +9,7 @@
 #import <ManagedConfigurationUI/PSStateRestoration-Protocol.h>
 #import <ManagedConfigurationUI/UITextFieldDelegate-Protocol.h>
 
-@class MCUIFieldCollection, NSString, UIAlertView, UITextField;
+@class MCUIFieldCollection, NSString, UITextField;
 @protocol MCProfileQuestionsControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
     NSString *_previousResponseValue;
     _Bool _waitingForPasscodePreflight;
     int _outDirection;
-    UIAlertView *_activeAlert;
     _Bool _showingKeyboard;
     _Bool _isLastQuestion;
     id <MCProfileQuestionsControllerDelegate> _questionsDelegate;
@@ -40,10 +39,9 @@ __attribute__((visibility("hidden")))
 - (void)_tellDelegateDidFinishWithUserInputResponses:(id)arg1;
 - (void)_questionFieldNotEmpty:(id)arg1;
 - (void)_questionFieldEmpty:(id)arg1;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
-- (void)alertViewCancel:(id)arg1;
-- (void)_cancelActiveAlert:(_Bool)arg1;
-- (void)_showErrorAlertWithError:(id)arg1;
+- (void)_handleError:(unsigned long long)arg1;
+- (void)_addActionForError:(unsigned long long)arg1 title:(id)arg2 toAlert:(id)arg3;
+- (void)_showAlertForError:(id)arg1;
 - (void)_updateNavigationBar;
 - (void)_showNavButtonsAnimated:(_Bool)arg1;
 - (void)_hideProgressIndicator;

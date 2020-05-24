@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NEHelper, NSData, NSDictionary, NSKeyedUnarchiver, NSMutableDictionary, NSString, NSUUID;
-@protocol NEConfigurationManagerDelegate, OS_dispatch_queue;
+@protocol OS_dispatch_queue;
 
 @interface NEConfigurationManager : NSObject
 {
@@ -31,7 +31,6 @@
     long long _generation;
     NSData *_SCPreferencesSignature;
     NSUUID *_userUUID;
-    id <NEConfigurationManagerDelegate> _delegate;
     long long _configurationChangeSource;
 }
 
@@ -43,7 +42,6 @@
 + (id)sharedManager;
 - (void).cxx_destruct;
 @property long long configurationChangeSource; // @synthesize configurationChangeSource=_configurationChangeSource;
-@property(retain) id <NEConfigurationManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSUUID *userUUID; // @synthesize userUUID=_userUUID;
 @property _Bool hasVPNAPIEntitlement; // @synthesize hasVPNAPIEntitlement=_hasVPNAPIEntitlement;
 @property _Bool isNEHelper; // @synthesize isNEHelper=_isNEHelper;

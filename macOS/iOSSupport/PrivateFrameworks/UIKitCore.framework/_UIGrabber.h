@@ -11,6 +11,15 @@
     struct CGPoint _initialLocation;
 }
 
++ (BOOL)_cursorInteractionEnabled;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
+- (void)_toggleCursorInteraction;
+- (void)cancelTrackingWithEvent:(id)arg1;
+- (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (unsigned long long)_controlEventsForActionTriggered;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1;

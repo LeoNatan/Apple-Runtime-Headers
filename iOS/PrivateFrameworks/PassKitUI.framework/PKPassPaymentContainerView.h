@@ -133,6 +133,7 @@
 - (void)_transitionToState:(long long)arg1 withTextOverride:(id)arg2 animated:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_emphasizeStateIfPossible:(long long)arg1 withTextOverride:(id)arg2 playSystemSound:(_Bool)arg3;
 - (void)_emphasizeStateIfPossible:(long long)arg1 withTextOverride:(id)arg2;
+- (void)_showEmphasisButtonForStateIfPossible:(long long)arg1;
 - (void)_applyPayState:(long long)arg1 withTextOverride:(id)arg2 animated:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_applyPayState:(long long)arg1 withTextOverride:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_applyPayState:(long long)arg1 withTextOverride:(id)arg2;
@@ -167,6 +168,7 @@
 - (void)_resetActiveApplicationForPaymentPass:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_authorizeForTransactionWithCredential:(id)arg1 authenticationIdentifier:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_activatePaymentApplication:(id)arg1 forPaymentPass:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (void)_updateCoachingInstruction;
 - (void)_didAuthorizePaymentApplicationWithAuthenticationIdentifier:(unsigned long long)arg1;
 - (void)_promoteToAuthorizedStateIfPossible;
 - (void)_resetToIdleStateAfterDelay:(double)arg1 whileIgnoreField:(_Bool)arg2;
@@ -222,6 +224,7 @@
 - (_Bool)_recognizingBiometrics;
 - (void)paymentApplicationView:(id)arg1 didSelectApplication:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)invalidate;
+- (void)coachingStateDidChange;
 - (void)didBecomeHiddenAnimated:(_Bool)arg1;
 - (void)willBecomeHiddenAnimated:(_Bool)arg1;
 - (void)didBecomeVisibleAnimated:(_Bool)arg1;

@@ -8,13 +8,14 @@
 
 #import <SpringBoard/SBSystemGestureRecognizerDelegate-Protocol.h>
 
-@class BSMonotonicReferenceTime, NSString, UIImageView, UIPanGestureRecognizer, UIView, _UIBackdropView;
+@class BSMonotonicReferenceTime, NSString, SBIndirectPanGestureRecognizer, UIImageView, UIPanGestureRecognizer, UIView, _UIBackdropView;
 @protocol BSInvalidatable, SBGrabberTongueDelegate;
 
 @interface SBGrabberTongue : NSObject <SBSystemGestureRecognizerDelegate>
 {
     _Bool _invalidated;
     UIPanGestureRecognizer *_edgePullGestureRecognizer;
+    SBIndirectPanGestureRecognizer *_indirectEdgePullGestureRecognizer;
     UIView *_tongueContainer;
     _UIBackdropView *_tongueBackdropView;
     UIImageView *_tongueChevron;
@@ -74,6 +75,7 @@
 - (double)edgeLocationForTouch:(id)arg1;
 - (double)edgeOrientedVelocity;
 - (double)distanceFromEdge;
+- (id)indirectEdgePullGestureRecognizer;
 - (id)edgePullGestureRecognizer;
 - (_Bool)dismissWithStyle:(long long)arg1 animated:(_Bool)arg2;
 - (void)presentAnimated:(_Bool)arg1;

@@ -19,6 +19,7 @@
     // Error parsing type: , name: $__lazy_storage_$_verifyingSpinnerViewController
     // Error parsing type: , name: paywallApplicationStateMonitor
     // Error parsing type: , name: eventHandlerDelegate
+    // Error parsing type: , name: applicationStateManager
 }
 
 - (void).cxx_destruct;

@@ -54,7 +54,9 @@
     UIView *_selectionView;
     UIFont *_lazyTitleViewFont;
     _Bool _lazyTitleViewFontIsDefaultForIdiom;
+    _Bool _pointerInteractionEnabled;
     NSArray *_contentConstraints;
+    CDUnknownBlockType _pointerStyleProvider;
     long long __imageContentMode;
     UIColor *__plainButtonBackgroundColor;
     struct UIEdgeInsets _internalTitlePaddingInsets;
@@ -84,6 +86,8 @@
 - (void).cxx_destruct;
 @property(retain, nonatomic, getter=_plainButtonBackgroundColor, setter=_setPlainButtonBackgroundColor:) UIColor *_plainButtonBackgroundColor; // @synthesize _plainButtonBackgroundColor=__plainButtonBackgroundColor;
 @property(nonatomic, setter=_setImageContentMode:) long long _imageContentMode; // @synthesize _imageContentMode=__imageContentMode;
+@property(copy, nonatomic) CDUnknownBlockType pointerStyleProvider; // @synthesize pointerStyleProvider=_pointerStyleProvider;
+@property(nonatomic, getter=isPointerInteractionEnabled) _Bool pointerInteractionEnabled; // @synthesize pointerInteractionEnabled=_pointerInteractionEnabled;
 @property(nonatomic, setter=_setInternalTitlePaddingInsets:) struct UIEdgeInsets _internalTitlePaddingInsets; // @synthesize _internalTitlePaddingInsets;
 @property(copy, nonatomic, setter=_setContentConstraints:) NSArray *_contentConstraints; // @synthesize _contentConstraints;
 - (_Bool)_isInCarPlay;

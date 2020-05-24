@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CCVegaJSDocument, JSContext, JSVirtualMachine, NSMutableDictionary;
+@class CCVegaJSDocument, CCVegaTransaction, CCVegaWorkerClient, JSContext, JSVirtualMachine, NSMutableDictionary;
 @protocol OS_dispatch_queue;
 
 @interface CCVegaWorker : NSObject
@@ -14,14 +14,22 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     int _currentTimerIndex;
     NSMutableDictionary *_timers;
+    _Bool _vegaLiteLoaded;
+    _Bool _vegaParserLoaded;
     JSContext *context;
     JSVirtualMachine *virtualMachine;
     CCVegaJSDocument *document;
+    CCVegaWorkerClient *currentClient;
+    CCVegaTransaction *transaction;
+    unsigned long long _dispatchQueueID;
 }
 
 + (id)sharedMainThreadWorker;
 + (id)sharedWorker;
 - (void).cxx_destruct;
+@property(readonly) unsigned long long dispatchQueueID; // @synthesize dispatchQueueID=_dispatchQueueID;
+@property(retain) CCVegaTransaction *transaction; // @synthesize transaction;
+@property __weak CCVegaWorkerClient *currentClient; // @synthesize currentClient;
 @property(retain, nonatomic) CCVegaJSDocument *document; // @synthesize document;
 @property(retain) JSVirtualMachine *virtualMachine; // @synthesize virtualMachine;
 @property(retain) JSContext *context; // @synthesize context;
@@ -31,6 +39,8 @@
 - (void)setupConsole;
 - (void)setupTimerFunctions;
 - (int)nextTimerIndex;
+- (void)requireVegaParser;
+- (void)requireVegaLite;
 - (void)setupContext;
 - (id)initWithQueue:(id)arg1;
 - (id)init;

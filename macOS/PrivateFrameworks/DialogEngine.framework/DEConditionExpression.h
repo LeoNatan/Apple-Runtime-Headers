@@ -14,9 +14,9 @@
 
 - (_Bool)evaluate:(id)arg1;
 - (_Bool)validate:(id)arg1;
-@property NSString *value;
-@property NSString *op;
-@property NSString *name;
+@property(retain) NSString *value;
+@property(retain) NSString *op;
+@property(retain) NSString *name;
 - (id)init;
 
 // Remaining properties

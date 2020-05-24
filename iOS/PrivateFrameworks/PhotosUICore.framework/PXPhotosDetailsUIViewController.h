@@ -15,11 +15,12 @@
 #import <PhotosUICore/PXWidgetCompositionDelegate-Protocol.h>
 #import <PhotosUICore/PXWidgetUnlockDelegate-Protocol.h>
 #import <PhotosUICore/UIContextMenuInteractionDelegate-Protocol.h>
+#import <PhotosUICore/_UICursorInteractionDelegate-Protocol.h>
 
-@class NSArray, NSMapTable, NSMutableArray, NSString, NSUserActivity, PXBarsController, PXPhotosDetailsContext, PXPhotosDetailsHeaderTileWidget, PXPhotosDetailsSpecManager, PXPhotosDetailsViewModel, PXScrollViewController, PXSwipeSelectionManager, PXTilingController, PXUIScrollViewController, PXWidgetComposition, PXWidgetSpec, UIContextMenuInteraction, UIScrollView, UIView;
+@class NSArray, NSMapTable, NSMutableArray, NSString, NSUserActivity, PXBarsController, PXPhotosDetailsContext, PXPhotosDetailsHeaderTileWidget, PXPhotosDetailsSpecManager, PXPhotosDetailsViewModel, PXScrollViewController, PXSwipeSelectionManager, PXTilingController, PXUIScrollViewController, PXWidgetComposition, PXWidgetSpec, UIContextMenuInteraction, UIScrollView, UIView, _UICursorInteraction;
 @protocol PXAssetCollectionActionPerformerDelegate, PXDisplayAsset, PXPhotosDetailsUIViewControllerDelegate, PXUIWidget;
 
-@interface PXPhotosDetailsUIViewController : UIViewController <PXWidgetCompositionDelegate, PXChangeObserver, PXUIViewControllerZoomTransitionEndPoint, PXActionPerformerDelegate, PXWidgetUnlockDelegate, PXForcedDismissableViewController, UIContextMenuInteractionDelegate, PXScrollViewControllerObserver, PXPurgeableController>
+@interface PXPhotosDetailsUIViewController : UIViewController <PXWidgetCompositionDelegate, PXChangeObserver, PXUIViewControllerZoomTransitionEndPoint, PXActionPerformerDelegate, PXWidgetUnlockDelegate, PXForcedDismissableViewController, _UICursorInteractionDelegate, UIContextMenuInteractionDelegate, PXScrollViewControllerObserver, PXPurgeableController>
 {
     struct {
         _Bool requestDismissal;
@@ -51,6 +52,7 @@
     CDUnknownBlockType __ppt_variationsWidgetLoadingCompleteHandler;
     UIContextMenuInteraction *__contextMenuInteraction;
     UIViewController *__previewViewController;
+    _UICursorInteraction *__cursorInteraction;
     NSUserActivity *_siriActionActivity;
     PXBarsController *_barsController;
     id <PXAssetCollectionActionPerformerDelegate> _actionPerformerDelegate;
@@ -66,6 +68,7 @@
 @property(nonatomic) struct UIEdgeInsets contentEdgeInsets; // @synthesize contentEdgeInsets=_contentEdgeInsets;
 @property(readonly, nonatomic) PXBarsController *barsController; // @synthesize barsController=_barsController;
 @property(retain, nonatomic) NSUserActivity *siriActionActivity; // @synthesize siriActionActivity=_siriActionActivity;
+@property(retain, nonatomic, setter=_setCursorInteraction:) _UICursorInteraction *_cursorInteraction; // @synthesize _cursorInteraction=__cursorInteraction;
 @property(retain, nonatomic, setter=_setPreviewViewController:) UIViewController *_previewViewController; // @synthesize _previewViewController=__previewViewController;
 @property(nonatomic, setter=_setPreviewCommitting:) _Bool _previewCommitting; // @synthesize _previewCommitting=__previewCommitting;
 @property(retain, nonatomic, setter=_setContextMenuInteraction:) UIContextMenuInteraction *_contextMenuInteraction; // @synthesize _contextMenuInteraction=__contextMenuInteraction;
@@ -107,6 +110,8 @@
 - (void)contextMenuInteraction:(id)arg1 willCommitWithAnimator:(id)arg2;
 - (id)contextMenuInteraction:(id)arg1 previewForHighlightingMenuWithConfiguration:(id)arg2;
 - (id)contextMenuInteraction:(id)arg1 configurationForMenuAtLocation:(struct CGPoint)arg2;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2;
+- (id)cursorInteraction:(id)arg1 regionForRequest:(id)arg2 defaultRegion:(id)arg3;
 - (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
 - (void)playMiroMovieWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)zoomAnimationCoordinatorForZoomTransition:(id)arg1;

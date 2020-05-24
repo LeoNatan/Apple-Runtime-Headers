@@ -4,11 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#pragma mark Blocks
+#pragma mark Function Pointers and Blocks
+
+typedef void (*CDUnknownFunctionPointerType)(void); // return type and parameters are unknown
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
 #pragma mark Named Structures
+
+struct CC_SHA256state_st {
+    unsigned int count[2];
+    unsigned int hash[8];
+    unsigned int wbuf[16];
+};
 
 struct Condition;
 
@@ -30,7 +38,8 @@ struct Context {
     struct DialogStateFamily _field13;
     _Bool _field14;
     _Bool _field15;
-    _Bool _field16;
+    struct shared_ptr<siri::dialogengine::ExecutionState> _field16;
+    _Bool _field17;
 };
 
 struct CountAndTimestamp {
@@ -57,6 +66,8 @@ struct Distribution {
     struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> _field3;
 };
 
+struct ExecutionState;
+
 struct File;
 
 struct Group;
@@ -71,7 +82,8 @@ struct ObjectProperty {
     struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> _field1;
     struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> _field2;
     struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> _field3;
-    _Bool _field4;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> _field4;
+    _Bool _field5;
 };
 
 struct ObjectSampleValues {
@@ -255,6 +267,11 @@ struct shared_ptr<siri::dialogengine::ConditionEntry> {
 struct shared_ptr<siri::dialogengine::Dialog> {
     struct Dialog *__ptr_;
     struct __shared_weak_count *__cntrl_;
+};
+
+struct shared_ptr<siri::dialogengine::ExecutionState> {
+    struct ExecutionState *_field1;
+    struct __shared_weak_count *_field2;
 };
 
 struct shared_ptr<siri::dialogengine::File> {

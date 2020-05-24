@@ -31,6 +31,8 @@
     UIViewController *_passphraseViewController;
     _Bool _viewAppeared;
     _Bool _userIntentRequired;
+    long long _internalFaceIDState;
+    long long _coachingState;
     long long _internalCoachingState;
     NSArray *_defaultConstraints;
     NSArray *_compactConstraints;
@@ -81,7 +83,7 @@
 - (void)_cancelPassphrasePressed;
 - (void)cancelPressed:(id)arg1;
 - (void)_setUserIntentRequired:(_Bool)arg1;
-- (void)_updateCoachingInstruction;
+- (_Bool)_updateCoachingInstruction;
 - (void)_updateUserIntentRequired;
 - (void)_setPassphraseViewController:(id)arg1;
 - (void)_setPasscodeViewController:(id)arg1;

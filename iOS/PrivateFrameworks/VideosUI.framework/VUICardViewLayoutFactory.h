@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long gridType; // @synthesize gridType=_gridType;
 @property(readonly, nonatomic) long long gridStyle; // @synthesize gridStyle=_gridStyle;
 @property(readonly, nonatomic) long long cardLayoutType; // @synthesize cardLayoutType=_cardLayoutType;
+- (id)decoratedShelfLockupCardViewLayout;
 - (id)videoLockupCardViewLayout;
 - (id)editorialCardViewLayout;
 - (id)upnextCardViewLayoutForIdiom:(long long)arg1;

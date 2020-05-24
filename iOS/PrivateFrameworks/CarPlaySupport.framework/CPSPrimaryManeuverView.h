@@ -21,6 +21,7 @@
     UILayoutGuide *_yCenteringGuide;
     UILayoutGuide *_centeringLayoutGuide;
     CPSPrimaryManeuverLayoutConfiguration *_activeLayoutConfiguration;
+    CPSPrimaryManeuverLayoutConfiguration *_layoutConfigurationForIntrinsicSizing;
     CPManeuver *_maneuver;
     CPTravelEstimates *_currentTravelEstimates;
     NSArray *_layoutConfigurations;
@@ -36,6 +37,7 @@
 @property(retain, nonatomic) NSArray *layoutConfigurations; // @synthesize layoutConfigurations=_layoutConfigurations;
 @property(retain, nonatomic) CPTravelEstimates *currentTravelEstimates; // @synthesize currentTravelEstimates=_currentTravelEstimates;
 @property(readonly, nonatomic) CPManeuver *maneuver; // @synthesize maneuver=_maneuver;
+@property(retain, nonatomic) CPSPrimaryManeuverLayoutConfiguration *layoutConfigurationForIntrinsicSizing; // @synthesize layoutConfigurationForIntrinsicSizing=_layoutConfigurationForIntrinsicSizing;
 @property(retain, nonatomic) CPSPrimaryManeuverLayoutConfiguration *activeLayoutConfiguration; // @synthesize activeLayoutConfiguration=_activeLayoutConfiguration;
 @property(retain, nonatomic) UILayoutGuide *centeringLayoutGuide; // @synthesize centeringLayoutGuide=_centeringLayoutGuide;
 @property(retain, nonatomic) UILayoutGuide *yCenteringGuide; // @synthesize yCenteringGuide=_yCenteringGuide;

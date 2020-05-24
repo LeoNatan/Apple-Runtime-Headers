@@ -14,6 +14,7 @@
 - (void)evictItemWithIdentifier:(NSString *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)setDownloadPolicy:(unsigned long long)arg1 forItemWithIdentifier:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)reimportItemsBelowItemWithIdentifier:(NSString *)arg1 completionHandler:(void (^)(NSError *))arg2;
+- (void)waitForStabilizationWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)ingestFromCacheItemWithIdentifier:(NSString *)arg1 requestedFields:(unsigned long long)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)fetchAndStartEnumeratingWithSettings:(FPExtensionEnumerationSettings *)arg1 observer:(id <FPXEnumeratorObserver>)arg2 request:(NSFileProviderRequest *)arg3 completionHandler:(void (^)(id <FPXEnumerator>, id <FPDLifetimeServicing>, NSError *))arg4;
 - (void)setDomainEjectable:(BOOL)arg1 completionHandler:(void (^)(NSError *))arg2;

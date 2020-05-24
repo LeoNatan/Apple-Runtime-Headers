@@ -31,7 +31,7 @@
 @property(retain, nonatomic) PKSubcredentialInvitationFlowControllerContext *provisioningContext; // @synthesize provisioningContext=_provisioningContext;
 - (void)subcredentialProvisioningController:(id)arg1 shouldFailAfterError:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)subcredentialProvisioningController:(id)arg1 didFinishWithPass:(id)arg2;
-- (void)subcredentialProvisioningController:(id)arg1 didFinishWithError:(id)arg2;
+- (void)subcredentialProvisioningController:(id)arg1 didFinishWithError:(id)arg2 inState:(long long)arg3;
 - (void)explanationViewDidSelectSetupLater:(id)arg1;
 - (void)explanationViewDidSelectContinue:(id)arg1;
 - (id)contactKeysToFetch;
@@ -41,7 +41,6 @@
 - (id)sharingSessionWithDelegate:(id)arg1;
 - (void)showActivityIndicator:(_Bool)arg1;
 - (void)showSuccessCheckmark:(_Bool)arg1;
-- (void)cancelButtonPressed;
 - (id)bodyTextForContext:(id)arg1;
 - (void)resetState;
 - (void)preflightWithCompletion:(CDUnknownBlockType)arg1;

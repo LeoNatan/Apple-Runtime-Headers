@@ -19,6 +19,7 @@
 - (void)_handleConversationRecipientsDidChange:(id)arg1;
 - (void)setTitleView:(id)arg1;
 - (void)_accessibilityLoadAccessibilityInformation;
+- (void)_axExecuteBlockOnBannerCells:(CDUnknownBlockType)arg1;
 - (void)_axExecuteBlockOnAvatarCells:(CDUnknownBlockType)arg1;
 - (_Bool)_axIsPancakeMode;
 

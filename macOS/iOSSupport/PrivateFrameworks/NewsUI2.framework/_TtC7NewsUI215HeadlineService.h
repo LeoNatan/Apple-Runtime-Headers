@@ -13,6 +13,7 @@
     // Error parsing type: , name: appConfigurationManager
     // Error parsing type: , name: headlineServiceOperationQueue
     // Error parsing type: , name: tagService
+    // Error parsing type: , name: paidAccessChecker
     // Error parsing type: , name: queryTimeRangeProvider
 }
 

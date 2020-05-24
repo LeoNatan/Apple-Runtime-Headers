@@ -11,6 +11,7 @@
 @interface NSXPCConnection (Sanitization)
 @property(readonly, nonatomic) FPXPCSanitizer *fp_sanitizer;
 - (id)fp_bundleIdentifier;
+- (id)fp_bundleURL;
 - (BOOL)fp_hasOneOfEntitlements:(id)arg1 logLevel:(unsigned long long)arg2;
 - (BOOL)fp_hasOneOfEntitlements:(id)arg1;
 - (id)fp_valueForEntitlement:(id)arg1;

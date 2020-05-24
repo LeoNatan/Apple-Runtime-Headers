@@ -19,6 +19,7 @@
 @property BOOL isFinished; // @synthesize isFinished=_isFinished;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) OSPRequest *request; // @synthesize request=_request;
+- (void)cleanUp;
 - (void)start;
 - (id)initWithRequest:(id)arg1;
 

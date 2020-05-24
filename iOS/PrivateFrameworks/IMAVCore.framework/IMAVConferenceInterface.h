@@ -8,7 +8,7 @@
 
 #import <IMAVCore/AVConferenceDelegate-Protocol.h>
 
-@class AVConference, NSLock, NSMutableArray, NSMutableDictionary;
+@class AVConference, NSLock, NSMutableArray, NSMutableDictionary, NSNumber;
 
 @interface IMAVConferenceInterface : IMAVInterface <AVConferenceDelegate>
 {
@@ -17,12 +17,14 @@
     NSLock *_avConferencesLock;
     _Bool _duringInit;
     _Bool _pendingCleanup;
+    NSNumber *_sendingVideoExpected;
 }
 
 + (void)_postParticipantScreenAttributesChangeNotification:(id)arg1 cameraChanged:(_Bool)arg2 orientationChanged:(_Bool)arg3 aspectChanged:(_Bool)arg4 cameraWillSwitch:(_Bool)arg5 camera:(unsigned int)arg6 orentation:(unsigned int)arg7 aspect:(struct CGSize)arg8;
 + (void)_postParticipantMediaChangeNotification:(id)arg1 cameraChanged:(_Bool)arg2 orientationChanged:(_Bool)arg3 aspectChanged:(_Bool)arg4 contentRectChanged:(_Bool)arg5 cameraWillSwitch:(_Bool)arg6 camera:(unsigned int)arg7 orentation:(unsigned int)arg8 aspect:(struct CGSize)arg9 contentRect:(struct CGRect)arg10;
 + (_Bool)_useMultipleAVConference;
 - (void).cxx_destruct;
+@property(retain, nonatomic, getter=isSendingVideoExpected) NSNumber *sendingVideoExpected; // @synthesize sendingVideoExpected=_sendingVideoExpected;
 - (void)updateAVChat:(id)arg1 withCallMetadata:(id)arg2 isFinalUpdate:(_Bool)arg3;
 - (_Bool)_submitEndCallMetric:(id)arg1 forCallID:(long long)arg2;
 - (_Bool)_submitLoggingInformation:(id)arg1 forChat:(id)arg2;
@@ -79,6 +81,7 @@
 - (unsigned long long)capabilities;
 - (unsigned long long)capabilitiesOfCPU;
 - (unsigned long long)capabilitiesOfNetwork;
+- (void)conference:(id)arg1 callID:(long long)arg2 setPauseVideo:(_Bool)arg3;
 - (void)avChat:(id)arg1 setSendingVideo:(_Bool)arg2;
 - (_Bool)isSendingVideoForAVChat:(id)arg1;
 - (void)avChat:(id)arg1 setSendingAudio:(_Bool)arg2;

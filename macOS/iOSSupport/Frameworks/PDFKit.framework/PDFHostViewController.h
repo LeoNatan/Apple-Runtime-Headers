@@ -27,6 +27,9 @@
 - (void)_endPDFViewRotationAnimated:(_Bool)arg1 withUpdate:(_Bool)arg2;
 - (void)endPDFViewRotation;
 - (void)beginPDFViewRotation;
+- (id)pointerInteraction:(id)arg1 styleForRegion:(id)arg2;
+- (void)completePointerInteractionRegionForRequest:(id)arg1;
+- (void)_pointerInteraction:(id)arg1 regionForRequest:(id)arg2 defaultRegion:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (_Bool)_isTouchingLollipopAtLocationOfFirstTouch:(struct CGPoint)arg1;
 - (unsigned long long)_typeForGestureRecognizer:(id)arg1;
 - (void)handleGesture:(id)arg1;

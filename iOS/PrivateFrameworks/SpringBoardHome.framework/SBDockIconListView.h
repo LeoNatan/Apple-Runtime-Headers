@@ -23,6 +23,7 @@
 @property(nonatomic) struct UIEdgeInsets layoutInsets; // @synthesize layoutInsets=_layoutInsets;
 @property(nonatomic, getter=isVertical) _Bool vertical; // @synthesize vertical=_vertical;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
+- (struct UIEdgeInsets)cursorHitTestingInsetsForIconSpacing:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)scaledAlignmentIconSize;
 - (double)effectiveSpacingForNumberOfIcons:(unsigned long long)arg1;

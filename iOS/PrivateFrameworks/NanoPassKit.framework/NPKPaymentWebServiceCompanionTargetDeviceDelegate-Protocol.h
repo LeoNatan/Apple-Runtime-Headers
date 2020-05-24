@@ -21,6 +21,7 @@
 - (void)setNewAuthRandom:(void (^)(_Bool))arg1;
 - (void)archiveWebServiceBackgroundContext:(PKPaymentWebServiceBackgroundContext *)arg1;
 - (void)archiveWebServiceContext:(PKPaymentWebServiceContext *)arg1;
+- (void)handleCredentialsUpdate:(NSSet *)arg1 forUniqueID:(NSString *)arg2;
 - (void)handleBalanceUpdate:(NSSet *)arg1 forUniqueID:(NSString *)arg2;
 - (void)handleRemoveTransactionsWithIdentifiers:(NSArray *)arg1;
 - (void)handleAppletState:(PKTransitAppletState *)arg1 forUniqueID:(NSString *)arg2;

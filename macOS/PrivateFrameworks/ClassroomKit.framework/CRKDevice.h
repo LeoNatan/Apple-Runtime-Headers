@@ -28,6 +28,7 @@
     float _displayHeight;
     NSString *_identifier;
     NSString *_serialNumber;
+    NSString *_trustedExchangeIdentifier;
     unsigned long long _platform;
     NSString *_model;
     NSString *_name;
@@ -117,6 +118,7 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *model; // @synthesize model=_model;
 @property(nonatomic) unsigned long long platform; // @synthesize platform=_platform;
+@property(copy, nonatomic) NSString *trustedExchangeIdentifier; // @synthesize trustedExchangeIdentifier=_trustedExchangeIdentifier;
 @property(copy, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void)encodeWithCoder:(id)arg1;

@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 @property(nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
+- (void)_transformChangedWithEvent:(id)arg1;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (double)_hysteresis;

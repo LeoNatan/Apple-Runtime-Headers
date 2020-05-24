@@ -7,10 +7,11 @@
 #import <UIKitCore/UIControl.h>
 
 #import <UIKitCore/NSCoding-Protocol.h>
+#import <UIKitCore/_UICursorInteractionDelegate-Protocol.h>
 
-@class NSArray, UIColor, UIImage, UIImageView, UIView;
+@class NSArray, NSString, UIColor, UIImage, UIImageView, UIView;
 
-@interface UISlider : UIControl <NSCoding>
+@interface UISlider : UIControl <_UICursorInteractionDelegate, NSCoding>
 {
     float _value;
     float _minValue;
@@ -106,7 +107,7 @@
 - (void)setMinimumTrackImage:(id)arg1 forState:(unsigned long long)arg2;
 - (void)setThumbImage:(id)arg1 forState:(unsigned long long)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (void)_rebuildControlThumb:(BOOL)arg1 track:(BOOL)arg2;
 - (void)_buildTrackArtwork;
@@ -116,6 +117,8 @@
 - (id)createThumbViewNeue;
 - (void)encodeWithCoder:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 - (void)_contentSizeCategoryChanged:(id)arg1;
 - (void)_listenForContentSizeCategoryChangesIfNecessary;
 - (id)initWithCoder:(id)arg1;
@@ -150,6 +153,11 @@
 - (void)_setMinimumTrackImage:(id)arg1 forStates:(unsigned long long)arg2;
 - (void)_setThumbImage:(id)arg1 forStates:(unsigned long long)arg2;
 - (void)_setContent:(id)arg1 forState:(unsigned long long)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

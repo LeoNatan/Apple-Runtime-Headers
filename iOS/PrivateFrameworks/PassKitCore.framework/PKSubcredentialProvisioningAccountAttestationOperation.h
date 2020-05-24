@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PassKitCore/PKSubcredentialProvisioningSessionOperation.h>
+#import <PassKitCore/PKSubcredentialProvisioningSharingSessionOperation.h>
 
 @class PKAppletSubcredential, PKAppletSubcredentialSharingInvitationMetadata, PKPaymentWebService;
 
-@interface PKSubcredentialProvisioningAccountAttestationOperation : PKSubcredentialProvisioningSessionOperation
+@interface PKSubcredentialProvisioningAccountAttestationOperation : PKSubcredentialProvisioningSharingSessionOperation
 {
     PKAppletSubcredential *_credential;
     PKPaymentWebService *_webService;

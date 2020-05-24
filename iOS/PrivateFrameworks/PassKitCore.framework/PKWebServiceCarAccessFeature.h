@@ -10,11 +10,16 @@
 
 @interface PKWebServiceCarAccessFeature : PKWebServiceRegionFeature
 {
+    _Bool _allowSharing;
+    _Bool _allowSharingToWatch;
     NSArray *_supportedTerminals;
 }
 
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *supportedTerminals; // @synthesize supportedTerminals=_supportedTerminals;
+@property(readonly, nonatomic) _Bool allowSharingToWatch; // @synthesize allowSharingToWatch=_allowSharingToWatch;
+@property(readonly, nonatomic) _Bool allowSharing; // @synthesize allowSharing=_allowSharing;
+- (id)localizedNameForIssuerWithIdentifier:(id)arg1;
 - (id)initWithDictionary:(id)arg1 region:(id)arg2;
 
 @end

@@ -36,8 +36,10 @@
     NSObject<OS_dispatch_queue> *_audibleFeedbackQueue;
     NSObject<OS_dispatch_group> *_twoShotAudibleFeedbackDecisionGroup;
     BOOL _isOpus;
-    BOOL _isActivated;
+    BOOL _isSiriClientListening;
     BOOL _isNarrowBand;
+    BOOL _isAudioSessionActivated;
+    BOOL _deviceRoleIsStereo;
     BOOL _twoShotNotificationEnabled;
     BOOL _isMediaPlaying;
     BOOL _isAlarmPlaying;
@@ -120,11 +122,13 @@
 @property(retain, nonatomic) CSSpIdImplicitTraining *voiceTriggerImplicitTraining; // @synthesize voiceTriggerImplicitTraining=_voiceTriggerImplicitTraining;
 @property(retain, nonatomic) id <CSSpIdSpeakerRecognizer> spIdRecognizer; // @synthesize spIdRecognizer=_spIdRecognizer;
 @property(retain, nonatomic) CSSpeakerIdRecognizerFactory *spIdFactory; // @synthesize spIdFactory=_spIdFactory;
+@property(nonatomic) BOOL deviceRoleIsStereo; // @synthesize deviceRoleIsStereo=_deviceRoleIsStereo;
+@property(nonatomic) BOOL isAudioSessionActivated; // @synthesize isAudioSessionActivated=_isAudioSessionActivated;
 @property(retain, nonatomic) CSSmartSiriVolumeController *volumeController; // @synthesize volumeController=_volumeController;
 @property(retain, nonatomic) CSSelectiveChannelAudioFileWriter *serverLoggingWriter; // @synthesize serverLoggingWriter=_serverLoggingWriter;
 @property(retain, nonatomic) CSPlainAudioFileWriter *audioFileWriter; // @synthesize audioFileWriter=_audioFileWriter;
 @property(nonatomic) BOOL isNarrowBand; // @synthesize isNarrowBand=_isNarrowBand;
-@property(nonatomic) BOOL isActivated; // @synthesize isActivated=_isActivated;
+@property(nonatomic) BOOL isSiriClientListening; // @synthesize isSiriClientListening=_isSiriClientListening;
 @property(nonatomic) BOOL isOpus; // @synthesize isOpus=_isOpus;
 @property(retain, nonatomic) id <CSBargeInModeProviding> bargeInModeProvider; // @synthesize bargeInModeProvider=_bargeInModeProvider;
 @property(retain, nonatomic) id <CSAudioMetricProviding> audioMetricProvider; // @synthesize audioMetricProvider=_audioMetricProvider;
@@ -248,7 +252,9 @@
 - (void)prewarmAudioSession;
 - (void)preheat;
 - (BOOL)setCurrentContext:(id)arg1 error:(id *)arg2;
+- (BOOL)_reallyActivateAudioSession:(id *)arg1 forRetry:(BOOL)arg2;
 - (BOOL)_activateAudioSession:(id *)arg1 forRetry:(BOOL)arg2;
+- (BOOL)_lazyActivateAudioSession:(id *)arg1 forRetry:(BOOL)arg2;
 - (void)_enableBargeInMode:(BOOL)arg1;
 - (void)_performPendingAudioSessionActivateForReason:(id)arg1;
 - (void)_cancelPendingAudioSessionActivateForReason:(id)arg1;

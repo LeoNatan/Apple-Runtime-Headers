@@ -23,6 +23,7 @@
 - (double)innerCircleStrokeOutlineWidth;
 - (double)strokeOutlineWidth;
 - (double)strokeWidth;
+- (_Bool)useSystemFilters;
 - (id)pressedCircularProgressFillColor;
 - (id)circularProgressFillColor;
 - (id)strokeOutlineColor;

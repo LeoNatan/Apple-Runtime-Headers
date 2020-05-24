@@ -6,10 +6,12 @@
 
 #import <UIKitCore/_UIStatusBarVisualProvider_iOS.h>
 
-@class NSDictionary, NSLayoutConstraint, _UIStatusBarDisplayItemPlacement;
+#import <UIKitCore/_UIStatusBarRegionCursorInsetProvider-Protocol.h>
+
+@class NSDictionary, NSLayoutConstraint, NSString, _UIStatusBar, _UIStatusBarDisplayItemPlacement;
 
 __attribute__((visibility("hidden")))
-@interface _UIStatusBarVisualProvider_Pad : _UIStatusBarVisualProvider_iOS
+@interface _UIStatusBarVisualProvider_Pad : _UIStatusBarVisualProvider_iOS <_UIStatusBarRegionCursorInsetProvider>
 {
     NSDictionary *_orderedDisplayItemPlacements;
     NSLayoutConstraint *_trailingRegionLeadingAnchorConstraint;
@@ -22,6 +24,9 @@ __attribute__((visibility("hidden")))
 + (id)pillFont;
 + (id)expandedFont;
 + (id)normalFont;
++ (double)regionCursorCornerRadius;
++ (_Bool)regionCursorIsPill;
++ (struct UIEdgeInsets)regionCursorInsets;
 + (struct CGSize)smallPillSize;
 + (struct CGSize)pillSize;
 + (double)baselineOffset;
@@ -55,6 +60,15 @@ __attribute__((visibility("hidden")))
 - (id)setupInContainerView:(id)arg1;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, nonatomic) _Bool canFixupDisplayItemAttributes;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(nonatomic) __weak _UIStatusBar *statusBar;
+@property(readonly) Class superclass;
+@property(readonly, nonatomic) _Bool supportsIndirectPointerTouchActions;
 
 @end
 

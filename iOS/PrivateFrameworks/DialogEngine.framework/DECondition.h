@@ -19,8 +19,8 @@
 - (_Bool)evaluate:(id)arg1;
 - (_Bool)validate:(id)arg1;
 - (void)addEntry:(id)arg1;
-@property NSArray *entries;
-@property NSString *name;
+@property(retain) NSArray *entries;
+@property(retain) NSString *name;
 - (shared_ptr_92af2b80 *)getSharedPtr;
 - (id)initWithSharedPtr:(shared_ptr_92af2b80 *)arg1;
 - (id)init;

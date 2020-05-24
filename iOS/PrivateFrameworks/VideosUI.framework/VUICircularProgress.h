@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)_progressFrame;
 - (void)_configureProgress:(_Bool)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (void)tintColorDidChange;
 - (void)didMoveToWindow;
 - (void)layoutSubviews;
 - (void)dealloc;

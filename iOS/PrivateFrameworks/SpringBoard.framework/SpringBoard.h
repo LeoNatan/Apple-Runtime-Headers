@@ -22,7 +22,7 @@
 #import <SpringBoard/UIStatusBarStyleDelegate_SpringBoardOnly-Protocol.h>
 #import <SpringBoard/_UIApplicationInitializationContextFactory-Protocol.h>
 
-@class DNDAWDMetricsService, DNDNotificationsService, NSArray, NSCountedSet, NSDate, NSHashTable, NSMutableArray, NSMutableSet, NSNumberFormatter, NSObject, NSSet, NSString, NSTimer, RSPeerToPeerServerController, SBAccessibilityWindowHostingControllerServer, SBAccountStoreManager, SBAppStatusBarSettingsAssertion, SBAppSwitcherSystemService, SBApplication, SBApplicationAutoLaunchService, SBApplicationLaunchAlertService, SBBluetoothAccessoryBatteryMonitor, SBCameraHardwareButton, SBCarDoNotDisturbController, SBCardItemsController, SBCombinationHardwareButton, SBDeveloperBuildExpirationTrigger, SBDeviceOrientationUpdateManager, SBExternalDisplayManager, SBFUserAuthenticationController, SBHomeHardwareButton, SBHomeScreenService, SBIdleTimerPolicyAggregator, SBInteractiveScreenshotGestureManager, SBLockHardwareButton, SBLockScreenService, SBMainDisplayInterfaceOrientationAggregator, SBMainWorkspace, SBModalAlertPresentationCoordinator, SBModalAlertPresenter, SBModalUIFluidDismissGestureManager, SBNCNotificationDispatcher, SBPressPrecedenceArbiter, SBProximitySensorManager, SBRemoteAlertHandleServer, SBRemoteTransientOverlaySessionManager, SBRestartManager, SBSStatusBarStyleOverridesAssertion, SBScreenTimeTrackingController, SBScreenshotManager, SBSoftwareUpdatePasscodePolicyManager, SBSpotlightTransientOverlayViewController, SBSpuriousScreenUndimmingAssertion, SBStateDumpService, SBSynchronizeCloudCriticalDataOperation, SBTestAutomationService, SBUIController, SBUserAgent, SBUserSessionController, SBVolumeHardwareButton, SBWidgetController, SSScreenCapturer, STStatusServer, STTelephonyStateProvider, UIWindow;
+@class DNDAWDMetricsService, DNDNotificationsService, NSArray, NSCountedSet, NSDate, NSHashTable, NSMutableArray, NSMutableSet, NSNumberFormatter, NSObject, NSSet, NSString, NSTimer, RSPeerToPeerServerController, SBAccessibilityWindowHostingControllerServer, SBAccountStoreManager, SBAppStatusBarSettingsAssertion, SBAppSwitcherSystemService, SBApplication, SBApplicationAutoLaunchService, SBApplicationLaunchAlertService, SBBluetoothAccessoryBatteryMonitor, SBCameraHardwareButton, SBCarDoNotDisturbController, SBCardItemsController, SBCombinationHardwareButton, SBDeveloperBuildExpirationTrigger, SBDeviceOrientationUpdateManager, SBExternalDisplayManager, SBFUserAuthenticationController, SBHomeHardwareButton, SBHomeScreenService, SBIdleTimerPolicyAggregator, SBInteractiveScreenshotGestureManager, SBLockHardwareButton, SBLockScreenService, SBMainDisplayInterfaceOrientationAggregator, SBMainWorkspace, SBModalAlertPresentationCoordinator, SBModalAlertPresenter, SBModalUIFluidDismissGestureManager, SBMousePointerManager, SBNCNotificationDispatcher, SBPressPrecedenceArbiter, SBProximitySensorManager, SBRemoteAlertHandleServer, SBRemoteTransientOverlaySessionManager, SBRestartManager, SBSStatusBarStyleOverridesAssertion, SBScreenTimeTrackingController, SBScreenshotManager, SBSoftwareUpdatePasscodePolicyManager, SBSpotlightTransientOverlayViewController, SBSpuriousScreenUndimmingAssertion, SBStateDumpService, SBSynchronizeCloudCriticalDataOperation, SBSystemCursorInteractionManager, SBTestAutomationService, SBUIController, SBUserAgent, SBUserSessionController, SBVolumeHardwareButton, SBWidgetController, SSScreenCapturer, STStatusServer, STTelephonyStateProvider, UIWindow;
 @protocol BSInvalidatable, OS_dispatch_source, SBFLockOutStatusProvider, SBIdleTimer, SBProximityBacklightPolicy, SBUIUserAgent;
 
 @interface SpringBoard : UISystemShellApplication <CCUIPPTHostDelegate, MCProfileConnectionObserver, RSPeerToPeerConnectionControllerDataSource, SBRestartManagerDelegate, SBModalAlertPresentationCoordinatorDelegate, UIStatusBarStyleDelegate_SpringBoardOnly, SSScreenCapturerDelegate, SBBacklightControllerObserver, SBInteractiveScreenshotGestureManagerDelegate, SBRemoteTransientOverlaySessionManagerDelegate, SBSpotlightTransientOverlayViewControllerDelegate, _UIApplicationInitializationContextFactory, SBAVSystemControllerCacheObserver, UIApplicationDelegate, SBIdleTimerProviding>
@@ -127,6 +127,7 @@
     SBSpotlightTransientOverlayViewController *_spotlightTransientOverlayViewController;
     NSHashTable *_activeRemoteTransientOverlayViewProviders;
     CDUnknownBlockType _headsetButtonUpHandler;
+    SBMousePointerManager *_mousePointerManager;
     SBAccessibilityWindowHostingControllerServer *_accessibilityWindowHostingController;
     _Bool _requestingStatusBarStyleWithoutConsideringAlerts;
     _Bool _typingActive;
@@ -134,6 +135,7 @@
     int _nowPlayingProcessPID;
     NSMutableArray *_nowLocatingApps;
     SBWidgetController *_widgetController;
+    SBSystemCursorInteractionManager *_systemCursorInteractionManager;
     double _bottomEdgeAmbiguousActivationMargin;
     SBHomeHardwareButton *_homeHardwareButton;
     SBLockHardwareButton *_lockHardwareButton;
@@ -348,6 +350,8 @@
 - (_Bool)canOpenURL:(id)arg1;
 - (_Bool)isSpringBoardStatusBarHidden;
 - (int)statusBar:(id)arg1 effectiveStyleOverridesForRequestedStyle:(long long)arg2 overrides:(int)arg3;
+- (_Bool)handleStatusBarHoverActionForRegion:(long long)arg1;
+- (_Bool)_handleStatusBarHoverActionForRegion:(long long)arg1;
 - (_Bool)handleDoubleHeightStatusBarTapWithStyleOverride:(int)arg1;
 - (void)_updateRingerState:(int)arg1 withVisuals:(_Bool)arg2 updatePreferenceRegister:(_Bool)arg3;
 - (void)_ringerChanged:(struct __IOHIDEvent *)arg1;
@@ -438,6 +442,7 @@
 - (_Bool)_frontBoardWantsKeyboardSceneLayerOrderedIntoScene;
 - (_Bool)disablesFrontBoardImplicitWindowScenes;
 - (id)init;
+@property(readonly, nonatomic) SBSystemCursorInteractionManager *systemCursorInteractionManager; // @synthesize systemCursorInteractionManager=_systemCursorInteractionManager;
 @property(readonly, nonatomic) SBWidgetController *widgetController; // @synthesize widgetController=_widgetController;
 - (long long)startupInterfaceOrientation;
 - (void)setNextAssistantRecognitionStrings:(id)arg1;

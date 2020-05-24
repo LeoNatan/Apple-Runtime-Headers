@@ -6,9 +6,12 @@
 
 #import <UIKitCore/UIView.h>
 
-@class NSMutableArray, NSSet;
+#import <UIKitCore/UIPointerInteractionDelegate-Protocol.h>
+#import <UIKitCore/_UICursorInteractionDelegate-Protocol.h>
 
-@interface UIControl : UIView
+@class NSMutableArray, NSSet, NSString, UIPointerInteraction, _UICursorInteraction;
+
+@interface UIControl : UIView <UIPointerInteractionDelegate, _UICursorInteractionDelegate>
 {
     NSMutableArray *_targetActions;
     struct CGPoint _previousPoint;
@@ -29,12 +32,34 @@
         unsigned int horizontalAlignment:3;
         unsigned int wasLastHighlightSuccessful:1;
         unsigned int touchHasHighlighted:1;
+        unsigned int hasPointerInteraction:1;
+        unsigned int hasProxyPointerInteraction:1;
     } _controlFlags;
+    long long _requiredButtonMask;
 }
 
++ (_Bool)_cursorInteractionEnabled;
 + (unsigned long long)_primaryStateForState:(unsigned long long)arg1;
 + (_Bool)_allowActionsToQueue;
 - (void).cxx_destruct;
+@property(nonatomic, setter=_setRequiredButtonMask:) long long _requiredButtonMask; // @synthesize _requiredButtonMask;
+- (void)_installCursorInteractionIfNeeded;
+- (void)cursorInteraction:(id)arg1 willExitRegion:(id)arg2 withAnimator:(id)arg3;
+- (void)cursorInteraction:(id)arg1 willEnterRegion:(id)arg2 withAnimator:(id)arg3;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
+@property(readonly, nonatomic) _UICursorInteraction *_cursorInteraction;
+@property(readonly, nonatomic) _UICursorInteraction *cursorInteraction;
+- (void)_invalidatePointerInteraction;
+@property(retain, nonatomic, setter=_setProxyPointerInteraction:) UIPointerInteraction *_proxyPointerInteraction;
+@property(readonly, nonatomic) UIPointerInteraction *_pointerInteraction;
+- (void)pointerInteraction:(id)arg1 willExitRegion:(id)arg2 animator:(id)arg3;
+- (void)pointerInteraction:(id)arg1 willEnterRegion:(id)arg2 animator:(id)arg3;
+- (id)pointerInteraction:(id)arg1 styleForRegion:(id)arg2;
+- (id)pointerInteraction:(id)arg1 regionForRequest:(id)arg2 defaultRegion:(id)arg3;
+@property(nonatomic, getter=isPointerInteractionEnabled) _Bool pointerInteractionEnabled;
+@property(readonly, nonatomic) UIPointerInteraction *pointerInteraction;
+- (id)_createPointerInteraction;
 - (_Bool)_accessibilityShouldActivateOnHUDLift;
 - (unsigned long long)_stateForFocusUpdateContext:(id)arg1;
 - (long long)_focusedSound;
@@ -112,6 +137,12 @@
 - (id)__distributionStatisticsForUserInteractionDuration;
 - (id)__scalarStatisticsForUserValueChangedEvent;
 - (id)__scalarStatisticsForUserTouchUpInsideEvent;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

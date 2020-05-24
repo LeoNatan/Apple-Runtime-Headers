@@ -9,12 +9,14 @@
 #import <NearField/NFAppletCollection-Protocol.h>
 #import <NearField/NFSecureElementManagerSessionCallbacks-Protocol.h>
 
-@class NSMutableDictionary, NSString;
+@class NFWeakReference, NSMutableDictionary, NSString;
+@protocol NFSecureElementManagerSessionDelegate;
 
 @interface NFSecureElementManagerSession : NFSession <NFSecureElementManagerSessionCallbacks, NFAppletCollection>
 {
     BOOL _hasApplets;
     NSMutableDictionary *_appletsById;
+    NFWeakReference *_delegate;
 }
 
 - (id)getOSUpdateLog;
@@ -83,6 +85,8 @@
 - (id)stateInformationWithRedirectInfo:(id)arg1 error:(id *)arg2;
 - (id)stateInformationWithError:(id *)arg1;
 - (id)stateInformation;
+- (void)didEndUnexpectedly;
+@property __weak id <NFSecureElementManagerSessionDelegate> delegate;
 - (id)_appletsById;
 - (void)_setApplets:(id)arg1;
 - (void)dealloc;

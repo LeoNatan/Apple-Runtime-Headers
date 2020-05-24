@@ -271,7 +271,7 @@
 - (void)fullScreenBalloonViewController:(id)arg1 willAppearAnimated:(_Bool)arg2;
 - (void)showSMSReportSpamExtensionControllerForMessages:(id)arg1;
 - (void)hideStickersAssociatedWithChatItem:(id)arg1;
-- (void)showFullScreenAcknowledgmentPickerForBalloonAtIndexPath:(id)arg1 showActionMenu:(_Bool)arg2;
+- (void)showFullScreenAcknowledgmentPickerIfNeededForBalloonAtIndexPath:(id)arg1 showActionMenu:(_Bool)arg2;
 - (_Bool)_shouldShowAcknowledgmentPickerForBalloon;
 - (id)_fullScreenBalloonViewControllerWithChatItem:(id)arg1 showActionMenu:(_Bool)arg2;
 - (void)actionMoreIsTappedForChatItem:(id)arg1;
@@ -372,6 +372,7 @@
 - (void)sendStickerWithMediaObject:(id)arg1 parentMessagePartChatItem:(id)arg2;
 - (void)sendSticker:(id)arg1 withDragTarget:(id)arg2;
 - (void)sendSticker:(id)arg1;
+- (_Bool)chatInputControllerCanSend:(id)arg1;
 - (void)chatInputSentComposition:(id)arg1;
 - (id)viewForDragAndChatInputDropTarget;
 - (id)viewControllerForChatInputModalPresentation;

@@ -205,6 +205,8 @@
 - (void)__hoverMoved:(id)arg1 withEvent:(id)arg2;
 - (void)__hoverEntered:(id)arg1 withEvent:(id)arg2;
 - (long long)_defaultAllowedMouseButtons;
+- (long long)_buttonMask;
+@property(readonly, nonatomic) long long buttonMask;
 - (BOOL)_shouldReceiveTouch:(id)arg1 forEvent:(id)arg2 recognizerView:(id)arg3;
 - (long long)_modifierFlags;
 @property(readonly, nonatomic) long long modifierFlags;

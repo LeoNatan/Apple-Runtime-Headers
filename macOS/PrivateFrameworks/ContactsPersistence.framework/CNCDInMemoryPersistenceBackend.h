@@ -22,6 +22,7 @@
 - (void)applyDiff:(id)arg1 toContainerWithIdentifier:(id)arg2;
 - (id)defaultContainer;
 - (id)allContainers;
+- (void)updateCachedContainersWithValuesFromPersistentStore;
 - (id)makePersistenceContextWithNotificationSource:(id)arg1;
 - (id)makeManagedObjectContextWithConcurrencyType:(unsigned long long)arg1;
 - (id)addAccountContainerWithProvider:(CDUnknownBlockType)arg1;

@@ -15,7 +15,7 @@
 #import <UserNotificationsUIKit/PLViewControllerAnimatorDelegate-Protocol.h>
 #import <UserNotificationsUIKit/UIDragInteractionDelegate-Protocol.h>
 
-@class NCBannerPresentationTransitionDelegate, NCNotificationLongLookViewController, NSDate, NSString, PLClickPresentationInteractionManager, UIScrollView, UITapGestureRecognizer, UIView, UIViewController;
+@class NCBannerPresentationTransitionDelegate, NCNotificationLongLookViewController, NSDate, NSString, PLClickPresentationInteractionManager, UIHoverGestureRecognizer, UIScrollView, UITapGestureRecognizer, UIView, UIViewController;
 @protocol UIViewControllerContextTransitioning;
 
 @interface NCNotificationShortLookViewController : NCNotificationViewController <NCNotificationViewControllerObserving, PLViewControllerAnimatorDelegate, UIDragInteractionDelegate, PLClickPresentationInteractionManagerDelegate, NCBannerPresentationTransitioningDelegateObserver, PLExpandedPlatterPresentationControllerDelegate, NCLongLookDefaultPresentationControllerDelegate, PLClickPresentationInteractionPresenting>
@@ -25,6 +25,7 @@
     UIView *_contextDefiningContainerView;
     UIViewController *_contextDefiningViewController;
     UITapGestureRecognizer *_tapGesture;
+    UIHoverGestureRecognizer *_hoverGestureRecognizer;
     NSDate *_tapBeginTime;
     id <UIViewControllerContextTransitioning> _scrollPresentationTransitionContext;
     struct CGRect _finalPresentedFrameOfViewForPreview;
@@ -86,6 +87,8 @@
 - (id)_notificationShortLookViewIfLoaded;
 - (void)_expandCoalescedNotificationBundle;
 - (_Bool)isCoalescedNotificationBundle;
+- (void)_handleHoverGestureRecognizerEvent:(id)arg1;
+- (_Bool)_shouldPerformHoverHighlighting;
 - (void)_updateShortLookShadow;
 - (_Bool)_shouldUseHapticTouch;
 - (void)_updateWithProvidedAuxiliaryOptionsContent;

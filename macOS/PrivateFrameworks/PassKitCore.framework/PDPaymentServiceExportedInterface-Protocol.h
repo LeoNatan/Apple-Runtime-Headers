@@ -18,8 +18,10 @@
 - (void)finishedKeyExchangeForCredential:(PKAppletSubcredential *)arg1 withCompletion:(void (^)(BOOL))arg2;
 - (void)sharingInvitationWasInvalidated:(NSString *)arg1 withCredentialIdentifier:(NSString *)arg2 error:(NSError *)arg3 completion:(void (^)(BOOL))arg4;
 - (void)addSubcredential:(PKAppletSubcredential *)arg1 fromSharingInvitationWithIdentifier:(NSString *)arg2 completion:(void (^)(BOOL))arg3;
-- (void)removeSharingInvitationReceiptWithIdentifier:(NSString *)arg1 onCredential:(NSString *)arg2 withCompletion:(void (^)(BOOL))arg3;
+- (void)removeSharingInvitationReceiptWithIdentifiers:(NSSet *)arg1 onCredential:(NSString *)arg2 completion:(void (^)(BOOL))arg3;
 - (void)addSharingInvitationReceipts:(NSArray *)arg1 onCredentialWithIdentifier:(NSString *)arg2 withCompletion:(void (^)(BOOL))arg3;
+- (void)revokeCredentialsWithIdentifiers:(NSSet *)arg1 completion:(void (^)(BOOL))arg2;
+- (void)registerCredentialsWithIdentifiers:(NSSet *)arg1 completion:(void (^)(NSSet *, NSSet *))arg2;
 - (void)updateMetadataOnPassWithIdentifier:(NSString *)arg1 credential:(PKAppletSubcredential *)arg2 completion:(void (^)(BOOL))arg3;
 - (void)subcredentialInvitationsWithCompletion:(void (^)(NSSet *))arg1;
 - (void)addPlaceholderPassWithConfiguration:(PKPlaceholderPassConfiguration *)arg1 completion:(void (^)(PKPaymentPass *))arg2;

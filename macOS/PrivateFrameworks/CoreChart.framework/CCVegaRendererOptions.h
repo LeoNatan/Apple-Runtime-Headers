@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CALayer, NSString;
+@class CALayer, NSCalendar, NSLocale, NSString;
 @protocol CCVegaRendererDelegate;
 
 @interface CCVegaRendererOptions : NSObject
@@ -16,6 +16,9 @@
     NSString *baseConfig;
     double scaleFactor;
     double zoomFactor;
+    NSLocale *locale;
+    NSCalendar *calendar;
+    NSString *contentSizeCategory;
     CALayer *caLayer;
     NSObject<CCVegaRendererDelegate> *delegate;
     struct CGSize size;
@@ -27,6 +30,9 @@
 @property(retain) CALayer *caLayer; // @synthesize caLayer;
 @property unsigned int renderer; // @synthesize renderer;
 @property struct CGSize size; // @synthesize size;
+@property(retain) NSString *contentSizeCategory; // @synthesize contentSizeCategory;
+@property(retain) NSCalendar *calendar; // @synthesize calendar;
+@property(retain) NSLocale *locale; // @synthesize locale;
 @property double zoomFactor; // @synthesize zoomFactor;
 @property double scaleFactor; // @synthesize scaleFactor;
 @property(retain) NSString *baseConfig; // @synthesize baseConfig;

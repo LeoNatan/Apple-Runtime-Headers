@@ -10,21 +10,21 @@
 {
 }
 
-+ (struct CGPath *)pathForMark:(id)arg1;
-+ (struct CGPath *)pathForCustom:(id)arg1 withSize:(double)arg2 withContext:(id)arg3;
-+ (struct CGPath *)pathForBuiltin:(id)arg1 withSize:(double)arg2;
-+ (struct CGPath *)strokePathWithSize:(double)arg1;
-+ (struct CGPath *)triangleLeftPathWithSize:(double)arg1;
-+ (struct CGPath *)triangleRightPathWithSize:(double)arg1;
-+ (struct CGPath *)triangleDownPathWithSize:(double)arg1;
-+ (struct CGPath *)triangleUpPathWithSize:(double)arg1;
-+ (struct CGPath *)trianglePathWithSize:(double)arg1;
-+ (struct CGPath *)wedgePathWithSize:(double)arg1;
-+ (struct CGPath *)arrowPathWithSize:(double)arg1;
-+ (struct CGPath *)squarePathWithSize:(double)arg1;
-+ (struct CGPath *)diamondPathWithSize:(double)arg1;
-+ (struct CGPath *)crossPathWithSize:(double)arg1;
-+ (struct CGPath *)circlePathWithSize:(double)arg1;
++ (struct CGPath *)newPathForMark:(id)arg1;
++ (struct CGPath *)newPathForCustomSVGShape:(id)arg1 withSize:(double)arg2 withContext:(id)arg3;
++ (struct CGPath *)newPathForBuiltin:(id)arg1 withSize:(double)arg2;
++ (struct CGPath *)newStrokePathWithSize:(double)arg1;
++ (struct CGPath *)newTriangleLeftPathWithSize:(double)arg1;
++ (struct CGPath *)newTriangleRightPathWithSize:(double)arg1;
++ (struct CGPath *)newTriangleDownPathWithSize:(double)arg1;
++ (struct CGPath *)newTriangleUpPathWithSize:(double)arg1;
++ (struct CGPath *)newTrianglePathWithSize:(double)arg1;
++ (struct CGPath *)newWedgePathWithSize:(double)arg1;
++ (struct CGPath *)newArrowPathWithSize:(double)arg1;
++ (struct CGPath *)newSquarePathWithSize:(double)arg1;
++ (struct CGPath *)newDiamondPathWithSize:(double)arg1;
++ (struct CGPath *)newCrossPathWithSize:(double)arg1;
++ (struct CGPath *)newCirclePathWithSize:(double)arg1;
 
 @end
 

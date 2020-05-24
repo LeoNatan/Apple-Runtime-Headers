@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *machineName;
 @property(readonly, nonatomic) unsigned int hwEncoderEnterBitrate;
 @property(readonly, nonatomic) unsigned int hwEncoderExitBitrate;
+- (BOOL)isIMacPro;
 @property(readonly, nonatomic) BOOL isIMac;
 @property(readonly, nonatomic) BOOL isMacPro;
 @property(readonly, nonatomic) BOOL isMacBookWVGA;

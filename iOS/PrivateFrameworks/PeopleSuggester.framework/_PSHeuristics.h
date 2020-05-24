@@ -32,7 +32,8 @@
 - (id)photoSuggestionProxiesPartitionedByPresenceInAttachments:(id)arg1 photoSuggestedPeople:(id)arg2 contactIDsInAssets:(id)arg3;
 - (id)recentNonSystemSuggestionsForBundleIDs:(id)arg1 numberOfSuggestion:(unsigned long long)arg2;
 - (id)seedSuggestionsForChatGuidsAndEmails:(id)arg1;
-- (void)prepareRecencyCache;
+- (void)prepareRecencyCacheWithSupportedBundleIds:(id)arg1;
+- (id)initWithKnowledgeStore:(id)arg1 interactionStore:(id)arg2 contactResolver:(id)arg3 shareSheetSupportedBundleIds:(id)arg4;
 - (id)initWithKnowledgeStore:(id)arg1 interactionStore:(id)arg2 contactResolver:(id)arg3;
 
 @end

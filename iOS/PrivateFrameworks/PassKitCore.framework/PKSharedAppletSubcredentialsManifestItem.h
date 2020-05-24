@@ -16,10 +16,12 @@
     NSString *_groupIdentifier;
     long long _entitlement;
     long long _state;
+    long long _rawState;
 }
 
 - (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isForWatch) _Bool forWatch; // @synthesize forWatch=_forWatch;
+@property(readonly, nonatomic) long long rawState; // @synthesize rawState=_rawState;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) long long entitlement; // @synthesize entitlement=_entitlement;
 @property(readonly, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;

@@ -872,6 +872,8 @@
 @property(readonly, nonatomic) struct CGRect _ui_bounds;
 - (id)ns_containerWidgetType;
 - (id)ns_widgetType;
+- (double)_uimorphingView_getInitialAlpha;
+- (void)_uimorphingView_setInitialAlpha:(double)arg1;
 - (long long)compareTextEffectsOrdering:(id)arg1;
 - (int)textEffectsVisibilityLevelInKeyboardWindow;
 - (int)textEffectsVisibilityLevel;
@@ -1501,6 +1503,8 @@
 - (id)_viewControllerForAncestor;
 - (id)_initWithMaskImage:(id)arg1;
 - (id)_initWithLayer:(id)arg1;
+- (id)_cursorInteraction;
+- (BOOL)_allowAssistanceInSubtree;
 - (id)_firstAncestorInteractionConformingToProtocol:(id)arg1;
 - (BOOL)_canAddInteraction:(id)arg1;
 - (void)setInteractions:(id)arg1;

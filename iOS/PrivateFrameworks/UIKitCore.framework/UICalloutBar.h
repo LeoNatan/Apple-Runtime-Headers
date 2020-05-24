@@ -6,9 +6,11 @@
 
 #import <UIKitCore/UIView.h>
 
+#import <UIKitCore/_UICursorInteractionDelegate-Protocol.h>
+
 @class NSArray, NSDictionary, NSMutableArray, NSString, UICalloutBarBackground, UICalloutBarButton, UIResponder, UIScrollView, UIStackView;
 
-@interface UICalloutBar : UIView
+@interface UICalloutBar : UIView <_UICursorInteractionDelegate>
 {
     id m_delegate;
     struct CGPoint m_pointBelowControls;
@@ -55,6 +57,7 @@
     UIStackView *m_verticalStackView;
     NSMutableArray *m_separatorViews;
     UIView *m_buttonView;
+    long long m_hoveredIndex;
 }
 
 + (void)hideSharedCalloutBarFromTargetView:(id)arg1;
@@ -114,6 +117,8 @@
 - (void)appear;
 - (void)show;
 - (void)buttonHighlighted:(id)arg1 highlighted:(_Bool)arg2;
+- (void)buttonHovered:(id)arg1 index:(long long)arg2 hovered:(_Bool)arg3;
+- (long long)indexOfButton:(id)arg1;
 - (void)setTargetRect:(struct CGRect)arg1 view:(id)arg2 arrowDirection:(int)arg3;
 - (void)setTargetRect:(struct CGRect)arg1 view:(id)arg2 pointLeftOfControls:(struct CGPoint)arg3 pointRightOfControls:(struct CGPoint)arg4;
 - (void)setTargetRect:(struct CGRect)arg1 view:(id)arg2 pointBelowControls:(struct CGPoint)arg3 pointAboveControls:(struct CGPoint)arg4;
@@ -150,6 +155,12 @@
 - (void)applicationDidAddDeactivationReason:(id)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

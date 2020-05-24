@@ -21,6 +21,7 @@
     NSObject<OS_dispatch_queue> *_queue;
     NSHashTable *_queue_observers;
     NSMutableOrderedSet *_queue_foregroundRunningProcesses;
+    BKSHIDEventDeferringToken *_queue_previouslySelectedForegroundToken;
     FBProcess *_queue_previouslySelectedForegroundProcess;
     FBProcess *_queue_preferredForegroundAppProcess;
     BKSHIDEventDeferringToken *_queue_preferredForegroundToken;

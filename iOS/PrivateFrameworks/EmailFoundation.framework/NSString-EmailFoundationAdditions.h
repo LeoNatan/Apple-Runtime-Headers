@@ -15,6 +15,7 @@
 @interface NSString (EmailFoundationAdditions) <EFSQLBindable, EFSQLExpressable, EFSQLValueExpressable>
 + (id)ef_stringByIsolatingDirectionalityForString:(id)arg1;
 + (id)ef_UUID;
+- (id)ef_sanitizedFileName;
 - (id)ef_stringByEscapingSingleQuotes;
 @property(readonly) _Bool ef_conformsToRFC822UTType;
 @property(readonly) _Bool ef_conformsToIWorkUTType;

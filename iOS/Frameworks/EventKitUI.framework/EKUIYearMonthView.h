@@ -6,9 +6,11 @@
 
 #import <UIKit/UIView.h>
 
+#import <EventKitUI/_UICursorInteractionDelegate-Protocol.h>
+
 @class EKCalendarDate, EKUIOverlayCalendarSignificantDatesProvider, NSCalendar, NSSet, NSString, UIColor, UIFont;
 
-@interface EKUIYearMonthView : UIView
+@interface EKUIYearMonthView : UIView <_UICursorInteractionDelegate>
 {
     EKCalendarDate *_endCalendarDate;
     NSString *_monthString;
@@ -18,6 +20,8 @@
     NSSet *_firstOfOverlayMonthIndices;
     NSSet *_firstOfOverlayYearIndices;
     NSCalendar *_calendar;
+    UIView *_hidingView;
+    UIView *_previewContainerView;
     _Bool _computeCircleFrameWithoutAdjustments;
     EKCalendarDate *_calendarDate;
     EKUIOverlayCalendarSignificantDatesProvider *_overlaySignificantDatesProvider;
@@ -31,12 +35,14 @@
 @property(readonly, nonatomic) double circleSizeForDoubleDigit; // @synthesize circleSizeForDoubleDigit=_circleSizeForDoubleDigit;
 @property(retain, nonatomic) EKUIOverlayCalendarSignificantDatesProvider *overlaySignificantDatesProvider; // @synthesize overlaySignificantDatesProvider=_overlaySignificantDatesProvider;
 @property(retain, nonatomic) EKCalendarDate *calendarDate; // @synthesize calendarDate=_calendarDate;
+- (id)_imageForDayNumber:(id)arg1 size:(struct CGSize)arg2 underlineThickness:(double)arg3 forPreview:(_Bool)arg4;
 - (id)_imageForDayNumber:(id)arg1 size:(struct CGSize)arg2 underlineThickness:(double)arg3;
 - (id)_imageForMonthDays:(long long)arg1 size:(struct CGSize)arg2 underlineThickness:(double)arg3;
 - (id)_weekDayInitialsImage;
 - (id)monthNameForDate:(id)arg1;
 - (void)_warmImageCache;
 - (double)minHeaderFontSizeUsed;
+- (id)_imageForMonthName:(id)arg1 forPreview:(_Bool)arg2;
 - (id)_imageForMonthName:(id)arg1;
 - (_Bool)isCurrentMonth;
 - (void)_updateToday;
@@ -44,6 +50,19 @@
 - (void)_updateFirstOfMonthAndYearIndices;
 - (void)_reloadCachedValues;
 - (struct CGPoint)_monthNameOriginPoint;
+- (void)cursorInteraction:(id)arg1 willExitRegion:(id)arg2;
+- (void)cursorInteraction:(id)arg1 willEnterRegion:(id)arg2;
+- (id)cursorInteraction:(id)arg1 regionForRequest:(id)arg2 defaultRegion:(id)arg3;
+- (id)_containerForPreview;
+- (void)_adjustHidingViewToFrame:(struct CGRect)arg1;
+- (id)_generatePreviewForMonthTitle;
+- (id)_generatePreviewForDayIndex:(long long)arg1;
+- (_Bool)_pointIntersectsMonthName:(struct CGPoint)arg1;
+- (struct CGRect)_monthNameFrame;
+- (void)_setUpInteraction;
+- (long long)_dayIndexForPoint:(struct CGPoint)arg1;
+- (id)calendarDateForPoint:(struct CGPoint)arg1;
+- (_Bool)shouldAddPreciseInteractivity;
 @property(readonly, nonatomic) UIColor *dayColor;
 @property(readonly, nonatomic) NSString *dayColorKey;
 @property(readonly, nonatomic) double todayTextYAdjustment;
@@ -93,8 +112,13 @@
 - (_Bool)pointIsAboveMonthNameBaseline:(struct CGPoint)arg1;
 - (void)tintColorDidChange;
 - (void)drawRect:(struct CGRect)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)initWithCalendarDate:(id)arg1 calendar:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

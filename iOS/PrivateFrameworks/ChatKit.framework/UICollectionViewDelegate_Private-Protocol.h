@@ -7,12 +7,16 @@
 #import <ChatKit/UICollectionViewDelegate-Protocol.h>
 #import <ChatKit/UICollectionViewFocusDelegate_Legacy-Protocol.h>
 
-@class NSArray, NSIndexPath, NSString, UICollectionView, UICollectionViewCell, UIContextMenuConfiguration, _UIContextMenuStyle, _UIFocusFastScrollingIndexBarEntry, _UIHorizontalIndexTitleBar;
+@class NSArray, NSIndexPath, NSString, UICollectionView, UICollectionViewCell, UIContextMenuConfiguration, _UIContextMenuStyle, _UICursorRegion, _UICursorStyle, _UIFocusFastScrollingIndexBarEntry, _UIHorizontalIndexTitleBar;
 @protocol UIContextMenuInteractionAnimating, UIContextMenuInteractionCommitAnimating, UISpringLoadedInteractionContext;
 
 @protocol UICollectionViewDelegate_Private <UICollectionViewDelegate, UICollectionViewFocusDelegate_Legacy>
 
 @optional
+- (void)_collectionView:(UICollectionView *)arg1 cursorWillExitItemAtIndexPath:(NSIndexPath *)arg2;
+- (void)_collectionView:(UICollectionView *)arg1 cursorWillEnterItemAtIndexPath:(NSIndexPath *)arg2;
+- (_UICursorStyle *)_collectionView:(UICollectionView *)arg1 cursorStyleForModifiers:(long long)arg2 atIndexPath:(NSIndexPath *)arg3;
+- (_UICursorRegion *)_collectionView:(UICollectionView *)arg1 cursorRegionForItemAtIndexPath:(NSIndexPath *)arg2 defaultRegion:(_UICursorRegion *)arg3;
 - (_Bool)_collectionView:(UICollectionView *)arg1 shouldSpringLoadItemAtIndexPath:(NSIndexPath *)arg2 withContext:(id <UISpringLoadedInteractionContext>)arg3;
 - (NSArray *)_collectionView:(UICollectionView *)arg1 accessoriesForContextMenuWithConfiguration:(UIContextMenuConfiguration *)arg2 layoutAnchor:(CDStruct_4bcfbbae)arg3;
 - (_UIContextMenuStyle *)_collectionView:(UICollectionView *)arg1 styleForContextMenuWithConfiguration:(UIContextMenuConfiguration *)arg2;

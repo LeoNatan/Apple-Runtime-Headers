@@ -88,6 +88,7 @@
 @property(readonly, nonatomic) _Bool corryBarHideDiscoverMoreInterstitialForNonOnboardedUsers;
 @property(readonly, nonatomic) long long corryBarMaxArticleCountForSingleArticle;
 @property(readonly, nonatomic) long long corryBarMaxArticleCountForArticleList;
+@property(readonly, nonatomic) long long articleReadCountThreshold;
 @property(readonly, nonatomic) NSString *translationMapResourceID;
 @property(readonly, nonatomic) NSString *localAreasMappingResourceId;
 @property(readonly, nonatomic) NSString *personalizationFavorabilityResourceId;

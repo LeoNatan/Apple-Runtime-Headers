@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
     _DUIPotentialDrop *_lastPotentialDrop;
     NSPointerArray *_dragEvents;
     _Bool _isAccessibilitySession;
+    _Bool _drivenByPointer;
     _UIDropSessionImpl *_dropSession;
     UIWindow *_centroidWindow;
     NSArray *_dropItemProviders;
@@ -52,6 +53,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) id <_UIDruidDestinationConnection> druidConnection; // @synthesize druidConnection=_druidConnection;
 @property(nonatomic) unsigned long long progressIndicatorStyle; // @synthesize progressIndicatorStyle=_progressIndicatorStyle;
+@property(readonly, nonatomic) _Bool drivenByPointer; // @synthesize drivenByPointer=_drivenByPointer;
 @property(readonly, nonatomic) _Bool isAccessibilitySession; // @synthesize isAccessibilitySession=_isAccessibilitySession;
 @property(readonly, nonatomic) unsigned long long outsideAppSourceOperationMask; // @synthesize outsideAppSourceOperationMask=_outsideAppSourceOperationMask;
 @property(copy, nonatomic) NSArray *internalItems; // @synthesize internalItems=_internalItems;
@@ -67,7 +69,7 @@ __attribute__((visibility("hidden")))
 - (void)requestVisibleItems:(CDUnknownBlockType)arg1;
 - (unsigned long long)actualDragOperationForProposedDragOperation:(unsigned long long)arg1 destinationDataOwner:(long long)arg2 forbidden:(_Bool *)arg3;
 - (void)handOffDroppedItems:(id)arg1;
-- (void)setUpDropAnimation:(id)arg1;
+- (void)setUpDropAnimation:(id)arg1 contextID:(unsigned int *)arg2 layerRenderID:(unsigned long long *)arg3;
 - (void)takeVisibleDroppedItems:(id)arg1;
 @property(readonly, nonatomic) NSArray *preDropItemProviders;
 @property(readonly, nonatomic) unsigned long long sourceOperationMask;

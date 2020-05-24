@@ -7,13 +7,14 @@
 #import <objc/NSObject.h>
 
 #import <UIKitCore/NSCoding-Protocol.h>
+#import <UIKitCore/UIPointerInteractionDelegate-Protocol.h>
 #import <UIKitCore/_UIBarButtonItemGroupOwner-Protocol.h>
 #import <UIKitCore/_UIBarButtonItemViewOwner-Protocol.h>
 
-@class NSArray, NSLayoutConstraint, NSLayoutDimension, NSMapTable, NSMutableArray, NSString, UIBarButtonItem, UIView, _UIBarButtonItemData, _UIButtonBarButtonVisualProvider, _UIButtonBarLayoutMetrics, _UIButtonBarStackView;
-@protocol _UIButtonBarAppearanceDelegate, _UIButtonBarDelegate;
+@class NSArray, NSLayoutConstraint, NSLayoutDimension, NSMapTable, NSMutableArray, NSString, UIBarButtonItem, UIView, _UIBarButtonItemData, _UIButtonBarButtonVisualProvider, _UIButtonBarLayoutMetrics, _UIButtonBarStackView, _UIPointerInteractionAssistant;
+@protocol UIPointerInteractionDelegate, _UIButtonBarAppearanceDelegate, _UIButtonBarDelegate;
 
-@interface _UIButtonBar : NSObject <_UIBarButtonItemViewOwner, _UIBarButtonItemGroupOwner, NSCoding>
+@interface _UIButtonBar : NSObject <UIPointerInteractionDelegate, _UIBarButtonItemViewOwner, _UIBarButtonItemGroupOwner, NSCoding>
 {
     _UIButtonBarStackView *_stackView;
     NSLayoutDimension *_flexibleSpaceEqualSizeAnchor;
@@ -37,6 +38,7 @@
         unsigned int plainAppearanceChanged:1;
         unsigned int doneAppearanceChanged:1;
         unsigned int needsUpdateHitRects:1;
+        unsigned int denyPointerInteractions:1;
     } _buttonBarFlags;
     BOOL _itemsInGroupUseSameSize;
     BOOL _compact;
@@ -48,6 +50,7 @@
     id <_UIButtonBarAppearanceDelegate> __appearanceDelegate;
     _UIBarButtonItemData *_plainItemAppearance;
     _UIBarButtonItemData *_doneItemAppearance;
+    _UIPointerInteractionAssistant *_assistant;
     _UIButtonBarButtonVisualProvider *_visualProvider;
 }
 
@@ -55,6 +58,7 @@
 - (void).cxx_destruct;
 @property(copy, nonatomic) _UIButtonBarButtonVisualProvider *visualProvider; // @synthesize visualProvider=_visualProvider;
 @property(nonatomic, getter=_compact, setter=_setCompact:) BOOL compact; // @synthesize compact=_compact;
+@property(nonatomic) __weak _UIPointerInteractionAssistant *assistant; // @synthesize assistant=_assistant;
 @property(retain, nonatomic) _UIBarButtonItemData *doneItemAppearance; // @synthesize doneItemAppearance=_doneItemAppearance;
 @property(retain, nonatomic) _UIBarButtonItemData *plainItemAppearance; // @synthesize plainItemAppearance=_plainItemAppearance;
 @property(nonatomic) __weak id <_UIButtonBarAppearanceDelegate> _appearanceDelegate; // @synthesize _appearanceDelegate=__appearanceDelegate;
@@ -65,6 +69,13 @@
 @property(nonatomic) double minimumInterItemSpace; // @synthesize minimumInterItemSpace=_minimumInterItemSpace;
 @property(copy, nonatomic) NSArray *barButtonGroups; // @synthesize barButtonGroups=_barButtonGroups;
 @property(readonly, copy) NSString *description;
+- (void)_enablePointerInteractions;
+- (void)_disablePointerInteractions;
+- (void)pointerInteraction:(id)arg1 willExitRegion:(id)arg2 animator:(id)arg3;
+- (void)pointerInteraction:(id)arg1 willEnterRegion:(id)arg2 animator:(id)arg3;
+- (id)pointerInteraction:(id)arg1 styleForRegion:(id)arg2;
+- (id)pointerInteraction:(id)arg1 regionForRequest:(id)arg2 defaultRegion:(id)arg3;
+- (void)_invalidateAssistant:(id)arg1;
 - (void)_groupDidChangePriority:(id)arg1;
 - (void)_groupDidChangeGeometry:(id)arg1;
 - (void)_groupDidUpdateVisibility:(id)arg1;
@@ -96,12 +107,14 @@
 - (void)_setVisualProvider:(id)arg1;
 @property(nonatomic) struct NSDirectionalEdgeInsets hitTestDirectionalInsets;
 @property(nonatomic) struct UIEdgeInsets hitTestInsets;
+- (void)setNeedsHitTestUpdate;
 @property(nonatomic) long long itemDistribution;
 @property(nonatomic) BOOL allowsViewWrappers;
 @property(nonatomic) BOOL createsPopoverLayoutGuides;
 - (void)_updateToFitInWidth:(double)arg1;
 - (double)_estimatedWidth;
 @property(readonly, nonatomic, getter=_layoutWidth) double layoutWidth;
+@property(readonly, nonatomic) UIView<UIPointerInteractionDelegate> *assistantView;
 @property(readonly, nonatomic) UIView *view;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

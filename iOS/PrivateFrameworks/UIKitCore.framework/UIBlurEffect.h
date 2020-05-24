@@ -13,7 +13,6 @@
     _UIBlurEffectImpl *_impl;
 }
 
-+ (void)_addBlurToEffectDescriptor:(id)arg1 blurRadius:(double)arg2 scale:(double)arg3 environment:(id)arg4;
 + (_Bool)supportsSecureCoding;
 + (id)_effectWithInfiniteRadiusScale:(double)arg1;
 + (id)_effectWithInfiniteRadius;

@@ -197,6 +197,14 @@ struct vector<TKeyValueObserver, std::__1::allocator<TKeyValueObserver>> {
     } __end_cap_;
 };
 
+struct vector<TNodePtr, std::__1::allocator<TNodePtr>> {
+    struct TNodePtr *_field1;
+    struct TNodePtr *_field2;
+    struct __compressed_pair<TNodePtr *, std::__1::allocator<TNodePtr>> {
+        struct TNodePtr *_field1;
+    } _field3;
+};
+
 #pragma mark Typedef'd Structures
 
 // Template types
@@ -244,4 +252,12 @@ typedef struct unordered_set<NSObject *, std::__1::hash<NSObject *>, std::__1::e
         } __p3_;
     } __table_;
 } unordered_set_24e1661d;
+
+typedef struct vector<TNodePtr, std::__1::allocator<TNodePtr>> {
+    struct TNodePtr *_field1;
+    struct TNodePtr *_field2;
+    struct __compressed_pair<TNodePtr *, std::__1::allocator<TNodePtr>> {
+        struct TNodePtr *_field1;
+    } _field3;
+} vector_a978b006;
 

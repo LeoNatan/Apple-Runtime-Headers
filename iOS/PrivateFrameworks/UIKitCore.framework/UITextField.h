@@ -140,6 +140,7 @@
     _UITextFieldVisualStyle *_visualStyle;
 }
 
++ (Class)_canvasViewClass;
 + (Class)_textPasteItemClass;
 + (Class)_fieldEditorClass;
 + (_Bool)_wantsFadedEdges;
@@ -211,6 +212,11 @@
 - (void)addInvisibleRange:(id)arg1;
 - (void)removeAllGhostedRanges;
 - (void)addGhostedRange:(id)arg1;
+- (void)cursorInteraction:(id)arg1 willExitRegion:(id)arg2 withAnimator:(id)arg3;
+- (void)cursorInteraction:(id)arg1 willEnterRegion:(id)arg2 withAnimator:(id)arg3;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
+- (_Bool)_allowAssistanceInSubtree;
 - (void)_updateSelectionGestures;
 - (long long)_blurEffectStyle;
 - (void)_tvUpdateContentBackdropView;

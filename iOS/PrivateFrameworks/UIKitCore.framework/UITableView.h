@@ -15,16 +15,17 @@
 #import <UIKitCore/UITable_ForMailOnly-Protocol.h>
 #import <UIKitCore/UITable_RowDataSource-Protocol.h>
 #import <UIKitCore/UITable_UITableViewCellDelegate-Protocol.h>
+#import <UIKitCore/_UICursorInteractionDelegate-Protocol.h>
 #import <UIKitCore/_UIDataSourceBackedView-Protocol.h>
 #import <UIKitCore/_UIKeyboardAutoRespondingScrollView-Protocol.h>
 #import <UIKitCore/_UITableViewDragControllerDelegate-Protocol.h>
 #import <UIKitCore/_UITableViewDropControllerDelegate-Protocol.h>
 #import <UIKitCore/_UITableViewSubviewManagerDelegate-Protocol.h>
 
-@class NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSTimer, UIColor, UIContextMenuInteraction, UIFocusContainerGuide, UIImpactFeedbackGenerator, UILongPressGestureRecognizer, UISelectionFeedbackGenerator, UISwipeActionController, UITableViewCell, UITableViewCountView, UITableViewIndex, UITableViewIndexOverlayIndicatorView, UITableViewIndexOverlaySelectionView, UITableViewRowData, UITableViewWrapperView, UITapGestureRecognizer, UITouch, UIView, UIVisualEffect, _UIDragSnappingFeedbackGenerator, _UIIndexPathIdentityTracker, _UITableViewDeleteAnimationSupport, _UITableViewDragController, _UITableViewDropController, _UITableViewMultiSelectController, _UITableViewPrefetchContext, _UITableViewReorderingSupport, _UITableViewShadowUpdatesController, _UITableViewSubviewManager, _UITableViewUpdateSupport;
+@class NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSTimer, UIColor, UIContextMenuInteraction, UIFocusContainerGuide, UIImpactFeedbackGenerator, UILongPressGestureRecognizer, UISelectionFeedbackGenerator, UISwipeActionController, UITableViewCell, UITableViewCountView, UITableViewIndex, UITableViewIndexOverlayIndicatorView, UITableViewIndexOverlaySelectionView, UITableViewRowData, UITableViewWrapperView, UITapGestureRecognizer, UITouch, UIView, UIVisualEffect, _UICursorInteraction, _UICursorRegion, _UIDragSnappingFeedbackGenerator, _UIIndexPathIdentityTracker, _UITableViewDeleteAnimationSupport, _UITableViewDragController, _UITableViewDropController, _UITableViewMultiSelectController, _UITableViewPrefetchContext, _UITableViewReorderingSupport, _UITableViewShadowUpdatesController, _UITableViewSubviewManager, _UITableViewUpdateSupport;
 @protocol UITableConstants, UITableViewDataSource, UITableViewDataSourcePrefetching, UITableViewDelegate, UITableViewDragDelegate, UITableViewDragDestinationDelegate, UITableViewDragSourceDelegate, UITableViewDropDelegate;
 
-@interface UITableView : UIScrollView <UIGestureRecognizerDelegatePrivate, UIScrollViewDelegate, _UITableViewSubviewManagerDelegate, UIContextMenuInteractionDelegate, UISwipeActionHost, _UITableViewDragControllerDelegate, _UITableViewDropControllerDelegate, UITable_ForMailOnly, _UIKeyboardAutoRespondingScrollView, UITable_RowDataSource, UITable_UITableViewCellDelegate, _UIDataSourceBackedView, NSCoding, UIDataSourceTranslating>
+@interface UITableView : UIScrollView <UIGestureRecognizerDelegatePrivate, UIScrollViewDelegate, _UITableViewSubviewManagerDelegate, _UICursorInteractionDelegate, UIContextMenuInteractionDelegate, UISwipeActionHost, _UITableViewDragControllerDelegate, _UITableViewDropControllerDelegate, UITable_ForMailOnly, _UIKeyboardAutoRespondingScrollView, UITable_RowDataSource, UITable_UITableViewCellDelegate, _UIDataSourceBackedView, NSCoding, UIDataSourceTranslating>
 {
     id <UITableViewDataSource> _dataSource;
     UITableViewRowData *_rowData;
@@ -97,6 +98,8 @@
     UISwipeActionController *_swipeActionController;
     UITableViewCell *_swipeToDeleteCell;
     UIContextMenuInteraction *_contextMenuInteraction;
+    _UICursorInteraction *_cursorInteraction;
+    _UICursorRegion *_currentDefaultRegion;
     _UIIndexPathIdentityTracker *_identityTracker;
     long long _updateCount;
     NSIndexPath *_displayingCellContentStringIndexPath;
@@ -245,6 +248,10 @@
         unsigned int delegatePreviewForDismissingContextMenuWithConfiguration:1;
         unsigned int delegateWillCommitMenuWithAnimator:1;
         unsigned int delegatewillPerformPreviewActionForMenuWithConfiguration:1;
+        unsigned int delegateCursorRegionForRowAtIndexPathSPI:1;
+        unsigned int delegateCursorStyleForModifiersAtIndexPathSPI:1;
+        unsigned int delegateCursorWillEnterRowAtIndexPathSPI:1;
+        unsigned int delegateCursorWillExitRowAtIndexPathSPI:1;
         unsigned int delegateWasNonNil:1;
         unsigned int style:2;
         unsigned int isInSidebar:1;
@@ -270,6 +277,8 @@
         unsigned int allowsSelectionDuringEditing:1;
         unsigned int allowsMultipleSelection:1;
         unsigned int allowsMultipleSelectionDuringEditing:1;
+        unsigned int selectionFollowsFocusSPI:1;
+        unsigned int allowsCursorInteractionSPI:1;
         unsigned int indexHidden:1;
         unsigned int indexHiddenForSearch:1;
         unsigned int defaultShowsHorizontalScrollIndicator:1;
@@ -546,6 +555,13 @@
 @property(readonly, nonatomic, getter=_backgroundInset) double backgroundInset;
 @property(readonly, nonatomic, getter=_rowSpacing) double rowSpacing;
 - (double)_heightForSeparator;
+- (void)cursorInteraction:(id)arg1 willExitRegion:(id)arg2;
+- (void)cursorInteraction:(id)arg1 willEnterRegion:(id)arg2;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)_indexPathForCursorRegion:(id)arg1 inInteraction:(id)arg2;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
+@property(nonatomic, setter=_setAllowsCursorInteraction:) _Bool _allowsCursorInteraction;
+- (void)_configureCursorInteractionIfNeeded;
 - (void)contextMenuInteraction:(id)arg1 willPerformPreviewActionForMenuWithConfiguration:(id)arg2 animator:(id)arg3;
 - (id)contextMenuInteraction:(id)arg1 previewForDismissingMenuWithConfiguration:(id)arg2;
 - (id)contextMenuInteraction:(id)arg1 previewForHighlightingMenuWithConfiguration:(id)arg2;
@@ -964,6 +980,7 @@
 @property(readonly, nonatomic) NSArray *indexPathsForSelectedRows;
 - (id)_indexPathForSelectedRowUsingPresentationValues:(_Bool)arg1;
 @property(readonly, nonatomic) NSIndexPath *indexPathForSelectedRow;
+@property(nonatomic, setter=_setSelectionFollowsFocus:) _Bool _selectionFollowsFocus;
 @property(nonatomic) _Bool allowsSelectionDuringEditing;
 @property(nonatomic) _Bool allowsSelection;
 - (void)moveRowAtIndexPath:(id)arg1 toIndexPath:(id)arg2;

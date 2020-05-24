@@ -11,10 +11,12 @@ __attribute__((visibility("hidden")))
 {
     _Bool _showingTouch;
     _Bool _backgroundContainer;
+    _Bool _showingCursor;
     long long _barStyle;
     unsigned long long _searchBarStyle;
 }
 
+@property(nonatomic) _Bool showingCursor; // @synthesize showingCursor=_showingCursor;
 @property(nonatomic) _Bool backgroundContainer; // @synthesize backgroundContainer=_backgroundContainer;
 @property(nonatomic) _Bool showingTouch; // @synthesize showingTouch=_showingTouch;
 @property(nonatomic) unsigned long long searchBarStyle; // @synthesize searchBarStyle=_searchBarStyle;

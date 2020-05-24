@@ -128,7 +128,7 @@
 - (void)activatePaymentPass:(id)arg1 withActivationCode:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)presentContactlessInterfaceForPassWithUniqueIdentifier:(id)arg1 fromSource:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)presentContactlessInterfaceForDefaultPassFromSource:(long long)arg1 completion:(CDUnknownBlockType)arg2;
-- (BOOL)hasPassesWithSupportedNetworks:(id)arg1 merchantCapabilities:(unsigned long long)arg2 webDomain:(id)arg3;
+- (BOOL)hasPassesWithSupportedNetworks:(id)arg1 merchantCapabilities:(unsigned long long)arg2 issuerCountryCodes:(id)arg3 webDomain:(id)arg4;
 - (void)canPresentPaymentRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentWalletWithRelevantPassUniqueID:(id)arg1;
 - (void)presentSecureElementPass:(id)arg1;

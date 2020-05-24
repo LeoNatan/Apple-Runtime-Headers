@@ -11,6 +11,7 @@
     // Error parsing type: , name: tagService
     // Error parsing type: , name: coreConfigurationManager
     // Error parsing type: , name: contentContext
+    // Error parsing type: , name: paidAccessChecker
 }
 
 @end

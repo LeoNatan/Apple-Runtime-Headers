@@ -16,7 +16,8 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 @property shared_ptr_549d7737 This; // @synthesize This=_This;
-@property NSString *conditionName;
+- (id)getGlobalId:(id)arg1;
+@property(retain) NSString *conditionName;
 - (id)getDialog;
 - (_Bool)isOfType:(unsigned long long)arg1;
 - (shared_ptr_549d7737)getSharedPtr;

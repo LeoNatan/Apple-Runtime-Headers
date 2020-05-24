@@ -6,9 +6,11 @@
 
 #import <UIKit/UIControl.h>
 
+#import <SpringBoard/_UICursorInteractionDelegate-Protocol.h>
+
 @class NSString, UIImage, UIImageView, UIView;
 
-@interface SBFluidSwitcherButton : UIControl
+@interface SBFluidSwitcherButton : UIControl <_UICursorInteractionDelegate>
 {
     UIView *_backgroundView;
     UIImageView *_glyphImageView;
@@ -31,6 +33,8 @@
 - (void)_configureBackgroundViewIfNecessaryForStyle:(long long)arg1;
 - (void)_invalidateBackgroundView;
 - (id)_backgroundMaterialView;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)_addHighlightViewIfNecessary;
 - (void)setHighlighted:(_Bool)arg1;
@@ -38,6 +42,12 @@
 - (void)layoutSubviews;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

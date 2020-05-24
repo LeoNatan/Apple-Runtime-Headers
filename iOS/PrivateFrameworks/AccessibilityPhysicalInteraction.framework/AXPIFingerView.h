@@ -48,7 +48,9 @@
 - (void)animateCircularProgressWithDuration:(double)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setPressed:(_Bool)arg1 animated:(_Bool)arg2;
 @property(nonatomic, getter=isSelected) _Bool selected;
+- (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (id)filterLayer;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 appearanceDelegate:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;

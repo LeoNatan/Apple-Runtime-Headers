@@ -15,13 +15,16 @@
 - (void)removeObserver:(id <FCIssueReadingHistoryObserving>)arg1;
 - (void)addObserver:(id <FCIssueReadingHistoryObserving>)arg1;
 - (NSDate *)lastRemovedFromMyMagazinesDateForIssueWithID:(NSString *)arg1;
+- (NSDate *)lastSeenDateForIssueWithID:(NSString *)arg1;
 - (NSDate *)lastEngagedDateForIssueWithID:(NSString *)arg1;
 - (NSDate *)lastVisitedDateForIssueWithID:(NSString *)arg1;
 - (FCIssueBookmark *)bookmarkForLastVisitToIssueWithID:(NSString *)arg1;
+- (_Bool)hasIssueWithIDBeenSeen:(NSString *)arg1;
 - (_Bool)hasIssueWithIDBeenEngaged:(NSString *)arg1;
 - (_Bool)hasIssueWithIDBeenBadged:(NSString *)arg1;
 - (_Bool)hasIssueWithIDBeenVisited:(NSString *)arg1;
 - (void)markIssueAsRemovedFromMyMagazinesWithID:(NSString *)arg1;
+- (void)markIssueAsSeenWithID:(NSString *)arg1;
 - (void)markIssueAsEngagedWithID:(NSString *)arg1;
 - (void)markIssueAsBadgedWithID:(NSString *)arg1;
 - (void)markIssueWithID:(NSString *)arg1 asVisitedWithBookmark:(FCIssueBookmark *)arg2;

@@ -100,6 +100,7 @@
 @property(readonly, getter=isStagePreviewRenderingSupported) _Bool stagePreviewRenderingSupported;
 @property(readonly, getter=isStudioAndContourPreviewRenderingSupported) _Bool studioAndContourPreviewRenderingSupported;
 @property(readonly, getter=isSecondaryScalerUnavailable) _Bool secondaryScalerUnavailable;
+@property(readonly, getter=isPointCloudDataDeliverySupported) _Bool pointCloudDataDeliverySupported;
 @property(readonly, getter=isCameraCalibrationDataDeliverySupported) _Bool cameraCalibrationDataDeliverySupported;
 @property(readonly, getter=isVisionDataDeliverySupported) _Bool visionDataDeliverySupported;
 @property(readonly, getter=isLowLightVideoCaptureSupported) _Bool lowLightVideoCaptureSupported;

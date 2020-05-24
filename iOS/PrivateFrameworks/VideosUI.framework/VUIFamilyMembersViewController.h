@@ -9,7 +9,7 @@
 #import <VideosUI/UICollectionViewDelegate-Protocol.h>
 #import <VideosUI/VUILibraryDataSourceDelegate-Protocol.h>
 
-@class NSString, UICollectionViewDiffableDataSource, VUICollectionView, VUIFamilyMemberCell, VUILibraryFamilyMembersDataSource, VUIViewControllerContentPresenter;
+@class NSDictionary, NSString, UICollectionViewDiffableDataSource, VUICollectionView, VUIFamilyMemberCell, VUILibraryFamilyMembersDataSource, VUIViewControllerContentPresenter;
 @protocol VUIFamilyMembersViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     VUIViewControllerContentPresenter *_contentPresenter;
     VUICollectionView *_collectionView;
     VUIFamilyMemberCell *_sizingCell;
+    NSDictionary *_familyMemberHashToFamilyMemberDictionary;
     long long _gridType;
     long long _gridStyle;
     double _tvCellWidth;
@@ -32,6 +33,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool requiresRelayout; // @synthesize requiresRelayout=_requiresRelayout;
 @property(nonatomic) long long gridStyle; // @synthesize gridStyle=_gridStyle;
 @property(nonatomic) long long gridType; // @synthesize gridType=_gridType;
+@property(retain, nonatomic) NSDictionary *familyMemberHashToFamilyMemberDictionary; // @synthesize familyMemberHashToFamilyMemberDictionary=_familyMemberHashToFamilyMemberDictionary;
 @property(retain, nonatomic) VUIFamilyMemberCell *sizingCell; // @synthesize sizingCell=_sizingCell;
 @property(retain, nonatomic) VUICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) VUIViewControllerContentPresenter *contentPresenter; // @synthesize contentPresenter=_contentPresenter;
@@ -41,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)_clearCollectionViewSelections:(_Bool)arg1;
 - (void)_updateLayout;
 - (void)_updateCurrentViewIfNeeded;
+- (id)_generateFamilyMemberHashToFamilyMemberDictionaryForFamilyMembers:(id)arg1;
 - (id)_getFamilyMemberIdentifiersFromFamilyMembers;
 - (id)_createDiffableDataSourceSnapshot;
 - (id)_createDiffableDataSource;

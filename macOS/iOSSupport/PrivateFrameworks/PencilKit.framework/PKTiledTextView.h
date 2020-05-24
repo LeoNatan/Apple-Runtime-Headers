@@ -6,9 +6,11 @@
 
 #import <PencilKit/PKTiledView.h>
 
-@class PKAttachmentView, UIButton;
+#import <PencilKit/_UICursorInteractionDelegate-Protocol.h>
 
-@interface PKTiledTextView : PKTiledView
+@class NSString, PKAttachmentView, UIButton;
+
+@interface PKTiledTextView : PKTiledView <_UICursorInteractionDelegate>
 {
     PKAttachmentView *_standInEndAttachmentView;
     UIButton *_tapToRadarButton;
@@ -17,6 +19,7 @@
 - (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *tapToRadarButton; // @synthesize tapToRadarButton=_tapToRadarButton;
 @property(retain, nonatomic) PKAttachmentView *standInEndAttachmentView; // @synthesize standInEndAttachmentView=_standInEndAttachmentView;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 - (id)saveTempData:(id)arg1 name:(id)arg2;
 - (void)appendPath:(id)arg1 attachmentString:(id)arg2;
 - (void)_tapToRadarButtonTapped:(id)arg1;
@@ -38,6 +41,12 @@
 - (void)textDidBeginEditing:(id)arg1;
 - (void)textDidChange:(id)arg1;
 - (id)initInScrollView:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

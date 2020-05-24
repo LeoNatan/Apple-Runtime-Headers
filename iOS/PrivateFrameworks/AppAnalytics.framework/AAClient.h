@@ -14,13 +14,16 @@
     // Error parsing type: , name: name
     // Error parsing type: , name: version
     // Error parsing type: , name: build
+    // Error parsing type: , name: buildNumber
 }
 
 - (void).cxx_destruct;
 - (id)init;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 version:(id)arg3 build:(long long)arg4;
+- (id)initWithIdentifier:(id)arg1 name:(id)arg2 version:(id)arg3 buildNumber:(id)arg4;
 - (id)initWithBundle:(id)arg1;
 @property(nonatomic, readonly) NSString *fullVersion;
+@property(nonatomic, readonly) NSString *buildNumber;
 @property(nonatomic, readonly) long long build; // @synthesize build;
 @property(nonatomic, readonly) NSString *version;
 @property(nonatomic, readonly) NSString *name;

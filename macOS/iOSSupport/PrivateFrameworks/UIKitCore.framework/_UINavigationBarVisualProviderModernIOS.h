@@ -12,7 +12,7 @@
 #import <UIKitCore/_UINavigationControllerRefreshControlHostDelegate-Protocol.h>
 #import <UIKitCore/_UINavigationItemChangeObserver-Protocol.h>
 
-@class NSString, UILabel, UIView, _UIBarBackground, _UINavigationBarContentView, _UINavigationBarLargeTitleView, _UINavigationBarModernPromptView, _UINavigationBarTransitionContext, _UINavigationControllerRefreshControlHost;
+@class NSString, UILabel, UIView, _UIBarBackground, _UINavigationBarContentView, _UINavigationBarLargeTitleView, _UINavigationBarModernPromptView, _UINavigationBarTransitionContext, _UINavigationControllerRefreshControlHost, _UIPointerInteractionAssistant;
 
 __attribute__((visibility("hidden")))
 @interface _UINavigationBarVisualProviderModernIOS : _UINavigationBarVisualProvider <_UINavigationBarContentViewDelegate, _UINavigationItemChangeObserver, _UIBarAppearanceChangeObserver, _UINavigationControllerRefreshControlHostDelegate, _UIBasicAnimationFactory>
@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     UIView *_canvasView;
     _UINavigationBarLargeTitleView *_largeTitleView;
     _UINavigationBarModernPromptView *_promptView;
+    _UIPointerInteractionAssistant *_assistant;
     UILabel *_weeTitleLabel;
     _UINavigationBarTransitionContext *_transitionContext;
     struct CGSize _previousBarSize;

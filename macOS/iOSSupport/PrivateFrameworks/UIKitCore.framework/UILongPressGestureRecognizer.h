@@ -123,6 +123,8 @@
 - (BOOL)_allowsDynamicTouchesList;
 @property(nonatomic) BOOL cancelPastAllowableMovement;
 @property(nonatomic) double minimumPressDuration;
+- (void)setButtonMaskRequired:(long long)arg1;
+- (long long)buttonMaskRequired;
 @property(nonatomic) unsigned long long numberOfTapsRequired;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

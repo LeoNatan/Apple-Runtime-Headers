@@ -7,10 +7,11 @@
 #import <UIKit/UIControl.h>
 
 #import <UserNotificationsUIKit/PLContentSizeCategoryAdjusting-Protocol.h>
+#import <UserNotificationsUIKit/_UICursorInteractionDelegate-Protocol.h>
 
 @class MTMaterialView, NCClickInteractionPresentedView, NSString, UITraitCollection;
 
-@interface NCClickInteractionPresentedControl : UIControl <PLContentSizeCategoryAdjusting>
+@interface NCClickInteractionPresentedControl : UIControl <PLContentSizeCategoryAdjusting, _UICursorInteractionDelegate>
 {
     _Bool _adjustsFontForContentSizeCategory;
     NSString *_title;
@@ -30,6 +31,8 @@
 - (void)_configureContentViewIfNecessaryWithTitle:(id)arg1;
 - (void)_configureMaterialViewsIfNecessary;
 - (id)_newMaterialViewWithRecipe:(long long)arg1 configuration:(long long)arg2;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 - (_Bool)adjustForContentSizeCategoryChange;
 @property(copy, nonatomic) NSString *preferredContentSizeCategory;
 - (void)setHighlighted:(_Bool)arg1;

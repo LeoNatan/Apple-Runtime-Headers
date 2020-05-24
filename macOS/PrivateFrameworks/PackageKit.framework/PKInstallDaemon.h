@@ -32,6 +32,7 @@
 }
 
 + (BOOL)doingRecursiveInstall;
++ (BOOL)allowedToLookupInstallDaemonsWithSystemDaemonLookup:(BOOL)arg1;
 + (id)sharedServiceDaemon;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)_runIdleTasks;

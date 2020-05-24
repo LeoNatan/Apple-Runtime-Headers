@@ -43,6 +43,7 @@
 @property(readonly, nonatomic) UIWindowScene *windowSceneForVolumeDisplay;
 @property(readonly, nonatomic) NSArray *punchOutRootLayers;
 @property(readonly, nonatomic, getter=isGroupRenderingRequired) _Bool groupRenderingRequired;
+- (_Bool)shouldExpandModuleOnTouch:(id)arg1;
 - (void)willTransitionToExpandedContentMode:(_Bool)arg1;
 @property(readonly, nonatomic) double preferredExpandedContentWidth;
 @property(readonly, nonatomic) double preferredExpandedContentHeight;
@@ -66,6 +67,7 @@
 @property(readonly, nonatomic, getter=isOnScreenForVolumeDisplay) _Bool onScreenForVolumeDisplay;
 @property(readonly, nonatomic) double preferredExpandedContinuousCornerRadius;
 @property(readonly, nonatomic) CALayer *punchOutRootLayer;
+@property(readonly, nonatomic) _Bool shouldPerformHoverInteraction;
 @property(readonly) Class superclass;
 
 @end

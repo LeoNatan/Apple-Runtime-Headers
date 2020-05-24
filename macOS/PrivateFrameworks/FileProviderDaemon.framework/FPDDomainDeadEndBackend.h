@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (void)bulkItemChanges:(id)arg1 changedFields:(unsigned long long)arg2 request:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)resolveProviderItemID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)isAllowedToProvideItemID:(id)arg1 toConsumerWithIdentifier:(id)arg2;
 - (void)fetchOperationServiceOrEndpointWithRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

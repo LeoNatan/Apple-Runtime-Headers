@@ -12,6 +12,7 @@
 #import <SpringBoard/CSMediaControlling-Protocol.h>
 #import <SpringBoard/CSReachabilityControlling-Protocol.h>
 #import <SpringBoard/CSResetRestoreStatusProviding-Protocol.h>
+#import <SpringBoard/CSSystemCursorInteractionManaging-Protocol.h>
 #import <SpringBoard/CSTelephonyStatusProviding-Protocol.h>
 #import <SpringBoard/CSTodayOverlayProviding-Protocol.h>
 #import <SpringBoard/CSTouchEnvironmentStatusProviding-Protocol.h>
@@ -20,9 +21,9 @@
 #import <SpringBoard/CSWallpaperLogging-Protocol.h>
 
 @class NSArray, NSString, SBDashBoardNotificationPresenter, SBSyncController, SBWallpaperAggdLogger;
-@protocol CSApplicationInforming, CSAuthenticationManaging, CSCarPlayStatusProviding, CSHomeAffordanceControlling, CSLegibilityProviding, CSMediaControlling, CSModalHomeAffordanceControlling, CSNotificationPresenting, CSPowerStatusProviding, CSReachabilityControlling, CSResetRestoreStatusProviding, CSScreenStateProviding, CSStatusBarControlling, CSTelephonyStatusProviding, CSThermalStatusProviding, CSTodayOverlayProviding, CSTouchEnvironmentStatusProviding, CSUnlockRequesting, CSUserSessionControlling, CSWallpaperLogging, CSWallpaperViewProviding, SBFActionProviding, SBFAuthenticationAssertionProviding, SBFAuthenticationStatusProvider, SBFDateProviding, SBFLockOutStatusProvider, SBFPasscodeFieldChangeObserver, SBFScreenWakeAnimationControlling, SBUIBiometricResource;
+@protocol CSApplicationInforming, CSAuthenticationManaging, CSCarPlayStatusProviding, CSHomeAffordanceControlling, CSLegibilityProviding, CSMediaControlling, CSModalHomeAffordanceControlling, CSNotificationPresenting, CSPowerStatusProviding, CSReachabilityControlling, CSResetRestoreStatusProviding, CSScreenStateProviding, CSStatusBarControlling, CSSystemCursorInteractionManaging, CSTelephonyStatusProviding, CSThermalStatusProviding, CSTodayOverlayProviding, CSTouchEnvironmentStatusProviding, CSUnlockRequesting, CSUserSessionControlling, CSWallpaperLogging, CSWallpaperViewProviding, SBFActionProviding, SBFAuthenticationAssertionProviding, SBFAuthenticationStatusProvider, SBFDateProviding, SBFLockOutStatusProvider, SBFPasscodeFieldChangeObserver, SBFScreenWakeAnimationControlling, SBUIBiometricResource;
 
-@interface SBDefaultCoverSheetContext : NSObject <CSAuthenticationManaging, CSCarPlayStatusProviding, CSMediaControlling, CSReachabilityControlling, CSResetRestoreStatusProviding, CSTelephonyStatusProviding, CSTouchEnvironmentStatusProviding, CSUnlockRequesting, CSUserSessionControlling, CSWallpaperLogging, CSTodayOverlayProviding, CSCoverSheetContextProviding>
+@interface SBDefaultCoverSheetContext : NSObject <CSAuthenticationManaging, CSCarPlayStatusProviding, CSMediaControlling, CSReachabilityControlling, CSResetRestoreStatusProviding, CSTelephonyStatusProviding, CSTouchEnvironmentStatusProviding, CSUnlockRequesting, CSUserSessionControlling, CSWallpaperLogging, CSTodayOverlayProviding, CSSystemCursorInteractionManaging, CSCoverSheetContextProviding>
 {
     SBSyncController *_syncController;
     SBWallpaperAggdLogger *_wallpaperAggdLogger;
@@ -66,6 +67,8 @@
 @property(readonly, nonatomic) id <SBFPasscodeFieldChangeObserver> passcodeFieldChangeObserver; // @synthesize passcodeFieldChangeObserver=_passcodeFieldChangeObserver;
 @property(readonly, nonatomic) id <SBFAuthenticationStatusProvider> authenticationStatusProvider; // @synthesize authenticationStatusProvider=_authenticationStatusProvider;
 @property(readonly, nonatomic) id <SBFAuthenticationAssertionProviding> authenticationAssertionProvider; // @synthesize authenticationAssertionProvider=_authenticationAssertionProvider;
+- (void)unregisterView:(id)arg1;
+- (void)registerView:(id)arg1 delegate:(id)arg2;
 - (id)newTodayOverlayController;
 @property(readonly, nonatomic) _Bool wantsTodayOverlay;
 - (void)incrementIrisPlayCount;
@@ -86,6 +89,7 @@
 - (void)setPasscodeVisible:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setBiometricAutoUnlockingDisabled:(_Bool)arg1 forReason:(id)arg2;
 - (void)attemptUnlockWithPasscode:(id)arg1 finishUIUnlock:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+@property(readonly, nonatomic) id <CSSystemCursorInteractionManaging> systemCursorInterationManager;
 @property(readonly, nonatomic) id <CSTodayOverlayProviding> todayOverlayProvider;
 @property(readonly, nonatomic) id <CSCarPlayStatusProviding> carPlayStatusProvider;
 @property(readonly, nonatomic) id <CSReachabilityControlling> reachabilityController;

@@ -64,6 +64,7 @@
     NSArray *_devicePaymentApplications;
     NSArray *_contactlessPaymentApplications;
     PKSharedCredentialsGroupController *_credentialsGroupController;
+    NSArray *_sharedCredentialGroups;
     _Bool _expressModeEnabled;
     _Bool _expressModeSupported;
     PKExpressPassController *_expressPassController;
@@ -137,6 +138,7 @@
     NSDateFormatter *_dueTimeFormatter;
     _Bool _isAppleAccess;
     _Bool _isCredentialedPass;
+    _Bool _canShareCredentials;
     NSObject<OS_dispatch_group> *_initialLoadGroup;
     _Bool _initialLoadTimedout;
     PKTransitBalanceModel *_transitBalanceModel;
@@ -202,6 +204,7 @@
 - (void)_transactionsSwitchChanged:(id)arg1;
 - (void)_messagesSwitchChanged:(id)arg1;
 - (void)_setExpressAccessEnabled:(_Bool)arg1 paymentSetupContext:(long long)arg2 authenticationCredential:(id)arg3;
+- (void)_setExpressAccessEnabled:(_Bool)arg1;
 - (void)_expressAccessSwitchChanged:(id)arg1;
 - (void)_automaticPresentationSwitchChanged:(id)arg1;
 - (void)_tabBarSegmentChanged:(id)arg1;
@@ -320,6 +323,8 @@
 - (void)_didSelectAddSharedCredential;
 - (void)_didSelectSharedCredentialGroupAtIndex:(long long)arg1;
 - (void)_didSelectCommutePlanAtRowIndex:(long long)arg1;
+- (_Bool)_commutePlanIsSelectable:(id)arg1 action:(id)arg2;
+- (id)_actionForCommutePlan:(id)arg1;
 - (void)_didSelectBalanceAtRowIndex:(long long)arg1;
 - (void)_didSelectBalanceOrCommutePlanCellAtIndexPath:(id)arg1;
 - (void)_didSelectPeerPaymentStatementAtIndexPath:(id)arg1;
@@ -385,7 +390,6 @@
 - (unsigned long long)_passOperationsCellWithOutput:(id *)arg1 forRowIndex:(long long)arg2 tableView:(id)arg3;
 - (id)_sharedCredentialCellForRowIndex:(long long)arg1 tableView:(id)arg2;
 - (id)_manufacturerInfoCellForTableView:(id)arg1;
-- (id)_keyNameInfoCellForTableView:(id)arg1;
 - (id)_balanceReminderCellForRowIndex:(long long)arg1 tableView:(id)arg2;
 - (id)_balanceCellForRowIndex:(long long)arg1 tableView:(id)arg2;
 - (id)_commuterRouteCellForRowIndex:(long long)arg1 tableView:(id)arg2;

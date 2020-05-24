@@ -184,8 +184,6 @@
 - (void)enableNotification:(BOOL)arg1 forCharacteristicIDs:(id)arg2 message:(id)arg3 clientIdentifier:(id)arg4;
 - (void)_enableNotification:(BOOL)arg1 matchingHAPAccessory:(id)arg2 ignoreDeviceUnlockRequirement:(BOOL)arg3 clientIdentifier:(id)arg4 forCharacteristics:(id)arg5;
 - (void)enableNotification:(BOOL)arg1 ignoreDeviceUnlockRequirement:(BOOL)arg2 clientIdentifier:(id)arg3 forCharacteristics:(id)arg4;
-- (void)_disableRemoteNotificationsForCharacteristics:(id)arg1;
-- (void)disableRemoteNotificationsForCharacteristics:(id)arg1;
 - (void)_disableNotificationsForBundleID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)disableNotificationsForBundleID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_notifyNotificationChangesForCharacteristics:(id)arg1 errors:(id)arg2 enableNotification:(BOOL)arg3 message:(id)arg4;

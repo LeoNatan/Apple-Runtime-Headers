@@ -18,6 +18,7 @@
     _UIDragSetDownAnimationWindow *_window;
     CADisplayLink *_displayLink;
     UIViewPropertyAnimator *_remainingItemsPropertyAnimator;
+    UIWindow *_coordinateContainerWindow;
 }
 
 + (CDUnknownBlockType)defaultDropAnimationForPlatterView:(id)arg1;
@@ -25,6 +26,7 @@
 + (CDUnknownBlockType)defaultSingleItemAnimationForPlatterView:(id)arg1;
 + (id)defaultSetDownPropertyAnimator;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIWindow *coordinateContainerWindow; // @synthesize coordinateContainerWindow=_coordinateContainerWindow;
 - (void)_allItemAnimationsCompleted;
 - (void)itemAnimationCompleted:(id)arg1;
 - (void)itemAnimationReachedTarget:(id)arg1;

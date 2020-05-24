@@ -12,7 +12,7 @@
 #import <UIKitCore/UIGestureRecognizerDelegate-Protocol.h>
 #import <UIKitCore/_UIFloatingContentViewDelegate-Protocol.h>
 
-@class NSArray, NSAttributedString, NSString, UIColor, UIFont, UIImage, UIImageSymbolConfiguration, UIImageView, UILabel, UITapGestureRecognizer, UIView, UIVisualEffectView, _UIButtonMaskAnimationView, _UIFloatingContentView;
+@class NSArray, NSAttributedString, NSString, UIColor, UIFont, UIImage, UIImageSymbolConfiguration, UIImageView, UILabel, UITapGestureRecognizer, UIView, UIVisualEffectView, _UIButtonMaskAnimationView, _UICursorEffect, _UIFloatingContentView;
 
 @interface UIButton : UIControl <UIAccessibilityContentSizeCategoryImageAdjusting, UIAccessibilityContentSizeCategoryImageAdjustingInternal, UIGestureRecognizerDelegate, _UIFloatingContentViewDelegate, NSCoding>
 {
@@ -48,6 +48,7 @@
         unsigned int adjustsImageSizeForAccessibilityContentSizeCategory:1;
         unsigned int disableAutomaticTitleAnimations:1;
         unsigned int overridesRectAccessors:1;
+        unsigned int overridesLegacyCursorDelegateSelectors:1;
     } _buttonFlags;
     UIView *_effectiveContentView;
     _UIButtonMaskAnimationView *_maskAnimationView;
@@ -55,8 +56,10 @@
     UIFont *_lazyTitleViewFont;
     _Bool _lazyTitleViewFontIsDefaultForIdiom;
     NSArray *_contentConstraints;
+    CDUnknownBlockType _pointerStyleProvider;
     long long __imageContentMode;
     UIColor *__plainButtonBackgroundColor;
+    CDUnknownBlockType _cursorStyleProvider;
     struct UIEdgeInsets _internalTitlePaddingInsets;
 }
 
@@ -82,10 +85,31 @@
 + (_Bool)_buttonTypeIsModernUI:(long long)arg1;
 + (double)_defaultNeighborSpacingForAxis:(long long)arg1;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType cursorStyleProvider; // @synthesize cursorStyleProvider=_cursorStyleProvider;
 @property(retain, nonatomic, getter=_plainButtonBackgroundColor, setter=_setPlainButtonBackgroundColor:) UIColor *_plainButtonBackgroundColor; // @synthesize _plainButtonBackgroundColor=__plainButtonBackgroundColor;
 @property(nonatomic, setter=_setImageContentMode:) long long _imageContentMode; // @synthesize _imageContentMode=__imageContentMode;
+@property(copy, nonatomic) CDUnknownBlockType pointerStyleProvider; // @synthesize pointerStyleProvider=_pointerStyleProvider;
 @property(nonatomic, setter=_setInternalTitlePaddingInsets:) struct UIEdgeInsets _internalTitlePaddingInsets; // @synthesize _internalTitlePaddingInsets;
 @property(copy, nonatomic, setter=_setContentConstraints:) NSArray *_contentConstraints; // @synthesize _contentConstraints;
+- (void)cursorInteraction:(id)arg1 willExitRegion:(id)arg2 withAnimator:(id)arg3;
+- (void)cursorInteraction:(id)arg1 willEnterRegion:(id)arg2 withAnimator:(id)arg3;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
+- (void)pointerInteraction:(id)arg1 willExitRegion:(id)arg2 animator:(id)arg3;
+- (void)pointerInteraction:(id)arg1 willEnterRegion:(id)arg2 animator:(id)arg3;
+- (id)pointerInteraction:(id)arg1 styleForRegion:(id)arg2;
+- (id)pointerInteraction:(id)arg1 regionForRequest:(id)arg2 defaultRegion:(id)arg3;
+- (_Bool)_pointerInteractionCanBeAssisted;
+- (id)_createPointerInteraction;
+- (_Bool)_selectorOverridden:(SEL)arg1;
+- (void)_pointerWillExit:(id)arg1;
+- (void)_pointerWillEnter:(id)arg1;
+- (id)_shapeInContainer:(id)arg1 proposal:(CDUnknownBlockType)arg2;
+- (id)_shapeInContainer:(id)arg1;
+- (id)_pointerEffect;
+- (id)_pointerEffectWithPreview:(id)arg1;
+- (id)_pointerEffectPreviewParameters;
+@property(copy, nonatomic, setter=_setPreferredCursorEffect:) _UICursorEffect *_preferredCursorEffect;
 - (_Bool)_isInCarPlay;
 - (_Bool)_isCarPlaySystemTypeButton;
 - (void)_applyCarPlaySystemButtonCustomizations;
@@ -353,6 +377,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(nonatomic, getter=isPointerInteractionEnabled) _Bool pointerInteractionEnabled; // @dynamic pointerInteractionEnabled;
 @property(readonly) Class superclass;
 
 @end

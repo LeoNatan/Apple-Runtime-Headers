@@ -51,6 +51,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *externalID;
 @property(readonly, nonatomic) NSDate *resumeTimeTimeStamp;
 @property(readonly, nonatomic) NSNumber *resumeTime;
+@property(readonly, nonatomic) NSString *utsEntityType;
 @property(readonly, nonatomic) NSString *mediaType;
 @property(readonly, nonatomic) NSURL *scrubVideoURL;
 @property(readonly, nonatomic) NSString *buyParams;

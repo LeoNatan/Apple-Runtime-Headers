@@ -65,6 +65,7 @@
 - (FCPersonalizationTreatment *)personalizationTreatmentForFeldsparID:(NSString *)arg1;
 
 @optional
+@property(readonly, nonatomic) BOOL enableCacheFallbackForArticleRecirculation;
 @property(readonly, nonatomic) NSString *todayFeedKnobs;
 @property(readonly, nonatomic) NSArray *aLaCartePaidSubscriptionGroupWhitelistedChannelIDs;
 @property(readonly, nonatomic) double feedLineHeightMultiplier;

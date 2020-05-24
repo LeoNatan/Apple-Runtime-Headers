@@ -7,11 +7,12 @@
 #import <FileProviderDaemon/FPProviderDomainAccessControl-Protocol.h>
 #import <FileProviderDaemon/NSObject-Protocol.h>
 
-@class FPCTLTermDumper, FPDDomain, FPDDomainIndexer, FPDExtension, FPDRequest, FPExtensionEnumerationSettings, FPItem, FPItemID, FPSandboxingURLWrapper, NSArray, NSData, NSProgress, NSURL;
+@class FPCTLTermDumper, FPDDomain, FPDDomainIndexer, FPDExtension, FPDRequest, FPExtensionEnumerationSettings, FPItem, FPItemID, FPSandboxingURLWrapper, NSArray, NSData, NSError, NSProgress, NSURL;
 @protocol FPDLifetimeExtender, FPXEnumeratorObserver;
 
 @protocol FPDDomainBackend <NSObject, FPProviderDomainAccessControl>
 @property(readonly, copy) NSArray *rootURLs;
+- (void)bulkItemChanges:(NSArray *)arg1 changedFields:(unsigned long long)arg2 request:(FPDRequest *)arg3 completionHandler:(void (^)(NSDictionary *, NSDictionary *))arg4;
 - (void)resolveProviderItemID:(FPItemID *)arg1 completionHandler:(void (^)(FPItemID *, NSError *))arg2;
 - (void)fetchOperationServiceOrEndpointWithRequest:(FPDRequest *)arg1 completionHandler:(void (^)(id <FPXOperationService>, NSXPCListenerEndpoint *, NSError *))arg2;
 - (FPDDomainIndexer *)createIndexerWithExtension:(FPDExtension *)arg1 enabled:(BOOL)arg2 error:(id *)arg3;
@@ -45,6 +46,9 @@
 
 @optional
 + (void)registerXPCActivities;
+- (void)didChangeNeedsAuthentification:(BOOL)arg1;
+- (void)didFinishIndexing;
+- (void)didIndexOneBatchWithError:(NSError *)arg1 updatedItems:(NSArray *)arg2 deletedIDs:(NSArray *)arg3 anchor:(NSData *)arg4 anchorPersisted:(void (^)(NSError *))arg5;
 - (void)ingestFromCacheItemWithID:(FPItemID *)arg1 requestedFields:(unsigned long long)arg2 request:(FPDRequest *)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)didChangeItemID:(FPItemID *)arg1;
 - (void)unpinItemWithID:(FPItemID *)arg1 request:(FPDRequest *)arg2 completionHandler:(void (^)(FPItem *, NSError *))arg3;

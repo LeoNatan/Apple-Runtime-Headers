@@ -27,6 +27,9 @@
 - (id)languageScript;
 - (id)region;
 - (id)language;
+- (_Bool)alreadySignedIntoFaceTime;
+- (_Bool)hasMAIDCredential;
+- (id)MAIDUsername;
 - (id)diagnosticsUploadURL;
 - (int)userMode;
 - (id)mdmVersionProtocol;

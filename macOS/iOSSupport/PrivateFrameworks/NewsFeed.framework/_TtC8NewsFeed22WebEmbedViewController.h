@@ -19,6 +19,7 @@
     // Error parsing type: , name: interactionProvider
     // Error parsing type: , name: configurationProvider
     // Error parsing type: , name: onReuse
+    // Error parsing type: , name: webLinkPresentingViewController
     // Error parsing type: , name: stateMachine
     // Error parsing type: , name: errorState
     // Error parsing type: , name: activityIndicator

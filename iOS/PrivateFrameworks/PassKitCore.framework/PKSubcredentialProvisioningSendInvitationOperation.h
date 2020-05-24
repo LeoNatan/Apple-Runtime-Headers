@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PassKitCore/PKSubcredentialProvisioningSessionOperation.h>
+#import <PassKitCore/PKSubcredentialProvisioningSharingSessionOperation.h>
 
 @class PKAppletSubcredential, PKAppletSubcredentialSharingInvitation, PKAppletSubcredentialSharingInvitationReceipt, PKAppletSubcredentialSharingRequest, PKPaymentWebService;
 
-@interface PKSubcredentialProvisioningSendInvitationOperation : PKSubcredentialProvisioningSessionOperation
+@interface PKSubcredentialProvisioningSendInvitationOperation : PKSubcredentialProvisioningSharingSessionOperation
 {
     PKAppletSubcredentialSharingRequest *_sharingRequest;
     PKAppletSubcredentialSharingInvitation *_invitation;
@@ -22,7 +22,7 @@
 - (void).cxx_destruct;
 - (void)session:(id)arg1 didChangeState:(unsigned long long)arg2;
 - (id)userAuthDelegate;
-- (id)sharingSession;
+- (void)initializeAccountAttestationIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)sendInvitationWithAuth:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)sendInvitation;
 - (void)performOperation;

@@ -12,8 +12,11 @@
     // Error parsing type: , name: unfocusedParticipantOverlay
     // Error parsing type: , name: organicLayoutConfiguration
     // Error parsing type: , name: currentlyFocusedParticipantIdentifier
+    // Error parsing type: , name: mostProminentParticipantIdentifier
     // Error parsing type: , name: mostRecentAnimationIndex
     // Error parsing type: , name: delegate
+    // Error parsing type: , name: currentParticipantAnimationContextUUID
+    // Error parsing type: , name: cachedFrameSize
 }
 
 - (void).cxx_destruct;

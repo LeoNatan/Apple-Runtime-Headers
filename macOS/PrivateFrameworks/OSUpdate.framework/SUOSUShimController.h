@@ -103,6 +103,7 @@
 - (void)_handleQueuedUpdatesForLaterChanged;
 - (void)_handleNotifyingUpdatesChanged;
 - (id)_latestAvailableMajorOSProduct;
+- (void)_updateLatestAvailableMajorProductState;
 - (void)_handleAvailableUpdatesChangedWithNotificationNamed:(id)arg1;
 - (void)_registerForStateChangeNotifications;
 - (void)_startUpAndDetermineCurrentState;

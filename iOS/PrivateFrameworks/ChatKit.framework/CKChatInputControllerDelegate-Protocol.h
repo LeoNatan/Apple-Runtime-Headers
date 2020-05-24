@@ -34,6 +34,7 @@
 - (void)chatInputController:(CKChatInputController *)arg1 presentShelfModal:(UIViewController *)arg2 animated:(_Bool)arg3 completion:(void (^)(void))arg4;
 - (void)chatInputDidUpdateInputViewShowingBrowser:(_Bool)arg1 entryFieldCollapsed:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)chatInputWillUpdateInputViewShowingBrowser;
+- (_Bool)chatInputControllerCanSend:(CKChatInputController *)arg1;
 - (void)chatInputSentComposition:(CKComposition *)arg1;
 - (_Bool)keyboardIsVisibleForChatInputController:(CKChatInputController *)arg1;
 - (id <CKBrowserDragControllerTranscriptDelegate>)dragControllerTranscriptDelegate;

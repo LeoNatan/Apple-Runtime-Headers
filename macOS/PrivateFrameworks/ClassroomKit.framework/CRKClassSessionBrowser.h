@@ -66,6 +66,9 @@
 - (void)beaconBrowser:(id)arg1 didFindBeaconForInvitationSessionWithEndpoint:(id)arg2;
 - (void)beaconBrowser:(id)arg1 didFindBeaconForClassSession:(id)arg2 flags:(unsigned short)arg3;
 - (void)beaconBrowser:(id)arg1 didFailWithError:(id)arg2;
+- (void)handleUntrustedClassSession:(id)arg1 decisionHandler:(CDUnknownBlockType)arg2;
+- (void)handleUntrustedInvitationSession:(id)arg1 decisionHandler:(CDUnknownBlockType)arg2;
+- (void)session:(id)arg1 encounteredUntrustedConnection:(CDUnknownBlockType)arg2;
 - (void)sessionDidInvalidate:(id)arg1;
 - (void)sessionDidLoseBeacon:(id)arg1;
 - (void)session:(id)arg1 willLoseBeaconAfterTimeInterval:(double)arg2;

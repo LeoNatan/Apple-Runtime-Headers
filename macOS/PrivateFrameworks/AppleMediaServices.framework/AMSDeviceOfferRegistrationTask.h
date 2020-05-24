@@ -30,6 +30,8 @@
 @property(retain) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(retain) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 @property(retain) ACAccount *account; // @synthesize account=_account;
+- (id)_urlRequestWithBagURL:(id)arg1;
+- (id)_urlRequestMethod;
 - (void)_updateWithDeviceOffers:(id)arg1;
 - (id)_requestParameters;
 - (id)_latestOffersWithFetchedDeviceOffers:(id)arg1 offersStore:(id)arg2;

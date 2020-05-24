@@ -14,6 +14,7 @@
     CRKIfaddrs *mCurrentInterface;
 }
 
++ (id)internetInterfaceEnumeratorWithError:(id *)arg1;
 + (id)enumeratorWithError:(id *)arg1;
 - (void).cxx_destruct;
 - (id)nextObject;

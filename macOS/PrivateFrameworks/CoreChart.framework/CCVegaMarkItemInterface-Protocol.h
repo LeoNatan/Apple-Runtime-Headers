@@ -49,9 +49,12 @@
 - (_Bool)isEqual:(NSObject<CCVegaMarkItemInterface> *)arg1;
 - (CCVegaMark *)itemAtIndex:(unsigned long long)arg1;
 - (NSObject *)getText;
+- (_Bool)defined;
+- (struct CGRect)bounds;
+- (_Bool)getBoolean:(NSString *)arg1 defaultValue:(_Bool)arg2;
 - (NSObject *)getObject:(NSString *)arg1 defaultValue:(NSObject *)arg2;
 - (NSString *)getString:(NSString *)arg1 defaultValue:(NSString *)arg2;
 - (double)getDouble:(NSString *)arg1 defaultValue:(double)arg2;
-- (struct CGPath *)callShapeFunction;
+- (struct CGPath *)newPathByCallingShapeFunction;
 @end
 

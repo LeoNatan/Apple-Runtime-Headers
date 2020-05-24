@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PassKitCore/PKAddPaymentPassController.h>
+#import <PassKit/PKAddPaymentPassController.h>
 
 #import <NanoPassKit/NPKAddPaymentPassControllerClientProtocol-Protocol.h>
 #import <NanoPassKit/PKXPCServiceDelegate-Protocol.h>

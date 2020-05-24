@@ -54,6 +54,7 @@
 - (void)_handleDisableFKAConfirmation;
 - (void)_handleDisableSwitchControlConfirmation;
 - (void)_handleSwitchUsageConfirmed;
+- (void)_handleConnectedDevicesRequireAssistiveTouchAlert;
 - (void)_handleASTMenuCustomizeAddDwell:(_Bool)arg1 addScroll:(_Bool)arg2;
 - (void)_handleASTMenuFullForInstance:(id)arg1;
 - (void)_handleDisallowUSBRestrictedModeSCInformativeOnly:(_Bool)arg1;
@@ -118,6 +119,7 @@
 - (id)serverInstance:(id)arg1 splashImageForAppWithBundleIdentifier:(id)arg2;
 - (void)shortLookViewControllerDidDismiss:(id)arg1;
 - (void)serverInstance:(id)arg1 performVoiceShortcutWithIdentifier:(id)arg2 bundleID:(id)arg3;
+- (_Bool)connectedDevicesRequireAssistiveTouch;
 - (void)activateSOSModeWithServerInstance:(id)arg1;
 - (void)setDashBoardSystemGesturesEnabled:(_Bool)arg1 withServerInstance:(id)arg2;
 - (id)coverSheetViewController;

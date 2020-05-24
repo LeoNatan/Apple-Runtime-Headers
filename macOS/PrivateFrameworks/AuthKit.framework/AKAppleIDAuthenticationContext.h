@@ -66,6 +66,7 @@
     AKAnisetteData *_proxiedDeviceAnisetteData;
     NSString *_appProvidedContext;
     NSString *_masterKey;
+    long long _authenticationMode;
     NSString *_username;
     long long _serviceType;
     NSString *_reason;
@@ -132,6 +133,7 @@
 @property BOOL shouldAllowAppleIDCreation; // @synthesize shouldAllowAppleIDCreation=_shouldAllowAppleIDCreation;
 @property BOOL isUsernameEditable; // @synthesize isUsernameEditable=_isUsernameEditable;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
+@property(nonatomic) long long authenticationMode; // @synthesize authenticationMode=_authenticationMode;
 @property(copy, setter=_setMasterKey:) NSString *_masterKey; // @synthesize _masterKey;
 @property(copy) NSString *appProvidedContext; // @synthesize appProvidedContext=_appProvidedContext;
 @property(retain) AKAnisetteData *proxiedDeviceAnisetteData; // @synthesize proxiedDeviceAnisetteData=_proxiedDeviceAnisetteData;

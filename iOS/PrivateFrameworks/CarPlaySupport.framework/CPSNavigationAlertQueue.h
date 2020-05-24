@@ -35,9 +35,9 @@
 - (void)_startAlertAnimations;
 - (_Bool)_canBeginAnimatingAlert;
 - (void)beginAnimatingAlertIfPossible;
-- (void)dismissCurrentNavigationAlertAnimated:(_Bool)arg1 context:(unsigned long long)arg2;
+- (void)dismissCurrentNavigationAlertAnimated:(_Bool)arg1 context:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)prepareNavigationAlert:(id)arg1 templateDelegate:(id)arg2 animated:(_Bool)arg3;
-@property(readonly, nonatomic) _Bool canDisplayAlert;
+@property(readonly, nonatomic) _Bool isDisplayingAlert;
 - (id)initWithDelegate:(id)arg1 applicationStateMonitor:(id)arg2;
 
 // Remaining properties

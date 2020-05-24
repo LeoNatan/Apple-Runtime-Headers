@@ -30,11 +30,13 @@
         unsigned int wasLastHighlightSuccessful:1;
         unsigned int touchHasHighlighted:1;
     } _controlFlags;
+    long long _requiredButtonMask;
 }
 
 + (unsigned long long)_primaryStateForState:(unsigned long long)arg1;
 + (_Bool)_allowActionsToQueue;
 - (void).cxx_destruct;
+@property(nonatomic, setter=_setRequiredButtonMask:) long long _requiredButtonMask; // @synthesize _requiredButtonMask;
 - (_Bool)_accessibilityShouldActivateOnHUDLift;
 - (unsigned long long)_stateForFocusUpdateContext:(id)arg1;
 - (long long)_focusedSound;

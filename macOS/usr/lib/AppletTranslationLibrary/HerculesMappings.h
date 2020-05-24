@@ -13,8 +13,9 @@ __attribute__((visibility("hidden")))
 
 + (id)mergeTaps:(id)arg1 forCity:(id)arg2 outEnRoute:(id *)arg3;
 + (id)processEnRouteStatus:(id)arg1 forOperation:(unsigned char)arg2 forCity:(id)arg3;
-+ (id)getTransitModality:(id)arg1 withStationCode:(id)arg2 forCity:(id)arg3;
++ (id)getTransitModality:(id)arg1 forCity:(id)arg2;
 + (id)getStationMode:(unsigned char)arg1 forCity:(id)arg2;
++ (id)getStationCode:(id)arg1 withTransitInformation:(id)arg2 forCity:(id)arg3;
 
 @end
 

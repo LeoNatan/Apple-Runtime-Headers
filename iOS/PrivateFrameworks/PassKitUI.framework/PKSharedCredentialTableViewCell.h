@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 @property(retain, nonatomic) PKSharedCredentialGroup *group; // @synthesize group=_group;
 - (void)layoutSubviews;
+- (id)localizedGroupState;
 - (id)initWithGroup:(id)arg1 groupController:(id)arg2 reuseIdentifier:(id)arg3 delegate:(id)arg4;
 
 @end

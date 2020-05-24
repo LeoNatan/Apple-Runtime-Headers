@@ -34,10 +34,26 @@
     SBFAnimationSettings *_rotationFadeOutAnimationSettings;
     SBFAnimationSettings *_rotationFadeInAnimationSettings;
     SBFFluidBehaviorSettings *_edgeProtectAnimationSettings;
+    double _coverSheetHomeAffordanceCursorTopEdgeInset;
+    double _coverSheetHomeAffordanceCursorBottomEdgeInset;
+    double _coverSheetHomeAffordanceCursorLeftEdgeInset;
+    double _coverSheetHomeAffordanceCursorRightEdgeInset;
+    double _coverSheetSuppressAnimationForPointerTopEdgeInset;
+    double _coverSheetSuppressAnimationForPointerBottomEdgeInset;
+    double _coverSheetSuppressAnimationForPointerLeftEdgeInset;
+    double _coverSheetSuppressAnimationForPointerRightEdgeInset;
 }
 
 + (id)settingsControllerModule;
 - (void).cxx_destruct;
+@property(nonatomic) double coverSheetSuppressAnimationForPointerRightEdgeInset; // @synthesize coverSheetSuppressAnimationForPointerRightEdgeInset=_coverSheetSuppressAnimationForPointerRightEdgeInset;
+@property(nonatomic) double coverSheetSuppressAnimationForPointerLeftEdgeInset; // @synthesize coverSheetSuppressAnimationForPointerLeftEdgeInset=_coverSheetSuppressAnimationForPointerLeftEdgeInset;
+@property(nonatomic) double coverSheetSuppressAnimationForPointerBottomEdgeInset; // @synthesize coverSheetSuppressAnimationForPointerBottomEdgeInset=_coverSheetSuppressAnimationForPointerBottomEdgeInset;
+@property(nonatomic) double coverSheetSuppressAnimationForPointerTopEdgeInset; // @synthesize coverSheetSuppressAnimationForPointerTopEdgeInset=_coverSheetSuppressAnimationForPointerTopEdgeInset;
+@property(nonatomic) double coverSheetHomeAffordanceCursorRightEdgeInset; // @synthesize coverSheetHomeAffordanceCursorRightEdgeInset=_coverSheetHomeAffordanceCursorRightEdgeInset;
+@property(nonatomic) double coverSheetHomeAffordanceCursorLeftEdgeInset; // @synthesize coverSheetHomeAffordanceCursorLeftEdgeInset=_coverSheetHomeAffordanceCursorLeftEdgeInset;
+@property(nonatomic) double coverSheetHomeAffordanceCursorBottomEdgeInset; // @synthesize coverSheetHomeAffordanceCursorBottomEdgeInset=_coverSheetHomeAffordanceCursorBottomEdgeInset;
+@property(nonatomic) double coverSheetHomeAffordanceCursorTopEdgeInset; // @synthesize coverSheetHomeAffordanceCursorTopEdgeInset=_coverSheetHomeAffordanceCursorTopEdgeInset;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *edgeProtectAnimationSettings; // @synthesize edgeProtectAnimationSettings=_edgeProtectAnimationSettings;
 @property(retain, nonatomic) SBFAnimationSettings *rotationFadeInAnimationSettings; // @synthesize rotationFadeInAnimationSettings=_rotationFadeInAnimationSettings;
 @property(retain, nonatomic) SBFAnimationSettings *rotationFadeOutAnimationSettings; // @synthesize rotationFadeOutAnimationSettings=_rotationFadeOutAnimationSettings;
@@ -62,6 +78,8 @@
 @property(nonatomic) _Bool removeViewOnHide; // @synthesize removeViewOnHide=_removeViewOnHide;
 @property(nonatomic) long long initializationStyle; // @synthesize initializationStyle=_initializationStyle;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
+- (struct UIEdgeInsets)coverSheetSuppressAnimationForPointerInsets;
+- (struct UIEdgeInsets)coverSheetHomeAffordanceCursorEdgeInsets;
 - (void)setDefaultValues;
 
 @end

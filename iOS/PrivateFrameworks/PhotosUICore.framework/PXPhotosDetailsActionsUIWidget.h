@@ -124,6 +124,7 @@
 @property(readonly, nonatomic) long long contentLayoutStyle;
 @property(readonly, nonatomic) NSObject<PXAnonymousView> *contentView;
 @property(readonly, nonatomic) long long contentViewAnchoringType;
+@property(readonly, nonatomic) _Bool cursorInteractionEnabled;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(nonatomic, getter=isFaceModeEnabled) _Bool faceModeEnabled;

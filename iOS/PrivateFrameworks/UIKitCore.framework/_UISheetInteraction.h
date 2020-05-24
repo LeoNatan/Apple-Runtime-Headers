@@ -52,6 +52,7 @@
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) long long indexOfCurrentDetent; // @synthesize indexOfCurrentDetent=_indexOfCurrentDetent;
 @property(copy, nonatomic) NSArray *detents; // @synthesize detents=_detents;
+- (double)_currentRubberBandCoefficient;
 - (id)_currentDragPanGesture;
 - (void)draggingCancelledInSource:(id)arg1;
 - (void)draggingEndedInSource:(id)arg1 withVelocity:(double)arg2;
@@ -64,6 +65,7 @@
 - (struct CGPoint)_scrollView:(id)arg1 adjustedUnconstrainedOffsetForUnconstrainedOffset:(struct CGPoint)arg2 startOffset:(struct CGPoint)arg3 horizontalVelocity:(inout double *)arg4 verticalVelocity:(inout double *)arg5 animator:(out id *)arg6;
 - (void)handlePan:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
+- (_Bool)_gestureRecognizer:(id)arg1 shouldReceiveEvent:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (void)updateRegisteredPanGestureRecognizerEnabled:(id)arg1;
 - (void)unregisterPanGestureRecognizer:(id)arg1;

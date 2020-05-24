@@ -25,6 +25,7 @@
 @property(readonly, nonatomic) _Bool suppressFieldDetect;
 - (void)explanationViewDidSelectSetupLater:(id)arg1;
 - (void)explanationViewDidSelectContinue:(id)arg1;
+- (id)bodyText;
 - (void)loadView;
 - (void)preflightWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) unsigned long long operation;

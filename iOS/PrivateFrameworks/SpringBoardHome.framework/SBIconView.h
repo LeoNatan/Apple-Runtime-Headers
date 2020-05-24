@@ -14,12 +14,13 @@
 #import <SpringBoardHome/UIContextMenuInteractionDelegate-Protocol.h>
 #import <SpringBoardHome/UIDragInteractionDelegate-Protocol.h>
 #import <SpringBoardHome/UIGestureRecognizerDelegate-Protocol.h>
+#import <SpringBoardHome/_UICursorInteractionDelegate-Protocol.h>
 #import <SpringBoardHome/_UISettingsKeyObserver-Protocol.h>
 
-@class NSArray, NSCountedSet, NSDate, NSHashTable, NSMapTable, NSString, NSURL, SBCloseBoxView, SBFParallaxSettings, SBFolderIcon, SBFolderIconImageCache, SBHIconImageCache, SBHRecentsDocumentExtensionProvider, SBIcon, SBIconImageCrossfadeView, SBIconImageView, UIColor, UIContextMenuConfiguration, UIContextMenuInteraction, UIDragInteraction, UIFont, UIImage, UILongPressGestureRecognizer, UITapGestureRecognizer, UIViewPropertyAnimator, _UILegibilitySettings, _UIStatesFeedbackGenerator;
+@class NSArray, NSCountedSet, NSDate, NSHashTable, NSMapTable, NSString, NSURL, SBCloseBoxView, SBFParallaxSettings, SBFolderIcon, SBFolderIconImageCache, SBHIconImageCache, SBHRecentsDocumentExtensionProvider, SBIcon, SBIconImageCrossfadeView, SBIconImageView, UIColor, UIContextMenuConfiguration, UIContextMenuInteraction, UIDragInteraction, UIFont, UIImage, UILongPressGestureRecognizer, UITapGestureRecognizer, UIViewPropertyAnimator, _UICursorInteraction, _UILegibilitySettings, _UIStatesFeedbackGenerator;
 @protocol BSInvalidatable, SBIconAccessoryView, SBIconContinuityInfo, SBIconLabelAccessoryView, SBIconLabelView, SBIconListLayout, SBIconListLayoutProvider, SBIconViewDelegate;
 
-@interface SBIconView : UIView <_UISettingsKeyObserver, UIGestureRecognizerDelegate, UIDragInteractionDelegate, SBCloseBoxViewDelegate, UIContextMenuInteractionDelegate, SBSHardwareButtonEventConsuming, SBIconObserver, SBReusableView, SBIconAccessoryInfoProvider>
+@interface SBIconView : UIView <_UISettingsKeyObserver, UIGestureRecognizerDelegate, UIDragInteractionDelegate, SBCloseBoxViewDelegate, UIContextMenuInteractionDelegate, SBSHardwareButtonEventConsuming, _UICursorInteractionDelegate, SBIconObserver, SBReusableView, SBIconAccessoryInfoProvider>
 {
     SBIcon *_icon;
     NSString *_iconLocation;
@@ -64,9 +65,11 @@
     unsigned int _contextMenuInteractionActive:1;
     unsigned int _disallowsBlockedForScreenTimeExpiration:1;
     unsigned int _imageLoadingBehavior:2;
+    unsigned int _disallowCursorInteraction:1;
     double _iconContentScale;
     UIView *_scalingContainer;
     struct CGRect _visibleImageRect;
+    struct UIEdgeInsets _cursorHitTestPadding;
     NSHashTable *_observers;
     NSCountedSet *_forbidEditingModeReasons;
     struct SBIconImageInfo _iconImageInfo;
@@ -101,11 +104,14 @@
     NSString *_presentedWidgetBundleIdentifier;
     id <BSInvalidatable> _homeButtonPressConsumingAssertion;
     NSMapTable *_pendingAnimatorCompletionsTable;
+    _UICursorInteraction *_iconViewCursorInteraction;
+    _UICursorInteraction *_closeBoxCursorInteraction;
 }
 
 + (Class)_closeBoxClassForType:(long long)arg1;
 + (id)componentBackgroundView;
 + (double)_defaultDragInteractionLiftDelay;
++ (_Bool)supportsCursorInteraction;
 + (_Bool)supportsTapGesture;
 + (_Bool)supportsDragInteraction;
 + (id)dragContextForDragItem:(id)arg1;
@@ -140,6 +146,8 @@
 + (struct CGSize)defaultIconImageSize;
 + (id)defaultIconLocation;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _UICursorInteraction *closeBoxCursorInteraction; // @synthesize closeBoxCursorInteraction=_closeBoxCursorInteraction;
+@property(readonly, nonatomic) _UICursorInteraction *iconViewCursorInteraction; // @synthesize iconViewCursorInteraction=_iconViewCursorInteraction;
 @property(retain, nonatomic) NSMapTable *pendingAnimatorCompletionsTable; // @synthesize pendingAnimatorCompletionsTable=_pendingAnimatorCompletionsTable;
 @property(retain, nonatomic) id <BSInvalidatable> homeButtonPressConsumingAssertion; // @synthesize homeButtonPressConsumingAssertion=_homeButtonPressConsumingAssertion;
 @property(copy, nonatomic) NSString *presentedWidgetBundleIdentifier; // @synthesize presentedWidgetBundleIdentifier=_presentedWidgetBundleIdentifier;
@@ -159,6 +167,7 @@
 @property(retain, nonatomic) id <SBIconContinuityInfo> continuityInfo; // @synthesize continuityInfo=_continuityInfo;
 @property(retain, nonatomic) UIFont *labelFont; // @synthesize labelFont=_labelFont;
 @property(copy, nonatomic) NSDate *lastTouchDownDate; // @synthesize lastTouchDownDate=_lastTouchDownDate;
+@property(nonatomic) struct UIEdgeInsets cursorHitTestPadding; // @synthesize cursorHitTestPadding=_cursorHitTestPadding;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) NSArray *applicationShortcutItems; // @synthesize applicationShortcutItems=_applicationShortcutItems;
@@ -230,6 +239,9 @@
 @property(nonatomic) _Bool allowsCloseBox;
 @property(readonly, nonatomic) _Bool canShowCloseBox;
 @property(readonly, nonatomic) _Bool shouldShowCloseBox;
+- (void)_updateCursorInteractionsEnabled;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 - (id)newComponentBackgroundView;
 - (void)_updateDragInteractionLiftDelay;
 @property(readonly, nonatomic) double dragInteractionLiftDelay;
@@ -276,6 +288,7 @@
 - (void)cancelDragLift;
 - (void)cancelDrag;
 - (void)cleanUpAfterDropAnimation;
+- (_Bool)_isCursorInteractionEnabled;
 - (id)dragItems;
 - (id)dragPreviewForItem:(id)arg1 session:(id)arg2;
 - (id)draggingLaunchURL;
@@ -428,6 +441,8 @@
 @property(nonatomic) _Bool showsSquareCorners;
 - (void)setIcon:(id)arg1 animated:(_Bool)arg2;
 - (void)setPaused:(_Bool)arg1 forReason:(unsigned long long)arg2;
+- (_Bool)disallowCursorInteraction;
+- (void)setDisallowCursorInteraction:(_Bool)arg1;
 @property(nonatomic) _Bool startsDragMoreQuickly;
 - (void)setUserInteractionEnabled:(_Bool)arg1;
 - (void)addGesturesAndInteractionsIfNecessary;

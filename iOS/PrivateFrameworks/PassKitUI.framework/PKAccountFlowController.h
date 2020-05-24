@@ -48,7 +48,7 @@
 - (void)endProvisioningFlow;
 @property(readonly, nonatomic) PKAccountProvisioningController *accountProvisioningController;
 - (void)_requestPresentationOfActiviationViewControllerShowingMadeDefault:(_Bool)arg1;
-- (void)_accountProvisoningControllerRequiresNextViewController:(id)arg1;
+- (void)_accountProvisioningControllerRequiresNextViewController:(id)arg1;
 - (void)_checkAccountProvisioningControllerState:(id)arg1;
 - (void)accountProvisioningController:(id)arg1 displayableError:(id)arg2;
 - (void)accountProvisioningControllerUpdatedState:(id)arg1;

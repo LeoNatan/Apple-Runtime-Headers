@@ -45,6 +45,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+@property(readonly, nonatomic) _Bool hasDisplayableInformation;
 @property(readonly, nonatomic) _Bool isPlanAvailable;
 - (id)passFieldForKey:(id)arg1;
 - (void)_updateProperties;

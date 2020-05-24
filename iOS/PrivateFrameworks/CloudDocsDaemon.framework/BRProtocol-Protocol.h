@@ -38,6 +38,7 @@
 - (void)_t_removeAllSyncUpBlockingForContainerID:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)_t_blockSyncForContainerID:(NSString *)arg1 withPendingUpgradeToOSName:(NSString *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)_t_blockSyncUpOfItemWithID:(NSString *)arg1 containerID:(NSString *)arg2 withPendingUpgradeToOSName:(NSString *)arg3 reply:(void (^)(NSError *))arg4;
+- (void)getURLForItemIdentifier:(NSString *)arg1 reply:(void (^)(NSURL *, NSError *))arg2;
 - (void)getShareOptionsOfItemIdentifier:(NSString *)arg1 reply:(void (^)(_Bool, _Bool, _Bool, NSString *, NSError *))arg2;
 - (void)checkIfFolderSharingEnabledWithReply:(void (^)(_Bool, NSError *))arg1;
 - (void)checkIfItemIsShareableWithInode:(unsigned long long)arg1 reply:(void (^)(_Bool, NSError *))arg2;

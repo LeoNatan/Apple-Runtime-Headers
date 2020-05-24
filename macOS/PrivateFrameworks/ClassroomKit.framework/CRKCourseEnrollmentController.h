@@ -41,7 +41,8 @@
 @property(copy, nonatomic) NSArray *courses; // @synthesize courses=_courses;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)taskOperation:(id)arg1 didPostNotificationWithName:(id)arg2 userInfo:(id)arg3;
-- (BOOL)isEphemeralMultiUser;
+- (void)refreshASMCoursesOperationDidFail:(id)arg1;
+- (void)refreshASMCourses;
 - (void)screenObserversHaveChanged:(id)arg1;
 - (void)fetchScreenObserversDidFinish:(id)arg1;
 - (void)fetchScreenObservers;

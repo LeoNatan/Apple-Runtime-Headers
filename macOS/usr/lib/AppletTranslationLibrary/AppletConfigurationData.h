@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 + (void)init;
 + (BOOL)isValidConfigData:(id)arg1;
 + (BOOL)setConfiguration:(id)arg1;
++ (id)getExpressModeSettings;
 + (id)getWuluSettings;
 + (id)getNFCSettings;
 + (id)extraDebugScriptForModule:(id)arg1;
@@ -38,6 +39,7 @@ __attribute__((visibility("hidden")))
 + (id)getOverrideConfig;
 + (id)getStaticWuluSettings;
 + (id)getStaticNFCSettings;
++ (id)getStaticExpressModeSettings;
 + (id)getStaticConfig;
 - (void).cxx_destruct;
 - (id)pluginDecoderForMid:(id)arg1 depth:(int)arg2;

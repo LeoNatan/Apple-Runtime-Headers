@@ -11,16 +11,18 @@
 __attribute__((visibility("hidden")))
 @interface WuluRecord : NSObject
 {
+    unsigned char _sfi;
     unsigned char _number;
     unsigned short _associatedSerialNumber;
     NSData *_data;
 }
 
-+ (id)withRecordNumber:(unsigned char)arg1 recordData:(id)arg2 associatedSerialNumber:(unsigned short)arg3;
++ (id)withRecordSfi:(unsigned char)arg1 recordNumber:(unsigned char)arg2 recordData:(id)arg3 associatedSerialNumber:(unsigned short)arg4;
 - (void).cxx_destruct;
 @property(nonatomic) unsigned short associatedSerialNumber; // @synthesize associatedSerialNumber=_associatedSerialNumber;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(nonatomic) unsigned char number; // @synthesize number=_number;
+@property(nonatomic) unsigned char sfi; // @synthesize sfi=_sfi;
 
 @end
 

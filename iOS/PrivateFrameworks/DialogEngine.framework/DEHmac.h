@@ -6,16 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@interface DEHmac : NSObject
+#import <DialogEngine/DEWriter-Protocol.h>
+
+@class NSData;
+
+@interface DEHmac : NSObject <DEWriter>
 {
+    NSData *_hmac;
     CDStruct_43cfb2c2 _context;
 }
 
 + (_Bool)verify:(id)arg1 computed:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_43cfb2c2 context; // @synthesize context=_context;
-- (id)finalize;
-- (void)write:(id)arg1;
-- (id)initWithkey:(id)arg1 iv:(id)arg2;
+@property(retain, nonatomic) NSData *hmac; // @synthesize hmac=_hmac;
+- (void)close;
+- (void)writeData:(id)arg1;
+- (id)initWithKey:(id)arg1 iv:(id)arg2;
 
 @end
 

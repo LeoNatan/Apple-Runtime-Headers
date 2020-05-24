@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSMutableArray, NSNumber;
+@class NSData, NSMutableArray, NSNumber, WuluRecord;
 
 __attribute__((visibility("hidden")))
 @interface WuluReaderContext : NSObject
@@ -17,10 +17,12 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_file1E;
     NSMutableArray *_file1A;
     NSNumber *_balance;
+    WuluRecord *_localRecord;
 }
 
 + (id)readAllFiles:(id)arg1 debug:(BOOL)arg2 error:(id *)arg3;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WuluRecord *localRecord; // @synthesize localRecord=_localRecord;
 @property(retain, nonatomic) NSNumber *balance; // @synthesize balance=_balance;
 @property(retain, nonatomic) NSMutableArray *file1A; // @synthesize file1A=_file1A;
 @property(retain, nonatomic) NSMutableArray *file1E; // @synthesize file1E=_file1E;
@@ -32,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (id)readExtendedRecord:(id)arg1 sfi:(unsigned char)arg2 index:(unsigned char)arg3 error:(id *)arg4;
 - (id)readRecord:(id)arg1 sfi:(unsigned char)arg2 index:(unsigned char)arg3 error:(id *)arg4;
 - (void)dumpAllFiles;
+- (void)readAdditionalFile:(id)arg1 cityCode:(id)arg2;
 - (id)readAll:(id)arg1 debug:(BOOL)arg2 error:(id *)arg3;
 
 @end

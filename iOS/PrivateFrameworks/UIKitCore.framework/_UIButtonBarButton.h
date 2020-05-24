@@ -6,11 +6,12 @@
 
 #import <UIKitCore/UIControl.h>
 
+#import <UIKitCore/UIPointerInteractionDelegate-Protocol.h>
 #import <UIKitCore/UISpringLoadedInteractionSupporting-Protocol.h>
 
 @class NSLayoutConstraint, NSString, _UIBarButtonItemData, _UIButtonBarButtonVisualProvider;
 
-@interface _UIButtonBarButton : UIControl <UISpringLoadedInteractionSupporting>
+@interface _UIButtonBarButton : UIControl <UIPointerInteractionDelegate, UISpringLoadedInteractionSupporting>
 {
     _UIButtonBarButtonVisualProvider *_visualProvider;
     NSLayoutConstraint *_widthMinimizingConstraint;
@@ -35,6 +36,14 @@
 - (void)willMoveToWindow:(id)arg1;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)layoutSubviews;
+- (void)pointerInteraction:(id)arg1 willExitRegion:(id)arg2 animator:(id)arg3;
+- (void)pointerInteraction:(id)arg1 willEnterRegion:(id)arg2 animator:(id)arg3;
+- (id)pointerInteraction:(id)arg1 styleForRegion:(id)arg2;
+- (id)pointerInteraction:(id)arg1 regionForRequest:(id)arg2 defaultRegion:(id)arg3;
+- (void)cursorInteraction:(id)arg1 willExitRegion:(id)arg2 withAnimator:(id)arg3;
+- (void)cursorInteraction:(id)arg1 willEnterRegion:(id)arg2 withAnimator:(id)arg3;
+- (id)cursorInteraction:(id)arg1 styleForRegion:(id)arg2 modifiers:(long long)arg3;
+- (id)cursorInteraction:(id)arg1 regionForLocation:(struct CGPoint)arg2 defaultRegion:(id)arg3;
 @property(nonatomic, getter=isSpringLoaded) _Bool springLoaded;
 - (void)_configureFromBarItem:(id)arg1 appearanceDelegate:(id)arg2 isBackButton:(_Bool)arg3;
 @property(readonly, nonatomic) NSLayoutConstraint *heightMinimizingConstraint;
