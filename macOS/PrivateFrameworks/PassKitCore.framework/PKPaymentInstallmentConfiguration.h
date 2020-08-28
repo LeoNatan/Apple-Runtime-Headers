@@ -8,7 +8,7 @@
 
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class NSData, NSDecimalNumber, NSString;
+@class NSArray, NSData, NSDecimalNumber, NSDictionary, NSString;
 
 @interface PKPaymentInstallmentConfiguration : NSObject <NSSecureCoding>
 {
@@ -18,16 +18,20 @@
     NSDecimalNumber *_openToBuyThresholdAmount;
     NSDecimalNumber *_bindingTotalAmount;
     NSString *_currencyCode;
-    long long _installmentItemType;
     NSString *_installmentMerchantIdentifier;
     NSString *_referrerIdentifier;
+    NSArray *_installmentItems;
+    NSDictionary *_applicationMetadata;
+    long long _retailChannel;
 }
 
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
+@property(nonatomic) long long retailChannel; // @synthesize retailChannel=_retailChannel;
+@property(copy, nonatomic) NSDictionary *applicationMetadata; // @synthesize applicationMetadata=_applicationMetadata;
+@property(copy, nonatomic) NSArray *installmentItems; // @synthesize installmentItems=_installmentItems;
 @property(copy, nonatomic) NSString *referrerIdentifier; // @synthesize referrerIdentifier=_referrerIdentifier;
 @property(copy, nonatomic) NSString *installmentMerchantIdentifier; // @synthesize installmentMerchantIdentifier=_installmentMerchantIdentifier;
-@property(nonatomic) long long installmentItemType; // @synthesize installmentItemType=_installmentItemType;
 @property(nonatomic, getter=isInStorePurchase) BOOL inStorePurchase; // @synthesize inStorePurchase=_inStorePurchase;
 @property(copy, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
 @property(retain, nonatomic) NSDecimalNumber *bindingTotalAmount; // @synthesize bindingTotalAmount=_bindingTotalAmount;
@@ -39,6 +43,7 @@
 - (BOOL)isEqualToInstallmentConfiguration:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (void)encodeToBodyDictionary:(id)arg1;
 
 @end
 

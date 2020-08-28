@@ -6,8 +6,19 @@
 
 #import <TeaUI/_TtC5TeaUI25TabBarSplitViewController.h>
 
+@class NSArray, UIViewController;
+
 @interface _TtC5TeaUI25TabBarSplitViewController (TeaUI)
-- (void)dismissalTransitionDidEndWithNotification:(id)arg1;
-- (void)presentationTransitionDidEndWithNotification:(id)arg1;
+- (void)didReceiveMemoryWarning;
+- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidLoad;
+- (void)traitCollectionDidChange:(id)arg1;
+@property(nonatomic, copy) NSArray *viewControllers;
+@property(nonatomic, readonly) UIViewController *childViewControllerForStatusBarHidden;
+@property(nonatomic, readonly) UIViewController *childViewControllerForStatusBarStyle;
+- (void)loadView;
 @end
 

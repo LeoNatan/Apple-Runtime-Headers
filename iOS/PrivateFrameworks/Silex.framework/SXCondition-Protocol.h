@@ -10,6 +10,7 @@
 
 @protocol SXCondition <NSObject>
 @property(readonly, nonatomic) NSString *configurationKey;
+@property(readonly, nonatomic) unsigned long long newsletterSubscriptionStatus;
 @property(readonly, nonatomic) unsigned long long preferredColorScheme;
 @property(readonly, nonatomic) unsigned long long testing;
 @property(readonly, nonatomic) NSString *subscriptionStatus;

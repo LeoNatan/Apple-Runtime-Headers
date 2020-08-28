@@ -87,7 +87,7 @@
 - (_Bool)pageWillHaveGroupWithSourceIdentifier:(id)arg1;
 - (_Bool)pageIsWaitingForFirstGroupFromSourceIdentifier:(id)arg1;
 - (_Bool)pageHasExhaustedGroupsWithTypes:(id)arg1;
-- (_Bool)pageWillContainExpandedNewGroupWithSourceIdentifier:(id)arg1;
+- (_Bool)pageWillContainNewGroupWithSourceIdentifier:(id)arg1;
 - (unsigned long long)countOfPrecedingAdjacentGroupsWithTypes:(id)arg1;
 - (id)followingAdjacentHeadlinesFromGroupType:(long long)arg1;
 - (id)precedingAdjacentHeadlinesFromGroupType:(long long)arg1;

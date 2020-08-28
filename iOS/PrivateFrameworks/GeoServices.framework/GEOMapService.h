@@ -38,6 +38,7 @@
 - (void)trackMapItem:(id)arg1;
 - (void)trackSerializedPlaceData:(id)arg1;
 - (id)_ticketForRefreshingHandle:(id)arg1 traits:(id)arg2;
+- (id)ticketForTerritoryForLocations:(id)arg1 shiftLocationsIfNeeded:(_Bool)arg2 traits:(id)arg3;
 - (id)ticketForGeoIpLookupForIpAddr:(id)arg1;
 - (id)ticketForWifiFingerprintWithLocations:(id)arg1 wifiAccessPoints:(id)arg2 maxLabels:(unsigned int)arg3 entryTime:(unsigned long long)arg4 exitTime:(unsigned long long)arg5 traits:(id)arg6;
 - (id)ticketForWifiFingerprintWithLocations:(id)arg1 wifiAccessPoints:(id)arg2 maxLabels:(unsigned int)arg3 traits:(id)arg4;

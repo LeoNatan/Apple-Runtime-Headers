@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
     int _lastRequestedHeight;
     int _lastRequestedFrameRate;
     int _conferenceFrameRate;
+    BOOL _enableLocalRecording;
     int _sensorFrameRate;
     int _frameCounterForDrop;
     int _frameCounterForRate;

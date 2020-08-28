@@ -125,8 +125,6 @@
 @property(readonly, nonatomic) id <SXAdDocumentStateManager> adDocumentStateManager; // @synthesize adDocumentStateManager=_adDocumentStateManager;
 @property(readonly, nonatomic) SXFullscreenVideoPlaybackManager *fullscreenVideoPlaybackManager; // @synthesize fullscreenVideoPlaybackManager=_fullscreenVideoPlaybackManager;
 @property(readonly, nonatomic) SXMediaPlaybackController *mediaPlaybackController; // @synthesize mediaPlaybackController=_mediaPlaybackController;
-@property(readonly, nonatomic) struct UIEdgeInsets safeAreaInsets;
-@property(readonly, nonatomic) struct CGSize viewportSize;
 - (id)canvasViewController;
 - (id)interactiveCanvasController;
 - (_Bool)isValidBlueprintForCurrentSize:(id)arg1;
@@ -185,6 +183,8 @@
 - (void)viewport:(id)arg1 appearStateChangedFromState:(unsigned long long)arg2;
 - (id)sectionHostingView;
 - (id)sectionHostingViewController;
+@property(readonly, nonatomic) struct UIEdgeInsets safeAreaInsets;
+@property(readonly, nonatomic) struct CGSize viewportSize;
 - (void)updateStickyHeaders;
 - (void)applyContentOverlayBlueprint:(id)arg1 topOffset:(double)arg2;
 - (void)applyFooterBlueprint:(id)arg1;

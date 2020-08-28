@@ -11,6 +11,7 @@
 @protocol FCStorefrontAccessCheckable <NFCopying>
 @property(readonly, copy, nonatomic) NSArray *allowedStorefrontIDs;
 @property(readonly, copy, nonatomic) NSArray *blockedStorefrontIDs;
+@property(readonly, copy, nonatomic) NSString *sourceChannelID;
 @property(readonly, copy, nonatomic) NSString *identifier;
 @end
 

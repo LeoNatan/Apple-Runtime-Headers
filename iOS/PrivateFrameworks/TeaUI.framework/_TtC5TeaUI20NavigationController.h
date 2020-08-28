@@ -12,15 +12,16 @@
 }
 
 - (void).cxx_destruct;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)initWithRootViewController:(id)arg1;
 - (id)initWithNavigationBarClass:(Class)arg1 toolbarClass:(Class)arg2;
 - (_Bool)accessibilityPerformEscape;
 - (id)popToRootViewControllerAnimated:(_Bool)arg1;
 - (id)popToViewController:(id)arg1 animated:(_Bool)arg2;
 - (id)popViewControllerAnimated:(_Bool)arg1;
 - (void)pushViewController:(id)arg1 animated:(_Bool)arg2;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithRootViewController:(id)arg1;
+- (id)initWithRootViewController:(id)arg1 navigationBarClass:(Class)arg2;
 
 @end
 

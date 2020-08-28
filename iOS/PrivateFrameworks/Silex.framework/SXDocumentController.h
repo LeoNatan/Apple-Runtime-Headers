@@ -8,7 +8,7 @@
 
 #import <Silex/SXDocumentShareURLProvider-Protocol.h>
 
-@class NSMutableDictionary, NSString, SXDocument, SXImageController, SXJSONObjectMerger, SXMetaData, UIColor;
+@class NSArray, NSMutableDictionary, NSString, SXDocument, SXImageController, SXJSONObjectMerger, SXMetaData, UIColor;
 
 @interface SXDocumentController : NSObject <SXDocumentShareURLProvider>
 {
@@ -32,8 +32,8 @@
 - (id)componentIdentifierUsingThumbnailInComponents:(id)arg1;
 - (id)componentIdentifierUsingThumbnail;
 - (id)filterImageResources;
-- (id)requiredResourceURLs;
-- (id)allImageResources;
+@property(readonly, nonatomic) NSArray *requiredResourceURLs;
+@property(readonly, nonatomic) NSArray *allImageResources;
 - (id)imageResourceForIdentifier:(id)arg1;
 - (id)componentLayoutForIdentifier:(id)arg1;
 - (id)resourceForIdentifier:(id)arg1;

@@ -10,14 +10,11 @@ __attribute__((visibility("hidden")))
 @interface _TtC16NewsSubscription17PaywallInteractor : NSObject
 {
     // Error parsing type: , name: delegate
-    // Error parsing type: , name: coordinator
+    // Error parsing type: , name: tracker
     // Error parsing type: , name: paywallModel
     // Error parsing type: , name: purchaseSessionID
-    // Error parsing type: , name: dataManager
     // Error parsing type: , name: webAccessAuthenticatorFactory
     // Error parsing type: , name: webAccessAuthenticator
-    // Error parsing type: , name: purchaseConversionLocation
-    // Error parsing type: , name: paywallType
 }
 
 - (void).cxx_destruct;

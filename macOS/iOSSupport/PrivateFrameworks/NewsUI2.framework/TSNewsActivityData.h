@@ -6,19 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSArray, NSString;
 
 @interface TSNewsActivityData : NSObject
 {
     // Error parsing type: , name: activity
     // Error parsing type: , name: identifier
     // Error parsing type: , name: object
+    // Error parsing type: , name: traits
 }
 
++ (long long)convertToArticleTraitWithTrait:(long long)arg1;
 - (void).cxx_destruct;
 - (id)init;
+- (id)initWithActivity:(long long)arg1 identifier:(id)arg2 object:(id)arg3 traits:(id)arg4;
 - (id)initWithActivity:(long long)arg1 identifier:(id)arg2 object:(id)arg3;
 - (id)initWithActivity:(long long)arg1 identifier:(id)arg2;
+@property(nonatomic, readonly) NSArray *traits;
 @property(nonatomic, readonly) id object; // @synthesize object;
 @property(nonatomic, readonly) NSString *identifier;
 @property(nonatomic, readonly) long long activity; // @synthesize activity;

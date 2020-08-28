@@ -57,11 +57,11 @@
 - (id)initWithCoder:(id)arg1;
 - (void)_setTransactionHistoryDetailsFromString:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (id)_transactionAmountsWithBalanceLabels:(id)arg1;
+- (id)_transactionAmountsWithBalanceLabels:(id)arg1 unitDictionary:(id)arg2;
 @property(readonly, nonatomic) unsigned long long transitTransactionModifier;
 @property(readonly, nonatomic) long long transitTransactionSubtype;
 @property(readonly, nonatomic) long long paymentTransactionType;
-- (id)concreteTransactionWithCurrency:(id)arg1 balanceLabels:(id)arg2;
+- (id)concreteTransactionWithCurrency:(id)arg1 balanceLabels:(id)arg2 unitDictionary:(id)arg3;
 - (id)felicaHistoryRecord;
 
 @end

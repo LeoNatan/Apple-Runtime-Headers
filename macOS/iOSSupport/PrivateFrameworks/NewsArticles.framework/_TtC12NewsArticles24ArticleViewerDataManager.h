@@ -8,6 +8,8 @@
 
 @interface _TtC12NewsArticles24ArticleViewerDataManager : _TtCs12_SwiftObject
 {
+    // Error parsing type: , name: headlineService
+    // Error parsing type: , name: previewService
 }
 
 @end

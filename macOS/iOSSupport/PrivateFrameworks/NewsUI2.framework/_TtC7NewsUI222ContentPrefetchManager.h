@@ -9,6 +9,7 @@
 @interface _TtC7NewsUI222ContentPrefetchManager : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: articlePrefetcher
+    // Error parsing type: , name: articleAudioPrewarmer
 }
 
 @end

@@ -21,6 +21,7 @@
     long long _completedUnitCount;
     NSError *_sharingError;
     NSMetadataQuery *_query;
+    _Bool _setupCKShare;
     _Bool _original;
     NSString *_ownerPersonID;
     double _fractionUploaded;

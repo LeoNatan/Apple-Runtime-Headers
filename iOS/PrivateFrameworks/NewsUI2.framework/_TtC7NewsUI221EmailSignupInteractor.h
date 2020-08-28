@@ -9,10 +9,11 @@
 @interface _TtC7NewsUI221EmailSignupInteractor : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: delegate
-    // Error parsing type: , name: dataManager
-    // Error parsing type: , name: cloudContext
-    // Error parsing type: , name: analyticTracker
-    // Error parsing type: , name: appearDate
+    // Error parsing type: , name: model
+    // Error parsing type: , name: newsletterManager
+    // Error parsing type: , name: signupDetectionManager
+    // Error parsing type: , name: tracker
+    // Error parsing type: , name: interacted
 }
 
 @end

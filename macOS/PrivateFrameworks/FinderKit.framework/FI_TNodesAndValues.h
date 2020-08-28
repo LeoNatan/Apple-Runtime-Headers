@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 @interface FI_TNodesAndValues : NSObject <NSCopying>
 {
     struct unordered_map<TFENode, TNSRef<NSObject, void>, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, TNSRef<NSObject, void>>>> _values;
+    shared_ptr_f8db59dd _allNodes;
     struct TString _attribute;
     _Bool _forPreview;
     struct TNSRef<FI_TNodesAndValues, void> _masterValues;
@@ -57,6 +58,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithAttribute:(const struct TString *)arg1 forPreview:(_Bool)arg2;
+- (id)initWithAttribute:(const struct TString *)arg1 allNodes:(shared_ptr_f8db59dd)arg2 forPreview:(_Bool)arg3;
 
 @end
 

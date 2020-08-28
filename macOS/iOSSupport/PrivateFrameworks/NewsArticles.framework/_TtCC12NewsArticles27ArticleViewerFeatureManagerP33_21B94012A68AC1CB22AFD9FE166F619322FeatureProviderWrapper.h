@@ -11,6 +11,10 @@
     // Error parsing type: , name: feature
     // Error parsing type: , name: createAnimationBlock
     // Error parsing type: , name: shouldShowBlock
+    // Error parsing type: , name: navigationBarPaletteHeightBlock
+    // Error parsing type: , name: shouldShowOnScrollAppearanceBlock
+    // Error parsing type: , name: createScrollAppearanceAnimationBlock
+    // Error parsing type: , name: pageVisibilityDidChangeBlock
     // Error parsing type: , name: inToolbar
 }
 

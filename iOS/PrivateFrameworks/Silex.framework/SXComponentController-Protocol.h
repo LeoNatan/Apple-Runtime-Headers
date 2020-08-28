@@ -5,11 +5,12 @@
 //
 
 #import <Silex/SXAXAssistiveTechStatusChangeListener-Protocol.h>
+#import <Silex/SXLayoutIntegrator-Protocol.h>
 
 @class NSArray, NSSet, NSString, SXComponentView, SXLayoutBlueprint;
 @protocol SXComponentControllerObserver;
 
-@protocol SXComponentController <SXAXAssistiveTechStatusChangeListener>
+@protocol SXComponentController <SXAXAssistiveTechStatusChangeListener, SXLayoutIntegrator>
 @property(readonly, nonatomic) _Bool isPresented;
 @property(readonly, nonatomic) NSArray *flattenedComponentViews;
 @property(readonly, nonatomic) SXLayoutBlueprint *presentedBlueprint;

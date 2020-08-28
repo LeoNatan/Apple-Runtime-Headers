@@ -129,6 +129,8 @@
     BOOL _didBounce;
     BOOL _didExpandDuringView;
     BOOL _didOpenInSafari;
+    BOOL _isAudioEligible;
+    BOOL _isAudioEngaged;
     BOOL _isBreakingNewsArticle;
     BOOL _isCoverArticle;
     BOOL _isDigitalReplicaAd;
@@ -147,13 +149,15 @@
     BOOL _isVideoInFeed;
     BOOL _subscriptionOnlyArticle;
     BOOL _viewFromNotificationDirectOpen;
-    CDStruct_c335251c _has;
+    CDStruct_5b8c9b53 _has;
 }
 
 + (Class)surfacedByTagIdsType;
 + (Class)fractionalCohortMembershipType;
 + (Class)namedEntitiesType;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL isAudioEngaged; // @synthesize isAudioEngaged=_isAudioEngaged;
+@property(nonatomic) BOOL isAudioEligible; // @synthesize isAudioEligible=_isAudioEligible;
 @property(retain, nonatomic) NSString *curatedBatchId; // @synthesize curatedBatchId=_curatedBatchId;
 @property(retain, nonatomic) NSString *webEmbedId; // @synthesize webEmbedId=_webEmbedId;
 @property(retain, nonatomic) COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueViewContextData *issueViewContextData; // @synthesize issueViewContextData=_issueViewContextData;
@@ -272,6 +276,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasIsAudioEngaged;
+@property(nonatomic) BOOL hasIsAudioEligible;
 @property(readonly, nonatomic) BOOL hasCuratedBatchId;
 @property(readonly, nonatomic) BOOL hasWebEmbedId;
 - (int)StringAsHeroArticleType:(id)arg1;

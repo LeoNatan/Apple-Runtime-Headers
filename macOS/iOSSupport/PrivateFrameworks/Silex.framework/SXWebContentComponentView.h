@@ -63,6 +63,7 @@
 - (id)createPresentationState;
 - (id)createLoadingState;
 - (id)createStateMachine;
+- (void)presentWithHeight:(double)arg1;
 - (void)reloadWebContent;
 - (void)presentComponentWithChanges:(CDStruct_74be42e1)arg1;
 - (void)configureConfigurationProvider;

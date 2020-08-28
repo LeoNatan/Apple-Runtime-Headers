@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (struct _NSRange)accessibilityVisibleCharacterRange;
 - (struct CGRect)accessibilityFrame;
 - (id)accessibilityRole;
+- (BOOL)_containsNonTextNodes;
 - (id)accessibilityValue;
 - (struct CGPDFLayout *)_pageLayout;
 @property(readonly, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;

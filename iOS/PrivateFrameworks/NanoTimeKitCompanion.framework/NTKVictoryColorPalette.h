@@ -53,6 +53,7 @@
 - (id)colorForLogoWithStyle:(unsigned long long)arg1;
 - (id)colorForNumberVictoryAnalogTimeElement:(unsigned long long)arg1;
 - (id)colorForDotVictoryAnalogTimeElement:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long faceColor;
 - (id)initWithDevice:(id)arg1 color:(unsigned long long)arg2 bleed:(unsigned long long)arg3;
 
 // Remaining properties

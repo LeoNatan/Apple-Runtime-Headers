@@ -14,14 +14,11 @@
 @interface FCGreatStoriesYouMissedGroupEmitter : NSObject <FCFeedGroupEmitting>
 {
     id <FCContentContext> _context;
-    unsigned long long _limit;
 }
 
 + (id)groupEmitterIdentifier;
 + (BOOL)greatStoriesMayEmit:(id)arg1;
-+ (void)setShouldEmitOverride:(BOOL)arg1;
 - (void).cxx_destruct;
-@property(nonatomic) unsigned long long limit; // @synthesize limit=_limit;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
 @property(readonly, nonatomic) BOOL shouldEmitContentInFavoritesOnlyMode;
 @property(readonly, nonatomic) long long requiredForYouContentTypes;

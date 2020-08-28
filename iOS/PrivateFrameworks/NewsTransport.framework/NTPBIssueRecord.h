@@ -8,7 +8,7 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLArticleScores, NSMutableArray, NSString, NTPBDate, NTPBRecordBase;
+@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLArticleScores, COMAPPLEFELDSPARPROTOCOLVersionedPersonalizationVector, NSMutableArray, NSString, NTPBDate, NTPBRecordBase;
 
 @interface NTPBIssueRecord : PBCodable <NSCopying>
 {
@@ -32,6 +32,10 @@
     NSString *_metadataURL;
     NSString *_notificationDescription;
     NSString *_pdfResourceArchiveURL;
+    COMAPPLEFELDSPARPROTOCOLVersionedPersonalizationVector *_personalizationVector;
+    COMAPPLEFELDSPARPROTOCOLVersionedPersonalizationVector *_personalizationVectorAlt;
+    NSString *_personalizationVectorAltFullURL;
+    NSString *_personalizationVectorFullURL;
     NTPBDate *_publishDate;
     COMAPPLEFELDSPARPROTOCOLLIVERPOOLArticleScores *_scores;
     NSString *_title;
@@ -55,6 +59,10 @@
 + (Class)blockedStorefrontIDsType;
 + (Class)allowedStorefrontIDsType;
 + (Class)allArticleIDsType;
+@property(retain, nonatomic) NSString *personalizationVectorAltFullURL; // @synthesize personalizationVectorAltFullURL=_personalizationVectorAltFullURL;
+@property(retain, nonatomic) NSString *personalizationVectorFullURL; // @synthesize personalizationVectorFullURL=_personalizationVectorFullURL;
+@property(retain, nonatomic) COMAPPLEFELDSPARPROTOCOLVersionedPersonalizationVector *personalizationVectorAlt; // @synthesize personalizationVectorAlt=_personalizationVectorAlt;
+@property(retain, nonatomic) COMAPPLEFELDSPARPROTOCOLVersionedPersonalizationVector *personalizationVector; // @synthesize personalizationVector=_personalizationVector;
 @property(retain, nonatomic) NSMutableArray *bundleFeaturedArticleIDs; // @synthesize bundleFeaturedArticleIDs=_bundleFeaturedArticleIDs;
 @property(retain, nonatomic) NSString *pdfResourceArchiveURL; // @synthesize pdfResourceArchiveURL=_pdfResourceArchiveURL;
 @property(nonatomic) long long minimumNewsVersion; // @synthesize minimumNewsVersion=_minimumNewsVersion;
@@ -89,6 +97,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasPersonalizationVectorAltFullURL;
+@property(readonly, nonatomic) _Bool hasPersonalizationVectorFullURL;
+@property(readonly, nonatomic) _Bool hasPersonalizationVectorAlt;
+@property(readonly, nonatomic) _Bool hasPersonalizationVector;
 - (id)bundleFeaturedArticleIDsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)bundleFeaturedArticleIDsCount;
 - (void)addBundleFeaturedArticleIDs:(id)arg1;

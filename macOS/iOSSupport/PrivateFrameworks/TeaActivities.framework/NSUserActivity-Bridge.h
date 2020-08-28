@@ -7,6 +7,7 @@
 #import <Foundation/NSUserActivity.h>
 
 @interface NSUserActivity (Bridge)
+- (long long)ts_executionContext;
 @property(nonatomic, setter=ts_setIsEligibleForPrediction:) BOOL ts_isEligibleForPrediction;
 @end
 

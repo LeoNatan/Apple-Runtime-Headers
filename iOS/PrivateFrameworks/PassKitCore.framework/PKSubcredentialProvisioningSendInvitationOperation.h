@@ -24,6 +24,7 @@
 - (id)userAuthDelegate;
 - (void)initializeAccountAttestationIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)sendInvitationWithAuth:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)canAcceptInvitationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)sendInvitation;
 - (void)performOperation;
 - (id)initWithConfiguration:(id)arg1 context:(id)arg2 delegate:(id)arg3;

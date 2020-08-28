@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <NewsUI/NSObject-Protocol.h>
+#import <NewsUI/SXEmbedDataProvider-Protocol.h>
 
-@protocol NUEmbedDataManager <NSObject>
+@protocol NUEmbedDataManager <SXEmbedDataProvider>
 - (void)loadEmbedDataWithCompletion:(void (^)(void))arg1;
 @end
 

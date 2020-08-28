@@ -9,7 +9,6 @@
 @class CLLocation, NSArray, NSSet;
 
 @protocol FCLocalAreasProvider <NSObject>
-- (NSSet *)localVersionedTagIDsForLocation:(CLLocation *)arg1;
 - (NSSet *)autoFavoriteTagIDsForLocation:(CLLocation *)arg1;
 - (NSArray *)regionsForLocation:(CLLocation *)arg1;
 @end

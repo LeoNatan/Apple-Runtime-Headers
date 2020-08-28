@@ -29,6 +29,7 @@
 @property(retain) ACDAccountStoreFilter *filter; // @synthesize filter=_filter;
 @property(readonly) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (id)description;
+- (id)_rawValueForEntitlement:(id)arg1;
 - (BOOL)hasEntitlement:(id)arg1;
 @property(readonly) struct __CFBundle *bundle;
 @property(readonly) NSString *adamOrDisplayID;

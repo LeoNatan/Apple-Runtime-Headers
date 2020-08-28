@@ -37,6 +37,7 @@
     FCWidgetConfig *_widgetConfig;
 }
 
++ (id)defaultAudioConfigRecordIDByLocalizedStorefrontID;
 + (id)defaultMagazinesConfigRecordIDByLocalizedStorefrontID;
 + (id)defaultWidgetRecordConfigIDByLocalizedStorefrontID;
 + (id)defaultForYouRecordConfigIDByLocalizedStorefrontID;
@@ -56,7 +57,12 @@
 @property(readonly, nonatomic) NSDictionary *configDictionary; // @synthesize configDictionary=_configDictionary;
 - (id)localizedStorefrontID;
 - (id)jsonEncodableObject;
+@property(readonly, nonatomic) BOOL forYouGroupShouldPromoteAccessibleHeadline;
+@property(readonly, nonatomic) BOOL recordBothPersonalizationVectors;
+@property(readonly, nonatomic) BOOL usePersonalizationVectorAlt;
 @property(readonly, nonatomic) BOOL enableLocationBasedAutofavorites;
+@property(readonly, nonatomic) long long newsletterSubscriptionType;
+@property(readonly, nonatomic) double newsletterSubscriptionStatusCacheTimeout;
 @property(readonly, nonatomic) long long emailSignupRequiredAppLaunchCount;
 @property(readonly, nonatomic) unsigned long long bestOfBundleFeedGroupKind;
 @property(readonly, nonatomic) unsigned long long likeDislikeBehavior;
@@ -89,6 +95,8 @@
 @property(readonly, nonatomic) long long corryBarMaxArticleCountForSingleArticle;
 @property(readonly, nonatomic) long long corryBarMaxArticleCountForArticleList;
 @property(readonly, nonatomic) long long articleReadCountThreshold;
+@property(readonly, nonatomic) NSString *userVectorModelResourceId;
+@property(readonly, nonatomic) NSString *userVectorWhitelistResourceId;
 @property(readonly, nonatomic) NSString *translationMapResourceID;
 @property(readonly, nonatomic) NSString *localAreasMappingResourceId;
 @property(readonly, nonatomic) NSString *personalizationFavorabilityResourceId;
@@ -128,7 +136,6 @@
 @property(readonly, nonatomic) long long subscriptionsPlacardPublisherFrequencyInSeconds;
 @property(readonly, nonatomic) double delayBeforeRetryingDroppedFeeds;
 @property(readonly, nonatomic) long long maxRetriesForDroppedFeeds;
-@property(readonly, nonatomic) BOOL isSpecialEventsMicaAnimationDisabled;
 - (id)appAnalyticsEndpointUrlForEnvironment:(unsigned long long)arg1;
 - (id)analyticsEnvelopeContentTypeConfigsForEnvironment:(unsigned long long)arg1;
 - (id)todayConfigWithQueueConfigs:(id)arg1 maxSlotCount:(unsigned long long)arg2;
@@ -139,6 +146,7 @@
 @property(readonly, nonatomic) long long expirePinnedArticlesAfter;
 @property(readonly, nonatomic) NSNumber *currentTreatment;
 @property(readonly, nonatomic) NSString *experimentalizableFieldPostfix;
+@property(readonly, nonatomic) NSString *audioConfigRecordID;
 @property(readonly, nonatomic) NSString *forYouRecordConfigID;
 @property(readonly, nonatomic) long long minimumDistanceBetweenImageOnTopTiles;
 @property(readonly, nonatomic) long long endOfArticleMaxInaccessiblePaidArticleCount;
@@ -169,8 +177,6 @@
 @property(readonly, nonatomic) NSString *featuredStoriesTagID;
 @property(readonly, nonatomic) NSString *trendingTagID;
 @property(readonly, nonatomic) NSString *briefingsTagID;
-@property(readonly, nonatomic) NSString *moreVideosChannelID;
-@property(readonly, nonatomic) NSString *topVideosChannelID;
 @property(readonly, nonatomic) NSString *breakingNewsChannelID;
 @property(readonly, nonatomic) FCTopStoriesConfiguration *topStoriesConfig; // @synthesize topStoriesConfig=_topStoriesConfig;
 @property(readonly, nonatomic) NSDictionary *endpointConfigsByEnvironment; // @synthesize endpointConfigsByEnvironment=_endpointConfigsByEnvironment;

@@ -7,6 +7,6 @@
 @class FCIssue, NABarButtonItem;
 
 @protocol NABridgedToolbarIssueCoverBarButtonItemProviderType
-- (NABarButtonItem *)barButtonItemForIssue:(FCIssue *)arg1;
+- (NABarButtonItem *)barButtonItemForIssue:(FCIssue *)arg1 toolbarFrame:(struct CGRect)arg2 shouldAddBottomPadding:(_Bool)arg3;
 @end
 

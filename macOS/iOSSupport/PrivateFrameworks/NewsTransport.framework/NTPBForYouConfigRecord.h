@@ -13,39 +13,23 @@
 @interface NTPBForYouConfigRecord : PBCodable <NSCopying>
 {
     NTPBRecordBase *_base;
-    NSMutableArray *_breakingNewsArticleIDs;
     NSString *_configuration;
-    NSString *_coverArticlesArticleListID;
     NSMutableArray *_editorialArticleListIDs;
     NSMutableArray *_editorialSectionTagIDs;
-    NSString *_moreVideosArticleListID;
-    NSMutableArray *_specialEventArticleIDs;
     NSString *_spotlightArticleID;
     NSString *_todayFeedConfiguration;
     NSMutableArray *_todayFeedTopStoriesArticleIDs;
-    NSMutableArray *_topStoriesCombinedArticleIDs;
-    NSMutableArray *_topVideosArticleIDs;
     NSString *_trendingArticleListID;
 }
 
 + (Class)todayFeedTopStoriesArticleIDsType;
-+ (Class)topVideosArticleIDsType;
-+ (Class)specialEventArticleIDsType;
-+ (Class)topStoriesCombinedArticleIDsType;
-+ (Class)breakingNewsArticleIDsType;
 + (Class)editorialSectionTagIDsType;
 + (Class)editorialArticleListIDsType;
 @property(retain, nonatomic) NSString *todayFeedConfiguration; // @synthesize todayFeedConfiguration=_todayFeedConfiguration;
 @property(retain, nonatomic) NSMutableArray *todayFeedTopStoriesArticleIDs; // @synthesize todayFeedTopStoriesArticleIDs=_todayFeedTopStoriesArticleIDs;
 @property(retain, nonatomic) NSString *spotlightArticleID; // @synthesize spotlightArticleID=_spotlightArticleID;
-@property(retain, nonatomic) NSString *moreVideosArticleListID; // @synthesize moreVideosArticleListID=_moreVideosArticleListID;
-@property(retain, nonatomic) NSMutableArray *topVideosArticleIDs; // @synthesize topVideosArticleIDs=_topVideosArticleIDs;
-@property(retain, nonatomic) NSMutableArray *specialEventArticleIDs; // @synthesize specialEventArticleIDs=_specialEventArticleIDs;
-@property(retain, nonatomic) NSMutableArray *topStoriesCombinedArticleIDs; // @synthesize topStoriesCombinedArticleIDs=_topStoriesCombinedArticleIDs;
-@property(retain, nonatomic) NSMutableArray *breakingNewsArticleIDs; // @synthesize breakingNewsArticleIDs=_breakingNewsArticleIDs;
 @property(retain, nonatomic) NSMutableArray *editorialSectionTagIDs; // @synthesize editorialSectionTagIDs=_editorialSectionTagIDs;
 @property(retain, nonatomic) NSMutableArray *editorialArticleListIDs; // @synthesize editorialArticleListIDs=_editorialArticleListIDs;
-@property(retain, nonatomic) NSString *coverArticlesArticleListID; // @synthesize coverArticlesArticleListID=_coverArticlesArticleListID;
 @property(retain, nonatomic) NSString *trendingArticleListID; // @synthesize trendingArticleListID=_trendingArticleListID;
 @property(retain, nonatomic) NSString *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) NTPBRecordBase *base; // @synthesize base=_base;
@@ -63,23 +47,6 @@
 - (void)addTodayFeedTopStoriesArticleIDs:(id)arg1;
 - (void)clearTodayFeedTopStoriesArticleIDs;
 @property(readonly, nonatomic) BOOL hasSpotlightArticleID;
-@property(readonly, nonatomic) BOOL hasMoreVideosArticleListID;
-- (id)topVideosArticleIDsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)topVideosArticleIDsCount;
-- (void)addTopVideosArticleIDs:(id)arg1;
-- (void)clearTopVideosArticleIDs;
-- (id)specialEventArticleIDsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)specialEventArticleIDsCount;
-- (void)addSpecialEventArticleIDs:(id)arg1;
-- (void)clearSpecialEventArticleIDs;
-- (id)topStoriesCombinedArticleIDsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)topStoriesCombinedArticleIDsCount;
-- (void)addTopStoriesCombinedArticleIDs:(id)arg1;
-- (void)clearTopStoriesCombinedArticleIDs;
-- (id)breakingNewsArticleIDsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)breakingNewsArticleIDsCount;
-- (void)addBreakingNewsArticleIDs:(id)arg1;
-- (void)clearBreakingNewsArticleIDs;
 - (id)editorialSectionTagIDsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)editorialSectionTagIDsCount;
 - (void)addEditorialSectionTagIDs:(id)arg1;
@@ -88,7 +55,6 @@
 - (unsigned long long)editorialArticleListIDsCount;
 - (void)addEditorialArticleListIDs:(id)arg1;
 - (void)clearEditorialArticleListIDs;
-@property(readonly, nonatomic) BOOL hasCoverArticlesArticleListID;
 @property(readonly, nonatomic) BOOL hasTrendingArticleListID;
 @property(readonly, nonatomic) BOOL hasConfiguration;
 @property(readonly, nonatomic) BOOL hasBase;

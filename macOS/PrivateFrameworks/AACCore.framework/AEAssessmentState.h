@@ -8,16 +8,21 @@
 
 #import <AACCore/NSSecureCoding-Protocol.h>
 
+@class NSURL;
+
 @interface AEAssessmentState : NSObject <NSSecureCoding>
 {
     BOOL _enabled;
+    NSURL *_publisherBundleURL;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *publisherBundleURL; // @synthesize publisherBundleURL=_publisherBundleURL;
+@property(readonly, nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithEnabled:(BOOL)arg1;
+- (id)initWithEnabled:(BOOL)arg1 publisherBundleURL:(id)arg2;
 
 @end
 

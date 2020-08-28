@@ -29,6 +29,7 @@
     CDUnknownBlockType _primaryNetworkChangedHandler;
     CDUnknownBlockType _powerUnlimitedChangedHandler;
     CDUnknownBlockType _primaryAppleIDChangedHandler;
+    CDUnknownBlockType _regionChangedHandler;
     CDUnknownBlockType _rotatingIdentifierChangedHandler;
     CDUnknownBlockType _screenLockedChangedHandler;
     CDUnknownBlockType _screenOnChangedHandler;
@@ -48,6 +49,7 @@
 @property(copy) CDUnknownBlockType screenOnChangedHandler; // @synthesize screenOnChangedHandler=_screenOnChangedHandler;
 @property(copy) CDUnknownBlockType screenLockedChangedHandler; // @synthesize screenLockedChangedHandler=_screenLockedChangedHandler;
 @property(copy) CDUnknownBlockType rotatingIdentifierChangedHandler; // @synthesize rotatingIdentifierChangedHandler=_rotatingIdentifierChangedHandler;
+@property(copy) CDUnknownBlockType regionChangedHandler; // @synthesize regionChangedHandler=_regionChangedHandler;
 @property(copy) CDUnknownBlockType primaryAppleIDChangedHandler; // @synthesize primaryAppleIDChangedHandler=_primaryAppleIDChangedHandler;
 @property(copy) CDUnknownBlockType powerUnlimitedChangedHandler; // @synthesize powerUnlimitedChangedHandler=_powerUnlimitedChangedHandler;
 @property(copy) CDUnknownBlockType primaryNetworkChangedHandler; // @synthesize primaryNetworkChangedHandler=_primaryNetworkChangedHandler;
@@ -74,6 +76,10 @@
 @property(readonly) _Bool screenLocked;
 @property(readonly, copy) NSData *rotatingIdentifierData;
 @property(readonly) CDStruct_83abfce7 rotatingIdentifier48;
+@property(readonly, copy) NSString *regionRoutineState;
+@property(readonly, copy) NSString *regionRoutineCountry;
+@property(readonly, copy) NSString *regionMobileCountryCode;
+@property(readonly, copy) NSString *regionISOCountryCode;
 @property(readonly, copy, nonatomic) NSString *primaryNetworkSignature;
 @property(readonly, nonatomic) CDUnion_fab80606 primaryIPv6Addr;
 @property(readonly, nonatomic) CDUnion_fab80606 primaryIPv4Addr;

@@ -101,7 +101,9 @@
 @property(copy, nonatomic) NSString *originalFilename; // @synthesize originalFilename=_originalFilename;
 @property(nonatomic) long long height; // @synthesize height=_height;
 @property(nonatomic) long long width; // @synthesize width=_width;
-- (void)requestReadFullDataAtOffset:(long long)arg1 length:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)requestStreamDataAtOffset:(long long)arg1 length:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)requestOpenStreamData;
+- (void)requestCloseStreamData;
 - (void)requestReadDataAtOffset:(long long)arg1 length:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)requestDownloadWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestMetadataWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;

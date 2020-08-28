@@ -22,6 +22,7 @@
     RCConfigurationManager *_remoteConfigurationManager;
     FCContextConfiguration *_contextConfiguration;
     id <FCFeldsparIDProvider> _feldsparIDProvider;
+    NSString *_appShortVersionString;
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSObject<OS_dispatch_queue> *_appConfigFetchQueue;
     FCAsyncSerialQueue *_remoteConfigManagerSerialQueue;
@@ -53,6 +54,7 @@
 @property(readonly, nonatomic) FCAsyncSerialQueue *remoteConfigManagerSerialQueue; // @synthesize remoteConfigManagerSerialQueue=_remoteConfigManagerSerialQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *appConfigFetchQueue; // @synthesize appConfigFetchQueue=_appConfigFetchQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
+@property(readonly, copy, nonatomic) NSString *appShortVersionString; // @synthesize appShortVersionString=_appShortVersionString;
 @property(readonly, nonatomic) id <FCFeldsparIDProvider> feldsparIDProvider; // @synthesize feldsparIDProvider=_feldsparIDProvider;
 @property(readonly, nonatomic) FCContextConfiguration *contextConfiguration; // @synthesize contextConfiguration=_contextConfiguration;
 @property(readonly, nonatomic) RCConfigurationManager *remoteConfigurationManager; // @synthesize remoteConfigurationManager=_remoteConfigurationManager;
@@ -65,6 +67,7 @@
 - (id)_permanentURLForRequestKey:(id)arg1 storefrontID:(id)arg2;
 - (unsigned long long)_remoteConfigurationEnvironmentForContextIdentifier:(long long)arg1;
 - (id)_responseKeyForRequestKey:(id)arg1;
+- (id)_deviceInfo;
 - (id)_configurationSettingsWithRequestInfos:(id)arg1 feldsparID:(id)arg2 storefrontID:(id)arg3 contextConfiguration:(id)arg4 useBackgroundRefreshRate:(BOOL)arg5;
 - (id)_requestInfoForRequestKey:(id)arg1 storefrontID:(id)arg2 additionalChangeTags:(id)arg3;
 - (void)feldsparIDProviderDidChangeFeldsparID:(id)arg1;
@@ -95,6 +98,7 @@
 @property(readonly, nonatomic) id <FCNewsAppConfiguration> fetchedAppConfiguration;
 @property(readonly, nonatomic) id <FCNewsAppConfiguration> possiblyUnfetchedAppConfiguration;
 @property(readonly, nonatomic) id <FCNewsAppConfiguration> appConfiguration;
+- (id)initWithContextConfiguration:(id)arg1 contentHostDirectoryFileURL:(id)arg2 feldsparIDProvider:(id)arg3 appShortVersionString:(id)arg4;
 - (id)initWithContextConfiguration:(id)arg1 contentHostDirectoryFileURL:(id)arg2 feldsparIDProvider:(id)arg3;
 - (id)initForTesting;
 - (id)init;

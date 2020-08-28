@@ -6,9 +6,10 @@
 
 #import <Safari/NSObject-Protocol.h>
 
-@class NSDictionary, NSImage, NSString, _WKFrameHandle;
+@class NSDictionary, NSImage, NSString, NSURL, _WKFrameHandle;
 
 @protocol ReaderControllerMessageReceiver <NSObject>
+- (void)setArticleBaseURL:(NSURL *)arg1;
 - (void)didCreateSnapshot:(NSImage *)arg1 forRequestIdentifier:(unsigned long long)arg2;
 - (void)didGetPrintingFrame:(_WKFrameHandle *)arg1;
 - (void)articleScrolled:(NSDictionary *)arg1;

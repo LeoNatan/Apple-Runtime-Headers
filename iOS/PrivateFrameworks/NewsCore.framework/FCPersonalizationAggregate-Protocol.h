@@ -6,10 +6,11 @@
 
 #import <NewsCore/NSObject-Protocol.h>
 
-@class NSDate, NSString;
+@class NSDate, NSDictionary, NSString;
 @protocol FCPersonalizationAggregate;
 
 @protocol FCPersonalizationAggregate <NSObject>
+@property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
 @property(readonly, nonatomic) double confidence;
 @property(readonly, nonatomic) NSDate *lastModified;
 @property(readonly, nonatomic) unsigned long long eventCount;

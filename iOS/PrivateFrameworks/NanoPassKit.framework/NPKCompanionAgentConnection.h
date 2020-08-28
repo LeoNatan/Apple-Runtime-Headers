@@ -100,6 +100,7 @@
 - (void)setDefaultCardUniqueID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removePaymentPassWithUniqueID:(id)arg1 forDevice:(id)arg2 waitForConfirmation:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)savePaymentPass:(id)arg1 forDevice:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)credentialedPassUniqueIDsSynchronous:(_Bool)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)paymentPassWithPairedTerminalIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)paymentPassWithDeviceAccountIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)paymentPassesWithPrimaryAccountIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;

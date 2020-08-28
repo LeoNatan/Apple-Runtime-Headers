@@ -6,9 +6,7 @@
 
 #import <NewsUI2/_TtC7NewsUI214HistoryService.h>
 
-#import <NewsUI2/FCReadingHistoryObserving-Protocol.h>
-
-@interface _TtC7NewsUI214HistoryService (NewsUI2) <FCReadingHistoryObserving>
+@interface _TtC7NewsUI214HistoryService (NewsUI2)
 - (void)readingHistory:(id)arg1 didRemoveArticlesWithIDs:(id)arg2;
 - (void)readingHistory:(id)arg1 didAddArticlesWithIDs:(id)arg2;
 - (void)readingHistory:(id)arg1 didChangeFeaturesForArticles:(id)arg2;

@@ -11,6 +11,8 @@
     // Error parsing type: , name: style
     // Error parsing type: , name: viewController
     // Error parsing type: , name: closeButton
+    // Error parsing type: , name: transitionEffectView
+    // Error parsing type: , name: effect
 }
 
 - (void).cxx_destruct;

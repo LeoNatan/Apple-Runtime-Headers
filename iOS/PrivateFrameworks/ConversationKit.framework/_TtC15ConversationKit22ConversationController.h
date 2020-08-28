@@ -35,6 +35,7 @@
     // Error parsing type: , name: cameraZoomAvailabiltyDidChange
     // Error parsing type: , name: carPlayConnectedDidChange
     // Error parsing type: , name: didUpdateLocalParticipant
+    // Error parsing type: , name: didUpdateRecordingLocalVideo
     // Error parsing type: , name: didStartVideoForLocalParticipant
     // Error parsing type: , name: conversationStateDidChange
     // Error parsing type: , name: blockedParticipantsAdded
@@ -46,6 +47,7 @@
     // Error parsing type: , name: call
     // Error parsing type: , name: blockedCallerChecker
     // Error parsing type: , name: conversationUUID
+    // Error parsing type: , name: localVideoRecordingTransactionID
 }
 
 - (void).cxx_destruct;

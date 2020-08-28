@@ -10,6 +10,8 @@
 + (id)calUI_shareeWithAddress:(id)arg1 name:(id)arg2;
 + (id)shareeForString:(id)arg1;
 + (id)shareeFromDictionary:(id)arg1;
++ (id)_shareeWithName:(id)arg1 email:(id)arg2 phoneNumber:(id)arg3 calURI:(id)arg4;
++ (id)_shareeFromContact:(id)arg1 matchedFromValue:(id)arg2 withMatchType:(long long)arg3;
 + (id)shareeFromContact:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)displayString;

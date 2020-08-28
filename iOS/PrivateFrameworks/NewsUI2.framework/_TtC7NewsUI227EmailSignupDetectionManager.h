@@ -12,8 +12,11 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: appConfigurationManager
     // Error parsing type: , name: appLaunchUpsellManager
     // Error parsing type: , name: delegate
-    // Error parsing type: , name: emailSignUpAppLaunchCurrentCount
+    // Error parsing type: , name: appStartup
     // Error parsing type: , name: appleAccount
+    // Error parsing type: , name: userInfo
+    // Error parsing type: , name: newsletterManager
+    // Error parsing type: , name: bundleSubscriptionManager
 }
 
 - (void).cxx_destruct;

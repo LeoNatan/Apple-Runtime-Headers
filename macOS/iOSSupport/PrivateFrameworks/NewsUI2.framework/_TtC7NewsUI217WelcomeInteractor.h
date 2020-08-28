@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: isCloudKitReachablePromise
     // Error parsing type: , name: minimumTimer
     // Error parsing type: , name: maximumTimer
-    // Error parsing type: , name: emailSignupDetectionManager
     // Error parsing type: , name: appActivityMonitor
     // Error parsing type: , name: networkReachability
 }

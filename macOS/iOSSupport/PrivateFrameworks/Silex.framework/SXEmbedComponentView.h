@@ -12,11 +12,12 @@
 #import <Silex/WKNavigationDelegate-Protocol.h>
 #import <Silex/WKScriptMessageHandler-Protocol.h>
 #import <Silex/WKUIDelegate-Protocol.h>
+#import <Silex/_WKFullscreenDelegate-Protocol.h>
 
 @class NFMultiDelegate, NSMutableSet, NSString, SWCrashRetryThrottler, SXEmbedResource, SXRelatedWebViewCache, UIActivityIndicatorView, UILabel, WKNavigation, WKWebView, WKWebsiteDataStore;
 @protocol SWReachabilityProvider, SXComponentActionHandler, SXEmbedService, SXEmbedType, SXLayoutInvalidator;
 
-@interface SXEmbedComponentView : SXComponentView <WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler, UIGestureRecognizerDelegate, UIScrollViewDelegate, SXViewportChangeListener>
+@interface SXEmbedComponentView : SXComponentView <WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler, UIGestureRecognizerDelegate, UIScrollViewDelegate, SXViewportChangeListener, _WKFullscreenDelegate>
 {
     BOOL _failedLoading;
     BOOL _isCurrentlyLoadingEmbedData;
@@ -88,8 +89,8 @@
 - (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
 - (void)_webViewWebProcessDidCrash:(id)arg1;
-- (void)_webViewDidExitFullscreen:(id)arg1;
-- (void)_webViewDidEnterFullscreen:(id)arg1;
+- (void)_webViewDidExitElementFullscreen:(id)arg1;
+- (void)_webViewDidEnterElementFullscreen:(id)arg1;
 - (id)webView:(id)arg1 createWebViewWithConfiguration:(id)arg2 forNavigationAction:(id)arg3 windowFeatures:(id)arg4;
 - (id)unableToLoadMessage;
 - (void)handleError:(id)arg1;

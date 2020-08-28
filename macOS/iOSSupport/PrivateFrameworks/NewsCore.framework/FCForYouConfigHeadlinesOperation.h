@@ -6,7 +6,7 @@
 
 #import <NewsCore/FCOperation.h>
 
-@class FCCachePolicy, FCForYouConfig, NSArray, NSDictionary;
+@class FCCachePolicy, FCForYouConfig, NSArray, NSDictionary, NSError;
 @protocol FCContentContext, FCCoreConfiguration, FCFeedPersonalizing, FCForYouBridgedConfigurationParser;
 
 @interface FCForYouConfigHeadlinesOperation : FCOperation
@@ -22,6 +22,8 @@
     FCCachePolicy *_forYouConfigCachePolicy;
     FCCachePolicy *_articleListCachePolicy;
     FCCachePolicy *_editorialSectionTagCachePolicy;
+    FCForYouConfig *_forYouConfig;
+    NSError *_error;
     CDUnknownBlockType _headlinesCompletionHandler;
     CDUnknownBlockType _headlinesAndTagsCompletionHandler;
     FCForYouConfig *_resultForYouConfig;
@@ -39,6 +41,8 @@
 @property(retain, nonatomic) FCForYouConfig *resultForYouConfig; // @synthesize resultForYouConfig=_resultForYouConfig;
 @property(copy, nonatomic) CDUnknownBlockType headlinesAndTagsCompletionHandler; // @synthesize headlinesAndTagsCompletionHandler=_headlinesAndTagsCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType headlinesCompletionHandler; // @synthesize headlinesCompletionHandler=_headlinesCompletionHandler;
+@property(retain) NSError *error; // @synthesize error=_error;
+@property(retain) FCForYouConfig *forYouConfig; // @synthesize forYouConfig=_forYouConfig;
 @property(retain, nonatomic) FCCachePolicy *editorialSectionTagCachePolicy; // @synthesize editorialSectionTagCachePolicy=_editorialSectionTagCachePolicy;
 @property(retain, nonatomic) FCCachePolicy *articleListCachePolicy; // @synthesize articleListCachePolicy=_articleListCachePolicy;
 @property(retain, nonatomic) FCCachePolicy *forYouConfigCachePolicy; // @synthesize forYouConfigCachePolicy=_forYouConfigCachePolicy;
@@ -50,6 +54,7 @@
 @property(retain, nonatomic) id <FCFeedPersonalizing> personalizer; // @synthesize personalizer=_personalizer;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
 @property(copy, nonatomic) id <FCCoreConfiguration> configuration; // @synthesize configuration=_configuration;
+- (id)localTodayFeedConfiguration;
 - (id)_edgeCacheHint;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;

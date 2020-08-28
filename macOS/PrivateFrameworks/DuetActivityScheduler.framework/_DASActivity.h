@@ -202,6 +202,7 @@
 - (void)setConstraintsWithXPCDictionary:(id)arg1;
 - (void)setObject:(id)arg1 forUserInfoKey:(id)arg2;
 @property(nonatomic) BOOL beforeApplicationLaunch;
+@property(nonatomic) BOOL isContactTracingBackgroundActivity;
 @property(retain, nonatomic) NSDate *clientProvidedStartDate;
 @property(retain, nonatomic) NSString *clientProvidedIdentifier;
 @property(nonatomic) BOOL requestsNewsstandLaunch;

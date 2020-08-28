@@ -12,12 +12,13 @@
 
 @interface TSFrameworkAssembly : NSObject <NFFrameworkAssembly>
 {
-    // Error parsing type: , name: assemblies
+    // Error parsing type: , name: appConfiguration
 }
 
 - (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) NSArray *assemblies;
+- (id)initWithNewsAppConfiguration:(id)arg1;
 
 @end
 

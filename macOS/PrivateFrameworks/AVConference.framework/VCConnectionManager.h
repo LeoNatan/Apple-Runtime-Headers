@@ -182,6 +182,7 @@ __attribute__((visibility("hidden")))
 - (int)setWRMUpdateCallback:(CDUnknownFunctionPointerType)arg1 requestNotificationCallback:(CDUnknownFunctionPointerType)arg2 withContext:(void *)arg3;
 - (const char *)reasonStringWithDuplicationType:(int)arg1;
 - (void)setDuplicationEnabledInternal:(BOOL)arg1;
+- (void)addTelemetryForConnection:(id)arg1 dictionary:(id)arg2;
 - (void)setConnectionPause:(BOOL)arg1 isLocalConnection:(BOOL)arg2;
 - (void)setDuplicationCallback:(CDUnknownFunctionPointerType)arg1 withContext:(void *)arg2;
 - (void)setConnectionSelectionVersionWithLocalFrameworkVersion:(id)arg1 remoteFrameworkVersion:(id)arg2;

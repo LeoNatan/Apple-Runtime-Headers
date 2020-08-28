@@ -73,6 +73,8 @@
 - (BOOL)isTagPurchased:(id)arg1;
 - (BOOL)isTagIDPurchased:(id)arg1;
 - (id)allAppStorePurchasedTagIDs;
+- (void)_enumerateValidPurchasesUsingBlock:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) NSSet *allPurchaseIDs;
 - (id)_allPurchasedTagIDs;
 @property(readonly, nonatomic) NSSet *allPurchasedTagIDs;
 @property(readonly, nonatomic) NSSet *allTagIDs;

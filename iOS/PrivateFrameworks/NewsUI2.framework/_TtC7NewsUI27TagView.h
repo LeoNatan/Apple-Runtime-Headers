@@ -6,18 +6,23 @@
 
 #import <UIKit/UIView.h>
 
-__attribute__((visibility("hidden")))
+@class NSString;
+
 @interface _TtC7NewsUI27TagView : UIView
 {
     // Error parsing type: , name: titleLabel
     // Error parsing type: , name: imageView
     // Error parsing type: , name: subtitleLabel
-    // Error parsing type: , name: notificationSwitch
-    // Error parsing type: , name: likeButton
-    // Error parsing type: , name: dislikeButton
+    // Error parsing type: , name: badgeView
+    // Error parsing type: , name: _notificationSwitch
+    // Error parsing type: , name: _likeButton
+    // Error parsing type: , name: _dislikeButton
+    // Error parsing type: , name: isEditing
+    // Error parsing type: , name: keyCommandBlocks
 }
 
 - (void).cxx_destruct;
+@property(nonatomic, readonly) NSString *title;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

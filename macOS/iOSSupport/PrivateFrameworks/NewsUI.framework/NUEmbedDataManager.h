@@ -7,12 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <NewsUI/NUEmbedDataManager-Protocol.h>
-#import <NewsUI/SXEmbedDataProvider-Protocol.h>
 
 @class NSString, SXJSONDictionary;
 @protocol NUEmbedConfigurationLoader;
 
-@interface NUEmbedDataManager : NSObject <NUEmbedDataManager, SXEmbedDataProvider>
+@interface NUEmbedDataManager : NSObject <NUEmbedDataManager>
 {
     id <NUEmbedConfigurationLoader> _embedConfigurationLoader;
     SXJSONDictionary *_embedConfiguration;

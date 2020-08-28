@@ -6,12 +6,9 @@
 
 #import <NewsAnalyticsUpload/NSObject-Protocol.h>
 
-@class NSArray, NSSExternalAnalyticsRequest;
+@class NSArray;
 
 @protocol NDAnalyticsService <NSObject>
-
-@optional
-- (void)performExternalAnalyticsRequest:(NSSExternalAnalyticsRequest *)arg1 withCompletion:(void (^)(NSError *))arg2;
 - (void)submitEnvelopes:(NSArray *)arg1 withCompletion:(void (^)(NSError *))arg2;
 @end
 

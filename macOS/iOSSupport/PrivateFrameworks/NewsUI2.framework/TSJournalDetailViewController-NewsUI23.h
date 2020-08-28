@@ -9,6 +9,8 @@
 #import <NewsUI2/UITableViewDelegate-Protocol.h>
 
 @interface TSJournalDetailViewController (NewsUI23) <UITableViewDelegate>
+- (id)tableView:(id)arg1 trailingSwipeActionsConfigurationForRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 leadingSwipeActionsConfigurationForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 @end
 

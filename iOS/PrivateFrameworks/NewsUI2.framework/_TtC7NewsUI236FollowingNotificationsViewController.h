@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: styler
     // Error parsing type: , name: eventHandler
     // Error parsing type: , name: blueprintViewController
+    // Error parsing type: , name: blueprintReadableContentGuide
     // Error parsing type: , name: headerView
     // Error parsing type: , name: disabledViewProvider
     // Error parsing type: , name: followingNotificationsPrewarm

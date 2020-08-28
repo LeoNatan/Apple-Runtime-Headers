@@ -6,10 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSOperationQueue, VSRemoteNotifier;
+#import <VideoSubscriberAccount/VSRemoteNotifierDelegate-Protocol.h>
 
-@interface VSDevice : NSObject
+@class NSOperationQueue, NSString, VSRemoteNotifier;
+@protocol VSDeviceDelegate;
+
+@interface VSDevice : NSObject <VSRemoteNotifierDelegate>
 {
+    id <VSDeviceDelegate> _delegate;
     CDUnknownFunctionPointerType _copyAnswer;
     NSOperationQueue *_privateQueue;
     VSRemoteNotifier *_setTopBoxStateRemoteNotifier;
@@ -24,6 +28,9 @@
 @property(retain, nonatomic) VSRemoteNotifier *setTopBoxStateRemoteNotifier; // @synthesize setTopBoxStateRemoteNotifier=_setTopBoxStateRemoteNotifier;
 @property(retain, nonatomic) NSOperationQueue *privateQueue; // @synthesize privateQueue=_privateQueue;
 @property(nonatomic) CDUnknownFunctionPointerType copyAnswer; // @synthesize copyAnswer=_copyAnswer;
+@property(nonatomic) __weak id <VSDeviceDelegate> delegate; // @synthesize delegate=_delegate;
+- (void)cloudConfigurationDidChange;
+- (void)refreshSetTopBoxProfile:(CDUnknownBlockType)arg1;
 - (BOOL)setIgnoreSetTopBoxProfile:(BOOL)arg1;
 @property(readonly, nonatomic) unsigned long long deviceType;
 @property(readonly, nonatomic, getter=isRunningACustomerBuild) BOOL runningACustomerBuild;
@@ -32,7 +39,14 @@
 - (void)fetchSetTopBoxProfileWithCompletion:(CDUnknownBlockType)arg1;
 - (id)accountDeletionConfirmationMessageForIdentityProviderDisplayName:(id)arg1;
 - (id)developerIdentityProviderDeletionConfirmationMessage;
+- (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -21,6 +21,7 @@
     double _databaseAccessibilityTimeout;
 }
 
++ (_Bool)shouldOverrideCycleTrackingSymptomsForBackwardsCompatibilty;
 - (void).cxx_destruct;
 @property(nonatomic) double databaseAccessibilityTimeout; // @synthesize databaseAccessibilityTimeout=_databaseAccessibilityTimeout;
 @property(retain, nonatomic) HDAssertion *databaseAccessibilityAssertion; // @synthesize databaseAccessibilityAssertion=_databaseAccessibilityAssertion;

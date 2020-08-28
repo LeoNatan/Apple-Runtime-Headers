@@ -26,6 +26,7 @@
 + (id)unfollowChannelActivity;
 + (id)followChannelActivity;
 + (id)stopSuggesting;
++ (id)headphones;
 - (void).cxx_destruct;
 - (id)init;
 

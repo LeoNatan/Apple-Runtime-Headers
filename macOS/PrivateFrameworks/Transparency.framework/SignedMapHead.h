@@ -8,15 +8,18 @@
 
 #import <Transparency/TransparencyVerifiable-Protocol.h>
 
-@class MapHead, NSData, Signature, TransparencySignatureVerifier;
+@class MapHead, NSData, Signature, TransparencyManagedDataStore, TransparencySignatureVerifier;
 
 @interface SignedMapHead : GPBMessage <TransparencyVerifiable>
 {
 }
 
 + (id)descriptor;
-- (BOOL)verifyWithError:(id *)arg1;
+- (unsigned long long)verifyWithError:(id *)arg1;
 @property(readonly) MapHead *parsedMapHead;
+- (id)createManagedObjectWithError:(id *)arg1;
+- (id)copyManagedObject:(id *)arg1;
+@property(retain) TransparencyManagedDataStore *dataStore;
 @property(retain) TransparencySignatureVerifier *verifier;
 
 // Remaining properties

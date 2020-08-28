@@ -12,6 +12,7 @@
 
 + (void)openFamilySharingSetupSettings;
 + (void)openNewsSystemNotificationSettings;
++ (void)openAppleAccountLoginSettings;
 
 @end
 

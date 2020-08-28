@@ -8,19 +8,23 @@
 
 #import <Sharing/NSSecureCoding-Protocol.h>
 
-@class NSString;
+@class NSArray, NSString;
 
 @interface SFClientSubCredentialParams : NSObject <NSSecureCoding>
 {
     NSString *_adamID;
+    NSArray *_adamIDs;
     NSString *_title;
     NSString *_subtitle;
+    NSString *_issuerID;
 }
 
 + (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *issuerID; // @synthesize issuerID=_issuerID;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+@property(copy, nonatomic) NSArray *adamIDs; // @synthesize adamIDs=_adamIDs;
 @property(copy, nonatomic) NSString *adamID; // @synthesize adamID=_adamID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

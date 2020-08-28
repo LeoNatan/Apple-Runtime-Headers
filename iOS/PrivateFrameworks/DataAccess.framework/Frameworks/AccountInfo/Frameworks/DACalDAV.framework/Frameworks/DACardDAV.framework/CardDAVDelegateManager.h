@@ -25,8 +25,7 @@
 - (id)saveAccount:(id)arg1;
 - (id)addChildWithDelegateInfo:(id)arg1;
 - (id)existingChildAccountsWithProperty:(id)arg1;
-- (id)collectExpiredDelegateInfo;
-- (id)collectDelegateInfo;
+- (id)collectDelegateInfoReturningError:(id *)arg1;
 - (id)account;
 - (void)updateDelegates;
 - (id)initWithDelegateInfoProvider:(id)arg1 accountID:(id)arg2;

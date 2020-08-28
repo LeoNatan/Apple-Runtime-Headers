@@ -77,7 +77,7 @@
 - (void)postInvalidStatusChangedNotification;
 - (void)postLoadCompleteNotification;
 - (void)postSelectedTextChangeNotification;
-- (void)_repostWebSelectionChange;
+- (void)_enqueueReorderingNotification:(id)arg1;
 - (void)_repostWebNotificaton:(id)arg1;
 - (void)postLiveRegionCreatedNotification;
 - (void)postLiveRegionChangeNotification;

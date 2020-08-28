@@ -9,7 +9,6 @@
 @interface _TtC8NewsFeed35FeaturedIssueSupplementViewRenderer : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: publisherLogoImageCache
-    // Error parsing type: , name: traitCollection
     // Error parsing type: , name: rendererTool
 }
 

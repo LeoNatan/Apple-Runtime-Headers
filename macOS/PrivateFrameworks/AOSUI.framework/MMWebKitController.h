@@ -10,7 +10,7 @@
 #import <AOSUI/WebResourceLoadDelegate-Protocol.h>
 #import <AOSUI/WebUIDelegate-Protocol.h>
 
-@class AKAppleIDAuthenticationContext, AKAppleIDAuthenticationController, AKAppleIDServerResourceLoadDelegate, AKAppleIDSession, CDPStateUIController, NSString, NSURLRequest, WebPreferences, WebView;
+@class AKAppleIDAuthenticationContext, AKAppleIDAuthenticationController, AKAppleIDServerResourceLoadDelegate, AKAppleIDSession, CDPStateUIController, NSMapTable, NSString, NSURLRequest, WebPreferences, WebView;
 @protocol MMWebKitControllerDelegate;
 
 @interface MMWebKitController : NSObject <WebUIDelegate, WebFrameLoadDelegate, WebResourceLoadDelegate>
@@ -39,10 +39,13 @@
         unsigned int delegateWindow:1;
         unsigned int padding:1;
     } _delegateFlags;
+    struct os_unfair_lock_s _signpostEndBlocksLock;
     id <MMWebKitControllerDelegate> _delegate;
+    NSMapTable *_signpostEndBlocks;
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMapTable *signpostEndBlocks; // @synthesize signpostEndBlocks=_signpostEndBlocks;
 @property(copy, nonatomic) NSURLRequest *loadingRequest; // @synthesize loadingRequest=_loadingRequest;
 @property(nonatomic) unsigned long long gsType; // @synthesize gsType=_gsType;
 @property(retain, nonatomic) NSString *altDSID; // @synthesize altDSID=_altDSID;
@@ -50,6 +53,12 @@
 @property(retain, nonatomic) WebView *webView; // @synthesize webView=_webView;
 @property(retain, nonatomic) WebPreferences *webPreferences; // @synthesize webPreferences=_webPreferences;
 @property(nonatomic) id <MMWebKitControllerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void)_setSignpostEndBlock:(CDUnknownBlockType)arg1 forKey:(id)arg2;
+- (CDUnknownBlockType)_signpostEndBlockForKey:(id)arg1;
+- (void)_didFinishLoadingResource:(id)arg1 withError:(id)arg2;
+- (void)_didFinishLoadingRequest:(id)arg1 forFrame:(id)arg2 withError:(id)arg3;
+- (void)webView:(id)arg1 resource:(id)arg2 didFailLoadingWithError:(id)arg3 fromDataSource:(id)arg4;
+- (void)webView:(id)arg1 resource:(id)arg2 didFinishLoadingFromDataSource:(id)arg3;
 - (id)webView:(id)arg1 resource:(id)arg2 willSendRequest:(id)arg3 redirectResponse:(id)arg4 fromDataSource:(id)arg5;
 - (void)webView:(id)arg1 resource:(id)arg2 didReceiveResponse:(id)arg3 fromDataSource:(id)arg4;
 - (void)_updateAuthControllerWithResponse:(id)arg1;

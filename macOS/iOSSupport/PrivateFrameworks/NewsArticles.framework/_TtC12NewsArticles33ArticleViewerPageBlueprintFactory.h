@@ -8,7 +8,6 @@
 
 @interface _TtC12NewsArticles33ArticleViewerPageBlueprintFactory : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: resolver
     // Error parsing type: , name: tracker
     // Error parsing type: , name: articleAccessMap
 }

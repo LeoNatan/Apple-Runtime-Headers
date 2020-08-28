@@ -23,8 +23,7 @@
     unsigned int _dynamicThumbnailSizePresetMinimumHeightInPixels;
     unsigned int _dynamicThumbnailSizePresetMinimumWidthInPixels;
     NSString *_keyboardInputMode;
-    NTPBSectionSlotCostInfo *_nonVideoSectionSlotCostInfo;
-    NTPBSectionSlotCostInfo *_videoSectionSlotCostInfo;
+    NTPBSectionSlotCostInfo *_sectionSlotCostInfo;
     BOOL _allowLeadingCell;
     BOOL _allowOnlyWatchEligibleSections;
     BOOL _allowSectionTitles;
@@ -67,8 +66,7 @@
 @property(nonatomic) BOOL respectsWidgetVisibleSectionsPerQueueLimit; // @synthesize respectsWidgetVisibleSectionsPerQueueLimit=_respectsWidgetVisibleSectionsPerQueueLimit;
 @property(nonatomic) BOOL allowOnlyWatchEligibleSections; // @synthesize allowOnlyWatchEligibleSections=_allowOnlyWatchEligibleSections;
 @property(nonatomic) BOOL fetchWidgetConfig; // @synthesize fetchWidgetConfig=_fetchWidgetConfig;
-@property(retain, nonatomic) NTPBSectionSlotCostInfo *nonVideoSectionSlotCostInfo; // @synthesize nonVideoSectionSlotCostInfo=_nonVideoSectionSlotCostInfo;
-@property(retain, nonatomic) NTPBSectionSlotCostInfo *videoSectionSlotCostInfo; // @synthesize videoSectionSlotCostInfo=_videoSectionSlotCostInfo;
+@property(retain, nonatomic) NTPBSectionSlotCostInfo *sectionSlotCostInfo; // @synthesize sectionSlotCostInfo=_sectionSlotCostInfo;
 @property(nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(nonatomic) long long sourceNameImageSizePreset; // @synthesize sourceNameImageSizePreset=_sourceNameImageSizePreset;
 @property(nonatomic) long long nonLeadingCellThumbnailSizePreset; // @synthesize nonLeadingCellThumbnailSizePreset=_nonLeadingCellThumbnailSizePreset;
@@ -96,8 +94,7 @@
 @property(nonatomic) BOOL hasRespectsWidgetVisibleSectionsPerQueueLimit;
 @property(nonatomic) BOOL hasAllowOnlyWatchEligibleSections;
 @property(nonatomic) BOOL hasFetchWidgetConfig;
-@property(readonly, nonatomic) BOOL hasNonVideoSectionSlotCostInfo;
-@property(readonly, nonatomic) BOOL hasVideoSectionSlotCostInfo;
+@property(readonly, nonatomic) BOOL hasSectionSlotCostInfo;
 @property(nonatomic) BOOL hasQualityOfService;
 @property(nonatomic) BOOL hasSourceNameImageSizePreset;
 @property(nonatomic) BOOL hasNonLeadingCellThumbnailSizePreset;

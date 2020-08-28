@@ -9,13 +9,14 @@
 #import <Silex/SXDebugLayoutOptionsObserving-Protocol.h>
 #import <Silex/SXFormatInteractor-Protocol.h>
 #import <Silex/SXLayoutCoordinatorDelegate-Protocol.h>
+#import <Silex/SXNewsletterSubscriptionStatusObserving-Protocol.h>
 #import <Silex/SXPresentationAttributesObserver-Protocol.h>
 #import <Silex/SXSubscriptionStatusObserving-Protocol.h>
 
 @class NSString;
-@protocol SXDebugLayoutOptionsProviding, SXFormatInteractorDelegate, SXLayoutCoordinator, SXLayoutOptionsFactory, SXPresentationAttributesProvider, SXPresentationEnvironment, SXSubscriptionStatusProviding;
+@protocol SXDebugLayoutOptionsProviding, SXFormatInteractorDelegate, SXLayoutCoordinator, SXLayoutOptionsFactory, SXNewsletterSubscriptionStatusProviding, SXPresentationAttributesProvider, SXPresentationEnvironment, SXSubscriptionStatusProviding;
 
-@interface SXFormatInteractor : NSObject <SXLayoutCoordinatorDelegate, SXPresentationAttributesObserver, SXSubscriptionStatusObserving, SXDebugLayoutOptionsObserving, SXFormatInteractor>
+@interface SXFormatInteractor : NSObject <SXLayoutCoordinatorDelegate, SXPresentationAttributesObserver, SXSubscriptionStatusObserving, SXDebugLayoutOptionsObserving, SXNewsletterSubscriptionStatusObserving, SXFormatInteractor>
 {
     BOOL _requestedContentHiding;
     id <SXFormatInteractorDelegate> _delegate;
@@ -25,10 +26,12 @@
     id <SXSubscriptionStatusProviding> _subscriptionStatusProvider;
     id <SXPresentationEnvironment> _presentationEnvironment;
     id <SXDebugLayoutOptionsProviding> _debugLayoutOptionsProvider;
+    id <SXNewsletterSubscriptionStatusProviding> _newsletterSubscriptionStatusProvider;
 }
 
 - (void).cxx_destruct;
 @property(nonatomic) BOOL requestedContentHiding; // @synthesize requestedContentHiding=_requestedContentHiding;
+@property(readonly, nonatomic) id <SXNewsletterSubscriptionStatusProviding> newsletterSubscriptionStatusProvider; // @synthesize newsletterSubscriptionStatusProvider=_newsletterSubscriptionStatusProvider;
 @property(readonly, nonatomic) id <SXDebugLayoutOptionsProviding> debugLayoutOptionsProvider; // @synthesize debugLayoutOptionsProvider=_debugLayoutOptionsProvider;
 @property(nonatomic) __weak id <SXPresentationEnvironment> presentationEnvironment; // @synthesize presentationEnvironment=_presentationEnvironment;
 @property(readonly, nonatomic) id <SXSubscriptionStatusProviding> subscriptionStatusProvider; // @synthesize subscriptionStatusProvider=_subscriptionStatusProvider;
@@ -36,6 +39,7 @@
 @property(readonly, nonatomic) id <SXLayoutOptionsFactory> layoutOptionsFactory; // @synthesize layoutOptionsFactory=_layoutOptionsFactory;
 @property(readonly, nonatomic) id <SXLayoutCoordinator> layoutCoordinator; // @synthesize layoutCoordinator=_layoutCoordinator;
 @property(nonatomic) __weak id <SXFormatInteractorDelegate> delegate; // @synthesize delegate=_delegate;
+- (void)newsletterSubscriptionStatusDidChangeFromStatus:(unsigned long long)arg1;
 - (void)debugLayoutOptionsDidChange:(id)arg1;
 - (void)channelSubscriptionStatusDidChangeFromStatus:(long long)arg1;
 - (void)bundleSubscriptionStatusDidChangeFromStatus:(long long)arg1;
@@ -45,7 +49,7 @@
 - (void)layoutCoordinator:(id)arg1 cancelledLayoutWithOptions:(id)arg2;
 - (void)layoutCoordinator:(id)arg1 willLayoutWithParameters:(id)arg2;
 - (void)updateWithPresentationEnvironment:(id)arg1;
-- (id)initWithLayoutCoordinator:(id)arg1 layoutOptionsFactory:(id)arg2 presentationAttributesProvider:(id)arg3 subscriptionStatusProvider:(id)arg4 debugLayoutOptionsProvider:(id)arg5;
+- (id)initWithLayoutCoordinator:(id)arg1 layoutOptionsFactory:(id)arg2 presentationAttributesProvider:(id)arg3 subscriptionStatusProvider:(id)arg4 debugLayoutOptionsProvider:(id)arg5 newsletterSubscriptionStatusProvider:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

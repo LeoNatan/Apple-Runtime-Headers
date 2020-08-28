@@ -2303,6 +2303,11 @@ struct shared_ptr<TThumbnailExtractorThread> {
     struct __shared_weak_count *_field2;
 };
 
+struct shared_ptr<const std::__1::unordered_set<TFENode, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<TFENode>>> {
+    unordered_set_931aff12 *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+};
+
 struct shared_ptr<std::__1::mutex> {
     struct mutex *__ptr_;
     struct __shared_weak_count *__cntrl_;
@@ -3724,6 +3729,11 @@ typedef struct shared_ptr<TThumbnailExtractorController> {
     struct TThumbnailExtractorController *__ptr_;
     struct __shared_weak_count *__cntrl_;
 } shared_ptr_0f967b3d;
+
+typedef struct shared_ptr<const std::__1::unordered_set<TFENode, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<TFENode>>> {
+    unordered_set_931aff12 *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+} shared_ptr_f8db59dd;
 
 typedef struct shared_ptr<std::__1::vector<TOpenContainerOptions, std::__1::allocator<TOpenContainerOptions>>> {
     vector_a7e7ffc1 *_field1;

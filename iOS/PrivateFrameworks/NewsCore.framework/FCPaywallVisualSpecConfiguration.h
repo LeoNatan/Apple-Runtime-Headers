@@ -8,12 +8,13 @@
 
 #import <NewsCore/NSCopying-Protocol.h>
 
-@class FCColor, FCMultiResolutionImage, NSURL;
+@class FCColor, FCMultiResolutionImage, FCMultiSizeVideo, NSURL;
 
 @interface FCPaywallVisualSpecConfiguration : NSObject <NSCopying>
 {
     FCMultiResolutionImage *_multiResolutionImage;
     FCMultiResolutionImage *_darkStyleMultiResolutionImage;
+    FCMultiSizeVideo *_multiSizeVideo;
     NSURL *_videoURL;
     long long _videoWidth;
     long long _videoHeight;
@@ -27,6 +28,8 @@
 }
 
 + (id)defaultPaywallVisualSpecConfiguration;
++ (id)defaultAudioFeedPaywallVisualSpecConfigurationLarge;
++ (id)defaultAudioFeedPaywallVisualSpecConfigurationSmall;
 + (id)defaultMagazineFeedPaywallVisualSpecConfigurationLarge;
 + (id)defaultMagazineFeedPaywallVisualSpecConfigurationMedium;
 + (id)defaultMagazineFeedPaywallVisualSpecConfigurationSmall;
@@ -41,12 +44,13 @@
 @property(nonatomic) long long videoHeight; // @synthesize videoHeight=_videoHeight;
 @property(nonatomic) long long videoWidth; // @synthesize videoWidth=_videoWidth;
 @property(retain, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
+@property(retain, nonatomic) FCMultiSizeVideo *multiSizeVideo; // @synthesize multiSizeVideo=_multiSizeVideo;
 @property(retain, nonatomic) FCMultiResolutionImage *darkStyleMultiResolutionImage; // @synthesize darkStyleMultiResolutionImage=_darkStyleMultiResolutionImage;
 @property(retain, nonatomic) FCMultiResolutionImage *multiResolutionImage; // @synthesize multiResolutionImage=_multiResolutionImage;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithMultiResolutionImage:(id)arg1 darkStyleMultiResolutionImage:(id)arg2 videoURL:(id)arg3 videoWidth:(long long)arg4 videoHeight:(long long)arg5 gradientPercentHeight:(double)arg6 textTopPadding:(long long)arg7 backgroundColor:(id)arg8 darkStyleBackgroundColor:(id)arg9 mastheadTextColor:(id)arg10 largeTextColor:(id)arg11 smallTextColor:(id)arg12;
+- (id)initWithMultiResolutionImage:(id)arg1 darkStyleMultiResolutionImage:(id)arg2 multiSizeVideo:(id)arg3 videoURL:(id)arg4 videoWidth:(long long)arg5 videoHeight:(long long)arg6 gradientPercentHeight:(double)arg7 textTopPadding:(long long)arg8 backgroundColor:(id)arg9 darkStyleBackgroundColor:(id)arg10 mastheadTextColor:(id)arg11 largeTextColor:(id)arg12 smallTextColor:(id)arg13;
 - (id)initWithConfigDictionary:(id)arg1;
 - (id)init;
 

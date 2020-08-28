@@ -315,6 +315,7 @@ struct Data {
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;
+    unsigned int :1;
     struct Vec2<double> _field6;
     struct Rect _field7;
 };

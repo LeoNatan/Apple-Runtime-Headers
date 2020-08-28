@@ -10,7 +10,7 @@
 {
     // Error parsing type: , name: delegate
     // Error parsing type: , name: dataManager
-    // Error parsing type: , name: coordinator
+    // Error parsing type: , name: tracker
     // Error parsing type: , name: configurationManager
     // Error parsing type: , name: purchaseSessionID
     // Error parsing type: , name: purchaseID

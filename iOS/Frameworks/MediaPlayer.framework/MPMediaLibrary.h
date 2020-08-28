@@ -79,11 +79,12 @@
     _Bool _determinedHasVideoPodcasts;
     unsigned char _originalCellNetworkFlags;
     unsigned char _originalWiFiNetworkFlags;
+    struct os_unfair_lock_s __MLCoreStorageLock;
     id __MLCoreStorage;
-    NSObject<OS_dispatch_queue> *_accessQueue;
     ICUserIdentity *_userIdentity;
     long long _libraryChangeObservers;
     _MPActiveUserChangeMonitor *_activeUserChangeMonitor;
+    struct os_unfair_lock_s *__MLCoreStorageLockPointer;
 }
 
 + (void)libraryPathDidChangeForDataProvider:(id)arg1;
@@ -122,7 +123,10 @@
 + (id)defaultMediaLibrary;
 + (void)initialize;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct os_unfair_lock_s *_MLCoreStorageLockPointer; // @synthesize _MLCoreStorageLockPointer=__MLCoreStorageLockPointer;
 @property(retain, nonatomic) _MPActiveUserChangeMonitor *activeUserChangeMonitor; // @synthesize activeUserChangeMonitor=_activeUserChangeMonitor;
+@property(readonly, nonatomic) struct os_unfair_lock_s _MLCoreStorageLock; // @synthesize _MLCoreStorageLock=__MLCoreStorageLock;
+@property(retain, nonatomic, setter=_setMLCoreStorage:) id _MLCoreStorage; // @synthesize _MLCoreStorage=__MLCoreStorage;
 - (_Bool)recordPlayEventForPlaylistPersistentID:(long long)arg1;
 - (_Bool)recordPlayEventForAlbumPersistentID:(long long)arg1;
 - (void)addNonLibraryOwnedPlaylistsWithGlobalIDs:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -143,8 +147,6 @@
 - (id)libraryDataProvider;
 - (id)_initWithLibraryDataProvider:(id)arg1;
 @property(readonly, nonatomic) long long libraryChangeObservers; // @synthesize libraryChangeObservers=_libraryChangeObservers;
-@property(retain, nonatomic, setter=_setMLCoreStorage:) id _MLCoreStorage; // @synthesize _MLCoreStorage=__MLCoreStorage;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 @property(readonly, copy, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 @property(readonly, nonatomic) ML3MusicLibrary *ml3Library;
 - (void)_tearDownNotifications;

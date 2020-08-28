@@ -10,7 +10,7 @@
 #import <NewsCore/FCIssueAccessCheckable-Protocol.h>
 #import <NewsCore/NSCopying-Protocol.h>
 
-@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList, FCAssetHandle, FCColor, FCInterestToken, NSArray, NSDate, NSString, NTPBIssueRecord;
+@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList, COMAPPLEFELDSPARPROTOCOLVersionedPersonalizationVector, FCAssetHandle, FCColor, FCInterestToken, NSArray, NSDate, NSString, NTPBIssueRecord;
 @protocol FCChannelProviding;
 
 @interface FCIssue : NSObject <FCFeedPersonalizingItem, FCIssueAccessCheckable, NSCopying>
@@ -71,6 +71,7 @@
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly, copy, nonatomic) NSString *sourceChannelID;
 @property(readonly, nonatomic) _Bool isLocalDraft;
 @property(readonly, nonatomic) _Bool isBlockedExplicitContent;
 @property(readonly, nonatomic, getter=isBundlePaid) _Bool bundlePaid;
@@ -78,6 +79,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
+- (id)initWithIssue:(id)arg1 overrides:(id)arg2;
 - (id)initWithIssueRecord:(id)arg1 assetManager:(id)arg2 interestToken:(id)arg3 sourceChannel:(id)arg4;
 - (id)initWithIdentifier:(id)arg1 type:(long long)arg2 title:(id)arg3 publicationDate:(id)arg4 coverDate:(id)arg5 metadataJSONAssetHandle:(id)arg6 coverImageAssetHandle:(id)arg7 coverImageAspectRatio:(double)arg8 coverImagePrimaryColor:(id)arg9 layeredCoverJSON:(id)arg10 layeredCoverAspectRatio:(double)arg11 layeredCoverPrimaryColor:(id)arg12 isCurrent:(_Bool)arg13 isDraft:(_Bool)arg14 isPaid:(_Bool)arg15 minimumNewsVersion:(long long)arg16 allArticleIDs:(id)arg17 coverArticleID:(id)arg18 allowedStorefrontIDs:(id)arg19 blockedStorefrontIDs:(id)arg20 topicTagIDs:(id)arg21 sourceChannel:(id)arg22 notificationDescription:(id)arg23 issueDescription:(id)arg24;
 - (id)initWithData:(id)arg1 sourceChannel:(id)arg2 assetManager:(id)arg3;
@@ -100,7 +102,10 @@
 // Remaining properties
 @property(readonly, nonatomic) long long bodyTextLength;
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, nonatomic) _Bool hasAudioTrack;
 @property(readonly, nonatomic) _Bool isFeatured;
+@property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLVersionedPersonalizationVector *personalizationVector;
+@property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLVersionedPersonalizationVector *personalizationVectorAlt;
 @property(readonly) Class superclass;
 
 @end

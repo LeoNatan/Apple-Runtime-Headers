@@ -9,6 +9,7 @@
 #import <HealthUI/HKEmergencyCardContactUpdateDelegate-Protocol.h>
 #import <HealthUI/HKEmergencyCardDeletionDelegate-Protocol.h>
 #import <HealthUI/HKEmergencyCardRowHeightChangeDelegate-Protocol.h>
+#import <HealthUI/HKEmergencyCardSelectionTableItemDelegate-Protocol.h>
 #import <HealthUI/HKMedicalIDViewControllerDelegate-Protocol.h>
 #import <HealthUI/UITableViewDataSource-Protocol.h>
 #import <HealthUI/UITableViewDelegate-Protocol.h>
@@ -16,17 +17,17 @@
 @class HKEmergencyCardContactsTableItem, HKEmergencyCardGroupTableItem, HKEmergencyCardNameAndPictureTableItem, HKHealthStore, HKNavigationController, NSArray, NSString, _HKMedicalIDData;
 @protocol HKMedicalIDViewControllerDelegate;
 
-@interface HKMedicalIDViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, HKMedicalIDViewControllerDelegate, HKEmergencyCardDeletionDelegate, HKEmergencyCardRowHeightChangeDelegate, HKEmergencyCardContactUpdateDelegate>
+@interface HKMedicalIDViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, HKMedicalIDViewControllerDelegate, HKEmergencyCardDeletionDelegate, HKEmergencyCardRowHeightChangeDelegate, HKEmergencyCardContactUpdateDelegate, HKEmergencyCardSelectionTableItemDelegate>
 {
     NSArray *_presentableTableItems;
     NSArray *_footers;
+    NSArray *_headers;
     HKEmergencyCardGroupTableItem *_groupItem;
     HKEmergencyCardNameAndPictureTableItem *_nameAndPictureItem;
     HKEmergencyCardContactsTableItem *_contactsItem;
     long long _tableViewStyle;
     _Bool _inBuddy;
     NSArray *_localeItems;
-    NSArray *_accumulatedNumberOfRowsForItems;
     int _medicalIDChangedToken;
     HKNavigationController *_medicalIDEditor;
     NSArray *_organDonationItems;
@@ -36,6 +37,9 @@
     _Bool _showsDeleteButton;
     _Bool _modernAppearance;
     _Bool _shouldShowHints;
+    _Bool _showsShowWhenLockedState;
+    _Bool _showsEmergencyAccessState;
+    _Bool _showsEditMedicalIDRowInViewMode;
     _Bool _inEditMode;
     _HKMedicalIDData *_medicalID;
     HKHealthStore *_healthStore;
@@ -49,6 +53,9 @@
 @property(retain, nonatomic) NSArray *tableItems; // @synthesize tableItems=_tableItems;
 @property(nonatomic) __weak id <HKMedicalIDViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
+@property(nonatomic) _Bool showsEditMedicalIDRowInViewMode; // @synthesize showsEditMedicalIDRowInViewMode=_showsEditMedicalIDRowInViewMode;
+@property(nonatomic) _Bool showsEmergencyAccessState; // @synthesize showsEmergencyAccessState=_showsEmergencyAccessState;
+@property(nonatomic) _Bool showsShowWhenLockedState; // @synthesize showsShowWhenLockedState=_showsShowWhenLockedState;
 @property(nonatomic) _Bool shouldShowHints; // @synthesize shouldShowHints=_shouldShowHints;
 @property(nonatomic) _Bool modernAppearance; // @synthesize modernAppearance=_modernAppearance;
 @property(nonatomic) _Bool showsDeleteButton; // @synthesize showsDeleteButton=_showsDeleteButton;
@@ -61,6 +68,7 @@
 - (void)tableItemDidChangeSelection:(id)arg1 keepRectVisible:(struct CGRect)arg2 inView:(id)arg3;
 - (void)tableItemDidBeginEditing:(id)arg1 keepRectVisible:(struct CGRect)arg2 inView:(id)arg3;
 - (void)tableItem:(id)arg1 heightDidChangeForRowIndex:(long long)arg2 keepRectVisible:(struct CGRect)arg3 inView:(id)arg4;
+- (void)selectionTableItemDidTap:(id)arg1;
 - (void)medicalIDViewControllerDidDelete:(id)arg1;
 - (void)deletionTableItemDidTapDelete:(id)arg1;
 - (void)medicalIDViewControllerDidSave:(id)arg1;
@@ -76,7 +84,7 @@
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
@@ -86,6 +94,7 @@
 - (_Bool)_editable;
 - (_Bool)_shouldShowOrganDonation;
 - (void)_dismissMedicalIDEditor;
+- (id)_newViewForHeaderInSection:(long long)arg1;
 - (id)_newViewForFooterInSection:(long long)arg1;
 - (void)_buildPresentableTableItems;
 - (long long)_preferredOrganDonationOrganization;
@@ -111,6 +120,7 @@
 - (void)timeZoneDidChange:(id)arg1;
 - (void)localeDidChange:(id)arg1;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateNavigationBar;
 - (void)dealloc;
 - (void)viewDidLoad;

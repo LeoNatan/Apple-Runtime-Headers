@@ -94,6 +94,7 @@
     float _subtitleFrameWidth;
     float _subtitleFrameX;
     float _subtitleFrameY;
+    NSData *_titleAttributedString;
     NSData *_titleColor;
     float _titleFontLineHeight;
     NSString *_titleFontName;
@@ -188,6 +189,7 @@
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *titleAttributedString; // @synthesize titleAttributedString=_titleAttributedString;
 @property(nonatomic) float accessoryRightPadding; // @synthesize accessoryRightPadding=_accessoryRightPadding;
 @property(nonatomic) float accessoryLeftPadding; // @synthesize accessoryLeftPadding=_accessoryLeftPadding;
 @property(nonatomic) float accessoryTopPadding; // @synthesize accessoryTopPadding=_accessoryTopPadding;
@@ -289,6 +291,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasTitleAttributedString;
 @property(nonatomic) BOOL hasAccessoryRightPadding;
 @property(nonatomic) BOOL hasAccessoryLeftPadding;
 @property(nonatomic) BOOL hasAccessoryTopPadding;

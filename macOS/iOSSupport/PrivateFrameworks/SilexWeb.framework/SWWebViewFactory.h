@@ -8,22 +8,18 @@
 
 #import <SilexWeb/SWWebViewFactory-Protocol.h>
 
-@class NSPointerArray, NSString, WKProcessPool, WKWebsiteDataStore;
+@class NSPointerArray, NSString;
 
 @interface SWWebViewFactory : NSObject <SWWebViewFactory>
 {
     NSPointerArray *_webViews;
-    WKProcessPool *_processPool;
-    WKWebsiteDataStore *_dataStore;
 }
 
 - (void).cxx_destruct;
-@property(readonly, nonatomic) WKWebsiteDataStore *dataStore; // @synthesize dataStore=_dataStore;
-@property(readonly, nonatomic) WKProcessPool *processPool; // @synthesize processPool=_processPool;
-@property(retain, nonatomic) NSPointerArray *webViews; // @synthesize webViews=_webViews;
+@property(readonly, nonatomic) NSPointerArray *webViews; // @synthesize webViews=_webViews;
 - (void)assignRelatedWebViewToConfiguration:(id)arg1;
-- (id)createWebViewWithUserContentController:(id)arg1;
-- (id)initWithProcessPool:(id)arg1 websiteDataStore:(id)arg2;
+- (id)createWebViewWithWebViewConfiguration:(id)arg1 scrollSettings:(id)arg2;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

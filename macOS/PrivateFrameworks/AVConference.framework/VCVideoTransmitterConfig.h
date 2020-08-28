@@ -36,8 +36,10 @@ __attribute__((visibility("hidden")))
     BOOL _useRateControl;
     unsigned int _pixelFormat;
     NSMutableDictionary *_customFeatureListStrings;
+    unsigned int _qualityIndex;
 }
 
+@property(nonatomic) unsigned int qualityIndex; // @synthesize qualityIndex=_qualityIndex;
 @property(readonly, nonatomic) NSDictionary *customFeatureListStrings; // @synthesize customFeatureListStrings=_customFeatureListStrings;
 @property(nonatomic) unsigned int pixelFormat; // @synthesize pixelFormat=_pixelFormat;
 @property(nonatomic) BOOL useRateControl; // @synthesize useRateControl=_useRateControl;

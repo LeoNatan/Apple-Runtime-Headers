@@ -22,15 +22,13 @@
 @property(retain, nonatomic) CNPromise *familyCirclePromise; // @synthesize familyCirclePromise=_familyCirclePromise;
 @property(retain, nonatomic) ACAccountType *accountsType; // @synthesize accountsType=_accountsType;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
-- (void)retryFamilyCircleFetch;
-- (_Bool)isGuardianAccount:(id)arg1;
-- (id)adultsInFamily;
-- (id)nonParentsInFamily;
+- (void)resetFamilyCirclePromise;
+- (_Bool)fetchGuardianStatus:(_Bool *)arg1 account:(id)arg2 error:(id *)arg3;
+- (id)nonParentsInFamilyReturningError:(id *)arg1;
 - (id)appleIDsOfExistingDelegates:(id)arg1;
 - (id)familyMembersPromise;
 - (id)cardDAVAccounts;
-- (id)collectExpiredDelgatesForAccount:(id)arg1;
-- (id)collectDelegatesForAccount:(id)arg1;
+- (id)collectDelegatesForAccount:(id)arg1 error:(id *)arg2;
 - (id)init;
 
 // Remaining properties

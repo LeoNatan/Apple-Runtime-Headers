@@ -6,7 +6,7 @@
 
 #import <AssistantUI/NSObject-Protocol.h>
 
-@class AFMetrics, AFUserUtteranceSelectionResults, AceObject, NSDictionary, NSString, SABaseClientBoundCommand, SASRequestOptions;
+@class AFMetrics, AFUserUtteranceSelectionResults, AceObject, NSDictionary, NSString, NSUUID, SABaseClientBoundCommand, SASRequestOptions;
 @protocol SAAceCommand;
 
 @protocol AFUISiriSession <NSObject>
@@ -22,7 +22,7 @@
 - (void)siriUIDidPresentDynamicSnippetWithInfo:(NSDictionary *)arg1;
 - (void)performAceCommand:(AceObject<SAAceCommand> *)arg1;
 - (void)performAceCommand:(AceObject<SAAceCommand> *)arg1 conflictHandler:(void (^)(void))arg2;
-- (void)startCorrectedRequestWithText:(NSString *)arg1 correctionIdentifier:(id)arg2 userSelectionResults:(AFUserUtteranceSelectionResults *)arg3;
+- (void)startCorrectedRequestWithText:(NSString *)arg1 correctionIdentifier:(id)arg2 userSelectionResults:(AFUserUtteranceSelectionResults *)arg3 turnIdentifier:(NSUUID *)arg4;
 - (void)cancelSpeechRequest;
 - (void)stopRecordingSpeech;
 - (void)telephonyRequestCompleted;

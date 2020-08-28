@@ -25,9 +25,9 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)initWithUserActivityType:(id)arg1 creativeID:(id)arg2 campaignID:(id)arg3 campaignType:(id)arg4 referringApplication:(id)arg5 referringURL:(id)arg6 widgetModeGroupID:(id)arg7 widgetEngagement:(id)arg8 appOpenedByUserActivity:(_Bool)arg9 appSessionStartMethod:(long long)arg10 appSessionStartNotificationType:(long long)arg11;
-@property(nonatomic, readonly) long long appSessionStartNotificationType; // @synthesize appSessionStartNotificationType;
-@property(nonatomic, readonly) long long appSessionStartMethod; // @synthesize appSessionStartMethod;
+- (id)initWithUserActivityType:(id)arg1 creativeID:(id)arg2 campaignID:(id)arg3 campaignType:(id)arg4 referringApplication:(id)arg5 referringURL:(id)arg6 widgetModeGroupID:(id)arg7 widgetEngagement:(id)arg8 appOpenedByUserActivity:(_Bool)arg9 appSessionStartMethod:(int)arg10 appSessionStartNotificationType:(int)arg11;
+@property(nonatomic, readonly) int appSessionStartNotificationType; // @synthesize appSessionStartNotificationType;
+@property(nonatomic, readonly) int appSessionStartMethod; // @synthesize appSessionStartMethod;
 @property(nonatomic, readonly) _Bool appOpenedByUserActivity; // @synthesize appOpenedByUserActivity;
 @property(nonatomic, readonly) NTPBWidgetEngagement *widgetEngagement; // @synthesize widgetEngagement;
 @property(nonatomic, readonly) NSString *widgetModeGroupID;

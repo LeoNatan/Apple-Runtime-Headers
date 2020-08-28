@@ -9,7 +9,7 @@
 @interface _TtC7NewsUI233FollowingDislikedViewCellProvider : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: delegate
-    // Error parsing type: , name: followingRowViewRenderer
+    // Error parsing type: , name: tagViewRenderer
 }
 
 @end

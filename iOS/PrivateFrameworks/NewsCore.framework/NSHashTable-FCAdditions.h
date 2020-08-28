@@ -7,6 +7,6 @@
 #import <Foundation/NSHashTable.h>
 
 @interface NSHashTable (FCAdditions)
-- (void)fc_addObjectsFromArray:(id)arg1;
+- (void)fc_safelyAddObjectsFromArray:(id)arg1;
 @end
 

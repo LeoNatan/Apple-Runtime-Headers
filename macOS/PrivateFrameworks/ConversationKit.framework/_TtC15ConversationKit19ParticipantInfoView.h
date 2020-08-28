@@ -18,6 +18,7 @@
     // Error parsing type: , name: isExpanded
     // Error parsing type: , name: customCornerRadius
     // Error parsing type: , name: isMomentsAvailable
+    // Error parsing type: , name: recordingLocalVideo
     // Error parsing type: , name: delegate
 }
 

@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSArray *availableIntervals; // @synthesize availableIntervals=_availableIntervals;
 - (void)_clearVisitedLinksForAllTabs;
 - (void)_clearBackForwardListForAllTabs;
+- (void)_clearNonContaineredLibraryCachesAfter:(id)arg1;
 - (void)_clearDataAddedAfterDate:(id)arg1;
 - (void)clearAllData;
 - (void)_deleteUnusedSafariDesktopPictureFiles;

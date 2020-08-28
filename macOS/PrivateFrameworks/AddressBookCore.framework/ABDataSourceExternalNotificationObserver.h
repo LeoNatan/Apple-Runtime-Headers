@@ -15,10 +15,16 @@
     NSDistributedNotificationCenter *_distributedNotificationCenter;
     NSNotificationCenter *_localNotificationCenter;
     id <CNScheduler> _preprocessingScheduler;
+    int _sessionChangedToken;
+    int _session;
+    int _user;
 }
 
 + (BOOL)isConsideredAquaSession:(int)arg1;
 + (id)log;
+@property(nonatomic) int user; // @synthesize user=_user;
+@property(nonatomic) int session; // @synthesize session=_session;
+@property(readonly, nonatomic) int sessionChangedToken; // @synthesize sessionChangedToken=_sessionChangedToken;
 @property(readonly, nonatomic) id <CNScheduler> preprocessingScheduler; // @synthesize preprocessingScheduler=_preprocessingScheduler;
 @property(readonly, nonatomic) NSNotificationCenter *localNotificationCenter; // @synthesize localNotificationCenter=_localNotificationCenter;
 @property(readonly, nonatomic) NSDistributedNotificationCenter *distributedNotificationCenter; // @synthesize distributedNotificationCenter=_distributedNotificationCenter;

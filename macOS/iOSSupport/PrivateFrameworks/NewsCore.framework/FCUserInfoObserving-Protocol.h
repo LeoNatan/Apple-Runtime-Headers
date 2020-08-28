@@ -11,6 +11,7 @@
 @protocol FCUserInfoObserving <NSObject>
 
 @optional
+- (void)userInfoDidChangeEndOfAudioTrackNotificationsEnabled:(FCUserInfo *)arg1 fromCloud:(BOOL)arg2;
 - (void)userInfoDidChangeNewIssueNotificationsEnabled:(FCUserInfo *)arg1 fromCloud:(BOOL)arg2;
 - (void)userInfoDidChangeMarketingNotificationsEnabled:(FCUserInfo *)arg1 fromCloud:(BOOL)arg2;
 - (void)userInfo:(FCUserInfo *)arg1 didRemoveAccessTokenForTagID:(NSString *)arg2 userInitiated:(BOOL)arg3;

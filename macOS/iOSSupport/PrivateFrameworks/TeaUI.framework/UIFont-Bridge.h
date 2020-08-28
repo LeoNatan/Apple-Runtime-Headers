@@ -8,5 +8,8 @@
 
 @interface UIFont (Bridge)
 + (id)ts_preferredFontForTextStyle:(unsigned long long)arg1;
+- (double)ts_tightenedLineSpacingForString:(id)arg1 minimumLineSpacingMultiple:(double)arg2;
+- (double)ts_tightenedLineSpacingForString:(id)arg1;
+- (struct CGRect)ts_boundingBoxForString:(id)arg1;
 @end
 

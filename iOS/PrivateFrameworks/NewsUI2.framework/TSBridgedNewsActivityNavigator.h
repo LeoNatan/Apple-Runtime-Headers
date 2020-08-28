@@ -15,6 +15,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
+- (void)navigateWithoutAnimationWithActivityData:(id)arg1;
 - (void)navigateWithActivityData:(id)arg1;
 
 @end

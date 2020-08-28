@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: headline
     // Error parsing type: , name: origin
+    // Error parsing type: , name: headlineState
 }
 
 @end

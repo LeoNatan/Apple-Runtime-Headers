@@ -21,6 +21,8 @@
 - (void)handleMailAccountsHaveChanged:(id)arg1 accountsNeedInitialization:(BOOL)arg2;
 - (void)handleCredentialChangeForAccountIdentifier:(id)arg1;
 - (void)handleAccountStoreChangeForAccountIdentifier:(id)arg1;
+- (id)observedAccountTypes;
+- (BOOL)_shouldNotifyOnAccountChangeForNotification:(id)arg1;
 - (void)_mailAccountsChanged:(id)arg1;
 - (void)_credentialsDidChange:(id)arg1;
 - (void)_accountStoreDidChange:(id)arg1;

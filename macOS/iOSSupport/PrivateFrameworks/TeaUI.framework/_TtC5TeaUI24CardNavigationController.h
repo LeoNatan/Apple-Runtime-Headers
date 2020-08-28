@@ -11,9 +11,8 @@
 }
 
 - (id)initWithCoder:(id)arg1;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithRootViewController:(id)arg1;
-- (id)initWithNavigationBarClass:(Class)arg1 toolbarClass:(Class)arg2;
+- (id)initWithRootViewController:(id)arg1 navigationBarClass:(Class)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 

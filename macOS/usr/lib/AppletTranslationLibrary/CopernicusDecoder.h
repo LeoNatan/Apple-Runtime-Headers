@@ -15,15 +15,15 @@ __attribute__((visibility("hidden")))
 @interface CopernicusDecoder : NSObject <ATLDecoder, ATLStatefulDecoder>
 {
     unsigned char _state;
-    NSString *_readerIdentifier;
+    unsigned int _transactionType;
     NSString *_endPointIdentifier;
 }
 
 + (_Bool)isCopernicus:(id)arg1;
 + (id)getInstance;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int transactionType; // @synthesize transactionType=_transactionType;
 @property(retain, nonatomic) NSString *endPointIdentifier; // @synthesize endPointIdentifier=_endPointIdentifier;
-@property(retain, nonatomic) NSString *readerIdentifier; // @synthesize readerIdentifier=_readerIdentifier;
 @property(nonatomic) unsigned char state; // @synthesize state=_state;
 - (id)processEndOfTransaction:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withError:(id *)arg5;
 - (id)GetAppletProperties:(id)arg1 withPackage:(id)arg2 withModule:(id)arg3 withTransceiver:(id)arg4 withError:(id *)arg5;

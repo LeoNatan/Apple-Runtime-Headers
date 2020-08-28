@@ -21,6 +21,7 @@
     NSURL *_updateDir;
     NSURL *_storageBase;
     NSURL *_overlayBase;
+    NSURL *_tmpBase;
     DEManifest *_builtinManifest;
     DEManifest *_latestManifest;
     DEWorkQueues *_queues;
@@ -32,10 +33,13 @@
 + (id)getUpdateDirFor:(id)arg1;
 + (id)loadPublication:(id)arg1;
 + (id)appendPublicationName:(id)arg1;
-+ (_Bool)prepareDistribution:(id)arg1 withManifestDir:(id)arg2 disabled:(_Bool)arg3 in:(id)arg4 keyId:(unsigned long long)arg5 multipart:(_Bool)arg6;
-+ (_Bool)package:(id)arg1 to:(id)arg2 includePrefixes:(id)arg3 excludePrefixes:(id)arg4 includeSuffixes:(id)arg5 excludeSuffixes:(id)arg6 overrides:(id)arg7 keyId:(unsigned long long)arg8 multipart:(_Bool)arg9 updating:(id)arg10;
++ (_Bool)prepareDistribution:(id)arg1 withManifestDir:(id)arg2 disabled:(_Bool)arg3 in:(id)arg4 tag:(id)arg5 keyId:(unsigned long long)arg6 multipart:(_Bool)arg7;
++ (_Bool)package:(id)arg1 summary:(id)arg2 to:(id)arg3 manifestDest:(id)arg4 overrides:(id)arg5 keyId:(unsigned long long)arg6 multipart:(_Bool)arg7 updating:(id)arg8;
++ (_Bool)putManifest:(id)arg1 summary:(id)arg2 overrides:(id)arg3;
++ (id)summarize:(id)arg1;
 + (_Bool)copyFrom:(id)arg1 to:(id)arg2;
-+ (id)clientReleaseForUpdater;
++ (id)getPublicationURL:(id)arg1 manifestDir:(id)arg2;
++ (id)getPublicationURL:(id)arg1 manifestDir:(id)arg2 URLVersion:(id)arg3;
 - (void).cxx_destruct;
 @property(nonatomic) _Bool foregroundManifestSync; // @synthesize foregroundManifestSync=_foregroundManifestSync;
 @property(nonatomic) _Bool disableManifestSync; // @synthesize disableManifestSync=_disableManifestSync;
@@ -44,6 +48,7 @@
 @property(retain, nonatomic) DEWorkQueues *queues; // @synthesize queues=_queues;
 @property(retain, nonatomic) DEManifest *latestManifest; // @synthesize latestManifest=_latestManifest;
 @property(retain, nonatomic) DEManifest *builtinManifest; // @synthesize builtinManifest=_builtinManifest;
+@property(retain, nonatomic) NSURL *tmpBase; // @synthesize tmpBase=_tmpBase;
 @property(retain, nonatomic) NSURL *overlayBase; // @synthesize overlayBase=_overlayBase;
 @property(retain, nonatomic) NSURL *storageBase; // @synthesize storageBase=_storageBase;
 @property(retain, nonatomic) NSURL *updateDir; // @synthesize updateDir=_updateDir;
@@ -72,7 +77,7 @@
 - (id)initPlaceholder;
 - (id)initWithDistribution:(id)arg1 publicationURL:(id)arg2 downloadBase:(id)arg3 builtinDir:(id)arg4;
 - (id)chooseURLFor:(id)arg1 version:(id)arg2 versionFound:(_Bool *)arg3;
-- (_Bool)prepareBuiltinManifest;
+- (_Bool)prepareBuiltinManifest:(_Bool)arg1;
 - (_Bool)saveState;
 - (_Bool)resetState;
 - (_Bool)loadState;

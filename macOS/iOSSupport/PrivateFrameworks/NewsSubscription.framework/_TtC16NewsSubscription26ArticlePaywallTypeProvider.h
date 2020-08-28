@@ -12,7 +12,8 @@
     // Error parsing type: , name: bundleSubscriptionManager
     // Error parsing type: , name: subscriptionAccessMeter
     // Error parsing type: , name: paidAccessChecker
-    // Error parsing type: , name: articleSoftPaywallMeter
+    // Error parsing type: , name: bundleArticleSoftPaywallMeter
+    // Error parsing type: , name: alacarteArticleSoftPaywallMeter
 }
 
 @end

@@ -14,6 +14,7 @@
 {
     NSString *_appletIdentifier;
     BOOL _didError;
+    BOOL _background;
     unsigned short _status;
     unsigned short _type;
     unsigned short _result;
@@ -32,6 +33,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (BOOL)logsTransactionDetails;
+@property(readonly, nonatomic) BOOL background; // @synthesize background=_background;
 @property(readonly, nonatomic) NSDictionary *parsedInfo; // @synthesize parsedInfo=_parsedInfo;
 @property(readonly, nonatomic) NSDictionary *felicaInfo; // @synthesize felicaInfo=_felicaInfo;
 @property(readonly, nonatomic) NSData *tlv; // @synthesize tlv=_tlv;

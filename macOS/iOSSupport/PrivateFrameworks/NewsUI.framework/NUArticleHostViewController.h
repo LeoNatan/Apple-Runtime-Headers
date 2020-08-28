@@ -62,7 +62,9 @@
 @property(retain, nonatomic) NSString *contentSizeCategory;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
+- (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
+- (void)reload;
 @property(readonly, nonatomic) NSHashTable *loadingListeners;
 - (id)initWithArticle:(id)arg1 articleViewControllerFactory:(id)arg2 settings:(id)arg3 errorMessageFactory:(id)arg4 contentSizeManager:(id)arg5;
 - (id)initWithArticle:(id)arg1 issue:(id)arg2 articleViewControllerFactory:(id)arg3 settings:(id)arg4 errorMessageFactory:(id)arg5 analyticsReporting:(id)arg6 contentSizeManager:(id)arg7;

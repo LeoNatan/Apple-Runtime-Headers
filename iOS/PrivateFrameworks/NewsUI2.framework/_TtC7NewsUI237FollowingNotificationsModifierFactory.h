@@ -13,6 +13,9 @@
     // Error parsing type: , name: notificationConfiguration
     // Error parsing type: , name: userInfo
     // Error parsing type: , name: bundleSubscriptionManager
+    // Error parsing type: , name: featureAvailability
+    // Error parsing type: , name: configurationManager
+    // Error parsing type: , name: newsletterManager
 }
 
 @end

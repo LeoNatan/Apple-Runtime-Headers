@@ -53,8 +53,10 @@
 - (id)myAvatarEncodedString;
 - (id)contactsFromContactIdentifiers:(id)arg1 withKeys:(id)arg2;
 - (id)unifiedContactMatchingName:(id)arg1 email:(id)arg2 url:(id)arg3 keysToFetch:(id)arg4;
+- (id)unifiedContactMatchingString:(id)arg1 keysToFetch:(id)arg2 matchType:(long long *)arg3;
 - (id)unifiedContactWithIdentifier:(id)arg1;
 - (id)unifiedContactWithIdentifier:(id)arg1 keysToFetch:(id)arg2;
+- (id)unifiedContactWithName:(id)arg1;
 - (id)unifiedContactWithPhoneNumber:(id)arg1;
 - (id)unifiedContactWithEmailAddress:(id)arg1;
 - (id)unifiedContactsMatchingPredicate:(id)arg1 keysToFetch:(id)arg2;

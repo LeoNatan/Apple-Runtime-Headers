@@ -8,7 +8,7 @@
 
 @interface _TtC8NewsFeed19DebugFormatCompiler : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: uploadService
+    // Error parsing type: , name: compilerQueue
 }
 
 @end

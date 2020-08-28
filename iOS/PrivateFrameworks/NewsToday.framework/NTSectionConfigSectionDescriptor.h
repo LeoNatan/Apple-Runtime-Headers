@@ -8,15 +8,12 @@
 
 #import <NewsToday/NTSectionDescriptor-Protocol.h>
 
-@class NSString, NSURL, NTPBDiscoverMoreVideosInfo;
+@class NSString, NSURL;
 @protocol NTSectionFetchDescriptor;
 
 @interface NTSectionConfigSectionDescriptor : NSObject <NTSectionDescriptor>
 {
-    _Bool _displaysAsVideoPlaylist;
     _Bool _useNameColorInWidget;
-    _Bool _videoPlaysMutedByDefault;
-    _Bool _openVideoPlaylistInApp;
     int _readArticlesFilterMethod;
     int _seenArticlesFilterMethod;
     int _leadingCellPromotionPolicy;
@@ -33,7 +30,6 @@
     unsigned long long _fallbackOrder;
     long long _supplementalInterSectionFilterOptions;
     long long _supplementalIntraSectionFilterOptions;
-    NTPBDiscoverMoreVideosInfo *_discoverMoreVideosInfo;
     NSString *_backgroundGradientColor;
     NSString *_actionTitle;
     NSURL *_actionURL;
@@ -42,15 +38,11 @@
 
 - (void).cxx_destruct;
 @property(copy, nonatomic) NSObject<NTSectionFetchDescriptor> *fetchDescriptor; // @synthesize fetchDescriptor=_fetchDescriptor;
-@property(readonly, nonatomic) _Bool openVideoPlaylistInApp; // @synthesize openVideoPlaylistInApp=_openVideoPlaylistInApp;
 @property(readonly, copy, nonatomic) NSURL *actionURL; // @synthesize actionURL=_actionURL;
 @property(readonly, copy, nonatomic) NSString *actionTitle; // @synthesize actionTitle=_actionTitle;
-@property(readonly, nonatomic) _Bool videoPlaysMutedByDefault; // @synthesize videoPlaysMutedByDefault=_videoPlaysMutedByDefault;
 @property(readonly, nonatomic) int leadingCellPromotionPolicy; // @synthesize leadingCellPromotionPolicy=_leadingCellPromotionPolicy;
 @property(readonly, copy, nonatomic) NSString *backgroundGradientColor; // @synthesize backgroundGradientColor=_backgroundGradientColor;
-@property(readonly, copy, nonatomic) NTPBDiscoverMoreVideosInfo *discoverMoreVideosInfo; // @synthesize discoverMoreVideosInfo=_discoverMoreVideosInfo;
 @property(readonly, nonatomic) _Bool useNameColorInWidget; // @synthesize useNameColorInWidget=_useNameColorInWidget;
-@property(readonly, nonatomic) _Bool displaysAsVideoPlaylist; // @synthesize displaysAsVideoPlaylist=_displaysAsVideoPlaylist;
 @property(readonly, nonatomic) long long supplementalIntraSectionFilterOptions; // @synthesize supplementalIntraSectionFilterOptions=_supplementalIntraSectionFilterOptions;
 @property(readonly, nonatomic) long long supplementalInterSectionFilterOptions; // @synthesize supplementalInterSectionFilterOptions=_supplementalInterSectionFilterOptions;
 @property(readonly, nonatomic) unsigned long long fallbackOrder; // @synthesize fallbackOrder=_fallbackOrder;

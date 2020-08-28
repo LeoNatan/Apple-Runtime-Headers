@@ -30,6 +30,7 @@
 - (void)downloadRemoteAssetsWithScreenScale:(double)arg1 suffix:(id)arg2 cloudStoreCoordinatorDelegate:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)downloadRemoteAssetItem:(id)arg1 withCloudStoreCoordinatorDelegate:(id)arg2 shouldWriteData:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (_Bool)assetExistsLocally:(id)arg1;
+- (_Bool)hasEncryptedDeviceSpecificItemWithRelativePath:(id)arg1;
 - (id)sha1HexFromRelativeManifestWithRelativePath:(id)arg1;
 - (id)itemWithRelativePath:(id)arg1;
 - (id)pendingRemoteAssetsItemsForScreenScale:(double)arg1 suffix:(id)arg2;

@@ -26,6 +26,8 @@
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)dataclassPickerViewController:(id)arg1 didCompleteWithDataclassActions:(id)arg2;
 - (void)dataclassPickerViewControllerDidCancel:(id)arg1;
+- (id)messageTextForDataclassPickerViewController:(id)arg1;
+- (id)titleTextForDataclassPickerViewController:(id)arg1;
 - (id)footerTextForDataclassPickerViewController:(id)arg1;
 - (void)_delegate_signOutControllerDidCompleteWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)_delegate_signOutControllerDidCancel;

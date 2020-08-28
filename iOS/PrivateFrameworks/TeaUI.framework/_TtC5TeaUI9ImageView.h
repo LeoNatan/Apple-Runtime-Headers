@@ -11,7 +11,7 @@
 @interface _TtC5TeaUI9ImageView : UIView
 {
     // Error parsing type: , name: imageView
-    // Error parsing type: , name: identifier
+    // Error parsing type: , name: loadingIdentifier
     // Error parsing type: , name: _backgroundColor
 }
 

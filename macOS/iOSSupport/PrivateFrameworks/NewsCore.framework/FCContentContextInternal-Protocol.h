@@ -7,14 +7,17 @@
 #import <NewsCore/FCCacheFlushing-Protocol.h>
 #import <NewsCore/NSObject-Protocol.h>
 
-@class FCArticleListRecordSource, FCArticleRecordSource, FCCKContentDatabase, FCChannelMembershipController, FCFeedDatabase, FCForYouConfigRecordSource, FCIssueListRecordSource, FCIssueRecordSource, FCPurchaseLookupRecordSource, FCResourceRecordSource, FCTagListRecordSource, FCTagRecordSource, FCWidgetSectionConfigRecordSource, NSArray;
-@protocol FCAssetKeyManagerType;
+@class FCAVAssetDownloadManager, FCArticleListRecordSource, FCArticleRecordSource, FCAudioConfigRecordSource, FCCKContentDatabase, FCChannelMembershipController, FCFeedDatabase, FCForYouConfigRecordSource, FCIssueListRecordSource, FCIssueRecordSource, FCPurchaseLookupRecordSource, FCResourceRecordSource, FCTagListRecordSource, FCTagRecordSource, FCWidgetSectionConfigRecordSource, NSArray;
+@protocol FCAVAssetFactoryType, FCAssetKeyManagerType;
 
 @protocol FCContentContextInternal <NSObject, FCCacheFlushing>
+@property(readonly, nonatomic) FCAVAssetDownloadManager *avAssetDownloadManager;
+@property(readonly, nonatomic) id <FCAVAssetFactoryType> avAssetFactory;
 @property(readonly, nonatomic) id <FCAssetKeyManagerType> assetKeyManager;
 @property(readonly, nonatomic) FCCKContentDatabase *contentDatabase;
 @property(readonly) FCFeedDatabase *feedDatabase;
 @property(readonly, nonatomic) NSArray *recordSources;
+@property(readonly, nonatomic) FCAudioConfigRecordSource *audioConfigRecordSource;
 @property(readonly, nonatomic) FCIssueListRecordSource *issueListRecordSource;
 @property(readonly, nonatomic) FCIssueRecordSource *issueRecordSource;
 @property(readonly, nonatomic) FCWidgetSectionConfigRecordSource *widgetSectionConfigRecordSource;

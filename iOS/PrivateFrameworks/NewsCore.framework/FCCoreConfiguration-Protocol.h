@@ -39,8 +39,6 @@
 @property(readonly, nonatomic) NSString *featuredStoriesTagID;
 @property(readonly, nonatomic) NSString *trendingTagID;
 @property(readonly, nonatomic) NSString *briefingsTagID;
-@property(readonly, nonatomic) NSString *moreVideosChannelID;
-@property(readonly, nonatomic) NSString *topVideosChannelID;
 @property(readonly, nonatomic) NSString *breakingNewsChannelID;
 @property(readonly, nonatomic) FCTopStoriesConfiguration *topStoriesConfig;
 @property(readonly, nonatomic) NSDictionary *endpointConfigsByEnvironment;
@@ -65,19 +63,19 @@
 - (FCPersonalizationTreatment *)personalizationTreatmentForFeldsparID:(NSString *)arg1;
 
 @optional
+@property(readonly, nonatomic) _Bool enableCacheFallbackForArticleRecirculation;
+@property(readonly, nonatomic) _Bool recordBothPersonalizationVectors;
+@property(readonly, nonatomic) _Bool usePersonalizationVectorAlt;
+@property(readonly, nonatomic) NSString *audioConfigRecordID;
 @property(readonly, nonatomic) NSString *todayFeedKnobs;
 @property(readonly, nonatomic) NSArray *aLaCartePaidSubscriptionGroupWhitelistedChannelIDs;
 @property(readonly, nonatomic) double feedLineHeightMultiplier;
 @property(readonly, nonatomic) NSString *spotlightChannelID;
 @property(readonly, nonatomic) long long entitlementsCacheRecoveryAttemptDurationInSeconds;
-@property(readonly, nonatomic) long long subscriptionsGracePeriodForTokenVerificationSeconds;
-@property(readonly, nonatomic) long long subscriptionsPlacardGlobalMaximumPerDay;
-@property(readonly, nonatomic) long long subscriptionsPlacardPublisherFrequencyInSeconds;
 @property(readonly, nonatomic) NSString *magazinesConfigRecordID;
 @property(readonly, nonatomic) FCPaidBundleConfiguration *paidBundleConfig;
 @property(readonly, nonatomic) double delayBeforeRetryingDroppedFeeds;
 @property(readonly, nonatomic) long long maxRetriesForDroppedFeeds;
-@property(readonly, nonatomic) _Bool isSpecialEventsMicaAnimationDisabled;
 @property(readonly, nonatomic) long long singleChannelFeedMinFeedItemsPerRequest;
 @property(readonly, nonatomic) long long singleTopicFeedMinFeedItemsPerRequest;
 @property(readonly, nonatomic) _Bool shouldShowAlternateHeadlines;

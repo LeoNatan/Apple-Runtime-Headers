@@ -12,27 +12,32 @@
 
 @interface NUFeedTitleViewUpdate : NSObject <NSCopying>
 {
+    unsigned long long _type;
     unsigned long long _updateType;
     unsigned long long _storyCount;
     NSString *_feedName;
     UIImage *_feedImage;
 }
 
++ (id)feedTitleViewUpdateNewStoriesWithStoryForType:(unsigned long long)arg1 storyCount:(unsigned long long)arg2;
 + (id)feedTitleViewUpdateForNewStoriesWithStoryCount:(unsigned long long)arg1;
++ (id)feedTitleViewUpdateCheckingForNewStoriesForType:(unsigned long long)arg1;
 + (id)feedTitleViewUpdateForCheckingForNewStories;
 + (id)feedTitleViewUpdateForFeedImage:(id)arg1;
 + (id)feedTitleViewUpdateForFeedName:(id)arg1;
++ (id)feedTitleViewUpdateEmptyStateForType:(unsigned long long)arg1;
 + (id)feedTitleViewUpdateEmptyState;
 - (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *feedImage; // @synthesize feedImage=_feedImage;
 @property(copy, nonatomic) NSString *feedName; // @synthesize feedName=_feedName;
 @property(nonatomic) unsigned long long storyCount; // @synthesize storyCount=_storyCount;
 @property(readonly, nonatomic) unsigned long long updateType; // @synthesize updateType=_updateType;
+@property(nonatomic) unsigned long long type; // @synthesize type=_type;
 - (id)convertToTitleViewUpdateWithCompact:(BOOL)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithUpdateType:(unsigned long long)arg1;
+- (id)initWithType:(unsigned long long)arg1 updateType:(unsigned long long)arg2;
 - (id)init;
 
 @end

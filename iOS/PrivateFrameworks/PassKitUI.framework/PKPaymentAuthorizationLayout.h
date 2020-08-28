@@ -11,6 +11,7 @@
 @interface PKPaymentAuthorizationLayout : NSObject
 {
     _Bool _isAMPPayment;
+    _Bool _isInstallment;
     _Bool _shouldSuppressTotal;
     long long _style;
     double _contentHorizontalMargin;
@@ -24,6 +25,7 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldSuppressTotal; // @synthesize shouldSuppressTotal=_shouldSuppressTotal;
 @property(readonly, nonatomic) NSString *localizedNavigationTitle; // @synthesize localizedNavigationTitle=_localizedNavigationTitle;
+@property(readonly, nonatomic) _Bool isInstallment; // @synthesize isInstallment=_isInstallment;
 @property(readonly, nonatomic) _Bool isAMPPayment; // @synthesize isAMPPayment=_isAMPPayment;
 @property(readonly, nonatomic) unsigned long long requestor; // @synthesize requestor=_requestor;
 @property(readonly, nonatomic) unsigned long long requestType; // @synthesize requestType=_requestType;

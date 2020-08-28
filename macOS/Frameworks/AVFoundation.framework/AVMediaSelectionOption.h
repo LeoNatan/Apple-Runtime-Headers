@@ -25,7 +25,8 @@
 @property(readonly, nonatomic) NSString *displayName;
 - (id)displayNameWithLocale:(id)arg1;
 - (id)_displayNameWithLocale:(id)arg1 fallingBackToMatchingUndeterminedAndMultilingual:(BOOL)arg2;
-- (id)_preferredMetadataTitleAccordingToPreferredLanguages:(id)arg1 fallingBackToMatchingEmptyLocale:(BOOL)arg2;
+- (id)_languageDisplayNameFromMetadataAccordingToPreferredLanguages:(id)arg1 fallingBackToMatchingEmptyLocale:(BOOL)arg2;
+- (id)_preferredMetadataTitleAccordingToPreferredLanguages:(id)arg1 fallingBackToMatchingEmptyLocale:(BOOL)arg2 excludeM3U8Metadata:(BOOL)arg3;
 - (id)propertyList;
 - (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
 - (id)metadataForFormat:(id)arg1;

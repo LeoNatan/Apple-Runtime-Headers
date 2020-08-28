@@ -22,12 +22,14 @@
     NSDictionary *_interfaceProtocolMapping;
     NSString *_activeInterfaceProtocolKey;
     NSDictionary *_serviceExceptions;
+    NSDictionary *_applicationExceptions;
     NSDictionary *_allowedCaptiveNetworkPlugins;
 }
 
 + (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 @property(copy) NSDictionary *allowedCaptiveNetworkPlugins; // @synthesize allowedCaptiveNetworkPlugins=_allowedCaptiveNetworkPlugins;
+@property(copy) NSDictionary *applicationExceptions; // @synthesize applicationExceptions=_applicationExceptions;
 @property(copy) NSDictionary *serviceExceptions; // @synthesize serviceExceptions=_serviceExceptions;
 @property(copy) NSString *activeInterfaceProtocolKey; // @synthesize activeInterfaceProtocolKey=_activeInterfaceProtocolKey;
 @property(copy) NSDictionary *interfaceProtocolMapping; // @synthesize interfaceProtocolMapping=_interfaceProtocolMapping;

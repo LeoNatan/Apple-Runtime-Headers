@@ -10,13 +10,14 @@
 {
     // Error parsing type: , name: resolver
     // Error parsing type: , name: purchaseProvider
-    // Error parsing type: , name: paywallTypeProvider
+    // Error parsing type: , name: articlePaywallTypeProvider
+    // Error parsing type: , name: feedPaywallTypeProvider
     // Error parsing type: , name: bundleSubscriptionManager
     // Error parsing type: , name: configurationManager
-    // Error parsing type: , name: deferredHardPaywallLayoutAttributesFactory
-    // Error parsing type: , name: softPaywallLayoutAttributesFactory
     // Error parsing type: , name: bundlePurchasePrewarmer
     // Error parsing type: , name: tracker
+    // Error parsing type: , name: bundlePaywallViewModelFactory
+    // Error parsing type: , name: alacartePaywallViewModelFactory
 }
 
 @end

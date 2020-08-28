@@ -17,11 +17,15 @@
 
 + (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
-@property(nonatomic) double canvasWidth; // @synthesize canvasWidth=_canvasWidth;
-@property(nonatomic) double relativePageOffset; // @synthesize relativePageOffset=_relativePageOffset;
-@property(retain, nonatomic) NSString *componentIdentifier; // @synthesize componentIdentifier=_componentIdentifier;
+@property(readonly, nonatomic) double canvasWidth; // @synthesize canvasWidth=_canvasWidth;
+@property(readonly, nonatomic) double relativePageOffset; // @synthesize relativePageOffset=_relativePageOffset;
+@property(readonly, copy, nonatomic) NSString *componentIdentifier; // @synthesize componentIdentifier=_componentIdentifier;
 - (void)encodeWithCoder:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)initWithDictionaryRepresentation:(id)arg1 exactly:(_Bool)arg2;
+- (_Bool)jsonDictionaryRepresentationIsValid:(id)arg1 exactly:(_Bool)arg2;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithComponentIdentifier:(id)arg1 canvasWidth:(double)arg2 relativePageOffset:(double)arg3;
 
 @end
 

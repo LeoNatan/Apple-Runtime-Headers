@@ -8,10 +8,12 @@
 
 @interface _TtC7NewsUI222ForYouTodayFeedManager : _TtCs12_SwiftObject
 {
+    // Error parsing type: , name: configurationManager
     // Error parsing type: , name: bundleSubscriptionManager
     // Error parsing type: , name: feedGroupEmitterFactory
     // Error parsing type: , name: emitterQueue
     // Error parsing type: , name: store
+    // Error parsing type: , name: paidAccessChecker
 }
 
 - (id)knownGroupForIdentifier:(id)arg1 headlines:(id)arg2 assetHandles:(id)arg3;

@@ -21,6 +21,7 @@
 - (id)_subcredentialInvitationMessageDataWithDataURL:(id)arg1;
 - (id)_subcredentialInvitationMessageDataURLWithData:(id)arg1;
 - (void)_updateDataURL;
+@property(copy, nonatomic) NSString *uniqueIdentifier;
 @property(nonatomic) unsigned long long status;
 @property(copy, nonatomic) NSString *dataString;
 @property(copy, nonatomic) PKAppletSubcredentialSharingInvitation *watchInvitation;

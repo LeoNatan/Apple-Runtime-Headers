@@ -9,7 +9,7 @@
 @interface _TtC7NewsUI238FollowingNotificationsViewCellProvider : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: delegate
-    // Error parsing type: , name: followingRowViewRenderer
+    // Error parsing type: , name: tagViewRenderer
 }
 
 @end

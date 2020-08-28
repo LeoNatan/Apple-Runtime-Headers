@@ -6,11 +6,14 @@
 
 #import <Preferences/PSListController.h>
 
+#import <Preferences/PSSystemPolicyForAppDelegate-Protocol.h>
+
 @class PSSystemPolicyForApp;
 
-@interface PSAppListController : PSListController
+@interface PSAppListController : PSListController <PSSystemPolicyForAppDelegate>
 {
     PSSystemPolicyForApp *_systemPolicy;
+    PSSystemPolicyForApp *_appPolicy;
 }
 
 + (id)specifiersFromDictionary:(id)arg1 stringsTable:(id)arg2 parentSpecifier:(id)arg3 target:(id)arg4;
@@ -27,6 +30,7 @@
 + (id)onBoardingKitBundleIDDict;
 + (id)allowedPrivacyBundles;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PSSystemPolicyForApp *appPolicy; // @synthesize appPolicy=_appPolicy;
 @property(retain, nonatomic) PSSystemPolicyForApp *systemPolicy; // @synthesize systemPolicy=_systemPolicy;
 - (id)bundle;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

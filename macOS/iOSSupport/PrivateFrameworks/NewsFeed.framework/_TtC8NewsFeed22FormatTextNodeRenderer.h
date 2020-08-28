@@ -8,7 +8,6 @@
 
 @interface _TtC8NewsFeed22FormatTextNodeRenderer : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: traitCollection
 }
 
 @end

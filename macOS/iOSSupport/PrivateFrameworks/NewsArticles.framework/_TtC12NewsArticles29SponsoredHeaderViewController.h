@@ -11,10 +11,13 @@ __attribute__((visibility("hidden")))
 {
     // Error parsing type: , name: renderer
     // Error parsing type: , name: label
+    // Error parsing type: , name: headerDelegate
 }
 
 - (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)sectionItemViewController;
+- (double)sectionItemHeightForSize:(struct CGSize)arg1 traitCollection:(id)arg2;
 - (void)viewDidLoad;
 - (id)initWithCoder:(id)arg1;
 

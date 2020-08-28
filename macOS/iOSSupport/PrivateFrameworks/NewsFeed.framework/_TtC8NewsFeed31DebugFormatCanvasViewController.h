@@ -10,14 +10,11 @@ __attribute__((visibility("hidden")))
 @interface _TtC8NewsFeed31DebugFormatCanvasViewController : UIViewController
 {
     // Error parsing type: , name: delegate
-    // Error parsing type: , name: key
-    // Error parsing type: , name: factory
-    // Error parsing type: , name: fontManager
+    // Error parsing type: , name: contentView
     // Error parsing type: , name: columnSystem
-    // Error parsing type: , name: scrollView
     // Error parsing type: , name: $__lazy_storage_$_columnView
     // Error parsing type: , name: viewportMonitor
-    // Error parsing type: , name: fontDownloadPromise
+    // Error parsing type: , name: editor
 }
 
 - (void).cxx_destruct;

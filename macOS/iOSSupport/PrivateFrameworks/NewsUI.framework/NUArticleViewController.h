@@ -12,13 +12,14 @@
 #import <NewsUI/SXAnalyticsReporting-Protocol.h>
 #import <NewsUI/SXScrollViewControllerDelegate-Protocol.h>
 
-@class FCObservable, NFEventManager, NFMultiDelegate, NSHashTable, NSString, NUArticleAdManager, NUArticleContext, SXScrollViewController, SXVideoPlayerViewControllerManager, UIResponder, UIScrollView;
-@protocol NUANFDebugSettingsProvider, NUArticleDataProvider, NUArticleKeyCommandManager, NUDocumentSectionBlueprintProvider, NUEndOfArticleDataProvider, NULoadingDelegate, SXAnalyticsReporting;
+@class FCObservable, NFEventManager, NFMultiDelegate, NSDate, NSHashTable, NSString, NUArticleAdManager, NUArticleContext, SXScrollViewController, SXVideoPlayerViewControllerManager, UIResponder, UIScrollView;
+@protocol NUANFDebugSettingsProvider, NUArticleDataProvider, NUArticleKeyCommandManager, NUArticleScrollPositionManagerType, NUDocumentSectionBlueprintProvider, NUEndOfArticleDataProvider, NULoadingDelegate, SXAnalyticsReporting;
 
 @interface NUArticleViewController : UIViewController <SXScrollViewControllerDelegate, SXAnalyticsReporting, NUANFDebugSettingsObserver, NULoadable, NUBarCompressible>
 {
     BOOL _articleIsPresentingFullscreen;
     BOOL _isShowingDeferredHardPayall;
+    BOOL _didRestoreScrollPosition;
     id <NULoadingDelegate> _loadingDelegate;
     NSString *_contentSizeCategory;
     long long _contentScale;
@@ -26,7 +27,6 @@
     FCObservable *_articleViewStyler;
     NFMultiDelegate *_multiScrollViewDelegate;
     UIScrollView *_scrollView;
-    NSString *_anchorFragment;
     NUArticleContext *_articleContext;
     SXScrollViewController *_scrollViewController;
     id <NUArticleDataProvider> _articleDataProvider;
@@ -39,10 +39,15 @@
     id <NUANFDebugSettingsProvider> _debugSettingsProvider;
     unsigned long long _presentationMode;
     SXVideoPlayerViewControllerManager *_videoPlayerViewControllerManager;
+    id <NUArticleScrollPositionManagerType> _articleScrollPositionManager;
+    NSDate *_manualScrollingStartDate;
 }
 
 + (id)_parentOrPresentingViewControllerFor:(id)arg1;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *manualScrollingStartDate; // @synthesize manualScrollingStartDate=_manualScrollingStartDate;
+@property(nonatomic) BOOL didRestoreScrollPosition; // @synthesize didRestoreScrollPosition=_didRestoreScrollPosition;
+@property(readonly, nonatomic) id <NUArticleScrollPositionManagerType> articleScrollPositionManager; // @synthesize articleScrollPositionManager=_articleScrollPositionManager;
 @property(readonly, nonatomic) SXVideoPlayerViewControllerManager *videoPlayerViewControllerManager; // @synthesize videoPlayerViewControllerManager=_videoPlayerViewControllerManager;
 @property(nonatomic) BOOL isShowingDeferredHardPayall; // @synthesize isShowingDeferredHardPayall=_isShowingDeferredHardPayall;
 @property(nonatomic) unsigned long long presentationMode; // @synthesize presentationMode=_presentationMode;
@@ -57,7 +62,6 @@
 @property(readonly, nonatomic) id <NUArticleDataProvider> articleDataProvider; // @synthesize articleDataProvider=_articleDataProvider;
 @property(readonly, nonatomic) SXScrollViewController *scrollViewController; // @synthesize scrollViewController=_scrollViewController;
 @property(retain, nonatomic) NUArticleContext *articleContext; // @synthesize articleContext=_articleContext;
-@property(copy, nonatomic) NSString *anchorFragment; // @synthesize anchorFragment=_anchorFragment;
 @property(readonly, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(readonly, nonatomic) NFMultiDelegate *multiScrollViewDelegate; // @synthesize multiScrollViewDelegate=_multiScrollViewDelegate;
 @property(readonly, nonatomic) FCObservable *articleViewStyler; // @synthesize articleViewStyler=_articleViewStyler;
@@ -68,6 +72,11 @@
 - (BOOL)isPreviewingOrShowingHardPaywall;
 - (BOOL)accessibilityShouldScrollForScrollViewController:(id)arg1 defaultValue:(BOOL)arg2;
 - (BOOL)scrollViewController:(id)arg1 shouldOccludeAccessibilityElement:(id)arg2;
+- (id)articleMessager;
+- (void)showArticleMessage:(long long)arg1 hideAfterEvent:(id)arg2;
+- (void)scrollToAudioPositionAndHideMessageAfterEvent:(id)arg1;
+- (void)saveScrollPosition;
+- (BOOL)shouldSaveScrollPosition;
 - (id)currentPresentationAttributes;
 - (void)updatePresentationAttributes;
 - (void)updateScrollViewControllerWithFooterBlueprint:(id)arg1;
@@ -75,10 +84,11 @@
 - (void)updateScrollViewControllerWithHeaderBlueprint:(id)arg1;
 @property(retain, nonatomic) NSString *contentSizeCategory; // @synthesize contentSizeCategory=_contentSizeCategory;
 - (void)scrollToTopAnimated:(BOOL)arg1;
-- (void)restoreScrollPositionIfNeeded;
 - (void)testingConditionEnabled:(BOOL)arg1;
 - (void)viewportDebuggingEnabled:(BOOL)arg1;
 - (void)reportEvent:(id)arg1;
+- (void)scrollViewControllerDidStopScrolling:(id)arg1;
+- (void)scrollViewControllerDidScroll:(id)arg1;
 - (void)scrollViewController:(id)arg1 enableNavigation:(BOOL)arg2;
 - (double)toolBarHeightForScrollViewController:(id)arg1;
 - (double)navigationBarHeightForScrollViewController:(id)arg1;
@@ -90,6 +100,10 @@
 - (long long)preferredStatusBarStyle;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;
+- (void)nowPlayingDidDisappear:(id)arg1;
+- (void)nowPlayingWillDisappear:(id)arg1;
+- (void)applicationDidBecomeActive:(id)arg1;
+- (void)applicationWillEnterForeground:(id)arg1;
 @property(readonly, nonatomic) UIResponder *responder;
 - (BOOL)resignFirstResponder;
 - (BOOL)canBecomeFirstResponder;
@@ -98,8 +112,9 @@
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewSafeAreaInsetsDidChange;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (id)initWithArticleDataProvider:(id)arg1 scrollViewController:(id)arg2 articleAdManager:(id)arg3 appStateMonitor:(id)arg4 keyCommandManager:(id)arg5 loadingListeners:(id)arg6 headerBlueprintProvider:(id)arg7 debugSettingsProvider:(id)arg8 videoPlayerViewControllerManager:(id)arg9;
+- (id)initWithArticleDataProvider:(id)arg1 scrollViewController:(id)arg2 articleAdManager:(id)arg3 appStateMonitor:(id)arg4 keyCommandManager:(id)arg5 loadingListeners:(id)arg6 headerBlueprintProvider:(id)arg7 debugSettingsProvider:(id)arg8 videoPlayerViewControllerManager:(id)arg9 articleScrollPositionManager:(id)arg10;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

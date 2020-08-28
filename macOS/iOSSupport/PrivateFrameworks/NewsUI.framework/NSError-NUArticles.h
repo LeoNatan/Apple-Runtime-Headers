@@ -9,7 +9,7 @@
 @interface NSError (NUArticles)
 + (id)nu_errorArticleDownloadFailed:(id)arg1;
 + (id)nu_errorArticleMissingContentURL:(id)arg1;
-+ (id)nu_errorArticleContentTypeUnsuppoted:(id)arg1;
++ (id)nu_errorArticleContentTypeUnsupported:(id)arg1;
 + (id)nu_errorArticleMissingHeadline:(id)arg1;
 @end
 

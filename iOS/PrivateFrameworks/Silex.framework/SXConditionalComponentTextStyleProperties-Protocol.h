@@ -9,6 +9,7 @@
 @class SXDropCapStyle, SXTextStyle;
 
 @protocol SXConditionalComponentTextStyleProperties <SXConditionalTextStyleProperties>
+@property(readonly, nonatomic) _Bool lineBalancing;
 @property(readonly, nonatomic) _Bool fontScaling;
 @property(readonly, nonatomic) _Bool hangingPunctuation;
 @property(readonly, nonatomic) long long firstLineIndent;

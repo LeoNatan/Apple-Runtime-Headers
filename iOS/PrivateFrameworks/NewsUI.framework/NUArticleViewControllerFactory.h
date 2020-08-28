@@ -9,7 +9,7 @@
 #import <NewsUI/NUArticleViewControllerFactory-Protocol.h>
 
 @class NSHashTable, NSString;
-@protocol NFResolver, NUArticleAdManagerFactory, NUArticleDataProviderFactory, NUArticleKeyCommandManager, NUArticlePrefetcherType, NUDocumentSectionBlueprintProvider, SXAppStateMonitor, SXURLHandling;
+@protocol NFResolver, NUArticleAdManagerFactory, NUArticleDataProviderFactory, NUArticleKeyCommandManager, NUArticlePrefetcherType, NUArticleScrollPositionManagerType, NUDocumentSectionBlueprintProvider, SXAppStateMonitor, SXURLHandling;
 
 @interface NUArticleViewControllerFactory : NSObject <NUArticleViewControllerFactory>
 {
@@ -22,9 +22,11 @@
     id <NFResolver> _resolver;
     id <NUDocumentSectionBlueprintProvider> _headerBlueprintProvider;
     id <NUArticlePrefetcherType> _articlePrefetcher;
+    id <NUArticleScrollPositionManagerType> _articleScrollPositionManager;
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <NUArticleScrollPositionManagerType> articleScrollPositionManager; // @synthesize articleScrollPositionManager=_articleScrollPositionManager;
 @property(readonly, nonatomic) id <NUArticlePrefetcherType> articlePrefetcher; // @synthesize articlePrefetcher=_articlePrefetcher;
 @property(readonly, nonatomic) id <NUDocumentSectionBlueprintProvider> headerBlueprintProvider; // @synthesize headerBlueprintProvider=_headerBlueprintProvider;
 @property(readonly, nonatomic) id <NFResolver> resolver; // @synthesize resolver=_resolver;
@@ -34,12 +36,10 @@
 @property(readonly, nonatomic) id <NUArticleAdManagerFactory> articleAdManagerFactory; // @synthesize articleAdManagerFactory=_articleAdManagerFactory;
 @property(readonly, nonatomic) id <NUArticleDataProviderFactory> articleDataProviderFactory; // @synthesize articleDataProviderFactory=_articleDataProviderFactory;
 @property(readonly, nonatomic) NSHashTable *loadingListeners; // @synthesize loadingListeners=_loadingListeners;
-- (id)createArticleExcerptViewControllerWithArticle:(id)arg1 traits:(id)arg2;
-- (id)createArticleWebViewControllerWithArticle:(id)arg1;
 - (id)createArticleViewControllerWithArticle:(id)arg1 issue:(id)arg2;
 - (id)createArticleViewControllerWithArticle:(id)arg1;
-- (id)initWithArticleDataProviderFactory:(id)arg1 articleAdManagerFactory:(id)arg2 appStateMonitor:(id)arg3 keyCommandManager:(id)arg4 headerBlueprintProvider:(id)arg5 articlePrefetcher:(id)arg6 resolver:(id)arg7;
-- (id)initWithArticleDataProviderFactory:(id)arg1 articleAdManagerFactory:(id)arg2 appStateMonitor:(id)arg3 URLHandler:(id)arg4 keyCommandManager:(id)arg5 headerBlueprintProvider:(id)arg6 articlePrefetcher:(id)arg7 resolver:(id)arg8;
+- (id)initWithArticleDataProviderFactory:(id)arg1 articleAdManagerFactory:(id)arg2 appStateMonitor:(id)arg3 keyCommandManager:(id)arg4 headerBlueprintProvider:(id)arg5 articlePrefetcher:(id)arg6 articleScrollPositionManager:(id)arg7 resolver:(id)arg8;
+- (id)initWithArticleDataProviderFactory:(id)arg1 articleAdManagerFactory:(id)arg2 appStateMonitor:(id)arg3 URLHandler:(id)arg4 keyCommandManager:(id)arg5 headerBlueprintProvider:(id)arg6 articlePrefetcher:(id)arg7 articleScrollPositionManager:(id)arg8 resolver:(id)arg9;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -26,6 +26,9 @@
 @property(nonatomic, readonly) NSDate *publisherSpecifiedArticleIDsModifiedDate;
 @property(nonatomic, readonly) NSArray *publisherSpecifiedArticleIDs;
 @property(nonatomic, readonly) NSString *articleRecirculationConfigJSON;
+@property(nonatomic, readonly) BOOL isLocal;
+@property(nonatomic, readonly) BOOL isSandbox;
+@property(nonatomic, readonly) BOOL isInternal;
 @property(nonatomic, readonly) BOOL isArticleReadCountReportingEnabled;
 @property(nonatomic, readonly) BOOL isRealTimeTrackingEnabled;
 @property(nonatomic, readonly) BOOL isHidden;
@@ -55,7 +58,6 @@
 @property(nonatomic, readonly) FCColor *groupDarkStyleTitleColor;
 @property(nonatomic, readonly) FCColor *groupTitleColor;
 @property(nonatomic, readonly) id <FCFeedTheming> theme;
-@property(nonatomic, readonly) NSString *coverArticleListID;
 @property(nonatomic, readonly) FCAssetHandle *feedNavImageAssetHandle;
 @property(nonatomic, readonly) FCAssetHandle *coverImageAssetHandle;
 @property(nonatomic, readonly) BOOL isSubscribable;
@@ -75,6 +77,7 @@
 @property(nonatomic, readonly) id <FCSectionProviding> asSection;
 @property(nonatomic, readonly) id <FCChannelProviding> asChannel;
 @property(nonatomic, readonly) BOOL hideAccessoryText;
+@property(nonatomic, readonly) unsigned long long userFacingTagType;
 @property(nonatomic, readonly) unsigned long long tagType;
 
 @optional

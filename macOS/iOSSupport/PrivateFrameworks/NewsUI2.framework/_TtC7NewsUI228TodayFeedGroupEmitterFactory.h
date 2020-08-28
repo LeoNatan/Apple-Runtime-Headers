@@ -9,7 +9,19 @@
 @interface _TtC7NewsUI228TodayFeedGroupEmitterFactory : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: newspaperGroupService
+    // Error parsing type: , name: localNewsGroupService
     // Error parsing type: , name: formatService
+    // Error parsing type: , name: audioHeadlineConverter
+    // Error parsing type: , name: headlineService
+    // Error parsing type: , name: audioConfigurationManager
+    // Error parsing type: , name: topicClusterService
+    // Error parsing type: , name: topicColorProvider
+    // Error parsing type: , name: featureAvailability
+    // Error parsing type: , name: magazineFeedService
+    // Error parsing type: , name: personalizationService
+    // Error parsing type: , name: subscriptionController
+    // Error parsing type: , name: readingHistory
+    // Error parsing type: , name: paidAccessChecker
 }
 
 @end

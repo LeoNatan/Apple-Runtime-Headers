@@ -23,6 +23,7 @@
 - (void)removeAll;
 - (void)removePlugin:(id)arg1;
 - (void)addPlugin:(id)arg1;
+- (id)pluginForIdentifier:(id)arg1;
 @property(nonatomic) __weak UIViewController<TSPluginContainerViewProviding> *pluginContainerController; // @synthesize pluginContainerController;
 
 @end

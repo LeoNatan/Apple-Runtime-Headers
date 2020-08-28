@@ -113,6 +113,10 @@ __attribute__((visibility("hidden")))
     unsigned int _totalDuplicationDuration;
     unsigned int _wifiToCellHandoverCount;
     unsigned int _cellToWifiHandoverCount;
+    unsigned int _evictedFramesLikelyRecoverableCount;
+    unsigned int _evictedFramesTrackedCount;
+    unsigned int _evictedFramesAnalysisValidIntervals;
+    double _evictedFramesAverageLatePacketDelay;
     BOOL _isDuplicationEnabled;
     BOOL _remoteFaceTimeSwitchesAvailable;
     double _duplicationStartTime;
@@ -136,6 +140,7 @@ __attribute__((visibility("hidden")))
 - (void)updateSegment:(id)arg1 TBR:(int)arg2 ISBTR:(int)arg3 SATXBR:(int)arg4 SARBR:(int)arg5 BWE:(int)arg6;
 - (int)adaptiveLearningState;
 - (void)processEventWithCategory:(unsigned short)arg1 type:(unsigned short)arg2 payload:(id)arg3;
+- (void)updateCellTech:(id)arg1;
 - (BOOL)isDuplicationChanged:(BOOL)arg1;
 - (void)updateSwitchConfiguration:(unsigned int)arg1 payload:(id)arg2;
 - (void)updateAdaptiveLearningStats:(unsigned int)arg1 payload:(id)arg2;

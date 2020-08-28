@@ -12,21 +12,22 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: packages
     // Error parsing type: , name: columnOptions
     // Error parsing type: , name: sections
-    // Error parsing type: , name: formatCompiler
-    // Error parsing type: , name: compilerResult
-    // Error parsing type: , name: compilerQueue
-    // Error parsing type: , name: compilerLabel
     // Error parsing type: , name: tableView
     // Error parsing type: , name: groupViewController
     // Error parsing type: , name: versionLabel
+    // Error parsing type: , name: coverViewManager
+    // Error parsing type: , name: $__lazy_storage_$_uploadBarButtonItem
+    // Error parsing type: , name: $__lazy_storage_$_updatedLabel
+    // Error parsing type: , name: styler
+    // Error parsing type: , name: editor
 }
 
 - (void).cxx_destruct;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;
+- (id)initWithCoder:(id)arg1;
 
 @end
 

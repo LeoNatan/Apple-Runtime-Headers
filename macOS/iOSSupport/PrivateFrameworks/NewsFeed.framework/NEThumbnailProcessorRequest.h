@@ -6,11 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsFeed/TSProcessedImageRequestType-Protocol.h>
-
 @class NSDictionary, NSString;
 
-@interface NEThumbnailProcessorRequest : NSObject <TSProcessedImageRequestType>
+@interface NEThumbnailProcessorRequest : NSObject
 {
     // Error parsing type: , name: assetHandles
     // Error parsing type: , name: thumbnailFrame
@@ -18,6 +16,7 @@
     // Error parsing type: , name: scale
     // Error parsing type: , name: roundedCorners
     // Error parsing type: , name: cornerRadius
+    // Error parsing type: , name: border
 }
 
 - (void).cxx_destruct;

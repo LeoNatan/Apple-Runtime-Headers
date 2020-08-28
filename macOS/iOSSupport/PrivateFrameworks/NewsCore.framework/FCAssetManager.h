@@ -11,7 +11,7 @@
 #import <NewsCore/FCCacheFlushing-Protocol.h>
 
 @class FCAssetStore, FCCacheCoordinator, FCKeyValueStore, FCNetworkBehaviorMonitor, NFUnfairLock, NSMapTable, NSString, NSURL;
-@protocol FCAssetKeyManagerType, OS_dispatch_queue;
+@protocol FCAVAssetFactoryType, FCAssetKeyManagerType, OS_dispatch_queue;
 
 @interface FCAssetManager : NSObject <FCAssetHandleDelegate, FCCacheCoordinatorDelegate, FCCacheFlushing>
 {
@@ -26,11 +26,13 @@
     NFUnfairLock *_assetHandlesLock;
     FCNetworkBehaviorMonitor *_networkBehaviorMonitor;
     id <FCAssetKeyManagerType> _keyManager;
+    id <FCAVAssetFactoryType> _avAssetFactory;
     NSObject<OS_dispatch_queue> *_initQueue;
 }
 
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *initQueue; // @synthesize initQueue=_initQueue;
+@property(retain, nonatomic) id <FCAVAssetFactoryType> avAssetFactory; // @synthesize avAssetFactory=_avAssetFactory;
 @property(retain, nonatomic) id <FCAssetKeyManagerType> keyManager; // @synthesize keyManager=_keyManager;
 @property(retain, nonatomic) FCNetworkBehaviorMonitor *networkBehaviorMonitor; // @synthesize networkBehaviorMonitor=_networkBehaviorMonitor;
 @property(retain, nonatomic) NFUnfairLock *assetHandlesLock; // @synthesize assetHandlesLock=_assetHandlesLock;
@@ -63,7 +65,7 @@
 - (id)assetHandleForCKAssetURLString:(id)arg1 lifetimeHint:(long long)arg2;
 - (id)_assetHandleForCKAssetURLComponents:(id)arg1 lifetimeHint:(long long)arg2;
 - (id)assetHandleForURL:(id)arg1 lifetimeHint:(long long)arg2;
-- (id)initWithName:(id)arg1 directory:(id)arg2 keyManager:(id)arg3 networkBehaviorMonitor:(id)arg4;
+- (id)initWithName:(id)arg1 directory:(id)arg2 keyManager:(id)arg3 avAssetFactory:(id)arg4 networkBehaviorMonitor:(id)arg5;
 - (id)init;
 - (id)assetHandleForRecordID:(id)arg1 field:(long long)arg2 lifetimeHint:(long long)arg3 contentDatabase:(id)arg4;
 - (void)t_save;

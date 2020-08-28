@@ -10,6 +10,7 @@ __attribute__((visibility("hidden")))
 @interface _TtC7NewsUI223FollowingViewController : TUViewController
 {
     // Error parsing type: , name: searchProvider
+    // Error parsing type: , name: lazySearchViewController
     // Error parsing type: , name: styler
     // Error parsing type: , name: eventHandler
     // Error parsing type: , name: blueprintViewController
@@ -18,6 +19,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: bundleSubscriptionManager
     // Error parsing type: , name: alertPresenter
     // Error parsing type: , name: previousSelectedIndexPath
+    // Error parsing type: , name: featureAvailability
 }
 
 - (void).cxx_destruct;

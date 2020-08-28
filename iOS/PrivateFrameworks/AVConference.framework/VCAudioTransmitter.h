@@ -90,6 +90,7 @@ __attribute__((visibility("hidden")))
     _Bool _ignoreSilence;
     unsigned int _tierNetworkBitrate;
     _Bool _sendActiveVoiceOnly;
+    unsigned int _qualityIndex;
     double _lastReportingCallbackTime;
     CDStruct_3ab08b48 _currentChannelMetrics;
     CDStruct_94aa5fb4 _idsChannelDataFormat;

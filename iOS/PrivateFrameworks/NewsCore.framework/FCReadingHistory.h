@@ -38,7 +38,17 @@
 - (void)_removeHistoryItemWithItemID:(id)arg1 articleID:(id)arg2;
 - (void)_addHistoryItems:(id)arg1 addToStore:(_Bool)arg2;
 - (void)_modifyHistoryForArticleID:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (id)_loadReadingHistoryItemForArticleID:(id)arg1;
 - (id)_readingHistoryItemForArticleID:(id)arg1;
+- (void)markArticle:(id)arg1 withReadingPositionJSON:(id)arg2;
+- (id)readingPositionSavedDateFor:(id)arg1;
+- (id)readingPositionJSONFor:(id)arg1;
+- (void)markArticle:(id)arg1 withLastListened:(id)arg2;
+- (id)lastListenedFor:(id)arg1;
+- (void)markArticle:(id)arg1 withListeningProgress:(double)arg2;
+- (id)firstSeenDateFor:(id)arg1;
+- (id)listeningProgressSavedDateFor:(id)arg1;
+- (double)listeningProgressFor:(id)arg1;
 - (void)clearHistory;
 - (void)removeArticleFromHistory:(id)arg1;
 - (void)markArticleAsReadWithHeadline:(id)arg1;
@@ -56,6 +66,8 @@
 - (unsigned long long)likingStatusForArticleID:(id)arg1;
 - (_Bool)_markArticleAsSeenWithArticleID:(id)arg1 articleVersion:(long long)arg2 historyItem:(id)arg3 modifiedHistoryFeaturesOut:(unsigned long long *)arg4;
 - (_Bool)_markArticleAsSeenWithHeadline:(id)arg1 historyItem:(id)arg2 modifiedHistoryFeaturesOut:(unsigned long long *)arg3;
+- (_Bool)markArticle:(id)arg1 withCompletedListening:(_Bool)arg2;
+- (_Bool)hasArticleCompletedListening:(id)arg1;
 - (id)markArticlesAsSeenWithHeadlines:(id)arg1;
 - (_Bool)markArticleAsSeenWithHeadline:(id)arg1;
 - (_Bool)hasArticleBeenSeen:(id)arg1;
@@ -69,7 +81,9 @@
 @property(readonly, nonatomic) NSSet *allSeenArticleIDs;
 @property(readonly, nonatomic) NSSet *allReadArticleIDs;
 - (id)_sortedReadingHistoryItemsWithMaxCount:(unsigned long long)arg1;
+- (id)_sortedReadingHistoryItemsWithMaxCount:(unsigned long long)arg1 sortDescriptor:(id)arg2 test:(CDUnknownBlockType)arg3;
 - (id)allSortedArticleIDsInReadingHistory;
+- (id)mostRecentlyCompletedListeningArticlesWithMaxCount:(unsigned long long)arg1;
 - (id)mostRecentlyReadArticlesWithMaxCount:(unsigned long long)arg1;
 - (id)historyItemsForArticleIDs:(id)arg1;
 - (unsigned long long)softMaxRecordCountWhenMigratingZoneName:(id)arg1;

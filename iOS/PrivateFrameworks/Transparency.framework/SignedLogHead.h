@@ -15,7 +15,8 @@
 }
 
 + (id)descriptor;
-- (_Bool)verifyWithError:(id *)arg1;
+- (unsigned long long)verifyWithError:(id *)arg1;
+- (void)storeSignatureResult:(unsigned long long)arg1 signatureError:(id *)arg2;
 - (id)createManagedObjectWithError:(id *)arg1;
 - (id)copyManagedObject:(id *)arg1;
 @property(readonly) LogHead *parsedLogHead;

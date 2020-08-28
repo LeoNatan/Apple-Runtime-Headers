@@ -12,6 +12,7 @@
 - (id)auxinfo;
 - (id)_softwareUpdateChoice;
 - (id)_majorOSInfoChoice;
+- (id)_majorOSInfoInterfaceType;
 - (id)_softwareUpdateInterfaceType;
 - (void)_mungeInvisibleChoicesOutline;
 @end

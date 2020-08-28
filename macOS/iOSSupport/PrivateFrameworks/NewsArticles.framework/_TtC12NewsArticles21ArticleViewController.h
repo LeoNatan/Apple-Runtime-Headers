@@ -26,6 +26,7 @@
     // Error parsing type: , name: footerProvider
     // Error parsing type: , name: footers
     // Error parsing type: , name: headerProvider
+    // Error parsing type: , name: headers
     // Error parsing type: , name: urlHandler
     // Error parsing type: , name: paywallPreparationEventManager
     // Error parsing type: , name: deferredHardPaywallIsVisible

@@ -8,7 +8,7 @@
 
 #import <NewsCore/FCFeedTransformationItem-Protocol.h>
 
-@class CKRecord, COMAPPLEFELDSPARPROTOCOLLIVERPOOLArticleScores, COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList, NSArray, NSDate, NSString;
+@class CKRecord, COMAPPLEFELDSPARPROTOCOLLIVERPOOLArticleScores, COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList, COMAPPLEFELDSPARPROTOCOLVersionedPersonalizationVector, NSArray, NSDate, NSString;
 @protocol FCChannelProviding;
 
 @interface FCSparseFeaturedArticle : NSObject <FCFeedTransformationItem>
@@ -36,11 +36,14 @@
 @property(readonly, copy, nonatomic) NSString *clusterID;
 @property(readonly, copy, nonatomic) NSString *articleID;
 @property(readonly, copy, nonatomic) NSString *feedID;
+@property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLVersionedPersonalizationVector *personalizationVectorAlt;
+@property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLVersionedPersonalizationVector *personalizationVector;
 @property(readonly, nonatomic) long long bodyTextLength;
 - (void)enumerateTopicCohortsWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *publisherCohorts;
 @property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *globalCohorts;
 @property(readonly, nonatomic, getter=isHiddenFromAutoFavorites) BOOL hiddenFromAutoFavorites;
+@property(readonly, nonatomic) BOOL hasAudioTrack;
 @property(readonly, nonatomic) BOOL hasVideo;
 @property(readonly, nonatomic, getter=isBundlePaid) BOOL bundlePaid;
 @property(readonly, nonatomic, getter=isPaid) BOOL paid;

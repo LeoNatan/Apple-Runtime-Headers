@@ -8,12 +8,15 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class NSData, NSString, NTPBAppConfigurationResource, NTPBAsset, NTPBCacheCoordinatorHints, NTPBDate, NTPBIssueReadingHistoryItem, NTPBNetworkSessionList, NTPBPersonalizationLocalData, NTPBPrivateDataControllerSyncState, NTPBReadingHistoryItem;
+@class NSData, NSString, NTPBAVAsset, NTPBAVAssetKey, NTPBAppConfigurationResource, NTPBAsset, NTPBAudioPlaylistItem, NTPBCacheCoordinatorHints, NTPBDate, NTPBIssueReadingHistoryItem, NTPBNetworkSessionList, NTPBPersonalizationLocalData, NTPBPrivateDataControllerSyncState, NTPBReadingHistoryItem;
 
 @interface NTPBKeyValuePair : PBCodable <NSCopying>
 {
     NTPBAppConfigurationResource *_appConfigurationResource;
     NTPBAsset *_asset;
+    NTPBAudioPlaylistItem *_audioPlaylistItem;
+    NTPBAVAsset *_avAsset;
+    NTPBAVAssetKey *_avAssetKey;
     NTPBCacheCoordinatorHints *_cacheCoordinatorHintsValue;
     NSData *_dataValue;
     NTPBDate *_dateValue;
@@ -31,6 +34,9 @@
     } _has;
 }
 
+@property(retain, nonatomic) NTPBAVAssetKey *avAssetKey; // @synthesize avAssetKey=_avAssetKey;
+@property(retain, nonatomic) NTPBAVAsset *avAsset; // @synthesize avAsset=_avAsset;
+@property(retain, nonatomic) NTPBAudioPlaylistItem *audioPlaylistItem; // @synthesize audioPlaylistItem=_audioPlaylistItem;
 @property(retain, nonatomic) NTPBAsset *asset; // @synthesize asset=_asset;
 @property(retain, nonatomic) NTPBIssueReadingHistoryItem *issueReadingHistoryItem; // @synthesize issueReadingHistoryItem=_issueReadingHistoryItem;
 @property(retain, nonatomic) NTPBPrivateDataControllerSyncState *privateDataControllerSyncState; // @synthesize privateDataControllerSyncState=_privateDataControllerSyncState;
@@ -52,6 +58,9 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasAvAssetKey;
+@property(readonly, nonatomic) BOOL hasAvAsset;
+@property(readonly, nonatomic) BOOL hasAudioPlaylistItem;
 @property(readonly, nonatomic) BOOL hasAsset;
 @property(readonly, nonatomic) BOOL hasIssueReadingHistoryItem;
 @property(readonly, nonatomic) BOOL hasPrivateDataControllerSyncState;

@@ -27,6 +27,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithLastViolationTimeInterval:(id)arg1 lastViolationResetTimeInterval:(id)arg2;
+@property(readonly, getter=hasCurrentViolation) _Bool currentViolation;
 - (id)initWithLastViolationDate:(id)arg1 lastViolationResetDate:(id)arg2;
 
 @end

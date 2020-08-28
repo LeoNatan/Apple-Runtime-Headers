@@ -6,30 +6,46 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <NewsUI/NUBarCompressible-Protocol.h>
 #import <NewsUI/NULoadable-Protocol.h>
+#import <NewsUI/UIScrollViewDelegate-Protocol.h>
+#import <NewsUI/WKNavigationDelegate-Protocol.h>
 
-@class FCArticle, NSString, NUArticleExcerptTraits, NUArticleExcerptView;
-@protocol NULoadingDelegate;
+@class NSString, NUArticleExcerptTraits, NUArticleExcerptView, UIScrollView;
+@protocol FCContentContext, FCHeadlineProviding, NULoadingDelegate;
 
-@interface NUArticleExcerptViewController : UIViewController <NULoadable>
+@interface NUArticleExcerptViewController : UIViewController <UIScrollViewDelegate, WKNavigationDelegate, NULoadable, NUBarCompressible>
 {
     id <NULoadingDelegate> _loadingDelegate;
-    FCArticle *_article;
+    id <FCHeadlineProviding> _headline;
+    id <FCContentContext> _contentContext;
     NUArticleExcerptTraits *_traits;
     NUArticleExcerptView *_excerptView;
+    double _currentScrollStartPosition;
 }
 
 - (void).cxx_destruct;
+@property(nonatomic) double currentScrollStartPosition; // @synthesize currentScrollStartPosition=_currentScrollStartPosition;
 @property(readonly, nonatomic) NUArticleExcerptView *excerptView; // @synthesize excerptView=_excerptView;
 @property(retain, nonatomic) NUArticleExcerptTraits *traits; // @synthesize traits=_traits;
-@property(readonly, nonatomic) FCArticle *article; // @synthesize article=_article;
+@property(readonly, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
+@property(readonly, nonatomic) id <FCHeadlineProviding> headline; // @synthesize headline=_headline;
 @property(nonatomic) __weak id <NULoadingDelegate> loadingDelegate; // @synthesize loadingDelegate=_loadingDelegate;
-- (void)loadExcerptFromArticle:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)loadHeadlineImageFromArticle:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)presentSafariViewControllerWithURL:(id)arg1;
+- (void)handleReadMoreTapped;
+- (void)loadExcerptFromHeadline:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)loadHeadlineImageFromHeadline:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)_handleNavigationToURL:(id)arg1 fromURL:(id)arg2;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
+- (void)scrollViewWillBeginDragging:(id)arg1;
+@property(readonly, nonatomic) UIScrollView *scrollView;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithArticle:(id)arg1 traits:(id)arg2;
+- (id)initWithHeadline:(id)arg1 contentContext:(id)arg2 traits:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

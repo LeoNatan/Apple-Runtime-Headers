@@ -7,7 +7,7 @@
 #import <NewsCore/FCFeedElement-Protocol.h>
 #import <NewsCore/NSObject-Protocol.h>
 
-@class FCColor, FCColorGradient, FCFeedEdition, NSArray, NSDate, NSString, NTPBDiscoverMoreVideosInfo;
+@class FCColor, FCFeedEdition, NSArray, NSDate, NSString;
 @protocol FCCardStyleProviding, FCForYouBridgedFeedGroup;
 
 @protocol FCFeedGroupOutlining <NSObject, FCFeedElement>
@@ -20,12 +20,8 @@
 @property(readonly, nonatomic) unsigned long long options;
 @property(readonly, copy, nonatomic) FCFeedEdition *edition;
 @property(readonly, nonatomic) NSDate *creationDate;
-@property(readonly, copy, nonatomic) NSArray *videoPlaylistHeadlines;
-@property(readonly, copy, nonatomic) NTPBDiscoverMoreVideosInfo *discoverMoreVideosInfo;
 @property(readonly, copy, nonatomic) id <FCCardStyleProviding> darkCardStyle;
 @property(readonly, copy, nonatomic) id <FCCardStyleProviding> cardStyle;
-@property(readonly, copy, nonatomic) FCColorGradient *darkStyleBackgroundGradient;
-@property(readonly, copy, nonatomic) FCColorGradient *backgroundGradient;
 @property(readonly, copy, nonatomic) FCColor *darkStyleTitleColor;
 @property(readonly, copy, nonatomic) FCColor *titleColor;
 @property(readonly, copy, nonatomic) NSString *ctaText;

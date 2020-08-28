@@ -7,6 +7,7 @@
 #import <Foundation/NSFileManager.h>
 
 @interface NSFileManager (FCAdditions)
+- (unsigned long long)fc_sizeOfItemAtURL:(id)arg1 error:(id *)arg2;
 - (void)fc_quicklyClearDirectory:(id)arg1 callbackQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)fc_removeContentsOfDirectoryAtURL:(id)arg1;
 @end

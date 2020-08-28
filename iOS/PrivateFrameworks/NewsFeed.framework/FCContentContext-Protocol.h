@@ -8,7 +8,7 @@
 #import <NewsFeed/NSObject-Protocol.h>
 
 @class FCArticleController, FCAssetManager, FCFlintResourceManager, FCJSONRecordSourceSchema, FCNetworkBehaviorMonitor, FCTagController, NSArray, NSString, NSURL;
-@protocol FCBackgroundTaskable, FCCoreConfigurationManager, FCCoreConfigurationManager><FCNewsAppConfigurationManager, FCJSONRecordSourceType, FCJSONRecordTreeSourceType, FCMagazinesConfigurationManager, FCNewsAppConfigurationManager, FCPPTContext, FCWebArchiveSource;
+@protocol FCAVAssetPrewarming, FCBackgroundTaskable, FCCoreConfigurationManager, FCCoreConfigurationManager><FCNewsAppConfigurationManager, FCJSONRecordSourceType, FCJSONRecordTreeSourceType, FCMagazinesConfigurationManager, FCNewsAppConfigurationManager, FCPPTContext, FCWebArchiveSource;
 
 @protocol FCContentContext <NSObject, FCCacheFlushing>
 - (id <FCJSONRecordTreeSourceType>)recordTreeSourceWithRecordSources:(NSArray *)arg1;
@@ -26,6 +26,7 @@
 @property(nonatomic, readonly) FCFlintResourceManager *flintResourceManager;
 @property(nonatomic, readonly) FCTagController *tagController;
 @property(nonatomic, readonly) FCArticleController *articleController;
+@property(nonatomic, readonly) id <FCAVAssetPrewarming> avAssetPrewarmer;
 @property(nonatomic, readonly) FCAssetManager *assetManager;
 - (id <FCMagazinesConfigurationManager>)magazinesConfigurationManager;
 - (id <FCCoreConfigurationManager><FCNewsAppConfigurationManager>)news_core_ConfigurationManager;

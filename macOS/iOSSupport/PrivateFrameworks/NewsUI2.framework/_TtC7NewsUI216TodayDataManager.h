@@ -4,15 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <swiftCore/_TtCs12_SwiftObject.h>
+#import <objc/NSObject.h>
 
-@interface _TtC7NewsUI216TodayDataManager : _TtCs12_SwiftObject
+__attribute__((visibility("hidden")))
+@interface _TtC7NewsUI216TodayDataManager : NSObject
 {
+    // Error parsing type: , name: delegate
     // Error parsing type: , name: feedService
     // Error parsing type: , name: feedServiceConfigFetcher
     // Error parsing type: , name: paidBundleConfiguration
     // Error parsing type: , name: accessQueue
+    // Error parsing type: , name: pluginManager
+    // Error parsing type: , name: pluginFactory
+    // Error parsing type: , name: readingHistory
+    // Error parsing type: , name: readingList
 }
+
+- (void).cxx_destruct;
+- (id)init;
 
 @end
 

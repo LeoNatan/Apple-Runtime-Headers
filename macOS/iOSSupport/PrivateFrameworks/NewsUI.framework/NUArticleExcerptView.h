@@ -20,7 +20,6 @@
     WKWebView *_excerptWebView;
     NUArticleExcerptReadMoreButton *_readMoreButton;
     id <UIScrollViewDelegate> _delegate;
-    UIScrollView *_imageScrollView;
     UIScrollView *_contentScrollView;
     UIView *_hairlineSeparatorView;
     UIView *_contentView;
@@ -33,7 +32,6 @@
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(readonly, nonatomic) UIView *hairlineSeparatorView; // @synthesize hairlineSeparatorView=_hairlineSeparatorView;
 @property(readonly, nonatomic) UIScrollView *contentScrollView; // @synthesize contentScrollView=_contentScrollView;
-@property(readonly, nonatomic) UIScrollView *imageScrollView; // @synthesize imageScrollView=_imageScrollView;
 @property(nonatomic) __weak id <UIScrollViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NUArticleExcerptReadMoreButton *readMoreButton; // @synthesize readMoreButton=_readMoreButton;
 @property(readonly, nonatomic) WKWebView *excerptWebView; // @synthesize excerptWebView=_excerptWebView;
@@ -43,6 +41,7 @@
 @property(copy, nonatomic) NUArticleExcerptTraits *traits; // @synthesize traits=_traits;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)updateImageAspectRatio;
 - (void)layoutSubviews;
 - (void)dealloc;
 - (id)initWithTraits:(id)arg1;

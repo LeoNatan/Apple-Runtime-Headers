@@ -50,7 +50,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *engineQueue; // @dynamic engineQueue;
 
 // Remaining properties
-@property(retain, nonatomic) NSArray *whitelistedDataSourceClassNames; // @dynamic whitelistedDataSourceClassNames;
+@property(copy, nonatomic) NSArray *whitelistedDataSourceClassNames; // @dynamic whitelistedDataSourceClassNames;
 
 @end
 

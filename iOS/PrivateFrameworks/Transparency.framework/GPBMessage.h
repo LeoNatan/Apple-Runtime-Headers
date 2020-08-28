@@ -55,7 +55,7 @@ __attribute__((visibility("hidden")))
 - (void)setExtension:(id)arg1 index:(unsigned long long)arg2 value:(id)arg3;
 - (void)addExtension:(id)arg1 value:(id)arg2;
 - (void)setExtension:(id)arg1 value:(id)arg2;
-- (void)writeExtensionsToCodedOutputStream:(id)arg1 range:(struct GPBExtensionRange)arg2;
+- (void)writeExtensionsToCodedOutputStream:(id)arg1 range:(struct GPBExtensionRange)arg2 sortedExtensions:(id)arg3;
 - (id)extensionsCurrentlySet;
 - (_Bool)hasExtension:(id)arg1;
 - (id)getExistingExtension:(id)arg1;

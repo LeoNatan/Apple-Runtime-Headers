@@ -10,7 +10,7 @@
 {
     // Error parsing type: , name: browseButtonViewRenderer
     // Error parsing type: , name: settingsButtonViewRenderer
-    // Error parsing type: , name: followingRowViewRenderer
+    // Error parsing type: , name: tagViewRenderer
     // Error parsing type: , name: delegate
 }
 

@@ -7,11 +7,8 @@
 #import <NewsFeed/_TtC8NewsFeed31DebugFormatEditorViewController.h>
 
 @interface _TtC8NewsFeed31DebugFormatEditorViewController (NewsFeed)
+- (void)resetZoom;
 - (void)doOptionsWithSender:(id)arg1;
-- (void)doToggleShowCellContentsWithSender:(id)arg1;
-- (void)doToggleShowColumnsWithSender:(id)arg1;
-- (void)doToggleWildcardSlotFallbackWithSender:(id)arg1;
-- (void)doToggleMissingPropertiesWithSender:(id)arg1;
 - (void)doDevicesWithSender:(id)arg1;
 - (void)doLightDarkModeWithSender:(id)arg1;
 - (void)doDismiss;

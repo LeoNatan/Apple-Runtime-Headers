@@ -6,7 +6,7 @@
 
 #import <NewsCore/FCOperation.h>
 
-@class FCEditorialOperation, FCForYouConfig, FCMyArticlesOperation, FCSpotlightOperationResult, FCTopStoriesOperation, FCTopStoriesOperationResult, FCVideoArticlesOperationResult, NFUnfairLock, NSArray, NSDictionary, NSError, NSHashTable, NSMapTable, NSOperationQueue;
+@class FCEditorialOperation, FCForYouConfig, FCForYouConfigHeadlinesOperation, FCMyArticlesOperation, FCSpotlightOperationResult, FCTopStoriesOperation, FCTopStoriesOperationResult, NFUnfairLock, NSArray, NSDictionary, NSError, NSHashTable, NSMapTable, NSOperationQueue;
 @protocol FCChannelProviding;
 
 @interface FCForYouCatchUpOperation : FCOperation
@@ -15,6 +15,7 @@
     FCMyArticlesOperation *_myArticlesOperation;
     FCTopStoriesOperation *_topStoriesOperation;
     FCEditorialOperation *_editorialOperation;
+    FCForYouConfigHeadlinesOperation *_forYouConfigOperation;
     NSOperationQueue *_operationQueue;
     NSHashTable *_conditionWaiters;
     NFUnfairLock *_conditionWaitersLock;
@@ -25,6 +26,7 @@
 @property(retain, nonatomic) NFUnfairLock *conditionWaitersLock; // @synthesize conditionWaitersLock=_conditionWaitersLock;
 @property(retain, nonatomic) NSHashTable *conditionWaiters; // @synthesize conditionWaiters=_conditionWaiters;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
+@property(retain, nonatomic) FCForYouConfigHeadlinesOperation *forYouConfigOperation; // @synthesize forYouConfigOperation=_forYouConfigOperation;
 @property(retain, nonatomic) FCEditorialOperation *editorialOperation; // @synthesize editorialOperation=_editorialOperation;
 @property(retain, nonatomic) FCTopStoriesOperation *topStoriesOperation; // @synthesize topStoriesOperation=_topStoriesOperation;
 @property(retain, nonatomic) FCMyArticlesOperation *myArticlesOperation; // @synthesize myArticlesOperation=_myArticlesOperation;
@@ -35,8 +37,6 @@
 - (id)catchUpErrorForContentTypes:(long long)arg1;
 @property(readonly, copy, nonatomic) NSError *catchUpError;
 @property(readonly, copy, nonatomic) FCSpotlightOperationResult *spotlightResult;
-@property(readonly, copy, nonatomic) FCVideoArticlesOperationResult *moreVideosResult;
-@property(readonly, copy, nonatomic) FCVideoArticlesOperationResult *topVideosResult;
 - (void)enumerateEditorialSectionsByRecencyAfterTransformation:(id)arg1 minFamilySize:(unsigned long long)arg2 block:(CDUnknownBlockType)arg3;
 - (id)orphanedEditorialHeadlinesAfterTransformation:(id)arg1 minFamilySize:(unsigned long long)arg2;
 @property(readonly, copy, nonatomic) NSMapTable *nonEditorialScoreProfiles;

@@ -9,6 +9,7 @@
 @class UIColor;
 
 @protocol NTKVictoryAnalogBackgroundColorPalette <NSObject>
+@property(readonly, nonatomic) unsigned long long faceColor;
 @property(readonly, nonatomic) _Bool hasWhiteElements;
 @property(readonly, nonatomic) UIColor *analogDotColor;
 @property(readonly, nonatomic) UIColor *logoColor;

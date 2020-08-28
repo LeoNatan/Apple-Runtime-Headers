@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     VCMoments *_moments;
 }
 
+- (void)cleanupActiveRequests;
 - (void)stream:(id)arg1 addAudioSampleBuffer:(struct opaqueVCAudioBufferList *)arg2 timestamp:(unsigned int)arg3;
 - (void)stream:(id)arg1 addVideoSampleBuffer:(struct opaqueCMSampleBuffer *)arg2 cameraStatusBits:(unsigned char)arg3 timestamp:(unsigned int)arg4;
 - (void)dealloc;

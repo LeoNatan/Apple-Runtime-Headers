@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     struct ConnectionStatsHistory _peerStatsHistory;
     id _delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
+    _Bool _firstPacketReceived;
 }
 
 - (_Bool)isPrimaryConnectionImprovedFromHistory:(struct ConnectionStatsHistory *)arg1 withIndex:(int)arg2;

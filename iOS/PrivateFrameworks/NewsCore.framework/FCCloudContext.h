@@ -14,8 +14,8 @@
 #import <NewsCore/FCPrivateDataContext-Protocol.h>
 #import <NewsCore/FCTestingContext-Protocol.h>
 
-@class FCAccessChecker, FCArticleController, FCAssetManager, FCClientEndpointConnection, FCCommandQueue, FCFeedManager, FCFlintResourceManager, FCIssueReadingHistory, FCLocalAreasManager, FCNetworkBehaviorMonitor, FCNotificationController, FCNotificationsEndpointConnection, FCPersonalizationData, FCPrivateChannelMembershipController, FCPurchaseController, FCReadingHistory, FCReadingList, FCSubscriptionController, FCSubscriptionList, FCTagController, FCTagSettings, FCTranslationManager, FCUserInfo, NSString, NSURL;
-@protocol FCAppActivityMonitor, FCBackgroundTaskable, FCBundleSubscriptionManagerType, FCContentContext, FCContentContextInternal, FCCoreConfigurationManager, FCCurrentIssuesChecker, FCFeedPersonalizing, FCFlintHelper, FCForYouBridgedConfigurationParser, FCForYouMagazineFeedManaging, FCForYouPluginGroupManaging, FCLocalRegionManager, FCNewsAppConfigurationManager, FCPPTContext, FCPaidAccessCheckerType, FCPrivateDataContext, FCPrivateDataContextInternal, FCPurchaseManagerType, FCPurchaseProviderType, FCPushNotificationHandling, FCWebArchiveSource;
+@class FCAccessChecker, FCArticleController, FCAssetManager, FCAudioPlaylist, FCClientEndpointConnection, FCCommandQueue, FCFeedManager, FCFlintResourceManager, FCIssueReadingHistory, FCLocalAreasManager, FCNetworkBehaviorMonitor, FCNewsletterEndpointConnection, FCNotificationController, FCNotificationsEndpointConnection, FCPersonalizationData, FCPersonalizationWhitelist, FCPrivateChannelMembershipController, FCPurchaseController, FCReadingHistory, FCReadingList, FCSubscriptionController, FCSubscriptionList, FCTagController, FCTagSettings, FCTranslationManager, FCUserInfo, FCUserVectorManager, NSString, NSURL;
+@protocol FCAVAssetPrewarming, FCAppActivityMonitor, FCBackgroundTaskable, FCBundleSubscriptionManagerType, FCContentContext, FCContentContextInternal, FCCoreConfigurationManager, FCCurrentIssuesChecker, FCFeedPersonalizing, FCForYouBridgedConfigurationParser, FCForYouMagazineFeedManaging, FCForYouPluginGroupManaging, FCLocalRegionManager, FCNewsAppConfigurationManager, FCNewsletterManager, FCOfflineArticleManagerType, FCPPTContext, FCPaidAccessCheckerType, FCPrivateDataContext, FCPrivateDataContextInternal, FCPurchaseManagerType, FCPurchaseProviderType, FCPushNotificationHandling, FCWebArchiveSource;
 
 @interface FCCloudContext : NSObject <FCTestingContext, FCCKDatabaseEncryptionDelegate, FCAssetKeyManagerDelegate, FCBundleSubscriptionChangeObserver, FCContentContext, FCPrivateDataContext, FCCacheFlushing>
 {
@@ -26,26 +26,32 @@
     id <FCAppActivityMonitor> _appActivityMonitor;
     FCClientEndpointConnection *_endpointConnection;
     FCCommandQueue *_endpointCommandQueue;
+    id <FCNewsletterManager> _newsletterManager;
+    FCNewsletterEndpointConnection *_newsletterEndpointConnection;
+    FCCommandQueue *_newsletterEndpointCommandQueue;
     FCNotificationsEndpointConnection *_notificationsEndpointConnection;
     FCCommandQueue *_notificationsEndpointCommandQueue;
     FCNotificationController *_notificationController;
+    id <FCOfflineArticleManagerType> _offlineArticleManager;
     FCPurchaseController *_purchaseController;
     id <FCPurchaseProviderType> _purchaseProvider;
     id <FCPurchaseManagerType> _purchaseManager;
     id <FCBundleSubscriptionManagerType> _bundleSubscriptionManager;
+    FCPersonalizationWhitelist *_personalizationWhitelist;
     FCTranslationManager *_translationManager;
     FCLocalAreasManager *_localAreasManager;
+    FCUserVectorManager *_userVectorManager;
     id <FCCurrentIssuesChecker> _currentIssuesChecker;
     id <FCPaidAccessCheckerType> _paidAccessChecker;
     FCAccessChecker *_issueAccessChecker;
     FCAccessChecker *_articleAccessChecker;
     id <FCLocalRegionManager> _localRegionProvider;
-    id <FCFlintHelper> _flintHelper;
     id <FCBackgroundTaskable> _backgroundTaskable;
     id <FCForYouMagazineFeedManaging> _forYouMagazineFeedManager;
     CDUnknownBlockType _forYouPluginGroupManagingProvider;
     id <FCForYouPluginGroupManaging> _forYouPluginGroupManager;
     id <FCForYouBridgedConfigurationParser> _forYouBridgedConfigurationParser;
+    CDUnknownBlockType _offlineArticleManagerProvider;
     id <FCPPTContext> _pptContext;
     id <FCContentContext> _contentContext;
     id <FCPrivateDataContext> _privateDataContext;
@@ -61,24 +67,29 @@
 @property(retain, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
 @property(readonly, nonatomic) id <FCPPTContext> pptContext; // @synthesize pptContext=_pptContext;
 @property(readonly, nonatomic) _Bool deviceIsiPad; // @synthesize deviceIsiPad=_deviceIsiPad;
+@property(copy, nonatomic) CDUnknownBlockType offlineArticleManagerProvider; // @synthesize offlineArticleManagerProvider=_offlineArticleManagerProvider;
 @property(retain, nonatomic) id <FCForYouBridgedConfigurationParser> forYouBridgedConfigurationParser; // @synthesize forYouBridgedConfigurationParser=_forYouBridgedConfigurationParser;
 @property(nonatomic) __weak id <FCForYouPluginGroupManaging> forYouPluginGroupManager; // @synthesize forYouPluginGroupManager=_forYouPluginGroupManager;
 @property(copy, nonatomic) CDUnknownBlockType forYouPluginGroupManagingProvider; // @synthesize forYouPluginGroupManagingProvider=_forYouPluginGroupManagingProvider;
 @property(nonatomic) __weak id <FCForYouMagazineFeedManaging> forYouMagazineFeedManager; // @synthesize forYouMagazineFeedManager=_forYouMagazineFeedManager;
 @property(nonatomic) __weak id <FCBackgroundTaskable> backgroundTaskable; // @synthesize backgroundTaskable=_backgroundTaskable;
-@property(nonatomic) __weak id <FCFlintHelper> flintHelper; // @synthesize flintHelper=_flintHelper;
 @property(retain, nonatomic) id <FCLocalRegionManager> localRegionProvider; // @synthesize localRegionProvider=_localRegionProvider;
 @property(retain, nonatomic) FCAccessChecker *articleAccessChecker; // @synthesize articleAccessChecker=_articleAccessChecker;
 @property(retain, nonatomic) FCAccessChecker *issueAccessChecker; // @synthesize issueAccessChecker=_issueAccessChecker;
 @property(retain, nonatomic) id <FCPaidAccessCheckerType> paidAccessChecker; // @synthesize paidAccessChecker=_paidAccessChecker;
 @property(retain, nonatomic) id <FCCurrentIssuesChecker> currentIssuesChecker; // @synthesize currentIssuesChecker=_currentIssuesChecker;
+@property(retain, nonatomic) FCUserVectorManager *userVectorManager; // @synthesize userVectorManager=_userVectorManager;
 @property(retain, nonatomic) FCLocalAreasManager *localAreasManager; // @synthesize localAreasManager=_localAreasManager;
 @property(retain, nonatomic) FCTranslationManager *translationManager; // @synthesize translationManager=_translationManager;
+@property(retain, nonatomic) FCPersonalizationWhitelist *personalizationWhitelist; // @synthesize personalizationWhitelist=_personalizationWhitelist;
 @property(readonly, nonatomic) id <FCBundleSubscriptionManagerType> bundleSubscriptionManager; // @synthesize bundleSubscriptionManager=_bundleSubscriptionManager;
 @property(readonly, nonatomic) id <FCPurchaseManagerType> purchaseManager; // @synthesize purchaseManager=_purchaseManager;
 @property(readonly, nonatomic) id <FCPurchaseProviderType> purchaseProvider; // @synthesize purchaseProvider=_purchaseProvider;
 @property(readonly, nonatomic) FCPurchaseController *purchaseController; // @synthesize purchaseController=_purchaseController;
 @property(readonly, nonatomic) FCNotificationController *notificationController; // @synthesize notificationController=_notificationController;
+@property(readonly, nonatomic) FCCommandQueue *newsletterEndpointCommandQueue; // @synthesize newsletterEndpointCommandQueue=_newsletterEndpointCommandQueue;
+@property(readonly, nonatomic) FCNewsletterEndpointConnection *newsletterEndpointConnection; // @synthesize newsletterEndpointConnection=_newsletterEndpointConnection;
+@property(readonly, nonatomic) id <FCNewsletterManager> newsletterManager; // @synthesize newsletterManager=_newsletterManager;
 @property(retain, nonatomic) id <FCAppActivityMonitor> appActivityMonitor; // @synthesize appActivityMonitor=_appActivityMonitor;
 - (void)_purchaseControllerDidAddALaCarteSubscription;
 - (void)bundleSubscriptionDidSubscribe:(id)arg1;
@@ -96,6 +107,7 @@
 @property(readonly, nonatomic) FCTagSettings *tagSettings;
 @property(readonly, nonatomic) FCUserInfo *userInfo;
 @property(readonly, nonatomic) FCSubscriptionList *subscriptionList;
+@property(readonly, nonatomic) FCAudioPlaylist *audioPlaylist;
 @property(readonly, nonatomic) FCReadingList *readingList;
 @property(readonly, nonatomic) FCReadingHistory *readingHistory;
 @property(readonly, nonatomic) FCPrivateChannelMembershipController *privateChannelMembershipController;
@@ -118,6 +130,7 @@
 @property(readonly, nonatomic) FCFlintResourceManager *flintResourceManager;
 @property(readonly, nonatomic) FCTagController *tagController;
 @property(readonly, nonatomic) FCArticleController *articleController;
+@property(readonly, nonatomic) id <FCAVAssetPrewarming> avAssetPrewarmer;
 @property(readonly, nonatomic) FCAssetManager *assetManager;
 - (void)enableFlushingWithFlushingThreshold:(unsigned long long)arg1;
 @property(readonly, copy, nonatomic) NSString *contentEnvironmentToken;
@@ -135,6 +148,7 @@
 @property(readonly, nonatomic) FCFeedManager *feedManager; // @synthesize feedManager=_feedManager;
 - (id)notificationsController;
 @property(readonly, nonatomic) FCSubscriptionController *subscriptionController; // @synthesize subscriptionController=_subscriptionController;
+@property(readonly, nonatomic) id <FCOfflineArticleManagerType> offlineArticleManager; // @synthesize offlineArticleManager=_offlineArticleManager;
 - (id)initWithContentContext:(id)arg1 privateDataContext:(id)arg2 networkBehaviorMonitor:(id)arg3 options:(long long)arg4;
 - (id)initForTestingWithDesiredHeadlineFieldOptions:(unsigned long long)arg1;
 - (id)initForTesting;

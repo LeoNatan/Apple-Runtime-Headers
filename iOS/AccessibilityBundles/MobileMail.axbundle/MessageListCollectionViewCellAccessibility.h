@@ -27,6 +27,7 @@
 - (id)_accessibilityLinkedUIElements;
 - (id)_accessibilityScrollStatus;
 - (id)_privateAccessibilityCustomActions;
+- (void)accessibilityElementDidBecomeFocused;
 - (_Bool)_accessibilityToggleThreadAction:(id)arg1;
 - (_Bool)_accessibilityArchiveAction:(id)arg1;
 - (_Bool)_accessibilityMoreAction:(id)arg1;

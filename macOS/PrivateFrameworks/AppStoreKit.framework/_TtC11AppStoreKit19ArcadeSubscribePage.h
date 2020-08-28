@@ -15,6 +15,8 @@
     // Error parsing type: , name: offerDisplayProperties
     // Error parsing type: , name: dismissButtonTitle
     // Error parsing type: , name: openAppAction
+    // Error parsing type: , name: dismissingPostSubscribeAction
+    // Error parsing type: , name: nonDismissingPostSubscribeAction
     // Error parsing type: , name: askToBuyMessage
     // Error parsing type: , name: askToBuyId
     // Error parsing type: , name: pageMetrics

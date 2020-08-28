@@ -82,8 +82,20 @@ struct unordered_map<NTPBKeyValuePair_ValueType, Class<FCKeyValueStoreCoding>, s
 
 typedef struct {
     long long _field1;
+    int _field2;
+    unsigned int _field3;
+    long long _field4;
+} CDStruct_198678f7;
+
+typedef struct {
+    long long _field1;
     long long _field2;
 } CDStruct_912cb5d2;
+
+typedef struct {
+    CDStruct_198678f7 _field1;
+    CDStruct_198678f7 _field2;
+} CDStruct_3c1748cc;
 
 // Ambiguous groups
 typedef struct {

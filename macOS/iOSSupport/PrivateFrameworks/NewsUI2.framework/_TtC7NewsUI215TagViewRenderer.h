@@ -10,7 +10,7 @@
 {
     // Error parsing type: , name: rendererEnvironment
     // Error parsing type: , name: styler
-    // Error parsing type: , name: imageCache
+    // Error parsing type: , name: imageApplier
     // Error parsing type: , name: likeButtonRenderer
     // Error parsing type: , name: dislikeButtonRenderer
     // Error parsing type: , name: notificationSwitchRenderer

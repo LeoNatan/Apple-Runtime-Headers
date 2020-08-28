@@ -176,6 +176,8 @@
 - (NSString *)spokenNameForLocale:(NSString *)arg1;
 
 @optional
+@property(readonly, nonatomic, getter=_iso3166SubdivisionCode) NSString *iso3166SubdivisionCode;
+@property(readonly, nonatomic, getter=_iso3166CountryCode) NSString *iso3166CountryCode;
 - (id <GEOMapItem>)_mapItemBySettingIsTransitDisplayFeature:(_Bool)arg1;
 @end
 

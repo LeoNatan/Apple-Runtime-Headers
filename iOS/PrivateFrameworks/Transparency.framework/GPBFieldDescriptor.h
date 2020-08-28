@@ -41,7 +41,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hasDefaultValue;
 @property(readonly, nonatomic) unsigned char dataType;
 - (void)dealloc;
-- (id)initWithFieldDescription:(void *)arg1 includesDefault:(_Bool)arg2 syntax:(unsigned char)arg3;
+- (id)initWithFieldDescription:(void *)arg1 includesDefault:(_Bool)arg2 usesClassRefs:(_Bool)arg3 proto3OptionalKnown:(_Bool)arg4 syntax:(unsigned char)arg5;
 - (id)init;
 
 @end

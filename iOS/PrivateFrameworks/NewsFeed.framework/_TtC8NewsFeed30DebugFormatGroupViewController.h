@@ -10,11 +10,11 @@ __attribute__((visibility("hidden")))
 @interface _TtC8NewsFeed30DebugFormatGroupViewController : UIViewController
 {
     // Error parsing type: , name: columnOptions
-    // Error parsing type: , name: compilerResult
-    // Error parsing type: , name: result
     // Error parsing type: , name: layout
+    // Error parsing type: , name: result
     // Error parsing type: , name: tableView
     // Error parsing type: , name: sections
+    // Error parsing type: , name: editor
 }
 
 - (void).cxx_destruct;

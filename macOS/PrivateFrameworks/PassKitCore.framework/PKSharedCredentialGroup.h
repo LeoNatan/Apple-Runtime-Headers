@@ -17,6 +17,7 @@
     NSSet *_sharedCredentials;
     NSSet *_receipts;
     NSString *_recipientHandle;
+    NSString *_recipientName;
     PKAppletSubcredentialEntitlement *_entitlement;
     long long _state;
 }
@@ -26,6 +27,7 @@
 @property(readonly, nonatomic, getter=isLocalGroup) BOOL localGroup; // @synthesize localGroup=_localGroup;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) PKAppletSubcredentialEntitlement *entitlement; // @synthesize entitlement=_entitlement;
+@property(readonly, nonatomic) NSString *recipientName; // @synthesize recipientName=_recipientName;
 @property(readonly, nonatomic) NSString *recipientHandle; // @synthesize recipientHandle=_recipientHandle;
 @property(readonly, nonatomic) NSSet *receipts; // @synthesize receipts=_receipts;
 @property(readonly, nonatomic) NSSet *sharedCredentials; // @synthesize sharedCredentials=_sharedCredentials;

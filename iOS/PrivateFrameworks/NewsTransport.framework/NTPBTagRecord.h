@@ -17,6 +17,7 @@
     long long _minimumNewsVersion;
     unsigned long long _nameImageBaselineShift;
     double _nameImageScaleFactor;
+    long long _propertyFlags;
     long long _score;
     NSMutableArray *_allowedStorefrontIDs;
     NSString *_archiveIssueListID;
@@ -26,7 +27,6 @@
     NSString *_channelDefaultSectionID;
     NSMutableArray *_channelSectionFeedConfigurations;
     NSMutableArray *_channelSectionIDs;
-    NSString *_coverArticleListID;
     NSString *_coverImageURL;
     NTPBFeedConfiguration *_feedConfiguration;
     NSString *_feedNavImageURL;
@@ -80,6 +80,7 @@
         unsigned int minimumNewsVersion:1;
         unsigned int nameImageBaselineShift:1;
         unsigned int nameImageScaleFactor:1;
+        unsigned int propertyFlags:1;
         unsigned int score:1;
         unsigned int groupingAvailability:1;
         unsigned int type:1;
@@ -105,6 +106,7 @@
 + (Class)allowedStorefrontIDsType;
 + (Class)blockedStorefrontIDsType;
 + (Class)iAdCategoriesType;
+@property(nonatomic) long long propertyFlags; // @synthesize propertyFlags=_propertyFlags;
 @property(retain, nonatomic) NSString *supergroupKnobsJson; // @synthesize supergroupKnobsJson=_supergroupKnobsJson;
 @property(retain, nonatomic) NSString *supergroupConfigJson; // @synthesize supergroupConfigJson=_supergroupConfigJson;
 @property(retain, nonatomic) NSString *stocksFeedConfigurationJson; // @synthesize stocksFeedConfigurationJson=_stocksFeedConfigurationJson;
@@ -141,7 +143,6 @@
 @property(nonatomic) _Bool isNotificationEnabled; // @synthesize isNotificationEnabled=_isNotificationEnabled;
 @property(nonatomic) _Bool isExplicitContent; // @synthesize isExplicitContent=_isExplicitContent;
 @property(nonatomic) long long minimumNewsVersion; // @synthesize minimumNewsVersion=_minimumNewsVersion;
-@property(retain, nonatomic) NSString *coverArticleListID; // @synthesize coverArticleListID=_coverArticleListID;
 @property(retain, nonatomic) NSMutableArray *channelSectionFeedConfigurations; // @synthesize channelSectionFeedConfigurations=_channelSectionFeedConfigurations;
 @property(retain, nonatomic) NSString *channelDefaultSectionID; // @synthesize channelDefaultSectionID=_channelDefaultSectionID;
 @property(retain, nonatomic) NSMutableArray *channelSectionIDs; // @synthesize channelSectionIDs=_channelSectionIDs;
@@ -173,6 +174,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasPropertyFlags;
 @property(readonly, nonatomic) _Bool hasSupergroupKnobsJson;
 @property(readonly, nonatomic) _Bool hasSupergroupConfigJson;
 @property(readonly, nonatomic) _Bool hasStocksFeedConfigurationJson;
@@ -229,7 +231,6 @@
 @property(nonatomic) _Bool hasIsNotificationEnabled;
 @property(nonatomic) _Bool hasIsExplicitContent;
 @property(nonatomic) _Bool hasMinimumNewsVersion;
-@property(readonly, nonatomic) _Bool hasCoverArticleListID;
 - (id)channelSectionFeedConfigurationsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)channelSectionFeedConfigurationsCount;
 - (void)addChannelSectionFeedConfigurations:(id)arg1;

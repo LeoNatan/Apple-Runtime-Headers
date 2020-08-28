@@ -8,8 +8,8 @@
 
 #import <NewsCore/FCContentContextInternal-Protocol.h>
 
-@class FCArticleListRecordSource, FCArticleRecordSource, FCCKContentDatabase, FCChannelMembershipController, FCFeedDatabase, FCForYouConfigRecordSource, FCIssueListRecordSource, FCIssueRecordSource, FCPurchaseLookupRecordSource, FCResourceRecordSource, FCTagListRecordSource, FCTagRecordSource, FCWidgetSectionConfigRecordSource, NSArray, NSString;
-@protocol FCAssetKeyManagerType;
+@class FCAVAssetDownloadManager, FCArticleListRecordSource, FCArticleRecordSource, FCAudioConfigRecordSource, FCCKContentDatabase, FCChannelMembershipController, FCFeedDatabase, FCForYouConfigRecordSource, FCIssueListRecordSource, FCIssueRecordSource, FCPurchaseLookupRecordSource, FCResourceRecordSource, FCTagListRecordSource, FCTagRecordSource, FCWidgetSectionConfigRecordSource, NSArray, NSString;
+@protocol FCAVAssetFactoryType, FCAssetKeyManagerType;
 
 @interface FCContentContextInternal : NSObject <FCContentContextInternal>
 {
@@ -24,15 +24,21 @@
     FCWidgetSectionConfigRecordSource *_widgetSectionConfigRecordSource;
     FCIssueRecordSource *_issueRecordSource;
     FCIssueListRecordSource *_issueListRecordSource;
+    FCAudioConfigRecordSource *_audioConfigRecordSource;
     FCFeedDatabase *_feedDatabase;
     FCCKContentDatabase *_contentDatabase;
     id <FCAssetKeyManagerType> _assetKeyManager;
+    id <FCAVAssetFactoryType> _avAssetFactory;
+    FCAVAssetDownloadManager *_avAssetDownloadManager;
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) FCAVAssetDownloadManager *avAssetDownloadManager; // @synthesize avAssetDownloadManager=_avAssetDownloadManager;
+@property(retain, nonatomic) id <FCAVAssetFactoryType> avAssetFactory; // @synthesize avAssetFactory=_avAssetFactory;
 @property(retain, nonatomic) id <FCAssetKeyManagerType> assetKeyManager; // @synthesize assetKeyManager=_assetKeyManager;
 @property(retain, nonatomic) FCCKContentDatabase *contentDatabase; // @synthesize contentDatabase=_contentDatabase;
 @property(retain) FCFeedDatabase *feedDatabase; // @synthesize feedDatabase=_feedDatabase;
+@property(retain, nonatomic) FCAudioConfigRecordSource *audioConfigRecordSource; // @synthesize audioConfigRecordSource=_audioConfigRecordSource;
 @property(retain, nonatomic) FCIssueListRecordSource *issueListRecordSource; // @synthesize issueListRecordSource=_issueListRecordSource;
 @property(retain, nonatomic) FCIssueRecordSource *issueRecordSource; // @synthesize issueRecordSource=_issueRecordSource;
 @property(retain, nonatomic) FCWidgetSectionConfigRecordSource *widgetSectionConfigRecordSource; // @synthesize widgetSectionConfigRecordSource=_widgetSectionConfigRecordSource;

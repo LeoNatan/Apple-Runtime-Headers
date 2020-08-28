@@ -9,15 +9,17 @@
 #import <Silex/SXComponentInteractionManager-Protocol.h>
 #import <Silex/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSString, SXComponentInteractionPreview, SXComponentView, SXDelayed, SXViewport, UILongPressGestureRecognizer, UITapGestureRecognizer;
+@class NSString, SXComponentInteractionPreview, SXComponentView, SXDelayed, SXViewport, UIHoverGestureRecognizer, UILongPressGestureRecognizer, UITapGestureRecognizer;
 @protocol SXComponentInteractionHandlerManager;
 
 @interface SXComponentInteractionManager : NSObject <UIGestureRecognizerDelegate, SXComponentInteractionManager>
 {
+    BOOL _wantsPointyHand;
     id <SXComponentInteractionHandlerManager> _interactionHandlerManager;
     SXViewport *_viewport;
     UITapGestureRecognizer *_tapGestureRecognizer;
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
+    UIHoverGestureRecognizer *_hoverGestureRecognizer;
     SXDelayed *_longPressDelay;
     SXComponentInteractionPreview *_currentPreview;
     SXComponentView *_currentComponentView;
@@ -29,6 +31,8 @@
 @property(retain, nonatomic) SXComponentInteractionPreview *currentPreview; // @synthesize currentPreview=_currentPreview;
 @property(nonatomic) struct CGPoint longPressStartLocation; // @synthesize longPressStartLocation=_longPressStartLocation;
 @property(retain, nonatomic) SXDelayed *longPressDelay; // @synthesize longPressDelay=_longPressDelay;
+@property(nonatomic) BOOL wantsPointyHand; // @synthesize wantsPointyHand=_wantsPointyHand;
+@property(readonly, nonatomic) UIHoverGestureRecognizer *hoverGestureRecognizer; // @synthesize hoverGestureRecognizer=_hoverGestureRecognizer;
 @property(readonly, nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer; // @synthesize longPressGestureRecognizer=_longPressGestureRecognizer;
 @property(readonly, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(readonly, nonatomic) SXViewport *viewport; // @synthesize viewport=_viewport;
@@ -41,6 +45,7 @@
 - (void)animateHighlight:(BOOL)arg1 forComponentView:(id)arg2;
 - (void)cancelInteractionForComponentView:(id)arg1;
 - (void)handleInteraction:(id)arg1 withType:(unsigned long long)arg2;
+- (void)handleHoverGesture:(id)arg1;
 - (void)handleLongPressGesture:(id)arg1;
 - (void)handleTapGesture:(id)arg1;
 - (void)commitViewController:(id)arg1;

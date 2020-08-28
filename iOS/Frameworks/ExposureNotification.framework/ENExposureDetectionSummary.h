@@ -8,16 +8,29 @@
 
 #import <ExposureNotification/CUXPCCodable-Protocol.h>
 
+@class NSArray, NSDictionary;
+
 @interface ENExposureDetectionSummary : NSObject <CUXPCCodable>
 {
     unsigned char _maximumRiskScore;
+    NSArray *_attenuationDurations;
     long long _daysSinceLastExposure;
     unsigned long long _matchedKeyCount;
+    double _maximumRiskScoreFullRange;
+    NSDictionary *_metadata;
+    double _riskScoreSumFullRange;
+    NSArray *_daySummaries;
 }
 
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *daySummaries; // @synthesize daySummaries=_daySummaries;
+@property(nonatomic) double riskScoreSumFullRange; // @synthesize riskScoreSumFullRange=_riskScoreSumFullRange;
+@property(readonly, copy, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
+@property(nonatomic) double maximumRiskScoreFullRange; // @synthesize maximumRiskScoreFullRange=_maximumRiskScoreFullRange;
 @property(nonatomic) unsigned char maximumRiskScore; // @synthesize maximumRiskScore=_maximumRiskScore;
 @property(nonatomic) unsigned long long matchedKeyCount; // @synthesize matchedKeyCount=_matchedKeyCount;
 @property(nonatomic) long long daysSinceLastExposure; // @synthesize daysSinceLastExposure=_daysSinceLastExposure;
+@property(copy, nonatomic) NSArray *attenuationDurations; // @synthesize attenuationDurations=_attenuationDurations;
 - (id)description;
 - (void)encodeWithXPCObject:(id)arg1;
 - (id)initWithXPCObject:(id)arg1 error:(id *)arg2;

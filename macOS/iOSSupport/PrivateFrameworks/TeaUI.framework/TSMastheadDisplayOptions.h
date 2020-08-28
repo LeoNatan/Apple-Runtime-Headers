@@ -8,8 +8,9 @@
 
 @interface TSMastheadDisplayOptions : NSObject
 {
-    // Error parsing type: , name: displayMode
+    // Error parsing type: , name: statusBarMode
     // Error parsing type: , name: styleOptions
+    // Error parsing type: , name: displayMode
     // Error parsing type: , name: statusBarVisiblityOffset
 }
 

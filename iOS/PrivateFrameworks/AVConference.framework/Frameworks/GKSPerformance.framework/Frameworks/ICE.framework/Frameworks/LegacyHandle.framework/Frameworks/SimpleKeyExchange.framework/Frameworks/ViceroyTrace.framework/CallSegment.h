@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, NSString, VCHistogram;
+@class NSMutableDictionary, NSNumber, NSString, VCHistogram;
 @protocol VCAdaptiveLearningDelegate;
 
 @interface CallSegment : NSObject
@@ -120,6 +120,11 @@
     NSString *_duplicationConnectionConfig;
     NSString *_duplicationConnectionFamily;
     NSMutableDictionary *_fecStatsDict;
+    unsigned int _evictedFramesLikelyRecoverableCount;
+    unsigned int _evictedFramesTrackedCount;
+    unsigned int _evictedFramesAnalysisValidIntervals;
+    double _evictedFramesAverageLatePacketDelay;
+    NSNumber *_IPVersion;
     int _interval;
     int _frequency;
     NSString *_segmentName;
@@ -134,6 +139,11 @@
 + (id)connectionCategoryForType:(id)arg1;
 + (id)interfaceCategoryForType:(id)arg1;
 + (id)newSegmentNameWithComponents:(id)arg1 remoteInterface:(id)arg2 connectionType:(id)arg3 duplicationIndicator:(id)arg4;
+@property(copy) NSNumber *IPVersion; // @synthesize IPVersion=_IPVersion;
+@property double evictedFramesAverageLatePacketDelay; // @synthesize evictedFramesAverageLatePacketDelay=_evictedFramesAverageLatePacketDelay;
+@property unsigned int evictedFramesAnalysisValidIntervals; // @synthesize evictedFramesAnalysisValidIntervals=_evictedFramesAnalysisValidIntervals;
+@property unsigned int evictedFramesTrackedCount; // @synthesize evictedFramesTrackedCount=_evictedFramesTrackedCount;
+@property unsigned int evictedFramesLikelyRecoverableCount; // @synthesize evictedFramesLikelyRecoverableCount=_evictedFramesLikelyRecoverableCount;
 @property(readonly) NSMutableDictionary *fecStatsDict; // @synthesize fecStatsDict=_fecStatsDict;
 @property double duplicationMaxRemoteNoRemotePacketTime; // @synthesize duplicationMaxRemoteNoRemotePacketTime=_duplicationMaxRemoteNoRemotePacketTime;
 @property double duplicationMaxNoRemotePacketTime; // @synthesize duplicationMaxNoRemotePacketTime=_duplicationMaxNoRemotePacketTime;
@@ -242,6 +252,7 @@
 - (id)segmentQRReport;
 - (id)segmentFECReport;
 - (id)segmentReport;
+- (id)celltechTelemetry;
 - (unsigned int)RTPeriod;
 - (void)merge:(id)arg1;
 - (void)dealloc;

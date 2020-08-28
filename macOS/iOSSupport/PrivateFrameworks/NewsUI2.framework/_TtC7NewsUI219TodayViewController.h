@@ -16,13 +16,15 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: blueprintViewController
     // Error parsing type: , name: blueprintSelectionProvider
     // Error parsing type: , name: sharingActivityProviderFactory
+    // Error parsing type: , name: barCompressionManager
+    // Error parsing type: , name: refreshStateMachine
+    // Error parsing type: , name: refreshControl
     // Error parsing type: , name: isBeingUsedAsPlugin
     // Error parsing type: , name: pluggableDelegate
 }
 
 - (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(nonatomic) __weak id <TUPluggableDelegate> pluggableDelegate; // @synthesize pluggableDelegate;
 @property(nonatomic) BOOL isBeingUsedAsPlugin; // @synthesize isBeingUsedAsPlugin;

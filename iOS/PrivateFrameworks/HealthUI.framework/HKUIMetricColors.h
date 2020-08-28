@@ -19,6 +19,7 @@
 
 + (id)workoutContextViewColors;
 + (id)defaultContextViewColorsUsingColor:(id)arg1;
++ (id)symptomsColors;
 + (id)otherColors;
 + (id)respiratoryColors;
 + (id)hearingHealthColors;

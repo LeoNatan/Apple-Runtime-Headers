@@ -14,10 +14,12 @@
 {
     NSString *_articleID;
     NSString *_displayDateString;
+    NTPBTodaySectionConfigArticle *_paidArticle;
     NSString *_storyType;
     NSString *_title;
 }
 
+@property(retain, nonatomic) NTPBTodaySectionConfigArticle *paidArticle; // @synthesize paidArticle=_paidArticle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *storyType; // @synthesize storyType=_storyType;
 @property(retain, nonatomic) NSString *displayDateString; // @synthesize displayDateString=_displayDateString;
@@ -30,6 +32,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasPaidArticle;
 @property(readonly, nonatomic) BOOL hasTitle;
 @property(readonly, nonatomic) BOOL hasStoryType;
 @property(readonly, nonatomic) BOOL hasDisplayDateString;

@@ -32,6 +32,7 @@
 @property(copy, nonatomic) CDUnknownBlockType workBlock; // @synthesize workBlock=_workBlock;
 @property(readonly, nonatomic) _Bool finishedExecutingWithFailure;
 @property(readonly, nonatomic) _Bool finishedExecuting;
+- (id)executeWithCallbackQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)executeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2;
 - (id)initWithBlock:(CDUnknownBlockType)arg1;

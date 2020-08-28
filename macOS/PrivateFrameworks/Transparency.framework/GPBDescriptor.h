@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSString *name;
 - (void)setupMessageClassNameSuffix:(id)arg1;
 - (void)setupContainingMessageClassName:(const char *)arg1;
+- (void)setupContainingMessageClass:(Class)arg1;
 - (void)setupExtensionRanges:(const struct GPBExtensionRange *)arg1 count:(int)arg2;
 - (void)setupExtraTextInfo:(const char *)arg1;
 - (void)setupOneofs:(const char **)arg1 count:(unsigned int)arg2 firstHasIndex:(int)arg3;

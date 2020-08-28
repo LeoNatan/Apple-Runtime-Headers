@@ -25,6 +25,7 @@
 + (id)entryAggregateDefinitions;
 + (id)entryEventNoneDefinitions;
 + (id)entryEventIntervalDefinitions;
++ (id)entryEventBackwardDefinitionMaxDutyCycle;
 + (id)entryEventBackwardDefinitions;
 + (id)entryEventForwardDefinitions;
 + (id)entryEventPointDefinitions;

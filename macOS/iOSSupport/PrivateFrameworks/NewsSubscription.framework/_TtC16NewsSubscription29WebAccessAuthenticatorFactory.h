@@ -9,7 +9,6 @@
 @interface _TtC16NewsSubscription29WebAccessAuthenticatorFactory : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: purchaseController
-    // Error parsing type: , name: paywallCoordinator
 }
 
 @end

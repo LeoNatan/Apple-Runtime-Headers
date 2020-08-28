@@ -9,7 +9,7 @@
 @interface _TtC7NewsUI213TagViewStyler : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: headlineFontMetrics
-    // Error parsing type: , name: subheadlineFontMetrics
+    // Error parsing type: , name: subtitleFontMetrics
 }
 
 @end

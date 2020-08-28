@@ -32,7 +32,9 @@
 @property(retain, nonatomic) ENExposureConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (unsigned char)estimateRiskWithExposureInfo:(id)arg1 referenceTime:(double)arg2 transmissionRiskLevel:(unsigned char *)arg3;
+- (void)updateDaySummary:(id)arg1 exposureInfo:(id)arg2 score:(double)arg3;
+- (double)scoreWithExposureInfo:(id)arg1;
+- (double)estimateRiskWithExposureInfo:(id)arg1 referenceTime:(double)arg2 transmissionRiskLevel:(char *)arg3;
 - (void)getExposureInfoWithMaximumCount:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)finishedDiagnosisKeysWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)addDiagnosisKeys:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

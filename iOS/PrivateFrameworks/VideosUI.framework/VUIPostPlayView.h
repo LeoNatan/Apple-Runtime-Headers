@@ -17,19 +17,23 @@ __attribute__((visibility("hidden")))
     AVBackgroundView *_backgroundView;
     _TVImageView *_episodeImageView;
     VUILabel *_nextEpisodeLabel;
+    VUILabel *_headerLabel;
     TVImageProxy *_episodeImageProxy;
     VUICountDownProgressIndicator *_autoPlayIndicator;
     NSNumber *_autoPlayDuration;
     NSNumber *_defaultAutoPlayDuration;
     NSString *_title;
+    NSString *_header;
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *header; // @synthesize header=_header;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSNumber *defaultAutoPlayDuration; // @synthesize defaultAutoPlayDuration=_defaultAutoPlayDuration;
 @property(retain, nonatomic) NSNumber *autoPlayDuration; // @synthesize autoPlayDuration=_autoPlayDuration;
 @property(retain, nonatomic) VUICountDownProgressIndicator *autoPlayIndicator; // @synthesize autoPlayIndicator=_autoPlayIndicator;
 @property(retain, nonatomic) TVImageProxy *episodeImageProxy; // @synthesize episodeImageProxy=_episodeImageProxy;
+@property(retain, nonatomic) VUILabel *headerLabel; // @synthesize headerLabel=_headerLabel;
 @property(retain, nonatomic) VUILabel *nextEpisodeLabel; // @synthesize nextEpisodeLabel=_nextEpisodeLabel;
 @property(retain, nonatomic) _TVImageView *episodeImageView; // @synthesize episodeImageView=_episodeImageView;
 @property(retain, nonatomic) AVBackgroundView *backgroundView; // @synthesize backgroundView=_backgroundView;
@@ -46,8 +50,8 @@ __attribute__((visibility("hidden")))
 - (void)_setupViews;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (id)initWithFrame:(struct CGRect)arg1 andEpisodeArtworkURLStringFormat:(id)arg2 andTitle:(id)arg3;
-- (id)initWithFrame:(struct CGRect)arg1 andTVImageProxy:(id)arg2 andTitle:(id)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 andEpisodeArtworkURLStringFormat:(id)arg2 andTitle:(id)arg3 andHeader:(id)arg4;
+- (id)initWithFrame:(struct CGRect)arg1 andTVImageProxy:(id)arg2 andTitle:(id)arg3 andHeader:(id)arg4;
 
 @end
 

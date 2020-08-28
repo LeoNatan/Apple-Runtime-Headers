@@ -48,7 +48,10 @@
 - (id)_paymentWebService;
 - (void)_setUpSharingSessionWithSubcredentialProvisioningController:(id)arg1;
 - (void)_setUpSubcredentialProvisioningController;
+- (void)_queue_statusForReceivedInvitation:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_queue_statusForSentInvitation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_queue_fetchOrInitializeAccountAttestationAnonymizationSaltIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_queue_declineRelatedInvitationsIfNecessaryForInvitation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_queue_removeSharingInvitation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_queue_revokeCredentialsWithIdentifiers:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_queue_registerCredentialsWithIdentifiers:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -61,9 +64,12 @@
 - (void)_queue_canAcceptInvitation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)subcredentialProvisioningController:(id)arg1 didFinishWithPass:(id)arg2;
 - (void)subcredentialProvisioningController:(id)arg1 didFinishWithError:(id)arg2;
+- (void)statusForReceivedInvitation:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)statusForSentInvitation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)startSubcredentialProvisioningOnLocalDeviceMatchingInvitation:(id)arg1 shouldFetchAnonymizationSaltFromRemoteDevice:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)startSubcredentialProvisioningOnRemoteDeviceForInvitation:(id)arg1;
 - (void)fetchOrInitializeAccountAttestationAnonymizationSaltIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;
+- (void)declineRelatedInvitationsIfNecessaryForInvitation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeSharingInvitation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)revokeCredentialsWithIdentifiers:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)registerCredentialsWithIdentifiers:(id)arg1 completion:(CDUnknownBlockType)arg2;

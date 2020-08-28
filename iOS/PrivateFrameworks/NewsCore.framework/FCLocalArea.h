@@ -20,7 +20,11 @@
 @property(readonly, nonatomic) _Bool isBboxValid; // @synthesize isBboxValid=_isBboxValid;
 @property(retain, nonatomic) NSArray *bbox; // @synthesize bbox=_bbox;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(retain, nonatomic) NSArray *regionIds; // @synthesize regionIds=_regionIds;
+@property(readonly, nonatomic) NSArray *regionIds; // @synthesize regionIds=_regionIds;
+@property(readonly, nonatomic) double maxLon;
+@property(readonly, nonatomic) double minLon;
+@property(readonly, nonatomic) double maxLat;
+@property(readonly, nonatomic) double minLat;
 - (id)description;
 - (_Bool)isValue:(double)arg1 betweenValue:(double)arg2 andValue:(double)arg3;
 - (_Bool)containsPointAtLatitude:(double)arg1 longitude:(double)arg2;

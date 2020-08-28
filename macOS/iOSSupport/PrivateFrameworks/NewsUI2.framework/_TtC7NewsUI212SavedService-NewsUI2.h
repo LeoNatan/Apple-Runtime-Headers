@@ -6,9 +6,7 @@
 
 #import <NewsUI2/_TtC7NewsUI212SavedService.h>
 
-#import <NewsUI2/FCReadingListObserving-Protocol.h>
-
-@interface _TtC7NewsUI212SavedService (NewsUI2) <FCReadingListObserving>
+@interface _TtC7NewsUI212SavedService (NewsUI2)
 - (void)readingList:(id)arg1 didAddArticles:(id)arg2 removeArticles:(id)arg3 eventInitiationLevel:(long long)arg4;
 @end
 

@@ -11,7 +11,6 @@
     // Error parsing type: , name: imageCache
     // Error parsing type: , name: rendererTool
     // Error parsing type: , name: assetManager
-    // Error parsing type: , name: traitCollection
 }
 
 @end

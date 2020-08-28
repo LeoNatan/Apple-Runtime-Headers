@@ -46,11 +46,13 @@ __attribute__((visibility("hidden")))
     BOOL _sendActiveVoiceOnly;
     BOOL _currentDTXEnable;
     unsigned char _mediaControlInfoVersion;
+    unsigned int _qualityIndex;
     BOOL _alwaysOnAudioRedundancyEnabled;
     BOOL _cellularAllowRedLowBitratesEnabled;
     BOOL _wifiAllowRedLowBitratesEnabled;
 }
 
+@property(nonatomic) unsigned int qualityIndex; // @synthesize qualityIndex=_qualityIndex;
 @property(nonatomic) BOOL wifiAllowRedLowBitratesEnabled; // @synthesize wifiAllowRedLowBitratesEnabled=_wifiAllowRedLowBitratesEnabled;
 @property(nonatomic) BOOL cellularAllowRedLowBitratesEnabled; // @synthesize cellularAllowRedLowBitratesEnabled=_cellularAllowRedLowBitratesEnabled;
 @property(nonatomic) BOOL alwaysOnAudioRedundancyEnabled; // @synthesize alwaysOnAudioRedundancyEnabled=_alwaysOnAudioRedundancyEnabled;

@@ -6,19 +6,12 @@
 
 #import <swiftCore/_TtCs12_SwiftObject.h>
 
-@protocol TSEmailSignupEventHandlerTypeDelegate;
-
 @interface _TtC7NewsUI223EmailSignupEventHandler : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: delegate
     // Error parsing type: , name: interactor
     // Error parsing type: , name: router
 }
-
-- (void)viewAppeared;
-- (void)emailSignUpViewControllerNotNowButtonTapped;
-- (void)emailSignUpViewControllerSignUpButtonTapped;
-@property(nonatomic) __weak id <TSEmailSignupEventHandlerTypeDelegate> delegate; // @synthesize delegate;
 
 @end
 

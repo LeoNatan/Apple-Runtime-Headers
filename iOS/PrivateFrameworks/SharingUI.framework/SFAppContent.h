@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AMSBag, AMSMediaTask, LSApplicationProxy, NSDictionary, NSError, NSMutableArray, NSString, NSURL, SFLaunchRequest;
+@class AMSBag, AMSMediaTask, LSApplicationProxy, NSArray, NSDictionary, NSError, NSMutableArray, NSString, NSURL, SFLaunchRequest;
 @protocol OS_dispatch_queue;
 
 @interface SFAppContent : NSObject
@@ -22,7 +22,7 @@
     AMSMediaTask *_amsTask;
     NSMutableArray *_infoFetchRequests;
     SFLaunchRequest *_launchRequest;
-    NSString *_adamID;
+    NSArray *_adamIDs;
     NSURL *_amsURLOverride;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
 }
@@ -30,7 +30,7 @@
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(retain, nonatomic) NSURL *amsURLOverride; // @synthesize amsURLOverride=_amsURLOverride;
-@property(retain, nonatomic) NSString *adamID; // @synthesize adamID=_adamID;
+@property(retain, nonatomic) NSArray *adamIDs; // @synthesize adamIDs=_adamIDs;
 - (id)_launchOptions;
 - (void)_launchWithCompletion:(CDUnknownBlockType)arg1;
 - (void)launchWithCompletion:(CDUnknownBlockType)arg1;
@@ -47,7 +47,7 @@
 - (void)_amsFetchResults;
 - (void)_amsRun;
 @property(readonly, nonatomic) _Bool installed;
-- (id)initWithAdamID:(id)arg1;
+- (id)initWithAdamIDs:(id)arg1;
 
 @end
 

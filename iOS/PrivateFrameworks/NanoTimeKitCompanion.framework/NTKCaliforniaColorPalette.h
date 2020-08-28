@@ -47,6 +47,10 @@
 - (id)circularDialFillColor;
 - (id)circularDialSubtickColor;
 - (id)circularDialTickColor;
+- (id)_colorForCircularTicksForMinute:(unsigned long long)arg1;
+- (id)colorForCircularTicksForHour:(unsigned long long)arg1;
+- (id)colorForCircularTicksForMinute:(unsigned long long)arg1;
+@property(readonly, nonatomic) _Bool isMulticolorPalette;
 @property(readonly, nonatomic) UIColor *platterTextColor;
 @property(readonly, nonatomic) long long richComplicationViewTheme;
 @property(readonly, nonatomic) UIColor *bezelComplicationColor;
@@ -60,6 +64,7 @@
 @property(readonly, nonatomic) UIColor *hourHandInlayColor;
 @property(readonly, nonatomic) UIColor *largeTickColor;
 @property(readonly, nonatomic) UIColor *smallTickColor;
+- (id)colorForHourMarker:(unsigned long long)arg1;
 @property(readonly, nonatomic) UIColor *hourMarkerColor;
 @property(readonly, nonatomic) UIColor *circularBackgroundColor;
 - (id)swatchBackgroundColor;

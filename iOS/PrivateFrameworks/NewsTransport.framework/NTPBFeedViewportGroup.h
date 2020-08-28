@@ -8,22 +8,19 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString, NTPBCardStyle, NTPBColor, NTPBColorGradient, NTPBDate, NTPBDiscoverMoreVideosInfo;
+@class NSMutableArray, NSString, NTPBCardStyle, NTPBColor, NTPBDate;
 
 @interface NTPBFeedViewportGroup : PBCodable <NSCopying>
 {
     CDStruct_95bda58d _assetURLStringRefs;
     unsigned long long _mergeID;
     unsigned long long _options;
-    NTPBColorGradient *_backgroundGradient;
     NSString *_bridgedGroupIdentifier;
     NTPBCardStyle *_cardStyle;
     NTPBDate *_creationDate;
     int _ctaTextRef;
     NTPBCardStyle *_darkCardStyle;
-    NTPBColorGradient *_darkStyleBackgroundGradient;
     NTPBColor *_darkStyleTitleColor;
-    NTPBDiscoverMoreVideosInfo *_discoverMoreVideosInfo;
     NTPBDate *_editionFeedEndDate;
     NTPBDate *_editionFeedStartDate;
     NTPBDate *_editionKeyDate;
@@ -37,7 +34,6 @@
     NTPBColor *_titleColor;
     int _titleRef;
     int _type;
-    NSMutableArray *_videoPlaylistHeadlines;
     _Bool _isFirstFromEdition;
     _Bool _usesPlaceholderHeadlines;
     struct {
@@ -56,19 +52,15 @@
 }
 
 + (Class)issueIDsType;
-+ (Class)videoPlaylistHeadlinesType;
 + (Class)headlinesType;
 @property(nonatomic) _Bool usesPlaceholderHeadlines; // @synthesize usesPlaceholderHeadlines=_usesPlaceholderHeadlines;
 @property(retain, nonatomic) NTPBCardStyle *darkCardStyle; // @synthesize darkCardStyle=_darkCardStyle;
 @property(retain, nonatomic) NTPBCardStyle *cardStyle; // @synthesize cardStyle=_cardStyle;
-@property(retain, nonatomic) NTPBColorGradient *darkStyleBackgroundGradient; // @synthesize darkStyleBackgroundGradient=_darkStyleBackgroundGradient;
 @property(retain, nonatomic) NTPBColor *darkStyleTitleColor; // @synthesize darkStyleTitleColor=_darkStyleTitleColor;
 @property(nonatomic) int ctaTextRef; // @synthesize ctaTextRef=_ctaTextRef;
 @property(nonatomic) int eyebrowTextRef; // @synthesize eyebrowTextRef=_eyebrowTextRef;
 @property(retain, nonatomic) NSString *bridgedGroupIdentifier; // @synthesize bridgedGroupIdentifier=_bridgedGroupIdentifier;
 @property(retain, nonatomic) NSMutableArray *issueIDs; // @synthesize issueIDs=_issueIDs;
-@property(retain, nonatomic) NSMutableArray *videoPlaylistHeadlines; // @synthesize videoPlaylistHeadlines=_videoPlaylistHeadlines;
-@property(retain, nonatomic) NTPBDiscoverMoreVideosInfo *discoverMoreVideosInfo; // @synthesize discoverMoreVideosInfo=_discoverMoreVideosInfo;
 @property(nonatomic) _Bool isFirstFromEdition; // @synthesize isFirstFromEdition=_isFirstFromEdition;
 @property(retain, nonatomic) NTPBDate *editionFeedEndDate; // @synthesize editionFeedEndDate=_editionFeedEndDate;
 @property(retain, nonatomic) NTPBDate *editionFeedStartDate; // @synthesize editionFeedStartDate=_editionFeedStartDate;
@@ -77,7 +69,6 @@
 @property(nonatomic) unsigned long long mergeID; // @synthesize mergeID=_mergeID;
 @property(retain, nonatomic) NSMutableArray *headlines; // @synthesize headlines=_headlines;
 @property(nonatomic) int l2TagIDRef; // @synthesize l2TagIDRef=_l2TagIDRef;
-@property(retain, nonatomic) NTPBColorGradient *backgroundGradient; // @synthesize backgroundGradient=_backgroundGradient;
 @property(retain, nonatomic) NTPBColor *titleColor; // @synthesize titleColor=_titleColor;
 @property(nonatomic) int subtitleRef; // @synthesize subtitleRef=_subtitleRef;
 @property(nonatomic) int titleRef; // @synthesize titleRef=_titleRef;
@@ -101,7 +92,6 @@
 @property(readonly, nonatomic) unsigned long long assetURLStringRefsCount;
 @property(readonly, nonatomic) _Bool hasDarkCardStyle;
 @property(readonly, nonatomic) _Bool hasCardStyle;
-@property(readonly, nonatomic) _Bool hasDarkStyleBackgroundGradient;
 @property(readonly, nonatomic) _Bool hasDarkStyleTitleColor;
 @property(nonatomic) _Bool hasCtaTextRef;
 @property(nonatomic) _Bool hasEyebrowTextRef;
@@ -110,11 +100,6 @@
 - (unsigned long long)issueIDsCount;
 - (void)addIssueIDs:(id)arg1;
 - (void)clearIssueIDs;
-- (id)videoPlaylistHeadlinesAtIndex:(unsigned long long)arg1;
-- (unsigned long long)videoPlaylistHeadlinesCount;
-- (void)addVideoPlaylistHeadlines:(id)arg1;
-- (void)clearVideoPlaylistHeadlines;
-@property(readonly, nonatomic) _Bool hasDiscoverMoreVideosInfo;
 @property(nonatomic) _Bool hasIsFirstFromEdition;
 @property(readonly, nonatomic) _Bool hasEditionFeedEndDate;
 @property(readonly, nonatomic) _Bool hasEditionFeedStartDate;
@@ -126,7 +111,6 @@
 - (void)addHeadlines:(id)arg1;
 - (void)clearHeadlines;
 @property(nonatomic) _Bool hasL2TagIDRef;
-@property(readonly, nonatomic) _Bool hasBackgroundGradient;
 @property(readonly, nonatomic) _Bool hasTitleColor;
 @property(nonatomic) _Bool hasSubtitleRef;
 @property(nonatomic) _Bool hasTitleRef;

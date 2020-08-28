@@ -75,7 +75,7 @@
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)reindexViewControllers;
-- (void)addViewController:(id)arg1;
+- (void)addViewController:(id)arg1 fromScroll:(_Bool)arg2;
 - (void)removeViewController:(id)arg1;
 - (_Bool)shouldAutomaticallyForwardAppearanceMethods;
 - (void)updatePositionForViewController:(id)arg1;

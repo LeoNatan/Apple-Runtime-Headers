@@ -16,6 +16,7 @@
     NSString *_remoteID;
     id _remoteIDLock;
     BOOL _loadedFileData;
+    BOOL _includeConversationID;
     NSString *_persistentID;
     long long _conversationID;
     MFMessageFileLocations *_fileLocations;
@@ -28,6 +29,7 @@
 - (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *gmailLabelIDs; // @synthesize gmailLabelIDs=_gmailLabelIDs;
 @property(copy, nonatomic) NSString *remoteMailboxURL; // @synthesize remoteMailboxURL=_remoteMailboxURL;
+@property(readonly, nonatomic) BOOL includeConversationID; // @synthesize includeConversationID=_includeConversationID;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(nonatomic) BOOL loadedFileData; // @synthesize loadedFileData=_loadedFileData;
 @property(retain, nonatomic) MFMessageFileLocations *fileLocations; // @synthesize fileLocations=_fileLocations;
@@ -64,6 +66,7 @@
 @property(readonly, nonatomic) BOOL isPartial;
 - (id)init;
 - (id)_initWithURL:(id)arg1 messageData:(id)arg2;
+- (id)initWithURL:(id)arg1 includeConversationID:(BOOL)arg2;
 - (id)initWithURL:(id)arg1;
 
 @end

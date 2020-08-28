@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+- (_Bool)isEventUsed:(id)arg1;
 - (void)sendEvent:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)submitEvent:(id)arg1;
 - (id)initWithDaemon:(id)arg1;

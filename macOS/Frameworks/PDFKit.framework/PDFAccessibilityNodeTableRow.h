@@ -15,11 +15,11 @@ __attribute__((visibility("hidden")))
 {
     PDFAccessibilityNodeTableRowPrivate *_private3;
     BOOL _isHeader;
-    BOOL _hasTaggedRepresentation;
+    BOOL _lackingTaggedRepresentation;
 }
 
 - (void).cxx_destruct;
-@property(nonatomic) BOOL hasTaggedRepresentation; // @synthesize hasTaggedRepresentation=_hasTaggedRepresentation;
+@property(nonatomic) BOOL lackingTaggedRepresentation; // @synthesize lackingTaggedRepresentation=_lackingTaggedRepresentation;
 @property(nonatomic) BOOL isHeader; // @synthesize isHeader=_isHeader;
 @property(readonly, copy) NSString *description;
 - (void)addChildNodeRef:(struct CGPDFTaggedNode *)arg1;

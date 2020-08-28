@@ -305,6 +305,7 @@
 - (void)_endKeyWindowDeferral;
 - (void)_beginKeyWindowDeferral;
 - (_Bool)_isKeyWindowForDeferral;
+- (_Bool)_hasFocusDeferralToken;
 - (id)_deferringTargetWithContextID:(unsigned int)arg1;
 - (long long)_overriddenInterfaceOrientation;
 - (void)_makeKeyWindowIgnoringOldKeyWindow:(_Bool)arg1;

@@ -13,6 +13,7 @@
 @property(readonly, nonatomic) unsigned int capabilities;
 - (void)deregisterClient;
 - (void)registerClient;
+- (void)clearHistoryBuffer;
 - (void)cleanupActiveRequests;
 - (_Bool)processClientRequest:(NSDictionary *)arg1 error:(id *)arg2;
 - (void)setMomentsDelegate:(id <VCMomentsMessengerDelegate>)arg1;

@@ -8,26 +8,37 @@
 
 #import <ExposureNotification/CUXPCCodable-Protocol.h>
 
-@class NSDate;
+@class NSArray, NSDate, NSDictionary;
 
 @interface ENExposureInfo : NSObject <CUXPCCodable>
 {
     unsigned char _attenuationValue;
     unsigned char _totalRiskScore;
     unsigned char _transmissionRiskLevel;
+    unsigned int _diagnosisReportType;
+    NSArray *_attenuationDurations;
     NSDate *_date;
+    long long _daysSinceOnsetOfSymptoms;
     double _duration;
+    NSDictionary *_metadata;
+    double _totalRiskScoreFullRange;
 }
 
 - (void).cxx_destruct;
 @property(nonatomic) unsigned char transmissionRiskLevel; // @synthesize transmissionRiskLevel=_transmissionRiskLevel;
+@property(nonatomic) double totalRiskScoreFullRange; // @synthesize totalRiskScoreFullRange=_totalRiskScoreFullRange;
 @property(nonatomic) unsigned char totalRiskScore; // @synthesize totalRiskScore=_totalRiskScore;
+@property(copy, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
+@property(nonatomic) unsigned int diagnosisReportType; // @synthesize diagnosisReportType=_diagnosisReportType;
+@property(nonatomic) long long daysSinceOnsetOfSymptoms; // @synthesize daysSinceOnsetOfSymptoms=_daysSinceOnsetOfSymptoms;
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) unsigned char attenuationValue; // @synthesize attenuationValue=_attenuationValue;
+@property(copy, nonatomic) NSArray *attenuationDurations; // @synthesize attenuationDurations=_attenuationDurations;
 - (id)description;
 - (void)encodeWithXPCObject:(id)arg1;
 - (id)initWithXPCObject:(id)arg1 error:(id *)arg2;
+- (id)init;
 
 @end
 

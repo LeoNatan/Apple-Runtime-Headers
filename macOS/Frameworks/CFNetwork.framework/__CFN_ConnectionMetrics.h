@@ -87,6 +87,7 @@
 - (id)_tcpInfo;
 - (void)end;
 - (void)establish;
+- (void)tlsMetadataReceived:(id)arg1;
 - (void)wait;
 - (void)begin;
 - (void)linkWithTransaction:(id)arg1 sessionMetrics:(id)arg2;

@@ -154,6 +154,7 @@ __attribute__((visibility("hidden")))
     BOOL _shouldIgnoreURLAsAnalyticsImpression;
     BOOL _shouldNotifyImpressionAnalyticsRecorder;
     BOOL _shouldNotifyImpressionAnalyticsRecorderWhenDisplayedToUser;
+    NSMutableSet *_potentialDownloadURLsFromReader;
     BOOL _playingMutableMedia;
     BOOL _mediaCaptureMuted;
     BOOL _screenCapturePaused;
@@ -638,6 +639,8 @@ __attribute__((visibility("hidden")))
 - (void)_continueHTTPSConnectionSheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)_loadPageBypassingCertificateWarning:(const struct Dictionary *)arg1;
 - (void)_continueHTTPSConnectionWithIdentitySheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
+- (BOOL)downloadIsFromReader:(id)arg1;
+- (void)loadURLFromReader:(id)arg1;
 - (void)dismissReaderAppearanceCustomizationPopover;
 - (void)deactivateReaderAfterAnimationWithDeactivationMode:(int)arg1;
 - (void)deactivateReaderNowOnNavigation;

@@ -8,7 +8,7 @@
 
 @interface _TtC8NewsFeed16FollowingManager : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: notificationManager
+    // Error parsing type: , name: notificationPrompter
     // Error parsing type: , name: subscriptionController
     // Error parsing type: , name: alertPresenter
 }

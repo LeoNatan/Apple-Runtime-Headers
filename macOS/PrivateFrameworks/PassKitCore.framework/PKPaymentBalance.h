@@ -21,10 +21,12 @@
     NSString *_localizedTitle;
     NSString *_localizedDescription;
     NSDate *_lastUpdateDate;
+    NSString *_preformattedString;
 }
 
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *preformattedString; // @synthesize preformattedString=_preformattedString;
 @property(copy, nonatomic) NSDate *lastUpdateDate; // @synthesize lastUpdateDate=_lastUpdateDate;
 @property(nonatomic) BOOL isPrimary; // @synthesize isPrimary=_isPrimary;
 @property(copy, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;

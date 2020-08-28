@@ -27,6 +27,7 @@
 + (id)genericErrorDialogWithTitle:(id)arg1 message:(id)arg2 applicationModal:(_Bool)arg3;
 + (id)printBlockedDialogWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (id)continuePrintingDialogWithTitle:(id)arg1 message:(id)arg2 applicationModal:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
++ (id)appLinkRedirectDialogWithMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)redirectDialogWithMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)noFeedAppDialogWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (id)formSubmissionDialogWithMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

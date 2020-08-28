@@ -35,6 +35,7 @@
 - (struct CGRect)_accessibilityFrameForRange:(struct _NSRange)arg1;
 - (id)accessibilityPageContent;
 - (id)_STAXColumnForLineIndex:(long long)arg1;
+- (struct CGRect)_accessibilityBoundsForRange:(struct _NSRange)arg1;
 - (struct CGRect)accessibilityFrameForLineNumber:(long long)arg1;
 - (id)accessibilityContentForLineNumber:(long long)arg1;
 - (long long)accessibilityLineNumberForPoint:(struct CGPoint)arg1;

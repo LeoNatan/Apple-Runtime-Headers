@@ -26,6 +26,7 @@
 - (void)layoutSubviews;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+@property(nonatomic) struct CGPoint contentOffset; // @synthesize contentOffset;
 
 @end
 

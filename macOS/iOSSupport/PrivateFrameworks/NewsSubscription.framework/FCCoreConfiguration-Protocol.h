@@ -42,8 +42,6 @@
 @property(nonatomic, readonly) NSString *featuredStoriesTagID;
 @property(nonatomic, readonly) NSString *trendingTagID;
 @property(nonatomic, readonly) NSString *briefingsTagID;
-@property(nonatomic, readonly) NSString *moreVideosChannelID;
-@property(nonatomic, readonly) NSString *topVideosChannelID;
 @property(nonatomic, readonly) NSString *breakingNewsChannelID;
 @property(nonatomic, readonly) FCTopStoriesConfiguration *topStoriesConfig;
 @property(nonatomic, readonly) NSDictionary *endpointConfigsByEnvironment;
@@ -66,19 +64,18 @@
 
 @optional
 @property(nonatomic, readonly) BOOL enableCacheFallbackForArticleRecirculation;
+@property(nonatomic, readonly) BOOL recordBothPersonalizationVectors;
+@property(nonatomic, readonly) BOOL usePersonalizationVectorAlt;
+@property(nonatomic, readonly) NSString *audioConfigRecordID;
 @property(nonatomic, readonly) NSString *todayFeedKnobs;
 @property(nonatomic, readonly) NSArray *aLaCartePaidSubscriptionGroupWhitelistedChannelIDs;
 @property(nonatomic, readonly) double feedLineHeightMultiplier;
 @property(nonatomic, readonly) NSString *spotlightChannelID;
 @property(nonatomic, readonly) long long entitlementsCacheRecoveryAttemptDurationInSeconds;
-@property(nonatomic, readonly) long long subscriptionsGracePeriodForTokenVerificationSeconds;
-@property(nonatomic, readonly) long long subscriptionsPlacardGlobalMaximumPerDay;
-@property(nonatomic, readonly) long long subscriptionsPlacardPublisherFrequencyInSeconds;
 @property(nonatomic, readonly) NSString *magazinesConfigRecordID;
 @property(nonatomic, readonly) FCPaidBundleConfiguration *paidBundleConfig;
 @property(nonatomic, readonly) double delayBeforeRetryingDroppedFeeds;
 @property(nonatomic, readonly) long long maxRetriesForDroppedFeeds;
-@property(nonatomic, readonly) BOOL isSpecialEventsMicaAnimationDisabled;
 @property(nonatomic, readonly) long long singleChannelFeedMinFeedItemsPerRequest;
 @property(nonatomic, readonly) long long singleTopicFeedMinFeedItemsPerRequest;
 @property(nonatomic, readonly) BOOL shouldShowAlternateHeadlines;

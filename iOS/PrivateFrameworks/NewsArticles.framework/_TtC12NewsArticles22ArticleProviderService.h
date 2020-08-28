@@ -12,6 +12,8 @@
     // Error parsing type: , name: headlineService
     // Error parsing type: , name: stocksFeedService
     // Error parsing type: , name: paidAccessChecker
+    // Error parsing type: , name: endOfArticleHeadlineModelFactory
+    // Error parsing type: , name: configurationManager
     // Error parsing type: , name: createdDate
     // Error parsing type: , name: cache
 }

@@ -8,7 +8,7 @@
 
 #import <NanoTimeKitCompanion/NTKUtilityFlatComplicationViewDelegate-Protocol.h>
 
-@class NSString, NTKCaliforniaColorPalette, NTKCaliforniaContentView, NTKCircularAnalogDialView, NTKRoundedCornerOverlayView, UIImageView, UIView;
+@class NSString, NTKCaliforniaColorEditOption, NTKCaliforniaColorPalette, NTKCaliforniaContentView, NTKCircularAnalogDialView, NTKRoundedCornerOverlayView, UIImageView, UIView;
 
 @interface NTKCaliforniaFaceView : NTKAnalogFaceView <NTKUtilityFlatComplicationViewDelegate>
 {
@@ -21,11 +21,13 @@
     NTKCaliforniaColorPalette *_colorPalette;
     UIImageView *_editingNotchBackgroundView;
     NTKCircularAnalogDialView *_dialView;
+    NTKCaliforniaColorEditOption *_pride2020SensitiveShroudColor;
 }
 
 + (id)_swatchForEditModeDependsOnOptions:(long long)arg1 forDevice:(id)arg2;
 + (id)_swatchImageForColorOption:(id)arg1 forDevice:(id)arg2;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NTKCaliforniaColorEditOption *pride2020SensitiveShroudColor; // @synthesize pride2020SensitiveShroudColor=_pride2020SensitiveShroudColor;
 @property(retain, nonatomic) NTKCircularAnalogDialView *dialView; // @synthesize dialView=_dialView;
 @property(retain, nonatomic) UIImageView *editingNotchBackgroundView; // @synthesize editingNotchBackgroundView=_editingNotchBackgroundView;
 @property(retain, nonatomic) NTKCaliforniaColorPalette *colorPalette; // @synthesize colorPalette=_colorPalette;
@@ -79,6 +81,8 @@
 - (void)_updateRichCornerComplicationsInnerColor:(id)arg1 outerColor:(id)arg2;
 - (void)_updateSubDialRichComplicationsColor:(id)arg1 alternateColor:(id)arg2;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
+- (id)_filterColorOptionForUISensitivityFromOption:(id)arg1;
+- (_Bool)_shouldHideSensitiveUI;
 - (double)californiaContentViewScale;
 - (id)backgroundColorForDial:(unsigned long long)arg1 palette:(id)arg2;
 - (void)applyColorOnAnalogHands;

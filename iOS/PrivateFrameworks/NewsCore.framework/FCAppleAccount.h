@@ -8,7 +8,7 @@
 
 #import <NewsCore/FCAppleAccount-Protocol.h>
 
-@class ACAccount, ACAccountStore, NSArray, NSString;
+@class ACAccount, ACAccountStore, NFPromise, NSArray, NSHashTable, NSString;
 
 @interface FCAppleAccount : NSObject <FCAppleAccount>
 {
@@ -20,11 +20,15 @@
     NSString *_userStoreFrontID;
     NSString *_contentStoreFrontID;
     NSString *_overrideContentStoreFrontID;
+    NFPromise *_base64GSTokenPromise;
+    NSHashTable *_observers;
 }
 
 + (id)sharedAccount;
 + (void)enableStoreFrontLocking;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
+@property(retain, nonatomic) NFPromise *base64GSTokenPromise; // @synthesize base64GSTokenPromise=_base64GSTokenPromise;
 @property(copy, nonatomic) NSString *overrideContentStoreFrontID; // @synthesize overrideContentStoreFrontID=_overrideContentStoreFrontID;
 @property(copy, nonatomic) NSString *contentStoreFrontID; // @synthesize contentStoreFrontID=_contentStoreFrontID;
 @property(copy, nonatomic) NSString *userStoreFrontID; // @synthesize userStoreFrontID=_userStoreFrontID;
@@ -35,10 +39,18 @@
 @property(getter=isRunningPPT) _Bool runningPPT; // @synthesize runningPPT=_runningPPT;
 - (void)t_stopOverridingContentStoreFrontID;
 - (void)t_startOverridingContentStoreFrontID:(id)arg1;
+- (void)_handleAccountChangeWithOldPrimaryAccount:(id)arg1 oldiTunesAccount:(id)arg2;
 - (void)_reloadAccountsFromAccountStore;
 - (void)_accountStoreDidChange;
 - (void)_setStoreFrontDependentPropertiesWithStoreFrontLockingEnabled:(_Bool)arg1;
+- (void)notifyObserversOfAccountChange;
 @property(readonly, nonatomic) ACAccount *activeiTunesAccount;
+- (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
+- (id)getNewGSTokenPromise;
+- (void)invalidateGSTokenCache;
+- (id)getGSToken;
+- (void)getGSTokenWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)checkAllDevicesRunningMinimumiOSVersion:(CDStruct_912cb5d2)arg1 macOSVersion:(CDStruct_912cb5d2)arg2 orInactiveForTimeInterval:(double)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)checkAlliOSDevicesRunningMinimumOSVersion:(CDStruct_912cb5d2)arg1 orInactiveForTimeInterval:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)loadStoreFrontWithCompletionHandler:(CDUnknownBlockType)arg1;

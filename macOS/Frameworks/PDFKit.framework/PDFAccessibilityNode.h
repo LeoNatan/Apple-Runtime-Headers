@@ -24,7 +24,8 @@ __attribute__((visibility("hidden")))
 + (BOOL)_containsOnlyTextDescendant:(struct CGPDFTaggedNode *)arg1;
 + (id)_accessibilityElementForNode:(id)arg1;
 + (BOOL)shouldCheckAllSidesForAssociationOnAnnotation:(id)arg1;
-+ (void)_addPDFAnnotation:(id)arg1 toPDFAccessibilityNode:(id)arg2;
++ (unsigned long long)_insertPDFAnnotation:(id)arg1 inPage:(id)arg2 withAssociationInfo:(id)arg3;
++ (unsigned long long)_addPDFAnnotation:(id)arg1 toPDFAccessibilityNode:(id)arg2;
 + (void)_buildPDFAnnotationNodes:(id)arg1;
 + (Class)_nodeClassForNode:(struct CGPDFTaggedNode *)arg1;
 + (id)createPDFAccessibilityRootNode:(id)arg1;
@@ -50,8 +51,9 @@ __attribute__((visibility("hidden")))
 - (id)descendantNodeWithNodeRef:(struct CGPDFTaggedNode *)arg1;
 - (id)_documentContainer;
 - (id)pageContainerNode;
-- (id)associationInfoForBounds:(struct CGRect)arg1 allSides:(BOOL)arg2 currentInfo:(id)arg3;
-- (id)associationInfoForAnnotation:(id)arg1;
+- (id)associationInfoForBounds:(struct CGRect)arg1 allSides:(BOOL)arg2 currentInfo:(id)arg3 nodesToCheck:(id)arg4;
+- (id)associationInfoForAnnotation:(id)arg1 nodesToCheck:(id)arg2;
+- (BOOL)_isPotentialAssociationNode:(id)arg1;
 - (void)buildAccessibilityHierarchy;
 @property(readonly, nonatomic) int type;
 @property(nonatomic) struct CGRect bounds;

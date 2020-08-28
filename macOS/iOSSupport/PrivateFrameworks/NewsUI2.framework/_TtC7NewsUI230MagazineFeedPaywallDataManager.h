@@ -12,7 +12,7 @@
     // Error parsing type: , name: imageProvider
     // Error parsing type: , name: layoutAttributesProvider
     // Error parsing type: , name: imageCache
-    // Error parsing type: , name: magazineFeedPaywallConfig
+    // Error parsing type: , name: feedPaywallConfig
     // Error parsing type: , name: blueprintLayoutOptionsProvider
 }
 

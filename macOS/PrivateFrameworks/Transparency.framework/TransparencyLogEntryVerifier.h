@@ -15,7 +15,7 @@
 
 - (void).cxx_destruct;
 @property(retain) TransparencyTrustedKeyStore *trustedKeyStore; // @synthesize trustedKeyStore=_trustedKeyStore;
-- (BOOL)verifyLogEntryWithLogLeaf:(id)arg1 position:(unsigned long long)arg2 hashesToRoot:(id)arg3 signedLogHead:(id)arg4 error:(id *)arg5;
+- (unsigned long long)verifyLogEntryWithLogLeaf:(id)arg1 position:(unsigned long long)arg2 hashesToRoot:(id)arg3 signedLogHead:(id)arg4 error:(id *)arg5;
 - (BOOL)verifyInclusionOfLogLeaf:(id)arg1 position:(unsigned long long)arg2 treeSize:(unsigned long long)arg3 treeHead:(id)arg4 hashPath:(id)arg5 error:(id *)arg6;
 - (id)initWithTrustedKeyStore:(id)arg1;
 

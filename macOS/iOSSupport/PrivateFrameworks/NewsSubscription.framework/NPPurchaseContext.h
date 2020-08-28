@@ -16,10 +16,13 @@
     // Error parsing type: , name: purchaseID
     // Error parsing type: , name: articleID
     // Error parsing type: , name: issueID
+    // Error parsing type: , name: feedID
     // Error parsing type: , name: sectionID
+    // Error parsing type: , name: parentFeedType
+    // Error parsing type: , name: groupID
+    // Error parsing type: , name: groupType
     // Error parsing type: , name: qToken
     // Error parsing type: , name: purchaseSessionID
-    // Error parsing type: , name: parentFeedType
     // Error parsing type: , name: arrivedFromAd
     // Error parsing type: , name: webAccessOptIn
     // Error parsing type: , name: creativeID
@@ -29,16 +32,19 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)initWithProductID:(id)arg1 purchaseID:(id)arg2 sourceChannelID:(id)arg3 purchaseSessionID:(id)arg4 conversionLocation:(id)arg5 articleID:(id)arg6 issueID:(id)arg7 parentFeedType:(long long)arg8 sectionID:(id)arg9 webAccessOptIn:(BOOL)arg10 arrivedFromAd:(BOOL)arg11 qToken:(id)arg12 creativeID:(id)arg13 campaignID:(id)arg14 campaignType:(id)arg15;
+- (id)initWithProductID:(id)arg1 purchaseID:(id)arg2 sourceChannelID:(id)arg3 purchaseSessionID:(id)arg4 conversionLocation:(id)arg5 articleID:(id)arg6 issueID:(id)arg7 feedID:(id)arg8 parentFeedType:(long long)arg9 sectionID:(id)arg10 groupID:(id)arg11 groupType:(long long)arg12 webAccessOptIn:(BOOL)arg13 arrivedFromAd:(BOOL)arg14 qToken:(id)arg15 creativeID:(id)arg16 campaignID:(id)arg17 campaignType:(id)arg18;
 @property(nonatomic, copy) NSString *campaignType;
 @property(nonatomic, copy) NSString *campaignID;
 @property(nonatomic, copy) NSString *creativeID;
 @property(nonatomic) BOOL webAccessOptIn; // @synthesize webAccessOptIn;
 @property(nonatomic) BOOL arrivedFromAd; // @synthesize arrivedFromAd;
-@property(nonatomic) long long parentFeedType; // @synthesize parentFeedType;
 @property(nonatomic, copy) NSString *purchaseSessionID;
 @property(nonatomic, copy) NSString *qToken;
+@property(nonatomic) long long groupType; // @synthesize groupType;
+@property(nonatomic, copy) NSString *groupID;
+@property(nonatomic) long long parentFeedType; // @synthesize parentFeedType;
 @property(nonatomic, copy) NSString *sectionID;
+@property(nonatomic, copy) NSString *feedID;
 @property(nonatomic, copy) NSString *issueID;
 @property(nonatomic, copy) NSString *articleID;
 @property(nonatomic, copy) NSString *purchaseID;

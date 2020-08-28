@@ -13,6 +13,9 @@
 - (id)fc_URLByAddingQueryItem:(id)arg1;
 - (id)fc_URLByDeletingFragment;
 - (id)fc_URLByDeletingQuery;
+- (_Bool)fc_isStoreURL;
+- (_Bool)fc_isHTTPScheme;
+- (_Bool)fc_isWebArchiveURL;
 - (_Bool)_isFeldsparOldChannelURL;
 - (_Bool)_isFeldsparOldTopicURL;
 - (_Bool)fc_isEqualToURL:(id)arg1;

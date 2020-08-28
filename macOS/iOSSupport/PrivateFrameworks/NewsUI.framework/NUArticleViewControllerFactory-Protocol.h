@@ -6,12 +6,10 @@
 
 #import <NewsUI/NSObject-Protocol.h>
 
-@class FCArticle, FCIssue, NSHashTable, NUArticleExcerptTraits, NUArticleExcerptViewController, NUArticleViewController, NUArticleWebViewController;
+@class FCArticle, FCIssue, NSHashTable, NUArticleViewController;
 
 @protocol NUArticleViewControllerFactory <NSObject>
 @property(readonly, nonatomic) NSHashTable *loadingListeners;
-- (NUArticleExcerptViewController *)createArticleExcerptViewControllerWithArticle:(FCArticle *)arg1 traits:(NUArticleExcerptTraits *)arg2;
-- (NUArticleWebViewController *)createArticleWebViewControllerWithArticle:(FCArticle *)arg1;
 - (NUArticleViewController *)createArticleViewControllerWithArticle:(FCArticle *)arg1 issue:(FCIssue *)arg2;
 - (NUArticleViewController *)createArticleViewControllerWithArticle:(FCArticle *)arg1;
 @end

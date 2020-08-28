@@ -13,7 +13,6 @@
 {
     id <NTReadablePrivateDataStorage> _privateDataStorage;
     id <FCContentContext> _contentContext;
-    CDUnknownBlockType _sessionProvider;
     NTPBTodayResultOperationInfo *_operationInfo;
     CDUnknownBlockType _headlineResultCompletionHandler;
 }
@@ -21,7 +20,6 @@
 - (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType headlineResultCompletionHandler; // @synthesize headlineResultCompletionHandler=_headlineResultCompletionHandler;
 @property(copy, nonatomic) NTPBTodayResultOperationInfo *operationInfo; // @synthesize operationInfo=_operationInfo;
-@property(copy, nonatomic) CDUnknownBlockType sessionProvider; // @synthesize sessionProvider=_sessionProvider;
 @property(retain, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
 @property(retain, nonatomic) id <NTReadablePrivateDataStorage> privateDataStorage; // @synthesize privateDataStorage=_privateDataStorage;
 - (id)init;

@@ -215,6 +215,7 @@ __attribute__((visibility("hidden")))
 - (void)siriSessionOpenApplicationWithBundleID:(id)arg1 URL:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)siriSessionOpenURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)siriSessionSupportsSpeechSynthesis:(BOOL)arg1;
+- (void)_siriSessionDidReceiveOpenLinkCommand:(id)arg1;
 - (void)siriSessionDidReceiveOpenLinkCommand:(id)arg1;
 - (void)siriSessionDidChangeLockState:(unsigned long long)arg1;
 - (void)siriSessionDidChangeNetworkAvailability;

@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 @interface VSCredentialEntryViewController_iOS : ACUIViewController <VSCredentialEntryViewController, VSPSPickerTableViewCellDelegate>
 {
     _Bool _cancellationAllowed;
+    _Bool _buttonLayoutCompleted;
     VSCredentialEntryViewModel *_viewModel;
     id <VSAuthenticationViewControllerDelegate> _delegate;
     VSIdentityProviderLogoView *_logoView;
@@ -34,6 +35,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+@property(nonatomic) _Bool buttonLayoutCompleted; // @synthesize buttonLayoutCompleted=_buttonLayoutCompleted;
 @property(retain, nonatomic) VSCredentialEntryPicker *picker; // @synthesize picker=_picker;
 @property(retain, nonatomic) PSSpecifier *pickerSpecifier; // @synthesize pickerSpecifier=_pickerSpecifier;
 @property(retain, nonatomic) PSSpecifier *pickerButtonSpecifier; // @synthesize pickerButtonSpecifier=_pickerButtonSpecifier;

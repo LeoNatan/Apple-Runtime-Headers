@@ -9,6 +9,7 @@
 #import <NewsUI2/FCUserInfoObserving-Protocol.h>
 
 @interface _TtC7NewsUI233FollowingNotificationsDataManager (NewsUI2) <FCUserInfoObserving>
+- (void)userInfoDidChangeEndOfAudioTrackNotificationsEnabled:(id)arg1 fromCloud:(BOOL)arg2;
 - (void)userInfoDidChangeNewIssueNotificationsEnabled:(id)arg1 fromCloud:(BOOL)arg2;
 - (void)userInfoDidChangeMarketingNotificationsEnabled:(id)arg1 fromCloud:(BOOL)arg2;
 @end

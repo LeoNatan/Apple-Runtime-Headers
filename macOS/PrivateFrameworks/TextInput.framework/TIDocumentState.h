@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <TextInput/NSCopying-Protocol.h>
 #import <TextInput/NSSecureCoding-Protocol.h>
 
 @class NSString;
 
-@interface TIDocumentState : NSObject <NSSecureCoding>
+@interface TIDocumentState : NSObject <NSSecureCoding, NSCopying>
 {
     NSString *_contextBeforeInput;
     NSString *_markedText;
@@ -43,6 +44,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithUnboundedContextBefore:(id)arg1 markedText:(id)arg2 selectedText:(id)arg3 unboundedContextAfter:(id)arg4 selectedRangeInMarkedText:(struct _NSRange)arg5;
 - (id)initWithContextBefore:(id)arg1 markedText:(id)arg2 selectedText:(id)arg3 contextAfter:(id)arg4 selectedRangeInMarkedText:(struct _NSRange)arg5;
 - (id)documentStateAfterCursorAdjustment:(long long)arg1;

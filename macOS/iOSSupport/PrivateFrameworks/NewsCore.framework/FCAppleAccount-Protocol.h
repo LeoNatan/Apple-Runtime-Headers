@@ -6,7 +6,8 @@
 
 #import <NewsCore/NSObject-Protocol.h>
 
-@class ACAccount, NSString;
+@class ACAccount, NFPromise, NSString;
+@protocol FCAppleAccountObserver;
 
 @protocol FCAppleAccount <NSObject>
 @property(readonly, nonatomic) ACAccount *activeiTunesAccount;
@@ -19,8 +20,13 @@
 @property(readonly, nonatomic) NSString *contentStoreFrontID;
 @property(readonly, nonatomic) NSString *userStoreFrontID;
 @property(readonly, nonatomic) NSString *DSID;
+- (void)removeObserver:(id <FCAppleAccountObserver>)arg1;
+- (void)addObserver:(id <FCAppleAccountObserver>)arg1;
 - (BOOL)isPrimaryAccountEmailAddress;
 - (NSString *)currentStoreFrontID;
+- (void)invalidateGSTokenCache;
+- (NFPromise *)getGSToken;
+- (void)getGSTokenWithCompletionHandler:(void (^)(NSString *, NSError *))arg1;
 - (void)checkAllDevicesRunningMinimumiOSVersion:(CDStruct_912cb5d2)arg1 macOSVersion:(CDStruct_912cb5d2)arg2 orInactiveForTimeInterval:(double)arg3 completionHandler:(void (^)(BOOL, NSError *))arg4;
 - (void)checkAlliOSDevicesRunningMinimumOSVersion:(CDStruct_912cb5d2)arg1 orInactiveForTimeInterval:(double)arg2 completionHandler:(void (^)(BOOL, NSError *))arg3;
 - (void)loadStoreFrontWithCompletionHandler:(void (^)(void))arg1;

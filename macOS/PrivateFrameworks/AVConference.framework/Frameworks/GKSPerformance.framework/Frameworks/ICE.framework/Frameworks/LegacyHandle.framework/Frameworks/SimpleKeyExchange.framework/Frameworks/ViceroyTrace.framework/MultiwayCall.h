@@ -40,8 +40,10 @@ __attribute__((visibility("hidden")))
     unsigned int _videoDegradedTotalCounter;
     double _videoDegradedTotalTime;
     double _videoDegradedStartTime;
+    double _videoDegradedMaxLength;
 }
 
+@property double videoDegradedMaxLength; // @synthesize videoDegradedMaxLength=_videoDegradedMaxLength;
 @property unsigned int videoDegradedTotalCounter; // @synthesize videoDegradedTotalCounter=_videoDegradedTotalCounter;
 @property BOOL isVideoDegraded; // @synthesize isVideoDegraded=_isVideoDegraded;
 @property double videoDegradedStartTime; // @synthesize videoDegradedStartTime=_videoDegradedStartTime;

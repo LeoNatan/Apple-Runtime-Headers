@@ -59,6 +59,7 @@
     PSSpecifier *_homeKitSpecifier;
     PSSpecifier *_healthKitSpecifier;
     PSSpecifier *_emergencySOSSpecifier;
+    PSSpecifier *_exposureNotificationSpecifier;
     _Bool _wifiValueIsClean;
     _Bool _bluetoothValueIsClean;
     NSArray *_originalSpecifiers;
@@ -212,7 +213,9 @@
 - (void)insertMovedThirdPartySpecifiersAnimated:(_Bool)arg1;
 - (id)_specifierDictionaryForDeveloperBundlePath:(id)arg1 identifier:(id)arg2;
 - (id)_specifierDictionaryForBundlePath:(id)arg1 identifier:(id)arg2 internalIcon:(_Bool)arg3 searchPlist:(id)arg4;
+- (_Bool)_exposureNotificationAvailable;
 - (_Bool)_showSOS;
+- (_Bool)_shouldPresentModernThirdPartyAppListForBundleIdentifier:(id)arg1;
 - (id)selectSpecifier:(id)arg1;
 - (void)_showControllerFromSpecifier:(id)arg1;
 - (id)_sidebarSpecifierForCategoryController;
@@ -229,6 +232,7 @@
 - (void)reloadAsyncSpecifiersWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updateSupervisedTextWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updateApplePayWithCompletion:(CDUnknownBlockType)arg1;
+- (void)updateExposureNotificationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updateSOSWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updateVPNWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updateFollowupSpecifiersWithCompletion:(CDUnknownBlockType)arg1;

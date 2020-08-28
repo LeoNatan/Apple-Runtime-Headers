@@ -12,6 +12,8 @@
     // Error parsing type: , name: bundleSubscriptionManager
     // Error parsing type: , name: magazineConfigurationService
     // Error parsing type: , name: personalizationService
+    // Error parsing type: , name: featureAvailability
+    // Error parsing type: , name: paidAccessChecker
 }
 
 @end

@@ -12,7 +12,7 @@
     // Error parsing type: , name: followingFooterViewLayoutAttributesFactory
     // Error parsing type: , name: browseButtonViewLayoutAttributesFactory
     // Error parsing type: , name: settingsButtonViewLayoutAttributesFactory
-    // Error parsing type: , name: followingRowViewLayoutAttributesFactory
+    // Error parsing type: , name: tagViewLayoutAttributesFactory
 }
 
 @end

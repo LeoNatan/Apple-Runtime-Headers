@@ -16,6 +16,7 @@
     NSString *_key;
     NSString *_runSource;
     NSString *_automationType;
+    NSString *_galleryIdentifier;
 }
 
 + (id)serializablePropertyTransformers;
@@ -23,6 +24,7 @@
 - (void).cxx_destruct;
 @property(nonatomic) BOOL completed; // @synthesize completed=_completed;
 @property(nonatomic) unsigned int actionCount; // @synthesize actionCount=_actionCount;
+@property(copy, nonatomic) NSString *galleryIdentifier; // @synthesize galleryIdentifier=_galleryIdentifier;
 @property(copy, nonatomic) NSString *automationType; // @synthesize automationType=_automationType;
 @property(copy, nonatomic) NSString *runSource; // @synthesize runSource=_runSource;
 @property(nonatomic) int source; // @synthesize source=_source;

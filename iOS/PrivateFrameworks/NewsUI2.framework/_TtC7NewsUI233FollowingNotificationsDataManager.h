@@ -13,6 +13,8 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: subscriptionService
     // Error parsing type: , name: tagService
     // Error parsing type: , name: userNotificationCenter
+    // Error parsing type: , name: configurationManager
+    // Error parsing type: , name: newsletterManager
 }
 
 - (void).cxx_destruct;

@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     LAContext *_localAuthenticationContext;
     long long _localAuthenticationContextCreationTime;
     int _authorizationRight;
+    long long _localAuthenticationPolicy;
 }
 
 + (id)localizedDFRTitleForRight:(int)arg1;
@@ -21,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *currentExternalizedContext;
 - (void)authorizeWithSheetInWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) BOOL canAuthorize;
 - (BOOL)authorize;
 - (id)initWithAuthorizationRight:(int)arg1;
 - (BOOL)_requestLocalAuthentication;

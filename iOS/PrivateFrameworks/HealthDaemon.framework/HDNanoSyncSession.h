@@ -16,6 +16,7 @@
     unsigned long long _messageCount;
 }
 
++ (_Bool)shouldOverrideCycleTrackingSymptomsForBackwardsCompatibilty;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long messageCount; // @synthesize messageCount=_messageCount;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;

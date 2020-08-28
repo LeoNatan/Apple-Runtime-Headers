@@ -11,6 +11,9 @@
     // Error parsing type: , name: acceptBlock
     // Error parsing type: , name: rejectBlock
     // Error parsing type: , name: neutralBlock
+    // Error parsing type: , name: acceptBlockV1
+    // Error parsing type: , name: rejectBlockV1
+    // Error parsing type: , name: neutralBlockV1
     // Error parsing type: , name: alertController
 }
 

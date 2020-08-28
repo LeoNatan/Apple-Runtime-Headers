@@ -11,6 +11,7 @@
 @interface TSArticleContext : NSObject
 {
     // Error parsing type: , name: url
+    // Error parsing type: , name: title
     // Error parsing type: , name: sourceApplication
     // Error parsing type: , name: previousArticleID
     // Error parsing type: , name: previousArticleVersion
@@ -22,13 +23,15 @@
     // Error parsing type: , name: presentationReason
     // Error parsing type: , name: notificationID
     // Error parsing type: , name: notificationSenderChannelID
+    // Error parsing type: , name: shouldAutoPlayVideo
     // Error parsing type: , name: referral
 }
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)initWithUrl:(id)arg1 sourceApplication:(id)arg2 previousArticleID:(id)arg3 previousArticleVersion:(id)arg4 adPreviewSessionID:(id)arg5 adPreviewID:(id)arg6 adQToken:(id)arg7 maximumAdRequestsForCurrentAdPreviewID:(long long)arg8 userActionDate:(id)arg9 presentationReason:(long long)arg10 notificationID:(id)arg11 notificationSenderChannelID:(id)arg12 referral:(id)arg13;
+- (id)initWithUrl:(id)arg1 title:(id)arg2 sourceApplication:(id)arg3 previousArticleID:(id)arg4 previousArticleVersion:(id)arg5 adPreviewSessionID:(id)arg6 adPreviewID:(id)arg7 adQToken:(id)arg8 maximumAdRequestsForCurrentAdPreviewID:(long long)arg9 userActionDate:(id)arg10 presentationReason:(long long)arg11 notificationID:(id)arg12 notificationSenderChannelID:(id)arg13 referral:(id)arg14 shouldAutoPlayVideo:(_Bool)arg15;
 @property(nonatomic, retain) TSAnalyticsReferral *referral; // @synthesize referral;
+@property(nonatomic, readonly) _Bool shouldAutoPlayVideo; // @synthesize shouldAutoPlayVideo;
 @property(nonatomic, readonly) NSString *notificationSenderChannelID;
 @property(nonatomic, readonly) NSString *notificationID;
 @property(nonatomic, readonly) long long presentationReason; // @synthesize presentationReason;
@@ -40,6 +43,7 @@
 @property(nonatomic, readonly) NSString *previousArticleVersion;
 @property(nonatomic, readonly) NSString *previousArticleID;
 @property(nonatomic, readonly) NSString *sourceApplication;
+@property(nonatomic, readonly) NSString *title;
 @property(nonatomic, readonly) NSURL *url;
 
 @end

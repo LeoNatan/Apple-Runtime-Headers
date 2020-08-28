@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSSet, NSString;
+@class NSArray, NSSet, NSString;
 
 @interface PKCarUnlockSupportedTerminal : NSObject
 {
-    NSString *_associatedAppIdentifier;
+    NSArray *_associatedApplicationIdentifiers;
     NSString *_partnerIdentifier;
     NSString *_partnerName;
     NSSet *_terminalCriteria;
@@ -20,7 +20,7 @@
 @property(readonly, copy, nonatomic) NSSet *terminalCriteria; // @synthesize terminalCriteria=_terminalCriteria;
 @property(readonly, copy, nonatomic) NSString *partnerName; // @synthesize partnerName=_partnerName;
 @property(readonly, copy, nonatomic) NSString *partnerIdentifier; // @synthesize partnerIdentifier=_partnerIdentifier;
-@property(readonly, copy, nonatomic) NSString *associatedAppIdentifier; // @synthesize associatedAppIdentifier=_associatedAppIdentifier;
+@property(readonly, copy, nonatomic) NSArray *associatedApplicationIdentifiers; // @synthesize associatedApplicationIdentifiers=_associatedApplicationIdentifiers;
 - (id)description;
 - (id)initWithDictionary:(id)arg1;
 

@@ -12,6 +12,8 @@
     // Error parsing type: , name: placeholderImage
     // Error parsing type: , name: emptyImage
     // Error parsing type: , name: naImage
+    // Error parsing type: , name: desiredItemIdentifiers
+    // Error parsing type: , name: undesiredItemIdentifiers
     // Error parsing type: , name: key
     // Error parsing type: , name: sections
     // Error parsing type: , name: feedItemImages

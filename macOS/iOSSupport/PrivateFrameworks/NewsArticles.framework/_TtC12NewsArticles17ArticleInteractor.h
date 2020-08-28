@@ -15,6 +15,7 @@
     // Error parsing type: , name: dataManager
     // Error parsing type: , name: readingListObserver
     // Error parsing type: , name: paywallFactory
+    // Error parsing type: , name: previewManager
     // Error parsing type: , name: eventManager
 }
 

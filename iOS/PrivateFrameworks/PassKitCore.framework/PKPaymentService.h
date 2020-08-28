@@ -33,15 +33,17 @@
 - (void)storeTransactionReceiptData:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)transactionReceiptForTransactionWithIdentifier:(id)arg1 updateIfNecessary:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)transactionReceiptWithUniqueID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)didUpdateSharingInvitationWithIdentifier:(id)arg1 reason:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)didReceiveSharingInvitationRequest:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)didReceiveSharingInvitationWithIdentifier:(id)arg1 fromOriginatorIDSHandle:(id)arg2 sharingSessionIdentifier:(id)arg3 metadata:(id)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)didReceiveSharingInvitationWithIdentifier:(id)arg1 groupIdentifier:(id)arg2 metadata:(id)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)finishedKeyExchangeForCredential:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)sharingInvitationWasInvalidated:(id)arg1 withCredentialIdentifier:(id)arg2 error:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)credentialWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)canAcceptInvitation:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)matchingInvitationOnDevice:(id)arg1 withTimeout:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)requestBackgroundRegistrationForCredentialWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeSharingInvitation:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)declineRelatedSharingInvitationsIfNecessary:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)addSubcredential:(id)arg1 fromSharingInvitation:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)removeSharingInvitationReceiptWithIdentifiers:(id)arg1 onCredential:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)addSharingInvitationReceipts:(id)arg1 onCredentialWithIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -98,6 +100,7 @@
 - (void)transitStateWithPassUniqueIdentifier:(id)arg1 paymentApplication:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)simulateDefaultExpressTransitPassIdentifier:(id)arg1 forExpressMode:(id)arg2;
 - (void)processTransitTransactionEventWithHistory:(id)arg1 transactionDate:(id)arg2 forPaymentApplication:(id)arg3 withPassUniqueIdentifier:(id)arg4 expressTransactionState:(id)arg5;
+- (void)isPassExpressWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeExpressPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeExpressPassesWithCardType:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setExpressWithPassInformation:(id)arg1 credential:(id)arg2 handler:(CDUnknownBlockType)arg3;

@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) FI_TPreviewOptions *previewOptions; // @dynamic previewOptions;
 @property(readonly, retain, nonatomic) FI_TSpotlightMetaDataStackView *stackView; // @dynamic stackView;
 - (void)viewLoaded;
+- (_Bool)isApplicableToNodes:(const struct TFENodeVector *)arg1;
 - (void)initCommon;
 
 @end

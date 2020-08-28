@@ -8,7 +8,6 @@
 
 @interface _TtC8NewsFeed24CoverChannelViewRenderer : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: traitCollection
     // Error parsing type: , name: rendererTool
     // Error parsing type: , name: imageCache
 }

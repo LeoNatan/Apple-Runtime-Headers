@@ -28,6 +28,9 @@
     BOOL _isHidden;
     BOOL _isRealTimeTrackingEnabled;
     BOOL _isArticleReadCountReportingEnabled;
+    BOOL _isInternal;
+    BOOL _isSandbox;
+    BOOL _isLocal;
     NSString *_identifier;
     NSString *_versionKey;
     NSString *_name;
@@ -56,7 +59,6 @@
     FCAssetHandle *_logoImageAssetHandle;
     FCAssetHandle *_coverImageAssetHandle;
     FCAssetHandle *_feedNavImageAssetHandle;
-    NSString *_coverArticleListID;
     FCTextInfo *_headlineTitleTextInfo;
     FCTextInfo *_headlineExcerptTextInfo;
     FCTextInfo *_headlineBylineTextInfo;
@@ -86,6 +88,7 @@
     FCSectionSupergroupKnobs *_supergroupKnobs;
     NSString *_pptFeedIDOverride;
     FCInterestToken *_tagInterestToken;
+    unsigned long long _userFacingTagTypeOverride;
     NTPBFeedConfiguration *_feedConfiguration;
     NSArray *_sectionFeedConfigurations;
     NSString *_backgroundColorHexString;
@@ -117,6 +120,7 @@
 @property(copy, nonatomic) NSString *backgroundColorHexString; // @synthesize backgroundColorHexString=_backgroundColorHexString;
 @property(copy, nonatomic) NSArray *sectionFeedConfigurations; // @synthesize sectionFeedConfigurations=_sectionFeedConfigurations;
 @property(copy, nonatomic) NTPBFeedConfiguration *feedConfiguration; // @synthesize feedConfiguration=_feedConfiguration;
+@property(nonatomic) unsigned long long userFacingTagTypeOverride; // @synthesize userFacingTagTypeOverride=_userFacingTagTypeOverride;
 @property(retain, nonatomic) FCInterestToken *tagInterestToken; // @synthesize tagInterestToken=_tagInterestToken;
 @property(copy, nonatomic) NSString *pptFeedIDOverride; // @synthesize pptFeedIDOverride=_pptFeedIDOverride;
 @property(readonly, nonatomic) FCSectionSupergroupKnobs *supergroupKnobs; // @synthesize supergroupKnobs=_supergroupKnobs;
@@ -125,6 +129,9 @@
 @property(readonly, copy, nonatomic) FCPaywallConfiguration *paidBundlePaywallConfiguration; // @synthesize paidBundlePaywallConfiguration=_paidBundlePaywallConfiguration;
 @property(readonly, nonatomic) NSDate *publisherSpecifiedArticleIDsModifiedDate; // @synthesize publisherSpecifiedArticleIDsModifiedDate=_publisherSpecifiedArticleIDsModifiedDate;
 @property(readonly, nonatomic) NSArray *publisherSpecifiedArticleIDs; // @synthesize publisherSpecifiedArticleIDs=_publisherSpecifiedArticleIDs;
+@property(readonly, nonatomic) BOOL isLocal; // @synthesize isLocal=_isLocal;
+@property(readonly, nonatomic) BOOL isSandbox; // @synthesize isSandbox=_isSandbox;
+@property(readonly, nonatomic) BOOL isInternal; // @synthesize isInternal=_isInternal;
 @property(readonly, nonatomic) BOOL isArticleReadCountReportingEnabled; // @synthesize isArticleReadCountReportingEnabled=_isArticleReadCountReportingEnabled;
 @property(readonly, nonatomic) BOOL isRealTimeTrackingEnabled; // @synthesize isRealTimeTrackingEnabled=_isRealTimeTrackingEnabled;
 @property(readonly, nonatomic) BOOL isHidden; // @synthesize isHidden=_isHidden;
@@ -148,7 +155,6 @@
 @property(readonly, copy, nonatomic) FCTextInfo *headlineBylineTextInfo; // @synthesize headlineBylineTextInfo=_headlineBylineTextInfo;
 @property(readonly, copy, nonatomic) FCTextInfo *headlineExcerptTextInfo; // @synthesize headlineExcerptTextInfo=_headlineExcerptTextInfo;
 @property(readonly, copy, nonatomic) FCTextInfo *headlineTitleTextInfo; // @synthesize headlineTitleTextInfo=_headlineTitleTextInfo;
-@property(readonly, copy, nonatomic) NSString *coverArticleListID; // @synthesize coverArticleListID=_coverArticleListID;
 @property(readonly, nonatomic) FCAssetHandle *feedNavImageAssetHandle; // @synthesize feedNavImageAssetHandle=_feedNavImageAssetHandle;
 @property(readonly, nonatomic) FCAssetHandle *coverImageAssetHandle; // @synthesize coverImageAssetHandle=_coverImageAssetHandle;
 @property(readonly, nonatomic) FCAssetHandle *logoImageAssetHandle; // @synthesize logoImageAssetHandle=_logoImageAssetHandle;
@@ -242,6 +248,7 @@
 @property(readonly, nonatomic) BOOL isBlockedExplicitContent;
 @property(readonly, nonatomic) NSArray *loadableFonts;
 - (id)purchaseOfferableConfigurationsFromProtobufList:(id)arg1;
+@property(readonly, nonatomic) unsigned long long userFacingTagType;
 - (id)initWithTagRecord:(id)arg1 assetManager:(id)arg2 interestToken:(id)arg3;
 - (id)initWithData:(id)arg1 context:(id)arg2;
 - (id)initWithTagType:(unsigned long long)arg1 identifier:(id)arg2 name:(id)arg3;

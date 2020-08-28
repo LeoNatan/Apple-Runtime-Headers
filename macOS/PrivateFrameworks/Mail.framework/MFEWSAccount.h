@@ -73,7 +73,6 @@
 - (void)createMailboxFromEWSFolder:(id)arg1;
 - (id)mailboxNameForFolderIdString:(id)arg1;
 - (void)messageDeliveryDidFinish:(id)arg1;
-@property(retain) NSDate *lastSyncDate;
 - (BOOL)_shouldHideMailbox:(id)arg1 withType:(int)arg2;
 - (void)setUserOofSettingsState:(long long)arg1 internalReply:(id)arg2 externalReply:(id)arg3 startTime:(id)arg4 endTime:(id)arg5;
 - (void)getUserOofSettings;
@@ -109,6 +108,9 @@
 - (BOOL)canMailboxBeRenamed:(id)arg1;
 - (id)_createMailboxWithParent:(id)arg1 displayName:(id)arg2 localizedDisplayName:(id)arg3 type:(int)arg4;
 - (id)createMailboxWithParent:(id)arg1 displayName:(id)arg2 localizedDisplayName:(id)arg3;
+- (void)deleteAccount;
+- (id)_lastSyncDateUserDefault;
+@property(retain) NSDate *lastSyncDate;
 - (void)setEmailAddressStrings:(id)arg1;
 - (BOOL)_readMailboxCache;
 - (void)_setSpecialMailboxRelativePath:(id)arg1 forType:(int)arg2;

@@ -8,16 +8,17 @@
 
 @interface _TtC5TeaUI29GradientSectionDecorationView : UICollectionReusableView
 {
-    // Error parsing type: , name: gradientDescriptor
+    // Error parsing type: , name: gradientView
+    // Error parsing type: , name: gradientSize
+    // Error parsing type: , name: overscrollPinPosition
 }
 
-+ (Class)layerClass;
 - (void).cxx_destruct;
+- (void)gutterViewBoundsDidChange;
+- (void)applyLayoutAttributes:(id)arg1;
+- (void)layoutSubviews;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)gutterViewBoundsDidChange;
-- (void)traitCollectionDidChange:(id)arg1;
-- (void)applyLayoutAttributes:(id)arg1;
 - (void)didMoveToSuperview;
 - (void)willMoveToSuperview:(id)arg1;
 

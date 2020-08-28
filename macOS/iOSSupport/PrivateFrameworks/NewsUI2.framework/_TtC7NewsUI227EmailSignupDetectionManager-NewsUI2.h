@@ -7,6 +7,6 @@
 #import <NewsUI2/_TtC7NewsUI227EmailSignupDetectionManager.h>
 
 @interface _TtC7NewsUI227EmailSignupDetectionManager (NewsUI2)
-- (void)activityObservingApplicationWindowWillBecomeForeground;
+- (void)activityObservingApplicationWindowDidBecomeForeground;
 @end
 

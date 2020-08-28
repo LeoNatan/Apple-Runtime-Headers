@@ -8,8 +8,8 @@
 
 #import <PassKitCore/CLLocationManagerDelegate-Protocol.h>
 
-@class CLGeocoder, CLLocationManager, NSMutableArray, NSMutableSet, NSString, PKMerchantCategoryCodeMap, PKUsageNotificationServer;
-@protocol OS_dispatch_source, PKPaymentTransactionProcessorDelegate;
+@class CLGeocoder, CLLocationManager, NSHashTable, NSMutableArray, NSMutableSet, NSString, PKMerchantCategoryCodeMap, PKUsageNotificationServer;
+@protocol OS_dispatch_source;
 
 @interface PKPaymentTransactionProcessor : NSObject <CLLocationManagerDelegate>
 {
@@ -27,14 +27,15 @@
     BOOL _active;
     BOOL _processingMerchantCleanupItems;
     PKMerchantCategoryCodeMap *_categoryCodeMap;
-    id <PKPaymentTransactionProcessorDelegate> _delegate;
+    struct os_unfair_lock_s _observersLock;
+    NSHashTable *_observers;
     PKUsageNotificationServer *_usageNotificationServer;
 }
 
 - (void).cxx_destruct;
 @property(nonatomic) __weak PKUsageNotificationServer *usageNotificationServer; // @synthesize usageNotificationServer=_usageNotificationServer;
-@property(nonatomic) __weak id <PKPaymentTransactionProcessorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
+- (void)_updateObserversForPaymentTransactionUpdated:(id)arg1 forPassUniqueIdentifier:(id)arg2 paymentApplication:(id)arg3;
 - (id)_pendingMerchantCleanupItemForTransaction:(id)arg1;
 - (id)_pendingStationsUpdateItemForTransaction:(id)arg1;
 - (id)_pendingLocationUpdateItemForTransaction:(id)arg1;
@@ -63,6 +64,9 @@
 - (void)_processPaymentTransactionForDemoMode:(id)arg1 forPassUniqueIdentifier:(id)arg2 paymentApplication:(id)arg3;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
+- (void)_accessObserversWithHandler:(CDUnknownBlockType)arg1;
+- (void)unregisterObserver:(id)arg1;
+- (void)registerObserver:(id)arg1;
 - (void)processPaymentTransaction:(id)arg1 forPassUniqueIdentifier:(id)arg2 paymentApplication:(id)arg3;
 - (id)init;
 

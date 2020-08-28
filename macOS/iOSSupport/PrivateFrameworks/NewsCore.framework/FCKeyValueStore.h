@@ -15,11 +15,11 @@
 {
     BOOL _shouldExportJSONSidecar;
     BOOL _unsafeWaitingOnSave;
+    NSString *_storeDirectory;
     NSString *_name;
     unsigned long long _storeSize;
     NSMutableDictionary *_unsafeObjectsByKey;
     id <NFLocking> _lock;
-    NSString *_storeDirectory;
     unsigned long long _clientVersion;
     unsigned long long _optionsMask;
     FCKeyValueStoreClassRegistry *_classRegistry;
@@ -41,12 +41,12 @@
 @property(retain, nonatomic) FCKeyValueStoreClassRegistry *classRegistry; // @synthesize classRegistry=_classRegistry;
 @property(nonatomic) unsigned long long optionsMask; // @synthesize optionsMask=_optionsMask;
 @property(nonatomic) unsigned long long clientVersion; // @synthesize clientVersion=_clientVersion;
-@property(retain, nonatomic) NSString *storeDirectory; // @synthesize storeDirectory=_storeDirectory;
 @property(retain, nonatomic) id <NFLocking> lock; // @synthesize lock=_lock;
 @property(nonatomic) BOOL unsafeWaitingOnSave; // @synthesize unsafeWaitingOnSave=_unsafeWaitingOnSave;
 @property(retain, nonatomic) NSMutableDictionary *unsafeObjectsByKey; // @synthesize unsafeObjectsByKey=_unsafeObjectsByKey;
 @property(nonatomic) unsigned long long storeSize; // @synthesize storeSize=_storeSize;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
+@property(readonly, nonatomic) NSString *storeDirectory; // @synthesize storeDirectory=_storeDirectory;
 @property(nonatomic) BOOL shouldExportJSONSidecar; // @synthesize shouldExportJSONSidecar=_shouldExportJSONSidecar;
 - (id)fc_jsonString;
 - (id)fc_jsonStringWithDictionary:(id)arg1;
@@ -85,6 +85,7 @@
 - (void)removeAllObjects;
 - (void)removeObjectsForKeys:(id)arg1;
 - (void)removeObjectForKey:(id)arg1;
+- (void)replaceContentsWithDictionary:(id)arg1;
 - (void)addEntriesFromDictionary:(id)arg1;
 - (void)setObjects:(id)arg1 forKeys:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;

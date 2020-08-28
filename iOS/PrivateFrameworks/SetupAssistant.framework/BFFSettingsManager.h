@@ -23,6 +23,7 @@
     NSArray *_stashedFlowSkipIdentifiers;
     NSNumber *_stashedScreenTimeEnabled;
     NSNumber *_stashedAutoUpdateEnabled;
+    NSNumber *_stashedAutoDownloadEnabled;
     NSData *_stashedAccessibilityData;
     NSDictionary *_stashedDeviceToDeviceMigrationSuccessInfo;
     NSNumber *_stashedUserInterfaceStyleMode;
@@ -37,7 +38,7 @@
 - (void)_restoreAccessibilityData;
 - (void)_restoreWatchData;
 - (void)_restoreStashedFiles;
-- (void)_applyAutoUpdatePreferences;
+- (void)_applyUpdatePreferences;
 - (void)_applyScreenTimePreferences;
 - (void)_applyStashedFlowSkipIdentifiers;
 - (void)_applyLocationServicesSettings;
@@ -58,6 +59,7 @@
 - (_Bool)hideStashInSafeHaven;
 - (void)setUserInterfaceStyleMode:(long long)arg1;
 - (void)stashAccessibilityData:(id)arg1;
+- (void)setAutoDownloadEnabled:(_Bool)arg1;
 - (void)setAutoUpdateEnabled:(_Bool)arg1;
 - (void)setScreenTimeEnabled:(_Bool)arg1;
 - (void)stashFlowSkipIdentifiers:(id)arg1;

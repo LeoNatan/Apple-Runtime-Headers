@@ -72,6 +72,7 @@
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
 @property(nonatomic, getter=isDeviceAuthenticated) _Bool deviceAuthenticated; // @synthesize deviceAuthenticated=_deviceAuthenticated;
 @property(copy, nonatomic) NSString *logDescription; // @synthesize logDescription=_logDescription;
+- (_Bool)_shouldAllowInteractionWithNotificationViewController:(id)arg1;
 - (void)_reloadRecycledNotificationCellForRequest:(id)arg1;
 - (void)_reloadRecycledGroupedNotificationCells;
 - (void)_reloadNotificationCellAtIndex:(unsigned long long)arg1;

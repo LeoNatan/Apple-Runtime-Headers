@@ -17,11 +17,13 @@
     _Bool _dismissed;
     struct __CFUserNotification *_userNotification;
     struct __CFRunLoopSource *_userRLS;
+    _Bool _showOnLockScreen;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     CDUnknownBlockType _invalidationHandler;
     NSString *_titleKey;
     NSString *_titleParameter;
     NSString *_subTitleKey;
+    NSObject *_subTitleParameter;
     NSString *_defaultButtonTitleKey;
     NSString *_alternativeButtonTitleKey;
     double _timeoutSeconds;
@@ -31,8 +33,10 @@
 - (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType actionHandler; // @synthesize actionHandler=_actionHandler;
 @property(nonatomic) double timeoutSeconds; // @synthesize timeoutSeconds=_timeoutSeconds;
+@property(nonatomic) _Bool showOnLockScreen; // @synthesize showOnLockScreen=_showOnLockScreen;
 @property(copy, nonatomic) NSString *alternativeButtonTitleKey; // @synthesize alternativeButtonTitleKey=_alternativeButtonTitleKey;
 @property(copy, nonatomic) NSString *defaultButtonTitleKey; // @synthesize defaultButtonTitleKey=_defaultButtonTitleKey;
+@property(copy, nonatomic) NSObject *subTitleParameter; // @synthesize subTitleParameter=_subTitleParameter;
 @property(copy, nonatomic) NSString *subTitleKey; // @synthesize subTitleKey=_subTitleKey;
 @property(copy, nonatomic) NSString *titleParameter; // @synthesize titleParameter=_titleParameter;
 @property(copy, nonatomic) NSString *titleKey; // @synthesize titleKey=_titleKey;

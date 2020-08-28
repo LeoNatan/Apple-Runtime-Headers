@@ -8,13 +8,20 @@
 
 #import <Silex/NSSecureCoding-Protocol.h>
 
+@class NSString;
+
 @interface SXScrollPosition : NSObject <NSSecureCoding>
 {
 }
 
 + (BOOL)supportsSecureCoding;
+- (id)dictionaryRepresentation;
+- (BOOL)jsonDictionaryRepresentationIsValid:(id)arg1 exactly:(BOOL)arg2;
+- (id)initWithDictionaryRepresentation:(id)arg1 exactly:(BOOL)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(readonly, nonatomic) NSString *jsonRepresentation;
+- (id)initWithJSONRepresentation:(id)arg1;
 
 @end
 

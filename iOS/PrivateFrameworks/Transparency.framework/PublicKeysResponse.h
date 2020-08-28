@@ -6,7 +6,7 @@
 
 #import <Transparency/GPBMessage.h>
 
-@class NSData, NSMutableArray, PatConfigInclusionProof, Signature;
+@class NSData, NSMutableArray, PatInclusionProof, Signature;
 
 @interface PublicKeysResponse : GPBMessage
 {
@@ -21,7 +21,7 @@
 @property(nonatomic) _Bool hasVrfSignature; // @dynamic hasVrfSignature;
 @property(retain, nonatomic) NSMutableArray *intermediatesArray; // @dynamic intermediatesArray;
 @property(readonly, nonatomic) unsigned long long intermediatesArray_Count; // @dynamic intermediatesArray_Count;
-@property(retain, nonatomic) PatConfigInclusionProof *patConfigProof; // @dynamic patConfigProof;
+@property(retain, nonatomic) PatInclusionProof *patConfigProof; // @dynamic patConfigProof;
 @property(nonatomic) int status; // @dynamic status;
 @property(nonatomic) unsigned long long tltBeginningMs; // @dynamic tltBeginningMs;
 @property(retain, nonatomic) NSMutableArray *tltLeafsArray; // @dynamic tltLeafsArray;

@@ -8,14 +8,15 @@
 
 #import <Transparency/TransparencyVerifiable-Protocol.h>
 
-@class NSData, NSMutableArray, SignedMapHead, TransparencyMapEntryVerifier;
+@class NSData, NSMutableArray, SignedMapHead, TransparencyManagedDataStore, TransparencyMapEntryVerifier;
 
 @interface MapEntry : GPBMessage <TransparencyVerifiable>
 {
 }
 
 + (id)descriptor;
-- (BOOL)verifyWithError:(id *)arg1;
+- (unsigned long long)verifyWithError:(id *)arg1;
+@property(retain) TransparencyManagedDataStore *dataStore;
 @property(retain) TransparencyMapEntryVerifier *verifier;
 
 // Remaining properties

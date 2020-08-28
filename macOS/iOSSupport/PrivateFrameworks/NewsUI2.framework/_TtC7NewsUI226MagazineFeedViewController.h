@@ -20,6 +20,8 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: offlineAlertControllerFactory
     // Error parsing type: , name: mastheadStyleOptionsProvider
     // Error parsing type: , name: sharingActivityProviderFactory
+    // Error parsing type: , name: bundlePurchasePrewarmer
+    // Error parsing type: , name: paidBundleConfigurationManager
     // Error parsing type: , name: heightChangeRelayoutThreshold
     // Error parsing type: , name: viewportFromLastRelayout
     // Error parsing type: , name: isBeingUsedAsPlugin

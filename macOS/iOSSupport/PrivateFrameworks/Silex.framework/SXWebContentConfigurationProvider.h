@@ -10,28 +10,28 @@
 #import <Silex/SXWebContentConfigurationProvider-Protocol.h>
 
 @class NSLocale, NSString;
-@protocol SXPresentationAttributesProvider, SXStoreFrontProvider, SXWebContentLocationProvider;
+@protocol SWLocation, SXPresentationAttributesProvider, SXStoreFrontProvider;
 
 @interface SXWebContentConfigurationProvider : NSObject <SXPresentationAttributesObserver, SXWebContentConfigurationProvider>
 {
     id <SXPresentationAttributesProvider> _presentationAttributesProvider;
     id <SXStoreFrontProvider> _storeFrontProvider;
     NSLocale *_locale;
-    id <SXWebContentLocationProvider> _locationProvider;
+    id <SWLocation> _location;
     CDUnknownBlockType _changeBlock;
 }
 
 - (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType changeBlock; // @synthesize changeBlock=_changeBlock;
-@property(readonly, nonatomic) id <SXWebContentLocationProvider> locationProvider; // @synthesize locationProvider=_locationProvider;
+@property(readonly, nonatomic) id <SWLocation> location; // @synthesize location=_location;
 @property(readonly, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property(readonly, nonatomic) id <SXStoreFrontProvider> storeFrontProvider; // @synthesize storeFrontProvider=_storeFrontProvider;
 @property(readonly, nonatomic) id <SXPresentationAttributesProvider> presentationAttributesProvider; // @synthesize presentationAttributesProvider=_presentationAttributesProvider;
 - (void)presentationAttributesDidChangeFrom:(id)arg1 toAttributes:(id)arg2;
 - (void)onChange:(CDUnknownBlockType)arg1;
-- (id)configurationForSize:(struct CGSize)arg1 dataSources:(id)arg2;
+- (id)configurationForSize:(struct CGSize)arg1 dataSources:(id)arg2 sourceURL:(id)arg3;
 - (void)invokeChangeListener;
-- (id)initWithPresentationAttributesProvider:(id)arg1 storeFrontProvider:(id)arg2 locale:(id)arg3 locationProvider:(id)arg4;
+- (id)initWithPresentationAttributesProvider:(id)arg1 storeFrontProvider:(id)arg2 locale:(id)arg3 location:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

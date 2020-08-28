@@ -22,10 +22,10 @@
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic) NSString *processedHTML; // @synthesize processedHTML=_processedHTML;
 - (id)embedCSSIntoExcerptHTML:(id)arg1 scale:(double)arg2;
-- (id)paragraphShortExcerptHTML:(id)arg1 article:(id)arg2;
-- (id)excerptHTMLToProcessedHTML:(id)arg1 article:(id)arg2 scale:(double)arg3;
+- (id)paragraphShortExcerptHTML:(id)arg1 headline:(id)arg2;
+- (id)excerptHTMLToProcessedHTML:(id)arg1 headline:(id)arg2 scale:(double)arg3;
 - (id)stripHTMLTagsFromExcerptHTML:(id)arg1;
-- (id)initWithArticle:(id)arg1 excerptHTML:(id)arg2 scale:(double)arg3;
+- (id)initWitHeadline:(id)arg1 excerptHTML:(id)arg2 scale:(double)arg3;
 
 @end
 

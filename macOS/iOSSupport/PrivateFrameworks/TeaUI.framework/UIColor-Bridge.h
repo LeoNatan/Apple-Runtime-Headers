@@ -12,5 +12,7 @@
 + (id)ts_tableCellDefaultSelectionTintColor;
 + (id)ts_systemDarkTealColor;
 - (double)ts_luminance;
+@property(nonatomic, readonly) UIColor *tu_dynamicLegibleForeground;
+@property(nonatomic, readonly) UIColor *tu_legibleForeground;
 @end
 

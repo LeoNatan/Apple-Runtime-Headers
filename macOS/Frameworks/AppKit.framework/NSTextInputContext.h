@@ -208,6 +208,7 @@
 - (id)attributedSubstringForProposedRange_RTI:(struct _NSRange)arg1 actualRange:(struct _NSRange *)arg2;
 - (BOOL)hasMarkedText_RTI;
 - (struct _NSRange)markedRange_RTI;
+- (struct _NSRange)_correctRTIRangeIfRequired:(struct _NSRange)arg1;
 - (struct _NSRange)selectedRange_RTI;
 - (void)unmarkText_RTI;
 - (void)setMarkedText_RTI:(id)arg1 selectedRange:(struct _NSRange)arg2 replacementRange:(struct _NSRange)arg3;
@@ -245,6 +246,11 @@
 - (BOOL)handleEventByKeyboardLayout:(id)arg1;
 - (void)handleEventByInputMethod:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)handleEvent:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)rtiSession;
+- (void)setRTISession:(id)arg1;
+- (id)rtiDocumentState;
+- (void)setRTIDocumentState:(id)arg1;
+- (void)flushRTIOperations;
 - (BOOL)wantsToDelayTextChangeNotifications;
 - (BOOL)handleMouseEvent:(id)arg1;
 - (BOOL)wantsToHandleMouseEvents;

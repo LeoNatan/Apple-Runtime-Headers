@@ -12,9 +12,15 @@
 @property(nonatomic) unsigned long long articleLikingStatus;
 @property(nonatomic) _Bool hasArticleBeenConsumed;
 @property(nonatomic) _Bool hasArticleBeenMarkedOffensive;
+@property(nonatomic) _Bool hasArticleCompletedListening;
 @property(nonatomic) _Bool hasArticleBeenSeen;
 @property(nonatomic) _Bool hasArticleBeenRead;
 @property(nonatomic) long long readCount;
+@property(copy, nonatomic) NSDate *readingPositionSavedAt;
+@property(copy, nonatomic) NSString *readingPosition;
+@property(copy, nonatomic) NSDate *lastListenedAt;
+@property(copy, nonatomic) NSDate *listeningProgressSavedAt;
+@property(nonatomic) double listeningProgress;
 @property(nonatomic) long long maxVersionSeen;
 @property(copy, nonatomic) NSDate *firstSeenAtOfMaxVersionSeen;
 @property(copy, nonatomic) NSDate *firstSeenAt;

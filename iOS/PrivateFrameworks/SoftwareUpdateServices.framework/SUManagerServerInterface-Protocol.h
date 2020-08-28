@@ -8,6 +8,8 @@
 
 @protocol SUManagerServerInterface
 - (void)registerCSInstallPredicatesOnDate:(NSDate *)arg1;
+- (void)isAutomaticDownloadEnabled:(void (^)(_Bool, NSError *))arg1;
+- (void)enableAutomaticDownload:(_Bool)arg1;
 - (void)isAutomaticUpdateV2Enabled:(void (^)(_Bool, NSError *))arg1;
 - (void)enableAutomaticUpdateV2:(_Bool)arg1;
 - (void)createInstallationKeybag:(NSString *)arg1 forUnattendedInstall:(_Bool)arg2 withResult:(void (^)(_Bool, NSError *))arg3;

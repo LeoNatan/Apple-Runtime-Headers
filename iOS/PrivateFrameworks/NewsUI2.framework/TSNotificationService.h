@@ -11,7 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface TSNotificationService : NSObject <UNUserNotificationCenterDelegate>
 {
-    // Error parsing type: , name: kOptions
+    // Error parsing type: , name: options
 }
 
 - (id)init;

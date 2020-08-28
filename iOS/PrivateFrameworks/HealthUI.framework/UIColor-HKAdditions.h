@@ -91,6 +91,7 @@
 + (id)hk_workoutGradientBottomColor;
 + (id)hk_workoutGradientTopColor;
 + (id)hk_workoutKeyColor;
++ (id)hk_symptomsKeyColor;
 + (id)hk_otherKeyColor;
 + (id)hk_respiratoryKeyColor;
 + (id)hk_sleepAsleepColor;

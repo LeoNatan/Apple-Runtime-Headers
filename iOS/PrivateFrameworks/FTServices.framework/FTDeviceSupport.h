@@ -111,6 +111,7 @@
 - (void)_initializeSIMInsertedCachedValue;
 @property(readonly, nonatomic) _Bool SIMInserted;
 @property(readonly, nonatomic) _Bool supportsSimultaneousVoiceAndDataRightNow;
+@property(readonly, nonatomic) _Bool supportsHDRdecoding;
 @property(readonly, nonatomic) _Bool isC2KEquipment;
 @property(readonly, nonatomic) NSDictionary *telephonyCapabilities;
 @property(readonly, nonatomic) NSString *deviceTypeIDPrefix;

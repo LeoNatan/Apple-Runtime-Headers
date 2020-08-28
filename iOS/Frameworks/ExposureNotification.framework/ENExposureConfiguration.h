@@ -8,41 +8,80 @@
 
 #import <ExposureNotification/CUXPCCodable-Protocol.h>
 
-@class NSArray;
+@class NSArray, NSDictionary;
 
 @interface ENExposureConfiguration : NSObject <CUXPCCodable>
 {
-    unsigned char _attenuationScoresMap[8];
-    unsigned char _daysSinceLastExposureScoresMap[8];
-    unsigned char _durationScoresMap[8];
-    unsigned char _transmissionRiskScoresMap[8];
+    unsigned char _attenuationLevelValuesMap[8];
+    unsigned char _daysSinceLastExposureLevelValuesMap[8];
+    unsigned char _durationLevelValuesMap[8];
+    unsigned char _transmissionRiskLevelValuesMap[8];
     unsigned char _minimumRiskScore;
-    NSArray *_attenuationScores;
+    unsigned int _flags;
+    unsigned int _reportTypeNoneMap;
+    double _immediateDurationWeight;
+    double _nearDurationWeight;
+    double _mediumDurationWeight;
+    double _otherDurationWeight;
+    NSDictionary *_infectiousnessForDaysSinceOnsetOfSymptoms;
+    double _infectiousnessStandardWeight;
+    double _infectiousnessHighWeight;
+    double _reportTypeConfirmedTestWeight;
+    double _reportTypeConfirmedClinicalDiagnosisWeight;
+    double _reportTypeSelfReportedWeight;
+    double _reportTypeRecursiveWeight;
+    NSArray *_attenuationDurationThresholds;
+    long long _daysSinceLastExposureThreshold;
+    double _minimumRiskScoreFullRange;
+    NSArray *_attenuationLevelValues;
     double _attenuationWeight;
-    NSArray *_daysSinceLastExposureScores;
+    NSArray *_daysSinceLastExposureLevelValues;
     double _daysSinceLastExposureWeight;
-    NSArray *_durationScores;
+    NSArray *_durationLevelValues;
     double _durationWeight;
-    NSArray *_transmissionRiskScores;
+    NSDictionary *_metadata;
+    NSArray *_transmissionRiskLevelValues;
     double _transmissionRiskWeight;
 }
 
 - (void).cxx_destruct;
 @property(nonatomic) double transmissionRiskWeight; // @synthesize transmissionRiskWeight=_transmissionRiskWeight;
-@property(copy, nonatomic) NSArray *transmissionRiskScores; // @synthesize transmissionRiskScores=_transmissionRiskScores;
-@property(nonatomic) double durationWeight; // @synthesize durationWeight=_durationWeight;
-@property(copy, nonatomic) NSArray *durationScores; // @synthesize durationScores=_durationScores;
-@property(nonatomic) double daysSinceLastExposureWeight; // @synthesize daysSinceLastExposureWeight=_daysSinceLastExposureWeight;
-@property(copy, nonatomic) NSArray *daysSinceLastExposureScores; // @synthesize daysSinceLastExposureScores=_daysSinceLastExposureScores;
-@property(nonatomic) double attenuationWeight; // @synthesize attenuationWeight=_attenuationWeight;
-@property(copy, nonatomic) NSArray *attenuationScores; // @synthesize attenuationScores=_attenuationScores;
+@property(copy, nonatomic) NSArray *transmissionRiskLevelValues; // @synthesize transmissionRiskLevelValues=_transmissionRiskLevelValues;
 @property(nonatomic) unsigned char minimumRiskScore; // @synthesize minimumRiskScore=_minimumRiskScore;
-- (double)transmissionScoreWithTransmissionRiskLevel:(unsigned char)arg1;
-- (double)durationScoreWithDuration:(double)arg1;
-- (double)daysSinceLastExposureScoreWithDays:(long long)arg1;
-- (double)attenuationScoreWithAttenuation:(unsigned char)arg1;
+@property(copy, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
+@property(nonatomic) double durationWeight; // @synthesize durationWeight=_durationWeight;
+@property(copy, nonatomic) NSArray *durationLevelValues; // @synthesize durationLevelValues=_durationLevelValues;
+@property(nonatomic) double daysSinceLastExposureWeight; // @synthesize daysSinceLastExposureWeight=_daysSinceLastExposureWeight;
+@property(copy, nonatomic) NSArray *daysSinceLastExposureLevelValues; // @synthesize daysSinceLastExposureLevelValues=_daysSinceLastExposureLevelValues;
+@property(nonatomic) double attenuationWeight; // @synthesize attenuationWeight=_attenuationWeight;
+@property(copy, nonatomic) NSArray *attenuationLevelValues; // @synthesize attenuationLevelValues=_attenuationLevelValues;
+@property(nonatomic) double minimumRiskScoreFullRange; // @synthesize minimumRiskScoreFullRange=_minimumRiskScoreFullRange;
+@property(nonatomic) long long daysSinceLastExposureThreshold; // @synthesize daysSinceLastExposureThreshold=_daysSinceLastExposureThreshold;
+@property(copy, nonatomic) NSArray *attenuationDurationThresholds; // @synthesize attenuationDurationThresholds=_attenuationDurationThresholds;
+@property(nonatomic) unsigned int reportTypeNoneMap; // @synthesize reportTypeNoneMap=_reportTypeNoneMap;
+@property(nonatomic) double reportTypeRecursiveWeight; // @synthesize reportTypeRecursiveWeight=_reportTypeRecursiveWeight;
+@property(nonatomic) double reportTypeSelfReportedWeight; // @synthesize reportTypeSelfReportedWeight=_reportTypeSelfReportedWeight;
+@property(nonatomic) double reportTypeConfirmedClinicalDiagnosisWeight; // @synthesize reportTypeConfirmedClinicalDiagnosisWeight=_reportTypeConfirmedClinicalDiagnosisWeight;
+@property(nonatomic) double reportTypeConfirmedTestWeight; // @synthesize reportTypeConfirmedTestWeight=_reportTypeConfirmedTestWeight;
+@property(nonatomic) double infectiousnessHighWeight; // @synthesize infectiousnessHighWeight=_infectiousnessHighWeight;
+@property(nonatomic) double infectiousnessStandardWeight; // @synthesize infectiousnessStandardWeight=_infectiousnessStandardWeight;
+@property(copy, nonatomic) NSDictionary *infectiousnessForDaysSinceOnsetOfSymptoms; // @synthesize infectiousnessForDaysSinceOnsetOfSymptoms=_infectiousnessForDaysSinceOnsetOfSymptoms;
+@property(nonatomic) double otherDurationWeight; // @synthesize otherDurationWeight=_otherDurationWeight;
+@property(nonatomic) double mediumDurationWeight; // @synthesize mediumDurationWeight=_mediumDurationWeight;
+@property(nonatomic) double nearDurationWeight; // @synthesize nearDurationWeight=_nearDurationWeight;
+@property(nonatomic) double immediateDurationWeight; // @synthesize immediateDurationWeight=_immediateDurationWeight;
+@property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
+- (double)weightedDurationWithExposureInfo:(id)arg1;
+- (double)transmissionLevelValueWithTransmissionRiskLevel:(unsigned char)arg1;
+- (double)reportTypeWeightWithReportType:(unsigned int)arg1;
+- (double)infectiousnessWeightWithDaysSinceOnsetOfSymptoms:(long long)arg1;
+- (double)durationLevelValueWithDuration:(double)arg1;
+- (double)daysSinceLastExposureLevelValueWithDays:(long long)arg1;
+- (double)attenuationLevelValueWithAttenuation:(unsigned char)arg1;
+- (id)description;
 - (void)encodeWithXPCObject:(id)arg1;
 - (id)initWithXPCObject:(id)arg1 error:(id *)arg2;
+- (id)dictionaryRepresentation;
 - (id)initWithDictionary:(id)arg1 error:(id *)arg2;
 - (id)init;
 

@@ -20,6 +20,8 @@
     // Error parsing type: , name: coverChannelViewRenderer
     // Error parsing type: , name: formatLayoutViewRenderer
     // Error parsing type: , name: webEmbedViewRenderer
+    // Error parsing type: , name: audioTrackViewRenderer
+    // Error parsing type: , name: audioDailyBriefingViewRenderer
     // Error parsing type: , name: webEmbedViewControllerReuseManager
     // Error parsing type: , name: formatRegistrationIdentifiers
 }

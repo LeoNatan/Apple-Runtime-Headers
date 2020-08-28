@@ -11,12 +11,14 @@
 #import <PassKitUI/PKViewControllerPreflightable-Protocol.h>
 
 @class NSString, PKAppletSubcredentialSharingRequest, PKHeroCardExplainationHeaderView, PKSharedCredentialsGroupController, PKSubcredentialMessageComposeViewController;
+@protocol PKAppletSubcredentialSharingExplanationViewControllerDelegate;
 
 @interface PKAppletSubcredentialSharingExplanationViewController : PKExplanationViewController <PKExplanationViewDelegate, PKSubcredentialMessageComposeViewControllerDelegate, PKViewControllerPreflightable>
 {
     PKHeroCardExplainationHeaderView *_heroCardView;
     PKSharedCredentialsGroupController *_groupController;
     PKAppletSubcredentialSharingRequest *_sharingRequest;
+    id <PKAppletSubcredentialSharingExplanationViewControllerDelegate> _delegate;
     _Bool _isSharing;
     PKSubcredentialMessageComposeViewController *_messageComposeViewController;
 }
@@ -29,7 +31,7 @@
 - (void)_openMessagesToPresentAction;
 - (void)explanationViewDidSelectContinue:(id)arg1;
 - (void)viewDidLoad;
-- (id)initWithSharedCredentialsGroupController:(id)arg1 SharingRequest:(id)arg2;
+- (id)initWithSharedCredentialsGroupController:(id)arg1 delegate:(id)arg2 SharingRequest:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

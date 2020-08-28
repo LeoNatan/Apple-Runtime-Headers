@@ -18,6 +18,7 @@
 @property(retain, nonatomic) PKSharedCredentialGroup *group; // @synthesize group=_group;
 - (void)layoutSubviews;
 - (id)localizedGroupState;
+- (void)updateCellWithContact:(id)arg1;
 - (id)initWithGroup:(id)arg1 groupController:(id)arg2 reuseIdentifier:(id)arg3 delegate:(id)arg4;
 
 @end

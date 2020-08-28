@@ -14,6 +14,7 @@
 {
     _Bool _passwordManuallyEntered;
     _Bool _shouldRequestInvitation;
+    _Bool _declineRelatedInvitations;
     PKAddCarKeyPassConfiguration *_configuration;
     PKEntitlementWhitelist *_appEntitlementWhitelist;
     PKAppletSubcredential *_credentialToShare;
@@ -24,6 +25,7 @@
 
 - (void).cxx_destruct;
 @property(retain, nonatomic) PKPaymentProvisioningController *provisioningController; // @synthesize provisioningController=_provisioningController;
+@property(nonatomic) _Bool declineRelatedInvitations; // @synthesize declineRelatedInvitations=_declineRelatedInvitations;
 @property(nonatomic) _Bool shouldRequestInvitation; // @synthesize shouldRequestInvitation=_shouldRequestInvitation;
 @property(retain, nonatomic) PKAppletSubcredentialSharingInvitation *remoteDeviceInvitation; // @synthesize remoteDeviceInvitation=_remoteDeviceInvitation;
 @property(retain, nonatomic) PKAppletSubcredentialSharingRequest *remoteDeviceSharingRequest; // @synthesize remoteDeviceSharingRequest=_remoteDeviceSharingRequest;

@@ -27,6 +27,7 @@
 - (id)supportsAutoWhiteBalanceCapability;
 - (id)supportsRaiseToWakeCapability;
 - (id)supportsDisplayZoomCapability;
+- (id)supportsPSExposureNotificationsCapability;
 - (id)preferencesCapabilityAnswer:(id)arg1;
 - (_Bool)hasCapabilities:(id)arg1;
 - (void)resetOverrides;

@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: newsroomService
     // Error parsing type: , name: $__lazy_storage_$_urlSessionPool
+    // Error parsing type: , name: uploadQueue
 }
 
 @end

@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (void)showPromptWhenUnableToBypassExtensionPaneOcclusion;
 + (void)reportRefusalToInstallLegacyExtension;
 + (void)showPromptForLegacyExtensionsRemoved:(id)arg1 hasEnabledAppExtension:(BOOL)arg2;
 + (void)showPromptForExtensionDisabledBecauseItHasRequestedAdditionalPermissions:(id)arg1 responseBlock:(CDUnknownBlockType)arg2;

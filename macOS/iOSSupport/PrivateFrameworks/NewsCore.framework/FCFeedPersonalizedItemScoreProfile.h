@@ -11,8 +11,8 @@
 @interface FCFeedPersonalizedItemScoreProfile : NSObject
 {
     double _featureCtr;
-    double _paidNonpaidSubscriptionCtr;
     double _subscribedChannelCtr;
+    double _paidNonpaidSubscriptionCtr;
     double _autoSubscribeCtr;
     double _computedGlobalScoreCoefficient;
     double _userFeedbackScore;
@@ -22,9 +22,11 @@
     double _diversifiedPersonalizationScore;
     NSDictionary *_cohortMemberships;
     NSDictionary *_articleCohortMemberships;
+    unsigned long long _groupingReason;
 }
 
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long groupingReason; // @synthesize groupingReason=_groupingReason;
 @property(retain, nonatomic) NSDictionary *articleCohortMemberships; // @synthesize articleCohortMemberships=_articleCohortMemberships;
 @property(retain, nonatomic) NSDictionary *cohortMemberships; // @synthesize cohortMemberships=_cohortMemberships;
 @property(nonatomic) double diversifiedPersonalizationScore; // @synthesize diversifiedPersonalizationScore=_diversifiedPersonalizationScore;
@@ -34,8 +36,8 @@
 @property(nonatomic) double userFeedbackScore; // @synthesize userFeedbackScore=_userFeedbackScore;
 @property(nonatomic) double computedGlobalScoreCoefficient; // @synthesize computedGlobalScoreCoefficient=_computedGlobalScoreCoefficient;
 @property(nonatomic) double autoSubscribeCtr; // @synthesize autoSubscribeCtr=_autoSubscribeCtr;
-@property(nonatomic) double subscribedChannelCtr; // @synthesize subscribedChannelCtr=_subscribedChannelCtr;
 @property(nonatomic) double paidNonpaidSubscriptionCtr; // @synthesize paidNonpaidSubscriptionCtr=_paidNonpaidSubscriptionCtr;
+@property(nonatomic) double subscribedChannelCtr; // @synthesize subscribedChannelCtr=_subscribedChannelCtr;
 @property(nonatomic) double featureCtr; // @synthesize featureCtr=_featureCtr;
 - (id)description;
 - (unsigned long long)hash;

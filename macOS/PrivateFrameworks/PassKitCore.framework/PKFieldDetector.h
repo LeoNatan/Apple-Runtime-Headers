@@ -46,6 +46,7 @@
 - (void)registerObserver:(id)arg1;
 - (void)setPersistentFieldDetectionEnabled:(BOOL)arg1;
 - (void)requestPersistentFieldDetectionEnabled:(BOOL)arg1 withReason:(unsigned long long)arg2;
+- (void)loyaltyAndPaymentSession:(id)arg1 didEndTransaction:(id)arg2;
 - (void)loyaltyAndPaymentSessionDidEndUnexpectedly:(id)arg1;
 - (void)loyaltyAndPaymentSession:(id)arg1 didPerformValueAddedServiceTransactions:(id)arg2;
 - (void)fieldDetectSessionDidEndUnexpectedly:(id)arg1;

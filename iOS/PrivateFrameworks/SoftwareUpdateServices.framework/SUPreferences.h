@@ -74,7 +74,11 @@
 @property(readonly, nonatomic) _Bool disableUserWiFiOnlyPeriod; // @synthesize disableUserWiFiOnlyPeriod=_disableUserWiFiOnlyPeriod;
 @property(readonly, nonatomic) _Bool disableManagedRequest; // @synthesize disableManagedRequest=_disableManagedRequest;
 @property(nonatomic) id <SUPreferencesObserver> observer; // @synthesize observer=_observer;
+- (_Bool)_setupAutomaticUpdateV2Enabled;
 - (_Bool)isKeySetInPreferences:(id)arg1;
+- (_Bool)_autoInstallDefaultValue;
+- (_Bool)_autoDownloadDisableDefaultValue;
+@property(nonatomic, setter=enableAutomaticDownload:) _Bool isAutomaticDownloadEnabled;
 - (void *)_copyPreferenceForKey:(struct __CFString *)arg1 ofType:(unsigned long long)arg2;
 - (id)_copyNumberPreferenceForKey:(id)arg1;
 - (id)_copyStringPreferenceForKey:(id)arg1;

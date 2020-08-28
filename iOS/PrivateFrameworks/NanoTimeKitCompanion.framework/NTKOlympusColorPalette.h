@@ -65,6 +65,9 @@
 @property(readonly, nonatomic) UIColor *bezelComplicationColor;
 @property(readonly, nonatomic) UIColor *secondaryOutlineTextColor;
 @property(readonly, nonatomic) UIColor *primaryOutlineTextColor;
+- (id)colorForCircularTicksForHour:(unsigned long long)arg1;
+- (id)colorForCircularTicksForMinute:(unsigned long long)arg1;
+@property(readonly, nonatomic) _Bool isMulticolorPalette;
 - (id)initWithDevice:(id)arg1 color:(unsigned long long)arg2 dial:(unsigned long long)arg3 style:(unsigned long long)arg4;
 
 // Remaining properties

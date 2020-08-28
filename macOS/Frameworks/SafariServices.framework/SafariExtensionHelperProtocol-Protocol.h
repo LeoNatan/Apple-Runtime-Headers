@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSString, NSURL;
 
 @protocol SafariExtensionHelperProtocol
+- (void)getLocalizedManifestFromExtensionAtURL:(NSURL *)arg1 sandboxExtensionToken:(NSString *)arg2 completionHandler:(void (^)(NSDictionary *, NSArray *, NSError *))arg3;
 - (void)dispatchMessageWithName:(NSString *)arg1 toExtensionWithIdentifier:(NSString *)arg2 sandboxExtensionToken:(NSString *)arg3 userInfo:(NSDictionary *)arg4 completionHandler:(void (^)(NSError *))arg5;
 - (void)showPreferencesForExtensionWithIdentifier:(NSString *)arg1 sandboxExtensionToken:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)getStateOfSafariExtensionWithIdentifier:(NSString *)arg1 sandboxExtensionToken:(NSString *)arg2 reply:(void (^)(SFSafariExtensionState *, NSError *))arg3;

@@ -14,9 +14,11 @@
 @interface _HKMedicalIDData : NSObject <NSSecureCoding, NSCopying>
 {
     BOOL _isDisabled;
+    BOOL _shareDuringEmergency;
     NSData *_pictureData;
     NSString *_name;
     NSDate *_gmtBirthdate;
+    NSString *_primaryLanguageCode;
     HKQuantity *_height;
     HKQuantity *_weight;
     long long _bloodType;
@@ -45,9 +47,11 @@
 @property(nonatomic) long long bloodType; // @synthesize bloodType=_bloodType;
 @property(retain, nonatomic) HKQuantity *weight; // @synthesize weight=_weight;
 @property(retain, nonatomic) HKQuantity *height; // @synthesize height=_height;
+@property(copy, nonatomic) NSString *primaryLanguageCode; // @synthesize primaryLanguageCode=_primaryLanguageCode;
 @property(retain, nonatomic) NSDate *gmtBirthdate; // @synthesize gmtBirthdate=_gmtBirthdate;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSData *pictureData; // @synthesize pictureData=_pictureData;
+@property(nonatomic) BOOL shareDuringEmergency; // @synthesize shareDuringEmergency=_shareDuringEmergency;
 @property(nonatomic) BOOL isDisabled; // @synthesize isDisabled=_isDisabled;
 - (id)_gregorianUtcCalendar;
 - (void)recordFieldPresenceStatistics;

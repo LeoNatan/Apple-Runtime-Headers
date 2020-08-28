@@ -24,7 +24,7 @@
 
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSCalendar *currentCalendar; // @synthesize currentCalendar=_currentCalendar;
-@property(retain, nonatomic) id <HKDateRangeDataUpdateDelegate> updateDelegate; // @synthesize updateDelegate=_updateDelegate;
+@property(nonatomic) __weak id <HKDateRangeDataUpdateDelegate> updateDelegate; // @synthesize updateDelegate=_updateDelegate;
 @property(readonly, nonatomic) HKUnitPreferenceController *unitPreferenceController; // @synthesize unitPreferenceController=_unitPreferenceController;
 @property(readonly, nonatomic) HKDisplayTypeController *displayTypeController; // @synthesize displayTypeController=_displayTypeController;
 @property(readonly, nonatomic) long long activityValue; // @synthesize activityValue=_activityValue;

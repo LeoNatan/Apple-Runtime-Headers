@@ -9,17 +9,21 @@
 @interface _TtC8NewsFeed22WebEmbedViewController : UIViewController
 {
     // Error parsing type: , name: reuseIdentifier
-    // Error parsing type: , name: debugButton
-    // Error parsing type: , name: embedURL
+    // Error parsing type: , name: onReuse
+    // Error parsing type: , name: webLinkPresentingViewController
     // Error parsing type: , name: contentFrame
+    // Error parsing type: , name: debugButton
+    // Error parsing type: , name: interactionProvider
+    // Error parsing type: , name: contentFrameChanged
+    // Error parsing type: , name: embedURL
+    // Error parsing type: , name: dataFeedURL
+    // Error parsing type: , name: location
+    // Error parsing type: , name: sourceURL
     // Error parsing type: , name: webContentViewController
     // Error parsing type: , name: configurationManager
     // Error parsing type: , name: errorProvider
     // Error parsing type: , name: presentationManager
-    // Error parsing type: , name: interactionProvider
     // Error parsing type: , name: configurationProvider
-    // Error parsing type: , name: onReuse
-    // Error parsing type: , name: webLinkPresentingViewController
     // Error parsing type: , name: stateMachine
     // Error parsing type: , name: errorState
     // Error parsing type: , name: activityIndicator

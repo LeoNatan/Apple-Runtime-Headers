@@ -63,6 +63,9 @@
 - (void)_acquireAssertionOfType:(unsigned long long)arg1;
 - (void)consistencyCheck;
 - (_Bool)willPassWithUniqueIdentifierAutomaticallyBecomeDefault:(id)arg1;
+- (void)declineRelatedSharingInvitationsIfNecessaryResponse:(id)arg1;
+- (void)declineRelatedSharingInvitationsIfNecessaryRequest:(id)arg1;
+- (void)paymentWebService:(id)arg1 declineRelatedSharingInvitationsIfNecessary:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)handleCredentialsChange:(id)arg1;
 - (void)removeSharingInvitationResponse:(id)arg1;
 - (void)paymentWebService:(id)arg1 removeSharingInvitation:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
@@ -87,7 +90,7 @@
 - (void)subcredentialInvitationsResponse:(id)arg1;
 - (void)paymentWebService:(id)arg1 subcredentialInvitationsWithCompletion:(CDUnknownBlockType)arg2;
 - (void)canAcceptInvitationResponse:(id)arg1;
-- (void)paymentWebService:(id)arg1 canAcceptInvitation:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (void)paymentWebService:(id)arg1 canAcceptInvitation:(id)arg2 withCompletionV2:(CDUnknownBlockType)arg3;
 - (id)deviceIDSIdentifier;
 - (_Bool)_isSubcredentialProvisioningSupported;
 - (void)endRequiringUpgradedPasscodeIfNecessary;
@@ -254,6 +257,7 @@
 - (void)getPairingInfoResponse:(id)arg1;
 - (void)_setNewAuthRandomReturningPairingState:(CDUnknownBlockType)arg1;
 - (void)setNewAuthRandomResponse:(id)arg1;
+- (void)paymentWebService:(id)arg1 validateAcceptInvitationPreconditionsWithCompletion:(CDUnknownBlockType)arg2;
 - (void)paymentWebService:(id)arg1 validateTransferPreconditionsWithCompletion:(CDUnknownBlockType)arg2;
 - (void)paymentWebService:(id)arg1 validateAddPreconditionsWithCompletion:(CDUnknownBlockType)arg2;
 - (_Bool)paymentWebService:(id)arg1 canProvisionPaymentPassWithPrimaryAccountIdentifier:(id)arg2;

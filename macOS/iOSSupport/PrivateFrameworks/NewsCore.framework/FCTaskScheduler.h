@@ -13,8 +13,10 @@
 + (void)disableOptionalPrefetching;
 + (void)executeOptionalPrefetchBlock:(CDUnknownBlockType)arg1;
 + (void)scheduleOptionalPrefetchBlock:(CDUnknownBlockType)arg1;
++ (void)enableBackgroundDownloadsInSpiteOfHighPriorityTasks;
 + (void)popHighPriorityTaskInFlight;
 + (void)pushHighPriorityTaskInFlight;
++ (id)backgroundDownloadOperationQueue;
 + (id)lowPriorityOperationQueue;
 + (id)lowPriorityQueue;
 + (void)scheduleLowPriorityOperation:(id)arg1;

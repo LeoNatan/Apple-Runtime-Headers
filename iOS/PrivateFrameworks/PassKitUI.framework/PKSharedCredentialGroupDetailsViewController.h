@@ -25,6 +25,7 @@
 - (id)infoButton;
 - (void)showContactDetailsViewController;
 - (void)presentAlertForError:(id)arg1;
+- (void)showActivityIndicator:(_Bool)arg1 withCell:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
@@ -33,6 +34,7 @@
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)viewDidLoad;
 - (void)updateWithGroup:(id)arg1;
+- (void)updateHeaderWithGroup:(id)arg1;
 - (void)dealloc;
 - (id)initWithGroup:(id)arg1 groupController:(id)arg2 style:(long long)arg3;
 

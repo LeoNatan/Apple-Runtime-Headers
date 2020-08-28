@@ -12,6 +12,7 @@
 {
     _Bool _showingStatusIcon;
     _Bool _circularPillMarkersCenterPointsCalculated;
+    _Bool _circularTicksHidden;
     unsigned long long _style;
     unsigned long long _dial;
     unsigned long long _color;
@@ -32,6 +33,7 @@
 
 + (id)_disabledLayerActions;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool circularTicksHidden; // @synthesize circularTicksHidden=_circularTicksHidden;
 @property(nonatomic) _Bool circularPillMarkersCenterPointsCalculated; // @synthesize circularPillMarkersCenterPointsCalculated=_circularPillMarkersCenterPointsCalculated;
 @property(nonatomic) _Bool showingStatusIcon; // @synthesize showingStatusIcon=_showingStatusIcon;
 @property(retain, nonatomic) NTKCaliforniaStyleTransitionHandler *styleTransitionHandler; // @synthesize styleTransitionHandler=_styleTransitionHandler;
@@ -53,6 +55,8 @@
 - (void)applyTransitionFraction:(double)arg1 fromStyle:(unsigned long long)arg2 toStyle:(unsigned long long)arg3;
 - (void)applyTransitionFraction:(double)arg1 fromDial:(unsigned long long)arg2 toDial:(unsigned long long)arg3;
 - (void)applyTransitionFraction:(double)arg1 fromColorPalette:(id)arg2 toColorPalette:(id)arg3;
+- (id)_setupTickLayerForColor:(id)arg1;
+- (id)allTicksForStatus:(_Bool)arg1;
 - (id)hourTicksForStatus:(_Bool)arg1;
 - (void)setHourTicksColor:(id)arg1;
 - (void)setMinuteTicksColor:(id)arg1;
@@ -77,7 +81,6 @@
 - (id)layerWithImage:(id)arg1;
 - (void)addCircularTicksIfNeeded:(id)arg1;
 - (void)addFullscreenTicksIfNeeded:(id)arg1;
-- (void)setCircularTicksHidden:(_Bool)arg1;
 - (struct CGPoint *)circularPillMarkersCenterPoints;
 - (struct CGPoint *)hourMarkersCenterPointConstantsForStyle:(unsigned long long)arg1 dial:(unsigned long long)arg2;
 - (void)_layoutHourMarkersLayers:(id)arg1 style:(unsigned long long)arg2 dialShape:(unsigned long long)arg3;

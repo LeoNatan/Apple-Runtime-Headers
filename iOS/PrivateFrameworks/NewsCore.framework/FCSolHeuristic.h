@@ -18,13 +18,9 @@
     long long _maxUnpaidArticles;
     long long _heuristicSampleSize;
     CDUnknownBlockType _utilityBlock;
-    double _topicDiversityThreshold;
-    long long _topicDiversityWindowSize;
 }
 
 - (void).cxx_destruct;
-@property(readonly, nonatomic) long long topicDiversityWindowSize; // @synthesize topicDiversityWindowSize=_topicDiversityWindowSize;
-@property(readonly, nonatomic) double topicDiversityThreshold; // @synthesize topicDiversityThreshold=_topicDiversityThreshold;
 @property(readonly, copy, nonatomic) CDUnknownBlockType utilityBlock; // @synthesize utilityBlock=_utilityBlock;
 @property(readonly, nonatomic) long long heuristicSampleSize; // @synthesize heuristicSampleSize=_heuristicSampleSize;
 @property(readonly, nonatomic) long long maxUnpaidArticles; // @synthesize maxUnpaidArticles=_maxUnpaidArticles;
@@ -35,7 +31,7 @@
 @property(retain, nonatomic) NSArray *groupSizes; // @synthesize groupSizes=_groupSizes;
 - (double)computeScoreWithSelectedGroup:(id)arg1 remainingArticles:(id)arg2 remainingTags:(id)arg3 articlesByTag:(id)arg4;
 - (id)fillGroupsWithSelectedGroup:(id)arg1 remainingArticles:(id)arg2 remainingTags:(id)arg3 articlesByTag:(id)arg4;
-- (id)initWithOption:(long long)arg1 minClusterSize:(long long)arg2 maxClusterSize:(long long)arg3 minIdealClusterSize:(long long)arg4 maxIdealClusterSize:(long long)arg5 maxPublisherOccurrences:(long long)arg6 enforcePublisherCap:(_Bool)arg7 maxUnpaidArticles:(long long)arg8 heuristicSampleSize:(long long)arg9 utilityBlock:(CDUnknownBlockType)arg10 topicDiversityThreshold:(double)arg11 topicDiversityWindowSize:(long long)arg12;
+- (id)initWithOption:(long long)arg1 minClusterSize:(long long)arg2 maxClusterSize:(long long)arg3 minIdealClusterSize:(long long)arg4 maxIdealClusterSize:(long long)arg5 maxPublisherOccurrences:(long long)arg6 enforcePublisherCap:(_Bool)arg7 maxUnpaidArticles:(long long)arg8 heuristicSampleSize:(long long)arg9 utilityBlock:(CDUnknownBlockType)arg10;
 
 @end
 

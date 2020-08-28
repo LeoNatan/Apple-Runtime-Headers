@@ -10,6 +10,8 @@
 {
     // Error parsing type: , name: frontFacingCameraView
     // Error parsing type: , name: backFacingCameraView
+    // Error parsing type: , name: previousViewModelHash
+    // Error parsing type: , name: previousVideoSnapshot
 }
 
 - (void).cxx_destruct;

@@ -12,6 +12,7 @@
 
 @property(readonly, nonatomic) long long preferredTrailingStatusBarStyle;
 - (id)initWithRootViewController:(id)arg1;
+- (id)initWithRootViewController:(id)arg1 navigationBarClass:(Class)arg2;
 
 @end
 

@@ -28,6 +28,7 @@
 @property(nonatomic) unsigned long long savedStoriesCount; // @synthesize savedStoriesCount=_savedStoriesCount;
 - (void)d_fetchAllHeadlinesWithCloudContext:(id)arg1 sinceDate:(id)arg2 filter:(_Bool)arg3 personalize:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)_sortedConfigurableGroupEmittersWithForYouGroupsConfiguration:(id)arg1 forYouConfig:(id)arg2;
+- (id)_audioDailyBriefingFeedGroupEmitterFromConfiguration:(id)arg1 emitterIdentifiersSeen:(id)arg2;
 - (id)editionFollowingEdition:(id)arg1;
 - (id)editionAtDate:(id)arg1;
 - (long long)feedPersonalizationConfigurationSet;

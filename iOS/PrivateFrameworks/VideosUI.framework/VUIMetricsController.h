@@ -73,6 +73,7 @@
 - (void)jsDelegateRecordEvent:(id)arg1;
 - (void)recordRawEvent:(id)arg1;
 - (void)recordMedia:(id)arg1;
+- (void)recordImpressions:(id)arg1;
 - (void)recordClick:(id)arg1;
 - (void)recordDialog:(id)arg1;
 - (void)recordPage:(id)arg1;

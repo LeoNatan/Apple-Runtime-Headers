@@ -8,6 +8,7 @@
 
 @interface _TtC8NewsFeed20FormatImageProcessor : _TtCs12_SwiftObject
 {
+    // Error parsing type: , name: complexImageProcessor
 }
 
 - (id)process:(id)arg1;

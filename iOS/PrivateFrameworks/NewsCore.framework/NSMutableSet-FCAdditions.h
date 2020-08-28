@@ -8,6 +8,8 @@
 
 @interface NSMutableSet (FCAdditions)
 - (void)fc_removeObjectsFromArray:(id)arg1;
+- (void)fc_safelyRemoveObject:(id)arg1;
+- (void)fc_safelyMinusSet:(id)arg1;
 - (void)fc_safelyIntersectSet:(id)arg1;
 - (void)fc_safelyUnionSet:(id)arg1;
 - (void)fc_safelyAddObjects:(id)arg1;

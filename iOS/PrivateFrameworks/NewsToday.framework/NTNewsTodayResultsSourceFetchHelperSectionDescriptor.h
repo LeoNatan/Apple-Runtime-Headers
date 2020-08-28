@@ -8,7 +8,7 @@
 
 #import <NewsToday/NTSectionDescriptor-Protocol.h>
 
-@class NSString, NSURL, NTPBDiscoverMoreVideosInfo;
+@class NSString, NSURL;
 @protocol NTSectionDescriptor, NTSectionQueueDescriptor;
 
 @interface NTNewsTodayResultsSourceFetchHelperSectionDescriptor : NSObject <NTSectionDescriptor>
@@ -22,13 +22,9 @@
 @property(readonly, copy, nonatomic) id <NTSectionDescriptor> sectionDescriptor; // @synthesize sectionDescriptor=_sectionDescriptor;
 @property(readonly, copy, nonatomic) NSURL *actionURL;
 @property(readonly, copy, nonatomic) NSString *actionTitle;
-@property(readonly, nonatomic) _Bool videoPlaysMutedByDefault;
 @property(readonly, nonatomic) int leadingCellPromotionPolicy;
 @property(readonly, copy, nonatomic) NSString *backgroundGradientColor;
-@property(readonly, copy, nonatomic) NTPBDiscoverMoreVideosInfo *discoverMoreVideosInfo;
-@property(readonly, nonatomic) _Bool openVideoPlaylistInApp;
 @property(readonly, nonatomic) _Bool useNameColorInWidget;
-@property(readonly, nonatomic) _Bool displaysAsVideoPlaylist;
 @property(readonly, nonatomic) long long supplementalIntraSectionFilterOptions;
 @property(readonly, nonatomic) long long supplementalInterSectionFilterOptions;
 @property(readonly, nonatomic) long long seenArticlesMinimumTimeSinceFirstSeenToFilter;

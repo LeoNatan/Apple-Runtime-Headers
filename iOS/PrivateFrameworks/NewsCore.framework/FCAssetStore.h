@@ -32,8 +32,10 @@
 - (_Bool)removeAllFilesExceptKeys:(id)arg1;
 - (_Bool)removeFileWithKey:(id)arg1;
 - (id)copyData:(id)arg1 withKey:(id)arg2;
+- (id)moveFileAtURL:(id)arg1 withKey:(id)arg2;
 - (id)moveFileAtPath:(id)arg1 withKey:(id)arg2;
 - (id)copyFileAtPath:(id)arg1 withKey:(id)arg2;
+@property(readonly, nonatomic) NSString *rootDirectory;
 - (id)initWithDirectoryAtPath:(id)arg1 preferredAssetPathExtension:(id)arg2;
 
 @end

@@ -32,7 +32,6 @@
 - (unsigned int)qosClass;
 - (void)internal_startup;
 - (void)shutdown;
-- (void)didShutdownNotification:(id)arg1;
 - (void)shutdownNotification:(id)arg1;
 - (void)_release;
 - (id)_retain;

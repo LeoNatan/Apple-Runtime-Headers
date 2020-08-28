@@ -12,13 +12,16 @@
 #import <NewsUI/SXResourceDataSource-Protocol.h>
 
 @class FCArticle, NSString;
+@protocol NUEmbedDataManager;
 
 @interface NUBundledArticleDataProvider : NSObject <SXResourceDataSource, SXEmbedDataProvider, NUFontRegistrator, NUArticleDataProvider>
 {
     FCArticle *_article;
+    id <NUEmbedDataManager> _embedDataManager;
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <NUEmbedDataManager> embedDataManager; // @synthesize embedDataManager=_embedDataManager;
 @property(readonly, nonatomic) FCArticle *article; // @synthesize article=_article;
 - (id)fileURLForBundleURL:(id)arg1;
 - (id)embedForType:(id)arg1;
@@ -31,7 +34,7 @@
 - (void)prefetchAssets;
 - (void)loadContextWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)performBlockForFontsInBundle:(CDUnknownBlockType)arg1;
-- (id)initWithArticle:(id)arg1;
+- (id)initWithArticle:(id)arg1 embedDataManager:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

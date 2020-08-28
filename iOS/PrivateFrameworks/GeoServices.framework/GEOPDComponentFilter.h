@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDAddressFilter, GEOPDAddressObjectFilter, GEOPDAmenitiesFilter, GEOPDAnnotatedItemListFilter, GEOPDAssociatedAppFilter, GEOPDBoundsFilter, GEOPDBrowseCategoriesFilter, GEOPDBusinessClaimFilter, GEOPDBusinessHoursFilter, GEOPDCaptionedPhotoFilter, GEOPDContainedPlaceFilter, GEOPDETAFilter, GEOPDEntityFilter, GEOPDExternalActionFilter, GEOPDFactoidFilter, GEOPDFlyoverFilter, GEOPDGroundViewLabelFilter, GEOPDHoursFilter, GEOPDIconFilter, GEOPDLinkedServiceFilter, GEOPDLocationEventFilter, GEOPDMessageLinkFilter, GEOPDOfflineAreaFilter, GEOPDOfflineIdentifierFilter, GEOPDOfflineQuadNodesFilter, GEOPDOfflineSizeFilter, GEOPDOfflineUpdateManifestFilter, GEOPDPhotoFilter, GEOPDPlaceCollectionFilter, GEOPDPlaceInfoFilter, GEOPDPlacecardLayoutConfigurationFilter, GEOPDPlacecardURLFilter, GEOPDPoiEventFilter, GEOPDPriceDescriptionFilter, GEOPDPrototypeContainerFilter, GEOPDQuickLinkFilter, GEOPDRapFilter, GEOPDRatingFilter, GEOPDRawAttributeFilter, GEOPDRelatedPlaceFilter, GEOPDRestaurantReservationLinkFilter, GEOPDResultSnippetFilter, GEOPDReviewFilter, GEOPDRoadAccessInfoFilter, GEOPDSimpleRestaurantMenuTextFilter, GEOPDSpatialLookupFilter, GEOPDStorefrontFilter, GEOPDStorefrontPresentationFilter, GEOPDStyleAttributesFilter, GEOPDSupportsOfflineMapsFilter, GEOPDTextBlockFilter, GEOPDTipFilter, GEOPDTransitAttributionFilter, GEOPDTransitIncidentFilter, GEOPDTransitInfoFilter, GEOPDTransitInfoSnippetFilter, GEOPDTransitScheduleFilter, GEOPDTransitTripGeometryFilter, GEOPDTransitTripStopFilter, GEOPDTransitTripStopTimeFilter, GEOPDVehiclePositionFilter, GEOPDVenueInfoFilter, GEOPDWalletCategoryInformationFilter, GEOPDWifiFingerprintFilter, PBDataReader, PBUnknownFields;
+@class GEOPDAddressFilter, GEOPDAddressObjectFilter, GEOPDAmenitiesFilter, GEOPDAnnotatedItemListFilter, GEOPDAssociatedAppFilter, GEOPDBoundsFilter, GEOPDBrowseCategoriesFilter, GEOPDBusinessClaimFilter, GEOPDBusinessHoursFilter, GEOPDCaptionedPhotoFilter, GEOPDContainedPlaceFilter, GEOPDETAFilter, GEOPDEntityFilter, GEOPDExternalActionFilter, GEOPDFactoidFilter, GEOPDFlyoverFilter, GEOPDGroundViewLabelFilter, GEOPDHoursFilter, GEOPDISO3166CodeFilter, GEOPDIconFilter, GEOPDLinkedServiceFilter, GEOPDLocationEventFilter, GEOPDMessageLinkFilter, GEOPDOfflineAreaFilter, GEOPDOfflineIdentifierFilter, GEOPDOfflineQuadNodesFilter, GEOPDOfflineSizeFilter, GEOPDOfflineUpdateManifestFilter, GEOPDPhotoFilter, GEOPDPlaceCollectionFilter, GEOPDPlaceInfoFilter, GEOPDPlacecardLayoutConfigurationFilter, GEOPDPlacecardURLFilter, GEOPDPoiEventFilter, GEOPDPriceDescriptionFilter, GEOPDPrototypeContainerFilter, GEOPDQuickLinkFilter, GEOPDRapFilter, GEOPDRatingFilter, GEOPDRawAttributeFilter, GEOPDRelatedPlaceFilter, GEOPDRestaurantReservationLinkFilter, GEOPDResultSnippetFilter, GEOPDReviewFilter, GEOPDRoadAccessInfoFilter, GEOPDSimpleRestaurantMenuTextFilter, GEOPDSpatialLookupFilter, GEOPDStorefrontFilter, GEOPDStorefrontPresentationFilter, GEOPDStyleAttributesFilter, GEOPDSupportsOfflineMapsFilter, GEOPDTextBlockFilter, GEOPDTipFilter, GEOPDTransitAttributionFilter, GEOPDTransitIncidentFilter, GEOPDTransitInfoFilter, GEOPDTransitInfoSnippetFilter, GEOPDTransitScheduleFilter, GEOPDTransitTripGeometryFilter, GEOPDTransitTripStopFilter, GEOPDTransitTripStopTimeFilter, GEOPDVehiclePositionFilter, GEOPDVenueInfoFilter, GEOPDWalletCategoryInformationFilter, GEOPDWifiFingerprintFilter, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDComponentFilter : PBCodable <NSCopying>
@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     GEOPDGroundViewLabelFilter *_groundViewLabelFilter;
     GEOPDHoursFilter *_hoursFilter;
     GEOPDIconFilter *_iconFilter;
+    GEOPDISO3166CodeFilter *_iso3166CodeFilter;
     GEOPDLinkedServiceFilter *_linkedServiceFilter;
     GEOPDLocationEventFilter *_locationEventFilter;
     GEOPDMessageLinkFilter *_messageLinkFilter;
@@ -104,6 +105,7 @@ __attribute__((visibility("hidden")))
         unsigned int read_groundViewLabelFilter:1;
         unsigned int read_hoursFilter:1;
         unsigned int read_iconFilter:1;
+        unsigned int read_iso3166CodeFilter:1;
         unsigned int read_linkedServiceFilter:1;
         unsigned int read_locationEventFilter:1;
         unsigned int read_messageLinkFilter:1;
@@ -169,6 +171,7 @@ __attribute__((visibility("hidden")))
         unsigned int wrote_groundViewLabelFilter:1;
         unsigned int wrote_hoursFilter:1;
         unsigned int wrote_iconFilter:1;
+        unsigned int wrote_iso3166CodeFilter:1;
         unsigned int wrote_linkedServiceFilter:1;
         unsigned int wrote_locationEventFilter:1;
         unsigned int wrote_messageLinkFilter:1;
@@ -230,6 +233,9 @@ __attribute__((visibility("hidden")))
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPDISO3166CodeFilter *iso3166CodeFilter;
+@property(readonly, nonatomic) _Bool hasIso3166CodeFilter;
+- (void)_readIso3166CodeFilter;
 @property(retain, nonatomic) GEOPDWalletCategoryInformationFilter *walletCategoryInformationFilter;
 @property(readonly, nonatomic) _Bool hasWalletCategoryInformationFilter;
 - (void)_readWalletCategoryInformationFilter;

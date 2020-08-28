@@ -7,6 +7,7 @@
 #import <SilexWeb/SWConfiguration.h>
 
 @class NSDictionary, NSLocale, NSString, NSURL;
+@protocol SWLocation;
 
 @interface SWMutableConfiguration : SWConfiguration
 {
@@ -14,13 +15,15 @@
     NSLocale *locale;
     NSString *contentSizeCategory;
     NSDictionary *dataSources;
-    NSURL *location;
+    id <SWLocation> location;
+    NSURL *sourceURL;
     struct CGSize canvasSize;
     struct CGRect contentFrame;
 }
 
 - (void).cxx_destruct;
-@property(copy, nonatomic) NSURL *location; // @synthesize location;
+@property(copy, nonatomic) NSURL *sourceURL; // @synthesize sourceURL;
+@property(copy, nonatomic) id <SWLocation> location; // @synthesize location;
 @property(copy, nonatomic) NSDictionary *dataSources; // @synthesize dataSources;
 @property(nonatomic) struct CGRect contentFrame; // @synthesize contentFrame;
 @property(nonatomic) struct CGSize canvasSize; // @synthesize canvasSize;

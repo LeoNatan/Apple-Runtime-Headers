@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)extractExtensionArchiveAtURL:(id)arg1 toDestinationURL:(id)arg2;
 + (id)appendSubpathToURL:(id)arg1 pathString:(id)arg2 isDirectory:(BOOL)arg3;
++ (BOOL)promptForBiometricOrWatchAuthorizationToEnableExtension;
 + (void)showPromptForExtensionDisabledBecauseItHasRequestedAdditionalPermissions:(id)arg1 extensionIdentifier:(id)arg2;
 + (id)accessLevelStringForAccessLevel:(int)arg1;
 + (id)userVisibleWebsiteAccessWithWebsiteAccessLevel:(int)arg1 allowedDomains:(Vector_920cd39b)arg2 hasInjectedContent:(BOOL)arg3;

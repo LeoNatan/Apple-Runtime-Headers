@@ -8,15 +8,15 @@
 
 #import <NanoPassKit/NSCopying-Protocol.h>
 
+@class NSData;
+
 @interface NPKProtoCanAcceptInvitationResponse : PBCodable <NSCopying>
 {
-    _Bool _canAcceptInvitation;
-    struct {
-        unsigned int canAcceptInvitation:1;
-    } _has;
+    NSData *_errorData;
 }
 
-@property(nonatomic) _Bool canAcceptInvitation; // @synthesize canAcceptInvitation=_canAcceptInvitation;
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSData *errorData; // @synthesize errorData=_errorData;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -26,7 +26,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(nonatomic) _Bool hasCanAcceptInvitation;
+@property(readonly, nonatomic) _Bool hasErrorData;
 
 @end
 

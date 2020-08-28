@@ -95,8 +95,8 @@
 - (struct CGRect)visibleBounds;
 - (id)topLevelLayersForInteractiveCanvasController:(id)arg1;
 - (id)topLevelRepsForInteractiveCanvasController:(id)arg1;
-- (struct CGPoint)pointForCharacterAtIndex:(unsigned long long)arg1 inComponentWithIndetifier:(id)arg2;
-- (id)scrollPositionForVisibleRectWithComponentRect:(struct CGRect)arg1;
+- (struct CGPoint)pointForCharacterAtIndex:(unsigned long long)arg1 inComponentWithIdentifier:(id)arg2;
+- (id)scrollPositionForRect:(struct CGRect)arg1 componentRect:(struct CGRect)arg2 componentIdentifier:(id)arg3 canvasWidth:(double)arg4 relativePageOffset:(double)arg5;
 - (void)setUnscaledCanvasRect:(struct CGRect)arg1;
 - (void)updateCanvasSize:(struct CGSize)arg1 forComponentViews:(id)arg2;
 - (void)clearSelection;

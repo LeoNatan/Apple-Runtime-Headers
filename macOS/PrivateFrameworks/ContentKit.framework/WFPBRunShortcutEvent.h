@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 {
     unsigned int _actionCount;
     NSString *_automationType;
+    NSString *_galleryIdentifier;
     NSString *_key;
     NSString *_runSource;
     int _source;
@@ -27,6 +28,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *galleryIdentifier; // @synthesize galleryIdentifier=_galleryIdentifier;
 @property(nonatomic) BOOL completed; // @synthesize completed=_completed;
 @property(nonatomic) unsigned int actionCount; // @synthesize actionCount=_actionCount;
 @property(retain, nonatomic) NSString *automationType; // @synthesize automationType=_automationType;
@@ -41,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasGalleryIdentifier;
 @property(nonatomic) BOOL hasCompleted;
 @property(nonatomic) BOOL hasActionCount;
 @property(readonly, nonatomic) BOOL hasAutomationType;

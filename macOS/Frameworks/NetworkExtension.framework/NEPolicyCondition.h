@@ -30,6 +30,7 @@
     NSString *_customEntitlement;
     NSString *_agentDomain;
     NSString *_agentType;
+    NSString *_signingIdentifier;
 }
 
 + (id)flowRemoteAddressEmpty;
@@ -40,6 +41,7 @@
 + (id)clientProhibitsExpensive;
 + (id)clientProhibitsContrained;
 + (id)fallbackTraffic;
++ (id)signingIdentifier:(id)arg1;
 + (id)clientFlags:(unsigned int)arg1;
 + (id)requiredAgentDomain:(id)arg1 agentType:(id)arg2;
 + (id)platformBinary;
@@ -66,6 +68,7 @@
 + (id)realApplication:(id)arg1;
 + (id)effectiveApplication:(id)arg1;
 - (void).cxx_destruct;
+@property(copy) NSString *signingIdentifier; // @synthesize signingIdentifier=_signingIdentifier;
 @property(copy) NSString *agentType; // @synthesize agentType=_agentType;
 @property(copy) NSString *agentDomain; // @synthesize agentDomain=_agentDomain;
 @property(copy) NSString *customEntitlement; // @synthesize customEntitlement=_customEntitlement;

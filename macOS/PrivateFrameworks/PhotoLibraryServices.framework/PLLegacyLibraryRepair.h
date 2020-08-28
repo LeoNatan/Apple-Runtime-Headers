@@ -26,7 +26,7 @@
 + (BOOL)_setPostLegacyMigrationRepairMarkerWithValue:(unsigned char)arg1 pathManager:(id)arg2;
 + (void)invalidateLegacyMigrationRecoveryMarkerWithPathManager:(id)arg1;
 + (BOOL)isLegacyMigrationRecoveryEnabledWithPathManager:(id)arg1;
-+ (BOOL)addPostLegacyMigrationRepairMarkerWithPathManager:(id)arg1;
++ (void)addPostLegacyMigrationRepairMarkerWithPathManager:(id)arg1;
 + (void)fixIncorrectFilenameWithPathManager:(id)arg1 asset:(id)arg2 resource:(id)arg3;
 - (void).cxx_destruct;
 - (BOOL)_cleanupEmptyDirectory:(id)arg1 progress:(id)arg2;
@@ -45,6 +45,8 @@
 - (BOOL)_processAvailabilityCheckAndUpdateResourceFileWithInternalResourceProperty:(id)arg1 resourceFingerprint:(id)arg2 fileURL:(id)arg3 move:(BOOL)arg4;
 - (BOOL)_processInternalResourceProperties:(id)arg1 resourceFingerprint:(id)arg2 fileURL:(id)arg3;
 - (BOOL)_processFileURL:(id)arg1 uti:(id)arg2;
+- (unsigned char)_relocateFileURL:(id)arg1 toIdentifier:(id)arg2;
+- (BOOL)_relocateMediaFromOriginalsRelocatedURL:(id)arg1;
 - (void)_relocateMediaForFileImportWithIntermediatePath:(id)arg1 filePredicate:(id)arg2;
 - (BOOL)relocateMediaForFileImport;
 - (BOOL)isCancelled;

@@ -140,6 +140,7 @@
 - (_Bool)isBrandLookupRequest;
 - (id)initWithSpatialEventLookupParameters:(id)arg1 traits:(id)arg2;
 - (id)initWithSpatialPlaceLookupParameters:(id)arg1 traits:(id)arg2;
+- (id)initForTerritoryForLatLngsE7:(id)arg1 traits:(id)arg2;
 - (id)initForGeoIpLookupWithIpAddress:(id)arg1 traits:(id)arg2;
 - (id)initForWifiFingerprintLookupWithLocations:(id)arg1 wifiAccessPoints:(id)arg2 maxLabels:(unsigned int)arg3 entryTime:(unsigned long long)arg4 exitTime:(unsigned long long)arg5 traits:(id)arg6;
 - (id)initForBrandLookupWithIMessageUid:(id)arg1 traits:(id)arg2;

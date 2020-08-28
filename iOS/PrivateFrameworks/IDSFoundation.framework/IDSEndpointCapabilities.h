@@ -40,6 +40,8 @@
     BOOL _ecVersion;
     BOOL _supportsKeySharing;
     BOOL _supportsProtobufPayloadDataV2;
+    BOOL _supportsHDRVideo;
+    BOOL _prefersSDRVideo;
 }
 
 + (_Bool)supportsSecureCoding;

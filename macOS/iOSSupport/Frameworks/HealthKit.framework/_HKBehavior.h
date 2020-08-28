@@ -129,6 +129,7 @@
 @property(nonatomic) BOOL futureMigrationsEnabled;
 - (void)setManateeEnabledForHSA2AccountsOverride:(BOOL)arg1;
 @property(readonly, nonatomic, getter=isManateeEnabledForHSA2Accounts) BOOL manateeEnabledForHSA2Accounts;
+@property(readonly, nonatomic) BOOL supportsEED;
 @property(nonatomic) BOOL supportsSwimmingWorkoutSessions;
 @property(readonly, nonatomic) unsigned long long currentDiskSpaceAvailable;
 @property(readonly, nonatomic) unsigned long long totalDiskCapacity;

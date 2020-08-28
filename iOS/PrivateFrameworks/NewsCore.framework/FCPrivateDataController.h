@@ -96,6 +96,7 @@
 - (void)removeStateObserver:(id)arg1;
 - (void)addStateObserver:(id)arg1;
 - (void)saveWithCompletion:(CDUnknownBlockType)arg1;
+- (void)performFirstSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)performFirstSyncWithCallbackQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)forceSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)syncWithCallbackQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;

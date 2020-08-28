@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class TSBridgedNewsActivity;
+@class TSNewsActivityData;
 
 @protocol TSNewsActivityManagerType
-- (void)deregisterActivity:(TSBridgedNewsActivity *)arg1;
-- (void)registerCurrentActivity:(TSBridgedNewsActivity *)arg1;
+- (void)deregisterActivityWithData:(TSNewsActivityData *)arg1;
+- (void)registerCurrentActivityWithData:(TSNewsActivityData *)arg1;
 @end
 

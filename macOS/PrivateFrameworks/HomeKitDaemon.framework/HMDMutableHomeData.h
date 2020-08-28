@@ -27,7 +27,6 @@
 @property(copy, nonatomic) NSArray *pendingUserManagementOperations; // @dynamic pendingUserManagementOperations;
 @property(copy, nonatomic) NSArray *pendingReasonSaved; // @dynamic pendingReasonSaved;
 @property(copy, nonatomic) NSString *currentDevice; // @dynamic currentDevice;
-@property(nonatomic) unsigned long long assistantGenerationCounter; // @dynamic assistantGenerationCounter;
 @property(copy, nonatomic) NSArray *incomingInvitations; // @dynamic incomingInvitations;
 @property(copy, nonatomic) NSArray *cloudZones; // @dynamic cloudZones;
 @property(copy, nonatomic) NSArray *UUIDsOfRemovedHomes; // @dynamic UUIDsOfRemovedHomes;

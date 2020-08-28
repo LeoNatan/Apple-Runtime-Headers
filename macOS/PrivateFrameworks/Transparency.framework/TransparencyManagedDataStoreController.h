@@ -21,6 +21,7 @@
     NSHashTable *_mocStore;
 }
 
++ (void)reportCoreDataEventForEntity:(id)arg1 hardFailure:(BOOL)arg2 write:(BOOL)arg3 code:(long long)arg4 underlyingError:(id)arg5;
 + (void)reportCoreDataEventForEntity:(id)arg1 write:(BOOL)arg2 code:(long long)arg3 underlyingError:(id)arg4;
 - (void).cxx_destruct;
 @property(retain) NSHashTable *mocStore; // @synthesize mocStore=_mocStore;

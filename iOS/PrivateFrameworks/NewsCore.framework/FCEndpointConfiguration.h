@@ -12,21 +12,27 @@
 {
     NSString *_clientAPIBaseURLString;
     NSString *_notificationsBaseURLString;
-    NSString *_staticAssetBaseUrlString;
-    NSString *_remoteDataSourceBaseUrlString;
+    NSString *_staticAssetBaseURLString;
+    NSString *_remoteDataSourceBaseURLString;
+    NSString *_newsletterAPIBaseURLString;
     NSString *_appAnalyticsBaseURLString;
+    NSString *_fairPlayBaseURLString;
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *fairPlayBaseURLString; // @synthesize fairPlayBaseURLString=_fairPlayBaseURLString;
 @property(readonly, nonatomic) NSString *appAnalyticsBaseURLString; // @synthesize appAnalyticsBaseURLString=_appAnalyticsBaseURLString;
-@property(readonly, nonatomic) NSString *remoteDataSourceBaseUrlString; // @synthesize remoteDataSourceBaseUrlString=_remoteDataSourceBaseUrlString;
-@property(readonly, nonatomic) NSString *staticAssetBaseUrlString; // @synthesize staticAssetBaseUrlString=_staticAssetBaseUrlString;
+@property(readonly, nonatomic) NSString *newsletterAPIBaseURLString; // @synthesize newsletterAPIBaseURLString=_newsletterAPIBaseURLString;
+@property(readonly, nonatomic) NSString *remoteDataSourceBaseURLString; // @synthesize remoteDataSourceBaseURLString=_remoteDataSourceBaseURLString;
+@property(readonly, nonatomic) NSString *staticAssetBaseURLString; // @synthesize staticAssetBaseURLString=_staticAssetBaseURLString;
 @property(readonly, nonatomic) NSString *notificationsBaseURLString; // @synthesize notificationsBaseURLString=_notificationsBaseURLString;
 @property(readonly, nonatomic) NSString *clientAPIBaseURLString; // @synthesize clientAPIBaseURLString=_clientAPIBaseURLString;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithClientAPIBaseURLString:(id)arg1 notificationsBaseURLString:(id)arg2 staticAssetBaseURLString:(id)arg3 remoteDataSourceBaseURLString:(id)arg4 appAnalyticsBaseURLString:(id)arg5;
-- (id)initWithClientAPIBaseURLString:(id)arg1 notificationsBaseURLString:(id)arg2 staticAssetBaseUrlString:(id)arg3 remoteDataSourceBaseUrl:(id)arg4;
+- (id)initWithClientAPIBaseURLString:(id)arg1 notificationsBaseURLString:(id)arg2 staticAssetBaseURLString:(id)arg3 remoteDataSourceBaseURLString:(id)arg4 newsletterAPIBaseURLString:(id)arg5 appAnalyticsBaseURLString:(id)arg6 fairPlayBaseURLString:(id)arg7;
+- (id)initWithClientAPIBaseURLString:(id)arg1 notificationsBaseURLString:(id)arg2 staticAssetBaseURLString:(id)arg3 remoteDataSourceBaseURLString:(id)arg4 newsletterAPIBaseURLString:(id)arg5 appAnalyticsBaseURLString:(id)arg6;
+- (id)initWithClientAPIBaseURLString:(id)arg1 notificationsBaseURLString:(id)arg2 staticAssetBaseURLString:(id)arg3 remoteDataSourceBaseURLString:(id)arg4 newsletterAPIBaseURLString:(id)arg5;
+- (id)initWithClientAPIBaseURLString:(id)arg1 notificationsBaseURLString:(id)arg2 staticAssetBaseURLString:(id)arg3 remoteDataSourceBaseURLString:(id)arg4;
 - (id)initWithClientAPIBaseURLString:(id)arg1 notificationsBaseURLString:(id)arg2;
 
 @end

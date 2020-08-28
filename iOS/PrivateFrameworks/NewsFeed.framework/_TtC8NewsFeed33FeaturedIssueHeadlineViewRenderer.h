@@ -10,7 +10,6 @@
 {
     // Error parsing type: , name: thumbnailImageCache
     // Error parsing type: , name: publisherLogoImageCache
-    // Error parsing type: , name: traitCollection
     // Error parsing type: , name: rendererTool
     // Error parsing type: , name: issueCoverViewRenderer
 }

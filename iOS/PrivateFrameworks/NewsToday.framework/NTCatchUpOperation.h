@@ -18,7 +18,6 @@
     NSDictionary *_todayConfigOperationHeldRecordsByType;
     unsigned long long _maximumCachedAgeForForYou;
     NTCatchUpOperationForYouRequest *_forYouRequest;
-    CDUnknownBlockType _sessionProvider;
     NSDictionary *_resultsByArticleListID;
     NSDictionary *_resultsByArticleIDsRequestID;
     NTCatchUpOperationResults *_forYouResults;
@@ -38,7 +37,6 @@
 @property(copy, nonatomic) NTCatchUpOperationResults *forYouResults; // @synthesize forYouResults=_forYouResults;
 @property(copy, nonatomic) NSDictionary *resultsByArticleIDsRequestID; // @synthesize resultsByArticleIDsRequestID=_resultsByArticleIDsRequestID;
 @property(copy, nonatomic) NSDictionary *resultsByArticleListID; // @synthesize resultsByArticleListID=_resultsByArticleListID;
-@property(copy, nonatomic) CDUnknownBlockType sessionProvider; // @synthesize sessionProvider=_sessionProvider;
 @property(nonatomic, getter=isForYouEnabled) _Bool forYouEnabled; // @synthesize forYouEnabled=_forYouEnabled;
 @property(copy, nonatomic) NTCatchUpOperationForYouRequest *forYouRequest; // @synthesize forYouRequest=_forYouRequest;
 @property(nonatomic) unsigned long long maximumCachedAgeForForYou; // @synthesize maximumCachedAgeForForYou=_maximumCachedAgeForForYou;

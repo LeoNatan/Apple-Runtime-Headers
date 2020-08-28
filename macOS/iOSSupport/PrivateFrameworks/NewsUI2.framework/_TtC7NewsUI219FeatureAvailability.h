@@ -12,5 +12,14 @@
     // Error parsing type: , name: privateDataContext
 }
 
+@property(nonatomic, readonly) BOOL narrativeAudio;
+@property(nonatomic, readonly) BOOL useSearchModule;
+@property(nonatomic, readonly) BOOL useTagFeedModule;
+@property(nonatomic, readonly) BOOL useSavedFeedModule;
+@property(nonatomic, readonly) BOOL useHistoryFeedModule;
+@property(nonatomic, readonly) BOOL useTodayModule;
+@property(nonatomic, readonly) BOOL allowSharingAlways;
+@property(nonatomic, readonly) BOOL appleMagazineContent;
+
 @end
 

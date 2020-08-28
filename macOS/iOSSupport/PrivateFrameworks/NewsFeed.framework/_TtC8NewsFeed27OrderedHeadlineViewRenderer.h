@@ -10,7 +10,6 @@
 {
     // Error parsing type: , name: publisherLogoImageCache
     // Error parsing type: , name: rendererTool
-    // Error parsing type: , name: traitCollection
 }
 
 @end

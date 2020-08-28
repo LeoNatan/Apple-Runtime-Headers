@@ -1210,6 +1210,10 @@ struct HashMap<std::__1::pair<IPC::StringReference, unsigned long long>, IPC::Me
     struct HashTable<std::__1::pair<IPC::StringReference, unsigned long long>, WTF::KeyValuePair<std::__1::pair<IPC::StringReference, unsigned long long>, IPC::MessageReceiver *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<std::__1::pair<IPC::StringReference, unsigned long long>, IPC::MessageReceiver *>>, WTF::PairHash<IPC::StringReference, unsigned long long>, WTF::HashMap<std::__1::pair<IPC::StringReference, unsigned long long>, IPC::MessageReceiver *, WTF::PairHash<IPC::StringReference, unsigned long long>, WTF::HashTraits<std::__1::pair<IPC::StringReference, unsigned long long>>, WTF::HashTraits<IPC::MessageReceiver *>>::KeyValuePairTraits, WTF::HashTraits<std::__1::pair<IPC::StringReference, unsigned long long>>> _field1;
 };
 
+struct HashMap<std::__1::pair<WTF::String, unsigned short>, WTF::RetainPtr<NSURLCredential>, WTF::PairHash<WTF::String, unsigned short>, WTF::HashTraits<std::__1::pair<WTF::String, unsigned short>>, WTF::HashTraits<WTF::RetainPtr<NSURLCredential>>> {
+    struct HashTable<std::__1::pair<WTF::String, unsigned short>, WTF::KeyValuePair<std::__1::pair<WTF::String, unsigned short>, WTF::RetainPtr<NSURLCredential>>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<std::__1::pair<WTF::String, unsigned short>, WTF::RetainPtr<NSURLCredential>>>, WTF::PairHash<WTF::String, unsigned short>, WTF::HashMap<std::__1::pair<WTF::String, unsigned short>, WTF::RetainPtr<NSURLCredential>, WTF::PairHash<WTF::String, unsigned short>, WTF::HashTraits<std::__1::pair<WTF::String, unsigned short>>, WTF::HashTraits<WTF::RetainPtr<NSURLCredential>>>::KeyValuePairTraits, WTF::HashTraits<std::__1::pair<WTF::String, unsigned short>>> _field1;
+};
+
 struct HashMap<std::__1::pair<WebCore::IntSize, double>, WebCore::IntPoint, WTF::PairHash<WebCore::IntSize, double>, WTF::HashTraits<std::__1::pair<WebCore::IntSize, double>>, WTF::HashTraits<WebCore::IntPoint>> {
     struct HashTable<std::__1::pair<WebCore::IntSize, double>, WTF::KeyValuePair<std::__1::pair<WebCore::IntSize, double>, WebCore::IntPoint>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<std::__1::pair<WebCore::IntSize, double>, WebCore::IntPoint>>, WTF::PairHash<WebCore::IntSize, double>, WTF::HashMap<std::__1::pair<WebCore::IntSize, double>, WebCore::IntPoint, WTF::PairHash<WebCore::IntSize, double>, WTF::HashTraits<std::__1::pair<WebCore::IntSize, double>>, WTF::HashTraits<WebCore::IntPoint>>::KeyValuePairTraits, WTF::HashTraits<std::__1::pair<WebCore::IntSize, double>>> _field1;
 };
@@ -1292,6 +1296,10 @@ struct HashMap<unsigned long long, WebKit::DownloadID, WTF::IntHash<unsigned lon
 
 struct HashMap<unsigned long long, WebKit::NetworkDataTaskCocoa *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::NetworkDataTaskCocoa *>> {
     struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WebKit::NetworkDataTaskCocoa *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, WebKit::NetworkDataTaskCocoa *>>, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, WebKit::NetworkDataTaskCocoa *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::NetworkDataTaskCocoa *>>::KeyValuePairTraits, WTF::HashTraits<unsigned long long>> _field1;
+};
+
+struct HashMap<unsigned long long, WebKit::NetworkSessionCocoa::SuggestedClientCertificate, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::NetworkSessionCocoa::SuggestedClientCertificate>> {
+    struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WebKit::NetworkSessionCocoa::SuggestedClientCertificate>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, WebKit::NetworkSessionCocoa::SuggestedClientCertificate>>, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, WebKit::NetworkSessionCocoa::SuggestedClientCertificate, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::NetworkSessionCocoa::SuggestedClientCertificate>>::KeyValuePairTraits, WTF::HashTraits<unsigned long long>> _field1;
 };
 
 struct HashMap<unsigned long long, WebKit::WebSocketTask *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::WebSocketTask *>> {
@@ -1702,6 +1710,10 @@ struct HashTable<std::__1::pair<IPC::StringReference, unsigned long long>, WTF::
     struct KeyValuePair<std::__1::pair<IPC::StringReference, unsigned long long>, IPC::MessageReceiver *> *_field1;
 };
 
+struct HashTable<std::__1::pair<WTF::String, unsigned short>, WTF::KeyValuePair<std::__1::pair<WTF::String, unsigned short>, WTF::RetainPtr<NSURLCredential>>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<std::__1::pair<WTF::String, unsigned short>, WTF::RetainPtr<NSURLCredential>>>, WTF::PairHash<WTF::String, unsigned short>, WTF::HashMap<std::__1::pair<WTF::String, unsigned short>, WTF::RetainPtr<NSURLCredential>, WTF::PairHash<WTF::String, unsigned short>, WTF::HashTraits<std::__1::pair<WTF::String, unsigned short>>, WTF::HashTraits<WTF::RetainPtr<NSURLCredential>>>::KeyValuePairTraits, WTF::HashTraits<std::__1::pair<WTF::String, unsigned short>>> {
+    struct KeyValuePair<std::__1::pair<WTF::String, unsigned short>, WTF::RetainPtr<NSURLCredential>> *_field1;
+};
+
 struct HashTable<std::__1::pair<WebCore::IntSize, double>, WTF::KeyValuePair<std::__1::pair<WebCore::IntSize, double>, WebCore::IntPoint>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<std::__1::pair<WebCore::IntSize, double>, WebCore::IntPoint>>, WTF::PairHash<WebCore::IntSize, double>, WTF::HashMap<std::__1::pair<WebCore::IntSize, double>, WebCore::IntPoint, WTF::PairHash<WebCore::IntSize, double>, WTF::HashTraits<std::__1::pair<WebCore::IntSize, double>>, WTF::HashTraits<WebCore::IntPoint>>::KeyValuePairTraits, WTF::HashTraits<std::__1::pair<WebCore::IntSize, double>>> {
     struct KeyValuePair<std::__1::pair<WebCore::IntSize, double>, WebCore::IntPoint> *_field1;
 };
@@ -1792,6 +1804,10 @@ struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WebKi
 
 struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WebKit::NetworkDataTaskCocoa *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, WebKit::NetworkDataTaskCocoa *>>, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, WebKit::NetworkDataTaskCocoa *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::NetworkDataTaskCocoa *>>::KeyValuePairTraits, WTF::HashTraits<unsigned long long>> {
     struct KeyValuePair<unsigned long long, WebKit::NetworkDataTaskCocoa *> *_field1;
+};
+
+struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WebKit::NetworkSessionCocoa::SuggestedClientCertificate>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, WebKit::NetworkSessionCocoa::SuggestedClientCertificate>>, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, WebKit::NetworkSessionCocoa::SuggestedClientCertificate, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::NetworkSessionCocoa::SuggestedClientCertificate>>::KeyValuePairTraits, WTF::HashTraits<unsigned long long>> {
+    struct KeyValuePair<unsigned long long, WebKit::NetworkSessionCocoa::SuggestedClientCertificate> *_field1;
 };
 
 struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WebKit::WebSocketTask *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, WebKit::WebSocketTask *>>, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, WebKit::WebSocketTask *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::WebSocketTask *>>::KeyValuePairTraits, WTF::HashTraits<unsigned long long>> {
@@ -2036,6 +2052,8 @@ struct KeyValuePair<int, WTF::Ref<WebCore::DOMTimer, WTF::DumbPtrTraits<WebCore:
 
 struct KeyValuePair<std::__1::pair<IPC::StringReference, unsigned long long>, IPC::MessageReceiver *>;
 
+struct KeyValuePair<std::__1::pair<WTF::String, unsigned short>, WTF::RetainPtr<NSURLCredential>>;
+
 struct KeyValuePair<std::__1::pair<WebCore::IntSize, double>, WebCore::IntPoint>;
 
 struct KeyValuePair<std::__1::pair<WebCore::RegistrableDomain, PAL::SessionID>, WTF::WeakPtr<WebKit::WebProcessProxy>>;
@@ -2077,6 +2095,8 @@ struct KeyValuePair<unsigned long long, WebCore::MediaPlaybackTargetClient *>;
 struct KeyValuePair<unsigned long long, WebKit::DownloadID>;
 
 struct KeyValuePair<unsigned long long, WebKit::NetworkDataTaskCocoa *>;
+
+struct KeyValuePair<unsigned long long, WebKit::NetworkSessionCocoa::SuggestedClientCertificate>;
 
 struct KeyValuePair<unsigned long long, WebKit::WebSocketTask *>;
 
@@ -2332,6 +2352,8 @@ struct NetworkSessionCocoa {
     struct Seconds _field36;
     _Bool _field37;
     struct String _field38;
+    struct HashMap<unsigned long long, WebKit::NetworkSessionCocoa::SuggestedClientCertificate, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::NetworkSessionCocoa::SuggestedClientCertificate>> _field39;
+    struct HashMap<std::__1::pair<WTF::String, unsigned short>, WTF::RetainPtr<NSURLCredential>, WTF::PairHash<WTF::String, unsigned short>, WTF::HashTraits<std::__1::pair<WTF::String, unsigned short>>, WTF::HashTraits<WTF::RetainPtr<NSURLCredential>>> _field40;
 };
 
 struct NetworkSessionCreationParameters {

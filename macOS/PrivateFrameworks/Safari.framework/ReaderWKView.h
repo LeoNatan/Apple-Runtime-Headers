@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)createVisibleContentsSnapshotWithMaximumSize:(struct CGSize)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)didCreateSnapshot:(id)arg1 forRequestIdentifier:(unsigned long long)arg2;
 - (void)didGetPrintingFrame:(id)arg1;
+- (void)setArticleBaseURL:(id)arg1;
 - (void)articleScrolled:(id)arg1;
 - (void)contentIsReadyForDisplayWithScrollOffset:(double)arg1 languageTag:(id)arg2;
 - (void)didChangeNextPageLoadingState;

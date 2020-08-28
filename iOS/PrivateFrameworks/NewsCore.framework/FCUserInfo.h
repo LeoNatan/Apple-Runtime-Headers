@@ -56,6 +56,7 @@
 - (void)addObserver:(id)arg1;
 - (void)loadLocalCachesFromStore;
 - (id)asCKRecord;
+@property(nonatomic) _Bool endOfAudioTrackNotificationsEnabled;
 @property(nonatomic) _Bool newIssueNotificationsEnabled;
 @property(nonatomic) _Bool marketingNotificationsEnabled;
 @property(copy, nonatomic) NSString *canonicalLanguage;
@@ -72,6 +73,8 @@
 @property(copy, nonatomic) NSNumber *monthlyBundleSubscriptionMeteredCount;
 @property(copy, nonatomic) NSDate *aLaCarteSubscriptionMeteredCountLastResetDate;
 @property(copy, nonatomic) NSNumber *monthlyALaCarteSubscriptionMeteredCount;
+@property(copy, nonatomic) NSDate *personalizedNewsletterSignupLastSeenDate;
+@property(copy, nonatomic) NSDate *newsletterSignupLastSeenDate;
 @property(nonatomic) _Bool userHasCompletedFavoritesSetup;
 @property(nonatomic) _Bool hasShownProgressivePersonalizationWelcomeBrick;
 @property(readonly, nonatomic) unsigned long long progressivePersonalization;

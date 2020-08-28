@@ -26,8 +26,8 @@ struct GPBCodedInputStreamState {
 struct GPBExtensionDescription {
     CDUnion_88782d86 _field1;
     char *_field2;
-    char *_field3;
-    char *_field4;
+    CDUnion_55fa2897 _field3;
+    CDUnion_55fa2897 _field4;
     CDUnknownFunctionPointerType _field5;
     int _field6;
     unsigned char _field7;
@@ -43,8 +43,9 @@ struct GPBMessageFieldDescription {
     char *_field1;
     union {
         char *_field1;
-        CDUnknownFunctionPointerType _field2;
+        Class _field2;
         CDUnknownFunctionPointerType _field3;
+        CDUnknownFunctionPointerType _field4;
     } _field2;
     unsigned int _field3;
     int _field4;
@@ -111,4 +112,9 @@ typedef union {
     GPBMessage *valueMessage;
     int valueEnum;
 } CDUnion_88782d86;
+
+typedef union {
+    char *_field1;
+    Class _field2;
+} CDUnion_55fa2897;
 

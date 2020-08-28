@@ -6,21 +6,17 @@
 
 #import <PassKitCore/PKApplyWebServiceRequest.h>
 
-@class NSDecimalNumber, NSString;
+@class PKPaymentInstallmentConfiguration;
 
 @interface PKApplyWebServiceCreateRequest : PKApplyWebServiceRequest
 {
-    BOOL _isInstallment;
     unsigned long long _featureIdentifier;
-    NSDecimalNumber *_installmentAmount;
-    NSString *_installmentCurrencyCode;
+    PKPaymentInstallmentConfiguration *_installmentConfiguration;
 }
 
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
-@property(copy, nonatomic) NSString *installmentCurrencyCode; // @synthesize installmentCurrencyCode=_installmentCurrencyCode;
-@property(retain, nonatomic) NSDecimalNumber *installmentAmount; // @synthesize installmentAmount=_installmentAmount;
-@property(nonatomic) BOOL isInstallment; // @synthesize isInstallment=_isInstallment;
+@property(retain, nonatomic) PKPaymentInstallmentConfiguration *installmentConfiguration; // @synthesize installmentConfiguration=_installmentConfiguration;
 @property(nonatomic) unsigned long long featureIdentifier; // @synthesize featureIdentifier=_featureIdentifier;
 - (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;

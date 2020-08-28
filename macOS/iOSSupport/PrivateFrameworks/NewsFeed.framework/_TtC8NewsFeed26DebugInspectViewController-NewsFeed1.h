@@ -7,7 +7,7 @@
 #import <NewsFeed/_TtC8NewsFeed26DebugInspectViewController.h>
 
 @interface _TtC8NewsFeed26DebugInspectViewController (NewsFeed1)
-- (void)doOptions;
+- (void)doTapToRadar;
 - (void)doDismiss;
 @end
 

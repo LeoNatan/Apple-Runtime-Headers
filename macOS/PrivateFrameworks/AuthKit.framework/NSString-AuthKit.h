@@ -8,6 +8,7 @@
 
 @interface NSString (AuthKit)
 + (id)ak_base64EncodedJsonFromObject:(id)arg1;
+- (BOOL)ak_isEmailAddress;
 - (id)ak_truncatedCopy;
 - (id)ak_urlEncoded;
 - (id)ak_SHA256String;

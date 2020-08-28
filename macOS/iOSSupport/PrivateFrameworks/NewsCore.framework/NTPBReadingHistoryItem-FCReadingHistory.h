@@ -19,6 +19,8 @@
 @property(readonly, nonatomic) CKRecord *asCKRecord;
 - (void)setArticleLikingStatus:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long articleLikingStatus;
+- (void)setHasArticleCompletedListening:(BOOL)arg1;
+@property(readonly, nonatomic) BOOL hasArticleCompletedListening;
 - (void)setHasArticleBeenConsumed:(BOOL)arg1;
 @property(readonly, nonatomic) BOOL hasArticleBeenConsumed;
 - (void)setHasArticleBeenMarkedOffensive:(BOOL)arg1;
@@ -31,6 +33,12 @@
 @property(readonly, copy, nonatomic) NSDate *firstSeenAtOfMaxVersionSeen;
 - (void)setFirstSeenAt:(id)arg1;
 @property(readonly, copy, nonatomic) NSDate *firstSeenAt;
+- (void)setReadingPositionSavedAt:(id)arg1;
+@property(readonly, copy, nonatomic) NSDate *readingPositionSavedAt;
+- (void)setListeningProgressSavedAt:(id)arg1;
+@property(readonly, copy, nonatomic) NSDate *listeningProgressSavedAt;
+- (void)setLastListenedAt:(id)arg1;
+@property(readonly, copy, nonatomic) NSDate *lastListenedAt;
 - (void)setLastVisitedAt:(id)arg1;
 @property(readonly, copy, nonatomic) NSDate *lastVisitedAt;
 @property(readonly, copy, nonatomic) NSString *identifier;
@@ -43,9 +51,11 @@
 @property(readonly, copy, nonatomic) NSString *deviceID;
 @property(readonly, nonatomic) unsigned long long flags;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) double listeningProgress;
 @property(readonly, nonatomic) long long maxVersionRead;
 @property(readonly, nonatomic) long long maxVersionSeen;
 @property(readonly, nonatomic) long long readCount;
+@property(readonly, copy, nonatomic) NSString *readingPosition;
 @property(readonly, copy, nonatomic) NSString *sourceChannelTagID;
 @property(readonly) Class superclass;
 @end

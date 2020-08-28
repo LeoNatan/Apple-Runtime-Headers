@@ -9,10 +9,13 @@
 __attribute__((visibility("hidden")))
 @interface _TtC8NewsFeed26DebugInspectViewController : UIViewController
 {
+    // Error parsing type: , name: cloudContext
     // Error parsing type: , name: key
     // Error parsing type: , name: result
     // Error parsing type: , name: factory
     // Error parsing type: , name: dataSource
+    // Error parsing type: , name: inspector
+    // Error parsing type: , name: reporter
     // Error parsing type: , name: tableView
 }
 

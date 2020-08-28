@@ -12,7 +12,6 @@
 @class NSString;
 
 @protocol NTSectionDescriptor <NTSectionDisplayDescriptor, NTSectionFetchDescriptor, NSObject, NFCopying>
-@property(readonly, nonatomic) _Bool openVideoPlaylistInApp;
 @property(readonly, nonatomic) int leadingCellPromotionPolicy;
 @property(readonly, nonatomic) long long supplementalIntraSectionFilterOptions;
 @property(readonly, nonatomic) long long supplementalInterSectionFilterOptions;

@@ -26,7 +26,8 @@
 + (BOOL)isLocationShiftRequiredForCoordinate:(CDStruct_c3b9c2ee)arg1;
 + (unsigned int)locationShiftFunctionVersion;
 + (id)_proxy;
-+ (void)useLocalProxy;
++ (Class)proxyClass;
++ (void)setProxyClass:(Class)arg1;
 - (void).cxx_destruct;
 - (BOOL)_shiftLocation:(id)arg1;
 - (void)_fetchShiftFunctionForLatLng:(id)arg1 auditToken:(id)arg2 callbackQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

@@ -528,6 +528,7 @@
 - (void)_setUniqueDeviceIdSalt:(id)arg1;
 - (void)setHomekitLastSyncedAssistantConfigurationVersion:(unsigned long long)arg1;
 - (void)_setHomekitAssistantConfigurationVersion:(unsigned long long)arg1;
+- (void)setHomekitAssistantConfigurationNumEntities;
 - (BOOL)_updateAccessoriesConfigured;
 - (void)setMediaAccessoriesPresent:(BOOL)arg1 homePodsPresent:(BOOL)arg2 inOwnedHomes:(BOOL)arg3;
 - (void)registerForMediaPlaybackStateChangeNotifications:(BOOL)arg1;

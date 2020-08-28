@@ -9,14 +9,13 @@
 #import <InAppMessages/IAMMessageTarget-Protocol.h>
 #import <InAppMessages/IAMWebMessagePresentationCoordinatorDelegate-Protocol.h>
 
-@class IAMMessage, IAMMessageCoordinator, IAMWebMessagePresentationCoordinator, NSString;
+@class IAMMessageCoordinator, IAMWebMessagePresentationCoordinator, NSString;
 
 @interface IAMModalTarget : NSObject <IAMWebMessagePresentationCoordinatorDelegate, IAMMessageTarget>
 {
     IAMMessageCoordinator *_messageCoordinator;
     IAMWebMessagePresentationCoordinator *_webMessagePresentationCoordinator;
-    IAMMessage *_priorityMessage;
-    _Bool _isPresentingMessage;
+    NSString *_presentingMessageIdentifier;
     NSString *_targetIdentifier;
 }
 

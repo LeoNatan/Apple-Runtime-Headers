@@ -19,6 +19,7 @@
     NSData *_nanoRegistryData;
     unsigned int _version;
     NSData *_walletData;
+    _Bool _autoDownloadEnabled;
     _Bool _autoUpdateEnabled;
     _Bool _didSeeTrueTonePane;
     _Bool _findMyiPhoneOptIn;
@@ -30,6 +31,7 @@
         unsigned int appAnalyticsOptIn:1;
         unsigned int deviceAnalyticsOptIn:1;
         unsigned int homeButtonHapticKind:1;
+        unsigned int autoDownloadEnabled:1;
         unsigned int autoUpdateEnabled:1;
         unsigned int didSeeTrueTonePane:1;
         unsigned int findMyiPhoneOptIn:1;
@@ -40,6 +42,7 @@
 }
 
 - (void).cxx_destruct;
+@property(nonatomic) _Bool autoDownloadEnabled; // @synthesize autoDownloadEnabled=_autoDownloadEnabled;
 @property(retain, nonatomic) NSData *walletData; // @synthesize walletData=_walletData;
 @property(nonatomic) long long userInterfaceStyleMode; // @synthesize userInterfaceStyleMode=_userInterfaceStyleMode;
 @property(nonatomic) _Bool didSeeTrueTonePane; // @synthesize didSeeTrueTonePane=_didSeeTrueTonePane;
@@ -62,6 +65,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasAutoDownloadEnabled;
 @property(readonly, nonatomic) _Bool hasWalletData;
 @property(nonatomic) _Bool hasUserInterfaceStyleMode;
 @property(nonatomic) _Bool hasDidSeeTrueTonePane;

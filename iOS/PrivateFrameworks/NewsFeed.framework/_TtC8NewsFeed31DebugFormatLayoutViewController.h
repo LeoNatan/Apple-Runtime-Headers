@@ -10,15 +10,18 @@ __attribute__((visibility("hidden")))
 @interface _TtC8NewsFeed31DebugFormatLayoutViewController : UIViewController
 {
     // Error parsing type: , name: tableView
-    // Error parsing type: , name: selectionView
+    // Error parsing type: , name: overlayView
     // Error parsing type: , name: tree
+    // Error parsing type: , name: editor
 }
 
 - (void).cxx_destruct;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)didTapOnOverlay:(id)arg1;
 - (void)viewWillLayoutSubviews;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (id)initWithCoder:(id)arg1;
 
 @end
 

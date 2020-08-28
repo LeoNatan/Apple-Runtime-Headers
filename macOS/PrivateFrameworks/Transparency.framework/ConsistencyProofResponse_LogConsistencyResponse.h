@@ -15,8 +15,8 @@
 }
 
 + (id)descriptor;
-- (BOOL)verifyWithError:(id *)arg1;
-- (void)setResult:(BOOL)arg1 treeHead:(id)arg2 error:(id)arg3;
+- (unsigned long long)verifyWithError:(id *)arg1;
+- (void)setResult:(unsigned long long)arg1 treeHead:(id)arg2 error:(id)arg3;
 @property(retain) NSNumber *startRevision;
 @property(retain) TransparencyManagedDataStore *dataStore;
 @property(retain) TransparencyConsistencyProofVerifier *verifier;

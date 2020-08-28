@@ -14,6 +14,7 @@
 {
     NSString *_appletIdentifier;
     NSString *_keyIdentifier;
+    BOOL _background;
     unsigned short _selectStatus;
     unsigned short _paymentMode;
     NFApplet *_applet;
@@ -21,6 +22,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(readonly, nonatomic) BOOL background; // @synthesize background=_background;
 @property(readonly, nonatomic) NSString *spIdentifier; // @synthesize spIdentifier=_spIdentifier;
 @property(readonly, nonatomic) unsigned short paymentMode; // @synthesize paymentMode=_paymentMode;
 @property(readonly, nonatomic) unsigned short selectStatus; // @synthesize selectStatus=_selectStatus;

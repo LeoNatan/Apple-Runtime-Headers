@@ -8,6 +8,7 @@
 
 @interface _TtC8NewsFeed24FormatButtonNodeRenderer : _TtCs12_SwiftObject
 {
+    // Error parsing type: , name: commandCenter
 }
 
 @end

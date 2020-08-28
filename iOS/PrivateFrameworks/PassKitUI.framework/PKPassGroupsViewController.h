@@ -137,7 +137,6 @@
 - (void)presentPeerPaymentPassAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentSubcredentialPairingFlowWithConfig:(id)arg1 flowType:(long long)arg2 animated:(_Bool)arg3;
 - (_Bool)presentSubcredentialPairingFlowIfPossibleWithIssuer:(id)arg1 password:(id)arg2 animated:(_Bool)arg3;
-- (_Bool)presentSubcredentialPairingFlowIfPossibleWithAppIdentifier:(id)arg1 animated:(_Bool)arg2;
 - (void)presentSubcredentialInvitationWithIdentifier:(id)arg1 remoteDeviceInvitationIdentifier:(id)arg2 animated:(_Bool)arg3;
 - (void)presentDiscoveryArticleForItemWithIdentifier:(id)arg1 referrerIdentifier:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)presentDailyCashForPassUniqueIdentifier:(id)arg1 dateComponents:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;

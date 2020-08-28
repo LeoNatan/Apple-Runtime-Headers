@@ -11,7 +11,7 @@
 #import <VideosUI/VUIPostPlayViewDelegate-Protocol.h>
 #import <VideosUI/VideosExtrasContextDelegate-Protocol.h>
 
-@class AVExternalPlaybackController, AVPlayerViewController, NSDate, NSString, TVPStateMachine, UIButton, UIImage, UIViewController, VUINowPlayingFeatureMonitor, VUIPlayer, VUIPostPlayView, VUIVideoAdvisoryLogoImageDownloader, VUIVideoAdvisoryView, VideosExtrasContext, VideosExtrasPresenter;
+@class AVExternalPlaybackController, AVPlayerViewController, NSDate, NSNumber, NSString, TVPStateMachine, UIButton, UIImage, UIViewController, VUINowPlayingFeatureMonitor, VUIPlayer, VUIPostPlayView, VUIVideoAdvisoryLogoImageDownloader, VUIVideoAdvisoryView, VideosExtrasContext, VideosExtrasPresenter;
 @protocol TVPMediaItem;
 
 @interface VUIPlaybackManager : NSObject <AVPlayerViewControllerDelegatePrivate, VideosExtrasContextDelegate, VUINowPlayingFeatureMonitorDelegate, VUIPostPlayViewDelegate>
@@ -39,6 +39,7 @@
     VUIPostPlayView *_postPlayView;
     unsigned long long _autoPlayedVideosCount;
     NSDate *_initialPlaybackStartDate;
+    NSNumber *_postPlayImpressionTime;
     VUIVideoAdvisoryLogoImageDownloader *_logoImageDownloader;
     UIImage *_ratingImage;
     VUIVideoAdvisoryView *_ratingView;
@@ -62,6 +63,7 @@
 @property(retain, nonatomic) VUIVideoAdvisoryView *ratingView; // @synthesize ratingView=_ratingView;
 @property(retain, nonatomic) UIImage *ratingImage; // @synthesize ratingImage=_ratingImage;
 @property(retain, nonatomic) VUIVideoAdvisoryLogoImageDownloader *logoImageDownloader; // @synthesize logoImageDownloader=_logoImageDownloader;
+@property(retain, nonatomic) NSNumber *postPlayImpressionTime; // @synthesize postPlayImpressionTime=_postPlayImpressionTime;
 @property(nonatomic) _Bool configuredPostPlay; // @synthesize configuredPostPlay=_configuredPostPlay;
 @property(retain, nonatomic) NSDate *initialPlaybackStartDate; // @synthesize initialPlaybackStartDate=_initialPlaybackStartDate;
 @property(nonatomic) unsigned long long autoPlayedVideosCount; // @synthesize autoPlayedVideosCount=_autoPlayedVideosCount;

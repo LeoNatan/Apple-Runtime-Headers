@@ -7,7 +7,6 @@
 #import <NewsFeed/_TtC8NewsFeed31DebugFormatLayoutViewController.h>
 
 @interface _TtC8NewsFeed31DebugFormatLayoutViewController (NewsFeed1)
-- (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 @end
 

@@ -8,7 +8,7 @@
 
 @interface _TtC8NewsFeed26FormatWebEmbedNodeRenderer : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: traitCollection
+    // Error parsing type: , name: reuseProtector
 }
 
 @end

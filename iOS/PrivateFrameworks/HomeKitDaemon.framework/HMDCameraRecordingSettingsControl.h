@@ -87,7 +87,7 @@
 - (void)handleCharacteristicValueUpdated:(id)arg1;
 - (void)handleCharacteristicsUpdated:(id)arg1;
 - (void)handleAccessoryConfigured:(id)arg1;
-- (void)handleAccessoryUnreachable:(id)arg1;
+- (void)handleAccessoryUnconfigured:(id)arg1;
 - (void)start;
 @property(readonly, copy) NSNumber *configuredImageHeight;
 @property(readonly, copy) NSNumber *configuredImageWidth;

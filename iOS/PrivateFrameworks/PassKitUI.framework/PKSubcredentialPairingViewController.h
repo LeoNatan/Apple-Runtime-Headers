@@ -32,7 +32,6 @@
 - (void)subcredentialProvisioningController:(id)arg1 didFinishWithError:(id)arg2 inState:(long long)arg3;
 - (void)subcredentialProvisioningController:(id)arg1 didEnterState:(long long)arg2;
 - (void)setIdleTimerDisabled:(_Bool)arg1;
-- (void)handleErrorFromDeviceRegistration:(id)arg1;
 - (void)advanceToNextState;
 - (void)startProvisioning;
 - (void)updateUIForState:(long long)arg1;

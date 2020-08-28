@@ -74,6 +74,8 @@
 - (void)_consentAutoInstallOperation:(id)arg1 withResult:(CDUnknownBlockType)arg2;
 - (void)_unregisterAutoInstallOperationClientHandler:(id)arg1;
 - (void)_registerAutoInstallOperationClientHandler:(id)arg1;
+- (_Bool)isAutomaticDownloadEnabled;
+- (void)enableAutomaticDownload:(_Bool)arg1;
 - (_Bool)isAutomaticUpdateV2Enabled;
 - (void)enableAutomaticUpdateV2:(_Bool)arg1;
 - (void)getMandatorySoftwareUpdateDictionary:(CDUnknownBlockType)arg1;

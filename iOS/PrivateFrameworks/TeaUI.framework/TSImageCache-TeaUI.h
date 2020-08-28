@@ -6,10 +6,9 @@
 
 #import <TeaUI/TSImageCache.h>
 
-#import <TeaUI/TSImageCacheType-Protocol.h>
-
-@interface TSImageCache (TeaUI) <TSImageCacheType>
+@interface TSImageCache (TeaUI)
 - (void)cancelAllRunningOperations;
+- (void)setImage:(id)arg1 forRequest:(id)arg2;
 - (id)fetchImageForRequest:(id)arg1;
 - (void)fetchImageForRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @end

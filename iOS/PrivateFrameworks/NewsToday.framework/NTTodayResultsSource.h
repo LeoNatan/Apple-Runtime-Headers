@@ -17,7 +17,6 @@
     id <NTTodayResultsFetchDescriptor> _fetchDescriptor;
     id <NTReadablePrivateDataStorage> _privateDataStorage;
     id <FCContentContext> _contentContext;
-    CDUnknownBlockType _sessionProvider;
     FCAsyncSerialQueue *_serialQueue;
     NSObject *_latestResultRecordsHoldToken;
 }
@@ -26,13 +25,12 @@
 @property(retain, nonatomic) NSObject *latestResultRecordsHoldToken; // @synthesize latestResultRecordsHoldToken=_latestResultRecordsHoldToken;
 @property(nonatomic, getter=hasFlushingBeenEnabled) _Bool flushingHasBeenEnabled; // @synthesize flushingHasBeenEnabled=_flushingHasBeenEnabled;
 @property(readonly, nonatomic) FCAsyncSerialQueue *serialQueue; // @synthesize serialQueue=_serialQueue;
-@property(readonly, copy, nonatomic) CDUnknownBlockType sessionProvider; // @synthesize sessionProvider=_sessionProvider;
 @property(readonly, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
 @property(readonly, nonatomic) id <NTReadablePrivateDataStorage> privateDataStorage; // @synthesize privateDataStorage=_privateDataStorage;
 @property(readonly, copy, nonatomic) id <NTTodayResultsFetchDescriptor> fetchDescriptor; // @synthesize fetchDescriptor=_fetchDescriptor;
 - (void)_fetchLatestResultsWithOperationInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchLatestResultsWithOperationInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)initWithFetchDescriptor:(id)arg1 privateDataStorage:(id)arg2 contentContext:(id)arg3 sessionProvider:(CDUnknownBlockType)arg4 fetchQueue:(id)arg5;
+- (id)initWithFetchDescriptor:(id)arg1 privateDataStorage:(id)arg2 contentContext:(id)arg3 fetchQueue:(id)arg4;
 - (id)init;
 
 // Remaining properties

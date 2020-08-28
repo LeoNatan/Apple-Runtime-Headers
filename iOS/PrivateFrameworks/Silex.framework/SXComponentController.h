@@ -7,13 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <Silex/SXComponentController-Protocol.h>
-#import <Silex/SXLayoutIntegrator-Protocol.h>
 #import <Silex/SXViewportChangeListener-Protocol.h>
 
 @class NSArray, NSHashTable, NSMutableArray, NSMutableDictionary, NSString, SXLayoutBlueprint, SXPresentationAttributes, SXViewport;
 @protocol SXComponentHosting, SXComponentViewEngine, SXDOMObjectProviding;
 
-@interface SXComponentController : NSObject <SXViewportChangeListener, SXComponentController, SXLayoutIntegrator>
+@interface SXComponentController : NSObject <SXViewportChangeListener, SXComponentController>
 {
     _Bool _isPresented;
     _Bool _isPresenting;

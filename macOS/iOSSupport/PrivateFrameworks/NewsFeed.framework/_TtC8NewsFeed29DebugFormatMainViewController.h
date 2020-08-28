@@ -9,13 +9,14 @@
 __attribute__((visibility("hidden")))
 @interface _TtC8NewsFeed29DebugFormatMainViewController : UISplitViewController
 {
-    // Error parsing type: , name: key
+    // Error parsing type: , name: editor
     // Error parsing type: , name: reloadState
     // Error parsing type: , name: inventoryViewController
     // Error parsing type: , name: inventoryContainerController
     // Error parsing type: , name: editorViewController
     // Error parsing type: , name: editorContainerController
     // Error parsing type: , name: layoutViewController
+    // Error parsing type: , name: bindingViewController
     // Error parsing type: , name: formatManager
     // Error parsing type: , name: packages
 }
@@ -23,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)viewWillLayoutSubviews;
-- (void)viewDidLoad;
 - (id)initWithCoder:(id)arg1;
 
 @end

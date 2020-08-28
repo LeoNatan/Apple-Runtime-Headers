@@ -56,6 +56,8 @@
 - (void)cardViewDidAppearForCard:(id)arg1 withAppearanceFeedback:(id)arg2;
 - (void)cardViewWillAppearForCard:(id)arg1 withAppearanceFeedback:(id)arg2;
 - (void)userDidReportFeedback:(id)arg1 fromCardSection:(id)arg2;
+- (id)_instrumentationManager;
+- (void)_instrumentCardSectionInteractionForId:(id)arg1 previousTurn:(id)arg2;
 - (void)userDidEngageCardSection:(id)arg1 withEngagementFeedback:(id)arg2;
 - (void)modalContainerViewControllerViewDidDisappear:(id)arg1;
 - (void)modalContainerViewControllerViewWillDisappear:(id)arg1;

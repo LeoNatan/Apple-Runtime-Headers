@@ -13,20 +13,21 @@
     // Error parsing type: , name: presentationReason
     // Error parsing type: , name: feedPickerSection
     // Error parsing type: , name: feedPickerType
+    // Error parsing type: , name: displayRank
+    // Error parsing type: , name: externalAnalyticsFeedReferrer
+    // Error parsing type: , name: previousArticleID
+    // Error parsing type: , name: previousArticleVersion
+    // Error parsing type: , name: showSubscribedAlert
+    // Error parsing type: , name: referral
     // Error parsing type: , name: sourceURL
+    // Error parsing type: , name: title
     // Error parsing type: , name: sourceApplication
     // Error parsing type: , name: userActivityType
     // Error parsing type: , name: sourceSearchText
     // Error parsing type: , name: adPreviewID
     // Error parsing type: , name: adPreviewSessionID
-    // Error parsing type: , name: maximumAdRequestsForCurrentAdPreviewID
-    // Error parsing type: , name: displayRank
-    // Error parsing type: , name: externalAnalyticsFeedReferrer
-    // Error parsing type: , name: referral
-    // Error parsing type: , name: previousArticleID
-    // Error parsing type: , name: previousArticleVersion
-    // Error parsing type: , name: showSubscribedAlert
     // Error parsing type: , name: adQToken
+    // Error parsing type: , name: maximumAdRequestsForCurrentAdPreviewID
 }
 
 - (void).cxx_destruct;
@@ -48,20 +49,21 @@
 - (void)setWithFeedPickerType:(int)arg1;
 - (void)setWithFeedPickerSection:(int)arg1;
 - (void)setWithPresentationReason:(int)arg1;
-@property(nonatomic, copy) NSString *adQToken;
-@property(nonatomic) _Bool showSubscribedAlert; // @synthesize showSubscribedAlert;
-@property(nonatomic, retain) NSNumber *previousArticleVersion; // @synthesize previousArticleVersion;
-@property(nonatomic, copy) NSString *previousArticleID;
-@property(nonatomic, retain) TSAnalyticsReferral *referral; // @synthesize referral;
-@property(nonatomic, retain) NSNumber *externalAnalyticsFeedReferrer; // @synthesize externalAnalyticsFeedReferrer;
-@property(nonatomic, retain) NSNumber *displayRank; // @synthesize displayRank;
 @property(nonatomic, retain) NSNumber *maximumAdRequestsForCurrentAdPreviewID; // @synthesize maximumAdRequestsForCurrentAdPreviewID;
+@property(nonatomic, copy) NSString *adQToken;
 @property(nonatomic, copy) NSString *adPreviewSessionID;
 @property(nonatomic, copy) NSString *adPreviewID;
 @property(nonatomic, copy) NSString *sourceSearchText;
 @property(nonatomic, copy) NSString *userActivityType;
 @property(nonatomic, copy) NSString *sourceApplication;
+@property(nonatomic, copy) NSString *title;
 @property(nonatomic, copy) NSURL *sourceURL;
+@property(nonatomic, retain) TSAnalyticsReferral *referral; // @synthesize referral;
+@property(nonatomic) _Bool showSubscribedAlert; // @synthesize showSubscribedAlert;
+@property(nonatomic, retain) NSNumber *previousArticleVersion; // @synthesize previousArticleVersion;
+@property(nonatomic, copy) NSString *previousArticleID;
+@property(nonatomic, retain) NSNumber *externalAnalyticsFeedReferrer; // @synthesize externalAnalyticsFeedReferrer;
+@property(nonatomic, retain) NSNumber *displayRank; // @synthesize displayRank;
 @property(nonatomic, retain) NSNumber *feedPickerType; // @synthesize feedPickerType;
 @property(nonatomic, retain) NSNumber *feedPickerSection; // @synthesize feedPickerSection;
 @property(nonatomic, retain) NSNumber *presentationReason; // @synthesize presentationReason;

@@ -12,6 +12,7 @@
     // Error parsing type: , name: currentPage
     // Error parsing type: , name: providers
     // Error parsing type: , name: providerState
+    // Error parsing type: , name: featureAvailability
 }
 
 @end

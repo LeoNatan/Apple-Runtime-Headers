@@ -6,7 +6,7 @@
 
 #import <NewsUI2/NSObject-Protocol.h>
 
-@class CKShareMetadata, NSArray, NSCoder, NSData, NSDictionary, NSError, NSSet, NSString, NSURL, NSUserActivity, UIApplication, UIApplicationShortcutItem, UILocalNotification, UISceneConfiguration, UISceneConnectionOptions, UISceneSession, UIUserNotificationSettings, UIViewController, UIWindow;
+@class CKShareMetadata, INIntent, NSArray, NSCoder, NSData, NSDictionary, NSError, NSSet, NSString, NSURL, NSUserActivity, UIApplication, UIApplicationShortcutItem, UILocalNotification, UISceneConfiguration, UISceneConnectionOptions, UISceneSession, UIUserNotificationSettings, UIViewController, UIWindow;
 
 @protocol UIApplicationDelegate <NSObject>
 
@@ -32,6 +32,7 @@
 - (void)applicationProtectedDataWillBecomeUnavailable:(UIApplication *)arg1;
 - (void)applicationWillEnterForeground:(UIApplication *)arg1;
 - (void)applicationDidEnterBackground:(UIApplication *)arg1;
+- (void)application:(UIApplication *)arg1 handleIntent:(INIntent *)arg2 completionHandler:(void (^)(INIntentResponse *))arg3;
 - (void)applicationShouldRequestHealthAuthorization:(UIApplication *)arg1;
 - (void)application:(UIApplication *)arg1 handleWatchKitExtensionRequest:(NSDictionary *)arg2 reply:(void (^)(NSDictionary *))arg3;
 - (void)application:(UIApplication *)arg1 handleEventsForBackgroundURLSession:(NSString *)arg2 completionHandler:(void (^)(void))arg3;

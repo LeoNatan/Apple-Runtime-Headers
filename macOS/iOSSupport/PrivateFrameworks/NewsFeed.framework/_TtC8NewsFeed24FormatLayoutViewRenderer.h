@@ -13,10 +13,11 @@
     // Error parsing type: , name: textNodeRenderer
     // Error parsing type: , name: imageNodeRenderer
     // Error parsing type: , name: buttonNodeRenderer
+    // Error parsing type: , name: stateViewNodeRenderer
+    // Error parsing type: , name: customNodeRenderer
     // Error parsing type: , name: webEmbedNodeRenderer
     // Error parsing type: , name: webEmbedViewControllerReuseManager
     // Error parsing type: , name: rendererTool
-    // Error parsing type: , name: traitCollection
     // Error parsing type: , name: behaviorRenderer
 }
 

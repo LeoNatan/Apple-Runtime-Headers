@@ -11,7 +11,7 @@
     // Error parsing type: , name: delegate
     // Error parsing type: , name: interactor
     // Error parsing type: , name: router
-    // Error parsing type: , name: coordinator
+    // Error parsing type: , name: tracker
 }
 
 @end

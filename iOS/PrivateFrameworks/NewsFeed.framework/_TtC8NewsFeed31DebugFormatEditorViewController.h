@@ -10,12 +10,16 @@ __attribute__((visibility("hidden")))
 @interface _TtC8NewsFeed31DebugFormatEditorViewController : UIViewController
 {
     // Error parsing type: , name: delegate
+    // Error parsing type: , name: editor
     // Error parsing type: , name: packages
-    // Error parsing type: , name: styler
     // Error parsing type: , name: errorViewController
-    // Error parsing type: , name: $__lazy_storage_$_updatedLabel
     // Error parsing type: , name: canvasViewController
-    // Error parsing type: , name: canvasUserInterfaceStyle
+    // Error parsing type: , name: scrollView
+    // Error parsing type: , name: rulerView
+    // Error parsing type: , name: $__lazy_storage_$_overlayView
+    // Error parsing type: , name: contentView
+    // Error parsing type: , name: statusView
+    // Error parsing type: , name: zoomLabel
 }
 
 - (void).cxx_destruct;

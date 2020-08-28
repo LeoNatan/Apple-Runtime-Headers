@@ -7,13 +7,14 @@
 #import <swiftCore/_TtCs12_SwiftObject.h>
 
 @class NSArray, NSSet, NSString;
+@protocol FCTagProviding;
 
 @interface _TtC7NewsUI221TodayBridgedFeedGroup : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: group
 }
 
-@property(nonatomic, readonly) NSString *backingTagID;
+@property(nonatomic, readonly) id <FCTagProviding> backingTag;
 @property(nonatomic, readonly) NSString *identifier;
 @property(nonatomic, readonly) NSSet *equivalentTopicIDs;
 @property(nonatomic, readonly) NSArray *webEmbedURLs;

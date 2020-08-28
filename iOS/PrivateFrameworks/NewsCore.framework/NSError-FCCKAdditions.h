@@ -10,10 +10,16 @@
 + (id)fc_encryptionErrorWithCode:(unsigned long long)arg1 descriptionFormat:(id)arg2;
 + (id)fc_encryptionErrorWithCode:(unsigned long long)arg1 description:(id)arg2;
 + (id)fc_encryptionErrorWithCode:(unsigned long long)arg1;
++ (id)fc_emptyM3UPlaylistError;
++ (id)fc_authUserAccountInvalid;
 + (id)fc_invalidSectionErrorForTagID:(id)arg1;
 + (id)fc_invalidChannelErrorForTagID:(id)arg1;
 + (id)fc_missingANFDocumentErrorForArticleID:(id)arg1;
 + (id)fc_missingAssetKeyError;
++ (id)fc_invalidAVAssetKeyURIError;
++ (id)fc_expiredAVAssetCertificateError;
++ (id)fc_unauthorizedAVAssetCertificateError;
++ (id)fc_unauthorizedAVAssetKeyErrorWithKeyURI:(id)arg1;
 + (id)fc_unauthorizedAssetKeyErrorWithWrappingKeyID:(id)arg1;
 + (id)fc_unzipFailedErrorWithErrorCode:(int)arg1;
 + (id)fc_missingAssetErrorWithAssetHandles:(id)arg1;
@@ -43,6 +49,8 @@
 - (_Bool)fc_isTemporaryNetworkOrServerError;
 - (_Bool)fc_isMissingZoneError;
 - (_Bool)fc_isCKUnknownItemError;
+- (_Bool)fc_isAVUnauthorizedError;
+- (_Bool)fc_isBlockedInStoreFrontError;
 - (_Bool)fc_isUnknownItemError;
 - (_Bool)fc_isOfflineErrorOfflineReason:(long long *)arg1;
 - (_Bool)fc_isOfflineError;

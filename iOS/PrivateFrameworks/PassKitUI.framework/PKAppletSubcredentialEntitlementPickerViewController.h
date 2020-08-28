@@ -9,6 +9,7 @@
 #import <PassKitUI/PKSubcredentialMessageComposeViewControllerDelegate-Protocol.h>
 
 @class NSArray, NSString, PKAppletSubcredentialSharingRequest, PKPaymentPass, PKSharedCredentialsGroupController, PKSubcredentialMessageComposeViewController;
+@protocol PKAppletSubcredentialSharingExplanationViewControllerDelegate;
 
 @interface PKAppletSubcredentialEntitlementPickerViewController : PKPaymentSetupTableViewController <PKSubcredentialMessageComposeViewControllerDelegate>
 {
@@ -17,6 +18,7 @@
     PKAppletSubcredentialSharingRequest *_sharingRequest;
     NSArray *_supportedEntitlements;
     long long _selectedEntitlementIndex;
+    id <PKAppletSubcredentialSharingExplanationViewControllerDelegate> _delegate;
     _Bool _isSharing;
     PKSubcredentialMessageComposeViewController *_messageComposeViewController;
 }
@@ -30,7 +32,7 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)viewDidLoad;
-- (id)initWithSharedCredentialsGroupController:(id)arg1 sharingRequest:(id)arg2;
+- (id)initWithSharedCredentialsGroupController:(id)arg1 delegate:(id)arg2 sharingRequest:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

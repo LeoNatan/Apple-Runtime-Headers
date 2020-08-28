@@ -8,7 +8,6 @@
 
 @interface _TtC7NewsUI230ChannelPromotedArticlesService : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: tagService
     // Error parsing type: , name: headlineService
 }
 

@@ -18,8 +18,9 @@ __attribute__((visibility("hidden")))
     unsigned int _packetLossPercentageIncreaseThresholds[3];
     unsigned int _packetLossPercentageDecreaseThresholds[3];
     _Bool _isPacketLossIncreasing;
-    unsigned int _packetLossPercentage;
-    unsigned int _packetLossPercentageThreshold;
+    double _packetLossPercentage;
+    double _packetLossPercentageThreshold;
+    double _plrEnvelope;
     unsigned int _burstLossPacketCount;
     _Bool _isUplinkRecentlyCongested;
 }

@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (BOOL)_containsValidMarkup;
 - (id)_cells;
 - (id)_rows;
 - (void)buildAccessibilityHierarchy;

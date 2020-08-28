@@ -12,6 +12,7 @@
 
 @interface NTPBReadingHistoryItem : PBCodable <NSCopying>
 {
+    double _listeningProgress;
     long long _maxVersionRead;
     long long _maxVersionSeen;
     long long _readCount;
@@ -20,9 +21,14 @@
     NTPBDate *_firstSeenDate;
     NTPBDate *_firstSeenDateOfMaxVersionSeen;
     unsigned int _flags;
+    NTPBDate *_lastListened;
     NTPBDate *_lastVisitedDate;
+    NTPBDate *_listeningProgressSavedDate;
+    NSString *_readingPosition;
+    NTPBDate *_readingPositionSavedDate;
     NSString *_sourceChannelTagID;
     struct {
+        unsigned int listeningProgress:1;
         unsigned int maxVersionRead:1;
         unsigned int maxVersionSeen:1;
         unsigned int readCount:1;
@@ -30,7 +36,12 @@
     } _has;
 }
 
+@property(retain, nonatomic) NTPBDate *readingPositionSavedDate; // @synthesize readingPositionSavedDate=_readingPositionSavedDate;
+@property(retain, nonatomic) NTPBDate *listeningProgressSavedDate; // @synthesize listeningProgressSavedDate=_listeningProgressSavedDate;
 @property(nonatomic) long long readCount; // @synthesize readCount=_readCount;
+@property(retain, nonatomic) NSString *readingPosition; // @synthesize readingPosition=_readingPosition;
+@property(retain, nonatomic) NTPBDate *lastListened; // @synthesize lastListened=_lastListened;
+@property(nonatomic) double listeningProgress; // @synthesize listeningProgress=_listeningProgress;
 @property(retain, nonatomic) NSString *deviceID; // @synthesize deviceID=_deviceID;
 @property(retain, nonatomic) NSString *sourceChannelTagID; // @synthesize sourceChannelTagID=_sourceChannelTagID;
 @property(nonatomic) long long maxVersionSeen; // @synthesize maxVersionSeen=_maxVersionSeen;
@@ -48,7 +59,12 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasReadingPositionSavedDate;
+@property(readonly, nonatomic) _Bool hasListeningProgressSavedDate;
 @property(nonatomic) _Bool hasReadCount;
+@property(readonly, nonatomic) _Bool hasReadingPosition;
+@property(readonly, nonatomic) _Bool hasLastListened;
+@property(nonatomic) _Bool hasListeningProgress;
 @property(readonly, nonatomic) _Bool hasDeviceID;
 @property(readonly, nonatomic) _Bool hasSourceChannelTagID;
 @property(nonatomic) _Bool hasMaxVersionSeen;

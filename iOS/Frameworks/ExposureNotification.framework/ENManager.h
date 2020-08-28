@@ -6,15 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@protocol OS_dispatch_queue, OS_xpc_object;
+@class ENExposureDetectionClientSession, NSMutableArray;
+@protocol ENUIRemotePresentationController, OS_dispatch_queue, OS_xpc_object;
 
 @interface ENManager : NSObject
 {
     _Bool _activateCalled;
+    ENExposureDetectionClientSession *_detectionSession;
+    NSMutableArray *_exposureWindows;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
     NSObject<OS_xpc_object> *_xpcCnx;
+    _Bool _isTestEntitlement;
+    id <ENUIRemotePresentationController> _remotePresentationController;
     _Bool _exposureNotificationEnabled;
+    _Bool _exposureNotificationPaused;
     unsigned int _clientID;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     long long _exposureNotificationStatus;
@@ -25,6 +31,7 @@
 
 + (long long)authorizationStatus;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool exposureNotificationPaused; // @synthesize exposureNotificationPaused=_exposureNotificationPaused;
 @property(copy, nonatomic) CDUnknownBlockType statusChangedHandler; // @synthesize statusChangedHandler=_statusChangedHandler;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *testListenerEndpoint; // @synthesize testListenerEndpoint=_testListenerEndpoint;
 @property(nonatomic) unsigned int clientID; // @synthesize clientID=_clientID;
@@ -32,21 +39,57 @@
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(readonly, nonatomic) long long exposureNotificationStatus; // @synthesize exposureNotificationStatus=_exposureNotificationStatus;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
+- (void)remotePresentationRequestDidComplete:(id)arg1;
+- (void)clearDeveloperServerConfigurationWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)setDeveloperServerConfiguration:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)setActiveRegion:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)setCurrentActiveApp:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)setAutomaticRegionSwitchEnabled:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)getLastExposureNotificationWithCompletion:(CDUnknownBlockType)arg1;
+- (void)getInfoForKey:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)exposureNotificationGetStatusForBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)downloadAndDetectExposure:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)deleteExposureDetectionHistoryWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)setRegionConsent:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)regionHistoryWithCompletion:(CDUnknownBlockType)arg1;
+- (void)allRegionConfigurationsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)regionConfigurationWithCompletion:(CDUnknownBlockType)arg1;
+- (void)activeRegionWithCompletion:(CDUnknownBlockType)arg1;
+- (void)exposureDetectionFileFinishWithCompletion:(CDUnknownBlockType)arg1;
+- (void)exposureDetectionFileAdd:(id)arg1 signatureURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)exposureDetectionFileActivate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)exposureDetectionGetExposureInfoCompleted:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)exposureDetectionGetExposureInfoWithMaximumCount:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)exposureDetectionFinishWithCompletion:(CDUnknownBlockType)arg1;
 - (void)exposureDetectionAddKeys:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)exposureDetectionActivate:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)setWeeklyNotificationTrigger:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)diagnosticShow:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)diagnosticControl:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resetAllDataWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_getDiagnosisKeysReply:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (unsigned int)_getAppSDKVersion;
+- (void)getTestDiagnosisKeysWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getDiagnosisKeysWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)preAuthorizeDiagnosisKeysWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_getExposureWindowsCompleted:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_getExposureWindowsFromIndex:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)getExposureWindowsFromSummary:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_getExposureInfoCompleted:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)getExposureInfoFromSummary:(id)arg1 userExplanation:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)detectExposuresWithConfiguration:(id)arg1 diagnosisKeyURLs:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)setTravelStatusEnabled:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)getTravelStatusEnabledWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)pauseWithExpiration:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)setPaused:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setExposureNotificationEnabled:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_xpcHandleStatusChanged:(id)arg1 initial:(_Bool)arg2;
 - (void)_xpcReceivedMessage:(id)arg1;
 - (void)_xpcReceivedEvent:(id)arg1;
 - (void)_tccCheckWithCompletion:(CDUnknownBlockType)arg1;
+- (void)getUserTraveledWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_entitlementCheckUpdate:(id)arg1;
+- (void)_entitlementCheckWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_invalidated;
 - (void)_invalidate;
 - (void)invalidate;

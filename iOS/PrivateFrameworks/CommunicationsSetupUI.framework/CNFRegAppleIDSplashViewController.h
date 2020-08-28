@@ -30,6 +30,7 @@
 - (void)_showSettingsController;
 - (id)_imService;
 - (void)continueRegisteringAccount:(id)arg1;
+- (void)willBeginAuthWithContext:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (id)serviceIcon;
 - (id)serviceDescription;

@@ -8,6 +8,7 @@
 @protocol TSProcessedImageRequestType;
 
 @protocol TSImageCacheType
+- (void)setImage:(UIImage *)arg1 forRequest:(id <TSProcessedImageRequestType>)arg2;
 - (UIImage *)fetchImageForRequest:(id <TSProcessedImageRequestType>)arg1;
 - (void)fetchImageForRequest:(id <TSProcessedImageRequestType>)arg1 completion:(void (^)(UIImage *, NSError *))arg2;
 @end

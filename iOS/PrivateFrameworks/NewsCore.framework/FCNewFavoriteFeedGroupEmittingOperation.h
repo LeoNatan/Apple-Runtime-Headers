@@ -11,7 +11,8 @@
 }
 
 - (id)_ignoredTagIDs;
-- (void)_buildGroupWithTag:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_constructClassicGroupWithTag:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_constructLocalNewsSupergroupForChannelWithGroupConfig:(id)arg1 forYouConfig:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)_buildGroupWithCandidateTags:(id)arg1 exhaustedTagIDs:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)performOperation;
 

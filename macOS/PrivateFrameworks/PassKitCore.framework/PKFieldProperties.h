@@ -8,20 +8,24 @@
 
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSError;
+@class NSArray, NSError, NSString;
 
 @interface PKFieldProperties : NSObject <NSSecureCoding>
 {
     BOOL _shouldIgnore;
     BOOL _authenticationRequired;
+    BOOL _backgroundTransaction;
     BOOL _ECP2Field;
     unsigned long long _technology;
     long long _terminalType;
     long long _valueAddedServiceMode;
     unsigned long long _terminalSubtype;
     long long _accessTerminalSubtype;
+    unsigned long long _pairingRequested;
     NSArray *_TCIs;
     NSArray *_merchantIdentifiers;
+    NSString *_credentialIdentifier;
+    NSString *_applicationIdentifier;
     NSError *_error;
 }
 
@@ -29,9 +33,13 @@
 + (id)fieldPropertiesForFieldNotification:(id)arg1;
 - (void).cxx_destruct;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
+@property(copy, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
+@property(copy, nonatomic) NSString *credentialIdentifier; // @synthesize credentialIdentifier=_credentialIdentifier;
 @property(copy, nonatomic) NSArray *merchantIdentifiers; // @synthesize merchantIdentifiers=_merchantIdentifiers;
 @property(copy, nonatomic) NSArray *TCIs; // @synthesize TCIs=_TCIs;
 @property(nonatomic, getter=isECP2Field) BOOL ECP2Field; // @synthesize ECP2Field=_ECP2Field;
+@property(nonatomic) unsigned long long pairingRequested; // @synthesize pairingRequested=_pairingRequested;
+@property(nonatomic) BOOL backgroundTransaction; // @synthesize backgroundTransaction=_backgroundTransaction;
 @property(nonatomic) BOOL authenticationRequired; // @synthesize authenticationRequired=_authenticationRequired;
 @property(readonly, nonatomic) BOOL shouldIgnore; // @synthesize shouldIgnore=_shouldIgnore;
 @property(readonly, nonatomic) long long accessTerminalSubtype; // @synthesize accessTerminalSubtype=_accessTerminalSubtype;

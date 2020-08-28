@@ -7,6 +7,6 @@
 #import <NewsUI2/_TtC7NewsUI219OfflineIssueManager.h>
 
 @interface _TtC7NewsUI219OfflineIssueManager (NewsUI21)
-- (void)wifiReachabilityDidChange:(id)arg1;
+- (void)networkReachabilityDidChange:(id)arg1;
 @end
 

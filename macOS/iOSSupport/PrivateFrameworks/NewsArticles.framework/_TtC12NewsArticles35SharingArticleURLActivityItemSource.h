@@ -11,6 +11,7 @@
     // Error parsing type: , name: headline
     // Error parsing type: , name: sourceChannelPublic
     // Error parsing type: , name: articleURL
+    // Error parsing type: , name: mailShareLinkText
 }
 
 - (void).cxx_destruct;

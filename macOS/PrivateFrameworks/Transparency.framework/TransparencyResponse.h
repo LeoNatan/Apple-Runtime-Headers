@@ -6,17 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSDictionary, TransparencyRequest;
+@class NSData, NSDictionary, TransparencyNetworkRequest;
 
 @interface TransparencyResponse : NSObject
 {
     NSData *_data;
     NSDictionary *_metadata;
-    TransparencyRequest *_request;
+    TransparencyNetworkRequest *_request;
 }
 
 - (void).cxx_destruct;
-@property(retain) TransparencyRequest *request; // @synthesize request=_request;
+@property(retain) TransparencyNetworkRequest *request; // @synthesize request=_request;
 @property(retain) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(retain) NSData *data; // @synthesize data=_data;
 - (id)serverHint;

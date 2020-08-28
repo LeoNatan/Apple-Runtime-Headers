@@ -6,7 +6,7 @@
 
 #import <NewsUI2/NSObject-Protocol.h>
 
-@class NSDate, NSString;
+@class NSDate, NSDictionary, NSString;
 @protocol FCPersonalizationAggregate;
 
 @protocol FCPersonalizationAggregate <NSObject>
@@ -15,6 +15,7 @@
 - (double)personalizationValueWithCorrelatedAggregate:(id <FCPersonalizationAggregate>)arg1 baseline:(id <FCPersonalizationAggregate>)arg2 decayRate:(double)arg3 baselineClicksMultiplier:(double)arg4;
 - (double)personalizationValueWithBaseline:(id <FCPersonalizationAggregate>)arg1 decayRate:(double)arg2 baselineClicksMultiplier:(double)arg3;
 - (double)personalizationValueWithBaseline:(id <FCPersonalizationAggregate>)arg1 decayRate:(double)arg2;
+@property(nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property(nonatomic, readonly) double confidence;
 @property(nonatomic, readonly) NSDate *lastModified;
 @property(nonatomic, readonly) unsigned long long eventCount;

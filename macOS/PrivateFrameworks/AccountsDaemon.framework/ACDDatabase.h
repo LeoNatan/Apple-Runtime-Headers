@@ -25,7 +25,6 @@
 - (void)databaseConnection:(id)arg1 encounteredUnrecoverableError:(id)arg2;
 @property(readonly, copy) NSString *description;
 - (BOOL)_persistentStoreCoodinator_resetPersistentStoreCoordinatorWithError:(id *)arg1;
-- (BOOL)_validateDatabaseAtURL:(id)arg1 error:(id *)arg2;
 - (BOOL)_performBackupToURL:(id)arg1 unverifiedBackupURL:(id)arg2 error:(id *)arg3;
 - (BOOL)_shouldResetPersistentStoreAfterError:(id)arg1;
 - (id)_addPersistentStoreWithType:(id)arg1 configuration:(id)arg2 URL:(id)arg3 options:(id)arg4 error:(id *)arg5;

@@ -16,12 +16,14 @@
     // Error parsing type: , name: toggleVideoButton
     // Error parsing type: , name: toggleCallControls
     // Error parsing type: , name: expandButton
+    // Error parsing type: , name: localVideoRecordButton
 }
 
 - (void).cxx_destruct;
 - (void)windowStateDidChange:(id)arg1;
 - (void)handleVideoMuteStateChanged:(id)arg1;
 - (void)handleAudioMuteStateChanged:(id)arg1;
+- (void)didTapRecord;
 - (void)didTapExpand;
 - (void)didTapToggleSideBar;
 - (void)didTapJoinConversation;

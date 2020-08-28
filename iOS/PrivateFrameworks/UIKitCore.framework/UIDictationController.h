@@ -117,8 +117,12 @@ __attribute__((visibility("hidden")))
 + (id)serializedInterpretationFromTokens:(id)arg1 transform:(struct __CFString *)arg2;
 + (void)siriPreferencesChanged;
 + (void)applicationDidEnterBackgroundNotification;
++ (void)viewServiceWillResignActive;
 + (void)applicationWillResignActive;
++ (void)onWillResignActive;
 + (void)applicationDidBecomeActive;
++ (void)viewServiceDidBecomeActive;
++ (void)onDidBecomeActive;
 + (id)bestInterpretationForDictationResult:(id)arg1;
 + (id)serializedDictationPhrases:(id)arg1;
 + (_Bool)shouldInsertText:(id)arg1 inInputDelegate:(id)arg2;

@@ -20,7 +20,9 @@
     NSString *_originalFilename;
 }
 
-+ (_Bool)isValidOriginalURL:(id)arg1 pathManager:(id)arg2;
++ (id)fileIdentifierForValidOriginalURL:(id)arg1 originalsDirectoryName:(id)arg2;
++ (id)fileIdentifierForValidOriginalURL:(id)arg1;
++ (_Bool)isValidOriginalURL:(id)arg1;
 + (id)uuidFromURL:(id)arg1;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isData; // @synthesize isData=_isData;

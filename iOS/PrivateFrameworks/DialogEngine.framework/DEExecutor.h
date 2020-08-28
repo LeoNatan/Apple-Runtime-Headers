@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class DEContext, DEDistribution, NSDictionary, NSString;
+@protocol OS_os_log;
 
 @interface DEExecutor : NSObject
 {
@@ -26,6 +27,8 @@
     CDUnknownBlockType _callback;
     DEDistribution *_distribution;
     NSString *_voiceGender;
+    NSObject<OS_os_log> *_log;
+    unsigned long long _signpost;
 }
 
 + (void)executeWithJson:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
@@ -33,6 +36,8 @@
 + (void)executeWithJson:(id)arg1 paramsString:(id)arg2 localeString:(id)arg3 callback:(CDUnknownBlockType)arg4 completionBlock:(CDUnknownBlockType)arg5;
 + (CDUnknownBlockType)prepareCallback:(CDUnknownBlockType)arg1 forContext:(struct Context *)arg2;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long signpost; // @synthesize signpost=_signpost;
+@property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(retain, nonatomic) NSString *voiceGender; // @synthesize voiceGender=_voiceGender;
 @property(nonatomic) _Bool enableUpdates; // @synthesize enableUpdates=_enableUpdates;
 @property(nonatomic) _Bool grounding; // @synthesize grounding=_grounding;
@@ -51,7 +56,14 @@
 @property(retain, nonatomic) NSString *templateDir; // @synthesize templateDir=_templateDir;
 - (id)executeWithParams:(id)arg1 locale:(id)arg2;
 - (void)executeWithParams:(id)arg1 locale:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (id)execute;
 - (void)executeWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (id)consumeContext:(struct Context *)arg1 localePath:(basic_string_a1f69cfb)arg2;
+- (basic_string_a1f69cfb)consumeContextForJson:(struct Context *)arg1;
+- (void)updateContext:(struct Context *)arg1 localePath:(basic_string_a1f69cfb)arg2;
+- (struct Context *)getContext;
+- (void)checkProfile;
+- (void)setupProfile;
 - (id)init;
 
 @end

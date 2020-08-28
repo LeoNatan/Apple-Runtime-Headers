@@ -30,6 +30,7 @@
 - (id)_sendOptions;
 - (void)_setUpSubcredentialProvisioningService;
 - (void)_setUpSubcredentialProvisioningQueue;
+- (_Bool)isPairedDeviceConnected;
 - (void)trackOutstandingRequestWithMessageIdentifier:(id)arg1 completionHandler:(id)arg2 errorHandler:(CDUnknownBlockType)arg3;
 - (id)sendProtobuf:(id)arg1 responseExpected:(_Bool)arg2 extraOptions:(id)arg3;
 - (id)sendProtobuf:(id)arg1 responseExpected:(_Bool)arg2;

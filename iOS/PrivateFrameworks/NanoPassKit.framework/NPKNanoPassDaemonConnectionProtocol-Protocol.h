@@ -10,6 +10,8 @@
 
 @protocol NPKNanoPassDaemonConnectionProtocol <PDXPCServiceExportedInterface>
 - (void)noteWillDeleteAccountsWithCompletion:(void (^)(void))arg1;
+- (void)statusForReceivedInvitation:(PKAppletSubcredentialSharingInvitation *)arg1 completion:(void (^)(unsigned long long))arg2;
+- (void)statusForSentInvitation:(PKAppletSubcredentialSharingInvitation *)arg1 completion:(void (^)(unsigned long long))arg2;
 - (void)startSubcredentialProvisioningOnLocalDeviceMatchingInvitation:(PKAppletSubcredentialSharingInvitation *)arg1 shouldFetchAnonymizationSaltFromRemoteDevice:(_Bool)arg2 completion:(void (^)(PKPaymentPass *, NSError *))arg3;
 - (void)startSubcredentialProvisioningOnRemoteDeviceForInvitation:(PKAppletSubcredentialSharingInvitation *)arg1;
 @end

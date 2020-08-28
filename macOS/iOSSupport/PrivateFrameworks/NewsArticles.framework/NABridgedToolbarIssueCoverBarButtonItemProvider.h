@@ -17,7 +17,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)barButtonItemForIssue:(id)arg1;
+- (id)barButtonItemForIssue:(id)arg1 toolbarFrame:(struct CGRect)arg2 shouldAddBottomPadding:(BOOL)arg3;
 - (id)initWithResolver:(id)arg1 bridgedActionHandler:(id)arg2;
 
 @end

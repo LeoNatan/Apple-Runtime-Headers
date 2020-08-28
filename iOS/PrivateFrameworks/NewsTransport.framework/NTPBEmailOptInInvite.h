@@ -14,11 +14,13 @@
 {
     NSString *_articleId;
     int _emailOptInInviteLocation;
+    int _newsletterSubscriptionType;
     NSString *_parentFeedId;
     int _parentFeedType;
     int _userAction;
     struct {
         unsigned int emailOptInInviteLocation:1;
+        unsigned int newsletterSubscriptionType:1;
         unsigned int parentFeedType:1;
         unsigned int userAction:1;
     } _has;
@@ -35,6 +37,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasNewsletterSubscriptionType;
+@property(nonatomic) int newsletterSubscriptionType; // @synthesize newsletterSubscriptionType=_newsletterSubscriptionType;
 @property(readonly, nonatomic) _Bool hasArticleId;
 @property(readonly, nonatomic) _Bool hasParentFeedId;
 - (int)StringAsParentFeedType:(id)arg1;

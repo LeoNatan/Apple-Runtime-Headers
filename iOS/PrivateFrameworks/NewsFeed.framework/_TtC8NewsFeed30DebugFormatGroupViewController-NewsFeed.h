@@ -6,9 +6,7 @@
 
 #import <NewsFeed/_TtC8NewsFeed30DebugFormatGroupViewController.h>
 
-#import <NewsFeed/UITableViewDataSource-Protocol.h>
-
-@interface _TtC8NewsFeed30DebugFormatGroupViewController (NewsFeed) <UITableViewDataSource>
+@interface _TtC8NewsFeed30DebugFormatGroupViewController (NewsFeed)
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;

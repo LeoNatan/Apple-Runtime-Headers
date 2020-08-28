@@ -6,7 +6,7 @@
 
 #import <NewsCore/NSObject-Protocol.h>
 
-@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList, NSArray, NSDate, NSString;
+@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList, COMAPPLEFELDSPARPROTOCOLVersionedPersonalizationVector, NSArray, NSDate, NSString;
 
 @protocol FCFeedPersonalizingItem <NSObject>
 @property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *publisherCohorts;
@@ -26,6 +26,9 @@
 - (void)enumerateTopicCohortsWithBlock:(void (^)(NSString *, COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *))arg1;
 
 @optional
+@property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLVersionedPersonalizationVector *personalizationVectorAlt;
+@property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLVersionedPersonalizationVector *personalizationVector;
+@property(readonly, nonatomic) _Bool hasAudioTrack;
 @property(readonly, nonatomic) _Bool isFeatured;
 @property(readonly, nonatomic) long long bodyTextLength;
 @property(readonly, nonatomic, getter=isBundlePaid) _Bool bundlePaid;

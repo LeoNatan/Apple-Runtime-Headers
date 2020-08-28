@@ -8,21 +8,18 @@
 
 #import <NewsCore/NSCopying-Protocol.h>
 
-@class FCGroupConfig, FCInterestToken, FCSpecialEventGroupConfig, FCSpotlightGroupConfig, FCTopStoriesGroupConfig, FCVideoGroupConfig, NSArray, NSDate, NSString, NTPBForYouConfigRecord;
+@class FCGroupConfig, FCInterestToken, FCSpotlightGroupConfig, FCTopStoriesGroupConfig, NSArray, NSDate, NSString, NTPBForYouConfigRecord;
 @protocol FCForYouBridgedConfiguration;
 
 @interface FCForYouConfig : NSObject <NSCopying>
 {
-    FCSpecialEventGroupConfig *_breakingNewsGroupConfig;
-    FCSpecialEventGroupConfig *_specialEventGroupConfig;
     FCTopStoriesGroupConfig *_topStoriesGroupConfig;
     FCGroupConfig *_trendingGroupConfig;
     FCSpotlightGroupConfig *_spotlightGroupConfig;
-    FCGroupConfig *_coverArticlesGroupConfig;
     NSArray *_editorialGroupConfigs;
-    FCVideoGroupConfig *_topVideosGroupConfig;
-    FCVideoGroupConfig *_moreVideosGroupConfig;
     NSArray *_demoGroupConfigs;
+    NSArray *_topVideosArticleIDs;
+    NSString *_moreVideosArticleListID;
     id <FCForYouBridgedConfiguration> _bridgedConfiguration;
     NTPBForYouConfigRecord *_forYouConfigRecord;
     FCInterestToken *_interestToken;
@@ -32,29 +29,20 @@
 @property(retain, nonatomic) FCInterestToken *interestToken; // @synthesize interestToken=_interestToken;
 @property(retain, nonatomic) NTPBForYouConfigRecord *forYouConfigRecord; // @synthesize forYouConfigRecord=_forYouConfigRecord;
 @property(copy, nonatomic) id <FCForYouBridgedConfiguration> bridgedConfiguration; // @synthesize bridgedConfiguration=_bridgedConfiguration;
+@property(readonly, nonatomic) NSString *moreVideosArticleListID; // @synthesize moreVideosArticleListID=_moreVideosArticleListID;
+@property(readonly, nonatomic) NSArray *topVideosArticleIDs; // @synthesize topVideosArticleIDs=_topVideosArticleIDs;
 @property(readonly, nonatomic) NSArray *demoGroupConfigs; // @synthesize demoGroupConfigs=_demoGroupConfigs;
-@property(retain, nonatomic) FCVideoGroupConfig *moreVideosGroupConfig; // @synthesize moreVideosGroupConfig=_moreVideosGroupConfig;
-@property(retain, nonatomic) FCVideoGroupConfig *topVideosGroupConfig; // @synthesize topVideosGroupConfig=_topVideosGroupConfig;
 @property(retain, nonatomic) NSArray *editorialGroupConfigs; // @synthesize editorialGroupConfigs=_editorialGroupConfigs;
-@property(retain, nonatomic) FCGroupConfig *coverArticlesGroupConfig; // @synthesize coverArticlesGroupConfig=_coverArticlesGroupConfig;
 @property(retain, nonatomic) FCSpotlightGroupConfig *spotlightGroupConfig; // @synthesize spotlightGroupConfig=_spotlightGroupConfig;
 @property(retain, nonatomic) FCGroupConfig *trendingGroupConfig; // @synthesize trendingGroupConfig=_trendingGroupConfig;
 @property(retain, nonatomic) FCTopStoriesGroupConfig *topStoriesGroupConfig; // @synthesize topStoriesGroupConfig=_topStoriesGroupConfig;
-@property(retain, nonatomic) FCSpecialEventGroupConfig *specialEventGroupConfig; // @synthesize specialEventGroupConfig=_specialEventGroupConfig;
-@property(retain, nonatomic) FCSpecialEventGroupConfig *breakingNewsGroupConfig; // @synthesize breakingNewsGroupConfig=_breakingNewsGroupConfig;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSDate *fetchedDate;
-@property(readonly, nonatomic) NSString *moreVideosArticleListID;
 @property(readonly, nonatomic) NSString *spotlightArticleID;
-@property(readonly, nonatomic) NSArray *topVideosArticleIDs;
 @property(readonly, nonatomic) NSArray *editorialSectionTagIDs;
 @property(readonly, nonatomic) NSArray *editorialArticleListIDs;
-@property(readonly, nonatomic) NSString *coverArticlesArticleListID;
 @property(readonly, nonatomic) NSString *trendingArticleListID;
 @property(readonly, nonatomic) NSArray *todayFeedTopStoriesArticleIDs;
-@property(readonly, nonatomic) NSArray *topStoriesCombinedArticleIDs;
-@property(readonly, nonatomic) NSArray *specialEventArticleIDs;
-@property(readonly, nonatomic) NSArray *breakingNewsArticleIDs;
 - (id)initWithRecord:(id)arg1 interestToken:(id)arg2 bridgedConfiguration:(id)arg3;
 
 @end

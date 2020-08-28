@@ -9,6 +9,7 @@
 @class NSString;
 
 @protocol SXConditionValidationContext <NSObject>
+@property(readonly, nonatomic) unsigned long long newsletterSubscriptionStatus;
 @property(readonly, nonatomic) double contentScaleFactor;
 @property(readonly, nonatomic) long long userInterfaceStyle;
 @property(readonly, nonatomic, getter=isChannelSubscriber) _Bool channelSubscriber;

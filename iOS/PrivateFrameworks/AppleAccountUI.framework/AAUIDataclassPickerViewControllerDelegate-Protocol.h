@@ -14,5 +14,7 @@
 
 @optional
 - (NSString *)footerTextForDataclassPickerViewController:(AAUIDataclassPickerViewController *)arg1;
+- (NSString *)messageTextForDataclassPickerViewController:(AAUIDataclassPickerViewController *)arg1;
+- (NSString *)titleTextForDataclassPickerViewController:(AAUIDataclassPickerViewController *)arg1;
 @end
 

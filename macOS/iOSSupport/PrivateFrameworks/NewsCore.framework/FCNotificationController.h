@@ -33,6 +33,7 @@
 - (void)userInfoDidChangeNotificationsUserID:(id)arg1;
 - (id)appendBreakingNewsIfNeededToChannelIDs:(id)arg1;
 - (void)refreshNotificationsFromAppleNews;
+- (void)setEndOfAudioTrackNotificationsEnabled:(BOOL)arg1;
 - (void)setNewIssueNotificationsEnabled:(BOOL)arg1;
 - (BOOL)setMarketingNotificationsEnabled:(BOOL)arg1 error:(id *)arg2;
 - (BOOL)refreshNotificationsForChannelIDs:(id)arg1 paidChannelIDs:(id)arg2;

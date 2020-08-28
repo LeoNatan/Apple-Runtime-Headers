@@ -20,6 +20,7 @@
 @property(retain, nonatomic) NSMutableArray *devicesArray; // @dynamic devicesArray;
 @property(readonly, nonatomic) unsigned long long devicesArray_Count; // @dynamic devicesArray_Count;
 @property(copy, nonatomic) NSString *uri; // @dynamic uri;
+@property(copy, nonatomic) NSData *uriVrfOutput; // @dynamic uriVrfOutput;
 @property(nonatomic) int version; // @dynamic version;
 
 @end

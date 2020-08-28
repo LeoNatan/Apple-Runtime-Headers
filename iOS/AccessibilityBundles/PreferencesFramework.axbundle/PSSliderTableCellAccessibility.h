@@ -14,6 +14,7 @@
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 - (struct CGPoint)accessibilityActivationPoint;
+- (_Bool)isAccessibilityElement;
 
 @end
 

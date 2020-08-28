@@ -15,9 +15,16 @@
 + (id)downloadIssueActivity;
 + (id)removeIssueActivity;
 + (id)openChannelActivity;
++ (id)iconArticleMarkingShare;
 + (id)openInSafariActivity;
 + (id)reportActivity;
 + (id)copyLinkActivity;
++ (id)delete;
++ (id)readStory;
++ (id)playLast;
++ (id)playNext;
++ (id)play;
++ (id)playing;
 + (id)leftArrow;
 + (id)rightArrow;
 + (id)sharrowCompact;

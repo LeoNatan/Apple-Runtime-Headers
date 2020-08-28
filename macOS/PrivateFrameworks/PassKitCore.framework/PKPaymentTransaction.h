@@ -255,6 +255,10 @@
 @property(readonly, nonatomic) CLLocation *preferredLocation;
 @property(retain, nonatomic) CLLocation *location;
 @property(readonly, nonatomic) __weak NSString *displayLocation;
+- (BOOL)isZeroTransaction;
+- (id)_preformattedStringForMultipleAmounts;
+- (id)formattedStringForMultipleAmounts;
+- (id)transactionAmountsForMultipleAmounts;
 - (unsigned long long)itemType;
 - (id)recordTypesAndNamesIncludingServerData:(BOOL)arg1;
 - (void)encodeServerAndDeviceDataWithCloudStoreCoder:(id)arg1;

@@ -33,8 +33,18 @@ __attribute__((visibility("hidden")))
     unsigned int _videoFrameImcompleteNextTSCounter;
     unsigned int _videoFrameTotalIncompleteCounter;
     unsigned int _decodedVideoFrameEnqueueCounter;
+    unsigned int _evictedFramesLikelyRecoverableCount;
+    unsigned int _evictedFramesTrackedCount;
+    unsigned int _evictedFramesAnalysisValidIntervals;
+    double _evictedFramesAverageLatePacketDelay;
 }
 
+@property(readonly) double totalAudioErasureTime; // @synthesize totalAudioErasureTime=_totalAudioErasureTime;
+@property(readonly) double currentStallTime; // @synthesize currentStallTime=_currentStallTime;
+- (unsigned int)evictedFramesTrackedCount;
+- (unsigned int)evictedFramesLikelyRecoverableCount;
+- (double)evictedFramesAnalysisValidIntervals;
+- (double)evictedFramesAverageLatePacketDelay;
 - (unsigned int)decodedVideoFrameEnqueueCounter;
 - (unsigned int)videoFrameTotalIncompleteCounter;
 - (unsigned int)videoFrameImcompleteNextTSCounter;

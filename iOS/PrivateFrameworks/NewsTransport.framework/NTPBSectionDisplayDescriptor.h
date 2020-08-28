@@ -8,34 +8,26 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class NSData, NSString;
+@class NSString;
 
 @interface NTPBSectionDisplayDescriptor : PBCodable <NSCopying>
 {
     NSString *_actionTitle;
     NSString *_actionURLString;
     NSString *_backgroundGradientColor;
-    NSData *_discoverMoreVideosInfoData;
     NSString *_name;
     NSString *_nameColor;
-    _Bool _displaysAsVideoPlaylist;
     _Bool _useNameColorInWidget;
-    _Bool _videoPlaysMutedByDefault;
     struct {
-        unsigned int displaysAsVideoPlaylist:1;
         unsigned int useNameColorInWidget:1;
-        unsigned int videoPlaysMutedByDefault:1;
     } _has;
 }
 
 - (void).cxx_destruct;
-@property(retain, nonatomic) NSData *discoverMoreVideosInfoData; // @synthesize discoverMoreVideosInfoData=_discoverMoreVideosInfoData;
 @property(nonatomic) _Bool useNameColorInWidget; // @synthesize useNameColorInWidget=_useNameColorInWidget;
 @property(retain, nonatomic) NSString *actionURLString; // @synthesize actionURLString=_actionURLString;
 @property(retain, nonatomic) NSString *actionTitle; // @synthesize actionTitle=_actionTitle;
-@property(nonatomic) _Bool videoPlaysMutedByDefault; // @synthesize videoPlaysMutedByDefault=_videoPlaysMutedByDefault;
 @property(retain, nonatomic) NSString *backgroundGradientColor; // @synthesize backgroundGradientColor=_backgroundGradientColor;
-@property(nonatomic) _Bool displaysAsVideoPlaylist; // @synthesize displaysAsVideoPlaylist=_displaysAsVideoPlaylist;
 @property(retain, nonatomic) NSString *nameColor; // @synthesize nameColor=_nameColor;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (void)mergeFrom:(id)arg1;
@@ -46,13 +38,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(readonly, nonatomic) _Bool hasDiscoverMoreVideosInfoData;
 @property(nonatomic) _Bool hasUseNameColorInWidget;
 @property(readonly, nonatomic) _Bool hasActionURLString;
 @property(readonly, nonatomic) _Bool hasActionTitle;
-@property(nonatomic) _Bool hasVideoPlaysMutedByDefault;
 @property(readonly, nonatomic) _Bool hasBackgroundGradientColor;
-@property(nonatomic) _Bool hasDisplaysAsVideoPlaylist;
 @property(readonly, nonatomic) _Bool hasNameColor;
 @property(readonly, nonatomic) _Bool hasName;
 

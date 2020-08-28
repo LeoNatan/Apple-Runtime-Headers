@@ -6,6 +6,7 @@
 
 #import <PassKitUI/PKExplanationViewController.h>
 
+#import <PassKitUI/PKExplanationViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentAuthorizationCoordinatorDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentAuthorizationCoordinatorPrivateDelegate-Protocol.h>
 #import <PassKitUI/PKSubcredentialRemoteDevicePairingFlowControllerOperation-Protocol.h>
@@ -14,7 +15,7 @@
 @class NSString, PKAppletSubcredentialSharingSession, PKPaymentAuthorizationCoordinator, PKSubcredentialPairingFlowControllerContext, PKWatchHeroCardExplainationHeaderView;
 @protocol PKSubcredentialPairingFlowControllerProtocol, PKSubcredentialProvisioningFlowController, PKSubcredentialProvisioningViewModelProtocol;
 
-@interface PKAddCredentialToWatchViewController : PKExplanationViewController <PKPaymentAuthorizationCoordinatorDelegate, PKPaymentAuthorizationCoordinatorPrivateDelegate, PKSubcredentialRemoteDevicePairingFlowControllerOperation, PKViewControllerPreflightable>
+@interface PKAddCredentialToWatchViewController : PKExplanationViewController <PKPaymentAuthorizationCoordinatorDelegate, PKPaymentAuthorizationCoordinatorPrivateDelegate, PKExplanationViewControllerDelegate, PKSubcredentialRemoteDevicePairingFlowControllerOperation, PKViewControllerPreflightable>
 {
     PKAppletSubcredentialSharingSession *_sharingSession;
     id <PKSubcredentialProvisioningViewModelProtocol> _provisioningViewModel;
@@ -36,6 +37,7 @@
 - (void)subcredentialProvisioningController:(id)arg1 didFinishWithPass:(id)arg2;
 - (void)subcredentialProvisioningController:(id)arg1 didFinishWithError:(id)arg2 inState:(long long)arg3;
 - (void)subcredentialProvisioningConfiguration:(id)arg1 requestUserAuthWithCompletion:(CDUnknownBlockType)arg2;
+- (void)explanationViewControllerDidSelectCancel:(id)arg1;
 - (void)explanationViewDidSelectSetupLater:(id)arg1;
 - (void)explanationViewDidSelectContinue:(id)arg1;
 - (void)showActivityIndicator:(_Bool)arg1;

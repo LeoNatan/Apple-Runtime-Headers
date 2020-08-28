@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 + (id)sharedFPSupportPowerStateSingleton;
 - (void)dealloc;
 - (id)init;
+- (void)postNotification;
 - (void)_didChangePowerState:(id)arg1;
 
 @end

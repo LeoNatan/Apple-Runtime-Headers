@@ -15,8 +15,9 @@
 }
 
 + (id)descriptor;
-- (_Bool)verifyTLTEntryForPerApplicationLogHead:(id)arg1 error:(id *)arg2;
-- (_Bool)verifyWithError:(id *)arg1;
+- (unsigned long long)verifyTLTEntryForPerApplicationLogHead:(id)arg1 error:(id *)arg2;
+- (_Bool)setInclusionResult:(unsigned long long)arg1 signedLogHead:(id)arg2 error:(id *)arg3;
+- (unsigned long long)verifyWithError:(id *)arg1;
 @property(retain) TransparencyManagedDataStore *dataStore;
 @property(retain) TransparencyLogEntryVerifier *verifier;
 

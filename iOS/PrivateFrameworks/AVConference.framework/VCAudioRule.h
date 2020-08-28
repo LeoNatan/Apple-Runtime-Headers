@@ -13,8 +13,10 @@ __attribute__((visibility("hidden")))
     _Bool _isSecondary;
     _Bool _sbr;
     unsigned int _samplesPerBlock;
+    unsigned long long _hash;
 }
 
+- (unsigned long long)hash;
 @property(readonly, nonatomic) unsigned int samplesPerBlock; // @synthesize samplesPerBlock=_samplesPerBlock;
 @property(readonly, nonatomic) _Bool sbr; // @synthesize sbr=_sbr;
 @property(readonly, nonatomic) _Bool isSecondary; // @synthesize isSecondary=_isSecondary;
@@ -22,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithPayload:(int)arg1 isSecondary:(_Bool)arg2 sbr:(_Bool)arg3 samplesPerBlock:(unsigned int)arg4;
+- (id)init;
 
 @end
 

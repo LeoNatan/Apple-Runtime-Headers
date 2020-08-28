@@ -9,7 +9,7 @@
 #import <NanoTimeKitCompanion/CLKTimeFormatterObserver-Protocol.h>
 #import <NanoTimeKitCompanion/NTKTimeView-Protocol.h>
 
-@class CLKDevice, NSDate, NSNumber, NSString, NTKBigNumeralsTimeComponentLabel;
+@class CAGradientLayer, CALayer, CLKDevice, NSDate, NSNumber, NSString, NTKBigNumeralsTimeComponentLabel;
 
 @interface NTKBigNumeralsDigitalTimeView : UIView <CLKTimeFormatterObserver, NTKTimeView>
 {
@@ -18,6 +18,10 @@
     NTKBigNumeralsTimeComponentLabel *_bottomLabel;
     NSDate *_overrideDate;
     NSNumber *_timerToken;
+    CAGradientLayer *_gradientLayer;
+    CALayer *_topLabelColorLayer;
+    CALayer *_bottomLabelColorLayer;
+    UIView *_timeLabelsContainerView;
     _Bool _frozen;
     _Bool _showingStatus;
     unsigned long long _style;

@@ -13,12 +13,18 @@
 @protocol FCReadingHistoryItem <NSObject, NSCopying, NSMutableCopying>
 @property(readonly, nonatomic) CKRecord *asCKRecord;
 @property(readonly, nonatomic) unsigned long long articleLikingStatus;
+@property(readonly, nonatomic) _Bool hasArticleCompletedListening;
 @property(readonly, nonatomic) _Bool hasArticleBeenConsumed;
 @property(readonly, nonatomic) _Bool hasArticleBeenMarkedOffensive;
 @property(readonly, nonatomic) _Bool hasArticleBeenSeen;
 @property(readonly, nonatomic) _Bool hasArticleBeenRead;
 @property(readonly, nonatomic) unsigned long long flags;
 @property(readonly, nonatomic) long long readCount;
+@property(readonly, copy, nonatomic) NSDate *readingPositionSavedAt;
+@property(readonly, copy, nonatomic) NSString *readingPosition;
+@property(readonly, copy, nonatomic) NSDate *lastListenedAt;
+@property(readonly, copy, nonatomic) NSDate *listeningProgressSavedAt;
+@property(readonly, nonatomic) double listeningProgress;
 @property(readonly, nonatomic) long long maxVersionSeen;
 @property(readonly, copy, nonatomic) NSDate *firstSeenAtOfMaxVersionSeen;
 @property(readonly, copy, nonatomic) NSDate *firstSeenAt;

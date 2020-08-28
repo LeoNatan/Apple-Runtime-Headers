@@ -20,6 +20,7 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndex:(long long)arg2;
 - (_Bool)shouldHighlightRowAtIndex:(long long)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndex:(long long)arg2;
+- (struct UIEdgeInsets)separatorInset;
 - (id)title;
 - (id)initInEditMode:(_Bool)arg1;
 

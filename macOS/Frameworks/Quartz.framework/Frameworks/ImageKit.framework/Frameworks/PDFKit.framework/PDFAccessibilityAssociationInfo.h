@@ -30,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak PDFAccessibilityNode *firstChoiceAssociationNode; // @synthesize firstChoiceAssociationNode=_firstChoiceAssociationNode;
 @property(nonatomic) __weak PDFAccessibilityNode *parentNode; // @synthesize parentNode=_parentNode;
 @property(nonatomic) __weak PDFAccessibilityNode *annotationNode; // @synthesize annotationNode=_annotationNode;
-- (id)description;
 - (id)init;
 
 @end

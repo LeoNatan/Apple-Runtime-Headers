@@ -9,7 +9,6 @@
 @interface _TtC7NewsUI234SupportNotificationResponseHandler : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: navigator
-    // Error parsing type: , name: pattern
 }
 
 @end

@@ -486,6 +486,7 @@ struct ReaderController {
     id _field18;
     id _field19;
     struct BackForwardListItem _field20;
+    id _field21;
 };
 
 struct ReaderizedArticleFetcher {

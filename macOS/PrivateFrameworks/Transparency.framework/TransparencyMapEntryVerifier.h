@@ -21,7 +21,8 @@
 - (void).cxx_destruct;
 @property(retain) NSData *entryPosition; // @synthesize entryPosition=_entryPosition;
 @property(retain) TransparencyTrustedKeyStore *trustedKeyStore; // @synthesize trustedKeyStore=_trustedKeyStore;
-- (BOOL)verifyMapEntryWithMapLeaf:(id)arg1 hashesToRoot:(id)arg2 signedMapHead:(id)arg3 error:(id *)arg4;
+- (unsigned long long)verifyMapEntryWithMapLeaf:(id)arg1 hashesToRoot:(id)arg2 signedMapHead:(id)arg3 error:(id *)arg4;
+- (void)storeSMHSignatureFailure:(unsigned long long)arg1 smh:(id)arg2 error:(id *)arg3;
 - (BOOL)verifyInclusionOfMapLeaf:(id)arg1 position:(id)arg2 treeHead:(id)arg3 treeId:(unsigned long long)arg4 hashPath:(id)arg5 error:(id *)arg6;
 - (id)initWithPositon:(id)arg1 trustedKeyStore:(id)arg2;
 

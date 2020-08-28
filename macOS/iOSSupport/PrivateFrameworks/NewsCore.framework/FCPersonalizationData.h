@@ -55,9 +55,12 @@
 - (id)aggregateForFeatureKey:(id)arg1;
 - (void)enumerateAggregatesUsingBlock:(CDUnknownBlockType)arg1;
 - (id)aggregatesForFeatureKeys:(id)arg1;
-- (void)activityObservingApplicationDidEnterBackground;
+- (void)activityObservingApplicationWillTerminate;
+- (void)activityObservingApplicationWindowDidBecomeBackground;
+- (void)activityObservingApplicationWindowDidBecomeForeground;
 - (void)_reloadTreatment;
 - (void)_applicationDidEnterBackground;
+- (void)_applicationDidEnterForeground;
 - (void)_closeOpenChangeGroupFromInstance:(id)arg1;
 - (void)_writeToLocalStoreWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_updateWithRemoteRecord:(id)arg1 profile:(id)arg2;
@@ -71,6 +74,9 @@
 - (id)d_allGlobalAggregates;
 - (void)clearPersonalizationData;
 - (id)modifyLocalAggregatesForFeatureKeys:(id)arg1 withAction:(unsigned long long)arg2 actionCount:(unsigned long long)arg3 defaultClicks:(double)arg4 defaultImpressions:(double)arg5 impressionBias:(double)arg6 groupBias:(double)arg7;
+- (void)saveReadableAggregates;
+- (void)submitPersonalizationVector;
+- (void)cacheGSToken;
 @property(readonly, nonatomic) FCPersonalizationTreatment *personalizationTreatment;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

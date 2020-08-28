@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NRDevice, NSCache, NSUUID;
+@class NRDevice, NSLock, NSMutableDictionary, NSUUID;
 
 @interface CLKDevice : NSObject
 {
@@ -20,7 +20,6 @@
     _Bool _hasRichMediaComplications;
     _Bool _supportsUrsa;
     int _pairedDeviceCapabilitiesChangeNotificationToken;
-    struct os_unfair_lock_s _capabilitiesLock;
     unsigned long long _version;
     unsigned long long _sizeClass;
     double _screenScale;
@@ -28,7 +27,8 @@
     unsigned long long _collectionType;
     unsigned long long _materialType;
     NRDevice *_nrDevice;
-    NSCache *_supportedCapabilitiesCache;
+    NSLock *_capabilitiesLock;
+    NSMutableDictionary *_supportedCapabilitiesCache;
     struct CGRect _screenBounds;
 }
 
@@ -48,8 +48,8 @@
 @property(nonatomic) _Bool hasRichMediaComplications; // @synthesize hasRichMediaComplications=_hasRichMediaComplications;
 @property(nonatomic) _Bool isExplorer; // @synthesize isExplorer=_isExplorer;
 @property(nonatomic) _Bool isBridgeActive; // @synthesize isBridgeActive=_isBridgeActive;
-@property(retain, nonatomic) NSCache *supportedCapabilitiesCache; // @synthesize supportedCapabilitiesCache=_supportedCapabilitiesCache;
-@property(readonly, nonatomic) struct os_unfair_lock_s capabilitiesLock; // @synthesize capabilitiesLock=_capabilitiesLock;
+@property(retain, nonatomic) NSMutableDictionary *supportedCapabilitiesCache; // @synthesize supportedCapabilitiesCache=_supportedCapabilitiesCache;
+@property(readonly, nonatomic) NSLock *capabilitiesLock; // @synthesize capabilitiesLock=_capabilitiesLock;
 @property(readonly, nonatomic) int pairedDeviceCapabilitiesChangeNotificationToken; // @synthesize pairedDeviceCapabilitiesChangeNotificationToken=_pairedDeviceCapabilitiesChangeNotificationToken;
 @property(readonly, nonatomic) _Bool limitedToPreGlory; // @synthesize limitedToPreGlory=_limitedToPreGlory;
 @property(retain, nonatomic) NRDevice *nrDevice; // @synthesize nrDevice=_nrDevice;
@@ -66,7 +66,10 @@
 @property(readonly, nonatomic) NSUUID *nrDeviceUUID;
 @property(readonly, nonatomic) _Bool unlockedSinceBoot;
 @property(readonly, nonatomic) _Bool isLocked;
+- (_Bool)_checkUpdateFlushCapabilitiesCache_locked;
 - (_Bool)_queryAndCacheNanoRegistryDeviceCapabilities;
+- (_Bool)_supportsCapabilityUncached_locked:(id)arg1;
+- (_Bool)supportsCapability:(id)arg1 forceUpdate:(_Bool)arg2;
 - (_Bool)supportsCapability:(id)arg1;
 @property(readonly, nonatomic, getter=isRunningGraceOrLater) _Bool runningGraceOrLater; // @synthesize runningGraceOrLater=_runningGraceOrLater;
 @property(readonly, nonatomic) unsigned long long version; // @synthesize version=_version;

@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)validateBundleIdentifier:(id)arg1 withNotification:(id)arg2;
 - (BOOL)internalApplicationWithBundleIdentifierHasAccess:(id)arg1;
 - (BOOL)applicationWithBundleIdentifierHasAccess:(id)arg1 enabled:(char *)arg2;
-- (BOOL)validateBundleIdentifierInstallDate:(id)arg1 control:(BOOL)arg2;
+- (BOOL)validateBundleIdentifierInstalled:(id)arg1 control:(BOOL)arg2;
 - (void)addApplicationWithBundleIdentifier:(id)arg1 whitelist:(BOOL)arg2;
 - (id)bundleIdentifiersAccessingExternalCamerasWithStatus;
 - (void)updateApplicationWithBundleIdentifier:(id)arg1 withStatus:(BOOL)arg2;

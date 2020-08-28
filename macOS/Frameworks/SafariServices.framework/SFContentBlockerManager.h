@@ -6,18 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableDictionary;
+@class NSArray, NSMutableDictionary, NSTimer;
 @protocol SFContentBlockerManagerDelegate;
 
 @interface SFContentBlockerManager : NSObject
 {
-    long long _location;
     id _extensionMatchingContext;
     NSArray *_contentBlockers;
     NSArray *_enabledContentBlockers;
     id <SFContentBlockerManagerDelegate> _delegate;
     NSMutableDictionary *_contentBlockerIdentifierToStateMap;
     NSMutableDictionary *_contentBlockerUniqueIdentifierToDeveloperIdentifierCache;
+    NSTimer *_deleteStateForRemovedContentBlockerTimer;
     id _keyBagLockStatusObservationToken;
     BOOL _shouldReadFromKeychainAfterKeyBagIsUnlocked;
 }
@@ -35,20 +35,27 @@
 - (void)_blockedContentBlockersDidChange;
 - (void)_replaceLegacyExtensionsWithContentBlocker:(id)arg1;
 - (void)_applyEnabledContentBlockers;
+- (void)_deleteStateForContentBlockerWithComposedIdentifier:(id)arg1;
+- (void)_deleteStateForRemovedContentBlockers;
+- (void)_deleteStateForRemovedContentBlockersTimerFired:(id)arg1;
+- (void)_deleteStateForRemovedContentBlockersAfterDelay:(double)arg1;
+- (void)_deleteStateForRemovedContentBlockerSoon;
+- (void)_updateContentBlockerStateAfterContentBlockerWasRemovedWithComposedIdentifier:(id)arg1;
+- (void)_setContentBlockerIdentifierToStateMap:(id)arg1 forContentBlockerWithComposedIdentifier:(id)arg2 skipSavingToStore:(BOOL)arg3;
 - (void)_loadContentBlockersIfNecessary:(id)arg1;
 - (void)_findContentBlockerAppExtensions;
 - (void)_loadEnabledContentBlockers;
 - (id)_contentBlockerWithComposedIdentifier:(id)arg1;
 - (id)_contentBlockerWithUUID:(id)arg1;
-- (void)_setContentBlocker:(id)arg1 isEnabled:(BOOL)arg2 skipSavingToKeychain:(BOOL)arg3;
+- (void)_setContentBlocker:(id)arg1 isEnabled:(BOOL)arg2 skipSavingToStore:(BOOL)arg3;
 - (void)_setContentBlocker:(id)arg1 isEnabled:(BOOL)arg2;
 - (BOOL)_anyContentBlockerEnabled;
 - (BOOL)_contentBlockerIsEnabled:(id)arg1;
 - (void)_extensionsWereGloballyEnabled;
 - (void)_extensionsWereGloballyDisabled;
 - (BOOL)_contentBlockerIsEnabledWithComposedIdentifier:(id)arg1;
-- (BOOL)_contentBlockerIsEnabledForSafariExtensionHelper:(id)arg1 inSafariWithKeychainAccount:(long long)arg2;
-- (void)_writeContentBlockersStateToKeychain;
+- (BOOL)_contentBlockerIsEnabledForSafariExtensionHelper:(id)arg1;
+- (void)_writeContentBlockersStateToStore;
 - (BOOL)_hasAnyEnabledContentBlockers;
 - (id)_readContentBlockersState;
 - (id)_composedIdentifierForEnabledStateOfContentBlocker:(id)arg1;

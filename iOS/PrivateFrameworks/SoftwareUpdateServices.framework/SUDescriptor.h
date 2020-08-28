@@ -47,12 +47,14 @@
     NSDate *_releaseDate;
     unsigned long long _mdmDelayInterval;
     NSString *_assetID;
+    _Bool _hideInstallAlert;
     _Bool _downloadableOverCellular;
     _Bool _streamingZipCapable;
     NSString *_criticalDownloadPolicy;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool hideInstallAlert; // @synthesize hideInstallAlert=_hideInstallAlert;
 @property(retain, nonatomic) NSString *assetID; // @synthesize assetID=_assetID;
 @property(nonatomic) unsigned long long mdmDelayInterval; // @synthesize mdmDelayInterval=_mdmDelayInterval;
 @property(retain, nonatomic) NSDate *releaseDate; // @synthesize releaseDate=_releaseDate;

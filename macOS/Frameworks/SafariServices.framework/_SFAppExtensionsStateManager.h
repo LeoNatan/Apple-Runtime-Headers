@@ -12,8 +12,7 @@
 
 + (id)extensionFromComposedIdentifier:(id)arg1 matchingExtensionPointIdentifier:(id)arg2;
 + (id)extensionsStateWithoutUnsignedExtensions:(id)arg1;
-+ (void)writeExtensionsState:(id)arg1 toKeychainService:(id)arg2 keychainLabel:(id)arg3 atExtensionsLocation:(long long)arg4;
-+ (id)readExtensionsStateForSafariWithKeychainAccount:(long long)arg1 keychainService:(id)arg2 keychainLabel:(id)arg3 outExtensionsLocation:(long long *)arg4;
++ (id)legacyReadExtensionsStateForSafariWithKeychainAccount:(long long)arg1 keychainService:(id)arg2 keychainLabel:(id)arg3;
 
 @end
 

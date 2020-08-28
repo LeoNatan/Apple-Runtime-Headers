@@ -10,10 +10,11 @@
 #import <NewsUI/NFCopying-Protocol.h>
 #import <NewsUI/NSObject-Protocol.h>
 
-@class FCArticleContentManifest, FCCoverArt, FCFeedPersonalizedItemScoreProfile, FCHeadlineExperimentalTitleMetadata, FCHeadlineThumbnail, FCIssue, FCTopStoriesStyleConfiguration, NSArray, NSData, NSDate, NSSet, NSString, NSURL;
+@class FCArticleAudioTrack, FCArticleContentManifest, FCCoverArt, FCFeedPersonalizedItemScoreProfile, FCHeadlineExperimentalTitleMetadata, FCHeadlineThumbnail, FCIssue, FCTopStoriesStyleConfiguration, NSArray, NSData, NSDate, NSSet, NSString, NSURL;
 @protocol FCChannelProviding, FCContentContext, FCHeadlineStocksFields, FCNativeAdProviding;
 
 @protocol FCHeadlineProviding <NSObject, NFCopying, FCFeedElement, FCClassifiable, FCFeedTransformationItem>
+@property(readonly, nonatomic) _Bool isFullTrackAvailableToAll;
 @property(readonly, nonatomic) NSArray *publisherSpecifiedArticleIDs;
 @property(readonly, nonatomic) NSString *articleRecirculationConfigJSON;
 @property(readonly, nonatomic) id <FCNativeAdProviding> associatedAd;
@@ -95,6 +96,9 @@
 @property(readonly, copy, nonatomic) NSString *versionIdentifier;
 
 @optional
+@property(readonly, nonatomic) NSString *narrativeTrackTextRanges;
+@property(readonly, nonatomic) FCArticleAudioTrack *narrativeTrackSample;
+@property(readonly, nonatomic) FCArticleAudioTrack *narrativeTrack;
 @property(readonly, nonatomic) _Bool useTransparentNavigationBar;
 @property(readonly, nonatomic) _Bool isLocalDraft;
 @property(readonly, copy, nonatomic) NSString *callToActionText;

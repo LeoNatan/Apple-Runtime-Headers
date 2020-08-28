@@ -12,6 +12,7 @@
     // Error parsing type: , name: feedItemSupplementaryRenderer
     // Error parsing type: , name: publisherViewRenderer
     // Error parsing type: , name: titleViewRenderer
+    // Error parsing type: , name: didTapButton
 }
 
 @end

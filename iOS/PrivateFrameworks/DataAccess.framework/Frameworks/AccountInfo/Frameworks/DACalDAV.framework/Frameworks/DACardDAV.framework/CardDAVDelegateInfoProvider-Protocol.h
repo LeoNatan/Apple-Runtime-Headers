@@ -9,7 +9,6 @@
 @class ACAccount, NSArray;
 
 @protocol CardDAVDelegateInfoProvider <NSObject>
-- (NSArray *)collectExpiredDelgatesForAccount:(ACAccount *)arg1;
-- (NSArray *)collectDelegatesForAccount:(ACAccount *)arg1;
+- (NSArray *)collectDelegatesForAccount:(ACAccount *)arg1 error:(id *)arg2;
 @end
 

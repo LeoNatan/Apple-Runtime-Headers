@@ -6,13 +6,17 @@
 
 #import <NanoTimeKitCompanion/NTKFaceView.h>
 
+@class NTKBigNumeralsDigitalColorEditOption;
+
 @interface NTKBigNumeralsDigitalFaceView : NTKFaceView
 {
+    NTKBigNumeralsDigitalColorEditOption *_pride2020SensitiveShroudColor;
 }
 
 + (id)_swatchImageForColorOption:(id)arg1 forDevice:(id)arg2;
 + (id)_swatchColorForColorOption:(id)arg1 forDevice:(id)arg2;
 + (id)_swatchForEditModeDependsOnOptions:(long long)arg1 forDevice:(id)arg2;
+- (void).cxx_destruct;
 - (id)_renderTimeViewSwatchImageForStyle:(unsigned long long)arg1 typeface:(unsigned long long)arg2 color:(unsigned long long)arg3;
 - (id)_swatchImageForEditOption:(id)arg1 mode:(long long)arg2 withSelectedOptions:(id)arg3;
 - (void)_applyRubberBandingFraction:(double)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
@@ -24,6 +28,8 @@
 - (void)_cleanupAfterTransitionToOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
 - (void)_applyTransitionFraction:(double)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(long long)arg4 slot:(id)arg5;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
+- (unsigned long long)_filterColorForUISensitivityFromColor:(unsigned long long)arg1;
+- (_Bool)_shouldHideSensitiveUI;
 - (void)_configureForTransitionFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3;
 - (void)_configureForEditMode:(long long)arg1;
 - (void)_prepareForStatusChange:(_Bool)arg1;

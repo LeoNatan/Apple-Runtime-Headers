@@ -17,6 +17,7 @@
 {
     BOOL _executing;
     BOOL _finished;
+    BOOL _isBackgroundDownloadOperation;
     BOOL _childOperationsCancelled;
     long long _relativePriority;
     unsigned long long _retryCount;
@@ -41,6 +42,7 @@
 @property(nonatomic) double operationEndTime; // @synthesize operationEndTime=_operationEndTime;
 @property(nonatomic) double operationStartTime; // @synthesize operationStartTime=_operationStartTime;
 @property(readonly, copy, nonatomic) NSString *operationID; // @synthesize operationID=_operationID;
+@property(nonatomic) BOOL isBackgroundDownloadOperation; // @synthesize isBackgroundDownloadOperation=_isBackgroundDownloadOperation;
 @property(nonatomic) double timeoutDuration; // @synthesize timeoutDuration=_timeoutDuration;
 @property(nonatomic) unsigned long long retryCount; // @synthesize retryCount=_retryCount;
 @property(nonatomic) long long relativePriority; // @synthesize relativePriority=_relativePriority;

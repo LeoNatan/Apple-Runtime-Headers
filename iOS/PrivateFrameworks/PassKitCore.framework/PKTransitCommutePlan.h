@@ -47,6 +47,7 @@
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, nonatomic) _Bool hasDisplayableInformation;
 @property(readonly, nonatomic) _Bool isPlanAvailable;
+@property(readonly, nonatomic) _Bool isPlanDisplayable;
 - (id)passFieldForKey:(id)arg1;
 - (void)_updateProperties;
 - (void)_updateFieldsByKey;

@@ -27,6 +27,7 @@
     COMAPPLEFELDSPARPROTOCOLLIVERPOOLArticleScores *_scores;
     NSString *_sourceChannelID;
     NSMutableArray *_topicIDs;
+    BOOL _hasAudioTrack;
     BOOL _hasThumbnail;
     BOOL _hasVideo;
     BOOL _isBundlePaid;
@@ -44,6 +45,7 @@
         unsigned int order:1;
         unsigned int publishDateMilliseconds:1;
         unsigned int publisherArticleVersion:1;
+        unsigned int hasAudioTrack:1;
         unsigned int hasThumbnail:1;
         unsigned int hasVideo:1;
         unsigned int isBundlePaid:1;
@@ -56,6 +58,7 @@
 }
 
 + (Class)topicIDsType;
+@property(nonatomic) BOOL hasAudioTrack; // @synthesize hasAudioTrack=_hasAudioTrack;
 @property(nonatomic) BOOL isFeatured; // @synthesize isFeatured=_isFeatured;
 @property(nonatomic) long long bodyTextLength; // @synthesize bodyTextLength=_bodyTextLength;
 @property(nonatomic) BOOL isBundlePaid; // @synthesize isBundlePaid=_isBundlePaid;
@@ -87,6 +90,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasHasAudioTrack;
 @property(nonatomic) BOOL hasIsFeatured;
 @property(nonatomic) BOOL hasBodyTextLength;
 @property(nonatomic) BOOL hasIsBundlePaid;

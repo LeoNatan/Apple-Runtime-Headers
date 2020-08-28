@@ -10,6 +10,9 @@
 @class FCIAdConfiguration, FCPrefetchConfiguration, NSArray, NSString, NTPBDiscoverMoreVideosInfo;
 
 @protocol FCNewsAppConfiguration <FCCoreConfiguration, NFCopying>
+@property(readonly, nonatomic) long long subscriptionsGracePeriodForTokenVerificationSeconds;
+@property(readonly, nonatomic) long long subscriptionsPlacardGlobalMaximumPerDay;
+@property(readonly, nonatomic) long long subscriptionsPlacardPublisherFrequencyInSeconds;
 @property(readonly, nonatomic) NSString *articleRecirculationComponentPlacementConfigJSON;
 @property(readonly, nonatomic) NTPBDiscoverMoreVideosInfo *shareDiscoverMoreVideosInfo;
 @property(readonly, nonatomic) NSString *articleRecirculationConfigJSON;
@@ -52,9 +55,14 @@
 @property(readonly, nonatomic) NSArray *onboardingFeedIDs;
 
 @optional
+@property(readonly, nonatomic) _Bool forYouGroupShouldPromoteAccessibleHeadline;
 @property(readonly, nonatomic) long long articleReadCountThreshold;
+@property(readonly, nonatomic) NSString *userVectorModelResourceId;
+@property(readonly, nonatomic) NSString *userVectorWhitelistResourceId;
 @property(readonly, nonatomic) NSString *localAreasMappingResourceId;
 @property(readonly, nonatomic) _Bool enableLocationBasedAutofavorites;
+@property(readonly, nonatomic) long long newsletterSubscriptionType;
+@property(readonly, nonatomic) double newsletterSubscriptionStatusCacheTimeout;
 @property(readonly, nonatomic) long long emailSignupRequiredAppLaunchCount;
 @property(readonly, nonatomic) unsigned long long bestOfBundleFeedGroupKind;
 @property(readonly, nonatomic) unsigned long long likeDislikeBehavior;

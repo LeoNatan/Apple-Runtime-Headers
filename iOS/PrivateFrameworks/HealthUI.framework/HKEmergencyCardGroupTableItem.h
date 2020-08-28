@@ -6,15 +6,18 @@
 
 #import <HealthUI/HKEmergencyCardTableItem.h>
 
-@class NSArray, NSMutableArray;
+@class NSArray, NSMutableArray, NSString;
 
 @interface HKEmergencyCardGroupTableItem : HKEmergencyCardTableItem
 {
     NSMutableArray *_cumulativeRowOffsets;
+    NSArray *_allSubItems;
     NSArray *_subitems;
+    NSString *_titleForHeader;
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *titleForHeader; // @synthesize titleForHeader=_titleForHeader;
 @property(retain, nonatomic) NSArray *subitems; // @synthesize subitems=_subitems;
 - (void)commitEditing;
 - (void)didCommitEditingStyle:(long long)arg1 forRowAtIndex:(long long)arg2;

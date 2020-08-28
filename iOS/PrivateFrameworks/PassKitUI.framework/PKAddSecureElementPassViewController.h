@@ -29,6 +29,9 @@
 - (struct CGSize)sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize)arg2;
 - (id)childViewControllerForStatusBarHidden;
 - (id)childViewControllerForStatusBarStyle;
+- (unsigned long long)supportedInterfaceOrientations;
+- (long long)modalPresentationStyle;
+- (long long)modalTransitionStyle;
 - (_Bool)shouldAutorotate;
 - (void)didFinishWithPass:(id)arg1 error:(id)arg2;
 - (void)setRemoteVC:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

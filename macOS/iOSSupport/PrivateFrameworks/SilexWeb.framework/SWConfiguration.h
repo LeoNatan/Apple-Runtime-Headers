@@ -9,6 +9,7 @@
 #import <SilexWeb/NSMutableCopying-Protocol.h>
 
 @class NSDictionary, NSLocale, NSString, NSURL;
+@protocol SWLocation;
 
 @interface SWConfiguration : NSObject <NSMutableCopying>
 {
@@ -17,13 +18,17 @@
     NSLocale *_locale;
     NSString *_contentSizeCategory;
     NSDictionary *_dataSources;
-    NSURL *_location;
+    id <SWLocation> _location;
+    NSURL *_sourceURL;
+    NSString *_systemVersion;
     struct CGSize _canvasSize;
     struct CGRect _contentFrame;
 }
 
 - (void).cxx_destruct;
-@property(copy, nonatomic) NSURL *location; // @synthesize location=_location;
+@property(copy, nonatomic) NSString *systemVersion; // @synthesize systemVersion=_systemVersion;
+@property(copy, nonatomic) NSURL *sourceURL; // @synthesize sourceURL=_sourceURL;
+@property(copy, nonatomic) id <SWLocation> location; // @synthesize location=_location;
 @property(copy, nonatomic) NSDictionary *dataSources; // @synthesize dataSources=_dataSources;
 @property(nonatomic) struct CGRect contentFrame; // @synthesize contentFrame=_contentFrame;
 @property(nonatomic) struct CGSize canvasSize; // @synthesize canvasSize=_canvasSize;
@@ -34,7 +39,7 @@
 - (BOOL)isEqualToConfiguration:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithStoreFront:(id)arg1 locale:(id)arg2 contentSizeCategory:(id)arg3 canvasSize:(struct CGSize)arg4 contentFrame:(struct CGRect)arg5 dataSources:(id)arg6 location:(id)arg7;
+- (id)initWithStoreFront:(id)arg1 locale:(id)arg2 contentSizeCategory:(id)arg3 canvasSize:(struct CGSize)arg4 contentFrame:(struct CGRect)arg5 dataSources:(id)arg6 location:(id)arg7 sourceURL:(id)arg8;
 
 @end
 

@@ -8,7 +8,6 @@
 
 @interface _TtC7NewsUI230URLNotificationResponseHandler : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: pattern
 }
 
 @end

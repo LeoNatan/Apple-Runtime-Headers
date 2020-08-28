@@ -10,7 +10,6 @@
 {
 }
 
-- (id)createViewControllerWithWidgetVideoPlaylist:(id)arg1 referral:(id)arg2;
 - (id)createViewControllerWithArticleIDs:(id)arg1 referral:(id)arg2;
 
 @end

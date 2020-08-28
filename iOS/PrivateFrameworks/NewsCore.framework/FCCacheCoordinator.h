@@ -8,7 +8,7 @@
 
 #import <NewsCore/FCOperationThrottlerDelegate-Protocol.h>
 
-@class FCCacheCoordinatorFlushPolicy, FCThreadSafeMutableDictionary, NFUnfairLock, NSArray, NSCountedSet, NSMutableSet, NSString;
+@class FCCacheCoordinatorFlushPolicy, FCThreadSafeMutableDictionary, NFUnfairLock, NSCountedSet, NSMutableSet, NSSet, NSString;
 @protocol FCCacheCoordinatorDelegate, FCCacheCoordinatorLocking, FCOperationThrottler;
 
 @interface FCCacheCoordinator : NSObject <FCOperationThrottlerDelegate>
@@ -50,8 +50,8 @@
 - (_Bool)cacheContainsKey:(id)arg1;
 - (void)performCacheWrite:(CDUnknownBlockType)arg1;
 - (void)performCacheRead:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) NSArray *keysWithNonZeroInterest;
-@property(readonly, nonatomic) NSArray *keysWithZeroInterest;
+@property(readonly, nonatomic) NSSet *keysWithNonZeroInterest;
+@property(readonly, nonatomic) NSSet *keysWithZeroInterest;
 - (id)holdTokensForKeys:(id)arg1;
 - (id)holdTokenForKeys:(id)arg1;
 - (id)holdTokenForKey:(id)arg1;

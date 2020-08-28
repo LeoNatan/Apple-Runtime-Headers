@@ -23,7 +23,6 @@
     NSArray *_UUIDsOfRemovedHomes;
     NSArray *_cloudZones;
     NSArray *_incomingInvitations;
-    unsigned long long _assistantGenerationCounter;
     NSString *_currentDevice;
     NSArray *_pendingReasonSaved;
     NSArray *_pendingUserManagementOperations;
@@ -45,7 +44,6 @@
 @property(readonly, copy, nonatomic) NSArray *pendingUserManagementOperations; // @synthesize pendingUserManagementOperations=_pendingUserManagementOperations;
 @property(readonly, copy, nonatomic) NSArray *pendingReasonSaved; // @synthesize pendingReasonSaved=_pendingReasonSaved;
 @property(readonly, copy, nonatomic) NSString *currentDevice; // @synthesize currentDevice=_currentDevice;
-@property(readonly, nonatomic) unsigned long long assistantGenerationCounter; // @synthesize assistantGenerationCounter=_assistantGenerationCounter;
 @property(readonly, copy, nonatomic) NSArray *incomingInvitations; // @synthesize incomingInvitations=_incomingInvitations;
 @property(readonly, copy, nonatomic) NSArray *cloudZones; // @synthesize cloudZones=_cloudZones;
 @property(readonly, copy, nonatomic) NSArray *UUIDsOfRemovedHomes; // @synthesize UUIDsOfRemovedHomes=_UUIDsOfRemovedHomes;

@@ -9,7 +9,9 @@
 #import <NewsCore/FCOrderedCollectionAdditions-Protocol.h>
 
 @interface NSOrderedSet (FCAdditions) <FCOrderedCollectionAdditions>
++ (id)fc_orderedSet:(CDUnknownBlockType)arg1;
 - (_Bool)fc_isEqualToOrderedSet:(id)arg1 inRange:(struct _NSRange)arg2;
+- (id)fc_orderedSetByAddingObject:(id)arg1;
 - (id)fc_orderedSetByCollectingObjectsWithBlock:(CDUnknownBlockType)arg1;
 - (id)fc_orderedSetByMinusingOrderedSet:(id)arg1;
 - (id)fc_orderedSetWithObjectsAtIndexes:(id)arg1;

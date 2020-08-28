@@ -15,6 +15,9 @@
 
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NTPBVanityURLMapping *vanityURLMapping; // @synthesize vanityURLMapping=_vanityURLMapping;
+- (id)_standardizedFragmentWithParameters:(id)arg1 fragment:(id)arg2;
+- (id)_standardizedQueryWithParameters:(id)arg1 query:(id)arg2;
+- (void)_setParametersIfNeededWithComponents:(id)arg1 parameters:(id)arg2;
 - (void)_standardizeResultPath:(id)arg1;
 - (id)_pathWithTrailingForwardSlashWithPath:(id)arg1;
 - (id)_standardizedMappingPathWithPath:(id)arg1;

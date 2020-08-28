@@ -6,7 +6,7 @@
 
 #import <NewsToday/FCTagRanking-Protocol.h>
 
-@class FCFeedPersonalizedItems, NSArray, NSDictionary, NSString;
+@class FCFeedPersonalizedItems, NSArray, NSDictionary, NSMapTable, NSString;
 @protocol FCFeedPersonalizingItem;
 
 @protocol FCFeedPersonalizing <FCTagRanking>
@@ -21,8 +21,10 @@
 - (FCFeedPersonalizedItems *)sortItems:(NSArray *)arg1;
 
 @optional
+- (void)recordOccurrenceOfFeatures:(NSArray *)arg1 articleID:(NSString *)arg2 individually:(_Bool)arg3 action:(unsigned long long)arg4;
 - (void)fetchAggregateMapForPersonalizingItem:(id <FCFeedPersonalizingItem>)arg1 completion:(void (^)(NSDictionary *))arg2;
-- (NSArray *)bestOfGroupFromItems:(NSArray *)arg1 configurationSet:(long long)arg2;
+- (NSArray *)bestOfGroupFromFeedItems:(NSArray *)arg1 scoreProfiles:(NSMapTable *)arg2 configurationSet:(long long)arg3;
+- (NSArray *)bestOfGroupFromHeadlines:(NSArray *)arg1 configurationSet:(long long)arg2;
 - (double)personalizedScoreForFeatureWithIdentifier:(NSString *)arg1 items:(NSArray *)arg2 scores:(NSDictionary *)arg3;
 - (double)personalizedScoreForFeatureWithIdentifier:(NSString *)arg1 items:(NSArray *)arg2;
 - (FCFeedPersonalizedItems *)sortItems:(NSArray *)arg1 options:(long long)arg2 configurationSet:(long long)arg3;

@@ -8,6 +8,7 @@
 
 @interface _TtC8NewsFeed25InternalErrorViewRenderer : _TtCs12_SwiftObject
 {
+    // Error parsing type: , name: rendererTool
 }
 
 @end

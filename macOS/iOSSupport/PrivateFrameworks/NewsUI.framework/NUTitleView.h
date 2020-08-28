@@ -19,9 +19,11 @@
     NUFadeViewAnimator *_fadeAnimator;
     NUAnimationQueue *_animationQueue;
     NSObject<OS_dispatch_semaphore> *_lingerSemaphore;
+    struct CGRect _lastLayoutBounds;
 }
 
 - (void).cxx_destruct;
+@property(nonatomic) struct CGRect lastLayoutBounds; // @synthesize lastLayoutBounds=_lastLayoutBounds;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *lingerSemaphore; // @synthesize lingerSemaphore=_lingerSemaphore;
 @property(readonly, nonatomic) NUAnimationQueue *animationQueue; // @synthesize animationQueue=_animationQueue;
 @property(readonly, nonatomic) NUFadeViewAnimator *fadeAnimator; // @synthesize fadeAnimator=_fadeAnimator;

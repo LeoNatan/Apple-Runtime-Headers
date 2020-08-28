@@ -8,7 +8,8 @@
 
 @interface _TtC7NewsUI220IssueDownloadService : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: cloudContext
+    // Error parsing type: , name: contentContext
+    // Error parsing type: , name: flintHelper
     // Error parsing type: , name: layeredMediaAssetHandlesProvider
     // Error parsing type: , name: highPriorityDownloadQueue
 }

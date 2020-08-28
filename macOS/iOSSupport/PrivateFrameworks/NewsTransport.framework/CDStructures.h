@@ -86,6 +86,8 @@ typedef struct {
     unsigned int didBounce:1;
     unsigned int didExpandDuringView:1;
     unsigned int didOpenInSafari:1;
+    unsigned int isAudioEligible:1;
+    unsigned int isAudioEngaged:1;
     unsigned int isBreakingNewsArticle:1;
     unsigned int isCoverArticle:1;
     unsigned int isDigitalReplicaAd:1;
@@ -104,7 +106,7 @@ typedef struct {
     unsigned int isVideoInFeed:1;
     unsigned int subscriptionOnlyArticle:1;
     unsigned int viewFromNotificationDirectOpen:1;
-} CDStruct_c335251c;
+} CDStruct_5b8c9b53;
 
 // Ambiguous groups
 typedef struct {

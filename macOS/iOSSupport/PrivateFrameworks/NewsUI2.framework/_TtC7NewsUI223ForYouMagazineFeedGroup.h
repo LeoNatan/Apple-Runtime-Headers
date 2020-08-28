@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSArray, NSSet, NSString;
+@protocol FCTagProviding;
 
 __attribute__((visibility("hidden")))
 @interface _TtC7NewsUI223ForYouMagazineFeedGroup : NSObject
@@ -19,7 +20,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (id)init;
-@property(nonatomic, readonly) NSString *backingTagID;
+@property(nonatomic, readonly) id <FCTagProviding> backingTag;
 @property(nonatomic, readonly) NSArray *webEmbedURLs;
 @property(nonatomic, readonly) NSSet *equivalentTopicIDs;
 @property(nonatomic, readonly) NSArray *assetHandles;

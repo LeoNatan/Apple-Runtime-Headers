@@ -9,6 +9,7 @@
 @interface _TtC13NewsAnalytics15SessionObserver : NSObject
 {
     // Error parsing type: , name: sessionManager
+    // Error parsing type: , name: tracker
     // Error parsing type: , name: cloudContext
     // Error parsing type: , name: client
     // Error parsing type: , name: window

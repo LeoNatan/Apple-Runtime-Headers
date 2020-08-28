@@ -88,7 +88,7 @@
 - (void)sendReplyCommand:(id)arg1;
 - (void)resultDidChangeForAceCommand:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resultDidChangeForAceCommand:(id)arg1;
-- (void)startCorrectedRequestWithText:(id)arg1 correctionIdentifier:(id)arg2 userSelectionResults:(id)arg3;
+- (void)startCorrectedRequestWithText:(id)arg1 correctionIdentifier:(id)arg2 userSelectionResults:(id)arg3 turnIdentifier:(id)arg4;
 - (void)_startRequestWithText:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_startRequestWithInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_startContinuityRequestWithInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;

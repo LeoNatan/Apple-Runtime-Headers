@@ -23,9 +23,11 @@
     double _signInTimeout;
     double _signInFuzz;
     IDSCTAdapter *_CTAdapter;
+    NSString *_listenerGUID;
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *listenerGUID; // @synthesize listenerGUID=_listenerGUID;
 @property(retain, nonatomic) IDSCTAdapter *CTAdapter; // @synthesize CTAdapter=_CTAdapter;
 @property(retain, nonatomic) NSMutableDictionary *initialStateByService; // @synthesize initialStateByService=_initialStateByService;
 @property(retain, nonatomic) NSMapTable *delegateByServiceType; // @synthesize delegateByServiceType=_delegateByServiceType;
@@ -62,6 +64,7 @@
 - (void)enableUserType:(unsigned long long)arg1 onService:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)removeDelegateForService:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1 forService:(unsigned long long)arg2;
+- (void)dealloc;
 - (id)init;
 - (id)initWithQueue:(id)arg1;
 - (id)initWithPasswordManager:(id)arg1 CTAdapter:(id)arg2 signInTimeout:(double)arg3 signInFuzz:(double)arg4 queue:(id)arg5;

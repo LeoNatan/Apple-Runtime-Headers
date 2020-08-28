@@ -45,6 +45,7 @@
 - (void)downloadAssetWithCloudStoreCoordinatorDelegate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) unsigned long long itemType;
 - (BOOL)isZipFile;
+@property(readonly, nonatomic) __weak NSString *relativeEncryptedContentsLocalPath;
 @property(readonly, nonatomic) __weak NSString *relativeLocalPath;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

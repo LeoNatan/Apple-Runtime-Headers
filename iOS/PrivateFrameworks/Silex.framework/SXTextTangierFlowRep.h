@@ -35,9 +35,12 @@
 - (id)interactiveCanvasController;
 - (void)_accessibilitySetSelectedTextRange:(struct _NSRange)arg1;
 - (struct _NSRange)_accessibilitySelectedTextRange;
+- (id)accessibilityElements;
 - (unsigned long long)accessibilityTraits;
 - (struct CGRect)accessibilityFrameForScrolling;
+- (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (_Bool)isAccessibilityElement;
+- (id)sxaxLinkElements;
 - (id)itemsForCustomRotor:(id)arg1;
 - (id)supportedCustomRotors;
 - (void)dealloc;

@@ -7,6 +7,8 @@
 #import <Silex/NSObject-Protocol.h>
 
 @protocol SXConditionHints <NSObject>
+@property(readonly, nonatomic) BOOL configurationKey;
+@property(readonly, nonatomic) BOOL newsletter;
 @property(readonly, nonatomic) BOOL preferredColorScheme;
 @property(readonly, nonatomic) BOOL testing;
 @property(readonly, nonatomic) BOOL subscriptionStatus;

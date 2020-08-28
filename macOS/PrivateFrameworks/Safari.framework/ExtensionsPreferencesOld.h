@@ -6,7 +6,7 @@
 
 #import <Safari/PreferencesModule.h>
 
-@class NSOcclusionDetectionView, SLSecureCursorAssertion, WebView;
+@class NSOcclusionDetectionView, NSWindow, SLSecureCursorAssertion, WebView;
 
 __attribute__((visibility("hidden")))
 @interface ExtensionsPreferencesOld : PreferencesModule
@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 @property(nonatomic) BOOL shouldHideAllButtons; // @synthesize shouldHideAllButtons=_shouldHideAllButtons;
+@property(readonly, nonatomic) NSWindow *preferencesWindowIfMain;
 - (void)selectExtensionWithIdentifier:(id)arg1;
 - (void)openExtensionsGallery:(id)arg1;
 - (id)safariHelpAnchor;

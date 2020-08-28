@@ -8,14 +8,12 @@
 
 @interface SFSafariExtensionManager : NSObject
 {
-    long long _location;
 }
 
 + (void)getStateOfSafariExtensionWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (void)_getLocalizedManifestFromExtensionAtURL:(id)arg1 sandboxExtensionToken:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)sharedManager;
-- (BOOL)_extensionIsEnabledForSafariExtensionHelper:(id)arg1 inSafariWithKeychainAccount:(long long)arg2;
-- (void)_writeExtensionsState:(id)arg1;
-- (id)_readExtensionsState;
+- (id)_legacyReadExtensionsStateFromKeychain;
 - (id)_composedIdentifierForStateOfExtensionWithBundleIdentifier:(id)arg1 developerIdentifier:(id)arg2;
 
 @end

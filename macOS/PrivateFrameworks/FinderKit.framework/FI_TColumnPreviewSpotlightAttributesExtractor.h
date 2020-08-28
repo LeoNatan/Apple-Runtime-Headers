@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *queryAttributes; // @dynamic queryAttributes;
+- (id)attributeNamesForNodes:(const struct TFENodeVector *)arg1;
 - (id)attributeNamesForNode:(const struct TFENode *)arg1;
 - (id)init;
 

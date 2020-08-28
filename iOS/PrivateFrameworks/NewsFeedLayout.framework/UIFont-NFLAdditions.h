@@ -7,6 +7,8 @@
 #import <UIKit/UIFont.h>
 
 @interface UIFont (NFLAdditions)
++ (double)nfl_tightenedLineSpacingForString:(id)arg1 forFont:(id)arg2 minimumLineSpacingMultiple:(double)arg3;
++ (struct CGRect)nfl_boundingBoxForString:(id)arg1 forFont:(id)arg2;
 + (id)nfl_drukTextBoldForSize:(double)arg1;
 + (id)nfl_drukWideMediumForSize:(double)arg1;
 + (id)nfl_systemFontNameForWeight:(double)arg1 condensed:(_Bool)arg2;

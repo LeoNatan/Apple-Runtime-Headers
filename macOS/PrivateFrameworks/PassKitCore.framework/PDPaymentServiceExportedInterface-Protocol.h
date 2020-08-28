@@ -6,19 +6,22 @@
 
 #import <PassKitCore/PDXPCServiceExportedInterface-Protocol.h>
 
-@class NSArray, NSCalendar, NSData, NSDate, NSError, NSSet, NSString, NSUUID, PKAppletSubcredential, PKAppletSubcredentialSharingInvitationRequest, PKApplyWebServiceApplicationDeleteRequest, PKApplyWebServiceApplyRequest, PKApplyWebServiceDocumentSubmissionRequest, PKApplyWebServiceTermsRequest, PKExpressPassInformation, PKMerchant, PKPaymentApplication, PKPaymentProductsActionRequest, PKPaymentTransaction, PKPaymentWebServiceContext, PKPlaceholderPassConfiguration;
+@class NSArray, NSCalendar, NSData, NSDate, NSError, NSSet, NSString, NSUUID, PKAppletSubcredential, PKAppletSubcredentialSharingInvitation, PKAppletSubcredentialSharingInvitationRequest, PKApplyWebServiceApplicationDeleteRequest, PKApplyWebServiceApplyRequest, PKApplyWebServiceDocumentSubmissionRequest, PKApplyWebServiceTermsRequest, PKExpressPassInformation, PKMerchant, PKPaymentApplication, PKPaymentProductsActionRequest, PKPaymentTransaction, PKPaymentWebServiceContext, PKPlaceholderPassConfiguration;
 
 @protocol PDPaymentServiceExportedInterface <PDXPCServiceExportedInterface>
 - (void)willPassWithUniqueIdentifierAutomaticallyBecomeDefault:(NSString *)arg1 completion:(void (^)(BOOL))arg2;
 - (void)credentialWithIdentifier:(NSString *)arg1 completion:(void (^)(PKAppletSubcredential *))arg2;
+- (void)canAcceptInvitation:(PKAppletSubcredentialSharingInvitation *)arg1 withCompletion:(void (^)(NSError *))arg2;
 - (void)requestBackgroundRegistrationForCredentialWithIdentifier:(NSString *)arg1 completion:(void (^)(BOOL))arg2;
 - (void)removeSharingInvitationWithIdentifier:(NSString *)arg1 withCompletion:(void (^)(BOOL))arg2;
+- (void)didUpdateSharingInvitationWithIdentifier:(NSString *)arg1 reason:(long long)arg2 completion:(void (^)(BOOL))arg3;
 - (void)didReceiveSharingInvitationRequest:(PKAppletSubcredentialSharingInvitationRequest *)arg1 withCompletion:(void (^)(BOOL))arg2;
 - (void)didReceiveSharingInvitationWithIdentifier:(NSString *)arg1 fromOriginatorIDSHandle:(NSString *)arg2 sharingSessionIdentifier:(NSUUID *)arg3 metadata:(NSData *)arg4 completion:(void (^)(BOOL))arg5;
 - (void)finishedKeyExchangeForCredential:(PKAppletSubcredential *)arg1 withCompletion:(void (^)(BOOL))arg2;
 - (void)sharingInvitationWasInvalidated:(NSString *)arg1 withCredentialIdentifier:(NSString *)arg2 error:(NSError *)arg3 completion:(void (^)(BOOL))arg4;
 - (void)addSubcredential:(PKAppletSubcredential *)arg1 fromSharingInvitationWithIdentifier:(NSString *)arg2 completion:(void (^)(BOOL))arg3;
 - (void)removeSharingInvitationReceiptWithIdentifiers:(NSSet *)arg1 onCredential:(NSString *)arg2 completion:(void (^)(BOOL))arg3;
+- (void)declineRelatedSharingInvitationsIfNecessary:(PKAppletSubcredentialSharingInvitation *)arg1 withCompletion:(void (^)(BOOL))arg2;
 - (void)addSharingInvitationReceipts:(NSArray *)arg1 onCredentialWithIdentifier:(NSString *)arg2 withCompletion:(void (^)(BOOL))arg3;
 - (void)revokeCredentialsWithIdentifiers:(NSSet *)arg1 completion:(void (^)(BOOL))arg2;
 - (void)registerCredentialsWithIdentifiers:(NSSet *)arg1 completion:(void (^)(NSSet *, NSSet *))arg2;
@@ -58,6 +61,7 @@
 - (void)downloadAllPaymentPassesWithHandler:(void (^)(void))arg1;
 - (void)initializeSecureElement:(void (^)(BOOL))arg1;
 - (void)initializeSecureElementIfNecessaryWithHandler:(void (^)(BOOL, NSData *, NSData *))arg1;
+- (void)isPassExpressWithUniqueIdentifier:(NSString *)arg1 completion:(void (^)(BOOL))arg2;
 - (void)removeExpressPassWithUniqueIdentifier:(NSString *)arg1 completion:(void (^)(BOOL, NSSet *))arg2;
 - (void)removeExpressPassesWithCardType:(long long)arg1 completion:(void (^)(BOOL, NSSet *))arg2;
 - (void)conflictingExpressPassIdentifiersForPassInformation:(PKExpressPassInformation *)arg1 withReferenceExpressState:(NSSet *)arg2 completion:(void (^)(NSSet *))arg3;

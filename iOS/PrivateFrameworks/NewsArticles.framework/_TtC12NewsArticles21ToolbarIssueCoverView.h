@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: coverView
     // Error parsing type: , name: callToActionLabel
+    // Error parsing type: , name: coverDateLabel
 }
 
 - (void).cxx_destruct;

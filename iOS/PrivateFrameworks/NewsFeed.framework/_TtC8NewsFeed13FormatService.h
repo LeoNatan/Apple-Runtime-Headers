@@ -13,6 +13,8 @@
     // Error parsing type: , name: assetManager
     // Error parsing type: , name: fontManager
     // Error parsing type: , name: cloudContext
+    // Error parsing type: , name: resourceService
+    // Error parsing type: , name: webArchiveService
     // Error parsing type: , name: $__lazy_storage_$_ignoreCache
     // Error parsing type: , name: $__lazy_storage_$_loadPackagesFromDebugServerDropbox
 }

@@ -6,13 +6,13 @@
 
 #import <UIKit/UISplitViewController.h>
 
-@class NSArray, UIViewController;
-
 @interface _TtC5TeaUI25TabBarSplitViewController : UISplitViewController
 {
     // Error parsing type: , name: extendedDelegate
     // Error parsing type: , name: eventManager
     // Error parsing type: , name: presentationContextCache
+    // Error parsing type: , name: stagedModalContextCache
+    // Error parsing type: , name: modalContextCache
     // Error parsing type: , name: fullscreenTransitionCoverManager
     // Error parsing type: , name: appearanceViewControllers
     // Error parsing type: , name: restoreStateCache
@@ -23,17 +23,6 @@
 
 - (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)didReceiveMemoryWarning;
-- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
-- (void)viewDidLayoutSubviews;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidLoad;
-- (void)traitCollectionDidChange:(id)arg1;
-@property(nonatomic, copy) NSArray *viewControllers;
-@property(nonatomic, readonly) UIViewController *childViewControllerForStatusBarHidden;
-@property(nonatomic, readonly) UIViewController *childViewControllerForStatusBarStyle;
-- (void)loadView;
 - (id)initWithCoder:(id)arg1;
 
 @end

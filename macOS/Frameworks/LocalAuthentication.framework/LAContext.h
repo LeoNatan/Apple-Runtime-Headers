@@ -35,6 +35,8 @@
 @property(nonatomic) BOOL interactionNotAllowed;
 - (void)setOptionAuthenticationTitle:(id)arg1;
 - (id)optionAuthenticationTitle;
+- (void)setOptionUseUnmanagedSpace:(id)arg1;
+- (id)optionUseUnmanagedSpace;
 - (void)setOptionCheckEntitlement:(id)arg1;
 - (id)optionCheckEntitlement;
 - (void)setOptionDFRAuthenticationIconPath:(id)arg1;

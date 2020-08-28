@@ -12,6 +12,7 @@
 {
     _Bool _useCKVR;
     _Bool _recoveryPassphraseMutable;
+    int _reqVersion;
     NSString *_decodedLabel;
     NSDate *_escrowDate;
     NSData *_recoveryBlob;
@@ -35,6 +36,7 @@
 @property(copy, nonatomic) NSString *recoveryPassphrase; // @synthesize recoveryPassphrase=_recoveryPassphrase;
 @property(copy, nonatomic) NSString *dsid; // @synthesize dsid=_dsid;
 @property(readonly, nonatomic) struct ckvr_srp_context *ckvr; // @synthesize ckvr=_ckvr;
+@property(nonatomic) int reqVersion; // @synthesize reqVersion=_reqVersion;
 @property(readonly, nonatomic) _Bool useCKVR; // @synthesize useCKVR=_useCKVR;
 @property(readonly, nonatomic) struct ccsrp_ctx *srp; // @synthesize srp=_srp;
 @property(readonly, nonatomic) struct ccses_crypto_t *ccses; // @synthesize ccses=_ccses;
@@ -44,16 +46,17 @@
 - (void)dealloc;
 - (id)recoveryResponseForBlob:(id)arg1;
 -     // Error parsing type: @40@0:8@16^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}24^{ccrsa_full_ctx=QQ^{cczp_funcs}[0Q]}32, name: srpResponseForEscrowBlob:withKey:withFullCCKey:
-- (id)decodedEscrowRecordFromData:(id)arg1;
+- (id)decodedEscrowRecordFromData:(id)arg1 stingray:(_Bool)arg2 enroll:(_Bool)arg3 env:(id)arg4 duplicate:(_Bool)arg5;
 -     // Error parsing type: @32@0:8^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}16^@24, name: encodedEscrowRecordWithPublicKey:error:
 - (id)srpRecoveryBlobFromData:(id)arg1 error:(id *)arg2;
 - (void)srpRecoveryUpdateDSID:(id)arg1 recoveryPassphrase:(id)arg2;
 - (unsigned long long)srpPublicKeySize;
 - (unsigned long long)srpKeySize;
 - (id)srpInitBlob;
-- (id)initWithDSID:(id)arg1 escrowRecordContents:(id)arg2 recoveryPassphrase:(id)arg3 recordID:(id)arg4 recordLabel:(id)arg5 ckvrFlag:(_Bool)arg6;
+- (id)initWithDSID:(id)arg1 escrowRecordContents:(id)arg2 recoveryPassphrase:(id)arg3 recordID:(id)arg4 recordLabel:(id)arg5 ckvrFlag:(_Bool)arg6 reqVersion:(int)arg7;
 - (id)initWithDSID:(id)arg1 escrowRecordContents:(id)arg2 recoveryPassphrase:(id)arg3 recordID:(id)arg4 recordLabel:(id)arg5;
-- (id)initWithRequest:(id)arg1 ckvrFlag:(_Bool)arg2;
+- (id)initWithRequest:(id)arg1 ckvrFlag:(_Bool)arg2 reqVersion:(int)arg3;
+- (id)initWithRequest:(id)arg1 reqVersion:(int)arg2;
 - (id)initWithRequest:(id)arg1;
 
 @end

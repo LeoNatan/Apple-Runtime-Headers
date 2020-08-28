@@ -6,21 +6,27 @@
 
 #import <HealthUI/HKEmergencyCardTableItem.h>
 
-@class UISwitch, UITableViewCell;
+#import <HealthUI/HKMedicalIDEditorSwitchDelegate-Protocol.h>
 
-@interface HKEmergencyCardEnabledTableItem : HKEmergencyCardTableItem
+@class HKMedicalIDEditorSwitchCell, UITableView;
+
+@interface HKEmergencyCardEnabledTableItem : HKEmergencyCardTableItem <HKMedicalIDEditorSwitchDelegate>
 {
-    UITableViewCell *_cell;
-    UISwitch *_switch;
+    HKMedicalIDEditorSwitchCell *_cell;
+    UITableView *_tableView;
 }
 
 - (void).cxx_destruct;
+@property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
 - (id)titleForFooter;
+- (id)footerTextViewString;
 - (id)titleForHeader;
 - (id)tableView:(id)arg1 cellForRowAtIndex:(long long)arg2;
 - (struct UIEdgeInsets)separatorInset;
-- (void)_switchSwitched:(id)arg1;
-- (id)_cell;
+- (void)switchWasChanged:(_Bool)arg1;
+- (id)_viewCellForTableView:(id)arg1;
+- (id)_editCell;
+- (_Bool)hasPresentableData;
 - (id)initInEditMode:(_Bool)arg1;
 
 @end

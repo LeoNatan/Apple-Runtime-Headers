@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_stillImageURLs;
     VideoAttributes *_remoteScreenAttributes;
     struct __CVPixelBufferPool *_bufferPool;
+    struct CGSize _bufferPoolResolution;
     struct __CVPixelBufferPool *_copyPool;
     struct OpaqueVTPixelTransferSession *_transferSession;
     struct OpaqueVTPixelTransferSession *_copyTransferSession;
@@ -36,6 +37,7 @@ __attribute__((visibility("hidden")))
     int _imageType;
     int videoPayload;
     struct __CFAllocator *_audioSampleBufferAllocator;
+    _Bool _enableLocalVideoRecording;
     int _videoCodec;
 }
 

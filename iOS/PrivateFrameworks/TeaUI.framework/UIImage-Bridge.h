@@ -7,7 +7,6 @@
 #import <UIKit/UIImage.h>
 
 @interface UIImage (Bridge)
-+ (id)ts_systemCloseButton;
 + (id)ts_xmarkForHUD;
 + (id)ts_xmarkCircle;
 + (id)ts_xmark;

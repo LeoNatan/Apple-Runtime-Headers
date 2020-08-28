@@ -11,6 +11,7 @@
     // Error parsing type: , name: titleLabel
     // Error parsing type: , name: subtitleLabel
     // Error parsing type: , name: messageLabel
+    // Error parsing type: , name: debugButton
 }
 
 - (void).cxx_destruct;

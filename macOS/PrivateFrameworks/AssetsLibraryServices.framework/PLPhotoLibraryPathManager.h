@@ -28,6 +28,8 @@
 + (void)throwMultiLibraryAPIMisuse;
 + (void)throwMultiLibraryAPIMisuseForLibraryPath:(id)arg1;
 - (void).cxx_destruct;
+- (BOOL)isValidRelocatedOriginalsDirName:(id)arg1;
+- (id)relocatedOriginalDirectoriesWithError:(id *)arg1;
 - (id)rebuidHistoryFilePath;
 - (id)sqliteErrorIndicatorFilePath;
 - (BOOL)createTimeMachineExclusionPathsWithError:(id *)arg1;

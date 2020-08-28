@@ -9,7 +9,7 @@
 #import <NewsCore/FCFeedElement-Protocol.h>
 #import <NewsCore/FCHeadlineProviding-Protocol.h>
 
-@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList, FCCoverArt, FCFeedPersonalizedItemScoreProfile, FCHeadlineExperimentalTitleMetadata, FCHeadlineThumbnail, FCIssue, FCTopStoriesStyleConfiguration, NSArray, NSData, NSDate, NSSet, NSString, NSURL;
+@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList, COMAPPLEFELDSPARPROTOCOLVersionedPersonalizationVector, FCArticleAudioTrack, FCCoverArt, FCFeedPersonalizedItemScoreProfile, FCHeadlineExperimentalTitleMetadata, FCHeadlineThumbnail, FCIssue, FCTopStoriesStyleConfiguration, NSArray, NSData, NSDate, NSSet, NSString, NSURL;
 @protocol FCChannelProviding, FCHeadlineStocksFields, FCNativeAdProviding;
 
 @interface FCHeadline : NSObject <FCHeadlineProviding, FCFeedElement>
@@ -35,6 +35,7 @@
     _Bool _issueOnly;
     _Bool _showBundleSoftPaywall;
     _Bool _useTransparentNavigationBar;
+    _Bool _hasAudioTrack;
     _Bool _bundlePaid;
     FCHeadlineThumbnail *_thumbnailLQ;
     FCHeadlineThumbnail *_thumbnail;
@@ -104,6 +105,11 @@
     NSData *_backingArticleRecordData;
     FCIssue *_masterIssue;
     long long _bodyTextLength;
+    FCArticleAudioTrack *_narrativeTrack;
+    FCArticleAudioTrack *_narrativeTrackSample;
+    NSString *_narrativeTrackTextRanges;
+    COMAPPLEFELDSPARPROTOCOLVersionedPersonalizationVector *_personalizationVector;
+    COMAPPLEFELDSPARPROTOCOLVersionedPersonalizationVector *_personalizationVectorAlt;
     NSString *_identifier;
     NSURL *_headlineURL;
     NSString *_titleCompact;
@@ -119,6 +125,12 @@
 @property(copy, nonatomic) NSString *titleCompact; // @synthesize titleCompact=_titleCompact;
 @property(copy, nonatomic) NSURL *headlineURL; // @synthesize headlineURL=_headlineURL;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly, nonatomic) _Bool hasAudioTrack; // @synthesize hasAudioTrack=_hasAudioTrack;
+@property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLVersionedPersonalizationVector *personalizationVectorAlt; // @synthesize personalizationVectorAlt=_personalizationVectorAlt;
+@property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLVersionedPersonalizationVector *personalizationVector; // @synthesize personalizationVector=_personalizationVector;
+@property(readonly, nonatomic) NSString *narrativeTrackTextRanges; // @synthesize narrativeTrackTextRanges=_narrativeTrackTextRanges;
+@property(readonly, nonatomic) FCArticleAudioTrack *narrativeTrackSample; // @synthesize narrativeTrackSample=_narrativeTrackSample;
+@property(readonly, nonatomic) FCArticleAudioTrack *narrativeTrack; // @synthesize narrativeTrack=_narrativeTrack;
 @property(readonly, nonatomic) _Bool useTransparentNavigationBar; // @synthesize useTransparentNavigationBar=_useTransparentNavigationBar;
 @property(readonly, nonatomic) long long bodyTextLength; // @synthesize bodyTextLength=_bodyTextLength;
 @property(readonly, nonatomic) _Bool showBundleSoftPaywall; // @synthesize showBundleSoftPaywall=_showBundleSoftPaywall;
@@ -209,6 +221,7 @@
 @property(retain, nonatomic) FCHeadlineThumbnail *thumbnail; // @synthesize thumbnail=_thumbnail;
 @property(retain, nonatomic) FCHeadlineThumbnail *thumbnailLQ; // @synthesize thumbnailLQ=_thumbnailLQ;
 @property(nonatomic) _Bool hasThumbnail; // @synthesize hasThumbnail=_hasThumbnail;
+@property(readonly, nonatomic) _Bool isFullTrackAvailableToAll;
 - (void)enumerateTopicCohortsWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic, getter=isExplicitContent) _Bool explicitContent;
 @property(readonly, nonatomic, getter=isFromBlockedStorefront) _Bool fromBlockedStorefront;

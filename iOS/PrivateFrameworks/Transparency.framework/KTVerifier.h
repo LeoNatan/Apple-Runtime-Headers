@@ -34,6 +34,7 @@
 - (void)forceApplicationKeysFetch:(CDUnknownBlockType)arg1;
 - (void)forceConfigUpdate:(CDUnknownBlockType)arg1;
 - (void)clearState:(CDUnknownBlockType)arg1;
+- (void)resetRequestToPending:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)forceValidateUUID:(id)arg1 uri:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (void)convertToSelfRequest:(id)arg1 serverDatas:(id)arg2 syncedDatas:(id)arg3 queryRequest:(id)arg4 queryResponse:(id)arg5 updateCompletionBlock:(CDUnknownBlockType)arg6;
 - (void)convertToSelfRequest:(id)arg1 serverDatas:(id)arg2 syncedDatas:(id)arg3 queryResponse:(id)arg4 updateCompletionBlock:(CDUnknownBlockType)arg5;

@@ -17,7 +17,9 @@
     NSArray *_recipientContactIDs;
     NSArray *_recipientEmailAddresses;
     NSArray *_recipientPhoneNumbers;
+    NSArray *_recipientDisplayNames;
     NSDictionary *_contactIdToHandleMapping;
+    NSDictionary *_handleToDisplayNameMapping;
     NSString *_reason;
     NSString *_reasonType;
 }
@@ -25,7 +27,9 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *reasonType; // @synthesize reasonType=_reasonType;
 @property(readonly, nonatomic) NSString *reason; // @synthesize reason=_reason;
+@property(readonly, nonatomic) NSDictionary *handleToDisplayNameMapping; // @synthesize handleToDisplayNameMapping=_handleToDisplayNameMapping;
 @property(readonly, nonatomic) NSDictionary *contactIdToHandleMapping; // @synthesize contactIdToHandleMapping=_contactIdToHandleMapping;
+@property(readonly, nonatomic) NSArray *recipientDisplayNames; // @synthesize recipientDisplayNames=_recipientDisplayNames;
 @property(readonly, nonatomic) NSArray *recipientPhoneNumbers; // @synthesize recipientPhoneNumbers=_recipientPhoneNumbers;
 @property(readonly, nonatomic) NSArray *recipientEmailAddresses; // @synthesize recipientEmailAddresses=_recipientEmailAddresses;
 @property(readonly, nonatomic) NSArray *recipientContactIDs; // @synthesize recipientContactIDs=_recipientContactIDs;
@@ -33,8 +37,10 @@
 @property(readonly, nonatomic) INImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) NSString *interactionRecipients; // @synthesize interactionRecipients=_interactionRecipients;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
+- (id)description;
 - (id)suggestionWithContactIDMapping:(id)arg1 phoneMapping:(id)arg2 emailMapping:(id)arg3 contactStore:(id)arg4 contactKeysToFetch:(id)arg5;
-- (id)initWithBundleID:(id)arg1 interactionRecipients:(id)arg2 image:(id)arg3 groupName:(id)arg4 recipientContactIDs:(id)arg5 recipientEmailAddresses:(id)arg6 recipientPhoneNumbers:(id)arg7 contactIdToHandleMapping:(id)arg8 reason:(id)arg9 reasonType:(id)arg10;
+- (id)initWithBundleID:(id)arg1 interactionRecipients:(id)arg2 image:(id)arg3 groupName:(id)arg4 recipientContactIDs:(id)arg5 recipientEmailAddresses:(id)arg6 recipientPhoneNumbers:(id)arg7 recipientDisplayNames:(id)arg8 contactIdToHandleMapping:(id)arg9 handleToDisplayNameMapping:(id)arg10 reason:(id)arg11 reasonType:(id)arg12;
+- (id)initWithBundleID:(id)arg1 interactionRecipients:(id)arg2 image:(id)arg3 groupName:(id)arg4 recipientContactIDs:(id)arg5 recipientEmailAddresses:(id)arg6 recipientPhoneNumbers:(id)arg7 recipientDisplayNames:(id)arg8 contactIdToHandleMapping:(id)arg9 reason:(id)arg10 reasonType:(id)arg11;
 
 @end
 

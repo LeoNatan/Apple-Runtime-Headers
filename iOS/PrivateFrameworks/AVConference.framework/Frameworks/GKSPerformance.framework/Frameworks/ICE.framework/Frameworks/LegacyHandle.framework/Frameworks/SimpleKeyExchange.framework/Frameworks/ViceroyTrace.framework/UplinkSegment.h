@@ -6,12 +6,21 @@
 
 #import <ViceroyTrace/MultiwaySegment.h>
 
+@class NSMutableDictionary;
+
 __attribute__((visibility("hidden")))
 @interface UplinkSegment : MultiwaySegment
 {
+    NSMutableDictionary *_streamQualityAggregator;
 }
 
 - (id)segmentReport;
+- (void)collectStreamQualityAggregator:(id)arg1;
+- (id)calculateFramerate:(id)arg1 forKey:(id)arg2;
+- (id)calculateBitrate:(id)arg1 sumKey:(id)arg2 counterKey:(id)arg3;
+- (void)processVideoTransmitterStats:(id)arg1;
+- (void)processFramerateEvent:(id)arg1 forMetrics:(id)arg2 withQuality:(id)arg3 sumKey:(id)arg4;
+- (void)processBitrateEvent:(id)arg1 forMetrics:(id)arg2 withQuality:(id)arg3 sumKey:(id)arg4 counterKey:(id)arg5;
 - (void)dealloc;
 - (id)initWithSegmentName:(id)arg1 previousSegmentName:(id)arg2 delegate:(id)arg3;
 

@@ -8,16 +8,19 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class NSMutableArray;
+@class NSMutableArray, NSString;
 
 @interface NTPBTodayWidgetExposure : PBCodable <NSCopying>
 {
+    long long _contentFetchDate;
     int _widgetAppearanceType;
     int _widgetArticleCount;
     int _widgetHeadlineExposureCount;
+    NSString *_widgetIdentifier;
     NSMutableArray *_widgetPersonalizationFeatureCTRPairs;
     NSMutableArray *_widgetSectionsArticleCountPairs;
     struct {
+        unsigned int contentFetchDate:1;
         unsigned int widgetAppearanceType:1;
         unsigned int widgetArticleCount:1;
         unsigned int widgetHeadlineExposureCount:1;
@@ -27,6 +30,8 @@
 + (Class)widgetPersonalizationFeatureCTRPairType;
 + (Class)widgetSectionsArticleCountPairType;
 - (void).cxx_destruct;
+@property(nonatomic) long long contentFetchDate; // @synthesize contentFetchDate=_contentFetchDate;
+@property(retain, nonatomic) NSString *widgetIdentifier; // @synthesize widgetIdentifier=_widgetIdentifier;
 @property(retain, nonatomic) NSMutableArray *widgetPersonalizationFeatureCTRPairs; // @synthesize widgetPersonalizationFeatureCTRPairs=_widgetPersonalizationFeatureCTRPairs;
 @property(retain, nonatomic) NSMutableArray *widgetSectionsArticleCountPairs; // @synthesize widgetSectionsArticleCountPairs=_widgetSectionsArticleCountPairs;
 @property(nonatomic) int widgetHeadlineExposureCount; // @synthesize widgetHeadlineExposureCount=_widgetHeadlineExposureCount;
@@ -39,6 +44,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasContentFetchDate;
+@property(readonly, nonatomic) _Bool hasWidgetIdentifier;
 @property(nonatomic) _Bool hasWidgetAppearanceType;
 @property(nonatomic) int widgetAppearanceType; // @synthesize widgetAppearanceType=_widgetAppearanceType;
 - (id)widgetPersonalizationFeatureCTRPairAtIndex:(unsigned long long)arg1;

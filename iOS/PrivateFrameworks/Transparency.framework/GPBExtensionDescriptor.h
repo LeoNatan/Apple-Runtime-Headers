@@ -15,13 +15,12 @@ __attribute__((visibility("hidden")))
 {
     struct GPBExtensionDescription *description_;
     CDUnion_88782d86 defaultValue_;
-    Class containingMessageClass_;
 }
 
-@property(readonly, nonatomic) Class containingMessageClass; // @synthesize containingMessageClass=containingMessageClass_;
 - (long long)compareByFieldNumber:(id)arg1;
 @property(readonly, nonatomic) id defaultValue;
 @property(readonly, nonatomic) GPBEnumDescriptor *enumDescriptor;
+@property(readonly, nonatomic) Class containingMessageClass;
 @property(readonly, nonatomic) Class msgClass;
 @property(readonly, nonatomic, getter=isPackable) _Bool packable;
 @property(readonly, nonatomic, getter=isRepeated) _Bool repeated;
@@ -34,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (id)initWithExtensionDescription:(struct GPBExtensionDescription *)arg1;
+- (id)initWithExtensionDescription:(struct GPBExtensionDescription *)arg1 usesClassRefs:(_Bool)arg2;
 
 @end
 

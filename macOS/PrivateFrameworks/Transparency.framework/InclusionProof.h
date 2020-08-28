@@ -15,7 +15,7 @@
 }
 
 + (id)descriptor;
-- (BOOL)verifyWithError:(id *)arg1;
+- (unsigned long long)verifyWithError:(id *)arg1;
 - (id)mapLeafWithError:(id *)arg1;
 @property(retain) KTInclusionProofVerifier *verifier;
 @property(retain) TransparencyManagedDataStore *dataStore;

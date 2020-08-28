@@ -7,6 +7,7 @@
 #import <NewsUI2/TSAppDelegate.h>
 
 @interface TSAppDelegate (NewsUI22)
-- (void)application:(id)arg1 performFetchWithCompletionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)application:(id)arg1 continueUserActivity:(id)arg2 restorationHandler:(CDUnknownBlockType)arg3;
+- (_Bool)application:(id)arg1 willContinueUserActivityWithType:(id)arg2;
 @end
 

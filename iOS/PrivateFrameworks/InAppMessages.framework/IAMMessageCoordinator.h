@@ -17,6 +17,7 @@
     ICInAppMessageManager *_iTunesCloudIAMManager;
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSDictionary *_messageEntriesByIdentifier;
+    NSDictionary *_allPreviousPriorityMessageEntriesByIdentifier;
     NSMutableDictionary *_metadataEntriesByIdentifier;
     id <IAMApplicationContextProvider> _applicationContext;
     NSDictionary *_messageEntriesByMonitoredKeys;

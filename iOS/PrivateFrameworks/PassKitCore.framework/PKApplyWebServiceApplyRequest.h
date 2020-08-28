@@ -6,11 +6,10 @@
 
 #import <PassKitCore/PKApplyWebServiceRequest.h>
 
-@class NSArray, NSDecimalNumber, NSString, NSURL;
+@class NSArray, NSString, NSURL, PKPaymentInstallmentConfiguration;
 
 @interface PKApplyWebServiceApplyRequest : PKApplyWebServiceRequest
 {
-    _Bool _isInstallment;
     NSString *_applicationIdentifier;
     unsigned long long _featureIdentifier;
     NSArray *_certificates;
@@ -18,15 +17,12 @@
     NSString *_coreIDVNextStepToken;
     NSString *_previousContextIdentifier;
     NSString *_actionIdentifier;
-    NSDecimalNumber *_installmentAmount;
-    NSString *_installmentCurrencyCode;
+    PKPaymentInstallmentConfiguration *_installmentConfiguration;
 }
 
 + (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
-@property(copy, nonatomic) NSString *installmentCurrencyCode; // @synthesize installmentCurrencyCode=_installmentCurrencyCode;
-@property(retain, nonatomic) NSDecimalNumber *installmentAmount; // @synthesize installmentAmount=_installmentAmount;
-@property(nonatomic) _Bool isInstallment; // @synthesize isInstallment=_isInstallment;
+@property(retain, nonatomic) PKPaymentInstallmentConfiguration *installmentConfiguration; // @synthesize installmentConfiguration=_installmentConfiguration;
 @property(copy, nonatomic) NSString *actionIdentifier; // @synthesize actionIdentifier=_actionIdentifier;
 @property(copy, nonatomic) NSString *previousContextIdentifier; // @synthesize previousContextIdentifier=_previousContextIdentifier;
 @property(copy, nonatomic) NSString *coreIDVNextStepToken; // @synthesize coreIDVNextStepToken=_coreIDVNextStepToken;

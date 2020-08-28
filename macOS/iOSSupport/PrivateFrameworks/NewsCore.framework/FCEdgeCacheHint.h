@@ -16,15 +16,15 @@
     NSString *_cacheControlKey;
 }
 
++ (id)edgeCacheHintForLocalNews;
++ (id)edgeCacheHintForAudioContent;
 + (id)edgeCacheHintForMagazineContent;
 + (id)edgeCacheHintForSpotlight;
 + (id)edgeCacheHintForFeaturedArticles;
-+ (id)edgeCacheHintForVideos;
 + (id)edgeCacheHintForToday;
 + (id)edgeCacheHintForEditorial;
-+ (id)edgeCacheHintForCoverArticles;
 + (id)edgeCacheHintForTrending;
-+ (id)edgeCacheHintForBreaking;
++ (id)edgeCacheHintForForYouConfig;
 + (id)edgeCacheHintForTopStories;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *cacheControlKey; // @synthesize cacheControlKey=_cacheControlKey;

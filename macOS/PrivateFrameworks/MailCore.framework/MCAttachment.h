@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class ECAngleBracketIDHash, MCFileWrapper, NSData, NSDate, NSError, NSImage, NSNumber, NSProgress, NSString, NSURL;
+@class ECAngleBracketIDHash, EFPathComponent, MCFileWrapper, NSData, NSDate, NSError, NSImage, NSNumber, NSProgress, NSString, NSURL;
 @protocol MCAttachmentDataSource;
 
 @interface MCAttachment : NSObject
@@ -20,6 +20,7 @@
     BOOL _isAutoArchiveAttachment;
     NSURL *_remoteURL;
     struct CGSize _resizedImageSize;
+    EFPathComponent *_filename;
     BOOL _isMailDropImageArchive;
     BOOL _isMailDropImageThumbnail;
     BOOL _isMailDropIndividualImage;
@@ -38,7 +39,6 @@
     NSString *_cloudKitRecordName;
     NSURL *_downloadURL;
     NSString *_filenameForSaving;
-    NSString *_filename;
     NSNumber *_filePermissions;
     NSNumber *_fileSize;
     NSString *_mimePartNumber;
@@ -72,7 +72,6 @@
 @property(readonly, nonatomic) BOOL isMessageExternalBodyWithURL; // @synthesize isMessageExternalBodyWithURL=_isMessageExternalBodyWithURL;
 @property(retain, nonatomic) NSNumber *fileSize; // @synthesize fileSize=_fileSize;
 @property(retain, nonatomic) NSNumber *filePermissions; // @synthesize filePermissions=_filePermissions;
-@property(copy, nonatomic) NSString *filename; // @synthesize filename=_filename;
 @property(copy, nonatomic) NSString *filenameForSaving; // @synthesize filenameForSaving=_filenameForSaving;
 @property(retain, nonatomic) NSURL *downloadURL; // @synthesize downloadURL=_downloadURL;
 @property(nonatomic) BOOL isMailDropIndividualImage; // @synthesize isMailDropIndividualImage=_isMailDropIndividualImage;
@@ -122,6 +121,7 @@
 - (void)revertToOriginalData;
 - (void)setResizedData:(id)arg1 imageSize:(struct CGSize)arg2;
 @property(readonly, copy, nonatomic) ECAngleBracketIDHash *contentIDHash;
+@property(copy, nonatomic) NSString *filename;
 @property(retain, nonatomic) NSURL *remoteURL;
 - (id)_cleanImageMetadataFromData:(id)arg1;
 - (id)_privateImageMetadataDescriptors;

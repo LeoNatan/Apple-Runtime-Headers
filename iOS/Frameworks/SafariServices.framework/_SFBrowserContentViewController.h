@@ -108,6 +108,7 @@
     _Bool _keepBarsMinimized;
     UIPanGestureRecognizer *_hideNavigationBarGestureRecognizer;
     NSError *_lastLoadErrorForFormatMenu;
+    long long _concurrentNavigationActionPolicyDecisions;
     _Bool _loadWasUserDriven;
     _Bool _webViewIsInFullScreen;
     CDUnknownBlockType _pendingNavigationActionDueToExternalSchemePromptHandler;
@@ -352,12 +353,13 @@
 - (void)webViewController:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
 - (void)webViewController:(id)arg1 decidePolicyForNavigationResponse:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (id)_quickLookDocumentForDownload:(id)arg1;
+- (void)_internalWebViewController:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (void)webViewController:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (id)resultOfLoadingRequest:(id)arg1 inMainFrame:(_Bool)arg2 disallowRedirectToExternalApps:(_Bool)arg3;
 - (void)_didResolveDestinationURL:(id)arg1 pendingAppLinkCheck:(_Bool)arg2;
 - (void)_redirectToExternalNavigationResult:(id)arg1 fromOriginalRequest:(id)arg2 promptPolicy:(long long)arg3 isMainFrame:(_Bool)arg4 userAction:(id)arg5;
 - (void)_queueAlertForRedirectToExternalNavigationResult:(id)arg1 fromOriginalRequest:(id)arg2 isMainFrame:(_Bool)arg3 promptPolicy:(long long)arg4 userAction:(id)arg5;
-- (void)_completeRedirectToExternalNavigationResult:(id)arg1 fromOriginalRequest:(id)arg2 userCancelled:(_Bool)arg3;
+- (void)_completeRedirectToExternalNavigationResult:(id)arg1 fromOriginalRequest:(id)arg2 dialogResult:(long long)arg3;
 - (void)_cleanUpAfterRedirectToExternalApp;
 - (_Bool)_redirectToHostAppWithNavigationResult:(id)arg1 options:(id)arg2;
 - (void)webViewControllerUpdateNavigationBar:(id)arg1;
@@ -464,6 +466,7 @@
 - (void)_setUpReloadOptionsControllerIfNeeded;
 - (void)_goForward;
 - (void)_goBack;
+- (void)_willBeginUserInitiatedNavigation;
 - (void)_goBackToOwnerWebView;
 - (_Bool)_shouldGoBackToOwnerWebView;
 - (void)_setUpFindOnPageViewIfNeeded;

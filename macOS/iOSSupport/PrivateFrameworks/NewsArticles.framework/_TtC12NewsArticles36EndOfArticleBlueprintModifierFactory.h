@@ -9,12 +9,9 @@
 @interface _TtC12NewsArticles36EndOfArticleBlueprintModifierFactory : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: options
-    // Error parsing type: , name: bundleSubscriptionManager
-    // Error parsing type: , name: paidBundleConfigManager
     // Error parsing type: , name: feedContext
     // Error parsing type: , name: featureAvailability
-    // Error parsing type: , name: paidAccessChecker
-    // Error parsing type: , name: readingList
+    // Error parsing type: , name: sectionFactory
 }
 
 @end

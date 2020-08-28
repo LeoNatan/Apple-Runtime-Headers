@@ -171,6 +171,8 @@
 @property(nonatomic, readonly) NSString *name;
 
 @optional
+- (NSString *)_iso3166SubdivisionCode;
+- (NSString *)_iso3166CountryCode;
 - (id <GEOMapItem>)_mapItemBySettingIsTransitDisplayFeature:(_Bool)arg1;
 
 // Remaining properties
@@ -225,6 +227,8 @@
 @property(nonatomic, readonly) _Bool inLinkedPlaceRelationship;
 @property(nonatomic, readonly) _Bool isStandAloneBrand;
 @property(nonatomic, readonly) _Bool isTransitDisplayFeature;
+@property(nonatomic, readonly) NSString *iso3166CountryCode;
+@property(nonatomic, readonly) NSString *iso3166SubdivisionCode;
 @property(nonatomic, readonly) NSArray *linkedServices;
 @property(nonatomic, readonly) NSString *mapsCategoryId;
 @property(nonatomic, readonly) GEOMessageLink *messageLink;

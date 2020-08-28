@@ -9,6 +9,6 @@
 @class NSString, SXLayoutOptions, UITraitCollection;
 
 @protocol SXLayoutOptionsFactory <NSObject>
-- (SXLayoutOptions *)createLayoutOptionsWithViewportSize:(struct CGSize)arg1 safeAreaInsets:(struct UIEdgeInsets)arg2 traitCollection:(UITraitCollection *)arg3 bundleSubscriptionStatus:(long long)arg4 channelSubscriptionStatus:(long long)arg5 contentSizeCategory:(NSString *)arg6 testing:(_Bool)arg7 viewingLocation:(unsigned long long)arg8 contentScaleFactor:(double)arg9;
+- (SXLayoutOptions *)createLayoutOptionsWithViewportSize:(struct CGSize)arg1 safeAreaInsets:(struct UIEdgeInsets)arg2 traitCollection:(UITraitCollection *)arg3 bundleSubscriptionStatus:(long long)arg4 channelSubscriptionStatus:(long long)arg5 contentSizeCategory:(NSString *)arg6 testing:(_Bool)arg7 viewingLocation:(unsigned long long)arg8 contentScaleFactor:(double)arg9 newsletterSubscriptionStatus:(unsigned long long)arg10;
 @end
 

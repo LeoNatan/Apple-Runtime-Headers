@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSData, NSDictionary, NSString, TransparencyTrustedKeyStore, VRFPublicKey;
+@class NSArray, NSData, NSDate, NSDictionary, NSString, TransparencyTrustedKeyStore, VRFPublicKey;
 
 @interface KTApplicationPublicKeyStore : NSObject
 {
@@ -16,6 +16,7 @@
     TransparencyTrustedKeyStore *_tltKeyStore;
     unsigned long long _patLogBeginningMs;
     unsigned long long _tltLogBeginningMs;
+    NSDate *_receiptTime;
     NSString *_application;
     NSData *_patConfigProof;
     NSDictionary *_trustedAppSigningKeys;
@@ -34,6 +35,7 @@
 @property int vrfType; // @synthesize vrfType=_vrfType;
 @property(retain) NSData *patConfigProof; // @synthesize patConfigProof=_patConfigProof;
 @property(retain) NSString *application; // @synthesize application=_application;
+@property(retain) NSDate *receiptTime; // @synthesize receiptTime=_receiptTime;
 @property unsigned long long tltLogBeginningMs; // @synthesize tltLogBeginningMs=_tltLogBeginningMs;
 @property unsigned long long patLogBeginningMs; // @synthesize patLogBeginningMs=_patLogBeginningMs;
 @property(retain) TransparencyTrustedKeyStore *tltKeyStore; // @synthesize tltKeyStore=_tltKeyStore;
@@ -43,7 +45,8 @@
 - (id)initWithApplication:(id)arg1 dataStore:(id)arg2 diskState:(id)arg3 error:(id *)arg4;
 - (_Bool)processDiskState:(id)arg1 dataStore:(id)arg2 error:(id *)arg3;
 - (id)initWithApplication:(id)arg1 dataStore:(id)arg2 response:(id)arg3 error:(id *)arg4;
-- (void)startLogBeginTimesSampler;
+@property(readonly) _Bool inResetWindow;
+- (void)startKeyStoreStateSampler;
 - (_Bool)processPublicKeysResponse:(id)arg1 dataStore:(id)arg2 error:(id *)arg3;
 - (_Bool)processKeyData:(id)arg1 tltLeafs:(id)arg2 intermediates:(id)arg3 patConfigProof:(id)arg4 dataStore:(id)arg5 saveTreeHeads:(_Bool)arg6 error:(id *)arg7;
 - (_Bool)detectEpochChangeAndResetData:(unsigned long long)arg1 patLogBeginningMs:(unsigned long long)arg2 dataStore:(id)arg3 error:(id *)arg4;

@@ -9,7 +9,7 @@
 @interface _TtC7NewsUI230FollowingDislikedLayoutBuilder : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: titleViewLayoutAttributesFactory
-    // Error parsing type: , name: followingRowViewLayoutAttributesFactory
+    // Error parsing type: , name: tagViewLayoutAttributesFactory
 }
 
 @end

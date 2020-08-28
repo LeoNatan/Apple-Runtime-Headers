@@ -11,6 +11,8 @@
     // Error parsing type: , name: group
     // Error parsing type: , name: bundleSubscriptionManager
     // Error parsing type: , name: paidBundleConfigManager
+    // Error parsing type: , name: featureAvailability
+    // Error parsing type: , name: paidAccessChecker
 }
 
 @end

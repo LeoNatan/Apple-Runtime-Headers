@@ -11,6 +11,8 @@
 @interface MCArchiveFileWrapper : MCFileWrapper
 {
     MCFileWrapper *_realFileWrapper;
+    NSURL *_temporaryDirectory;
+    struct os_unfair_lock_s _lock;
     NSData *_archiveData;
     long long _archiveType;
     NSURL *_compressedFileURL;
@@ -41,7 +43,9 @@
 - (BOOL)isRegularFile;
 - (unsigned long long)approximateSizeAllowingDiskIO:(BOOL)arg1;
 - (BOOL)writeToURL:(id)arg1 options:(unsigned long long)arg2 originalContentsURL:(id)arg3 error:(id *)arg4;
+- (void)_cleanupTemporaryDirectory;
 - (id)_temporaryDirectoryURL;
+- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSerializedRepresentation:(id)arg1;

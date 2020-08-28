@@ -11,7 +11,6 @@
 @interface PKTransitBalanceModel : NSObject
 {
     NSDictionary *_balancesByID;
-    NSMutableArray *_commutePlanBalanceFields;
     PKTransitPassProperties *_transitProperties;
     PKPaymentPass *_pass;
     NSArray *_displayableBalances;
@@ -37,7 +36,6 @@
 - (void)setDynamicBalances:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (void)_addCommutePlanBalanceFieldsToCommutePlanBalanceFields;
 - (id)initWithPass:(id)arg1;
 
 @end

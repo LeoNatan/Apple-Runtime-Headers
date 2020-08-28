@@ -186,6 +186,7 @@
 - (id)namesOfSelectedOptionsForCustomEditModes;
 - (id)nameOfSelectedOptionForCustomEditMode:(long long)arg1;
 - (id)selectedOptionsForCustomEditModes;
+- (id)defaultOptionForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (void)selectOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
 - (id)selectedOptionForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (id)customEditModes;

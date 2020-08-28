@@ -9,7 +9,8 @@
 @interface _TtC7NewsUI235FollowingNotificationsLayoutBuilder : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: titleViewLayoutAttributesFactory
-    // Error parsing type: , name: followingRowViewLayoutAttributesFactory
+    // Error parsing type: , name: footerViewLayoutAttributesFactory
+    // Error parsing type: , name: tagViewLayoutAttributesFactory
 }
 
 @end

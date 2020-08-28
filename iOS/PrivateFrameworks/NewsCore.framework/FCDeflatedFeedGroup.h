@@ -9,13 +9,12 @@
 #import <NewsCore/FCFeedElement-Protocol.h>
 #import <NewsCore/FCFeedGroupOutlining-Protocol.h>
 
-@class FCColor, FCColorGradient, FCFeedEdition, FCSharedStringIndex, NSArray, NSDate, NSString, NTPBDiscoverMoreVideosInfo, NTPBFeedViewportGroup;
+@class FCColor, FCFeedEdition, FCSharedStringIndex, NSArray, NSDate, NSString, NTPBFeedViewportGroup;
 @protocol FCCardStyleProviding, FCForYouBridgedFeedGroup;
 
 @interface FCDeflatedFeedGroup : NSObject <FCFeedElement, FCFeedGroupOutlining>
 {
     NSArray *_headlines;
-    NSArray *_videoPlaylistHeadlines;
     NTPBFeedViewportGroup *_pbGroup;
     FCSharedStringIndex *_sharedStrings;
 }
@@ -23,7 +22,6 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) FCSharedStringIndex *sharedStrings; // @synthesize sharedStrings=_sharedStrings;
 @property(readonly, nonatomic) NTPBFeedViewportGroup *pbGroup; // @synthesize pbGroup=_pbGroup;
-@property(readonly, copy, nonatomic) NSArray *videoPlaylistHeadlines; // @synthesize videoPlaylistHeadlines=_videoPlaylistHeadlines;
 @property(readonly, copy, nonatomic) NSArray *headlines; // @synthesize headlines=_headlines;
 @property(readonly, nonatomic) _Bool usesPlaceholderHeadlines;
 @property(readonly, nonatomic) id <FCForYouBridgedFeedGroup> bridgedGroup;
@@ -35,9 +33,6 @@
 @property(readonly, nonatomic) NSDate *creationDate;
 @property(readonly, copy, nonatomic) id <FCCardStyleProviding> darkCardStyle;
 @property(readonly, copy, nonatomic) id <FCCardStyleProviding> cardStyle;
-@property(readonly, copy, nonatomic) NTPBDiscoverMoreVideosInfo *discoverMoreVideosInfo;
-@property(readonly, copy, nonatomic) FCColorGradient *darkStyleBackgroundGradient;
-@property(readonly, copy, nonatomic) FCColorGradient *backgroundGradient;
 @property(readonly, copy, nonatomic) FCColor *darkStyleTitleColor;
 @property(readonly, copy, nonatomic) FCColor *titleColor;
 @property(readonly, copy, nonatomic) NSString *ctaText;

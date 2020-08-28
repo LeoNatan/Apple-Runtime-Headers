@@ -23,7 +23,6 @@
 + (id)nss_NewsURLForIssueID:(id)arg1;
 + (id)nss_NewsURLForArticleID:(id)arg1;
 + (id)nss_NewsURLForWebLinkURL:(id)arg1;
-+ (id)nss_NewsURLForWidgetVideoPlaylist;
 - (id)_nss_valueForQueryParameterWithKey:(id)arg1;
 - (id)_nss_URLByAppendingQueryItem:(id)arg1;
 - (id)nss_campaignID;
@@ -34,7 +33,6 @@
 - (BOOL)nss_hasRefreshParameter;
 - (BOOL)nss_isNewsArticleVideoURL;
 - (BOOL)nss_isNewsArticleURL;
-- (BOOL)nss_isNewsWidgetVideoPlaylist;
 - (BOOL)nss_isNewsURL;
 @end
 

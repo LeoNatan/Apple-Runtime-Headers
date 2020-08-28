@@ -8,6 +8,8 @@
 
 @interface _TtC7NewsUI220TodayFeedPoolService : _TtCs12_SwiftObject
 {
+    // Error parsing type: , name: cloudContext
+    // Error parsing type: , name: magazineFeedServiceConfigFetcher
 }
 
 @end

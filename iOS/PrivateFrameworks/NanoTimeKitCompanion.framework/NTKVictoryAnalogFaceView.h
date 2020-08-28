@@ -9,7 +9,7 @@
 #import <NanoTimeKitCompanion/NTKUtilityComplicationFactoryDelegate-Protocol.h>
 #import <NanoTimeKitCompanion/NTKVictoryAnalogBackgroundViewDelegate-Protocol.h>
 
-@class NSString, NTKRoundedCornerOverlayView, NTKUtilityComplicationFactory, NTKVictoryAnalogBackgroundView;
+@class NSString, NTKRoundedCornerOverlayView, NTKUtilityComplicationFactory, NTKVictoryAnalogBackgroundView, NTKVictoryColorEditOption;
 
 @interface NTKVictoryAnalogFaceView : NTKAnalogFaceView <NTKVictoryAnalogBackgroundViewDelegate, NTKUtilityComplicationFactoryDelegate>
 {
@@ -17,6 +17,7 @@
     NTKVictoryAnalogBackgroundView *_backgroundView;
     NTKRoundedCornerOverlayView *_cornerView;
     _Bool _isFullBleed;
+    NTKVictoryColorEditOption *_pride2020SensitiveShroudColor;
 }
 
 + (id)_swatchImageForColorOption:(id)arg1 forDevice:(id)arg2;
@@ -46,6 +47,8 @@
 - (void)_applyComplicationViewColor:(id)arg1;
 - (void)_applyTransitionFraction:(double)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(long long)arg4 slot:(id)arg5;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
+- (unsigned long long)_filterColorForUISensitivityFromColor:(unsigned long long)arg1;
+- (_Bool)_shouldHideSensitiveUI;
 - (void)_endScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_startScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_layoutTimeTravelCaptionView:(id)arg1;

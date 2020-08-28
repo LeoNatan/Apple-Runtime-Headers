@@ -34,8 +34,10 @@ __attribute__((visibility("hidden")))
     BOOL _useCredentials;
     NSURL *_signingServerURL;
     NSURL *_userProvidedBundleMountPathURL;
+    NSURL *_trustCacheURL;
 }
 
+@property(retain, nonatomic) NSURL *trustCacheURL; // @synthesize trustCacheURL=_trustCacheURL;
 @property(retain, nonatomic) NSURL *userProvidedBundleMountPathURL; // @synthesize userProvidedBundleMountPathURL=_userProvidedBundleMountPathURL;
 @property(retain, nonatomic) NSURL *signingServerURL; // @synthesize signingServerURL=_signingServerURL;
 @property(nonatomic) BOOL useCredentials; // @synthesize useCredentials=_useCredentials;
@@ -60,9 +62,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) OS_remote_device *remoteDevice; // @synthesize remoteDevice=_remoteDevice;
 @property(nonatomic) struct _AMDevice *device; // @synthesize device=_device;
 - (int)mountImage:(id *)arg1;
-- (int)mountImageBridgeOS:(id)arg1 serverTicket:(id)arg2 imageDigest:(id)arg3 error:(id *)arg4;
-- (int)mountImage:(id)arg1 serverTicket:(id)arg2 imageDigest:(id)arg3 error:(id *)arg4;
-- (BOOL)initializeBridgeDeviceAttributes:(id *)arg1;
+- (int)mountRemoteImage:(id)arg1 serverTicket:(id)arg2 imageDigest:(id)arg3 trustCacheURL:(id)arg4 error:(id *)arg5;
+- (int)mountImage:(id)arg1 serverTicket:(id)arg2 imageDigest:(id)arg3 trustCacheURL:(id)arg4 error:(id *)arg5;
+- (BOOL)initializeRemoteDeviceAttributes:(id *)arg1;
 - (BOOL)initializeDeviceAttributes:(id *)arg1;
 - (BOOL)initializeImageProperties:(id *)arg1;
 - (id)digestFile:(id)arg1 digestLength:(unsigned int)arg2 error:(id *)arg3;

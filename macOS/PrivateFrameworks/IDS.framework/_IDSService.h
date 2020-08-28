@@ -81,7 +81,8 @@
 - (BOOL)sendMessage:(id)arg1 fromAccount:(id)arg2 toDestinations:(id)arg3 priority:(long long)arg4 options:(id)arg5 identifier:(id *)arg6 error:(id *)arg7;
 - (BOOL)cancelOpportunisticDataWithIdentifier:(id)arg1 error:(id *)arg2;
 - (BOOL)sendOpportunisticData:(id)arg1 options:(id)arg2 identifier:(id)arg3 error:(id *)arg4;
-- (id)_sendingAccountForAccount:(id)arg1 destination:(id)arg2;
+- (BOOL)_canAccount:(id)arg1 sendWithFromID:(id)arg2;
+- (id)_sendingAccountForAccount:(id)arg1 destination:(id)arg2 fromID:(id)arg3;
 - (id)_sendingAccountForAccount:(id)arg1;
 - (BOOL)canSendMessageWithAccount:(id)arg1 toDestination:(id)arg2;
 - (SEL)protobufActionForType:(unsigned short)arg1 isResponse:(BOOL)arg2;

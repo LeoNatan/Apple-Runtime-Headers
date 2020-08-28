@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <RemoteTextInput/NSCopying-Protocol.h>
 #import <RemoteTextInput/NSSecureCoding-Protocol.h>
 
 @class NSAttributedString, NSMutableDictionary, TIDocumentState;
 
-@interface RTIDocumentState : NSObject <NSSecureCoding>
+@interface RTIDocumentState : NSObject <NSSecureCoding, NSCopying>
 {
     TIDocumentState *_documentState;
     NSAttributedString *_textCheckingAnnotatedString;
@@ -38,6 +39,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end
 

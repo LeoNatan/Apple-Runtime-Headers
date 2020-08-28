@@ -10,6 +10,7 @@
 
 @interface UITableView (Bridge)
 + (long long)ts_bridgedAnimationForAnimation:(unsigned long long)arg1;
+- (void)deferWhenTouchingWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) id <TSSwipeActionControllerType> ts_swipeActionController;
 @end
 

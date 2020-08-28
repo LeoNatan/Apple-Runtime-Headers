@@ -15,6 +15,7 @@
 @interface PKSubcredentialInvitationAcceptedViewController : PKExplanationViewController <PKSubcredentialInvitationFlowControllerOperation, PKViewControllerPreflightable>
 {
     PKHeroCardExplainationHeaderView *_heroCardView;
+    _Bool _isPassExpress;
     PKSubcredentialInvitationFlowControllerContext *_provisioningContext;
     id <PKSubcredentialInvitationFlowControllerProtocol> _flowController;
 }

@@ -9,11 +9,10 @@
 #import <PassKitUI/PKSubcredentialPairingFlowControllerProtocol-Protocol.h>
 
 @class NSString;
-@protocol OS_dispatch_queue, PKPaymentSetupViewControllerDelegate, PKSubcredentialProvisioningFlowControllerDelegate;
+@protocol PKPaymentSetupViewControllerDelegate, PKSubcredentialProvisioningFlowControllerDelegate;
 
 @interface PKSubcredentialPairingFlowController : NSObject <PKSubcredentialPairingFlowControllerProtocol>
 {
-    NSObject<OS_dispatch_queue> *_queue;
     id <PKSubcredentialProvisioningFlowControllerDelegate> _delegate;
     id <PKPaymentSetupViewControllerDelegate> _setupDelegate;
 }
@@ -36,7 +35,7 @@
 - (id)nextQueuedProvisioningViewControllerFromProvisioningOperation:(id)arg1;
 - (void)nextViewControllerFromHeroViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)nextViewControllerFromProvisioningOperation:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (id)initWithDelegate:(id)arg1 queue:(id)arg2;
+- (id)initWithDelegate:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

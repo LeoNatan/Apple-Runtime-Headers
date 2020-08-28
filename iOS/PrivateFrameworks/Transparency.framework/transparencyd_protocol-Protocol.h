@@ -31,6 +31,7 @@
 - (void)forceApplicationKeysDownload:(NSString *)arg1 block:(void (^)(NSError *))arg2;
 - (void)forceApplicationKeysFetch:(NSString *)arg1 block:(void (^)(NSData *, NSError *))arg2;
 - (void)forceConfigUpdate:(void (^)(NSError *))arg1;
+- (void)resetRequestToPending:(NSUUID *)arg1 block:(void (^)(NSError *))arg2;
 - (void)forceValidateUUID:(NSUUID *)arg1 uri:(NSString *)arg2 block:(void (^)(unsigned long long, NSError *))arg3;
 - (void)convertToSelfRequest:(NSUUID *)arg1 serverDatas:(NSArray *)arg2 syncedDatas:(NSArray *)arg3 queryRequest:(NSData *)arg4 queryResponse:(NSData *)arg5 updateCompletionBlock:(void (^)(NSUUID *, NSError *))arg6;
 - (void)validateEnrollmentUriResult:(NSString *)arg1 uuid:(NSUUID *)arg2 completionBlock:(void (^)(NSString *, unsigned long long, KTTransparentData *, NSError *))arg3;

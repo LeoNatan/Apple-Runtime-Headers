@@ -9,19 +9,21 @@
 #import <PassKitCore/PKAppletSubcredentialPairingSessionDelegate-Protocol.h>
 #import <PassKitCore/PKSubcredentialProvisioningOperationDelegate-Protocol.h>
 
-@class NSString, PKAppletSubcredential, PKAssertion, PKPaymentPass, PKSubcredentialProvisioningConfiguration, PKSubcredentialProvisioningOperation, PKSubcredentialProvisioningTransitionTable;
+@class NSString, PKAppletSubcredential, PKAssertion, PKPaymentPass, PKSubcredentialProvisioningConfiguration, PKSubcredentialProvisioningOperation, PKSubcredentialProvisioningOperationContext, PKSubcredentialProvisioningTransitionTable;
 @protocol OS_dispatch_queue, PKSubcredentialProvisioningControllerDelegate;
 
 @interface PKSubcredentialProvisioningController : NSObject <PKSubcredentialProvisioningOperationDelegate, PKAppletSubcredentialPairingSessionDelegate>
 {
     PKSubcredentialProvisioningConfiguration *_configuration;
+    PKSubcredentialProvisioningOperationContext *_context;
     PKSubcredentialProvisioningTransitionTable *_transitionTable;
     NSObject<OS_dispatch_queue> *_operationSerialQueue;
     struct os_unfair_lock_s _stateLock;
     _Bool _hasStarted;
     _Bool _hasBeenCanceled;
     PKAssertion *_userNotificationAssertion;
-    PKAssertion *_contactlessInterfaceSupressionAssertion;
+    PKAssertion *_fieldDetectSuppressionAssertion;
+    PKAssertion *_contactlessInterfaceSuppressionAssertion;
     PKSubcredentialProvisioningOperation *_currentOperation;
     long long _currentState;
     PKPaymentPass *_provisionedPass;
@@ -51,6 +53,7 @@
 @property(readonly, nonatomic) PKPaymentPass *provisionedPass;
 @property(readonly, nonatomic) PKAppletSubcredential *addedCredential;
 - (void)transitionToState:(long long)arg1 withOperation:(id)arg2 error:(id)arg3;
+- (void)declineRelatedInvitationsIfNecessary;
 - (void)cleanUpProvisioningAfterError:(BOOL)arg1;
 - (void)finishProvisioningWithError:(id)arg1 state:(long long)arg2;
 - (void)cancelProvisioningWithCompletion:(CDUnknownBlockType)arg1;

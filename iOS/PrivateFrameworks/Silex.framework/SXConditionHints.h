@@ -16,6 +16,8 @@
 
 + (id)jsonPropertyNameForObjCPropertyName:(id)arg1;
 - (_Bool)BOOLValueForJSONValue:(id)arg1 type:(int)arg2;
+- (_Bool)configurationKeyWithValue:(id)arg1 withType:(int)arg2;
+- (_Bool)newsletterWithValue:(id)arg1 withType:(int)arg2;
 - (_Bool)preferredColorSchemeWithValue:(id)arg1 withType:(int)arg2;
 - (_Bool)testingWithValue:(id)arg1 withType:(int)arg2;
 - (_Bool)subscriptionStatusWithValue:(id)arg1 withType:(int)arg2;
@@ -35,6 +37,7 @@
 - (_Bool)minViewportWidthWithValue:(id)arg1 withType:(int)arg2;
 
 // Remaining properties
+@property(readonly, nonatomic) _Bool configurationKey; // @dynamic configurationKey;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
@@ -49,6 +52,7 @@
 @property(readonly, nonatomic) _Bool minSpecVersion; // @dynamic minSpecVersion;
 @property(readonly, nonatomic) _Bool minViewportAspectRatio; // @dynamic minViewportAspectRatio;
 @property(readonly, nonatomic) _Bool minViewportWidth; // @dynamic minViewportWidth;
+@property(readonly, nonatomic) _Bool newsletter; // @dynamic newsletter;
 @property(readonly, nonatomic) _Bool platform; // @dynamic platform;
 @property(readonly, nonatomic) _Bool preferredColorScheme; // @dynamic preferredColorScheme;
 @property(readonly, nonatomic) _Bool subscriptionStatus; // @dynamic subscriptionStatus;

@@ -9,6 +9,7 @@
 @interface _TtC15ConversationKit20LocalParticipantView : UIView
 {
     // Error parsing type: , name: participantView
+    // Error parsing type: , name: delegate
     // Error parsing type: , name: isInRoster
 }
 

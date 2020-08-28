@@ -4,20 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <swiftCore/_TtCs12_SwiftObject.h>
+#import <objc/NSObject.h>
 
-@class UIView;
-
-@interface _TtC7NewsUI220MastheadViewProvider : _TtCs12_SwiftObject
+__attribute__((visibility("hidden")))
+@interface _TtC7NewsUI220MastheadViewProvider : NSObject
 {
     // Error parsing type: , name: mastheadView
-    // Error parsing type: , name: renderer
+    // Error parsing type: , name: titleViewStyler
     // Error parsing type: , name: layoutAttributesFactory
-    // Error parsing type: , name: model
     // Error parsing type: , name: margins
+    // Error parsing type: , name: model
 }
 
-@property(nonatomic, readonly) UIView *view;
+- (void).cxx_destruct;
+- (id)init;
 
 @end
 

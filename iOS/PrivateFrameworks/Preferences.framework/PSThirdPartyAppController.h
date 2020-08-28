@@ -6,14 +6,18 @@
 
 #import <Preferences/PSSpecifierController.h>
 
+#import <Preferences/PSSystemPolicyForAppDelegate-Protocol.h>
+
 @class PSSystemPolicyForApp;
 
-@interface PSThirdPartyAppController : PSSpecifierController
+@interface PSThirdPartyAppController : PSSpecifierController <PSSystemPolicyForAppDelegate>
 {
     PSSystemPolicyForApp *_systemPolicy;
+    PSSystemPolicyForApp *_appPolicy;
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) PSSystemPolicyForApp *appPolicy; // @synthesize appPolicy=_appPolicy;
 @property(retain, nonatomic) PSSystemPolicyForApp *systemPolicy; // @synthesize systemPolicy=_systemPolicy;
 - (id)bundle;
 - (id)loadSpecifiers;

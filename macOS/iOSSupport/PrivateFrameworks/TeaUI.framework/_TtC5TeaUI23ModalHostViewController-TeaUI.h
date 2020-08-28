@@ -7,9 +7,11 @@
 #import <TeaUI/_TtC5TeaUI23ModalHostViewController.h>
 
 @interface _TtC5TeaUI23ModalHostViewController (TeaUI)
-- (void)viewDidLayoutSubviews;
+- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidLayoutSubviews;
+- (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 @property(nonatomic, readonly) long long preferredStatusBarStyle;
 @end

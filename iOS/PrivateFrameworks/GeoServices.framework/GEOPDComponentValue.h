@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPBTransitVehiclePosition, GEOPDAddress, GEOPDAddressObject, GEOPDAmenities, GEOPDAnnotatedItemList, GEOPDAssociatedApp, GEOPDBounds, GEOPDBrowseCategories, GEOPDBusinessClaim, GEOPDBusinessHours, GEOPDCaptionedPhoto, GEOPDContainedPlace, GEOPDETA, GEOPDEntity, GEOPDExternalAction, GEOPDFactoid, GEOPDFlyover, GEOPDGroundViewLabel, GEOPDHours, GEOPDIcon, GEOPDLinkedService, GEOPDLocationEvent, GEOPDMessageLink, GEOPDOfflineArea, GEOPDOfflineIdentifier, GEOPDOfflineQuadNodes, GEOPDOfflineSize, GEOPDOfflineUpdateManifest, GEOPDPhoto, GEOPDPlaceCollection, GEOPDPlaceInfo, GEOPDPlacecardLayoutConfiguration, GEOPDPlacecardURL, GEOPDPoiEvent, GEOPDPriceDescription, GEOPDPrototypeContainer, GEOPDQuickLink, GEOPDRap, GEOPDRating, GEOPDRawAttribute, GEOPDRelatedPlace, GEOPDRestaurantReservationLink, GEOPDResultSnippet, GEOPDReview, GEOPDRoadAccessInfo, GEOPDSimpleRestaurantMenuText, GEOPDSpatialLookupResult, GEOPDStorefront, GEOPDStorefrontPresentation, GEOPDSupportsOfflineMaps, GEOPDTextBlock, GEOPDTip, GEOPDTransitAttribution, GEOPDTransitIncident, GEOPDTransitInfo, GEOPDTransitInfoSnippet, GEOPDTransitSchedule, GEOPDTransitTripGeometry, GEOPDTransitTripStop, GEOPDTransitTripStopTime, GEOPDVenueInfo, GEOPDWifiFingerprint, GEOStyleAttributes, PBUnknownFields;
+@class GEOPBTransitVehiclePosition, GEOPDAddress, GEOPDAddressObject, GEOPDAmenities, GEOPDAnnotatedItemList, GEOPDAssociatedApp, GEOPDBounds, GEOPDBrowseCategories, GEOPDBusinessClaim, GEOPDBusinessHours, GEOPDCaptionedPhoto, GEOPDContainedPlace, GEOPDETA, GEOPDEntity, GEOPDExternalAction, GEOPDFactoid, GEOPDFlyover, GEOPDGroundViewLabel, GEOPDHours, GEOPDISO3166Code, GEOPDIcon, GEOPDLinkedService, GEOPDLocationEvent, GEOPDMessageLink, GEOPDOfflineArea, GEOPDOfflineIdentifier, GEOPDOfflineQuadNodes, GEOPDOfflineSize, GEOPDOfflineUpdateManifest, GEOPDPhoto, GEOPDPlaceCollection, GEOPDPlaceInfo, GEOPDPlacecardLayoutConfiguration, GEOPDPlacecardURL, GEOPDPoiEvent, GEOPDPriceDescription, GEOPDPrototypeContainer, GEOPDQuickLink, GEOPDRap, GEOPDRating, GEOPDRawAttribute, GEOPDRelatedPlace, GEOPDRestaurantReservationLink, GEOPDResultSnippet, GEOPDReview, GEOPDRoadAccessInfo, GEOPDSimpleRestaurantMenuText, GEOPDSpatialLookupResult, GEOPDStorefront, GEOPDStorefrontPresentation, GEOPDSupportsOfflineMaps, GEOPDTextBlock, GEOPDTip, GEOPDTransitAttribution, GEOPDTransitIncident, GEOPDTransitInfo, GEOPDTransitInfoSnippet, GEOPDTransitSchedule, GEOPDTransitTripGeometry, GEOPDTransitTripStop, GEOPDTransitTripStopTime, GEOPDVenueInfo, GEOPDWifiFingerprint, GEOStyleAttributes, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDComponentValue : PBCodable <NSCopying>
@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     GEOPDGroundViewLabel *_groundViewLabel;
     GEOPDHours *_hours;
     GEOPDIcon *_icon;
+    GEOPDISO3166Code *_iso3166Code;
     GEOPDLinkedService *_linkedService;
     GEOPDLocationEvent *_locationEvent;
     GEOPDMessageLink *_messageLink;
@@ -93,6 +94,8 @@ __attribute__((visibility("hidden")))
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPDISO3166Code *iso3166Code;
+@property(readonly, nonatomic) _Bool hasIso3166Code;
 @property(retain, nonatomic) GEOPDTransitTripGeometry *transitTripGeometry;
 @property(readonly, nonatomic) _Bool hasTransitTripGeometry;
 @property(retain, nonatomic) GEOPDTransitTripStopTime *transitTripStopTime;

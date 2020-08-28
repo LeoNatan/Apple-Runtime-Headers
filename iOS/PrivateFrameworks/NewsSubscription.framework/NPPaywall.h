@@ -14,9 +14,7 @@
     // Error parsing type: , name: paywallType
     // Error parsing type: , name: softPaywallHeightProvider
     // Error parsing type: , name: deferredHardPaywallHeightProvider
-    // Error parsing type: , name: softPaywallViewController
-    // Error parsing type: , name: hardPaywallViewController
-    // Error parsing type: , name: deferredHardPaywallViewController
+    // Error parsing type: , name: paywallViewControllerWrapper
     // Error parsing type: , name: delegate
     // Error parsing type: , name: internalDelegate
 }

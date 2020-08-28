@@ -18,6 +18,7 @@
     NSArray *_installedAppBundleIdentifiers;
     NSArray *_subscribedAppBundleIdentifiers;
     NSArray *_testAppBundleIdentifiers;
+    NSArray *_nonConformingAppBundleIdentifiers;
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSObject<OS_dispatch_queue> *_refreshQueue;
     _Bool _appLibraryNeedsRefresh;
@@ -35,6 +36,8 @@
 - (id)_refreshAppLibrary;
 - (void)endIgnoringAppLibraryChanges;
 - (void)beginIgnoringAppLibraryChanges;
+- (id)_nonConformingAppProxies;
+- (id)_nonConformingAppBundleIdentifiers;
 - (id)refresh;
 - (id)dictionaryRepresentation;
 - (_Bool)isTVAppInstalled;

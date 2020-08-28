@@ -13,6 +13,7 @@
     // Error parsing type: , name: mastheadModel
 }
 
+- (void).cxx_destruct;
 - (id)init;
 - (id)initWithType:(long long)arg1;
 @property(nonatomic, readonly) NSString *formattedDate;

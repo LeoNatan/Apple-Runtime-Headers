@@ -10,6 +10,9 @@
 {
 }
 
++ (id)OSVersionComponent:(unsigned long long)arg1 osVersion:(id)arg2;
++ (id)minorOSVersion:(id)arg1;
++ (_Bool)_updateIsPreCRelease:(id)arg1;
 + (id)assetDownloadOptionsFromMetadata:(id)arg1 descriptor:(id)arg2 priority:(int)arg3 forBrain:(_Bool)arg4;
 + (id)assetDownloadOptionsForDocumentation;
 + (id)defaultAssetDownloadOptionsWithPriority:(int)arg1;

@@ -9,13 +9,15 @@
 #import <NewsCore/FCClassifiable-Protocol.h>
 #import <NewsCore/FCFeedTransformationItem-Protocol.h>
 
-@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList, NSArray, NSDate, NSString;
+@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList, COMAPPLEFELDSPARPROTOCOLVersionedPersonalizationVector, NSArray, NSDate, NSString;
 @protocol FCChannelProviding;
 
 @interface NTPBFeedItem (FCFeedItem) <FCClassifiable, FCFeedTransformationItem>
 + (id)feedItemWithCKFeedItemAndArticleRecord:(id)arg1 storefrontID:(id)arg2;
 + (id)cloudKitKeysWithStorefrontID:(id)arg1;
 - (void)enumerateTopicCohortsWithBlock:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLVersionedPersonalizationVector *personalizationVectorAlt;
+@property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLVersionedPersonalizationVector *personalizationVector;
 @property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *publisherCohorts;
 @property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *globalCohorts;
 @property(readonly, nonatomic) _Bool canBePurchased;
@@ -50,6 +52,7 @@
 @property(readonly, copy, nonatomic) NSString *feedID;
 @property(readonly, nonatomic, getter=isFromBlockedStorefront) _Bool fromBlockedStorefront;
 @property(readonly, nonatomic) double globalUserFeedback;
+@property(readonly, nonatomic) _Bool hasAudioTrack;
 @property(readonly, nonatomic) _Bool hasVideo;
 @property(readonly, nonatomic, getter=isHiddenFromAutoFavorites) _Bool hiddenFromAutoFavorites;
 @property(readonly, nonatomic) _Bool isFeatured;

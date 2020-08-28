@@ -9,7 +9,7 @@
 #import <SiriActivation/NSCopying-Protocol.h>
 #import <SiriActivation/NSSecureCoding-Protocol.h>
 
-@class AFBulletin, AFRequestInfo, AFSpeechRequestOptions, NSArray, NSDictionary, NSNumber, NSString, NSURL, SAGuidanceCheckForGuideUpdateContext, SASPronunciationContext;
+@class AFBulletin, AFRequestInfo, AFSpeechRequestOptions, NSArray, NSDictionary, NSNumber, NSString, NSURL, NSUUID, SAGuidanceCheckForGuideUpdateContext, SASPronunciationContext;
 
 @interface SASRequestOptions : NSObject <NSCopying, NSSecureCoding>
 {
@@ -43,6 +43,7 @@
     AFRequestInfo *_requestInfo;
     AFSpeechRequestOptions *_speechRequestOptions;
     NSString *_uiPresentationIdentifier;
+    NSUUID *_previousTurnIdentifier;
     NSArray *_contextAppInfosForSiriViewController;
     NSDictionary *_testingContext;
     unsigned long long _currentLockState;
@@ -53,6 +54,7 @@
 @property(nonatomic) unsigned long long currentLockState; // @synthesize currentLockState=_currentLockState;
 @property(retain, nonatomic) NSDictionary *testingContext; // @synthesize testingContext=_testingContext;
 @property(retain, nonatomic) NSArray *contextAppInfosForSiriViewController; // @synthesize contextAppInfosForSiriViewController=_contextAppInfosForSiriViewController;
+@property(retain, nonatomic) NSUUID *previousTurnIdentifier; // @synthesize previousTurnIdentifier=_previousTurnIdentifier;
 @property(retain, nonatomic) NSString *uiPresentationIdentifier; // @synthesize uiPresentationIdentifier=_uiPresentationIdentifier;
 @property(nonatomic) _Bool predictedRecordRouteIsZLL; // @synthesize predictedRecordRouteIsZLL=_predictedRecordRouteIsZLL;
 @property(nonatomic) _Bool releaseAudioSessionOnRecordingCompletion; // @synthesize releaseAudioSessionOnRecordingCompletion=_releaseAudioSessionOnRecordingCompletion;

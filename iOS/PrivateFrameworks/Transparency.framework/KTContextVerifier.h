@@ -26,22 +26,29 @@
 @property(retain) NSString *applicationID; // @synthesize applicationID=_applicationID;
 @property(retain) TransparencyManagedDataStore *dataStore; // @synthesize dataStore=_dataStore;
 @property(retain) KTApplicationPublicKeyStore *applicationKeyStore; // @synthesize applicationKeyStore=_applicationKeyStore;
+- (void)checkHeadEpoch:(id)arg1 isMapHead:(_Bool)arg2;
+- (_Bool)verifyRevisionLogInclusionProofResponse:(id)arg1 error:(id *)arg2;
+- (unsigned long long)verifyRevisionLogTopLevelProof:(id)arg1 patSTH:(id)arg2 error:(id *)arg3;
+- (unsigned long long)verifyRevisionLogProofLogEntry:(id)arg1 patSTH:(id *)arg2 error:(id *)arg3;
+- (_Bool)setInclusionVerifiedStateForLogEntry:(id)arg1 error:(id *)arg2;
+- (_Bool)setInclusionVerifiedStateForTopLevelTreeNode:(id)arg1 error:(id *)arg2;
+- (_Bool)setInclusionVerifiedStateForPerApplicationTreeNode:(id)arg1 error:(id *)arg2;
 - (void)verifySTHs:(id)arg1;
-- (_Bool)verifyConsistencyProofResponse:(id)arg1 startRevision:(long long)arg2 error:(id *)arg3;
-- (_Bool)verifyInclusionProof:(id)arg1 mapLeaf:(id *)arg2 error:(id *)arg3;
+- (unsigned long long)verifyConsistencyProofResponse:(id)arg1 startRevision:(long long)arg2 error:(id *)arg3;
+- (unsigned long long)verifyInclusionProof:(id)arg1 mapLeaf:(id *)arg2 error:(id *)arg3;
 - (_Bool)verifyResponseAccountId:(id)arg1 requestAccountId:(id)arg2 error:(id *)arg3;
-- (_Bool)verifyUriWitness:(id)arg1 uri:(id)arg2 error:(id *)arg3;
-- (_Bool)verifyDeviceWitnesses:(id)arg1 requestDevices:(id)arg2 loggableDatas:(id)arg3 uriVRFOutput:(id)arg4 error:(id *)arg5;
-- (_Bool)verifyDeviceWitness:(id)arg1 deviceId:(id)arg2 uriVRFOutput:(id)arg3 error:(id *)arg4;
-- (_Bool)verifyClientDataWitnesses:(id)arg1 clientDatas:(id)arg2 loggableDatas:(id)arg3 uriVRFOutput:(id)arg4 error:(id *)arg5;
-- (_Bool)verifyClientDataWitness:(id)arg1 clientData:(id)arg2 uriVRFOutput:(id)arg3 error:(id *)arg4;
+- (unsigned long long)verifyUriWitness:(id)arg1 uri:(id)arg2 error:(id *)arg3;
+- (unsigned long long)verifyDeviceWitnesses:(id)arg1 requestDevices:(id)arg2 loggableDatas:(id)arg3 uriVRFOutput:(id)arg4 error:(id *)arg5;
+- (unsigned long long)verifyDeviceWitness:(id)arg1 deviceId:(id)arg2 uriVRFOutput:(id)arg3 error:(id *)arg4;
+- (unsigned long long)verifyClientDataWitnesses:(id)arg1 clientDatas:(id)arg2 loggableDatas:(id)arg3 uriVRFOutput:(id)arg4 error:(id *)arg5;
+- (unsigned long long)verifyClientDataWitness:(id)arg1 clientData:(id)arg2 uriVRFOutput:(id)arg3 error:(id *)arg4;
 - (void)verifyKTSMTsMerged:(id)arg1 queryResponse:(id)arg2 uri:(id)arg3 accountId:(id)arg4;
 - (void)verifyKTSMTs:(id)arg1;
 - (void)deleteSMT:(id)arg1 error:(id)arg2;
 - (void)failSMTsIfOverMMD:(id)arg1 proof:(id)arg2 underlyingError:(id)arg3 errorCode:(long long)arg4;
 - (_Bool)areSMTsOverMMD:(id)arg1;
 - (void)reportVerifySMTFailure:(id)arg1 error:(id)arg2;
-- (_Bool)verifySMTs:(id)arg1 request:(id)arg2 error:(id *)arg3;
+- (unsigned long long)verifySMTs:(id)arg1 request:(id)arg2 error:(id *)arg3;
 - (id)initWithApplicationKeyStore:(id)arg1 dataStore:(id)arg2 applicationID:(id)arg3;
 
 @end

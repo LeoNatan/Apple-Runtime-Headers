@@ -44,6 +44,7 @@
     long long _deprecatedTargetNetworkProtectionMode;
     long long _currentNetworkProtectionMode;
     long long _networkClientLAN;
+    NSUUID *_networkClientProfileFingerprint;
     long long _wiFiCredentialType;
     NSArray *_allowedHosts;
     NSData *_wiFiUniquePreSharedKey;
@@ -127,7 +128,8 @@
 - (void)setWifiCredentialType:(long long)arg1;
 - (_Bool)supportsWiFiReconfiguration;
 - (void)_handleUpdateNetworkProtection:(id)arg1;
-- (void)saveCurrentNetworkProtectionMode:(long long)arg1 assignedLAN:(long long)arg2 appliedFirewallWANRules:(id)arg3;
+- (void)saveCurrentNetworkProtectionMode:(long long)arg1 assignedLAN:(long long)arg2 appliedFirewallWANRules:(id)arg3 profileFingerprint:(id)arg4;
+@property(retain, nonatomic) NSUUID *networkClientProfileFingerprint; // @synthesize networkClientProfileFingerprint=_networkClientProfileFingerprint;
 @property(nonatomic) long long networkClientLAN; // @synthesize networkClientLAN=_networkClientLAN;
 @property(nonatomic) long long currentNetworkProtectionMode; // @synthesize currentNetworkProtectionMode=_currentNetworkProtectionMode;
 - (long long)targetNetworkProtectionMode;

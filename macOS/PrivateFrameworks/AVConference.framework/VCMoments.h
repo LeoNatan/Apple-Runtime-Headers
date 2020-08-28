@@ -23,10 +23,12 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *delegateNotificationQueue;
     int _currentActiveRequestsCount;
     BOOL _isActive;
+    BOOL _enableLocalVideoRecording;
     BOOL _isClientRegistered;
     VideoAttributes *_remoteScreenAttributes;
     NSMutableSet *_requests;
     BOOL _lastRequest;
+    unsigned int _currentTimestamp;
 }
 
 + (unsigned long long)countForRequestType:(int)arg1;
@@ -52,6 +54,7 @@ __attribute__((visibility("hidden")))
 - (void)updateActiveStatus;
 - (void)deregisterClient;
 - (void)registerClient;
+- (void)clearHistoryBuffer;
 - (void)cleanupActiveRequests;
 - (BOOL)processClientRequest:(id)arg1 error:(id *)arg2;
 - (void)setMomentsDelegate:(id)arg1;
@@ -59,8 +62,8 @@ __attribute__((visibility("hidden")))
 - (void)setTransportDelegate:(id)arg1;
 - (id)transportDelegate;
 - (void)setFrameRate:(float)arg1;
-- (void)processRequest:(id)arg1;
-- (BOOL)validateIncomingRequest:(id)arg1;
+- (void)processRequest:(id)arg1 isRemote:(BOOL)arg2;
+- (BOOL)validateIncomingRequest:(id)arg1 isRemote:(BOOL)arg2;
 - (void)updateRemoteScreenAttributes:(id)arg1;
 - (void)getInitialRemoteScreenAttributes:(id)arg1;
 - (void)addLocalVideoSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 cameraStatusBits:(unsigned char)arg2 timestamp:(unsigned int)arg3;

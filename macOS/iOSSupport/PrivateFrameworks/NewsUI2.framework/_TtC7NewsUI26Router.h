@@ -14,6 +14,7 @@
     // Error parsing type: , name: articleOfflineManager
     // Error parsing type: , name: offlineIssueManager
     // Error parsing type: , name: offlineAlertControllerFactory
+    // Error parsing type: , name: featureAvailability
     // Error parsing type: , name: readingList
 }
 

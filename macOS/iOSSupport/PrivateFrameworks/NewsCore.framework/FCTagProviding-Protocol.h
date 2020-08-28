@@ -16,6 +16,9 @@
 @property(readonly, nonatomic) NSDate *publisherSpecifiedArticleIDsModifiedDate;
 @property(readonly, nonatomic) NSArray *publisherSpecifiedArticleIDs;
 @property(readonly, nonatomic) NSString *articleRecirculationConfigJSON;
+@property(readonly, nonatomic) BOOL isLocal;
+@property(readonly, nonatomic) BOOL isSandbox;
+@property(readonly, nonatomic) BOOL isInternal;
 @property(readonly, nonatomic) BOOL isArticleReadCountReportingEnabled;
 @property(readonly, nonatomic) BOOL isRealTimeTrackingEnabled;
 @property(readonly, nonatomic) BOOL isHidden;
@@ -45,7 +48,6 @@
 @property(readonly, copy, nonatomic) FCColor *groupDarkStyleTitleColor;
 @property(readonly, copy, nonatomic) FCColor *groupTitleColor;
 @property(readonly, copy, nonatomic) id <FCFeedTheming> theme;
-@property(readonly, copy, nonatomic) NSString *coverArticleListID;
 @property(readonly, nonatomic) FCAssetHandle *feedNavImageAssetHandle;
 @property(readonly, nonatomic) FCAssetHandle *coverImageAssetHandle;
 @property(readonly, nonatomic) BOOL isSubscribable;
@@ -65,6 +67,7 @@
 @property(readonly, nonatomic) id <FCSectionProviding> asSection;
 @property(readonly, nonatomic) id <FCChannelProviding> asChannel;
 @property(readonly, nonatomic) BOOL hideAccessoryText;
+@property(readonly, nonatomic) unsigned long long userFacingTagType;
 @property(readonly, nonatomic) unsigned long long tagType;
 - (void)ppt_overrideFeedID:(NSString *)arg1;
 - (NSURL *)authorizationURL;

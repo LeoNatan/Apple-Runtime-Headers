@@ -8,10 +8,15 @@
 
 @interface HKFitnessDiagnosticsRequestViewController : OBTextWelcomeController
 {
+    CDUnknownBlockType _completionHandler;
 }
 
 + (_Bool)needsRequestedPermission;
++ (void)presentInViewController:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 + (void)presentInViewController:(id)arg1;
+- (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
+- (void)dismissFitnessController;
 - (void)_showDataCollectionAdditionalInfo;
 - (void)_disableDataCollection;
 - (void)_enableDataCollection;
